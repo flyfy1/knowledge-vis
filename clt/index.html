@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中心极限定理 · 平均值总会变成钟形</title>
+<link rel="stylesheet" href="style.css?v=e5cba1c">
+<script src="i18n.js?v=e5cba1c"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">中心极限定理</h1>
+    <p class="tagline" data-i18n="tagline">不管单个随机变量长什么样——平的、歪的、双峰的——只要把足够多个平均起来，结果总是钟形。这一页让你亲手摇骰子、换母分布、拉样本量，现场验三件事：平均的中心纹丝不动、散布按 σ/√n 缩小、形状与母分布无关（条件：方差有限）。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 钩子</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 母分布画廊</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 抽样实验室</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 精度代价</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 慢与坏</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 卷积阶梯</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 样本量计算器</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子 · 骰子平均值的变形记 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+    <h2 data-i18n="s0t">骰子平均值的变形记</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="330"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn dice-k active" data-k="1" data-i18n="dice1">掷 1 颗</button>
+      <button class="btn dice-k" data-k="2" data-i18n="dice2">掷 2 颗取平均</button>
+      <button class="btn dice-k" data-k="5" data-i18n="dice5">掷 5 颗取平均</button>
+      <button class="btn dice-k" data-k="30" data-i18n="dice30">掷 30 颗取平均</button>
+      <button class="btn primary" id="s0-run" data-i18n="s0run">连掷采样（到 2 万组自动停）</button>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：母分布画廊 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 母分布画廊</p>
+    <h2 data-i18n="s1t">原料什么样都有</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="310"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn par1 active" data-par="uniform" data-i18n="pUniform">均匀 U(0, 1)</button>
+      <button class="btn par1" data-par="exp" data-i18n="pExp">指数 Exp(1)</button>
+      <button class="btn par1" data-par="bimodal" data-i18n="pBimodal">双峰（两个高斯混合）</button>
+      <button class="btn par1" data-par="dice" data-i18n="pDice">骰子（1–6）</button>
+      <button class="btn par1" data-par="pareto" data-i18n="pPareto">帕累托 Pareto(α)</button>
+    </div>
+    <div class="btn-row" id="s1-alpha-row" style="display:none">
+      <button class="btn alp1" data-alpha="1.5" data-i18n="alpha15">α = 1.5（方差无穷）</button>
+      <button class="btn alp1 active" data-alpha="3.5" data-i18n="alpha35">α = 3.5（方差有限）</button>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <div class="warn-box" id="s1-warn" style="display:none" data-i18n-html="s1warn15"></div>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：抽样分布实验室 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 抽样分布实验室</p>
+    <h2 data-i18n="s2t">主战场：选原料、拉样本量</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="340"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn par2 active" data-par="uniform" data-i18n="pUniform">均匀 U(0, 1)</button>
+      <button class="btn par2" data-par="exp" data-i18n="pExp">指数 Exp(1)</button>
+      <button class="btn par2" data-par="bimodal" data-i18n="pBimodal">双峰（两个高斯混合）</button>
+      <button class="btn par2" data-par="dice" data-i18n="pDice">骰子（1–6）</button>
+      <button class="btn par2" data-par="pareto" data-i18n="pPareto">帕累托 Pareto(α)</button>
+    </div>
+    <div class="btn-row" id="s2-alpha-row" style="display:none">
+      <button class="btn alp2" data-alpha="1.5" data-i18n="alpha15">α = 1.5（方差无穷）</button>
+      <button class="btn alp2 active" data-alpha="3.5" data-i18n="alpha35">α = 3.5（方差有限）</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="nLab">每组样本量 n</span> <span class="val" id="s2-n-val"></span></span>
+        <input type="range" id="s2-n" min="0" max="6" step="1" value="3">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s2-run" data-i18n="runLab">一键抽 10,000 组样本均值</button>
+      <button class="btn" id="s2-seed" data-i18n="newSeed">换一颗种子</button>
+      <button class="btn" id="s2-reset" data-i18n="reset">重置</button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="hint" id="s2-note"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：精度的代价 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 精度的代价</p>
+    <h2 data-i18n="s3t">σ/√n 是条铁律</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="330"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn par3 active" data-par="uniform" data-i18n="pUniform">均匀 U(0, 1)</button>
+      <button class="btn par3" data-par="exp" data-i18n="pExp">指数 Exp(1)</button>
+      <button class="btn par3" data-par="dice" data-i18n="pDice">骰子（1–6）</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s3-run" data-i18n="s3runAll">一次跑完 n = 1 … 100（每档 4000 组）</button>
+      <span class="mile-chip"><b data-i18n="cardHalfT">误差减半</b> · <span data-i18n="cardHalfD">样本量 × 4</span></span>
+      <span class="mile-chip"><b data-i18n="cardTenT">精度 × 10</b> · <span data-i18n="cardTenD">样本量 × 100</span></span>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：慢的与坏的 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 慢的与坏的</p>
+    <h2 data-i18n="s4t">诚实展览角：磨得慢的，和磨不出来的</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="dual">
+      <div class="half">
+        <h3 class="sub-t2" data-i18n="s4lt">慢：指数分布——偏态被磨平</h3>
+        <div class="stage">
+          <canvas id="s4l-canvas" height="300"></canvas>
+        </div>
+        <div class="btn-row">
+          <button class="btn n4l" data-n="2" data-i18n="n2">n = 2</button>
+          <button class="btn n4l active" data-n="5" data-i18n="n5">n = 5</button>
+          <button class="btn n4l" data-n="10" data-i18n="n10">n = 10</button>
+          <button class="btn n4l" data-n="30" data-i18n="n30">n = 30</button>
+        </div>
+        <p class="readout" id="s4l-readout"></p>
+      </div>
+      <div class="half">
+        <h3 class="sub-t2" data-i18n="s4rt">坏：帕累托 α = 1.5——方差无穷，定理下班</h3>
+        <div class="stage">
+          <canvas id="s4r-canvas" height="300"></canvas>
+        </div>
+        <div class="btn-row">
+          <button class="btn n4r" data-n="10" data-i18n="n10">n = 10</button>
+          <button class="btn n4r" data-n="30" data-i18n="n30">n = 30</button>
+          <button class="btn n4r active" data-n="100" data-i18n="n100">n = 100</button>
+        </div>
+        <p class="readout" id="s4r-readout"></p>
+      </div>
+    </div>
+    <div class="warn-box" data-i18n-html="s4warn"></div>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：卷积阶梯 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 为什么是钟形</p>
+    <h2 data-i18n="s5t">卷积阶梯：加法一遍遍磨出来的</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="stage">
+      <canvas id="s5-canvas" height="330"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn n5" data-n="1">n = 1</button>
+      <button class="btn n5" data-n="2" data-i18n="n2">n = 2</button>
+      <button class="btn n5" data-n="3" data-i18n="n3">n = 3</button>
+      <button class="btn n5 active" data-n="5" data-i18n="n5">n = 5</button>
+      <button class="btn n5" data-n="10" data-i18n="n10">n = 10</button>
+    </div>
+    <p class="readout" id="s5-readout"></p>
+    <p class="hint" data-i18n-html="s5hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：样本量计算器 ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">样本量计算器：民调 ±3% 的出身</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <div class="stage">
+      <canvas id="s6-canvas" height="270"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn pre6 active" data-pre="poll" data-i18n="prePoll">预置：民调比例（σ = 0.5，p = 0.5）</button>
+      <button class="btn pre6" data-pre="uniform" data-i18n="preUniform">预置：均匀原料</button>
+      <button class="btn pre6" data-pre="exp" data-i18n="preExp">预置：指数原料</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn ver6 active" data-ver="bern" data-i18n="vBern">验证分布：伯努利比例（p = 0.5）</button>
+      <button class="btn ver6" data-ver="uniform" data-i18n="vUniform">验证分布：缩放均匀（标准差恰为 σ）</button>
+      <button class="btn ver6" data-ver="exp" data-i18n="vExp">验证分布：缩放指数（标准差恰为 σ）</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="sigLab">标准差 σ（对数刻度）</span> <span class="val" id="s6-sig-val"></span></span>
+        <input type="range" id="s6-sig" min="0" max="1000" step="1" value="500">
+      </label>
+      <label><span><span data-i18n="eLab">目标半宽 E（对数刻度）</span> <span class="val" id="s6-e-val"></span></span>
+        <input type="range" id="s6-e" min="0" max="1000" step="1" value="500">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s6-calc" data-i18n="calcBtn">算样本量并真跑验证</button>
+      <button class="btn" id="s6-seed" data-i18n="newSeed">换一颗种子</button>
+    </div>
+    <p class="readout" id="s6-readout"></p>
+    <div class="app-grid">
+      <div class="app-card"><h3 data-i18n="app1t">测量误差平均</h3><p data-i18n="app1d"></p></div>
+      <div class="app-card"><h3 data-i18n="app2t">质控抽检</h3><p data-i18n="app2d"></p></div>
+      <div class="app-card"><h3 data-i18n="app3t">A/B 实验样本量</h3><p data-i18n="app3d"></p></div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="/" data-i18n="s6linkIdx">← 回知识索引</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 中心极限定理 CLT —— 一步一交互系列</footer>
+
+<script src="app.js?v=e5cba1c"></script>
+</body>
+</html>

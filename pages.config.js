@@ -169,5 +169,21 @@ window.KNOWLEDGE_PAGES = [
     category: "probability",
     status: "live",
     path: "bayes/"
+  },
+  {
+    slug: "clt",
+    title: { zh: "中心极限定理 · 平均值总会变成钟形", en: "Central Limit Theorem · Averages Always Turn Bell-Shaped" },
+    desc: {
+      zh: "单颗骰子毫无钟形可言，平均起来钟形却拔地而起。不管原料长什么样，均值的分布总是正态——只要方差有限：精度按 σ/√n 定价，民调的 ±3% 也从这里来。",
+      en: "A single die has nothing bell-shaped about it, yet average enough dice and the bell rises. Whatever the raw material looks like, means turn normal — as long as the variance is finite. Precision is priced at σ/√n, and polling's ±3% is born here too."
+    },
+    tags: [
+      { zh: "中心极限定理", en: "Central Limit Theorem" },
+      { zh: "抽样分布", en: "Sampling Distribution" },
+      { zh: "正态逼近", en: "Normal Approximation" }
+    ],
+    category: "probability",
+    status: "live",
+    path: "clt/"
   }
 ];
