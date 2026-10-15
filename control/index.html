@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>反馈与控制 · 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=38ee983">
+<script src="sim-core.js?v=38ee983"></script>
+<script src="i18n.js?v=38ee983"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">反馈与控制</h1>
+    <p class="tagline" data-i18n="tagline">一辆双轮车，天生站不住。让它站住的不是更大的电机，而是一个每秒转几百圈的圈：量一下、算一下、推一下。这一页把这个圈一层层拆开——先让你亲手当一回控制器。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 钩子</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 没有反馈</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 闭环</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 只有 P</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 加上 D</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 I 与扰动</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 真实世界</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 先看奇迹</p>
+    <h2 data-i18n="s0t">推它，它不倒</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="320"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s0-push" data-i18n="btnPush">推一把</button>
+      <button class="btn" id="s0-stand" data-i18n="btnStand">扶起来</button>
+      <span class="switch-wrap"><span data-i18n="s0ctrl">控制</span>
+        <span class="seg" id="s0-ctrl-seg">
+          <button type="button" class="active" data-v="on" data-i18n="s0on">开</button><button type="button" data-v="off" data-i18n="s0off">关</button>
+        </span>
+      </span>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：没有反馈的世界 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 没有反馈的世界</p>
+    <h2 data-i18n="s1t">先让它倒，再亲手救它</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="controls">
+      <label><span><span data-i18n="s1ang">起始角度</span> <span class="val" id="s1-ang-val">10°</span></span>
+        <input type="range" id="s1-ang" min="-30" max="30" step="1" value="10">
+      </label>
+    </div>
+    <div class="dual">
+      <div class="half">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s1inv">倒立摆（控制关）</p>
+          <canvas id="s1-inv" height="260"></canvas>
+        </div>
+        <p class="readout" id="s1-inv-ro"></p>
+      </div>
+      <div class="half">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s1hang">悬挂摆（秋千）</p>
+          <canvas id="s1-hang" height="260"></canvas>
+        </div>
+        <p class="readout" data-i18n="s1hangNote">悬挂摆：等幅摆动，不发散、不衰减（模型里没有摩擦）。</p>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s1-release" data-i18n="s1release">放手！</button>
+    </div>
+
+    <h3 class="sub-h" data-i18n="s1mt">轮到你当控制器</h3>
+    <p class="explain" data-i18n-html="s1me"></p>
+    <div class="stage">
+      <canvas id="s1-man" height="300"></canvas>
+    </div>
+    <div class="big-timer" id="s1-timer">0.00 s</div>
+    <div class="btn-row center">
+      <button class="btn hold-btn" id="s1-left">◀</button>
+      <button class="btn primary" id="s1-start" data-i18n="s1start">开始挑战</button>
+      <button class="btn hold-btn" id="s1-right">▶</button>
+    </div>
+    <p class="readout center" id="s1-man-ro"></p>
+    <p class="hint" data-i18n="s1keys"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：闭环 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 把圈闭上</p>
+    <h2 data-i18n="s2t">传感器 → 控制器 → 电机 → 再回到传感器</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-loop" height="180"></canvas>
+    </div>
+    <div class="stage">
+      <canvas id="s2-canvas" height="300"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2gain">规则增益 K</span> <span class="val" id="s2-gain-val">26</span></span>
+        <input type="range" id="s2-gain" min="0" max="60" step="1" value="26">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-push" data-i18n="btnPush">推一把</button>
+      <button class="btn" id="s2-stand" data-i18n="btnStand">扶起来</button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <div class="finale">
+      <p data-i18n-html="s2reveal"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：只有 P ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 只留 P</p>
+    <h2 data-i18n="s3t">P：太软倒、太硬晃</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="280"></canvas>
+    </div>
+    <div class="stage strip-stage">
+      <canvas id="s3-strip" height="110"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3kp">Kp</span> <span class="val" id="s3-kp-val">20</span></span>
+        <input type="range" id="s3-kp" min="0" max="90" step="1" value="20">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s3-soft" data-i18n="s3mSoft">太软 Kp=8</button>
+      <button class="btn" id="s3-mid" data-i18n="s3mMid">适中 Kp=20</button>
+      <button class="btn" id="s3-hard" data-i18n="s3mHard">过硬 Kp=70</button>
+      <button class="btn" id="s3-push" data-i18n="btnPush">推一把</button>
+      <button class="btn" id="s3-stand" data-i18n="btnStand">扶起来</button>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="hint" data-i18n="s3note"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：加上 D ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 加上 D</p>
+    <h2 data-i18n="s4t">D：提前刹车</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="280"></canvas>
+    </div>
+    <div class="stage strip-stage">
+      <canvas id="s4-strip" height="130"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s4kp">Kp（两辆车共用）</span> <span class="val" id="s4-kp-val">25</span></span>
+        <input type="range" id="s4-kp" min="10" max="60" step="1" value="25">
+      </label>
+      <label><span><span data-i18n="s4kd">Kd</span> <span class="val" id="s4-kd-val">0</span></span>
+        <input type="range" id="s4-kd" min="0" max="12" step="0.25" value="0">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s4-disturb" data-i18n="s4disturb">扰动一下（同时踢两辆车）</button>
+      <button class="btn" id="s4-stand" data-i18n="btnStand">扶起来</button>
+    </div>
+    <p class="readout" id="s4-readout"></p>
+    <p class="hint" data-i18n="s4note"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：I 与扰动（全套实验室） ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 加上 I 与扰动</p>
+    <h2 data-i18n="s5t">站得稳，还要站得直</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="stage">
+      <canvas id="s5-canvas" height="280"></canvas>
+    </div>
+    <div class="stage strip-stage">
+      <canvas id="s5-strip" height="110"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s5slope">坡度</span> <span class="val" id="s5-slope-val">3°</span></span>
+        <input type="range" id="s5-slope" min="0" max="6" step="0.5" value="3">
+      </label>
+      <label><span><span data-i18n="s5kp">Kp</span> <span class="val" id="s5-kp-val">30</span></span>
+        <input type="range" id="s5-kp" min="0" max="90" step="1" value="30">
+      </label>
+      <label><span><span data-i18n="s5ki">Ki</span> <span class="val" id="s5-ki-val">6</span></span>
+        <input type="range" id="s5-ki" min="0" max="300" step="1" value="6">
+      </label>
+      <label><span><span data-i18n="s5kd">Kd</span> <span class="val" id="s5-kd-val">6</span></span>
+        <input type="range" id="s5-kd" min="0" max="15" step="0.25" value="6">
+      </label>
+    </div>
+    <p class="stage-title" data-i18n="s5presetT">实测预设（坡度 3° + 踢一脚的实测指标）</p>
+    <div class="btn-row preset-row">
+      <button class="btn preset" id="s5-p-steady"><b data-i18n="pSteady">温和</b><small data-i18n="pSteadyM">峰值 3.7° · 约 4.6 s 收敛 · 误差 0.0°</small></button>
+      <button class="btn preset" id="s5-p-balanced"><b data-i18n="pBalanced">均衡</b><small data-i18n="pBalancedM">峰值 5.2° · 约 2.6 s 收敛 · 误差 −0.1°</small></button>
+      <button class="btn preset" id="s5-p-sport"><b data-i18n="pSport">运动</b><small data-i18n="pSportM">峰值 5.9° · 约 0.7 s 收敛 · 误差 −0.3°</small></button>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s5-kick" data-i18n="btnKick">踢一脚</button>
+      <button class="btn" id="s5-stand" data-i18n="btnStand">扶起来</button>
+    </div>
+    <p class="readout" id="s5-readout"></p>
+    <p class="hint" data-i18n="s5note"></p>
+    <div class="formula-box">
+      <p class="formula big">u = Kp·e + Ki·∫e dt + Kd·de/dt</p>
+      <p class="explain small" data-i18n="s5formulaNote"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：真实世界 ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">真实世界，专治调好的参数</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <p class="readout" data-i18n="s6base">当前参数：均衡预设 {30, 6, 6}（平地）</p>
+    <div class="stage">
+      <canvas id="s6-canvas" height="280"></canvas>
+    </div>
+    <div class="stage strip-stage">
+      <canvas id="s6-strip" height="110"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s6delay">① 传感器延迟</span> <span class="val" id="s6-delay-val">0 ms</span></span>
+        <input type="range" id="s6-delay" min="0" max="96" step="1" value="0">
+      </label>
+      <label><span><span data-i18n="s6noise">② 测量噪声</span> <span class="val" id="s6-noise-val">0°</span></span>
+        <input type="range" id="s6-noise" min="0" max="3" step="0.25" value="0">
+      </label>
+      <label><span><span data-i18n="s6sat">③ 电机推力上限</span> <span class="val" id="s6-sat-val">25 m/s²</span></span>
+        <input type="range" id="s6-sat" min="3" max="25" step="0.5" value="25">
+      </label>
+    </div>
+    <p class="hint" data-i18n-html="s6delayNote"></p>
+    <p class="hint" data-i18n-html="s6noiseNote"></p>
+    <p class="hint" data-i18n-html="s6satNote"></p>
+    <div class="btn-row">
+      <button class="btn" id="s6-kick" data-i18n="btnKick">踢一脚</button>
+      <button class="btn" id="s6-stand" data-i18n="btnStand">扶起来</button>
+      <button class="btn primary" id="s6-demo" data-i18n="s6demo">一键演示：随机推力下活 30 秒</button>
+    </div>
+    <p class="readout" id="s6-readout"></p>
+    <p class="hint" data-i18n="s6demoNote"></p>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+    </div>
+    <div class="formula-box">
+      <p class="stage-title" data-i18n="s6assumpT">本页的简化模型（如实标注）</p>
+      <p class="explain small" data-i18n="s6assump"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 反馈与控制 Feedback & Control —— 一步一交互系列</footer>
+
+<script src="app.js?v=38ee983"></script>
+</body>
+</html>

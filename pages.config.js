@@ -73,5 +73,21 @@ window.KNOWLEDGE_PAGES = [
     category: "math",
     status: "live",
     path: "mandelbrot/"
+  },
+  {
+    slug: "control",
+    title: { zh: "反馈与控制 · 双轮车为什么倒不下去", en: "Feedback & Control · Why the Two-Wheeled Bot Never Falls" },
+    desc: {
+      zh: "一辆双轮车天生站不住，让它站住的不是更强的电机，而是一个转得够快的圈。亲手当一回控制器、亲手调坏再调好一套 PID，再让延迟、噪声和饱和逐个来拆台。",
+      en: "A two-wheeled balancing bot is born unable to stand. What keeps it up is not a stronger motor but a loop that spins fast enough. Take the controller's seat yourself, tune a PID badly then well, and let delay, noise and saturation each try to wreck it."
+    },
+    tags: [
+      { zh: "反馈控制", en: "Feedback Control" },
+      { zh: "PID", en: "PID" },
+      { zh: "倒立摆", en: "Inverted Pendulum" }
+    ],
+    category: "signal",
+    status: "live",
+    path: "control/"
   }
 ];
