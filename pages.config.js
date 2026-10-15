@@ -137,5 +137,21 @@ window.KNOWLEDGE_PAGES = [
     category: "probability",
     status: "live",
     path: "montecarlo/"
+  },
+  {
+    slug: "laplace",
+    title: { zh: "拉普拉斯与 ROC · 给频率配一个寿命", en: "Laplace Transform & ROC · Giving Frequencies a Lifespan" },
+    desc: {
+      zh: "傅里叶假设每个音永远在响；拉普拉斯多问一句：它在衰减还是在增长？s 平面上的地形、极点与收敛域——同一页里装下傅里叶的切片和控制的战场。",
+      en: "Fourier assumes every tone rings forever; Laplace also asks whether it is dying or exploding. Terrain, poles and regions of convergence on the s-plane — one map holding both the Fourier slice and the control battlefield."
+    },
+    tags: [
+      { zh: "拉普拉斯变换", en: "Laplace Transform" },
+      { zh: "收敛域", en: "Region of Convergence" },
+      { zh: "极点", en: "Poles" }
+    ],
+    category: "signal",
+    status: "live",
+    path: "laplace/"
   }
 ];

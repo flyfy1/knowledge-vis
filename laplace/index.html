@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>拉普拉斯与 ROC · 给频率配一个寿命</title>
+<link rel="stylesheet" href="style.css?v=7a16fe8">
+<script src="i18n.js?v=7a16fe8"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">拉普拉斯与 ROC</h1>
+    <p class="tagline" data-i18n="tagline">傅里叶变换只听「永远在响的音」：它默认每个频率都会一直唱下去。可真实信号会衰减、会爆炸。拉普拉斯多问了一句：这个音是在变弱，还是在变强？就这一句，变换从一条曲线变成 s 平面上的一整张地形图——极点、收敛域、稳定性，全成了位置问题。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 会死的波</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 s 平面</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 切片</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 同式异域</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 拖极点</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 判读台</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 终章 · 全家福</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子（会死的波） ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+    <h2 data-i18n="s0t">先问一句：它还活着吗？</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="340"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s0sig">σ · 衰减（−）/ 增长（+）</span> <span class="val" id="s0-sig-val">−0.35</span></span>
+        <input type="range" id="s0-sig" min="-2" max="0.5" step="0.01" value="-0.35"></label>
+      <label><span><span data-i18n="s0om">ω · 频率</span> <span class="val" id="s0-om-val">3.0</span></span>
+        <input type="range" id="s0-om" min="0.5" max="8" step="0.1" value="3"></label>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：s 平面地形 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · s 平面</p>
+    <h2 data-i18n="s1t">一张地形图：每个频率都有了寿命坐标</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <p class="formula" data-i18n="s1formula">X(s) = 1 / (s + a)，s = σ + jω，x(t) = e^{−at}·u(t)</p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="430"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1aLab">a（极点在 s = −a，拖动看尖峰搬家）</span> <span class="val" id="s1-a-val">1.00</span></span>
+        <input type="range" id="s1-a" min="-2" max="2" step="0.05" value="1"></label>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="hint" data-i18n-html="s1note"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：切片即傅里叶 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 切片</p>
+    <h2 data-i18n="s2t">傅里叶，是 σ = 0 处的那一刀</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="dual">
+      <div class="half"><div class="stage"><canvas id="s2-plane" height="400"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s2-slice" height="400"></canvas></div></div>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2aLab">a（极点在 s = −a）</span> <span class="val" id="s2-a-val">0.80</span></span>
+        <input type="range" id="s2-a" min="-1.5" max="1.5" step="0.05" value="0.8"></label>
+      <label><span><span data-i18n="s2sLab">σ₀ · 切片位置</span> <span class="val" id="s2-s0-val">0.00</span></span>
+        <input type="range" id="s2-s0" min="-2.5" max="2.5" step="0.05" value="0"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-to0" data-i18n="s2btn0">切到 σ₀ = 0（傅里叶那一刀）</button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：同式异 ROC ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 同式异域</p>
+    <h2 data-i18n="s3t">同一个式子，两个信号</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <p class="formula" data-i18n="s3formula">两个信号的 X(s) 都是 1 / (s + a) —— 式子相同，ROC 不同</p>
+    <div class="btn-row">
+      <button class="btn active" id="s3-A" data-i18n="s3btnA">信号 A · 右边 e^{−at}·u(t)</button>
+      <button class="btn" id="s3-B" data-i18n="s3btnB">信号 B · 左边 −e^{−at}·u(−t)</button>
+    </div>
+    <div class="dual">
+      <div class="half"><div class="stage"><canvas id="s3-plane" height="380"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s3-time" height="380"></canvas></div></div>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3aLab">a（两信号共用，极点同在 s = −a）</span> <span class="val" id="s3-a-val">1.00</span></span>
+        <input type="range" id="s3-a" min="-2" max="2" step="0.05" value="1"></label>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：拖极点 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 拖极点</p>
+    <h2 data-i18n="s4t">系统的性格，写在极点的位置里</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="btn-row" id="s4-presets">
+      <button class="btn active" data-preset="0" data-i18n="s4p1">稳定衰减振荡</button>
+      <button class="btn" data-preset="1" data-i18n="s4p2">临界阻尼</button>
+      <button class="btn" data-preset="2" data-i18n="s4p3">过阻尼</button>
+      <button class="btn" data-preset="3" data-i18n="s4p4">等幅振荡</button>
+      <button class="btn" data-preset="4" data-i18n="s4p5">发散爆炸</button>
+    </div>
+    <div class="dual">
+      <div class="half"><div class="stage"><canvas id="s4-plane" height="400" tabindex="0"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s4-wave" height="400"></canvas></div></div>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s4tLab">包络探针时刻 t</span> <span class="val" id="s4-te-val">1.0</span></span>
+        <input type="range" id="s4-te" min="0" max="6" step="0.1" value="1"></label>
+    </div>
+    <p class="readout" id="s4-readout"></p>
+    <p class="hint" data-i18n-html="s4note"></p>
+    <p class="hint" data-i18n-html="s4dash"></p>
+    <div class="finale">
+      <p><span data-i18n-html="s4linkTxt"></span></p>
+      <p style="margin-top:10px"><a class="fourier-link" href="../control/" data-i18n="s4lkC">反馈与控制 →</a></p>
+    </div>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：判读台 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 判读台</p>
+    <h2 data-i18n="s5t">给一条 ROC，断因果与生死</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="btn-row">
+      <span class="seq-label" data-i18n="s5sysLab">系统 H(s)</span>
+      <button class="btn active" id="s5-sys1" data-i18n="s5sys1">H₁：极点 −1, −2</button>
+      <button class="btn" id="s5-sys2" data-i18n="s5sys2">H₂：极点 +1, −2</button>
+    </div>
+    <div class="btn-row">
+      <span class="seq-label" data-i18n="s5rocLab">选一条 ROC</span>
+      <button class="btn active" data-roc="0" data-i18n="s5rocR">右侧带（最右极点之右）</button>
+      <button class="btn" data-roc="1" data-i18n="s5rocM">中间带（两极点之间）</button>
+      <button class="btn" data-roc="2" data-i18n="s5rocL">左侧带（最左极点之左）</button>
+    </div>
+    <div class="stage"><canvas id="s5-plane" height="280"></canvas></div>
+    <div class="stage"><canvas id="s5-wave" height="250"></canvas></div>
+    <p class="readout" id="s5-readout"></p>
+    <p class="hint" id="s5-why"></p>
+    <div class="btn-row">
+      <button class="btn primary" id="s5-quiz" data-i18n="s5quizBtn">随机出题，考考你</button>
+    </div>
+    <p class="explain" id="s5-quizq" style="display:none"></p>
+    <div class="btn-row" id="s5-answers" style="display:none">
+      <button class="btn" id="s5-qa-y" data-i18n="s5qStable">稳定</button>
+      <button class="btn" id="s5-qa-n" data-i18n="s5qUnstable">不稳定</button>
+    </div>
+    <p class="hint" data-i18n-html="s5hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：终章全家福 ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">全家福：半本《信号与系统》，装在一张平面里</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <div class="stage">
+      <canvas id="s6-canvas" height="430"></canvas>
+    </div>
+    <p class="hint" data-i18n-html="s6zNote"></p>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px"><span class="seq-label" data-i18n="s6linksLab">回链前几页：</span></p>
+      <p style="margin-top:8px">
+        <a class="fourier-link" href="../fourier/" data-i18n="s6lkF">傅里叶变换：圆与波 →</a> ·
+        <a class="fourier-link" href="../control/" data-i18n="s6lkC">反馈与控制：摁极点 →</a> ·
+        <a class="fourier-link" href="../sampling/" data-i18n="s6lkS">采样与混叠：频域复制 →</a>
+      </p>
+      <p style="margin-top:10px">
+        <a class="fourier-link" href="/" data-i18n="back">← 知识索引</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 拉普拉斯变换 Laplace Transform —— 一步一交互系列</footer>
+
+<script src="app.js?v=7a16fe8"></script>
+</body>
+</html>

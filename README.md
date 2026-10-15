@@ -19,6 +19,7 @@ clicks.
 | [Sampling & Aliasing · 采样与混叠](https://visual.integ.life/sampling/) | Why wheels spin backwards on video: peeking at the world too lazily invents signals that were never there. The Nyquist line, real sampled audio, and anti-aliasing. |
 | [Trigonometric Functions · 三角函数](https://visual.integ.life/trig/) | Sine is a height, cosine a position, tangent a slope — three projections of one turning point on the unit circle. The prequel to the Fourier transform. |
 | [Monte Carlo · 蒙特卡洛](https://visual.integ.life/montecarlo/) | Scatter points, count the fraction inside a circle, and π surfaces on its own — plus Buffon's needle, areas with no formula, and why grids die in high dimensions while sampling survives. |
+| [Laplace Transform & ROC · 拉普拉斯与 ROC](https://visual.integ.life/laplace/) | Fourier assumes every tone rings forever; Laplace asks whether it is dying or exploding — terrain, poles and convergence regions on the s-plane. |
 
 ## Run it locally · 本地运行
 
