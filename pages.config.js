@@ -89,5 +89,21 @@ window.KNOWLEDGE_PAGES = [
     category: "signal",
     status: "live",
     path: "control/"
+  },
+  {
+    slug: "sampling",
+    title: { zh: "采样与混叠 · 偷看得太懒，就会看错", en: "Sampling & Aliasing · Peek Too Lazily and You'll See It Wrong" },
+    desc: {
+      zh: "车轮在视频里为什么会倒转？采样就是每隔一会儿偷看世界一眼——看得太懒，眼睛会连出一波根本不存在的假信号。奈奎斯特的那条线、44.1 kHz 的由来，都在这里亲手玩明白。",
+      en: "Why do wheels spin backwards on video? Sampling is peeking at the world every so often — peek too lazily and your eyes will invent a signal that was never there. Play with the Nyquist line and the origin of 44.1 kHz until they click."
+    },
+    tags: [
+      { zh: "采样", en: "Sampling" },
+      { zh: "混叠", en: "Aliasing" },
+      { zh: "奈奎斯特", en: "Nyquist" }
+    ],
+    category: "signal",
+    status: "live",
+    path: "sampling/"
   }
 ];

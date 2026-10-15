@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>采样与混叠 · 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=88e3f71">
+<script src="i18n.js?v=88e3f71"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">采样与混叠</h1>
+    <p class="tagline" data-i18n="tagline">车轮为什么会倒转，CD 为什么偏偏是 44.1kHz？都是同一个原因：世界是连续的，而我们只能隔一段时间偷看一眼。这一页讲清「偷看」这件事——看得够勤能还原，看得太懒，会看出根本不存在的东西。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 钩子</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 采样是偷看</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 假波诞生</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 奈奎斯特线</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 频域看混叠</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 混叠大观</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 先眯眼</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子（轮子倒转） ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 先被骗一次</p>
+    <h2 data-i18n="s0t">这个轮子，到底在往哪边转？</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="360"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s0fps">摄像机帧率 f<sub>s</sub>（fps）</span> <span class="val" id="s0-fps-val">14</span></span>
+        <input type="range" id="s0-fps" min="5" max="28" step="1" value="14">
+      </label>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：采样是偷看 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 采样是什么</p>
+    <h2 data-i18n="s1t">一排点，能记住一条波吗</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="300"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="labF">信号频率 f（Hz）</span> <span class="val" id="s1-f-val">3</span></span>
+        <input type="range" id="s1-f" min="1" max="8" step="0.5" value="3">
+      </label>
+      <label><span><span data-i18n="labFs">采样率 f<sub>s</sub>（Hz）</span> <span class="val" id="s1-fs-val">11</span></span>
+        <input type="range" id="s1-fs" min="2" max="40" step="1" value="11">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn active" id="s1-mode-line" data-i18n="s1line">直线连线</button>
+      <button class="btn" id="s1-mode-hold" data-i18n="s1hold">阶梯保持</button>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：假波诞生 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 混叠诞生</p>
+    <h2 data-i18n="s2t">点没撒谎，是你连错了</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="320"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="labF">信号频率 f（Hz）</span> <span class="val" id="s2-f-val">9</span></span>
+        <input type="range" id="s2-f" min="1" max="20" step="0.5" value="9">
+      </label>
+      <label><span><span data-i18n="labFs">采样率 f<sub>s</sub>（Hz）</span> <span class="val" id="s2-fs-val">10</span></span>
+        <input type="range" id="s2-fs" min="2" max="30" step="0.5" value="10">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-p-slow" data-i18n="s2pSlow">经典慢波：f=9, f_s=10</button>
+      <button class="btn" id="s2-p-dc" data-i18n="s2pDC">全钉同一点：f=f_s=10</button>
+      <button class="btn" id="s2-p-fold" data-i18n="s2pFold">折叠：f=14, f_s=20</button>
+      <button class="btn" id="s2-p-clean" data-i18n="s2pClean">无混叠：f=3, f_s=25</button>
+    </div>
+    <div class="formula-box">
+      <p class="formula big">f<sub>alias</sub> = |f − k·f<sub>s</sub>|</p>
+      <p class="explain small" data-i18n-html="s2formulaNote"></p>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：奈奎斯特线 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 那条线</p>
+    <h2 data-i18n="s3t">奈奎斯特线：两倍，差一线都不行</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="320"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="labF">信号频率 f（Hz）</span> <span class="val" id="s3-f-val">4</span></span>
+        <input type="range" id="s3-f" min="2" max="8" step="0.5" value="4">
+      </label>
+      <label><span><span data-i18n="labFs">采样率 f<sub>s</sub>（Hz）</span> <span class="val" id="s3-fs-val">10</span></span>
+        <input type="range" id="s3-fs" min="2" max="20" step="0.1" value="10">
+      </label>
+      <label><span><span data-i18n="s3phase">采样相位 φ（°）</span> <span class="val" id="s3-phase-val">90</span></span>
+        <input type="range" id="s3-phase" min="0" max="360" step="1" value="90" disabled>
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s3-snap" data-i18n="s3snap">钉在恰好 2f</button>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：频域看混叠 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 换个视角</p>
+    <h2 data-i18n="s4t">频域看混叠：频谱在自我复制</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="300"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="labF">信号频率 f（Hz）</span> <span class="val" id="s4-f-val">13</span></span>
+        <input type="range" id="s4-f" min="2" max="20" step="0.5" value="13">
+      </label>
+      <label><span><span data-i18n="labFs">采样率 f<sub>s</sub>（Hz）</span> <span class="val" id="s4-fs-val">10</span></span>
+        <input type="range" id="s4-fs" min="4" max="30" step="1" value="10">
+      </label>
+    </div>
+    <p class="readout" id="s4-readout"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：混叠大观 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 混叠大观</p>
+    <h2 data-i18n="s5t">生活里到处都是</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="btn-row">
+      <button class="btn active" id="s5-tab-audio" data-i18n="tabAudio">① 音频</button>
+      <button class="btn" id="s5-tab-image" data-i18n="tabImage">② 图像摩尔纹</button>
+      <button class="btn" id="s5-tab-wheel" data-i18n="tabWheel">③ 轮子验算</button>
+    </div>
+
+    <div class="tab-panel" id="s5-panel-audio">
+      <div class="stage">
+        <canvas id="s5a-canvas" height="150"></canvas>
+      </div>
+      <div class="controls">
+        <label><span><span data-i18n="s5aF">源频率 f（Hz）</span> <span class="val" id="s5a-f-val">6000</span></span>
+          <input type="range" id="s5a-f" min="1000" max="12000" step="100" value="6000">
+        </label>
+      </div>
+      <div class="btn-row" id="s5a-fs-row">
+        <span class="seq-label" data-i18n="s5aFs">标称采样率 f_s</span>
+        <button class="btn" data-fs="44100">44.1 kHz</button>
+        <button class="btn" data-fs="16000">16 kHz</button>
+        <button class="btn active" data-fs="8000">8 kHz</button>
+        <button class="btn" data-fs="6000">6 kHz</button>
+        <button class="btn" data-fs="4000">4 kHz</button>
+      </div>
+      <div class="btn-row">
+        <button class="btn primary" id="s5a-play-alias" data-i18n="s5aPlayAlias">▶ 播放采样结果</button>
+        <button class="btn" id="s5a-play-orig" data-i18n="s5aPlayOrig">▶ 播放原始频率</button>
+      </div>
+      <p class="readout" id="s5a-readout"></p>
+      <p class="hint" data-i18n-html="s5aHint"></p>
+    </div>
+
+    <div class="tab-panel hidden" id="s5-panel-image">
+      <div class="dual">
+        <div class="half">
+          <div class="stage">
+            <p class="stage-title" data-i18n="s5iSrc">原图（细条纹）</p>
+            <canvas id="s5i-src" height="240"></canvas>
+          </div>
+        </div>
+        <div class="half">
+          <div class="stage">
+            <p class="stage-title" data-i18n="s5iOut">抽取后（放大显示）</p>
+            <canvas id="s5i-out" height="240"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <label><span><span data-i18n="s5iStride">抽取步长（每隔几个像素取一个）</span> <span class="val" id="s5i-stride-val">5</span></span>
+          <input type="range" id="s5i-stride" min="2" max="12" step="1" value="5">
+        </label>
+      </div>
+      <div class="btn-row">
+        <button class="btn active" id="s5i-p-stripes" data-i18n="patStripes">竖条纹</button>
+        <button class="btn" id="s5i-p-grid" data-i18n="patGrid">格纹</button>
+      </div>
+      <p class="readout" id="s5i-readout"></p>
+      <p class="hint" data-i18n-html="s5iHint"></p>
+    </div>
+
+    <div class="tab-panel hidden" id="s5-panel-wheel">
+      <div class="stage">
+        <canvas id="s5w-canvas" height="280"></canvas>
+      </div>
+      <div class="controls">
+        <label><span><span data-i18n="s5wN">辐条数 N</span> <span class="val" id="s5w-n-val">6</span></span>
+          <input type="range" id="s5w-n" min="3" max="10" step="1" value="6">
+        </label>
+        <label><span><span data-i18n="s5wRev">真实转速（转/秒）</span> <span class="val" id="s5w-rev-val">2.5</span></span>
+          <input type="range" id="s5w-rev" min="0.5" max="5" step="0.25" value="2.5">
+        </label>
+        <label><span><span data-i18n="s5wFps">帧率 f<sub>s</sub>（fps）</span> <span class="val" id="s5w-fps-val">14</span></span>
+          <input type="range" id="s5w-fps" min="5" max="40" step="1" value="14">
+        </label>
+      </div>
+      <p class="readout" id="s5w-readout"></p>
+      <p class="hint" data-i18n-html="s5wHint"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：终章（抗混叠） ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">采样之前，先学会眯眼</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <div class="dual">
+      <div class="half">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s6direct">直接抽取</p>
+          <canvas id="s6-left" height="250"></canvas>
+        </div>
+      </div>
+      <div class="half">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s6blur">先模糊再抽取</p>
+          <canvas id="s6-right" height="250"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s5iStride">抽取步长（每隔几个像素取一个）</span> <span class="val" id="s6-stride-val">6</span></span>
+        <input type="range" id="s6-stride" min="2" max="10" step="1" value="6">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn active" id="s6-p-rings" data-i18n="patScene">风景 + 细条纹</button>
+      <button class="btn" id="s6-p-stripes" data-i18n="patStripes">竖条纹</button>
+    </div>
+    <p class="readout" id="s6-readout"></p>
+    <p class="explain" data-i18n-html="s6audio"></p>
+    <div class="stage">
+      <canvas id="s6-spec" height="190"></canvas>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../fourier/" data-i18n="s6linkF">← 回傅里叶页看频谱为什么会复制</a><br>
+        <a class="fourier-link" href="../convolution/" data-i18n="s6linkC">去卷积页看模糊核在干什么 →</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 采样与混叠 Sampling &amp; Aliasing —— 一步一交互系列</footer>
+
+<script src="app.js?v=88e3f71"></script>
+</body>
+</html>
