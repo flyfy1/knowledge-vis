@@ -233,5 +233,21 @@ window.KNOWLEDGE_PAGES = [
     category: "math",
     status: "live",
     path: "eigen/"
+  },
+  {
+    slug: "entropy",
+    title: { zh: "熵 · 惊讶的平均值", en: "Entropy · The Average of Surprise" },
+    desc: {
+      zh: "越意外的事，信息量越大；熵把一个随机源的整体不确定性压成一个数。它既是压缩的绝对极限，也是机器学习损失函数的老祖宗，还与热力学的熵同源同式。",
+      en: "The more surprising an event, the more information it carries; entropy compresses a source's total uncertainty into a single number. It is the absolute limit of compression, the ancestor of ML loss functions, and kin to the entropy of thermodynamics."
+    },
+    tags: [
+      { zh: "熵", en: "Entropy" },
+      { zh: "信息量", en: "Information" },
+      { zh: "哈夫曼编码", en: "Huffman Coding" }
+    ],
+    category: "probability",
+    status: "live",
+    path: "entropy/"
   }
 ];

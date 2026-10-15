@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>熵 · 惊讶的平均值</title>
+<link rel="stylesheet" href="style.css?v=4612620">
+<script src="i18n.js?v=4612620"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">熵</h1>
+    <p class="tagline" data-i18n="tagline">熵是「平均的惊讶」：越意外的事，发生时带来的信息量越大；熵把一个随机源的整体不确定性压成一个数。它是压缩的绝对极限、机器学习损失函数的老祖宗，还与热力学的熵同源同式。这一页从猜符号游戏开始，让你亲手把这把秤造出来、用它称密码、称模型、称宇宙。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 钩子</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 惊讶标价</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 熵工坊</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 二元熵与二十问</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 哈夫曼编码</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 交叉熵与 KL</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 熵的版图</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子 · 猜下一个符号 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+    <h2 data-i18n="s0t">猜下一个符号</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="dual">
+      <div class="half">
+        <h3 class="sub-t2" data-i18n="machA">甲机 · 极偏（A 占 70%）</h3>
+        <div class="stage">
+          <canvas id="s0a-canvas" height="150"></canvas>
+        </div>
+        <p class="guess-lab" data-i18n="guessLab">猜下一个是：</p>
+        <div class="btn-row" id="s0a-guess">
+          <button class="btn sym-a" data-m="A" data-s="0">A</button>
+          <button class="btn sym-a" data-m="A" data-s="1">B</button>
+          <button class="btn sym-a" data-m="A" data-s="2">C</button>
+          <button class="btn sym-a" data-m="A" data-s="3">D</button>
+          <button class="btn" id="s0a-draw10" data-i18n="draw10">连出 10 个</button>
+        </div>
+        <p class="readout" id="s0a-readout"></p>
+      </div>
+      <div class="half">
+        <h3 class="sub-t2" data-i18n="machB">乙机 · 均匀（各 25%）</h3>
+        <div class="stage">
+          <canvas id="s0b-canvas" height="150"></canvas>
+        </div>
+        <p class="guess-lab" data-i18n="guessLab">猜下一个是：</p>
+        <div class="btn-row" id="s0b-guess">
+          <button class="btn sym-b" data-m="B" data-s="0">A</button>
+          <button class="btn sym-b" data-m="B" data-s="1">B</button>
+          <button class="btn sym-b" data-m="B" data-s="2">C</button>
+          <button class="btn sym-b" data-m="B" data-s="3">D</button>
+          <button class="btn" id="s0b-draw10" data-i18n="draw10">连出 10 个</button>
+        </div>
+        <p class="readout" id="s0b-readout"></p>
+      </div>
+    </div>
+    <p class="readout" id="s0-entropy"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：惊讶的标价 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 惊讶的标价</p>
+    <h2 data-i18n="s1t">I = −log₂ p：意外是有价的</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="formula-box">
+      <p class="formula big">I(x) = −log<sub>2</sub> p(x)</p>
+    </div>
+    <div class="stage">
+      <canvas id="s1-canvas" height="240"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="pLab">事件概率 p（对数刻度）</span> <span class="val" id="s1-p-val"></span></span>
+        <input type="range" id="s1-p" min="0" max="1000" step="1" value="125">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn pre1" data-u="0" data-i18n="pOne">p = 1（必然发生）</button>
+      <button class="btn pre1 active" data-u="0.125" data-i18n="pHalf">p = 1/2</button>
+      <button class="btn pre1" data-u="0.25">p = 1/4</button>
+      <button class="btn pre1" data-u="0.375">p = 1/8</button>
+      <button class="btn pre1" data-u="0.75">p = 1/64</button>
+      <button class="btn pre1" data-u="1">p = 1/256</button>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <h3 class="sub-t" data-i18n="s1sub">为什么必须是对数？</h3>
+    <p class="explain" data-i18n-html="s1e2"></p>
+    <div class="btn-row">
+      <button class="btn primary" id="s1-flip" data-i18n="flipBtn">掷四枚硬币（等一次「全正面」）</button>
+      <button class="btn" id="s1-seed" data-i18n="newSeed">换一颗种子</button>
+    </div>
+    <p class="readout" id="s1-add"></p>
+    <p class="readout" id="s1-flip-readout"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：熵工坊 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 熵</p>
+    <h2 data-i18n="s2t">熵工坊：把惊讶平均一下</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="formula-box">
+      <p class="formula big">H = −Σ p<sub>i</sub> · log<sub>2</sub> p<sub>i</sub></p>
+    </div>
+    <div class="controls" id="s2-sliders">
+      <label><span><span class="sym-lab sl-a">A</span> <span data-i18n="wLab">权重</span> <span class="val" id="s2-w0-val"></span></span>
+        <input type="range" id="s2-w0" min="0" max="100" step="1" value="50">
+      </label>
+      <label><span><span class="sym-lab sl-b">B</span> <span data-i18n="wLab">权重</span> <span class="val" id="s2-w1-val"></span></span>
+        <input type="range" id="s2-w1" min="0" max="100" step="1" value="25">
+      </label>
+      <label><span><span class="sym-lab sl-c">C</span> <span data-i18n="wLab">权重</span> <span class="val" id="s2-w2-val"></span></span>
+        <input type="range" id="s2-w2" min="0" max="100" step="1" value="15">
+      </label>
+      <label><span><span class="sym-lab sl-d">D</span> <span data-i18n="wLab">权重</span> <span class="val" id="s2-w3-val"></span></span>
+        <input type="range" id="s2-w3" min="0" max="100" step="1" value="10">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn pre2" data-w="50,25,15,10" data-i18n="preSkew">预设：偏态 50/25/15/10</button>
+      <button class="btn pre2" data-w="25,25,25,25" data-i18n="preUni">预设：均匀（H 最大）</button>
+      <button class="btn pre2" data-w="97,1,1,1" data-i18n="preOne">预设：几乎单一（H 最小）</button>
+    </div>
+    <div class="stage">
+      <canvas id="s2-canvas" height="380"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-sample1" data-i18n="sample1">采样 1 个</button>
+      <button class="btn" id="s2-sample20" data-i18n="sample20">采样 20 个</button>
+      <button class="btn primary" id="s2-run" data-i18n="sampleRun">连发采样</button>
+      <button class="btn" id="s2-reset" data-i18n="resetSamples">重置采样</button>
+      <button class="btn" id="s2-seed" data-i18n="newSeed">换一颗种子</button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：二元熵曲线与二十问 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 二元熵与二十问</p>
+    <h2 data-i18n="s3t">一枚硬币的驼峰，与问题的下限</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="300"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="pLab3">正面概率 p</span> <span class="val" id="s3-p-val"></span></span>
+        <input type="range" id="s3-p" min="1" max="999" step="1" value="500">
+      </label>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <h3 class="sub-t" data-i18n="s3sub">二十问：猜 1–8 里的一个数</h3>
+    <p class="explain" data-i18n-html="s3e2"></p>
+    <div class="stage">
+      <canvas id="s3q-canvas" height="300"></canvas>
+    </div>
+    <div class="btn-row" id="s3-nums">
+      <span class="seq-label" data-i18n="qTarget">心里数：</span>
+      <button class="btn num3" data-n="1">1</button>
+      <button class="btn num3" data-n="2">2</button>
+      <button class="btn num3" data-n="3">3</button>
+      <button class="btn num3 active" data-n="4">4</button>
+      <button class="btn num3" data-n="5">5</button>
+      <button class="btn num3" data-n="6">6</button>
+      <button class="btn num3" data-n="7">7</button>
+      <button class="btn num3" data-n="8">8</button>
+      <button class="btn" id="s3-rand" data-i18n="qRand">随机选一个</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s3-bin" data-i18n="qBinBtn">用二分法问</button>
+      <button class="btn" id="s3-seq" data-i18n="qSeqBtn">用逐个问</button>
+    </div>
+    <p class="readout" id="s3-qlog"></p>
+    <p class="readout" id="s3-dreadout"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：哈夫曼编码 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 哈夫曼编码</p>
+    <h2 data-i18n="s4t">哈夫曼：亲手摸到极限</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <p class="hint" data-i18n-html="s4src" style="margin:0 0 10px"></p>
+    <div class="btn-row">
+      <button class="btn pre4" data-w="50,25,12.5,12.5" data-i18n="preDyadic">预设：1/2, 1/4, 1/8, 1/8（L 恰好 = H）</button>
+      <button class="btn pre4" data-w="25,25,25,25" data-i18n="preUni">预设：均匀</button>
+      <button class="btn pre4" data-w="50,25,15,10" data-i18n="preSkew">预设：偏态 50/25/15/10</button>
+    </div>
+    <div class="stage">
+      <canvas id="s4-canvas" height="400"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s4-prev" data-i18n="hPrev">← 上一步</button>
+      <button class="btn primary" id="s4-next" data-i18n="hNext">下一步 →</button>
+      <button class="btn" id="s4-play" data-i18n="hPlay">自动播放</button>
+    </div>
+    <p class="readout" id="s4-readout"></p>
+    <p class="readout" id="s4-codes"></p>
+    <div class="btn-row">
+      <span class="seq-label" data-i18n="msgLab">给这条消息编码：</span>
+      <button class="btn msg4 active" data-msg="ABACADAB">ABACADAB</button>
+      <button class="btn msg4" data-msg="DACABADACABA">DACABADACABA</button>
+      <button class="btn primary" id="s4-encode" data-i18n="encodeBtn">编码</button>
+    </div>
+    <p class="readout" id="s4-mreadout"></p>
+    <p class="hint" data-i18n-html="s4tie"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：交叉熵与 KL ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 交叉熵与 KL 散度</p>
+    <h2 data-i18n="s5t">模型错得有多贵</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="dual">
+      <div class="half">
+        <h3 class="sub-t2" data-i18n="pLab5">真实分布 p</h3>
+        <div class="controls col" id="s5-psliders">
+          <label><span><span class="sym-lab sl-a">A</span> <span class="val" id="s5-pw0-val"></span></span>
+            <input type="range" id="s5-pw0" min="0" max="100" step="1" value="50"></label>
+          <label><span><span class="sym-lab sl-b">B</span> <span class="val" id="s5-pw1-val"></span></span>
+            <input type="range" id="s5-pw1" min="0" max="100" step="1" value="25"></label>
+          <label><span><span class="sym-lab sl-c">C</span> <span class="val" id="s5-pw2-val"></span></span>
+            <input type="range" id="s5-pw2" min="0" max="100" step="1" value="15"></label>
+          <label><span><span class="sym-lab sl-d">D</span> <span class="val" id="s5-pw3-val"></span></span>
+            <input type="range" id="s5-pw3" min="0" max="100" step="1" value="10"></label>
+        </div>
+        <div class="btn-row">
+          <button class="btn pre5p" data-w="50,25,12.5,12.5" data-i18n="preDyadic2">1/2, 1/4, 1/8, 1/8</button>
+          <button class="btn pre5p" data-w="25,25,25,25" data-i18n="preUni">预设：均匀</button>
+          <button class="btn pre5p" data-w="70,10,10,10" data-i18n="preSharp">极偏 70/10/10/10</button>
+        </div>
+      </div>
+      <div class="half">
+        <h3 class="sub-t2" data-i18n="qLab5">你的模型 q</h3>
+        <div class="controls col" id="s5-qsliders">
+          <label><span><span class="sym-lab sl-a">A</span> <span class="val" id="s5-qw0-val"></span></span>
+            <input type="range" id="s5-qw0" min="0" max="100" step="1" value="25"></label>
+          <label><span><span class="sym-lab sl-b">B</span> <span class="val" id="s5-qw1-val"></span></span>
+            <input type="range" id="s5-qw1" min="0" max="100" step="1" value="25"></label>
+          <label><span><span class="sym-lab sl-c">C</span> <span class="val" id="s5-qw2-val"></span></span>
+            <input type="range" id="s5-qw2" min="0" max="100" step="1" value="25"></label>
+          <label><span><span class="sym-lab sl-d">D</span> <span class="val" id="s5-qw3-val"></span></span>
+            <input type="range" id="s5-qw3" min="0" max="100" step="1" value="25"></label>
+        </div>
+        <div class="btn-row">
+          <button class="btn" id="s5-qcopy" data-i18n="qCopyBtn">让 q = p（模型完美）</button>
+          <button class="btn" id="s5-swap" data-i18n="swapBtn">交换 p ↔ q</button>
+        </div>
+        <label class="check-lab"><input type="checkbox" id="s5-smooth"> <span data-i18n="smoothLab">平滑 q：q′ = 0.99·q + 0.01·均匀（ε = 0.01）</span></label>
+      </div>
+    </div>
+    <div class="stage">
+      <canvas id="s5-canvas" height="300"></canvas>
+    </div>
+    <p class="readout" id="s5-readout"></p>
+    <div class="warn-box" id="s5-inf" style="display:none" data-i18n-html="s5inf"></div>
+    <p class="hint" data-i18n-html="s5foot"></p>
+    <p class="hint" data-i18n-html="s5link"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：熵的版图 ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">熵的版图：同一把秤</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <div class="app-grid three">
+      <div class="app-card">
+        <h3 data-i18n="pwT">① 密码强度计</h3>
+        <p data-i18n="pwD"></p>
+        <div class="controls col" style="margin-top:12px">
+          <label><span><span data-i18n="lenLab">密码长度</span> <span class="val" id="s6-len-val"></span></span>
+            <input type="range" id="s6-len" min="4" max="64" step="1" value="12">
+          </label>
+        </div>
+        <div class="btn-row">
+          <button class="btn cs6" data-size="10" data-i18n="cs10">纯数字（10）</button>
+          <button class="btn cs6" data-size="26" data-i18n="cs26">小写字母（26）</button>
+          <button class="btn cs6 active" data-size="62" data-i18n="cs62">大小写+数字（62）</button>
+          <button class="btn cs6" data-size="94" data-i18n="cs94">全部可打印（94）</button>
+        </div>
+        <div class="stage slim">
+          <canvas id="s6-canvas" height="120"></canvas>
+        </div>
+        <p class="readout" id="s6-readout"></p>
+        <p class="hint" data-i18n-html="rateNote"></p>
+      </div>
+      <div class="app-card">
+        <h3 data-i18n="physT">② 物理熵：一句真话</h3>
+        <p data-i18n-html="physD"></p>
+      </div>
+      <div class="app-card">
+        <h3 data-i18n="compT">③ 压缩的现实</h3>
+        <p data-i18n-html="compD"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="/" data-i18n="s6linkIdx">← 回知识索引</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 熵 Entropy —— 一步一交互系列</footer>
+
+<script src="app.js?v=4612620"></script>
+</body>
+</html>
