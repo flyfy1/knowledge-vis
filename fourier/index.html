@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>傅里叶变换 · 一步一交互</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <p style="margin:0 0 10px;font-size:13px;"><a href="/" style="color:#7dd3fc;text-decoration:none;">← 知识索引</a></p>
+  <h1>傅里叶变换</h1>
+  <p class="tagline">任何波形、任何图形，都能拆成一堆旋转的圆——这页带你从一条正弦波开始，一步步亲手把它拼出来。</p>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0">0 钩子</a>
+  <a href="#step1" class="nav-step" data-nav="1">1 波是什么</a>
+  <a href="#step2" class="nav-step" data-nav="2">2 波叠加</a>
+  <a href="#step3" class="nav-step" data-nav="3">3 旋转的圆</a>
+  <a href="#step4" class="nav-step" data-nav="4">4 圆圈套圆圈</a>
+  <a href="#step5" class="nav-step" data-nav="5">5 频谱视角</a>
+  <a href="#step6" class="nav-step" data-nav="6">6 画你想画的</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker">第 0 步 · 先看结论</p>
+    <h2>一串旋转的圆，画出一个小人</h2>
+    <p class="explain">
+      先别管原理，看画面上方和左方那两串转动的圆：上面一串管<strong>横坐标</strong>，左边一串管<strong>纵坐标</strong>，
+      两条投影虚线的交点，就是正在描出小人轮廓的笔尖。
+      这就是傅里叶变换最震撼的一面——<strong>任何图形，都能拆成一堆旋转的圆</strong>。
+      本页会从一条正弦波开始，一步步讲清它为什么成立；
+      最后一步，你还能<strong>亲手画一个图形</strong>，让圆圈们把它画出来。
+    </p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="360"></canvas>
+    </div>
+    <div class="controls">
+      <label>谐波项数 N <span class="val" id="s0-n-val">15</span>
+        <input type="range" id="s0-n" min="1" max="60" step="1" value="15">
+      </label>
+    </div>
+    <p class="readout">N = <span id="s0-n-readout">15</span> · 重构误差 error = <span id="s0-error">—</span></p>
+    <p class="hint">先别动手，看 N 自己从 1 慢慢涨到 40：圆越多，误差越小、小人越像；想自己控制就拖滑杆（自动播放会停）。数学上这一幕写出来就是：f(t) = Σ (a<sub>k</sub> cos kt + b<sub>k</sub> sin kt)——横、竖坐标各有一套这样的和，每一项对应一个圆。</p>
+    <button class="btn primary" id="s0-start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：波是什么 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker">第 1 步 · 波是什么</p>
+    <h2>一条正弦波，只有三个旋钮</h2>
+    <p class="explain">
+      最简单的波是正弦波。它完全由三个参数决定：
+      <strong>频率</strong>决定它抖得多快，<strong>振幅</strong>决定它摆多高，<strong>相位</strong>决定它从哪里开始。
+      拖动滑杆试试——顺便点「听一听」，频率变高，声音真的会变尖。
+    </p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="260"></canvas>
+    </div>
+    <p class="formula" id="s1-eq">y = 1.00 · sin(2π · 1.0 · t + 0.00)</p>
+    <div class="controls">
+      <label>频率 <span class="val" id="s1-freq-val">1.0 Hz</span>
+        <input type="range" id="s1-freq" min="0.5" max="3" step="0.1" value="1">
+      </label>
+      <label>振幅 <span class="val" id="s1-amp-val">1.00</span>
+        <input type="range" id="s1-amp" min="0.1" max="1" step="0.05" value="1">
+      </label>
+      <label>相位 <span class="val" id="s1-phase-val">0.00 rad</span>
+        <input type="range" id="s1-phase" min="0" max="6.283" step="0.05" value="0">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s1-sound">🔊 听一听这个波</button>
+      <button class="btn" id="s1-freeze">❄ 冻结波形</button>
+    </div>
+    <p class="hint">小知识：声音就是空气的波。频率 1 Hz 在这里是为了看清波形；真实音调要快几百倍，所以播放时会把频率放大到可听范围。想看清「相位」是什么：先点「冻结波形」让波停下，再拖相位滑杆——整条波会整体左右平移，t = 0 参考线处的橙点高度正好等于 sin（相位）。</p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：波叠加 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker">第 2 步 · 波可以叠加</p>
+    <h2>复杂波形 = 简单波形相加</h2>
+    <p class="explain">
+      把几条正弦波在每个时刻的高度直接相加，就得到一条新波形。
+      下面三条彩色波各自可调，最下方白色粗线是它们的和。
+      大图里分量与总和用的是<strong>同一把尺子</strong>：任选一个位置量一量，总和的高度恰好等于三条分量高度之和（为了让总和不画出画布，整张图会一起等比缩放，但比例从不撒谎）。
+      试试点「方波配方」：只用 1、3、5 倍频率、振幅按 1、1/3、1/5 递减，方波的雏形就出现了。
+    </p>
+    <div class="comp-rows">
+      <div class="comp-row">
+        <canvas id="s2-mini1" class="mini" height="70"></canvas>
+        <div class="comp-ctl">
+          <label>频率 <span class="val" id="s2-f1-val">1</span>
+            <input type="range" id="s2-f1" min="1" max="8" step="1" value="1"></label>
+          <label>振幅 <span class="val" id="s2-a1-val">1.00</span>
+            <input type="range" id="s2-a1" min="0" max="1" step="0.05" value="1"></label>
+        </div>
+      </div>
+      <div class="comp-row">
+        <canvas id="s2-mini2" class="mini" height="70"></canvas>
+        <div class="comp-ctl">
+          <label>频率 <span class="val" id="s2-f2-val">2</span>
+            <input type="range" id="s2-f2" min="1" max="8" step="1" value="2"></label>
+          <label>振幅 <span class="val" id="s2-a2-val">0.50</span>
+            <input type="range" id="s2-a2" min="0" max="1" step="0.05" value="0.5"></label>
+        </div>
+      </div>
+      <div class="comp-row">
+        <canvas id="s2-mini3" class="mini" height="70"></canvas>
+        <div class="comp-ctl">
+          <label>频率 <span class="val" id="s2-f3-val">3</span>
+            <input type="range" id="s2-f3" min="1" max="8" step="1" value="3"></label>
+          <label>振幅 <span class="val" id="s2-a3-val">0.33</span>
+            <input type="range" id="s2-a3" min="0" max="1" step="0.05" value="0.33"></label>
+        </div>
+      </div>
+    </div>
+    <div class="stage">
+      <canvas id="s2-canvas" height="240"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-preset-square">方波配方（1 + 3 + 5）</button>
+      <button class="btn" id="s2-preset-random">随机一组</button>
+    </div>
+    <p class="hint">反过来想：如果任何复杂波形都能这样「加」出来，那它是不是也能被「拆」回这几条正弦波？这正是傅里叶变换在做的事。</p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：旋转的圆 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker">第 3 步 · 关键一跳</p>
+    <h2>正弦波，是圆在墙上的影子</h2>
+    <p class="explain">
+      一个点绕着圆匀速旋转。盯着它在<strong>竖直方向</strong>上的高度看（虚线是它的投影）：
+      把每个时刻的高度连起来，正好就是一条正弦波。
+      <strong>圆转一圈 = 波的一个周期；转速 = 频率；半径 = 振幅；起始角度 = 相位。</strong>
+      第 1 步的三个旋钮，在这里全变成了圆的属性。记住这个画面，后面全靠它。
+    </p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="300"></canvas>
+    </div>
+    <p class="readout">角度 θ = <span id="s3-theta">0.00</span> rad，投影高度 y = R·sin θ = <span id="s3-y">0.00</span></p>
+    <div class="controls">
+      <label>转速 <span class="val" id="s3-speed-val">1.0×</span>
+        <input type="range" id="s3-speed" min="0.2" max="2.5" step="0.1" value="1">
+      </label>
+      <label>半径（振幅） <span class="val" id="s3-r-val">1.00</span>
+        <input type="range" id="s3-r" min="0.4" max="1" step="0.05" value="1">
+      </label>
+    </div>
+    <button class="btn" id="s3-toggle">⏸ 暂停</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：圆圈套圆圈 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker">第 4 步 · 圆圈套圆圈</p>
+    <h2>一串圆，接力画出方波</h2>
+    <p class="explain">
+      把第 3 步的圆首尾相连：第二个圆骑在第一个圆的笔尖上，以 3 倍速旋转；第三个 5 倍速……
+      每个圆贡献一条正弦波（回扣第 2 步），最后一个笔尖的高度轨迹，就是所有波的和。
+      拖动滑杆增加圆的个数，看方波如何成形。
+    </p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="320"></canvas>
+    </div>
+    <div class="controls">
+      <label>圆的个数 N <span class="val" id="s4-n-val">3</span>
+        <input type="range" id="s4-n" min="1" max="25" step="1" value="3">
+      </label>
+    </div>
+    <p class="readout">当前过冲：<span id="s4-overshoot">—</span></p>
+    <p class="hint">
+      注意方波拐角处那个小小的「尖」：无论加多少个圆，它都不会消失，只会变得更窄。
+      这叫<strong>吉布斯现象</strong>：过冲约为跳变高度的 <strong>9%</strong>（从 −1 跳到 +1，跳变是 2，尖会冲到约 1.18）。
+      这是数学写死的常数，不是画得不够精细。
+    </p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：频谱视角 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker">第 5 步 · 傅里叶变换本体</p>
+    <h2>换个视角：从波形到频谱</h2>
+    <p class="explain">
+      前四步我们都在「拼」。傅里叶变换做的是反向的「拆」：给它任意波形，
+      它告诉你里面每个频率的正弦波各有多强。左边是波形（<strong>时域</strong>），右边是拆解结果（<strong>频域</strong>，叫频谱）。
+      切换波形看一看：方波只含奇数频率，三角波的频谱衰减快得多，锯齿波则每个频率都有份。
+    </p>
+    <div class="btn-row" role="group" aria-label="选择波形">
+      <button class="btn wave-btn active" id="s5-wave-square">方波</button>
+      <button class="btn wave-btn" id="s5-wave-triangle">三角波</button>
+      <button class="btn wave-btn" id="s5-wave-saw">锯齿波</button>
+      <button class="btn wave-btn" id="s5-wave-ecg">模拟心电图</button>
+    </div>
+    <div class="dual">
+      <div class="stage half">
+        <p class="stage-title">时域：波形 x(t)</p>
+        <canvas id="s5-time" height="220"></canvas>
+      </div>
+      <div class="stage half">
+        <p class="stage-title">频域：频谱（每个频率多强）</p>
+        <canvas id="s5-spec" height="220"></canvas>
+      </div>
+    </div>
+    <p class="hint">注：右边柱高按当前波形<strong>自身最强的成分归一化</strong>（最强的那根顶格），看的是成分之间的比例；切换波形时纵轴尺度会跟着变，想比绝对强弱请看下方读数里的幅值。另外「模拟心电图」是教学合成的近似波形，不是真实心电数据；它这种脉冲型波形的能量摊在很多频率上、没有单一主导成分，所以下方读数里每个幅值都偏小、最强的也不在基频处——这正是脉冲型波形的特征，不是算错了。</p>
+    <p class="readout" id="s5-top">最强的三个成分：—</p>
+    <div class="formula-box">
+      <p class="formula big">X(f) = ∫ x(t) · e<sup>−2πift</sup> dt</p>
+      <p class="explain small">
+        别怕，这个公式只是在说一句话：<strong>拿一台转速为 f 的「圆」去和波形逐点相乘再加总</strong>，
+        测出波形里频率 f 的成分有多强、相位差多少。其中的 e<sup>−2πift</sup> 不是别的——
+        它就是第 3 步那个在单位圆上旋转的点（数学家把「旋转」写成了指数的形式）。
+        对每个 f 都测一遍，就得到整条频谱。
+        再补一句桥：本页演示的都是<strong>周期波形</strong>，周期信号只在基频的整数倍上才有成分，
+        所以频谱是一根根分立的柱子——这正是上面公式在周期信号上的样子（数学上叫傅里叶级数）；
+        换成非周期的信号，柱子会密到连成一条连续的曲线。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：终章 ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker">第 6 步 · 终章</p>
+    <h2>现在，画你想画的</h2>
+    <p class="explain">
+      在下面画布里用鼠标或手指<strong>画一条闭合曲线</strong>（比如一颗心、一个星星、你的名字首字母），
+      或者点一个预设图形。页面会把轮廓点的<strong>横坐标和纵坐标分开</strong>，各做一次真正的离散傅里叶变换（DFT）：
+      上方一串圆负责横坐标，左方一串圆负责纵坐标，两条投影虚线的交点就是笔尖。
+      拖动 N 看误差读数不断下降——<strong>傅里叶变换，就是把一条曲线拆成横竖两个方向上的旋转之和。</strong>
+    </p>
+    <div class="stage">
+      <canvas id="s6-canvas" height="420"></canvas>
+    </div>
+    <div class="controls">
+      <label>谐波项数 N <span class="val" id="s6-n-val">25</span>
+        <input type="range" id="s6-n" min="1" max="60" step="1" value="25">
+      </label>
+    </div>
+    <p class="readout">N = <span id="s6-n-readout">25</span> · 重构误差 error = <span id="s6-error">—</span></p>
+    <p class="hint">error 口径：重构点与原轮廓点之间的均方根误差 ÷ 图形尺寸 × 100%。N 越大误差越小，但高频圆的半径衰减很快，所以后面加的圆收益越来越小。</p>
+    <div class="btn-row">
+      <button class="btn" id="s6-clear">清除重画</button>
+      <button class="btn" id="s6-heart">预设：爱心</button>
+      <button class="btn" id="s6-star">预设：星星</button>
+      <button class="btn" id="s6-person">预设：卡通小人</button>
+    </div>
+    <p class="hint" id="s6-status">当前是预设图形「爱心」。动手画一个试试！</p>
+    <div class="finale">
+      <p>
+        你手机里的音频均衡器、JPEG 图片压缩、耳机降噪、医院里的核磁共振成像——
+        背后都是同一个思想：<strong>把复杂信号拆成简单的波，处理完再拼回去</strong>。
+        从一条正弦波，到一串能画出任何图形的圆，这就是傅里叶变换。
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <p>傅里叶变换交互讲解 · 一步一交互，从正弦波到任意图形。</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
