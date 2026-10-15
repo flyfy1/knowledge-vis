@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三角函数 · 单位圆 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=trig1">
+<script src="i18n.js?v=trig1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">三角函数 · 单位圆</h1>
+    <p class="tagline" data-i18n="tagline">sin、cos 背了三年，其实只是一个点绕着圆走时，它的身高和站位。点走一圈，身高画出正弦波、站位画出余弦波、斜率给出正切——三个函数，是同一个圆的三个投影。这一页是傅里叶的「前传」：那里满天飞的旋转圆，单个拿出来，就是这一页。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 造波机</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 点的坐标</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 sin 是身高</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 cos 是站位</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 tan 是斜率</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 旋转⇄往复</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 终章总览</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子（造波机） ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+    <h2 data-i18n="s0t">一台只会转圈的造波机</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="320"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s0speed">转速 ω（rad/s）</span> <span class="val" id="s0-speed-val">1.2</span></span>
+        <input type="range" id="s0-speed" min="0.2" max="3" step="0.1" value="1.2">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s0-toggle" data-i18n="pause">⏸ 暂停</button>
+      <button class="btn" id="s0-step" data-i18n="stepOnce">单步 ▸</button>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：点的坐标 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 点的坐标</p>
+    <h2 data-i18n="s1t">cos 是站位，sin 是身高</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" class="dragc" height="380" tabindex="0"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn active" id="s1-unit-deg" data-i18n="s1deg">角度 °</button>
+      <button class="btn" id="s1-unit-rad" data-i18n="s1rad">弧度 rad</button>
+      <span class="row-label" data-i18n="s1snap">特殊角一键到位：</span>
+      <button class="btn" data-snap="30">30°</button>
+      <button class="btn" data-snap="45">45°</button>
+      <button class="btn" data-snap="60">60°</button>
+      <button class="btn" data-snap="90">90°</button>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="readout" id="s1-quad"></p>
+    <p class="readout" id="s1-pyth"></p>
+    <div class="value-card" id="s1-card">
+      <p class="card-title" data-i18n="s1exactT">特殊角精确值</p>
+      <p class="card-body" id="s1-card-body" data-i18n="s1exactNone">把点拖到 30°、45°、60°、90° 这些特殊角上（靠近时会被轻轻吸住），或者点上面的按钮——这里会给出不用计算器的精确值。</p>
+    </div>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：sin 是身高 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · sin 登场</p>
+    <h2 data-i18n="s2t">把身高摊开，就是正弦波</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="320"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2amp">振幅 = 半径 R</span> <span class="val" id="s2-r-val">1.0</span></span>
+        <input type="range" id="s2-r" min="0.5" max="2" step="0.05" value="1">
+      </label>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s2mark">在关键角度暂停打点：</span>
+      <button class="btn" data-mark="0">0°</button>
+      <button class="btn" data-mark="90">90°</button>
+      <button class="btn" data-mark="180">180°</button>
+      <button class="btn" data-mark="270">270°</button>
+      <button class="btn" data-mark="360">360°</button>
+      <button class="btn" id="s2-toggle" data-i18n="s2pause">⏸ 暂停</button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="readout" id="s2-marks"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：cos 是站位 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · cos 登场</p>
+    <h2 data-i18n="s3t">换个方向看：站位也能成波</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="320"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn active" id="s3-m-sin" data-i18n="s3watchSin">看身高 sin</button>
+      <button class="btn" id="s3-m-cos" data-i18n="s3watchCos">看站位 cos</button>
+      <button class="btn" id="s3-m-both" data-i18n="s3watchBoth">两条叠加</button>
+      <button class="btn" id="s3-toggle" data-i18n="pause">⏸ 暂停</button>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：tan 是斜率 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · tan 登场</p>
+    <h2 data-i18n="s4t">tan 是斜率，站上 x = 1 的墙</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="stage">
+      <canvas id="s4-canvas" class="dragc" height="400" tabindex="0"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s4th">角度 θ（°）</span> <span class="val" id="s4-th-val">35.0</span></span>
+        <input type="range" id="s4-th" min="0" max="180" step="0.1" value="35">
+      </label>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s4near">逼近 90°：</span>
+      <button class="btn" data-tandeg="80">80°</button>
+      <button class="btn" data-tandeg="89">89°</button>
+      <button class="btn" data-tandeg="89.9">89.9°</button>
+      <button class="btn" data-tandeg="90">90°</button>
+    </div>
+    <p class="readout" id="s4-readout"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：旋转 ⇄ 往复 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 旋转 ⇄ 往复</p>
+    <h2 data-i18n="s5t">世界在转圈与波之间翻译</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="controls">
+      <label><span><span data-i18n="s5speed">转速（圈/秒）</span> <span class="val" id="s5-speed-val">0.80</span></span>
+        <input type="range" id="s5-speed" min="0.2" max="2.5" step="0.05" value="0.8">
+      </label>
+    </div>
+    <div class="triple">
+      <div class="third">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s5wheelT">① 摩天轮：座舱高度</p>
+          <canvas id="s5-wheel" height="250"></canvas>
+        </div>
+        <p class="readout" id="s5-wheel-ro"></p>
+      </div>
+      <div class="third">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s5pistonT">② 曲柄活塞：往复行程</p>
+          <canvas id="s5-piston" height="250"></canvas>
+        </div>
+        <p class="readout" id="s5-piston-ro"></p>
+      </div>
+      <div class="third">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s5soundT">③ 转速变声音</p>
+          <canvas id="s5-sound" height="250"></canvas>
+        </div>
+        <div class="btn-row">
+          <button class="btn" id="s5-play" data-i18n="s5play">▶ 听一听</button>
+        </div>
+        <p class="readout" id="s5-sound-ro"></p>
+      </div>
+    </div>
+    <p class="explain" data-i18n-html="s5pistonE"></p>
+    <p class="hint" data-i18n-html="s5soundHint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：终章总览台 ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">总览台：一个圆，三个投影</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <div class="stage">
+      <canvas id="s6-canvas" class="dragc" height="420" tabindex="0"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s6-toggle" data-i18n="s6play">▶ 转起来</button>
+      <button class="btn" id="s6-chain" data-i18n="s6chain">挂上第二个圆</button>
+      <button class="btn" id="s6-clear" data-i18n="s6clear">清空轨迹</button>
+    </div>
+    <p class="readout" id="s6-readout"></p>
+    <p class="hint" data-i18n="s6autoNote">三条波轨迹由点的真实投影逐段描出（tan 在 90°/270° 处断开——它在那里冲向 ±∞）。</p>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../fourier/" data-i18n="s6linkF">去傅里叶页：把圆串成链，画出任何图形 →</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 三角函数 · 单位圆 Trig Functions &amp; the Unit Circle —— 一步一交互系列</footer>
+
+<script src="app.js?v=trig1"></script>
+</body>
+</html>

@@ -17,6 +17,7 @@ clicks.
 | [Mandelbrot Set · 分形](https://visual.integ.life/mandelbrot/) | One line of arithmetic, z → z² + c, grows endless complexity. Zoom a hundred billion times, then meet the Julia set hiding behind every point. |
 | [Feedback & Control · 反馈与控制](https://visual.integ.life/control/) | Why a two-wheeled balancing bot never falls: be the controller yourself, tune a PID badly then well, then let delay, noise and saturation wreck it. |
 | [Sampling & Aliasing · 采样与混叠](https://visual.integ.life/sampling/) | Why wheels spin backwards on video: peeking at the world too lazily invents signals that were never there. The Nyquist line, real sampled audio, and anti-aliasing. |
+| [Trigonometric Functions · 三角函数](https://visual.integ.life/trig/) | Sine is a height, cosine a position, tangent a slope — three projections of one turning point on the unit circle. The prequel to the Fourier transform. |
 
 ## Run it locally · 本地运行
 

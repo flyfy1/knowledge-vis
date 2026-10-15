@@ -105,5 +105,21 @@ window.KNOWLEDGE_PAGES = [
     category: "signal",
     status: "live",
     path: "sampling/"
+  },
+  {
+    slug: "trig",
+    title: { zh: "三角函数 · 单位圆", en: "Trigonometric Functions · The Unit Circle" },
+    desc: {
+      zh: "sin 是身高、cos 是站位、tan 是斜率——三个函数是同一个圆的三个投影。拖着点绕一圈，看正弦波从圆的侧影里长出来；这一页是傅里叶变换的前传。",
+      en: "Sine is a height, cosine a position, tangent a slope — three functions that are three projections of one circle. Drag the point around and watch the sine wave grow out of the circle's silhouette; this page is the prequel to the Fourier transform."
+    },
+    tags: [
+      { zh: "单位圆", en: "Unit Circle" },
+      { zh: "正弦与余弦", en: "Sine & Cosine" },
+      { zh: "弧度", en: "Radians" }
+    ],
+    category: "math",
+    status: "live",
+    path: "trig/"
   }
 ];
