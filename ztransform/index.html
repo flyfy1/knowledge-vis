@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Z 变换 · 把 s 平面卷成单位圆</title>
+<link rel="stylesheet" href="style.css?v=d307f56">
+<script src="i18n.js?v=d307f56"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">Z 变换 · 单位圆</h1>
+    <p class="tagline" data-i18n="tagline">拉普拉斯页的终章里，有一颗点沿着虚轴滑动，它的像始终落在一个圆上——那不是彩蛋，那是离散世界的整张地图。离散信号没有连续时间，它的变换不住在平面上，住在一个圆里：把 s 平面按 z = e^{sT} 卷起来，左半平面卷进单位圆内，虚轴卷成圆周，收敛域变成圆环，稳定性变成一句话。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 卷平面</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 点即序列</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 求和现场</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 圆环 ROC</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 极点与圆</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 对表拉普拉斯</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 终章 · 共振器</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子（把平面卷起来） ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+    <h2 data-i18n="s0t">把平面卷起来</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="430"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s0tLab">T · 采样周期（本页各步的 T 都明示）</span> <span class="val" id="s0-T-val">0.50</span></span>
+        <input type="range" id="s0-T" min="0.25" max="1" step="0.05" value="0.5"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s0-play" data-i18n="s0pause">暂停</button>
+      <label class="chk"><input type="checkbox" id="s0-trails" checked> <span data-i18n="s0trails">显示飞行轨迹</span></label>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：一个点就是一段序列 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 点即序列</p>
+    <h2 data-i18n="s1t">一个点，就是一段序列</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <p class="formula" data-i18n="s1formula">z = r·e^{jΩ} → x[n] = rⁿ·cos(Ωn)</p>
+    <div class="dual">
+      <div class="half"><div class="stage"><canvas id="s1-plane" class="drag" height="400" tabindex="0"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s1-seq" height="400"></canvas></div></div>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1rLab">r = |z| · 管涨缩</span> <span class="val" id="s1-r-val">0.85</span></span>
+        <input type="range" id="s1-r" min="0" max="1.6" step="0.01" value="0.85"></label>
+      <label><span><span data-i18n="s1oLab">Ω · 数字频率（0 到 2π 一整圈）</span> <span class="val" id="s1-om-val">1.00</span></span>
+        <input type="range" id="s1-om" min="0" max="6.2832" step="0.005" value="1"></label>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：求和现场 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 求和现场</p>
+    <h2 data-i18n="s2t">X(z) 不是公式，是一串加法收不收得住</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <p class="formula" data-i18n="s2formula">X(z) = Σₙ aⁿz⁻ⁿ = 1 / (1 − a·z⁻¹)，部分和 S_N = Σ_{n=0}^{N} (a/z)ⁿ</p>
+    <div class="dual">
+      <div class="half"><div class="stage"><canvas id="s2-plane" class="drag" height="400" tabindex="0"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s2-sums" height="400"></canvas></div></div>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2aLab">a · 序列 aⁿu[n] 的底</span> <span class="val" id="s2-a-val">0.70</span></span>
+        <input type="range" id="s2-a" min="-0.95" max="0.95" step="0.05" value="0.7"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-add1" data-i18n="s2add1">加一项（N+1）</button>
+      <button class="btn" id="s2-add20" data-i18n="s2add20">连加 20 项</button>
+      <button class="btn" id="s2-run" data-i18n="s2run">跑到 N = 300</button>
+      <button class="btn" id="s2-reset" data-i18n="s2reset">重置 N = 0</button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：圆环 ROC ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 圆环 ROC</p>
+    <h2 data-i18n="s3t">同一个式子，圆内圆外两个信号</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <p class="formula" data-i18n="s3formula">两个序列的 X(z) 都是 z / (z − a) —— 式子相同，ROC 不同</p>
+    <div class="btn-row">
+      <button class="btn active" id="s3-causal" data-i18n="s3btnC">因果 · aⁿu[n]（活在 n ≥ 0）</button>
+      <button class="btn" id="s3-left" data-i18n="s3btnL">左边 · −aⁿu[−n−1]（活在 n ≤ −1）</button>
+    </div>
+    <div class="dual">
+      <div class="half"><div class="stage"><canvas id="s3-plane" class="drag" height="400" tabindex="0"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s3-time" height="400"></canvas></div></div>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3aLab">a（两序列共用，极点在 z = a）</span> <span class="val" id="s3-a-val">0.80</span></span>
+        <input type="range" id="s3-a" min="0.3" max="1.5" step="0.05" value="0.8"></label>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+    <div class="finale">
+      <p><span data-i18n-html="s3linkTxt"></span></p>
+      <p style="margin-top:10px"><a class="fourier-link" href="../laplace/" data-i18n="s3lkL">拉普拉斯与 ROC →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：极点与单位圆 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 极点与圆</p>
+    <h2 data-i18n="s4t">圆内活、圆上鸣、圆外炸</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <p class="formula" data-i18n="s4formula">H(z) = 1 / ((1 − pz⁻¹)(1 − p̄z⁻¹))，p = r·e^{jθ} → h[n] = rⁿ·sin((n+1)θ) / sin θ</p>
+    <div class="btn-row" id="s4-presets">
+      <button class="btn" data-preset="0" data-i18n="s4p1">圆内深处 · 闷</button>
+      <button class="btn active" data-preset="1" data-i18n="s4p2">贴着圆 · 共振</button>
+      <button class="btn" data-preset="2" data-i18n="s4p3">圆外 · 炸</button>
+    </div>
+    <div class="dual">
+      <div class="half"><div class="stage"><canvas id="s4-plane" class="drag" height="400" tabindex="0"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s4-h" height="400"></canvas></div></div>
+    </div>
+    <div class="stage"><canvas id="s4-resp" height="230"></canvas></div>
+    <p class="readout" id="s4-readout"></p>
+    <p class="hint" data-i18n-html="s4note"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：与拉普拉斯对表 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 对表</p>
+    <h2 data-i18n="s5t">T 决定卷得多紧，条带决定丢了谁</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="dual">
+      <div class="half"><div class="stage"><canvas id="s5-s" class="drag" height="400" tabindex="0"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s5-z" height="400"></canvas></div></div>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s5tLab">T · 采样周期</span> <span class="val" id="s5-T-val">0.50</span></span>
+        <input type="range" id="s5-T" min="0.3" max="1" step="0.05" value="0.5"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s5-twin" data-i18n="s5twinBtn">显示隔壁条带的孪生点</button>
+    </div>
+    <p class="readout" id="s5-readout"></p>
+    <p class="hint" data-i18n-html="s5hint"></p>
+    <div class="finale">
+      <p><span data-i18n-html="s5linkTxt"></span></p>
+      <p style="margin-top:10px"><a class="fourier-link" href="../sampling/" data-i18n="s5lkS">采样与混叠 →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：终章（单位圆是数字世界的虚轴 + 共振器） ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">单位圆，是数字世界的虚轴</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <div class="stage">
+      <canvas id="s6-map" height="400"></canvas>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th data-i18n="tbItem">对照</th><th data-i18n="tbS">s 平面（连续 · 拉普拉斯）</th><th data-i18n="tbZ">z 平面（离散 · Z 变换）</th></tr></thead>
+      <tbody>
+        <tr><td data-i18n="tbR1c">傅里叶住哪</td><td data-i18n-html="tbR1s"></td><td data-i18n-html="tbR1z"></td></tr>
+        <tr><td data-i18n="tbR2c">稳定的家</td><td data-i18n-html="tbR2s"></td><td data-i18n-html="tbR2z"></td></tr>
+        <tr><td data-i18n="tbR3c">稳定判据</td><td data-i18n-html="tbR3s"></td><td data-i18n-html="tbR3z"></td></tr>
+        <tr><td data-i18n="tbR4c">极点离边界越远</td><td data-i18n-html="tbR4s"></td><td data-i18n-html="tbR4z"></td></tr>
+      </tbody>
+    </table>
+    <h2 data-i18n="s6rt" style="margin-top:26px">收官演示：一台能拖的共振器</h2>
+    <p class="explain" data-i18n-html="s6re"></p>
+    <div class="dual">
+      <div class="half"><div class="stage"><canvas id="s6-plane" class="drag" height="360" tabindex="0"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s6-spec" height="360"></canvas></div></div>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s6rLab">r · 极点离圆多近（共振多尖）</span> <span class="val" id="s6-r-val">0.92</span></span>
+        <input type="range" id="s6-r" min="0.3" max="0.99" step="0.01" value="0.92"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s6-play-dry" data-i18n="s6playDry">▶ 听原声（5 个音叠在一起）</button>
+      <button class="btn primary" id="s6-play-wet" data-i18n="s6playWet">▶ 听过滤波之后</button>
+    </div>
+    <p class="readout" id="s6-readout"></p>
+    <p class="hint" data-i18n-html="s6note"></p>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px"><span class="seq-label" data-i18n="s6linksLab">这条补课线，从这里回头看：</span></p>
+      <p style="margin-top:8px">
+        <a class="fourier-link" href="../trig/" data-i18n="s6lkT">三角函数：圆的第一次出场 →</a> ·
+        <a class="fourier-link" href="../fourier/" data-i18n="s6lkF">傅里叶变换 →</a> ·
+        <a class="fourier-link" href="../laplace/" data-i18n="s6lkL">拉普拉斯与 ROC →</a> ·
+        <a class="fourier-link" href="../sampling/" data-i18n="s6lkS">采样与混叠 →</a>
+      </p>
+      <p style="margin-top:10px">
+        <a class="fourier-link" href="/" data-i18n="back">← 知识索引</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · Z 变换 Z-Transform —— 一步一交互系列</footer>
+
+<script src="app.js?v=d307f56"></script>
+</body>
+</html>

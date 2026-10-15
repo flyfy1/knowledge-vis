@@ -185,5 +185,21 @@ window.KNOWLEDGE_PAGES = [
     category: "probability",
     status: "live",
     path: "clt/"
+  },
+  {
+    slug: "ztransform",
+    title: { zh: "Z 变换 · 把 s 平面卷成单位圆", en: "The Z-Transform · Rolling the s-Plane into the Unit Circle" },
+    desc: {
+      zh: "离散世界没有连续时间，它的拉普拉斯住在一个圆里：z = e^{sT} 把左半平面卷进单位圆内、虚轴卷成圆周。极点在圆内活、圆上鸣、圆外炸。",
+      en: "The discrete world has no continuous time; its Laplace lives on a circle. z = e^{sT} rolls the left half-plane inside the unit circle and the axis onto its rim — poles live inside, sing on it, and explode outside."
+    },
+    tags: [
+      { zh: "Z 变换", en: "Z-Transform" },
+      { zh: "单位圆", en: "Unit Circle" },
+      { zh: "收敛域", en: "ROC" }
+    ],
+    category: "signal",
+    status: "live",
+    path: "ztransform/"
   }
 ];

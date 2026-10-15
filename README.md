@@ -22,6 +22,7 @@ clicks.
 | [Laplace Transform & ROC · 拉普拉斯与 ROC](https://visual.integ.life/laplace/) | Fourier assumes every tone rings forever; Laplace asks whether it is dying or exploding — terrain, poles and convergence regions on the s-plane. |
 | [Bayes · 贝叶斯](https://visual.integ.life/bayes/) | A positive test with a 9% true-positive chance — the test didn't lie, the base rate is thin. Priors, likelihood ratios, chained evidence and prior washout. |
 | [Central Limit Theorem · 中心极限定理](https://visual.integ.life/clt/) | A single die has nothing bell-shaped about it, yet averages always turn normal — σ/√n verified live, the heavy-tail failure exhibit included. |
+| [Z-Transform · Z 变换](https://visual.integ.life/ztransform/) | Rolling the s-plane into the unit circle with z = e^{sT}: poles live inside, sing on the rim, explode outside — the discrete world's Laplace. |
 
 ## Run it locally · 本地运行
 
