@@ -201,5 +201,21 @@ window.KNOWLEDGE_PAGES = [
     category: "signal",
     status: "live",
     path: "ztransform/"
+  },
+  {
+    slug: "gradient-descent",
+    title: { zh: "梯度下降 · 摸黑下山", en: "Gradient Descent · Feeling Your Way Downhill" },
+    desc: {
+      zh: "训练模型，就是在看不见的地形上摸黑下山：坡度是唯一的信息，步子迈多大决定你走到谷底、原地打转还是飞出去。所有神经网络的训练，剥到底就是这一页的循环。",
+      en: "Training a model is feeling your way down a landscape you cannot see: the slope is your only information, and your step size decides whether you reach the bottom, spin in place, or fly off. All of neural-network training, stripped down, is this page's loop."
+    },
+    tags: [
+      { zh: "梯度下降", en: "Gradient Descent" },
+      { zh: "学习率", en: "Learning Rate" },
+      { zh: "优化", en: "Optimization" }
+    ],
+    category: "computing",
+    status: "live",
+    path: "gradient-descent/"
   }
 ];
