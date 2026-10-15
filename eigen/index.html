@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>特征值与特征向量 · 矩阵不转的那些方向</title>
+<link rel="stylesheet" href="style.css?v=c28cf50">
+<script src="i18n.js?v=c28cf50"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">特征值与特征向量 · 矩阵不转的那些方向</h1>
+    <p class="tagline" data-i18n="tagline">矩阵是一台拉伸机器：它作用在空间上，几乎每根箭头都会被转走——只有少数方向例外，只被拉长、缩短或者翻转，方向（或反方向）纹丝不动。这些方向叫特征向量，拉伸的倍数叫特征值。这一页从「圆被捏成椭圆」开始，亲手把不转的方向一个个拖出来，最后走到谷歌排名背后的那个 λ = 1。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 圆变椭圆</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 找方向</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 λ 的性格</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 幂迭代</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 主轴与对角化</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 主成分</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 终章 · 稳态</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子（圆变椭圆） ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+    <h2 data-i18n="s0t">圆被捏成椭圆，只剩两个方向没转</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <p class="formula" data-i18n="s0formula">A = [[2.2, 0.6], [0.6, 1.0]]</p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="430"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s0tLab">变形进度 t</span> <span class="val" id="s0-t-val">1.00</span></span>
+        <input type="range" id="s0-t" min="0" max="1" step="0.01" value="1"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s0-play" data-i18n="s0play">播放变形</button>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：拖向量找特征方向 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 亲手实验</p>
+    <h2 data-i18n="s1t">拖一根箭头，找到不转的方向</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <p class="formula" data-i18n="s1formula">Av = λv</p>
+    <div class="btn-row" id="s1-presets">
+      <span style="color:var(--muted);font-size:14.5px;align-self:center" data-i18n="s1presetLab">矩阵预设：</span>
+      <button class="btn active" data-preset="0" data-i18n="s1p1">A 对称经典</button>
+      <button class="btn" data-preset="1" data-i18n="s1p2">A 一般</button>
+      <button class="btn" data-preset="2" data-i18n="s1p3">A 带负 λ</button>
+    </div>
+    <div class="stage">
+      <canvas id="s1-canvas" class="drag" height="430" tabindex="0"></canvas>
+    </div>
+    <div class="stage">
+      <canvas id="s1-curve" height="150"></canvas>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="readout" id="s1-found" style="display:none"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：特征值的性格 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 特征值的性格</p>
+    <h2 data-i18n="s2t">四个数随便调，λ 当场改命</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <p class="formula" data-i18n="s2formula">λ = (tr A ± √Δ) / 2</p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="430"></canvas>
+    </div>
+    <div class="board" id="s2-board"></div>
+    <p class="readout" id="s2-note"></p>
+    <div class="stage" id="s2-spiral-wrap" style="display:none">
+      <p class="stage-title" data-i18n="s2spiralLab">迭代螺旋</p>
+      <canvas id="s2-spiral" height="240"></canvas>
+      <div class="btn-row">
+        <button class="btn" id="s2-spiral-step" data-i18n="s2spiralStep">下一步</button>
+        <button class="btn" id="s2-spiral-play">播放</button>
+      </div>
+      <p class="readout" id="s2-spiral-ro"></p>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2aLab">a</span> <span class="val" id="s2-a-val">2.20</span></span>
+        <input type="range" id="s2-a" min="-2.5" max="2.5" step="0.05" value="2.2"></label>
+      <label><span><span data-i18n="s2bLab">b</span> <span class="val" id="s2-b-val">0.60</span></span>
+        <input type="range" id="s2-b" min="-2.5" max="2.5" step="0.05" value="0.6"></label>
+      <label><span><span data-i18n="s2cLab">c</span> <span class="val" id="s2-c-val">0.60</span></span>
+        <input type="range" id="s2-c" min="-2.5" max="2.5" step="0.05" value="0.6"></label>
+      <label><span><span data-i18n="s2dLab">d</span> <span class="val" id="s2-d-val">1.00</span></span>
+        <input type="range" id="s2-d" min="-2.5" max="2.5" step="0.05" value="1"></label>
+    </div>
+    <div class="btn-row" id="s2-presets">
+      <span style="color:var(--muted);font-size:14.5px;align-self:center" data-i18n="s2presetLab">预设巡演：</span>
+      <button class="btn" data-q="neg" data-i18n="s2qNeg">负 λ</button>
+      <button class="btn" data-q="shrink" data-i18n="s2qShrink">收缩</button>
+      <button class="btn" data-q="shear" data-i18n="s2qShear">剪切</button>
+      <button class="btn" data-q="rot" data-i18n="s2qRot">旋转缩放</button>
+      <button class="btn" data-q="free" data-i18n="s2qFree">默认</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-spiral-btn" data-i18n="s2spiralBtn" style="display:none">看迭代螺旋</button>
+    </div>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：幂迭代 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 幂迭代</p>
+    <h2 data-i18n="s3t">乘上一百次，主方向自己浮出来</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <p class="formula" data-i18n="s3formula">x ← Ax / |Ax|</p>
+    <div class="stage">
+      <canvas id="s3-canvas" class="drag" height="430" tabindex="0"></canvas>
+    </div>
+    <div class="stage">
+      <p class="stage-title" data-i18n="s3chartT">夹角误差随步数衰减（对数纵轴）</p>
+      <canvas id="s3-chart" height="150"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3rLab">λ₂/λ₁ 之比 r</span> <span class="val" id="s3-r-val">0.33</span></span>
+        <input type="range" id="s3-r" min="0.05" max="0.98" step="0.01" value="0.33"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn active" data-r="0.33" data-i18n="s3pFast">r = 0.33 快</button>
+      <button class="btn" data-r="0.90" data-i18n="s3pSlow">r = 0.90 慢</button>
+      <button class="btn" data-r="0.95" data-i18n="s3pSlower">r = 0.95 更慢</button>
+      <button class="btn" id="s3-fail" data-i18n="s3pFail">等模反例 λ₂ = −λ₁</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s3-rand" data-i18n="s3rand">随机起点</button>
+      <button class="btn" id="s3-step" data-i18n="s3step">乘一次</button>
+      <button class="btn" id="s3-play" data-i18n="s3play">连播</button>
+      <button class="btn" id="s3-run" data-i18n="s3run">一键 60 步</button>
+      <button class="btn" id="s3-reset" data-i18n="s3reset">重置</button>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="readout" id="s3-note"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：对称矩阵与对角化 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 对称矩阵</p>
+    <h2 data-i18n="s4t">主轴、正交与对角化：峡谷的真身</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <p class="formula" data-i18n="s4formula">A = QΛQᵀ</p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="430"></canvas>
+    </div>
+    <div class="board" id="s4-board"></div>
+    <p class="readout" id="s4-mats"></p>
+    <p class="readout" id="s4-note"></p>
+    <div class="controls">
+      <label><span><span data-i18n="s4aLab">a</span> <span class="val" id="s4-a-val">2.20</span></span>
+        <input type="range" id="s4-a" min="0.2" max="3" step="0.05" value="2.2"></label>
+      <label><span><span data-i18n="s4mLab">b = c</span> <span class="val" id="s4-m-val">1.00</span></span>
+        <input type="range" id="s4-m" min="-1.8" max="1.8" step="0.05" value="1"></label>
+      <label><span><span data-i18n="s4dLab">d</span> <span class="val" id="s4-d-val">1.00</span></span>
+        <input type="range" id="s4-d" min="0.2" max="2.5" step="0.05" value="1"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s4-rot" data-i18n="s4rotBtn">转到特征坐标系</button>
+    </div>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：PCA ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 数据的主成分</p>
+    <h2 data-i18n="s5t">方差最大的方向，就是最大特征向量</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <p class="formula" data-i18n="s5formula">C = (1/(n−1)) Σ pᵢpᵢᵀ</p>
+    <div class="stage">
+      <canvas id="s5-canvas" class="drag" height="430" tabindex="0"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s5-show" data-i18n="s5show">显示主成分</button>
+    </div>
+    <p class="readout" id="s5-readout"></p>
+    <p class="readout" id="s5-pc" style="display:none"></p>
+    <p class="hint" data-i18n-html="s5hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：终章（稳态与 PageRank） ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">稳态：λ = 1 的特征向量，与谷歌的起点</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <p class="formula" data-i18n="s6formula">π ← Mπ，Mπ* = π*</p>
+    <div class="stage">
+      <canvas id="s6-canvas" height="400"></canvas>
+    </div>
+    <div class="btn-row" id="s6-inits">
+      <span style="color:var(--muted);font-size:14.5px;align-self:center" data-i18n="s6initLab">初始分布：</span>
+      <button class="btn active" data-init="uni" data-i18n="s6iUni">均匀</button>
+      <button class="btn" data-init="A" data-i18n="s6iA">全压 A</button>
+      <button class="btn" data-init="D" data-i18n="s6iD">全压 D</button>
+      <button class="btn" data-init="rand" data-i18n="s6iRand">随机</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s6-step" data-i18n="s6step">走一步</button>
+      <button class="btn" id="s6-play" data-i18n="s6play">连播</button>
+      <button class="btn" id="s6-run" data-i18n="s6run">一键 80 步</button>
+      <button class="btn" id="s6-reset" data-i18n="s6reset">回到均匀分布</button>
+    </div>
+    <p class="readout" id="s6-readout"></p>
+    <p class="readout" id="s6-steady"></p>
+    <p class="readout" id="s6-colsum"></p>
+    <h3 style="margin-top:26px;font-size:19px" data-i18n="s6cardsH">同一个 λ，三副面孔</h3>
+    <div class="cards">
+      <div class="card"><h3 data-i18n="c1h">PageRank：稳态即排名</h3><p data-i18n-html="c1"></p></div>
+      <div class="card"><h3 data-i18n="c2h">振动模态：特征频率</h3><p data-i18n-html="c2"></p></div>
+      <div class="card"><h3 data-i18n="c3h">稳定性：回到单位圆</h3><p data-i18n-html="c3"></p></div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 特征值与特征向量 Eigenvalues & Eigenvectors —— 一步一交互系列</footer>
+
+<script src="app.js?v=c28cf50"></script>
+</body>
+</html>

@@ -217,5 +217,21 @@ window.KNOWLEDGE_PAGES = [
     category: "computing",
     status: "live",
     path: "gradient-descent/"
+  },
+  {
+    slug: "eigen",
+    title: { zh: "特征值与特征向量 · 矩阵不转的那些方向", en: "Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn" },
+    desc: {
+      zh: "矩阵把空间里的箭头普遍转走，只有少数方向例外：只被拉长、缩短或翻转。从捏圆的机器一路到 PCA 与谷歌的 PageRank，中间只隔一个问题：哪个方向不会被转走？",
+      en: "A matrix turns almost every arrow in space — except a few directions it can only stretch, shrink, or flip. From a circle squeezed into an ellipse to PCA and Google's PageRank, it all comes down to one question: which directions refuse to turn?"
+    },
+    tags: [
+      { zh: "特征值", en: "Eigenvalues" },
+      { zh: "特征向量", en: "Eigenvectors" },
+      { zh: "主成分分析", en: "PCA" }
+    ],
+    category: "math",
+    status: "live",
+    path: "eigen/"
   }
 ];

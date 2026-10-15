@@ -24,6 +24,7 @@ clicks.
 | [Central Limit Theorem · 中心极限定理](https://visual.integ.life/clt/) | A single die has nothing bell-shaped about it, yet averages always turn normal — σ/√n verified live, the heavy-tail failure exhibit included. |
 | [Z-Transform · Z 变换](https://visual.integ.life/ztransform/) | Rolling the s-plane into the unit circle with z = e^{sT}: poles live inside, sing on the rim, explode outside — the discrete world's Laplace. |
 | [Gradient Descent · 梯度下降](https://visual.integ.life/gradient-descent/) | Training is feeling your way downhill blind: the slope is your only information, and the step size decides everything. Momentum, SGD jitter, saddles, and a live-trained model. |
+| [Eigenvalues · 特征值与特征向量](https://visual.integ.life/eigen/) | The directions a matrix cannot turn — only stretch, shrink, or flip. Power iteration, diagonalization, PCA, and the λ = 1 eigenvector behind PageRank. |
 
 ## Run it locally · 本地运行
 
