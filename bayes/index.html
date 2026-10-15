@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>贝叶斯 · 先查底子，再看证据</title>
+<link rel="stylesheet" href="style.css?v=8abaa23">
+<script src="i18n.js?v=8abaa23"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">贝叶斯</h1>
+    <p class="tagline" data-i18n="tagline">一次检测说你得了一种只有 1% 人会得的病，检测本身还挺准——可你真中招的概率，其实只有 9%。贝叶斯定理讲的不是检测准不准，是证据落在多薄的底子上。这一页把先验、似然比、后验变成一条能亲手拨动的流水账：先查底子，再看证据。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 钩子</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 先验是起点</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 证据是乘法</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 证据连乘</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 连续版 · 硬币</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 洗刷 + 频率树</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 终章 · 防谬误</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子（押注 + 一万人频率树） ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+    <h2 data-i18n="s0t">检测说你阳性——先别慌，先押个注</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <p class="seq-label" data-i18n="s0betQ">先押一注：你觉得「真得病」的概率约是？</p>
+    <div class="btn-row">
+      <button class="btn bet" data-bet="0" data-i18n="bet90">约 90%</button>
+      <button class="btn bet" data-bet="1" data-i18n="bet50">约 50%</button>
+      <button class="btn bet" data-bet="2" data-i18n="bet9">约 9%</button>
+      <button class="btn bet" data-bet="3" data-i18n="bet1">约 1%</button>
+    </div>
+    <div class="feedback" id="s0-feedback"></div>
+    <div class="btn-row">
+      <button class="btn primary" id="s0-reveal" data-i18n="s0reveal">揭晓：把一万人摆出来 ↓</button>
+    </div>
+    <div class="stage">
+      <canvas id="s0-canvas" height="420"></canvas>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：先验是起点 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 先验是起点</p>
+    <h2 data-i18n="s1t">同一份证据，落在不同的底子上</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="300"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1priorLab">先验患病率（对数刻度）</span> <span class="val" id="s1-prior-val"></span></span>
+        <input type="range" id="s1-prior" min="0" max="1000" step="1" value="371">
+      </label>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：证据是一次乘法（赔率形式） ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 证据是一次乘法</p>
+    <h2 data-i18n="s2t">换上赔率眼镜：后验 = 先验 × 似然比</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="300"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2priorLab">先验概率（对数刻度）</span> <span class="val" id="s2-prior-val"></span></span>
+        <input type="range" id="s2-prior" min="0" max="1000" step="1" value="371">
+      </label>
+      <label><span><span data-i18n="s2lrLab">似然比 LR（对数刻度）</span> <span class="val" id="s2-lr-val"></span></span>
+        <input type="range" id="s2-lr" min="0" max="1000" step="1" value="750">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-lrpos" data-i18n="s2lrPos">预置：阳性 LR+ = 10</button>
+      <button class="btn" id="s2-lrneg" data-i18n="s2lrNeg">预置：阴性 LR− ≈ 0.11</button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：证据连乘 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 证据连乘</p>
+    <h2 data-i18n="s3t">昨天的后验，是今天的先验</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="300"></canvas>
+    </div>
+    <div class="chip-flow" id="s3-chips"></div>
+    <div class="btn-row">
+      <button class="btn primary" id="s3-addpos" data-i18n="addPos">＋ 阳性（×10）</button>
+      <button class="btn primary" id="s3-addneg" data-i18n="addNeg">＋ 阴性（×0.11）</button>
+      <button class="btn" id="s3-undo" data-i18n="undo">撤销上一条</button>
+      <button class="btn" id="s3-clear" data-i18n="clear">清空重来</button>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <div class="warn-box" data-i18n-html="s3warn">⚠ 记账的前提：假设各条证据条件独立。</div>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：连续版（Beta-二项） ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 连续版</p>
+    <h2 data-i18n="s4t">一枚不知道偏不偏的硬币</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="380"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="seq-label">Beta(α, β)</span>
+      <button class="btn pri active" data-pri="flat" data-i18n="priFlat">平坦 Beta(1, 1) · 没成见</button>
+      <button class="btn pri" data-pri="weak" data-i18n="priWeak">弱倾向 Beta(8, 8) · 觉得大概公平</button>
+      <button class="btn pri" data-pri="strong" data-i18n="priStrong">强成见 Beta(40, 10) · 笃定偏正面</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s4-f1" data-i18n="flip1">抛 +1</button>
+      <button class="btn primary" id="s4-f10" data-i18n="flip10">抛 +10</button>
+      <button class="btn primary" id="s4-f100" data-i18n="flip100">抛 +100</button>
+      <button class="btn" id="s4-manh" data-i18n="manH">手动记正面</button>
+      <button class="btn" id="s4-mant" data-i18n="manT">手动记反面</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s4-seed" data-i18n="newSeed">换一颗种子</button>
+      <button class="btn" id="s4-reset" data-i18n="reset">重置</button>
+    </div>
+    <p class="readout" id="s4-readout"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：先验洗刷 + 自然频率树 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 先验洗刷 + 频率回访</p>
+    <h2 data-i18n="s5t">数据够多时，成见会被冲淡</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="stage">
+      <canvas id="s5-canvas" height="300"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s5-w10" data-i18n="w10">再抛 +10</button>
+      <button class="btn primary" id="s5-w100" data-i18n="w100">再抛 +100</button>
+      <button class="btn primary" id="s5-w600" data-i18n="w600">一口气到 600</button>
+      <button class="btn" id="s5-reset" data-i18n="reset">重置</button>
+    </div>
+    <p class="readout" id="s5-readout"></p>
+    <p class="hint" id="s5-note"></p>
+
+    <h3 class="sub-t" data-i18n="s5treeT">换回人话：自然频率树</h3>
+    <p class="explain" data-i18n-html="s5treeE"></p>
+    <div class="stage">
+      <canvas id="s5-tree" height="320"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s5prevLab">患病率（整百分点步进）</span> <span class="val" id="s5-prev-val"></span></span>
+        <input type="range" id="s5-prev" min="1" max="50" step="1" value="1">
+      </label>
+    </div>
+    <p class="readout" id="s5-treereadout"></p>
+    <p class="hint" data-i18n-html="s5hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：终章（应用地图 + 检察官谬误） ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">先查底子，再看证据</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <div class="app-grid">
+      <div class="app-card"><h3 data-i18n="app1t">垃圾邮件过滤</h3><p data-i18n="app1d"></p></div>
+      <div class="app-card"><h3 data-i18n="app2t">医学筛查</h3><p data-i18n="app2d"></p></div>
+      <div class="app-card"><h3 data-i18n="app3t">A/B 测试与产品决策</h3><p data-i18n="app3d"></p></div>
+      <div class="app-card"><h3 data-i18n="app4t">机器学习：先验 = 正则化</h3><p data-i18n="app4d"></p></div>
+    </div>
+    <div class="quiz-box">
+      <h3 data-i18n="s6qT">压轴防坑 · 检察官谬误</h3>
+      <p class="q" data-i18n-html="s6q"></p>
+      <div class="opt-row">
+        <button class="btn opt" data-opt="0" data-i18n="s6qa">检测本身不可靠，DNA 数据有问题</button>
+        <button class="btn opt" data-opt="1" data-i18n="s6qb">它把 P(证据 | 无辜) 偷换成了 P(无辜 | 证据)</button>
+        <button class="btn opt" data-opt="2" data-i18n="s6qc">百万分之一太小了，工程上可以直接忽略</button>
+      </div>
+      <div class="feedback" id="s6-feedback"></div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="/" data-i18n="s6linkIdx">← 回知识索引，看概率线的下一站</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 贝叶斯 Bayes —— 一步一交互系列</footer>
+
+<script src="app.js?v=8abaa23"></script>
+</body>
+</html>

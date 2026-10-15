@@ -20,6 +20,7 @@ clicks.
 | [Trigonometric Functions · 三角函数](https://visual.integ.life/trig/) | Sine is a height, cosine a position, tangent a slope — three projections of one turning point on the unit circle. The prequel to the Fourier transform. |
 | [Monte Carlo · 蒙特卡洛](https://visual.integ.life/montecarlo/) | Scatter points, count the fraction inside a circle, and π surfaces on its own — plus Buffon's needle, areas with no formula, and why grids die in high dimensions while sampling survives. |
 | [Laplace Transform & ROC · 拉普拉斯与 ROC](https://visual.integ.life/laplace/) | Fourier assumes every tone rings forever; Laplace asks whether it is dying or exploding — terrain, poles and convergence regions on the s-plane. |
+| [Bayes · 贝叶斯](https://visual.integ.life/bayes/) | A positive test with a 9% true-positive chance — the test didn't lie, the base rate is thin. Priors, likelihood ratios, chained evidence and prior washout. |
 
 ## Run it locally · 本地运行
 

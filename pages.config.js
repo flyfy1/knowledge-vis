@@ -153,5 +153,21 @@ window.KNOWLEDGE_PAGES = [
     category: "signal",
     status: "live",
     path: "laplace/"
+  },
+  {
+    slug: "bayes",
+    title: { zh: "贝叶斯 · 先查底子，再看证据", en: "Bayes · Check the Base Rate Before the Evidence" },
+    desc: {
+      zh: "检测说你阳性，你真中招的概率只有 9%——检测没骗你，是底子太薄。先验、似然比、证据连乘：信念更新其实是一本流水账。",
+      en: "The test says positive, yet your chance of actually having it is 9% — the test didn't lie; the base rate is thin. Priors, likelihood ratios and chained evidence: belief updating as a running ledger."
+    },
+    tags: [
+      { zh: "贝叶斯更新", en: "Bayesian Updating" },
+      { zh: "先验与后验", en: "Prior & Posterior" },
+      { zh: "基础率", en: "Base Rate" }
+    ],
+    category: "probability",
+    status: "live",
+    path: "bayes/"
   }
 ];
