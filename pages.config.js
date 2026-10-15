@@ -57,5 +57,21 @@ window.KNOWLEDGE_PAGES = [
     category: "signal",
     status: "live",
     path: "convolution/"
+  },
+  {
+    slug: "mandelbrot",
+    title: { zh: "Mandelbrot 分形 · 无限放大", en: "The Mandelbrot Set · Zoom Without End" },
+    desc: {
+      zh: "一行幼儿园算术 z→z²+c，反复按下去，能长出无限复杂的图形。拖动放大一千亿倍细节还在生长，每个点背后还藏着一整张朱利亚集。",
+      en: "One line of schoolchild arithmetic, z → z² + c, pressed over and over, grows a picture of endless complexity. Drag to zoom a hundred billion times and the detail is still growing — and behind every point hides an entire Julia set."
+    },
+    tags: [
+      { zh: "分形", en: "Fractals" },
+      { zh: "复数迭代", en: "Complex Iteration" },
+      { zh: "朱利亚集", en: "Julia Sets" }
+    ],
+    category: "math",
+    status: "live",
+    path: "mandelbrot/"
   }
 ];

@@ -14,6 +14,7 @@ clicks.
 | --- | --- |
 | [Fourier Transform · 傅里叶变换](https://visual.integ.life/fourier/) | Any waveform — any drawing — is a sum of rotating circles. Seven steps from a single sine wave to drawing your own shape and watching epicycles redraw it via a real DFT. |
 | [Convolution · 卷积](https://visual.integ.life/convolution/) | Blurring a photo, echoing a sound, smoothing data — one machine underneath. Seven steps from sliding averages to meeting the Fourier transform in the frequency domain. |
+| [Mandelbrot Set · 分形](https://visual.integ.life/mandelbrot/) | One line of arithmetic, z → z² + c, grows endless complexity. Zoom a hundred billion times, then meet the Julia set hiding behind every point. |
 
 ## Run it locally · 本地运行
 

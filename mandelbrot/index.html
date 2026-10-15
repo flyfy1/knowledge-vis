@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mandelbrot 分形 · 无限放大</title>
+<link rel="stylesheet" href="style.css?v=2097d9a">
+<script src="i18n.js?v=2097d9a"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="../" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">Mandelbrot 分形</h1>
+    <p class="tagline" data-i18n="tagline">一行幼儿园算术——z 一遍遍平方再加 c——画出了一张无限复杂的地图。这一页带你对着它一直放大：放大一千亿倍，风景还没看完。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 钩子</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 一个点的一生</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 分界线</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 颜色从哪来</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 往里钻</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 迷你布罗特</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 朱利亚集</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 先玩起来</p>
+    <h2 data-i18n="s0t">放大一千亿倍，还没到底</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="560"></canvas>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <div class="btn-row">
+      <button class="btn" id="s0-reset" data-i18n="s0reset">回到全景</button>
+    </div>
+    <p class="hint" data-i18n="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：一个点的一生 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 一个点的一生</p>
+    <h2 data-i18n="s1t">反复按 z² + c：一个点的两种命运</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="500"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s1-step" data-i18n="s1step">单步 →</button>
+      <button class="btn" id="s1-play">▶ 播放</button>
+      <button class="btn" id="s1-reset" data-i18n="s1reset">重置轨道</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s1-p-esc" data-i18n="s1pEsc">预设：逃逸的点</button>
+      <button class="btn" id="s1-p-stay" data-i18n="s1pStay">预设：留下的点</button>
+      <button class="btn" id="s1-p-cycle" data-i18n="s1pCycle">预设：打转的点</button>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="hint" data-i18n="s1hint"></p>
+    <p class="hint" data-i18n="s1accel"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：分界线 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 分界线</p>
+    <h2 data-i18n="s2t">为什么偏偏是 2</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="500"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2iter">最大迭代上限</span> <span class="val" id="s2-iter-val">100</span></span>
+        <input type="range" id="s2-iter" min="5" max="500" step="1" value="100">
+      </label>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="hint" data-i18n="s2note"></p>
+    <div class="formula-box">
+      <p class="stage-title" data-i18n="s2diagT">雪球是怎么滚走的：c = 0.8 时 |z| 的每一步</p>
+      <canvas id="s2-diag" height="210"></canvas>
+      <p class="formula">|z<sub>n+1</sub>| ≥ |z<sub>n</sub>|² − |c| ≥ |z<sub>n</sub>| · (|z<sub>n</sub>| − 1)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：颜色从哪来 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 颜色从哪来</p>
+    <h2 data-i18n="s3t">颜色 = 每个点挣扎了多久</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="520"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s3-mode-bw" data-i18n="s3bw">① 黑白</button>
+      <button class="btn" id="s3-mode-band" data-i18n="s3band">② 阶梯色带</button>
+      <button class="btn active" id="s3-mode-smooth" data-i18n="s3smooth">③ 平滑着色</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn active" id="s3-pal-0" data-i18n="pal0">深空</button>
+      <button class="btn" id="s3-pal-1" data-i18n="pal1">熔岩</button>
+      <button class="btn" id="s3-pal-2" data-i18n="pal2">极光</button>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <div class="formula-box">
+      <p class="formula big" data-i18n="s3formulaT">平滑步数 ν = n + 1 − log₂(ln|zₙ|)</p>
+      <p class="explain small" data-i18n="s3note"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：往里钻 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 往里钻</p>
+    <h2 data-i18n="s4t">著名地点巡游</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="btn-row">
+      <button class="btn" id="s4-bm-0" data-i18n="bm0">海马谷</button>
+      <button class="btn" id="s4-bm-1" data-i18n="bm1">象谷</button>
+      <button class="btn" id="s4-bm-2" data-i18n="bm2">顶部螺旋</button>
+      <button class="btn" id="s4-bm-3" data-i18n="bm3">迷你布罗特</button>
+      <button class="btn" id="s4-reset" data-i18n="s4reset">回到全景</button>
+    </div>
+    <div class="stage">
+      <canvas id="s4-canvas" height="560"></canvas>
+    </div>
+    <p class="warn hidden" id="s4-warn" data-i18n="s4warn"></p>
+    <p class="readout" id="s4-readout"></p>
+    <p class="hint" data-i18n="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：迷你布罗特 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 自相似</p>
+    <h2 data-i18n="s5t">里面还有一个它自己</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="dual">
+      <div class="half">
+        <div class="stage">
+          <p class="stage-title" data-i18n="cInset">整图 · 小岛在这里</p>
+          <canvas id="s5-inset" height="300"></canvas>
+        </div>
+      </div>
+      <div class="half">
+        <div class="stage">
+          <canvas id="s5-canvas" height="300"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn active" id="s5-mini" data-i18n="s5mini">迷你布罗特全景</button>
+      <button class="btn" id="s5-drill" data-i18n="s5drill">再往它里面钻一层</button>
+      <button class="btn" id="s5-home" data-i18n="s5home">回到整图</button>
+      <button class="btn" id="s5-overlay" data-i18n="s5overlay">叠上整图的轮廓对比</button>
+    </div>
+    <p class="readout" id="s5-readout"></p>
+    <p class="hint" data-i18n="s5note"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：朱利亚集 ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">每个点都是一张新图：朱利亚集</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <div class="dual">
+      <div class="half">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s6leftT">Mandelbrot 图 · 点选 c</p>
+          <canvas id="s6-left" height="430"></canvas>
+        </div>
+      </div>
+      <div class="half">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s6rightT">c 的朱利亚集</p>
+          <canvas id="s6-right" height="430"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s6-j-0" data-i18n="j0">c = −0.123 + 0.745i（集内）</button>
+      <button class="btn" id="s6-j-1" data-i18n="j1">c = −0.8 + 0.156i</button>
+      <button class="btn" id="s6-j-2" data-i18n="j2">c = 0.5 + 0.5i（集外）</button>
+    </div>
+    <p class="readout" id="s6-readout"></p>
+    <p class="hint" data-i18n="s6note"></p>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px"><a class="fourier-link" href="../fourier/" data-i18n="s6link">回傅里叶页再看看那些圆 →</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · Mandelbrot 分形 —— 一步一交互系列</footer>
+
+<script src="app.js?v=2097d9a"></script>
+</body>
+</html>
