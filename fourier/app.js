@@ -3,6 +3,13 @@
 const TAU = Math.PI * 2;
 const $ = id => document.getElementById(id);
 
+/* ---------- 双语：文案一律经 i18n.js 的 t() 取值；语言切换后由各步骤注册的
+   refresher 重贴「有状态」的动态文本（按钮状态、读数等），Canvas 文字在逐帧
+   绘制时直接调 tr()，天然即时切换 ---------- */
+const tr = (key, vars) => window.KI18N.t(key, vars);
+const langRefreshers = [];
+window.__onLangChange = () => { langRefreshers.forEach(fn => { try { fn(); } catch (e) { console.error(e); } }); };
+
 /* ---------- 画布适配（DPR）：CSS 尺寸与 backing store 尺寸严格分离 ----------
    CSS 高度只在首次适配时从 HTML 的 height 属性读取一次（此时该属性尚未被任何
    代码改写），存入 dataset 后永远只从 dataset 读。绝不能读回 cv.height 或
@@ -193,13 +200,13 @@ class DualChainViz {
       this.drawing.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]));
       ctx.stroke();
       ctx.fillStyle = '#9aa7b8'; ctx.font = '14px sans-serif'; ctx.textAlign = 'center';
-      ctx.fillText('松手后，圆圈们会把你画的图形重新画出来…', W / 2, 28);
+      ctx.fillText(tr('dcDrawHint'), W / 2, 28);
       return;
     }
     if (!this.shape) {
       ctx.fillStyle = '#9aa7b8'; ctx.font = '16px sans-serif'; ctx.textAlign = 'center';
-      ctx.fillText('在画布上按住鼠标（或手指）画一条闭合曲线', W / 2, H / 2 - 10);
-      ctx.fillText('或者点一个预设图形', W / 2, H / 2 + 18);
+      ctx.fillText(tr('dcEmpty1'), W / 2, H / 2 - 10);
+      ctx.fillText(tr('dcEmpty2'), W / 2, H / 2 + 18);
       return;
     }
     this.t += dt * TAU / this.period;
@@ -270,8 +277,8 @@ class DualChainViz {
       ctx.fillStyle = color; ctx.textAlign = align;
       ctx.fillText(text, x, y); ctx.textAlign = 'left';
     };
-    label('x 链（横坐标）', W - 12, 24, '#6ee7ff', 'right');
-    label('y 链（纵坐标）', 12, H - 14, '#ff7a93', 'left');
+    label(tr('dcXLabel'), W - 12, 24, '#6ee7ff', 'right');
+    label(tr('dcYLabel'), 12, H - 14, '#ff7a93', 'left');
   }
 }
 
@@ -354,7 +361,7 @@ function personPts() {
   upd();
   $('s1-freeze').addEventListener('click', () => {
     S.frozen = !S.frozen;
-    $('s1-freeze').textContent = S.frozen ? '▶ 继续滚动' : '❄ 冻结波形';
+    $('s1-freeze').textContent = tr(S.frozen ? 's1unfreeze' : 's1freeze');
   });
   animate($('step1'), dt => {
     if (!S.frozen) S.t += dt;
@@ -385,18 +392,22 @@ function personPts() {
   // 声音：WebAudio
   let ac = null, osc = null, gain = null;
   $('s1-sound').addEventListener('click', () => {
-    if (osc) { try { osc.stop(); } catch (e) {} osc = null; $('s1-sound').textContent = '🔊 听一听这个波'; return; }
+    if (osc) { try { osc.stop(); } catch (e) {} osc = null; $('s1-sound').textContent = tr('s1sound'); return; }
     ac = ac || new (window.AudioContext || window.webkitAudioContext)();
     osc = ac.createOscillator(); gain = ac.createGain();
     osc.type = 'sine'; osc.frequency.value = 220 * S.f;
     gain.gain.value = 0.0001;
     gain.gain.exponentialRampToValueAtTime(0.12 * S.a + 0.02, ac.currentTime + 0.05);
     osc.connect(gain); gain.connect(ac.destination); osc.start();
-    $('s1-sound').textContent = '⏹ 停止声音';
+    $('s1-sound').textContent = tr('s1soundStop');
     const iv = setInterval(() => {
       if (!osc) { clearInterval(iv); return; }
       osc.frequency.value = 220 * S.f; gain.gain.value = 0.12 * S.a + 0.02;
     }, 120);
+  });
+  langRefreshers.push(() => {
+    $('s1-freeze').textContent = tr(S.frozen ? 's1unfreeze' : 's1freeze');
+    $('s1-sound').textContent = tr(osc ? 's1soundStop' : 's1sound');
   });
 })();
 
@@ -472,8 +483,9 @@ function personPts() {
   $('s3-r').addEventListener('input', e => { S.r = +e.target.value; $('s3-r-val').textContent = S.r.toFixed(2); });
   $('s3-toggle').addEventListener('click', () => {
     S.playing = !S.playing;
-    $('s3-toggle').textContent = S.playing ? '⏸ 暂停' : '▶ 继续';
+    $('s3-toggle').textContent = tr(S.playing ? 's3pause' : 's3resume');
   });
+  langRefreshers.push(() => { $('s3-toggle').textContent = tr(S.playing ? 's3pause' : 's3resume'); });
   animate($('step3'), dt => {
     const W = cv._w, H = cv._h;
     if (S.playing) S.theta += dt * TAU * 0.35 * S.speed;
@@ -516,8 +528,8 @@ function personPts() {
       ctx.stroke(); ctx.lineWidth = 1;
       // 标签
       ctx.fillStyle = '#9aa7b8'; ctx.font = '13px sans-serif'; ctx.textAlign = 'left';
-      ctx.fillText('圆：匀速旋转', cx - R, 20);
-      ctx.fillText('波：投影高度随时间展开 →', waveX, 20);
+      ctx.fillText(tr('s3circleLabel'), cx - R, 20);
+      ctx.fillText(tr('s3waveLabel'), waveX, 20);
     } else {
       /* —— 窄屏：圆在上、波在下，上下共用同一把高度标尺 ——
          圆按可用宽度反推半径并居中；波占满整宽。投影关系靠一条竖直虚线表达：
@@ -562,8 +574,8 @@ function personPts() {
       ctx.fillStyle = '#ffb454'; ctx.beginPath(); ctx.arc(cx, waveY, 4, 0, TAU); ctx.fill();
       // 标签（顶部条与底部条，避开圆与波）
       ctx.fillStyle = '#9aa7b8'; ctx.font = '13px sans-serif'; ctx.textAlign = 'left';
-      ctx.fillText('圆：匀速旋转', 10, 18);
-      ctx.fillText('波：投影高度随时间展开 →', 10, H - 8);
+      ctx.fillText(tr('s3circleLabel'), 10, 18);
+      ctx.fillText(tr('s3waveLabel'), 10, H - 8);
     }
     // 读数
     $('s3-theta').textContent = (th % TAU).toFixed(2);
@@ -586,10 +598,11 @@ function personPts() {
   }
   function updN() {
     $('s4-n-val').textContent = N;
-    $('s4-overshoot').textContent = `约 ${overshootPct(N).toFixed(1)}%（按跳变高度计，N 越大越接近 8.9%）`;
+    $('s4-overshoot').textContent = tr('s4overText', { v: overshootPct(N).toFixed(1) });
   }
   $('s4-n').addEventListener('input', e => { N = +e.target.value; updN(); });
   updN();
+  langRefreshers.push(updN);
   animate($('step4'), dt => {
     t += dt * 2.4;
     const W = cv._w, H = cv._h, mid = H / 2;
@@ -651,8 +664,8 @@ function personPts() {
     ctx.stroke(); ctx.lineWidth = 1;
     if (stacked) {
       ctx.fillStyle = '#9aa7b8'; ctx.font = '13px sans-serif'; ctx.textAlign = 'left';
-      ctx.fillText('圆链：首尾相连的圆', 10, 20);
-      ctx.fillText('波形：笔尖高度随时间展开 →', 10, H - 10);
+      ctx.fillText(tr('s4chainLabel'), 10, 20);
+      ctx.fillText(tr('s4waveLabel'), 10, H - 10);
     }
   });
 })();
@@ -708,9 +721,9 @@ function personPts() {
       sctx.fillText(m.k, i * bw + bw / 2, base + 14);
     });
     sctx.fillStyle = '#9aa7b8'; sctx.font = '11.5px sans-serif'; sctx.textAlign = 'left';
-    sctx.fillText('频率 →（横轴数字 = 基频的倍数）', 4, base + 32);
+    sctx.fillText(tr('s5axisNote'), 4, base + 32);
     const top3 = [...mags].sort((a, b) => b.mag - a.mag).slice(0, 3);
-    $('s5-top').innerHTML = '最强的三个成分：' + top3.map(m => `频率 ${m.k}（幅值 ${m.mag.toFixed(2)}）`).join('、');
+    $('s5-top').textContent = tr('s5topPrefix') + top3.map(m => tr('s5topItem', { k: m.k, m: m.mag.toFixed(2) })).join(tr('s5topJoiner'));
   }
   ['square', 'triangle', 'saw', 'ecg'].forEach(name => {
     $('s5-wave-' + name).addEventListener('click', () => {
@@ -722,22 +735,27 @@ function personPts() {
   });
   draw();
   onRefit(draw); // 全局重适配（fitCanvas 会清空画布）后按新尺寸重绘
+  langRefreshers.push(draw); // 语言切换后重绘轴注与读数
 })();
 
 /* ---------- 步骤 6：终章（双链 + 手绘） ---------- */
 (function step6() {
   const status = $('s6-status');
+  let statusKey = 's6statusHeart'; // 当前状态文案的字典键，语言切换时按键重贴
+  const setStatus = k => { statusKey = k; status.textContent = tr(k); };
   const viz = new DualChainViz($('s6-canvas'), {
     period: 16,
     onN: (n, err) => { $('s6-n-readout').textContent = n; $('s6-error').textContent = err == null ? '—' : err.toFixed(2) + ' %'; }
   });
   viz.setShape(new FourierShape(heartPts()));
   viz.setN(25);
+  setStatus('s6statusHeart'); // 首次渲染即按当前语言（字典版文案）
   $('s6-n').addEventListener('input', e => { $('s6-n-val').textContent = e.target.value; viz.setN(+e.target.value); });
-  $('s6-heart').addEventListener('click', () => { viz.setShape(new FourierShape(heartPts())); status.textContent = '当前是预设图形「爱心」。拖动 N 看误差变化，或动手画一个！'; });
-  $('s6-star').addEventListener('click', () => { viz.setShape(new FourierShape(starPts())); status.textContent = '当前是预设图形「星星」。尖角处需要更多高频圆才画得锐利。'; });
-  $('s6-person').addEventListener('click', () => { viz.setShape(new FourierShape(personPts())); status.textContent = '当前是预设图形「卡通小人」，和第 0 步开场是同一个。'; });
-  $('s6-clear').addEventListener('click', () => { viz.setShape(null); status.textContent = '已清除。在画布上画一条闭合曲线试试！'; });
+  $('s6-heart').addEventListener('click', () => { viz.setShape(new FourierShape(heartPts())); setStatus('s6statusHeart'); });
+  $('s6-star').addEventListener('click', () => { viz.setShape(new FourierShape(starPts())); setStatus('s6statusStar'); });
+  $('s6-person').addEventListener('click', () => { viz.setShape(new FourierShape(personPts())); setStatus('s6statusPerson'); });
+  $('s6-clear').addEventListener('click', () => { viz.setShape(null); setStatus('s6statusCleared'); });
+  langRefreshers.push(() => setStatus(statusKey));
   // 手绘
   const cv = $('s6-canvas');
   let drawing = false;
@@ -759,7 +777,7 @@ function personPts() {
     const pts = viz.drawing; viz.drawing = null;
     if (pts && pts.length >= 10) {
       viz.setShape(new FourierShape(pts));
-      status.textContent = '这是你画的图形！拖动 N，看圆圈们越画越像。';
+      setStatus('s6statusDrew');
     }
   }
   cv.addEventListener('pointerdown', start);

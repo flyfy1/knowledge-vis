@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>知识索引 · Knowledge Index</title>
+<title>知识索引</title>
 <meta name="description" content="把难懂的知识点，做成可以上手玩的交互页。">
 <style>
   :root{
@@ -18,11 +18,22 @@
     line-height:1.65;-webkit-font-smoothing:antialiased}
   .wrap{max-width:1020px;margin:0 auto;padding:56px 22px 72px}
   header.head{margin-bottom:38px}
+  .head-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
   .kicker{color:var(--cyan);font-size:13px;letter-spacing:.35em;margin:0 0 10px}
+  .lang-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;
+    overflow:hidden;background:var(--panel2);flex:0 0 auto}
+  .lang-toggle button{appearance:none;border:0;background:transparent;color:var(--dim);
+    font:inherit;font-size:13px;line-height:1.4;padding:5px 14px;cursor:pointer}
+  .lang-toggle button + button{border-left:1px solid var(--line)}
+  .lang-toggle button.on{background:var(--cyan);color:#08131a;font-weight:700}
   h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:800}
-  h1 .en{color:var(--dim);font-size:20px;font-weight:600;letter-spacing:.04em;margin-left:10px}
   .intro{color:var(--dim);font-size:16.5px;max-width:640px;margin:0}
   .intro b{color:var(--text)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .chip{appearance:none;font:inherit;font-size:13.5px;color:var(--dim);cursor:pointer;
+    background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:5px 15px}
+  .chip:hover{color:var(--text);border-color:var(--cyan-d)}
+  .chip.on{background:var(--cyan);border-color:var(--cyan);color:#08131a;font-weight:700}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:8px}
   a.card,div.card{display:block;background:linear-gradient(180deg,var(--panel),var(--panel2));
     border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;
@@ -31,6 +42,9 @@
   a.card:hover{transform:translateY(-3px);border-color:var(--cyan-d)}
   a.card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;
     background:linear-gradient(90deg,var(--cyan),transparent 70%)}
+  .cat-badge{display:inline-block;font-size:11.5px;color:var(--amber);
+    border:1px solid #713f12;background:rgba(245,176,76,.08);
+    border-radius:999px;padding:1px 10px;margin-bottom:10px}
   .card h2{font-size:20px;margin:0 0 8px 0;padding-right:84px;line-height:1.35}
   .card p{color:var(--dim);font-size:14.5px;margin:0 0 16px}
   .tags{display:flex;flex-wrap:wrap;gap:7px}
@@ -42,56 +56,164 @@
   div.card.planned{opacity:.62}
   .go{margin-top:16px;color:var(--cyan);font-size:14px}
   footer{margin-top:52px;color:var(--dim);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
-  .empty{color:var(--dim);border:1px dashed var(--line);border-radius:16px;padding:28px;text-align:center}
+  .empty{color:var(--dim);border:1px dashed var(--line);border-radius:16px;padding:28px;text-align:center;grid-column:1/-1;margin:0}
   @media (max-width:560px){
     .wrap{padding:38px 16px 56px}
-    h1{font-size:31px} h1 .en{display:block;margin:6px 0 0;font-size:16px}
+    h1{font-size:31px}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="head">
-    <p class="kicker">KNOWLEDGE</p>
-    <h1>知识索引<span class="en">Knowledge Index</span></h1>
-    <p class="intro">把难懂的知识点，做成<b>可以上手玩的交互页</b>：每页一个主题，由浅入深，一步一个交互，玩到最后就懂了。</p>
+    <div class="head-row">
+      <p class="kicker">KNOWLEDGE</p>
+      <div class="lang-toggle" id="langToggle" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+      </div>
+    </div>
+    <h1 data-i18n="h1">知识索引</h1>
+    <p class="intro" data-i18n-html="intro">把难懂的知识点，做成<b>可以上手玩的交互页</b>：每页一个主题，由浅入深，一步一个交互，玩到最后就懂了。</p>
+    <div class="chips" id="catChips" role="group" aria-label="Category filter / 分类筛选"></div>
   </header>
 
   <main id="grid" class="grid" aria-live="polite"></main>
   <noscript><p class="empty">这个索引页需要 JavaScript 才能列出条目。</p></noscript>
 
-  <footer>新增条目登记在 <b>pages.config.js</b> 配置里；每页都是纯静态、可离线打开的单页。</footer>
+  <footer data-i18n-html="footerText">新增条目登记在 <b>pages.config.js</b> 配置里；每页都是纯静态、可离线打开的单页。</footer>
 </div>
 
-<script src="pages.config.js"></script>
+<script src="pages.config.js?v=conv1"></script>
 <script>
 (function(){
-  var grid = document.getElementById('grid');
-  var pages = (window.KNOWLEDGE_PAGES || []).slice();
-  if(!pages.length){
-    grid.innerHTML = '<p class="empty">还没有登记任何知识页。</p>';
-    return;
+  'use strict';
+  /* ---------- 索引页字典（与各知识页同一套双语规范） ---------- */
+  var STR = {
+    zh: {
+      docTitle: '知识索引', h1: '知识索引',
+      intro: '把难懂的知识点，做成<b>可以上手玩的交互页</b>：每页一个主题，由浅入深，一步一个交互，玩到最后就懂了。',
+      allChip: '全部', badgeLive: '已上线', badgePlanned: '筹备中', goOpen: '打开 →',
+      emptyText: '还没有登记任何知识页。',
+      emptyFilter: '这个分类下还没有条目，敬请期待。',
+      footerText: '新增条目登记在 <b>pages.config.js</b> 配置里；每页都是纯静态、可离线打开的单页。'
+    },
+    en: {
+      docTitle: 'Knowledge Index', h1: 'Knowledge Index',
+      intro: 'Tough ideas, turned into <b>pages you can play with</b>: one topic per page, shallow to deep, one interaction per step — play to the end, and it clicks.',
+      allChip: 'All', badgeLive: 'Live', badgePlanned: 'Planned', goOpen: 'Open →',
+      emptyText: 'No knowledge pages have been registered yet.',
+      emptyFilter: 'Nothing in this category yet — stay tuned.',
+      footerText: 'New entries are registered in the <b>pages.config.js</b> config; every page is a single static page that also works offline.'
+    }
+  };
+
+  /* ---------- 语言状态（全站共享 knowledge-lang，规则同 UI-I18N-SPEC） ---------- */
+  var memLang = null;
+  function readStored() {
+    try {
+      var v = localStorage.getItem('knowledge-lang');
+      if (v === 'zh' || v === 'en') return v;
+    } catch (e) {}
+    return memLang;
   }
-  // live 的排前面，planned 在后
-  pages.sort(function(a,b){
-    return (a.status === 'live' ? 0 : 1) - (b.status === 'live' ? 0 : 1);
+  var lang = readStored() || (((navigator.language || 'en').toLowerCase().indexOf('zh') === 0) ? 'zh' : 'en');
+  function t(key) {
+    return (STR[lang] && STR[lang][key] != null) ? STR[lang][key]
+         : (STR.zh[key] != null ? STR.zh[key] : key);
+  }
+  // 配置字段取值：{zh,en} 对象按当前语言；纯字符串（旧条目）原样返回
+  function pick(v) {
+    if (v == null) return '';
+    if (typeof v === 'string') return v;
+    return v[lang] != null ? v[lang] : (v.zh != null ? v.zh : (v.en != null ? v.en : ''));
+  }
+
+  var grid = document.getElementById('grid');
+  var chipsBox = document.getElementById('catChips');
+  var categories = window.KNOWLEDGE_CATEGORIES || [];
+  var pages = (window.KNOWLEDGE_PAGES || []).slice();
+  var activeCat = 'all'; // 筛选状态仅内存，不持久化
+
+  function catName(id) {
+    for (var i = 0; i < categories.length; i++) if (categories[i].id === id) return pick(categories[i].name);
+    return id;
+  }
+
+  function renderChips() {
+    chipsBox.innerHTML = '';
+    var defs = [{ id: 'all', label: t('allChip') }];
+    categories.forEach(function(c){ defs.push({ id: c.id, label: pick(c.name) }); });
+    defs.forEach(function(d){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'chip' + (activeCat === d.id ? ' on' : '');
+      b.textContent = d.label;
+      b.addEventListener('click', function(){ activeCat = d.id; renderChips(); renderCards(); });
+      chipsBox.appendChild(b);
+    });
+  }
+
+  function renderCards() {
+    grid.innerHTML = '';
+    if (!pages.length) {
+      var p0 = document.createElement('p');
+      p0.className = 'empty'; p0.textContent = t('emptyText');
+      grid.appendChild(p0);
+      return;
+    }
+    var list = pages.slice().sort(function(a, b){
+      return (a.status === 'live' ? 0 : 1) - (b.status === 'live' ? 0 : 1);
+    });
+    if (activeCat !== 'all') list = list.filter(function(pg){ return pg.category === activeCat; });
+    if (!list.length) {
+      var p1 = document.createElement('p');
+      p1.className = 'empty'; p1.textContent = t('emptyFilter');
+      grid.appendChild(p1);
+      return;
+    }
+    list.forEach(function(pg){
+      var live = pg.status === 'live';
+      var el = document.createElement(live ? 'a' : 'div');
+      el.className = 'card' + (live ? '' : ' planned');
+      if (live) el.href = pg.path;
+      var badge = '<span class="badge ' + (live ? 'live' : 'planned') + '">' +
+                  (live ? t('badgeLive') : t('badgePlanned')) + '</span>';
+      var cat = pg.category ? '<span class="cat-badge"></span>' : '';
+      var tags = (pg.tags || []).map(function(tag){
+        return '<span class="tag"></span>';
+      }).join('');
+      el.innerHTML = badge + cat + '<h2></h2><p></p><div class="tags">' + tags + '</div>' +
+                     (live ? '<div class="go">' + t('goOpen') + '</div>' : '');
+      var catEl = el.querySelector('.cat-badge');
+      if (catEl) catEl.textContent = catName(pg.category);
+      el.querySelector('h2').textContent = pick(pg.title);
+      el.querySelector('p').textContent = pick(pg.desc);
+      el.querySelectorAll('.tag').forEach(function(tagEl, i){ tagEl.textContent = pick(pg.tags[i]); });
+      grid.appendChild(el);
+    });
+  }
+
+  function applyLang() {
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.title = t('docTitle');
+    document.querySelectorAll('[data-i18n]').forEach(function(el){ el.textContent = t(el.getAttribute('data-i18n')); });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){ el.innerHTML = t(el.getAttribute('data-i18n-html')); });
+    document.querySelectorAll('#langToggle button').forEach(function(b){
+      b.classList.toggle('on', b.dataset.lang === lang);
+    });
+    renderChips();
+    renderCards();
+  }
+  function setLang(l) {
+    if (l !== 'zh' && l !== 'en') return;
+    lang = l; memLang = l;
+    try { localStorage.setItem('knowledge-lang', l); } catch (e) {}
+    applyLang();
+  }
+  document.querySelectorAll('#langToggle button').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.dataset.lang); });
   });
-  pages.forEach(function(pg){
-    var live = pg.status === 'live';
-    var el = document.createElement(live ? 'a' : 'div');
-    el.className = 'card' + (live ? '' : ' planned');
-    if(live) el.href = pg.path;
-    var badge = '<span class="badge ' + (live ? 'live' : 'planned') + '">' +
-                (live ? '已上线' : '筹备中') + '</span>';
-    var tags = (pg.tags || []).map(function(t){
-      return '<span class="tag">' + t + '</span>';
-    }).join('');
-    el.innerHTML = badge + '<h2></h2><p></p><div class="tags">' + tags + '</div>' +
-                   (live ? '<div class="go">打开 →</div>' : '');
-    el.querySelector('h2').textContent = pg.title;
-    el.querySelector('p').textContent = pg.desc;
-    grid.appendChild(el);
-  });
+  applyLang();
 })();
 </script>
 </body>

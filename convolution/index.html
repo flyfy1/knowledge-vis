@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>卷积 · 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=aa4e2bc">
+<script src="i18n.js?v=aa4e2bc"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">卷积</h1>
+    <p class="tagline" data-i18n="tagline">把照片磨皮、给声音加回声、让 AI 认出一只猫——背后都是同一个运算。这一页从「加权平均着往前挪」开始，一步步把它算个明白。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 钩子</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 滑动平均</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 拆开算账</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 重叠面积</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 图像卷积核</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 三个马甲</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 遇见傅里叶</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 先看结论</p>
+    <h2 data-i18n="s0t">同一个运算，两副面孔</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="400"></canvas>
+    </div>
+    <div class="controls">
+      <label><span data-i18n="s0split">对比位置</span>
+        <input type="range" id="s0-split" min="0" max="100" step="0.5" value="55">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn active" id="s0-mode-blur" data-i18n="s0blur">模糊核</button>
+      <button class="btn" id="s0-mode-edge" data-i18n="s0edge">边缘核</button>
+    </div>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：滑动平均 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 先看它干活</p>
+    <h2 data-i18n="s1t">滑动平均：卷积最朴素的样子</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="300"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1win">窗口宽度 W</span> <span class="val" id="s1-win-val">9</span></span>
+        <input type="range" id="s1-win" min="1" max="41" step="2" value="9">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s1-play">⏸ 暂停</button>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="hint" data-i18n="s1note"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：拆开算账 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 拆开算账</p>
+    <h2 data-i18n="s2t">翻转、滑动、相乘、求和</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="seq-edit">
+      <div class="seq-group">
+        <span class="seq-label" data-i18n="s2f">输入序列 f</span>
+        <span class="seq-inputs" id="s2-f-inputs"></span>
+      </div>
+      <div class="seq-group">
+        <span class="seq-label" data-i18n="s2g">核 g</span>
+        <span class="seq-inputs" id="s2-g-inputs"></span>
+      </div>
+    </div>
+    <div class="stage">
+      <canvas id="s2-canvas" height="330"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s2-step" data-i18n="s2step">单步 →</button>
+      <button class="btn" id="s2-play">▶ 播放</button>
+      <button class="btn" id="s2-reset" data-i18n="s2reset">重置</button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <div class="formula-box">
+      <p class="formula big">(f * g)[n] = Σ<sub>k</sub> f[k] · g[n − k]</p>
+      <p class="explain small" data-i18n-html="s2formulaNote"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：重叠面积 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 连续版</p>
+    <h2 data-i18n="s3t">滑动着求重叠面积</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="380"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3shift">位移 τ</span> <span class="val" id="s3-shift-val">−4.0</span></span>
+        <input type="range" id="s3-shift" min="-4" max="4" step="0.05" value="-4">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn active" id="s3-mode-rr" data-i18n="s3rr">矩形 × 矩形</button>
+      <button class="btn" id="s3-mode-rt" data-i18n="s3rt">矩形 × 三角</button>
+      <button class="btn" id="s3-play">▶ 播放</button>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="hint" data-i18n="s3note"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：图像卷积核 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 本页高潮</p>
+    <h2 data-i18n="s4t">图像卷积核：一张照片的每个像素都在算账</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="dual">
+      <div class="half">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s4src">原图</p>
+          <canvas id="s4-src" height="252"></canvas>
+        </div>
+      </div>
+      <div class="half">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s4out">卷积结果</p>
+          <canvas id="s4-out" height="252"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="kernel-box">
+      <div class="kernel-grid" id="s4-kernel"></div>
+      <div class="kernel-side">
+        <label><span data-i18n="s4div">除数</span>
+          <input type="number" id="s4-div" value="16" step="1">
+        </label>
+        <label><span data-i18n="s4off">偏移</span>
+          <input type="number" id="s4-off" value="0" step="1">
+        </label>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s4-p-identity" data-i18n="pIdentity">原图（单位核）</button>
+      <button class="btn active" id="s4-p-blur" data-i18n="pBlur">模糊</button>
+      <button class="btn" id="s4-p-sharpen" data-i18n="pSharpen">锐化</button>
+      <button class="btn" id="s4-p-edge" data-i18n="pEdge">边缘检测</button>
+      <button class="btn" id="s4-p-emboss" data-i18n="pEmboss">浮雕</button>
+    </div>
+    <div class="formula-box">
+      <p class="stage-title" data-i18n="s4accT">这个像素是怎么算出来的</p>
+      <p class="readout" id="s4-acc-head"></p>
+      <div class="acc-grid" id="s4-acc-grid"></div>
+      <p class="readout" id="s4-acc-sum"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：三个马甲 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 换个场景</p>
+    <h2 data-i18n="s5t">同一个运算，三个马甲</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="btn-row">
+      <button class="btn active" id="s5-tab-audio" data-i18n="tabAudio">① 音频回声</button>
+      <button class="btn" id="s5-tab-photo" data-i18n="tabPhoto">② 照片虚化</button>
+      <button class="btn" id="s5-tab-data" data-i18n="tabData">③ 平滑数据</button>
+    </div>
+
+    <div class="tab-panel" id="s5-panel-audio">
+      <div class="stage">
+        <canvas id="s5-ir" height="150"></canvas>
+      </div>
+      <div class="controls">
+        <label><span><span data-i18n="aDelay">延迟（秒）</span> <span class="val" id="s5-delay-val">0.28</span></span>
+          <input type="range" id="s5-delay" min="0.12" max="0.5" step="0.02" value="0.28">
+        </label>
+        <label><span><span data-i18n="aDecay">衰减</span> <span class="val" id="s5-decay-val">0.55</span></span>
+          <input type="range" id="s5-decay" min="0.2" max="0.85" step="0.05" value="0.55">
+        </label>
+        <label><span><span data-i18n="aReps">重复次数</span> <span class="val" id="s5-reps-val">4</span></span>
+          <input type="range" id="s5-reps" min="1" max="8" step="1" value="4">
+        </label>
+      </div>
+      <div class="btn-row">
+        <button class="btn" id="s5-play-dry" data-i18n="aDry">▶ 播放原声</button>
+        <button class="btn primary" id="s5-play-echo" data-i18n="aEcho">▶ 播放带回声</button>
+      </div>
+      <p class="hint" data-i18n="s5aNote"></p>
+    </div>
+
+    <div class="tab-panel hidden" id="s5-panel-photo">
+      <div class="stage">
+        <canvas id="s5-photo" height="300"></canvas>
+      </div>
+      <div class="controls">
+        <label><span><span data-i18n="pRadius">虚化半径</span> <span class="val" id="s5-radius-val">3</span></span>
+          <input type="range" id="s5-radius" min="0" max="8" step="1" value="3">
+        </label>
+      </div>
+      <p class="hint" data-i18n="s5pNote"></p>
+    </div>
+
+    <div class="tab-panel hidden" id="s5-panel-data">
+      <div class="stage">
+        <canvas id="s5-data" height="280"></canvas>
+      </div>
+      <div class="controls">
+        <label><span><span data-i18n="dPass">[1,2,1]/4 遍数</span> <span class="val" id="s5-pass-val">3</span></span>
+          <input type="range" id="s5-pass" min="1" max="8" step="1" value="3">
+        </label>
+      </div>
+      <p class="legend">
+        <span class="dot dot-raw"></span><span data-i18n="legRaw">原始（带噪）</span>
+        <span class="dot dot-box"></span><span data-i18n="legBox">盒式平均（宽 5）</span>
+        <span class="dot dot-gauss"></span><span data-i18n="legGauss">[1,2,1]/4 多遍</span>
+      </p>
+      <p class="hint" data-i18n="s5dNote"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：与傅里叶相遇 ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">与傅里叶相遇：卷积 = 频域里逐点相乘</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <div class="stage">
+      <canvas id="s6-canvas" height="300"></canvas>
+    </div>
+    <div class="dual">
+      <div class="half">
+        <p class="stage-title" data-i18n="s6sig">信号 f</p>
+        <div class="btn-row">
+          <button class="btn active" id="s6-sig-rect" data-i18n="sigRect">矩形脉冲</button>
+          <button class="btn" id="s6-sig-tri" data-i18n="sigTri">三角脉冲</button>
+          <button class="btn" id="s6-sig-sine" data-i18n="sigSine">正弦波包</button>
+          <button class="btn" id="s6-sig-steps" data-i18n="sigSteps">随机台阶</button>
+        </div>
+      </div>
+      <div class="half">
+        <p class="stage-title" data-i18n="s6ker">核 g</p>
+        <div class="btn-row">
+          <button class="btn active" id="s6-ker-smooth" data-i18n="kerSmooth">平滑核 [1,2,3,2,1]</button>
+          <button class="btn" id="s6-ker-diff" data-i18n="kerDiff">差分核 [−1, 1]</button>
+          <button class="btn" id="s6-ker-echo" data-i18n="kerEcho">回声核（冲激串）</button>
+        </div>
+      </div>
+    </div>
+    <div class="stage">
+      <canvas id="s6-spec" height="170"></canvas>
+    </div>
+    <p class="readout" id="s6-readout"></p>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px"><a class="fourier-link" href="../fourier/" data-i18n="s6link">回傅里叶页再看看那些圆 →</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">knowledge.integ.life · 卷积 Convolution —— 一步一交互系列</footer>
+
+<script src="app.js?v=aa4e2bc"></script>
+</body>
+</html>
