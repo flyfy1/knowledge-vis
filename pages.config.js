@@ -249,5 +249,21 @@ window.KNOWLEDGE_PAGES = [
     category: "probability",
     status: "live",
     path: "entropy/"
+  },
+  {
+    slug: "lti",
+    title: { zh: "冲激与 LTI · 给系统一巴掌", en: "Impulse & LTI · Slap the System" },
+    desc: {
+      zh: "想认识一个系统，别逐个试输入——扇它一巴掌，把它对冲激的全部回答 h 录下来。只要它是线性时不变的，这份指纹就决定了它对一切输入的回答；公理垮掉的地方，魔法当场失效给你看。",
+      en: "To know a system, don't test input after input — slap it once and record its full answer to an impulse. If it is linear and time-invariant, that fingerprint h decides its answer to everything; where the axioms break, watch the magic fail on the spot."
+    },
+    tags: [
+      { zh: "冲激响应", en: "Impulse Response" },
+      { zh: "LTI 系统", en: "LTI Systems" },
+      { zh: "线性时不变", en: "Linear Time-Invariant" }
+    ],
+    category: "signal",
+    status: "live",
+    path: "lti/"
   }
 ];

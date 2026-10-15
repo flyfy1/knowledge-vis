@@ -26,6 +26,7 @@ clicks.
 | [Gradient Descent · 梯度下降](https://visual.integ.life/gradient-descent/) | Training is feeling your way downhill blind: the slope is your only information, and the step size decides everything. Momentum, SGD jitter, saddles, and a live-trained model. |
 | [Eigenvalues · 特征值与特征向量](https://visual.integ.life/eigen/) | The directions a matrix cannot turn — only stretch, shrink, or flip. Power iteration, diagonalization, PCA, and the λ = 1 eigenvector behind PageRank. |
 | [Entropy · 熵](https://visual.integ.life/entropy/) | Entropy is averaged surprise: the hard limit of compression, the ancestor of ML loss functions, and kin to thermodynamic entropy — with hand-built Huffman codes to touch the limit. |
+| [Impulse & LTI · 冲激与 LTI](https://visual.integ.life/lti/) | Slap a system once and record its fingerprint h: for LTI systems that single answer decides the response to everything. Axioms tested with real deviation numbers — and falsified live. |
 
 ## Run it locally · 本地运行
 
