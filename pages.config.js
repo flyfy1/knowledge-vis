@@ -121,5 +121,21 @@ window.KNOWLEDGE_PAGES = [
     category: "math",
     status: "live",
     path: "trig/"
+  },
+  {
+    slug: "montecarlo",
+    title: { zh: "蒙特卡洛 · 撒豆子算 π", en: "Monte Carlo · Counting π with Scattered Beans" },
+    desc: {
+      zh: "算不出来的问题，可以撒豆子撒出来：随机撒点落在圆内的比例就是面积比，π 自己浮出来。误差按 1/√N 收缩——想多准一位，点要多撒一百倍。",
+      en: "Some problems you can't solve, you can scatter your way to: the fraction of random points landing in a circle is an area ratio, and π surfaces on its own. Error shrinks like 1/√N — one more digit costs a hundred times the points."
+    },
+    tags: [
+      { zh: "蒙特卡洛", en: "Monte Carlo" },
+      { zh: "随机模拟", en: "Simulation" },
+      { zh: "大数定律", en: "Law of Large Numbers" }
+    ],
+    category: "probability",
+    status: "live",
+    path: "montecarlo/"
   }
 ];

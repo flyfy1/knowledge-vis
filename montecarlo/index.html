@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蒙特卡洛 · 撒豆子算 π</title>
+<link rel="stylesheet" href="style.css?v=bc0c1c4">
+<script src="i18n.js?v=bc0c1c4"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">蒙特卡洛</h1>
+    <p class="tagline" data-i18n="tagline">算不出来的问题，可以撒豆子撒出来。在正方形里乱撒点，落在圆里的比例就是 π/4——于是数点就能算出 π。这一页从撒豆子算 π 开始，看清那条 1/√N 的收敛铁律，再把它用到没有公式的面积、布丰的针、和高维空间里。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 钩子</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 比例即概率</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 收敛铁律</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 无公式的面积</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 布丰投针</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 高维</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 终章 · 挑战</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子（下雨算 π） ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+    <h2 data-i18n="s0t">一颗豆子不会算，一万颗会</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="400"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s0-play" data-i18n="pause">暂停</button>
+      <button class="btn" id="s0-seed" data-i18n="newSeed">换一颗种子</button>
+      <button class="btn" id="s0-reset" data-i18n="reset">重置</button>
+    </div>
+    <div class="btn-row">
+      <span class="seq-label" data-i18n="speedLab">撒点速度</span>
+      <button class="btn spd" data-rate="90" data-i18n="spdSlow">慢 · 约 90 点/秒</button>
+      <button class="btn spd active" data-rate="1500" data-i18n="spdMid">中 · 约 1500 点/秒</button>
+      <button class="btn spd" data-rate="30000" data-i18n="spdFast">快 · 约 3 万点/秒</button>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：比例就是概率 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 比例即概率</p>
+    <h2 data-i18n="s1t">频率多起来，就会露出概率的脸</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="360"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="seq-label" data-i18n="s1rLab">圆半径 r（撒点范围 = 圆的外接正方形）</span>
+      <button class="btn rbtn" data-r="0.3">r = 0.3</button>
+      <button class="btn rbtn" data-r="0.4">r = 0.4</button>
+      <button class="btn rbtn active" data-r="0.5">r = 0.5</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s1-one" data-i18n="dropOne">撒一颗</button>
+      <button class="btn" id="s1-auto" data-i18n="autoSlow">自动慢撒</button>
+      <button class="btn" id="s1-reset" data-i18n="reset">重置</button>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：收敛铁律 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 收敛铁律</p>
+    <h2 data-i18n="s2t">慢，但明码标价的慢</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="380"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s2-play" data-i18n="runLong">开始长跑</button>
+      <button class="btn" id="s2-seed" data-i18n="newSeed">换一颗种子</button>
+      <button class="btn" id="s2-reset" data-i18n="reset">重置</button>
+    </div>
+    <div class="btn-row">
+      <span class="seq-label" data-i18n="s2modeLab">模式</span>
+      <button class="btn mbtn active" data-mode="single" data-i18n="s2single">单颗种子</button>
+      <button class="btn mbtn" data-mode="multi" data-i18n="s2multi">20 颗种子同跑</button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="readout" id="s2-miles"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：没有公式的面积 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 无公式的面积</p>
+    <h2 data-i18n="s3t">没有公式？撒就完了</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="formula-box">
+      <p class="formula big">(x² + y² − 1)³ − x²y³ ≤ 0</p>
+      <p class="explain small" data-i18n-html="s3formulaNote"></p>
+    </div>
+    <div class="stage">
+      <canvas id="s3-canvas" height="380"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="seq-label" data-i18n="s3shapeLab">形状</span>
+      <button class="btn shbtn active" data-shape="heart" data-i18n="shHeart">心形</button>
+      <button class="btn shbtn" data-shape="star" data-i18n="shStar">五角星</button>
+      <button class="btn shbtn" data-shape="blob" data-i18n="shBlob">云朵</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s3-play" data-i18n="runStart">开始撒点</button>
+      <button class="btn" id="s3-seed" data-i18n="newSeed">换一颗种子</button>
+      <button class="btn" id="s3-reset" data-i18n="reset">重置</button>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：布丰投针 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 布丰投针</p>
+    <h2 data-i18n="s4t">π 还能从「撞线」里掉出来</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="360"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s4lenLab">针长 L / 线距 d</span> <span class="val" id="s4-len-val">0.8</span></span>
+        <input type="range" id="s4-len" min="0.3" max="1" step="0.05" value="0.8">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s4-one" data-i18n="dropNeedle">扔一根</button>
+      <button class="btn" id="s4-auto" data-i18n="autoDrop">自动连扔</button>
+      <button class="btn" id="s4-x100" data-i18n="drop100">连扔 ×100</button>
+      <button class="btn" id="s4-reset" data-i18n="reset">重置</button>
+    </div>
+    <p class="readout" id="s4-readout"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：高维 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 高维</p>
+    <h2 data-i18n="s5t">网格死了，豆子还活着</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="stage">
+      <canvas id="s5-canvas" height="380"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s5dimLab">维度 d</span> <span class="val" id="s5-dim-val">5</span></span>
+        <input type="range" id="s5-dim" min="2" max="10" step="1" value="5">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s5-play" data-i18n="runStart">开始撒点</button>
+      <button class="btn" id="s5-seed" data-i18n="newSeed">换一颗种子</button>
+      <button class="btn" id="s5-reset" data-i18n="reset">重置</button>
+    </div>
+    <p class="readout" id="s5-readout"></p>
+    <p class="readout" id="s5-grid"></p>
+    <p class="hint" data-i18n-html="s5hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：终章（随机数 + 挑战） ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">随机数从哪来——以及一场挑战</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <div class="stage">
+      <canvas id="s6-canvas" height="280"></canvas>
+    </div>
+    <div class="btn-row">
+      <label class="seed-lab"><span data-i18n="s6seedLab">种子</span>
+        <input type="number" id="s6-seed" value="12345" min="0" step="1">
+      </label>
+      <button class="btn primary" id="s6-first" data-i18n="s6first">撒前 10 点并记下</button>
+      <button class="btn" id="s6-replay" data-i18n="s6replay">用同一种子重演</button>
+    </div>
+    <p class="readout" id="s6-readout"></p>
+    <p class="explain" data-i18n-html="s6ce"></p>
+    <div class="btn-row">
+      <button class="btn primary" id="s6-a10">+10</button>
+      <button class="btn primary" id="s6-a100">+100</button>
+      <button class="btn primary" id="s6-a1000">+1000</button>
+      <button class="btn" id="s6-retry" data-i18n="s6retry">换种子重新挑战</button>
+    </div>
+    <p class="readout" id="s6-challenge"></p>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="/" data-i18n="s6linkIdx">← 回知识索引，看概率线的下一站</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 蒙特卡洛 Monte Carlo —— 一步一交互系列</footer>
+
+<script src="app.js?v=bc0c1c4"></script>
+</body>
+</html>
