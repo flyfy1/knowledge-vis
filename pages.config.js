@@ -281,5 +281,21 @@ window.KNOWLEDGE_PAGES = [
     category: "signal",
     status: "live",
     path: "freqresp/"
+  },
+  {
+    slug: "modulation",
+    title: { zh: "调制与频移 · 把信号搬上高频运走", en: "Modulation · Shipping Signals on a Carrier" },
+    desc: {
+      zh: "声音跑不远也挤不下——乘一个载波，频谱整体搬家。AM 搬幅度的形状、FM 搬频率的摆动；解调要对准频率与相位，串扰、过调制、抗噪差距，全由真采样与 FFT 现算给你看。",
+      en: "Voices can't travel far or share one band — multiply by a carrier and the whole spectrum moves house. AM ships the shape of the amplitude, FM the wobble of frequency; demodulation, crosstalk, overmodulation, and the noise gap, all computed live from real samples and FFTs."
+    },
+    tags: [
+      { zh: "调制", en: "Modulation" },
+      { zh: "载波", en: "Carrier" },
+      { zh: "频谱搬移", en: "Spectrum Shifting" }
+    ],
+    category: "signal",
+    status: "live",
+    path: "modulation/"
   }
 ];

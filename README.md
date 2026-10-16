@@ -28,6 +28,7 @@ clicks.
 | [Entropy · 熵](https://visual.integ.life/entropy/) | Entropy is averaged surprise: the hard limit of compression, the ancestor of ML loss functions, and kin to thermodynamic entropy — with hand-built Huffman codes to touch the limit. |
 | [Impulse & LTI · 冲激与 LTI](https://visual.integ.life/lti/) | Slap a system once and record its fingerprint h: for LTI systems that single answer decides the response to everything. Axioms tested with real deviation numbers — and falsified live. |
 | [Frequency Response & Filters · 频率响应与滤波](https://visual.integ.life/freqresp/) | Every LTI system is a picky eater by frequency: scale by |H(ω)|, delay by φ(ω). Bode plots, true FIR zeros, phase distortion, and a design bench with real pass/fail math. |
+| [Modulation · 调制与频移](https://visual.integ.life/modulation/) | Multiply by a carrier and the spectrum moves house: AM, FM, envelope vs coherent demodulation, channel crosstalk, and I/Q — every spectrum computed by a real FFT. |
 
 ## Run it locally · 本地运行
 

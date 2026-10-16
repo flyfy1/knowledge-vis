@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>调制与频移 · 把信号搬上高频运走</title>
+<link rel="stylesheet" href="style.css?v=645fddd">
+<script src="i18n.js?v=645fddd"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">调制与频移 · 把信号搬上高频运走</h1>
+    <p class="tagline" data-i18n="tagline">声音本身跑不远，还都挤在同一段低频里。调制做的事，是把消息的频谱整包搬到一条高频载波旁边运走，到站再原样搬回来。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 搬家</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 AM</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 接收对准</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 包络检波</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 FM 与抗噪</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 频分复用</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 终章 · I/Q</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+    <h2 data-i18n="s0t">声音住在低频，却要搬去高频住</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage"><canvas id="s0-wave" height="250"></canvas></div>
+    <div class="controls">
+      <label><span><span data-i18n="s0fcLab">载波频率 fc</span> <span class="val" id="s0-fc-val">160 Hz</span></span>
+        <input type="range" id="s0-fc" min="30" max="320" step="5" value="160"></label>
+    </div>
+    <div class="stage"><canvas id="s0-spec" height="250"></canvas></div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：AM ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · AM</p>
+    <h2 data-i18n="s1t">一乘，频谱就搬家了</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <p class="formula" data-i18n="s1f"></p>
+    <div class="btn-row">
+      <button class="btn active" id="s1-msg-single" data-i18n="s1msgSingle">消息：单音 10 Hz</button>
+      <button class="btn" id="s1-msg-dual" data-i18n="s1msgDual">消息：双音 10 + 25 Hz</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1mLab">调制指数 m</span> <span class="val" id="s1-m-val">0.80</span></span>
+        <input type="range" id="s1-m" min="0" max="1.2" step="0.02" value="0.8"></label>
+    </div>
+    <div class="stage"><canvas id="s1-wave" height="330"></canvas></div>
+    <div class="stage"><canvas id="s1-spec" height="260"></canvas></div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：接收对准 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 接收</p>
+    <h2 data-i18n="s2t">搬回来要对准：频率与相位都得对账</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <p class="formula" data-i18n="s2f"></p>
+    <div class="controls">
+      <label><span><span data-i18n="s2dfLab">本振失谐 Δf</span> <span class="val" id="s2-df-val">0 Hz</span></span>
+        <input type="range" id="s2-df" min="-5" max="5" step="0.5" value="0"></label>
+      <label><span><span data-i18n="s2phiLab">本振相位差 φ</span> <span class="val" id="s2-phi-val">0°</span></span>
+        <input type="range" id="s2-phi" min="0" max="180" step="5" value="0"></label>
+    </div>
+    <div class="stage"><canvas id="s2-wave" height="260"></canvas></div>
+    <div class="stage"><canvas id="s2-spec" height="220"></canvas></div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：包络检波 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 包络检波</p>
+    <h2 data-i18n="s3t">穷人的解调：二极管 + RC，和它赌输的地方</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="controls">
+      <label><span><span data-i18n="s3mLab">调制指数 m</span> <span class="val" id="s3-m-val">0.80</span></span>
+        <input type="range" id="s3-m" min="0.2" max="1.4" step="0.02" value="0.8"></label>
+      <label><span><span data-i18n="s3tauLab">RC 时间常数 τ</span> <span class="val" id="s3-tau-val">15 ms</span></span>
+        <input type="range" id="s3-tau" min="0.48" max="2" step="0.01" value="1.176"></label>
+    </div>
+    <div class="stage"><canvas id="s3-wave" height="280"></canvas></div>
+    <div class="duo-ro">
+      <div class="duo-card">
+        <h4 data-i18n="s3cardEnv">包络检波 · 解出的消息</h4>
+        <p class="big" id="s3-env-big"></p>
+        <p class="sub" data-i18n="s3cardEnvSub">二极管峰值 + RC 放电，逐点真仿真</p>
+      </div>
+      <div class="duo-card">
+        <h4 data-i18n="s3cardCoh">相干解调 · 同条件（对照）</h4>
+        <p class="big" id="s3-coh-big"></p>
+        <p class="sub" data-i18n="s3cardCohSub">乘本振 + 理想低通（φ = 0、Δf = 0）</p>
+      </div>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：FM 与抗噪擂台 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · FM</p>
+    <h2 data-i18n="s4t">FM：改搬频率的摆动，再比一比抗噪</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <p class="formula" data-i18n="s4f"></p>
+    <div class="controls">
+      <label><span><span data-i18n="s4betaLab">调制指数 β（Δf = β × 10 Hz）</span> <span class="val" id="s4-beta-val">2.5</span></span>
+        <input type="range" id="s4-beta" min="0.3" max="5" step="0.1" value="2.5"></label>
+    </div>
+    <div class="stage"><canvas id="s4-top" height="300"></canvas></div>
+    <div class="stage"><canvas id="s4-spec" height="260"></canvas></div>
+    <p class="readout" id="s4-readout"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+
+    <div class="bench">
+      <h3 data-i18n="s4aT">抗噪擂台：同一条噪声，泼向 AM 与 FM</h3>
+      <p class="explain small" data-i18n-html="s4aE"></p>
+      <div class="stage"><canvas id="s4-arena" height="250"></canvas></div>
+      <p class="readout" id="s4-arena-ro"></p>
+      <div class="btn-row">
+        <button class="btn" id="s4-seed" data-i18n="s4seedBtn">换一颗噪声种子</button>
+      </div>
+      <p class="hint" data-i18n-html="s4aHint"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：频分复用 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 频分复用</p>
+    <h2 data-i18n="s5t">一条街住三家：选台与串扰</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="controls">
+      <label><span><span data-i18n="s5tgtLab">目标台</span></span>
+        <span class="btn-row" style="margin:0">
+          <button class="btn active" id="s5-tgt-0" data-i18n="staA">甲台</button>
+          <button class="btn" id="s5-tgt-1" data-i18n="staB">乙台</button>
+          <button class="btn" id="s5-tgt-2" data-i18n="staC">丙台</button>
+        </span></label>
+      <label><span><span data-i18n="s5tuneLab">接收调谐 fc（接收机实际对准的频率）</span> <span class="val" id="s5-tune-val">150 Hz</span></span>
+        <input type="range" id="s5-tune" min="110" max="310" step="1" value="150"></label>
+      <label><span><span data-i18n="s5spaceLab">台间距系数（1 = 标准间距 60 Hz）</span> <span class="val" id="s5-space-val">1.00</span></span>
+        <input type="range" id="s5-space" min="0.55" max="1.45" step="0.05" value="1"></label>
+    </div>
+    <div class="stage"><canvas id="s5-spec" height="270"></canvas></div>
+    <div class="stage"><canvas id="s5-wave" height="240"></canvas></div>
+    <p class="readout" id="s5-readout"></p>
+    <p class="hint" data-i18n-html="s5hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：终章 I/Q ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">I/Q：同一条街的上下层</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <p class="formula" data-i18n="s6f"></p>
+    <div class="btn-row">
+      <button class="btn active" id="s6-orth" data-i18n="s6orthBtn">正交发送（cos 驮 I、sin 驮 Q）</button>
+      <button class="btn" id="s6-broken" data-i18n="s6brokenBtn">关掉正交（两路都用 cos）</button>
+    </div>
+    <div class="stage"><canvas id="s6-wave" height="360"></canvas></div>
+    <p class="readout" id="s6-readout"></p>
+    <p class="hint" data-i18n-html="s6hint"></p>
+    <div class="app-cards">
+      <div class="app-card">
+        <h3 data-i18n="s6card1T">从矿石收音机到 5G</h3>
+        <p data-i18n-html="s6card1"></p>
+      </div>
+      <div class="app-card">
+        <h3 data-i18n="s6card2T">锁相环无处不在</h3>
+        <p data-i18n-html="s6card2"></p>
+      </div>
+      <div class="app-card">
+        <h3 data-i18n="s6card3T">波段是公共资源</h3>
+        <p data-i18n-html="s6card3"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../fourier/" data-i18n="s6lkF">傅里叶变换：信号由哪些频率组成 →</a> ·
+        <a class="fourier-link" href="../sampling/" data-i18n="s6lkS">采样与混叠：搬家时的翻车现场 →</a> ·
+        <a class="fourier-link" href="../freqresp/" data-i18n="s6lkR">频率响应与滤波：低通与带通本人 →</a>
+      </p>
+      <p style="margin-top:10px">
+        <a class="fourier-link" href="/" data-i18n="back">← 知识索引</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 调制与频移 Modulation &amp; Frequency Shifting —— 一步一交互系列</footer>
+
+<script src="app.js?v=645fddd"></script>
+</body>
+</html>
