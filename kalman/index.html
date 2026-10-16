@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>卡尔曼滤波 · 怎样结合预测与测量</title>
-<link rel="stylesheet" href="style.css?v=clr1">
-<script src="i18n.js?v=clr1"></script>
+<link rel="stylesheet" href="style.css?v=s2f1">
+<script src="i18n.js?v=s2f1"></script>
 </head>
 <body>
 
@@ -80,12 +80,17 @@
     <p class="explain" data-i18n-html="s2e"></p>
     <p class="formula" data-i18n-html="s2formula"></p>
     <div class="stage"><canvas id="s2-bell" height="300"></canvas></div>
+    <div class="stage">
+      <p class="stage-title" data-i18n="s2trajTitle"></p>
+      <canvas id="s2-traj" height="170"></canvas>
+    </div>
     <div class="btn-row">
       <button class="btn primary" id="s2-next" data-i18n="s2nextPred"></button>
       <button class="btn" id="s2-play" data-i18n="s2play"></button>
       <button class="btn" id="s2-reset" data-i18n="s2reset"></button>
     </div>
     <p class="readout" id="s2-readout"></p>
+    <p class="readout" id="s2-prog"></p>
     <p class="hint" data-i18n-html="s2hint"></p>
   </div>
 </section>
@@ -213,6 +218,6 @@
 
 <footer class="site-foot" data-i18n="foot"></footer>
 
-<script src="app.js?v=clr1"></script>
+<script src="app.js?v=s2f1"></script>
 </body>
 </html>

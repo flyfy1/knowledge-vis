@@ -608,6 +608,183 @@ function drawS2() {
   }
   $('s2-play').textContent = s2.playing ? t('s2stop') : t('s2play');
   $('s2-play').disabled = s2.stage === 'done';
+  /* 进度读数：已处理测量数（z[0] 已用作初始估计，也计入）+ P 的来路，稳态由 steadyQR 现算 */
+  $('s2-prog').innerHTML = t('s2prog', {
+    done: s2.k, total: SCEN_A.N,
+    p0: fmt(SCEN_A.P0, 3), p: fmt(s2.P, 3), ps: fmt(steadyQR(SCEN_A.Q, SCEN_A.R).P, 3)
+  });
+  drawS2Traj();
+}
+/* ================================================================
+   第 2 步累积轨迹带：把已处理的每一步都留下来，让「累积」与
+   「P 收敛」肉眼可见。数据直接取 KF_A —— 与单步推进是同一份
+   kalman1d 递推（同一起点、同一步函数），数值逐位一致，不另算。
+   已处理点 0..s2.k-1：测量叉 + 估计线 + x̂ ± √P 带；
+   预测半步（stage==='update'）在末端画一段张开的楔形，
+   更新落点后楔形并入带体、带变窄。
+   ================================================================ */
+function drawS2Traj() {
+  const cv = $('s2-traj'); if (!cv) return;
+  const ctx = ctxOf('s2-traj');
+  const W = cv._w, H = cv._h;
+  const N = SCEN_A.N;
+  const est = KF_A.est, Parr = KF_A.P, z = SCEN_A.z;
+  const lastK = s2.k - 1; /* 最后一个已更新的下标 */
+  const pending = s2.stage === 'update' && s2.pred;
+  ctx.fillStyle = '#11161f'; ctx.fillRect(0, 0, W, H);
+  ctx.strokeStyle = 'rgba(120,140,165,0.25)'; ctx.lineWidth = 1;
+  ctx.strokeRect(0.5, 0.5, W - 1, H - 1);
+  const legRows = legendRows(ctx, [
+    [t('lgMeas'), '#8fa3bd'], [t('lgEst'), '#6ee7ff'], [t('s2tjBand'), 'rgba(110,231,255,0.45)']
+  ], W - 20);
+  drawLegendRows(ctx, legRows, 10, 12);
+  const padL = 10, padR = 10, padB = 18, padT = 8 + legRows.length * 16 + 4;
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const yLo = BELL_LO, yHi = BELL_HI;
+  const X = k => padL + k / (N - 1) * pw;
+  const Y = v => padT + (yHi - v) / (yHi - yLo) * ph;
+  /* 零线 */
+  if (yLo < 0 && yHi > 0) {
+    ctx.strokeStyle = 'rgba(160,180,205,0.35)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(padL, Y(0)); ctx.lineTo(W - padR, Y(0)); ctx.stroke();
+  }
+  /* 纵轴范围标注（绘图区内右上 / 右下，口径同 seriesPlot） */
+  ctx.font = '10.5px system-ui, sans-serif';
+  ctx.fillStyle = '#5f7089'; ctx.textAlign = 'right';
+  ctx.textBaseline = 'top'; ctx.fillText(fmtS(yHi, 1), W - padR - 2, padT + 2);
+  ctx.textBaseline = 'bottom'; ctx.fillText(fmtS(yLo, 1), W - padR - 2, padT + ph - 1);
+  /* 横轴刻度（步数 k） */
+  ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+  for (let k = 0; k <= N - 1; k += 10) ctx.fillText(String(k), X(k), padT + ph + 5);
+  ctx.fillText(String(N - 1), X(N - 1), padT + ph + 5);
+  /* 不确定带：上沿 0..lastK → 下沿逆序闭合 */
+  if (lastK >= 1) {
+    ctx.beginPath();
+    for (let j = 0; j <= lastK; j++) {
+      const px = X(j), py = Y(est[j] + Math.sqrt(Parr[j]));
+      if (j === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    for (let j = lastK; j >= 0; j--) ctx.lineTo(X(j), Y(est[j] - Math.sqrt(Parr[j])));
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(110,231,255,0.13)'; ctx.fill();
+  } else {
+    /* 只有起点一个点：带画成一小段竖直区间 */
+    ctx.strokeStyle = 'rgba(110,231,255,0.55)'; ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(X(0), Y(est[0] - Math.sqrt(Parr[0])));
+    ctx.lineTo(X(0), Y(est[0] + Math.sqrt(Parr[0])));
+    ctx.stroke();
+  }
+  /* 预测半步：末端楔形张开（半透明填充 + 虚线中线 + 空心点）；
+     楔形是真尺度，√P⁻ 相对 √P 只大 3%–13%，390 下低于像素可辨阈值
+     （复评 M1）——故另在函数末尾叠加并置刻度对面板（示意放大）。 */
+  let widenPanel = null;
+  if (pending) {
+    const kN = s2.k, xp = s2.pred.xPred, sp = Math.sqrt(s2.pred.PPred);
+    ctx.beginPath();
+    ctx.moveTo(X(lastK), Y(est[lastK] + Math.sqrt(Parr[lastK])));
+    ctx.lineTo(X(kN), Y(xp + sp));
+    ctx.lineTo(X(kN), Y(xp - sp));
+    ctx.lineTo(X(lastK), Y(est[lastK] - Math.sqrt(Parr[lastK])));
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(110,231,255,0.10)'; ctx.fill();
+    ctx.strokeStyle = '#6ee7ff'; ctx.lineWidth = 1.6; ctx.setLineDash([4, 3]);
+    ctx.beginPath(); ctx.moveTo(X(lastK), Y(est[lastK])); ctx.lineTo(X(kN), Y(xp)); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.beginPath(); ctx.arc(X(kN), Y(xp), 3.4, 0, Math.PI * 2); ctx.stroke();
+    widenPanel = { W, H, ph, cx: X(kN), cy: Y(xp), sOld: Math.sqrt(Parr[lastK]), sNew: sp };
+  }
+  /* 估计线（单点时画点） */
+  if (lastK >= 1) {
+    ctx.strokeStyle = '#6ee7ff'; ctx.lineWidth = 2;
+    ctx.beginPath();
+    for (let j = 0; j <= lastK; j++) {
+      const px = X(j), py = Y(est[j]);
+      if (j === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+  } else {
+    ctx.fillStyle = '#6ee7ff';
+    ctx.beginPath(); ctx.arc(X(0), Y(est[0]), 2.4, 0, Math.PI * 2); ctx.fill();
+  }
+  /* 测量叉（只画已处理的 z[0..lastK]，与上方图例口径一致） */
+  ctx.strokeStyle = '#8fa3bd'; ctx.lineWidth = 1.2;
+  const cr = 2.8;
+  for (let j = 0; j <= lastK; j++) {
+    const px = X(j), py = Y(z[j]);
+    ctx.beginPath();
+    ctx.moveTo(px - cr, py - cr); ctx.lineTo(px + cr, py + cr);
+    ctx.moveTo(px - cr, py + cr); ctx.lineTo(px + cr, py - cr);
+    ctx.stroke();
+  }
+  /* 当前估计点强调 */
+  ctx.fillStyle = '#eaf6ff';
+  ctx.beginPath(); ctx.arc(X(lastK), Y(est[lastK]), 2.6, 0, Math.PI * 2); ctx.fill();
+  /* 预测半步的刻度对面板画在最上层；更新落点后 pending 消失、面板随之消失 */
+  if (widenPanel) drawS2WidenPanel(ctx, widenPanel);
+}
+/* ================================================================
+   预测半步的「变宽」刻度对（复评 M1 修复）：真尺度下 √P⁻ 相对
+   √P 只大 3%–13%，在轨迹带上低于像素可辨阈值。故在带末端并置
+   两条竖直刻度段——绿 = 当前带末端的 ±√P（更新后），青 = 预测
+   后的 ±√P⁻——按同一比例示意放大（面板内明示），各自带现算的
+   数值标注；引线连回待更新点。两段同心：预测不改变位置估计。
+   ================================================================ */
+function drawS2WidenPanel(ctx, o) {
+  const W = o.W, H = o.H;
+  const sOld = o.sOld, sNew = o.sNew;
+  /* 示意半高：两段共用同一比例，较长的一段（√P⁻）取 HH */
+  const HH = Math.max(18, Math.min(30, o.ph * 0.24));
+  const hA = HH * sOld / sNew, hB = HH;
+  const labA = t('s2tjSqrtP', { v: fmt(sOld, 2) });
+  const labB = t('s2tjSqrtPm', { v: fmt(sNew, 2) });
+  ctx.font = '11px system-ui, sans-serif';
+  const colW = Math.max(ctx.measureText(labA).width, ctx.measureText(labB).width, 40) + 16;
+  ctx.font = '10.5px system-ui, sans-serif';
+  const capW = Math.max(ctx.measureText(t('s2tjWiden')).width, ctx.measureText(t('s2tjExagg')).width);
+  const panelW = Math.max(colW * 2, capW) + 16;
+  const panelH = 56 + HH * 2;
+  /* 位置：优先待更新点右侧，放不下就左侧，整体钳制在画布内 */
+  let px = o.cx + 14;
+  if (px + panelW > W - 4) px = o.cx - 14 - panelW;
+  if (px < 4) px = 4;
+  const py = Math.max(4, Math.min(H - 4 - panelH, o.cy - panelH / 2));
+  /* 引线：待更新点 → 面板近边（虚线，与楔形呼应） */
+  const edgeX = px > o.cx ? px : px + panelW;
+  ctx.strokeStyle = 'rgba(159,180,204,0.65)'; ctx.lineWidth = 1; ctx.setLineDash([3, 3]);
+  ctx.beginPath(); ctx.moveTo(o.cx, o.cy); ctx.lineTo(edgeX, o.cy); ctx.stroke();
+  ctx.setLineDash([]);
+  /* 面板底与边框（盖住其下轨迹，读作嵌入的放大对照） */
+  ctx.fillStyle = 'rgba(13,18,26,0.93)';
+  ctx.fillRect(px, py, panelW, panelH);
+  ctx.strokeStyle = 'rgba(120,140,165,0.55)'; ctx.lineWidth = 1;
+  ctx.strokeRect(px + 0.5, py + 0.5, panelW - 1, panelH - 1);
+  /* 标题：点明「预测后带变宽：√P → √P⁻」+ 示意放大声明 */
+  ctx.textAlign = 'left'; ctx.textBaseline = 'top';
+  ctx.font = '10.5px system-ui, sans-serif';
+  ctx.fillStyle = '#cfe3f7'; ctx.fillText(t('s2tjWiden'), px + 8, py + 7);
+  ctx.fillStyle = '#7d90a8'; ctx.fillText(t('s2tjExagg'), px + 8, py + 20);
+  /* 刻度对：绿 = √P（更新后），青 = √P⁻（预测后），带端帽与中心点 */
+  const segCY = py + 34 + HH;
+  const offX = px + (panelW - colW * 2) / 2;
+  const colAx = offX + colW / 2, colBx = offX + colW * 1.5;
+  const seg = (cx, half, color) => {
+    ctx.strokeStyle = color; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(cx, segCY - half); ctx.lineTo(cx, segCY + half); ctx.stroke();
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(cx - 5, segCY - half); ctx.lineTo(cx + 5, segCY - half);
+    ctx.moveTo(cx - 5, segCY + half); ctx.lineTo(cx + 5, segCY + half);
+    ctx.stroke();
+    ctx.fillStyle = color;
+    ctx.beginPath(); ctx.arc(cx, segCY, 1.8, 0, Math.PI * 2); ctx.fill();
+  };
+  seg(colAx, hA, '#7ee2a8');
+  seg(colBx, hB, '#6ee7ff');
+  /* 数值标注（由当前递推现算） */
+  ctx.font = '11px system-ui, sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+  ctx.fillStyle = '#7ee2a8'; ctx.fillText(labA, colAx, segCY + HH + 4);
+  ctx.fillStyle = '#6ee7ff'; ctx.fillText(labB, colBx, segCY + HH + 4);
 }
 function s2HalfStep() {
   if (s2.stage === 'predict') {
