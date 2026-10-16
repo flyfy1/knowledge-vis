@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>排序与大 O · 增长的形状</title>
+<link rel="stylesheet" href="style.css?v=7331290">
+<script src="i18n.js?v=7331290"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">排序与大 O · 增长的形状</h1>
+    <p class="tagline" data-i18n="tagline">排序算法之间的差别，不在能不能排，而在「比较了多少次」如何随数据量增长。大 O 记的不是秒表，而是增长的形状：n 翻倍时工作量翻几倍。这一页的每个计数都由真实排序代码当场数出来——公式牌上的每个数，都能拿种子自己复算。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 双赛道</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 O(n²) 家族</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 分而治之</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 计数台</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 常数对决</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 计数排序</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 终章 · 真实世界</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子双赛道 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+    <h2 data-i18n="s0t">同一副乱牌，两种命运</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="dual">
+      <div class="half">
+        <p class="lane-lab"><span data-i18n="s0leftLab">冒泡排序 Bubble Sort</span><span class="lane-count" id="s0-left-count"></span></p>
+        <div class="stage"><canvas id="s0-left" height="300"></canvas></div>
+      </div>
+      <div class="half">
+        <p class="lane-lab"><span data-i18n="s0rightLab">归并排序 Merge Sort</span><span class="lane-count" id="s0-right-count"></span></p>
+        <div class="stage"><canvas id="s0-right" height="300"></canvas></div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s0-play" data-i18n="s0race">开始比赛</button>
+      <button class="btn" id="s0-reset" data-i18n="reset">重置</button>
+      <button class="btn" id="s0-seed" data-i18n="newSeed">换个种子</button>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="readout" id="s0-final" style="display:none"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：冒泡与选择 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · O(n²) 家族</p>
+    <h2 data-i18n="s1t">冒泡与选择：笨办法的账要算清</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <p class="formula" data-i18n="s1formula">选择比较数 ≡ n(n−1)/2 · 冒泡交换数 = 逆序数 · 冒泡（带早停）已排序输入比较数 = n−1</p>
+    <div class="btn-row" role="group" aria-label="algorithm">
+      <div class="seg-toggle" id="s1-algo">
+        <button type="button" data-algo="bubble" class="active" data-i18n="algBubble">冒泡</button>
+        <button type="button" data-algo="selection" data-i18n="algSelection">选择</button>
+      </div>
+      <div class="seg-toggle" id="s1-preset">
+        <button type="button" data-preset="random" class="active" data-i18n="presetRandom">随机</button>
+        <button type="button" data-preset="nearly" data-i18n="presetNearly">近乎有序</button>
+        <button type="button" data-preset="sorted" data-i18n="presetSorted">已排序</button>
+        <button type="button" data-preset="reversed" data-i18n="presetReversed">逆序</button>
+      </div>
+    </div>
+    <div class="stage">
+      <canvas id="s1-canvas" height="340"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s1-step" data-i18n="stepCmp">走一次比较</button>
+      <button class="btn" id="s1-play" data-i18n="play">连播</button>
+      <button class="btn" id="s1-reset" data-i18n="reset">重置</button>
+      <button class="btn" id="s1-seed" data-i18n="newSeed">换个种子</button>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="readout" id="s1-note" style="display:none"></p>
+    <div class="tbl-wrap">
+      <table class="cmp-tbl">
+        <thead><tr>
+          <th data-i18n="tblAlgo">算法</th><th data-i18n="tblBest">最好</th>
+          <th data-i18n="tblAvg">平均</th><th data-i18n="tblWorst">最坏</th>
+          <th data-i18n="tblNote">计数口径（与本页实现同源）</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-i18n="algBubble">冒泡</td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td><td data-i18n="tblBubNote">带早停；交换数 = 逆序数</td></tr>
+          <tr><td data-i18n="algSelection">选择</td><td>O(n²)</td><td>O(n²)</td><td>O(n²)</td><td data-i18n="tblSelNote">比较数恒 = n(n−1)/2，与数据无关</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：归并与快排 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 分而治之</p>
+    <h2 data-i18n="s2t">归并与快排：把大问题切小</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="btn-row">
+      <div class="seg-toggle" id="s2-algo">
+        <button type="button" data-s2algo="merge" class="active" data-i18n="algMerge">归并</button>
+        <button type="button" data-s2algo="quick" data-i18n="algQuick">快排</button>
+      </div>
+    </div>
+
+    <div id="s2-merge-panel">
+      <p class="formula" data-i18n="s2formulaM">归并：每层 ≈ n 次比较 × log₂n 层 ≈ n·log₂n</p>
+      <div class="stage"><canvas id="s2split-canvas" height="118"></canvas></div>
+      <p class="hint" data-i18n-html="s2splitCap">切分长这样：一路从中间切开（左半 ⌊n/2⌋），直到每段只剩 1 个。切分本身<strong>不产生比较、不计数</strong>，所以它不单独成帧——下面的动画从第一次合并开始，正是把这棵切分树自底向上逐段合并回来。</p>
+      <div class="stage"><canvas id="s2m-canvas" height="340"></canvas></div>
+      <div class="btn-row">
+        <button class="btn" id="s2m-step" data-i18n="stepCmp">走一次比较</button>
+        <button class="btn" id="s2m-play" data-i18n="play">连播</button>
+        <button class="btn" id="s2m-reset" data-i18n="reset">重置</button>
+        <button class="btn" id="s2m-seed" data-i18n="newSeed">换个种子</button>
+      </div>
+      <p class="readout" id="s2m-readout"></p>
+    </div>
+
+    <div id="s2-quick-panel" style="display:none">
+      <p class="formula" data-i18n="s2formulaQ">快排（本页规则）：pivot = 最后一个元素，Lomuto 分区；随机模式从区间内等概率抽一个当 pivot</p>
+      <div class="btn-row">
+        <span style="color:var(--muted);font-size:14.5px;align-self:center" data-i18n="s2pivotLab">pivot 规则</span>
+        <div class="seg-toggle" id="s2-pivot">
+          <button type="button" data-pivot="last" class="active" data-i18n="s2lastP">取末元</button>
+          <button type="button" data-pivot="random" data-i18n="s2randP">随机抽</button>
+        </div>
+        <div class="seg-toggle" id="s2-preset">
+          <button type="button" data-preset="random" class="active" data-i18n="presetRandom">随机</button>
+          <button type="button" data-preset="sorted" data-i18n="presetSorted">已排序</button>
+        </div>
+      </div>
+      <div class="stage"><canvas id="s2q-canvas" height="340"></canvas></div>
+      <div class="btn-row">
+        <button class="btn" id="s2q-step" data-i18n="stepCmp">走一次比较</button>
+        <button class="btn" id="s2q-play" data-i18n="play">连播</button>
+        <button class="btn" id="s2q-reset" data-i18n="reset">重置</button>
+        <button class="btn" id="s2q-seed" data-i18n="newSeed">换个种子</button>
+      </div>
+      <p class="readout" id="s2q-readout"></p>
+      <p class="readout" id="s2q-note" style="display:none"></p>
+    </div>
+
+    <div class="tbl-wrap">
+      <table class="cmp-tbl">
+        <thead><tr>
+          <th data-i18n="tblAlgo">算法</th><th data-i18n="tblBest">最好</th>
+          <th data-i18n="tblAvg">平均</th><th data-i18n="tblWorst">最坏</th>
+          <th data-i18n="tblNote">计数口径（与本页实现同源）</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-i18n="algMerge">归并</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td data-i18n="tblMerNote">切分固定取左半 ⌊n/2⌋；移动 = 写入主数组次数</td></tr>
+          <tr><td data-i18n="algQuick">快排</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n²)</td><td data-i18n="tblQuiNote">pivot 取末元（本页规则）；最坏 = 已排序输入</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：计数台 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 计数台</p>
+    <h2 data-i18n="s3t">让数字自己画出形状</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="btn-row">
+      <button class="btn primary" id="s3-run" data-i18n="s3run">重新开跑</button>
+      <button class="btn" id="s3-seed" data-i18n="newSeed">换个种子</button>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="tbl-title" data-i18n="s3tblCounts">比较数（真计数）</p>
+    <div class="tbl-wrap"><div id="s3-table"></div></div>
+    <p class="tbl-title" data-i18n="s3tblRatios">翻倍比（相邻两档计数之比，由表值现算）</p>
+    <div class="tbl-wrap"><div id="s3-ratios"></div></div>
+    <div class="stage"><canvas id="s3-plot" height="400"></canvas></div>
+    <p class="hint" data-i18n-html="s3figNote"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：常数对决 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 常数对决</p>
+    <h2 data-i18n="s4t">大 O 是形状，不是速度</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <p class="formula" data-i18n="s4formula">A(n) = 100 · n · log₂n（重操作） vs B(n) = n²（轻操作）</p>
+    <div class="stage"><canvas id="s4-plot" height="360"></canvas></div>
+    <div class="controls">
+      <label><span><span data-i18n="s4nLab">n（对数滑杆）</span> <span class="val" id="s4-n-val">100</span></span>
+        <input type="range" id="s4-n" min="1" max="3.5" step="0.01" value="2"></label>
+    </div>
+    <p class="readout" id="s4-readout"></p>
+    <p class="readout" id="s4-cross"></p>
+    <h3 style="margin-top:24px;font-size:19px" data-i18n="s4termT">主导项：低阶项会被涨没</h3>
+    <p class="explain" data-i18n-html="s4termE" style="margin-top:8px"></p>
+    <div class="stage"><canvas id="s4-term" height="120"></canvas></div>
+    <div class="btn-row" id="s4-term-btns">
+      <button class="btn" data-termn="10">n = 10</button>
+      <button class="btn" data-termn="50">n = 50</button>
+      <button class="btn active" data-termn="100">n = 100</button>
+      <button class="btn" data-termn="1000">n = 1000</button>
+      <button class="btn" data-termn="10000">n = 10000</button>
+    </div>
+    <p class="readout" id="s4-termro"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：计数排序 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 线性时间</p>
+    <h2 data-i18n="s5t">计数排序：不靠比较的排法</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <p class="formula" data-i18n="s5formula">操作数 = n（计数） + (k+1)（扫桶） + n（输出） = 2n + k + 1 · 比较数 = 0 · 内存 = k + 1 格</p>
+    <div class="stage"><canvas id="s5-canvas" height="400"></canvas></div>
+    <div class="controls" id="s5-controls">
+      <label><span><span data-i18n="s5kLab">k · 值域上限（值在 0..k）</span> <span class="val" id="s5-k-val">9</span></span>
+        <input type="range" id="s5-k" min="3" max="20" step="1" value="9"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s5-step" data-i18n="s5step">走一步操作</button>
+      <button class="btn" id="s5-play" data-i18n="play">连播</button>
+      <button class="btn" id="s5-reset" data-i18n="reset">重置</button>
+      <button class="btn" id="s5-seed" data-i18n="newSeed">换个种子</button>
+      <button class="btn" id="s5-blow" data-i18n="s5blow">把值域拉到 100000</button>
+    </div>
+    <p class="readout" id="s5-readout"></p>
+    <p class="hint" data-i18n-html="s5hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：终章 ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">真实世界的排序：混血与直觉</h2>
+    <div class="cards">
+      <div class="card"><h3 data-i18n="c1h">工业实现都是混血</h3><p data-i18n-html="c1"></p></div>
+      <div class="card"><h3 data-i18n="c2h">小 n 时，简单反而赢</h3><p data-i18n-html="c2"></p></div>
+      <div class="card"><h3 data-i18n="c3h">选型直觉：先看 n 与数据</h3><p data-i18n-html="c3"></p></div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 排序与大 O Sorting & Big O —— 一步一交互系列</footer>
+
+<script src="app.js?v=7331290"></script>
+</body>
+</html>

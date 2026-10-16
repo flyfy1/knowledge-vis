@@ -313,5 +313,21 @@ window.KNOWLEDGE_PAGES = [
     category: "signal",
     status: "live",
     path: "kalman/"
+  },
+  {
+    slug: "sorting",
+    title: { zh: "排序与大 O · 增长的形状", en: "Sorting & Big O · The Shape of Growth" },
+    desc: {
+      zh: "算法之间的差别不在能不能排，在比较次数如何随数据量增长。冒泡、选择、归并、快排、计数排序的每个计数都由真实代码当场数出——连大 O 的形状，都是从实测表里拟合出来的。",
+      en: "Algorithms differ not in whether they sort, but in how their comparison counts grow with n. Bubble, selection, merge, quick and counting sort — every count produced live by real code, and the Big O shapes fitted from the measured table itself."
+    },
+    tags: [
+      { zh: "排序算法", en: "Sorting" },
+      { zh: "大 O", en: "Big O" },
+      { zh: "分而治之", en: "Divide & Conquer" }
+    ],
+    category: "computing",
+    status: "live",
+    path: "sorting/"
   }
 ];
