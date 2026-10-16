@@ -423,7 +423,14 @@ function s0RefreshText() {
   $('s0-readout').innerHTML = ro;
 }
 function drawS0() { s0.boxes.forEach(drawS0Box); s0RefreshText(); }
-function s0Slap(b) { b.slapped = true; b.prog = 0; b.guess = null; b.revealed = false; drawS0(); }
+function s0Slap(b) {
+  /* 已揭晓的箱再扇 = 按读数邀请「再扇一次重听」：只把动画进度归零重播响应，
+     保留 guess/revealed 与计分，绝不清零、不回退未揭晓态。
+     未揭晓的箱维持原行为（清掉猜测态——此时 guess 本为 null）。 */
+  b.slapped = true; b.prog = 0;
+  if (!b.revealed) { b.guess = null; b.revealed = false; }
+  drawS0();
+}
 $('s0-slapA').addEventListener('click', () => s0Slap(s0.boxes[0]));
 $('s0-slapB').addEventListener('click', () => s0Slap(s0.boxes[1]));
 $('s0-slapC').addEventListener('click', () => s0Slap(s0.boxes[2]));

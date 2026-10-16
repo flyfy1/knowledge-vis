@@ -660,6 +660,7 @@ function renderQuiz() {
     if (q.answered) {
       if (i === q.correctIdx) b.classList.add('right');
       else if (i === q.picked) b.classList.add('wrong');
+      b.disabled = true; /* 揭晓后锁定全部选项：计分已定，再点只会让人误读反馈是在判新点击 */
     }
     b.addEventListener('click', () => answerQuiz(i));
     box.appendChild(b);
@@ -679,14 +680,17 @@ function answerQuiz(i) {
   });
   renderQuiz();
 }
-function updateS2() {
+function updateS2(fromParam) {
   const tau = s2tau(), wc = 1 / tau;
   $('s2-r-val').textContent = fmtS(s2.R, 2);
   $('s2-c-val').textContent = fmtS(s2.C, 2);
   const slope = slopeDbPerDec(w => rcLPmag(w, tau), 10 * wc, 100 * wc);
   $('s2-readout').innerHTML = t('s2ro', { tau: fmtS(tau, 2), wc: fmtS(wc, 2), slope: fmtS(slope, 1) });
   drawS2Mag(); drawS2Phase();
-  if (s2.quiz && !s2.quiz.answered) genQuiz(s2.quiz.kind); /* R/C 变了 → 真值随之变，未答的题按原 kind 重出 */
+  if (s2.quiz && !s2.quiz.answered) {
+    genQuiz(s2.quiz.kind); /* R/C 变了 → 真值随之变，未答的题按原 kind 重出 */
+    if (fromParam) $('s2-quiz-ro').innerHTML = t('s2quizRegen'); /* 重出不能静默：明示题目已换 */
+  }
 }
 
 /* ================================================================
@@ -1041,8 +1045,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('s1-w').addEventListener('input', e => { s1.w = Math.pow(10, parseFloat(e.target.value)); updateS1(); });
 
-  $('s2-r').addEventListener('input', e => { s2.R = Math.pow(10, parseFloat(e.target.value)); updateS2(); });
-  $('s2-c').addEventListener('input', e => { s2.C = Math.pow(10, parseFloat(e.target.value)); updateS2(); });
+  $('s2-r').addEventListener('input', e => { s2.R = Math.pow(10, parseFloat(e.target.value)); updateS2(true); });
+  $('s2-c').addEventListener('input', e => { s2.C = Math.pow(10, parseFloat(e.target.value)); updateS2(true); });
   $('s2-quiz-next').addEventListener('click', () => { genQuiz(); drawS2Mag(); drawS2Phase(); });
 
   $('s3-m').addEventListener('input', e => { s3.M = parseInt(e.target.value, 10); updateS3(); });

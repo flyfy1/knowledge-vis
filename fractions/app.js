@@ -400,7 +400,8 @@ function initS1() {
    ============================================================ */
 const S2 = {
   exp: { n: 1, d: 2 }, expPrev: null, expStart: 0,
-  chain: reduceChain(12, 18), redShown: 1, viaGcd: false
+  chain: reduceChain(12, 18), redShown: 1, viaGcd: false,
+  expRo: null, roSide: 'red'
 };
 FRACTIONS.state.s2 = S2;
 function s2Draw() {
@@ -456,23 +457,32 @@ function s2Draw() {
   });
   FRACTIONS.pixels.s2 = { unit: w, alignX, chainLast: S2.chain[S2.chain.length - 1] };
 }
+/* 约分侧按当前状态推导读数（初始态返回 null）；扩分侧的读数存在 S2.expRo。
+   共用读数行由 S2.roSide 标明归属，s2Readouts 是状态的纯渲染——
+   任一侧重置后读数自动回落到另一侧仍有效的消息，两侧都初始则回到初始态（空）。 */
+function s2RedRo() {
+  if (S2.viaGcd || S2.redShown >= S2.chain.length) return { key: 's2roRedDone', params: {} };
+  if (S2.redShown > 1) {
+    const prev = S2.chain[S2.redShown - 2], cur = S2.chain[S2.redShown - 1];
+    return { key: 's2roRed', params: { f0: prev.n + '/' + prev.d, p: cur.by, f1: cur.n + '/' + cur.d } };
+  }
+  return null;
+}
 function s2Readouts() {
   setRO('s2-gcd', t('s2gcd', { g: igcd(12, 18) }));
-  if (S2.viaGcd) setRO('s2-readout', t('s2roRedDone'));
-  else if (S2.redShown >= S2.chain.length) setRO('s2-readout', t('s2roRedDone'));
-  else if (S2.redShown > 1) {
-    const prev = S2.chain[S2.redShown - 2], cur = S2.chain[S2.redShown - 1];
-    setRO('s2-readout', t('s2roRed', { f0: prev.n + '/' + prev.d, p: cur.by, f1: cur.n + '/' + cur.d }));
-  }
+  const ro = S2.roSide === 'exp' ? S2.expRo : s2RedRo();
+  setRO('s2-readout', ro ? t(ro.key, ro.params) : '');
 }
 function s2Multiply(k) {
   const nd = S2.exp.d * k;
-  if (nd > 72) { setRO('s2-readout', t('s2roExpMax', { d: S2.exp.d })); return; }
+  S2.roSide = 'exp';
+  if (nd > 72) { S2.expRo = { key: 's2roExpMax', params: { d: S2.exp.d } }; s2Readouts(); return; }
   const f0 = S2.exp.n + '/' + S2.exp.d;
   S2.expPrev = S2.exp.d;
   S2.exp = { n: S2.exp.n * k, d: nd };
   S2.expStart = NOW;
-  setRO('s2-readout', t('s2roExp', { f0, k, f1: S2.exp.n + '/' + S2.exp.d }));
+  S2.expRo = { key: 's2roExp', params: { f0, k, f1: S2.exp.n + '/' + S2.exp.d } };
+  s2Readouts();
   s2Draw();
 }
 function initS2() {
@@ -481,16 +491,17 @@ function initS2() {
   $('s2-mul3').addEventListener('click', () => s2Multiply(3));
   $('s2-mul4').addEventListener('click', () => s2Multiply(4));
   $('s2-exp-reset').addEventListener('click', () => {
-    S2.exp = { n: 1, d: 2 }; S2.expPrev = null; s2Draw();
+    S2.exp = { n: 1, d: 2 }; S2.expPrev = null; S2.expRo = null; S2.roSide = 'red'; s2Readouts(); s2Draw();
   });
   $('s2-red-step').addEventListener('click', () => {
     S2.viaGcd = false;
     if (S2.redShown < S2.chain.length) S2.redShown++;
+    S2.roSide = 'red';
     s2Readouts(); s2Draw();
   });
-  $('s2-red-gcd').addEventListener('click', () => { S2.viaGcd = true; s2Readouts(); s2Draw(); });
+  $('s2-red-gcd').addEventListener('click', () => { S2.viaGcd = true; S2.roSide = 'red'; s2Readouts(); s2Draw(); });
   $('s2-red-reset').addEventListener('click', () => {
-    S2.redShown = 1; S2.viaGcd = false; s2Readouts(); s2Draw();
+    S2.redShown = 1; S2.viaGcd = false; S2.roSide = 'exp'; s2Readouts(); s2Draw();
   });
   animate($('step2'), () => { if (S2.expPrev) s2Draw(); });
   onLangRefresh(() => { s2Readouts(); s2Draw(); });

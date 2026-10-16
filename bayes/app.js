@@ -629,7 +629,7 @@ s3Refresh();
 const PRIORS = { flat: [1, 1], weak: [8, 8], strong: [40, 10] };
 const s4 = {
   priKey: 'flat', seed: 20261016, rng: null,
-  randH: 0, randT: 0, manH: 0, manT: 0, recent: []
+  randH: 0, randT: 0, manH: 0, manT: 0, recent: [], flash: null
 };
 function s4ResetStream() {
   s4.rng = mulberry32(s4.seed);
@@ -642,6 +642,7 @@ function s4Post() {
   return posteriorAfterFlips(a, b, H, T);
 }
 function s4FlipRandom(k) {
+  s4.flash = null;
   for (let i = 0; i < k; i++) {
     const head = s4.rng() < COIN_THETA;
     if (head) s4.randH++; else s4.randT++;
@@ -769,11 +770,14 @@ function s4Readout() {
     n: H + T, h: H, a: post.a, b: post.b,
     mean: fmt(post.mean, 3), mode: isFinite(post.mode) ? fmt(post.mode, 3) : t('dash'),
     pmean: fmt(betaMean(pa, pb), 3)
-  });
+  }) + (s4.flash === 'seed'
+    ? '<br>' + t('s4seedNote', { mh: s4.manH, mt: s4.manT })
+    : '');
 }
 document.querySelectorAll('#step4 .pri').forEach(b => {
   b.addEventListener('click', () => {
     s4.priKey = b.dataset.pri;
+    s4.flash = null;
     document.querySelectorAll('#step4 .pri').forEach(x => x.classList.toggle('active', x === b));
     s4Draw(); s4Readout();
   });
@@ -781,15 +785,18 @@ document.querySelectorAll('#step4 .pri').forEach(b => {
 $('s4-f1').addEventListener('click', () => s4FlipRandom(1));
 $('s4-f10').addEventListener('click', () => s4FlipRandom(10));
 $('s4-f100').addEventListener('click', () => s4FlipRandom(100));
-$('s4-manh').addEventListener('click', () => { s4.manH++; s4Draw(); s4Readout(); });
-$('s4-mant').addEventListener('click', () => { s4.manT++; s4Draw(); s4Readout(); });
+$('s4-manh').addEventListener('click', () => { s4.flash = null; s4.manH++; s4Draw(); s4Readout(); });
+$('s4-mant').addEventListener('click', () => { s4.flash = null; s4.manT++; s4Draw(); s4Readout(); });
 $('s4-seed').addEventListener('click', () => {
+  /* B1 修复：换种子只重启随机序列——手动记账按正文承诺分开计数、保留不清零；
+     并在读数里留一行反馈，写明手动账仍在（flash 在下一次其他操作时清除） */
   s4.seed = freshSeed();
-  s4ResetStream(); s4.manH = 0; s4.manT = 0;
+  s4ResetStream();
+  s4.flash = 'seed';
   s4Draw(); s4Readout();
 });
 $('s4-reset').addEventListener('click', () => {
-  s4ResetStream(); s4.manH = 0; s4.manT = 0;
+  s4ResetStream(); s4.manH = 0; s4.manT = 0; s4.flash = null;
   s4Draw(); s4Readout();
 });
 s4ResetStream();

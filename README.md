@@ -1,73 +1,14 @@
-# Knowledge Index · 知识索引
+# visual.integ.life — 知识索引站（原 knowledge.integ.life，已改名）
 
-**Live site: [visual.integ.life](https://visual.integ.life)**
+把难懂的知识点做成可以上手玩的交互页：每页一个主题，由浅入深，一步一交互。
 
-Hard concepts, turned into interactive pages you can play with — one topic per
-page, shallow to deep, one hands-on interaction per step. Play with it until it
-clicks.
+## 结构
+- `index.html` — 索引首页，卡片由配置自动渲染（无构建、无后端，纯静态）
+- `pages.config.js` — **索引配置**：新增知识页 = 在此数组加一条 + 把页面放进同名子目录
+- `fourier/` — 傅里叶变换交互讲解页（源码自 ~/workspace/fourier-lab 迁入，三轮评审档案留在 fourier-lab/rounds/）
+- `fourier-redirect.html` — 旧域名 fourier.integ.life 根路径的跳转页（已部署在 Pi 的 fourier-site 目录）
 
-把难懂的知识点，做成可以上手玩的交互页：每页一个主题，由浅入深，一步一个交互，玩到最后就懂了。
-
-## Pages · 已上线
-
-| Page | What it teaches |
-| --- | --- |
-| [Fourier Transform · 傅里叶变换](https://visual.integ.life/fourier/) | Any waveform — any drawing — is a sum of rotating circles. Seven steps from a single sine wave to drawing your own shape and watching epicycles redraw it via a real DFT. |
-| [Convolution · 卷积](https://visual.integ.life/convolution/) | Blurring a photo, echoing a sound, smoothing data — one machine underneath. Seven steps from sliding averages to meeting the Fourier transform in the frequency domain. |
-| [Mandelbrot Set · 分形](https://visual.integ.life/mandelbrot/) | One line of arithmetic, z → z² + c, grows endless complexity. Zoom a hundred billion times, then meet the Julia set hiding behind every point. |
-| [Feedback & Control · 反馈与控制](https://visual.integ.life/control/) | Why a two-wheeled balancing bot never falls: be the controller yourself, tune a PID badly then well, then let delay, noise and saturation wreck it. |
-| [Sampling & Aliasing · 采样与混叠](https://visual.integ.life/sampling/) | Why wheels spin backwards on video: peeking at the world too lazily invents signals that were never there. The Nyquist line, real sampled audio, and anti-aliasing. |
-| [Trigonometric Functions · 三角函数](https://visual.integ.life/trig/) | Sine is a height, cosine a position, tangent a slope — three projections of one turning point on the unit circle. The prequel to the Fourier transform. |
-| [Monte Carlo · 蒙特卡洛](https://visual.integ.life/montecarlo/) | Scatter points, count the fraction inside a circle, and π surfaces on its own — plus Buffon's needle, areas with no formula, and why grids die in high dimensions while sampling survives. |
-| [Laplace Transform & ROC · 拉普拉斯与 ROC](https://visual.integ.life/laplace/) | Fourier assumes every tone rings forever; Laplace asks whether it is dying or exploding — terrain, poles and convergence regions on the s-plane. |
-| [Bayes · 贝叶斯](https://visual.integ.life/bayes/) | A positive test with a 9% true-positive chance — the test didn't lie, the base rate is thin. Priors, likelihood ratios, chained evidence and prior washout. |
-| [Central Limit Theorem · 中心极限定理](https://visual.integ.life/clt/) | A single die has nothing bell-shaped about it, yet averages always turn normal — σ/√n verified live, the heavy-tail failure exhibit included. |
-| [Z-Transform · Z 变换](https://visual.integ.life/ztransform/) | Rolling the s-plane into the unit circle with z = e^{sT}: poles live inside, sing on the rim, explode outside — the discrete world's Laplace. |
-| [Gradient Descent · 梯度下降](https://visual.integ.life/gradient-descent/) | Training is feeling your way downhill blind: the slope is your only information, and the step size decides everything. Momentum, SGD jitter, saddles, and a live-trained model. |
-| [Sorting & Big O · 排序与大 O](https://visual.integ.life/sorting/) | How comparison counts grow with n: bubble, selection, merge, quick and counting sort — every count from real code, Big O shapes fitted from the measured table. |
-| [Fractions · 分数](https://visual.integ.life/fractions/) | One number, not two stacked: 1/2 and 2/4 overlap pixel-perfectly, then equivalence, comparison and common denominators — exact rational arithmetic, repeating decimals honestly marked ≈. The site's first primary-school page. |
-| [Eigenvalues · 特征值与特征向量](https://visual.integ.life/eigen/) | The directions a matrix cannot turn — only stretch, shrink, or flip. Power iteration, diagonalization, PCA, and the λ = 1 eigenvector behind PageRank. |
-| [Entropy · 熵](https://visual.integ.life/entropy/) | Entropy is averaged surprise: the hard limit of compression, the ancestor of ML loss functions, and kin to thermodynamic entropy — with hand-built Huffman codes to touch the limit. |
-| [Impulse & LTI · 冲激与 LTI](https://visual.integ.life/lti/) | Slap a system once and record its fingerprint h: for LTI systems that single answer decides the response to everything. Axioms tested with real deviation numbers — and falsified live. |
-| [Frequency Response & Filters · 频率响应与滤波](https://visual.integ.life/freqresp/) | Every LTI system is a picky eater by frequency: scale by |H(ω)|, delay by φ(ω). Bode plots, true FIR zeros, phase distortion, and a design bench with real pass/fail math. |
-| [Modulation · 调制与频移](https://visual.integ.life/modulation/) | Multiply by a carrier and the spectrum moves house: AM, FM, envelope vs coherent demodulation, channel crosstalk, and I/Q — every spectrum computed by a real FFT. |
-| [Kalman Filter · 卡尔曼滤波](https://visual.integ.life/kalman/) | The true state is never visible: weigh model prediction against noisy measurement by their uncertainties — gain K, steady state, and velocity estimated from position alone, all from the real recursion. |
-
-## Run it locally · 本地运行
-
-No build step, no dependencies — plain static files.
-
-```bash
-# any static server works, e.g.
-python3 -m http.server 8000
-# then open http://localhost:8000
-```
-
-Opening `index.html` directly from disk also works.
-
-## Add a page · 新增知识页
-
-1. Create a folder for the topic, e.g. `laplace/`, with its `index.html`
-   (plus any `style.css` / `app.js` it needs — vanilla JS + Canvas, no CDN).
-2. Register it in [`pages.config.js`](pages.config.js) — one entry with
-   `slug`, `title`, `desc`, `tags`, `status` (`live` / `planned`) and `path`.
-3. Done — the index page renders its cards from that config.
-
-新增页面只需两步：在配置里加一条记录，把页面放进同名子目录；首页不用改。
-
-## How these pages are made · 制作方式
-
-Each page is built through an iterate-and-review loop: a development agent
-builds it, then a *separate* review agent (fresh context, never involved in
-building) operates the page, checks the math quantitatively, and scores it
-across content accuracy, teaching arc, interaction quality, visuals,
-performance and mobile. Pages ship only after repeated rounds drive the
-must-fix list to zero. The Fourier page went through 3 rounds: 84 → 88 → 96.
-
-## Tech
-
-Vanilla HTML/CSS/JavaScript, Canvas 2D, zero dependencies, zero build.
-
-## License
-
-[MIT](LICENSE)
+## 部署
+Pi：`~/projects/visual-site/`，systemd `visual-site.service`（python http.server :18513），
+CF Tunnel ingress visual.integ.life → localhost:18513（隧道脚本 cf_tunnel_visual.py 在本目录）。
+`~/projects/knowledge-site/`（:18512）与 fourier-site.service（:18511）都只保留跳转页，跳到 visual 对应路径。

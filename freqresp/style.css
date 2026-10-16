@@ -172,6 +172,7 @@ input[type=range]:disabled{opacity:.4;cursor:not-allowed}
 .quiz-opts .btn{padding:7px 14px;font-size:14.5px;font-variant-numeric:tabular-nums}
 .quiz-opts .btn.right{border-color:var(--good);color:var(--good);font-weight:700}
 .quiz-opts .btn.wrong{border-color:var(--accent3);color:var(--accent3)}
+.quiz-opts .btn.right:disabled,.quiz-opts .btn.wrong:disabled{opacity:.9} /* 揭晓后锁定：未标记项变淡，已标记的对/错项保持清晰可读 */
 .quiz-q{font-size:15.5px;margin:2px 0 4px}
 .quiz-q strong{color:var(--accent2)}
 

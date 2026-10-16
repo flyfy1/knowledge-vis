@@ -331,7 +331,7 @@ animate($('step0'), dt => {
 });
 $('s0-play').addEventListener('click', () => { s0.running = !s0.running; s0SyncBtn(); });
 $('s0-seed').addEventListener('click', () => { s0Reset(true); s0Draw(); s0Readout(); });
-$('s0-reset').addEventListener('click', () => { s0Reset(false); s0Draw(); s0Readout(); });
+$('s0-reset').addEventListener('click', () => { s0Reset(false); s0.running = false; s0Draw(); s0Readout(); s0SyncBtn(); });
 document.querySelectorAll('#step0 .spd').forEach(b => {
   b.addEventListener('click', () => {
     document.querySelectorAll('#step0 .spd').forEach(x => x.classList.toggle('active', x === b));
@@ -411,7 +411,7 @@ $('s1-one').addEventListener('click', () => {
   s1Draw(); s1Readout();
 });
 $('s1-auto').addEventListener('click', () => { s1.auto = !s1.auto; s1SyncAuto(); });
-$('s1-reset').addEventListener('click', () => { s1Reset(); s1Draw(); s1Readout(); });
+$('s1-reset').addEventListener('click', () => { s1Reset(); s1.auto = false; s1Draw(); s1Readout(); s1SyncAuto(); });
 document.querySelectorAll('#step1 .rbtn').forEach(b => {
   b.addEventListener('click', () => {
     document.querySelectorAll('#step1 .rbtn').forEach(x => x.classList.toggle('active', x === b));
@@ -734,7 +734,7 @@ animate($('step3'), dt => {
 });
 $('s3-play').addEventListener('click', () => { s3.running = !s3.running; s3SyncBtn(); });
 $('s3-seed').addEventListener('click', () => { s3Reset(true); s3Draw(); s3Readout(); s3SyncBtn(); });
-$('s3-reset').addEventListener('click', () => { s3Reset(false); s3Draw(); s3Readout(); s3SyncBtn(); });
+$('s3-reset').addEventListener('click', () => { s3Reset(false); s3.running = false; s3Draw(); s3Readout(); s3SyncBtn(); });
 document.querySelectorAll('#step3 .shbtn').forEach(b => {
   b.addEventListener('click', () => {
     document.querySelectorAll('#step3 .shbtn').forEach(x => x.classList.toggle('active', x === b));
@@ -835,7 +835,7 @@ animate($('step4'), dt => {
 $('s4-one').addEventListener('click', () => { s4Add(1); s4Draw(); s4Readout(); });
 $('s4-x100').addEventListener('click', () => { s4.pending += 100; });
 $('s4-auto').addEventListener('click', () => { s4.auto = !s4.auto; s4SyncAuto(); });
-$('s4-reset').addEventListener('click', () => { s4Reset(false); s4Draw(); s4Readout(); });
+$('s4-reset').addEventListener('click', () => { s4Reset(false); s4.auto = false; s4Draw(); s4Readout(); s4SyncAuto(); });
 $('s4-len').addEventListener('input', e => {
   s4.ld = parseFloat(e.target.value);
   $('s4-len-val').textContent = fmt(s4.ld, 2);
@@ -944,7 +944,7 @@ animate($('step5'), dt => {
 });
 $('s5-play').addEventListener('click', () => { s5.running = !s5.running; s5SyncBtn(); });
 $('s5-seed').addEventListener('click', () => { s5Reset(true); s5Draw(); s5Readout(); s5SyncBtn(); });
-$('s5-reset').addEventListener('click', () => { s5Reset(false); s5Draw(); s5Readout(); s5SyncBtn(); });
+$('s5-reset').addEventListener('click', () => { s5Reset(false); s5.running = false; s5Draw(); s5Readout(); s5SyncBtn(); });
 $('s5-dim').addEventListener('input', e => {
   s5.d = parseInt(e.target.value, 10);
   $('s5-dim-val').textContent = s5.d;

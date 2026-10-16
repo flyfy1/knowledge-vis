@@ -386,11 +386,18 @@ function s1Readouts() {
   const ang = S1.unit === 'deg' ? fmt(deg, 1) + '°' : fmt(th, 3) + ' rad';
   const tanStr = Math.abs(c) < 1e-12 ? t('undef') : afmt(s / c);
   setRO('s1-readout', t('s1ro', { ang, cos: fmt(c, 3), sin: fmt(s, 3), tan: tanStr }));
-  const q = Math.floor(((deg % 360) + 360) % 360 / 90) + 1;
-  const tanSignVal = (Math.abs(c) < 1e-12 || Math.abs(s) < 1e-12) ? 0 : s / c;
-  setRO('s1-quad', t('s1quad', {
-    q, ss: signSpan(s), cs: signSpan(c), ts: signSpan(tanSignVal)
-  }));
+  /* 象限行：边界角时点落在坐标轴上，不归入任何象限；
+     且 90°/270° 处 tan 须显示「无定义」，与主读数一致（不能印 0） */
+  if (Math.abs(c) < 1e-12) {
+    setRO('s1-quad', t('s1axisY', { ss: signSpan(s), cs: signSpan(c), ts: t('undef') }));
+  } else if (Math.abs(s) < 1e-12) {
+    setRO('s1-quad', t('s1axisX', { ss: signSpan(s), cs: signSpan(c), ts: signSpan(0) }));
+  } else {
+    const q = Math.floor(((deg % 360) + 360) % 360 / 90) + 1;
+    setRO('s1-quad', t('s1quad', {
+      q, ss: signSpan(s), cs: signSpan(c), ts: signSpan(s / c)
+    }));
+  }
   setRO('s1-pyth', t('s1pyth', { c2: fmt(c * c, 3), s2: fmt(s * s, 3), sum: fmt(c * c + s * s, 6) }));
   /* 特殊角精确值卡片 */
   const body = $('s1-card-body');
