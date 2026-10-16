@@ -72,7 +72,7 @@ const STR = {
     s5t: '同一个运算，三个马甲',
     s5e: '认出骨架之后，你会发现卷积到处都是：声音的回声、照片的虚化、数据的平滑——全都是「输出的每一点 = 输入邻域的加权和，权重来自核」。逐个点开看看。',
     tabAudio: '① 音频回声', tabPhoto: '② 照片虚化', tabData: '③ 平滑数据',
-    s5aNote: '回声 = 原声与一串「冲激」（延迟点上放几个尖峰）做卷积：每个尖峰把原声复制一份、按衰减缩小、延迟播放。点「播放带回声」，再拖延迟、衰减和重复次数听区别。下面画的就是这个冲激串（核）。',
+    s5aNote: '回声 = 原声与一串「冲激」（延迟点上放几个尖峰）做卷积：每个尖峰把原声复制一份、按衰减缩小、延迟播放。点「播放带回声」，再拖延迟、衰减和重复次数听区别。下面画的就是这个冲激串（核）。<a class="fourier-link" href="../lti/#step1">冲激本人：怎样把任何信号拆成一串尖峰 →</a>',
     aDry: '▶ 播放原声', aEcho: '▶ 播放带回声',
     aDelay: '延迟（秒）', aDecay: '衰减', aReps: '重复次数',
     cIR: '冲激响应（核）',
@@ -92,6 +92,7 @@ const STR = {
     cTime: '时域卷积（逐点算）', cFreq: '频域相乘（FFT）', cSpec: '频谱 |F|、|G| 与乘积 |F·G|',
     s6fin: '所以傅里叶页那一串旋转的圆不只是好看——<strong>它把卷积从「逐点苦算」变成「逐频相乘」</strong>：长卷积用 FFT 算能快上成百上千倍。今天你已经在四种场景里见过同一个骨架了：滑动平均、离散求和、重叠面积、图像核。音频均衡、图像处理、CNN、乃至概率里「两个独立随机变量之和的分布」，都是它。',
     s6link: '回傅里叶页再看看那些圆 →',
+    s6linkH: 'h[n]：系统对一记冲激的全部回答 →',
   },
   en: {
     docTitle: 'Convolution · One Interaction at a Time',
@@ -158,7 +159,7 @@ const STR = {
     s5t: 'One operation, three disguises',
     s5e: 'Once you can see the skeleton, convolution turns up everywhere: echoes in audio, blur in photos, smoothing in data — always “each output point is a weighted sum of a neighbourhood of the input, with weights from a kernel”. Open each disguise in turn.',
     tabAudio: '① Audio echo', tabPhoto: '② Photo blur', tabData: '③ Smoothing data',
-    s5aNote: 'An echo is the original sound convolved with a train of impulses (spikes at delayed instants): each spike plays a copy of the sound, scaled down by the decay, later in time. Play the echo version, then drag delay, decay and the echo count and listen again. The spikes drawn below are that kernel.',
+    s5aNote: 'An echo is the original sound convolved with a train of impulses (spikes at delayed instants): each spike plays a copy of the sound, scaled down by the decay, later in time. Play the echo version, then drag delay, decay and the echo count and listen again. The spikes drawn below are that kernel. <a class="fourier-link" href="../lti/#step1">The impulse itself: how any signal splits into a train of spikes →</a>',
     aDry: '▶ Play dry', aEcho: '▶ Play with echo',
     aDelay: 'Delay (s)', aDecay: 'Decay', aReps: 'Echo count',
     cIR: 'Impulse response (the kernel)',
@@ -178,6 +179,7 @@ const STR = {
     cTime: 'Time-domain convolution (point by point)', cFreq: 'Frequency-domain product (FFT)', cSpec: 'Spectra |F|, |G| and product |F·G|',
     s6fin: 'So the spinning circles on the Fourier page are not just pretty — <strong>they turn convolution from “multiply everything out” into “multiply frequency by frequency”</strong>: with FFT, long convolutions run hundreds to thousands of times faster. By now you have met the same skeleton four times: moving average, discrete sum, overlap area, image kernel. Audio EQ, image processing, CNNs — even the distribution of a sum of two independent random variables in probability — all run on it.',
     s6link: 'Back to the Fourier page and its circles →',
+    s6linkH: "h[n]: a system's complete answer to one impulse →",
   }
 };
 

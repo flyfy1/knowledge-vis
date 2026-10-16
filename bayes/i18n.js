@@ -121,6 +121,9 @@ const STR = {
     s6fbRight: '<strong>答对了。</strong>P(证据 | 无辜) = 百万分之一，说的是「随便抓个无辜者，证据撞上的概率」；P(无辜 | 证据) 还要乘上先验、再除以证据出现的总概率——一座上千万人的城市里，单是「无辜但撞上证据」的人就可能有好几个。方向一反、底子缺席，这正是第 0 步那笔账在法庭上的翻版。',
     s6fbWrong: '不对。再想想第 0 步：检测再准，也不能直接把「P(阳性 | 没病)」读成「P(没病 | 阳性)」。错在<strong>把两个方向的条件概率偷换了</strong>：P(证据 | 无辜) 是百万分之一，不等于 P(无辜 | 证据)——后者还取决于底子，也就是人群里有多少人可能撞上这份证据。',
     s6fin: '<strong>收束。</strong>这一页只教了一个动作：<strong>先查底子，再看证据</strong>；证据再响，也先问底子有多厚。先验不是偏见——无视先验，才是最大的偏见。',
+    s6lkClt: '样本再多会怎样：去看平均值怎样自己长成钟形 →',
+    s6lkKal: '后验变先验的工业版：卡尔曼怎样一轮轮更新估计 →',
+    s6lkMc: '频率这条路：撒得够多，频率就露出概率的脸 →',
     s6linkIdx: '← 回知识索引，看概率线的下一站'
   },
   en: {
@@ -235,6 +238,9 @@ const STR = {
     s6fbRight: '<strong>Correct.</strong> P(evidence | innocent) = one in a million talks about a random innocent person matching the evidence; P(innocent | evidence) still has to be multiplied by the prior and divided by how often the evidence shows up at all — in a city of millions, several innocent people may match. Swap the direction and drop the base rate, and you get step 0\'s ledger wearing a wig in court.',
     s6fbWrong: 'Not quite. Think back to step 0: however accurate a test is, you cannot read P(positive | healthy) as P(healthy | positive). <strong>The error is swapping the two directions of a conditional probability</strong>: P(evidence | innocent) being one in a million does not make P(innocent | evidence) one in a million — the latter still depends on the base: how many people could produce this evidence.',
     s6fin: '<strong>To close.</strong> This page taught a single move: <strong>check the base rate first, then weigh the evidence</strong> — however loud the evidence shouts, ask how thick the base beneath it is. A prior is not a bias; ignoring the prior is the biggest bias of all.',
+    s6lkClt: 'What more data does: watch averages grow into a bell →',
+    s6lkKal: 'The industrial version of posterior-becomes-prior: how Kalman updates, round after round →',
+    s6lkMc: "The frequency road: toss enough, and frequency shows probability's face →",
     s6linkIdx: '← Back to the index, for the next stop on the probability line'
   }
 };

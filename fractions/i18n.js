@@ -122,6 +122,7 @@ const STR = {
     c3h: '练一练',
     c3: '光看懂不算会，动手算才算。姊妹站 <strong>homework.integ.life</strong> 上有分数的练习题（通分、约分、比大小、加减法都有），做完当场对答案。',
     s6fin: '分数是孩子遇到的第一个「数可以长得不像整数」的时刻。跨过去，数的世界就宽了一倍：整数之间原来还住着无穷多个数，每一个都能被切出来、量出来、算出来。',
+    s6lkMc: '下一站：比例长大了就是概率——撒得够多，频率会露出概率的脸 →',
   },
   en: {
     docTitle: 'Fractions · Cutting the Whole into Equal Parts — One Interaction at a Time',
@@ -238,6 +239,7 @@ const STR = {
     c3h: 'Now Practise',
     c3: 'Understanding is not the same as being able to do it. The sister site <strong>homework.integ.life</strong> has fraction exercises (common denominators, reducing, comparing, adding and subtracting) with instant checking.',
     s6fin: 'A fraction is the first moment a child meets “a number that does not look like an integer”. Step across, and the world of numbers doubles in width: between any two integers live infinitely many more numbers, every one of which can be cut out, measured and computed with.',
+    s6lkMc: 'Next stop: ratios grow up into probability — toss enough, and frequency shows probability’s face →',
   }
 };
 

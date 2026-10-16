@@ -69,7 +69,7 @@ const STR = {
 
     s3k: '第 3 步 · 包络检波',
     s3t: '穷人的解调：二极管 + RC，和它赌输的地方',
-    s3e: '老式收音机不用本振，用得起的只有一颗二极管和一个 RC：二极管只让信号的正半周给电容<strong>瞬间充电到峰值</strong>，两次峰值之间电容经 R 慢慢<strong>放电</strong>——电容电压画出的就是载波的<strong>包络</strong>，也就是 1 + m·消息。下面就是这台检波器的逐点仿真（充电瞬时、放电按 e<sup>−t/τ</sup>)。它成立有个赌注：<strong>m ≤ 1</strong>。m 一旦过 1，包络穿过零点、载波相位翻转，检波器跟的是包络的绝对值，消息在谷底被<strong>折叠</strong>——失真读数当场跳给你看。τ 也别乱拧：太小，纹波压不住；太大，放电跟不上包络的下降沿（<strong>对角切割</strong>）。',
+    s3e: '老式收音机不用本振，用得起的只有一颗二极管和一个 RC：二极管只让信号的正半周给电容<strong>瞬间充电到峰值</strong>，两次峰值之间电容经 R 慢慢<strong>放电</strong>——电容电压画出的就是载波的<strong>包络</strong>，也就是 1 + m·消息。下面就是这台检波器的逐点仿真（充电瞬时、放电按 e<sup>−t/τ</sup>)。它成立有个赌注：<strong>m ≤ 1</strong>。m 一旦过 1，包络穿过零点、载波相位翻转，检波器跟的是包络的绝对值，消息在谷底被<strong>折叠</strong>——失真读数当场跳给你看。τ 也别乱拧：太小，纹波压不住；太大，放电跟不上包络的下降沿（<strong>对角切割</strong>）。<a class="fourier-link" href="../freqresp/#step2">这个 RC 就是一台低通滤波器：它的波特图读法 →</a>',
     s3mLab: '调制指数 m',
     s3tauLab: 'RC 时间常数 τ',
     s3cardEnv: '包络检波 · 解出的消息',
@@ -199,7 +199,7 @@ const STR = {
 
     s3k: 'Step 3 · Envelope Detection',
     s3t: 'The poor receiver: a diode, an RC — and where its bet fails',
-    s3e: 'Old radios had no local oscillator. All they could afford was a diode and an RC: the diode lets the signal’s positive peaks <strong>charge a capacitor instantly to the peak</strong>, and between peaks the capacitor <strong>discharges</strong> slowly through R — so the capacitor voltage traces the carrier’s <strong>envelope</strong>, which is 1 + m·message. Below is a sample-by-sample simulation of exactly that circuit (instant charge, discharge as e<sup>−t/τ</sup>). It rests on a bet: <strong>m ≤ 1</strong>. Once m passes 1, the envelope crosses zero, the carrier phase flips, and the detector ends up following the envelope’s absolute value — the message gets <strong>folded</strong> at its troughs, and the distortion readout jumps on the spot. Don’t abuse τ either: too small and the ripple leaks through; too large and the discharge can’t follow the envelope’s falling edge (<strong>diagonal clipping</strong>).',
+    s3e: 'Old radios had no local oscillator. All they could afford was a diode and an RC: the diode lets the signal’s positive peaks <strong>charge a capacitor instantly to the peak</strong>, and between peaks the capacitor <strong>discharges</strong> slowly through R — so the capacitor voltage traces the carrier’s <strong>envelope</strong>, which is 1 + m·message. Below is a sample-by-sample simulation of exactly that circuit (instant charge, discharge as e<sup>−t/τ</sup>). It rests on a bet: <strong>m ≤ 1</strong>. Once m passes 1, the envelope crosses zero, the carrier phase flips, and the detector ends up following the envelope’s absolute value — the message gets <strong>folded</strong> at its troughs, and the distortion readout jumps on the spot. Don’t abuse τ either: too small and the ripple leaks through; too large and the discharge can’t follow the envelope’s falling edge (<strong>diagonal clipping</strong>). <a class="fourier-link" href="../freqresp/#step2">This RC is a low-pass filter: how to read its Bode plot →</a>',
     s3mLab: 'Modulation index m',
     s3tauLab: 'RC time constant τ',
     s3cardEnv: 'Envelope detector · recovered message',

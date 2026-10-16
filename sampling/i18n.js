@@ -61,7 +61,7 @@ const STR = {
 
     s4k: '第 4 步 · 换个视角',
     s4t: '频域看混叠：频谱在自我复制',
-    s4e: '在<a class="fourier-link" href="../fourier/">傅里叶页</a>我们见过：一个纯音在频谱上是一根峰。采样还有个副作用：整张频谱会以 f<sub>s</sub> 为周期<strong>无限复制</strong>。f<sub>s</sub> 足够大时，副本互不相干，留中间那份 [0, f<sub>s</sub>/2] 就能还原；f<sub>s</sub> 太小，高频副本的一根峰正好落进这半间房——<strong>那就是第 2 步那条假波在频域的出生证</strong>。拖动 f<sub>s</sub>，看副本的间距怎么变。',
+    s4e: '在<a class="fourier-link" href="../fourier/#step5">傅里叶页</a>我们见过：一个纯音在频谱上是一根峰。采样还有个副作用：整张频谱会以 f<sub>s</sub> 为周期<strong>无限复制</strong>。<a class="fourier-link" href="../ztransform/#step5">同一件事在 z 平面的说法：条带与孪生点 →</a>f<sub>s</sub> 足够大时，副本互不相干，留中间那份 [0, f<sub>s</sub>/2] 就能还原；f<sub>s</sub> 太小，高频副本的一根峰正好落进这半间房——<strong>那就是第 2 步那条假波在频域的出生证</strong>。拖动 f<sub>s</sub>，看副本的间距怎么变。',
     s4ro: '副本间距 = f_s = {fs} Hz · 基带 [0, {half} Hz] 内的峰在 {alias} Hz —— 与第 2 步时域假波同数。',
     s4roClean: '副本间距 = f_s = {fs} Hz · f_s > 2f：基带 [0, {half} Hz] 内只有原峰，干净。',
     s4roZero: '特殊情形：f 恰好是 f<sub>s</sub> 的半整数倍——正弦的采样点全都落在过零点上，采样序列恒为 0，频谱里一根峰都没有（和第 2 步 f = f<sub>s</sub> 时的零假波是同一回事）。把 f 或 f<sub>s</sub> 挪开一点点，副本立刻全回来。',
@@ -154,7 +154,7 @@ const STR = {
 
     s4k: 'Step 4 · The frequency view',
     s4t: 'Aliasing in the frequency domain: the spectrum clones itself',
-    s4e: 'On the <a class="fourier-link" href="../fourier/">Fourier page</a> we saw that a pure tone is a single peak in the spectrum. Sampling has a side effect: the whole spectrum is <strong>copied endlessly, one copy every f<sub>s</sub></strong>. With a generous f<sub>s</sub> the copies ignore each other and the middle slice [0, f<sub>s</sub>/2] is enough to rebuild the signal; with a stingy one, a peak from a neighbouring copy lands inside that slice — <strong>that is the fake wave from step 2, with its frequency-domain birth certificate</strong>. Drag f<sub>s</sub> and watch the copy spacing change.',
+    s4e: 'On the <a class="fourier-link" href="../fourier/#step5">Fourier page</a> we saw that a pure tone is a single peak in the spectrum. Sampling has a side effect: the whole spectrum is <strong>copied endlessly, one copy every f<sub>s</sub></strong>. <a class="fourier-link" href="../ztransform/#step5">The same story on the z-plane: strips and twin points →</a> With a generous f<sub>s</sub> the copies ignore each other and the middle slice [0, f<sub>s</sub>/2] is enough to rebuild the signal; with a stingy one, a peak from a neighbouring copy lands inside that slice — <strong>that is the fake wave from step 2, with its frequency-domain birth certificate</strong>. Drag f<sub>s</sub> and watch the copy spacing change.',
     s4ro: 'Copy spacing = f_s = {fs} Hz · the peak inside the baseband [0, {half} Hz] sits at {alias} Hz — the same number as the time-domain fake wave in step 2.',
     s4roClean: 'Copy spacing = f_s = {fs} Hz · f_s > 2f: the baseband [0, {half} Hz] holds only the original peak. Clean.',
     s4roZero: 'Special case: f is an exact half-integer multiple of f<sub>s</sub> — every sample of the sine lands on a zero crossing, the sampled sequence is identically zero, and the spectrum is completely empty (the same effect as the zero fake wave at f = f<sub>s</sub> in step 2). Nudge f or f<sub>s</sub> a little and all the copies come right back.',

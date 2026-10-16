@@ -60,7 +60,7 @@ const STR = {
 
     s3k: '第 3 步 · 精度的代价',
     s3t: 'σ/√n 是条铁律',
-    s3e: '把多档 n 的经验标准差连成 log-log 图，看它落在斜率 <strong>−1/2</strong> 的理论线 σ·n^(−1/2) 上。想误差减半？样本量要 ×4。蒙特卡洛页的「想多准一位、撒 100 倍点」是同一条铁律的另一张脸——<a class="fourier-link" href="../montecarlo/">回蒙特卡洛页看看</a>。',
+    s3e: '把多档 n 的经验标准差连成 log-log 图，看它落在斜率 <strong>−1/2</strong> 的理论线 σ·n^(−1/2) 上。想误差减半？样本量要 ×4。蒙特卡洛页的「想多准一位、撒 100 倍点」是同一条铁律的另一张脸——<a class="fourier-link" href="../montecarlo/#step2">回蒙特卡洛页看看</a>。',
     s3runAll: '一次跑完 n = 1 … 100（每档 4000 组）',
     s3ro: '最小二乘拟合斜率 <span>{slope}</span>（理论 −0.50）· n 与 4n 实测标准差之比 <span>{ratio}</span>（理论 0.50）· 种子 {seed}',
     cardHalfT: '误差减半', cardHalfD: '样本量 × 4',
@@ -82,7 +82,7 @@ const STR = {
 
     s5k: '第 5 步 · 为什么是钟形',
     s5t: '卷积阶梯：加法一遍遍磨出来的',
-    s5e: '回链<a class="fourier-link" href="../convolution/">卷积页</a>：和的分布 = 分布的<strong>卷积</strong>。看均匀分布自己和自己卷：n = 1 矩形 → n = 2 三角形 → n = 3 圆润小山 → n = 5、10 逼近钟形。每级都是数值卷积真算（网格 dx = 0.002 的分段常数密度逐级离散卷积，积分恒为 1），虚线是同参数正态 N(nμ, nσ²) 对照。钟形不是被假设出来的，是「加法」这个动作一遍遍磨出来的。',
+    s5e: '回链<a class="fourier-link" href="../convolution/#step3">卷积页</a>：和的分布 = 分布的<strong>卷积</strong>。看均匀分布自己和自己卷：n = 1 矩形 → n = 2 三角形 → n = 3 圆润小山 → n = 5、10 逼近钟形。每级都是数值卷积真算（网格 dx = 0.002 的分段常数密度逐级离散卷积，积分恒为 1），虚线是同参数正态 N(nμ, nσ²) 对照。钟形不是被假设出来的，是「加法」这个动作一遍遍磨出来的。',
     n3: 'n = 3',
     s5ro: 'n = {n}：卷积得到的和的密度峰值 <span>{peak}</span> · 与同参数正态虚线的最大偏差 <span>{dev}</span> · n = 2 时抽点：pdf(1) = <span>{p2}</span>（解析 1.000）',
     lgConv: '卷积得到的和的密度', lgNormSum: '正态 N(nμ, nσ²)',
@@ -102,7 +102,7 @@ const STR = {
     app1t: '测量误差平均', app1d: '尺子抖、仪器漂——单次测量误差再大，平均 100 次，误差按 σ/√n 缩小。',
     app2t: '质控抽检', app2d: '抽一箱零件测均值判整批是否合格——抽样分布就是这张钟形图，合格线画在钟上。',
     app3t: 'A/B 实验样本量', app3d: '想测出 1% 的转化提升？先算 σ、定 E，n = (zσ/E)² 告诉你得跑多少流量——跑不够的实验，结论全是噪音。',
-    s6fin: '<strong>收束。</strong>先有 σ/√n，后有「误差范围」——新闻里的每一个 ±，都是这一页的公式在上班。想回看「误差按 1/√N 收缩」的另一面，去<a class="fourier-link" href="../montecarlo/">蒙特卡洛页</a>；想看「和的分布 = 分布的卷积」的另一面，去<a class="fourier-link" href="../convolution/">卷积页</a>。',
+    s6fin: '<strong>收束。</strong>先有 σ/√n，后有「误差范围」——新闻里的每一个 ±，都是这一页的公式在上班。想回看「误差按 1/√N 收缩」的另一面，去<a class="fourier-link" href="../montecarlo/#step2">蒙特卡洛页</a>；想看「和的分布 = 分布的卷积」的另一面，去<a class="fourier-link" href="../convolution/#step3">卷积页</a>。',
     s6linkIdx: '← 回知识索引'
   },
   en: {
@@ -157,7 +157,7 @@ const STR = {
 
     s3k: 'Step 3 · Price of Precision',
     s3t: 'σ/√n Is an Iron Law',
-    s3e: 'Connect the empirical standard deviations at many n on a log-log plot and watch them land on the theory line σ·n^(−1/2) with slope <strong>−1/2</strong>. Want to halve the error? Multiply the sample size by 4. The Monte Carlo page\'s "one more digit costs 100× the points" is the same iron law wearing another face — <a class="fourier-link" href="../montecarlo/">revisit the Monte Carlo page</a>.',
+    s3e: 'Connect the empirical standard deviations at many n on a log-log plot and watch them land on the theory line σ·n^(−1/2) with slope <strong>−1/2</strong>. Want to halve the error? Multiply the sample size by 4. The Monte Carlo page\'s "one more digit costs 100× the points" is the same iron law wearing another face — <a class="fourier-link" href="../montecarlo/#step2">revisit the Monte Carlo page</a>.',
     s3runAll: 'Run n = 1 … 100 in one go (4,000 groups each)',
     s3ro: 'Least-squares fitted slope <span>{slope}</span> (theory −0.50) · measured std ratio between n and 4n <span>{ratio}</span> (theory 0.50) · seed {seed}',
     cardHalfT: 'Halve the error', cardHalfD: 'Sample size × 4',
@@ -179,7 +179,7 @@ const STR = {
 
     s5k: 'Step 5 · Convolution Ladder',
     s5t: 'Why the Bell: Ground Out by Repeated Addition',
-    s5e: 'Back to the <a class="fourier-link" href="../convolution/">convolution page</a>: the distribution of a sum is the <strong>convolution</strong> of the distributions. Watch a uniform convolve with itself: n = 1 rectangle → n = 2 triangle → n = 3 a rounded hill → n = 5, 10 approaching the bell. Every level is a true numerical convolution (piecewise-constant densities on a dx = 0.002 grid, convolved level by level; the integral stays 1); the dashed line is the same-parameter normal N(nμ, nσ²) for comparison. The bell is not assumed — it is what the act of adding grinds out.',
+    s5e: 'Back to the <a class="fourier-link" href="../convolution/#step3">convolution page</a>: the distribution of a sum is the <strong>convolution</strong> of the distributions. Watch a uniform convolve with itself: n = 1 rectangle → n = 2 triangle → n = 3 a rounded hill → n = 5, 10 approaching the bell. Every level is a true numerical convolution (piecewise-constant densities on a dx = 0.002 grid, convolved level by level; the integral stays 1); the dashed line is the same-parameter normal N(nμ, nσ²) for comparison. The bell is not assumed — it is what the act of adding grinds out.',
     n3: 'n = 3',
     s5ro: 'n = {n}: convolved sum density peak <span>{peak}</span> · max deviation from the same-parameter normal <span>{dev}</span> · spot check at n = 2: pdf(1) = <span>{p2}</span> (analytic 1.000)',
     lgConv: 'Convolved density of the sum', lgNormSum: 'Normal N(nμ, nσ²)',
@@ -199,7 +199,7 @@ const STR = {
     app1t: 'Averaging measurement error', app1d: 'The ruler shakes, the instrument drifts — however noisy a single reading, average 100 readings and the error shrinks as σ/√n.',
     app2t: 'Quality-control sampling', app2d: 'Sample a box of parts, judge the whole batch by the sample mean — the sampling distribution is this bell, with the pass line drawn on it.',
     app3t: 'A/B experiment sizing', app3d: 'Want to detect a 1% lift in conversion? Estimate σ, fix E, and n = (zσ/E)² tells you how much traffic you need — an underpowered experiment\'s conclusions are all noise.',
-    s6fin: '<strong>To close.</strong> First came σ/√n, then came "margin of error" — every ± in the news is this page\'s formula on duty. For the other face of "error shrinks as 1/√N", visit the <a class="fourier-link" href="../montecarlo/">Monte Carlo page</a>; for the other face of "a sum\'s distribution is the convolution of distributions", visit the <a class="fourier-link" href="../convolution/">convolution page</a>.',
+    s6fin: '<strong>To close.</strong> First came σ/√n, then came "margin of error" — every ± in the news is this page\'s formula on duty. For the other face of "error shrinks as 1/√N", visit the <a class="fourier-link" href="../montecarlo/#step2">Monte Carlo page</a>; for the other face of "a sum\'s distribution is the convolution of distributions", visit the <a class="fourier-link" href="../convolution/#step3">convolution page</a>.',
     s6linkIdx: '← Back to the index'
   }
 };

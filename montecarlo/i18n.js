@@ -45,7 +45,7 @@ const STR = {
 
     s2k: '第 2 步 · 收敛铁律',
     s2t: '慢，但明码标价的慢',
-    s2e: '把 π̂ 随 N 的变化画成一条轨迹（横轴是对数刻度）。浅色带是误差带：π ± 2σ，其中 σ = 4√(p̂(1−p̂)/N)，p̂ 是轨迹在该点处的圆内率。注意带宽的收法：<strong>N 每变 100 倍，带才收窄 10 倍</strong>——这就是 1/√N 铁律：想多准一位小数，点数要乘以 100。再切到「20 颗种子同跑」：20 条轨迹拧成一束，束的宽度（实测标准差）和理论 σ 一起按同样的速度收窄。',
+    s2e: '把 π̂ 随 N 的变化画成一条轨迹（横轴是对数刻度）。浅色带是误差带：π ± 2σ，其中 σ = 4√(p̂(1−p̂)/N)，p̂ 是轨迹在该点处的圆内率。注意带宽的收法：<strong>N 每变 100 倍，带才收窄 10 倍</strong>——这就是 1/√N 铁律：想多准一位小数，点数要乘以 100。再切到「20 颗种子同跑」：20 条轨迹拧成一束，束的宽度（实测标准差）和理论 σ 一起按同样的速度收窄。 <a class="fourier-link" href="../clt/#step3">σ/√n 是条铁律：去看它被 log-log 图验明的样子 →</a>',
     s2modeLab: '模式', s2single: '单颗种子', s2multi: '20 颗种子同跑',
     s2roS: 'N = {n} · π̂ = <span>{pi}</span> · 当前 2σ = {band}（σ = 4√(p̂(1−p̂)/N)）· 种子 {seed}',
     s2roSdone: '长跑到站：N = {n} · π̂ = <span>{pi}</span> · 2σ = {band} · 种子 {seed}',
@@ -57,7 +57,7 @@ const STR = {
 
     s3k: '第 3 步 · 无公式的面积',
     s3t: '没有公式？撒就完了',
-    s3e: '换上一个心形：它由右边的隐式方程定义，面积没有顺手的公式可套（硬算要上重积分）。但撒点不在乎有没有公式：在包围盒里均匀撒点，<strong>面积估值 = 包围盒面积 × 落入率</strong>。读数里的参考值不是解析真值，是用 1600×1600 的密网格一格一格数出来的数值积分——把口径摆在明处，估值慢慢贴上它，就是蒙特卡洛在干正经活。',
+    s3e: '换上一个心形：它由右边的隐式方程定义，面积没有顺手的公式可套（硬算要上重积分）。但撒点不在乎有没有公式：在包围盒里均匀撒点，<strong>面积估值 = 包围盒面积 × 落入率</strong>。读数里的参考值不是解析真值，是用 1600×1600 的密网格一格一格数出来的数值积分——把口径摆在明处，估值慢慢贴上它，就是蒙特卡洛在干正经活。 <a class="fourier-link" href="../convolution/#step3">面积在卷积页是另一种算出法：输出 = 重叠面积 →</a>',
     s3formulaNote: '心形的定义方程。落入判定就是把点的坐标代进去看不等式成不成立——没有第二句规则。',
     s3shapeLab: '形状',
     shHeart: '心形', shStar: '五角星', shBlob: '云朵',
@@ -104,7 +104,7 @@ const STR = {
     s6chOut: ' · 还没进带',
     s6chBest: ' · 历史最佳（最少达标点数）= <b>{best}</b>',
     s6chBestNone: ' · 暂无达标记录',
-    s6fin: '收个尾：蒙特卡洛不是某一道题的解法，是一台<strong>通用机器</strong>——把「算不出来的量」改写成「某个随机事件的概率」，剩下的交给重复。电影里的路径追踪在撒光线，期权定价在撒未来股价的路径，粒子输运在撒中子，天气预报的集合预报在撒几十个平行的天气。它算得慢，但它什么都敢算。本页立起的另两块地基——大数定律（第 1 步）与误差的正态面孔（第 2 步的轨迹束）——是概率线接下来贝叶斯与中心极限定理两页的入口。',
+    s6fin: '收个尾：蒙特卡洛不是某一道题的解法，是一台<strong>通用机器</strong>——把「算不出来的量」改写成「某个随机事件的概率」，剩下的交给重复。电影里的路径追踪在撒光线，期权定价在撒未来股价的路径，粒子输运在撒中子，天气预报的集合预报在撒几十个平行的天气。它算得慢，但它什么都敢算。本页立起的另两块地基——大数定律（第 1 步）与误差的正态面孔（第 2 步的轨迹束）——是概率线接下来<a class="fourier-link" href="../bayes/#step4">贝叶斯</a>与<a class="fourier-link" href="../clt/#step0">中心极限定理</a>两页的入口。',
     s6linkIdx: '← 回知识索引，看概率线的下一站',
 
     durS: '约 {v} 秒', durM: '约 {v} 分钟', durH: '约 {v} 小时', durD: '约 {v} 天', durY: '约 {v} 年',
@@ -148,7 +148,7 @@ const STR = {
 
     s2k: 'Step 2 · The iron law',
     s2t: 'Slow — but the price is printed on the tag',
-    s2e: 'Plot π̂ against N (log scale on the horizontal axis). The pale band is the error band: π ± 2σ, with σ = 4√(p̂(1−p̂)/N) and p̂ the inside-rate of the trajectory at that point. Watch how the band narrows: <strong>multiply N by 100 and the band shrinks only 10×</strong> — that is the 1/√N law: one more correct decimal digit costs a hundred times the points. Then switch to “20 seeds at once”: twenty trajectories twist into a bundle whose width (the measured standard deviation) shrinks in lockstep with the theoretical σ.',
+    s2e: 'Plot π̂ against N (log scale on the horizontal axis). The pale band is the error band: π ± 2σ, with σ = 4√(p̂(1−p̂)/N) and p̂ the inside-rate of the trajectory at that point. Watch how the band narrows: <strong>multiply N by 100 and the band shrinks only 10×</strong> — that is the 1/√N law: one more correct decimal digit costs a hundred times the points. Then switch to “20 seeds at once”: twenty trajectories twist into a bundle whose width (the measured standard deviation) shrinks in lockstep with the theoretical σ. <a class="fourier-link" href="../clt/#step3">σ/√n is an iron law: see it verified on a log-log plot →</a>',
     s2modeLab: 'Mode', s2single: 'One seed', s2multi: '20 seeds at once',
     s2roS: 'N = {n} · π̂ = <span>{pi}</span> · current 2σ = {band} (σ = 4√(p̂(1−p̂)/N)) · seed {seed}',
     s2roSdone: 'Run finished: N = {n} · π̂ = <span>{pi}</span> · 2σ = {band} · seed {seed}',
@@ -160,7 +160,7 @@ const STR = {
 
     s3k: 'Step 3 · Areas without formulas',
     s3t: 'No formula? Just throw beans.',
-    s3e: 'Swap in a heart: it is defined by the implicit equation on the right, and its area has no handy formula (doing it honestly means a double integral). Bean-throwing does not care whether a formula exists: scatter uniformly over the bounding box and <strong>area estimate = box area × hit rate</strong>. The reference in the readout is not an analytic truth — it is a numerical integral counted cell by cell on a 1600×1600 grid, with its method stated in the open. Watching the estimate settle onto it is Monte Carlo doing honest work.',
+    s3e: 'Swap in a heart: it is defined by the implicit equation on the right, and its area has no handy formula (doing it honestly means a double integral). Bean-throwing does not care whether a formula exists: scatter uniformly over the bounding box and <strong>area estimate = box area × hit rate</strong>. The reference in the readout is not an analytic truth — it is a numerical integral counted cell by cell on a 1600×1600 grid, with its method stated in the open. Watching the estimate settle onto it is Monte Carlo doing honest work. <a class="fourier-link" href="../convolution/#step3">Area computed another way on the convolution page: output = overlap area →</a>',
     s3formulaNote: 'The heart’s defining equation. The inside test is nothing more than plugging a point’s coordinates in and checking the inequality — there is no second rule.',
     s3shapeLab: 'Shape',
     shHeart: 'Heart', shStar: 'Star', shBlob: 'Blob',
@@ -207,7 +207,7 @@ const STR = {
     s6chOut: ' · not in the band yet',
     s6chBest: ' · best score so far (fewest points) = <b>{best}</b>',
     s6chBestNone: ' · no successful run yet',
-    s6fin: 'To close: Monte Carlo is not the answer to one problem, it is a <strong>general-purpose machine</strong> — rewrite “a quantity I cannot compute” as “the probability of some random event”, then let repetition do the rest. Path tracing in films throws light rays; option pricing throws future price paths; particle transport throws neutrons; ensemble weather forecasting throws dozens of parallel weathers. It is slow, but it dares to compute anything. The two foundations laid on this page — the law of large numbers (step 1) and the normal face of error (the bundle in step 2) — are the door into the probability line’s next two pages: Bayes and the central limit theorem.',
+    s6fin: 'To close: Monte Carlo is not the answer to one problem, it is a <strong>general-purpose machine</strong> — rewrite “a quantity I cannot compute” as “the probability of some random event”, then let repetition do the rest. Path tracing in films throws light rays; option pricing throws future price paths; particle transport throws neutrons; ensemble weather forecasting throws dozens of parallel weathers. It is slow, but it dares to compute anything. The two foundations laid on this page — the law of large numbers (step 1) and the normal face of error (the bundle in step 2) — are the door into the probability line’s next two pages: <a class="fourier-link" href="../bayes/#step4">Bayes</a> and the <a class="fourier-link" href="../clt/#step0">central limit theorem</a>.',
     s6linkIdx: '← Back to the index, for the probability line’s next stop',
 
     durS: '≈ {v} s', durM: '≈ {v} min', durH: '≈ {v} hours', durD: '≈ {v} days', durY: '≈ {v} years',

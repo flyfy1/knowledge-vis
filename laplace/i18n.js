@@ -26,7 +26,7 @@ const STR = {
     s0vDecay: '衰减中——唱着唱着就没了',
     s0vEqual: '等幅振荡——傅里叶的理想国',
     s0vGrow: '增长中——会涨爆画框（已钳制显示）',
-    s0hint: '把 σ 精确推到 0 停一秒：这条「不死」的波，就是傅里叶页里那些旋转圆画出来的东西。所有真实信号都会死，傅里叶却假设它们不死——它靠的是周期延拓的想象。拉普拉斯不装：它把 σ 写进变换里。下一站你会看到，平面就此多出一整个维度。',
+    s0hint: '把 σ 精确推到 0 停一秒：这条「不死」的波，就是<a class="fourier-link" href="../fourier/#step0">傅里叶页</a>里那些旋转圆画出来的东西。所有真实信号都会死，傅里叶却假设它们不死——它靠的是周期延拓的想象。拉普拉斯不装：它把 σ 写进变换里。下一站你会看到，平面就此多出一整个维度。',
     cvEnv: '包络 ±e^{σt}',
     cvWave: 'e^{σt}·cos(ωt)',
 
@@ -148,7 +148,7 @@ const STR = {
     s0vDecay: 'Decaying — it sings itself out',
     s0vEqual: 'Constant amplitude — Fourier’s ideal world',
     s0vGrow: 'Growing — it would burst the frame (clamped for display)',
-    s0hint: 'Park σ exactly at 0 for a second: this undying wave is what the rotating circles on the Fourier page draw. Every real signal dies, yet Fourier pretends they don’t — it gets away with it by imagining periodic repetition. Laplace doesn’t pretend: it writes σ into the transform itself. Next step, watch the plane gain a whole new dimension.',
+    s0hint: 'Park σ exactly at 0 for a second: this undying wave is what the rotating circles on <a class="fourier-link" href="../fourier/#step0">the Fourier page</a> draw. Every real signal dies, yet Fourier pretends they don’t — it gets away with it by imagining periodic repetition. Laplace doesn’t pretend: it writes σ into the transform itself. Next step, watch the plane gain a whole new dimension.',
     cvEnv: 'envelope ±e^{σt}',
     cvWave: 'e^{σt}·cos(ωt)',
 

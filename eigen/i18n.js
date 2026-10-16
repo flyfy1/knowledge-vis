@@ -117,14 +117,14 @@ const STR = {
     s4matA2: '特征坐标里的 A′ = QᵀAQ：',
     s4cross: '交叉项 A′₁₂ = {v} ≈ 0 —— 新坐标下 xᵀAx = λ₁u² + λ₂v²，两个方向彻底脱钩，各算各的。',
     s4notpd: '注意：当前参数让 A 不再正定（λmin ≤ 0），等高线变成双曲线族，图上只画特征方向线；把 a、d 调大即可回到椭圆。',
-    s4hint: '梯度下降在峡谷里之字形横跳，本质是坐标轴与特征方向不对齐：在特征坐标里，两个方向步长各管各的之字形当场消失。「换一组基，让矩阵变对角」——这是线性代数最有生产力的一招，第 5 步的数据压缩、第 6 步的稳态分析，用的都是它。链接：<a class="fourier-link" href="/gradient-descent/">梯度下降 · 第 2 步峡谷</a>。',
+    s4hint: '梯度下降在峡谷里之字形横跳，本质是坐标轴与特征方向不对齐：在特征坐标里，两个方向步长各管各的之字形当场消失。「换一组基，让矩阵变对角」——这是线性代数最有生产力的一招，第 5 步的数据压缩、第 6 步的稳态分析，用的都是它。链接：<a class="fourier-link" href="../gradient-descent/#step2">去峡谷里看之字形轨迹本身 →</a>。',
     cv4axis1: 'v₁（λ₁）',
     cv4axis2: 'v₂（λ₂）',
 
     /* ---- 第 5 步 ---- */
     s5k: '第 5 步 · 数据的主成分',
     s5t: '方差最大的方向，就是最大特征向量',
-    s5e: '一团拉长的数据点（60 个，固定随机种子生成，已减去均值中心化）。拖动那根过原点的轴，读数是数据沿这根轴投影的<strong>样本方差</strong>（协方差口径：除以 n − 1，本步全文统一）——转到不同方向，方差随之涨落，涨到最大的那个方向，恰好是协方差矩阵的<strong>最大特征向量</strong>。点「显示主成分」让它自己对齐：第一主成分捕获的方差占比 = λ₁/(λ₁ + λ₂)，第二主成分与它垂直、由 λ₂ 管。把数据换到这对新轴上、再把小轴扔掉，数据就被压缩了——这就是 PCA（主成分分析）的全部本体。',
+    s5e: '一团拉长的数据点（60 个，固定随机种子生成，已减去均值中心化）。拖动那根过原点的轴，读数是数据沿这根轴投影的<strong>样本方差</strong>（协方差口径：除以 n − 1，本步全文统一）——转到不同方向，方差随之涨落，涨到最大的那个方向，恰好是协方差矩阵的<strong>最大特征向量</strong>。点「显示主成分」让它自己对齐：第一主成分捕获的方差占比 = λ₁/(λ₁ + λ₂)，第二主成分与它垂直、由 λ₂ 管。把数据换到这对新轴上、再把小轴扔掉，数据就被压缩了——这就是 PCA（主成分分析）的全部本体。 <a class="fourier-link" href="../kalman/#step5">这条主方向在卡尔曼里怎么用：只测位置估速度 →</a>',
     s5formula: '协方差 C = (1/(n−1)) Σ pᵢpᵢᵀ，C 的特征向量 = 主成分方向，特征值 = 沿该方向的方差',
     s5show: '显示主成分', s5hide: '隐藏主成分',
     s5ro: '轴方向角 = <span>{th}°</span> · 沿轴样本方差 = <span>{v}</span>（上限就是 λ₁ = <span>{l1}</span>）',
@@ -153,6 +153,7 @@ const STR = {
     c3h: '稳定性：回到单位圆',
     c3: '离散系统 x ← Ax 稳定 ⟺ A 的全部特征值 |λ| < 1 —— 与 Z 变换页里「极点在单位圆内才稳定」是同一句话：系统矩阵的特征值，就是极点的真身。链接：<a class="fourier-link" href="/ztransform/">Z 变换</a>。',
     s6fin: '从捏圆的机器到谷歌的排名，中间只隔一个问题：<strong>「哪个方向不会被转走？」</strong>特征向量是矩阵的骨架——看懂了骨架，拉伸、旋转、振动、数据的形状、网络的稳态，全都是同一件事的不同说法。',
+    s6lkGd: '峡谷的现场：条件数决定之字形 →', s6lkKal: '协方差的主方向：卡尔曼的二维步 →',
     cv6from: '权重按节点大小显示'
   },
   en: {
@@ -260,13 +261,13 @@ const STR = {
     s4matA2: 'A′ = QᵀAQ in the eigenbasis:',
     s4cross: 'Cross term A′₁₂ = {v} ≈ 0 — in the new coordinates xᵀAx = λ₁u² + λ₂v²: the two directions are fully decoupled, each minding its own business.',
     s4notpd: 'Note: the current parameters make A non-positive-definite (λmin ≤ 0), so the contours become hyperbolas; only the eigendirection lines are drawn. Raise a and d to return to ellipses.',
-    s4hint: 'Gradient descent zigzags in the canyon essentially because the coordinate axes are misaligned with the eigendirections: in the eigenbasis each direction takes its own step size and the zigzag vanishes. “Change the basis until the matrix is diagonal” is linear algebra’s most productive move — Step 5’s data compression and Step 6’s steady state both run on it. Link: <a class="fourier-link" href="/gradient-descent/">Gradient Descent · Step 2, the canyon</a>.',
+    s4hint: 'Gradient descent zigzags in the canyon essentially because the coordinate axes are misaligned with the eigendirections: in the eigenbasis each direction takes its own step size and the zigzag vanishes. “Change the basis until the matrix is diagonal” is linear algebra’s most productive move — Step 5’s data compression and Step 6’s steady state both run on it. Link: <a class="fourier-link" href="../gradient-descent/#step2">see the zig-zag itself in the canyon →</a>.',
     cv4axis1: 'v₁ (λ₁)',
     cv4axis2: 'v₂ (λ₂)',
 
     s5k: 'Step 5 · Principal Components of Data',
     s5t: 'The direction of maximum variance is the top eigenvector',
-    s5e: 'An elongated cloud of 60 points (fixed random seed, already mean-centered). Drag the axis through the origin and read the <strong>sample variance</strong> of the data projected onto it (covariance convention: divide by n − 1, used consistently throughout this step) — the variance rises and falls as you turn, and its maximum is attained exactly at the <strong>top eigenvector of the covariance matrix</strong>. Press “Show principal components” and let it align itself: PC1 captures the share λ₁/(λ₁ + λ₂) of the total variance, PC2 is perpendicular to it and governed by λ₂. Rotate the data into this new basis and throw away the small axis, and the data is compressed — that is the whole of PCA (principal component analysis).',
+    s5e: 'An elongated cloud of 60 points (fixed random seed, already mean-centered). Drag the axis through the origin and read the <strong>sample variance</strong> of the data projected onto it (covariance convention: divide by n − 1, used consistently throughout this step) — the variance rises and falls as you turn, and its maximum is attained exactly at the <strong>top eigenvector of the covariance matrix</strong>. Press “Show principal components” and let it align itself: PC1 captures the share λ₁/(λ₁ + λ₂) of the total variance, PC2 is perpendicular to it and governed by λ₂. Rotate the data into this new basis and throw away the small axis, and the data is compressed — that is the whole of PCA (principal component analysis). <a class="fourier-link" href="../kalman/#step5">How this principal direction is used in Kalman: velocity from position alone →</a>',
     s5formula: 'Covariance C = (1/(n−1)) Σ pᵢpᵢᵀ; eigenvectors of C = principal directions, eigenvalues = variance along them',
     s5show: 'Show principal components', s5hide: 'Hide principal components',
     s5ro: 'Axis angle = <span>{th}°</span> · sample variance along axis = <span>{v}</span> (the ceiling is λ₁ = <span>{l1}</span>)',
@@ -294,6 +295,7 @@ const STR = {
     c3h: 'Stability: back to the unit circle',
     c3: 'A discrete system x ← Ax is stable ⟺ every eigenvalue satisfies |λ| < 1 — the same sentence as the Z-Transform page’s “poles inside the unit circle”: the system matrix’s eigenvalues ARE the poles. Link: <a class="fourier-link" href="/ztransform/">The Z-Transform</a>.',
     s6fin: 'From the circle-squeezing machine to Google’s ranking, there is only one question in between: <strong>“which direction refuses to be turned?”</strong> Eigenvectors are a matrix’s skeleton — once you see the skeleton, stretching, rotation, vibration, the shape of data and the steady state of a network are all the same story told in different accents.',
+    s6lkGd: 'The canyon itself: the condition number sets the zig-zag →', s6lkKal: 'Covariance’s principal directions: Kalman’s 2-D step →',
     cv6from: 'weights shown as node sizes'
   }
 };

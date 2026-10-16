@@ -51,7 +51,7 @@ const STR = {
     /* ---------- 第 2 步 ---------- */
     s2k: '第 2 步 · 把圈闭上',
     s2t: '传感器 → 控制器 → 电机 → 再回到传感器',
-    s2e: '看上面的回路图：信号沿着圈跑——传感器量到角度，控制器算出该出多大的力，电机驱动轮子，车身角度改变，又被传感器量到……周而复始。下面这辆车装的正是这个圈，只是控制器里只有一条最朴素的规则：<strong>往哪边倾，就往哪边开；倾得越狠，开得越猛。</strong>拖动增益，让它先站住再说（晃，是意料之中的）。',
+    s2e: '看上面的回路图：信号沿着圈跑——传感器量到角度，控制器算出该出多大的力，电机驱动轮子，车身角度改变，又被传感器量到……周而复始。下面这辆车装的正是这个圈，只是控制器里只有一条最朴素的规则：<strong>往哪边倾，就往哪边开；倾得越狠，开得越猛。</strong>拖动增益，让它先站住再说（晃，是意料之中的）。 <a class="fourier-link" href="../lti/#step2">回路里每个盒子都有自己的 h：先看系统对一记冲激的回答 →</a>',
     s2gain: '规则增益 K',
     s2reveal: '点破一下：这条「出力与倾斜程度成比例」的规则有个名字——<strong>比例控制，P</strong>。写成公式是 u = Kp·e，其中 e = 目标角度 − 当前角度（目标是竖直，0°）。车往右倾时 e 为负，u 为负，轮子就按这个符号向右加速去追倾倒的方向——方向由误差的符号自动搞定，你拖的 Kp 决定追得有多凶。后面三步，我们给它陆续加上 D 和 I。',
     cSensor: '角度传感器', cError: '误差 e', cCtrl: '控制器', cMotor: '电机', cPlant: '车身 · 倾角 θ',
@@ -102,6 +102,7 @@ const STR = {
     s6demoNote: '演示会先关掉三个坑，用均衡预设硬扛随机方向的推搡。',
     s6demoRun: '演示中… {t} s / 30 s', s6demoDone: '演示完成：30 秒，纹丝不倒。',
     s6fin: '收个尾：<strong>同一个圈，正在别处转着</strong>——你的体温（下丘脑是传感器、汗腺与血管是执行器）、空调、无人机的悬停、汽车的定速巡航、正在着陆的火箭，骨架全是这一页的圈：量一下、算一下、推一下。你亲手调过的 P、I、D 三个字母，就是它们的共同语言。',
+    s6lkLap: '调参就是在搬极点：极点位置决定系统性格 →', s6lkKal: '先估计、再行动：卡尔曼与控制合体的 LQG →', s6lkLti: '这台机器守的两条公理：线性与时不变 →',
     s6assumpT: '本页的简化模型（如实标注）',
     s6assump: '车身看作一点质量，摆长 L = 0.5 m；无摩擦、轮子不打滑；基座加速度由电机直接给出（忽略电机与轮子自身的动力学）；坡度以「重力方向在小车坐标中偏转」建模；控制器与仿真同频 480 Hz，导数带 12 ms 低通、积分带防饱和钳制；仿真固定步长 1/480 s、半隐式欧拉积分，与屏幕刷新率无关。基座在画面中的左右移动只是出力大小的示意，不反馈进角度动力学。',
   },
@@ -145,7 +146,7 @@ const STR = {
 
     s2k: 'Step 2 · Closing the loop',
     s2t: 'Sensor → controller → motor → back to sensor',
-    s2e: 'Watch the loop diagram above: the signal runs around the ring — the sensor measures the tilt, the controller computes how much force is needed, the motor drives the wheels, the tilt changes, and the sensor measures again… forever. The robot below runs exactly this loop, with the simplest rule a controller can have: <strong>lean one way, drive that way; the harder the lean, the harder the drive.</strong> Drag the gain and get it standing first (swaying is expected).',
+    s2e: 'Watch the loop diagram above: the signal runs around the ring — the sensor measures the tilt, the controller computes how much force is needed, the motor drives the wheels, the tilt changes, and the sensor measures again… forever. The robot below runs exactly this loop, with the simplest rule a controller can have: <strong>lean one way, drive that way; the harder the lean, the harder the drive.</strong> Drag the gain and get it standing first (swaying is expected). <a class="fourier-link" href="../lti/#step2">Every box in the loop has its own h: start with the answer to one impulse →</a>',
     s2gain: 'Rule gain K',
     s2reveal: 'Time to name it: a rule that pushes in proportion to the error is called <strong>proportional control — P</strong>. Written out: u = Kp·e, where e = target angle − current angle (the target is upright, 0°). Lean right and e goes negative, u goes negative, and the wheels accelerate rightwards, chasing the fall — the sign of the error steers automatically; the Kp you just dragged decides how hard it chases. Over the next three steps we bolt on D, then I.',
     cSensor: 'Angle sensor', cError: 'Error e', cCtrl: 'Controller', cMotor: 'Motor', cPlant: 'Body · tilt θ',
@@ -192,6 +193,7 @@ const STR = {
     s6demoNote: 'The demo first switches all three traps off, then lets the Balanced preset take randomly aimed shoves.',
     s6demoRun: 'Demo running… {t} s / 30 s', s6demoDone: 'Demo complete: 30 seconds, never fell.',
     s6fin: 'To close: <strong>the same loop is spinning elsewhere</strong> — your body temperature (hypothalamus as sensor, sweat glands and blood vessels as actuators), air conditioning, a hovering drone, cruise control, a landing rocket — all share this page’s skeleton: measure, compute, push. The three letters you tuned by hand, P, I and D, are their common language.',
+    s6lkLap: 'Tuning moves poles: pole locations are the system’s character →', s6lkKal: 'Estimate first, then act: LQG, where Kalman meets control →', s6lkLti: 'The two axioms this machine obeys: linearity and time-invariance →',
     s6assumpT: 'This page’s simplified model (stated honestly)',
     s6assump: 'The body is a point mass on a rod of length L = 0.5 m; no friction, no wheel slip; the base acceleration is supplied directly by the motor (motor and wheel dynamics ignored); a slope is modelled as gravity tilting inside the robot’s frame; controller and simulation both run at 480 Hz, the derivative passes a 12 ms low-pass filter and the integral has an anti-windup clamp; the simulation uses a fixed 1/480 s step with semi-implicit Euler, independent of your screen’s refresh rate. The base sliding left and right on screen only visualises the output — it does not feed back into the tilt dynamics.',
   }

@@ -614,7 +614,7 @@ function quizTrue(kind, w) {
   const tau = s2tau();
   return kind === 'mag' ? bodeDb(rcLPmag(w, tau)) : rcLPphase(w, tau) * 180 / Math.PI;
 }
-function genQuiz(forceKind) {
+function genQuiz(forceKind, regenerated = false) {
   const kind = forceKind || (!s2.quiz ? 'mag' : (s2.quiz.kind === 'mag' ? 'ph' : 'mag'));
   const ws = [0.03, 0.1, 0.3, 1, 3, 10, 30];
   const w = ws[Math.floor(Math.random() * ws.length)];
@@ -642,11 +642,10 @@ function genQuiz(forceKind) {
   }
   const unit = kind === 'mag' ? ' dB' : '°';
   s2.quiz = {
-    kind, w, trueVal: tru, answered: false, picked: -1,
+    kind, w, trueVal: tru, answered: false, picked: -1, regenerated,
     options: opts.map(v => ({ value: v, label: fmtS(v, dec) + unit })),
     correctIdx: opts.findIndex(v => Math.abs(v - Math.round(tru * Math.pow(10, dec)) / Math.pow(10, dec)) < 1e-9)
   };
-  renderQuiz();
 }
 function renderQuiz() {
   const q = s2.quiz;
@@ -665,7 +664,14 @@ function renderQuiz() {
     b.addEventListener('click', () => answerQuiz(i));
     box.appendChild(b);
   });
-  if (!q.answered) $('s2-quiz-ro').innerHTML = t('s2quizIdle');
+  if (q.answered) {
+    const dec = q.kind === 'mag' ? 1 : 0, unit = q.kind === 'mag' ? ' dB' : '°';
+    $('s2-quiz-ro').innerHTML = t(q.picked === q.correctIdx ? 's2quizRight' : 's2quizWrong', {
+      v: fmtS(q.trueVal, dec) + unit, w: fmtS(q.w, q.w < 1 ? 2 : 0), n: s2.score.n, c: s2.score.c
+    });
+  } else {
+    $('s2-quiz-ro').innerHTML = t(q.regenerated ? 's2quizRegen' : 's2quizIdle');
+  }
 }
 function answerQuiz(i) {
   const q = s2.quiz;
@@ -674,23 +680,24 @@ function answerQuiz(i) {
   s2.score.n++;
   const ok = i === q.correctIdx;
   if (ok) s2.score.c++;
-  const dec = q.kind === 'mag' ? 1 : 0, unit = q.kind === 'mag' ? ' dB' : '°';
-  $('s2-quiz-ro').innerHTML = t(ok ? 's2quizRight' : 's2quizWrong', {
-    v: fmtS(q.trueVal, dec) + unit, w: fmtS(q.w, q.w < 1 ? 2 : 0), n: s2.score.n, c: s2.score.c
-  });
   renderQuiz();
 }
-function updateS2(fromParam) {
+/* 纯刷新：语言/布局变化只重画与重渲染，不换题、不计分。 */
+function updateS2() {
   const tau = s2tau(), wc = 1 / tau;
   $('s2-r-val').textContent = fmtS(s2.R, 2);
   $('s2-c-val').textContent = fmtS(s2.C, 2);
   const slope = slopeDbPerDec(w => rcLPmag(w, tau), 10 * wc, 100 * wc);
   $('s2-readout').innerHTML = t('s2ro', { tau: fmtS(tau, 2), wc: fmtS(wc, 2), slope: fmtS(slope, 1) });
   drawS2Mag(); drawS2Phase();
-  if (s2.quiz && !s2.quiz.answered) {
-    genQuiz(s2.quiz.kind); /* R/C 变了 → 真值随之变，未答的题按原 kind 重出 */
-    if (fromParam) $('s2-quiz-ro').innerHTML = t('s2quizRegen'); /* 重出不能静默：明示题目已换 */
-  }
+  renderQuiz();
+}
+function setS2Param(key, value) {
+  if (s2[key] === value) return;
+  s2[key] = value;
+  /* 先结束旧题并按新参数出题，再统一刷新；累计分数保留。 */
+  genQuiz(s2.quiz ? s2.quiz.kind : undefined, true);
+  updateS2();
 }
 
 /* ================================================================
@@ -1045,9 +1052,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('s1-w').addEventListener('input', e => { s1.w = Math.pow(10, parseFloat(e.target.value)); updateS1(); });
 
-  $('s2-r').addEventListener('input', e => { s2.R = Math.pow(10, parseFloat(e.target.value)); updateS2(true); });
-  $('s2-c').addEventListener('input', e => { s2.C = Math.pow(10, parseFloat(e.target.value)); updateS2(true); });
-  $('s2-quiz-next').addEventListener('click', () => { genQuiz(); drawS2Mag(); drawS2Phase(); });
+  $('s2-r').addEventListener('input', e => setS2Param('R', Math.pow(10, parseFloat(e.target.value))));
+  $('s2-c').addEventListener('input', e => setS2Param('C', Math.pow(10, parseFloat(e.target.value))));
+  $('s2-quiz-next').addEventListener('click', () => { genQuiz(undefined, true); updateS2(); });
 
   $('s3-m').addEventListener('input', e => { s3.M = parseInt(e.target.value, 10); updateS3(); });
   $('s3-w').addEventListener('input', e => { s3.w = parseFloat(e.target.value); updateS3(); });
@@ -1085,6 +1092,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   genQuiz();
   updateAll();
-  onLangRefresh(() => { renderQuiz(); updateAll(); });
+  onLangRefresh(() => updateAll());
   onRefit(() => updateAll());
 });

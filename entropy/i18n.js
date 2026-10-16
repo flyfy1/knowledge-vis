@@ -147,7 +147,7 @@ const STR = {
     s5roSmooth: '（已平滑）H(p) = <span>{Hp} bits</span> · 交叉熵 H(p, q′) = <span>{Hpq} bits</span> · KL(p‖q′) = <span>{KL} bits</span> · 分解核对：H(p) + KL = {sum}（残差 {res}）· 反方向 KL(q′‖p) = <span>{KLr} bits</span> —— 注意：这是平滑后 q′ 的账，不是原 q 的（原 q 是 +∞，见下方警告）',
     s5inf: '⚠ <strong>q 给某个 p 真会发生的符号标了 0。</strong>按 q 的账本，这件事「绝不可能发生」，它一旦发生，惊讶是 +∞——交叉熵与 KL 都是 +∞，页面如实显示 ∞，不拿任何大数糊弄。真实训练里这对应：模型把某个正确类别判了 0 概率，一条样本就能让损失爆表。上面的平滑开关能把 q 每个符号都垫上一点点概率、算出有限的数——但那已经是另一个 q 了，读数会标明「已平滑」。',
     s5foot: '注：KL 按定义恒 ≥ 0（吉布斯不等式）；浮点误差偶尔会算出 −0.000 量级的负数，本页显示时已钳为 0，数学上它就是 0。',
-    s5link: '回勾：<a class="fourier-link" href="../gradient-descent/">梯度下降页</a>终章训练分类器时，最小化的正是这里的交叉熵 H(p, q)——标签分布 p 固定，降交叉熵就等于降 KL(p‖q)，等于让模型 q 向真实 p 靠拢。训练里说的「loss」，大半就是这个数。',
+    s5link: '回勾：<a class="fourier-link" href="../gradient-descent/#step6">梯度下降页</a>终章训练分类器时，最小化的正是这里的交叉熵 H(p, q)——标签分布 p 固定，降交叉熵就等于降 KL(p‖q)，等于让模型 q 向真实 p 靠拢。训练里说的「loss」，大半就是这个数。',
     s5hint: '先点「让 q = p」看 KL 归零、交叉熵恰好等于 H(p)；再把 q 的某个滑杆拖到 0（而 p 那边不是 0），看 +∞ 警告；最后交换 p ↔ q，对比两个方向的 KL 数字。',
 
     /* ---------- 第 6 步 ---------- */
@@ -175,7 +175,7 @@ const STR = {
     physD: '热力学的熵与信息熵<strong>同式不同单位</strong>，不能说「完全一样」：吉布斯公式 S = −k<sub>B</sub>·Σ p·ln p 用自然对数（单位 nats）、乘玻尔兹曼常数 k<sub>B</sub>，单位是焦耳/开尔文；信息熵用 log<sub>2</sub>、单位 bits——两者只差常数倍 k<sub>B</sub>·ln 2。玻尔兹曼墓碑上的 S = k<sub>B</sub>·ln W 是它的特例：W 个微观状态等概率时，吉布斯式恰好化简成它。物理学家与信息论学家量的确实是同一个「不确定性」，只是换算率不同。',
     compT: '③ 压缩的现实',
     compD: '回到第 4 步：文件能压多小，下限是它的熵。zip 对普通文本还能压，是因为文本的符号分布远没到均匀、熵低于定长编码；对一个<strong>已经压过</strong>的文件再压，几乎压不动——不是软件偷懒，是它的熵已经被摸到了，剩下的比特个个都是「真惊讶」，没有规律可再利用。加密文件同理：好的密文看起来就该像均匀随机数，熵顶满，无从下手。',
-    s6fin: '<strong>收束。</strong>从猜符号的游戏，到密码强度与热力学——熵是同一把秤。它量的不是「混乱」这个形容词，而是「平均而言，你有多意外」。概率线到这里收官：<a class="fourier-link" href="../bayes/">贝叶斯</a>讲信念如何更新、<a class="fourier-link" href="../clt/">中心极限</a>讲随机如何收敛成钟形、这一页讲不确定性本身如何被计量。三件事，其实都是在跟随机打交道时，诚实地记账。',
+    s6fin: '<strong>收束。</strong>从猜符号的游戏，到密码强度与热力学——熵是同一把秤。它量的不是「混乱」这个形容词，而是「平均而言，你有多意外」。概率线到这里收官：<a class="fourier-link" href="../bayes/#step2">贝叶斯</a>讲信念如何更新、<a class="fourier-link" href="../clt/#step0">中心极限</a>讲随机如何收敛成钟形、这一页讲不确定性本身如何被计量。三件事，其实都是在跟随机打交道时，诚实地记账。',
     s6linkIdx: '← 回知识索引'
   },
   en: {
@@ -317,7 +317,7 @@ const STR = {
     s5roSmooth: '(smoothed) H(p) = <span>{Hp} bits</span> · cross-entropy H(p, q′) = <span>{Hpq} bits</span> · KL(p‖q′) = <span>{KL} bits</span> · decomposition check: H(p) + KL = {sum} (residual {res}) · reverse KL(q′‖p) = <span>{KLr} bits</span> — note: this is the ledger of the smoothed q′, not of the original q (the original is +∞; see the warning below)',
     s5inf: '⚠ <strong>q assigns 0 to a symbol that p can actually emit.</strong> In q\'s ledger that event "cannot happen"; when it does, the surprise is +∞ — cross-entropy and KL are both +∞, and the page shows ∞ honestly rather than hiding behind a big number. In real training this is a model giving probability 0 to a correct class: a single sample blows the loss to infinity. The smoothing toggle above pads every symbol of q with a little probability and yields finite numbers — but that is a different q, and the readout says "smoothed".',
     s5foot: 'Note: KL is always ≥ 0 by definition (Gibbs\' inequality); floating-point arithmetic occasionally produces a negative value around −0.000, which this page clamps to 0 for display — mathematically it is 0.',
-    s5link: 'Callback: the <a class="fourier-link" href="../gradient-descent/">Gradient Descent page</a> ends by training a classifier, and what it minimizes is exactly this cross-entropy H(p, q) — with the label distribution p fixed, lowering cross-entropy is the same as lowering KL(p‖q), i.e. pulling the model q toward the truth p. Most of what training calls "loss" is this number.',
+    s5link: 'Callback: the <a class="fourier-link" href="../gradient-descent/#step6">Gradient Descent page</a> ends by training a classifier, and what it minimizes is exactly this cross-entropy H(p, q) — with the label distribution p fixed, lowering cross-entropy is the same as lowering KL(p‖q), i.e. pulling the model q toward the truth p. Most of what training calls "loss" is this number.',
     s5hint: 'First press "Set q = p" and watch KL vanish and cross-entropy equal H(p) exactly. Then drag one of q\'s sliders to 0 where p is not 0, and watch the +∞ warning. Finally swap p ↔ q and compare the two KL directions.',
 
     /* ---------- Step 6 ---------- */
@@ -345,7 +345,7 @@ const STR = {
     physD: 'Thermodynamic and information entropy are <strong>the same formula in different units</strong> — not "exactly identical": Gibbs\' formula S = −k<sub>B</sub>·Σ p·ln p uses natural logarithms (nats) and multiplies by Boltzmann\'s constant k<sub>B</sub>, giving joules per kelvin; information entropy uses log<sub>2</sub> and bits — the two differ only by the constant factor k<sub>B</sub>·ln 2. Boltzmann\'s tombstone formula S = k<sub>B</sub>·ln W is its special case: when W microstates are equally likely, the Gibbs formula reduces to exactly that. Physicists and information theorists really are measuring the same "uncertainty" — at different exchange rates.',
     compT: '③ The Reality of Compression',
     compD: 'Back to Step 4: how small a file can be compressed is floored by its entropy. Zip still squeezes plain text because text\'s symbol distribution is far from uniform, so its entropy sits below the fixed-length code. Compress an <strong>already-compressed</strong> file again and almost nothing gives — not laziness: its entropy has already been touched, and every remaining bit is "real surprise" with no pattern left to exploit. Encrypted files are the same: good ciphertext should look like uniform random numbers, entropy maxed out, nothing to grab.',
-    s6fin: '<strong>To close.</strong> From a guessing game to password strength and thermodynamics, entropy is one scale. It does not measure "disorder" the adjective — it measures "on average, how surprised are you". The probability line closes here: <a class="fourier-link" href="../bayes/">Bayes</a> showed how beliefs update, the <a class="fourier-link" href="../clt/">Central Limit Theorem</a> showed how randomness settles into a bell, and this page showed how uncertainty itself is measured. Three pages, one discipline: keeping honest books when dealing with randomness.',
+    s6fin: '<strong>To close.</strong> From a guessing game to password strength and thermodynamics, entropy is one scale. It does not measure "disorder" the adjective — it measures "on average, how surprised are you". The probability line closes here: <a class="fourier-link" href="../bayes/#step2">Bayes</a> showed how beliefs update, the <a class="fourier-link" href="../clt/#step0">Central Limit Theorem</a> showed how randomness settles into a bell, and this page showed how uncertainty itself is measured. Three pages, one discipline: keeping honest books when dealing with randomness.',
     s6linkIdx: '← Back to the index'
   }
 };

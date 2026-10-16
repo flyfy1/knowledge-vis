@@ -40,7 +40,7 @@ const STR = {
 
     s3kicker: '第 3 步 · 关键一跳',
     s3title: '正弦波，是圆在墙上的影子',
-    s3explain: '一个点绕着圆匀速旋转。盯着它在<strong>竖直方向</strong>上的高度看（虚线是它的投影）：把每个时刻的高度连起来，正好就是一条正弦波。<strong>圆转一圈 = 波的一个周期；转速 = 频率；半径 = 振幅；起始角度 = 相位。</strong>第 1 步的三个旋钮，在这里全变成了圆的属性。记住这个画面，后面全靠它。',
+    s3explain: '一个点绕着圆匀速旋转。盯着它在<strong>竖直方向</strong>上的高度看（虚线是它的投影）：把每个时刻的高度连起来，正好就是一条正弦波。<strong>圆转一圈 = 波的一个周期；转速 = 频率；半径 = 振幅；起始角度 = 相位。</strong>第 1 步的三个旋钮，在这里全变成了圆的属性。记住这个画面，后面全靠它。<a class="fourier-link" href="../trig/#step1">这个圆的正式学名在三角页：sin 是身高、cos 是站位 →</a>',
     s3angle: '角度', s3radProj: 'rad，投影高度',
     s3speed: '转速', s3radius: '半径（振幅）',
     s3pause: '⏸ 暂停', s3resume: '▶ 继续',
@@ -56,7 +56,7 @@ const STR = {
 
     s5kicker: '第 5 步 · 傅里叶变换本体',
     s5title: '换个视角：从波形到频谱',
-    s5explain: '前四步我们都在「拼」。傅里叶变换做的是反向的「拆」：给它任意波形，它告诉你里面每个频率的正弦波各有多强。左边是波形（<strong>时域</strong>），右边是拆解结果（<strong>频域</strong>，叫频谱）。切换波形看一看：方波只含奇数频率，三角波的频谱衰减快得多，锯齿波则每个频率都有份。',
+    s5explain: '前四步我们都在「拼」。傅里叶变换做的是反向的「拆」：给它任意波形，它告诉你里面每个频率的正弦波各有多强。左边是波形（<strong>时域</strong>），右边是拆解结果（<strong>频域</strong>，叫频谱）。切换波形看一看：方波只含奇数频率，三角波的频谱衰减快得多，锯齿波则每个频率都有份。<a class="fourier-link" href="../freqresp/#step0">拆出来的频谱拿来干什么：去看滤波器怎样按频率挑食 →</a>',
     s5chooseAria: '选择波形',
     s5square: '方波', s5triangle: '三角波', s5saw: '锯齿波', s5ecg: '模拟心电图',
     s5timeTitle: '时域：波形 x(t)', s5specTitle: '频域：频谱（每个频率多强）',
@@ -82,6 +82,7 @@ const STR = {
     dcXLabel: 'x 链（横坐标）', dcYLabel: 'y 链（纵坐标）',
 
     finaleText: '你手机里的音频均衡器、JPEG 图片压缩、耳机降噪、医院里的核磁共振成像——背后都是同一个思想：<strong>把复杂信号拆成简单的波，处理完再拼回去</strong>。从一条正弦波，到一串能画出任何图形的圆，这就是傅里叶变换。',
+    s6lkConv: '卷积定理：时域卷积 = 频域逐点相乘 →', s6lkMod: '一乘，频谱就搬家：调制在干什么 →', s6lkSamp: '采样时频谱会整张复制：混叠的频域面孔 →',
     footText: '傅里叶变换交互讲解 · 一步一交互，从正弦波到任意图形。'
   },
   en: {
@@ -117,7 +118,7 @@ const STR = {
 
     s3kicker: 'Step 3 · The Key Leap',
     s3title: 'A Sine Wave Is a Circle’s Shadow on the Wall',
-    s3explain: 'A point travels around a circle at a steady speed. Now watch only its height in the <strong>vertical</strong> direction (the dashed line is its projection): join up that height at every instant and you get, exactly, a sine wave. <strong>One full turn = one cycle of the wave; turning speed = frequency; radius = amplitude; starting angle = phase.</strong> The three knobs from Step 1 have all become properties of a circle. Keep this picture in mind — everything from here on is built on it.',
+    s3explain: 'A point travels around a circle at a steady speed. Now watch only its height in the <strong>vertical</strong> direction (the dashed line is its projection): join up that height at every instant and you get, exactly, a sine wave. <strong>One full turn = one cycle of the wave; turning speed = frequency; radius = amplitude; starting angle = phase.</strong> The three knobs from Step 1 have all become properties of a circle. Keep this picture in mind — everything from here on is built on it. <a class="fourier-link" href="../trig/#step1">This circle, formally, lives on the trig page: sin is height, cos is position →</a>',
     s3angle: 'Angle', s3radProj: 'rad, projected height',
     s3speed: 'Spin speed', s3radius: 'Radius (amplitude)',
     s3pause: '⏸ Pause', s3resume: '▶ Resume',
@@ -133,7 +134,7 @@ const STR = {
 
     s5kicker: 'Step 5 · The Transform Itself',
     s5title: 'A Change of Viewpoint: From Waveform to Spectrum',
-    s5explain: 'For four steps we have been <em>building up</em>. The Fourier transform does the reverse — it <em>takes apart</em>: hand it any waveform and it tells you how strong the sine wave at each frequency is inside it. On the left is the waveform (the <strong>time domain</strong>); on the right is the result of the taking-apart (the <strong>frequency domain</strong>, known as the spectrum). Switch between the waveforms and compare: the square wave contains only odd-numbered frequencies, the triangle wave’s spectrum falls off far faster, and the sawtooth has a share of every frequency.',
+    s5explain: 'For four steps we have been <em>building up</em>. The Fourier transform does the reverse — it <em>takes apart</em>: hand it any waveform and it tells you how strong the sine wave at each frequency is inside it. On the left is the waveform (the <strong>time domain</strong>); on the right is the result of the taking-apart (the <strong>frequency domain</strong>, known as the spectrum). Switch between the waveforms and compare: the square wave contains only odd-numbered frequencies, the triangle wave’s spectrum falls off far faster, and the sawtooth has a share of every frequency. <a class="fourier-link" href="../freqresp/#step0">What a spectrum is for: watch a filter pick by frequency →</a>',
     s5chooseAria: 'Choose a waveform',
     s5square: 'Square wave', s5triangle: 'Triangle wave', s5saw: 'Sawtooth', s5ecg: 'Simulated ECG',
     s5timeTitle: 'Time domain: waveform x(t)', s5specTitle: 'Frequency domain: spectrum (strength of each frequency)',
@@ -159,6 +160,7 @@ const STR = {
     dcXLabel: 'x chain (horizontal)', dcYLabel: 'y chain (vertical)',
 
     finaleText: 'The audio equaliser in your phone, JPEG photo compression, noise-cancelling headphones, MRI imaging in hospitals — behind all of them is the same idea: <strong>break a complex signal into simple waves, work on the pieces, then put them back together</strong>. From a single sine wave to a chain of circles that can draw anything — that is the Fourier transform.',
+    s6lkConv: 'The convolution theorem: convolution becomes pointwise multiplication →', s6lkMod: 'Multiply once and the spectrum moves house: modulation →', s6lkSamp: 'Sampling clones the whole spectrum: aliasing in the frequency domain →',
     footText: 'The Fourier transform, interactively · one interaction per step, from a sine wave to any shape.'
   }
 };
