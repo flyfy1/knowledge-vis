@@ -12,6 +12,7 @@
  *   desc     {zh, en} 双语一句话说明（兼容旧格式：纯字符串）
  *   tags     双语细标签 [{zh, en}...]（兼容旧格式：字符串数组）
  *   category 分类 id（见下方 KNOWLEDGE_CATEGORIES，如 "signal"）
+ *   stage    学段 id（见下方 KNOWLEDGE_STAGES："primary" 小学 / "junior" 初中 / "senior" 高中 / "university" 大学；缺省按 "university"）
  *   status   "live" = 已上线（可点击） | "planned" = 筹备中（灰卡不可点）
  *   path     相对路径（live 时必填）
  * ============================================================ */
@@ -23,6 +24,15 @@ window.KNOWLEDGE_CATEGORIES = [
   { id: "probability", name: { zh: "概率与统计", en: "Probability & Statistics" } },
   { id: "computing",   name: { zh: "计算与智能", en: "Computing & AI" } },
   { id: "math",        name: { zh: "数学基础",   en: "Mathematical Foundations" } }
+];
+
+/* 学段注册表（2026-10-16 增设）：与分类正交的第二维度，索引页有独立筛选行。
+ * 条目可省略 stage，省略时按 "university" 呈现。 */
+window.KNOWLEDGE_STAGES = [
+  { id: "primary",    name: { zh: "小学", en: "Primary" } },
+  { id: "junior",     name: { zh: "初中", en: "Junior High" } },
+  { id: "senior",     name: { zh: "高中", en: "Senior High" } },
+  { id: "university", name: { zh: "大学", en: "University" } }
 ];
 
 window.KNOWLEDGE_PAGES = [
@@ -39,6 +49,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "旋转与圆", en: "Rotation & Circles" }
     ],
     category: "signal",
+    stage: "university",
     status: "live",
     path: "fourier/"
   },
@@ -55,6 +66,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "时域与频域", en: "Time & Frequency" }
     ],
     category: "signal",
+    stage: "university",
     status: "live",
     path: "convolution/"
   },
@@ -71,6 +83,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "朱利亚集", en: "Julia Sets" }
     ],
     category: "math",
+    stage: "university",
     status: "live",
     path: "mandelbrot/"
   },
@@ -87,6 +100,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "倒立摆", en: "Inverted Pendulum" }
     ],
     category: "signal",
+    stage: "university",
     status: "live",
     path: "control/"
   },
@@ -103,6 +117,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "奈奎斯特", en: "Nyquist" }
     ],
     category: "signal",
+    stage: "university",
     status: "live",
     path: "sampling/"
   },
@@ -119,6 +134,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "弧度", en: "Radians" }
     ],
     category: "math",
+    stage: "university",
     status: "live",
     path: "trig/"
   },
@@ -135,6 +151,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "大数定律", en: "Law of Large Numbers" }
     ],
     category: "probability",
+    stage: "university",
     status: "live",
     path: "montecarlo/"
   },
@@ -151,6 +168,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "极点", en: "Poles" }
     ],
     category: "signal",
+    stage: "university",
     status: "live",
     path: "laplace/"
   },
@@ -167,6 +185,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "基础率", en: "Base Rate" }
     ],
     category: "probability",
+    stage: "university",
     status: "live",
     path: "bayes/"
   },
@@ -183,6 +202,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "正态逼近", en: "Normal Approximation" }
     ],
     category: "probability",
+    stage: "university",
     status: "live",
     path: "clt/"
   },
@@ -199,6 +219,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "收敛域", en: "ROC" }
     ],
     category: "signal",
+    stage: "university",
     status: "live",
     path: "ztransform/"
   },
@@ -215,6 +236,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "优化", en: "Optimization" }
     ],
     category: "computing",
+    stage: "university",
     status: "live",
     path: "gradient-descent/"
   },
@@ -231,6 +253,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "主成分分析", en: "PCA" }
     ],
     category: "math",
+    stage: "university",
     status: "live",
     path: "eigen/"
   },
@@ -247,6 +270,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "哈夫曼编码", en: "Huffman Coding" }
     ],
     category: "probability",
+    stage: "university",
     status: "live",
     path: "entropy/"
   },
@@ -263,6 +287,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "线性时不变", en: "Linear Time-Invariant" }
     ],
     category: "signal",
+    stage: "university",
     status: "live",
     path: "lti/"
   },
@@ -279,6 +304,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "波特图", en: "Bode Plot" }
     ],
     category: "signal",
+    stage: "university",
     status: "live",
     path: "freqresp/"
   },
@@ -295,6 +321,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "频谱搬移", en: "Spectrum Shifting" }
     ],
     category: "signal",
+    stage: "university",
     status: "live",
     path: "modulation/"
   },
@@ -311,6 +338,7 @@ window.KNOWLEDGE_PAGES = [
       { zh: "预测与更新", en: "Predict–Update" }
     ],
     category: "signal",
+    stage: "university",
     status: "live",
     path: "kalman/"
   },
@@ -327,7 +355,25 @@ window.KNOWLEDGE_PAGES = [
       { zh: "分而治之", en: "Divide & Conquer" }
     ],
     category: "computing",
+    stage: "university",
     status: "live",
     path: "sorting/"
+  },
+  {
+    slug: "fractions",
+    title: { zh: "分数 · 把整体切开来数", en: "Fractions · Cutting the Whole to Count" },
+    desc: {
+      zh: "分数不是两个数上下摆，是一个数：先看 1/2 与 2/4 叠合得严丝合缝，再到等值、比大小、加法先通分、假分数长过一条——运算全部用精确有理数，循环小数老老实实写 ≈。本站第一个小学学段页面。",
+      en: "A fraction is one number, not two stacked: watch 1/2 and 2/4 overlap pixel-perfectly, then equivalence, comparison, common denominators, and improper fractions longer than one bar — all arithmetic exact, repeating decimals honestly marked ≈. The site's first primary-school page."
+    },
+    tags: [
+      { zh: "等值分数", en: "Equivalent Fractions" },
+      { zh: "通分", en: "Common Denominators" },
+      { zh: "数轴", en: "Number Line" }
+    ],
+    category: "math",
+    stage: "primary",
+    status: "live",
+    path: "fractions/"
   }
 ];

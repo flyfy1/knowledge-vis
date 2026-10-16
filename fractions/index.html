@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>分数 · 把整体切开来数 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=frac1">
+<script src="i18n.js?v=frac1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">分数 · 把整体切开来数</h1>
+    <p class="tagline" data-i18n="tagline">分数不是两个数上下叠着写，而是一个数：把整体切成几等份、取其中几份。看懂这一件事，等值、比大小、加减法就全是同一幅图的推论。这一页所有的格子都真等分、所有的数都用整数对精确计算——图上量的、嘴里说的、心里算的，必须是同一个数。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 两种切法</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 分数是一个数</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 等值分数</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 比大小</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 加法先通分</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 超过 1 的分数</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 终章 · 三张脸</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子（一块巧克力，两种切法） ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+    <h2 data-i18n="s0t">一块巧克力，两种切法</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="300"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s0guessQ">先猜一猜：哪边拿到的巧克力多？</span>
+      <button class="btn big" id="s0-g-left" data-i18n="s0bLeft">左边多</button>
+      <button class="btn big" id="s0-g-same" data-i18n="s0bSame">一样多</button>
+      <button class="btn big" id="s0-g-right" data-i18n="s0bRight">右边多</button>
+      <button class="btn big primary" id="s0-reveal" data-i18n="s0bReveal">叠起来看看</button>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：分数是一个数 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 分数是一个数</p>
+    <h2 data-i18n="s1t">分母是切法，分子是取法</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="330"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1denLab">切成几等份（分母）</span> <span class="val" id="s1-den-val">4</span></span>
+        <input type="range" id="s1-den" min="2" max="12" step="1" value="4">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s1-minus" data-i18n="s1minus">− 少取一份</button>
+      <button class="btn big" id="s1-plus" data-i18n="s1plus">＋ 多取一份</button>
+      <button class="btn big" id="s1-clear" data-i18n="s1clear">清空</button>
+      <button class="btn big" id="s1-full" data-i18n="s1full">取满</button>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="readout" id="s1-dec"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：等值分数 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 等值分数</p>
+    <h2 data-i18n="s2t">切得细，比例不变</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="425"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s2expLab">扩分（分子分母同乘）：</span>
+      <button class="btn big" id="s2-mul2">×2</button>
+      <button class="btn big" id="s2-mul3">×3</button>
+      <button class="btn big" id="s2-mul4">×4</button>
+      <button class="btn big" id="s2-exp-reset" data-i18n="s2reset">回到 1/2</button>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s2redLab">约分 12/18：</span>
+      <button class="btn big" id="s2-red-step" data-i18n="s2redStep">约分一步</button>
+      <button class="btn big" id="s2-red-gcd" data-i18n="s2redGcd">直接除以最大公约数</button>
+      <button class="btn big" id="s2-red-reset" data-i18n="s2reset2">重来</button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="readout" id="s2-gcd"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：比大小 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 比大小</p>
+    <h2 data-i18n="s3t">先对齐刻度，再比长短</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="430"></canvas>
+    </div>
+    <div class="btn-row stepper-row">
+      <span class="frac-ctl">
+        <span class="frac-name" data-i18n="s3labA">左边 a/b</span>
+        <button class="btn sm" id="s3-an-m">−</button><span class="frac-val" id="s3-an-v">2</span><button class="btn sm" id="s3-an-p">＋</button>
+        <span class="frac-slash">/</span>
+        <button class="btn sm" id="s3-ad-m">−</button><span class="frac-val" id="s3-ad-v">3</span><button class="btn sm" id="s3-ad-p">＋</button>
+      </span>
+      <span class="frac-ctl">
+        <span class="frac-name" data-i18n="s3labB">右边 c/d</span>
+        <button class="btn sm" id="s3-cn-m">−</button><span class="frac-val" id="s3-cn-v">3</span><button class="btn sm" id="s3-cn-p">＋</button>
+        <span class="frac-slash">/</span>
+        <button class="btn sm" id="s3-cd-m">−</button><span class="frac-val" id="s3-cd-v">4</span><button class="btn sm" id="s3-cd-p">＋</button>
+      </span>
+      <button class="btn big" id="s3-next" data-i18n="s3next">换一对</button>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s3guessQ">先凭眼睛猜：</span>
+      <button class="btn big" id="s3-g-left" data-i18n="s3bLeft">左边大</button>
+      <button class="btn big" id="s3-g-same" data-i18n="s3bSame">一样大</button>
+      <button class="btn big" id="s3-g-right" data-i18n="s3bRight">右边大</button>
+      <button class="btn big primary" id="s3-verify" data-i18n="s3verify">两路验明</button>
+    </div>
+    <p class="readout" id="s3-cross"></p>
+    <p class="readout" id="s3-lcm"></p>
+    <p class="readout" id="s3-verdict"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：加法先通分 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 加法</p>
+    <h2 data-i18n="s4t">加法：先通分，再相加</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="btn-row">
+      <button class="btn big active" id="s4-m-add" data-i18n="s4add">加法：1/2 + 1/3</button>
+      <button class="btn big" id="s4-m-sub" data-i18n="s4sub">减法：5/6 − 1/3</button>
+    </div>
+    <div class="stage">
+      <canvas id="s4-canvas" height="440"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s4-wrong" data-i18n="s4wrong">先看看常见的错法</button>
+      <button class="btn big primary" id="s4-right" data-i18n="s4right">再看正确做法</button>
+      <button class="btn big" id="s4-reset" data-i18n="s4reset">重置</button>
+    </div>
+    <p class="readout" id="s4-readout"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：超过 1 的分数 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 假分数与带分数</p>
+    <h2 data-i18n="s5t">超过 1 的分数：两种写法</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="stage">
+      <p class="stage-title" data-i18n="s5barsT">一格一格数过去：几个整体装得下？</p>
+      <canvas id="s5-canvas" height="300"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big active" id="s5-m-imp" data-i18n="s5imp">假分数写法</button>
+      <button class="btn big" id="s5-m-mix" data-i18n="s5mix">带分数写法</button>
+      <button class="btn big" id="s5-next" data-i18n="s5next">换一个分数</button>
+    </div>
+    <p class="readout" id="s5-readout"></p>
+    <div class="stage">
+      <p class="stage-title" data-i18n="s5candT">分数作用在一个量上：一盒 12 颗糖</p>
+      <canvas id="s5b-canvas" height="270"></canvas>
+    </div>
+    <div class="btn-row" id="s5b-btns">
+      <span class="row-label" data-i18n="s5bLab">取这盒糖的：</span>
+      <button class="btn big" data-cf="1/2">1/2</button>
+      <button class="btn big" data-cf="1/3">1/3</button>
+      <button class="btn big" data-cf="2/3">2/3</button>
+      <button class="btn big active" data-cf="3/4">3/4</button>
+      <button class="btn big" data-cf="5/6">5/6</button>
+    </div>
+    <p class="readout" id="s5b-readout"></p>
+    <p class="hint" data-i18n-html="s5hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：终章 ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">数轴上的一家人：分数、小数、百分数</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <div class="stage">
+      <canvas id="s6-canvas" height="360"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s6-next" data-i18n="s6next">落下一个</button>
+      <button class="btn big" id="s6-reset" data-i18n="s6reset">清空重来</button>
+    </div>
+    <p class="readout" id="s6-readout"></p>
+    <div class="cards3">
+      <div class="value-card">
+        <p class="card-title" data-i18n="c1h">同一数的三张脸</p>
+        <p class="card-body" data-i18n-html="c1"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c2h">从分数往后走</p>
+        <p class="card-body" data-i18n-html="c2"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c3h">练一练</p>
+        <p class="card-body" data-i18n-html="c3"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 分数 Fractions —— 一步一交互系列</footer>
+
+<script src="app.js?v=frac1"></script>
+</body>
+</html>

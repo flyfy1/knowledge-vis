@@ -45,6 +45,7 @@
   .cat-badge{display:inline-block;font-size:11.5px;color:var(--amber);
     border:1px solid #713f12;background:rgba(245,176,76,.08);
     border-radius:999px;padding:1px 10px;margin-bottom:10px}
+  .stage-badge{color:var(--cyan);border-color:var(--cyan-d);background:rgba(103,215,249,.08);margin-left:6px}
   .card h2{font-size:20px;margin:0 0 8px 0;padding-right:84px;line-height:1.35}
   .card p{color:var(--dim);font-size:14.5px;margin:0 0 16px}
   .tags{display:flex;flex-wrap:wrap;gap:7px}
@@ -75,6 +76,7 @@
     <h1 data-i18n="h1">知识索引</h1>
     <p class="intro" data-i18n-html="intro">把难懂的知识点，做成<b>可以上手玩的交互页</b>：每页一个主题，由浅入深，一步一个交互，玩到最后就懂了。</p>
     <div class="chips" id="catChips" role="group" aria-label="Category filter / 分类筛选"></div>
+    <div class="chips" id="stageChips" role="group" aria-label="Stage filter / 学段筛选" style="margin-top:10px"></div>
   </header>
 
   <main id="grid" class="grid" aria-live="polite"></main>
@@ -83,7 +85,7 @@
   <footer data-i18n-html="footerText">新增条目登记在 <b>pages.config.js</b> 配置里；每页都是纯静态、可离线打开的单页。</footer>
 </div>
 
-<script src="pages.config.js?v=sor1"></script>
+<script src="pages.config.js?v=fra1"></script>
 <script>
 (function(){
   'use strict';
@@ -92,17 +94,17 @@
     zh: {
       docTitle: '知识索引', h1: '知识索引',
       intro: '把难懂的知识点，做成<b>可以上手玩的交互页</b>：每页一个主题，由浅入深，一步一个交互，玩到最后就懂了。',
-      allChip: '全部', badgeLive: '已上线', badgePlanned: '筹备中', goOpen: '打开 →',
+      allChip: '全部', allStage: '全部学段', badgeLive: '已上线', badgePlanned: '筹备中', goOpen: '打开 →',
       emptyText: '还没有登记任何知识页。',
-      emptyFilter: '这个分类下还没有条目，敬请期待。',
+      emptyFilter: '这个组合下还没有条目，敬请期待。',
       footerText: '新增条目登记在 <b>pages.config.js</b> 配置里；每页都是纯静态、可离线打开的单页。'
     },
     en: {
       docTitle: 'Knowledge Index', h1: 'Knowledge Index',
       intro: 'Tough ideas, turned into <b>pages you can play with</b>: one topic per page, shallow to deep, one interaction per step — play to the end, and it clicks.',
-      allChip: 'All', badgeLive: 'Live', badgePlanned: 'Planned', goOpen: 'Open →',
+      allChip: 'All', allStage: 'All stages', badgeLive: 'Live', badgePlanned: 'Planned', goOpen: 'Open →',
       emptyText: 'No knowledge pages have been registered yet.',
-      emptyFilter: 'Nothing in this category yet — stay tuned.',
+      emptyFilter: 'Nothing under this combination yet — stay tuned.',
       footerText: 'New entries are registered in the <b>pages.config.js</b> config; every page is a single static page that also works offline.'
     }
   };
@@ -130,14 +132,22 @@
 
   var grid = document.getElementById('grid');
   var chipsBox = document.getElementById('catChips');
+  var stageBox = document.getElementById('stageChips');
   var categories = window.KNOWLEDGE_CATEGORIES || [];
+  var stages = window.KNOWLEDGE_STAGES || [];
   var pages = (window.KNOWLEDGE_PAGES || []).slice();
   var activeCat = 'all'; // 筛选状态仅内存，不持久化
+  var activeStage = 'all';
 
   function catName(id) {
     for (var i = 0; i < categories.length; i++) if (categories[i].id === id) return pick(categories[i].name);
     return id;
   }
+  function stageName(id) {
+    for (var i = 0; i < stages.length; i++) if (stages[i].id === id) return pick(stages[i].name);
+    return id;
+  }
+  function pageStage(pg) { return pg.stage || 'university'; }
 
   function renderChips() {
     // 按钮只建一次：之后仅同步文案与选中态，不重建节点——否则每次点击/切语言都会丢键盘焦点
@@ -160,6 +170,27 @@
     });
   }
 
+  function renderStageChips() {
+    // 同 renderChips：节点只建一次，之后仅同步文案与选中态
+    if (!stageBox.children.length) {
+      var defs = [{ id: 'all' }];
+      stages.forEach(function(s){ defs.push({ id: s.id }); });
+      defs.forEach(function(d){
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'chip';
+        b.dataset.stage = d.id;
+        b.addEventListener('click', function(){ activeStage = d.id; renderStageChips(); renderCards(); });
+        stageBox.appendChild(b);
+      });
+    }
+    stageBox.querySelectorAll('button').forEach(function(b){
+      var id = b.dataset.stage;
+      b.textContent = id === 'all' ? t('allStage') : stageName(id);
+      b.classList.toggle('on', activeStage === id);
+    });
+  }
+
   function renderCards() {
     grid.innerHTML = '';
     if (!pages.length) {
@@ -172,6 +203,7 @@
       return (a.status === 'live' ? 0 : 1) - (b.status === 'live' ? 0 : 1);
     });
     if (activeCat !== 'all') list = list.filter(function(pg){ return pg.category === activeCat; });
+    if (activeStage !== 'all') list = list.filter(function(pg){ return pageStage(pg) === activeStage; });
     if (!list.length) {
       var p1 = document.createElement('p');
       p1.className = 'empty'; p1.textContent = t('emptyFilter');
@@ -186,13 +218,16 @@
       var badge = '<span class="badge ' + (live ? 'live' : 'planned') + '">' +
                   (live ? t('badgeLive') : t('badgePlanned')) + '</span>';
       var cat = pg.category ? '<span class="cat-badge"></span>' : '';
+      var stg = '<span class="cat-badge stage-badge"></span>';
       var tags = (pg.tags || []).map(function(tag){
         return '<span class="tag"></span>';
       }).join('');
-      el.innerHTML = badge + cat + '<h2></h2><p></p><div class="tags">' + tags + '</div>' +
+      el.innerHTML = badge + cat + stg + '<h2></h2><p></p><div class="tags">' + tags + '</div>' +
                      (live ? '<div class="go">' + t('goOpen') + '</div>' : '');
       var catEl = el.querySelector('.cat-badge');
       if (catEl) catEl.textContent = catName(pg.category);
+      var stgEl = el.querySelector('.stage-badge');
+      if (stgEl) stgEl.textContent = stageName(pageStage(pg));
       el.querySelector('h2').textContent = pick(pg.title);
       el.querySelector('p').textContent = pick(pg.desc);
       el.querySelectorAll('.tag').forEach(function(tagEl, i){ tagEl.textContent = pick(pg.tags[i]); });
@@ -209,6 +244,7 @@
       b.classList.toggle('on', b.dataset.lang === lang);
     });
     renderChips();
+    renderStageChips();
     renderCards();
   }
   function setLang(l) {
