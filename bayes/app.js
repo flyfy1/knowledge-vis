@@ -124,7 +124,7 @@ function fitCanvas(cv) {
   return ctx;
 }
 const allCanvases = [];
-function ctxOf(id) { const cv = $(id); allCanvases.push(cv); return fitCanvas(cv); }
+function ctxOf(id) { const cv = $(id); if (!allCanvases.includes(cv)) allCanvases.push(cv); return fitCanvas(cv); }
 const refitHooks = [];
 function onRefit(fn) { refitHooks.push(fn); }
 let refitQueued = false;

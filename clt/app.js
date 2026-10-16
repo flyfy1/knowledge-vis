@@ -152,7 +152,7 @@ function fitCanvas(cv) {
   return ctx;
 }
 const allCanvases = [];
-function ctxOf(id) { const cv = $(id); allCanvases.push(cv); return fitCanvas(cv); }
+function ctxOf(id) { const cv = $(id); if (!allCanvases.includes(cv)) allCanvases.push(cv); return fitCanvas(cv); }
 const refitHooks = [];
 function onRefit(fn) { refitHooks.push(fn); }
 let refitQueued = false;
@@ -326,7 +326,7 @@ function s0Draw() {
   const run = s0Run(s0.k);
   const spec = parentSpec('dice');
   const g = drawHistPlot(ctx, {
-    means: run.means, count: Math.max(1, run.count), lo: 0.7, hi: 6.3, nb: 28,
+    means: run.means, count: run.count, lo: 0.7, hi: 6.3, nb: 28,
     curveMax: 0.42, dec: 1
   });
   /* μ 竖线 */
@@ -467,7 +467,7 @@ function s2Draw() {
   const tstd = spec.sigma / Math.sqrt(n);
   const curveMax = isFinite(tstd) && s2.count > 0 ? normPdf(spec.mu, spec.mu, tstd) : 0;
   const g = drawHistPlot(ctx, {
-    means: s2.means, count: Math.max(1, s2.count), lo, hi, nb: 42,
+    means: s2.means, count: s2.count, lo, hi, nb: 42,
     curveMax, dec: (hi - lo) > 4 ? 1 : 2
   });
   if (isFinite(tstd) && s2.count > 0) {
@@ -708,12 +708,13 @@ onRefit(s4rDraw);
    网格 dx = 0.002，每格存格平均密度；离散卷积保总质量（积分恒 1）。
    ================================================================ */
 const LAD_DX = 0.002, LAD_M = Math.round(1 / LAD_DX);
-const ladder = { levels: null };
+const ladder = { levels: null, origins: null };
 function ladderBuild() {
   if (ladder.levels) return ladder.levels;
   const u = new Float64Array(LAD_M).fill(1);
   const levels = { 1: u };
-  let cur = u;
+  const origins = { 1: 0 };
+  let cur = u, curX0 = 0;
   for (let n = 2; n <= 10; n++) {
     const out = new Float64Array(cur.length + LAD_M - 1);
     for (let i = 0; i < cur.length; i++) {
@@ -723,16 +724,23 @@ function ladderBuild() {
     }
     /* out[i] 是格平均密度：(f*u)(x) 在格内 ≈ Σ f 格平均 · u 格平均 · dx ——
        u 格平均恒 1，故每项乘 dx 一次即可（见 report 方法说明）。 */
+    /* 坐标起点必须随卷积累加：格平均卷积的 out[k] 近似 (f*u) 在「两格心之和」
+       处的值，故新一级格 0 的中心 = 两级格 0 中心之和，起点每级右移 dx/2。
+       若每级都用同一起点，曲线会逐级左偏 (n−1)·dx/2（n=6 时均值差 0.005）。 */
+    curX0 += LAD_DX / 2;
+    origins[n] = curX0;
     levels[n] = out;
     cur = out;
   }
   ladder.levels = levels;
+  ladder.origins = origins;
   return levels;
 }
 function ladderPdfAt(n, x) {
   const lv = ladderBuild()[n];
-  if (!lv || x < 0 || x >= lv.length * LAD_DX) return 0;
-  return lv[Math.floor(x / LAD_DX)];
+  const x0 = ladder.origins[n];
+  if (!lv || x < x0 || x >= x0 + lv.length * LAD_DX) return 0;
+  return lv[Math.floor((x - x0) / LAD_DX)];
 }
 const s5 = { n: 5 };
 function s5Draw() {
@@ -740,6 +748,7 @@ function s5Draw() {
   const W = ctx.canvas._w, H = ctx.canvas._h;
   ctx.clearRect(0, 0, W, H);
   const lv = ladderBuild()[s5.n];
+  const x0 = ladder.origins[s5.n];
   const L = 14, R = 14, T = 34, B = 24, pw = W - L - R, ph = H - T - B;
   const lo = -0.15, hi = s5.n + 0.15;
   const muS = s5.n * 0.5, sdS = Math.sqrt(s5.n / 12);
@@ -762,11 +771,11 @@ function s5Draw() {
     if (i === 0) ctx.moveTo(X(x), y); else ctx.lineTo(X(x), y);
   }
   ctx.stroke(); ctx.setLineDash([]);
-  /* 卷积曲线（格心连线） */
+  /* 卷积曲线（格心连线；格心 = 本级坐标起点 + (i + 0.5)·dx） */
   ctx.strokeStyle = '#6ee7ff'; ctx.lineWidth = 2;
   ctx.beginPath();
   for (let i = 0; i < lv.length; i++) {
-    const x = (i + 0.5) * LAD_DX;
+    const x = x0 + (i + 0.5) * LAD_DX;
     if (i === 0) ctx.moveTo(X(x), Y(lv[i])); else ctx.lineTo(X(x), Y(lv[i]));
   }
   ctx.stroke(); ctx.lineWidth = 1;
@@ -775,7 +784,7 @@ function s5Draw() {
   /* 最大偏差（格心口径） */
   let dev = 0;
   for (let i = 0; i < lv.length; i++) {
-    const x = (i + 0.5) * LAD_DX;
+    const x = x0 + (i + 0.5) * LAD_DX;
     const d = Math.abs(lv[i] - normPdf(x, muS, sdS));
     if (d > dev) dev = d;
   }
@@ -808,7 +817,11 @@ function verifyCoverage(kind, sigma, E, seed) {
   const bak = { ver: s6.ver, sigma: s6.sigma };
   s6.ver = kind; s6.sigma = sigma;
   const n = sampleSize(sigma, E);
-  const K = clamp(Math.floor(6e6 / n), 200, 4000);
+  /* 总采样量真实封顶 6e6 次：K 只受预算与上限约束，不设 200 的下限——
+     旧口径 clamp(·, 200, 4000) 在大 n 时击穿预算（σ=2、E=0.005 → n=614,656，
+     仍跑 200 组 = 1.23 亿次同步采样，实测阻塞主线程约 7 秒）。
+     极端参数下 K 随之变小（如该例 K=9），覆盖率粒度变粗，读数如实打印 K 与 n。 */
+  const K = clamp(Math.floor(6e6 / n), 1, 4000);
   const rng = mulberry32(seed);
   const smp = s6Sampler(rng);
   const means = new Float64Array(K);
@@ -928,9 +941,10 @@ window.CLT = {
     pdfAt: ladderPdfAt,
     level(n) {
       const lv = ladderBuild()[n];
+      const x0 = ladder.origins[n];
       const xs = new Float64Array(lv.length);
-      for (let i = 0; i < lv.length; i++) xs[i] = (i + 0.5) * LAD_DX;
-      return { xs, ys: lv };
+      for (let i = 0; i < lv.length; i++) xs[i] = x0 + (i + 0.5) * LAD_DX;
+      return { xs, ys: lv, x0 };
     }
   },
   sampleSize,

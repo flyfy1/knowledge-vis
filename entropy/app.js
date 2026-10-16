@@ -474,18 +474,19 @@ const s2 = {
   running: false
 };
 function s2Dist() { return normalize(s2.weights); }
+function s2SyncRunBtn() { $('s2-run').textContent = t(s2.running ? 'sampleStop' : 'sampleRun'); }
 function s2ResetSampling() {
   s2.rng = mulberry32(s2.seed);
   s2.surprises = [];
   s2.running = false;
-  $('s2-run').textContent = t('sampleRun');
+  s2SyncRunBtn();
 }
 function s2Sample(n) {
   const d = s2Dist();
   for (let i = 0; i < n; i++) {
     const idx = drawSymbol(s2.rng, d);
     s2.surprises.push(surprise(d[idx]));
-    if (s2.surprises.length >= 20000) { s2.running = false; $('s2-run').textContent = t('sampleRun'); break; }
+    if (s2.surprises.length >= 20000) { s2.running = false; s2SyncRunBtn(); break; }
   }
 }
 function s2SetWeights(w, fromStep4) {
@@ -613,12 +614,12 @@ $('s2-sample1').addEventListener('click', () => { s2Sample(1); s2Render(); });
 $('s2-sample20').addEventListener('click', () => { s2Sample(20); s2Render(); });
 $('s2-run').addEventListener('click', () => {
   s2.running = !s2.running;
-  $('s2-run').textContent = t(s2.running ? 'sampleStop' : 'sampleRun');
+  s2SyncRunBtn();
 });
 $('s2-reset').addEventListener('click', () => { s2ResetSampling(); s2Render(); });
 $('s2-seed').addEventListener('click', () => { s2.seed = freshSeed(); s2ResetSampling(); s2Render(); });
 animate($('step2'), () => { if (s2.running) { s2Sample(4); s2Render(); } });
-onLangRefresh(s2Render);
+onLangRefresh(() => { s2SyncRunBtn(); s2Render(); });
 onRefit(s2Draw);
 
 /* ================================================================

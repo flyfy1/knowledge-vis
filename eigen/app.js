@@ -377,11 +377,12 @@ const S0 = (() => {
     $('s0-readout').innerHTML = t('s0ro', { l1: fmtS(E.lambda1, 2), l2: fmtS(E.lambda2, 2) });
   }
   const slider = $('s0-t');
-  slider.addEventListener('input', () => { playing = false; $('s0-play').textContent = t('s0play'); mt = parseFloat(slider.value); draw(); });
+  function syncS0PlayBtn() { $('s0-play').textContent = playing ? t('s0pause') : t('s0play'); }
+  slider.addEventListener('input', () => { playing = false; syncS0PlayBtn(); mt = parseFloat(slider.value); draw(); });
   $('s0-play').addEventListener('click', () => {
     playing = !playing;
     if (playing) playDir = mt >= 1 ? -1 : 1;
-    $('s0-play').textContent = playing ? t('s0pause') : t('s0play');
+    syncS0PlayBtn();
   });
   $('s0-start').addEventListener('click', () => {
     document.getElementById('step1').scrollIntoView({ behavior: 'smooth' });
@@ -389,12 +390,12 @@ const S0 = (() => {
   animate($('step0'), dt => {
     if (!playing) return;
     mt += playDir * dt * 0.55;
-    if (mt >= 1) { mt = 1; playing = false; $('s0-play').textContent = t('s0play'); }
-    if (mt <= 0) { mt = 0; playing = false; $('s0-play').textContent = t('s0play'); }
+    if (mt >= 1) { mt = 1; playing = false; syncS0PlayBtn(); }
+    if (mt <= 0) { mt = 0; playing = false; syncS0PlayBtn(); }
     slider.value = String(mt);
     draw();
   });
-  onLangRefresh(draw); onRefit(draw);
+  onLangRefresh(draw); onLangRefresh(syncS0PlayBtn); onRefit(draw);
   draw();
   return { A, E, state: () => ({ t: mt, lambda1: E.lambda1, lambda2: E.lambda2 }) };
 })();
@@ -721,11 +722,12 @@ const S3 = (() => {
   }
   function targetDir() { return failMode ? unit([1, 1]) : [Math.cos(THETA), Math.sin(THETA)]; }
   function ratioShown() { return failMode ? 1 : Math.abs(E.lambda2 / E.lambda1); }
+  function syncS3PlayBtn() { $('s3-play').textContent = playing ? t('s3pause') : t('s3play'); }
   function reset(x0) {
     A = buildA(); E = eig(A);
     const res = powerIter(A, x0 || unit([1, 0.25]), 0, targetDir());
     traj = res.traj; errs = res.errs;
-    playing = false; $('s3-play').textContent = t('s3play');
+    playing = false; syncS3PlayBtn();
     draw();
   }
   function step() {
@@ -841,16 +843,16 @@ const S3 = (() => {
   $('s3-run').addEventListener('click', () => { for (let i = 0; i < 60; i++) step(); });
   $('s3-play').addEventListener('click', () => {
     playing = !playing;
-    $('s3-play').textContent = playing ? t('s3pause') : t('s3play');
+    syncS3PlayBtn();
   });
   $('s3-reset').addEventListener('click', () => reset(unit([1, 0.25])));
   let acc = 0;
   animate($('step3'), dt => {
     if (!playing) return;
     acc += dt;
-    while (acc > 0.16) { acc -= 0.16; step(); if (traj.length > 400) { playing = false; $('s3-play').textContent = t('s3play'); } }
+    while (acc > 0.16) { acc -= 0.16; step(); if (traj.length > 400) { playing = false; syncS3PlayBtn(); } }
   });
-  onLangRefresh(draw); onLangRefresh(syncRUI); onRefit(draw);
+  onLangRefresh(draw); onLangRefresh(syncRUI); onLangRefresh(syncS3PlayBtn); onRefit(draw);
   reset();
   return { buildA, targetDir, state: () => ({ A, E, failMode, r, traj, errs }) };
 })();
@@ -1186,8 +1188,9 @@ const S6 = (() => {
     dist = nd; k++;
     draw();
   }
+  function syncS6PlayBtn() { $('s6-play').textContent = playing ? t('s6pause') : t('s6play'); }
   function setInit(kind) {
-    playing = false; $('s6-play').textContent = t('s6play');
+    playing = false; syncS6PlayBtn();
     k = 0;
     if (kind === 'uni') dist = [0.25, 0.25, 0.25, 0.25];
     else if (kind === 'A') dist = [1, 0, 0, 0];
@@ -1206,7 +1209,7 @@ const S6 = (() => {
   $('s6-reset').addEventListener('click', () => setInit('uni'));
   $('s6-play').addEventListener('click', () => {
     playing = !playing;
-    $('s6-play').textContent = playing ? t('s6pause') : t('s6play');
+    syncS6PlayBtn();
   });
   let acc = 0;
   animate($('step6'), dt => {
@@ -1214,7 +1217,7 @@ const S6 = (() => {
     acc += dt;
     while (acc > 0.35) { acc -= 0.35; step(); }
   });
-  onLangRefresh(draw); onRefit(draw);
+  onLangRefresh(draw); onLangRefresh(syncS6PlayBtn); onRefit(draw);
   draw();
   return {
     M, steady, solveSteady,

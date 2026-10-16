@@ -219,7 +219,7 @@ function makePhoto(w, h) {
   const img = cv.getContext('2d').getImageData(0, 0, w, h);
   return { cv, img, w, h };
 }
-function convolveImage(img, kernel, div, off) { // 3×3 真卷积（注意：与 CNN 惯例同为相关运算，核已按显示方向使用）
+function convolveImage(img, kernel, div, off) { // 3×3 真卷积：与第 2 步同口径，核先翻转（两个轴都翻）再与邻域对齐相乘
   const { width: w, height: h, data: src } = img;
   const out = new ImageData(w, h);
   const dst = out.data;
@@ -228,7 +228,7 @@ function convolveImage(img, kernel, div, off) { // 3×3 真卷积（注意：与
     for (let c = 0; c < 3; c++) {
       let s = 0;
       for (let ky = -1; ky <= 1; ky++) for (let kx = -1; kx <= 1; kx++)
-        s += at(x + kx, y + ky, c) * kernel[(ky + 1) * 3 + (kx + 1)];
+        s += at(x + kx, y + ky, c) * kernel[(1 - ky) * 3 + (1 - kx)]; // 翻转后的核系数对齐 (x+kx, y+ky)
       dst[(y * w + x) * 4 + c] = clamp(Math.round(s / div + off), 0, 255);
     }
     dst[(y * w + x) * 4 + 3] = 255;
@@ -328,9 +328,10 @@ function convolveImage(img, kernel, div, off) { // 3×3 真卷积（注意：与
     const base = 50 + 22 * Math.sin(i / 26) + 10 * Math.sin(i / 7.3 + 1.2);
     data.push(base + (rnd() - 0.5) * 17);
   }
-  let W = 9, pos = 0, playing = true;
+  let W = 9, pos = 0, playing = true, dwell = 0;
 
   function smoothedAt(i, w) { // 与窗口 [i-w+1, i] 对齐（因果滑动平均）
+    i = clamp(i, 0, N - 1); // 索引钳制：任何调用点都不许越过数据末尾（越界读 undefined 会出 NaN）
     let s = 0, c = 0;
     for (let k = Math.max(0, i - w + 1); k <= i; k++) { s += data[k]; c++; }
     return s / c;
@@ -381,8 +382,11 @@ function convolveImage(img, kernel, div, off) { // 3×3 真卷积（注意：与
   let drawCache = draw(); readout();
   animate(section, dt => {
     if (playing) {
-      pos += dt * 26;
-      if (pos > N + 30) pos = 0;
+      if (pos < N - 1) pos = Math.min(N - 1, pos + dt * 26);
+      else { // 末尾停顿用独立计时状态（时长同旧版越界段的 30/26 秒），pos 钳在末尾不再越界
+        dwell += dt;
+        if (dwell >= 30 / 26) { pos = 0; dwell = 0; }
+      }
       drawCache = draw(); readout();
     }
   });
@@ -790,7 +794,7 @@ function convolveImage(img, kernel, div, off) { // 3×3 真卷积（注意：与
     const at = (xx, yy, c) => d[(clamp(yy, 0, H - 1) * W + clamp(xx, 0, W - 1)) * 4 + c];
     const cells = [], sums = [0, 0, 0];
     for (let ky = -1; ky <= 1; ky++) for (let kx = -1; kx <= 1; kx++) {
-      const kv = kernel[(ky + 1) * 3 + (kx + 1)];
+      const kv = kernel[(1 - ky) * 3 + (1 - kx)]; // 与 convolveImage 同口径：翻转后的核系数
       const rv = at(x + kx, y + ky, 0);
       for (let c = 0; c < 3; c++) sums[c] += at(x + kx, y + ky, c) * kv;
       cells.push({ v: rv, k: kv, p: rv * kv });
@@ -1064,13 +1068,17 @@ function convolveImage(img, kernel, div, off) { // 3×3 真卷积（注意：与
     // —— 主图：两条结果叠画 + 输入小图 ——
     const w = cv._w, h = cv._h;
     ctx.clearRect(0, 0, w, h);
-    let maxV = 0.001;
-    yTime.forEach(v => maxV = Math.max(maxV, Math.abs(v)));
+    // 纵轴按两条结果的实际 min/max 定范围（旧版按 max|v| 对称缩放且基线偏低，负峰会落到画布外被裁）
+    let minV = 0, maxV = 0;
+    yTime.forEach(v => { minV = Math.min(minV, v); maxV = Math.max(maxV, v); });
+    yFreq.forEach(v => { minV = Math.min(minV, v); maxV = Math.max(maxV, v); });
     const padL = 14, padR = 14;
     const outN = yTime.length;
     const X = i => padL + (w - padL - padR) * i / (outN - 1);
-    const baseY = h * 0.68, amp = h * 0.52;
-    const Y = v => baseY - v / maxV * amp * 0.92;
+    const plotT = 56, plotB = h - 60; // 上避图例、下避底部 f/g 茎图条带
+    const span = Math.max(maxV - minV, 1e-9);
+    const Y = v => plotB - (v - minV) / span * (plotB - plotT);
+    const baseY = Y(0);
     ctx.strokeStyle = '#2b3547'; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(padL, baseY); ctx.lineTo(w - padR, baseY); ctx.stroke();
     const plot = (arr, style, lw, dash) => {

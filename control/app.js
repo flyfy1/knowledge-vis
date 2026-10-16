@@ -225,10 +225,14 @@ function drawHanging(ctx, cv, sim) {
 }
 
 /* ---------- θ(t) 曲线带 ---------- */
+const HIST_MAX = 2048; // 容量兜底：窗口清理失效时也不无限增长
 function pushHist(arr, sim, capSec) {
+  const last = arr[arr.length - 1];
+  if (last && sim.t <= last.t) return; // 时间未推进（如倒地后 substep 冻结）不再追加同时间戳点
   arr.push({ t: sim.t, th: sim.theta, a: sim.a });
   const from = sim.t - (capSec || 13);
   while (arr.length && arr[0].t < from) arr.shift();
+  if (arr.length > HIST_MAX) arr.splice(0, arr.length - HIST_MAX);
 }
 function drawStrip(ctx, cv, seriesList, opts) {
   opts = opts || {};

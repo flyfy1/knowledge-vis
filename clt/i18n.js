@@ -207,7 +207,11 @@ const STR = {
 /* ---------- 语言状态 ---------- */
 let _lang = null;
 function storedLang() {
-  try { return window.localStorage.getItem('knowledge-lang'); } catch (e) { return null; }
+  try {
+    const v = window.localStorage.getItem('knowledge-lang');
+    if (v === 'zh' || v === 'en') return v; // 只认 zh/en 枚举，非法值（如 fr）回退默认推断
+  } catch (e) { /* 忽略 */ }
+  return null;
 }
 function saveLang(v) {
   try { window.localStorage.setItem('knowledge-lang', v); } catch (e) { /* 忽略 */ }

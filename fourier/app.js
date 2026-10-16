@@ -432,7 +432,10 @@ function personPts() {
     $('s2-a' + (i + 1)).addEventListener('input', e => { c.a = +e.target.value; syncLabels(); });
   });
   $('s2-preset-square').addEventListener('click', () => {
-    comps[0] = { f: 1, a: 1 }; comps[1] = { f: 3, a: 0.33 }; comps[2] = { f: 5, a: 0.2 }; syncLabels();
+    // 原地改字段：监听器闭包持有 comps 元素引用，整体替换对象会让滑杆失效
+    const sq = [[1, 1], [3, 0.33], [5, 0.2]];
+    comps.forEach((c, i) => { c.f = sq[i][0]; c.a = sq[i][1]; });
+    syncLabels();
   });
   $('s2-preset-random').addEventListener('click', () => {
     comps.forEach(c => { c.f = 1 + Math.floor(Math.random() * 8); c.a = Math.round((0.15 + Math.random() * 0.85) * 20) / 20; });
@@ -780,9 +783,14 @@ function personPts() {
       setStatus('s6statusDrew');
     }
   }
+  function cancel() { // 系统取消手势（pointercancel）：丢弃未完成笔画，不残留绘制状态
+    drawing = false;
+    viz.drawing = null;
+  }
   cv.addEventListener('pointerdown', start);
   cv.addEventListener('pointermove', move);
   window.addEventListener('pointerup', end);
+  window.addEventListener('pointercancel', cancel);
   animate($('step6'), dt => viz.draw(dt));
 })();
 

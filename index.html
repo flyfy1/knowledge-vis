@@ -140,16 +140,23 @@
   }
 
   function renderChips() {
-    chipsBox.innerHTML = '';
-    var defs = [{ id: 'all', label: t('allChip') }];
-    categories.forEach(function(c){ defs.push({ id: c.id, label: pick(c.name) }); });
-    defs.forEach(function(d){
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'chip' + (activeCat === d.id ? ' on' : '');
-      b.textContent = d.label;
-      b.addEventListener('click', function(){ activeCat = d.id; renderChips(); renderCards(); });
-      chipsBox.appendChild(b);
+    // 按钮只建一次：之后仅同步文案与选中态，不重建节点——否则每次点击/切语言都会丢键盘焦点
+    if (!chipsBox.children.length) {
+      var defs = [{ id: 'all' }];
+      categories.forEach(function(c){ defs.push({ id: c.id }); });
+      defs.forEach(function(d){
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'chip';
+        b.dataset.cat = d.id;
+        b.addEventListener('click', function(){ activeCat = d.id; renderChips(); renderCards(); });
+        chipsBox.appendChild(b);
+      });
+    }
+    chipsBox.querySelectorAll('button').forEach(function(b){
+      var id = b.dataset.cat;
+      b.textContent = id === 'all' ? t('allChip') : catName(id);
+      b.classList.toggle('on', activeCat === id);
     });
   }
 

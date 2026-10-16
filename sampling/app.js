@@ -39,7 +39,7 @@ function fitCanvas(cv) {
   return ctx;
 }
 const allCanvases = [];
-function ctxOf(id) { const cv = $(id); allCanvases.push(cv); return fitCanvas(cv); }
+function ctxOf(id) { const cv = $(id); if (!allCanvases.includes(cv)) allCanvases.push(cv); return fitCanvas(cv); }
 const refitHooks = [];
 function onRefit(fn) { refitHooks.push(fn); }
 let refitQueued = false;
@@ -444,21 +444,28 @@ function s4Draw() {
   ctx.textAlign = 'right';
   ctx.fillText('Hz', padL + pw, padT - 14);
   ctx.textAlign = 'left';
-  /* 峰集合：|m·f_s ± f|，等高（纯音副本高度相同，示意自洽）
-     f 恰为 f_s 整数倍时有一根峰折到 0（直流）：纳入集合，绘制时画贴左轴的半峰 */
-  const pos = new Set();
-  for (let m = 0; m * fs <= fmax + f; m++) {
-    for (const s of [f, -f]) {
-      const p = Math.abs(m * fs + s);
-      if (p > 0.01 && p < fmax) pos.add(Math.round(p * 1000) / 1000);
-      else if (p <= 0.01 && m >= 1) pos.add(0);
+  /* 峰集合：副本位置 |m·f_s ± f|。重合的副本不能只并位置——要按复幅值带符号相加：
+     本页纯音取正弦，+f 支幅值 +1/(2j)、−f 支 −1/(2j)，符号相反，同一位置相遇即相消。
+     f 为 f_s 的半整数倍时，采样点全落在正弦过零点上、序列恒为 0，所有副本两两相消、
+     一根峰都不剩（与第 2 步 f = f_s 的零假波同口径）。coef =（+f 支数) −（−f 支数），
+     峰高 ∝ |coef|；不重合时 |coef| 恒为 1，与旧版等高一致。 */
+  const coef = new Map();
+  const M4 = Math.ceil((fmax + f) / fs) + 1;
+  for (let m = -M4; m <= M4; m++) {
+    for (const s of [1, -1]) {
+      const v = m * fs + s * f;
+      if (v < -0.01 || v >= fmax) continue;
+      const p = Math.round(Math.max(0, v) * 1000) / 1000;
+      coef.set(p, (coef.get(p) || 0) + s);
     }
   }
+  const pos = [...coef.keys()].filter(p => coef.get(p) !== 0);
   const halfW = Math.max(0.45, fmax * 0.011);
   const peakH = ph * 0.66;
   const alias = aliasFreq(f, fs);
   let copyLabeled = false;
-  [...pos].sort((a, b) => a - b).forEach(p => {
+  pos.sort((a, b) => a - b).forEach(p => {
+    const pkH = peakH * Math.abs(coef.get(p));
     const isOrig = Math.abs(p - f) < 1e-9;
     const isAlias = !isOrig && p <= fs / 2 + 1e-9 && Math.abs(p - alias) < 1e-9;
     const col = isOrig ? '#6ee7ff' : isAlias ? '#ff7a93' : '#8494ab';
@@ -466,33 +473,36 @@ function s4Draw() {
     if (p === 0) {
       /* 直流折叠峰：中心在 0，只画右半个三角，贴住左轴 */
       ctx.moveTo(X(0), base);
-      ctx.lineTo(X(0), base - peakH);
+      ctx.lineTo(X(0), base - pkH);
       ctx.lineTo(X(halfW), base);
     } else {
       ctx.moveTo(X(p - halfW), base);
-      ctx.lineTo(X(p), base - peakH);
+      ctx.lineTo(X(p), base - pkH);
       ctx.lineTo(X(p + halfW), base);
     }
     ctx.closePath();
     ctx.fillStyle = col; ctx.globalAlpha = isOrig || isAlias ? 0.95 : 0.55;
     ctx.fill(); ctx.globalAlpha = 1;
     ctx.font = '12.5px system-ui, sans-serif'; ctx.fillStyle = col; ctx.textAlign = 'center';
-    if (isOrig) ctx.fillText(t('cPeak') + ' = ' + fmt(f, 1), X(p), base - peakH - 10);
+    if (isOrig) ctx.fillText(t('cPeak') + ' = ' + fmt(f, 1), X(p), base - pkH - 10);
     else if (isAlias && p === 0) {
       /* 0 Hz 峰的标签居中会溢出左缘：靠左轴左对齐 */
       ctx.textAlign = 'left';
-      ctx.fillText(t('cAliasPeak') + ' = ' + fmt(p, 1), X(0) + 5, base - peakH - 10);
+      ctx.fillText(t('cAliasPeak') + ' = ' + fmt(p, 1), X(0) + 5, base - pkH - 10);
       ctx.textAlign = 'center';
     }
-    else if (isAlias) ctx.fillText(t('cAliasPeak') + ' = ' + fmt(p, 1), X(p), base - peakH - 10);
-    else if (!copyLabeled && p > fs / 2) { ctx.fillText(t('cCopy'), X(p), base - peakH - 10); copyLabeled = true; }
+    else if (isAlias) ctx.fillText(t('cAliasPeak') + ' = ' + fmt(p, 1), X(p), base - pkH - 10);
+    else if (!copyLabeled && p > fs / 2) { ctx.fillText(t('cCopy'), X(p), base - pkH - 10); copyLabeled = true; }
     ctx.fillText(fmt(p, 0), X(p), base - 16);
     ctx.textAlign = 'left';
   });
 }
 function s4Readout() {
   const { f, fs } = S4;
-  if (f > fs / 2) {
+  /* f 恰为 f_s 的半整数倍：正弦采样点全落在过零点上，序列恒为 0、频谱全空（图中无峰与此读数同口径） */
+  if (Math.abs(2 * f / fs - Math.round(2 * f / fs)) < 1e-9) {
+    $('s4-readout').innerHTML = t('s4roZero');
+  } else if (f > fs / 2) {
     $('s4-readout').innerHTML = t('s4ro', { fs, half: fmt(fs / 2, 1), alias: fmt(aliasFreq(f, fs), 1) });
   } else {
     $('s4-readout').innerHTML = t('s4roClean', { fs, half: fmt(fs / 2, 1) });

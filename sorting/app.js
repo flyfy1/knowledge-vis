@@ -465,6 +465,7 @@ const s0 = {
   playing: false, elapsed: 0, finished: false
 };
 const s0ctxL = ctxOf('s0-left'), s0ctxR = ctxOf('s0-right');
+function s0SyncPlayBtn() { $('s0-play').textContent = s0.playing ? t('pause') : t('s0race'); }
 function s0Rebuild() {
   const data = genPermutation(s0.n, s0.seed);
   s0.bFrames = traceOf(emit => bubbleSort(data, emit)).frames;
@@ -473,7 +474,7 @@ function s0Rebuild() {
   s0.bTotal = s0.bFrames[s0.bFrames.length - 1].cmp;
   s0.mTotal = s0.mFrames[s0.mFrames.length - 1].cmp;
   s0.elapsed = 0; s0.playing = false; s0.finished = false;
-  $('s0-play').textContent = t('s0race');
+  s0SyncPlayBtn();
   s0Draw();
 }
 function s0FrameAt(frames, elapsed) {
@@ -525,7 +526,7 @@ animate($('step0'), dt => {
   const mf = s0FrameAt(s0.mFrames, s0.elapsed);
   if (bf.cmp >= s0.bTotal && mf.cmp >= s0.mTotal) {
     s0.playing = false; s0.finished = true;
-    $('s0-play').textContent = t('s0race');
+    s0SyncPlayBtn();
   }
   s0Draw();
 });
@@ -534,13 +535,13 @@ $('s0-play').addEventListener('click', () => {
     s0.elapsed = 0; s0.finished = false;
   }
   s0.playing = !s0.playing;
-  $('s0-play').textContent = s0.playing ? t('pause') : t('s0race');
+  s0SyncPlayBtn();
   s0Draw();
 });
-$('s0-reset').addEventListener('click', () => { s0.elapsed = 0; s0.playing = false; s0.finished = false; $('s0-play').textContent = t('s0race'); s0Draw(); });
+$('s0-reset').addEventListener('click', () => { s0.elapsed = 0; s0.playing = false; s0.finished = false; s0SyncPlayBtn(); s0Draw(); });
 $('s0-seed').addEventListener('click', () => { s0.seed += 1; s0Rebuild(); });
 $('s0-start').addEventListener('click', () => $('step1').scrollIntoView({ behavior: 'smooth' }));
-onLangRefresh(() => { if (!s0.playing) $('s0-play').textContent = t('s0race'); s0Draw(); });
+onLangRefresh(() => { s0SyncPlayBtn(); s0Draw(); });
 onRefit(() => s0Draw());
 
 /* ================================================================

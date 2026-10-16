@@ -102,6 +102,9 @@ function respAt(r, th, Om) {
 }
 /* 频响峰位：Ω ∈ [0, π] 细网格真算 argmax（1440 格）+ 邻域三分细化求真峰 */
 function respPeak(r, th) {
+  /* 极点恰在单位圆上（r = 1，与判词同口径）：Ω = θ 处是真奇点、峰值 ∞——
+     不许细化搜索端出一个看似精确的巨大有限数冒充峰值 */
+  if (Math.abs(r - 1) <= 1e-9) return { Om: th, val: Infinity, singular: true };
   let best = { Om: 0, val: -1 };
   const M = 1440;
   for (let i = 0; i <= M; i++) {
@@ -176,7 +179,7 @@ function fitCanvas(cv) {
   return ctx;
 }
 const allCanvases = [];
-function ctxOf(id) { const cv = $(id); allCanvases.push(cv); return fitCanvas(cv); }
+function ctxOf(id) { const cv = $(id); if (!allCanvases.includes(cv)) allCanvases.push(cv); return fitCanvas(cv); }
 const refitHooks = [];
 function onRefit(fn) { refitHooks.push(fn); }
 let refitQueued = false;
@@ -913,7 +916,18 @@ function s4DrawResp() {
   const rows = legendRows(ctx, [[t('cvResp'), '#6ee7ff']], w - 24);
   drawLegendRows(ctx, rows, 12, 14);
   const peak = respPeak(s4.r, s4.th);
-  const yMax = Math.max(3, peak.val * 1.15);
+  let yMax = Math.max(3, peak.val * 1.15);
+  if (peak.singular) {
+    /* 峰值 ∞：纵轴改按「离极点 ≥ 2 格」的有限样本定标，尖峰径直冲出图顶，精确口径（∞）在读数里 */
+    let dm = 0;
+    for (let i = 0; i <= 360; i++) {
+      const Om = i / 360 * Math.PI;
+      if (Math.abs(Om - peak.Om) < Math.PI / 180) continue;
+      const vv = respAt(s4.r, s4.th, Om);
+      if (isFinite(vv) && vv > dm) dm = vv;
+    }
+    yMax = Math.max(3, dm * 1.15);
+  }
   const x0 = 46, x1 = w - 14, yBot = h - 28, yTop = 40;
   const X = Om => x0 + Om / Math.PI * (x1 - x0);
   const Y = vv => yBot - vv / yMax * (yBot - yTop);
@@ -955,22 +969,27 @@ function s4DrawResp() {
     if (peak.Om > Math.PI / 2 && 54 + nw <= w - 4) drawClipNote(ctx, 0, 40, note, 54);
     else drawClipNote(ctx, w - 8, 40, note);
   }
-  /* 峰标记 */
+  /* 峰标记（奇异时峰值 ∞：标记落在图顶 Ω = θ 处，标签带 ∞） */
+  const pkY = peak.singular ? yMax : peak.val;
   ctx.fillStyle = '#7ee2a8';
-  ctx.beginPath(); ctx.arc(X(peak.Om), Y(peak.val), 4.5, 0, TAU); ctx.fill();
+  ctx.beginPath(); ctx.arc(X(peak.Om), Y(pkY), 4.5, 0, TAU); ctx.fill();
   ctx.font = '12px system-ui, sans-serif'; ctx.textAlign = peak.Om > Math.PI * 0.6 ? 'right' : 'left'; ctx.textBaseline = 'bottom';
-  ctx.fillText(t('cvPeak') + ' Ω = ' + fmt(peak.Om, 2), X(peak.Om) + (peak.Om > Math.PI * 0.6 ? -8 : 8), Y(peak.val) - 4);
+  ctx.fillText(t('cvPeak') + ' Ω = ' + fmt(peak.Om, 2) + (peak.singular ? ' · ∞' : ''), X(peak.Om) + (peak.Om > Math.PI * 0.6 ? -8 : 8), Y(pkY) - 4);
   s4.peak = peak;
 }
 function s4Draw() { s4DrawPlane(); s4DrawH(); s4DrawResp(); }
 function s4Readout() {
   const pr = s4.r * Math.cos(s4.th), pi = s4.r * Math.sin(s4.th);
-  const verdict = s4.r < 1 - 1e-9 ? t('s4vStable') : s4.r > 1 + 1e-9 ? t('s4vUnstable') : t('s4vMarginal');
+  /* 判词：在单位圆上要分两种——单根（θ 不在 0/π）包络恒定是临界；
+     重根（θ = 0 或 π，sin θ = 0）时 h[n] = (n+1)pⁿ，包络随 n 线性增长，是不稳定 */
+  const dblPole = Math.abs(Math.sin(s4.th)) < 1e-9;
+  const verdict = s4.r < 1 - 1e-9 ? t('s4vStable') : s4.r > 1 + 1e-9 ? t('s4vUnstable')
+    : dblPole ? t('s4vGrowLin') : t('s4vMarginal');
   const peak = s4.peak || respPeak(s4.r, s4.th);
   $('s4-readout').innerHTML = t('s4ro', {
     pre: fmtS(pr, 3), imSign: signOf(pi), pim: fmt(Math.abs(pi), 3),
     r: fmt(s4.r, 2), th: fmt(s4.th, 2), verdict,
-    peakOm: fmt(peak.Om, 2), peakVal: fmt(peak.val, 1),
+    peakOm: fmt(peak.Om, 2), peakVal: peak.singular ? t('s4peakInf') : fmt(peak.val, 1),
     h10: fmtS(impulse(10, s4.r, s4.th), 4), e10: fmt(envelope(10, s4.r, s4.th), 4)
   });
 }
