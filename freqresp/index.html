@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>频率响应与滤波 · 按频率挑食的盒子</title>
+<link rel="stylesheet" href="style.css?v=8c60086">
+<script src="i18n.js?v=8c60086"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">频率响应与滤波 · 挑食的盒子</h1>
+    <p class="tagline" data-i18n="tagline">一个线性时不变的盒子，对正弦的回答永远是同频正弦——只被缩放、只被推迟。把「放行率」和「迟到量」随频率画出来，就是这个盒子的全部性格：频率响应。它既是系统的体检报告，也是滤波器的设计图。本页每条曲线都当场量、当场算给你看。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 挑食的盒子</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 正弦进正弦出</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 波特图</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 移动平均的零点</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 相位毁波形</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 高通与带通</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 终章 · 设计台</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+    <h2 data-i18n="s0t">盒子在按频率挑食</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage"><canvas id="s0-wave" height="260"></canvas></div>
+    <p class="explain" data-i18n-html="s0e2"></p>
+    <div class="controls">
+      <label><span><span data-i18n="s0fLab">试探正弦的频率 f</span> <span class="val" id="s0-f-val">1.0 Hz</span></span>
+        <input type="range" id="s0-f" min="-0.7" max="1.08" step="0.01" value="0"></label>
+    </div>
+    <div class="stage"><canvas id="s0-gain" height="240"></canvas></div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0engNote"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：正弦进正弦出 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 频率响应是什么</p>
+    <h2 data-i18n="s1t">正弦进、正弦出：只改两件事</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage"><canvas id="s1-circuit" height="150"></canvas></div>
+    <p class="formula" data-i18n="s1formula">H(jω) = 1 / (1 + jωRC)，τ = RC = 1 s，ωc = 1/τ = 1 rad/s</p>
+    <div class="controls">
+      <label><span><span data-i18n="s1wLab">输入角频率 ω</span> <span class="val" id="s1-w-val">1.00 rad/s</span></span>
+        <input type="range" id="s1-w" min="-1.3" max="1.48" step="0.01" value="0"></label>
+    </div>
+    <div class="stage"><canvas id="s1-wave" height="250"></canvas></div>
+    <div class="duo-ro">
+      <div class="duo-card">
+        <h4 data-i18n="s1cardA">解析牌 · 公式算的</h4>
+        <p class="big" id="s1-ana"></p>
+        <p class="sub" id="s1-ana-sub"></p>
+      </div>
+      <div class="duo-card">
+        <h4 data-i18n="s1cardB">实测牌 · 从波形量的</h4>
+        <p class="big" id="s1-mea"></p>
+        <p class="sub" id="s1-mea-sub"></p>
+      </div>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <div class="stage"><canvas id="s1-mag" height="250"></canvas></div>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：波特图 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 波特图</p>
+    <h2 data-i18n="s2t">波特图：工程师的读法</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="controls">
+      <label><span><span data-i18n="s2rLab">电阻 R</span> <span class="val" id="s2-r-val">1.0</span></span>
+        <input type="range" id="s2-r" min="-0.7" max="0.7" step="0.01" value="0"></label>
+      <label><span><span data-i18n="s2cLab">电容 C</span> <span class="val" id="s2-c-val">1.0</span></span>
+        <input type="range" id="s2-c" min="-0.7" max="0.7" step="0.01" value="0"></label>
+    </div>
+    <div class="stage"><canvas id="s2-mag" height="250"></canvas></div>
+    <div class="stage"><canvas id="s2-phase" height="190"></canvas></div>
+    <p class="readout" id="s2-readout"></p>
+    <div class="bench">
+      <h3 data-i18n="s2quizT">读图练习：别算，读出来</h3>
+      <p class="quiz-q" id="s2-quiz-q"></p>
+      <div class="quiz-opts" id="s2-quiz-opts"></div>
+      <p class="readout" id="s2-quiz-ro"></p>
+      <div class="btn-row">
+        <button class="btn" id="s2-quiz-next" data-i18n="s2quizNext">换一题</button>
+      </div>
+    </div>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：移动平均的零点 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 数字滤波器</p>
+    <h2 data-i18n="s3t">移动平均的零点：点名枪毙一个频率</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <p class="formula" data-i18n="s3formula">|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|)，零点在 ω = 2πk/M</p>
+    <div class="controls">
+      <label><span><span data-i18n="s3mLab">平均长度 M</span> <span class="val" id="s3-m-val">8</span></span>
+        <input type="range" id="s3-m" min="2" max="32" step="1" value="8"></label>
+      <label><span><span data-i18n="s3wLab">输入数字频率 ω（rad/样本）</span> <span class="val" id="s3-w-val">0.785</span></span>
+        <input type="range" id="s3-w" min="0.05" max="3.13" step="0.005" value="0.785"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s3-p-zero" data-i18n="s3pZero">送零点频率 2π/M</button>
+      <button class="btn" id="s3-p-side" data-i18n="s3pSide">送第一旁瓣峰</button>
+      <button class="btn" id="s3-p-pass" data-i18n="s3pPass">送通带低频 0.20</button>
+    </div>
+    <div class="stage"><canvas id="s3-mag" height="250"></canvas></div>
+    <div class="stage"><canvas id="s3-tone" height="230"></canvas></div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：相位毁波形 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 相位</p>
+    <h2 data-i18n="s4t">相位也是性格：波形会被迟到毁掉</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="controls">
+      <label><span><span data-i18n="s4sigLab">测试信号</span></span>
+        <span class="btn-row" style="margin:0">
+          <button class="btn active" id="s4-sig-pulse" data-i18n="s4sigPulse">脉冲串</button>
+          <button class="btn" id="s4-sig-square" data-i18n="s4sigSquare">方波</button>
+        </span></label>
+      <label><span><span data-i18n="s4tauLab">纯延迟 τ<sub>d</sub> / RC 的 τ（同一滑杆）</span> <span class="val" id="s4-tau-val">0.60 s</span></span>
+        <input type="range" id="s4-tau" min="0.1" max="1.5" step="0.02" value="0.6"></label>
+    </div>
+    <div class="stage"><canvas id="s4-wave" height="270"></canvas></div>
+    <div class="stage"><canvas id="s4-phase" height="230"></canvas></div>
+    <p class="readout" id="s4-readout"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：高通与带通 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 换个接法</p>
+    <h2 data-i18n="s5t">高通、带通与共振：同一套数学的三种挑食</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="controls">
+      <label><span><span data-i18n="s5tauLab">RC 高通的 τ（ωc = 1/τ）</span> <span class="val" id="s5-tau-val">1.00 s（ωc = 1.00）</span></span>
+        <input type="range" id="s5-tau" min="-0.7" max="0.7" step="0.01" value="0"></label>
+    </div>
+    <div class="stage"><canvas id="s5-hp" height="240"></canvas></div>
+    <p class="readout" id="s5-hp-ro"></p>
+    <p class="explain" data-i18n-html="s5e2"></p>
+    <div class="controls">
+      <label><span><span data-i18n="s5f0Lab">带通峰频 f₀</span> <span class="val" id="s5-f0-val">100 Hz</span></span>
+        <input type="range" id="s5-f0" min="1.3" max="2.7" step="0.01" value="2"></label>
+      <label><span><span data-i18n="s5qLab">品质因数 Q</span> <span class="val" id="s5-q-val">5.0</span></span>
+        <input type="range" id="s5-q" min="-0.3" max="1.3" step="0.01" value="0.7"></label>
+    </div>
+    <div class="stage"><canvas id="s5-bp" height="250"></canvas></div>
+    <p class="readout" id="s5-bp-ro"></p>
+    <div class="stage"><canvas id="s5-bp-phase" height="180"></canvas></div>
+    <p class="hint" data-i18n-html="s5hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：终章设计台 ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">设计台：按指标造一个滤波器</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <ul class="spec-list">
+      <li data-i18n-html="s6spec1">保住 <b>50 Hz</b> 有用信号：衰减 <b>≤ 1 dB</b></li>
+      <li data-i18n-html="s6spec2">杀掉 <b>500 Hz</b> 干扰：衰减 <b>≥ 20 dB</b></li>
+    </ul>
+    <div class="btn-row" id="s6-tools">
+      <button class="btn active" data-tool="rc1" data-i18n="s6toolRc1">一阶 RC 低通</button>
+      <button class="btn" data-tool="rc2" data-i18n="s6toolRc2">二阶 RC 级联（理想）</button>
+      <button class="btn" data-tool="ma" data-i18n="s6toolMa">移动平均（Fs = 4000 Hz）</button>
+    </div>
+    <div class="controls">
+      <label id="s6-fc-wrap"><span><span data-i18n="s6fcLab">截止频率 fc</span> <span class="val" id="s6-fc-val">100 Hz</span></span>
+        <input type="range" id="s6-fc" min="1.3" max="3" step="0.01" value="2"></label>
+      <label id="s6-m-wrap" hidden><span><span data-i18n="s6mLab">平均长度 M</span> <span class="val" id="s6-m-val">8</span></span>
+        <input type="range" id="s6-m" min="2" max="40" step="1" value="8"></label>
+    </div>
+    <div class="stage"><canvas id="s6-mag" height="260"></canvas></div>
+    <p class="readout" id="s6-readout"></p>
+    <div class="btn-row">
+      <button class="btn primary" id="s6-judge" data-i18n="s6judge">验收 →</button>
+    </div>
+    <p class="readout" id="s6-verdict"></p>
+    <p class="hint" data-i18n-html="s6note"></p>
+    <div class="app-cards">
+      <div class="app-card">
+        <h3 data-i18n="s6card1T">均衡器</h3>
+        <p data-i18n-html="s6card1"></p>
+      </div>
+      <div class="app-card">
+        <h3 data-i18n="s6card2T">图像模糊</h3>
+        <p data-i18n-html="s6card2"></p>
+      </div>
+      <div class="app-card">
+        <h3 data-i18n="s6card3T">通信选频</h3>
+        <p data-i18n-html="s6card3"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../laplace/" data-i18n="s6lkL">拉普拉斯：从极点读共振 →</a> ·
+        <a class="fourier-link" href="../ztransform/" data-i18n="s6lkZ">Z 变换：单位圆上的频响 →</a> ·
+        <a class="fourier-link" href="../lti/" data-i18n="s6lkLti">冲激与 LTI：h 的指纹 →</a>
+      </p>
+      <p style="margin-top:10px">
+        <a class="fourier-link" href="/" data-i18n="back">← 知识索引</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 频率响应与滤波 Frequency Response &amp; Filters —— 一步一交互系列</footer>
+
+<script src="app.js?v=8c60086"></script>
+</body>
+</html>

@@ -265,5 +265,21 @@ window.KNOWLEDGE_PAGES = [
     category: "signal",
     status: "live",
     path: "lti/"
+  },
+  {
+    slug: "freqresp",
+    title: { zh: "频率响应与滤波 · 按频率挑食的盒子", en: "Frequency Response & Filters · A Box That Eats by Frequency" },
+    desc: {
+      zh: "LTI 系统对正弦只做两件事：按 |H(ω)| 缩放、按 φ(ω) 迟到。把这两条曲线量出来，你就既会读波特图，也会按指标亲手设计一个滤波器——零点、相位、带通、验收，全是真算。",
+      en: "An LTI system does only two things to a sine: scale it by |H(ω)| and delay it by φ(ω). Measure those two curves and you can both read a Bode plot and design a filter to spec — zeros, phase, bandpass, and a bench verdict, all computed for real."
+    },
+    tags: [
+      { zh: "频率响应", en: "Frequency Response" },
+      { zh: "滤波器", en: "Filters" },
+      { zh: "波特图", en: "Bode Plot" }
+    ],
+    category: "signal",
+    status: "live",
+    path: "freqresp/"
   }
 ];
