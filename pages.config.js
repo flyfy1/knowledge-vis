@@ -297,5 +297,21 @@ window.KNOWLEDGE_PAGES = [
     category: "signal",
     status: "live",
     path: "modulation/"
+  },
+  {
+    slug: "kalman",
+    title: { zh: "卡尔曼滤波 · 在预测与测量之间称重", en: "Kalman Filter · Weighing Prediction Against Measurement" },
+    desc: {
+      zh: "真实状态永远看不见：模型预测一份、带噪测量一份，卡尔曼按各自的不确定度当场算出该信谁几成。增益 K 如何自己定下来、如何从位置估出没测过的速度——全是递推真算。",
+      en: "The true state is never visible: a model predicts, a noisy sensor measures, and the Kalman filter weighs the two by their uncertainties, live. How gain K settles itself, and how velocity gets estimated from position alone — every step from the real recursion."
+    },
+    tags: [
+      { zh: "卡尔曼滤波", en: "Kalman Filter" },
+      { zh: "状态估计", en: "State Estimation" },
+      { zh: "预测与更新", en: "Predict–Update" }
+    ],
+    category: "signal",
+    status: "live",
+    path: "kalman/"
   }
 ];

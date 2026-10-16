@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>卡尔曼滤波 · 在预测与测量之间称重</title>
+<link rel="stylesheet" href="style.css?v=0980929">
+<script src="i18n.js?v=0980929"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">卡尔曼滤波 · 称重</h1>
+    <p class="tagline" data-i18n="tagline"></p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0"></a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1"></a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2"></a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3"></a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4"></a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5"></a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6"></a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k"></p>
+    <h2 data-i18n="s0t"></h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage"><canvas id="s0-cv" height="330"></canvas></div>
+    <div class="btn-row">
+      <button class="btn primary" id="s0-run" data-i18n="s0run"></button>
+      <button class="btn" id="s0-reveal" data-i18n="s0reveal" disabled></button>
+      <button class="btn" id="s0-reset" data-i18n="s0reset"></button>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start"></button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：两种笨办法 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k"></p>
+    <h2 data-i18n="s1t"></h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage"><canvas id="s1-cv" height="330"></canvas></div>
+    <div class="controls">
+      <label><span><span data-i18n="s1wLab"></span> <span class="val" id="s1-w-val">8</span></span>
+        <input type="range" id="s1-w" min="2" max="20" step="1" value="8"></label>
+    </div>
+    <div class="btn-row">
+      <label class="chk"><input type="checkbox" id="s1-show-raw" checked> <span data-i18n="s1showRaw"></span></label>
+      <label class="chk"><input type="checkbox" id="s1-show-ma" checked> <span data-i18n="s1showMa"></span></label>
+      <label class="chk"><input type="checkbox" id="s1-show-kf" checked> <span data-i18n="s1showKf"></span></label>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：预测—更新 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k"></p>
+    <h2 data-i18n="s2t"></h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <p class="formula" data-i18n-html="s2formula"></p>
+    <div class="stage"><canvas id="s2-bell" height="300"></canvas></div>
+    <div class="btn-row">
+      <button class="btn primary" id="s2-next" data-i18n="s2nextPred"></button>
+      <button class="btn" id="s2-play" data-i18n="s2play"></button>
+      <button class="btn" id="s2-reset" data-i18n="s2reset"></button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：K 的拔河 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k"></p>
+    <h2 data-i18n="s3t"></h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage"><canvas id="s3-cv" height="320"></canvas></div>
+    <div class="controls">
+      <label><span><span data-i18n="s3qLab"></span> <span class="val" id="s3-q-val"></span></span>
+        <input type="range" id="s3-q" min="0" max="1000" step="1" value="333"></label>
+      <label><span><span data-i18n="s3rLab"></span> <span class="val" id="s3-r-val"></span></span>
+        <input type="range" id="s3-r" min="0" max="1000" step="1" value="410"></label>
+    </div>
+    <div class="k-hero">
+      <span class="k-num" id="s3-k-num">K</span>
+      <span class="k-lab" data-i18n-html="s3kLab"></span>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <div class="btn-row" id="s3-presets">
+      <button class="btn" data-preset="model" data-i18n="s3pModel"></button>
+      <button class="btn" data-preset="balanced" data-i18n="s3pBalanced"></button>
+      <button class="btn" data-preset="meas" data-i18n="s3pMeas"></button>
+    </div>
+    <div class="mini-row">
+      <div class="mini-card">
+        <h3 data-i18n="s3pModel"></h3>
+        <div class="stage"><canvas id="s3-m1" height="150"></canvas></div>
+        <p class="mini-ro" id="s3-m1-ro"></p>
+      </div>
+      <div class="mini-card">
+        <h3 data-i18n="s3pBalanced"></h3>
+        <div class="stage"><canvas id="s3-m2" height="150"></canvas></div>
+        <p class="mini-ro" id="s3-m2-ro"></p>
+      </div>
+      <div class="mini-card">
+        <h3 data-i18n="s3pMeas"></h3>
+        <div class="stage"><canvas id="s3-m3" height="150"></canvas></div>
+        <p class="mini-ro" id="s3-m3-ro"></p>
+      </div>
+    </div>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：稳态 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k"></p>
+    <h2 data-i18n="s4t"></h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="stage"><canvas id="s4-cvP" height="280"></canvas></div>
+    <p class="readout" id="s4-readout1"></p>
+    <div class="stage"><canvas id="s4-cvEq" height="280"></canvas></div>
+    <p class="readout" id="s4-readout2"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：二维追踪 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k"></p>
+    <h2 data-i18n="s5t"></h2>
+    <p class="explain" id="s5-explain" data-i18n-html="s5e"></p>
+    <div class="btn-row" id="s5-man">
+      <button class="btn" data-man="on" data-i18n="s5manOn"></button>
+      <button class="btn" data-man="off" data-i18n="s5manOff"></button>
+    </div>
+    <div class="matrix-block" id="s5-matrices"></div>
+    <div class="stage"><canvas id="s5-pos" height="300"></canvas></div>
+    <div class="stage"><canvas id="s5-vel" height="240"></canvas></div>
+    <div class="controls">
+      <label><span><span data-i18n="s5qLab"></span> <span class="val" id="s5-q-val"></span></span>
+        <input type="range" id="s5-q" min="0" max="1000" step="1" value="500"></label>
+    </div>
+    <div class="btn-row" id="s5-presets">
+      <button class="btn" data-q="0.0005" data-i18n="s5pSmall"></button>
+      <button class="btn" data-q="0.02" data-i18n="s5pMid"></button>
+      <button class="btn" data-q="0.2" data-i18n="s5pBig"></button>
+    </div>
+    <p class="readout" id="s5-readout"></p>
+    <p class="hint" id="s5-hint" data-i18n-html="s5hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：终章 ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k"></p>
+    <h2 data-i18n="s6t"></h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <div class="app-cards">
+      <div class="app-card">
+        <h3 data-i18n="s6card1T"></h3>
+        <p data-i18n-html="s6card1"></p>
+      </div>
+      <div class="app-card">
+        <h3 data-i18n="s6card2T"></h3>
+        <p data-i18n-html="s6card2"></p>
+      </div>
+      <div class="app-card">
+        <h3 data-i18n="s6card3T"></h3>
+        <p data-i18n-html="s6card3"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../bayes/" data-i18n="s6lkB"></a> ·
+        <a class="fourier-link" href="../control/" data-i18n="s6lkC"></a> ·
+        <a class="fourier-link" href="../lti/" data-i18n="s6lkL"></a>
+      </p>
+      <p style="margin-top:10px">
+        <a class="fourier-link" href="/" data-i18n="back"></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot"></footer>
+
+<script src="app.js?v=0980929"></script>
+</body>
+</html>

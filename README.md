@@ -29,6 +29,7 @@ clicks.
 | [Impulse & LTI · 冲激与 LTI](https://visual.integ.life/lti/) | Slap a system once and record its fingerprint h: for LTI systems that single answer decides the response to everything. Axioms tested with real deviation numbers — and falsified live. |
 | [Frequency Response & Filters · 频率响应与滤波](https://visual.integ.life/freqresp/) | Every LTI system is a picky eater by frequency: scale by |H(ω)|, delay by φ(ω). Bode plots, true FIR zeros, phase distortion, and a design bench with real pass/fail math. |
 | [Modulation · 调制与频移](https://visual.integ.life/modulation/) | Multiply by a carrier and the spectrum moves house: AM, FM, envelope vs coherent demodulation, channel crosstalk, and I/Q — every spectrum computed by a real FFT. |
+| [Kalman Filter · 卡尔曼滤波](https://visual.integ.life/kalman/) | The true state is never visible: weigh model prediction against noisy measurement by their uncertainties — gain K, steady state, and velocity estimated from position alone, all from the real recursion. |
 
 ## Run it locally · 本地运行
 
