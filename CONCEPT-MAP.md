@@ -106,6 +106,15 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 68 | 分数 = 数轴上的一个数 / A fraction is a point on the number line | fractions#step1 | 分母是切法、分子是取法；落点由真值投影 |
 | 69 | 通分与最小公倍数 / Common denominators & the LCM | fractions#step3 | 先对齐刻度再比长短；交叉相乘与通分同结论 |
 
+
+| 70 | 勾股定理 / Pythagorean theorem | pythagoras#step2 | 四个全等直角三角形拼图，同一大正方形两种面积数法证明 a²+b²=c² |
+| 71 | 斜边与直角边 / Hypotenuse and legs | pythagoras#step0 | 直角对面的最长边与夹住直角的两边，三组整数验算 |
+| 72 | 平方的面积意义 / Squares as areas | pythagoras#step1 | 9 与 16 个单位格逐格装满 25 个单位格 |
+| 73 | 勾股逆定理与判角 / Converse and angle classification | pythagoras#step4 | 以最长边平方比较其余两边平方和，先判后揭晓 |
+| 74 | 两点距离公式 / Distance formula | pythagoras#step5 | 横纵坐标差的平方和开方；梯子逆求直角边 |
+| 75 | 勾股数 / Pythagorean triples | pythagoras#step6 | 3k-4k-5k 累积精确验算，与 5-12-13、8-15-17 对照 |
+| 76 | √2 与无理数 / √2 and irrational numbers | pythagoras#step6 | 1-1 直角三角形与奇偶性反证，斜边无需为整数 |
+
 ---
 
 ## 二、逐页加链清单
@@ -292,6 +301,17 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | # | 类型 | 源步/插入点 | → 目标 | 链接文字（中 / EN） | 依据 |
 | --- | --- | --- | --- | --- | --- |
 | 1 | [终章] | 第 6 步终章收束后新建一行 | montecarlo#step1 | 「下一站：比例长大了就是概率——撒得够多，频率会露出概率的脸 →」/ "Next stop: ratios grow up into probability — toss enough, and frequency shows probability's face →" | 本页第 6 步以分数/小数/百分数同点收束；概率线的频率入口正是蒙特卡洛第 1 步（K12 → 概率的桥） |
+
+
+### pythagoras（本次新建；出链已实现）
+
+| # | 类型 | 源步/插入点 | → 目标 | 链接文字（中 / EN） | 依据 |
+| --- | --- | --- | --- | --- | --- |
+| 1 | [内链] / [终章] | 第 6 步 `s6e` / `linkFractions` | fractions#step6 | 「分数的三种表示，对照 √2 为什么不在其中」/ "Three faces of fractions: compare with √2" | 对方仅讲分数/小数/百分数同点；√2 非分数的证明由本页提供，不声称对方讲了无理数 |
+| 2 | [终章] | 第 6 步 `linkTrig` | trig#step1 | 「单位圆：cos²θ+sin²θ=1 怎样由勾股定理得到」/ "Unit circle: why cos²θ+sin²θ=1 follows from this theorem" | 已核本工作目录 trig 第 1 步单位圆的 sin/cos 坐标定义 |
+| 3 | [终章] | 第 6 步 `linkEigen` | eigen#step1 | 「向量是一根箭头：拖动 v，看看矩阵怎样改变它」/ "A vector is an arrow: drag v and see how a matrix changes it" | 已核本地 knowledge-site/eigen：第 0 步为圆变椭圆；第 1 步直接拖 v 与 Av，依主表 51 修正，不误称对方专讲向量长度 |
+
+本次新页记录独立于下方既有波 2 待办计数，不改历史审计任务总量。
 
 ---
 
