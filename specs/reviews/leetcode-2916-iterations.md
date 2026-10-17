@@ -30,4 +30,21 @@ storage and clipboard fallback. Python's solution and recurrence are unchanged.
 
 ## Second review and implementation iteration
 
-Pending independent review of the first candidate using the frozen rubric.
+Candidate `c83fb52`, [round 2 report](leetcode-2916-round2.md): 86.25/100 under
+the unchanged rubric. The three original instructional blockers were closed;
+acceptance was conditional on two precision/state corrections, with one
+predict-before-reveal exercise recommended as the highest-value final change.
+
+| Finding | Second-iteration change | Check |
+| --- | --- | --- |
+| Chinese lazy definition incorrectly says parent | Change it to current node, matching the invariant and English | Inspect mapping in both locales |
+| Initial banner and context mix completed/next round | Explicitly label the initial context as the completed round; keep next request in banner | Initial frame context says completed; later events keep their own target |
+| Worked examples reveal the answer before prediction | Add a fresh `[1,3]` target to the same primer; neutral nodes before a choice and explicit reveal; derive extra/missing-index feedback from chosen blocks | Before reveal no full/partial highlights; wrong options explain extra 0 or missing 3; correct option covers 1,2,3 exactly |
+| Extra snippets increase working memory | Keep operation-specific Python optionally expandable | Actual-d comparison no longer requires scrolling past expanded code |
+
+Regression checks passed for the numerical model, unchanged Python, translation
+placeholders, all browser controls and both languages at 320/390/736/1440px.
+Added tests for all prediction outcomes, clearing revealed feedback when the
+choice changes, retaining the revealed result on language change, and actual-d
+invariance across push. Focused Astra closure of these exact fixes is pending;
+no third broad review is planned.

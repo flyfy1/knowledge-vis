@@ -65,6 +65,11 @@ diagrams, readouts and Python. Keep English causally equivalent to Chinese.
 
 - Each experiment has one observation task. Specify what to change, what stays
   fixed, where to look, and what would confirm the claim.
+- Distinguish worked examples from retrieval checks. Include one fresh
+  predict-before-reveal case for the central mechanism. Its derived answer and
+  highlights stay hidden until the learner chooses and explicitly verifies.
+  Explain an incorrect choice by its extra or missing states; clear stale
+  feedback when the choice changes, and preserve state when switching language.
 - Make the phenomenon visible. Retain a contribution ledger, show old and new
   values side by side, or retain an operation history. Replacing a frame and
   updating an isolated number is insufficient for accumulated behavior.

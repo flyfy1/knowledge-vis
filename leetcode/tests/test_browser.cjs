@@ -45,13 +45,36 @@ const screenshots=process.env.LESSON_SCREENSHOTS;
     assert.deepEqual(await page.locator('#partitionDiagram [data-coverage="full"]').evaluateAll(nodes=>nodes.map(node=>Number(node.dataset.nodeId))),[3,5]);
     assert.match(await page.locator('#partitionReadout').innerText(),/\[2, 2\].*\[3, 4\]/);
     assert.equal(await page.locator('#codeMapping tr').count(),6);
+    await page.locator('[data-partition="1,3"]').click();
+    assert.equal(await page.locator('#partitionDiagram [data-coverage="full"]').count(),0);
+    assert.equal(await page.locator('#partitionDiagram [data-coverage="partial"]').count(),0);
+    assert.equal(await page.locator('#predictionReveal').isDisabled(),true);
+    await page.locator('[name="partitionAnswer"][value="0"]').check();
+    assert.equal(await page.locator('#partitionDiagram [data-coverage="full"]').count(),0);
+    await page.locator('#predictionReveal').click();assert.match(await page.locator('#partitionReadout').innerText(),/多出.*0/);
+    await page.locator('[name="partitionAnswer"][value="2"]').check();
+    assert.equal(await page.locator('#partitionDiagram [data-coverage="full"]').count(),0);
+    await page.locator('#predictionReveal').click();assert.match(await page.locator('#partitionReadout').innerText(),/漏掉.*3/);
+    await page.locator('[name="partitionAnswer"][value="1"]').check();
+    await page.locator('#predictionReveal').click();assert.match(await page.locator('#partitionReadout').innerText(),/每个恰好一次/);
+    assert.deepEqual(await page.locator('#partitionDiagram [data-coverage="full"]').evaluateAll(nodes=>nodes.map(node=>Number(node.dataset.nodeId))),[5,6,9]);
     let operations=0;
-    while(!(await page.locator('#treeNext').isDisabled())){await page.locator('#treeNext').click();assert.ok(++operations<20);}
+    let valuesBeforePush;
+    while(!(await page.locator('#treeNext').isDisabled())){
+      await page.locator('#treeNext').click();assert.ok(++operations<20);
+      if(operations===4)valuesBeforePush=await page.locator('#treeValues .array-value').allTextContents();
+      if(operations===5){
+        assert.deepEqual(await page.locator('#treeValues .array-value').allTextContents(),valuesBeforePush);
+        assert.match(await page.locator('#treeExplanation').innerText(),/错算成 2/);
+        assert.match(await page.locator('#treeContext').innerText(),/\[2, 4\]/);
+      }
+    }
     assert.equal(operations,9);assert.match(await page.locator('#treeStatus').innerText(),/32/);
     assert.deepEqual(await page.locator('#treeValues .array-value').allTextContents(),['3','3','3','2','1']);
     assert.equal(await page.locator('#treeLog li').count(),10);
     for(let i=0;i<9;i++)await page.locator('#treePrev').click();
     assert.equal(await page.locator('#treePrev').isDisabled(),true);
+    assert.match(await page.locator('#treeContext').innerText(),/已完成轮次/);
     await page.locator('#stepNav a[href="#step4"]').click();
     await page.waitForFunction(()=>document.querySelector('#stepNav a[aria-current="step"]')?.hash==='#step4');
     await page.locator('#copyPython').click();
@@ -65,6 +88,8 @@ const screenshots=process.env.LESSON_SCREENSHOTS;
     for(const lang of ['en','zh']) {
       await page.locator('#langToggle [data-lang="'+lang+'"]').click();
       assert.equal(await page.locator('html').getAttribute('lang'),lang==='zh'?'zh-CN':'en');
+      assert.equal(await page.locator('[name="partitionAnswer"][value="1"]').isChecked(),true);
+      assert.match(await page.locator('#partitionReadout').innerText(),lang==='zh'?/每个恰好一次/:/each once/);
       for(const width of [320,390,736,1440]) {
         await page.setViewportSize({width,height:1000});
         await page.waitForTimeout(80);
