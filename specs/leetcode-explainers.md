@@ -160,3 +160,10 @@ accepted a submission.
 - Preserve the distinction between the current endpoint's `F(r)` and the
   cumulative answer. The official `[1,2,1]` example exposes confusing them:
   final root square sum `9`, full answer `15`.
+
+## Extension: first ten Hard problems
+
+For multi-algorithm batches, also apply [the Hard trace specification](leetcode-hard-traces.md).
+It adds explicit frame timing, data-versus-highlight semantics, identity tests,
+trace omission notices, rolling-memory disclosure, and misconception-driven
+prediction requirements derived from the first ten numeric-ID Hard lessons.

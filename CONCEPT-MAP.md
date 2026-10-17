@@ -16,6 +16,16 @@ LeetCode collection additions (2026-10-17):
 
 | Concept | Deep link | What the step teaches |
 | --- | --- | --- |
+| Binary partition and sentinel boundaries | `leetcode/4/#step1` | Derive balanced cuts and monotone search direction |
+| Regex prefix states | `leetcode/10/#step1` | Distinguish skipping x* from repeating its atom |
+| Candidate heads and heap order | `leetcode/23/#step2` | Track permanent node identity and completed heap operations |
+| Groupwise pointer reversal | `leetcode/25/#step2` | Preserve the suffix while rewiring one next pointer |
+| Word-aligned windows and multiplicity | `leetcode/30/#step2` | Scan every offset and shrink excess word counts |
+| Parenthesis boundary stack | `leetcode/32/#step1` | Excluded indices define maximal valid suffixes |
+| Constraint search and undo | `leetcode/37/#step2` | Restore board and all constraint sets after failed choices |
+| In-place placement with duplicates | `leetcode/41/#step1` | Prove the answer range and bounded useful swaps |
+| Settled water and running maxima | `leetcode/42/#step2` | Prove why the lower known maximum settles one endpoint |
+| Wildcard prefix states and rolling rows | `leetcode/44/#step1` | Derive one-left star dependency and two-row memory |
 | Grouping subarrays by right endpoint | `leetcode/2916/#step1` | Partition all subarrays without overlap and retain endpoint contribution history |
 | Previous occurrence and interval updates | `leetcode/2916/#step2` | Why precisely the starts in `[p+1,r]` gain a new distinct value |
 | Updating a sum of squares | `leetcode/2916/#step3` | Derive the sufficient summaries `S`, `Q` and `Q' = Q + 2kS + k²m` |

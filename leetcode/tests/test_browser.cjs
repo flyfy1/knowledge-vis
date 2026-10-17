@@ -19,7 +19,7 @@ const screenshots=process.env.LESSON_SCREENSHOTS;
     assert.equal(await page.locator('#grid a.card').count(),1);
     await page.locator('#grid a.card').click();
     assert.ok(page.url().endsWith('/leetcode/'));
-    await page.locator('.problem-card').click();
+    await page.locator('.problem-card[href="2916/"]').click();
     assert.ok(page.url().endsWith('/leetcode/2916/'));
     await page.waitForFunction(()=>document.querySelectorAll('#subarrayGrid button').length===6&&document.getElementById('subarrayInfo').textContent.length>0);
     for(const button of await page.locator('#subarrayGrid button').all())await button.click();
