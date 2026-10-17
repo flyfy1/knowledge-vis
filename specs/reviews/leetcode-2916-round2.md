@@ -62,3 +62,16 @@ Raw temporary learner transcript: `/tmp/2916-r2walk.txt`. Full-section screensho
 | **Total** | | **86.25 /100** |
 
 The candidate clears the numerical threshold and minimum category scores, but the central lazy-definition error prevents unconditional acceptance. Correct items 1–2 and add the small prediction task in item 3, then perform a focused closure check of those exact changes; another broad review is unnecessary. Actual human teach-back remains unmeasured, and neither this score nor browser checks prove novice mastery.
+
+## Focused round-2 closure — candidate `29f91d2`
+
+Checked only the four requested follow-ups on the frozen local candidate, at 390px in Chinese and English. **Accepted for publication under the reviewer rubric.** Original B1/B2/B3 remain closed; no remaining blocking finding from these two rounds. This is still not evidence of real novice mastery.
+
+- **Lazy invariant corrected:** Chinese mapping now says “已计入当前节点”; English says “included in the node.” Both correctly describe `lazy[node]`.
+- **Initial context corrected:** initial context explicitly labels r=2/[1,2] as the completed round; the banner separately identifies the next [0,3] request. At push frame 6 the context correctly identifies current r=4, x=2, p=1 and [2,4]. The corresponding English initial-state label was source-checked; later English controls/state were exercised.
+- **Real prediction verified:** selected Predict [1,3]. All nine nodes initially had the same neutral/excluded class, with no hot/partial answer marks and a pending instruction. Selecting an answer did not reveal it. Explicit checks of all three choices produced truthful feedback: extra start 0, missing start 3, or exact coverage of 1,2,3. Revealed hot nodes were #9 [1,1], #5 [2,2], #6 [3,3]. Each subsequent choice cleared the revealed highlights and feedback before another check. Switching Chinese/English preserved both choice and reveal state and translated feedback correctly. Wrong and correct choices were also operated directly in English.
+- **Density reduction verified:** operation-specific Python is now a native `details` disclosure, observed `open=false` at the push frame. Actual-d values no longer require scrolling past expanded code by default.
+
+No page errors were observed; document width stayed 390. Screenshot: `/Users/songyy/.codex/visualizations/2026/10/17/01a1472a-f9ef-78a3-a4f9-32816fda17c7/2916-r2-closure-prediction.png`. Python correctness tests were not repeated because the algorithm remained unchanged.
+
+Final score: **87.5/100**. Keep prior category ratings except bilingual/device access rises from 3/4 to 4/4 (+1.25) after the semantic correction. Interaction remains 3/4: the genuine prediction task improves evidence but the lesson is still cognitively demanding and actual novice teach-back has not been collected. This closure supersedes the earlier conditional verdict for `c83fb52`; it does not retroactively change that candidate's findings.

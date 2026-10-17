@@ -119,3 +119,11 @@ candidate exposes the baseline workload, adds a separate interval-partition
 primer before tags, retains the requested interval during every tree operation,
 and adds a concrete visual-to-Python bridge. This extends step 4's outline:
 partition an initially zero structure before loading the first three rounds.
+
+The second iteration adds a fresh `[1,3]` prediction with answer highlights
+hidden until explicit validation, truthful extra/missing-index feedback and
+language-preserving state. It also corrects the current-node lazy definition,
+labels the initial completed round, and collapses optional operation snippets.
+Astra's focused closure accepts reviewed code `29f91d2` at **87.5/100**, with
+no remaining blocking findings from the two reviews. This is reviewer evidence,
+not a measured novice-learning outcome.

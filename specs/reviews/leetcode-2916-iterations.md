@@ -46,5 +46,24 @@ Regression checks passed for the numerical model, unchanged Python, translation
 placeholders, all browser controls and both languages at 320/390/736/1440px.
 Added tests for all prediction outcomes, clearing revealed feedback when the
 choice changes, retaining the revealed result on language change, and actual-d
-invariance across push. Focused Astra closure of these exact fixes is pending;
-no third broad review is planned.
+invariance across push.
+
+## Focused round-2 closure and publication
+
+Astra checked the exact final fixes on candidate `29f91d2` and appended its
+evidence to [the round-2 report](leetcode-2916-round2.md). Final score:
+**87.5/100, accepted for publication**. All original and follow-up blockers
+from the two reviews are closed. This was a focused closure within round 2,
+not a third broad audit. The score is expert reviewer assessment; actual novice
+teach-back evidence remains uncollected.
+
+The six changed public files were staged, hash-checked against both the deployed
+baseline and candidate, and published through the existing Pi static service.
+Rollback files are at `/home/songyy/backups/visual-site/astra-29f91d2` on Pi.
+The reviewed code is revision `29f91d2`; subsequent review-record commits do not
+change the public implementation.
+
+After publication, all 12 checked public entry/assets returned exact candidate
+bytes. The complete browser check passed against `https://visual.integ.life`,
+including the fresh prediction's wrong/correct paths, both languages, mobile
+layouts and existing collection-to-lesson navigation.
