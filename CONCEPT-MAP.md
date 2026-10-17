@@ -12,6 +12,18 @@
 
 ## 一、主表：概念 → 专讲页/步
 
+LeetCode collection additions (2026-10-17):
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Grouping subarrays by right endpoint | `leetcode/2916/#step1` | Partition all subarrays without overlap and retain endpoint contribution history |
+| Previous occurrence and interval updates | `leetcode/2916/#step2` | Why precisely the starts in `[p+1,r]` gain a new distinct value |
+| Updating a sum of squares | `leetcode/2916/#step3` | Derive the sufficient summaries `S`, `Q` and `Q' = Q + 2kS + k²m` |
+| Segment trees and lazy propagation | `leetcode/2916/#step4` | Fully covered updates, deferred child values, push-down and return-path merging |
+
+The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
+`sorting/#step2` (recursive partitioning and merging).
+
 | # | 概念（中 / EN） | 专讲 slug#step | 那一步讲清什么 |
 | --- | --- | --- | --- |
 | 1 | 正弦波三要素（频率/振幅/相位）/ Sine: frequency, amplitude, phase | fourier#step1 | 一条正弦波只有三个旋钮，拖了就懂 |

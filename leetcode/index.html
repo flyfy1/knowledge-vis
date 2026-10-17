@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LeetCode · 一步一步想出来</title>
+  <meta name="description" content="用交互实验和启发式问题，逐步推导 LeetCode 解法。统一使用 Python。">
+  <link rel="stylesheet" href="style.css?v=lc2916-1">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-top"><a class="back-link" href="../" data-i18n="back">← 知识索引</a><div class="lang-toggle" id="langToggle" role="group" aria-label="Language / 语言"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div></div>
+    <p class="eyebrow">LEETCODE · PYTHON</p>
+    <h1 data-i18n="title">答案，一步一步想出来</h1>
+    <p class="tagline" data-i18n="intro"></p>
+  </header>
+  <main class="collection">
+    <p class="collection-intro" data-i18n="path"></p>
+    <div class="problem-list" id="problemList"></div>
+    <noscript>JavaScript is needed for the interactive lessons. <a href="2916/">2916 · Python</a></noscript>
+  </main>
+  <footer class="site-foot" data-i18n="footer"></footer>
+  <script src="common.js?v=lc2916-1"></script><script src="problems.config.js?v=lc2916-1"></script>
+  <script>
+  (() => {
+    const ui = LeetCodeLocale({
+      docTitle:['LeetCode · 一步一步想出来','LeetCode · Reason Your Way to the Solution'],
+      back:['← 知识索引','← Knowledge Index'],
+      title:['答案，一步一步想出来','Reason your way to the solution'],
+      intro:['先观察一个小例子，再猜规律、找反例、推公式，最后用 Python 把想法写下来。每题都是一篇可以动手验证的知识讲解。','Observe a small example, make a prediction, test it, derive the rule, and turn it into Python. Each problem becomes a lesson you can explore.'],
+      path:['学习路线：读懂题目 → 手算 → 暴力解法 → 找出重复工作 → 推导优化 → Python → 自己验证。','The learning path: understand → work by hand → brute force → identify repeated work → derive an improvement → Python → verify.'],
+      hard:['困难','Hard'],open:['开始推导 →','Explore the lesson →'],
+      footer:['visual.integ.life · LeetCode 专区 · 所有解题代码使用 Python','visual.integ.life · LeetCode collection · All solution code in Python']
+    });
+    function render() {
+      const list=document.getElementById('problemList');list.replaceChildren();
+      for(const p of window.LEETCODE_PROBLEMS){
+        const a=document.createElement('a');a.className='problem-card';a.href=p.path;
+        const meta=document.createElement('div');meta.className='meta';
+        for(const label of [String(p.id),ui.t(p.difficulty),p.language,p.complexity]){const s=document.createElement('span');s.className='badge';s.textContent=label;meta.append(s);}
+        const h=document.createElement('h2');h.textContent=p.title[ui.getLang()];
+        const desc=document.createElement('p');desc.textContent=p.desc[ui.getLang()];
+        const tags=document.createElement('div');tags.className='topic-tags';
+        for(const topic of p.topics){const s=document.createElement('span');s.className='topic-tag';s.textContent=topic[ui.getLang()];tags.append(s);}
+        const open=document.createElement('p');open.style.marginTop='18px';open.textContent=ui.t('open');
+        a.append(meta,h,desc,tags,open);list.append(a);
+      }
+    }
+    ui.onChange(render);ui.init();
+  })();
+  </script>
+</body></html>

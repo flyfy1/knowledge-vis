@@ -5,6 +5,8 @@
 ## 结构
 - `index.html` — 索引首页，卡片由配置自动渲染（无构建、无后端，纯静态）
 - `pages.config.js` — **索引配置**：新增知识页 = 在此数组加一条 + 把页面放进同名子目录
+- `leetcode/` — Interactive algorithm lessons, with a dedicated collection and Python solutions. Register new problems in `leetcode/problems.config.js`; the first lesson is [2916](https://visual.integ.life/leetcode/2916/).
+- `specs/` — Reusable lesson authoring and verification guidance. Start with [LeetCode explainers](specs/leetcode-explainers.md) and the problem-local `BRIEF.md`.
 - `fourier/` — 傅里叶变换交互讲解页（源码自 ~/workspace/fourier-lab 迁入，三轮评审档案留在 fourier-lab/rounds/）
 - `fourier-redirect.html` — 旧域名 fourier.integ.life 根路径的跳转页（已部署在 Pi 的 fourier-site 目录）
 

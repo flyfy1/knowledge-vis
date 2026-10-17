@@ -23,7 +23,8 @@ window.KNOWLEDGE_CATEGORIES = [
   { id: "signal",      name: { zh: "信号与系统", en: "Signals & Systems" } },
   { id: "probability", name: { zh: "概率与统计", en: "Probability & Statistics" } },
   { id: "computing",   name: { zh: "计算与智能", en: "Computing & AI" } },
-  { id: "math",        name: { zh: "数学基础",   en: "Mathematical Foundations" } }
+  { id: "math",        name: { zh: "数学基础",   en: "Mathematical Foundations" } },
+  { id: "leetcode",    name: { zh: "LeetCode 专区", en: "LeetCode" } }
 ];
 
 /* 学段注册表（2026-10-16 增设）：与分类正交的第二维度，索引页有独立筛选行。
@@ -36,6 +37,19 @@ window.KNOWLEDGE_STAGES = [
 ];
 
 window.KNOWLEDGE_PAGES = [
+  {
+    slug: "leetcode",
+    title: { zh: "LeetCode · 一步一步想出来", en: "LeetCode · Reason Your Way to the Solution" },
+    desc: {
+      zh: "从手算、猜测与反例出发，逐步推导算法，再用 Python 实现。首篇 2916：从子数组到区间更新、平方和与懒标记。",
+      en: "Derive algorithms through small examples, predictions and counterexamples, then implement them in Python. First lesson: 2916, from subarrays to interval updates and lazy propagation."
+    },
+    tags: [{ zh: "算法推导", en: "Algorithm Derivation" }, { zh: "交互题解", en: "Interactive Lessons" }, { zh: "Python", en: "Python" }],
+    category: "leetcode",
+    stage: "university",
+    status: "live",
+    path: "leetcode/"
+  },
   {
     slug: "fourier",
     title: { zh: "傅里叶变换 · 一步一交互", en: "The Fourier Transform · One Interaction at a Time" },
