@@ -110,6 +110,8 @@ Then verify:
    copy fallback, language changes after interaction, and unavailable storage.
 4. A real browser at desktop and narrow widths (including 320 and 390), console
    and network errors, link targets, keyboard access and readable diagrams.
+   Wait for the experiment's initial readout to be populated before operating
+   it; a static button's presence alone does not establish initialization.
 5. The exact downloaded Python source equals the displayed source.
 6. After publication, check the real collection, problem page and asset hashes.
    A Git push alone is not deployment evidence. Use the current deployment route

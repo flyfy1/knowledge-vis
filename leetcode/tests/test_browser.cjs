@@ -21,6 +21,7 @@ const screenshots=process.env.LESSON_SCREENSHOTS;
     assert.ok(page.url().endsWith('/leetcode/'));
     await page.locator('.problem-card').click();
     assert.ok(page.url().endsWith('/leetcode/2916/'));
+    await page.waitForFunction(()=>document.querySelectorAll('#subarrayGrid button').length===6&&document.getElementById('subarrayInfo').textContent.length>0);
     for(const button of await page.locator('#subarrayGrid button').all())await button.click();
     await page.locator('[data-guess="9"]').click();assert.match(await page.locator('#guessFeedback').innerText(),/15/);
     await page.locator('[data-guess="15"]').click();assert.match(await page.locator('#guessFeedback').innerText(),/对了/);
@@ -83,7 +84,9 @@ const screenshots=process.env.LESSON_SCREENSHOTS;
     const blocked=await browser.newContext({locale:'zh-CN'});
     await blocked.addInitScript(()=>Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Unavailable','SecurityError');}}));
     const fallback=await blocked.newPage();fallback.on('pageerror',error=>errors.push(String(error)));
-    await fallback.goto(base+'/leetcode/2916/');await fallback.locator('#langToggle [data-lang="en"]').click();assert.match(await fallback.locator('h1').innerText(),/Subarrays/);
+    await fallback.goto(base+'/leetcode/2916/');
+    await fallback.waitForFunction(()=>document.querySelectorAll('#subarrayGrid button').length===6&&document.getElementById('subarrayInfo').textContent.length>0);
+    await fallback.locator('#langToggle [data-lang="en"]').click();assert.match(await fallback.locator('h1').innerText(),/Subarrays/);
     assert.deepEqual(errors,[]);
     console.log('Homepage → collection → lesson; all controls, both languages, preset and reverse navigation, clipboard success/fallback, blocked storage, source download, local links, and 320/390/736/1440 layouts passed.');
   } finally {await browser.close();}

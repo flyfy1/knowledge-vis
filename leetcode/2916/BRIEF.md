@@ -103,3 +103,9 @@ and `LESSON_SCREENSHOTS` (optional screenshot directory).
 - Mobile and desktop screenshots were visually inspected. This evidence covers
   implementation and presentation; no LeetCode submission or real-user
   comprehension result is claimed.
+- Published code revision `a3386ea` to the existing Pi static service. The live
+  homepage, collection, lesson and nine supporting entry/assets (12 URLs total)
+  returned exact source bytes. The complete browser check also passed against
+  `https://visual.integ.life`. Unrelated served pages were not replaced; previous
+  homepage/config files are backed up at
+  `/home/songyy/backups/visual-site/leetcode-a3386ea` on Pi.
