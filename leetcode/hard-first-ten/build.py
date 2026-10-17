@@ -4,12 +4,12 @@ import json
 import html
 from lessons import LESSONS
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = 'hard10-r2'
+VERSION = 'hard10-ids1'
 def esc(x): return html.escape(str(x), quote=True)
 def tr(key, tag='p', cls='explain'):
     return f'<{tag} class="{cls}" data-i18n="{key}"></{tag}>'
 UI={
-'back':['← LeetCode 专区','← LeetCode collection'], 'official':['原题与约束 ↗','Official statement ↗'],
+'back':['← LeetCode 专区','← LeetCode collection'], 'official':['LeetCode 原题 ↗','View on LeetCode ↗'],
 's0':['要找什么？','What are we finding?'],'s1':['为什么能省去工作？','Why can we skip work?'],
 's2':['一次操作改变什么？','What changes in one operation?'],'s3':['先预测，再验证','Predict before revealing'],
 's4':['如何写成 Python？','How does this become Python?'],
@@ -46,6 +46,7 @@ for p in LESSONS:
     copy=dict(UI,docTitle=[f'{id} · {x}' for x in p['title']])
     for key in ['title','topic','statement','constraints','hand','cost','derive','proof','invariant','task','complexity','traps']:
         copy[key]=p[key]
+    copy['title']=[f'#{id} · {title}' for title in p['title']]
     if id==23: copy['output']=['已输出的节点（永久身份 = 值）','Emitted nodes (permanent identity = value)']
     if id==30: copy['output']=['已记录的起点下标','Recorded starting indices']
     copy['quizQuestion']=p['quiz']['question']
@@ -79,8 +80,8 @@ for p in LESSONS:
     s3='<fieldset class="prediction-options">'+tr('quizQuestion','legend')+radios+'<button class="btn primary" id="reveal" data-i18n="reveal" disabled></button></fieldset><p id="feedback" class="readout" aria-live="polite"></p>'
     s4=tr('mapping','h3')+'<div class="table-wrap"><table><thead><tr><th data-i18n="quantity"></th><th data-i18n="meaning"></th></tr></thead><tbody id="mapping"></tbody></table></div>'+tr('complexity','p','question')+'''<div class="solution-actions"><button class="btn primary" id="copy" data-i18n="copy"></button><a href="solution.py" download data-i18n="download"></a><span id="copyStatus" aria-live="polite"></span></div><div id="manualCopy" hidden><label for="copyText" data-i18n="fallback"></label><textarea id="copyText" readonly rows="8"></textarea></div><details id="sourceDetails"><summary data-i18n="fullCode"></summary><pre><code id="pythonCode"></code></pre></details>'''+tr('trapsTitle','h3')+tr('traps')+tr('verifyTitle','h3')+tr('verify')+tr('related','h3')+f'<div class="related">{links}</div>'
     page=f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{id} · {esc(p['title'][1])}</title><meta name="description" content="{esc(p['statement'][1])}"><link rel="stylesheet" href="../style.css?v=lc2916-astra2"><link rel="stylesheet" href="../hard-first-ten/style.css?v={VERSION}"></head>
-<body><header class="site-head"><div class="head-top"><a class="back-link" href="../" data-i18n="back"></a><div class="lang-toggle" id="langToggle" role="group" aria-label="Language / 语言"><button data-lang="zh">中</button><button data-lang="en">EN</button></div></div><p class="eyebrow">LEETCODE {id} · HARD · PYTHON</p>{tr('title','h1')}{tr('topic','p','tagline')}</header>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{id} · {esc(p['title'][1])}</title><meta name="description" content="{esc(p['statement'][1])}"><link rel="stylesheet" href="../style.css?v=lc-ids1"><link rel="stylesheet" href="../hard-first-ten/style.css?v={VERSION}"></head>
+<body><header class="site-head"><div class="head-top"><a class="back-link" href="../" data-i18n="back"></a><div class="lang-toggle" id="langToggle" role="group" aria-label="Language / 语言"><button data-lang="zh">中</button><button data-lang="en">EN</button></div></div><p class="eyebrow">LEETCODE {id} · HARD · PYTHON</p>{tr('title','h1')}{tr('topic','p','tagline')}<a class="official-link" href="https://leetcode.com/problems/{p['slug']}/" target="_blank" rel="noopener noreferrer" data-i18n="official"></a></header>
 <nav class="step-nav" aria-label="Lesson steps / 学习步骤"><div class="step-nav-inner">{nav}</div></nav><main>{section(0,s0)}{section(1,s1)}{section(2,s2)}{section(3,s3)}{section(4,s4)}</main><footer class="site-foot" data-i18n="foot"></footer>
 <noscript>Interactive lessons require JavaScript. <a href="solution.py">Python solution</a></noscript>
 <script src="../common.js?v=lc2916-astra2"></script><script src="copy.js?v={VERSION}"></script><script src="../hard-first-ten/core.js?v={VERSION}"></script><script src="python-code.js?v={VERSION}"></script><script src="../hard-first-ten/lesson.js?v={VERSION}"></script><script src="app.js?v={VERSION}"></script></body></html>'''
@@ -148,6 +149,6 @@ registry=ROOT/'problems.config.js'
 s=registry.read_text();old=s[s.index('  {\n    id: 2916'):s.rindex('\n];')]
 entries=[]
 for p in LESSONS:
-    entries.append(json.dumps(dict(id=p['id'],title=dict(zip(['zh','en'],p['title'])),desc=dict(zip(['zh','en'],p['derive'])),difficulty='hard',topics=[dict(zip(['zh','en'],p['topic']))],path=f'{p["id"]}/',language='Python',complexity={4:'O(log(min(m,n)+1))',10:'O(mn)',23:'O(k + N log(k+1))',25:'O(n)',30:'O(Lw + kw)',32:'O(n)',37:'O(9^E)',41:'O(n)',42:'O(n)',44:'O((m+1)(n+1))'}[p['id']]),ensure_ascii=False,indent=2))
+    entries.append(json.dumps(dict(id=p['id'],title=dict(zip(['zh','en'],p['title'])),desc=dict(zip(['zh','en'],p['derive'])),difficulty='hard',topics=[dict(zip(['zh','en'],p['topic']))],path=f'{p["id"]}/',leetcodeUrl=f'https://leetcode.com/problems/{p["slug"]}/',language='Python',complexity={4:'O(log(min(m,n)+1))',10:'O(mn)',23:'O(k + N log(k+1))',25:'O(n)',30:'O(Lw + kw)',32:'O(n)',37:'O(9^E)',41:'O(n)',42:'O(n)',44:'O((m+1)(n+1))'}[p['id']]),ensure_ascii=False,indent=2))
 registry.write_text('/* Ascending frontend ID; first ten Hard verified 2026-10-17. */\nwindow.LEETCODE_PROBLEMS = [\n'+',\n'.join(entries)+',\n'+old+'\n];\n')
 (ROOT/'hard-first-ten/fixtures.json').write_text(json.dumps({p['id']:[x['input'] for x in p['presets']] for p in LESSONS},indent=2))

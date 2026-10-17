@@ -4,7 +4,7 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LeetCode · 一步一步想出来</title>
   <meta name="description" content="用交互实验和启发式问题，逐步推导 LeetCode 解法。统一使用 Python。">
-  <link rel="stylesheet" href="style.css?v=lc2916-astra2">
+  <link rel="stylesheet" href="style.css?v=lc-ids1">
 </head>
 <body>
   <header class="site-head">
@@ -19,7 +19,7 @@
     <noscript>JavaScript is needed for the interactive lessons. <a href="2916/">2916 · Python</a></noscript>
   </main>
   <footer class="site-foot" data-i18n="footer"></footer>
-  <script src="common.js?v=lc2916-astra2"></script><script src="problems.config.js?v=hard10-r2"></script>
+  <script src="common.js?v=lc2916-astra2"></script><script src="problems.config.js?v=lc-ids1"></script>
   <script>
   (() => {
     const ui = LeetCodeLocale({
@@ -28,21 +28,25 @@
       title:['答案，一步一步想出来','Reason your way to the solution'],
       intro:['先观察一个小例子，再猜规律、找反例、推公式，最后用 Python 把想法写下来。每题都是一篇可以动手验证的知识讲解。','Observe a small example, make a prediction, test it, derive the rule, and turn it into Python. Each problem becomes a lesson you can explore.'],
       path:['学习路线：读懂题目 → 手算 → 暴力解法 → 找出重复工作 → 推导优化 → Python → 自己验证。','The learning path: understand → work by hand → brute force → identify repeated work → derive an improvement → Python → verify.'],
-      hard:['困难','Hard'],open:['开始推导 →','Explore the lesson →'],
+      official:['LeetCode 原题 ↗','View on LeetCode ↗'],hard:['困难','Hard'],open:['开始推导 →','Explore the lesson →'],
       footer:['visual.integ.life · LeetCode 专区 · 所有解题代码使用 Python','visual.integ.life · LeetCode collection · All solution code in Python']
     });
     function render() {
       const list=document.getElementById('problemList');list.replaceChildren();
       for(const p of window.LEETCODE_PROBLEMS){
-        const a=document.createElement('a');a.className='problem-card';a.href=p.path;
+        const card=document.createElement('article');card.className='problem-card';card.dataset.problemId=p.id;
         const meta=document.createElement('div');meta.className='meta';
-        for(const label of [String(p.id),ui.t(p.difficulty),p.language,p.complexity]){const s=document.createElement('span');s.className='badge';s.textContent=label;meta.append(s);}
-        const h=document.createElement('h2');h.textContent=p.title[ui.getLang()];
+        for(const label of [ui.t(p.difficulty),p.language,p.complexity]){const s=document.createElement('span');s.className='badge';s.textContent=label;meta.append(s);}
+        const h=document.createElement('h2'),titleLink=document.createElement('a');titleLink.className='lesson-link';titleLink.href=p.path;
+        const number=document.createElement('span');number.className='problem-number';number.textContent='#'+p.id;
+        titleLink.append(number,document.createTextNode(' · '+p.title[ui.getLang()]));h.append(titleLink);
         const desc=document.createElement('p');desc.textContent=p.desc[ui.getLang()];
         const tags=document.createElement('div');tags.className='topic-tags';
         for(const topic of p.topics){const s=document.createElement('span');s.className='topic-tag';s.textContent=topic[ui.getLang()];tags.append(s);}
-        const open=document.createElement('p');open.style.marginTop='18px';open.textContent=ui.t('open');
-        a.append(meta,h,desc,tags,open);list.append(a);
+        const actions=document.createElement('div');actions.className='problem-actions';
+        const open=document.createElement('a');open.href=p.path;open.textContent=ui.t('open');
+        const official=document.createElement('a');official.className='official-link';official.href=p.leetcodeUrl;official.target='_blank';official.rel='noopener noreferrer';official.textContent=ui.t('official');official.setAttribute('aria-label','#'+p.id+' · '+ui.t('official'));
+        actions.append(open,official);card.append(meta,h,desc,tags,actions);list.append(card);
       }
     }
     ui.onChange(render);ui.init();

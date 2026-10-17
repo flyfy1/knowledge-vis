@@ -18,6 +18,7 @@ window.LEETCODE_PROBLEMS = [
     }
   ],
   "path": "4/",
+  "leetcodeUrl": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
   "language": "Python",
   "complexity": "O(log(min(m,n)+1))"
 },
@@ -39,6 +40,7 @@ window.LEETCODE_PROBLEMS = [
     }
   ],
   "path": "10/",
+  "leetcodeUrl": "https://leetcode.com/problems/regular-expression-matching/",
   "language": "Python",
   "complexity": "O(mn)"
 },
@@ -60,6 +62,7 @@ window.LEETCODE_PROBLEMS = [
     }
   ],
   "path": "23/",
+  "leetcodeUrl": "https://leetcode.com/problems/merge-k-sorted-lists/",
   "language": "Python",
   "complexity": "O(k + N log(k+1))"
 },
@@ -81,6 +84,7 @@ window.LEETCODE_PROBLEMS = [
     }
   ],
   "path": "25/",
+  "leetcodeUrl": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
   "language": "Python",
   "complexity": "O(n)"
 },
@@ -102,6 +106,7 @@ window.LEETCODE_PROBLEMS = [
     }
   ],
   "path": "30/",
+  "leetcodeUrl": "https://leetcode.com/problems/substring-with-concatenation-of-all-words/",
   "language": "Python",
   "complexity": "O(Lw + kw)"
 },
@@ -123,6 +128,7 @@ window.LEETCODE_PROBLEMS = [
     }
   ],
   "path": "32/",
+  "leetcodeUrl": "https://leetcode.com/problems/longest-valid-parentheses/",
   "language": "Python",
   "complexity": "O(n)"
 },
@@ -144,6 +150,7 @@ window.LEETCODE_PROBLEMS = [
     }
   ],
   "path": "37/",
+  "leetcodeUrl": "https://leetcode.com/problems/sudoku-solver/",
   "language": "Python",
   "complexity": "O(9^E)"
 },
@@ -165,6 +172,7 @@ window.LEETCODE_PROBLEMS = [
     }
   ],
   "path": "41/",
+  "leetcodeUrl": "https://leetcode.com/problems/first-missing-positive/",
   "language": "Python",
   "complexity": "O(n)"
 },
@@ -186,6 +194,7 @@ window.LEETCODE_PROBLEMS = [
     }
   ],
   "path": "42/",
+  "leetcodeUrl": "https://leetcode.com/problems/trapping-rain-water/",
   "language": "Python",
   "complexity": "O(n)"
 },
@@ -207,11 +216,13 @@ window.LEETCODE_PROBLEMS = [
     }
   ],
   "path": "44/",
+  "leetcodeUrl": "https://leetcode.com/problems/wildcard-matching/",
   "language": "Python",
   "complexity": "O((m+1)(n+1))"
 },
   {
     id: 2916,
+    leetcodeUrl: 'https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/',
     title: {zh: '子数组不同元素数目的平方和 II', en: 'Subarrays Distinct Element Sum of Squares II'},
     desc: {
       zh: '从 6 个子数组的手算出发，发现最后一次出现位置决定的更新区间，再亲手推导平方和与懒标记。',

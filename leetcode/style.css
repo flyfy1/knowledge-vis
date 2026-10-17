@@ -8,3 +8,5 @@
 .tree-node.partial{stroke:var(--accent2);stroke-width:2}.tree-node.excluded{opacity:.4}
 .prediction-options{border:0;padding:0;margin:20px 0}.prediction-options legend{margin-bottom:8px}.prediction-options label{display:flex;align-items:center;gap:10px;min-height:44px}.prediction-options input{accent-color:var(--accent)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Collection cards have separate, non-nested lesson and official problem links. */
+.problem-card .lesson-link{color:var(--text);text-decoration:none;overflow-wrap:anywhere}.problem-card .lesson-link:hover{text-decoration:underline}.problem-number{color:var(--accent);white-space:nowrap;font-variant-numeric:tabular-nums}.problem-actions{display:flex;align-items:center;gap:12px 24px;flex-wrap:wrap;margin-top:18px}.problem-actions a,.site-head .official-link{display:inline-flex;align-items:center;min-height:44px}.official-link{white-space:nowrap}

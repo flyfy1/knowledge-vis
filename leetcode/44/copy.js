@@ -4,8 +4,8 @@ window.LESSON_COPY = {
     "← LeetCode collection"
   ],
   "official": [
-    "原题与约束 ↗",
-    "Official statement ↗"
+    "LeetCode 原题 ↗",
+    "View on LeetCode ↗"
   ],
   "s0": [
     "要找什么？",
@@ -204,8 +204,8 @@ window.LESSON_COPY = {
     "44 · Wildcard Matching"
   ],
   "title": [
-    "通配符匹配",
-    "Wildcard Matching"
+    "#44 · 通配符匹配",
+    "#44 · Wildcard Matching"
   ],
   "topic": [
     "动态规划与滚动行",

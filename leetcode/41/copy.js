@@ -4,8 +4,8 @@ window.LESSON_COPY = {
     "← LeetCode collection"
   ],
   "official": [
-    "原题与约束 ↗",
-    "Official statement ↗"
+    "LeetCode 原题 ↗",
+    "View on LeetCode ↗"
   ],
   "s0": [
     "要找什么？",
@@ -204,8 +204,8 @@ window.LESSON_COPY = {
     "41 · First Missing Positive"
   ],
   "title": [
-    "缺失的第一个正数",
-    "First Missing Positive"
+    "#41 · 缺失的第一个正数",
+    "#41 · First Missing Positive"
   ],
   "topic": [
     "原地位置标记",

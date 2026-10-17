@@ -4,8 +4,8 @@ window.LESSON_COPY = {
     "← LeetCode collection"
   ],
   "official": [
-    "原题与约束 ↗",
-    "Official statement ↗"
+    "LeetCode 原题 ↗",
+    "View on LeetCode ↗"
   ],
   "s0": [
     "要找什么？",
@@ -204,8 +204,8 @@ window.LESSON_COPY = {
     "4 · Median of Two Sorted Arrays"
   ],
   "title": [
-    "寻找两个正序数组的中位数",
-    "Median of Two Sorted Arrays"
+    "#4 · 寻找两个正序数组的中位数",
+    "#4 · Median of Two Sorted Arrays"
   ],
   "topic": [
     "二分划分",
