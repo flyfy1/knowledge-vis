@@ -100,3 +100,35 @@ execution trace.
 
 Reusable findings are now requirements in
 [the new Hard trace spec](../leetcode-hard-traces.md).
+
+## Publication and final closure
+
+Published implementation revision: `09d84e9` (2026-10-17). The deployment target
+was verified live before publication: Pi `visual-site.service` active, serving
+`/home/songyy/projects/visual-site` on loopback port 18513, matching this repo's
+README. No machine-local deployment contract exists in this checkout; the
+README route was corroborated by service state and served bytes.
+
+The release checked both existing collection files against their previous Git
+revision before any mutation, and required every new destination to be absent.
+All 55 candidate files were staged and hashed. Dependencies and lesson files
+were installed before the collection registry and index. No unrelated files
+were removed or replaced. A guarded rollback manifest, old files, and rollback
+script remain on Pi at `/home/songyy/backups/visual-site/hard10-09d84e9/`.
+
+Public verification against `https://visual.integ.life`:
+
+- 55 exact SHA-256 resource matches, plus the collection and ten normal slash
+  lesson routes, all HTTP 200 using curl.
+- The full 788-check new-lesson Chromium suite passed on the public origin,
+  including both languages, all mobile/desktop widths, downloads, predictions,
+  keyboard input, and fallback paths; no browser errors.
+- The original 2916 browser suite also passed on the public origin, including
+  navigation from the root index through the enlarged collection.
+- Python urllib received HTTP 403 on the initial public fetch attempt; curl and
+  Chromium succeeded. Verification claims above refer to those successful
+  clients, not the failed urllib request.
+
+The following documentation-only commit records this evidence; it does not
+change the published implementation. Task-owned local preview service on port
+18768 was stopped after public verification.
