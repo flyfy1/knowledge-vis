@@ -4,8 +4,8 @@ window.LESSON_COPY = {
     "← LeetCode collection"
   ],
   "official": [
-    "原题与约束 ↗",
-    "Official statement ↗"
+    "LeetCode 原题 ↗",
+    "View on LeetCode ↗"
   ],
   "s0": [
     "要找什么？",
@@ -204,8 +204,8 @@ window.LESSON_COPY = {
     "32 · Longest Valid Parentheses"
   ],
   "title": [
-    "最长有效括号",
-    "Longest Valid Parentheses"
+    "#32 · 最长有效括号",
+    "#32 · Longest Valid Parentheses"
   ],
   "topic": [
     "边界栈",

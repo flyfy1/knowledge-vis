@@ -4,8 +4,8 @@ window.LESSON_COPY = {
     "← LeetCode collection"
   ],
   "official": [
-    "原题与约束 ↗",
-    "Official statement ↗"
+    "LeetCode 原题 ↗",
+    "View on LeetCode ↗"
   ],
   "s0": [
     "要找什么？",
@@ -204,8 +204,8 @@ window.LESSON_COPY = {
     "25 · Reverse Nodes in k-Group"
   ],
   "title": [
-    "K 个一组翻转链表",
-    "Reverse Nodes in k-Group"
+    "#25 · K 个一组翻转链表",
+    "#25 · Reverse Nodes in k-Group"
   ],
   "topic": [
     "指针重连",

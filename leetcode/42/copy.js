@@ -4,8 +4,8 @@ window.LESSON_COPY = {
     "← LeetCode collection"
   ],
   "official": [
-    "原题与约束 ↗",
-    "Official statement ↗"
+    "LeetCode 原题 ↗",
+    "View on LeetCode ↗"
   ],
   "s0": [
     "要找什么？",
@@ -204,8 +204,8 @@ window.LESSON_COPY = {
     "42 · Trapping Rain Water"
   ],
   "title": [
-    "接雨水",
-    "Trapping Rain Water"
+    "#42 · 接雨水",
+    "#42 · Trapping Rain Water"
   ],
   "topic": [
     "双指针边界",

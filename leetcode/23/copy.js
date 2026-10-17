@@ -4,8 +4,8 @@ window.LESSON_COPY = {
     "← LeetCode collection"
   ],
   "official": [
-    "原题与约束 ↗",
-    "Official statement ↗"
+    "LeetCode 原题 ↗",
+    "View on LeetCode ↗"
   ],
   "s0": [
     "要找什么？",
@@ -204,8 +204,8 @@ window.LESSON_COPY = {
     "23 · Merge k Sorted Lists"
   ],
   "title": [
-    "合并 K 个升序链表",
-    "Merge k Sorted Lists"
+    "#23 · 合并 K 个升序链表",
+    "#23 · Merge k Sorted Lists"
   ],
   "topic": [
     "最小堆",

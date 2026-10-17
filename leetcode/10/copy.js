@@ -4,8 +4,8 @@ window.LESSON_COPY = {
     "← LeetCode collection"
   ],
   "official": [
-    "原题与约束 ↗",
-    "Official statement ↗"
+    "LeetCode 原题 ↗",
+    "View on LeetCode ↗"
   ],
   "s0": [
     "要找什么？",
@@ -204,8 +204,8 @@ window.LESSON_COPY = {
     "10 · Regular Expression Matching"
   ],
   "title": [
-    "正则表达式匹配",
-    "Regular Expression Matching"
+    "#10 · 正则表达式匹配",
+    "#10 · Regular Expression Matching"
   ],
   "topic": [
     "前缀动态规划",

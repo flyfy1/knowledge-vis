@@ -4,8 +4,8 @@ window.LESSON_COPY = {
     "← LeetCode collection"
   ],
   "official": [
-    "原题与约束 ↗",
-    "Official statement ↗"
+    "LeetCode 原题 ↗",
+    "View on LeetCode ↗"
   ],
   "s0": [
     "要找什么？",
@@ -204,8 +204,8 @@ window.LESSON_COPY = {
     "30 · Substring with Concatenation of All Words"
   ],
   "title": [
-    "串联所有单词的子串",
-    "Substring with Concatenation of All Words"
+    "#30 · 串联所有单词的子串",
+    "#30 · Substring with Concatenation of All Words"
   ],
   "topic": [
     "定长滑动窗口",

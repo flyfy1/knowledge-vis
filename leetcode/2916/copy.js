@@ -2,9 +2,9 @@
 window.LEETCODE_COPY = {
   docTitle:['2916 · 从子数组到懒标记 | LeetCode','2916 · From Subarrays to Lazy Propagation | LeetCode'],
   back:['← 知识索引','← Knowledge Index'],collection:['LeetCode 专区','LeetCode collection'],
-  title:['2916 · 子数组不同元素数目的平方和 II','2916 · Subarrays Distinct Element Sum of Squares II'],
+  title:['#2916 · 子数组不同元素数目的平方和 II','#2916 · Subarrays Distinct Element Sum of Squares II'],
   intro:['已知一个整数数组，想求每个非空连续子数组里「不同数字的个数」的平方，再把它们全部相加。先从 [1, 2, 1] 的 6 个子数组开始，逐步找出能处理十万个数的办法。','Given an integer array, count the distinct values in each nonempty contiguous subarray, square that count, and add the results. Begin with the six subarrays of [1, 2, 1], then work toward an algorithm for 100,000 elements.'],
-  hard:['困难','Hard'],original:['原题与约束 ↗','Original problem & constraints ↗'],
+  hard:['困难','Hard'],original:['LeetCode 原题 ↗','View on LeetCode ↗'],
   constraints:['n 是数组长度：1 ≤ n ≤ 10⁵，1 ≤ nums[i] ≤ 10⁵；最终答案对 10⁹ + 7 取模。','n is the array length: 1 ≤ n ≤ 10⁵ and 1 ≤ nums[i] ≤ 10⁵. Return the answer modulo 10⁹ + 7.'],
   nav0:['0 先手算','0 Count by hand'],nav1:['1 固定右端点','1 Group by endpoint'],nav2:['2 找到更新区间','2 Find the interval'],nav3:['3 推导平方和','3 Derive the formula'],nav4:['4 懒标记','4 Lazy propagation'],nav5:['5 Python','5 Python'],nav6:['6 自己验证','6 Verify'],
   s0k:['第 0 步 · 先读懂在加什么','Step 0 · What are we adding?'],

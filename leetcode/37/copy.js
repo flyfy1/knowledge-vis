@@ -4,8 +4,8 @@ window.LESSON_COPY = {
     "← LeetCode collection"
   ],
   "official": [
-    "原题与约束 ↗",
-    "Official statement ↗"
+    "LeetCode 原题 ↗",
+    "View on LeetCode ↗"
   ],
   "s0": [
     "要找什么？",
@@ -204,8 +204,8 @@ window.LESSON_COPY = {
     "37 · Sudoku Solver"
   ],
   "title": [
-    "解数独",
-    "Sudoku Solver"
+    "#37 · 解数独",
+    "#37 · Sudoku Solver"
   ],
   "topic": [
     "约束与回溯",
