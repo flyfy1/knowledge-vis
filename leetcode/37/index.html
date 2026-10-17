@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>37 · Sudoku Solver</title><meta name="description" content="How can we complete a 9×9 Sudoku? Each row, column, and 3×3 box must contain 1…9 exactly once; . is empty. The input has a unique solution, and the board must be modified in place."><link rel="stylesheet" href="../style.css?v=lc2916-astra2"><link rel="stylesheet" href="../hard-first-ten/style.css?v=hard10-r2"></head>
+<body><header class="site-head"><div class="head-top"><a class="back-link" href="../" data-i18n="back"></a><div class="lang-toggle" id="langToggle" role="group" aria-label="Language / 语言"><button data-lang="zh">中</button><button data-lang="en">EN</button></div></div><p class="eyebrow">LEETCODE 37 · HARD · PYTHON</p><h1 class="explain" data-i18n="title"></h1><p class="tagline" data-i18n="topic"></p></header>
+<nav class="step-nav" aria-label="Lesson steps / 学习步骤"><div class="step-nav-inner"><a href="#step0" data-i18n="s0"></a><a href="#step1" data-i18n="s1"></a><a href="#step2" data-i18n="s2"></a><a href="#step3" data-i18n="s3"></a><a href="#step4" data-i18n="s4"></a></div></nav><main><section class="step" id="step0" data-step="0"><div class="step-inner"><p class="step-kicker">01</p><h2 class="explain" data-i18n="s0"></h2><p class="explain" data-i18n="statement"></p><p class="hint" data-i18n="constraints"></p><a href="https://leetcode.com/problems/sudoku-solver/" target="_blank" rel="noopener" data-i18n="official"></a><h3 class="explain" data-i18n="handTitle"></h3><p class="explain" data-i18n="hand"></p><h3 class="explain" data-i18n="baselineTitle"></h3><pre><code>def baseline(board):
+    def valid(r, c, v):
+        return (v not in board[r]
+                and all(board[i][c] != v for i in range(9))
+                and all(board[i][j] != v
+                        for i in range(r//3*3, r//3*3+3)
+                        for j in range(c//3*3, c//3*3+3)))
+    for r in range(9):
+        for c in range(9):
+            if board[r][c] == &quot;.&quot;:
+                for v in &quot;123456789&quot;:
+                    if valid(r, c, v):
+                        board[r][c] = v
+                        if baseline(board):
+                            return True
+                        board[r][c] = &quot;.&quot;
+                return False
+    return True</code></pre><p class="explain" data-i18n="cost"></p></div></section><section class="step" id="step1" data-step="1"><div class="step-inner"><p class="step-kicker">02</p><h2 class="explain" data-i18n="s1"></h2><p class="explain" data-i18n="derive"></p><p class="explain" data-i18n="proof"></p><p class="question" data-i18n="invariant"></p><a href="../10/#step1" data-i18n="introducedLink"></a></div></section><section class="step" id="step2" data-step="2"><div class="step-inner"><p class="step-kicker">03</p><h2 class="explain" data-i18n="s2"></h2><p class="question" data-i18n="invariant"></p><p class="explain" data-i18n="task"></p><div class="stage">
+<label for="preset" data-i18n="presets"></label><select id="preset"><option value="0" data-i18n="preset0"></option><option value="1" data-i18n="preset1"></option><option value="2" data-i18n="preset2"></option></select>
+<pre class="input-data" id="inputData"></pre>
+<div class="controls"><button class="btn" id="prev" data-i18n="prev"></button><button class="btn primary" id="next" data-i18n="next"></button><button class="btn" id="reset" data-i18n="reset"></button></div>
+<label class="range-label" for="position" data-i18n="position"></label><input id="position" type="range" min="0" value="0" step="1"><span id="progress" class="muted"></span>
+<p class="readout" id="message" aria-live="polite"></p>
+<div id="diagram" role="group"></div>
+<details id="beforeDetails"><summary data-i18n="before"></summary><div id="beforeDiagram"></div></details>
+<h3 data-i18n="state"></h3><dl id="state" class="state-grid"></dl>
+<p class="readout correct" id="result" hidden></p>
+<details><summary data-i18n="operation"></summary><pre><code id="operation"></code></pre></details>
+<details><summary data-i18n="history"></summary><ol id="history"></ol></details>
+</div></div></section><section class="step" id="step3" data-step="3"><div class="step-inner"><p class="step-kicker">04</p><h2 class="explain" data-i18n="s3"></h2><fieldset class="prediction-options"><legend class="explain" data-i18n="quizQuestion"></legend><label><input type="radio" name="prediction" value="0"><span data-i18n="option0"></span></label><label><input type="radio" name="prediction" value="1"><span data-i18n="option1"></span></label><label><input type="radio" name="prediction" value="2"><span data-i18n="option2"></span></label><button class="btn primary" id="reveal" data-i18n="reveal" disabled></button></fieldset><p id="feedback" class="readout" aria-live="polite"></p></div></section><section class="step" id="step4" data-step="4"><div class="step-inner"><p class="step-kicker">05</p><h2 class="explain" data-i18n="s4"></h2><h3 class="explain" data-i18n="mapping"></h3><div class="table-wrap"><table><thead><tr><th data-i18n="quantity"></th><th data-i18n="meaning"></th></tr></thead><tbody id="mapping"></tbody></table></div><p class="question" data-i18n="complexity"></p><div class="solution-actions"><button class="btn primary" id="copy" data-i18n="copy"></button><a href="solution.py" download data-i18n="download"></a><span id="copyStatus" aria-live="polite"></span></div><div id="manualCopy" hidden><label for="copyText" data-i18n="fallback"></label><textarea id="copyText" readonly rows="8"></textarea></div><details id="sourceDetails"><summary data-i18n="fullCode"></summary><pre><code id="pythonCode"></code></pre></details><h3 class="explain" data-i18n="trapsTitle"></h3><p class="explain" data-i18n="traps"></p><h3 class="explain" data-i18n="verifyTitle"></h3><p class="explain" data-i18n="verify"></p><h3 class="explain" data-i18n="related"></h3><div class="related"><a href="../10/#step1" data-i18n="related0"></a><a href="../25/#step2" data-i18n="related1"></a></div></div></section></main><footer class="site-foot" data-i18n="foot"></footer>
+<noscript>Interactive lessons require JavaScript. <a href="solution.py">Python solution</a></noscript>
+<script src="../common.js?v=lc2916-astra2"></script><script src="copy.js?v=hard10-r2"></script><script src="../hard-first-ten/core.js?v=hard10-r2"></script><script src="python-code.js?v=hard10-r2"></script><script src="../hard-first-ten/lesson.js?v=hard10-r2"></script><script src="app.js?v=hard10-r2"></script></body></html>

@@ -1,5 +1,215 @@
-/* One registry entry per published lesson. See specs/leetcode-explainers.md. */
+/* Ascending frontend ID; first ten Hard verified 2026-10-17. */
 window.LEETCODE_PROBLEMS = [
+{
+  "id": 4,
+  "title": {
+    "zh": "寻找两个正序数组的中位数",
+    "en": "Median of Two Sorted Arrays"
+  },
+  "desc": {
+    "zh": "先把较短数组叫 a。切口 i 表示从 a 取多少个数到左边；j=half−i，half=(m+n+1)//2，保证左半边恰好多一个或与右边一样多。两数组内部已有序，所以只需检查 aL≤bR 和 bL≤aR。",
+    "en": "Call the shorter array a. Cut i puts i values of a on the left; j=half−i with half=(m+n+1)//2 gives the required left size. Each array is already sorted, so only aL≤bR and bL≤aR need checking."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "二分划分",
+      "en": "Binary partition"
+    }
+  ],
+  "path": "4/",
+  "language": "Python",
+  "complexity": "O(log(min(m,n)+1))"
+},
+{
+  "id": 10,
+  "title": {
+    "zh": "正则表达式匹配",
+    "en": "Regular Expression Matching"
+  },
+  "desc": {
+    "zh": "dp[i][j] 表示 s 的前 i 个字符与 p 的前 j 个字符能否完全匹配。普通字符或 . 只看左上格 dp[i−1][j−1]。遇到 x*，零次用 dp[i][j−2]；一次以上要求当前字符匹配 x，再用 dp[i−1][j]。",
+    "en": "dp[i][j] means the first i text characters fully match the first j pattern characters. An ordinary atom or . uses the diagonal dp[i−1][j−1]. For x*, zero repeats use dp[i][j−2]; one more repeat requires an atom match and dp[i−1][j]."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "前缀动态规划",
+      "en": "Prefix dynamic programming"
+    }
+  ],
+  "path": "10/",
+  "language": "Python",
+  "complexity": "O(mn)"
+},
+{
+  "id": 23,
+  "title": {
+    "zh": "合并 K 个升序链表",
+    "en": "Merge k Sorted Lists"
+  },
+  "desc": {
+    "zh": "最小堆是一棵以数组保存的完全二叉树，父节点值不大于孩子；根就是所有候选中最小的。数组下标 h 的孩子是 2h+1、2h+2。只保存每条尚未耗尽链表的第一个节点。",
+    "en": "A min-heap is a complete binary tree stored in an array; parents are no greater than children, so the root is the minimum. Array position h has children 2h+1 and 2h+2. Store only the first remaining node of each list."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "最小堆",
+      "en": "Min-heap"
+    }
+  ],
+  "path": "23/",
+  "language": "Python",
+  "complexity": "O(k + N log(k+1))"
+},
+{
+  "id": 25,
+  "title": {
+    "zh": "K 个一组翻转链表",
+    "en": "Reverse Nodes in k-Group"
+  },
+  "desc": {
+    "zh": "dummy 是值无关的虚拟前驱，统一处理第一组。group_prev 指向组前节点；先向后数 k 步找 kth。找不到就直接结束。group_next=kth.next 保存组外后继；prev 初始指向它，curr 指向组头。",
+    "en": "dummy is an artificial predecessor that makes the first group ordinary. group_prev precedes the group. Walk k links to find kth; stop if it does not exist. group_next=kth.next preserves the suffix. Start prev there and curr at the group head."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "指针重连",
+      "en": "Pointer rewiring"
+    }
+  ],
+  "path": "25/",
+  "language": "Python",
+  "complexity": "O(n)"
+},
+{
+  "id": 30,
+  "title": {
+    "zh": "串联所有单词的子串",
+    "en": "Substring with Concatenation of All Words"
+  },
+  "desc": {
+    "zh": "把起点按除以 w 的余数分成 w 条扫描轨道。每条轨道 right 每次增加 w；left 是窗口左边界，图里的 right 是右端之后的字符下标。need 是所需次数，have 是当前次数，used 是词总数。",
+    "en": "Partition starts into w tracks by their remainder modulo w. Each track advances right by w. left is the window start; the displayed right is the exclusive end. need stores required counts, have current counts, and used the number of words."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "定长滑动窗口",
+      "en": "Word-aligned sliding window"
+    }
+  ],
+  "path": "30/",
+  "language": "Python",
+  "complexity": "O(Lw + kw)"
+},
+{
+  "id": 32,
+  "title": {
+    "zh": "最长有效括号",
+    "en": "Longest Valid Parentheses"
+  },
+  "desc": {
+    "zh": "栈保存尚未匹配的左括号下标，底部还有一个无效边界，初始为 −1。遇到 ( 入栈；遇到 ) 先弹栈。若栈空，说明它无法匹配，当前 i 成为新的边界。",
+    "en": "The stack holds unmatched opening indices above an invalid boundary, initially −1. Push on (. On ), pop first. If the stack becomes empty, this close has no match; its index i becomes the new boundary."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "边界栈",
+      "en": "Boundary stack"
+    }
+  ],
+  "path": "32/",
+  "language": "Python",
+  "complexity": "O(n)"
+},
+{
+  "id": 37,
+  "title": {
+    "zh": "解数独",
+    "en": "Sudoku Solver"
+  },
+  "desc": {
+    "zh": "rows[r]、cols[c]、boxes[b] 保存已用数字，b=(r//3)*3+c//3。候选是不在这三个集合里的数。按固定空格次序尝试一个候选，进入下一个空格；若后续无解，就撤销本次选择。",
+    "en": "rows[r], cols[c], and boxes[b] store used digits, with b=(r//3)*3+c//3. A candidate is absent from all three sets. Try one in a fixed empty-cell order and recurse to the next cell; undo the choice if no completion follows."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "约束与回溯",
+      "en": "Constraints and backtracking"
+    }
+  ],
+  "path": "37/",
+  "language": "Python",
+  "complexity": "O(9^E)"
+},
+{
+  "id": 41,
+  "title": {
+    "zh": "缺失的第一个正数",
+    "en": "First Missing Positive"
+  },
+  "desc": {
+    "zh": "给数值 x 指定目标下标 x−1。只要 1≤x≤n 且目标尚不是 x，就把当前位置与目标交换。交换后当前位置得到另一个数，仍要继续检查，不能立刻推进 i。",
+    "en": "Assign value x to index x−1. While 1≤x≤n and the destination is not already x, swap the current value with its destination. Recheck the incoming value before advancing i."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "原地位置标记",
+      "en": "In-place placement"
+    }
+  ],
+  "path": "41/",
+  "language": "Python",
+  "complexity": "O(n)"
+},
+{
+  "id": 42,
+  "title": {
+    "zh": "接雨水",
+    "en": "Trapping Rain Water"
+  },
+  "desc": {
+    "zh": "left、right 围住尚未结算区域。left_max 包含从起点到 left 的最高墙，right_max 包含从 right 到末尾的最高墙；先把当前两端柱子纳入最大值，再比较。",
+    "en": "left and right bound the unsettled region. left_max is the highest wall through left, and right_max the highest from right to the end. Include the current endpoint bars before comparing these maxima."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "双指针边界",
+      "en": "Two-pointer bounds"
+    }
+  ],
+  "path": "42/",
+  "language": "Python",
+  "complexity": "O(n)"
+},
+{
+  "id": 44,
+  "title": {
+    "zh": "通配符匹配",
+    "en": "Wildcard Matching"
+  },
+  "desc": {
+    "zh": "dp[i][j] 表示文本前 i 个字符与模式前 j 个字符完全匹配。普通字符与 ? 从左上格转移；* 为零字符时读左格 dp[i][j−1]，再吃一个字符时读上格 dp[i−1][j]。",
+    "en": "dp[i][j] means the first i text characters fully match the first j pattern characters. Literals and ? use the diagonal. A * consuming nothing uses the left cell dp[i][j−1]; consuming one more uses above, dp[i−1][j]."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "动态规划与滚动行",
+      "en": "Dynamic programming and rolling rows"
+    }
+  ],
+  "path": "44/",
+  "language": "Python",
+  "complexity": "O((m+1)(n+1))"
+},
   {
     id: 2916,
     title: {zh: '子数组不同元素数目的平方和 II', en: 'Subarrays Distinct Element Sum of Squares II'},

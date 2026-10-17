@@ -15,3 +15,8 @@ Each problem keeps its own `BRIEF.md` alongside its implementation. Generalize
 reusable findings into these specifications; keep example-specific calculations
 and review evidence in the problem folder. Do not put credentials or private
 machine configuration here.
+- [Hard-problem traces](leetcode-hard-traces.md): frame timing, visual semantics,
+  node identity, DP dependencies, undo state, bounded traces, and the first-ten
+  mechanism-specific regression cases.
+- [First-ten review](reviews/leetcode-first-ten-review.md): two self-review
+  iterations, actual findings and fixes, and verification evidence.
