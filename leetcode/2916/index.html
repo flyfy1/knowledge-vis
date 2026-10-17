@@ -4,7 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2916 · 从子数组到懒标记 | LeetCode</title>
 <meta name="description" content="从手算到 O(n log n)：交互推导 LeetCode 2916，理解固定右端点、最后出现位置、平方和更新、线段树与懒标记，附 Python 代码。">
-<link rel="stylesheet" href="../style.css?v=lc2916-1">
+<link rel="stylesheet" href="../style.css?v=lc2916-astra1">
 </head>
 <body>
 <header class="site-head">
@@ -30,7 +30,7 @@
   <div class="stage"><div class="controls"><button type="button" class="btn" id="groupPrev" data-i18n="prevGroup"></button><button type="button" class="btn primary" id="groupNext" data-i18n="nextGroup"></button></div><div id="groupArray" class="array"></div>
     <table><thead><tr><th data-i18n="left"></th><th data-i18n="subarray"></th><th data-i18n="distinct"></th><th data-i18n="square"></th></tr></thead><tbody id="groupRows"></tbody></table><div class="ledger" id="groupLedger"></div><p class="readout" id="groupInfo" aria-live="polite"></p>
   </div>
-  <details><summary data-i18n="baseline"></summary><pre><code>from typing import List
+  <h3 data-i18n="baseline"></h3><pre><code>from typing import List
 
 def brute(nums: List[int]) -&gt; int:
     answer = 0
@@ -39,7 +39,7 @@ def brute(nums: List[int]) -&gt; int:
         for right in range(left, len(nums)):
             seen.add(nums[right])
             answer += len(seen) ** 2
-    return answer % (10**9 + 7)</code></pre><p class="explain" data-i18n-html="baselineNote"></p></details>
+    return answer % (10**9 + 7)</code></pre><p class="explain" data-i18n-html="baselineNote"></p>
 </div></section>
 <section class="step" id="step2" data-step="2"><div class="step-inner">
   <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n="s2e"></p><p class="explain" data-i18n-html="s2proof"></p><p class="hint" data-i18n="s2task"></p>
@@ -49,7 +49,8 @@ def brute(nums: List[int]) -&gt; int:
     <div class="controls"><button type="button" class="btn" id="rangePrev" data-i18n="previous"></button><button type="button" class="btn primary" id="rangeNext"></button><span class="muted" id="rangeProgress"></span></div>
     <div class="metrics" aria-live="polite"><div class="metric"><span id="rangeSquareLabel"></span><b id="rangeSquare"></b></div><div class="metric"><span data-i18n="accumulated"></span><b id="rangeAnswer"></b></div></div>
     <div class="ledger" id="rangeLedger"></div>
-  </div><p class="question" data-i18n="rangeProof"></p>
+    <p class="hint" id="rangeWork" aria-live="polite"></p>
+  </div><p class="question" data-i18n="rangeProof"></p><p class="explain" data-i18n="plainArrayCost"></p>
 </div></section>
 <section class="step" id="step3" data-step="3"><div class="step-inner">
   <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n="s3e"></p>
@@ -57,13 +58,27 @@ def brute(nums: List[int]) -&gt; int:
   <div class="stage"><label class="range-label" for="increment"><span data-i18n="increment"></span>：<output id="incrementValue">1</output></label><input type="range" id="increment" min="1" max="3" step="1" value="1"><div class="bar-experiment" id="formulaBars"></div><div class="legend"><span><i class="swatch old"></i>d</span><span><i class="swatch"></i>d + k</span></div><p class="readout" id="formulaReadout" aria-live="polite"></p></div><p class="question" data-i18n="formulaOrder"></p>
 </div></section>
 <section class="step" id="step4" data-step="4"><div class="step-inner">
-  <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n="s4e"></p><p class="explain" data-i18n="s4mechanism"></p><p class="hint" data-i18n="s4task"></p>
-  <div class="stage"><div class="controls"><button type="button" class="btn" id="treePrev" data-i18n="treePrevious"></button><button type="button" class="btn primary" id="treeNext" data-i18n="treeNext"></button><span class="muted" id="treeProgress"></span></div><p class="readout" id="treeStatus" aria-live="polite"></p><div id="treeDiagram"></div><p class="hint" data-i18n="treeLegend"></p><div id="treeDetail" class="table-wrap tree-detail"></div><h3 data-i18n="treeActual"></h3><div class="array" id="treeValues"></div><details><summary data-i18n="history"></summary><ol class="trace-log" id="treeLog"></ol></details></div>
+  <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n="s4e"></p>
+  <h3 data-i18n="partitionTitle"></h3><p class="explain" data-i18n="partitionExplain"></p>
+  <div class="stage">
+    <div class="controls" role="group" aria-label="Target interval / 目标区间"><span data-i18n="target"></span><button type="button" class="btn" data-partition="0,3">[0, 3]</button><button type="button" class="btn" data-partition="2,4">[2, 4]</button></div>
+    <div id="partitionDiagram"></div><div class="legend"><span><i class="swatch"></i><span data-i18n="wholeBlock"></span></span><span data-i18n="partialBlock"></span><span data-i18n="nodeNumber"></span></div>
+    <p class="readout" id="partitionReadout" aria-live="polite"></p>
+  </div><p class="explain" data-i18n="treeCost"></p>
+  <h3 data-i18n="lazyTitle"></h3><p class="explain" data-i18n="s4mechanism"></p><p class="hint" data-i18n="s4task"></p>
+  <div class="stage"><div class="controls"><button type="button" class="btn" id="treePrev" data-i18n="treePrevious"></button><button type="button" class="btn primary" id="treeNext" data-i18n="treeNext"></button><span class="muted" id="treeProgress"></span></div><p class="readout" id="treeStatus" aria-live="polite"></p><div id="treeDiagram"></div><p class="hint" data-i18n="treeLegend"></p><p class="hint" id="treeContext"></p><div id="treeDetail" class="table-wrap tree-detail"></div><p class="question" id="treeExplanation" hidden></p><div id="treeCodeBlock" hidden><p class="hint" data-i18n="treeCodeTitle"></p><pre><code id="treePython"></code></pre></div><h3 data-i18n="treeActual"></h3><div class="array" id="treeValues"></div><details><summary data-i18n="history"></summary><ol class="trace-log" id="treeLog"></ol></details></div>
 </div></section>
 <section class="step" id="step5" data-step="5"><div class="step-inner">
-  <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2><p class="explain" data-i18n="s5e"></p><p class="explain" data-i18n="s5invariant"></p>
+  <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2><p class="explain" data-i18n="s5e"></p>
+  <h3 data-i18n="outerTitle"></h3><p class="explain" data-i18n="outerExplain"></p><pre><code>for right, x in enumerate(nums):
+    previous = last.get(x, -1)
+    add(1, 0, n - 1, previous + 1, right)
+    answer = (answer + square[1]) % mod
+    last[x] = right</code></pre>
+  <div class="table-wrap"><table><thead><tr><th data-i18n="visibleQuantity"></th><th>Python</th><th data-i18n="meaning"></th></tr></thead><tbody id="codeMapping"></tbody></table></div>
+  <h3 data-i18n="callTitle"></h3><p class="explain" data-i18n="callExplain"></p><div class="formula">add(node=1, left=0, right=4, ql=2, qr=4)<br>↳ add(node=2, left=0, right=2, ql=2, qr=4)<br>　↳ add(node=5, left=2, right=2, ql=2, qr=4)<br>↳ add(node=3, left=3, right=4, ql=2, qr=4)</div><p class="explain" data-i18n="storageExplain"></p><p class="explain" data-i18n="s5invariant"></p>
   <div class="solution-actions"><button type="button" class="btn primary" id="copyPython" data-i18n="copy"></button><a href="solution.py" download data-i18n="download"></a><span id="copyStatus" aria-live="polite"></span></div>
-  <pre><code id="pythonCode"></code></pre><p class="readout" data-i18n="complexity"></p><h3 data-i18n="traps"></h3><ul data-i18n-html="trapsBody"></ul>
+  <details><summary data-i18n="fullCode"></summary><pre><code id="pythonCode"></code></pre></details><p class="readout" data-i18n="complexity"></p><h3 data-i18n="traps"></h3><ul data-i18n-html="trapsBody"></ul>
 </div></section>
 <section class="step" id="step6" data-step="6"><div class="step-inner">
   <p class="step-kicker" data-i18n="s6k"></p><h2 data-i18n="s6t"></h2><p class="explain" data-i18n="s6e"></p>
@@ -73,5 +88,5 @@ def brute(nums: List[int]) -&gt; int:
 </main>
 <footer class="site-foot" data-i18n="foot"></footer>
 <noscript>This lesson needs JavaScript for its interactive experiments. <a href="solution.py">Python solution</a></noscript>
-<script src="../common.js?v=lc2916-1"></script><script src="copy.js?v=lc2916-1"></script><script src="core.js?v=lc2916-1"></script><script src="python-code.js?v=lc2916-1"></script><script src="app.js?v=lc2916-1"></script>
+<script src="../common.js?v=lc2916-astra1"></script><script src="copy.js?v=lc2916-astra1"></script><script src="core.js?v=lc2916-astra1"></script><script src="python-code.js?v=lc2916-astra1"></script><script src="app.js?v=lc2916-astra1"></script>
 </body></html>

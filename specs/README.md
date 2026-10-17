@@ -7,6 +7,9 @@ They record reusable authoring decisions and verified lessons from implementatio
   policy, collection registration, and mathematical and browser acceptance checks.
 - [Site UI and bilingual policy](../UI-I18N-SPEC.md): applies to every lesson.
 - [Concept map](../CONCEPT-MAP.md): register concepts and link to exact steps.
+- [Independent novice-review rubric](reviews/leetcode-2916-rubric.md): Astra's
+  outcome-based acceptance criteria. [2916 iteration record](reviews/leetcode-2916-iterations.md)
+  links the independent findings to implementation changes.
 
 Each problem keeps its own `BRIEF.md` alongside its implementation. Generalize
 reusable findings into these specifications; keep example-specific calculations

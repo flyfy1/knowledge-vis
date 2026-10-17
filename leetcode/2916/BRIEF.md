@@ -109,3 +109,13 @@ and `LESSON_SCREENSHOTS` (optional screenshot directory).
   `https://visual.integ.life`. Unrelated served pages were not replaced; previous
   homepage/config files are backed up at
   `/home/songyy/backups/visual-site/leetcode-a3386ea` on Pi.
+
+## Novice-clarity review iterations
+
+See the independent [Astra rubric](../../specs/reviews/leetcode-2916-rubric.md),
+[round 1 findings](../../specs/reviews/leetcode-2916-round1.md), and
+[iteration record](../../specs/reviews/leetcode-2916-iterations.md). The first
+candidate exposes the baseline workload, adds a separate interval-partition
+primer before tags, retains the requested interval during every tree operation,
+and adds a concrete visual-to-Python bridge. This extends step 4's outline:
+partition an initially zero structure before loading the first three rounds.

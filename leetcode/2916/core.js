@@ -60,6 +60,19 @@
       visit(1,0);return values;
     }
   }
+  function partitionRange(nodes, ql, qr) {
+    const covered = [], partial = [], visited = [];
+    function visit(i) {
+      const node = nodes[i];
+      if (node.r < ql || node.l > qr) return;
+      visited.push(i);
+      if (ql <= node.l && node.r <= qr) {covered.push(i); return;}
+      partial.push(i);
+      visit(i * 2); visit(i * 2 + 1);
+    }
+    visit(1);
+    return {covered, partial, visited};
+  }
   function treeFrames() {
     const nums=[1,2,1,3,2], frames=[], tree=new SegmentTree(nums.length);
     let r=0,p=-1,previous;
@@ -75,7 +88,7 @@
     r=4;p=1;tree.add(2,4);frames[frames.length-1].done=true;
     return frames;
   }
-  const api={brute,rangeFrames,SegmentTree,treeFrames};
+  const api={brute,rangeFrames,SegmentTree,partitionRange,treeFrames};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   else root.DistinctCore=api;
 })(globalThis);

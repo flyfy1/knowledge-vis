@@ -44,6 +44,11 @@ for(let n=1;n<=32;n++) {
   }
 }
 const trace=core.treeFrames();
+const zeroNodes=new core.SegmentTree(5).nodes;
+assert.deepEqual(core.partitionRange(zeroNodes,0,3),{covered:[2,6],partial:[1,3],visited:[1,2,3,6]});
+assert.deepEqual(core.partitionRange(zeroNodes,2,4),{covered:[5,3],partial:[1,2],visited:[1,2,5,3]});
+assert.deepEqual(core.partitionRange(zeroNodes,0,4).covered,[1]);
+assert.ok(Object.values(zeroNodes).every(node=>node.s===0&&node.q===0&&node.t===0));
 assert.equal(trace.length,10);
 assert.equal(trace[4].nodes[1].q,23);
 assert.deepEqual(trace[4].values,[3,3,2,1,0]);

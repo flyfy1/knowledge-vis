@@ -39,6 +39,12 @@ const screenshots=process.env.LESSON_SCREENSHOTS;
     }
     await page.locator('#increment').fill('3');assert.match(await page.locator('#formulaReadout').innerText(),/66/);
     await page.locator('#increment').fill('1');assert.match(await page.locator('#formulaReadout').innerText(),/22/);
+    await page.locator('[data-partition="0,3"]').click();
+    assert.deepEqual(await page.locator('#partitionDiagram [data-coverage="full"]').evaluateAll(nodes=>nodes.map(node=>Number(node.dataset.nodeId))),[2,6]);
+    await page.locator('[data-partition="2,4"]').click();
+    assert.deepEqual(await page.locator('#partitionDiagram [data-coverage="full"]').evaluateAll(nodes=>nodes.map(node=>Number(node.dataset.nodeId))),[3,5]);
+    assert.match(await page.locator('#partitionReadout').innerText(),/\[2, 2\].*\[3, 4\]/);
+    assert.equal(await page.locator('#codeMapping tr').count(),6);
     let operations=0;
     while(!(await page.locator('#treeNext').isDisabled())){await page.locator('#treeNext').click();assert.ok(++operations<20);}
     assert.equal(operations,9);assert.match(await page.locator('#treeStatus').innerText(),/32/);

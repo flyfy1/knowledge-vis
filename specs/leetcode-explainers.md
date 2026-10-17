@@ -42,6 +42,9 @@ is an example, not a mandatory seven-section template for every algorithm.
    Expose all contributions, rather than only one final total.
 3. **Establish the baseline.** Show correct Python, state its actual complexity,
    and connect the constraint to the repeated work that makes it too expensive.
+   Keep this reason visible, rather than hiding essential motivation inside a
+   code disclosure. Distinguish finding an update interval from applying it
+   efficiently: a plain loop over that interval can still be quadratic.
 4. **Discover a reusable state.** Explain the invariant in ordinary language and
    symbols. Compare old and new states using the same input.
 5. **Derive the optimization.** Prove the update boundary before naming a data
@@ -50,6 +53,9 @@ is an example, not a mandatory seven-section template for every algorithm.
    Explain every stored statistic and why a smaller set is insufficient.
 7. **Implement and verify.** Map the derivation to named Python functions. State
    the invariant, complexity, edge cases, and an independent checking method.
+   Introduce the outer scan before full machinery. Identify diagram IDs versus
+   input indices, current-node bounds versus fixed request bounds, and the
+   concrete recursive stop condition. Map one operation to its Python snippet.
 
 Every step begins with a concrete question. Define symbols locally, including
 when readers jump directly to that step. Use the same names in prose, controls,
@@ -72,6 +78,12 @@ diagrams, readouts and Python. Keep English causally equivalent to Chinese.
 - Lazy-tree displays must distinguish stored node summaries from effective leaf
   values. An ancestor tag already affects its summary even when its children are
   stale. During recursion, the root can be stale until the return path merges it.
+- Before deferred updates, teach interval decomposition separately from numeric
+  summaries: define boxes, root, leaves and halves on a zero-state structure.
+  Keep the requested interval next to every operation and show one specific
+  wrong result that would follow from omitting a required push. Explain why
+  whole blocks stop and only boundary-cut blocks continue, rather than using
+  tree height alone as the proof of logarithmic update work.
 - Keep controls keyboard-accessible, preserve focus when changing languages,
   announce meaningful updates, and test narrow screens without shrinking labels
   into illegibility. Honor reduced motion. Avoid automatic looping playback.
@@ -94,6 +106,10 @@ diagrams, readouts and Python. Keep English causally equivalent to Chinese.
   the problem's brief. Bump asset query versions when changing a served asset.
 
 ## Acceptance checks
+
+For an independent teaching review, use the outcome-based
+[novice rubric](reviews/leetcode-2916-rubric.md). Freeze its criteria before the
+reviewer reads the implementation; preserve per-round findings and responses.
 
 First walk the lesson as a new reader without using the brief as a decoder.
 For every experiment, explain what the interaction made visible. If that is
