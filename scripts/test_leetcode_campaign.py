@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Integration tests use disposable Git checkouts and a fake CLI, never real agents."""
 import contextlib
+import copy
 import importlib.util
 import io
 import json
@@ -206,6 +207,92 @@ class CampaignTests(unittest.TestCase):
         self.assertEqual([r['role'] for r in state['runs']], ['author'])
         self.assertNotEqual(state['problems']['4']['status'], 'accepted_local')
         self.assertEqual((self.repo / 'leetcode/problems.config.js').read_text(), 'window.LEETCODE_PROBLEMS = [];')
+
+    def review_entry_fixture(self, *, valid=False, historical=False, resumed=False):
+        for name in campaign.REQUIRED:
+            self.write(f'leetcode/4/{name}', 'Complete candidate')
+        self.write('leetcode/4/index.html', '<section id="step1"></section>')
+        self.write('leetcode/index.html', 'Unchanged index')
+        self.write('CONCEPT-MAP.md', '# Unchanged concepts\n')
+        if historical:
+            self.write('leetcode/problems.config.js', 'window.LEETCODE_PROBLEMS = [{"id":4}];')
+        else:
+            self.write('leetcode/4/lesson-entry.json', json.dumps({
+                'id': 4, 'path': '4/', 'difficulty': 'hard', 'language': 'Python',
+                'leetcodeUrl': self.problems[0]['officialUrl'],
+                'title': {'en': 'Fixture', 'zh': 'Fixture'},
+                'desc': {'en': 'Fixture', 'zh': 'Fixture'},
+                'topics': [{'en': 'Fixture', 'zh': 'Fixture'}],
+                'complexity': 'O(n) time; O(n) space' if valid else {'time': 'O(n)', 'space': 'O(n)'},
+                'concepts': [{'name': 'Fixture', 'step': 1, 'description': 'Fixture concept'}]}))
+        self.write('specs/reviews/prior.md', 'Prior independent report')
+        self.write('specs/reviews/4-evidence/prior.png', 'Prior evidence')
+        self.git('add', '.')
+        self.git('commit', '-m', 'Complete review-entry fixture')
+        state = campaign.load_state(self.state / 'progress.json', self.repo, [self.problems[0]])
+        if resumed:
+            state['runs'] = [{'run_id': 'prior-author', 'role': 'author'},
+                             {'run_id': 'prior-review', 'role': 'review'}]
+            state['problems']['4'] = {
+                'new': True, 'phase': 'review', 'status': 'review_pending', 'rounds': 1,
+                'author_runs': ['prior-author'],
+                'reviews': [{'run_id': 'prior-review', 'candidate': 'prior-candidate',
+                             'outcome': 'changes_required', 'required_open': ['F1']}],
+                'prior_report': 'specs/reviews/prior.md', 'candidate': 'prior-candidate'}
+            self.state.mkdir()
+            campaign.save_state(self.state / 'progress.json', state)
+        return state
+
+    def assert_invalid_review_entry_rejected(self, *, resumed):
+        prior = copy.deepcopy(self.review_entry_fixture(resumed=resumed))
+        def snapshot():
+            return {str(p.relative_to(self.repo)): (p.stat().st_mode, p.read_bytes() if p.is_file() else None)
+                    for p in self.repo.rglob('*') if '.git' not in p.relative_to(self.repo).parts}
+        before = snapshot()
+        with patch.object(campaign, 'run_agent', side_effect=AssertionError('reviewer-launched')) as recorder, \
+                patch.object(campaign, 'fingerprint', wraps=campaign.fingerprint) as fingerprint:
+            with self.assertRaisesRegex(campaign.CampaignError, 'complexity.*nonempty string'):
+                self.invoke('', '--ids', '4')
+            recorder.assert_not_called()
+            fingerprint.assert_not_called()
+        self.assertEqual(snapshot(), before)
+        self.assertEqual(self.git('status', '--porcelain'), '')
+        state = self.progress()
+        self.assertEqual(state['status'], 'failed')
+        self.assertIn('complexity', state['error'])
+        self.assertEqual(state['runs'], prior['runs'])
+        self.assertFalse((self.state / 'runs').exists())
+        entry = state['problems']['4']
+        self.assertEqual(entry['phase'], 'review')
+        self.assertTrue(entry['new'])
+        if resumed:
+            self.assertEqual(entry, prior['problems']['4'])
+        else:
+            self.assertEqual(entry['reviews'], [])
+            self.assertEqual(entry['author_runs'], [])
+            self.assertNotIn('candidate', entry)
+
+    def test_complete_new_lesson_rejects_metadata_before_reviewer_launch(self):
+        self.assert_invalid_review_entry_rejected(resumed=False)
+
+    def test_saved_new_review_rejects_metadata_preserving_provenance(self):
+        self.assert_invalid_review_entry_rejected(resumed=True)
+
+    def assert_review_entry_dispatches(self, *, historical):
+        self.review_entry_fixture(valid=True, historical=historical)
+        with patch.object(campaign, 'run_agent', side_effect=RuntimeError('reviewer-dispatched')) as recorder:
+            with self.assertRaisesRegex(RuntimeError, 'reviewer-dispatched'):
+                self.invoke('', '--ids', '4')
+        recorder.assert_called_once()
+        self.assertEqual(recorder.call_args.args[1], 'review')
+        self.assertEqual(self.progress()['problems']['4']['new'], not historical)
+
+    def test_complete_valid_new_lesson_dispatches_review(self):
+        self.assert_review_entry_dispatches(historical=False)
+
+    def test_registered_historical_lesson_dispatches_without_metadata(self):
+        self.assert_review_entry_dispatches(historical=True)
+        self.assertFalse((self.repo / 'leetcode/4/lesson-entry.json').exists())
 
     def test_content_blocked_continues(self):
         self.invoke("blocked")
