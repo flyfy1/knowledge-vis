@@ -453,3 +453,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Reverse rolling DP | `leetcode/115/#step2` | Keep the previous source-prefix row available during in-place updates. |
 
 <!-- /leetcode-115-campaign -->
+
+
+<!-- leetcode-123-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| cash-state dynamic programming | `leetcode/123/#step1` | Best cash per holding condition and transaction budget. |
+| rolling state invariant | `leetcode/123/#step4` | Four previous-prefix maxima suffice for every legal next action. |
+
+<!-- /leetcode-123-campaign -->
