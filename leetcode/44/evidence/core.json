@@ -1,0 +1,32 @@
+{
+  "trace_pairs": 1275,
+  "active_cells_and_dependencies": 15337,
+  "quiz_matrix": [
+    [
+      true,
+      false,
+      false
+    ],
+    [
+      false,
+      true,
+      true
+    ],
+    [
+      false,
+      false,
+      true
+    ]
+  ],
+  "quiz_dependencies": [
+    [
+      2,
+      1
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "copy_dictionary_parity": true
+}

@@ -224,48 +224,48 @@ window.LESSON_COPY = {
     "For s=\"adceb\", p=\"*a*b\", the first * is empty, a matches a, the second * takes dce, and b matches b: true. s=\"cb\", p=\"?a\" is false; ? handles only the first character."
   ],
   "cost": [
-    "逐个尝试 * 的长度会分出大量重叠子问题，朴素递归最坏指数级。长度达 2000 时还会触发递归深度问题；迭代 DP 每个前缀组合只计算一次。",
-    "Trying lengths for each * creates overlapping subproblems and exponential worst-case recursion. Length 2000 also risks recursion depth limits. Iterative DP evaluates each prefix pair once."
+    "星号越多，不同路径越容易反复求同一对前缀。失败输入会迫使递归试完分支，最坏产生指数级调用；切片还会复制字符串，长度 2000 也可能超过递归深度限制。下一步按两个前缀长度保存结果；至多 (m+1)(n+1) 对，m 是文本长度，n 是模式长度。",
+    "With more stars, different paths repeatedly evaluate the same prefix pairs. Failing inputs force exploration of the branches, giving exponentially many calls in the worst case; slicing also copies strings, and length 2000 can exceed recursion depth limits. Next we save results by both prefix lengths: at most (m+1)(n+1) pairs, where m is text length and n is pattern length."
   ],
   "derive": [
-    "dp[i][j] 表示文本前 i 个字符与模式前 j 个字符完全匹配。普通字符与 ? 从左上格转移；* 为零字符时读左格 dp[i][j−1]，再吃一个字符时读上格 dp[i−1][j]。",
-    "dp[i][j] means the first i text characters fully match the first j pattern characters. Literals and ? use the diagonal. A * consuming nothing uses the left cell dp[i][j−1]; consuming one more uses above, dp[i−1][j]."
+    "要保存哪一个结果？dp[i][j] 表示文本前 i 个字符与模式前 j 个字符完全匹配。在刚才 a / b** 的例子中，重复的 (\"\", \"b*\") 正是 dp[0][2]=假。先求较短前缀再填大格，这种保存并复用小问题答案的方法称为动态规划（DP）。",
+    "Which result should we save? dp[i][j] says whether the first i text characters fully match the first j pattern characters. In the a / b** example, the repeated (\"\", \"b*\") is exactly dp[0][2]=false. Computing shorter prefixes first lets larger cells reuse them; this method is called dynamic programming (DP)."
   ],
   "proof": [
-    "与正则 x* 不同，这里零次只跳过一个模式字符，所以是 j−1，不是 j−2。每个格只依赖当前行左侧与上一行，因此代码可只存 previous 和 current 两行；每行 current[0] 都重设为假。",
-    "Unlike regex x*, zero consumption skips only one pattern character: j−1, not j−2. Dependencies use only the current row to the left and the previous row, so code keeps just previous and current. Reset current[0] to false on every nonempty text row."
+    "* 是独立的一个模式字符；取空串时只删掉它，所以左移一格 j−1。比如 ab / a* 为真：a 匹配 a，* 吃掉 b。每个格只读当前行左格和上一行；从左到右填格后，可以丢弃更早的行，只存 previous 和 current 两行。非空文本不能匹配空模式，所以每行 current[0] 都为假。",
+    "The * is one independent pattern character; empty consumption removes just it, so move one column left to j−1. For example ab / a* is true: a matches a and * consumes b. Each cell reads only current-left and the previous row. Filling left to right lets us discard older rows and keep just previous and current. Nonempty text cannot match an empty pattern, so current[0] is false on every nonempty row."
   ],
   "invariant": [
     "图为解释依赖保留完整表；Python 只保留两行。行列是前缀长度，ε 是空前缀；T/F 是真假，· 尚未计算。空文本只匹配完全由 * 组成的前缀。",
     "The view retains the full table to explain dependencies; Python stores two rows. Coordinates are prefix lengths, ε is empty, T/F mean true/false, and · means uncomputed. Empty text matches only all-star prefixes."
   ],
   "task": [
-    "逐格看 * 的左、上依赖；选择空串例观察第一行，再与正则题的“左移两格”比较。回退不会丢失此前已计算格。",
-    "Inspect the left and above dependencies of *. Choose the empty-text case to study row zero, then compare regex’s two-left rule. Rewinding restores previously computed cells."
+    "保持默认输入，逐格推进到事件 16，观察左格 F、上格 T 如何使当前 * 格为 T，再回退比较。切换空串预设会重启实验；观察第 0 行只有全星号前缀能为真。",
+    "Keep the default input and advance to event 16: inspect how left F and above T make the current star cell T, then rewind to compare. Switching to the empty-text preset restarts the experiment; observe that only all-star prefixes can be true in row zero."
   ],
   "complexity": [
-    "时间 O((m+1)(n+1))、额外空间 O(n)，n 为模式长度。常用简写 O(mn) 默认非空；空串初始化仍需 O(n)。",
-    "Time O((m+1)(n+1)), auxiliary space O(n), with n the pattern length. The usual O(mn) shorthand assumes nonempty inputs; initializing empty text still costs O(n)."
+    "m 为文本长度，n 为模式长度。初始化 n+1 个值，每个文本字符再计算 n 格并建立新行，所以时间 O((m+1)(n+1))。同时只保留两行、每行 n+1 个真假值，额外空间 O(n+1)；即使模式为空也占常数空间。图中的完整历史表不属于提交代码的空间。",
+    "Let m be text length and n pattern length. Initialize n+1 values, then compute n cells and allocate a new row for each text character: O((m+1)(n+1)) time. Only two rows of n+1 Booleans remain live: O(n+1) auxiliary space, constant even for an empty pattern. The view’s full history table is separate teaching storage."
   ],
   "traps": [
-    "不要混入正则题的 . 和 x* 规则。不能因为末尾有 * 就忽略前面不匹配的字符。更新新行必须清空，避免上一行的真值泄漏。",
-    "Do not import regex’s . and x* rules. A trailing * cannot repair an earlier mismatched literal. Clear each new row so previous true values do not leak into it."
+    "* 可以取空串，但不能删除模式中的普通字符。ba / a* 为假：开头必需的 a 匹配不了 b，末尾 * 无法修复它。更新新行必须清空，避免上一行的真值泄漏。",
+    "A star may consume nothing, but it cannot delete a literal from the pattern. ba / a* is false: the required initial a cannot match b, and the trailing star cannot repair it. Clear each new row so earlier true values do not leak into it."
   ],
   "quizQuestion": [
-    "新例：s=\"ab\"，p=\"a*\"。此题能匹配吗？与正则题有何不同？",
-    "Fresh case: s=\"ab\", p=\"a*\". Does this problem match it, and how does regex differ?"
+    "新例 s=\"ba\"、p=\"?*\"。最后一格 dp[2][2] 对应末尾 *；左格是 ba / ?，上格是 b / ?*。先算两格真假，再预测最后一格及原因。",
+    "Fresh case s=\"ba\", p=\"?*\". The final cell dp[2][2] handles *. Its left cell is ba / ?; its above cell is b / ?*. Calculate both, then predict the final value and reason."
   ],
   "option0": [
-    "两题都为假",
-    "Both false"
+    "假：左格为假，* 只能取空串",
+    "False: left is false and * can only consume nothing"
   ],
   "option1": [
-    "此题为真，正则为假",
-    "Wildcard true, regex false"
+    "真：左格假、上格真，* 再吃掉 a",
+    "True: left is false, above true; * consumes one more a"
   ],
   "option2": [
-    "两题都为真",
-    "Both true"
+    "真：只需看左上格，? 已经匹配了 b",
+    "True: only the diagonal matters; ? already matched b"
   ],
   "preset0": [
     "任意长度星号",
@@ -292,8 +292,28 @@ window.LESSON_COPY = {
     "Represent boundaries with less state"
   ],
   "introducedLink": [
-    "对照正则 x* 的两格跳跃",
-    "Compare regex x* skipping two columns"
+    "可选对照：去正则题学习“重复前一字符”的另一种星号",
+    "Optional comparison: learn regex’s star that repeats the preceding character"
+  ],
+  "baselineIntro": [
+    "基线返回同样的真假结果，从末尾缩短文本与模式。末尾为 * 时，先试跳过它（取空串）；失败后再试让它吃掉最后一个字符，保留 * 继续使用。末尾为普通字符或 ? 时，必须先匹配最后一个字符，再同时缩短两边。",
+    "The baseline returns the same Boolean result, shortening text and pattern from the end. For a final *, first try skipping it (empty consumption); if that fails, consume the last text character and keep the *. A final literal or ? must match the last character before shortening both sides."
+  ],
+  "overlapTitle": [
+    "哪一次计算重复了？",
+    "Which calculation repeats?"
+  ],
+  "overlapA": [
+    "小例 s=\"a\"、p=\"b**\"：两个 * 都不能替代必需的 b，答案是假。从 baseline(\"a\", \"b**\") 出发，第一条路径先跳过末尾 *，到 (\"a\", \"b*\")，再让剩下的 * 吃掉 a，到 (\"\", \"b*\")。空文本不能匹配必需的 b，所以返回假，程序继续试第二条路径。",
+    "Take s=\"a\", p=\"b**\": neither star removes the required b, so the answer is false. From baseline(\"a\", \"b**\"), the first path skips the final star to reach (\"a\", \"b*\"), then consumes a with the remaining star to reach (\"\", \"b*\"). Empty text cannot match the required b, so this returns false and execution tries the second path."
+  ],
+  "overlapB": [
+    "第二条路径先用末尾 * 吃掉 a，到 (\"\", \"b**\")，再跳过末尾 *，又到了 (\"\", \"b*\")。同一对参数被求了两次；它们都是原输入的开头部分（前缀）。无论如何到达，后续选择完全一样，只需保存一次真假结果。只按文本长度保存会出错：空文本对 \"*\" 为真，对 \"b*\" 为假，还必须区分模式前缀。",
+    "The second path consumes a with the final star to reach (\"\", \"b**\"), then skips that star and reaches (\"\", \"b*\") again. The same argument pair is evaluated twice. Both arguments are beginnings of the original strings, called prefixes. The remaining choices depend only on those two prefixes, so one saved Boolean can serve both paths. Saving only text length fails: empty text matches \"*\" but not \"b*\"; the pattern prefix matters too."
+  ],
+  "transition": [
+    "普通字符或 ? 必须匹配最后一个文本字符，再看去掉两边末尾的左上格 dp[i−1][j−1]。若末尾为 *，它要么不吃字符，读左格 dp[i][j−1]；要么至少吃一个，把最后一个字符交给它后，剩余文本仍由同一模式匹配，读上格 dp[i−1][j]。两种情况涵盖所有长度，取任一为真即可。",
+    "A literal or ? must match the last text character, then use the diagonal dp[i−1][j−1] after removing both final characters. A final * either consumes nothing, using left dp[i][j−1], or consumes at least one character: remove the last text character and keep the same pattern, using above dp[i−1][j]. These cases cover every possible consumption length; either true dependency suffices."
   ]
 };
 window.LESSON = {
@@ -319,30 +339,30 @@ window.LESSON = {
     "s=\"adceb\"，p=\"*a*b\"：第一个 * 取空串，a 匹配 a，第二个 * 取 dce，b 匹配 b，为真。s=\"cb\"，p=\"?a\" 为假，? 只能解决第一个字符。",
     "For s=\"adceb\", p=\"*a*b\", the first * is empty, a matches a, the second * takes dce, and b matches b: true. s=\"cb\", p=\"?a\" is false; ? handles only the first character."
   ],
-  "baseline": "def baseline(s, p):\n    if not p:\n        return not s\n    if p[0] == \"*\":\n        return baseline(s, p[1:]) or (bool(s) and baseline(s[1:], p))\n    return (bool(s) and p[0] in (s[0], \"?\")\n            and baseline(s[1:], p[1:]))",
+  "baseline": "def baseline(s, p):\n    if not p:\n        return not s\n    if p[-1] == \"*\":\n        return baseline(s, p[:-1]) or (bool(s) and baseline(s[:-1], p))\n    return (bool(s) and p[-1] in (s[-1], \"?\")\n            and baseline(s[:-1], p[:-1]))",
   "cost": [
-    "逐个尝试 * 的长度会分出大量重叠子问题，朴素递归最坏指数级。长度达 2000 时还会触发递归深度问题；迭代 DP 每个前缀组合只计算一次。",
-    "Trying lengths for each * creates overlapping subproblems and exponential worst-case recursion. Length 2000 also risks recursion depth limits. Iterative DP evaluates each prefix pair once."
+    "星号越多，不同路径越容易反复求同一对前缀。失败输入会迫使递归试完分支，最坏产生指数级调用；切片还会复制字符串，长度 2000 也可能超过递归深度限制。下一步按两个前缀长度保存结果；至多 (m+1)(n+1) 对，m 是文本长度，n 是模式长度。",
+    "With more stars, different paths repeatedly evaluate the same prefix pairs. Failing inputs force exploration of the branches, giving exponentially many calls in the worst case; slicing also copies strings, and length 2000 can exceed recursion depth limits. Next we save results by both prefix lengths: at most (m+1)(n+1) pairs, where m is text length and n is pattern length."
   ],
   "derive": [
-    "dp[i][j] 表示文本前 i 个字符与模式前 j 个字符完全匹配。普通字符与 ? 从左上格转移；* 为零字符时读左格 dp[i][j−1]，再吃一个字符时读上格 dp[i−1][j]。",
-    "dp[i][j] means the first i text characters fully match the first j pattern characters. Literals and ? use the diagonal. A * consuming nothing uses the left cell dp[i][j−1]; consuming one more uses above, dp[i−1][j]."
+    "要保存哪一个结果？dp[i][j] 表示文本前 i 个字符与模式前 j 个字符完全匹配。在刚才 a / b** 的例子中，重复的 (\"\", \"b*\") 正是 dp[0][2]=假。先求较短前缀再填大格，这种保存并复用小问题答案的方法称为动态规划（DP）。",
+    "Which result should we save? dp[i][j] says whether the first i text characters fully match the first j pattern characters. In the a / b** example, the repeated (\"\", \"b*\") is exactly dp[0][2]=false. Computing shorter prefixes first lets larger cells reuse them; this method is called dynamic programming (DP)."
   ],
   "proof": [
-    "与正则 x* 不同，这里零次只跳过一个模式字符，所以是 j−1，不是 j−2。每个格只依赖当前行左侧与上一行，因此代码可只存 previous 和 current 两行；每行 current[0] 都重设为假。",
-    "Unlike regex x*, zero consumption skips only one pattern character: j−1, not j−2. Dependencies use only the current row to the left and the previous row, so code keeps just previous and current. Reset current[0] to false on every nonempty text row."
+    "* 是独立的一个模式字符；取空串时只删掉它，所以左移一格 j−1。比如 ab / a* 为真：a 匹配 a，* 吃掉 b。每个格只读当前行左格和上一行；从左到右填格后，可以丢弃更早的行，只存 previous 和 current 两行。非空文本不能匹配空模式，所以每行 current[0] 都为假。",
+    "The * is one independent pattern character; empty consumption removes just it, so move one column left to j−1. For example ab / a* is true: a matches a and * consumes b. Each cell reads only current-left and the previous row. Filling left to right lets us discard older rows and keep just previous and current. Nonempty text cannot match an empty pattern, so current[0] is false on every nonempty row."
   ],
   "invariant": [
     "图为解释依赖保留完整表；Python 只保留两行。行列是前缀长度，ε 是空前缀；T/F 是真假，· 尚未计算。空文本只匹配完全由 * 组成的前缀。",
     "The view retains the full table to explain dependencies; Python stores two rows. Coordinates are prefix lengths, ε is empty, T/F mean true/false, and · means uncomputed. Empty text matches only all-star prefixes."
   ],
   "task": [
-    "逐格看 * 的左、上依赖；选择空串例观察第一行，再与正则题的“左移两格”比较。回退不会丢失此前已计算格。",
-    "Inspect the left and above dependencies of *. Choose the empty-text case to study row zero, then compare regex’s two-left rule. Rewinding restores previously computed cells."
+    "保持默认输入，逐格推进到事件 16，观察左格 F、上格 T 如何使当前 * 格为 T，再回退比较。切换空串预设会重启实验；观察第 0 行只有全星号前缀能为真。",
+    "Keep the default input and advance to event 16: inspect how left F and above T make the current star cell T, then rewind to compare. Switching to the empty-text preset restarts the experiment; observe that only all-star prefixes can be true in row zero."
   ],
   "complexity": [
-    "时间 O((m+1)(n+1))、额外空间 O(n)，n 为模式长度。常用简写 O(mn) 默认非空；空串初始化仍需 O(n)。",
-    "Time O((m+1)(n+1)), auxiliary space O(n), with n the pattern length. The usual O(mn) shorthand assumes nonempty inputs; initializing empty text still costs O(n)."
+    "m 为文本长度，n 为模式长度。初始化 n+1 个值，每个文本字符再计算 n 格并建立新行，所以时间 O((m+1)(n+1))。同时只保留两行、每行 n+1 个真假值，额外空间 O(n+1)；即使模式为空也占常数空间。图中的完整历史表不属于提交代码的空间。",
+    "Let m be text length and n pattern length. Initialize n+1 values, then compute n cells and allocate a new row for each text character: O((m+1)(n+1)) time. Only two rows of n+1 Booleans remain live: O(n+1) auxiliary space, constant even for an empty pattern. The view’s full history table is separate teaching storage."
   ],
   "mapping": [
     [
@@ -368,8 +388,8 @@ window.LESSON = {
     ]
   ],
   "traps": [
-    "不要混入正则题的 . 和 x* 规则。不能因为末尾有 * 就忽略前面不匹配的字符。更新新行必须清空，避免上一行的真值泄漏。",
-    "Do not import regex’s . and x* rules. A trailing * cannot repair an earlier mismatched literal. Clear each new row so previous true values do not leak into it."
+    "* 可以取空串，但不能删除模式中的普通字符。ba / a* 为假：开头必需的 a 匹配不了 b，末尾 * 无法修复它。更新新行必须清空，避免上一行的真值泄漏。",
+    "A star may consume nothing, but it cannot delete a literal from the pattern. ba / a* is false: the required initial a cannot match b, and the trailing star cannot repair it. Clear each new row so earlier true values do not leak into it."
   ],
   "presets": [
     {
@@ -415,36 +435,36 @@ window.LESSON = {
   ],
   "quiz": {
     "question": [
-      "新例：s=\"ab\"，p=\"a*\"。此题能匹配吗？与正则题有何不同？",
-      "Fresh case: s=\"ab\", p=\"a*\". Does this problem match it, and how does regex differ?"
+      "新例 s=\"ba\"、p=\"?*\"。最后一格 dp[2][2] 对应末尾 *；左格是 ba / ?，上格是 b / ?*。先算两格真假，再预测最后一格及原因。",
+      "Fresh case s=\"ba\", p=\"?*\". The final cell dp[2][2] handles *. Its left cell is ba / ?; its above cell is b / ?*. Calculate both, then predict the final value and reason."
     ],
     "options": [
       [
-        "两题都为假",
-        "Both false"
+        "假：左格为假，* 只能取空串",
+        "False: left is false and * can only consume nothing"
       ],
       [
-        "此题为真，正则为假",
-        "Wildcard true, regex false"
+        "真：左格假、上格真，* 再吃掉 a",
+        "True: left is false, above true; * consumes one more a"
       ],
       [
-        "两题都为真",
-        "Both true"
+        "真：只需看左上格，? 已经匹配了 b",
+        "True: only the diagonal matters; ? already matched b"
       ]
     ],
     "correct": 1,
     "feedback": [
       [
-        "本题的 * 可以匹配任意后缀，包括单个 b。",
-        "Here * can match any suffix, including a single b."
+        "左格为假：? 不能覆盖 ba 两个字符。但 * 还能吃字符；上格 b / ?* 为真（? 吃 b，* 取空串），因此最后一格 F 或 T 为真。",
+        "Left is false: ? cannot cover both characters of ba. But * may consume characters too; above b / ?* is true (? takes b, * takes nothing), so the final cell is F or T = true."
       ],
       [
-        "通配符 * 独立吞掉 b；正则 a* 只能重复 a，不能匹配 b。",
-        "Wildcard * independently consumes b; regex a* only repeats a and cannot match b."
+        "左格 ba / ? 为假，上格 b / ?* 为真；* 再吃掉 a，F 或 T 为真。手算为 ? 吃 b、* 吃 a。对照 ba / a* 却为假：* 不能跳过必需且不匹配的 a。",
+        "Left ba / ? is false; above b / ?* is true. Let * consume one more a: F or T = true. By hand, ? takes b and * takes a. In contrast ba / a* is false: * cannot skip the required mismatched a."
       ],
       [
-        "正则 a* 不会吞任意字符，它不能匹配最后的 b。",
-        "Regex a* does not consume arbitrary characters; it cannot match the final b."
+        "最后一格处理的是 *，要读左格与上格，不是左上格。左上格 b / ? 虽然为真，还需说明剩下的 a 去哪里：上格 b / ?* 为真，让 * 再吃 a，才得到正确原因。",
+        "The final pattern character is *, which reads left and above, not the diagonal. Although diagonal b / ? is true, the remaining a still needs a match: above b / ?* is true, and * consumes one more a."
       ]
     ]
   },
@@ -465,5 +485,25 @@ window.LESSON = {
         "Represent boundaries with less state"
       ]
     ]
+  ],
+  "baselineIntro": [
+    "基线返回同样的真假结果，从末尾缩短文本与模式。末尾为 * 时，先试跳过它（取空串）；失败后再试让它吃掉最后一个字符，保留 * 继续使用。末尾为普通字符或 ? 时，必须先匹配最后一个字符，再同时缩短两边。",
+    "The baseline returns the same Boolean result, shortening text and pattern from the end. For a final *, first try skipping it (empty consumption); if that fails, consume the last text character and keep the *. A final literal or ? must match the last character before shortening both sides."
+  ],
+  "overlapTitle": [
+    "哪一次计算重复了？",
+    "Which calculation repeats?"
+  ],
+  "overlapA": [
+    "小例 s=\"a\"、p=\"b**\"：两个 * 都不能替代必需的 b，答案是假。从 baseline(\"a\", \"b**\") 出发，第一条路径先跳过末尾 *，到 (\"a\", \"b*\")，再让剩下的 * 吃掉 a，到 (\"\", \"b*\")。空文本不能匹配必需的 b，所以返回假，程序继续试第二条路径。",
+    "Take s=\"a\", p=\"b**\": neither star removes the required b, so the answer is false. From baseline(\"a\", \"b**\"), the first path skips the final star to reach (\"a\", \"b*\"), then consumes a with the remaining star to reach (\"\", \"b*\"). Empty text cannot match the required b, so this returns false and execution tries the second path."
+  ],
+  "overlapB": [
+    "第二条路径先用末尾 * 吃掉 a，到 (\"\", \"b**\")，再跳过末尾 *，又到了 (\"\", \"b*\")。同一对参数被求了两次；它们都是原输入的开头部分（前缀）。无论如何到达，后续选择完全一样，只需保存一次真假结果。只按文本长度保存会出错：空文本对 \"*\" 为真，对 \"b*\" 为假，还必须区分模式前缀。",
+    "The second path consumes a with the final star to reach (\"\", \"b**\"), then skips that star and reaches (\"\", \"b*\") again. The same argument pair is evaluated twice. Both arguments are beginnings of the original strings, called prefixes. The remaining choices depend only on those two prefixes, so one saved Boolean can serve both paths. Saving only text length fails: empty text matches \"*\" but not \"b*\"; the pattern prefix matters too."
+  ],
+  "transition": [
+    "普通字符或 ? 必须匹配最后一个文本字符，再看去掉两边末尾的左上格 dp[i−1][j−1]。若末尾为 *，它要么不吃字符，读左格 dp[i][j−1]；要么至少吃一个，把最后一个字符交给它后，剩余文本仍由同一模式匹配，读上格 dp[i−1][j]。两种情况涵盖所有长度，取任一为真即可。",
+    "A literal or ? must match the last text character, then use the diagonal dp[i−1][j−1] after removing both final characters. A final * either consumes nothing, using left dp[i][j−1], or consumes at least one character: remove the last text character and keep the same pattern, using above dp[i−1][j]. These cases cover every possible consumption length; either true dependency suffices."
   ]
 };
