@@ -1,0 +1,27 @@
+{
+  "before": {
+    "position": "2",
+    "words": [
+      "aa",
+      "ba",
+      "ab",
+      "bb"
+    ],
+    "choice": "1",
+    "feedback": true,
+    "open": true
+  },
+  "resizeWidths": [
+    320,
+    390,
+    1440
+  ],
+  "localePreservation": true,
+  "realClipboardParity": true,
+  "keyboardRange": [
+    "Home:0",
+    "End:4",
+    "ArrowLeft:3",
+    "ArrowRight:4"
+  ]
+}
