@@ -1,0 +1,241 @@
+{
+  "presets": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "result": [
+        2,
+        1,
+        4,
+        3,
+        5
+      ],
+      "rewindReset": true
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "result": [
+        3,
+        2,
+        1,
+        4,
+        5
+      ],
+      "rewindReset": true
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "result": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "rewindReset": true
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "result": [
+        1,
+        2
+      ],
+      "rewindReset": true
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "result": [
+        2,
+        1,
+        4,
+        3,
+        5
+      ],
+      "rewindReset": true
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "result": [
+        3,
+        2,
+        1,
+        4,
+        5
+      ],
+      "rewindReset": true
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "result": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "rewindReset": true
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "result": [
+        1,
+        2
+      ],
+      "rewindReset": true
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "noOverflow": true,
+      "statePreserved": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "noOverflow": true,
+      "statePreserved": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "noOverflow": true,
+      "statePreserved": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "noOverflow": true,
+      "statePreserved": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "noOverflow": true,
+      "statePreserved": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "noOverflow": true,
+      "statePreserved": true
+    }
+  ],
+  "screenshots": [
+    "en-320-trace.png",
+    "en-320-basics.png",
+    "en-320-rewire.png",
+    "en-390-trace.png",
+    "en-1280-trace.png",
+    "en-disabled.png",
+    "en-zoom200.png",
+    "zh-320-trace.png",
+    "zh-320-basics.png",
+    "zh-320-rewire.png",
+    "zh-390-trace.png",
+    "zh-1280-trace.png",
+    "zh-disabled.png",
+    "zh-zoom200.png",
+    "copy-fallback-320.png"
+  ],
+  "errors": [],
+  "assets": [
+    {
+      "asset": "index.html",
+      "sha256": "bca5f7c88b4f0bf4fcd4629773619962acbdc11262b8048cc51fe79f1f90cde5"
+    },
+    {
+      "asset": "app.js",
+      "sha256": "7567bf6579d1ceccc0d79b3494e3d78340fc394cd526b26090942d7505b9938f"
+    },
+    {
+      "asset": "copy.js",
+      "sha256": "f98bcccb2640e31762ba5ce86fa6a2cbfdb96b144ffb1efbc4ff3dda49e7cece"
+    },
+    {
+      "asset": "solution.py",
+      "sha256": "f66bea0ffd8a6d0951fbee5abe59b13c9e363f0fa8e940ab9f3bfff7064fb999"
+    },
+    {
+      "asset": "python-code.js",
+      "sha256": "96ad37b0b4d31a40be5b82319b3615e010b41e590b1694bc080fc819c9f7415c"
+    },
+    {
+      "asset": "../common.js",
+      "sha256": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b"
+    },
+    {
+      "asset": "../style.css",
+      "sha256": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+    },
+    {
+      "asset": "../hard-first-ten/core.js",
+      "sha256": "342d7cbdf8c1e6f8527e6804ec286157e8fc63513a3c36c61d67c496bd08eeed"
+    },
+    {
+      "asset": "../hard-first-ten/lesson.js",
+      "sha256": "18365da600d3a774aec9afb96deb377fa269fe894424ed6cef41ad9f929c9731"
+    },
+    {
+      "asset": "../hard-first-ten/style.css",
+      "sha256": "09ebfd4c560ceee4b5c4e15442f37e21e8a9115525f20c74c1a34491af6a48b1"
+    }
+  ],
+  "enBridge": "01\n\nWhat are we finding?\nFirst meet a node and its next reference\n\nA linked list is a chain of node objects. Each node has val (a value) and next (a reference to the next node); a reference lets us find that same object. head refers to the first node. None means no node, so following links stops there. Arrows below mean references. #0, #1 and #2 are permanent object IDs, not values or current positions.\n\nhead → #0\n#0: val=1, next → #1\n#1: val=2, next → #2\n#2: val=3, next → None\n\nFor example, let a refer to #0 and b to #2. Assigning a.next = b changes #0’s arrow from #1 to #2; all three val fields stay unchanged. With head still at #0, following links now reads 1, 3. Object #1 still exists, but we need another reference to find it. Assigning items[0] = b changes a slot in a Python list; assigning a.next = b changes a link inside a node object.\n\nHow do we reverse each group of k nodes? Change next pointers, never swap node values. A suffix shorter than k must remain in its original order.\n\n1 ≤ k ≤ n ≤ 5000; node values 0…1000. The follow-up asks for O(1) auxiliary space.\n\nView on LeetCode ↗\nWork one example by hand\n\nFor [1,2,3,4,5], k=2 gives [2,1], [4,3], then unchanged 5. With k=3, only the first group reverses, yielding [3,2,1,4,5].\n\nRewire three concrete nodes by hand\n\nStart again from the diagram, with k=2. First follow next to count #0 and #1, confirming two nodes exist, and remember #2 just after this group. We want head → #1 → #0 → #2 → None, reading [2,1,3]; the remaining #2 is fewer than two nodes and must stay. Each step below keeps the original objects and values.\n\n① Save #0.next, which is #1, as nxt (the saved old successor). Then change #0.next from #1 to #2, attaching the node that will become the group tail to what follows. Now head → #0 → #2 → None; nxt still lets us find #1. Overwriting #0.next first and then following it would go to #2, skipping the still unprocessed #1.\n\n② Move to the saved #1. Save its old next=#2 before changing #1.next from #2 to #0. The chain #1 → #0 → #2 → None is ready, but head still refers to #0, so the entry still misses the new group head #1.\n\n③ Set the entry head to #1 so traversal starts at the new group head and reads [2,1,3]. Next count from #2: there is only #2, then None, so no link is changed. Reversing one leftover node looks unchanged; k=3 with five nodes exposes the rule more clearly: the final #3 → #4 → None must stay as it is. Reversing that partial group would incorrectly produce [3,2,1,5,4].\n\nA simple correct baseline\n\nHow could a familiar Python list help first? Below, nodes stores node references, not val fields. Reversing slices changes the order of references in that list; the later a.next = b assignments actually reconnect the nodes in that order. The function returns the first node object. LeetCode supplies ListNode with val and next fields; the return value is a node reference, not a Python list.\n\ndef baseline(head, k):\n    nodes = []\n    while head:\n        nodes.append(head)\n        head = head.next\n    for i in range(0, len(nodes) - k + 1, k):\n        nodes[i:i+k] = nodes[i:i+k][::-1]\n    for a, b in zip(nodes, nodes[1:]):\n        a.next = b\n    if nodes:\n        nodes[-1].next = None\n    return nodes[0] if nodes else None\n\nCollecting node objects and reversing groups takes O(n) time and O(n) space. It preserves identities but misses the O(1) follow-up. Local reversal only needs a predecessor, current node, and saved successor.",
+  "enDerive": "02\n\nWhy can we skip work?\n\nHow can we remove the nodes list of all references? Use the same three nodes: add dummy with dummy.next referring to #0. It is an artificial node before the group; its value is excluded from the answer and its diagram ID is −1. group_prev (the reference to the node before the group) starts at dummy. Both the first group and later groups can then change their entry through group_prev.next, without a separate branch for head.\n\nFor k=2, walk two next links from group_prev, through #0 to #1. Call the kth node kth, so kth=#1. If any of those k steps reaches None, keep the suffix and stop. Save group_next=kth.next=#2 (the node after the group), and set prev=#2, curr=#0. prev is the entry to the reversed fragment; with no nodes reversed yet, it starts at the preserved suffix. curr is the next node whose link we will change.\n\nFirst: nxt=curr.next=#1; set curr.next=prev, meaning #0.next=#2; advance to prev=#0, curr=#1. Second: save nxt=#2, set #1.next=#0, then advance to prev=#1, curr=#2. Now curr is group_next, so the group is reversed. Save old_head=group_prev.next=#0, then set group_prev.next=kth, meaning dummy.next=#1. Finally set group_prev=old_head=#0 so the next group also has a predecessor. Repeat this same process for later groups; return dummy.next as the new entry.\n\nDuring reversal, prev leads the reversed fragment and curr leads the unprocessed fragment; nxt saves the successor before rewiring. Intermediate states need not make every node reachable from head, so the view keeps all nodes and every next pointer visible. In readouts, −1 identifies dummy and ∅ means no node.\n\nNode reuse when merging lists",
+  "enQuiz": [
+    "Check this boundary again. An unchanged value sequence does not prove reversal; #0 and #1 must swap.",
+    "Check this boundary again. Only complete two-node groups reverse; #2 is not in a complete group.",
+    "Correct reasoning. The two 8s have equal values, but their objects swap positions; #2 stays last."
+  ],
+  "enFocus": {
+    "outline": "rgb(255, 180, 84) solid 3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "zhBridge": "01\n\n要找什么？\n先认识节点和 next\n\n链表是一串节点对象。每个节点有 val（数值）和 next（下一个节点的引用）；引用让我们找到同一个对象。head 是指向第一个节点的引用。None 表示没有节点，走到它就结束。图中的箭头表示引用，#0、#1、#2 是对象的永久编号，不是数值，也不是当前排列位置。\n\nhead → #0\n#0: val=1, next → #1\n#1: val=2, next → #2\n#2: val=3, next → None\n\n例如 a 指向 #0，b 指向 #2：a.next = b 会把 #0 的箭头从 #1 改到 #2；三个节点的 val 都不变。若 head 仍指向 #0，从它出发只能读到 1、3。#1 对象仍在，但需要另一个引用才能找到它。Python 列表 items[0] = b 改的是列表的一个槽位；a.next = b 改的是节点对象内部的链接。\n\n如何每 k 个节点反转一次？只能修改节点之间的 next，不能交换节点值。末尾不足 k 个节点必须保持原顺序。\n\n1 ≤ k ≤ n ≤ 5000；0 ≤ 节点值 ≤ 1000。进阶要求额外空间 O(1)。\n\nLeetCode 原题 ↗\n先手算一个例子\n\n[1,2,3,4,5]，k=2：前两组变成 [2,1] 和 [4,3]，剩下 5 保留。k=3 时只翻转第一组，得到 [3,2,1,4,5]。\n\n在三个节点上手动改线\n\n重新从上图开始，k=2。先沿 next 数出 #0、#1，确认有两个节点，再记住组后的 #2。目标是 head → #1 → #0 → #2 → None，读出的值为 [2,1,3]；#2 不足两个，必须保留。下面每步都保留原对象和数值。\n\n① 先保存 #0.next，即 #1，叫它 nxt（保存的旧后继）。再把 #0.next 从 #1 改为 #2，给即将成为组尾的 #0 接好后面的部分。此刻 head → #0 → #2 → None；我们仍能通过 nxt 找到 #1。若先覆盖 #0.next，再从它找下一步，就会走到 #2，跳过尚未反转的 #1。\n\n② 移到保存的 #1。先保存它原来的 next=#2，再把 #1.next 从 #2 改为 #0。现在 #1 → #0 → #2 → None 已经连好，但 head 仍指向 #0，所以尚未包含新组头 #1。\n\n③ 把入口 head 改为 #1，才能从新组头读到 [2,1,3]。接着从 #2 数下一组：只有 #2，再走就是 None，凑不齐两个，所以一条链接也不改。只有一个节点时“反转”看不出区别；用 k=3、五个节点检查会更明显：末尾 #3 → #4 → None 必须原样保留，若也翻转就会错误地得到 [3,2,1,5,4]。\n\n一个简单正确的基线\n\n如果先借助熟悉的 Python 列表呢？下面 nodes 存的是节点引用，不是 val。切片反转改变这些引用在列表里的顺序；随后 a.next = b 才按新顺序真正重连节点，最后返回第一个节点对象。LeetCode 提供 ListNode 类型，包含 val 和 next；返回值是节点引用，不是 Python 列表。\n\ndef baseline(head, k):\n    nodes = []\n    while head:\n        nodes.append(head)\n        head = head.next\n    for i in range(0, len(nodes) - k + 1, k):\n        nodes[i:i+k] = nodes[i:i+k][::-1]\n    for a, b in zip(nodes, nodes[1:]):\n        a.next = b\n    if nodes:\n        nodes[-1].next = None\n    return nodes[0] if nodes else None\n\n存下节点对象再反转，时间 O(n)、额外空间 O(n)，能保持身份但不满足 O(1) 进阶目标。局部反转只需保存前驱、当前节点和原后继。",
+  "zhDerive": "02\n\n为什么能省去工作？\n\n怎样省掉存放所有引用的 nodes 列表？沿用刚才的三个节点：增加 dummy，让 dummy.next 指向 #0。它是人为加的组前节点，值不参与答案，图中编号为 −1。group_prev（组前节点的引用）开始指向 dummy。这样第一组和后续组都能通过 group_prev.next 修改入口，而不用为 head 单独写分支。\n\nk=2 时，从 group_prev 沿 next 走两步，经过 #0 到 #1；把第 k 个节点叫 kth，所以 kth=#1。这 k 步中任一步走到 None，就保留末尾并结束。记下 group_next=kth.next=#2（组后节点），设置 prev=#2、curr=#0。prev 是反转片段的入口，最初还没有反转节点，所以先指向保留的组后部分；curr 是下一次要改线的节点。\n\n第一次：nxt=curr.next=#1，令 curr.next=prev，即 #0.next=#2，再推进 prev=#0、curr=#1。第二次：nxt=#2，令 #1.next=#0，再推进 prev=#1、curr=#2。现在 curr 就是 group_next，整组已反转。保存 old_head=group_prev.next=#0，再令 group_prev.next=kth，即 dummy.next=#1；最后 group_prev=old_head=#0，使下一组也有组前节点。以后每组重复同一过程；返回 dummy.next 就是新入口。\n\n反转中 prev 指向已反转片段，curr 指向尚未处理片段；nxt 保存本次改线前的后继。中间状态不一定能从 head 访问所有节点，图因此保留全部节点并显式列出每条 next。读数 −1 专指 dummy，∅ 代表没有节点。\n\n合并链表中的节点复用",
+  "zhQuiz": [
+    "再检查这个边界。 值序列一样不等于完成了节点反转；#0 与 #1 必须互换。",
+    "再检查这个边界。 只翻转完整的两节点组；#2 不属于完整组。",
+    "推理正确。 两个 8 的值相同，但节点对象必须交换位置；剩下 #2 不变。"
+  ],
+  "zhFocus": {
+    "outline": "rgb(255, 180, 84) solid 3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "parity": "canonical / offline mirror / embedded / displayed / clipboard / downloaded exact",
+  "styles": {
+    "vars": {
+      "--bg": "#0d1117",
+      "--text": "#e8edf4",
+      "--muted": "#9aa7b8",
+      "--panel": "#161b22",
+      "--panel2": "#1c2330",
+      "--accent": "#6ee7ff"
+    },
+    "disabled": {
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "0.4"
+    }
+  },
+  "fallback": [
+    {
+      "lang": "zh",
+      "status": "无法自动复制；请从下方文本框选择复制。",
+      "exactSelectedSource": true
+    },
+    {
+      "lang": "en",
+      "status": "Automatic copy unavailable; select the code in the text box below.",
+      "exactSelectedSource": true
+    }
+  ],
+  "offline": true
+}

@@ -1,0 +1,67 @@
+{
+  "cases": 465,
+  "transitions": 11378,
+  "freshPredictedFirstRewire": {
+    "message": [
+      "节点 #0 的 next 改为 #3；nxt 保存旧后继。",
+      "Node #0 now points to #3; nxt preserves the former successor."
+    ],
+    "code": "nxt = curr.next\ncurr.next = prev\nprev, curr = curr, nxt",
+    "links": [
+      3,
+      2,
+      3,
+      4,
+      null
+    ],
+    "values": [
+      7,
+      0,
+      7,
+      2,
+      9
+    ],
+    "head": 0,
+    "state": {
+      "group_prev": -1,
+      "kth": 2,
+      "group_next": 3,
+      "prev": 0,
+      "curr": 1,
+      "nxt": 1,
+      "changed": 0
+    }
+  },
+  "freshEndpoint": {
+    "message": [
+      "不足 k 个节点，停止。剩余指针原样保留。",
+      "Fewer than k nodes remain. Stop without changing the suffix."
+    ],
+    "code": "if kth is None: return dummy.next",
+    "links": [
+      3,
+      0,
+      1,
+      4,
+      null
+    ],
+    "values": [
+      7,
+      0,
+      7,
+      2,
+      9
+    ],
+    "head": 2,
+    "state": {
+      "group_prev": 0
+    },
+    "result": [
+      7,
+      0,
+      7,
+      2,
+      9
+    ]
+  }
+}

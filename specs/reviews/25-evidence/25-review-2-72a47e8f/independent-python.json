@@ -1,0 +1,33 @@
+{
+  "independentTernaryCases": 21324,
+  "freshValues": [
+    7,
+    0,
+    7,
+    2,
+    9
+  ],
+  "freshK": 3,
+  "freshActualIDs": [
+    2,
+    1,
+    0,
+    3,
+    4
+  ],
+  "freshActualValues": [
+    7,
+    0,
+    7,
+    2,
+    9
+  ],
+  "wrongPartialReversalIDs": [
+    2,
+    1,
+    0,
+    4,
+    3
+  ],
+  "sourceSHA256": "f66bea0ffd8a6d0951fbee5abe59b13c9e363f0fa8e940ab9f3bfff7064fb999"
+}
