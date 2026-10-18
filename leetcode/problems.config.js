@@ -507,6 +507,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time / O(1) auxiliary space"
   },
   {
+    "id": 124,
+    "title": {
+      "zh": "二叉树中的最大路径和",
+      "en": "Binary Tree Maximum Path Sum"
+    },
+    "desc": {
+      "zh": "区分向上延伸的单臂与在此结束的双臂，逐节点推导最大路径和。",
+      "en": "Separate an extendable arm from a completed path and derive the maximum sum node by node."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二叉树",
+        "en": "Binary tree"
+      },
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      }
+    ],
+    "path": "124/",
+    "leetcodeUrl": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+    "language": "Python",
+    "complexity": "O(n) time / O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
