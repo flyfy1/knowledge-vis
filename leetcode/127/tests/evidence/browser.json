@@ -1,0 +1,270 @@
+{
+  "status": "pass",
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "presets": 6,
+  "widths": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "200% CSS + 720px reflow",
+  "sourceParity": "display/copy/fallback/download match solution.py",
+  "errors": [],
+  "bad": [],
+  "cssBytes": 11830,
+  "focus": {
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrast": [
+    {
+      "f": "--text",
+      "b": "--bg",
+      "fg": "#e8edf4",
+      "bg": "#0d1117",
+      "ratio": 16.086987125379448
+    },
+    {
+      "f": "--text",
+      "b": "--panel",
+      "fg": "#e8edf4",
+      "bg": "#161b22",
+      "ratio": 14.704584598678618
+    },
+    {
+      "f": "--text",
+      "b": "--panel2",
+      "fg": "#e8edf4",
+      "bg": "#1c2330",
+      "ratio": 13.397069143240783
+    },
+    {
+      "f": "--muted",
+      "b": "--bg",
+      "fg": "#9aa7b8",
+      "bg": "#0d1117",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "f": "--muted",
+      "b": "--panel",
+      "fg": "#9aa7b8",
+      "bg": "#161b22",
+      "ratio": 7.078851579017443
+    },
+    {
+      "f": "--muted",
+      "b": "--panel2",
+      "fg": "#9aa7b8",
+      "bg": "#1c2330",
+      "ratio": 6.449407898769069
+    },
+    {
+      "f": "--accent",
+      "b": "--bg",
+      "fg": "#6ee7ff",
+      "bg": "#0d1117",
+      "ratio": 13.100679028115637
+    },
+    {
+      "f": "--accent",
+      "b": "--panel",
+      "fg": "#6ee7ff",
+      "bg": "#161b22",
+      "ratio": 11.974898815275662
+    },
+    {
+      "f": "--accent",
+      "b": "--panel2",
+      "fg": "#6ee7ff",
+      "bg": "#1c2330",
+      "ratio": 10.910104011097095
+    },
+    {
+      "f": "--accent2",
+      "b": "--bg",
+      "fg": "#ffb454",
+      "bg": "#0d1117",
+      "ratio": 10.731637051347173
+    },
+    {
+      "f": "--accent2",
+      "b": "--panel",
+      "fg": "#ffb454",
+      "bg": "#161b22",
+      "ratio": 9.809435643476732
+    },
+    {
+      "f": "--accent2",
+      "b": "--panel2",
+      "fg": "#ffb454",
+      "bg": "#1c2330",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "renderedContrast": [
+    {
+      "sel": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 12.615602281385614
+    },
+    {
+      "sel": ".hint",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(10, 14, 20)",
+      "opacity": "1",
+      "ratio": 12.89261537833187
+    },
+    {
+      "sel": ".word",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".btn:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 6.449407898769069
+    },
+    {
+      "sel": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": ".step-nav a.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "pre",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(9, 14, 22)",
+      "opacity": "1",
+      "ratio": 16.437295258072666
+    }
+  ],
+  "targetSizes": [
+    {
+      "label": "← LeetCode 知识集",
+      "width": 125.296875,
+      "height": 48
+    },
+    {
+      "label": "中",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "label": "EN",
+      "width": 49.0625,
+      "height": 48
+    },
+    {
+      "label": "官方题目 ↗",
+      "width": 84.171875,
+      "height": 48
+    },
+    {
+      "label": "1 · 数什么",
+      "width": 87.046875,
+      "height": 48
+    },
+    {
+      "label": "2 · 逐层搜索",
+      "width": 101.046875,
+      "height": 48
+    },
+    {
+      "label": "3 · 为什么正确",
+      "width": 115.046875,
+      "height": 48
+    },
+    {
+      "label": "4 · 先预测",
+      "width": 87.046875,
+      "height": 48
+    },
+    {
+      "label": "5 · 写成 Python",
+      "width": 123.125,
+      "height": 48
+    },
+    {
+      "label": "手算：aa → bb官方：hit → cog边界：终点未列出边界：终点孤立边界：单字母，起点已列出反例：必须横向一步",
+      "width": 245,
+      "height": 48
+    },
+    {
+      "label": "← 后退一次取出",
+      "width": 148.171875,
+      "height": 48
+    },
+    {
+      "label": "取出下一个词 →",
+      "width": 148.171875,
+      "height": 48
+    },
+    {
+      "label": "重置实验",
+      "width": 96.015625,
+      "height": 48
+    },
+    {
+      "label": "到最终结果",
+      "width": 112.015625,
+      "height": 48
+    },
+    {
+      "label": "检查预测并揭晓",
+      "width": 144.015625,
+      "height": 48
+    },
+    {
+      "label": "复制 Python",
+      "width": 121.234375,
+      "height": 48
+    },
+    {
+      "label": "#126：最短长度与保留所有最短路径",
+      "width": 261.796875,
+      "height": 48
+    },
+    {
+      "label": "#51：回溯搜索如何撤销一次选择",
+      "width": 236.640625,
+      "height": 48
+    }
+  ],
+  "checks": [
+    "all snapshots forward/back/reset/end/range",
+    "all prediction choices/reveal/change",
+    "locale preserves trace/choice/reveal/disclosure",
+    "clipboard success/denial",
+    "keyboard Enter/focus",
+    "local href anchors",
+    "blocked storage/offline interactions",
+    "forced colors/reduced motion"
+  ]
+}
