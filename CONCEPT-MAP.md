@@ -586,3 +586,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Rolling-row dependency invariant | `leetcode/174/#step4` | Reuse a row while preserving right and down successor needs. |
 
 <!-- /leetcode-174-campaign -->
+
+
+<!-- leetcode-214-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Longest palindromic prefix | `leetcode/214/#step1` | Reduce prepend-only palindrome construction to an equal prefix and suffix. |
+| KMP prefix function fallback | `leetcode/214/#step2` | Retain matched borders and fall back without rechecking known characters. |
+
+<!-- /leetcode-214-campaign -->
