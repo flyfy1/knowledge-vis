@@ -566,3 +566,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Minimum-preserving invariant | `leetcode/154/#step4` | Keep at least one global minimum while strictly shrinking the interval. |
 
 <!-- /leetcode-154-campaign -->
+
+
+<!-- leetcode-37-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Sudoku backtracking and restoration | `leetcode/37/#step1` | Cache used digits and restore the board and all three constraint sets after failure. |
+| Local validity versus completion | `leetcode/37/#step0` | Hand-calculate a legal move that leaves the next cell without a candidate. |
+
+<!-- /leetcode-37-campaign -->
