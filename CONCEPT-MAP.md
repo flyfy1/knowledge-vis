@@ -606,3 +606,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Group boundaries | `leetcode/185/#step2` | Restart ranking for each department ID. |
 
 <!-- /leetcode-185-campaign -->
+
+
+<!-- leetcode-188-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| budget-indexed stock dynamic programming | `leetcode/188/#step1` | Derive holding and flat cash maxima for each transaction budget. |
+| daily cash invariant | `leetcode/188/#step4` | Prove old-prefix maxima cover every legal trade history. |
+
+<!-- /leetcode-188-campaign -->
