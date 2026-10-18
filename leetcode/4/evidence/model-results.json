@@ -1,0 +1,9 @@
+{
+  "cases": 4899,
+  "frames": 7366,
+  "directions": [
+    "increase",
+    "decrease"
+  ],
+  "checks": "independent sorted-rank oracle, legal cuts, retained valid cut, both interval updates, immutable inputs"
+}

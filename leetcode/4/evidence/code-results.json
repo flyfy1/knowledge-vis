@@ -1,0 +1,99 @@
+{
+  "actualCanonicalPython": true,
+  "checks": 5507,
+  "freshResults": [
+    {
+      "input": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "expected": 3.0,
+      "actual": 3.0
+    },
+    {
+      "input": [
+        [
+          1,
+          2
+        ],
+        [
+          10,
+          11,
+          12,
+          13
+        ]
+      ],
+      "expected": 10.5,
+      "actual": 10.5
+    },
+    {
+      "input": [
+        [
+          10,
+          11
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "expected": 3.0,
+      "actual": 3.0
+    },
+    {
+      "input": [
+        [],
+        [
+          1000000
+        ]
+      ],
+      "expected": 1000000.0,
+      "actual": 1000000.0
+    },
+    {
+      "input": [
+        [
+          -1000000
+        ],
+        []
+      ],
+      "expected": -1000000.0,
+      "actual": -1000000.0
+    },
+    {
+      "input": [
+        [
+          -1000000
+        ],
+        [
+          1000000
+        ]
+      ],
+      "expected": 0.0,
+      "actual": 0.0
+    },
+    {
+      "input": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "expected": 0.0,
+      "actual": 0.0
+    }
+  ],
+  "inputMutation": "none in every case",
+  "oracle": "independently sorted combined ranks",
+  "unsupportedBothEmpty": "excluded as official precondition"
+}
