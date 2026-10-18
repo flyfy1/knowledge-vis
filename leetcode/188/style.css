@@ -1,0 +1,15 @@
+/* Local accessibility roles reuse the approved shared palette. */
+.btn,select,.lang-toggle button,.step-nav a,.solution-actions a,summary{min-height:48px}
+.btn,select{border-color:var(--muted)}
+.btn:disabled{opacity:1;color:var(--muted);background:var(--panel2);border-color:var(--muted)}
+.step-nav{background:var(--bg);backdrop-filter:none}
+.step-nav a{display:inline-flex;align-items:center}
+.lang-toggle{overflow:visible}.lang-toggle button:first-child{border-radius:999px 0 0 999px}.lang-toggle button:last-child{border-radius:0 999px 999px 0}
+.price-list{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.price{padding:8px 12px;border:1px solid var(--line);background:var(--panel2);min-width:68px;text-align:center}.price small{display:block;color:var(--muted)}.price.current{border:2px solid var(--accent);padding:7px 11px}.price b{font-size:23px}.price .marker{font-size:12px}
+.hand-prices{font-size:clamp(24px,6vw,40px);color:var(--accent);margin:24px 0;font-variant-numeric:tabular-nums}
+.transition-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.state-card{background:var(--panel2);padding:16px;border-left:2px solid var(--accent)}.state-card h3{margin:0 0 8px}.state-card p{margin:4px 0;overflow-wrap:anywhere}.state-card .result{font-size:23px;color:var(--accent2)}.state-card .decision{font-weight:600}
+#ledgerWrap{margin-top:12px}#ledgerWrap table{min-width:410px}.active-row{background:var(--panel2);color:var(--accent)}
+.prediction-options label{min-height:48px;padding:8px;border:1px solid var(--line);margin:8px 0}.prediction-options label:has(input:checked){border-color:var(--accent2)}
+input[type=radio]{min-width:20px;min-height:20px}input[type=range]{display:block;min-height:48px}textarea{display:block;width:100%;max-width:100%;color:var(--text);background:var(--panel2);border:1px solid var(--muted);font:14px/1.75 ui-monospace,monospace}textarea:focus-visible,.table-wrap:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}summary{display:list-item;padding-block:12px}.solution-actions a{display:inline-flex;align-items:center}.stage label{display:block}select{max-width:100%;white-space:normal}.step-nav-inner{padding-block:10px}.step{scroll-margin-top:90px}
+@media(max-width:560px){.transition-grid{grid-template-columns:1fr}.stage{padding:14px}.state-card{padding:12px}.price{min-width:64px}.controls .btn{flex:1 1 130px}}
+@media(forced-colors:active){.price.current,.prediction-options label:has(input:checked){outline:2px solid Highlight}.state-card{border:1px solid CanvasText}}
