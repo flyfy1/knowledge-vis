@@ -69,18 +69,27 @@ This six-dimension rubric applies prospectively. The historical seven-outcome
 [2916 rubric](reviews/leetcode-2916-rubric.md) and its scores remain unchanged;
 do not retroactively rescore it or compare the totals as identical instruments.
 
-### JavaScript-specific interpretation approved 2026-10-18
+### Canonical-language interpretation updated 2026-10-18
 
-For #2630, #2650, #2675, #2691, #2756, and #2759 only, interpret the fifth
-dimension as transfer to the original JavaScript implementation and its cost,
-plus an explicitly labeled Python conceptual comparison. Map a visible
-transition to JavaScript, test an independently chosen case against the official
-interface, and explain where Python differs. Verify source/display/download
-parity for both files. Required runtime behavior (including async ordering and
-identity where applicable) belongs to correctness, not an optional note.
-The weights, minimum scores, and zero-open-findings rule remain identical.
-Freeze this interpretation before the cold walkthrough; do not rescore or alter
-historical reports.
+Prefer a faithful official Python interface, then supported TypeScript, then the
+required native language. Independently verify each non-Python language contract
+and its evidence after the cold walkthrough. The fifth dimension becomes transfer
+to that canonical executable code and its actual cost; the weights and thresholds
+are unchanged. Use an independent fresh case in the original runtime, not merely
+a browser trace that imitates it. Verify displayed/copied/downloaded source parity.
+For TypeScript, compile and run the emitted JavaScript; for SQL, execute query
+fixtures and check duplicate, null and ordering behavior where applicable.
+
+For the six JavaScript-category problems, also check the explicitly labeled Python
+conceptual comparison and its limits. Runtime correctness such as identity and
+async ordering is a required criterion, not an optional note. Freeze the applicable
+interpretation before the cold walkthrough; never rescore historical reports.
+
+Detailed teaching is required: reconstruct one worked example step by step,
+explain the baseline's repeated work and every optimization bridge, and test a
+fresh case and a tempting wrong rule. A correct result with an unexplained state
+transition remains a required fix. No batch average substitutes for per-lesson
+independent acceptance.
 
 ## Per-lesson status and batch coverage
 
@@ -148,7 +157,9 @@ The loop ends when required fixes are closed, not when two rounds are used up.
 Before publishing a new or materially revised lesson, require its independent
 acceptance and the explainer's computational/browser checks. After authorized
 publication, verify collection/lesson routes, changed asset hashes, and relevant
-served interactions; preserve the deployment rollback boundary.
+served interactions and preserve unrelated production content. For the current
+Hard campaign, the owner explicitly waived old-content backups on 2026-10-18;
+retain review/release receipts without saving a previous served copy.
 
 Report reviewer/run, candidate revision, review outcome, and deployed revision
 separately. Attribute only work actually performed. If an exact model identifier
