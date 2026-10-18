@@ -1,22 +1,36 @@
 # Explainer specifications
 
-Use these repository-local specifications when creating or revising lessons.
-They record reusable authoring decisions and verified lessons from implementation.
+Start with [WORKFLOW](../WORKFLOW.md) for production roles and independent
+review, then apply the documents below. These specifications do not relax that
+workflow. Acceptance evidence and current deployment are separate statuses.
 
-- [LeetCode explainers](leetcode-explainers.md): the teaching process, Python
-  policy, collection registration, and mathematical and browser acceptance checks.
-- [Site UI and bilingual policy](../UI-I18N-SPEC.md): applies to every lesson.
-- [Concept map](../CONCEPT-MAP.md): register concepts and link to exact steps.
-- [Independent novice-review rubric](reviews/leetcode-2916-rubric.md): Astra's
-  outcome-based acceptance criteria. [2916 iteration record](reviews/leetcode-2916-iterations.md)
-  links the independent findings to implementation changes.
+## Current requirements
+
+- [Site UI and bilingual policy](../UI-I18N-SPEC.md): common presentation,
+  language behavior, explanation clarity, and interaction requirements.
+- [LeetCode explainers](leetcode-explainers.md): teaching sequence, Python,
+  collection registration, and computational/browser checks.
+- [Review and release gates](leetcode-review-gates.md): required independent
+  reviewer, cold walkthrough, six-dimension rubric, per-lesson status, revision
+  coverage, finding closure, and release evidence. Self-review is not acceptance.
+- [Hard-problem traces](leetcode-hard-traces.md): frame timing, visual semantics,
+  identity, dependencies, undo, bounded traces, and algorithm-specific cases.
+- [Concept map](../CONCEPT-MAP.md): register concepts and exact step links.
 
 Each problem keeps its own `BRIEF.md` alongside its implementation. Generalize
-reusable findings into these specifications; keep example-specific calculations
-and review evidence in the problem folder. Do not put credentials or private
-machine configuration here.
-- [Hard-problem traces](leetcode-hard-traces.md): frame timing, visual semantics,
-  node identity, DP dependencies, undo state, bounded traces, and the first-ten
-  mechanism-specific regression cases.
-- [First-ten review](reviews/leetcode-first-ten-review.md): two self-review
-  iterations, actual findings and fixes, and verification evidence.
+reusable requirements here; keep problem-specific examples and observed evidence
+in briefs and review reports. Do not put credentials or private configuration here.
+
+## Historical evidence and outstanding review
+
+- [2916 rubric](reviews/leetcode-2916-rubric.md) and
+  [iteration record](reviews/leetcode-2916-iterations.md): independent review
+  of specified 2916 revisions under its original seven-outcome rubric. Preserve
+  those frozen criteria and results; they do not certify other lessons.
+- [First-ten report](reviews/leetcode-first-ten-review.md): two author self-review
+  iterations plus computational and public-browser evidence. All ten lessons'
+  independent teaching reviews are **pending**, as recorded in the
+  [current gate specification](leetcode-review-gates.md#existing-first-ten-batch).
+
+A specification change documents the required process; it is not itself evidence
+that existing pages have completed that process.

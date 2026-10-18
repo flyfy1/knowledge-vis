@@ -16,7 +16,7 @@
 - **Alberto（Muse）是脑 + 监工**：写任务书/BRIEF、拆单、盯进度、裁决评审分歧、执行部署与 GitHub 同步、向 Yangyu 汇报。不再默认亲自或派 Claude 子 Agent 做实现与复核检查。
 - **交叉评审原则**：实现与评审必须是不同的 run；条件允许时换模型系评审（例：Claude 系实现 → Codex 评审，或反之），让盲区不重合。2026-10-17 实证：波 1 六处修复经 Claude 侧 111 项实测全过，Codex 交叉评审又在 freqresp 逮出 3 条组合路径必须级。
 - **已在跑的任务不打断**：新规矩只管新派单。
-- **提交归因**：每个 commit 写明 `Built-By: <执行方 + 精确模型>` 与 `Verified-By: Alberto (Muse Wonder)`，供事后交叉评估各模型的工作。
+- **提交归因**：每个 commit 如实写明 `Built-By: <执行方 + 精确模型>` 与 `Verified-By: <实际检查者 + 检查范围>`，供事后交叉评估各模型的工作。精确模型不可得时明确标记 unavailable；独立评审未完成时标记 pending，自查必须标明 self-check。只有 Alberto 实际审核后才能署名 Alberto，不得预填他人背书。
 
 ## 质量红线（摘要，细则以 UI-I18N-SPEC.md 为准）
 

@@ -18,6 +18,15 @@ that implementation as Python execution or claim a LeetCode acceptance without
 an actual submission result. UI and prose follow `../UI-I18N-SPEC.md` in both
 Chinese and English, with the shared `knowledge-lang` preference.
 
+## Review authority
+
+Follow [WORKFLOW](../WORKFLOW.md) and the mandatory
+[review and release gates](leetcode-review-gates.md). Author self-checks,
+independent oracles, independent teaching review, and public verification are
+separate evidence. Self-review never substitutes for independent acceptance.
+Use the gate document for reviewer independence, six-dimension scoring,
+per-lesson coverage, revision scope, and required-finding closure.
+
 ## Before writing the page
 
 1. Open the official problem. Verify the definition, examples, constraints,
@@ -116,15 +125,21 @@ diagrams, readouts and Python. Keep English causally equivalent to Chinese.
 
 ## Acceptance checks
 
-For an independent teaching review, use the outcome-based
-[novice rubric](reviews/leetcode-2916-rubric.md). Freeze its criteria before the
-reviewer reads the implementation; preserve per-round findings and responses.
+New lesson reviews use the six-dimension rubric and evidence requirements in
+[review and release gates](leetcode-review-gates.md). Freeze the criteria before
+the reviewer's cold walkthrough; retain findings, fixes, and reviewer closure.
+The [2916 rubric](reviews/leetcode-2916-rubric.md) remains the historical record
+for that lesson, not an implicit acceptance of later batches.
 
 First walk the lesson as a new reader without using the brief as a decoder.
 For every experiment, explain what the interaction made visible. If that is
 unclear, revise it before checking numeric details.
 
-Then verify:
+The author first performs the checks below. The independent reviewer then
+verifies the relevant evidence and independently chosen cases; running the same
+test command in the author's session does not establish review independence.
+
+Verify:
 
 1. Python against the baseline on exhaustive small inputs and seeded random
    inputs. Use relevant closed-form large cases and the maximum constraint.
@@ -138,7 +153,8 @@ Then verify:
    Wait for the experiment's initial readout to be populated before operating
    it; a static button's presence alone does not establish initialization.
 5. The exact downloaded Python source equals the displayed source.
-6. After publication, check the real collection, problem page and asset hashes.
+6. Require independent acceptance before publishing new or materially revised
+   lessons. After publication, check the real collection, problem page and asset hashes.
    A Git push alone is not deployment evidence. Use the current deployment route
    and preserve unrelated files and a rollback copy of changed served files.
 

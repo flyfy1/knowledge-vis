@@ -1,7 +1,8 @@
 # Hard-problem visualization and trace specification
 
-Status: implemented and reviewed in the first ten numeric-ID Hard lessons,
-2026-10-17. Complements [the explainer contract](leetcode-explainers.md) and
+Status: derived from implementation and author self-review of the first ten
+numeric-ID Hard lessons on 2026-10-17. Independent teaching review remains
+pending. Review gates clarified 2026-10-18. Complements [the explainer contract](leetcode-explainers.md) and
 [site UI policy](../UI-I18N-SPEC.md). Review evidence is in
 [the batch review](reviews/leetcode-first-ten-review.md).
 
@@ -103,9 +104,11 @@ exponential search. Distinguish asymptotic proof from measured runtime.
 
 ## Acceptance gates
 
-1. Freeze criteria, walk the lesson before using its BRIEF as a decoder, then
-   review math and source. Preserve findings and exact fixes in two rounds.
-   Label self-review versus independent review; do not invent scores.
+1. Apply the mandatory [review and release gates](leetcode-review-gates.md).
+   Freeze criteria, run a separate review in fresh context, and walk each lesson
+   before reading its BRIEF or source. Self-checks cannot satisfy this gate.
+   Preserve finding IDs, fix revisions, and reviewer closure; continue until
+   required fixes are closed rather than stopping at a fixed number of rounds.
 2. Use independent oracles, exhaustive small inputs where feasible, seeded
    random inputs, official examples, closed-form maxima, and mutation/identity
    tests. Check intermediate invariants, not only final answers.
@@ -116,7 +119,8 @@ exponential search. Distinguish asymptotic proof from measured runtime.
    states, not only document overflow. Cover a star dependency, changed pointer,
    overfull word count, Sudoku undo, duplicate stop, and positive/zero water.
 5. Verify all internal links and deep targets. Bump changed asset references.
-   After authorized publication, verify candidate bytes on the served origin
+   Independent acceptance must precede publication of new or materially revised
+   lessons. After authorized publication, verify candidate bytes on the served origin
    and repeat browser checks there. Git push alone is not deployment evidence.
 6. Record remaining evidence limits: computational and browser checks are not
    actual novice teach-back, an independent teaching audit, or an accepted
