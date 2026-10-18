@@ -228,12 +228,12 @@ window.LESSON_COPY = {
     "Sorting costs O((m+n) log(m+n)) worst-case time and O(m+n) space. Even linear merging misses the required bound. Only the boundaries around the middle are needed."
   ],
   "derive": [
-    "先把较短数组叫 a。切口 i 表示从 a 取多少个数到左边；j=half−i，half=(m+n+1)//2，保证左半边恰好多一个或与右边一样多。两数组内部已有序，所以只需检查 aL≤bR 和 bL≤aR。",
-    "Call the shorter array a. Cut i puts i values of a on the left; j=half−i with half=(m+n+1)//2 gives the required left size. Each array is already sorted, so only aL≤bR and bL≤aR need checking."
+    "把刚才的数量推广：m、n 是 a、b 的长度；half=(m+n+1)//2 是左组需要的数量（// 为整数除法）。奇数时左组多 1 个，偶数时两组一样多。i 是 a 取到左边的数量，j=half−i 是 b 取到左边的数量，因此 i+j=half。aL/aR 是 a 的最后左值/最先右值，bL/bR 对 b 同理。数组内部有序，只需两个跨行比较都成立，就能保证所有左值≤所有右值。",
+    "Generalize those counts: m and n are the lengths of a and b; half=(m+n+1)//2 is the required left count (// is integer division). The left gets one extra value for odd size, and equal size for even. i counts values taken from a, and j=half−i counts those from b, so i+j=half. aL/aR are a’s last-left/first-right values; bL/bR mean the same for b. Sorted rows already handle within-row ordering; both cross-row checks establish every left value≤every right value."
   ],
   "proof": [
-    "若 aL>bR，增大 i 只会让 aL 不减、bR 不增，故排除 i 及其右侧。若 bL>aR，则反向排除左侧。空侧边界用 −∞ 或 +∞，让同一比较仍成立。只在较短数组搜索保证 j 始终合法。",
-    "If aL>bR, increasing i cannot lower aL or raise bR, so discard i and larger cuts. If bL>aR, discard smaller cuts instead. Empty-side boundaries use −∞ or +∞. Searching the shorter array keeps j within bounds."
+    "用 lo、hi 记录 a 中尚未排除的切口数量范围，开始为 [0,m]。每次试中点 i=(lo+hi)//2。若 aL>bR，刚才 10>3 的例子说明当前及更大切口全失败，所以 hi=i−1；若 bL>aR，3>2 的例子说明当前及更小切口全失败，所以 lo=i+1。每次失败都至少丢掉一半候选，有限范围最终会遇到合法切口。合法划分存在：把合并有序序列的前 half 个数分给左组，再数它们各来自哪个数组即可；算法不需要真的合并。",
+    "Let lo and hi bound the remaining candidate counts in a, initially [0,m]. Test their midpoint i=(lo+hi)//2. If aL>bR, the 10>3 example shows the current and all larger cuts fail, so hi=i−1. If bL>aR, the 3>2 example shows the current and all smaller cuts fail, so lo=i+1. Each failure removes at least half the candidates; this finite search reaches a valid cut. One exists: imagine taking the first half values of the combined sorted order and counting how many came from each array. The algorithm does not actually merge them."
   ],
   "invariant": [
     "每次候选都满足 i+j=half；合法切口仍在 [lo,hi]。一旦交叉比较都成立，奇数长度取 max(aL,bL)，偶数长度再与 min(aR,bR) 平均。",
@@ -294,6 +294,46 @@ window.LESSON_COPY = {
   "introducedLink": [
     "堆如何维护最小候选",
     "How a heap maintains the smallest candidate"
+  ],
+  "partitionTitle": [
+    "先在同一个小例子上画切口",
+    "First draw cuts in the same tiny example"
+  ],
+  "partitionHand": [
+    "这一步要回答：只划分左右两组，能否找到中间值？仍用 [1,3] 与 [2]，把较短的数组改叫 a=[2]，另一个叫 b=[1,3]；只是换名字，没有移动或修改输入中的数。三张写着 1、2、3 的数卡中，中间是第 2 张，所以我们要让左组放 2 个数，右组放 1 个数，而且左组每个数都不大于右组每个数。",
+    "Can two groups locate the middle without merging? Keep [1,3] and [2], but call the shorter array a=[2] and the other b=[1,3]. This only renames the arrays; no input values move or change. Imagine three numbered cards, 1, 2, 3: the middle is card number 2. Put two values on the left and one on the right, with every left value at most every right value."
+  ],
+  "partitionCut": [
+    "用竖线表示切口：a=[2 | ]，b=[1 | 3]。左组是 [2,1]，右组是 [3]。左组内部不必重新排序：2≤3 且 1≤3，因此左组确实占了合并顺序中的前两个位置。它的最大值 max(2,1)=2 就是第 2 个数，即中位数。切口位置是数量：i=1 表示 a 有 1 个数在左，j=1 表示 b 有 1 个数在左；它们不是被选中的元素下标。",
+    "Draw a vertical bar for each cut: a=[2 | ], b=[1 | 3]. The left group is [2,1]; the right group is [3]. We need not sort the left group: 2≤3 and 1≤3, so it occupies the first two positions of the combined order. Its maximum, max(2,1)=2, is therefore the second value and the median. Cut positions count values: i=1 takes one value from a, and j=1 takes one from b. They are not selected element indices."
+  ],
+  "boundaryHand": [
+    "给切口旁的数起名字：aL（代码 al）是 a 左边最后一个数，这里为 2；aR（ar）是 a 右边第一个数，这里不存在；bL（bl）是 b 左边最后一个数 1；bR（br）是 b 右边第一个数 3。每行内部已有序，可能出错的只剩跨行的 aL≤bR 与 bL≤aR。空右边没有数会比左边更小，所以把缺失的右边界记作 +∞，使比较自然通过；空左边同理记作 −∞。无穷只是比较用的占位值，不是插入数组的数。本例四边界为 (2,+∞,1,3)。",
+    "Name the values beside the cuts: aL (al in code) is the last value on a’s left, here 2; aR (ar) is the first on a’s right, absent here. bL (bl) is the last on b’s left, 1; bR (br) is the first on b’s right, 3. Each row already orders its own left before its right. Only the cross-row checks aL≤bR and bL≤aR remain. An empty right side has no value smaller than the left, so use +∞ for its missing boundary to let the check pass. Use −∞ for a missing left boundary. These are comparison placeholders, not inserted array values. Here the four boundaries are (2,+∞,1,3)."
+  ],
+  "increaseHand": [
+    "为什么要增大切口？仍用 a=[2]，b=[1,3]，先试 a=[ | 2]，b=[1,3 | ]：i=0、j=2，左组 [1,3]，右组 [2]。bL=3>aR=2，左边的 3 越过了右边的 2。让 a 多取一个、b 少取一个，得到刚才合法的 i=1、j=1。反而减小 i 会让 aR 不增、bL 不减，3>2 的问题不会修好；本例 i=0 已到端点，甚至无处再减。一般可排除当前 i 及所有更小切口。",
+    "Why increase a cut? On the same a=[2], b=[1,3], first try a=[ | 2], b=[1,3 | ]: i=0, j=2 gives left [1,3], right [2]. bL=3>aR=2: a left value has crossed a smaller right value. Take one more from a and one fewer from b to reach the valid i=1, j=1 above. Decreasing i instead cannot raise aR or lower bL, so it cannot repair 3>2; here i=0 is already the endpoint. In general discard the current i and every smaller cut."
+  ],
+  "decreaseHand": [
+    "反方向也要亲算：换成 a=[10,11]，b=[1,2,3]，左组要 3 个数。先试 a=[10 | 11]，b=[1,2 | 3]，i=1、j=2，四边界 (10,11,2,3)。aL=10>bR=3。诱人的错误是继续增大 i：i=2、j=1 会得到 a=[10,11 | ]，b=[1 | 2,3]，变成 11>2，更糟了。因为 aL 不会降低，bR 不会升高，所有更大的 i 都不能修复。排除 i≥1，试 i=0、j=3：左组 [1,2,3]，右组 [10,11]，边界 (−∞,10,3,+∞)，答案为 3。",
+    "Calculate the reverse direction too: change to a=[10,11], b=[1,2,3]. We need three values on the left. Try a=[10 | 11], b=[1,2 | 3], with i=1, j=2 and boundaries (10,11,2,3). Now aL=10>bR=3. A tempting mistake is to increase i again: i=2, j=1 gives a=[10,11 | ], b=[1 | 2,3], making the violation 11>2 worse. aL cannot fall and bR cannot rise, so every larger i also fails. Discard i≥1 and try i=0, j=3: left [1,2,3], right [10,11], boundaries (−∞,10,3,+∞), median 3."
+  ],
+  "evenHand": [
+    "偶数为什么要两侧？回到手算过的 a=[1,2]，b=[3,4]，合法划分是 a=[1,2 | ]，b=[ | 3,4]。左组 [1,2] 与右组 [3,4] 各 2 个；左边最大值 2 占第 2 位，右边最小值 3 占第 3 位，中位数为 (2+3)/2=2.5。若 a=[]、b=[2,3]，切成 a=[ | ]、b=[2 | 3]，边界 (−∞,+∞,2,3)，同样得到 2.5。",
+    "Why use both sides for even size? Return to a=[1,2], b=[3,4] from the hand calculation. A valid split is a=[1,2 | ], b=[ | 3,4]. Left [1,2] and right [3,4] each hold two values. The left maximum 2 is second, and the right minimum 3 is third, so the median is (2+3)/2=2.5. For a=[], b=[2,3], cut a=[ | ], b=[2 | 3]; boundaries (−∞,+∞,2,3) give 2.5 by the same rule."
+  ],
+  "formulaTitle": [
+    "把刚才的数量写成通用规则",
+    "Turn those counts into a general rule"
+  ],
+  "legality": [
+    "为什么只搜索较短数组？设它长度为 m，另一个长度为 n，m≤n。需要的左组大小 half 至少是 m，至多是 n。因此即使 a 一个也不取，b 也装得下 half 个；即使 a 全取，b 还需 half−m 个，也不会是负数。于是 i 从 0 到 m 时，j=half−i 总在 0 到 n 之间。不先选短数组，这个保证就没有了。",
+    "Why search the shorter array? Let its length be m and the other length n, with m≤n. The required left count half is at least m and at most n. If a contributes nothing, b can supply all half values. If a contributes all m values, b must supply half−m, which is still nonnegative. Thus every i from 0 to m gives j=half−i between 0 and n. Choosing the shorter array supplies this guarantee."
+  ],
+  "preset4": [
+    "减小 i：排除错误方向",
+    "Decrease i: exclude the wrong direction"
   ]
 };
 window.LESSON = {
@@ -325,12 +365,12 @@ window.LESSON = {
     "Sorting costs O((m+n) log(m+n)) worst-case time and O(m+n) space. Even linear merging misses the required bound. Only the boundaries around the middle are needed."
   ],
   "derive": [
-    "先把较短数组叫 a。切口 i 表示从 a 取多少个数到左边；j=half−i，half=(m+n+1)//2，保证左半边恰好多一个或与右边一样多。两数组内部已有序，所以只需检查 aL≤bR 和 bL≤aR。",
-    "Call the shorter array a. Cut i puts i values of a on the left; j=half−i with half=(m+n+1)//2 gives the required left size. Each array is already sorted, so only aL≤bR and bL≤aR need checking."
+    "把刚才的数量推广：m、n 是 a、b 的长度；half=(m+n+1)//2 是左组需要的数量（// 为整数除法）。奇数时左组多 1 个，偶数时两组一样多。i 是 a 取到左边的数量，j=half−i 是 b 取到左边的数量，因此 i+j=half。aL/aR 是 a 的最后左值/最先右值，bL/bR 对 b 同理。数组内部有序，只需两个跨行比较都成立，就能保证所有左值≤所有右值。",
+    "Generalize those counts: m and n are the lengths of a and b; half=(m+n+1)//2 is the required left count (// is integer division). The left gets one extra value for odd size, and equal size for even. i counts values taken from a, and j=half−i counts those from b, so i+j=half. aL/aR are a’s last-left/first-right values; bL/bR mean the same for b. Sorted rows already handle within-row ordering; both cross-row checks establish every left value≤every right value."
   ],
   "proof": [
-    "若 aL>bR，增大 i 只会让 aL 不减、bR 不增，故排除 i 及其右侧。若 bL>aR，则反向排除左侧。空侧边界用 −∞ 或 +∞，让同一比较仍成立。只在较短数组搜索保证 j 始终合法。",
-    "If aL>bR, increasing i cannot lower aL or raise bR, so discard i and larger cuts. If bL>aR, discard smaller cuts instead. Empty-side boundaries use −∞ or +∞. Searching the shorter array keeps j within bounds."
+    "用 lo、hi 记录 a 中尚未排除的切口数量范围，开始为 [0,m]。每次试中点 i=(lo+hi)//2。若 aL>bR，刚才 10>3 的例子说明当前及更大切口全失败，所以 hi=i−1；若 bL>aR，3>2 的例子说明当前及更小切口全失败，所以 lo=i+1。每次失败都至少丢掉一半候选，有限范围最终会遇到合法切口。合法划分存在：把合并有序序列的前 half 个数分给左组，再数它们各来自哪个数组即可；算法不需要真的合并。",
+    "Let lo and hi bound the remaining candidate counts in a, initially [0,m]. Test their midpoint i=(lo+hi)//2. If aL>bR, the 10>3 example shows the current and all larger cuts fail, so hi=i−1. If bL>aR, the 3>2 example shows the current and all smaller cuts fail, so lo=i+1. Each failure removes at least half the candidates; this finite search reaches a valid cut. One exists: imagine taking the first half values of the combined sorted order and counting how many came from each array. The algorithm does not actually merge them."
   ],
   "invariant": [
     "每次候选都满足 i+j=half；合法切口仍在 [lo,hi]。一旦交叉比较都成立，奇数长度取 max(aL,bL)，偶数长度再与 min(aR,bR) 平均。",
@@ -353,10 +393,31 @@ window.LESSON = {
       ]
     ],
     [
-      "al, ar, bl, br",
+      "al (aL)",
       [
-        "切口相邻值，空侧用无穷边界",
-        "Values adjacent to cuts, with infinite empty-side sentinels"
+        "a 左边最后一个值；空时 −∞",
+        "Last value on a’s left; −∞ if empty"
+      ]
+    ],
+    [
+      "ar (aR)",
+      [
+        "a 右边第一个值；空时 +∞",
+        "First value on a’s right; +∞ if empty"
+      ]
+    ],
+    [
+      "bl (bL)",
+      [
+        "b 左边最后一个值；空时 −∞",
+        "Last value on b’s left; −∞ if empty"
+      ]
+    ],
+    [
+      "br (bR)",
+      [
+        "b 右边第一个值；空时 +∞",
+        "First value on b’s right; +∞ if empty"
       ]
     ],
     [
@@ -431,6 +492,23 @@ window.LESSON = {
           -2,
           -1,
           4
+        ]
+      ]
+    },
+    {
+      "label": [
+        "减小 i：排除错误方向",
+        "Decrease i: exclude the wrong direction"
+      ],
+      "input": [
+        [
+          10,
+          11
+        ],
+        [
+          1,
+          2,
+          3
         ]
       ]
     }

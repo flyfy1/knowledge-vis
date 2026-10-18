@@ -27,8 +27,8 @@ How can we find the median without merging? Given two sorted arrays, return the 
 
 | Name | First introduction | Definition | Prerequisites |
 | --- | --- | --- | --- |
-| `i, j` | Steps 1–2; repeated in step 4 | Counts of elements before the two cuts | Arrays, indices, the stated input contract |
-| `al, ar, bl, br` | Steps 1–2; repeated in step 4 | Values adjacent to cuts, with infinite empty-side sentinels | Arrays, indices, the stated input contract |
+| `i, j` | Step 1 concrete a=[2 | ], b=[1 | 3]; repeated in step 4 | Counts of elements before the two cuts | Arrays, indices, the stated input contract |
+| `al, ar, bl, br` | Step 1 immediately after concrete membership; repeated individually in step 4 | Last-left / first-right values for a and b, with −∞ for missing left and +∞ for missing right | Arrays, indices, the stated input contract |
 | `lo, hi` | Steps 1–2; repeated in step 4 | Remaining candidate cuts in a | Arrays, indices, the stated input contract |
 
 ## Representative inputs and expected hand calculation
@@ -57,3 +57,36 @@ Run `python3 leetcode/tests/test_hard_solutions.py`,
 `NODE_PATH=<playwright package directory> node leetcode/tests/test_hard_browser.cjs`.
 See `../../specs/reviews/leetcode-first-ten-review.md` for observed review evidence.
 No actual LeetCode submission or human learning test is claimed.
+
+
+## 2026-10-18 R1 fix contract and author self-check
+
+Scope: reuse the existing lesson, section hierarchy, bilingual controls and trace
+model. The reader needs the missing concrete partition bridge identified in the
+independent report `specs/reviews/4-review-1-8399884b.md`. The owner requests those
+fixes; this adds explanatory content and one existing-kind preset, with no new
+layout or feature architecture. The report supplies the separate review evidence;
+its findings are adopted for this revision. No child reviewer or acceptance claim.
+
+P0 / highest-return work: LC4-R1-01, place hand-worked cuts and actual group
+membership before formulas; name each boundary, explain empty-side placeholders,
+both exclusion directions, shorter-array legality and termination. The existing
+unrevealed transfer quiz remains a separate exercise. The new decrease preset
+lets the reader reproduce the worked 10>3 → discard i≥1 → answer 3 transition.
+P1: LC4-R1-02, use the inherited text token for small active coordinate labels.
+P2: none. Deferred: native browser-menu zoom and novice teach-back require
+separate facilities/participants; CSS zoom and author checks do not prove them.
+
+The token contract inherits all existing tokens, spacing, type and control sizes.
+The sole local style changes `.trace-cell.hot small` from muted to
+`--text: #e8edf4` on the existing active fill `#164b59`; contrast is measured in
+evidence. No new motion, timers, asynchronous states or lifecycle paths.
+Applicable state matrix: EN/zh × five presets × initial/forward/rewind/end/reset;
+EN/zh × all quiz choices and reveal/change; locale retention, copy success,
+denied clipboard/storage, offline loading, desktop/narrow and CSS 200% checks.
+Loading/reconnect/expired states do not apply to this synchronous local lesson.
+
+Author self-check evidence and stable finding mapping:
+[evidence/SELF-CHECK.md](evidence/SELF-CHECK.md). Both findings are **fixed awaiting
+independent re-review**, not independently closed. The original report and frozen
+rubric are unchanged. No submission, publication, commit or release is claimed.
