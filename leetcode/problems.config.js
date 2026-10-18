@@ -273,6 +273,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n·n!) time, O(n) auxiliary space; average O(1) set operations"
   },
   {
+    "id": 76,
+    "title": {
+      "zh": "最小覆盖子串",
+      "en": "Minimum Window Substring"
+    },
+    "desc": {
+      "zh": "按副本计数，扩展覆盖后收缩，推导线性最小窗口。",
+      "en": "Count required copies, expand to cover, then shrink to derive a linear minimum-window scan."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "滑动窗口",
+        "en": "Sliding window"
+      },
+      {
+        "zh": "字符计数",
+        "en": "Character counts"
+      }
+    ],
+    "path": "76/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimum-window-substring/",
+    "language": "Python",
+    "complexity": "O(m+n) time; O(k) auxiliary space, k≤52; O(L) output"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
