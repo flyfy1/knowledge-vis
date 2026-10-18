@@ -43,6 +43,16 @@ if role in ('author', 'fix'):
         if scenario == 'missing_js_comparison' and name == 'concept.py':
             continue
         (folder / name).write_text('Candidate ' + pid + ' ' + role)
+    if 'javascript' in problem.get('categories', []):
+        contract = {'problemId': problem['id'], 'language': 'JavaScript', 'officialSource': problem['officialUrl'],
+                    'supportedLanguages': ['JavaScript'], 'interface': 'function memoize(fn)',
+                    'rationale': 'Fixture exposes only the JavaScript callable.', 'verifiedAt': '2026-10-18T00:00:00Z',
+                    'verificationEvidence': 'language-evidence.md'}
+        (folder / 'language-contract.json').write_text(json.dumps(contract))
+        (folder / 'language-evidence.md').write_text('Official fixture interface exposes JavaScript only.')
+        for source, mirror, export in [('solution.js','javascript-code.js','JAVASCRIPT_SOURCE'), ('concept.py','python-code.js','PYTHON_SOURCE')]:
+            if (folder / source).exists():
+                (folder / mirror).write_text('window.' + export + ' = ' + json.dumps((folder / source).read_text()) + ';')
     if scenario == 'shared_change':
         (repo / 'shared.txt').write_text('unauthorized change')
     output = {'outcome': 'blocked' if scenario == 'blocked' else 'ready', 'detail': 'Source unavailable' if scenario == 'blocked' else 'Checks completed'}
@@ -205,7 +215,7 @@ class CampaignTests(unittest.TestCase):
         self.assertTrue((self.repo / "leetcode/4/lesson-entry.json").is_file())
 
     def javascript_fixture(self, sources=()):
-        problem = {"id": 2630, "title": "Memoize II", "categories": ["javascript"]}
+        problem = {"id": 2630, "title": "Memoize II", "categories": ["javascript"], "officialUrl": "https://leetcode.com/problems/memoize-ii/"}
         self.write("leetcode/catalog/hard-problems.json", json.dumps({"problems": [problem]}))
         for name in sources:
             self.write(f"leetcode/2630/{name}", "Existing source")
@@ -219,7 +229,7 @@ class CampaignTests(unittest.TestCase):
         self.assertEqual(self.progress()["problems"]["2630"]["status"], "accepted_local")
         self.assertEqual([r["role"] for r in self.progress()["runs"]], ["author", "review"])
         self.assertFalse((self.repo / "leetcode/2630/solution.py").exists())
-        for missing in ("solution.js", "javascript-code.js", "concept.py", "python-code.js"):
+        for missing in ("solution.js", "javascript-code.js", "concept.py", "python-code.js", "language-contract.json"):
             with self.subTest(missing=missing):
                 path = self.repo / "leetcode/2630" / missing
                 content = path.read_bytes()
@@ -247,6 +257,33 @@ class CampaignTests(unittest.TestCase):
                         {"id": 2630, "categories": ["algorithms"]}):
             with self.assertRaisesRegex(ValueError, "six approved"):
                 campaign.required_for(problem)
+
+    def test_exception_files_and_parity_are_checked_before_review(self):
+        problem = {"id": 185, "categories": ["database"], "officialUrl": "https://leetcode.com/problems/department-top-three-salaries/"}
+        folder = self.repo / "leetcode/185"
+        contract = {"problemId": 185, "language": "MySQL", "officialSource": problem["officialUrl"],
+                    "supportedLanguages": ["MySQL"], "interface": "Employee and Department SQL tables",
+                    "rationale": "Fixture exposes SQL only.", "verifiedAt": "2026-10-18T00:00:00Z",
+                    "verificationEvidence": "language-evidence.md"}
+        self.write("leetcode/185/language-contract.json", json.dumps(contract))
+        self.write("leetcode/185/language-evidence.md", "Observed official SQL fixture schema.")
+        files = campaign.required_for(problem, True, folder)
+        self.assertIn("solution.sql", files)
+        self.assertNotIn("solution.py", files)
+        for name in files:
+            if not (folder / name).exists():
+                self.write("leetcode/185/" + name, "Fixture")
+        self.write("leetcode/185/solution.sql", "SELECT 1;\n")
+        self.write("leetcode/185/sql-code.js", 'window.SQL_SOURCE = "SELECT 1;\\n";')
+        campaign.required_files(self.repo, problem, True)
+        self.write("leetcode/185/sql-code.js", 'window.SQL_SOURCE = "SELECT 2;";')
+        with self.assertRaisesRegex(campaign.CampaignError, "parity"):
+            campaign.required_files(self.repo, problem, True)
+        contract.update(language="TypeScript", supportedLanguages=["TypeScript"])
+        self.write("leetcode/185/language-contract.json", json.dumps(contract))
+        self.assertIn("solution.ts", campaign.required_for(problem, True, folder))
+        with self.assertRaisesRegex(campaign.CampaignError, "solution.ts"):
+            campaign.required_files(self.repo, problem, True)
 
     def test_prior_evidence_cannot_be_overwritten(self):
         self.write("specs/reviews/4-evidence/prior.png", "Original evidence")

@@ -14,20 +14,24 @@ Apply the [independent design review and adjudication](reviews/leetcode-all-hard
 new lesson cycle; the first new batch is #51, #52, #60, and #65. Then proceed
 through the remaining official IDs in ascending order, including review debt for
 existing pages. Preserve prominent IDs, separate official links, bilingual explanations,
-solution-source parity, and genuine algorithm-specific interactions. Python is
-the default; the six verified JavaScript-category problems (#2630, #2650, #2675,
-#2691, #2756, #2759) use their original JavaScript interface plus a clearly labeled
-Python conceptual comparison, as explicitly approved by the owner on 2026-10-18.
+solution-source parity, and genuine algorithm-specific interactions. Prefer a
+faithful official Python interface; otherwise prefer an officially supported
+TypeScript interface, then the language the original problem requires. Verify
+language availability and behavior rather than guessing from the category.
+Every nondefault choice records its official source, interface, supported language
+list, rationale, date and evidence in a lesson-local language contract. The six
+JavaScript-category problems still include a clearly labeled Python conceptual
+comparison; that comparison cannot masquerade as a submittable Python solution.
+The owner's latest preference supersedes a blanket JavaScript choice for future
+lessons when an official TypeScript interface is available.
 
 Every catalog record starts not started; existing pages have separate historical
 deployment evidence. Do not exclude premium, language-specific, or inaccessible
 records from the denominator. Use a verified Pandas interface when officially
-supported. For the six JavaScript exceptions, verify the original JavaScript
-contract and explicitly explain the comparison's limits; lack of a Python
-submission interface alone is no longer a blocker for these six. If the statement
-or applicable submission contract cannot be verified, record
-a concrete blocker and next action instead of inventing it. Completion of this
-request requires resolving those blockers, not simply exhausting the queue.
+supported. Missing Python support alone is not a blocker: verify TypeScript and
+then the required native interface. Unavailable statements or unverifiable
+original contracts remain concrete blockers with evidence and a next action.
+Completion requires resolving those blockers, not simply exhausting the queue.
 
 P0 is a complete learning loop per problem, tested and independently reviewed.
 P1 is catalog search/status presentation before large-scale public release. P2
@@ -49,7 +53,8 @@ checks stops the queue. It does not retry indefinitely or skip technical failure
 Source/language blockers and exhausted review attempts are recorded distinctly.
 An explicit stop file is checked between stages. The runner records active phase,
 problem, timestamps, run IDs, candidate commits, findings, and evidence paths.
-No scheduling service is installed. No production files or user worktrees change.
+No scheduling service is installed. User worktrees remain separate. Publication
+occurs only through the explicit batch release interface described below.
 
 Author and fix agents own only their problem files and problem-local tests.
 Reviewers first cold-walk the actual browser candidate, then audit source, and
@@ -57,8 +62,8 @@ write only their review evidence. The dispatcher enforces six scores, >=85/100,
 every dimension >=3/4, zero required open findings, and candidate identity.
 Only then does deterministic registration merge the new entry and concept links.
 An accepted local commit is neither published nor independently tested on a real
-human learner. The queue does not push or deploy; publication remains a separate
-verified release step. The initial public count stays 11 during this phase.
+human learner. The author/reviewer runs cannot deploy. A separate batch publisher operates only
+at a clean, accepted phase boundary and verifies public delivery.
 
 ## Operations
 
@@ -92,3 +97,56 @@ changed policy, and authorization before updating its expected HEAD. Preserve
 all problem statuses, candidate revisions, run identities, and review evidence.
 Remove STOP and resume the same queue only after checking these invariants.
 This maintenance procedure cannot create acceptance or close review findings.
+
+## Owner update: detailed lessons and batches of 100 — 2026-10-18
+
+The active objective covers all 984 snapshot problems, with no reduction to the
+first batch. Each lesson must show a concrete worked example from input through
+intermediate states to output, explain unfamiliar terms beside their first use,
+connect the baseline's repeated work to the improvement, and include a fresh
+prediction plus an illuminating counterexample. A story or analogy must preserve
+the original quantities and conditions; avoid template filler or decorative
+animation with no causal explanation. Reviewers must reconstruct the reasoning
+from the page before reading the author's explanation.
+
+After each 100 additional independently accepted, not-yet-released problems,
+publish that accepted batch and verify its actual public URLs. The baseline is
+#51 and #52, already released and verified; the other 11 historical public pages
+remain in the independent-review queue and count when their campaign review
+finishes. Public availability alone is not a completion or acceptance signal.
+At full completion, publish the final remainder even when it is smaller than 100.
+An exhausted queue with blocked or unresolved lessons cannot trigger a claim of
+completion. Repair passes must retain prior findings and acquire new evidence.
+
+The publisher has a separate durable release ledger. Failed or interrupted
+publication remains pending and cannot advance the released count until public
+bytes and browser navigation pass verification. Preserve unrelated production
+pages and existing collection entries. Publish only the exact accepted lesson
+assets and the merged collection; tests, draft pages and review artifacts do not
+become public runtime assets. Catalog ID/title/topic search is implemented and independently accepted in
+[its design and verification record](reviews/leetcode-collection-search-design.md);
+it ships with the first large batch release.
+
+The owner explicitly does not require old production content to be retained.
+Future releases therefore create no old-content backups or historical deployment
+copies. This supersedes earlier rollback-copy guidance for this campaign. Retain
+Git history, review findings and small release manifests as correctness evidence;
+they are not duplicate served content. Existing backups are not a request to
+perform unrelated cleanup. The development/review ledger and locks remain intact.
+
+### Configuring the release interface
+
+The production worker supplies `--publish-root /home/songyy/projects/visual-site`,
+`--public-base https://visual.integ.life`, and `--publish-every 100`. Without both
+explicit target fields, the queue does not publish. The production directory must
+be separate from the development checkout. The runner calls the publisher at
+startup for pending-release recovery and after a completed problem, while it
+still owns the checkout lock. STOP suppresses publication as well as new agents.
+The final `flush` is allowed only when the entire official catalog is accepted.
+
+`scripts/leetcode_publish.py` owns staging, acceptance/candidate verification,
+registry merging, public hashes/browser checks and `releases.json`; it does not
+modify the campaign's acceptance ledger. Successful release removes staged
+payload bytes and retains small receipts. The reviewed test interfaces cover
+thresholds, incomplete work, failures, resumption and preservation of unrelated
+content; a passing fixture is not itself a real production release.

@@ -12,21 +12,36 @@ Future problems use the same path. Do not add accounts, a code execution service
 progress synchronization, or a general algorithm framework without a concrete
 lesson that needs them.
 
-Solution, baseline, pseudocode, and test examples shown to readers use
-**Python** by default. The owner approved an exception on 2026-10-18 for the six
-JavaScript-category Hard problems: #2630, #2650, #2675, #2691, #2756, and #2759.
-These use the verified original JavaScript submission interface and include a
-separate Python conceptual comparison. Label that comparison in both languages
-as a teaching adaptation, not an equivalent LeetCode submission; identify runtime
-semantics it cannot reproduce. Browser interaction code is distinct from the
-solution in either language. Do not present JavaScript as Python execution or
-claim LeetCode acceptance without an actual submission result. UI and prose follow `../UI-I18N-SPEC.md` in both
-Chinese and English, with the shared `knowledge-lang` preference.
+Use **Python** for a faithful official solution interface by preference; otherwise
+use supported **TypeScript**, then the original problem's required language.
+Verify the official language/interface evidence and save a lesson-local language
+contract for every nondefault choice. Explain why a preferred language cannot
+faithfully implement the original interface before falling back. Do not translate
+away database, object identity, async scheduling, cancellation, or other runtime
+requirements. A browser simulation is separate from execution of the solution.
 
-For those six exceptions, references below to the solution language mean
-JavaScript; the Python comparison supplements the learning path. Verify the
-original contract, including applicable async ordering, errors, cancellation,
-object identity, and timing behavior, rather than silently translating it away.
+For the six JavaScript-category Hard problems (#2630, #2650, #2675, #2691, #2756,
+#2759), retain the requested Python conceptual comparison, explicitly labeled in
+both languages as a teaching adaptation with semantic limits. Prefer TypeScript
+for the canonical code only when officially supported; otherwise use required
+JavaScript. Never call the comparison an equivalent official submission. Do not
+claim LeetCode acceptance without an actual submission result. UI and prose follow
+`../UI-I18N-SPEC.md` with the shared `knowledge-lang` preference.
+
+References below to Python mean the canonical solution language for approved
+non-Python lessons. The original callable/query contract, tests, complexity and
+source-display-download parity apply equally. Validate TypeScript compilation
+and execute its emitted JavaScript; SQL and other native solutions need real
+execution against representative fixtures in the corresponding runtime.
+
+For a nondefault interface, `language-contract.json` records `problemId`,
+`language`, exact `officialSource`, normalized `supportedLanguages`, `interface`,
+`rationale`, timezone-qualified `verifiedAt`, and a lesson-relative
+`verificationEvidence` file. Supported languages here mean faithful original
+submission interfaces; explain any distinction from a mere conceptual adaptation.
+The independent reviewer checks this evidence against the official source.
+Canonical offline mirrors use the source/export pair in the registration policy
+and contain the exact JSON-encoded source string, not a separately edited copy.
 
 ## Review authority
 
@@ -132,13 +147,16 @@ diagrams, readouts and Python. Keep English causally equivalent to Chinese.
 - The shared `leetcode/style.css` starts from the existing Fourier theme.
   `leetcode/common.js` implements the site's existing language behavior.
 - For offline opening, embed the displayed Python source in `python-code.js`.
-  Regenerate it from `solution.py`; test exact source equality. Do not require
+  Regenerate it from `solution.py`; test exact source equality. TypeScript uses
+  `solution.ts` and `typescript-code.js`; other native languages use the verified
+  source/mirror pair recorded by the language policy. Do not require
   network requests to display solution code or local experiment data.
-- For the six JavaScript exceptions, use `solution.js` and its exact offline
-  mirror `javascript-code.js`; use `concept.py` and its exact mirror
+- For original JavaScript solutions use `solution.js` and `javascript-code.js`.
+  The six JavaScript-category lessons additionally use `concept.py` and its mirror
   `python-code.js` for the separately labeled conceptual comparison. Provide
   distinct copy/download controls and verify each displayed/downloaded pair.
-  Set registry language to `JavaScript`; do not name the comparison `solution.py`.
+  Set registry language to the canonical language; do not name the comparison
+  `solution.py`.
 - Add concept deep links and register the new lesson in `CONCEPT-MAP.md`.
 - General authoring lessons belong here; problem-specific evidence belongs in
   the problem's brief. Bump asset query versions when changing a served asset.
@@ -176,7 +194,9 @@ Verify:
 6. Require independent acceptance before publishing new or materially revised
    lessons. After publication, check the real collection, problem page and asset hashes.
    A Git push alone is not deployment evidence. Use the current deployment route
-   and preserve unrelated files and a rollback copy of changed served files.
+   and preserve unrelated files. The owner's 2026-10-18 campaign instruction
+   explicitly waives old-content backups; retain release and verification
+   manifests without copying the previous production content.
 
 Report only observed evidence. Passing tests establishes computational behavior;
 it does not prove that a real learner understood the lesson or that LeetCode
@@ -218,3 +238,19 @@ Exercise and inspect the populated diagram in both languages at narrow widths
 and 200% zoom; retain before/after evidence and have a fresh reviewer close the
 finding. See [the original finding](reviews/51-review-1-b84a663e.md) and
 [the accepted recheck](reviews/51-review-2-edd9687d.md).
+
+## Concrete, gradual explanation contract
+
+Start from one small input the learner can work by hand. Keep the same example
+through the baseline, state representation and improved solution so every symbol
+has an observable referent. Show intermediate states and why each transition is
+legal; do not jump from an analogy to a recurrence without deriving the connection.
+Use a second example that changes one meaningful condition and a counterexample
+that exposes the most tempting wrong rule. Explain rejected alternatives as well
+as the chosen path. Let the learner predict a new case before revealing its answer.
+
+Every defined variable must connect to an input item, a visible state or a named
+code value. Explain boundary cases in ordinary language before presenting terse
+conditions. A vivid scenario is useful only when its rules match the problem;
+keep the original formal contract and distinguish teaching adaptations. Review
+missing causal bridges as required findings regardless of algorithm correctness.

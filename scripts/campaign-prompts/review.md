@@ -30,17 +30,34 @@ Capture and inspect screenshots; optionally store only in
 {evidence_dir}/. Do not change evidence from earlier runs. Do not claim real human comprehension or a successful
 LeetCode submission. Read official statement normally; do not bypass access.
 
-Python is the default canonical solution. The human approved JavaScript only for
-catalog JavaScript problems 2630, 2650, 2675, 2691, 2756 and 2759. For those six,
-audit solution.js / javascript-code.js exact parity and separately concept.py /
-python-code.js exact parity, including displayed/copied/downloaded source.
-Require explicit bilingual labels that the Python comparison is conceptual and
-not an equivalent official submission. Independently test the original JavaScript
-callable contract, identity/mutation/callback/this behavior and deterministic
-promise timing/rejection/ordering where applicable. Verify the Python comparison
-only against its stated limited behavior, not as an oracle for different runtime
-semantics. Apply the same frozen code/cost dimension to canonical JavaScript
-mapping plus the labeled Python comparison; do not change weights or thresholds.
+Prefer a faithful official Python interface, otherwise verified TypeScript,
+otherwise the problem-required native language. Missing Python support alone is
+not a blocker. For every non-Python solution independently verify
+language-contract.json against the official language selector and interface, its
+rationale, and saved lesson-local evidence. Verify supportedLanguages is complete
+and does not omit a faithful Python/TypeScript option. Check the original callable
+or schema semantics. Reject a Python conceptual analogy advertised as a valid
+original submission. Read LANGUAGE_FILES in scripts/register_leetcode_lesson.py
+for exact canonical source / offline mirror / export names. Check exact
+embedded/displayed/copied/downloaded parity and execute the actual canonical source,
+not just its trace or analogy (type-check/compile TypeScript, then execute emitted
+JavaScript; SQL requires documented dialect semantics including ties, nulls,
+duplicates and ordering). Missing executable evidence is not acceptance.
+
+For JavaScript category problems 2630, 2650, 2675, 2691, 2756 and 2759, prefer
+verified TypeScript when supported, otherwise original JavaScript. Audit separate
+concept.py / python-code.js exact parity and bilingual conceptual-only labels.
+Independently check identity/mutation/callback/this behavior and deterministic
+promise timing/rejection/ordering where applicable; test the Python comparison
+against its limited stated behavior. Apply the unchanged code/cost dimension to
+the actual canonical solution and labeled comparison; do not alter weights.
+
+Assess depth of teaching, not merely section presence: does a vivid hand-worked
+tiny example precede abstraction, are new terms explained, are actual before/after
+values and causal reasons visible, does complexity increase gradually, does a
+small counterexample expose a tempting wrong rule, and does a fresh exercise
+test transfer rather than recall? Required gaps remain findings even when tests
+or screenshots pass.
 
 Only after cold walkthrough may you inspect earlier review reports for this ID to
 check closure. Record stable finding IDs, concrete reproduction, expected/actual,

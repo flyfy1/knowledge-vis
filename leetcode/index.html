@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LeetCode · 一步一步想出来</title>
-  <meta name="description" content="用交互实验和启发式问题，逐步推导 LeetCode 解法。主要使用 Python；JavaScript 专项题附 Python 概念对照。">
+  <meta name="description" content="用交互实验和启发式问题，逐步推导 LeetCode 解法。优先使用 Python / TypeScript；必要时使用题目要求的语言。">
   <link rel="stylesheet" href="style.css?v=lc-ids1">
+  <link rel="stylesheet" href="collection.css?v=search1">
 </head>
 <body>
   <header class="site-head">
@@ -15,41 +16,18 @@
   </header>
   <main class="collection">
     <p class="collection-intro" data-i18n="path"></p>
+    <div class="collection-search" role="search" aria-labelledby="searchLabel">
+      <label id="searchLabel" for="problemSearch" data-i18n="searchLabel"></label>
+      <p class="search-help" id="searchHelp" data-i18n="searchHelp"></p>
+      <div class="search-controls"><input id="problemSearch" type="search" aria-describedby="searchHelp" autocomplete="off" spellcheck="false"><button type="button" id="clearSearch" data-i18n="clear"></button></div>
+    </div>
+    <p id="resultCount" role="status" aria-live="polite" aria-atomic="true"></p>
+    <p id="emptyResults" hidden></p>
+    <p id="loadError" hidden><span data-i18n="loadError"></span> <a href="" id="reloadCollection" data-i18n="reload"></a></p>
     <div class="problem-list" id="problemList"></div>
     <noscript>JavaScript is needed for the interactive lessons. <a href="2916/">2916 · Python</a></noscript>
   </main>
   <footer class="site-foot" data-i18n="footer"></footer>
   <script src="common.js?v=lc2916-astra2"></script><script src="problems.config.js?v=c22192769044"></script>
-  <script>
-  (() => {
-    const ui = LeetCodeLocale({
-      docTitle:['LeetCode · 一步一步想出来','LeetCode · Reason Your Way to the Solution'],
-      back:['← 知识索引','← Knowledge Index'],
-      title:['答案，一步一步想出来','Reason your way to the solution'],
-      intro:['先观察一个小例子，再猜规律、找反例、推公式，最后把想法写成代码。每题都是一篇可以动手验证的知识讲解。','Observe a small example, make a prediction, test it, derive the rule, and turn it into code. Each problem becomes a lesson you can explore.'],
-      path:['学习路线：读懂题目 → 手算 → 暴力解法 → 找出重复工作 → 推导优化 → 实现 → 自己验证。','The learning path: understand → work by hand → brute force → identify repeated work → derive an improvement → implement → verify.'],
-      official:['LeetCode 原题 ↗','View on LeetCode ↗'],hard:['困难','Hard'],open:['开始推导 →','Explore the lesson →'],
-      footer:['visual.integ.life · LeetCode 专区 · 以 Python 为主；JavaScript 专项题附 Python 概念对照','visual.integ.life · LeetCode collection · Primarily Python; JavaScript-specific lessons include Python conceptual comparisons']
-    });
-    function render() {
-      const list=document.getElementById('problemList');list.replaceChildren();
-      for(const p of window.LEETCODE_PROBLEMS){
-        const card=document.createElement('article');card.className='problem-card';card.dataset.problemId=p.id;
-        const meta=document.createElement('div');meta.className='meta';
-        for(const label of [ui.t(p.difficulty),p.language,p.complexity]){const s=document.createElement('span');s.className='badge';s.textContent=label;meta.append(s);}
-        const h=document.createElement('h2'),titleLink=document.createElement('a');titleLink.className='lesson-link';titleLink.href=p.path;
-        const number=document.createElement('span');number.className='problem-number';number.textContent='#'+p.id;
-        titleLink.append(number,document.createTextNode(' · '+p.title[ui.getLang()]));h.append(titleLink);
-        const desc=document.createElement('p');desc.textContent=p.desc[ui.getLang()];
-        const tags=document.createElement('div');tags.className='topic-tags';
-        for(const topic of p.topics){const s=document.createElement('span');s.className='topic-tag';s.textContent=topic[ui.getLang()];tags.append(s);}
-        const actions=document.createElement('div');actions.className='problem-actions';
-        const open=document.createElement('a');open.href=p.path;open.textContent=ui.t('open');
-        const official=document.createElement('a');official.className='official-link';official.href=p.leetcodeUrl;official.target='_blank';official.rel='noopener noreferrer';official.textContent=ui.t('official');official.setAttribute('aria-label','#'+p.id+' · '+ui.t('official'));
-        actions.append(open,official);card.append(meta,h,desc,tags,actions);list.append(card);
-      }
-    }
-    ui.onChange(render);ui.init();
-  })();
-  </script>
+  <script src="collection.js?v=search1"></script>
 </body></html>
