@@ -1,0 +1,38 @@
+{
+  "id": 185,
+  "title": {
+    "zh": "部门工资前三高的所有员工",
+    "en": "Department Top Three Salaries"
+  },
+  "desc": {
+    "zh": "并列不占新名次：按部门保留前三个不同工资层级的所有员工。",
+    "en": "Keep every employee on the top three distinct salary levels in each department."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "Pandas 排名",
+      "en": "Pandas ranking"
+    },
+    {
+      "zh": "分组与并列",
+      "en": "Grouping and ties"
+    }
+  ],
+  "path": "185/",
+  "leetcodeUrl": "https://leetcode.com/problems/department-top-three-salaries/",
+  "language": "Python",
+  "complexity": "O(n log n + d) expected time; O(n + d) auxiliary space, plus O(k) output",
+  "concepts": [
+    {
+      "name": "Dense rank",
+      "step": 1,
+      "description": "One plus the number of larger distinct salaries in the same department."
+    },
+    {
+      "name": "Group boundaries",
+      "step": 2,
+      "description": "Restart ranking for each department ID."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "problemId": 185,
+  "language": "Python",
+  "officialSource": "https://leetcode.com/problems/department-top-three-salaries/",
+  "supportedLanguages": [
+    "MySQL",
+    "MS SQL Server",
+    "PostgreSQL",
+    "Oracle",
+    "Python"
+  ],
+  "interface": "Official Pandas (pythondata): import pandas as pd; def top_three_salaries(employee: pd.DataFrame, department: pd.DataFrame) -> pd.DataFrame. Employee(id int PK, name varchar, salary int, departmentId int FK); Department(id int PK,name varchar). Output Department, Employee, Salary; any order. Include all employees on the top three unique salaries per department. Null semantics unspecified.",
+  "rationale": "Official Pandas snippet supplies a faithful Python DataFrame interface, which is the first preferred language. SQL alternatives also observed; no TypeScript interface was present.",
+  "verifiedAt": "2026-10-18T13:34:22.159850+00:00",
+  "verificationEvidence": "tests/evidence/official-graphql.json"
+}
