@@ -645,3 +645,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | KMP prefix function fallback | `leetcode/214/#step2` | Retain matched borders and fall back without rechecking known characters. |
 
 <!-- /leetcode-214-campaign -->
+
+
+<!-- leetcode-44-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Repeated prefix pairs | `leetcode/44/#step0` | Follow two recursive paths to the same empty-text and b-star call. |
+| Standalone wildcard dependencies | `leetcode/44/#step1` | Derive empty consumption from left and one more character from above. |
+| Rolling rows | `leetcode/44/#step4` | Map prefix dependencies to two live rows in the Python solution. |
+
+<!-- /leetcode-44-campaign -->
