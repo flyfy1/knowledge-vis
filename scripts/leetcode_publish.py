@@ -35,7 +35,11 @@ WEIGHTS = (15, 20, 20, 20, 15, 10)
 SOURCE_SUFFIXES = {'.html', '.js', '.css', '.py', '.ts', '.json', '.svg', '.png',
                    '.jpg', '.jpeg', '.webp', '.gif', '.ico', '.woff', '.woff2'}
 SOURCE_SUFFIXES.update(Path(files[0]).suffix for files in LANGUAGE_FILES.values())
-EXCLUDED_PARTS = {'tests', 'test', 'evidence', 'screenshots', '__pycache__', 'node_modules'}
+EXCLUDED_PARTS = {'tests', 'test', 'evidence', 'provenance', 'screenshots', '__pycache__', 'node_modules'}
+# Reserved capture names used for official-contract author/reviewer evidence.
+# Runtime JSON stays eligible; classify provenance by its contract, not suffix.
+PROVENANCE_NAMES = {'official-evidence.json', 'official-interface.json',
+                    'official-contract.json', 'official-graphql.json', 'official.json'}
 COLLECTION_ASSETS = {'leetcode/index.html', 'leetcode/problems.config.js',
                      'leetcode/collection.js', 'leetcode/collection.css'}
 
@@ -115,7 +119,7 @@ def _lesson(repo, revision, pid):
                 continue
             path = member.name
             tail = PurePosixPath(path[len(prefix):])
-            if (path == evidence_path or set(tail.parts) & EXCLUDED_PARTS or tail.name in {'lesson-entry.json', 'language-contract.json'} or
+            if (path == evidence_path or set(tail.parts) & EXCLUDED_PARTS or tail.name in PROVENANCE_NAMES | {'lesson-entry.json', 'language-contract.json'} or
                     tail.suffix.lower() not in SOURCE_SUFFIXES):
                 continue
             if not path.startswith(prefix) or not member.isfile():
@@ -188,6 +192,10 @@ def _reviewed(repo, state, registry, revision, selected=None):
         _git(repo, 'merge-base', '--is-ancestor', review_commit, revision)
         if _tracked_bytes(repo, review_commit, report) != _tracked_bytes(repo, revision, report):
             raise PublicationError(f'Review evidence changed after acceptance for {pid}')
+        # Acceptance freezes the whole lesson, including evidence omitted from the
+        # public payload. A narrower runtime filter must never weaken that audit.
+        if _git(repo, 'rev-parse', f'{candidate}:leetcode/{pid}') != _git(repo, 'rev-parse', f'{revision}:leetcode/{pid}'):
+            raise PublicationError(f'Lesson {pid} changed since its accepted candidate')
         reviewed = _lesson(repo, candidate, pid)
         current = _lesson(repo, revision, pid)
         if reviewed != current:
@@ -462,6 +470,11 @@ def maybe_publish(repo, state, state_dir, publish_root, public_base, batch_size=
             for dependency in _asset_refs(data, path):
                 if dependency in files:
                     continue
+                dependency_path = PurePosixPath(dependency)
+                if (dependency_path.name in PROVENANCE_NAMES or
+                        set(dependency_path.parts) & EXCLUDED_PARTS or
+                        any(dependency.startswith(f'leetcode/{pid}/') for pid in selected)):
+                    raise PublicationError(f'Runtime dependency references excluded evidence or authoring metadata: {dependency}')
                 source = _tracked_bytes(repo, revision, dependency)
                 if _safe(root, dependency).read_bytes() != source:
                     raise PublicationError(f'Unreviewed shared asset differs in production: {dependency}')
