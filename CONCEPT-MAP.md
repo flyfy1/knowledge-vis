@@ -379,3 +379,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | zero-based rank | `leetcode/60/#step2` | Choose an unused digit by quotient and retain the remainder. |
 
 <!-- /leetcode-60-campaign -->
+
+
+<!-- leetcode-84-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| interval minimum | `leetcode/84/#step0` | Area is interval width times its shortest height. |
+| monotonic stack | `leetcode/84/#step1` | Pending heights stay nondecreasing. |
+| excluded boundaries | `leetcode/84/#step2` | A popped rectangle has width i - left - 1. |
+
+<!-- /leetcode-84-campaign -->
