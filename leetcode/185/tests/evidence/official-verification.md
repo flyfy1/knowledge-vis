@@ -1,0 +1,3 @@
+Accessed 2026-10-18T13:29:39.412076+00:00
+Official URL: https://leetcode.com/problems/department-top-three-salaries/
+Public GET https://leetcode.com/graphql query { question(titleSlug:"department-top-three-salaries") { questionId title content codeSnippets { lang langSlug code } } } returned HTTP 200. Raw response: official-graphql.json. Direct HTML returned HTTP 403 (official-page.html); public GraphQL succeeded normally, without authentication or access bypass. Pandas pythondata signature explicitly supports Python DataFrame submission. Statement and complete selector captured in JSON. No numeric size bounds or explicit null semantics were present.
