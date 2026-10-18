@@ -745,6 +745,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(mn) time; O(n) auxiliary space"
   },
   {
+    "id": 212,
+    "title": {
+      "zh": "单词搜索 II",
+      "en": "Word Search II"
+    },
+    "desc": {
+      "zh": "在棋盘路径中共享前缀，理解字典树与回溯。",
+      "en": "Share board-path prefixes with a trie and reversible backtracking."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字典树",
+        "en": "Trie"
+      },
+      {
+        "zh": "回溯",
+        "en": "Backtracking"
+      }
+    ],
+    "path": "212/",
+    "leetcodeUrl": "https://leetcode.com/problems/word-search-ii/",
+    "language": "Python",
+    "complexity": "O(S + B·4·3^(L-1)) time; O(S + L) auxiliary space, plus O(W) output references"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
