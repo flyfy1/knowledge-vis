@@ -1,0 +1,9 @@
+{
+  "canonicalCases": 1192,
+  "baselineCases": 40,
+  "seed": 85,
+  "result": "pass",
+  "oracle": "all four rectangle bounds with 2D zero-prefix counts",
+  "mutation": "unchanged",
+  "sourceMirror": "exact"
+}
