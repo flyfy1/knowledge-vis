@@ -611,6 +611,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) time; O(n²) auxiliary space"
   },
   {
+    "id": 149,
+    "title": {
+      "zh": "直线上最多的点数",
+      "en": "Max Points on a Line"
+    },
+    "desc": {
+      "zh": "从尺子覆盖的小例子，推导锚点与精确方向计数。",
+      "en": "Derive exact direction counts from a tiny ruler-and-pins example."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "几何",
+        "en": "Geometry"
+      },
+      {
+        "zh": "哈希表",
+        "en": "Hash table"
+      }
+    ],
+    "path": "149/",
+    "leetcodeUrl": "https://leetcode.com/problems/max-points-on-a-line/",
+    "language": "Python",
+    "complexity": "O(n² log C) time; O(n) auxiliary space, C = max(2, coordinate span)"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
