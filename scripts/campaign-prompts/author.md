@@ -22,8 +22,9 @@ otherwise the problem-required native language (for example the documented SQL
 dialect or JavaScript). Missing Python support alone is NOT a blocker. Verify the
 actual language selector/interface, not only the problem category. Python DataFrame
 interfaces may be available for Database/Pandas problems. For the six JavaScript
-category problems 2630, 2650, 2675, 2691, 2756 and 2759, prefer verified TypeScript
-when offered; otherwise use their original JavaScript. Retain a separately labeled
+category problems 2630, 2650, 2675, 2691, 2756 and 2759, the owner explicitly chose
+original JavaScript even when TypeScript is offered. This exact-six exception takes
+precedence over the general language preference. Retain a separately labeled
 Python conceptual comparison. Never mislabel that comparison as a valid original
 submission or an oracle for JS identity, this binding, mutation or async semantics.
 
@@ -32,11 +33,12 @@ officialSource (the exact catalog officialUrl), supportedLanguages (the complete
 faithful official interfaces observed, normalized to Python / TypeScript /
 JavaScript; retain exact SQL dialect labels), interface (callable signature or
 schema and runtime semantics), rationale (why earlier preferred languages cannot
-faithfully submit), verifiedAt (ISO timestamp with timezone), verificationEvidence
+faithfully submit, or the explicit owner choice for the exact-six JavaScript exception), verifiedAt (ISO timestamp with timezone), verificationEvidence
 (a lesson-relative nonempty evidence file). Save what was actually observed from
 the official source, with the access date and selector/interface excerpts or
 screenshots, so the separate reviewer can verify the language decision. The
-contract's selected language must follow Python > TypeScript > required native.
+contract's selected language must follow Python > TypeScript > required native,
+except that the exact six listed JavaScript problems require JavaScript.
 Do not omit supported Python or TypeScript merely to select an easier language.
 If the official statement/interface cannot be accessed, retain the problem in
 scope and return blocked with concrete evidence and the next needed input.

@@ -288,3 +288,15 @@ The final remainder is released when all work actually meets the gates. The sear
 feature required before a large public batch is now independently reviewed in
 [the collection search record](leetcode-collection-search-design.md). This amendment records owner direction, not independent
 approval of publisher code or future lessons.
+
+
+## Dispatcher clarification — exact-six JavaScript choice, 2026-10-18
+
+The owner's specific choice for #2630, #2650, #2675, #2691, #2756 and #2759 is
+original JavaScript plus a clearly labeled Python conceptual comparison. It
+remains applicable even if a TypeScript interface is available. This clarification
+supersedes the previous amendment's sentence applying the general TypeScript
+preference to those six; all other lessons retain Python > TypeScript > required
+native. Preserve official-interface evidence, exact source parity, original
+JavaScript runtime tests and separate Python analogy checks. No historical lesson
+review is rescored, and this dispatcher clarification is not independent acceptance.

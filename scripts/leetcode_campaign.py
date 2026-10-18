@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Finite, resumable local author/reviewer queue. Never deploys or pushes."""
+"""Finite author/reviewer queue with explicit, verified batch publication."""
 from __future__ import annotations
 
 import argparse

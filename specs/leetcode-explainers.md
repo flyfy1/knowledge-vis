@@ -16,15 +16,17 @@ Use **Python** for a faithful official solution interface by preference; otherwi
 use supported **TypeScript**, then the original problem's required language.
 Verify the official language/interface evidence and save a lesson-local language
 contract for every nondefault choice. Explain why a preferred language cannot
-faithfully implement the original interface before falling back. Do not translate
+faithfully implement the original interface before falling back, or record the
+explicit owner choice for the exact-six JavaScript exception below. Do not translate
 away database, object identity, async scheduling, cancellation, or other runtime
 requirements. A browser simulation is separate from execution of the solution.
 
 For the six JavaScript-category Hard problems (#2630, #2650, #2675, #2691, #2756,
 #2759), retain the requested Python conceptual comparison, explicitly labeled in
-both languages as a teaching adaptation with semantic limits. Prefer TypeScript
-for the canonical code only when officially supported; otherwise use required
-JavaScript. Never call the comparison an equivalent official submission. Do not
+both languages as a teaching adaptation with semantic limits. The owner explicitly
+chose the original **JavaScript** solution for these exact six, even if an official
+TypeScript interface is available. This narrow exception overrides the general
+language preference; all other problems retain Python > TypeScript > required native. Never call the comparison an equivalent official submission. Do not
 claim LeetCode acceptance without an actual submission result. UI and prose follow
 `../UI-I18N-SPEC.md` with the shared `knowledge-lang` preference.
 

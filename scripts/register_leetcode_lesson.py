@@ -53,9 +53,13 @@ def solution_language(official, folder=None):
         raise ValueError('Language contract needs unique supportedLanguages including its canonical language')
     if 'Python3' in supported or 'Python 3' in supported or 'python' in supported or 'typescript' in supported:
         raise ValueError('Normalize official language labels to Python and TypeScript in supportedLanguages')
-    preferred = 'Python' if 'Python' in supported else 'TypeScript' if 'TypeScript' in supported else language
-    if language != preferred:
-        raise ValueError('Canonical language must prefer Python, then TypeScript, before a required native language')
+    if javascript:
+        if language != 'JavaScript':
+            raise ValueError('The six explicitly approved JavaScript problems require original JavaScript plus a Python conceptual comparison')
+    else:
+        preferred = 'Python' if 'Python' in supported else 'TypeScript' if 'TypeScript' in supported else language
+        if language != preferred:
+            raise ValueError('Canonical language must prefer Python, then TypeScript, before a required native language')
     for field in ('interface', 'rationale', 'verifiedAt', 'verificationEvidence'):
         if not isinstance(contract.get(field), str) or not contract[field].strip():
             raise ValueError(f'Language contract requires {field}')
