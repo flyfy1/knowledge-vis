@@ -1,0 +1,28 @@
+A linked list is a chain of node objects. Each node has val (a value) and next (a reference to the next node); a reference lets us find that same object. head refers to the first node. None means no node, so following links stops there. Arrows below mean references. #0, #1 and #2 are permanent object IDs, not values or current positions.
+
+head → #0
+#0: val=1, next → #1
+#1: val=2, next → #2
+#2: val=3, next → None
+
+For example, let a refer to #0 and b to #2. Assigning a.next = b changes #0’s arrow from #1 to #2; all three val fields stay unchanged. With head still at #0, following links now reads 1, 3. Object #1 still exists, but we need another reference to find it. Assigning items[0] = b changes a slot in a Python list; assigning a.next = b changes a link inside a node object.
+
+How do we reverse each group of k nodes? Change next pointers, never swap node values. A suffix shorter than k must remain in its original order.
+
+For [1,2,3,4,5], k=2 gives [2,1], [4,3], then unchanged 5. With k=3, only the first group reverses, yielding [3,2,1,4,5].
+
+Start again from the diagram, with k=2. First follow next to count #0 and #1, confirming two nodes exist, and remember #2 just after this group. We want head → #1 → #0 → #2 → None, reading [2,1,3]; the remaining #2 is fewer than two nodes and must stay. Each step below keeps the original objects and values.
+
+① Save #0.next, which is #1, as nxt (the saved old successor). Then change #0.next from #1 to #2, attaching the node that will become the group tail to what follows. Now head → #0 → #2 → None; nxt still lets us find #1. Overwriting #0.next first and then following it would go to #2, skipping the still unprocessed #1.
+
+② Move to the saved #1. Save its old next=#2 before changing #1.next from #2 to #0. The chain #1 → #0 → #2 → None is ready, but head still refers to #0, so the entry still misses the new group head #1.
+
+③ Set the entry head to #1 so traversal starts at the new group head and reads [2,1,3]. Next count from #2: there is only #2, then None, so no link is changed. Reversing one leftover node looks unchanged; k=3 with five nodes exposes the rule more clearly: the final #3 → #4 → None must stay as it is. Reversing that partial group would incorrectly produce [3,2,1,5,4].
+
+How could a familiar Python list help first? Below, nodes stores node references, not val fields. Reversing slices changes the order of references in that list; the later a.next = b assignments actually reconnect the nodes in that order. The function returns the first node object. LeetCode supplies ListNode with val and next fields; the return value is a node reference, not a Python list.
+
+How can we remove the nodes list of all references? Use the same three nodes: add dummy with dummy.next referring to #0. It is an artificial node before the group; its value is excluded from the answer and its diagram ID is −1. group_prev (the reference to the node before the group) starts at dummy. Both the first group and later groups can then change their entry through group_prev.next, without a separate branch for head.
+
+For k=2, walk two next links from group_prev, through #0 to #1. Call the kth node kth, so kth=#1. If any of those k steps reaches None, keep the suffix and stop. Save group_next=kth.next=#2 (the node after the group), and set prev=#2, curr=#0. prev is the entry to the reversed fragment; with no nodes reversed yet, it starts at the preserved suffix. curr is the next node whose link we will change.
+
+First: nxt=curr.next=#1; set curr.next=prev, meaning #0.next=#2; advance to prev=#0, curr=#1. Second: save nxt=#2, set #1.next=#0, then advance to prev=#1, curr=#2. Now curr is group_next, so the group is reversed. Save old_head=group_prev.next=#0, then set group_prev.next=kth, meaning dummy.next=#1. Finally set group_prev=old_head=#0 so the next group also has a predecessor. Repeat this same process for later groups; return dummy.next as the new entry.

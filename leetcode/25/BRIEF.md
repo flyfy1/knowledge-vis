@@ -27,9 +27,10 @@ How do we reverse each group of k nodes? Change next pointers, never swap node v
 
 | Name | First introduction | Definition | Prerequisites |
 | --- | --- | --- | --- |
-| `#id / node.val` | Steps 1–2; repeated in step 4 | Permanent object identity / immutable node value | Arrays, indices, the stated input contract |
-| `group_prev / kth / group_next` | Steps 1–2; repeated in step 4 | Predecessor / kth node / successor | Arrays, indices, the stated input contract |
-| `prev / curr / nxt` | Steps 1–2; repeated in step 4 | Reversed fragment / current node / saved old successor | Arrays, indices, the stated input contract |
+| `node / val / next / head / None / #id` | Step 0, before statement and baseline | Object with a value and next reference; first reference; absent node; permanent identity | Python objects, lists and assignment; reference meaning defined inline |
+| `nxt` | Step 0, first concrete rewire | Reference to #1 saved before changing #0.next | Concrete three-node diagram and next assignment |
+| `group_prev / kth / group_next` | Step 1, concrete three-node derivation; repeated in step 4 | Predecessor / kth node / successor | Step 0 saved-reference walkthrough and short-group check |
+| `prev / curr / nxt` | Step 1, concrete three-node derivation; repeated in step 4 | Reversed fragment / current node / saved old successor | Step 0 two rewires and entry reconnection |
 
 ## Representative inputs and expected hand calculation
 
@@ -45,10 +46,7 @@ For [1,2,3,4,5], k=2 gives [2,1], [4,3], then unchanged 5. With k=3, only the fi
 Worked calculation, trace presets, and prediction are separate experiments.
 The trace runs JavaScript, not Python. Full retained trace snapshots are teaching
 storage and are excluded from the submitted algorithm's complexity claim.
-For Sudoku, the first 180 events and final board are retained; an explicit final
-notice identifies omitted events. Heap frames show completed operations, with
-sift behavior explained in prose. DP retains the full table even where Python
-uses rolling rows. Rewind restores a complete snapshot, not an inverse mutation.
+Rewind restores a complete snapshot, not an inverse mutation.
 
 ## Verification
 
@@ -57,3 +55,31 @@ Run `python3 leetcode/tests/test_hard_solutions.py`,
 `NODE_PATH=<playwright package directory> node leetcode/tests/test_hard_browser.cjs`.
 See `../../specs/reviews/leetcode-first-ten-review.md` for observed review evidence.
 No actual LeetCode submission or human learning test is claimed.
+
+## Review 1 repair contract (2026-10-18)
+
+Adopted required finding **25-R1** from [the independent report](../../specs/reviews/25-review-1-e91d5f55.md).
+Reuse the existing lesson layout, typography, colors, paragraph and input-data styles;
+no new controls, CSS, animation, runtime behavior or shared assets. This is the
+review-requested prerequisite repair, not a new product/layout decision.
+
+P0 / highest-return slice: define linked nodes and references before baseline code;
+work [1,2,3], k=2 through saved successor, two edge changes and entry reconnection;
+check the partial suffix before deriving named pointers. Explain Python list-slot
+assignment separately from node-link assignment. Both languages show the same
+object IDs and causal steps. P1: verify the concrete derivation against executable
+source and trace frames. P2: no decoration planned.
+
+Deferred: optional **25-N1** disabled-text styling; it requires a separate local
+style decision and is not needed to repair the missing prerequisite. No shared
+style changes are authorized. Independent closure remains pending.
+
+Step 0 sequence is now definitions → object diagram → assignment distinction →
+problem/grouping hand calculation → concrete two-rewire calculation → partial-group
+counterexample → node-reference baseline. Step 1 names dummy/group_prev, then
+kth/group_next/prev/curr on those same three objects and repeats the two operations
+with exact Python assignments. The existing equal-valued-node prediction stays a
+fresh identity transfer case; its answer is still hidden until explicit reveal.
+
+Self-check evidence and file fingerprints: [review-1-fix/SELF-CHECK.md](evidence/review-1-fix/SELF-CHECK.md).
+This is an author repair; no finding is independently closed here.
