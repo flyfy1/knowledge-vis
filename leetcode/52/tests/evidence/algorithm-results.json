@@ -1,0 +1,45 @@
+{
+  "type": "author self-check",
+  "counts": [
+    {
+      "n": 1,
+      "count": 1
+    },
+    {
+      "n": 2,
+      "count": 0
+    },
+    {
+      "n": 3,
+      "count": 0
+    },
+    {
+      "n": 4,
+      "count": 2
+    },
+    {
+      "n": 5,
+      "count": 10
+    },
+    {
+      "n": 6,
+      "count": 4
+    },
+    {
+      "n": 7,
+      "count": 40
+    },
+    {
+      "n": 8,
+      "count": 92
+    },
+    {
+      "n": 9,
+      "count": 352
+    }
+  ],
+  "seed": 52,
+  "seeded_cases": 100,
+  "exhaustive_legal_prefixes": "n=1..6",
+  "source_parity": true
+}
