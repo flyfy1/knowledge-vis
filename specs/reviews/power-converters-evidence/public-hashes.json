@@ -1,0 +1,122 @@
+{
+  "revision": "9806e405134d61f78779d59713d276e741ac93f5",
+  "files": [
+    {
+      "path": "atlas/app.js",
+      "sha256": "ff41a9c0fa6cd53c2def00a185034424370c0f50590d736131fa92507337bda2",
+      "bytes": 17391
+    },
+    {
+      "path": "atlas/data.js",
+      "sha256": "af79c2a631a3b5f29e76841dfcdc662c7f9a2fd58faf309cee70aa6ae26241cb",
+      "bytes": 27451
+    },
+    {
+      "path": "atlas/style.css",
+      "sha256": "4cdee281d0c0bb795c752a51ba26ce7891fc1dc959eebe4a756072e33506992c",
+      "bytes": 8942
+    },
+    {
+      "path": "pages.config.js",
+      "sha256": "35798515ba64dda35558a68f45a7b724a28717ca3ff912d286acb61b117b2d81",
+      "bytes": 22670
+    },
+    {
+      "path": "trig/index.html",
+      "sha256": "93605e7305da5cc01d3f3e6ebd8ea09753a518ca0dce83f214e0eb9c5efdf663",
+      "bytes": 11118
+    },
+    {
+      "path": "eigen/index.html",
+      "sha256": "61d631308055d5ef55a48490b15cf01e8092d8cf38b4d10a68f5123966af002f",
+      "bytes": 13709
+    },
+    {
+      "path": "laplace/index.html",
+      "sha256": "6e512af14599548a13502f1ef977d87aa92410887776aa2c67370f3673abbf5b",
+      "bytes": 11632
+    },
+    {
+      "path": "fourier/index.html",
+      "sha256": "e164c582dc58ded4ca48b818f6ccf3d35dd827f6eb65da4f3e8a35faabfad875",
+      "bytes": 18411
+    },
+    {
+      "path": "freqresp/index.html",
+      "sha256": "eb571704ecc2fdfcb90f03ba799a144017468f8e412f5384d60de2ddf163a63e",
+      "bytes": 13313
+    },
+    {
+      "path": "sampling/index.html",
+      "sha256": "42378b32fac408b27a9dbe50b29f2c931a12640845517579a36c9c24ff2d18f6",
+      "bytes": 14188
+    },
+    {
+      "path": "lti/index.html",
+      "sha256": "da2d65337e3fe08b758e170edbc5297423c87a9ac1984b4736345e76ec2f21fb",
+      "bytes": 15907
+    },
+    {
+      "path": "convolution/index.html",
+      "sha256": "3a8d74a1926b570388f29998ad84c45cf3a3fae1b0e1c2ddb973629598593fff",
+      "bytes": 13121
+    },
+    {
+      "path": "control/index.html",
+      "sha256": "6f3e62f9cb907f50fcbd516af9c7f78f15f80c93a78c0bf9e5c0b56307251117",
+      "bytes": 13937
+    },
+    {
+      "path": "bayes/index.html",
+      "sha256": "7ad92bbb20ff89aa6596b708e98577201cd6f41f29e74c3854fcc4d83157c439",
+      "bytes": 11957
+    },
+    {
+      "path": "clt/index.html",
+      "sha256": "a8c4a194baf671af0605aef0c0bb833439dc9e0789b5f47e66ef8e3491864c93",
+      "bytes": 13148
+    },
+    {
+      "path": "montecarlo/index.html",
+      "sha256": "a601dd620c738ee7b30506520bf32b06235adc3aa4cbe0e3bfc5fe733163f1e8",
+      "bytes": 10853
+    },
+    {
+      "path": "kalman/index.html",
+      "sha256": "3d44db2095f1aef1bc4276018a784222cd54481ae9ccb672c61657e51d614452",
+      "bytes": 9610
+    },
+    {
+      "path": "lesson-shell.css",
+      "sha256": "baba8033a0d98b04c85c2ec7b21f04093cd95f57b174af3c1ff64f76250d17a0",
+      "bytes": 1632
+    },
+    {
+      "path": "lesson-shell.js",
+      "sha256": "c86fdfd8edfa28d98349e25fab95a54470bb56dd75e1f6dfc07533490a1c3353",
+      "bytes": 776
+    },
+    {
+      "path": "power-converters/index.html",
+      "sha256": "20bfcb31d4e7d5eb85096d8512dbd9e3d338621592c9f9e51699f0521e996a72",
+      "bytes": 796
+    },
+    {
+      "path": "power-converters/style.css",
+      "sha256": "052050a219958ce4ff71c7fba5920484ff37111166f16f4c4351a87880f364e4",
+      "bytes": 4244
+    },
+    {
+      "path": "power-converters/model.js",
+      "sha256": "244b4d11a4f557fd1a8e974a07db85a066c02ecdfcefbb92380f293538914dd5",
+      "bytes": 1492
+    },
+    {
+      "path": "power-converters/app.js",
+      "sha256": "4c2ce774e57e08693dd8388f719b9eab9e8fa588f94c5813097fd152740fb121",
+      "bytes": 31892
+    }
+  ],
+  "status": "pass",
+  "verification": "Public HTTPS response bytes match committed snapshot"
+}
