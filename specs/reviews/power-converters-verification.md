@@ -19,3 +19,11 @@ The screenshot's specific Fourier hash mismatch/right shift did not reproduce af
 ## Boundaries
 
 These are browser simulations and an analytical ideal periodic CCM converter model. Output ripple, startup, DCM, switch losses and feedback dynamics are intentionally not solved. CSS zoom is not native browser zoom. No physical phone or screen-reader speech session. Deployment evidence is recorded separately after live checks.
+
+## Production follow-through
+
+Release 9806e40 deployed from a Git archive to the existing Pi static root. All 17 existing touched runtime files matched their pre-release committed baselines; six files were additive. Backups and a receipt live outside the served root under `/home/songyy/projects/.visual-releases/9806e40/`. All 23 public response bodies matched committed SHA-256 hashes. Public legacy symptom regression passed 8/8.
+
+The initial public map-link browser check failed its fixed 150ms URL assertion once. A separate instrumented fresh browser confirmed 31 nodes, correct Boost detail/link, and correct destination immediately after click and after settlement. No reproducible product link defect was found. The acceptance test now waits for the requested navigation event rather than assuming network completion after 150ms.
+
+Public static JS responses declare `Cache-Control: max-age=14400`. Atlas asset URLs and the homepage registry URL are therefore versioned for this release, so returning browsers request the changed content instead of retaining older data for four hours. This is a confirmed cache-lifetime release requirement, not a claimed diagnosis of the single transient URL assertion.

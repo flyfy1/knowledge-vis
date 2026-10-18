@@ -19,6 +19,6 @@ const base=process.env.BASE_URL||'http://127.0.0.1:18769';
   results.push({lang,width,minChartText:minText,geometry});await ctx.close();
  }
  // Actual map → new lesson → return navigation, including generated section anchors.
- const p=await b.newPage();await p.goto(base+'/atlas/?node=boost&view=list');await p.locator('.primary-link').click();await p.waitForTimeout(150);assert.ok(p.url().endsWith('/power-converters/#step5'));assert.ok(await p.locator('#step5').isVisible());await p.locator('#back').click();assert.ok(p.url().includes('/atlas/'));assert.ok(await p.locator('#detailTitle').isVisible());
+ const p=await b.newPage();await p.goto(base+'/atlas/?node=boost&view=list');await Promise.all([p.waitForURL('**/power-converters/#step5'),p.locator('.primary-link').click()]);assert.ok(p.url().endsWith('/power-converters/#step5'));assert.ok(await p.locator('#step5').isVisible());await Promise.all([p.waitForURL('**/atlas/**'),p.locator('#back').click()]);assert.ok(p.url().includes('/atlas/'));assert.ok(await p.locator('#detailTitle').isVisible());
  assert.deepEqual(errors,[]);console.log(JSON.stringify({base,states:results,errors,status:'pass'}));
 }finally{await b.close();}})().catch(e=>{console.error(e);process.exitCode=1;});
