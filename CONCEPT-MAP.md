@@ -369,3 +369,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | count-only backtracking | `leetcode/52/#step4` | Restore constraints while retaining the cumulative integer, without storing boards. |
 
 <!-- /leetcode-52-campaign -->
+
+
+<!-- leetcode-68-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| maximal fitting prefix | `leetcode/68/#step0` | Accept consecutive words only while letters plus minimum gaps fit. |
+| quotient and remainder | `leetcode/68/#step1` | Give leftmost remainder gaps one extra space. |
+| loop invariant | `leetcode/68/#step4` | Maintain a consecutive fitting group and advance without losing words. |
+
+<!-- /leetcode-68-campaign -->
