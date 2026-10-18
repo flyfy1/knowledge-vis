@@ -432,3 +432,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Monotonic stack | `leetcode/85/#step2` | Settle a pending height when a shorter bar fixes its right boundary. |
 
 <!-- /leetcode-85-campaign -->
+
+
+<!-- leetcode-123-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| cash-state dynamic programming | `leetcode/123/#step1` | Best cash per holding condition and transaction budget. |
+| rolling state invariant | `leetcode/123/#step4` | Four previous-prefix maxima suffice for every legal next action. |
+
+<!-- /leetcode-123-campaign -->
