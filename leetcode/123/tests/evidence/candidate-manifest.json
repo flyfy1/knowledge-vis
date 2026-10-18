@@ -1,0 +1,23 @@
+{
+  "problemId": 123,
+  "createdAt": "2026-10-18T11:34:44.655377+00:00",
+  "status": "author-self-checked; independent review pending",
+  "sha256": {
+    "index.html": "1fa47e76e793e4e2c9a1b6d020c0c50afb603f6d75ee49bf105330cca0d2b106",
+    "app.js": "6aa98280c36ae5a10d39a55eddf8204ad05dd67b3f2bcf0ee807b2fc60ea7ad1",
+    "copy.js": "f76f95449c2e938c3effb5febbf009f836de995e5d55b7668f2d1b3beedde6b3",
+    "core.js": "affa3b816a0b8da98bb6e63721b71416f0e8f5f25ee2666d827c5f592ce7bcd8",
+    "style.css": "1bce682f28b56bef24409e85a34cdd0aa9c0e446b7af36365daf76fffed99ad1",
+    "solution.py": "9a23660bc350e83ad492357549a8cf1a761b625466bba8439a89d66050c814a1",
+    "python-code.js": "95c66c2075e8949fda2a07967936d15832637930b2d5e5d4051cd7061e39c28b",
+    "BRIEF.md": "4a9abad180601ad049d9a0ae798e1bf94b4c28d801a62dd8108c813693a06fe9",
+    "lesson-entry.json": "b688ea49a9bf448c7e051bc0225e283933f30c202a4dee10b9f59b54bbfd3427",
+    "tests/browser.cjs": "f4db0e97753273749babb42dab6b9942d934cb93d7a4f17567ef39751c015cc4",
+    "tests/test_solution.py": "802f1acb3ce9c5708e48df92a2b9eeaf0d91dfdedf6f77a5160488c48db667f7",
+    "tests/build_content.py": "57749d4fbfd42605b48bd8b01d41608e45bd4f0f460fa85f400d2f7ac029c963"
+  },
+  "sharedAssetsReadOnly": {
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b"
+  }
+}
