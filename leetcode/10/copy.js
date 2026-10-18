@@ -224,8 +224,8 @@ window.LESSON_COPY = {
     "For s=\"aab\", p=\"c*a*b\", take zero c characters, two a characters, then b: true. For s=\"aa\", p=\"a\", the answer is false because a partial match is insufficient."
   ],
   "cost": [
-    "朴素递归在 * 处尝试“跳过”与“重复”，不同路径会再次遇到相同前缀组合，最坏产生指数级分支。切片也复制字符串。把每个前缀组合只求一次即可。",
-    "Naive recursion branches into skip and repeat at *. Different paths revisit the same prefix combinations, causing exponential branching in the worst case; slicing also copies strings. Compute each prefix pair once."
+    "递归从左端消费字符；每次调用中的 s、p 是尚未处理的后缀（删去开头后剩下的部分）。遇到 *，先试跳过整组，再试消费一个相容字符并保留该组。失败分支可能让不同路径重复求同一对后缀；最坏有指数级分支，切片还会复制字符串。",
+    "The recursion consumes characters from the front. Each call holds suffixes: what remains after removing the beginnings of s and p. At *, it first tries skipping the group, then consuming one compatible character while keeping the group. Failed branches can make different paths solve the same suffix pair again; worst-case branching is exponential, and slicing also copies strings."
   ],
   "derive": [
     "dp[i][j] 表示 s 的前 i 个字符与 p 的前 j 个字符能否完全匹配。普通字符或 . 只看左上格 dp[i−1][j−1]。遇到 x*，零次用 dp[i][j−2]；一次以上要求当前字符匹配 x，再用 dp[i−1][j]。",
@@ -294,6 +294,38 @@ window.LESSON_COPY = {
   "introducedLink": [
     "对比独立星号的递推",
     "Compare the standalone-star recurrence"
+  ],
+  "overlapTitle": [
+    "两条路，剩下同一个问题",
+    "Two paths leave the same question"
+  ],
+  "overlapIntro": [
+    "换一个容易失败的小例子：s=\"aa\"，p=\"a*a*b\"。把两组 a* 分别叫第一组和第二组。最后必须有 b，但文本只有两个 a，所以完整匹配为假。下面每个括号都是一次 baseline(s, p) 调用：",
+    "Try a small failing case: s=\"aa\", p=\"a*a*b\". Call the two a* groups first and second. A final b is required, but the text has only two a characters, so the full match is false. Each pair below is one baseline(s, p) call:"
+  ],
+  "overlapSkip": [
+    "先跳过第一组，再让第二组消费一个 a：(“aa”, “a*a*b”) → (“aa”, “a*b”) → (“a”, “a*b”)。",
+    "Skip the first group, then consume one a with the second: (\"aa\", \"a*a*b\") → (\"aa\", \"a*b\") → (\"a\", \"a*b\")."
+  ],
+  "overlapConsume": [
+    "先让第一组消费一个 a，再跳过第一组：(“aa”, “a*a*b”) → (“a”, “a*a*b”) → (“a”, “a*b”)。",
+    "Consume one a with the first group, then skip that group: (\"aa\", \"a*a*b\") → (\"a\", \"a*a*b\") → (\"a\", \"a*b\")."
+  ],
+  "overlapWork": [
+    "共同的问题是：“a” 能否匹配 “a*b”？跳过 a* 得到 (“a”, “b”)，首字母不同，为假；消费 a 得到 (“”, “a*b”)，跳过 a* 后只剩 (“”, “b”)，也为假。所以共同问题为假。因为整例失败，or 无法提前返回真，第二条路会把这些判断再做一遍。",
+    "The shared question is: can \"a\" match \"a*b\"? Skipping a* leaves (\"a\", \"b\"), false because the letters differ. Consuming a leaves (\"\", \"a*b\"); skipping a* then leaves (\"\", \"b\"), also false. So the shared answer is false. Because the whole example fails, or cannot return true early: the second path repeats these checks."
+  ],
+  "overlapSave": [
+    "到达这里之前，哪个 a* 用过字符已不影响剩下的判断；完整的两段剩余字符串就足够决定结果。第一次算出 (“a”, “a*b”) 为假后，把它按这对后缀保存，第二次直接取假即可。必须用两段作键：只记剩余文本 “a”，会把匹配 “a” 的真与匹配 “b” 的假混在一起。",
+    "Which earlier a* consumed a character no longer affects the remaining question; the two complete remaining strings determine its answer. Store false under the suffix pair (\"a\", \"a*b\") after the first calculation, and reuse it on the second visit. Both strings are needed as the key: storing only text \"a\" would confuse its true match against \"a\" with its false match against \"b\"."
+  ],
+  "suffixBridge": [
+    "怎样把“同一对子问题只算一次”变成下面的表？直接给递归加缓存，可以保存后缀结果。这里改用另一种方向：从短到长求两个前缀（开头的部分），分析匹配的最后一段，而不是递归中的第一段。不倒转字符串，也不把后缀缓存原样当作前缀表。",
+    "How does solving each pair once become the table below? One option is to cache the recursion’s suffix answers. Here we choose another direction: build answers for prefixes (the beginnings) from short to long, reasoning about the last part of a match rather than the recursion’s first part. We neither reverse the strings nor relabel the suffix cache as a prefix table."
+  ],
+  "prefixExample": [
+    "仍看 aa / a*a*b：dp[1][2] 是 “a” / “a*”，为真；dp[1][4] 是 “a” / “a*a*”，也为真（末组取零次）。因此 dp[2][4] 为真：末组再消费一个 a，沿用 dp[1][4]。此时模式位置 j=4 不变，仍可重复。最后 dp[2][5] 是 “aa” / “a*a*b”：a 不匹配 b，所以为假。每个格只保存这两个前缀的答案，之前如何分配 a 不必保存；多个后续格需要它时直接读取。",
+    "Keep aa / a*a*b: dp[1][2] asks about \"a\" / \"a*\", true. dp[1][4] asks about \"a\" / \"a*a*\", also true (use the last group zero times). Then dp[2][4] is true: consume another a with the last group and reuse dp[1][4]. Pattern position j=4 stays unchanged, allowing repetition. Finally dp[2][5] asks about \"aa\" / \"a*a*b\": a cannot match b, so it is false. Each cell stores only that prefix pair’s answer; how earlier a characters were allocated need not be stored. Later cells can read this answer whenever they need it."
   ]
 };
 window.LESSON = {
@@ -321,8 +353,8 @@ window.LESSON = {
   ],
   "baseline": "def baseline(s, p):\n    if not p:\n        return not s\n    first = bool(s) and p[0] in (s[0], \".\")\n    if len(p) >= 2 and p[1] == \"*\":\n        return baseline(s, p[2:]) or (first and baseline(s[1:], p))\n    return first and baseline(s[1:], p[1:])",
   "cost": [
-    "朴素递归在 * 处尝试“跳过”与“重复”，不同路径会再次遇到相同前缀组合，最坏产生指数级分支。切片也复制字符串。把每个前缀组合只求一次即可。",
-    "Naive recursion branches into skip and repeat at *. Different paths revisit the same prefix combinations, causing exponential branching in the worst case; slicing also copies strings. Compute each prefix pair once."
+    "递归从左端消费字符；每次调用中的 s、p 是尚未处理的后缀（删去开头后剩下的部分）。遇到 *，先试跳过整组，再试消费一个相容字符并保留该组。失败分支可能让不同路径重复求同一对后缀；最坏有指数级分支，切片还会复制字符串。",
+    "The recursion consumes characters from the front. Each call holds suffixes: what remains after removing the beginnings of s and p. At *, it first tries skipping the group, then consuming one compatible character while keeping the group. Failed branches can make different paths solve the same suffix pair again; worst-case branching is exponential, and slicing also copies strings."
   ],
   "derive": [
     "dp[i][j] 表示 s 的前 i 个字符与 p 的前 j 个字符能否完全匹配。普通字符或 . 只看左上格 dp[i−1][j−1]。遇到 x*，零次用 dp[i][j−2]；一次以上要求当前字符匹配 x，再用 dp[i−1][j]。",
