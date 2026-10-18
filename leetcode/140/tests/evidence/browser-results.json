@@ -1,0 +1,32 @@
+{
+  "result": "pass",
+  "candidate": "140-1",
+  "traceChecks": 266,
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "widths": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "CSS layout zoom 200% at viewport 780",
+  "tested": [
+    "all presets and every event",
+    "back/forward identity",
+    "endpoints/reset/range",
+    "all predictions and stale feedback",
+    "locale state preservation",
+    "clipboard success and manual fallback",
+    "source/display/download parity",
+    "keyboard focus and activation",
+    "deep links",
+    "blocked storage",
+    "no external assets or runtime/network errors"
+  ],
+  "errors": [],
+  "bad": [],
+  "external": []
+}
