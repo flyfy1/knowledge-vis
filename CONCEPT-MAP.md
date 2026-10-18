@@ -432,3 +432,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Monotonic stack | `leetcode/85/#step2` | Settle a pending height when a shorter bar fixes its right boundary. |
 
 <!-- /leetcode-85-campaign -->
+
+
+<!-- leetcode-87-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| recursive string partition | `leetcode/87/#step0` | Split contiguous nonempty pieces and independently keep or swap. |
+| interval dynamic programming | `leetcode/87/#step1` | Two start positions and a shared length identify a reusable Boolean state. |
+| inductive correctness | `leetcode/87/#step4` | Both root alignments are necessary and sufficient when their child states are correct. |
+
+<!-- /leetcode-87-campaign -->

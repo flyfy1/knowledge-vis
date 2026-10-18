@@ -1,0 +1,41 @@
+{
+  "independent_cases": 276,
+  "intervals_checked": 16997,
+  "fresh_cases_and_boundaries": [
+    [
+      "abc",
+      "bca",
+      true
+    ],
+    [
+      "abcd",
+      "bdac",
+      false
+    ],
+    [
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      true
+    ],
+    [
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+      false
+    ],
+    [
+      "abcdefghijklmnopqrstuvwxyzzabc",
+      "cbazzyxwvutsrqponmlkjihgfedcba",
+      true
+    ]
+  ],
+  "served_local_sha256": {
+    "index.html": "412103c2d0069105038c7bfdd4f15b28dcc5471eb91a9cc0213dd30273261b73",
+    "core.js": "c1c4977ac977adc928830735e65f4e5f1fa81c7b93684ce447ecf75e6bec595c",
+    "app.js": "ae4288d5b4166bc77df42060a62d546ab1fc20b9de50366e7917246806a6f19d",
+    "copy.js": "f50fcd5957d4466a1a87d2cc5cb0eceec68ed6861e271a302f14e246723bedd3",
+    "style.css": "fb0563027af845ec565087fa15a82a02948f360fe412d51e85f7f72137df6d03",
+    "solution.py": "fc06bde41663e752905318830591e72396cdf5a24895139035327ae010dfa177",
+    "python-code.js": "e7ff0d924c71e6e6d3fde8f9a2146839ba3fcfd87c22ec0e47b5d00d1c77106a"
+  },
+  "input_preservation": true
+}

@@ -1,0 +1,114 @@
+{
+  "type": "author self-check",
+  "checks": [
+    {
+      "lang": "en",
+      "width": 1440,
+      "cut": 71
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "cut": 71
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "cut": 71
+    }
+  ],
+  "contrasts": [
+    {
+      "surface": "bg",
+      "ink": "text",
+      "ratio": 16.086987125379448
+    },
+    {
+      "surface": "bg",
+      "ink": "muted",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "surface": "bg",
+      "ink": "accent",
+      "ratio": 13.100679028115637
+    },
+    {
+      "surface": "bg",
+      "ink": "accent2",
+      "ratio": 10.731637051347173
+    },
+    {
+      "surface": "bg",
+      "ink": "good",
+      "ratio": 12.013623247863544
+    },
+    {
+      "surface": "bg",
+      "ink": "bad",
+      "ratio": 7.621336463114408
+    },
+    {
+      "surface": "panel",
+      "ink": "text",
+      "ratio": 14.704584598678618
+    },
+    {
+      "surface": "panel",
+      "ink": "muted",
+      "ratio": 7.078851579017443
+    },
+    {
+      "surface": "panel",
+      "ink": "accent",
+      "ratio": 11.974898815275662
+    },
+    {
+      "surface": "panel",
+      "ink": "accent2",
+      "ratio": 9.809435643476732
+    },
+    {
+      "surface": "panel",
+      "ink": "good",
+      "ratio": 10.981256963037128
+    },
+    {
+      "surface": "panel",
+      "ink": "bad",
+      "ratio": 6.966412411684981
+    },
+    {
+      "surface": "panel2",
+      "ink": "text",
+      "ratio": 13.397069143240783
+    },
+    {
+      "surface": "panel2",
+      "ink": "muted",
+      "ratio": 6.449407898769069
+    },
+    {
+      "surface": "panel2",
+      "ink": "accent",
+      "ratio": 10.910104011097095
+    },
+    {
+      "surface": "panel2",
+      "ink": "accent2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "surface": "panel2",
+      "ink": "good",
+      "ratio": 10.004815697188947
+    },
+    {
+      "surface": "panel2",
+      "ink": "bad",
+      "ratio": 6.34696669826778
+    }
+  ],
+  "focusWidth": 3,
+  "focusContrastOver3": true
+}
