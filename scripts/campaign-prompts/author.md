@@ -16,16 +16,30 @@ Five sections are a default, not a forced optimization narrative.
 Verify the official statement, constraints, examples, supported solution interface,
 and exceptions from the official URL or public GraphQL. For paid content use only
 normally available authorized access; do not bypass a paywall, invent a statement,
-or use a presumed title as its contract. Default to Python. The human explicitly
-approved original JavaScript solutions for the six catalog JavaScript problems
-2630, 2650, 2675, 2691, 2756 and 2759, accompanied by a Python conceptual comparison.
-For these six verify the original JavaScript contract, including identity,
-mutation, this binding, callbacks, promises, rejection and timing where applicable.
-Do not present the Python comparison as an equivalent LeetCode submission or claim
-cross-language runtime semantics are identical. For all other problems, if the
-statement is unavailable or Python cannot faithfully implement an official
-interface, return blocked with specific evidence and next needed input. Retain
-the problem in scope. Database/Pandas problems may have a Python DataFrame interface.
+or use a presumed title as its contract. Prefer Python when it faithfully implements
+an officially supported submission interface, otherwise TypeScript when supported,
+otherwise the problem-required native language (for example the documented SQL
+dialect or JavaScript). Missing Python support alone is NOT a blocker. Verify the
+actual language selector/interface, not only the problem category. Python DataFrame
+interfaces may be available for Database/Pandas problems. For the six JavaScript
+category problems 2630, 2650, 2675, 2691, 2756 and 2759, prefer verified TypeScript
+when offered; otherwise use their original JavaScript. Retain a separately labeled
+Python conceptual comparison. Never mislabel that comparison as a valid original
+submission or an oracle for JS identity, this binding, mutation or async semantics.
+
+Every non-Python solution needs language-contract.json with problemId, language,
+officialSource (the exact catalog officialUrl), supportedLanguages (the complete
+faithful official interfaces observed, normalized to Python / TypeScript /
+JavaScript; retain exact SQL dialect labels), interface (callable signature or
+schema and runtime semantics), rationale (why earlier preferred languages cannot
+faithfully submit), verifiedAt (ISO timestamp with timezone), verificationEvidence
+(a lesson-relative nonempty evidence file). Save what was actually observed from
+the official source, with the access date and selector/interface excerpts or
+screenshots, so the separate reviewer can verify the language decision. The
+contract's selected language must follow Python > TypeScript > required native.
+Do not omit supported Python or TypeScript merely to select an easier language.
+If the official statement/interface cannot be accessed, retain the problem in
+scope and return blocked with concrete evidence and the next needed input.
 
 Own ONLY leetcode/<id>/ and tests inside that folder. Do not edit shared assets,
 registry, other lessons, scripts, workflow, Git config, or system services. Do not
@@ -36,25 +50,35 @@ other lessons). A queen board is not a Sudoku board; implement the necessary loc
 renderer honestly. Avoid a universal visualization framework. Prior lessons may
 be read for conventions after the design documents.
 
-Deliver index.html, app.js, copy.js, solution.py, python-code.js (exact Python
-source embedded), BRIEF.md, a numerical core if needed, and reproducible tests.
-For the six approved JavaScript problems, replace solution.py with solution.js
-(canonical official solution), javascript-code.js (exact solution.js embedded),
-and concept.py (clearly labeled Python conceptual comparison); python-code.js
-must embed concept.py exactly. Provide separate labeled source/copy/download
-controls and bilingual limitations explaining where the Python analogy differs.
+Deliver index.html, app.js, copy.js, BRIEF.md, a numerical core if needed, and
+reproducible tests. Python uses solution.py and python-code.js; TypeScript uses
+solution.ts and typescript-code.js; JavaScript uses solution.js and
+javascript-code.js; SQL dialects use solution.sql and sql-code.js. Other native
+file pairs are listed in scripts/register_leetcode_lesson.py LANGUAGE_FILES; read
+that table without editing shared scripts. The canonical source is the actual
+official submission. Its offline mirror must contain only
+window.<LANGUAGE>_SOURCE = <JSON string of the exact source>; using the table's
+export name. For the six JavaScript category problems also deliver concept.py and
+python-code.js (window.PYTHON_SOURCE embedding concept.py exactly), with separate
+labeled source/copy/download controls and bilingual limits of the analogy.
 Create lesson-entry.json with id, title:{zh,en}, desc:{zh,en}, difficulty:'hard',
-topics:[{zh,en}], path:'<id>/', leetcodeUrl, language:'Python', complexity,
+topics:[{zh,en}], path:'<id>/', leetcodeUrl, language:'<verified canonical language>', complexity,
 concepts:[{name,step:<integer>,description}]. Metadata title values omit the ID
 because the collection renderer adds it. The lesson heading clearly shows #<id>;
-include a separate official link. Use language:'JavaScript' only for those six catalog
-JavaScript problems; all others use 'Python'. Python is canonical by default;
-a JS trace is not Python execution. For the approved exception, distinguish the
-visual simulation from execution of the canonical JavaScript solution as well.
+include a separate official link. Metadata language is the verified canonical
+language, exactly matching language-contract.json for exceptions. A visual trace
+is a simulation, not execution of the official submission. Distinguish both
+explicitly; do not silently advertise the Python comparison as the solution.
 Use a real causal explanation, hand calculation, baseline, invariant/proof,
 small reversible interactive experiment, fresh predict-before-reveal exercise,
-canonical-code mapping, boundaries and honest costs. For JavaScript problems,
-also explain the Python conceptual comparison. Fresh examples and counterexamples
+canonical-code mapping, boundaries and honest costs. Start with a vivid tiny
+concrete example that a reader can calculate by hand, define every new term at
+first use, then introduce one complication at a time. Show the actual values and
+why each transition occurs before showing the optimized rule; explain a tempting
+wrong approach with a small counterexample. Derive the invariant from those
+observations rather than asserting it. Include a fresh transfer exercise whose
+answer requires that invariant, with an explanation after reveal. For JavaScript
+category problems also explain the limited Python conceptual comparison. Fresh examples and counterexamples
 must be problem-specific, not generic template filler. Related anchors must exist.
 All system text/feedback/accessibility labels need Chinese and English; locale
 preserves state. No external fonts/assets. No placeholders or fake completion.
@@ -64,8 +88,13 @@ small exhaustive/seeded cases. Exercise the REAL browser, both locales, all pres
 forward/back/reset/endpoints, prediction then reveal then change, copy/fallback,
 320/390/desktop widths and 200% zoom, keyboard/focus, source/download parity,
 local asset errors and measured contrast. Store tests and self-check evidence in
-this lesson folder. JavaScript lessons must test the original callable contract
-in JavaScript, deterministic async behavior when relevant (including rejection,
+this lesson folder. Execute and validate the canonical original-language solution against an
+independently derived oracle/expected results. For TypeScript compile/type-check
+solution.ts and execute its emitted JavaScript, preserving the original callable
+interface. SQL lessons need the actual documented dialect/schema, ties, nulls,
+duplicates and ordering rules; a Python analogy alone is not execution evidence.
+JavaScript/TypeScript lessons must test the original callable contract and
+deterministic async behavior when relevant (including rejection,
 ordering and cancellation only if in the original contract), and both embedded /
 copied / downloaded sources against their respective files. Test the Python
 comparison's stated behavior independently without using it as an oracle for

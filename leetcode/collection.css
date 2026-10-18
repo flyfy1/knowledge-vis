@@ -1,0 +1,18 @@
+/* Collection-only controls reuse the established LeetCode palette. */
+.collection-search{margin-bottom:1rem}
+.collection-search label{display:block;font-weight:600}
+.search-help,#resultCount{font-size:.875rem;color:var(--muted);margin-bottom:.75rem}
+.search-controls{display:flex;gap:.75rem;flex-wrap:wrap;align-items:stretch}
+#problemSearch{flex:1 1 16rem;min-width:0;width:100%;min-height:48px;border:1px solid var(--muted);border-radius:.5rem;background:var(--panel);color:var(--text);padding:.5rem .75rem}
+#clearSearch{min-width:48px;min-height:48px;border:1px solid var(--muted);border-radius:.5rem;background:var(--panel);color:var(--text);padding:.5rem 1rem;white-space:normal}
+#emptyResults,#loadError{overflow-wrap:anywhere;margin:1.5rem 0;color:var(--text)}
+.collection .problem-card,.collection .badge,.collection .topic-tag{min-width:0;overflow-wrap:anywhere}
+.collection .official-link{white-space:normal}
+.collection .problem-actions a,.collection .lesson-link,#reloadCollection,.head-top .back-link{min-height:48px;display:inline-flex;align-items:center}
+.collection .lesson-link{display:block;padding-block:.5rem}
+.lang-toggle{overflow:visible}
+.lang-toggle button{min-width:48px;min-height:48px;color:var(--text)}
+.lang-toggle button:first-child{border-radius:999px 0 0 999px}
+.lang-toggle button:last-child{border-radius:0 999px 999px 0}
+.lang-toggle button.active{color:var(--bg)}
+@media(forced-colors:active){#problemSearch,#clearSearch{border-color:ButtonText}}
