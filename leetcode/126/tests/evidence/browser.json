@@ -1,0 +1,270 @@
+{
+  "status": "pass",
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "presets": 6,
+  "widths": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "200% CSS + 720px reflow",
+  "sourceParity": "display/copy/fallback/download match solution.py",
+  "errors": [],
+  "bad": [],
+  "cssBytes": 11830,
+  "focus": {
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrast": [
+    {
+      "f": "--text",
+      "b": "--bg",
+      "fg": "#e8edf4",
+      "bg": "#0d1117",
+      "ratio": 16.086987125379448
+    },
+    {
+      "f": "--text",
+      "b": "--panel",
+      "fg": "#e8edf4",
+      "bg": "#161b22",
+      "ratio": 14.704584598678618
+    },
+    {
+      "f": "--text",
+      "b": "--panel2",
+      "fg": "#e8edf4",
+      "bg": "#1c2330",
+      "ratio": 13.397069143240783
+    },
+    {
+      "f": "--muted",
+      "b": "--bg",
+      "fg": "#9aa7b8",
+      "bg": "#0d1117",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "f": "--muted",
+      "b": "--panel",
+      "fg": "#9aa7b8",
+      "bg": "#161b22",
+      "ratio": 7.078851579017443
+    },
+    {
+      "f": "--muted",
+      "b": "--panel2",
+      "fg": "#9aa7b8",
+      "bg": "#1c2330",
+      "ratio": 6.449407898769069
+    },
+    {
+      "f": "--accent",
+      "b": "--bg",
+      "fg": "#6ee7ff",
+      "bg": "#0d1117",
+      "ratio": 13.100679028115637
+    },
+    {
+      "f": "--accent",
+      "b": "--panel",
+      "fg": "#6ee7ff",
+      "bg": "#161b22",
+      "ratio": 11.974898815275662
+    },
+    {
+      "f": "--accent",
+      "b": "--panel2",
+      "fg": "#6ee7ff",
+      "bg": "#1c2330",
+      "ratio": 10.910104011097095
+    },
+    {
+      "f": "--accent2",
+      "b": "--bg",
+      "fg": "#ffb454",
+      "bg": "#0d1117",
+      "ratio": 10.731637051347173
+    },
+    {
+      "f": "--accent2",
+      "b": "--panel",
+      "fg": "#ffb454",
+      "bg": "#161b22",
+      "ratio": 9.809435643476732
+    },
+    {
+      "f": "--accent2",
+      "b": "--panel2",
+      "fg": "#ffb454",
+      "bg": "#1c2330",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "renderedContrast": [
+    {
+      "sel": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 12.615602281385614
+    },
+    {
+      "sel": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "sel": ".word",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".btn:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 6.449407898769069
+    },
+    {
+      "sel": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": ".step-nav a.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "pre",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(9, 14, 22)",
+      "opacity": "1",
+      "ratio": 16.437295258072666
+    }
+  ],
+  "targetSizes": [
+    {
+      "label": "← LeetCode 知识索引",
+      "width": 139.296875,
+      "height": 48
+    },
+    {
+      "label": "中",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "label": "EN",
+      "width": 49.0625,
+      "height": 48
+    },
+    {
+      "label": "官方题目 ↗",
+      "width": 84.171875,
+      "height": 48
+    },
+    {
+      "label": "01 · 两条最短路",
+      "width": 123.0625,
+      "height": 48
+    },
+    {
+      "label": "02 · 共享距离，保留来路",
+      "width": 179.0625,
+      "height": 48
+    },
+    {
+      "label": "03 · 逐次展开实验",
+      "width": 137.0625,
+      "height": 48
+    },
+    {
+      "label": "04 · 先预测，再揭晓",
+      "width": 151.0625,
+      "height": 48
+    },
+    {
+      "label": "05 · 证明与 Python",
+      "width": 145.140625,
+      "height": 48
+    },
+    {
+      "label": "小例：aa → bb，两条路官方例 1：hit → cog官方例 2：缺少 cog起点在词表内一位词，直接到达终点存在，但不连通",
+      "width": 226,
+      "height": 48
+    },
+    {
+      "label": "← 回退快照",
+      "width": 116.171875,
+      "height": 48
+    },
+    {
+      "label": "已到最后快照",
+      "width": 128.015625,
+      "height": 48
+    },
+    {
+      "label": "跳至重建答案",
+      "width": 128.015625,
+      "height": 48
+    },
+    {
+      "label": "重置本实验",
+      "width": 112.015625,
+      "height": 48
+    },
+    {
+      "label": "验证预测",
+      "width": 96.015625,
+      "height": 48
+    },
+    {
+      "label": "复制 Python",
+      "width": 121.234375,
+      "height": 48
+    },
+    {
+      "label": "N 皇后：看选择与撤销 →",
+      "width": 180.484375,
+      "height": 48
+    },
+    {
+      "label": "不同的子序列：保留多种来路的计数 →",
+      "width": 276.171875,
+      "height": 48
+    }
+  ],
+  "checks": [
+    "all snapshots forward/back/reset/end/range",
+    "all prediction choices/reveal/change",
+    "locale preserves trace/choice/reveal/disclosure",
+    "clipboard success/denial",
+    "keyboard Enter/focus",
+    "local href anchors",
+    "blocked storage/offline interactions",
+    "forced colors/reduced motion"
+  ]
+}
