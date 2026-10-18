@@ -1,0 +1,38 @@
+{
+  "id": 214,
+  "title": {
+    "zh": "最短回文串",
+    "en": "Shortest Palindrome"
+  },
+  "desc": {
+    "zh": "从前置字符的手算出发，推导最长回文前缀与 KMP 回退。",
+    "en": "Derive the longest palindromic prefix and KMP fallback from a tiny prepend puzzle."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "字符串",
+      "en": "Strings"
+    },
+    {
+      "zh": "前缀函数",
+      "en": "Prefix function"
+    }
+  ],
+  "path": "214/",
+  "leetcodeUrl": "https://leetcode.com/problems/shortest-palindrome/",
+  "language": "Python",
+  "complexity": "O(n) time; O(n) auxiliary space and output space",
+  "concepts": [
+    {
+      "name": "Longest palindromic prefix",
+      "step": 1,
+      "description": "Reduce prepend-only palindrome construction to an equal prefix and suffix."
+    },
+    {
+      "name": "KMP prefix function fallback",
+      "step": 2,
+      "description": "Retain matched borders and fall back without rechecking known characters."
+    }
+  ]
+}

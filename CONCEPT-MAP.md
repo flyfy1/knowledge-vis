@@ -635,3 +635,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Board backtracking invariant | `leetcode/212/#step2` | A numbered simple path matches the current trie prefix; undo restores it. |
 
 <!-- /leetcode-212-campaign -->
+
+
+<!-- leetcode-214-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Longest palindromic prefix | `leetcode/214/#step1` | Reduce prepend-only palindrome construction to an equal prefix and suffix. |
+| KMP prefix function fallback | `leetcode/214/#step2` | Retain matched borders and fall back without rechecking known characters. |
+
+<!-- /leetcode-214-campaign -->
