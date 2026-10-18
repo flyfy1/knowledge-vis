@@ -185,3 +185,21 @@ independent teaching review. Their independent-review status is **pending**.
 This specification update does not perform that review, change deployed pages,
 or grant retrospective acceptance. Next action: review a frozen current
 candidate independently and record per-lesson findings and closure.
+
+## Non-mutating metadata preflight
+
+`lesson-entry.json` complexity is exactly one nonempty string covering time and
+space, for example `"O(mn) arithmetic operations; O(n) integer cells"`; an object
+such as `{time,space}` is invalid. Existing accepted nonempty cost strings remain
+compatible; preflight checks the shape, while review checks the cost claim.
+
+Before author/fix readiness and independent acceptance, run from the checkout root:
+`python3 -B scripts/register_leetcode_lesson.py <id> --validate-only`.
+This reads metadata, catalog, concept anchors and language/source contracts without
+registering, generating files, or changing registry, CONCEPT-MAP, index, metadata,
+or any tracked/untracked file. Registration and new-lesson campaign readiness use
+the same validation interface. Failure prevents readiness/acceptance; reviewers
+record a finding rather than repairing the frozen candidate. Any metadata fix
+requires a new candidate and independent review, never a post-review mutation or
+a rewrite of prior acceptance, campaign state, or reports. The existing positional
+registration CLI remains available only to the authorized registration workflow.
