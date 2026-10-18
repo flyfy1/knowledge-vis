@@ -556,3 +556,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Earliest-anchor completeness | `leetcode/149/#step4` | Prove a suffix scan still visits every member of an optimal line. |
 
 <!-- /leetcode-149-campaign -->
+
+
+<!-- leetcode-154-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Duplicate-aware binary search | `leetcode/154/#step1` | Derive safe interval reductions when endpoint values can be equal. |
+| Minimum-preserving invariant | `leetcode/154/#step4` | Keep at least one global minimum while strictly shrinking the interval. |
+
+<!-- /leetcode-154-campaign -->

@@ -689,6 +689,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n² log C) time; O(n) auxiliary space, C = max(2, coordinate span)"
   },
   {
+    "id": 154,
+    "title": {
+      "zh": "寻找旋转排序数组中的最小值 II",
+      "en": "Find Minimum in Rotated Sorted Array II"
+    },
+    "desc": {
+      "zh": "重复值为什么让二分查找退化？保留至少一个最小值。",
+      "en": "See why duplicates weaken binary search, while preserving a minimum."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      },
+      {
+        "zh": "数组",
+        "en": "Arrays"
+      }
+    ],
+    "path": "154/",
+    "leetcodeUrl": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/",
+    "language": "Python",
+    "complexity": "O(n) worst-case time; O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
