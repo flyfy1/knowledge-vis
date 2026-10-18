@@ -1,0 +1,14 @@
+/* Exact shared palette; local semantic/accessibility roles only. */
+.btn,select,.lang-toggle button,.step-nav a,.solution-actions a,summary{min-height:48px}
+.btn,select{border-color:var(--muted)}
+.btn:disabled{opacity:1;color:var(--muted);background:var(--panel2);border-color:var(--muted)}
+.step-nav{background:var(--bg);backdrop-filter:none}.step-nav a{display:inline-flex;align-items:center}
+.lang-toggle{overflow:visible}.lang-toggle button:first-child{border-radius:999px 0 0 999px}.lang-toggle button:last-child{border-radius:0 999px 999px 0}
+.hand-tree{font:600 28px/1.5 ui-monospace,monospace;text-align:center;max-width:280px;padding:18px;color:var(--accent);background:var(--panel);border-radius:14px;margin:24px 0}
+.stage label{display:block;margin-top:16px}select{max-width:100%;white-space:normal}.tree-svg{max-width:420px;margin:24px auto}.tree-svg text{font:15px system-ui,sans-serif;fill:var(--text)}.tree-svg .status{font-size:13px;fill:var(--muted)}.tree-svg .value{font-size:18px;font-weight:600}.tree-edge{stroke:var(--muted);stroke-width:2}.tree-node{fill:var(--panel2);stroke:var(--muted);stroke-width:1}.tree-node.done{stroke:var(--accent)}.tree-node.current{stroke:var(--accent2);stroke-width:3}
+#ledgerWrap table{min-width:480px}.active-row{background:var(--panel2);color:var(--accent)}
+.prediction-options label{min-height:48px;padding:8px;border:1px solid var(--line);margin:8px 0}.prediction-options label:has(input:checked){border-color:var(--accent2)}
+input[type=radio]{min-width:20px;min-height:20px}input[type=range]{display:block;min-height:48px}textarea{display:block;width:100%;max-width:100%;color:var(--text);background:var(--panel2);border:1px solid var(--muted);font:14px/1.75 ui-monospace,monospace}textarea:focus-visible,.table-wrap:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}summary{display:list-item;padding-block:12px}.solution-actions a{display:inline-flex;align-items:center}.step{scroll-margin-top:90px}p,li{overflow-wrap:anywhere}
+@media(max-width:560px){.controls .btn{flex:1 1 130px}.stage{padding:12px}.tree-svg{width:100%}}
+@media(forced-colors:active){.tree-node.current{stroke:Highlight}.prediction-options label:has(input:checked){outline:2px solid Highlight}}
+.lang-toggle button{min-width:48px}

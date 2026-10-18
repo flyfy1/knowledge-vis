@@ -1,0 +1,106 @@
+{
+  "kind": "author browser self-check",
+  "url": "http://127.0.0.1:18779/leetcode/124/",
+  "interactions": 126,
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "widths": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "CSS 200%",
+  "presets": 6,
+  "checks": [
+    "all frame rewinds",
+    "endpoints",
+    "root edit restart",
+    "slider",
+    "quiz all options/reveal/change/locale preservation",
+    "actual clipboard and denial fallback",
+    "download/display parity",
+    "blocked storage",
+    "offline source",
+    "keyboard/focus",
+    "related/deep anchors",
+    "local assets"
+  ],
+  "errors": [],
+  "badAssets": [],
+  "remote": [],
+  "focus": {
+    "outline": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrast": [
+    {
+      "selector": "body",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "foreground": "rgb(201, 212, 226)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#progress",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#prev",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#next",
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#copy",
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".tree-svg text",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".tree-svg .status",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "focus outline",
+      "foreground": "rgb(255, 180, 84)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 10.731637051347173
+    },
+    {
+      "selector": "focus outline",
+      "foreground": "rgb(255, 180, 84)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "author self-check",
+  "at": "2026-10-18T11:48:47.042234+00:00",
+  "exhaustive_shape_value_cases": 11496,
+  "seeded_cases": 350,
+  "official_examples": 2,
+  "max_constraint_cases": [
+    "positive chain 30000",
+    "negative chain 30000",
+    "balanced 30000"
+  ],
+  "input_mutation": false,
+  "source_mirror": "exact",
+  "core": {
+    "cases": 11848,
+    "framesChecked": 70198,
+    "invariants": "gain / through / completed children / running best / deterministic snapshots"
+  }
+}
