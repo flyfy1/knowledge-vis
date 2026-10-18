@@ -463,3 +463,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | rolling state invariant | `leetcode/123/#step4` | Four previous-prefix maxima suffice for every legal next action. |
 
 <!-- /leetcode-123-campaign -->
+
+
+<!-- leetcode-124-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| One-arm gain | `leetcode/124/#step1` | Only a single downward arm can be attached to a parent. |
+| Postorder tree DP | `leetcode/124/#step2` | Complete both children before forming a node summary. |
+
+<!-- /leetcode-124-campaign -->
