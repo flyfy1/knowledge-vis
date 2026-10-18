@@ -484,3 +484,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Path reconstruction | `leetcode/126/#step4` | Follow decreasing distances to enumerate all answers. |
 
 <!-- /leetcode-126-campaign -->
+
+
+<!-- leetcode-132-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Palindrome recurrence | `leetcode/132/#step1` | Reuse the palindrome status of the inner substring. |
+| Prefix partition minimum | `leetcode/132/#step2` | Compare every possible last palindrome piece. |
+
+<!-- /leetcode-132-campaign -->
