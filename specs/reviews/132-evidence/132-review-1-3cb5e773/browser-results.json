@@ -1,0 +1,172 @@
+{
+  "status": "pass",
+  "presetLocalePaths": 14,
+  "widths": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "200% CSS layout zoom in Chromium, EN and zh",
+  "keyboard": "range Home/End, language Enter, native focus outline",
+  "clipboard": "real success and forced denial; source and downloaded bytes exact",
+  "storageDenied": true,
+  "offline": true,
+  "errors": [],
+  "bad": [],
+  "external": [],
+  "cssBytes": 11846,
+  "contrast": [
+    {
+      "fg": "text",
+      "bg": "bg",
+      "ratio": 16.09
+    },
+    {
+      "fg": "muted",
+      "bg": "bg",
+      "ratio": 7.74
+    },
+    {
+      "fg": "accent",
+      "bg": "bg",
+      "ratio": 13.1
+    },
+    {
+      "fg": "accent2",
+      "bg": "bg",
+      "ratio": 10.73
+    },
+    {
+      "fg": "good",
+      "bg": "bg",
+      "ratio": 12.01
+    },
+    {
+      "fg": "explain",
+      "bg": "bg",
+      "ratio": 12.62
+    },
+    {
+      "fg": "text",
+      "bg": "panel",
+      "ratio": 14.7
+    },
+    {
+      "fg": "muted",
+      "bg": "panel",
+      "ratio": 7.08
+    },
+    {
+      "fg": "accent",
+      "bg": "panel",
+      "ratio": 11.97
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel",
+      "ratio": 9.81
+    },
+    {
+      "fg": "good",
+      "bg": "panel",
+      "ratio": 10.98
+    },
+    {
+      "fg": "explain",
+      "bg": "panel",
+      "ratio": 11.53
+    },
+    {
+      "fg": "text",
+      "bg": "panel2",
+      "ratio": 13.4
+    },
+    {
+      "fg": "muted",
+      "bg": "panel2",
+      "ratio": 6.45
+    },
+    {
+      "fg": "accent",
+      "bg": "panel2",
+      "ratio": 10.91
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel2",
+      "ratio": 8.94
+    },
+    {
+      "fg": "good",
+      "bg": "panel2",
+      "ratio": 10
+    },
+    {
+      "fg": "explain",
+      "bg": "panel2",
+      "ratio": 10.51
+    },
+    {
+      "fg": "text",
+      "bg": "alternate",
+      "ratio": 16.44
+    },
+    {
+      "fg": "muted",
+      "bg": "alternate",
+      "ratio": 7.91
+    },
+    {
+      "fg": "accent",
+      "bg": "alternate",
+      "ratio": 13.39
+    },
+    {
+      "fg": "accent2",
+      "bg": "alternate",
+      "ratio": 10.97
+    },
+    {
+      "fg": "good",
+      "bg": "alternate",
+      "ratio": 12.28
+    },
+    {
+      "fg": "explain",
+      "bg": "alternate",
+      "ratio": 12.89
+    },
+    {
+      "fg": "text",
+      "bg": "pre",
+      "ratio": 16.44
+    },
+    {
+      "fg": "muted",
+      "bg": "pre",
+      "ratio": 7.91
+    },
+    {
+      "fg": "accent",
+      "bg": "pre",
+      "ratio": 13.39
+    },
+    {
+      "fg": "accent2",
+      "bg": "pre",
+      "ratio": 10.97
+    },
+    {
+      "fg": "good",
+      "bg": "pre",
+      "ratio": 12.28
+    },
+    {
+      "fg": "explain",
+      "bg": "pre",
+      "ratio": 12.89
+    }
+  ],
+  "limits": "Author self-check; no physical-device, native browser-chrome zoom, novice, independent review, submission or deployment claim."
+}
