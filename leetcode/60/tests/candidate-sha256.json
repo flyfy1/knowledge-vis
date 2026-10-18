@@ -1,0 +1,176 @@
+{
+  "problem": 60,
+  "status": "author self-checked; independent review pending",
+  "baseCommit": "8bfc3f4f3a878d44224533e1ee4ead3f632b0548",
+  "recordedAtUTC": "2026-10-18T10:13:09.179362+00:00",
+  "files": {
+    "BRIEF.md": {
+      "sha256": "fdd109426a355914ce269e4405a433670c62cd68bf2177601347976576dbce26",
+      "bytes": 6138
+    },
+    "SELF-CHECK.md": {
+      "sha256": "c5d8205ae97fe116d62940014691d6591cc918d7e293705ddc1cc923b2a904d7",
+      "bytes": 6874
+    },
+    "app.js": {
+      "sha256": "418939d8eab1a95f63d6b8f042eb61ad9c1c39338611f0640d1e5d16a4aba2da",
+      "bytes": 4289
+    },
+    "copy.js": {
+      "sha256": "8e0e31abd7be34283f859b6d3ffb554e3fe7c5d6f48f0eb46a89d24a32e80e34",
+      "bytes": 15595
+    },
+    "core.js": {
+      "sha256": "bc85a3e0c9a63100d64679d8b94e3e3bb69d48f383da3ded8a0ad1a2832864ac",
+      "bytes": 785
+    },
+    "index.html": {
+      "sha256": "6cf8ae119dcedebbbb1d39b74b701c367c107dfb69322a1d244e70549dc42baa",
+      "bytes": 6750
+    },
+    "lesson-entry.json": {
+      "sha256": "560ca6ff73b071cc1d6e722f69a617b3eb9195f6be6809a859f8934f3d60bd3d",
+      "bytes": 926
+    },
+    "python-code.js": {
+      "sha256": "84d04d95ad025f820803317f0fe2f86910c0d5da54fae7a9fdaac85afd21d49c",
+      "bytes": 516
+    },
+    "solution.py": {
+      "sha256": "5c89186c0c717b39b36abbfbfd392aba4344a080349c738bb8d5c7952de8732d",
+      "bytes": 462
+    },
+    "style.css": {
+      "sha256": "3e7e3bc00cd0bf4afefc5e8d7d49ad6b2edbeae5adc7cdb71a582cf2dd4874f5",
+      "bytes": 2516
+    },
+    "tests/README.md": {
+      "sha256": "43d078e339d26903dc87b2d9e69dd7a52d6193a3f722ae55673b337d85225d23",
+      "bytes": 2846
+    },
+    "tests/browser.cjs": {
+      "sha256": "7fde455f97f043fa1f30ec6e270df08aed4dabf2cbef7a5cac696a29f6084ce5",
+      "bytes": 16548
+    },
+    "tests/build_local.py": {
+      "sha256": "e12bbeae70f40e3eaa7f8d0d571ef0712fc22273b52f7a169bf5f551e461046d",
+      "bytes": 281
+    },
+    "tests/capture.cjs": {
+      "sha256": "1f3b5aac2ed0f9aacb5e00ad54968f1027c99e4eb98da7fb1deb4cb395d48342",
+      "bytes": 3125
+    },
+    "tests/evidence/browser-results.json": {
+      "sha256": "db1687755e8bc20ab617fd53022a7ebde2b6e3f50244c933287aa122e47b4856",
+      "bytes": 3957
+    },
+    "tests/evidence/capture-results.json": {
+      "sha256": "e7f2845dbeb48d81ce3f668acdcf7a329ffdb590bd53ec6edd9f947a4fb9720c",
+      "bytes": 2895
+    },
+    "tests/evidence/core-results.json": {
+      "sha256": "91aa4cc535c7e8ba7bf463630d011094427b9e96180966f17b2eb799082593f5",
+      "bytes": 161
+    },
+    "tests/evidence/en-1440.png": {
+      "sha256": "8a283e948fbc2027628f73711cee298359807c32938359884b9847fd7b0e6bc9",
+      "bytes": 106921
+    },
+    "tests/evidence/en-320.png": {
+      "sha256": "0f7a03e220599a8f03357811829669dcc3a227e48dc7bc0b3e170bacf35ec873",
+      "bytes": 52339
+    },
+    "tests/evidence/en-390.png": {
+      "sha256": "b1a5703f99a556952ca950d2cadd4ecdba4aed26fac1a0e6ed4ac3c7bccde704",
+      "bytes": 61963
+    },
+    "tests/evidence/en-736.png": {
+      "sha256": "ca7ff15dab9b28b3ff2961639f5f64a06f61fe3171b6ecbeef3845b5d24863fc",
+      "bytes": 101564
+    },
+    "tests/evidence/en-header.png": {
+      "sha256": "e5f3582e5ed187a7f97ea6ad4a8661537b2a1be3ff5890c6662271b2f267b77c",
+      "bytes": 82483
+    },
+    "tests/evidence/en-landscape.png": {
+      "sha256": "41bea528832d37815ac182f7f16476d464f19f598d323332c80ba1abaf56e01d",
+      "bytes": 61506
+    },
+    "tests/evidence/en-prediction.png": {
+      "sha256": "afc41590296a45e75d6924539e72440aead8d113d426394972f589b0e83be3e4",
+      "bytes": 73081
+    },
+    "tests/evidence/en-revealed.png": {
+      "sha256": "bd92a06aeb5119b280dea96e0f7958da7db382c5e7aea9e32f5c3e52c08175e4",
+      "bytes": 70734
+    },
+    "tests/evidence/en-zoom200.png": {
+      "sha256": "54c0006d4c3794536932d166efc8fb39438ee19d40e66a9e44ff9f2e59d26ff2",
+      "bytes": 48977
+    },
+    "tests/evidence/forced-colors.png": {
+      "sha256": "4edc76fb152199f2a5ccca918539fddc655431983da65e509b586f7178ba4b7c",
+      "bytes": 170070
+    },
+    "tests/evidence/python-results.json": {
+      "sha256": "d28984113dfd2b9b9ccfcf514d057b600565cfabc03aaf7f86815be2c089af63",
+      "bytes": 195
+    },
+    "tests/evidence/zh-1440.png": {
+      "sha256": "675b48667cf075e3d122f5021d3eee5498a198f371cfe09105ff1779da217a16",
+      "bytes": 112878
+    },
+    "tests/evidence/zh-320.png": {
+      "sha256": "d5e6e9fe15b8f8b4dc9f59594802e3c1365c2a06ba8cf6ac0029865c82185acc",
+      "bytes": 67595
+    },
+    "tests/evidence/zh-390.png": {
+      "sha256": "78559f815cadb41780de2fc9a57bd9fdf54745f5574eda1bd110bc15f38d4414",
+      "bytes": 81267
+    },
+    "tests/evidence/zh-736.png": {
+      "sha256": "ab63d6d104919243807bd357b88f8715a44e3e0ed1879009f083c6908b9a7c8b",
+      "bytes": 109150
+    },
+    "tests/evidence/zh-header.png": {
+      "sha256": "2b901c2f385bc104e8878c7a3ba65fcd399d9e1b7ca30cf11668590cef98c146",
+      "bytes": 92649
+    },
+    "tests/evidence/zh-landscape.png": {
+      "sha256": "d23eb0a7a5dcf1287858db3fea89934b8a94c21f13acb56a36e95ffc364e35a1",
+      "bytes": 65731
+    },
+    "tests/evidence/zh-prediction.png": {
+      "sha256": "69a3b2b678201c3b766c300454c3b902d931b103a46f89574aa42c3154ef8ca3",
+      "bytes": 90500
+    },
+    "tests/evidence/zh-revealed.png": {
+      "sha256": "0f41ae0e3468f795f4fafc9a813334f63102de2b526db969a5ff6660d408bd44",
+      "bytes": 82824
+    },
+    "tests/evidence/zh-zoom200.png": {
+      "sha256": "0c897569a4e9bf10a974f3ec2de0ccd87eae4d3ca8d6241d9660b3d42b527b29",
+      "bytes": 55070
+    },
+    "tests/official-contract.json": {
+      "sha256": "3c138e48ec936762bd3e6043440cb1541a543983207be6c95b00a59ff49ca76d",
+      "bytes": 3800
+    },
+    "tests/test_core.js": {
+      "sha256": "3d24a9da391f1b8635d1e4133e62b0ee837898b133a7500fbe9d1703357d930c",
+      "bytes": 2459
+    },
+    "tests/test_solution.py": {
+      "sha256": "a18538ecf62a2f1d3da29ecb9b17ee1d1392833ff661c7e6f3b261888abefc00",
+      "bytes": 1941
+    },
+    "../common.js": {
+      "sha256": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+      "bytes": 1608
+    },
+    "../style.css": {
+      "sha256": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+      "bytes": 9425
+    }
+  }
+}
