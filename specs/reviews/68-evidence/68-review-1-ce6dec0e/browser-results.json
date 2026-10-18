@@ -1,0 +1,104 @@
+{
+  "status": "passed",
+  "checks": 33,
+  "errors": [],
+  "badResponses": [],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "#message",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#prev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "focus": {
+    "fg": "rgb(255, 180, 84)",
+    "bg": "rgb(28, 35, 48)",
+    "ratio": 8.937191437807625
+  },
+  "cssBytes": 11089,
+  "controls": [
+    {
+      "id": "中",
+      "height": 48,
+      "width": 48
+    },
+    {
+      "id": "EN",
+      "height": 48,
+      "width": 49.0625
+    },
+    {
+      "id": "preset",
+      "height": 48,
+      "width": 258
+    },
+    {
+      "id": "prev",
+      "height": 48,
+      "width": 110.171875
+    },
+    {
+      "id": "next",
+      "height": 48,
+      "width": 110.171875
+    },
+    {
+      "id": "reset",
+      "height": 48,
+      "width": 90.015625
+    },
+    {
+      "id": "reveal",
+      "height": 48,
+      "width": 112.015625
+    },
+    {
+      "id": "copy",
+      "height": 48,
+      "width": 121.234375
+    }
+  ],
+  "viewports": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "zoom": "200% CSS zoom",
+  "note": "Author self-check, not independent review or physical device testing."
+}
