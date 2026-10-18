@@ -1,0 +1,2 @@
+'use strict';
+const PYTHON_SOURCE = "class Solution:\n    def getPermutation(self, n: int, k: int) -> str:\n        factorial = [1] * (n + 1)\n        for m in range(1, n + 1):\n            factorial[m] = factorial[m - 1] * m\n\n        unused = [str(digit) for digit in range(1, n + 1)]\n        prefix = []\n        r = k - 1\n        for m in range(n, 0, -1):\n            block = factorial[m - 1]\n            q, r = divmod(r, block)\n            prefix.append(unused.pop(q))\n        return ''.join(prefix)\n";
