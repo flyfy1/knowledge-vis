@@ -1,0 +1,1 @@
+window.PYTHON_SOURCE = "class Solution:\n    def numDistinct(self, s: str, t: str) -> int:\n        n = len(t)\n        dp = [0] * (n + 1)\n        dp[0] = 1\n        for char in s:\n            for j in range(n, 0, -1):\n                if char == t[j - 1]:\n                    dp[j] += dp[j - 1]\n        return dp[n]\n";
