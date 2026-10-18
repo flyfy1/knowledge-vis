@@ -1,0 +1,38 @@
+{
+  "id": 135,
+  "title": {
+    "zh": "分发糖果",
+    "en": "Candy"
+  },
+  "desc": {
+    "zh": "从相邻约束推导两个方向的最低糖果数，并证明逐项取最大值恰好最优。",
+    "en": "Derive two directional candy bounds and prove why their maximum is exactly enough."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "贪心",
+      "en": "Greedy"
+    },
+    {
+      "zh": "双向扫描",
+      "en": "Two passes"
+    }
+  ],
+  "path": "135/",
+  "leetcodeUrl": "https://leetcode.com/problems/candy/",
+  "language": "Python",
+  "complexity": "O(n) time; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "Directional lower bounds",
+      "step": 2,
+      "description": "Derive left and right candy requirements from adjacent rating chains."
+    },
+    {
+      "name": "Componentwise minimum",
+      "step": 4,
+      "description": "Prove feasibility and minimality of the maximum of directional bounds."
+    }
+  ]
+}
