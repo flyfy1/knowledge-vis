@@ -1,0 +1,101 @@
+{
+  "status": "pass",
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "presets": 6,
+  "forwardBackwardOperations": 168,
+  "viewports": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "focusedCapture": "sticky navigation hidden only during element screenshots to remove capture overlay; full-page screenshots taken from page top",
+  "zoom": "200% CSS zoom, 780px viewport = 390px layout; real Chromium",
+  "screenshots": [
+    "en-320.png",
+    "en-320-trace.png",
+    "en-390.png",
+    "en-390-trace.png",
+    "en-736.png",
+    "en-736-trace.png",
+    "en-1440.png",
+    "en-1440-trace.png",
+    "zh-320.png",
+    "zh-320-trace.png",
+    "zh-390.png",
+    "zh-390-trace.png",
+    "zh-736.png",
+    "zh-736-trace.png",
+    "zh-1440.png",
+    "zh-1440-trace.png",
+    "en-zoom200.png",
+    "zh-zoom200.png",
+    "en-step0.png",
+    "en-step1.png",
+    "en-step3.png",
+    "en-step4.png",
+    "zh-step0.png",
+    "zh-step1.png",
+    "zh-step3.png",
+    "zh-step4.png"
+  ],
+  "contrasts": {
+    ".explain": {
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    ".hint": {
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    "#next": {
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    "#prev": {
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    "#langToggle .active": {
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    ".step-nav a.active": {
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    ".active-cell": {
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 9.809435643476732
+    },
+    "#progress": {
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    "disabled": {
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    "focusVsPanel": 9.809435643476732
+  },
+  "sourceDisplayedCopiedDownloaded": "exact",
+  "clipboard": "native success and forced manual fallback",
+  "storage": "denied read/write fallback",
+  "offline": "file source parity",
+  "keyboard": "Enter, Tab, focus, forced colors",
+  "errors": [],
+  "badResponses": [],
+  "external": []
+}
