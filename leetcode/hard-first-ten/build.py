@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 import html
+import sys
 from lessons import LESSONS
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = 'hard10-ids1'
@@ -144,11 +145,12 @@ See `../../specs/reviews/leetcode-first-ten-review.md` for observed review evide
 No actual LeetCode submission or human learning test is claimed.
 '''
     (d/'BRIEF.md').write_text(brief)
-# Preserve the preexisting 2916 entry and register this batch deterministically.
+# Merge only this batch; preserve every lesson owned by other batches.
+sys.path.insert(0, str(ROOT.parent/'scripts'))
+from leetcode_registry import merge_registry
 registry=ROOT/'problems.config.js'
-s=registry.read_text();old=s[s.index('  {\n    id: 2916'):s.rindex('\n];')]
 entries=[]
 for p in LESSONS:
-    entries.append(json.dumps(dict(id=p['id'],title=dict(zip(['zh','en'],p['title'])),desc=dict(zip(['zh','en'],p['derive'])),difficulty='hard',topics=[dict(zip(['zh','en'],p['topic']))],path=f'{p["id"]}/',leetcodeUrl=f'https://leetcode.com/problems/{p["slug"]}/',language='Python',complexity={4:'O(log(min(m,n)+1))',10:'O(mn)',23:'O(k + N log(k+1))',25:'O(n)',30:'O(Lw + kw)',32:'O(n)',37:'O(9^E)',41:'O(n)',42:'O(n)',44:'O((m+1)(n+1))'}[p['id']]),ensure_ascii=False,indent=2))
-registry.write_text('/* Ascending frontend ID; first ten Hard verified 2026-10-17. */\nwindow.LEETCODE_PROBLEMS = [\n'+',\n'.join(entries)+',\n'+old+'\n];\n')
+    entries.append(dict(id=p['id'],title=dict(zip(['zh','en'],p['title'])),desc=dict(zip(['zh','en'],p['derive'])),difficulty='hard',topics=[dict(zip(['zh','en'],p['topic']))],path=f'{p["id"]}/',leetcodeUrl=f'https://leetcode.com/problems/{p["slug"]}/',language='Python',complexity={4:'O(log(min(m,n)+1))',10:'O(mn)',23:'O(k + N log(k+1))',25:'O(n)',30:'O(Lw + kw)',32:'O(n)',37:'O(9^E)',41:'O(n)',42:'O(n)',44:'O((m+1)(n+1))'}[p['id']]))
+merge_registry(registry, entries)
 (ROOT/'hard-first-ten/fixtures.json').write_text(json.dumps({p['id']:[x['input'] for x in p['presets']] for p in LESSONS},indent=2))

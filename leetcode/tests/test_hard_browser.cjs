@@ -7,7 +7,8 @@ function ok(value,message){assert.ok(value,message);checks++;}
  const context=await browser.newContext({viewport:{width:1440,height:1000},locale:'en-US',permissions:['clipboard-read','clipboard-write']});
  const page=await context.newPage(),errors=[];
  page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});page.on('response',r=>{if(r.status()>=400&&!r.url().includes('favicon'))errors.push(r.status()+' '+r.url());});
- await page.goto(base+'/leetcode/');assert.equal(await page.locator('.problem-card').count(),11);
+ const registry={window:{}};require('node:vm').runInNewContext(fs.readFileSync(path.join(__dirname,'../problems.config.js'),'utf8'),registry);
+ await page.goto(base+'/leetcode/');assert.equal(await page.locator('.problem-card').count(),registry.window.LEETCODE_PROBLEMS.length);
  for(const id of ids){
   await page.goto(base+'/leetcode/'+id+'/');await page.waitForFunction(()=>window.lessonSnapshot&&document.getElementById('message').textContent.length);
   for(const lang of ['en','zh']){

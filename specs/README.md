@@ -21,6 +21,9 @@ Each problem keeps its own `BRIEF.md` alongside its implementation. Generalize
 reusable requirements here; keep problem-specific examples and observed evidence
 in briefs and review reports. Do not put credentials or private configuration here.
 
+- [All Hard campaign](leetcode-all-hard-campaign.md): complete official snapshot,
+  per-problem agent ownership, resumable development, and separate review evidence.
+
 ## Historical evidence and outstanding review
 
 - [2916 rubric](reviews/leetcode-2916-rubric.md) and
