@@ -494,3 +494,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Shortest-path invariant | `leetcode/127/#step2` | Why marking words at enqueue time preserves minimum distance. |
 
 <!-- /leetcode-127-campaign -->
+
+
+<!-- leetcode-132-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Palindrome recurrence | `leetcode/132/#step1` | Reuse the palindrome status of the inner substring. |
+| Prefix partition minimum | `leetcode/132/#step2` | Compare every possible last palindrome piece. |
+
+<!-- /leetcode-132-campaign -->
