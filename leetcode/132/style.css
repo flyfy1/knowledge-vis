@@ -1,0 +1,18 @@
+/* Exact palette from ../style.css; local geometry and accessibility only. */
+.btn,select,.lang-toggle button,.step-nav a,.solution-actions a,summary{min-height:48px}
+.btn,select{border-color:var(--muted)}
+.btn:disabled{opacity:1;color:var(--muted);background:var(--panel2);border-color:var(--muted)}
+.step-nav{background:var(--bg);backdrop-filter:none}.step-nav a{display:inline-flex;align-items:center}
+.lang-toggle{overflow:visible}.lang-toggle button:first-child{border-radius:999px 0 0 999px}.lang-toggle button:last-child{border-radius:0 999px 999px 0}
+.stage label{display:block}select{max-width:100%}input[type=range]{display:block;min-height:48px}.table-wrap{margin:16px 0}.table-wrap:focus-visible,textarea:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+#matrix table{min-width:380px}#history table{min-width:540px}td.current{outline:2px solid var(--accent);outline-offset:-3px}td.true{color:var(--good)}td.false{color:var(--muted)}.active-row{color:var(--accent);background:var(--panel2)}
+.dp-list{display:flex;flex-wrap:wrap;gap:8px}.dp-cell{border:1px solid var(--muted);padding:8px 12px;min-width:88px;background:var(--panel2)}.dp-cell b,.dp-cell small{display:block}.dp-cell.current{border:2px solid var(--accent);padding:7px 11px}
+.prediction-options label{min-height:48px;border:1px solid var(--muted);padding:8px;margin:8px 0}.prediction-options label:has(input:checked){border-color:var(--accent2)}input[type=radio]{min-width:20px;min-height:20px}
+textarea{display:block;width:100%;max-width:100%;font:14px/1.75 ui-monospace,monospace;background:var(--panel2);color:var(--text);border:1px solid var(--muted)}summary{padding-block:12px}.solution-actions a{display:inline-flex;align-items:center}.step{scroll-margin-top:90px}.hand{font-size:clamp(24px,6vw,40px);color:var(--accent);margin:24px 0}p,li{overflow-wrap:anywhere}
+@media(max-width:560px){.controls .btn{flex:1 1 130px}.stage{padding:14px}}
+@media(forced-colors:active){td.current,.dp-cell.current,.prediction-options label:has(input:checked){outline:2px solid Highlight}}
+/* Keep substring starts visible while a narrow table scrolls horizontally. */
+.table-wrap th:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+.back-link,.related a{display:inline-flex;align-items:center;min-height:48px}
+.site-head .official-link{min-height:48px}
+.prereq a{display:inline-flex;align-items:center;min-height:48px}

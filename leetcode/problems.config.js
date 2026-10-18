@@ -108,7 +108,7 @@ window.LEETCODE_PROBLEMS = [
     "path": "30/",
     "leetcodeUrl": "https://leetcode.com/problems/substring-with-concatenation-of-all-words/",
     "language": "Python",
-    "complexity": "O(Lw + kw)"
+    "complexity": "O(Lw + kw) expected time; O(kw) auxiliary space plus output (L text characters, k words, w word width)"
   },
   {
     "id": 32,
@@ -557,6 +557,58 @@ window.LEETCODE_PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/word-ladder-ii/",
     "language": "Python",
     "complexity": "O(26NL² + M) time / O(NL + E + M) space including output"
+  },
+  {
+    "id": 127,
+    "title": {
+      "zh": "单词接龙",
+      "en": "Word Ladder"
+    },
+    "desc": {
+      "zh": "从一字母转换推导广度优先搜索的最短距离。",
+      "en": "Derive shortest-path breadth-first search from one-letter edits."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "最短路径",
+        "en": "Shortest path"
+      }
+    ],
+    "path": "127/",
+    "leetcodeUrl": "https://leetcode.com/problems/word-ladder/",
+    "language": "Python",
+    "complexity": "O(26NL²) expected time; O(NL) auxiliary space"
+  },
+  {
+    "id": 132,
+    "title": {
+      "zh": "分割回文串 II",
+      "en": "Palindrome Partitioning II"
+    },
+    "desc": {
+      "zh": "从最后一段出发，用回文表与前缀最少段数求最少切割。",
+      "en": "Compare every final palindrome using a palindrome table and prefix minima."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "132/",
+    "leetcodeUrl": "https://leetcode.com/problems/palindrome-partitioning-ii/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(n²) auxiliary space"
   },
   {
     "id": 2916,

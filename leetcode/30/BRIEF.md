@@ -57,3 +57,39 @@ Run `python3 leetcode/tests/test_hard_solutions.py`,
 `NODE_PATH=<playwright package directory> node leetcode/tests/test_hard_browser.cjs`.
 See `../../specs/reviews/leetcode-first-ten-review.md` for observed review evidence.
 No actual LeetCode submission or human learning test is claimed.
+
+## 2026-10-18 revision contract (author fixes, independent re-review pending)
+
+Basis: `../../specs/reviews/30-review-1-f4f10635.md`, required findings
+`30-R1-F01` and `30-R1-F02`. Adopt both findings. This is a correction within
+the reviewed page and interaction, with no new feature or layout. Product-fit
+verdict: reuse the existing trace, controls, typography, colors and spacing.
+The reader's immediate job is to distinguish a retained window from a removed
+word, then map before/after counts to Python. The smallest useful outcome is an
+accurate bilingual legend and a valid lesson-local metadata preflight.
+
+P0 / highest-return slice: supply `lesson-entry.json` with one time-and-space
+complexity string; define highlights as this frame's retained `[left,right)`
+window. Validate add, excess shrink, overlap removal and unknown reset against
+before/after frames, including empty highlights, at mobile and desktop widths.
+P1: expand width-three tracks and reuse arithmetic, define Counter's absent-key
+zero, and show the three coupled updates at event 6→7. Explain why all tracks
+together read O(L) chunks before charging Python's O(w) string operations.
+P2: no decoration planned. Deferred: the review's optional disabled-control
+styling suggestion; no shared CSS change is authorized for this lesson fix.
+
+Allowed presentation hooks: lesson-local bilingual copy and one explanation
+paragraph in step 05, plus the changed copy asset's version reference. Existing
+shared tokens and all control handlers are reused. The current and previous
+diagrams each show their own retained interval; count rows remain numerical
+data without character indices. Transient excess is allowed after addition or
+an intermediate removal; the invariant applies after shrinking finishes.
+Unknown resets show empty counts and no highlighted characters.
+
+Validation matrix: both EN/zh; add/shrink/overlap/reset; 320/390 and desktop;
+CSS zoom 200%; all preset endpoints including event 0/0; rewind/replay/reset;
+all prediction choices and locale preservation; successful and denied copy;
+offline display with unavailable storage. Loading, sending, reconnect and
+server error states are inapplicable to this static, user-stepped page.
+See `evidence/SELF-CHECK.md` for observed results and the frozen file manifest.
+These are author checks only; a separate reviewer must recheck the candidate.

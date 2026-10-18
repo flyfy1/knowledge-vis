@@ -489,3 +489,33 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Path reconstruction | `leetcode/126/#step4` | Follow decreasing distances to enumerate all answers. |
 
 <!-- /leetcode-126-campaign -->
+
+
+<!-- leetcode-127-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Breadth-first search | `leetcode/127/#step1` | First-discovery distances in a FIFO queue. |
+| Shortest-path invariant | `leetcode/127/#step2` | Why marking words at enqueue time preserves minimum distance. |
+
+<!-- /leetcode-127-campaign -->
+
+
+<!-- leetcode-132-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Palindrome recurrence | `leetcode/132/#step1` | Reuse the palindrome status of the inner substring. |
+| Prefix partition minimum | `leetcode/132/#step2` | Compare every possible last palindrome piece. |
+
+<!-- /leetcode-132-campaign -->
+
+
+<!-- leetcode-30-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Word-aligned sliding window | `leetcode/30/#step1` | Reuse word counts across aligned starts; shrink excess counts and scan every remainder. |
+| Retained window and operation state | `leetcode/30/#step2` | Compare before and after counts and exclusive window boundaries during add, shrink and reset. |
+
+<!-- /leetcode-30-campaign -->

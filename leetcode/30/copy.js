@@ -135,6 +135,10 @@ window.LESSON_COPY = {
     "完整 Python 解法",
     "Complete Python solution"
   ],
+  "counterHelp": [
+    "Counter 是按词保存次数的表：Counter([\"foo\",\"foo\"]) 得到 foo:2；have = Counter() 从空表开始。读取尚未出现的 have[\"bar\"] 得到 0，所以 += 1 能直接加入新词。缩窗的三行必须一起做：次数减 1、used 减 1、left 增加 width。例如事件 6→7：foo:2→1，used:2→1，left:3→6；图中 right 仍为 9。",
+    "Counter is a table of word counts: Counter([\"foo\",\"foo\"]) gives foo:2; have = Counter() starts empty. Reading an absent have[\"bar\"] gives 0, so += 1 can add a new word directly. Shrinking needs all three updates: decrement the word count, decrement used, and advance left by width. For event 6→7: foo:2→1, used:2→1, left:3→6; displayed right stays 9."
+  ],
   "trapsTitle": [
     "哪些边界最容易出错？",
     "Which boundaries are easy to get wrong?"
@@ -192,8 +196,8 @@ window.LESSON_COPY = {
     "Cut"
   ],
   "activeLegend": [
-    "高亮与下划线标记当前操作涉及的位置；数字下方是下标。",
-    "Highlight and underline mark positions involved in this operation; indices appear below values."
+    "高亮与下划线表示这一帧保留的窗口 [left, right)：包含 left，不含 right。当前图是操作后状态；“上一次状态”是操作前状态。移走的词不再高亮；清空后没有高亮。次数行才是计数数据；字符下方是下标。",
+    "Highlight and underline show the retained window [left, right): include left, exclude right. The current diagram is after the operation; Previous state is before it. Removed words are no longer highlighted; clearing leaves no highlight. Count rows hold the count data; character indices appear below values."
   ],
   "unchanged": [
     "还没有上一帧。",
@@ -228,8 +232,8 @@ window.LESSON_COPY = {
     "Re-splitting and counting k words at every start costs O(Lkw) worst-case time. Adjacent word-aligned windows recount many identical words. L counts characters, k words, and w characters per word."
   ],
   "derive": [
-    "把起点按除以 w 的余数分成 w 条扫描轨道。每条轨道 right 每次增加 w；left 是窗口左边界，图里的 right 是右端之后的字符下标。need 是所需次数，have 是当前次数，used 是词总数。",
-    "Partition starts into w tracks by their remainder modulo w. Each track advances right by w. left is the window start; the displayed right is the exclusive end. need stores required counts, have current counts, and used the number of words."
+    "词长为 3 时，轨道 0 访问 0、3、6，轨道 1 访问 1、4、7，轨道 2 访问 2、5、8。余数就是除以词长后剩下的数；它标识一条轨道。所有起点都恰好属于一条轨道。同一轨道从 bar+foo 移到 foo+foo 时，中间的 foo 可以保留，只移走 bar、加入下一个 foo，无需重新计数。每条轨道的边界每次移动 w 个字符；left 是窗口起点，图里的 right 是右端之后的字符下标。need 是所需次数，have 是当前次数，used 是窗口词数。",
+    "For width 3, track 0 visits 0,3,6; track 1 visits 1,4,7; track 2 visits 2,5,8. A remainder is what is left after division by the word width; it identifies the track. Every start belongs to exactly one track. Moving from bar+foo to foo+foo on one track can retain the middle foo: remove bar and add the next foo instead of recounting both words. Each boundary moves w characters at a time. left is the window start; the displayed right is the exclusive end. need stores required counts, have current counts, and used the number of words in the window."
   ],
   "proof": [
     "新词不在 need 中，跨过它的窗口全都无效，清空即可。若新词超额，从左端不断移走词，直到次数合法。所有词次数不超过 need 且 used=k，就必然恰好相等。记录后移走最左词，保留重叠答案的机会。",
@@ -244,8 +248,8 @@ window.LESSON_COPY = {
     "Use “Excess word” to watch have exceed and return to its quota. Then use “Nonzero start” to find an answer at offset=1. Changing presets restarts the experiment."
   ],
   "complexity": [
-    "Python 切片与字符串哈希按词长计：期望时间 O(Lw+kw)，辅助空间 O(kw)，另加输出。若将单词操作视为常数，扫描部分为 O(L)。",
-    "Accounting for Python slicing and string hashing: expected time O(Lw+kw), auxiliary space O(kw), plus output. With constant-cost word operations, the scanning portion is O(L)."
+    "L 是文本字符数，k 是所需词数，w 是词长。每条轨道约读 L/w 个词，w 条合计约 w × (L/w) = L 次读取。left 只前进，每个加入的词至多移走一次；清空的计数也可计入之前的加入。Python 每次切片与字符串哈希需 O(w)，建立 need 需 O(kw)，所以期望时间 O(Lw+kw)。计数表至多存 k 种长 w 的词，辅助空间 O(kw)，另加输出；完整教学快照不计入提交代码的空间。",
+    "L counts text characters, k required words, and w characters per word. Each track reads about L/w words, so w tracks make about w × (L/w) = L reads. left only advances: each added word is removed at most once, and clearing counts can be charged to earlier additions. Each Python slice and string hash costs O(w); building need costs O(kw). Thus expected time is O(Lw+kw). Count tables store at most k distinct words of width w: O(kw) auxiliary space, plus output. Full teaching snapshots are excluded from submission space."
   ],
   "traps": [
     "重复词必须保留次数。缩窗必须用 while，不能只移一次。不要只扫描 offset=0。总词长大于文本时直接返回空；输出顺序可以不同。",
@@ -325,8 +329,8 @@ window.LESSON = {
     "Re-splitting and counting k words at every start costs O(Lkw) worst-case time. Adjacent word-aligned windows recount many identical words. L counts characters, k words, and w characters per word."
   ],
   "derive": [
-    "把起点按除以 w 的余数分成 w 条扫描轨道。每条轨道 right 每次增加 w；left 是窗口左边界，图里的 right 是右端之后的字符下标。need 是所需次数，have 是当前次数，used 是词总数。",
-    "Partition starts into w tracks by their remainder modulo w. Each track advances right by w. left is the window start; the displayed right is the exclusive end. need stores required counts, have current counts, and used the number of words."
+    "词长为 3 时，轨道 0 访问 0、3、6，轨道 1 访问 1、4、7，轨道 2 访问 2、5、8。余数就是除以词长后剩下的数；它标识一条轨道。所有起点都恰好属于一条轨道。同一轨道从 bar+foo 移到 foo+foo 时，中间的 foo 可以保留，只移走 bar、加入下一个 foo，无需重新计数。每条轨道的边界每次移动 w 个字符；left 是窗口起点，图里的 right 是右端之后的字符下标。need 是所需次数，have 是当前次数，used 是窗口词数。",
+    "For width 3, track 0 visits 0,3,6; track 1 visits 1,4,7; track 2 visits 2,5,8. A remainder is what is left after division by the word width; it identifies the track. Every start belongs to exactly one track. Moving from bar+foo to foo+foo on one track can retain the middle foo: remove bar and add the next foo instead of recounting both words. Each boundary moves w characters at a time. left is the window start; the displayed right is the exclusive end. need stores required counts, have current counts, and used the number of words in the window."
   ],
   "proof": [
     "新词不在 need 中，跨过它的窗口全都无效，清空即可。若新词超额，从左端不断移走词，直到次数合法。所有词次数不超过 need 且 used=k，就必然恰好相等。记录后移走最左词，保留重叠答案的机会。",
@@ -341,8 +345,8 @@ window.LESSON = {
     "Use “Excess word” to watch have exceed and return to its quota. Then use “Nonzero start” to find an answer at offset=1. Changing presets restarts the experiment."
   ],
   "complexity": [
-    "Python 切片与字符串哈希按词长计：期望时间 O(Lw+kw)，辅助空间 O(kw)，另加输出。若将单词操作视为常数，扫描部分为 O(L)。",
-    "Accounting for Python slicing and string hashing: expected time O(Lw+kw), auxiliary space O(kw), plus output. With constant-cost word operations, the scanning portion is O(L)."
+    "L 是文本字符数，k 是所需词数，w 是词长。每条轨道约读 L/w 个词，w 条合计约 w × (L/w) = L 次读取。left 只前进，每个加入的词至多移走一次；清空的计数也可计入之前的加入。Python 每次切片与字符串哈希需 O(w)，建立 need 需 O(kw)，所以期望时间 O(Lw+kw)。计数表至多存 k 种长 w 的词，辅助空间 O(kw)，另加输出；完整教学快照不计入提交代码的空间。",
+    "L counts text characters, k required words, and w characters per word. Each track reads about L/w words, so w tracks make about w × (L/w) = L reads. left only advances: each added word is removed at most once, and clearing counts can be charged to earlier additions. Each Python slice and string hash costs O(w); building need costs O(kw). Thus expected time is O(Lw+kw). Count tables store at most k distinct words of width w: O(kw) auxiliary space, plus output. Full teaching snapshots are excluded from submission space."
   ],
   "mapping": [
     [
