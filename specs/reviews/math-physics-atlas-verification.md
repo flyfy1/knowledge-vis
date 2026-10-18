@@ -45,3 +45,24 @@ No physical-phone, screen-reader speech, or real learner comparison was performe
 External textbook links are evidence destinations and require network access.
 The actual coverage is waves, systems and measurement, not a full physics course.
 Unrelated pre-existing pythagoras modifications were preserved and excluded.
+
+## Public release
+
+Published clean tracked revision `ed48a98dc7fe2552eb89cfcb98f7253c5b0ea7e6` to
+`https://visual.integ.life/atlas/`. Only the four atlas runtime files and the root
+index/config were deployed. Before replacing root files, their live hashes matched
+the previous tracked revision. Their previous bytes remain outside the served root
+at `/home/songyy/projects/.atlas-releases/ed48a98/before`; receipt and release tar
+are alongside it. No unrelated lesson bytes were deployed.
+
+All six public asset SHA-256 values match the committed release. A public Chrome
+walk verified homepage entry -> atlas -> search -> convolution -> supporting
+`/convolution/#step6` -> Back, plus default mobile List at 390px with no horizontal
+overflow or observed page errors. The first smoke script counted nodes before
+navigation/deferred-script completion; waiting for the rendered node fixed the
+harness timing, with no product change. Public evidence is in `public.json` and
+`release.json`. Source and verification commits were pushed to origin/main.
+
+Rollback: restore only `index.html` and `pages.config.js` from the retained backup
+if their current hashes still match this release; the additive atlas directory may
+remain reachable by direct link. Check current ownership before any later rollback.
