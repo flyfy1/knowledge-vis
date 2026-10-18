@@ -1,0 +1,26 @@
+{
+  "label": "32-r1-r2-fix1",
+  "status": "self-checked; independent re-review pending",
+  "baseCommit": "a36c7dc1aff3947bf15a4104844f541881213a8b",
+  "frozenAt": "2026-10-18T12:39:00.502902+00:00",
+  "lessonFiles": {
+    "BRIEF.md": "3ebfc510448289e4203af9ff2af9a3eb750c7b35fa9bbbe912c4d0d55ff6b97d",
+    "index.html": "8fc6f3eb7ac35b3d009b43fb2c4a07b0f94285f7c985b37c6b6f82e3c9145a0c",
+    "copy.js": "7e88ac4a24c24b97c6b7f8077dd6158de27cdc76ba283c9641fd19a937346238",
+    "app.js": "893d4bb207aaa8677fb83f3c6d54ccfef68f6743675fb0c335511e1d15f4a5a1",
+    "solution.py": "4e261f0900fa2e3591430e4042f498830647d15f289eb1378506aebde2af1530",
+    "python-code.js": "cb9fa25fbae664e4f6e48a87825b43465ca6c0980a432959875d6c9f82f3ae1e",
+    "lesson-entry.json": "0ea4773eecd6709675b4f6760a586858cfe53a797f33b1bfc9ebb2758630c7fa",
+    "tests/regression.py": "98178ccf3e8aa6380665b9769b26aabcde941dfb7896da71d98c3a5ff2632538",
+    "tests/core.cjs": "1cac8ac40a782d27d784155bab0e06a23fd9db62d0ed9a228d005e74d6d8e36a",
+    "tests/browser.cjs": "2e5a7a02dedb5a3a8aac00dc250933439ed650c672c656ee2b92dc9a5de9018d"
+  },
+  "readOnlySharedDependencies": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/hard-first-ten/style.css": "09ebfd4c560ceee4b5c4e15442f37e21e8a9115525f20c74c1a34491af6a48b1",
+    "leetcode/hard-first-ten/lesson.js": "18365da600d3a774aec9afb96deb377fa269fe894424ed6cef41ad9f929c9731",
+    "leetcode/hard-first-ten/core.js": "342d7cbdf8c1e6f8527e6804ec286157e8fc63513a3c36c61d67c496bd08eeed"
+  },
+  "candidateDigest": "a7fee06dbe6a2a91e94d90284fc7caf71be68e251311927482f99cea269348ac"
+}

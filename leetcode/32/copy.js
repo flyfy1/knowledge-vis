@@ -220,20 +220,20 @@ window.LESSON_COPY = {
     "0 ≤ n ≤ 30000; characters are only ( and )."
   ],
   "hand": [
-    "\")()())\" 中，从下标 1 到 4 是 \"()()\"，长度 4。\"(()\" 的合法后缀 \"()\" 长度只有 2；总左右括号数并不能直接给答案。",
-    "In \")()())\", indices 1…4 form \"()()\", length 4. In \"(()\", the valid suffix \"()\" has length 2. Counting all opening and closing parentheses does not determine the answer."
+    "把 ( 看作等待关闭的左括号，每个 ) 必须关闭最近一个尚未关闭的 (。例如 (()) 先关闭内层，再关闭外层；()() 则是两对并列。手算时用 balance 记录当前候选片段里尚待关闭的个数：从 0 开始，遇 ( 加 1，遇 ) 减 1。",
+    "Each ( waits for a closing ). Each ) must close the most recent still-open (. In (()), the inner pair closes before the outer pair; ()() has two adjacent pairs. To check a candidate fragment by hand, let balance count openings still waiting to close: start at 0, add 1 for (, and subtract 1 for )."
   ],
   "cost": [
-    "每个左端点都重新计算平衡，时间 O(n²)、空间 O(1)。可以只保留阻止合法后缀向左延伸的下标，而无需反复扫描。",
-    "Restarting a balance scan at each left endpoint costs O(n²) time and O(1) space. Instead, retain indices that prevent a valid suffix from extending left."
+    "每个左端点都重新计算平衡，时间 O(n²)、空间 O(1)。可以只保留阻止“以当前字符结尾的合法片段”向左延伸的下标，而无需反复扫描。",
+    "Restarting a balance scan at each left endpoint costs O(n²) time and O(1) space. Instead, retain indices that prevent a valid fragment ending at the current character from extending left."
   ],
   "derive": [
-    "栈保存尚未匹配的左括号下标，底部还有一个无效边界，初始为 −1。遇到 ( 入栈；遇到 ) 先弹栈。若栈空，说明它无法匹配，当前 i 成为新的边界。",
-    "The stack holds unmatched opening indices above an invalid boundary, initially −1. Push on (. On ), pop first. If the stack becomes empty, this close has no match; its index i becomes the new boundary."
+    "如何避免从每个起点重新配对？仍看 \")()())\"：下标 0 的右括号无法配对，之后的合法片段必须从它右边开始。我们保存这种不能跨过的边界下标，以及尚未配对的左括号下标。用一个 Python 列表作为栈：只在列表末尾添加或删除；入栈 push 就是 append，出栈 pop 就是删除并取出最后一项，栈顶就是最后一项。底部先放 −1，表示字符串开始之前的虚拟边界；其上存未配对左括号的下标。遇 ( 就 append(i)；遇 ) 先 pop()，若列表空了，就用当前 i 作为新边界。",
+    "How can we avoid pairing again from every start? In \")()())\", the close at index 0 cannot match; any later valid fragment must start to its right. Save these uncrossable boundary indices and the indices of still-unmatched openings. Use a Python list as a stack: add or remove only at its end. “Push” means append; “pop” removes and returns the last item; “top” means that last item. Start with −1 at the bottom, a virtual boundary before the string, and store unmatched opening indices above it. On (, append(i). On ), pop first; if the list becomes empty, use the current i as the new boundary."
   ],
   "proof": [
-    "若弹出后仍有栈顶 t，则 t 后到 i 的每个括号都已成对，长度为 i−t。t 要么是多余左括号，要么是最近无效右括号，均不能被跨过，所以这就是以 i 结尾的最长合法后缀。",
-    "If a top t remains after the pop, every parenthesis after t through i is paired, giving length i−t. t is an unmatched opening or the last invalid closing boundary; neither can be crossed. This is the longest valid suffix ending at i."
+    "后缀是以当前下标 i 结尾的连续片段。若弹出后仍有栈顶 t，则 t 后到 i 的每个括号都已成对，长度为 i−t。t 要么是未配对左括号，要么是最近无效右括号；把它包括进来都会破坏合法性，所以不能跨过。比如默认例子在 i=4 之前栈是 [0,3]；右括号配对下标 3，弹出后剩 [0]，片段下标 1…4 长度是 4−0=4。这样一次计算便连起两对，无需重扫下标 1…2。",
+    "A suffix is a contiguous fragment ending at the current index i. If top t remains after the pop, every parenthesis after t through i is paired, giving length i−t. t is either an unmatched opening or the last invalid close; including it would break validity, so we cannot cross it. In the default example, just before i=4 the stack is [0,3]. This close matches index 3; popping leaves [0], so indices 1…4 have length 4−0=4. One calculation joins the two pairs without rescanning indices 1…2."
   ],
   "invariant": [
     "best 是所有已处理右端点的最长长度；length 只是当前右端点的有效后缀。栈底边界和其余未配对左括号的角色不同，不能把 −1 当输入字符。",
@@ -294,6 +294,26 @@ window.LESSON_COPY = {
   "introducedLink": [
     "滑动窗口也必须保留连续性",
     "Sliding windows also preserve contiguity"
+  ],
+  "handRules": [
+    "每读一个字符都不能让 balance 小于 0：否则这个右括号前面没有可配对的左括号，后来补 ( 也无法倒过来修复。结束时还必须恰好为 0：大于 0 表示仍有左括号未关闭。因此，途中从不为负且结束为 0，才是合法片段。",
+    "Balance must never go below 0 while reading: a close would have no earlier opening to match, and adding an opening later cannot repair that order. Balance must also finish at exactly 0; a positive remainder means some openings never closed. A fragment is valid only when both tests hold."
+  ],
+  "handFirst": [
+    "现在逐个检查默认输入 \")()())\"，下标从 0 开始。从下标 0 开始，第一个 ) 就让 balance 从 0 变成 −1，立即排除这个起点。",
+    "Now check the default input \")()())\", using indices starting at 0. Starting at index 0, the first ) changes balance from 0 to −1, so immediately reject this start."
+  ],
+  "handScan": [
+    "改从下标 1 开始，依次读：1 的 ( → 1；2 的 ) → 0，得到 \"()\"，长度 2；3 的 ( → 1；4 的 ) → 0，得到 \"()()\"，长度 4；5 的 ) → −1，不能再延伸。每次回到 0 才记录长度，长度按 right−left+1 计算，所以 4−1+1=4。",
+    "Start again at index 1 and read in order: ( at 1 → balance 1; ) at 2 → 0, giving \"()\" of length 2; ( at 3 → 1; ) at 4 → 0, giving \"()()\" of length 4; ) at 5 → −1, so extension fails. Record a length only when balance returns to 0. The character count is right−left+1, so 4−1+1=4."
+  ],
+  "handCheck": [
+    "其他起点也要检查：下标 2、4、5 都以 ) 开始，立即失败；下标 3 只能得到长度 2。因此最长是下标 1…4，答案 4。换成 \"(()\"：从 0 开始的 balance 是 1→2→1，结束不为 0；从 1 开始的 \"()\" 是 1→0，所以答案只有 2。",
+    "Check the remaining starts too: indices 2, 4 and 5 begin with ) and fail immediately; index 3 gives only length 2. Thus indices 1…4 give the longest fragment, answer 4. Change the input to \"(()\": from index 0, balance is 1→2→1 and never finishes at 0; from index 1, \"()\" gives 1→0, so the answer is only 2."
+  ],
+  "handWrong": [
+    "容易误用的规则是“左右括号总数相同就合法”。反例 \")(\" 的 balance 是 −1→0：虽然总数相同，但顺序已经失败，答案是 0。下面的基线对每个 left 重新手算，用 break 放弃已经变负的起点，用 best 保留所有合法片段的最大字符数。",
+    "A tempting rule is “equal totals of opens and closes mean valid.” For \")(\", balance is −1→0: totals agree, but the order already failed, so the answer is 0. The baseline below repeats the hand calculation for each left start, uses break to abandon a start once balance is negative, and keeps the greatest valid character count in best."
   ]
 };
 window.LESSON = {
@@ -316,21 +336,21 @@ window.LESSON = {
     "0 ≤ n ≤ 30000; characters are only ( and )."
   ],
   "hand": [
-    "\")()())\" 中，从下标 1 到 4 是 \"()()\"，长度 4。\"(()\" 的合法后缀 \"()\" 长度只有 2；总左右括号数并不能直接给答案。",
-    "In \")()())\", indices 1…4 form \"()()\", length 4. In \"(()\", the valid suffix \"()\" has length 2. Counting all opening and closing parentheses does not determine the answer."
+    "把 ( 看作等待关闭的左括号，每个 ) 必须关闭最近一个尚未关闭的 (。例如 (()) 先关闭内层，再关闭外层；()() 则是两对并列。手算时用 balance 记录当前候选片段里尚待关闭的个数：从 0 开始，遇 ( 加 1，遇 ) 减 1。",
+    "Each ( waits for a closing ). Each ) must close the most recent still-open (. In (()), the inner pair closes before the outer pair; ()() has two adjacent pairs. To check a candidate fragment by hand, let balance count openings still waiting to close: start at 0, add 1 for (, and subtract 1 for )."
   ],
   "baseline": "def baseline(s):\n    best = 0\n    for left in range(len(s)):\n        balance = 0\n        for right in range(left, len(s)):\n            balance += 1 if s[right] == \"(\" else -1\n            if balance < 0:\n                break\n            if balance == 0:\n                best = max(best, right - left + 1)\n    return best",
   "cost": [
-    "每个左端点都重新计算平衡，时间 O(n²)、空间 O(1)。可以只保留阻止合法后缀向左延伸的下标，而无需反复扫描。",
-    "Restarting a balance scan at each left endpoint costs O(n²) time and O(1) space. Instead, retain indices that prevent a valid suffix from extending left."
+    "每个左端点都重新计算平衡，时间 O(n²)、空间 O(1)。可以只保留阻止“以当前字符结尾的合法片段”向左延伸的下标，而无需反复扫描。",
+    "Restarting a balance scan at each left endpoint costs O(n²) time and O(1) space. Instead, retain indices that prevent a valid fragment ending at the current character from extending left."
   ],
   "derive": [
-    "栈保存尚未匹配的左括号下标，底部还有一个无效边界，初始为 −1。遇到 ( 入栈；遇到 ) 先弹栈。若栈空，说明它无法匹配，当前 i 成为新的边界。",
-    "The stack holds unmatched opening indices above an invalid boundary, initially −1. Push on (. On ), pop first. If the stack becomes empty, this close has no match; its index i becomes the new boundary."
+    "如何避免从每个起点重新配对？仍看 \")()())\"：下标 0 的右括号无法配对，之后的合法片段必须从它右边开始。我们保存这种不能跨过的边界下标，以及尚未配对的左括号下标。用一个 Python 列表作为栈：只在列表末尾添加或删除；入栈 push 就是 append，出栈 pop 就是删除并取出最后一项，栈顶就是最后一项。底部先放 −1，表示字符串开始之前的虚拟边界；其上存未配对左括号的下标。遇 ( 就 append(i)；遇 ) 先 pop()，若列表空了，就用当前 i 作为新边界。",
+    "How can we avoid pairing again from every start? In \")()())\", the close at index 0 cannot match; any later valid fragment must start to its right. Save these uncrossable boundary indices and the indices of still-unmatched openings. Use a Python list as a stack: add or remove only at its end. “Push” means append; “pop” removes and returns the last item; “top” means that last item. Start with −1 at the bottom, a virtual boundary before the string, and store unmatched opening indices above it. On (, append(i). On ), pop first; if the list becomes empty, use the current i as the new boundary."
   ],
   "proof": [
-    "若弹出后仍有栈顶 t，则 t 后到 i 的每个括号都已成对，长度为 i−t。t 要么是多余左括号，要么是最近无效右括号，均不能被跨过，所以这就是以 i 结尾的最长合法后缀。",
-    "If a top t remains after the pop, every parenthesis after t through i is paired, giving length i−t. t is an unmatched opening or the last invalid closing boundary; neither can be crossed. This is the longest valid suffix ending at i."
+    "后缀是以当前下标 i 结尾的连续片段。若弹出后仍有栈顶 t，则 t 后到 i 的每个括号都已成对，长度为 i−t。t 要么是未配对左括号，要么是最近无效右括号；把它包括进来都会破坏合法性，所以不能跨过。比如默认例子在 i=4 之前栈是 [0,3]；右括号配对下标 3，弹出后剩 [0]，片段下标 1…4 长度是 4−0=4。这样一次计算便连起两对，无需重扫下标 1…2。",
+    "A suffix is a contiguous fragment ending at the current index i. If top t remains after the pop, every parenthesis after t through i is paired, giving length i−t. t is either an unmatched opening or the last invalid close; including it would break validity, so we cannot cross it. In the default example, just before i=4 the stack is [0,3]. This close matches index 3; popping leaves [0], so indices 1…4 have length 4−0=4. One calculation joins the two pairs without rescanning indices 1…2."
   ],
   "invariant": [
     "best 是所有已处理右端点的最长长度；length 只是当前右端点的有效后缀。栈底边界和其余未配对左括号的角色不同，不能把 −1 当输入字符。",
