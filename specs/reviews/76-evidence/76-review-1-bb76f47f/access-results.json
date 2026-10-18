@@ -1,0 +1,119 @@
+{
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "codeKeyboardScroll": true,
+  "focus": "3px",
+  "dictionaryParity": true,
+  "largestTeachingInput": true,
+  "renderedContrasts": [
+    {
+      "selector": ".explain",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "opacity": "1",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".tagline",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "opacity": "1",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".step-kicker",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "pre",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        9,
+        14,
+        22
+      ],
+      "opacity": "1",
+      "ratio": 16.437295258072666
+    },
+    {
+      "selector": ".changed td",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        29.040000000000003,
+        43.32,
+        51.68000000000001
+      ],
+      "opacity": "1",
+      "ratio": 12.297634538021912
+    },
+    {
+      "selector": ".btn:disabled",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "opacity": "1",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".btn.primary:not(:disabled)",
+      "fg": [
+        13,
+        17,
+        23
+      ],
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "errors": [],
+  "cssBytes": 11903
+}

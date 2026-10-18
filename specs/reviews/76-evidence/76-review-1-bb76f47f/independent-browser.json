@@ -1,0 +1,113 @@
+{
+  "states": [
+    {
+      "frame": 0,
+      "left": 0,
+      "right": -1,
+      "window": "",
+      "missing": 2,
+      "best": "Shortest checked: none yet; positions —; length —."
+    },
+    {
+      "frame": 1,
+      "left": 0,
+      "right": 0,
+      "window": "B",
+      "missing": 2,
+      "best": "Shortest checked: none yet; positions —; length —."
+    },
+    {
+      "frame": 2,
+      "left": 0,
+      "right": 1,
+      "window": "BA",
+      "missing": 1,
+      "best": "Shortest checked: none yet; positions —; length —."
+    },
+    {
+      "frame": 3,
+      "left": 0,
+      "right": 2,
+      "window": "BAA",
+      "missing": 0,
+      "best": "Shortest checked: none yet; positions —; length —."
+    },
+    {
+      "frame": 4,
+      "left": 0,
+      "right": 2,
+      "window": "BAA",
+      "missing": 0,
+      "best": "Shortest checked: BAA; positions [0,2]; length 3."
+    },
+    {
+      "frame": 5,
+      "left": 1,
+      "right": 2,
+      "window": "AA",
+      "missing": 0,
+      "best": "Shortest checked: BAA; positions [0,2]; length 3."
+    },
+    {
+      "frame": 6,
+      "left": 1,
+      "right": 2,
+      "window": "AA",
+      "missing": 0,
+      "best": "Shortest checked: AA; positions [1,2]; length 2."
+    },
+    {
+      "frame": 7,
+      "left": 2,
+      "right": 2,
+      "window": "A",
+      "missing": 1,
+      "best": "Shortest checked: AA; positions [1,2]; length 2."
+    },
+    {
+      "frame": 8,
+      "left": 2,
+      "right": 3,
+      "window": "AC",
+      "missing": 1,
+      "best": "Shortest checked: AA; positions [1,2]; length 2."
+    },
+    {
+      "frame": 9,
+      "left": 2,
+      "right": 4,
+      "window": "ACA",
+      "missing": 0,
+      "best": "Shortest checked: AA; positions [1,2]; length 2."
+    },
+    {
+      "frame": 10,
+      "left": 2,
+      "right": 4,
+      "window": "ACA",
+      "missing": 0,
+      "best": "Shortest checked: AA; positions [1,2]; length 2."
+    },
+    {
+      "frame": 11,
+      "left": 3,
+      "right": 4,
+      "window": "CA",
+      "missing": 1,
+      "best": "Shortest checked: AA; positions [1,2]; length 2."
+    },
+    {
+      "frame": 12,
+      "left": 3,
+      "right": 4,
+      "window": "CA",
+      "missing": 1,
+      "best": "Shortest checked: AA; positions [1,2]; length 2."
+    }
+  ],
+  "customLocalePreserved": true,
+  "wrongPredictionPreserved": true,
+  "ledgerKeyboardScroll": true,
+  "navKeyboardScroll": true,
+  "codeKeyboardDisclosure": true
+}

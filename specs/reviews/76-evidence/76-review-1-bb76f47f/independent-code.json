@@ -1,0 +1,69 @@
+{
+  "freshFixtures": [
+    [
+      "BAACA",
+      "AA",
+      "AA"
+    ],
+    [
+      "AB",
+      "AA",
+      ""
+    ],
+    [
+      "baaACa",
+      "aA",
+      "aA"
+    ],
+    [
+      "ABC",
+      "CBA",
+      "ABC"
+    ],
+    [
+      "ABA",
+      "A",
+      "A"
+    ],
+    [
+      "Z",
+      "Z",
+      "Z"
+    ],
+    [
+      "Z",
+      "z",
+      ""
+    ],
+    [
+      "",
+      "A",
+      ""
+    ],
+    [
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      ""
+    ]
+  ],
+  "independentCaseSensitiveOracleCases": 3780,
+  "largeCases": 4,
+  "sameInstanceRepeatedCalls": true,
+  "inputsUnchanged": true,
+  "servedLocalSha256": {
+    "index.html": "193fd90f1866d85a0c7f4994aeaa24597ace595aa832430d849826d599b3e15f",
+    "app.js": "e9c8e9a2ffc008d8412cdcf3e66e6f0fe11b3c951429b65b7fee8c65eae8965b",
+    "copy.js": "474376c845153320b78e52a20c2d33097df544c96c9698190f58638f6c2fe712",
+    "core.js": "3a93f6e68703340cf4f5e00917693cd4ad19438afc38c9162ec4dea71e6e9775",
+    "style.css": "3c385a6dac5fbb5f6e3ae59970c8aad4e36de71c4497b191b3b4822db7ad9e5d",
+    "solution.py": "462576944344c0a7581676d18cb64ca7b9140583bb6e88151da788d10bc6ca84",
+    "python-code.js": "69012a8577321b2b972210d1c9efc0d56e38024be6b3d8075b85dba769936521",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}
