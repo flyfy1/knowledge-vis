@@ -586,3 +586,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Rolling-row dependency invariant | `leetcode/174/#step4` | Reuse a row while preserving right and down successor needs. |
 
 <!-- /leetcode-174-campaign -->
+
+
+<!-- leetcode-224-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Saved calculator contexts | `leetcode/224/#step2` | Preserve outer total and sign while evaluating a parenthesized term. |
+| Iterative expression evaluation | `leetcode/224/#step4` | Map sign, digit accumulation and parenthesis merging to Python. |
+
+<!-- /leetcode-224-campaign -->
