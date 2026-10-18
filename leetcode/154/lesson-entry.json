@@ -1,0 +1,38 @@
+{
+  "id": 154,
+  "title": {
+    "zh": "寻找旋转排序数组中的最小值 II",
+    "en": "Find Minimum in Rotated Sorted Array II"
+  },
+  "desc": {
+    "zh": "重复值为什么让二分查找退化？保留至少一个最小值。",
+    "en": "See why duplicates weaken binary search, while preserving a minimum."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "二分查找",
+      "en": "Binary search"
+    },
+    {
+      "zh": "数组",
+      "en": "Arrays"
+    }
+  ],
+  "path": "154/",
+  "leetcodeUrl": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/",
+  "language": "Python",
+  "complexity": "O(n) worst-case time; O(1) auxiliary space",
+  "concepts": [
+    {
+      "name": "Duplicate-aware binary search",
+      "step": 1,
+      "description": "Derive safe interval reductions when endpoint values can be equal."
+    },
+    {
+      "name": "Minimum-preserving invariant",
+      "step": 4,
+      "description": "Keep at least one global minimum while strictly shrinking the interval."
+    }
+  ]
+}

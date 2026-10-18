@@ -1,0 +1,1 @@
+window.PYTHON_SOURCE = "class Solution:\n    def findMin(self, nums: list[int]) -> int:\n        l, r = 0, len(nums) - 1\n        while l < r:\n            m = (l + r) // 2\n            if nums[m] > nums[r]:\n                l = m + 1\n            elif nums[m] < nums[r]:\n                r = m\n            else:\n                r -= 1\n        return nums[l]\n";

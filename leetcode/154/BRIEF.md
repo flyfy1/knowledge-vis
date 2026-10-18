@@ -1,0 +1,24 @@
+# #154 author brief
+
+Build/reuse verdict: one lesson in the existing LeetCode collection for readers who know arrays and comparisons. Category computing; stage university. Reuse the approved lesson shell, locale, exact shared tokens and native controls. Design authority: specs/reviews/leetcode-all-hard-design-review.md and dispatcher adjudication. This author run is not independent acceptance.
+
+Learning loop: manually find 0 in [2,2,2,0,1], compare a middle value to the right endpoint, justify a smaller interval, rewind, then transfer to an unseen equality case and the official Python submission.
+
+Official source verified 2026-10-18: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/ and public GraphQL. Capture tests/evidence/official.json includes full response and observed Python3 selector stub `class Solution: def findMin(self, nums: list[int]) -> int`. Nonempty rotated nondecreasing array, duplicates allowed, n 1..5000, values -5000..5000. Return minimum value, not index. No mutation required. Official examples [1,3,5] -> 1; [2,2,2,0,1] -> 0. Rotation n times can leave the input sorted. No empty-input contract. Prefer supported Python; no language exception needed.
+
+## Steps (five fields each)
+0. Known: integer comparison. Question: which value is smallest? Input/output: [2,2,2,0,1] -> 0. Action/observation: hand scan, inspect running-minimum ledger. Conditions: nonempty input; scan also works without sortedness.
+1. Known: rotated sorted order and baseline. Question: which positions can safely be removed? Input/output: middle/right comparisons -> new inclusive bounds. Action/observation: compare the worked strict case and equality counterexamples. Conditions: rotation of a nondecreasing sequence; equality permits removing only a duplicate endpoint.
+2. Known: three rules. Question: does each shrink keep a minimum? Input/output: a selected short array -> complete history of inclusive bounds. Action/observation: step forward/back/reset/end or scrub; watch kept/discarded labels and before/after history. Presets restart only this experiment. Conditions: finite fixed presets; snapshots simulate rules, do not execute Python. No skipped frames.
+3. Known: equality invariant. Question: what is safe on fresh [3,1,3,3,3,3,3]? Input/output: choice -> explanation only after explicit reveal. Action/observation: predict, reveal, change answer to clear feedback; locale preserves all state. Conditions: inclusive l=0,r=6,m=3; ask about safe knowledge, not incidental final answer.
+4. Known: safe shrink. Question: why does code return the minimum, at what cost? Input/output: invariant -> canonical Python and boundaries. Action/observation: inspect source, map branches, copy/download. Conditions: official nonempty inputs; O(n) worst time, O(1) auxiliary space; strict comparisons halve intervals, equal values can force n-1 steps.
+
+## First-use terms
+Rotation (step0): move last item to front; n moves restores sequence. Nondecreasing (0): each next value is at least previous. Baseline (0): simple correct scan. Inclusive bounds l,r (1, redefined 2): both endpoints retained. m (1,2): floor midpoint. Invariant (1,4): at least one global-minimum occurrence remains. Binary search (1): discard proven unnecessary positions via comparisons. Each step defines its terms locally.
+
+## Token and state contract
+Exact inherited palette: bg #0d1117, panel #161b22, panel2 #1c2330, line #2b3547, text #e8edf4, muted #9aa7b8, accent #6ee7ff, accent2 #ffb454, good #7ee2a8, bad #ff7a93. Use shared font stack/spacing/radii. Local overrides use these variables, 48px controls, solid readable disabled state, 3px accent2 focus, no animation. Arrays wrap as labeled cells instead of shrinking; no numeric bars or false quantitative height. History retains actual old/new bounds. State matrix: both locales × initial/middle/end × every preset; prediction unselected/selected/revealed/changed; clipboard success/failure; storage available/denied. No network runtime/loading/reconnect states.
+
+P0: complete bilingual causal explanation, local trace, source parity, executable oracle tests and browser evidence. Highest return: three branch explanations plus visible retained interval and history. P1: reversible scrubber and related deep links. P2: none. Deferred: automatic playback (no benefit), universal visual engine (one consumer), remote execution (unnecessary), learner/outcome claims (no learner study). Shared registry/concept map are outside author ownership; lesson-local metadata carries concepts.
+
+Proof obligation: initialization retains all positions; each strict branch excludes a region incapable of containing the only minimum, equality retains the equal m if r was minimum; range strictly shrinks; singleton must hold a minimum. Baseline is independent linear min, tested against Python and JS trace with exhaustive sorted multisets/rotations and random cases, including intermediate invariants.
