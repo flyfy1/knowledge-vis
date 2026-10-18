@@ -1,0 +1,152 @@
+[
+  {
+    "input": [
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "expected": 2.0,
+    "actual": 2.0,
+    "states": [
+      {
+        "lo": 0,
+        "hi": 2,
+        "half": 3,
+        "i": 1,
+        "j": 2,
+        "al": 0,
+        "ar": 4,
+        "bl": 2,
+        "br": 3
+      }
+    ]
+  },
+  {
+    "input": [
+      [
+        8,
+        9
+      ],
+      [
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": 3.5,
+    "actual": 3.5,
+    "states": [
+      {
+        "lo": 0,
+        "hi": 2,
+        "half": 3,
+        "i": 1,
+        "j": 2,
+        "al": 8,
+        "ar": 9,
+        "bl": 2,
+        "br": 3
+      },
+      {
+        "lo": 0,
+        "hi": 0,
+        "half": 3,
+        "i": 0,
+        "j": 3,
+        "al": -Infinity,
+        "ar": 8,
+        "bl": 3,
+        "br": 4
+      }
+    ]
+  },
+  {
+    "input": [
+      [],
+      [
+        7
+      ]
+    ],
+    "expected": 7.0,
+    "actual": 7.0,
+    "states": [
+      {
+        "lo": 0,
+        "hi": 0,
+        "half": 1,
+        "i": 0,
+        "j": 1,
+        "al": -Infinity,
+        "ar": Infinity,
+        "bl": 7,
+        "br": Infinity
+      }
+    ]
+  },
+  {
+    "input": [
+      [
+        7
+      ],
+      []
+    ],
+    "expected": 7.0,
+    "actual": 7.0,
+    "states": [
+      {
+        "lo": 0,
+        "hi": 0,
+        "half": 1,
+        "i": 0,
+        "j": 1,
+        "al": -Infinity,
+        "ar": Infinity,
+        "bl": 7,
+        "br": Infinity
+      }
+    ]
+  },
+  {
+    "input": [
+      [
+        -1000000
+      ],
+      [
+        1000000
+      ]
+    ],
+    "expected": 0.0,
+    "actual": 0.0,
+    "states": [
+      {
+        "lo": 0,
+        "hi": 1,
+        "half": 1,
+        "i": 0,
+        "j": 1,
+        "al": -Infinity,
+        "ar": -1000000,
+        "bl": 1000000,
+        "br": Infinity
+      },
+      {
+        "lo": 1,
+        "hi": 1,
+        "half": 1,
+        "i": 1,
+        "j": 0,
+        "al": -1000000,
+        "ar": Infinity,
+        "bl": -Infinity,
+        "br": 1000000
+      }
+    ]
+  }
+]
