@@ -1,0 +1,112 @@
+{
+  "status": "pass",
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "widths": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "CSS 200%, 780 viewport gives 390 CSS layout width",
+  "presets": 6,
+  "errors": [],
+  "contrast": {
+    "colors": {
+      "bg": "#0d1117",
+      "panel": "#161b22",
+      "panel2": "#1c2330",
+      "text": "#e8edf4",
+      "muted": "#9aa7b8",
+      "accent": "#6ee7ff",
+      "accent2": "#ffb454"
+    },
+    "pairs": [
+      {
+        "fg": "text",
+        "bg": "bg",
+        "ratio": 16.086987125379448
+      },
+      {
+        "fg": "text",
+        "bg": "panel",
+        "ratio": 14.704584598678618
+      },
+      {
+        "fg": "text",
+        "bg": "panel2",
+        "ratio": 13.397069143240783
+      },
+      {
+        "fg": "muted",
+        "bg": "bg",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "fg": "muted",
+        "bg": "panel",
+        "ratio": 7.078851579017443
+      },
+      {
+        "fg": "muted",
+        "bg": "panel2",
+        "ratio": 6.449407898769069
+      },
+      {
+        "fg": "accent",
+        "bg": "bg",
+        "ratio": 13.100679028115637
+      },
+      {
+        "fg": "accent",
+        "bg": "panel",
+        "ratio": 11.974898815275662
+      },
+      {
+        "fg": "accent",
+        "bg": "panel2",
+        "ratio": 10.910104011097095
+      },
+      {
+        "fg": "accent2",
+        "bg": "bg",
+        "ratio": 10.731637051347173
+      },
+      {
+        "fg": "accent2",
+        "bg": "panel",
+        "ratio": 9.809435643476732
+      },
+      {
+        "fg": "accent2",
+        "bg": "panel2",
+        "ratio": 8.937191437807625
+      }
+    ]
+  },
+  "captures": [
+    "en-320.png",
+    "en-390.png",
+    "en-736.png",
+    "en-1440.png",
+    "zh-320.png",
+    "zh-390.png",
+    "zh-736.png",
+    "zh-1440.png"
+  ],
+  "source_display_copy_fallback_download": "exact",
+  "keyboard": "Enter advances; 3px focus outline",
+  "storage_denied": "pass",
+  "localAssets": [
+    "http://127.0.0.1:18789/leetcode/style.css",
+    "http://127.0.0.1:18789/leetcode/185/style.css",
+    "http://127.0.0.1:18789/leetcode/common.js",
+    "http://127.0.0.1:18789/leetcode/185/copy.js",
+    "http://127.0.0.1:18789/leetcode/185/core.js",
+    "http://127.0.0.1:18789/leetcode/185/python-code.js",
+    "http://127.0.0.1:18789/leetcode/185/app.js",
+    "http://127.0.0.1:18789/favicon.ico"
+  ]
+}

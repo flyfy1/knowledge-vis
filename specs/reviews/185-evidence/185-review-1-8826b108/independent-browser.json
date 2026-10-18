@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "lang": "en",
+      "before": 0,
+      "after": 40,
+      "event": "D: salary falls from 70 to a new value 60; rank increases from 3 to 4.",
+      "ledger": "Employee rank ledger\nDepartment (ID)\tEmployee\tSalary\tDense rank\tStatus\nLab (1)\tA\t90\t1\tKeep\nLab (1)\tB\t80\t2\tKeep\nLab (1)\tC\t70\t3\tKeep\nLab (1)\t★ D\t60\t4\tExclude\nLab (2)\tE\t5\t—\tPending"
+    },
+    {
+      "lang": "zh",
+      "before": 0,
+      "after": 40,
+      "event": "D：工资从 70 降到新数值 60，名次由 3 加一为 4。",
+      "ledger": "员工与累计排名记录\n部门（id）\t员工\t工资\t密集名次\t状态\nLab (1)\tA\t90\t1\t保留\nLab (1)\tB\t80\t2\t保留\nLab (1)\tC\t70\t3\t保留\nLab (1)\t★ D\t60\t4\t排除\nLab (2)\tE\t5\t—\t待处理"
+    }
+  ],
+  "served_local_sha256": {
+    "index.html": "ee381ef1f669862e444b21ddb25f9321f41334010bb0ddba00114fa9de194ed2",
+    "app.js": "fec7fda0bfa59bdf0c4d244b5276557da262e1f56e3aeb39b4d3bf31f9cd3735",
+    "core.js": "6198a36e1e5a541453ad27222ef2360ec5f85e9b8c9a71eb267eb770ac0e08b0",
+    "copy.js": "8f681b16d03be59dd48febfb5261a269eec828f6c2ccb5da800ab7c6c4e81931",
+    "python-code.js": "b810d682d2b734f505a75d3e2693a8729e15ebec7c31aca3e8e965f190086f04",
+    "solution.py": "57b21cd5e72fb708ddb8dd24111a6f26c3ecba89f39b6f17fa80395b16d6a18d",
+    "style.css": "f81015976f90ac0c2c536f76a44f612e2baf9536839a9e58f5e69e732333f976",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}
