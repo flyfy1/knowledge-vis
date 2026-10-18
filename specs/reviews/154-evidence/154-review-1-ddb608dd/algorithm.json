@@ -1,0 +1,12 @@
+{
+  "pythonCases": 10086,
+  "oracle": "independent linear scan",
+  "mutation": "unchanged on all cases",
+  "trace": {
+    "cases": 10086,
+    "intermediateTransitions": 45340,
+    "sourceMirror": "exact",
+    "translations": "paired placeholders"
+  },
+  "seed": 154
+}
