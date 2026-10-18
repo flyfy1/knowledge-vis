@@ -1,0 +1,17 @@
+// Focused final checks after adding keyboard access to scrollable code. OUTPUT_DIR supported.
+const {chromium}=require('playwright'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+(async()=>{const b=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});const p=await b.newPage({viewport:{width:320,height:900},reducedMotion:'reduce'}),errors=[];p.on('pageerror',e=>errors.push(e.message));await p.goto((process.env.PREVIEW_ROOT||'http://127.0.0.1:18773')+'/leetcode/76/');await p.locator('#state').filter({hasText:'missing'}).waitFor();
+for(const lang of ['en','zh']){await p.click(`[data-lang="${lang}"]`);await p.locator('#sourceDetails').evaluate(e=>e.open=true);for(const pre of await p.locator('pre').all()){await pre.focus();await p.keyboard.press('ArrowRight');assert.equal(await pre.evaluate(e=>getComputedStyle(e).outlineWidth),'3px');assert(await pre.evaluate(e=>e.scrollLeft>0));}assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
+// Largest teaching input in the real DOM, including an 18-row count table.
+await p.fill('#inputS','ABCDEFGHIJKLMNOPQR');await p.fill('#inputT','ABCDEFGHIJKLMNOPQR');await p.click('[data-i18n="apply"]');await p.locator('#position').evaluate(e=>{e.value=e.max;e.dispatchEvent(new Event('input'));});assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert.equal(await p.locator('#counts tr').count(),18);assert((await p.locator('#best').textContent()).includes('ABCDEFGHIJKLMNOPQR'));
+// Measure inherited and composited colors, including the highlighted ledger row.
+const pairs=await p.evaluate(()=>{
+ const color=s=>s.match(/[\d.]+/g).map(Number),over=(fg,bg)=>{const a=fg.length>3?fg[3]:1;return [0,1,2].map(i=>fg[i]*a+bg[i]*(1-a));};
+ function background(el){if(!el)return [0,0,0];const c=color(getComputedStyle(el).backgroundColor);return over(c,background(el.parentElement));}
+ return ['.explain','.tagline','.step-kicker','pre','.changed td','.btn:disabled','.btn.primary:not(:disabled)'].flatMap(selector=>{const el=document.querySelector(selector);return el?[{selector,fg:color(getComputedStyle(el).color).slice(0,3),bg:background(el),opacity:getComputedStyle(el).opacity}]:[];});
+});
+const lum=rgb=>rgb.map(x=>x/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4).reduce((sum,x,i)=>sum+x*[.2126,.7152,.0722][i],0);
+for(const pair of pairs){const x=lum(pair.fg),y=lum(pair.bg);pair.ratio=(Math.max(x,y)+.05)/(Math.min(x,y)+.05);assert(pair.ratio>=4.5,JSON.stringify(pair));assert.equal(pair.opacity,'1');}
+// Dictionary parity, dynamic keys, and no missing keys across any used view.
+assert(await p.evaluate(()=>Object.values(COPY).every(x=>Array.isArray(x)&&x.length===2&&x.every(y=>typeof y==='string'&&y.length>0))));assert.deepEqual(errors,[]);
+const out=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'access-results.json'),JSON.stringify({locales:['en','zh'],codeKeyboardScroll:true,focus:'3px',dictionaryParity:true,largestTeachingInput:true,renderedContrasts:pairs,errors,cssBytes:fs.statSync(path.join(__dirname,'../../style.css')).size+fs.statSync(path.join(__dirname,'../style.css')).size},null,2));await b.close();})().catch(e=>{console.error(e);process.exit(1);});
