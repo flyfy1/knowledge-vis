@@ -1,0 +1,213 @@
+{
+  "kind": "author self-check",
+  "status": "pass",
+  "presetLocalePaths": 14,
+  "peerAndAnchorAdvances": 132,
+  "widths": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "200% CSS layout zoom in real Chromium, both locales",
+  "screenshots": [
+    "plot-en-320.png",
+    "counts-en-320.png",
+    "plot-en-390.png",
+    "counts-en-390.png",
+    "plot-en-736.png",
+    "counts-en-736.png",
+    "plot-en-1440.png",
+    "counts-en-1440.png",
+    "zoom200-en.png",
+    "preset-0-en.png",
+    "preset-1-en.png",
+    "preset-2-en.png",
+    "preset-3-en.png",
+    "preset-4-en.png",
+    "preset-5-en.png",
+    "preset-6-en.png",
+    "section-0-en.png",
+    "section-1-en.png",
+    "section-3-en.png",
+    "section-4-en.png",
+    "plot-zh-320.png",
+    "counts-zh-320.png",
+    "plot-zh-390.png",
+    "counts-zh-390.png",
+    "plot-zh-736.png",
+    "counts-zh-736.png",
+    "plot-zh-1440.png",
+    "counts-zh-1440.png",
+    "zoom200-zh.png",
+    "preset-0-zh.png",
+    "preset-1-zh.png",
+    "preset-2-zh.png",
+    "preset-3-zh.png",
+    "preset-4-zh.png",
+    "preset-5-zh.png",
+    "preset-6-zh.png",
+    "section-0-zh.png",
+    "section-1-zh.png",
+    "section-3-zh.png",
+    "section-4-zh.png",
+    "forced-colors-focus.png"
+  ],
+  "focus": {
+    "width": "3px",
+    "style": "solid",
+    "color": "rgb(255, 180, 84)",
+    "offset": "4px"
+  },
+  "disabled": {
+    "color": "rgb(154, 167, 184)",
+    "background": "rgb(28, 35, 48)",
+    "opacity": "1"
+  },
+  "rendered": {
+    "color": "rgb(154, 167, 184)",
+    "background": "rgb(28, 35, 48)",
+    "opacity": "1"
+  },
+  "cssBytes": 12470,
+  "contrast": [
+    {
+      "fg": "text",
+      "bg": "bg",
+      "ratio": 16.09
+    },
+    {
+      "fg": "muted",
+      "bg": "bg",
+      "ratio": 7.74
+    },
+    {
+      "fg": "accent",
+      "bg": "bg",
+      "ratio": 13.1
+    },
+    {
+      "fg": "accent2",
+      "bg": "bg",
+      "ratio": 10.73
+    },
+    {
+      "fg": "explain",
+      "bg": "bg",
+      "ratio": 12.62
+    },
+    {
+      "fg": "text",
+      "bg": "panel",
+      "ratio": 14.7
+    },
+    {
+      "fg": "muted",
+      "bg": "panel",
+      "ratio": 7.08
+    },
+    {
+      "fg": "accent",
+      "bg": "panel",
+      "ratio": 11.97
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel",
+      "ratio": 9.81
+    },
+    {
+      "fg": "explain",
+      "bg": "panel",
+      "ratio": 11.53
+    },
+    {
+      "fg": "text",
+      "bg": "panel2",
+      "ratio": 13.4
+    },
+    {
+      "fg": "muted",
+      "bg": "panel2",
+      "ratio": 6.45
+    },
+    {
+      "fg": "accent",
+      "bg": "panel2",
+      "ratio": 10.91
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel2",
+      "ratio": 8.94
+    },
+    {
+      "fg": "explain",
+      "bg": "panel2",
+      "ratio": 10.51
+    },
+    {
+      "fg": "text",
+      "bg": "alternate",
+      "ratio": 16.44
+    },
+    {
+      "fg": "muted",
+      "bg": "alternate",
+      "ratio": 7.91
+    },
+    {
+      "fg": "accent",
+      "bg": "alternate",
+      "ratio": 13.39
+    },
+    {
+      "fg": "accent2",
+      "bg": "alternate",
+      "ratio": 10.97
+    },
+    {
+      "fg": "explain",
+      "bg": "alternate",
+      "ratio": 12.89
+    },
+    {
+      "fg": "text",
+      "bg": "pre",
+      "ratio": 16.44
+    },
+    {
+      "fg": "muted",
+      "bg": "pre",
+      "ratio": 7.91
+    },
+    {
+      "fg": "accent",
+      "bg": "pre",
+      "ratio": 13.39
+    },
+    {
+      "fg": "accent2",
+      "bg": "pre",
+      "ratio": 10.97
+    },
+    {
+      "fg": "explain",
+      "bg": "pre",
+      "ratio": 12.89
+    },
+    {
+      "fg": "bg",
+      "bg": "accent",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "errors": [],
+  "bad": [],
+  "external": [],
+  "clipboard": "actual Clipboard API copy/read plus forced denial, exact manual source and selection",
+  "sourceParity": "display, clipboard, download and file:// mirror equal solution.py",
+  "storageDenied": true,
+  "offline": true,
+  "limits": "No physical-device, native browser-chrome zoom, novice, independent review, accepted submission or deployment evidence."
+}

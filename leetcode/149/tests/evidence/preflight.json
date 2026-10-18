@@ -1,0 +1,10 @@
+{
+  "command": "python3 -B scripts/register_leetcode_lesson.py 149 --validate-only",
+  "cwd": "/home/songyy/projects/leetcode-hard-parallel-20261018/lesson-149",
+  "executedAt": "2026-10-18T12:55:58.989279+00:00",
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "",
+  "candidateAndSharedInputsUnchanged": true,
+  "complexity": "O(n\u00b2 log C) time; O(n) auxiliary space, C = max(2, coordinate span)"
+}
