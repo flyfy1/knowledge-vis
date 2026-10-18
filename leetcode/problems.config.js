@@ -273,6 +273,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n·n!) time, O(n) auxiliary space; average O(1) set operations"
   },
   {
+    "id": 68,
+    "title": {
+      "zh": "文本左右对齐",
+      "en": "Text Justification"
+    },
+    "desc": {
+      "zh": "从最长可容纳词段推导空格分配，逐步检查末行与单词行例外。",
+      "en": "Derive maximal word groups and even spacing, then inspect last-line and single-word exceptions."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      },
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      }
+    ],
+    "path": "68/",
+    "leetcodeUrl": "https://leetcode.com/problems/text-justification/",
+    "language": "Python",
+    "complexity": "O(n + mW) time; O(W) auxiliary space, excluding O(mW) output"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
