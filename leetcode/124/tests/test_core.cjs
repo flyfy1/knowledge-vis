@@ -1,0 +1,5 @@
+const assert=require('assert'),fs=require('fs'),core=require('../core.js');
+const fixtures=JSON.parse(fs.readFileSync(0,'utf8'));let framesChecked=0;
+for(const f of fixtures){const frames=core.trace(f.values);assert.equal(frames.at(-1).best,f.best);let best=-Infinity;const done=new Set();frames.forEach((frame,k)=>{assert.equal(frame.rows.length,k);assert.equal(Object.keys(frame.gains).length,k);if(k){const r=frame.rows.at(-1),i=r.i;for(const child of [i*2+1,i*2+2])if(f.values[child]!=null)assert(done.has(child));done.add(i);assert.equal(r.gain,f.gain[i]);assert.equal(r.through,f.through[i]);best=Math.max(best,f.through[i]);assert.equal(frame.best,best);for(const [j,v]of Object.entries(frame.gains))assert.equal(v,f.gain[j]);assert.equal(r.value+r.left+r.right,r.through);assert.equal(r.value+Math.max(r.left,r.right),r.gain);}framesChecked++;});assert.deepEqual(core.trace(f.values),frames);}
+for(const p of core.presets)assert(core.trace(p).length>1);
+console.log(JSON.stringify({cases:fixtures.length,framesChecked,invariants:'gain / through / completed children / running best / deterministic snapshots'}));

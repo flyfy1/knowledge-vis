@@ -507,6 +507,58 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time / O(1) auxiliary space"
   },
   {
+    "id": 124,
+    "title": {
+      "zh": "二叉树中的最大路径和",
+      "en": "Binary Tree Maximum Path Sum"
+    },
+    "desc": {
+      "zh": "区分向上延伸的单臂与在此结束的双臂，逐节点推导最大路径和。",
+      "en": "Separate an extendable arm from a completed path and derive the maximum sum node by node."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二叉树",
+        "en": "Binary tree"
+      },
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      }
+    ],
+    "path": "124/",
+    "leetcodeUrl": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+    "language": "Python",
+    "complexity": "O(n) time / O(n) auxiliary space"
+  },
+  {
+    "id": 126,
+    "title": {
+      "zh": "单词接龙 II",
+      "en": "Word Ladder II"
+    },
+    "desc": {
+      "zh": "保留同层的每条来路，重建全部最短变换。",
+      "en": "Keep every same-layer parent and reconstruct all shortest transformations."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "回溯",
+        "en": "Backtracking"
+      }
+    ],
+    "path": "126/",
+    "leetcodeUrl": "https://leetcode.com/problems/word-ladder-ii/",
+    "language": "Python",
+    "complexity": "O(26NL² + M) time / O(NL + E + M) space including output"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
