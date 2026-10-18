@@ -1,0 +1,25 @@
+{
+  "baselineCollision": {
+    "bad": [
+      "candidates_at_entry",
+      "overflow:candidates_at_entry"
+    ],
+    "width": 390,
+    "viewport": 390
+  },
+  "matrices": [
+    "en 320: 181 frames; no state collision or page overflow",
+    "en 390: 181 frames; no state collision or page overflow",
+    "en 736: 181 frames; no state collision or page overflow",
+    "en 1440: 181 frames; no state collision or page overflow",
+    "zh 320: 181 frames; no state collision or page overflow",
+    "zh 390: 181 frames; no state collision or page overflow",
+    "zh 736: 181 frames; no state collision or page overflow",
+    "zh 1440: 181 frames; no state collision or page overflow"
+  ],
+  "sourceParity": [
+    "en: displayed, clipboard, download, embedded mirror equal canonical bytes",
+    "zh: displayed, clipboard, download, embedded mirror equal canonical bytes"
+  ],
+  "errors": []
+}
