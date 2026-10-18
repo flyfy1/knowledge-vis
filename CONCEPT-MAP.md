@@ -504,3 +504,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Prefix partition minimum | `leetcode/132/#step2` | Compare every possible last palindrome piece. |
 
 <!-- /leetcode-132-campaign -->
+
+
+<!-- leetcode-140-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Suffix sentence enumeration | `leetcode/140/#step1` | Derive complete suffix lists and the empty-suffix base case. |
+| Output-sensitive word break | `leetcode/140/#step4` | Map enumeration to Python and account for cached strings. |
+
+<!-- /leetcode-140-campaign -->
