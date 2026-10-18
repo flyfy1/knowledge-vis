@@ -38,7 +38,7 @@ How much water fits between unit-width bars? Heights are nonnegative, and water 
 - Increasing heights: `[1, 2, 3, 4]`.
 - Single bar: `[4]`.
 
-For [3,0,2,0,4], the three interior positions hold depths 3,1,3, totaling 7. The bars themselves are not water.
+For [3,0,2,0,4], index 2 has left/right highest walls 3/4. Above level 3 water spills left, so the level is min(3,4)=3 and depth is 3−2=1. At indices 1 and 3 the same walls give 3−0=3 each. Ends hold 0: 0+3+1+3+0=7 units at unit width. Using only wall 4 incorrectly predicts middle depth 2; counting level 3 as depth includes the bar. These numeric steps appear before the baseline in both locales.
 
 ## Demonstration boundaries
 
@@ -57,3 +57,17 @@ Run `python3 leetcode/tests/test_hard_solutions.py`,
 `NODE_PATH=<playwright package directory> node leetcode/tests/test_hard_browser.cjs`.
 See `../../specs/reviews/leetcode-first-ten-review.md` for observed review evidence.
 No actual LeetCode submission or human learning test is claimed.
+
+
+## Required-review repair scope (2026-10-18)
+
+Report: `../../specs/reviews/42-review-1-c31e1a0d.md`.
+Product-fit verdict: reuse the existing lesson, step order, paragraphs, tokens and
+controls. The reader needs the concrete wall → level → depth bridge before code.
+The existing independent finding supplies the requested design direction; this
+repair adds no new feature or layout. P0 / highest-return slice: numeric hand
+calculation in EN/ZH and valid lesson-local metadata. P1/P2: none. Deferred:
+shared visual refinements remain outside this lesson's ownership and required fixes.
+The canonical Python interface and shared trace are unchanged. New metadata is a
+new candidate, not a repair of the historical review result. Both required IDs
+remain fixed awaiting independent review; see `SELF-CHECK.md` for evidence.

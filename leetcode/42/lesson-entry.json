@@ -1,0 +1,29 @@
+{
+  "id": 42,
+  "title": {
+    "zh": "接雨水",
+    "en": "Trapping Rain Water"
+  },
+  "desc": {
+    "zh": "left、right 围住尚未结算区域。left_max 包含从起点到 left 的最高墙，right_max 包含从 right 到末尾的最高墙；先把当前两端柱子纳入最大值，再比较。",
+    "en": "left and right bound the unsettled region. left_max is the highest wall through left, and right_max the highest from right to the end. Include the current endpoint bars before comparing these maxima."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "双指针边界",
+      "en": "Two-pointer bounds"
+    }
+  ],
+  "path": "42/",
+  "leetcodeUrl": "https://leetcode.com/problems/trapping-rain-water/",
+  "language": "Python",
+  "complexity": "O(n) time; O(1) auxiliary space",
+  "concepts": [
+    {
+      "name": "Settled water and running maxima",
+      "step": 2,
+      "description": "Prove why the lower known maximum settles one endpoint."
+    }
+  ]
+}
