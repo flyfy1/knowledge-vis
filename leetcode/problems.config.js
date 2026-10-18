@@ -611,6 +611,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) time; O(n²) auxiliary space"
   },
   {
+    "id": 140,
+    "title": {
+      "zh": "单词拆分 II",
+      "en": "Word Break II"
+    },
+    "desc": {
+      "zh": "保留每个后缀的全部句子，用可逆轨迹推导完整枚举。",
+      "en": "Build every sentence from complete suffix lists, with a reversible trace."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "140/",
+    "leetcodeUrl": "https://leetcode.com/problems/word-break-ii/",
+    "language": "Python",
+    "complexity": "O(D + nL² + T) expected time; O(m + n + L + T) auxiliary space, including cached/output strings"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
