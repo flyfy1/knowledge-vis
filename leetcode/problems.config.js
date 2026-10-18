@@ -715,6 +715,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) worst-case time; O(1) auxiliary space"
   },
   {
+    "id": 174,
+    "title": {
+      "zh": "地下城游戏",
+      "en": "Dungeon Game"
+    },
+    "desc": {
+      "zh": "从出口倒推：进入每个房间前至少需要多少生命值？",
+      "en": "Work backward from the exit to find the health needed before each room."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "网格",
+        "en": "Grid"
+      }
+    ],
+    "path": "174/",
+    "leetcodeUrl": "https://leetcode.com/problems/dungeon-game/",
+    "language": "Python",
+    "complexity": "O(mn) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
