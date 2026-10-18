@@ -823,6 +823,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(S + B·4·3^(L-1)) time; O(S + L) auxiliary space, plus O(W) output references"
   },
   {
+    "id": 214,
+    "title": {
+      "zh": "最短回文串",
+      "en": "Shortest Palindrome"
+    },
+    "desc": {
+      "zh": "从前置字符的手算出发，推导最长回文前缀与 KMP 回退。",
+      "en": "Derive the longest palindromic prefix and KMP fallback from a tiny prepend puzzle."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      },
+      {
+        "zh": "前缀函数",
+        "en": "Prefix function"
+      }
+    ],
+    "path": "214/",
+    "leetcodeUrl": "https://leetcode.com/problems/shortest-palindrome/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space and output space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

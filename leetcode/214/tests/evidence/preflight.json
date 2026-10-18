@@ -1,0 +1,15 @@
+{
+  "command": "python3 -B scripts/register_leetcode_lesson.py 214 --validate-only",
+  "cwd": "/home/songyy/projects/leetcode-hard-parallel-20261018/lesson-214",
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "",
+  "checkedAt": "2026-10-18T13:57:17.496446+00:00",
+  "watchedFilesUnchanged": true,
+  "hashes": {
+    "leetcode/problems.config.js": "c993953cec4e37f9b0ba715d9321ea09885a7d179b0e675ed5689a1524aee3e6",
+    "CONCEPT-MAP.md": "10c8a531f031b17c5ab63df30eb24f3a79b7571f16de77877a83b80e8b19fb2f",
+    "leetcode/index.html": "0a0f6ac512519d984de0d701c334966cc8883865b8c0490e6abac05af8953f6b",
+    "leetcode/214/lesson-entry.json": "a2fadaf9bafb477403f81f81501a7bbd83e8d26e6fd28737005dc2defdbfbbc4"
+  }
+}
