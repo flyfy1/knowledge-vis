@@ -1,0 +1,160 @@
+# LeetCode review and release gates
+
+Effective: 2026-10-18. Applies to new lessons and revisions of existing lessons.
+Implements the independent-review requirement in [WORKFLOW](../WORKFLOW.md);
+it does not replace that workflow or the [site UI policy](../UI-I18N-SPEC.md).
+The authoring contract is [LeetCode explainers](leetcode-explainers.md), with
+algorithm-specific checks in [Hard traces](leetcode-hard-traces.md).
+
+## Evidence levels are not interchangeable
+
+| Evidence | What it establishes | What it does not establish |
+| --- | --- | --- |
+| Author self-check | The author has checked the stated cases and interactions | Independent judgment or release acceptance |
+| Algorithm tests and independent oracles | Computational behavior under the tested conditions | An independent teaching review; an oracle is not a reviewer |
+| Independent lesson review | A separate reviewer reconstructed the explanation and checked the candidate | Measured comprehension by actual novice learners |
+| Public delivery verification | The accepted files and interactions are served at the intended URLs | Retrospective approval of an unreviewed lesson |
+| Novice teach-back | The observed learner can explain and transfer the mechanism | A general learning-effectiveness claim without further evidence |
+
+Two self-check rounds remain self-checks. Passing many assertions, deploying a
+page, switching model names in the same run, or relabeling a report does not
+satisfy independent review. Do not substitute test counts for observed outcomes.
+
+## Independent reviewer and cold walkthrough
+
+- Use a different run from the implementation run, with fresh context. The
+  reviewer must not have authored the candidate or its teaching explanation.
+  A different model family is desirable when available, not the independence
+  criterion itself. Follow WORKFLOW for dispatch and role assignments.
+- Before the cold walkthrough, give only the target reader, candidate URL,
+  reviewed revision, problem IDs, and frozen rubric. Do not supply the BRIEF,
+  implementation source, author rationale, previous findings, or claimed scores.
+  Record the walkthrough before revealing these materials for the source audit.
+- The first review may use an isolated local/staging preview; production is not
+  required. The preview must serve the identified candidate, without concurrent
+  edits. Record the commit and any asset hashes needed to identify that build.
+- For every step, record the question answered, the operation performed, the
+  visible observation, and a paraphrase of why it supports the conclusion. An
+  essential explanation that only becomes intelligible after reading the BRIEF
+  is a required fix, even when all calculations are correct.
+- Independently work a fresh small example and a relevant counterexample. Record
+  the prediction before reveal, explain the invariant and excluded case, and
+  map one visible transition to Python. Choose at least one input independently
+  of the author's presets; if the UI only accepts presets, audit that input
+  against the core/Python and label it as a code check, not a UI experiment.
+
+## Six review dimensions
+
+Freeze the problem-specific interpretation before the reviewer opens the page.
+Score each dimension from 0 to 4: absent/incorrect, substantial gaps, partly
+reconstructable, reconstructable with minor friction, independently clear.
+Weighted score = sum(weight × score / 4). Scores require observations, not an
+author's forecast of learner success.
+
+| Dimension | Weight | Required evidence |
+| --- | --- | --- |
+| Problem, terms, and hand calculation | 15 | Identify the available input, requested output, units/indices, and one manually computed result |
+| Causal derivation and saved work | 20 | Explain the baseline cost, what work is avoided, and why both included and excluded cases follow |
+| Maintained state and correctness | 20 | State the invariant, inspect dependencies or links, and justify transition, boundaries, and termination |
+| Interaction and visual meaning | 20 | Predict then operate; describe observable change and retained history; distinguish data from highlighting |
+| Transfer to Python and cost | 15 | Map a transition to executable Python, check a fresh case, and justify actual time/space and mutation behavior |
+| Bilingual and device access | 10 | Equivalent reasoning in both languages; readable controls/diagrams, keyboard use, and preserved state on supported widths |
+
+Acceptance requires at least 85/100, every dimension at least 3/4, and zero open
+required fixes. A mathematical error, missing causal bridge, contradictory
+visual, broken core interaction, inaccessible essential content, or materially
+different translations is a required fix regardless of total score.
+
+This six-dimension rubric applies prospectively. The historical seven-outcome
+[2916 rubric](reviews/leetcode-2916-rubric.md) and its scores remain unchanged;
+do not retroactively rescore it or compare the totals as identical instruments.
+
+## Per-lesson status and batch coverage
+
+Record evidence separately for every problem. A shared runtime does not make
+one lesson's explanation representative of ten different algorithms.
+
+| Stage | Entry/exit evidence | May be called accepted? |
+| --- | --- | --- |
+| Draft | BRIEF and candidate in progress | No |
+| Self-checked | Author's numerical, visual, and interaction checks recorded | No; ready for independent review |
+| Review pending / changes required | Review absent or required fixes still open | No |
+| Independently accepted | Review of the identified candidate passes the frozen rubric; required fixes closed | Yes, for that revision and scope |
+| Published and verified | Accepted candidate deployed; public bytes and interaction checks recorded | Yes, with deployment evidence linked |
+
+Also record deployed revision separately. A page can already be live while its
+review status is pending. Do not infer acceptance from availability, remove a
+live lesson, or roll it back merely to make the status table look sequential.
+
+For a batch, include one row per problem with candidate revision, author run,
+reviewer identity/run, rubric, outcome, open finding IDs, and report link. Shared
+control checks may be reused only when the exact shared assets and relevant
+state paths match. Every problem still needs its own cold walkthrough, fresh
+example, algorithm-specific boundary checks, and visual-to-code mapping.
+A batch average cannot hide a failing lesson. Unreviewed lessons stay pending;
+a reviewed subset may be released only as an explicitly identified subset.
+
+## Findings, revisions, and closure
+
+Each required finding has a stable ID and records:
+
+- Problem, section, candidate revision, locale, viewport, preset/input, and the
+  exact action sequence needed to observe it.
+- Expected behavior or learning inference; actual observation; supporting
+  screenshot, calculation, or trace; the violated requirement.
+- Severity and reason, owner/next action, fix revision, regression evidence,
+  reviewer recheck, and final status (`open`, `fixed awaiting review`, `closed`).
+
+The author can mark a finding fixed awaiting review; the reviewer closes it
+against the actual fixed candidate. Attach original evidence and append the
+closure; do not rewrite the original failure into a passing result. Disagreement
+keeps the finding open for adjudication under WORKFLOW.
+
+Review scope follows the change:
+
+- Algorithm, invariant, teaching sequence, or central visual changes require a
+  fresh walkthrough of affected steps and their prerequisites, plus relevant
+  numerical and interaction checks.
+- Shared trace/control changes require affected consumers and state paths to be
+  identified and checked. A full rereview of unchanged lessons is unnecessary,
+  but assuming one consumer covers every state type is insufficient.
+- A title, official URL, typo, or narrow style correction needs a focused review
+  of that change and relevant locale/layout/navigation behavior. It neither
+  erases a prior lesson acceptance nor closes an existing teaching-review gap.
+- Documentation-only clarification needs consistency and link checks. It does
+  not itself establish that a lesson audit, implementation change, or deployment
+  has occurred. Follow the user's requested scope for subsequent work.
+
+For follow-up revisions, record the accepted base, exact diff, affected coverage,
+and focused reviewer conclusion. A later hash need not invalidate all prior
+work, but any unreviewed relevant diff prevents acceptance of the new candidate.
+The loop ends when required fixes are closed, not when two rounds are used up.
+
+## Release record and incomplete evidence
+
+Before publishing a new or materially revised lesson, require its independent
+acceptance and the explainer's computational/browser checks. After authorized
+publication, verify collection/lesson routes, changed asset hashes, and relevant
+served interactions; preserve the deployment rollback boundary.
+
+Report reviewer/run, candidate revision, review outcome, and deployed revision
+separately. Attribute only work actually performed. If an exact model identifier
+or named verifier is unavailable, mark it unavailable/pending; do not invent a
+model, copy another person's approval, or claim `Verified-By` for an absent
+reviewer. A self-check must identify itself as a self-check.
+
+If no independent reviewer or required evidence is available, finish the
+candidate and author checks, then leave review/release acceptance pending with
+the missing evidence and next action. Do not silently waive the gate. Any
+explicitly authorized exception must be recorded as an exception, not an
+independent pass. No exception is authorized by this specification.
+
+## Existing first-ten batch
+
+As of 2026-10-18, problems 4, 10, 23, 25, 30, 32, 37, 41, 42, and 44 have author
+self-review, algorithm tests, and browser/public-delivery evidence. Their
+[existing report](reviews/leetcode-first-ten-review.md) does not contain an
+independent teaching review. Their independent-review status is **pending**.
+This specification update does not perform that review, change deployed pages,
+or grant retrospective acceptance. Next action: review a frozen current
+candidate independently and record per-lesson findings and closure.

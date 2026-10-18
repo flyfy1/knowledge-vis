@@ -132,3 +132,12 @@ Public verification against `https://visual.integ.life`:
 The following documentation-only commit records this evidence; it does not
 change the published implementation. Task-owned local preview service on port
 18768 was stopped after public verification.
+
+## Review-status clarification — 2026-10-18
+
+This report remains evidence of author self-review and technical/public checks.
+It does not satisfy WORKFLOW's separate-run independent teaching-review gate.
+The independent-review status of each of 4, 10, 23, 25, 30, 32, 37, 41, 42, and
+44 is pending. The original observations and publication history above are
+unchanged. Apply [the clarified review gates](../leetcode-review-gates.md) to a
+frozen current candidate; no new audit or deployment occurred in this spec edit.
