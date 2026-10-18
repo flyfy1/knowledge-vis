@@ -1,0 +1,15 @@
+{
+  "cases": 2047,
+  "frames": 20481,
+  "independentPrefixSuffixAndStackInvariants": true,
+  "fresh": [
+    {
+      "s": "()(()",
+      "result": 2
+    },
+    {
+      "s": "())(",
+      "result": 2
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "results": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "endpoint": 4,
+      "rewindReset": true
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "endpoint": 6,
+      "rewindReset": true
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "endpoint": 2,
+      "rewindReset": true
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "endpoint": 0,
+      "rewindReset": true
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "endpoint": 4,
+      "rewindReset": true
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "endpoint": 6,
+      "rewindReset": true
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "endpoint": 2,
+      "rewindReset": true
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "endpoint": 0,
+      "rewindReset": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "noPageOverflow": true,
+      "stateRetained": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "noPageOverflow": true,
+      "stateRetained": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "noPageOverflow": true,
+      "stateRetained": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "noPageOverflow": true,
+      "stateRetained": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "noPageOverflow": true,
+      "stateRetained": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "noPageOverflow": true,
+      "stateRetained": true
+    }
+  ],
+  "keyboard": true,
+  "parityBothLanguages": true,
+  "copyFallback": true,
+  "zoom": "CSS zoom 2 at 1280x900"
+}

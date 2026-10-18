@@ -1,0 +1,20 @@
+{
+  "exhaustive_inputs_through_length_11": 4095,
+  "fresh": {
+    "()(()": 2,
+    "())(": 2
+  },
+  "boundary_cases": 13,
+  "served_exact_parity_sha256": {
+    "leetcode/32/index.html": "93afac6e97e8129f0db06136df8bb8b093a2ac8b523dc63dadbd0ea3a9dbb812",
+    "leetcode/32/solution.py": "4e261f0900fa2e3591430e4042f498830647d15f289eb1378506aebde2af1530",
+    "leetcode/32/python-code.js": "cb9fa25fbae664e4f6e48a87825b43465ca6c0980a432959875d6c9f82f3ae1e",
+    "leetcode/32/copy.js": "5d3dc54a8cbc972d8b7a670a968f2ec26492a759a6dfcc4985bb2ae1ba167500",
+    "leetcode/32/app.js": "893d4bb207aaa8677fb83f3c6d54ccfef68f6743675fb0c335511e1d15f4a5a1",
+    "leetcode/hard-first-ten/core.js": "342d7cbdf8c1e6f8527e6804ec286157e8fc63513a3c36c61d67c496bd08eeed",
+    "leetcode/hard-first-ten/lesson.js": "18365da600d3a774aec9afb96deb377fa269fe894424ed6cef41ad9f929c9731",
+    "leetcode/hard-first-ten/style.css": "09ebfd4c560ceee4b5c4e15442f37e21e8a9115525f20c74c1a34491af6a48b1",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}
