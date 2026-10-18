@@ -147,3 +147,76 @@ SHA-256 of implementation files after final verification:
 - `scripts/campaign-prompts/author.md`: `144e9da5cceeff2c17f1a753dd64a5a99921249e5388a694f377e6002262080d`
 - `scripts/campaign-prompts/fix.md`: `e6efd0a68f1c2825bc69c851d03112c32595b50d99ba2dc340f74a3cc316fb96`
 - `scripts/campaign-prompts/review.md`: `cba57039147e4d87c274a7819672727a8754433a3c3f310e87abb686eb1a8c25`
+
+## Follow-up: official-source provenance exclusion — 2026-10-18
+
+Independent reviewer: `/root/goal_policy_review`. This narrow follow-up preserves
+all earlier review conclusions and their historical source identities. Starting
+revision: `8ffee85`. Scope is publisher selection of source-capture evidence;
+no lesson acceptance, release receipt, ledger, Pi checkout or production content
+is changed by this review.
+
+### GP-6 — Conventional official evidence capture escapes the language-contract filter
+
+The real #76 candidate contains `official-evidence.json`, with `source`,
+`graphql`, `accessedAt` and `response` fields holding its official source capture.
+The runtime HTML/JavaScript does not reference it. The initial publisher included
+it because `.json` was eligible and the only explicit source-evidence exclusion
+came from an optional non-Python `language-contract.json`.
+
+Independent red reproduction executed the publisher from `8ffee85` against that
+same revision's actual #76 Git archive, then asserted that
+`leetcode/76/official-evidence.json` was absent. It failed with:
+`AssertionError: RED: official GraphQL evidence is included in the real #76 public payload`.
+The returned payload contained eight files: seven runtime/source assets plus
+this evidence capture. Test-directory evidence was already excluded.
+
+Ranked falsifiable hypotheses were reported before fix verification:
+
+1. Conventional source evidence is missed by the optional language-contract-only
+   rule; a scoped provenance rule should remove the capture while preserving
+   runtime JSON and canonical source downloads.
+2. A general directory-exclusion failure would also leak `tests/evidence`; the
+   actual payload already contradicts that explanation.
+3. A stale revision would disagree with the inspected tracked file list; both
+   reproduction and capture inspection used `8ffee85` and agree.
+
+Status: closed after independent red/green verification. Confirmed cause: the
+optional language-contract evidence rule did not cover the conventional
+`official-evidence.json` capture on a Python lesson. The fix reserves explicit
+capture names plus the `provenance/` directory, without excluding runtime JSON
+by suffix. It also freezes the entire accepted Git lesson tree before runtime
+selection and refuses runtime links to excluded evidence before staging.
+
+Independent verification:
+
+- The final three regression tests were executed unchanged against the publisher
+  from `8ffee85`: three behavioral assertion failures, zero harness errors, in
+  2.395 seconds. Against the fixed implementation all three passed in 2.109
+  seconds. Fixture capture names are literal expectations, independent of the
+  implementation exclusion set.
+- The complete publisher suite passed: 20 tests in 53.349 seconds. The three
+  expanded final regressions were rerun after that suite loaded its earlier
+  fixture definition; production code was unchanged during these runs.
+- The actual #76 payload from `8ffee85` now contains exactly seven files:
+  `app.js`, `copy.js`, `core.js`, `index.html`, `python-code.js`, `solution.py`,
+  and `style.css`. Each byte sequence equals the same tracked source file.
+  `official-evidence.json` is absent.
+- Fixtures preserve `data.json` and every canonical source filename in
+  `LANGUAGE_FILES`, including native SQL, while omitting the five reserved
+  official-capture names and a provenance-directory capture. A linked excluded
+  capture and a modified accepted evidence file both reject publication before
+  the lesson is written.
+- Source comparison confirms `_fingerprint`, `_save` and `_apply_pending` are
+  unchanged. This fix performs no acceptance-hash migration, receipt rewrite,
+  ledger schema migration or retroactive claim of public verification. Existing
+  real state and production were not accessed or modified by this review.
+
+The narrow fix is cleared for integration at the parent's clean phase boundary.
+It does not authorize rewriting frozen acceptance evidence or existing receipts,
+and it does not represent a new production release.
+
+Follow-up implementation SHA-256:
+
+- `scripts/leetcode_publish.py`: `2906af54aba453f7f9b0500400673c2df328fe355c1056e8a1ea4067ca28487e`
+- `scripts/test_leetcode_publish.py`: `6a591ae1937a410d633c3b80c145c7c2007ac5e528b5b63e98c04699451591fd`
