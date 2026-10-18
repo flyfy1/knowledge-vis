@@ -65,3 +65,27 @@ separate from submission O(n) auxiliary storage and O(S·n²) returned output.
 Self-checks and screenshots are recorded in SELF-CHECK.md. No LeetCode submission,
 independent acceptance, real learner comprehension, hardware test, or public
 deployment is claimed. This lesson is ready only for the next independent review.
+
+## Focused review correction — 51-R1, 2026-10-18
+
+Adopt the required correction from `specs/reviews/51-review-1-b84a663e.md`:
+section 3's board and state must reflow at enlarged layout, with readable markers
+and axis words. This is a repair of the existing responsive contract, using the
+separate review's reproduction and expected behavior; no new feature or teaching
+sequence. Reader/job/ownership and the five-step learning loop remain as above.
+
+Allowed presentation hooks: lesson-local `.board-layout`, `.queen-board` header
+sizing/wrapping, and the local stylesheet query version. Grid tracks now use
+`repeat(auto-fit,minmax(min(100%,18rem),1fr))` with the existing 24px gap; the
+18rem minimum applies to available container space, including CSS zoom. Existing
+620px mobile overrides remain. Keep fixed equal board columns, reserve 5.5em
+for the axis column, and wrap axis labels at word boundaries. These two local
+geometry values introduce no palette, type-size, spacing, or motion changes.
+Apply the same geometry to the previous-state disclosure.
+
+P0 / highest-return slice: reproduce 51-R1 with rendered glyph/word assertions,
+repair the container and axis sizing, check both locales and preserve trace,
+ledger, keyboard and source behavior. P1/P2: none in this correction. Deferred:
+broader redesign and animation have no demonstrated need; native OS zoom and
+physical-device certification need their respective environments. Independent
+finding closure belongs to the next reviewer. Evidence: SELF-CHECK appendix.
