@@ -1,0 +1,15 @@
+{
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "screenshots": 16,
+  "checks": [
+    "header",
+    "all reading sections",
+    "revealed prediction",
+    "surplus frame",
+    "320 CSS pixel equivalent at 200% zoom",
+    "120-character draft rejected without loss"
+  ]
+}

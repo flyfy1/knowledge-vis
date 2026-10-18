@@ -1,0 +1,6 @@
+{
+  "cases": 15363,
+  "frames": 140387,
+  "oracle": "independent slice enumeration",
+  "invariants": "counts, deficits, candidate minimum, atomic pointer changes, snapshot isolation"
+}
