@@ -12,6 +12,11 @@
 
 ## 一、主表：概念 → 专讲页/步
 
+The mathematics and physics navigation atlas is at `atlas/?node=fourier`.
+It reuses the lesson anchors below; `atlas/data.js` owns its 24 editorial concepts,
+directed relationship statements, source links, and suggested routes. Atlas region
+positions are not similarity scores or prerequisite claims.
+
 LeetCode collection additions (2026-10-17):
 
 | Concept | Deep link | What the step teaches |
