@@ -524,3 +524,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Componentwise minimum | `leetcode/135/#step4` | Prove feasibility and minimality of the maximum of directional bounds. |
 
 <!-- /leetcode-135-campaign -->
+
+
+<!-- leetcode-154-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Duplicate-aware binary search | `leetcode/154/#step1` | Derive safe interval reductions when endpoint values can be equal. |
+| Minimum-preserving invariant | `leetcode/154/#step4` | Keep at least one global minimum while strictly shrinking the interval. |
+
+<!-- /leetcode-154-campaign -->
