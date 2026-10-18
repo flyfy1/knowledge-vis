@@ -1,0 +1,140 @@
+{
+  "type": "author browser self-check",
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18770/leetcode/60/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/60/style.css?v=60-r1",
+    "http://127.0.0.1:18770/leetcode/60/core.js?v=60-r1",
+    "http://127.0.0.1:18770/leetcode/60/python-code.js?v=60-r1",
+    "http://127.0.0.1:18770/leetcode/60/app.js?v=60-r1",
+    "http://127.0.0.1:18770/leetcode/60/copy.js?v=60-r1",
+    "http://127.0.0.1:18770/leetcode/common.js"
+  ],
+  "checks": [
+    "en: all six presets, every frame, forward/back/forward, endpoints/reset",
+    "en: max/custom invalid, keyboard buttons/slider, all predictions, reveal/change/locale persistence",
+    "zh: all six presets, every frame, forward/back/forward, endpoints/reset",
+    "zh: max/custom invalid, keyboard buttons/slider, all predictions, reveal/change/locale persistence",
+    "clipboard success/denial/manual focus and exact displayed/copied/downloaded source parity",
+    "EN/ZH widths 320/390/736/1440 and 200% zoom screenshots; no document or block overflow",
+    "related/internal anchors, keyboard 3px focus, forced colors/reduced motion, 48px controls, computed contrast AA",
+    "denied storage and offline file opening, source and interactions"
+  ],
+  "contrast": [
+    {
+      "sel": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "sel": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "sel": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "sel": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".block",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".block span",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".block b",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "sel": ".btn.primary",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "sel": "#copy",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "#prev",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#next",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "sel": "#preset",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".step-nav a.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "#copyText",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#feedback.readout status-bad",
+      "fg": "rgb(255, 122, 147)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.34696669826778
+    },
+    {
+      "sel": "#feedback.readout status-good",
+      "fg": "rgb(126, 226, 168)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.004815697188947
+    },
+    {
+      "role": "focus against panel2",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28,35,48)",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "chromiumVersion": "156.0.8078.4",
+  "launchArgs": [
+    "--disable-gpu"
+  ],
+  "cssBytes": 11941,
+  "result": "pass"
+}
