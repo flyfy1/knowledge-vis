@@ -1,0 +1,338 @@
+{
+  "checks": 20,
+  "traces": [
+    {
+      "input": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "result": 3,
+      "states": [
+        {
+          "state": {
+            "lo": 0,
+            "hi": 2,
+            "half": 3,
+            "i": null,
+            "j": null
+          },
+          "message": "Initial state; no operation has run.",
+          "code": "lo, hi = 0, m"
+        },
+        {
+          "state": {
+            "lo": 0,
+            "hi": 2,
+            "half": 3,
+            "i": 1,
+            "j": 2
+          },
+          "message": "aL=1, aR=8, bL=3, bR=4. Both cross inequalities hold; every left value is at most every right value.",
+          "code": "return max(al, bl) if (m + n) % 2 else (max(al, bl) + min(ar, br)) / 2"
+        }
+      ]
+    },
+    {
+      "input": [
+        [
+          1,
+          2
+        ],
+        [
+          10,
+          11,
+          12,
+          13
+        ]
+      ],
+      "result": 10.5,
+      "states": [
+        {
+          "state": {
+            "lo": 0,
+            "hi": 2,
+            "half": 3,
+            "i": null,
+            "j": null
+          },
+          "message": "Initial state; no operation has run.",
+          "code": "lo, hi = 0, m"
+        },
+        {
+          "state": {
+            "lo": 2,
+            "hi": 2,
+            "half": 3,
+            "i": 1,
+            "j": 2
+          },
+          "message": "aL=1, aR=2, bL=11, bR=12. bL > aR: too few values from a on the left; increase i.",
+          "code": "lo = i + 1"
+        },
+        {
+          "state": {
+            "lo": 2,
+            "hi": 2,
+            "half": 3,
+            "i": 2,
+            "j": 1
+          },
+          "message": "aL=2, aR=Infinity, bL=10, bR=11. Both cross inequalities hold; every left value is at most every right value.",
+          "code": "return max(al, bl) if (m + n) % 2 else (max(al, bl) + min(ar, br)) / 2"
+        }
+      ]
+    },
+    {
+      "input": [
+        [
+          10,
+          11
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "result": 3,
+      "states": [
+        {
+          "state": {
+            "lo": 0,
+            "hi": 2,
+            "half": 3,
+            "i": null,
+            "j": null
+          },
+          "message": "Initial state; no operation has run.",
+          "code": "lo, hi = 0, m"
+        },
+        {
+          "state": {
+            "lo": 0,
+            "hi": 0,
+            "half": 3,
+            "i": 1,
+            "j": 2
+          },
+          "message": "aL=10, aR=11, bL=2, bR=3. aL > bR: the left side is too large; decrease i.",
+          "code": "hi = i - 1"
+        },
+        {
+          "state": {
+            "lo": 0,
+            "hi": 0,
+            "half": 3,
+            "i": 0,
+            "j": 3
+          },
+          "message": "aL=-Infinity, aR=10, bL=3, bR=Infinity. Both cross inequalities hold; every left value is at most every right value.",
+          "code": "return max(al, bl) if (m + n) % 2 else (max(al, bl) + min(ar, br)) / 2"
+        }
+      ]
+    },
+    {
+      "input": [
+        [],
+        [
+          1
+        ]
+      ],
+      "result": 1,
+      "states": [
+        {
+          "state": {
+            "lo": 0,
+            "hi": 0,
+            "half": 1,
+            "i": null,
+            "j": null
+          },
+          "message": "Initial state; no operation has run.",
+          "code": "lo, hi = 0, m"
+        },
+        {
+          "state": {
+            "lo": 0,
+            "hi": 0,
+            "half": 1,
+            "i": 0,
+            "j": 1
+          },
+          "message": "aL=-Infinity, aR=Infinity, bL=1, bR=Infinity. Both cross inequalities hold; every left value is at most every right value.",
+          "code": "return max(al, bl) if (m + n) % 2 else (max(al, bl) + min(ar, br)) / 2"
+        }
+      ]
+    },
+    {
+      "input": [
+        [
+          1
+        ],
+        []
+      ],
+      "result": 1,
+      "states": [
+        {
+          "state": {
+            "lo": 0,
+            "hi": 0,
+            "half": 1,
+            "i": null,
+            "j": null
+          },
+          "message": "Initial state; no operation has run.",
+          "code": "lo, hi = 0, m"
+        },
+        {
+          "state": {
+            "lo": 0,
+            "hi": 0,
+            "half": 1,
+            "i": 0,
+            "j": 1
+          },
+          "message": "aL=-Infinity, aR=Infinity, bL=1, bR=Infinity. Both cross inequalities hold; every left value is at most every right value.",
+          "code": "return max(al, bl) if (m + n) % 2 else (max(al, bl) + min(ar, br)) / 2"
+        }
+      ]
+    },
+    {
+      "input": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "result": 0,
+      "states": [
+        {
+          "state": {
+            "lo": 0,
+            "hi": 1,
+            "half": 1,
+            "i": null,
+            "j": null
+          },
+          "message": "Initial state; no operation has run.",
+          "code": "lo, hi = 0, m"
+        },
+        {
+          "state": {
+            "lo": 0,
+            "hi": 1,
+            "half": 1,
+            "i": 0,
+            "j": 1
+          },
+          "message": "aL=-Infinity, aR=0, bL=0, bR=Infinity. Both cross inequalities hold; every left value is at most every right value.",
+          "code": "return max(al, bl) if (m + n) % 2 else (max(al, bl) + min(ar, br)) / 2"
+        }
+      ]
+    },
+    {
+      "input": [
+        [
+          1,
+          3
+        ],
+        [
+          2
+        ]
+      ],
+      "result": 2,
+      "states": [
+        {
+          "state": {
+            "lo": 0,
+            "hi": 1,
+            "half": 2,
+            "i": null,
+            "j": null
+          },
+          "message": "Initial state; no operation has run.",
+          "code": "lo, hi = 0, m"
+        },
+        {
+          "state": {
+            "lo": 1,
+            "hi": 1,
+            "half": 2,
+            "i": 0,
+            "j": 2
+          },
+          "message": "aL=-Infinity, aR=2, bL=3, bR=Infinity. bL > aR: too few values from a on the left; increase i.",
+          "code": "lo = i + 1"
+        },
+        {
+          "state": {
+            "lo": 1,
+            "hi": 1,
+            "half": 2,
+            "i": 1,
+            "j": 1
+          },
+          "message": "aL=2, aR=Infinity, bL=1, bR=3. Both cross inequalities hold; every left value is at most every right value.",
+          "code": "return max(al, bl) if (m + n) % 2 else (max(al, bl) + min(ar, br)) / 2"
+        }
+      ]
+    },
+    {
+      "input": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "result": 2.5,
+      "states": [
+        {
+          "state": {
+            "lo": 0,
+            "hi": 2,
+            "half": 2,
+            "i": null,
+            "j": null
+          },
+          "message": "Initial state; no operation has run.",
+          "code": "lo, hi = 0, m"
+        },
+        {
+          "state": {
+            "lo": 2,
+            "hi": 2,
+            "half": 2,
+            "i": 1,
+            "j": 1
+          },
+          "message": "aL=1, aR=2, bL=3, bR=4. bL > aR: too few values from a on the left; increase i.",
+          "code": "lo = i + 1"
+        },
+        {
+          "state": {
+            "lo": 2,
+            "hi": 2,
+            "half": 2,
+            "i": 2,
+            "j": 0
+          },
+          "message": "aL=2, aR=Infinity, bL=-Infinity, bR=3. Both cross inequalities hold; every left value is at most every right value.",
+          "code": "return max(al, bl) if (m + n) % 2 else (max(al, bl) + min(ar, br)) / 2"
+        }
+      ]
+    }
+  ]
+}

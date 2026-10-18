@@ -1,0 +1,146 @@
+[
+  {
+    "input": [
+      [
+        10,
+        11
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "result": 3.0,
+    "testedStates": [
+      {
+        "lo": 0,
+        "hi": 2,
+        "half": 3,
+        "i": 1,
+        "j": 2,
+        "al": 10,
+        "ar": 11,
+        "bl": 2,
+        "br": 3,
+        "validRemainingCuts": [
+          0
+        ]
+      },
+      {
+        "lo": 0,
+        "hi": 0,
+        "half": 3,
+        "i": 0,
+        "j": 3,
+        "al": "-inf",
+        "ar": 10,
+        "bl": 3,
+        "br": "inf",
+        "validRemainingCuts": [
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "input": [
+      [
+        1,
+        2
+      ],
+      [
+        10,
+        11,
+        12,
+        13
+      ]
+    ],
+    "result": 10.5,
+    "testedStates": [
+      {
+        "lo": 0,
+        "hi": 2,
+        "half": 3,
+        "i": 1,
+        "j": 2,
+        "al": 1,
+        "ar": 2,
+        "bl": 11,
+        "br": 12,
+        "validRemainingCuts": [
+          2
+        ]
+      },
+      {
+        "lo": 2,
+        "hi": 2,
+        "half": 3,
+        "i": 2,
+        "j": 1,
+        "al": 2,
+        "ar": "inf",
+        "bl": 10,
+        "br": 11,
+        "validRemainingCuts": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "input": [
+      [],
+      [
+        1
+      ]
+    ],
+    "result": 1.0,
+    "testedStates": [
+      {
+        "lo": 0,
+        "hi": 0,
+        "half": 1,
+        "i": 0,
+        "j": 1,
+        "al": "-inf",
+        "ar": "inf",
+        "bl": 1,
+        "br": "inf",
+        "validRemainingCuts": [
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "input": [
+      [
+        1,
+        8
+      ],
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "result": 3.0,
+    "testedStates": [
+      {
+        "lo": 0,
+        "hi": 2,
+        "half": 3,
+        "i": 1,
+        "j": 2,
+        "al": 1,
+        "ar": 8,
+        "bl": 3,
+        "br": 4,
+        "validRemainingCuts": [
+          1
+        ]
+      }
+    ]
+  }
+]
