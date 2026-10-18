@@ -165,8 +165,8 @@ window.LEETCODE_PROBLEMS = [
       "en": "First Missing Positive"
     },
     "desc": {
-      "zh": "给数值 x 指定目标下标 x−1。只要 1≤x≤n 且目标尚不是 x，就把当前位置与目标交换。交换后当前位置得到另一个数，仍要继续检查，不能立刻推进 i。",
-      "en": "Assign value x to index x−1. While 1≤x≤n and the destination is not already x, swap the current value with its destination. Recheck the incoming value before advancing i."
+      "zh": "用原数组的位置记录正数是否出现，逐次交换并解释重复值为何必须停止。",
+      "en": "Record positive values in their own array positions, tracing swaps and why equal destinations stop."
     },
     "difficulty": "hard",
     "topics": [
@@ -178,7 +178,7 @@ window.LEETCODE_PROBLEMS = [
     "path": "41/",
     "leetcodeUrl": "https://leetcode.com/problems/first-missing-positive/",
     "language": "Python",
-    "complexity": "O(n)"
+    "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
     "id": 42,
@@ -717,6 +717,32 @@ window.LEETCODE_PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/",
     "language": "Python",
     "complexity": "O(n) worst-case time; O(1) auxiliary space"
+  },
+  {
+    "id": 174,
+    "title": {
+      "zh": "地下城游戏",
+      "en": "Dungeon Game"
+    },
+    "desc": {
+      "zh": "从出口倒推：进入每个房间前至少需要多少生命值？",
+      "en": "Work backward from the exit to find the health needed before each room."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "网格",
+        "en": "Grid"
+      }
+    ],
+    "path": "174/",
+    "leetcodeUrl": "https://leetcode.com/problems/dungeon-game/",
+    "language": "Python",
+    "complexity": "O(mn) time; O(n) auxiliary space"
   },
   {
     "id": 2916,

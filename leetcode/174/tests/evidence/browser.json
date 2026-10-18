@@ -1,0 +1,63 @@
+{
+  "url": "http://127.0.0.1:18788/leetcode/174/",
+  "transitions": 56,
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "widths": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "200% CSS zoom at 640px viewport (effective 320px)",
+  "errors": [],
+  "contrast": {
+    "body": {
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    "muted": {
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    "cell": {
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    "disabled": {
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    "focus": {
+      "foreground": "rgb(255, 180, 84)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 9.809435643476732
+    },
+    "primary": {
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    }
+  },
+  "cssBytes": 11372,
+  "checks": [
+    "all presets/all frames round-trip",
+    "start/end/reset/scrub",
+    "hand death and survival",
+    "every prediction/reveal/change",
+    "locale preserves state",
+    "source/copy success/denial/download parity",
+    "keyboard Enter/Space/focus",
+    "deep link geometry/targets",
+    "blocked storage",
+    "local-only requests",
+    "forced colors/reduced motion"
+  ],
+  "limits": "Author browser self-check. Real devices, independent teaching review, public delivery and LeetCode submission unverified."
+}

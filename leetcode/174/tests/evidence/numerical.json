@@ -1,0 +1,13 @@
+{
+  "canonicalAndBaselineCases": 2100,
+  "maxBoundaryCases": 5,
+  "total": 2105,
+  "oracle": "direct survival DFS + binary search; per-cell suffix oracle",
+  "seed": 174,
+  "mutation": "unchanged",
+  "sourceMirror": "exact",
+  "officialExamples": [
+    7,
+    1
+  ]
+}
