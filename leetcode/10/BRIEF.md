@@ -57,3 +57,41 @@ Run `python3 leetcode/tests/test_hard_solutions.py`,
 `NODE_PATH=<playwright package directory> node leetcode/tests/test_hard_browser.cjs`.
 See `../../specs/reviews/leetcode-first-ten-review.md` for observed review evidence.
 No actual LeetCode submission or human learning test is claimed.
+
+## Independent-review repair — 2026-10-18
+
+Repair contract: [10-DER-01](../../specs/reviews/10-review-1-2e9bf6f6.md),
+required causal bridge in steps 01–02. Status: **fixed awaiting separate review**;
+this author self-check does not close the finding.
+
+Product-fit verdict: reuse the existing lesson and typography. The reader's job
+is to see two recursive routes repeat one question, then reconstruct why the
+prefix table stores sufficient answers. No new feature, layout, shared runtime,
+CSS, or language interface is needed. The independent report supplies the repair
+scope; the frozen rubric is unchanged.
+
+P0 / highest-return work: show `aa / a*a*b`, distinguish the two a* groups,
+trace skip-then-consume and consume-then-skip to `a / a*b`, work both false
+branches, explain why a pair is sufficient and text alone is insufficient.
+Explicitly distinguish memoized suffix recursion from prefix DP, then reuse
+`aa / a*a*b` through cells (1,2), (1,4), (2,4), (2,5). Both languages must expose
+this reasoning before the interactive table. P1/P2: none required. Deferred:
+optional disabled-label styling from the report; it is outside the required
+causal repair and shared styling is outside this task's ownership.
+
+The existing shared design tokens, dark surfaces, font sizes, line height,
+spacing, native controls, and state semantics are reused without CSS changes.
+Added content uses ordinary paragraphs, a heading, and an ordered list inside
+the existing step layout. Locale changes repopulate its static text through the
+existing dictionary. No new loading/error/disabled branches are introduced.
+Existing trace, quiz, clipboard-denial and storage-denial branches remain in the
+regression scope in EN and zh-CN. Python remains the faithful canonical
+`Solution.isMatch(self, s: str, p: str) -> bool`; there is no non-Python language
+contract or supportedLanguages list to correct. The registration policy's exact
+Python pair is `solution.py` / `python-code.js` / `PYTHON_SOURCE`.
+
+Self-check evidence and reproducible lesson-only commands are recorded in
+[evidence/SELF-CHECK.md](evidence/SELF-CHECK.md). New terms: suffix = what remains
+after removing the beginning, first defined beside the baseline; prefix = the
+beginning, defined again at the orientation bridge; cache key = the pair used to
+retrieve a stored answer, explained via a concrete rejected text-only key.
