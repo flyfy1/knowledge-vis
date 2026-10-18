@@ -273,6 +273,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n·n!) time, O(n) auxiliary space; average O(1) set operations"
   },
   {
+    "id": 60,
+    "title": {
+      "zh": "排列序列",
+      "en": "Permutation Sequence"
+    },
+    "desc": {
+      "zh": "用阶乘分块、从零计数和可逆账本直接定位第 k 个排列。",
+      "en": "Locate permutation k with factorial blocks, zero-based ranks and a reversible ledger."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "排列组合",
+        "en": "Combinatorics"
+      },
+      {
+        "zh": "数学",
+        "en": "Math"
+      }
+    ],
+    "path": "60/",
+    "leetcodeUrl": "https://leetcode.com/problems/permutation-sequence/",
+    "language": "Python",
+    "complexity": "O(n²) time, O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

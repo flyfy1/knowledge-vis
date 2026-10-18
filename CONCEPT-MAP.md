@@ -369,3 +369,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | count-only backtracking | `leetcode/52/#step4` | Restore constraints while retaining the cumulative integer, without storing boards. |
 
 <!-- /leetcode-52-campaign -->
+
+
+<!-- leetcode-60-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| factorial blocks | `leetcode/60/#step1` | Equal contiguous blocks for each next digit. |
+| zero-based rank | `leetcode/60/#step2` | Choose an unused digit by quotient and retain the remainder. |
+
+<!-- /leetcode-60-campaign -->
