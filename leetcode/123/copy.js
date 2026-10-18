@@ -1,0 +1,342 @@
+window.LESSON_COPY = {
+  "docTitle": [
+    "#123 · 买卖股票的最佳时机 III",
+    "#123 · Best Time to Buy and Sell Stock III"
+  ],
+  "title": [
+    "#123 · 买卖股票的最佳时机 III",
+    "#123 · Best Time to Buy and Sell Stock III"
+  ],
+  "back": [
+    "← LeetCode 知识索引",
+    "← LeetCode collection"
+  ],
+  "meta": [
+    "算法 / 困难 / Python",
+    "ALGORITHMS / HARD / PYTHON"
+  ],
+  "tagline": [
+    "最多买卖两次：为什么记住四个现金值就够了？",
+    "At most two trades: why can four cash values remember everything we need?"
+  ],
+  "official": [
+    "官方题目 ↗",
+    "Official problem ↗"
+  ],
+  "s0": [
+    "从两笔交易开始",
+    "Start with two trades"
+  ],
+  "s1": [
+    "把过去压缩成现金",
+    "Summarize the past as cash"
+  ],
+  "s2": [
+    "逐日现金实验",
+    "The daily cash experiment"
+  ],
+  "s3": [
+    "先预测，再揭晓",
+    "Predict before revealing"
+  ],
+  "s4": [
+    "证明与 Python",
+    "Proof and Python"
+  ],
+  "statement": [
+    "这一步要回答：已知每天的价格 [2,5,1,4]，最多两笔交易能赚多少？一笔交易是先买入再卖出；利润是卖价减买价，所有交易的利润相加。手里最多持有一股，必须先卖再买；也可以完全不交易。",
+    "Question: given daily prices [2,5,1,4], how much can at most two trades earn? A transaction is a buy followed by a sell. Profit is sale price minus purchase price, summed over trades. Hold at most one share and sell before buying again. Doing nothing is allowed."
+  ],
+  "hand": [
+    "第 1 天付 2，第 2 天收 5，赚 3；第 3 天付 1，第 4 天收 4，再赚 3。总利润 6。这里的天数从 1 开始；输入下标从 0 开始。两次买入并同时持有不合法；买 2 卖 5 再买 1 卖 4 合法。",
+    "Pay 2 on day 1, receive 5 on day 2: gain 3. Pay 1 on day 3, receive 4 on day 4: gain another 3. Total profit is 6. Teaching days start at 1; input indices start at 0. Buying twice and holding both shares is illegal; buying at 2, selling at 5, then buying at 1 and selling at 4 is legal."
+  ],
+  "constraints": [
+    "官方范围：1 ≤ n ≤ 100000，0 ≤ prices[i] ≤ 100000。无手续费、无冷却期；题目只要求最大利润整数，不要求交易日期。空数组不在官方范围内。",
+    "Official bounds: 1 ≤ n ≤ 100000 and 0 ≤ prices[i] ≤ 100000. No fee or cooldown is specified. Return the maximum integer profit, not the trade dates. Empty arrays are outside the official bounds."
+  ],
+  "examples": [
+    "官方示例：[3,3,5,0,0,3,1,4] → 6；[1,2,3,4,5] → 4；[7,6,4,3,1] → 0。",
+    "Official examples: [3,3,5,0,0,3,1,4] → 6; [1,2,3,4,5] → 4; [7,6,4,3,1] → 0."
+  ],
+  "baseTitle": [
+    "可靠但昂贵的起点",
+    "A reliable but costly baseline"
+  ],
+  "baseline": [
+    "枚举一笔交易的买卖日，再枚举互不重叠的两笔交易：a < b < c < d。保留 0、单笔利润、双笔利润的最大值。下面的基线不修改输入，返回同一个利润整数；四层循环需要 O(n⁴) 时间、O(1) 额外空间。n 达到 100000 时不能逐个检查所有日期组合。",
+    "Enumerate single buy/sell pairs, then two nonoverlapping trades with a < b < c < d. Keep the maximum of zero, each single profit, and each pair of profits. This baseline leaves input unchanged and returns the same integer contract. Four loops cost O(n⁴) time and O(1) extra space; enumerating all date combinations is infeasible at n = 100000."
+  ],
+  "wrong": [
+    "诱人的错误：只取最大的两次相邻涨幅。[1,3,2,4,3,5] 的三次涨幅都是 2，这样只得 4；但买 1 卖 4（赚 3），再买 3 卖 5（赚 2），共 5。允许在小跌幅中继续持有，才能节省一次交易机会。",
+    "Tempting mistake: take the two largest adjacent rises. In [1,3,2,4,3,5], three rises each earn 2, so that rule returns 4. Buying at 1 and selling at 4 earns 3; buying at 3 and selling at 5 adds 2, totaling 5. Holding across a small dip can save a transaction slot."
+  ],
+  "derive": [
+    "这一步要回答：未来真的需要知道所有交易日期吗？先定义现金：从零开始，卖出收入减去买入支出，不含手中股票的价值。现金可为负数；持有时的现金不是已经结算的利润。",
+    "Question: does the future need every past trade date? Define cash as sale receipts minus purchase payments, starting from zero and excluding the value of a held share. Cash may be negative. Cash while holding a share is not realized profit."
+  ],
+  "states": [
+    "每处理一段天数，只保留四类历史的最大现金：h1 = 持有、最多买入一次；s1 = 空仓（不持股）、最多完成一笔；h2 = 持有、最多买入两次；s2 = 空仓、最多完成两笔。“最多”是额度，不是已完成次数；h2 也可代表只买过一次的历史。四个值可来自不同历史，不能当成同一条交易记录。",
+    "For each processed prefix of days, keep the greatest cash in four classes: h1 = holding, at most one buy; s1 = flat (no share), at most one completed trade; h2 = holding, at most two buys; s2 = flat, at most two completed trades. These are budgets, not exact action counts: h2 also includes histories with only one buy. The four maxima may come from different histories; they are not one trade log."
+  ],
+  "deriveHand": [
+    "仍看 [2,5,1,4]。第 1 天后 (h1,s1,h2,s2)=(-2,0,-2,0)。第 2 天卖出可得 -2+5=3，变为 (-2,3,-2,3)。第 3 天低价 1 到来：第一次买入可用 -1 替代 -2；第二次买入可用昨天的 3 支付 1，现金为 2，变为 (-1,3,2,3)。第 4 天卖出第二股得到 2+4=6，最终 (-1,3,2,6)。持股现金 2 为正，表示此前已赚的钱超过这次买价。",
+    "Stay with [2,5,1,4]. After day 1, (h1,s1,h2,s2)=(-2,0,-2,0). Selling on day 2 yields -2+5=3, giving (-2,3,-2,3). At price 1 on day 3, a first buy improves -2 to -1. A second buy can spend 1 from yesterday’s cash 3, leaving 2: (-1,3,2,3). Selling that share on day 4 yields 2+4=6, ending at (-1,3,2,6). Positive holding cash 2 means previous earnings exceed the new purchase price."
+  ],
+  "recurrence": [
+    "每一类都只比较“保持昨天”与“今天做最后一个动作”。价格为 p：h1 比较不变与 -p；s1 比较不变与旧 h1+p；h2 比较不变与旧 s1-p；s2 比较不变与旧 h2+p。不需要第 3 次买入，因为额度只有两次；空仓时不能卖、持股时不能再买。使用旧值让同一天只发生一个动作。若允许同日卖出再买入，同价下可合并这两笔而保持利润不变；同日买卖也无利润。因此这种写法不降低答案。",
+    "Each class compares “keep yesterday” with “make the last action today.” At price p: h1 compares staying with -p; s1 with old h1+p; h2 with old s1-p; s2 with old h2+p. There is no third buy because the budget is two. A flat history cannot sell, and a holding history cannot buy again. Reading old values permits only one action per day. If a sale and repurchase share a day, merge those trades at the same price without changing profit; a same-day buy/sell also earns zero. Thus this restriction does not reduce the answer."
+  ],
+  "init": [
+    "还没看价格时，空仓可以不交易，所以 s1=s2=0；持股不可能，所以 h1=h2=−∞（不可达的标记，不是真实亏损）。max 是取较大值。每一天都重复这种“按条件保留最大现金”的方法，这就是动态规划：保存足够的子问题答案，避免重算所有历史。",
+    "Before any price, doing nothing is flat, so s1=s2=0. Holding is impossible, so h1=h2=−∞, an unreachable marker rather than an actual loss. max chooses the larger value. Repeating this best-cash summary each day is dynamic programming: preserve sufficient answers for smaller prefixes instead of recomputing all histories."
+  ],
+  "labTask": [
+    "这一步要回答：今天的价格为什么会改变某个现金上限？选择预设会重置本实验。固定价格，逐日前进，先看“昨日 / 今天动作 / 今日”表，再看累计账本；后退应恢复同一组值。可用进度条直接回到任一天。",
+    "Question: why does today’s price change a cash maximum? Selecting a preset restarts this experiment. Keep prices fixed, advance by one day, compare “yesterday / action today / today,” then inspect the cumulative ledger. Rewind should restore the same values. The slider can seek to any day."
+  ],
+  "labDefs": [
+    "h1/h2：持股且最多买入 1/2 次的最大现金；s1/s2：空仓且最多完成 1/2 笔的最大现金。现金不含股票价值。−∞ 表示不可达。账本每行是一天全部更新后的状态；只有 s2 是当前已处理天数的最大已结算利润。",
+    "h1/h2: best cash while holding with at most 1/2 buys. s1/s2: best cash while flat with at most 1/2 completed trades. Cash excludes the share’s value; −∞ means unreachable. Each ledger row follows all updates for one day. Only s2 is the maximum realized profit for the processed prefix."
+  ],
+  "simulation": [
+    "这是 JavaScript 教学模拟，不是运行 Python 提交。保留完整历史需要 O(n) 教学空间；提交只需四个状态。所有预设均完整展示，无跳步。",
+    "This is a JavaScript teaching simulation, not execution of the Python submission. Keeping full history takes O(n) tutorial space; the submission retains four states. Every preset is shown completely, without skipped days."
+  ],
+  "presets": [
+    "价格预设（切换会重置实验）",
+    "Prices (changing restarts the experiment)"
+  ],
+  "p0": [
+    "手算：两段上涨",
+    "Worked: two rises"
+  ],
+  "p1": [
+    "官方：重复与零",
+    "Official example"
+  ],
+  "p2": [
+    "一直上涨",
+    "Always rising"
+  ],
+  "p3": [
+    "一直下跌",
+    "Always falling"
+  ],
+  "p4": [
+    "仅一天",
+    "One day"
+  ],
+  "p5": [
+    "全为零",
+    "All zero"
+  ],
+  "p6": [
+    "反例：合并小跌幅",
+    "Bridge a dip"
+  ],
+  "prev": [
+    "← 回退一天",
+    "← Rewind one day"
+  ],
+  "next": [
+    "处理下一天 →",
+    "Process next day →"
+  ],
+  "reset": [
+    "回到第 0 天",
+    "Return to day 0"
+  ],
+  "end": [
+    "处理到末日",
+    "Process to the end"
+  ],
+  "position": [
+    "已处理天数",
+    "Processed days"
+  ],
+  "ledger": [
+    "累计现金账本",
+    "Cumulative cash ledger"
+  ],
+  "day": [
+    "天",
+    "Day"
+  ],
+  "price": [
+    "价格",
+    "Price"
+  ],
+  "state": [
+    "状态",
+    "State"
+  ],
+  "old": [
+    "昨日",
+    "Yesterday"
+  ],
+  "candidate": [
+    "今天动作候选",
+    "Action today"
+  ],
+  "new": [
+    "今日 = max",
+    "Today = max"
+  ],
+  "decision": [
+    "选择",
+    "Decision"
+  ],
+  "keep": [
+    "保持",
+    "Keep"
+  ],
+  "improve": [
+    "更新 ↑",
+    "Improve ↑"
+  ],
+  "tie": [
+    "持平 =",
+    "Tie ="
+  ],
+  "noDay": [
+    "尚未处理价格；下表是初始条件。",
+    "No price processed yet; the table shows initial conditions."
+  ],
+  "progress": [
+    "已处理 {day}/{n} 天；当前最大已结算利润 s2 = {profit}。",
+    "Processed {day}/{n} days; current maximum realized profit s2 = {profit}."
+  ],
+  "dayNote": [
+    "刚处理第 {day} 天，价格 {p}。所有动作候选读取昨日状态。",
+    "Just processed day {day} at price {p}. Every action candidate reads yesterday’s state."
+  ],
+  "pricesLabel": [
+    "每日价格，按天排列；箭头指向刚处理的价格。",
+    "Daily prices in day order; the arrow marks the last processed price."
+  ],
+  "current": [
+    "← 当前",
+    "← current"
+  ],
+  "future": [
+    "待处理",
+    "Pending"
+  ],
+  "done": [
+    "已处理",
+    "Processed"
+  ],
+  "quiz": [
+    "这一步要回答：新的低价能让持股现金变成多少？独立新例 [4,9,2,8]，只处理到第 3 天。h2 表示持股且最多买入两次时的最大现金，不含股票价值。它是多少？先选择，再揭晓；不需要运行上面的实验。",
+    "Question: what can a new low price do to holding cash? Fresh case [4,9,2,8], processed only through day 3. h2 is the greatest cash while holding, with at most two buys; it excludes the share’s value. What is h2? Choose before revealing; this exercise is independent of the lab."
+  ],
+  "option0": [
+    "A · −2",
+    "A · −2"
+  ],
+  "option1": [
+    "B · 3",
+    "B · 3"
+  ],
+  "option2": [
+    "C · 5",
+    "C · 5"
+  ],
+  "reveal": [
+    "揭晓并解释",
+    "Reveal and explain"
+  ],
+  "correct": [
+    "正确。",
+    "Correct."
+  ],
+  "incorrect": [
+    "再检查现金的含义。",
+    "Check what cash includes."
+  ],
+  "answer": [
+    "第 2 天最多一笔的空仓现金 s1=9−4=5。第 3 天以 2 买入，h2=max(旧 −4, 5−2)=3。−2 忽略了第一次卖出的利润；5 忽略了再次买入的支出。这里持有一股，3 不是最终利润。",
+    "After day 2, flat cash with at most one trade is s1=9−4=5. Buying at 2 on day 3 gives h2=max(old −4, 5−2)=3. −2 ignores the earlier sale profit; 5 ignores the new purchase payment. One share is still held, so 3 is not final profit."
+  ],
+  "proof": [
+    "这一步要回答：为什么四个数能保证最优？不变式是每处理完前 d 天，h1/h2 分别是最多买入 1/2 次且持股的最大现金，s1/s2 分别是最多完成 1/2 笔且空仓的最大现金。初始 0 与 −∞ 满足定义。对任一今日结束的合法历史：若今天没动作，它属于旧状态；若买入，它此前必为空仓；若卖出，它此前必持股。四个 max 恰好穷尽这些情况。",
+    "Question: why do four numbers guarantee the optimum? The invariant is that after d days, h1/h2 are maximum holding cash with at most 1/2 buys, and s1/s2 are maximum flat cash with at most 1/2 completed trades. Initial zero and −∞ satisfy the definitions. Any legal history ending today either takes no action and belongs to the old state, buys from a flat history, or sells from a holding history. The four max operations cover exactly these cases."
+  ],
+  "sufficiency": [
+    "为什么每类只留一个最大值？每个转移对来源类里的所有现金都加上或减去同一个价格，较小的来源值不可能生成更大的候选。因此这一步只需要来源类的最大值；逐日归纳即可。需要较少买入次数的历史仍由 h1/s1 单独保留，不能把四类合成一个最大现金。最后不持股才是完成交易的利润，所以返回 s2；“最多”已包含零笔与一笔。",
+    "Why keep one maximum per class? Each transition adds or subtracts the same price from every cash value in its source class. A smaller source value cannot produce a larger candidate, so only that class’s maximum is needed for the next step; induction repeats this argument daily. Histories using fewer buys remain separately represented in h1/s1: we cannot merge all four classes into one cash maximum. Completed-trade profit must finish flat, so return s2; its “at most” budget includes zero and one trade."
+  ],
+  "map1": [
+    "for p in prices：按时间处理；元组右侧全部读取昨日，避免覆盖依赖。",
+    "for p in prices scans chronologically; every tuple right-hand side reads yesterday, preserving dependencies."
+  ],
+  "map2": [
+    "max(h2, s1-p)：对应实验中第 3 天 max(-2,3-1)=2；max(s2,h2+p) 在次日把它变成利润 6。",
+    "max(h2, s1-p) maps to day 3 in the lab: max(-2,3-1)=2. On the next day max(s2,h2+p) turns that cash into profit 6."
+  ],
+  "map3": [
+    "初始化对应第 0 天；return s2 对应末日账本的最后一列。",
+    "Initialization is day 0; return s2 is the last column of the final ledger row."
+  ],
+  "cost": [
+    "n 天，每天四次常数时间比较：O(n) 时间、O(1) 额外空间；输入不修改，只返回一个整数。基线的 O(n⁴) 日期枚举被四个足够的前缀摘要替代。",
+    "For n days, four constant-time comparisons per day give O(n) time and O(1) auxiliary space. Input is unchanged and output is one integer. Four sufficient prefix summaries replace O(n⁴) date enumeration."
+  ],
+  "boundaries": [
+    "边界：只有一天、全相等、一直下跌均为 0，因为可以不交易；一直上涨只需一笔首买末卖。零价格可以直接买入，无除法。Python 整数无需取模；两笔最大利润不超过 200000。空数组防御性返回 0，但不属于官方输入。",
+    "Boundaries: one day, equal prices, and falling prices yield 0 because no trade is required. Rising prices need only one first-buy/last-sell trade. Zero prices allow buying normally; no division is used. No modulus is needed; two trades earn at most 200000. Empty input defensively returns 0 but is outside official constraints."
+  ],
+  "copy": [
+    "复制 Python",
+    "Copy Python"
+  ],
+  "download": [
+    "下载 solution.py",
+    "Download solution.py"
+  ],
+  "source": [
+    "查看官方接口 Python 解法",
+    "Inspect the Python submission"
+  ],
+  "copied": [
+    "已复制。",
+    "Copied."
+  ],
+  "fallback": [
+    "剪贴板不可用。请从下框手动复制完整源码：",
+    "Clipboard unavailable. Copy the full source manually below:"
+  ],
+  "related": [
+    "继续理解状态与边界",
+    "More on state and boundaries"
+  ],
+  "related0": [
+    "正则匹配：前缀状态如何避免重算",
+    "Regex matching: prefix states avoid repeated work"
+  ],
+  "related1": [
+    "接雨水：为什么一个摘要就足够",
+    "Trapping rain water: why a summary suffices"
+  ],
+  "foot": [
+    "作者自查候选；独立教学评审待完成。浏览器模拟不是 Python 执行或 LeetCode 提交结果。",
+    "Author self-checked candidate; independent teaching review pending. The simulation is neither Python execution nor a LeetCode submission result."
+  ],
+  "verify": [
+    "本地测试分别执行 Python 与教学模型，对照独立的合法动作枚举，并检查每一天的四个状态。计算测试不代表真实学习者已理解。",
+    "Local tests execute Python and the teaching model separately against independent legal-action enumeration, including all four daily states. Computational tests do not establish learner understanding."
+  ],
+  "language": [
+    "语言",
+    "Language"
+  ],
+  "navigation": [
+    "学习步骤",
+    "Lesson steps"
+  ],
+  "scrollLedger": [
+    "可横向滚动的现金账本",
+    "Horizontally scrollable cash ledger"
+  ]
+};
