@@ -190,3 +190,18 @@ policy and runtime must match the frozen candidate; run the reviewed importer
 externally before a policy update when integrating lanes created under that policy.
 The [independent importer review](reviews/leetcode-lane-import-review.md) retains
 the reproduced failures, fixes, and remaining recovery boundaries.
+
+The runner's frozen fingerprint includes actual filesystem permissions, while Git
+normalizes regular-file modes. Reconstruct it from immutable candidate bytes plus
+preserved lane permissions and require the exact original digest. Missing historical
+permission evidence, permission drift, or executable-mode disagreement must reject
+the import; never rewrite the recorded hash to make a transfer pass.
+
+Official statement/interface captures are review provenance, not public runtime.
+Keep them under `tests/`, `evidence/`, or `provenance/`; the reserved capture names
+`official-evidence.json`, `official-interface.json`, `official-contract.json`,
+`official-graphql.json`, and `official.json` are excluded from lesson payloads.
+Actual runtime JSON and required native-language submission sources remain eligible.
+A static dependency on excluded provenance must fail before staging. Exclusion
+from deployment never permits post-review edits: freeze the entire lesson Git tree,
+including evidence, and retain the original candidate and release fingerprints.

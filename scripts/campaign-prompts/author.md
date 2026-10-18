@@ -36,7 +36,8 @@ schema and runtime semantics), rationale (why earlier preferred languages cannot
 faithfully submit, or the explicit owner choice for the exact-six JavaScript exception), verifiedAt (ISO timestamp with timezone), verificationEvidence
 (a lesson-relative nonempty evidence file). Save what was actually observed from
 the official source, with the access date and selector/interface excerpts or
-screenshots, so the separate reviewer can verify the language decision. The
+screenshots, so the separate reviewer can verify the language decision. Store official captures
+inside tests/evidence/ or provenance/; they are review material, not runtime assets. The
 contract's selected language must follow Python > TypeScript > required native,
 except that the exact six listed JavaScript problems require JavaScript.
 Do not omit supported Python or TypeScript merely to select an easier language.
