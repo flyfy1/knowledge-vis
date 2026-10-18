@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "cases": 186,
+  "invariants": [
+    "minimum discovery distance",
+    "queue sorted by distance",
+    "unique discoveries",
+    "parent distance",
+    "processed versus pending",
+    "deterministic complete snapshots"
+  ]
+}
