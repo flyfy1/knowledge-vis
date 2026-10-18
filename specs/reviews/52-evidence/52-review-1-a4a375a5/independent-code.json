@@ -1,0 +1,49 @@
+{
+  "fresh_prefix": [
+    0,
+    2
+  ],
+  "prediction": 1,
+  "canonical_entry_exit_count": [
+    [
+      "call",
+      0
+    ],
+    [
+      "return",
+      1
+    ]
+  ],
+  "independent_completions": [
+    [
+      0,
+      2,
+      4,
+      1,
+      3
+    ]
+  ],
+  "counterexample": [
+    0,
+    2,
+    1
+  ],
+  "counterexample_is_legal": false,
+  "n5_total": 10,
+  "reused_instance_inputs": [
+    9,
+    1,
+    2,
+    5,
+    4,
+    3
+  ],
+  "outputs": [
+    352,
+    1,
+    0,
+    10,
+    2,
+    0
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "checks": [
+    "en: event 30 ledger 0",
+    "en: count readout populated 30",
+    "en: event 31 ledger 1",
+    "en: count readout populated 31",
+    "en: event 32 ledger 1",
+    "en: count readout populated 32",
+    "en: event 47 ledger 1",
+    "en: count readout populated 47",
+    "en: event 48 ledger 2",
+    "en: count readout populated 48",
+    "en: event 49 ledger 2",
+    "en: count readout populated 49",
+    "en: event 79 ledger 2",
+    "en: count readout populated 79",
+    "en: keyboard range Home",
+    "en: keyboard range End",
+    "en: undo has symbol",
+    "en: #diagram .queen text contrast",
+    "en: #diagram .candidate text contrast",
+    "en: #diagram .rejected text contrast",
+    "en: #feedback text contrast",
+    "en: #feedback text contrast",
+    "en: 320 board contained",
+    "en: landscape no overflow",
+    "en: zoom board contained",
+    "en: keyboard Tab sequence",
+    "en: keyboard Shift Tab sequence",
+    "en: locale keeps keyboard focus",
+    "en: rendered focus contrast",
+    "en: actual browser download parity",
+    "en: actual system clipboard parity",
+    "zh: event 30 ledger 0",
+    "zh: count readout populated 30",
+    "zh: event 31 ledger 1",
+    "zh: count readout populated 31",
+    "zh: event 32 ledger 1",
+    "zh: count readout populated 32",
+    "zh: event 47 ledger 1",
+    "zh: count readout populated 47",
+    "zh: event 48 ledger 2",
+    "zh: count readout populated 48",
+    "zh: event 49 ledger 2",
+    "zh: count readout populated 49",
+    "zh: event 79 ledger 2",
+    "zh: count readout populated 79",
+    "zh: keyboard range Home",
+    "zh: keyboard range End",
+    "zh: undo has symbol",
+    "zh: #diagram .queen text contrast",
+    "zh: #diagram .candidate text contrast",
+    "zh: #diagram .rejected text contrast",
+    "zh: #feedback text contrast",
+    "zh: #feedback text contrast",
+    "zh: 320 board contained",
+    "zh: landscape no overflow",
+    "zh: zoom board contained",
+    "zh: keyboard Tab sequence",
+    "zh: keyboard Shift Tab sequence",
+    "zh: locale keeps keyboard focus",
+    "zh: rendered focus contrast",
+    "zh: actual browser download parity",
+    "zh: actual system clipboard parity",
+    "Offline file source parity",
+    "Offline trace works"
+  ],
+  "contrast": [
+    {
+      "lang": "en",
+      "sel": "#diagram .queen",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "lang": "en",
+      "sel": "#diagram .candidate",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "lang": "en",
+      "sel": "#diagram .rejected",
+      "fg": "rgb(255, 122, 147)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.34696669826778
+    },
+    {
+      "lang": "en",
+      "sel": "#feedback",
+      "fg": "rgb(255, 122, 147)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.34696669826778
+    },
+    {
+      "lang": "en",
+      "sel": "#feedback",
+      "fg": "rgb(126, 226, 168)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.004815697188947
+    },
+    {
+      "lang": "en",
+      "sel": "focus",
+      "ratio": 10.731637051347173
+    },
+    {
+      "lang": "zh",
+      "sel": "#diagram .queen",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "lang": "zh",
+      "sel": "#diagram .candidate",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "lang": "zh",
+      "sel": "#diagram .rejected",
+      "fg": "rgb(255, 122, 147)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.34696669826778
+    },
+    {
+      "lang": "zh",
+      "sel": "#feedback",
+      "fg": "rgb(255, 122, 147)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.34696669826778
+    },
+    {
+      "lang": "zh",
+      "sel": "#feedback",
+      "fg": "rgb(126, 226, 168)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.004815697188947
+    },
+    {
+      "lang": "zh",
+      "sel": "focus",
+      "ratio": 10.731637051347173
+    }
+  ]
+}
