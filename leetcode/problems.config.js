@@ -771,6 +771,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n + d) expected time; O(n + d) auxiliary space, plus O(k) output"
   },
   {
+    "id": 188,
+    "title": {
+      "zh": "买卖股票的最佳时机 IV",
+      "en": "Best Time to Buy and Sell Stock IV"
+    },
+    "desc": {
+      "zh": "从交易额度推导逐日现金状态，比较持有与卖出。",
+      "en": "Derive daily cash states for each trade budget and compare holding with selling."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "状态压缩",
+        "en": "State compression"
+      }
+    ],
+    "path": "188/",
+    "leetcodeUrl": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/",
+    "language": "Python",
+    "complexity": "O(nk) time; O(k) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
