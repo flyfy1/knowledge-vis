@@ -1,0 +1,14 @@
+n=1: 1 unique valid boards; independent permutation oracle matched
+n=2: 0 unique valid boards; independent permutation oracle matched
+n=3: 0 unique valid boards; independent permutation oracle matched
+n=4: 2 unique valid boards; independent permutation oracle matched
+n=5: 10 unique valid boards; independent permutation oracle matched
+n=6: 4 unique valid boards; independent permutation oracle matched
+n=7: 40 unique valid boards; independent permutation oracle matched
+n=8: 92 unique valid boards; independent permutation oracle matched
+n=9: 352 unique valid boards; maximum constraint checked
+trace n=1: 5 snapshots, every transition and constraint invariant checked
+trace n=2: 10 snapshots, every transition and constraint invariant checked
+trace n=3: 25 snapshots, every transition and constraint invariant checked
+trace n=4: 80 snapshots, every transition and constraint invariant checked
+Exact Python mirror parity passed

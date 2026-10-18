@@ -1,0 +1,205 @@
+{
+  "cases": [
+    {
+      "name": "en-320-zoom1",
+      "failures": [],
+      "metrics": [
+        {
+          "width": 262,
+          "minCellWidth": 40.25
+        },
+        {
+          "width": 262,
+          "minCellWidth": 40.25
+        }
+      ],
+      "stacked": true,
+      "noOverflow": true,
+      "position": "32",
+      "placement": "[1, 3, 0]",
+      "ledger": 1,
+      "locale": "en"
+    },
+    {
+      "name": "en-390-zoom1",
+      "failures": [],
+      "metrics": [
+        {
+          "width": 332,
+          "minCellWidth": 57.75
+        },
+        {
+          "width": 332,
+          "minCellWidth": 57.75
+        }
+      ],
+      "stacked": true,
+      "noOverflow": true,
+      "position": "32",
+      "placement": "[1, 3, 0]",
+      "ledger": 1,
+      "locale": "en"
+    },
+    {
+      "name": "en-736-zoom1",
+      "failures": [],
+      "metrics": [
+        {
+          "width": 311,
+          "minCellWidth": 49.75
+        },
+        {
+          "width": 311,
+          "minCellWidth": 49.75
+        }
+      ],
+      "stacked": false,
+      "noOverflow": true,
+      "position": "32",
+      "placement": "[1, 3, 0]",
+      "ledger": 1,
+      "locale": "en"
+    },
+    {
+      "name": "en-1440-zoom1",
+      "failures": [],
+      "metrics": [
+        {
+          "width": 420,
+          "minCellWidth": 77
+        },
+        {
+          "width": 420,
+          "minCellWidth": 77
+        }
+      ],
+      "stacked": false,
+      "noOverflow": true,
+      "position": "32",
+      "placement": "[1, 3, 0]",
+      "ledger": 1,
+      "locale": "en"
+    },
+    {
+      "name": "en-640-zoom2",
+      "failures": [],
+      "metrics": [
+        {
+          "width": 460,
+          "minCellWidth": 59
+        },
+        {
+          "width": 460,
+          "minCellWidth": 59
+        }
+      ],
+      "stacked": true,
+      "noOverflow": true,
+      "position": "32",
+      "placement": "[1, 3, 0]",
+      "ledger": 1,
+      "locale": "en"
+    },
+    {
+      "name": "zh-320-zoom1",
+      "failures": [],
+      "metrics": [
+        {
+          "width": 262,
+          "minCellWidth": 40.25
+        },
+        {
+          "width": 262,
+          "minCellWidth": 40.25
+        }
+      ],
+      "stacked": true,
+      "noOverflow": true,
+      "position": "32",
+      "placement": "[1, 3, 0]",
+      "ledger": 1,
+      "locale": "zh-CN"
+    },
+    {
+      "name": "zh-390-zoom1",
+      "failures": [],
+      "metrics": [
+        {
+          "width": 332,
+          "minCellWidth": 57.75
+        },
+        {
+          "width": 332,
+          "minCellWidth": 57.75
+        }
+      ],
+      "stacked": true,
+      "noOverflow": true,
+      "position": "32",
+      "placement": "[1, 3, 0]",
+      "ledger": 1,
+      "locale": "zh-CN"
+    },
+    {
+      "name": "zh-736-zoom1",
+      "failures": [],
+      "metrics": [
+        {
+          "width": 311,
+          "minCellWidth": 49.75
+        },
+        {
+          "width": 311,
+          "minCellWidth": 49.75
+        }
+      ],
+      "stacked": false,
+      "noOverflow": true,
+      "position": "32",
+      "placement": "[1, 3, 0]",
+      "ledger": 1,
+      "locale": "zh-CN"
+    },
+    {
+      "name": "zh-1440-zoom1",
+      "failures": [],
+      "metrics": [
+        {
+          "width": 420,
+          "minCellWidth": 77
+        },
+        {
+          "width": 420,
+          "minCellWidth": 77
+        }
+      ],
+      "stacked": false,
+      "noOverflow": true,
+      "position": "32",
+      "placement": "[1, 3, 0]",
+      "ledger": 1,
+      "locale": "zh-CN"
+    },
+    {
+      "name": "zh-640-zoom2",
+      "failures": [],
+      "metrics": [
+        {
+          "width": 460,
+          "minCellWidth": 59
+        },
+        {
+          "width": 460,
+          "minCellWidth": 59
+        }
+      ],
+      "stacked": true,
+      "noOverflow": true,
+      "position": "32",
+      "placement": "[1, 3, 0]",
+      "ledger": 1,
+      "locale": "zh-CN"
+    }
+  ],
+  "errors": []
+}

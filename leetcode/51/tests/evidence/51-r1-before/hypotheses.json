@@ -1,0 +1,34 @@
+[
+  {
+    "name": "baseline",
+    "grid": "103px 103px",
+    "boardWidth": 206,
+    "cellWidth": 31.59375,
+    "glyphWidth": 25.484375,
+    "axis": 31.59375
+  },
+  {
+    "name": "H1 available-width grid",
+    "grid": "230px",
+    "boardWidth": 460,
+    "cellWidth": 82.390625,
+    "glyphWidth": 25.484375,
+    "axis": 82.390625
+  },
+  {
+    "name": "H2 automatic table",
+    "grid": "173.094px 79.2969px",
+    "boardWidth": 346.1875,
+    "cellWidth": 41.484375,
+    "glyphWidth": 25.484375,
+    "axis": 139.421875
+  },
+  {
+    "name": "H3 smaller font",
+    "grid": "103px 103px",
+    "boardWidth": 206,
+    "cellWidth": 31.59375,
+    "glyphWidth": 22.296875,
+    "axis": 31.59375
+  }
+]
