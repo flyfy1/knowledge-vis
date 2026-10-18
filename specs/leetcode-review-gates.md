@@ -141,6 +141,20 @@ Inspect dense intermediate states and long identifiers in both locales at
 checks alone do not establish essential state readability; component scrolling
 is acceptable under the explainer's association and keyboard-access rules.
 
+For localization binding, verify appropriate duplicate-key detection within each
+lookup namespace and representative semantic-binding evidence for applicable
+algorithm-state and UI paths in both locales, as required by the
+[explainer contract](leetcode-explainers.md#localization-key-and-meaning-binding).
+Check the visible explanation against the intended state/transition, separately
+from unrelated UI fallback/error copy (for example mismatch versus clipboard
+fallback). Matching keys or their presence alone is insufficient. Record candidate,
+state/input, actions, locale, expected meaning and observed text; independently
+check representative relevant paths after the cold walkthrough. A materially wrong
+algorithm explanation remains a required finding under the existing rubric.
+Freeze the candidate; any fix needs a new candidate and separate fresh review of
+the affected paths. Retain original evidence and required-finding closure records;
+this clarification grants no retroactive acceptance or new scores/weights.
+
 The author can mark a finding fixed awaiting review; the reviewer closes it
 against the actual fixed candidate. Attach original evidence and append the
 closure; do not rewrite the original failure into a passing result. Disagreement
