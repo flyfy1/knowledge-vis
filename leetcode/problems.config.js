@@ -507,6 +507,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time / O(1) auxiliary space"
   },
   {
+    "id": 126,
+    "title": {
+      "zh": "单词接龙 II",
+      "en": "Word Ladder II"
+    },
+    "desc": {
+      "zh": "保留同层的每条来路，重建全部最短变换。",
+      "en": "Keep every same-layer parent and reconstruct all shortest transformations."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "回溯",
+        "en": "Backtracking"
+      }
+    ],
+    "path": "126/",
+    "leetcodeUrl": "https://leetcode.com/problems/word-ladder-ii/",
+    "language": "Python",
+    "complexity": "O(26NL² + M) time / O(NL + E + M) space including output"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

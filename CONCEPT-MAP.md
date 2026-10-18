@@ -463,3 +463,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | rolling state invariant | `leetcode/123/#step4` | Four previous-prefix maxima suffice for every legal next action. |
 
 <!-- /leetcode-123-campaign -->
+
+
+<!-- leetcode-126-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| BFS shortest distances | `leetcode/126/#step1` | First discovery fixes minimum replacements. |
+| Multiple shortest parents | `leetcode/126/#step2` | Keep every edge that increases distance by one. |
+| Path reconstruction | `leetcode/126/#step4` | Follow decreasing distances to enumerate all answers. |
+
+<!-- /leetcode-126-campaign -->
