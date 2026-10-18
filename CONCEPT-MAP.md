@@ -422,3 +422,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | excluded boundaries | `leetcode/84/#step2` | A popped rectangle has width i - left - 1. |
 
 <!-- /leetcode-84-campaign -->
+
+
+<!-- leetcode-85-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Histogram heights | `leetcode/85/#step1` | Consecutive ones encode rectangles ending at each row. |
+| Monotonic stack | `leetcode/85/#step2` | Settle a pending height when a shorter bar fixes its right boundary. |
+
+<!-- /leetcode-85-campaign -->
