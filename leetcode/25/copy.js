@@ -228,12 +228,12 @@ window.LESSON_COPY = {
     "Collecting node objects and reversing groups takes O(n) time and O(n) space. It preserves identities but misses the O(1) follow-up. Local reversal only needs a predecessor, current node, and saved successor."
   ],
   "derive": [
-    "dummy 是值无关的虚拟前驱，统一处理第一组。group_prev 指向组前节点；先向后数 k 步找 kth。找不到就直接结束。group_next=kth.next 保存组外后继；prev 初始指向它，curr 指向组头。",
-    "dummy is an artificial predecessor that makes the first group ordinary. group_prev precedes the group. Walk k links to find kth; stop if it does not exist. group_next=kth.next preserves the suffix. Start prev there and curr at the group head."
+    "怎样省掉存放所有引用的 nodes 列表？沿用刚才的三个节点：增加 dummy，让 dummy.next 指向 #0。它是人为加的组前节点，值不参与答案，图中编号为 −1。group_prev（组前节点的引用）开始指向 dummy。这样第一组和后续组都能通过 group_prev.next 修改入口，而不用为 head 单独写分支。",
+    "How can we remove the nodes list of all references? Use the same three nodes: add dummy with dummy.next referring to #0. It is an artificial node before the group; its value is excluded from the answer and its diagram ID is −1. group_prev (the reference to the node before the group) starts at dummy. Both the first group and later groups can then change their entry through group_prev.next, without a separate branch for head."
   ],
   "proof": [
-    "每次先保存 nxt=curr.next，再令 curr.next=prev，最后向前推进。否则改完 next 就找不到剩余节点。结束时 kth 是新组头、旧组头是新组尾；把 group_prev.next 接到 kth，再把 group_prev 移到旧组头。",
-    "Save nxt=curr.next, set curr.next=prev, then advance. Without saving nxt, overwriting next loses the unprocessed suffix. At completion kth is the new head and the old head is the new tail. Reconnect the predecessor to kth, then move group_prev to the old head."
+    "第一次：nxt=curr.next=#1，令 curr.next=prev，即 #0.next=#2，再推进 prev=#0、curr=#1。第二次：nxt=#2，令 #1.next=#0，再推进 prev=#1、curr=#2。现在 curr 就是 group_next，整组已反转。保存 old_head=group_prev.next=#0，再令 group_prev.next=kth，即 dummy.next=#1；最后 group_prev=old_head=#0，使下一组也有组前节点。以后每组重复同一过程；返回 dummy.next 就是新入口。",
+    "First: nxt=curr.next=#1; set curr.next=prev, meaning #0.next=#2; advance to prev=#0, curr=#1. Second: save nxt=#2, set #1.next=#0, then advance to prev=#1, curr=#2. Now curr is group_next, so the group is reversed. Save old_head=group_prev.next=#0, then set group_prev.next=kth, meaning dummy.next=#1. Finally set group_prev=old_head=#0 so the next group also has a predecessor. Repeat this same process for later groups; return dummy.next as the new entry."
   ],
   "invariant": [
     "反转中 prev 指向已反转片段，curr 指向尚未处理片段；nxt 保存本次改线前的后继。中间状态不一定能从 head 访问所有节点，图因此保留全部节点并显式列出每条 next。读数 −1 专指 dummy，∅ 代表没有节点。",
@@ -294,6 +294,50 @@ window.LESSON_COPY = {
   "introducedLink": [
     "合并链表中的节点复用",
     "Node reuse when merging lists"
+  ],
+  "nodeTitle": [
+    "先认识节点和 next",
+    "First meet a node and its next reference"
+  ],
+  "nodeBasics": [
+    "链表是一串节点对象。每个节点有 val（数值）和 next（下一个节点的引用）；引用让我们找到同一个对象。head 是指向第一个节点的引用。None 表示没有节点，走到它就结束。图中的箭头表示引用，#0、#1、#2 是对象的永久编号，不是数值，也不是当前排列位置。",
+    "A linked list is a chain of node objects. Each node has val (a value) and next (a reference to the next node); a reference lets us find that same object. head refers to the first node. None means no node, so following links stops there. Arrows below mean references. #0, #1 and #2 are permanent object IDs, not values or current positions."
+  ],
+  "nodeDiagram": [
+    "head → #0\n#0: val=1, next → #1\n#1: val=2, next → #2\n#2: val=3, next → None",
+    "head → #0\n#0: val=1, next → #1\n#1: val=2, next → #2\n#2: val=3, next → None"
+  ],
+  "referenceAssignment": [
+    "例如 a 指向 #0，b 指向 #2：a.next = b 会把 #0 的箭头从 #1 改到 #2；三个节点的 val 都不变。若 head 仍指向 #0，从它出发只能读到 1、3。#1 对象仍在，但需要另一个引用才能找到它。Python 列表 items[0] = b 改的是列表的一个槽位；a.next = b 改的是节点对象内部的链接。",
+    "For example, let a refer to #0 and b to #2. Assigning a.next = b changes #0’s arrow from #1 to #2; all three val fields stay unchanged. With head still at #0, following links now reads 1, 3. Object #1 still exists, but we need another reference to find it. Assigning items[0] = b changes a slot in a Python list; assigning a.next = b changes a link inside a node object."
+  ],
+  "pointerTitle": [
+    "在三个节点上手动改线",
+    "Rewire three concrete nodes by hand"
+  ],
+  "pointerSetup": [
+    "重新从上图开始，k=2。先沿 next 数出 #0、#1，确认有两个节点，再记住组后的 #2。目标是 head → #1 → #0 → #2 → None，读出的值为 [2,1,3]；#2 不足两个，必须保留。下面每步都保留原对象和数值。",
+    "Start again from the diagram, with k=2. First follow next to count #0 and #1, confirming two nodes exist, and remember #2 just after this group. We want head → #1 → #0 → #2 → None, reading [2,1,3]; the remaining #2 is fewer than two nodes and must stay. Each step below keeps the original objects and values."
+  ],
+  "pointerFirst": [
+    "① 先保存 #0.next，即 #1，叫它 nxt（保存的旧后继）。再把 #0.next 从 #1 改为 #2，给即将成为组尾的 #0 接好后面的部分。此刻 head → #0 → #2 → None；我们仍能通过 nxt 找到 #1。若先覆盖 #0.next，再从它找下一步，就会走到 #2，跳过尚未反转的 #1。",
+    "① Save #0.next, which is #1, as nxt (the saved old successor). Then change #0.next from #1 to #2, attaching the node that will become the group tail to what follows. Now head → #0 → #2 → None; nxt still lets us find #1. Overwriting #0.next first and then following it would go to #2, skipping the still unprocessed #1."
+  ],
+  "pointerSecond": [
+    "② 移到保存的 #1。先保存它原来的 next=#2，再把 #1.next 从 #2 改为 #0。现在 #1 → #0 → #2 → None 已经连好，但 head 仍指向 #0，所以尚未包含新组头 #1。",
+    "② Move to the saved #1. Save its old next=#2 before changing #1.next from #2 to #0. The chain #1 → #0 → #2 → None is ready, but head still refers to #0, so the entry still misses the new group head #1."
+  ],
+  "pointerFinish": [
+    "③ 把入口 head 改为 #1，才能从新组头读到 [2,1,3]。接着从 #2 数下一组：只有 #2，再走就是 None，凑不齐两个，所以一条链接也不改。只有一个节点时“反转”看不出区别；用 k=3、五个节点检查会更明显：末尾 #3 → #4 → None 必须原样保留，若也翻转就会错误地得到 [3,2,1,5,4]。",
+    "③ Set the entry head to #1 so traversal starts at the new group head and reads [2,1,3]. Next count from #2: there is only #2, then None, so no link is changed. Reversing one leftover node looks unchanged; k=3 with five nodes exposes the rule more clearly: the final #3 → #4 → None must stay as it is. Reversing that partial group would incorrectly produce [3,2,1,5,4]."
+  ],
+  "baselineBridge": [
+    "如果先借助熟悉的 Python 列表呢？下面 nodes 存的是节点引用，不是 val。切片反转改变这些引用在列表里的顺序；随后 a.next = b 才按新顺序真正重连节点，最后返回第一个节点对象。LeetCode 提供 ListNode 类型，包含 val 和 next；返回值是节点引用，不是 Python 列表。",
+    "How could a familiar Python list help first? Below, nodes stores node references, not val fields. Reversing slices changes the order of references in that list; the later a.next = b assignments actually reconnect the nodes in that order. The function returns the first node object. LeetCode supplies ListNode with val and next fields; the return value is a node reference, not a Python list."
+  ],
+  "groupRoles": [
+    "k=2 时，从 group_prev 沿 next 走两步，经过 #0 到 #1；把第 k 个节点叫 kth，所以 kth=#1。这 k 步中任一步走到 None，就保留末尾并结束。记下 group_next=kth.next=#2（组后节点），设置 prev=#2、curr=#0。prev 是反转片段的入口，最初还没有反转节点，所以先指向保留的组后部分；curr 是下一次要改线的节点。",
+    "For k=2, walk two next links from group_prev, through #0 to #1. Call the kth node kth, so kth=#1. If any of those k steps reaches None, keep the suffix and stop. Save group_next=kth.next=#2 (the node after the group), and set prev=#2, curr=#0. prev is the entry to the reversed fragment; with no nodes reversed yet, it starts at the preserved suffix. curr is the next node whose link we will change."
   ]
 };
 window.LESSON = {
@@ -325,12 +369,12 @@ window.LESSON = {
     "Collecting node objects and reversing groups takes O(n) time and O(n) space. It preserves identities but misses the O(1) follow-up. Local reversal only needs a predecessor, current node, and saved successor."
   ],
   "derive": [
-    "dummy 是值无关的虚拟前驱，统一处理第一组。group_prev 指向组前节点；先向后数 k 步找 kth。找不到就直接结束。group_next=kth.next 保存组外后继；prev 初始指向它，curr 指向组头。",
-    "dummy is an artificial predecessor that makes the first group ordinary. group_prev precedes the group. Walk k links to find kth; stop if it does not exist. group_next=kth.next preserves the suffix. Start prev there and curr at the group head."
+    "怎样省掉存放所有引用的 nodes 列表？沿用刚才的三个节点：增加 dummy，让 dummy.next 指向 #0。它是人为加的组前节点，值不参与答案，图中编号为 −1。group_prev（组前节点的引用）开始指向 dummy。这样第一组和后续组都能通过 group_prev.next 修改入口，而不用为 head 单独写分支。",
+    "How can we remove the nodes list of all references? Use the same three nodes: add dummy with dummy.next referring to #0. It is an artificial node before the group; its value is excluded from the answer and its diagram ID is −1. group_prev (the reference to the node before the group) starts at dummy. Both the first group and later groups can then change their entry through group_prev.next, without a separate branch for head."
   ],
   "proof": [
-    "每次先保存 nxt=curr.next，再令 curr.next=prev，最后向前推进。否则改完 next 就找不到剩余节点。结束时 kth 是新组头、旧组头是新组尾；把 group_prev.next 接到 kth，再把 group_prev 移到旧组头。",
-    "Save nxt=curr.next, set curr.next=prev, then advance. Without saving nxt, overwriting next loses the unprocessed suffix. At completion kth is the new head and the old head is the new tail. Reconnect the predecessor to kth, then move group_prev to the old head."
+    "第一次：nxt=curr.next=#1，令 curr.next=prev，即 #0.next=#2，再推进 prev=#0、curr=#1。第二次：nxt=#2，令 #1.next=#0，再推进 prev=#1、curr=#2。现在 curr 就是 group_next，整组已反转。保存 old_head=group_prev.next=#0，再令 group_prev.next=kth，即 dummy.next=#1；最后 group_prev=old_head=#0，使下一组也有组前节点。以后每组重复同一过程；返回 dummy.next 就是新入口。",
+    "First: nxt=curr.next=#1; set curr.next=prev, meaning #0.next=#2; advance to prev=#0, curr=#1. Second: save nxt=#2, set #1.next=#0, then advance to prev=#1, curr=#2. Now curr is group_next, so the group is reversed. Save old_head=group_prev.next=#0, then set group_prev.next=kth, meaning dummy.next=#1. Finally set group_prev=old_head=#0 so the next group also has a predecessor. Repeat this same process for later groups; return dummy.next as the new entry."
   ],
   "invariant": [
     "反转中 prev 指向已反转片段，curr 指向尚未处理片段；nxt 保存本次改线前的后继。中间状态不一定能从 head 访问所有节点，图因此保留全部节点并显式列出每条 next。读数 −1 专指 dummy，∅ 代表没有节点。",
@@ -485,5 +529,9 @@ window.LESSON = {
         "Compare value swaps in an array"
       ]
     ]
+  ],
+  "groupRoles": [
+    "k=2 时，从 group_prev 沿 next 走两步，经过 #0 到 #1；把第 k 个节点叫 kth，所以 kth=#1。这 k 步中任一步走到 None，就保留末尾并结束。记下 group_next=kth.next=#2（组后节点），设置 prev=#2、curr=#0。prev 是反转片段的入口，最初还没有反转节点，所以先指向保留的组后部分；curr 是下一次要改线的节点。",
+    "For k=2, walk two next links from group_prev, through #0 to #1. Call the kth node kth, so kth=#1. If any of those k steps reaches None, keep the suffix and stop. Save group_next=kth.next=#2 (the node after the group), and set prev=#2, curr=#0. prev is the entry to the reversed fragment; with no nodes reversed yet, it starts at the preserved suffix. curr is the next node whose link we will change."
   ]
 };

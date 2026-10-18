@@ -1,0 +1,133 @@
+{
+  "fresh_cases": [
+    {
+      "name": "merge",
+      "input": [
+        "aaa",
+        "bbb",
+        [
+          "aab",
+          "aba",
+          "abb",
+          "bbb"
+        ]
+      ],
+      "prediction": [
+        [
+          "aaa",
+          "aab",
+          "abb",
+          "bbb"
+        ],
+        [
+          "aaa",
+          "aba",
+          "abb",
+          "bbb"
+        ]
+      ],
+      "actual": [
+        [
+          "aaa",
+          "aba",
+          "abb",
+          "bbb"
+        ],
+        [
+          "aaa",
+          "aab",
+          "abb",
+          "bbb"
+        ]
+      ],
+      "unchanged": true
+    },
+    {
+      "name": "direct",
+      "input": [
+        "a",
+        "b",
+        [
+          "b",
+          "c"
+        ]
+      ],
+      "prediction": [
+        [
+          "a",
+          "b"
+        ]
+      ],
+      "actual": [
+        [
+          "a",
+          "b"
+        ]
+      ],
+      "unchanged": true
+    },
+    {
+      "name": "absent",
+      "input": [
+        "aa",
+        "bb",
+        [
+          "ab"
+        ]
+      ],
+      "prediction": [],
+      "actual": [],
+      "unchanged": true
+    },
+    {
+      "name": "disconnected",
+      "input": [
+        "aa",
+        "bb",
+        [
+          "bb"
+        ]
+      ],
+      "prediction": [],
+      "actual": [],
+      "unchanged": true
+    },
+    {
+      "name": "listed-start",
+      "input": [
+        "aa",
+        "bb",
+        [
+          "aa",
+          "ab",
+          "bb"
+        ]
+      ],
+      "prediction": [
+        [
+          "aa",
+          "ab",
+          "bb"
+        ]
+      ],
+      "actual": [
+        [
+          "aa",
+          "ab",
+          "bb"
+        ]
+      ],
+      "unchanged": true
+    }
+  ],
+  "full_cube_endpoint_checks": 56,
+  "hashes": {
+    "leetcode/126/app.js": "a03cd2eabbaa02d19f3847d7ff90a2870685047f39b55914a2d49a7e75a54563",
+    "leetcode/126/copy.js": "16c84b85171fb699407f97961d9cd229a854c4da9d0b813c8d378fcfa6bce6f7",
+    "leetcode/126/core.js": "0991a60df7404ba7d978209072d9edc95ea0ecab6ae844d45375752f4792720f",
+    "leetcode/126/python-code.js": "62b92a5b9c419d785f1110f935d582b86a7155d675ebc63068c3ab48a907c16b",
+    "leetcode/126/style.css": "63a048c56180645197959de54555e27d86e5e80151aea69393bac6d2b6363988",
+    "leetcode/126/solution.py": "5f45dac606fcc4740fdc19de2296c78ade31311ce3702828703ec1258679ead4",
+    "leetcode/126/index.html": "3a3d8359c162740f4eb79c23c1a25f86a8b40e47ffbbb95837cc3eb6cc33238f"
+  }
+}

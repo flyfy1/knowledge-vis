@@ -1,0 +1,26 @@
+{
+  "kind": "author self-check; independent re-review pending",
+  "baseCommit": "92bc3bf8fe38837356577a8baeab8ff536692bac",
+  "candidate": {
+    "leetcode/25/index.html": "bca5f7c88b4f0bf4fcd4629773619962acbdc11262b8048cc51fe79f1f90cde5",
+    "leetcode/25/copy.js": "f98bcccb2640e31762ba5ce86fa6a2cbfdb96b144ffb1efbc4ff3dda49e7cece",
+    "leetcode/25/app.js": "7567bf6579d1ceccc0d79b3494e3d78340fc394cd526b26090942d7505b9938f",
+    "leetcode/25/solution.py": "f66bea0ffd8a6d0951fbee5abe59b13c9e363f0fa8e940ab9f3bfff7064fb999",
+    "leetcode/25/python-code.js": "96ad37b0b4d31a40be5b82319b3615e010b41e590b1694bc080fc819c9f7415c",
+    "leetcode/25/BRIEF.md": "f24c16cff7aa30aa2d5515bbef3ec5d55511f858d0b907bca73b5254a0c461b3"
+  },
+  "unchangedInputs": {
+    "leetcode/hard-first-ten/core.js": "342d7cbdf8c1e6f8527e6804ec286157e8fc63513a3c36c61d67c496bd08eeed",
+    "leetcode/hard-first-ten/lesson.js": "18365da600d3a774aec9afb96deb377fa269fe894424ed6cef41ad9f929c9731",
+    "leetcode/hard-first-ten/style.css": "09ebfd4c560ceee4b5c4e15442f37e21e8a9115525f20c74c1a34491af6a48b1",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "specs/reviews/25-review-1-e91d5f55.md": "04f7d91025f45dfa954e7d49365e35bb9e215a9ea0156f1551bb8adaf6e00dae",
+    "specs/leetcode-review-gates.md": "cd5f5a96fa6cecf3d7819ca6d0aa79729661b8fecffb9fdcc62875171b7c6cf8"
+  },
+  "tests": {
+    "leetcode/25/tests/check_browser.cjs": "dff93052bfaca824f73263b9b216b1df10d676fbba11155d9168bdca1accfb8c",
+    "leetcode/25/tests/check_model.cjs": "317d0ef1fd5495fd6529379c4f3f0d981fd34a9181570a666813f486c99d0b8a",
+    "leetcode/25/tests/check_solution.py": "4f5796efc1dbde207db5044ff6e3af09fb7f66e33699907269328cdcb5ab916c"
+  }
+}

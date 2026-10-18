@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "oracle_cases": 499,
+  "trace_invariants": "shortest distances, legal increasing edges, no duplicate parents, monotonic retention, complete terminal parent sets",
+  "boundaries": [
+    "official examples",
+    "listed start",
+    "absent end",
+    "unreachable end",
+    "one-letter words",
+    "500 dictionary words / width 5",
+    "5-cube 120 paths"
+  ],
+  "source_mirror": "exact",
+  "seed": 126
+}
