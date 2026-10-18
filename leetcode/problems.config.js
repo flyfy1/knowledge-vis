@@ -108,7 +108,7 @@ window.LEETCODE_PROBLEMS = [
     "path": "30/",
     "leetcodeUrl": "https://leetcode.com/problems/substring-with-concatenation-of-all-words/",
     "language": "Python",
-    "complexity": "O(Lw + kw)"
+    "complexity": "O(Lw + kw) expected time; O(kw) auxiliary space plus output (L text characters, k words, w word width)"
   },
   {
     "id": 32,
