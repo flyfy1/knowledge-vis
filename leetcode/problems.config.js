@@ -117,8 +117,8 @@ window.LEETCODE_PROBLEMS = [
       "en": "Longest Valid Parentheses"
     },
     "desc": {
-      "zh": "栈保存尚未匹配的左括号下标，底部还有一个无效边界，初始为 −1。遇到 ( 入栈；遇到 ) 先弹栈。若栈空，说明它无法匹配，当前 i 成为新的边界。",
-      "en": "The stack holds unmatched opening indices above an invalid boundary, initially −1. Push on (. On ), pop first. If the stack becomes empty, this close has no match; its index i becomes the new boundary."
+      "zh": "手算括号配对，再用未匹配下标和排除边界求最长连续合法片段。",
+      "en": "Work through pairing by hand, then retain unmatched indices and an excluded boundary to find the longest valid contiguous fragment."
     },
     "difficulty": "hard",
     "topics": [
@@ -130,7 +130,7 @@ window.LEETCODE_PROBLEMS = [
     "path": "32/",
     "leetcodeUrl": "https://leetcode.com/problems/longest-valid-parentheses/",
     "language": "Python",
-    "complexity": "O(n)"
+    "complexity": "O(n) time; O(n) auxiliary space"
   },
   {
     "id": 37,
