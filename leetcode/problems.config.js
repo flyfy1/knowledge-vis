@@ -455,6 +455,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n^4) time; O(n^3) auxiliary space"
   },
   {
+    "id": 115,
+    "title": {
+      "zh": "不同的子序列",
+      "en": "Distinct Subsequences"
+    },
+    "desc": {
+      "zh": "从三个位置组合推导子序列计数与倒序动态规划。",
+      "en": "Derive subsequence counting and reverse DP from three choices of positions."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "115/",
+    "leetcodeUrl": "https://leetcode.com/problems/distinct-subsequences/",
+    "language": "Python",
+    "complexity": "O(mn) arithmetic operations; O(n) integer cells"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

@@ -1,0 +1,94 @@
+{
+  "status": "passed",
+  "independentTernaryPairs": 14641,
+  "fresh": [
+    [
+      "aaba",
+      "aa",
+      3
+    ],
+    [
+      "ba",
+      "ab",
+      0
+    ],
+    [
+      "AaAa",
+      "Aa",
+      3
+    ],
+    [
+      "abc",
+      "abcd",
+      0
+    ],
+    [
+      "abc",
+      "abc",
+      1
+    ],
+    [
+      "abc",
+      "x",
+      0
+    ],
+    [
+      "",
+      "",
+      1
+    ]
+  ],
+  "canonicalBeforeAddition": [
+    {
+      "j": 2,
+      "before": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "j": 1,
+      "before": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "j": 2,
+      "before": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "j": 1,
+      "before": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "j": 2,
+      "before": [
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "j": 1,
+      "before": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "maximumDomainCases": 4,
+  "inputMutation": "none",
+  "sha256": "1eb0366b05dc0976ec79fba11ef930a6fa8ed376c1438496b85a89e5c019c040"
+}
