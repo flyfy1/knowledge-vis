@@ -69,6 +69,14 @@ this actual candidate and explicit regression evidence. Score all six dimensions
 finding, and complete evidence. Missing browser/source/access evidence is blocked
 or changes_required, never a passing review. This is separate from publication.
 
+Metadata gate: lesson-entry.json complexity must be exactly ONE nonempty string
+covering time and space, for example "O(mn) time; O(n) space", never an object with
+time/space fields. Run the safe, non-mutating preflight from the repository root:
+`python3 -B scripts/register_leetcode_lesson.py <id> --validate-only`
+Replace <id> with this problem's ID. Record the command and result before
+acceptance. If it fails, report a required finding; never repair the frozen
+candidate or run registration during review.
+
 Write ONLY your exact report path and this problem's screenshot evidence directory.
 Do not edit implementation, shared files, workflow, tests, Git config, or services.
 Do not commit, push, deploy, spawn agents or create schedules. Do not read secrets.

@@ -43,6 +43,14 @@ if role in ('author', 'fix'):
         if scenario == 'missing_js_comparison' and name == 'concept.py':
             continue
         (folder / name).write_text('Candidate ' + pid + ' ' + role)
+    entry = {'id': problem['id'], 'path': pid + '/', 'difficulty': 'hard',
+             'title': {'en': 'Fixture', 'zh': 'Fixture'}, 'desc': {'en': 'Fixture', 'zh': 'Fixture'},
+             'topics': [{'en': 'Fixture', 'zh': 'Fixture'}], 'leetcodeUrl': problem['officialUrl'],
+             'language': 'JavaScript' if 'javascript' in problem.get('categories', []) else 'Python',
+             'complexity': {'time': 'O(n)', 'space': 'O(n)'} if scenario == 'invalid_metadata' else 'O(n) time; O(n) space',
+             'concepts': [{'name': 'Fixture', 'step': 1, 'description': 'Fixture concept'}]}
+    (folder / 'lesson-entry.json').write_text(json.dumps(entry))
+    (folder / 'index.html').write_text('<section id="step1"></section>')
     if 'javascript' in problem.get('categories', []):
         contract = {'problemId': problem['id'], 'language': 'JavaScript', 'officialSource': problem['officialUrl'],
                     'supportedLanguages': ['JavaScript', 'TypeScript'], 'interface': 'function memoize(fn)',
@@ -84,7 +92,7 @@ class CampaignTests(unittest.TestCase):
         self.fake = self.root / "fake-codex"
         self.fake.write_text(FAKE_CODEX)
         self.fake.chmod(0o755)
-        self.problems = [{"id": i, "title": f"Problem {i}", "paidOnly": i == 10} for i in (4, 10)]
+        self.problems = [{"id": i, "title": f"Problem {i}", "paidOnly": i == 10, "officialUrl": f"https://leetcode.com/problems/problem-{i}/"} for i in (4, 10)]
         self.write("leetcode/catalog/hard-problems.json", json.dumps({"problems": self.problems}))
         self.write("leetcode/problems.config.js", "window.LEETCODE_PROBLEMS = [];")
         for role in ("author", "review", "fix"):
@@ -190,6 +198,15 @@ class CampaignTests(unittest.TestCase):
         self.assertEqual(state["problems"]["4"]["rounds"], 2)
         self.assertEqual(state["status"], "queue_exhausted_incomplete")
 
+    def test_invalid_metadata_fails_before_review_or_acceptance(self):
+        with self.assertRaisesRegex(campaign.CampaignError, 'complexity.*nonempty string'):
+            self.invoke('invalid_metadata', '--ids', '4')
+        state = self.progress()
+        self.assertEqual(state['status'], 'failed')
+        self.assertEqual([r['role'] for r in state['runs']], ['author'])
+        self.assertNotEqual(state['problems']['4']['status'], 'accepted_local')
+        self.assertEqual((self.repo / 'leetcode/problems.config.js').read_text(), 'window.LEETCODE_PROBLEMS = [];')
+
     def test_content_blocked_continues(self):
         self.invoke("blocked")
         self.assertEqual({p["status"] for p in self.progress()["problems"].values()}, {"blocked"})
@@ -280,6 +297,14 @@ class CampaignTests(unittest.TestCase):
                 self.write("leetcode/185/" + name, "Fixture")
         self.write("leetcode/185/solution.sql", "SELECT 1;\n")
         self.write("leetcode/185/sql-code.js", 'window.SQL_SOURCE = "SELECT 1;\\n";')
+        self.write("leetcode/catalog/hard-problems.json", json.dumps({'problems': [problem]}))
+        self.write("leetcode/185/index.html", '<section id="step1"></section>')
+        self.write("leetcode/185/lesson-entry.json", json.dumps({
+            'id': 185, 'path': '185/', 'difficulty': 'hard', 'language': 'MySQL',
+            'leetcodeUrl': problem['officialUrl'], 'title': {'en': 'Fixture', 'zh': 'Fixture'},
+            'desc': {'en': 'Fixture', 'zh': 'Fixture'}, 'topics': [{'en': 'Fixture', 'zh': 'Fixture'}],
+            'complexity': 'O(n) time; O(n) space',
+            'concepts': [{'name': 'Fixture', 'step': 1, 'description': 'Fixture concept'}]}))
         campaign.required_files(self.repo, problem, True)
         self.write("leetcode/185/sql-code.js", 'window.SQL_SOURCE = "SELECT 2;";')
         with self.assertRaisesRegex(campaign.CampaignError, "parity"):

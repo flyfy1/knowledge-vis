@@ -19,7 +19,7 @@ import threading
 import uuid
 
 from leetcode_registry import read_registry
-from register_leetcode_lesson import solution_language, validate_language_sources, LANGUAGE_FILES
+from register_leetcode_lesson import solution_language, validate_language_sources, validate_metadata, LANGUAGE_FILES
 
 
 WEIGHTS = (15, 20, 20, 20, 15, 10)
@@ -318,9 +318,12 @@ def required_files(repo, problem, new):
         missing = [name for name in required if not (folder / name).is_file()]
         if missing:
             raise CampaignError(f"Lesson {problem_id} is not ready; missing {', '.join(missing)}")
-        validate_language_sources(problem, folder)
-    except (ValueError, KeyError) as error:
-        raise CampaignError(f"Lesson {problem_id} language contract is invalid: {error}") from error
+        if new:
+            validate_metadata(repo, problem_id)
+        else:
+            validate_language_sources(problem, folder)
+    except (ValueError, KeyError, OSError) as error:
+        raise CampaignError(f"Lesson {problem_id} metadata/source contract is invalid: {error}") from error
 
 
 def process_problem(args, problem, state, state_path, base_url):

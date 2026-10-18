@@ -256,3 +256,21 @@ code value. Explain boundary cases in ordinary language before presenting terse
 conditions. A vivid scenario is useful only when its rules match the problem;
 keep the original formal contract and distinguish teaching adaptations. Review
 missing causal bridges as required findings regardless of algorithm correctness.
+
+## Non-mutating metadata preflight
+
+`lesson-entry.json` complexity is exactly one nonempty string covering time and
+space, for example `"O(mn) arithmetic operations; O(n) integer cells"`; an object
+such as `{time,space}` is invalid. Existing accepted nonempty cost strings remain
+compatible; preflight checks the shape, while review checks the cost claim.
+
+Before author/fix readiness and independent acceptance, run from the checkout root:
+`python3 -B scripts/register_leetcode_lesson.py <id> --validate-only`.
+This reads metadata, catalog, concept anchors and language/source contracts without
+registering, generating files, or changing registry, CONCEPT-MAP, index, metadata,
+or any tracked/untracked file. Registration and new-lesson campaign readiness use
+the same validation interface. Failure prevents readiness/acceptance; reviewers
+record a finding rather than repairing the frozen candidate. Any metadata fix
+requires a new candidate and independent review, never a post-review mutation or
+a rewrite of prior acceptance, campaign state, or reports. The existing positional
+registration CLI remains available only to the authorized registration workflow.
