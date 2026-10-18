@@ -1,0 +1,55 @@
+{
+  "problemId": 212,
+  "candidate": "212-author-c1",
+  "frozenAt": "2026-10-18T13:53:46.909399+00:00",
+  "baseCommit": "baef57b837bfeca9455577a9697c1b38d61e2264",
+  "status": "author self-checked; independent review pending",
+  "files": {
+    "BRIEF.md": "39ac22797047c658e2c91e59fa6ef1e5377cc3158118044d55c6dff799cd0fc7",
+    "SELF-CHECK.md": "855813dd90e598e1f6cc35fb28694bb15dc61ee51c411a07b280c33fde2619cb",
+    "app.js": "7636b004da033ad6c76c053a9aa4e67b7bcc62e18a5b55f36c03a2d69e4594e7",
+    "copy.js": "637d26204dff1edef77f1cae75f646aa1034df262db6273e4fa26d3dfd48db79",
+    "core.js": "19530c0417393a9eae2c97b69023d113b056dcbe65775ba221f14747e90fbddd",
+    "index.html": "6d7d3ca8b94a1f05a15ce646b872949f6cb0e7eb0d7cadee371ec3d49efe7cc0",
+    "lesson-entry.json": "9ef88b1825f2c2748ef5fcd5fc655f9e74fe52294c69edbc26bde3ea5a8b6b5e",
+    "python-code.js": "f030ec72bbb5bb95955cb63308c1a782607e800cc2ae0d4bee9b4179ace17118",
+    "solution.py": "8242dadd8a7573bec6067065cf74de7d5ab3f6571c71e1039fbe6db14d75828c",
+    "style.css": "5ff034daecc7e0a71ea80970889441949e57a8e1bec1aee749b24f7948805ce3",
+    "tests/README.md": "ff1a6e3af1324e97cd01e90e5151db07e5675db4c4a963a37713cfe7ae2464c5",
+    "tests/browser.cjs": "0a83c6986c598f3a9e79b2445fe19d3b1179bc837536261bea8a3bfe5b7cf964",
+    "tests/evidence/algorithm-results.json": "fac2ccfdabb1879fda2c60d38c1da8be2e94eab70ddf917c855fbd4d915ba4ec",
+    "tests/evidence/browser-results.json": "f988e702a0c8d4df01a2b9f64ec76e9a7371b747739f91802892ee09924017f8",
+    "tests/evidence/css-zoom200-en.png": "515cb31a2b5e7e18c5e9e3fa54aa3b237149330b2b97b87cd4ef8b32d6b64f0c",
+    "tests/evidence/css-zoom200-zh.png": "3fdfc778c271c582783ac8b02d2bcb84a51a8c1d67304304fcced5b2a906060f",
+    "tests/evidence/downloaded-solution.py": "8242dadd8a7573bec6067065cf74de7d5ab3f6571c71e1039fbe6db14d75828c",
+    "tests/evidence/lab-1440-en.png": "d01a5952a046225ff304d38deba516d9dad52281ae7dcb3d4ba2513f6ea20dc5",
+    "tests/evidence/lab-1440-zh.png": "58a6e32e50a6ac371a566756c5db5c7a7355451cd9be20a662a20db40fe55f92",
+    "tests/evidence/lab-320-en.png": "4f0459f2617fb7aeedaaf1d279eb6e8623a2594952971160358ad1b2044a938b",
+    "tests/evidence/lab-320-zh.png": "bded9a8e12a0b7a81c926cbe577c16519d283c0475b045dd2afd82b03dba5842",
+    "tests/evidence/lab-390-en.png": "03cd14ebfff1a459a745a81ebc689b44854467d6a9311bb9ca3ead4810ea52a4",
+    "tests/evidence/lab-390-zh.png": "40387d0e0d590e8fe2c5b537806ad56460e0ee78bee1c8ef359026d6ab487ed5",
+    "tests/evidence/lab-736-en.png": "2efa2247a9c3e00034a303c081a1df34dab6b20890bbafdccd4b93d842ba6555",
+    "tests/evidence/lab-736-zh.png": "df222095dbad2adec1d771a8d9df6f6617741a5b16f7a15dfe2604e1d9531c4d",
+    "tests/evidence/official-graphql.json": "fdd83e5e509bd12a70f6ee0a0ff18c92d0b4f30a5836973964362893ad8e116d",
+    "tests/evidence/official-page.html": "59c96db2975d2c4089799a9934b40eae9dbb22f5b9e2943234a1e661c54a8cb7",
+    "tests/evidence/preflight.json": "4a4e00d798513061f8c5ab2c6e7742040dc4bd54257d90730fada93fac4c4151",
+    "tests/evidence/zoom200-en.png": "7ed78e9cf6914a252296e0bac09b164a41db5987576858b4d1b60cf4caaa6390",
+    "tests/evidence/zoom200-zh.png": "bf9e3d65ce2b6d34600c27a7c26d15b17b5270e0acc019ce62364e635996f460",
+    "tests/oracle.py": "22f2482960e8d6a369c83cecd9bbb56caa7dbfedf6ebc2923559528368bc97e8",
+    "tests/test_solution.py": "e2e60b318afe20754b8fc256c9bcf48ceebb1786e7c1eae583112dc983e80366"
+  },
+  "sharedAssets": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "cssBytes": {
+    "shared": 9425,
+    "local": 1920
+  },
+  "checks": {
+    "algorithm": "passed; 293 oracle cases, 3 boundary fixtures, 5133 trace frames",
+    "browser": "passed; 12 preset/locale combinations, 8 width/locale layouts, enlarged views inspected",
+    "preflight": "python3 -B scripts/register_leetcode_lesson.py 212 --validate-only; exit 0"
+  },
+  "review": "pending separate author-independent run"
+}

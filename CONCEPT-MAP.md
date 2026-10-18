@@ -625,3 +625,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Settled water and running maxima | `leetcode/42/#step2` | Prove why the lower known maximum settles one endpoint. |
 
 <!-- /leetcode-42-campaign -->
+
+
+<!-- leetcode-212-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Trie prefix pruning | `leetcode/212/#step1` | Share prefixes while preserving terminal markers and child branches. |
+| Board backtracking invariant | `leetcode/212/#step2` | A numbered simple path matches the current trie prefix; undo restores it. |
+
+<!-- /leetcode-212-campaign -->
