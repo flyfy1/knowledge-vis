@@ -1,0 +1,132 @@
+{
+  "revision": "97a3689bb303d97357160b12ad841000df3c9119",
+  "checks": [
+    "All nine served lesson/shared assets exactly equal local candidate files",
+    "Mirror, displayed source and downloaded solution.py have exact full-source parity",
+    "Successful clipboard copy exact parity",
+    "Rejected clipboard exposes focused, fully selected readonly source with exact parity",
+    "All six presets: seed/terminal disabled controls, full history length, keyboard slider Home/End, undo/redo exact table restoration",
+    "Keyboard Enter advances; Chinese toggle preserves operation, arrays, choice, reveal and localizes feedback/history",
+    "Both wrong predictions and correct prediction reveal; changing answer hides old feedback; keyboard rating edit restarts table and retains independent quiz",
+    {
+      "lang": "zh",
+      "layout": {
+        "width": 320,
+        "scroll": 320,
+        "table": 262
+      }
+    },
+    {
+      "lang": "zh",
+      "layout": {
+        "width": 390,
+        "scroll": 390,
+        "table": 332
+      }
+    },
+    {
+      "lang": "zh",
+      "layout": {
+        "width": 1280,
+        "scroll": 1280,
+        "table": 910
+      }
+    },
+    {
+      "lang": "en",
+      "layout": {
+        "width": 320,
+        "scroll": 320,
+        "table": 262
+      }
+    },
+    {
+      "lang": "en",
+      "layout": {
+        "width": 390,
+        "scroll": 390,
+        "table": 332
+      }
+    },
+    {
+      "lang": "en",
+      "layout": {
+        "width": 1280,
+        "scroll": 1280,
+        "table": 910
+      }
+    },
+    "200% CSS zoom: reflow at desktop viewport, no document overflow; native browser chrome zoom unavailable in headless",
+    "Tab focus moves to enabled control and has visible orange 3px outline; disabled previous/reset retain full opacity",
+    "Locale preference persists on reload; algorithm trace intentionally initializes anew"
+  ],
+  "hashes": {
+    "index.html": "176ae6f9ffc0a9c7714ce57810d9303eabb9ac9736198591e0c6dc15e74337a5",
+    "app.js": "01d70e4e148ae39d551ad7aa16d2a06a5c60004a4b27fb6c26969181794f472b",
+    "copy.js": "1c7771f32ff427c9ee6b3b2f5f66a73c001f700cbc2599b68cc5fbddfc77ad3f",
+    "core.js": "8e14b1b206f9f32e4bbf0139dd62d9245f5f5a5cf5be9f4cb4311860d88a7904",
+    "style.css": "d41e46371de193c69adf84d569683d40c01a248399a73c99d1aed99dcd291bc1",
+    "python-code.js": "cccb3b4a20da881e45be0b119d320da00f7377e8d76cbd12f88d4344b23be4fd",
+    "solution.py": "fffffee5fd52a2931e21436ed6088f080a772fb47d125a8897cbeecece7dbeea",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b"
+  },
+  "styles": [
+    {
+      "id": "hint",
+      "text": "Official bounds: 1 ≤ n ≤ 50,000; 0 ≤ ratings[i] ≤ 50,000, where n coun",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1",
+      "font": "14px"
+    },
+    {
+      "id": "hint",
+      "text": "Reversible teaching simulation, not execution of Python in the browser",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1",
+      "font": "14px"
+    },
+    {
+      "id": "prev",
+      "text": "← Undo one operation",
+      "disabled": false,
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "font": "16px"
+    },
+    {
+      "id": "next",
+      "text": "Complete next operation →",
+      "disabled": true,
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "font": "16px"
+    },
+    {
+      "id": "active-cell",
+      "text": "1 ★",
+      "color": "rgb(255, 180, 84)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1",
+      "font": "15px"
+    },
+    {
+      "id": "reveal",
+      "text": "Reveal and explain",
+      "disabled": false,
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "font": "16px"
+    }
+  ],
+  "keyboardFocus": {
+    "id": "end",
+    "outline": "rgb(255, 180, 84) solid 3px"
+  },
+  "errors": []
+}

@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "exhaustive_ratings": 363,
+  "enumeration": "all allocations in 1..n, n\u22645, ratings\u2208{0,1,2}",
+  "seeded_rating_order_checks": 2000,
+  "seed": 135,
+  "maximum_n": 50000,
+  "input_mutation": "none",
+  "official_examples": "pass",
+  "source_mirror": "exact",
+  "baseline_intermediate_rounds": "pass"
+}

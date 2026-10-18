@@ -1,0 +1,39 @@
+{
+  "id": 32,
+  "title": {
+    "zh": "最长有效括号",
+    "en": "Longest Valid Parentheses"
+  },
+  "desc": {
+    "zh": "手算括号配对，再用未匹配下标和排除边界求最长连续合法片段。",
+    "en": "Work through pairing by hand, then retain unmatched indices and an excluded boundary to find the longest valid contiguous fragment."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "边界栈",
+      "en": "Boundary stack"
+    }
+  ],
+  "path": "32/",
+  "leetcodeUrl": "https://leetcode.com/problems/longest-valid-parentheses/",
+  "language": "Python",
+  "complexity": "O(n) time; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "Validity by hand",
+      "step": 0,
+      "description": "Trace balance from each candidate start; reject negative prefixes and require a zero ending."
+    },
+    {
+      "name": "Excluded boundary stack",
+      "step": 1,
+      "description": "Retain unmatched opening indices and an uncrossable closing boundary to avoid rescanning."
+    },
+    {
+      "name": "Reversible parenthesis scan",
+      "step": 2,
+      "description": "Compare pop, boundary reset, current valid suffix length and historical best."
+    }
+  ]
+}

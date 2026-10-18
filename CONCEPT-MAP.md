@@ -519,3 +519,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Retained window and operation state | `leetcode/30/#step2` | Compare before and after counts and exclusive window boundaries during add, shrink and reset. |
 
 <!-- /leetcode-30-campaign -->
+
+
+<!-- leetcode-135-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Directional lower bounds | `leetcode/135/#step2` | Derive left and right candy requirements from adjacent rating chains. |
+| Componentwise minimum | `leetcode/135/#step4` | Prove feasibility and minimality of the maximum of directional bounds. |
+
+<!-- /leetcode-135-campaign -->

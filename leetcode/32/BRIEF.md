@@ -57,3 +57,42 @@ Run `python3 leetcode/tests/test_hard_solutions.py`,
 `NODE_PATH=<playwright package directory> node leetcode/tests/test_hard_browser.cjs`.
 See `../../specs/reviews/leetcode-first-ten-review.md` for observed review evidence.
 No actual LeetCode submission or human learning test is claimed.
+
+## Required-review revision: 32-R1 and 32-R2 (2026-10-18)
+
+Product-fit verdict: reuse the existing lesson, layout, tokens and controls. The
+reader's immediate job is to calculate validity before learning the saved-index
+rule. This correction implements the independent review's requested bridge;
+it adds no new feature or layout. Original review:
+`../../specs/reviews/32-review-1-c7934545.md`. Independent re-review is pending.
+
+P0 / highest-return slice: supply lesson-local metadata and replace the result-only
+opening with explicit calculations in both languages. P1/P2: no additions.
+Deferred: redesign and custom-input controls, because neither is needed to repair
+the findings. Existing colors, typography, spacing and motion remain inherited.
+
+The first reading path now defines pairing (including nested and adjacent pairs),
+then balance as the count waiting to close. It explains negative-prefix rejection
+and the zero-ending test before baseline code. For the same default input, scan
+from 0 and reject; scan from 1 through balances 1,0,1,0,-1; then exclude every
+other start. Calculate 4−1+1=4 explicitly. Use the second example `(()` to show why a positive ending is insufficient. The
+counterexample `)(` rejects equal totals as a validity rule. The later independent
+prediction `())(())` remains unrevealed until the learner chooses and checks.
+
+Before the optimized rule, define a stack as end-only list operations, push as
+append, pop as removal of the last item, and top as that item. Define suffix next
+to its first use in the derivation. Connect the original hand calculation to
+`[0,3] → [0]` at i=4 and length 4−0=4, explaining which rescanning is avoided.
+
+32-R1: new `lesson-entry.json` uses Python and the single string
+`O(n) time; O(n) auxiliary space`; deep links target existing steps. There is no
+non-Python exception or supportedLanguages list to repair. Python is the preferred
+faithful interface. Canonical `solution.py` and `python-code.js` remain byte-exact.
+The source/mirror/export pair was read from `LANGUAGE_FILES` in the registration
+script. No registration is authorized by this revision.
+
+Done criteria: safe validation-only preflight passes; actual Python and trace
+regressions pass; both translations show calculations before abstraction; browser
+controls and exact source display/copy/download work in both locales. Evidence
+and candidate hashes live under `evidence/fix-r1-r2/`. These are author self-checks,
+not independent acceptance, a LeetCode submission, or novice comprehension data.
