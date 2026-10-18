@@ -1,0 +1,1256 @@
+{
+  "status": "passed",
+  "checks": [
+    "en: preset 0, every endpoint and rewind",
+    "en: preset 1, every endpoint and rewind",
+    "en: preset 2, every endpoint and rewind",
+    "en: preset 3, every endpoint and rewind",
+    "en: preset 4, every endpoint and rewind",
+    "en: preset 5, every endpoint and rewind",
+    "zh: preset 0, every endpoint and rewind",
+    "zh: preset 1, every endpoint and rewind",
+    "zh: preset 2, every endpoint and rewind",
+    "zh: preset 3, every endpoint and rewind",
+    "zh: preset 4, every endpoint and rewind",
+    "zh: preset 5, every endpoint and rewind"
+  ],
+  "geometry": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "scroll": 320,
+      "svgWidth": 560,
+      "heap": [
+        {
+          "w": 258,
+          "h": 80,
+          "text": "Position 0 · root\n(-9,8) · Active"
+        },
+        {
+          "w": 258,
+          "h": 80,
+          "text": "Position 1\n(-3,4) · Expired; remove later"
+        },
+        {
+          "w": 258,
+          "h": 80,
+          "text": "Position 2\n(-5,6) · Active"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "",
+          "w": 49.0625,
+          "h": 48
+        },
+        {
+          "id": "preset",
+          "w": 258,
+          "h": 48
+        },
+        {
+          "id": "prev",
+          "w": 182.546875,
+          "h": 48
+        },
+        {
+          "id": "next",
+          "w": 213.0625,
+          "h": 48
+        },
+        {
+          "id": "reset",
+          "w": 94.546875,
+          "h": 48
+        },
+        {
+          "id": "end",
+          "w": 136.21875,
+          "h": 48
+        },
+        {
+          "id": "reveal",
+          "w": 172.078125,
+          "h": 48
+        },
+        {
+          "id": "copy",
+          "w": 126.71875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "scroll": 320,
+      "svgWidth": 1120,
+      "heap": [
+        {
+          "w": 196,
+          "h": 272,
+          "text": "Position 0 · root\n(-9,8) · Active"
+        },
+        {
+          "w": 196,
+          "h": 384,
+          "text": "Position 1\n(-3,4) · Expired; remove later"
+        },
+        {
+          "w": 196,
+          "h": 272,
+          "text": "Position 2\n(-5,6) · Active"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 96,
+          "h": 96
+        },
+        {
+          "id": "",
+          "w": 98.125,
+          "h": 96
+        },
+        {
+          "id": "preset",
+          "w": 196,
+          "h": 96
+        },
+        {
+          "id": "prev",
+          "w": 196,
+          "h": 204
+        },
+        {
+          "id": "next",
+          "w": 196,
+          "h": 260
+        },
+        {
+          "id": "reset",
+          "w": 189.09375,
+          "h": 96
+        },
+        {
+          "id": "end",
+          "w": 196,
+          "h": 148
+        },
+        {
+          "id": "reveal",
+          "w": 256,
+          "h": 148
+        },
+        {
+          "id": "copy",
+          "w": 253.421875,
+          "h": 96
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "scroll": 390,
+      "svgWidth": 560,
+      "heap": [
+        {
+          "w": 328,
+          "h": 80,
+          "text": "Position 0 · root\n(-9,8) · Active"
+        },
+        {
+          "w": 328,
+          "h": 80,
+          "text": "Position 1\n(-3,4) · Expired; remove later"
+        },
+        {
+          "w": 328,
+          "h": 80,
+          "text": "Position 2\n(-5,6) · Active"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "",
+          "w": 49.0625,
+          "h": 48
+        },
+        {
+          "id": "preset",
+          "w": 328,
+          "h": 48
+        },
+        {
+          "id": "prev",
+          "w": 182.546875,
+          "h": 48
+        },
+        {
+          "id": "next",
+          "w": 213.0625,
+          "h": 48
+        },
+        {
+          "id": "reset",
+          "w": 94.546875,
+          "h": 48
+        },
+        {
+          "id": "end",
+          "w": 136.21875,
+          "h": 48
+        },
+        {
+          "id": "reveal",
+          "w": 172.078125,
+          "h": 48
+        },
+        {
+          "id": "copy",
+          "w": 126.71875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "scroll": 390,
+      "svgWidth": 1120,
+      "heap": [
+        {
+          "w": 266,
+          "h": 216,
+          "text": "Position 0 · root\n(-9,8) · Active"
+        },
+        {
+          "w": 266,
+          "h": 272,
+          "text": "Position 1\n(-3,4) · Expired; remove later"
+        },
+        {
+          "w": 266,
+          "h": 160,
+          "text": "Position 2\n(-5,6) · Active"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 96,
+          "h": 96
+        },
+        {
+          "id": "",
+          "w": 98.125,
+          "h": 96
+        },
+        {
+          "id": "preset",
+          "w": 266,
+          "h": 96
+        },
+        {
+          "id": "prev",
+          "w": 266,
+          "h": 148
+        },
+        {
+          "id": "next",
+          "w": 266,
+          "h": 148
+        },
+        {
+          "id": "reset",
+          "w": 189.09375,
+          "h": 96
+        },
+        {
+          "id": "end",
+          "w": 266,
+          "h": 148
+        },
+        {
+          "id": "reveal",
+          "w": 326,
+          "h": 148
+        },
+        {
+          "id": "copy",
+          "w": 253.421875,
+          "h": 96
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "scroll": 736,
+      "svgWidth": 644,
+      "heap": [
+        {
+          "w": 210,
+          "h": 108,
+          "text": "Position 0 · root\n(-9,8) · Active"
+        },
+        {
+          "w": 210,
+          "h": 108,
+          "text": "Position 1\n(-3,4) · Expired; remove later"
+        },
+        {
+          "w": 210,
+          "h": 108,
+          "text": "Position 2\n(-5,6) · Active"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "",
+          "w": 49.0625,
+          "h": 48
+        },
+        {
+          "id": "preset",
+          "w": 646,
+          "h": 48
+        },
+        {
+          "id": "prev",
+          "w": 188.546875,
+          "h": 48
+        },
+        {
+          "id": "next",
+          "w": 219.0625,
+          "h": 48
+        },
+        {
+          "id": "reset",
+          "w": 100.546875,
+          "h": 48
+        },
+        {
+          "id": "end",
+          "w": 142.21875,
+          "h": 48
+        },
+        {
+          "id": "reveal",
+          "w": 172.078125,
+          "h": 48
+        },
+        {
+          "id": "copy",
+          "w": 126.71875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "scroll": 736,
+      "svgWidth": 1120,
+      "heap": [
+        {
+          "w": 556,
+          "h": 160,
+          "text": "Position 0 · root\n(-9,8) · Active"
+        },
+        {
+          "w": 556,
+          "h": 160,
+          "text": "Position 1\n(-3,4) · Expired; remove later"
+        },
+        {
+          "w": 556,
+          "h": 160,
+          "text": "Position 2\n(-5,6) · Active"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 96,
+          "h": 96
+        },
+        {
+          "id": "",
+          "w": 98.125,
+          "h": 96
+        },
+        {
+          "id": "preset",
+          "w": 556,
+          "h": 96
+        },
+        {
+          "id": "prev",
+          "w": 377.09375,
+          "h": 96
+        },
+        {
+          "id": "next",
+          "w": 438.125,
+          "h": 96
+        },
+        {
+          "id": "reset",
+          "w": 201.09375,
+          "h": 96
+        },
+        {
+          "id": "end",
+          "w": 284.421875,
+          "h": 96
+        },
+        {
+          "id": "reveal",
+          "w": 344.140625,
+          "h": 96
+        },
+        {
+          "id": "copy",
+          "w": 253.421875,
+          "h": 96
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "scroll": 1440,
+      "svgWidth": 908,
+      "heap": [
+        {
+          "w": 298,
+          "h": 80,
+          "text": "Position 0 · root\n(-9,8) · Active"
+        },
+        {
+          "w": 298,
+          "h": 80,
+          "text": "Position 1\n(-3,4) · Expired; remove later"
+        },
+        {
+          "w": 298,
+          "h": 80,
+          "text": "Position 2\n(-5,6) · Active"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "",
+          "w": 49.0625,
+          "h": 48
+        },
+        {
+          "id": "preset",
+          "w": 910,
+          "h": 48
+        },
+        {
+          "id": "prev",
+          "w": 188.546875,
+          "h": 48
+        },
+        {
+          "id": "next",
+          "w": 219.0625,
+          "h": 48
+        },
+        {
+          "id": "reset",
+          "w": 100.546875,
+          "h": 48
+        },
+        {
+          "id": "end",
+          "w": 142.21875,
+          "h": 48
+        },
+        {
+          "id": "reveal",
+          "w": 172.078125,
+          "h": 48
+        },
+        {
+          "id": "copy",
+          "w": 126.71875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "scroll": 1440,
+      "svgWidth": 1256,
+      "heap": [
+        {
+          "w": 622,
+          "h": 160,
+          "text": "Position 0 · root\n(-9,8) · Active"
+        },
+        {
+          "w": 622,
+          "h": 160,
+          "text": "Position 1\n(-3,4) · Expired; remove later"
+        },
+        {
+          "w": 622,
+          "h": 160,
+          "text": "Position 2\n(-5,6) · Active"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 96,
+          "h": 96
+        },
+        {
+          "id": "",
+          "w": 98.125,
+          "h": 96
+        },
+        {
+          "id": "preset",
+          "w": 1260,
+          "h": 96
+        },
+        {
+          "id": "prev",
+          "w": 377.09375,
+          "h": 96
+        },
+        {
+          "id": "next",
+          "w": 438.125,
+          "h": 96
+        },
+        {
+          "id": "reset",
+          "w": 201.09375,
+          "h": 96
+        },
+        {
+          "id": "end",
+          "w": 284.421875,
+          "h": 96
+        },
+        {
+          "id": "reveal",
+          "w": 344.140625,
+          "h": 96
+        },
+        {
+          "id": "copy",
+          "w": 253.421875,
+          "h": 96
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "scroll": 320,
+      "svgWidth": 560,
+      "heap": [
+        {
+          "w": 258,
+          "h": 80,
+          "text": "位置 0 · 堆顶\n(-9,8) · 有效"
+        },
+        {
+          "w": 258,
+          "h": 80,
+          "text": "位置 1\n(-3,4) · 过期，延后删除"
+        },
+        {
+          "w": 258,
+          "h": 80,
+          "text": "位置 2\n(-5,6) · 有效"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "",
+          "w": 49.0625,
+          "h": 48
+        },
+        {
+          "id": "preset",
+          "w": 258,
+          "h": 48
+        },
+        {
+          "id": "prev",
+          "w": 142.171875,
+          "h": 48
+        },
+        {
+          "id": "next",
+          "w": 142.171875,
+          "h": 48
+        },
+        {
+          "id": "reset",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "end",
+          "w": 106.015625,
+          "h": 48
+        },
+        {
+          "id": "reveal",
+          "w": 112.015625,
+          "h": 48
+        },
+        {
+          "id": "copy",
+          "w": 121.234375,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "scroll": 320,
+      "svgWidth": 1120,
+      "heap": [
+        {
+          "w": 196,
+          "h": 272,
+          "text": "位置 0 · 堆顶\n(-9,8) · 有效"
+        },
+        {
+          "w": 196,
+          "h": 272,
+          "text": "位置 1\n(-3,4) · 过期，延后删除"
+        },
+        {
+          "w": 196,
+          "h": 216,
+          "text": "位置 2\n(-5,6) · 有效"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 96,
+          "h": 96
+        },
+        {
+          "id": "",
+          "w": 98.125,
+          "h": 96
+        },
+        {
+          "id": "preset",
+          "w": 196,
+          "h": 96
+        },
+        {
+          "id": "prev",
+          "w": 196,
+          "h": 148
+        },
+        {
+          "id": "next",
+          "w": 196,
+          "h": 148
+        },
+        {
+          "id": "reset",
+          "w": 180.015625,
+          "h": 96
+        },
+        {
+          "id": "end",
+          "w": 196,
+          "h": 148
+        },
+        {
+          "id": "reveal",
+          "w": 224.015625,
+          "h": 96
+        },
+        {
+          "id": "copy",
+          "w": 242.46875,
+          "h": 96
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "scroll": 390,
+      "svgWidth": 560,
+      "heap": [
+        {
+          "w": 328,
+          "h": 80,
+          "text": "位置 0 · 堆顶\n(-9,8) · 有效"
+        },
+        {
+          "w": 328,
+          "h": 80,
+          "text": "位置 1\n(-3,4) · 过期，延后删除"
+        },
+        {
+          "w": 328,
+          "h": 80,
+          "text": "位置 2\n(-5,6) · 有效"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "",
+          "w": 49.0625,
+          "h": 48
+        },
+        {
+          "id": "preset",
+          "w": 328,
+          "h": 48
+        },
+        {
+          "id": "prev",
+          "w": 142.171875,
+          "h": 48
+        },
+        {
+          "id": "next",
+          "w": 142.171875,
+          "h": 48
+        },
+        {
+          "id": "reset",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "end",
+          "w": 106.015625,
+          "h": 48
+        },
+        {
+          "id": "reveal",
+          "w": 112.015625,
+          "h": 48
+        },
+        {
+          "id": "copy",
+          "w": 121.234375,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "scroll": 390,
+      "svgWidth": 1120,
+      "heap": [
+        {
+          "w": 266,
+          "h": 160,
+          "text": "位置 0 · 堆顶\n(-9,8) · 有效"
+        },
+        {
+          "w": 266,
+          "h": 216,
+          "text": "位置 1\n(-3,4) · 过期，延后删除"
+        },
+        {
+          "w": 266,
+          "h": 160,
+          "text": "位置 2\n(-5,6) · 有效"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 96,
+          "h": 96
+        },
+        {
+          "id": "",
+          "w": 98.125,
+          "h": 96
+        },
+        {
+          "id": "preset",
+          "w": 266,
+          "h": 96
+        },
+        {
+          "id": "prev",
+          "w": 266,
+          "h": 148
+        },
+        {
+          "id": "next",
+          "w": 266,
+          "h": 148
+        },
+        {
+          "id": "reset",
+          "w": 180.015625,
+          "h": 96
+        },
+        {
+          "id": "end",
+          "w": 212.015625,
+          "h": 96
+        },
+        {
+          "id": "reveal",
+          "w": 224.015625,
+          "h": 96
+        },
+        {
+          "id": "copy",
+          "w": 242.46875,
+          "h": 96
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "scroll": 736,
+      "svgWidth": 644,
+      "heap": [
+        {
+          "w": 210,
+          "h": 80,
+          "text": "位置 0 · 堆顶\n(-9,8) · 有效"
+        },
+        {
+          "w": 210,
+          "h": 80,
+          "text": "位置 1\n(-3,4) · 过期，延后删除"
+        },
+        {
+          "w": 210,
+          "h": 80,
+          "text": "位置 2\n(-5,6) · 有效"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "",
+          "w": 49.0625,
+          "h": 48
+        },
+        {
+          "id": "preset",
+          "w": 646,
+          "h": 48
+        },
+        {
+          "id": "prev",
+          "w": 148.171875,
+          "h": 48
+        },
+        {
+          "id": "next",
+          "w": 148.171875,
+          "h": 48
+        },
+        {
+          "id": "reset",
+          "w": 96.015625,
+          "h": 48
+        },
+        {
+          "id": "end",
+          "w": 112.015625,
+          "h": 48
+        },
+        {
+          "id": "reveal",
+          "w": 112.015625,
+          "h": 48
+        },
+        {
+          "id": "copy",
+          "w": 121.234375,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "scroll": 736,
+      "svgWidth": 1120,
+      "heap": [
+        {
+          "w": 556,
+          "h": 160,
+          "text": "位置 0 · 堆顶\n(-9,8) · 有效"
+        },
+        {
+          "w": 556,
+          "h": 160,
+          "text": "位置 1\n(-3,4) · 过期，延后删除"
+        },
+        {
+          "w": 556,
+          "h": 160,
+          "text": "位置 2\n(-5,6) · 有效"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 96,
+          "h": 96
+        },
+        {
+          "id": "",
+          "w": 98.125,
+          "h": 96
+        },
+        {
+          "id": "preset",
+          "w": 556,
+          "h": 96
+        },
+        {
+          "id": "prev",
+          "w": 296.328125,
+          "h": 96
+        },
+        {
+          "id": "next",
+          "w": 296.328125,
+          "h": 96
+        },
+        {
+          "id": "reset",
+          "w": 192.015625,
+          "h": 96
+        },
+        {
+          "id": "end",
+          "w": 224.015625,
+          "h": 96
+        },
+        {
+          "id": "reveal",
+          "w": 224.015625,
+          "h": 96
+        },
+        {
+          "id": "copy",
+          "w": 242.46875,
+          "h": 96
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "scroll": 1440,
+      "svgWidth": 908,
+      "heap": [
+        {
+          "w": 298,
+          "h": 80,
+          "text": "位置 0 · 堆顶\n(-9,8) · 有效"
+        },
+        {
+          "w": 298,
+          "h": 80,
+          "text": "位置 1\n(-3,4) · 过期，延后删除"
+        },
+        {
+          "w": 298,
+          "h": 80,
+          "text": "位置 2\n(-5,6) · 有效"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "",
+          "w": 49.0625,
+          "h": 48
+        },
+        {
+          "id": "preset",
+          "w": 910,
+          "h": 48
+        },
+        {
+          "id": "prev",
+          "w": 148.171875,
+          "h": 48
+        },
+        {
+          "id": "next",
+          "w": 148.171875,
+          "h": 48
+        },
+        {
+          "id": "reset",
+          "w": 96.015625,
+          "h": 48
+        },
+        {
+          "id": "end",
+          "w": 112.015625,
+          "h": 48
+        },
+        {
+          "id": "reveal",
+          "w": 112.015625,
+          "h": 48
+        },
+        {
+          "id": "copy",
+          "w": 121.234375,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "scroll": 1440,
+      "svgWidth": 1256,
+      "heap": [
+        {
+          "w": 622,
+          "h": 160,
+          "text": "位置 0 · 堆顶\n(-9,8) · 有效"
+        },
+        {
+          "w": 622,
+          "h": 160,
+          "text": "位置 1\n(-3,4) · 过期，延后删除"
+        },
+        {
+          "w": 622,
+          "h": 160,
+          "text": "位置 2\n(-5,6) · 有效"
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "w": 96,
+          "h": 96
+        },
+        {
+          "id": "",
+          "w": 98.125,
+          "h": 96
+        },
+        {
+          "id": "preset",
+          "w": 1260,
+          "h": 96
+        },
+        {
+          "id": "prev",
+          "w": 296.328125,
+          "h": 96
+        },
+        {
+          "id": "next",
+          "w": 296.328125,
+          "h": 96
+        },
+        {
+          "id": "reset",
+          "w": 192.015625,
+          "h": 96
+        },
+        {
+          "id": "end",
+          "w": 224.015625,
+          "h": 96
+        },
+        {
+          "id": "reveal",
+          "w": 224.015625,
+          "h": 96
+        },
+        {
+          "id": "copy",
+          "w": 242.46875,
+          "h": 96
+        }
+      ]
+    }
+  ],
+  "focus": {
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrast": [
+    {
+      "selector": "#progress",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "#event",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": "#output",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#heap li",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".btn:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".btn.primary",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "focusContrast": [
+    {
+      "fg": "rgb(255,180,84)",
+      "bg": "rgb(13,17,23)",
+      "ratio": 10.731637051347173
+    },
+    {
+      "fg": "rgb(255,180,84)",
+      "bg": "rgb(22,27,34)",
+      "ratio": 9.809435643476732
+    },
+    {
+      "fg": "rgb(255,180,84)",
+      "bg": "rgb(28,35,48)",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "boundaryContrast": [
+    {
+      "selector": ".btn",
+      "border": "rgb(154, 167, 184)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "select",
+      "border": "rgb(154, 167, 184)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".lang-toggle",
+      "border": "rgb(154, 167, 184)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".scroll",
+      "border": "rgb(154, 167, 184)",
+      "ratio": 7.7443462241265095
+    }
+  ],
+  "cssBytes": 11757,
+  "errors": [],
+  "assets": [],
+  "external": [],
+  "sourceParity": "display/clipboard/download/fallback exact",
+  "zoomMethod": "Chromium CSS zoom=2; fixed-width diagram scroll region; viewport screenshots",
+  "offline": "local-file, denied storage passed"
+}

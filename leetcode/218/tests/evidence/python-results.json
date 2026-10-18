@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "cases": 6962,
+  "intermediate_invariant_checks": 5315,
+  "oracles": [
+    "endpoint rescan",
+    "unit-cell painting"
+  ],
+  "max_buildings": 10000,
+  "seed": 218
+}
