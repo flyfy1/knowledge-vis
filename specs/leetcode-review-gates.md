@@ -130,10 +130,25 @@ Each required finding has a stable ID and records:
 - Severity and reason, owner/next action, fix revision, regression evidence,
   reviewer recheck, and final status (`open`, `fixed awaiting review`, `closed`).
 
+For an alleged state label/value collision, record the concrete candidate,
+preset/input, event and actions, locale, and width; retain a relevant screenshot
+and rendered text/label/value geometry demonstrating actual text intersection
+or clipping. Overlapping container boxes alone are insufficient evidence.
+Distinguish viewport, scroll-position, and capture artifacts from reproducible
+visible collisions; recheck the settled view and ordinary operation as needed.
+Inspect dense intermediate states and long identifiers in both locales at
+320/390 px, including shared untranslated variable labels. Page-wide overflow
+checks alone do not establish essential state readability; component scrolling
+is acceptable under the explainer's association and keyboard-access rules.
+
 The author can mark a finding fixed awaiting review; the reviewer closes it
 against the actual fixed candidate. Attach original evidence and append the
 closure; do not rewrite the original failure into a passing result. Disagreement
 keeps the finding open for adjudication under WORKFLOW.
+
+For these readability findings too, freeze the reviewed candidate; a fix needs
+a new candidate and a separate fresh review of that actual candidate. Neither
+passing test counts nor a score can erase an open required defect.
 
 Review scope follows the change:
 
