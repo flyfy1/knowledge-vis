@@ -377,6 +377,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(m+n) time; O(k) auxiliary space, k≤52; O(L) output"
   },
   {
+    "id": 84,
+    "title": {
+      "zh": "柱状图中最大的矩形",
+      "en": "Largest Rectangle in Histogram"
+    },
+    "desc": {
+      "zh": "从最短柱限制面积，到用单调栈确定矩形边界。",
+      "en": "Derive rectangle boundaries from the shortest bar and a monotonic stack."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "单调栈",
+        "en": "Monotonic stack"
+      },
+      {
+        "zh": "数组",
+        "en": "Arrays"
+      }
+    ],
+    "path": "84/",
+    "leetcodeUrl": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+    "language": "Python",
+    "complexity": "O(n) time, O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
