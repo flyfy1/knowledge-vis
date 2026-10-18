@@ -403,6 +403,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time, O(n) auxiliary space"
   },
   {
+    "id": 85,
+    "title": {
+      "zh": "最大矩形",
+      "en": "Maximal Rectangle"
+    },
+    "desc": {
+      "zh": "把全 1 矩形变成逐行高度，推导单调栈的宽度边界。",
+      "en": "Turn all-one rectangles into row heights and derive stack width boundaries."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "单调栈",
+        "en": "Monotonic stack"
+      },
+      {
+        "zh": "矩阵",
+        "en": "Matrix"
+      }
+    ],
+    "path": "85/",
+    "leetcodeUrl": "https://leetcode.com/problems/maximal-rectangle/",
+    "language": "Python",
+    "complexity": "O(rows × cols) time · O(cols) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
