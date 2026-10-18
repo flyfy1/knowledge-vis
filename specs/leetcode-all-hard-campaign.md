@@ -190,3 +190,9 @@ policy and runtime must match the frozen candidate; run the reviewed importer
 externally before a policy update when integrating lanes created under that policy.
 The [independent importer review](reviews/leetcode-lane-import-review.md) retains
 the reproduced failures, fixes, and remaining recovery boundaries.
+
+The runner's frozen fingerprint includes actual filesystem permissions, while Git
+normalizes regular-file modes. Reconstruct it from immutable candidate bytes plus
+preserved lane permissions and require the exact original digest. Missing historical
+permission evidence, permission drift, or executable-mode disagreement must reject
+the import; never rewrite the recorded hash to make a transfer pass.
