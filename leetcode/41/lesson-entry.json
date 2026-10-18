@@ -1,0 +1,34 @@
+{
+  "id": 41,
+  "title": {
+    "zh": "缺失的第一个正数",
+    "en": "First Missing Positive"
+  },
+  "desc": {
+    "zh": "用原数组的位置记录正数是否出现，逐次交换并解释重复值为何必须停止。",
+    "en": "Record positive values in their own array positions, tracing swaps and why equal destinations stop."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "原地位置标记",
+      "en": "In-place placement"
+    }
+  ],
+  "path": "41/",
+  "leetcodeUrl": "https://leetcode.com/problems/first-missing-positive/",
+  "language": "Python",
+  "complexity": "O(n) time; O(1) auxiliary space",
+  "concepts": [
+    {
+      "name": "Presence by placement",
+      "step": 1,
+      "description": "Derive x minus one as the destination and bound useful swaps by permanently filled slots."
+    },
+    {
+      "name": "Reversible placement trace",
+      "step": 2,
+      "description": "Follow chained swaps and duplicate stops with explicit operation markers."
+    }
+  ]
+}

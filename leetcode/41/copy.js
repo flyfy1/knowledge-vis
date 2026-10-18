@@ -72,8 +72,8 @@ window.LESSON_COPY = {
     "Final result"
   ],
   "state": [
-    "算法状态（变量与图示索引）",
-    "Algorithm state (variables and diagram indices)"
+    "图示操作标记",
+    "Diagram operation markers"
   ],
   "operation": [
     "对应 Python 操作（局部展开）",
@@ -104,8 +104,8 @@ window.LESSON_COPY = {
     "How do visible quantities map to code?"
   ],
   "quantity": [
-    "Python 名称",
-    "Python name"
+    "代码 / 图示名称",
+    "Code / diagram name"
   ],
   "meaning": [
     "图中的含义",
@@ -224,12 +224,12 @@ window.LESSON_COPY = {
     "[3,4,−1,1] contains 1 and 3 but not 2, so the answer is 2. It is neither the minimum element nor necessarily the maximum plus one."
   ],
   "cost": [
-    "集合基线期望 O(n) 时间，但需要 O(n) 空间。n 个数不可能占满 1…n+1，因此答案一定在这个范围；可以直接借用原数组的 n 个位置记录 1…n。",
-    "The set baseline takes expected O(n) time but O(n) space. n values cannot occupy all of 1…n+1, so the answer lies in that range. Reuse the n array positions to record the presence of 1…n."
+    "set(nums) 把出现过的数放入集合；集合只记录“有没有”，重复数只留一份，value in seen 就是在查它是否出现。基线依次查 1、2……，期望 O(n) 时间，但需要 O(n) 空间。n 个数不可能占满 1…n+1，因此答案一定在这个范围；可以借用原数组的 n 个位置记录 1…n。",
+    "set(nums) collects the values that occur, keeping one copy of each. value in seen asks whether that value occurs. The baseline checks 1, 2, … in order, taking expected O(n) time but O(n) space. n values cannot occupy all of 1…n+1, so the answer lies in that range. Reuse the n array positions to record the presence of 1…n."
   ],
   "derive": [
-    "给数值 x 指定目标下标 x−1。只要 1≤x≤n 且目标尚不是 x，就把当前位置与目标交换。交换后当前位置得到另一个数，仍要继续检查，不能立刻推进 i。",
-    "Assign value x to index x−1. While 1≤x≤n and the destination is not already x, swap the current value with its destination. Recheck the incoming value before advancing i."
+    "先看两格 [2,1]：下标从 0 开始，第一格应是 1，第二格应是 2。把第一格的 2 放到下标 1，与 1 交换，得到 [1,2]；两格都有了，缺数是 3。推广到数值 x：它应放在下标 x−1。只要 1≤x≤n 且目标尚不是 x，就与目标交换。交换后当前位置得到另一个数，仍要继续检查，不能立刻推进 i。",
+    "Start with two cells [2,1]. Indices start at 0: the first cell should hold 1 and the second should hold 2. Move the first cell’s 2 to index 1 by swapping it with 1, giving [1,2]. Both slots are filled, so 3 is missing. In general, value x belongs at index x−1. While 1≤x≤n and the destination is not already x, swap with that destination. Recheck the incoming value before advancing i."
   ],
   "proof": [
     "每次有效交换至少把一个数放进最终正确位置，而且已正确的位置不会被不同数移走，所以总交换次数不超过 n。若目标已有 x，继续交换只会循环；跳过重复值即可。最后第一个 nums[i]≠i+1 就暴露了缺数。",
@@ -294,6 +294,10 @@ window.LESSON_COPY = {
   "introducedLink": [
     "节点重连与值交换的区别",
     "Rewiring nodes versus swapping values"
+  ],
+  "markerLegend": [
+    "op_i 是本帧放置循环检查的位置；swap_to 是本帧刚完成交换的目标下标。∅ 表示本帧没有对应标记，不是 Python 的 −1 下标，也不是保存的变量。第一次交换后跳过 −1 时，图示为 op_i=0、swap_to=∅；Python 上一次保存的 target 仍是 2。最终扫描帧汇总结果，两个标记均为 ∅。",
+    "op_i marks the placement-loop position described by this frame; swap_to marks the destination of a swap just completed in this frame. ∅ means no applicable marker, not Python index −1 or a saved variable. After the first swap, skipping −1 shows op_i=0 and swap_to=∅; Python’s saved target is still 2. The final frame summarizes the scan result with both markers ∅."
   ]
 };
 window.LESSON = {
@@ -321,12 +325,12 @@ window.LESSON = {
   ],
   "baseline": "def baseline(nums):\n    seen = set(nums)\n    value = 1\n    while value in seen:\n        value += 1\n    return value",
   "cost": [
-    "集合基线期望 O(n) 时间，但需要 O(n) 空间。n 个数不可能占满 1…n+1，因此答案一定在这个范围；可以直接借用原数组的 n 个位置记录 1…n。",
-    "The set baseline takes expected O(n) time but O(n) space. n values cannot occupy all of 1…n+1, so the answer lies in that range. Reuse the n array positions to record the presence of 1…n."
+    "set(nums) 把出现过的数放入集合；集合只记录“有没有”，重复数只留一份，value in seen 就是在查它是否出现。基线依次查 1、2……，期望 O(n) 时间，但需要 O(n) 空间。n 个数不可能占满 1…n+1，因此答案一定在这个范围；可以借用原数组的 n 个位置记录 1…n。",
+    "set(nums) collects the values that occur, keeping one copy of each. value in seen asks whether that value occurs. The baseline checks 1, 2, … in order, taking expected O(n) time but O(n) space. n values cannot occupy all of 1…n+1, so the answer lies in that range. Reuse the n array positions to record the presence of 1…n."
   ],
   "derive": [
-    "给数值 x 指定目标下标 x−1。只要 1≤x≤n 且目标尚不是 x，就把当前位置与目标交换。交换后当前位置得到另一个数，仍要继续检查，不能立刻推进 i。",
-    "Assign value x to index x−1. While 1≤x≤n and the destination is not already x, swap the current value with its destination. Recheck the incoming value before advancing i."
+    "先看两格 [2,1]：下标从 0 开始，第一格应是 1，第二格应是 2。把第一格的 2 放到下标 1，与 1 交换，得到 [1,2]；两格都有了，缺数是 3。推广到数值 x：它应放在下标 x−1。只要 1≤x≤n 且目标尚不是 x，就与目标交换。交换后当前位置得到另一个数，仍要继续检查，不能立刻推进 i。",
+    "Start with two cells [2,1]. Indices start at 0: the first cell should hold 1 and the second should hold 2. Move the first cell’s 2 to index 1 by swapping it with 1, giving [1,2]. Both slots are filled, so 3 is missing. In general, value x belongs at index x−1. While 1≤x≤n and the destination is not already x, swap with that destination. Recheck the incoming value before advancing i."
   ],
   "proof": [
     "每次有效交换至少把一个数放进最终正确位置，而且已正确的位置不会被不同数移走，所以总交换次数不超过 n。若目标已有 x，继续交换只会循环；跳过重复值即可。最后第一个 nums[i]≠i+1 就暴露了缺数。",
@@ -348,8 +352,8 @@ window.LESSON = {
     [
       "target = nums[i] - 1",
       [
-        "当前值的固定目标下标",
-        "Fixed destination index of the current value"
+        "在 while 条件成立后、交换前保存目标下标；交换后 target 保留旧值，直到下一次赋值。",
+        "Save the destination after the while guard passes, before swapping. target retains that saved value after the swap until reassigned."
       ]
     ],
     [
@@ -364,6 +368,20 @@ window.LESSON = {
       [
         "当前位置应有的正数",
         "Positive integer expected at this position"
+      ]
+    ],
+    [
+      "op_i",
+      [
+        "仅图示：本帧放置循环检查的位置；∅ 表示无对应标记。",
+        "Diagram only: placement-loop position described by this frame; ∅ means no applicable marker."
+      ]
+    ],
+    [
+      "swap_to",
+      [
+        "仅图示：本帧刚完成交换的目标下标；跳过、初始、最终帧为 ∅，不表示 Python 的 target 被赋为 −1。",
+        "Diagram only: destination of this frame’s completed swap; ∅ on skip, initial and final frames does not assign −1 to Python’s target."
       ]
     ]
   ],
