@@ -358,3 +358,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Enumerating all N-Queens boards | `leetcode/51/#step2` | Keep complete boards while undoing working placements. |
 
 <!-- /leetcode-51-campaign -->
+
+
+<!-- leetcode-52-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| counting complete search leaves | `leetcode/52/#step2` | Only a complete nonattacking arrangement increments the count. |
+| diagonal constraint sets | `leetcode/52/#step1` | Use c, r-c, r+c to reject attacks before descending. |
+| count-only backtracking | `leetcode/52/#step4` | Restore constraints while retaining the cumulative integer, without storing boards. |
+
+<!-- /leetcode-52-campaign -->
