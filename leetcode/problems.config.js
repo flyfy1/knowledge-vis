@@ -209,8 +209,8 @@ window.LEETCODE_PROBLEMS = [
       "en": "Wildcard Matching"
     },
     "desc": {
-      "zh": "dp[i][j] 表示文本前 i 个字符与模式前 j 个字符完全匹配。普通字符与 ? 从左上格转移；* 为零字符时读左格 dp[i][j−1]，再吃一个字符时读上格 dp[i−1][j]。",
-      "en": "dp[i][j] means the first i text characters fully match the first j pattern characters. Literals and ? use the diagonal. A * consuming nothing uses the left cell dp[i][j−1]; consuming one more uses above, dp[i−1][j]."
+      "zh": "从重复递归推导前缀状态，逐格解释独立星号的两种选择与滚动行。",
+      "en": "Derive prefix states from repeated recursion, then trace standalone stars and rolling rows."
     },
     "difficulty": "hard",
     "topics": [
@@ -222,7 +222,7 @@ window.LEETCODE_PROBLEMS = [
     "path": "44/",
     "leetcodeUrl": "https://leetcode.com/problems/wildcard-matching/",
     "language": "Python",
-    "complexity": "O((m+1)(n+1))"
+    "complexity": "O((m+1)(n+1)) time; O(n+1) auxiliary space"
   },
   {
     "id": 51,
@@ -795,6 +795,58 @@ window.LEETCODE_PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/",
     "language": "Python",
     "complexity": "O(nk) time; O(k) auxiliary space"
+  },
+  {
+    "id": 212,
+    "title": {
+      "zh": "单词搜索 II",
+      "en": "Word Search II"
+    },
+    "desc": {
+      "zh": "在棋盘路径中共享前缀，理解字典树与回溯。",
+      "en": "Share board-path prefixes with a trie and reversible backtracking."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字典树",
+        "en": "Trie"
+      },
+      {
+        "zh": "回溯",
+        "en": "Backtracking"
+      }
+    ],
+    "path": "212/",
+    "leetcodeUrl": "https://leetcode.com/problems/word-search-ii/",
+    "language": "Python",
+    "complexity": "O(S + B·4·3^(L-1)) time; O(S + L) auxiliary space, plus O(W) output references"
+  },
+  {
+    "id": 214,
+    "title": {
+      "zh": "最短回文串",
+      "en": "Shortest Palindrome"
+    },
+    "desc": {
+      "zh": "从前置字符的手算出发，推导最长回文前缀与 KMP 回退。",
+      "en": "Derive the longest palindromic prefix and KMP fallback from a tiny prepend puzzle."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      },
+      {
+        "zh": "前缀函数",
+        "en": "Prefix function"
+      }
+    ],
+    "path": "214/",
+    "leetcodeUrl": "https://leetcode.com/problems/shortest-palindrome/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space and output space"
   },
   {
     "id": 2916,

@@ -1,0 +1,38 @@
+{
+  "id": 212,
+  "title": {
+    "zh": "单词搜索 II",
+    "en": "Word Search II"
+  },
+  "desc": {
+    "zh": "在棋盘路径中共享前缀，理解字典树与回溯。",
+    "en": "Share board-path prefixes with a trie and reversible backtracking."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "字典树",
+      "en": "Trie"
+    },
+    {
+      "zh": "回溯",
+      "en": "Backtracking"
+    }
+  ],
+  "path": "212/",
+  "leetcodeUrl": "https://leetcode.com/problems/word-search-ii/",
+  "language": "Python",
+  "complexity": "O(S + B·4·3^(L-1)) time; O(S + L) auxiliary space, plus O(W) output references",
+  "concepts": [
+    {
+      "name": "Trie prefix pruning",
+      "step": 1,
+      "description": "Share prefixes while preserving terminal markers and child branches."
+    },
+    {
+      "name": "Board backtracking invariant",
+      "step": 2,
+      "description": "A numbered simple path matches the current trie prefix; undo restores it."
+    }
+  ]
+}
