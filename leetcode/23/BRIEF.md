@@ -56,3 +56,49 @@ Run `python3 leetcode/tests/test_hard_solutions.py`,
 `NODE_PATH=<playwright package directory> node leetcode/tests/test_hard_browser.cjs`.
 See `../../specs/reviews/leetcode-first-ten-review.md` for observed review evidence.
 No actual LeetCode submission or human learning test is claimed.
+
+## Required-review revision contract (2026-10-18)
+
+Source: independent report `../../specs/reviews/23-review-1-8b9525f6.md`.
+Adopt LC23-R1's requested local definitions and concrete pointer table; adopt
+LC23-R2's native browser zoom verification. These are corrections within the
+existing step layout, not a new feature or layout. No child reviewer is authorized;
+separate independent re-review remains pending.
+
+Product-fit verdict: reuse this lesson's existing prose, table, localization and
+controls. Audience/job: a basic-Python reader must reconstruct the actual returned
+linked object, not only sorted values. Highest-return slice: show the old tail's
+next changing while the selected node's successor survives.
+
+P0: define val/next/None and the input list of heads in step 01; hand-calculate all
+five identities; in step 03 show the default experiment's fixed events 0/1/3 with
+old/new links, dummy and tail, actual reachable chains and logical ledger; in step
+05 map construction, successor preservation, termination and dummy.next to Python.
+P0 verification: execute actual Python with identity/cycle and pointer snapshots;
+check all controls, source parity, both languages, narrow screens and native 200%
+browser zoom. P1: numerical heap repair and the whole-list counterexample, included.
+P2/deferred: new visualization machinery, animations and custom input; unnecessary
+for the explicit table remedy, and would expand the reviewed interaction contract.
+
+Terms: node.val/node.next/None and Python list of heads are defined in step 01.
+Step 03 repeats next/None locally and defines dummy/tail before its table. Step 05
+repeats allocation, aliasing, mutation versus variable reassignment, and return.
+The table is explicitly a fixed default-input reference, independent of preset or
+slider; the input rows retain original order, while the output ledger records only
+the logically selected prefix. No claim that those rows depict current pointers.
+
+Presentation contract: existing approved components and CSS tokens only; no CSS
+changes, colors, motion, sizing rules, or new runtime state. Existing --text,
+--muted, --line and --panel roles, system font, table-wrap overflow and responsive
+breakpoints continue to apply. New table headers use scope=col/row. All added prose
+and labels have equivalent en/zh strings. Empty/terminal and denied-permission
+branches remain the existing control paths. Loading/reconnect/server actions are
+inapplicable to this local static lesson.
+
+Python remains the faithful preferred official interface, Solution.mergeKLists
+returning ListNode or None; LeetCode supplies ListNode. There is no non-Python
+language-contract.json or supportedLanguages list to correct. Exact registration
+pair read: solution.py / python-code.js / PYTHON_SOURCE. Canonical source and mirror
+are unchanged; their displayed/copied/downloaded/offline equality is rechecked.
+Author evidence and stable finding mapping: SELF-CHECK.md. Status is self-checked
+only when those checks pass, awaiting independent re-review; no acceptance claim.
