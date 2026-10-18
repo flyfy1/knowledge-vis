@@ -1,4 +1,5 @@
 """Register an independently accepted candidate; the campaign owns acceptance."""
+import datetime as dt
 import hashlib
 import json
 import re
@@ -10,12 +11,88 @@ from leetcode_registry import merge_registry
 JAVASCRIPT_PROBLEM_IDS = frozenset({2630, 2650, 2675, 2691, 2756, 2759})
 
 
-def solution_language(official):
-    """Keep the approved native-language exception tied to the verified catalog."""
+# Canonical language, submission file, offline mirror, and its exported constant.
+# Keep this small table aligned with real official interfaces encountered by authors.
+LANGUAGE_FILES = {
+    'Python': ('solution.py', 'python-code.js', 'PYTHON_SOURCE'),
+    'TypeScript': ('solution.ts', 'typescript-code.js', 'TYPESCRIPT_SOURCE'),
+    'JavaScript': ('solution.js', 'javascript-code.js', 'JAVASCRIPT_SOURCE'),
+    'MySQL': ('solution.sql', 'sql-code.js', 'SQL_SOURCE'),
+    'PostgreSQL': ('solution.sql', 'sql-code.js', 'SQL_SOURCE'),
+    'MS SQL Server': ('solution.sql', 'sql-code.js', 'SQL_SOURCE'),
+    'Oracle': ('solution.sql', 'sql-code.js', 'SQL_SOURCE'),
+    'Bash': ('solution.sh', 'bash-code.js', 'BASH_SOURCE'),
+    'Java': ('solution.java', 'java-code.js', 'JAVA_SOURCE'),
+    'C++': ('solution.cpp', 'cpp-code.js', 'CPP_SOURCE'),
+    'C': ('solution.c', 'c-code.js', 'C_SOURCE'),
+    'C#': ('solution.cs', 'csharp-code.js', 'CSHARP_SOURCE'),
+    'Go': ('solution.go', 'go-code.js', 'GO_SOURCE'),
+    'Rust': ('solution.rs', 'rust-code.js', 'RUST_SOURCE'),
+}
+
+
+def solution_language(official, folder=None):
+    """Resolve the faithful official interface; independent review verifies evidence."""
     javascript = 'javascript' in official.get('categories', [])
     if javascript != (official['id'] in JAVASCRIPT_PROBLEM_IDS):
         raise ValueError('JavaScript category differs from the six approved problem IDs; inspect catalog policy')
-    return 'JavaScript' if javascript else 'Python'
+    path = Path(folder) / 'language-contract.json' if folder is not None else None
+    if path is None or not path.exists():
+        return 'JavaScript' if javascript else 'Python'
+    contract = json.loads(path.read_text())
+    if not isinstance(contract, dict) or contract.get('problemId') != official['id']:
+        raise ValueError('Language contract problemId does not match the official problem')
+    if contract.get('officialSource') != official['officialUrl']:
+        raise ValueError('Language contract must cite this exact official problem URL')
+    language, supported = contract.get('language'), contract.get('supportedLanguages')
+    if not isinstance(language, str) or language not in LANGUAGE_FILES:
+        raise ValueError('Unsupported canonical language; extend the reviewed file table for the actual official interface')
+    if (not isinstance(supported, list) or not supported or
+            any(not isinstance(item, str) or not item.strip() for item in supported) or
+            len(set(supported)) != len(supported) or language not in supported):
+        raise ValueError('Language contract needs unique supportedLanguages including its canonical language')
+    if 'Python3' in supported or 'Python 3' in supported or 'python' in supported or 'typescript' in supported:
+        raise ValueError('Normalize official language labels to Python and TypeScript in supportedLanguages')
+    preferred = 'Python' if 'Python' in supported else 'TypeScript' if 'TypeScript' in supported else language
+    if language != preferred:
+        raise ValueError('Canonical language must prefer Python, then TypeScript, before a required native language')
+    for field in ('interface', 'rationale', 'verifiedAt', 'verificationEvidence'):
+        if not isinstance(contract.get(field), str) or not contract[field].strip():
+            raise ValueError(f'Language contract requires {field}')
+    try:
+        verified = dt.datetime.fromisoformat(contract['verifiedAt'].replace('Z', '+00:00'))
+        if verified.tzinfo is None:
+            raise ValueError('Timezone required')
+    except ValueError as error:
+        raise ValueError('Language contract verifiedAt must be an ISO timestamp with timezone') from error
+    evidence = Path(contract['verificationEvidence'])
+    evidence_path = Path(folder) / evidence
+    if (evidence.is_absolute() or not evidence_path.resolve().is_relative_to(Path(folder).resolve()) or
+            not evidence_path.is_file() or not evidence_path.read_text().strip()):
+        raise ValueError('Language contract verificationEvidence must name a nonempty lesson-local evidence file')
+    return language
+
+
+def validate_language_sources(official, folder):
+    """Check exception evidence and exact offline source parity without executing code."""
+    folder = Path(folder)
+    language = solution_language(official, folder)
+    contract = folder / 'language-contract.json'
+    if language != 'Python' and not contract.is_file():
+        raise ValueError('Non-Python official solutions require language-contract.json')
+    if not contract.is_file():
+        return language  # Existing reviewed Python lessons remain compatible.
+    pairs = [LANGUAGE_FILES[language]]
+    if official['id'] in JAVASCRIPT_PROBLEM_IDS:
+        pairs.append(('concept.py', 'python-code.js', 'PYTHON_SOURCE'))
+    for source, mirror, export in pairs:
+        source_path, mirror_path = folder / source, folder / mirror
+        if not source_path.is_file() or not mirror_path.is_file():
+            raise ValueError(f'Canonical source pair is missing: {source}, {mirror}')
+        match = re.fullmatch(r'\s*window\.' + export + r'\s*=\s*("(?:[^"\\]|\\.)*")\s*;?\s*', mirror_path.read_text())
+        if not match or json.loads(match[1]) != source_path.read_bytes().decode('utf-8'):
+            raise ValueError(f'Exact offline source parity failed: {source}, {mirror}')
+    return language
 
 
 def register(root, problem_id):
@@ -27,7 +104,8 @@ def register(root, problem_id):
     assert entry['id'] == problem_id
     assert entry['path'] == f'{problem_id}/'
     assert entry['leetcodeUrl'] == official['officialUrl']
-    assert entry['difficulty'] == 'hard' and entry['language'] == solution_language(official)
+    assert entry['difficulty'] == 'hard' and entry['language'] == solution_language(official, folder)
+    validate_language_sources(official, folder)
     for field in ('title','desc'):
         assert all(isinstance(entry[field][lang],str) and entry[field][lang].strip() for lang in ('zh','en'))
     # The collection supplies the ID; preserve the reviewed lesson metadata file.

@@ -19,13 +19,11 @@ import threading
 import uuid
 
 from leetcode_registry import read_registry
-from register_leetcode_lesson import solution_language
+from register_leetcode_lesson import solution_language, validate_language_sources, LANGUAGE_FILES
 
 
 WEIGHTS = (15, 20, 20, 20, 15, 10)
 REQUIRED = ("index.html", "app.js", "copy.js", "solution.py", "python-code.js", "BRIEF.md")
-JAVASCRIPT_REQUIRED = ("index.html", "app.js", "copy.js", "solution.js", "javascript-code.js",
-                       "concept.py", "python-code.js", "BRIEF.md")
 REGISTER_PATHS = {"leetcode/problems.config.js", "leetcode/index.html", "CONCEPT-MAP.md"}
 TERMINAL = {"accepted_local", "blocked", "needs_review"}
 AUTHOR_SCHEMA = {
@@ -300,24 +298,36 @@ def commit_changes(repo, paths, title, trailers):
     return head(repo)
 
 
-def required_for(problem, new=False):
-    required = JAVASCRIPT_REQUIRED if solution_language(problem) == "JavaScript" else REQUIRED
+def required_for(problem, new=False, folder=None):
+    language = solution_language(problem, folder)
+    required = ("index.html", "app.js", "copy.js", "BRIEF.md", *LANGUAGE_FILES[language][:2])
+    if language == "Python":
+        required = REQUIRED
+    else:
+        required = (*required, "language-contract.json")
+    if problem['id'] in (2630, 2650, 2675, 2691, 2756, 2759):
+        required = (*required, "concept.py", "python-code.js")
     return (*required, "lesson-entry.json") if new else required
 
 
 def required_files(repo, problem, new):
     problem_id = problem["id"]
-    required = required_for(problem, new)
-    missing = [name for name in required if not (repo / "leetcode" / str(problem_id) / name).is_file()]
-    if missing:
-        raise CampaignError(f"Lesson {problem_id} is not ready; missing {', '.join(missing)}")
+    folder = repo / "leetcode" / str(problem_id)
+    try:
+        required = required_for(problem, new, folder)
+        missing = [name for name in required if not (folder / name).is_file()]
+        if missing:
+            raise CampaignError(f"Lesson {problem_id} is not ready; missing {', '.join(missing)}")
+        validate_language_sources(problem, folder)
+    except (ValueError, KeyError) as error:
+        raise CampaignError(f"Lesson {problem_id} language contract is invalid: {error}") from error
 
 
 def process_problem(args, problem, state, state_path, base_url):
     pid = str(problem["id"])
     if pid not in state["problems"]:
         registered = any(str(item["id"]) == pid for item in read_registry(args.repo / "leetcode/problems.config.js"))
-        files = required_for(problem, new=not registered)
+        files = required_for(problem, new=not registered, folder=args.repo / "leetcode" / pid)
         complete = all((args.repo / "leetcode" / pid / name).is_file() for name in files)
         state["problems"][pid] = {
             "status": "pending", "rounds": 0, "new": not registered,
@@ -416,6 +426,15 @@ def process_problem(args, problem, state, state_path, base_url):
             return
 
 
+def publish_if_due(args, state, flush=False):
+    """Keep deployment behind one explicit, independently reviewed release interface."""
+    if args.publish_root is None or args.stop_file.exists():
+        return None
+    from leetcode_publish import maybe_publish
+    return maybe_publish(args.repo, state, args.state_dir, args.publish_root,
+                         args.public_base, batch_size=args.publish_every, flush=flush)
+
+
 def parser():
     result = argparse.ArgumentParser(description=__doc__)
     result.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[1])
@@ -428,6 +447,9 @@ def parser():
     result.add_argument("--codex", default="codex")
     result.add_argument("--codex-timeout", type=int, default=5400)
     result.add_argument("--stop-file", type=Path)
+    result.add_argument("--publish-root", type=Path, help="Explicit production directory; enables accepted batch publication")
+    result.add_argument("--public-base", help="Public site origin used for release verification")
+    result.add_argument("--publish-every", type=int, default=100)
     result.add_argument("--dry-run", action="store_true")
     return result
 
@@ -436,7 +458,13 @@ def main(argv=None):
     args = parser().parse_args(argv)
     args.repo, args.state_dir = args.repo.resolve(), args.state_dir.resolve()
     args.stop_file = (args.stop_file or args.state_dir / "STOP").resolve()
-    if (args.max_rounds < 1 or args.codex_timeout < 1 or (args.limit is not None and args.limit < 1) or
+    if bool(args.publish_root) != bool(args.public_base):
+        raise CampaignError("Publication requires both --publish-root and --public-base")
+    if args.publish_root is not None:
+        args.publish_root = args.publish_root.resolve()
+        if args.publish_root == args.repo or args.publish_root.is_relative_to(args.repo) or args.repo.is_relative_to(args.publish_root):
+            raise CampaignError("Production directory must be separate from the campaign checkout")
+    if (args.publish_every < 1 or args.max_rounds < 1 or args.codex_timeout < 1 or (args.limit is not None and args.limit < 1) or
             (args.run_count is not None and args.run_count < 1)):
         raise CampaignError("Limits must be positive")
     if args.state_dir.is_relative_to(args.repo):
@@ -469,6 +497,7 @@ def main(argv=None):
         state.pop("error", None)
         save_state(state_path, state)
         try:
+            publish_if_due(args, state)
             with preview(args.repo, args.port) as base_url:
                 processed = 0
                 for problem in queue:
@@ -477,6 +506,7 @@ def main(argv=None):
                     if state["status"] == "stopped":
                         break
                     if not previously_terminal:
+                        publish_if_due(args, state)
                         processed += 1
                     if args.run_count is not None and processed >= args.run_count:
                         state["status"] = "run_limit_reached"
@@ -486,6 +516,9 @@ def main(argv=None):
                     state["status"] = ("completed" if all(p["status"] == "accepted_local" for p in state["problems"].values())
                                        else "queue_exhausted_incomplete")
                     state["current"] = None
+                    entire_catalog = set(state["queue"]) == {str(p["id"]) for p in catalog["problems"]}
+                    if state["status"] == "completed" and entire_catalog:
+                        publish_if_due(args, state, flush=True)
                 save_state(state_path, state)
         except BaseException as error:
             state.update(status="failed", error=str(error) or type(error).__name__)

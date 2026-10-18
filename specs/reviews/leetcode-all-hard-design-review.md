@@ -269,3 +269,22 @@ semantic differences. Unverifiable statements or original interfaces remain
 blockers. Other lessons retain Python (including verified Pandas interfaces).
 This is an owner-authorized language-policy amendment, not a new independent
 review or a retrospective acceptance of any lesson.
+
+## Dispatcher amendment — sustained goal and release cadence, 2026-10-18
+
+The owner now requests Python or TypeScript where faithful official interfaces
+exist, otherwise the original required language; detailed vivid explanations
+from simple examples to the complete method; and publication after each 100
+completed lessons without retaining old served content. Adopt these explicit
+preferences prospectively. The prior generic Python-only blocker is superseded,
+and future six-category JavaScript lessons use supported TypeScript when possible.
+Retain their clearly labeled Python conceptual comparison and semantic limits.
+
+Keep each independent cold review and all scoring gates. Add a batch publisher
+with a separate release ledger and public verification at clean accepted phases;
+this does not grant author or reviewer agents production access. Preserve other
+production pages, publish no drafts, and create no old-content backup copies.
+The final remainder is released when all work actually meets the gates. The search
+feature required before a large public batch is now independently reviewed in
+[the collection search record](leetcode-collection-search-design.md). This amendment records owner direction, not independent
+approval of publisher code or future lessons.

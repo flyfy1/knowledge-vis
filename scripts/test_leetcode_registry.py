@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from leetcode_registry import read_registry, merge_registry
-from register_leetcode_lesson import register, solution_language, JAVASCRIPT_PROBLEM_IDS
+from register_leetcode_lesson import register, solution_language, JAVASCRIPT_PROBLEM_IDS, validate_language_sources, LANGUAGE_FILES
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -74,11 +74,85 @@ class RegistryTests(unittest.TestCase):
                     before=[p.read_bytes() for p in paths]
                     with self.assertRaises(AssertionError): register(root,problem_id)
                     self.assertEqual(before,[p.read_bytes() for p in paths])
+                    if correct == 'JavaScript':
+                        contract = {'problemId': problem_id, 'language': correct, 'officialSource': official['officialUrl'],
+                                    'supportedLanguages': [correct], 'interface': 'function memoize(fn)',
+                                    'rationale': 'Fixture supports only JavaScript.', 'verifiedAt': '2026-10-18T00:00:00Z',
+                                    'verificationEvidence': 'language-evidence.md'}
+                        (folder/'language-contract.json').write_text(json.dumps(contract))
+                        (folder/'language-evidence.md').write_text('Official fixture exposes JavaScript only.')
+                        for source, mirror, export in [('solution.js','javascript-code.js','JAVASCRIPT_SOURCE'),('concept.py','python-code.js','PYTHON_SOURCE')]:
+                            (folder/source).write_text('Source fixture')
+                            (folder/mirror).write_text('window.'+export+' = "Source fixture";')
                     entry['language']=correct
                     (folder/'lesson-entry.json').write_text(json.dumps(entry))
                     register(root,problem_id)
                     actual=next(p for p in read_registry(paths[0]) if p['id']==problem_id)
                     self.assertEqual(actual['language'],correct)
+
+    def test_language_contract_prefers_python_then_typescript_and_preserves_native(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            folder=Path(tmp)
+            official={'id':185,'officialUrl':'https://leetcode.com/problems/department-top-three-salaries/','categories':['database']}
+            base={'problemId':185,'language':'MySQL','officialSource':official['officialUrl'],
+                  'supportedLanguages':['MySQL'],'interface':'Employee and Department tables',
+                  'rationale':'Fixture has only the SQL interface.','verifiedAt':'2026-10-18T00:00:00Z',
+                  'verificationEvidence':'language-evidence.md'}
+            (folder/'language-evidence.md').write_text('Observed official SQL fixture schema.')
+            def write(**changes):
+                (folder/'language-contract.json').write_text(json.dumps({**base,**changes}))
+            for language, supported in [('MySQL',['MySQL']),('TypeScript',['JavaScript','TypeScript']),('Python',['Python','TypeScript'])]:
+                write(language=language,supportedLanguages=supported)
+                self.assertEqual(solution_language(official,folder),language)
+                source,mirror,export=LANGUAGE_FILES[language]
+                (folder/source).write_text('canonical \"value\"\n')
+                (folder/mirror).write_text('window.'+export+' = '+json.dumps((folder/source).read_text())+';')
+                self.assertEqual(validate_language_sources(official,folder),language)
+                (folder/mirror).write_text('window.'+export+' = "wrong";')
+                with self.assertRaisesRegex(ValueError,'parity'): validate_language_sources(official,folder)
+            for changes in [dict(language='JavaScript',supportedLanguages=['JavaScript','TypeScript']),
+                            dict(language='TypeScript',supportedLanguages=['Python','TypeScript']),
+                            dict(officialSource='https://example.com/'),dict(problemId=186),
+                            dict(verificationEvidence='../outside.md'),dict(verifiedAt='2026-10-18')]:
+                with self.subTest(changes=changes):
+                    write(**changes)
+                    with self.assertRaises(ValueError): solution_language(official,folder)
+            (folder/'language-contract.json').unlink()
+            self.assertEqual(solution_language(official,folder),'Python')
+            native={'id':2630,'officialUrl':'https://leetcode.com/problems/memoize-ii/','categories':['javascript']}
+            with self.assertRaisesRegex(ValueError,'language-contract'): validate_language_sources(native,folder)
+
+    def test_exception_registration_requires_evidence_and_parity_before_writing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            shutil.copytree(ROOT/'leetcode',root/'leetcode')
+            shutil.copy(ROOT/'CONCEPT-MAP.md',root/'CONCEPT-MAP.md')
+            official=next(p for p in json.loads((root/'leetcode/catalog/hard-problems.json').read_text())['problems'] if p['id']==185)
+            folder=root/'leetcode/185'; folder.mkdir(exist_ok=True)
+            (folder/'index.html').write_text('<section id="step1"></section>')
+            entry={'id':185,'path':'185/','title':{'en':official['title'],'zh':'薪水'},'desc':{'en':'Explore','zh':'探索'},
+                   'difficulty':'hard','topics':[{'en':'Ranking','zh':'排名'}],'leetcodeUrl':official['officialUrl'],
+                   'language':'MySQL','complexity':'O(n log n)',
+                   'concepts':[{'name':'Ranking','step':1,'description':'Explore ties'}]}
+            (folder/'lesson-entry.json').write_text(json.dumps(entry))
+            contract={'problemId':185,'language':'MySQL','officialSource':official['officialUrl'],
+                      'supportedLanguages':['MySQL'],'interface':'Employee and Department tables',
+                      'rationale':'Synthetic fixture offers only SQL; not a real availability claim.',
+                      'verifiedAt':'2026-10-18T00:00:00Z','verificationEvidence':'language-evidence.md'}
+            (folder/'language-contract.json').write_text(json.dumps(contract))
+            (folder/'solution.sql').write_text('SELECT 1;\n')
+            (folder/'sql-code.js').write_text('window.SQL_SOURCE = '+json.dumps('SELECT 1;\n')+';')
+            paths=[root/'leetcode/problems.config.js',root/'leetcode/index.html',root/'CONCEPT-MAP.md']
+            before=[p.read_bytes() for p in paths]
+            with self.assertRaisesRegex(ValueError,'verificationEvidence'): register(root,185)
+            self.assertEqual(before,[p.read_bytes() for p in paths])
+            (folder/'language-evidence.md').write_text('Synthetic official interface fixture.')
+            register(root,185)
+            self.assertEqual(next(p for p in read_registry(paths[0]) if p['id']==185)['language'],'MySQL')
+            before=[p.read_bytes() for p in paths]
+            (folder/'sql-code.js').write_text('window.SQL_SOURCE = "SELECT 2;";')
+            with self.assertRaisesRegex(ValueError,'parity'): register(root,185)
+            self.assertEqual(before,[p.read_bytes() for p in paths])
 
     def test_registration_removes_only_matching_display_id_from_title(self):
         with tempfile.TemporaryDirectory() as tmp:
