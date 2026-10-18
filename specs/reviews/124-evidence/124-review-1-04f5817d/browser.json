@@ -1,0 +1,103 @@
+{
+  "presets": [
+    {
+      "i": 0,
+      "rows": "B\t2\t0\t0\t2\t2\t2\nC\t3\t0\t0\t3\t3\t3\nA\t1\t2\t3\t6\t4\t6",
+      "calculation": "Just completed A: v=1. Raw child gains: left 2, right 3; clamping each to 0 gives L=2, R=3. Completed candidate: 1+2+3=6. Pass upward: 1+max(2,3)=4. best changes from 3 to 6."
+    },
+    {
+      "i": 1,
+      "rows": "B\t9\t0\t0\t9\t9\t9\nF\t15\t0\t0\t15\t15\t15\nG\t7\t0\t0\t7\t7\t15\nC\t20\t15\t7\t42\t35\t42\nA\t-10\t9\t35\t34\t25\t42",
+      "calculation": "Just completed A: v=-10. Raw child gains: left 9, right 35; clamping each to 0 gives L=9, R=35. Completed candidate: -10+9+35=34. Pass upward: -10+max(9,35)=25. best changes from 42 to 42."
+    },
+    {
+      "i": 2,
+      "rows": "B\t-2\t0\t0\t-2\t-2\t-2\nC\t-5\t0\t0\t-5\t-5\t-2\nA\t-3\t0\t0\t-3\t-3\t-2",
+      "calculation": "Just completed A: v=-3. Raw child gains: left -2, right -5; clamping each to 0 gives L=0, R=0. Completed candidate: -3+0+0=-3. Pass upward: -3+max(0,0)=-3. best changes from -2 to -2."
+    },
+    {
+      "i": 3,
+      "rows": "D\t4\t0\t0\t4\t4\t4\nE\t3\t0\t0\t3\t3\t4\nB\t2\t4\t3\t9\t6\t9\nA\t10\t6\t0\t16\t16\t16",
+      "calculation": "Just completed A: v=10. Raw child gains: left 6, right 0; clamping each to 0 gives L=6, R=0. Completed candidate: 10+6+0=16. Pass upward: 10+max(6,0)=16. best changes from 9 to 16."
+    },
+    {
+      "i": 4,
+      "rows": "B\t0\t0\t0\t0\t0\t0\nC\t0\t0\t0\t0\t0\t0\nA\t0\t0\t0\t0\t0\t0",
+      "calculation": "Just completed A: v=0. Raw child gains: left 0, right 0; clamping each to 0 gives L=0, R=0. Completed candidate: 0+0+0=0. Pass upward: 0+max(0,0)=0. best changes from 0 to 0."
+    },
+    {
+      "i": 5,
+      "rows": "D\t6\t0\t0\t6\t6\t6\nB\t-4\t6\t0\t2\t2\t6\nA\t2\t2\t0\t4\t4\t6",
+      "calculation": "Just completed A: v=2. Raw child gains: left 2, right 0; clamping each to 0 gives L=2, R=0. Completed candidate: 2+2+0=4. Pass upward: 2+max(2,0)=4. best changes from 6 to 6."
+    }
+  ],
+  "chinese": "← LeetCode 知识索引\n中\nEN\n\n困难 · 二叉树 · 自底向上\n\n#124 · 二叉树中的最大路径和\n\n一条路径可以在某节点连接两侧，但传给父节点时只能保留一侧。\n\n官方题目 ↗\n从三个节点算起\n为什么要存两种量\n逐节点完成计算\n先预测，再揭晓\n证明与 Python\n\n01\n\n从三个节点算起\n\n这一步要回答：哪些节点能组成一条路径？给定一棵二叉树，每个节点最多有两个孩子。根是输入指定的顶端节点。路径是一串沿边相邻、且不重复的节点；可以只有一个节点，也不必经过根。求非空路径的最大节点值总和。\n\n1\n↙   ↘\n2     3\n\n把 1 放在根，2 和 3 是它的左右孩子。单节点的和为 1、2、3；两节点的和为 2+1=3、1+3=4；跨两侧的路径 2→1→3 得 6。所以只找“根到叶子”（没有孩子的节点）会误报 4。\n\n官方范围：1 ≤ 节点数 ≤ 30,000；−1000 ≤ 节点值 ≤ 1000。空树不在输入范围内。只返回和，不要求返回路径。\n\n官方示例：[1,2,3] → 6；[-10,9,20,null,null,15,7] → 42（15→20→7，避开根 −10）。数组按层描述树，null 表示缺少孩子。\n\n可靠的起点：每个节点都试作起点\n\n把边看成双向。从每个节点出发，沿所有不回头的路线累加，记录遇到的最大和。树中两点之间只有一条路线，所以这会覆盖所有合法路径。每次出发访问 n 个节点，n 次共 O(n²) 时间；深度优先遍历的待处理栈和邻接表用 O(n) 空间。30,000 个节点约有九亿次访问。问题是同一条向下路线被不同起点反复计算。\n\n02\n\n为什么要存两种量\n\n这一步要回答：孩子该给父节点什么信息？先看节点 B=2，它有孩子 D=4、E=3。若路径就在 B 连接两侧，4+2+3=9 合法。但是 B 上方还有 A=10 时，不能再把 9 加到 10：B 会连接 D、E、A 三条边，无法不重复地走成一条路径。\n\nA:10 → B:2 → D:4\nB:2 → E:3\n4 + 2 + 3 = 9\n10 + (2 + 4) = 16\n\n所以传给 A 的只能是从 B 出发、向下走一侧的最好路径，称为单臂增益 g(B)：2+max(4,3)=6。A 再接上它得到 10+6=16。若某侧增益是 −5，接它只会减小总和，因此可选择不接，该侧贡献记作 0；这不允许整个答案为空，因为当前节点仍必须计入。\n\n设当前节点值为 v；L、R 是左右孩子单臂增益与 0 的较大值（缺少孩子用 0）。through 是在当前节点连接两侧的完整候选和；g 是可继续向父节点延伸的单臂和。完整答案要比较所有节点的 through，而不是只看根的 g。\n\nL = max(0, g(left))   R = max(0, g(right))\nthrough = v + L + R\ng(node) = v + max(L, R)\nbest = max(best, through)\n\n03\n\n逐节点完成计算\n\n这一步要回答：先完成孩子，怎样得到父节点的结果？选一棵树，再按“完成下一节点”。从叶子向上计算，称为后序处理：孩子先于父节点完成。观察表格如何保留每次计算，尤其是 through 与 g 分开的那一行。\n\n图中 A、B… 是节点身份，数字是节点值；连线是树边。“完成”节点内的 g 是从该节点开始、只走一侧的最好和；★ 与粗边框标出刚完成的节点。v 是当前节点值；表中 L/R 已丢弃负增益；through = v+L+R；best 是已完成节点 through 的最大值，尚未完成时没有答案。\n\n这是公式的完整教学模拟，不是运行 Python 提交。所有预设最多 7 个节点，无跳步。切换预设或修改根值会从头开始此实验；预测题不受影响。先完成全树，再只改变根值，比较哪些孩子行不变。\n\n预设（切换会重置计算）\n三节点：连接两侧\n官方示例：避开根\n全负数：必须选节点\n分叉陷阱：不能传双臂\n全零：非空也能为零\n链：穿过负节点\n根节点值（仅修改根，重置计算）\n-10\n退回一节点\n完成下一节点\n回到未处理\n完成全树\n已完成节点数\n\n已完成 1/5；当前 best = 9\n\nA\n-10\n待处理\nB ★\n9\ng=9\nC\n20\n待处理\nF\n15\n待处理\nG\n7\n待处理\n\n刚完成 B：v=9。孩子原始增益：左 0，右 0；各与 0 比较得 L=0、R=0。完整候选 9+0+0=9；向上传 9+max(0,0)=9。best 从 −∞ 变为 9。\n\n保留的计算记录（依完成顺序）\n\n窄屏请横向滚动表格，查看 through、g 与 best。\n\n节点\tv\tL\tR\tthrough\tg\tbest\nB\t9\t0\t0\t9\t9\t9\n\n04\n\n先预测，再揭晓\n新树：A=4；左孩子 B=−2，右孩子 C=3；B 的左右孩子为 D=8、E=1。最大路径和是多少？先判断：B 的两个孩子能否同时与 A 相连？\n10：只取根到叶子\n13：D→B→A→C\n14：把五个节点全相加\n检验预测并揭晓理由\n\n预测正确。 B 的完整候选是 8−2+1=7，但向上只能传 −2+max(8,1)=6。A 的候选是 4+6+3=13，是全树最大值。10 漏掉 C；14 把 E 也接上，使 B 使用三条边。\n\n05\n\n证明与 Python\n\n这一步要回答：为什么只存单臂增益 g 和全局 best 就够？g 指从该节点出发向下一侧的最大和，best 指已处理候选的最大和。设 v 为当前节点值，through 为以此节点为最高节点的完整候选和。叶子只能选自身，所以 g=v，through=v。假设孩子的 g 已正确，经过当前节点的一条向下路径只能选左侧、右侧或两侧都不选；故 g=v+max(0,g左,g右)。左右子树互不相交，完整路径可以各接一臂，故 through=v+max(0,g左)+max(0,g右)。\n\n任意合法路径都有唯一的最高节点（最靠近根的那个）。在它下方，路径至多在两侧各走一臂，所以会被该节点的 through 覆盖；每个 through 本身也确实可行。因此比较所有 through 就得到最优值。后序处理保持的不变量是：所有已完成节点的 g 都正确，best 等于这些节点 through 的最大值。处理到根时，全部节点都已覆盖。\n\nstack 是待处理工作栈；False 表示先安排孩子，True 表示孩子已经完成。先压父节点的重访标记，再压右、左孩子；后压入的先处理，所以左、右、父依次完成。\ngain 字典按节点对象存 g，不按节点值存，避免相同数值的节点混淆。None 表示没有孩子，对应增益 0。left/right 截掉负增益；best 更新对应表格 through；gain[node] 对应表格 g。\n在三节点例子中，完成根时 left=2、right=3，best 更新为 6，gain[root] 存 4。返回的是 best。TreeNode 是 LeetCode 提供的节点类；提交只需 Solution，不修改树。\n\n成本：每个节点进栈两次，O(n) 时间。此实现保存 n 个单臂增益和显式栈，共 O(n) 辅助空间。栈可达树高 h，但字典仍为 O(n)，不能声称总空间 O(h)。迭代写法避免 30,000 层链导致 Python 递归深度错误。教学模拟另存完整历史快照，O(n²) 空间，仅用于最多 7 节点的演示。\n\n边界：全负数时 best 必须从 −∞ 开始，例如 [−3,−2,−5] 返回 −2，不能返回代表空路径的 0。单节点返回自身；零可以形成非空路径；负节点也可能连接两段更大的正收益。最大可能和不超过 30,000,000，Python 整数可精确表示。\n\n复制 Python\n下载 solution.py\n查看官方接口的 Python 实现\n\n可复现自查位于 tests/：从所有起点枚举路径的独立基准，对照 Python 结果及模拟中间值。浏览器检查与作者自查不代表独立评审、实际学习者测试或 LeetCode 提交通过。\n\n继续连接概念\n接雨水：局部信息何时足够 →\n正则匹配：保留什么状态 →\n作者候选 · 自查证据随页保存 · 独立评审待进行",
+  "sourceParity": "canonical = mirror = browser export = displayed = copied = downloaded = selected fallback",
+  "keyboard": "Enter advances; Space reveals; slider Home/End/arrows move correctly",
+  "en320": {
+    "width": 320,
+    "scroll": 320,
+    "tableClient": 262,
+    "tableScroll": 480,
+    "lang": "en",
+    "horizontalScroll": 218
+  },
+  "zh320": {
+    "width": 320,
+    "scroll": 320,
+    "tableClient": 262,
+    "tableScroll": 480,
+    "lang": "zh-CN",
+    "horizontalScroll": 218
+  },
+  "en390": {
+    "width": 390,
+    "scroll": 390,
+    "tableClient": 332,
+    "tableScroll": 480,
+    "lang": "en",
+    "horizontalScroll": 148
+  },
+  "zh390": {
+    "width": 390,
+    "scroll": 390,
+    "tableClient": 332,
+    "tableScroll": 480,
+    "lang": "zh-CN",
+    "horizontalScroll": 148
+  },
+  "en1440": {
+    "width": 1440,
+    "scroll": 1440,
+    "tableClient": 910,
+    "tableScroll": 910,
+    "lang": "en"
+  },
+  "zh1440": {
+    "width": 1440,
+    "scroll": 1440,
+    "tableClient": 910,
+    "tableScroll": 910,
+    "lang": "zh-CN"
+  },
+  "zoom200": {
+    "zoom": "2",
+    "width": 1440,
+    "scroll": 1440
+  },
+  "disabled": {
+    "disabled": true,
+    "color": "rgb(154, 167, 184)",
+    "background": "rgb(28, 35, 48)",
+    "opacity": "1"
+  },
+  "errors": [],
+  "assetHashes": {
+    "index.html": "c4cf03aaf64d101704ba7330f232c39b6d0bb88142bc972030ca93647ad2c1a5",
+    "app.js": "f0a6a0f272f9465bfb7f0b252587eb11b2f7fe01df1134a01d5795555c9cc6a9",
+    "copy.js": "050883f4d688f27c595988a6c3f686e3e4ddbb84821a9057205c7946df8f164d",
+    "core.js": "2639d2108b9768212a2ab6ce39f7402efa6c09882b6d57c0c0434a66844b4cbe",
+    "python-code.js": "67f278a243064079b7200764ff243d5dc2fa93b0879cb5bd7a2dca33e0c4bd07",
+    "style.css": "df4f0e6f29af0de311718dddc221c61462bc08fe0133e07a41160d2af43947aa"
+  }
+}

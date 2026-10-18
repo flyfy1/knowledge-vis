@@ -1,0 +1,42 @@
+{
+  "independent_cases": [
+    {
+      "case": "fresh",
+      "predicted": 10,
+      "actual": 10,
+      "mutation": false
+    },
+    {
+      "case": "fork counterexample",
+      "predicted": 12,
+      "actual": 12,
+      "mutation": false
+    },
+    {
+      "case": "single minimum",
+      "predicted": -1000,
+      "actual": -1000,
+      "mutation": false
+    },
+    {
+      "case": "zero",
+      "predicted": 0,
+      "actual": 0,
+      "mutation": false
+    },
+    {
+      "case": "negative connector",
+      "predicted": 14,
+      "actual": 14,
+      "mutation": false
+    },
+    {
+      "case": "duplicates",
+      "predicted": 6,
+      "actual": 6,
+      "mutation": false
+    }
+  ],
+  "independent_random_endpoint_oracle_cases": 200,
+  "source_sha256": "9c141e0c181c809bba4d6da0d43e54f958290258a72e365e685dd7ef88066b1f"
+}
