@@ -1,0 +1,74 @@
+[
+  {
+    "selector": "body",
+    "fg": "rgb(232, 237, 244)",
+    "bg": "rgb(13, 17, 23)",
+    "ratio": 16.086987125379448
+  },
+  {
+    "selector": ".explain",
+    "fg": "rgb(201, 212, 226)",
+    "bg": "rgb(13, 17, 23)",
+    "ratio": 12.615602281385614
+  },
+  {
+    "selector": ".hint",
+    "fg": "rgb(154, 167, 184)",
+    "bg": "rgb(13, 17, 23)",
+    "ratio": 7.7443462241265095
+  },
+  {
+    "selector": ".suffix-cell",
+    "fg": "rgb(232, 237, 244)",
+    "bg": "rgb(28, 35, 48)",
+    "ratio": 13.397069143240783
+  },
+  {
+    "selector": ".suffix-cell small",
+    "fg": "rgb(154, 167, 184)",
+    "bg": "rgb(28, 35, 48)",
+    "ratio": 6.449407898769069
+  },
+  {
+    "selector": "#prev",
+    "fg": "rgb(232, 237, 244)",
+    "bg": "rgb(28, 35, 48)",
+    "ratio": 13.397069143240783
+  },
+  {
+    "selector": "#next",
+    "fg": "rgb(154, 167, 184)",
+    "bg": "rgb(28, 35, 48)",
+    "ratio": 6.449407898769069
+  },
+  {
+    "selector": ".lang-toggle button.active",
+    "fg": "rgb(13, 17, 23)",
+    "bg": "rgb(110, 231, 255)",
+    "ratio": 13.100679028115637
+  },
+  {
+    "selector": "nav a.active",
+    "fg": "rgb(13, 17, 23)",
+    "bg": "rgb(110, 231, 255)",
+    "ratio": 13.100679028115637
+  },
+  {
+    "selector": "summary",
+    "fg": "rgb(110, 231, 255)",
+    "bg": "rgb(13, 17, 23)",
+    "ratio": 13.100679028115637
+  },
+  {
+    "selector": "focus / panel2",
+    "fg": "rgb(255, 180, 84)",
+    "bg": "rgb(28, 35, 48)",
+    "ratio": 8.937191437807625
+  },
+  {
+    "selector": "disabled next",
+    "fg": "rgb(154, 167, 184)",
+    "bg": "rgb(28, 35, 48)",
+    "ratio": 6.449407898769069
+  }
+]

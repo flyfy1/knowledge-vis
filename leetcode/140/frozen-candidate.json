@@ -1,0 +1,50 @@
+{
+  "candidate": "140-1",
+  "frozenAt": "2026-10-18T12:38:58.582124+00:00",
+  "status": "author-self-checked; independent review pending",
+  "preflight": {
+    "command": "python3 -B scripts/register_leetcode_lesson.py 140 --validate-only",
+    "exitCode": 0,
+    "stdout": ""
+  },
+  "cssBytes": 11503,
+  "sharedReadOnlyHashes": {
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b"
+  },
+  "files": {
+    "BRIEF.md": "7462f31cf7de2e544783d51e5162cdf93798a131d0fa9d4194692ac26b6049c5",
+    "SELF-CHECK.md": "f490fe12554bbbef8e1e1f3d4a210def337331960c71937955170772eb9f9dd2",
+    "app.js": "432d6c47ae90013a3c855bfb21e3b6fd378f4a419b9b33adda3a0ecb2486bbc3",
+    "copy.js": "c1ff71b38b5c08c7117900e5496d6b4ae74a31f05435b1753d88e1f0620459be",
+    "core.js": "05a1aa24157b8b49a19b163019696078933d1e136caa358ac247525440f120e8",
+    "index.html": "13d08dca6cc6b4e786a5eda0b5f7b16db3294cbb425dc072e4c8ee714b24601d",
+    "lesson-entry.json": "764127e90b371551ec4c328ef7546d2d3b4c3ac96028dfed09b86d41e7ffab36",
+    "python-code.js": "3f76ff4cce39a98b1f1408d4a01814c6519ccf424cc1d57ddb59c3a8e89183fa",
+    "solution.py": "ce6d95676d5b5c9dbae08f0a0a7b8c6f4a93d2dbb067cf57f798a12188f4640c",
+    "style.css": "61654b93cddfd0b8c4bc2b69a279e30a7ff02ca1dfe9340f4409d3867a8e8098",
+    "tests/README.md": "c21e6f4f22ebcf0058e9d98dd3fc1b18279a4f69599de866ac0b4b39de49d1b7",
+    "tests/browser.cjs": "77d11108bddb7287717c0cb12626562f064f97c1ab7791894e51eb36ef799d9c",
+    "tests/evidence/browser-results.json": "8f66036416916c2aaed6f15ac2e39f84d2ec70b40cf77ba5c703f830e11d65f3",
+    "tests/evidence/contrast.json": "28a9a3282ffd56b96dc8dd8ccd705cf3140a6cb2c1b310198f7651b89b0da898",
+    "tests/evidence/core-results.json": "77cacb16021e49bb174558dab008618deda24f20e368a8f6b53154e104a2bfba",
+    "tests/evidence/lab-en-1440.png": "be9a97e37e6530a22c325d122026a720f30a7dca3e69c8d04efe147d0b0d41b7",
+    "tests/evidence/lab-en-320.png": "834388b33e8b7210c93d0f8d23c28ac166099cce574e922ea0da0144440c0a70",
+    "tests/evidence/lab-en-390.png": "91bb43b7aca9ba4063c505cfb243ef1aed218d58d051ed2c7824296e87d0de61",
+    "tests/evidence/lab-en-736.png": "550ae91841534c15d562c7d7f332aa1f67f9d3ff44c2942508d2b4934f554fb6",
+    "tests/evidence/lab-zh-1440.png": "53681408f27cfa77821dd315185165f01bbca68522b3beaf370ea6efffbfa825",
+    "tests/evidence/lab-zh-320.png": "ff01e395cdd87ea559bd2c6ee2afad927cbefac52682812b09021fa0e38416e6",
+    "tests/evidence/lab-zh-390.png": "14f89a501be3999ea4e6686128c3d98b51cbbedc0a32acfe66134152aac63513",
+    "tests/evidence/lab-zh-736.png": "d06da4e82d4518c79aca5aa93208527d29dcf5319be40b9226fb5046538fc406",
+    "tests/evidence/official-access.md": "83edcf8c768136b3dc956e37e7005b4bf11c416c0ad84c5d65c06fcd22a49c29",
+    "tests/evidence/official-graphql.json": "1614cdfb78d8914cb14bf43fba4ef04a789894deedac8029a5fc4f17a23b6d47",
+    "tests/evidence/oracle-fixtures.json": "e71b6751523c8be377f864c2e49894899ff64dcef19af5fc55b2a268448bc563",
+    "tests/evidence/python-results.json": "2cbd450f73080270235ae2be62f98deb9a26481221ac93752c84589a0bd6d7b9",
+    "tests/evidence/zoom-200-en.png": "5dd3880f130d97226613b1b5eb8dcd97a7f5e3b6bdcf89af02778c61afd6d0f1",
+    "tests/evidence/zoom-200-zh.png": "62b84c27bc39f2039a0046ac1953152a133814ad828d9dadeb4691441272edd1",
+    "tests/evidence/zoom-ledger-en.png": "60e00713f7baa29125f3b9e31edc69dd5a33815cf10f690e5a120f80a4dc393e",
+    "tests/evidence/zoom-ledger-zh.png": "873e77165ca5a580a8b51b97879070d7b2816c94aa34e1266193389c7ea9356b",
+    "tests/test_core.cjs": "7962d3addb38575dd1b3be2cbf4afb9bfe9db68a5b4901f9b38ec774722930e7",
+    "tests/test_solution.py": "cd7d8e96585cf2ed7489d37fc4df6c5977f8ab1164170d6d6203162ed44e76e3"
+  }
+}

@@ -529,3 +529,24 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Componentwise minimum | `leetcode/135/#step4` | Prove feasibility and minimality of the maximum of directional bounds. |
 
 <!-- /leetcode-135-campaign -->
+
+
+<!-- leetcode-140-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Suffix sentence enumeration | `leetcode/140/#step1` | Derive complete suffix lists and the empty-suffix base case. |
+| Output-sensitive word break | `leetcode/140/#step4` | Map enumeration to Python and account for cached strings. |
+
+<!-- /leetcode-140-campaign -->
+
+
+<!-- leetcode-32-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Validity by hand | `leetcode/32/#step0` | Trace balance from each candidate start; reject negative prefixes and require a zero ending. |
+| Excluded boundary stack | `leetcode/32/#step1` | Retain unmatched opening indices and an uncrossable closing boundary to avoid rescanning. |
+| Reversible parenthesis scan | `leetcode/32/#step2` | Compare pop, boundary reset, current valid suffix length and historical best. |
+
+<!-- /leetcode-32-campaign -->
