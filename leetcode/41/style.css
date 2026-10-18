@@ -1,0 +1,2 @@
+/* Essential indices use the existing body-text token on active teal cells. */
+.trace-cell.hot small { color: var(--text); }
