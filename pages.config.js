@@ -38,6 +38,19 @@ window.KNOWLEDGE_STAGES = [
 
 window.KNOWLEDGE_PAGES = [
   {
+    slug: "atlas",
+    title: { zh: "数学与物理 · 知识地图", en: "Mathematics & Physics · Knowledge Atlas" },
+    desc: {
+      zh: "从波动、系统与测量开始。探索 24 个概念之间的联系，查看每条关系的解释依据，再进入对应的交互讲解。",
+      en: "Start with waves, systems and measurement. Explore connections between 24 concepts, read why they connect, and open the supporting interactive lessons."
+    },
+    tags: [{ zh: "概念关系", en: "Concept Connections" }, { zh: "探索路线", en: "Exploration Routes" }],
+    category: "math",
+    stage: "university",
+    status: "live",
+    path: "atlas/"
+  },
+  {
     slug: "leetcode",
     title: { zh: "LeetCode · 一步一步想出来", en: "LeetCode · Reason Your Way to the Solution" },
     desc: {

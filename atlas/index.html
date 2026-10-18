@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mathematics & Physics · Knowledge Atlas</title>
+  <meta name="description" content="Explore the connections between mathematics, waves, systems and measurement, with explanations and interactive lessons.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css?v=1">
+  <script defer src="data.js?v=1"></script>
+  <script defer src="app.js?v=1"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="topbar">
+        <a href="../" data-i18n="back">← Knowledge Index</a>
+        <div id="langToggle" class="segmented" role="group" aria-label="Language / 语言">
+          <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+        </div>
+      </div>
+      <div class="hero">
+        <div><p class="eyebrow" data-i18n="eyebrow">KNOWLEDGE ATLAS / 01</p><h1 data-i18n="title">Mathematics & Physics</h1>
+          <p class="intro" data-i18n="intro">A first map of waves, systems and measurement. Follow a connection, understand why it exists, then explore the idea.</p></div>
+        <p id="counts" class="counts"></p>
+      </div>
+    </header>
+    <section aria-labelledby="routesHeading" class="routes">
+      <h2 id="routesHeading" data-i18n="routes">Start with a question</h2><div id="routes"></div>
+      <div id="trail" hidden></div>
+    </section>
+    <main>
+      <section class="explorer" aria-labelledby="exploreHeading">
+        <div class="section-head"><h2 id="exploreHeading" data-i18n="explore">Explore the connections</h2>
+          <div class="segmented" role="group" id="viewToggle" aria-label="View">
+            <button type="button" data-view="graph" data-i18n="graph">Map</button><button type="button" data-view="list" data-i18n="list">List</button>
+          </div>
+        </div>
+        <div class="toolbar">
+          <div class="search-field"><label for="search" data-i18n="searchLabel">Find a concept</label><input id="search" type="search" autocomplete="off" maxlength="160" placeholder="Fourier, waves, uncertainty…"></div>
+          <div class="group-field"><label for="group" data-i18n="groupLabel">Region</label><select id="group"></select></div>
+          <button id="reset" type="button" data-i18n="reset">Clear filters</button>
+        </div>
+        <p id="status" class="status" role="status"></p>
+        <p id="invalid" class="notice" hidden data-i18n="invalid">This link contains an unknown selection. Showing Fourier analysis; you can choose another concept.</p>
+        <div class="workspace">
+          <div class="map-panel">
+            <div id="graphView">
+              <p class="map-help" data-i18n="mapHelp">Select a concept to reveal its connections. Numbers match the explanations. Positions group topics; distances have no numerical meaning.</p>
+              <div class="map-scroll" tabindex="0" role="region" id="mapScroll" aria-label="Knowledge map. Scroll horizontally for more topics.">
+                <div id="map"><svg id="connections" aria-hidden="true"></svg><div id="columns"></div></div>
+              </div>
+              <p class="map-footer" data-i18n="mapFooter">Arrows follow the written relation. They do not imply a required learning order.</p>
+            </div>
+            <div id="listView" hidden><div id="results" class="results"></div></div>
+            <div id="empty" class="empty" hidden><h3 data-i18n="emptyTitle">No matching concepts</h3><p data-i18n="emptyBody">Try another term, or clear the filters to see the full map.</p><button type="button" id="emptyReset" data-i18n="reset">Clear filters</button></div>
+          </div>
+          <aside id="detail" aria-labelledby="detailTitle"></aside>
+        </div>
+      </section>
+    </main>
+    <footer><p data-i18n="scope">An editorial map, not a complete curriculum. Connections are curated and linked to explanations. External readings are marked separately from interactive lessons.</p><a href="../" data-i18n="allLessons">Browse all interactive lessons →</a></footer>
+    <noscript><p>Enable JavaScript to explore the map. / 请启用 JavaScript 浏览地图。</p><a href="../fourier/#step5">Fourier / 傅里叶</a> · <a href="../convolution/#step6">Convolution theorem / 卷积定理</a></noscript>
+  </div>
+</body>
+</html>
