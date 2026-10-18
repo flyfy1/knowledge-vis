@@ -1,0 +1,38 @@
+{
+  "id": 51,
+  "title": {
+    "zh": "#51 · N 皇后",
+    "en": "#51 · N-Queens"
+  },
+  "desc": {
+    "zh": "用列与对角线集合剪枝，逐步撤销并保存所有完整棋盘。",
+    "en": "Prune with column and diagonal sets, undo each choice, and retain every complete board."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "回溯",
+      "en": "Backtracking"
+    },
+    {
+      "zh": "约束搜索",
+      "en": "Constraint search"
+    }
+  ],
+  "path": "51/",
+  "leetcodeUrl": "https://leetcode.com/problems/n-queens/",
+  "language": "Python",
+  "complexity": "O(n·n! + S·n²) time; O(n) auxiliary + O(S·n²) output",
+  "concepts": [
+    {
+      "name": "Backtracking and constraint sets",
+      "step": 1,
+      "description": "Reject column and diagonal conflicts, restore the exact legal prefix."
+    },
+    {
+      "name": "Enumerating all N-Queens boards",
+      "step": 2,
+      "description": "Keep complete boards while undoing working placements."
+    }
+  ]
+}

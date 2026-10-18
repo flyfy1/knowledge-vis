@@ -11,8 +11,9 @@ campaign, not a recurring catalog monitor. The target is the dated official
 Apply the [independent design review and adjudication](reviews/leetcode-all-hard-design-review.md),
 [authoring requirements](leetcode-explainers.md), and
 [mandatory acceptance gates](leetcode-review-gates.md). Begin with #51 to prove a
-new lesson cycle; then ascending official ID, including review debt for existing
-pages. Preserve prominent IDs, separate official links, bilingual explanations,
+new lesson cycle; the first new batch is #51, #52, #60, and #65. Then proceed
+through the remaining official IDs in ascending order, including review debt for
+existing pages. Preserve prominent IDs, separate official links, bilingual explanations,
 Python source parity, and genuine algorithm-specific interactions.
 
 Every catalog record starts not started; existing pages have separate historical
@@ -58,7 +59,9 @@ verified release step. The initial public count stays 11 during this phase.
 Run `python3 scripts/leetcode_campaign.py --help` for exact options. State and
 agent logs live outside the source checkout. `--dry-run` selects work without
 starting agents. `--ids` can run an initial smoke lesson; omit it for the complete
-snapshot. `--limit` bounds a test pass. Reuse the same state directory to resume.
+snapshot. `--limit` bounds queue selection; `--run-count 1` executes one item while
+retaining the full selected queue for resumption. Reuse the same state directory
+and selection to resume.
 Never start two workers on the same checkout or rewrite state to force acceptance.
 The worker exits on dirty source at startup and preserves failures for inspection.
 

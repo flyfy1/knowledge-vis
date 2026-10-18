@@ -48,7 +48,9 @@ small exhaustive/seeded cases. Exercise the REAL browser, both locales, all pres
 forward/back/reset/endpoints, prediction then reveal then change, copy/fallback,
 320/390/desktop widths and 200% zoom, keyboard/focus, source/download parity,
 local asset errors and measured contrast. Store tests and self-check evidence in
-this lesson folder. Browser packages are available via NODE_PATH; if set, use
+this lesson folder. Tests that emit results/screenshots must accept an output
+directory environment variable so a reviewer can rerun without changing the
+frozen candidate. Browser packages are available via NODE_PATH; if set, use
 process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH as launch executablePath. Use the
 already-running preview URL; don't start a persistent service. Headless screenshots
 must be visually inspected, not only produced. Keep shipped CSS under 25000 bytes.
