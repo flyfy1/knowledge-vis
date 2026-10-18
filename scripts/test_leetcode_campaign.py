@@ -45,11 +45,11 @@ if role in ('author', 'fix'):
         (folder / name).write_text('Candidate ' + pid + ' ' + role)
     if 'javascript' in problem.get('categories', []):
         contract = {'problemId': problem['id'], 'language': 'JavaScript', 'officialSource': problem['officialUrl'],
-                    'supportedLanguages': ['JavaScript'], 'interface': 'function memoize(fn)',
-                    'rationale': 'Fixture exposes only the JavaScript callable.', 'verifiedAt': '2026-10-18T00:00:00Z',
+                    'supportedLanguages': ['JavaScript', 'TypeScript'], 'interface': 'function memoize(fn)',
+                    'rationale': 'Owner explicitly chose JavaScript for this exact-six exception.', 'verifiedAt': '2026-10-18T00:00:00Z',
                     'verificationEvidence': 'language-evidence.md'}
         (folder / 'language-contract.json').write_text(json.dumps(contract))
-        (folder / 'language-evidence.md').write_text('Official fixture interface exposes JavaScript only.')
+        (folder / 'language-evidence.md').write_text('Official fixture supports JavaScript and TypeScript; owner chose original JavaScript.')
         for source, mirror, export in [('solution.js','javascript-code.js','JAVASCRIPT_SOURCE'), ('concept.py','python-code.js','PYTHON_SOURCE')]:
             if (folder / source).exists():
                 (folder / mirror).write_text('window.' + export + ' = ' + json.dumps((folder / source).read_text()) + ';')
@@ -223,12 +223,17 @@ class CampaignTests(unittest.TestCase):
         self.git("commit", "-m", "JavaScript lesson fixture")
         return problem
 
-    def test_javascript_requires_native_solution_and_python_comparison(self):
+    def test_javascript_owner_exception_requires_native_solution_even_with_typescript(self):
         problem = self.javascript_fixture()
         self.invoke()
         self.assertEqual(self.progress()["problems"]["2630"]["status"], "accepted_local")
         self.assertEqual([r["role"] for r in self.progress()["runs"]], ["author", "review"])
         self.assertFalse((self.repo / "leetcode/2630/solution.py").exists())
+        folder = self.repo / "leetcode/2630"
+        contract = json.loads((folder / "language-contract.json").read_text())
+        self.assertIn("TypeScript", contract["supportedLanguages"])
+        self.assertIn("solution.js", campaign.required_for(problem, True, folder))
+        self.assertNotIn("solution.ts", campaign.required_for(problem, True, folder))
         for missing in ("solution.js", "javascript-code.js", "concept.py", "python-code.js", "language-contract.json"):
             with self.subTest(missing=missing):
                 path = self.repo / "leetcode/2630" / missing

@@ -44,8 +44,10 @@ not just its trace or analogy (type-check/compile TypeScript, then execute emitt
 JavaScript; SQL requires documented dialect semantics including ties, nulls,
 duplicates and ordering). Missing executable evidence is not acceptance.
 
-For JavaScript category problems 2630, 2650, 2675, 2691, 2756 and 2759, prefer
-verified TypeScript when supported, otherwise original JavaScript. Audit separate
+For JavaScript category problems 2630, 2650, 2675, 2691, 2756 and 2759, the owner
+explicitly requires original JavaScript even if TypeScript is supported; this
+exact-six exception overrides the general language preference. Require solution.js
+and javascript-code.js, then audit separate
 concept.py / python-code.js exact parity and bilingual conceptual-only labels.
 Independently check identity/mutation/callback/this behavior and deterministic
 promise timing/rejection/ordering where applicable; test the Python comparison

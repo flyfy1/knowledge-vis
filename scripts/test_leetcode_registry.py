@@ -122,6 +122,37 @@ class RegistryTests(unittest.TestCase):
             native={'id':2630,'officialUrl':'https://leetcode.com/problems/memoize-ii/','categories':['javascript']}
             with self.assertRaisesRegex(ValueError,'language-contract'): validate_language_sources(native,folder)
 
+    def test_exact_six_owner_choice_overrides_typescript_and_python_preferences(self):
+        catalog=json.loads((ROOT/'leetcode/catalog/hard-problems.json').read_text())
+        with tempfile.TemporaryDirectory() as tmp:
+            folder=Path(tmp)
+            (folder/'language-evidence.md').write_text('Synthetic official interfaces for policy tests; not live availability evidence.')
+            for problem_id in JAVASCRIPT_PROBLEM_IDS:
+                official=next(problem for problem in catalog['problems'] if problem['id']==problem_id)
+                contract={'problemId':problem_id,'language':'JavaScript','officialSource':official['officialUrl'],
+                          'supportedLanguages':['JavaScript','TypeScript','Python'],
+                          'interface':'Original JavaScript callable interface',
+                          'rationale':'Owner explicitly chose original JavaScript for these six.',
+                          'verifiedAt':'2026-10-18T00:00:00Z','verificationEvidence':'language-evidence.md'}
+                with self.subTest(problem_id=problem_id):
+                    (folder/'language-contract.json').write_text(json.dumps(contract))
+                    self.assertEqual(solution_language(official,folder),'JavaScript')
+                    for source, mirror, export in [('solution.js','javascript-code.js','JAVASCRIPT_SOURCE'),
+                                                  ('concept.py','python-code.js','PYTHON_SOURCE')]:
+                        (folder/source).write_text('Source fixture '+source)
+                        (folder/mirror).write_text('window.'+export+' = '+json.dumps((folder/source).read_text())+';')
+                    self.assertEqual(validate_language_sources(official,folder),'JavaScript')
+                    for mirror in ('javascript-code.js','python-code.js'):
+                        original=(folder/mirror).read_text()
+                        (folder/mirror).write_text(original.replace('Source fixture','Different fixture'))
+                        with self.assertRaisesRegex(ValueError,'parity'):
+                            validate_language_sources(official,folder)
+                        (folder/mirror).write_text(original)
+                    for rejected in ('TypeScript','Python'):
+                        (folder/'language-contract.json').write_text(json.dumps({**contract,'language':rejected}))
+                        with self.assertRaisesRegex(ValueError,'six explicitly approved JavaScript'):
+                            solution_language(official,folder)
+
     def test_exception_registration_requires_evidence_and_parity_before_writing(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)
