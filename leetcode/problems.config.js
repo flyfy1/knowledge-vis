@@ -559,6 +559,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(26NL² + M) time / O(NL + E + M) space including output"
   },
   {
+    "id": 135,
+    "title": {
+      "zh": "分发糖果",
+      "en": "Candy"
+    },
+    "desc": {
+      "zh": "从相邻约束推导两个方向的最低糖果数，并证明逐项取最大值恰好最优。",
+      "en": "Derive two directional candy bounds and prove why their maximum is exactly enough."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "双向扫描",
+        "en": "Two passes"
+      }
+    ],
+    "path": "135/",
+    "leetcodeUrl": "https://leetcode.com/problems/candy/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
