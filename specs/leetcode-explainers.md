@@ -241,6 +241,19 @@ and 200% zoom; retain before/after evidence and have a fresh reviewer close the
 finding. See [the original finding](reviews/51-review-1-b84a663e.md) and
 [the accepted recheck](reviews/51-review-2-edd9687d.md).
 
+Inspect essential adjacent state labels and values as well as diagrams: dense
+intermediate states and long identifiers must remain separately readable and
+clearly associated in both locales at the established 320/390 px widths.
+Document-level overflow checks alone cannot prove state readability. Deliberate
+component-level scrolling is allowed when label/value association remains
+available and scrolling is keyboard-accessible. Inspect relevant populated
+states; this does not require a new test framework or exhaustive per-frame or
+per-pixel geometry checks. The original independent Sudoku review reported
+`candidates_at_entry` colliding with `["9"]` at official preset event 12 despite
+no page overflow (37-R04, `specs/reviews/37-review-1-807e6ed8.md` at immutable
+commit `90defbad97ab0adfd070fcc0ec4de1608e87be43`). This clarification does not
+reproduce or fix that lesson; apply the evidence and closure rules in the gates.
+
 ## Concrete, gradual explanation contract
 
 Start from one small input the learner can work by hand. Keep the same example
