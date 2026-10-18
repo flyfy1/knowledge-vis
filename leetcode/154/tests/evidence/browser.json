@@ -1,0 +1,158 @@
+{
+  "url": "http://127.0.0.1:18786/leetcode/154/",
+  "snapshots": 38,
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "presets": 9,
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "scroll": 320,
+      "viewport": 320,
+      "minCell": 124
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "scroll": 390,
+      "viewport": 390,
+      "minCell": 102.65625
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "scroll": 736,
+      "viewport": 736,
+      "minCell": 121.1875
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "scroll": 1440,
+      "viewport": 1440,
+      "minCell": 174
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "scroll": 320,
+      "viewport": 320,
+      "minCell": 124
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "scroll": 390,
+      "viewport": 390,
+      "minCell": 102.65625
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "scroll": 736,
+      "viewport": 736,
+      "minCell": 121.1875
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "scroll": 1440,
+      "viewport": 1440,
+      "minCell": 174
+    }
+  ],
+  "contrast": [
+    {
+      "selector": ".explain",
+      "foreground": "rgb(201, 212, 226)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".cell.kept span",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".cell.excluded b",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#prev",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#next",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a.active",
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".btn.primary",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "a",
+      "foreground": "rgb(110, 231, 255)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "focus": {
+    "outline": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "errors": [],
+  "assets": [
+    "http://127.0.0.1:18786/leetcode/154/",
+    "http://127.0.0.1:18786/leetcode/style.css",
+    "http://127.0.0.1:18786/leetcode/154/style.css?v=154-1",
+    "http://127.0.0.1:18786/leetcode/common.js",
+    "http://127.0.0.1:18786/leetcode/154/copy.js?v=154-1",
+    "http://127.0.0.1:18786/leetcode/154/core.js?v=154-1",
+    "http://127.0.0.1:18786/leetcode/154/python-code.js?v=154-1",
+    "http://127.0.0.1:18786/leetcode/154/app.js?v=154-1"
+  ],
+  "checks": [
+    "forward/back exact snapshots",
+    "reset/end/scrub endpoints",
+    "all prediction choices, reveal, change clears feedback",
+    "locale preserves trace, choice, feedback, disclosure, focus",
+    "copy success and denied fallback selection",
+    "download/display/mirror parity",
+    "keyboard enter/space/home/end",
+    "deep links and sticky geometry",
+    "200% CSS zoom reflow screenshots",
+    "forced colors and reduced motion",
+    "offline source and trace",
+    "denied storage"
+  ]
+}
