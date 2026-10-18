@@ -1,0 +1,7 @@
+# Ordinary pointer verification for LeetCode #85
+
+On 2026-10-18, the dispatcher reran the exact committed `leetcode/85/tests/browser.cjs` at lane HEAD `3a0da904aca7b630400a1bb3fbcf1f3f72f44004`. The test was not rewritten and all locator clicks retained Playwright's default actionability checks. This supplements the independent review, whose broad batch replay had used forced clicks after an earlier unclassified browser closure.
+
+The suite exited successfully in 33 seconds against a separate loopback preview on Pi. It covered 244 forward operations plus reverse/reset checks, both locales and seven presets, source/copy/download parity, clipboard denial, keyboard focus, contrast and target sizes, narrow layouts, and 200% CSS layout enlargement. No runtime errors were recorded. The source worktree remained clean. The previous browser closure's cause remains unconfirmed; this successful rerun closes the missing ordinary-click batch coverage, not its root-cause investigation.
+
+`dispatcher-result.json` records command provenance, timing, exact source HEAD and exit status; `results.json` records the test measurements. Full output and screenshots remain in `/home/songyy/projects/leetcode-hard-parallel-20261018/state-85/dispatcher-normal-clicks/`. These are supplemental dispatcher checks, not a replacement reviewer or public-delivery evidence. The original independent acceptance report and candidate are unchanged.
