@@ -22,10 +22,7 @@
   "path": "115/",
   "leetcodeUrl": "https://leetcode.com/problems/distinct-subsequences/",
   "language": "Python",
-  "complexity": {
-    "time": "O(mn) arithmetic operations",
-    "space": "O(n) integer cells"
-  },
+  "complexity": "O(mn) arithmetic operations; O(n) integer cells",
   "concepts": [
     {
       "name": "Subsequence counting",
