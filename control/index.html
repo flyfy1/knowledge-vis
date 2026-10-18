@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="style.css?v=w2a">
 <script src="sim-core.js?v=w2a"></script>
 <script src="i18n.js?v=w2a"></script>
+<link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
 
@@ -41,7 +42,7 @@
     <h2 data-i18n="s0t">推它，它不倒</h2>
     <p class="explain" data-i18n-html="s0e"></p>
     <div class="stage">
-      <canvas id="s0-canvas" height="320"></canvas>
+      <canvas id="s0-canvas" height="320" style="height:320px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn primary" id="s0-push" data-i18n="btnPush">推一把</button>
@@ -73,14 +74,14 @@
       <div class="half">
         <div class="stage">
           <p class="stage-title" data-i18n="s1inv">倒立摆（控制关）</p>
-          <canvas id="s1-inv" height="260"></canvas>
+          <canvas id="s1-inv" height="260" style="height:260px"></canvas>
         </div>
         <p class="readout" id="s1-inv-ro"></p>
       </div>
       <div class="half">
         <div class="stage">
           <p class="stage-title" data-i18n="s1hang">悬挂摆（秋千）</p>
-          <canvas id="s1-hang" height="260"></canvas>
+          <canvas id="s1-hang" height="260" style="height:260px"></canvas>
         </div>
         <p class="readout" data-i18n="s1hangNote">悬挂摆：等幅摆动，不发散、不衰减（模型里没有摩擦）。</p>
       </div>
@@ -92,7 +93,7 @@
     <h3 class="sub-h" data-i18n="s1mt">轮到你当控制器</h3>
     <p class="explain" data-i18n-html="s1me"></p>
     <div class="stage">
-      <canvas id="s1-man" height="300"></canvas>
+      <canvas id="s1-man" height="300" style="height:300px"></canvas>
     </div>
     <div class="big-timer" id="s1-timer">0.00 s</div>
     <div class="btn-row center">
@@ -112,10 +113,10 @@
     <h2 data-i18n="s2t">传感器 → 控制器 → 电机 → 再回到传感器</h2>
     <p class="explain" data-i18n-html="s2e"></p>
     <div class="stage">
-      <canvas id="s2-loop" height="180"></canvas>
+      <canvas id="s2-loop" height="180" style="height:180px"></canvas>
     </div>
     <div class="stage">
-      <canvas id="s2-canvas" height="300"></canvas>
+      <canvas id="s2-canvas" height="300" style="height:300px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s2gain">规则增益 K</span> <span class="val" id="s2-gain-val">26</span></span>
@@ -140,10 +141,10 @@
     <h2 data-i18n="s3t">P：太软倒、太硬晃</h2>
     <p class="explain" data-i18n-html="s3e"></p>
     <div class="stage">
-      <canvas id="s3-canvas" height="280"></canvas>
+      <canvas id="s3-canvas" height="280" style="height:280px"></canvas>
     </div>
     <div class="stage strip-stage">
-      <canvas id="s3-strip" height="110"></canvas>
+      <canvas id="s3-strip" height="110" style="height:110px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s3kp">Kp</span> <span class="val" id="s3-kp-val">20</span></span>
@@ -169,10 +170,10 @@
     <h2 data-i18n="s4t">D：提前刹车</h2>
     <p class="explain" data-i18n-html="s4e"></p>
     <div class="stage">
-      <canvas id="s4-canvas" height="280"></canvas>
+      <canvas id="s4-canvas" height="280" style="height:280px"></canvas>
     </div>
     <div class="stage strip-stage">
-      <canvas id="s4-strip" height="130"></canvas>
+      <canvas id="s4-strip" height="130" style="height:130px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s4kp">Kp（两辆车共用）</span> <span class="val" id="s4-kp-val">25</span></span>
@@ -198,10 +199,10 @@
     <h2 data-i18n="s5t">站得稳，还要站得直</h2>
     <p class="explain" data-i18n-html="s5e"></p>
     <div class="stage">
-      <canvas id="s5-canvas" height="280"></canvas>
+      <canvas id="s5-canvas" height="280" style="height:280px"></canvas>
     </div>
     <div class="stage strip-stage">
-      <canvas id="s5-strip" height="110"></canvas>
+      <canvas id="s5-strip" height="110" style="height:110px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s5slope">坡度</span> <span class="val" id="s5-slope-val">3°</span></span>
@@ -244,10 +245,10 @@
     <p class="explain" data-i18n-html="s6e"></p>
     <p class="readout" data-i18n="s6base">当前参数：均衡预设 {30, 6, 6}（平地）</p>
     <div class="stage">
-      <canvas id="s6-canvas" height="280"></canvas>
+      <canvas id="s6-canvas" height="280" style="height:280px"></canvas>
     </div>
     <div class="stage strip-stage">
-      <canvas id="s6-strip" height="110"></canvas>
+      <canvas id="s6-strip" height="110" style="height:110px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s6delay">① 传感器延迟</span> <span class="val" id="s6-delay-val">0 ms</span></span>
@@ -290,5 +291,6 @@
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 反馈与控制 Feedback & Control —— 一步一交互系列</footer>
 
 <script src="app.js?v=w2a"></script>
+<script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

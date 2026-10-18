@@ -6,6 +6,7 @@
 <title>特征值与特征向量 · 矩阵不转的那些方向</title>
 <link rel="stylesheet" href="style.css?v=w2a">
 <script src="i18n.js?v=w2a"></script>
+<link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
 
@@ -41,7 +42,7 @@
     <p class="explain" data-i18n-html="s0e"></p>
     <p class="formula" data-i18n="s0formula">A = [[2.2, 0.6], [0.6, 1.0]]</p>
     <div class="stage">
-      <canvas id="s0-canvas" height="430"></canvas>
+      <canvas id="s0-canvas" height="430" style="height:430px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s0tLab">变形进度 t</span> <span class="val" id="s0-t-val">1.00</span></span>
@@ -70,10 +71,10 @@
       <button class="btn" data-preset="2" data-i18n="s1p3">A 带负 λ</button>
     </div>
     <div class="stage">
-      <canvas id="s1-canvas" class="drag" height="430" tabindex="0"></canvas>
+      <canvas id="s1-canvas" class="drag" height="430" tabindex="0" style="height:430px"></canvas>
     </div>
     <div class="stage">
-      <canvas id="s1-curve" height="150"></canvas>
+      <canvas id="s1-curve" height="150" style="height:150px"></canvas>
     </div>
     <p class="readout" id="s1-readout"></p>
     <p class="readout" id="s1-found" style="display:none"></p>
@@ -89,13 +90,13 @@
     <p class="explain" data-i18n-html="s2e"></p>
     <p class="formula" data-i18n="s2formula">λ = (tr A ± √Δ) / 2</p>
     <div class="stage">
-      <canvas id="s2-canvas" height="430"></canvas>
+      <canvas id="s2-canvas" height="430" style="height:430px"></canvas>
     </div>
     <div class="board" id="s2-board"></div>
     <p class="readout" id="s2-note"></p>
     <div class="stage" id="s2-spiral-wrap" style="display:none">
       <p class="stage-title" data-i18n="s2spiralLab">迭代螺旋</p>
-      <canvas id="s2-spiral" height="240"></canvas>
+      <canvas id="s2-spiral" height="240" style="height:240px"></canvas>
       <div class="btn-row">
         <button class="btn" id="s2-spiral-step" data-i18n="s2spiralStep">下一步</button>
         <button class="btn" id="s2-spiral-play">播放</button>
@@ -135,11 +136,11 @@
     <p class="explain" data-i18n-html="s3e"></p>
     <p class="formula" data-i18n="s3formula">x ← Ax / |Ax|</p>
     <div class="stage">
-      <canvas id="s3-canvas" class="drag" height="430" tabindex="0"></canvas>
+      <canvas id="s3-canvas" class="drag" height="430" tabindex="0" style="height:430px"></canvas>
     </div>
     <div class="stage">
       <p class="stage-title" data-i18n="s3chartT">夹角误差随步数衰减（对数纵轴）</p>
-      <canvas id="s3-chart" height="150"></canvas>
+      <canvas id="s3-chart" height="150" style="height:150px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s3rLab">λ₂/λ₁ 之比 r</span> <span class="val" id="s3-r-val">0.33</span></span>
@@ -172,7 +173,7 @@
     <p class="explain" data-i18n-html="s4e"></p>
     <p class="formula" data-i18n="s4formula">A = QΛQᵀ</p>
     <div class="stage">
-      <canvas id="s4-canvas" height="430"></canvas>
+      <canvas id="s4-canvas" height="430" style="height:430px"></canvas>
     </div>
     <div class="board" id="s4-board"></div>
     <p class="readout" id="s4-mats"></p>
@@ -200,7 +201,7 @@
     <p class="explain" data-i18n-html="s5e"></p>
     <p class="formula" data-i18n="s5formula">C = (1/(n−1)) Σ pᵢpᵢᵀ</p>
     <div class="stage">
-      <canvas id="s5-canvas" class="drag" height="430" tabindex="0"></canvas>
+      <canvas id="s5-canvas" class="drag" height="430" tabindex="0" style="height:430px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn" id="s5-show" data-i18n="s5show">显示主成分</button>
@@ -219,7 +220,7 @@
     <p class="explain" data-i18n-html="s6e"></p>
     <p class="formula" data-i18n="s6formula">π ← Mπ，Mπ* = π*</p>
     <div class="stage">
-      <canvas id="s6-canvas" height="400"></canvas>
+      <canvas id="s6-canvas" height="400" style="height:400px"></canvas>
     </div>
     <div class="btn-row" id="s6-inits">
       <span style="color:var(--muted);font-size:14.5px;align-self:center" data-i18n="s6initLab">初始分布：</span>
@@ -258,5 +259,6 @@
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 特征值与特征向量 Eigenvalues & Eigenvectors —— 一步一交互系列</footer>
 
 <script src="app.js?v=w2a"></script>
+<script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

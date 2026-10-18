@@ -6,6 +6,7 @@
 <title>中心极限定理 · 平均值总会变成钟形</title>
 <link rel="stylesheet" href="style.css?v=w2a">
 <script src="i18n.js?v=w2a"></script>
+<link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
 
@@ -40,7 +41,7 @@
     <h2 data-i18n="s0t">骰子平均值的变形记</h2>
     <p class="explain" data-i18n-html="s0e"></p>
     <div class="stage">
-      <canvas id="s0-canvas" height="330"></canvas>
+      <canvas id="s0-canvas" height="330" style="height:330px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn dice-k active" data-k="1" data-i18n="dice1">掷 1 颗</button>
@@ -62,7 +63,7 @@
     <h2 data-i18n="s1t">原料什么样都有</h2>
     <p class="explain" data-i18n-html="s1e"></p>
     <div class="stage">
-      <canvas id="s1-canvas" height="310"></canvas>
+      <canvas id="s1-canvas" height="310" style="height:310px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn par1 active" data-par="uniform" data-i18n="pUniform">均匀 U(0, 1)</button>
@@ -88,7 +89,7 @@
     <h2 data-i18n="s2t">主战场：选原料、拉样本量</h2>
     <p class="explain" data-i18n-html="s2e"></p>
     <div class="stage">
-      <canvas id="s2-canvas" height="340"></canvas>
+      <canvas id="s2-canvas" height="340" style="height:340px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn par2 active" data-par="uniform" data-i18n="pUniform">均匀 U(0, 1)</button>
@@ -124,7 +125,7 @@
     <h2 data-i18n="s3t">σ/√n 是条铁律</h2>
     <p class="explain" data-i18n-html="s3e"></p>
     <div class="stage">
-      <canvas id="s3-canvas" height="330"></canvas>
+      <canvas id="s3-canvas" height="330" style="height:330px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn par3 active" data-par="uniform" data-i18n="pUniform">均匀 U(0, 1)</button>
@@ -151,7 +152,7 @@
       <div class="half">
         <h3 class="sub-t2" data-i18n="s4lt">慢：指数分布——偏态被磨平</h3>
         <div class="stage">
-          <canvas id="s4l-canvas" height="300"></canvas>
+          <canvas id="s4l-canvas" height="300" style="height:300px"></canvas>
         </div>
         <div class="btn-row">
           <button class="btn n4l" data-n="2" data-i18n="n2">n = 2</button>
@@ -164,7 +165,7 @@
       <div class="half">
         <h3 class="sub-t2" data-i18n="s4rt">坏：帕累托 α = 1.5——方差无穷，定理下班</h3>
         <div class="stage">
-          <canvas id="s4r-canvas" height="300"></canvas>
+          <canvas id="s4r-canvas" height="300" style="height:300px"></canvas>
         </div>
         <div class="btn-row">
           <button class="btn n4r" data-n="10" data-i18n="n10">n = 10</button>
@@ -186,7 +187,7 @@
     <h2 data-i18n="s5t">卷积阶梯：加法一遍遍磨出来的</h2>
     <p class="explain" data-i18n-html="s5e"></p>
     <div class="stage">
-      <canvas id="s5-canvas" height="330"></canvas>
+      <canvas id="s5-canvas" height="330" style="height:330px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn n5" data-n="1">n = 1</button>
@@ -207,7 +208,7 @@
     <h2 data-i18n="s6t">样本量计算器：民调 ±3% 的出身</h2>
     <p class="explain" data-i18n-html="s6e"></p>
     <div class="stage">
-      <canvas id="s6-canvas" height="270"></canvas>
+      <canvas id="s6-canvas" height="270" style="height:270px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn pre6 active" data-pre="poll" data-i18n="prePoll">预置：民调比例（σ = 0.5，p = 0.5）</button>
@@ -251,5 +252,6 @@
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 中心极限定理 CLT —— 一步一交互系列</footer>
 
 <script src="app.js?v=w2a"></script>
+<script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>
