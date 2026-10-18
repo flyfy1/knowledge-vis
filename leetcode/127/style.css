@@ -1,0 +1,12 @@
+/* Shared tokens and skeleton; only lesson-local geometry and accessibility. */
+.btn,select,.lang-toggle button,.step-nav a,.solution-actions a,summary{min-height:48px}
+.btn,select{border-color:var(--muted)}.btn:disabled{opacity:1;color:var(--muted);background:var(--panel2);border-color:var(--muted)}
+.step-nav{background:var(--bg);backdrop-filter:none}.step-nav a{display:inline-flex;align-items:center}.step-nav-inner{padding-block:10px}
+.lang-toggle{overflow:visible}.lang-toggle button:first-child{border-radius:999px 0 0 999px}.lang-toggle button:last-child{border-radius:0 999px 999px 0}
+.step{scroll-margin-top:90px}.hand-routes{display:flex;gap:16px;flex-wrap:wrap;margin:24px 0}.hand-routes code{padding:12px;background:var(--panel2);font-size:22px;color:var(--accent)}
+.layer{border-left:2px solid var(--accent);padding:0 0 0 14px;margin:20px 0}.layer h3{font-size:16px;color:var(--accent)}.words{display:flex;flex-wrap:wrap;gap:10px}.word{padding:12px;background:var(--panel2);border:1px solid var(--line);flex:1 1 150px;max-width:280px;overflow-wrap:anywhere}.word b{font-size:22px}.word.current{border:2px solid var(--accent2);padding:11px}.word p{margin:0;font-size:14px}.route{padding:8px 12px;margin:8px 0;background:var(--panel2);overflow-wrap:anywhere}#history{padding-left:24px}#history li{overflow-wrap:anywhere}#queue,#dictionary{overflow-wrap:anywhere}
+.stage label{display:block}select{max-width:100%}.prediction-options label{min-height:48px;padding:10px;border:1px solid var(--line);margin:8px 0}.prediction-options label:has(input:checked){border-color:var(--accent2)}input[type=radio]{min-width:20px;min-height:20px}input[type=range]{display:block;min-height:48px}.solution-actions a{display:inline-flex;align-items:center}summary{padding-block:12px}textarea{display:block;width:100%;color:var(--text);background:var(--panel2);border:1px solid var(--muted);font:14px/1.75 ui-monospace,monospace}textarea:focus-visible,pre:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+@media(max-width:560px){.controls .btn{flex:1 1 140px}.stage{padding:14px}.word{max-width:none}.hand-routes code{font-size:19px}}
+@media(forced-colors:active){.word.current,.prediction-options label:has(input:checked){outline:2px solid Highlight}}
+
+.lang-toggle button{min-width:48px}.back-link,.site-head .official-link,.related a{display:inline-flex;align-items:center;min-height:48px}

@@ -484,3 +484,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Path reconstruction | `leetcode/126/#step4` | Follow decreasing distances to enumerate all answers. |
 
 <!-- /leetcode-126-campaign -->
+
+
+<!-- leetcode-127-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Breadth-first search | `leetcode/127/#step1` | First-discovery distances in a FIFO queue. |
+| Shortest-path invariant | `leetcode/127/#step2` | Why marking words at enqueue time preserves minimum distance. |
+
+<!-- /leetcode-127-campaign -->
