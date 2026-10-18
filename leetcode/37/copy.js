@@ -244,28 +244,28 @@ window.LESSON_COPY = {
     "The official example starts with candidates {1,2,4}. Step to an undo and watch the cell return to .; use the event slider to navigate. Long searches retain the first 180 events and the final board, with an explicit omission notice."
   ],
   "complexity": [
-    "以 E 个空格计，保守上界 O(9^E) 时间，递归与空格表 O(E) 空间；固定 9×9 的约束集合占常量空间。约束剪枝通常减少搜索，但不改变该上界。",
-    "For E empty cells, a conservative bound is O(9^E) time and O(E) space for recursion and empty-cell positions. Constraint sets are constant-sized for a fixed 9×9 board. Pruning often reduces work without changing that upper bound."
+    "以 E 个空格计，保守上界 O(9^E) 时间，递归与空格表 O(E) 空间；固定 9×9 的约束集合占常量空间。约束剪枝通常减少搜索，但不改变该上界。 深度最多 E，每层最多 9 个选择，节点数不超过 1+9+…+9^E，所以为 O(9^E)。空格表和递归栈随 E 增长；已填完的棋盘仍需固定 81 格初始化。",
+    "For E empty cells, a conservative bound is O(9^E) time and O(E) space for recursion and empty-cell positions. Constraint sets are constant-sized for a fixed 9×9 board. Pruning often reduces work without changing that upper bound. Depth is at most E with at most nine choices per level: 1+9+…+9^E nodes gives O(9^E). Empty coordinates and the call stack grow with E; a solved board still requires fixed 81-cell initialization."
   ],
   "traps": [
     "候选少不代表当前数已经确定。失败后漏删任一集合会错误排除后续合法分支。不能修改已知数，也不能仅返回新棋盘而不修改原参数。",
     "A small candidate set does not make a digit certain. Failing to remove a digit from any set incorrectly prunes later branches. Preserve givens and modify the original board, rather than only returning a new one."
   ],
   "quizQuestion": [
-    "新情境：给一个空格试填 4 后，下一空格没有候选。回到这个空格时该做什么？",
-    "Fresh situation: after trying 4, the next empty cell has no candidates. What must happen when returning?"
+    "新棋盘的第一行为 ..4678912；列 0 从上到下为 .61847923；左上宫三行为 ..4 / 672 / 198。只用这三处约束，空格 (0,0) 的候选是什么？先计算，再揭晓。",
+    "A fresh board has first row ..4678912; column 0 reads .61847923 from top to bottom; its upper-left box has rows ..4 / 672 / 198. Using these three constraints, what are the candidates at (0,0)? Calculate before revealing."
   ],
   "option0": [
-    "只把棋盘格改回 .",
-    "Only change the board cell back to ."
+    "{3,5}",
+    "{3,5}"
   ],
   "option1": [
-    "保留 4，跳过无候选的空格",
-    "Keep 4 and skip the dead-end cell"
+    "没有候选",
+    "No candidates"
   ],
   "option2": [
-    "清空该格，并从行、列、宫集合移除 4",
-    "Clear the cell and remove 4 from its row, column, and box sets"
+    "{5}",
+    "{5}"
   ],
   "preset0": [
     "官方例：含失败与撤销",
@@ -290,6 +290,38 @@ window.LESSON_COPY = {
   "introducedLink": [
     "分支与重复状态的区别",
     "Branching versus repeated states"
+  ],
+  "branchTitle": [
+    "两个空格就能暴露一次失败",
+    "Two empty cells expose a failed choice"
+  ],
+  "branchStart": [
+    "先看完整官方输入（每行一串字符；行、列从 0 开始）。只跟踪第一行末尾的两个空格，就能理解为什么要撤销。",
+    "Here is the full official input (one string per row; rows and columns start at zero). We can understand undo by tracking just the last two empty cells of its first row."
+  ],
+  "branchBefore": [
+    "下面是搜索中的一个暂时局面，不是新的题目输入：第一行已试填成 5312748..。格 (0,7) 所在列已用 {6,7,8}，所在宫已用 {6,8}。该行缺 {6,9}，但列和宫都挡住 6，所以这里只能试 9。",
+    "Consider a temporary search position, not a new puzzle input: the first row is now “5312748..”. At (0,7), the column uses {6,7,8} and the box uses {6,8}. The row lacks {6,9}, but both column and box forbid 6. Only 9 is locally legal here."
+  ],
+  "branchTry": [
+    "写入 9 后，第一行变成 53127489.。列 7 的已用数从 {6,7,8} 变成 {6,7,8,9}；右上宫从 {6,8} 变成 {6,8,9}。现在向下一格 (0,8) 提问：这一行只缺 6，但列 8 已有 {1,3,5,6,9}，其中包含 6！因此没有候选，不能填完。",
+    "Write 9: the first row becomes “53127489.”. Column 7 changes from {6,7,8} to {6,7,8,9}; the upper-right box changes from {6,8} to {6,8,9}. Now ask about the next cell, (0,8): its row needs only 6, but column 8 already uses {1,3,5,6,9}, including 6! No digit can fill this cell."
+  ],
+  "branchUndo": [
+    "返回 (0,7)，把 9 擦掉：第一行恢复为 5312748..，行内已用数恢复为 {1,2,3,4,5,7,8}，列 7 恢复为 {6,7,8}，宫恢复为 {6,8}。此格没有别的候选，就继续返回 (0,6)，撤销 8，再试该格原来的另一个候选 9。这样回退称为回溯；并不保证下一次尝试成功。",
+    "Return to (0,7) and erase 9: restore row 5312748.. and row digits {1,2,3,4,5,7,8}, column 7 to {6,7,8}, and the box to {6,8}. This cell has no alternative, so return again to (0,6), undo 8, and try its other original candidate, 9. This return-and-retry process is backtracking; the next attempt can still fail."
+  ],
+  "branchWrong": [
+    "为什么不能把“当前不冲突”当作最终答案？刚才的 9 通过了三处检查，却使下一格无数可填。为什么不能只擦棋盘？列或宫若还记着 9，后面会把已经空出的 9 当作冲突。下面的基线先每次重扫棋盘：True 表示能填完，False 表示当前尝试走不通；失败就擦掉刚填的数。",
+    "Why not commit every digit that passes the current checks? Our 9 passed all three, yet left the next cell impossible. Why not erase only the board? A column or box still recording 9 would wrongly forbid it later. The baseline below rescans the board each time: True means completion succeeded, False means this attempt failed; on failure, erase the attempted digit."
+  ],
+  "setsBridge": [
+    "怎样保存刚才反复查找的已用数？Python 的集合 set 是不记录顺序、不保留重复值的一袋值。例如 s = set(\"678\") 保存字符 \"6\"、\"7\"、\"8\"；\"9\" in s 是 False。s.add(\"9\") 后是 {6,7,8,9}，s.remove(\"9\") 后又是 {6,7,8}。这些正是刚才列 7 的变化。rows、cols、boxes 各是含 9 个集合的列表：rows[0] 保存第一行的已用数，不是那一行的 9 个格子。",
+    "How can we save the used digits we keep looking up? A Python set stores values without order or duplicates. For example, s = set(\"678\") stores the characters \"6\", \"7\", \"8\"; \"9\" in s is False. After s.add(\"9\") it holds {6,7,8,9}; after s.remove(\"9\") it holds {6,7,8} again. These are exactly our column-7 updates. rows, cols, and boxes are each lists of nine sets: rows[0] stores the first row’s used digits, rather than its nine cells."
+  ],
+  "boxBridge": [
+    "怎样定位某格的宫？把九个宫从左到右、从上到下编号 0…8：顶排 0,1,2，中排 3,4,5，底排 6,7,8。// 是整除，所以 r//3 是第几排宫，c//3 是该排第几个宫；每排有 3 个宫，编号就是 (r//3)*3+c//3。例如 (0,7) 得到 0*3+2=2；(4,7) 得到 1*3+2=5。基线中的 r//3*3 和 c//3*3 则给出宫左上角的行、列，再各扫描 3 格。",
+    "How do we locate a cell’s box? Number boxes left to right, top to bottom: 0,1,2 across the top, 3,4,5 in the middle, 6,7,8 at the bottom. // is integer division: r//3 selects a box row and c//3 a box column. With three boxes per row, the index is (r//3)*3+c//3. Thus (0,7) gives 0*3+2=2; (4,7) gives 1*3+2=5. The baseline’s r//3*3 and c//3*3 instead locate the box’s top-left cell, then scan three rows and columns."
   ]
 };
 window.LESSON = {
@@ -337,8 +369,8 @@ window.LESSON = {
     "The official example starts with candidates {1,2,4}. Step to an undo and watch the cell return to .; use the event slider to navigate. Long searches retain the first 180 events and the final board, with an explicit omission notice."
   ],
   "complexity": [
-    "以 E 个空格计，保守上界 O(9^E) 时间，递归与空格表 O(E) 空间；固定 9×9 的约束集合占常量空间。约束剪枝通常减少搜索，但不改变该上界。",
-    "For E empty cells, a conservative bound is O(9^E) time and O(E) space for recursion and empty-cell positions. Constraint sets are constant-sized for a fixed 9×9 board. Pruning often reduces work without changing that upper bound."
+    "以 E 个空格计，保守上界 O(9^E) 时间，递归与空格表 O(E) 空间；固定 9×9 的约束集合占常量空间。约束剪枝通常减少搜索，但不改变该上界。 深度最多 E，每层最多 9 个选择，节点数不超过 1+9+…+9^E，所以为 O(9^E)。空格表和递归栈随 E 增长；已填完的棋盘仍需固定 81 格初始化。",
+    "For E empty cells, a conservative bound is O(9^E) time and O(E) space for recursion and empty-cell positions. Constraint sets are constant-sized for a fixed 9×9 board. Pruning often reduces work without changing that upper bound. Depth is at most E with at most nine choices per level: 1+9+…+9^E nodes gives O(9^E). Empty coordinates and the call stack grow with E; a solved board still requires fixed 81-cell initialization."
   ],
   "mapping": [
     [
@@ -422,36 +454,36 @@ window.LESSON = {
   ],
   "quiz": {
     "question": [
-      "新情境：给一个空格试填 4 后，下一空格没有候选。回到这个空格时该做什么？",
-      "Fresh situation: after trying 4, the next empty cell has no candidates. What must happen when returning?"
+      "新棋盘的第一行为 ..4678912；列 0 从上到下为 .61847923；左上宫三行为 ..4 / 672 / 198。只用这三处约束，空格 (0,0) 的候选是什么？先计算，再揭晓。",
+      "A fresh board has first row ..4678912; column 0 reads .61847923 from top to bottom; its upper-left box has rows ..4 / 672 / 198. Using these three constraints, what are the candidates at (0,0)? Calculate before revealing."
     ],
     "options": [
       [
-        "只把棋盘格改回 .",
-        "Only change the board cell back to ."
+        "{3,5}",
+        "{3,5}"
       ],
       [
-        "保留 4，跳过无候选的空格",
-        "Keep 4 and skip the dead-end cell"
+        "没有候选",
+        "No candidates"
       ],
       [
-        "清空该格，并从行、列、宫集合移除 4",
-        "Clear the cell and remove 4 from its row, column, and box sets"
+        "{5}",
+        "{5}"
       ]
     ],
     "correct": 2,
     "feedback": [
       [
-        "集合仍占用 4，会错误排除后面本该合法的分支。",
-        "The sets would still reserve 4 and incorrectly reject later valid branches."
+        "只看行会得到 {3,5}，但列 0 已有 3，必须排除。宫也要检查，不能只看一行。",
+        "The row alone allows {3,5}, but column 0 already contains 3. Exclude it; also check the box."
       ],
       [
-        "每个空格都必须填；跳过死路不能构成完整解。",
-        "Every empty cell must be filled; skipping a dead end cannot produce a complete solution."
+        "行缺 {3,5}，列只挡住其中的 3，宫没有挡住 5，所以并非死路。若缓存错误地残留一个 5，才会误判为无候选。",
+        "The row lacks {3,5}; the column excludes only 3 of those, and the box does not exclude 5. This is not a dead end. A stale cached 5 would incorrectly make it look like one."
       ],
       [
-        "四处状态一起恢复，下一候选才会从同一前提开始。",
-        "All four states must be restored so the next candidate starts under the same assumptions."
+        "行缺 {3,5}；列已用 {1,2,3,4,6,7,8,9}，排除 3；宫已用 {1,2,4,6,7,8,9}，没有排除 5。因此只剩 5。填入后该行另一空格 (0,1) 只缺 3。",
+        "The row lacks {3,5}. The column uses {1,2,3,4,6,7,8,9}, excluding 3; the box uses {1,2,4,6,7,8,9}, permitting 5. Only 5 remains. After placing it, the row’s other hole, (0,1), needs 3."
       ]
     ]
   },

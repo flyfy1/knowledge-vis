@@ -1,0 +1,2 @@
+/* Keep long variable names inside their allocated column at every width. */
+#state dt { min-width: 0; overflow-wrap: anywhere; }
