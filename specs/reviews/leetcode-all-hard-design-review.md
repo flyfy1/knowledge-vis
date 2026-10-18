@@ -256,3 +256,16 @@ Validation duties: exact candidate identity, fresh run IDs, meaningful independe
 browser and oracle evidence, source parity, no registration on partial output,
 no process continuing after a tool/auth failure, and restart/stop behavior.
 No reviewed score or publication is implied by this adjudication.
+
+## Dispatcher amendment — explicit owner language decision, 2026-10-18
+
+The owner chose original JavaScript plus a Python conceptual comparison for all
+six JavaScript-category Hard problems (#2630, #2650, #2675, #2691, #2756, #2759).
+This supersedes the earlier Python-interface blocker for those six only. Adopt
+the exception without changing the approved page structure or review thresholds.
+Both locales must distinguish the submittable JavaScript solution from the
+Python teaching adaptation; verify each source mirror/download and explain
+semantic differences. Unverifiable statements or original interfaces remain
+blockers. Other lessons retain Python (including verified Pandas interfaces).
+This is an owner-authorized language-policy amendment, not a new independent
+review or a retrospective acceptance of any lesson.

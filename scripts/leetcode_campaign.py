@@ -19,10 +19,13 @@ import threading
 import uuid
 
 from leetcode_registry import read_registry
+from register_leetcode_lesson import solution_language
 
 
 WEIGHTS = (15, 20, 20, 20, 15, 10)
 REQUIRED = ("index.html", "app.js", "copy.js", "solution.py", "python-code.js", "BRIEF.md")
+JAVASCRIPT_REQUIRED = ("index.html", "app.js", "copy.js", "solution.js", "javascript-code.js",
+                       "concept.py", "python-code.js", "BRIEF.md")
 REGISTER_PATHS = {"leetcode/problems.config.js", "leetcode/index.html", "CONCEPT-MAP.md"}
 TERMINAL = {"accepted_local", "blocked", "needs_review"}
 AUTHOR_SCHEMA = {
@@ -297,8 +300,14 @@ def commit_changes(repo, paths, title, trailers):
     return head(repo)
 
 
-def required_files(repo, problem_id, new):
-    required = (*REQUIRED, "lesson-entry.json") if new else REQUIRED
+def required_for(problem, new=False):
+    required = JAVASCRIPT_REQUIRED if solution_language(problem) == "JavaScript" else REQUIRED
+    return (*required, "lesson-entry.json") if new else required
+
+
+def required_files(repo, problem, new):
+    problem_id = problem["id"]
+    required = required_for(problem, new)
     missing = [name for name in required if not (repo / "leetcode" / str(problem_id) / name).is_file()]
     if missing:
         raise CampaignError(f"Lesson {problem_id} is not ready; missing {', '.join(missing)}")
@@ -308,7 +317,7 @@ def process_problem(args, problem, state, state_path, base_url):
     pid = str(problem["id"])
     if pid not in state["problems"]:
         registered = any(str(item["id"]) == pid for item in read_registry(args.repo / "leetcode/problems.config.js"))
-        files = REQUIRED if registered else (*REQUIRED, "lesson-entry.json")
+        files = required_for(problem, new=not registered)
         complete = all((args.repo / "leetcode" / pid / name).is_file() for name in files)
         state["problems"][pid] = {
             "status": "pending", "rounds": 0, "new": not registered,
@@ -350,7 +359,7 @@ def process_problem(args, problem, state, state_path, base_url):
             paths = check_paths(args.repo, pid)
             entry["author_runs"].append(run_id)
             if output["outcome"] == "ready":
-                required_files(args.repo, pid, entry["new"])
+                required_files(args.repo, problem, entry["new"])
             entry["candidate"] = commit_changes(args.repo, paths, f"Develop LeetCode {pid} candidate pending independent review",
                 {"Campaign-Status": "blocked" if output["outcome"] == "blocked" else "review_pending",
                  "Author-Run": run_id, "Built-By": f"gpt-6.1-sol ({run_id})",
@@ -383,7 +392,7 @@ def process_problem(args, problem, state, state_path, base_url):
         if output["outcome"] == "accepted" and not accepted:
             raise CampaignError("Review claimed acceptance without satisfying the frozen rubric")
         if accepted:
-            required_files(args.repo, pid, entry["new"])
+            required_files(args.repo, problem, entry["new"])
         review = {**output, "run_id": run_id, "candidate": before, "candidate_sha256": frozen,
                   "weighted_score": score, "round": round_number}
         review["commit"] = commit_changes(args.repo, paths, f"Record independent review of LeetCode {pid} round {round_number}",

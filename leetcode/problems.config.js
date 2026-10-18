@@ -223,8 +223,8 @@ window.LEETCODE_PROBLEMS = [
   {
     "id": 51,
     "title": {
-      "zh": "#51 · N 皇后",
-      "en": "#51 · N-Queens"
+      "zh": "N 皇后",
+      "en": "N-Queens"
     },
     "desc": {
       "zh": "用列与对角线集合剪枝，逐步撤销并保存所有完整棋盘。",

@@ -38,7 +38,10 @@ if scenario == 'timeout':
 if role in ('author', 'fix'):
     folder = repo / 'leetcode' / pid
     folder.mkdir(parents=True, exist_ok=True)
-    for name in ('index.html','app.js','copy.js','solution.py','python-code.js','BRIEF.md','lesson-entry.json'):
+    sources = ('solution.js','javascript-code.js','concept.py') if 'javascript' in problem.get('categories', []) else ('solution.py',)
+    for name in ('index.html','app.js','copy.js','python-code.js','BRIEF.md','lesson-entry.json', *sources):
+        if scenario == 'missing_js_comparison' and name == 'concept.py':
+            continue
         (folder / name).write_text('Candidate ' + pid + ' ' + role)
     if scenario == 'shared_change':
         (repo / 'shared.txt').write_text('unauthorized change')
@@ -200,6 +203,50 @@ class CampaignTests(unittest.TestCase):
         self.invoke("", "--ids", "4")
         self.assertEqual([r["role"] for r in self.progress()["runs"]], ["author", "review"])
         self.assertTrue((self.repo / "leetcode/4/lesson-entry.json").is_file())
+
+    def javascript_fixture(self, sources=()):
+        problem = {"id": 2630, "title": "Memoize II", "categories": ["javascript"]}
+        self.write("leetcode/catalog/hard-problems.json", json.dumps({"problems": [problem]}))
+        for name in sources:
+            self.write(f"leetcode/2630/{name}", "Existing source")
+        self.git("add", ".")
+        self.git("commit", "-m", "JavaScript lesson fixture")
+        return problem
+
+    def test_javascript_requires_native_solution_and_python_comparison(self):
+        problem = self.javascript_fixture()
+        self.invoke()
+        self.assertEqual(self.progress()["problems"]["2630"]["status"], "accepted_local")
+        self.assertEqual([r["role"] for r in self.progress()["runs"]], ["author", "review"])
+        self.assertFalse((self.repo / "leetcode/2630/solution.py").exists())
+        for missing in ("solution.js", "javascript-code.js", "concept.py", "python-code.js"):
+            with self.subTest(missing=missing):
+                path = self.repo / "leetcode/2630" / missing
+                content = path.read_bytes()
+                path.unlink()
+                with self.assertRaisesRegex(campaign.CampaignError, missing):
+                    campaign.required_files(self.repo, problem, new=True)
+                path.write_bytes(content)
+
+    def test_javascript_python_only_candidate_is_authored_again(self):
+        self.javascript_fixture((*campaign.REQUIRED, "lesson-entry.json"))
+        self.invoke()
+        self.assertEqual([r["role"] for r in self.progress()["runs"]], ["author", "review"])
+
+    def test_javascript_missing_comparison_stops_before_review(self):
+        self.javascript_fixture()
+        with self.assertRaisesRegex(campaign.CampaignError, "concept.py"):
+            self.invoke("missing_js_comparison")
+        self.assertEqual([r["role"] for r in self.progress()["runs"]], ["author"])
+        self.assertEqual(self.progress()["status"], "failed")
+
+    def test_python_required_files_unchanged_and_javascript_policy_scoped(self):
+        self.assertEqual(campaign.required_for(self.problems[0]), campaign.REQUIRED)
+        self.assertIn("solution.py", campaign.required_for(self.problems[0]))
+        for problem in ({"id": 51, "categories": ["javascript"]},
+                        {"id": 2630, "categories": ["algorithms"]}):
+            with self.assertRaisesRegex(ValueError, "six approved"):
+                campaign.required_for(problem)
 
     def test_prior_evidence_cannot_be_overwritten(self):
         self.write("specs/reviews/4-evidence/prior.png", "Original evidence")

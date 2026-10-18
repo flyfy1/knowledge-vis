@@ -12,11 +12,21 @@ Future problems use the same path. Do not add accounts, a code execution service
 progress synchronization, or a general algorithm framework without a concrete
 lesson that needs them.
 
-All solution, baseline, pseudocode, and test examples shown to readers use
-**Python**. Vanilla JavaScript may implement browser interaction. Do not present
-that implementation as Python execution or claim a LeetCode acceptance without
-an actual submission result. UI and prose follow `../UI-I18N-SPEC.md` in both
+Solution, baseline, pseudocode, and test examples shown to readers use
+**Python** by default. The owner approved an exception on 2026-10-18 for the six
+JavaScript-category Hard problems: #2630, #2650, #2675, #2691, #2756, and #2759.
+These use the verified original JavaScript submission interface and include a
+separate Python conceptual comparison. Label that comparison in both languages
+as a teaching adaptation, not an equivalent LeetCode submission; identify runtime
+semantics it cannot reproduce. Browser interaction code is distinct from the
+solution in either language. Do not present JavaScript as Python execution or
+claim LeetCode acceptance without an actual submission result. UI and prose follow `../UI-I18N-SPEC.md` in both
 Chinese and English, with the shared `knowledge-lang` preference.
+
+For those six exceptions, references below to the solution language mean
+JavaScript; the Python comparison supplements the learning path. Verify the
+original contract, including applicable async ordering, errors, cancellation,
+object identity, and timing behavior, rather than silently translating it away.
 
 ## Review authority
 
@@ -112,6 +122,11 @@ diagrams, readouts and Python. Keep English causally equivalent to Chinese.
   in the collection heading and the lesson H1. Provide separate lesson and
   official-problem links on the collection card, plus an official link beside
   the lesson header; never nest an external link inside a clickable card link.
+  Registry titles contain the name only; the collection owns the `#<id>` prefix.
+  Verify the rendered collection after registration so that IDs appear exactly
+  once, even when authored metadata already contains a matching prefix. Reject
+  mismatched numeric prefixes before registration rather than publishing a
+  misleading title beside a different official problem link.
 - Problem files: `index.html`, `copy.js`, `app.js`, an independently testable
   numerical core when needed, `solution.py`, and `BRIEF.md`.
 - The shared `leetcode/style.css` starts from the existing Fourier theme.
@@ -119,6 +134,11 @@ diagrams, readouts and Python. Keep English causally equivalent to Chinese.
 - For offline opening, embed the displayed Python source in `python-code.js`.
   Regenerate it from `solution.py`; test exact source equality. Do not require
   network requests to display solution code or local experiment data.
+- For the six JavaScript exceptions, use `solution.js` and its exact offline
+  mirror `javascript-code.js`; use `concept.py` and its exact mirror
+  `python-code.js` for the separately labeled conceptual comparison. Provide
+  distinct copy/download controls and verify each displayed/downloaded pair.
+  Set registry language to `JavaScript`; do not name the comparison `solution.py`.
 - Add concept deep links and register the new lesson in `CONCEPT-MAP.md`.
 - General authoring lessons belong here; problem-specific evidence belongs in
   the problem's brief. Bump asset query versions when changing a served asset.
@@ -187,3 +207,14 @@ For multi-algorithm batches, also apply [the Hard trace specification](leetcode-
 It adds explicit frame timing, data-versus-highlight semantics, identity tests,
 trace omission notices, rolling-memory disclosure, and misconception-driven
 prediction requirements derived from the first ten numeric-ID Hard lessons.
+
+## Finding from #51: zoom can break the diagram without page overflow
+
+The first independent #51 review found squeezed queen cells and axis labels at
+200% zoom even though document-level overflow checks passed. Review component
+geometry as well as the page width: labels must remain readable, board columns
+must remain equal, and the state panel must reflow when the usable width shrinks.
+Exercise and inspect the populated diagram in both languages at narrow widths
+and 200% zoom; retain before/after evidence and have a fresh reviewer close the
+finding. See [the original finding](reviews/51-review-1-b84a663e.md) and
+[the accepted recheck](reviews/51-review-2-edd9687d.md).
