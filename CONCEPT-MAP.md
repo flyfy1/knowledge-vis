@@ -348,3 +348,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 - A 组审计报告（fourier/convolution/sampling/control）在盘点时发现文件本身截断（止于 convolution 第 5 步），sampling/control 两页无独立「跨页链接」小节存世；该两页的链关系依据 SUMMARY.md 汇总（规则 12 最大簇为全站问题）与本表逐页源码盘点补齐，已在各条依据中注明来源。
 - mandelbrot → fourier 存量链、sorting 终章缺位两处如实登记，未替它们编造概念关系。
 - 本表只建图，未改任何页面代码（kalman 已上线部分除外，系此前补丁）。
+
+
+<!-- leetcode-51-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Backtracking and constraint sets | `leetcode/51/#step1` | Reject column and diagonal conflicts, restore the exact legal prefix. |
+| Enumerating all N-Queens boards | `leetcode/51/#step2` | Keep complete boards while undoing working placements. |
+
+<!-- /leetcode-51-campaign -->
