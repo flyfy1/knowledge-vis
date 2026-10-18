@@ -1,0 +1,19 @@
+{
+  "kind": "author self-check",
+  "smallOracleCases": 1245,
+  "exhaustive": "all 511 nonempty subsets of the 3\u00d73 integer grid",
+  "seed": 149,
+  "randomCases": 700,
+  "orderPermutations": 24,
+  "largeClosedFormCases": [
+    "n=300 one line",
+    "n=300 parallel rows",
+    "parabola: line meets at most twice"
+  ],
+  "sourceMirrorParity": true,
+  "inputUnchanged": true,
+  "officialExamples": [
+    3,
+    4
+  ]
+}

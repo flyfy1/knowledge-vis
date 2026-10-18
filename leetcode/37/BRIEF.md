@@ -56,3 +56,52 @@ Run `python3 leetcode/tests/test_hard_solutions.py`,
 `NODE_PATH=<playwright package directory> node leetcode/tests/test_hard_browser.cjs`.
 See `../../specs/reviews/leetcode-first-ten-review.md` for observed review evidence.
 No actual LeetCode submission or human learning test is claimed.
+
+## Review repair candidate 37-r2 (2026-10-18)
+
+Scope: only this lesson; the designated independent review is
+`specs/reviews/37-review-1-807e6ed8.md`. Its four required recommendations are
+adopted. This repairs the existing teaching sequence and state presentation;
+no new feature, layout, shared runtime or solver is introduced. Target reader
+and five-step learning loop above remain the contract. Independent acceptance
+and finding closure remain pending a separate review.
+
+P0 / highest-return slice: make the failed choice calculable before abstraction
+(37-R02), test a fresh calculation (37-R03), supply metadata (37-R01), and wrap
+state keys within their existing grid column (37-R04). Done means bilingual
+causal copy, executed Python/source parity, readable intermediate states and
+passing non-mutating metadata validation. P1/P2: none. Deferred: new presets,
+solver optimizations and decoration, because they are outside the required fixes.
+
+The worked branch in step 01 uses the actual official trace, events 9–14:
+`5312748..` → try 9 at (0,7) → `53127489.` → (0,8) needs 6 but its
+column contains 6 → restore (0,7) and its three projections → return to (0,6).
+The full official input and every projection needed for that two-cell calculation
+are visible. This is a temporary branch of the original puzzle, not a new
+unique-solution input or a claim that the next attempt succeeds. Baseline returns
+True for completion / False for failure. Step 02 defines set membership/add/remove
+using that same column, then explains integer division and box numbering before
+the general invariant. Step 05 derives the geometric search bound.
+
+New first definitions: backtracking in step 01 after a concrete undo; set,
+membership, add/remove, lists of nine sets, integer division, box index in step 02
+before the formula. Fixed-width membership saves rescans, not the search tree.
+
+Fresh step-04 input: solved-board first row with (0,0),(0,1) erased;
+row `..4678912`, column `.61847923`, box `..4 / 672 / 198`.
+The learner computes {5}, with row-only {3,5} and empty-set distractors.
+The answer/calculation stays hidden until explicit reveal. Existing option order,
+feedback clearing, locale persistence, and experiment isolation are preserved.
+
+Presentation hooks: new lesson-local `lesson.css` only applies `min-width:0` and
+`overflow-wrap:anywhere` to `#state dt`; shared layout, colors, fonts, spacing,
+focus and disabled rules are reused exactly. No new color or spacing literals.
+Existing tokens: text #e8edf4 / panel #161b22; muted #9aa7b8 / panel #161b22;
+accent #6ee7ff; givens/focus #ffb454; active fill #164b59. Existing 13px mobile /
+14px desktop state typography is preserved. Reflow must prevent glyph overlap,
+not merely page overflow, at 320/390/736/1440 and 200% CSS magnification.
+No new asynchronous, empty/loading/error branches are added. Browser branch matrix:
+EN/ZH × initial/placement/dead-end/undo/final × all presets; all three quiz answers,
+revealed and changed; source display/copy/fallback/download; offline + denied storage.
+Evidence is author self-check only; native zoom, real devices, screen readers,
+novice comprehension and public delivery are not established.

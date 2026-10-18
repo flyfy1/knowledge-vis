@@ -550,3 +550,34 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Reversible parenthesis scan | `leetcode/32/#step2` | Compare pop, boundary reset, current valid suffix length and historical best. |
 
 <!-- /leetcode-32-campaign -->
+
+
+<!-- leetcode-149-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Exact undirected direction | `leetcode/149/#step1` | Reduce integer displacement by gcd and normalize its sign. |
+| Anchor direction counting | `leetcode/149/#step2` | Count peers sharing one line through a fixed point. |
+| Earliest-anchor completeness | `leetcode/149/#step4` | Prove a suffix scan still visits every member of an optimal line. |
+
+<!-- /leetcode-149-campaign -->
+
+
+<!-- leetcode-154-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Duplicate-aware binary search | `leetcode/154/#step1` | Derive safe interval reductions when endpoint values can be equal. |
+| Minimum-preserving invariant | `leetcode/154/#step4` | Keep at least one global minimum while strictly shrinking the interval. |
+
+<!-- /leetcode-154-campaign -->
+
+
+<!-- leetcode-37-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Sudoku backtracking and restoration | `leetcode/37/#step1` | Cache used digits and restore the board and all three constraint sets after failure. |
+| Local validity versus completion | `leetcode/37/#step0` | Hand-calculate a legal move that leaves the next cell without a candidate. |
+
+<!-- /leetcode-37-campaign -->

@@ -139,20 +139,24 @@ window.LEETCODE_PROBLEMS = [
       "en": "Sudoku Solver"
     },
     "desc": {
-      "zh": "rows[r]、cols[c]、boxes[b] 保存已用数字，b=(r//3)*3+c//3。候选是不在这三个集合里的数。按固定空格次序尝试一个候选，进入下一个空格；若后续无解，就撤销本次选择。",
-      "en": "rows[r], cols[c], and boxes[b] store used digits, with b=(r//3)*3+c//3. A candidate is absent from all three sets. Try one in a fixed empty-cell order and recurse to the next cell; undo the choice if no completion follows."
+      "zh": "逐格排除冲突，用已用数集合保持约束，失败后完整撤销。",
+      "en": "Exclude conflicts cell by cell, cache used digits, and restore each failed choice."
     },
     "difficulty": "hard",
     "topics": [
       {
-        "zh": "约束与回溯",
-        "en": "Constraints and backtracking"
+        "zh": "回溯",
+        "en": "Backtracking"
+      },
+      {
+        "zh": "约束集合",
+        "en": "Constraint sets"
       }
     ],
     "path": "37/",
     "leetcodeUrl": "https://leetcode.com/problems/sudoku-solver/",
     "language": "Python",
-    "complexity": "O(9^E)"
+    "complexity": "O(9^E) time; O(E) auxiliary space for E empty cells on the fixed 9×9 board"
   },
   {
     "id": 41,
@@ -661,6 +665,58 @@ window.LEETCODE_PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/word-break-ii/",
     "language": "Python",
     "complexity": "O(D + nL² + T) expected time; O(m + n + L + T) auxiliary space, including cached/output strings"
+  },
+  {
+    "id": 149,
+    "title": {
+      "zh": "直线上最多的点数",
+      "en": "Max Points on a Line"
+    },
+    "desc": {
+      "zh": "从尺子覆盖的小例子，推导锚点与精确方向计数。",
+      "en": "Derive exact direction counts from a tiny ruler-and-pins example."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "几何",
+        "en": "Geometry"
+      },
+      {
+        "zh": "哈希表",
+        "en": "Hash table"
+      }
+    ],
+    "path": "149/",
+    "leetcodeUrl": "https://leetcode.com/problems/max-points-on-a-line/",
+    "language": "Python",
+    "complexity": "O(n² log C) time; O(n) auxiliary space, C = max(2, coordinate span)"
+  },
+  {
+    "id": 154,
+    "title": {
+      "zh": "寻找旋转排序数组中的最小值 II",
+      "en": "Find Minimum in Rotated Sorted Array II"
+    },
+    "desc": {
+      "zh": "重复值为什么让二分查找退化？保留至少一个最小值。",
+      "en": "See why duplicates weaken binary search, while preserving a minimum."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      },
+      {
+        "zh": "数组",
+        "en": "Arrays"
+      }
+    ],
+    "path": "154/",
+    "leetcodeUrl": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/",
+    "language": "Python",
+    "complexity": "O(n) worst-case time; O(1) auxiliary space"
   },
   {
     "id": 2916,

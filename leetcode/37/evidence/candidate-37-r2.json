@@ -1,0 +1,27 @@
+{
+  "candidate": "37-r2-038072f42c08",
+  "candidateDigest": "038072f42c085b15d334f2712e150f0b6f998c62969f3ea435453d64fe7696eb",
+  "baseHead": "90defbad97ab0adfd070fcc0ec4de1608e87be43",
+  "frozenAt": "2026-10-18T12:58:20.222044+00:00",
+  "status": "self-checked; awaiting separate independent review",
+  "files": {
+    "leetcode/37/BRIEF.md": "1a58792d7cce39b03c38b1b093674f98722325fa4804f498ac53835dc497184c",
+    "leetcode/37/app.js": "d1bdbcf6dfe2b4f894c56e1d3641dde1317db6e78bd73bce12786286f900a687",
+    "leetcode/37/copy.js": "2297eb8704cb30290b9a29736246eca854c82ad3614822ed301ddb5fa8595d20",
+    "leetcode/37/index.html": "7f4d07d490eaf152e62148cbe079ffc361ff9123165d76c5d030157a77b6e957",
+    "leetcode/37/lesson-entry.json": "dec7064b5be5b5db2ec8f904afb7a407faa10f76e0d62d77ce4e6f9ea1ef024b",
+    "leetcode/37/lesson.css": "99e53571ebfca1d2fdc0561a875d970ad83e0fe807ba5c81affaf3323befbbef",
+    "leetcode/37/python-code.js": "736d0093b4577201ef3af71e0e7fa7b3d228d659612a8e02548a4cdfaa971350",
+    "leetcode/37/solution.py": "1622419da75bb376bdc43615dc82014d1eae0c830e9003a955a5724c2d7b1afb",
+    "leetcode/37/tests/browser.cjs": "d318d693a08cbe62be84119a1502dd877afb8ba99899f1d922cb06d0215e236c",
+    "leetcode/37/tests/regression.py": "89da7a2d421c9950a7f85e2898d5778034e1eebf8d7ef5a5e0dc93475d3ec113"
+  },
+  "readOnlySharedDependencies": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/hard-first-ten/core.js": "342d7cbdf8c1e6f8527e6804ec286157e8fc63513a3c36c61d67c496bd08eeed",
+    "leetcode/hard-first-ten/lesson.js": "18365da600d3a774aec9afb96deb377fa269fe894424ed6cef41ad9f929c9731",
+    "leetcode/hard-first-ten/style.css": "09ebfd4c560ceee4b5c4e15442f37e21e8a9115525f20c74c1a34491af6a48b1"
+  },
+  "evidenceBoundary": "Evidence receipts are separate from the frozen lesson/test byte map. No commit, registration, deployment or independent acceptance."
+}
