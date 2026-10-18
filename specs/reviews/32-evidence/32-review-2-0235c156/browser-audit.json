@@ -1,0 +1,153 @@
+{
+  "hashes": {
+    "index.html": "8fc6f3eb7ac35b3d009b43fb2c4a07b0f94285f7c985b37c6b6f82e3c9145a0c",
+    "copy.js": "7e88ac4a24c24b97c6b7f8077dd6158de27cdc76ba283c9641fd19a937346238",
+    "app.js": "893d4bb207aaa8677fb83f3c6d54ccfef68f6743675fb0c335511e1d15f4a5a1",
+    "solution.py": "4e261f0900fa2e3591430e4042f498830647d15f289eb1378506aebde2af1530",
+    "python-code.js": "cb9fa25fbae664e4f6e48a87825b43465ca6c0980a432959875d6c9f82f3ae1e",
+    "../hard-first-ten/core.js": "342d7cbdf8c1e6f8527e6804ec286157e8fc63513a3c36c61d67c496bd08eeed",
+    "../hard-first-ten/lesson.js": "18365da600d3a774aec9afb96deb377fa269fe894424ed6cef41ad9f929c9731",
+    "../hard-first-ten/style.css": "09ebfd4c560ceee4b5c4e15442f37e21e8a9115525f20c74c1a34491af6a48b1",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "checks": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "result": 4
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "result": 6
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "result": 2
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "result": 0
+    },
+    {
+      "lang": "en",
+      "choice": "0",
+      "feedback": "Check this boundary again. This misses the complete nested fragment (()) at the end."
+    },
+    {
+      "lang": "en",
+      "choice": "1",
+      "feedback": "Correct reasoning. Indices 3…6 form (()), length 4; the earlier () is separated by an invalid close."
+    },
+    {
+      "lang": "en",
+      "choice": "2",
+      "feedback": "Check this boundary again. 6 joins separate valid fragments across an invalid boundary."
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "noPageOverflow": true,
+      "statePreserved": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "noPageOverflow": true,
+      "statePreserved": true
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "noPageOverflow": true,
+      "statePreserved": true
+    },
+    {
+      "lang": "en",
+      "styles": {
+        "color": "rgb(232, 237, 244)",
+        "background": "rgb(28, 35, 48)",
+        "opacity": "0.4",
+        "stage": "rgb(22, 27, 34)"
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "result": 4
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "result": 6
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "result": 2
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "result": 0
+    },
+    {
+      "lang": "zh",
+      "choice": "0",
+      "feedback": "再检查这个边界。 漏掉了后面完整的嵌套片段 (())。"
+    },
+    {
+      "lang": "zh",
+      "choice": "1",
+      "feedback": "推理正确。 下标 3…6 为 (())，长度 4；前面的 () 被坏字符隔开。"
+    },
+    {
+      "lang": "zh",
+      "choice": "2",
+      "feedback": "再检查这个边界。 6 把不连续的合法片段拼在了一起，跨过了无效边界。"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "noPageOverflow": true,
+      "statePreserved": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "noPageOverflow": true,
+      "statePreserved": true
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "noPageOverflow": true,
+      "statePreserved": true
+    },
+    {
+      "lang": "zh",
+      "styles": {
+        "color": "rgb(232, 237, 244)",
+        "background": "rgb(28, 35, 48)",
+        "opacity": "0.4",
+        "stage": "rgb(22, 27, 34)"
+      }
+    },
+    {
+      "lang": "zh",
+      "fallback": "无法自动复制；请从下方文本框选择复制。"
+    },
+    {
+      "lang": "en",
+      "fallback": "Automatic copy unavailable; select the code in the text box below."
+    }
+  ],
+  "errors": [],
+  "copyDownloadDisplayBothLocales": "exact canonical bytes",
+  "keyboard": "range,Space,Enter,disclosure",
+  "offline": true,
+  "zoom": "CSS zoom:2; native chrome zoom not automated"
+}
