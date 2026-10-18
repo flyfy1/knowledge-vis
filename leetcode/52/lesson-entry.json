@@ -1,0 +1,16 @@
+{
+  "id": 52,
+  "title": {"zh": "#52 · N 皇后 II", "en": "#52 · N-Queens II"},
+  "desc": {"zh": "用逐行约束搜索数完整解，观察计数与完整撤销。", "en": "Count complete queen arrangements with row-by-row constraints and reversible search."},
+  "difficulty": "hard",
+  "topics": [{"zh": "回溯", "en": "Backtracking"}, {"zh": "计数", "en": "Counting"}],
+  "path": "52/",
+  "leetcodeUrl": "https://leetcode.com/problems/n-queens-ii/",
+  "language": "Python",
+  "complexity": "O(n·n!) time, O(n) auxiliary space; average O(1) set operations",
+  "concepts": [
+    {"name": "counting complete search leaves", "step": 2, "description": "Only a complete nonattacking arrangement increments the count."},
+    {"name": "diagonal constraint sets", "step": 1, "description": "Use c, r-c, r+c to reject attacks before descending."},
+    {"name": "count-only backtracking", "step": 4, "description": "Restore constraints while retaining the cumulative integer, without storing boards."}
+  ]
+}
