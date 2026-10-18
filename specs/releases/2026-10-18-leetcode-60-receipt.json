@@ -1,0 +1,72 @@
+{
+  "id": "753d3c0620564341999e7fc87cb7abdb",
+  "revision": "619fbe8a4043ff1442a4c0108e02b58d5165b95d",
+  "files": {
+    "leetcode/60/app.js": "418939d8eab1a95f63d6b8f042eb61ad9c1c39338611f0640d1e5d16a4aba2da",
+    "leetcode/60/copy.js": "8e0e31abd7be34283f859b6d3ffb554e3fe7c5d6f48f0eb46a89d24a32e80e34",
+    "leetcode/60/core.js": "bc85a3e0c9a63100d64679d8b94e3e3bb69d48f383da3ded8a0ad1a2832864ac",
+    "leetcode/60/index.html": "6cf8ae119dcedebbbb1d39b74b701c367c107dfb69322a1d244e70549dc42baa",
+    "leetcode/60/python-code.js": "84d04d95ad025f820803317f0fe2f86910c0d5da54fae7a9fdaac85afd21d49c",
+    "leetcode/60/solution.py": "5c89186c0c717b39b36abbfbfd392aba4344a080349c738bb8d5c7952de8732d",
+    "leetcode/60/style.css": "3e7e3bc00cd0bf4afefc5e8d7d49ad6b2edbeae5adc7cdb71a582cf2dd4874f5",
+    "leetcode/problems.config.js": "bb7bed421706ec3cf34f321ee9fbc2c3e027a1c3efd439e4a69a522f6133cdb8",
+    "leetcode/index.html": "3e991f61ef0e2847fa40ff7590d21af064cdd99f0ce049c59c4610a38208222e",
+    "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+    "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+  },
+  "public_files": {
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/60/app.js": "418939d8eab1a95f63d6b8f042eb61ad9c1c39338611f0640d1e5d16a4aba2da",
+    "leetcode/60/copy.js": "8e0e31abd7be34283f859b6d3ffb554e3fe7c5d6f48f0eb46a89d24a32e80e34",
+    "leetcode/60/core.js": "bc85a3e0c9a63100d64679d8b94e3e3bb69d48f383da3ded8a0ad1a2832864ac",
+    "leetcode/60/index.html": "6cf8ae119dcedebbbb1d39b74b701c367c107dfb69322a1d244e70549dc42baa",
+    "leetcode/60/python-code.js": "84d04d95ad025f820803317f0fe2f86910c0d5da54fae7a9fdaac85afd21d49c",
+    "leetcode/60/solution.py": "5c89186c0c717b39b36abbfbfd392aba4344a080349c738bb8d5c7952de8732d",
+    "leetcode/60/style.css": "3e7e3bc00cd0bf4afefc5e8d7d49ad6b2edbeae5adc7cdb71a582cf2dd4874f5",
+    "leetcode/problems.config.js": "bb7bed421706ec3cf34f321ee9fbc2c3e027a1c3efd439e4a69a522f6133cdb8",
+    "leetcode/index.html": "3e991f61ef0e2847fa40ff7590d21af064cdd99f0ce049c59c4610a38208222e",
+    "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+    "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+  },
+  "entries": [
+    {
+      "id": 60,
+      "title": {
+        "zh": "排列序列",
+        "en": "Permutation Sequence"
+      },
+      "desc": {
+        "zh": "用阶乘分块、从零计数和可逆账本直接定位第 k 个排列。",
+        "en": "Locate permutation k with factorial blocks, zero-based ranks and a reversible ledger."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "排列组合",
+          "en": "Combinatorics"
+        },
+        {
+          "zh": "数学",
+          "en": "Math"
+        }
+      ],
+      "path": "60/",
+      "leetcodeUrl": "https://leetcode.com/problems/permutation-sequence/",
+      "language": "Python",
+      "complexity": "O(n²) time, O(n) auxiliary space"
+    }
+  ],
+  "accepted": {
+    "60": {
+      "candidate": "00982ff44c2c923722a3a2ea813bb32135158e34",
+      "digest": "08126efd0eb91d4ec1b3424477ebf3dc81d3d540c1b8594b205d17148a4a07dd",
+      "review": "specs/reviews/60-review-1-4359756a.md"
+    }
+  },
+  "verification": {
+    "lessons": 1,
+    "ignoredKnownBeaconFailures": 0
+  },
+  "published_at": "2026-10-18T10:38:56.163732+00:00"
+}
