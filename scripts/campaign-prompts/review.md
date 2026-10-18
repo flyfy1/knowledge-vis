@@ -17,10 +17,10 @@ write a prediction before reveal, then independently check it. If preset-only,
 label custom-input checks as code checks. No source-reading substitute for a cold
 browser walk. No score inferred from screenshots or test counts alone.
 
-After saving the cold walkthrough, audit source, Python, constraints and test
+After saving the cold walkthrough, audit canonical source, constraints and test
 claims. Inspect tests before running: redirect generated results/screenshots to
 your evidence directory or temporary files; never regenerate tracked candidate
-assets or author evidence while reviewing. Check independently chosen examples and boundaries, visual-to-Python
+assets or author evidence while reviewing. Check independently chosen examples and boundaries, visual-to-code
 mapping, before/after semantics and intermediate invariants. Exercise both
 languages, state preservation, rewind/reset/endpoints, prediction/reveal/change,
 keyboard, 320/390/desktop layout and 200% zoom, contrast and readable disabled
@@ -29,6 +29,18 @@ use process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH for executablePath when set.
 Capture and inspect screenshots; optionally store only in
 {evidence_dir}/. Do not change evidence from earlier runs. Do not claim real human comprehension or a successful
 LeetCode submission. Read official statement normally; do not bypass access.
+
+Python is the default canonical solution. The human approved JavaScript only for
+catalog JavaScript problems 2630, 2650, 2675, 2691, 2756 and 2759. For those six,
+audit solution.js / javascript-code.js exact parity and separately concept.py /
+python-code.js exact parity, including displayed/copied/downloaded source.
+Require explicit bilingual labels that the Python comparison is conceptual and
+not an equivalent official submission. Independently test the original JavaScript
+callable contract, identity/mutation/callback/this behavior and deterministic
+promise timing/rejection/ordering where applicable. Verify the Python comparison
+only against its stated limited behavior, not as an oracle for different runtime
+semantics. Apply the same frozen code/cost dimension to canonical JavaScript
+mapping plus the labeled Python comparison; do not change weights or thresholds.
 
 Only after cold walkthrough may you inspect earlier review reports for this ID to
 check closure. Record stable finding IDs, concrete reproduction, expected/actual,

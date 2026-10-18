@@ -69,6 +69,19 @@ This six-dimension rubric applies prospectively. The historical seven-outcome
 [2916 rubric](reviews/leetcode-2916-rubric.md) and its scores remain unchanged;
 do not retroactively rescore it or compare the totals as identical instruments.
 
+### JavaScript-specific interpretation approved 2026-10-18
+
+For #2630, #2650, #2675, #2691, #2756, and #2759 only, interpret the fifth
+dimension as transfer to the original JavaScript implementation and its cost,
+plus an explicitly labeled Python conceptual comparison. Map a visible
+transition to JavaScript, test an independently chosen case against the official
+interface, and explain where Python differs. Verify source/display/download
+parity for both files. Required runtime behavior (including async ordering and
+identity where applicable) belongs to correctness, not an optional note.
+The weights, minimum scores, and zero-open-findings rule remain identical.
+Freeze this interpretation before the cold walkthrough; do not rescore or alter
+historical reports.
+
 ## Per-lesson status and batch coverage
 
 Record evidence separately for every problem. A shared runtime does not make
