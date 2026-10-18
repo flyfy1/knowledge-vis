@@ -1,0 +1,132 @@
+{
+  "kind": "author browser self-check",
+  "browser": "156.0.8078.4",
+  "checks": [
+    {
+      "lang": "en",
+      "width": 1440,
+      "overflow": false,
+      "traceAction": 17
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "overflow": false,
+      "traceAction": 17
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "overflow": false,
+      "traceAction": 17
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "overflow": false,
+      "traceAction": 17
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "zoom": "200% CSS zoom",
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "overflow": false,
+      "traceAction": 17
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "overflow": false,
+      "traceAction": 17
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "overflow": false,
+      "traceAction": 17
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "overflow": false,
+      "traceAction": 17
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "zoom": "200% CSS zoom",
+      "overflow": false
+    }
+  ],
+  "presets": 8,
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "copy": "native clipboard write/read success and rejected API -> selected manual fallback",
+  "sourceDisplayCopyDownloadParity": true,
+  "blockedStorage": true,
+  "offlineEmbeddedSource": true,
+  "keyboardFocus": true,
+  "forcedColors": true,
+  "reducedMotion": true,
+  "errors": [],
+  "externalRuntimeRequests": [],
+  "contrast": {
+    "body": {
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 16.09
+    },
+    "muted": {
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 7.08
+    },
+    "disabled": {
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 6.45
+    },
+    "primary": {
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.1
+    },
+    "panel": {
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 14.7
+    },
+    "selected": {
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(255, 180, 84)",
+      "opacity": "1",
+      "ratio": 10.73
+    },
+    "mutedChip": {
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 6.45
+    },
+    "link": {
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 13.1
+    }
+  },
+  "focusRatio": 8.94,
+  "cssBytes": 12153
+}
