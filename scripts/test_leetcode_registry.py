@@ -44,7 +44,7 @@ class RegistryTests(unittest.TestCase):
             self.assertEqual(before,[p.read_bytes() for p in paths])
             entry['concepts'][0]['step']=999
             (p/'lesson-entry.json').write_text(json.dumps(entry))
-            with self.assertRaises(AssertionError): register(root,51)
+            with self.assertRaises(ValueError): register(root,51)
             self.assertEqual(before,[p.read_bytes() for p in paths])
 
     def test_catalog_language_policy_matches_exact_approved_six(self):
@@ -72,7 +72,7 @@ class RegistryTests(unittest.TestCase):
                            'concepts':[{'name':'Concept','step':1,'description':'Explore behavior'}]}
                     (folder/'lesson-entry.json').write_text(json.dumps(entry))
                     before=[p.read_bytes() for p in paths]
-                    with self.assertRaises(AssertionError): register(root,problem_id)
+                    with self.assertRaises(ValueError): register(root,problem_id)
                     self.assertEqual(before,[p.read_bytes() for p in paths])
                     if correct == 'JavaScript':
                         contract = {'problemId': problem_id, 'language': correct, 'officialSource': official['officialUrl'],
@@ -214,7 +214,7 @@ class RegistryTests(unittest.TestCase):
                     entry['title'][locale]='#52 · Wrong problem'
                     metadata.write_text(json.dumps(entry))
                     before=[p.read_bytes() for p in [*paths,metadata]]
-                    with self.assertRaisesRegex(AssertionError, 'Title problem ID differs'):
+                    with self.assertRaisesRegex(ValueError, 'Title problem ID differs'):
                         register(root,51)
                     self.assertEqual(before,[p.read_bytes() for p in [*paths,metadata]])
 

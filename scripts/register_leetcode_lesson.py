@@ -1,10 +1,15 @@
 """Register an independently accepted candidate; the campaign owns acceptance."""
+import argparse
 import datetime as dt
 import hashlib
 import json
 import re
 import sys
 from pathlib import Path
+# The preflight CLI must not create __pycache__, even without python -B.
+if __name__ == '__main__':
+    sys.dont_write_bytecode = True
+
 from leetcode_registry import merge_registry
 
 
@@ -99,38 +104,70 @@ def validate_language_sources(official, folder):
     return language
 
 
-def register(root, problem_id):
+def validate_metadata(root, problem_id):
+    """Read and validate registration metadata/source contracts without writing files.
+
+    Return a fresh entry with normalized registry titles and validated concepts.
+    Raise ValueError for invalid metadata; never repair the authored file. Complexity
+    is one nonempty string describing time and space (legacy cost strings remain valid).
+    """
     root = Path(root)
     folder = root / 'leetcode' / str(problem_id)
     entry = json.loads((folder / 'lesson-entry.json').read_text())
-    catalog = json.loads((root/'leetcode/catalog/hard-problems.json').read_text())
-    official = next(p for p in catalog['problems'] if p['id'] == problem_id)
-    assert entry['id'] == problem_id
-    assert entry['path'] == f'{problem_id}/'
-    assert entry['leetcodeUrl'] == official['officialUrl']
-    assert entry['difficulty'] == 'hard' and entry['language'] == solution_language(official, folder)
+    catalog = json.loads((root / 'leetcode/catalog/hard-problems.json').read_text())
+    official = next((p for p in catalog['problems'] if p['id'] == problem_id), None)
+
+    def require(condition, message):
+        if not condition:
+            raise ValueError(message)
+
+    require(official is not None, 'Problem ID is missing from the official catalog')
+    require(isinstance(entry, dict), 'lesson-entry.json must contain an object')
+    require(type(entry.get('id')) is int and entry['id'] == problem_id, 'Metadata id differs from problem ID')
+    require(entry.get('path') == f'{problem_id}/', 'Metadata path differs from problem ID')
+    require(entry.get('leetcodeUrl') == official['officialUrl'], 'Metadata leetcodeUrl differs from official URL')
+    require(entry.get('difficulty') == 'hard', 'Metadata difficulty must be hard')
+    require(entry.get('language') == solution_language(official, folder), 'Metadata language differs from canonical language')
     validate_language_sources(official, folder)
-    for field in ('title','desc'):
-        assert all(isinstance(entry[field][lang],str) and entry[field][lang].strip() for lang in ('zh','en'))
+    for field in ('title', 'desc'):
+        require(isinstance(entry.get(field), dict) and all(
+            isinstance(entry[field].get(lang), str) and entry[field][lang].strip()
+            for lang in ('zh', 'en')), f'Metadata {field} requires nonempty zh/en strings')
     # The collection supplies the ID; preserve the reviewed lesson metadata file.
     for title in entry['title'].values():
+        require(isinstance(title, str), 'Metadata title values must be strings')
         prefix = re.match(r'^#(\d+)\s*·\s*', title)
-        assert prefix is None or int(prefix[1]) == problem_id, 'Title problem ID differs from metadata'
+        require(prefix is None or int(prefix[1]) == problem_id, 'Title problem ID differs from metadata')
     entry['title'] = {lang: re.sub(r'^#\d+\s*·\s*', '', title)
                       for lang, title in entry['title'].items()}
-    assert all(entry['title'][lang].strip() for lang in ('zh', 'en'))
-    assert entry['topics'] and entry['complexity'].strip()
+    require(all(entry['title'][lang].strip() for lang in ('zh', 'en')), 'Metadata title must remain nonempty without its ID')
+    require(isinstance(entry.get('complexity'), str) and entry['complexity'].strip(),
+            'Metadata complexity must be one nonempty string covering time and space, not {time,space}')
+    require(isinstance(entry.get('topics'), list) and entry['topics'], 'Metadata topics must be a nonempty list')
     for topic in entry['topics']:
-        assert all(isinstance(topic[lang],str) and topic[lang].strip() for lang in ('zh','en'))
+        require(isinstance(topic, dict) and all(
+            isinstance(topic.get(lang), str) and topic[lang].strip() for lang in ('zh', 'en')),
+            'Metadata topics require nonempty zh/en strings')
+    concepts = entry.get('concepts')
+    require(isinstance(concepts, list) and concepts, 'At least one concept deep link is required')
+    html = (folder / 'index.html').read_text()
+    for concept in concepts:
+        require(isinstance(concept, dict) and type(concept.get('step')) is int and concept['step'] >= 0,
+                'Concept step must be a nonnegative integer')
+        require(re.search(r'id=[\"\']step' + str(concept['step']) + r'[\"\']', html),
+                'Concept step anchor is missing from index.html')
+        require(all(isinstance(concept.get(k), str) and concept[k].strip() and
+                    '\n' not in concept[k] and '|' not in concept[k] for k in ('name', 'description')),
+                'Concept name/description must be nonempty single-line strings without pipes')
+    return entry
+
+
+def register(root, problem_id):
+    root = Path(root)
+    entry = validate_metadata(root, problem_id)
     concepts = entry.pop('concepts')
-    assert concepts, 'At least one concept deep link is required'
-    html = (folder/'index.html').read_text()
-    lines=[]
-    for c in concepts:
-        assert isinstance(c['step'],int) and c['step'] >= 0
-        assert re.search(r'id=[\"\']step'+str(c['step'])+r'[\"\']',html)
-        assert all(isinstance(c[k],str) and c[k].strip() and '\n' not in c[k] and '|' not in c[k] for k in ('name','description'))
-        lines.append(f"| {c['name']} | `leetcode/{problem_id}/#step{c['step']}` | {c['description']} |")
+    lines = [f"| {c['name']} | `leetcode/{problem_id}/#step{c['step']}` | {c['description']} |"
+             for c in concepts]
     concept_path = root/'CONCEPT-MAP.md'
     concept_text = concept_path.read_text()
     marker = f'<!-- leetcode-{problem_id}-campaign -->'
@@ -148,5 +185,22 @@ def register(root, problem_id):
     index.write_text(re.sub(r'problems\.config\.js\?v=[^\"\']+', 'problems.config.js?v='+version,index.read_text()))
 
 
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('problem_id', type=int)
+    parser.add_argument('--validate-only', action='store_true',
+                        help='Validate metadata and source contracts without writing any files')
+    parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
+    args = parser.parse_args(argv)
+    try:
+        if args.validate_only:
+            validate_metadata(args.root, args.problem_id)
+        else:
+            register(args.root, args.problem_id)
+    except (ValueError, KeyError, OSError) as error:
+        parser.exit(2, f'Metadata validation failed: {error}\n')
+    return 0
+
+
 if __name__ == '__main__':
-    register(Path(__file__).resolve().parents[1], int(sys.argv[1]))
+    sys.exit(main())

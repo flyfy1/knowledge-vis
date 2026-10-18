@@ -35,5 +35,15 @@ not an equivalent official submission. Keep explanations concrete and gradual:
 hand-calculate a vivid tiny example, introduce terms/complications as needed,
 explain causal steps and a tempting wrong approach, then a fresh transfer case.
 Do not weaken the frozen rubric.
+
+Metadata gate: lesson-entry.json complexity must be exactly ONE nonempty string
+covering time and space, for example "O(mn) time; O(n) space", never an object with
+time/space fields. Run the safe, non-mutating preflight from the repository root:
+`python3 -B scripts/register_leetcode_lesson.py <id> --validate-only`
+Replace <id> with this problem's ID. Record the command and result before
+returning ready. Freeze metadata fixes as a new candidate for independent review.
+Never run registration or alter prior acceptance, campaign state, or reports to
+clear this gate; the prior candidate's review result remains historical evidence.
+
 Return supplied JSON schema ready only when a candidate is ready for separate
 re-review; otherwise blocked with concrete missing evidence and next action.
