@@ -1,0 +1,28 @@
+{
+  "kind": "frozen author candidate for separate independent re-review",
+  "baseHead": "1e3d690bbfefdc8eb7f239b1e498f0e3c563d176",
+  "priorReviewedCandidate": "c7ed6c7b6fac0370a11be31fd8bbf142ed85b5dd",
+  "candidateId": "e640773cd6f3e0aad9ac0c9735eec62e0f1098fa1e02b11f866d2513744c271f",
+  "lessonAndTestSha256": {
+    "leetcode/30/BRIEF.md": "b076d25b57da2b101d4ce333c94c3f1052996139bd9d8cc325e1b11792882afe",
+    "leetcode/30/app.js": "a13ff3fa3c3d1a2085479b094dc524ff736890fba057a863d1694361698354e4",
+    "leetcode/30/copy.js": "6714b8686b0f0993e8cfb7efcb30453dbbd133046c56f295ee3680cf3c5a4ca4",
+    "leetcode/30/index.html": "fba251e09ca7befe27359ae111701ff4a3e438dbf399cd7c7692cd05ea370b7f",
+    "leetcode/30/lesson-entry.json": "8fa21106e99b3d991f121664544cc05d5ab545aa6e74767cd5ded1e8343e6c26",
+    "leetcode/30/python-code.js": "8a6b6752d3114ad51dd7e2859310964c54008e93d2388e440c1b35483669fcc1",
+    "leetcode/30/solution.py": "34e0de81f4631c7bc830677f8f300b113d8703c2af8d95cad52c065c8ad80f58",
+    "leetcode/30/tests/browser.cjs": "cc6339da8426f125b52967e7a35490614a21203505db262843dc610b487fd4bc",
+    "leetcode/30/tests/layout.cjs": "ffa5f093c5b0cb235fd75d9054237702e862a1a0833566434232df5d05aa288d",
+    "leetcode/30/tests/legend.cjs": "0f1e345d50807a44d6c836253be2d0137335c5b139f7d44a1d496ff280e2bfcd",
+    "leetcode/30/tests/solution_check.py": "b202391de9778e20253d4a7770f98ffc225f9d815897ad148cf0586ae5841384",
+    "leetcode/30/tests/trace.cjs": "47afd82cb180986181f838da7971ee141f1e0e8a74af006b5d4f05a3a1987afb"
+  },
+  "unchangedRuntimeDependencySha256": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/hard-first-ten/core.js": "342d7cbdf8c1e6f8527e6804ec286157e8fc63513a3c36c61d67c496bd08eeed",
+    "leetcode/hard-first-ten/lesson.js": "18365da600d3a774aec9afb96deb377fa269fe894424ed6cef41ad9f929c9731",
+    "leetcode/hard-first-ten/style.css": "09ebfd4c560ceee4b5c4e15442f37e21e8a9115525f20c74c1a34491af6a48b1"
+  },
+  "scope": "All direct lesson files and regression tests; evidence excluded to avoid a self-reference. No commit created."
+}

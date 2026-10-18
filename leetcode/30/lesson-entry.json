@@ -1,0 +1,34 @@
+{
+  "id": 30,
+  "title": {
+    "zh": "串联所有单词的子串",
+    "en": "Substring with Concatenation of All Words"
+  },
+  "desc": {
+    "zh": "把起点按除以 w 的余数分成 w 条扫描轨道。每条轨道 right 每次增加 w；left 是窗口左边界，图里的 right 是右端之后的字符下标。need 是所需次数，have 是当前次数，used 是词总数。",
+    "en": "Partition starts into w tracks by their remainder modulo w. Each track advances right by w. left is the window start; the displayed right is the exclusive end. need stores required counts, have current counts, and used the number of words."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "定长滑动窗口",
+      "en": "Word-aligned sliding window"
+    }
+  ],
+  "path": "30/",
+  "leetcodeUrl": "https://leetcode.com/problems/substring-with-concatenation-of-all-words/",
+  "language": "Python",
+  "complexity": "O(Lw + kw) expected time; O(kw) auxiliary space plus output (L text characters, k words, w word width)",
+  "concepts": [
+    {
+      "name": "Word-aligned sliding window",
+      "step": 1,
+      "description": "Reuse word counts across aligned starts; shrink excess counts and scan every remainder."
+    },
+    {
+      "name": "Retained window and operation state",
+      "step": 2,
+      "description": "Compare before and after counts and exclusive window boundaries during add, shrink and reset."
+    }
+  ]
+}

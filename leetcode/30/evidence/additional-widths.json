@@ -1,0 +1,55 @@
+{
+  "kind": "author self-check",
+  "results": [
+    {
+      "locale": "en",
+      "width": 736,
+      "events": [
+        2,
+        5,
+        7,
+        12,
+        14
+      ],
+      "result": "passed"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "events": [
+        2,
+        5,
+        7,
+        12,
+        14
+      ],
+      "result": "passed"
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "events": [
+        2,
+        5,
+        7,
+        12,
+        14
+      ],
+      "result": "passed"
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "events": [
+        2,
+        5,
+        7,
+        12,
+        14
+      ],
+      "result": "passed"
+    }
+  ],
+  "deepLinks": "steps 1/2/4 clear sticky nav at 320/1280 in both locales",
+  "servedParity": "all ten loaded runtime/source files match checkout"
+}
