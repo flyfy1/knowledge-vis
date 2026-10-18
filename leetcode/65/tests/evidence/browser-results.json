@@ -1,0 +1,117 @@
+{
+  "type": "author browser self-check",
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18770/leetcode/65/",
+    "http://127.0.0.1:18770/leetcode/65/style.css?v=65-1",
+    "http://127.0.0.1:18770/leetcode/style.css?v=lc-ids1",
+    "http://127.0.0.1:18770/leetcode/common.js?v=lc2916-astra2",
+    "http://127.0.0.1:18770/leetcode/65/python-code.js?v=65-1",
+    "http://127.0.0.1:18770/leetcode/65/copy.js?v=65-1",
+    "http://127.0.0.1:18770/leetcode/65/core.js?v=65-1",
+    "http://127.0.0.1:18770/leetcode/65/app.js?v=65-1"
+  ],
+  "checks": [
+    "en: all ten presets, every frame, forward/back/forward, cumulative ledger, reset, terminal rejection suffix",
+    "en: custom/boundaries/invalid-input preservation, keyboard buttons/slider, all predictions, reveal/change/locale persistence",
+    "zh: all ten presets, every frame, forward/back/forward, cumulative ledger, reset, terminal rejection suffix",
+    "zh: custom/boundaries/invalid-input preservation, keyboard buttons/slider, all predictions, reveal/change/locale persistence",
+    "clipboard success/denial/recovery, selected manual fallback, source/copy/download parity",
+    "EN/ZH 320/390/736/1440 and 200% CSS zoom; no document/state overflow; table scrolls with keyboard",
+    "related links, sticky targets, keyboard 3px focus, forced colors/reduced motion, 48px controls, measured contrast",
+    "denied storage, offline file source and interactions"
+  ],
+  "contrast": [
+    {
+      "sel": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "sel": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "sel": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "sel": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".formula",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".btn.primary",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "#copy",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "#prev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "sel": "#preset",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#custom",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".step-nav a.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "#feedback.readout status-bad",
+      "fg": "rgb(255, 122, 147)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.34696669826778
+    },
+    {
+      "sel": "#feedback.readout status-good",
+      "fg": "rgb(126, 226, 168)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.004815697188947
+    },
+    {
+      "role": "focus against panel2",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "chromiumVersion": "156.0.8078.4",
+  "cssBytes": 11887,
+  "result": "pass"
+}
