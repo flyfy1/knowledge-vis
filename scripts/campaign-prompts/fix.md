@@ -27,7 +27,8 @@ Canonical sources must match their displayed/copied/downloaded and offline mirro
 versions exactly. Execute the actual submission language (compile/type-check
 TypeScript before executing emitted JavaScript; use the documented SQL dialect).
 For the six JavaScript category problems 2630, 2650, 2675, 2691, 2756 and 2759,
-prefer verified TypeScript when offered, otherwise JavaScript; retain separately
+the owner explicitly requires original JavaScript even if TypeScript is supported;
+this exact-six exception overrides the general language preference. Retain separately
 labeled concept.py and python-code.js with exact parity. Preserve runtime semantics
 including async, identity and callbacks where relevant. The Python comparison is
 not an equivalent official submission. Keep explanations concrete and gradual:
