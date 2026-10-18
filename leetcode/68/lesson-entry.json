@@ -1,0 +1,12 @@
+{
+  "id": 68,
+  "title": {"zh": "文本左右对齐", "en": "Text Justification"},
+  "desc": {"zh": "从最长可容纳词段推导空格分配，逐步检查末行与单词行例外。", "en": "Derive maximal word groups and even spacing, then inspect last-line and single-word exceptions."},
+  "difficulty": "hard",
+  "topics": [{"zh": "字符串", "en": "Strings"}, {"zh": "贪心", "en": "Greedy"}],
+  "path": "68/",
+  "leetcodeUrl": "https://leetcode.com/problems/text-justification/",
+  "language": "Python",
+  "complexity": "O(n + mW) time; O(W) auxiliary space, excluding O(mW) output",
+  "concepts": [{"name": "maximal fitting prefix", "step": 0, "description": "Accept consecutive words only while letters plus minimum gaps fit."}, {"name": "quotient and remainder", "step": 1, "description": "Give leftmost remainder gaps one extra space."}, {"name": "loop invariant", "step": 4, "description": "Maintain a consecutive fitting group and advance without losing words."}]
+}

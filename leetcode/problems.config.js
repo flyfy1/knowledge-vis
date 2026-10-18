@@ -299,6 +299,84 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) time, O(n) auxiliary space"
   },
   {
+    "id": 65,
+    "title": {
+      "zh": "有效数字",
+      "en": "Valid Number"
+    },
+    "desc": {
+      "zh": "用逐字符证据区分未完成前缀与不可能的数字。",
+      "en": "Track which prefixes can still become a valid number."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      },
+      {
+        "zh": "状态与语法",
+        "en": "State and grammar"
+      }
+    ],
+    "path": "65/",
+    "leetcodeUrl": "https://leetcode.com/problems/valid-number/",
+    "language": "Python",
+    "complexity": "O(n) time, O(1) auxiliary space"
+  },
+  {
+    "id": 68,
+    "title": {
+      "zh": "文本左右对齐",
+      "en": "Text Justification"
+    },
+    "desc": {
+      "zh": "从最长可容纳词段推导空格分配，逐步检查末行与单词行例外。",
+      "en": "Derive maximal word groups and even spacing, then inspect last-line and single-word exceptions."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      },
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      }
+    ],
+    "path": "68/",
+    "leetcodeUrl": "https://leetcode.com/problems/text-justification/",
+    "language": "Python",
+    "complexity": "O(n + mW) time; O(W) auxiliary space, excluding O(mW) output"
+  },
+  {
+    "id": 76,
+    "title": {
+      "zh": "最小覆盖子串",
+      "en": "Minimum Window Substring"
+    },
+    "desc": {
+      "zh": "按副本计数，扩展覆盖后收缩，推导线性最小窗口。",
+      "en": "Count required copies, expand to cover, then shrink to derive a linear minimum-window scan."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "滑动窗口",
+        "en": "Sliding window"
+      },
+      {
+        "zh": "字符计数",
+        "en": "Character counts"
+      }
+    ],
+    "path": "76/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimum-window-substring/",
+    "language": "Python",
+    "complexity": "O(m+n) time; O(k) auxiliary space, k≤52; O(L) output"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
