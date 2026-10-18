@@ -111,3 +111,72 @@ dc246c2f77ed503bb1441e20ce8bbff09af53a8fa0b3928d1dc48bf13ce9954e specs/leetcode-
 e71448ac7d679b88cfb757003111e03b5c0d83991a6e50784d5b888d1ef0fbe7 leetcode/index.html
 1b2eb74dae763998c298b31c1f78901e5bff5dd7ed79c1dba4a59475f8692dad leetcode/problems.config.js
 ```
+
+## Follow-up — exact-six choice with general language fallback
+
+Reviewed 2026-10-18 by `/root/javascript_policy_review`, separately from
+`/root/language_fallback`. Base HEAD:
+`5c6e49a` (Register independently reviewed LeetCode 60 locally). This follow-up
+preserves the initial review above as historical evidence. The general policy
+has since become faithful Python > supported TypeScript > required native
+language; the user's explicit original-JavaScript choice remains a narrower
+exception for the exact six JavaScript-category problems.
+
+**Accepted for this narrow clarification; no required findings.** The resolver
+checks both the exact ID set and catalog category, then requires JavaScript for
+those six even when the recorded supported interfaces also include TypeScript
+or Python. All other records retain the general fallback ordering. The existing
+contract continues to require the correct official URL, complete observed
+supported-language list, interface and rationale, timezone-qualified verification
+time, and nonempty lesson-local evidence. That evidence still needs independent
+verification; a syntactically valid contract is not proof of actual availability.
+
+The author, fix, review, explainer, campaign, and rubric documents now agree on
+the exception's precedence and retain the separate conceptual-only Python
+comparison. They do not permit hiding an available TypeScript interface to
+justify JavaScript. Instead, the rationale records the owner's exact-six choice.
+The design record appends a clarification without rewriting earlier decisions.
+No scores, historical lesson reviews, or acceptance thresholds were changed by
+this clarification. The narrow resolver diff does not alter locks, fingerprints,
+process control, or publication behavior.
+
+Independent validation:
+
+- `python3 -m unittest discover -s scripts -p 'test_leetcode_*.py'` passed all
+  **47 tests in 71.657 seconds** (campaign, registry, and existing publisher suites).
+- Re-ran the final registry test file after the implementer supplemented its
+  parity regression: **8 tests passed in 0.922 seconds**. The exact-six test covers
+  all six IDs, accepts JavaScript with Python/TypeScript listed, rejects either
+  of those as canonical for the six, and rejects either corrupted source mirror.
+  The existing non-six tests still exercise Python > TypeScript > native.
+- Separately constructed temporary contracts for every one of the six IDs and
+  performed **18 independent checks**: valid JavaScript/comparison pairs pass;
+  changing `javascript-code.js` fails; changing `python-code.js` fails. These are
+  synthetic policy fixtures, not claims about current official selectors.
+- `git diff --check` passed. The campaign fixture now offers JavaScript and
+  TypeScript while still completing author/reviewer/registration with
+  `solution.js` and the Python comparison; missing required files remain blocked.
+
+Scope limits: this follow-up does not accept any future JavaScript lesson, prove
+runtime semantics or learning outcomes, apply the policy to the Pi, or verify
+public deployment. In-flight lane-importer files, the separate campaign
+publication docstring change, the parallel-preparation section, and unrelated
+Pythagoras changes are outside this review. The policy content of the campaign
+spec was checked; its full-file hash below also identifies that concurrent
+out-of-scope section. No browser check was repeated because this clarification
+changes code policy and documents, with no collection UI diff in its scope.
+
+Follow-up reviewed SHA-256 fingerprints:
+
+```text
+bdf7e690a7e8fa975eccfbbfc079323ff790546fd946d17624bdd0610ccf497a scripts/register_leetcode_lesson.py
+5d566286e5f19ef222225046b6047d69ec028d8415cebda0ffa85435376377af scripts/test_leetcode_campaign.py
+e43c97883474a6d4e429c238ce077df43db5118a9fae23904d87b7f1da4bea88 scripts/test_leetcode_registry.py
+3254f8f11802b47980f5cc08fd3f1edea6950180337f442b278ce7f73ecfd07a scripts/campaign-prompts/author.md
+e7db92a1aac059766d9f29c6406d5aa069aba07ed6b6870d35532bdfb7f78dde scripts/campaign-prompts/fix.md
+6b03ba313977986ebe7bb4e683474d9cdc35d8b545d40a676ab4c04a72fdbfc6 scripts/campaign-prompts/review.md
+f79d88a47248f357f35401df03a00479f1f6e6923cc225f18fc0841af067bacb specs/leetcode-explainers.md
+cd5f5a96fa6cecf3d7819ca6d0aa79729661b8fecffb9fdcc62875171b7c6cf8 specs/leetcode-review-gates.md
+ae897815192372206dbec72995abc80d8d9f84f9276d4e5db7ba9d1f5136c59b specs/leetcode-all-hard-campaign.md
+a1d9d6bc23d15e7369eb04252ff00d0302d5b1786641f5c7f7587ecf64d31086 specs/reviews/leetcode-all-hard-design-review.md
+```

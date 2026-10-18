@@ -20,10 +20,11 @@ TypeScript interface, then the language the original problem requires. Verify
 language availability and behavior rather than guessing from the category.
 Every nondefault choice records its official source, interface, supported language
 list, rationale, date and evidence in a lesson-local language contract. The six
-JavaScript-category problems still include a clearly labeled Python conceptual
-comparison; that comparison cannot masquerade as a submittable Python solution.
-The owner's latest preference supersedes a blanket JavaScript choice for future
-lessons when an official TypeScript interface is available.
+JavaScript-category problems (#2630, #2650, #2675, #2691, #2756, #2759) follow the
+owner's explicit exception: original JavaScript plus a clearly labeled Python
+conceptual comparison, even if TypeScript is supported. The comparison cannot
+masquerade as a submittable Python solution. All other problems retain the general
+Python > TypeScript > required native preference.
 
 Every catalog record starts not started; existing pages have separate historical
 deployment evidence. Do not exclude premium, language-specific, or inaccessible
@@ -150,3 +151,42 @@ modify the campaign's acceptance ledger. Successful release removes staged
 payload bytes and retains small receipts. The reviewed test interfaces cover
 thresholds, incomplete work, failures, resumption and preservation of unrelated
 content; a passing fixture is not itself a real production release.
+
+## Isolated parallel preparation
+
+Two additional single-problem worktrees may prepare lessons ahead of the central
+queue using the same author, fresh reviewer, fix and acceptance gates. They use
+separate checkout/state locks and preview ports; they never publish or change the
+central checkout while its reviewer is running. The first lanes are #68 and #76,
+from revision `00982ff44c2c923722a3a2ea813bb32135158e34`. Actual process handles and
+state directories are recorded on Pi in
+`/home/songyy/projects/leetcode-hard-parallel-20261018/lanes.json`.
+
+Keep the additional concurrency at two on the observed 4-core/4-GB Pi and run the
+extra workers at reduced scheduling priority. Recheck process/resource evidence
+before increasing concurrency; do not treat a state file as proof of a live run.
+No active author/reviewer is interrupted merely to import work.
+
+Import only at a clean central stage boundary with STOP present and both workers'
+locks acquired. The central queue must not already have started the imported ID.
+Retain the lane's real author/reviewer sessions, candidate and report commits,
+findings and source evidence. Validate acceptance and unchanged reviewed lesson,
+shared runtime and rubric before merging the lane history and registering its
+single entry into the current central collection. Do not restore the lane's older
+registry or concept map over newer central entries. A failed import remains
+inspectable and cannot manufacture an accepted status.
+
+Only imported, independently accepted work participates in the central count and
+its every-100 release gate. A lane's local acceptance is not public delivery and
+its completed process is not whole-campaign completion. Keep lane logs until their
+provenance is preserved; no old production content is copied by this workflow.
+
+Import review lessons: verify the original frozen-candidate fingerprint and each
+review commit's parent and path scope, not only the final restored files. Disable
+Git rename detection for historical path checks (`--no-renames`): a source file
+moved into the review directory must still expose its forbidden deletion. Resolve
+relative Git metadata paths against the corresponding worktree. Shared teaching
+policy and runtime must match the frozen candidate; run the reviewed importer
+externally before a policy update when integrating lanes created under that policy.
+The [independent importer review](reviews/leetcode-lane-import-review.md) retains
+the reproduced failures, fixes, and remaining recovery boundaries.

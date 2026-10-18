@@ -80,8 +80,11 @@ a browser trace that imitates it. Verify displayed/copied/downloaded source pari
 For TypeScript, compile and run the emitted JavaScript; for SQL, execute query
 fixtures and check duplicate, null and ordering behavior where applicable.
 
-For the six JavaScript-category problems, also check the explicitly labeled Python
-conceptual comparison and its limits. Runtime correctness such as identity and
+For the exact six JavaScript-category problems (#2630, #2650, #2675, #2691, #2756,
+#2759), the owner explicitly requires original JavaScript even when TypeScript is
+supported. Verify `solution.js` / `javascript-code.js`, and separately check the
+explicitly labeled Python conceptual comparison (`concept.py` / `python-code.js`)
+and its limits. This exact-six exception overrides the general language preference. Runtime correctness such as identity and
 async ordering is a required criterion, not an optional note. Freeze the applicable
 interpretation before the cold walkthrough; never rescore historical reports.
 
