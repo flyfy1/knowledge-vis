@@ -1,0 +1,41 @@
+{
+  "exhaustive_pairs_canonical_and_displayed_baseline": 21483,
+  "random_pairs": 1000,
+  "boundaries_and_transfer": 11,
+  "repeated_call_count": 2,
+  "actual_displayed_baseline_calls": [
+    [
+      "a",
+      "b**"
+    ],
+    [
+      "a",
+      "b*"
+    ],
+    [
+      "a",
+      "b"
+    ],
+    [
+      "",
+      "b*"
+    ],
+    [
+      "",
+      "b"
+    ],
+    [
+      "",
+      "b**"
+    ],
+    [
+      "",
+      "b*"
+    ],
+    [
+      "",
+      "b"
+    ]
+  ],
+  "python_mirror_exact": true
+}

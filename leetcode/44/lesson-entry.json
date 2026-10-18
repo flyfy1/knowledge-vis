@@ -1,0 +1,39 @@
+{
+  "id": 44,
+  "title": {
+    "zh": "通配符匹配",
+    "en": "Wildcard Matching"
+  },
+  "desc": {
+    "zh": "从重复递归推导前缀状态，逐格解释独立星号的两种选择与滚动行。",
+    "en": "Derive prefix states from repeated recursion, then trace standalone stars and rolling rows."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "动态规划与滚动行",
+      "en": "Dynamic programming and rolling rows"
+    }
+  ],
+  "path": "44/",
+  "leetcodeUrl": "https://leetcode.com/problems/wildcard-matching/",
+  "language": "Python",
+  "complexity": "O((m+1)(n+1)) time; O(n+1) auxiliary space",
+  "concepts": [
+    {
+      "name": "Repeated prefix pairs",
+      "step": 0,
+      "description": "Follow two recursive paths to the same empty-text and b-star call."
+    },
+    {
+      "name": "Standalone wildcard dependencies",
+      "step": 1,
+      "description": "Derive empty consumption from left and one more character from above."
+    },
+    {
+      "name": "Rolling rows",
+      "step": 4,
+      "description": "Map prefix dependencies to two live rows in the Python solution."
+    }
+  ]
+}
