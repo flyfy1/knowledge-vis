@@ -19,7 +19,7 @@ import threading
 import uuid
 
 from leetcode_registry import read_registry
-from register_leetcode_lesson import solution_language, validate_language_sources, LANGUAGE_FILES
+from register_leetcode_lesson import solution_language, validate_language_sources, validate_metadata, LANGUAGE_FILES
 
 
 WEIGHTS = (15, 20, 20, 20, 15, 10)
@@ -318,9 +318,12 @@ def required_files(repo, problem, new):
         missing = [name for name in required if not (folder / name).is_file()]
         if missing:
             raise CampaignError(f"Lesson {problem_id} is not ready; missing {', '.join(missing)}")
-        validate_language_sources(problem, folder)
-    except (ValueError, KeyError) as error:
-        raise CampaignError(f"Lesson {problem_id} language contract is invalid: {error}") from error
+        if new:
+            validate_metadata(repo, problem_id)
+        else:
+            validate_language_sources(problem, folder)
+    except (ValueError, KeyError, OSError) as error:
+        raise CampaignError(f"Lesson {problem_id} metadata/source contract is invalid: {error}") from error
 
 
 def process_problem(args, problem, state, state_path, base_url):
@@ -384,6 +387,8 @@ def process_problem(args, problem, state, state_path, base_url):
             continue
         if phase != "review":
             raise CampaignError(f"Unknown phase: {phase}")
+        if entry["new"]:
+            required_files(args.repo, problem, new=True)
         round_number = entry["rounds"] + 1
         report = f"specs/reviews/{pid}-review-{round_number}-{uuid.uuid4().hex[:8]}.md"
         evidence_dir = f"specs/reviews/{pid}-evidence/{Path(report).stem}"

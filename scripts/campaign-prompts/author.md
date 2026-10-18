@@ -109,5 +109,14 @@ already-running preview URL; don't start a persistent service. Headless screensh
 must be visually inspected, not only produced. Keep shipped CSS under 25000 bytes.
 A self-check is not a separate review and must not claim actual learner results.
 
+Metadata gate: lesson-entry.json complexity must be exactly ONE nonempty string
+covering time and space, for example "O(mn) time; O(n) space", never an object with
+time/space fields. Run the safe, non-mutating preflight from the repository root:
+`python3 -B scripts/register_leetcode_lesson.py <id> --validate-only`
+Replace <id> with this problem's ID. Record the command and result before
+returning ready. Freeze metadata fixes as a new candidate for independent review.
+Never run registration or alter prior acceptance, campaign state, or reports to
+clear this gate; the prior candidate's review result remains historical evidence.
+
 Return JSON matching the supplied output schema: outcome ready only with complete
 candidate and actual checks; otherwise blocked, detail explaining the evidence.
