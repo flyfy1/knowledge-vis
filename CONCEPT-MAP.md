@@ -411,3 +411,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Monotone window boundaries | `leetcode/76/#step4` | Discarded starts cannot improve the recorded answer at later right edges. |
 
 <!-- /leetcode-76-campaign -->
+
+
+<!-- leetcode-115-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Subsequence counting | `leetcode/115/#step1` | Partition index selections into skipping or using the last source position. |
+| Reverse rolling DP | `leetcode/115/#step2` | Keep the previous source-prefix row available during in-place updates. |
+
+<!-- /leetcode-115-campaign -->
