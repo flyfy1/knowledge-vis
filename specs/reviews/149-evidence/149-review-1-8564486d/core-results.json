@@ -1,0 +1,17 @@
+{
+  "kind": "author self-check",
+  "cases": 1245,
+  "intermediateFrames": 24291,
+  "invariants": [
+    "exact bucket membership",
+    "unique partition",
+    "sign normalization",
+    "coprime key",
+    "before/after insertion",
+    "local maximum",
+    "monotone global maximum",
+    "completed anchor maxima",
+    "input immutability",
+    "snapshot isolation"
+  ]
+}
