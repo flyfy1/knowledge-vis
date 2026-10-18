@@ -1,0 +1,38 @@
+{
+  "id": 124,
+  "title": {
+    "zh": "二叉树中的最大路径和",
+    "en": "Binary Tree Maximum Path Sum"
+  },
+  "desc": {
+    "zh": "区分向上延伸的单臂与在此结束的双臂，逐节点推导最大路径和。",
+    "en": "Separate an extendable arm from a completed path and derive the maximum sum node by node."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "二叉树",
+      "en": "Binary tree"
+    },
+    {
+      "zh": "动态规划",
+      "en": "Dynamic programming"
+    }
+  ],
+  "path": "124/",
+  "leetcodeUrl": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+  "language": "Python",
+  "complexity": "O(n) time / O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "One-arm gain",
+      "step": 1,
+      "description": "Only a single downward arm can be attached to a parent."
+    },
+    {
+      "name": "Postorder tree DP",
+      "step": 2,
+      "description": "Complete both children before forming a node summary."
+    }
+  ]
+}
