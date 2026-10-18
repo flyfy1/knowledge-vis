@@ -299,6 +299,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) time, O(n) auxiliary space"
   },
   {
+    "id": 65,
+    "title": {
+      "zh": "有效数字",
+      "en": "Valid Number"
+    },
+    "desc": {
+      "zh": "用逐字符证据区分未完成前缀与不可能的数字。",
+      "en": "Track which prefixes can still become a valid number."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      },
+      {
+        "zh": "状态与语法",
+        "en": "State and grammar"
+      }
+    ],
+    "path": "65/",
+    "leetcodeUrl": "https://leetcode.com/problems/valid-number/",
+    "language": "Python",
+    "complexity": "O(n) time, O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
