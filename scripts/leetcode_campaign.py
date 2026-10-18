@@ -387,6 +387,8 @@ def process_problem(args, problem, state, state_path, base_url):
             continue
         if phase != "review":
             raise CampaignError(f"Unknown phase: {phase}")
+        if entry["new"]:
+            required_files(args.repo, problem, new=True)
         round_number = entry["rounds"] + 1
         report = f"specs/reviews/{pid}-review-{round_number}-{uuid.uuid4().hex[:8]}.md"
         evidence_dir = f"specs/reviews/{pid}-evidence/{Path(report).stem}"
