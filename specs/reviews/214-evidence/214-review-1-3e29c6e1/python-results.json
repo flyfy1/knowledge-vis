@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "canonical": "Solution.shortestPalindrome(s: str) -> str",
+  "exhaustive_binary": 511,
+  "seeded_prepend_oracle": 80,
+  "seeded_prefix_baseline": 500,
+  "canonical_pi_cells_checked": 59,
+  "official_and_boundary_fixtures": 7,
+  "maximum_length_fixtures": 3,
+  "source_mirror_exact": true
+}
