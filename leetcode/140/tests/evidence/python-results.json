@@ -1,0 +1,7 @@
+{
+  "checks": 8424,
+  "seed": 140,
+  "exhaustive": "binary strings length 1..6 \u00d7 all 64 dictionaries of a,b,aa,ab,ba,bb (empty selection replaced with c)",
+  "maximum": "n=20; m=1000; word width=10; 512-output length-10 case",
+  "result": "pass"
+}
