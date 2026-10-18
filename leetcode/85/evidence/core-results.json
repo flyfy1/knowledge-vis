@@ -1,0 +1,14 @@
+{
+  "cases": 1090,
+  "frames": 29139,
+  "result": "pass",
+  "checks": [
+    "independent cell-enumeration oracle",
+    "all intermediate heights",
+    "stack ordering",
+    "pop rectangles",
+    "row-end oracle",
+    "deep snapshots",
+    "input unchanged"
+  ]
+}

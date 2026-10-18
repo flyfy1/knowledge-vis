@@ -1,0 +1,2 @@
+/* Keep small highlighted coordinates readable on the existing active fill. */
+.trace-cell.hot small{color:var(--text)}
