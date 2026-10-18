@@ -545,3 +545,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Reversible parenthesis scan | `leetcode/32/#step2` | Compare pop, boundary reset, current valid suffix length and historical best. |
 
 <!-- /leetcode-32-campaign -->
+
+
+<!-- leetcode-149-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Exact undirected direction | `leetcode/149/#step1` | Reduce integer displacement by gcd and normalize its sign. |
+| Anchor direction counting | `leetcode/149/#step2` | Count peers sharing one line through a fixed point. |
+| Earliest-anchor completeness | `leetcode/149/#step4` | Prove a suffix scan still visits every member of an optimal line. |
+
+<!-- /leetcode-149-campaign -->
