@@ -230,6 +230,57 @@ class LaneImportTests(unittest.TestCase):
         self.write_state(self.lane_state,self.lane_data)
         self.reject('Review commit mutated frozen candidate')
 
+    def record_group_writable_fingerprint(self, mode_overrides=None):
+        """The Pi runner creates 0664 files; Git records these as 100644."""
+        entry=self.lane_data['problems']['68']
+        report=entry['reviews'][0]['report_path']
+        evidence=entry['reviews'][0]['evidence'][0]
+        self.git(self.lane,'reset','--hard',entry['candidate'])
+        for name in self.git(self.lane,'ls-files').splitlines():
+            (self.lane/name).chmod(0o775 if (self.lane/name).stat().st_mode & 0o111 else 0o664)
+        for name, mode in (mode_overrides or {}).items():
+            (self.lane/name).chmod(mode)
+        recorded=fingerprint(self.lane,68,report,'specs/reviews/68-evidence/68-review-1-fixture')
+        self.write(self.lane,report,'Independent review recorded group writable candidate')
+        self.write(self.lane,evidence,'Original evidence')
+        entry['reviews'][0]['commit']=self.commit(self.lane,'Review group writable candidate')
+        entry['reviews'][0]['candidate_sha256']=recorded
+        register(self.lane,68)
+        self.lane_data['expected_head']=self.commit(self.lane,'Register group writable candidate')
+        self.write_state(self.lane_state,self.lane_data)
+        return recorded
+
+    def test_group_writable_runner_fingerprint_imports_unchanged(self):
+        recorded=self.record_group_writable_fingerprint()
+        self.run_import()
+        updated=json.loads((self.state_dir/'progress.json').read_text())
+        self.assertEqual(updated['problems']['68']['reviews'][0]['candidate_sha256'],recorded)
+
+    def test_mixed_permissions_and_group_writable_executable_import(self):
+        entry=self.lane_data['problems']['68']
+        self.git(self.lane,'reset','--hard',entry['candidate'])
+        self.write(self.lane,'leetcode/68/run.sh','#!/bin/sh\nexit 0\n')
+        (self.lane/'leetcode/68/run.sh').chmod(0o775)
+        candidate=self.commit(self.lane,'Candidate with executable test helper')
+        entry['candidate']=candidate
+        entry['reviews'][0]['candidate']=candidate
+        for run in self.lane_data['runs']:
+            run['candidate']=candidate
+        recorded=self.record_group_writable_fingerprint({'leetcode/common.js':0o644})
+        self.run_import()
+        updated=json.loads((self.state_dir/'progress.json').read_text())
+        self.assertEqual(updated['problems']['68']['reviews'][0]['candidate_sha256'],recorded)
+
+    def test_executable_mismatch_rejected_even_when_recorded_hash_matches_disk(self):
+        self.git(self.lane,'config','core.filemode','false')
+        self.record_group_writable_fingerprint({'leetcode/68/app.js':0o775})
+        self.reject('Candidate executable mode differs from Git')
+
+    def test_permissions_drift_after_review_rejected(self):
+        self.record_group_writable_fingerprint()
+        (self.lane/'leetcode/68/app.js').chmod(0o644)
+        self.reject('Frozen candidate fingerprint mismatch')
+
     def test_false_fingerprint_rejected(self):
         self.lane_data['problems']['68']['reviews'][0]['candidate_sha256']='0'*64
         self.write_state(self.lane_state,self.lane_data)

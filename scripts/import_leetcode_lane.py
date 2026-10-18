@@ -26,6 +26,7 @@ import json
 from pathlib import Path
 import re
 import shutil
+import stat
 import uuid
 
 from leetcode_campaign import (CampaignError, REGISTER_PATHS, allowed_path, acceptance,
@@ -59,8 +60,13 @@ def review_path(path, pid):
                 path.startswith(f'specs/reviews/{pid}-evidence/'))
 
 
-def frozen_fingerprint(repo, revision, report, evidence_prefix):
-    """Reproduce the runner's clean-candidate fingerprint, including file modes."""
+def frozen_fingerprint(repo, revision, report, evidence_prefix, mode_root):
+    """Use immutable Git bytes and preserved lane permissions, then match old hash.
+
+    Git retains only executable/nonexecutable mode; runner fingerprints include
+    every stat permission bit (e.g. 0664, not Git's 0644). Never guess a historical
+    mode: unavailable paths or changed permissions must fail the original digest.
+    """
     digest = hashlib.sha256()
     for path, metadata in sorted(tree(repo, revision).items()):
         if path == report or path.startswith(evidence_prefix):
@@ -72,7 +78,14 @@ def frozen_fingerprint(repo, revision, report, evidence_prefix):
             digest.update(b'link:' + data)
         else:
             require(mode in ('100644', '100755'), 'Unsupported candidate file mode')
-            digest.update(str(int(mode, 8)).encode() + b"\0" + data)
+            target = mode_root / path
+            require(target.exists() and not target.is_symlink(),
+                    'Historical candidate permission evidence missing or changed type: ' + path)
+            actual_mode = target.lstat().st_mode
+            require(stat.S_ISREG(actual_mode), 'Historical candidate is no longer a regular file: ' + path)
+            require(bool(actual_mode & 0o111) == (mode == '100755'),
+                    'Candidate executable mode differs from Git: ' + path)
+            digest.update(str(actual_mode).encode() + b"\0" + data)
     return digest.hexdigest()
 
 
@@ -228,7 +241,7 @@ def import_lane(repo, state_dir, lane_repo, lane_state_dir, problem_id):
                     'Review commit must directly follow its frozen candidate')
             git(repo,'merge-base','--is-ancestor',review['commit'],lane_head)
             evidence_prefix = f"specs/reviews/{pid}-evidence/{Path(review['report_path']).stem}/"
-            require(review.get('candidate_sha256') == frozen_fingerprint(repo,review['candidate'],review['report_path'],evidence_prefix),
+            require(review.get('candidate_sha256') == frozen_fingerprint(repo,review['candidate'],review['report_path'],evidence_prefix,lane_repo),
                     'Frozen candidate fingerprint mismatch')
             rt = tree(repo,review['commit'])
             own = lambda p: p == review['report_path'] or p.startswith(evidence_prefix)
