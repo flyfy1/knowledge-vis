@@ -14,12 +14,18 @@ Apply the [independent design review and adjudication](reviews/leetcode-all-hard
 new lesson cycle; the first new batch is #51, #52, #60, and #65. Then proceed
 through the remaining official IDs in ascending order, including review debt for
 existing pages. Preserve prominent IDs, separate official links, bilingual explanations,
-Python source parity, and genuine algorithm-specific interactions.
+solution-source parity, and genuine algorithm-specific interactions. Python is
+the default; the six verified JavaScript-category problems (#2630, #2650, #2675,
+#2691, #2756, #2759) use their original JavaScript interface plus a clearly labeled
+Python conceptual comparison, as explicitly approved by the owner on 2026-10-18.
 
 Every catalog record starts not started; existing pages have separate historical
 deployment evidence. Do not exclude premium, language-specific, or inaccessible
 records from the denominator. Use a verified Pandas interface when officially
-supported. If the source or Python submission contract cannot be verified, record
+supported. For the six JavaScript exceptions, verify the original JavaScript
+contract and explicitly explain the comparison's limits; lack of a Python
+submission interface alone is no longer a blocker for these six. If the statement
+or applicable submission contract cannot be verified, record
 a concrete blocker and next action instead of inventing it. Completion of this
 request requires resolving those blockers, not simply exhausting the queue.
 
@@ -70,3 +76,19 @@ queued item or a started process is not a finished visualization. Preserve all
 reports, including failures and findings later fixed. Periodic user-facing counts
 must distinguish not started, active, blocked, changes required, accepted locally,
 and publicly verified; do not present the last two as interchangeable.
+
+## Proven first cycle and policy maintenance
+
+#51 completed an actual author → independent review → fix → fresh independent
+review cycle. Round one required a zoom-layout fix; round two accepted candidate
+`95a02f2a7cbe73044d6bbf0dfc8053999f17815d` at 96.25/100 with no open required
+findings. Registration followed acceptance. Reports and original failure evidence
+remain in `specs/reviews/`; this is local acceptance, not public verification.
+
+Change queue policy only at a graceful stage boundary: request STOP, let the
+active agent finish, verify the runner exited and the checkout is clean, then
+apply the reviewed policy commit. Back up the ledger and record old/new HEADs,
+changed policy, and authorization before updating its expected HEAD. Preserve
+all problem statuses, candidate revisions, run identities, and review evidence.
+Remove STOP and resume the same queue only after checking these invariants.
+This maintenance procedure cannot create acceptance or close review findings.

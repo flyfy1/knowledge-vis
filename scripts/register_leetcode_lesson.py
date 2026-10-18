@@ -7,6 +7,17 @@ from pathlib import Path
 from leetcode_registry import merge_registry
 
 
+JAVASCRIPT_PROBLEM_IDS = frozenset({2630, 2650, 2675, 2691, 2756, 2759})
+
+
+def solution_language(official):
+    """Keep the approved native-language exception tied to the verified catalog."""
+    javascript = 'javascript' in official.get('categories', [])
+    if javascript != (official['id'] in JAVASCRIPT_PROBLEM_IDS):
+        raise ValueError('JavaScript category differs from the six approved problem IDs; inspect catalog policy')
+    return 'JavaScript' if javascript else 'Python'
+
+
 def register(root, problem_id):
     root = Path(root)
     folder = root / 'leetcode' / str(problem_id)
@@ -16,9 +27,16 @@ def register(root, problem_id):
     assert entry['id'] == problem_id
     assert entry['path'] == f'{problem_id}/'
     assert entry['leetcodeUrl'] == official['officialUrl']
-    assert entry['difficulty'] == 'hard' and entry['language'] == 'Python'
+    assert entry['difficulty'] == 'hard' and entry['language'] == solution_language(official)
     for field in ('title','desc'):
         assert all(isinstance(entry[field][lang],str) and entry[field][lang].strip() for lang in ('zh','en'))
+    # The collection supplies the ID; preserve the reviewed lesson metadata file.
+    for title in entry['title'].values():
+        prefix = re.match(r'^#(\d+)\s*·\s*', title)
+        assert prefix is None or int(prefix[1]) == problem_id, 'Title problem ID differs from metadata'
+    entry['title'] = {lang: re.sub(r'^#\d+\s*·\s*', '', title)
+                      for lang, title in entry['title'].items()}
+    assert all(entry['title'][lang].strip() for lang in ('zh', 'en'))
     assert entry['topics'] and entry['complexity'].strip()
     for topic in entry['topics']:
         assert all(isinstance(topic[lang],str) and topic[lang].strip() for lang in ('zh','en'))
