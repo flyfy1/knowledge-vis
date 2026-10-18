@@ -200,7 +200,7 @@ window.LEETCODE_PROBLEMS = [
     "path": "42/",
     "leetcodeUrl": "https://leetcode.com/problems/trapping-rain-water/",
     "language": "Python",
-    "complexity": "O(n)"
+    "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
     "id": 44,
