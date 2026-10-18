@@ -221,6 +221,56 @@ class PublishTests(unittest.TestCase):
         self.assertFalse((self.root / 'leetcode/1000/official-interface.json').exists())
         self.assertEqual((self.root / 'leetcode/1000/data.json').read_text(), '{"runtime": true}')
 
+    def test_official_capture_is_not_in_public_payload(self):
+        capture = {'source': 'https://leetcode.com/problems/problem-1000/',
+                   'graphql': 'https://leetcode.com/graphql/', 'accessedAt': '2026-10-18T10:00:00Z',
+                   'response': {'data': {'question': {'content': 'Observed official statement'}}}}
+        captures = ('official-evidence.json', 'official-interface.json', 'official-contract.json',
+                    'official-graphql.json', 'official.json')
+        for name in captures:
+            self.write(f'leetcode/1000/{name}', json.dumps(capture))
+        self.write('leetcode/1000/provenance/response.json', json.dumps(capture))
+        for source, _mirror, _export in publisher.LANGUAGE_FILES.values():
+            self.write(f'leetcode/1000/{source}', 'native submission source')
+        self.write('leetcode/1000/data.json', '{"runtime": true}')
+        self.write('leetcode/1000/solution.sql', 'SELECT 1;')
+        self.accept([1000])
+        with patch.object(publisher, '_verify_public', return_value={'testAdapter': True}) as verify:
+            self.publish(batch_size=1)
+        for name in captures:
+            self.assertFalse((self.root / f'leetcode/1000/{name}').exists())
+            self.assertNotIn(f'leetcode/1000/{name}', verify.call_args.args[1])
+        self.assertFalse((self.root / 'leetcode/1000/provenance').exists())
+        for source, _mirror, _export in publisher.LANGUAGE_FILES.values():
+            self.assertTrue((self.root / f'leetcode/1000/{source}').is_file())
+        self.assertEqual((self.root / 'leetcode/1000/data.json').read_text(), '{"runtime": true}')
+        self.assertEqual((self.root / 'leetcode/1000/solution.sql').read_text(), 'SELECT 1;')
+
+    def test_excluded_evidence_still_belongs_to_frozen_candidate(self):
+        self.write('leetcode/1000/evidence/official-evidence.json', '{"response": "reviewed"}')
+        self.accept([1000])
+        self.write('leetcode/1000/evidence/official-evidence.json', '{"response": "edited after acceptance"}')
+        self.state['expected_head'] = self.commit('Unexpected provenance edit')
+        with patch.object(publisher, '_verify_public', return_value={'testAdapter': True}):
+            with self.assertRaisesRegex(publisher.PublicationError, 'changed since its accepted candidate'):
+                self.publish(batch_size=1)
+        self.assertFalse((self.root / 'leetcode/1000').exists())
+
+    def test_reference_to_excluded_provenance_fails_before_publication(self):
+        self.write('leetcode/1000/official-evidence.json', '{"response": "official statement"}')
+        original = self.lesson
+        def with_reference(pid):
+            original(pid)
+            if pid == 1000:
+                path = self.repo / f'leetcode/{pid}/index.html'
+                path.write_text(path.read_text() + '<a href="official-evidence.json">Source evidence</a>')
+        with patch.object(self, 'lesson', side_effect=with_reference):
+            self.accept([1000])
+        with patch.object(publisher, '_verify_public', return_value={'testAdapter': True}):
+            with self.assertRaisesRegex(publisher.PublicationError, 'excluded.*evidence|evidence.*excluded'):
+                self.publish(batch_size=1)
+        self.assertFalse((self.root / 'leetcode/1000').exists())
+
     def test_native_submission_source_is_published(self):
         self.write('leetcode/1000/solution.sql', 'SELECT 1;')
         self.accept([1000])

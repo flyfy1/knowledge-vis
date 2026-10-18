@@ -196,3 +196,12 @@ normalizes regular-file modes. Reconstruct it from immutable candidate bytes plu
 preserved lane permissions and require the exact original digest. Missing historical
 permission evidence, permission drift, or executable-mode disagreement must reject
 the import; never rewrite the recorded hash to make a transfer pass.
+
+Official statement/interface captures are review provenance, not public runtime.
+Keep them under `tests/`, `evidence/`, or `provenance/`; the reserved capture names
+`official-evidence.json`, `official-interface.json`, `official-contract.json`,
+`official-graphql.json`, and `official.json` are excluded from lesson payloads.
+Actual runtime JSON and required native-language submission sources remain eligible.
+A static dependency on excluded provenance must fail before staging. Exclusion
+from deployment never permits post-review edits: freeze the entire lesson Git tree,
+including evidence, and retain the original candidate and release fingerprints.
