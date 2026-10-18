@@ -1,0 +1,106 @@
+{
+  "presetVisits": 16,
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "widths": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "CSS zoom 2 at 1280px",
+  "sourceParity": true,
+  "renderedDailyValuesAndCandidates": true,
+  "copySuccessAndFallback": true,
+  "storageDenied": true,
+  "offlineSource": true,
+  "errors": [],
+  "cssBytes": 11980,
+  "contrasts": [
+    {
+      "selector": ".site-head",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".state-card",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".state-card .result",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": ".state-card .decision",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".price small",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".active-row",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "selector": ".btn.primary",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".btn:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "select",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    }
+  ],
+  "focusPair": {
+    "fg": "rgb(255, 180, 84)",
+    "bg": "rgb(22, 27, 34)"
+  },
+  "focusRatio": 9.809435643476732
+}
