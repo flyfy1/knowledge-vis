@@ -6,6 +6,7 @@
 <title>三角函数 · 单位圆 —— 一步一交互</title>
 <link rel="stylesheet" href="style.css?v=w2a">
 <script src="i18n.js?v=w2a"></script>
+<link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
 
@@ -40,7 +41,7 @@
     <h2 data-i18n="s0t">一台只会转圈的造波机</h2>
     <p class="explain" data-i18n-html="s0e"></p>
     <div class="stage">
-      <canvas id="s0-canvas" height="320"></canvas>
+      <canvas id="s0-canvas" height="320" style="height:320px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s0speed">转速 ω（rad/s）</span> <span class="val" id="s0-speed-val">1.2</span></span>
@@ -64,7 +65,7 @@
     <h2 data-i18n="s1t">cos 是站位，sin 是身高</h2>
     <p class="explain" data-i18n-html="s1e"></p>
     <div class="stage">
-      <canvas id="s1-canvas" class="dragc" height="380" tabindex="0"></canvas>
+      <canvas id="s1-canvas" class="dragc" height="380" tabindex="0" style="height:380px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn active" id="s1-unit-deg" data-i18n="s1deg">角度 °</button>
@@ -93,7 +94,7 @@
     <h2 data-i18n="s2t">把身高摊开，就是正弦波</h2>
     <p class="explain" data-i18n-html="s2e"></p>
     <div class="stage">
-      <canvas id="s2-canvas" height="320"></canvas>
+      <canvas id="s2-canvas" height="320" style="height:320px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s2amp">振幅 = 半径 R</span> <span class="val" id="s2-r-val">1.0</span></span>
@@ -122,7 +123,7 @@
     <h2 data-i18n="s3t">换个方向看：站位也能成波</h2>
     <p class="explain" data-i18n-html="s3e"></p>
     <div class="stage">
-      <canvas id="s3-canvas" height="320"></canvas>
+      <canvas id="s3-canvas" height="320" style="height:320px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn active" id="s3-m-sin" data-i18n="s3watchSin">看身高 sin</button>
@@ -142,7 +143,7 @@
     <h2 data-i18n="s4t">tan 是斜率，站上 x = 1 的墙</h2>
     <p class="explain" data-i18n-html="s4e"></p>
     <div class="stage">
-      <canvas id="s4-canvas" class="dragc" height="400" tabindex="0"></canvas>
+      <canvas id="s4-canvas" class="dragc" height="400" tabindex="0" style="height:400px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s4th">角度 θ（°）</span> <span class="val" id="s4-th-val">35.0</span></span>
@@ -176,21 +177,21 @@
       <div class="third">
         <div class="stage">
           <p class="stage-title" data-i18n="s5wheelT">① 摩天轮：座舱高度</p>
-          <canvas id="s5-wheel" height="250"></canvas>
+          <canvas id="s5-wheel" height="250" style="height:250px"></canvas>
         </div>
         <p class="readout" id="s5-wheel-ro"></p>
       </div>
       <div class="third">
         <div class="stage">
           <p class="stage-title" data-i18n="s5pistonT">② 曲柄活塞：往复行程</p>
-          <canvas id="s5-piston" height="250"></canvas>
+          <canvas id="s5-piston" height="250" style="height:250px"></canvas>
         </div>
         <p class="readout" id="s5-piston-ro"></p>
       </div>
       <div class="third">
         <div class="stage">
           <p class="stage-title" data-i18n="s5soundT">③ 转速变声音</p>
-          <canvas id="s5-sound" height="250"></canvas>
+          <canvas id="s5-sound" height="250" style="height:250px"></canvas>
         </div>
         <div class="btn-row">
           <button class="btn" id="s5-play" data-i18n="s5play">▶ 听一听</button>
@@ -210,7 +211,7 @@
     <h2 data-i18n="s6t">总览台：一个圆，三个投影</h2>
     <p class="explain" data-i18n-html="s6e"></p>
     <div class="stage">
-      <canvas id="s6-canvas" class="dragc" height="420" tabindex="0"></canvas>
+      <canvas id="s6-canvas" class="dragc" height="420" tabindex="0" style="height:420px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn" id="s6-toggle" data-i18n="s6play">▶ 转起来</button>
@@ -233,5 +234,6 @@
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 三角函数 · 单位圆 Trig Functions &amp; the Unit Circle —— 一步一交互系列</footer>
 
 <script src="app.js?v=w2a"></script>
+<script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

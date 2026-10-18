@@ -1,0 +1,1264 @@
+step0 STEP 0 / 6 · Voltage & power
+
+Twice the voltage does not mean twice the energy
+
+Voltage is energy per charge (1 V = 1 J/C). Current is charge per second (1 A = 1 C/s). Their product is energy transferred each second: power.
+
+P = V · I　　Ideal steady state: Pin = Pout
+
+With a fixed 12 W power budget, move the output from 6 V to 24 V and watch output current:
+
+Output voltage 6 V
+Output power
+12 W
+Output current
+2.00 A
+Relation
+I = 12 / V
+
+This is a power budget, not yet a circuit simulation. A converter uses storage components and switches to redirect energy at different times.
+
+Two conservation rules for reading circuits
+
+Arrows show conventional current: the direction positive charge would move. Currents entering a node sum to currents leaving it (Kirchhoff’s current law, KCL). Signed voltage rises and drops around a closed loop sum to zero (Kirchhoff’s voltage law, KVL).
+
+Node: iL = Iout + iC
+Loop example: Vin − vL − Vout = 0
+step0 STEP 0 / 6 · Voltage & power
+
+Twice the voltage does not mean twice the energy
+
+Voltage is energy per charge (1 V = 1 J/C). Current is charge per second (1 A = 1 C/s). Their product is energy transferred each second: power.
+
+P = V · I　　Ideal steady state: Pin = Pout
+
+With a fixed 12 W power budget, move the output from 6 V to 24 V and watch output current:
+
+Output voltage 24 V
+Output power
+12 W
+Output current
+0.50 A
+Relation
+I = 12 / V
+
+This is a power budget, not yet a circuit simulation. A converter uses storage components and switches to redirect energy at different times.
+
+Two conservation rules for reading circuits
+
+Arrows show conventional current: the direction positive charge would move. Currents entering a node sum to currents leaving it (Kirchhoff’s current law, KCL). Signed voltage rises and drops around a closed loop sum to zero (Kirchhoff’s voltage law, KVL).
+
+Node: iL = Iout + iC
+Loop example: Vin − vL − Vout = 0
+step1 STEP 1 / 6 · Inductor
+
+Inductor: current cannot jump without cause
+
+An inductor stores energy in a magnetic field. Voltage sets how quickly current changes, not the current itself.
+
+v = L · di/dt → Δi = v · Δt / L
+E = ½Li²
+
+Try two positive pulses, a zero pulse, then a negative pulse. Does the curve instantly return to zero?
+
+L = 10 mH · Δt = 0.5 ms · One interval per click; up to 16 intervals.
+
++2 V pulse
+0 V pulse
+−2 V pulse
+Reset
+Current
+-0.10 A
+Stored energy
+50.00 µJ
+This interval ΔE
+50.00 µJ
+Current i (A)
+0.24
+-0.14
+0
+8000 time (µs)
+
+6/16 pulses recorded. Zero drive also records a horizontal interval.
+
+Sign convention: current enters the terminal marked +; v and i may be negative. Zero drive holds the present value. Reverse drive decreases it and can take it through zero. Negative p = vi means the component returns energy to the ideal source.
+step2 STEP 2 / 6 · Capacitor
+
+Capacitor: give voltage a memory
+
+A capacitor stores energy in an electric field. Current entering its positive terminal adds charge and raises its voltage; current leaving lowers it.
+
+i = C · dv/dt → Δv = i · Δt / C
+E = ½Cv²
+
+Try two positive pulses, a zero pulse, then a negative pulse. Does the curve instantly return to zero?
+
+C = 100 µF · Δt = 0.5 ms · One interval per click; up to 16 intervals.
+
++20 mA pulse
+0 mA pulse
+−20 mA pulse
+Reset
+Voltage
+-0.10 V
+Stored energy
+0.50 µJ
+This interval ΔE
+0.50 µJ
+Voltage v (V)
+0.24
+-0.14
+0
+8000 time (µs)
+
+6/16 pulses recorded. Zero drive also records a horizontal interval.
+
+Sign convention: current enters the terminal marked +; v and i may be negative. Zero drive holds the present value. Reverse drive decreases it and can take it through zero. Negative p = vi means the component returns energy to the ideal source.
+step3 STEP 3 / 6 · Switches & timing
+
+Switches choose the path; timing sets the ratio
+
+An ideal closed switch acts as a wire; an open switch blocks current. An ideal diode allows current from anode A toward cathode K, with zero forward drop and no reverse current. This is a teaching approximation.
+
+Reverse diode
+
+5 V → K |◁ A → 1 kΩ → return: blocked, I = 0 mA
+
+This separate DC experiment has a 5 V source, a 1 kΩ resistor and a series diode, with a return wire to the negative source terminal.
+
+Pulse-width modulation (PWM) repeats switching every period T. Duty D is ON time divided by period; frequency f = 1/T. This lesson represents 20,000 cycles per second, but you can step through them slowly.
+
+Duty 20%
+ON time
+10.0 µs
+OFF time
+40.0 µs
+Switch: 1 closed / 0 open (0 / 1)
+1.12
+-0.12
+0
+50 time (µs)
+
+Further reading: switching pulses also have a spectrum.
+step4 STEP 4 / 6 · Buck
+
+Buck: current still has a path when the source disconnects
+
+Connect the source intermittently. The inductor maintains current; the output capacitor absorbs or supplies the instantaneous difference.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+1/8 · t = 12.50 µs · S ON
+
+S: closed ON
+L (+ vL −)
+K
+A
+blocked
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Source + → closed switch → inductor → output node → load → return → source −. Diode is reverse-blocked. Capacitor branch: zero net current now.
+
+Average Vout
+6.00 V
+Average input current
+0.50 A
+Instantaneous iL
+1.000 A
+Instantaneous vL
+6.00 V
+Instantaneous iC
+0.000 A
+Magnetic energy
+0.500 mJ
+Inductor current iL (A)
+1.10
+0.91
+0
+100 time (µs)
+Inductor voltage vL (V)
+7.44
+-7.44
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step4 STEP 4 / 6 · Buck
+
+Buck: current still has a path when the source disconnects
+
+Connect the source intermittently. The inductor maintains current; the output capacitor absorbs or supplies the instantaneous difference.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+2/8 · t = 25.00 µs · S OFF
+
+S: open OFF
+L (+ vL −)
+K
+A
+freewheel
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Return → diode A→K → inductor → output node → load → return. The source is disconnected; the inductor releases energy. Capacitor branch: output node → capacitor + → capacitor − → return; charging.
+
+Average Vout
+6.00 V
+Average input current
+0.50 A
+Instantaneous iL
+1.075 A
+Instantaneous vL
+-6.00 V
+Instantaneous iC
+0.075 A
+Magnetic energy
+0.578 mJ
+Inductor current iL (A)
+1.10
+0.91
+0
+100 time (µs)
+Inductor voltage vL (V)
+7.44
+-7.44
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step4 STEP 4 / 6 · Buck
+
+Buck: current still has a path when the source disconnects
+
+Connect the source intermittently. The inductor maintains current; the output capacitor absorbs or supplies the instantaneous difference.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+3/8 · t = 37.50 µs · S OFF
+
+S: open OFF
+L (+ vL −)
+K
+A
+freewheel
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Return → diode A→K → inductor → output node → load → return. The source is disconnected; the inductor releases energy. Capacitor branch: zero net current now.
+
+Average Vout
+6.00 V
+Average input current
+0.50 A
+Instantaneous iL
+1.000 A
+Instantaneous vL
+-6.00 V
+Instantaneous iC
+0.000 A
+Magnetic energy
+0.500 mJ
+Inductor current iL (A)
+1.10
+0.91
+0
+100 time (µs)
+Inductor voltage vL (V)
+7.44
+-7.44
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step4 STEP 4 / 6 · Buck
+
+Buck: current still has a path when the source disconnects
+
+Connect the source intermittently. The inductor maintains current; the output capacitor absorbs or supplies the instantaneous difference.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+4/8 · t = 50.00 µs · S ON
+
+S: closed ON
+L (+ vL −)
+K
+A
+blocked
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Source + → closed switch → inductor → output node → load → return → source −. Diode is reverse-blocked. Capacitor branch: capacitor + → output node → load → return → capacitor −; discharging.
+
+Average Vout
+6.00 V
+Average input current
+0.50 A
+Instantaneous iL
+0.925 A
+Instantaneous vL
+6.00 V
+Instantaneous iC
+-0.075 A
+Magnetic energy
+0.428 mJ
+Inductor current iL (A)
+1.10
+0.91
+0
+100 time (µs)
+Inductor voltage vL (V)
+7.44
+-7.44
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step4 STEP 4 / 6 · Buck
+
+Buck: current still has a path when the source disconnects
+
+Connect the source intermittently. The inductor maintains current; the output capacitor absorbs or supplies the instantaneous difference.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+5/8 · t = 62.50 µs · S ON
+
+S: closed ON
+L (+ vL −)
+K
+A
+blocked
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Source + → closed switch → inductor → output node → load → return → source −. Diode is reverse-blocked. Capacitor branch: zero net current now.
+
+Average Vout
+6.00 V
+Average input current
+0.50 A
+Instantaneous iL
+1.000 A
+Instantaneous vL
+6.00 V
+Instantaneous iC
+0.000 A
+Magnetic energy
+0.500 mJ
+Inductor current iL (A)
+1.10
+0.91
+0
+100 time (µs)
+Inductor voltage vL (V)
+7.44
+-7.44
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step4 STEP 4 / 6 · Buck
+
+Buck: current still has a path when the source disconnects
+
+Connect the source intermittently. The inductor maintains current; the output capacitor absorbs or supplies the instantaneous difference.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+6/8 · t = 75.00 µs · S OFF
+
+S: open OFF
+L (+ vL −)
+K
+A
+freewheel
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Return → diode A→K → inductor → output node → load → return. The source is disconnected; the inductor releases energy. Capacitor branch: output node → capacitor + → capacitor − → return; charging.
+
+Average Vout
+6.00 V
+Average input current
+0.50 A
+Instantaneous iL
+1.075 A
+Instantaneous vL
+-6.00 V
+Instantaneous iC
+0.075 A
+Magnetic energy
+0.578 mJ
+Inductor current iL (A)
+1.10
+0.91
+0
+100 time (µs)
+Inductor voltage vL (V)
+7.44
+-7.44
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step4 STEP 4 / 6 · Buck
+
+Buck: current still has a path when the source disconnects
+
+Connect the source intermittently. The inductor maintains current; the output capacitor absorbs or supplies the instantaneous difference.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+7/8 · t = 87.50 µs · S OFF
+
+S: open OFF
+L (+ vL −)
+K
+A
+freewheel
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Return → diode A→K → inductor → output node → load → return. The source is disconnected; the inductor releases energy. Capacitor branch: zero net current now.
+
+Average Vout
+6.00 V
+Average input current
+0.50 A
+Instantaneous iL
+1.000 A
+Instantaneous vL
+-6.00 V
+Instantaneous iC
+0.000 A
+Magnetic energy
+0.500 mJ
+Inductor current iL (A)
+1.10
+0.91
+0
+100 time (µs)
+Inductor voltage vL (V)
+7.44
+-7.44
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step4 STEP 4 / 6 · Buck
+
+Buck: current still has a path when the source disconnects
+
+Connect the source intermittently. The inductor maintains current; the output capacitor absorbs or supplies the instantaneous difference.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+8/8 · t = 100.00 µs · S ON · Two cycles complete
+
+S: closed ON
+L (+ vL −)
+K
+A
+blocked
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Source + → closed switch → inductor → output node → load → return → source −. Diode is reverse-blocked. Capacitor branch: capacitor + → output node → load → return → capacitor −; discharging.
+
+Average Vout
+6.00 V
+Average input current
+0.50 A
+Instantaneous iL
+0.925 A
+Instantaneous vL
+6.00 V
+Instantaneous iC
+-0.075 A
+Magnetic energy
+0.428 mJ
+Inductor current iL (A)
+1.10
+0.91
+0
+100 time (µs)
+Inductor voltage vL (V)
+7.44
+-7.44
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step5 STEP 5 / 6 · Boost
+
+Boost: source and inductor push together
+
+First store energy in the inductor. Then connect the source and inductor toward the output together. While the switch connects to ground, the output capacitor alone supports the load.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+1/8 · t = 12.50 µs · S ON
+
+L (+ vL −)
+A
+K
+S: closed ON
+blocked
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Storage loop: source + → inductor → switch → return → source −. Separate supply loop: capacitor + → load → capacitor −. The diode isolates the output. Capacitor branch: capacitor + → output node → load → return → capacitor −; discharging.
+
+Average Vout
+24.00 V
+Average input current
+2.00 A
+Instantaneous iL
+2.000 A
+Instantaneous vL
+12.00 V
+Instantaneous iC
+-1.000 A
+Magnetic energy
+2.000 mJ
+Inductor current iL (A)
+2.19
+1.81
+0
+100 time (µs)
+Inductor voltage vL (V)
+14.88
+-14.88
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step5 STEP 5 / 6 · Boost
+
+Boost: source and inductor push together
+
+First store energy in the inductor. Then connect the source and inductor toward the output together. While the switch connects to ground, the output capacitor alone supports the load.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+2/8 · t = 25.00 µs · S OFF
+
+L (+ vL −)
+A
+K
+S: open OFF
+conducting
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Source + → inductor → diode A→K → output node → load / capacitor → return → source −. Both the inductor and source supply energy. Capacitor branch: output node → capacitor + → capacitor − → return; charging.
+
+Average Vout
+24.00 V
+Average input current
+2.00 A
+Instantaneous iL
+2.150 A
+Instantaneous vL
+-12.00 V
+Instantaneous iC
+1.150 A
+Magnetic energy
+2.311 mJ
+Inductor current iL (A)
+2.19
+1.81
+0
+100 time (µs)
+Inductor voltage vL (V)
+14.88
+-14.88
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step5 STEP 5 / 6 · Boost
+
+Boost: source and inductor push together
+
+First store energy in the inductor. Then connect the source and inductor toward the output together. While the switch connects to ground, the output capacitor alone supports the load.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+3/8 · t = 37.50 µs · S OFF
+
+L (+ vL −)
+A
+K
+S: open OFF
+conducting
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Source + → inductor → diode A→K → output node → load / capacitor → return → source −. Both the inductor and source supply energy. Capacitor branch: output node → capacitor + → capacitor − → return; charging.
+
+Average Vout
+24.00 V
+Average input current
+2.00 A
+Instantaneous iL
+2.000 A
+Instantaneous vL
+-12.00 V
+Instantaneous iC
+1.000 A
+Magnetic energy
+2.000 mJ
+Inductor current iL (A)
+2.19
+1.81
+0
+100 time (µs)
+Inductor voltage vL (V)
+14.88
+-14.88
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step5 STEP 5 / 6 · Boost
+
+Boost: source and inductor push together
+
+First store energy in the inductor. Then connect the source and inductor toward the output together. While the switch connects to ground, the output capacitor alone supports the load.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+4/8 · t = 50.00 µs · S ON
+
+L (+ vL −)
+A
+K
+S: closed ON
+blocked
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Storage loop: source + → inductor → switch → return → source −. Separate supply loop: capacitor + → load → capacitor −. The diode isolates the output. Capacitor branch: capacitor + → output node → load → return → capacitor −; discharging.
+
+Average Vout
+24.00 V
+Average input current
+2.00 A
+Instantaneous iL
+1.850 A
+Instantaneous vL
+12.00 V
+Instantaneous iC
+-1.000 A
+Magnetic energy
+1.711 mJ
+Inductor current iL (A)
+2.19
+1.81
+0
+100 time (µs)
+Inductor voltage vL (V)
+14.88
+-14.88
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step5 STEP 5 / 6 · Boost
+
+Boost: source and inductor push together
+
+First store energy in the inductor. Then connect the source and inductor toward the output together. While the switch connects to ground, the output capacitor alone supports the load.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+5/8 · t = 62.50 µs · S ON
+
+L (+ vL −)
+A
+K
+S: closed ON
+blocked
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Storage loop: source + → inductor → switch → return → source −. Separate supply loop: capacitor + → load → capacitor −. The diode isolates the output. Capacitor branch: capacitor + → output node → load → return → capacitor −; discharging.
+
+Average Vout
+24.00 V
+Average input current
+2.00 A
+Instantaneous iL
+2.000 A
+Instantaneous vL
+12.00 V
+Instantaneous iC
+-1.000 A
+Magnetic energy
+2.000 mJ
+Inductor current iL (A)
+2.19
+1.81
+0
+100 time (µs)
+Inductor voltage vL (V)
+14.88
+-14.88
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step5 STEP 5 / 6 · Boost
+
+Boost: source and inductor push together
+
+First store energy in the inductor. Then connect the source and inductor toward the output together. While the switch connects to ground, the output capacitor alone supports the load.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+6/8 · t = 75.00 µs · S OFF
+
+L (+ vL −)
+A
+K
+S: open OFF
+conducting
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Source + → inductor → diode A→K → output node → load / capacitor → return → source −. Both the inductor and source supply energy. Capacitor branch: output node → capacitor + → capacitor − → return; charging.
+
+Average Vout
+24.00 V
+Average input current
+2.00 A
+Instantaneous iL
+2.150 A
+Instantaneous vL
+-12.00 V
+Instantaneous iC
+1.150 A
+Magnetic energy
+2.311 mJ
+Inductor current iL (A)
+2.19
+1.81
+0
+100 time (µs)
+Inductor voltage vL (V)
+14.88
+-14.88
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step5 STEP 5 / 6 · Boost
+
+Boost: source and inductor push together
+
+First store energy in the inductor. Then connect the source and inductor toward the output together. While the switch connects to ground, the output capacitor alone supports the load.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+7/8 · t = 87.50 µs · S OFF
+
+L (+ vL −)
+A
+K
+S: open OFF
+conducting
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Source + → inductor → diode A→K → output node → load / capacitor → return → source −. Both the inductor and source supply energy. Capacitor branch: output node → capacitor + → capacitor − → return; charging.
+
+Average Vout
+24.00 V
+Average input current
+2.00 A
+Instantaneous iL
+2.000 A
+Instantaneous vL
+-12.00 V
+Instantaneous iC
+1.000 A
+Magnetic energy
+2.000 mJ
+Inductor current iL (A)
+2.19
+1.81
+0
+100 time (µs)
+Inductor voltage vL (V)
+14.88
+-14.88
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step5 STEP 5 / 6 · Boost
+
+Boost: source and inductor push together
+
+First store energy in the inductor. Then connect the source and inductor toward the output together. While the switch connects to ground, the output capacitor alone supports the load.
+
+Input voltage 12 V
+Duty D 50%
+
+Model: ideal components, continuous conduction (inductor current always > 0), periodic steady state. Small output ripple is neglected, so output voltage is treated as constant. Initial current is the steady-state valley, not startup.
+
+f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A
+
+Advance half a switch phase →
+Reset two-cycle record
+
+8/8 · t = 100.00 µs · S ON · Two cycles complete
+
+L (+ vL −)
+A
+K
+S: closed ON
+blocked
++
+−
+Vin
++
+−
+C
+1 A current load
+Vout +
+Vout −
+Return / 0 V reference
+
+Storage loop: source + → inductor → switch → return → source −. Separate supply loop: capacitor + → load → capacitor −. The diode isolates the output. Capacitor branch: capacitor + → output node → load → return → capacitor −; discharging.
+
+Average Vout
+24.00 V
+Average input current
+2.00 A
+Instantaneous iL
+1.850 A
+Instantaneous vL
+12.00 V
+Instantaneous iC
+-1.000 A
+Magnetic energy
+1.711 mJ
+Inductor current iL (A)
+2.19
+1.81
+0
+100 time (µs)
+Inductor voltage vL (V)
+14.88
+-14.88
+0
+100 time (µs)
+
+Traces reveal only the visited history. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.
+
+Derive output voltage from those slopes
+step6 STEP 6 / 6 · Energy budget
+
+The price of boosting: more input current
+
+Now use a power budget only: a 5 V input supplies a 12 V output at 1 A. Predict the ideal input current first:
+
+Compared with the 1 A output
+Smaller
+Equal
+Larger
+Reveal and explore lossesPredict again
+
+Correct. Ideal input current is 12/5 = 2.4 A, greater than 1 A. Losses increase it further.
+
+Efficiency η 90%
+Input current
+2.67 A
+Input power
+13.33 W
+Output power
+12.00 W
+Loss
+1.33 W
+
+Pout = 12 V × 1 A = 12 W
+Pin = Pout / η　　Iin = Pin / 5 V
+Ploss = Pin − Pout
+
+Efficiency is an independently specified power budget here. It does not modify the preceding ideal voltage formulas and is not a nonideal circuit solver.
+
+How does a real supply hold its output steady?
+
+We manually selected duty above: open-loop operation. Real regulators usually measure output, compare it with a target and adjust duty: this is feedback control . This lesson does not simulate a controller or startup.
+
+As D approaches 1, the ideal boost formula diverges. Real circuits are limited by current, magnetic saturation, losses and voltage ratings. This lesson restricts parameters to positive inductor current. Light loads may enter discontinuous conduction, requiring a different analysis.
+
+Place these circuits on the knowledge map →
+step6 STEP 6 / 6 · Energy budget
+
+The price of boosting: more input current
+
+Now use a power budget only: a 5 V input supplies a 12 V output at 1 A. Predict the ideal input current first:
+
+Compared with the 1 A output
+Smaller
+Equal
+Larger
+Reveal and explore lossesPredict again
+
+Correct. Ideal input current is 12/5 = 2.4 A, greater than 1 A. Losses increase it further.
+
+Efficiency η 80%
+Input current
+3.00 A
+Input power
+15.00 W
+Output power
+12.00 W
+Loss
+3.00 W
+
+Pout = 12 V × 1 A = 12 W
+Pin = Pout / η　　Iin = Pin / 5 V
+Ploss = Pin − Pout
+
+Efficiency is an independently specified power budget here. It does not modify the preceding ideal voltage formulas and is not a nonideal circuit solver.
+
+How does a real supply hold its output steady?
+
+We manually selected duty above: open-loop operation. Real regulators usually measure output, compare it with a target and adjust duty: this is feedback control . This lesson does not simulate a controller or startup.
+
+As D approaches 1, the ideal boost formula diverges. Real circuits are limited by current, magnetic saturation, losses and voltage ratings. This lesson restricts parameters to positive inductor current. Light loads may enter discontinuous conduction, requiring a different analysis.
+
+Place these circuits on the knowledge map →
+step6 第 6 / 6 · 能量账本
+
+升压的代价：输入侧需要更多电流
+
+现在只做功率账本：5 V 输入变为 12 V 输出，负载需要 1 A。先猜理想情况下输入电流：
+
+与输出的 1 A 相比
+更小
+相等
+更大
+揭晓并查看损耗重新预测
+
+猜对了。 理想输入电流为 12/5 = 2.4 A，比 1 A 大。损耗会让输入电流更大。
+
+效率 η 80%
+输入电流
+3.00 A
+输入功率
+15.00 W
+输出功率
+12.00 W
+损耗
+3.00 W
+
+Pout = 12 V × 1 A = 12 W
+Pin = Pout / η　　Iin = Pin / 5 V
+Ploss = Pin − Pout
+
+效率是此处独立指定的功率预算，不会反过来修改前两节的理想电压公式。它不是非理想电路求解器。
+
+真实电源如何保持输出稳定？
+
+前面手动选择占空比，这是开环。实际电源通常测量输出、与目标比较，再调整占空比，这就是反馈控制。本页没有模拟控制器或启动过程。
+
+D 趋近 1 时，理想 Boost 公式趋于无穷大，但真实电路会受电流限制、线圈饱和、损耗及元件耐压约束。本课限定参数使电感电流始终为正；轻载时可能进入断续导通，公式要重新分析。
+
+把电路放回知识地图 →
+step6 第 6 / 6 · 能量账本
+
+升压的代价：输入侧需要更多电流
+
+现在只做功率账本：5 V 输入变为 12 V 输出，负载需要 1 A。先猜理想情况下输入电流：
+
+与输出的 1 A 相比
+更小
+相等
+更大
+揭晓并查看损耗重新预测
+真实电源如何保持输出稳定？
+
+前面手动选择占空比，这是开环。实际电源通常测量输出、与目标比较，再调整占空比，这就是反馈控制。本页没有模拟控制器或启动过程。
+
+D 趋近 1 时，理想 Boost 公式趋于无穷大，但真实电路会受电流限制、线圈饱和、损耗及元件耐压约束。本课限定参数使电感电流始终为正；轻载时可能进入断续导通，公式要重新分析。
+
+把电路放回知识地图 →
+HORIZONTAL { client: 1440, scroll: 1440 }

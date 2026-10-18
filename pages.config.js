@@ -20,6 +20,7 @@
 /* 分类注册表：数组顺序即索引页筛选 chips 的展示顺序。
  * 新增分类先在此注册（id + 双语名），条目的 category 引用 id。 */
 window.KNOWLEDGE_CATEGORIES = [
+  { id: "physics", name: { zh: "物理与电路", en: "Physics & Circuits" } },
   { id: "signal",      name: { zh: "信号与系统", en: "Signals & Systems" } },
   { id: "probability", name: { zh: "概率与统计", en: "Probability & Statistics" } },
   { id: "computing",   name: { zh: "计算与智能", en: "Computing & AI" } },
@@ -38,11 +39,18 @@ window.KNOWLEDGE_STAGES = [
 
 window.KNOWLEDGE_PAGES = [
   {
+    slug: "power-converters",
+    title: { zh: "升压与降压 · 能量去哪了？", en: "Buck & Boost · Follow the Energy" },
+    desc: { zh: "从电感、电容与开关出发，走完 Buck / Boost 的电流回路，推导电压比例并核对功率账本。", en: "Explore inductors, capacitors and switches; trace buck and boost current paths, derive voltage ratios and balance power." },
+    tags: [{ zh: "电路", en: "Circuits" }, { zh: "能量守恒", en: "Energy Conservation" }],
+    category: "physics", stage: "university", status: "live", path: "power-converters/"
+  },
+  {
     slug: "atlas",
     title: { zh: "数学与物理 · 知识地图", en: "Mathematics & Physics · Knowledge Atlas" },
     desc: {
-      zh: "从波动、系统与测量开始。探索 24 个概念之间的联系，查看每条关系的解释依据，再进入对应的交互讲解。",
-      en: "Start with waves, systems and measurement. Explore connections between 24 concepts, read why they connect, and open the supporting interactive lessons."
+      zh: "从波动、电路、系统与测量开始。探索 31 个概念之间的联系，查看每条关系的解释依据，再进入对应的交互讲解。",
+      en: "Start with waves, circuits, systems and measurement. Explore connections between 31 concepts, read why they connect, and open the supporting interactive lessons."
     },
     tags: [{ zh: "概念关系", en: "Concept Connections" }, { zh: "探索路线", en: "Exploration Routes" }],
     category: "math",

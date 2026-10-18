@@ -9,10 +9,18 @@
       {id:'math', label:b('数学基础','Mathematical tools'), mark:'01'},
       {id:'waves', label:b('波动与频率','Waves & frequency'), mark:'02'},
       {id:'systems', label:b('系统与响应','Systems & response'), mark:'03'},
-      {id:'measurement', label:b('测量与不确定性','Measurement & uncertainty'), mark:'04'}
+      {id:'measurement', label:b('测量与不确定性','Measurement & uncertainty'), mark:'04'},
+      {id:'circuits', label:b('电路与能量','Circuits & energy'), mark:'05'}
     ],
     types: {foundation:b('理解工具','Foundation'),representation:b('表示方式','Representation'),application:b('应用','Application'),connection:b('数学联系','Connection')},
     nodes: [
+      node("power","circuits","电压、电流与功率","Voltage, current & power","电压是能量除以电荷，电流是电荷流率；功率是电压与电流的乘积。","Voltage is energy per charge; current is charge flow per time. Power is their product.","P = VI","../power-converters/#step0"),
+      node("inductor","circuits","电感与磁场储能","Inductor & magnetic energy","电感两端电压决定电流的变化速度；有限电压不能使电流瞬间跳变。","Voltage across an inductor sets the rate of current change; finite voltage cannot cause an instantaneous current jump.","vL = L di/dt","../power-converters/#step1"),
+      node("capacitor","circuits","电容与电场储能","Capacitor & electric energy","流入电容正端的电流改变电压；理想电容在零电流时保持已有电压。","Current into the positive terminal changes voltage; an ideal capacitor holds its voltage at zero current.","iC = C dv/dt","../power-converters/#step2"),
+      node("switch-diode","circuits","开关与二极管","Switches & diodes","理想开关选择导通或断开，二极管提供从阳极到阴极的单向路径。","An ideal switch opens or closes a path; a diode provides one-way conduction from anode to cathode.","route current","../power-converters/#step3"),
+      node("pwm","circuits","脉宽调制 PWM","Pulse-width modulation","在固定周期内改变开关导通时间。占空比是导通时间占周期的比例。","Vary switch ON time within a fixed period. Duty is the fraction of the period spent ON.","D = ton / T","../power-converters/#step3"),
+      node("buck","circuits","Buck 降压电路","Buck converter","电源间歇接入，电感持续向输出输送电流。理想连续导通稳态下输出电压为 D 倍输入。","Intermittently connect the source while the inductor maintains output current. In ideal steady-state CCM, output voltage is D times input.","Vout = D Vin","../power-converters/#step4"),
+      node("boost","circuits","Boost 升压电路","Boost converter","先给电感储能，再让电源与电感共同向输出供能。更高电压需要相应的输入电流。","Store energy in an inductor, then let source and inductor feed the output together. Higher voltage requires corresponding input current.","Vout = Vin / (1−D)","../power-converters/#step5"),
       node('unit-circle','math','单位圆','Unit circle','半径为 1 的圆；圆上点的横、纵坐标分别定义 cos θ 和 sin θ。','A circle of radius one: a point’s horizontal and vertical coordinates define cos θ and sin θ.','(cos θ, sin θ)','../trig/#step1'),
       node('sine','math','正弦与余弦','Sine & cosine','匀速绕圆运动的坐标随时间周期变化。振幅、频率和相位分别决定大小、快慢和起点。','Coordinates of uniform circular motion vary periodically. Amplitude, frequency and phase set the size, rate and starting point.','A sin(2πft + φ)','../trig/#step3'),
       node('complex','math','复数与旋转','Complex rotation','把平面点写成复数后，乘以单位模复数可以表示旋转；实部和虚部给出两个坐标。','Represent a plane point as a complex number. Multiplication by a unit-magnitude complex number rotates it; real and imaginary parts are coordinates.','z = cos θ + i sin θ','https://openstax.org/books/algebra-and-trigonometry-2e/pages/10-5-polar-form-of-complex-numbers'),
@@ -39,6 +47,18 @@
       node('kalman','measurement','卡尔曼滤波','Kalman filtering','先用动态模型预测状态，再根据测量及其不确定性修正。协方差表示模型估计的不确定性，并不保证真实误差同样小。','Predict a state with a dynamic model, then correct it using measurements and their uncertainty. Covariance describes model uncertainty, not guaranteed real-world error.','predict → correct','../kalman/#step2')
     ],
     edges: [
+      edge("power","inductor","foundation","解释储能","explains storage","电压与电流的乘积是流入电感的功率，积分得到磁场储能变化。","Voltage times current is power entering the inductor; integration gives the magnetic-energy change.","../power-converters/#step1"),
+      edge("power","capacitor","foundation","解释储能","explains storage","电容吸收或释放的功率等于其电压与电流的乘积。","Power absorbed or released by a capacitor equals its voltage times current.","../power-converters/#step2"),
+      edge("inductor","capacitor","connection","互补地记住状态","store complementary states","电感记住电流，电容记住电压；两者在电路中交换储能，但元件定律不同。","Inductors retain current and capacitors retain voltage. Both exchange stored energy, under different component laws.","../power-converters/#step2"),
+      edge("inductor","buck","application","保持连续电流","maintains current","开关断开后，电感通过续流二极管继续向输出送电。","When the switch opens, the inductor continues delivering current through the freewheel diode.","../power-converters/#step4"),
+      edge("inductor","boost","application","向更高电压供能","feeds a higher voltage","关断时电感电流下降，电感右端电势升高，电源与电感共同供能。","During OFF, current falls and the right inductor terminal rises; source and inductor deliver energy together.","../power-converters/#step5"),
+      edge("capacitor","buck","application","补偿电流差","balances current difference","电感电流与负载电流的差流入或流出输出电容。","The difference between inductor and load current charges or discharges the output capacitor.","../power-converters/#step4"),
+      edge("capacitor","boost","application","在开关闭合时供电","supplies load during ON","开关闭合时二极管截止，负载由输出电容供电。","During ON the diode blocks, and the output capacitor supplies the load.","../power-converters/#step5"),
+      edge("switch-diode","buck","application","建立两条电流路径","establishes two current paths","开关闭合连接输入；开关断开时续流二极管提供回路。","The closed switch connects the input; the freewheel diode provides the OFF loop.","../power-converters/#step4"),
+      edge("switch-diode","boost","application","交替储能与放能","alternates storage and release","开关闭合给电感储能，断开时电流经二极管流向输出。","ON stores energy in the inductor; OFF routes current through the diode to the output.","../power-converters/#step5"),
+      edge("pwm","buck","application","设定理想电压比例","sets ideal voltage ratio","在连续导通理想稳态，伏秒平衡给出 Vout = D Vin。","Ideal steady-state CCM volt-second balance gives Vout = D Vin.","../power-converters/#step4"),
+      edge("pwm","boost","application","设定理想升压比例","sets ideal boost ratio","在连续导通理想稳态，伏秒平衡给出 Vout = Vin/(1−D)。","Ideal steady-state CCM volt-second balance gives Vout = Vin/(1−D).","../power-converters/#step5"),
+      edge("boost","feedback","application","用测量调节占空比","uses measurements to adjust duty","实际稳压器可测量输出并调节占空比；本课只解释此接口，不模拟控制器。","A real regulator can measure output and adjust duty; this lesson explains the connection without simulating a controller.","../power-converters/#step6"),
       edge('unit-circle','sine','foundation','定义','defines','圆上点的纵、横坐标定义正弦、余弦；匀速转动使这些坐标成为时间函数。','Vertical and horizontal coordinates define sine and cosine; uniform rotation makes them functions of time.','../trig/#step3'),
       edge('unit-circle','complex','representation','用复数表示旋转','represents rotation with complex numbers','单位圆上的点可以写成 cos θ + i sin θ，角度变化对应平面旋转。','A point on the unit circle is cos θ + i sin θ; changing its angle rotates it in the plane.','https://openstax.org/books/algebra-and-trigonometry-2e/pages/10-5-polar-form-of-complex-numbers'),
       edge('sine','oscillation','representation','描述理想运动','describes ideal motion','无阻尼、无外力的理想弹簧振子满足 x″ + (k/m)x = 0，其解为正弦和余弦的组合。','An undamped, unforced ideal spring obeys x″ + (k/m)x = 0, whose solutions combine sine and cosine.','https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion'),
@@ -69,6 +89,7 @@
       edge('convolution','gaussian','connection','描述独立变量相加的分布','describes distributions of independent sums','独立随机变量之和的分布由卷积给出；反复相加后的正态近似需满足中心极限定理的条件。','Convolution gives the distribution of a sum of independent random variables; a normal approximation after repeated sums requires central-limit conditions.','../clt/#step5')
     ],
     trails: [
+      {id:'power',title:b('电压变了，能量去哪了？','Where does the energy go?'),nodes:['power','capacitor','inductor','buck','pwm','boost']},
       {id:'waves',title:b('从圆到波形','From circles to waveforms'),nodes:['unit-circle','sine','fourier','convolution']},
       {id:'response',title:b('为什么会共振？','Why does resonance happen?'),nodes:['oscillation','resonance','freqresp','poles']},
       {id:'estimate',title:b('从测量到控制','From measurements to control'),nodes:['probability','bayes','kalman','feedback']}

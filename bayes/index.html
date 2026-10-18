@@ -6,6 +6,7 @@
 <title>贝叶斯 · 先查底子，再看证据</title>
 <link rel="stylesheet" href="style.css?v=w2a">
 <script src="i18n.js?v=w2a"></script>
+<link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
 
@@ -51,7 +52,7 @@
       <button class="btn primary" id="s0-reveal" data-i18n="s0reveal">揭晓：把一万人摆出来 ↓</button>
     </div>
     <div class="stage">
-      <canvas id="s0-canvas" height="420"></canvas>
+      <canvas id="s0-canvas" height="420" style="height:420px"></canvas>
     </div>
     <p class="readout" id="s0-readout"></p>
     <p class="hint" data-i18n-html="s0hint"></p>
@@ -66,7 +67,7 @@
     <h2 data-i18n="s1t">同一份证据，落在不同的底子上</h2>
     <p class="explain" data-i18n-html="s1e"></p>
     <div class="stage">
-      <canvas id="s1-canvas" height="300"></canvas>
+      <canvas id="s1-canvas" height="300" style="height:300px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s1priorLab">先验患病率（对数刻度）</span> <span class="val" id="s1-prior-val"></span></span>
@@ -85,7 +86,7 @@
     <h2 data-i18n="s2t">换上赔率眼镜：后验 = 先验 × 似然比</h2>
     <p class="explain" data-i18n-html="s2e"></p>
     <div class="stage">
-      <canvas id="s2-canvas" height="300"></canvas>
+      <canvas id="s2-canvas" height="300" style="height:300px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s2priorLab">先验概率（对数刻度）</span> <span class="val" id="s2-prior-val"></span></span>
@@ -111,7 +112,7 @@
     <h2 data-i18n="s3t">昨天的后验，是今天的先验</h2>
     <p class="explain" data-i18n-html="s3e"></p>
     <div class="stage">
-      <canvas id="s3-canvas" height="300"></canvas>
+      <canvas id="s3-canvas" height="300" style="height:300px"></canvas>
     </div>
     <div class="chip-flow" id="s3-chips"></div>
     <div class="btn-row">
@@ -133,7 +134,7 @@
     <h2 data-i18n="s4t">一枚不知道偏不偏的硬币</h2>
     <p class="explain" data-i18n-html="s4e"></p>
     <div class="stage">
-      <canvas id="s4-canvas" height="380"></canvas>
+      <canvas id="s4-canvas" height="380" style="height:380px"></canvas>
     </div>
     <div class="btn-row">
       <span class="seq-label">Beta(α, β)</span>
@@ -164,7 +165,7 @@
     <h2 data-i18n="s5t">数据够多时，成见会被冲淡</h2>
     <p class="explain" data-i18n-html="s5e"></p>
     <div class="stage">
-      <canvas id="s5-canvas" height="300"></canvas>
+      <canvas id="s5-canvas" height="300" style="height:300px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn primary" id="s5-w10" data-i18n="w10">再抛 +10</button>
@@ -178,7 +179,7 @@
     <h3 class="sub-t" data-i18n="s5treeT">换回人话：自然频率树</h3>
     <p class="explain" data-i18n-html="s5treeE"></p>
     <div class="stage">
-      <canvas id="s5-tree" height="320"></canvas>
+      <canvas id="s5-tree" height="320" style="height:320px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s5prevLab">患病率（整百分点步进）</span> <span class="val" id="s5-prev-val"></span></span>
@@ -231,5 +232,6 @@
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 贝叶斯 Bayes —— 一步一交互系列</footer>
 
 <script src="app.js?v=w2a"></script>
+<script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

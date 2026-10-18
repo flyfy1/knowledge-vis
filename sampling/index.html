@@ -6,6 +6,7 @@
 <title>采样与混叠 · 一步一交互</title>
 <link rel="stylesheet" href="style.css?v=w2a">
 <script src="i18n.js?v=w2a"></script>
+<link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
 
@@ -40,7 +41,7 @@
     <h2 data-i18n="s0t">这个轮子，到底在往哪边转？</h2>
     <p class="explain" data-i18n-html="s0e"></p>
     <div class="stage">
-      <canvas id="s0-canvas" height="360"></canvas>
+      <canvas id="s0-canvas" height="360" style="height:360px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s0fps">摄像机帧率 f<sub>s</sub>（fps）</span> <span class="val" id="s0-fps-val">14</span></span>
@@ -60,7 +61,7 @@
     <h2 data-i18n="s1t">一排点，能记住一条波吗</h2>
     <p class="explain" data-i18n-html="s1e"></p>
     <div class="stage">
-      <canvas id="s1-canvas" height="300"></canvas>
+      <canvas id="s1-canvas" height="300" style="height:300px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="labF">信号频率 f（Hz）</span> <span class="val" id="s1-f-val">3</span></span>
@@ -86,7 +87,7 @@
     <h2 data-i18n="s2t">点没撒谎，是你连错了</h2>
     <p class="explain" data-i18n-html="s2e"></p>
     <div class="stage">
-      <canvas id="s2-canvas" height="320"></canvas>
+      <canvas id="s2-canvas" height="320" style="height:320px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="labF">信号频率 f（Hz）</span> <span class="val" id="s2-f-val">9</span></span>
@@ -118,7 +119,7 @@
     <h2 data-i18n="s3t">奈奎斯特线：两倍，差一线都不行</h2>
     <p class="explain" data-i18n-html="s3e"></p>
     <div class="stage">
-      <canvas id="s3-canvas" height="320"></canvas>
+      <canvas id="s3-canvas" height="320" style="height:320px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="labF">信号频率 f（Hz）</span> <span class="val" id="s3-f-val">4</span></span>
@@ -146,7 +147,7 @@
     <h2 data-i18n="s4t">频域看混叠：频谱在自我复制</h2>
     <p class="explain" data-i18n-html="s4e"></p>
     <div class="stage">
-      <canvas id="s4-canvas" height="300"></canvas>
+      <canvas id="s4-canvas" height="300" style="height:300px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="labF">信号频率 f（Hz）</span> <span class="val" id="s4-f-val">13</span></span>
@@ -175,7 +176,7 @@
 
     <div class="tab-panel" id="s5-panel-audio">
       <div class="stage">
-        <canvas id="s5a-canvas" height="150"></canvas>
+        <canvas id="s5a-canvas" height="150" style="height:150px"></canvas>
       </div>
       <div class="controls">
         <label><span><span data-i18n="s5aF">源频率 f（Hz）</span> <span class="val" id="s5a-f-val">6000</span></span>
@@ -203,13 +204,13 @@
         <div class="half">
           <div class="stage">
             <p class="stage-title" data-i18n="s5iSrc">原图（细条纹）</p>
-            <canvas id="s5i-src" height="240"></canvas>
+            <canvas id="s5i-src" height="240" style="height:240px"></canvas>
           </div>
         </div>
         <div class="half">
           <div class="stage">
             <p class="stage-title" data-i18n="s5iOut">抽取后（放大显示）</p>
-            <canvas id="s5i-out" height="240"></canvas>
+            <canvas id="s5i-out" height="240" style="height:240px"></canvas>
           </div>
         </div>
       </div>
@@ -228,7 +229,7 @@
 
     <div class="tab-panel hidden" id="s5-panel-wheel">
       <div class="stage">
-        <canvas id="s5w-canvas" height="280"></canvas>
+        <canvas id="s5w-canvas" height="280" style="height:280px"></canvas>
       </div>
       <div class="controls">
         <label><span><span data-i18n="s5wN">辐条数 N</span> <span class="val" id="s5w-n-val">6</span></span>
@@ -257,13 +258,13 @@
       <div class="half">
         <div class="stage">
           <p class="stage-title" data-i18n="s6direct">直接抽取</p>
-          <canvas id="s6-left" height="250"></canvas>
+          <canvas id="s6-left" height="250" style="height:250px"></canvas>
         </div>
       </div>
       <div class="half">
         <div class="stage">
           <p class="stage-title" data-i18n="s6blur">先模糊再抽取</p>
-          <canvas id="s6-right" height="250"></canvas>
+          <canvas id="s6-right" height="250" style="height:250px"></canvas>
         </div>
       </div>
     </div>
@@ -279,7 +280,7 @@
     <p class="readout" id="s6-readout"></p>
     <p class="explain" data-i18n-html="s6audio"></p>
     <div class="stage">
-      <canvas id="s6-spec" height="190"></canvas>
+      <canvas id="s6-spec" height="190" style="height:190px"></canvas>
     </div>
     <div class="finale">
       <p data-i18n-html="s6fin"></p>
@@ -296,5 +297,6 @@
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 采样与混叠 Sampling &amp; Aliasing —— 一步一交互系列</footer>
 
 <script src="app.js?v=w2a"></script>
+<script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

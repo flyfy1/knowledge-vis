@@ -6,6 +6,7 @@
 <title>卷积 · 一步一交互</title>
 <link rel="stylesheet" href="style.css?v=w2a">
 <script src="i18n.js?v=w2a"></script>
+<link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
 
@@ -40,7 +41,7 @@
     <h2 data-i18n="s0t">同一个运算，两副面孔</h2>
     <p class="explain" data-i18n-html="s0e"></p>
     <div class="stage">
-      <canvas id="s0-canvas" height="400"></canvas>
+      <canvas id="s0-canvas" height="400" style="height:400px"></canvas>
     </div>
     <div class="controls">
       <label><span data-i18n="s0split">对比位置</span>
@@ -63,7 +64,7 @@
     <h2 data-i18n="s1t">滑动平均：卷积最朴素的样子</h2>
     <p class="explain" data-i18n-html="s1e"></p>
     <div class="stage">
-      <canvas id="s1-canvas" height="300"></canvas>
+      <canvas id="s1-canvas" height="300" style="height:300px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s1win">窗口宽度 W</span> <span class="val" id="s1-win-val">9</span></span>
@@ -95,7 +96,7 @@
       </div>
     </div>
     <div class="stage">
-      <canvas id="s2-canvas" height="330"></canvas>
+      <canvas id="s2-canvas" height="330" style="height:330px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn primary" id="s2-step" data-i18n="s2step">单步 →</button>
@@ -117,7 +118,7 @@
     <h2 data-i18n="s3t">滑动着求重叠面积</h2>
     <p class="explain" data-i18n-html="s3e"></p>
     <div class="stage">
-      <canvas id="s3-canvas" height="380"></canvas>
+      <canvas id="s3-canvas" height="380" style="height:380px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s3shift">位移 τ</span> <span class="val" id="s3-shift-val">−4.0</span></span>
@@ -144,13 +145,13 @@
       <div class="half">
         <div class="stage">
           <p class="stage-title" data-i18n="s4src">原图</p>
-          <canvas id="s4-src" height="252"></canvas>
+          <canvas id="s4-src" height="252" style="height:252px"></canvas>
         </div>
       </div>
       <div class="half">
         <div class="stage">
           <p class="stage-title" data-i18n="s4out">卷积结果</p>
-          <canvas id="s4-out" height="252"></canvas>
+          <canvas id="s4-out" height="252" style="height:252px"></canvas>
         </div>
       </div>
     </div>
@@ -195,7 +196,7 @@
 
     <div class="tab-panel" id="s5-panel-audio">
       <div class="stage">
-        <canvas id="s5-ir" height="150"></canvas>
+        <canvas id="s5-ir" height="150" style="height:150px"></canvas>
       </div>
       <div class="controls">
         <label><span><span data-i18n="aDelay">延迟（秒）</span> <span class="val" id="s5-delay-val">0.28</span></span>
@@ -217,7 +218,7 @@
 
     <div class="tab-panel hidden" id="s5-panel-photo">
       <div class="stage">
-        <canvas id="s5-photo" height="300"></canvas>
+        <canvas id="s5-photo" height="300" style="height:300px"></canvas>
       </div>
       <div class="controls">
         <label><span><span data-i18n="pRadius">虚化半径</span> <span class="val" id="s5-radius-val">3</span></span>
@@ -229,7 +230,7 @@
 
     <div class="tab-panel hidden" id="s5-panel-data">
       <div class="stage">
-        <canvas id="s5-data" height="280"></canvas>
+        <canvas id="s5-data" height="280" style="height:280px"></canvas>
       </div>
       <div class="controls">
         <label><span><span data-i18n="dPass">[1,2,1]/4 遍数</span> <span class="val" id="s5-pass-val">3</span></span>
@@ -253,7 +254,7 @@
     <h2 data-i18n="s6t">与傅里叶相遇：卷积 = 频域里逐点相乘</h2>
     <p class="explain" data-i18n-html="s6e"></p>
     <div class="stage">
-      <canvas id="s6-canvas" height="300"></canvas>
+      <canvas id="s6-canvas" height="300" style="height:300px"></canvas>
     </div>
     <div class="dual">
       <div class="half">
@@ -275,7 +276,7 @@
       </div>
     </div>
     <div class="stage">
-      <canvas id="s6-spec" height="170"></canvas>
+      <canvas id="s6-spec" height="170" style="height:170px"></canvas>
     </div>
     <p class="readout" id="s6-readout"></p>
     <div class="finale">
@@ -290,5 +291,6 @@
 <footer class="site-foot" data-i18n="foot">knowledge.integ.life · 卷积 Convolution —— 一步一交互系列</footer>
 
 <script src="app.js?v=w2a"></script>
+<script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

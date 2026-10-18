@@ -6,6 +6,7 @@
 <title>拉普拉斯与 ROC · 给频率配一个寿命</title>
 <link rel="stylesheet" href="style.css?v=w2a">
 <script src="i18n.js?v=w2a"></script>
+<link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
 
@@ -40,7 +41,7 @@
     <h2 data-i18n="s0t">先问一句：它还活着吗？</h2>
     <p class="explain" data-i18n-html="s0e"></p>
     <div class="stage">
-      <canvas id="s0-canvas" height="340"></canvas>
+      <canvas id="s0-canvas" height="340" style="height:340px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s0sig">σ · 衰减（−）/ 增长（+）</span> <span class="val" id="s0-sig-val">−0.35</span></span>
@@ -62,7 +63,7 @@
     <p class="explain" data-i18n-html="s1e"></p>
     <p class="formula" data-i18n="s1formula">X(s) = 1 / (s + a)，s = σ + jω，x(t) = e^{−at}·u(t)</p>
     <div class="stage">
-      <canvas id="s1-canvas" height="430"></canvas>
+      <canvas id="s1-canvas" height="430" style="height:430px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s1aLab">a（极点在 s = −a，拖动看尖峰搬家）</span> <span class="val" id="s1-a-val">1.00</span></span>
@@ -81,8 +82,8 @@
     <h2 data-i18n="s2t">傅里叶，是 σ = 0 处的那一刀</h2>
     <p class="explain" data-i18n-html="s2e"></p>
     <div class="dual">
-      <div class="half"><div class="stage"><canvas id="s2-plane" height="400"></canvas></div></div>
-      <div class="half"><div class="stage"><canvas id="s2-slice" height="400"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s2-plane" height="400" style="height:400px"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s2-slice" height="400" style="height:400px"></canvas></div></div>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s2aLab">a（极点在 s = −a）</span> <span class="val" id="s2-a-val">0.80</span></span>
@@ -110,8 +111,8 @@
       <button class="btn" id="s3-B" data-i18n="s3btnB">信号 B · 左边 −e^{−at}·u(−t)</button>
     </div>
     <div class="dual">
-      <div class="half"><div class="stage"><canvas id="s3-plane" height="380"></canvas></div></div>
-      <div class="half"><div class="stage"><canvas id="s3-time" height="380"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s3-plane" height="380" style="height:380px"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s3-time" height="380" style="height:380px"></canvas></div></div>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s3aLab">a（两信号共用，极点同在 s = −a）</span> <span class="val" id="s3-a-val">1.00</span></span>
@@ -136,8 +137,8 @@
       <button class="btn" data-preset="4" data-i18n="s4p5">发散爆炸</button>
     </div>
     <div class="dual">
-      <div class="half"><div class="stage"><canvas id="s4-plane" height="400" tabindex="0"></canvas></div></div>
-      <div class="half"><div class="stage"><canvas id="s4-wave" height="400"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s4-plane" height="400" tabindex="0" style="height:400px"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s4-wave" height="400" style="height:400px"></canvas></div></div>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s4tLab">包络探针时刻 t</span> <span class="val" id="s4-te-val">1.0</span></span>
@@ -171,8 +172,8 @@
       <button class="btn" data-roc="1" data-i18n="s5rocM">中间带（两极点之间）</button>
       <button class="btn" data-roc="2" data-i18n="s5rocL">左侧带（最左极点之左）</button>
     </div>
-    <div class="stage"><canvas id="s5-plane" height="280"></canvas></div>
-    <div class="stage"><canvas id="s5-wave" height="250"></canvas></div>
+    <div class="stage"><canvas id="s5-plane" height="280" style="height:280px"></canvas></div>
+    <div class="stage"><canvas id="s5-wave" height="250" style="height:250px"></canvas></div>
     <p class="readout" id="s5-readout"></p>
     <p class="hint" id="s5-why"></p>
     <div class="btn-row">
@@ -194,7 +195,7 @@
     <h2 data-i18n="s6t">全家福：半本《信号与系统》，装在一张平面里</h2>
     <p class="explain" data-i18n-html="s6e"></p>
     <div class="stage">
-      <canvas id="s6-canvas" height="430"></canvas>
+      <canvas id="s6-canvas" height="430" style="height:430px"></canvas>
     </div>
     <p class="hint" data-i18n-html="s6zNote"></p>
     <div class="finale">
@@ -217,5 +218,6 @@
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 拉普拉斯变换 Laplace Transform —— 一步一交互系列</footer>
 
 <script src="app.js?v=w2a"></script>
+<script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

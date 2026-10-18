@@ -13,14 +13,14 @@ let checks=0;function ok(v,m){assert.ok(v,m);checks++;}
   p.on('request',r=>{if(r.frame()===p.mainFrame()&&p.url().includes('/atlas/'))requests.push(r.url());});
   await p.goto(base+'/atlas/');
   const data=await p.evaluate(()=>window.ATLAS);
-  assert.equal(data.nodes.length,24);assert.equal(data.edges.length,28);
-  assert.equal(new Set(data.nodes.map(n=>n.id)).size,24);
+  assert.equal(data.nodes.length,31);assert.equal(data.edges.length,40);
+  assert.equal(new Set(data.nodes.map(n=>n.id)).size,31);
   for(const e of data.edges){ok(data.nodes.some(n=>n.id===e.from)&&data.nodes.some(n=>n.id===e.to),'edge endpoints');ok(e.reason.en&&e.reason.zh&&e.source,'edge evidence');}
   for(const r of data.trails)for(let i=1;i<r.nodes.length;i++)ok(data.edges.some(e=>[e.from,e.to].includes(r.nodes[i-1])&&[e.from,e.to].includes(r.nodes[i])),'route adjacent concepts are connected');
   // Validate actual internal section destinations independently of UI selection.
   for(const href of new Set([...data.nodes,...data.edges].map(x=>x.source).filter(x=>x.startsWith('../')))){
    const u=new URL(href,base+'/atlas/'),response=await p.request.get(u.href.split('#')[0]);ok(response.ok(),'source HTTP '+href);
-   ok((await response.text()).includes('id="'+u.hash.slice(1)+'"'),'source anchor '+href);
+   if(u.pathname.includes('/power-converters/')){const content=await p.request.get(base+'/power-converters/app.js');ok((await content.text()).includes('section('+u.hash.slice(5)+','),'generated source anchor '+href);}else ok((await response.text()).includes('id="'+u.hash.slice(1)+'"'),'source anchor '+href);
   }
   // Main user loop, actual navigation to evidence, and Back restoration.
   await p.locator('#search').fill('Fourier');await p.locator('[data-result=fourier]').click();
@@ -57,7 +57,7 @@ let checks=0;function ok(v,m){assert.ok(v,m);checks++;}
    await p.locator('#group').selectOption('measurement');ok(await p.locator('#listView').isVisible(),'category shows filtered list');assert.equal(await p.locator('.result:visible').count(),6);
    ok(await p.locator('.outside-note').isVisible(),'outside-selection explanation');
    await p.locator('#search').fill('zzzz-no-match');ok(await p.locator('#empty').isVisible(),'no result');
-   await p.locator('#emptyReset').click();assert.equal(await p.locator('.result:visible').count(),24);assert.equal(await p.evaluate(()=>document.activeElement.id),'search');
+   await p.locator('#emptyReset').click();assert.equal(await p.locator('.result:visible').count(),31);assert.equal(await p.evaluate(()=>document.activeElement.id),'search');
    await p.locator('#search').fill(lang==='en'?'卷积':'convolution');ok(await p.locator('[data-result=convolution]').isVisible(),'cross-language search');
    await p.locator('#reset').click();await p.locator('[data-view=graph]').click();
    await p.locator('[data-node=fourier]').focus();await p.keyboard.press('Enter');

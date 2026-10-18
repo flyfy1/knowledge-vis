@@ -6,6 +6,7 @@
 <title>蒙特卡洛 · 撒豆子算 π</title>
 <link rel="stylesheet" href="style.css?v=w2a">
 <script src="i18n.js?v=w2a"></script>
+<link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
 
@@ -40,7 +41,7 @@
     <h2 data-i18n="s0t">一颗豆子不会算，一万颗会</h2>
     <p class="explain" data-i18n-html="s0e"></p>
     <div class="stage">
-      <canvas id="s0-canvas" height="400"></canvas>
+      <canvas id="s0-canvas" height="400" style="height:400px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn primary" id="s0-play" data-i18n="pause">暂停</button>
@@ -66,7 +67,7 @@
     <h2 data-i18n="s1t">频率多起来，就会露出概率的脸</h2>
     <p class="explain" data-i18n-html="s1e"></p>
     <div class="stage">
-      <canvas id="s1-canvas" height="360"></canvas>
+      <canvas id="s1-canvas" height="360" style="height:360px"></canvas>
     </div>
     <div class="btn-row">
       <span class="seq-label" data-i18n="s1rLab">圆半径 r（撒点范围 = 圆的外接正方形）</span>
@@ -91,7 +92,7 @@
     <h2 data-i18n="s2t">慢，但明码标价的慢</h2>
     <p class="explain" data-i18n-html="s2e"></p>
     <div class="stage">
-      <canvas id="s2-canvas" height="380"></canvas>
+      <canvas id="s2-canvas" height="380" style="height:380px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn primary" id="s2-play" data-i18n="runLong">开始长跑</button>
@@ -120,7 +121,7 @@
       <p class="explain small" data-i18n-html="s3formulaNote"></p>
     </div>
     <div class="stage">
-      <canvas id="s3-canvas" height="380"></canvas>
+      <canvas id="s3-canvas" height="380" style="height:380px"></canvas>
     </div>
     <div class="btn-row">
       <span class="seq-label" data-i18n="s3shapeLab">形状</span>
@@ -145,7 +146,7 @@
     <h2 data-i18n="s4t">π 还能从「撞线」里掉出来</h2>
     <p class="explain" data-i18n-html="s4e"></p>
     <div class="stage">
-      <canvas id="s4-canvas" height="360"></canvas>
+      <canvas id="s4-canvas" height="360" style="height:360px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s4lenLab">针长 L / 线距 d</span> <span class="val" id="s4-len-val">0.8</span></span>
@@ -170,7 +171,7 @@
     <h2 data-i18n="s5t">网格死了，豆子还活着</h2>
     <p class="explain" data-i18n-html="s5e"></p>
     <div class="stage">
-      <canvas id="s5-canvas" height="380"></canvas>
+      <canvas id="s5-canvas" height="380" style="height:380px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s5dimLab">维度 d</span> <span class="val" id="s5-dim-val">5</span></span>
@@ -195,7 +196,7 @@
     <h2 data-i18n="s6t">随机数从哪来——以及一场挑战</h2>
     <p class="explain" data-i18n-html="s6e"></p>
     <div class="stage">
-      <canvas id="s6-canvas" height="280"></canvas>
+      <canvas id="s6-canvas" height="280" style="height:280px"></canvas>
     </div>
     <div class="btn-row">
       <label class="seed-lab"><span data-i18n="s6seedLab">种子</span>
@@ -227,5 +228,6 @@
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 蒙特卡洛 Monte Carlo —— 一步一交互系列</footer>
 
 <script src="app.js?v=w2a"></script>
+<script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

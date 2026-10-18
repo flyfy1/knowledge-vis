@@ -6,6 +6,7 @@
 <title>频率响应与滤波 · 按频率挑食的盒子</title>
 <link rel="stylesheet" href="style.css?v=w2a">
 <script src="i18n.js?v=w2a"></script>
+<link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
 
@@ -39,13 +40,13 @@
     <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
     <h2 data-i18n="s0t">盒子在按频率挑食</h2>
     <p class="explain" data-i18n-html="s0e"></p>
-    <div class="stage"><canvas id="s0-wave" height="260"></canvas></div>
+    <div class="stage"><canvas id="s0-wave" height="260" style="height:260px"></canvas></div>
     <p class="explain" data-i18n-html="s0e2"></p>
     <div class="controls">
       <label><span><span data-i18n="s0fLab">试探正弦的频率 f</span> <span class="val" id="s0-f-val">1.0 Hz</span></span>
         <input type="range" id="s0-f" min="-0.7" max="1.08" step="0.01" value="0"></label>
     </div>
-    <div class="stage"><canvas id="s0-gain" height="240"></canvas></div>
+    <div class="stage"><canvas id="s0-gain" height="240" style="height:240px"></canvas></div>
     <p class="readout" id="s0-readout"></p>
     <p class="hint" data-i18n-html="s0engNote"></p>
     <p class="hint" data-i18n-html="s0hint"></p>
@@ -59,13 +60,13 @@
     <p class="step-kicker" data-i18n="s1k">第 1 步 · 频率响应是什么</p>
     <h2 data-i18n="s1t">正弦进、正弦出：只改两件事</h2>
     <p class="explain" data-i18n-html="s1e"></p>
-    <div class="stage"><canvas id="s1-circuit" height="150"></canvas></div>
+    <div class="stage"><canvas id="s1-circuit" height="150" style="height:150px"></canvas></div>
     <p class="formula" data-i18n="s1formula">H(jω) = 1 / (1 + jωRC)，τ = RC = 1 s，ωc = 1/τ = 1 rad/s</p>
     <div class="controls">
       <label><span><span data-i18n="s1wLab">输入角频率 ω</span> <span class="val" id="s1-w-val">1.00 rad/s</span></span>
         <input type="range" id="s1-w" min="-1.3" max="1.48" step="0.01" value="0"></label>
     </div>
-    <div class="stage"><canvas id="s1-wave" height="250"></canvas></div>
+    <div class="stage"><canvas id="s1-wave" height="250" style="height:250px"></canvas></div>
     <div class="duo-ro">
       <div class="duo-card">
         <h4 data-i18n="s1cardA">解析牌 · 公式算的</h4>
@@ -79,7 +80,7 @@
       </div>
     </div>
     <p class="readout" id="s1-readout"></p>
-    <div class="stage"><canvas id="s1-mag" height="250"></canvas></div>
+    <div class="stage"><canvas id="s1-mag" height="250" style="height:250px"></canvas></div>
     <p class="hint" data-i18n-html="s1hint"></p>
   </div>
 </section>
@@ -96,8 +97,8 @@
       <label><span><span data-i18n="s2cLab">电容 C</span> <span class="val" id="s2-c-val">1.0</span></span>
         <input type="range" id="s2-c" min="-0.7" max="0.7" step="0.01" value="0"></label>
     </div>
-    <div class="stage"><canvas id="s2-mag" height="250"></canvas></div>
-    <div class="stage"><canvas id="s2-phase" height="190"></canvas></div>
+    <div class="stage"><canvas id="s2-mag" height="250" style="height:250px"></canvas></div>
+    <div class="stage"><canvas id="s2-phase" height="190" style="height:190px"></canvas></div>
     <p class="readout" id="s2-readout"></p>
     <div class="bench">
       <h3 data-i18n="s2quizT">读图练习：别算，读出来</h3>
@@ -130,8 +131,8 @@
       <button class="btn" id="s3-p-side" data-i18n="s3pSide">送第一旁瓣峰</button>
       <button class="btn" id="s3-p-pass" data-i18n="s3pPass">送通带低频 0.20</button>
     </div>
-    <div class="stage"><canvas id="s3-mag" height="250"></canvas></div>
-    <div class="stage"><canvas id="s3-tone" height="230"></canvas></div>
+    <div class="stage"><canvas id="s3-mag" height="250" style="height:250px"></canvas></div>
+    <div class="stage"><canvas id="s3-tone" height="230" style="height:230px"></canvas></div>
     <p class="readout" id="s3-readout"></p>
     <p class="hint" data-i18n-html="s3hint"></p>
   </div>
@@ -152,8 +153,8 @@
       <label><span><span data-i18n="s4tauLab">纯延迟 τ<sub>d</sub> / RC 的 τ（同一滑杆）</span> <span class="val" id="s4-tau-val">0.60 s</span></span>
         <input type="range" id="s4-tau" min="0.1" max="1.5" step="0.02" value="0.6"></label>
     </div>
-    <div class="stage"><canvas id="s4-wave" height="270"></canvas></div>
-    <div class="stage"><canvas id="s4-phase" height="230"></canvas></div>
+    <div class="stage"><canvas id="s4-wave" height="270" style="height:270px"></canvas></div>
+    <div class="stage"><canvas id="s4-phase" height="230" style="height:230px"></canvas></div>
     <p class="readout" id="s4-readout"></p>
     <p class="hint" data-i18n-html="s4hint"></p>
   </div>
@@ -169,7 +170,7 @@
       <label><span><span data-i18n="s5tauLab">RC 高通的 τ（ωc = 1/τ）</span> <span class="val" id="s5-tau-val">1.00 s（ωc = 1.00）</span></span>
         <input type="range" id="s5-tau" min="-0.7" max="0.7" step="0.01" value="0"></label>
     </div>
-    <div class="stage"><canvas id="s5-hp" height="240"></canvas></div>
+    <div class="stage"><canvas id="s5-hp" height="240" style="height:240px"></canvas></div>
     <p class="readout" id="s5-hp-ro"></p>
     <p class="explain" data-i18n-html="s5e2"></p>
     <div class="controls">
@@ -178,9 +179,9 @@
       <label><span><span data-i18n="s5qLab">品质因数 Q</span> <span class="val" id="s5-q-val">5.0</span></span>
         <input type="range" id="s5-q" min="-0.3" max="1.3" step="0.01" value="0.7"></label>
     </div>
-    <div class="stage"><canvas id="s5-bp" height="250"></canvas></div>
+    <div class="stage"><canvas id="s5-bp" height="250" style="height:250px"></canvas></div>
     <p class="readout" id="s5-bp-ro"></p>
-    <div class="stage"><canvas id="s5-bp-phase" height="180"></canvas></div>
+    <div class="stage"><canvas id="s5-bp-phase" height="180" style="height:180px"></canvas></div>
     <p class="hint" data-i18n-html="s5hint"></p>
   </div>
 </section>
@@ -206,7 +207,7 @@
       <label id="s6-m-wrap" hidden><span><span data-i18n="s6mLab">平均长度 M</span> <span class="val" id="s6-m-val">8</span></span>
         <input type="range" id="s6-m" min="2" max="40" step="1" value="8"></label>
     </div>
-    <div class="stage"><canvas id="s6-mag" height="260"></canvas></div>
+    <div class="stage"><canvas id="s6-mag" height="260" style="height:260px"></canvas></div>
     <p class="readout" id="s6-readout"></p>
     <div class="btn-row">
       <button class="btn primary" id="s6-judge" data-i18n="s6judge">验收 →</button>
@@ -246,5 +247,6 @@
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 频率响应与滤波 Frequency Response &amp; Filters —— 一步一交互系列</footer>
 
 <script src="app.js?v=w2a"></script>
+<script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

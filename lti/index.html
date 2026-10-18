@@ -6,6 +6,7 @@
 <title>冲激与 LTI · 给系统一巴掌</title>
 <link rel="stylesheet" href="style.css?v=w2a">
 <script src="i18n.js?v=w2a"></script>
+<link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
 
@@ -41,7 +42,7 @@
     <p class="explain" data-i18n-html="s0e"></p>
     <div class="box-row">
       <div class="box-card">
-        <div class="stage"><canvas id="s0-cvA" height="190"></canvas></div>
+        <div class="stage"><canvas id="s0-cvA" height="190" style="height:190px"></canvas></div>
         <p class="box-name" id="s0-nameA"></p>
         <p class="box-desc" id="s0-descA"></p>
         <div class="guess-row" id="s0-guessA" hidden>
@@ -53,7 +54,7 @@
         <button class="btn" id="s0-slapA" data-i18n="s0slap">扇一巴掌（送入 δ[n]）</button>
       </div>
       <div class="box-card">
-        <div class="stage"><canvas id="s0-cvB" height="190"></canvas></div>
+        <div class="stage"><canvas id="s0-cvB" height="190" style="height:190px"></canvas></div>
         <p class="box-name" id="s0-nameB"></p>
         <p class="box-desc" id="s0-descB"></p>
         <div class="guess-row" id="s0-guessB" hidden>
@@ -65,7 +66,7 @@
         <button class="btn" id="s0-slapB" data-i18n="s0slap">扇一巴掌（送入 δ[n]）</button>
       </div>
       <div class="box-card">
-        <div class="stage"><canvas id="s0-cvC" height="190"></canvas></div>
+        <div class="stage"><canvas id="s0-cvC" height="190" style="height:190px"></canvas></div>
         <p class="box-name" id="s0-nameC"></p>
         <p class="box-desc" id="s0-descC"></p>
         <div class="guess-row" id="s0-guessC" hidden>
@@ -93,13 +94,13 @@
     <h2 data-i18n="s1t">先认识这一巴掌：δ[n]，和万物分解</h2>
     <p class="explain" data-i18n-html="s1e"></p>
     <p class="formula" data-i18n="s1formula">x[n] = Σₖ x[k] · δ[n − k]</p>
-    <div class="stage"><canvas id="s1-sift" height="300"></canvas></div>
+    <div class="stage"><canvas id="s1-sift" height="300" style="height:300px"></canvas></div>
     <div class="controls">
       <label><span><span data-i18n="s1kLab">k · 把 δ 滑到第 k 根针上</span> <span class="val" id="s1-k-val">3</span></span>
         <input type="range" id="s1-k" min="0" max="11" step="1" value="3"></label>
     </div>
     <p class="readout" id="s1-readout"></p>
-    <div class="stage"><canvas id="s1-build" height="300"></canvas></div>
+    <div class="stage"><canvas id="s1-build" height="300" style="height:300px"></canvas></div>
     <p class="seq-label" data-i18n="s1tglLab">逐根打开冲激分量 x[k]·δ[n−k]：</p>
     <div class="tgl-row" id="s1-toggles"></div>
     <div class="btn-row">
@@ -122,12 +123,12 @@
       <button class="btn" data-sys="acc" data-i18n="s2sysAcc">指数衰减累加器</button>
       <button class="btn" data-sys="diff" data-i18n="s2sysDiff">差分器</button>
     </div>
-    <div class="stage"><canvas id="s2-h" height="270"></canvas></div>
+    <div class="stage"><canvas id="s2-h" height="270" style="height:270px"></canvas></div>
     <div class="controls">
       <label><span><span data-i18n="s2aLab">a · 累加器的衰减（仅累加器用）</span> <span class="val" id="s2-a-val">0.70</span></span>
         <input type="range" id="s2-a" min="0.3" max="0.95" step="0.01" value="0.7"></label>
     </div>
-    <div class="stage"><canvas id="s2-io" height="330"></canvas></div>
+    <div class="stage"><canvas id="s2-io" height="330" style="height:330px"></canvas></div>
     <div class="btn-row">
       <label class="chk"><input type="checkbox" id="s2-copies" checked> <span data-i18n="s2copies">显示每一份「缩放平移的 h」</span></label>
     </div>
@@ -154,19 +155,19 @@
     <div class="bench">
       <h3 data-i18n="s3supT">检验一 · 叠加性（线性）</h3>
       <p class="explain small" data-i18n-html="s3supE"></p>
-      <div class="stage"><canvas id="s3-sup" height="270"></canvas></div>
+      <div class="stage"><canvas id="s3-sup" height="270" style="height:270px"></canvas></div>
       <p class="readout" id="s3-sup-ro"></p>
     </div>
     <div class="bench">
       <h3 data-i18n="s3tiT">检验二 · 时不变性</h3>
       <p class="explain small" data-i18n-html="s3tiE"></p>
-      <div class="stage"><canvas id="s3-ti" height="270"></canvas></div>
+      <div class="stage"><canvas id="s3-ti" height="270" style="height:270px"></canvas></div>
       <p class="readout" id="s3-ti-ro"></p>
     </div>
     <div class="bench" id="s3-fake-bench">
       <h3 data-i18n="s3fakeT">公理垮了会怎样：平方器的「伪 h」</h3>
       <p class="explain small" data-i18n-html="s3fakeE"></p>
-      <div class="stage"><canvas id="s3-fake" height="270"></canvas></div>
+      <div class="stage"><canvas id="s3-fake" height="270" style="height:270px"></canvas></div>
       <p class="readout" id="s3-fake-ro"></p>
     </div>
     <p class="hint" data-i18n-html="s3hint"></p>
@@ -189,8 +190,8 @@
         <input type="range" id="s4-a" min="0.3" max="0.95" step="0.01" value="0.7"></label>
     </div>
     <div class="dual">
-      <div class="half"><div class="stage"><canvas id="s4-h" height="300"></canvas></div></div>
-      <div class="half"><div class="stage"><canvas id="s4-s" height="300"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s4-h" height="300" style="height:300px"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s4-s" height="300" style="height:300px"></canvas></div></div>
     </div>
     <div class="btn-row">
       <label class="chk"><input type="checkbox" id="s4-ov-h" checked> <span data-i18n="s4ovH">把差分 diff(s) 叠到 h 上对照</span></label>
@@ -214,13 +215,13 @@
         <button class="btn active" data-sys="ma3" data-i18n="s5sysMa">滑动平均（看过去）</button>
         <button class="btn" data-sys="centered" data-i18n="s5sysCe">居中平均（偷看未来）</button>
       </div>
-      <div class="stage"><canvas id="s5-cau" height="270"></canvas></div>
+      <div class="stage"><canvas id="s5-cau" height="270" style="height:270px"></canvas></div>
       <p class="readout" id="s5-cau-ro"></p>
     </div>
     <div class="bench">
       <h3 data-i18n="s5staT">体检二 · 稳定：Σ|h[n]| 收不收得住？</h3>
       <p class="explain small" data-i18n-html="s5staE"></p>
-      <div class="stage"><canvas id="s5-sta" height="270"></canvas></div>
+      <div class="stage"><canvas id="s5-sta" height="270" style="height:270px"></canvas></div>
       <div class="controls">
         <label><span><span data-i18n="s5aLab">a · 累加器的衰减（h[n] = aⁿ）</span> <span class="val" id="s5-a-val">0.90</span></span>
           <input type="range" id="s5-a" min="0.5" max="0.995" step="0.005" value="0.9"></label>
@@ -230,7 +231,7 @@
     <div class="bench">
       <h3 data-i18n="s5memT">体检三 · 记忆：h 拖多长的尾巴？</h3>
       <p class="explain small" data-i18n-html="s5memE"></p>
-      <div class="stage"><canvas id="s5-mem" height="270"></canvas></div>
+      <div class="stage"><canvas id="s5-mem" height="270" style="height:270px"></canvas></div>
       <p class="readout" id="s5-mem-ro"></p>
     </div>
     <p class="hint" data-i18n-html="s5hint"></p>
@@ -250,8 +251,8 @@
       <label><span><span data-i18n="s6rLab">r · 余韵长短（阻尼，越贴近 1 振得越久）</span> <span class="val" id="s6-r-val">0.88</span></span>
         <input type="range" id="s6-r" min="0.75" max="0.985" step="0.005" value="0.88"></label>
     </div>
-    <div class="stage"><canvas id="s6-h" height="280"></canvas></div>
-    <div class="stage"><canvas id="s6-io" height="320"></canvas></div>
+    <div class="stage"><canvas id="s6-h" height="280" style="height:280px"></canvas></div>
+    <div class="stage"><canvas id="s6-io" height="320" style="height:320px"></canvas></div>
     <p class="readout" id="s6-readout"></p>
     <p class="hint" data-i18n-html="s6note"></p>
     <div class="app-cards">
@@ -287,5 +288,6 @@
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 冲激与 LTI Impulse &amp; LTI —— 一步一交互系列</footer>
 
 <script src="app.js?v=w2a"></script>
+<script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

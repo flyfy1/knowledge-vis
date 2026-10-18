@@ -6,6 +6,7 @@
 <title>卡尔曼滤波 · 怎样结合预测与测量</title>
 <link rel="stylesheet" href="style.css?v=w2a">
 <script src="i18n.js?v=w2a"></script>
+<link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
 
@@ -39,7 +40,7 @@
     <p class="step-kicker" data-i18n="s0k"></p>
     <h2 data-i18n="s0t"></h2>
     <p class="explain" data-i18n-html="s0e"></p>
-    <div class="stage"><canvas id="s0-cv" height="330"></canvas></div>
+    <div class="stage"><canvas id="s0-cv" height="330" style="height:330px"></canvas></div>
     <div class="btn-row">
       <button class="btn primary" id="s0-run" data-i18n="s0run"></button>
       <button class="btn" id="s0-reveal" data-i18n="s0reveal" disabled></button>
@@ -57,7 +58,7 @@
     <p class="step-kicker" data-i18n="s1k"></p>
     <h2 data-i18n="s1t"></h2>
     <p class="explain" data-i18n-html="s1e"></p>
-    <div class="stage"><canvas id="s1-cv" height="330"></canvas></div>
+    <div class="stage"><canvas id="s1-cv" height="330" style="height:330px"></canvas></div>
     <div class="controls">
       <label><span><span data-i18n="s1wLab"></span> <span class="val" id="s1-w-val">8</span></span>
         <input type="range" id="s1-w" min="2" max="20" step="1" value="8"></label>
@@ -79,10 +80,10 @@
     <h2 data-i18n="s2t"></h2>
     <p class="explain" data-i18n-html="s2e"></p>
     <p class="formula" data-i18n-html="s2formula"></p>
-    <div class="stage"><canvas id="s2-bell" height="300"></canvas></div>
+    <div class="stage"><canvas id="s2-bell" height="300" style="height:300px"></canvas></div>
     <div class="stage">
       <p class="stage-title" data-i18n="s2trajTitle"></p>
-      <canvas id="s2-traj" height="170"></canvas>
+      <canvas id="s2-traj" height="170" style="height:170px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn primary" id="s2-next" data-i18n="s2nextPred"></button>
@@ -101,7 +102,7 @@
     <p class="step-kicker" data-i18n="s3k"></p>
     <h2 data-i18n="s3t"></h2>
     <p class="explain" data-i18n-html="s3e"></p>
-    <div class="stage"><canvas id="s3-cv" height="320"></canvas></div>
+    <div class="stage"><canvas id="s3-cv" height="320" style="height:320px"></canvas></div>
     <div class="controls">
       <label><span><span data-i18n="s3qLab"></span> <span class="val" id="s3-q-val"></span></span>
         <input type="range" id="s3-q" min="0" max="1000" step="1" value="333"></label>
@@ -121,17 +122,17 @@
     <div class="mini-row">
       <div class="mini-card">
         <h3 data-i18n="s3pModel"></h3>
-        <div class="stage"><canvas id="s3-m1" height="150"></canvas></div>
+        <div class="stage"><canvas id="s3-m1" height="150" style="height:150px"></canvas></div>
         <p class="mini-ro" id="s3-m1-ro"></p>
       </div>
       <div class="mini-card">
         <h3 data-i18n="s3pBalanced"></h3>
-        <div class="stage"><canvas id="s3-m2" height="150"></canvas></div>
+        <div class="stage"><canvas id="s3-m2" height="150" style="height:150px"></canvas></div>
         <p class="mini-ro" id="s3-m2-ro"></p>
       </div>
       <div class="mini-card">
         <h3 data-i18n="s3pMeas"></h3>
-        <div class="stage"><canvas id="s3-m3" height="150"></canvas></div>
+        <div class="stage"><canvas id="s3-m3" height="150" style="height:150px"></canvas></div>
         <p class="mini-ro" id="s3-m3-ro"></p>
       </div>
     </div>
@@ -145,9 +146,9 @@
     <p class="step-kicker" data-i18n="s4k"></p>
     <h2 data-i18n="s4t"></h2>
     <p class="explain" data-i18n-html="s4e"></p>
-    <div class="stage"><canvas id="s4-cvP" height="280"></canvas></div>
+    <div class="stage"><canvas id="s4-cvP" height="280" style="height:280px"></canvas></div>
     <p class="readout" id="s4-readout1"></p>
-    <div class="stage"><canvas id="s4-cvEq" height="280"></canvas></div>
+    <div class="stage"><canvas id="s4-cvEq" height="280" style="height:280px"></canvas></div>
     <p class="readout" id="s4-readout2"></p>
     <p class="hint" data-i18n-html="s4hint"></p>
   </div>
@@ -164,8 +165,8 @@
       <button class="btn" data-man="off" data-i18n="s5manOff"></button>
     </div>
     <div class="matrix-block" id="s5-matrices"></div>
-    <div class="stage"><canvas id="s5-pos" height="300"></canvas></div>
-    <div class="stage"><canvas id="s5-vel" height="240"></canvas></div>
+    <div class="stage"><canvas id="s5-pos" height="300" style="height:300px"></canvas></div>
+    <div class="stage"><canvas id="s5-vel" height="240" style="height:240px"></canvas></div>
     <div class="controls">
       <label><span><span data-i18n="s5qLab"></span> <span class="val" id="s5-q-val"></span></span>
         <input type="range" id="s5-q" min="0" max="1000" step="1" value="500"></label>
@@ -220,5 +221,6 @@
 <footer class="site-foot" data-i18n="foot"></footer>
 
 <script src="app.js?v=w2a"></script>
+<script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

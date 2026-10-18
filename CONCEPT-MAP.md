@@ -661,3 +661,17 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Rolling rows | `leetcode/44/#step4` | Map prefix dependencies to two live rows in the Python solution. |
 
 <!-- /leetcode-44-campaign -->
+
+## Circuits and energy (2026-10-18)
+
+| Concept | Lesson anchor |
+|---|---|
+| Voltage, current, power; KCL/KVL | /power-converters/#step0 |
+| Inductor, magnetic energy | /power-converters/#step1 |
+| Capacitor, electric energy | /power-converters/#step2 |
+| Ideal switch/diode; PWM duty | /power-converters/#step3 |
+| Buck; volt-second balance | /power-converters/#step4 |
+| Boost; two energy paths | /power-converters/#step5 |
+| Efficiency and power budget | /power-converters/#step6 |
+
+Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Feedback links to /control/#step2; the converter lesson does not simulate loop dynamics.
