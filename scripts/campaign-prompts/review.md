@@ -18,7 +18,9 @@ label custom-input checks as code checks. No source-reading substitute for a col
 browser walk. No score inferred from screenshots or test counts alone.
 
 After saving the cold walkthrough, audit source, Python, constraints and test
-claims. Check independently chosen examples and boundaries, visual-to-Python
+claims. Inspect tests before running: redirect generated results/screenshots to
+your evidence directory or temporary files; never regenerate tracked candidate
+assets or author evidence while reviewing. Check independently chosen examples and boundaries, visual-to-Python
 mapping, before/after semantics and intermediate invariants. Exercise both
 languages, state preservation, rewind/reset/endpoints, prediction/reveal/change,
 keyboard, 320/390/desktop layout and 200% zoom, contrast and readable disabled
