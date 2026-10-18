@@ -1,0 +1,12 @@
+{
+  "checks": 1718,
+  "pandas": "3.0.5",
+  "seed": 185,
+  "official_example": "pass",
+  "exhaustive": "n=0..4, salaries -1/0/1, department IDs 1/2",
+  "random_cases": 160,
+  "null_test": "extra robustness, not an official null contract",
+  "input_mutation": "none",
+  "source_parity": "exact",
+  "status": "pass"
+}

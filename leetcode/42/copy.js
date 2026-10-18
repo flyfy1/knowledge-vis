@@ -220,8 +220,16 @@ window.LESSON_COPY = {
     "1 ≤ n ≤ 20000; 0 ≤ height[i] ≤ 100000."
   ],
   "hand": [
-    "[3,0,2,0,4]：两边墙分别限制内部三个位置，水深依次是 3、1、3，总量 7。柱子本身的体积不能计作水。",
-    "For [3,0,2,0,4], the three interior positions hold depths 3,1,3, totaling 7. The bars themselves are not water."
+    "把 [3,0,2,0,4] 看作五根并排的单位宽柱子，下标从 0 开始。中间下标 2 的柱高为 2：左边最高墙是 3，右边最高墙是 4。水超过高度 3 就会从左墙溢出，所以水位是 min(3,4) = 3；水深是 3 − 2 = 1。",
+    "Picture [3,0,2,0,4] as five unit-width bars, indexed from 0. The middle bar at index 2 has height 2. Its highest left wall is 3 and its highest right wall is 4. Water above height 3 spills over the left wall, so the water level is min(3,4) = 3. Subtract the bar: the water depth is 3 − 2 = 1."
+  ],
+  "handDepths": [
+    "下标 1 和 3 的柱高都是 0，左右最高墙也分别是 3 和 4，所以水深各为 min(3,4) − 0 = 3。两端没有外侧墙，水深为 0。逐格相加：0 + 3 + 1 + 3 + 0 = 7；每根柱宽为 1，因此共存 7 单位水。",
+    "At indices 1 and 3, each bar has height 0 and the highest walls are again 3 and 4, so each depth is min(3,4) − 0 = 3. The two end bars lack an outer wall and hold depth 0. Add all five depths: 0 + 3 + 1 + 3 + 0 = 7. Each bar is one unit wide, so this is 7 units of water."
+  ],
+  "handWrong": [
+    "不能只看较高的右墙 4：那会把中间水深算成 4 − 2 = 2，但高于 3 的水会从左边漏走。也不能把水位 3 直接当水深，因为中间柱子已经占了 2 单位高度。接下来，基线对每一格重复这套计算。",
+    "Using only the taller right wall, 4, would give middle depth 4 − 2 = 2, but water above 3 escapes on the left. Counting water level 3 as depth also includes the 2 units already occupied by the middle bar. The baseline below repeats this calculation for every position."
   ],
   "cost": [
     "每格重找左右最大墙，时间 O(n²)，此 Python 切片基线临时空间 O(n)。前后缀数组可降到 O(n) 时间但用 O(n) 空间；双指针只需两个已知最大值。",
@@ -316,8 +324,16 @@ window.LESSON = {
     "1 ≤ n ≤ 20000; 0 ≤ height[i] ≤ 100000."
   ],
   "hand": [
-    "[3,0,2,0,4]：两边墙分别限制内部三个位置，水深依次是 3、1、3，总量 7。柱子本身的体积不能计作水。",
-    "For [3,0,2,0,4], the three interior positions hold depths 3,1,3, totaling 7. The bars themselves are not water."
+    "把 [3,0,2,0,4] 看作五根并排的单位宽柱子，下标从 0 开始。中间下标 2 的柱高为 2：左边最高墙是 3，右边最高墙是 4。水超过高度 3 就会从左墙溢出，所以水位是 min(3,4) = 3；水深是 3 − 2 = 1。",
+    "Picture [3,0,2,0,4] as five unit-width bars, indexed from 0. The middle bar at index 2 has height 2. Its highest left wall is 3 and its highest right wall is 4. Water above height 3 spills over the left wall, so the water level is min(3,4) = 3. Subtract the bar: the water depth is 3 − 2 = 1."
+  ],
+  "handDepths": [
+    "下标 1 和 3 的柱高都是 0，左右最高墙也分别是 3 和 4，所以水深各为 min(3,4) − 0 = 3。两端没有外侧墙，水深为 0。逐格相加：0 + 3 + 1 + 3 + 0 = 7；每根柱宽为 1，因此共存 7 单位水。",
+    "At indices 1 and 3, each bar has height 0 and the highest walls are again 3 and 4, so each depth is min(3,4) − 0 = 3. The two end bars lack an outer wall and hold depth 0. Add all five depths: 0 + 3 + 1 + 3 + 0 = 7. Each bar is one unit wide, so this is 7 units of water."
+  ],
+  "handWrong": [
+    "不能只看较高的右墙 4：那会把中间水深算成 4 − 2 = 2，但高于 3 的水会从左边漏走。也不能把水位 3 直接当水深，因为中间柱子已经占了 2 单位高度。接下来，基线对每一格重复这套计算。",
+    "Using only the taller right wall, 4, would give middle depth 4 − 2 = 2, but water above 3 escapes on the left. Counting water level 3 as depth also includes the 2 units already occupied by the middle bar. The baseline below repeats this calculation for every position."
   ],
   "baseline": "def baseline(height):\n    total = 0\n    for i, h in enumerate(height):\n        left = max(height[:i + 1])\n        right = max(height[i:])\n        total += min(left, right) - h\n    return total",
   "cost": [

@@ -1,0 +1,38 @@
+{
+  "id": 188,
+  "title": {
+    "zh": "买卖股票的最佳时机 IV",
+    "en": "Best Time to Buy and Sell Stock IV"
+  },
+  "desc": {
+    "zh": "从交易额度推导逐日现金状态，比较持有与卖出。",
+    "en": "Derive daily cash states for each trade budget and compare holding with selling."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "动态规划",
+      "en": "Dynamic programming"
+    },
+    {
+      "zh": "状态压缩",
+      "en": "State compression"
+    }
+  ],
+  "path": "188/",
+  "leetcodeUrl": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/",
+  "language": "Python",
+  "complexity": "O(nk) time; O(k) auxiliary space",
+  "concepts": [
+    {
+      "name": "budget-indexed stock dynamic programming",
+      "step": 1,
+      "description": "Derive holding and flat cash maxima for each transaction budget."
+    },
+    {
+      "name": "daily cash invariant",
+      "step": 4,
+      "description": "Prove old-prefix maxima cover every legal trade history."
+    }
+  ]
+}

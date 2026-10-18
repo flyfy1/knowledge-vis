@@ -200,7 +200,7 @@ window.LEETCODE_PROBLEMS = [
     "path": "42/",
     "leetcodeUrl": "https://leetcode.com/problems/trapping-rain-water/",
     "language": "Python",
-    "complexity": "O(n)"
+    "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
     "id": 44,
@@ -743,6 +743,58 @@ window.LEETCODE_PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/dungeon-game/",
     "language": "Python",
     "complexity": "O(mn) time; O(n) auxiliary space"
+  },
+  {
+    "id": 185,
+    "title": {
+      "zh": "部门工资前三高的所有员工",
+      "en": "Department Top Three Salaries"
+    },
+    "desc": {
+      "zh": "并列不占新名次：按部门保留前三个不同工资层级的所有员工。",
+      "en": "Keep every employee on the top three distinct salary levels in each department."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "Pandas 排名",
+        "en": "Pandas ranking"
+      },
+      {
+        "zh": "分组与并列",
+        "en": "Grouping and ties"
+      }
+    ],
+    "path": "185/",
+    "leetcodeUrl": "https://leetcode.com/problems/department-top-three-salaries/",
+    "language": "Python",
+    "complexity": "O(n log n + d) expected time; O(n + d) auxiliary space, plus O(k) output"
+  },
+  {
+    "id": 188,
+    "title": {
+      "zh": "买卖股票的最佳时机 IV",
+      "en": "Best Time to Buy and Sell Stock IV"
+    },
+    "desc": {
+      "zh": "从交易额度推导逐日现金状态，比较持有与卖出。",
+      "en": "Derive daily cash states for each trade budget and compare holding with selling."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "状态压缩",
+        "en": "State compression"
+      }
+    ],
+    "path": "188/",
+    "leetcodeUrl": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/",
+    "language": "Python",
+    "complexity": "O(nk) time; O(k) auxiliary space"
   },
   {
     "id": 2916,
