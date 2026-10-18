@@ -1,0 +1,10 @@
+{
+  "kind": "author self-check",
+  "checks": [
+    "en: transition semantics, widths 320/390/1280, CSS zoom 200%, keyboard, all preset endpoints, predictions, locale preservation, source/copy/download/fallback passed",
+    "zh: transition semantics, widths 320/390/1280, CSS zoom 200%, keyboard, all preset endpoints, predictions, locale preservation, source/copy/download/fallback passed",
+    "en: offline source/next with denied storage passed",
+    "zh: offline source/next with denied storage passed"
+  ],
+  "errors": []
+}
