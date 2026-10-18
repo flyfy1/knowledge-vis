@@ -1,0 +1,12 @@
+{
+  "results": [],
+  "failures": [
+    "en 41-R3 contrast 3.93: The expression evaluated to a falsy value:\n\n  assert.ok(ratio>=4.5)\n",
+    "en 41-R2 inactive destination: The expression evaluated to a falsy value:\n\n  assert.ok(state.includes('swap_to'))\n",
+    "en 41-R2 visible legend: Expected values to be strictly equal:\n\n0 !== 1\n",
+    "zh 41-R3 contrast 3.93: The expression evaluated to a falsy value:\n\n  assert.ok(ratio>=4.5)\n",
+    "zh 41-R2 inactive destination: The expression evaluated to a falsy value:\n\n  assert.ok(state.includes('swap_to'))\n",
+    "zh 41-R2 visible legend: Expected values to be strictly equal:\n\n0 !== 1\n"
+  ],
+  "errors": []
+}

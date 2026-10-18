@@ -27,7 +27,7 @@ What is the smallest positive integer missing from an unsorted array? Positive s
 
 | Name | First introduction | Definition | Prerequisites |
 | --- | --- | --- | --- |
-| `target = nums[i] - 1` | Steps 1–2; repeated in step 4 | Fixed destination index of the current value | Arrays, indices, the stated input contract |
+| `target = nums[i] - 1` | Steps 1–2; repeated in step 4 | Destination saved before a swap; retained until next assignment | Arrays, indices, the stated input contract |
 | `nums[target] != nums[i]` | Steps 1–2; repeated in step 4 | Prevent duplicate-value swap cycles | Arrays, indices, the stated input contract |
 | `i + 1` | Steps 1–2; repeated in step 4 | Positive integer expected at this position | Arrays, indices, the stated input contract |
 
@@ -45,10 +45,8 @@ What is the smallest positive integer missing from an unsorted array? Positive s
 Worked calculation, trace presets, and prediction are separate experiments.
 The trace runs JavaScript, not Python. Full retained trace snapshots are teaching
 storage and are excluded from the submitted algorithm's complexity claim.
-For Sudoku, the first 180 events and final board are retained; an explicit final
-notice identifies omitted events. Heap frames show completed operations, with
-sift behavior explained in prose. DP retains the full table even where Python
-uses rolling rows. Rewind restores a complete snapshot, not an inverse mutation.
+Rewind restores a complete snapshot, not an inverse mutation. All placement
+events are retained. Diagram-only operation markers are documented below.
 
 ## Verification
 
@@ -57,3 +55,32 @@ Run `python3 leetcode/tests/test_hard_solutions.py`,
 `NODE_PATH=<playwright package directory> node leetcode/tests/test_hard_browser.cjs`.
 See `../../specs/reviews/leetcode-first-ten-review.md` for observed review evidence.
 No actual LeetCode submission or human learning test is claimed.
+
+## Review repair contract (2026-10-18)
+
+Focused repairs adopt required findings 41-R1/R2/R3 from
+`specs/reviews/41-review-1-1c260097.md`; no new feature or layout.
+Product-fit verdict: reuse the existing experiment for basic Python readers;
+smallest useful outcome is an unambiguous operation-to-code mapping and readable
+indices. Separate independent re-review remains pending.
+
+P0 / highest-return slice: add valid lesson metadata; distinguish operation-only
+markers from saved Python variables; restore essential index contrast in current
+and previous diagrams. Done means preflight and bilingual browser regressions pass.
+P1: explain set membership and work a tiny placement before the general rule.
+P2: none. Deferred: new inputs/layout and shared runtime refactoring, because these
+are unnecessary for the findings and outside lesson ownership.
+
+Presentation contract: retain layout, focus, typography, controls and lifecycle.
+Only `.trace-cell.hot small` uses existing `--text` (#e8edf4) instead of `--muted`
+(#9aa7b8) on unchanged #164b59; target at least 7:1, never below 4.5:1.
+`op_i` marks the just-described placement-loop position; `swap_to` marks the
+just-completed swap destination. Both are display markers, not saved Python
+variables. `∅` means no applicable marker, never a Python negative index.
+After the first swap and skip, markers are op_i=0, swap_to=∅ while Python's
+saved target remains 2. Final aggregate scan has no operation markers. The legend
+is visible beside the state and repeated in the code mapping in both languages.
+Initial, swap, skip and final states all use this contract; loading/reconnect are
+inapplicable to this synchronous static lesson. Locale changes retain snapshots,
+prediction and disclosures. The adapter only transforms marker state and removes
+inactive highlight indices; array data, operation order and results are preserved.

@@ -1,0 +1,792 @@
+{
+  "checks": [
+    "en: all presets, rewind/replay, endpoints, reset, result visibility",
+    "en: all prediction choices, reveal Enter, stale feedback clearing, locale preservation",
+    "en: marker semantics at skip, locale after interaction, keyboard slider/rewind/next, visible focus, display/clipboard/fallback/download parity, 200% CSS zoom",
+    "zh: all presets, rewind/replay, endpoints, reset, result visibility",
+    "zh: all prediction choices, reveal Enter, stale feedback clearing, locale preservation",
+    "zh: marker semantics at skip, locale after interaction, keyboard slider/rewind/next, visible focus, display/clipboard/fallback/download parity, 200% CSS zoom",
+    "Offline file page source parity",
+    "Denied localStorage preserves initialization, locale and next"
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "geometry": {
+        "overflow": false,
+        "labels": [
+          {
+            "x": 31,
+            "right": 112.328125,
+            "width": 81.328125
+          },
+          {
+            "x": 31,
+            "right": 112.328125,
+            "width": 81.328125
+          }
+        ],
+        "values": [
+          {
+            "x": 126.328125,
+            "right": 289,
+            "width": 162.671875
+          },
+          {
+            "x": 126.328125,
+            "right": 289,
+            "width": 162.671875
+          }
+        ],
+        "cells": [
+          {
+            "x": 31,
+            "right": 64,
+            "width": 33
+          },
+          {
+            "x": 69,
+            "right": 102,
+            "width": 33
+          },
+          {
+            "x": 107,
+            "right": 140,
+            "width": 33
+          },
+          {
+            "x": 145,
+            "right": 178,
+            "width": 33
+          },
+          {
+            "x": 31,
+            "right": 64,
+            "width": 33
+          },
+          {
+            "x": 69,
+            "right": 102,
+            "width": 33
+          },
+          {
+            "x": 107,
+            "right": 140,
+            "width": 33
+          },
+          {
+            "x": 145,
+            "right": 178,
+            "width": 33
+          }
+        ],
+        "colors": [
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          }
+        ]
+      },
+      "ratios": [
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "geometry": {
+        "overflow": false,
+        "labels": [
+          {
+            "x": 31,
+            "right": 135.65625,
+            "width": 104.65625
+          },
+          {
+            "x": 31,
+            "right": 135.65625,
+            "width": 104.65625
+          }
+        ],
+        "values": [
+          {
+            "x": 149.65625,
+            "right": 359,
+            "width": 209.34375
+          },
+          {
+            "x": 149.65625,
+            "right": 359,
+            "width": 209.34375
+          }
+        ],
+        "cells": [
+          {
+            "x": 31,
+            "right": 64,
+            "width": 33
+          },
+          {
+            "x": 69,
+            "right": 102,
+            "width": 33
+          },
+          {
+            "x": 107,
+            "right": 140,
+            "width": 33
+          },
+          {
+            "x": 145,
+            "right": 178,
+            "width": 33
+          },
+          {
+            "x": 31,
+            "right": 64,
+            "width": 33
+          },
+          {
+            "x": 69,
+            "right": 102,
+            "width": 33
+          },
+          {
+            "x": 107,
+            "right": 140,
+            "width": 33
+          },
+          {
+            "x": 145,
+            "right": 178,
+            "width": 33
+          }
+        ],
+        "colors": [
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          }
+        ]
+      },
+      "ratios": [
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "geometry": {
+        "overflow": false,
+        "labels": [
+          {
+            "x": 45,
+            "right": 255.65625,
+            "width": 210.65625
+          },
+          {
+            "x": 45,
+            "right": 255.65625,
+            "width": 210.65625
+          }
+        ],
+        "values": [
+          {
+            "x": 269.65625,
+            "right": 691,
+            "width": 421.34375
+          },
+          {
+            "x": 269.65625,
+            "right": 691,
+            "width": 421.34375
+          }
+        ],
+        "cells": [
+          {
+            "x": 45,
+            "right": 85,
+            "width": 40
+          },
+          {
+            "x": 92,
+            "right": 132,
+            "width": 40
+          },
+          {
+            "x": 139,
+            "right": 179,
+            "width": 40
+          },
+          {
+            "x": 186,
+            "right": 226,
+            "width": 40
+          },
+          {
+            "x": 45,
+            "right": 85,
+            "width": 40
+          },
+          {
+            "x": 92,
+            "right": 132,
+            "width": 40
+          },
+          {
+            "x": 139,
+            "right": 179,
+            "width": 40
+          },
+          {
+            "x": 186,
+            "right": 226,
+            "width": 40
+          }
+        ],
+        "colors": [
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          }
+        ]
+      },
+      "ratios": [
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "geometry": {
+        "overflow": false,
+        "labels": [
+          {
+            "x": 265,
+            "right": 563.65625,
+            "width": 298.65625
+          },
+          {
+            "x": 265,
+            "right": 563.65625,
+            "width": 298.65625
+          }
+        ],
+        "values": [
+          {
+            "x": 577.65625,
+            "right": 1175,
+            "width": 597.34375
+          },
+          {
+            "x": 577.65625,
+            "right": 1175,
+            "width": 597.34375
+          }
+        ],
+        "cells": [
+          {
+            "x": 265,
+            "right": 305,
+            "width": 40
+          },
+          {
+            "x": 312,
+            "right": 352,
+            "width": 40
+          },
+          {
+            "x": 359,
+            "right": 399,
+            "width": 40
+          },
+          {
+            "x": 406,
+            "right": 446,
+            "width": 40
+          },
+          {
+            "x": 265,
+            "right": 305,
+            "width": 40
+          },
+          {
+            "x": 312,
+            "right": 352,
+            "width": 40
+          },
+          {
+            "x": 359,
+            "right": 399,
+            "width": 40
+          },
+          {
+            "x": 406,
+            "right": 446,
+            "width": 40
+          }
+        ],
+        "colors": [
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          }
+        ]
+      },
+      "ratios": [
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "geometry": {
+        "overflow": false,
+        "labels": [
+          {
+            "x": 31,
+            "right": 112.328125,
+            "width": 81.328125
+          },
+          {
+            "x": 31,
+            "right": 112.328125,
+            "width": 81.328125
+          }
+        ],
+        "values": [
+          {
+            "x": 126.328125,
+            "right": 289,
+            "width": 162.671875
+          },
+          {
+            "x": 126.328125,
+            "right": 289,
+            "width": 162.671875
+          }
+        ],
+        "cells": [
+          {
+            "x": 31,
+            "right": 64,
+            "width": 33
+          },
+          {
+            "x": 69,
+            "right": 102,
+            "width": 33
+          },
+          {
+            "x": 107,
+            "right": 140,
+            "width": 33
+          },
+          {
+            "x": 145,
+            "right": 178,
+            "width": 33
+          },
+          {
+            "x": 31,
+            "right": 64,
+            "width": 33
+          },
+          {
+            "x": 69,
+            "right": 102,
+            "width": 33
+          },
+          {
+            "x": 107,
+            "right": 140,
+            "width": 33
+          },
+          {
+            "x": 145,
+            "right": 178,
+            "width": 33
+          }
+        ],
+        "colors": [
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          }
+        ]
+      },
+      "ratios": [
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "geometry": {
+        "overflow": false,
+        "labels": [
+          {
+            "x": 31,
+            "right": 135.65625,
+            "width": 104.65625
+          },
+          {
+            "x": 31,
+            "right": 135.65625,
+            "width": 104.65625
+          }
+        ],
+        "values": [
+          {
+            "x": 149.65625,
+            "right": 359,
+            "width": 209.34375
+          },
+          {
+            "x": 149.65625,
+            "right": 359,
+            "width": 209.34375
+          }
+        ],
+        "cells": [
+          {
+            "x": 31,
+            "right": 64,
+            "width": 33
+          },
+          {
+            "x": 69,
+            "right": 102,
+            "width": 33
+          },
+          {
+            "x": 107,
+            "right": 140,
+            "width": 33
+          },
+          {
+            "x": 145,
+            "right": 178,
+            "width": 33
+          },
+          {
+            "x": 31,
+            "right": 64,
+            "width": 33
+          },
+          {
+            "x": 69,
+            "right": 102,
+            "width": 33
+          },
+          {
+            "x": 107,
+            "right": 140,
+            "width": 33
+          },
+          {
+            "x": 145,
+            "right": 178,
+            "width": 33
+          }
+        ],
+        "colors": [
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          }
+        ]
+      },
+      "ratios": [
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "geometry": {
+        "overflow": false,
+        "labels": [
+          {
+            "x": 45,
+            "right": 255.65625,
+            "width": 210.65625
+          },
+          {
+            "x": 45,
+            "right": 255.65625,
+            "width": 210.65625
+          }
+        ],
+        "values": [
+          {
+            "x": 269.65625,
+            "right": 691,
+            "width": 421.34375
+          },
+          {
+            "x": 269.65625,
+            "right": 691,
+            "width": 421.34375
+          }
+        ],
+        "cells": [
+          {
+            "x": 45,
+            "right": 85,
+            "width": 40
+          },
+          {
+            "x": 92,
+            "right": 132,
+            "width": 40
+          },
+          {
+            "x": 139,
+            "right": 179,
+            "width": 40
+          },
+          {
+            "x": 186,
+            "right": 226,
+            "width": 40
+          },
+          {
+            "x": 45,
+            "right": 85,
+            "width": 40
+          },
+          {
+            "x": 92,
+            "right": 132,
+            "width": 40
+          },
+          {
+            "x": 139,
+            "right": 179,
+            "width": 40
+          },
+          {
+            "x": 186,
+            "right": 226,
+            "width": 40
+          }
+        ],
+        "colors": [
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          }
+        ]
+      },
+      "ratios": [
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "geometry": {
+        "overflow": false,
+        "labels": [
+          {
+            "x": 265,
+            "right": 563.65625,
+            "width": 298.65625
+          },
+          {
+            "x": 265,
+            "right": 563.65625,
+            "width": 298.65625
+          }
+        ],
+        "values": [
+          {
+            "x": 577.65625,
+            "right": 1175,
+            "width": 597.34375
+          },
+          {
+            "x": 577.65625,
+            "right": 1175,
+            "width": 597.34375
+          }
+        ],
+        "cells": [
+          {
+            "x": 265,
+            "right": 305,
+            "width": 40
+          },
+          {
+            "x": 312,
+            "right": 352,
+            "width": 40
+          },
+          {
+            "x": 359,
+            "right": 399,
+            "width": 40
+          },
+          {
+            "x": 406,
+            "right": 446,
+            "width": 40
+          },
+          {
+            "x": 265,
+            "right": 305,
+            "width": 40
+          },
+          {
+            "x": 312,
+            "right": 352,
+            "width": 40
+          },
+          {
+            "x": 359,
+            "right": 399,
+            "width": 40
+          },
+          {
+            "x": 406,
+            "right": 446,
+            "width": 40
+          }
+        ],
+        "colors": [
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          },
+          {
+            "fg": "rgb(232, 237, 244)",
+            "bg": "rgb(22, 75, 89)"
+          }
+        ]
+      },
+      "ratios": [
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324,
+        8.170621139356324
+      ]
+    }
+  ],
+  "errors": [],
+  "zoom": "200% CSS zoom/reflow; native browser toolbar zoom not tested"
+}

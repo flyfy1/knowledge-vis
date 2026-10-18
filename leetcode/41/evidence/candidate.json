@@ -1,0 +1,20 @@
+{
+  "candidate": "41-review-1-repair-20261018",
+  "status": "self-checked; independent re-review pending",
+  "baseHead": "be7c5e8bf235579f19509783ab7998664102517a",
+  "files": {
+    "index.html": "1b10a05385a4b3962c0eaaa890287216d6308ea5994e2b76054535a2b8cfc0cd",
+    "app.js": "e825c2e01d5019e48af04b379274fbaf1203b1f73e7d8c52b90c1ca304f33d9c",
+    "copy.js": "3ee8de0a474aab78c04df47ae1b5ba5ed19cd1c8e110b9921ec9dc64f9931460",
+    "style.css": "791040323b6545d98ce46105c6346ebc848643d63311563cf64870d67a639568",
+    "solution.py": "f7ca1a5e26b83ae2be3d7b498992a1eaa5eb8d98460b1b6db8bf2ebf12237d77",
+    "python-code.js": "3dd24b80d2a57d814e1beec5b3461b5be83bb26e8b341e56f8c028b3002105e4",
+    "lesson-entry.json": "602a674bbebf5e24dc0626da106ed13f2a4d0f43ea238f345b9509187ab7da43",
+    "BRIEF.md": "fdf4b247b34dc42e3e9f07a323d260064236d3b6e01e680b2479c7505891851f",
+    "SELF-CHECK.md": "864601b6e89adbc3c54fedd022460c9c0209e587279d9d13d6818c90ce496f46",
+    "tests/algorithm-regression.py": "d8fa693f95cb0fc30d65a8c045c68813a12112325e21640e2eeb6ab413f1e547",
+    "tests/browser-check.cjs": "e96f0b35570938ca35c6ab53dc88edf8d6b25dc49384197630863d6b743a5344",
+    "tests/review-regression.cjs": "f9419b966e3b605d74c589b030884bd2878953e71dd92852153721be9558ba7d",
+    "tests/trace-regression.cjs": "deb8edbe0abe765f893c962a65773a3e816f4529f2aae907bc852c5ba7b97cfd"
+  }
+}
