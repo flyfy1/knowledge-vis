@@ -247,6 +247,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n·n! + S·n²) time; O(n) auxiliary + O(S·n²) output"
   },
   {
+    "id": 52,
+    "title": {
+      "zh": "N 皇后 II",
+      "en": "N-Queens II"
+    },
+    "desc": {
+      "zh": "用逐行约束搜索数完整解，观察计数与完整撤销。",
+      "en": "Count complete queen arrangements with row-by-row constraints and reversible search."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "回溯",
+        "en": "Backtracking"
+      },
+      {
+        "zh": "计数",
+        "en": "Counting"
+      }
+    ],
+    "path": "52/",
+    "leetcodeUrl": "https://leetcode.com/problems/n-queens-ii/",
+    "language": "Python",
+    "complexity": "O(n·n!) time, O(n) auxiliary space; average O(1) set operations"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
