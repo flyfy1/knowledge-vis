@@ -220,12 +220,12 @@ window.LESSON_COPY = {
     "0 ≤ k ≤ 10⁴; each list length ≤ 500; total nodes N ≤ 10⁴; values −10⁴…10⁴."
   ],
   "hand": [
-    "[[1,4],[1,3],[2]]：先比较三个头 1、1、2。取走第一个 1 后，只需把它的后继 4 放入候选；输出依次是 1、1、2、3、4。",
-    "For [[1,4],[1,3],[2]], compare heads 1,1,2. After taking the first 1, only its successor 4 enters the candidates. The output is 1,1,2,3,4."
+    "给五个节点标身份：A=0:0(1) → B=0:1(4) → None；C=1:0(1) → D=1:1(3) → None；E=2:0(2) → None。候选 A,C,E，按来源编号打破同值：取 A，补 B，候选值变 4,1,2；取 C，补 D，变 4,3,2；取 E，无后继，剩 4,3；取 D，剩 4；最后取 B。重连后的链是 A → C → E → D → B → None，数值 1,1,2,3,4。A 和 C 数值相同，但不能合并成一个对象。",
+    "Label five nodes: A=0:0(1) → B=0:1(4) → None; C=1:0(1) → D=1:1(3) → None; E=2:0(2) → None. Start with A,C,E; source ID breaks the tie. Take A and add B: candidate values become 4,1,2. Take C and add D: 4,3,2. Take E, with no successor: 4,3. Take D: 4. Finally take B. Rewire to A → C → E → D → B → None, with values 1,1,2,3,4. A and C have equal values but must remain separate objects."
   ],
   "cost": [
-    "收集再排序可验证值序列，时间 O(N log N)、空间 O(N)，但还要另建或重连链表。每轮扫描全部 k 个头也要 O(Nk)。已排序的后继不可能先于自己的头被选中。",
-    "Collect-and-sort verifies values in O(N log N) time and O(N) space, but still needs list construction. Scanning all k heads each round costs O(Nk). A sorted successor cannot be chosen before its own head."
+    "收集再排序可验证值序列，时间 O(k + N log(N+1))、空间 O(N)，但还要另建或重连链表。每轮扫描全部 k 个头要 O(k + Nk)。已排序的后继不可能先于自己的头被选中。不要一口气接完选中的整条链：[[1,100],[2,3]] 会得到错误的 1,100,2,3；每次只确定一个最小节点，才得到 1,2,3,100。",
+    "Collect-and-sort verifies values in O(k + N log(N+1)) time and O(N) space, but still needs list construction. Scanning all k heads each round costs O(k + Nk). A sorted successor cannot precede its own head. Do not finish the selected list at once: [[1,100],[2,3]] would give the wrong order 1,100,2,3. Choosing only one minimum at a time gives 1,2,3,100."
   ],
   "derive": [
     "最小堆是一棵以数组保存的完全二叉树，父节点值不大于孩子；根就是所有候选中最小的。数组下标 h 的孩子是 2h+1、2h+2。只保存每条尚未耗尽链表的第一个节点。",
@@ -290,6 +290,66 @@ window.LESSON_COPY = {
   "introducedLink": [
     "观察节点身份与指针重连",
     "Observe node identity and pointer rewiring"
+  ],
+  "nodeBasics": [
+    "节点是一个对象：val 存数值，next 指向下一个节点；None 表示没有后继。LeetCode 提供 ListNode。输入 lists 是 Python 列表，存各条链表的头对象（空链表存 None），不是所有节点的数组。下面的 [[1,4],[1,3],[2]] 只是链表的值写法；输出必须是一个头对象，沿 next 能走遍所有原节点。",
+    "A node is an object: val holds its value and next refers to the next node; None means no successor. LeetCode supplies ListNode. The input lists is a Python list of head objects (None for an empty list), not an array of all nodes. Below, [[1,4],[1,3],[2]] is shorthand for the lists’ values. Return one head object whose next links visit all original nodes."
+  ],
+  "heapExample": [
+    "例如堆数组 [1,3,2,7]：弹出 1，用末尾 7 补根，暂成 [7,3,2]；较小孩子是 2，交换后为 [2,3,7]。再插入 4 得 [2,3,7,4]，4 ≥ 父节点 3，不再上移。只沿一条父子路径修复，不扫描每个头。",
+    "For heap values [1,3,2,7], pop 1 and move the last value 7 to the root: [7,3,2]. The smaller child is 2; swap to get [2,3,7]. Insert 4: [2,3,7,4]. Since 4 ≥ its parent 3, stop. Repair follows one parent–child path instead of scanning every head."
+  ],
+  "linkTitle": [
+    "真实 next 如何改变？",
+    "How do the actual next links change?"
+  ],
+  "linkIntro": [
+    "下面是默认“三个候选流”实验事件 0、1、3 的固定对照表（不是其他预设的当前状态）。0:0 表示来源 0 的第 0 个节点，值 1；0:1 值 4，1:0 值 1，1:1 值 3。next 是节点对象上的后继字段；None 表示链尾。dummy 是新建的占位节点 D（不进入答案），tail 是指向已输出末节点的变量；开始时两者指向同一对象 D。",
+    "This fixed table compares events 0, 1 and 3 of the default “Three candidate streams” experiment; it is not the current state of other presets. Identity 0:0 means source 0, node 0, value 1; 0:1 has value 4, 1:0 value 1, and 1:1 value 3. next is a node’s successor field; None ends a chain. dummy is a new placeholder node D, excluded from the answer. tail refers to the last emitted node; initially both variables refer to D."
+  ],
+  "linkEvent": [
+    "时刻 / 代码",
+    "Moment / code"
+  ],
+  "linkMutation": [
+    "字段或变量：旧 → 新",
+    "Field or variable: old → new"
+  ],
+  "linkReach": [
+    "从 dummy.next 实际可走到",
+    "Actually reachable from dummy.next"
+  ],
+  "link0": [
+    "事件 0：dummy = tail = ListNode(0)",
+    "Event 0: dummy = tail = ListNode(0)"
+  ],
+  "link0Change": [
+    "D.next = None；tail = D。原节点的 next 保持输入链。",
+    "D.next = None; tail = D. Original nodes keep their input links."
+  ],
+  "link1": [
+    "事件 1：node = 0:0；tail.next = node；tail = node",
+    "Event 1: node = 0:0; tail.next = node; tail = node"
+  ],
+  "link1Change": [
+    "D.next：None → 0:0；tail：D → 0:0。node.next 仍为 0:1。",
+    "D.next: None → 0:0; tail: D → 0:0. node.next is still 0:1."
+  ],
+  "link3": [
+    "事件 3：node = 1:0；tail.next = node；tail = node",
+    "Event 3: node = 1:0; tail.next = node; tail = node"
+  ],
+  "link3Change": [
+    "0:0.next：0:1 → 1:0；tail：0:0 → 1:0。node.next 仍为 1:1。",
+    "0:0.next: 0:1 → 1:0; tail: 0:0 → 1:0. node.next is still 1:1."
+  ],
+  "linkLedger": [
+    "事件 1 的输出历史只有 [0:0]，但实际链仍为 0:0 → 0:1 → 0:2；历史记录的是“已经选定”的逻辑前缀，不是已经截断的链。事件 2 先把 0:1 放入堆，事件 3 才改写 0:0.next，因此不会丢失旧分支。tail.next = node 改的是旧尾节点，不是新 node 的 next；所以事件 4 仍能读取 1:0.next，把 1:1 放入堆。图中的输入行保留原始顺序，不表示当前 next。",
+    "At event 1 the output ledger contains only [0:0], although the physical chain is still 0:0 → 0:1 → 0:2. The ledger records the logically selected prefix, not a detached chain. Event 2 puts 0:1 in the heap before event 3 overwrites 0:0.next, so that branch remains available. tail.next = node changes the old tail, not the new node’s next. Event 4 can therefore still read 1:0.next and push 1:1. The diagram’s input rows retain original order; they do not depict current next links."
+  ],
+  "pointerCode": [
+    "ListNode(0) 只新建占位节点 D，dummy = tail 让两个变量指向它。每次 tail.next = node 改写旧尾的链接，tail = node 只移动变量，不复制节点。node.next 尚未改变，所以可把后继补入堆。最后 tail.next = None 明确结束链；return dummy.next 跳过 D，返回第一个真实节点。无节点时 D.next 始终为 None，返回 None。",
+    "ListNode(0) creates only the placeholder D; dummy = tail makes both variables refer to it. Each tail.next = node rewrites the old tail’s link; tail = node moves a variable without copying a node. node.next is unchanged, so its successor can enter the heap. Finally tail.next = None terminates the chain; return dummy.next skips D and returns the first real node. With no nodes, D.next stays None, so the return is None."
   ]
 };
 window.LESSON = {
@@ -312,13 +372,13 @@ window.LESSON = {
     "0 ≤ k ≤ 10⁴; each list length ≤ 500; total nodes N ≤ 10⁴; values −10⁴…10⁴."
   ],
   "hand": [
-    "[[1,4],[1,3],[2]]：先比较三个头 1、1、2。取走第一个 1 后，只需把它的后继 4 放入候选；输出依次是 1、1、2、3、4。",
-    "For [[1,4],[1,3],[2]], compare heads 1,1,2. After taking the first 1, only its successor 4 enters the candidates. The output is 1,1,2,3,4."
+    "给五个节点标身份：A=0:0(1) → B=0:1(4) → None；C=1:0(1) → D=1:1(3) → None；E=2:0(2) → None。候选 A,C,E，按来源编号打破同值：取 A，补 B，候选值变 4,1,2；取 C，补 D，变 4,3,2；取 E，无后继，剩 4,3；取 D，剩 4；最后取 B。重连后的链是 A → C → E → D → B → None，数值 1,1,2,3,4。A 和 C 数值相同，但不能合并成一个对象。",
+    "Label five nodes: A=0:0(1) → B=0:1(4) → None; C=1:0(1) → D=1:1(3) → None; E=2:0(2) → None. Start with A,C,E; source ID breaks the tie. Take A and add B: candidate values become 4,1,2. Take C and add D: 4,3,2. Take E, with no successor: 4,3. Take D: 4. Finally take B. Rewire to A → C → E → D → B → None, with values 1,1,2,3,4. A and C have equal values but must remain separate objects."
   ],
   "baseline": "def baseline_values(lists):\n    values = []\n    for node in lists:\n        while node:\n            values.append(node.val)\n            node = node.next\n    return sorted(values)  # oracle for values, not a linked-list return",
   "cost": [
-    "收集再排序可验证值序列，时间 O(N log N)、空间 O(N)，但还要另建或重连链表。每轮扫描全部 k 个头也要 O(Nk)。已排序的后继不可能先于自己的头被选中。",
-    "Collect-and-sort verifies values in O(N log N) time and O(N) space, but still needs list construction. Scanning all k heads each round costs O(Nk). A sorted successor cannot be chosen before its own head."
+    "收集再排序可验证值序列，时间 O(k + N log(N+1))、空间 O(N)，但还要另建或重连链表。每轮扫描全部 k 个头要 O(k + Nk)。已排序的后继不可能先于自己的头被选中。不要一口气接完选中的整条链：[[1,100],[2,3]] 会得到错误的 1,100,2,3；每次只确定一个最小节点，才得到 1,2,3,100。",
+    "Collect-and-sort verifies values in O(k + N log(N+1)) time and O(N) space, but still needs list construction. Scanning all k heads each round costs O(k + Nk). A sorted successor cannot precede its own head. Do not finish the selected list at once: [[1,100],[2,3]] would give the wrong order 1,100,2,3. Choosing only one minimum at a time gives 1,2,3,100."
   ],
   "derive": [
     "最小堆是一棵以数组保存的完全二叉树，父节点值不大于孩子；根就是所有候选中最小的。数组下标 h 的孩子是 2h+1、2h+2。只保存每条尚未耗尽链表的第一个节点。",
@@ -342,6 +402,13 @@ window.LESSON = {
   ],
   "mapping": [
     [
+      "dummy = tail = ListNode(0)",
+      [
+        "新建占位节点，两个变量先指向同一对象",
+        "Create one placeholder; both variables initially refer to it"
+      ]
+    ],
+    [
       "(node.val, source, node)",
       [
         "按值排序，同值用来源编号比较",
@@ -351,8 +418,8 @@ window.LESSON = {
     [
       "tail.next = node",
       [
-        "把真实节点接到输出尾部",
-        "Link the actual node to the output tail"
+        "改写旧尾的 next；再用 tail = node 移动尾变量",
+        "Rewrite the old tail’s next; then move the tail variable with tail = node"
       ]
     ],
     [
