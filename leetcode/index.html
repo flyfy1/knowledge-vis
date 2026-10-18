@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LeetCode · 一步一步想出来</title>
-  <meta name="description" content="用交互实验和启发式问题，逐步推导 LeetCode 解法。统一使用 Python。">
+  <meta name="description" content="用交互实验和启发式问题，逐步推导 LeetCode 解法。主要使用 Python；JavaScript 专项题附 Python 概念对照。">
   <link rel="stylesheet" href="style.css?v=lc-ids1">
 </head>
 <body>
   <header class="site-head">
     <div class="head-top"><a class="back-link" href="../" data-i18n="back">← 知识索引</a><div class="lang-toggle" id="langToggle" role="group" aria-label="Language / 语言"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div></div>
-    <p class="eyebrow">LEETCODE · PYTHON</p>
+    <p class="eyebrow">LEETCODE · STEP BY STEP</p>
     <h1 data-i18n="title">答案，一步一步想出来</h1>
     <p class="tagline" data-i18n="intro"></p>
   </header>
@@ -19,17 +19,17 @@
     <noscript>JavaScript is needed for the interactive lessons. <a href="2916/">2916 · Python</a></noscript>
   </main>
   <footer class="site-foot" data-i18n="footer"></footer>
-  <script src="common.js?v=lc2916-astra2"></script><script src="problems.config.js?v=aaa0ad90148c"></script>
+  <script src="common.js?v=lc2916-astra2"></script><script src="problems.config.js?v=1b2eb74dae76"></script>
   <script>
   (() => {
     const ui = LeetCodeLocale({
       docTitle:['LeetCode · 一步一步想出来','LeetCode · Reason Your Way to the Solution'],
       back:['← 知识索引','← Knowledge Index'],
       title:['答案，一步一步想出来','Reason your way to the solution'],
-      intro:['先观察一个小例子，再猜规律、找反例、推公式，最后用 Python 把想法写下来。每题都是一篇可以动手验证的知识讲解。','Observe a small example, make a prediction, test it, derive the rule, and turn it into Python. Each problem becomes a lesson you can explore.'],
-      path:['学习路线：读懂题目 → 手算 → 暴力解法 → 找出重复工作 → 推导优化 → Python → 自己验证。','The learning path: understand → work by hand → brute force → identify repeated work → derive an improvement → Python → verify.'],
+      intro:['先观察一个小例子，再猜规律、找反例、推公式，最后把想法写成代码。每题都是一篇可以动手验证的知识讲解。','Observe a small example, make a prediction, test it, derive the rule, and turn it into code. Each problem becomes a lesson you can explore.'],
+      path:['学习路线：读懂题目 → 手算 → 暴力解法 → 找出重复工作 → 推导优化 → 实现 → 自己验证。','The learning path: understand → work by hand → brute force → identify repeated work → derive an improvement → implement → verify.'],
       official:['LeetCode 原题 ↗','View on LeetCode ↗'],hard:['困难','Hard'],open:['开始推导 →','Explore the lesson →'],
-      footer:['visual.integ.life · LeetCode 专区 · 所有解题代码使用 Python','visual.integ.life · LeetCode collection · All solution code in Python']
+      footer:['visual.integ.life · LeetCode 专区 · 以 Python 为主；JavaScript 专项题附 Python 概念对照','visual.integ.life · LeetCode collection · Primarily Python; JavaScript-specific lessons include Python conceptual comparisons']
     });
     function render() {
       const list=document.getElementById('problemList');list.replaceChildren();
