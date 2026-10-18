@@ -209,8 +209,8 @@ window.LEETCODE_PROBLEMS = [
       "en": "Wildcard Matching"
     },
     "desc": {
-      "zh": "dp[i][j] 表示文本前 i 个字符与模式前 j 个字符完全匹配。普通字符与 ? 从左上格转移；* 为零字符时读左格 dp[i][j−1]，再吃一个字符时读上格 dp[i−1][j]。",
-      "en": "dp[i][j] means the first i text characters fully match the first j pattern characters. Literals and ? use the diagonal. A * consuming nothing uses the left cell dp[i][j−1]; consuming one more uses above, dp[i−1][j]."
+      "zh": "从重复递归推导前缀状态，逐格解释独立星号的两种选择与滚动行。",
+      "en": "Derive prefix states from repeated recursion, then trace standalone stars and rolling rows."
     },
     "difficulty": "hard",
     "topics": [
@@ -222,7 +222,7 @@ window.LEETCODE_PROBLEMS = [
     "path": "44/",
     "leetcodeUrl": "https://leetcode.com/problems/wildcard-matching/",
     "language": "Python",
-    "complexity": "O((m+1)(n+1))"
+    "complexity": "O((m+1)(n+1)) time; O(n+1) auxiliary space"
   },
   {
     "id": 51,
