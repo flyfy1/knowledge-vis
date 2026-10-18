@@ -585,6 +585,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(26NL²) expected time; O(NL) auxiliary space"
   },
   {
+    "id": 132,
+    "title": {
+      "zh": "分割回文串 II",
+      "en": "Palindrome Partitioning II"
+    },
+    "desc": {
+      "zh": "从最后一段出发，用回文表与前缀最少段数求最少切割。",
+      "en": "Compare every final palindrome using a palindrome table and prefix minima."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "132/",
+    "leetcodeUrl": "https://leetcode.com/problems/palindrome-partitioning-ii/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(n²) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
