@@ -377,6 +377,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(m+n) time; O(k) auxiliary space, k≤52; O(L) output"
   },
   {
+    "id": 87,
+    "title": {
+      "zh": "扰乱字符串",
+      "en": "Scramble String"
+    },
+    "desc": {
+      "zh": "从两片纸条到区间动态规划：逐个切口验证两侧的合法对应。",
+      "en": "Derive interval dynamic programming by testing both child alignments at each split."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "87/",
+    "leetcodeUrl": "https://leetcode.com/problems/scramble-string/",
+    "language": "Python",
+    "complexity": "O(n^4) time; O(n^3) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
