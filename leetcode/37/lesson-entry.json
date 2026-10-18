@@ -1,0 +1,38 @@
+{
+  "id": 37,
+  "title": {
+    "zh": "解数独",
+    "en": "Sudoku Solver"
+  },
+  "desc": {
+    "zh": "逐格排除冲突，用已用数集合保持约束，失败后完整撤销。",
+    "en": "Exclude conflicts cell by cell, cache used digits, and restore each failed choice."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "回溯",
+      "en": "Backtracking"
+    },
+    {
+      "zh": "约束集合",
+      "en": "Constraint sets"
+    }
+  ],
+  "path": "37/",
+  "leetcodeUrl": "https://leetcode.com/problems/sudoku-solver/",
+  "language": "Python",
+  "complexity": "O(9^E) time; O(E) auxiliary space for E empty cells on the fixed 9×9 board",
+  "concepts": [
+    {
+      "name": "Sudoku backtracking and restoration",
+      "step": 1,
+      "description": "Cache used digits and restore the board and all three constraint sets after failure."
+    },
+    {
+      "name": "Local validity versus completion",
+      "step": 0,
+      "description": "Hand-calculate a legal move that leaves the next cell without a candidate."
+    }
+  ]
+}
