@@ -576,3 +576,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Local validity versus completion | `leetcode/37/#step0` | Hand-calculate a legal move that leaves the next cell without a candidate. |
 
 <!-- /leetcode-37-campaign -->
+
+
+<!-- leetcode-174-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Backward entry-health DP | `leetcode/174/#step1` | Derive the minimum health before entering each room. |
+| Rolling-row dependency invariant | `leetcode/174/#step4` | Reuse a row while preserving right and down successor needs. |
+
+<!-- /leetcode-174-campaign -->
