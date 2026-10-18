@@ -1,0 +1,163 @@
+{
+  "kind": "author self-check",
+  "result": "pass",
+  "url": "http://127.0.0.1:18774/leetcode/84/",
+  "operations": 244,
+  "presets": 9,
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "geometry": [
+    {
+      "lang": "en",
+      "width": 320,
+      "chartWidth": 262,
+      "columnWidth": 43.65625
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "chartWidth": 332,
+      "columnWidth": 55.328125
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "chartWidth": 646,
+      "columnWidth": 107.65625
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "chartWidth": 910,
+      "columnWidth": 151.65625
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "chartWidth": 262,
+      "columnWidth": 43.65625
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "chartWidth": 332,
+      "columnWidth": 55.328125
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "chartWidth": 646,
+      "columnWidth": 107.65625
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "chartWidth": 910,
+      "columnWidth": 151.65625
+    }
+  ],
+  "zoom": "200% CSS layout zoom in real Chromium",
+  "contrastResults": [
+    {
+      "selector": ".explain",
+      "color": "rgb(201, 212, 226)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".step-nav a",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#next",
+      "color": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#prev",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".height",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": ".index",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "th",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "#copyStatus",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": "#feedback",
+      "color": "rgb(255, 122, 147)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 6.34696669826778
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "color": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "disabledColors": [
+    {
+      "selector": "#prev",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#reset",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    }
+  ],
+  "rectangleBoundary": {
+    "border": "rgb(255, 180, 84)",
+    "separator": "rgb(13, 17, 23)",
+    "shadow": "rgb(13, 17, 23) 0px 0px 0px 2px inset"
+  },
+  "rectangleContrast": 10.731637051347173,
+  "focus": {
+    "width": "3px",
+    "color": "rgb(255, 180, 84)",
+    "style": "solid"
+  },
+  "focusRatio": 8.937191437807625,
+  "cssBytes": 12137,
+  "sourceDisplayCopyDownloadExact": true,
+  "deniedClipboardFallback": true,
+  "deniedStorageAndFileOffline": true,
+  "consoleErrors": [],
+  "assetErrors": [],
+  "externalRuntimeRequests": []
+}
