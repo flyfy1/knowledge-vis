@@ -1,0 +1,60 @@
+{
+  "kind": "author self-check",
+  "modelCases": 1005,
+  "frameChecks": 7327,
+  "checks": [
+    "en 320: populated bilingual copy, no document overflow, exact trace/quiz preservation",
+    "en 390: populated bilingual copy, no document overflow, exact trace/quiz preservation",
+    "en 736: populated bilingual copy, no document overflow, exact trace/quiz preservation",
+    "en 1440: populated bilingual copy, no document overflow, exact trace/quiz preservation",
+    "zh 320: populated bilingual copy, no document overflow, exact trace/quiz preservation",
+    "zh 390: populated bilingual copy, no document overflow, exact trace/quiz preservation",
+    "zh 736: populated bilingual copy, no document overflow, exact trace/quiz preservation",
+    "zh 1440: populated bilingual copy, no document overflow, exact trace/quiz preservation"
+  ],
+  "zoomEvidence": [
+    {
+      "lang": "en",
+      "api": "chrome.tabs.setZoom / chrome.tabs.getZoom",
+      "reportedZoom": 2,
+      "before": {
+        "innerWidth": 1440,
+        "devicePixelRatio": 1,
+        "cssZoom": "1"
+      },
+      "after": {
+        "innerWidth": 720,
+        "devicePixelRatio": 2,
+        "cssZoom": "1",
+        "scrollWidth": 720
+      },
+      "operation": "Enter Next, Space Rewind, range ArrowRight, Reset, empty preset, sticky navigation: pass"
+    },
+    {
+      "lang": "zh",
+      "api": "chrome.tabs.setZoom / chrome.tabs.getZoom",
+      "reportedZoom": 2,
+      "before": {
+        "innerWidth": 1440,
+        "devicePixelRatio": 1,
+        "cssZoom": "1"
+      },
+      "after": {
+        "innerWidth": 720,
+        "devicePixelRatio": 2,
+        "cssZoom": "1",
+        "scrollWidth": 720
+      },
+      "operation": "Enter Next, Space Rewind, range ArrowRight, Reset, empty preset, sticky navigation: pass"
+    }
+  ],
+  "sourceParity": "canonical/mirror/display/clipboard/streamed download/offline exact",
+  "regressions": "all presets, endpoints, rewind/replay, reset, slider, all quiz options, stale feedback, locale state, keyboard, links, denied storage/clipboard, offline",
+  "errors": [],
+  "ignored": [
+    {
+      "url": "http://127.0.0.1:18770/favicon.ico",
+      "message": "Failed to load resource: the server responded with a status of 404 (File not found)"
+    }
+  ]
+}

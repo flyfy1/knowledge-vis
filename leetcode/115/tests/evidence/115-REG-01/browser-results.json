@@ -1,0 +1,128 @@
+{
+  "status": "passed",
+  "results": [
+    "en preset 0 endpoints/replay",
+    "en preset 1 endpoints/replay",
+    "en preset 2 endpoints/replay",
+    "en preset 3 endpoints/replay",
+    "en preset 4 endpoints/replay",
+    "en preset 5 endpoints/replay",
+    "en preset 6 endpoints/replay",
+    "en preset 7 endpoints/replay",
+    "zh preset 0 endpoints/replay",
+    "zh preset 1 endpoints/replay",
+    "zh preset 2 endpoints/replay",
+    "zh preset 3 endpoints/replay",
+    "zh preset 4 endpoints/replay",
+    "zh preset 5 endpoints/replay",
+    "zh preset 6 endpoints/replay",
+    "zh preset 7 endpoints/replay"
+  ],
+  "viewports": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "200% CSS zoom at 320,390,1440, actual browser layout and screenshots",
+  "keyboard": {
+    "outline": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "cssBytes": 12108,
+  "contrast": [
+    {
+      "fg": "text",
+      "bg": "bg",
+      "ratio": 16.09
+    },
+    {
+      "fg": "text",
+      "bg": "panel",
+      "ratio": 14.7
+    },
+    {
+      "fg": "text",
+      "bg": "panel2",
+      "ratio": 13.4
+    },
+    {
+      "fg": "muted",
+      "bg": "bg",
+      "ratio": 7.74
+    },
+    {
+      "fg": "muted",
+      "bg": "panel",
+      "ratio": 7.08
+    },
+    {
+      "fg": "muted",
+      "bg": "panel2",
+      "ratio": 6.45
+    },
+    {
+      "fg": "accent",
+      "bg": "bg",
+      "ratio": 13.1
+    },
+    {
+      "fg": "accent",
+      "bg": "panel",
+      "ratio": 11.97
+    },
+    {
+      "fg": "accent",
+      "bg": "panel2",
+      "ratio": 10.91
+    },
+    {
+      "fg": "accent2",
+      "bg": "bg",
+      "ratio": 10.73
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel",
+      "ratio": 9.81
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel2",
+      "ratio": 8.94
+    },
+    {
+      "fg": "good",
+      "bg": "bg",
+      "ratio": 12.01
+    },
+    {
+      "fg": "good",
+      "bg": "panel",
+      "ratio": 10.98
+    },
+    {
+      "fg": "good",
+      "bg": "panel2",
+      "ratio": 10
+    },
+    {
+      "fg": "bad",
+      "bg": "bg",
+      "ratio": 7.62
+    },
+    {
+      "fg": "bad",
+      "bg": "panel",
+      "ratio": 6.97
+    },
+    {
+      "fg": "bad",
+      "bg": "panel2",
+      "ratio": 6.35
+    }
+  ],
+  "errors": [],
+  "sourceParity": "display + clipboard + fallback + download + offline",
+  "scope": "Author browser self-check; no independent acceptance or real-device claim"
+}

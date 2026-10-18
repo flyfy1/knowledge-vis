@@ -1,0 +1,29 @@
+{
+  "finding": "115-REG-01",
+  "scope": "Author self-check; independent re-review pending",
+  "red": {
+    "complexity": {
+      "time": "O(mn) arithmetic operations",
+      "space": "O(n) integer cells"
+    },
+    "exception": "AttributeError: 'dict' object has no attribute 'strip'",
+    "fixture_outputs_unchanged": true
+  },
+  "green": {
+    "complexity": "O(mn) arithmetic operations; O(n) integer cells",
+    "real_registration": "passed",
+    "registry_entry_exact": true,
+    "other_entries_preserved": true,
+    "concept_links_and_index_version": "passed",
+    "idempotent": true
+  },
+  "production_inputs_unchanged": {
+    "leetcode/problems.config.js": "1002096d388a712fb60b55086c6474f002de07f9dcf5f5c834d1b729ee4c3a37",
+    "leetcode/index.html": "b471545019781ef5d5f6f1d02eb02b7e5e5020ccb99288cd838e639c848f1e42",
+    "CONCEPT-MAP.md": "dfc5462bcd30a9e19144e8a8c43d5ab427e3eadd9c30abe55ace945fc622ef7a",
+    "leetcode/catalog/hard-problems.json": "fb4ac08e84b8825cd380cdac8ccb791f0e53ecf3660e7445b9ac623f43e85fb6",
+    "scripts/register_leetcode_lesson.py": "bdf7e690a7e8fa975eccfbbfc079323ff790546fd946d17624bdd0610ccf497a",
+    "scripts/leetcode_registry.py": "a23b9b9e4feec966969c0b4c60f16e19cc2616ea0e1b2e587d15605e739349d6"
+  },
+  "metadata_sha256": "db9735e588212f1ec37dbdd3dceff171d745958bfd26a263683be7cd91872171"
+}

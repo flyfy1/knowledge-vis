@@ -455,6 +455,58 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n^4) time; O(n^3) auxiliary space"
   },
   {
+    "id": 115,
+    "title": {
+      "zh": "不同的子序列",
+      "en": "Distinct Subsequences"
+    },
+    "desc": {
+      "zh": "从三个位置组合推导子序列计数与倒序动态规划。",
+      "en": "Derive subsequence counting and reverse DP from three choices of positions."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "115/",
+    "leetcodeUrl": "https://leetcode.com/problems/distinct-subsequences/",
+    "language": "Python",
+    "complexity": "O(mn) arithmetic operations; O(n) integer cells"
+  },
+  {
+    "id": 123,
+    "title": {
+      "zh": "买卖股票的最佳时机 III",
+      "en": "Best Time to Buy and Sell Stock III"
+    },
+    "desc": {
+      "zh": "从两笔手算交易推导四个现金状态。",
+      "en": "Derive four cash states from two hand-worked trades."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "状态压缩",
+        "en": "State compression"
+      }
+    ],
+    "path": "123/",
+    "leetcodeUrl": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",
+    "language": "Python",
+    "complexity": "O(n) time / O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
