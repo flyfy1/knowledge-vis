@@ -1,0 +1,25 @@
+{
+  "modelCases": 8029,
+  "prefixChecks": 173892,
+  "browserChecks": [
+    "en 320: no overflow, all bilingual text populated; trace and quiz preserved",
+    "en 390: no overflow, all bilingual text populated; trace and quiz preserved",
+    "en 736: no overflow, all bilingual text populated; trace and quiz preserved",
+    "en 1440: no overflow, all bilingual text populated; trace and quiz preserved",
+    "zh 320: no overflow, all bilingual text populated; trace and quiz preserved",
+    "zh 390: no overflow, all bilingual text populated; trace and quiz preserved",
+    "zh 736: no overflow, all bilingual text populated; trace and quiz preserved",
+    "zh 1440: no overflow, all bilingual text populated; trace and quiz preserved"
+  ],
+  "sourceParity": "canonical/mirror/display/clipboard/download/offline exact",
+  "controls": "all presets/endpoints/rewind/reset/predictions/locales/keyboard/deep links pass",
+  "denial": "clipboard and storage denied in both locales: pass",
+  "errors": [],
+  "ignored": [
+    {
+      "message": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "url": "http://127.0.0.1:18770/favicon.ico"
+    }
+  ],
+  "zoom": "CSS root zoom=2; browser-menu zoom not exercised"
+}

@@ -1,0 +1,35 @@
+{
+  "oracle_cases": 8029,
+  "overlap_paths": [
+    [
+      [
+        "aa",
+        "a*a*b"
+      ],
+      [
+        "aa",
+        "a*b"
+      ],
+      [
+        "a",
+        "a*b"
+      ]
+    ],
+    [
+      [
+        "aa",
+        "a*a*b"
+      ],
+      [
+        "a",
+        "a*a*b"
+      ],
+      [
+        "a",
+        "a*b"
+      ]
+    ]
+  ],
+  "boundary_and_max_cases": 6,
+  "exact_python_mirror": true
+}
