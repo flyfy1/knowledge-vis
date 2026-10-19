@@ -20,10 +20,10 @@ const STR = {
     /* ---------- 第 0 步 ---------- */
     s0k: '第 0 步 · 先玩起来',
     s0t: '放大一千亿倍，还没到底',
-    s0e: '这就是 Mandelbrot 集的全貌：中央偏右一颗「心脏形」主体，左侧拖着一条细长的天线，周围还伸出芽苞、触须和螺旋。它来自一行公式：从 z = 0 出发，反复计算 <strong>z ← z² + c</strong>。c 是图上的点——迭代下去跑不远的点涂黑，跑掉的按跑掉的快慢上色。<strong>现在就上手</strong>：在图上拖出一个框放大，或用滚轮缩放、双击放大，看看细节是不是越挖越多。',
+    s0e: '这就是 Mandelbrot 集的全貌：中央偏右一颗「心脏形」主体，左侧拖着一条细长的天线，周围还伸出芽苞、触须和螺旋。它来自一行公式：从 z = 0 出发，反复计算 <strong>z ← z² + c</strong>。c 是图上的点——迭代下去跑不远的点涂黑，跑掉的按跑掉的快慢上色。<strong>现在就上手</strong>：在图上拖出一个框放大（触屏上用一根手指拖框，效果一样），或用滚轮缩放、双击放大，看看细节是不是越挖越多。',
     s0reset: '回到全景',
     s0ro: '放大倍数 <span>{zoom}</span> · 中心 <span>{cx}, {cy}</span> · 迭代上限 <span>{iter}</span>',
-    s0hint: '拖框 / 滚轮 / 双击都能放大。往左边的天线尖端、或是主体边缘的螺旋群里钻——那里藏着这页后面要细看的东西。',
+    s0hint: '拖框（触屏用手指拖）/ 滚轮 / 双击都能放大。往左边的天线尖端、或是主体边缘的螺旋群里钻——那里藏着这页后面要细看的东西。',
     cZoom: '放大',
 
     /* ---------- 第 1 步 ---------- */
@@ -37,7 +37,7 @@ const STR = {
     s1roEsc: '第 {n} 步：z = {z}，|z| = <span>{mod}</span> &gt; 2 —— 冲出逃逸圆！这个 c <strong>逃逸</strong>了，不属于集合。',
     s1roStay: '已经走了 {n} 步，|z| = {mod}，始终没出圆——这个 c <strong>留下</strong>了，属于 Mandelbrot 集。',
     s1roCycle: '第 {n} 步：z = {z}，|z| = <span>{mod}</span>——轨道开始重复打转（周期循环），永远不会逃逸。',
-    s1hint: '圆不是装饰：第 2 步会证明，只要 |z| 一旦超过 2，就再也回不来了。所以「冲出圆」= 宣判逃逸。',
+    s1hint: '换一个 c（在图上点选、拖动，或按下面的预设）后，轨道会回到 z₀ 重新开始、不会自己继续往前长——再按「单步 →」或「▶ 播放」，看新轨道一步步长出来。圆不是装饰：第 2 步会证明，只要 |z| 一旦超过 2，就再也回不来了。所以「冲出圆」= 宣判逃逸。',
     s1accel: '播放会逐渐加速：前 10 步每帧走 1 步，之后每帧 2 步、第 30 步起每帧 5 步。加速只是「一帧多走几步」——每一步都真实计算并画在图上，读数始终对应当前这一步，没有跳步。',
     cEscCircle: '逃逸圆 |z| = 2',
     cPointC: 'c',
@@ -94,8 +94,7 @@ const STR = {
     s6roOut: 'c = <span>{c}</span>：不在 Mandelbrot 集中 → 右图的朱利亚集<strong>碎成尘埃</strong>。',
     s6roTest: '（用 {iter} 步迭代判定）',
     s6note: '沿着左图的边界慢慢拖：朱利亚集会在「连通的团」与「尘埃」之间千变万化——贴边界的 c 给出的图最精细。所以说 Mandelbrot 集是所有朱利亚集的地图：你在左边点到哪里，右边就是那里的风景。',
-    s6fin: '回头看这一页：一条 z ← z² + c，先决定一个点的命运，再给整个平面染色，放大下去又长出小岛和螺旋，最后发现它还是所有朱利亚集的索引。<strong>同样是一行公式生出整个世界</strong>——和傅里叶页里那些旋转的圆，是同一种震撼。',
-    s6link: '回傅里叶页再看看那些圆 →'
+    s6fin: '回头看这一页：一条 z ← z² + c，先决定一个点的命运，再给整个平面染色，放大下去又长出小岛和螺旋，最后发现它还是所有朱利亚集的索引。<strong>同样是一行公式生出整个世界</strong>——和傅里叶页里那些旋转的圆，是同一种震撼。'
   },
   en: {
     docTitle: 'The Mandelbrot Set · Zoom Forever',
@@ -109,10 +108,10 @@ const STR = {
 
     s0k: 'Step 0 · Start playing',
     s0t: 'Zoom in a hundred billion times — still no bottom',
-    s0e: 'This is the Mandelbrot set in full: a cardioid "heart" just right of centre, a long thin antenna trailing off to the left, ringed with bulbs, tendrils and spirals. It comes from a single line of maths: start from z = 0 and keep computing <strong>z ← z² + c</strong>. Each point of the picture is a c — if the iteration never runs away, the point is painted black; if it escapes, it is coloured by how fast it got out. <strong>Try it now</strong>: drag a box on the picture to zoom in, or use the mouse wheel, or double-click — and watch the detail keep growing.',
+    s0e: 'This is the Mandelbrot set in full: a cardioid "heart" just right of centre, a long thin antenna trailing off to the left, ringed with bulbs, tendrils and spirals. It comes from a single line of maths: start from z = 0 and keep computing <strong>z ← z² + c</strong>. Each point of the picture is a c — if the iteration never runs away, the point is painted black; if it escapes, it is coloured by how fast it got out. <strong>Try it now</strong>: drag a box on the picture to zoom in (on a touchscreen, drag the box with one finger — it works exactly the same way), or use the mouse wheel, or double-click — and watch the detail keep growing.',
     s0reset: 'Back to full view',
     s0ro: 'Zoom <span>{zoom}</span> · Centre <span>{cx}, {cy}</span> · Iteration cap <span>{iter}</span>',
-    s0hint: 'Drag a box, scroll, or double-click to zoom. Dive toward the tip of the antenna on the left, or into the spiral clusters along the edge of the main body — that is where the rest of this page will look closely.',
+    s0hint: 'Drag a box (one finger on a touchscreen), scroll, or double-click to zoom. Dive toward the tip of the antenna on the left, or into the spiral clusters along the edge of the main body — that is where the rest of this page will look closely.',
     cZoom: 'zoom',
 
     s1k: 'Step 1 · The life of one point',
@@ -125,7 +124,7 @@ const STR = {
     s1roEsc: 'Step {n}: z = {z}, |z| = <span>{mod}</span> &gt; 2 — it has burst out of the escape circle! This c <strong>escapes</strong>; it is not in the set.',
     s1roStay: '{n} steps walked, |z| = {mod}, and it has never left the circle — this c <strong>stays</strong>; it belongs to the Mandelbrot set.',
     s1roCycle: 'Step {n}: z = {z}, |z| = <span>{mod}</span> — the orbit has started repeating (a cycle); it will never escape.',
-    s1hint: 'The circle is not decoration: step 2 proves that once |z| passes 2 it can never come back. Crossing the circle is the verdict.',
+    s1hint: 'After you change c (click or drag on the plane, or use a preset below), the orbit restarts at z₀ and does not keep growing on its own — press Step → or ▶ Play again to watch the new orbit grow. The circle is not decoration: step 2 proves that once |z| passes 2 it can never come back. Crossing the circle is the verdict.',
     s1accel: 'Playback speeds up as it goes: one step per beat for the first 10 steps, then 2 steps per beat, and 5 per beat from step 30 on. Speeding up only means several steps per beat — every step is still really computed and drawn, and the readout always shows the true current step. Nothing is skipped.',
     cEscCircle: 'escape circle |z| = 2',
     cPointC: 'c',
@@ -177,8 +176,7 @@ const STR = {
     s6roOut: 'c = <span>{c}</span>: outside the Mandelbrot set → the Julia set on the right has <strong>shattered into dust</strong>.',
     s6roTest: '(judged with {iter} iterations)',
     s6note: 'Drag slowly along the boundary of the left picture: the Julia set morphs endlessly between connected blobs and dust — the c values hugging the boundary give the most intricate pictures. That is the sense in which the Mandelbrot set is a map of all Julia sets: wherever you point on the left, the right shows you the scenery there.',
-    s6fin: 'Look back over this page: one rule, z ← z² + c, first decides the fate of a single point, then paints a whole plane, then grows islands and spirals as you zoom, and finally turns out to be the index of all Julia sets. <strong>One line of formula, an entire world</strong> — the same shock as the spinning circles on the Fourier page.',
-    s6link: 'Back to the Fourier page and its circles →'
+    s6fin: 'Look back over this page: one rule, z ← z² + c, first decides the fate of a single point, then paints a whole plane, then grows islands and spirals as you zoom, and finally turns out to be the index of all Julia sets. <strong>One line of formula, an entire world</strong> — the same shock as the spinning circles on the Fourier page.'
   }
 };
 
