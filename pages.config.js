@@ -427,5 +427,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "junior",
     status: "live",
     path: "pythagoras/"
+  },
+  {
+    slug: "area-model",
+    title: { zh: "乘法是面积 · 点阵铺成一块地", en: "Multiplication Is Area · Arrays Become a Tiled Floor" },
+    desc: {
+      zh: "先不背口诀，把乘法看成面积：点阵铺成地砖、转个方向读出交换律；一块地切一刀，13×17 自己拆成四块相加——这就是分配律和竖式的来历；最后拿 24 块砖反着拼，反找因数对。",
+      en: "Multiplication as area before memorised tables: dot arrays become tiled floors, a quarter-turn shows commutativity, and one cut through a plot splits 13×17 into four blocks that add back up — where the distributive law and the written algorithm come from; ends by factoring 24 tiles in reverse."
+    },
+    tags: [
+      { zh: "面积模型", en: "Area Model" },
+      { zh: "分配律", en: "Distributive Law" },
+      { zh: "因数对", en: "Factor Pairs" }
+    ],
+    category: "math",
+    stage: "primary",
+    status: "live",
+    path: "area-model/"
   }
 ];

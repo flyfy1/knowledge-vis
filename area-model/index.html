@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="category" content="math">
+<meta name="stage" content="primary">
+<title>乘法是面积</title>
+<link rel="stylesheet" href="style.css">
+<script src="../pages.config.js"></script>
+<script src="i18n.js"></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="../" data-i18n="back">← 知识索引</a></p>
+    <div class="badges">
+      <span class="badge" id="categoryBadge"></span>
+      <span class="badge" id="stageBadge"></span>
+    </div>
+    <h1 data-i18n="pageTitle">乘法是面积</h1>
+    <p class="tagline" data-i18n="tagline">乘法不是背出来的口诀，是数出来的面积：一块长方形地有几行几列，方格总数就是乘积。这一页把交换律、分配律、两位数竖式，全还原成同一块地的转法与切法。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+  <a class="nav-step" href="#step0" data-nav="0" data-i18n="nav0">0 点阵数不清</a>
+  <a class="nav-step" href="#step1" data-nav="1" data-i18n="nav1">1 点阵变面积</a>
+  <a class="nav-step" href="#step2" data-nav="2" data-i18n="nav2">2 切一刀</a>
+  <a class="nav-step" href="#step3" data-nav="3" data-i18n="nav3">3 四块地</a>
+  <a class="nav-step" href="#step4" data-nav="4" data-i18n="nav4">4 面积找边长</a>
+</nav>
+
+<main>
+
+<!-- ============ 第 0 步：点阵太多数不清 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步</p>
+    <h2 data-i18n="s0t">点阵太多数不清：乘法是数总数的捷径</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="340" data-i18n-aria="canvasLabel" role="img"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s0rowLab">行数（横排）</span> <span class="val" id="s0-rows-val">4</span></span>
+        <input type="range" id="s0-rows" min="1" max="12" step="1" value="4">
+      </label>
+      <label><span><span data-i18n="s0colLab">列数（竖排）</span> <span class="val" id="s0-cols-val">6</span></span>
+        <input type="range" id="s0-cols" min="1" max="12" step="1" value="6">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button type="button" class="btn big primary" id="s0-count" data-i18n="s0countBtn">逐个点一遍</button>
+      <button type="button" class="btn big" id="s0-reset" data-i18n="reset">重置本步</button>
+    </div>
+    <p class="readout" id="s0-readout" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- ============ 第 1 步：点阵变成地（面积登场） ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步</p>
+    <h2 data-i18n="s1t">点阵变成地：乘法就是面积</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="360" data-i18n-aria="canvasLabel" role="img"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1aLab">长 a（横边，单位：格）</span> <span class="val" id="s1-a-val">6</span></span>
+        <input type="range" id="s1-a" min="1" max="15" step="1" value="6">
+      </label>
+      <label><span><span data-i18n="s1bLab">宽 b（竖边，单位：格）</span> <span class="val" id="s1-b-val">4</span></span>
+        <input type="range" id="s1-b" min="1" max="15" step="1" value="4">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button type="button" class="btn big primary" id="s1-rotate" data-i18n="s1rotBtn">转个方向（旋转 90°）</button>
+      <button type="button" class="btn big" id="s1-reset" data-i18n="reset">重置本步</button>
+    </div>
+    <p class="readout" id="s1-readout" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- ============ 第 2 步：切一刀（分配律） ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步</p>
+    <h2 data-i18n="s2t">切一刀：难算的乘法拆成两块好算的</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="320" data-i18n-aria="canvasLabel" role="img"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2cutLab">切线位置（在第几列后切开）</span> <span class="val" id="s2-cut-val">10</span></span>
+        <input type="range" id="s2-cut" min="1" max="12" step="1" value="10">
+      </label>
+    </div>
+    <div class="ledger">
+      <div class="value-card">
+        <h3 data-i18n="s2leftT">左块</h3>
+        <p id="s2-left"></p>
+      </div>
+      <div class="value-card">
+        <h3 data-i18n="s2rightT">右块</h3>
+        <p id="s2-right"></p>
+      </div>
+    </div>
+    <p class="readout" id="s2-total" aria-live="polite"></p>
+    <p class="readout" id="s2-note" aria-live="polite"></p>
+    <div class="btn-row">
+      <button type="button" class="btn big" id="s2-reset" data-i18n="reset">重置本步</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 第 3 步：两位数 × 两位数 = 四块地 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步</p>
+    <h2 data-i18n="s3t">两位数 × 两位数：一块地切成四块</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="380" data-i18n-aria="canvasLabel" role="img"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3aLab">第一个数（地的宽）</span> <span class="val" id="s3-m-val">12</span></span>
+        <input type="range" id="s3-m" min="11" max="19" step="1" value="12">
+      </label>
+      <label><span><span data-i18n="s3bLab">第二个数（地的高）</span> <span class="val" id="s3-n-val">13</span></span>
+        <input type="range" id="s3-n" min="11" max="19" step="1" value="13">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button type="button" class="btn big primary" id="s3-light" data-i18n="s3lightBtn">逐块点亮算一遍</button>
+      <button type="button" class="btn big" id="s3-reset" data-i18n="reset">重置本步</button>
+    </div>
+    <p class="readout" id="s3-readout" aria-live="polite"></p>
+    <p class="readout" id="s3-vert" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- ============ 第 4 步：面积找边长（因数）+ 自测 + 终章 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步</p>
+    <h2 data-i18n="s4t">反过来：知道面积，找边长</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="330" data-i18n-aria="canvasLabel" role="img"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s4wLab">试边长：宽 w</span> <span class="val" id="s4-w-val">5</span></span>
+        <input type="range" id="s4-w" min="1" max="12" step="1" value="5">
+      </label>
+    </div>
+    <p class="readout" id="s4-readout" aria-live="polite"></p>
+    <p class="readout" id="s4-prog" aria-live="polite"></p>
+    <div class="chips" id="s4-chips"></div>
+    <p class="readout" id="s4-done" aria-live="polite"></p>
+
+    <div class="stage quiz-stage">
+      <p class="stage-title" data-i18n="s4qT">自测：14 × 6 = ?</p>
+      <canvas id="s4q-canvas" height="190" data-i18n-aria="canvasLabel" role="img"></canvas>
+    </div>
+    <p class="explain" data-i18n-html="s4qE"></p>
+    <div class="btn-row">
+      <button type="button" class="btn big" data-quiz="72">72</button>
+      <button type="button" class="btn big" data-quiz="84">84</button>
+      <button type="button" class="btn big" data-quiz="90">90</button>
+      <button type="button" class="btn big primary" id="s4-reveal" data-i18n="s4reveal" disabled>揭晓解析</button>
+    </div>
+    <p class="readout" id="s4-feedback" aria-live="polite"></p>
+    <div class="btn-row">
+      <button type="button" class="btn big" id="s4-reset" data-i18n="reset">重置本步</button>
+    </div>
+
+    <div class="finale">
+      <p data-i18n-html="s4fin"></p>
+      <a class="fourier-link" href="../fractions/#step1" data-i18n="lkFrac"></a>
+      <a class="fourier-link" href="../pythagoras/#step2" data-i18n="lkPyth"></a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-foot" data-i18n="foot">乘法是面积 · 一步一交互</footer>
+<script src="app.js"></script>
+</body>
+</html>
