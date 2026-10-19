@@ -38,7 +38,7 @@ const STR = {
 
     s2k: '第 2 步 · 混叠诞生',
     s2t: '点没撒谎，是你连错了',
-    s2e: '把 f<sub>s</sub> 压到 f 以下再看：采样点依然全在原波上，可它们自己排成了<strong>另一条更慢的波</strong>。粉红这条「假波」和每一个采样点都严丝合缝地重合——只看点，你没有任何办法分辨原波和假波。假波的频率只有一条公式说了算：把 f 按 f<sub>s</sub> 反复折叠，折进 [0, f<sub>s</sub>/2] 这半间房。折叠还有方向：带符号的折叠频率 g 若为负（如 9 Hz 被 10 Hz、14 Hz 被 20 Hz 采样），假波会<strong>左右翻面、相位反转</strong>——和第 0 步轮子的倒转是同一件事，只不过翻的是波形。',
+    s2e: '先给这一幕起个正式名字：<strong>混叠</strong>——偷看得太稀，快波被看成了慢波。把 f<sub>s</sub> 压到 f 以下再看：采样点依然全在原波上，可它们自己排成了<strong>另一条更慢的波</strong>。粉红这条「假波」和每一个采样点都严丝合缝地重合——只看点，你没有任何办法分辨原波和假波。假波的频率只有一条公式说了算：把 f 按 f<sub>s</sub> 反复折叠，折进 [0, f<sub>s</sub>/2] 这半间房。折叠还有方向：带符号的折叠频率 g 若为负（如 9 Hz 被 10 Hz、14 Hz 被 20 Hz 采样），假波会<strong>左右翻面、相位反转</strong>——和第 0 步轮子的倒转是同一件事，只不过翻的是波形。',
     s2pSlow: '经典慢波：f=9, f_s=10', s2pDC: '全钉同一点：f=f_s=10',
     s2pFold: '折叠：f=14, f_s=20', s2pClean: '无混叠：f=3, f_s=25',
     s2formulaNote: 'k 是使结果落入 [0, f<sub>s</sub>/2] 的整数。本页所有读数、频谱位置、音频音高都用这同一条公式计算——第 4、5 步会逐个对账。',
@@ -51,7 +51,7 @@ const STR = {
 
     s3k: '第 3 步 · 那条线',
     s3t: '奈奎斯特线：两倍，差一线都不行',
-    s3e: '让 f<sub>s</sub> 扫过 2f 这条线：高于两倍，采样点只可能属于原波，假波无从谈起；逼近两倍，假波频率贴着原波、相位一路漂移，连点重建<strong>大幅忽强忽弱地抖动</strong>；低于两倍，假波正式换人。恰好等于 2f 时最微妙——每个周期只偷看两眼，结果<strong>完全取决于相位运气</strong>。点下面的按钮把 f<sub>s</sub> 钉在 2f，再拖相位滑杆试试。',
+    s3e: '这条「两倍线」有个名字：<strong>奈奎斯特线</strong>——站到线的哪一侧，决定了原波保不保得住。让 f<sub>s</sub> 扫过 2f 这条线：高于两倍，采样点只可能属于原波，假波无从谈起；逼近两倍，假波频率贴着原波、相位一路漂移，连点重建<strong>大幅忽强忽弱地抖动</strong>；低于两倍，假波正式换人。恰好等于 2f 时最微妙——每个周期只偷看两眼，结果<strong>完全取决于相位运气</strong>。点下面的按钮把 f<sub>s</sub> 钉在 2f，再拖相位滑杆试试。',
     s3phase: '采样相位 φ（°）', s3snap: '钉在恰好 2f',
     s3roAbove: 'f_s = {fs} Hz > 2f = {two} Hz：无混叠，点只可能属于原波。',
     s3roBelow: 'f_s = {fs} Hz < 2f = {two} Hz：已混叠，假波频率 = {alias} Hz。',
@@ -131,7 +131,7 @@ const STR = {
 
     s2k: 'Step 2 · A fake is born',
     s2t: 'The dots never lied — you connected them wrong',
-    s2e: 'Push f<sub>s</sub> below f and look again: the samples still all sit on the original wave, but by themselves they line up into <strong>a different, slower wave</strong>. The rose-pink “fake wave” passes through every single sample exactly — from the dots alone there is no way to tell it apart from the original. Its frequency is decided by one formula: fold f by f<sub>s</sub>, over and over, into the half-room [0, f<sub>s</sub>/2]. The fold has a direction, too: when the signed folded frequency g is negative (9 Hz sampled at 10 Hz, or 14 Hz at 20 Hz), the fake wave comes out <strong>mirrored, its phase flipped</strong> — the same event as the wheel turning backwards in step 0, except here it is the waveform that flips.',
+    s2e: 'First, the official name for what is about to happen: <strong>aliasing</strong> — when the peeks are too sparse, a fast wave gets read as a slow one. Push f<sub>s</sub> below f and look again: the samples still all sit on the original wave, but by themselves they line up into <strong>a different, slower wave</strong>. The rose-pink “fake wave” passes through every single sample exactly — from the dots alone there is no way to tell it apart from the original. Its frequency is decided by one formula: fold f by f<sub>s</sub>, over and over, into the half-room [0, f<sub>s</sub>/2]. The fold has a direction, too: when the signed folded frequency g is negative (9 Hz sampled at 10 Hz, or 14 Hz at 20 Hz), the fake wave comes out <strong>mirrored, its phase flipped</strong> — the same event as the wheel turning backwards in step 0, except here it is the waveform that flips.',
     s2pSlow: 'Classic slow wave: f=9, f_s=10', s2pDC: 'Pinned to one phase: f=f_s=10',
     s2pFold: 'Folded: f=14, f_s=20', s2pClean: 'No aliasing: f=3, f_s=25',
     s2formulaNote: 'k is the integer that lands the result in [0, f<sub>s</sub>/2]. Every readout, spectrum position and audio pitch on this page is computed with this one formula — steps 4 and 5 settle the accounts one by one.',
@@ -144,7 +144,7 @@ const STR = {
 
     s3k: 'Step 3 · The line',
     s3t: 'The Nyquist line: twice, and not a hair less',
-    s3e: 'Sweep f<sub>s</sub> across the 2f line: above twice, the samples can only belong to the original wave and no fake exists; approaching twice, the fake wave hugs the original frequency while its phase drifts on, so the connected reconstruction <strong>swells and fades dramatically</strong>; below twice, the fake takes over. Exactly at 2f is the subtlest case — only two peeks per period, and the outcome <strong>depends entirely on phase luck</strong>. Press the button to pin f<sub>s</sub> at 2f, then drag the phase slider.',
+    s3e: 'This twice-line has a name: the <strong>Nyquist line</strong> — which side of it you stand on decides whether the original wave survives. Sweep f<sub>s</sub> across the 2f line: above twice, the samples can only belong to the original wave and no fake exists; approaching twice, the fake wave hugs the original frequency while its phase drifts on, so the connected reconstruction <strong>swells and fades dramatically</strong>; below twice, the fake takes over. Exactly at 2f is the subtlest case — only two peeks per period, and the outcome <strong>depends entirely on phase luck</strong>. Press the button to pin f<sub>s</sub> at 2f, then drag the phase slider.',
     s3phase: 'Sampling phase φ (°)', s3snap: 'Pin to exactly 2f',
     s3roAbove: 'f_s = {fs} Hz > 2f = {two} Hz: no aliasing — the dots can only belong to the original.',
     s3roBelow: 'f_s = {fs} Hz < 2f = {two} Hz: aliased — fake wave at {alias} Hz.',
