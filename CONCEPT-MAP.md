@@ -130,6 +130,7 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 85 | 全反射与临界角 / Total internal reflection and the critical angle | reflection-refraction#step3 | 光从水射向空气，入射角超过临界角 asin(1/1.33)≈48.8° 时折射线消失、光全部反射回水里 |
 | 86 | 导数：割线逼近切线 / Derivative: the secant closes into the tangent | derivative#step1 | 割线两点无限靠拢，斜率从正负两侧收敛到同一个数——那个数就是导数，割线的极限位置就是切线 |
 | 87 | 凸透镜：一倍分虚实、二倍分大小 / Convex lens: 1f splits real from virtual, 2f splits size | lens#step2 | 蜡烛越过焦点 F，像由实变虚、跳到透镜同侧；越过 2F，像由放大变缩小——两个点管住全部成像规律 |
+| 88 | 干涉：路程差定加强与抵消 / Interference: path difference decides reinforcement | interference#step1 | Δr=kλ 加强、Δr=(k+½)λ 抵消；干涉图样是双曲线族，由路程差的几何定死、不随时间漂移 |
 
 ---
 
