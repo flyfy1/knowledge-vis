@@ -478,5 +478,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "primary",
     status: "live",
     path: "division-remainder/"
+  },
+  {
+    slug: "linear-functions",
+    title: { zh: "一次函数 · 斜率是陡缓，截距是起点", en: "Linear Functions · Slope Is Steepness, Intercept Is the Start" },
+    desc: {
+      zh: "y=kx+b 不背公式，先拖出来：落点一格一格等高抬升、连成直线，k 就是坡的陡缓；整条线上下平移，b 就是还没出发就站的高度；最后两条线相遇，交点同时满足两个方程——平行和重合两种特例也亲手摆得出来。",
+      en: "y = kx + b, earned by dragging instead of rote: points rising by equal steps line up straight — k is the steepness; slide the whole line up or down and b is the height you start from before moving; and when two lines meet, their crossing point satisfies both equations at once, with parallel and coincident cases reachable by hand."
+    },
+    tags: [
+      { zh: "斜率", en: "Slope" },
+      { zh: "截距", en: "Intercept" },
+      { zh: "交点", en: "Intersection" }
+    ],
+    category: "math",
+    stage: "junior",
+    status: "live",
+    path: "linear-functions/"
   }
 ];
