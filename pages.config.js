@@ -563,5 +563,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "senior",
     status: "live",
     path: "integral/"
+  },
+  {
+    slug: "reflection-refraction",
+    title: { zh: "光的反射与折射 · 拐弯的规矩", en: "Reflection & Refraction · How Light Bends" },
+    desc: {
+      zh: "光撞上界面会拐弯，拐多少有规矩：反射角等于入射角、而且都从法线量起；进了水会偏向法线；从水里往外射、角度太陡还会全部反射回去；连鱼在水里的位置都是假的——眼睛看到的虚像比真身浅。",
+      en: "Light bends at a boundary, and the bending follows rules: the angle of reflection equals the angle of incidence, and both are measured from the normal; entering water it bends toward the normal; leaving water too steeply, it reflects entirely back. Even a fish is not where it looks — the virtual image your eye sees sits shallower than the fish itself."
+    },
+    tags: [
+      { zh: "反射定律", en: "Law of Reflection" },
+      { zh: "折射与斯涅尔定律", en: "Snell's Law" },
+      { zh: "全反射", en: "Total Internal Reflection" }
+    ],
+    category: "physics",
+    stage: "junior",
+    status: "live",
+    path: "reflection-refraction/"
   }
 ];
