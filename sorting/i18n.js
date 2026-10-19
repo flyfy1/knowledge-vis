@@ -54,6 +54,7 @@ const STR = {
     s2k: '第 2 步 · 分而治之',
     s2t: '归并与快排：把大问题切小',
     s2e: '<strong>归并</strong>：数组从中间切开（左半 ⌊n/2⌋），递归排好两半，再像拉拉链一样合并——合并时只比两段的「排头」，小的先出。每一层合并的总工作量约 n，层数约 log₂n，相乘就是 n log₂ n。<strong>快排</strong>在本页的规则写明白：<strong>pivot 取最后一个元素</strong>，用 Lomuto 分区把小的扫到左边、大的留在右边，再递归两边。规则不同，账就不同——所以规则必须印在页上。',
+    s2panelNote: '两个面板各自独立、计数互不延续——归并这边数的是它自己的比较与移动，切到快排看到的是快排自己的比较与交换，两边的进度互不影响。',
     s2formulaM: '归并：每层 ≈ n 次比较 × log₂n 层 ≈ n·log₂n',
     s2splitLv: '第 {k} 层',
     s2splitCap: '切分长这样：一路从中间切开（左半 ⌊n/2⌋），直到每段只剩 1 个。切分本身<strong>不产生比较、不计数</strong>，所以它不单独成帧——下面的动画从第一次合并开始，正是把这棵切分树自底向上逐段合并回来。',
@@ -120,7 +121,7 @@ const STR = {
     c2: '混血算法有个共同细节：片段小到一定程度（几十个元素上下）就切回<strong>插入排序</strong>这种 O(n²) 的简单循环——第 4 步的交叉点说的就是这个理：n 小的时候，常数小、代码直白的算法实际成本更低。O(n²) 在小数据上不是原罪，是性价比。',
     c3h: '选型直觉：先看 n 与数据',
     c3: '面对一堆要排的数据，先问四件事：<strong>n 有多大</strong>（决定形状的权重）、<strong>是否近乎有序</strong>（Timsort 与带早停的算法占便宜）、<strong>值域是否有界</strong>（计数排序的机会）、<strong>要不要稳定</strong>（等值元素的相对次序保不保）。形状优先、常数其次——这把尺，就是这一页的全部内容。',
-    s6fin: '回勾一句隔壁的<a class="fourier-link" href="/gradient-descent/">梯度下降</a>：那边算成本，是「每一步多便宜 × 要走多少步」；这边算成本，是「每次比较多便宜 × 要比多少次」。成本永远是两个因子相乘——一个因子管单价，一个管数量，而数量的<strong>增长形状</strong>，最终说了算。学会看形状，你就有了一把丈量一切算法的尺。'
+    s6fin: '回勾一句隔壁的<a class="fourier-link" href="../gradient-descent/#step2">梯度下降</a>：那边算成本，是「每一步多便宜 × 要走多少步」；这边算成本，是「每次比较多便宜 × 要比多少次」。成本永远是两个因子相乘——一个因子管单价，一个管数量，而数量的<strong>增长形状</strong>，最终说了算。学会看形状，你就有了一把丈量一切算法的尺。'
   },
   en: {
     docTitle: 'Sorting & Big O · The Shape of Growth · One Interaction per Step',
@@ -169,6 +170,7 @@ const STR = {
     s2k: 'Step 2 · Divide & Conquer',
     s2t: 'Merge and quicksort: cut the problem down',
     s2e: '<strong>Merge sort</strong>: split the array in the middle (left half ⌊n/2⌋), sort both halves recursively, then zip them back together — merging only ever compares the two “heads”, smaller one out first. Each level of merging costs about n comparisons in total, there are about log₂n levels, and the product is n log₂ n. <strong>Quicksort</strong> plays by rules printed right here: <strong>the pivot is the last element</strong>, partitioned Lomuto-style — small values swept left, large ones stay right — then recurse on both sides. Different rules, different ledger; that is why the rules are printed on the page.',
+    s2panelNote: 'The two panels are independent, and their counts never carry over: the merge panel counts its own comparisons and moves, the quicksort panel its own comparisons and swaps — switching across always shows that side’s own progress.',
     s2formulaM: 'Merge: ≈ n comparisons per level × log₂n levels ≈ n·log₂n',
     s2splitLv: 'Lv {k}',
     s2splitCap: 'This is what the splitting looks like: halve, halve again (left half ⌊n/2⌋), down to segments of one. Splitting itself involves <strong>no comparisons and is never counted</strong>, so it gets no frames of its own — the animation below starts at the first merge and is exactly this split tree being merged back together, bottom-up.',
@@ -235,7 +237,7 @@ const STR = {
     c2: 'The hybrids share one detail: once a piece shrinks to a few dozen elements, they switch back to a plain O(n²) loop like <strong>insertion sort</strong> — exactly the crossover from step 4: at small n, the low-constant, straightforward algorithm is genuinely cheaper. O(n²) on small data is not a sin; it is value for money.',
     c3h: 'Choosing: look at n and the data first',
     c3: 'Faced with data to sort, ask four questions: <strong>how big is n</strong> (it sets the shape’s weight), <strong>is it nearly sorted</strong> (Timsort and early-exit sorts profit), <strong>is the value range bounded</strong> (counting sort’s opening), <strong>must it be stable</strong> (do equal elements keep their relative order)? Shape first, constants second — that ruler is the whole page.',
-    s6fin: 'One line back to the neighbouring page, <a class="fourier-link" href="/gradient-descent/">Gradient Descent</a>: there, cost was “how cheap is each step × how many steps”; here, it is “how cheap is each comparison × how many comparisons”. Cost is always two factors multiplied — one sets the unit price, the other the quantity, and the quantity’s <strong>shape of growth</strong> has the final say. Learn to see the shape, and you own a ruler for every algorithm.'
+    s6fin: 'One line back to the neighbouring page, <a class="fourier-link" href="../gradient-descent/#step2">Gradient Descent</a>: there, cost was “how cheap is each step × how many steps”; here, it is “how cheap is each comparison × how many comparisons”. Cost is always two factors multiplied — one sets the unit price, the other the quantity, and the quantity’s <strong>shape of growth</strong> has the final say. Learn to see the shape, and you own a ruler for every algorithm.'
   }
 };
 
