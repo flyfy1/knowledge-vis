@@ -120,6 +120,7 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 75 | 勾股数 / Pythagorean triples | pythagoras#step6 | 3k-4k-5k 累积精确验算，与 5-12-13、8-15-17 对照 |
 | 76 | √2 与无理数 / √2 and irrational numbers | pythagoras#step6 | 1-1 直角三角形与奇偶性反证，斜边无需为整数 |
 | 77 | 乘法（面积模型）/ Multiplication as area | area-model#step2 | 一刀把 13×7 切成 10×7 与 3×7，两块面积之和恒等于整块——分配律是切法，总和不随切点变 |
+| 78 | 周长与面积 / Perimeter vs area | perimeter-area#step1 | 同样 24 的周长，面积从 11 排到 36、6×6 达峰——周长相同面积可以差很远，越接近正方形越大 |
 
 ---
 
