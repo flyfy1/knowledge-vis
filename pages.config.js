@@ -410,5 +410,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "primary",
     status: "live",
     path: "fractions/"
+  },
+  {
+    slug: "pythagoras",
+    title: { zh: "勾股定理 · 一步一交互", en: "The Pythagorean Theorem · One Interaction at a Time" },
+    desc: {
+      zh: "a²+b²=c² 不是背出来的：3-4-5 先露馅，再用面积灌注和拼图把等式拼出来，拖着顶点怎么拖都等，最后反过来判角、算梯子，并撞见怎么也写不尽的 √2。",
+      en: "a²+b²=c², earned rather than memorised: the 3-4-5 coincidence first, then area pouring and a jigsaw proof, dragging the vertex without breaking equality, classifying angles in reverse, a ladder problem, and finally √2 — the length no fraction can write."
+    },
+    tags: [
+      { zh: "拼图证明", en: "Jigsaw Proof" },
+      { zh: "直角三角形", en: "Right Triangles" },
+      { zh: "勾股数与 √2", en: "Triples & √2" }
+    ],
+    category: "math",
+    stage: "junior",
+    status: "live",
+    path: "pythagoras/"
   }
 ];
