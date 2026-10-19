@@ -553,7 +553,9 @@ function s3Draw() {
   /* 读数 */
   const relSym = cmp.rel > 0 ? t('relGt') : cmp.rel < 0 ? t('relLt') : t('relEq');
   if (!S3.revealed) {
-    setRO('s3-cross', t('s3roIdle', { a: S3.a, b: S3.b, c: S3.c, d: S3.d }));
+    setRO('s3-cross', S3.guess
+      ? t('s3roGuess', { g: t('s3guess' + (S3.guess === 'left' ? 'Left' : S3.guess === 'right' ? 'Right' : 'Same')) })
+      : t('s3roIdle', { a: S3.a, b: S3.b, c: S3.c, d: S3.d }));
     setRO('s3-lcm', '');
     setRO('s3-verdict', '');
   } else {
@@ -600,6 +602,7 @@ function initS3() {
   const pick = g => {
     S3.guess = g;
     ['left', 'same', 'right'].forEach(k => $('s3-g-' + k).classList.toggle('active', k === g));
+    s3Draw();
   };
   $('s3-g-left').addEventListener('click', () => pick('left'));
   $('s3-g-same').addEventListener('click', () => pick('same'));
