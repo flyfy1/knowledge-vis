@@ -495,5 +495,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "junior",
     status: "live",
     path: "linear-functions/"
+  },
+  {
+    slug: "symmetry-rotation",
+    title: { zh: "对称与旋转 · 对折与转圈", en: "Symmetry & Rotation · Folding and Turning" },
+    desc: {
+      zh: "沿一条线对折、两边严丝合缝，那条线就是对称轴；转过一个角度又变回自己，那是旋转对称。正方形有 4 条轴，平行四边形一条都没有、却转半圈就重合——最后开一台万花筒，只画一小块，图案自己长满。",
+      en: "Fold along a line and the two halves match exactly — that line is an axis of symmetry; turn through the right angle and the shape is itself again — rotational symmetry. A square has 4 axes; a parallelogram has none, yet matches itself after half a turn. At the end, a kaleidoscope grows a full pattern from one small wedge you draw."
+    },
+    tags: [
+      { zh: "对称轴", en: "Axes of Symmetry" },
+      { zh: "旋转对称", en: "Rotational Symmetry" },
+      { zh: "万花筒", en: "Kaleidoscope" }
+    ],
+    category: "math",
+    stage: "primary",
+    status: "live",
+    path: "symmetry-rotation/"
   }
 ];
