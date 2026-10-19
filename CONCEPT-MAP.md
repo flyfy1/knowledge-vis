@@ -129,6 +129,7 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 84 | 定积分：黎曼和夹逼 / Definite integral: Riemann sums squeeze the value | integral#step1 | 曲线下面积切成细条，左和与右和从两侧夹住真值、缝宽恰为 1/n；条无限细时收敛到的数就是定积分 |
 | 85 | 全反射与临界角 / Total internal reflection and the critical angle | reflection-refraction#step3 | 光从水射向空气，入射角超过临界角 asin(1/1.33)≈48.8° 时折射线消失、光全部反射回水里 |
 | 86 | 导数：割线逼近切线 / Derivative: the secant closes into the tangent | derivative#step1 | 割线两点无限靠拢，斜率从正负两侧收敛到同一个数——那个数就是导数，割线的极限位置就是切线 |
+| 87 | 凸透镜：一倍分虚实、二倍分大小 / Convex lens: 1f splits real from virtual, 2f splits size | lens#step2 | 蜡烛越过焦点 F，像由实变虚、跳到透镜同侧；越过 2F，像由放大变缩小——两个点管住全部成像规律 |
 
 ---
 
