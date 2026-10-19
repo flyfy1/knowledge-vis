@@ -529,5 +529,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "junior",
     status: "live",
     path: "parabola/"
+  },
+  {
+    slug: "velocity-vt",
+    title: { zh: "速度与 v-t 图 · 面积就是路", en: "Speed and the v–t Graph · Area Is Distance" },
+    desc: {
+      zh: "先看一场赛跑：位置—时间图像的陡缓就是快慢；换上速度—时间图像，看的是高低、不是陡缓；图像下方的面积，数出来正是走过的路——把加速段切成 4 条、8 条、16 条窄条，台阶和会一步步贴近真路程。",
+      en: "Start with a race: on a position–time graph, steepness is speed. Switch to a velocity–time graph and you read height, not steepness — and the area under the graph counts out exactly the distance travelled. Slice the speeding-up stretch into 4, 8, 16 thin strips and watch the step sums close in on the true distance."
+    },
+    tags: [
+      { zh: "位置—时间图", en: "Position–Time Graph" },
+      { zh: "速度—时间图", en: "Velocity–Time Graph" },
+      { zh: "图像下面积", en: "Area Under Graph" }
+    ],
+    category: "physics",
+    stage: "junior",
+    status: "live",
+    path: "velocity-vt/"
   }
 ];
