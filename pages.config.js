@@ -461,5 +461,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "primary",
     status: "live",
     path: "perimeter-area/"
+  },
+  {
+    slug: "division-remainder",
+    title: { zh: "除法与余数 · 分不完的那一点", en: "Division & Remainders · What Is Left Over" },
+    desc: {
+      zh: "分糖果分到最后总剩几颗：先动手一份一份发，再到数轴上一格一格跳——余数为什么必须比除数小，跳着跳着就明白了；然后是验算恒等式和星期几的循环，最后两道自测题收口。",
+      en: "Sharing sweets until a few are left over: deal them out one share at a time, then hop along the number line — and see for yourself why the remainder must stay smaller than the divisor; then the check identity, weekday cycles, and a two-question self-test."
+    },
+    tags: [
+      { zh: "余数", en: "Remainders" },
+      { zh: "验算恒等式", en: "The Check Identity" },
+      { zh: "周期循环", en: "Cycles" }
+    ],
+    category: "math",
+    stage: "primary",
+    status: "live",
+    path: "division-remainder/"
   }
 ];
