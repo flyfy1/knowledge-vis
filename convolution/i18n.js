@@ -90,7 +90,7 @@ const STR = {
     kerSmooth: '平滑核 [1,2,3,2,1]', kerDiff: '差分核 [−1, 1]', kerEcho: '回声核（冲激串）',
     s6ro: '两条路算出的结果最大相差 {err}（双精度浮点下应为 1e-13 量级）',
     cTime: '时域卷积（逐点算）', cFreq: '频域相乘（FFT）', cSpec: '频谱 |F|、|G| 与乘积 |F·G|',
-    s6fin: '所以傅里叶页那一串旋转的圆不只是好看——<strong>它把卷积从「逐点苦算」变成「逐频相乘」</strong>：长卷积用 FFT 算能快上成百上千倍。今天你已经在四种场景里见过同一个骨架了：滑动平均、离散求和、重叠面积、图像核。音频均衡、图像处理、CNN、乃至概率里「两个独立随机变量之和的分布」，都是它。',
+    s6fin: '所以傅里叶页那一串旋转的圆不只是好看——<strong>它把卷积从「逐点苦算」变成「逐频相乘」</strong>：长卷积用 FFT 算能快多少，取决于序列长度与实现——序列越长优势越大，长到一定程度能快上成百上千倍，短序列则未必划算。今天你已经在四种场景里见过同一个骨架了：滑动平均、离散求和、重叠面积、图像核。音频均衡、图像处理、CNN、乃至概率里「两个独立随机变量之和的分布」，都是它。',
     s6link: '回傅里叶页再看看那些圆 →',
     s6linkH: 'h[n]：系统对一记冲激的全部回答 →',
   },
@@ -177,7 +177,7 @@ const STR = {
     kerSmooth: 'Smoothing kernel [1,2,3,2,1]', kerDiff: 'Difference kernel [−1, 1]', kerEcho: 'Echo kernel (impulse train)',
     s6ro: 'Maximum error between the two routes = {err} (in double precision, expect around 1e-13)',
     cTime: 'Time-domain convolution (point by point)', cFreq: 'Frequency-domain product (FFT)', cSpec: 'Spectra |F|, |G| and product |F·G|',
-    s6fin: 'So the spinning circles on the Fourier page are not just pretty — <strong>they turn convolution from “multiply everything out” into “multiply frequency by frequency”</strong>: with FFT, long convolutions run hundreds to thousands of times faster. By now you have met the same skeleton four times: moving average, discrete sum, overlap area, image kernel. Audio EQ, image processing, CNNs — even the distribution of a sum of two independent random variables in probability — all run on it.',
+    s6fin: 'So the spinning circles on the Fourier page are not just pretty — <strong>they turn convolution from “multiply everything out” into “multiply frequency by frequency”</strong>: with FFT, how much faster depends on the sequence length and the implementation — the longer the convolution, the bigger the win, up to hundreds or thousands of times faster for long ones; for short sequences it may not pay off at all. By now you have met the same skeleton four times: moving average, discrete sum, overlap area, image kernel. Audio EQ, image processing, CNNs — even the distribution of a sum of two independent random variables in probability — all run on it.',
     s6link: 'Back to the Fourier page and its circles →',
     s6linkH: "h[n]: a system's complete answer to one impulse →",
   }
