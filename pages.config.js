@@ -580,5 +580,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "junior",
     status: "live",
     path: "reflection-refraction/"
+  },
+  {
+    slug: "derivative",
+    title: { zh: "导数 · 把平均压成此刻", en: "The Derivative · Squeezing the Average into the Instant" },
+    desc: {
+      zh: "平均速度谁都会算，可「这一刻」有多快？把区间一点点缩向那一刻：割线从左右两侧靠拢成切线，斜率收敛到的那个数，就是导数。沿着曲线每一点都量一遍，导数们自己又排成一条新曲线——导函数出场。",
+      en: "Anyone can compute an average speed — but how fast is it right now? Shrink the interval toward the instant: the secant line closes in from both sides into the tangent, and the number its slope settles on is the derivative. Measure it at every point along the curve and the derivatives line up into a new curve of their own — the derivative function."
+    },
+    tags: [
+      { zh: "割线逼近切线", en: "Secant to Tangent" },
+      { zh: "瞬时变化率", en: "Instantaneous Rate" },
+      { zh: "导函数", en: "Derivative Function" }
+    ],
+    category: "math",
+    stage: "senior",
+    status: "live",
+    path: "derivative/"
   }
 ];

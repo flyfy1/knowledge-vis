@@ -128,6 +128,7 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 83 | v-t 图面积就是路程 / Area under a v–t graph is distance | velocity-vt#step2 | 速度—时间图像下方的面积就是走过的路；加速段切成窄条数台阶和，条越细、台阶和越贴近真路程 |
 | 84 | 定积分：黎曼和夹逼 / Definite integral: Riemann sums squeeze the value | integral#step1 | 曲线下面积切成细条，左和与右和从两侧夹住真值、缝宽恰为 1/n；条无限细时收敛到的数就是定积分 |
 | 85 | 全反射与临界角 / Total internal reflection and the critical angle | reflection-refraction#step3 | 光从水射向空气，入射角超过临界角 asin(1/1.33)≈48.8° 时折射线消失、光全部反射回水里 |
+| 86 | 导数：割线逼近切线 / Derivative: the secant closes into the tangent | derivative#step1 | 割线两点无限靠拢，斜率从正负两侧收敛到同一个数——那个数就是导数，割线的极限位置就是切线 |
 
 ---
 
