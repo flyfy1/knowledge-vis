@@ -125,6 +125,7 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 80 | 一次函数：斜率与截距 / Slope and intercept | linear-functions#step2 | y=kx+b 实时拼装——k 是每走一步抬高多少，b 是 x=0 时站在多高，直线上每个点代入都验算得上 |
 | 81 | 对称轴与旋转对称 / Symmetry axes and rotational symmetry | symmetry-rotation#step2 | 风车转过 360°÷n 就与自己重合；平行四边形没有对称轴、却有 180° 旋转对称——翻和转是两回事 |
 | 82 | 抛物线：顶点式与交点 / Parabola: vertex form and intercepts | parabola#step2 | y=a(x−h)²+k 把顶点 (h, k) 写在脸上，对称轴 x=h 跟着顶点一起搬家 |
+| 83 | v-t 图面积就是路程 / Area under a v–t graph is distance | velocity-vt#step2 | 速度—时间图像下方的面积就是走过的路；加速段切成窄条数台阶和，条越细、台阶和越贴近真路程 |
 
 ---
 

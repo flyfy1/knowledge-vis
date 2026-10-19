@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>速度与 v-t 图 · 线下面的面积就是走过的路 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=vt1">
+<script src="i18n.js?v=vt1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">速度与 v-t 图 · 面积就是路</h1>
+    <p class="tagline" data-i18n="tagline">速度会变的时候，走过的路怎么算？这一页先赛一场跑，再把同一场比赛画成两种图：x-t 图和 v-t 图。最后你会发现，v-t 图下面的面积不是装饰——把图切成小条一条条加起来，路自己就出来了。这是高中积分的第一颗种子，先把手感种下。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 赛跑</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 v-t 图登场</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 面积就是路</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 读图实战</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 自测</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 终章</a>
+</nav>
+
+<main>
+
+<!-- ============ 第 0 步：赛跑（实景 + x-t 图同屏同步） ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 赛跑</p>
+    <h2 data-i18n="s0t">赛跑：跑道和图，讲的是同一场比赛</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-track" height="190"></canvas>
+    </div>
+    <div class="stage">
+      <canvas id="s0-chart" height="300"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s0-play" data-i18n="play">播放 ▶</button>
+      <button class="btn big" id="s0-restart" data-i18n="restart">重新开始</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s0probeLab">时间探针 t（动画与探针共用一个时钟）</span> <span class="val" id="s0-t-val">t = 0 s</span></span>
+        <input type="range" id="s0-probe" min="0" max="10" step="0.1" value="0">
+      </label>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <p style="margin-top:10px">
+      <a class="fourier-link" href="../linear-functions/#step0" data-i18n="s0lkLf"></a>
+    </p>
+    <button class="btn primary" id="s0-start" data-i18n="start" style="margin-top:14px">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 第 1 步：v-t 图登场（同一场比赛，x-t / v-t 对照） ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · v-t 图登场</p>
+    <h2 data-i18n="s1t">同一场比赛，换一张图：画每一刻的速度</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-track" height="230"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big active" id="s1-m-xt" data-i18n="s1mXt">看 x-t 图（位置）</button>
+      <button class="btn big" id="s1-m-vt" data-i18n="s1mVt">看 v-t 图（速度）</button>
+    </div>
+    <div class="stage">
+      <canvas id="s1-chart" height="300"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s1-play" data-i18n="play">播放 ▶</button>
+      <button class="btn big" id="s1-restart" data-i18n="restart">重新开始</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1probeLab">时间探针 t（与动画同一个时钟）</span> <span class="val" id="s1-t-val">t = 0 s</span></span>
+        <input type="range" id="s1-probe" min="0" max="8" step="0.1" value="0">
+      </label>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 2 步：面积就是路 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 面积就是路</p>
+    <h2 data-i18n="s2t">图下面的面积，凭什么是路程？</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <p class="stage-title" data-i18n="s2aT">先看匀速：速度一直 4 m/s，走 3 s</p>
+      <canvas id="s2a-canvas" height="320"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s2a-btn" data-i18n="s2aBtn">把这块面积算出来</button>
+    </div>
+    <p class="readout" id="s2a-readout"></p>
+    <div class="stage">
+      <p class="stage-title" data-i18n="s2bT">再看变速：速度从 0 均匀涨到 4 m/s（用时 2 s）</p>
+      <canvas id="s2b-canvas" height="300"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s2b-tri" data-i18n="s2bTri">整块（三角形）</button>
+      <button class="btn big" id="s2b-4" data-i18n="s2b4">切成 4 条</button>
+      <button class="btn big" id="s2b-8" data-i18n="s2b8">切成 8 条</button>
+      <button class="btn big" id="s2b-16" data-i18n="s2b16">切成 16 条</button>
+    </div>
+    <p class="readout" id="s2b-readout"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 3 步：读图实战 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 读图实战</p>
+    <h2 data-i18n="s3t">一段真实的行程：加速、匀速、减速</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="320"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3probeLab">时刻探针 t</span> <span class="val" id="s3-t-val">t = 0 s</span></span>
+        <input type="range" id="s3-probe" min="0" max="7" step="0.25" value="0">
+      </label>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s3segLab">逐段点亮面积（可多选）：</span>
+      <button class="btn big" id="s3-seg1" data-i18n="s3seg1">第 1 段 0–2 s</button>
+      <button class="btn big" id="s3-seg2" data-i18n="s3seg2">第 2 段 2–5 s</button>
+      <button class="btn big" id="s3-seg3" data-i18n="s3seg3">第 3 段 5–7 s</button>
+    </div>
+    <p class="readout" id="s3-area1"></p>
+    <p class="readout" id="s3-area2"></p>
+    <div class="quiz-block">
+      <p class="quiz-q-title" data-i18n="s3qLab">判断每一段在干什么（看这段线是升、平、还是降）：</p>
+      <div class="seg-q-row">
+        <span class="seg-q-name" data-i18n="s3qSeg1">第 1 段（0–2 s）</span>
+        <button class="btn" data-q="0" data-v="acc" data-i18n="optAcc">加速</button>
+        <button class="btn" data-q="0" data-v="uni" data-i18n="optUni">匀速</button>
+        <button class="btn" data-q="0" data-v="dec" data-i18n="optDec">减速</button>
+        <span class="seg-q-fb" id="s3q-fb-0"></span>
+      </div>
+      <div class="seg-q-row">
+        <span class="seg-q-name" data-i18n="s3qSeg2">第 2 段（2–5 s）</span>
+        <button class="btn" data-q="1" data-v="acc" data-i18n="optAcc">加速</button>
+        <button class="btn" data-q="1" data-v="uni" data-i18n="optUni">匀速</button>
+        <button class="btn" data-q="1" data-v="dec" data-i18n="optDec">减速</button>
+        <span class="seg-q-fb" id="s3q-fb-1"></span>
+      </div>
+      <div class="seg-q-row">
+        <span class="seg-q-name" data-i18n="s3qSeg3">第 3 段（5–7 s）</span>
+        <button class="btn" data-q="2" data-v="acc" data-i18n="optAcc">加速</button>
+        <button class="btn" data-q="2" data-v="uni" data-i18n="optUni">匀速</button>
+        <button class="btn" data-q="2" data-v="dec" data-i18n="optDec">减速</button>
+        <span class="seg-q-fb" id="s3q-fb-2"></span>
+      </div>
+    </div>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 4 步：自测 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 自测</p>
+    <h2 data-i18n="s4t">换一段行程，自己读</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="320"></canvas>
+    </div>
+
+    <div class="quiz-block">
+      <p class="quiz-q-title" data-i18n-html="s4q1"></p>
+      <div class="controls">
+        <label><span><span data-i18n="s4probeLab">探针 t</span> <span class="val" id="s4-t-val">t = 0 s</span></span>
+          <input type="range" id="s4-probe" min="0" max="8" step="0.5" value="0">
+        </label>
+      </div>
+      <div class="btn-row">
+        <button class="btn big primary" id="s4-q1-btn" data-i18n="s4q1Btn">就按现在作答</button>
+      </div>
+      <p class="readout" id="s4-q1-ro"></p>
+    </div>
+
+    <div class="quiz-block">
+      <p class="quiz-q-title" data-i18n="s4q2"></p>
+      <div class="btn-row">
+        <button class="btn big" data-q2="27">27 m</button>
+        <button class="btn big" data-q2="33">33 m</button>
+        <button class="btn big" data-q2="39">39 m</button>
+      </div>
+      <p class="readout" id="s4-q2-ro"></p>
+    </div>
+
+    <div class="quiz-block">
+      <p class="quiz-q-title" data-i18n="s4q3"></p>
+      <div class="btn-row">
+        <button class="btn big" data-q3="true" data-i18n="judgeT">对</button>
+        <button class="btn big" data-q3="false" data-i18n="judgeF">错</button>
+      </div>
+      <p class="readout" id="s4-q3-ro"></p>
+    </div>
+
+    <p class="score-line" id="s4-score"></p>
+  </div>
+</section>
+
+<!-- ============ 第 5 步：终章 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 终章</p>
+    <h2 data-i18n="s5t">两张图，一本账</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="cards3">
+      <div class="value-card">
+        <p class="card-title" data-i18n="c1h">x-t 图看陡缓</p>
+        <p class="card-body" data-i18n-html="c1"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c2h">v-t 图看高低</p>
+        <p class="card-body" data-i18n-html="c2"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c3h">面积是路</p>
+        <p class="card-body" data-i18n-html="c3"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s5fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../linear-functions/#step0" data-i18n="s5lkLf"></a>
+      </p>
+      <p style="margin-top:8px">
+        <a class="fourier-link" href="../area-model/#step1" data-i18n="s5lkArea"></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 速度与 v-t 图 Velocity-Time Graphs —— 一步一交互系列</footer>
+
+<script src="app.js?v=vt1"></script>
+</body>
+</html>
