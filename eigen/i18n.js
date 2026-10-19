@@ -24,7 +24,7 @@ const STR = {
     s0formula: 'A = [[2.2, 0.6], [0.6, 1.0]]（本步固定，全页的矩阵都写成这种 2×2 形式）',
     s0tLab: '变形进度 t（0 = 原样，1 = A 作用完毕）',
     s0play: '播放变形', s0pause: '暂停',
-    s0ro: '橙色方向：被拉长 <span class="lam1">λ₁ ≈ {l1}</span> 倍 · 粉色方向：缩短到 <span class="lam2">λ₂ ≈ {l2}</span> 倍 · 其余箭头：既伸缩又<strong>转向</strong>',
+    s0ro: '符号先行：<strong>λ（读作「拉姆达」）就是特征值的记号</strong>——橙色方向：被拉长 <span class="lam1">λ₁ ≈ {l1}</span> 倍 · 粉色方向：缩短到 <span class="lam2">λ₂ ≈ {l2}</span> 倍 · 其余箭头：既伸缩又<strong>转向</strong>',
     s0hint: '先记住判据：<strong>Av 与 v 共线</strong>（同向或反向）时，v 才叫特征向量，共线的倍数（带符号）就是特征值 λ。下一站你亲手拖一根箭头，把它转到共线为止。',
     cv0unit: '单位圆',
     cv0eig1: '特征方向 1（只伸缩）',
@@ -104,7 +104,7 @@ const STR = {
     /* ---- 第 4 步 ---- */
     s4k: '第 4 步 · 对称矩阵',
     s4t: '主轴、正交与对角化：峡谷的真身',
-    s4e: '对称矩阵（b = c）有一条特权：<strong>两个特征向量必定互相垂直</strong>。图上叠的是二次型 xᵀAx 的等高线椭圆——还记得梯度下降页第 2 步的峡谷吗？椭圆的长轴、短轴，恰好就是两个特征方向；条件数 κ = λmax/λmin 就是峡谷的长宽比，特征值在这里正式以真身出场。点「转到特征坐标系」：整个画面转过 θ 角，让特征方向与坐标轴对齐，再看矩阵的读数——<strong>交叉项消失</strong>，A 在新坐标里变成对角阵 Λ，而重构 QΛQᵀ 与 A 的逐元误差是 10⁻¹⁶ 量级：对角化不是近似，是恒等式。',
+    s4e: '对称矩阵（b = c）有一条特权：<strong>总可选出一对互相垂直的特征向量</strong>（两个特征值不同时，特征向量自动互相垂直，别无选择；特征值相等的重根情形，同一个特征值名下是一整片平面，照样能从中挑出一对垂直的来）。图上叠的是二次型 xᵀAx 的等高线椭圆——还记得梯度下降页第 2 步的峡谷吗？椭圆的长轴、短轴，恰好就是两个特征方向；条件数 κ = λmax/λmin 就是峡谷的长宽比，特征值在这里正式以真身出场。点「转到特征坐标系」：整个画面转过 θ 角，让特征方向与坐标轴对齐，再看矩阵的读数——<strong>交叉项消失</strong>，A 在新坐标里变成对角阵 Λ，而重构 QΛQᵀ 与 A 的逐元误差是 10⁻¹⁶ 量级：对角化不是近似，是恒等式。',
     s4formula: 'A = QΛQᵀ，Q 的列 = 单位特征向量，Λ = diag(λ₁, λ₂)',
     s4aLab: 'a', s4mLab: 'b = c（对称）', s4dLab: 'd',
     s4rotBtn: '转到特征坐标系', s4unrotBtn: '转回原坐标系',
@@ -151,7 +151,7 @@ const STR = {
     c2h: '振动模态：特征频率',
     c2: '桥梁和建筑的振动方程里，特征向量是<strong>振型</strong>（各部位摆动的相对幅值），特征值给出<strong>固有频率</strong>。工程师避开共振、抗震设计，算的全是特征问题。',
     c3h: '稳定性：回到单位圆',
-    c3: '离散系统 x ← Ax 稳定 ⟺ A 的全部特征值 |λ| < 1 —— 与 Z 变换页里「极点在单位圆内才稳定」是同一句话：系统矩阵的特征值，就是极点的真身。链接：<a class="fourier-link" href="/ztransform/">Z 变换</a>。',
+    c3: '离散系统 x ← Ax 稳定 ⟺ A 的全部特征值 |λ| < 1 —— 与 Z 变换页里「极点在单位圆内才稳定」是同一句话：系统矩阵的特征值，就是极点的真身。链接：<a class="fourier-link" href="../ztransform/#step3">Z 变换</a>。',
     s6fin: '从捏圆的机器到谷歌的排名，中间只隔一个问题：<strong>「哪个方向不会被转走？」</strong>特征向量是矩阵的骨架——看懂了骨架，拉伸、旋转、振动、数据的形状、网络的稳态，全都是同一件事的不同说法。',
     s6lkGd: '峡谷的现场：条件数决定之字形 →', s6lkKal: '协方差的主方向：卡尔曼的二维步 →',
     cv6from: '权重按节点大小显示'
@@ -172,7 +172,7 @@ const STR = {
     s0formula: 'A = [[2.2, 0.6], [0.6, 1.0]] (fixed for this step; every matrix on this page is 2×2 like this)',
     s0tLab: 'Morph t (0 = untouched, 1 = A fully applied)',
     s0play: 'Play the morph', s0pause: 'Pause',
-    s0ro: 'Orange direction: stretched by <span class="lam1">λ₁ ≈ {l1}</span> · Pink direction: shrunk to <span class="lam2">λ₂ ≈ {l2}</span> · Every other arrow: stretched <strong>and turned</strong>',
+    s0ro: 'Symbols first: <strong>λ (lambda) is the symbol for the eigenvalue</strong> — the orange direction: stretched by <span class="lam1">λ₁ ≈ {l1}</span> · Pink direction: shrunk to <span class="lam2">λ₂ ≈ {l2}</span> · Every other arrow: stretched <strong>and turned</strong>',
     s0hint: 'Memorize the test: v is an eigenvector exactly when <strong>Av is collinear with v</strong> (same or opposite direction); the signed multiple is the eigenvalue λ. Next step, you drag an arrow yourself until it lines up.',
     cv0unit: 'unit circle',
     cv0eig1: 'eigendirection 1 (stretch only)',
@@ -248,7 +248,7 @@ const STR = {
 
     s4k: 'Step 4 · Symmetric Matrices',
     s4t: 'Principal axes, orthogonality, diagonalization — the canyon’s true form',
-    s4e: 'Symmetric matrices (b = c) enjoy a privilege: <strong>their two eigenvectors are always perpendicular</strong>. Overlaid are the contour ellipses of the quadratic form xᵀAx — remember the canyon from Step 2 of the Gradient Descent page? The ellipse’s long and short axes are exactly the two eigendirections, and the condition number κ = λmax/λmin is the canyon’s aspect ratio; here the eigenvalues appear in their true form. Press “Rotate into the eigenbasis”: the whole picture turns by θ until the eigendirections line up with the axes, and the matrix readout changes — <strong>the cross term vanishes</strong>, A becomes the diagonal Λ in the new coordinates, and QΛQᵀ reconstructs A with max entry error around 10⁻¹⁶: diagonalization is an identity, not an approximation.',
+    s4e: 'Symmetric matrices (b = c) enjoy a privilege: <strong>you can always choose a perpendicular pair of eigenvectors</strong> (when the two eigenvalues differ, the eigenvectors are perpendicular automatically — no choice involved; when an eigenvalue repeats, its eigenspace is a whole plane, and a perpendicular pair can still be picked from it). Overlaid are the contour ellipses of the quadratic form xᵀAx — remember the canyon from Step 2 of the Gradient Descent page? The ellipse’s long and short axes are exactly the two eigendirections, and the condition number κ = λmax/λmin is the canyon’s aspect ratio; here the eigenvalues appear in their true form. Press “Rotate into the eigenbasis”: the whole picture turns by θ until the eigendirections line up with the axes, and the matrix readout changes — <strong>the cross term vanishes</strong>, A becomes the diagonal Λ in the new coordinates, and QΛQᵀ reconstructs A with max entry error around 10⁻¹⁶: diagonalization is an identity, not an approximation.',
     s4formula: 'A = QΛQᵀ, columns of Q = unit eigenvectors, Λ = diag(λ₁, λ₂)',
     s4aLab: 'a', s4mLab: 'b = c (symmetric)', s4dLab: 'd',
     s4rotBtn: 'Rotate into the eigenbasis', s4unrotBtn: 'Rotate back',
@@ -293,7 +293,7 @@ const STR = {
     c2h: 'Vibration modes: eigenfrequencies',
     c2: 'In the vibration equations of bridges and buildings, eigenvectors are the <strong>mode shapes</strong> (relative sway of each part) and eigenvalues give the <strong>natural frequencies</strong>. Resonance avoidance and seismic design are, at bottom, eigenvalue problems.',
     c3h: 'Stability: back to the unit circle',
-    c3: 'A discrete system x ← Ax is stable ⟺ every eigenvalue satisfies |λ| < 1 — the same sentence as the Z-Transform page’s “poles inside the unit circle”: the system matrix’s eigenvalues ARE the poles. Link: <a class="fourier-link" href="/ztransform/">The Z-Transform</a>.',
+    c3: 'A discrete system x ← Ax is stable ⟺ every eigenvalue satisfies |λ| < 1 — the same sentence as the Z-Transform page’s “poles inside the unit circle”: the system matrix’s eigenvalues ARE the poles. Link: <a class="fourier-link" href="../ztransform/#step3">The Z-Transform</a>.',
     s6fin: 'From the circle-squeezing machine to Google’s ranking, there is only one question in between: <strong>“which direction refuses to be turned?”</strong> Eigenvectors are a matrix’s skeleton — once you see the skeleton, stretching, rotation, vibration, the shape of data and the steady state of a network are all the same story told in different accents.',
     s6lkGd: 'The canyon itself: the condition number sets the zig-zag →', s6lkKal: 'Covariance’s principal directions: Kalman’s 2-D step →',
     cv6from: 'weights shown as node sizes'
