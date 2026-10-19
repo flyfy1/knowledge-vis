@@ -614,5 +614,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "junior",
     status: "live",
     path: "lens/"
+  },
+  {
+    slug: "interference",
+    title: { zh: "波的干涉 · 闹与静的图样", en: "Interference · A Pattern of Loud and Still" },
+    desc: {
+      zh: "两列波相遇，每一点的振动就是两者相加：步调一致的地方更闹，步调相反的地方反而安静——而且静点永远静、响点永远响。决定加强还是抵消的，是到两个波源的路程差：整数倍波长加强，半整数倍抵消，图样由几何定死。",
+      en: "When two waves meet, every point's motion is the sum of both: where they arrive in step, the motion doubles; where they arrive out of step, it cancels — and the still points stay still forever. The decider is the path difference to the two sources: whole wavelengths reinforce, half wavelengths cancel, and the pattern is fixed by geometry."
+    },
+    tags: [
+      { zh: "叠加原理", en: "Superposition" },
+      { zh: "路程差", en: "Path Difference" },
+      { zh: "干涉图样", en: "Interference Pattern" }
+    ],
+    category: "physics",
+    stage: "senior",
+    status: "live",
+    path: "interference/"
   }
 ];
