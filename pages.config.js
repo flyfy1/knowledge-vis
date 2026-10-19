@@ -512,5 +512,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "primary",
     status: "live",
     path: "symmetry-rotation/"
+  },
+  {
+    slug: "parabola",
+    title: { zh: "抛物线 · 投篮的弧线", en: "Parabolas · The Arc of a Shot" },
+    desc: {
+      zh: "投篮的弧线就是抛物线：a 管开口方向与胖瘦；写成顶点式，顶点和对称轴直接写在式子的脸上，随着滑杆搬家；球最后落在哪里，就是图与 x 轴的交点——两个、一个，还是一个都没有，拖一拖全摆得出来。",
+      en: "A basketball's arc is a parabola: a sets the opening direction and width; written in vertex form, the curve wears its vertex and axis of symmetry on its face and moves house as you drag; and where the ball lands is exactly where the curve meets the x-axis — two crossings, one touch, or none at all, every case reachable by hand."
+    },
+    tags: [
+      { zh: "顶点式", en: "Vertex Form" },
+      { zh: "对称轴", en: "Axis of Symmetry" },
+      { zh: "与 x 轴交点", en: "X-Intercepts" }
+    ],
+    category: "math",
+    stage: "junior",
+    status: "live",
+    path: "parabola/"
   }
 ];
