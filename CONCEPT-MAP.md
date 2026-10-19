@@ -132,6 +132,7 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 87 | 凸透镜：一倍分虚实、二倍分大小 / Convex lens: 1f splits real from virtual, 2f splits size | lens#step2 | 蜡烛越过焦点 F，像由实变虚、跳到透镜同侧；越过 2F，像由放大变缩小——两个点管住全部成像规律 |
 | 88 | 干涉：路程差定加强与抵消 / Interference: path difference decides reinforcement | interference#step1 | Δr=kλ 加强、Δr=(k+½)λ 抵消；干涉图样是双曲线族，由路程差的几何定死、不随时间漂移 |
 | 89 | 对数是逆问句 / The logarithm is the reverse question | exp-log#step2 | log₂8=3 就是「2 的几次方等于 8」的答案；对数把指数方程的未知数从指数的位置上取下来，成为可以直接算的数 |
+| 90 | ROC 含单位圆 ⟺ 稳定 / Stability: the ROC contains the unit circle | ztransform#step3 | Z 变换的收敛域是圆环；单位圆整个落在环内系统才稳定，极点位置与 ROC 形状共同决定稳定性 |
 
 ---
 
