@@ -631,5 +631,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "senior",
     status: "live",
     path: "interference/"
+  },
+  {
+    slug: "exp-log",
+    title: { zh: "指数与对数 · 翻倍与逆问", en: "Exponentials & Logarithms · Doubling and the Reverse Question" },
+    desc: {
+      zh: "每小时翻一倍，24 小时就是一千六百多万——指数增长为什么这么猛？反过来问「2 的几次方等于 6」，那个答案就是对数：它不是没算完的小数，而是一个准确的名字。在对数尺上，乘法会变成加法——这就是对数尺的本事。",
+      en: "Doubling every hour gives over sixteen million in a day — why is exponential growth so fierce? Ask the question backwards — 2 to what power makes 6? — and the answer is a logarithm: not an unfinished decimal, but an exact name for the exponent. And on a log scale, multiplication turns into addition."
+    },
+    tags: [
+      { zh: "指数增长", en: "Exponential Growth" },
+      { zh: "对数", en: "Logarithms" },
+      { zh: "对数尺", en: "Log Scale" }
+    ],
+    category: "math",
+    stage: "senior",
+    status: "live",
+    path: "exp-log/"
   }
 ];

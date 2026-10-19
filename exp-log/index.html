@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>指数与对数 · 乘出来是指数，问回去是对数 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=exp1">
+<script src="i18n.js?v=exp1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">指数与对数 · 乘出来，问回去</h1>
+    <p class="tagline" data-i18n="tagline">有些增长不是「每次加一点」，而是「每次乘一个倍数」——起步慢得不起眼，后面快到吓人，这就是指数。对数听起来唬人，其实只是把指数的问句倒过来：已知 2 的几次方等于 8，反过来问「几次方」，这个答案就叫对数。这一页所有的数都用 Math.pow / Math.log 当场实算：写得尽的是精确值，写不尽的一律标 ≈，绝不冒充。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 翻倍的世界</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 底数说了算</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 对数登场</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 三把尺子</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 自测</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 终章</a>
+</nav>
+
+<main>
+
+<!-- ============ 第 0 步：翻倍的世界 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 翻倍的世界</p>
+    <h2 data-i18n="s0t">翻倍的世界：差在「乘」，不在「加」</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="420"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s0-play" data-i18n="s0play">播放 ▶</button>
+      <span class="row-label" id="s0-prog"></span>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s0tLab">时刻探针 t（小时）</span> <span class="val" id="s0-t-val">t = 0.0 h</span></span>
+        <input type="range" id="s0-t" min="0" max="100" step="1" value="0">
+      </label>
+    </div>
+    <p class="readout" id="s0-probe"></p>
+    <div class="num-table-wrap">
+      <table class="num-table" id="s0-table"></table>
+    </div>
+    <p class="readout" data-i18n-html="s0conc"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <p style="margin-top:12px">
+      <a class="fourier-link" href="../linear-functions/#step0" data-i18n="s0lkLin"></a>
+    </p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 第 1 步：指数函数与底数 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 指数函数与底数</p>
+    <h2 data-i18n="s1t">底数说了算：y = aˣ 的全家福</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" class="dragc" height="430"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1aLab">底数 a（被反复乘的倍数）</span> <span class="val" id="s1-a-val">a = 2</span></span>
+        <input type="range" id="s1-a" min="30" max="300" step="1" value="200">
+      </label>
+      <label><span><span data-i18n="s1xLab">探针点的 x（可拖曲线上的点）</span> <span class="val" id="s1-x-val">x = 1.0</span></span>
+        <input type="range" id="s1-x" min="-30" max="30" step="1" value="10">
+      </label>
+    </div>
+    <p class="readout" id="s1-ro"></p>
+    <p class="readout" id="s1-probe"></p>
+    <p class="readout" data-i18n-html="s1conc"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 2 步：对数登场 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 对数登场</p>
+    <h2 data-i18n="s2t">反过来问：对数就是指数的问句倒装</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" class="dragc" height="430"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s2baseLab">底数：</span>
+      <button class="btn big mode s2base active" type="button" data-base="2">2</button>
+      <button class="btn big mode s2base" type="button" data-base="3">3</button>
+      <button class="btn big mode s2base" type="button" data-base="10">10</button>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s2tgtLab">目标高度 y*（预设，或直接拖图上的橙线）：</span>
+      <span id="s2-presets"></span>
+    </div>
+    <p class="readout" id="s2-ro"></p>
+    <p class="readout" id="s2-approx"></p>
+    <p class="stage-title" data-i18n="s2qaT">把问答排成表：左边是问句，右边就是对数的写法</p>
+    <div class="num-table-wrap">
+      <table class="num-table" id="s2-table"></table>
+    </div>
+    <p class="readout" data-i18n-html="s2conc"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 3 步：三把尺子 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 对数的运算律</p>
+    <h2 data-i18n="s3t">三把尺子：对数把乘法翻译成加法</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="400"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big mode active" id="s3-r1" type="button" data-i18n="s3r1">尺子一 · 乘变加</button>
+      <button class="btn big mode" id="s3-r2" type="button" data-i18n="s3r2">尺子二 · 幂变乘</button>
+      <button class="btn big mode" id="s3-r3" type="button" data-i18n="s3r3">尺子三 · 换把尺子量</button>
+    </div>
+    <p class="readout" id="s3-ro"></p>
+    <p class="readout" data-i18n-html="s3conc"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 4 步：自测 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 自测</p>
+    <h2 data-i18n="s4t">自测：问回去，你会吗？</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+
+    <h3 class="quiz-t" data-i18n="q1t">题 1 · 小于 1 的真数</h3>
+    <p class="explain" data-i18n-html="q1d"></p>
+    <div class="btn-row" id="s4q1-opts">
+      <button class="btn big opt" id="s4q1-o0" type="button">3</button>
+      <button class="btn big opt" id="s4q1-o1" type="button">−3</button>
+      <button class="btn big opt" id="s4q1-o2" type="button">8</button>
+      <button class="btn big opt" id="s4q1-o3" type="button">−1/3</button>
+    </div>
+    <p class="readout" id="s4q1-fb"></p>
+
+    <h3 class="quiz-t" data-i18n="q2t">题 2 · 乘了几次</h3>
+    <p class="explain" data-i18n-html="q2d"></p>
+    <div class="btn-row" id="s4q2-opts">
+      <button class="btn big opt" id="s4q2-o0" type="button">3</button>
+      <button class="btn big opt" id="s4q2-o1" type="button">4</button>
+      <button class="btn big opt" id="s4q2-o2" type="button">9</button>
+      <button class="btn big opt" id="s4q2-o3" type="button">27</button>
+    </div>
+    <p class="readout" id="s4q2-fb"></p>
+
+    <h3 class="quiz-t" data-i18n="q3t">题 3 · 判断</h3>
+    <p class="explain" data-i18n-html="q3d"></p>
+    <div class="btn-row">
+      <button class="btn big opt" id="s4q3-true" type="button" data-i18n="q3true">对</button>
+      <button class="btn big opt" id="s4q3-false" type="button" data-i18n="q3false">错</button>
+    </div>
+    <p class="readout" id="s4q3-fb"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 5 步：终章 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 终章</p>
+    <h2 data-i18n="s5t">乘出来是指数，问回去是对数</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="cards3">
+      <div class="value-card">
+        <p class="card-title" data-i18n="c1h">乘出来，是指数</p>
+        <p class="card-body" data-i18n-html="c1"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c2h">问回去，是对数</p>
+        <p class="card-body" data-i18n-html="c2"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c3h">对数把乘变加</p>
+        <p class="card-body" data-i18n-html="c3"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s5fin"></p>
+      <p style="margin-top:12px" data-i18n-html="s5eLine"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../linear-functions/#step0" data-i18n="s5lkLin"></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 指数与对数 Exponentials & Logarithms —— 一步一交互系列</footer>
+
+<script src="app.js?v=exp1"></script>
+</body>
+</html>
