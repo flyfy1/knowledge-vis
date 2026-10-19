@@ -122,6 +122,7 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 77 | 乘法（面积模型）/ Multiplication as area | area-model#step2 | 一刀把 13×7 切成 10×7 与 3×7，两块面积之和恒等于整块——分配律是切法，总和不随切点变 |
 | 78 | 周长与面积 / Perimeter vs area | perimeter-area#step1 | 同样 24 的周长，面积从 11 排到 36、6×6 达峰——周长相同面积可以差很远，越接近正方形越大 |
 | 79 | 除法与余数 / Division and remainders | division-remainder#step1 | 数轴上一格一格跳着分：余数必须比除数小，还能再跳一格就说明还没分完 |
+| 80 | 一次函数：斜率与截距 / Slope and intercept | linear-functions#step2 | y=kx+b 实时拼装——k 是每走一步抬高多少，b 是 x=0 时站在多高，直线上每个点代入都验算得上 |
 
 ---
 
