@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>周长 vs 面积 · 绳子和地砖 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=pa1">
+<script src="i18n.js?v=pa1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">周长 vs 面积 · 绳子和地砖</h1>
+    <p class="tagline" data-i18n="tagline">一根 24 米的绳子围菜园，怎么围，里面的地一样大吗？这一页专治一个最常见的混淆：周长和面积不是一回事——周长是绕一圈的绳子长，面积是里面铺的地砖数。同一根绳子，围得越扁面积越小；反过来面积一样，绳子却能差出一倍多。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 绳子围地</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 面积账本</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 同面积 · 不同周长</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 自测</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 终章</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：绳子围地（周长固定 24，拖角改长宽） ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 绳子围地</p>
+    <h2 data-i18n="s0t">一根绳子围地：周长不变，面积在变</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" class="dragc" height="380"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s0lenLab">长（米）</span> <span class="val" id="s0-len-val">9</span></span>
+        <input type="range" id="s0-len" min="1" max="11" step="1" value="9">
+      </label>
+    </div>
+    <p class="readout" id="s0-rope"></p>
+    <p class="readout" id="s0-area"></p>
+    <p class="readout" id="s0-vs"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：面积账本（11 种围法） ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 面积账本</p>
+    <h2 data-i18n="s1t">11 种围法一字排开：面积先升后降</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="240"></canvas>
+    </div>
+    <div class="stage table-wrap">
+      <table class="ledger">
+        <thead>
+          <tr>
+            <th data-i18n="thL">长（米）</th>
+            <th data-i18n="thW">宽（米）</th>
+            <th data-i18n="thP">周长（米）</th>
+            <th data-i18n="thA">面积（平方米）</th>
+          </tr>
+        </thead>
+        <tbody id="s1-tbody"></tbody>
+      </table>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：反过来（面积固定 24，周长各不同） ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 反过来</p>
+    <h2 data-i18n="s2t">面积一样，周长一样吗？</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s2lab">选一种围法：</span>
+      <button class="btn big" id="s2-b0">1 × 24</button>
+      <button class="btn big" id="s2-b1">2 × 12</button>
+      <button class="btn big" id="s2-b2">3 × 8</button>
+      <button class="btn big" id="s2-b3">4 × 6</button>
+    </div>
+    <div class="stage">
+      <canvas id="s2-canvas" height="430"></canvas>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="readout" id="s2-diff"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：自测 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 自测</p>
+    <h2 data-i18n="s3t">先分清：比的是一圈，还是里面</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s3q1">判断题：两个图形周长相等，它们的面积一定相等。</span>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s3-q1-a" data-i18n="s3q1a">一定相等</button>
+      <button class="btn big" id="s3-q1-b" data-i18n="s3q1b">不一定</button>
+      <button class="btn big" id="s3-counter" data-i18n="s3counterShow">显示反例</button>
+    </div>
+    <p class="readout" id="s3-q1-ro"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="250"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s3q2">应用题：20 米篱笆围一个长方形花圃，四边都要围。下面哪种围法面积最大？</span>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s3-q2-0" data-i18n="s3q2o1">9 米 × 1 米</button>
+      <button class="btn big" id="s3-q2-1" data-i18n="s3q2o2">6 米 × 4 米</button>
+      <button class="btn big" id="s3-q2-2" data-i18n="s3q2o3">5 米 × 5 米</button>
+      <button class="btn big" id="s3-q2-3" data-i18n="s3q2o4">7 米 × 3 米</button>
+    </div>
+    <p class="readout" id="s3-q2-ro"></p>
+    <p class="hint" id="s3-q2-note" data-i18n="s3q2wall" style="display:none"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：终章 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 终章</p>
+    <h2 data-i18n="s4t">一圈，还是里面</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="230"></canvas>
+    </div>
+    <div class="cards3">
+      <div class="value-card">
+        <p class="card-title" data-i18n="c1h">周长 = 一圈</p>
+        <p class="card-body" data-i18n-html="c1"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c2h">面积 = 里面</p>
+        <p class="card-body" data-i18n-html="c2"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c3h">同绳不同积 · 同积不同绳</p>
+        <p class="card-body" data-i18n-html="c3"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s4fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../area-model/#step1" data-i18n="lkArea"></a>
+      </p>
+      <p style="margin-top:8px">
+        <a class="fourier-link" href="../fractions/#step1" data-i18n="lkFrac"></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 周长与面积 Perimeter & Area —— 一步一交互系列</footer>
+
+<script src="app.js?v=pa1"></script>
+</body>
+</html>

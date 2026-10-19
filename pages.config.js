@@ -444,5 +444,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "primary",
     status: "live",
     path: "area-model/"
+  },
+  {
+    slug: "perimeter-area",
+    title: { zh: "周长 vs 面积 · 一根绳子两种账", en: "Perimeter vs Area · One Rope, Two Ledgers" },
+    desc: {
+      zh: "一根 24 米的绳子围地：绳子账（周长）怎么围都不变，地砖账（面积）却从 11 一路变到 36——越接近正方形越大；再反过来，面积固定时细长形状最费绳子。两个最容易混的量，这次分得清清楚楚。",
+      en: "Fence a plot with one 24-metre rope: the rope ledger (perimeter) never changes, but the tile ledger (area) runs from 11 all the way to 36 — the closer to a square, the bigger; then in reverse, fixed area costs the most rope when long and thin. Two quantities everyone mixes up, finally kept apart."
+    },
+    tags: [
+      { zh: "周长", en: "Perimeter" },
+      { zh: "面积比较", en: "Comparing Areas" },
+      { zh: "正方形最优", en: "The Square Wins" }
+    ],
+    category: "math",
+    stage: "primary",
+    status: "live",
+    path: "perimeter-area/"
   }
 ];
