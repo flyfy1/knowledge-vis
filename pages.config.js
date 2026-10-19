@@ -597,5 +597,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "senior",
     status: "live",
     path: "derivative/"
+  },
+  {
+    slug: "lens",
+    title: { zh: "凸透镜成像 · 远近变像", en: "The Convex Lens · Near or Far, the Image Transforms" },
+    desc: {
+      zh: "蜡烛离凸透镜的远近一变，像的大小、正倒、实虚全跟着变：越过二倍焦距，像由大变小；越过一倍焦距，像从光屏上跳进眼睛里——实像能被屏接住，虚像接不住、只能看。三条特殊光线，就能把像画出来。",
+      en: "Slide a candle toward a convex lens and everything about its image changes — size, orientation, real or virtual. Cross twice the focal length and the image starts shrinking; cross one focal length and it leaps off the screen into your eye: a real image can be caught on a screen, a virtual one can only be seen. Three special rays are all it takes to draw exactly where the image lands."
+    },
+    tags: [
+      { zh: "焦距", en: "Focal Length" },
+      { zh: "实像与虚像", en: "Real & Virtual Images" },
+      { zh: "放大镜", en: "The Magnifier" }
+    ],
+    category: "physics",
+    stage: "junior",
+    status: "live",
+    path: "lens/"
   }
 ];
