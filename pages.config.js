@@ -546,5 +546,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "junior",
     status: "live",
     path: "velocity-vt/"
+  },
+  {
+    slug: "integral",
+    title: { zh: "定积分 · 把小条加回整体", en: "The Definite Integral · Adding the Strips Back Up" },
+    desc: {
+      zh: "曲边围成的面积没有公式可套——那就切：把曲线下切成 1、2、4…32 条长方形，左和与右和从两边夹住真值，缝越切越窄；条无限细时两边贴到的那个数就是定积分。而求它有捷径：找到导数是它自己的那个函数，积分与导数就此接头。",
+      en: "No formula fits an area under a curve — so slice it: cut the region into 1, 2, 4 … 32 rectangles, let the left and right sums squeeze the true value from both sides, and watch the gap narrow. The number both sides close in on is the definite integral — and there is a shortcut: find the function whose derivative it is, and integration shakes hands with differentiation."
+    },
+    tags: [
+      { zh: "黎曼和", en: "Riemann Sums" },
+      { zh: "左右夹逼", en: "Squeezing Sums" },
+      { zh: "原函数", en: "Antiderivative" }
+    ],
+    category: "math",
+    stage: "senior",
+    status: "live",
+    path: "integral/"
   }
 ];
