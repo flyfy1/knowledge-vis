@@ -123,6 +123,7 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 78 | 周长与面积 / Perimeter vs area | perimeter-area#step1 | 同样 24 的周长，面积从 11 排到 36、6×6 达峰——周长相同面积可以差很远，越接近正方形越大 |
 | 79 | 除法与余数 / Division and remainders | division-remainder#step1 | 数轴上一格一格跳着分：余数必须比除数小，还能再跳一格就说明还没分完 |
 | 80 | 一次函数：斜率与截距 / Slope and intercept | linear-functions#step2 | y=kx+b 实时拼装——k 是每走一步抬高多少，b 是 x=0 时站在多高，直线上每个点代入都验算得上 |
+| 81 | 对称轴与旋转对称 / Symmetry axes and rotational symmetry | symmetry-rotation#step2 | 风车转过 360°÷n 就与自己重合；平行四边形没有对称轴、却有 180° 旋转对称——翻和转是两回事 |
 
 ---
 
