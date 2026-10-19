@@ -21,7 +21,7 @@ const STR = {
     s0explain: '先别管原理，看画面上方和左方那两串转动的圆：上面一串管<strong>横坐标</strong>，左边一串管<strong>纵坐标</strong>，两条投影虚线的交点，就是正在描出小人轮廓的笔尖。这就是傅里叶变换最震撼的一面——<strong>任何图形，都能拆成一堆旋转的圆</strong>。本页会从一条正弦波开始，一步步讲清它为什么成立；最后一步，你还能<strong>亲手画一个图形</strong>，让圆圈们把它画出来。',
     labelN: '谐波项数 N',
     readoutError: '重构误差',
-    s0hint: '先别动手，看 N 自己从 1 慢慢涨到 40：圆越多，误差越小、小人越像；想自己控制就拖滑杆（自动播放会停）。数学上这一幕写出来就是：f(t) = Σ (a<sub>k</sub> cos kt + b<sub>k</sub> sin kt)——横、竖坐标各有一套这样的和，每一项对应一个圆。',
+    s0hint: '先别动手，看 N 自己从 1 慢慢涨到 40：圆越多，误差越小、小人越像；想自己控制就拖滑杆（自动播放会停）。误差口径：重构点与原轮廓点之间的均方根误差 ÷ 图形尺寸 × 100%。数学上这一幕写出来就是：f(t) = Σ (a<sub>k</sub> cos kt + b<sub>k</sub> sin kt)——横、竖坐标各有一套这样的和，每一项对应一个圆。这些项有个名字叫<strong>谐波</strong>：频率是基频整数倍（1 倍、2 倍、3 倍……）的正弦成分，滑杆上的 N 数的就是用到的谐波个数。',
     s0start: '开始探索 ↓',
 
     s1kicker: '第 1 步 · 波是什么',
@@ -99,7 +99,7 @@ const STR = {
     s0explain: 'Skip the theory for a moment and just watch. Two chains of circles are turning — one along the top of the frame, one down the left side. The top chain controls the <strong>horizontal (x) coordinate</strong>, the left chain the <strong>vertical (y) coordinate</strong>, and where the two dashed projection lines cross is the pen tip, tracing the outline of a little figure. This is the Fourier transform at its most striking: <strong>any shape at all can be taken apart into a set of rotating circles</strong>. This page starts from a single sine wave and builds up exactly why that is true — and in the final step you can <strong>draw a shape of your own</strong> and let the circles draw it back.',
     labelN: 'Number of harmonics N',
     readoutError: 'reconstruction error',
-    s0hint: 'Hands off for a moment: watch N climb on its own from 1 to 40 — the more circles, the smaller the error, the closer the likeness. Drag the slider whenever you want to take over (auto-play then stops). Written in mathematics, this scene is f(t) = Σ (a<sub>k</sub> cos kt + b<sub>k</sub> sin kt) — one such sum for the x coordinate and one for the y, each term corresponding to one circle.',
+    s0hint: 'Hands off for a moment: watch N climb on its own from 1 to 40 — the more circles, the smaller the error, the closer the likeness. Drag the slider whenever you want to take over (auto-play then stops). How the error is measured: the root-mean-square distance between the reconstructed points and the original outline points, divided by the size of the shape, × 100%. Written in mathematics, this scene is f(t) = Σ (a<sub>k</sub> cos kt + b<sub>k</sub> sin kt) — one such sum for the x coordinate and one for the y, each term corresponding to one circle. Those terms are called <strong>harmonics</strong>: sine components whose frequencies are whole-number multiples of the fundamental (1×, 2×, 3×, …) — and the N on the slider counts how many of them are in use.',
     s0start: 'Start exploring ↓',
 
     s1kicker: 'Step 1 · What Is a Wave?',
