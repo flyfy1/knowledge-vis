@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>二次函数与抛物线 · 投篮的弧线 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=par1">
+<script src="i18n.js?v=par1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">二次函数与抛物线 · 投篮的弧线</h1>
+    <p class="tagline" data-i18n="tagline">投篮的弧线就是抛物线：y = ax² 里的 a 管开口方向和胖瘦，把整条弧线平移，顶点（最高点或最低点）跟着走——式子写成顶点式，顶点、对称轴、和地面的交点，全都能直接从式子里读出来。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 投篮</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 a 管胖瘦</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 顶点搬家</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 落点与交点</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 自测</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 终章</a>
+</nav>
+
+<main>
+
+<!-- ============ 第 0 步：投篮 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 投篮</p>
+    <h2 data-i18n="s0t">投篮：把球每 0.1 秒的位置连起来</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="400"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s0-play" data-i18n="s0play">投篮 ▶</button>
+      <button class="btn big mode active" id="s0-mode-t" type="button" data-i18n="s0modeT">横轴：时间</button>
+      <button class="btn big mode" id="s0-mode-d" type="button" data-i18n="s0modeD">横轴：水平距离</button>
+      <span class="row-label" id="s0-prog"></span>
+    </div>
+    <p class="readout" id="s0-pt"></p>
+    <p class="readout" id="s0-ro"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 第 1 步：a 管胖瘦 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · a 管胖瘦</p>
+    <h2 data-i18n="s1t">y = ax²：a 管开口方向和胖瘦</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="440"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1aLab">a 的取值（顶点固定在原点）</span> <span class="val" id="s1-a-val">a = 1</span></span>
+        <input type="range" id="s1-a" min="0" max="5" step="1" value="4">
+      </label>
+    </div>
+    <div class="eq-display"><span class="eq-pre" data-i18n="s1eqPre">当前方程</span><span class="eq-body" id="s1-eq">y = x²</span></div>
+    <div class="btn-row">
+      <button class="btn big" id="s1-zero" data-i18n="s1zeroBtn">a = 0 会怎样？</button>
+    </div>
+    <p class="readout" id="s1-ro"></p>
+    <p class="readout" data-i18n-html="s1conc"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 2 步：顶点搬家 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 顶点搬家</p>
+    <h2 data-i18n="s2t">顶点式：让抛物线搬家，顶点写在脸上</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="440"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s2aLab">开口方向 a</span>
+      <button class="btn big mode active" id="s2-a-up" type="button" data-i18n="s2aUp">a = 1（开口向上）</button>
+      <button class="btn big mode" id="s2-a-down" type="button" data-i18n="s2aDown">a = −1（开口向下）</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2hLab">h（顶点左右搬）</span> <span class="val" id="s2-h-val">h = 0</span></span>
+        <input type="range" id="s2-h" min="-4" max="4" step="1" value="0">
+      </label>
+      <label><span><span data-i18n="s2kLab">k（顶点上下搬）</span> <span class="val" id="s2-k-val">k = 0</span></span>
+        <input type="range" id="s2-k" min="-3" max="4" step="1" value="0">
+      </label>
+    </div>
+    <div class="eq-display"><span class="eq-pre" data-i18n="s2eqPre">顶点式</span><span class="eq-body" id="s2-eq">y = x²</span></div>
+    <p class="readout" id="s2-ro"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 3 步：落点与交点 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 落点与交点</p>
+    <h2 data-i18n="s3t">落点与交点：弧线在哪里碰到地面</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="440"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s3aLab">开口方向 a</span>
+      <button class="btn big mode" id="s3-a-up" type="button" data-i18n="s3aUp">a = 1（开口向上）</button>
+      <button class="btn big mode active" id="s3-a-down" type="button" data-i18n="s3aDown">a = −1（开口向下）</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3hLab">h（顶点左右）</span> <span class="val" id="s3-h-val">h = 1</span></span>
+        <input type="range" id="s3-h" min="-3" max="3" step="1" value="1">
+      </label>
+      <label><span><span data-i18n="s3kLab">k（顶点上下）</span> <span class="val" id="s3-k-val">k = 2</span></span>
+        <input type="range" id="s3-k" min="-3" max="4" step="1" value="2">
+      </label>
+    </div>
+    <div class="eq-display"><span class="eq-pre" data-i18n="s3eqPre">这条抛物线</span><span class="eq-body" id="s3-eq">y = −(x − 1)² + 2</span></div>
+    <p class="readout" id="s3-ro"></p>
+    <p class="readout" id="s3-probe"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 4 步：自测 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 自测</p>
+    <h2 data-i18n="s4t">自测：选式子、摆弧线、读投篮图</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+
+    <h3 class="quiz-t" data-i18n="q1t">题 1 · 看图选式子</h3>
+    <p class="explain" data-i18n-html="q1d"></p>
+    <div class="stage">
+      <canvas id="s4q1-canvas" height="300"></canvas>
+    </div>
+    <div class="btn-row" id="s4q1-opts">
+      <button class="btn big opt" id="s4q1-o0" type="button"></button>
+      <button class="btn big opt" id="s4q1-o1" type="button"></button>
+      <button class="btn big opt" id="s4q1-o2" type="button"></button>
+    </div>
+    <p class="readout" id="s4q1-ro"></p>
+
+    <h3 class="quiz-t" data-i18n="q2t">题 2 · 把弧线摆出来</h3>
+    <p class="explain" data-i18n-html="q2d"></p>
+    <div class="stage">
+      <canvas id="s4q2-canvas" height="400"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="q2aLab">你的开口方向 a</span>
+      <button class="btn big mode active" id="s4q2-a-up" type="button" data-i18n="q2aUp">a = 1（开口向上）</button>
+      <button class="btn big mode" id="s4q2-a-down" type="button" data-i18n="q2aDown">a = −1（开口向下）</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="q2hLab">你的 h（顶点横坐标）</span> <span class="val" id="s4q2-h-val">h = 0</span></span>
+        <input type="range" id="s4q2-h" min="-4" max="4" step="1" value="0">
+      </label>
+      <label><span><span data-i18n="q2kLab">你的 k（顶点纵坐标）</span> <span class="val" id="s4q2-k-val">k = 0</span></span>
+        <input type="range" id="s4q2-k" min="-3" max="4" step="1" value="0">
+      </label>
+    </div>
+    <p class="readout" id="s4q2-cur"></p>
+    <p class="readout" id="s4q2-ro"></p>
+
+    <h3 class="quiz-t" data-i18n="q3t">题 3 · 投篮读图</h3>
+    <p class="explain" data-i18n-html="q3d"></p>
+    <div class="stage">
+      <canvas id="s4q3-canvas" height="340"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big mode active" id="s4q3-ma" type="button" data-i18n="q3aBtn">问一：最高点几米？</button>
+      <button class="btn big mode" id="s4q3-mb" type="button" data-i18n="q3bBtn">问二：球在几米处落地？</button>
+    </div>
+    <p class="readout" id="s4q3-ro"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 5 步：终章 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 终章</p>
+    <h2 data-i18n="s5t">一条弧线，全写在式子里</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="cards3">
+      <div class="value-card">
+        <p class="card-title" data-i18n="c1h">a 管方向与胖瘦</p>
+        <p class="card-body" data-i18n-html="c1"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c2h">顶点式把顶点写在脸上</p>
+        <p class="card-body" data-i18n-html="c2"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c3h">交点是落点</p>
+        <p class="card-body" data-i18n-html="c3"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s5fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../linear-functions/#step0" data-i18n="s5lkLin"></a>
+      </p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../pythagoras/#step5" data-i18n="s5lkPyth"></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 二次函数与抛物线 Quadratic Functions & the Parabola —— 一步一交互系列</footer>
+
+<script src="app.js?v=par1"></script>
+</body>
+</html>
