@@ -26,6 +26,7 @@ window.KNOWLEDGE_CATEGORIES = [
   { id: "computing",   name: { zh: "计算与智能", en: "Computing & AI" } },
   { id: "math",        name: { zh: "数学基础",   en: "Mathematical Foundations" } },
   { id: "chemistry",   name: { zh: "化学", en: "Chemistry" } },
+  { id: "biology",     name: { zh: "生物", en: "Biology" } },
   { id: "earth",       name: { zh: "地球与太空", en: "Earth & Space" } },
   { id: "leetcode",    name: { zh: "LeetCode 专区", en: "LeetCode" } }
 ];
@@ -854,5 +855,73 @@ window.KNOWLEDGE_PAGES = [
     stage: "primary",
     status: "live",
     path: "day-night-rotation/"
+  },
+  {
+    slug: "mass-conservation",
+    title: { zh: "质量守恒 · 原子一个都不丢", en: "Mass Conservation · Not a Single Atom Lost" },
+    desc: {
+      zh: "化学反应看起来变重变轻，原子却一个不多、一个不少，只是重新排队。这一页把反应拆开逐个原子数，再用天平对账：敞口跑掉的气体、从空气里加入的氧，都逃不过这本账。",
+      en: "Reactions seem to gain or lose weight, yet not a single atom is created or destroyed — they only reshuffle. Take reactions apart and count atoms one by one, then settle it on a balance: escaping gas and oxygen joining from the air both show up in the ledger."
+    },
+    tags: [
+      { zh: "原子重排", en: "Atom Rearrangement" },
+      { zh: "配平", en: "Balancing" },
+      { zh: "气体逸出", en: "Escaping Gas" }
+    ],
+    category: "chemistry",
+    stage: "junior",
+    status: "live",
+    path: "mass-conservation/"
+  },
+  {
+    slug: "cell-structure",
+    title: { zh: "细胞 · 生命的最小单位间", en: "The Cell · Life's Smallest Workshop" },
+    desc: {
+      zh: "把一片叶子放大到单个细胞：膜划出边界，核是总控，线粒体供能，叶绿体造糖。点一点每个工位是干什么的，再把动物细胞和植物细胞并排，找齐三处不同。",
+      en: "Zoom into a single cell: the membrane draws the boundary, the nucleus runs the place, mitochondria supply energy, chloroplasts make sugar. Tap each workstation to see its job, then put animal and plant cells side by side and find all three differences."
+    },
+    tags: [
+      { zh: "细胞器", en: "Organelles" },
+      { zh: "动植物对照", en: "Plant vs Animal" },
+      { zh: "结构与功能", en: "Structure & Function" }
+    ],
+    category: "biology",
+    stage: "junior",
+    status: "live",
+    path: "cell-structure/"
+  },
+  {
+    slug: "photosynthesis",
+    title: { zh: "光合作用 · 用光开工的糖厂", en: "Photosynthesis · A Sugar Factory Run by Light" },
+    desc: {
+      zh: "叶子用光把水和二氧化碳重排成糖和氧气：方程式逐项点开对原子账；速率随光强和二氧化碳先升后封顶，因为谁最缺谁说了算（限制因素）。",
+      en: "A leaf uses light to rearrange water and carbon dioxide into sugar and oxygen: click through the equation and balance the atom ledger; then watch the rate rise with light and CO₂ — and cap out, because the scarcest input rules (the limiting factor)."
+    },
+    tags: [
+      { zh: "原子对账", en: "Atom Ledger" },
+      { zh: "光饱和", en: "Light Saturation" },
+      { zh: "限制因素", en: "Limiting Factor" }
+    ],
+    category: "biology",
+    stage: "junior",
+    status: "live",
+    path: "photosynthesis/"
+  },
+  {
+    slug: "population-growth",
+    title: { zh: "种群增长 · S 形曲线从哪来", en: "Population Growth · Where the S-Curve Comes From" },
+    desc: {
+      zh: "没有天花板时种群按倍数狂奔，有了容纳量 K 就被压成 S 形：每一代的实际增长率由 r(1−N/K) 当场实算；把 r 推过安全区，还能亲眼看到离散模型振荡失效。",
+      en: "With no ceiling a population multiplies wildly; with carrying capacity K it bends into an S. The effective rate r(1−N/K) is computed generation by generation — and if you push r past the safe zone, you can watch the discrete model oscillate and break."
+    },
+    tags: [
+      { zh: "指数增长", en: "Exponential Growth" },
+      { zh: "逻辑斯蒂", en: "Logistic" },
+      { zh: "容纳量 K", en: "Carrying Capacity" }
+    ],
+    category: "math",
+    stage: "senior",
+    status: "live",
+    path: "population-growth/"
   }
 ];
