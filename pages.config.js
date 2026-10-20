@@ -733,5 +733,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "primary",
     status: "live",
     path: "pinhole-camera/"
+  },
+  {
+    slug: "space-diagonal",
+    title: { zh: "空间对角线 · 3D 里的两次勾股", en: "The Space Diagonal · Pythagoras Twice, in 3D" },
+    desc: {
+      zh: "长方体里最长的那条斜线有多长？把立体压回平面算两次：先在底面用勾股算出对角线，再拿它当一条直角边、竖起高来第二次勾股。拖动 3D 长方体转着看，两次勾股都写在真实的棱上。",
+      en: "How long is the longest line inside a box? Flatten the solid back into planes and apply Pythagoras twice: first across the base, then using that diagonal as one leg of a vertical right triangle. Orbit the 3D cuboid and watch both applications drawn on the real edges."
+    },
+    tags: [
+      { zh: "3D 互动", en: "Interactive 3D" },
+      { zh: "勾股定理", en: "Pythagoras" },
+      { zh: "长方体", en: "Cuboid" }
+    ],
+    category: "math",
+    stage: "junior",
+    status: "live",
+    path: "space-diagonal/"
   }
 ];
