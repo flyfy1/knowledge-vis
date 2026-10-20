@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="category" content="chemistry">
+<meta name="stage" content="junior">
+<title>原子结构</title>
+<link rel="stylesheet" href="style.css">
+<script src="../pages.config.js">
+</script>
+<script src="i18n.js">
+</script>
+</head>
+<body>
+<header class="site-head">
+<div class="head-main">
+<p class="backline">
+<a href="../" data-i18n="back">
+</a>
+</p>
+<div class="badges">
+<span class="badge" id="categoryBadge">
+</span>
+<span class="badge" id="stageBadge">
+</span>
+</div>
+<h1 data-i18n="pageTitle">
+</h1>
+<p class="tagline" data-i18n="tagline">
+</p>
+</div>
+<div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+<button type="button" data-lang="zh">中</button>
+<button type="button" data-lang="en">EN</button>
+</div>
+</header>
+<nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+<a class="nav-step" href="#step0" data-nav="0" data-i18n="nav0">
+</a>
+<a class="nav-step" href="#step1" data-nav="1" data-i18n="nav1">
+</a>
+<a class="nav-step" href="#step2" data-nav="2" data-i18n="nav2">
+</a>
+<a class="nav-step" href="#step3" data-nav="3" data-i18n="nav3">
+</a>
+<a class="nav-step" href="#step4" data-nav="4" data-i18n="nav4">
+</a>
+<a class="nav-step" href="#step5" data-nav="5" data-i18n="nav5">
+</a>
+<a class="nav-step" href="#step6" data-nav="6" data-i18n="nav6">
+</a>
+</nav>
+<main>
+<section class="step" id="step0" data-step="0">
+<div class="step-inner">
+<p class="step-kicker" data-i18n="s0k">
+</p>
+<h2 data-i18n="s0t">
+</h2>
+<p class="explain" data-i18n-html="s0e">
+</p>
+<div class="stage">
+<canvas id="s0-canvas" height="360" data-i18n-aria="canvasLabel" role="img">
+</canvas>
+</div>
+<div class="controls">
+<label>
+<span data-i18n="zoomLab">
+</span>
+<input id="s0-zoom" type="range" min="0" max="100" step="1" value="75">
+</label>
+</div>
+<div class="btn-row">
+<button type="button" class="btn big" id="s0-hlnuc" aria-pressed="false" data-i18n="hlNuc">
+</button>
+<button type="button" class="btn big" id="s0-hlelec" aria-pressed="false" data-i18n="hlElec">
+</button>
+<button type="button" class="btn big" id="s0-reset" data-i18n="reset">
+</button>
+</div>
+<p class="readout" id="s0-ro" aria-live="polite">
+</p>
+</div>
+</section>
+<section class="step" id="step1" data-step="1">
+<div class="step-inner">
+<p class="step-kicker" data-i18n="s1k">
+</p>
+<h2 data-i18n="s1t">
+</h2>
+<p class="explain" data-i18n-html="s1e">
+</p>
+<div class="stage">
+<canvas id="s1-canvas" height="360" data-i18n-aria="canvasLabel" role="img">
+</canvas>
+</div>
+<div class="btn-row stepper-row">
+<span class="frac-name" data-i18n="zLab">
+</span>
+<span class="frac-ctl">
+<button type="button" class="btn sm" id="s1-minus" aria-label="Z −1">−</button>
+<span class="frac-val" id="s1-zval">
+</span>
+<button type="button" class="btn sm" id="s1-plus" aria-label="Z +1">+</button>
+</span>
+<button type="button" class="btn big" id="s1-reset" data-i18n="reset">
+</button>
+</div>
+<p class="readout" id="s1-ro" aria-live="polite">
+</p>
+<p class="hint" data-i18n="s1hint">
+</p>
+</div>
+</section>
+<section class="step" id="step2" data-step="2">
+<div class="step-inner">
+<p class="step-kicker" data-i18n="s2k">
+</p>
+<h2 data-i18n="s2t">
+</h2>
+<p class="explain" data-i18n-html="s2e">
+</p>
+<div class="stage">
+<canvas id="s2-canvas" height="360" data-i18n-aria="canvasLabel" role="img">
+</canvas>
+</div>
+<div class="btn-row">
+<span class="row-label" data-i18n="presetLab">
+</span>
+<button type="button" class="btn big" data-preset2="1">H</button>
+<button type="button" class="btn big" data-preset2="6">C</button>
+<button type="button" class="btn big" data-preset2="11">Na</button>
+<button type="button" class="btn big" data-preset2="17">Cl</button>
+</div>
+<div class="btn-row stepper-row">
+<span class="frac-ctl">
+<span class="frac-name" data-i18n="zLab">
+</span>
+<button type="button" class="btn sm" id="s2-zminus" aria-label="Z −1">−</button>
+<span class="frac-val" id="s2-zval">
+</span>
+<button type="button" class="btn sm" id="s2-zplus" aria-label="Z +1">+</button>
+</span>
+<span class="frac-ctl">
+<span class="frac-name" data-i18n="eLab">
+</span>
+<button type="button" class="btn sm" id="s2-eminus" aria-label="e −1">−</button>
+<span class="frac-val" id="s2-eval">
+</span>
+<button type="button" class="btn sm" id="s2-eplus" aria-label="e +1">+</button>
+</span>
+<button type="button" class="btn big" id="s2-fill" data-i18n="fillBtn">
+</button>
+<button type="button" class="btn big" id="s2-reset" data-i18n="reset">
+</button>
+</div>
+<p class="readout" id="s2-ro" aria-live="polite">
+</p>
+<p class="hint" data-i18n-html="s2model">
+</p>
+</div>
+</section>
+<section class="step" id="step3" data-step="3">
+<div class="step-inner">
+<p class="step-kicker" data-i18n="s3k">
+</p>
+<h2 data-i18n="s3t">
+</h2>
+<p class="explain" data-i18n-html="s3e">
+</p>
+<div class="stage">
+<canvas id="s3-canvas" height="360" data-i18n-aria="canvasLabel" role="img">
+</canvas>
+</div>
+<div class="btn-row">
+<span class="row-label" data-i18n="cmpLab">
+</span>
+<button type="button" class="btn big" data-preset3="2">He</button>
+<button type="button" class="btn big" data-preset3="10">Ne</button>
+<button type="button" class="btn big" data-preset3="18">Ar</button>
+<button type="button" class="btn big" data-preset3="11">Na</button>
+<button type="button" class="btn big" data-preset3="12">Mg</button>
+<button type="button" class="btn big" data-preset3="17">Cl</button>
+</div>
+<div class="btn-row">
+<button type="button" class="btn big" id="s3-reset" data-i18n="reset">
+</button>
+</div>
+<p class="readout" id="s3-ro" aria-live="polite">
+</p>
+</div>
+</section>
+<section class="step" id="step4" data-step="4">
+<div class="step-inner">
+<p class="step-kicker" data-i18n="s4k">
+</p>
+<h2 data-i18n="s4t">
+</h2>
+<p class="explain" data-i18n-html="s4e">
+</p>
+<div class="stage">
+<canvas id="s4-canvas" height="360" data-i18n-aria="canvasLabel" role="img">
+</canvas>
+</div>
+<div class="btn-row">
+<span class="row-label" data-i18n="preset4Lab">
+</span>
+<button type="button" class="btn big" data-preset4="11,10">Na → Na⁺</button>
+<button type="button" class="btn big" data-preset4="12,10">Mg → Mg²⁺</button>
+<button type="button" class="btn big" data-preset4="8,10">O → O²⁻</button>
+<button type="button" class="btn big" data-preset4="17,18">Cl → Cl⁻</button>
+</div>
+<div class="btn-row stepper-row">
+<span class="frac-ctl">
+<span class="frac-name" data-i18n="zLab">
+</span>
+<button type="button" class="btn sm" id="s4-zminus" aria-label="Z −1">−</button>
+<span class="frac-val" id="s4-zval">
+</span>
+<button type="button" class="btn sm" id="s4-zplus" aria-label="Z +1">+</button>
+</span>
+</div>
+<div class="controls">
+<label>
+<span data-i18n="eLab">
+</span>
+<input id="s4-e" type="range" min="0" max="16" step="1" value="10">
+</label>
+</div>
+<div class="btn-row">
+<button type="button" class="btn big" id="s4-reset" data-i18n="reset">
+</button>
+</div>
+<p class="readout" id="s4-ro" aria-live="polite">
+</p>
+<p class="hint" id="s4-explore" hidden>
+</p>
+</div>
+</section>
+<section class="step" id="step5" data-step="5">
+<div class="step-inner">
+<p class="step-kicker" data-i18n="s5k">
+</p>
+<h2 data-i18n="s5t">
+</h2>
+<p class="explain" data-i18n="s5e">
+</p>
+<div class="quiz-q">
+<p class="explain" data-i18n="q1t">
+</p>
+<div class="btn-row" id="q1-opts" role="group">
+</div>
+<p class="readout" id="q1-fb" aria-live="polite">
+</p>
+<p class="readout analysis" id="q1-an">
+</p>
+</div>
+<div class="quiz-q">
+<p class="explain" data-i18n="q2t">
+</p>
+<div class="btn-row" id="q2-opts" role="group">
+</div>
+<p class="readout" id="q2-fb" aria-live="polite">
+</p>
+<p class="readout analysis" id="q2-an">
+</p>
+</div>
+<div class="quiz-q">
+<p class="explain" data-i18n="q3t">
+</p>
+<div class="btn-row" id="q3-opts" role="group">
+</div>
+<p class="readout" id="q3-fb" aria-live="polite">
+</p>
+<p class="readout analysis" id="q3-an">
+</p>
+</div>
+<div class="quiz-q">
+<p class="explain" data-i18n="q4t">
+</p>
+<div class="btn-row" id="q4-opts" role="group">
+</div>
+<p class="readout" id="q4-fb" aria-live="polite">
+</p>
+<p class="readout analysis" id="q4-an">
+</p>
+</div>
+<p class="readout" id="s5-score" aria-live="polite">
+</p>
+<p class="readout finale-note" id="s5-hint" aria-live="polite">
+</p>
+<div class="btn-row">
+<button type="button" class="btn big" id="s5-reset" data-i18n="resetQuiz">
+</button>
+</div>
+</div>
+</section>
+<section class="step" id="step6" data-step="6">
+<div class="step-inner">
+<p class="step-kicker" data-i18n="s6k">
+</p>
+<h2 data-i18n="s6t">
+</h2>
+<p class="explain" data-i18n-html="s6e">
+</p>
+<div class="cards3">
+<div class="value-card">
+<h3 data-i18n="card1t">
+</h3>
+<p data-i18n="card1b">
+</p>
+</div>
+<div class="value-card">
+<h3 data-i18n="card2t">
+</h3>
+<p data-i18n="card2b">
+</p>
+</div>
+<div class="value-card">
+<h3 data-i18n="card3t">
+</h3>
+<p data-i18n="card3b">
+</p>
+</div>
+</div>
+<div class="finale">
+<a class="fourier-link" href="../particles-states/#step1" data-i18n="linkParticles">
+</a>
+</div>
+<p class="hint" data-i18n="s6next">
+</p>
+</div>
+</section>
+</main>
+<footer class="site-foot" data-i18n="foot">
+</footer>
+<script src="app.js">
+</script>
+</body>
+</html>

@@ -785,5 +785,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "junior",
     status: "live",
     path: "particles-states/"
+  },
+  {
+    slug: "atomic-structure",
+    title: { zh: "原子结构 · 质子数定它是谁", en: "Atomic Structure · The Proton Count Decides What It Is" },
+    desc: {
+      zh: "原子不是实心球：中间一个极小的核几乎占了全部质量，电子在外面按层排布。质子数定它是谁，最外层电子数定它活泼不活泼——改数字、当场算，全部账都摆在明处。",
+      en: "An atom is not a solid ball: a tiny nucleus at the centre holds almost all the mass, and electrons arrange themselves in layers outside it. The proton count decides what it is; the outermost electron count decides how reactive it is — change the numbers and watch everything recompute."
+    },
+    tags: [
+      { zh: "质子数与元素", en: "Protons & Elements" },
+      { zh: "电子层排布", en: "Electron Layers" },
+      { zh: "离子与电荷", en: "Ions & Charge" }
+    ],
+    category: "chemistry",
+    stage: "junior",
+    status: "live",
+    path: "atomic-structure/"
   }
 ];
