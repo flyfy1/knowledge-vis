@@ -152,6 +152,8 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 107 | 元素身份只由质子数定 / Element identity is fixed by the proton count alone | atomic-structure#step1 | Z 改 1、身份就换一家；中子只改质量数 A=Z+N、不换身份；身份判定就是查 Z 本身 |
 | 108 | 电子按层排布、每层容量有定数 / Electrons arrange in layers of fixed capacity | atomic-structure#step2 | 本页初中简化口径 2/8/8（明示非真实规则）；排布由电子数经纯函数逐层填出，层圈只是住址分区、电子不沿圈公转 |
 | 109 | 离子电荷 = 质子数 − 电子数 / Ion charge = protons − electrons | atomic-structure#step4 | 电荷由两数实算：电子多为阴离子、电子少为阳离子；超出 2/8/8 表达范围时页面明示只作电荷记账 |
+| 110 | 力矩平衡：力 × 力臂，两边相等就平衡 / Torque balance: force × lever arm, equal on both sides | lever-pulley#step0 | 支点挪动改变力臂比、F 随之实算；倾斜角只是示意、力矩数是实算（3D 页，逻辑与 2D 定版逐字节同源） |
+| 111 | 滑轮组省力倍数 = 承重绳段数 / Pulley force multiple = load-bearing rope segments | lever-pulley#step4 | F=G/n、h=s/n 且绳长守恒；本页绕法里奇数段自由端垂自定滑轮不计段、偶数段自由端向上出动滑轮计段 |
 
 ---
 

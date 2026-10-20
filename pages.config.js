@@ -802,5 +802,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "junior",
     status: "live",
     path: "atomic-structure/"
+  },
+  {
+    slug: "lever-pulley",
+    title: { zh: "杠杆与滑轮 · 支点挪一挪，省力见分晓", en: "Levers & Pulleys · Move the Fulcrum, Feel the Trade" },
+    desc: {
+      zh: "小力凭什么撬动大物？这一页算两本账。转动的账看力矩：力 × 力臂，两边相等就平衡——支点挪一挪，同样的重物要用的力立刻变。可省力从不是白省：功的账本两边永远相等，省几倍力就费几倍距离。到了滑轮组更干脆，不用算，数一数吊着重物的绳子段数，就知道省几倍力。全页 g 取 10 N/kg，力一律用牛顿（N）。",
+      en: "How can a small force lift a huge weight? This page keeps two ledgers. The turning ledger is torque: force × lever arm — when both sides match, the lever balances, and sliding the fulcrum changes the force you need at once. But saved force is never free: the work ledger always balances, so every multiple of force saved costs the same multiple of distance. For pulley systems it is even simpler — do not compute, just count the rope segments holding the load. Throughout, g = 10 N/kg and forces are in newtons (N)."
+    },
+    tags: [
+      { zh: "力矩平衡", en: "Torque Balance" },
+      { zh: "功不省", en: "Work Is Never Saved" },
+      { zh: "数段数定倍数", en: "Count the Rope Segments" }
+    ],
+    category: "physics",
+    stage: "junior",
+    status: "live",
+    path: "lever-pulley/"
   }
 ];
