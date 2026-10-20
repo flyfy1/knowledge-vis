@@ -1,0 +1,134 @@
+'use strict';
+/* 光合作用 · 双语字典与语言机制（与同批页面同一 idiom：knowledge-lang / langchange 事件） */
+const STR = {
+  zh: {
+    docTitle: '光合作用 · 用光开工的糖厂 —— 一步一交互',
+    back: '← 知识索引', category: '生物', stage: '初中',
+    pageTitle: '光合作用 · 用光开工的糖厂',
+    tagline: '叶子是一间用光开工的糖厂：原料是水和二氧化碳，产品是糖，放出的氧气只是「顺手排的气」。光越强、原料越足（在一定范围内），开工越快——速率全部由模型当场实算。',
+    lang: '语言', navLabel: '步骤导航',
+    nav0: '0 叶子在冒泡', nav1: '1 原料与产品', nav2: '2 光强说了算', nav3: '3 原料会卡脖子', nav4: '4 情境判定', nav5: '5 终章',
+    foot: 'visual.integ.life · 光合作用 Photosynthesis —— 一步一交互系列',
+    play: '开始冒泡 ▶', pause: '暂停 ⏸', reset: '重置',
+    canvas0: '示意图：阳光下的水草不断冒出气泡', canvas2: '曲线图：光合速率随光照强度变化', canvas3: '曲线图：光合速率随二氧化碳浓度变化',
+    equationAria: '光合作用方程式，点每一项看来源与去向',
+
+    s0k: '第 0 步 · 叶子在冒泡', s0t: '阳光下，水草在往外冒气泡',
+    s0e: '把一株水草放在阳光下，它会不断冒出气泡。<strong>先押个注：这气泡是什么气？叶子又在「吃」什么？</strong>点「开始冒泡」看一分钟的量，再往下走对账。',
+    s0ro: '已放出气泡 <b>{n}</b> 个（速率约 {rate} 个/分钟，示意换算）。这气是<b>氧气</b>——下一步看它是从哪笔账里出来的。',
+
+    s1k: '第 1 步 · 原料与产品', s1t: '一笔原子账：进来什么，出去什么',
+    s1e: '光合作用的方程式点得动：<strong>点每一项</strong>，看它从哪来、到哪去。左右两边逐项数原子——和质量守恒那页同一本账：原子一个不多、一个不少。',
+    eqCO2: '6 CO₂', eqH2O: '6 H₂O', eqLight: '光 · 叶绿体', eqSugar: 'C₆H₁₂O₆（糖）', eqO2: '6 O₂',
+    srcCO2: '二氧化碳：从空气经叶片气孔进来。', srcH2O: '水：根从土壤吸上来，经茎运到叶。',
+    srcLight: '光与叶绿体：光是能量来源，叶绿体是车间——没有光，整间厂停工。',
+    srcSugar: '糖（葡萄糖）：产品，留给植物长身体、多余的变成淀粉存起来。',
+    srcO2: '氧气：副产品，从气孔放回空气——第 0 步的气泡就是它。',
+    ledgerT: '原子对账（左边 = 右边）：',
+    ledgerC: '碳 C：{l} = {r}', ledgerH: '氢 H：{l} = {r}', ledgerO: '氧 O：{l} = {r}',
+    s1ro: '对账结论：反应前后每种原子数目相等——<b>光合作用没有变出新原子，只是把水和二氧化碳重排成糖和氧气</b>，光能存进了糖里。',
+    s1hint: '试着想：放出的氧气来自水还是二氧化碳？（账上看：6 个 O₂ 里，一半氧原子来自……点 eqO2 与 eqH2O 对照数一数。本页按初中口径只要求对账，不展开同位素示踪。）',
+
+    s2k: '第 2 步 · 光强说了算', s2t: '光越强，开工越快——但有上限',
+    s2e: '拖动光照强度：速率读数与曲线上的点同步动。注意曲线先陡后平——<strong>光饱和</strong>：光再强，车间（叶绿体）的处理能力到顶了，速率不再涨。',
+    lightLabel: '光照强度（相对值）',
+    s2ro: '光强 {L}：速率 = <b>{rate}</b>（相对单位），约合气泡 {bubbles} 个/分钟。{sat}',
+    s2satYes: '已进入光饱和区：再加光也不涨，其他因素（CO₂、水）成了瓶颈。',
+    s2satNo: '还在上升区：光是当前的主要限制。',
+
+    s3k: '第 3 步 · 原料会卡脖子', s3t: '二氧化碳不够，光再强也白搭',
+    s3e: '光给满，改拖二氧化碳浓度：速率同样先涨后平。两个旋钮谁更「卡」，速率就听谁的——这叫<strong>限制因素</strong>：最短的那块板决定装多少水。',
+    co2Label: '二氧化碳浓度（相对值）',
+    s3ro: 'CO₂ {C}（光强固定在 {L}）：速率 = <b>{rate}</b>。当前限制因素：<b>{lim}</b>。',
+    limCO2: '二氧化碳', limLight: '光照（已接近饱和）',
+    s3conc: '结论：速率由最缺的那一项决定——大棚里补 CO₂ 能增产，就是在抬最短的那块板。',
+
+    s4k: '第 4 步 · 情境判定', s4t: '两个情境，你判对了吗',
+    s4e: '用前面三步的账和限制因素，判两个真实情境。每题选完立刻给判定与一句理由。',
+    q1t: '情境一：夜里没有光，植物还会往外放氧气吗？',
+    q1a: '会，和白天一样放', q1b: '不会——没有光就停工，只剩呼吸消耗氧气', q1c: '会，但放的是二氧化碳变氧气',
+    q1ok: '判对了：光合作用必须有光；夜里只有呼吸作用，植物是净吸入氧气的。',
+    q1no: '不对：回第 2 步看曲线——光强为 0 时速率为 0。夜里植物只呼吸，净吸入氧气。',
+    q2t: '情境二：温室大棚白天补二氧化碳，为什么能增产？',
+    q2a: 'CO₂ 是原料，白天光强够时它就是最短的那块板', q2b: 'CO₂ 能遮光降温', q2c: 'CO₂ 直接变成糖不用光',
+    q2ok: '判对了：白天光不缺，卡脖子的是 CO₂（第 3 步的限制因素），补上就抬速率。',
+    q2no: '不对：CO₂ 的作用是原料（第 1 步的账），白天光强够时它正是限制因素，补它才有用；没有光补再多也不行。',
+    scoreTxt: '得分：{n} / 2', resetQuiz: '重判一次',
+
+    s5k: '第 5 步 · 终章', s5t: '收成三句话',
+    s5e: '一、光合作用 = 用光能把水和二氧化碳重排成糖和氧气，原子一笔账平（质量守恒）。二、速率先随光强、CO₂ 上升，后被车间能力封顶（光饱和）。三、谁最缺谁说了算——限制因素决定速率。',
+    card1t: '原料', card1b: '水（根吸）+ 二氧化碳（气孔进），光供能，叶绿体是车间。',
+    card2t: '产品', card2b: '糖是正品（存能量），氧气是副产品放回空气。',
+    card3t: '速率', card3b: '光强与 CO₂ 先推后封顶，实际速率听最缺的那一项。',
+    linkMass: '对账的底账在质量守恒那一页：原子为什么一个都不能丢 →（注册后由索引进入）',
+    done: '本页完。模型边界：速率用简化模型 速率 = 上限 × 光因子 × CO₂因子（两因子均为饱和型），真实植物还受温度、叶龄、水分影响，光过强还有光抑制，本页未展开；气泡数是速率的示意换算，非实测。'
+  },
+  en: {
+    docTitle: 'Photosynthesis · A Sugar Factory Run by Light — One Interaction per Step',
+    back: '← Knowledge Index', category: 'Biology', stage: 'Junior',
+    pageTitle: 'Photosynthesis · A Sugar Factory Run by Light',
+    tagline: 'A leaf is a sugar factory powered by light: the raw materials are water and carbon dioxide, the product is sugar, and the oxygen released is just exhaust. Stronger light and more raw material (up to a point) mean faster work — every rate here is computed live by the model.',
+    lang: 'Language', navLabel: 'Step navigation',
+    nav0: '0 Bubbling Leaves', nav1: '1 Materials & Products', nav2: '2 Light Rules', nav3: '3 The Limiting Factor', nav4: '4 Scenario Check', nav5: '5 Finale',
+    foot: 'visual.integ.life · Photosynthesis — one interaction per step',
+    play: 'Start bubbling ▶', pause: 'Pause ⏸', reset: 'Reset',
+    canvas0: 'Diagram: a water plant bubbling under sunlight', canvas2: 'Chart: photosynthetic rate vs light intensity', canvas3: 'Chart: photosynthetic rate vs carbon dioxide',
+    equationAria: 'The photosynthesis equation — click each term for its source and destination',
+
+    s0k: 'Step 0 · Bubbling Leaves', s0t: 'In sunlight, the plant keeps bubbling',
+    s0e: 'Put a water plant in sunlight and it steadily releases bubbles. <strong>Place a bet first: what gas is that — and what is the leaf “eating”?</strong> Run the bubbles for a minute, then go and check the ledger.',
+    s0ro: 'Bubbles released: <b>{n}</b> (about {rate} per minute, illustrative conversion). The gas is <b>oxygen</b> — next step shows which ledger line it comes from.',
+
+    s1k: 'Step 1 · Materials & Products', s1t: 'An atom ledger: what comes in, what goes out',
+    s1e: 'The equation is clickable: <strong>click each term</strong> to see where it comes from and where it goes. Count atoms term by term — the same ledger as the Mass Conservation page: not one atom more, not one less.',
+    eqCO2: '6 CO₂', eqH2O: '6 H₂O', eqLight: 'Light · Chloroplast', eqSugar: 'C₆H₁₂O₆ (sugar)', eqO2: '6 O₂',
+    srcCO2: 'Carbon dioxide: enters from the air through the leaf’s stomata.',
+    srcH2O: 'Water: absorbed by the roots from the soil and carried up to the leaf.',
+    srcLight: 'Light & chloroplast: light is the energy source, the chloroplast is the workshop — no light, the whole factory stops.',
+    srcSugar: 'Sugar (glucose): the product — used to grow, the surplus stored as starch.',
+    srcO2: 'Oxygen: the by-product, released back into the air — the bubbles of step 0.',
+    ledgerT: 'Atom ledger (left = right):',
+    ledgerC: 'Carbon C: {l} = {r}', ledgerH: 'Hydrogen H: {l} = {r}', ledgerO: 'Oxygen O: {l} = {r}',
+    s1ro: 'Ledger verdict: every atom count balances — <b>photosynthesis creates no new atoms; it rearranges water and carbon dioxide into sugar and oxygen</b>, storing light energy in the sugar.',
+    s1hint: 'Think: does the released oxygen come from the water or the carbon dioxide? (From the ledger: of the 6 O₂, half the oxygen atoms come from… click eqO2 and eqH2O and count. At junior level this page only asks for the balance, not the isotope-tracer proof.)',
+
+    s2k: 'Step 2 · Light Rules', s2t: 'Stronger light, faster work — up to a ceiling',
+    s2e: 'Drag the light intensity: the rate readout and the point on the curve move together. Notice the curve steepens then flattens — <strong>light saturation</strong>: past that point the workshop (chloroplasts) is at capacity and more light buys nothing.',
+    lightLabel: 'Light intensity (relative)',
+    s2ro: 'Light {L}: rate = <b>{rate}</b> (relative units), about {bubbles} bubbles/min. {sat}',
+    s2satYes: 'In the saturation zone now: more light will not help; something else (CO₂, water) is the bottleneck.',
+    s2satNo: 'Still on the rising part: light is the main limit right now.',
+
+    s3k: 'Step 3 · The Limiting Factor', s3t: 'Not enough CO₂? Extra light is wasted',
+    s3e: 'Keep light high and drag the carbon dioxide instead: the rate rises then flattens the same way. Whichever knob is “shorter” rules the rate — the <strong>limiting factor</strong>: the shortest stave decides how much water the barrel holds.',
+    co2Label: 'Carbon dioxide (relative)',
+    s3ro: 'CO₂ {C} (light fixed at {L}): rate = <b>{rate}</b>. Current limiting factor: <b>{lim}</b>.',
+    limCO2: 'carbon dioxide', limLight: 'light (near saturation)',
+    s3conc: 'Takeaway: the rate obeys whichever input is scarcest — greenhouses add CO₂ precisely to raise the shortest stave.',
+
+    s4k: 'Step 4 · Scenario Check', s4t: 'Two scenarios — call them right',
+    s4e: 'Use the ledger and the limiting-factor idea from the first three steps to judge two real scenarios. Each answer is judged on the spot, with a one-line reason.',
+    q1t: 'Scenario 1: at night, with no light, does a plant still release oxygen?',
+    q1a: 'Yes, just like daytime', q1b: 'No — no light, no production; only respiration, which uses oxygen', q1c: 'Yes — it converts CO₂ into oxygen',
+    q1ok: 'Correct: photosynthesis needs light; at night only respiration runs, so the plant is a net oxygen consumer.',
+    q1no: 'Not quite: check the step-2 curve — at light 0 the rate is 0. At night the plant only respires and takes in oxygen overall.',
+    q2t: 'Scenario 2: why does adding CO₂ in a greenhouse raise yields in daytime?',
+    q2a: 'CO₂ is a raw material, and with light plentiful it is the shortest stave', q2b: 'CO₂ shades the plants and cools them', q2c: 'CO₂ turns into sugar directly, no light needed',
+    q2ok: 'Correct: in daytime light is plentiful and CO₂ is the limiting factor (step 3) — topping it up raises the rate.',
+    q2no: 'Not quite: CO₂ works as a raw material (the step-1 ledger); in daytime it is exactly the limiting factor, so adding it helps — but with no light, no amount of CO₂ works.',
+    scoreTxt: 'Score: {n} / 2', resetQuiz: 'Judge again',
+
+    s5k: 'Step 5 · Finale', s5t: 'Three sentences to keep',
+    s5e: 'One: photosynthesis uses light energy to rearrange water and carbon dioxide into sugar and oxygen — the atom ledger balances (mass conservation). Two: the rate rises with light and CO₂, then hits the workshop ceiling (light saturation). Three: whichever input is scarcest rules — the limiting factor sets the rate.',
+    card1t: 'Materials', card1b: 'Water (roots) + carbon dioxide (stomata); light supplies energy; the chloroplast is the workshop.',
+    card2t: 'Products', card2b: 'Sugar is the real product (it stores the energy); oxygen is a by-product released to the air.',
+    card3t: 'Rate', card3b: 'Light and CO₂ push first, then cap out; the actual rate obeys the scarcest input.',
+    linkMass: 'The underlying ledger lives on the Mass Conservation page: why not a single atom may be lost → (via the index once registered)',
+    done: 'End of page. Model boundary: the rate uses a simplified model, rate = ceiling × light factor × CO₂ factor (both saturating). Real plants also depend on temperature, leaf age and water, and overly strong light inhibits (photoinhibition) — not covered here. Bubble counts are an illustrative conversion of the rate, not measurements.'
+  }
+};
+let lang = null;
+function getLang(){ if(lang) return lang; try{const saved=localStorage.getItem('knowledge-lang'); if(saved==='zh'||saved==='en') return lang=saved;}catch(_e){} return lang=(navigator.language||'').toLowerCase().startsWith('zh')?'zh':'en'; }
+function t(key, vars={}){ let s=(STR[getLang()]&&STR[getLang()][key])||key; return s.replace(/\{(\w+)\}/g,(_,k)=>vars[k]===undefined?'':String(vars[k])); }
+function applyLang(next){ lang=(next==='zh'||next==='en')?next:getLang(); try{localStorage.setItem('knowledge-lang',lang);}catch(_e){} document.documentElement.lang=lang==='zh'?'zh-CN':'en'; document.title=t('docTitle'); document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=t(el.dataset.i18n);}); document.querySelectorAll('[data-i18n-html]').forEach(el=>{el.innerHTML=t(el.dataset.i18nHtml);}); document.querySelectorAll('[data-i18n-aria]').forEach(el=>{el.setAttribute('aria-label',t(el.dataset.i18nAria));}); document.querySelectorAll('#langToggle button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang)); document.dispatchEvent(new CustomEvent('langchange')); }
+function onLangRefresh(fn){ document.addEventListener('langchange',fn); document.querySelectorAll('#langToggle button').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang))); }
