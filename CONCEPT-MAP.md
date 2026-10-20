@@ -169,6 +169,8 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 124 | K 是吸引子 / K is an attractor | population-growth#step3 | N₀ 在 K 上方也回落，两个方向的实际增长率符号都指向 K |
 | 125 | 平衡 = 正逆速率相等 / Equilibrium means equal forward and reverse rates | chemical-equilibrium#step1 | 两条速率由模拟滑窗实测，相等时计数才走平；平衡浓度可以不等 |
 | 126 | 勒夏特列：体系抵抗扰动 / Le Chatelier: the system pushes back | chemical-equilibrium#step2 | 平衡时加料，净变化方向由模拟计数实算，体系在新水平重新走平 |
+| 127 | 速率 = 成功碰撞的次数 / Rate means counting successful collisions | reaction-rates#step0 | 成功与失败碰撞分开计数实测，碰上但能量不足不算数 |
+| 128 | 催化剂是降门槛，不是催快粒子 / A catalyst lowers the bar, not the speed | reaction-rates#step4 | 降阈值时粒子平均速率不变（实测读数），达标比例上升——与升温改分布对照 |
 
 ---
 
