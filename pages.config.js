@@ -25,6 +25,7 @@ window.KNOWLEDGE_CATEGORIES = [
   { id: "probability", name: { zh: "概率与统计", en: "Probability & Statistics" } },
   { id: "computing",   name: { zh: "计算与智能", en: "Computing & AI" } },
   { id: "math",        name: { zh: "数学基础",   en: "Mathematical Foundations" } },
+  { id: "chemistry",   name: { zh: "化学", en: "Chemistry" } },
   { id: "leetcode",    name: { zh: "LeetCode 专区", en: "LeetCode" } }
 ];
 
@@ -767,5 +768,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "junior",
     status: "live",
     path: "coordinate-plane/"
+  },
+  {
+    slug: "particles-states",
+    title: { zh: "粒子与物态 · 热闹程度即温度", en: "Particles & States · Temperature Is How Wildly They Move" },
+    desc: {
+      zh: "把物质放大到一颗颗粒子：挤在一起原地抖的是固体，松开能流动的是液体，满屋乱飞的是气体。加热就是让粒子动得更野——温度不是另一样东西，它就是粒子平均动得有多快。升温到熔点、沸点还会各卡一段平台。",
+      en: "Zoom into matter as individual particles: packed and jiggling in place is a solid, loosened and flowing is a liquid, flying everywhere is a gas. Heating just makes the particles move more wildly — temperature is not a separate thing, it is how fast they move on average. And at the melting and boiling points, the temperature stalls on a plateau."
+    },
+    tags: [
+      { zh: "粒子模型", en: "Particle Model" },
+      { zh: "固液气", en: "Solid, Liquid, Gas" },
+      { zh: "熔化与沸腾平台", en: "Melting & Boiling Plateaus" }
+    ],
+    category: "chemistry",
+    stage: "junior",
+    status: "live",
+    path: "particles-states/"
   }
 ];
