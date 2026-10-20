@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>方程天平 · 两边同做一件事 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=e1">
+<script src="i18n.js?v=e1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">方程天平 · 两边同做一件事</h1>
+    <p class="tagline" data-i18n="tagline">等号不是「算出答案」的信号，是一架天平的指针：指针归零，两边一样重。这一页我们只学一招——不管做什么，对两边同时做相同的事——用这一招把 x 一个人留在天平左边。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 认识天平</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 两边同加同减</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 两边同乘同除</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 一步方程</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 两步方程</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 自测</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 终章</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：认识天平 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 认识天平</p>
+    <h2 data-i18n="s0t">一盒不知道多重的东西</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="360"></canvas>
+    </div>
+    <p class="note tiltnote" data-i18n="tiltNote">横梁倾斜的角度是示意，画得夸张了；判断平不平，只看两边重量是否相等。</p>
+    <div class="btn-row">
+      <button class="btn big primary" id="s0-add" data-i18n="s0add">＋ 放一个砝码</button>
+      <button class="btn big" id="s0-remove" data-i18n="s0remove">－ 取走一个砝码</button>
+      <button class="btn big" id="s0-swap" data-i18n="s0swap">换一盒（重新称）</button>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <div class="checklist" id="s0-check"></div>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：两边同加同减 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 两边同加同减</p>
+    <h2 data-i18n="s1t">天平已经平了，怎么放它才不倒</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="360"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s1-addU" data-i18n="s1addU">两边各加 1 个单位</button>
+      <button class="btn big" id="s1-addB" data-i18n="s1addB">两边各加 1 个盒子</button>
+      <button class="btn big" id="s1-subU" data-i18n="s1subU">两边各取走 1 个单位</button>
+      <button class="btn big warn" id="s1-one" data-i18n="s1one">只给左盘加 1 个单位（只加左边试试）</button>
+      <button class="btn big" id="s1-reset" data-i18n="s1reset">回到初始平衡</button>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="note tiltnote" data-i18n="tiltNote">横梁倾斜的角度是示意，画得夸张了；判断平不平，只看两边重量是否相等。</p>
+    <p class="readout why" id="s1-why"></p>
+    <div class="checklist" id="s1-check"></div>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：两边同乘同除 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 两边同乘同除</p>
+    <h2 data-i18n="s2t">把两边一起放大、一起缩小</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="360"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s2-mul2" data-i18n="s2mul2">两边同时 ×2</button>
+      <button class="btn big" id="s2-mul3" data-i18n="s2mul3">两边同时 ×3</button>
+      <span class="row-label" data-i18n="s2divLab">两边同时除以：</span>
+      <span id="s2-divs" class="btn-group"></span>
+      <button class="btn big warn" id="s2-one" data-i18n="s2one">只乘左边 ×2（只乘一边试试）</button>
+      <button class="btn big" id="s2-reset" data-i18n="s2reset">回到初始平衡</button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="readout why" id="s2-why"></p>
+    <div class="checklist" id="s2-check"></div>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：一步方程 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 一步方程</p>
+    <h2 data-i18n="s3t">把 x 单独留在左边</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="360"></canvas>
+    </div>
+    <p class="readout goal" data-i18n="goalLine">目标：让左盘只剩下 1 个盒子（x 单独在一边）。</p>
+    <div class="btn-row op-panel" id="s3-panel"></div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="readout why" id="s3-why"></p>
+    <div class="hist-box">
+      <p class="hist-title" data-i18n="histTitle">操作轨迹（你做过的每一步）</p>
+      <div id="s3-hist"></div>
+    </div>
+    <div class="reveal-zone" id="s3-reveal"></div>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：两步方程 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 两步方程</p>
+    <h2 data-i18n="s4t">用两次，先哪件后哪件自己定</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="360"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" id="s4-qlab"></span>
+      <button class="btn big" id="s4-next" data-i18n="s4next">换一题</button>
+      <span class="row-label" id="s4-prog"></span>
+    </div>
+    <p class="readout goal" data-i18n="goalLine">目标：让左盘只剩下 1 个盒子（x 单独在一边）。</p>
+    <div class="btn-row op-panel" id="s4-panel"></div>
+    <p class="readout" id="s4-readout"></p>
+    <p class="readout why" id="s4-why"></p>
+    <div class="hist-box">
+      <p class="hist-title" data-i18n="histTitle">操作轨迹（你做过的每一步）</p>
+      <div id="s4-hist"></div>
+    </div>
+    <div class="reveal-zone" id="s4-reveal"></div>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：自测 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 自测</p>
+    <h2 data-i18n="s5t">自测：三题，都用同一招</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="stage">
+      <div class="stage-title" data-i18n="s5cap">第 1 题的天平：x + 5 = 12（左盘 1 个盒子 + 5 个单位，右盘 12 个单位）</div>
+      <canvas id="s5-canvas" height="300"></canvas>
+    </div>
+
+    <div class="quiz-block">
+      <p class="quiz-q" data-i18n="s5q1">① 一步方程（回第 3 步）：x + 5 = 12，求 x。</p>
+      <div class="btn-row" id="q1-opts"></div>
+      <p class="readout feedback" id="q1-fb"></p>
+      <div class="analysis" id="q1-an"></div>
+    </div>
+
+    <div class="quiz-block">
+      <p class="quiz-q" data-i18n="s5q2">② 两步方程（回第 4 步）：2x + 4 = 14，求 x。</p>
+      <div class="btn-row" id="q2-opts"></div>
+      <p class="readout feedback" id="q2-fb"></p>
+      <div class="analysis" id="q2-an"></div>
+    </div>
+
+    <div class="quiz-block">
+      <p class="quiz-q" data-i18n="s5q3">③ 方法判断（回第 1、3 步）：要解 x + 6 = 10，下面哪一步是对的？</p>
+      <div class="btn-row" id="q3-opts"></div>
+      <p class="readout feedback" id="q3-fb"></p>
+      <div class="analysis" id="q3-an"></div>
+    </div>
+
+    <p class="readout" id="s5-done"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 6：终章 ============ -->
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 终章</p>
+    <h2 data-i18n="s6t">等号是一架天平</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <div class="stage">
+      <canvas id="s6-canvas" height="250"></canvas>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../negative-numbers/#step3" data-i18n="lkNeg"></a>
+      </p>
+      <p style="margin-top:8px">
+        <a class="fourier-link" href="../fractions/#step1" data-i18n="lkFrac"></a>
+      </p>
+      <p style="margin-top:8px">
+        <a class="fourier-link" href="../linear-functions/#step2" data-i18n="lkLin"></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 方程天平 Equations on a Balance —— 一步一交互系列</footer>
+
+<script src="app.js?v=e1"></script>
+</body>
+</html>
