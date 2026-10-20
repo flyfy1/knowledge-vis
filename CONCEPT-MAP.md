@@ -167,6 +167,8 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 122 | 限制因素：最短的板定水位 / The limiting factor rules the rate | photosynthesis#step3 | 光与 CO₂ 两因子取小者定速率，补 CO₂ 增产就是抬最短的板 |
 | 123 | 逻辑斯蒂：S 形是逐代算出来的 / The logistic S falls out of iteration | population-growth#step2 | 实际增长率 r(1−N/K) 随 N 逼近 K 而减小，同参对照指数线看分家点 |
 | 124 | K 是吸引子 / K is an attractor | population-growth#step3 | N₀ 在 K 上方也回落，两个方向的实际增长率符号都指向 K |
+| 125 | 平衡 = 正逆速率相等 / Equilibrium means equal forward and reverse rates | chemical-equilibrium#step1 | 两条速率由模拟滑窗实测，相等时计数才走平；平衡浓度可以不等 |
+| 126 | 勒夏特列：体系抵抗扰动 / Le Chatelier: the system pushes back | chemical-equilibrium#step2 | 平衡时加料，净变化方向由模拟计数实算，体系在新水平重新走平 |
 
 ---
 

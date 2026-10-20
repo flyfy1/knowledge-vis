@@ -923,5 +923,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "senior",
     status: "live",
     path: "population-growth/"
+  },
+  {
+    slug: "chemical-equilibrium",
+    title: { zh: "化学平衡 · 人数不变，人还在跑", en: "Chemical Equilibrium · Still Moving at Balance" },
+    desc: {
+      zh: "平衡不是反应停了，而是正、逆两个方向跑得一样快：计数走平，粒子还在互变。加一把料、升一次温，看平衡点如何移动；再验证催化剂只改快慢、不改终点。",
+      en: "Equilibrium is not the reaction stopping — it is both directions running equally fast: counts level off while particles keep swapping. Add material, raise the temperature and watch the balance point shift; then check that a catalyst changes only the speed, never the endpoint."
+    },
+    tags: [
+      { zh: "动态平衡", en: "Dynamic Equilibrium" },
+      { zh: "勒夏特列", en: "Le Chatelier" },
+      { zh: "速率相等", en: "Equal Rates" }
+    ],
+    category: "chemistry",
+    stage: "senior",
+    status: "live",
+    path: "chemical-equilibrium/"
   }
 ];
