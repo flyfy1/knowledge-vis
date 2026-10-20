@@ -147,6 +147,8 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 102 | 空间对角线 = 两次勾股 / The space diagonal is Pythagoras twice | space-diagonal#step1 | 先底面对角线 e=√(a²+b²)，再以 e 与高 c 第二次勾股 d=√(e²+c²)；账本用未舍入的 e²，只对长方体成立（全站首个 3D 页，Three.js 自托管） |
 | 103 | 坐标是相对原点的地址 / Coordinates are addresses relative to the origin | coordinate-plane#step2 | 原点一换，所有点的读数同步平移——点没动，地址变了；读数全页钳在 [−6,6] 标尺内 |
 | 104 | 坐标换位 = 沿对角线翻折 / Swapping coordinates reflects across the diagonal | coordinate-plane#step4 | (a,b)→(b,a) 是沿 y=x 的翻折；落在对角线上的点（如 (4,4)）换位后不动 |
+| 105 | 物态由粒子排布与运动定 / States are particle arrangement and motion | particles-states#step0 | 固态原地振动、液态贴身流动、气态自由乱飞——页面是逐帧真模拟，物态名由模拟量纯函数判定、不读滑杆 |
+| 106 | 温度 = 粒子平均动能的读数 / Temperature reads mean particle kinetic energy | particles-states#step1 | 温度读数只能由粒子 RMS 速率映射得到；熔化时升温停在平台（#step2），粒子数全程守恒 |
 
 ---
 
