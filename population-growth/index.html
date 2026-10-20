@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>种群增长 · S 形曲线从哪来 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=pop1">
+<script src="i18n.js?v=pop1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">种群增长 · S 形曲线从哪来</h1>
+    <p class="tagline" data-i18n="tagline">没有天花板时，种群按倍数狂奔；有了容纳量 K，越接近 K 涨得越慢，曲线被压成 S 形。这一页的数量、增长率、翻倍时间全部由迭代与公式当场实算，没有一条曲线是手画的。细菌情境只是示意，数字都是模拟值。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 翻倍狂奔</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 增长率 r</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 世界装不下</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 K 是渐近线</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 r 调过头</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 终章</a>
+</nav>
+
+<main>
+
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 翻倍的狂奔</p>
+    <h2 data-i18n="s0t">每一代都翻倍：先猜，再数</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage"><canvas id="s0-canvas" height="300"></canvas></div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s0-next" data-i18n="s0next">下一代 →</button>
+      <button class="btn big" id="s0-reset" data-i18n="s0reset">重来</button>
+    </div>
+    <p class="readout" id="s0-ro"></p>
+    <p class="readout" data-i18n-html="s0conc"></p>
+  </div>
+</section>
+
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 增长率 r</p>
+    <h2 data-i18n="s1t">不止翻倍：r 定陡缓</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage"><canvas id="s1-canvas" height="320"></canvas></div>
+    <div class="controls">
+      <label><span><span data-i18n="s1rLab">增长率 r（每单位时间）</span> <span class="val" id="s1-r-val"></span></span>
+        <input type="range" id="s1-r" min="5" max="70" step="5" value="30">
+      </label>
+    </div>
+    <p class="readout" id="s1-ro"></p>
+    <p class="readout" data-i18n-html="s1conc"></p>
+    <p style="margin-top:12px"><a class="fourier-link" href="../exp-log/#step0" data-i18n="s1lk">底图回顾：指数与对数那一页把 e^x 与 ln 讲透了 →</a></p>
+  </div>
+</section>
+
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 世界装不下</p>
+    <h2 data-i18n="s2t">容纳量 K 登场：曲线被压弯</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage"><canvas id="s2-canvas" height="320"></canvas></div>
+    <div class="controls">
+      <label><span><span data-i18n="s2rLab">增长率 r</span> <span class="val" id="s2-r-val"></span></span>
+        <input type="range" id="s2-r" min="20" max="120" step="5" value="60">
+      </label>
+      <label><span><span data-i18n="s2kLab">容纳量 K</span> <span class="val" id="s2-k-val"></span></span>
+        <input type="range" id="s2-k" min="300" max="2000" step="100" value="1000">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s2-play" data-i18n="s0next">下一代 →</button>
+      <button class="btn big" id="s2-reset" data-i18n="s0reset">重来</button>
+    </div>
+    <p class="readout" id="s2-ro"></p>
+    <p class="readout" data-i18n-html="s2conc"></p>
+  </div>
+</section>
+
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · K 是渐近线</p>
+    <h2 data-i18n="s3t">从上边来，也回到 K</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage"><canvas id="s3-canvas" height="320"></canvas></div>
+    <div class="controls">
+      <label><span><span data-i18n="s3n0Lab">起始数量 N₀</span> <span class="val" id="s3-n0-val"></span></span>
+        <input type="range" id="s3-n0" min="50" max="2200" step="50" value="1800">
+      </label>
+      <label><span><span data-i18n="s3kLab">容纳量 K</span> <span class="val" id="s3-k-val"></span></span>
+        <input type="range" id="s3-k" min="300" max="2000" step="100" value="1000">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s3-next" data-i18n="s3next">下一代 →</button>
+      <button class="btn big" id="s3-reset" data-i18n="s3reset">重来</button>
+    </div>
+    <p class="readout" id="s3-ro"></p>
+    <p class="readout" data-i18n-html="s3conc"></p>
+  </div>
+</section>
+
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · r 调过头（越界实验）</p>
+    <h2 data-i18n="s4t">模型也有适用范围</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="stage"><canvas id="s4-canvas" height="320"></canvas></div>
+    <div class="controls">
+      <label><span><span data-i18n="s4rLab">增长率 r（越界区）</span> <span class="val" id="s4-r-val"></span></span>
+        <input type="range" id="s4-r" min="150" max="290" step="5" value="230">
+      </label>
+    </div>
+    <p class="readout" id="s4-ro"></p>
+    <p class="readout" data-i18n-html="s4conc"></p>
+  </div>
+</section>
+
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 终章</p>
+    <h2 data-i18n="s5t">把这一页收成三句话</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <p style="margin-top:12px"><a class="fourier-link" href="../exp-log/#step0" data-i18n="s5lkExp">上游：指数与对数（底图）→</a></p>
+    <p class="hint" data-i18n-html="s5bound"></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <p data-i18n="foot">visual.integ.life · 种群增长 Population Growth —— 一步一交互系列</p>
+</footer>
+
+<script src="app.js?v=pop1"></script>
+</body>
+</html>
