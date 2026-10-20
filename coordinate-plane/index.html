@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>坐标系与点的位置 · 先横后纵，点有地址 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=cp1">
+<script src="i18n.js?v=cp1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">坐标系与点的位置 · 给每个位置一个地址</h1>
+    <p class="tagline" data-i18n="tagline">位置可以被数钉死：一条线上的位置用一个数，平面上的位置用一对数。这一对数有顺序——先横后纵，写反了就是另一个地址。这一页从数轴开始，把坐标系这张「地址网」一格一格铺给你看。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 一维地址</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 一个数不够</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 坐标系登场</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 顺序不能反</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 四象限</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 自测与终章</a>
+</nav>
+
+<main>
+
+<!-- ============ 第 0 步：一维地址 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 一维地址</p>
+    <h2 data-i18n="s0t">一条线上的点，一个数就够</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="210"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s0-shift" data-i18n="s0shift">把原点挪到 +2 处看看</button>
+    </div>
+    <p class="readout" id="s0-ro"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 第 1 步：一个数不够 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 一个数不够</p>
+    <h2 data-i18n="s1t">平面上的点，要一对数才定得死</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="380"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1colLab">列号（从左往右数第几列）</span> <span class="val" id="s1-col-val">3</span></span>
+        <input type="range" id="s1-col" min="1" max="7" step="1" value="3">
+      </label>
+      <label><span><span data-i18n="s1rowLab">行号（从下往上数第几行）</span> <span class="val" id="s1-row-val">2</span></span>
+        <input type="range" id="s1-row" min="1" max="5" step="1" value="2">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn big mode" id="s1-mcol" data-i18n="s1btnCol">只报列号</button>
+      <button class="btn big mode" id="s1-mrow" data-i18n="s1btnRow">只报行号</button>
+      <button class="btn big mode" id="s1-mboth" data-i18n="s1btnBoth">两个都报</button>
+    </div>
+    <p class="readout" id="s1-ro"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 2 步：坐标系登场 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 坐标系登场</p>
+    <h2 data-i18n="s2t">先横后纵：(x, y) 是点的地址</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="460"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s2-build" data-i18n="s2build">▶ 搭一遍坐标系</button>
+      <span class="row-label" data-i18n="s2pickLab">点图上的青色点看走法，或拖动橙色点满图跑：</span>
+    </div>
+    <p class="readout" id="s2-ro"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 3 步：顺序不能反 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 顺序不能反</p>
+    <h2 data-i18n="s3t">(3, 2) 和 (2, 3) 不是一家</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="460"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3xLab">A 的横坐标 x</span> <span class="val" id="s3-x-val">x = 3</span></span>
+        <input type="range" id="s3-x" min="-6" max="6" step="1" value="3">
+      </label>
+      <label><span><span data-i18n="s3yLab">A 的纵坐标 y</span> <span class="val" id="s3-y-val">y = 2</span></span>
+        <input type="range" id="s3-y" min="-6" max="6" step="1" value="2">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s3-swap" data-i18n="s3swapBtn">交换 A 的坐标 ⇄</button>
+    </div>
+    <p class="readout" id="s3-ro"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 4 步：四象限 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 四象限</p>
+    <h2 data-i18n="s4t">四象限：符号是拼出来的，不是背的</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="460"></canvas>
+    </div>
+    <p class="readout" id="s4-ro"></p>
+    <p class="readout" id="s4-ro2"></p>
+    <div class="practice">
+      <p class="explain" data-i18n-html="s4prac"></p>
+      <p class="readout" id="s4-prac-ro"></p>
+      <div class="btn-row">
+        <button class="btn big" id="s4-new" data-i18n="s4new">换一个组合</button>
+      </div>
+    </div>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 5 步：自测 + 终章 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 自测与终章</p>
+    <h2 data-i18n="s5t">自测：读得出、放得准、不写反</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+
+    <h3 class="quiz-t" data-i18n="q1t">题 1 · 读坐标</h3>
+    <p class="explain" data-i18n-html="q1d"></p>
+    <div class="stage">
+      <canvas id="s5q1-canvas" height="340"></canvas>
+    </div>
+    <div class="btn-row" id="s5q1-opts">
+      <button class="btn big opt" id="s5q1-o0" type="button"></button>
+      <button class="btn big opt" id="s5q1-o1" type="button"></button>
+      <button class="btn big opt" id="s5q1-o2" type="button"></button>
+    </div>
+    <p class="readout" id="s5q1-ro"></p>
+
+    <h3 class="quiz-t" data-i18n="q2t">题 2 · 按坐标放点</h3>
+    <p class="explain" data-i18n-html="q2d"></p>
+    <div class="stage">
+      <canvas id="s5q2-canvas" height="380"></canvas>
+    </div>
+    <p class="readout" id="s5q2-ro"></p>
+
+    <h3 class="quiz-t" data-i18n="q3t">题 3 · 换位陷阱</h3>
+    <p class="explain" data-i18n-html="q3d"></p>
+    <div class="btn-row">
+      <button class="btn big opt" id="s5q3-yes" type="button" data-i18n="q3yes">是同一个点</button>
+      <button class="btn big opt" id="s5q3-no" type="button" data-i18n="q3no">不是同一个点</button>
+    </div>
+    <div class="stage">
+      <canvas id="s5q3-canvas" height="380"></canvas>
+    </div>
+    <p class="readout" id="s5q3-ro"></p>
+
+    <p class="readout done-line" id="s5-done"></p>
+    <p class="hint" data-i18n-html="s5hint"></p>
+
+    <div class="cards3">
+      <div class="value-card">
+        <p class="card-title" data-i18n="c1h">地址的维数跟着世界走</p>
+        <p class="card-body" data-i18n-html="c1"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c2h">(x, y) 是有序数对</p>
+        <p class="card-body" data-i18n-html="c2"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c3h">象限是符号拼图</p>
+        <p class="card-body" data-i18n-html="c3"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s5fin"></p>
+      <p class="neg-line" data-i18n="s5neg"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../linear-functions/#step0" data-i18n="s5lkLf0"></a>
+      </p>
+      <p style="margin-top:8px">
+        <a class="fourier-link" href="../linear-functions/#step2" data-i18n="s5lkLf2"></a>
+      </p>
+      <p style="margin-top:8px">
+        <a class="fourier-link" href="../pythagoras/#step5" data-i18n="s5lkPyth"></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 坐标系与点的位置 Coordinate Plane —— 一步一交互系列</footer>
+
+<script src="app.js?v=cp1"></script>
+</body>
+</html>

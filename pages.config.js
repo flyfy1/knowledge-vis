@@ -750,5 +750,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "junior",
     status: "live",
     path: "space-diagonal/"
+  },
+  {
+    slug: "coordinate-plane",
+    title: { zh: "坐标系 · 点的地址", en: "The Coordinate Plane · Addresses for Points" },
+    desc: {
+      zh: "给平面定一个原点、两条轴，每个点就有了一个地址 (x, y)。换原点，点没动、地址全变；横纵一换位，点沿对角线翻到对面。这套地址系统，是所有函数图像的地基。",
+      en: "Fix an origin and two axes, and every point on the plane gets an address (x, y). Move the origin and the points stay exactly where they are while every address shifts; swap the two coordinates and the point flips across the diagonal. This address system is the groundwork under every function graph."
+    },
+    tags: [
+      { zh: "原点与坐标轴", en: "Origin & Axes" },
+      { zh: "象限", en: "Quadrants" },
+      { zh: "坐标换位", en: "Swapping Coordinates" }
+    ],
+    category: "math",
+    stage: "junior",
+    status: "live",
+    path: "coordinate-plane/"
   }
 ];
