@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="category" content="math"><meta name="stage" content="junior">
+<title>空间对角线 · Space diagonal</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css"><script src="i18n.js"></script>
+</head>
+<body>
+<header class="site-head"><div class="head-main">
+<p class="backline"><a href="../" data-i18n="back"></a></p>
+<div class="badges"><span class="badge" data-i18n="format3d"></span><span class="badge" data-i18n="category"></span><span class="badge" data-i18n="stage"></span></div>
+<h1 data-i18n="pageTitle"></h1><p class="tagline" data-i18n="tagline"></p>
+</div><div class="lang-toggle" id="langToggle" role="group" data-i18n-aria="languageLabel"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div></header>
+<nav class="step-nav" data-i18n-aria="navLabel"><a class="nav-step" href="#step0" data-nav="0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-nav="1" data-i18n="nav1"></a><a class="nav-step" href="#step2" data-nav="2" data-i18n="nav2"></a></nav>
+<main>
+<section class="step" id="step0" data-step="0"><div class="step-inner">
+<p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2>
+<p class="explain" data-i18n-html="s0e"></p>
+<div class="stage"><p class="stage-title" data-i18n="dragHint"></p><div class="viewport"><canvas id="s0-canvas" data-step="0" tabindex="0" role="img" data-i18n-aria="canvasLabel"></canvas><div class="labels" aria-hidden="true"></div><div class="load-fail" data-i18n="loadFail" hidden></div></div>
+<div class="legend"><span class="space" data-i18n="legendD"></span><span class="base" data-i18n="legendE"></span><span class="height" data-i18n="legendC"></span></div><p class="model-note" data-i18n="modelNote"></p></div>
+<div class="btn-row"><button class="btn" id="s0-stop" data-step="0" data-i18n="stop"></button><button class="btn" id="s0-view" data-step="0" data-i18n="view"></button></div>
+<p class="readout" id="s0-status" aria-live="polite"></p><p class="readout" data-i18n="s0result"></p>
+</div></section>
+<section class="step" id="step1" data-step="1"><div class="step-inner">
+<p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n="s1e"></p>
+<div class="stage"><p class="stage-title" data-i18n="dragHint"></p><div class="viewport"><canvas id="s1-canvas" data-step="1" tabindex="0" role="img" data-i18n-aria="canvasLabel"></canvas><div class="labels" aria-hidden="true"></div><div class="load-fail" data-i18n="loadFail" hidden></div></div>
+<div class="legend"><span class="space" data-i18n="legendD"></span><span class="base" data-i18n="legendE"></span><span class="height" data-i18n="legendC"></span></div><p class="model-note" data-i18n="modelNote"></p></div>
+<div class="controls">
+<label for="s1-a"><span><span data-i18n="aLab"></span> <output id="a-val" for="s1-a"></output></span><input id="s1-a" data-step="1" type="range" min="1" max="8" step="0.5" value="2"></label>
+<label for="s1-b"><span><span data-i18n="bLab"></span> <output id="b-val" for="s1-b"></output></span><input id="s1-b" data-step="1" type="range" min="1" max="8" step="0.5" value="3"></label>
+<label for="s1-c"><span><span data-i18n="cLab"></span> <output id="c-val" for="s1-c"></output></span><input id="s1-c" data-step="1" type="range" min="1" max="8" step="0.5" value="6"></label>
+</div>
+<button class="btn" id="s1-view" data-step="1" data-i18n="view"></button>
+<div class="ledger" aria-live="polite"><div class="value-card"><h3 data-i18n="book1"></h3><p class="formula" id="book1"></p></div><div class="value-card"><h3 data-i18n="book2"></h3><p class="formula" id="book2"></p></div></div>
+<p class="readout" data-i18n="rounding"></p><p class="readout" data-i18n="s1result"></p>
+</div></section>
+<section class="step" id="step2" data-step="2"><div class="step-inner">
+<p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n="s2e"></p>
+<div class="value-card"><p class="formula" data-i18n="quizGiven"></p></div>
+<div class="btn-row" role="group" data-i18n-aria="quizLabel"><button class="btn" id="answer2" data-step="2" data-answer="2">d = 2</button><button class="btn" id="answer3" data-step="2" data-answer="3">d = 3</button><button class="btn" id="answer5" data-step="2" data-answer="5">d = 5</button></div>
+<p class="readout" id="quiz-feedback" aria-live="polite"></p>
+<div class="unlock" id="quiz-unlock" aria-live="polite"><p id="quiz-lock" data-i18n="locked"></p><div id="quiz-result" hidden></div></div>
+<div class="finale"><p data-i18n="finale"></p><a href="../pythagoras/#step4" data-i18n="backPythagoras"></a><a href="../pythagoras/#step2" data-i18n="proofLink"></a></div>
+</div></section>
+</main><footer class="site-foot" data-i18n="foot"></footer><script>applyLang(getLang());</script>
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
+<script type="module" id="sd-app" src="app.js"></script>
+<script>
+function sdShowLoadFail(){if(window.__SD_READY)return;document.querySelectorAll('.load-fail').forEach(function(el){el.hidden=false;});}
+document.getElementById('sd-app').addEventListener('error',sdShowLoadFail);
+window.__sdBootTimer=setTimeout(sdShowLoadFail,6000);
+</script>
+</body></html>
