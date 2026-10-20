@@ -154,6 +154,9 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 109 | 离子电荷 = 质子数 − 电子数 / Ion charge = protons − electrons | atomic-structure#step4 | 电荷由两数实算：电子多为阴离子、电子少为阳离子；超出 2/8/8 表达范围时页面明示只作电荷记账 |
 | 110 | 力矩平衡：力 × 力臂，两边相等就平衡 / Torque balance: force × lever arm, equal on both sides | lever-pulley#step0 | 支点挪动改变力臂比、F 随之实算；倾斜角只是示意、力矩数是实算（3D 页，逻辑与 2D 定版逐字节同源） |
 | 111 | 滑轮组省力倍数 = 承重绳段数 / Pulley force multiple = load-bearing rope segments | lever-pulley#step4 | F=G/n、h=s/n 且绳长守恒；本页绕法里奇数段自由端垂自定滑轮不计段、偶数段自由端向上出动滑轮计段 |
+| 112 | 等式性质：两边同做一件事，平衡不变 / Do the same to both sides and the balance holds | equations-balance#step1 | 同加同减、同乘同除（除数须整除）都保平衡；只动一边当场破平衡——全页不使用「移项变号」口诀 |
+| 113 | 解方程 = 把 x 单独留在一边 / Solving means leaving x alone on one side | equations-balance#step3 | 用等式性质逐步剥离，isIsolated 达标才揭晓，解必代回原式验算 |
+| 114 | 两步方程：顺序自定、殊途同归 / Two-step equations: either order works | equations-balance#step4 | 先减后除或先除后减都认，操作历史逐条留轨迹，终点由纯函数判定 |
 
 ---
 

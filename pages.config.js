@@ -819,5 +819,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "junior",
     status: "live",
     path: "lever-pulley/"
+  },
+  {
+    slug: "equations-balance",
+    title: { zh: "方程天平 · 两边同做一件事", en: "Equations on a Balance · Do the Same to Both Sides" },
+    desc: {
+      zh: "等号不是「算出答案」的信号，是一架天平的指针：指针归零，两边一样重。这一页我们只学一招——不管做什么，对两边同时做相同的事——用这一招把 x 一个人留在天平左边。",
+      en: "The equals sign is not a “compute the answer” button; it is the needle of a balance — at zero, both sides weigh the same. This page teaches one move only: whatever you do, do the same to both sides — and use it to leave x alone on the left."
+    },
+    tags: [
+      { zh: "等式性质", en: "Equality Properties" },
+      { zh: "解方程", en: "Solving Equations" },
+      { zh: "两步方程", en: "Two-Step Equations" }
+    ],
+    category: "math",
+    stage: "primary",
+    status: "live",
+    path: "equations-balance/"
   }
 ];
