@@ -157,6 +157,8 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 112 | 等式性质：两边同做一件事，平衡不变 / Do the same to both sides and the balance holds | equations-balance#step1 | 同加同减、同乘同除（除数须整除）都保平衡；只动一边当场破平衡——全页不使用「移项变号」口诀 |
 | 113 | 解方程 = 把 x 单独留在一边 / Solving means leaving x alone on one side | equations-balance#step3 | 用等式性质逐步剥离，isIsolated 达标才揭晓，解必代回原式验算 |
 | 114 | 两步方程：顺序自定、殊途同归 / Two-step equations: either order works | equations-balance#step4 | 先减后除或先除后减都认，操作历史逐条留轨迹，终点由纯函数判定 |
+| 115 | 自转一周 = 一昼夜 / One full rotation = one day-night cycle | day-night-rotation#step2 | 地球绕地轴自转，同一地点随自转角被带过晨昏线；时间带随播放逐段涂出，一圈正好 24 小时 |
+| 116 | 东升西落是站在转动地面上的视角 / East-rise west-set is the view from the turning ground | day-night-rotation#step3 | 太阳高度角由自转角实算；把自转反过来，太阳立刻改从西边升起——方向感来自自转方向 |
 
 ---
 

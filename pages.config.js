@@ -26,6 +26,7 @@ window.KNOWLEDGE_CATEGORIES = [
   { id: "computing",   name: { zh: "计算与智能", en: "Computing & AI" } },
   { id: "math",        name: { zh: "数学基础",   en: "Mathematical Foundations" } },
   { id: "chemistry",   name: { zh: "化学", en: "Chemistry" } },
+  { id: "earth",       name: { zh: "地球与太空", en: "Earth & Space" } },
   { id: "leetcode",    name: { zh: "LeetCode 专区", en: "LeetCode" } }
 ];
 
@@ -836,5 +837,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "primary",
     status: "live",
     path: "equations-balance/"
+  },
+  {
+    slug: "day-night-rotation",
+    title: { zh: "昼夜交替 · 地球自己在转", en: "Day and Night · The Earth Itself Is Turning" },
+    desc: {
+      zh: "不是太阳绕着我们跑：地球绕着自己的轴转，每个地方轮流朝向太阳，于是有了昼夜。转满一圈是一天；站在转动的地面上看，太阳就成了东升西落。",
+      en: "The Sun does not circle us: the Earth spins on its own axis and every place takes its turn facing the Sun — that is day and night. One full turn makes a day, and standing on the turning ground, the Sun appears to rise in the east and set in the west."
+    },
+    tags: [
+      { zh: "地球自转", en: "Earth's Rotation" },
+      { zh: "晨昏线", en: "The Terminator" },
+      { zh: "太阳东升西落", en: "Sunrise in the East" }
+    ],
+    category: "earth",
+    stage: "primary",
+    status: "live",
+    path: "day-night-rotation/"
   }
 ];
