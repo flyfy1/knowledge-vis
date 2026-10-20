@@ -940,5 +940,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "senior",
     status: "live",
     path: "chemical-equilibrium/"
+  },
+  {
+    slug: "reaction-rates",
+    title: { zh: "反应速率 · 数一数成功碰撞", en: "Reaction Rates · Counting Successful Collisions" },
+    desc: {
+      zh: "反应快慢取决于成功碰撞的次数：碰得越勤、能量达标的比例越大，反应越快。温度、浓度、表面积、催化剂四种提速办法，全在模拟里数给你看。",
+      en: "How fast a reaction runs comes down to successful collisions: collide more often, and get more collisions over the energy bar. Temperature, concentration, surface area and catalysts — all four speed-ups, counted live in the simulation."
+    },
+    tags: [
+      { zh: "有效碰撞", en: "Effective Collisions" },
+      { zh: "活化能", en: "Activation Energy" },
+      { zh: "催化剂", en: "Catalysts" }
+    ],
+    category: "chemistry",
+    stage: "senior",
+    status: "live",
+    path: "reaction-rates/"
   }
 ];
