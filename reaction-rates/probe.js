@@ -1,0 +1,18 @@
+'use strict';
+const assert=require('node:assert/strict');
+const api=require('./app.js');
+const base=api.statsFor({count:32,temp:100,threshold:60,seed:21});
+const dense=api.statsFor({count:64,temp:100,threshold:60,seed:21});
+const compareBase=api.statsFor({count:32,temp:100,threshold:80,seed:21});
+const compareDense=api.statsFor({count:48,temp:100,threshold:80,seed:21});
+const hot=api.statsFor({count:32,temp:150,threshold:80,seed:21});
+const low=api.statsFor({count:32,temp:100,threshold:35,seed:21});
+assert(dense.rate>base.rate,'doubling concentration must raise successful rate');
+assert((hot.rate-compareBase.rate)>(compareDense.rate-compareBase.rate),'temperature effect must exceed the same-size concentration increase');
+assert(low.rate>base.rate,'lowering threshold must raise successful rate');
+assert(Math.abs(low.avgSpeed-base.avgSpeed)<1e-9,'lowering threshold must not change mean speed');
+assert(api.CONST.MAX_PARTICLES<=200,'particle cap must be <= 200');
+console.log('PASS concentration',base.rate.toFixed(3),'->',dense.rate.toFixed(3));
+console.log('PASS temperature',compareBase.rate.toFixed(3),'->',hot.rate.toFixed(3),'vs concentration',compareDense.rate.toFixed(3),'increase');
+console.log('PASS threshold',base.rate.toFixed(3),'->',low.rate.toFixed(3),'mean speed',base.avgSpeed.toFixed(6));
+console.log('PASS particle cap',api.CONST.MAX_PARTICLES);
