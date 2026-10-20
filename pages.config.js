@@ -699,5 +699,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "senior",
     status: "live",
     path: "standing-wave/"
+  },
+  {
+    slug: "negative-numbers",
+    title: { zh: "负数 · 0 以下的世界", en: "Negative Numbers · The World Below Zero" },
+    desc: {
+      zh: "温度计掉到 0 以下、电梯下到 B1——负数记的是「在基准的另一边、还差多少」。放上数轴一比就懂：越往左越小，所以 −3 比 −7 暖和。这一页只讲现象和比较，不背法则。",
+      en: "Thermometers drop below zero and lifts go down to B1 — negative numbers record 'on the other side of the reference point, and by how much'. Put them on a number line and it clicks: further left means smaller, so −3 is warmer than −7. This page is phenomena and comparison only — no rules to memorise."
+    },
+    tags: [
+      { zh: "数轴", en: "Number Line" },
+      { zh: "温度与楼层", en: "Temperature & Floors" },
+      { zh: "比大小", en: "Comparing" }
+    ],
+    category: "math",
+    stage: "primary",
+    status: "live",
+    path: "negative-numbers/"
   }
 ];

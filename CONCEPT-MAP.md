@@ -139,6 +139,9 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 94 | 复数乘法 = 模相乘、角相加 / Multiplication: moduli multiply, angles add | complex-numbers#step4 | 代数展开与几何旋转两条路同源实算同一个积，随机参数双路互证 |
 | 95 | 驻波的包络：波节不动、波腹 2A / The standing-wave envelope | standing-wave#step1 | 合位移由两列反向波方程实算；每点振幅被包络定死——波节任意时刻位移为 0，波腹达 2A |
 | 96 | 两端固定弦的模式：L = nλ/2 / Modes of a fixed-fixed string | standing-wave#step2 | 只有半波长整数倍的波能住进弦长，基频的整数倍 f_n = n·f₁ 才是被放行的台阶 |
+| 97 | 负数是基准另一边的量 / Negatives: amounts on the other side of zero | negative-numbers#step0 | 温度与楼层都以 0 为基准：符号记方向、数值记离基准多远 |
+| 98 | 数轴上越往左越小 / Further left on the number line means smaller | negative-numbers#step1 | 比较负数靠位置：−3 在 −7 的右边，所以 −3 更大（更暖）；比较由纯函数按位置判定 |
+| 99 | 撤回向左走：减法的现象 / Undoing a leftward step | negative-numbers#step3 | 向左走是减，撤回这一步就回到原处——只演示现象，不立「负负得正」法则 |
 
 ---
 
