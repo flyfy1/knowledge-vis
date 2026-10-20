@@ -716,5 +716,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "primary",
     status: "live",
     path: "negative-numbers/"
+  },
+  {
+    slug: "pinhole-camera",
+    title: { zh: "小孔成像 · 一个孔的相机", en: "Pinhole Camera · A Camera With One Tiny Hole" },
+    desc: {
+      zh: "没有镜头，只有一个小孔，屏幕上却出现一幅倒过来的画：光沿直线走，物上每一点的光只能穿过小孔落到屏上一个地方。像高由物距、像距的比定死，孔大了画会糊成一片光斑。",
+      en: "No lens, just a tiny hole — yet an upside-down picture appears on the screen: light travels straight, so light from each point of the object can pass the hole and land in exactly one place. Image height is fixed by the ratio of the two distances, and a bigger hole blurs the picture into a patch of light."
+    },
+    tags: [
+      { zh: "光的直线传播", en: "Straight-Line Light" },
+      { zh: "倒立的像", en: "Inverted Image" },
+      { zh: "相似三角形", en: "Similar Triangles" }
+    ],
+    category: "physics",
+    stage: "primary",
+    status: "live",
+    path: "pinhole-camera/"
   }
 ];
