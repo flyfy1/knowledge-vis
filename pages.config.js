@@ -648,5 +648,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "senior",
     status: "live",
     path: "exp-log/"
+  },
+  {
+    slug: "circle-angles",
+    title: { zh: "圆周角 · 为什么恰好是一半", en: "Inscribed Angles · Why Exactly Half" },
+    desc: {
+      zh: "圆上一点看一条弧，张角永远是圆心看它的恰好一半——拖着点满圆跑都变不了。连一条半径，两个等腰三角形把这一半算得明明白白；弧过半圈，张角正好是直角。",
+      en: "From any point on the circle, an arc subtends exactly half the angle it subtends at the centre — drag the point all the way round and it never changes. One extra radius splits the proof into two isosceles triangles; and once the arc passes a semicircle, the angle is exactly a right angle."
+    },
+    tags: [
+      { zh: "圆周角", en: "Inscribed Angle" },
+      { zh: "圆心角", en: "Central Angle" },
+      { zh: "等腰三角形证明", en: "Isosceles Proof" }
+    ],
+    category: "math",
+    stage: "junior",
+    status: "live",
+    path: "circle-angles/"
   }
 ];

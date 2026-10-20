@@ -133,6 +133,8 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 88 | 干涉：路程差定加强与抵消 / Interference: path difference decides reinforcement | interference#step1 | Δr=kλ 加强、Δr=(k+½)λ 抵消；干涉图样是双曲线族，由路程差的几何定死、不随时间漂移 |
 | 89 | 对数是逆问句 / The logarithm is the reverse question | exp-log#step2 | log₂8=3 就是「2 的几次方等于 8」的答案；对数把指数方程的未知数从指数的位置上取下来，成为可以直接算的数 |
 | 90 | ROC 含单位圆 ⟺ 稳定 / Stability: the ROC contains the unit circle | ztransform#step3 | Z 变换的收敛域是圆环；单位圆整个落在环内系统才稳定，极点位置与 ROC 形状共同决定稳定性 |
+| 91 | 圆周角定理：同弧圆周角 = 圆心角一半 / Inscribed angle theorem | circle-angles#step1 | 角度由坐标向量点积实算；P 在优弧上任意拖动，圆周角恒为圆心角的一半，与位置无关 |
+| 92 | 圆周角的证明：两个等腰三角形 / Proof via two isosceles triangles | circle-angles#step2 | 连 OP 后由两组等腰三角形的底角关系推出一半；P 在优弧、劣弧、直径（直角）三种位置分别成立 |
 
 ---
 
