@@ -159,6 +159,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 114 | 两步方程：顺序自定、殊途同归 / Two-step equations: either order works | equations-balance#step4 | 先减后除或先除后减都认，操作历史逐条留轨迹，终点由纯函数判定 |
 | 115 | 自转一周 = 一昼夜 / One full rotation = one day-night cycle | day-night-rotation#step2 | 地球绕地轴自转，同一地点随自转角被带过晨昏线；时间带随播放逐段涂出，一圈正好 24 小时 |
 | 116 | 东升西落是站在转动地面上的视角 / East-rise west-set is the view from the turning ground | day-night-rotation#step3 | 太阳高度角由自转角实算；把自转反过来，太阳立刻改从西边升起——方向感来自自转方向 |
+| 117 | 质量守恒 = 原子重排计数 / Mass conservation = counting rearranged atoms | mass-conservation#step1 | 反应式两边逐种原子计数由纯函数实算，配不平时天平当场倾斜报警 |
+| 118 | 敞口「不守恒」是气体在进出 / Open-system surprises are gases moving | mass-conservation#step3 | 逸出量由气体产物质量实算；接上收集气球，总重立刻回来 |
+| 119 | 细胞器分工 / Organelles divide the labour | cell-structure#step2 | 膜定边界、核总控、线粒体供能、叶绿体造糖、液泡储物，点选高亮与功能卡同步 |
+| 120 | 动植物细胞三处不同 / Three plant-vs-animal differences | cell-structure#step3 | 细胞壁、叶绿体、大液泡——相同结构同色、差异自动标出并自测 |
+| 121 | 光合作用的原子账 / The photosynthesis atom ledger | photosynthesis#step1 | 6CO₂+6H₂O 两边 C/H/O 逐项对平，与质量守恒同账 |
+| 122 | 限制因素：最短的板定水位 / The limiting factor rules the rate | photosynthesis#step3 | 光与 CO₂ 两因子取小者定速率，补 CO₂ 增产就是抬最短的板 |
+| 123 | 逻辑斯蒂：S 形是逐代算出来的 / The logistic S falls out of iteration | population-growth#step2 | 实际增长率 r(1−N/K) 随 N 逼近 K 而减小，同参对照指数线看分家点 |
+| 124 | K 是吸引子 / K is an attractor | population-growth#step3 | N₀ 在 K 上方也回落，两个方向的实际增长率符号都指向 K |
 
 ---
 
