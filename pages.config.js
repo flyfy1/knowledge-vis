@@ -682,5 +682,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "senior",
     status: "live",
     path: "complex-numbers/"
+  },
+  {
+    slug: "standing-wave",
+    title: { zh: "驻波 · 原地起伏的波", en: "Standing Waves · The Wave That Stays in Place" },
+    desc: {
+      zh: "两列相同的波迎面相遇，波形不再前进，只在原地起伏：有些点永远不动（波节），有些点振幅翻倍（波腹）。两端固定的弦只放行 L=nλ/2 的台阶，驱动频率踩中台阶，就会共振。",
+      en: "Two identical waves travelling towards each other lock into a pattern that no longer travels — it only rises and falls in place: some points never move (nodes), others swing with double amplitude (antinodes). A string fixed at both ends admits only L = nλ/2, and driving it on one of those steps is resonance."
+    },
+    tags: [
+      { zh: "驻波", en: "Standing Wave" },
+      { zh: "波节与波腹", en: "Nodes & Antinodes" },
+      { zh: "共振", en: "Resonance" }
+    ],
+    category: "physics",
+    stage: "senior",
+    status: "live",
+    path: "standing-wave/"
   }
 ];

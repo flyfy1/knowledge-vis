@@ -137,6 +137,8 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 92 | 圆周角的证明：两个等腰三角形 / Proof via two isosceles triangles | circle-angles#step2 | 连 OP 后由两组等腰三角形的底角关系推出一半；P 在优弧、劣弧、直径（直角）三种位置分别成立 |
 | 93 | 乘 i = 逆时针旋转 90° / Multiplying by i rotates 90° | complex-numbers#step3 | (a,b) 乘 i 得 (−b,a)，正是坐标逆时针转 90°；连乘四次回到原点，轨道由旋转矩阵实算 |
 | 94 | 复数乘法 = 模相乘、角相加 / Multiplication: moduli multiply, angles add | complex-numbers#step4 | 代数展开与几何旋转两条路同源实算同一个积，随机参数双路互证 |
+| 95 | 驻波的包络：波节不动、波腹 2A / The standing-wave envelope | standing-wave#step1 | 合位移由两列反向波方程实算；每点振幅被包络定死——波节任意时刻位移为 0，波腹达 2A |
+| 96 | 两端固定弦的模式：L = nλ/2 / Modes of a fixed-fixed string | standing-wave#step2 | 只有半波长整数倍的波能住进弦长，基频的整数倍 f_n = n·f₁ 才是被放行的台阶 |
 
 ---
 
