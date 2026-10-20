@@ -135,6 +135,8 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 90 | ROC 含单位圆 ⟺ 稳定 / Stability: the ROC contains the unit circle | ztransform#step3 | Z 变换的收敛域是圆环；单位圆整个落在环内系统才稳定，极点位置与 ROC 形状共同决定稳定性 |
 | 91 | 圆周角定理：同弧圆周角 = 圆心角一半 / Inscribed angle theorem | circle-angles#step1 | 角度由坐标向量点积实算；P 在优弧上任意拖动，圆周角恒为圆心角的一半，与位置无关 |
 | 92 | 圆周角的证明：两个等腰三角形 / Proof via two isosceles triangles | circle-angles#step2 | 连 OP 后由两组等腰三角形的底角关系推出一半；P 在优弧、劣弧、直径（直角）三种位置分别成立 |
+| 93 | 乘 i = 逆时针旋转 90° / Multiplying by i rotates 90° | complex-numbers#step3 | (a,b) 乘 i 得 (−b,a)，正是坐标逆时针转 90°；连乘四次回到原点，轨道由旋转矩阵实算 |
+| 94 | 复数乘法 = 模相乘、角相加 / Multiplication: moduli multiply, angles add | complex-numbers#step4 | 代数展开与几何旋转两条路同源实算同一个积，随机参数双路互证 |
 
 ---
 

@@ -665,5 +665,22 @@ window.KNOWLEDGE_PAGES = [
     stage: "junior",
     status: "live",
     path: "circle-angles/"
+  },
+  {
+    slug: "complex-numbers",
+    title: { zh: "复数 · 平面上的旋转", en: "Complex Numbers · Rotation on the Plane" },
+    desc: {
+      zh: "复数不是硬凑出来的数：a+bi 就是平面上的一个点。乘以 i，是把这个点逆时针转 90°；一般的乘法是模相乘、角相加。代数算一遍、几何看一遍，两条路永远同一个答案。",
+      en: "A complex number is not an invented patch: a+bi is a point on the plane. Multiplying by i rotates that point 90° counterclockwise; multiplication in general multiplies the moduli and adds the angles. Compute it algebraically, watch it geometrically — both roads always land on the same answer."
+    },
+    tags: [
+      { zh: "复数平面", en: "Complex Plane" },
+      { zh: "乘 i 是旋转", en: "Multiplying by i" },
+      { zh: "模与辐角", en: "Modulus & Argument" }
+    ],
+    category: "math",
+    stage: "senior",
+    status: "live",
+    path: "complex-numbers/"
   }
 ];
