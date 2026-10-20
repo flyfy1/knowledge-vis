@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>小孔成像</title>
+<link rel="stylesheet" href="style.css">
+<script src="../pages.config.js">
+</script>
+<script src="i18n.js">
+</script>
+</head>
+<body>
+<header class="site-head">
+<div class="head-main">
+<p class="backline">
+<a href="../" data-i18n="back">
+</a>
+</p>
+<div class="badges">
+<span class="badge" id="stageBadge">
+</span>
+</div>
+<h1 data-i18n="pageTitle">
+</h1>
+<p class="tagline" data-i18n="tagline">
+</p>
+</div>
+<div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+<button type="button" data-lang="zh">中</button>
+<button type="button" data-lang="en">EN</button>
+</div>
+</header>
+<nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+<a class="nav-step" href="#step0" data-nav="0" data-i18n="nav0">
+</a>
+<a class="nav-step" href="#step1" data-nav="1" data-i18n="nav1">
+</a>
+<a class="nav-step" href="#step2" data-nav="2" data-i18n="nav2">
+</a>
+<a class="nav-step" href="#step3" data-nav="3" data-i18n="nav3">
+</a>
+<a class="nav-step" href="#step4" data-nav="4" data-i18n="nav4">
+</a>
+<a class="nav-step" href="#step5" data-nav="5" data-i18n="nav5">
+</a>
+</nav>
+<main>
+<section class="step" id="step0" data-step="0">
+<div class="step-inner">
+<p class="step-kicker" data-i18n="s0k">
+</p>
+<h2 data-i18n="s0t">
+</h2>
+<p class="explain" data-i18n-html="s0e">
+</p>
+<div class="stage">
+<canvas id="s0-canvas" height="330" data-i18n-aria="canvasLabel" role="img">
+</canvas>
+</div>
+<div class="controls">
+<label>
+<span><span data-i18n="s0discLab">
+</span> <span class="val" id="s0-disc-val">
+</span></span>
+<input id="s0-disc" type="range" min="180" max="330" step="1" value="250">
+</label>
+</div>
+<div class="btn-row">
+<button type="button" class="btn big primary" id="s0-play" data-i18n="s0play">
+</button>
+<button type="button" class="btn big" id="s0-reset" data-i18n="reset">
+</button>
+</div>
+<p class="readout" id="s0-ro" aria-live="polite">
+</p>
+<p class="readout" id="s0-ro2" aria-live="polite">
+</p>
+<p class="hint" data-i18n-html="s0hint">
+</p>
+</div>
+</section>
+<section class="step" id="step1" data-step="1">
+<div class="step-inner">
+<p class="step-kicker" data-i18n="s1k">
+</p>
+<h2 data-i18n="s1t">
+</h2>
+<p class="explain" data-i18n-html="s1e">
+</p>
+<div class="stage">
+<canvas id="s1-canvas" height="350" data-i18n-aria="canvasLabel" role="img">
+</canvas>
+</div>
+<div class="btn-row">
+<button type="button" class="btn big primary" id="s1-light" data-i18n="s1light">
+</button>
+<button type="button" class="btn big" id="s1-reset" data-i18n="reset">
+</button>
+</div>
+<p class="readout" id="s1-ro" aria-live="polite">
+</p>
+<p class="hint" data-i18n-html="s1hint">
+</p>
+</div>
+</section>
+<section class="step" id="step2" data-step="2">
+<div class="step-inner">
+<p class="step-kicker" data-i18n="s2k">
+</p>
+<h2 data-i18n="s2t">
+</h2>
+<p class="explain" data-i18n-html="s2e">
+</p>
+<div class="stage">
+<canvas id="s2-canvas" height="330" data-i18n-aria="canvasLabel" role="img">
+</canvas>
+</div>
+<div class="controls">
+<label>
+<span><span data-i18n="s2hLab">
+</span> <span class="val" id="s2-h-val">
+</span></span>
+<input id="s2-h" type="range" min="30" max="90" step="1" value="60">
+</label>
+<label>
+<span><span data-i18n="s2uLab">
+</span> <span class="val" id="s2-u-val">
+</span></span>
+<input id="s2-u" type="range" min="60" max="180" step="1" value="120">
+</label>
+<label>
+<span><span data-i18n="s2vLab">
+</span> <span class="val" id="s2-v-val">
+</span></span>
+<input id="s2-v" type="range" min="60" max="180" step="1" value="120">
+</label>
+</div>
+<div class="btn-row">
+<button type="button" class="btn big" id="s2-peq" data-i18n="s2peq">
+</button>
+<button type="button" class="btn big" id="s2-pu2" data-i18n="s2pu2">
+</button>
+<button type="button" class="btn big" id="s2-pv2" data-i18n="s2pv2">
+</button>
+<button type="button" class="btn big" id="s2-reset" data-i18n="reset">
+</button>
+</div>
+<p class="readout" id="s2-ro" aria-live="polite">
+</p>
+<p class="hint" data-i18n-html="s2hint">
+</p>
+</div>
+</section>
+<section class="step" id="step3" data-step="3">
+<div class="step-inner">
+<p class="step-kicker" data-i18n="s3k">
+</p>
+<h2 data-i18n="s3t">
+</h2>
+<p class="explain" data-i18n-html="s3e">
+</p>
+<div class="stage">
+<canvas id="s3-canvas" height="330" data-i18n-aria="canvasLabel" role="img">
+</canvas>
+</div>
+<div class="controls">
+<label>
+<span><span data-i18n="s3dLab">
+</span> <span class="val" id="s3-d-val">
+</span></span>
+<input id="s3-d" type="range" min="4" max="64" step="2" value="10">
+</label>
+</div>
+<p class="readout" id="s3-ro" aria-live="polite">
+</p>
+<p class="readout" id="s3-ro2" aria-live="polite">
+</p>
+<p class="hint" data-i18n-html="s3hint">
+</p>
+</div>
+</section>
+<section class="step" id="step4" data-step="4">
+<div class="step-inner">
+<p class="step-kicker" data-i18n="s4k">
+</p>
+<h2 data-i18n="s4t">
+</h2>
+<p class="explain" data-i18n-html="s4e">
+</p>
+<div class="quiz">
+<div class="quiz-q" id="q1">
+<h3 data-i18n="q1t">
+</h3>
+<div class="btn-row">
+<button type="button" class="btn big" id="q1-o0" data-i18n="q1o0">
+</button>
+<button type="button" class="btn big" id="q1-o1" data-i18n="q1o1">
+</button>
+<button type="button" class="btn big" id="q1-o2" data-i18n="q1o2">
+</button>
+</div>
+<p class="readout" id="q1-ro" aria-live="polite">
+</p>
+</div>
+<div class="quiz-q" id="q2">
+<h3 data-i18n="q2t">
+</h3>
+<div class="btn-row">
+<button type="button" class="btn big" id="q2-o0" data-i18n="q2o0">
+</button>
+<button type="button" class="btn big" id="q2-o1" data-i18n="q2o1">
+</button>
+<button type="button" class="btn big" id="q2-o2" data-i18n="q2o2">
+</button>
+</div>
+<p class="readout" id="q2-ro" aria-live="polite">
+</p>
+</div>
+<div class="quiz-q" id="q3">
+<h3 data-i18n="q3t">
+</h3>
+<div class="btn-row">
+<button type="button" class="btn big" id="q3-o0" data-i18n="q3o0">
+</button>
+<button type="button" class="btn big" id="q3-o1" data-i18n="q3o1">
+</button>
+<button type="button" class="btn big" id="q3-o2" data-i18n="q3o2">
+</button>
+</div>
+<p class="readout" id="q3-ro" aria-live="polite">
+</p>
+</div>
+<div class="quiz-q" id="q4">
+<h3 data-i18n="q4t">
+</h3>
+<div class="btn-row">
+<button type="button" class="btn big" id="q4-o0" data-i18n="q4o0">
+</button>
+<button type="button" class="btn big" id="q4-o1" data-i18n="q4o1">
+</button>
+<button type="button" class="btn big" id="q4-o2" data-i18n="q4o2">
+</button>
+</div>
+<p class="readout" id="q4-ro" aria-live="polite">
+</p>
+</div>
+<p class="readout" id="q-score" aria-live="polite">
+</p>
+<p class="readout" id="quiz-gate" aria-live="polite">
+</p>
+</div>
+</div>
+</section>
+<section class="step" id="step5" data-step="5">
+<div class="step-inner">
+<div class="finale">
+<p class="step-kicker" data-i18n="finK">
+</p>
+<h2 data-i18n="finT">
+</h2>
+<div class="cards3">
+<div class="value-card">
+<h3 data-i18n="fc1t">
+</h3>
+<p data-i18n="fc1b">
+</p>
+</div>
+<div class="value-card">
+<h3 data-i18n="fc2t">
+</h3>
+<p data-i18n="fc2b">
+</p>
+</div>
+<div class="value-card">
+<h3 data-i18n="fc3t">
+</h3>
+<p data-i18n="fc3b">
+</p>
+</div>
+</div>
+<p class="hint" data-i18n-html="finLink1">
+</p>
+<p class="hint" data-i18n-html="finLink2">
+</p>
+<p class="readout" data-i18n="finNote">
+</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-foot" data-i18n="foot">
+</footer>
+<script src="app.js">
+</script>
+</body>
+</html>
