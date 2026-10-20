@@ -145,6 +145,8 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 100 | 透镜作图的三条光线 / The three construction rays of a lens | lens#step1 | 透镜成像作图取有代表性的三条光线，交点定像的位置与大小（pinhole-camera 终章深链落点，2026-10-20 补登） |
 | 101 | 小孔成像：像高由相似三角形定 / Pinhole imaging: image height from similar triangles | pinhole-camera#step2 | 像高/物高 = 像距/物距；像倒立且左右交换，全部由光的直线传播作图实算 |
 | 102 | 空间对角线 = 两次勾股 / The space diagonal is Pythagoras twice | space-diagonal#step1 | 先底面对角线 e=√(a²+b²)，再以 e 与高 c 第二次勾股 d=√(e²+c²)；账本用未舍入的 e²，只对长方体成立（全站首个 3D 页，Three.js 自托管） |
+| 103 | 坐标是相对原点的地址 / Coordinates are addresses relative to the origin | coordinate-plane#step2 | 原点一换，所有点的读数同步平移——点没动，地址变了；读数全页钳在 [−6,6] 标尺内 |
+| 104 | 坐标换位 = 沿对角线翻折 / Swapping coordinates reflects across the diagonal | coordinate-plane#step4 | (a,b)→(b,a) 是沿 y=x 的翻折；落在对角线上的点（如 (4,4)）换位后不动 |
 
 ---
 
