@@ -149,6 +149,9 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 104 | 坐标换位 = 沿对角线翻折 / Swapping coordinates reflects across the diagonal | coordinate-plane#step4 | (a,b)→(b,a) 是沿 y=x 的翻折；落在对角线上的点（如 (4,4)）换位后不动 |
 | 105 | 物态由粒子排布与运动定 / States are particle arrangement and motion | particles-states#step0 | 固态原地振动、液态贴身流动、气态自由乱飞——页面是逐帧真模拟，物态名由模拟量纯函数判定、不读滑杆 |
 | 106 | 温度 = 粒子平均动能的读数 / Temperature reads mean particle kinetic energy | particles-states#step1 | 温度读数只能由粒子 RMS 速率映射得到；熔化时升温停在平台（#step2），粒子数全程守恒 |
+| 107 | 元素身份只由质子数定 / Element identity is fixed by the proton count alone | atomic-structure#step1 | Z 改 1、身份就换一家；中子只改质量数 A=Z+N、不换身份；身份判定就是查 Z 本身 |
+| 108 | 电子按层排布、每层容量有定数 / Electrons arrange in layers of fixed capacity | atomic-structure#step2 | 本页初中简化口径 2/8/8（明示非真实规则）；排布由电子数经纯函数逐层填出，层圈只是住址分区、电子不沿圈公转 |
+| 109 | 离子电荷 = 质子数 − 电子数 / Ion charge = protons − electrons | atomic-structure#step4 | 电荷由两数实算：电子多为阴离子、电子少为阳离子；超出 2/8/8 表达范围时页面明示只作电荷记账 |
 
 ---
 
