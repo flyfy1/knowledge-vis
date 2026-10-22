@@ -7,6 +7,11 @@ function clamp(v, lo, hi) { return v < lo ? lo : (v > hi ? hi : v); }
 function fmtInt(x) { return Math.round(x).toLocaleString('en-US'); }
 function fmt2(x) { return x.toFixed(2).replace(/-/g, '−'); }
 function fmtSigned(x) { const s = fmt2(Math.abs(x)); return (x < 0 ? '−' : '+') + s; }
+/* 坐标刻度：刻度间隔非整数时保留一位小数（避免 2.5 被四舍五入成 3） */
+function fmtTick(v, stepv) {
+  if (Math.abs(stepv - Math.round(stepv)) < 1e-9) return fmtInt(v);
+  return v.toFixed(1).replace(/\.0$/, '');
+}
 
 /* ---------------- PURE：模型 ---------------- */
 function doublingValue(g) { return Math.pow(2, g); }                    // 第 0 步
@@ -20,14 +25,63 @@ function logisticSeries(n0, r, K, gens) {
   return out;
 }
 function discreteExpValue(n0, r, g) { return n0 * Math.pow(1 + r, g); }  // 同一迭代去掉刹车项
-function classifySeries(series, K) {
+/* 第 3 步 N₀ 上限：离散一步 N₁ = N₀(1 + r − rN₀/K) 在 N₀ > K(1 + 1/r) 时变负；
+   取 2.5K（r = 0.6 时阈值 ≈ 2.67K），保证 N₁ ≥ 0.25K > 0，之后单调回到 K */
+var S3_N0_MAX_RATIO = 2.5;
+function maxStartN0(K) { return S3_N0_MAX_RATIO * K; }
+/* 李雅普诺夫指数：λ = 平均 ln|dN'/dN|，dN'/dN = 1 + r − 2rN/K；λ > 0 即混沌 */
+function lyapunov(n0, r, K, burn, n) {
+  let N = n0, sum = 0;
+  for (let i = 0; i < burn; i++) { N = logisticStep(N, r, K); if (!(N > 0)) return NaN; }
+  for (let i = 0; i < n; i++) {
+    sum += Math.log(Math.max(Math.abs(1 + r - 2 * r * N / K), 1e-300));
+    N = logisticStep(N, r, K); if (!(N > 0)) return NaN;
+  }
+  return sum / n;
+}
+/* 长期周期：烧掉暂态后找最小 p 使 N(t+p) ≈ N(t)（连续多点成立）；找不到返回 0 */
+function orbitPeriod(n0, r, K, burn, maxP) {
+  let N = n0;
+  for (let i = 0; i < burn; i++) { N = logisticStep(N, r, K); if (!(N > 0)) return 0; }
+  const xs = [N];
+  for (let i = 0; i < 2 * maxP + 4; i++) { N = logisticStep(N, r, K); xs.push(N); }
+  const tol = 1e-3 * K;
+  for (let p = 1; p <= maxP; p++) {
+    let ok = true;
+    for (let i = 0; i + p < xs.length; i++) if (Math.abs(xs[i + p] - xs[i]) > tol) { ok = false; break; }
+    if (ok) return p;
+  }
+  return 0;
+}
+/* 烧掉暂态后 p 代内的振幅（最大值 − 最小值） */
+function orbitAmplitude(n0, r, K, burn, p) {
+  let N = n0;
+  for (let i = 0; i < burn; i++) N = logisticStep(N, r, K);
+  let lo = N, hi = N;
+  for (let i = 0; i < p; i++) { N = logisticStep(N, r, K); lo = Math.min(lo, N); hi = Math.max(hi, N); }
+  return hi - lo;
+}
+/* 分类：crash（N ≤ 0）/ mono（单调趋近 K）/ damped（冲过 K 后衰减回 K）/ osc（周期 p 振荡）/ chaos（λ > 0） */
+function classifySeries(series, K, r) {
   for (let i = 0; i < series.length; i++) {
     if (!isFinite(series[i]) || series[i] <= 0) return { type: 'crash', gen: i };
   }
   const tail = series.slice(-6);
   const spread = Math.max.apply(null, tail) - Math.min.apply(null, tail);
-  if (spread > 0.02 * K) return { type: 'osc', spread: spread };
-  return { type: 'stable' };
+  const n0 = series[0];
+  const p = orbitPeriod(n0, r, K, 4000, 64);
+  if (p === 1) {
+    const over = series.some(function (v) { return (v - K) * (n0 - K) < -1e-9 * K; });
+    return { type: over ? 'damped' : 'mono', spread: spread };
+  }
+  if (p > 1) {
+    /* 临界情形（如 r = 2）：看似 2 周期，但振幅随时间缩小、终将回到 K → 归为阻尼 */
+    if (orbitAmplitude(n0, r, K, 8000, p) < 0.9 * orbitAmplitude(n0, r, K, 4000, p)) return { type: 'damped', spread: spread };
+    return { type: 'osc', period: p, spread: spread };
+  }
+  const lam = lyapunov(n0, r, K, 2000, 4000);
+  if (lam > 0) return { type: 'chaos', lyap: lam, spread: spread };
+  return { type: 'osc', period: 0, spread: spread };
 }
 
 /* ---------------- Canvas 基础设施（照站内惯例） ---------------- */
@@ -84,12 +138,12 @@ function drawChart(cv, series, opts) {
   for (var i = 0; i <= 4; i++) {
     var yv = opts.yMax * i / 4, yy = Y(yv);
     ctx.beginPath(); ctx.moveTo(L, yy); ctx.lineTo(W - R, yy); ctx.stroke();
-    ctx.fillText(fmtInt(yv), 6, yy + 4);
+    ctx.fillText(fmtTick(yv, opts.yMax / 4), 6, yy + 4);
   }
   ctx.fillText(opts.yLabel || '', 6, 14);
   for (var j = 0; j <= 4; j++) {
     var xv = opts.xMax * j / 4;
-    ctx.fillText(fmtInt(xv), X(xv) - 6, H - 8);
+    ctx.fillText(fmtTick(xv, opts.xMax / 4), X(xv) - 6, H - 8);
   }
   if (opts.kLine) {
     ctx.strokeStyle = '#ffb454'; ctx.setLineDash([5, 4]);
@@ -126,7 +180,7 @@ var s0 = { gen: 0, MAX: 14 };
 function drawS0() {
   var cv = regCanvas($('s0-canvas')); var f = fitCanvas(cv), ctx = f.ctx, W = f.W, H = f.H;
   ctx.clearRect(0, 0, W, H);
-  var L = 44, B = 26, T = 16, iw = W - L - 10, ih = H - T - B;
+  var L = 44, B = 26, T = 28, iw = W - L - 10, ih = H - T - B;
   var yMax = doublingValue(s0.MAX);
   ctx.strokeStyle = '#2b3547'; ctx.fillStyle = '#9aa7b8'; ctx.font = '11px system-ui, sans-serif';
   [0, 0.25, 0.5, 0.75, 1].forEach(function (fr) {
@@ -135,7 +189,7 @@ function drawS0() {
     ctx.fillText(fmtInt(yv), 4, yy + 4);
   });
   ctx.fillText(t('s0count'), 4, 12);
-  var n = s0.gen + 1, bw = iw / s0.MAX;
+  var bw = iw / (s0.MAX + 1);   // 第 0..MAX 代共 MAX+1 根柱
   for (var g = 0; g <= s0.gen; g++) {
     var v = doublingValue(g), bh = (v / yMax) * ih;
     ctx.fillStyle = g === s0.gen ? '#6ee7ff' : '#2c5f78';
@@ -144,7 +198,7 @@ function drawS0() {
     ctx.fillText(String(g), L + g * bw + bw / 2 - 3, H - 8);
   }
   var ro = t('s0ro', { g: s0.gen, n: fmtInt(doublingValue(s0.gen)) });
-  if (s0.gen >= 10) ro += '<br>' + t('s0ro10');
+  if (s0.gen >= 10) ro += '<br>' + t('s0ro10', { n: fmtInt(doublingValue(10)) });
   $('s0-ro').innerHTML = ro;
   $('s0-next').disabled = s0.gen >= s0.MAX;
 }
@@ -190,8 +244,8 @@ $('s2-play').addEventListener('click', function () { if (s2.gen < s2.MAXG) s2.ge
 $('s2-reset').addEventListener('click', function () { s2.gen = 0; drawS2(); });
 
 /* ---------------- 第 3 步：K 是吸引子 ---------------- */
-var s3 = { n0: 1800, K: 1000, r: 0.6, gen: 0, MAXG: 40, series: null };
-function s3Reset() { s3.gen = 0; s3.series = [s3.n0]; }
+var s3 = { n0: 1300, K: 1000, r: 0.6, gen: 0, MAXG: 40, series: null };
+function s3Reset() { s3ClampN0(); s3.gen = 0; s3.series = [s3.n0]; }
 function drawS3() {
   if (!s3.series) s3Reset();
   var cv = regCanvas($('s3-canvas'));
@@ -200,13 +254,16 @@ function drawS3() {
   drawChart(cv, [{ pts: pts, color: '#7ee2a8', width: 2.5, label: 'N' }],
     { xMax: s3.MAXG, yMax: yMax, yLabel: 'N', kLine: { y: s3.K, label: 'K = ' + fmtInt(s3.K) } });
   var N = s3.series[s3.gen];
+  $('s3-n0').value = s3.n0;
   $('s3-n0-val').textContent = 'N₀ = ' + fmtInt(s3.n0);
   $('s3-k-val').textContent = 'K = ' + fmtInt(s3.K);
-  $('s3-ro').innerHTML = t('s3ro', { g: s3.gen, n: fmtInt(N), d: fmtInt(Math.abs(N - s3.K)), eff: fmtSigned(effRate(s3.r, N, s3.K)) });
+  $('s3-ro').innerHTML = t('s3ro', { g: s3.gen, n: fmtInt(N), d: fmtInt(Math.abs(N - s3.K)), eff: fmtSigned(effRate(s3.r, N, s3.K)) })
+    + '<br>' + t('s3cap', { m: fmtInt(maxStartN0(s3.K)), thr: fmtInt(s3.K * (1 + 1 / s3.r)) });
   $('s3-next').disabled = s3.gen >= s3.MAXG;
 }
-$('s3-n0').addEventListener('input', function () { s3.n0 = parseInt(this.value, 10); s3Reset(); drawS3(); });
-$('s3-k').addEventListener('input', function () { s3.K = parseInt(this.value, 10); s3Reset(); drawS3(); });
+function s3ClampN0() { s3.n0 = Math.min(s3.n0, maxStartN0(s3.K)); }
+$('s3-n0').addEventListener('input', function () { s3.n0 = parseInt(this.value, 10); s3ClampN0(); s3Reset(); drawS3(); });
+$('s3-k').addEventListener('input', function () { s3.K = parseInt(this.value, 10); s3ClampN0(); s3Reset(); drawS3(); });
 $('s3-next').addEventListener('click', function () {
   if (s3.gen < s3.MAXG) { s3.series.push(logisticStep(s3.series[s3.gen], s3.r, s3.K)); s3.gen++; }
   drawS3();
@@ -218,7 +275,7 @@ var s4 = { r: 2.30, n0: 50, K: 1000, GENS: 60 };
 function drawS4() {
   var cv = regCanvas($('s4-canvas'));
   var series = logisticSeries(s4.n0, s4.r, s4.K, s4.GENS);
-  var cls = classifySeries(series, s4.K);
+  var cls = classifySeries(series, s4.K, s4.r);
   var draw = cls.type === 'crash' ? series.slice(0, cls.gen + 1) : series;
   var pts = draw.map(function (v, i) { return [i, Math.max(v, 0)]; });
   var peak = Math.max.apply(null, draw.concat([s4.K]));
@@ -226,8 +283,8 @@ function drawS4() {
   drawChart(cv, [{ pts: pts, color: '#ff7a93', width: 2, label: 'N' }],
     { xMax: s4.GENS, yMax: yMax, yLabel: 'N', kLine: { y: s4.K, label: 'K = ' + fmtInt(s4.K) } });
   $('s4-r-val').textContent = 'r = ' + fmt2(s4.r);
-  var key = cls.type === 'crash' ? 's4crash' : (cls.type === 'osc' ? 's4osc' : 's4stable');
-  $('s4-ro').innerHTML = t(key, { g: cls.gen || 0, spread: fmtInt(cls.spread || 0) });
+  var key = { crash: 's4crash', mono: 's4mono', damped: 's4damp', chaos: 's4chaos', osc: cls.period ? 's4osc' : 's4oscLong' }[cls.type];
+  $('s4-ro').innerHTML = t(key, { g: cls.gen || 0, spread: fmtInt(cls.spread || 0), p: cls.period || 0, lam: fmt2(cls.lyap || 0) });
 }
 $('s4-r').addEventListener('input', function () { s4.r = parseInt(this.value, 10) / 100; drawS4(); });
 
