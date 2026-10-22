@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>种群增长 · S 形曲线从哪来 —— 一步一交互</title>
-<link rel="stylesheet" href="style.css?v=pop1">
-<script src="i18n.js?v=pop1"></script>
+<link rel="stylesheet" href="style.css?v=pop2">
+<script src="i18n.js?v=pop2"></script>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
   </div>
 </header>
 
-<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+<nav class="step-nav" id="stepNav" aria-label="步骤导航" data-i18n-aria="navLabel">
   <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 翻倍狂奔</a>
   <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 增长率 r</a>
   <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 世界装不下</a>
@@ -72,7 +72,7 @@
     <div class="stage"><canvas id="s2-canvas" height="320"></canvas></div>
     <div class="controls">
       <label><span><span data-i18n="s2rLab">增长率 r</span> <span class="val" id="s2-r-val"></span></span>
-        <input type="range" id="s2-r" min="20" max="120" step="5" value="60">
+        <input type="range" id="s2-r" min="20" max="100" step="5" value="60">
       </label>
       <label><span><span data-i18n="s2kLab">容纳量 K</span> <span class="val" id="s2-k-val"></span></span>
         <input type="range" id="s2-k" min="300" max="2000" step="100" value="1000">
@@ -95,7 +95,7 @@
     <div class="stage"><canvas id="s3-canvas" height="320"></canvas></div>
     <div class="controls">
       <label><span><span data-i18n="s3n0Lab">起始数量 N₀</span> <span class="val" id="s3-n0-val"></span></span>
-        <input type="range" id="s3-n0" min="50" max="2200" step="50" value="1800">
+        <input type="range" id="s3-n0" min="50" max="2200" step="50" value="1300">
       </label>
       <label><span><span data-i18n="s3kLab">容纳量 K</span> <span class="val" id="s3-k-val"></span></span>
         <input type="range" id="s3-k" min="300" max="2000" step="100" value="1000">
@@ -117,8 +117,8 @@
     <p class="explain" data-i18n-html="s4e"></p>
     <div class="stage"><canvas id="s4-canvas" height="320"></canvas></div>
     <div class="controls">
-      <label><span><span data-i18n="s4rLab">增长率 r（越界区）</span> <span class="val" id="s4-r-val"></span></span>
-        <input type="range" id="s4-r" min="150" max="290" step="5" value="230">
+      <label><span><span data-i18n="s4rLab">增长率 r（r &gt; 2 为越界区）</span> <span class="val" id="s4-r-val"></span></span>
+        <input type="range" id="s4-r" min="100" max="310" step="5" value="230">
       </label>
     </div>
     <p class="readout" id="s4-ro"></p>
@@ -132,6 +132,7 @@
     <h2 data-i18n="s5t">把这一页收成三句话</h2>
     <p class="explain" data-i18n-html="s5e"></p>
     <p style="margin-top:12px"><a class="fourier-link" href="../exp-log/#step0" data-i18n="s5lkExp">上游：指数与对数（底图）→</a></p>
+    <p style="margin-top:8px"><a class="fourier-link" href="../chemical-equilibrium/#step2" data-i18n="s5lkEq">旁支：化学平衡——同样是「自我刹车」的系统 →</a></p>
     <p class="hint" data-i18n-html="s5bound"></p>
   </div>
 </section>
@@ -142,6 +143,6 @@
   <p data-i18n="foot">visual.integ.life · 种群增长 Population Growth —— 一步一交互系列</p>
 </footer>
 
-<script src="app.js?v=pop1"></script>
+<script src="app.js?v=pop2"></script>
 </body>
 </html>
