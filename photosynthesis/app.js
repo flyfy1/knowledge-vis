@@ -5,13 +5,19 @@ function clamp(v,lo,hi){return v<lo?lo:(v>hi?hi:v);}
 function fmt1(x){return (Math.round(x*10)/10).toString();}
 
 /* ---------------- PURE ---------------- */
-const MODEL = { MAXRATE: 40, KL: 30, KC: 25, BUBBLE_SCALE: 3, S3_LIGHT: 90, S2_CO2: 60 };
+/* 取 min 模型（最短板）：速率 = min(光允许的速率, CO₂ 允许的速率)，两者均为饱和型、封顶 MAXRATE */
+const MODEL = { MAXRATE: 40, KL: 30, KC: 25, BUBBLE_SCALE: 3, S0_LIGHT: 70, S0_CO2: 60, S2_CO2: 60, S3_LIGHT: 100 };
 function lightFactor(L){ return L<=0?0:L/(L+MODEL.KL); }
 function co2Factor(C){ return C<=0?0:C/(C+MODEL.KC); }
-function photoRate(L,C){ return MODEL.MAXRATE*lightFactor(L)*co2Factor(C); }
+function lightCap(L){ return MODEL.MAXRATE*lightFactor(L); }
+function co2Cap(C){ return MODEL.MAXRATE*co2Factor(C); }
+function photoRate(L,C){ return Math.min(lightCap(L), co2Cap(C)); }
 function bubblesPerMin(rate){ return Math.round(rate*MODEL.BUBBLE_SCALE); }
-function isSaturated(L){ return lightFactor(L)>0.75; }
-function limitingFactor(L,C){ return co2Factor(C)<=lightFactor(L)?'co2':'light'; }
+function limitingFactor(L,C){ return co2Cap(C)<=lightCap(L)?'co2':'light'; }
+/* 光饱和 = 光已不是最短板：再加光，速率不变 */
+function isSaturated(L,C){ return limitingFactor(L,C)==='co2'; }
+/* 轴上限：曲线最大值向上取整到 5 */
+function niceMax(fn){ let m=0; for(let v=0;v<=100;v+=1) m=Math.max(m,fn(v)); return Math.max(5,Math.ceil(m/5)*5); }
 /* 方程式各项的原子构成（查表数据）→ 对账求和（判定逻辑） */
 const TERMS = {
   co2:   { key:'eqCO2', atoms:{C:1,O:2}, coef:6, src:'srcCO2' },
@@ -27,11 +33,12 @@ function atomTotals(side){
 }
 function ledgerBalanced(){ const l=atomTotals(['co2','h2o']), r=atomTotals(['sugar','o2']); return l.C===r.C&&l.H===r.H&&l.O===r.O; }
 const QUIZ = { q1:{answer:'b'}, q2:{answer:'a'} };
+const BET = { answer:'o2', options:['o2','co2','vapor'] };
 function judge(qid, choice){ return choice===QUIZ[qid].answer; }
 
 /* ---------------- 状态 ---------------- */
 const S = {
-  s0:{ playing:false, bubbles:[], released:0, last:0, spawnAcc:0 },
+  s0:{ playing:false, bubbles:[], released:0, last:0, spawnAcc:0, bet:null },
   s1:{ term:'co2' },
   s2:{ light:55 },
   s3:{ co2:60 },
@@ -41,7 +48,8 @@ const S = {
 /* ---------------- Canvas 基础 ---------------- */
 function fit(cv){
   const w=cv.clientWidth||cv.parentElement.clientWidth||640;
-  const h=parseInt(cv.getAttribute('height'),10)||300;
+  if(!cv.dataset.cssH) cv.dataset.cssH=String(parseInt(cv.getAttribute('height'),10)||300);
+  const h=parseInt(cv.dataset.cssH,10);
   const dpr=window.devicePixelRatio||1;
   cv.style.height=h+'px';
   if(cv.width!==Math.round(w*dpr)) cv.width=Math.round(w*dpr);
@@ -86,18 +94,34 @@ function drawS0(now){
   ctx.lineWidth=1;
   /* 气泡 */
   const st=S.s0;
+  const dt=Math.min(0.1, Math.max(0, (now-(st.last||now))/1000));
   if(st.playing){
-    const rate=photoRate(70,60), perSec=bubblesPerMin(rate)/60;
-    st.spawnAcc += perSec*(now-(st.last||now))/1000;
+    const rate=photoRate(MODEL.S0_LIGHT,MODEL.S0_CO2), perSec=bubblesPerMin(rate)/60;
+    st.spawnAcc += perSec*dt;
     while(st.spawnAcc>=1){ st.spawnAcc-=1; st.released++;
       st.bubbles.push({x:baseX+(Math.random()*140-70), y:baseY-30-Math.random()*120, r:2+Math.random()*3, vy:22+Math.random()*20}); }
   }
   st.last=now;
   st.bubbles=st.bubbles.filter(b=>b.y>-8);
-  st.bubbles.forEach(b=>{ if(st.playing) b.y-=b.vy*0.016;
+  st.bubbles.forEach(b=>{ if(st.playing) b.y-=b.vy*dt;
     ctx.strokeStyle='rgba(160,220,255,0.9)'; ctx.beginPath(); ctx.arc(b.x,b.y,b.r,0,7); ctx.stroke(); });
-  $('s0-ro').innerHTML=t('s0ro',{n:st.released, rate:bubblesPerMin(photoRate(70,60))});
+  renderS0Readout();
   if(st.playing) requestAnimationFrame(drawS0);
+}
+
+function renderS0Readout(){
+  const st=S.s0;
+  const box=$('s0-bet');
+  if(box){
+    box.innerHTML=BET.options.map(function(opt){
+      const cls=st.bet===opt?(opt===BET.answer?' correct':' wrong'):'';
+      return '<button type="button" class="btn bet-opt'+cls+'" data-bet="'+opt+'">'+t('bet_'+opt)+'</button>';
+    }).join('');
+    box.querySelectorAll('[data-bet]').forEach(b=>b.onclick=()=>{ st.bet=b.dataset.bet; renderS0Readout(); });
+  }
+  const base=t('s0ro',{n:st.released, rate:bubblesPerMin(photoRate(MODEL.S0_LIGHT,MODEL.S0_CO2))});
+  const tail=st.bet? t(st.bet===BET.answer?'s0betOk':'s0betNo',{bet:t('bet_'+st.bet)}) : t('s0betAsk');
+  $('s0-ro').innerHTML=base+' '+tail;
 }
 
 /* ---------------- Step 1 ---------------- */
@@ -110,9 +134,9 @@ function render1(){
   }).join('');
   eq.querySelectorAll('[data-term]').forEach(b=>b.onclick=()=>{ S.s1.term=b.dataset.term; render1(); });
   const l=atomTotals(['co2','h2o']), r=atomTotals(['sugar','o2']);
-  $('ledger').innerHTML='<p class="ledger-t">'+t('ledgerT')+'</p>'+
-    '<p>'+t('ledgerC',{l:l.C,r:r.C})+' · '+t('ledgerH',{l:l.H,r:r.H})+' · '+t('ledgerO',{l:l.O,r:r.O})+'</p>'+
-    '<p class="ledger-src">'+t(TERMS[S.s1.term].src)+'</p>';
+  $('ledger').innerHTML='<article class="ledger-card"><h3>'+t('ledgerT')+'</h3>'+
+    '<p>'+t('ledgerC',{l:l.C,r:r.C})+' · '+t('ledgerH',{l:l.H,r:r.H})+' · '+t('ledgerO',{l:l.O,r:r.O})+'</p></article>'+
+    '<article class="ledger-card active"><h3>'+t(TERMS[S.s1.term].key)+'</h3><p>'+t(TERMS[S.s1.term].src)+'</p></article>';
   $('s1-ro').innerHTML=t('s1ro');
 }
 
@@ -120,13 +144,15 @@ function render1(){
 function render2(){
   const L=S.s2.light, rate=photoRate(L, MODEL.S2_CO2);
   $('lightValue').textContent=String(L);
-  drawCurve($('s2-canvas'), v=>photoRate(v, MODEL.S2_CO2), L, MODEL.MAXRATE, fmt1(rate));
-  $('s2-ro').innerHTML=t('s2ro',{L:L, rate:fmt1(rate), bubbles:bubblesPerMin(rate), sat:t(isSaturated(L)?'s2satYes':'s2satNo')});
+  const fn=v=>photoRate(v, MODEL.S2_CO2);
+  drawCurve($('s2-canvas'), fn, L, niceMax(fn), fmt1(rate));
+  $('s2-ro').innerHTML=t('s2ro',{L:L, rate:fmt1(rate), bubbles:bubblesPerMin(rate), sat:t(isSaturated(L, MODEL.S2_CO2)?'s2satYes':'s2satNo', {C:MODEL.S2_CO2, cap:fmt1(co2Cap(MODEL.S2_CO2))})});
 }
 function render3(){
   const C=S.s3.co2, L=MODEL.S3_LIGHT, rate=photoRate(L,C);
   $('co2Value').textContent=String(C);
-  drawCurve($('s3-canvas'), v=>photoRate(L,v), C, MODEL.MAXRATE, fmt1(rate));
+  const fn=v=>photoRate(L,v);
+  drawCurve($('s3-canvas'), fn, C, niceMax(fn), fmt1(rate));
   const lim=limitingFactor(L,C);
   $('s3-ro').innerHTML=t('s3ro',{C:C, L:L, rate:fmt1(rate), lim:t(lim==='co2'?'limCO2':'limLight')})+
     '<br>'+t('s3conc');
@@ -138,7 +164,8 @@ function renderQuiz(){
     const box=$(q);
     box.innerHTML=['a','b','c'].map(function(opt){
       const chosen=S.s4[q]===opt;
-      return '<button type="button" class="btn quiz-opt'+(chosen?' active':'')+'" data-q="'+q+'" data-opt="'+opt+'">'+t(q+opt)+'</button>';
+      const mark=chosen?(judge(q,opt)?' correct':' wrong'):'';
+      return '<button type="button" class="btn quiz-opt'+mark+'" data-q="'+q+'" data-opt="'+opt+'">'+t(q+opt)+'</button>';
     }).join('');
     box.querySelectorAll('[data-opt]').forEach(b=>b.onclick=()=>{ S.s4[q]=b.dataset.opt; renderQuiz(); });
     const ro=$(q+'ro');
@@ -154,7 +181,7 @@ function renderQuiz(){
 function renderAll(){ render1(); render2(); render3(); renderQuiz(); const st=S.s0; st.playing=false; $('s0-play').textContent=t('play'); requestAnimationFrame(drawS0); }
 function bind(){
   $('s0-play').onclick=()=>{ const st=S.s0; st.playing=!st.playing; $('s0-play').textContent=t(st.playing?'pause':'play'); st.last=performance.now(); if(st.playing) requestAnimationFrame(drawS0); };
-  $('s0-reset').onclick=()=>{ S.s0.bubbles=[]; S.s0.released=0; S.s0.spawnAcc=0; if(!S.s0.playing) requestAnimationFrame(drawS0); };
+  $('s0-reset').onclick=()=>{ S.s0.bubbles=[]; S.s0.released=0; S.s0.spawnAcc=0; S.s0.bet=null; if(!S.s0.playing) requestAnimationFrame(drawS0); };
   $('lightRange').addEventListener('input',e=>{ S.s2.light=parseInt(e.target.value,10); render2(); });
   $('co2Range').addEventListener('input',e=>{ S.s3.co2=parseInt(e.target.value,10); render3(); });
   $('quizReset').onclick=()=>{ S.s4.q1=null; S.s4.q2=null; renderQuiz(); };
@@ -166,4 +193,4 @@ function bind(){
 onLangRefresh(renderAll);
 bind();
 applyLang(getLang());
-window.PHOTOSYNTHESIS={MODEL,lightFactor,co2Factor,photoRate,bubblesPerMin,isSaturated,limitingFactor,TERMS,atomTotals,ledgerBalanced,QUIZ,judge,state:S};
+window.PHOTOSYNTHESIS={MODEL,lightFactor,co2Factor,lightCap,co2Cap,niceMax,BET,photoRate,bubblesPerMin,isSaturated,limitingFactor,TERMS,atomTotals,ledgerBalanced,QUIZ,judge,state:S};
