@@ -47,3 +47,17 @@ Diagnostic loop: the pre-fix regression command failed deterministically with
 duplicate-event hypotheses were ruled out by the same post-fix checks across all
 supported widths and both locale paths; the causal omission was the reset handler's
 missing DOM-value synchronization.
+
+## Review-3 repair (2026-10-24)
+
+The required finding **233-III1** reproduced deterministically when the Step 1
+range exposed values 2–9: those values were accepted by the formula even though
+the lesson defines `f` as a decimal place value. The control now uses a native
+select whose only values are `1`, `10`, and `100`; the displayed factor and
+higher/current/lower readout are driven by the selected value. This preserves the
+invariant at every enabled state and removes the invalid interaction path.
+
+Evidence and status: a Playwright regression check passed in English and Chinese,
+selecting `10` and `100` and asserting the corresponding factor output and
+`higher/current/lower` values; **233-III1 fixed awaiting independent re-review**.
+This is author self-check evidence and does not independently close the finding.
