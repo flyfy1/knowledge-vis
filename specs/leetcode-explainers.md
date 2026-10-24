@@ -129,6 +129,22 @@ diagrams, readouts and Python. Keep English causally equivalent to Chinese.
   announce meaningful updates, and test narrow screens without shrinking labels
   into illegibility. Honor reduced motion. Avoid automatic looping playback.
 
+## Localization key and meaning binding
+
+Localization keys must be unique within each lookup namespace; separate legitimate
+namespaces may reuse names. Use a duplicate-key detection method appropriate to
+the copy representation that catches definitions before silent overwriting can
+hide them. Key presence or matching key sets alone cannot prove semantic correctness.
+
+Verify representative applicable algorithm-state and UI paths in both English and
+Chinese: the visible explanation must retain the intended algorithm meaning and
+remain distinct from unrelated UI fallback/error copy. For example, a mismatch
+fallback must explain the candidate transition, while a clipboard fallback must
+explain manual copying. Record the exercised state/action, locale, expected meaning
+and visible result, including relevant language switches. Keep coverage proportional
+to the lesson's paths; no particular framework, regex, or exhaustive Cartesian
+product is required. Apply the existing frozen-candidate review and closure gates.
+
 ## Repository pattern
 
 - Collection entry: `/leetcode/`, registered once in root `pages.config.js` under

@@ -1,0 +1,95 @@
+{
+  "status": "pass",
+  "checks": [
+    "en preset 0: both endpoints, rewind/replay/reset",
+    "en preset 1: both endpoints, rewind/replay/reset",
+    "en preset 2: both endpoints, rewind/replay/reset",
+    "en preset 3: both endpoints, rewind/replay/reset",
+    "en preset 4: both endpoints, rewind/replay/reset",
+    "en preset 5: both endpoints, rewind/replay/reset",
+    "en preset 6: both endpoints, rewind/replay/reset",
+    "en preset 7: both endpoints, rewind/replay/reset",
+    "zh preset 0: both endpoints, rewind/replay/reset",
+    "zh preset 1: both endpoints, rewind/replay/reset",
+    "zh preset 2: both endpoints, rewind/replay/reset",
+    "zh preset 3: both endpoints, rewind/replay/reset",
+    "zh preset 4: both endpoints, rewind/replay/reset",
+    "zh preset 5: both endpoints, rewind/replay/reset",
+    "zh preset 6: both endpoints, rewind/replay/reset",
+    "zh preset 7: both endpoints, rewind/replay/reset",
+    "en 320px: no overflow, populated trace screenshot",
+    "en 390px: no overflow, populated trace screenshot",
+    "en 736px: no overflow, populated trace screenshot",
+    "en 1440px: no overflow, populated trace screenshot",
+    "zh 320px: no overflow, populated trace screenshot",
+    "zh 390px: no overflow, populated trace screenshot",
+    "zh 736px: no overflow, populated trace screenshot",
+    "zh 1440px: no overflow, populated trace screenshot"
+  ],
+  "clipboard": "actual browser write/read + success fixture + failure fallback; exact displayed/copied/downloaded parity",
+  "keyboard": "range Home/End, Enter, Tab, 3px focus",
+  "storage": "blocked, locale functional",
+  "offline": "source and controls functional",
+  "zoom": "CSS zoom 200% plus equivalent CSS viewport720 from1440 with deviceScaleFactor2",
+  "contrasts": [
+    {
+      "fg": "body",
+      "bg": "body",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "fg": ".hint",
+      "bg": ".stage",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "fg": ".readout",
+      "bg": ".readout",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "fg": "#reveal",
+      "bg": "#reveal",
+      "color": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "fg": ".btn:disabled",
+      "bg": ".btn:disabled",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "fg": ".token.current",
+      "bg": ".stage",
+      "color": "rgb(110, 231, 255)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 11.974898815275662
+    },
+    {
+      "fg": ".explain",
+      "bg": ".step",
+      "color": "rgb(201, 212, 226)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "fg": "#feedback",
+      "bg": "#feedback",
+      "color": "rgb(255, 122, 147)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 6.34696669826778
+    }
+  ],
+  "cssBytes": 12674,
+  "errors": [],
+  "external": []
+}

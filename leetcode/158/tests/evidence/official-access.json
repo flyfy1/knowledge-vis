@@ -1,0 +1,25 @@
+{
+  "accessedAt": "2026-10-18T14:07:52.897521+00:00",
+  "endpoint": "https://leetcode.com/graphql/",
+  "request": {
+    "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId title titleSlug isPaidOnly content exampleTestcases\n    codeSnippets { lang langSlug code }\n  }\n}",
+    "variables": {
+      "titleSlug": "read-n-characters-given-read4-ii-call-multiple-times"
+    }
+  },
+  "authentication": "None; public request with no cookies or credentials",
+  "status": 200,
+  "response": {
+    "data": {
+      "question": {
+        "questionId": "158",
+        "title": "Read N Characters Given read4 II - Call Multiple Times",
+        "titleSlug": "read-n-characters-given-read4-ii-call-multiple-times",
+        "isPaidOnly": true,
+        "content": null,
+        "exampleTestcases": "\"abc\"\n[1,2,1]\n\"abc\"\n[4,1]",
+        "codeSnippets": null
+      }
+    }
+  }
+}
