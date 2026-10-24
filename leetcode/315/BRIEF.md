@@ -64,3 +64,43 @@ the single string `O(n log n) time; O(n) space`.
 
 Self-check mapping, commands, candidate hashes and limits are recorded in
 `tests/evidence/self-check.txt` and `tests/evidence/candidate-r2.json`.
+
+## Review-fix candidate R3 — 2026-10-25
+
+Design adjudication: adopt R315-4 and R315-5 from the separate review
+`specs/reviews/315-review-2-1f0756d7.md` as the correction contract. Reuse the
+five sections, stage, table, native button/radio/range patterns and shared tokens.
+The review explicitly requests cell ranges/values, an old/new update and fresh
+prediction; these repairs implement that reviewed teaching need. No new page or
+layout. Independent acceptance of this revision remains pending.
+
+P0 / highest-return slice: derive compression on the original [5,2,6,1], define
+lowbit and interval summaries, show query partition and affected update cells,
+then connect those operations to Python and time/space. Add a separate unspoiled
+rank/query/update exercise on [9,-4,2,6,2]. Its answer is withheld until a choice
+and explicit reveal; changing a choice clears feedback, reset clears selection,
+and locale/resize preserve it. P1: localize the node readout. P2 / Deferred:
+additional presets and decoration have no demonstrated need; real learner and
+physical device studies need separate participants/devices.
+
+The frequency experiment remains independent of the suffix presets. It starts
+with ranks for [-2,-1,0,1,2], frequencies [1,2,1,0,1]. Apply adds one at rank 2
+exactly once (disabled afterward); reset restores the original tree. Query rank
+changes only the requested prefix, retaining the update. Every cell displays its
+inclusive interval and before/current values; highlights indicate query reads,
+not different stored data. The exercise shares no mutable state with this stage.
+
+Token contract: reuse shared --bg #0d1117, --panel #161b22, --panel2 #1c2330,
+--text #e8edf4, --muted #9aa7b8, --accent #6ee7ff, --accent2 #ffb454 and --line
+#2b3547; system body stack, inherited 1.75 line-height, shared table/control
+spacing. Added local rules only ensure wrapping, 48px action targets, and full
+opacity of disabled buttons using the existing muted/panel roles. No motion.
+EN/zh states: initial, query endpoints, applied/reset, unanswered/selected,
+wrong/correct revealed, changed answer and locale-preserved exercise. No network
+loading/error/reconnect state exists in these synchronous local experiments.
+
+Language: faithful official Python remains canonical; no supportedLanguages list
+or non-Python contract is present. Read the exact registration source/mirror pair
+(solution.py, python-code.js, PYTHON_SOURCE); no source regeneration is needed
+unless canonical bytes change. Complexity remains one string covering time/space.
+Self-check evidence is appended separately; fixes are awaiting independent review.
