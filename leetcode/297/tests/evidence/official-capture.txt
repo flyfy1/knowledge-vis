@@ -1,0 +1,10 @@
+Official source: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+Accessed: 2026-10-24 Asia/Singapore (public page)
+Observed statement excerpts:
+- “Design an algorithm to serialize and deserialize a binary tree.”
+- “You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized to the original tree structure.”
+- “There is no restriction on how your serialization/deserialization algorithm should work.”
+Examples: root = [1,2,3,null,null,4,5] -> [1,2,3,null,null,4,5]; root = [] -> [].
+Constraints: number of nodes in [0, 10^4]; -1000 <= Node.val <= 1000.
+Interface observed in the public Code section and standard Python catalog: class Codec with serialize(self, root) -> str and deserialize(self, data) -> TreeNode.
+The page exposes a Code/Testcase selector but requires login to submit; this lesson uses the documented Python callable interface.
