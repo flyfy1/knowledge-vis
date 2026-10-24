@@ -1,0 +1,3 @@
+Accessed 2026-10-24T19:03:45.411101+00:00
+Official URL: https://leetcode.com/problems/russian-doll-envelopes/
+Public GraphQL POST https://leetcode.com/graphql/ returned HTTP 200. Query: query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId title content isPaidOnly codeSnippets { lang langSlug code } } }, variables titleSlug=russian-doll-envelopes. See graphql-response.json for unmodified statement and all observed codeSnippets. Python3 explicitly supported: class Solution: def maxEnvelopes(self, envelopes: list[list[int]]) -> int. Python selected by preference. Direct HTML returned HTTP 403 (official-page.html); no access bypass used.
