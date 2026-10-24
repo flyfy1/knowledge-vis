@@ -750,3 +750,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | subtree decoding invariant | `leetcode/297/#step2` | Each recursive call consumes exactly one complete subtree encoding. |
 
 <!-- /leetcode-297-campaign -->
+
+
+<!-- leetcode-301-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Removal budget | `leetcode/301/#step1` | Count unmatched left and right parentheses before searching. |
+| Balance invariant | `leetcode/301/#step2` | A prefix balance never becomes negative and ends at zero. |
+| Duplicate-free branching | `leetcode/301/#step2` | Skip adjacent equal deletion choices. |
+
+<!-- /leetcode-301-campaign -->

@@ -1091,6 +1091,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) explicit stack plus O(n) input/output storage"
   },
   {
+    "id": 301,
+    "title": {
+      "zh": "删除无效括号",
+      "en": "Remove Invalid Parentheses"
+    },
+    "desc": {
+      "zh": "从最少删除预算出发，推导不重复的括号搜索。",
+      "en": "Derive duplicate-free search from the exact minimum-removal budget."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "回溯",
+        "en": "Backtracking"
+      },
+      {
+        "zh": "括号与剪枝",
+        "en": "Parentheses and pruning"
+      }
+    ],
+    "path": "301/",
+    "leetcodeUrl": "https://leetcode.com/problems/remove-invalid-parentheses/",
+    "language": "Python",
+    "complexity": "O(2^n) time in the worst case; O(n) recursion space plus output"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
