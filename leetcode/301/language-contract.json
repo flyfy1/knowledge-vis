@@ -1,0 +1,10 @@
+{
+  "problemId":301,
+  "language":"Python",
+  "officialSource":"https://leetcode.com/problems/remove-invalid-parentheses/",
+  "supportedLanguages":["Python","TypeScript","JavaScript","C++","Java","C#","Go","Kotlin","Rust","PHP","Swift"],
+  "interface":"class Solution: def removeInvalidParentheses(self, s: str) -> List[str]; returns all unique strings with minimum removals, any order.",
+  "rationale":"Python is the preferred faithful interface and is supported by the official problem page.",
+  "verifiedAt":"2026-10-24T00:00:00+08:00",
+  "verificationEvidence":"tests/evidence/official.json"
+}
