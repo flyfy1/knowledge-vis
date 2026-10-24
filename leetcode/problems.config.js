@@ -849,6 +849,88 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) auxiliary space and output space"
   },
   {
+    "id": 218,
+    "title": {
+      "zh": "天际线问题",
+      "en": "The Skyline Problem"
+    },
+    "desc": {
+      "zh": "从两栋楼的屋顶推导端点扫描与延迟删除堆。",
+      "en": "Derive an endpoint sweep and lazy heap removal from two overlapping roofs."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "扫描线",
+        "en": "Sweep line"
+      },
+      {
+        "zh": "堆",
+        "en": "Heap"
+      }
+    ],
+    "path": "218/",
+    "leetcodeUrl": "https://leetcode.com/problems/the-skyline-problem/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space and O(n) output"
+  },
+  {
+    "id": 220,
+    "title": {
+      "zh": "存在重复元素 III",
+      "en": "Contains Duplicate III"
+    },
+    "desc": {
+      "zh": "用两个距离限制推导滑动窗口与数值桶，逐步检查每一次到期和匹配。",
+      "en": "Derive a sliding window and value buckets from two distance limits."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "滑动窗口",
+        "en": "Sliding window"
+      },
+      {
+        "zh": "桶",
+        "en": "Buckets"
+      },
+      {
+        "zh": "哈希表",
+        "en": "Hash table"
+      }
+    ],
+    "path": "220/",
+    "leetcodeUrl": "https://leetcode.com/problems/contains-duplicate-iii/",
+    "language": "Python",
+    "complexity": "Expected O(n) time; O(min(n, indexDiff)) auxiliary space"
+  },
+  {
+    "id": 224,
+    "title": {
+      "zh": "基本计算器",
+      "en": "Basic Calculator"
+    },
+    "desc": {
+      "zh": "逐步保存括号外的总和与符号，推导无递归计算器。",
+      "en": "Derive an iterative calculator by saving outer totals and signs."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "栈",
+        "en": "Stack"
+      },
+      {
+        "zh": "字符串解析",
+        "en": "Parsing"
+      }
+    ],
+    "path": "224/",
+    "leetcodeUrl": "https://leetcode.com/problems/basic-calculator/",
+    "language": "Python",
+    "complexity": "O(n) time; O(d) auxiliary space, d is maximum parenthesis depth"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

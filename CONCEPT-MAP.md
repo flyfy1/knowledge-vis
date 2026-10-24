@@ -12,11 +12,6 @@
 
 ## 一、主表：概念 → 专讲页/步
 
-The mathematics and physics navigation atlas is at `atlas/?node=fourier`.
-It reuses the lesson anchors below; `atlas/data.js` owns its 24 editorial concepts,
-directed relationship statements, source links, and suggested routes. Atlas region
-positions are not similarity scores or prerequisite claims.
-
 LeetCode collection additions (2026-10-17):
 
 | Concept | Deep link | What the step teaches |
@@ -662,16 +657,33 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 
 <!-- /leetcode-44-campaign -->
 
-## Circuits and energy (2026-10-18)
 
-| Concept | Lesson anchor |
-|---|---|
-| Voltage, current, power; KCL/KVL | /power-converters/#step0 |
-| Inductor, magnetic energy | /power-converters/#step1 |
-| Capacitor, electric energy | /power-converters/#step2 |
-| Ideal switch/diode; PWM duty | /power-converters/#step3 |
-| Buck; volt-second balance | /power-converters/#step4 |
-| Boost; two energy paths | /power-converters/#step5 |
-| Efficiency and power budget | /power-converters/#step6 |
+<!-- leetcode-220-campaign -->
 
-Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Feedback links to /control/#step2; the converter lesson does not simulate loop dynamics.
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Index-bounded window | `leetcode/220/#step1` | Retain exactly the preceding positions within the inclusive index distance. |
+| Integer value buckets | `leetcode/220/#step2` | Use width valueDiff + 1 and check the current and adjacent buckets. |
+| Bucket-window invariant | `leetcode/220/#step4` | Expire before probing and insert only after excluding all earlier witnesses. |
+
+<!-- /leetcode-220-campaign -->
+
+
+<!-- leetcode-224-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Saved calculator contexts | `leetcode/224/#step2` | Preserve outer total and sign while evaluating a parenthesized term. |
+| Iterative expression evaluation | `leetcode/224/#step4` | Map sign, digit accumulation and parenthesis merging to Python. |
+
+<!-- /leetcode-224-campaign -->
+
+
+<!-- leetcode-218-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| skyline endpoint sweep | `leetcode/218/#step2` | Group equal-coordinate events and retain the tallest unexpired heap root. |
+| lazy heap removal | `leetcode/218/#step4` | Prove why expired entries below the root can be removed later. |
+
+<!-- /leetcode-218-campaign -->
