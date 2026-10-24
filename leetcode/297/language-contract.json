@@ -1,0 +1,10 @@
+{
+  "problemId": 297,
+  "language": "Python",
+  "officialSource": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+  "supportedLanguages": ["Python", "TypeScript", "JavaScript"],
+  "interface": "class Codec with serialize(root: Optional[TreeNode]) -> str and deserialize(data: str) -> Optional[TreeNode]; TreeNode has val, left, right.",
+  "rationale": "Python is the preferred faithful interface and directly expresses the recursive Codec contract.",
+  "verifiedAt": "2026-10-24T00:00:00+08:00",
+  "verificationEvidence": "tests/evidence/official-capture.txt"
+}
