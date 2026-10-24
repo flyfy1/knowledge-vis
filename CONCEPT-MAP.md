@@ -687,3 +687,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | lazy heap removal | `leetcode/218/#step4` | Prove why expired entries below the root can be removed later. |
 
 <!-- /leetcode-218-campaign -->
+
+
+<!-- leetcode-233-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| place-value cycles | `leetcode/233/#step1` | Each decimal position repeats every 10f numbers. |
+| higher/current/lower invariant | `leetcode/233/#step2` | The three parts determine the unfinished cycle contribution. |
+
+<!-- /leetcode-233-campaign -->
