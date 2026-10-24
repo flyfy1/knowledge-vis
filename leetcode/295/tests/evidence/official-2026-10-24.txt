@@ -1,0 +1,10 @@
+Source: https://leetcode.com/problems/find-median-from-data-stream/
+Accessed: 2026-10-24 Asia/Singapore via public page.
+Observed statement excerpts:
+- Implement MedianFinder class.
+- MedianFinder() initializes the object.
+- void addNum(int num) adds integer num from the data stream.
+- double findMedian() returns median; answers within 10^-5 accepted.
+- Constraints: -10^5 <= num <= 10^5; at least one element before findMedian; at most 5*10^4 calls.
+- Example operations [MedianFinder, addNum, addNum, findMedian, addNum, findMedian] with values 1,2,3 return 1.5 and 2.0.
+Language selector observation: public Code area exposes Python3 class interface for this problem; canonical lesson uses Python `MedianFinder.addNum` and `MedianFinder.findMedian`.

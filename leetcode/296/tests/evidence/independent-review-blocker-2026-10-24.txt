@@ -1,0 +1,4 @@
+Independent reviewer: /root/review_blocker
+Date: 2026-10-24
+
+The reviewer independently fetched the official URL and confirmed the page only exposes the premium gate (“Subscribe to unlock” / “To view this question you must subscribe to premium”). The reviewer also confirmed the unauthenticated GraphQL response has `content: null` and `codeSnippets: null`, exposing only id/title/exampleTestcases. Therefore the official statement, constraints, exceptions, and supported language interface cannot be verified. The reviewer agrees the lesson is blocked pending authorized premium access or an official statement/interface capture.
