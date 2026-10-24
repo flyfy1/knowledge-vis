@@ -1,0 +1,22 @@
+{
+  "selfCheck": true,
+  "localeReloadPersistence": true,
+  "unrevealedLocalePreservation": true,
+  "changedPredictionClearsFeedback": true,
+  "landscapeNoOverflow": true,
+  "forcedColorsFocus": true,
+  "reducedMotion": true,
+  "settledActiveNavigation": "#step2",
+  "shots": [
+    "zh-hand.png",
+    "zh-prediction.png",
+    "zh-fallback-source.png",
+    "zh-landscape.png",
+    "en-hand.png",
+    "en-prediction.png",
+    "en-fallback-source.png",
+    "en-landscape.png",
+    "forced-colors-focus.png",
+    "en-search-ledger.png"
+  ]
+}
