@@ -1,0 +1,13 @@
+{
+  "after": "Consumed 1/11 tokens",
+  "prev": "Consumed 0/11 tokens",
+  "reset": "Consumed 0/11 tokens",
+  "quiz": "Correct. “#” explicitly means the current subtree is empty; it consumes one token and tells the parent that this child position has no node.",
+  "change": "Correct. “#” explicitly means the current subtree is empty; it consumes one token and tells the parent that this child position has no node.",
+  "source": "from typing import Optional\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\nclass Codec:\n    def serialize(self, root: Optional[TreeNode]) -> str:\n        tokens = []\n        def visit(node):\n            if node is None:\n                tokens.append('#')\n                return\n            tokens.append(str(node.val))\n            visit(node.left)\n            visit(node.right)\n        visit(root)\n        return ','.join(tokens)\n\n    def deserialize(self, data: str) -> Optional[TreeNode]:\n        tokens = iter(data.split(','))\n        def build():\n            token = next(tokens)\n            if token == '#':\n                return None\n            node = TreeNode(int(token))\n            node.left = build()\n            node.right = build()\n            return node\n        return build()\n",
+  "textarea": "from typing import Optional\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\nclass Codec:\n    def serialize(self, root: Optional[TreeNode]) -> str:\n        tokens = []\n        def visit(node):\n            if node is None:\n                tokens.append('#')\n                return\n            tokens.append(str(node.val))\n            visit(node.left)\n            visit(node.right)\n        visit(root)\n        return ','.join(tokens)\n\n    def deserialize(self, data: str) -> Optional[TreeNode]:\n        tokens = iter(data.split(','))\n        def build():\n            token = next(tokens)\n            if token == '#':\n                return None\n            node = TreeNode(int(token))\n            node.left = build()\n            node.right = build()\n            return node\n        return build()\n",
+  "zoom": {
+    "scrollWidth": 620,
+    "clientWidth": 320
+  }
+}
