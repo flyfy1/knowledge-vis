@@ -1,0 +1,194 @@
+[
+  {
+    "lang": "en",
+    "width": 320,
+    "ftxt": "higher\n0\ncurrent\n1\nlower\n3",
+    "pre": {
+      "hidden": true,
+      "rows": 0
+    },
+    "post": {
+      "hidden": false,
+      "rows": 3,
+      "text": "Correct. For n=101 the answer is 23: 11 ones, 10 tens, and 2 hundreds."
+    },
+    "ui11": "Contribution at this place: 2",
+    "reset": {
+      "n": "13",
+      "factor": "1",
+      "rows": 0,
+      "case": ""
+    },
+    "keyboard": [
+      "resetBtn",
+      "0 Count by hand",
+      "1 One place",
+      "2 Three cases",
+      "3 Baseline",
+      "4 Transfer",
+      "5 Python submission",
+      "00"
+    ]
+  },
+  {
+    "lang": "en",
+    "width": 390,
+    "ftxt": "higher\n0\ncurrent\n1\nlower\n3",
+    "pre": {
+      "hidden": true,
+      "rows": 0
+    },
+    "post": {
+      "hidden": false,
+      "rows": 3,
+      "text": "Correct. For n=101 the answer is 23: 11 ones, 10 tens, and 2 hundreds."
+    },
+    "ui11": "Contribution at this place: 2",
+    "reset": {
+      "n": "13",
+      "factor": "1",
+      "rows": 0,
+      "case": ""
+    },
+    "keyboard": [
+      "resetBtn",
+      "0 Count by hand",
+      "1 One place",
+      "2 Three cases",
+      "3 Baseline",
+      "4 Transfer",
+      "5 Python submission",
+      "00"
+    ]
+  },
+  {
+    "lang": "en",
+    "width": 1280,
+    "ftxt": "higher\n0\ncurrent\n1\nlower\n3",
+    "pre": {
+      "hidden": true,
+      "rows": 0
+    },
+    "post": {
+      "hidden": false,
+      "rows": 3,
+      "text": "Correct. For n=101 the answer is 23: 11 ones, 10 tens, and 2 hundreds."
+    },
+    "ui11": "Contribution at this place: 2",
+    "reset": {
+      "n": "13",
+      "factor": "1",
+      "rows": 0,
+      "case": ""
+    },
+    "keyboard": [
+      "resetBtn",
+      "0 Count by hand",
+      "1 One place",
+      "2 Three cases",
+      "3 Baseline",
+      "4 Transfer",
+      "5 Python submission",
+      "00"
+    ]
+  },
+  {
+    "lang": "zh",
+    "width": 320,
+    "ftxt": "高位\n0\n当前位\n1\n低位\n3",
+    "pre": {
+      "hidden": true,
+      "rows": 0
+    },
+    "post": {
+      "hidden": false,
+      "rows": 3,
+      "text": "答对了。 n=101 的答案是 23：个位 11、十位 10、百位 2。"
+    },
+    "ui11": "本位贡献: 2",
+    "reset": {
+      "n": "13",
+      "factor": "1",
+      "rows": 0,
+      "case": ""
+    },
+    "keyboard": [
+      "resetBtn",
+      "0 先手算",
+      "1 看一个数位",
+      "2 三种情况",
+      "3 基线对照",
+      "4 预测迁移",
+      "5 Python 提交",
+      "00"
+    ]
+  },
+  {
+    "lang": "zh",
+    "width": 390,
+    "ftxt": "高位\n0\n当前位\n1\n低位\n3",
+    "pre": {
+      "hidden": true,
+      "rows": 0
+    },
+    "post": {
+      "hidden": false,
+      "rows": 3,
+      "text": "答对了。 n=101 的答案是 23：个位 11、十位 10、百位 2。"
+    },
+    "ui11": "本位贡献: 2",
+    "reset": {
+      "n": "13",
+      "factor": "1",
+      "rows": 0,
+      "case": ""
+    },
+    "keyboard": [
+      "resetBtn",
+      "0 先手算",
+      "1 看一个数位",
+      "2 三种情况",
+      "3 基线对照",
+      "4 预测迁移",
+      "5 Python 提交",
+      "00"
+    ]
+  },
+  {
+    "lang": "zh",
+    "width": 1280,
+    "ftxt": "高位\n0\n当前位\n1\n低位\n3",
+    "pre": {
+      "hidden": true,
+      "rows": 0
+    },
+    "post": {
+      "hidden": false,
+      "rows": 3,
+      "text": "答对了。 n=101 的答案是 23：个位 11、十位 10、百位 2。"
+    },
+    "ui11": "本位贡献: 2",
+    "reset": {
+      "n": "13",
+      "factor": "1",
+      "rows": 0,
+      "case": ""
+    },
+    "keyboard": [
+      "resetBtn",
+      "0 先手算",
+      "1 看一个数位",
+      "2 三种情况",
+      "3 基线对照",
+      "4 预测迁移",
+      "5 Python 提交",
+      "00"
+    ]
+  },
+  {
+    "zoom": {
+      "scrollWidth": 640,
+      "clientWidth": 640
+    }
+  }
+]
