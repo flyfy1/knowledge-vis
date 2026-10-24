@@ -1,0 +1,125 @@
+{
+  "status": "pass",
+  "checks": [
+    "en: all 7 presets, every forward/back frame, retained history, reset/end/disabled endpoints; match/mismatch semantic copy",
+    "en: prediction before reveal, all options, changing clears feedback, locale preserves answer/reveal/trace; presets independent",
+    "en: displayed/copied/downloaded exact source; denied clipboard focuses selected complete source; fallback remains localized across locale",
+    "en: 320/390/736/1440 geometry and screenshots, 200% CSS layout zoom, keyboard slider/button/focus, all deep navigation and related targets",
+    "zh: all 7 presets, every forward/back frame, retained history, reset/end/disabled endpoints; match/mismatch semantic copy",
+    "zh: prediction before reveal, all options, changing clears feedback, locale preserves answer/reveal/trace; presets independent",
+    "zh: displayed/copied/downloaded exact source; denied clipboard focuses selected complete source; fallback remains localized across locale",
+    "zh: 320/390/736/1440 geometry and screenshots, 200% CSS layout zoom, keyboard slider/button/focus, all deep navigation and related targets",
+    "blocked localStorage: in-memory locale works and preserves trace; embedded source needs no source request"
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "color": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".step-nav a",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".btn:disabled",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".state",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".state span",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".state b",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "th",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "a",
+      "color": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#next",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "focusContrast": 8.937191437807625,
+  "cssBytes": 11979,
+  "screens": [
+    "en-jump-final.png",
+    "en-copy-fallback.png",
+    "en-320-trace.png",
+    "en-320-state.png",
+    "en-320-history-left.png",
+    "en-320-history-right.png",
+    "en-390-trace.png",
+    "en-390-state.png",
+    "en-390-history-left.png",
+    "en-390-history-right.png",
+    "en-736-trace.png",
+    "en-736-state.png",
+    "en-1440-trace.png",
+    "en-1440-state.png",
+    "en-zoom200.png",
+    "zh-jump-final.png",
+    "zh-copy-fallback.png",
+    "zh-320-trace.png",
+    "zh-320-state.png",
+    "zh-320-history-left.png",
+    "zh-320-history-right.png",
+    "zh-390-trace.png",
+    "zh-390-state.png",
+    "zh-390-history-left.png",
+    "zh-390-history-right.png",
+    "zh-736-trace.png",
+    "zh-736-state.png",
+    "zh-1440-trace.png",
+    "zh-1440-state.png",
+    "zh-zoom200.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "zoom": "CSS zoom=2; physical devices and browser chrome zoom untested"
+}
