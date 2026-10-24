@@ -1,0 +1,1719 @@
+{
+  "status": "author self-check; independent re-review pending",
+  "errors": [],
+  "records": [
+    {
+      "locale": "en",
+      "choice": "equal",
+      "feedback": "B includes the equal 2. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1."
+    },
+    {
+      "locale": "en",
+      "choice": "leaf",
+      "feedback": "C misses the [1,4] block containing rank 2, leaving later queries too small. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1."
+    },
+    {
+      "locale": "en",
+      "choice": "rank",
+      "feedback": "D treats value 2 as third smallest; it is second. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1."
+    },
+    {
+      "locale": "en",
+      "choice": "strict",
+      "feedback": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1."
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "state": "tree",
+      "geometry": [
+        {
+          "text": "Query rank",
+          "x": 31,
+          "right": 115.046875,
+          "y": -1.421875,
+          "bottom": 20.578125
+        },
+        {
+          "text": "-2 → r1: f=1",
+          "x": 43,
+          "right": 118.8125,
+          "y": 58.578125,
+          "bottom": 77.578125
+        },
+        {
+          "text": "-1 → r2: f=3",
+          "x": 146.984375,
+          "right": 222.796875,
+          "y": 58.578125,
+          "bottom": 77.578125
+        },
+        {
+          "text": "0 → r3: f=1",
+          "x": 43,
+          "right": 114.3125,
+          "y": 93.078125,
+          "bottom": 112.078125
+        },
+        {
+          "text": "1 → r4: f=0",
+          "x": 142.484375,
+          "right": 213.796875,
+          "y": 93.078125,
+          "bottom": 112.078125
+        },
+        {
+          "text": "2 → r5: f=1",
+          "x": 43,
+          "right": 114.3125,
+          "y": 127.578125,
+          "bottom": 146.578125
+        },
+        {
+          "text": "On narrow screens, scroll the table sideways, or focus it and use the arrow keys to inspect its columns.",
+          "x": 31,
+          "right": 258.859375,
+          "y": 169.078125,
+          "bottom": 188.078125
+        },
+        {
+          "text": "On narrow screens, scroll the table sideways, or focus it and use the arrow keys to inspect its columns.",
+          "x": 31,
+          "right": 286.078125,
+          "y": 193.578125,
+          "bottom": 212.578125
+        },
+        {
+          "text": "On narrow screens, scroll the table sideways, or focus it and use the arrow keys to inspect its columns.",
+          "x": 31,
+          "right": 210.3125,
+          "y": 218.078125,
+          "bottom": 237.078125
+        },
+        {
+          "text": "Insert one at rank 2",
+          "x": 44,
+          "right": 191.21875,
+          "y": 509.578125,
+          "bottom": 531.578125
+        },
+        {
+          "text": "Reset",
+          "x": 225.21875,
+          "right": 266.671875,
+          "y": 509.578125,
+          "bottom": 531.578125
+        },
+        {
+          "text": "Inserted: f[2] 2→3; bit[2] 3→4, bit[4] 4→5; other cells stay unchanged.",
+          "x": 47,
+          "right": 272.96875,
+          "y": 577.578125,
+          "bottom": 599.578125
+        },
+        {
+          "text": "Inserted: f[2] 2→3; bit[2] 3→4, bit[4] 4→5; other cells stay unchanged.",
+          "x": 47,
+          "right": 245.84375,
+          "y": 605.578125,
+          "bottom": 627.578125
+        },
+        {
+          "text": "Inserted: f[2] 2→3; bit[2] 3→4, bit[4] 4→5; other cells stay unchanged.",
+          "x": 47,
+          "right": 136.203125,
+          "y": 633.578125,
+          "bottom": 655.578125
+        },
+        {
+          "text": "Naive cells",
+          "x": 43,
+          "right": 107.359375,
+          "y": 702.578125,
+          "bottom": 720.578125
+        },
+        {
+          "text": "4",
+          "x": 43,
+          "right": 56.15625,
+          "y": 727.328125,
+          "bottom": 759.328125
+        },
+        {
+          "text": "Fenwick nodes",
+          "x": 176,
+          "right": 265.703125,
+          "y": 702.578125,
+          "bottom": 720.578125
+        },
+        {
+          "text": "1",
+          "x": 176,
+          "right": 189.15625,
+          "y": 727.328125,
+          "bottom": 759.328125
+        },
+        {
+          "text": "prefix(rank−1): 5; Frequency table: [1, 3, 1, 0, 1]; Fenwick nodes: [4]. bit[4] (1..4) = 5",
+          "x": 47,
+          "right": 256.1875,
+          "y": 808.578125,
+          "bottom": 830.578125
+        },
+        {
+          "text": "prefix(rank−1): 5; Frequency table: [1, 3, 1, 0, 1]; Fenwick nodes: [4]. bit[4] (1..4) = 5",
+          "x": 47,
+          "right": 251.875,
+          "y": 836.578125,
+          "bottom": 858.578125
+        },
+        {
+          "text": "prefix(rank−1): 5; Frequency table: [1, 3, 1, 0, 1]; Fenwick nodes: [4]. bit[4] (1..4) = 5",
+          "x": 47,
+          "right": 236.375,
+          "y": 864.578125,
+          "bottom": 886.578125
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "state": "transfer",
+      "geometry": [
+        {
+          "text": "Transfer exercise: predict before revealing",
+          "x": 31,
+          "right": 269.703125,
+          "y": -4.328125,
+          "bottom": 21.671875
+        },
+        {
+          "text": "Transfer exercise: predict before revealing",
+          "x": 31,
+          "right": 186.5,
+          "y": 28.921875,
+          "bottom": 54.921875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 232.640625,
+          "y": 82.171875,
+          "bottom": 104.171875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 283,
+          "y": 110.171875,
+          "bottom": 132.171875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 227.265625,
+          "y": 138.171875,
+          "bottom": 160.171875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 277.640625,
+          "y": 166.171875,
+          "bottom": 188.171875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 273.78125,
+          "y": 194.171875,
+          "bottom": 216.171875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 223.8125,
+          "y": 222.171875,
+          "bottom": 244.171875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 266.84375,
+          "y": 250.171875,
+          "bottom": 272.171875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 257.421875,
+          "y": 278.171875,
+          "bottom": 300.171875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 209.9375,
+          "y": 306.171875,
+          "bottom": 328.171875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 264.125,
+          "y": 334.171875,
+          "bottom": 356.171875
+        },
+        {
+          "text": "A: rank 2; prefix(1)=0; change cells 2,4",
+          "x": 62,
+          "right": 280.1875,
+          "y": 370.171875,
+          "bottom": 392.171875
+        },
+        {
+          "text": "A: rank 2; prefix(1)=0; change cells 2,4",
+          "x": 62,
+          "right": 121.390625,
+          "y": 398.171875,
+          "bottom": 420.171875
+        },
+        {
+          "text": "B: rank 2; prefix(2)=1; change cells 2,4",
+          "x": 62,
+          "right": 280.359375,
+          "y": 426.171875,
+          "bottom": 448.171875
+        },
+        {
+          "text": "B: rank 2; prefix(2)=1; change cells 2,4",
+          "x": 62,
+          "right": 121.390625,
+          "y": 454.171875,
+          "bottom": 476.171875
+        },
+        {
+          "text": "C: rank 2; prefix(1)=0; change only cell 2",
+          "x": 62,
+          "right": 280.078125,
+          "y": 482.171875,
+          "bottom": 504.171875
+        },
+        {
+          "text": "C: rank 2; prefix(1)=0; change only cell 2",
+          "x": 62,
+          "right": 136.296875,
+          "y": 510.171875,
+          "bottom": 532.171875
+        },
+        {
+          "text": "D: rank 3; prefix(2)=1; change cells 3,4",
+          "x": 62,
+          "right": 281.640625,
+          "y": 538.171875,
+          "bottom": 560.171875
+        },
+        {
+          "text": "D: rank 3; prefix(2)=1; change cells 3,4",
+          "x": 62,
+          "right": 121.390625,
+          "y": 566.171875,
+          "bottom": 588.171875
+        },
+        {
+          "text": "Reveal",
+          "x": 44,
+          "right": 92.921875,
+          "y": 624.171875,
+          "bottom": 646.171875
+        },
+        {
+          "text": "Reset",
+          "x": 126.921875,
+          "right": 168.375,
+          "y": 624.171875,
+          "bottom": 646.171875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 47,
+          "right": 252.28125,
+          "y": 692.171875,
+          "bottom": 714.171875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 47,
+          "right": 264.578125,
+          "y": 720.171875,
+          "bottom": 742.171875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 47,
+          "right": 179.875,
+          "y": 748.171875,
+          "bottom": 770.171875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 47,
+          "right": 237.4375,
+          "y": 776.171875,
+          "bottom": 798.171875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 47,
+          "right": 268.46875,
+          "y": 804.171875,
+          "bottom": 826.171875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 47,
+          "right": 270.40625,
+          "y": 832.171875,
+          "bottom": 854.171875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 47,
+          "right": 248.125,
+          "y": 860.171875,
+          "bottom": 882.171875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 47,
+          "right": 99.6875,
+          "y": 888.171875,
+          "bottom": 910.171875
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "state": "tree",
+      "geometry": [
+        {
+          "text": "Query rank",
+          "x": 31,
+          "right": 115.046875,
+          "y": 29.828125,
+          "bottom": 51.828125
+        },
+        {
+          "text": "-2 → r1: f=1",
+          "x": 43,
+          "right": 118.8125,
+          "y": 89.828125,
+          "bottom": 108.828125
+        },
+        {
+          "text": "-1 → r2: f=3",
+          "x": 146.984375,
+          "right": 222.796875,
+          "y": 89.828125,
+          "bottom": 108.828125
+        },
+        {
+          "text": "0 → r3: f=1",
+          "x": 250.96875,
+          "right": 322.28125,
+          "y": 89.828125,
+          "bottom": 108.828125
+        },
+        {
+          "text": "1 → r4: f=0",
+          "x": 43,
+          "right": 114.3125,
+          "y": 124.328125,
+          "bottom": 143.328125
+        },
+        {
+          "text": "2 → r5: f=1",
+          "x": 142.484375,
+          "right": 213.796875,
+          "y": 124.328125,
+          "bottom": 143.328125
+        },
+        {
+          "text": "On narrow screens, scroll the table sideways, or focus it and use the arrow keys to inspect its columns.",
+          "x": 31,
+          "right": 343.390625,
+          "y": 165.828125,
+          "bottom": 184.828125
+        },
+        {
+          "text": "On narrow screens, scroll the table sideways, or focus it and use the arrow keys to inspect its columns.",
+          "x": 31,
+          "right": 321.1875,
+          "y": 190.328125,
+          "bottom": 209.328125
+        },
+        {
+          "text": "On narrow screens, scroll the table sideways, or focus it and use the arrow keys to inspect its columns.",
+          "x": 31,
+          "right": 90.65625,
+          "y": 214.828125,
+          "bottom": 233.828125
+        },
+        {
+          "text": "Insert one at rank 2",
+          "x": 44,
+          "right": 191.21875,
+          "y": 506.328125,
+          "bottom": 528.328125
+        },
+        {
+          "text": "Reset",
+          "x": 225.21875,
+          "right": 266.671875,
+          "y": 506.328125,
+          "bottom": 528.328125
+        },
+        {
+          "text": "Inserted: f[2] 2→3; bit[2] 3→4, bit[4] 4→5; other cells stay unchanged.",
+          "x": 47,
+          "right": 316.5625,
+          "y": 574.328125,
+          "bottom": 596.328125
+        },
+        {
+          "text": "Inserted: f[2] 2→3; bit[2] 3→4, bit[4] 4→5; other cells stay unchanged.",
+          "x": 47,
+          "right": 295.609375,
+          "y": 602.328125,
+          "bottom": 624.328125
+        },
+        {
+          "text": "Naive cells",
+          "x": 43,
+          "right": 107.359375,
+          "y": 671.328125,
+          "bottom": 689.328125
+        },
+        {
+          "text": "4",
+          "x": 43,
+          "right": 56.15625,
+          "y": 696.078125,
+          "bottom": 728.078125
+        },
+        {
+          "text": "Fenwick nodes",
+          "x": 211,
+          "right": 300.703125,
+          "y": 671.328125,
+          "bottom": 689.328125
+        },
+        {
+          "text": "1",
+          "x": 211,
+          "right": 224.15625,
+          "y": 696.078125,
+          "bottom": 728.078125
+        },
+        {
+          "text": "prefix(rank−1): 5; Frequency table: [1, 3, 1, 0, 1]; Fenwick nodes: [4]. bit[4] (1..4) = 5",
+          "x": 47,
+          "right": 342.84375,
+          "y": 777.328125,
+          "bottom": 799.328125
+        },
+        {
+          "text": "prefix(rank−1): 5; Frequency table: [1, 3, 1, 0, 1]; Fenwick nodes: [4]. bit[4] (1..4) = 5",
+          "x": 47,
+          "right": 332.109375,
+          "y": 805.328125,
+          "bottom": 827.328125
+        },
+        {
+          "text": "prefix(rank−1): 5; Frequency table: [1, 3, 1, 0, 1]; Fenwick nodes: [4]. bit[4] (1..4) = 5",
+          "x": 47,
+          "right": 69.46875,
+          "y": 833.328125,
+          "bottom": 855.328125
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "state": "transfer",
+      "geometry": [
+        {
+          "text": "Transfer exercise: predict before revealing",
+          "x": 31,
+          "right": 336.484375,
+          "y": 67.375,
+          "bottom": 93.375
+        },
+        {
+          "text": "Transfer exercise: predict before revealing",
+          "x": 31,
+          "right": 119.71875,
+          "y": 100.625,
+          "bottom": 126.625
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 318.5,
+          "y": 153.875,
+          "bottom": 175.875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 323.9375,
+          "y": 181.875,
+          "bottom": 203.875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 349.265625,
+          "y": 209.875,
+          "bottom": 231.875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 344.234375,
+          "y": 237.875,
+          "bottom": 259.875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 344.28125,
+          "y": 265.875,
+          "bottom": 287.875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 308.640625,
+          "y": 293.875,
+          "bottom": 315.875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 345.890625,
+          "y": 321.875,
+          "bottom": 343.875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 33,
+          "right": 128.171875,
+          "y": 349.875,
+          "bottom": 371.875
+        },
+        {
+          "text": "A: rank 2; prefix(1)=0; change cells 2,4",
+          "x": 62,
+          "right": 343.71875,
+          "y": 385.875,
+          "bottom": 407.875
+        },
+        {
+          "text": "B: rank 2; prefix(2)=1; change cells 2,4",
+          "x": 62,
+          "right": 343.890625,
+          "y": 433.875,
+          "bottom": 455.875
+        },
+        {
+          "text": "C: rank 2; prefix(1)=0; change only cell 2",
+          "x": 62,
+          "right": 358.515625,
+          "y": 481.875,
+          "bottom": 503.875
+        },
+        {
+          "text": "D: rank 3; prefix(2)=1; change cells 3,4",
+          "x": 62,
+          "right": 345.171875,
+          "y": 529.875,
+          "bottom": 551.875
+        },
+        {
+          "text": "Reveal",
+          "x": 44,
+          "right": 92.921875,
+          "y": 607.875,
+          "bottom": 629.875
+        },
+        {
+          "text": "Reset",
+          "x": 126.921875,
+          "right": 168.375,
+          "y": 607.875,
+          "bottom": 629.875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 47,
+          "right": 340.59375,
+          "y": 675.875,
+          "bottom": 697.875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 47,
+          "right": 313.296875,
+          "y": 703.875,
+          "bottom": 725.875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 47,
+          "right": 304.5625,
+          "y": 731.875,
+          "bottom": 753.875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 47,
+          "right": 294.203125,
+          "y": 759.875,
+          "bottom": 781.875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 47,
+          "right": 336.375,
+          "y": 787.875,
+          "bottom": 809.875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 47,
+          "right": 146.125,
+          "y": 815.875,
+          "bottom": 837.875
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1280,
+      "state": "tree",
+      "geometry": [
+        {
+          "text": "Query rank",
+          "x": 185,
+          "right": 269.046875,
+          "y": 100.5,
+          "bottom": 122.5
+        },
+        {
+          "text": "-2 → r1: f=1",
+          "x": 197,
+          "right": 272.8125,
+          "y": 132.5,
+          "bottom": 151.5
+        },
+        {
+          "text": "-1 → r2: f=3",
+          "x": 300.984375,
+          "right": 376.796875,
+          "y": 132.5,
+          "bottom": 151.5
+        },
+        {
+          "text": "0 → r3: f=1",
+          "x": 404.96875,
+          "right": 476.28125,
+          "y": 132.5,
+          "bottom": 151.5
+        },
+        {
+          "text": "1 → r4: f=0",
+          "x": 504.453125,
+          "right": 575.765625,
+          "y": 132.5,
+          "bottom": 151.5
+        },
+        {
+          "text": "2 → r5: f=1",
+          "x": 603.9375,
+          "right": 675.25,
+          "y": 132.5,
+          "bottom": 151.5
+        },
+        {
+          "text": "On narrow screens, scroll the table sideways, or focus it and use the arrow keys to inspect its columns.",
+          "x": 185,
+          "right": 854.5,
+          "y": 174,
+          "bottom": 193
+        },
+        {
+          "text": "Insert one at rank 2",
+          "x": 201,
+          "right": 348.21875,
+          "y": 510.5,
+          "bottom": 532.5
+        },
+        {
+          "text": "Reset",
+          "x": 390.21875,
+          "right": 431.671875,
+          "y": 510.5,
+          "bottom": 532.5
+        },
+        {
+          "text": "Inserted: f[2] 2→3; bit[2] 3→4, bit[4] 4→5; other cells stay unchanged.",
+          "x": 201,
+          "right": 723.328125,
+          "y": 578.5,
+          "bottom": 600.5
+        },
+        {
+          "text": "Naive cells",
+          "x": 203,
+          "right": 267.359375,
+          "y": 649.5,
+          "bottom": 667.5
+        },
+        {
+          "text": "4",
+          "x": 203,
+          "right": 217.875,
+          "y": 674.25,
+          "bottom": 710.25
+        },
+        {
+          "text": "Fenwick nodes",
+          "x": 664,
+          "right": 753.703125,
+          "y": 649.5,
+          "bottom": 667.5
+        },
+        {
+          "text": "1",
+          "x": 664,
+          "right": 678.875,
+          "y": 674.25,
+          "bottom": 710.25
+        },
+        {
+          "text": "prefix(rank−1): 5; Frequency table: [1, 3, 1, 0, 1]; Fenwick nodes: [4]. bit[4] (1..4) = 5",
+          "x": 201,
+          "right": 812.734375,
+          "y": 762.75,
+          "bottom": 784.75
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1280,
+      "state": "transfer",
+      "geometry": [
+        {
+          "text": "Transfer exercise: predict before revealing",
+          "x": 185,
+          "right": 584.140625,
+          "y": 210.4375,
+          "bottom": 236.4375
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 187,
+          "right": 1088,
+          "y": 263.6875,
+          "bottom": 285.6875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 187,
+          "right": 1089.3125,
+          "y": 291.6875,
+          "bottom": 313.6875
+        },
+        {
+          "text": "New array [9,-4,2,6,2], now processing value 2 at i=2. Distinct values in the full array are [-4,2,6,9]. The right suffix is [6,2], with f[1..4]=[0,1,1,0] and current bit[1..4]=[0,1,1,2]. Choose “current rank; query and result; cells changed afterward”. This independent exercise is unaffected by the slider above.",
+          "x": 187,
+          "right": 599.21875,
+          "y": 319.6875,
+          "bottom": 341.6875
+        },
+        {
+          "text": "A: rank 2; prefix(1)=0; change cells 2,4",
+          "x": 216,
+          "right": 497.71875,
+          "y": 355.6875,
+          "bottom": 377.6875
+        },
+        {
+          "text": "B: rank 2; prefix(2)=1; change cells 2,4",
+          "x": 216,
+          "right": 497.890625,
+          "y": 403.6875,
+          "bottom": 425.6875
+        },
+        {
+          "text": "C: rank 2; prefix(1)=0; change only cell 2",
+          "x": 216,
+          "right": 512.515625,
+          "y": 451.6875,
+          "bottom": 473.6875
+        },
+        {
+          "text": "D: rank 3; prefix(2)=1; change cells 3,4",
+          "x": 216,
+          "right": 499.171875,
+          "y": 499.6875,
+          "bottom": 521.6875
+        },
+        {
+          "text": "Reveal",
+          "x": 201,
+          "right": 249.921875,
+          "y": 577.6875,
+          "bottom": 599.6875
+        },
+        {
+          "text": "Reset",
+          "x": 291.921875,
+          "right": 333.375,
+          "y": 577.6875,
+          "bottom": 599.6875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 201,
+          "right": 1070.34375,
+          "y": 645.6875,
+          "bottom": 667.6875
+        },
+        {
+          "text": "Correct. In sorted [-4,2,6,9], value 2 has rank 2. Read only bit[1]=0 and write answer[2]=0. Then add(2) changes bit[2] 1→2 and bit[4] 2→3, giving [0,2,1,3]. The tree now contains [2,6,2], ready for i=1.",
+          "x": 201,
+          "right": 801.421875,
+          "y": 673.6875,
+          "bottom": 695.6875
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "choice": "equal",
+      "feedback": "B 把相等的 2 也算入了。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。"
+    },
+    {
+      "locale": "zh",
+      "choice": "leaf",
+      "feedback": "C 遗漏了包含秩 2 的 [1,4] 区间，以后查询会少算。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。"
+    },
+    {
+      "locale": "zh",
+      "choice": "rank",
+      "feedback": "D 把值 2 当作第 3 小；它实际排第 2。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。"
+    },
+    {
+      "locale": "zh",
+      "choice": "strict",
+      "feedback": "正确。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。"
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "state": "tree",
+      "geometry": [
+        {
+          "text": "查询秩",
+          "x": 31,
+          "right": 79.015625,
+          "y": -0.0625,
+          "bottom": 21.9375
+        },
+        {
+          "text": "-2 → r1: f=1",
+          "x": 43,
+          "right": 118.8125,
+          "y": 59.9375,
+          "bottom": 78.9375
+        },
+        {
+          "text": "-1 → r2: f=3",
+          "x": 146.984375,
+          "right": 222.796875,
+          "y": 59.9375,
+          "bottom": 78.9375
+        },
+        {
+          "text": "0 → r3: f=1",
+          "x": 43,
+          "right": 114.3125,
+          "y": 94.4375,
+          "bottom": 113.4375
+        },
+        {
+          "text": "1 → r4: f=0",
+          "x": 142.484375,
+          "right": 213.796875,
+          "y": 94.4375,
+          "bottom": 113.4375
+        },
+        {
+          "text": "2 → r5: f=1",
+          "x": 43,
+          "right": 114.3125,
+          "y": 128.9375,
+          "bottom": 147.9375
+        },
+        {
+          "text": "窄屏可横向滚动表格；也可聚焦表格后按左右方向键查看各列。",
+          "x": 31,
+          "right": 283,
+          "y": 170.4375,
+          "bottom": 189.4375
+        },
+        {
+          "text": "窄屏可横向滚动表格；也可聚焦表格后按左右方向键查看各列。",
+          "x": 31,
+          "right": 171,
+          "y": 194.9375,
+          "bottom": 213.9375
+        },
+        {
+          "text": "在秩 2 插入一个值",
+          "x": 44,
+          "right": 173.484375,
+          "y": 486.4375,
+          "bottom": 508.4375
+        },
+        {
+          "text": "重置",
+          "x": 207.484375,
+          "right": 239.5,
+          "y": 486.4375,
+          "bottom": 508.4375
+        },
+        {
+          "text": "已插入：f[2] 2→3；bit[2] 3→4，bit[4] 4→5；其余格子不变。",
+          "x": 47,
+          "right": 230.078125,
+          "y": 554.4375,
+          "bottom": 576.4375
+        },
+        {
+          "text": "已插入：f[2] 2→3；bit[2] 3→4，bit[4] 4→5；其余格子不变。",
+          "x": 47,
+          "right": 271.203125,
+          "y": 582.4375,
+          "bottom": 604.4375
+        },
+        {
+          "text": "已插入：f[2] 2→3；bit[2] 3→4，bit[4] 4→5；其余格子不变。",
+          "x": 47,
+          "right": 79.015625,
+          "y": 610.4375,
+          "bottom": 632.4375
+        },
+        {
+          "text": "朴素扫描格数",
+          "x": 43,
+          "right": 121.015625,
+          "y": 679.4375,
+          "bottom": 697.4375
+        },
+        {
+          "text": "4",
+          "x": 43,
+          "right": 56.15625,
+          "y": 704.1875,
+          "bottom": 736.1875
+        },
+        {
+          "text": "Fenwick 触及节点",
+          "x": 176,
+          "right": 267.25,
+          "y": 679.4375,
+          "bottom": 697.4375
+        },
+        {
+          "text": "Fenwick 触及节点",
+          "x": 176,
+          "right": 189.015625,
+          "y": 702.1875,
+          "bottom": 720.1875
+        },
+        {
+          "text": "1",
+          "x": 176,
+          "right": 189.15625,
+          "y": 726.9375,
+          "bottom": 758.9375
+        },
+        {
+          "text": "prefix(rank−1): 5; 频率表: [1, 3, 1, 0, 1]; 树状数组格子: [4]. bit[4] (1..4) = 5",
+          "x": 47,
+          "right": 270.390625,
+          "y": 808.1875,
+          "bottom": 830.1875
+        },
+        {
+          "text": "prefix(rank−1): 5; 频率表: [1, 3, 1, 0, 1]; 树状数组格子: [4]. bit[4] (1..4) = 5",
+          "x": 47,
+          "right": 233.484375,
+          "y": 836.1875,
+          "bottom": 858.1875
+        },
+        {
+          "text": "prefix(rank−1): 5; 频率表: [1, 3, 1, 0, 1]; 树状数组格子: [4]. bit[4] (1..4) = 5",
+          "x": 47,
+          "right": 153.703125,
+          "y": 864.1875,
+          "bottom": 886.1875
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "state": "transfer",
+      "geometry": [
+        {
+          "text": "迁移练习：先预测再揭晓",
+          "x": 31,
+          "right": 240.015625,
+          "y": 82.234375,
+          "bottom": 108.234375
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 33,
+          "right": 270.359375,
+          "y": 135.484375,
+          "bottom": 157.484375
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 33,
+          "right": 238.3125,
+          "y": 163.484375,
+          "bottom": 185.484375
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 33,
+          "right": 279.4375,
+          "y": 191.484375,
+          "bottom": 213.484375
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 33,
+          "right": 263.53125,
+          "y": 219.484375,
+          "bottom": 241.484375
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 33,
+          "right": 274.75,
+          "y": 247.484375,
+          "bottom": 269.484375
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 33,
+          "right": 278.75,
+          "y": 275.484375,
+          "bottom": 297.484375
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 33,
+          "right": 209.015625,
+          "y": 303.484375,
+          "bottom": 325.484375
+        },
+        {
+          "text": "A：秩 2；prefix(1)=0；改格子 2、4",
+          "x": 62,
+          "right": 277.84375,
+          "y": 339.484375,
+          "bottom": 361.484375
+        },
+        {
+          "text": "A：秩 2；prefix(1)=0；改格子 2、4",
+          "x": 62,
+          "right": 96.3125,
+          "y": 367.484375,
+          "bottom": 389.484375
+        },
+        {
+          "text": "B：秩 2；prefix(2)=1；改格子 2、4",
+          "x": 62,
+          "right": 278.03125,
+          "y": 395.484375,
+          "bottom": 417.484375
+        },
+        {
+          "text": "B：秩 2；prefix(2)=1；改格子 2、4",
+          "x": 62,
+          "right": 96.3125,
+          "y": 423.484375,
+          "bottom": 445.484375
+        },
+        {
+          "text": "C：秩 2；prefix(1)=0；只改格子 2",
+          "x": 62,
+          "right": 277.734375,
+          "y": 451.484375,
+          "bottom": 473.484375
+        },
+        {
+          "text": "C：秩 2；prefix(1)=0；只改格子 2",
+          "x": 62,
+          "right": 91.3125,
+          "y": 479.484375,
+          "bottom": 501.484375
+        },
+        {
+          "text": "D：秩 3；prefix(2)=1；改格子 3、4",
+          "x": 62,
+          "right": 279.296875,
+          "y": 507.484375,
+          "bottom": 529.484375
+        },
+        {
+          "text": "D：秩 3；prefix(2)=1；改格子 3、4",
+          "x": 62,
+          "right": 96.3125,
+          "y": 535.484375,
+          "bottom": 557.484375
+        },
+        {
+          "text": "揭晓答案",
+          "x": 44,
+          "right": 108.015625,
+          "y": 593.484375,
+          "bottom": 615.484375
+        },
+        {
+          "text": "重置",
+          "x": 142.015625,
+          "right": 174.03125,
+          "y": 593.484375,
+          "bottom": 615.484375
+        },
+        {
+          "text": "正确。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。",
+          "x": 47,
+          "right": 261.796875,
+          "y": 661.484375,
+          "bottom": 683.484375
+        },
+        {
+          "text": "正确。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。",
+          "x": 47,
+          "right": 234.203125,
+          "y": 689.484375,
+          "bottom": 711.484375
+        },
+        {
+          "text": "正确。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。",
+          "x": 47,
+          "right": 266.875,
+          "y": 717.484375,
+          "bottom": 739.484375
+        },
+        {
+          "text": "正确。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。",
+          "x": 47,
+          "right": 223.203125,
+          "y": 745.484375,
+          "bottom": 767.484375
+        },
+        {
+          "text": "正确。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。",
+          "x": 47,
+          "right": 269.734375,
+          "y": 773.484375,
+          "bottom": 795.484375
+        },
+        {
+          "text": "正确。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。",
+          "x": 47,
+          "right": 173.765625,
+          "y": 801.484375,
+          "bottom": 823.484375
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "state": "tree",
+      "geometry": [
+        {
+          "text": "查询秩",
+          "x": 31,
+          "right": 79.015625,
+          "y": 56.1875,
+          "bottom": 78.1875
+        },
+        {
+          "text": "-2 → r1: f=1",
+          "x": 43,
+          "right": 118.8125,
+          "y": 116.1875,
+          "bottom": 135.1875
+        },
+        {
+          "text": "-1 → r2: f=3",
+          "x": 146.984375,
+          "right": 222.796875,
+          "y": 116.1875,
+          "bottom": 135.1875
+        },
+        {
+          "text": "0 → r3: f=1",
+          "x": 250.96875,
+          "right": 322.28125,
+          "y": 116.1875,
+          "bottom": 135.1875
+        },
+        {
+          "text": "1 → r4: f=0",
+          "x": 43,
+          "right": 114.3125,
+          "y": 150.6875,
+          "bottom": 169.6875
+        },
+        {
+          "text": "2 → r5: f=1",
+          "x": 142.484375,
+          "right": 213.796875,
+          "y": 150.6875,
+          "bottom": 169.6875
+        },
+        {
+          "text": "窄屏可横向滚动表格；也可聚焦表格后按左右方向键查看各列。",
+          "x": 31,
+          "right": 353,
+          "y": 192.1875,
+          "bottom": 211.1875
+        },
+        {
+          "text": "窄屏可横向滚动表格；也可聚焦表格后按左右方向键查看各列。",
+          "x": 31,
+          "right": 101,
+          "y": 216.6875,
+          "bottom": 235.6875
+        },
+        {
+          "text": "在秩 2 插入一个值",
+          "x": 44,
+          "right": 173.484375,
+          "y": 508.1875,
+          "bottom": 530.1875
+        },
+        {
+          "text": "重置",
+          "x": 207.484375,
+          "right": 239.5,
+          "y": 508.1875,
+          "bottom": 530.1875
+        },
+        {
+          "text": "已插入：f[2] 2→3；bit[2] 3→4，bit[4] 4→5；其余格子不变。",
+          "x": 47,
+          "right": 323.96875,
+          "y": 576.1875,
+          "bottom": 598.1875
+        },
+        {
+          "text": "已插入：f[2] 2→3；bit[2] 3→4，bit[4] 4→5；其余格子不变。",
+          "x": 47,
+          "right": 209.3125,
+          "y": 604.1875,
+          "bottom": 626.1875
+        },
+        {
+          "text": "朴素扫描格数",
+          "x": 43,
+          "right": 121.015625,
+          "y": 673.1875,
+          "bottom": 691.1875
+        },
+        {
+          "text": "4",
+          "x": 43,
+          "right": 56.15625,
+          "y": 697.9375,
+          "bottom": 729.9375
+        },
+        {
+          "text": "Fenwick 触及节点",
+          "x": 211,
+          "right": 315.25,
+          "y": 673.1875,
+          "bottom": 691.1875
+        },
+        {
+          "text": "1",
+          "x": 211,
+          "right": 224.15625,
+          "y": 697.9375,
+          "bottom": 729.9375
+        },
+        {
+          "text": "prefix(rank−1): 5; 频率表: [1, 3, 1, 0, 1]; 树状数组格子: [4]. bit[4] (1..4) = 5",
+          "x": 47,
+          "right": 328.453125,
+          "y": 779.1875,
+          "bottom": 801.1875
+        },
+        {
+          "text": "prefix(rank−1): 5; 频率表: [1, 3, 1, 0, 1]; 树状数组格子: [4]. bit[4] (1..4) = 5",
+          "x": 47,
+          "right": 286.265625,
+          "y": 807.1875,
+          "bottom": 829.1875
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "state": "transfer",
+      "geometry": [
+        {
+          "text": "迁移练习：先预测再揭晓",
+          "x": 31,
+          "right": 240.015625,
+          "y": 126.234375,
+          "bottom": 152.234375
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 33,
+          "right": 351.828125,
+          "y": 179.484375,
+          "bottom": 201.484375
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 33,
+          "right": 326.328125,
+          "y": 207.484375,
+          "bottom": 229.484375
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 33,
+          "right": 348.8125,
+          "y": 235.484375,
+          "bottom": 257.484375
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 33,
+          "right": 354.75,
+          "y": 263.484375,
+          "bottom": 285.484375
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 33,
+          "right": 342.75,
+          "y": 291.484375,
+          "bottom": 313.484375
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 33,
+          "right": 65.015625,
+          "y": 319.484375,
+          "bottom": 341.484375
+        },
+        {
+          "text": "A：秩 2；prefix(1)=0；改格子 2、4",
+          "x": 62,
+          "right": 316.3125,
+          "y": 355.484375,
+          "bottom": 377.484375
+        },
+        {
+          "text": "B：秩 2；prefix(2)=1；改格子 2、4",
+          "x": 62,
+          "right": 316.484375,
+          "y": 403.484375,
+          "bottom": 425.484375
+        },
+        {
+          "text": "C：秩 2；prefix(1)=0；只改格子 2",
+          "x": 62,
+          "right": 307.046875,
+          "y": 451.484375,
+          "bottom": 473.484375
+        },
+        {
+          "text": "D：秩 3；prefix(2)=1；改格子 3、4",
+          "x": 62,
+          "right": 317.765625,
+          "y": 499.484375,
+          "bottom": 521.484375
+        },
+        {
+          "text": "揭晓答案",
+          "x": 44,
+          "right": 108.015625,
+          "y": 577.484375,
+          "bottom": 599.484375
+        },
+        {
+          "text": "重置",
+          "x": 142.015625,
+          "right": 174.03125,
+          "y": 577.484375,
+          "bottom": 599.484375
+        },
+        {
+          "text": "正确。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。",
+          "x": 47,
+          "right": 339.109375,
+          "y": 645.484375,
+          "bottom": 667.484375
+        },
+        {
+          "text": "正确。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。",
+          "x": 47,
+          "right": 337.34375,
+          "y": 673.484375,
+          "bottom": 695.484375
+        },
+        {
+          "text": "正确。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。",
+          "x": 47,
+          "right": 266.78125,
+          "y": 701.484375,
+          "bottom": 723.484375
+        },
+        {
+          "text": "正确。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。",
+          "x": 47,
+          "right": 317.734375,
+          "y": 729.484375,
+          "bottom": 751.484375
+        },
+        {
+          "text": "正确。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。",
+          "x": 47,
+          "right": 121.59375,
+          "y": 757.484375,
+          "bottom": 779.484375
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1280,
+      "state": "tree",
+      "geometry": [
+        {
+          "text": "查询秩",
+          "x": 185,
+          "right": 233.015625,
+          "y": 100.5,
+          "bottom": 122.5
+        },
+        {
+          "text": "-2 → r1: f=1",
+          "x": 197,
+          "right": 272.8125,
+          "y": 132.5,
+          "bottom": 151.5
+        },
+        {
+          "text": "-1 → r2: f=3",
+          "x": 300.984375,
+          "right": 376.796875,
+          "y": 132.5,
+          "bottom": 151.5
+        },
+        {
+          "text": "0 → r3: f=1",
+          "x": 404.96875,
+          "right": 476.28125,
+          "y": 132.5,
+          "bottom": 151.5
+        },
+        {
+          "text": "1 → r4: f=0",
+          "x": 504.453125,
+          "right": 575.765625,
+          "y": 132.5,
+          "bottom": 151.5
+        },
+        {
+          "text": "2 → r5: f=1",
+          "x": 603.9375,
+          "right": 675.25,
+          "y": 132.5,
+          "bottom": 151.5
+        },
+        {
+          "text": "窄屏可横向滚动表格；也可聚焦表格后按左右方向键查看各列。",
+          "x": 185,
+          "right": 577,
+          "y": 174,
+          "bottom": 193
+        },
+        {
+          "text": "在秩 2 插入一个值",
+          "x": 201,
+          "right": 330.484375,
+          "y": 510.5,
+          "bottom": 532.5
+        },
+        {
+          "text": "重置",
+          "x": 372.484375,
+          "right": 404.5,
+          "y": 510.5,
+          "bottom": 532.5
+        },
+        {
+          "text": "已插入：f[2] 2→3；bit[2] 3→4，bit[4] 4→5；其余格子不变。",
+          "x": 201,
+          "right": 644.4375,
+          "y": 578.5,
+          "bottom": 600.5
+        },
+        {
+          "text": "朴素扫描格数",
+          "x": 203,
+          "right": 281.015625,
+          "y": 649.5,
+          "bottom": 667.5
+        },
+        {
+          "text": "4",
+          "x": 203,
+          "right": 217.875,
+          "y": 674.25,
+          "bottom": 710.25
+        },
+        {
+          "text": "Fenwick 触及节点",
+          "x": 664,
+          "right": 768.25,
+          "y": 649.5,
+          "bottom": 667.5
+        },
+        {
+          "text": "1",
+          "x": 664,
+          "right": 678.875,
+          "y": 674.25,
+          "bottom": 710.25
+        },
+        {
+          "text": "prefix(rank−1): 5; 频率表: [1, 3, 1, 0, 1]; 树状数组格子: [4]. bit[4] (1..4) = 5",
+          "x": 201,
+          "right": 725.875,
+          "y": 762.75,
+          "bottom": 784.75
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1280,
+      "state": "transfer",
+      "geometry": [
+        {
+          "text": "迁移练习：先预测再揭晓",
+          "x": 185,
+          "right": 394.015625,
+          "y": 224.4375,
+          "bottom": 250.4375
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 187,
+          "right": 1048.640625,
+          "y": 277.6875,
+          "bottom": 299.6875
+        },
+        {
+          "text": "新数组 [9,-4,2,6,2]，现在处理 i=2 的值 2。完整数组的不同值为 [-4,2,6,9]；右侧后缀是 [6,2]，频率 f[1..4]=[0,1,1,0]，当前 bit[1..4]=[0,1,1,2]。选出“当前秩；查询及结果；随后修改的格子”。这是独立练习，不受上方滑块影响。",
+          "x": 187,
+          "right": 916.796875,
+          "y": 305.6875,
+          "bottom": 327.6875
+        },
+        {
+          "text": "A：秩 2；prefix(1)=0；改格子 2、4",
+          "x": 216,
+          "right": 470.3125,
+          "y": 341.6875,
+          "bottom": 363.6875
+        },
+        {
+          "text": "B：秩 2；prefix(2)=1；改格子 2、4",
+          "x": 216,
+          "right": 470.484375,
+          "y": 389.6875,
+          "bottom": 411.6875
+        },
+        {
+          "text": "C：秩 2；prefix(1)=0；只改格子 2",
+          "x": 216,
+          "right": 461.046875,
+          "y": 437.6875,
+          "bottom": 459.6875
+        },
+        {
+          "text": "D：秩 3；prefix(2)=1；改格子 3、4",
+          "x": 216,
+          "right": 471.765625,
+          "y": 485.6875,
+          "bottom": 507.6875
+        },
+        {
+          "text": "揭晓答案",
+          "x": 201,
+          "right": 265.015625,
+          "y": 563.6875,
+          "bottom": 585.6875
+        },
+        {
+          "text": "重置",
+          "x": 307.015625,
+          "right": 339.03125,
+          "y": 563.6875,
+          "bottom": 585.6875
+        },
+        {
+          "text": "正确。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。",
+          "x": 201,
+          "right": 1007.375,
+          "y": 631.6875,
+          "bottom": 653.6875
+        },
+        {
+          "text": "正确。按 [-4,2,6,9] 排序，2 的秩为 2。只读 bit[1]=0，写 answer[2]=0。add(2) 后 bit[2] 1→2、bit[4] 2→3，得到 [0,2,1,3]。现在树含 [2,6,2]，供下一轮 i=1 使用。",
+          "x": 201,
+          "right": 550.484375,
+          "y": 659.6875,
+          "bottom": 681.6875
+        }
+      ]
+    }
+  ]
+}
