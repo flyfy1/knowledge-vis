@@ -1463,6 +1463,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "Expected amortized O(1) time per operation; O(n) space for n stored occurrences"
   },
   {
+    "id": 391,
+    "title": {
+      "zh": "完美矩形",
+      "en": "Perfect Rectangle"
+    },
+    "desc": {
+      "zh": "用面积与奇数角点，证明矩形恰好覆盖一次。",
+      "en": "Derive an exact-cover test from area and odd corner counts."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "几何",
+        "en": "Geometry"
+      },
+      {
+        "zh": "哈希集合",
+        "en": "Hash set"
+      },
+      {
+        "zh": "不变量",
+        "en": "Invariant"
+      }
+    ],
+    "path": "391/",
+    "leetcodeUrl": "https://leetcode.com/problems/perfect-rectangle/",
+    "language": "Python",
+    "complexity": "O(n) expected time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
