@@ -1,0 +1,19 @@
+Access date: 2026-10-24 Asia/Singapore
+Official URL: https://leetcode.com/problems/best-meeting-point/
+
+Browser/public fetch result:
+- HTTP page renders the problem shell but states: "Subscribe to unlock." and "To view this question you must subscribe to premium."
+- No official statement text, constraints, examples, or language selector/interface are exposed in the public page.
+
+Unauthenticated public GraphQL query:
+query questionContent($titleSlug: String!) {
+  question(titleSlug: $titleSlug) {
+    questionId title content codeSnippets exampleTestcases
+  }
+}
+variables: {"titleSlug":"best-meeting-point"}
+
+Response (2026-10-24):
+{"data":{"question":{"questionId":"296","title":"Best Meeting Point","content":null,"codeSnippets":null,"exampleTestcases":"[[1,0,0,0,1],[0,0,0,0,0]]\n[[1,1]]"}}}
+
+The public response confirms the id/title and sample-testcase field only. It does not expose the official statement, constraints, supported language interfaces, or canonical source. No paywall bypass was attempted.
