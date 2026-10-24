@@ -1,0 +1,6 @@
+{
+  "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId title titleSlug isPaidOnly content translatedContent\n    exampleTestcases sampleTestCase metaData\n    codeSnippets { lang langSlug code }\n  }\n}",
+  "variables": {
+    "titleSlug": "encode-string-with-shortest-length"
+  }
+}

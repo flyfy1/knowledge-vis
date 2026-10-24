@@ -1,0 +1,30 @@
+{
+  "verifiedAt": "2026-10-24T23:08:44.550217+00:00",
+  "officialSource": "https://leetcode.com/problems/encode-string-with-shortest-length/",
+  "access": "public unauthenticated; no credentials read",
+  "observations": {
+    "official-page": {
+      "url": "https://leetcode.com/problems/encode-string-with-shortest-length/",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "graphql": {
+      "url": "https://leetcode.com/graphql/",
+      "httpStatus": 200,
+      "bytes": 499,
+      "question": {
+        "questionId": "471",
+        "title": "Encode String with Shortest Length",
+        "titleSlug": "encode-string-with-shortest-length",
+        "isPaidOnly": true,
+        "content": null,
+        "translatedContent": null,
+        "exampleTestcases": "\"aaa\"\n\"aaaaa\"\n\"aaaaaaaaaa\"",
+        "sampleTestCase": "\"aaa\"",
+        "metaData": "{\r\n  \"name\": \"encode\",\r\n  \"params\": [\r\n    {\r\n      \"name\": \"s\",\r\n      \"type\": \"string\"\r\n    }\r\n  ],\r\n  \"return\": {\r\n    \"type\": \"string\"\r\n  }\r\n}",
+        "codeSnippets": null
+      },
+      "contractAvailable": false
+    }
+  },
+  "status": "blocked"
+}
