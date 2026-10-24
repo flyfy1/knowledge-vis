@@ -1169,6 +1169,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n) time; O(n) space"
   },
   {
+    "id": 321,
+    "title": {
+      "zh": "拼接最大数",
+      "en": "Create Maximum Number"
+    },
+    "desc": {
+      "zh": "先分配位数，再用可撤销的删位与后缀比较构造最大数。",
+      "en": "Allocate digits, remove smaller tails, and resolve merge ties by comparing suffixes."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "单调栈",
+        "en": "Monotonic stack"
+      },
+      {
+        "zh": "字典序",
+        "en": "Lexicographic order"
+      }
+    ],
+    "path": "321/",
+    "leetcodeUrl": "https://leetcode.com/problems/create-maximum-number/",
+    "language": "Python",
+    "complexity": "O(S(m+n+k²)) time; O(m+n+k) auxiliary space, where S ≤ min(m,n,k)+1 is the number of feasible splits"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
