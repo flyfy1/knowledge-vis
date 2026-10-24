@@ -1,0 +1,192 @@
+{
+  "status": "pass",
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "presets": 6,
+  "widths": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "CSS zoom 200%, viewport 780px (390px layout)",
+  "screenshots": [
+    "trace-en-320.png",
+    "state-en-320.png",
+    "state-en-320-right.png",
+    "trace-en-390.png",
+    "state-en-390.png",
+    "trace-en-736.png",
+    "state-en-736.png",
+    "trace-en-1440.png",
+    "state-en-1440.png",
+    "trace-zh-320.png",
+    "state-zh-320.png",
+    "state-zh-320-right.png",
+    "trace-zh-390.png",
+    "state-zh-390.png",
+    "trace-zh-736.png",
+    "state-zh-736.png",
+    "trace-zh-1440.png",
+    "state-zh-1440.png",
+    "trace-en-zoom200.png",
+    "state-en-zoom200.png",
+    "trace-zh-zoom200.png",
+    "state-zh-zoom200.png"
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "kind": "check",
+      "event": 2,
+      "text": "Check a shorter right word: i=0, consumed k=0, path \"\"; end=-1, left remainder \"lls\", suf[0]=false. Emitted now: [] (end must exist and differ from i)."
+    },
+    {
+      "lang": "en",
+      "kind": "miss",
+      "event": 3,
+      "text": "No edge for l: stop left word i=0; longer right words cannot match the outside."
+    },
+    {
+      "lang": "en",
+      "kind": "finish",
+      "event": 7,
+      "text": "Left word i=1 exhausted at path \"s\". Inspect pal=[0,1]; excluding i emits [[1,0]]. The remaining right prefix was confirmed palindromic during construction."
+    },
+    {
+      "lang": "en",
+      "kind": "edge",
+      "event": 6,
+      "text": "Completed edge s: i=1, k=1, path \"s\". Matched 1 letters on each outside."
+    },
+    {
+      "lang": "en",
+      "kind": "prediction",
+      "choice": 0,
+      "text": "Revise that prediction. ab+aba = ababa: the final ba of the right word reverses left ab, leaving palindromic prefix a. ab+ba = abba leaves the empty palindrome. Both [0,1] and [0,2] qualify. Whole-word reversal alone misses [0,1]; keeping only longer partners misses [0,2]."
+    },
+    {
+      "lang": "en",
+      "kind": "prediction",
+      "choice": 1,
+      "text": "Correct. ab+aba = ababa: the final ba of the right word reverses left ab, leaving palindromic prefix a. ab+ba = abba leaves the empty palindrome. Both [0,1] and [0,2] qualify. Whole-word reversal alone misses [0,1]; keeping only longer partners misses [0,2]."
+    },
+    {
+      "lang": "en",
+      "kind": "prediction",
+      "choice": 2,
+      "text": "Revise that prediction. ab+aba = ababa: the final ba of the right word reverses left ab, leaving palindromic prefix a. ab+ba = abba leaves the empty palindrome. Both [0,1] and [0,2] qualify. Whole-word reversal alone misses [0,1]; keeping only longer partners misses [0,2]."
+    },
+    {
+      "lang": "zh",
+      "kind": "check",
+      "event": 2,
+      "text": "检查较短右词：i=0，已读 k=0，路径 \"\"；end=-1，左词剩余 \"lls\"，suf[0]=假。本次输出 []（需 end 存在且不等于 i）。"
+    },
+    {
+      "lang": "zh",
+      "kind": "miss",
+      "event": 3,
+      "text": "字符 l 的边不存在：当前左词 i=0 停止，不会检查不匹配的更长右词。"
+    },
+    {
+      "lang": "zh",
+      "kind": "finish",
+      "event": 7,
+      "text": "左词 i=1 已读完，路径 \"s\"。检查 pal=[0,1]，排除 i 后本次输出 [[1,0]]。右词剩余前缀已在建树时确认是回文。"
+    },
+    {
+      "lang": "zh",
+      "kind": "edge",
+      "event": 6,
+      "text": "沿字符 s 前进完成：i=1，k=1，路径 \"s\"。已匹配两侧各 1 个字母。"
+    },
+    {
+      "lang": "zh",
+      "kind": "prediction",
+      "choice": 0,
+      "text": "还需调整。 ab+aba = ababa：右词最后的 ba 与左词 ab 反向匹配，剩余前缀 a 是回文；ab+ba = abba：剩余为空串，也为回文。因此 [0,1] 与 [0,2] 都成立。只找整词反转会漏掉 [0,1]；只保留较长词则会漏掉 [0,2]。"
+    },
+    {
+      "lang": "zh",
+      "kind": "prediction",
+      "choice": 1,
+      "text": "正确。 ab+aba = ababa：右词最后的 ba 与左词 ab 反向匹配，剩余前缀 a 是回文；ab+ba = abba：剩余为空串，也为回文。因此 [0,1] 与 [0,2] 都成立。只找整词反转会漏掉 [0,1]；只保留较长词则会漏掉 [0,2]。"
+    },
+    {
+      "lang": "zh",
+      "kind": "prediction",
+      "choice": 2,
+      "text": "还需调整。 ab+aba = ababa：右词最后的 ba 与左词 ab 反向匹配，剩余前缀 a 是回文；ab+ba = abba：剩余为空串，也为回文。因此 [0,1] 与 [0,2] 都成立。只找整词反转会漏掉 [0,1]；只保留较长词则会漏掉 [0,2]。"
+    },
+    {
+      "lang": "en",
+      "kind": "copyFallback",
+      "text": "Clipboard unavailable; copy manually below."
+    },
+    {
+      "lang": "zh",
+      "kind": "copyFallback",
+      "text": "剪贴板不可用；请在下方手动复制。"
+    }
+  ],
+  "focus": {
+    "width": "3px",
+    "color": "rgb(255, 180, 84)",
+    "style": "solid"
+  },
+  "contrast": [
+    {
+      "role": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "role": "stage label",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "role": "hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "role": "disabled button",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "role": "focus on panel",
+      "fg": "#ffb454",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 9.809435643476732
+    },
+    {
+      "role": "active language",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "role": "table muted",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    }
+  ],
+  "cssBytes": 11661,
+  "copyDuplicateKeys": "AST-checked",
+  "sourceDownloadCopy": "exact",
+  "errors": [],
+  "bad": [],
+  "allRequestsLocal": true,
+  "storageBlocked": true,
+  "offline": true
+}
