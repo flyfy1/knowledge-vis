@@ -1,0 +1,43 @@
+{
+  "id": 446,
+  "title": {
+    "zh": "等差数列划分 II - 子序列",
+    "en": "Arithmetic Slices II - Subsequence"
+  },
+  "desc": {
+    "zh": "从两项起点推导按结尾与差值计数的动态规划。",
+    "en": "Derive endpoint-and-difference counting from two-term starting points."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "动态规划",
+      "en": "Dynamic programming"
+    },
+    {
+      "zh": "计数",
+      "en": "Counting"
+    }
+  ],
+  "path": "446/",
+  "leetcodeUrl": "https://leetcode.com/problems/arithmetic-slices-ii-subsequence/",
+  "language": "Python",
+  "complexity": "O(n²) expected time; O(n²) auxiliary space",
+  "concepts": [
+    {
+      "name": "arithmetic subsequence counting",
+      "step": 0,
+      "description": "Count ordered position selections with equal gaps and at least three terms."
+    },
+    {
+      "name": "endpoint and difference DP",
+      "step": 2,
+      "description": "Store length-two seeds and extend completed source rows."
+    },
+    {
+      "name": "unique penultimate index proof",
+      "step": 4,
+      "description": "Every counted answer belongs to one final position pair."
+    }
+  ]
+}
