@@ -861,3 +861,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Two-neighbor insertion | `leetcode/352/#step2` | Binary-search a start and inspect both neighboring ranges. |
 
 <!-- /leetcode-352-campaign -->
+
+
+<!-- leetcode-354-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Equal-width ordering | `leetcode/354/#step1` | Descending height ties reduce strict two-dimensional nesting to LIS. |
+| Minimal tails invariant | `leetcode/354/#step2` | First greater-or-equal replacement preserves best attainable ending heights. |
+
+<!-- /leetcode-354-campaign -->
