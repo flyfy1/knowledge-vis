@@ -812,3 +812,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Longest-path recurrence | `leetcode/329/#step1` | Derive one plus the maximum larger-neighbor suffix length. |
 
 <!-- /leetcode-329-campaign -->
+
+
+<!-- leetcode-330-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| coverage invariant | `leetcode/330/#step1` | Represent every attainable sum below miss by one complete interval. |
+| greedy patch | `leetcode/330/#step2` | Patch miss when the next sorted value cannot fill the first gap. |
+
+<!-- /leetcode-330-campaign -->
