@@ -1,0 +1,3 @@
+Official public GraphQL capture, accessed 2026-10-24T22:17:14.237407+00:00.
+
+The full response in official.json includes the public statement, both examples, constraints, and all observed codeSnippets. Python3 is actually supported: `class Solution: def poorPigs(self, buckets: int, minutesToDie: int, minutesToTest: int) -> int`. Python is canonical under the preference policy. Exactly one poisonous bucket; instantaneous simultaneous feeding; no feeding during each waiting interval; only live pigs can be fed. No mutation or special output ordering contract. Bounds: 1 <= buckets <= 1000; 1 <= minutesToDie <= minutesToTest <= 100. No zero-round input is admitted. No paywall or authentication was used.
