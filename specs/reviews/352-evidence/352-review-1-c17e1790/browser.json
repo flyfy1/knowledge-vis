@@ -1,0 +1,125 @@
+{
+  "kind": "author self-check",
+  "url": "http://127.0.0.1:18770/leetcode/352/",
+  "result": "pass",
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "widths": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "Native 200% tab zoom tested separately by zoom.cjs; see native-zoom.json",
+  "allPresets": true,
+  "sourceCopyFallbackDownloadParity": true,
+  "blockedStorageAndOffline": true,
+  "keyboardFocus": true,
+  "errors": [],
+  "localAssetCount": 8,
+  "cssBytes": 11781,
+  "semantics": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "forwardBackwardResetEnd": "pass"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "forwardBackwardResetEnd": "pass"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "forwardBackwardResetEnd": "pass"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "forwardBackwardResetEnd": "pass"
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "forwardBackwardResetEnd": "pass"
+    },
+    {
+      "lang": "en",
+      "action": "insert 5 after 4,6",
+      "observed": "Bridge: x touches both neighbors, joining two ranges into one."
+    },
+    {
+      "lang": "en",
+      "answer": "left",
+      "observed": "Check both neighbors again. 13 = 12+1 and 14 = 13+1, so the result is [[10,16],[20,20]]. Values 17, 18 and 19 are still absent, so 20 cannot join. Extending only the left range misses the right merge; using only minimum and maximum invents missing integers."
+    },
+    {
+      "lang": "en",
+      "answer": "bridge",
+      "observed": "Correct. 13 = 12+1 and 14 = 13+1, so the result is [[10,16],[20,20]]. Values 17, 18 and 19 are still absent, so 20 cannot join. Extending only the left range misses the right merge; using only minimum and maximum invents missing integers."
+    },
+    {
+      "lang": "en",
+      "answer": "all",
+      "observed": "Check both neighbors again. 13 = 12+1 and 14 = 13+1, so the result is [[10,16],[20,20]]. Values 17, 18 and 19 are still absent, so 20 cannot join. Extending only the left range misses the right merge; using only minimum and maximum invents missing integers."
+    },
+    {
+      "lang": "en",
+      "action": "clipboard denied",
+      "observed": "Automatic copy unavailable; the source below is selected for manual copying."
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "forwardBackwardResetEnd": "pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "forwardBackwardResetEnd": "pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "forwardBackwardResetEnd": "pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "forwardBackwardResetEnd": "pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "forwardBackwardResetEnd": "pass"
+    },
+    {
+      "lang": "zh",
+      "action": "insert 5 after 4,6",
+      "observed": "桥接：x 同时填到左段末尾和右段开头，把两段合成一段。"
+    },
+    {
+      "lang": "zh",
+      "answer": "left",
+      "observed": "再检查两个邻居。 13 = 12+1，且 14 = 13+1，所以得到 [[10,16],[20,20]]。17、18、19 仍未出现，不能把 20 也接上。只延长左段会遗漏右侧合并；只看最小最大值则会虚构缺失整数。"
+    },
+    {
+      "lang": "zh",
+      "answer": "bridge",
+      "observed": "正确。 13 = 12+1，且 14 = 13+1，所以得到 [[10,16],[20,20]]。17、18、19 仍未出现，不能把 20 也接上。只延长左段会遗漏右侧合并；只看最小最大值则会虚构缺失整数。"
+    },
+    {
+      "lang": "zh",
+      "answer": "all",
+      "observed": "再检查两个邻居。 13 = 12+1，且 14 = 13+1，所以得到 [[10,16],[20,20]]。17、18、19 仍未出现，不能把 20 也接上。只延长左段会遗漏右侧合并；只看最小最大值则会虚构缺失整数。"
+    },
+    {
+      "lang": "zh",
+      "action": "clipboard denied",
+      "observed": "自动复制不可用；下方已选中源码，请手动复制。"
+    }
+  ]
+}

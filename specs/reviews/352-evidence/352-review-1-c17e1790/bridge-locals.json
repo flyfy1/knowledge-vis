@@ -1,0 +1,18 @@
+{
+  "observedCanonicalLocals": [
+    {
+      "p": 1,
+      "first": 0,
+      "last": 2,
+      "start": 2,
+      "end": 4
+    }
+  ],
+  "after": [
+    [
+      2,
+      4
+    ]
+  ],
+  "note": "Line 29 in the first tracing attempt was blank; no event was observed there. This capture targets executable replacement line 28."
+}
