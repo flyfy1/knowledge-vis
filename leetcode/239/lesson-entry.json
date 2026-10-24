@@ -1,0 +1,16 @@
+{
+  "id": 239,
+  "title": {"zh": "滑动窗口最大值", "en": "Sliding Window Maximum"},
+  "desc": {"zh": "从重复扫描出发，推导单调双端队列如何在线维护每个窗口的最大值。", "en": "Start from repeated scans and derive a monotonic deque that maintains every window maximum online."},
+  "difficulty": "hard",
+  "topics": [{"zh": "数组", "en": "Array"}, {"zh": "单调队列", "en": "Monotonic deque"}],
+  "path": "239/",
+  "leetcodeUrl": "https://leetcode.com/problems/sliding-window-maximum/",
+  "language": "Python",
+  "complexity": "O(n) time; O(k) auxiliary space",
+  "concepts": [
+    {"name": "Expired index", "step": 2, "description": "Remove indices that have fallen left of the current window."},
+    {"name": "Monotonic decreasing deque", "step": 3, "description": "Keep only candidates whose values decrease from front to back."},
+    {"name": "Amortized linear time", "step": 4, "description": "Each index enters and leaves the deque at most once."}
+  ]
+}

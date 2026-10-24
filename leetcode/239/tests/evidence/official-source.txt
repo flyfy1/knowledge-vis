@@ -1,0 +1,8 @@
+Accessed 2026-10-24 Asia/Singapore.
+Official URL: https://leetcode.com/problems/sliding-window-maximum/
+Public page excerpts: “You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position. Return the max sliding window.” Examples: nums=[1,3,-1,-3,5,3,6,7], k=3 -> [3,3,5,5,6,7]; nums=[1], k=1 -> [1]. Constraints: 1 <= nums.length <= 10^5; -10^4 <= nums[i] <= 10^4; 1 <= k <= nums.length.
+GraphQL query to https://leetcode.com/graphql (HTTP 200), question(titleSlug:"sliding-window-maximum") returned selector/interface snippets:
+Python3: class Solution: def maxSlidingWindow(self, nums: list[int], k: int) -> list[int]:
+JavaScript: var maxSlidingWindow = function(nums, k) { ... };
+TypeScript: function maxSlidingWindow(nums: number[], k: number): number[] { ... };
+Other observed official languages: C++, Java, Python, JavaScript, TypeScript, C#, C, Go, Kotlin, Swift, Rust, Ruby, PHP, Dart, Scala, Elixir, Erlang, Racket.
