@@ -1,0 +1,10 @@
+{
+  "problemId": 239,
+  "language": "Python",
+  "officialSource": "https://leetcode.com/problems/sliding-window-maximum/",
+  "supportedLanguages": ["Python", "TypeScript", "JavaScript", "C++", "Java", "C#", "C", "Go", "Kotlin", "Swift", "Rust", "Ruby", "PHP", "Dart", "Scala", "Elixir", "Erlang", "Racket"],
+  "interface": "class Solution: def maxSlidingWindow(self, nums: list[int], k: int) -> list[int]",
+  "rationale": "Python3 is the preferred faithful callable interface and is directly supported by the official selector; no fallback is needed.",
+  "verifiedAt": "2026-10-24T00:00:00+08:00",
+  "verificationEvidence": "tests/evidence/official-source.txt"
+}
