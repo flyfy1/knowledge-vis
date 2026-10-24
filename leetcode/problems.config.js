@@ -1359,6 +1359,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(S + n + P) expected time; O(S + n) auxiliary space plus O(P) output; S = total characters, n = words, P = pairs"
   },
   {
+    "id": 352,
+    "title": {
+      "zh": "将数据流变为多个不相交区间",
+      "en": "Data Stream as Disjoint Intervals"
+    },
+    "desc": {
+      "zh": "从缺失的一个整数出发，推导有序区间的双邻居合并。",
+      "en": "Fill one missing integer to derive a sorted interval summary and two-neighbor merging."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "区间合并",
+        "en": "Interval merging"
+      },
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      }
+    ],
+    "path": "352/",
+    "leetcodeUrl": "https://leetcode.com/problems/data-stream-as-disjoint-intervals/",
+    "language": "Python",
+    "complexity": "addNum O(k+1) worst-case time; getIntervals O(k+1) time; O(k+1) space, k = current interval count"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
