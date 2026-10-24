@@ -991,3 +991,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | LFU frequency buckets | `leetcode/460/#step2` | Maintain oldest-first keys per frequency and the smallest live frequency. |
 
 <!-- /leetcode-460-campaign -->
+
+
+<!-- leetcode-466-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Boundary-state cycle skipping | `leetcode/466/#step2` | Equal next-needed character indices repeat the same block gains. |
+| Greedy repeated subsequence matching | `leetcode/466/#step1` | Carry unfinished target progress across source blocks. |
+
+<!-- /leetcode-466-campaign -->
