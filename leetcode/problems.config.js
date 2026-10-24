@@ -849,6 +849,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) auxiliary space and output space"
   },
   {
+    "id": 218,
+    "title": {
+      "zh": "天际线问题",
+      "en": "The Skyline Problem"
+    },
+    "desc": {
+      "zh": "从两栋楼的屋顶推导端点扫描与延迟删除堆。",
+      "en": "Derive an endpoint sweep and lazy heap removal from two overlapping roofs."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "扫描线",
+        "en": "Sweep line"
+      },
+      {
+        "zh": "堆",
+        "en": "Heap"
+      }
+    ],
+    "path": "218/",
+    "leetcodeUrl": "https://leetcode.com/problems/the-skyline-problem/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space and O(n) output"
+  },
+  {
     "id": 220,
     "title": {
       "zh": "存在重复元素 III",
