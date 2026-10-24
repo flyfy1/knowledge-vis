@@ -16,3 +16,13 @@
 - Required metadata gate: from repository root, `python3 -B scripts/register_leetcode_lesson.py 282 --validate-only` → exit 0 with no output.
 - Browser evidence with Chromium at the preview URL: both `zh` and `en` passed at 320, 390, and 1280 CSS px for locale-specific derivation text, no horizontal overflow, step navigation/reset/operator interactions, and screenshots in `tests/evidence/browser-{zh,en}-{320,390,1280}.png`. At 200% zoom, both locales kept the derivation visible and remained scrollable (`scrollWidth 466` at 390 px); no page errors occurred. The repository-provided browser script also reports a preview 404 resource error (favicon) in this environment, so the focused harness filtered that unrelated resource warning while asserting the lesson page and interactions.
 - Status: `L282-DERIVATION-001` is **fixed awaiting independent re-review**; this self-check does not independently accept the lesson.
+
+## Revision self-check — L282-COST-001
+
+- Fix mapping: corrected `lesson-entry.json`, the step-02 derivation, the step-05 complexity paragraph, and `BRIEF.md` to state `O(n·4ⁿ)` time and `O(n²)` recursion auxiliary space for the canonical Python implementation. The explanation now ties the quadratic bound to immutable `expression + operator + token` strings retained by a deep active call chain; result-list output space remains separate.
+- Failing feedback loop before the fix: a deterministic source/content assertion found `expression + ` in the canonical source while both metadata and rendered copy claimed `O(n)` auxiliary space; it exited with `AssertionError: expected pre-fix mismatch`.
+- Passing content loop after the fix: the same assertion now confirms the canonical immutable concatenation is paired with `O(n²)` in `lesson-entry.json`, `copy.js`, and `BRIEF.md`; `node --check leetcode/282/copy.js` passes.
+- Regression: `python3 leetcode/282/tests/test_solution.py` and `python3 leetcode/282/tests/test_parity.py` pass unchanged, confirming algorithm behavior and exact source parity.
+- Required metadata gate: from repository root, `python3 -B scripts/register_leetcode_lesson.py 282 --validate-only` exits 0 with no output.
+- Browser evidence: a CommonJS Playwright harness against `http://127.0.0.1:18770/leetcode/282/` checked both `zh` and `en` at 320, 390, and 1280 CSS px, asserted visible `O(n²)` cost text, exercised frame reset, operator selection, and quiz reveal, and found no page errors or horizontal overflow. Captures are in `tests/evidence/browser-{zh,en}-{320,390,1280}-cost.png`.
+- Status: `L282-COST-001` is **fixed awaiting independent re-review**; this self-check does not independently accept the lesson.

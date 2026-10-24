@@ -11,7 +11,7 @@
 2. **Baseline tree** — Known: every gap can be cut or joined. Question: how many choices does the recursion explore, and where do leading zeros prune? Advance frames for `105`; observe `1*0+5` and `10-5` branches, while `05` never appears. Applies before optimization to n≤10.
 3. **Invariant** — Known: ordinary `+`/`-` can use a running total. Question: what extra state lets `2+3*2` become 8? Change the selected operator in a small reversible experiment; observe `value` and `last`, and why `value-last+last*x` replaces the last term. Applies because multiplication has precedence over addition/subtraction and operands are positive digit substrings.
 4. **Predict and reveal** — Known: state transition. Question: which expressions solve `232 → 8`? Choose before reveal, then inspect the exact paths and a wrong approach counterexample (`1+2*3` is 7 if multiplication is applied to the whole total). Applies to the same grammar.
-5. **Canonical source and proof** — Known: DFS state and pruning. Question: how does each UI transition map to Python `Solution.addOperators`? Copy/download source, connect the 4^(n−1) join/operator paths to O(n·4^n) path work and O(n) recursion depth, then run verification rows. Applies to n≤10 and 32-bit target; Python integers avoid overflow during checking.
+5. **Canonical source and proof** — Known: DFS state and pruning. Question: how does each UI transition map to Python `Solution.addOperators`? Copy/download source, connect the 4^(n−1) join/operator paths to O(n·4^n) path work and the immutable expression prefixes that use O(n²) recursion auxiliary characters, then run verification rows. Applies to n≤10 and 32-bit target; Python integers avoid overflow during checking.
 
 ## Concept dependency table
 
