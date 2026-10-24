@@ -25,6 +25,9 @@ window.KNOWLEDGE_CATEGORIES = [
   { id: "probability", name: { zh: "概率与统计", en: "Probability & Statistics" } },
   { id: "computing",   name: { zh: "计算与智能", en: "Computing & AI" } },
   { id: "math",        name: { zh: "数学基础",   en: "Mathematical Foundations" } },
+  { id: "chemistry",   name: { zh: "化学", en: "Chemistry" } },
+  { id: "biology",     name: { zh: "生物", en: "Biology" } },
+  { id: "earth",       name: { zh: "地球与太空", en: "Earth & Space" } },
   { id: "leetcode",    name: { zh: "LeetCode 专区", en: "LeetCode" } }
 ];
 
@@ -410,5 +413,549 @@ window.KNOWLEDGE_PAGES = [
     stage: "primary",
     status: "live",
     path: "fractions/"
+  },
+  {
+    slug: "pythagoras",
+    title: { zh: "勾股定理 · 一步一交互", en: "The Pythagorean Theorem · One Interaction at a Time" },
+    desc: {
+      zh: "a²+b²=c² 不是背出来的：3-4-5 先露馅，再用面积灌注和拼图把等式拼出来，拖着顶点怎么拖都等，最后反过来判角、算梯子，并撞见怎么也写不尽的 √2。",
+      en: "a²+b²=c², earned rather than memorised: the 3-4-5 coincidence first, then area pouring and a jigsaw proof, dragging the vertex without breaking equality, classifying angles in reverse, a ladder problem, and finally √2 — the length no fraction can write."
+    },
+    tags: [
+      { zh: "拼图证明", en: "Jigsaw Proof" },
+      { zh: "直角三角形", en: "Right Triangles" },
+      { zh: "勾股数与 √2", en: "Triples & √2" }
+    ],
+    category: "math",
+    stage: "junior",
+    status: "live",
+    path: "pythagoras/"
+  },
+  {
+    slug: "area-model",
+    title: { zh: "乘法是面积 · 点阵铺成一块地", en: "Multiplication Is Area · Arrays Become a Tiled Floor" },
+    desc: {
+      zh: "先不背口诀，把乘法看成面积：点阵铺成地砖、转个方向读出交换律；一块地切一刀，13×17 自己拆成四块相加——这就是分配律和竖式的来历；最后拿 24 块砖反着拼，反找因数对。",
+      en: "Multiplication as area before memorised tables: dot arrays become tiled floors, a quarter-turn shows commutativity, and one cut through a plot splits 13×17 into four blocks that add back up — where the distributive law and the written algorithm come from; ends by factoring 24 tiles in reverse."
+    },
+    tags: [
+      { zh: "面积模型", en: "Area Model" },
+      { zh: "分配律", en: "Distributive Law" },
+      { zh: "因数对", en: "Factor Pairs" }
+    ],
+    category: "math",
+    stage: "primary",
+    status: "live",
+    path: "area-model/"
+  },
+  {
+    slug: "perimeter-area",
+    title: { zh: "周长 vs 面积 · 一根绳子两种账", en: "Perimeter vs Area · One Rope, Two Ledgers" },
+    desc: {
+      zh: "一根 24 米的绳子围地：绳子账（周长）怎么围都不变，地砖账（面积）却从 11 一路变到 36——越接近正方形越大；再反过来，面积固定时细长形状最费绳子。两个最容易混的量，这次分得清清楚楚。",
+      en: "Fence a plot with one 24-metre rope: the rope ledger (perimeter) never changes, but the tile ledger (area) runs from 11 all the way to 36 — the closer to a square, the bigger; then in reverse, fixed area costs the most rope when long and thin. Two quantities everyone mixes up, finally kept apart."
+    },
+    tags: [
+      { zh: "周长", en: "Perimeter" },
+      { zh: "面积比较", en: "Comparing Areas" },
+      { zh: "正方形最优", en: "The Square Wins" }
+    ],
+    category: "math",
+    stage: "primary",
+    status: "live",
+    path: "perimeter-area/"
+  },
+  {
+    slug: "division-remainder",
+    title: { zh: "除法与余数 · 分不完的那一点", en: "Division & Remainders · What Is Left Over" },
+    desc: {
+      zh: "分糖果分到最后总剩几颗：先动手一份一份发，再到数轴上一格一格跳——余数为什么必须比除数小，跳着跳着就明白了；然后是验算恒等式和星期几的循环，最后两道自测题收口。",
+      en: "Sharing sweets until a few are left over: deal them out one share at a time, then hop along the number line — and see for yourself why the remainder must stay smaller than the divisor; then the check identity, weekday cycles, and a two-question self-test."
+    },
+    tags: [
+      { zh: "余数", en: "Remainders" },
+      { zh: "验算恒等式", en: "The Check Identity" },
+      { zh: "周期循环", en: "Cycles" }
+    ],
+    category: "math",
+    stage: "primary",
+    status: "live",
+    path: "division-remainder/"
+  },
+  {
+    slug: "linear-functions",
+    title: { zh: "一次函数 · 斜率是陡缓，截距是起点", en: "Linear Functions · Slope Is Steepness, Intercept Is the Start" },
+    desc: {
+      zh: "y=kx+b 不背公式，先拖出来：落点一格一格等高抬升、连成直线，k 就是坡的陡缓；整条线上下平移，b 就是还没出发就站的高度；最后两条线相遇，交点同时满足两个方程——平行和重合两种特例也亲手摆得出来。",
+      en: "y = kx + b, earned by dragging instead of rote: points rising by equal steps line up straight — k is the steepness; slide the whole line up or down and b is the height you start from before moving; and when two lines meet, their crossing point satisfies both equations at once, with parallel and coincident cases reachable by hand."
+    },
+    tags: [
+      { zh: "斜率", en: "Slope" },
+      { zh: "截距", en: "Intercept" },
+      { zh: "交点", en: "Intersection" }
+    ],
+    category: "math",
+    stage: "junior",
+    status: "live",
+    path: "linear-functions/"
+  },
+  {
+    slug: "symmetry-rotation",
+    title: { zh: "对称与旋转 · 对折与转圈", en: "Symmetry & Rotation · Folding and Turning" },
+    desc: {
+      zh: "沿一条线对折、两边严丝合缝，那条线就是对称轴；转过一个角度又变回自己，那是旋转对称。正方形有 4 条轴，平行四边形一条都没有、却转半圈就重合——最后开一台万花筒，只画一小块，图案自己长满。",
+      en: "Fold along a line and the two halves match exactly — that line is an axis of symmetry; turn through the right angle and the shape is itself again — rotational symmetry. A square has 4 axes; a parallelogram has none, yet matches itself after half a turn. At the end, a kaleidoscope grows a full pattern from one small wedge you draw."
+    },
+    tags: [
+      { zh: "对称轴", en: "Axes of Symmetry" },
+      { zh: "旋转对称", en: "Rotational Symmetry" },
+      { zh: "万花筒", en: "Kaleidoscope" }
+    ],
+    category: "math",
+    stage: "primary",
+    status: "live",
+    path: "symmetry-rotation/"
+  },
+  {
+    slug: "parabola",
+    title: { zh: "抛物线 · 投篮的弧线", en: "Parabolas · The Arc of a Shot" },
+    desc: {
+      zh: "投篮的弧线就是抛物线：a 管开口方向与胖瘦；写成顶点式，顶点和对称轴直接写在式子的脸上，随着滑杆搬家；球最后落在哪里，就是图与 x 轴的交点——两个、一个，还是一个都没有，拖一拖全摆得出来。",
+      en: "A basketball's arc is a parabola: a sets the opening direction and width; written in vertex form, the curve wears its vertex and axis of symmetry on its face and moves house as you drag; and where the ball lands is exactly where the curve meets the x-axis — two crossings, one touch, or none at all, every case reachable by hand."
+    },
+    tags: [
+      { zh: "顶点式", en: "Vertex Form" },
+      { zh: "对称轴", en: "Axis of Symmetry" },
+      { zh: "与 x 轴交点", en: "X-Intercepts" }
+    ],
+    category: "math",
+    stage: "junior",
+    status: "live",
+    path: "parabola/"
+  },
+  {
+    slug: "velocity-vt",
+    title: { zh: "速度与 v-t 图 · 面积就是路", en: "Speed and the v–t Graph · Area Is Distance" },
+    desc: {
+      zh: "先看一场赛跑：位置—时间图像的陡缓就是快慢；换上速度—时间图像，看的是高低、不是陡缓；图像下方的面积，数出来正是走过的路——把加速段切成 4 条、8 条、16 条窄条，台阶和会一步步贴近真路程。",
+      en: "Start with a race: on a position–time graph, steepness is speed. Switch to a velocity–time graph and you read height, not steepness — and the area under the graph counts out exactly the distance travelled. Slice the speeding-up stretch into 4, 8, 16 thin strips and watch the step sums close in on the true distance."
+    },
+    tags: [
+      { zh: "位置—时间图", en: "Position–Time Graph" },
+      { zh: "速度—时间图", en: "Velocity–Time Graph" },
+      { zh: "图像下面积", en: "Area Under Graph" }
+    ],
+    category: "physics",
+    stage: "junior",
+    status: "live",
+    path: "velocity-vt/"
+  },
+  {
+    slug: "integral",
+    title: { zh: "定积分 · 把小条加回整体", en: "The Definite Integral · Adding the Strips Back Up" },
+    desc: {
+      zh: "曲边围成的面积没有公式可套——那就切：把曲线下切成 1、2、4…32 条长方形，左和与右和从两边夹住真值，缝越切越窄；条无限细时两边贴到的那个数就是定积分。而求它有捷径：找到导数是它自己的那个函数，积分与导数就此接头。",
+      en: "No formula fits an area under a curve — so slice it: cut the region into 1, 2, 4 … 32 rectangles, let the left and right sums squeeze the true value from both sides, and watch the gap narrow. The number both sides close in on is the definite integral — and there is a shortcut: find the function whose derivative it is, and integration shakes hands with differentiation."
+    },
+    tags: [
+      { zh: "黎曼和", en: "Riemann Sums" },
+      { zh: "左右夹逼", en: "Squeezing Sums" },
+      { zh: "原函数", en: "Antiderivative" }
+    ],
+    category: "math",
+    stage: "senior",
+    status: "live",
+    path: "integral/"
+  },
+  {
+    slug: "reflection-refraction",
+    title: { zh: "光的反射与折射 · 拐弯的规矩", en: "Reflection & Refraction · How Light Bends" },
+    desc: {
+      zh: "光撞上界面会拐弯，拐多少有规矩：反射角等于入射角、而且都从法线量起；进了水会偏向法线；从水里往外射、角度太陡还会全部反射回去；连鱼在水里的位置都是假的——眼睛看到的虚像比真身浅。",
+      en: "Light bends at a boundary, and the bending follows rules: the angle of reflection equals the angle of incidence, and both are measured from the normal; entering water it bends toward the normal; leaving water too steeply, it reflects entirely back. Even a fish is not where it looks — the virtual image your eye sees sits shallower than the fish itself."
+    },
+    tags: [
+      { zh: "反射定律", en: "Law of Reflection" },
+      { zh: "折射与斯涅尔定律", en: "Snell's Law" },
+      { zh: "全反射", en: "Total Internal Reflection" }
+    ],
+    category: "physics",
+    stage: "junior",
+    status: "live",
+    path: "reflection-refraction/"
+  },
+  {
+    slug: "derivative",
+    title: { zh: "导数 · 把平均压成此刻", en: "The Derivative · Squeezing the Average into the Instant" },
+    desc: {
+      zh: "平均速度谁都会算，可「这一刻」有多快？把区间一点点缩向那一刻：割线从左右两侧靠拢成切线，斜率收敛到的那个数，就是导数。沿着曲线每一点都量一遍，导数们自己又排成一条新曲线——导函数出场。",
+      en: "Anyone can compute an average speed — but how fast is it right now? Shrink the interval toward the instant: the secant line closes in from both sides into the tangent, and the number its slope settles on is the derivative. Measure it at every point along the curve and the derivatives line up into a new curve of their own — the derivative function."
+    },
+    tags: [
+      { zh: "割线逼近切线", en: "Secant to Tangent" },
+      { zh: "瞬时变化率", en: "Instantaneous Rate" },
+      { zh: "导函数", en: "Derivative Function" }
+    ],
+    category: "math",
+    stage: "senior",
+    status: "live",
+    path: "derivative/"
+  },
+  {
+    slug: "lens",
+    title: { zh: "凸透镜成像 · 远近变像", en: "The Convex Lens · Near or Far, the Image Transforms" },
+    desc: {
+      zh: "蜡烛离凸透镜的远近一变，像的大小、正倒、实虚全跟着变：越过二倍焦距，像由大变小；越过一倍焦距，像从光屏上跳进眼睛里——实像能被屏接住，虚像接不住、只能看。三条特殊光线，就能把像画出来。",
+      en: "Slide a candle toward a convex lens and everything about its image changes — size, orientation, real or virtual. Cross twice the focal length and the image starts shrinking; cross one focal length and it leaps off the screen into your eye: a real image can be caught on a screen, a virtual one can only be seen. Three special rays are all it takes to draw exactly where the image lands."
+    },
+    tags: [
+      { zh: "焦距", en: "Focal Length" },
+      { zh: "实像与虚像", en: "Real & Virtual Images" },
+      { zh: "放大镜", en: "The Magnifier" }
+    ],
+    category: "physics",
+    stage: "junior",
+    status: "live",
+    path: "lens/"
+  },
+  {
+    slug: "interference",
+    title: { zh: "波的干涉 · 闹与静的图样", en: "Interference · A Pattern of Loud and Still" },
+    desc: {
+      zh: "两列波相遇，每一点的振动就是两者相加：步调一致的地方更闹，步调相反的地方反而安静——而且静点永远静、响点永远响。决定加强还是抵消的，是到两个波源的路程差：整数倍波长加强，半整数倍抵消，图样由几何定死。",
+      en: "When two waves meet, every point's motion is the sum of both: where they arrive in step, the motion doubles; where they arrive out of step, it cancels — and the still points stay still forever. The decider is the path difference to the two sources: whole wavelengths reinforce, half wavelengths cancel, and the pattern is fixed by geometry."
+    },
+    tags: [
+      { zh: "叠加原理", en: "Superposition" },
+      { zh: "路程差", en: "Path Difference" },
+      { zh: "干涉图样", en: "Interference Pattern" }
+    ],
+    category: "physics",
+    stage: "senior",
+    status: "live",
+    path: "interference/"
+  },
+  {
+    slug: "exp-log",
+    title: { zh: "指数与对数 · 翻倍与逆问", en: "Exponentials & Logarithms · Doubling and the Reverse Question" },
+    desc: {
+      zh: "每小时翻一倍，24 小时就是一千六百多万——指数增长为什么这么猛？反过来问「2 的几次方等于 6」，那个答案就是对数：它不是没算完的小数，而是一个准确的名字。在对数尺上，乘法会变成加法——这就是对数尺的本事。",
+      en: "Doubling every hour gives over sixteen million in a day — why is exponential growth so fierce? Ask the question backwards — 2 to what power makes 6? — and the answer is a logarithm: not an unfinished decimal, but an exact name for the exponent. And on a log scale, multiplication turns into addition."
+    },
+    tags: [
+      { zh: "指数增长", en: "Exponential Growth" },
+      { zh: "对数", en: "Logarithms" },
+      { zh: "对数尺", en: "Log Scale" }
+    ],
+    category: "math",
+    stage: "senior",
+    status: "live",
+    path: "exp-log/"
+  },
+  {
+    slug: "circle-angles",
+    title: { zh: "圆周角 · 为什么恰好是一半", en: "Inscribed Angles · Why Exactly Half" },
+    desc: {
+      zh: "圆上一点看一条弧，张角永远是圆心看它的恰好一半——拖着点满圆跑都变不了。连一条半径，两个等腰三角形把这一半算得明明白白；弧过半圈，张角正好是直角。",
+      en: "From any point on the circle, an arc subtends exactly half the angle it subtends at the centre — drag the point all the way round and it never changes. One extra radius splits the proof into two isosceles triangles; and once the arc passes a semicircle, the angle is exactly a right angle."
+    },
+    tags: [
+      { zh: "圆周角", en: "Inscribed Angle" },
+      { zh: "圆心角", en: "Central Angle" },
+      { zh: "等腰三角形证明", en: "Isosceles Proof" }
+    ],
+    category: "math",
+    stage: "junior",
+    status: "live",
+    path: "circle-angles/"
+  },
+  {
+    slug: "complex-numbers",
+    title: { zh: "复数 · 平面上的旋转", en: "Complex Numbers · Rotation on the Plane" },
+    desc: {
+      zh: "复数不是硬凑出来的数：a+bi 就是平面上的一个点。乘以 i，是把这个点逆时针转 90°；一般的乘法是模相乘、角相加。代数算一遍、几何看一遍，两条路永远同一个答案。",
+      en: "A complex number is not an invented patch: a+bi is a point on the plane. Multiplying by i rotates that point 90° counterclockwise; multiplication in general multiplies the moduli and adds the angles. Compute it algebraically, watch it geometrically — both roads always land on the same answer."
+    },
+    tags: [
+      { zh: "复数平面", en: "Complex Plane" },
+      { zh: "乘 i 是旋转", en: "Multiplying by i" },
+      { zh: "模与辐角", en: "Modulus & Argument" }
+    ],
+    category: "math",
+    stage: "senior",
+    status: "live",
+    path: "complex-numbers/"
+  },
+  {
+    slug: "standing-wave",
+    title: { zh: "驻波 · 原地起伏的波", en: "Standing Waves · The Wave That Stays in Place" },
+    desc: {
+      zh: "两列相同的波迎面相遇，波形不再前进，只在原地起伏：有些点永远不动（波节），有些点振幅翻倍（波腹）。两端固定的弦只放行 L=nλ/2 的台阶，驱动频率踩中台阶，就会共振。",
+      en: "Two identical waves travelling towards each other lock into a pattern that no longer travels — it only rises and falls in place: some points never move (nodes), others swing with double amplitude (antinodes). A string fixed at both ends admits only L = nλ/2, and driving it on one of those steps is resonance."
+    },
+    tags: [
+      { zh: "驻波", en: "Standing Wave" },
+      { zh: "波节与波腹", en: "Nodes & Antinodes" },
+      { zh: "共振", en: "Resonance" }
+    ],
+    category: "physics",
+    stage: "senior",
+    status: "live",
+    path: "standing-wave/"
+  },
+  {
+    slug: "negative-numbers",
+    title: { zh: "负数 · 0 以下的世界", en: "Negative Numbers · The World Below Zero" },
+    desc: {
+      zh: "温度计掉到 0 以下、电梯下到 B1——负数记的是「在基准的另一边、还差多少」。放上数轴一比就懂：越往左越小，所以 −3 比 −7 暖和。这一页只讲现象和比较，不背法则。",
+      en: "Thermometers drop below zero and lifts go down to B1 — negative numbers record 'on the other side of the reference point, and by how much'. Put them on a number line and it clicks: further left means smaller, so −3 is warmer than −7. This page is phenomena and comparison only — no rules to memorise."
+    },
+    tags: [
+      { zh: "数轴", en: "Number Line" },
+      { zh: "温度与楼层", en: "Temperature & Floors" },
+      { zh: "比大小", en: "Comparing" }
+    ],
+    category: "math",
+    stage: "primary",
+    status: "live",
+    path: "negative-numbers/"
+  },
+  {
+    slug: "pinhole-camera",
+    title: { zh: "小孔成像 · 一个孔的相机", en: "Pinhole Camera · A Camera With One Tiny Hole" },
+    desc: {
+      zh: "没有镜头，只有一个小孔，屏幕上却出现一幅倒过来的画：光沿直线走，物上每一点的光只能穿过小孔落到屏上一个地方。像高由物距、像距的比定死，孔大了画会糊成一片光斑。",
+      en: "No lens, just a tiny hole — yet an upside-down picture appears on the screen: light travels straight, so light from each point of the object can pass the hole and land in exactly one place. Image height is fixed by the ratio of the two distances, and a bigger hole blurs the picture into a patch of light."
+    },
+    tags: [
+      { zh: "光的直线传播", en: "Straight-Line Light" },
+      { zh: "倒立的像", en: "Inverted Image" },
+      { zh: "相似三角形", en: "Similar Triangles" }
+    ],
+    category: "physics",
+    stage: "primary",
+    status: "live",
+    path: "pinhole-camera/"
+  },
+  {
+    slug: "space-diagonal",
+    title: { zh: "空间对角线 · 3D 里的两次勾股", en: "The Space Diagonal · Pythagoras Twice, in 3D" },
+    desc: {
+      zh: "长方体里最长的那条斜线有多长？把立体压回平面算两次：先在底面用勾股算出对角线，再拿它当一条直角边、竖起高来第二次勾股。拖动 3D 长方体转着看，两次勾股都写在真实的棱上。",
+      en: "How long is the longest line inside a box? Flatten the solid back into planes and apply Pythagoras twice: first across the base, then using that diagonal as one leg of a vertical right triangle. Orbit the 3D cuboid and watch both applications drawn on the real edges."
+    },
+    tags: [
+      { zh: "3D 互动", en: "Interactive 3D" },
+      { zh: "勾股定理", en: "Pythagoras" },
+      { zh: "长方体", en: "Cuboid" }
+    ],
+    category: "math",
+    stage: "junior",
+    status: "live",
+    path: "space-diagonal/"
+  },
+  {
+    slug: "coordinate-plane",
+    title: { zh: "坐标系 · 点的地址", en: "The Coordinate Plane · Addresses for Points" },
+    desc: {
+      zh: "给平面定一个原点、两条轴，每个点就有了一个地址 (x, y)。换原点，点没动、地址全变；横纵一换位，点沿对角线翻到对面。这套地址系统，是所有函数图像的地基。",
+      en: "Fix an origin and two axes, and every point on the plane gets an address (x, y). Move the origin and the points stay exactly where they are while every address shifts; swap the two coordinates and the point flips across the diagonal. This address system is the groundwork under every function graph."
+    },
+    tags: [
+      { zh: "原点与坐标轴", en: "Origin & Axes" },
+      { zh: "象限", en: "Quadrants" },
+      { zh: "坐标换位", en: "Swapping Coordinates" }
+    ],
+    category: "math",
+    stage: "junior",
+    status: "live",
+    path: "coordinate-plane/"
+  },
+  {
+    slug: "particles-states",
+    title: { zh: "粒子与物态 · 热闹程度即温度", en: "Particles & States · Temperature Is How Wildly They Move" },
+    desc: {
+      zh: "把物质放大到一颗颗粒子：挤在一起原地抖的是固体，松开能流动的是液体，满屋乱飞的是气体。加热就是让粒子动得更野——温度不是另一样东西，它就是粒子平均动得有多快。升温到熔点、沸点还会各卡一段平台。",
+      en: "Zoom into matter as individual particles: packed and jiggling in place is a solid, loosened and flowing is a liquid, flying everywhere is a gas. Heating just makes the particles move more wildly — temperature is not a separate thing, it is how fast they move on average. And at the melting and boiling points, the temperature stalls on a plateau."
+    },
+    tags: [
+      { zh: "粒子模型", en: "Particle Model" },
+      { zh: "固液气", en: "Solid, Liquid, Gas" },
+      { zh: "熔化与沸腾平台", en: "Melting & Boiling Plateaus" }
+    ],
+    category: "chemistry",
+    stage: "junior",
+    status: "live",
+    path: "particles-states/"
+  },
+  {
+    slug: "atomic-structure",
+    title: { zh: "原子结构 · 质子数定它是谁", en: "Atomic Structure · The Proton Count Decides What It Is" },
+    desc: {
+      zh: "原子不是实心球：中间一个极小的核几乎占了全部质量，电子在外面按层排布。质子数定它是谁，最外层电子数定它活泼不活泼——改数字、当场算，全部账都摆在明处。",
+      en: "An atom is not a solid ball: a tiny nucleus at the centre holds almost all the mass, and electrons arrange themselves in layers outside it. The proton count decides what it is; the outermost electron count decides how reactive it is — change the numbers and watch everything recompute."
+    },
+    tags: [
+      { zh: "质子数与元素", en: "Protons & Elements" },
+      { zh: "电子层排布", en: "Electron Layers" },
+      { zh: "离子与电荷", en: "Ions & Charge" }
+    ],
+    category: "chemistry",
+    stage: "junior",
+    status: "live",
+    path: "atomic-structure/"
+  },
+  {
+    slug: "lever-pulley",
+    title: { zh: "杠杆与滑轮 · 支点挪一挪，省力见分晓", en: "Levers & Pulleys · Move the Fulcrum, Feel the Trade" },
+    desc: {
+      zh: "小力凭什么撬动大物？这一页算两本账。转动的账看力矩：力 × 力臂，两边相等就平衡——支点挪一挪，同样的重物要用的力立刻变。可省力从不是白省：功的账本两边永远相等，省几倍力就费几倍距离。到了滑轮组更干脆，不用算，数一数吊着重物的绳子段数，就知道省几倍力。全页 g 取 10 N/kg，力一律用牛顿（N）。",
+      en: "How can a small force lift a huge weight? This page keeps two ledgers. The turning ledger is torque: force × lever arm — when both sides match, the lever balances, and sliding the fulcrum changes the force you need at once. But saved force is never free: the work ledger always balances, so every multiple of force saved costs the same multiple of distance. For pulley systems it is even simpler — do not compute, just count the rope segments holding the load. Throughout, g = 10 N/kg and forces are in newtons (N)."
+    },
+    tags: [
+      { zh: "力矩平衡", en: "Torque Balance" },
+      { zh: "功不省", en: "Work Is Never Saved" },
+      { zh: "数段数定倍数", en: "Count the Rope Segments" }
+    ],
+    category: "physics",
+    stage: "junior",
+    status: "live",
+    path: "lever-pulley/"
+  },
+  {
+    slug: "equations-balance",
+    title: { zh: "方程天平 · 两边同做一件事", en: "Equations on a Balance · Do the Same to Both Sides" },
+    desc: {
+      zh: "等号不是「算出答案」的信号，是一架天平的指针：指针归零，两边一样重。这一页我们只学一招——不管做什么，对两边同时做相同的事——用这一招把 x 一个人留在天平左边。",
+      en: "The equals sign is not a “compute the answer” button; it is the needle of a balance — at zero, both sides weigh the same. This page teaches one move only: whatever you do, do the same to both sides — and use it to leave x alone on the left."
+    },
+    tags: [
+      { zh: "等式性质", en: "Equality Properties" },
+      { zh: "解方程", en: "Solving Equations" },
+      { zh: "两步方程", en: "Two-Step Equations" }
+    ],
+    category: "math",
+    stage: "primary",
+    status: "live",
+    path: "equations-balance/"
+  },
+  {
+    slug: "day-night-rotation",
+    title: { zh: "昼夜交替 · 地球自己在转", en: "Day and Night · The Earth Itself Is Turning" },
+    desc: {
+      zh: "不是太阳绕着我们跑：地球绕着自己的轴转，每个地方轮流朝向太阳，于是有了昼夜。转满一圈是一天；站在转动的地面上看，太阳就成了东升西落。",
+      en: "The Sun does not circle us: the Earth spins on its own axis and every place takes its turn facing the Sun — that is day and night. One full turn makes a day, and standing on the turning ground, the Sun appears to rise in the east and set in the west."
+    },
+    tags: [
+      { zh: "地球自转", en: "Earth's Rotation" },
+      { zh: "晨昏线", en: "The Terminator" },
+      { zh: "太阳东升西落", en: "Sunrise in the East" }
+    ],
+    category: "earth",
+    stage: "primary",
+    status: "live",
+    path: "day-night-rotation/"
+  },
+  {
+    slug: "mass-conservation",
+    title: { zh: "质量守恒 · 原子一个都不丢", en: "Mass Conservation · Not a Single Atom Lost" },
+    desc: {
+      zh: "化学反应看起来变重变轻，原子却一个不多、一个不少，只是重新排队。这一页把反应拆开逐个原子数，再用天平对账：敞口跑掉的气体、从空气里加入的氧，都逃不过这本账。",
+      en: "Reactions seem to gain or lose weight, yet not a single atom is created or destroyed — they only reshuffle. Take reactions apart and count atoms one by one, then settle it on a balance: escaping gas and oxygen joining from the air both show up in the ledger."
+    },
+    tags: [
+      { zh: "原子重排", en: "Atom Rearrangement" },
+      { zh: "配平", en: "Balancing" },
+      { zh: "气体逸出", en: "Escaping Gas" }
+    ],
+    category: "chemistry",
+    stage: "junior",
+    status: "live",
+    path: "mass-conservation/"
+  },
+  {
+    slug: "cell-structure",
+    title: { zh: "细胞 · 生命的最小单位间", en: "The Cell · Life's Smallest Workshop" },
+    desc: {
+      zh: "把一片叶子放大到单个细胞：膜划出边界，核是总控，线粒体供能，叶绿体造糖。点一点每个工位是干什么的，再把动物细胞和植物细胞并排，找齐三处不同。",
+      en: "Zoom into a single cell: the membrane draws the boundary, the nucleus runs the place, mitochondria supply energy, chloroplasts make sugar. Tap each workstation to see its job, then put animal and plant cells side by side and find all three differences."
+    },
+    tags: [
+      { zh: "细胞器", en: "Organelles" },
+      { zh: "动植物对照", en: "Plant vs Animal" },
+      { zh: "结构与功能", en: "Structure & Function" }
+    ],
+    category: "biology",
+    stage: "junior",
+    status: "live",
+    path: "cell-structure/"
+  },
+  {
+    slug: "photosynthesis",
+    title: { zh: "光合作用 · 用光开工的糖厂", en: "Photosynthesis · A Sugar Factory Run by Light" },
+    desc: {
+      zh: "叶子用光把水和二氧化碳重排成糖和氧气：方程式逐项点开对原子账；速率随光强和二氧化碳先升后封顶，因为谁最缺谁说了算（限制因素）。",
+      en: "A leaf uses light to rearrange water and carbon dioxide into sugar and oxygen: click through the equation and balance the atom ledger; then watch the rate rise with light and CO₂ — and cap out, because the scarcest input rules (the limiting factor)."
+    },
+    tags: [
+      { zh: "原子对账", en: "Atom Ledger" },
+      { zh: "光饱和", en: "Light Saturation" },
+      { zh: "限制因素", en: "Limiting Factor" }
+    ],
+    category: "biology",
+    stage: "junior",
+    status: "live",
+    path: "photosynthesis/"
+  },
+  {
+    slug: "population-growth",
+    title: { zh: "种群增长 · S 形曲线从哪来", en: "Population Growth · Where the S-Curve Comes From" },
+    desc: {
+      zh: "没有天花板时种群按倍数狂奔，有了容纳量 K 就被压成 S 形：每一代的实际增长率由 r(1−N/K) 当场实算；把 r 推过安全区，还能亲眼看到离散模型振荡失效。",
+      en: "With no ceiling a population multiplies wildly; with carrying capacity K it bends into an S. The effective rate r(1−N/K) is computed generation by generation — and if you push r past the safe zone, you can watch the discrete model oscillate and break."
+    },
+    tags: [
+      { zh: "指数增长", en: "Exponential Growth" },
+      { zh: "逻辑斯蒂", en: "Logistic" },
+      { zh: "容纳量 K", en: "Carrying Capacity" }
+    ],
+    category: "math",
+    stage: "senior",
+    status: "live",
+    path: "population-growth/"
+  },
+  {
+    slug: "chemical-equilibrium",
+    title: { zh: "化学平衡 · 人数不变，人还在跑", en: "Chemical Equilibrium · Still Moving at Balance" },
+    desc: {
+      zh: "平衡不是反应停了，而是正、逆两个方向跑得一样快：计数走平，粒子还在互变。加一把料、升一次温，看平衡点如何移动；再验证催化剂只改快慢、不改终点。",
+      en: "Equilibrium is not the reaction stopping — it is both directions running equally fast: counts level off while particles keep swapping. Add material, raise the temperature and watch the balance point shift; then check that a catalyst changes only the speed, never the endpoint."
+    },
+    tags: [
+      { zh: "动态平衡", en: "Dynamic Equilibrium" },
+      { zh: "勒夏特列", en: "Le Chatelier" },
+      { zh: "速率相等", en: "Equal Rates" }
+    ],
+    category: "chemistry",
+    stage: "senior",
+    status: "live",
+    path: "chemical-equilibrium/"
+  },
+  {
+    slug: "reaction-rates",
+    title: { zh: "反应速率 · 数一数成功碰撞", en: "Reaction Rates · Counting Successful Collisions" },
+    desc: {
+      zh: "反应快慢取决于成功碰撞的次数：碰得越勤、能量达标的比例越大，反应越快。温度、浓度、表面积、催化剂四种提速办法，全在模拟里数给你看。",
+      en: "How fast a reaction runs comes down to successful collisions: collide more often, and get more collisions over the energy bar. Temperature, concentration, surface area and catalysts — all four speed-ups, counted live in the simulation."
+    },
+    tags: [
+      { zh: "有效碰撞", en: "Effective Collisions" },
+      { zh: "活化能", en: "Activation Energy" },
+      { zh: "催化剂", en: "Catalysts" }
+    ],
+    category: "chemistry",
+    stage: "senior",
+    status: "live",
+    path: "reaction-rates/"
   }
 ];

@@ -119,6 +119,58 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 74 | 两点距离公式 / Distance formula | pythagoras#step5 | 横纵坐标差的平方和开方；梯子逆求直角边 |
 | 75 | 勾股数 / Pythagorean triples | pythagoras#step6 | 3k-4k-5k 累积精确验算，与 5-12-13、8-15-17 对照 |
 | 76 | √2 与无理数 / √2 and irrational numbers | pythagoras#step6 | 1-1 直角三角形与奇偶性反证，斜边无需为整数 |
+| 77 | 乘法（面积模型）/ Multiplication as area | area-model#step2 | 一刀把 13×7 切成 10×7 与 3×7，两块面积之和恒等于整块——分配律是切法，总和不随切点变 |
+| 78 | 周长与面积 / Perimeter vs area | perimeter-area#step1 | 同样 24 的周长，面积从 11 排到 36、6×6 达峰——周长相同面积可以差很远，越接近正方形越大 |
+| 79 | 除法与余数 / Division and remainders | division-remainder#step1 | 数轴上一格一格跳着分：余数必须比除数小，还能再跳一格就说明还没分完 |
+| 80 | 一次函数：斜率与截距 / Slope and intercept | linear-functions#step2 | y=kx+b 实时拼装——k 是每走一步抬高多少，b 是 x=0 时站在多高，直线上每个点代入都验算得上 |
+| 81 | 对称轴与旋转对称 / Symmetry axes and rotational symmetry | symmetry-rotation#step2 | 风车转过 360°÷n 就与自己重合；平行四边形没有对称轴、却有 180° 旋转对称——翻和转是两回事 |
+| 82 | 抛物线：顶点式与交点 / Parabola: vertex form and intercepts | parabola#step2 | y=a(x−h)²+k 把顶点 (h, k) 写在脸上，对称轴 x=h 跟着顶点一起搬家 |
+| 83 | v-t 图面积就是路程 / Area under a v–t graph is distance | velocity-vt#step2 | 速度—时间图像下方的面积就是走过的路；加速段切成窄条数台阶和，条越细、台阶和越贴近真路程 |
+| 84 | 定积分：黎曼和夹逼 / Definite integral: Riemann sums squeeze the value | integral#step1 | 曲线下面积切成细条，左和与右和从两侧夹住真值、缝宽恰为 1/n；条无限细时收敛到的数就是定积分 |
+| 85 | 全反射与临界角 / Total internal reflection and the critical angle | reflection-refraction#step3 | 光从水射向空气，入射角超过临界角 asin(1/1.33)≈48.8° 时折射线消失、光全部反射回水里 |
+| 86 | 导数：割线逼近切线 / Derivative: the secant closes into the tangent | derivative#step1 | 割线两点无限靠拢，斜率从正负两侧收敛到同一个数——那个数就是导数，割线的极限位置就是切线 |
+| 87 | 凸透镜：一倍分虚实、二倍分大小 / Convex lens: 1f splits real from virtual, 2f splits size | lens#step2 | 蜡烛越过焦点 F，像由实变虚、跳到透镜同侧；越过 2F，像由放大变缩小——两个点管住全部成像规律 |
+| 88 | 干涉：路程差定加强与抵消 / Interference: path difference decides reinforcement | interference#step1 | Δr=kλ 加强、Δr=(k+½)λ 抵消；干涉图样是双曲线族，由路程差的几何定死、不随时间漂移 |
+| 89 | 对数是逆问句 / The logarithm is the reverse question | exp-log#step2 | log₂8=3 就是「2 的几次方等于 8」的答案；对数把指数方程的未知数从指数的位置上取下来，成为可以直接算的数 |
+| 90 | ROC 含单位圆 ⟺ 稳定 / Stability: the ROC contains the unit circle | ztransform#step3 | Z 变换的收敛域是圆环；单位圆整个落在环内系统才稳定，极点位置与 ROC 形状共同决定稳定性 |
+| 91 | 圆周角定理：同弧圆周角 = 圆心角一半 / Inscribed angle theorem | circle-angles#step1 | 角度由坐标向量点积实算；P 在优弧上任意拖动，圆周角恒为圆心角的一半，与位置无关 |
+| 92 | 圆周角的证明：两个等腰三角形 / Proof via two isosceles triangles | circle-angles#step2 | 连 OP 后由两组等腰三角形的底角关系推出一半；P 在优弧、劣弧、直径（直角）三种位置分别成立 |
+| 93 | 乘 i = 逆时针旋转 90° / Multiplying by i rotates 90° | complex-numbers#step3 | (a,b) 乘 i 得 (−b,a)，正是坐标逆时针转 90°；连乘四次回到原点，轨道由旋转矩阵实算 |
+| 94 | 复数乘法 = 模相乘、角相加 / Multiplication: moduli multiply, angles add | complex-numbers#step4 | 代数展开与几何旋转两条路同源实算同一个积，随机参数双路互证 |
+| 95 | 驻波的包络：波节不动、波腹 2A / The standing-wave envelope | standing-wave#step1 | 合位移由两列反向波方程实算；每点振幅被包络定死——波节任意时刻位移为 0，波腹达 2A |
+| 96 | 两端固定弦的模式：L = nλ/2 / Modes of a fixed-fixed string | standing-wave#step2 | 只有半波长整数倍的波能住进弦长，基频的整数倍 f_n = n·f₁ 才是被放行的台阶 |
+| 97 | 负数是基准另一边的量 / Negatives: amounts on the other side of zero | negative-numbers#step0 | 温度与楼层都以 0 为基准：符号记方向、数值记离基准多远 |
+| 98 | 数轴上越往左越小 / Further left on the number line means smaller | negative-numbers#step1 | 比较负数靠位置：−3 在 −7 的右边，所以 −3 更大（更暖）；比较由纯函数按位置判定 |
+| 99 | 撤回向左走：减法的现象 / Undoing a leftward step | negative-numbers#step3 | 向左走是减，撤回这一步就回到原处——只演示现象，不立「负负得正」法则 |
+| 100 | 透镜作图的三条光线 / The three construction rays of a lens | lens#step1 | 透镜成像作图取有代表性的三条光线，交点定像的位置与大小（pinhole-camera 终章深链落点，2026-10-20 补登） |
+| 101 | 小孔成像：像高由相似三角形定 / Pinhole imaging: image height from similar triangles | pinhole-camera#step2 | 像高/物高 = 像距/物距；像倒立且左右交换，全部由光的直线传播作图实算 |
+| 102 | 空间对角线 = 两次勾股 / The space diagonal is Pythagoras twice | space-diagonal#step1 | 先底面对角线 e=√(a²+b²)，再以 e 与高 c 第二次勾股 d=√(e²+c²)；账本用未舍入的 e²，只对长方体成立（全站首个 3D 页，Three.js 自托管） |
+| 103 | 坐标是相对原点的地址 / Coordinates are addresses relative to the origin | coordinate-plane#step2 | 原点一换，所有点的读数同步平移——点没动，地址变了；读数全页钳在 [−6,6] 标尺内 |
+| 104 | 坐标换位 = 沿对角线翻折 / Swapping coordinates reflects across the diagonal | coordinate-plane#step4 | (a,b)→(b,a) 是沿 y=x 的翻折；落在对角线上的点（如 (4,4)）换位后不动 |
+| 105 | 物态由粒子排布与运动定 / States are particle arrangement and motion | particles-states#step0 | 固态原地振动、液态贴身流动、气态自由乱飞——页面是逐帧真模拟，物态名由模拟量纯函数判定、不读滑杆 |
+| 106 | 温度 = 粒子平均动能的读数 / Temperature reads mean particle kinetic energy | particles-states#step1 | 温度读数只能由粒子 RMS 速率映射得到；熔化时升温停在平台（#step2），粒子数全程守恒 |
+| 107 | 元素身份只由质子数定 / Element identity is fixed by the proton count alone | atomic-structure#step1 | Z 改 1、身份就换一家；中子只改质量数 A=Z+N、不换身份；身份判定就是查 Z 本身 |
+| 108 | 电子按层排布、每层容量有定数 / Electrons arrange in layers of fixed capacity | atomic-structure#step2 | 本页初中简化口径 2/8/8（明示非真实规则）；排布由电子数经纯函数逐层填出，层圈只是住址分区、电子不沿圈公转 |
+| 109 | 离子电荷 = 质子数 − 电子数 / Ion charge = protons − electrons | atomic-structure#step4 | 电荷由两数实算：电子多为阴离子、电子少为阳离子；超出 2/8/8 表达范围时页面明示只作电荷记账 |
+| 110 | 力矩平衡：力 × 力臂，两边相等就平衡 / Torque balance: force × lever arm, equal on both sides | lever-pulley#step0 | 支点挪动改变力臂比、F 随之实算；倾斜角只是示意、力矩数是实算（3D 页，逻辑与 2D 定版逐字节同源） |
+| 111 | 滑轮组省力倍数 = 承重绳段数 / Pulley force multiple = load-bearing rope segments | lever-pulley#step4 | F=G/n、h=s/n 且绳长守恒；本页绕法里奇数段自由端垂自定滑轮不计段、偶数段自由端向上出动滑轮计段 |
+| 112 | 等式性质：两边同做一件事，平衡不变 / Do the same to both sides and the balance holds | equations-balance#step1 | 同加同减、同乘同除（除数须整除）都保平衡；只动一边当场破平衡——全页不使用「移项变号」口诀 |
+| 113 | 解方程 = 把 x 单独留在一边 / Solving means leaving x alone on one side | equations-balance#step3 | 用等式性质逐步剥离，isIsolated 达标才揭晓，解必代回原式验算 |
+| 114 | 两步方程：顺序自定、殊途同归 / Two-step equations: either order works | equations-balance#step4 | 先减后除或先除后减都认，操作历史逐条留轨迹，终点由纯函数判定 |
+| 115 | 自转一周 = 一昼夜 / One full rotation = one day-night cycle | day-night-rotation#step2 | 地球绕地轴自转，同一地点随自转角被带过晨昏线；时间带随播放逐段涂出，一圈正好 24 小时 |
+| 116 | 东升西落是站在转动地面上的视角 / East-rise west-set is the view from the turning ground | day-night-rotation#step3 | 太阳高度角由自转角实算；把自转反过来，太阳立刻改从西边升起——方向感来自自转方向 |
+| 117 | 质量守恒 = 原子重排计数 / Mass conservation = counting rearranged atoms | mass-conservation#step1 | 反应式两边逐种原子计数由纯函数实算，配不平时天平当场倾斜报警 |
+| 118 | 敞口「不守恒」是气体在进出 / Open-system surprises are gases moving | mass-conservation#step3 | 逸出量由气体产物质量实算；接上收集气球，总重立刻回来 |
+| 119 | 细胞器分工 / Organelles divide the labour | cell-structure#step2 | 膜定边界、核总控、线粒体供能、叶绿体造糖、液泡储物，点选高亮与功能卡同步 |
+| 120 | 动植物细胞三处不同 / Three plant-vs-animal differences | cell-structure#step3 | 细胞壁、叶绿体、大液泡——相同结构同色、差异自动标出并自测 |
+| 121 | 光合作用的原子账 / The photosynthesis atom ledger | photosynthesis#step1 | 6CO₂+6H₂O 两边 C/H/O 逐项对平，与质量守恒同账 |
+| 122 | 限制因素：最短的板定水位 / The limiting factor rules the rate | photosynthesis#step3 | 光与 CO₂ 两因子取小者定速率，补 CO₂ 增产就是抬最短的板 |
+| 123 | 逻辑斯蒂：S 形是逐代算出来的 / The logistic S falls out of iteration | population-growth#step2 | 实际增长率 r(1−N/K) 随 N 逼近 K 而减小，同参对照指数线看分家点 |
+| 124 | K 是吸引子 / K is an attractor | population-growth#step3 | N₀ 在 K 上方也回落，两个方向的实际增长率符号都指向 K |
+| 125 | 平衡 = 正逆速率相等 / Equilibrium means equal forward and reverse rates | chemical-equilibrium#step1 | 两条速率由模拟滑窗实测，相等时计数才走平；平衡浓度可以不等 |
+| 126 | 勒夏特列：体系抵抗扰动 / Le Chatelier: the system pushes back | chemical-equilibrium#step2 | 平衡时加料，净变化方向由模拟计数实算，体系在新水平重新走平 |
+| 127 | 速率 = 成功碰撞的次数 / Rate means counting successful collisions | reaction-rates#step0 | 成功与失败碰撞分开计数实测，碰上但能量不足不算数 |
+| 128 | 催化剂是降门槛，不是催快粒子 / A catalyst lowers the bar, not the speed | reaction-rates#step4 | 降阈值时粒子平均速率不变（实测读数），达标比例上升——与升温改分布对照 |
 
 ---
 

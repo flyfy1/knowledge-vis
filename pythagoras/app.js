@@ -48,7 +48,7 @@ function render1(){const ctx=scene('s1-canvas',350,340),n=S.s1.n;ctx.save();ctx.
 }
 function pour(){const s=S.s1;if(s.raf||s.n===25)return;s.start=performance.now();function tick(ts){s.n=Math.min(25,Math.floor((ts-s.start)/100));if(s.n<25)s.raf=requestAnimationFrame(tick);else s.raf=0;render1();}s.raf=requestAnimationFrame(tick);render1();}
 function reset1(){cancelAnimationFrame(S.s1.raf);S.s1={n:0,raf:0,start:0};render1();}
-function render2(){const {a,b,k}=S.s2,L=a+b,cc=a*a+b*b,ctx=scene('s2-canvas');const side=260,sc=side/L;ctx.save();ctx.translate(30,40);ctx.scale(sc,sc);
+function render2(){const {a,b,k}=S.s2,L=a+b,cc=L*L-4*(a*b/2),ctx=scene('s2-canvas');const side=260,sc=side/L;ctx.save();ctx.translate(30,40);ctx.scale(sc,sc);
  poly(ctx,[[0,0],[L,0],[L,L],[0,L]],'#101821');
  const pieces=[[[0,0],[a,0],[0,b]],[[L,0],[L,a],[a,0]],[[L,L],[b,L],[L,a]],[[0,L],[0,b],[b,L]]];
  pieces.slice(0,k).forEach((p,i)=>poly(ctx,p,[cyan,orange,pink,'#7ee2a8'][i]+'88'));
@@ -56,14 +56,15 @@ function render2(){const {a,b,k}=S.s2,L=a+b,cc=a*a+b*b,ctx=scene('s2-canvas');co
  ctx.restore();text(ctx,`a + b = ${L}`,160,18);text(ctx,'a',30+a*sc/2,32,cyan);text(ctx,'b',18,40+b*sc/2,orange);if(k===4)text(ctx,`c² = ${cc}`,160,170,orange,18);text(ctx,`${k}/4`,160,326,cyan,18);ctx.restore();
  ro('s2-readout',t('proofRO',{a,b,k,c:fmt(Math.sqrt(cc)),L}));
  ro('s2-book1',`(a+b)² = a² + 2ab + b²\n${L}² = ${a*a} + ${2*a*b} + ${b*b} = ${L*L}`);
- ro('s2-book2',k<4?`${k} × (ab/2) = ${k} × ${a*b/2} = ${k*a*b/2}\n`+t('bookWait'):`4 × (ab/2) + c² = 2ab + c²\n${2*a*b} + ${cc} = ${L*L}`);
+ ro('s2-book2',k<4?`${k} × (ab/2) = ${k} × ${a*b/2} = ${k*a*b/2}\n`+t('bookWait'):t('remainingArea')+`\n${L*L} − ${4*(a*b/2)} = ${cc}\n4 × (ab/2) + c² = 2ab + c²\n${2*a*b} + ${cc} = ${L*L}`);
  ro('s2-result',k===4?t('proofDone',{aa:a*a,bb:b*b,cc}):'');$('s2-result').style.color=k===4?orange:muted;$('s2-piece').disabled=k===4;
 }
 function geom3(){const s=S.s3,R=[s.x,s.y],A=s.free?s.anchor.A:[40,s.y],B=s.free?s.anchor.B:[s.x,40];const a=Math.hypot(R[0]-A[0],R[1]-A[1])/30,b=Math.hypot(R[0]-B[0],R[1]-B[1])/30,c=Math.hypot(A[0]-B[0],A[1]-B[1])/30,root=Math.sqrt(a*a+b*b),delta=c*c-a*a-b*b;const cross=(A[0]-R[0])*(B[1]-R[1])-(A[1]-R[1])*(B[0]-R[0]);return {R,A,B,a,b,c,root,delta,cross};}
-function render3(){const s=S.s3,g=geom3(),ctx=scene('s3-canvas');s.history.forEach(p=>dot(ctx,p,'#506072',2));poly(ctx,[g.A,g.R,g.B],'#173040');dot(ctx,g.R);text(ctx,'R',g.R[0]+14,g.R[1]+13,orange);text(ctx,'a',Math.max(15,(g.A[0]+g.R[0])/2-10),(g.A[1]+g.R[1])/2+16,cyan);text(ctx,'b',(g.B[0]+g.R[0])/2+15,(g.B[1]+g.R[1])/2,orange);text(ctx,'c',(g.A[0]+g.B[0])/2-12,(g.A[1]+g.B[1])/2-15,pink);
- if(!s.free)mark(ctx,s.x,s.y);
+// Exact zero area is degenerate; a small nonzero area only limits display precision.
+function render3(){const s=S.s3,g=geom3(),degenerate=g.cross===0,ctx=scene('s3-canvas');s.history.forEach(p=>dot(ctx,p,'#506072',2));poly(ctx,[g.A,g.R,g.B],'#173040');dot(ctx,g.R);text(ctx,'R',g.R[0]+14,g.R[1]+13,orange);text(ctx,'a',Math.max(15,(g.A[0]+g.R[0])/2-10),(g.A[1]+g.R[1])/2+16,cyan);text(ctx,'b',(g.B[0]+g.R[0])/2+15,(g.B[1]+g.R[1])/2,orange);text(ctx,'c',(g.A[0]+g.B[0])/2-12,(g.A[1]+g.B[1])/2-15,pink);
+ if(!s.free&&!degenerate)mark(ctx,s.x,s.y);
  const sizes=[g.a,g.b,g.c],colors=[cyan,orange,pink];sizes.forEach((v,i)=>{const z=v*5;poly(ctx,[[40+i*100,310],[40+i*100+z,310],[40+i*100+z,310-z],[40+i*100,310-z]],colors[i]+'55',colors[i]);text(ctx,['a²','b²','c²'][i],55+i*100,328,colors[i]);});ctx.restore();
- ro('s3-areas',t('geomRO',{a:fmt(g.a),b:fmt(g.b),aa:fmt(g.a*g.a),bb:fmt(g.b*g.b),cc:fmt(g.c*g.c)}));ro('s3-measure',t('measure',{c:fmt(g.c)}));ro('s3-root',t('root',{c:fmt(g.root)}));const equal=Math.abs(g.delta)<1e-8,kind=Math.abs(g.cross)<1e-8?'degenerateKind':equal?'right':g.delta>0?'obtuse':'acute';ro('s3-verdict',t('diff',{d:fmt(Math.abs(g.c-g.root)),rel:'c² '+(equal?'=':g.delta>0?'>':'<')+' a²+b²',kind:t(kind)}));ro('s3-boundary',Math.min(g.a,g.b)<0.05||Math.abs(g.cross)<1e-8?t('degenerate'):'');
+ ro('s3-areas',t('geomRO',{a:fmt(g.a),b:fmt(g.b),aa:fmt(g.a*g.a),bb:fmt(g.b*g.b),cc:fmt(g.c*g.c)}));ro('s3-measure',t('measure',{c:fmt(g.c)}));ro('s3-root',t('root',{c:fmt(g.root)}));const equal=Math.abs(g.delta)<1e-8,kind=degenerate?'degenerateKind':equal?'right':g.delta>0?'obtuse':'acute';ro('s3-verdict',t('diff',{d:fmt(Math.abs(g.c-g.root)),rel:'c² '+(equal?'=':g.delta>0?'>':'<')+' a²+b²',kind:t(kind)}));ro('s3-boundary',kind==='degenerateKind'?t('degenerate'):Math.min(g.a,g.b,g.c)<0.05?t('nearDegenerate'):'');
 }
 function set3(x,y){const s=S.s3;s.x=clamp(x,40,260);s.y=clamp(y,40,240);s.history.push([s.x,s.y]);$('s3-x').value=s.x;$('s3-y').value=s.y;render3();}
 function reset3(){S.s3={x:160,y:200,free:false,history:[],anchor:null};$('s3-unlock').checked=false;$('s3-x').value=160;$('s3-y').value=200;render3();}

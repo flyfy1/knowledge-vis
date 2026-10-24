@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="category" content="physics">
+<meta name="stage" content="junior">
+<title>凸透镜成像 · 蜡烛远近，像变样 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=l1">
+<script src="../pages.config.js"></script>
+<script src="i18n.js?v=l1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <div class="badges">
+      <span class="badge" id="categoryBadge"></span>
+      <span class="badge" id="stageBadge"></span>
+    </div>
+    <h1 data-i18n="pageTitle">凸透镜成像 · 蜡烛远近，像变样</h1>
+    <p class="tagline" data-i18n="tagline">一支蜡烛立在凸透镜前：离得远，像小而倒；拖近一点，像大起来；再拖过一个点，像忽然跳到镜子同一侧、正立放大。变的不是魔法，是两条分水岭：一倍焦距分虚实，二倍焦距分大小。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 平行光聚成点</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 三条特殊光线</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 蜡烛远近变像</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 光屏与眼睛</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 自测</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 终章 · 三句话</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：光穿过透镜 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 光穿过透镜</p>
+    <h2 data-i18n="s0t">平行光进门，被透镜收拢到一点</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="320"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s0fLab">焦距 f（焦点到光心的距离）</span> <span class="val" id="s0-f-val">60</span></span>
+        <input type="range" id="s0-f" min="40" max="90" step="5" value="60">
+      </label>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：三条特殊光线 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 三条特殊光线</p>
+    <h2 data-i18n="s1t">定位一个像点，只需要三条光线</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="360"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s1-r1" aria-pressed="true" data-i18n="s1r1">线 1 · 平行→过焦点</button>
+      <button class="btn big" id="s1-r2" aria-pressed="false" data-i18n="s1r2">线 2 · 过光心→不弯腰</button>
+      <button class="btn big" id="s1-r3" aria-pressed="false" data-i18n="s1r3">线 3 · 过焦点→变平行</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1uLab">物距 u（蜡烛到光心）</span> <span class="val" id="s1-u-val">120</span></span>
+        <input type="range" id="s1-u" min="28" max="215" step="1" value="120">
+      </label>
+      <label><span><span data-i18n="s1hLab">物高（烛焰顶端到主光轴）</span> <span class="val" id="s1-h-val">30</span></span>
+        <input type="range" id="s1-h" min="10" max="46" step="1" value="30">
+      </label>
+    </div>
+    <p class="readout" id="s1-rule"></p>
+    <p class="readout" id="s1-readout"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：远近变像 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 蜡烛远近（核心步）</p>
+    <h2 data-i18n="s2t">蜡烛一路拖近，像连变五副面孔</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="360"></canvas>
+    </div>
+    <p class="ray-legend"><span style="color:#6ee7ff">●</span> <span data-i18n="cBandFar">u &gt; 2f · 远物段</span>　<span style="color:#ffb454">●</span> <span data-i18n="cBandMid">f &lt; u &lt; 2f · 中段</span>　<span style="color:#7ee2a8">●</span> <span data-i18n="cBandNear">u &lt; f · 近物段</span></p>
+    <div class="controls">
+      <label><span><span data-i18n="s2uLab">物距 u</span> <span class="val" id="s2-u-val">180</span></span>
+        <input type="range" id="s2-u" min="25" max="200" step="1" value="180">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s2-p-far" data-i18n="s2pFar">远处 3f（u = 180）</button>
+      <button class="btn big" id="s2-p-2f" data-i18n="s2p2f">恰在 2f（u = 120）</button>
+      <button class="btn big" id="s2-p-mid" data-i18n="s2pMid">f 与 2f 之间（u = 90）</button>
+      <button class="btn big" id="s2-p-f" data-i18n="s2pF">恰在 f（u = 60）</button>
+      <button class="btn big" id="s2-p-near" data-i18n="s2pNear">f 以内（u = 30）</button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：光屏与眼睛 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 光屏与眼睛</p>
+    <h2 data-i18n="s3t">实像接得住，虚像只能看</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="btn-row">
+      <button class="btn big active" id="s3-m-real" data-i18n="s3mReal">情境一 · 光屏接实像</button>
+      <button class="btn big" id="s3-m-virt" data-i18n="s3mVirt">情境二 · 放大镜的虚像</button>
+    </div>
+    <div class="stage">
+      <canvas id="s3-canvas" height="340"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3scrLab">光屏位置（到光心的距离）</span> <span class="val" id="s3-p-val">60</span></span>
+        <input type="range" id="s3-p" min="35" max="230" step="1" value="60">
+      </label>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：自测 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 自测</p>
+    <h2 data-i18n="s4t">三道题，验一验两条分水岭</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="170"></canvas>
+    </div>
+    <p class="quiz-q" data-i18n="s4q1">① 照相机的镜头是凸透镜。被拍的人离镜头很远（u > 2f），传感器上成的像是什么样？</p>
+    <div class="btn-row" id="s4-q1-opts">
+      <button class="btn big" data-q="q1" data-opt="0" data-i18n="s4q1o0">倒立、缩小、实像</button>
+      <button class="btn big" data-q="q1" data-opt="1" data-i18n="s4q1o1">正立、放大、虚像</button>
+      <button class="btn big" data-q="q1" data-opt="2" data-i18n="s4q1o2">倒立、放大、实像</button>
+    </div>
+    <p class="readout" id="s4-q1-ro"></p>
+    <p class="quiz-q" data-i18n="s4q2">② 蜡烛从 3f 处慢慢拖到 1.5f 处（全程都在 f 以外），像会怎样变？</p>
+    <div class="btn-row" id="s4-q2-opts">
+      <button class="btn big" data-q="q2" data-opt="0" data-i18n="s4q2o0">由放大变缩小，仍是倒立实像</button>
+      <button class="btn big" data-q="q2" data-opt="1" data-i18n="s4q2o1">由缩小变放大，仍是倒立实像</button>
+      <button class="btn big" data-q="q2" data-opt="2" data-i18n="s4q2o2">越过某个点后变成正立虚像</button>
+    </div>
+    <p class="readout" id="s4-q2-ro"></p>
+    <p class="quiz-q" data-i18n="s4q3a">③ 投影仪要成倒立、放大的实像，幻灯片应放在哪一段？</p>
+    <div class="btn-row" id="s4-q3a-opts">
+      <button class="btn big" data-q="q3a" data-opt="0" data-i18n="s4zGt">u > 2f</button>
+      <button class="btn big" data-q="q3a" data-opt="1" data-i18n="s4zMid">f < u < 2f</button>
+      <button class="btn big" data-q="q3a" data-opt="2" data-i18n="s4zLt">u < f</button>
+    </div>
+    <p class="readout" id="s4-q3a-ro"></p>
+    <p class="quiz-q" data-i18n="s4q3b">放大镜要看正立、放大的虚像，物体应放在哪一段？</p>
+    <div class="btn-row" id="s4-q3b-opts">
+      <button class="btn big" data-q="q3b" data-opt="0" data-i18n="s4zGt">u > 2f</button>
+      <button class="btn big" data-q="q3b" data-opt="1" data-i18n="s4zMid">f < u < 2f</button>
+      <button class="btn big" data-q="q3b" data-opt="2" data-i18n="s4zLt">u < f</button>
+    </div>
+    <p class="readout" id="s4-q3b-ro"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：终章 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 终章</p>
+    <h2 data-i18n="s5t">把这一页收成三句话</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="cards3">
+      <div class="value-card">
+        <p class="card-title" data-i18n="c1h">一倍焦距分虚实</p>
+        <p class="card-body" data-i18n-html="c1"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c2h">二倍焦距分大小</p>
+        <p class="card-body" data-i18n-html="c2"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c3h">三条光线作图</p>
+        <p class="card-body" data-i18n-html="c3"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s5fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../reflection-refraction/#step2" data-i18n="s5lkRr">先修课：光线在界面处为什么会拐弯——去看反射与折射的「穿水拐弯」那一步 →</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 凸透镜成像 Convex Lens Imaging —— 一步一交互系列</footer>
+
+<script src="app.js?v=l1"></script>
+</body>
+</html>

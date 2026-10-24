@@ -149,8 +149,6 @@ input[type=range]{
   border:1px solid var(--line);border-radius:14px;padding:20px 22px;font-size:16px;
 }
 .finale strong{color:var(--accent2)}
-.fourier-link{color:var(--accent);font-weight:600;text-decoration:none}
-.fourier-link:hover{text-decoration:underline}
 
 .site-foot{text-align:center;color:var(--muted);font-size:13.5px;padding:28px 16px 40px}
 

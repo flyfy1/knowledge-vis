@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>对称与旋转 · 翻一翻，转一转 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=sr1">
+<script src="i18n.js?v=sr1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">对称与旋转 · 翻一翻，转一转</h1>
+    <p class="tagline" data-i18n="tagline">有些图形对折一下，两边严丝合缝；有些转过一个角度，又和自己一模一样。这一页只问一件事：一个图形有哪些「动一下还能变回自己」的办法？办法一是翻——沿对称轴对折；办法二是转——绕着中心旋转。最后把两种办法合起来，你画一小块，万花筒帮你长出一整幅图案。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 对折试一试</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 数一数对称轴</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 转一转</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 万花筒</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 自测 · 终章</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：对折试一试（候选折线逐条试折） ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 对折试一试</p>
+    <h2 data-i18n="s0t">沿哪条线对折，两边能完全重合？</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s0shapeLab">选一个图形：</span>
+      <span id="s0-shapes"></span>
+    </div>
+    <div class="stage">
+      <canvas id="s0-canvas" height="400"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s0lineLab">点一条候选折线试一试：</span>
+      <span id="s0-lines"></span>
+    </div>
+    <p class="readout" id="s0-verdict"></p>
+    <p class="readout" id="s0-prog"></p>
+    <p class="readout" id="s0-done"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：对称轴数一数（画廊：先猜再亮出） ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 对称轴数一数</p>
+    <h2 data-i18n="s1t">对称轴有几条，图形说了算</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="gal-grid" id="s1-gallery"></div>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：转一转（风车旋转对称） ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 转一转</p>
+    <h2 data-i18n="s2t">不翻面，只转：转多少度能和自己重合？</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s2shapeLab">选一个图形：</span>
+      <span id="s2-shapes"></span>
+    </div>
+    <div class="stage">
+      <canvas id="s2-canvas" height="380"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2angLab">旋转角度（度）</span> <span class="val" id="s2-ang-val">0°</span></span>
+        <input type="range" id="s2-ang" min="0" max="360" step="1" value="0">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s2-find" data-i18n="s2find">转到最近的重合角</button>
+    </div>
+    <p class="readout" id="s2-ro"></p>
+    <p class="readout" id="s2-ledger"></p>
+    <p class="readout" id="s2-para" style="display:none"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：万花筒（镜像 + 旋转复制） ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 万花筒</p>
+    <h2 data-i18n="s3t">只画一小块，图案自己长出来</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s3secLab">扇区数：</span>
+      <button class="btn big" id="s3-sec-4" data-i18n="sec4">4 个扇区</button>
+      <button class="btn big" id="s3-sec-6" data-i18n="sec6">6 个扇区</button>
+      <button class="btn big" id="s3-sec-8" data-i18n="sec8">8 个扇区</button>
+      <span class="row-label" data-i18n="s3mirLab">镜像（每区再翻一份）：</span>
+      <button class="btn big" id="s3-mir-on" data-i18n="mirOn">开</button>
+      <button class="btn big" id="s3-mir-off" data-i18n="mirOff">关</button>
+    </div>
+    <div class="stage">
+      <canvas id="s3-canvas" height="440"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s3motifLab">往发亮的扇区里放：</span>
+      <button class="btn big" id="s3-m-dot" data-i18n="mDot">一个圆点</button>
+      <button class="btn big" id="s3-m-seg" data-i18n="mSeg">一条短线</button>
+      <button class="btn big" id="s3-m-tri" data-i18n="mTri">一个小三角</button>
+      <button class="btn big" id="s3-clear" data-i18n="s3clear">清空</button>
+    </div>
+    <p class="readout" id="s3-ro"></p>
+    <p class="readout" id="s3-why"></p>
+    <p class="hint" data-i18n="s3clickHint">也可以直接点任意扇区：点的位置会自动折回原件区，点哪儿就在原件区对应的位置多一个圆点。</p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：自测 + 终章 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 自测</p>
+    <h2 data-i18n="s4t">翻，还是转？分清两种「变回自己」</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s4q1">判断题：长方形转 90° 就能和自己重合。</span>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s4-q1-t" data-i18n="qTrue">对</button>
+      <button class="btn big" id="s4-q1-f" data-i18n="qFalse">错</button>
+    </div>
+    <p class="readout" id="s4-q1-ro"></p>
+
+    <div class="btn-row">
+      <span class="row-label" data-i18n-html="s4q2">选择题：下面哪个图形<strong>只有旋转对称、没有对称轴</strong>？</span>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s4-q2-para" data-i18n="gPara">平行四边形</button>
+      <button class="btn big" id="s4-q2-rect" data-i18n="gRect">长方形</button>
+      <button class="btn big" id="s4-q2-equi" data-i18n="gEqui">等边三角形</button>
+    </div>
+    <p class="readout" id="s4-q2-ro"></p>
+
+    <div class="btn-row">
+      <span class="row-label" data-i18n-html="s4q3">操作题：下面是三叶风车。拖滑杆转它，<strong>第一次</strong>和原图重合出现在多少度？调好后点按钮提交。</span>
+    </div>
+    <div class="stage">
+      <canvas id="s4-canvas" height="260"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s4q3angLab">角度（度）</span> <span class="val" id="s4-q3-val">0°</span></span>
+        <input type="range" id="s4-q3-ang" min="0" max="360" step="5" value="0">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s4-q3-submit" data-i18n="s4q3submit">就这个角度</button>
+    </div>
+    <p class="readout" id="s4-q3-ro"></p>
+
+    <p class="step-kicker" style="margin-top:34px" data-i18n="s4fk">终章 · 两种「变回自己」</p>
+    <h2 data-i18n="s4ft">翻，和转</h2>
+    <div class="cards3">
+      <div class="value-card">
+        <p class="card-title" data-i18n="f1h">对折 = 轴对称</p>
+        <p class="card-body" data-i18n-html="f1"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="f2h">转 = 旋转对称</p>
+        <p class="card-body" data-i18n-html="f2"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="f3h">万花筒 = 两者合谋</p>
+        <p class="card-body" data-i18n-html="f3"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s4fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../perimeter-area/#step1" data-i18n="lkPeri"></a>
+      </p>
+      <p style="margin-top:8px">
+        <a class="fourier-link" href="../area-model/#step1" data-i18n="lkArea"></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 对称与旋转 Symmetry & Rotation —— 一步一交互系列</footer>
+
+<script src="app.js?v=sr1"></script>
+</body>
+</html>

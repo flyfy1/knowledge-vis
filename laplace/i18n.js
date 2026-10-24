@@ -32,7 +32,7 @@ const STR = {
 
     s1k: '第 1 步 · s 平面',
     s1t: '一张地形图：每个频率都有了寿命坐标',
-    s1e: '信号就用最经典的一个：x(t) = e<sup>−at</sup>·u(t)（t < 0 时为 0，t ≥ 0 后指数衰减）。它的拉普拉斯变换是 X(s) = 1/(s + a)，其中 s = σ + jω。固定 a，在整个 s 平面上把 |X(s)| 画成地形：<strong>颜色越亮、地形越高</strong>。有一根尖峰冲破天际——那是<strong>极点</strong>，立在 s = −a 处：分母在那里等于 0，变换在那里发散。拖动探针到处量：X(s) 的值由公式逐点算出，不是看图估的（渲染分辨率只是画布的事，见图下注）。还有个小秘密：这个信号的 |X(s)| 恰等于<strong>到极点距离的倒数</strong>——离尖峰越远，地形越平。',
+    s1e: '信号就用最经典的一个：x(t) = e<sup>−at</sup>·u(t)（t < 0 时为 0，t ≥ 0 后指数衰减）。它的拉普拉斯变换是 X(s) = 1/(s + a)，其中 s = σ + jω。先把两根轴认清：<strong>横轴 σ 管寿命</strong>（越往左衰减越快，越往右越容易涨爆），<strong>纵轴 ω 管频率</strong>。固定 a，在整个 s 平面上把 |X(s)| 画成地形：<strong>颜色越亮、地形越高</strong>。有一根尖峰冲破天际——那是<strong>极点</strong>，立在 s = −a 处：分母在那里等于 0，变换在那里发散。拖动探针到处量：X(s) 的值由公式逐点算出，不是看图估的（渲染分辨率只是画布的事，见图下注）。还有个小秘密：这个信号的 |X(s)| 恰等于<strong>到极点距离的倒数</strong>——离尖峰越远，地形越平。',
     s1aLab: 'a（极点在 s = −a，拖动看尖峰搬家）',
     s1formula: 'X(s) = 1 / (s + a)，s = σ + jω，x(t) = e^{−at}·u(t)',
     s1ro: 'a = {a} · 极点在 s = <span>{pole}</span> · 探针 s = <span>{s}</span> · X(s) = <span>{re}</span> {imSign} j·<span>{im}</span> · |X(s)| = <span>{mod}</span> · 到极点距离 = {dist}（1/距离 = {inv}）',
@@ -154,7 +154,7 @@ const STR = {
 
     s1k: 'Step 1 · The s-plane',
     s1t: 'A landscape: every frequency gets a lifetime coordinate',
-    s1e: 'Take the textbook signal: x(t) = e<sup>−at</sup>·u(t) (zero for t < 0, exponentially decaying afterwards). Its Laplace transform is X(s) = 1/(s + a), with s = σ + jω. Fix a and paint |X(s)| over the whole s-plane as terrain: <strong>brighter means higher</strong>. One spike punches through the ceiling — the <strong>pole</strong>, standing at s = −a, where the denominator vanishes and the transform diverges. Drag the probe anywhere: X(s) there is computed from the formula point by point, never read off the picture (render resolution is only about painting — see the note under the figure). One small secret: for this signal, |X(s)| is exactly <strong>the reciprocal of the distance to the pole</strong> — the farther from the spike, the flatter the land.',
+    s1e: 'Take the textbook signal: x(t) = e<sup>−at</sup>·u(t) (zero for t < 0, exponentially decaying afterwards). Its Laplace transform is X(s) = 1/(s + a), with s = σ + jω. First, read the two axes: <strong>the horizontal axis σ governs lifetime</strong> (further left decays faster; further right grows more easily), <strong>the vertical axis ω governs frequency</strong>. Fix a and paint |X(s)| over the whole s-plane as terrain: <strong>brighter means higher</strong>. One spike punches through the ceiling — the <strong>pole</strong>, standing at s = −a, where the denominator vanishes and the transform diverges. Drag the probe anywhere: X(s) there is computed from the formula point by point, never read off the picture (render resolution is only about painting — see the note under the figure). One small secret: for this signal, |X(s)| is exactly <strong>the reciprocal of the distance to the pole</strong> — the farther from the spike, the flatter the land.',
     s1aLab: 'a (the pole sits at s = −a; slide and watch the spike move)',
     s1formula: 'X(s) = 1 / (s + a), s = σ + jω, x(t) = e^{−at}·u(t)',
     s1ro: 'a = {a} · pole at s = <span>{pole}</span> · probe s = <span>{s}</span> · X(s) = <span>{re}</span> {imSign} j·<span>{im}</span> · |X(s)| = <span>{mod}</span> · distance to pole = {dist} (1/distance = {inv})',

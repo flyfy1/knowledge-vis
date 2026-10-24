@@ -27,7 +27,7 @@ const STR = {
     /* ---------- 第 0 步 ---------- */
     s0k: '第 0 步 · 先看奇迹',
     s0t: '推它，它不倒',
-    s0e: '这辆双轮车没有支架，脚下也没有秘密机关。它就这么站着——你<strong>推它一把</strong>，它晃两下自己站回来。再把「控制」关掉推一次：同一辆车，立刻倒。差别只在一个看不见的圈里：传感器每秒几百次量角度，控制器算出该使多大劲，电机马上执行。这一页就把这个圈拆开看。',
+    s0e: '这辆双轮车没有支架，脚下也没有秘密机关。它就这么站着——你<strong>推它一把</strong>，它晃两下自己站回来。再把「控制」关掉推一次：同一辆车，立刻倒。差别只在一个看不见的圈里：传感器每秒几百次量角度，控制器算出该使多大劲，电机马上执行。这一页就把这个圈拆开看。先把读数的一个口径说清：下面「电机出力」的百分数，是此刻推力占电机<strong>最大推力（推力上限）</strong>的比例——100% 就是已经使满了劲。',
     s0ctrl: '控制', s0on: '开', s0off: '关',
     s0hint: '也可以直接按住车身拖向一边，松手看它怎么把自己抢救回来——控制开着的时候，它还会跟你的手较劲。',
 
@@ -124,7 +124,7 @@ const STR = {
 
     s0k: 'Step 0 · The trick first',
     s0t: 'Push it — it won’t fall',
-    s0e: 'This two-wheeled robot has no stand and no hidden gimmick under the floor. It just stands there — <strong>give it a push</strong> and it wobbles twice and rights itself. Now switch “Control” off and push again: same robot, down instantly. The whole difference lives inside one invisible loop: a sensor measures the tilt hundreds of times a second, a controller computes how hard to push back, and the motor obeys at once. This page takes that loop apart.',
+    s0e: 'This two-wheeled robot has no stand and no hidden gimmick under the floor. It just stands there — <strong>give it a push</strong> and it wobbles twice and rights itself. Now switch “Control” off and push again: same robot, down instantly. The whole difference lives inside one invisible loop: a sensor measures the tilt hundreds of times a second, a controller computes how hard to push back, and the motor obeys at once. This page takes that loop apart. One bit of bookkeeping for the readouts below: the “motor output” percentage is the current push as a share of the motor’s <strong>maximum push (its thrust limit)</strong> — 100% means it is already pushing as hard as it can.',
     s0ctrl: 'Control', s0on: 'On', s0off: 'Off',
     s0hint: 'You can also grab the body, drag it sideways and let go to watch it rescue itself — with control on, it will even wrestle your hand.',
 

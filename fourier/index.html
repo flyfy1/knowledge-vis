@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>傅里叶变换 · 一步一交互</title>
-<link rel="stylesheet" href="style.css?v=w2a">
+<link rel="stylesheet" href="style.css?v=w3a">
 <link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
@@ -53,7 +53,7 @@
       </label>
     </div>
     <p class="readout">N = <span id="s0-n-readout">15</span> · <span data-i18n="readoutError">重构误差</span> = <span id="s0-error">—</span></p>
-    <p class="hint" data-i18n-html="s0hint">先别动手，看 N 自己从 1 慢慢涨到 40：圆越多，误差越小、小人越像；想自己控制就拖滑杆（自动播放会停）。数学上这一幕写出来就是：f(t) = Σ (a<sub>k</sub> cos kt + b<sub>k</sub> sin kt)——横、竖坐标各有一套这样的和，每一项对应一个圆。</p>
+    <p class="hint" data-i18n-html="s0hint">先别动手，看 N 自己从 1 慢慢涨到 40：圆越多，误差越小、小人越像；想自己控制就拖滑杆（自动播放会停）。误差口径：重构点与原轮廓点之间的均方根误差 ÷ 图形尺寸 × 100%。数学上这一幕写出来就是：f(t) = Σ (a<sub>k</sub> cos kt + b<sub>k</sub> sin kt)——横、竖坐标各有一套这样的和，每一项对应一个圆。这些项有个名字叫<strong>谐波</strong>：频率是基频整数倍（1 倍、2 倍、3 倍……）的正弦成分，滑杆上的 N 数的就是用到的谐波个数。</p>
     <button class="btn primary" id="s0-start" data-i18n="s0start">开始探索 ↓</button>
   </div>
 </section>
@@ -288,8 +288,8 @@
   <p data-i18n="footText">傅里叶变换交互讲解 · 一步一交互，从正弦波到任意图形。</p>
 </footer>
 
-<script src="i18n.js?v=w2a"></script>
-<script src="app.js?v=w2a"></script>
+<script src="i18n.js?v=w3a"></script>
+<script src="app.js?v=w3a"></script>
 <script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

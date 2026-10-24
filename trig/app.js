@@ -535,12 +535,20 @@ function initS2() {
     b.addEventListener('click', () => {
       const deg = +b.dataset.mark;
       const base = (deg % 360) * Math.PI / 180;
-      const k = Math.round((S2.phi - base) / TAU);
+      /* 跳转只向前转到下一个该角度：轨迹不清、已描波形与既有打点全保留，
+         轨迹机顺着相位把中间一段补描出来（点到哪儿、波描到哪儿） */
+      const k = Math.ceil((S2.phi - base) / TAU - 1e-9);
       S2.phi = base + k * TAU;
       S2.theta = norm(S2.phi);
       S2.playing = false; s2ToggleLabel();
-      traceReset(S2.trace);
       traceAdvance(S2.trace, S2.phi);
+      /* 轨迹采样网格未必恰好落在目标角上：把此刻相位如实补记一笔，
+         否则画布上找不到这一记打点（值就是此刻的 sin 本人） */
+      if (Math.abs(S2.trace.lastPhi - S2.phi) > 1e-9) {
+        S2.trace.items.push({ phi: S2.phi, s: Math.sin(S2.phi), c: Math.cos(S2.phi) });
+        S2.trace.lastPhi = S2.phi;
+        if (S2.trace.items.length > TRACE_LEN) S2.trace.items.splice(0, S2.trace.items.length - TRACE_LEN);
+      }
       if (!S2.marks.some(m => m.key === deg % 360)) S2.marks.push({ deg, key: deg % 360 });
       document.querySelectorAll('[data-mark]').forEach(x =>
         x.classList.toggle('active', S2.marks.some(m => m.key === +x.dataset.mark % 360)));
