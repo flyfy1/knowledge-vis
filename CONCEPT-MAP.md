@@ -941,3 +941,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Deletion priority | `leetcode/420/#step2` | Spend compulsory deletions by marginal replacement savings. |
 
 <!-- /leetcode-420-campaign -->
+
+
+<!-- leetcode-432-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Ordered nonempty count buckets | `leetcode/432/#step2` | Unit count updates need only the immediate neighboring bucket. |
+| Constant-time extreme-key queries | `leetcode/432/#step4` | Sentinels and linked key entries expose an extreme representative directly. |
+
+<!-- /leetcode-432-campaign -->
