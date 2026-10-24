@@ -1013,6 +1013,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(T + U) expected time; O(T + U) space"
   },
   {
+    "id": 273,
+    "title": {
+      "zh": "整数转换为英文单词",
+      "en": "Integer to English Words"
+    },
+    "desc": {
+      "zh": "用三位分组和不变式，把整数安全地拼成英文单词。",
+      "en": "Turn an integer into English words with three-digit groups and a spacing invariant."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      },
+      {
+        "zh": "数学",
+        "en": "Math"
+      }
+    ],
+    "path": "273/",
+    "leetcodeUrl": "https://leetcode.com/problems/integer-to-english-words/",
+    "language": "Python",
+    "complexity": "O(log₁₀ num) time; O(log₁₀ num) space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
