@@ -32,3 +32,90 @@ Evidence and commands:
 
 Candidate identity: tests/evidence/candidate-r2.json freezes SHA-256 hashes of the lesson source, metadata and test files, plus current checkout HEAD (no new commit). Official Python remains selected and available per existing lesson-local official evidence; there is no non-Python contract or supportedLanguages omission. Hashes identify the candidate for separate review; they do not establish independent acceptance.
 Limits: author computational/browser self-check only; no independent score, learner study, real-device verification, public deployment verification or accepted LeetCode submission. Next action: a separate reviewer rechecks R315-1/2/3 and affected prediction/transfer paths against the frozen candidate under the unchanged rubric.
+
+=== R3 author self-check — 2026-10-25 (not independent acceptance) ===
+Prior report: specs/reviews/315-review-2-1f0756d7.md; reviewed candidate
+9d9d7ced93c8a43018e71be45290c46e2a40c627. Original reports/evidence are unchanged.
+
+R315-4 — fixed awaiting independent re-review:
+- Step 4 now derives compression on [5,2,6,1], explains set/sorted/enumerate/
+  dictionary construction and order vs position, and preserves duplicate counts.
+- Defines lowbit with divisibility, binary and two's-complement examples. Defines
+  bit[k]'s inclusive interval; explains why query blocks are adjacent/disjoint and
+  why add visits the containing intervals, including the skipped bit[3] example.
+- Hand-builds all four transitions of [5,2,6,1] from zero. The independent frequency
+  stage displays all five cell intervals, before/current values and query reads.
+  Its one-shot rank-2 insertion changes bit[2] 3→4 and bit[4] 4→5. Reset restores
+  the initial values; slider changes retain the applied update.
+- Step 5 derives query-before-add, boundaries, termination, logarithmic operations,
+  sorting cost, O(n) storage, no input mutation and the quadratic sorted-list trap.
+- tests/fenwick-review-r3.cjs checks exact cell ranges/values and all prefix endpoints
+  before/after insertion in both locales; browser-r3.json records results. Node
+  labels are localized. Duplicate detection covers object keys AND the later
+  locale assignments before evaluation, with matching locale key sets.
+
+R315-5 — fixed awaiting independent re-review:
+- Separate unspoiled [9,-4,2,6,2] exercise at i=2 asks for rank, query/result and
+  affected cells, with initial frequencies/tree given as input. Choice plus explicit
+  reveal is required. Feedback explains equal-value, missing-parent and wrong-rank
+  alternatives; changing choice removes stale feedback. Reset clears it; language
+  and resize retain choice/reveal. It is independent of the slider and suffix trace.
+- EN/ZH browser checks exercise all four choices, pending/revealed/changed/reset
+  states, keyboard reveal and locale/resize retention. Canonical Python was executed
+  with tracing: rank=2, answer[2]=0, bit[1..4] [0,1,1,2]→[0,2,1,3]. Full answer is
+  [4,0,0,1,0]. This is a code check, not a custom-input UI or LeetCode submission.
+
+Commands/results on this candidate:
+- python3 -B scripts/register_leetcode_lesson.py 315 --validate-only
+  from /home/songyy/projects/leetcode-hard-campaign-20261018: exit 0, no diagnostics.
+  Exact command/result: preflight-r3.txt. No registration ran. Metadata is unchanged;
+  complexity is exactly the nonempty string "O(n log n) time; O(n) space".
+- PYTHONDONTWRITEBYTECODE=1 python3 -B inline runpy + all test_solution.test_*:
+  exit 0. Examples, boundaries, seeded, exhaustive/mutation and maximum 100000
+  closed forms pass; actual source executed. Fresh/counterexample results and
+  actual i=2 before/after tracing: runtime-python-r3.txt.
+- node leetcode/315/tests/test_core.js: exit 0; exhaustive intermediate suffix and
+  Fenwick-answer checks through length 6. runtime-core-r3.txt.
+- OUTPUT_DIR="$PWD/leetcode/315/tests/evidence/r3-existing-regression"
+  node leetcode/315/tests/review-regression.cjs: exit 0. Old R315-1/2/3 behavior
+  passes on this revision: every position/guess, cumulative baseline, trace presets,
+  prediction, rewind/reset/endpoints, clipboard/download/manual-copy fallback,
+  source parity, file:// offline and blocked storage, EN/ZH widths 320/390/736/1440,
+  keyboard and 200% CSS zoom. Historical closure in the prior report remains its
+  reviewer's finding, not a new acceptance claim by this author.
+- node leetcode/315/tests/fenwick-review-r3.cjs: exit 0; affected paths in both
+  languages, 320/390/1280, 200% CSS zoom, state preservation and served-file equality.
+  fenwick-browser-r3.txt and r3-fenwick/browser-r3.json retain results. The test's
+  first run used an incorrect :last-of-type selector; corrected to :has() and reran.
+- node --check for app.js, copy.js, python-code.js and git diff --check: exit 0.
+
+Source/language: retained faithful Solution.countSmaller(self, nums: List[int])
+-> List[int] Python interface. Read LANGUAGE_FILES and validation in the exact
+registration script: solution.py / python-code.js / PYTHON_SOURCE. No non-Python
+contract or supportedLanguages list is present; no preferred interface is omitted.
+Canonical/mirror/display/clipboard/download/manual fallback are exactly equal,
+including final newline (811 bytes), online and offline. No regeneration needed.
+
+Presentation: inspected EN/ZH 320px tree and transfer, ZH 390px transfer, right-hand
+scrolled table, EN lowbit/cost and ZH worked build screenshots. Five-column table
+uses component-local scrolling with focus/arrow keys and a bilingual hint instead
+of squeezed identifiers. Stage text geometry outside the scroller stays within
+viewport. Some tall element captures include sticky navigation across their top;
+ordinary scrolling exposes the headings. All table columns remain available by
+local scrolling. r3-fenwick contains populated screenshots at each tested width
+and 200% CSS zoom plus prose captures at 390px. Additional inline Playwright
+presentation check recorded 3px solid keyboard focus under forced colors in both
+locales. Initially focusing after mouse input did not set :focus-visible; the
+keyboard-input check does. No extra motion was introduced. presentation-r3.json
+records contrast: core/stage 14.70:1, muted/stage 7.08:1, muted/panel2 6.45:1,
+button text/accent 13.10:1, focus/stage 9.81:1. Shared + local CSS totals 10124 bytes.
+No runtime/request failures in regression; preview root favicon 404 is separately
+recorded as outside lesson ownership. No shared files were changed.
+
+Candidate identity: candidate-r3.json freezes current lesson, metadata and test
+SHA-256 hashes with checkout HEAD (no commit), prior report and evidence hashes.
+Limits: author self-check only; no independent score/closure, physical-device,
+assistive-technology, native browser-menu zoom, novice learning, public deployment
+or accepted LeetCode submission claim. Next action: separate independent review
+of this frozen candidate's steps 3–5 and prerequisites under the unchanged rubric,
+including fresh causal walkthroughs for R315-4 and R315-5.

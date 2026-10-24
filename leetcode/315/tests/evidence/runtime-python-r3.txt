@@ -1,0 +1,10 @@
+PASS fresh transfer case executed in canonical Python: [9, -4, 2, 6, 2] -> [4, 0, 0, 1, 0]
+Actual i=2 transition (including unused bit[0]): {'position': 2, 'rank': 2, 'answer': [0, 0, 0, 1, 0], 'before': [0, 0, 1, 1, 2], 'after': [0, 0, 2, 1, 3]}
+PASS fresh/counterexample, input unchanged: [4, -2, 4, 0] -> [2, 0, 1, 0]
+PASS fresh/counterexample, input unchanged: [2, 2, 1] -> [1, 1, 0]
+PASS fresh/counterexample, input unchanged: [-10000, 10000, -10000] -> [0, 1, 0]
+PASS test_boundaries
+PASS test_examples
+PASS test_exhaustive_and_mutation
+PASS test_maximum_closed_forms
+PASS test_seeded
