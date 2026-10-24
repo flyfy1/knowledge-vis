@@ -1,0 +1,10 @@
+{
+  "problemId": 233,
+  "language": "Python",
+  "officialSource": "https://leetcode.com/problems/number-of-digit-one/",
+  "supportedLanguages": ["Python", "TypeScript", "JavaScript", "C++", "Java", "C#", "C", "Go", "Kotlin", "Swift", "Rust", "Ruby", "PHP", "Dart", "Scala", "Elixir", "Erlang", "Racket"],
+  "interface": "Python3 class Solution with countDigitOne(self, n: int) -> int; n is an integer 0 <= n <= 10^9.",
+  "rationale": "Python3 is an officially exposed faithful interface and is preferred by the lesson policy over TypeScript and other languages.",
+  "verifiedAt": "2026-10-24T10:10:00+08:00",
+  "verificationEvidence": "tests/evidence/official-graphql.json"
+}
