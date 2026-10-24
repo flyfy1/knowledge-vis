@@ -1,0 +1,6 @@
+{
+  "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionFrontendId questionId title titleSlug difficulty isPaidOnly\n    content exampleTestcases sampleTestCase metaData\n    codeSnippets { lang langSlug code }\n  }\n}",
+  "variables": {
+    "titleSlug": "encode-n-ary-tree-to-binary-tree"
+  }
+}
