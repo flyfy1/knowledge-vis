@@ -871,3 +871,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Minimal tails invariant | `leetcode/354/#step2` | First greater-or-equal replacement preserves best attainable ending heights. |
 
 <!-- /leetcode-354-campaign -->
+
+
+<!-- leetcode-363-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Row-band compression | `leetcode/363/#step1` | Each rectangle becomes an interval in a fixed row band. |
+| Eligible earlier prefix | `leetcode/363/#step2` | Choose the smallest earlier q ≥ P−k before inserting P. |
+
+<!-- /leetcode-363-campaign -->
