@@ -1,0 +1,128 @@
+{
+  "status": "pass",
+  "checks": [
+    "en: all presets, complete forward/back trace, history rows, reset/end/disabled endpoints",
+    "en: keyboard range, prediction/reveal/change/all options/locale and experiment isolation",
+    "en: displayed/clipboard/download exact canonical source",
+    "en: denied clipboard shows full selected source and localized status",
+    "en: widths 320/390/736/1440, 200% CSS layout zoom, state geometry, keyboard focus, all navigation and related anchors",
+    "zh: all presets, complete forward/back trace, history rows, reset/end/disabled endpoints",
+    "zh: keyboard range, prediction/reveal/change/all options/locale and experiment isolation",
+    "zh: displayed/clipboard/download exact canonical source",
+    "zh: denied clipboard shows full selected source and localized status",
+    "zh: widths 320/390/736/1440, 200% CSS layout zoom, state geometry, keyboard focus, all navigation and related anchors",
+    "blocked storage fallback and offline source mirror (no source fetch required)",
+    "120 Latin/CJK characters wrap; forced colors and reduced-motion focus remain available"
+  ],
+  "screenshots": [
+    "en-fallback.png",
+    "en-320-trace.png",
+    "en-320-states.png",
+    "en-320-history-right.png",
+    "en-390-trace.png",
+    "en-390-states.png",
+    "en-390-history-right.png",
+    "en-736-trace.png",
+    "en-736-states.png",
+    "en-736-history-right.png",
+    "en-1440-trace.png",
+    "en-1440-states.png",
+    "en-1440-history-right.png",
+    "en-zoom200-trace.png",
+    "en-zoom200-states.png",
+    "zh-fallback.png",
+    "zh-320-trace.png",
+    "zh-320-states.png",
+    "zh-320-history-right.png",
+    "zh-390-trace.png",
+    "zh-390-states.png",
+    "zh-390-history-right.png",
+    "zh-736-trace.png",
+    "zh-736-states.png",
+    "zh-736-history-right.png",
+    "zh-1440-trace.png",
+    "zh-1440-states.png",
+    "zh-1440-history-right.png",
+    "zh-zoom200-trace.png",
+    "zh-zoom200-states.png"
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "color": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".step-nav a",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".btn:disabled",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".state",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".state span",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".state b",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "th",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "a",
+      "color": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#next",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "focusContrast": 8.937191437807625,
+  "cssBytes": 11933,
+  "errors": [],
+  "externalRuntimeRequests": [],
+  "zoomMethod": "documentElement CSS zoom=2 at 1440px; layout and screenshots inspected; physical device/browser UI zoom not claimed"
+}

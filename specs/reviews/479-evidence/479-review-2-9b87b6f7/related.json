@@ -1,0 +1,51 @@
+{
+  "finding": "479-R1-01",
+  "authorSelfCheck": true,
+  "checks": [
+    {
+      "lang": "en",
+      "key": "related0",
+      "label": "#440: skip excluded ranges using an invariant",
+      "href": "../440/#step2",
+      "actualUrl": "http://127.0.0.1:18770/leetcode/440/#step2",
+      "title": "#440 · K-th Smallest in Lexicographical Order",
+      "targetVisible": true,
+      "targetTop": 101.5625,
+      "pass": true
+    },
+    {
+      "lang": "en",
+      "key": "related1",
+      "label": "#60: eliminate ordered candidate blocks",
+      "href": "../60/#step2",
+      "actualUrl": "http://127.0.0.1:18770/leetcode/60/#step2",
+      "title": "#60 · Permutation Sequence",
+      "targetVisible": true,
+      "targetTop": 107.5,
+      "pass": true
+    },
+    {
+      "lang": "zh",
+      "key": "related0",
+      "label": "#440：用不变式跳过已排除区间",
+      "href": "../440/#step2",
+      "actualUrl": "http://127.0.0.1:18770/leetcode/440/#step2",
+      "title": "#440 · 字典序的第 K 小数字",
+      "targetVisible": true,
+      "targetTop": 109.8125,
+      "pass": true
+    },
+    {
+      "lang": "zh",
+      "key": "related1",
+      "label": "#60：按顺序排除候选块",
+      "href": "../60/#step2",
+      "actualUrl": "http://127.0.0.1:18770/leetcode/60/#step2",
+      "title": "#60 · 排列序列",
+      "targetVisible": true,
+      "targetTop": 103,
+      "pass": true
+    }
+  ],
+  "errors": []
+}
