@@ -1779,6 +1779,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(S + sum(len(w)^3)) expected time; O(N + L) auxiliary space"
   },
   {
+    "id": 479,
+    "title": {
+      "zh": "最大回文数乘积",
+      "en": "Largest Palindrome Product"
+    },
+    "desc": {
+      "zh": "构造递减回文候选，用较大因子的平方界限证明安全截止。",
+      "en": "Construct descending palindromes and derive a safe square cutoff for larger factors."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数学",
+        "en": "Mathematics"
+      },
+      {
+        "zh": "枚举",
+        "en": "Enumeration"
+      }
+    ],
+    "path": "479/",
+    "leetcodeUrl": "https://leetcode.com/problems/largest-palindrome-product/",
+    "language": "Python",
+    "complexity": "O(10^(2n) + n·10^n) time under unit-cost integer arithmetic; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
