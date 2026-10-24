@@ -1021,3 +1021,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Larger-factor square cutoff | `leetcode/479/#step2` | Test all possible larger factors and stop when x² < p. |
 
 <!-- /leetcode-479-campaign -->
+
+
+<!-- leetcode-480-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Sliding window median | `leetcode/480/#step0` | Count repeated occurrences and average the middle pair for even k. |
+| Count tree rank selection | `leetcode/480/#step2` | Use left subtree counts to preserve the desired occurrence rank. |
+
+<!-- /leetcode-480-campaign -->

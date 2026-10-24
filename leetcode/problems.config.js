@@ -1805,6 +1805,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(10^(2n) + n·10^n) time under unit-cost integer arithmetic; O(n) auxiliary space"
   },
   {
+    "id": 480,
+    "title": {
+      "zh": "滑动窗口中位数",
+      "en": "Sliding Window Median"
+    },
+    "desc": {
+      "zh": "从逐窗排序到频数树：用区间计数定位中间的出现次数。",
+      "en": "From sorting windows to a count tree: locate the middle occurrence by interval totals."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "滑动窗口",
+        "en": "Sliding window"
+      },
+      {
+        "zh": "线段树",
+        "en": "Segment tree"
+      },
+      {
+        "zh": "顺序统计",
+        "en": "Order statistics"
+      }
+    ],
+    "path": "480/",
+    "leetcodeUrl": "https://leetcode.com/problems/sliding-window-median/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space plus O(n-k+1) output"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
