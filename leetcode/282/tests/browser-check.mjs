@@ -1,0 +1,16 @@
+import { chromium } from 'playwright';
+const base=process.env.PREVIEW_ROOT||'http://127.0.0.1:18770';
+const browser=await chromium.launch({headless:true, executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});
+const page=await browser.newPage({viewport:{width:390,height:900},deviceScaleFactor:1});
+const errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+await page.goto(`${base}/leetcode/282/`,{waitUntil:'networkidle'});
+await page.locator('#langToggle button[data-lang="en"]').click();
+await page.locator('#next').click(); await page.locator('#reset').click();
+await page.locator('[data-op="+"]').click(); await page.locator('[data-op="*"]').click();
+await page.locator('.quiz-options input[value="0"]').check(); await page.locator('.quiz-options input[value="1"]').check(); await page.locator('#reveal').click();
+await page.locator('#copy').click(); await page.selectOption('#verifySelect','105|5');
+const text=await page.locator('#verifyText').textContent();
+await page.screenshot({path:process.env.OUTPUT_DIR?`${process.env.OUTPUT_DIR}/282-mobile.png`:'tests/282-mobile.png',fullPage:true});
+if(errors.length) throw new Error(errors.join('\n'));
+if(!text.includes('canonical')||!text.includes('oracle')) throw new Error('verification readout missing');
+await browser.close(); console.log('browser interaction passed');
