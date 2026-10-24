@@ -931,3 +931,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Greedy contiguous partition | `leetcode/410/#step1` | A maximal prefix under a nonnegative sum cap minimizes group count. |
 
 <!-- /leetcode-410-campaign -->
+
+
+<!-- leetcode-420-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Password run repair | `leetcode/420/#step1` | Derive floor(L/3) replacements per equal-character run. |
+| Deletion priority | `leetcode/420/#step2` | Spend compulsory deletions by marginal replacement savings. |
+
+<!-- /leetcode-420-campaign -->

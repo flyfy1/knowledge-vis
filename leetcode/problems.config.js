@@ -1571,6 +1571,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log(S - M + 2)) time; O(1) auxiliary space, S=sum(nums), M=max(nums)"
   },
   {
+    "id": 420,
+    "title": {
+      "zh": "强密码检验器",
+      "en": "Strong Password Checker"
+    },
+    "desc": {
+      "zh": "从一次插入到删除优先级，推导最少修改次数。",
+      "en": "Derive minimum edits from overlapping repairs and deletion priorities."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "420/",
+    "leetcodeUrl": "https://leetcode.com/problems/strong-password-checker/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
