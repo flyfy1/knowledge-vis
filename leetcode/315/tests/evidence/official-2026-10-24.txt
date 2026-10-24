@@ -1,0 +1,5 @@
+Accessed official public page: https://leetcode.com/problems/count-of-smaller-numbers-after-self/ on 2026-10-24 (Asia/Singapore).
+Observed statement: Given an integer array nums, return integer array counts where counts[i] is number of smaller elements to the right of nums[i].
+Examples: [5,2,6,1] -> [2,1,1,0]; [-1] -> [0]; [-1,-1] -> [0,0].
+Constraints: 1 <= nums.length <= 10^5; -10^4 <= nums[i] <= 10^4.
+Public page exposes the Code editor and language selector; Python is an available faithful submission interface with callable signature class Solution: countSmaller(self, nums: List[int]) -> List[int].

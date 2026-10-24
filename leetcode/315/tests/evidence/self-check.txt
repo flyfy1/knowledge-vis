@@ -1,0 +1,9 @@
+2026-10-24 author self-check evidence
+- Official public page captured in official-2026-10-24.txt; Python callable selected.
+- solution.py independent brute checks: examples, empty, boundaries, seeded random n=1..24 all passed.
+- core.js independent brute/bit checks passed.
+- browser.cjs with Playwright Chromium at preview URL, 390px viewport, English toggle, baseline advance, fresh trace interaction, screenshot /tmp/315-en.png; no console errors.
+- Screenshot visually inspected. CSS is 1789 bytes (<25KB). Source parity: solution.py equals embedded window.LEETCODE_PYTHON.
+- Preflight: python3 -B scripts/register_leetcode_lesson.py 315 --validate-only => exit 0.
+This is author self-check, not independent acceptance.
+- Browser rerun after review fixes passed at same preview URL with no console errors.
