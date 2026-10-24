@@ -71,7 +71,7 @@ const STR = {
     cRunT: '运行平均惊讶 → H（纵轴按已见运行均值的最大值自动扩程，曲线不出框）',
     cHLine: 'H（理论）',
     cEmpLine: '经验平均',
-    s2ro: '分布 p = [{p}] · 熵 H = <span>{H} bits/符号</span> · 已采样 <span>{n}</span> 个 · 经验平均惊讶 <span>{emp}</span> · 与 H 相差 <span>{diff}</span>（理论标准误约 σ<sub>I</sub>/√n = {se}）· 种子 {seed}',
+    s2ro: '分布 p = [{p}] · 熵 H = <span>{H} bits/符号</span> · 已采样 <span>{n}</span> 个 · 经验平均惊讶 <span>{emp}</span> · 与 H 相差 <span>{diff}</span>（理论标准误约 σ<sub>I</sub>/√n = {se}；σ<sub>I</sub> 是惊讶 I 的标准差，标准误就是平均惊讶这个平均数自身的典型误差，采样越多越小）· 种子 {seed}',
     s2ro0: '分布 p = [{p}] · 熵 H = <span>{H} bits/符号</span> · 还没采样——点「采样」看平均惊讶怎么贴向 H · 种子 {seed}',
     s2hint: '均匀分布时 H = 2 bits 达到四符号的最大值：每个符号都一样意外，没法不惊讶。把分布压到几乎单一，H 贴近 0：源几乎没悬念。采样曲线早期会乱跳，样本越多越贴线——这是大数定律在干活（中心极限页的主角）。',
 
@@ -95,6 +95,7 @@ const STR = {
     qDeduce: '前 {i} 问全「否」——不用再问，它只能是 {n}（排除法）',
     qFound: '🎯 找到 {n}，共问了 <span>{c}</span> 次。',
     qIdle: '先选一个心里数，再点一种问法，看提问记录。',
+    qPicked: '已选心里数：<span>{n}</span>——再点一种问法，看提问记录怎么找到它。',
     treeT: '二分决策树（每个叶子 = 一个数，深度都是 3）',
     nodeQ: '≤ {mid}？',
     s3dro: '二分法：每数问数 [{bd}]，平均 <span>{bm}</span> 问 = H = log₂8 = 3 bits（摸到下限 ✓）· 逐个问：每数问数 [{sd}]，平均 <span>{sm}</span> 问 &gt; H（问法笨，多花的 {extra} 问是浪费）',
@@ -241,7 +242,7 @@ const STR = {
     cRunT: 'Running average surprise → H (y-axis auto-expands to the largest running average seen)',
     cHLine: 'H (theory)',
     cEmpLine: 'empirical average',
-    s2ro: 'Distribution p = [{p}] · entropy H = <span>{H} bits/symbol</span> · sampled <span>{n}</span> · empirical average surprise <span>{emp}</span> · difference from H <span>{diff}</span> (theoretical standard error ≈ σ<sub>I</sub>/√n = {se}) · seed {seed}',
+    s2ro: 'Distribution p = [{p}] · entropy H = <span>{H} bits/symbol</span> · sampled <span>{n}</span> · empirical average surprise <span>{emp}</span> · difference from H <span>{diff}</span> (theoretical standard error ≈ σ<sub>I</sub>/√n = {se}; σ<sub>I</sub> is the standard deviation of the surprise I, and the standard error is the typical error of the average surprise itself — it shrinks as you sample more) · seed {seed}',
     s2ro0: 'Distribution p = [{p}] · entropy H = <span>{H} bits/symbol</span> · no samples yet — press "Sample" and watch the average surprise hug H · seed {seed}',
     s2hint: 'The uniform distribution gives H = 2 bits, the maximum for four symbols: every symbol is equally surprising, so you cannot help being surprised. Squash the distribution to nearly a single symbol and H nears 0: the source has almost no suspense. The sampling curve jitters early and hugs the line as samples pile up — the law of large numbers at work (the star of the Central Limit Theorem page).',
 
@@ -265,6 +266,7 @@ const STR = {
     qDeduce: 'The first {i} answers are all "no" — no need to ask: it can only be {n} (elimination)',
     qFound: '🎯 Found {n} in <span>{c}</span> questions.',
     qIdle: 'Pick a secret number, then choose a strategy to see the question log.',
+    qPicked: 'Secret number picked: <span>{n}</span> — now choose a strategy to see how the question log finds it.',
     treeT: 'Binary decision tree (all leaves at depth 3)',
     nodeQ: '≤ {mid}?',
     s3dro: 'Binary search: questions per number [{bd}], average <span>{bm}</span> = H = log₂8 = 3 bits (hits the floor ✓) · One by one: questions per number [{sd}], average <span>{sm}</span> &gt; H (a clumsy strategy — the extra {extra} questions are waste)',

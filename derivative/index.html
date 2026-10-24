@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>导数 · 把「一段」压成「一点」 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=der1">
+<script src="i18n.js?v=der1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">导数 · 把「一段」压成「一点」</h1>
+    <p class="tagline" data-i18n="tagline">平均速度人人会算，可「这一刻」有多快，平均速度答不了。办法是把区间向一点无限收缩：割线两点越靠越拢，割线斜率就被逼向切线斜率——那个被逼出来的数，就是导数。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 平均速度</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 割线逼近</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 每点的导数</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 导数在说什么</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 自测</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 终章</a>
+</nav>
+
+<main>
+
+<!-- ============ 第 0 步：平均速度不够用 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 平均速度不够用</p>
+    <h2 data-i18n="s0t">平均速度不够用：它答的是「一段」，不是「此刻」</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="400"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s0-play" data-i18n="s0play">播放 ▶</button>
+      <span class="row-label" id="s0-prog"></span>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s0tLab">时刻探针 t（秒）</span> <span class="val" id="s0-t-val">t = 1.0 s</span></span>
+        <input type="range" id="s0-t" min="0" max="30" step="1" value="10">
+      </label>
+    </div>
+    <p class="readout" id="s0-probe"></p>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s0intLab">选一段区间，算它的平均速度：</span>
+      <button class="btn big mode active" id="s0-i0" type="button">[1, 3]</button>
+      <button class="btn big mode" id="s0-i1" type="button">[1, 2]</button>
+      <button class="btn big mode" id="s0-i2" type="button">[1, 1.5]</button>
+    </div>
+    <p class="readout" id="s0-ro"></p>
+    <p class="readout" data-i18n-html="s0conc"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 第 1 步：割线逼近切线 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 割线逼近切线</p>
+    <h2 data-i18n="s1t">割线逼近切线：两点越靠越拢，斜率被逼向一个数</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="440"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s1preLab">点一档 Δx：</span>
+      <button class="btn mode dxp" type="button" data-dx="1">Δx = 1</button>
+      <button class="btn mode dxp" type="button" data-dx="0.5">Δx = 0.5</button>
+      <button class="btn mode dxp" type="button" data-dx="0.1">Δx = 0.1</button>
+      <button class="btn mode dxp" type="button" data-dx="0.01">Δx = 0.01</button>
+      <button class="btn mode dxp" type="button" data-dx="-0.01">Δx = −0.01</button>
+      <button class="btn mode dxp" type="button" data-dx="-0.1">Δx = −0.1</button>
+      <button class="btn mode dxp" type="button" data-dx="-0.5">Δx = −0.5</button>
+      <button class="btn mode dxp" type="button" data-dx="-1">Δx = −1</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1dxLab">Δx（Q 与 P 的横坐标差，可正可负）</span> <span class="val" id="s1-dx-val">Δx = 1</span></span>
+        <input type="range" id="s1-dx" min="-150" max="150" step="1" value="100">
+      </label>
+    </div>
+    <p class="readout" id="s1-ro"></p>
+    <p class="readout" id="s1-ro2"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 2 步：每个点都有自己的导数 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 每点一个导数</p>
+    <h2 data-i18n="s2t">每个点都有自己的导数：把斜率收集成新函数</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="400"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2xLab">P 点的横坐标 x（拖 P 或拖滑杆）</span> <span class="val" id="s2-x-val">x = 1.0</span></span>
+        <input type="range" id="s2-x" min="-20" max="20" step="1" value="10">
+      </label>
+    </div>
+    <p class="readout" id="s2-ro"></p>
+    <div class="stage">
+      <canvas id="s2d-canvas" height="260"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-reset" data-i18n="s2reset">清空收集的点</button>
+      <span class="row-label" id="s2-count"></span>
+    </div>
+    <p class="readout" id="s2-ro2"></p>
+    <p class="readout" data-i18n-html="s2conc"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 3 步：导数在说什么 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 导数在说什么</p>
+    <h2 data-i18n="s3t">导数在说什么：同一个数的三张脸</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="420"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big mode active" id="s3-m1" type="button" data-i18n="s3m1">读法一 · 增减</button>
+      <button class="btn big mode" id="s3-m2" type="button" data-i18n="s3m2">读法二 · 陡缓</button>
+      <button class="btn big mode" id="s3-m3" type="button" data-i18n="s3m3">读法三 · 瞬时速度</button>
+    </div>
+    <div class="controls" id="s3-ctl-x">
+      <label><span><span data-i18n="s3xLab">探针点的 x</span> <span class="val" id="s3-x-val">x = 1.0</span></span>
+        <input type="range" id="s3-x" min="-25" max="25" step="1" value="10">
+      </label>
+    </div>
+    <div class="controls" id="s3-ctl-t" style="display:none">
+      <label><span><span data-i18n="s3tLab">时刻 t（秒）</span> <span class="val" id="s3-t-val">t = 2.0 s</span></span>
+        <input type="range" id="s3-t" min="0" max="30" step="1" value="20">
+      </label>
+    </div>
+    <p class="readout" id="s3-ro"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 4 步：自测 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 自测</p>
+    <h2 data-i18n="s4t">自测：在 x = 3 处逼近、试一试 x³、一个判断</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+
+    <h3 class="quiz-t" data-i18n="q1t">题 1 · 在 x = 3 处逼近</h3>
+    <p class="explain" data-i18n-html="q1d"></p>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="q1dxLab">点一档 Δx 看割线斜率：</span>
+      <button class="btn mode q1dx" type="button" data-dx="1">Δx = 1</button>
+      <button class="btn mode q1dx" type="button" data-dx="0.1">Δx = 0.1</button>
+      <button class="btn mode q1dx" type="button" data-dx="0.01">Δx = 0.01</button>
+    </div>
+    <p class="readout" id="s4q1-ro"></p>
+    <div class="btn-row" id="s4q1-opts">
+      <button class="btn big opt" id="s4q1-o0" type="button">7</button>
+      <button class="btn big opt" id="s4q1-o1" type="button">6.1</button>
+      <button class="btn big opt" id="s4q1-o2" type="button">6.01</button>
+      <button class="btn big opt" id="s4q1-o3" type="button">6</button>
+    </div>
+    <p class="readout" id="s4q1-fb"></p>
+
+    <h3 class="quiz-t" data-i18n="q2t">题 2 · 试一试 x³</h3>
+    <p class="explain" data-i18n-html="q2d"></p>
+    <div class="stage">
+      <canvas id="s4q2-canvas" height="320"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="q2dxLab">点一档 Δx 实测割线斜率：</span>
+      <button class="btn mode q2dx" type="button" data-dx="1">Δx = 1</button>
+      <button class="btn mode q2dx" type="button" data-dx="0.5">Δx = 0.5</button>
+      <button class="btn mode q2dx" type="button" data-dx="0.1">Δx = 0.1</button>
+      <button class="btn mode q2dx" type="button" data-dx="0.01">Δx = 0.01</button>
+    </div>
+    <p class="readout" id="s4q2-ro"></p>
+    <div class="btn-row" id="s4q2-opts">
+      <button class="btn big opt" id="s4q2-o0" type="button">1</button>
+      <button class="btn big opt" id="s4q2-o1" type="button">2</button>
+      <button class="btn big opt" id="s4q2-o2" type="button">3</button>
+      <button class="btn big opt" id="s4q2-o3" type="button">4</button>
+    </div>
+    <p class="readout" id="s4q2-fb"></p>
+
+    <h3 class="quiz-t" data-i18n="q3t">题 3 · 判断</h3>
+    <p class="explain" data-i18n-html="q3d"></p>
+    <div class="btn-row">
+      <button class="btn big opt" id="s4q3-true" type="button" data-i18n="q3true">对</button>
+      <button class="btn big opt" id="s4q3-false" type="button" data-i18n="q3false">错</button>
+    </div>
+    <p class="readout" id="s4q3-fb"></p>
+    <p class="hint" id="s4-hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 5 步：终章 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 终章</p>
+    <h2 data-i18n="s5t">从「一段」到「此刻」：导数收口</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="cards3">
+      <div class="value-card">
+        <p class="card-title" data-i18n="c1h">平均 → 瞬时，靠缩区间</p>
+        <p class="card-body" data-i18n-html="c1"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c2h">导数是切线的斜率</p>
+        <p class="card-body" data-i18n-html="c2"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c3h">导函数收集每点的斜率</p>
+        <p class="card-body" data-i18n-html="c3"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s5fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../velocity-vt/#step1" data-i18n="s5lkVel"></a>
+      </p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../parabola/#step2" data-i18n="s5lkPar"></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 导数 The Derivative —— 一步一交互系列</footer>
+
+<script src="app.js?v=der1"></script>
+</body>
+</html>

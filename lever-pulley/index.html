@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="category" content="physics">
+<meta name="stage" content="junior">
+<title>杠杆与滑轮 · 支点挪一挪，省力见分晓 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=lp3d1">
+<script src="../pages.config.js"></script>
+<script src="i18n.js?v=lp3d1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <div class="badges">
+      <span class="badge" id="categoryBadge"></span>
+      <span class="badge" id="stageBadge"></span>
+    </div>
+    <h1 data-i18n="pageTitle">杠杆与滑轮 · 支点挪一挪，省力见分晓</h1>
+    <p class="tagline" data-i18n="tagline">小力凭什么撬动大物？这一页算两本账。转动的账看力矩：力 × 力臂，两边相等就平衡——支点挪一挪，同样的重物要用的力立刻变。可省力从不是白省：功的账本两边永远相等，省几倍力就费几倍距离。到了滑轮组更干脆，不用算，数一数吊着重物的绳子段数，就知道省几倍力。全页 g 取 10 N/kg，力一律用牛顿（N）。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 跷跷板·力矩</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 撬棍对账</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 功的账本</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 定滑轮</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 动滑轮与滑轮组</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 自测·终章</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：跷跷板·力矩 ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 跷跷板：力矩登场</p>
+    <h2 data-i18n="s0t">大人往支点挪一挪，就能和小孩坐平</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <p class="stage-title" data-i18n="dragHint0"></p>
+      <div class="viewport3d"><canvas id="s0-canvas" tabindex="0" role="img" aria-label="3D scene"></canvas><div class="labels" aria-hidden="true"></div></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s0-view" data-i18n="viewBtn">回到默认视角</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s0aLab">大人位置（距支点）</span> <span class="val" id="s0-a-val">1.0 m</span></span>
+        <input type="range" id="s0-a" min="0.4" max="2.0" step="0.2" value="1.0">
+      </label>
+      <label><span><span data-i18n="s0kLab">小孩位置（距支点）</span> <span class="val" id="s0-k-val">2.0 m</span></span>
+        <input type="range" id="s0-k" min="0.4" max="2.0" step="0.2" value="2.0">
+      </label>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：撬棍对账 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 撬棍：支点滑杆对账</p>
+    <h2 data-i18n="s1t">支点垫得越靠石头，手上越轻</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <p class="stage-title" data-i18n="dragHint3d"></p>
+      <div class="viewport3d"><canvas id="s1-canvas" tabindex="0" role="img" aria-label="3D scene"></canvas><div class="labels" aria-hidden="true"></div></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s1-view" data-i18n="viewBtn">回到默认视角</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1lrLab">阻力臂 L阻（支点到石头）</span> <span class="val" id="s1-lr-val">0.30 m</span></span>
+        <input type="range" id="s1-lr" min="0.1" max="0.5" step="0.01" value="0.3">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s1-try" data-i18n="s1try">用力试试（按当前 F 撬起石头）</button>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：功的账本 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 省力必费距离：功的账本</p>
+    <h2 data-i18n="s2t">力省下的那一份，距离得补回来</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <p class="stage-title" data-i18n="dragHint3d"></p>
+      <div class="viewport3d"><canvas id="s2-canvas" tabindex="0" role="img" aria-label="3D scene"></canvas><div class="labels" aria-hidden="true"></div></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-view" data-i18n="viewBtn">回到默认视角</button>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s2ratioLab">力臂比（动力臂 : 阻力臂）</span>
+      <button class="btn big" id="s2-r2" aria-pressed="false">2 : 1</button>
+      <button class="btn big active" id="s2-r3" aria-pressed="true">3 : 1</button>
+      <button class="btn big" id="s2-r4" aria-pressed="false">4 : 1</button>
+      <button class="btn big primary" id="s2-play" data-i18n="s2play">▶ 撬起</button>
+    </div>
+    <div class="ledger">
+      <div class="ledger-row">
+        <span class="ledger-lab" data-i18n="s2ledgerIn">手做的功 W入 = F × s</span>
+        <div class="ledger-track"><div class="ledger-fill in" id="s2-fill-in"></div></div>
+        <span class="ledger-val" id="s2-val-in">0 J</span>
+      </div>
+      <div class="ledger-row">
+        <span class="ledger-lab" data-i18n="s2ledgerOut">石头得到的功 W出 = G × h</span>
+        <div class="ledger-track"><div class="ledger-fill out" id="s2-fill-out"></div></div>
+        <span class="ledger-val" id="s2-val-out">0 J</span>
+      </div>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：定滑轮 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 定滑轮：只改方向</p>
+    <h2 data-i18n="s3t">井口那个轮子，一分力都不省</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="btn-row">
+      <button class="btn big active" id="s3-down" aria-pressed="true" data-i18n="s3down">竖直下拉</button>
+      <button class="btn big" id="s3-diag" aria-pressed="false" data-i18n="s3diag">斜向拉</button>
+    </div>
+    <div class="stage">
+      <p class="stage-title" data-i18n="dragHint3d"></p>
+      <div class="viewport3d"><canvas id="s3-canvas" tabindex="0" role="img" aria-label="3D scene"></canvas><div class="labels" aria-hidden="true"></div></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s3-view" data-i18n="viewBtn">回到默认视角</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3sLab">拉出的绳长 s</span> <span class="val" id="s3-s-val">0 m</span></span>
+        <input type="range" id="s3-s" min="0" max="1.6" step="0.1" value="0">
+      </label>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：动滑轮与滑轮组 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 动滑轮与滑轮组：数段数定倍数</p>
+    <h2 data-i18n="s4t">轮子跟着重物走，力就分给了几段绳</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="btn-row">
+      <button class="btn big active" id="s4-m-single" aria-pressed="true" data-i18n="s4mSingle">单个动滑轮</button>
+      <button class="btn big" id="s4-m-group" aria-pressed="false" data-i18n="s4mGroup">滑轮组</button>
+    </div>
+    <div class="stage">
+      <p class="stage-title" data-i18n="dragHint3d"></p>
+      <div class="viewport3d"><canvas id="s4-canvas" tabindex="0" role="img" aria-label="3D scene"></canvas><div class="labels" aria-hidden="true"></div></div>
+      <p class="model-note" data-i18n="s4ropeNote"></p>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s4-view" data-i18n="viewBtn">回到默认视角</button>
+    </div>
+    <div class="btn-row" id="s4-group-ctl" hidden>
+      <span class="row-label" data-i18n="s4nLab">承重绳段数 n</span>
+      <button class="btn big" id="s4-n2" aria-pressed="false" data-i18n="s4n2">2 段</button>
+      <button class="btn big active" id="s4-n3" aria-pressed="true" data-i18n="s4n3">3 段</button>
+      <button class="btn big" id="s4-n4" aria-pressed="false" data-i18n="s4n4">4 段</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s4sLab">拉绳长度 s</span> <span class="val" id="s4-s-val">0 m</span></span>
+        <input type="range" id="s4-s" min="0" max="2.4" step="0.1" value="0">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s4-count" data-i18n="s4count">逐段数一数</button>
+    </div>
+    <p class="readout" id="s4-count-ro"></p>
+    <p class="readout" id="s4-readout"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 5：自测 + 终章 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 自测 + 终章</p>
+    <h2 data-i18n="s5t">三道题验三本账，再把账收齐</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+
+    <p class="quiz-q" data-i18n="s5q1">① 跷跷板：80 kg 的爸爸坐在支点左侧 1.0 m 处，40 kg 的你坐在右侧多远，能平衡？</p>
+    <div class="btn-row" id="s5-q1-opts">
+      <button class="btn big" data-q="q1" data-opt="0" data-i18n="s5q1o0">1.0 m</button>
+      <button class="btn big" data-q="q1" data-opt="1" data-i18n="s5q1o1">1.6 m</button>
+      <button class="btn big" data-q="q1" data-opt="2" data-i18n="s5q1o2">2.0 m</button>
+    </div>
+    <p class="readout" id="s5-q1-ro"></p>
+
+    <p class="quiz-q" data-i18n="s5q2">② 滑轮组：3 段承重绳吊着 600 N 的重物，拉力多大？</p>
+    <div class="btn-row" id="s5-q2-opts">
+      <button class="btn big" data-q="q2" data-opt="0" data-i18n="s5q2o0">150 N</button>
+      <button class="btn big" data-q="q2" data-opt="1" data-i18n="s5q2o1">200 N</button>
+      <button class="btn big" data-q="q2" data-opt="2" data-i18n="s5q2o2">300 N</button>
+    </div>
+    <p class="readout" id="s5-q2-ro"></p>
+
+    <p class="quiz-q" data-i18n="s5q3">③ 手拉出 3 m 绳，4 段滑轮组，重物升多高？</p>
+    <div class="btn-row" id="s5-q3-opts">
+      <button class="btn big" data-q="q3" data-opt="0" data-i18n="s5q3o0">0.75 m</button>
+      <button class="btn big" data-q="q3" data-opt="1" data-i18n="s5q3o1">1.25 m</button>
+      <button class="btn big" data-q="q3" data-opt="2" data-i18n="s5q3o2">12 m</button>
+    </div>
+    <p class="readout" id="s5-q3-ro"></p>
+
+    <p class="hint" id="s5-allhint"></p>
+
+    <div class="cards3">
+      <div class="value-card">
+        <p class="card-title" data-i18n="c1h">力矩平衡</p>
+        <p class="card-body" data-i18n-html="c1"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c2h">省力必费距离</p>
+        <p class="card-body" data-i18n-html="c2"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c3h">数段数定倍数</p>
+        <p class="card-body" data-i18n-html="c3"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s5fin"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 杠杆与滑轮 Levers & Pulleys —— 一步一交互系列</footer>
+
+<div id="gl-fail" class="gl-fail" hidden></div>
+
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/controls/OrbitControls.js":"./vendor/three/OrbitControls.js"}}</script>
+<script type="module" src="app3d.js?v=lp3d1"></script>
+<script>
+/* 三维模块加载失败兜底：模块成功初始化会置 window.__LP3D_OK；超时未置位则给双语提示 */
+window.addEventListener('load', function () {
+  setTimeout(function () {
+    if (!window.__LP3D_OK) {
+      var el = document.getElementById('gl-fail');
+      if (el) { el.textContent = t('glFail'); el.hidden = false; }
+    }
+  }, 5000);
+});
+</script>
+</body>
+</html>

@@ -714,7 +714,7 @@ function s3TreeDraw() {
 }
 function s3AskLog() {
   const el = $('s3-qlog');
-  if (!s3.log) { el.innerHTML = t('qIdle'); return; }
+  if (!s3.log) { el.innerHTML = t('qPicked', { n: s3.target }); return; }
   const { kind, target } = s3.log;
   const lines = [];
   if (kind === 'bin') {
@@ -754,14 +754,18 @@ document.querySelectorAll('.num3').forEach(b => {
   b.addEventListener('click', () => {
     s3.target = parseInt(b.dataset.n, 10);
     document.querySelectorAll('.num3').forEach(x => x.classList.toggle('active', x === b));
+    if (s3.log && s3.log.target !== s3.target) s3.log = null;   /* 改选了别的数：旧提问记录作废，记录行回显新数 */
     s3TreeDraw();
+    s3AskLog();
   });
 });
 $('s3-rand').addEventListener('click', () => {
   const n = 1 + Math.floor(Math.random() * 8);
   s3.target = n;
   document.querySelectorAll('.num3').forEach(x => x.classList.toggle('active', parseInt(x.dataset.n, 10) === n));
+  if (s3.log && s3.log.target !== n) s3.log = null;
   s3TreeDraw();
+  s3AskLog();
 });
 $('s3-bin').addEventListener('click', () => { s3.log = { kind: 'bin', target: s3.target }; s3AskLog(); });
 $('s3-seq').addEventListener('click', () => { s3.log = { kind: 'seq', target: s3.target }; s3AskLog(); });

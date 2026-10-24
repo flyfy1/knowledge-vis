@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="category" content="earth"><meta name="stage" content="primary">
+<title>昼夜交替 · 地球自己在转</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css"><script src="../pages.config.js"></script>
+<script src="i18n.js"></script>
+</head>
+<body>
+<header class="site-head"><div class="head-main">
+<p class="backline"><a href="../" data-i18n="back"></a></p>
+<div class="badges"><span class="badge" data-i18n="format3d"></span><span class="badge" id="categoryBadge"></span><span class="badge" id="stageBadge"></span></div>
+<h1 data-i18n="pageTitle"></h1><p class="tagline" data-i18n="tagline"></p>
+</div><div class="lang-toggle" id="langToggle" role="group" data-i18n-aria="languageLabel"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div></header>
+<nav class="step-nav" data-i18n-aria="navLabel"><a class="nav-step" href="#step0" data-nav="0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-nav="1" data-i18n="nav1"></a><a class="nav-step" href="#step2" data-nav="2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-nav="3" data-i18n="nav3"></a><a class="nav-step" href="#step4" data-nav="4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-nav="5" data-i18n="nav5"></a><a class="nav-step" href="#step6" data-nav="6" data-i18n="nav6"></a></nav>
+<main>
+<section class="step" id="step0" data-step="0"><div class="step-inner">
+<p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2>
+<p class="explain" data-i18n-html="s0e"></p>
+<div class="stage"><p class="stage-title" data-i18n="dragHint"></p><div class="viewport"><canvas id="s0-canvas" data-step="0" tabindex="0" role="img" data-i18n-aria="canvasLabel"></canvas><div class="marker-label" id="s0-marker" data-i18n="markerHere" hidden></div><div class="load-fail" data-i18n="loadFail" hidden></div></div>
+<p class="model-note" data-i18n="texNote"></p></div>
+<div class="btn-row"><button class="btn" id="s0-view" data-i18n="viewReset"></button></div>
+<p class="readout" id="s0-ro" aria-live="polite"></p><p class="readout" data-i18n="s0result"></p>
+</div></section>
+<section class="step" id="step1" data-step="1"><div class="step-inner">
+<p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2>
+<p class="explain" data-i18n-html="s1e"></p>
+<div class="stage"><p class="stage-title" data-i18n="dragHint"></p><div class="viewport"><canvas id="s1-canvas" data-step="1" tabindex="0" role="img" data-i18n-aria="canvasLabel"></canvas><div class="marker-label" id="s1-marker" data-i18n="markerHere" hidden></div><div class="load-fail" data-i18n="loadFail" hidden></div></div>
+<p class="model-note" data-i18n="texNote"></p></div>
+<div class="aux"><p class="stage-title" data-i18n="sideCap"></p><canvas id="s1-side" height="250" role="img" data-i18n-aria="sideLabel"></canvas></div>
+<div class="btn-row"><button class="btn primary" id="s1-light"></button><button class="btn" id="s1-view" data-i18n="viewReset"></button></div>
+<p class="readout" id="s1-ro" aria-live="polite"></p><p class="readout" data-i18n="s1result"></p>
+</div></section>
+<section class="step" id="step2" data-step="2"><div class="step-inner">
+<p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2>
+<p class="explain" data-i18n-html="s2e"></p>
+<div class="stage"><p class="stage-title" data-i18n="dragHint"></p><div class="viewport"><canvas id="s2-canvas" data-step="2" tabindex="0" role="img" data-i18n-aria="canvasLabel"></canvas><div class="marker-label" id="s2-marker" data-i18n="markerHere" hidden></div><div class="load-fail" data-i18n="loadFail" hidden></div></div>
+<p class="model-note" data-i18n="texNote"></p></div>
+<div class="aux"><p class="stage-title" data-i18n="topCap"></p><canvas id="s2-top" height="270" role="img" data-i18n-aria="topLabel"></canvas></div>
+<div class="btn-row"><button class="btn primary" id="s2-play"></button><button class="btn" id="s2-restart" data-i18n="restart"></button></div>
+<div class="controls">
+<label for="s2-time"><span><span data-i18n="timeLab"></span> <output id="time-val" for="s2-time"></output></span><input id="s2-time" data-step="2" type="range" min="0" max="1439" step="1" value="720"></label>
+<label for="s2-speed"><span><span data-i18n="speedLab"></span> <output id="speed-val" for="s2-speed"></output></span><input id="s2-speed" data-step="2" type="range" min="25" max="300" step="5" value="100"></label>
+</div>
+<div class="aux band-wrap"><p class="stage-title" data-i18n="bandLab"></p><canvas id="s2-band" height="34" role="img" data-i18n-aria="bandLabel"></canvas></div>
+<p class="readout" id="s2-progress" aria-live="polite"></p>
+<p class="readout" id="s2-ro" aria-live="polite"></p><p class="readout" data-i18n="s2result"></p>
+</div></section>
+<section class="step" id="step3" data-step="3"><div class="step-inner">
+<p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2>
+<p class="explain" data-i18n-html="s3e"></p>
+<div class="btn-row" role="group" data-i18n-aria="viewModeLabel"><button class="btn" id="s3-vboth" data-i18n="viewBoth"></button><button class="btn" id="s3-vspace" data-i18n="viewSpace"></button><button class="btn" id="s3-vground" data-i18n="viewGround"></button><button class="btn primary" id="s3-play"></button></div>
+<div class="dual" id="s3-dual">
+<div class="half" id="s3-half-space"><p class="stage-title" data-i18n="capSpace"></p><div class="aux"><canvas id="s3-side" height="260" role="img" data-i18n-aria="sideLabel"></canvas></div></div>
+<div class="half" id="s3-half-ground"><p class="stage-title" data-i18n="capGround"></p><div class="aux"><canvas id="s3-sky" height="260" role="img" data-i18n-aria="skyLabel"></canvas></div></div>
+</div>
+<p class="hint" data-i18n="sameTime"></p>
+<p class="readout" id="s3-ro" aria-live="polite"></p><p class="readout" data-i18n="s3result"></p>
+</div></section>
+<section class="step" id="step4" data-step="4"><div class="step-inner">
+<p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2>
+<p class="explain" data-i18n-html="s4e"></p>
+<div class="dual">
+<div class="half"><p class="stage-title" data-i18n="topCap"></p><div class="aux"><canvas id="s4-top" height="230" role="img" data-i18n-aria="topLabel"></canvas></div></div>
+<div class="half"><p class="stage-title" data-i18n="capGround"></p><div class="aux"><canvas id="s4-sky" height="230" role="img" data-i18n-aria="skyLabel"></canvas></div></div>
+</div>
+<div class="btn-row"><button class="btn primary" id="s4-rev"></button><button class="btn" id="s4-play"></button></div>
+<p class="hint" data-i18n="revNote"></p>
+<div class="controls">
+<label for="s4-speed"><span><span data-i18n="speedLab"></span> <output id="speed4-val" for="s4-speed"></output></span><input id="s4-speed" data-step="4" type="range" min="25" max="300" step="5" value="100"></label>
+</div>
+<p class="hint" data-i18n="speedNote"></p>
+<p class="readout" id="s4-ro" aria-live="polite"></p><p class="readout" data-i18n="s4result"></p>
+</div></section>
+<section class="step" id="step5" data-step="5"><div class="step-inner">
+<p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2>
+<p class="explain" data-i18n="s5e"></p>
+<div class="quiz">
+<div class="quiz-q" id="q1"><h3 data-i18n="q1t"></h3><div class="btn-row">
+<button type="button" class="btn big" id="q1-o0" data-q="q1" data-opt="0" data-i18n="q1o0"></button>
+<button type="button" class="btn big" id="q1-o1" data-q="q1" data-opt="1" data-i18n="q1o1"></button>
+<button type="button" class="btn big" id="q1-o2" data-q="q1" data-opt="2" data-i18n="q1o2"></button>
+<button type="button" class="btn big" id="q1-o3" data-q="q1" data-opt="3" data-i18n="q1o3"></button>
+</div><p class="readout" id="q1-ro" aria-live="polite"></p></div>
+<div class="quiz-q" id="q2"><h3 data-i18n="q2t"></h3><div class="btn-row">
+<button type="button" class="btn big" id="q2-o0" data-q="q2" data-opt="0" data-i18n="q2o0"></button>
+<button type="button" class="btn big" id="q2-o1" data-q="q2" data-opt="1" data-i18n="q2o1"></button>
+<button type="button" class="btn big" id="q2-o2" data-q="q2" data-opt="2" data-i18n="q2o2"></button>
+</div><p class="readout" id="q2-ro" aria-live="polite"></p></div>
+<div class="quiz-q" id="q3"><h3 data-i18n="q3t"></h3><div class="btn-row">
+<button type="button" class="btn big" id="q3-o0" data-q="q3" data-opt="0" data-i18n="q3o0"></button>
+<button type="button" class="btn big" id="q3-o1" data-q="q3" data-opt="1" data-i18n="q3o1"></button>
+<button type="button" class="btn big" id="q3-o2" data-q="q3" data-opt="2" data-i18n="q3o2"></button>
+</div><p class="readout" id="q3-ro" aria-live="polite"></p></div>
+<div class="quiz-q" id="q4"><h3 data-i18n="q4t"></h3><div class="btn-row">
+<button type="button" class="btn big" id="q4-o0" data-q="q4" data-opt="0" data-i18n="q4o0"></button>
+<button type="button" class="btn big" id="q4-o1" data-q="q4" data-opt="1" data-i18n="q4o1"></button>
+<button type="button" class="btn big" id="q4-o2" data-q="q4" data-opt="2" data-i18n="q4o2"></button>
+</div><p class="readout" id="q4-ro" aria-live="polite"></p></div>
+<p class="readout" id="q-score" aria-live="polite"></p>
+<p class="readout" id="quiz-gate" aria-live="polite"></p>
+</div>
+</div></section>
+<section class="step" id="step6" data-step="6"><div class="step-inner">
+<div class="finale">
+<p class="step-kicker" data-i18n="finK"></p><h2 data-i18n="finT"></h2>
+<p class="readout" id="fin-gate" aria-live="polite"></p>
+<div class="cards3">
+<div class="value-card"><h3 data-i18n="fc1t"></h3><p data-i18n="fc1b"></p></div>
+<div class="value-card"><h3 data-i18n="fc2t"></h3><p data-i18n="fc2b"></p></div>
+<div class="value-card"><h3 data-i18n="fc3t"></h3><p data-i18n="fc3b"></p></div>
+</div>
+<h3 class="model-h" data-i18n="modelT"></h3>
+<p data-i18n="model1"></p>
+<p data-i18n="model2"></p>
+<p data-i18n="model3"></p>
+<h3 class="model-h" data-i18n="nextT"></h3>
+<div class="dual">
+<div class="half value-card"><h3 data-i18n="pv1t"></h3><p data-i18n="pv1b"></p></div>
+<div class="half value-card"><h3 data-i18n="pv2t"></h3><p data-i18n="pv2b"></p></div>
+</div>
+</div>
+</div></section>
+</main><footer class="site-foot" data-i18n="foot"></footer>
+<script src="app.js"></script>
+<script>applyLang(getLang());</script>
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
+<script type="module" id="dn-3d" src="app3d.js"></script>
+<script>
+function dnShowLoadFail(){if(window.__DN3D_READY)return;document.querySelectorAll('.load-fail').forEach(function(el){el.hidden=false;});}
+document.getElementById('dn-3d').addEventListener('error',dnShowLoadFail);
+window.__dnBootTimer=setTimeout(dnShowLoadFail,6000);
+</script>
+</body></html>

@@ -80,7 +80,7 @@ const STR = {
 
     s5k: '第 5 步 · 高维',
     s5t: '网格死了，豆子还活着',
-    s5e: '把撒点搬进 d 维：单位超立方体 [0,1]<sup>d</sup> 里内切一个半径 0.5 的超球，它的体积比真值是 π<sup>d/2</sup>·(0.5)<sup>d</sup> / Γ(d/2+1)。网格法先死给你看：哪怕每维只取 10 个点，总数就是 <strong>10<sup>d</sup></strong>——维度一高，没开始算就结束了。而撒点的<strong>绝对</strong>误差依旧 ~1/√N，不随维度变；代价转嫁成另一件事：高维里超球的体积占比小得可怜，命中越来越稀有（盯着命中数看）。左图画的是点的前两维投影，落入判定用的却是全部 d 维。',
+    s5e: '把撒点搬进 d 维：单位超立方体 [0,1]<sup>d</sup> 里内切一个半径 0.5 的超球，它的体积比真值是 π<sup>d/2</sup>·(0.5)<sup>d</sup> / Γ(d/2+1)（Γ 读作「伽马」，是阶乘的推广：整数上 Γ(n+1) = n!，半整数上也有值，如 Γ(1/2) = √π——读数里的真值就是拿它算的，公式里把它当一个普通数看即可）。网格法先死给你看：哪怕每维只取 10 个点，总数就是 <strong>10<sup>d</sup></strong>——维度一高，没开始算就结束了。而撒点的<strong>绝对</strong>误差依旧 ~1/√N，不随维度变；代价转嫁成另一件事：高维里超球的体积占比小得可怜，命中越来越稀有（盯着命中数看）。左图画的是点的前两维投影，落入判定用的却是全部 d 维。',
     s5dimLab: '维度 d',
     s5ro: 'd = {d} · N = {n} · 命中 <span>{hits}</span> · 体积比估值 = <span>{est}</span> · 真值 {tru} · 相对偏差 {rel} · 种子 {seed}',
     s5grid: '网格法：每维 10 点 → 10<sup>{d}</sup> = {grid} 个点，按每秒评估 1 亿次需要 {t10}；每维加密到 100 点 → 10<sup>{e100}</sup> 个点需要 {t100}。撒点这边，N 和维度无关。',
@@ -183,7 +183,7 @@ const STR = {
 
     s5k: 'Step 5 · High dimensions',
     s5t: 'The grid dies; the beans live on',
-    s5e: 'Move the throwing into d dimensions: inside the unit hypercube [0,1]<sup>d</sup> sits an inscribed hypersphere of radius 0.5, whose true volume ratio is π<sup>d/2</sup>·(0.5)<sup>d</sup> / Γ(d/2+1). Watch the grid die first: even a coarse 10 points per dimension needs <strong>10<sup>d</sup></strong> points in total — raise the dimension and it is over before it starts. The beans’ <strong>absolute</strong> error still follows ~1/√N, indifferent to dimension; the cost moves elsewhere — in high dimensions the sphere’s share of the cube is pitifully small, so hits get rare (keep an eye on the hit count). The picture shows the first two coordinates of each point; the inside test uses all d of them.',
+    s5e: 'Move the throwing into d dimensions: inside the unit hypercube [0,1]<sup>d</sup> sits an inscribed hypersphere of radius 0.5, whose true volume ratio is π<sup>d/2</sup>·(0.5)<sup>d</sup> / Γ(d/2+1) (Γ, “gamma”, is the factorial stretched beyond whole numbers: Γ(n+1) = n! at integers, and it also takes values at half-integers, e.g. Γ(1/2) = √π — the true values in the readout are computed with it; in the formula, just treat it as an ordinary number). Watch the grid die first: even a coarse 10 points per dimension needs <strong>10<sup>d</sup></strong> points in total — raise the dimension and it is over before it starts. The beans’ <strong>absolute</strong> error still follows ~1/√N, indifferent to dimension; the cost moves elsewhere — in high dimensions the sphere’s share of the cube is pitifully small, so hits get rare (keep an eye on the hit count). The picture shows the first two coordinates of each point; the inside test uses all d of them.',
     s5dimLab: 'Dimension d',
     s5ro: 'd = {d} · N = {n} · hits <span>{hits}</span> · volume-ratio estimate = <span>{est}</span> · true value {tru} · relative deviation {rel} · seed {seed}',
     s5grid: 'Grid method: 10 points per dimension → 10<sup>{d}</sup> = {grid} points; at 100 million evaluations per second that takes {t10}. Refine to 100 per dimension → 10<sup>{e100}</sup> points, taking {t100}. The beans’ N does not care about d.',

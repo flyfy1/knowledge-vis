@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>除法与余数 · 分公平，剩下的叫余数 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=r1">
+<script src="i18n.js?v=r1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">除法与余数 · 分公平，剩下的叫余数</h1>
+    <p class="tagline" data-i18n="tagline">乘法是把东西合起来数，除法是把东西分开来数。分得完是运气，分不完才是常态——剩下的那一点点有个名字，叫余数。这一页从头发糖果开始：商、余数、被除数、除数全在盘子里看得见，最后收成一本谁都能自己验的账：被除数 = 除数 × 商 + 余数。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 分糖果</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 余数要比除数小</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 数轴跳格</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 星期推算</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 自测 · 验算账本</a>
+</nav>
+
+<main>
+
+<!-- ============ 步骤 0：钩子（分糖果） ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+    <h2 data-i18n="s0t">分糖果：分不完的那一颗</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="340"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s0totalLab">糖的总数（被除数）</span> <span class="val" id="s0-total-val">17</span></span>
+        <input type="range" id="s0-total" min="10" max="30" step="1" value="17">
+      </label>
+      <label><span><span data-i18n="s0peopleLab">分给几个人（除数）</span> <span class="val" id="s0-people-val">4</span></span>
+        <input type="range" id="s0-people" min="2" max="6" step="1" value="4">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s0-deal1" data-i18n="s0deal1">发一颗</button>
+      <button class="btn big primary" id="s0-play" data-i18n="s0play">连播分发</button>
+      <button class="btn big" id="s0-reset" data-i18n="s0reset">重新分</button>
+    </div>
+    <p class="readout" id="s0-readout"></p>
+    <p class="readout" id="s0-prog"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 步骤 1：余数为什么必须比除数小 ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 分完的判据</p>
+    <h2 data-i18n="s1t">余数为什么必须比除数小</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="320"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1totalLab">糖的总数（被除数）</span> <span class="val" id="s1-total-val">17</span></span>
+        <input type="range" id="s1-total" min="10" max="30" step="1" value="17">
+      </label>
+      <label><span><span data-i18n="s1divLab">分给几个人（除数）</span> <span class="val" id="s1-div-val">3</span></span>
+        <input type="range" id="s1-div" min="2" max="6" step="1" value="3">
+      </label>
+      <label><span><span data-i18n="s1perLab">每人先分几颗（商）</span> <span class="val" id="s1-per-val">4</span></span>
+        <input type="range" id="s1-per" min="0" max="5" step="1" value="4">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s1-fix" data-i18n="s1fix">一键补分到分完</button>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 2：数轴跳格（与第 0 步同一组数） ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 换一个看法</p>
+    <h2 data-i18n="s2t">除法是数轴上的跳格</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="300"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2totalLab">总数（被除数）</span> <span class="val" id="s2-total-val">17</span></span>
+        <input type="range" id="s2-total" min="10" max="30" step="1" value="17">
+      </label>
+      <label><span><span data-i18n="s2divLab">每格跳多远（除数）</span> <span class="val" id="s2-div-val">4</span></span>
+        <input type="range" id="s2-div" min="2" max="6" step="1" value="4">
+      </label>
+    </div>
+    <p class="hint" data-i18n-html="s2shareNote"></p>
+    <div class="btn-row">
+      <button class="btn big" id="s2-jump" data-i18n="s2jump">跳一格</button>
+      <button class="btn big primary" id="s2-play" data-i18n="s2play">连播</button>
+      <button class="btn big" id="s2-reset" data-i18n="s2reset">重来</button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="hint" id="s2-hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 3：星期推算 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 余数有用</p>
+    <h2 data-i18n="s3t">100 天后是星期几？</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="330"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3daysLab">往后数几天</span> <span class="val" id="s3-days-val">100</span></span>
+        <input type="range" id="s3-days" min="1" max="365" step="1" value="100">
+      </label>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s3quickLab">试几个：</span>
+      <button class="btn big" data-days="7">7</button>
+      <button class="btn big" data-days="30">30</button>
+      <button class="btn big" data-days="100">100</button>
+      <button class="btn big" data-days="365">365</button>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 步骤 4：自测 + 验算账本（终章） ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 自测</p>
+    <h2 data-i18n="s4t">自测：分物与验算账本</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="240"></canvas>
+    </div>
+
+    <div class="quiz-block">
+      <p class="quiz-q" data-i18n="s4q1">① 23 本书，平均分给 5 个小朋友。每人分几本？还剩几本？</p>
+      <div class="btn-row">
+        <button class="btn big" id="s4-q1-a" data-i18n="s4q1a">每人 4 本，剩 3 本</button>
+        <button class="btn big" id="s4-q1-b" data-i18n="s4q1b">每人 5 本，剩 2 本</button>
+        <button class="btn big" id="s4-q1-c" data-i18n="s4q1c">每人 3 本，剩 8 本</button>
+      </div>
+      <p class="readout feedback" id="s4-q1-fb"></p>
+    </div>
+
+    <div class="quiz-block">
+      <p class="quiz-q" data-i18n="s4q2">② 验算题：☆ ÷ 6 = 7 …… 4。被除数 ☆ 是多少？</p>
+      <div class="btn-row">
+        <button class="btn big" id="s4-q2-a">42</button>
+        <button class="btn big" id="s4-q2-b">46</button>
+        <button class="btn big" id="s4-q2-c">52</button>
+      </div>
+      <p class="readout feedback" id="s4-q2-fb"></p>
+    </div>
+
+    <p class="readout" id="s4-done"></p>
+
+    <div class="finale">
+      <p data-i18n-html="s4fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../area-model/#step1" data-i18n="lkArea"></a>
+      </p>
+      <p style="margin-top:8px">
+        <a class="fourier-link" href="../fractions/#step5" data-i18n="lkFrac"></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 除法与余数 Division &amp; Remainders —— 一步一交互系列</footer>
+
+<script src="app.js?v=r1"></script>
+</body>
+</html>

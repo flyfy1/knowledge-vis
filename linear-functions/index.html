@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一次函数 · 斜率是陡缓，截距是起点 —— 一步一交互</title>
+<link rel="stylesheet" href="style.css?v=lf1">
+<script src="i18n.js?v=lf1"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">一次函数 · 直线与它的方程</h1>
+    <p class="tagline" data-i18n="tagline">y = kx + b 不是符号游戏：k 是每走一步抬高多少（坡的陡缓），b 是还没出发就站在多高（起点）。这一页把直线和它那行方程一一对上——拖直线，方程跟着变；拖方程，直线跟着动，你会发现这本来就是同一件事的两面。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 爬坡</a>
+  <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 起点</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 方程长出来</a>
+  <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 两条线相遇</a>
+  <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 自测</a>
+  <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 终章</a>
+</nav>
+
+<main>
+
+<!-- ============ 第 0 步：爬坡（斜率） ============ -->
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 爬坡</p>
+    <h2 data-i18n="s0t">爬坡：每一步抬高一样多，点就排成直线</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage">
+      <canvas id="s0-canvas" height="400"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s0kLab">每向前 1 格，抬高几格</span> <span class="val" id="s0-k-val">k = 1</span></span>
+        <input type="range" id="s0-k" min="0" max="8" step="1" value="6">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn big primary" id="s0-play" data-i18n="s0play">重新落点 ▶</button>
+    </div>
+    <p class="readout" id="s0-pts"></p>
+    <p class="readout" id="s0-ro"></p>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <button class="btn primary" id="s0-start" data-i18n="start">开始探索 ↓</button>
+  </div>
+</section>
+
+<!-- ============ 第 1 步：起点（截距） ============ -->
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 起点</p>
+    <h2 data-i18n="s1t">起点：换个高度出发，整条线一起平移</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage">
+      <canvas id="s1-canvas" height="440"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1bLab">起点高度 b（还没出发、x = 0 时站的高度）</span> <span class="val" id="s1-b-val">b = 1</span></span>
+        <input type="range" id="s1-b" min="-3" max="3" step="1" value="1">
+      </label>
+    </div>
+    <p class="readout" id="s1-ro"></p>
+    <p class="hint" data-i18n-html="s1hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 2 步：方程长出来 ============ -->
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 方程长出来</p>
+    <h2 data-i18n="s2t">把陡缓和起点拼起来：y = kx + b</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="440"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2kLab">斜率 k（每走 1 格抬高多少）</span> <span class="val" id="s2-k-val">k = 1</span></span>
+        <input type="range" id="s2-k" min="0" max="8" step="1" value="6">
+      </label>
+      <label><span><span data-i18n="s2bLab">截距 b（x = 0 时的 y）</span> <span class="val" id="s2-b-val">b = 1</span></span>
+        <input type="range" id="s2-b" min="-4" max="4" step="1" value="1">
+      </label>
+    </div>
+    <div class="eq-display"><span class="eq-pre" data-i18n="s2eqPre">这条线的方程</span><span class="eq-body" id="s2-eq">y = x + 1</span></div>
+    <div class="btn-row">
+      <button class="btn big" id="s2-prev" data-i18n="s2prev">← 上一个点</button>
+      <button class="btn big" id="s2-next" data-i18n="s2next">下一个点 →</button>
+    </div>
+    <p class="readout" id="s2-probe"></p>
+    <p class="hint" data-i18n-html="s2hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 3 步：两条线相遇 ============ -->
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 两条线相遇</p>
+    <h2 data-i18n="s3t">两条线相遇：交点是共同的解</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="440"></canvas>
+    </div>
+    <p class="readout" id="s3-l1"></p>
+    <div class="controls">
+      <label><span><span data-i18n="s3k2Lab">第二条线的斜率 k₂（陡缓）</span> <span class="val" id="s3-k2-val">k₂ = 2</span></span>
+        <input type="range" id="s3-k2" min="-2" max="2" step="1" value="2">
+      </label>
+      <label><span><span data-i18n="s3b2Lab">第二条线的截距 b₂（起点高度）</span> <span class="val" id="s3-b2-val">b₂ = −1</span></span>
+        <input type="range" id="s3-b2" min="-3" max="3" step="1" value="-1">
+      </label>
+    </div>
+    <p class="readout" id="s3-l2"></p>
+    <p class="readout" id="s3-ro"></p>
+    <p class="hint" data-i18n-html="s3hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 4 步：自测 ============ -->
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 自测</p>
+    <h2 data-i18n="s4t">自测：看图、摆线、读价目表</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+
+    <h3 class="quiz-t" data-i18n="q1t">题 1 · 看图选方程</h3>
+    <p class="explain" data-i18n-html="q1d"></p>
+    <div class="stage">
+      <canvas id="s4q1-canvas" height="300"></canvas>
+    </div>
+    <div class="btn-row" id="s4q1-opts">
+      <button class="btn big opt" id="s4q1-o0" type="button"></button>
+      <button class="btn big opt" id="s4q1-o1" type="button"></button>
+      <button class="btn big opt" id="s4q1-o2" type="button"></button>
+    </div>
+    <p class="readout" id="s4q1-ro"></p>
+
+    <h3 class="quiz-t" data-i18n="q2t">题 2 · 把线摆出来</h3>
+    <p class="explain" data-i18n-html="q2d"></p>
+    <div class="stage">
+      <canvas id="s4q2-canvas" height="400"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="q2kLab">你的斜率 k（陡缓）</span> <span class="val" id="s4q2-k-val">k = 0</span></span>
+        <input type="range" id="s4q2-k" min="-3" max="3" step="1" value="0">
+      </label>
+      <label><span><span data-i18n="q2bLab">你的截距 b（起点高度）</span> <span class="val" id="s4q2-b-val">b = 0</span></span>
+        <input type="range" id="s4q2-b" min="-3" max="3" step="1" value="0">
+      </label>
+    </div>
+    <p class="readout" id="s4q2-cur"></p>
+    <p class="readout" id="s4q2-ro"></p>
+
+    <h3 class="quiz-t" data-i18n="q3t">题 3 · 出租车计价</h3>
+    <p class="explain" data-i18n-html="q3d"></p>
+    <div class="stage">
+      <canvas id="s4q3-canvas" height="320"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big mode active" id="s4q3-ma" type="button" data-i18n="q3aBtn">问一：坐 3 公里多少钱？</button>
+      <button class="btn big mode" id="s4q3-mb" type="button" data-i18n="q3bBtn">问二：付 20 元能坐几公里？</button>
+    </div>
+    <p class="readout" id="s4q3-ro"></p>
+    <p class="hint" data-i18n-html="s4hint"></p>
+  </div>
+</section>
+
+<!-- ============ 第 5 步：终章 ============ -->
+<section class="step" id="step5" data-step="5">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s5k">第 5 步 · 终章</p>
+    <h2 data-i18n="s5t">一张说明书，管住一条线</h2>
+    <p class="explain" data-i18n-html="s5e"></p>
+    <div class="cards3">
+      <div class="value-card">
+        <p class="card-title" data-i18n="c1h">斜率 k = 陡缓</p>
+        <p class="card-body" data-i18n-html="c1"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c2h">截距 b = 起点</p>
+        <p class="card-body" data-i18n-html="c2"></p>
+      </div>
+      <div class="value-card">
+        <p class="card-title" data-i18n="c3h">交点 = 共同解</p>
+        <p class="card-body" data-i18n-html="c3"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s5fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="../pythagoras/#step5" data-i18n="s5lkPyth"></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 一次函数 Linear Functions —— 一步一交互系列</footer>
+
+<script src="app.js?v=lf1"></script>
+</body>
+</html>
