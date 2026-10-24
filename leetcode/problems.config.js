@@ -1225,6 +1225,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n) time; O(n) auxiliary space"
   },
   {
+    "id": 329,
+    "title": {
+      "zh": "矩阵中的最长递增路径",
+      "en": "Longest Increasing Path in a Matrix"
+    },
+    "desc": {
+      "zh": "从四格路径推导逐层移除峰值的不变量。",
+      "en": "Derive peak-removal rounds from a four-cell path."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "有向无环图",
+        "en": "Directed acyclic graph"
+      },
+      {
+        "zh": "拓扑排序",
+        "en": "Topological sorting"
+      }
+    ],
+    "path": "329/",
+    "leetcodeUrl": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+    "language": "Python",
+    "complexity": "O(mn) time; O(mn) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

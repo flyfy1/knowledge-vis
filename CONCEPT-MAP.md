@@ -802,3 +802,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Cross-half range counting | `leetcode/327/#step2` | Preserve index order by splitting before sorting; count with two monotone boundaries. |
 
 <!-- /leetcode-327-campaign -->
+
+
+<!-- leetcode-329-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Peak-removal rounds | `leetcode/329/#step2` | Count longest increasing paths by removing ready local peaks. |
+| Longest-path recurrence | `leetcode/329/#step1` | Derive one plus the maximum larger-neighbor suffix length. |
+
+<!-- /leetcode-329-campaign -->
