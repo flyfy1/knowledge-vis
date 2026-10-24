@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "pair_cases": 2647,
+  "exhaustive_flag_words": 1023,
+  "canonical_trie_nodes_checked": 18168,
+  "max_input": {
+    "n": 5000,
+    "length": 300,
+    "expectedPairs": 0
+  },
+  "seconds": 8.152,
+  "sourceMirror": "exact"
+}
