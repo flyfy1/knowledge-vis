@@ -1385,6 +1385,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "addNum O(k+1) worst-case time; getIntervals O(k+1) time; O(k+1) space, k = current interval count"
   },
   {
+    "id": 354,
+    "title": {
+      "zh": "俄罗斯套娃信封问题",
+      "en": "Russian Doll Envelopes"
+    },
+    "desc": {
+      "zh": "从等宽陷阱推导最小结尾与二分更新。",
+      "en": "Derive minimal tails and binary search from the equal-width trap."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "排序",
+        "en": "Sorting"
+      },
+      {
+        "zh": "最长递增子序列",
+        "en": "Longest increasing subsequence"
+      }
+    ],
+    "path": "354/",
+    "leetcodeUrl": "https://leetcode.com/problems/russian-doll-envelopes/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
