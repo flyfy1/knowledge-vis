@@ -1143,6 +1143,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n^3) time; O(n^2) auxiliary space"
   },
   {
+    "id": 315,
+    "title": {
+      "zh": "右侧更小元素计数",
+      "en": "Count of Smaller Numbers After Self"
+    },
+    "desc": {
+      "zh": "从手算到 Fenwick 树，理解如何统计每个位置右侧的严格更小值。",
+      "en": "Derive a Fenwick-tree solution for strict-smaller values to the right of every position."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数组",
+        "en": "Arrays"
+      },
+      {
+        "zh": "树状数组",
+        "en": "Fenwick trees"
+      }
+    ],
+    "path": "315/",
+    "leetcodeUrl": "https://leetcode.com/problems/count-of-smaller-numbers-after-self/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

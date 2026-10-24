@@ -772,3 +772,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | sentinel boundaries | `leetcode/312/#step3` | Artificial 1s make edge products uniform. |
 
 <!-- /leetcode-312-campaign -->
+
+
+<!-- leetcode-315-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| 后缀与逆序处理 / Suffix and reverse processing | `leetcode/315/#step2` | 从右向左让已处理集合恰好等于右侧元素。 |
+| 前缀和 / Prefix sums | `leetcode/315/#step3` | 按秩累计频率，查询 rank−1 得到严格更小数量。 |
+
+<!-- /leetcode-315-campaign -->
