@@ -1,0 +1,13 @@
+{
+  "kind": "author self-check, not independent review",
+  "canonicalCases": 3638,
+  "canonicalIntermediateUpdates": 3006,
+  "exhaustive": "all arrays over {-1,0,1}, lengths 1..7",
+  "seed": 446,
+  "randomCases": 350,
+  "maxLength": 1000,
+  "maxExpected": 2781846,
+  "maxSeconds": 0.19343413203023374,
+  "sourceParity": true,
+  "duplicateLocalizationKeys": false
+}

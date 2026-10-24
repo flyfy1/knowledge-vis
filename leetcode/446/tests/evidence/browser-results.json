@@ -1,0 +1,293 @@
+{
+  "kind": "author self-check; no independent review",
+  "invariantFrames": 3369,
+  "presetsAndFeedback": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "frames": 4,
+      "result": 1
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "frames": 11,
+      "result": 7
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "frames": 11,
+      "result": 16
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "frames": 7,
+      "result": 3
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "frames": 1,
+      "result": 0
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "frames": 4,
+      "result": 0
+    },
+    {
+      "lang": "en",
+      "preset": 6,
+      "frames": 4,
+      "result": 0
+    },
+    {
+      "lang": "en",
+      "preset": 7,
+      "frames": 7,
+      "result": 1
+    },
+    {
+      "lang": "en",
+      "feedback": "Revisit what the source state counts. Source dp[2][2]=2 represents [3,5] and [1,3,5]. Append 7 to obtain [3,5,7] and [1,3,5,7], adding 2. A also counts the too-short [5,7]; B misses the four-term sequence. Target dp[3][2] was 0 and becomes 0+2+1=3; the running answer grows from 1 to 3.",
+      "fallback": "Clipboard unavailable. Select the text below and copy manually."
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "frames": 4,
+      "result": 1
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "frames": 11,
+      "result": 7
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "frames": 11,
+      "result": 16
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "frames": 7,
+      "result": 3
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "frames": 1,
+      "result": 0
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "frames": 4,
+      "result": 0
+    },
+    {
+      "lang": "zh",
+      "preset": 6,
+      "frames": 4,
+      "result": 0
+    },
+    {
+      "lang": "zh",
+      "preset": 7,
+      "frames": 7,
+      "result": 1
+    },
+    {
+      "lang": "zh",
+      "feedback": "再看源状态的含义。 源 dp[2][2]=2，分别是 [3,5] 和 [1,3,5]；接上 7 得到 [3,5,7] 与 [1,3,5,7]，所以新增 2。A 多算了只有两项的 [5,7]；B 漏掉四项序列。目标 dp[3][2] 原来为 0，现在为 0+2+1=3；累计答案从 1 变成 3。",
+      "fallback": "剪贴板不可用。请在下方选中文本手动复制。"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "pageOverflow": false,
+      "cardClipping": false
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "pageOverflow": false,
+      "cardClipping": false
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "pageOverflow": false,
+      "cardClipping": false
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "pageOverflow": false,
+      "cardClipping": false
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "pageOverflow": false,
+      "cardClipping": false
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "pageOverflow": false,
+      "cardClipping": false
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "pageOverflow": false,
+      "cardClipping": false
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "pageOverflow": false,
+      "cardClipping": false
+    }
+  ],
+  "zoom": "200% CSS zoom at 640px viewport (320px effective reading width)",
+  "focus": {
+    "width": "3px",
+    "color": "rgb(255, 180, 84)",
+    "style": "solid"
+  },
+  "focusContrast": 10.731637051347173,
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": "#prev",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#copy",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#langToggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".entry",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".step-nav a.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "cssBytes": 12333,
+  "targets": [
+    {
+      "id": "back-link",
+      "w": 139.296875,
+      "h": 48
+    },
+    {
+      "id": "active",
+      "w": 48,
+      "h": 48
+    },
+    {
+      "id": "",
+      "w": 49.0625,
+      "h": 48
+    },
+    {
+      "id": "official-link",
+      "w": 84.171875,
+      "h": 48
+    },
+    {
+      "id": "preset",
+      "w": 193,
+      "h": 48
+    },
+    {
+      "id": "prev",
+      "w": 96.015625,
+      "h": 48
+    },
+    {
+      "id": "next",
+      "w": 112.015625,
+      "h": 48
+    },
+    {
+      "id": "reset",
+      "w": 128.015625,
+      "h": 48
+    },
+    {
+      "id": "end",
+      "w": 160.015625,
+      "h": 48
+    },
+    {
+      "id": "reveal",
+      "w": 144.015625,
+      "h": 48
+    },
+    {
+      "id": "copy",
+      "w": 121.234375,
+      "h": 48
+    }
+  ],
+  "clipboardSuccess": true,
+  "clipboardFallback": true,
+  "sourceDownloadParity": true,
+  "storageDenied": true,
+  "offlineFile": true,
+  "keyboard": true,
+  "deepLinks": true,
+  "errors": [],
+  "bad": [],
+  "external": []
+}
