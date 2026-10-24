@@ -1649,6 +1649,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O((log n)^2) time; O(1) auxiliary space"
   },
   {
+    "id": 446,
+    "title": {
+      "zh": "等差数列划分 II - 子序列",
+      "en": "Arithmetic Slices II - Subsequence"
+    },
+    "desc": {
+      "zh": "从两项起点推导按结尾与差值计数的动态规划。",
+      "en": "Derive endpoint-and-difference counting from two-term starting points."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "计数",
+        "en": "Counting"
+      }
+    ],
+    "path": "446/",
+    "leetcodeUrl": "https://leetcode.com/problems/arithmetic-slices-ii-subsequence/",
+    "language": "Python",
+    "complexity": "O(n²) expected time; O(n²) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
