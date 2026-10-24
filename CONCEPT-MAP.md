@@ -708,3 +708,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | higher/current/lower invariant | `leetcode/233/#step2` | The three parts determine the unfinished cycle contribution. |
 
 <!-- /leetcode-233-campaign -->
+
+
+<!-- leetcode-262-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Eligibility join | `leetcode/262/#step0` | Keep a trip only when both its client and driver are unbanned. |
+| Daily conditional rate | `leetcode/262/#step2` | For each day, divide cancelled eligible requests by all eligible requests. |
+| Pandas groupby | `leetcode/262/#step4` | Map the invariant to the official DataFrame callable. |
+
+<!-- /leetcode-262-campaign -->
