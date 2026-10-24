@@ -1,0 +1,182 @@
+{
+  "kind": "author real Chromium self-check",
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "presetVariants": 84,
+  "screenshots": [
+    "trace-en-320.png",
+    "trace-en-390.png",
+    "trace-en-736.png",
+    "trace-en-1440.png",
+    "zoom200-en.png",
+    "trace-zh-320.png",
+    "trace-zh-390.png",
+    "trace-zh-736.png",
+    "trace-zh-1440.png",
+    "zoom200-zh.png",
+    "forced-colors.png"
+  ],
+  "viewportChecks": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "overflow": false
+    }
+  ],
+  "consoleErrors": [],
+  "assetErrors": [],
+  "externalRequests": [],
+  "focus": {
+    "outline": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "minButtonHeight": 48,
+  "contrast": [
+    {
+      "name": "body",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "name": "muted",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "name": "explain",
+      "color": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "name": "readout",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "name": "disabled",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "name": "primary",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "name": "focus",
+      "color": "rgb(255, 180, 84)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 10.731637051347173
+    },
+    {
+      "name": "correct",
+      "color": "rgb(126, 226, 168)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.004815697188947
+    }
+  ],
+  "keyboard": "Enter, Tab, radio ArrowDown; visible 3px outline",
+  "storageDenied": "pass",
+  "clipboard": "real clipboard success and denied fallback in both locales",
+  "sourceParity": "display, clipboard, manual selection, HTTP download",
+  "zoomMethod": "CSS zoom=2 at each viewport, not OS/device zoom"
+}
