@@ -1199,6 +1199,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(S(m+n+k²)) time; O(m+n+k) auxiliary space, where S ≤ min(m,n,k)+1 is the number of feasible splits"
   },
   {
+    "id": 327,
+    "title": {
+      "zh": "区间和的个数",
+      "en": "Count of Range Sum"
+    },
+    "desc": {
+      "zh": "从逐段相加到前缀差，用归并的有序两半数出合法区间。",
+      "en": "Derive prefix differences and count valid pairs across sorted halves."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "前缀和",
+        "en": "Prefix sums"
+      },
+      {
+        "zh": "归并排序",
+        "en": "Merge sort"
+      }
+    ],
+    "path": "327/",
+    "leetcodeUrl": "https://leetcode.com/problems/count-of-range-sum/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
