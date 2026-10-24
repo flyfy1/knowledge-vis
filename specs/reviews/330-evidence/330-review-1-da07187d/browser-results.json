@@ -1,0 +1,31 @@
+{
+  "kind": "author self-check",
+  "checks": [
+    "en: all controls, presets, every frame, choices, copy, fallback, download, widths and zoom",
+    "zh: all controls, presets, every frame, choices, copy, fallback, download, widths and zoom",
+    "keyboard enter/tab/arrows, visible 3px focus, forced colors and reduced-motion",
+    "48px minimum control and link heights",
+    "offline file source display and simulation without fetch",
+    "blocked storage fallback",
+    "mobile ledger scrolls to retained new-miss and patch columns"
+  ],
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18770/leetcode/330/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/330/local.css?v=330-1",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/330/copy.js?v=330-1",
+    "http://127.0.0.1:18770/leetcode/330/core.js?v=330-1",
+    "http://127.0.0.1:18770/leetcode/330/python-code.js?v=330-1",
+    "http://127.0.0.1:18770/leetcode/330/app.js?v=330-1"
+  ],
+  "cssBytes": 11965,
+  "focus": {
+    "width": "3px",
+    "style": "solid",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrastMinimum": 6.449407898769069,
+  "limits": "Synthetic Chromium only; no real device, independent review, learner trial or public deployment."
+}
