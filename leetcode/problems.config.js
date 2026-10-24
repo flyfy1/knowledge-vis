@@ -1411,6 +1411,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n) time; O(n) space"
   },
   {
+    "id": 363,
+    "title": {
+      "zh": "矩形区域不超过 K 的最大数值和",
+      "en": "Max Sum of Rectangle No Larger Than K"
+    },
+    "desc": {
+      "zh": "把矩形压成一行，再寻找最小的合法历史前缀。",
+      "en": "Compress rectangles into rows and find the smallest eligible earlier prefix."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "前缀和",
+        "en": "Prefix sums"
+      },
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      }
+    ],
+    "path": "363/",
+    "leetcodeUrl": "https://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k/",
+    "language": "Python",
+    "complexity": "O(a² b²) time; O(b) auxiliary space, a=min(m,n), b=max(m,n)"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
