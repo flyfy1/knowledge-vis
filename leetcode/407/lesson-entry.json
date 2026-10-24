@@ -1,0 +1,38 @@
+{
+  "id": 407,
+  "title": {
+    "zh": "接雨水 II",
+    "en": "Trapping Rain Water II"
+  },
+  "desc": {
+    "zh": "沿最低逃逸通道推导二维积水，用最小堆逐圈确定水位。",
+    "en": "Derive escape levels along turning paths and fix water depths with a min-heap."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "最小堆",
+      "en": "Min-heap"
+    },
+    {
+      "zh": "边界扩展",
+      "en": "Boundary expansion"
+    }
+  ],
+  "path": "407/",
+  "leetcodeUrl": "https://leetcode.com/problems/trapping-rain-water-ii/",
+  "language": "Python",
+  "complexity": "O(mn log(mn)) time; O(mn) auxiliary space",
+  "concepts": [
+    {
+      "name": "Minimum escape bottleneck",
+      "step": 1,
+      "description": "Water level is the smallest possible maximum ground height along a path to the boundary."
+    },
+    {
+      "name": "Lowest frontier expansion",
+      "step": 2,
+      "description": "Discover each cell once from the smallest fixed escape level and retain cumulative water."
+    }
+  ]
+}
