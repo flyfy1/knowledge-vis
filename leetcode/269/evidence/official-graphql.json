@@ -1,0 +1,16 @@
+{
+  "accessedAt": "2026-10-24T11:52:28+08:00",
+  "officialUrl": "https://leetcode.com/problems/alien-dictionary/",
+  "endpoint": "https://leetcode.com/graphql",
+  "request": "query { question(titleSlug: \"alien-dictionary\") { questionId title content difficulty isPaidOnly exampleTestcases codeSnippets { lang langSlug code } } }",
+  "response": {
+    "questionId": "269",
+    "title": "Alien Dictionary",
+    "difficulty": "Hard",
+    "isPaidOnly": true,
+    "content": null,
+    "codeSnippets": null,
+    "exampleTestcases": "[\\\"wrt\\\",\\\"wrf\\\",\\\"er\\\",\\\"ett\\\",\\\"rftt\\\"]\\n[\\\"z\\\",\\\"x\\\"]\\n[\\\"z\\\",\\\"x\\\",\\\"z\\\"]"
+  },
+  "blocker": "The normally available authorized access exposed no official statement, constraints, examples with expected outputs, or language selector/code interface. The paid problem must not be reconstructed from discussion posts or presumed title."
+}
