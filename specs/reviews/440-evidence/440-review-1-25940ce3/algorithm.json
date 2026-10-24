@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "canonical": "solution.py: Solution.findKthNumber",
+  "final_answer_cases": 32504,
+  "actual_python_loop_invariants": 9341,
+  "actual_python_group_counts": 6791,
+  "oracle": "exhaustive string sort, iterative successor, independently checked digit DP rank",
+  "seed": 440
+}
