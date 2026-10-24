@@ -1,0 +1,27 @@
+{
+  "hashes": {
+    "index.html": "26f84db4d433adc102b65453ac7e4107d707b533a01c9b9a95e82b0f1b2efc2f",
+    "app.js": "3859b24efb34f62564150c90ae605a4bf2826e8fe9864ddba6ec5e00430a76bc",
+    "core.js": "7093b96a599ccfd8df4f0c39ed5c7e037bb8bb046b0e056bb302884a83be196a",
+    "copy.js": "4bac29bf68c26636647a7facde21c36bd27683f5f9d01b5c2e62eb2afb0fd1e9",
+    "local.css": "57e5c6feb6d86d24dc1a9bed746bac0fc9ae38e9ef81ec0c3e3bc2883d71e38d",
+    "solution.py": "305b8fab0b3391ee4558b5fc8019419d2c95bba6e6ad27c47506e93d007f5c4b",
+    "python-code.js": "8c8198cd2095d2288bcc14776e27e74984e9c2983b70615d65ee3cc552edfb7d",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "checks": [
+    {
+      "lang": "en",
+      "upperIntermediate": "Allocations 1/10; D=30, spent=3, remaining=27. Current R=15.\nBudget remains; current R is not the final demand.",
+      "history": "Run 1: length 50→47, spend 3 deletions; total demand R: 16→15."
+    },
+    {
+      "lang": "zh",
+      "upperIntermediate": "已完成 1/10 笔；D=30，已花 3，剩余 27。当前 R=15。\n预算未分配完；当前 R 还不是最终需求。",
+      "history": "段 1：长度 50→47，花 3 次删除；总需求 R：16→15。"
+    }
+  ],
+  "bindings": "wrong/correct/rechoose, save, pending and language-preserved state independently observed",
+  "zoom": "CSS zoom 200%, desktop1280; viewport resize390/1440 preserves state"
+}
