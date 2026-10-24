@@ -1,0 +1,12 @@
+{
+  "kind": "author self-check",
+  "oracle": "independent un-memoized enumeration of next stone indices",
+  "exhaustive": 2047,
+  "seeded": 700,
+  "explicit": 7,
+  "max_n": 2000,
+  "large_cases": 4,
+  "mutation": "unchanged",
+  "mirror": "exact",
+  "visible_baseline": "executed against all small cases"
+}

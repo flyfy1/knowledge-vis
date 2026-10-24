@@ -1,0 +1,652 @@
+{
+  "kind": "author self-check",
+  "checks": [
+    "en: all presets, both endpoints, every forward/back replay, reset/end, every prediction, change, locale state, clipboard/fallback",
+    "zh: all presets, both endpoints, every forward/back replay, reset/end, every prediction, change, locale state, clipboard/fallback"
+  ],
+  "bindings": [
+    {
+      "locale": "en",
+      "state": "prediction-0",
+      "text": "This prediction misses a legal state. The route is 0→1→2→4→7→11, with lengths 1, 1, 2, 3, 4. R[2]={1}, so R[4]={2}, followed by R[7]={3} and R[11]={4}. Equal consecutive lengths are allowed. Three is the number of candidates, not a length limit. Each jump increases by at most 1, so this route obeys the rule at every step."
+    },
+    {
+      "locale": "en",
+      "state": "prediction-1",
+      "text": "Correct prediction. The route is 0→1→2→4→7→11, with lengths 1, 1, 2, 3, 4. R[2]={1}, so R[4]={2}, followed by R[7]={3} and R[11]={4}. Equal consecutive lengths are allowed. Three is the number of candidates, not a length limit. Each jump increases by at most 1, so this route obeys the rule at every step."
+    },
+    {
+      "locale": "en",
+      "state": "prediction-2",
+      "text": "This prediction misses a legal state. The route is 0→1→2→4→7→11, with lengths 1, 1, 2, 3, 4. R[2]={1}, so R[4]={2}, followed by R[7]={3} and R[11]={4}. Equal consecutive lengths are allowed. Three is the number of candidates, not a length limit. Each jump increases by at most 1, so this route obeys the rule at every step."
+    },
+    {
+      "locale": "en",
+      "state": "processed-3-2",
+      "progress": "Just processed (x,k)=(3,2); processed 5 / 6 states.",
+      "candidates": "1\t4\tReject: no stone at this coordinate\n2\t5\tReject: no stone at this coordinate\n3\t6\tAdd: positive length landing on a stone"
+    },
+    {
+      "locale": "en",
+      "state": "copy-success",
+      "text": "Copied the complete Python source."
+    },
+    {
+      "locale": "en",
+      "state": "manual-copy-fallback",
+      "text": "Clipboard unavailable. Manually copy the selected complete source below."
+    },
+    {
+      "locale": "zh",
+      "state": "prediction-0",
+      "text": "这个预测遗漏了合法状态。 路线是 0→1→2→4→7→11，跳长为 1、1、2、3、4。R[2]={1}，所以 R[4]={2}；随后 R[7]={3}，R[11]={4}。相同跳长允许重复；三个是候选的数量，不是长度的上限。每次跳长最多比上一跳增加 1，这条路线逐步满足规则。"
+    },
+    {
+      "locale": "zh",
+      "state": "prediction-1",
+      "text": "预测正确。 路线是 0→1→2→4→7→11，跳长为 1、1、2、3、4。R[2]={1}，所以 R[4]={2}；随后 R[7]={3}，R[11]={4}。相同跳长允许重复；三个是候选的数量，不是长度的上限。每次跳长最多比上一跳增加 1，这条路线逐步满足规则。"
+    },
+    {
+      "locale": "zh",
+      "state": "prediction-2",
+      "text": "这个预测遗漏了合法状态。 路线是 0→1→2→4→7→11，跳长为 1、1、2、3、4。R[2]={1}，所以 R[4]={2}；随后 R[7]={3}，R[11]={4}。相同跳长允许重复；三个是候选的数量，不是长度的上限。每次跳长最多比上一跳增加 1，这条路线逐步满足规则。"
+    },
+    {
+      "locale": "zh",
+      "state": "processed-3-2",
+      "progress": "刚处理 (x,k)=(3,2)；已处理 5 / 6 个状态。",
+      "candidates": "1\t4\t拒绝：此坐标没有石头\n2\t5\t拒绝：此坐标没有石头\n3\t6\t添加：正长度且落在石头上"
+    },
+    {
+      "locale": "zh",
+      "state": "copy-success",
+      "text": "已复制完整 Python 源码。"
+    },
+    {
+      "locale": "zh",
+      "state": "manual-copy-fallback",
+      "text": "剪贴板不可用。请在下方已选文本中手动复制完整源码。"
+    }
+  ],
+  "layouts": [
+    {
+      "locale": "en",
+      "width": 320,
+      "viewport": 320,
+      "page": 320,
+      "cards": [
+        {
+          "width": 121,
+          "scroll": 121
+        },
+        {
+          "width": 121,
+          "scroll": 121
+        },
+        {
+          "width": 121,
+          "scroll": 121
+        },
+        {
+          "width": 119,
+          "scroll": 119
+        },
+        {
+          "width": 121,
+          "scroll": 121
+        }
+      ],
+      "controls": [
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "viewport": 390,
+      "page": 390,
+      "cards": [
+        {
+          "width": 156,
+          "scroll": 156
+        },
+        {
+          "width": 156,
+          "scroll": 156
+        },
+        {
+          "width": 156,
+          "scroll": 156
+        },
+        {
+          "width": 154,
+          "scroll": 154
+        },
+        {
+          "width": 156,
+          "scroll": 156
+        }
+      ],
+      "controls": [
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "viewport": 736,
+      "page": 736,
+      "cards": [
+        {
+          "width": 151,
+          "scroll": 151
+        },
+        {
+          "width": 151,
+          "scroll": 151
+        },
+        {
+          "width": 151,
+          "scroll": 151
+        },
+        {
+          "width": 149,
+          "scroll": 149
+        },
+        {
+          "width": 151,
+          "scroll": 151
+        }
+      ],
+      "controls": [
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "viewport": 1440,
+      "page": 1440,
+      "cards": [
+        {
+          "width": 170,
+          "scroll": 170
+        },
+        {
+          "width": 170,
+          "scroll": 170
+        },
+        {
+          "width": 170,
+          "scroll": 170
+        },
+        {
+          "width": 168,
+          "scroll": 168
+        },
+        {
+          "width": 170,
+          "scroll": 170
+        }
+      ],
+      "controls": [
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "viewport": 320,
+      "page": 320,
+      "cards": [
+        {
+          "width": 121,
+          "scroll": 121
+        },
+        {
+          "width": 121,
+          "scroll": 121
+        },
+        {
+          "width": 121,
+          "scroll": 121
+        },
+        {
+          "width": 119,
+          "scroll": 119
+        },
+        {
+          "width": 121,
+          "scroll": 121
+        }
+      ],
+      "controls": [
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "viewport": 390,
+      "page": 390,
+      "cards": [
+        {
+          "width": 156,
+          "scroll": 156
+        },
+        {
+          "width": 156,
+          "scroll": 156
+        },
+        {
+          "width": 156,
+          "scroll": 156
+        },
+        {
+          "width": 154,
+          "scroll": 154
+        },
+        {
+          "width": 156,
+          "scroll": 156
+        }
+      ],
+      "controls": [
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "viewport": 736,
+      "page": 736,
+      "cards": [
+        {
+          "width": 151,
+          "scroll": 151
+        },
+        {
+          "width": 151,
+          "scroll": 151
+        },
+        {
+          "width": 151,
+          "scroll": 151
+        },
+        {
+          "width": 149,
+          "scroll": 149
+        },
+        {
+          "width": 151,
+          "scroll": 151
+        }
+      ],
+      "controls": [
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "viewport": 1440,
+      "page": 1440,
+      "cards": [
+        {
+          "width": 170,
+          "scroll": 170
+        },
+        {
+          "width": 170,
+          "scroll": 170
+        },
+        {
+          "width": 170,
+          "scroll": 170
+        },
+        {
+          "width": 168,
+          "scroll": 168
+        },
+        {
+          "width": 170,
+          "scroll": 170
+        }
+      ],
+      "controls": [
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        },
+        {
+          "height": 48
+        }
+      ]
+    }
+  ],
+  "zoom": "200% CSS zoom in real Chromium at 1440px (720 CSS px effective layout)",
+  "focus": {
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "colors": {
+    "body": {
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)"
+    },
+    ".stage": {
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)"
+    },
+    ".stone": {
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)"
+    },
+    ".stone span": {
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgba(0, 0, 0, 0)"
+    },
+    ".btn": {
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)"
+    },
+    "#prev:disabled": {
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)"
+    },
+    ".btn.primary": {
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)"
+    },
+    "#langToggle .active": {
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)"
+    }
+  },
+  "contrast": [
+    {
+      "name": "body",
+      "fg": "#e8edf4",
+      "bg": "#0d1117",
+      "ratio": 16.086987125379448
+    },
+    {
+      "name": "panel text",
+      "fg": "#e8edf4",
+      "bg": "#161b22",
+      "ratio": 14.704584598678618
+    },
+    {
+      "name": "muted card",
+      "fg": "#9aa7b8",
+      "bg": "#1c2330",
+      "ratio": 6.449407898769069
+    },
+    {
+      "name": "disabled",
+      "fg": "#9aa7b8",
+      "bg": "#1c2330",
+      "ratio": 6.449407898769069
+    },
+    {
+      "name": "action",
+      "fg": "#0d1117",
+      "bg": "#6ee7ff",
+      "ratio": 13.100679028115637
+    },
+    {
+      "name": "focus",
+      "fg": "#ffb454",
+      "bg": "#1c2330",
+      "ratio": 8.937191437807625
+    },
+    {
+      "name": "muted stage",
+      "fg": "#9aa7b8",
+      "bg": "#161b22",
+      "ratio": 7.078851579017443
+    }
+  ],
+  "cssBytes": 11038,
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18770/leetcode/403/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/403/style.css?v=1",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/403/copy.js?v=1",
+    "http://127.0.0.1:18770/leetcode/403/core.js?v=1",
+    "http://127.0.0.1:18770/leetcode/403/python-code.js?v=1",
+    "http://127.0.0.1:18770/leetcode/403/app.js?v=1"
+  ],
+  "sourceParity": "display, actual clipboard, fallback textarea and browser download exact",
+  "storage": "denied-storage path exercised",
+  "offline": "loaded source and simulation work with network offline; no reload claimed"
+}
