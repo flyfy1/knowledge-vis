@@ -1,0 +1,225 @@
+[
+  {
+    "lang": "en",
+    "w": 320,
+    "scrollWidth": 472,
+    "clientWidth": 320,
+    "buttons": [
+      {
+        "t": "中",
+        "disabled": false
+      },
+      {
+        "t": "EN",
+        "disabled": false
+      },
+      {
+        "t": "Previous row",
+        "disabled": true
+      },
+      {
+        "t": "Next row",
+        "disabled": false
+      },
+      {
+        "t": "Reset",
+        "disabled": true
+      },
+      {
+        "t": "Reveal answer",
+        "disabled": true
+      },
+      {
+        "t": "Copy source",
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "w": 390,
+    "scrollWidth": 472,
+    "clientWidth": 390,
+    "buttons": [
+      {
+        "t": "中",
+        "disabled": false
+      },
+      {
+        "t": "EN",
+        "disabled": false
+      },
+      {
+        "t": "Previous row",
+        "disabled": true
+      },
+      {
+        "t": "Next row",
+        "disabled": false
+      },
+      {
+        "t": "Reset",
+        "disabled": true
+      },
+      {
+        "t": "Reveal answer",
+        "disabled": true
+      },
+      {
+        "t": "Copy source",
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "w": 1280,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "buttons": [
+      {
+        "t": "中",
+        "disabled": false
+      },
+      {
+        "t": "EN",
+        "disabled": false
+      },
+      {
+        "t": "Previous row",
+        "disabled": true
+      },
+      {
+        "t": "Next row",
+        "disabled": false
+      },
+      {
+        "t": "Reset",
+        "disabled": true
+      },
+      {
+        "t": "Reveal answer",
+        "disabled": true
+      },
+      {
+        "t": "Copy source",
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "lang": "zh-CN",
+    "w": 320,
+    "scrollWidth": 460,
+    "clientWidth": 320,
+    "buttons": [
+      {
+        "t": "中",
+        "disabled": false
+      },
+      {
+        "t": "EN",
+        "disabled": false
+      },
+      {
+        "t": "上一行",
+        "disabled": true
+      },
+      {
+        "t": "下一行",
+        "disabled": false
+      },
+      {
+        "t": "重置",
+        "disabled": true
+      },
+      {
+        "t": "揭晓答案",
+        "disabled": true
+      },
+      {
+        "t": "复制源码",
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "lang": "zh-CN",
+    "w": 390,
+    "scrollWidth": 460,
+    "clientWidth": 390,
+    "buttons": [
+      {
+        "t": "中",
+        "disabled": false
+      },
+      {
+        "t": "EN",
+        "disabled": false
+      },
+      {
+        "t": "上一行",
+        "disabled": true
+      },
+      {
+        "t": "下一行",
+        "disabled": false
+      },
+      {
+        "t": "重置",
+        "disabled": true
+      },
+      {
+        "t": "揭晓答案",
+        "disabled": true
+      },
+      {
+        "t": "复制源码",
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "lang": "zh-CN",
+    "w": 1280,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "buttons": [
+      {
+        "t": "中",
+        "disabled": false
+      },
+      {
+        "t": "EN",
+        "disabled": false
+      },
+      {
+        "t": "上一行",
+        "disabled": true
+      },
+      {
+        "t": "下一行",
+        "disabled": false
+      },
+      {
+        "t": "重置",
+        "disabled": true
+      },
+      {
+        "t": "揭晓答案",
+        "disabled": true
+      },
+      {
+        "t": "复制源码",
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "reset": "Processed 0/10 rows",
+    "transfer": "Processed 1/3 rows",
+    "feedback": "Correct: 0.00. The second row has a banned driver, so it never enters the denominator; the first is completed, giving 0/1. Change the choice to test again.",
+    "copyParity": false,
+    "clipLen": 968
+  }
+]

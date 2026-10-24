@@ -1,0 +1,47 @@
+{
+  "id": 262,
+  "title": {
+    "zh": "行程与用户",
+    "en": "Trips and Users"
+  },
+  "desc": {
+    "zh": "先筛掉任一端被封禁的行，再按天计算取消率。",
+    "en": "Filter out trips with either endpoint banned, then compute a daily cancellation rate."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "数据库",
+      "en": "Database"
+    },
+    {
+      "zh": "Pandas",
+      "en": "Pandas"
+    },
+    {
+      "zh": "分组聚合",
+      "en": "Grouped aggregation"
+    }
+  ],
+  "path": "262/",
+  "leetcodeUrl": "https://leetcode.com/problems/trips-and-users/",
+  "language": "Python",
+  "complexity": "O(T + U) expected time; O(T + U) space",
+  "concepts": [
+    {
+      "name": "Eligibility join",
+      "step": 0,
+      "description": "Keep a trip only when both its client and driver are unbanned."
+    },
+    {
+      "name": "Daily conditional rate",
+      "step": 2,
+      "description": "For each day, divide cancelled eligible requests by all eligible requests."
+    },
+    {
+      "name": "Pandas groupby",
+      "step": 4,
+      "description": "Map the invariant to the official DataFrame callable."
+    }
+  ]
+}
