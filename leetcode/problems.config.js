@@ -1039,6 +1039,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(log₁₀ num) time; O(log₁₀ num) space"
   },
   {
+    "id": 295,
+    "title": {
+      "zh": "数据流的中位数",
+      "en": "Find Median from Data Stream"
+    },
+    "desc": {
+      "zh": "用两个堆维护中位数两侧的边界，逐次解释插入与再平衡。",
+      "en": "Maintain the two middle boundaries with two heaps as values arrive."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "堆",
+        "en": "Heaps"
+      },
+      {
+        "zh": "数据流",
+        "en": "Data streams"
+      }
+    ],
+    "path": "295/",
+    "leetcodeUrl": "https://leetcode.com/problems/find-median-from-data-stream/",
+    "language": "Python",
+    "complexity": "O(log n) per addNum; O(1) per findMedian; O(n) space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

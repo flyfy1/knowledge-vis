@@ -730,3 +730,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 商与余数扫描 | `leetcode/273/#step3` | 用 num % 1000 和 num // 1000 逐组处理 |
 
 <!-- /leetcode-273-campaign -->
+
+
+<!-- leetcode-295-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Two-heap split | `leetcode/295/#step2` | Lower max-heap and upper min-heap expose the middle values. |
+| Balance invariant | `leetcode/295/#step2` | Every lower value is ≤ every upper value and sizes differ by at most one. |
+
+<!-- /leetcode-295-campaign -->
