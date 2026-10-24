@@ -1,0 +1,8 @@
+{
+  "kind": "author computational self-check",
+  "coverage": "all valid multisets of 1..6 directed non-self tickets on JFK/AAA/BBB; 150 seeded valid walks; both official examples; two 300-ticket boundaries; independent complete-route oracle; input preservation; every simulation transition and conservation invariant; exact mirror",
+  "result": {
+    "cases": 230,
+    "snapshots": 3654
+  }
+}
