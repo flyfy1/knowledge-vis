@@ -1,0 +1,228 @@
+{
+  "kind": "author browser self-check",
+  "assertions": 784,
+  "errors": [],
+  "assetErrors": [],
+  "externalRequests": [],
+  "geometry": [
+    {
+      "locale": "en",
+      "width": 320,
+      "noOverflow": true,
+      "minDigitWidth": 36,
+      "minControlHeight": 48
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "noOverflow": true,
+      "minDigitWidth": 36,
+      "minControlHeight": 48
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "noOverflow": true,
+      "minDigitWidth": 40,
+      "minControlHeight": 48
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "noOverflow": true,
+      "minDigitWidth": 40,
+      "minControlHeight": 48
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": "200% CSS layout zoom",
+      "noOverflow": true
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "noOverflow": true,
+      "minDigitWidth": 36,
+      "minControlHeight": 48
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "noOverflow": true,
+      "minDigitWidth": 36,
+      "minControlHeight": 48
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "noOverflow": true,
+      "minDigitWidth": 40,
+      "minControlHeight": 48
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "noOverflow": true,
+      "minDigitWidth": 40,
+      "minControlHeight": 48
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": "200% CSS layout zoom",
+      "noOverflow": true
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".digit",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".btn",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".btn:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".btn.primary",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".badge",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".label",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "th",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "a",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "summary",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "focus": {
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)",
+    "contrast": 8.937191437807625
+  },
+  "semanticBindings": [
+    {
+      "locale": "en",
+      "choice": "0",
+      "feedback": "That reason ignores the whole suffix. Choose A: both initial 8s tie, but then 9>1. Continuing suffix comparisons yields [8,8,9,8,8,1]. If B goes first, even the best continuation yields only [8,8,8,9,8,1]. Changing the choice clears this feedback; resetting other experiments leaves this question intact."
+    },
+    {
+      "locale": "en",
+      "choice": "1",
+      "feedback": "Correct. Choose A: both initial 8s tie, but then 9>1. Continuing suffix comparisons yields [8,8,9,8,8,1]. If B goes first, even the best continuation yields only [8,8,8,9,8,1]. Changing the choice clears this feedback; resetting other experiments leaves this question intact."
+    },
+    {
+      "locale": "en",
+      "choice": "2",
+      "feedback": "That reason ignores the whole suffix. Choose A: both initial 8s tie, but then 9>1. Continuing suffix comparisons yields [8,8,9,8,8,1]. If B goes first, even the best continuation yields only [8,8,8,9,8,1]. Changing the choice clears this feedback; resetting other experiments leaves this question intact."
+    },
+    {
+      "locale": "zh",
+      "choice": "0",
+      "feedback": "这个理由忽略了完整后缀。 应先取 A：两个 8 都相同，第三位 9>1。继续每次比较后缀，得到 [8,8,9,8,8,1]；若先取 B，最好的后续也只能得到 [8,8,8,9,8,1]。改变选项会清除本次反馈；重置其他实验不会清除此题。"
+    },
+    {
+      "locale": "zh",
+      "choice": "1",
+      "feedback": "判断正确。 应先取 A：两个 8 都相同，第三位 9>1。继续每次比较后缀，得到 [8,8,9,8,8,1]；若先取 B，最好的后续也只能得到 [8,8,8,9,8,1]。改变选项会清除本次反馈；重置其他实验不会清除此题。"
+    },
+    {
+      "locale": "zh",
+      "choice": "2",
+      "feedback": "这个理由忽略了完整后缀。 应先取 A：两个 8 都相同，第三位 9>1。继续每次比较后缀，得到 [8,8,9,8,8,1]；若先取 B，最好的后续也只能得到 [8,8,8,9,8,1]。改变选项会清除本次反馈；重置其他实验不会清除此题。"
+    },
+    {
+      "locale": "en",
+      "clipboard": "Clipboard unavailable. The full source is selected below for manual copying."
+    },
+    {
+      "locale": "zh",
+      "clipboard": "剪贴板不可用；下方已选中完整源码，请手动复制。"
+    }
+  ],
+  "sourceParity": [
+    "embedded",
+    "displayed",
+    "copied",
+    "downloaded",
+    "manual fallback"
+  ],
+  "storageDenied": true,
+  "limitations": [
+    "Headless Chromium, not a physical phone",
+    "200% uses CSS layout zoom",
+    "No independent review or actual novice study"
+  ]
+}
