@@ -1,0 +1,11 @@
+/* Reviewed lesson repairs reuse shared palette and controls. */
+#step3 .ledger-item{display:inline-block;white-space:normal}
+#step3 .readout,#step4 .readout{overflow-wrap:anywhere}
+#step3 .table-wrap:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+#step3 .table-wrap table{width:100%;min-width:520px}
+#step3 .controls .btn,#step4 .controls .btn{min-height:48px;white-space:normal}
+#step4 .prediction-options label{min-height:48px;align-items:flex-start}
+#step4 .prediction-options input{margin-top:12px;flex-shrink:0}
+#step3 button:disabled,#step4 button:disabled{opacity:1;color:var(--muted);background:var(--panel)}
+
+#step3 th,#step3 td{overflow-wrap:normal;word-break:normal}

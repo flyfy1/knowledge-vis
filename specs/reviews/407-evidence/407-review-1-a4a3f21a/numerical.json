@@ -1,0 +1,14 @@
+{
+  "python_oracle_cases": 20142,
+  "exhaustive_3x3_ternary": 19683,
+  "seeded_rectangles": 450,
+  "max_constraint_closed_forms": 5,
+  "source_parity": true,
+  "core": {
+    "frames_checked": 202344,
+    "duplicate_keys": "PASS",
+    "placeholder_parity": "PASS",
+    "snapshots": "PASS"
+  },
+  "status": "PASS"
+}

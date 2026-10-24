@@ -1,0 +1,93 @@
+{
+  "input": "abba",
+  "flags": [
+    [
+      true,
+      true,
+      false,
+      false,
+      true
+    ],
+    [
+      true,
+      false,
+      false,
+      true,
+      true
+    ]
+  ],
+  "atSuffixBoundaryCheck": [
+    {
+      "even": false,
+      "i": 0,
+      "k": 1,
+      "a": 0,
+      "b": 0,
+      "left": 0,
+      "right": -1
+    },
+    {
+      "even": false,
+      "i": 1,
+      "k": 1,
+      "a": 1,
+      "b": 1,
+      "left": 0,
+      "right": 0
+    },
+    {
+      "even": false,
+      "i": 2,
+      "k": 1,
+      "a": 2,
+      "b": 2,
+      "left": 1,
+      "right": 1
+    },
+    {
+      "even": false,
+      "i": 3,
+      "k": 1,
+      "a": 3,
+      "b": 3,
+      "left": 2,
+      "right": 2
+    },
+    {
+      "even": true,
+      "i": 0,
+      "k": 0,
+      "a": 0,
+      "b": -1,
+      "left": 0,
+      "right": -1
+    },
+    {
+      "even": true,
+      "i": 1,
+      "k": 0,
+      "a": 1,
+      "b": 0,
+      "left": 0,
+      "right": -1
+    },
+    {
+      "even": true,
+      "i": 2,
+      "k": 2,
+      "a": 0,
+      "b": 3,
+      "left": 1,
+      "right": 0
+    },
+    {
+      "even": true,
+      "i": 3,
+      "k": 0,
+      "a": 3,
+      "b": 2,
+      "left": 0,
+      "right": 3
+    }
+  ]
+}

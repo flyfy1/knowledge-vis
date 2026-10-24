@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "official_callable_cases": 5050000,
+  "independently_enumerated_vectors": 1274,
+  "intermediate_invariants": 228369,
+  "oracle": "choose dead pigs and assign their death rounds; enumerate full vectors and simulate scheduled feeding",
+  "coverage": "all buckets 1..1000 for every valid (minutesToDie, minutesToTest) pair 1..100; both official examples, powers, leftover time, one bucket, maxima",
+  "source_mirror": "exact",
+  "localization_keys": 104,
+  "independent_review": false
+}

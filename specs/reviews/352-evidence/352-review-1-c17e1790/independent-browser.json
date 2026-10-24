@@ -1,0 +1,23 @@
+[
+  {
+    "locale": "en",
+    "wrong": "Check both neighbors again. 13 = 12+1 and 14 = 13+1, so the result is [[10,16],[20,20]]. Values 17, 18 and 19 are still absent, so 20 cannot join. Extending only the left range misses the right merge; using only minimum and maximum invents missing integers."
+  },
+  {
+    "locale": "zh",
+    "progress": "已完成 3/7 次插入；下一个值：5",
+    "reason": "桥接：x 同时填到左段末尾和右段开头，把两段合成一段。",
+    "feedback": "正确。 13 = 12+1，且 14 = 13+1，所以得到 [[10,16],[20,20]]。17、18、19 仍未出现，不能把 20 也接上。只延长左段会遗漏右侧合并；只看最小最大值则会虚构缺失整数。"
+  },
+  {
+    "locale": "en",
+    "progress": "Completed 3/7 insertions; next value: 5",
+    "reason": "Bridge: x touches both neighbors, joining two ranges into one.",
+    "feedback": "Correct. 13 = 12+1 and 14 = 13+1, so the result is [[10,16],[20,20]]. Values 17, 18 and 19 are still absent, so 20 cannot join. Extending only the left range misses the right merge; using only minimum and maximum invents missing integers."
+  },
+  {
+    "fallback": "Automatic copy unavailable; the source below is selected for manual copying.",
+    "focus": "manualSource",
+    "selected": 1075
+  }
+]

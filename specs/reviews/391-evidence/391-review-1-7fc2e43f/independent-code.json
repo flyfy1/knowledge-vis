@@ -1,0 +1,58 @@
+{
+  "fresh_predictions": [
+    {
+      "input": [
+        [
+          -2,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          1,
+          2
+        ]
+      ],
+      "prediction": true,
+      "actual": true,
+      "unchanged": true
+    },
+    {
+      "input": [
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          2
+        ]
+      ],
+      "prediction": false,
+      "actual": false,
+      "unchanged": true
+    },
+    {
+      "input": [
+        [
+          -100000,
+          -100000,
+          100000,
+          100000
+        ]
+      ],
+      "prediction": true,
+      "actual": true,
+      "unchanged": true
+    }
+  ],
+  "independent_exhaustive_cases": 7314,
+  "oracle": "unit-cell coverage, all multisets of 1..4 rectangles with x edges -1..2 and y edges 0..2",
+  "result": "pass"
+}

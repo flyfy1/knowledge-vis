@@ -1,0 +1,10 @@
+{
+  "kind": "author self-check",
+  "smallCases": 2390,
+  "largeCases": 8,
+  "baselineCases": 204,
+  "oracle": "BFS over full capped reachable-sum sets, all patch values 1..n",
+  "seed": 330,
+  "sourceMirror": "exact",
+  "copyKeys": 97
+}

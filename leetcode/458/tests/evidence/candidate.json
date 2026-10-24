@@ -1,0 +1,28 @@
+{
+  "candidate": "458-author-1",
+  "frozenAt": "2026-10-24T22:32:49.277209+00:00",
+  "status": "self-checked; independent review pending",
+  "files": {
+    "BRIEF.md": "4d40f4ac2b53503dd9dbd7d4174cc55c5180556aaa5582a967c09cb4448007f7",
+    "app.js": "3f30da085548fd00b6c78f420ffe5cf12909da37cc08292354b59e76c96d48b0",
+    "copy.js": "f9e6ebf6ad2021e57038d5d412861e86c54018c3ce0e5b00e1ea61959b87f1ff",
+    "core.js": "5647eed14581be4676d82bf9a2f92d0316851cf437f6a06b841dfcb947631fae",
+    "index.html": "50f98a19b9720f6cb94e6aa71cb37e10a8c3a4b68f7a60f339a06c77d4146332",
+    "lesson-entry.json": "dc5dfc7ef980fff6cf8fae3bc413a2071d03151c1ea67ff55a105c5562ce1153",
+    "provenance/README.md": "dbadbaa17b72e95f2faf3a21ef89b04f88047c63f9f97c6337d8cda6656769db",
+    "provenance/official.json": "9aabe7f01a1062589e4113ff4cf7b46e0962308ec03fe254492b493c0c0c55ec",
+    "python-code.js": "327d1e6e050808e00dd27a7fbaa67d974033a92100a7ee839024a67a217733b1",
+    "solution.py": "9b9c0a58dde6262bfd1bd2e5b852f3cef2e7d3dff2f973a5627f1899cd12c3aa",
+    "style.css": "20a69f37645b5fb6d3079d0aaabdb29fdb1b406489eb6e908c773e5496f13507",
+    "tests/README.md": "7c76bbbbb3efa81d68860ee869291abc8577ee37deeac1d9e770b5cfdcd4fbb8",
+    "tests/check_algorithm.py": "aad4795a20f17ffda4234462ca4ffc7155052e63eaf783aa964f98ff9334d0c4",
+    "tests/check_browser.cjs": "dd9b1984d451a4534dbaded7168e48d74f4cbcfd0ae199d0d9837ef7beec9691",
+    "tests/check_core.cjs": "966522d56e2ee579aaf098cd12a4c29bf69b6254fb8851138d2ae0cd6365f01f",
+    "tests/check_large_view.cjs": "a6b76769eab2414f1a1a509cd4898d3404d51a6825dc23a8227e56bd4447b2b9",
+    "tests/check_navigation.cjs": "c763063d08a4efc16d0666b19a9ff1bcf084a3154b0801b8630338c65e29533b"
+  },
+  "sharedDependencies": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}

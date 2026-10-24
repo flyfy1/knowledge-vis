@@ -1,0 +1,146 @@
+{
+  "status": "PASS",
+  "nativeClipboard": true,
+  "semanticBindings": [
+    {
+      "locale": "en",
+      "state": "tiny bowl, second removal",
+      "expected": "Center escape level 3, ground 1, added depth 2",
+      "observed": "Remove (0,1), L=3. Discover (1,1): max(3,1)=3; add W=3−1=2."
+    },
+    {
+      "locale": "zh",
+      "state": "tiny bowl, second removal",
+      "expected": "Center escape level 3, ground 1, added depth 2",
+      "observed": "取出 (0,1)，L=3。 发现 (1,1)：max(3,1)=3，新增 W=3−1=2。"
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": "#prev:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#reset:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".stage",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": ".stage .hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "#langToggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#langToggle button:not(.active)",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    }
+  ],
+  "focus": {
+    "width": "3px",
+    "color": "rgb(13, 17, 23)",
+    "offset": "0px"
+  },
+  "focusContrast": [
+    {
+      "foreground": "#ffb454",
+      "background": "#161b22",
+      "ratio": 9.809435643476732
+    },
+    {
+      "foreground": "#ffb454",
+      "background": "#1c2330",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "controls": [
+    {
+      "id": "zh",
+      "width": 48,
+      "height": 48,
+      "label": "中"
+    },
+    {
+      "id": "en",
+      "width": 49.0625,
+      "height": 48,
+      "label": "EN"
+    },
+    {
+      "id": "handReveal",
+      "width": 204.859375,
+      "height": 48,
+      "label": "Show / hide calculation"
+    },
+    {
+      "id": "preset",
+      "width": 315,
+      "height": 48,
+      "label": "Tiny bowl · volume 2Turning corridor · adjustable outletOfficial example 1 · volume 4Official example 2 · volume 10One row · no interiorAll zero · no depth"
+    },
+    {
+      "id": "prev",
+      "width": 332,
+      "height": 48,
+      "label": "← Undo one round"
+    },
+    {
+      "id": "next",
+      "width": 332,
+      "height": 48,
+      "label": "Expand lowest cell →"
+    },
+    {
+      "id": "reset",
+      "width": 332,
+      "height": 48,
+      "label": "Reset to initial frontier"
+    },
+    {
+      "id": "end",
+      "width": 332,
+      "height": 48,
+      "label": "Finish all expansions"
+    },
+    {
+      "id": "reveal",
+      "width": 319.5,
+      "height": 48,
+      "label": "Check prediction and reveal reasoning"
+    },
+    {
+      "id": "copy",
+      "width": 181.09375,
+      "height": 48,
+      "label": "Copy Python source"
+    }
+  ],
+  "keyboardTabEnter": true,
+  "disclosureState": true,
+  "predictionIsolation": true,
+  "landscape": true,
+  "narrowFallback": true
+}

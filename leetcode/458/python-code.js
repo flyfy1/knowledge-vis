@@ -1,0 +1,1 @@
+window.PYTHON_SOURCE = "class Solution:\n    def poorPigs(self, buckets: int, minutesToDie: int, minutesToTest: int) -> int:\n        rounds = minutesToTest // minutesToDie\n        states = rounds + 1\n        pigs = 0\n        capacity = 1\n        while capacity < buckets:\n            capacity *= states\n            pigs += 1\n        return pigs\n";

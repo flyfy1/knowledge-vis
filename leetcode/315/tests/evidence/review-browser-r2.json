@@ -1,0 +1,67 @@
+{
+  "results": [
+    {
+      "locale": "en",
+      "width": 320,
+      "guess": "per-position correct and incorrect",
+      "baseline": "cumulative at all states",
+      "sourceBytes": 811
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "guess": "per-position correct and incorrect",
+      "baseline": "cumulative at all states",
+      "sourceBytes": 811
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "guess": "per-position correct and incorrect",
+      "baseline": "cumulative at all states",
+      "sourceBytes": 811
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "guess": "per-position correct and incorrect",
+      "baseline": "cumulative at all states",
+      "sourceBytes": 811
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "guess": "per-position correct and incorrect",
+      "baseline": "cumulative at all states",
+      "sourceBytes": 811
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "guess": "per-position correct and incorrect",
+      "baseline": "cumulative at all states",
+      "sourceBytes": 811
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "guess": "per-position correct and incorrect",
+      "baseline": "cumulative at all states",
+      "sourceBytes": 811
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "guess": "per-position correct and incorrect",
+      "baseline": "cumulative at all states",
+      "sourceBytes": 811
+    }
+  ],
+  "errors": [],
+  "offlineErrors": [],
+  "environmentNotices": [
+    "Preview root favicon.ico returns 404 (outside lesson ownership)"
+  ],
+  "sourceParity": "canonical = JSON mirror = display = clipboard = download = manual fallback clipboard (including final newline)",
+  "status": "author self-check; independent re-review pending"
+}

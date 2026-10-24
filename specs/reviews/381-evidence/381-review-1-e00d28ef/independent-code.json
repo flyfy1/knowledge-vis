@@ -1,0 +1,43 @@
+{
+  "freshReturns": [
+    true,
+    true,
+    false,
+    false,
+    true,
+    true,
+    false
+  ],
+  "freshFinal": [
+    6,
+    6
+  ],
+  "counterexampleReturns": [
+    true,
+    false,
+    true,
+    true,
+    false
+  ],
+  "forcedEqualTail": {
+    "nums": [
+      6,
+      -2
+    ],
+    "pos": {
+      "6": [
+        0
+      ],
+      "-2": [
+        1
+      ]
+    }
+  },
+  "enumeratedSamples": [
+    6,
+    6,
+    6,
+    -2
+  ],
+  "canonicalSha256": "d71e8d7699497067ff6495b5b6d19d193c27af94ece20e8c6319a9fd90817a6e"
+}

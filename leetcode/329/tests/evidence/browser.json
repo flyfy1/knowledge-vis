@@ -1,0 +1,83 @@
+{
+  "kind": "author self-check",
+  "checks": [
+    "en: six presets, full forward/back/reset/end, hand reveal and all predictions",
+    "zh: six presets, full forward/back/reset/end, hand reveal and all predictions",
+    "locale state preservation; prediction change; copy success/fallback; exact download; keyboard/focus; 8 viewport/locale combinations; 200% zoom; links; blocked storage; offline source; zero asset/console errors"
+  ],
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18770/leetcode/329/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/329/local.css",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/329/copy.js",
+    "http://127.0.0.1:18770/leetcode/329/core.js",
+    "http://127.0.0.1:18770/leetcode/329/python-code.js",
+    "http://127.0.0.1:18770/leetcode/329/app.js"
+  ],
+  "contrast": [
+    {
+      "fg": "text",
+      "bg": "bg",
+      "ratio": 16.09
+    },
+    {
+      "fg": "text",
+      "bg": "panel",
+      "ratio": 14.7
+    },
+    {
+      "fg": "text",
+      "bg": "panel2",
+      "ratio": 13.4
+    },
+    {
+      "fg": "muted",
+      "bg": "bg",
+      "ratio": 7.74
+    },
+    {
+      "fg": "muted",
+      "bg": "panel",
+      "ratio": 7.08
+    },
+    {
+      "fg": "muted",
+      "bg": "panel2",
+      "ratio": 6.45
+    },
+    {
+      "fg": "accent",
+      "bg": "bg",
+      "ratio": 13.1
+    },
+    {
+      "fg": "accent",
+      "bg": "panel",
+      "ratio": 11.97
+    },
+    {
+      "fg": "accent",
+      "bg": "panel2",
+      "ratio": 10.91
+    },
+    {
+      "fg": "accent2",
+      "bg": "bg",
+      "ratio": 10.73
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel",
+      "ratio": 9.81
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel2",
+      "ratio": 8.94
+    }
+  ],
+  "cssBytes": 11274,
+  "limits": "Chromium emulation and CSS 200% zoom; no physical device, independent reviewer, LeetCode submission or novice learner study."
+}

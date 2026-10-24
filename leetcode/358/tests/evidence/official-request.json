@@ -1,0 +1,12 @@
+{
+  "capturedAt": "2026-10-24T19:22:16.139534+00:00",
+  "officialSource": "https://leetcode.com/problems/rearrange-string-k-distance-apart/",
+  "endpoint": "https://leetcode.com/graphql/",
+  "authentication": "None; no credentials or cookies used",
+  "payload": {
+    "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId questionFrontendId title titleSlug isPaidOnly\n    content exampleTestcases metaData\n    codeSnippets { lang langSlug code }\n  }\n}",
+    "variables": {
+      "titleSlug": "rearrange-string-k-distance-apart"
+    }
+  }
+}

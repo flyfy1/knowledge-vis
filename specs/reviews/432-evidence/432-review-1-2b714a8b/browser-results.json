@@ -1,0 +1,1598 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "operations": 6
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "operations": 12
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "operations": 7
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "operations": 8
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "operations": 6
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "operations": 12
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "operations": 7
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "operations": 8
+    }
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "completed": 1,
+      "operation": "inc(\"tea\"): insert a new key at 1; create the bucket after head if needed.",
+      "expectedCounts": {
+        "tea": 1
+      },
+      "observedLocations": "tea → 1"
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "completed": 2,
+      "operation": "inc(\"tea\"): count 1 → 2; create the target bucket at its neighboring position; old bucket is empty, so unlink it",
+      "expectedCounts": {
+        "tea": 2
+      },
+      "observedLocations": "tea → 2"
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "completed": 3,
+      "operation": "inc(\"bun\"): insert a new key at 1; create the bucket after head if needed.",
+      "expectedCounts": {
+        "tea": 2,
+        "bun": 1
+      },
+      "observedLocations": "tea → 2\nbun → 1"
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "completed": 4,
+      "operation": "getMinKey(): this simulation chooses \"bun\"; other tied extreme keys are also valid.",
+      "expectedCounts": {
+        "tea": 2,
+        "bun": 1
+      },
+      "observedLocations": "tea → 2\nbun → 1"
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "completed": 5,
+      "operation": "inc(\"bun\"): count 1 → 2; reuse the existing target bucket; old bucket is empty, so unlink it",
+      "expectedCounts": {
+        "tea": 2,
+        "bun": 2
+      },
+      "observedLocations": "tea → 2\nbun → 2"
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "completed": 6,
+      "operation": "getMaxKey(): this simulation chooses \"bun\"; other tied extreme keys are also valid.",
+      "expectedCounts": {
+        "tea": 2,
+        "bun": 2
+      },
+      "observedLocations": "tea → 2\nbun → 2"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "completed": 1,
+      "operation": "inc(\"a\"): insert a new key at 1; create the bucket after head if needed.",
+      "expectedCounts": {
+        "a": 1
+      },
+      "observedLocations": "a → 1"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "completed": 2,
+      "operation": "inc(\"b\"): insert a new key at 1; create the bucket after head if needed.",
+      "expectedCounts": {
+        "a": 1,
+        "b": 1
+      },
+      "observedLocations": "a → 1\nb → 1"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "completed": 3,
+      "operation": "inc(\"b\"): count 1 → 2; create the target bucket at its neighboring position; old bucket still has keys, so retain it",
+      "expectedCounts": {
+        "a": 1,
+        "b": 2
+      },
+      "observedLocations": "a → 1\nb → 2"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "completed": 4,
+      "operation": "inc(\"b\"): count 2 → 3; create the target bucket at its neighboring position; old bucket is empty, so unlink it",
+      "expectedCounts": {
+        "a": 1,
+        "b": 3
+      },
+      "observedLocations": "a → 1\nb → 3"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "completed": 5,
+      "operation": "inc(\"c\"): insert a new key at 1; create the bucket after head if needed.",
+      "expectedCounts": {
+        "a": 1,
+        "b": 3,
+        "c": 1
+      },
+      "observedLocations": "a → 1\nb → 3\nc → 1"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "completed": 6,
+      "operation": "inc(\"c\"): count 1 → 2; create the target bucket at its neighboring position; old bucket still has keys, so retain it",
+      "expectedCounts": {
+        "a": 1,
+        "b": 3,
+        "c": 2
+      },
+      "observedLocations": "a → 1\nb → 3\nc → 2"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "completed": 7,
+      "operation": "inc(\"c\"): count 2 → 3; reuse the existing target bucket; old bucket is empty, so unlink it",
+      "expectedCounts": {
+        "a": 1,
+        "b": 3,
+        "c": 3
+      },
+      "observedLocations": "a → 1\nb → 3\nc → 3"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "completed": 8,
+      "operation": "inc(\"c\"): count 3 → 4; create the target bucket at its neighboring position; old bucket still has keys, so retain it",
+      "expectedCounts": {
+        "a": 1,
+        "b": 3,
+        "c": 4
+      },
+      "observedLocations": "a → 1\nb → 3\nc → 4"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "completed": 9,
+      "operation": "inc(\"c\"): count 4 → 5; create the target bucket at its neighboring position; old bucket is empty, so unlink it",
+      "expectedCounts": {
+        "a": 1,
+        "b": 3,
+        "c": 5
+      },
+      "observedLocations": "a → 1\nb → 3\nc → 5"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "completed": 10,
+      "operation": "dec(\"a\"): count 1 → 0, remove the key; old bucket is empty, so unlink it",
+      "expectedCounts": {
+        "b": 3,
+        "c": 5
+      },
+      "observedLocations": "b → 3\nc → 5"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "completed": 11,
+      "operation": "inc(\"b\"): count 3 → 4; create the target bucket at its neighboring position; old bucket is empty, so unlink it",
+      "expectedCounts": {
+        "b": 4,
+        "c": 5
+      },
+      "observedLocations": "b → 4\nc → 5"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "completed": 12,
+      "operation": "dec(\"c\"): count 5 → 4; reuse the existing target bucket; old bucket is empty, so unlink it",
+      "expectedCounts": {
+        "b": 4,
+        "c": 4
+      },
+      "observedLocations": "b → 4\nc → 4"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "completed": 1,
+      "operation": "getMinKey(): this simulation chooses \"\"; other tied extreme keys are also valid.",
+      "expectedCounts": {},
+      "observedLocations": "No keys"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "completed": 2,
+      "operation": "getMaxKey(): this simulation chooses \"\"; other tied extreme keys are also valid.",
+      "expectedCounts": {},
+      "observedLocations": "No keys"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "completed": 3,
+      "operation": "inc(\"x\"): insert a new key at 1; create the bucket after head if needed.",
+      "expectedCounts": {
+        "x": 1
+      },
+      "observedLocations": "x → 1"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "completed": 4,
+      "operation": "inc(\"y\"): insert a new key at 1; create the bucket after head if needed.",
+      "expectedCounts": {
+        "x": 1,
+        "y": 1
+      },
+      "observedLocations": "x → 1\ny → 1"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "completed": 5,
+      "operation": "dec(\"x\"): count 1 → 0, remove the key; old bucket still has keys, so retain it",
+      "expectedCounts": {
+        "y": 1
+      },
+      "observedLocations": "y → 1"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "completed": 6,
+      "operation": "dec(\"y\"): count 1 → 0, remove the key; old bucket is empty, so unlink it",
+      "expectedCounts": {},
+      "observedLocations": "No keys"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "completed": 7,
+      "operation": "getMinKey(): this simulation chooses \"\"; other tied extreme keys are also valid.",
+      "expectedCounts": {},
+      "observedLocations": "No keys"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "completed": 1,
+      "operation": "inc(\"red\"): insert a new key at 1; create the bucket after head if needed.",
+      "expectedCounts": {
+        "red": 1
+      },
+      "observedLocations": "red → 1"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "completed": 2,
+      "operation": "inc(\"red\"): count 1 → 2; create the target bucket at its neighboring position; old bucket is empty, so unlink it",
+      "expectedCounts": {
+        "red": 2
+      },
+      "observedLocations": "red → 2"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "completed": 3,
+      "operation": "inc(\"red\"): count 2 → 3; create the target bucket at its neighboring position; old bucket is empty, so unlink it",
+      "expectedCounts": {
+        "red": 3
+      },
+      "observedLocations": "red → 3"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "completed": 4,
+      "operation": "inc(\"blue\"): insert a new key at 1; create the bucket after head if needed.",
+      "expectedCounts": {
+        "red": 3,
+        "blue": 1
+      },
+      "observedLocations": "red → 3\nblue → 1"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "completed": 5,
+      "operation": "inc(\"blue\"): count 1 → 2; create the target bucket at its neighboring position; old bucket is empty, so unlink it",
+      "expectedCounts": {
+        "red": 3,
+        "blue": 2
+      },
+      "observedLocations": "red → 3\nblue → 2"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "completed": 6,
+      "operation": "dec(\"red\"): count 3 → 2; reuse the existing target bucket; old bucket is empty, so unlink it",
+      "expectedCounts": {
+        "red": 2,
+        "blue": 2
+      },
+      "observedLocations": "red → 2\nblue → 2"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "completed": 7,
+      "operation": "dec(\"blue\"): count 2 → 1; create the target bucket at its neighboring position; old bucket still has keys, so retain it",
+      "expectedCounts": {
+        "red": 2,
+        "blue": 1
+      },
+      "observedLocations": "red → 2\nblue → 1"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "completed": 8,
+      "operation": "dec(\"blue\"): count 1 → 0, remove the key; old bucket is empty, so unlink it",
+      "expectedCounts": {
+        "red": 2
+      },
+      "observedLocations": "red → 2"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "completed": 1,
+      "operation": "inc(\"tea\")：新词以 1 加入；必要时在 head 后建桶。",
+      "expectedCounts": {
+        "tea": 1
+      },
+      "observedLocations": "tea → 1"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "completed": 2,
+      "operation": "inc(\"tea\")：计数 1 → 2；在相邻位置创建目标桶；旧桶已空，摘除旧桶",
+      "expectedCounts": {
+        "tea": 2
+      },
+      "observedLocations": "tea → 2"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "completed": 3,
+      "operation": "inc(\"bun\")：新词以 1 加入；必要时在 head 后建桶。",
+      "expectedCounts": {
+        "tea": 2,
+        "bun": 1
+      },
+      "observedLocations": "tea → 2\nbun → 1"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "completed": 4,
+      "operation": "getMinKey()：本模拟选 \"bun\"；并列时其他极值词也合法。",
+      "expectedCounts": {
+        "tea": 2,
+        "bun": 1
+      },
+      "observedLocations": "tea → 2\nbun → 1"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "completed": 5,
+      "operation": "inc(\"bun\")：计数 1 → 2；复用已有目标桶；旧桶已空，摘除旧桶",
+      "expectedCounts": {
+        "tea": 2,
+        "bun": 2
+      },
+      "observedLocations": "tea → 2\nbun → 2"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "completed": 6,
+      "operation": "getMaxKey()：本模拟选 \"bun\"；并列时其他极值词也合法。",
+      "expectedCounts": {
+        "tea": 2,
+        "bun": 2
+      },
+      "observedLocations": "tea → 2\nbun → 2"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "completed": 1,
+      "operation": "inc(\"a\")：新词以 1 加入；必要时在 head 后建桶。",
+      "expectedCounts": {
+        "a": 1
+      },
+      "observedLocations": "a → 1"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "completed": 2,
+      "operation": "inc(\"b\")：新词以 1 加入；必要时在 head 后建桶。",
+      "expectedCounts": {
+        "a": 1,
+        "b": 1
+      },
+      "observedLocations": "a → 1\nb → 1"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "completed": 3,
+      "operation": "inc(\"b\")：计数 1 → 2；在相邻位置创建目标桶；旧桶仍非空，保留它",
+      "expectedCounts": {
+        "a": 1,
+        "b": 2
+      },
+      "observedLocations": "a → 1\nb → 2"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "completed": 4,
+      "operation": "inc(\"b\")：计数 2 → 3；在相邻位置创建目标桶；旧桶已空，摘除旧桶",
+      "expectedCounts": {
+        "a": 1,
+        "b": 3
+      },
+      "observedLocations": "a → 1\nb → 3"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "completed": 5,
+      "operation": "inc(\"c\")：新词以 1 加入；必要时在 head 后建桶。",
+      "expectedCounts": {
+        "a": 1,
+        "b": 3,
+        "c": 1
+      },
+      "observedLocations": "a → 1\nb → 3\nc → 1"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "completed": 6,
+      "operation": "inc(\"c\")：计数 1 → 2；在相邻位置创建目标桶；旧桶仍非空，保留它",
+      "expectedCounts": {
+        "a": 1,
+        "b": 3,
+        "c": 2
+      },
+      "observedLocations": "a → 1\nb → 3\nc → 2"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "completed": 7,
+      "operation": "inc(\"c\")：计数 2 → 3；复用已有目标桶；旧桶已空，摘除旧桶",
+      "expectedCounts": {
+        "a": 1,
+        "b": 3,
+        "c": 3
+      },
+      "observedLocations": "a → 1\nb → 3\nc → 3"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "completed": 8,
+      "operation": "inc(\"c\")：计数 3 → 4；在相邻位置创建目标桶；旧桶仍非空，保留它",
+      "expectedCounts": {
+        "a": 1,
+        "b": 3,
+        "c": 4
+      },
+      "observedLocations": "a → 1\nb → 3\nc → 4"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "completed": 9,
+      "operation": "inc(\"c\")：计数 4 → 5；在相邻位置创建目标桶；旧桶已空，摘除旧桶",
+      "expectedCounts": {
+        "a": 1,
+        "b": 3,
+        "c": 5
+      },
+      "observedLocations": "a → 1\nb → 3\nc → 5"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "completed": 10,
+      "operation": "dec(\"a\")：计数 1 → 0，删除词；旧桶已空，摘除旧桶",
+      "expectedCounts": {
+        "b": 3,
+        "c": 5
+      },
+      "observedLocations": "b → 3\nc → 5"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "completed": 11,
+      "operation": "inc(\"b\")：计数 3 → 4；在相邻位置创建目标桶；旧桶已空，摘除旧桶",
+      "expectedCounts": {
+        "b": 4,
+        "c": 5
+      },
+      "observedLocations": "b → 4\nc → 5"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "completed": 12,
+      "operation": "dec(\"c\")：计数 5 → 4；复用已有目标桶；旧桶已空，摘除旧桶",
+      "expectedCounts": {
+        "b": 4,
+        "c": 4
+      },
+      "observedLocations": "b → 4\nc → 4"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "completed": 1,
+      "operation": "getMinKey()：本模拟选 \"\"；并列时其他极值词也合法。",
+      "expectedCounts": {},
+      "observedLocations": "没有词"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "completed": 2,
+      "operation": "getMaxKey()：本模拟选 \"\"；并列时其他极值词也合法。",
+      "expectedCounts": {},
+      "observedLocations": "没有词"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "completed": 3,
+      "operation": "inc(\"x\")：新词以 1 加入；必要时在 head 后建桶。",
+      "expectedCounts": {
+        "x": 1
+      },
+      "observedLocations": "x → 1"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "completed": 4,
+      "operation": "inc(\"y\")：新词以 1 加入；必要时在 head 后建桶。",
+      "expectedCounts": {
+        "x": 1,
+        "y": 1
+      },
+      "observedLocations": "x → 1\ny → 1"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "completed": 5,
+      "operation": "dec(\"x\")：计数 1 → 0，删除词；旧桶仍非空，保留它",
+      "expectedCounts": {
+        "y": 1
+      },
+      "observedLocations": "y → 1"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "completed": 6,
+      "operation": "dec(\"y\")：计数 1 → 0，删除词；旧桶已空，摘除旧桶",
+      "expectedCounts": {},
+      "observedLocations": "没有词"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "completed": 7,
+      "operation": "getMinKey()：本模拟选 \"\"；并列时其他极值词也合法。",
+      "expectedCounts": {},
+      "observedLocations": "没有词"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "completed": 1,
+      "operation": "inc(\"red\")：新词以 1 加入；必要时在 head 后建桶。",
+      "expectedCounts": {
+        "red": 1
+      },
+      "observedLocations": "red → 1"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "completed": 2,
+      "operation": "inc(\"red\")：计数 1 → 2；在相邻位置创建目标桶；旧桶已空，摘除旧桶",
+      "expectedCounts": {
+        "red": 2
+      },
+      "observedLocations": "red → 2"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "completed": 3,
+      "operation": "inc(\"red\")：计数 2 → 3；在相邻位置创建目标桶；旧桶已空，摘除旧桶",
+      "expectedCounts": {
+        "red": 3
+      },
+      "observedLocations": "red → 3"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "completed": 4,
+      "operation": "inc(\"blue\")：新词以 1 加入；必要时在 head 后建桶。",
+      "expectedCounts": {
+        "red": 3,
+        "blue": 1
+      },
+      "observedLocations": "red → 3\nblue → 1"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "completed": 5,
+      "operation": "inc(\"blue\")：计数 1 → 2；在相邻位置创建目标桶；旧桶已空，摘除旧桶",
+      "expectedCounts": {
+        "red": 3,
+        "blue": 2
+      },
+      "observedLocations": "red → 3\nblue → 2"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "completed": 6,
+      "operation": "dec(\"red\")：计数 3 → 2；复用已有目标桶；旧桶已空，摘除旧桶",
+      "expectedCounts": {
+        "red": 2,
+        "blue": 2
+      },
+      "observedLocations": "red → 2\nblue → 2"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "completed": 7,
+      "operation": "dec(\"blue\")：计数 2 → 1；在相邻位置创建目标桶；旧桶仍非空，保留它",
+      "expectedCounts": {
+        "red": 2,
+        "blue": 1
+      },
+      "observedLocations": "red → 2\nblue → 1"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "completed": 8,
+      "operation": "dec(\"blue\")：计数 1 → 0，删除词；旧桶已空，摘除旧桶",
+      "expectedCounts": {
+        "red": 2
+      },
+      "observedLocations": "red → 2"
+    }
+  ],
+  "geometry": [
+    {
+      "lang": "en",
+      "width": 320,
+      "w": 320,
+      "scroll": 320,
+      "controls": [
+        {
+          "id": "",
+          "height": 48,
+          "width": 48
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 49.0625
+        },
+        {
+          "id": "handReveal",
+          "height": 48,
+          "width": 208.765625
+        },
+        {
+          "id": "preset",
+          "height": 48,
+          "width": 199
+        },
+        {
+          "id": "prev",
+          "height": 48,
+          "width": 151.703125
+        },
+        {
+          "id": "next",
+          "height": 48,
+          "width": 202.796875
+        },
+        {
+          "id": "reset",
+          "height": 48,
+          "width": 109.359375
+        },
+        {
+          "id": "end",
+          "height": 48,
+          "width": 117.59375
+        },
+        {
+          "id": "",
+          "height": 56,
+          "width": 262
+        },
+        {
+          "id": "",
+          "height": 56,
+          "width": 262
+        },
+        {
+          "id": "",
+          "height": 56,
+          "width": 262
+        },
+        {
+          "id": "reveal",
+          "height": 48,
+          "width": 157.6875
+        },
+        {
+          "id": "copy",
+          "height": 48,
+          "width": 126.71875
+        }
+      ],
+      "buckets": [
+        {
+          "w": 260,
+          "scroll": 260
+        },
+        {
+          "w": 260,
+          "scroll": 260
+        },
+        {
+          "w": 260,
+          "scroll": 260
+        },
+        {
+          "w": 260,
+          "scroll": 260
+        },
+        {
+          "w": 260,
+          "scroll": 260
+        },
+        {
+          "w": 260,
+          "scroll": 260
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "w": 390,
+      "scroll": 390,
+      "controls": [
+        {
+          "id": "",
+          "height": 48,
+          "width": 48
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 49.0625
+        },
+        {
+          "id": "handReveal",
+          "height": 48,
+          "width": 208.765625
+        },
+        {
+          "id": "preset",
+          "height": 48,
+          "width": 199
+        },
+        {
+          "id": "prev",
+          "height": 48,
+          "width": 151.703125
+        },
+        {
+          "id": "next",
+          "height": 48,
+          "width": 202.796875
+        },
+        {
+          "id": "reset",
+          "height": 48,
+          "width": 109.359375
+        },
+        {
+          "id": "end",
+          "height": 48,
+          "width": 117.59375
+        },
+        {
+          "id": "",
+          "height": 56,
+          "width": 332
+        },
+        {
+          "id": "",
+          "height": 56,
+          "width": 332
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 332
+        },
+        {
+          "id": "reveal",
+          "height": 48,
+          "width": 157.6875
+        },
+        {
+          "id": "copy",
+          "height": 48,
+          "width": 126.71875
+        }
+      ],
+      "buckets": [
+        {
+          "w": 330,
+          "scroll": 330
+        },
+        {
+          "w": 330,
+          "scroll": 330
+        },
+        {
+          "w": 330,
+          "scroll": 330
+        },
+        {
+          "w": 330,
+          "scroll": 330
+        },
+        {
+          "w": 330,
+          "scroll": 330
+        },
+        {
+          "w": 330,
+          "scroll": 330
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "w": 736,
+      "scroll": 736,
+      "controls": [
+        {
+          "id": "",
+          "height": 48,
+          "width": 48
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 49.0625
+        },
+        {
+          "id": "handReveal",
+          "height": 48,
+          "width": 208.765625
+        },
+        {
+          "id": "preset",
+          "height": 48,
+          "width": 199
+        },
+        {
+          "id": "prev",
+          "height": 48,
+          "width": 157.703125
+        },
+        {
+          "id": "next",
+          "height": 48,
+          "width": 208.796875
+        },
+        {
+          "id": "reset",
+          "height": 48,
+          "width": 115.359375
+        },
+        {
+          "id": "end",
+          "height": 48,
+          "width": 123.59375
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 646
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 646
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 646
+        },
+        {
+          "id": "reveal",
+          "height": 48,
+          "width": 157.6875
+        },
+        {
+          "id": "copy",
+          "height": 48,
+          "width": 126.71875
+        }
+      ],
+      "buckets": [
+        {
+          "w": 309,
+          "scroll": 309
+        },
+        {
+          "w": 309,
+          "scroll": 309
+        },
+        {
+          "w": 309,
+          "scroll": 309
+        },
+        {
+          "w": 309,
+          "scroll": 309
+        },
+        {
+          "w": 309,
+          "scroll": 309
+        },
+        {
+          "w": 309,
+          "scroll": 309
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "w": 1440,
+      "scroll": 1440,
+      "controls": [
+        {
+          "id": "",
+          "height": 48,
+          "width": 48
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 49.0625
+        },
+        {
+          "id": "handReveal",
+          "height": 48,
+          "width": 208.765625
+        },
+        {
+          "id": "preset",
+          "height": 48,
+          "width": 199
+        },
+        {
+          "id": "prev",
+          "height": 48,
+          "width": 157.703125
+        },
+        {
+          "id": "next",
+          "height": 48,
+          "width": 208.796875
+        },
+        {
+          "id": "reset",
+          "height": 48,
+          "width": 115.359375
+        },
+        {
+          "id": "end",
+          "height": 48,
+          "width": 123.59375
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 910
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 910
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 910
+        },
+        {
+          "id": "reveal",
+          "height": 48,
+          "width": 157.6875
+        },
+        {
+          "id": "copy",
+          "height": 48,
+          "width": 126.71875
+        }
+      ],
+      "buckets": [
+        {
+          "w": 441,
+          "scroll": 441
+        },
+        {
+          "w": 441,
+          "scroll": 441
+        },
+        {
+          "w": 441,
+          "scroll": 441
+        },
+        {
+          "w": 441,
+          "scroll": 441
+        },
+        {
+          "w": 441,
+          "scroll": 441
+        },
+        {
+          "w": 441,
+          "scroll": 441
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "w": 320,
+      "scroll": 320,
+      "controls": [
+        {
+          "id": "",
+          "height": 48,
+          "width": 48
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 49.0625
+        },
+        {
+          "id": "handReveal",
+          "height": 48,
+          "width": 96.015625
+        },
+        {
+          "id": "preset",
+          "height": 48,
+          "width": 197
+        },
+        {
+          "id": "prev",
+          "height": 48,
+          "width": 110.171875
+        },
+        {
+          "id": "next",
+          "height": 48,
+          "width": 142.171875
+        },
+        {
+          "id": "reset",
+          "height": 48,
+          "width": 90.015625
+        },
+        {
+          "id": "end",
+          "height": 48,
+          "width": 90.015625
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 262
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 262
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 262
+        },
+        {
+          "id": "reveal",
+          "height": 48,
+          "width": 96.015625
+        },
+        {
+          "id": "copy",
+          "height": 48,
+          "width": 121.234375
+        }
+      ],
+      "buckets": [
+        {
+          "w": 260,
+          "scroll": 260
+        },
+        {
+          "w": 260,
+          "scroll": 260
+        },
+        {
+          "w": 260,
+          "scroll": 260
+        },
+        {
+          "w": 260,
+          "scroll": 260
+        },
+        {
+          "w": 260,
+          "scroll": 260
+        },
+        {
+          "w": 260,
+          "scroll": 260
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "w": 390,
+      "scroll": 390,
+      "controls": [
+        {
+          "id": "",
+          "height": 48,
+          "width": 48
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 49.0625
+        },
+        {
+          "id": "handReveal",
+          "height": 48,
+          "width": 96.015625
+        },
+        {
+          "id": "preset",
+          "height": 48,
+          "width": 197
+        },
+        {
+          "id": "prev",
+          "height": 48,
+          "width": 110.171875
+        },
+        {
+          "id": "next",
+          "height": 48,
+          "width": 142.171875
+        },
+        {
+          "id": "reset",
+          "height": 48,
+          "width": 90.015625
+        },
+        {
+          "id": "end",
+          "height": 48,
+          "width": 90.015625
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 332
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 332
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 332
+        },
+        {
+          "id": "reveal",
+          "height": 48,
+          "width": 96.015625
+        },
+        {
+          "id": "copy",
+          "height": 48,
+          "width": 121.234375
+        }
+      ],
+      "buckets": [
+        {
+          "w": 330,
+          "scroll": 330
+        },
+        {
+          "w": 330,
+          "scroll": 330
+        },
+        {
+          "w": 330,
+          "scroll": 330
+        },
+        {
+          "w": 330,
+          "scroll": 330
+        },
+        {
+          "w": 330,
+          "scroll": 330
+        },
+        {
+          "w": 330,
+          "scroll": 330
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "w": 736,
+      "scroll": 736,
+      "controls": [
+        {
+          "id": "",
+          "height": 48,
+          "width": 48
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 49.0625
+        },
+        {
+          "id": "handReveal",
+          "height": 48,
+          "width": 96.015625
+        },
+        {
+          "id": "preset",
+          "height": 48,
+          "width": 197
+        },
+        {
+          "id": "prev",
+          "height": 48,
+          "width": 116.171875
+        },
+        {
+          "id": "next",
+          "height": 48,
+          "width": 148.171875
+        },
+        {
+          "id": "reset",
+          "height": 48,
+          "width": 96.015625
+        },
+        {
+          "id": "end",
+          "height": 48,
+          "width": 96.015625
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 646
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 646
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 646
+        },
+        {
+          "id": "reveal",
+          "height": 48,
+          "width": 96.015625
+        },
+        {
+          "id": "copy",
+          "height": 48,
+          "width": 121.234375
+        }
+      ],
+      "buckets": [
+        {
+          "w": 309,
+          "scroll": 309
+        },
+        {
+          "w": 309,
+          "scroll": 309
+        },
+        {
+          "w": 309,
+          "scroll": 309
+        },
+        {
+          "w": 309,
+          "scroll": 309
+        },
+        {
+          "w": 309,
+          "scroll": 309
+        },
+        {
+          "w": 309,
+          "scroll": 309
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "w": 1440,
+      "scroll": 1440,
+      "controls": [
+        {
+          "id": "",
+          "height": 48,
+          "width": 48
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 49.0625
+        },
+        {
+          "id": "handReveal",
+          "height": 48,
+          "width": 96.015625
+        },
+        {
+          "id": "preset",
+          "height": 48,
+          "width": 197
+        },
+        {
+          "id": "prev",
+          "height": 48,
+          "width": 116.171875
+        },
+        {
+          "id": "next",
+          "height": 48,
+          "width": 148.171875
+        },
+        {
+          "id": "reset",
+          "height": 48,
+          "width": 96.015625
+        },
+        {
+          "id": "end",
+          "height": 48,
+          "width": 96.015625
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 910
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 910
+        },
+        {
+          "id": "",
+          "height": 48,
+          "width": 910
+        },
+        {
+          "id": "reveal",
+          "height": 48,
+          "width": 96.015625
+        },
+        {
+          "id": "copy",
+          "height": 48,
+          "width": 121.234375
+        }
+      ],
+      "buckets": [
+        {
+          "w": 441,
+          "scroll": 441
+        },
+        {
+          "w": 441,
+          "scroll": 441
+        },
+        {
+          "w": 441,
+          "scroll": 441
+        },
+        {
+          "w": 441,
+          "scroll": 441
+        },
+        {
+          "w": 441,
+          "scroll": 441
+        },
+        {
+          "w": 441,
+          "scroll": 441
+        }
+      ]
+    }
+  ],
+  "contrasts": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".bucket",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".bucket b",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "button:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".btn.primary",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgba(13, 17, 23, 0.96)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "a",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "focus": {
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)",
+    "contrast": 9.809435643476732
+  },
+  "cssBytes": 10754,
+  "errors": [],
+  "bad": [],
+  "localRequests": 8,
+  "zoom": "CSS zoom 2 at 800px plus 400 CSS pixels / DPR 2 through CDP in both locales; not OS device zoom",
+  "clipboard": "native Chromium clipboard success/readback in both locales; rejection injected for deterministic fallback",
+  "limits": "Synthetic browser checks; no actual learner or independent acceptance"
+}

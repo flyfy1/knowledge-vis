@@ -1,0 +1,6 @@
+{
+  "kind": "author core self-check",
+  "cases": 1263,
+  "snapshots": 1956,
+  "method": "answers compared with edit-distance oracle fixtures; each snapshot compared with exhaustive deletion allocation DP; budget and snapshot isolation checked"
+}

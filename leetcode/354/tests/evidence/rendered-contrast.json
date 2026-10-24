@@ -1,0 +1,87 @@
+{
+  "kind": "author self-check",
+  "pairs": [
+    {
+      "selector": "#progress",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "disabled": false,
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#ledger small",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "disabled": false,
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "#next",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "disabled": true,
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#prev",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "disabled": false,
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".lang-toggle .active",
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "disabled": false,
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".tagline",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "disabled": false,
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".explain",
+      "foreground": "rgb(201, 212, 226)",
+      "background": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "disabled": false,
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".step-nav a.active",
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "disabled": false,
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#pythonSource",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(9, 14, 22)",
+      "opacity": "1",
+      "disabled": false,
+      "ratio": 16.437295258072666
+    },
+    {
+      "selector": ".tail small",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "disabled": false,
+      "ratio": 6.449407898769069
+    }
+  ],
+  "forcedColorsFocusWidth": "3px",
+  "reducedMotion": "reduce, manually operated trace remains functional"
+}

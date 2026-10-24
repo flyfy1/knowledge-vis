@@ -1,0 +1,75 @@
+{
+  "status": "pass",
+  "presets": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "operation": "get(3) — Return 30; frequency 1→2, append as newest in the destination bucket."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "operation": "put(7,70) — First evict key 5, the oldest in the previous minimum bucket. Append new key at frequency 1; min_freq=1."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "operation": "get(0) — Miss: return −1; buckets and order remain unchanged."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "operation": "get(2) — Miss: return −1; buckets and order remain unchanged."
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "operation": "get(3) — 返回 30；频次 1→2，移到目标桶最新端。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "operation": "put(7,70) — 先删键 5：它是操作前最小桶中最旧的键。 新键以频次 1 追加，min_freq=1。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "operation": "get(0) — 未命中，返回 −1；桶与顺序完全不变。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "operation": "get(2) — 未命中，返回 −1；桶与顺序完全不变。"
+    }
+  ],
+  "viewports": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "200% CSS zoom at 780px viewport",
+  "sourceDisplayCopyDownloadParity": true,
+  "clipboardFallback": true,
+  "blockedStorage": true,
+  "focusOutline": "3px",
+  "contrasts": {
+    "e8edf4/0d1117": 16.09,
+    "e8edf4/161b22": 14.7,
+    "e8edf4/1c2330": 13.4,
+    "9aa7b8/0d1117": 7.74,
+    "9aa7b8/161b22": 7.08,
+    "9aa7b8/1c2330": 6.45,
+    "6ee7ff/0d1117": 13.1,
+    "6ee7ff/161b22": 11.97,
+    "6ee7ff/1c2330": 10.91,
+    "ffb454/0d1117": 10.73,
+    "ffb454/161b22": 9.81,
+    "ffb454/1c2330": 8.94,
+    "7ee2a8/0d1117": 12.01,
+    "7ee2a8/161b22": 10.98,
+    "7ee2a8/1c2330": 10,
+    "focus": 8.94
+  },
+  "errors": []
+}

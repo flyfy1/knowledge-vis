@@ -1,0 +1,44 @@
+{
+  "kind": "author self-check",
+  "result": "pass",
+  "method": "Native Chromium chrome.tabs.setZoom(2), verified by getZoom, innerWidth and devicePixelRatio; test-only local extension in fresh temporary profile",
+  "observed": [
+    {
+      "lang": "en",
+      "physicalWidth": 780,
+      "actualZoom": 2,
+      "width": 390,
+      "dpr": 2,
+      "scrollWidth": 390,
+      "columns": "328px"
+    },
+    {
+      "lang": "zh",
+      "physicalWidth": 780,
+      "actualZoom": 2,
+      "width": 390,
+      "dpr": 2,
+      "scrollWidth": 390,
+      "columns": "328px"
+    },
+    {
+      "lang": "en",
+      "physicalWidth": 640,
+      "actualZoom": 2,
+      "width": 320,
+      "dpr": 2,
+      "scrollWidth": 320,
+      "columns": "258px"
+    },
+    {
+      "lang": "zh",
+      "physicalWidth": 640,
+      "actualZoom": 2,
+      "width": 320,
+      "dpr": 2,
+      "scrollWidth": 320,
+      "columns": "258px"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,16 @@
+{
+  "kind": "author self-check",
+  "keyboard": [
+    "language Tab/Enter",
+    "next Enter",
+    "native select Home/ArrowDown/Enter",
+    "prediction Space and reveal Enter",
+    "hand reveal Enter"
+  ],
+  "statePreservation": "hand reveal, prediction choice and revealed explanation survive locale change",
+  "forcedColors": {
+    "width": "3px",
+    "style": "none"
+  },
+  "reducedMotion": "scroll-behavior auto"
+}

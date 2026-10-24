@@ -1,0 +1,28 @@
+{
+  "accessedAt": "2026-10-24T16:34:52.637548+00:00",
+  "url": "https://leetcode.com/graphql/",
+  "httpStatus": 200,
+  "authentication": "None; normal public request",
+  "request": {
+    "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId questionFrontendId title titleSlug isPaidOnly content\n    exampleTestcases sampleTestCase metaData\n    codeSnippets { lang langSlug code }\n  }\n}",
+    "variables": {
+      "titleSlug": "shortest-distance-from-all-buildings"
+    }
+  },
+  "response": {
+    "data": {
+      "question": {
+        "questionId": "317",
+        "questionFrontendId": "317",
+        "title": "Shortest Distance from All Buildings",
+        "titleSlug": "shortest-distance-from-all-buildings",
+        "isPaidOnly": true,
+        "content": null,
+        "exampleTestcases": "[[1,0,2,0,1],[0,0,0,0,0],[0,0,1,0,0]]\n[[1,0]]\n[[1]]",
+        "sampleTestCase": "[[1,0,2,0,1],[0,0,0,0,0],[0,0,1,0,0]]",
+        "metaData": "{\r\n  \"name\": \"shortestDistance\",\r\n  \"params\": [\r\n    {\r\n      \"name\": \"grid\",\r\n      \"type\": \"integer[][]\"\r\n    }\r\n  ],\r\n  \"return\": {\r\n    \"type\": \"integer\"\r\n  }\r\n}",
+        "codeSnippets": null
+      }
+    }
+  }
+}

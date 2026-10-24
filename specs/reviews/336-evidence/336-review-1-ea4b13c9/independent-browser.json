@@ -1,0 +1,57 @@
+[
+  {
+    "action": "Keyboard End, Left, Left from initial range",
+    "position": 6,
+    "event": "Completed edge s: i=1, k=1, path \"s\". Matched 1 letters on each outside.",
+    "ledger": "No pairs yet"
+  },
+  {
+    "action": "ArrowRight crosses finish",
+    "position": 7,
+    "event": "Left word i=1 exhausted at path \"s\". Inspect pal=[0,1]; excluding i emits [[1,0]]. The remaining right prefix was confirmed palindromic during construction.",
+    "ledger": "[1,0] → slls"
+  },
+  {
+    "action": "Change preset with revealed wrong prediction",
+    "searchReset": true,
+    "quizRetained": true
+  },
+  {
+    "lang": "en",
+    "preset": "1",
+    "index": 36,
+    "expected": "reject nonpalindromic suffix",
+    "event": "Check a shorter right word: i=4, consumed k=1, path \"s\"; end=3, left remainder \"ssll\", suf[1]=false. Emitted now: [] (end must exist and differ from i)."
+  },
+  {
+    "lang": "en",
+    "preset": "5",
+    "index": 2,
+    "expected": "emit shorter partner",
+    "event": "Check a shorter right word: i=0, consumed k=0, path \"\"; end=3, left remainder \"a\", suf[0]=true. Emitted now: [[0,3]] (end must exist and differ from i)."
+  },
+  {
+    "lang": "zh",
+    "preset": "1",
+    "index": 36,
+    "expected": "reject nonpalindromic suffix",
+    "event": "检查较短右词：i=4，已读 k=1，路径 \"s\"；end=3，左词剩余 \"ssll\"，suf[1]=假。本次输出 []（需 end 存在且不等于 i）。"
+  },
+  {
+    "lang": "zh",
+    "preset": "5",
+    "index": 2,
+    "expected": "emit shorter partner",
+    "event": "检查较短右词：i=0，已读 k=0，路径 \"\"；end=3，左词剩余 \"a\"，suf[0]=真。本次输出 [[0,3]]（需 end 存在且不等于 i）。"
+  },
+  {
+    "action": "320px focused table, eight ArrowRight presses",
+    "before": 0,
+    "after": 224
+  },
+  {
+    "action": "Forced clipboard failure",
+    "text": "剪贴板不可用；请在下方手动复制。",
+    "focused": true
+  }
+]

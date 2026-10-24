@@ -1,0 +1,160 @@
+{
+  "fresh": [
+    {
+      "input": [
+        "ab",
+        "cba",
+        ""
+      ],
+      "prediction": [
+        [
+          0,
+          1
+        ]
+      ],
+      "actual": [
+        [
+          0,
+          1
+        ]
+      ],
+      "unchanged": true
+    },
+    {
+      "input": [
+        "ab",
+        "ca"
+      ],
+      "prediction": [],
+      "actual": [],
+      "unchanged": true
+    },
+    {
+      "input": [
+        ""
+      ],
+      "prediction": [],
+      "actual": [],
+      "unchanged": true
+    },
+    {
+      "input": [
+        "aa",
+        ""
+      ],
+      "prediction": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "actual": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "unchanged": true
+    },
+    {
+      "input": [
+        "a"
+      ],
+      "prediction": [],
+      "actual": [],
+      "unchanged": true
+    },
+    {
+      "input": [
+        "abc",
+        "cba",
+        "x"
+      ],
+      "prediction": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "actual": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "unchanged": true
+    }
+  ],
+  "freshNodeInvariant": [
+    {
+      "path": "",
+      "end": 2,
+      "pal": [
+        2
+      ]
+    },
+    {
+      "path": "a",
+      "end": -1,
+      "pal": []
+    },
+    {
+      "path": "ab",
+      "end": -1,
+      "pal": [
+        1
+      ]
+    },
+    {
+      "path": "abc",
+      "end": 1,
+      "pal": [
+        1
+      ]
+    },
+    {
+      "path": "b",
+      "end": -1,
+      "pal": [
+        0
+      ]
+    },
+    {
+      "path": "ba",
+      "end": 0,
+      "pal": [
+        0
+      ]
+    }
+  ],
+  "randomPairCases": 1000,
+  "independentFlagCases": 700,
+  "servedDiskParity": "exact",
+  "sha256": {
+    "index.html": "6e67d8cc5ab136fe77144885cee4b4ca12030e117ea25bc4aa0f9d0e29344971",
+    "style.css": "005c675b7a4da9613ddb0752f6e16ed7a691f846e8a96bcc1a068c98cfaaa8d6",
+    "app.js": "a2e2cd794fcbb96623ef33db5596030e4e837dd850cd547cf6d85a6adc979e4b",
+    "copy.js": "ce0537684c72d23994e5c24089d916c7dd865aae8207267608d5f97b46388903",
+    "core.js": "cf70868c06eaee1e7e7d063dc2b3972266e6344410d6cb152cce8ecf72e74613",
+    "python-code.js": "a0ec3d212dd536ed0d60a3c9626e7c374fdfbc65ced884f4e87d337724f84ea0",
+    "solution.py": "6f0fd7776cf616b0acfab5fc0fbe4d5066606240fe226273c8ad57ea6093cbef",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b"
+  }
+}

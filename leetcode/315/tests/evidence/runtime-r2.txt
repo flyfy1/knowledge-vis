@@ -1,0 +1,8 @@
+PASS test_examples
+PASS test_boundaries
+PASS test_seeded
+PASS test_exhaustive_and_mutation
+PASS test_maximum_closed_forms
+Actual Python Solution.countSmaller executed: examples, seeded random, exhaustive lengths 0..6, no mutation, maximum n=100000 closed forms.
+core ok
+exhaustive intermediate suffix/Fenwick invariants ok

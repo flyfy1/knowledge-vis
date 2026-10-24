@@ -1,0 +1,327 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "all_rounds": 9,
+      "rewind": "PASS",
+      "endpoints": "PASS"
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "all_rounds": 25,
+      "rewind": "PASS",
+      "endpoints": "PASS"
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "all_rounds": 18,
+      "rewind": "PASS",
+      "endpoints": "PASS"
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "all_rounds": 25,
+      "rewind": "PASS",
+      "endpoints": "PASS"
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "all_rounds": 5,
+      "rewind": "PASS",
+      "endpoints": "PASS"
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "all_rounds": 9,
+      "rewind": "PASS",
+      "endpoints": "PASS"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "all_rounds": 9,
+      "rewind": "PASS",
+      "endpoints": "PASS"
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "all_rounds": 25,
+      "rewind": "PASS",
+      "endpoints": "PASS"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "all_rounds": 18,
+      "rewind": "PASS",
+      "endpoints": "PASS"
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "all_rounds": 25,
+      "rewind": "PASS",
+      "endpoints": "PASS"
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "all_rounds": 5,
+      "rewind": "PASS",
+      "endpoints": "PASS"
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "all_rounds": 9,
+      "rewind": "PASS",
+      "endpoints": "PASS"
+    }
+  ],
+  "bindings": [
+    {
+      "locale": "en",
+      "state": "revealed option 0",
+      "observed": "Revise this prediction. The right 0 reaches boundary 2 directly: L=2, depth 2. The left 0 must cross ground 3 to reach that outlet: L=max(2,3)=3, depth 3; other boundary routes require 4. The middle ground-3 cell has depth 0. Total = 3+0+2=5. Choosing 4 misses the left cell’s height-3 bottleneck; choosing 8 ignores the lower outlet on the right."
+    },
+    {
+      "locale": "en",
+      "state": "revealed option 1",
+      "observed": "Correct prediction. The right 0 reaches boundary 2 directly: L=2, depth 2. The left 0 must cross ground 3 to reach that outlet: L=max(2,3)=3, depth 3; other boundary routes require 4. The middle ground-3 cell has depth 0. Total = 3+0+2=5. Choosing 4 misses the left cell’s height-3 bottleneck; choosing 8 ignores the lower outlet on the right."
+    },
+    {
+      "locale": "en",
+      "state": "revealed option 2",
+      "observed": "Revise this prediction. The right 0 reaches boundary 2 directly: L=2, depth 2. The left 0 must cross ground 3 to reach that outlet: L=max(2,3)=3, depth 3; other boundary routes require 4. The middle ground-3 cell has depth 0. Total = 3+0+2=5. Choosing 4 misses the left cell’s height-3 bottleneck; choosing 8 ignores the lower outlet on the right."
+    },
+    {
+      "locale": "en",
+      "state": "clipboard denied",
+      "observed": "Clipboard unavailable. Select all in the read-only field below and copy manually."
+    },
+    {
+      "locale": "zh",
+      "state": "revealed option 0",
+      "observed": "需要修正这个预测。 右侧 0 直接经过边缘 2，L=2，水深 2。左侧 0 到同一出口必须越过地面 3，L=max(2,3)=3，水深 3；向别的边缘走需要 4。中间地面 3 的格子水深 0，所以总量 3+0+2=5。选 4 漏掉左边的高度 3 瓶颈；选 8 则忽略右边的较低出口。"
+    },
+    {
+      "locale": "zh",
+      "state": "revealed option 1",
+      "observed": "预测正确。 右侧 0 直接经过边缘 2，L=2，水深 2。左侧 0 到同一出口必须越过地面 3，L=max(2,3)=3，水深 3；向别的边缘走需要 4。中间地面 3 的格子水深 0，所以总量 3+0+2=5。选 4 漏掉左边的高度 3 瓶颈；选 8 则忽略右边的较低出口。"
+    },
+    {
+      "locale": "zh",
+      "state": "revealed option 2",
+      "observed": "需要修正这个预测。 右侧 0 直接经过边缘 2，L=2，水深 2。左侧 0 到同一出口必须越过地面 3，L=max(2,3)=3，水深 3；向别的边缘走需要 4。中间地面 3 的格子水深 0，所以总量 3+0+2=5。选 4 漏掉左边的高度 3 瓶颈；选 8 则忽略右边的较低出口。"
+    },
+    {
+      "locale": "zh",
+      "state": "clipboard denied",
+      "observed": "剪贴板不可用。请在下方只读文本框中全选并手动复制。"
+    }
+  ],
+  "geometry": [
+    {
+      "locale": "en",
+      "width": 320,
+      "cell": {
+        "w": 81.90625,
+        "h": 137,
+        "font": "14px"
+      },
+      "scroll": {
+        "left": 36,
+        "scroll": 530,
+        "client": 262
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "cell": {
+        "w": 81.90625,
+        "h": 137,
+        "font": "14px"
+      },
+      "scroll": {
+        "left": 73,
+        "scroll": 530,
+        "client": 332
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "cell": {
+        "w": 101.25,
+        "h": 114.25,
+        "font": "14px"
+      },
+      "scroll": {
+        "left": 0,
+        "scroll": 646,
+        "client": 646
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "cell": {
+        "w": 145.25,
+        "h": 114.25,
+        "font": "14px"
+      },
+      "scroll": {
+        "left": 0,
+        "scroll": 910,
+        "client": 910
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "cell": {
+        "w": 81.90625,
+        "h": 114.25,
+        "font": "14px"
+      },
+      "scroll": {
+        "left": 33,
+        "scroll": 530,
+        "client": 262
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "cell": {
+        "w": 81.90625,
+        "h": 114.25,
+        "font": "14px"
+      },
+      "scroll": {
+        "left": 69,
+        "scroll": 530,
+        "client": 332
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "cell": {
+        "w": 101.25,
+        "h": 114.25,
+        "font": "14px"
+      },
+      "scroll": {
+        "left": 0,
+        "scroll": 646,
+        "client": 646
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "cell": {
+        "w": 145.25,
+        "h": 114.25,
+        "font": "14px"
+      },
+      "scroll": {
+        "left": 0,
+        "scroll": 910,
+        "client": 910
+      }
+    }
+  ],
+  "focus": {
+    "width": "3px",
+    "style": "solid",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".stage",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".heap",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".terrain td span",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".terrain td small",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#prev",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#langToggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgba(13, 17, 23, 0.96)",
+      "ratio": 7.7443462241265095
+    }
+  ],
+  "consoleErrors": [],
+  "assetFailures": [],
+  "requests": [
+    "http://127.0.0.1:18770/leetcode/407/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/407/style.css?v=1",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/407/copy.js?v=1",
+    "http://127.0.0.1:18770/leetcode/407/core.js?v=1",
+    "http://127.0.0.1:18770/leetcode/407/python-code.js?v=1",
+    "http://127.0.0.1:18770/leetcode/407/app.js?v=1"
+  ],
+  "sourceCopyDownloadParity": true,
+  "clipboardSuccessAndDenial": true,
+  "blockedStorage": true,
+  "offlineSource": true,
+  "layoutZoom": "200% CSS zoom (both locales)",
+  "keyboard": true,
+  "localLinks": true,
+  "forcedColors": true,
+  "reducedMotion": true
+}

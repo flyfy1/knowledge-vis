@@ -1,0 +1,36 @@
+{
+  "kind": "author self-check",
+  "officialExamples": 3,
+  "oracleCases": 4140,
+  "seed": 321,
+  "pickFixtures": 7108,
+  "mergeFixtures": 1600,
+  "maximumConstraints": [
+    {
+      "m": 500,
+      "n": 500,
+      "k": 1000,
+      "seconds": 0.002
+    },
+    {
+      "m": 500,
+      "n": 500,
+      "k": 500,
+      "seconds": 0.309
+    },
+    {
+      "m": 500,
+      "n": 500,
+      "k": 1,
+      "seconds": 0.0
+    },
+    {
+      "m": 500,
+      "n": 500,
+      "k": 1000,
+      "seconds": 0.002
+    }
+  ],
+  "seconds": 0.63,
+  "sourceMirror": "exact"
+}

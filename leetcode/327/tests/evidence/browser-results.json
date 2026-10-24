@@ -1,0 +1,236 @@
+{
+  "status": "PASS (author self-check)",
+  "checks": [
+    "en preset 0: all 8 operations reversible, total 3",
+    "en preset 1: all 3 operations reversible, total 1",
+    "en preset 2: all 8 operations reversible, total 6",
+    "en preset 3: all 5 operations reversible, total 1",
+    "en preset 4: all 5 operations reversible, total 1",
+    "zh preset 0: all 8 operations reversible, total 3",
+    "zh preset 1: all 3 operations reversible, total 1",
+    "zh preset 2: all 8 operations reversible, total 6",
+    "zh preset 3: all 5 operations reversible, total 1",
+    "zh preset 4: all 5 operations reversible, total 1"
+  ],
+  "bindings": [
+    {
+      "lang": "en",
+      "state": "baseline completed",
+      "text": "Checked 6/6 intervals; running count = 3."
+    },
+    {
+      "lang": "en",
+      "state": "prefix pair 0",
+      "text": "P[1] − P[0] = -2 − (0) = -2; original interval [0,0] = [-2]: Count."
+    },
+    {
+      "lang": "en",
+      "state": "prefix pair 1",
+      "text": "P[2] − P[0] = 3 − (0) = 3; original interval [0,1] = [-2, 5]: Exclude."
+    },
+    {
+      "lang": "en",
+      "state": "prefix pair 2",
+      "text": "P[3] − P[0] = 2 − (0) = 2; original interval [0,2] = [-2, 5, -1]: Count."
+    },
+    {
+      "lang": "en",
+      "state": "prefix pair 3",
+      "text": "P[2] − P[1] = 3 − (-2) = 5; original interval [1,1] = [5]: Exclude."
+    },
+    {
+      "lang": "en",
+      "state": "prefix pair 4",
+      "text": "P[3] − P[1] = 2 − (-2) = 4; original interval [1,2] = [5, -1]: Exclude."
+    },
+    {
+      "lang": "en",
+      "state": "prefix pair 5",
+      "text": "P[3] − P[2] = 2 − (3) = -1; original interval [2,2] = [-1]: Count."
+    },
+    {
+      "lang": "en",
+      "state": "first cross count, inclusive lower boundary",
+      "text": "Original index blocks [0,1) × [1,2); fixed x=0. k: 0→0, l: 0→1 (local positions in R); add l−k=1.",
+      "right": "Position 0: -2−(0)=-2, count"
+    },
+    {
+      "lang": "en",
+      "state": "prediction 1",
+      "text": "Revise this prediction. For x=−1, y must lie in [−1,0]: only y=0, so k=0,l=1 adds 1. For x=1, y must lie in [1,2]: y=1,2, so k=1,l=3 adds 2. Total: 3. Choosing 1 misses the second x’s two pairs; 6 includes every one of the 2×3 pairs. Both inclusive boundaries and the blocks’ original index order are essential."
+    },
+    {
+      "lang": "en",
+      "state": "prediction 3",
+      "text": "Correct. For x=−1, y must lie in [−1,0]: only y=0, so k=0,l=1 adds 1. For x=1, y must lie in [1,2]: y=1,2, so k=1,l=3 adds 2. Total: 3. Choosing 1 misses the second x’s two pairs; 6 includes every one of the 2×3 pairs. Both inclusive boundaries and the blocks’ original index order are essential."
+    },
+    {
+      "lang": "en",
+      "state": "prediction 6",
+      "text": "Revise this prediction. For x=−1, y must lie in [−1,0]: only y=0, so k=0,l=1 adds 1. For x=1, y must lie in [1,2]: y=1,2, so k=1,l=3 adds 2. Total: 3. Choosing 1 misses the second x’s two pairs; 6 includes every one of the 2×3 pairs. Both inclusive boundaries and the blocks’ original index order are essential."
+    },
+    {
+      "lang": "zh",
+      "state": "baseline completed",
+      "text": "已检查 6/6 段；累计计入 3 段。"
+    },
+    {
+      "lang": "zh",
+      "state": "prefix pair 0",
+      "text": "P[1] − P[0] = -2 − (0) = -2；原区间 [0,0] = [-2]：计入。"
+    },
+    {
+      "lang": "zh",
+      "state": "prefix pair 1",
+      "text": "P[2] − P[0] = 3 − (0) = 3；原区间 [0,1] = [-2, 5]：排除。"
+    },
+    {
+      "lang": "zh",
+      "state": "prefix pair 2",
+      "text": "P[3] − P[0] = 2 − (0) = 2；原区间 [0,2] = [-2, 5, -1]：计入。"
+    },
+    {
+      "lang": "zh",
+      "state": "prefix pair 3",
+      "text": "P[2] − P[1] = 3 − (-2) = 5；原区间 [1,1] = [5]：排除。"
+    },
+    {
+      "lang": "zh",
+      "state": "prefix pair 4",
+      "text": "P[3] − P[1] = 2 − (-2) = 4；原区间 [1,2] = [5, -1]：排除。"
+    },
+    {
+      "lang": "zh",
+      "state": "prefix pair 5",
+      "text": "P[3] − P[2] = 2 − (3) = -1；原区间 [2,2] = [-1]：计入。"
+    },
+    {
+      "lang": "zh",
+      "state": "first cross count, inclusive lower boundary",
+      "text": "原下标块 [0,1) × [1,2)；固定 x=0。k: 0→0，l: 0→1（均为 R 的局部位置）；本次增加 l−k=1。",
+      "right": "位置 0：-2−(0)=-2，计入"
+    },
+    {
+      "lang": "zh",
+      "state": "prediction 1",
+      "text": "还需修正。 x=−1：y 需在 [−1,0]，仅 y=0；k=0,l=1，增加 1。x=1：y 需在 [1,2]，y=1,2；k=1,l=3，增加 2。共 3 对。1 漏了第二个 x 的两对；6 错把全部 2×3 对都算入。闭边界与左右块的原下标条件缺一不可。"
+    },
+    {
+      "lang": "zh",
+      "state": "prediction 3",
+      "text": "正确。 x=−1：y 需在 [−1,0]，仅 y=0；k=0,l=1，增加 1。x=1：y 需在 [1,2]，y=1,2；k=1,l=3，增加 2。共 3 对。1 漏了第二个 x 的两对；6 错把全部 2×3 对都算入。闭边界与左右块的原下标条件缺一不可。"
+    },
+    {
+      "lang": "zh",
+      "state": "prediction 6",
+      "text": "还需修正。 x=−1：y 需在 [−1,0]，仅 y=0；k=0,l=1，增加 1。x=1：y 需在 [1,2]，y=1,2；k=1,l=3，增加 2。共 3 对。1 漏了第二个 x 的两对；6 错把全部 2×3 对都算入。闭边界与左右块的原下标条件缺一不可。"
+    },
+    {
+      "lang": "en",
+      "state": "clipboard fallback",
+      "text": "Automatic copy unavailable; source is expanded and selected for manual copying."
+    },
+    {
+      "lang": "zh",
+      "state": "clipboard fallback",
+      "text": "无法自动复制；已展开并选中源码，请手动复制。"
+    }
+  ],
+  "shots": [
+    "trace-en-320.png",
+    "trace-zh-320.png",
+    "trace-en-390.png",
+    "trace-zh-390.png",
+    "trace-en-736.png",
+    "trace-zh-736.png",
+    "trace-en-1440.png",
+    "trace-zh-1440.png"
+  ],
+  "errors": [],
+  "localRequests": 8,
+  "cssBytes": 11482,
+  "contrasts": [
+    {
+      "fg": "text",
+      "bg": "bg",
+      "ratio": 16.09
+    },
+    {
+      "fg": "muted",
+      "bg": "bg",
+      "ratio": 7.74
+    },
+    {
+      "fg": "accent",
+      "bg": "bg",
+      "ratio": 13.1
+    },
+    {
+      "fg": "accent2",
+      "bg": "bg",
+      "ratio": 10.73
+    },
+    {
+      "fg": "good",
+      "bg": "bg",
+      "ratio": 12.01
+    },
+    {
+      "fg": "text",
+      "bg": "panel",
+      "ratio": 14.7
+    },
+    {
+      "fg": "muted",
+      "bg": "panel",
+      "ratio": 7.08
+    },
+    {
+      "fg": "accent",
+      "bg": "panel",
+      "ratio": 11.97
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel",
+      "ratio": 9.81
+    },
+    {
+      "fg": "good",
+      "bg": "panel",
+      "ratio": 10.98
+    },
+    {
+      "fg": "text",
+      "bg": "panel2",
+      "ratio": 13.4
+    },
+    {
+      "fg": "muted",
+      "bg": "panel2",
+      "ratio": 6.45
+    },
+    {
+      "fg": "accent",
+      "bg": "panel2",
+      "ratio": 10.91
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel2",
+      "ratio": 8.94
+    },
+    {
+      "fg": "good",
+      "bg": "panel2",
+      "ratio": 10
+    }
+  ],
+  "keyboardFocus": {
+    "style": "solid",
+    "width": "3px"
+  },
+  "zoom": "200% CSS layout zoom; physical browser chrome/device not tested",
+  "offlineSource": true,
+  "storageBlocked": true
+}

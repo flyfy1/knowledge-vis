@@ -1,0 +1,13 @@
+FAIL R315-1 4 must not be correct for position 0
+FAIL R315-2 false == true
+FAIL R315-3 Expected values to be strictly equal:
++ actual - expected ... Lines skipped
+
+  'from typing import List\n' +
+    '\n' +
+...
+    '            answer[position] = prefix(rank - 1)\n' +
+    '            add(rank)\n' +
++   '        return answer'
+-   '        return answer\n'
+Required findings failed: R315-1, R315-2, R315-3

@@ -1,0 +1,10 @@
+{
+  "kind": "author self-check",
+  "oracle": "strict containment DAG in original order, no sorting or LIS",
+  "cases": 67939,
+  "exhaustive": "all ordered inputs of length 0..5 over [1..3]\u00b2",
+  "random": "1500 seeded cases, seed 354",
+  "maxConstraint": "five n=100000 closed-form cases",
+  "sourceMirror": "exact",
+  "copyKeys": 87
+}

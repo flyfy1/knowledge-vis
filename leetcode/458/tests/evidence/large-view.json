@@ -1,0 +1,66 @@
+{
+  "status": "pass",
+  "shots": [
+    {
+      "lang": "en",
+      "bucket": 1,
+      "name": "en-27-viewport-1.png",
+      "top": 94.46875,
+      "nav": 70,
+      "scroll": 156,
+      "client": 156,
+      "text": "Bucket 1Digits: 0, 0, 0Excluded: observation differs"
+    },
+    {
+      "lang": "en",
+      "bucket": 13,
+      "name": "en-27-viewport-13.png",
+      "top": 94.46875,
+      "nav": 70,
+      "scroll": 156,
+      "client": 156,
+      "text": "Bucket 13Digits: 0, 1, 1Excluded: observation differs"
+    },
+    {
+      "lang": "en",
+      "bucket": 26,
+      "name": "en-27-viewport-26.png",
+      "top": 94.46875,
+      "nav": 70,
+      "scroll": 154,
+      "client": 154,
+      "text": "Bucket 26Digits: 1, 2, 2Only candidate"
+    },
+    {
+      "lang": "zh",
+      "bucket": 1,
+      "name": "zh-27-viewport-1.png",
+      "top": 94.46875,
+      "nav": 70,
+      "scroll": 156,
+      "client": 156,
+      "text": "桶 1数字：0, 0, 0与观察不符，已排除"
+    },
+    {
+      "lang": "zh",
+      "bucket": 13,
+      "name": "zh-27-viewport-13.png",
+      "top": 94.46875,
+      "nav": 70,
+      "scroll": 156,
+      "client": 156,
+      "text": "桶 13数字：0, 1, 1与观察不符，已排除"
+    },
+    {
+      "lang": "zh",
+      "bucket": 26,
+      "name": "zh-27-viewport-26.png",
+      "top": 94.46875,
+      "nav": 70,
+      "scroll": 154,
+      "client": 154,
+      "text": "桶 26数字：1, 2, 2唯一候选"
+    }
+  ],
+  "note": "Full element screenshots of the tall 27-bucket list include a sticky-nav capture artifact at the scroll position. These settled viewport captures prove readable content above and below it without altering the rendered page."
+}

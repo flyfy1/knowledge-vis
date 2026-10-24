@@ -1,0 +1,90 @@
+{
+  "authorSelfCheck": true,
+  "semanticBindings": [
+    {
+      "lang": "en",
+      "step": 0,
+      "expectedMeaning": "no completed check",
+      "visible": "No checks yet. Next: test p=9779, x=99."
+    },
+    {
+      "lang": "en",
+      "step": 1,
+      "expectedMeaning": "nonzero remainder rejects factor",
+      "visible": "Just tested: 9779 = 99×98 + 77. The nonzero remainder rejects this factor."
+    },
+    {
+      "lang": "en",
+      "step": 2,
+      "expectedMeaning": "square cutoff rejects candidate",
+      "visible": "Just stopped: x=98, x²=9604 < p=9779. All remaining x are smaller and cannot be the larger factor. This candidate fails."
+    },
+    {
+      "lang": "en",
+      "step": 24,
+      "expectedMeaning": "exact factorization found",
+      "visible": "Found: 9009 = 99×91, with both factors in 10…99. 9009 % 1337 = 987."
+    },
+    {
+      "lang": "en",
+      "choice": "0",
+      "expectedMeaning": "square cutoff excludes every factor pair",
+      "visible": "This choice misses the square bound. 36²=1296<1331. If both factors are ≤36, their product is ≤1296; if either is >36, it was already tested in 99…37. Stop. The first option treats two digits as sufficient; the second repeats numbers that could only be smaller factors and cannot reveal a new pair."
+    },
+    {
+      "lang": "en",
+      "choice": "1",
+      "expectedMeaning": "square cutoff excludes every factor pair",
+      "visible": "This choice misses the square bound. 36²=1296<1331. If both factors are ≤36, their product is ≤1296; if either is >36, it was already tested in 99…37. Stop. The first option treats two digits as sufficient; the second repeats numbers that could only be smaller factors and cannot reveal a new pair."
+    },
+    {
+      "lang": "en",
+      "choice": "2",
+      "expectedMeaning": "square cutoff excludes every factor pair",
+      "visible": "Correct prediction. 36²=1296<1331. If both factors are ≤36, their product is ≤1296; if either is >36, it was already tested in 99…37. Stop. The first option treats two digits as sufficient; the second repeats numbers that could only be smaller factors and cannot reveal a new pair."
+    },
+    {
+      "lang": "zh",
+      "step": 0,
+      "expectedMeaning": "no completed check",
+      "visible": "尚未检查。下一次会检验 p=9779、x=99。"
+    },
+    {
+      "lang": "zh",
+      "step": 1,
+      "expectedMeaning": "nonzero remainder rejects factor",
+      "visible": "刚检验：9779 = 99×98 + 77。余数非零，当前因子失败。"
+    },
+    {
+      "lang": "zh",
+      "step": 2,
+      "expectedMeaning": "square cutoff rejects candidate",
+      "visible": "刚截止：x=98，x²=9604 < p=9779；后续 x 更小，不能成为较大因子。该候选失败。"
+    },
+    {
+      "lang": "zh",
+      "step": 24,
+      "expectedMeaning": "exact factorization found",
+      "visible": "找到：9009 = 99×91，两个因子都在 10…99 内。9009 % 1337 = 987。"
+    },
+    {
+      "lang": "zh",
+      "choice": "0",
+      "expectedMeaning": "square cutoff excludes every factor pair",
+      "visible": "这个选择漏用了平方界限。 36²=1296<1331。若两个因子都≤36，它们的乘积≤1296；若其中一个>36，它已在 99…37 中检验过。所以停止。选项一把“两位数”当成充分条件；选项二重复检查只能作为较小因子的数，无法得到新因子对。"
+    },
+    {
+      "lang": "zh",
+      "choice": "1",
+      "expectedMeaning": "square cutoff excludes every factor pair",
+      "visible": "这个选择漏用了平方界限。 36²=1296<1331。若两个因子都≤36，它们的乘积≤1296；若其中一个>36，它已在 99…37 中检验过。所以停止。选项一把“两位数”当成充分条件；选项二重复检查只能作为较小因子的数，无法得到新因子对。"
+    },
+    {
+      "lang": "zh",
+      "choice": "2",
+      "expectedMeaning": "square cutoff excludes every factor pair",
+      "visible": "预测正确。 36²=1296<1331。若两个因子都≤36，它们的乘积≤1296；若其中一个>36，它已在 99…37 中检验过。所以停止。选项一把“两位数”当成充分条件；选项二重复检查只能作为较小因子的数，无法得到新因子对。"
+    }
+  ],
+  "exercisePremiseReachable": true
+}

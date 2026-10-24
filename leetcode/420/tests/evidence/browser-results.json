@@ -1,0 +1,118 @@
+{
+  "kind": "author browser self-check",
+  "checks": [
+    {
+      "lang": "en",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "keyboardFocus": {
+        "tag": "BUTTON",
+        "outline": "3px"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "keyboardFocus": {
+        "tag": "BUTTON",
+        "outline": "3px"
+      }
+    }
+  ],
+  "coreSnapshots": 21,
+  "contrasts": [
+    {
+      "fg": "--text",
+      "bg": "--bg",
+      "value": 16.086987125379448
+    },
+    {
+      "fg": "--muted",
+      "bg": "--bg",
+      "value": 7.7443462241265095
+    },
+    {
+      "fg": "--accent",
+      "bg": "--bg",
+      "value": 13.100679028115637
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--bg",
+      "value": 10.731637051347173
+    },
+    {
+      "fg": "--text",
+      "bg": "--panel",
+      "value": 14.704584598678618
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel",
+      "value": 7.078851579017443
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel",
+      "value": 11.974898815275662
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel",
+      "value": 9.809435643476732
+    },
+    {
+      "fg": "--text",
+      "bg": "--panel2",
+      "value": 13.397069143240783
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel2",
+      "value": 6.449407898769069
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel2",
+      "value": 10.910104011097095
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel2",
+      "value": 8.937191437807625
+    }
+  ],
+  "errors": [],
+  "bad": [],
+  "external": [],
+  "sourceDisplayCopyFallbackDownloadParity": true,
+  "zoom": "CSS zoom 2 at viewport1280 (640 effective CSS px); real device untested",
+  "cssBytes": 12077
+}

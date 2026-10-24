@@ -1,0 +1,14 @@
+{
+  "kind": "author self-check; independent algorithm oracle, not independent review",
+  "canonicalCases": 1263,
+  "exhaustiveDomain": "all strings over aA0 of length 1..6",
+  "seed": 420,
+  "allocationChecks": 4538,
+  "oracle": "edit-distance DP over input position, output length, last character, run count, class mask; enumerates insert/delete/replace/keep",
+  "alphabet": "input symbols plus abAB01.!; two interchangeable representatives per class suffice for new adjacent outputs",
+  "sourceParity": true,
+  "sha256": "305b8fab0b3391ee4558b5fc8019419d2c95bba6e6ad27c47506e93d007f5c4b",
+  "displayedPythonBaselineCases": 5,
+  "baselineSourceParity": true,
+  "uniqueBilingualKeys": 93
+}

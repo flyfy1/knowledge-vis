@@ -1,0 +1,3 @@
+Official verification on 2026-10-25 used the exact problem URL and its normally public GraphQL endpoint. `official.json` preserves the timestamp, query, unmodified question content, examples, and complete observed codeSnippets selector response. The Python3 entry exposes `class Solution: def numberOfArithmeticSlices(self, nums: list[int]) -> int`. Python directly implements this supported interface, so no non-Python language exception applies. The lesson paraphrases the public definition; no editorial or private solution was fetched. The second example's 'any subsequence' explanation is subject to the statement's length-at-least-three rule.
+
+These captures are review evidence and are not requested by the runtime page.

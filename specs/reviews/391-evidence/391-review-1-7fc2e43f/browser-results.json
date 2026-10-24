@@ -1,0 +1,147 @@
+{
+  "result": "pass",
+  "locales": [
+    "zh",
+    "en"
+  ],
+  "presets": 6,
+  "widths": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "CSS 200% (document zoom)",
+  "keyboard": true,
+  "copy_and_fallback": true,
+  "download_parity": true,
+  "storage_blocked": true,
+  "offline_source": true,
+  "errors": [],
+  "badAssets": [],
+  "remote": [],
+  "contrast": [
+    {
+      "fg": "text",
+      "bg": "bg",
+      "ratio": 16.086987125379448
+    },
+    {
+      "fg": "text",
+      "bg": "panel",
+      "ratio": 14.704584598678618
+    },
+    {
+      "fg": "muted",
+      "bg": "panel2",
+      "ratio": 6.449407898769069
+    },
+    {
+      "fg": "accent",
+      "bg": "panel",
+      "ratio": 11.974898815275662
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "fg": "accent2",
+      "bg": "bg",
+      "ratio": 10.731637051347173
+    },
+    {
+      "fg": "bad",
+      "bg": "panel2",
+      "ratio": 6.34696669826778
+    },
+    {
+      "fg": "bg",
+      "bg": "accent",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "controls": [
+    {
+      "id": "中",
+      "h": 48,
+      "w": 48
+    },
+    {
+      "id": "EN",
+      "h": 48,
+      "w": 49.0625
+    },
+    {
+      "id": "1 · Count coverage",
+      "h": 48,
+      "w": 148.140625
+    },
+    {
+      "id": "2 · Area can lie",
+      "h": 48,
+      "w": 120.875
+    },
+    {
+      "id": "3 · Corners & proof",
+      "h": 48,
+      "w": 155.484375
+    },
+    {
+      "id": "4 · Predict a new case",
+      "h": 48,
+      "w": 166.140625
+    },
+    {
+      "id": "5 · Python & costs",
+      "h": 48,
+      "w": 142.671875
+    },
+    {
+      "id": "handReveal",
+      "h": 48,
+      "w": 208.765625
+    },
+    {
+      "id": "preset",
+      "h": 48,
+      "w": 292
+    },
+    {
+      "id": "prev",
+      "h": 48,
+      "w": 131.03125
+    },
+    {
+      "id": "next",
+      "h": 48,
+      "w": 126.125
+    },
+    {
+      "id": "reset",
+      "h": 48,
+      "w": 164.609375
+    },
+    {
+      "id": "end",
+      "h": 48,
+      "w": 145.953125
+    },
+    {
+      "id": "reveal",
+      "h": 48,
+      "w": 157.6875
+    },
+    {
+      "id": "copy",
+      "h": 48,
+      "w": 126.71875
+    }
+  ],
+  "focus": {
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  }
+}

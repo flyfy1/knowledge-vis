@@ -1,0 +1,79 @@
+{
+  "kind": "author browser self-check",
+  "coverage": "both locales; five presets; all forward/back/end/reset; all prediction choices/change/reveal; locale state; hand reveal; copy success/rejection; exact source and download; keyboard/focus; 320/390/736/1440; CSS zoom 200%; links; blocked storage; offline source; duplicate copy-key detection; push/pop meaning binding",
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18770/leetcode/332/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/332/local.css",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/332/copy.js",
+    "http://127.0.0.1:18770/leetcode/332/core.js",
+    "http://127.0.0.1:18770/leetcode/332/python-code.js",
+    "http://127.0.0.1:18770/leetcode/332/app.js"
+  ],
+  "contrast": [
+    {
+      "fg": "text",
+      "bg": "bg",
+      "ratio": 16.09
+    },
+    {
+      "fg": "text",
+      "bg": "panel",
+      "ratio": 14.7
+    },
+    {
+      "fg": "text",
+      "bg": "panel2",
+      "ratio": 13.4
+    },
+    {
+      "fg": "muted",
+      "bg": "bg",
+      "ratio": 7.74
+    },
+    {
+      "fg": "muted",
+      "bg": "panel",
+      "ratio": 7.08
+    },
+    {
+      "fg": "muted",
+      "bg": "panel2",
+      "ratio": 6.45
+    },
+    {
+      "fg": "accent",
+      "bg": "bg",
+      "ratio": 13.1
+    },
+    {
+      "fg": "accent",
+      "bg": "panel",
+      "ratio": 11.97
+    },
+    {
+      "fg": "accent",
+      "bg": "panel2",
+      "ratio": 10.91
+    },
+    {
+      "fg": "accent2",
+      "bg": "bg",
+      "ratio": 10.73
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel",
+      "ratio": 9.81
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel2",
+      "ratio": 8.94
+    }
+  ],
+  "cssBytes": 10627,
+  "limits": "Chromium emulation and CSS zoom; no physical device, independent review, actual learner study or LeetCode submission."
+}

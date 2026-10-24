@@ -1,0 +1,12 @@
+const fs=require('fs'),path=require('path'),assert=require('assert');
+const root=path.resolve(__dirname,'..'),out=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');
+const C=require(root+'/core.js'),f=JSON.parse(fs.readFileSync(out+'/fixtures.json'));
+function subsequences(a,n){if(n===0)return [[]];if(a.length<n)return [];return subsequences(a.slice(1),n-1).map(x=>[a[0],...x]).concat(subsequences(a.slice(1),n));}
+function max(a){return a.reduce((x,y)=>C.cmp(x,y)>0?x:y,[]);}
+let invariantFrames=0;
+for(const c of f.picks){const frames=C.pickTrace(c.nums,c.take);assert.deepStrictEqual(frames.at(-1).stack,c.expected);for(const s of frames){assert.equal(s.processed-s.stack.length+s.drop,c.nums.length-c.take);assert.deepStrictEqual(s.stack,max(subsequences(c.nums.slice(0,s.processed),s.stack.length)));invariantFrames++;}const before=JSON.stringify(frames);if(frames.length>1){frames.at(-1).stack.push(99);assert.equal(JSON.stringify(frames[0].stack),'[]');}assert(before.length);}
+for(const c of f.merges){const frames=C.mergeTrace(c.a,c.b);assert.deepStrictEqual(frames.at(-1).out,c.expected);for(let i=1;i<frames.length;i++){const s=frames[i],prev=frames[i-1];assert.equal(s.i+s.j,i);assert.deepStrictEqual(s.out.slice(0,-1),prev.out);assert.deepStrictEqual(s.left,c.a.slice(prev.i));assert.deepStrictEqual(s.right,c.b.slice(prev.j));assert.deepStrictEqual(s.out,c.expected.slice(0,i));invariantFrames++;}}
+for(const c of f.solutions){const candidates=C.splits(c.a,c.b,c.k);assert.deepStrictEqual(max(candidates.map(x=>x.candidate)),c.expected);}
+// Detect duplicate definitions before object overwriting can hide them.
+const copy=fs.readFileSync(root+'/copy.js','utf8'),ast=require('acorn').parse(copy,{ecmaVersion:'latest'}),props=ast.body[0].expression.right.properties,keys=props.map(p=>p.key.name||p.key.value);assert.equal(keys.length,new Set(keys).size);const vm=require('vm'),context={window:{}};vm.runInNewContext(copy,context);for(const pair of Object.values(context.window.LESSON_COPY)){assert.equal(pair.length,2);assert(pair.every(v=>typeof v==='string'&&v.length));}
+const report={kind:'author self-check',solutionCases:f.solutions.length,pickCases:f.picks.length,mergeCases:f.merges.length,invariantFrames,duplicateKeys:'none (source checked before evaluation)',copyPairs:Object.keys(context.window.LESSON_COPY).length};fs.writeFileSync(out+'/core-check.json',JSON.stringify(report,null,2));console.log(report);

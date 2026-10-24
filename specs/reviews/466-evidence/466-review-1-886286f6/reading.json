@@ -1,0 +1,66 @@
+{
+  "status": "pass",
+  "records": [
+    {
+      "lang": "zh",
+      "zoom": 2,
+      "label": "已完成的 s1 块数",
+      "value": "1000000",
+      "labelBottom": 482.578125,
+      "valueTop": 482.578125,
+      "sw": 200,
+      "cw": 200
+    },
+    {
+      "lang": "zh",
+      "zoom": 2,
+      "label": "j：下一个所需位置",
+      "value": "0",
+      "labelBottom": 482.578125,
+      "valueTop": 482.578125,
+      "sw": 200,
+      "cw": 200
+    },
+    {
+      "lang": "zh",
+      "zoom": 2,
+      "label": "C：已完成 s2 份数",
+      "value": "500000",
+      "labelBottom": 482.578125,
+      "valueTop": 482.578125,
+      "sw": 200,
+      "cw": 200
+    },
+    {
+      "lang": "en",
+      "zoom": 2,
+      "label": "Completed s1 blocks",
+      "value": "1000000",
+      "labelBottom": 482.578125,
+      "valueTop": 482.578125,
+      "sw": 200,
+      "cw": 200
+    },
+    {
+      "lang": "en",
+      "zoom": 2,
+      "label": "j: next needed index",
+      "value": "0",
+      "labelBottom": 482.578125,
+      "valueTop": 482.578125,
+      "sw": 200,
+      "cw": 200
+    },
+    {
+      "lang": "en",
+      "zoom": 2,
+      "label": "C: finished s2 copies",
+      "value": "500000",
+      "labelBottom": 482.578125,
+      "valueTop": 482.578125,
+      "sw": 200,
+      "cw": 200
+    }
+  ],
+  "method": "real Chromium, 200% CSS layout zoom; screenshots require author visual inspection"
+}

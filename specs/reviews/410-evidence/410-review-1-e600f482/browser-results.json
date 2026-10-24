@@ -1,0 +1,208 @@
+{
+  "selfCheck": true,
+  "errors": [],
+  "localRequestsOnly": true,
+  "cssBytes": 11046,
+  "measured": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(10, 14, 20)",
+      "ratio": 7.914396395614137
+    },
+    {
+      "selector": ".group b",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "selector": ".group small",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "button:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".btn.primary",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".lang-toggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "focus outline / panel",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 9.809435643476732
+    }
+  ],
+  "semantic": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "expected": 5,
+      "terminal": "Completed 3/3 rounds. Interval converged; smallest feasible cap = 5."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "expected": 18,
+      "terminal": "Completed 4/4 rounds. Interval converged; smallest feasible cap = 18."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "expected": 9,
+      "terminal": "Completed 4/4 rounds. Interval converged; smallest feasible cap = 9."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "expected": 0,
+      "terminal": "Completed 0/0 rounds. Interval converged; smallest feasible cap = 0."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "expected": 8,
+      "terminal": "Completed 2/2 rounds. Interval converged; smallest feasible cap = 8."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "expected": 4,
+      "terminal": "Completed 3/3 rounds. Interval converged; smallest feasible cap = 4."
+    },
+    {
+      "lang": "en",
+      "cap": 17,
+      "expected": "infeasible",
+      "visible": "Placed 5/5 items; 3 groups so far. Scan complete: minimum 3 groups > k=2; cap too small.",
+      "lastTransition": "Position 5: 10+8=18 > B=17; cut before 8, starting a new sum of 8."
+    },
+    {
+      "lang": "en",
+      "cap": 18,
+      "expected": "feasible",
+      "visible": "Placed 5/5 items; 2 groups so far. Scan complete: minimum 2 groups ≤ k=2; feasible (split further if fewer than k).",
+      "lastTransition": "Position 5: 10+8=18 ≤ B=18; extend the current group, whose sum becomes 18."
+    },
+    {
+      "lang": "en",
+      "choice": "0",
+      "correct": false,
+      "visible": "That verdict misses part of the invariant.\nGreedy gives [4,4] | [4,4], with sums 8 and 8: only 2 groups. Since 2≤3, split further into [4] | [4] | [4,4], exactly 3 legal groups. Cap 9 works, so retain [4,9]. The first option mistakes “not exactly three greedy groups” for infeasibility; the third confuses feasible with minimal. Cap 8 also works, so returning 9 now is unjustified."
+    },
+    {
+      "lang": "en",
+      "choice": "1",
+      "correct": true,
+      "visible": "Correct verdict.\nGreedy gives [4,4] | [4,4], with sums 8 and 8: only 2 groups. Since 2≤3, split further into [4] | [4] | [4,4], exactly 3 legal groups. Cap 9 works, so retain [4,9]. The first option mistakes “not exactly three greedy groups” for infeasibility; the third confuses feasible with minimal. Cap 8 also works, so returning 9 now is unjustified."
+    },
+    {
+      "lang": "en",
+      "choice": "2",
+      "correct": false,
+      "visible": "That verdict misses part of the invariant.\nGreedy gives [4,4] | [4,4], with sums 8 and 8: only 2 groups. Since 2≤3, split further into [4] | [4] | [4,4], exactly 3 legal groups. Cap 9 works, so retain [4,9]. The first option mistakes “not exactly three greedy groups” for infeasibility; the third confuses feasible with minimal. Cap 8 also works, so returning 9 now is unjustified."
+    },
+    {
+      "lang": "en",
+      "clipboard": "denied",
+      "visible": "Clipboard unavailable. Copy manually from the field below; the experiments still work."
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "expected": 5,
+      "terminal": "已完成 3/3 轮。区间已合并；最小可行上限 = 5。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "expected": 18,
+      "terminal": "已完成 4/4 轮。区间已合并；最小可行上限 = 18。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "expected": 9,
+      "terminal": "已完成 4/4 轮。区间已合并；最小可行上限 = 9。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "expected": 0,
+      "terminal": "已完成 0/0 轮。区间已合并；最小可行上限 = 0。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "expected": 8,
+      "terminal": "已完成 2/2 轮。区间已合并；最小可行上限 = 8。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "expected": 4,
+      "terminal": "已完成 3/3 轮。区间已合并；最小可行上限 = 4。"
+    },
+    {
+      "lang": "zh",
+      "cap": 17,
+      "expected": "infeasible",
+      "visible": "已放入 5/5 项；当前共 3 段。扫描完成：最少 3 段 > k=2，上限太小。",
+      "lastTransition": "位置 5：10+8=18 > B=17；在 8 前切开，新段和为 8。"
+    },
+    {
+      "lang": "zh",
+      "cap": 18,
+      "expected": "feasible",
+      "visible": "已放入 5/5 项；当前共 2 段。扫描完成：最少 2 段 ≤ k=2，可行（不足 k 段时可再切分）。",
+      "lastTransition": "位置 5：10+8=18 ≤ B=18；继续当前段，当前和变为 18。"
+    },
+    {
+      "lang": "zh",
+      "choice": "0",
+      "correct": false,
+      "visible": "这个判断漏掉了不变量的一部分。\n贪心得到 [4,4] | [4,4]，段和 8、8，只需 2 段。2≤3，因此可拆成 [4] | [4] | [4,4]，恰好 3 段也合法。9 可行，要保留 [4,9]。第一项把“不是恰好三段”误当成不可行；第三项把可行误当成最小。事实上上限 8 也可行，所以不能立即返回 9。"
+    },
+    {
+      "lang": "zh",
+      "choice": "1",
+      "correct": true,
+      "visible": "判断正确。\n贪心得到 [4,4] | [4,4]，段和 8、8，只需 2 段。2≤3，因此可拆成 [4] | [4] | [4,4]，恰好 3 段也合法。9 可行，要保留 [4,9]。第一项把“不是恰好三段”误当成不可行；第三项把可行误当成最小。事实上上限 8 也可行，所以不能立即返回 9。"
+    },
+    {
+      "lang": "zh",
+      "choice": "2",
+      "correct": false,
+      "visible": "这个判断漏掉了不变量的一部分。\n贪心得到 [4,4] | [4,4]，段和 8、8，只需 2 段。2≤3，因此可拆成 [4] | [4] | [4,4]，恰好 3 段也合法。9 可行，要保留 [4,9]。第一项把“不是恰好三段”误当成不可行；第三项把可行误当成最小。事实上上限 8 也可行，所以不能立即返回 9。"
+    },
+    {
+      "lang": "zh",
+      "clipboard": "denied",
+      "visible": "剪贴板不可用。请在下方文本框手动复制；这不影响实验。"
+    }
+  ],
+  "screenshots": "both locales at 320,390,736,1440 and CSS zoom 200%; keyboard focus",
+  "sourceParity": "display/copy/download/manual fallback/file offline",
+  "keyboard": "range Home/End, button Enter, Tab, visible focus",
+  "blockedStorage": true
+}

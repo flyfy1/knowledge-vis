@@ -1,0 +1,298 @@
+{
+  "status": "pass",
+  "checks": [
+    "en: all 8 presets and every poison; all forward/back frames, candidate status/history, reset/end, disabled endpoints",
+    "en: keyboard range/buttons; locale preserves preset, poison and progress; death/skip semantic binding captured",
+    "en: all prediction choices, explicit reveal, stale feedback clears, locale preserves, experiment isolation",
+    "en: displayed/copied/downloaded exact canonical source, manual-copy fallback focus and selection",
+    "en: 320/390/736/1440, 200% CSS zoom at 1440/780, populated diagrams, no clipping, one bucket, leftover time, navigation/deep links",
+    "zh: all 8 presets and every poison; all forward/back frames, candidate status/history, reset/end, disabled endpoints",
+    "zh: keyboard range/buttons; locale preserves preset, poison and progress; death/skip semantic binding captured",
+    "zh: all prediction choices, explicit reveal, stale feedback clears, locale preserves, experiment isolation",
+    "zh: displayed/copied/downloaded exact canonical source, manual-copy fallback focus and selection",
+    "zh: 320/390/736/1440, 200% CSS zoom at 1440/780, populated diagrams, no clipping, one bucket, leftover time, navigation/deep links",
+    "blocked storage: in-memory locale state and offline embedded source"
+  ],
+  "screenshots": [
+    "en-intro.png",
+    "en-quiz-revealed.png",
+    "en-copy-fallback.png",
+    "en-320-pigs.png",
+    "en-320-buckets.png",
+    "en-390-pigs.png",
+    "en-390-buckets.png",
+    "en-736-pigs.png",
+    "en-736-buckets.png",
+    "en-1440-pigs.png",
+    "en-1440-buckets.png",
+    "en-1440-zoom200.png",
+    "en-1440-zoom200-pigB.png",
+    "en-780-zoom200.png",
+    "en-780-zoom200-pigB.png",
+    "en-27-buckets.png",
+    "en-history.png",
+    "en-one-bucket.png",
+    "zh-intro.png",
+    "zh-quiz-revealed.png",
+    "zh-copy-fallback.png",
+    "zh-320-pigs.png",
+    "zh-320-buckets.png",
+    "zh-390-pigs.png",
+    "zh-390-buckets.png",
+    "zh-736-pigs.png",
+    "zh-736-buckets.png",
+    "zh-1440-pigs.png",
+    "zh-1440-buckets.png",
+    "zh-1440-zoom200.png",
+    "zh-1440-zoom200-pigB.png",
+    "zh-780-zoom200.png",
+    "zh-780-zoom200-pigB.png",
+    "zh-27-buckets.png",
+    "zh-history.png",
+    "zh-one-bucket.png"
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "color": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".step-nav a",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".btn:disabled",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".pig-card",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".bucket-card b",
+      "color": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "selector": ".bucket-card span",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "th",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "a",
+      "color": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#next",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".ledger-item",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    }
+  ],
+  "focusContrast": 8.937191437807625,
+  "controlGeometry": [
+    {
+      "text": "中",
+      "height": 48,
+      "width": 48
+    },
+    {
+      "text": "EN",
+      "height": 48,
+      "width": 49.0625
+    },
+    {
+      "text": "1 · Start with three buckets",
+      "height": 48,
+      "width": 201.828125
+    },
+    {
+      "text": "2 · Why outcomes multiply",
+      "height": 48,
+      "width": 199.578125
+    },
+    {
+      "text": "3 · Run the feeding schedule",
+      "height": 48,
+      "width": 212.421875
+    },
+    {
+      "text": "4 · Predict before revealing",
+      "height": 48,
+      "width": 201.84375
+    },
+    {
+      "text": "5 · From proof to Python",
+      "height": 48,
+      "width": 186.125
+    },
+    {
+      "text": "3 buckets · 15/30 min · three outcomes9 buckets · 15/30 min · two pigs combine4 buckets · 15/15 min · official example 14 buckets · 15/30 min · official example 210 buckets · 15/30 min · beyond nine1 bucket · 15/30 min · no pigs needed8 buckets · 15/44 min · 14 minutes left27 buckets · 10/20 min · three digits",
+      "height": 48,
+      "width": 358
+    },
+    {
+      "text": "Bucket 1Bucket 2Bucket 3",
+      "height": 48,
+      "width": 117
+    },
+    {
+      "text": "Back one wait",
+      "height": 48,
+      "width": 135.96875
+    },
+    {
+      "text": "Complete next wait",
+      "height": 48,
+      "width": 177.15625
+    },
+    {
+      "text": "Reset waits",
+      "height": 48,
+      "width": 116.734375
+    },
+    {
+      "text": "Go to final full wait",
+      "height": 48,
+      "width": 173.15625
+    },
+    {
+      "text": "Verify and reveal why",
+      "height": 48,
+      "width": 191.765625
+    },
+    {
+      "text": "Copy Python",
+      "height": 48,
+      "width": 126.71875
+    },
+    {
+      "text": "View Python solution for the official interface",
+      "height": 52,
+      "width": 952
+    }
+  ],
+  "cssBytes": 11990,
+  "errors": [],
+  "externalRuntimeRequests": [],
+  "semanticBindings": [
+    {
+      "lang": "en",
+      "state": "9 buckets, poison 6, after wait 1",
+      "expected": "A survives, B dies in round 1; candidate buckets 4 and 6",
+      "visible": "Pig A\n\nNever drinks buckets: 1, 4, 7.\n\nRound 1 (feed at minute 0): buckets 2, 5, 8.\n\nRound 2 (feed at minute 15): buckets 3, 6, 9.\n\nCurrent observation: alive; completed waits: 1.\n\nPig B\n\nNever drinks buckets: 1, 2, 3.\n\nRound 1 (feed at minute 0): buckets 4, 5, 6.\n\nRound 2 (feed at minute 15): buckets 7, 8, 9.\n\nCurrent observation: died in round 1.",
+      "progress": "Completed 1/2 waits · 15 minutes elapsed · 2 candidate buckets: 4, 6."
+    },
+    {
+      "lang": "en",
+      "state": "9 buckets, poison 6, after wait 2",
+      "expected": "B already dead, feeding skipped; A dies in round 2; only candidate 6",
+      "visible": "Round 1 completed · minute 15\n\nPig A drank buckets 2, 5, 8 → Current observation: alive; completed waits: 1.\n\nPig B drank buckets 4, 5, 6 → Current observation: died in round 1.\n\nRound 2 completed · minute 30\n\nPig A drank buckets 3, 6, 9 → Current observation: died in round 2.\n\nPig B was already dead; skipped feeding this round."
+    },
+    {
+      "lang": "en",
+      "state": "prediction choice 0",
+      "expected": "not minimal: explain missing or unused outcomes",
+      "visible": "That choice is not the minimum that works. Two complete waits give three outcomes per pig. Two pigs distinguish at most 3²=9 buckets; three distinguish 3³=27. Since 9<17≤27, the answer is 3. Choosing 2 forces buckets to share an outcome. Choosing 5 counts only final binary alive/dead and misses the death round."
+    },
+    {
+      "lang": "en",
+      "state": "prediction choice 1",
+      "expected": "correct: 9<17<=27",
+      "visible": "Correct. Two complete waits give three outcomes per pig. Two pigs distinguish at most 3²=9 buckets; three distinguish 3³=27. Since 9<17≤27, the answer is 3. Choosing 2 forces buckets to share an outcome. Choosing 5 counts only final binary alive/dead and misses the death round."
+    },
+    {
+      "lang": "en",
+      "state": "prediction choice 2",
+      "expected": "not minimal: explain missing or unused outcomes",
+      "visible": "That choice is not the minimum that works. Two complete waits give three outcomes per pig. Two pigs distinguish at most 3²=9 buckets; three distinguish 3³=27. Since 9<17≤27, the answer is 3. Choosing 2 forces buckets to share an outcome. Choosing 5 counts only final binary alive/dead and misses the death round."
+    },
+    {
+      "lang": "en",
+      "state": "clipboard denied",
+      "expected": "manual copy instruction, independent of algorithm feedback",
+      "visible": "Copy manually from the selected text box below."
+    },
+    {
+      "lang": "zh",
+      "state": "9 buckets, poison 6, after wait 1",
+      "expected": "A survives, B dies in round 1; candidate buckets 4 and 6",
+      "visible": "小猪 A\n\n从不喝的桶：1, 4, 7。\n\n第 1 轮（0 分钟喂）：桶 2, 5, 8。\n\n第 2 轮（15 分钟喂）：桶 3, 6, 9。\n\n当前观察：已等 1 轮，仍存活。\n\n小猪 B\n\n从不喝的桶：1, 2, 3。\n\n第 1 轮（0 分钟喂）：桶 4, 5, 6。\n\n第 2 轮（15 分钟喂）：桶 7, 8, 9。\n\n当前观察：第 1 轮死亡。",
+      "progress": "已完成 1/2 次等待 · 经过 15 分钟 · 候选 2 桶：4, 6。"
+    },
+    {
+      "lang": "zh",
+      "state": "9 buckets, poison 6, after wait 2",
+      "expected": "B already dead, feeding skipped; A dies in round 2; only candidate 6",
+      "visible": "第 1 轮完成 · 第 15 分钟\n\n小猪 A 喝桶 2, 5, 8 → 当前观察：已等 1 轮，仍存活。\n\n小猪 B 喝桶 4, 5, 6 → 当前观察：第 1 轮死亡。\n\n第 2 轮完成 · 第 30 分钟\n\n小猪 A 喝桶 3, 6, 9 → 当前观察：第 2 轮死亡。\n\n小猪 B 已死，本轮跳过喂食。"
+    },
+    {
+      "lang": "zh",
+      "state": "prediction choice 0",
+      "expected": "not minimal: explain missing or unused outcomes",
+      "visible": "这个选择不是最小可行值。 有两轮完整等待，每只三种结果。两只最多 3²=9 桶，三只可区分 3³=27 桶，因此 9<17≤27，答案是 3。选 2 会让至少两桶共享结果；选 5 只算最终生死的二元结果，漏用了死亡轮次。"
+    },
+    {
+      "lang": "zh",
+      "state": "prediction choice 1",
+      "expected": "correct: 9<17<=27",
+      "visible": "正确。 有两轮完整等待，每只三种结果。两只最多 3²=9 桶，三只可区分 3³=27 桶，因此 9<17≤27，答案是 3。选 2 会让至少两桶共享结果；选 5 只算最终生死的二元结果，漏用了死亡轮次。"
+    },
+    {
+      "lang": "zh",
+      "state": "prediction choice 2",
+      "expected": "not minimal: explain missing or unused outcomes",
+      "visible": "这个选择不是最小可行值。 有两轮完整等待，每只三种结果。两只最多 3²=9 桶，三只可区分 3³=27 桶，因此 9<17≤27，答案是 3。选 2 会让至少两桶共享结果；选 5 只算最终生死的二元结果，漏用了死亡轮次。"
+    },
+    {
+      "lang": "zh",
+      "state": "clipboard denied",
+      "expected": "manual copy instruction, independent of algorithm feedback",
+      "visible": "请在下方已选中的文本框手动复制。"
+    }
+  ],
+  "zoomMethod": "CSS layout zoom=2 at desktop and effective 390px; physical device/native browser zoom not claimed",
+  "motion": "main suite uses reduced-motion to make scroll geometry stable; normal smooth-scroll navigation separately checked"
+}

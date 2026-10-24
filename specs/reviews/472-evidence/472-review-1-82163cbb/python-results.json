@@ -1,0 +1,15 @@
+{
+  "kind": "author self-check",
+  "cases": 16892,
+  "exhaustive": "all nonempty subsets of all binary words of lengths 1..3",
+  "seed": 472,
+  "randomCases": 500,
+  "maxInput": {
+    "words": 10000,
+    "totalCharacters": 100000,
+    "seconds": 0.049124866956844926
+  },
+  "length30": true,
+  "officialExamples": 2,
+  "sourceMirrorExact": true
+}
