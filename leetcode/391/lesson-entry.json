@@ -1,0 +1,42 @@
+{
+  "id": 391,
+  "title": {
+    "zh": "完美矩形",
+    "en": "Perfect Rectangle"
+  },
+  "desc": {
+    "zh": "用面积与奇数角点，证明矩形恰好覆盖一次。",
+    "en": "Derive an exact-cover test from area and odd corner counts."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "几何",
+      "en": "Geometry"
+    },
+    {
+      "zh": "哈希集合",
+      "en": "Hash set"
+    },
+    {
+      "zh": "不变量",
+      "en": "Invariant"
+    }
+  ],
+  "path": "391/",
+  "leetcodeUrl": "https://leetcode.com/problems/perfect-rectangle/",
+  "language": "Python",
+  "complexity": "O(n) expected time; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "Odd corner invariant",
+      "step": 2,
+      "description": "Toggle corners and combine parity with area to prove exact cover."
+    },
+    {
+      "name": "Coverage baseline",
+      "step": 1,
+      "description": "Count unit-cell coverage independently of the corner test."
+    }
+  ]
+}
