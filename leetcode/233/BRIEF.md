@@ -33,3 +33,9 @@ Start with `n = 13`, hand-count six occurrences across `0..13`, then isolate one
 ## Model limits
 
 The visualization is a deterministic simulation of the positional derivation, not execution of the official submission. The hand strip uses `0..13`; the formula table uses the current `n` and factor; the brute step is an independent checker. No claim of LeetCode acceptance is made.
+
+## Review-1 repair contract and author self-check (2026-10-24)
+
+Adopted required finding **233-I1** from [the independent report](../../specs/reviews/233-review-1-27e57371.md). Preserve the existing lesson structure and tokens; the causal repair is a separate Step 4 reveal state so selecting a prediction does not expose its answer or contribution rows. The explicit Reveal answer action evaluates the selected choice and renders the table; changing the choice clears prior feedback. No independent acceptance is claimed.
+
+Author self-check evidence and stable finding mapping: [tests/evidence/SELF-CHECK.md](tests/evidence/SELF-CHECK.md). The finding is **fixed awaiting independent re-review**; the original report and frozen rubric remain unchanged.
