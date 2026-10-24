@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/",
+    "accessedAt": "2026-10-24T21:23:28.864114+00:00",
+    "method": "GET",
+    "authentication": "none",
+    "status": 403,
+    "contentType": "text/html; charset=UTF-8",
+    "capture": "official-page.html"
+  },
+  {
+    "url": "https://leetcode.com/graphql/",
+    "accessedAt": "2026-10-24T21:23:28.949247+00:00",
+    "method": "POST",
+    "authentication": "none",
+    "status": 200,
+    "contentType": "application/json",
+    "capture": "official-graphql.json",
+    "observed": {
+      "questionFrontendId": "428",
+      "isPaidOnly": true,
+      "content": null,
+      "codeSnippets": null
+    }
+  }
+]
