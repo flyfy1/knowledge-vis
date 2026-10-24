@@ -1,0 +1,23 @@
+{
+  "problemId": 302,
+  "officialUrl": "https://leetcode.com/problems/smallest-rectangle-enclosing-black-pixels/",
+  "accessedAt": "2026-10-24T15:07:49+08:00",
+  "accessMethod": "official URL and public GraphQL question query",
+  "officialUrlEvidence": {
+    "httpStatus": 200,
+    "observedText": "Subscribe to unlock. Thanks for using LeetCode! To view this question you must subscribe."
+  },
+  "graphqlEvidence": {
+    "query": "question(titleSlug: smallest-rectangle-enclosing-black-pixels) { questionId title content difficulty isPaidOnly topicTags codeSnippets }",
+    "observed": {
+      "questionId": "302",
+      "title": "Smallest Rectangle Enclosing Black Pixels",
+      "content": null,
+      "difficulty": "Hard",
+      "isPaidOnly": true,
+      "codeSnippets": null
+    }
+  },
+  "blocker": "The authorized public sources expose metadata only; the official statement, constraints, examples, supported language selector/interfaces, and exceptions are unavailable without subscription/authenticated access.",
+  "nextNeededInput": "An authorized LeetCode session or an official exported statement/interface capture from the problem owner."
+}
