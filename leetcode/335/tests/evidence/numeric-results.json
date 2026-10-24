@@ -1,0 +1,22 @@
+{
+  "kind": "author computational self-check",
+  "cases": 34531,
+  "exhaustive": "all lengths 1..9 over {1,2,3}",
+  "seed": 335,
+  "randomCases": 5000,
+  "firstContactOffsets": [
+    3,
+    4,
+    5
+  ],
+  "maxN": 100000,
+  "mutation": "unchanged",
+  "mirror": "exact",
+  "javascript": {
+    "traces": 34531,
+    "coordinateLengths": "pass",
+    "simplePrefixInvariant": "pass",
+    "sourceParity": "pass",
+    "duplicateLocalizationKeys": 0
+  }
+}
