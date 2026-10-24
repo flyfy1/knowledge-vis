@@ -851,3 +851,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Linear palindrome boundary flags | `leetcode/336/#step2` | Odd/even mirrored radii mark prefix and suffix palindromes |
 
 <!-- /leetcode-336-campaign -->
+
+
+<!-- leetcode-352-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Maximal disjoint intervals | `leetcode/352/#step1` | Derive exact coverage, sorted starts and a missing-integer gap. |
+| Two-neighbor insertion | `leetcode/352/#step2` | Binary-search a start and inspect both neighboring ranges. |
+
+<!-- /leetcode-352-campaign -->
