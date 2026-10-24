@@ -931,6 +931,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(d) auxiliary space, d is maximum parenthesis depth"
   },
   {
+    "id": 233,
+    "title": {
+      "zh": "数字 1 的个数",
+      "en": "Number of Digit One"
+    },
+    "desc": {
+      "zh": "按数位周期统计 0 到 n 中每一次数字 1 的出现。",
+      "en": "Count every digit-one occurrence from 0 to n with place-value cycles."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数学",
+        "en": "Math"
+      },
+      {
+        "zh": "数位统计",
+        "en": "Digit counting"
+      }
+    ],
+    "path": "233/",
+    "leetcodeUrl": "https://leetcode.com/problems/number-of-digit-one/",
+    "language": "Python",
+    "complexity": "O(log n) time; O(1) auxiliary space"
+  },
+  {
     "id": 239,
     "title": {
       "zh": "滑动窗口最大值",

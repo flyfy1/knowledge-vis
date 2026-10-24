@@ -698,3 +698,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Amortized linear time | `leetcode/239/#step4` | Each index enters and leaves the deque at most once. |
 
 <!-- /leetcode-239-campaign -->
+
+
+<!-- leetcode-233-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| place-value cycles | `leetcode/233/#step1` | Each decimal position repeats every 10f numbers. |
+| higher/current/lower invariant | `leetcode/233/#step2` | The three parts determine the unfinished cycle contribution. |
+
+<!-- /leetcode-233-campaign -->
