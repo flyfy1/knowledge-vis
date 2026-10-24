@@ -1001,3 +1001,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Greedy repeated subsequence matching | `leetcode/466/#step1` | Carry unfinished target progress across source blocks. |
 
 <!-- /leetcode-466-campaign -->
+
+
+<!-- leetcode-472-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Prefix reachability | `leetcode/472/#step1` | Merge cut histories that reach the same prefix boundary. |
+| Exclude self-match | `leetcode/472/#step2` | Forbid the edge from 0 to n so a witness uses at least two shorter words. |
+
+<!-- /leetcode-472-campaign -->
