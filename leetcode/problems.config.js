@@ -1727,6 +1727,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(1) average time per get/put; O(C) space for capacity C"
   },
   {
+    "id": 466,
+    "title": {
+      "zh": "统计重复个数",
+      "en": "Count The Repetitions"
+    },
+    "desc": {
+      "zh": "保留跨块匹配的位置，用重复状态跳过整段扫描。",
+      "en": "Carry matching progress across blocks and skip cycles of repeated states."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "子序列",
+        "en": "Subsequences"
+      },
+      {
+        "zh": "循环检测",
+        "en": "Cycle detection"
+      }
+    ],
+    "path": "466/",
+    "leetcodeUrl": "https://leetcode.com/problems/count-the-repetitions/",
+    "language": "Python",
+    "complexity": "O(|s1| min(n1, |s2|)) time; O(min(n1, |s2|)) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
