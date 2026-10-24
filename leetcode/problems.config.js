@@ -1117,6 +1117,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(2^n) time in the worst case; O(n) recursion space plus output"
   },
   {
+    "id": 312,
+    "title": {
+      "zh": "戳气球",
+      "en": "Burst Balloons"
+    },
+    "desc": {
+      "zh": "用固定边界与区间动态规划，把最后一次戳破变成可枚举的状态。",
+      "en": "Use fixed boundaries and interval DP to enumerate the final burst safely."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic Programming"
+      },
+      {
+        "zh": "区间 DP",
+        "en": "Interval DP"
+      }
+    ],
+    "path": "312/",
+    "leetcodeUrl": "https://leetcode.com/problems/burst-balloons/",
+    "language": "Python",
+    "complexity": "O(n^3) time; O(n^2) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
