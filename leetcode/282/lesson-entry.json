@@ -1,0 +1,12 @@
+{
+  "id": 282,
+  "title": {"zh": "表达式添加运算符", "en": "Expression Add Operators"},
+  "desc": {"zh": "用回溯枚举切分，用 last 修正乘法优先级。", "en": "Enumerate cuts with backtracking and preserve precedence with last."},
+  "difficulty": "hard",
+  "topics": [{"zh":"回溯", "en":"Backtracking"},{"zh":"表达式求值", "en":"Expression evaluation"}],
+  "path": "282/",
+  "leetcodeUrl": "https://leetcode.com/problems/expression-add-operators/",
+  "language": "Python",
+  "complexity": "O(n·4^n) time; O(n²) recursion auxiliary space for immutable expression prefixes, plus output space",
+  "concepts": [{"name":"Backtracking choices","step":1,"description":"Cut or join each digit gap and undo after recursion."},{"name":"Precedence repair with last","step":2,"description":"Replace the last additive term when multiplying."}]
+}
