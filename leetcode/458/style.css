@@ -1,0 +1,18 @@
+/* Shared palette and typography are the approved contract. */
+.btn,select,.lang-toggle button,.step-nav a,.solution-actions a,summary{min-height:48px}
+.btn,select{border-color:var(--muted)}
+.btn:disabled{opacity:1;color:var(--muted);background:var(--panel2);border-color:var(--muted)}
+.step-nav{background:var(--bg);backdrop-filter:none}.step-nav a{display:inline-flex;align-items:center}
+.lang-toggle{overflow:visible}.lang-toggle button{min-width:48px}.lang-toggle button:first-child{border-radius:999px 0 0 999px}.lang-toggle button:last-child{border-radius:0 999px 999px 0}
+.step{scroll-margin-top:90px}h1,p,li,button{overflow-wrap:anywhere}
+.stage select{display:block;max-width:100%;margin:8px 0 16px}input[type=range]{display:block;min-height:48px}
+.pig-grid,.bucket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px;margin:20px 0}
+.pig-card,.bucket-card{background:var(--panel2);border:1px solid var(--muted);border-radius:8px;padding:12px;overflow-wrap:anywhere}
+.pig-card h3{margin:0 0 8px}.pig-card p{margin:8px 0}.bucket-card b,.bucket-card span{display:block}.bucket-card b{color:var(--accent)}.bucket-card.excluded{border-style:dashed}.bucket-card.excluded b{color:var(--muted)}.bucket-card.found{border:2px solid var(--accent2)}
+.table-wrap{margin:20px 0}.table-wrap table{min-width:360px}caption{text-align:left;color:var(--text);padding-block:8px}.table-wrap:focus-visible,textarea:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+.history-entry{border-left:3px solid var(--accent);padding:12px 16px;margin:12px 0;background:var(--panel2)}.history-entry p{margin:0 0 8px}.ledger-item{border:1px solid var(--muted);padding:8px 12px}.ledger-item.final{border:2px solid var(--accent2)}
+.prediction-options label{min-height:48px;padding:8px;border:1px solid var(--muted);margin:8px 0}.prediction-options label:has(input:checked){border:2px solid var(--accent2)}input[type=radio]{min-width:20px;min-height:20px}
+textarea{display:block;width:100%;max-width:100%;color:var(--text);background:var(--panel2);border:1px solid var(--muted);font:14px/1.75 ui-monospace,monospace}
+summary{padding-block:12px}.solution-actions a{display:inline-flex;align-items:center}.related a{min-height:48px}
+@media(max-width:560px){.controls .btn{flex:1 1 120px}.stage{padding:14px}.bucket-grid{grid-template-columns:1fr 1fr}.bucket-card{padding:8px}.pig-grid{grid-template-columns:1fr}}
+@media(forced-colors:active){.bucket-card.found,.prediction-options label:has(input:checked){outline:2px solid Highlight}}
