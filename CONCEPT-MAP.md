@@ -687,3 +687,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | lazy heap removal | `leetcode/218/#step4` | Prove why expired entries below the root can be removed later. |
 
 <!-- /leetcode-218-campaign -->
+
+
+<!-- leetcode-239-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Expired index | `leetcode/239/#step2` | Remove indices that have fallen left of the current window. |
+| Monotonic decreasing deque | `leetcode/239/#step3` | Keep only candidates whose values decrease from front to back. |
+| Amortized linear time | `leetcode/239/#step4` | Each index enters and leaves the deque at most once. |
+
+<!-- /leetcode-239-campaign -->

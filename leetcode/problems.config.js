@@ -931,6 +931,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(d) auxiliary space, d is maximum parenthesis depth"
   },
   {
+    "id": 239,
+    "title": {
+      "zh": "滑动窗口最大值",
+      "en": "Sliding Window Maximum"
+    },
+    "desc": {
+      "zh": "从重复扫描出发，推导单调双端队列如何在线维护每个窗口的最大值。",
+      "en": "Start from repeated scans and derive a monotonic deque that maintains every window maximum online."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数组",
+        "en": "Array"
+      },
+      {
+        "zh": "单调队列",
+        "en": "Monotonic deque"
+      }
+    ],
+    "path": "239/",
+    "leetcodeUrl": "https://leetcode.com/problems/sliding-window-maximum/",
+    "language": "Python",
+    "complexity": "O(n) time; O(k) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
