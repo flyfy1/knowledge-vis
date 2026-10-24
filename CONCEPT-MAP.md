@@ -761,3 +761,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Duplicate-free branching | `leetcode/301/#step2` | Skip adjacent equal deletion choices. |
 
 <!-- /leetcode-301-campaign -->
+
+
+<!-- leetcode-312-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| interval DP | `leetcode/312/#step1` | Fixed boundaries and a final-choice recurrence. |
+| DP invariant | `leetcode/312/#step2` | Each saved cell is optimal for its open interval. |
+| sentinel boundaries | `leetcode/312/#step3` | Artificial 1s make edge products uniform. |
+
+<!-- /leetcode-312-campaign -->
