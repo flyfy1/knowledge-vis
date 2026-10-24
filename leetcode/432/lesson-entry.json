@@ -1,0 +1,38 @@
+{
+  "id": 432,
+  "title": {
+    "zh": "全 O(1) 的数据结构",
+    "en": "All O`one Data Structure"
+  },
+  "desc": {
+    "zh": "从单步计数变化推导相邻桶移动与极值查询。",
+    "en": "Derive neighboring-bucket moves and extreme-key queries from unit count changes."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "双向链表",
+      "en": "Doubly linked list"
+    },
+    {
+      "zh": "哈希表",
+      "en": "Hash map"
+    }
+  ],
+  "path": "432/",
+  "leetcodeUrl": "https://leetcode.com/problems/all-oone-data-structure/",
+  "language": "Python",
+  "complexity": "Average O(1) time per operation; O(n) space for n live keys",
+  "concepts": [
+    {
+      "name": "Ordered nonempty count buckets",
+      "step": 2,
+      "description": "Unit count updates need only the immediate neighboring bucket."
+    },
+    {
+      "name": "Constant-time extreme-key queries",
+      "step": 4,
+      "description": "Sentinels and linked key entries expose an extreme representative directly."
+    }
+  ]
+}
