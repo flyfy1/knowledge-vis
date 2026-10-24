@@ -1,0 +1,33 @@
+{
+  "id": 460,
+  "title": {
+    "zh": "LFU 缓存",
+    "en": "LFU Cache"
+  },
+  "desc": {
+    "zh": "从频次与先后顺序推导常数时间缓存淘汰。",
+    "en": "Derive constant-time cache eviction from frequency and recency."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "哈希表",
+      "en": "Hash table"
+    },
+    {
+      "zh": "有序频次桶",
+      "en": "Ordered frequency buckets"
+    }
+  ],
+  "path": "460/",
+  "leetcodeUrl": "https://leetcode.com/problems/lfu-cache/",
+  "language": "Python",
+  "complexity": "O(1) average time per get/put; O(C) space for capacity C",
+  "concepts": [
+    {
+      "name": "LFU frequency buckets",
+      "step": 2,
+      "description": "Maintain oldest-first keys per frequency and the smallest live frequency."
+    }
+  ]
+}
