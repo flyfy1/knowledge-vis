@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "lang": "en",
+      "snapshots": [
+        {
+          "eventPosition": 0,
+          "expectedPrefix": "Start: every tree count is zero.",
+          "observed": "Start: every tree count is zero."
+        },
+        {
+          "eventPosition": 1,
+          "expectedPrefix": "Added 4:",
+          "observed": "Added 4: updated its leaf and every ancestor."
+        },
+        {
+          "eventPosition": 4,
+          "expectedPrefix": "Full-window query:",
+          "observed": "Full-window query: occurrences 2 and 2 have values 4 and 4; median = 4."
+        },
+        {
+          "eventPosition": 5,
+          "expectedPrefix": "Removed one 4:",
+          "observed": "Removed one 4: only k−1 items remain, so no median is queried yet."
+        }
+      ],
+      "wrongChoiceFeedback": "Recheck the counts. The new window sorts to [2,5,8,8,9,11]. Occurrences 3 and 4 are both 8, so their average is 8. Within subtree [2,5,8,9], the left child has only 2 occurrences. A request for r=3 must skip those 2 and seek occurrence 1 on the right, which is value 8. Going left or keeping r=3 after skipping would break the invariant. The old median (5+8)/2=6.5 no longer applies."
+    },
+    {
+      "lang": "zh",
+      "snapshots": [
+        {
+          "eventPosition": 0,
+          "expectedPrefix": "开始：树中所有频数为 0。",
+          "observed": "开始：树中所有频数为 0。"
+        },
+        {
+          "eventPosition": 1,
+          "expectedPrefix": "已加入 4：",
+          "observed": "已加入 4：更新它的叶子和所有父节点。"
+        },
+        {
+          "eventPosition": 4,
+          "expectedPrefix": "完整窗口查询：",
+          "observed": "完整窗口查询：第 2 与第 2 次出现的值是 4 与 4，中位数 = 4。"
+        },
+        {
+          "eventPosition": 5,
+          "expectedPrefix": "已移除一个 4：",
+          "observed": "已移除一个 4：当前只有 k−1 个数，暂不查询中位数。"
+        }
+      ],
+      "wrongChoiceFeedback": "再检查计数。 新窗口排序为 [2,5,8,8,9,11]。第 3、4 次出现都是 8，所以平均数是 8。在子树 [2,5,8,9] 内，左孩子仅有 2 次出现，请求 r=3 时必须跳过这 2 次，去右侧找第 1 次，即值 8。不能向左，也不能跳过后保留 r=3。原中位数 (5+8)/2=6.5 已不适用。"
+    },
+    {
+      "offlineFile": "pass: source mirror and local simulation without HTTP"
+    }
+  ]
+}
