@@ -881,3 +881,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Eligible earlier prefix | `leetcode/363/#step2` | Choose the smallest earlier q ≥ P−k before inserting P. |
 
 <!-- /leetcode-363-campaign -->
+
+
+<!-- leetcode-381-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Multiplicity-weighted sampling | `leetcode/381/#step0` | Uniform positions give each value probability count / length. |
+| Duplicate-aware swap deletion | `leetcode/381/#step2` | Repair reverse index sets when the tail fills the deleted slot. |
+
+<!-- /leetcode-381-campaign -->
