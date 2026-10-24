@@ -1,0 +1,29 @@
+# #460 author self-check — candidate 1
+
+Status: complete author candidate, ready for a separate independent review. No independent acceptance, learner study, production deployment, or accepted LeetCode submission is claimed. All work is confined to leetcode/460/. Shared assets are read/reused without edits. Final runtime/test/metadata hashes are in candidate-sha256.json.
+
+Official source: https://leetcode.com/problems/lfu-cache/ and its public GraphQL questionData response, captured with UTC access timestamp in ../../460/provenance/official-graphql.json. Full statement, official example, constraints, and all observed codeSnippets are retained. Python3 explicitly supplies LFUCache, __init__(capacity: int), get(key: int)->int, put(key: int,value:int)->None. Thus canonical Python follows the preference; a non-Python language contract is inapplicable.
+
+Commands run from repository root:
+
+```
+python3 -B leetcode/460/tests/test_solution.py
+node leetcode/460/tests/browser.cjs
+python3 -B scripts/register_leetcode_lesson.py 460 --validate-only
+```
+
+All passed. Last command exited 0 with no stdout/stderr; full command/cwd/time/result in evidence/preflight.json. Rerun outputs can be redirected with OUTPUT_DIR=/absolute/reviewer/directory on either test command. Browser uses NODE_PATH and PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH, the existing preview, and starts no server.
+
+Numerical evidence (evidence/algorithm.json): 184324 Python intermediate-state checks, exhaustive length-5 streams over six get/put operations for capacities 0..3, 240 seeded length-120 streams at capacities 1..8, official example exact returns, zero/max keys and values, and 200000 calls at capacity 10000. Independent oracle stores (value,frequency,timestamp) and scans the entire dictionary for eviction. Every small/random operation checks returned values, resident values/frequencies, exactly-one-bucket membership, oldest-first ordering, minimum frequency, absence of empty buckets, and size bound. Maximum-size run checks the resulting hot key frequency and bounded buckets separately. JavaScript trace checked against timestamp oracle for 28800 intermediate operations; it is not presented as Python execution.
+
+Browser evidence (evidence/browser.json): real headless Chromium, EN/zh, all four presets through every operation, forward/back/forward exact state equality, reset/end/disabled endpoints, history counts, hand-answer toggle, each prediction choice/reveal/change, locale preserving chosen answer/reveal/progress, native clipboard write/read, captured copy bytes, forced rejection/manual-copy focus and exact text, downloaded source bytes, offline file:// source loading, blocked localStorage, keyboard Enter/Tab, 3px focus including forced colors, reduced motion, local-only runtime assets, zero page/HTTP errors, internal/deep-link targets. Sizes 320/390/736/1440 plus 200% CSS zoom at 780px. Source display/mirror/copy/download all equal solution.py. Accessible native radio labels and select label retained; dynamic progress, prediction, copy feedback use status regions. No timer or autoplay.
+
+Visual inspection: actually opened EN/zh 320/390/desktop screenshots and populated bucket captures, plus 736 and 200% captures. At final tied-eviction scene, before state has bucket 2: key5(value55), key6(value60); after put(7,70), key5 disappears, key6 remains in bucket2, key7 appears in new minimum bucket1. Narrow layouts stack before/after; doubled text remains readable and stacks. Separate viewport captures show step headings, explanatory text, and labeled controls. Zoomed viewport shows the rest of the state by ordinary vertical scrolling. No text/number intersections observed in inspected populated states. No real phone or OS-level browser zoom was used; headless CSS zoom is the recorded zoom approximation.
+
+Author-discovered fixes, all before freeze: preset select initially caused 2px page overflow at 320 (overflow.png retained as original failure evidence); max-width fix passes final test. CSS zoom initially kept two cramped columns; a local container query now stacks based on actual available space. Diagram prose now explicitly says top-to-bottom key order. Test harness fixes: reset before keyboard Enter so it doesn't assert retained focus on a newly disabled endpoint; use unique navigation locator rather than matching both nav/related link. Final screenshots and browser.json supersede earlier author runs; none were independent reviews.
+
+Contrast measured using sRGB relative luminance, exact shared palette: body text ≥13.40:1 across panels; muted text ≥6.45:1; cyan ≥10.91:1; orange focus ≥8.94:1; green feedback ≥10.00:1. Disabled controls override shared opacity with opaque muted text. Adjacent panel text passes AA, main reading text exceeds 7:1. Combined shipped shared+local CSS: 10638 bytes (<25000). No external fonts/images/runtime network dependencies.
+
+Localization binding: copy.js uses paired strings in one namespace, with pre-evaluation duplicate-key detection (83 unique keys). Actual captured operation messages independently distinguish hit 1→2, missed get returning -1 with unchanged order, tied eviction removing oldest key5 and insertion resetting minimum to1, in both languages. Prediction says all three counts reach2 and evicts8, distinct from clipboard denial text explaining manual copying. Changing answer clears revealed reasoning. Locale changes preserve all state and native control nodes.
+
+Cold review rubric remains specs/leetcode-review-gates.md: problem/hand calculation15%, causal derivation20%, maintained state20%, interaction20%, code/cost15%, bilingual/device10%; ≥85 overall, each ≥3/4, zero open required findings. This author supplies no scores. Separate reviewer should first walk the page without BRIEF/source, then reconstruct a fresh example and inspect hashes, official capture and tests. Registry, campaign state, acceptance history, and deployment remain untouched.
