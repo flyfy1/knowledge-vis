@@ -14,3 +14,19 @@ c=m.Codec()
 for vals in [[],[1],[1,2,3,None,None,4,5],[-1,0,None,None,2], [7,None,8,None,9]]:
  root=make(vals); encoded=c.serialize(root); assert shape(c.deserialize(encoded))==shape(root),encoded
 print('round-trip oracle cases: ok')
+
+# Official maximum-height boundary: iterative Codec must not depend on Python's recursion limit.
+chain = None
+for value in range(9999, -1, -1):
+    chain = m.TreeNode(value, chain, None)
+encoded = c.serialize(chain)
+assert encoded.split(',')[:3] == ['0', '1', '2']
+assert len(encoded.split(',')) == 20001
+decoded = c.deserialize(encoded)
+values = []
+while decoded is not None:
+    values.append(decoded.val)
+    assert decoded.right is None
+    decoded = decoded.left
+assert values == list(range(10000))
+print('10,000-node one-sided chain: ok')

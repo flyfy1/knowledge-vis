@@ -9,24 +9,32 @@ class TreeNode:
 class Codec:
     def serialize(self, root: Optional[TreeNode]) -> str:
         tokens = []
-        def visit(node):
+        pending = [root]
+        while pending:
+            node = pending.pop()
             if node is None:
                 tokens.append('#')
-                return
+                continue
             tokens.append(str(node.val))
-            visit(node.left)
-            visit(node.right)
-        visit(root)
+            pending.append(node.right)
+            pending.append(node.left)
         return ','.join(tokens)
 
     def deserialize(self, data: str) -> Optional[TreeNode]:
         tokens = iter(data.split(','))
-        def build():
-            token = next(tokens)
+        first = next(tokens)
+        if first == '#':
+            return None
+        root = TreeNode(int(first))
+        pending = [(root, 'right'), (root, 'left')]
+        for token in tokens:
+            if not pending:
+                break
+            parent, side = pending.pop()
             if token == '#':
-                return None
-            node = TreeNode(int(token))
-            node.left = build()
-            node.right = build()
-            return node
-        return build()
+                continue
+            child = TreeNode(int(token))
+            setattr(parent, side, child)
+            pending.append((child, 'right'))
+            pending.append((child, 'left'))
+        return root
