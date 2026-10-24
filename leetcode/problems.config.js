@@ -1065,6 +1065,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(log n) per addNum; O(1) per findMedian; O(n) space"
   },
   {
+    "id": 297,
+    "title": {
+      "zh": "序列化和反序列化二叉树",
+      "en": "Serialize and Deserialize Binary Tree"
+    },
+    "desc": {
+      "zh": "用前序与空标记保留二叉树的完整形状。",
+      "en": "Preserve a binary tree's full shape with preorder and null markers."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二叉树",
+        "en": "Binary Tree"
+      },
+      {
+        "zh": "递归",
+        "en": "Recursion"
+      }
+    ],
+    "path": "297/",
+    "leetcodeUrl": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) explicit stack plus O(n) input/output storage"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
