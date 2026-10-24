@@ -1,0 +1,8 @@
+{
+  "cases": 3034,
+  "large_cases": 3,
+  "intermediate_frame_checks": 103524,
+  "source_mirror": "exact",
+  "status": "pass",
+  "oracle": "independent Python AST evaluator; recursive substring baseline; closed-form max-length cases"
+}

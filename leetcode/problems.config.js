@@ -879,6 +879,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "Expected O(n) time; O(min(n, indexDiff)) auxiliary space"
   },
   {
+    "id": 224,
+    "title": {
+      "zh": "基本计算器",
+      "en": "Basic Calculator"
+    },
+    "desc": {
+      "zh": "逐步保存括号外的总和与符号，推导无递归计算器。",
+      "en": "Derive an iterative calculator by saving outer totals and signs."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "栈",
+        "en": "Stack"
+      },
+      {
+        "zh": "字符串解析",
+        "en": "Parsing"
+      }
+    ],
+    "path": "224/",
+    "leetcodeUrl": "https://leetcode.com/problems/basic-calculator/",
+    "language": "Python",
+    "complexity": "O(n) time; O(d) auxiliary space, d is maximum parenthesis depth"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

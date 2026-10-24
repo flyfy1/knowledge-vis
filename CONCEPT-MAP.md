@@ -667,3 +667,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Bucket-window invariant | `leetcode/220/#step4` | Expire before probing and insert only after excluding all earlier witnesses. |
 
 <!-- /leetcode-220-campaign -->
+
+
+<!-- leetcode-224-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Saved calculator contexts | `leetcode/224/#step2` | Preserve outer total and sign while evaluating a parenthesized term. |
+| Iterative expression evaluation | `leetcode/224/#step4` | Map sign, digit accumulation and parenthesis merging to Python. |
+
+<!-- /leetcode-224-campaign -->
