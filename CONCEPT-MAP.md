@@ -841,3 +841,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Reversible path trace | `leetcode/335/#step2` | Compare prefix coordinates and inclusive inequalities at each move. |
 
 <!-- /leetcode-335-campaign -->
+
+
+<!-- leetcode-336-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Palindrome pair cancellation | `leetcode/336/#step1` | Two leftover-middle cases derive reversed-trie metadata |
+| Linear palindrome boundary flags | `leetcode/336/#step2` | Odd/even mirrored radii mark prefix and suffix palindromes |
+
+<!-- /leetcode-336-campaign -->

@@ -1329,6 +1329,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
+    "id": 336,
+    "title": {
+      "zh": "回文对",
+      "en": "Palindrome Pairs"
+    },
+    "desc": {
+      "zh": "从中间剩余回文推导反向字典树与线性回文边界预处理。",
+      "en": "Derive reversed-trie search and linear palindrome boundaries from the unmatched middle."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字典树",
+        "en": "Trie"
+      },
+      {
+        "zh": "回文",
+        "en": "Palindromes"
+      },
+      {
+        "zh": "Manacher 算法",
+        "en": "Manacher algorithm"
+      }
+    ],
+    "path": "336/",
+    "leetcodeUrl": "https://leetcode.com/problems/palindrome-pairs/",
+    "language": "Python",
+    "complexity": "O(S + n + P) expected time; O(S + n) auxiliary space plus O(P) output; S = total characters, n = words, P = pairs"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
