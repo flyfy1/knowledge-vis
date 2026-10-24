@@ -921,3 +921,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Lowest frontier expansion | `leetcode/407/#step2` | Discover each cell once from the smallest fixed escape level and retain cumulative water. |
 
 <!-- /leetcode-407-campaign -->
+
+
+<!-- leetcode-410-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Binary search on a feasible cap | `leetcode/410/#step2` | Keep the smallest feasible cap in an inclusive interval. |
+| Greedy contiguous partition | `leetcode/410/#step1` | A maximal prefix under a nonnegative sum cap minimizes group count. |
+
+<!-- /leetcode-410-campaign -->
