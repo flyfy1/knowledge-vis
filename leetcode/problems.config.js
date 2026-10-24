@@ -1303,6 +1303,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(E log E) time; O(E) space"
   },
   {
+    "id": 335,
+    "title": {
+      "zh": "路径交叉",
+      "en": "Self Crossing"
+    },
+    "desc": {
+      "zh": "从手绘路径推导三种首次相交形态，用常数空间判断触碰与交叉。",
+      "en": "Derive three first-contact patterns from a hand-drawn path and detect crossings in constant space."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "几何",
+        "en": "Geometry"
+      },
+      {
+        "zh": "不变量",
+        "en": "Invariants"
+      }
+    ],
+    "path": "335/",
+    "leetcodeUrl": "https://leetcode.com/problems/self-crossing/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
