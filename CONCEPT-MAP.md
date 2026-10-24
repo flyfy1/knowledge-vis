@@ -792,3 +792,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Suffix-aware merge | `leetcode/321/#step2` | Resolve equal heads using the entire remaining suffix. |
 
 <!-- /leetcode-321-campaign -->
+
+
+<!-- leetcode-327-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Prefix differences | `leetcode/327/#step1` | Convert a contiguous sum into a difference of two prefix totals. |
+| Cross-half range counting | `leetcode/327/#step2` | Preserve index order by splitting before sorting; count with two monotone boundaries. |
+
+<!-- /leetcode-327-campaign -->
