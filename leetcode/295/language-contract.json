@@ -1,0 +1,10 @@
+{
+  "problemId": 295,
+  "language": "Python",
+  "officialSource": "https://leetcode.com/problems/find-median-from-data-stream/",
+  "supportedLanguages": ["Python"],
+  "interface": "class MedianFinder: __init__() -> None; addNum(num: int) -> None; findMedian() -> float; object persists across calls",
+  "rationale": "Python is the preferred faithful official class interface observed on the public problem page.",
+  "verifiedAt": "2026-10-24T00:00:00+08:00",
+  "verificationEvidence": "tests/evidence/official-2026-10-24.txt"
+}
