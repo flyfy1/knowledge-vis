@@ -1,0 +1,17 @@
+{
+  "problemId": 248,
+  "officialUrl": "https://leetcode.com/problems/strobogrammatic-number-iii/",
+  "accessedAt": "2026-10-24T03:25:13+00:00",
+  "pageObservation": "The official HTML page displays 'Subscribe to unlock' and states that the question must be subscribed to view.",
+  "graphqlQuery": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId title content exampleTestcases codeSnippets {lang langSlug code} } }",
+  "graphqlObservation": {
+    "status": 200,
+    "questionId": "248",
+    "title": "Strobogrammatic Number III",
+    "content": null,
+    "exampleTestcases": "\"50\"\\n\"100\"\\n\"0\"\\n\"0\"",
+    "codeSnippets": null
+  },
+  "blocker": "Official statement, constraints, and language selector/interface are not available through the authorized unauthenticated page or public GraphQL response.",
+  "nextInputNeeded": "An authorized LeetCode session or owner-provided official capture that exposes the full statement, constraints, examples, and language selector/interface."
+}
