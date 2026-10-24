@@ -22,3 +22,45 @@
 | Fenwick tree | step 3 | an array structure for prefix sums with logarithmic update/query |
 
 Simulation is a JavaScript trace, explicitly separate from executing the canonical Python submission. The independent oracle is the quadratic baseline.
+
+## Review-fix candidate R2 — 2026-10-25
+
+Applies the required actions in `specs/reviews/315-review-1-a478793f.md`;
+that report remains historical and its findings are **fixed awaiting independent
+re-review**, not closed by this author.
+
+Product/design verdict: reuse the approved lesson, layout, shared tokens and
+native controls. This is a correction of the reviewed behavior, not a new feature
+or layout. The learner's immediate job is to count one position's strict-smaller
+right-side witnesses and then reconstruct the query-before-insertion invariant.
+Validation is the existing preview and the lesson-local regression evidence.
+
+- P0 / highest-return scope: R315-1 binds prompt, choices 0–4, selected position,
+  exact answer and witnesses; the answer is withheld until a guess and changing
+  positions clears feedback. R315-2 uses the same cumulative comparisons in the
+  metric and readout (3,5,6,6,6 including completion). R315-3 generates the JSON
+  source mirror from canonical bytes with the registration-policy `PYTHON_SOURCE`
+  export, retaining the final newline for display/copy/download/offline use.
+- P1: correct the baseline's explanation: each index pair is checked once; the
+  repeated work is starting a new suffix scan instead of reusing frequencies.
+  Preserve the fresh-case before-state until explicit reveal, retain prediction
+  across locale changes, and make manual-copy fallback actually select source.
+- P2 / Deferred: no visual redesign or additional algorithm widgets; those need
+  a demonstrated teaching need and separate design review. Real-device and
+  learner-comprehension studies remain outside this browser self-check.
+
+All experiments stay independent. Choosing a trace preset restarts that trace.
+The fresh `[3,1,2,1]` check pauses on the second advance, before processing index
+1: suffix `[1,2]`, answer `[?, ?, 1, 0]`. Reveal writes 0 at index 1, with the equal
+1 excluded; finishing writes `[3,0,1,0]`. The first count is 3 (both occurrences
+of 1 and the 2), not 2. Selecting another prediction clears old feedback;
+reset clears its choice and reveal state. Locale switching preserves the state.
+
+Python remains the preferred faithful official `Solution.countSmaller` interface;
+no non-Python language contract or supportedLanguages list exists or is needed.
+The exact source/mirror/export table in `scripts/register_leetcode_lesson.py` was
+read. No canonical algorithm or metadata change is necessary; complexity remains
+the single string `O(n log n) time; O(n) space`.
+
+Self-check mapping, commands, candidate hashes and limits are recorded in
+`tests/evidence/self-check.txt` and `tests/evidence/candidate-r2.json`.

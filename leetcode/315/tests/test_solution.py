@@ -19,3 +19,22 @@ def test_seeded():
         for _ in range(20):
             a=[rng.randrange(-4,5) for _ in range(n)]
             assert s.countSmaller(a)==brute(a)
+
+
+def test_exhaustive_and_mutation():
+    from itertools import product
+    s = Solution()
+    for n in range(7):
+        for values in product((-1, 0, 1), repeat=n):
+            nums = list(values)
+            assert s.countSmaller(nums) == brute(nums)
+            assert nums == list(values)
+    assert s.countSmaller([3, 1, 2, 1]) == [3, 0, 1, 0]
+
+
+def test_maximum_closed_forms():
+    s = Solution()
+    n = 100000
+    assert s.countSmaller([7] * n) == [0] * n
+    nums = [10000 - i // 5 for i in range(n)]
+    assert s.countSmaller(nums) == [n - (i // 5 + 1) * 5 for i in range(n)]

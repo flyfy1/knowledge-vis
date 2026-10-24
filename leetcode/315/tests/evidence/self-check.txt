@@ -7,3 +7,28 @@
 - Preflight: python3 -B scripts/register_leetcode_lesson.py 315 --validate-only => exit 0.
 This is author self-check, not independent acceptance.
 - Browser rerun after review fixes passed at same preview URL with no console errors.
+
+2026-10-25 — R2 author self-check (separate re-review pending)
+Reviewed base: ea8b34c1be7f243d56ba7ae9b3e0ee04312a4c52, report specs/reviews/315-review-1-a478793f.md.
+Scope: only leetcode/315/; no review reports, frozen rubric, shared assets, registry, campaign state, services or Git settings changed. No commit, deployment or submission made.
+
+Fix mapping (all statuses: fixed awaiting independent review, NOT closed):
+- R315-1: hand() checks the selected position's strict-smaller count instead of 4. Choices cover 0..4. Before a guess, only the current value and right-side data appear; after a guess, feedback states the per-position answer and witnesses. Position changes clear the guess; locale changes retain it. EN/ZH tests exercise every choice at positions 0,1,2,3 (answers 2,1,1,0), including rejection of 4 everywhere.
+- R315-2: baseline metric and live readout use the same comp value. Forward states, including terminal, are 3,5,6,6,6; reverse and reset reproduce them. Completion is localized. Both explanations correct the misleading repeated-pair claim: each pair is checked once, but each index starts a suffix scan; total n(n-1)/2. Worked example: first 3 checks find [2,1], next 2 find [1], cumulative 5.
+- R315-3: python-code.js regenerated as the exact JSON source string using window.PYTHON_SOURCE, matching the source/export pair in scripts/register_leetcode_lesson.py. app.js consumes that export. Canonical solution.py, mirror, displayed textContent, actual clipboard and downloaded bytes all equal 811 bytes including final newline, in both locales. File:// offline display also matches. Manual-copy fallback opens and selects the source. A full-source copy event writes the canonical bytes explicitly, preserving the trailing newline that Chromium otherwise trims from rendered selection text; actual Control+C clipboard bytes were checked in both locales. No LeetCode acceptance claimed.
+
+Adjacent causal fixes: the fresh prediction now pauses BEFORE index 1 with suffix [1,2] and answer [?,?,1,0]. Its derived count stays hidden until explicit reveal. Incorrect choice 1 explains excluded equality; choice 0 reveals [?,0,1,0], and finishing gives [3,0,1,0]. Both 1 occurrences count for the leading 3, so its count is 3. Changed prediction clears feedback; language switch retains choice/reveal; reset and presets clear them. Clipboard failure now actually selects code rather than merely claiming to do so.
+
+Evidence and commands:
+- node leetcode/315/tests/review-regression.cjs (before edits): exit 1, reproduced R315-1/R315-2/R315-3; review-before.txt retains failures.
+- Actual Python solution runtime: runpy loads tests/test_solution.py with leetcode/315 on sys.path and calls every test_* function (pytest is not required). All five tests passed: official examples, boundaries, seeded random, exhaustive arrays of length 0..6 over {-1,0,1} with no mutation, maximum n=100000 equal and descending-block closed forms. See runtime-r2.txt.
+- node leetcode/315/tests/test_core.js: exit 0, independent per-frame suffix and Fenwick checks on exhaustive arrays of length 0..6 plus original cases; runtime-r2.txt.
+- node leetcode/315/tests/review-regression.cjs (final): exit 0, review-after.txt and review-browser-r2.json. Real Chromium at the provided preview; EN/ZH; 320/390/736/1440 and 200% CSS zoom, all guess options, baseline endpoints/rewind/reset, fresh prediction both choices/locale changes, trace presets/endpoints, all rank-slider positions, all transfer cases, actual clipboard/download, forced copy denial, keyboard Tab+Enter, file:// source display and blocked localStorage. AST inspection rejects duplicate copy keys; both locale values exist.
+- node --check leetcode/315/{app.js,copy.js,python-code.js}: each exit 0 (run separately).
+- python3 -B scripts/register_leetcode_lesson.py 315 --validate-only, from repository root: exit 0, stdout/stderr empty. Exact command/result in preflight-r2.txt. Metadata remains unchanged, complexity is the single string "O(n log n) time; O(n) space". No registration performed.
+- git diff --check: exit 0.
+- Screenshots r2-{en,zh}-{320,390,736,1440}-{hand,baseline}.png, r2-{en,zh}-zoom200.png and prediction before/after screenshots retain populated states. Visually inspected EN 320 hand/baseline, ZH 320 hand, ZH 390 baseline, EN zoom200 and both prediction states. Labels, counts, choices and witnesses remain readable and associated; no document overflow in tested widths. Existing shared tokens and CSS were preserved.
+- No lesson runtime or asset errors observed. Preview root /favicon.ico returns 404; recorded separately in browser JSON and left unchanged outside lesson ownership.
+
+Candidate identity: tests/evidence/candidate-r2.json freezes SHA-256 hashes of the lesson source, metadata and test files, plus current checkout HEAD (no new commit). Official Python remains selected and available per existing lesson-local official evidence; there is no non-Python contract or supportedLanguages omission. Hashes identify the candidate for separate review; they do not establish independent acceptance.
+Limits: author computational/browser self-check only; no independent score, learner study, real-device verification, public deployment verification or accepted LeetCode submission. Next action: a separate reviewer rechecks R315-1/2/3 and affected prediction/transfer paths against the frozen candidate under the unchanged rubric.
