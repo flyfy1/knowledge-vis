@@ -17,3 +17,14 @@ This is author self-check evidence, not independent review or acceptance.
 - Source parity remains unchanged: `python-code.js` is the exact embedded `solution.py` source mirror; the lesson continues to use the faithful Python/Pandas interface.
 
 This remains author self-check evidence; `FIND-262-001` is fixed awaiting a fresh independent re-review of the new candidate.
+
+## Revision self-check — FIND-262-002 fix
+
+- Fix mapping: `FIND-262-002` was caused by binding the full `quiz` question to both a prose paragraph and the fieldset legend. The redundant paragraph was removed; the legend remains the single visible and accessible question label immediately before the choices in both locales.
+- Red feedback loop before the edit: a Playwright assertion against the served page reported `{"count":2}` for `#step3 [data-i18n="quiz"]` in English, with the same question text twice.
+- Focused browser regression after the edit: EN and zh each reported one `quiz` node, zero explanatory duplicates, and the expected localized legend; selecting the correct choice and revealing still displayed feedback. Command: `node - <<'NODE' ...` (390px Chromium check against `http://127.0.0.1:18770/leetcode/262/`) → one node in each locale.
+- Full browser regression: `OUTPUT_DIR=/tmp/lesson262-review-final node leetcode/262/tests/test_browser.cjs` → `browser checks passed`.
+- Canonical execution: `/tmp/venv262/bin/python leetcode/262/tests/test_solution.py` → `oracle checks passed`.
+- Metadata preflight from repository root (non-mutating): `python3 -B scripts/register_leetcode_lesson.py 262 --validate-only` → exit 0.
+
+This remains author self-check evidence; `FIND-262-002` is fixed awaiting a fresh independent re-review of this new candidate.
