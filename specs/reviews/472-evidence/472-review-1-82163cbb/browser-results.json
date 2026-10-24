@@ -1,0 +1,129 @@
+{
+  "kind": "author browser self-check",
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "screenshots": [
+    "trace-en-320.png",
+    "trace-en-390.png",
+    "trace-en-736.png",
+    "trace-en-1440.png",
+    "trace-zh-320.png",
+    "trace-zh-390.png",
+    "trace-zh-736.png",
+    "trace-zh-1440.png"
+  ],
+  "semantic": [
+    {
+      "lang": "en",
+      "meanings": {
+        "absent": "Target i=7, source j=3, piece “sdog”: the source is reachable, but this piece is absent. Destination dp[7]: F → F.",
+        "unreachable": "Target i=7, source j=6, piece “g”: source dp[j]=F cannot extend an unbuilt prefix; no dictionary lookup needed. Destination dp[7]: F → F.",
+        "witness": "Target i=3, source j=0, piece “cat”: the source is reachable and the piece is present: a witness. Destination dp[3]: F → T.",
+        "self": "Target i=7, source j=0, piece “catsdog”: the whole-word edge 0→n is forbidden. Destination dp[7]: F → F."
+      }
+    },
+    {
+      "lang": "zh",
+      "meanings": {
+        "absent": "目标 i=7，来源 j=3，片段 “sdog”：来源可达，但片段不在词表。目标 dp[7]：F → F。",
+        "unreachable": "目标 i=7，来源 j=6，片段 “g”：来源 dp[j]=F，不能从未拼好的前缀继续；无需查词表。目标 dp[7]：F → F。",
+        "witness": "目标 i=3，来源 j=0，片段 “cat”：来源可达且片段在词表，找到可行切点。目标 dp[3]：F → T。",
+        "self": "目标 i=7，来源 j=0，片段 “catsdog”：禁止 0→n 的整词自匹配。目标 dp[7]：F → F。"
+      }
+    }
+  ],
+  "errors": [],
+  "contrast": [
+    {
+      "fg": "--text",
+      "bg": "--panel",
+      "ratio": 14.704584598678618,
+      "minimum": 7
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel2",
+      "ratio": 6.449407898769069,
+      "minimum": 4.5
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel2",
+      "ratio": 10.910104011097095,
+      "minimum": 4.5
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel2",
+      "ratio": 8.937191437807625,
+      "minimum": 3
+    },
+    {
+      "fg": "--bg",
+      "bg": "--accent",
+      "ratio": 13.100679028115637,
+      "minimum": 7
+    }
+  ],
+  "nativeClipboard": true,
+  "disabled": {
+    "color": "rgb(154, 167, 184)",
+    "background": "rgb(28, 35, 48)",
+    "opacity": "1"
+  },
+  "controlHeights": [
+    {
+      "id": "",
+      "height": 48
+    },
+    {
+      "id": "",
+      "height": 48
+    },
+    {
+      "id": "preset",
+      "height": 48
+    },
+    {
+      "id": "prev",
+      "height": 48
+    },
+    {
+      "id": "next",
+      "height": 48
+    },
+    {
+      "id": "reset",
+      "height": 48
+    },
+    {
+      "id": "end",
+      "height": 48
+    },
+    {
+      "id": "reveal",
+      "height": 48
+    },
+    {
+      "id": "copy",
+      "height": 48
+    },
+    {
+      "id": "",
+      "height": 48
+    }
+  ],
+  "cssBytes": 11912,
+  "localAssetRequests": [
+    "http://127.0.0.1:18770/leetcode/472/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/472/style.css?v=472-1",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/472/copy.js?v=472-1",
+    "http://127.0.0.1:18770/leetcode/472/core.js?v=472-1",
+    "http://127.0.0.1:18770/leetcode/472/python-code.js?v=472-1",
+    "http://127.0.0.1:18770/leetcode/472/app.js?v=472-1"
+  ]
+}
