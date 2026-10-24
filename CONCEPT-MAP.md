@@ -1011,3 +1011,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Exclude self-match | `leetcode/472/#step2` | Forbid the edge from 0 to n so a witness uses at least two shorter words. |
 
 <!-- /leetcode-472-campaign -->
+
+
+<!-- leetcode-479-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Descending palindrome candidates | `leetcode/479/#step1` | Mirror prefixes and scan lengths in descending order. |
+| Larger-factor square cutoff | `leetcode/479/#step2` | Test all possible larger factors and stop when x² < p. |
+
+<!-- /leetcode-479-campaign -->
