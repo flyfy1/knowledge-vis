@@ -1,0 +1,12 @@
+{
+  "accessedAt": "2026-10-24T00:00:00+08:00",
+  "url": "https://leetcode.com/problems/burst-balloons/",
+  "observed": {
+    "title": "312. Burst Balloons",
+    "difficulty": "Hard",
+    "statementExcerpt": "If you burst the ith balloon, you will get nums[i - 1] * nums[i] * nums[i + 1] coins; out of bounds is 1; return the maximum coins.",
+    "examples": ["[3,1,5,8] -> 167", "[1,5] -> 10"],
+    "constraints": ["n == nums.length", "1 <= n <= 300", "0 <= nums[i] <= 100"],
+    "languageSelector": "Code editor exposes Python3; callable class Solution with maxCoins(nums) returning int. No mutation or callback requirement observed."
+  }
+}
