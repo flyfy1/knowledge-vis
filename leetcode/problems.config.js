@@ -1493,6 +1493,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) expected time; O(n) auxiliary space"
   },
   {
+    "id": 403,
+    "title": {
+      "zh": "青蛙过河",
+      "en": "Frog Jump"
+    },
+    "desc": {
+      "zh": "同一块石头，不同的上一跳：用可达跳长集合推导过河条件。",
+      "en": "One stone, different arrival jumps: derive reachability by keeping possible jump lengths."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "状态设计",
+        "en": "State design"
+      }
+    ],
+    "path": "403/",
+    "leetcodeUrl": "https://leetcode.com/problems/frog-jump/",
+    "language": "Python",
+    "complexity": "O(n²) expected time; O(n²) space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
