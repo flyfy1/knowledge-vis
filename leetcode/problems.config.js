@@ -1597,6 +1597,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
+    "id": 432,
+    "title": {
+      "zh": "全 O(1) 的数据结构",
+      "en": "All O`one Data Structure"
+    },
+    "desc": {
+      "zh": "从单步计数变化推导相邻桶移动与极值查询。",
+      "en": "Derive neighboring-bucket moves and extreme-key queries from unit count changes."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "双向链表",
+        "en": "Doubly linked list"
+      },
+      {
+        "zh": "哈希表",
+        "en": "Hash map"
+      }
+    ],
+    "path": "432/",
+    "leetcodeUrl": "https://leetcode.com/problems/all-oone-data-structure/",
+    "language": "Python",
+    "complexity": "Average O(1) time per operation; O(n) space for n live keys"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
