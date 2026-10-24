@@ -1,0 +1,1314 @@
+[
+  {
+    "tag": "en-intermediate",
+    "minimum": 6.449407898769069,
+    "pairs": [
+      {
+        "element": "A",
+        "text": "← Knowledge Index",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "BUTTON",
+        "text": "中",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "BUTTON",
+        "text": "EN",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "A",
+        "text": "LeetCode lessons",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "H1",
+        "text": "#330 · Patching Array",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "You have 1 and 3, each usable once. What is the fewest new n",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "element": "SPAN",
+        "text": "Hard",
+        "ratio": 8.937191437807625
+      },
+      {
+        "element": "SPAN",
+        "text": "Python",
+        "ratio": 8.937191437807625
+      },
+      {
+        "element": "A",
+        "text": "Official problem ↗",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "P",
+        "text": "The goal is to form each integer 1..n by adding chosen eleme",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "element": "A",
+        "text": "1 · Make the sums",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "A",
+        "text": "2 · Two intervals",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "element": "A",
+        "text": "3 · Patch by patch",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "element": "A",
+        "text": "4 · Predict first",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "element": "A",
+        "text": "5 · Implement",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "element": "P",
+        "text": "01",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "H2",
+        "text": "Which sums are missing?",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "A subset sum adds chosen elements, using each array occurren",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "Keep nums=[1,3] and n=6 fixed. Try one patch and inspect eac",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "LABEL",
+        "text": "Try one patch (changes only this experiment)",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "B",
+        "text": "1 · Reachable",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "1 = 1",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "2 · Reachable",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "2 = 2",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "3 · Reachable",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "3 = 3",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "4 · Reachable",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "1 + 3 = 4",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "5 · Reachable",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "3 + 2 = 5",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "6 · Reachable",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "1 + 3 + 2 = 6",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "handRead",
+        "text": "Current elements: [1, 3, 2]; 6/6 targets in [1,6] are reacha",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "P",
+        "text": "A correct baseline tries zero patches, then one, two, and so",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "SUMMARY",
+        "text": "Tiny-input exhaustive baseline (does not scale)",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "P",
+        "text": "Here k is the trial patch count. combinations_with_replaceme",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "baselineCode",
+        "text": "from itertools import combinations_with_replacement, product",
+        "ratio": 16.437295258072666
+      },
+      {
+        "element": "P",
+        "text": "02",
+        "ratio": 13.388343428810314
+      },
+      {
+        "element": "H2",
+        "text": "How far can one new value extend coverage?",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "P",
+        "text": "Change just one condition: the available elements are [1,2],",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "P",
+        "text": "Change only x and inspect both intervals and the actual sums",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "LABEL",
+        "text": "New value x added to [1,2]",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "SPAN",
+        "text": "Without x: old interval",
+        "ratio": 6.449407898769069
+      },
+      {
+        "element": "B",
+        "text": "[0, 3]",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "SPAN",
+        "text": "Using x: shifted interval",
+        "ratio": 6.449407898769069
+      },
+      {
+        "element": "shifted",
+        "text": "[6, 9]",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "1 · Reachable",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "1 = 1",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "2 · Reachable",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "2 = 2",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "3 · Reachable",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "1 + 2 = 3",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "4 · Missing",
+        "ratio": 8.937191437807625
+      },
+      {
+        "element": "SPAN",
+        "text": "No subset makes this sum",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "5 · Missing",
+        "ratio": 8.937191437807625
+      },
+      {
+        "element": "SPAN",
+        "text": "No subset makes this sum",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "6 · Reachable",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "6 = 6",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "7 · Reachable",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "1 + 6 = 7",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "8 · Reachable",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "2 + 6 = 8",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "9 · Reachable",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "1 + 2 + 6 = 9",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "joinRead",
+        "text": "x=6 > 4: the first interval ends at 3 and the second starts ",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "P",
+        "text": "Call the first uncovered positive sum miss. Above, miss=4: t",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "P",
+        "text": "If the next original value is ≤miss, consume it for free. If",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "P",
+        "text": "Why is the local choice globally safe? First consume all ori",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "P",
+        "text": "Tempting mistake: check only whether the total sum is ≥n. Th",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "P",
+        "text": "03",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "H2",
+        "text": "What changes after each consume or patch?",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "miss is the first sum not covered by processed elements; i c",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "This is a JavaScript state simulation, not execution of the ",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "LABEL",
+        "text": "Input preset (changing restarts)",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "inputRead",
+        "text": "nums=[1, 5, 10]; n=20; pending original values: 5, 10",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "tracePrev",
+        "text": "← Undo one operation",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "traceNext",
+        "text": "Apply one consume / patch →",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "traceReset",
+        "text": "Reset this experiment",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "traceLast",
+        "text": "Show complete result",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "frameRead",
+        "text": "Completed 2/5 operations; miss=4, i=1, patches=1.",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "SPAN",
+        "text": "Before: complete coverage",
+        "ratio": 6.449407898769069
+      },
+      {
+        "element": "beforeCoverage",
+        "text": "[0, 1]",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "SPAN",
+        "text": "After: complete coverage",
+        "ratio": 6.449407898769069
+      },
+      {
+        "element": "afterCoverage",
+        "text": "[0, 3]",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "operationRead",
+        "text": "The next original value is greater than 2, or none remains: ",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "H3",
+        "text": "Operation ledger (each row is a completed state)",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "P",
+        "text": "On narrow screens, scroll the table horizontally. Every row ",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "TH",
+        "text": "Operation",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "TH",
+        "text": "Old miss",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "TH",
+        "text": "Action",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "TH",
+        "text": "New miss",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "TH",
+        "text": "Patches so far",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "TD",
+        "text": "1",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "1",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "Consume original 1",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "2",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "0",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "2",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "2",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "Patch 2",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "4",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "1",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "P",
+        "text": "04",
+        "ratio": 13.388343428810314
+      },
+      {
+        "element": "H2",
+        "text": "How many patches does a new array need?",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "P",
+        "text": "Independent exercise: nums=[1,2,7], n=10. miss is the first ",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "LEGEND",
+        "text": "How many patches are necessary?",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "LABEL",
+        "text": " 0",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "LABEL",
+        "text": " 2",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "LABEL",
+        "text": " 1",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "reveal",
+        "text": "Check and explain",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "predictionReset",
+        "text": "Reset this experiment",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "predictionFeedback",
+        "text": "Not quite. The minimum is 1. Consuming 1 and 2 gives miss=4.",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "P",
+        "text": "05",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "H2",
+        "text": "How does the coverage proof become Python?",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "The official Python3 interface is Solution.minPatches(nums, ",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "LI",
+        "text": "Initialize miss=1, i=0, patches=0. while miss<=n means some ",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "LI",
+        "text": "if i<len(nums) and nums[i]<=miss is the free-consume branch:",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "LI",
+        "text": "else inserts the old miss: miss+=miss and patches+=1, leavin",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "Let m=len(nums). Each original value is consumed at most onc",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "Boundaries: if 1 is absent, patch 1 first. Duplicate occurre",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "Self-check method: execute Solution().minPatches offline. An",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "copyPython",
+        "text": "Copy Python",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "A",
+        "text": "Download solution.py",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "copyStatus",
+        "text": "Clipboard unavailable. Select the source below and copy it m",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "LABEL",
+        "text": "Source for manual copying",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "SUMMARY",
+        "text": "Inspect the complete official-interface solution",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "pythonCode",
+        "text": "class Solution:\n    def minPatches(self, nums: list[int], n:",
+        "ratio": 16.437295258072666
+      },
+      {
+        "element": "A",
+        "text": "Revisit the coverage proof",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "A",
+        "text": "Candy: compare another greedy proof",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "FOOTER",
+        "text": "Author self-checked candidate; independent review pending. C",
+        "ratio": 7.7443462241265095
+      }
+    ]
+  },
+  {
+    "tag": "zh-intermediate",
+    "minimum": 6.449407898769069,
+    "pairs": [
+      {
+        "element": "A",
+        "text": "← 知识索引",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "BUTTON",
+        "text": "中",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "BUTTON",
+        "text": "EN",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "A",
+        "text": "LeetCode 讲解集",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "H1",
+        "text": "#330 · 按要求补齐数组",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "你手里只有 1 和 3，各用一次，怎样用最少的新数字组成 1 到 6 的每个整数？",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "element": "SPAN",
+        "text": "困难",
+        "ratio": 8.937191437807625
+      },
+      {
+        "element": "SPAN",
+        "text": "Python",
+        "ratio": 8.937191437807625
+      },
+      {
+        "element": "A",
+        "text": "官方题目 ↗",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "P",
+        "text": "目标是用所选元素的和组成 1..n 的每个整数，n 是目标上界。官方约束：已升序排列的正整数数组；1 ≤ 长度 ≤ 10",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "element": "A",
+        "text": "1 · 亲手凑数",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "A",
+        "text": "2 · 两段覆盖",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "element": "A",
+        "text": "3 · 逐步补齐",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "element": "A",
+        "text": "4 · 先预测",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "element": "A",
+        "text": "5 · 写成代码",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "element": "P",
+        "text": "01",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "H2",
+        "text": "哪些数字现在凑不出来？",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "子集和就是选出一些元素相加；每个位置的元素最多选一次，不要求位置相邻。补数（patch）是插入一个正整数。对 nums=",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "保持 nums=[1,3]、n=6 不变，试选一个补数，逐格看每个和的组成。补 2 后：2=2，5=2+3，6=1+2+",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "LABEL",
+        "text": "试补一个数（只改变本实验）",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "B",
+        "text": "1 · 可组成",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "1 = 1",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "2 · 可组成",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "2 = 2",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "3 · 可组成",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "3 = 3",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "4 · 可组成",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "1 + 3 = 4",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "5 · 可组成",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "3 + 2 = 5",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "6 · 可组成",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "1 + 3 + 2 = 6",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "handRead",
+        "text": "当前元素：[1, 3, 2]；[1,6] 中已覆盖 6/6 个目标。",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "P",
+        "text": "一个正确的基线：先枚举 0 个补数，再枚举 1 个、2 个……；补数只需在 1..n 内选，允许重复。对每种候选，枚举全",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "SUMMARY",
+        "text": "小输入的穷举基线（不能用于大约束）",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "P",
+        "text": "这里 k 是候选补数个数。combinations_with_replacement 枚举允许重复的补数组合；produ",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "baselineCode",
+        "text": "from itertools import combinations_with_replacement, product",
+        "ratio": 16.437295258072666
+      },
+      {
+        "element": "P",
+        "text": "02",
+        "ratio": 13.388343428810314
+      },
+      {
+        "element": "H2",
+        "text": "一个新数能把连续覆盖延长多少？",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "P",
+        "text": "现在只改一个条件：已有元素是 [1,2]，能组成 [0,3] 的所有整数。加入 x 后，不用 x 的和仍在 [0,3]；",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "P",
+        "text": "只改变新数 x，观察两个区间和下面的实际和。比较 x=3、4、5：最远的无缺口延伸是哪一个？",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "LABEL",
+        "text": "加入 [1,2] 的新数 x",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "SPAN",
+        "text": "不用 x：旧区间",
+        "ratio": 6.449407898769069
+      },
+      {
+        "element": "B",
+        "text": "[0, 3]",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "SPAN",
+        "text": "使用 x：平移后的区间",
+        "ratio": 6.449407898769069
+      },
+      {
+        "element": "shifted",
+        "text": "[6, 9]",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "1 · 可组成",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "1 = 1",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "2 · 可组成",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "2 = 2",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "3 · 可组成",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "1 + 2 = 3",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "4 · 缺口",
+        "ratio": 8.937191437807625
+      },
+      {
+        "element": "SPAN",
+        "text": "没有可选的组合",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "5 · 缺口",
+        "ratio": 8.937191437807625
+      },
+      {
+        "element": "SPAN",
+        "text": "没有可选的组合",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "6 · 可组成",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "6 = 6",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "7 · 可组成",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "1 + 6 = 7",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "8 · 可组成",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "2 + 6 = 8",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "B",
+        "text": "9 · 可组成",
+        "ratio": 10.910104011097095
+      },
+      {
+        "element": "SPAN",
+        "text": "1 + 2 + 6 = 9",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "joinRead",
+        "text": "x=6 > 4：第一段止于 3，第二段从 6 开始；4 仍无法组成。",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "P",
+        "text": "把第一个未覆盖的正整数叫作 miss。刚才 miss=4：旧区间是 [0,miss−1]，新数 x 产生 [x,x+mi",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "P",
+        "text": "若下一个原数 ≤miss，免费使用它；若它 >miss，后面原数因已排序也都更大，正数相加不可能补出 miss，必须插入",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "P",
+        "text": "为什么局部选择不会吃亏？先把所有可接上的原数免费用完。任何成功方案都必须用一个 ≤miss 的补数来填当前缺口；把这个补",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "P",
+        "text": "容易误判：只看总和是否 ≥n。[1,4] 的总和是 5，却无法组成 2；更大的元素也不能修复这个小缺口。必须要求“每个整",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "P",
+        "text": "03",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "H2",
+        "text": "每次消费或补数后，边界如何改变？",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "miss 是只用已处理元素时，第一个未覆盖的和；i 是已消费的原数组元素数；patches 是已插入个数。选择预设会从头",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "可视化是 JavaScript 状态模拟，不是在浏览器执行下方的 Python。每帧是一次完整操作之后；第 0 帧还未操",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "LABEL",
+        "text": "输入预设（更换会重启）",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "inputRead",
+        "text": "nums=[1, 5, 10]；n=20；待处理原数：5, 10",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "tracePrev",
+        "text": "← 撤回一步",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "traceNext",
+        "text": "执行一次消费 / 补数 →",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "traceReset",
+        "text": "重置本实验",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "traceLast",
+        "text": "跳到完整结果",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "frameRead",
+        "text": "已完成 2/5 次操作；miss=4，i=1，patches=1。",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "SPAN",
+        "text": "操作前：已连续覆盖",
+        "ratio": 6.449407898769069
+      },
+      {
+        "element": "beforeCoverage",
+        "text": "[0, 1]",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "SPAN",
+        "text": "操作后：已连续覆盖",
+        "ratio": 6.449407898769069
+      },
+      {
+        "element": "afterCoverage",
+        "text": "[0, 3]",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "operationRead",
+        "text": "待处理原数大于 2 或已耗尽：插入 2，miss=2+2=4，补数个数加 1。",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "H3",
+        "text": "累计操作记录（每行是完成后的状态）",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "P",
+        "text": "窄屏可横向滚动表格；每行同时保留旧边界和新边界。",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "TH",
+        "text": "次数",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "TH",
+        "text": "旧 miss",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "TH",
+        "text": "本次动作",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "TH",
+        "text": "新 miss",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "TH",
+        "text": "累计补数",
+        "ratio": 7.078851579017443
+      },
+      {
+        "element": "TD",
+        "text": "1",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "1",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "消费原数 1",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "2",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "0",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "2",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "2",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "插入 2",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "4",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "TD",
+        "text": "1",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "P",
+        "text": "04",
+        "ratio": 13.388343428810314
+      },
+      {
+        "element": "H2",
+        "text": "新数组的最少补数是多少？",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "P",
+        "text": "独立练习：nums=[1,2,7]，n=10。miss 表示第一个无法组成的正整数。先在心里推进完整过程，再选择最少补数",
+        "ratio": 16.440224808744848
+      },
+      {
+        "element": "LEGEND",
+        "text": "最少要补几个数？",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "LABEL",
+        "text": " 0",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "LABEL",
+        "text": " 2",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "LABEL",
+        "text": " 1",
+        "ratio": 14.704584598678618
+      },
+      {
+        "element": "reveal",
+        "text": "核对并解释",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "predictionReset",
+        "text": "重置本实验",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "predictionFeedback",
+        "text": "还不对。 最少 1 个：消费 1、2 后 miss=4；7>4，必须补一个 ≤4 的数。补 4 后 miss=8，再消费",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "P",
+        "text": "05",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "H2",
+        "text": "怎样把覆盖证明写成 Python？",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "官方 Python3 接口为 Solution.minPatches(nums, n)，返回最少插入个数。代码不修改 n",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "LI",
+        "text": "初始化 miss=1、i=0、patches=0；while miss<=n 意味着目标里仍有缺口。miss>n 就停止",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "LI",
+        "text": "if i<len(nums) and nums[i]<=miss 对应免费消费：miss+=nums[i] 后 i+=1",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "LI",
+        "text": "else 对应补入旧 miss：miss+=miss，同时 patches+=1，但 i 不动。例如 [1,3] 消费 ",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "令 m=len(nums)。每个原数至多消费一次，每次补数使 miss 翻倍，因此时间 O(m+log n)，额外空间 ",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "边界：缺少 1 时必须先补 1；重复值按不同位置各用一次（[1,2,2] 无需补数）；原数耗尽后继续翻倍补数；n=1 时",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "P",
+        "text": "自查方法：离线实际调用 Solution().minPatches；独立的广度优先搜索枚举可达和集合及每一种补数，求小输",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "copyPython",
+        "text": "复制 Python",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "A",
+        "text": "下载 solution.py",
+        "ratio": 13.397069143240783
+      },
+      {
+        "element": "copyStatus",
+        "text": "剪贴板不可用，请在下方选中源代码手动复制。",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "LABEL",
+        "text": "手动复制源代码",
+        "ratio": 16.086987125379448
+      },
+      {
+        "element": "SUMMARY",
+        "text": "查看官方接口的完整解法",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "pythonCode",
+        "text": "class Solution:\n    def minPatches(self, nums: list[int], n:",
+        "ratio": 16.437295258072666
+      },
+      {
+        "element": "A",
+        "text": "重看：连续覆盖的证明",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "A",
+        "text": "分发糖果：比较另一种贪心证明",
+        "ratio": 13.100679028115637
+      },
+      {
+        "element": "FOOTER",
+        "text": "作者自查候选；独立评审待进行。数值测试与浏览器模拟不代表 LeetCode 已接受提交，也不代表真实学习者已掌握。",
+        "ratio": 7.7443462241265095
+      }
+    ]
+  }
+]

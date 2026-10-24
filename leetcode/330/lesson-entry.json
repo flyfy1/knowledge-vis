@@ -1,0 +1,38 @@
+{
+  "id": 330,
+  "title": {
+    "zh": "按要求补齐数组",
+    "en": "Patching Array"
+  },
+  "desc": {
+    "zh": "从第一个无法组成的和，推导最少补数的贪心法。",
+    "en": "Derive the minimum patches from the first sum you cannot form."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "贪心",
+      "en": "Greedy"
+    },
+    {
+      "zh": "覆盖不变式",
+      "en": "Coverage invariant"
+    }
+  ],
+  "path": "330/",
+  "leetcodeUrl": "https://leetcode.com/problems/patching-array/",
+  "language": "Python",
+  "complexity": "O(m + log n) time; O(1) auxiliary space",
+  "concepts": [
+    {
+      "name": "coverage invariant",
+      "step": 1,
+      "description": "Represent every attainable sum below miss by one complete interval."
+    },
+    {
+      "name": "greedy patch",
+      "step": 2,
+      "description": "Patch miss when the next sorted value cannot fill the first gap."
+    }
+  ]
+}
