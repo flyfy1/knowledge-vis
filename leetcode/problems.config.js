@@ -983,6 +983,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(k) auxiliary space"
   },
   {
+    "id": 262,
+    "title": {
+      "zh": "行程与用户",
+      "en": "Trips and Users"
+    },
+    "desc": {
+      "zh": "先筛掉任一端被封禁的行，再按天计算取消率。",
+      "en": "Filter out trips with either endpoint banned, then compute a daily cancellation rate."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数据库",
+        "en": "Database"
+      },
+      {
+        "zh": "Pandas",
+        "en": "Pandas"
+      },
+      {
+        "zh": "分组聚合",
+        "en": "Grouped aggregation"
+      }
+    ],
+    "path": "262/",
+    "leetcodeUrl": "https://leetcode.com/problems/trips-and-users/",
+    "language": "Python",
+    "complexity": "O(T + U) expected time; O(T + U) space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
