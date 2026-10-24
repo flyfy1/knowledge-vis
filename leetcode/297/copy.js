@@ -212,20 +212,20 @@ const COPY={
     "Code mapping"
   ],
   "map1": [
-    "serialize：visit(None) 写 #；非空节点先写值，再递归 left、right。",
-    "serialize: visit(None) writes #; a non-empty node writes its value, then recurses left and right."
+    "serialize：用 pending 栈取节点；空节点写 #，非空节点写值，并把 right、left 压栈，保证前序。",
+    "serialize: pop from a pending stack; write # for an empty node, otherwise write its value and push right then left for preorder."
   ],
   "map2": [
-    "deserialize：next(tokens) 前移 cursor；# 返回 None，否则创建节点并递归两侧。",
-    "deserialize: next(tokens) advances the cursor; # returns None, otherwise create a node and recurse twice."
+    "deserialize：pending 栈保存尚未填的父节点孩子位置；每个 token 填一个位置，数字创建节点并把它的 right、left 位置压栈。",
+    "deserialize: a pending stack holds open parent-child slots; each token fills one slot, and a number creates a node then pushes its right and left slots."
   ],
   "map3": [
     "边界：空树序列化为 #；负值通过 int(token) 保留。",
     "Boundaries: an empty tree serializes to #; int(token) preserves negative values."
   ],
   "complexity": [
-    "若 n 个节点，字符串有 2n+1 个 token；时间 O(n)，辅助空间 O(h) 递归栈 + O(n) 输出/输入串，h 为树高。",
-    "For n nodes there are 2n+1 tokens; O(n) time, O(h) recursion stack plus O(n) input/output storage, where h is tree height."
+    "若 n 个节点，字符串有 2n+1 个 token；时间 O(n)，显式 pending 栈最多 O(n)，另有 O(n) 输入/输出存储；因此即使树高达到官方上限也不会依赖 Python 递归深度。",
+    "For n nodes there are 2n+1 tokens; O(n) time, an explicit pending stack of O(n) plus O(n) input/output storage, so the official height limit does not depend on Python recursion depth."
   ],
   "copy": [
     "复制 Python",
