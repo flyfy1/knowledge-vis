@@ -1545,6 +1545,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(mn log(mn)) time; O(mn) auxiliary space"
   },
   {
+    "id": 410,
+    "title": {
+      "zh": "分割数组的最大值",
+      "en": "Split Array Largest Sum"
+    },
+    "desc": {
+      "zh": "先验证一个和的上限，再二分寻找最小可行上限。",
+      "en": "Test a sum cap with a greedy scan, then search for the smallest feasible cap."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二分答案",
+        "en": "Binary search on the answer"
+      },
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      }
+    ],
+    "path": "410/",
+    "leetcodeUrl": "https://leetcode.com/problems/split-array-largest-sum/",
+    "language": "Python",
+    "complexity": "O(n log(S - M + 2)) time; O(1) auxiliary space, S=sum(nums), M=max(nums)"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
