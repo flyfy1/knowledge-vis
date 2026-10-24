@@ -49,8 +49,8 @@ const COPY={
     "Question for this step: when does one trip enter the statistic? A Trip has a client, driver, status, and date; Users supplies both ban flags. An eligible request is one whose client and driver are both No."
   ],
   "hand": [
-    "小例子：#1 的客户 1 和司机 10 都是 No，所以留下；#2 的客户 2 是 Yes，即使司机 11 是 No，整行也排除。",
-    "Tiny example: #1 has client 1 and driver 10, both No, so it stays. #2 has client 2 = Yes; even with driver 11 = No, the whole row is excluded."
+    "小例子：#1 的客户 1 和司机 10 都是 No，所以留下；#2 的客户 2 是 Yes，即使司机 11 是 No，整行也排除。先手算一天：2013-10-01 的 #1、#3、#4 共 3 条合资格请求，其中 #4 被取消，所以取消率 = 1 ÷ 3 = 0.33。最终每个有合资格请求的日期输出一行，列名是 Day 和 Cancellation Rate。",
+    "Tiny example: #1 has client 1 and driver 10, both No, so it stays. #2 has client 2 = Yes; even with driver 11 = No, the whole row is excluded. Work one day before tracing: on 2013-10-01, #1, #3, and #4 are 3 eligible requests; #4 is cancelled, so the cancellation rate is 1 ÷ 3 = 0.33. The final output has one row per day with at least one eligible request, with columns Day and Cancellation Rate."
   ],
   "wrong": [
     "容易错的做法：只检查 client。若 driver 10 被封、client 1 未被封，仍会把这条取消算进率；题目要求两端都未封。",
@@ -61,8 +61,8 @@ const COPY={
     "Official conditions: dates 2013-10-01 through 2013-10-03 inclusive; show only days with at least one eligible request; round to two decimals."
   ],
   "task": [
-    "这一步要回答：每天的两个计数怎样组成一个率？分母 denominator 是当天所有合资格请求；分子 numerator 是其中 status 为 cancelled_by_client 或 cancelled_by_driver 的行。",
-    "Question for this step: how do two daily counts become a rate? The denominator is every eligible request that day; the numerator is the subset cancelled by client or driver."
+    "这一步要回答：每天的两个计数怎样组成一个率？分母 denominator 是当天所有合资格请求；分子 numerator 是其中 status 为 cancelled_by_client 或 cancelled_by_driver 的行。按日期逐行处理后，每个有合资格请求的日期会得到一行 Day、Cancellation Rate；例如刚才的 2013-10-01 就是 0.33。",
+    "Question for this step: how do two daily counts become a rate? The denominator is every eligible request that day; the numerator is the subset cancelled by client or driver. Processing rows by date produces one Day and Cancellation Rate row for every day with an eligible request; for the worked 2013-10-01 example, that value is 0.33."
   ],
   "advance": [
     "下一行",
