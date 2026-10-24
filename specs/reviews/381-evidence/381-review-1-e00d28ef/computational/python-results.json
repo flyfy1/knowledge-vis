@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "invariantChecks": 72300,
+  "exhaustiveLengths": "0..5 over 6 updates",
+  "seed": 381,
+  "seededStreams": 150,
+  "maxCalls": 200000,
+  "sampling": "all possible positions enumerated on exhaustive states; random.randrange contract checked",
+  "scope": "author self-check; no LeetCode submission"
+}
