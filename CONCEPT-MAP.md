@@ -782,3 +782,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 前缀和 / Prefix sums | `leetcode/315/#step3` | 按秩累计频率，查询 rank−1 得到严格更小数量。 |
 
 <!-- /leetcode-315-campaign -->
+
+
+<!-- leetcode-321-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Greedy digit deletion | `leetcode/321/#step1` | Exchange smaller tails while deletion budget remains. |
+| Suffix-aware merge | `leetcode/321/#step2` | Resolve equal heads using the entire remaining suffix. |
+
+<!-- /leetcode-321-campaign -->
