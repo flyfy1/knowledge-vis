@@ -1753,6 +1753,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(|s1| min(n1, |s2|)) time; O(min(n1, |s2|)) auxiliary space"
   },
   {
+    "id": 472,
+    "title": {
+      "zh": "连接词",
+      "en": "Concatenated Words"
+    },
+    "desc": {
+      "zh": "保留可达的前缀边界，排除整词自匹配。",
+      "en": "Keep reachable prefix boundaries and exclude a whole-word self-match."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "472/",
+    "leetcodeUrl": "https://leetcode.com/problems/concatenated-words/",
+    "language": "Python",
+    "complexity": "O(S + sum(len(w)^3)) expected time; O(N + L) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
