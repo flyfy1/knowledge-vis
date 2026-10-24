@@ -1437,6 +1437,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(a² b²) time; O(b) auxiliary space, a=min(m,n), b=max(m,n)"
   },
   {
+    "id": 381,
+    "title": {
+      "zh": "O(1) 时间插入、删除和获取随机元素 — 允许重复",
+      "en": "Insert Delete GetRandom O(1) - Duplicates allowed"
+    },
+    "desc": {
+      "zh": "让每个副本占一个位置，用尾部填洞并修复位置集合。",
+      "en": "Give each copy a slot, fill a deletion hole from the tail, and repair its index set."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "哈希表",
+        "en": "Hash map"
+      },
+      {
+        "zh": "随机采样",
+        "en": "Random sampling"
+      }
+    ],
+    "path": "381/",
+    "leetcodeUrl": "https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/",
+    "language": "Python",
+    "complexity": "Expected amortized O(1) time per operation; O(n) space for n stored occurrences"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
