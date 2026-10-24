@@ -7,6 +7,6 @@
   "path": "282/",
   "leetcodeUrl": "https://leetcode.com/problems/expression-add-operators/",
   "language": "Python",
-  "complexity": "O(n·3^n) time excluding output; O(n) recursion auxiliary space",
+  "complexity": "O(n·4^n) time; O(n) recursion auxiliary space, plus output space",
   "concepts": [{"name":"Backtracking choices","step":1,"description":"Cut or join each digit gap and undo after recursion."},{"name":"Precedence repair with last","step":2,"description":"Replace the last additive term when multiplying."}]
 }
