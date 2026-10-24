@@ -1,0 +1,5 @@
+Accessed 2026-10-24 via https://leetcode.com/problems/expression-add-operators/
+Observed statement: Given digit string num and integer target, insert binary +, -, and/or * between digits; return all expressions evaluating to target. Operands cannot contain leading zeros; numbers may contain multiple digits.
+Examples: 123,6 -> [1*2*3,1+2+3]; 232,8 -> [2*3+2,2+3*2]; 3456237490,9191 -> [].
+Constraints: 1 <= num.length <= 10; num consists only of digits; -2^31 <= target <= 2^31-1.
+Code panel is the standard Solution method interface; public page did not expose a per-problem selector excerpt in text mode. Python is the preferred faithful catalog language and the lesson uses Solution.addOperators(num: str, target: int) -> List[str].
