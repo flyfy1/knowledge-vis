@@ -1,0 +1,126 @@
+{
+  "authorSelfCheck": true,
+  "exhaustivePairOracle": [
+    1,
+    2,
+    3
+  ],
+  "officialRangeExecution": [
+    {
+      "n": 1,
+      "palindrome": 9,
+      "residue": 9,
+      "seconds": 0.0
+    },
+    {
+      "n": 2,
+      "palindrome": 9009,
+      "residue": 987,
+      "seconds": 0.0
+    },
+    {
+      "n": 3,
+      "palindrome": 906609,
+      "residue": 123,
+      "seconds": 0.0003
+    },
+    {
+      "n": 4,
+      "palindrome": 99000099,
+      "residue": 597,
+      "seconds": 0.0004
+    },
+    {
+      "n": 5,
+      "palindrome": 9966006699,
+      "residue": 677,
+      "seconds": 0.0046
+    },
+    {
+      "n": 6,
+      "palindrome": 999000000999,
+      "residue": 1218,
+      "seconds": 0.0386
+    },
+    {
+      "n": 7,
+      "palindrome": 99956644665999,
+      "residue": 877,
+      "seconds": 0.7157
+    },
+    {
+      "n": 8,
+      "palindrome": 9999000000009999,
+      "residue": 475,
+      "seconds": 3.9993
+    }
+  ],
+  "primeFactorCertificates": [
+    {
+      "n": 1,
+      "witness": [
+        1,
+        9
+      ],
+      "larger_candidates_rejected": 0
+    },
+    {
+      "n": 2,
+      "witness": [
+        91,
+        99
+      ],
+      "larger_candidates_rejected": 7
+    },
+    {
+      "n": 3,
+      "witness": [
+        913,
+        993
+      ],
+      "larger_candidates_rejected": 91
+    },
+    {
+      "n": 4,
+      "witness": [
+        9901,
+        9999
+      ],
+      "larger_candidates_rejected": 97
+    },
+    {
+      "n": 5,
+      "witness": [
+        99681,
+        99979
+      ],
+      "larger_candidates_rejected": 337
+    },
+    {
+      "n": 6,
+      "witness": [
+        999001,
+        999999
+      ],
+      "larger_candidates_rejected": 997
+    },
+    {
+      "n": 7,
+      "witness": [
+        9997647,
+        9998017
+      ],
+      "larger_candidates_rejected": 4333
+    },
+    {
+      "n": 8,
+      "witness": [
+        99990001,
+        99999999
+      ],
+      "larger_candidates_rejected": 9997
+    }
+  ],
+  "sourceParity": true,
+  "duplicateCopyKeys": 82
+}
