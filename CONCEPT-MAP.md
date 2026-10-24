@@ -982,3 +982,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Reversible feeding schedule | `leetcode/458/#step2` | Observe death rounds and retain consistent bucket candidates. |
 
 <!-- /leetcode-458-campaign -->
+
+
+<!-- leetcode-460-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| LFU frequency buckets | `leetcode/460/#step2` | Maintain oldest-first keys per frequency and the smallest live frequency. |
+
+<!-- /leetcode-460-campaign -->

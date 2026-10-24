@@ -1701,6 +1701,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(1 + log_(R+1) buckets) arithmetic time; O(1) auxiliary words, R = floor(minutesToTest / minutesToDie)"
   },
   {
+    "id": 460,
+    "title": {
+      "zh": "LFU 缓存",
+      "en": "LFU Cache"
+    },
+    "desc": {
+      "zh": "从频次与先后顺序推导常数时间缓存淘汰。",
+      "en": "Derive constant-time cache eviction from frequency and recency."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "哈希表",
+        "en": "Hash table"
+      },
+      {
+        "zh": "有序频次桶",
+        "en": "Ordered frequency buckets"
+      }
+    ],
+    "path": "460/",
+    "leetcodeUrl": "https://leetcode.com/problems/lfu-cache/",
+    "language": "Python",
+    "complexity": "O(1) average time per get/put; O(C) space for capacity C"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
