@@ -901,3 +901,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Coverage baseline | `leetcode/391/#step1` | Count unit-cell coverage independently of the corner test. |
 
 <!-- /leetcode-391-campaign -->
+
+
+<!-- leetcode-403-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Frog jump reachability | `leetcode/403/#step2` | Keep every possible arrival jump length at each stone. |
+| State sufficiency | `leetcode/403/#step1` | Why a reached-stone flag loses legal continuations. |
+
+<!-- /leetcode-403-campaign -->
