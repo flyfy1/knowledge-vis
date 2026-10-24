@@ -1519,6 +1519,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) expected time; O(n²) space"
   },
   {
+    "id": 407,
+    "title": {
+      "zh": "接雨水 II",
+      "en": "Trapping Rain Water II"
+    },
+    "desc": {
+      "zh": "沿最低逃逸通道推导二维积水，用最小堆逐圈确定水位。",
+      "en": "Derive escape levels along turning paths and fix water depths with a min-heap."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "最小堆",
+        "en": "Min-heap"
+      },
+      {
+        "zh": "边界扩展",
+        "en": "Boundary expansion"
+      }
+    ],
+    "path": "407/",
+    "leetcodeUrl": "https://leetcode.com/problems/trapping-rain-water-ii/",
+    "language": "Python",
+    "complexity": "O(mn log(mn)) time; O(mn) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

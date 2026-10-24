@@ -911,3 +911,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | State sufficiency | `leetcode/403/#step1` | Why a reached-stone flag loses legal continuations. |
 
 <!-- /leetcode-403-campaign -->
+
+
+<!-- leetcode-407-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Minimum escape bottleneck | `leetcode/407/#step1` | Water level is the smallest possible maximum ground height along a path to the boundary. |
+| Lowest frontier expansion | `leetcode/407/#step2` | Discover each cell once from the smallest fixed escape level and retain cumulative water. |
+
+<!-- /leetcode-407-campaign -->
