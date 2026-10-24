@@ -1,0 +1,16 @@
+{
+  "id": 312,
+  "title": {"zh": "戳气球", "en": "Burst Balloons"},
+  "desc": {"zh": "用固定边界与区间动态规划，把最后一次戳破变成可枚举的状态。", "en": "Use fixed boundaries and interval DP to enumerate the final burst safely."},
+  "difficulty": "hard",
+  "topics": [{"zh": "动态规划", "en": "Dynamic Programming"}, {"zh": "区间 DP", "en": "Interval DP"}],
+  "path": "312/",
+  "leetcodeUrl": "https://leetcode.com/problems/burst-balloons/",
+  "language": "Python",
+  "complexity": "O(n^3) time; O(n^2) auxiliary space",
+  "concepts": [
+    {"name": "interval DP", "step": 1, "description": "Fixed boundaries and a final-choice recurrence."},
+    {"name": "DP invariant", "step": 2, "description": "Each saved cell is optimal for its open interval."},
+    {"name": "sentinel boundaries", "step": 3, "description": "Artificial 1s make edge products uniform."}
+  ]
+}
