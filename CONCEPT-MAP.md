@@ -831,3 +831,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Ordered Euler traversal | `leetcode/332/#step2` | Consume ticket edges in lexical order, append exhausted airports, then reverse. |
 
 <!-- /leetcode-332-campaign -->
+
+
+<!-- leetcode-335-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| First-crossing geometry | `leetcode/335/#step1` | Derive the three local intersection tests from closed coordinate spans. |
+| Reversible path trace | `leetcode/335/#step2` | Compare prefix coordinates and inclusive inequalities at each move. |
+
+<!-- /leetcode-335-campaign -->
