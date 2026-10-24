@@ -822,3 +822,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | greedy patch | `leetcode/330/#step2` | Patch miss when the next sorted value cannot fill the first gap. |
 
 <!-- /leetcode-330-campaign -->
+
+
+<!-- leetcode-332-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Ordered Euler traversal | `leetcode/332/#step2` | Consume ticket edges in lexical order, append exhausted airports, then reverse. |
+
+<!-- /leetcode-332-campaign -->

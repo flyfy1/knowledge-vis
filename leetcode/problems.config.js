@@ -1277,6 +1277,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(m + log n) time; O(1) auxiliary space"
   },
   {
+    "id": 332,
+    "title": {
+      "zh": "重新安排行程",
+      "en": "Reconstruct Itinerary"
+    },
+    "desc": {
+      "zh": "用逆序收尾修复字典序贪心的死路。",
+      "en": "Repair lexical dead ends by finishing airports in reverse order."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "欧拉路径",
+        "en": "Euler trail"
+      },
+      {
+        "zh": "栈",
+        "en": "Stack"
+      }
+    ],
+    "path": "332/",
+    "leetcodeUrl": "https://leetcode.com/problems/reconstruct-itinerary/",
+    "language": "Python",
+    "complexity": "O(E log E) time; O(E) space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
