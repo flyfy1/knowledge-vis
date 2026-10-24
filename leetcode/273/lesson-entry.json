@@ -1,0 +1,16 @@
+{
+  "id": 273,
+  "title": {"zh": "整数转换为英文单词", "en": "Integer to English Words"},
+  "desc": {"zh": "用三位分组和不变式，把整数安全地拼成英文单词。", "en": "Turn an integer into English words with three-digit groups and a spacing invariant."},
+  "difficulty": "hard",
+  "topics": [{"zh": "字符串", "en": "Strings"}, {"zh": "数学", "en": "Math"}],
+  "path": "273/",
+  "leetcodeUrl": "https://leetcode.com/problems/integer-to-english-words/",
+  "language": "Python",
+  "complexity": "O(log₁₀ num) time; O(log₁₀ num) space",
+  "concepts": [
+    {"name": "三位分组", "step": 0, "description": "按 1000 拆分整数并给每组附加位阶词"},
+    {"name": "零与空组不变式", "step": 2, "description": "空组不产出文字，顶层零才输出 Zero"},
+    {"name": "商与余数扫描", "step": 3, "description": "用 num % 1000 和 num // 1000 逐组处理"}
+  ]
+}

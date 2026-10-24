@@ -1,0 +1,5 @@
+Accessed 2026-10-24 Asia/Singapore via https://leetcode.com/problems/integer-to-english-words/ and public POST https://leetcode.com/graphql.
+Statement excerpt: “Convert a non-negative integer num to its English words representation.”
+Examples observed: 123 -> One Hundred Twenty Three; 12345 -> Twelve Thousand Three Hundred Forty Five; 1234567 -> One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven.
+Constraint observed: 0 <= num <= 2^31 - 1.
+GraphQL codeSnippets observed: Python3 `class Solution: def numberToWords(self, num: int) -> str:`; TypeScript `function numberToWords(num: number): string`; JavaScript `var numberToWords = function(num)`. Python is selected by the repository preference.
