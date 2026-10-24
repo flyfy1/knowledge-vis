@@ -961,3 +961,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Lexicographical rank invariant | `leetcode/440/#step2` | Maintain remaining moves when skipping a prefix group or descending. |
 
 <!-- /leetcode-440-campaign -->
+
+
+<!-- leetcode-446-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| arithmetic subsequence counting | `leetcode/446/#step0` | Count ordered position selections with equal gaps and at least three terms. |
+| endpoint and difference DP | `leetcode/446/#step2` | Store length-two seeds and extend completed source rows. |
+| unique penultimate index proof | `leetcode/446/#step4` | Every counted answer belongs to one final position pair. |
+
+<!-- /leetcode-446-campaign -->
