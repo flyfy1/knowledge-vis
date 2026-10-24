@@ -1,0 +1,38 @@
+{
+  "id": 479,
+  "title": {
+    "zh": "最大回文数乘积",
+    "en": "Largest Palindrome Product"
+  },
+  "desc": {
+    "zh": "构造递减回文候选，用较大因子的平方界限证明安全截止。",
+    "en": "Construct descending palindromes and derive a safe square cutoff for larger factors."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "数学",
+      "en": "Mathematics"
+    },
+    {
+      "zh": "枚举",
+      "en": "Enumeration"
+    }
+  ],
+  "path": "479/",
+  "leetcodeUrl": "https://leetcode.com/problems/largest-palindrome-product/",
+  "language": "Python",
+  "complexity": "O(10^(2n) + n·10^n) time under unit-cost integer arithmetic; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "Descending palindrome candidates",
+      "step": 1,
+      "description": "Mirror prefixes and scan lengths in descending order."
+    },
+    {
+      "name": "Larger-factor square cutoff",
+      "step": 2,
+      "description": "Test all possible larger factors and stop when x² < p."
+    }
+  ]
+}
