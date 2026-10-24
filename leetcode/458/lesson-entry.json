@@ -1,0 +1,38 @@
+{
+  "id": 458,
+  "title": {
+    "zh": "可怜的小猪",
+    "en": "Poor Pigs"
+  },
+  "desc": {
+    "zh": "从三桶液体的等待实验，推导可区分结果的乘法与最少小猪数。",
+    "en": "Build a feeding schedule, count distinguishable outcomes, and derive the minimum pigs."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "组合数学",
+      "en": "Combinatorics"
+    },
+    {
+      "zh": "信息编码",
+      "en": "Outcome encoding"
+    }
+  ],
+  "path": "458/",
+  "leetcodeUrl": "https://leetcode.com/problems/poor-pigs/",
+  "language": "Python",
+  "complexity": "O(1 + log_(R+1) buckets) arithmetic time; O(1) auxiliary words, R = floor(minutesToTest / minutesToDie)",
+  "concepts": [
+    {
+      "name": "Outcome capacity",
+      "step": 1,
+      "description": "Derive the matching counting bound and feeding construction."
+    },
+    {
+      "name": "Reversible feeding schedule",
+      "step": 2,
+      "description": "Observe death rounds and retain consistent bucket candidates."
+    }
+  ]
+}

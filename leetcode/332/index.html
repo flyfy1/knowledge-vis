@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>#332</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="local.css"></head><body>
+<header class="site-head"><div class="head-top"><a class="back-link" href="../" data-i18n="back"></a><div id="langToggle" class="lang-toggle"><button type="button" data-lang="zh" lang="zh">中</button><button type="button" data-lang="en" lang="en">EN</button></div></div><h1 data-i18n="title"></h1><p class="tagline" data-i18n="intro"></p><div class="meta"><span class="badge" data-i18n="hard"></span><a class="official-link" href="https://leetcode.com/problems/reconstruct-itinerary/" data-i18n="official"></a></div></header>
+<nav class="step-nav"><div class="step-nav-inner"><a href="#step0" data-i18n="nav0"></a><a href="#step1" data-i18n="nav1"></a><a href="#step2" data-i18n="nav2"></a><a href="#step3" data-i18n="nav3"></a><a href="#step4" data-i18n="nav4"></a></div></nav>
+<main>
+<section id="step0" class="step" data-step="0"><div class="step-inner"><div class="step-kicker">01</div><h2 data-i18n="h0"></h2><p data-i18n="p0"></p><p class="explain" data-i18n="rules"></p><div class="stage"><p data-i18n="handTask"></p><button id="handReveal" class="btn" data-i18n="handReveal"></button><p id="handAnswer" class="readout" data-i18n="handAnswer" hidden></p></div></div></section>
+<section id="step1" class="step" data-step="1"><div class="step-inner"><div class="step-kicker">02</div><h2 data-i18n="h1"></h2><p data-i18n="p1"></p><p data-i18n="baselineCost"></p><pre><code>def baseline(tickets):
+    used = [False] * len(tickets)
+    best = None
+    def visit(route):
+        nonlocal best
+        if len(route) == len(tickets) + 1:
+            if best is None or route &lt; best:
+                best = route[:]
+            return
+        for i, (a, b) in enumerate(tickets):
+            if not used[i] and a == route[-1]:
+                used[i] = True
+                route.append(b)
+                visit(route)
+                route.pop()
+                used[i] = False
+    visit(["JFK"])
+    return best</code></pre><p data-i18n="bridge"></p></div></section>
+<section id="step2" class="step" data-step="2"><div class="step-inner"><div class="step-kicker">03</div><h2 data-i18n="h2"></h2><p data-i18n="p2"></p><p data-i18n="invariant"></p><p data-i18n="proof"></p><p data-i18n="lexical"></p><p data-i18n="traceTask"></p><div class="stage"><label for="preset" data-i18n="preset"></label><select id="preset"><option value="0" data-i18n="pre0"></option><option value="1" data-i18n="pre1"></option><option value="2" data-i18n="pre2"></option><option value="3" data-i18n="pre3"></option><option value="4" data-i18n="pre4"></option></select><p class="hint" data-i18n="legend"></p><div id="board"></div><div class="controls"><button id="prev" class="btn" data-i18n="prev"></button><button id="next" class="btn primary" data-i18n="next"></button><button id="reset" class="btn" data-i18n="reset"></button><button id="end" class="btn" data-i18n="end"></button></div><div id="progress" class="readout" role="status"></div><div id="ledger"></div></div></div></section>
+<section id="step3" class="step" data-step="3"><div class="step-inner"><div class="step-kicker">04</div><h2 data-i18n="h3"></h2><p data-i18n="p3"></p><div class="stage"><fieldset class="prediction-options"><legend data-i18n="choose"></legend><label><input type="radio" name="prediction" value="AAA"><span data-i18n="optA"></span></label><label><input type="radio" name="prediction" value="BBB"><span data-i18n="optB"></span></label><label><input type="radio" name="prediction" value="JFK"><span data-i18n="optJ"></span></label></fieldset><button id="reveal" class="btn primary" data-i18n="reveal" disabled></button><p id="feedback" class="readout" role="status"></p></div></div></section>
+<section id="step4" class="step" data-step="4"><div class="step-inner"><div class="step-kicker">05</div><h2 data-i18n="h4"></h2><p data-i18n="p4"></p><p data-i18n="mapping"></p><p data-i18n="cost"></p><p data-i18n="bounds"></p><h3 data-i18n="sourceTitle"></h3><div class="solution-actions"><button id="copy" class="btn" data-i18n="copy"></button><a href="solution.py" download="solution.py" data-i18n="download"></a></div><p id="copyStatus" role="status"></p><div id="manualCopy" hidden><label for="manualSource" data-i18n="sourceTitle"></label><textarea id="manualSource" readonly rows="10"></textarea></div><pre id="source" tabindex="0"><code id="pythonSource"></code></pre><h3 data-i18n="related"></h3><div class="related"><a href="#step1" data-i18n="rel1"></a><a href="#step2" data-i18n="rel2"></a><a href="../329/#step2" data-i18n="rel3"></a></div></div></section>
+</main><footer class="site-foot" data-i18n="foot"></footer><script src="../common.js"></script><script src="copy.js"></script><script src="core.js"></script><script src="python-code.js"></script><script src="app.js"></script></body></html>

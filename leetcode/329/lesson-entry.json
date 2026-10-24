@@ -1,0 +1,38 @@
+{
+  "id": 329,
+  "title": {
+    "zh": "矩阵中的最长递增路径",
+    "en": "Longest Increasing Path in a Matrix"
+  },
+  "desc": {
+    "zh": "从四格路径推导逐层移除峰值的不变量。",
+    "en": "Derive peak-removal rounds from a four-cell path."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "有向无环图",
+      "en": "Directed acyclic graph"
+    },
+    {
+      "zh": "拓扑排序",
+      "en": "Topological sorting"
+    }
+  ],
+  "path": "329/",
+  "leetcodeUrl": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+  "language": "Python",
+  "complexity": "O(mn) time; O(mn) auxiliary space",
+  "concepts": [
+    {
+      "name": "Peak-removal rounds",
+      "step": 2,
+      "description": "Count longest increasing paths by removing ready local peaks."
+    },
+    {
+      "name": "Longest-path recurrence",
+      "step": 1,
+      "description": "Derive one plus the maximum larger-neighbor suffix length."
+    }
+  ]
+}

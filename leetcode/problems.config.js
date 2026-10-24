@@ -1143,6 +1143,668 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n^3) time; O(n^2) auxiliary space"
   },
   {
+    "id": 315,
+    "title": {
+      "zh": "右侧更小元素计数",
+      "en": "Count of Smaller Numbers After Self"
+    },
+    "desc": {
+      "zh": "从手算到 Fenwick 树，理解如何统计每个位置右侧的严格更小值。",
+      "en": "Derive a Fenwick-tree solution for strict-smaller values to the right of every position."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数组",
+        "en": "Arrays"
+      },
+      {
+        "zh": "树状数组",
+        "en": "Fenwick trees"
+      }
+    ],
+    "path": "315/",
+    "leetcodeUrl": "https://leetcode.com/problems/count-of-smaller-numbers-after-self/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) space"
+  },
+  {
+    "id": 321,
+    "title": {
+      "zh": "拼接最大数",
+      "en": "Create Maximum Number"
+    },
+    "desc": {
+      "zh": "先分配位数，再用可撤销的删位与后缀比较构造最大数。",
+      "en": "Allocate digits, remove smaller tails, and resolve merge ties by comparing suffixes."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "单调栈",
+        "en": "Monotonic stack"
+      },
+      {
+        "zh": "字典序",
+        "en": "Lexicographic order"
+      }
+    ],
+    "path": "321/",
+    "leetcodeUrl": "https://leetcode.com/problems/create-maximum-number/",
+    "language": "Python",
+    "complexity": "O(S(m+n+k²)) time; O(m+n+k) auxiliary space, where S ≤ min(m,n,k)+1 is the number of feasible splits"
+  },
+  {
+    "id": 327,
+    "title": {
+      "zh": "区间和的个数",
+      "en": "Count of Range Sum"
+    },
+    "desc": {
+      "zh": "从逐段相加到前缀差，用归并的有序两半数出合法区间。",
+      "en": "Derive prefix differences and count valid pairs across sorted halves."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "前缀和",
+        "en": "Prefix sums"
+      },
+      {
+        "zh": "归并排序",
+        "en": "Merge sort"
+      }
+    ],
+    "path": "327/",
+    "leetcodeUrl": "https://leetcode.com/problems/count-of-range-sum/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space"
+  },
+  {
+    "id": 329,
+    "title": {
+      "zh": "矩阵中的最长递增路径",
+      "en": "Longest Increasing Path in a Matrix"
+    },
+    "desc": {
+      "zh": "从四格路径推导逐层移除峰值的不变量。",
+      "en": "Derive peak-removal rounds from a four-cell path."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "有向无环图",
+        "en": "Directed acyclic graph"
+      },
+      {
+        "zh": "拓扑排序",
+        "en": "Topological sorting"
+      }
+    ],
+    "path": "329/",
+    "leetcodeUrl": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+    "language": "Python",
+    "complexity": "O(mn) time; O(mn) auxiliary space"
+  },
+  {
+    "id": 330,
+    "title": {
+      "zh": "按要求补齐数组",
+      "en": "Patching Array"
+    },
+    "desc": {
+      "zh": "从第一个无法组成的和，推导最少补数的贪心法。",
+      "en": "Derive the minimum patches from the first sum you cannot form."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "覆盖不变式",
+        "en": "Coverage invariant"
+      }
+    ],
+    "path": "330/",
+    "leetcodeUrl": "https://leetcode.com/problems/patching-array/",
+    "language": "Python",
+    "complexity": "O(m + log n) time; O(1) auxiliary space"
+  },
+  {
+    "id": 332,
+    "title": {
+      "zh": "重新安排行程",
+      "en": "Reconstruct Itinerary"
+    },
+    "desc": {
+      "zh": "用逆序收尾修复字典序贪心的死路。",
+      "en": "Repair lexical dead ends by finishing airports in reverse order."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "欧拉路径",
+        "en": "Euler trail"
+      },
+      {
+        "zh": "栈",
+        "en": "Stack"
+      }
+    ],
+    "path": "332/",
+    "leetcodeUrl": "https://leetcode.com/problems/reconstruct-itinerary/",
+    "language": "Python",
+    "complexity": "O(E log E) time; O(E) space"
+  },
+  {
+    "id": 335,
+    "title": {
+      "zh": "路径交叉",
+      "en": "Self Crossing"
+    },
+    "desc": {
+      "zh": "从手绘路径推导三种首次相交形态，用常数空间判断触碰与交叉。",
+      "en": "Derive three first-contact patterns from a hand-drawn path and detect crossings in constant space."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "几何",
+        "en": "Geometry"
+      },
+      {
+        "zh": "不变量",
+        "en": "Invariants"
+      }
+    ],
+    "path": "335/",
+    "leetcodeUrl": "https://leetcode.com/problems/self-crossing/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
+    "id": 336,
+    "title": {
+      "zh": "回文对",
+      "en": "Palindrome Pairs"
+    },
+    "desc": {
+      "zh": "从中间剩余回文推导反向字典树与线性回文边界预处理。",
+      "en": "Derive reversed-trie search and linear palindrome boundaries from the unmatched middle."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字典树",
+        "en": "Trie"
+      },
+      {
+        "zh": "回文",
+        "en": "Palindromes"
+      },
+      {
+        "zh": "Manacher 算法",
+        "en": "Manacher algorithm"
+      }
+    ],
+    "path": "336/",
+    "leetcodeUrl": "https://leetcode.com/problems/palindrome-pairs/",
+    "language": "Python",
+    "complexity": "O(S + n + P) expected time; O(S + n) auxiliary space plus O(P) output; S = total characters, n = words, P = pairs"
+  },
+  {
+    "id": 352,
+    "title": {
+      "zh": "将数据流变为多个不相交区间",
+      "en": "Data Stream as Disjoint Intervals"
+    },
+    "desc": {
+      "zh": "从缺失的一个整数出发，推导有序区间的双邻居合并。",
+      "en": "Fill one missing integer to derive a sorted interval summary and two-neighbor merging."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "区间合并",
+        "en": "Interval merging"
+      },
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      }
+    ],
+    "path": "352/",
+    "leetcodeUrl": "https://leetcode.com/problems/data-stream-as-disjoint-intervals/",
+    "language": "Python",
+    "complexity": "addNum O(k+1) worst-case time; getIntervals O(k+1) time; O(k+1) space, k = current interval count"
+  },
+  {
+    "id": 354,
+    "title": {
+      "zh": "俄罗斯套娃信封问题",
+      "en": "Russian Doll Envelopes"
+    },
+    "desc": {
+      "zh": "从等宽陷阱推导最小结尾与二分更新。",
+      "en": "Derive minimal tails and binary search from the equal-width trap."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "排序",
+        "en": "Sorting"
+      },
+      {
+        "zh": "最长递增子序列",
+        "en": "Longest increasing subsequence"
+      }
+    ],
+    "path": "354/",
+    "leetcodeUrl": "https://leetcode.com/problems/russian-doll-envelopes/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) space"
+  },
+  {
+    "id": 363,
+    "title": {
+      "zh": "矩形区域不超过 K 的最大数值和",
+      "en": "Max Sum of Rectangle No Larger Than K"
+    },
+    "desc": {
+      "zh": "把矩形压成一行，再寻找最小的合法历史前缀。",
+      "en": "Compress rectangles into rows and find the smallest eligible earlier prefix."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "前缀和",
+        "en": "Prefix sums"
+      },
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      }
+    ],
+    "path": "363/",
+    "leetcodeUrl": "https://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k/",
+    "language": "Python",
+    "complexity": "O(a² b²) time; O(b) auxiliary space, a=min(m,n), b=max(m,n)"
+  },
+  {
+    "id": 381,
+    "title": {
+      "zh": "O(1) 时间插入、删除和获取随机元素 — 允许重复",
+      "en": "Insert Delete GetRandom O(1) - Duplicates allowed"
+    },
+    "desc": {
+      "zh": "让每个副本占一个位置，用尾部填洞并修复位置集合。",
+      "en": "Give each copy a slot, fill a deletion hole from the tail, and repair its index set."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "哈希表",
+        "en": "Hash map"
+      },
+      {
+        "zh": "随机采样",
+        "en": "Random sampling"
+      }
+    ],
+    "path": "381/",
+    "leetcodeUrl": "https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/",
+    "language": "Python",
+    "complexity": "Expected amortized O(1) time per operation; O(n) space for n stored occurrences"
+  },
+  {
+    "id": 391,
+    "title": {
+      "zh": "完美矩形",
+      "en": "Perfect Rectangle"
+    },
+    "desc": {
+      "zh": "用面积与奇数角点，证明矩形恰好覆盖一次。",
+      "en": "Derive an exact-cover test from area and odd corner counts."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "几何",
+        "en": "Geometry"
+      },
+      {
+        "zh": "哈希集合",
+        "en": "Hash set"
+      },
+      {
+        "zh": "不变量",
+        "en": "Invariant"
+      }
+    ],
+    "path": "391/",
+    "leetcodeUrl": "https://leetcode.com/problems/perfect-rectangle/",
+    "language": "Python",
+    "complexity": "O(n) expected time; O(n) auxiliary space"
+  },
+  {
+    "id": 403,
+    "title": {
+      "zh": "青蛙过河",
+      "en": "Frog Jump"
+    },
+    "desc": {
+      "zh": "同一块石头，不同的上一跳：用可达跳长集合推导过河条件。",
+      "en": "One stone, different arrival jumps: derive reachability by keeping possible jump lengths."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "状态设计",
+        "en": "State design"
+      }
+    ],
+    "path": "403/",
+    "leetcodeUrl": "https://leetcode.com/problems/frog-jump/",
+    "language": "Python",
+    "complexity": "O(n²) expected time; O(n²) space"
+  },
+  {
+    "id": 407,
+    "title": {
+      "zh": "接雨水 II",
+      "en": "Trapping Rain Water II"
+    },
+    "desc": {
+      "zh": "沿最低逃逸通道推导二维积水，用最小堆逐圈确定水位。",
+      "en": "Derive escape levels along turning paths and fix water depths with a min-heap."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "最小堆",
+        "en": "Min-heap"
+      },
+      {
+        "zh": "边界扩展",
+        "en": "Boundary expansion"
+      }
+    ],
+    "path": "407/",
+    "leetcodeUrl": "https://leetcode.com/problems/trapping-rain-water-ii/",
+    "language": "Python",
+    "complexity": "O(mn log(mn)) time; O(mn) auxiliary space"
+  },
+  {
+    "id": 410,
+    "title": {
+      "zh": "分割数组的最大值",
+      "en": "Split Array Largest Sum"
+    },
+    "desc": {
+      "zh": "先验证一个和的上限，再二分寻找最小可行上限。",
+      "en": "Test a sum cap with a greedy scan, then search for the smallest feasible cap."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二分答案",
+        "en": "Binary search on the answer"
+      },
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      }
+    ],
+    "path": "410/",
+    "leetcodeUrl": "https://leetcode.com/problems/split-array-largest-sum/",
+    "language": "Python",
+    "complexity": "O(n log(S - M + 2)) time; O(1) auxiliary space, S=sum(nums), M=max(nums)"
+  },
+  {
+    "id": 420,
+    "title": {
+      "zh": "强密码检验器",
+      "en": "Strong Password Checker"
+    },
+    "desc": {
+      "zh": "从一次插入到删除优先级，推导最少修改次数。",
+      "en": "Derive minimum edits from overlapping repairs and deletion priorities."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "420/",
+    "leetcodeUrl": "https://leetcode.com/problems/strong-password-checker/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
+    "id": 432,
+    "title": {
+      "zh": "全 O(1) 的数据结构",
+      "en": "All O`one Data Structure"
+    },
+    "desc": {
+      "zh": "从单步计数变化推导相邻桶移动与极值查询。",
+      "en": "Derive neighboring-bucket moves and extreme-key queries from unit count changes."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "双向链表",
+        "en": "Doubly linked list"
+      },
+      {
+        "zh": "哈希表",
+        "en": "Hash map"
+      }
+    ],
+    "path": "432/",
+    "leetcodeUrl": "https://leetcode.com/problems/all-oone-data-structure/",
+    "language": "Python",
+    "complexity": "Average O(1) time per operation; O(n) space for n live keys"
+  },
+  {
+    "id": 440,
+    "title": {
+      "zh": "字典序的第 K 小数字",
+      "en": "K-th Smallest in Lexicographical Order"
+    },
+    "desc": {
+      "zh": "用十进制前缀的分层计数，推导整组跳过与向下寻找。",
+      "en": "Count decimal-prefix groups to derive when to skip a group or descend."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "前缀计数",
+        "en": "Prefix counting"
+      },
+      {
+        "zh": "字典序",
+        "en": "Lexicographical order"
+      }
+    ],
+    "path": "440/",
+    "leetcodeUrl": "https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/",
+    "language": "Python",
+    "complexity": "O((log n)^2) time; O(1) auxiliary space"
+  },
+  {
+    "id": 446,
+    "title": {
+      "zh": "等差数列划分 II - 子序列",
+      "en": "Arithmetic Slices II - Subsequence"
+    },
+    "desc": {
+      "zh": "从两项起点推导按结尾与差值计数的动态规划。",
+      "en": "Derive endpoint-and-difference counting from two-term starting points."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "计数",
+        "en": "Counting"
+      }
+    ],
+    "path": "446/",
+    "leetcodeUrl": "https://leetcode.com/problems/arithmetic-slices-ii-subsequence/",
+    "language": "Python",
+    "complexity": "O(n²) expected time; O(n²) auxiliary space"
+  },
+  {
+    "id": 458,
+    "title": {
+      "zh": "可怜的小猪",
+      "en": "Poor Pigs"
+    },
+    "desc": {
+      "zh": "从三桶液体的等待实验，推导可区分结果的乘法与最少小猪数。",
+      "en": "Build a feeding schedule, count distinguishable outcomes, and derive the minimum pigs."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "组合数学",
+        "en": "Combinatorics"
+      },
+      {
+        "zh": "信息编码",
+        "en": "Outcome encoding"
+      }
+    ],
+    "path": "458/",
+    "leetcodeUrl": "https://leetcode.com/problems/poor-pigs/",
+    "language": "Python",
+    "complexity": "O(1 + log_(R+1) buckets) arithmetic time; O(1) auxiliary words, R = floor(minutesToTest / minutesToDie)"
+  },
+  {
+    "id": 460,
+    "title": {
+      "zh": "LFU 缓存",
+      "en": "LFU Cache"
+    },
+    "desc": {
+      "zh": "从频次与先后顺序推导常数时间缓存淘汰。",
+      "en": "Derive constant-time cache eviction from frequency and recency."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "哈希表",
+        "en": "Hash table"
+      },
+      {
+        "zh": "有序频次桶",
+        "en": "Ordered frequency buckets"
+      }
+    ],
+    "path": "460/",
+    "leetcodeUrl": "https://leetcode.com/problems/lfu-cache/",
+    "language": "Python",
+    "complexity": "O(1) average time per get/put; O(C) space for capacity C"
+  },
+  {
+    "id": 466,
+    "title": {
+      "zh": "统计重复个数",
+      "en": "Count The Repetitions"
+    },
+    "desc": {
+      "zh": "保留跨块匹配的位置，用重复状态跳过整段扫描。",
+      "en": "Carry matching progress across blocks and skip cycles of repeated states."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "子序列",
+        "en": "Subsequences"
+      },
+      {
+        "zh": "循环检测",
+        "en": "Cycle detection"
+      }
+    ],
+    "path": "466/",
+    "leetcodeUrl": "https://leetcode.com/problems/count-the-repetitions/",
+    "language": "Python",
+    "complexity": "O(|s1| min(n1, |s2|)) time; O(min(n1, |s2|)) auxiliary space"
+  },
+  {
+    "id": 472,
+    "title": {
+      "zh": "连接词",
+      "en": "Concatenated Words"
+    },
+    "desc": {
+      "zh": "保留可达的前缀边界，排除整词自匹配。",
+      "en": "Keep reachable prefix boundaries and exclude a whole-word self-match."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "472/",
+    "leetcodeUrl": "https://leetcode.com/problems/concatenated-words/",
+    "language": "Python",
+    "complexity": "O(S + sum(len(w)^3)) expected time; O(N + L) auxiliary space"
+  },
+  {
+    "id": 479,
+    "title": {
+      "zh": "最大回文数乘积",
+      "en": "Largest Palindrome Product"
+    },
+    "desc": {
+      "zh": "构造递减回文候选，用较大因子的平方界限证明安全截止。",
+      "en": "Construct descending palindromes and derive a safe square cutoff for larger factors."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数学",
+        "en": "Mathematics"
+      },
+      {
+        "zh": "枚举",
+        "en": "Enumeration"
+      }
+    ],
+    "path": "479/",
+    "leetcodeUrl": "https://leetcode.com/problems/largest-palindrome-product/",
+    "language": "Python",
+    "complexity": "O(10^(2n) + n·10^n) time under unit-cost integer arithmetic; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

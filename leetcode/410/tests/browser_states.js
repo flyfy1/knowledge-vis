@@ -1,0 +1,20 @@
+'use strict';
+const {chromium}=require('playwright'),assert=require('assert'),fs=require('fs'),path=require('path');
+const out=path.resolve(process.env.EVIDENCE_DIR||path.join(__dirname,'evidence'));fs.mkdirSync(out,{recursive:true});
+(async()=>{const browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});const page=await browser.newPage({viewport:{width:390,height:900}});await page.goto((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/410/');await page.locator('#scanProgress').waitFor();
+const shots=[];
+for(const lang of ['zh','en']){
+ await page.locator(`[data-lang=${lang}]`).click();await page.reload();assert.equal(await page.locator('html').getAttribute('lang'),lang==='zh'?'zh-CN':'en');
+ await page.locator('#step0 .stage').scrollIntoViewIfNeeded();await page.waitForTimeout(600);await page.screenshot({path:path.join(out,lang+'-hand.png')});shots.push(lang+'-hand.png');
+ await page.locator('input[name=prediction][value="0"]').check();await page.click('#reveal');await page.locator('#step3 .stage').scrollIntoViewIfNeeded();await page.waitForTimeout(600);await page.screenshot({path:path.join(out,lang+'-prediction.png')});shots.push(lang+'-prediction.png');
+ await page.locator('input[name=prediction][value="1"]').check();assert(!(await page.locator('#feedback').textContent()).includes('[4,4]')); // clear stale feedback
+ await page.locator(`[data-lang=${lang==='en'?'zh':'en'}]`).click();assert(await page.locator('input[name=prediction][value="1"]').isChecked());assert(!(await page.locator('#feedback').textContent()).includes('[4,4]'));await page.locator(`[data-lang=${lang}]`).click();
+ await page.evaluate(()=>{navigator.clipboard.writeText=async()=>{throw new Error('test denial');};});await page.click('#copy');await page.locator('#manualCopy').scrollIntoViewIfNeeded();await page.waitForTimeout(600);await page.screenshot({path:path.join(out,lang+'-fallback-source.png')});shots.push(lang+'-fallback-source.png');
+ await page.setViewportSize({width:320,height:900});await page.locator('#manualCopy').scrollIntoViewIfNeeded();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ await page.setViewportSize({width:736,height:390});await page.selectOption('#preset','1');await page.click('#scanEnd');await page.locator('#scanGroups').scrollIntoViewIfNeeded();await page.waitForTimeout(600);await page.screenshot({path:path.join(out,lang+'-landscape.png')});shots.push(lang+'-landscape.png');assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ await page.setViewportSize({width:390,height:900});
+}
+await page.emulateMedia({forcedColors:'active',reducedMotion:'reduce'});await page.focus('#scanReset');await page.waitForTimeout(400);assert.equal(await page.locator('#scanReset').evaluate(e=>getComputedStyle(e).outlineWidth),'3px');assert.equal(await page.evaluate(()=>getComputedStyle(document.documentElement).scrollBehavior),'auto');await page.screenshot({path:path.join(out,'forced-colors-focus.png')});shots.push('forced-colors-focus.png');
+await page.emulateMedia({forcedColors:'none'});await page.setViewportSize({width:390,height:900});await page.selectOption('#preset','1');await page.click('#searchEnd');await page.locator('#searchHistory').scrollIntoViewIfNeeded();await page.waitForTimeout(300);await page.screenshot({path:path.join(out,'en-search-ledger.png')});shots.push('en-search-ledger.png');
+const nav=await page.locator('.step-nav a.active').getAttribute('href');assert.equal(nav,'#step2');
+fs.writeFileSync(path.join(out,'browser-states-results.json'),JSON.stringify({selfCheck:true,localeReloadPersistence:true,unrevealedLocalePreservation:true,changedPredictionClearsFeedback:true,landscapeNoOverflow:true,forcedColorsFocus:true,reducedMotion:true,settledActiveNavigation:nav,shots},null,2));await browser.close();console.log('Additional browser states passed.');})().catch(e=>{console.error(e);process.exit(1);});

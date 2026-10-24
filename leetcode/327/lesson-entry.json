@@ -1,0 +1,38 @@
+{
+  "id": 327,
+  "title": {
+    "zh": "区间和的个数",
+    "en": "Count of Range Sum"
+  },
+  "desc": {
+    "zh": "从逐段相加到前缀差，用归并的有序两半数出合法区间。",
+    "en": "Derive prefix differences and count valid pairs across sorted halves."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "前缀和",
+      "en": "Prefix sums"
+    },
+    {
+      "zh": "归并排序",
+      "en": "Merge sort"
+    }
+  ],
+  "path": "327/",
+  "leetcodeUrl": "https://leetcode.com/problems/count-of-range-sum/",
+  "language": "Python",
+  "complexity": "O(n log n) time; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "Prefix differences",
+      "step": 1,
+      "description": "Convert a contiguous sum into a difference of two prefix totals."
+    },
+    {
+      "name": "Cross-half range counting",
+      "step": 2,
+      "description": "Preserve index order by splitting before sorting; count with two monotone boundaries."
+    }
+  ]
+}

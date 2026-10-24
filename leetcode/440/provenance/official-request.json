@@ -1,0 +1,7 @@
+{
+  "endpoint": "https://leetcode.com/graphql/",
+  "query": "query { question(titleSlug:\"k-th-smallest-in-lexicographical-order\") { questionId title titleSlug isPaidOnly content exampleTestcases codeSnippets { lang langSlug code } } }",
+  "officialUrl": "https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/",
+  "verifiedAt": "2026-10-24T21:42:24.372392+00:00",
+  "status": 200
+}

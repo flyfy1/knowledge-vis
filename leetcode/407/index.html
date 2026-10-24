@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>#407 · Trapping Rain Water II</title><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="style.css?v=1"></head><body>
+<header class="site-head"><div class="head-top"><a class="back-link" href="../../" data-i18n="back"></a><div id="langToggle" class="lang-toggle" role="group" aria-label="Language / 语言"><button type="button" data-lang="zh" lang="zh-CN">中</button><button type="button" data-lang="en" lang="en">EN</button></div></div><a href="../" data-i18n="collection"></a><h1 data-i18n="title"></h1><p class="tagline" data-i18n="intro"></p><div class="meta"><span class="badge" data-i18n="badge"></span><a class="official-link" href="https://leetcode.com/problems/trapping-rain-water-ii/" data-i18n="official"></a></div></header>
+<nav class="step-nav"><div class="step-nav-inner"><a href="#step0" data-i18n="nav0"></a><a href="#step1" data-i18n="nav1"></a><a href="#step2" data-i18n="nav2"></a><a href="#step3" data-i18n="nav3"></a><a href="#step4" data-i18n="nav4"></a></div></nav>
+<main>
+<section class="step" id="step0"><div class="step-inner"><h2 data-i18n="s0"></h2><p data-i18n="p0"></p><p data-i18n="rules"></p><div class="stage static-grid"><table class="terrain"><caption data-i18n="handCaption"></caption><tbody><tr><td>3</td><td>3</td><td>3</td></tr><tr><td>3</td><td>1</td><td>3</td></tr><tr><td>3</td><td>3</td><td>3</td></tr></tbody></table><p data-i18n="handAsk"></p><button class="btn" id="handReveal" data-step="0" data-i18n="handBtn" aria-expanded="false"></button><p id="hand" class="readout" data-i18n="hand" hidden></p></div><p class="hint" data-i18n="constraints"></p></div></section>
+<section class="step" id="step1"><div class="step-inner"><h2 data-i18n="s1"></h2><p data-i18n="p1"></p><div class="stage"><pre tabindex="0" aria-label="Ground heights / 地面高度">5 5 5 5 5
+5 1 1 5 5
+5 5 1 1 2
+5 5 5 5 5
+5 5 5 5 5</pre><p data-i18n="route"></p><p class="question" data-i18n="wrong"></p></div><p data-i18n="levelDef"></p><div class="formula">L(v) = min<sub>v → edge</sub> max(H along path)<br>W(v) = L(v) − H(v)</div><p data-i18n="baseline"></p><pre tabindex="0"><code>def layer_baseline(heightMap):
+    m, n = len(heightMap), len(heightMap[0])
+    total = 0
+    for z in range(1, max(map(max, heightMap)) + 1):
+        wet = {(r, c) for r in range(m) for c in range(n)
+               if heightMap[r][c] &lt; z}
+        outside = {v for v in wet if v[0] in (0, m - 1)
+                   or v[1] in (0, n - 1)}
+        stack = list(outside)
+        while stack:
+            r, c = stack.pop()
+            for dr, dc in ((-1, 0), (0, -1), (0, 1), (1, 0)):
+                v = (r + dr, c + dc)
+                if v in wet and v not in outside:
+                    outside.add(v)
+                    stack.append(v)
+        total += len(wet - outside)
+    return total</code></pre><p data-i18n="baselineCost"></p><p data-i18n="bridge"></p></div></section>
+<section class="step" id="step2"><div class="step-inner"><h2 data-i18n="s2"></h2><p data-i18n="p2"></p><p data-i18n="derive"></p><p class="question" data-i18n="proof"></p><p data-i18n="heapDef"></p><a href="../23/#step2" data-i18n="rel2"></a><p data-i18n="traceHint"></p><div class="stage" id="traceStage"><label for="preset" data-i18n="presetLabel"></label><select id="preset" data-step="2"><option value="0" data-i18n="preset0"></option><option value="1" data-i18n="preset1"></option><option value="2" data-i18n="preset2"></option><option value="3" data-i18n="preset3"></option><option value="4" data-i18n="preset4"></option><option value="5" data-i18n="preset5"></option></select><div id="gateRow" class="gate-row" hidden><label for="gate" id="gateLabel"></label><input type="range" id="gate" min="0" max="5" value="2" step="1" data-step="2"><p class="hint" data-i18n="gateHint"></p></div><div class="controls"><button class="btn" id="prev" data-step="2" data-i18n="prev"></button><button class="btn primary" id="next" data-step="2" data-i18n="next"></button><button class="btn" id="reset" data-step="2" data-i18n="reset"></button><button class="btn" id="end" data-step="2" data-i18n="end"></button></div><p id="progress" class="readout" role="status"></p><p data-i18n="gridKey"></p><div id="terrainScroll" class="grid-scroll" tabindex="0"><table id="terrain" class="terrain"></table></div><h3 data-i18n="frontierTitle"></h3><p class="hint" data-i18n="frontierHint"></p><p id="heap" class="heap"></p><h3 data-i18n="historyTitle"></h3><ol id="history" class="trace-log" tabindex="0"></ol></div><p data-i18n="seenProof"></p></div></section>
+<section class="step" id="step3"><div class="step-inner"><h2 data-i18n="s3"></h2><p data-i18n="p3"></p><pre tabindex="0" aria-label="Transfer map / 迁移练习地图">4 4 4 4 4
+4 0 3 0 2
+4 4 4 4 4</pre><fieldset class="prediction-options" data-step="3"><legend data-i18n="legend"></legend><label><input type="radio" name="prediction" value="0"><span data-i18n="opt0"></span></label><label><input type="radio" name="prediction" value="1"><span data-i18n="opt1"></span></label><label><input type="radio" name="prediction" value="2"><span data-i18n="opt2"></span></label></fieldset><button id="reveal" class="btn primary" data-step="3" data-i18n="reveal" disabled></button><p id="feedback" class="readout" role="status"></p></div></section>
+<section class="step" id="step4"><div class="step-inner"><h2 data-i18n="s4"></h2><p data-i18n="p4"></p><p data-i18n="mapping"></p><pre tabindex="0"><code id="pythonSource"></code></pre><div class="solution-actions"><button id="copy" class="btn" data-step="4" data-i18n="copy"></button><a id="download" href="solution.py" download="solution.py" data-i18n="download"></a></div><p id="copyStatus" role="status"></p><div id="manualCopy" hidden><label for="manualSource" data-i18n="manualLabel"></label><textarea id="manualSource" class="source-fallback" readonly></textarea></div><p data-i18n="cost"></p><p data-i18n="boundaries"></p><h3 data-i18n="related"></h3><div class="related"><a href="../42/#step2" data-i18n="rel1"></a><a href="../23/#step2" data-i18n="rel2"></a></div></div></section>
+</main><footer class="site-foot" data-i18n="foot"></footer><script src="../common.js"></script><script src="copy.js?v=1"></script><script src="core.js?v=1"></script><script src="python-code.js?v=1"></script><script src="app.js?v=1"></script></body></html>

@@ -844,3 +844,252 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | sentinel boundaries | `leetcode/312/#step3` | Artificial 1s make edge products uniform. |
 
 <!-- /leetcode-312-campaign -->
+
+
+<!-- leetcode-315-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| 后缀与逆序处理 / Suffix and reverse processing | `leetcode/315/#step2` | 从右向左让已处理集合恰好等于右侧元素。 |
+| 前缀和 / Prefix sums | `leetcode/315/#step3` | 按秩累计频率，查询 rank−1 得到严格更小数量。 |
+
+<!-- /leetcode-315-campaign -->
+
+
+<!-- leetcode-321-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Greedy digit deletion | `leetcode/321/#step1` | Exchange smaller tails while deletion budget remains. |
+| Suffix-aware merge | `leetcode/321/#step2` | Resolve equal heads using the entire remaining suffix. |
+
+<!-- /leetcode-321-campaign -->
+
+
+<!-- leetcode-327-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Prefix differences | `leetcode/327/#step1` | Convert a contiguous sum into a difference of two prefix totals. |
+| Cross-half range counting | `leetcode/327/#step2` | Preserve index order by splitting before sorting; count with two monotone boundaries. |
+
+<!-- /leetcode-327-campaign -->
+
+
+<!-- leetcode-329-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Peak-removal rounds | `leetcode/329/#step2` | Count longest increasing paths by removing ready local peaks. |
+| Longest-path recurrence | `leetcode/329/#step1` | Derive one plus the maximum larger-neighbor suffix length. |
+
+<!-- /leetcode-329-campaign -->
+
+
+<!-- leetcode-330-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| coverage invariant | `leetcode/330/#step1` | Represent every attainable sum below miss by one complete interval. |
+| greedy patch | `leetcode/330/#step2` | Patch miss when the next sorted value cannot fill the first gap. |
+
+<!-- /leetcode-330-campaign -->
+
+
+<!-- leetcode-332-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Ordered Euler traversal | `leetcode/332/#step2` | Consume ticket edges in lexical order, append exhausted airports, then reverse. |
+
+<!-- /leetcode-332-campaign -->
+
+
+<!-- leetcode-335-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| First-crossing geometry | `leetcode/335/#step1` | Derive the three local intersection tests from closed coordinate spans. |
+| Reversible path trace | `leetcode/335/#step2` | Compare prefix coordinates and inclusive inequalities at each move. |
+
+<!-- /leetcode-335-campaign -->
+
+
+<!-- leetcode-336-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Palindrome pair cancellation | `leetcode/336/#step1` | Two leftover-middle cases derive reversed-trie metadata |
+| Linear palindrome boundary flags | `leetcode/336/#step2` | Odd/even mirrored radii mark prefix and suffix palindromes |
+
+<!-- /leetcode-336-campaign -->
+
+
+<!-- leetcode-352-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Maximal disjoint intervals | `leetcode/352/#step1` | Derive exact coverage, sorted starts and a missing-integer gap. |
+| Two-neighbor insertion | `leetcode/352/#step2` | Binary-search a start and inspect both neighboring ranges. |
+
+<!-- /leetcode-352-campaign -->
+
+
+<!-- leetcode-354-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Equal-width ordering | `leetcode/354/#step1` | Descending height ties reduce strict two-dimensional nesting to LIS. |
+| Minimal tails invariant | `leetcode/354/#step2` | First greater-or-equal replacement preserves best attainable ending heights. |
+
+<!-- /leetcode-354-campaign -->
+
+
+<!-- leetcode-363-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Row-band compression | `leetcode/363/#step1` | Each rectangle becomes an interval in a fixed row band. |
+| Eligible earlier prefix | `leetcode/363/#step2` | Choose the smallest earlier q ≥ P−k before inserting P. |
+
+<!-- /leetcode-363-campaign -->
+
+
+<!-- leetcode-381-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Multiplicity-weighted sampling | `leetcode/381/#step0` | Uniform positions give each value probability count / length. |
+| Duplicate-aware swap deletion | `leetcode/381/#step2` | Repair reverse index sets when the tail fills the deleted slot. |
+
+<!-- /leetcode-381-campaign -->
+
+
+<!-- leetcode-391-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Odd corner invariant | `leetcode/391/#step2` | Toggle corners and combine parity with area to prove exact cover. |
+| Coverage baseline | `leetcode/391/#step1` | Count unit-cell coverage independently of the corner test. |
+
+<!-- /leetcode-391-campaign -->
+
+
+<!-- leetcode-403-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Frog jump reachability | `leetcode/403/#step2` | Keep every possible arrival jump length at each stone. |
+| State sufficiency | `leetcode/403/#step1` | Why a reached-stone flag loses legal continuations. |
+
+<!-- /leetcode-403-campaign -->
+
+
+<!-- leetcode-407-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Minimum escape bottleneck | `leetcode/407/#step1` | Water level is the smallest possible maximum ground height along a path to the boundary. |
+| Lowest frontier expansion | `leetcode/407/#step2` | Discover each cell once from the smallest fixed escape level and retain cumulative water. |
+
+<!-- /leetcode-407-campaign -->
+
+
+<!-- leetcode-410-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Binary search on a feasible cap | `leetcode/410/#step2` | Keep the smallest feasible cap in an inclusive interval. |
+| Greedy contiguous partition | `leetcode/410/#step1` | A maximal prefix under a nonnegative sum cap minimizes group count. |
+
+<!-- /leetcode-410-campaign -->
+
+
+<!-- leetcode-420-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Password run repair | `leetcode/420/#step1` | Derive floor(L/3) replacements per equal-character run. |
+| Deletion priority | `leetcode/420/#step2` | Spend compulsory deletions by marginal replacement savings. |
+
+<!-- /leetcode-420-campaign -->
+
+
+<!-- leetcode-432-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Ordered nonempty count buckets | `leetcode/432/#step2` | Unit count updates need only the immediate neighboring bucket. |
+| Constant-time extreme-key queries | `leetcode/432/#step4` | Sentinels and linked key entries expose an extreme representative directly. |
+
+<!-- /leetcode-432-campaign -->
+
+
+<!-- leetcode-440-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Lexicographical prefix counting | `leetcode/440/#step1` | Count a decimal-prefix group with clipped half-open intervals. |
+| Lexicographical rank invariant | `leetcode/440/#step2` | Maintain remaining moves when skipping a prefix group or descending. |
+
+<!-- /leetcode-440-campaign -->
+
+
+<!-- leetcode-446-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| arithmetic subsequence counting | `leetcode/446/#step0` | Count ordered position selections with equal gaps and at least three terms. |
+| endpoint and difference DP | `leetcode/446/#step2` | Store length-two seeds and extend completed source rows. |
+| unique penultimate index proof | `leetcode/446/#step4` | Every counted answer belongs to one final position pair. |
+
+<!-- /leetcode-446-campaign -->
+
+
+<!-- leetcode-458-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Outcome capacity | `leetcode/458/#step1` | Derive the matching counting bound and feeding construction. |
+| Reversible feeding schedule | `leetcode/458/#step2` | Observe death rounds and retain consistent bucket candidates. |
+
+<!-- /leetcode-458-campaign -->
+
+
+<!-- leetcode-460-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| LFU frequency buckets | `leetcode/460/#step2` | Maintain oldest-first keys per frequency and the smallest live frequency. |
+
+<!-- /leetcode-460-campaign -->
+
+
+<!-- leetcode-466-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Boundary-state cycle skipping | `leetcode/466/#step2` | Equal next-needed character indices repeat the same block gains. |
+| Greedy repeated subsequence matching | `leetcode/466/#step1` | Carry unfinished target progress across source blocks. |
+
+<!-- /leetcode-466-campaign -->
+
+
+<!-- leetcode-472-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Prefix reachability | `leetcode/472/#step1` | Merge cut histories that reach the same prefix boundary. |
+| Exclude self-match | `leetcode/472/#step2` | Forbid the edge from 0 to n so a witness uses at least two shorter words. |
+
+<!-- /leetcode-472-campaign -->
+
+
+<!-- leetcode-479-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Descending palindrome candidates | `leetcode/479/#step1` | Mirror prefixes and scan lengths in descending order. |
+| Larger-factor square cutoff | `leetcode/479/#step2` | Test all possible larger factors and stop when x² < p. |
+
+<!-- /leetcode-479-campaign -->
