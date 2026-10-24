@@ -656,3 +656,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Rolling rows | `leetcode/44/#step4` | Map prefix dependencies to two live rows in the Python solution. |
 
 <!-- /leetcode-44-campaign -->
+
+
+<!-- leetcode-220-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Index-bounded window | `leetcode/220/#step1` | Retain exactly the preceding positions within the inclusive index distance. |
+| Integer value buckets | `leetcode/220/#step2` | Use width valueDiff + 1 and check the current and adjacent buckets. |
+| Bucket-window invariant | `leetcode/220/#step4` | Expire before probing and insert only after excluding all earlier witnesses. |
+
+<!-- /leetcode-220-campaign -->
