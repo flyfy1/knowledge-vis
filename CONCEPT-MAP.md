@@ -677,3 +677,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Iterative expression evaluation | `leetcode/224/#step4` | Map sign, digit accumulation and parenthesis merging to Python. |
 
 <!-- /leetcode-224-campaign -->
+
+
+<!-- leetcode-218-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| skyline endpoint sweep | `leetcode/218/#step2` | Group equal-coordinate events and retain the tallest unexpired heap root. |
+| lazy heap removal | `leetcode/218/#step4` | Prove why expired entries below the root can be removed later. |
+
+<!-- /leetcode-218-campaign -->
