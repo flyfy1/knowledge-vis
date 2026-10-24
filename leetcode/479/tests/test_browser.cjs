@@ -61,8 +61,8 @@ function watch(page){page.on('pageerror',e=>errors.push(String(e)));page.on('con
   // Native button keyboard activation, visible focus, and deep anchors.
   await page.locator('#reset').click();await page.locator('#next').focus();await page.keyboard.press('Enter');assert.equal((await state(page)).index,1);assert.equal(await page.locator('#next').evaluate(e=>getComputedStyle(e).outlineWidth),'3px');
   for(let i=0;i<5;i++){await page.locator(`.step-nav a[href="#step${i}"]`).click();await page.waitForFunction(i=>{const y=document.getElementById('step'+i).getBoundingClientRect().top;return y>=70&&y<140;},i);assert(await page.locator('#step'+i).evaluate(e=>{const r=e.getBoundingClientRect();return r.top>=50&&r.top<150;}));}
-  // Related deep links are present and resolve to existing anchors.
-  for(const href of ['../60/#step2','../440/#step2']){const response=await context.request.get(new URL(href,url).href);assert(response.ok());assert((await response.text()).includes('id="step2"'));}
+  // Check rendered bindings, rather than unrelated hard-coded URLs.
+  for(const [key,id] of [['related0',440],['related1',60]]){const link=page.locator(`a[data-i18n=${key}]`);assert((await link.innerText()).startsWith('#'+id));const href=await link.getAttribute('href');assert.equal(href,`../${id}/#step2`);const response=await context.request.get(new URL(href,url).href);assert(response.ok());assert((await response.text()).includes('id="step2"'));}
   record(lang+': widths 320/390/736/1440, 200% CSS layout zoom, state geometry, keyboard focus, all navigation and related anchors');
  }
  // Test storage disabled before any app code. Locale changes remain in memory.

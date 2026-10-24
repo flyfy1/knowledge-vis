@@ -1,0 +1,12 @@
+{
+  "canonicalLanguage": "Python",
+  "officialPython3": "class Solution:\n    def largestPalindrome(self, n: int) -> int:\n        ",
+  "availablePreferredInterfaces": [
+    "Python",
+    "TypeScript"
+  ],
+  "nonPythonContractRequired": false,
+  "sourceMirrorExact": true,
+  "sourceSha256": "8d7d39bb45693b43b5efa02506bf5c5b513265ed259df1e3e5a37de5b2bf812c",
+  "metadataComplexity": "O(10^(2n) + n\u00b710^n) time under unit-cost integer arithmetic; O(n) auxiliary space"
+}
