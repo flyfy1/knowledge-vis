@@ -1623,6 +1623,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "Average O(1) time per operation; O(n) space for n live keys"
   },
   {
+    "id": 440,
+    "title": {
+      "zh": "字典序的第 K 小数字",
+      "en": "K-th Smallest in Lexicographical Order"
+    },
+    "desc": {
+      "zh": "用十进制前缀的分层计数，推导整组跳过与向下寻找。",
+      "en": "Count decimal-prefix groups to derive when to skip a group or descend."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "前缀计数",
+        "en": "Prefix counting"
+      },
+      {
+        "zh": "字典序",
+        "en": "Lexicographical order"
+      }
+    ],
+    "path": "440/",
+    "leetcodeUrl": "https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/",
+    "language": "Python",
+    "complexity": "O((log n)^2) time; O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
