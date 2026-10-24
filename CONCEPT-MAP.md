@@ -951,3 +951,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Constant-time extreme-key queries | `leetcode/432/#step4` | Sentinels and linked key entries expose an extreme representative directly. |
 
 <!-- /leetcode-432-campaign -->
+
+
+<!-- leetcode-440-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Lexicographical prefix counting | `leetcode/440/#step1` | Count a decimal-prefix group with clipped half-open intervals. |
+| Lexicographical rank invariant | `leetcode/440/#step2` | Maintain remaining moves when skipping a prefix group or descending. |
+
+<!-- /leetcode-440-campaign -->
