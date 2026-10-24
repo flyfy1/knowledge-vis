@@ -1,0 +1,10 @@
+{
+  "problemId": 312,
+  "language": "Python",
+  "officialSource": "https://leetcode.com/problems/burst-balloons/",
+  "supportedLanguages": ["Python", "TypeScript", "JavaScript", "C++", "Java", "C#", "Go", "Rust"],
+  "interface": "class Solution: def maxCoins(self, nums: List[int]) -> int; nums is a list of integers and the return value is an integer.",
+  "rationale": "The official editor exposes a faithful Python3 class method; Python is preferred by the campaign policy and requires no translation of runtime semantics.",
+  "verifiedAt": "2026-10-24T00:00:00+08:00",
+  "verificationEvidence": "tests/evidence/official-contract.json"
+}

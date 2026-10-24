@@ -1,0 +1,4 @@
+'use strict';
+window.Burst312={
+ trace(nums){const v=[1,...nums,1],n=v.length-1,dp=Array.from({length:v.length},()=>Array(v.length).fill(0)),frames=[{done:0,total:0,dp:dp.map(r=>r.slice()),current:null}]; const jobs=[]; for(let w=2;w<=n;w++) for(let l=0;l+w<=n;l++) jobs.push([l,l+w]); frames[0].total=jobs.length; for(let step=0;step<jobs.length;step++){const [l,r]=jobs[step]; let best=0, parts=[]; for(let k=l+1;k<r;k++){const val=dp[l][k]+dp[k][r]+v[l]*v[k]*v[r]; parts.push({k,val}); if(val>best)best=val;} dp[l][r]=best; frames.push({done:step+1,total:jobs.length,dp:dp.map(row=>row.slice()),current:{l,r,best,parts}});} return {nums,v,dp,frames,n};}, brute(nums){let a=[1,...nums,1];const memo=new Map();function f(l,r){if(r-l<=1)return 0;const key=l+','+r;if(memo.has(key))return memo.get(key);let b=0;for(let k=l+1;k<r;k++)b=Math.max(b,f(l,k)+f(k,r)+a[l]*a[k]*a[r]);memo.set(key,b);return b;}return f(0,a.length-1);}
+};
