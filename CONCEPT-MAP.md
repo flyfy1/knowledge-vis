@@ -12,6 +12,11 @@
 
 ## 一、主表：概念 → 专讲页/步
 
+The mathematics and physics navigation atlas is at `atlas/?node=fourier`.
+It reuses the lesson anchors below; `atlas/data.js` owns its 24 editorial concepts,
+directed relationship statements, source links, and suggested routes. Atlas region
+positions are not similarity scores or prerequisite claims.
+
 LeetCode collection additions (2026-10-17):
 
 | Concept | Deep link | What the step teaches |
@@ -687,3 +692,18 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | lazy heap removal | `leetcode/218/#step4` | Prove why expired entries below the root can be removed later. |
 
 <!-- /leetcode-218-campaign -->
+
+
+## Circuits and energy (2026-10-18)
+
+| Concept | Lesson anchor |
+|---|---|
+| Voltage, current, power; KCL/KVL | /power-converters/#step0 |
+| Inductor, magnetic energy | /power-converters/#step1 |
+| Capacitor, electric energy | /power-converters/#step2 |
+| Ideal switch/diode; PWM duty | /power-converters/#step3 |
+| Buck; volt-second balance | /power-converters/#step4 |
+| Boost; two energy paths | /power-converters/#step5 |
+| Efficiency and power budget | /power-converters/#step6 |
+
+Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Feedback links to /control/#step2; the converter lesson does not simulate loop dynamics.
