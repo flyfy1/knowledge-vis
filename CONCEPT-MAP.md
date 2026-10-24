@@ -812,3 +812,13 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Balance invariant | `leetcode/295/#step2` | Every lower value is ≤ every upper value and sizes differ by at most one. |
 
 <!-- /leetcode-295-campaign -->
+
+
+<!-- leetcode-297-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| preorder with null markers | `leetcode/297/#step0` | Visit node, left, right, and record every empty child. |
+| subtree decoding invariant | `leetcode/297/#step2` | Each recursive call consumes exactly one complete subtree encoding. |
+
+<!-- /leetcode-297-campaign -->
