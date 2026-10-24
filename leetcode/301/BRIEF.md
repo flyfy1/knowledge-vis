@@ -1,9 +1,9 @@
 # #301 Remove Invalid Parentheses — author brief
 
-Product-fit verdict: build one problem-local lesson within the approved collection pattern. Audience: university algorithm learners. Category: computing; stage: university. Target: derive minimum-removal DFS and implement Python `Solution.removeInvalidParentheses`.
+Product-fit verdict: build one problem-local lesson within the approved collection pattern. Audience: university algorithm learners. Category: computing; stage: university. Target: derive the minimum-removal two-pass recursive scan and implement Python `Solution.removeInvalidParentheses`.
 
 ## Learning loop
-Start with `()())()` and manually count the one extra `)`. Compare the tempting “remove the first bad parenthesis” rule against both valid outputs. Derive two global budgets (`left_rem`, `right_rem`), then trace duplicate skipping and balance pruning. Prediction uses `((a)())` and requires the same invariant. Final code maps every trace branch to Python; browser trace is a simulation, separate from execution.
+Start with `()())()` and manually count the one extra `)`. Compare the tempting “remove the first bad parenthesis” rule against both valid outputs. Derive two global budgets (`left_rem`, `right_rem`), then trace duplicate skipping and balance pruning. Prediction uses `((a)())` and requires the same invariant. Final code uses a two-pass recursive scan; the browser trace is a separate conceptual budgeted-search simulation and must say how its invariant corresponds to the source.
 
 ## Step contract
 |Step|Already knows|Single question|Input → wanted quantity|Action → observation|Conditions|
