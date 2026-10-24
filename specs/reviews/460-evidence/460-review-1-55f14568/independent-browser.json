@@ -1,0 +1,849 @@
+{
+  "servedExactParity": {
+    "index.html": "00004cd27fcc40f36740114c8a86ce8cf98af0441ebce475fb674b95792b07eb",
+    "app.js": "5d3b810012e96323e930dd95e9e621f9d8c858865e1a063d8acb864199fc71e0",
+    "core.js": "0de4d5ae36c8fa3479aa6c6bab3f6c31e919fcb718aed99138b58cb9d873ccfc",
+    "copy.js": "1dbe968667bc91f969913a38e7d47c7578ae3c53a25698e3e92cea870229696e",
+    "python-code.js": "2944c6ac45a4d268aa79359e86247aa0f5cbb578bc6fc176f399972d7ec9820a",
+    "solution.py": "94be9400d7fe240ed326e0d983961009c4ba6e46e29b61fc046a6a18139d7575",
+    "local.css": "1b5199039450b7dfda06201270bf9670524b3cbe757f93ca518d49e788eba80e",
+    "lesson-entry.json": "8a45394656a1afc842b9b4a9a93786cdba75fb533c35bb6865fe633b0675292e",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "observations": [
+    {
+      "lang": "en",
+      "type": "update-zero-key",
+      "operation": "put(0,1000000000) — Update value to 1000000000; frequency 1→2, append as newest, with no eviction.",
+      "after": "Frequency 2 · minimum · oldest → newest\nKey 0: value 1000000000, frequency 2"
+    },
+    {
+      "lang": "en",
+      "type": "maximum-key-eviction",
+      "operation": "put(100000,1) — First evict key 0, the oldest in the previous minimum bucket. Append new key at frequency 1; min_freq=1.",
+      "before": "Frequency 2 · minimum · oldest → newest\nKey 0: value 1000000000, frequency 2",
+      "after": "Frequency 1 · minimum · oldest → newest\nKey 100000: value 1, frequency 1"
+    },
+    {
+      "lang": "en",
+      "type": "miss",
+      "operation": "get(0) — Miss: return −1; buckets and order remain unchanged."
+    },
+    {
+      "lang": "en",
+      "type": "feedback-and-fallback",
+      "feedback": "Compare the order inside the frequency bucket. All three keys reach frequency 2. That bucket receives 8, then 9, then 10, so oldest key 8 loses. Writing 9 raises its frequency from 1 to 2 and places it after 8. Value magnitude is irrelevant. Key 11 creates frequency bucket 1 and resets min_freq to 1.",
+      "copyStatus": "Clipboard unavailable; manually copy the selected text below."
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "geometry": [
+        {
+          "text": "Frequency 2 · minimum · oldest → newest",
+          "box": {
+            "x": 45,
+            "y": 462.40625,
+            "w": 230,
+            "h": 56
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 465.40625,
+              "w": 195.953125,
+              "h": 22
+            },
+            {
+              "x": 45,
+              "y": 493.40625,
+              "w": 131.28125,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Key 5: value 55, frequency 2",
+          "box": {
+            "x": 45,
+            "y": 518.40625,
+            "w": 230,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 529.40625,
+              "w": 208.203125,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Key 6: value 60, frequency 2",
+          "box": {
+            "x": 45,
+            "y": 562.40625,
+            "w": 230,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 573.40625,
+              "w": 208.203125,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Frequency 1 · minimum · oldest → newest",
+          "box": {
+            "x": 45,
+            "y": 735.65625,
+            "w": 230,
+            "h": 56
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 738.65625,
+              "w": 195.953125,
+              "h": 22
+            },
+            {
+              "x": 45,
+              "y": 766.65625,
+              "w": 131.28125,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Key 7: value 70, frequency 1",
+          "box": {
+            "x": 45,
+            "y": 791.65625,
+            "w": 230,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 802.65625,
+              "w": 208.203125,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Frequency 2 · oldest → newest",
+          "box": {
+            "x": 44,
+            "y": 874.65625,
+            "w": 232,
+            "h": 56
+          },
+          "textRects": [
+            {
+              "x": 44,
+              "y": 877.65625,
+              "w": 178.75,
+              "h": 22
+            },
+            {
+              "x": 44,
+              "y": 905.65625,
+              "w": 57.703125,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Key 6: value 60, frequency 2",
+          "box": {
+            "x": 44,
+            "y": 930.65625,
+            "w": 232,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 44,
+              "y": 941.65625,
+              "w": 208.203125,
+              "h": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "geometry": [
+        {
+          "text": "Frequency 2 · minimum · oldest → newest",
+          "box": {
+            "x": 45,
+            "y": 406.109375,
+            "w": 300,
+            "h": 56
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 409.109375,
+              "w": 269.546875,
+              "h": 22
+            },
+            {
+              "x": 45,
+              "y": 437.109375,
+              "w": 57.703125,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Key 5: value 55, frequency 2",
+          "box": {
+            "x": 45,
+            "y": 462.109375,
+            "w": 300,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 473.109375,
+              "w": 208.203125,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Key 6: value 60, frequency 2",
+          "box": {
+            "x": 45,
+            "y": 506.109375,
+            "w": 300,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 517.109375,
+              "w": 208.203125,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Frequency 1 · minimum · oldest → newest",
+          "box": {
+            "x": 45,
+            "y": 679.359375,
+            "w": 300,
+            "h": 56
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 682.359375,
+              "w": 269.546875,
+              "h": 22
+            },
+            {
+              "x": 45,
+              "y": 710.359375,
+              "w": 57.703125,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Key 7: value 70, frequency 1",
+          "box": {
+            "x": 45,
+            "y": 735.359375,
+            "w": 300,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 746.359375,
+              "w": 208.203125,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Frequency 2 · oldest → newest",
+          "box": {
+            "x": 44,
+            "y": 818.359375,
+            "w": 302,
+            "h": 28
+          },
+          "textRects": [
+            {
+              "x": 44,
+              "y": 821.359375,
+              "w": 240.59375,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Key 6: value 60, frequency 2",
+          "box": {
+            "x": 44,
+            "y": 846.359375,
+            "w": 302,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 44,
+              "y": 857.359375,
+              "w": 208.203125,
+              "h": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "geometry": [
+        {
+          "text": "Frequency 2 · minimum · oldest → newest",
+          "box": {
+            "x": 279,
+            "y": 435.6875,
+            "w": 415,
+            "h": 28
+          },
+          "textRects": [
+            {
+              "x": 279,
+              "y": 438.6875,
+              "w": 331.40625,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Key 5: value 55, frequency 2",
+          "box": {
+            "x": 279,
+            "y": 463.6875,
+            "w": 415,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 279,
+              "y": 474.6875,
+              "w": 208.203125,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Key 6: value 60, frequency 2",
+          "box": {
+            "x": 279,
+            "y": 507.6875,
+            "w": 415,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 279,
+              "y": 518.6875,
+              "w": 208.203125,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Frequency 1 · minimum · oldest → newest",
+          "box": {
+            "x": 746,
+            "y": 435.6875,
+            "w": 415,
+            "h": 28
+          },
+          "textRects": [
+            {
+              "x": 746,
+              "y": 438.6875,
+              "w": 331.40625,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Key 7: value 70, frequency 1",
+          "box": {
+            "x": 746,
+            "y": 463.6875,
+            "w": 415,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 746,
+              "y": 474.6875,
+              "w": 208.203125,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Frequency 2 · oldest → newest",
+          "box": {
+            "x": 745,
+            "y": 546.6875,
+            "w": 417,
+            "h": 28
+          },
+          "textRects": [
+            {
+              "x": 745,
+              "y": 549.6875,
+              "w": 240.59375,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "Key 6: value 60, frequency 2",
+          "box": {
+            "x": 745,
+            "y": 574.6875,
+            "w": 417,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 745,
+              "y": 585.6875,
+              "w": 208.203125,
+              "h": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "type": "update-zero-key",
+      "operation": "put(0,1000000000) — 更新值为 1000000000；频次 1→2，也移到最新端，不淘汰。",
+      "after": "频次 2 · 最小 · 旧 → 新\n键 0：值 1000000000，频次 2"
+    },
+    {
+      "lang": "zh",
+      "type": "maximum-key-eviction",
+      "operation": "put(100000,1) — 先删键 0：它是操作前最小桶中最旧的键。 新键以频次 1 追加，min_freq=1。",
+      "before": "频次 2 · 最小 · 旧 → 新\n键 0：值 1000000000，频次 2",
+      "after": "频次 1 · 最小 · 旧 → 新\n键 100000：值 1，频次 1"
+    },
+    {
+      "lang": "zh",
+      "type": "miss",
+      "operation": "get(0) — 未命中，返回 −1；桶与顺序完全不变。"
+    },
+    {
+      "lang": "zh",
+      "type": "feedback-and-fallback",
+      "feedback": "再比较频次桶内的顺序。 三个键频次都是 2。频次 2 桶先后进入 8、9、10，因此最旧的 8 被删。写入 9 使它从频次 1 变 2，并排在 8 后；键值大小无关。11 新建频次 1 桶，min_freq 重置为 1。",
+      "copyStatus": "剪贴板不可用；请从下方已选中的文本手动复制。"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "geometry": [
+        {
+          "text": "频次 2 · 最小 · 旧 → 新",
+          "box": {
+            "x": 45,
+            "y": 312.515625,
+            "w": 230,
+            "h": 28
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 315.515625,
+              "w": 159.40625,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "键 5：值 55，频次 2",
+          "box": {
+            "x": 45,
+            "y": 340.515625,
+            "w": 230,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 351.515625,
+              "w": 145.09375,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "键 6：值 60，频次 2",
+          "box": {
+            "x": 45,
+            "y": 384.515625,
+            "w": 230,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 395.515625,
+              "w": 145.09375,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "频次 1 · 最小 · 旧 → 新",
+          "box": {
+            "x": 45,
+            "y": 557.765625,
+            "w": 230,
+            "h": 28
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 560.765625,
+              "w": 159.40625,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "键 7：值 70，频次 1",
+          "box": {
+            "x": 45,
+            "y": 585.765625,
+            "w": 230,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 596.765625,
+              "w": 145.09375,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "频次 2 · 旧 → 新",
+          "box": {
+            "x": 44,
+            "y": 668.765625,
+            "w": 232,
+            "h": 28
+          },
+          "textRects": [
+            {
+              "x": 44,
+              "y": 671.765625,
+              "w": 114.515625,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "键 6：值 60，频次 2",
+          "box": {
+            "x": 44,
+            "y": 696.765625,
+            "w": 232,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 44,
+              "y": 707.765625,
+              "w": 145.09375,
+              "h": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "geometry": [
+        {
+          "text": "频次 2 · 最小 · 旧 → 新",
+          "box": {
+            "x": 45,
+            "y": 312.265625,
+            "w": 300,
+            "h": 28
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 315.265625,
+              "w": 159.40625,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "键 5：值 55，频次 2",
+          "box": {
+            "x": 45,
+            "y": 340.265625,
+            "w": 300,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 351.265625,
+              "w": 145.09375,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "键 6：值 60，频次 2",
+          "box": {
+            "x": 45,
+            "y": 384.265625,
+            "w": 300,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 395.265625,
+              "w": 145.09375,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "频次 1 · 最小 · 旧 → 新",
+          "box": {
+            "x": 45,
+            "y": 557.515625,
+            "w": 300,
+            "h": 28
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 560.515625,
+              "w": 159.40625,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "键 7：值 70，频次 1",
+          "box": {
+            "x": 45,
+            "y": 585.515625,
+            "w": 300,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 45,
+              "y": 596.515625,
+              "w": 145.09375,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "频次 2 · 旧 → 新",
+          "box": {
+            "x": 44,
+            "y": 668.515625,
+            "w": 302,
+            "h": 28
+          },
+          "textRects": [
+            {
+              "x": 44,
+              "y": 671.515625,
+              "w": 114.515625,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "键 6：值 60，频次 2",
+          "box": {
+            "x": 44,
+            "y": 696.515625,
+            "w": 302,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 44,
+              "y": 707.515625,
+              "w": 145.09375,
+              "h": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "geometry": [
+        {
+          "text": "频次 2 · 最小 · 旧 → 新",
+          "box": {
+            "x": 279,
+            "y": 435.4375,
+            "w": 415,
+            "h": 28
+          },
+          "textRects": [
+            {
+              "x": 279,
+              "y": 438.4375,
+              "w": 159.40625,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "键 5：值 55，频次 2",
+          "box": {
+            "x": 279,
+            "y": 463.4375,
+            "w": 415,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 279,
+              "y": 474.4375,
+              "w": 145.09375,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "键 6：值 60，频次 2",
+          "box": {
+            "x": 279,
+            "y": 507.4375,
+            "w": 415,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 279,
+              "y": 518.4375,
+              "w": 145.09375,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "频次 1 · 最小 · 旧 → 新",
+          "box": {
+            "x": 746,
+            "y": 435.4375,
+            "w": 415,
+            "h": 28
+          },
+          "textRects": [
+            {
+              "x": 746,
+              "y": 438.4375,
+              "w": 159.40625,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "键 7：值 70，频次 1",
+          "box": {
+            "x": 746,
+            "y": 463.4375,
+            "w": 415,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 746,
+              "y": 474.4375,
+              "w": 145.09375,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "频次 2 · 旧 → 新",
+          "box": {
+            "x": 745,
+            "y": 546.4375,
+            "w": 417,
+            "h": 28
+          },
+          "textRects": [
+            {
+              "x": 745,
+              "y": 549.4375,
+              "w": 114.515625,
+              "h": 22
+            }
+          ]
+        },
+        {
+          "text": "键 6：值 60，频次 2",
+          "box": {
+            "x": 745,
+            "y": 574.4375,
+            "w": 417,
+            "h": 44
+          },
+          "textRects": [
+            {
+              "x": 745,
+              "y": 585.4375,
+              "w": 145.09375,
+              "h": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "keyboard",
+      "focused": "PRE",
+      "codeScrollLeft": 0
+    }
+  ]
+}

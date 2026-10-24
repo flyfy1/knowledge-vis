@@ -1,0 +1,6 @@
+{
+  "spaceSelect": true,
+  "arrowChange": true,
+  "tabToReveal": true,
+  "enterReveal": "Correct. All three keys reach frequency 2. That bucket receives 8, then 9, then 10, so oldest key 8 loses. Writing 9 raises its frequency from 1 to 2 and places it after 8. Value magnitude is irrelevant. Key 11 creates frequency bucket 1 and resets min_freq to 1."
+}
