@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "states": [
+    {
+      "lang": "en",
+      "topNav": "step0",
+      "clickedNav": "step2",
+      "heading": "ID prefix verified",
+      "keyboard": "Space then Tab reaches reset",
+      "focus": {
+        "color": "rgb(255, 180, 84)",
+        "width": "3px",
+        "style": "solid",
+        "adjacent": "rgb(22, 27, 34)",
+        "contrast": 9.809435643476732
+      },
+      "forcedColors": "solid"
+    },
+    {
+      "lang": "zh",
+      "topNav": "step0",
+      "clickedNav": "step2",
+      "heading": "ID prefix verified",
+      "keyboard": "Space then Tab reaches reset",
+      "focus": {
+        "color": "rgb(255, 180, 84)",
+        "width": "3px",
+        "style": "solid",
+        "adjacent": "rgb(22, 27, 34)",
+        "contrast": 9.809435643476732
+      },
+      "forcedColors": "solid"
+    }
+  ]
+}
