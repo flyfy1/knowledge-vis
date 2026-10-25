@@ -1822,3 +1822,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Bitmask state | `leetcode/864/#step4` | Encode permanent keys as bits and deduplicate complete states. |
 
 <!-- /leetcode-864-campaign -->
+
+
+<!-- leetcode-996-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Remaining-count backtracking invariant | `leetcode/996/#step2` | Consume and restore one copy per distinct value to enumerate each legal value sequence exactly once. |
+
+<!-- /leetcode-996-campaign -->
