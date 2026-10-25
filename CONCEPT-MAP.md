@@ -1330,3 +1330,13 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Tie-aware prefix and suffix maxima | `leetcode/689/#step2` | Opposite scan directions require different tie comparisons. |
 
 <!-- /leetcode-689-campaign -->
+
+
+<!-- leetcode-685-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Two-parent filtering | `leetcode/685/#step2` | Skip the later incoming edge before cycle detection. |
+| Filtered forest invariant | `leetcode/685/#step2` | DSU groups equal the undirected components of retained edges. |
+
+<!-- /leetcode-685-campaign -->
