@@ -1110,3 +1110,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Interval DP with a carried boundary | `leetcode/546/#step2` | Remember saved equal-color boxes while clearing the separating interval. |
 
 <!-- /leetcode-546-campaign -->
+
+
+<!-- leetcode-591-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| tag-validation | `leetcode/591/#step2` | Ordered pending tags, one enclosing root and opaque CDATA scanning |
+
+<!-- /leetcode-591-campaign -->
