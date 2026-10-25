@@ -1,0 +1,122 @@
+{
+  "recordedAt": "2026-10-25T20:35:53.877718+00:00",
+  "reviewer": "root",
+  "evidenceOrigin": "Root reported independent direct enumeration and queue-parsed sparse-tree checks in this task on 2026-10-26 Asia/Singapore. Preparer records the reported results without claiming to have executed the root checks.",
+  "982": {
+    "method": "Direct ordered-index triple enumeration",
+    "cases": [
+      {
+        "nums": [
+          1,
+          2
+        ],
+        "expected": 6,
+        "observed": 6
+      },
+      {
+        "nums": [
+          0,
+          1
+        ],
+        "expected": 7,
+        "observed": 7
+      },
+      {
+        "nums": [
+          0
+        ],
+        "expected": 1,
+        "observed": 1
+      },
+      {
+        "nums": [
+          3,
+          5,
+          6
+        ],
+        "expected": 6,
+        "observed": 6
+      }
+    ]
+  },
+  "987": {
+    "method": "Queue-parsed original sparse level-order input with coordinate ordering",
+    "cases": [
+      {
+        "root": [
+          9,
+          2,
+          3,
+          null,
+          1,
+          4,
+          null
+        ],
+        "expected": [
+          [
+            2
+          ],
+          [
+            9,
+            1,
+            4
+          ],
+          [
+            3
+          ]
+        ],
+        "observed": [
+          [
+            2
+          ],
+          [
+            9,
+            1,
+            4
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "root": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null
+        ],
+        "expected": [
+          [
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "observed": [
+          [
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0
+          ]
+        ]
+      }
+    ]
+  },
+  "scope": "Small dispatcher teaching-example arithmetic/serialization checks only. No canonical implementation, resource/performance evidence, lesson review/acceptance, launch or publication claim."
+}

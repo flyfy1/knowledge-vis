@@ -1,0 +1,41 @@
+{
+  "observedAt": "2026-10-25T20:32:20.564660+00:00",
+  "readOnly": true,
+  "queueLength": 984,
+  "centralHead": "96e82a2f927f7506f2dd97956f1b837e67c9df1e",
+  "expectedHead": "96e82a2f927f7506f2dd97956f1b837e67c9df1e",
+  "recordedStatus": "running",
+  "recordedCurrent": {
+    "problem_id": "839",
+    "stage": "author",
+    "started_at": "2026-10-25T20:22:55.936997+00:00",
+    "run_id": "839-author-ed3a2c092deb"
+  },
+  "STOPexists": false,
+  "targets": [
+    {
+      "id": "982",
+      "queueIndex": 203,
+      "problemRecord": null,
+      "runs": [],
+      "runDirectories": [],
+      "reservations": [],
+      "lessonDirectoryExists": false,
+      "laneRepoExists": false,
+      "laneStateExists": false,
+      "laneBranchExists": false
+    },
+    {
+      "id": "987",
+      "queueIndex": 204,
+      "problemRecord": null,
+      "runs": [],
+      "runDirectories": [],
+      "reservations": [],
+      "lessonDirectoryExists": false,
+      "laneRepoExists": false,
+      "laneStateExists": false,
+      "laneBranchExists": false
+    }
+  ]
+}

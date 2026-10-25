@@ -1,0 +1,38 @@
+{
+  "validatedAt": "2026-10-25T20:35:53.878518+00:00",
+  "scope": "dispatcher-only official access and bounded state preparation",
+  "sourceChecks": [
+    {
+      "id": 982,
+      "httpStatus": 200,
+      "responseSha256": "5c237cc0702ff966a3ce612a91ae064816036e545711ebe264d79ddd7ba16ead",
+      "responseBytes": 4713,
+      "observedAt": "2026-10-25T20:32:47.039066+00:00"
+    },
+    {
+      "id": 987,
+      "httpStatus": 200,
+      "responseSha256": "b39900253f886373cff30d6768592cd7ce6f99425e0cf62a29242ad956e34659",
+      "responseBytes": 12208,
+      "observedAt": "2026-10-25T20:32:47.048558+00:00"
+    }
+  ],
+  "frozenSnapshotAt": "2026-10-18T08:59:47.124517+00:00",
+  "catalogSha256": "fb4ac08e84b8825cd380cdac8ccb791f0e53ecf3660e7445b9ac623f43e85fb6",
+  "noRuntimeChanges": true,
+  "noDispatch": true,
+  "noAuthorContextInjection": true,
+  "noImplementationOrPerformanceClaim": true,
+  "filesSha256": {
+    "982-official-access.json": "97806d61e9b712f34ea8673fa9642ff9838131ef0662d603156b7d120eafd87a",
+    "982-official-response.json": "5c237cc0702ff966a3ce612a91ae064816036e545711ebe264d79ddd7ba16ead",
+    "982.md": "4409cb1d091eddf33c18ecdfa6e1f6cf42e5a851daef8d0d867a891c4bc476a7",
+    "987-official-access.json": "5cd441da12036918e8f709b922fab32b6a8eddea47086f5f0c0b416d41cf5308",
+    "987-official-response.json": "b39900253f886373cff30d6768592cd7ce6f99425e0cf62a29242ad956e34659",
+    "987.md": "eb60933e00a81b36a8c014a344f20988ce429ea566957aed4e37d15af3698a1f",
+    "README.md": "2b9742b30ba08eacb49fb673852405cb789dff1a10dba9ef64ff0570d07cce1b",
+    "preflight.json": "82d21defceb924336d1ed30795da3d28122238ce2684225c9a412370ba33fdc1",
+    "root-example-checks.json": "35f3bb3a68e5822cbc00fc8f6cc963e960aed5f21d528df58a99e32c7c75d734"
+  },
+  "rootExampleChecksRecorded": true
+}
