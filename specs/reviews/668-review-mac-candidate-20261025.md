@@ -28,7 +28,7 @@ host-specific harness failure in this environment, not a page-rendering defect.
 The final separate adapter retains all original assertions and changes exactly
 two platform choices: native copy key and `fromSurface: true` on Mac (the original
 false value remains for other hosts). It passes the entire browser suite:
-44 interaction states, 10 layout observations, 24 screenshots, no runtime errors,
+44 interaction states, 10 layout observations, 23 screenshots, no runtime errors,
 exact canonical display/mirror/copy/manual-copy/download parity, all prediction
 choices, locale preservation, keyboard controls, local links, denied storage,
 offline rendering, forced colors, and actual 200% browser zoom. Combined CSS is
