@@ -1527,3 +1527,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Difference prefix invariant | `leetcode/798/#step3` | Count active losing intervals and preserve earliest ties. |
 
 <!-- /leetcode-798-campaign -->
+
+
+<!-- leetcode-903-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Rank-based counting | `leetcode/903/#step1` | Standardize prefixes and count by final rank. |
+| Prefix and suffix DP sums | `leetcode/903/#step4` | Accumulate a row in linear time. |
+
+<!-- /leetcode-903-campaign -->
