@@ -1,0 +1,1259 @@
+{
+  "kind": "author browser self-check; no independent acceptance",
+  "hostPlatform": "linux",
+  "url": "http://127.0.0.1:18782/leetcode/685/",
+  "semantics": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "final": "Final removal: row 3, 2→3. No cycle remains after skipping later, so remove later.",
+      "frames": 8
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "final": "Final removal: row 4, 4→1. There is no two-parent conflict; remove the latest edge on the unique cycle.",
+      "frames": 11
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "final": "Final removal: row 1, 2→1. A cycle survives skipping later, so earlier must go.",
+      "frames": 10
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "final": "Final removal: row 3, 3→1. There is no two-parent conflict; remove the latest edge on the unique cycle.",
+      "frames": 9
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "final": "Final removal: row 2, 2→1. There is no two-parent conflict; remove the latest edge on the unique cycle.",
+      "frames": 7
+    },
+    {
+      "locale": "en",
+      "handRemoved": -1,
+      "valid": false,
+      "observed": "Root candidates: 1; reachable from the sole root: 3/3 nodes. Invalid: need one root, one parent per other node and full reachability."
+    },
+    {
+      "locale": "en",
+      "handRemoved": 0,
+      "valid": false,
+      "observed": "Root candidates: 1, 2; there is no sole root, so reachability from a root was not tested. Invalid: need one root, one parent per other node and full reachability."
+    },
+    {
+      "locale": "en",
+      "handRemoved": 1,
+      "valid": true,
+      "observed": "Root candidates: 1; reachable from the sole root: 3/3 nodes. Valid: a rooted tree is restored."
+    },
+    {
+      "locale": "en",
+      "handRemoved": 2,
+      "valid": true,
+      "observed": "Root candidates: 1; reachable from the sole root: 3/3 nodes. Valid: a rooted tree is restored."
+    },
+    {
+      "locale": "en",
+      "choice": 0,
+      "feedback": "Inspect the remaining edges. Answer B: [3,2]. Skipping 4→2 leaves the cycle 3→2→3, so earlier=3→2 must go, leaving 1→4→2→3. A leaves that cycle; C breaks it but leaves node 2 with both parents 3 and 4. The cycle-detection edge [2,3] is not the final removal here."
+    },
+    {
+      "locale": "en",
+      "choice": 1,
+      "feedback": "Correct. Answer B: [3,2]. Skipping 4→2 leaves the cycle 3→2→3, so earlier=3→2 must go, leaving 1→4→2→3. A leaves that cycle; C breaks it but leaves node 2 with both parents 3 and 4. The cycle-detection edge [2,3] is not the final removal here."
+    },
+    {
+      "locale": "en",
+      "choice": 2,
+      "feedback": "Inspect the remaining edges. Answer B: [3,2]. Skipping 4→2 leaves the cycle 3→2→3, so earlier=3→2 must go, leaving 1→4→2→3. A leaves that cycle; C breaks it but leaves node 2 with both parents 3 and 4. The cycle-detection edge [2,3] is not the final removal here."
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "final": "最终删除第 3 行 2→3。跳过 later 后没有环，删除 later 即可。",
+      "frames": 8
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "final": "最终删除第 4 行 4→1。没有双亲冲突，删除唯一环中最晚出现的边。",
+      "frames": 11
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "final": "最终删除第 1 行 2→1。跳过 later 仍有环，必须删除 earlier。",
+      "frames": 10
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "final": "最终删除第 3 行 3→1。没有双亲冲突，删除唯一环中最晚出现的边。",
+      "frames": 9
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "final": "最终删除第 2 行 2→1。没有双亲冲突，删除唯一环中最晚出现的边。",
+      "frames": 7
+    },
+    {
+      "locale": "zh",
+      "handRemoved": -1,
+      "valid": false,
+      "observed": "根候选：1；从唯一根可到达 3/3 个节点。不成立：需唯一根、其余节点一个父节点、且全部可到达。"
+    },
+    {
+      "locale": "zh",
+      "handRemoved": 0,
+      "valid": false,
+      "observed": "根候选：1, 2；没有唯一根，未运行从根出发的可达性检查。不成立：需唯一根、其余节点一个父节点、且全部可到达。"
+    },
+    {
+      "locale": "zh",
+      "handRemoved": 1,
+      "valid": true,
+      "observed": "根候选：1；从唯一根可到达 3/3 个节点。成立：恢复有根树。"
+    },
+    {
+      "locale": "zh",
+      "handRemoved": 2,
+      "valid": true,
+      "observed": "根候选：1；从唯一根可到达 3/3 个节点。成立：恢复有根树。"
+    },
+    {
+      "locale": "zh",
+      "choice": 0,
+      "feedback": "再看保留的边。 答案 B：[3,2]。跳过 4→2 后仍有 3→2→3 环，故必须删 earlier=3→2；留下 1→4→2→3。A 留下这个环；C 虽破环，却仍让节点 2 同时有父节点 3 与 4。这里闭环检测边 [2,3] 并不是最终要删的边。"
+    },
+    {
+      "locale": "zh",
+      "choice": 1,
+      "feedback": "正确。 答案 B：[3,2]。跳过 4→2 后仍有 3→2→3 环，故必须删 earlier=3→2；留下 1→4→2→3。A 留下这个环；C 虽破环，却仍让节点 2 同时有父节点 3 与 4。这里闭环检测边 [2,3] 并不是最终要删的边。"
+    },
+    {
+      "locale": "zh",
+      "choice": 2,
+      "feedback": "再看保留的边。 答案 B：[3,2]。跳过 4→2 后仍有 3→2→3 环，故必须删 earlier=3→2；留下 1→4→2→3。A 留下这个环；C 虽破环，却仍让节点 2 同时有父节点 3 与 4。这里闭环检测边 [2,3] 并不是最终要删的边。"
+    },
+    {
+      "locale": "en",
+      "copyFallback": "Automatic copy unavailable; the full source below is selected. Use your system copy shortcut.",
+      "transfer": "native shortcut + actual clipboard readback exact including final newline"
+    },
+    {
+      "locale": "zh",
+      "copyFallback": "自动复制不可用；已选中下方完整源码，请用系统复制快捷键。",
+      "transfer": "native shortcut + actual clipboard readback exact including final newline"
+    }
+  ],
+  "layouts": [
+    {
+      "width": 320,
+      "locale": "en",
+      "overflow": {
+        "document": 320,
+        "viewport": 320
+      },
+      "graphWidth": 262,
+      "labelMinHeight": 20
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "overflow": {
+        "document": 320,
+        "viewport": 320
+      },
+      "graphWidth": 262,
+      "labelMinHeight": 20
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "overflow": {
+        "document": 390,
+        "viewport": 390
+      },
+      "graphWidth": 332,
+      "labelMinHeight": 25
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "overflow": {
+        "document": 390,
+        "viewport": 390
+      },
+      "graphWidth": 332,
+      "labelMinHeight": 25
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "overflow": {
+        "document": 736,
+        "viewport": 736
+      },
+      "graphWidth": 480,
+      "labelMinHeight": 37
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "overflow": {
+        "document": 736,
+        "viewport": 736
+      },
+      "graphWidth": 480,
+      "labelMinHeight": 37
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "overflow": {
+        "document": 1440,
+        "viewport": 1440
+      },
+      "graphWidth": 480,
+      "labelMinHeight": 37
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "overflow": {
+        "document": 1440,
+        "viewport": 1440
+      },
+      "graphWidth": 480,
+      "labelMinHeight": 37
+    },
+    {
+      "test": "200% CSS zoom layout/reading check at 1440px",
+      "locale": "en",
+      "dimensions": {
+        "scroll": 1440,
+        "client": 1440,
+        "zoom": "2"
+      }
+    },
+    {
+      "test": "200% CSS zoom layout/reading check at 1440px",
+      "locale": "zh",
+      "dimensions": {
+        "scroll": 1440,
+        "client": 1440,
+        "zoom": "2"
+      }
+    }
+  ],
+  "screenshots": [
+    "graph-en-desktop.png",
+    "graph-zh-desktop.png",
+    "trace-en-320.png",
+    "trace-zh-320.png",
+    "trace-en-390.png",
+    "trace-zh-390.png",
+    "trace-en-1440.png",
+    "trace-zh-1440.png",
+    "zoom200-en.png",
+    "zoom200-zh.png"
+  ],
+  "checks": [
+    "Both locales: all preset frames, states and groups; full rewind/replay; all endpoints; hand deletions; all prediction choices; reveal/change/locale preservation",
+    "Displayed, embedded, native copied, manual fallback copied, and downloaded source all equal canonical bytes; Linux Control+C host shortcut",
+    "Native keyboard tab, Enter activation, visible 3px focus; forced colors and reduced motion; local anchor geometry; all related targets; measured rendered contrast >=4.5:1",
+    "Storage denied; local-file offline trace/source; zero console/page errors and local asset failures"
+  ],
+  "contrast": {
+    "minimum": 7.078851579017443,
+    "samples": [
+      {
+        "tag": "A",
+        "text": "← LeetCode 知识索引",
+        "color": "rgb(110, 231, 255)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "BUTTON",
+        "text": "中",
+        "color": "rgb(13, 17, 23)",
+        "bg": [
+          110,
+          231,
+          255
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "BUTTON",
+        "text": "EN",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "P",
+        "text": "困难 · 图 · Python",
+        "color": "rgb(110, 231, 255)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "H1",
+        "text": "#685 · 冗余连接 II",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "三个人，三条箭头：删哪一条，才能让每个人只沿一条父链回到同一个根？",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "A",
+        "text": "官方题目 ↗",
+        "color": "rgb(110, 231, 255)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "A",
+        "text": "1 · 亲手删一条边",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "A",
+        "text": "2 · 先有可靠的判定",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "A",
+        "text": "3 · 过滤后再找环",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "A",
+        "text": "4 · 先预测再揭晓",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "A",
+        "text": "5 · 映射到 Python",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "P",
+        "text": "01",
+        "color": "rgb(110, 231, 255)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "H2",
+        "text": "1 · 亲手删一条边",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "这一步要回答：什么样的删除才算成功？有向边 [u,v] 表示父节点 u 指向子节点 v。有根树只有一个根（没有父节点的节",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "先算 [[1,2],[1,3],[2,3]]：节点 3 有两个父节点 1 和 2。删 1→3 后，1→2→3；删 2→3",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "LABEL",
+        "text": "选择要删除的边（仅改变本实验）",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "P",
+        "text": "图中箭头表示父→子；虚线箭头是本次试删的边，其余实线保留。",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "P",
+        "text": "每个节点的入度（指向它的边数）：1: 0 · 2: 1 · 3: 2",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "P",
+        "text": "根候选：1；从唯一根可到达 3/3 个节点。不成立：需唯一根、其余节点一个父节点、且全部可到达。",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "text": "官方范围：n = 边数 = 节点数，3 ≤ n ≤ 1000；节点编号 1…n；每条边两个不同端点。新增边不与原边重复。",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "P",
+        "text": "02",
+        "color": "rgb(110, 231, 255)",
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 13.388343428810314
+      },
+      {
+        "tag": "H2",
+        "text": "2 · 先有可靠的判定",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 16.440224808744848
+      },
+      {
+        "tag": "P",
+        "text": "这一步要回答：不用猜测，如何证明一个删除可行？从最后一条边向前尝试删除；重新统计入度（指向节点的边数），找出唯一没有父节",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 16.440224808744848
+      },
+      {
+        "tag": "P",
+        "text": "n 为节点数，也等于边数。每次重建与搜索 O(n)，最多试 n 次，时间 O(n²)、额外空间 O(n)。n=1000 ",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 16.440224808744848
+      },
+      {
+        "tag": "P",
+        "text": "为什么不能总删双亲中较晚的边？看 [[2,1],[3,1],[4,2],[1,4]]：节点 1 的两条入边先是 2→1，",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 16.440224808744848
+      },
+      {
+        "tag": "P",
+        "text": "03",
+        "color": "rgb(110, 231, 255)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "H2",
+        "text": "3 · 过滤后再找环",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "这一步要回答：双亲冲突与环同时存在时，怎样选？先扫描每条边，记录每个子节点第一次收到的入边位置 incoming[v]。",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "先在小例子中看合并：跳过 2→3，保留 1→2 后，连通组从 {1},{2},{3} 变成 {1,2},{3}；再保留 ",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "不变量（每次处理后都成立的事实）：DSU 的每个组恰好对应已保留边的一个无向连通组，保留边始终无环。不同组之间加边只会连",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "为什么此时能忽略方向？此处 n 是节点数，亦为输入边数。一个无向环的边数等于环上节点数；每个节点至多一条入边，迫使环上每",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "操作任务：保持当前输入不变，逐条完成父节点扫描，再逐条测试连通组；观察边表、组的前后变化和完整历史。换预设仅重启此追踪；",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "这是 JavaScript 教学模拟，并非执行下方 Python。只演示 3–5 个节点，所有扫描和测试均保留，没有跳帧",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "LABEL",
+        "text": "输入预设（更换会重启追踪）",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "BUTTON",
+        "text": "后退一帧",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "BUTTON",
+        "text": "完成下一项操作",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "BUTTON",
+        "text": "重置追踪",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "BUTTON",
+        "text": "跳到最终决策",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "text": "已完成操作 1/7 · 入边扫描",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "text": "扫描第 1 行 1→2：首次进入该子节点，记录此行。",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "P",
+        "text": "双亲候选行号：earlier=—，later=—（— 表示尚未发现）。",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "P",
+        "text": "已记录的首条入边行号：1: — · 2: 1 · 3: —",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "P",
+        "text": "实线＝保留；点线＝待处理；虚线＝跳过；粗线＝闭环被拒。文字状态同时列在表中。最终帧仍显示决策前的检测图，不是假装已执行删",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "text": "输入行",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "text": "父 → 子",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "text": "检测状态",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TD",
+        "text": "1",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "TD",
+        "text": "1→2",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "TD",
+        "text": "待连通测试",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "TD",
+        "text": "2",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "TD",
+        "text": "1→3",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "TD",
+        "text": "待连通测试",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "TD",
+        "text": "3",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "TD",
+        "text": "2→3",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "TD",
+        "text": "待连通测试",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "H3",
+        "text": "忽略方向的组（操作前 → 操作后）",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "P",
+        "text": "{1} · {2} · {3} →",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "P",
+        "text": "{1} · {2} · {3}",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "H3",
+        "text": "已完成操作的完整记录",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "LI",
+        "text": "扫描第 1 行 1→2：首次进入该子节点，记录此行。",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "P",
+        "text": "04",
+        "color": "rgb(110, 231, 255)",
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 13.388343428810314
+      },
+      {
+        "tag": "H2",
+        "text": "4 · 先预测再揭晓",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 16.440224808744848
+      },
+      {
+        "tag": "LEGEND",
+        "text": "新输入 [[3,2],[4,2],[2,3],[1,4]]。节点 2 有两个父节点；跳过较晚的 4→2 后，该删哪条边才",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 16.440224808744848
+      },
+      {
+        "tag": "LABEL",
+        "text": "A · [4,2]：总删较晚入边",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 16.440224808744848
+      },
+      {
+        "tag": "LABEL",
+        "text": "B · [3,2]：删较早入边",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 16.440224808744848
+      },
+      {
+        "tag": "LABEL",
+        "text": "C · [2,3]：删闭环那条边",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 16.440224808744848
+      },
+      {
+        "tag": "BUTTON",
+        "text": "验证我的预测",
+        "color": "rgb(154, 167, 184)",
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "P",
+        "text": "05",
+        "color": "rgb(110, 231, 255)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "H2",
+        "text": "5 · 映射到 Python",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "这一步要回答：怎样把过滤与连通不变量写成官方接口？下方 Python 是可提交的完整源文件，使用官方 Python3 的",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "incoming 保存首次入边的下标；earlier/later 对应双亲的两行，−1 表示未发现。第二轮 i == l",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "并查集（DSU）记录忽略方向后的连通组，即能相互走到的节点组。leader 是并查集指针，不是图的父节点；size 只在",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "边界：无双亲时 later=−1，不会跳过任何边；保证存在的环一定触发返回。双亲无环时，末尾返回 later；双亲带环时",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "n 为节点数也为边数。两次扫描、按大小合并加路径折半：摊还时间 O(n α(n))，α 是增长极慢的反阿克曼函数；数组占",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "text": "自查方法：独立地逐条删边并从根搜索，对比 Python 返回值；检查小图穷举、固定种子随机图、官方例子和 1000 节点",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "BUTTON",
+        "text": "复制 Python 源码",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "A",
+        "text": "下载 solution.py",
+        "color": "rgb(110, 231, 255)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "展开完整 Python 源码",
+        "color": "rgb(110, 231, 255)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "H3",
+        "text": "继续理解图中的不变量",
+        "color": "rgb(232, 237, 244)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "A",
+        "text": "#675 · 用广度优先搜索判断可达",
+        "color": "rgb(110, 231, 255)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "A",
+        "text": "#332 · 有向边与遍历顺序",
+        "color": "rgb(110, 231, 255)",
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      }
+    ],
+    "focus": {
+      "style": "solid",
+      "width": "3px",
+      "color": "rgb(255, 180, 84)"
+    },
+    "focusContrast": 10.731637051347173,
+    "controlBoundary": {
+      "border": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)"
+    }
+  },
+  "assets": [
+    {
+      "url": "http://127.0.0.1:18782/leetcode/685/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/style.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/685/core.js?v=685-1",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/685/style.css?v=685-1",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/common.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/685/copy.js?v=685-1",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/685/python-code.js?v=685-1",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/685/app.js?v=685-1",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/685/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/style.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/685/style.css?v=685-1",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/common.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/685/core.js?v=685-1",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/685/python-code.js?v=685-1",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/685/copy.js?v=685-1",
+      "status": 304
+    },
+    {
+      "url": "http://127.0.0.1:18782/leetcode/685/app.js?v=685-1",
+      "status": 304
+    }
+  ],
+  "errors": [],
+  "result": "pass",
+  "cssBytes": 11778
+}
