@@ -1,0 +1,54 @@
+{
+  "observedAt": "2026-10-25T21:38:34.863418+00:00",
+  "scope": "Local dispatcher preparation only; no runtime changes, lesson implementation, launch or acceptance claim.",
+  "checks": [
+    {
+      "id": 992,
+      "rawSha256": "98c1b39412f508a24de0950520b2891ab7563136462e9b2d93633280fd3b5211",
+      "bytes": 5105,
+      "officialMetadataAndPythonTypeScript": true,
+      "frozenCatalogRecord": {
+        "id": 992,
+        "slug": "subarrays-with-k-different-integers",
+        "title": "Subarrays with K Different Integers",
+        "paidOnly": false,
+        "officialUrl": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
+        "categories": [
+          "algorithms"
+        ]
+      }
+    },
+    {
+      "id": 995,
+      "rawSha256": "abdd14719d886acea40b47d391c11e9080e27acc4532211079abce31820f51e5",
+      "bytes": 5394,
+      "officialMetadataAndPythonTypeScript": true,
+      "frozenCatalogRecord": {
+        "id": 995,
+        "slug": "minimum-number-of-k-consecutive-bit-flips",
+        "title": "Minimum Number of K Consecutive Bit Flips",
+        "paidOnly": false,
+        "officialUrl": "https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/",
+        "categories": [
+          "algorithms"
+        ]
+      }
+    }
+  ],
+  "targetAbsenceAtDatedCensus": true,
+  "tinyExampleChecks": 16,
+  "sourceSyntax": "AST parse passed",
+  "files": {
+    "992-official-access.json": "0f7f8e1b891e5bb774c1d1e6dc61282378d58555b26d42103be8f96a9a3ed119",
+    "992-official-response.json": "98c1b39412f508a24de0950520b2891ab7563136462e9b2d93633280fd3b5211",
+    "992.md": "54e6fe65279ccf9df563c48c4248f6c85873d7c9208e85f78acabcbd2a2501dd",
+    "995-official-access.json": "a42383ecaab3949605202177839fdb717c1d191e61ecb9fdc32d9f8ed3a9c138",
+    "995-official-response.json": "abdd14719d886acea40b47d391c11e9080e27acc4532211079abce31820f51e5",
+    "995.md": "3260f9b61e8788526cd6a1ca4e7ca43f333312685fbfd369a72afc14369924af",
+    "README.md": "df69485cf53c55996aacb5463b9499685f9ab9f577494c357338364a3c13e133",
+    "check-examples.py": "6fbcf802c8955539cedbb1e3431ec3d3ec5a7a9f93ff21a5e6b75771727be079",
+    "example-checks.json": "ad7f4f4fc2b6e2cd3504dda0ac047a58756167e9823d8dbdafadea3a9876284f",
+    "preflight.json": "9f0c193cdc02aea1afe329e74dad9207579e6485a5e210fb862fb41abc725f7c"
+  },
+  "passed": true
+}

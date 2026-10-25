@@ -1,0 +1,63 @@
+{
+  "observedAt": "2026-10-25T21:34:30.309120+00:00",
+  "readOnly": true,
+  "queueLength": 984,
+  "centralHead": "f6e2500dc87fe0a50a3258af80bf46d761ca1be8",
+  "expectedHead": "f6e2500dc87fe0a50a3258af80bf46d761ca1be8",
+  "recordedStatus": "running",
+  "recordedCurrent": {
+    "problem_id": "843",
+    "stage": "review",
+    "started_at": "2026-10-25T21:32:14.948682+00:00",
+    "run_id": "843-review-9015ddd39953"
+  },
+  "STOPexists": false,
+  "targets": [
+    {
+      "id": "992",
+      "queueIndex": 205,
+      "problemRecord": null,
+      "runs": [],
+      "runDirectories": [],
+      "reservations": [],
+      "lessonExists": false,
+      "laneRepoExists": false,
+      "laneStateExists": false,
+      "laneBranchExists": false
+    },
+    {
+      "id": "995",
+      "queueIndex": 206,
+      "problemRecord": null,
+      "runs": [],
+      "runDirectories": [],
+      "reservations": [],
+      "lessonExists": false,
+      "laneRepoExists": false,
+      "laneStateExists": false,
+      "laneBranchExists": false
+    }
+  ],
+  "currentPairRecordedStates": [
+    {
+      "id": "982",
+      "status": "running",
+      "current": {
+        "problem_id": "982",
+        "stage": "author",
+        "started_at": "2026-10-25T21:30:49.910959+00:00",
+        "run_id": "982-author-4532e76a05c3"
+      }
+    },
+    {
+      "id": "987",
+      "status": "running",
+      "current": {
+        "problem_id": "987",
+        "stage": "author",
+        "started_at": "2026-10-25T21:31:17.787044+00:00",
+        "run_id": "987-author-a21aea0fbd64"
+      }
+    }
+  ]
+}
