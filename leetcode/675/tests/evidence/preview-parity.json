@@ -1,0 +1,47 @@
+{
+  "origin": "http://127.0.0.1:18782",
+  "assets": [
+    {
+      "asset": "index.html",
+      "sha256": "ce4a2617a25ccb7fdc8e4cddeee83226d6a3b25a2737f72f7d3046200f75b261",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "asset": "style.css",
+      "sha256": "6bbb99a45b0d58725b204587a48a6984f285ebd862eb032cb15ddb00ac4f7605",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "asset": "copy.js",
+      "sha256": "1684a911361ee78a0227233a4740d1da952092dcb772a4107616db7aa761a1fe",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "asset": "app.js",
+      "sha256": "e3b69957fc701a44965e51462459b5ab5ac75c74898dbe898b68b000801f70a7",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "asset": "core.js",
+      "sha256": "74e6427739bc4c79ad48ad6a2046351c3acc3ee1ce74e90182b7549b6b5913ed",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "asset": "python-code.js",
+      "sha256": "83694248553f0188ca2f8a93a7ee380abbf956f2a191f2f8b8f0342d48ced3cd",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "asset": "solution.py",
+      "sha256": "e1d11de493ddaf7750324264beb673c9bdd8d0ba3338573f4bd61066e3255f5b",
+      "status": 200,
+      "matches": true
+    }
+  ]
+}

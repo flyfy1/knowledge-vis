@@ -1,0 +1,29 @@
+{
+  "kind": "author repair candidate, independent review pending",
+  "candidate": "675-r1-fix",
+  "baseRevision": "576bda735ad7c4b46f6eeaecc46a07f639ef59ed",
+  "createdAt": "2026-10-25T03:51:05.029561+00:00",
+  "finding": "675-R1-01",
+  "findingStatus": "fixed awaiting independent review",
+  "files": {
+    "leetcode/675/BRIEF.md": "c66013699f1ac10e8fc790f4973ca07ebb46ce805656ca355ead61af76b7b89d",
+    "leetcode/675/SELF-CHECK.md": "3661926afe6ff940cf1b8e100dabe2436245eeec4668c1a3d3710dd0f171d730",
+    "leetcode/675/app.js": "e3b69957fc701a44965e51462459b5ab5ac75c74898dbe898b68b000801f70a7",
+    "leetcode/675/copy.js": "1684a911361ee78a0227233a4740d1da952092dcb772a4107616db7aa761a1fe",
+    "leetcode/675/core.js": "74e6427739bc4c79ad48ad6a2046351c3acc3ee1ce74e90182b7549b6b5913ed",
+    "leetcode/675/index.html": "5cdbcc2c8a688d91aaf0a53b1ca2fa3302e4ca0ea88d70299b0f860088fde607",
+    "leetcode/675/lesson-entry.json": "af8f8339743aa7a3619ba45360cde947f9a2cb200d91078217544a981fef472d",
+    "leetcode/675/provenance/official.json": "f1021ee130a9a790b1485409871934340b8e0e46e499d1bd0d89947f6db4b40e",
+    "leetcode/675/python-code.js": "83694248553f0188ca2f8a93a7ee380abbf956f2a191f2f8b8f0342d48ced3cd",
+    "leetcode/675/solution.py": "e1d11de493ddaf7750324264beb673c9bdd8d0ba3338573f4bd61066e3255f5b",
+    "leetcode/675/style.css": "f12e87cbf49a0403e181ed4317d0162e43eb26b77b7d3cd429442a8ff62dc8ff",
+    "leetcode/675/tests/README.md": "3fd9210b31245bd2c0de5c0fa3d6799a117c5b5f11290dbd4201d5b92d22dafb",
+    "leetcode/675/tests/browser.cjs": "86b695e49c161e6b428329056238bc996a70536e2f02c3fc3cc274da79fa9576",
+    "leetcode/675/tests/build_copy.py": "408bbb8daf5be78b80d97f65270cca4bd9ec05f3454fe129b60586b8d82f8e23",
+    "leetcode/675/tests/focused.cjs": "91d556c59a22304dbe1b69da99789b83a2c7b1552953ba6bd9ccdd4543a3ba8a",
+    "leetcode/675/tests/selected-labels.cjs": "29028312ba54d3263f7b3cfe0f5532be672769a5291825373e5fc1e935bc6230",
+    "leetcode/675/tests/test_core.cjs": "1b58ce6898e87dda4566327e72cceb6086d3c0d178ca749fde56c845a4eba376",
+    "leetcode/675/tests/test_solution.py": "009586b5a93496e888c17d6bdce70898302c37822e701f785775f388cfc4597b"
+  },
+  "fingerprint": "1ade11e6fe1eeec6f8bc06e8875e2bd9cbe2a6e5aeaa73e8c90ca15b2d8a191f"
+}
