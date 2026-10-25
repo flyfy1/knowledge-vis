@@ -1529,3 +1529,13 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Minimum bottleneck path | `leetcode/778/#step2` | Extend a path by max, then settle the smallest discovered bottleneck. |
 
 <!-- /leetcode-778-campaign -->
+
+
+<!-- leetcode-765-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Fixed prefix and position map | `leetcode/765/#step2` | Repair a seat block while preserving completed blocks and exact person positions. |
+| Cycle lower bound | `leetcode/765/#step3` | At most one component is added per swap; greedy reaches n components in n-c swaps. |
+
+<!-- /leetcode-765-campaign -->
