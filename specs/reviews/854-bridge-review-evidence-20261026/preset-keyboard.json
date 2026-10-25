@@ -1,0 +1,14 @@
+{
+  "presetChange": {
+    "bfs": "Snapshot 0/2; depth d=0 swaps; cumulative distinct strings enqueued: 1; target not yet in frontier.",
+    "bridge": "Snapshot 2/4 · Reassign only the two a destinations",
+    "input": "Start: aabc; target: abca; zero-based indices."
+  },
+  "traceEnd": {
+    "bfs": "Snapshot 2/2; depth d=2 swaps; cumulative distinct strings enqueued: 3; target in frontier: minimum 2 swaps.",
+    "bridge": "Snapshot 2/4 · Reassign only the two a destinations",
+    "frontier": "abca ✓"
+  },
+  "focusNext": "bridgeNext",
+  "focusReset": "bridgeReset"
+}

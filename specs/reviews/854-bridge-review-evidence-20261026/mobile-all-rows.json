@@ -1,0 +1,66 @@
+[
+  {
+    "documentWidth": 320,
+    "lang": "zh-CN",
+    "overflow": [],
+    "row": "状态 1/4 · 从一份任意分配开始",
+    "text": "先看清：改分配，还是交换字母？\n\n目标始终是 abca。a₀、a₁ 只是给两个 a 暂贴的标签，不是新字符。箭头 i → j 表示：把当前位置 i 的字母分配到目标位置 j。这是证明中的分配示例，与下方 BFS 实验分别操作。\n\n固定目标：abca\n\n上一状态\n下一状态\n重置分配示例\n\n状态 1/4 · 从一份任意分配开始\n\n当前字符串：aabc\n\n位置 0\na₀\n目的地 0 → 3\n位置 1\na₁\n目的地 1 → 0\n位置 2\nb\n目的地 2 → 1\n位置 3\nc\n目的地 3 → 2\n\n环：(0 3 2 1)\n\n按当前分配还需交换\n3\n已做实际交换\n0\n\n这份分配把四个位置连成一个环，所以按它还需 4−1=3 次交换。先想一想：两个目的地都需要 a，若只互换两个 a 的目的地，有字母移动吗？实际要花几次交换？按“下一状态”查看。\n\n上例展示的是“有一条最优路线可以这样走”。下面的论证说明，首错位置一定有一个符合条件的最优搭档 j，但并未告诉我们怎样直接找到它。因此仍要保留所有符合条件的 j，不能只选第一个。",
+    "width": 320
+  },
+  {
+    "documentWidth": 320,
+    "lang": "en",
+    "overflow": [],
+    "row": "Snapshot 1/4 · Start with an arbitrary assignment",
+    "text": "First distinguish reassignment from a real swap\n\nThe target stays abca. Tags a₀ and a₁ only distinguish the two a occurrences; they are not new characters. An arrow i → j assigns the letter currently at position i to target position j. This proof example is separate from the BFS experiment below.\n\nFixed target: abca\n\nPrevious snapshot\nNext snapshot\nReset assignment example\n\nSnapshot 1/4 · Start with an arbitrary assignment\n\nCurrent string: aabc\n\nPosition 0\na₀\nDestination 0 → 3\nPosition 1\na₁\nDestination 1 → 0\nPosition 2\nb\nDestination 2 → 1\nPosition 3\nc\nDestination 3 → 2\n\nCycles: (0 3 2 1)\n\nSwaps needed for this assignment\n3\nActual swaps so far\n0\n\nThis assignment puts all four positions in one cycle, so following it needs 4−1=3 swaps. Predict first: both destinations need a. If we only exchange the two a destinations, will any letters move? How many actual swaps will that cost? Choose Next snapshot to see.\n\nThe example shows that an optimal route can work this way. The argument below establishes that the first mismatch has an eligible optimal partner j, but does not tell us how to find that partner directly. We must still keep every eligible j, not greedily choose the first one.",
+    "width": 320
+  },
+  {
+    "documentWidth": 320,
+    "lang": "zh-CN",
+    "overflow": [],
+    "row": "状态 2/4 · 只改两个 a 的目的地",
+    "text": "先看清：改分配，还是交换字母？\n\n目标始终是 abca。a₀、a₁ 只是给两个 a 暂贴的标签，不是新字符。箭头 i → j 表示：把当前位置 i 的字母分配到目标位置 j。这是证明中的分配示例，与下方 BFS 实验分别操作。\n\n固定目标：abca\n\n上一状态\n下一状态\n重置分配示例\n\n状态 2/4 · 只改两个 a 的目的地\n\n当前字符串：aabc\n\n位置 0\na₀\n目的地 0 → 0\n目的地已改\n位置 1\na₁\n目的地 1 → 3\n目的地已改\n位置 2\nb\n目的地 2 → 1\n位置 3\nc\n目的地 3 → 2\n\n环：(0)(1 3 2)\n\n按当前分配还需交换\n2\n已做实际交换\n0\n\n没有字母移动，实际花费 0 次交换。只把 0→3、1→0 改成 0→0、1→3；字符串仍是 aabc。位置 0 单独成环，按新分配还需 4−2=2 次。原题答案并没有从 3 变成 2：原先的 3 只是较差分配的代价，不是原题的下界。\n\n上例展示的是“有一条最优路线可以这样走”。下面的论证说明，首错位置一定有一个符合条件的最优搭档 j，但并未告诉我们怎样直接找到它。因此仍要保留所有符合条件的 j，不能只选第一个。",
+    "width": 320
+  },
+  {
+    "documentWidth": 320,
+    "lang": "en",
+    "overflow": [],
+    "row": "Snapshot 2/4 · Reassign only the two a destinations",
+    "text": "First distinguish reassignment from a real swap\n\nThe target stays abca. Tags a₀ and a₁ only distinguish the two a occurrences; they are not new characters. An arrow i → j assigns the letter currently at position i to target position j. This proof example is separate from the BFS experiment below.\n\nFixed target: abca\n\nPrevious snapshot\nNext snapshot\nReset assignment example\n\nSnapshot 2/4 · Reassign only the two a destinations\n\nCurrent string: aabc\n\nPosition 0\na₀\nDestination 0 → 0\nDestination changed\nPosition 1\na₁\nDestination 1 → 3\nDestination changed\nPosition 2\nb\nDestination 2 → 1\nPosition 3\nc\nDestination 3 → 2\n\nCycles: (0)(1 3 2)\n\nSwaps needed for this assignment\n2\nActual swaps so far\n0\n\nNo letters move, so this costs 0 actual swaps. Only 0→3 and 1→0 change to 0→0 and 1→3; the string is still aabc. Position 0 becomes its own cycle, and this assignment needs 4−2=2 swaps. The original answer did not fall from 3 to 2: 3 was the cost of the worse assignment, not a lower bound for the original problem.\n\nThe example shows that an optimal route can work this way. The argument below establishes that the first mismatch has an eligible optimal partner j, but does not tell us how to find that partner directly. We must still keep every eligible j, not greedily choose the first one.",
+    "width": 320
+  },
+  {
+    "documentWidth": 320,
+    "lang": "zh-CN",
+    "overflow": [],
+    "row": "状态 3/4 · 交换位置 1、2",
+    "text": "先看清：改分配，还是交换字母？\n\n目标始终是 abca。a₀、a₁ 只是给两个 a 暂贴的标签，不是新字符。箭头 i → j 表示：把当前位置 i 的字母分配到目标位置 j。这是证明中的分配示例，与下方 BFS 实验分别操作。\n\n固定目标：abca\n\n上一状态\n下一状态\n重置分配示例\n\n状态 3/4 · 交换位置 1、2\n\n当前字符串：abac\n\n位置 0\na₀\n目的地 0 → 0\n位置 1\nb\n目的地 1 → 1\n字母已交换\n位置 2\na₁\n目的地 2 → 3\n字母已交换\n位置 3\nc\n目的地 3 → 2\n\n环：(0)(1)(2 3)\n\n按当前分配还需交换\n1\n已做实际交换\n1\n\n这次真的交换了位置 1、2 的 a₁ 和 b，aabc → abac。两个字母各自带着其分配的目的地移动。实际已花 1 次；位置 1 也正确了，只剩位置 2、3 的二元环，按当前分配还需 1 次。\n\n上例展示的是“有一条最优路线可以这样走”。下面的论证说明，首错位置一定有一个符合条件的最优搭档 j，但并未告诉我们怎样直接找到它。因此仍要保留所有符合条件的 j，不能只选第一个。",
+    "width": 320
+  },
+  {
+    "documentWidth": 320,
+    "lang": "en",
+    "overflow": [],
+    "row": "Snapshot 3/4 · Swap positions 1 and 2",
+    "text": "First distinguish reassignment from a real swap\n\nThe target stays abca. Tags a₀ and a₁ only distinguish the two a occurrences; they are not new characters. An arrow i → j assigns the letter currently at position i to target position j. This proof example is separate from the BFS experiment below.\n\nFixed target: abca\n\nPrevious snapshot\nNext snapshot\nReset assignment example\n\nSnapshot 3/4 · Swap positions 1 and 2\n\nCurrent string: abac\n\nPosition 0\na₀\nDestination 0 → 0\nPosition 1\nb\nDestination 1 → 1\nToken swapped\nPosition 2\na₁\nDestination 2 → 3\nToken swapped\nPosition 3\nc\nDestination 3 → 2\n\nCycles: (0)(1)(2 3)\n\nSwaps needed for this assignment\n1\nActual swaps so far\n1\n\nThis time we really swap a₁ and b at positions 1 and 2: aabc → abac. Each token moves with its assigned destination. We have spent 1 actual swap; position 1 is now correct too. Only the two-position cycle 2,3 remains, requiring 1 more swap for this assignment.\n\nThe example shows that an optimal route can work this way. The argument below establishes that the first mismatch has an eligible optimal partner j, but does not tell us how to find that partner directly. We must still keep every eligible j, not greedily choose the first one.",
+    "width": 320
+  },
+  {
+    "documentWidth": 320,
+    "lang": "zh-CN",
+    "overflow": [],
+    "row": "状态 4/4 · 交换位置 2、3",
+    "text": "先看清：改分配，还是交换字母？\n\n目标始终是 abca。a₀、a₁ 只是给两个 a 暂贴的标签，不是新字符。箭头 i → j 表示：把当前位置 i 的字母分配到目标位置 j。这是证明中的分配示例，与下方 BFS 实验分别操作。\n\n固定目标：abca\n\n上一状态\n下一状态\n重置分配示例\n\n状态 4/4 · 交换位置 2、3\n\n当前字符串：abca\n\n位置 0\na₀\n目的地 0 → 0\n位置 1\nb\n目的地 1 → 1\n位置 2\nc\n目的地 2 → 2\n字母已交换\n位置 3\na₁\n目的地 3 → 3\n字母已交换\n\n环：(0)(1)(2)(3)\n\n按当前分配还需交换\n0\n已做实际交换\n2\n\n再交换位置 2、3 的 a₁ 和 c，abac → abca。实际共花 2 次；四个位置各自成环，还需 0 次。初始串有三个位置不对，一次交换至多改变两个位置，所以 1 次不够；这两次交换确实达到了原题最优值 2。\n\n上例展示的是“有一条最优路线可以这样走”。下面的论证说明，首错位置一定有一个符合条件的最优搭档 j，但并未告诉我们怎样直接找到它。因此仍要保留所有符合条件的 j，不能只选第一个。",
+    "width": 320
+  },
+  {
+    "documentWidth": 320,
+    "lang": "en",
+    "overflow": [],
+    "row": "Snapshot 4/4 · Swap positions 2 and 3",
+    "text": "First distinguish reassignment from a real swap\n\nThe target stays abca. Tags a₀ and a₁ only distinguish the two a occurrences; they are not new characters. An arrow i → j assigns the letter currently at position i to target position j. This proof example is separate from the BFS experiment below.\n\nFixed target: abca\n\nPrevious snapshot\nNext snapshot\nReset assignment example\n\nSnapshot 4/4 · Swap positions 2 and 3\n\nCurrent string: abca\n\nPosition 0\na₀\nDestination 0 → 0\nPosition 1\nb\nDestination 1 → 1\nPosition 2\nc\nDestination 2 → 2\nToken swapped\nPosition 3\na₁\nDestination 3 → 3\nToken swapped\n\nCycles: (0)(1)(2)(3)\n\nSwaps needed for this assignment\n0\nActual swaps so far\n2\n\nSwap a₁ and c at positions 2 and 3: abac → abca. We spent 2 actual swaps; all four positions are singletons, with 0 swaps left. Initially three positions were wrong and one swap changes at most two positions, so 1 cannot suffice. These two swaps therefore attain the original optimum of 2.\n\nThe example shows that an optimal route can work this way. The argument below establishes that the first mismatch has an eligible optimal partner j, but does not tell us how to find that partner directly. We must still keep every eligible j, not greedily choose the first one.",
+    "width": 320
+  }
+]

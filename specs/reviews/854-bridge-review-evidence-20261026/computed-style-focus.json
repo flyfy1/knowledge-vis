@@ -1,0 +1,89 @@
+{
+  "active": "bridgeNext",
+  "rows": [
+    {
+      "bg": "rgb(22, 27, 34)",
+      "border": "rgb(43, 53, 71)",
+      "color": "rgb(232, 237, 244)",
+      "font": "16px",
+      "height": 962.75,
+      "opacity": "1",
+      "outline": "rgb(232, 237, 244)",
+      "outlineOffset": "0px",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "selector": "#proofBridge",
+      "width": 952
+    },
+    {
+      "bg": "rgb(28, 35, 48)",
+      "border": "rgb(43, 53, 71)",
+      "color": "rgb(232, 237, 244)",
+      "font": "16px",
+      "height": 48,
+      "opacity": "1",
+      "outline": "rgb(255, 180, 84)",
+      "outlineOffset": "4px",
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "selector": "#bridgeNext",
+      "width": 143.203125
+    },
+    {
+      "bg": "rgb(28, 35, 48)",
+      "border": "rgb(43, 53, 71)",
+      "color": "rgb(232, 237, 244)",
+      "font": "16px",
+      "height": 48,
+      "opacity": "1",
+      "outline": "rgb(232, 237, 244)",
+      "outlineOffset": "0px",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "selector": "#bridgePrev",
+      "width": 173.5703125
+    },
+    {
+      "bg": "rgb(28, 35, 48)",
+      "border": "rgb(255, 180, 84)",
+      "color": "rgb(232, 237, 244)",
+      "font": "16px",
+      "height": 180,
+      "opacity": "1",
+      "outline": "rgb(232, 237, 244)",
+      "outlineOffset": "0px",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "selector": ".bridge-token",
+      "width": 221.5
+    },
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "rgb(255, 180, 84)",
+      "color": "rgb(255, 180, 84)",
+      "font": "14px",
+      "height": 24.5,
+      "opacity": "1",
+      "outline": "rgb(255, 180, 84)",
+      "outlineOffset": "0px",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "selector": ".bridge-marker",
+      "width": 191.5
+    },
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "rgb(232, 237, 244)",
+      "color": "rgb(232, 237, 244)",
+      "font": "16px",
+      "height": 28,
+      "opacity": "1",
+      "outline": "rgb(232, 237, 244)",
+      "outlineOffset": "0px",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "selector": ".bridge-counters dt",
+      "width": 422
+    }
+  ]
+}

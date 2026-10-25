@@ -1,0 +1,21 @@
+{
+  "focus": {
+    "id": "bridgeNext",
+    "outline": "rgba(5, 0, 73, 0.8) solid 3px"
+  },
+  "forced": true,
+  "marked": [
+    {
+      "animation": "none",
+      "border": "3px double rgba(5, 0, 73, 0.8)",
+      "text": "Position 1bDestination 1 → 1Token swapped"
+    },
+    {
+      "animation": "none",
+      "border": "3px double rgba(5, 0, 73, 0.8)",
+      "text": "Position 2a₁Destination 2 → 3Token swapped"
+    }
+  ],
+  "reduced": true,
+  "row": "Snapshot 3/4 · Swap positions 1 and 2"
+}

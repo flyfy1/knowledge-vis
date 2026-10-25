@@ -1,0 +1,40 @@
+{
+  "candidate": "27b9930daf25f9fb1651038bff1605969cb27f01",
+  "verdict": "focused-independent-acceptance",
+  "score": 97.5,
+  "required_open": [],
+  "closed": [
+    "854-BRIDGE-R1",
+    "854-A01"
+  ],
+  "runtime_unchanged_during_review": true,
+  "files": {
+    "specs/reviews/854-bridge-review-evidence-20261026/coldwalk-browser-observations.json": "f6d0a5bbad5fc3cec1069220c442f1afc7470139f3ce13b5366fe358c79b2df6",
+    "specs/reviews/854-bridge-review-evidence-20261026/computed-style-focus.json": "dc1c2f7b905ef755f5ed0ccbaf556fcd71aef12c7ad2e94fed89afe6a1e6e24d",
+    "specs/reviews/854-bridge-review-evidence-20261026/contrast-source-parity.json": "9814d25d777addee0f0b66965fce1f8baa76661d14941e033662c5691305af4d",
+    "specs/reviews/854-bridge-review-evidence-20261026/copied.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "specs/reviews/854-bridge-review-evidence-20261026/copy-api-payload.json": "e69f75085947bc51ed919b2abd4024d80f44725b1e661e6e6794aa3f823a8d75",
+    "specs/reviews/854-bridge-review-evidence-20261026/displayed.py": "7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068",
+    "specs/reviews/854-bridge-review-evidence-20261026/en-1440-csszoom2.png": "da399813f99baec8c4fce2671a7d6c884df2f0af4b7cdf379812b798075bc715",
+    "specs/reviews/854-bridge-review-evidence-20261026/en-320-csszoom2-heading.png": "2b9f036c88943d5bf8569782762b86435df207d28be70b87da031e689789e0e1",
+    "specs/reviews/854-bridge-review-evidence-20261026/en-320-csszoom2.png": "68b4235f34f9b6aaec72752cab92d92f5c0a0c8bce292977314c65c7716aa983",
+    "specs/reviews/854-bridge-review-evidence-20261026/en-320-mapping-counters.png": "41602bf3d5c9610f1cffeb1cec0c3d67b7673c411cfed1a0b56ab8174f1c231c",
+    "specs/reviews/854-bridge-review-evidence-20261026/en-row4.png": "c421896e57e7c3824319c0fd8277d5e2f15141579c10c7905ffd5f9f1ff297e0",
+    "specs/reviews/854-bridge-review-evidence-20261026/extreme-layout.json": "7b8235cc481dd6ab4698410ffbfe8d6f529f569a9c1c15ad97fcee53248e95be",
+    "specs/reviews/854-bridge-review-evidence-20261026/forced-reduced.json": "27d99b8da3ef742e35414a977dce2e4ed539bc4a5d5eba9cb150c7926b5d2a29",
+    "specs/reviews/854-bridge-review-evidence-20261026/forced-reduced.png": "78adb5c631238da451643272156a605fcb4fd2d6adba96123fa960354f7afb4a",
+    "specs/reviews/854-bridge-review-evidence-20261026/heading-geometry.json": "49d93ea19cf75da9329601a841627bcd3af79da16a97aa777aa43234d79709b1",
+    "specs/reviews/854-bridge-review-evidence-20261026/independence.json": "3ad04a532db0b4df4f3466b28fc09f6c11d9422a48316734fcc0bb408c4436e1",
+    "specs/reviews/854-bridge-review-evidence-20261026/keyboard-focus.png": "84548dafb4b071b099eae95ca67403807bcae647b12c02cd04e071935aac89b4",
+    "specs/reviews/854-bridge-review-evidence-20261026/mobile-all-rows.json": "eec198037e5a55071318a3a9f0a352657384e0ae5e3175a7b38d15bea22f43df",
+    "specs/reviews/854-bridge-review-evidence-20261026/preset-keyboard.json": "0560ce766944f32e6990a9e0588a5fa0f5fcb299d1087b4ece2ef2afc3571f60",
+    "specs/reviews/854-bridge-review-evidence-20261026/source-arithmetic-audit.json": "25f2a4f5255e90932661ce93d6764467cfb0f8d9b129e4ef4f6595a02f5cf2d3",
+    "specs/reviews/854-bridge-review-evidence-20261026/zh-1440-csszoom2.png": "5e0f12df9be0227350c6839aa696fac4a40db4491a70c55bb75d5c0e9e334b93",
+    "specs/reviews/854-bridge-review-evidence-20261026/zh-320-csszoom2.png": "15b2414e00bf5d395c946990db3338a40814a876418542690e0345e0b92c3567",
+    "specs/reviews/854-bridge-review-evidence-20261026/zh-320-mapping-counters.png": "ca1e36982c3d2256262795bbeec39ffbf89e5992ecade1575e67dfcb87262753",
+    "specs/reviews/854-bridge-review-evidence-20261026/zh-320-row2.png": "48297c40d9b81966130b3f59c765bef6b33c390274a2c18675619f0757f4098d",
+    "specs/reviews/854-bridge-review-evidence-20261026/zh-row4.png": "459f15e7c7501aaa47da678ffcdd6337304f53f22be3cf10621601329c6f5a80",
+    "specs/reviews/854-bridge-review-evidence-20261026/zoom-all-rows.json": "7cd313d05137f22a8377cd1dd141c829ec82efc6520f74db671f0747e5302e9e",
+    "specs/reviews/854-bridge-review-20261026.md": "13a61dde9645bf34465152bb811f15f35dd532c01e65a692ebba8cc26040334d"
+  }
+}

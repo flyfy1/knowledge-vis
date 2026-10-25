@@ -1,0 +1,55 @@
+# Independent review of 854 proof bridge — 2026-10-26
+
+Candidate: 27b9930daf25f9fb1651038bff1605969cb27f01. Reviewer: fresh agent /root/review_854_bridge (not author). Preview: http://127.0.0.1:19854/leetcode/854/. Frozen rubric: specs/leetcode-review-gates.md, six dimensions unchanged. This cold record was saved before reading revision request, implementation source, prior reviews, or author evidence.
+
+## Cold walkthrough (recorded before source audit)
+
+- Problem: transform anagram s1 to s2 with arbitrary-position swaps; return minimum number, zero-based positions. Hand derivation abc -> bac -> bca uses 2, and three mismatches exclude 1. BFS checks unit-cost layers, preserves every distinct suffix, and seen prevents repeated work. Baseline tries O(n²) swaps with O(n) string work; pruned version keeps at most n partners with the same O(n) work.
+- Before revealing snapshot 2, predicted aabc stays fixed, actual swaps stay 0, cycle (0 3 2 1) becomes (0)(1 3 2), and assignment cost changes 3 -> 2. Observed exactly that. Visible text explicitly says 3 was a worse assignment's cost, not an original-problem lower bound.
+- Before snapshot 3, predicted swap (1,2), aabc -> abac, cycles (0)(1)(2 3), actual count 1, remaining 1. Observed exactly that, including token-carried destinations and labeled highlights.
+- Before snapshot 4, predicted swap (2,3), abac -> abca, four singleton cycles, actual 2 and remaining 0, disabled Next. Observed exactly that; the stated three-mismatch lower bound proves optimum 2.
+- Used Enter to rewind row 4 -> 3; it restored abac and counts 1/1. Switching EN -> ZH preserved row 3. Read all four Chinese rows using Previous/Next; Space activated Next. Both languages distinguish reassignment and physical motion, preserve target abca, and warn that the proof only guarantees some eligible optimal partner, so all eligible j must remain.
+- Expanded BFS independently to abc -> bac, depth 1; proof stayed at row 4. Resetting proof restored its initial row while BFS remained depth 1. Start Previous and end Next are disabled. Prediction exercise: independently chose {3}; j=1 is already correct, whereas swap (0,3) directly reaches bbca. Correct feedback reconstructs the tempting wrong route through bacb.
+- Fresh reviewer-selected input for later executable check: aab -> baa. Prediction is one swap (0,2); j=1 must be excluded because target[1]=a is already correct. Equal aa -> aa needs 0. This is a code check because UI offers presets only.
+- Invariant paraphrase: correct positions can be singleton cycles in an optimal occurrence assignment; the predecessor of first mismatch i in its remaining cycle is misplaced and lies after i. A physical swap removes i from that cycle and spends precisely one unit of its optimum. BFS retains at least one such optimal continuation without knowing which eligible j it is.
+- Python mapping observed in the UI: a layer consists of queue entries with common depth; popleft gives FIFO; test equality before scanning i; list(state) plus swapping and join creates child without mutating parent; seen is set upon enqueue. Cost O(Vn²) time/O(Vn) space is conservative and distinct from stored rewind snapshots.
+
+Cold evidence: 854-bridge-review-evidence-20261026/coldwalk-browser-observations.json; en-row4.png; zh-row4.png. Desktop screenshot shows position/token/destination associations and text labels on highlights. Device/zoom, source parity, exact diff and score audit follow below; no verdict yet.
+
+## Source and focused regression audit
+
+- Reviewed exact diff `cf1a31fc75c66ca79e54513e050b7e0ba31b6e70..27b9930daf25f9fb1651038bff1605969cb27f01`, then the approved revision request and independent design review. Runtime changes are the proof widget insertion, 24 bilingual copy entries, one `bridgeRow` index and renderer/handlers, layout styles and versioned references; generator/brief changes match. Additional diff files are review/proposal/self-check/test artifacts. Author self-check scripts/results were not used as independent evidence.
+- The new widget is between the cycle definition and general singleton argument in `#step2`; four row arrays, counts and labels match the approved contract. Its handlers call only `renderBridge`; locale render preserves the row. No timer, animation, request, storage or solver modification is introduced.
+- Independently calculated cycles from the four destination arrays: cycle counts 1,2,3,4 imply remaining fixed-assignment costs 3,2,1,0. Checked target-letter compatibility at every destination and physically permuted both tokens and their destinations for swaps (1,2) and (2,3). Reassignment alone leaves token order and spent count unchanged. The two real swaps attain the independently derived lower bound 2. These tiny calculations corroborate the example; the general cycle argument supplies the proof.
+- Reviewer-selected `aab -> baa` returned 1 in canonical Python, matching the recorded prediction; `aa -> aa` returned 0 and the bridge input returned 2. Displayed Python, mirror JSON value, downloaded HTTP source and actual argument passed to `navigator.clipboard.writeText` match canonical source byte-for-byte. The write wrapper called the original API and was then removed. IAB clipboard readback returned empty despite successful UI/API completion, so physical OS pasteboard delivery is not claimed. This is a review-environment limitation, not evidence of a changed source-transfer defect.
+- Canonical `solution.py`, `python-code.js`, `core.js`, and `lesson-entry.json` are byte-identical between base and candidate. All eight local lesson runtime assets fetched from the preview match frozen candidate bytes; SHA-256 values are in `source-arithmetic-audit.json`. `python3 -B scripts/register_leetcode_lesson.py 854 --validate-only` exited 0 without output. No registry mutation occurred.
+- Duplicate-key detection parsed the entire copy namespace: 109 unique keys, including 24 new bridge keys, each with two nonempty strings. All four rendered EN/ZH rows were checked semantically against their action, mapping, counters and explanation, not merely key presence.
+- State isolation: hand exercise remained at `bac`/1 swap; BFS remained depth 1; selected/revealed prediction stayed correct; source panel stayed open and copy status stayed complete across bridge changes. Conversely, changing to preset F reset only BFS; jumping to its target produced depth 2/`abca` while the bridge stayed at snapshot 2.
+
+## Device and accessibility evidence
+
+- Inspected desktop rendering, all four rows in EN/ZH at 320 px, and all four in EN/ZH at 1440 px with **200% CSS body zoom**. This is CSS magnification, not a claim of native browser zoom or physical mobile-device testing. No essential element overflow or document horizontal overflow appeared in those matrices. Locale changes at every row preserved the row.
+- Additionally inspected the dense reassignment row at combined 320 px + 200% CSS zoom in both languages. Full labels and counters remain readable with considerable vertical scrolling. English heading `reassignment` overflows its own content box by about 5.2 rendered px, but glyph right edge 291.19 is inside card right edge 304 and viewport 320; the settled screenshot shows no clipping or text collision. This is not a required finding.
+- Enter/Space activate the controls; Tab follows Previous -> Next -> Reset. Native endpoint disabled states observed; 48 px control height, 3 px orange keyboard focus outline and 4 px offset measured. Forced colors retain double-border plus textual change markers and visible focus; reduced-motion emulation leaves snapshots static.
+- Calculated from rendered colors: body/panel 14.70:1, body/panel2 13.40:1, muted/panel2 6.45:1, change marker/panel2 8.94:1, focus/panel 9.81:1. No change relies on hue alone. Temporary zoom, media emulation and viewport overrides were restored.
+
+Evidence directory: `854-bridge-review-evidence-20261026/`. Key files: `coldwalk-browser-observations.json`, `source-arithmetic-audit.json`, `independence.json`, `preset-keyboard.json`, `mobile-all-rows.json`, `zoom-all-rows.json`, `extreme-layout.json`, `heading-geometry.json`, `computed-style-focus.json`, `contrast-source-parity.json`, `copy-api-payload.json`, and corresponding PNGs. The empty `copied.py` preserves the unsuccessful IAB clipboard readback; it is not the canonical or captured copy payload.
+
+## Findings, scores and verdict
+
+**Required open finding IDs: none.** `854-BRIDGE-R1`: fulfilled for this frozen candidate. Original low optional advisory `854-A01`: **closed by this reviewer** against `27b9930daf25f9fb1651038bff1605969cb27f01`; the cold walkthrough could instantiate the equal-letter destination exchange before the general proof. This closure does not rewrite the original advisory's severity or the historical 92.5/100 acceptance. No new required finding or regression was observed in the reviewed scope.
+
+| Dimension | Score / 4 | Weighted points | Evidence |
+| --- | ---: | ---: | --- |
+| Problem, terms, hand calculation | 4 | 15 | Explicit anagrams/output/indices; manual two-swap result and lower bound. |
+| Causal derivation and saved work | 4 | 20 | Baseline vs pruned candidate cost; concrete zero-cost reassignment; general singleton proof and greedy counterexample remain. |
+| Maintained state and correctness | 4 | 20 | Four mappings independently reconstructed; spent/remaining counts, optimal-route invariant and boundaries agree. |
+| Interaction and visual meaning | 4 | 20 | Predictions precede reveals; reversible snapshots, native endpoints, separate counters and old-state preservation verified. |
+| Transfer to Python and cost | 4 | 15 | Fresh executable case, immutable-parent mapping, source/API-argument parity and unchanged conservative costs. |
+| Bilingual and device access | 3 | 7.5 | Equivalent full reasoning, keyboard/contrast and width/zoom checks pass; very narrow magnification requires substantial scrolling. |
+
+**Total: 97.5/100. Verdict: independently accepted for the focused 854-BRIDGE-R1 revision and inspected prerequisite path at candidate `27b9930daf25f9fb1651038bff1605969cb27f01`.** Every dimension is at least 3 and no required fix remains. This is a focused follow-up against the stated accepted base, not a new broad solver sweep or retrospective rewrite of the prior report.
+
+P0 is complete in the reviewed scope. P1/P2: no additional feature needed. Deferred arbitrary matching input, animations and a generic permutation component remain appropriately out of scope.
+
+Limitations: one independent agent review, no measured novice teach-back; browser emulation rather than physical phone or assistive-technology user testing; clipboard API payload parity rather than confirmed OS paste; no re-execution of the unchanged solver's broad exhaustive suite, unchanged source fallback failure injection, or public deployment checks. Exact model identifier is not asserted. No implementation, registry, queue, Pi, publication, server-runtime or commit mutation was performed; only this review report/evidence were added.
