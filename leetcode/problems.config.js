@@ -2455,6 +2455,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) auxiliary space"
   },
   {
+    "id": 699,
+    "title": {
+      "zh": "掉落的方块",
+      "en": "Falling Squares"
+    },
+    "desc": {
+      "zh": "从接触边界到支撑高度，逐次推导区间重叠的最高堆叠。",
+      "en": "Derive exact landing heights from interval overlap and frozen square tops."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "区间重叠",
+        "en": "Interval overlap"
+      },
+      {
+        "zh": "模拟",
+        "en": "Simulation"
+      }
+    ],
+    "path": "699/",
+    "leetcodeUrl": "https://leetcode.com/problems/falling-squares/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(n) auxiliary space and O(n) output"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
