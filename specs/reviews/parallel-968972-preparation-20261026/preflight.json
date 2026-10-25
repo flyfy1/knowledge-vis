@@ -1,0 +1,63 @@
+{
+  "observedAt": "2026-10-25T18:12:24.438841+00:00",
+  "mode": "read-only preparation, not dispatch approval",
+  "centralHead": "ef907807c5e04902df41b2d48c5a5fb858efd79e",
+  "expectedHead": "ef907807c5e04902df41b2d48c5a5fb858efd79e",
+  "centralRecordedStatus": "running",
+  "centralRecordedCurrent": {
+    "problem_id": "801",
+    "stage": "fix",
+    "started_at": "2026-10-25T18:11:19.254186+00:00",
+    "run_id": "801-fix-64f7ccfc43ae"
+  },
+  "stopExists": false,
+  "catalogSnapshotAt": "2026-10-18T08:59:47.124517+00:00",
+  "catalogHardCount": 984,
+  "matchingReservationsById": [],
+  "reservationReadErrors": [],
+  "matchingSingleProblemRunnerProcesses": [],
+  "targets": [
+    {
+      "id": 968,
+      "catalogRecord": {
+        "id": 968,
+        "slug": "binary-tree-cameras",
+        "title": "Binary Tree Cameras",
+        "paidOnly": false,
+        "officialUrl": "https://leetcode.com/problems/binary-tree-cameras/",
+        "categories": [
+          "algorithms"
+        ]
+      },
+      "registered": false,
+      "problemRecord": null,
+      "currentMatches": false,
+      "runDirectories": [],
+      "reservationFiles": [],
+      "trackedLessonPaths": [],
+      "lessonDirectoryExists": false,
+      "lanePaths": []
+    },
+    {
+      "id": 972,
+      "catalogRecord": {
+        "id": 972,
+        "slug": "equal-rational-numbers",
+        "title": "Equal Rational Numbers",
+        "paidOnly": false,
+        "officialUrl": "https://leetcode.com/problems/equal-rational-numbers/",
+        "categories": [
+          "algorithms"
+        ]
+      },
+      "registered": false,
+      "problemRecord": null,
+      "currentMatches": false,
+      "runDirectories": [],
+      "reservationFiles": [],
+      "trackedLessonPaths": [],
+      "lessonDirectoryExists": false,
+      "lanePaths": []
+    }
+  ]
+}
