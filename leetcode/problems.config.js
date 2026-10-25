@@ -1883,6 +1883,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(m n²) time; O(n) auxiliary space"
   },
   {
+    "id": 517,
+    "title": {
+      "zh": "超级洗衣机",
+      "en": "Super Washing Machines"
+    },
+    "desc": {
+      "zh": "从同时传衣服推导边界流量与单机发送瓶颈。",
+      "en": "Derive cut-flow and sender bottlenecks from simultaneous dress transfers."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "前缀和",
+        "en": "Prefix sum"
+      }
+    ],
+    "path": "517/",
+    "leetcodeUrl": "https://leetcode.com/problems/super-washing-machines/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
