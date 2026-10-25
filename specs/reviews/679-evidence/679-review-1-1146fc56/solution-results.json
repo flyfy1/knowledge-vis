@@ -1,0 +1,16 @@
+{
+  "kind": "author self-check",
+  "exhaustive_unordered_hands": 495,
+  "solvable": 404,
+  "seeded_ordered_hands": 200,
+  "seed": 679,
+  "monitored_calls": 6258,
+  "lengths": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "oracle": "Independent contiguous interval expression sets over all card permutations; covers the five binary shapes",
+  "result": "PASS"
+}
