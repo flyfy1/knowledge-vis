@@ -45,3 +45,20 @@ the original launcher bytes and AST. The prior zero-spawn refusal remains record
 One dispatch of these exact bytes is approved after immediate fresh revalidation;
 changed central identity requires a newly reviewed refresh, and partial execution
 must be observed without rerunning. No lesson acceptance or publication is implied.
+
+## Author-phase observation approval
+
+After the second zero-spawn refusal, root reviewed the exact refreshed diff and
+independently reran seven passing checks. Launcher
+`17709040ee542e912e697aedca65e0800a5e6c5b77535fafb3aa3597b1cd25a8`
+and preflight
+`988302a994cfd3b89cbfe01b184008fe4c96287c7f1032c8e612173962e1c60d`
+are approved for one fresh-revalidated dispatch. Central now runs #839 author at
+`96e82a2f927f7506f2dd97956f1b837e67c9df1e`; BASE and shared policy are unchanged.
+The author preflight derives the sole dirty-path prefix `leetcode/839/` from the
+actual current prompt metadata and explicit ownership instruction, rejects renames
+and all other paths, and retains the narrow review branch. It permits normal
+author edits without relaxing shared-file or target-lane protection. Runtime
+hashes are still checked before importing helpers. No launcher control flow changed.
+Both earlier refusals remain evidence of no execution. All prior dispatch
+conditions, changed-pin refusal and partial-execution observation rules remain.
