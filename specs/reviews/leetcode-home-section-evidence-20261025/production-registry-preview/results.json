@@ -1,0 +1,32 @@
+{
+  "status": "pass",
+  "catalog": 104,
+  "checks": [
+    "Direct category, lazy source, all links, stage hiding, unrelated URL state",
+    "Exact ID/NFKC, bilingual token AND, no-match, clear focus, locale and IME",
+    "Category/history/query/reload/lesson Back, other cards unchanged, All entry inline",
+    "Both locales 320/390/640/1280, equivalent layout zoom, 48px targets, forced colors/focus",
+    "Error/retry, query retention, delay/category/locale race, stable focus",
+    "Bilingual empty catalog and real 15-second timeout with late response/retry",
+    "Malformed/duplicate/unsafe links, empty, 984 long-title fixture (146ms including navigation/filter)",
+    "Denied storage and file-protocol catalog fallback"
+  ],
+  "requests": [
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921036632-1",
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921037012-1",
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921037100-1",
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921037651-1",
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921037689-2",
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921037913-1",
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921037950-1",
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921037982-1",
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921038012-1",
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921038044-1",
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921038074-1",
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921038105-1",
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921038172-1",
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921053532-2",
+    "http://127.0.0.1:18776/leetcode/problems.config.js?v=1792921053594-1"
+  ],
+  "errors": []
+}

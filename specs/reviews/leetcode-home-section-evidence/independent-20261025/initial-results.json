@@ -1,0 +1,63 @@
+[
+  {
+    "case": "actual-local-registry",
+    "count": 105,
+    "status": "105 of 105 available lessons",
+    "url": "http://127.0.0.1:52905/?other=kept&category=leetcode#anchor",
+    "overflow": false
+  },
+  {
+    "case": "search-history-ime-clear",
+    "status": "passed",
+    "errors": []
+  },
+  {
+    "case": "empty",
+    "error": false,
+    "cards": 0,
+    "status": "0 of 0 available lessons",
+    "headings": []
+  },
+  {
+    "case": "blank-fields",
+    "error": false,
+    "cards": 1,
+    "status": "1 of 1 available lessons",
+    "headings": [
+      "#51 · "
+    ]
+  },
+  {
+    "case": "bad-url",
+    "error": true,
+    "cards": 0,
+    "status": "The lesson list could not be loaded. Please retry.",
+    "headings": []
+  },
+  {
+    "case": "duplicate",
+    "error": true,
+    "cards": 0,
+    "status": "The lesson list could not be loaded. Please retry.",
+    "headings": []
+  },
+  {
+    "case": "delayed-category-locale",
+    "requests": 1,
+    "status": "1 of 1 available lessons",
+    "query": "51",
+    "heading": "#51 · N-Queens"
+  },
+  {
+    "case": "retry",
+    "requests": 2,
+    "focus": true,
+    "query": "51",
+    "error": false
+  },
+  {
+    "case": "file",
+    "count": 1,
+    "href": "file:///Users/songyy/Documents/knowledge-vis/leetcode/51/"
+  }
+]

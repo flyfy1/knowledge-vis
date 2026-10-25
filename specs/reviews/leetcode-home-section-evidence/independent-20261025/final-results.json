@@ -1,0 +1,60 @@
+{
+  "sourceSha256": "5c2fd1c30fee38137595f1599465970696c30fdf58ea687894741be508a49053",
+  "records": [
+    {
+      "case": "blank-title",
+      "rejected": true
+    },
+    {
+      "case": "blank-description",
+      "rejected": true
+    },
+    {
+      "case": "blank-language",
+      "rejected": true
+    },
+    {
+      "case": "blank-complexity",
+      "rejected": true
+    },
+    {
+      "case": "blank-topic",
+      "rejected": true
+    },
+    {
+      "case": "file-activation",
+      "selector": ".lesson-link",
+      "title": "#51 · N-Queens"
+    },
+    {
+      "case": "file-activation",
+      "selector": ".lesson-actions a:first-child",
+      "title": "#51 · N-Queens"
+    },
+    {
+      "case": "ime-locale-rebuild",
+      "passed": true
+    },
+    {
+      "case": "long-content-and-keyboard",
+      "width320": true,
+      "zoom200Effective320": true,
+      "forcedFocus": {
+        "tag": "BUTTON",
+        "text": "All",
+        "outline": "solid",
+        "width": "3px",
+        "color": "rgba(5, 0, 73, 0.8)"
+      }
+    },
+    {
+      "case": "984-synthetic",
+      "elapsedMs": 86,
+      "status": "1 of 984 available lessons"
+    },
+    {
+      "case": "storage-denial",
+      "passed": true
+    }
+  ]
+}

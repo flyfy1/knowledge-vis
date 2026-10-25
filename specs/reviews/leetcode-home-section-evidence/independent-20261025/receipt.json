@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-25",
+  "index_sha256": "5c2fd1c30fee38137595f1599465970696c30fdf58ea687894741be508a49053",
+  "scope": "Independent local Chromium review; no production mutation or public delivery proof",
+  "evidence_sha256": {
+    "blank-metadata-before.png": "0875b89ecc4ec4c51810353538d5b1bbb07c9527d64957a3ecaa99ef76353bcd",
+    "en-320.png": "44f28eefad598ff78e6a7bcc2ff4aa2b4906dc7d08aff85faffeb09ecbc6443b",
+    "final-probe.cjs": "9afd921c7aa4da261ef73172e2e972bdebd1c4b5c3b17f2d09fe50bd67b1dcbe",
+    "final-results.json": "c085900666a60fa7060e7d84d2e25efe278fefe82a07e4605ceae0c051fd2964",
+    "initial-probe.cjs": "3880ae78800e860482af2e9d3c2a7b018ca6bbbb649394f7ad480924b3be7f46",
+    "initial-results.json": "c4edb09f513402767413654061aa8796f332c8f02b57548661f214a4f508f125",
+    "long-en-zoom200-effective320.png": "c938a2d9a9fb903b621307eaa6eba54c5e5ff457b9b680ccf6adf790a27e79a3",
+    "run-probe.py": "5c5327cfa0966a2efdc87cd19e3c2e6690a6fbd11f7d07967c9dffadeaf62209"
+  }
+}
