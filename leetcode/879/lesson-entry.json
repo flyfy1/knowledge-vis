@@ -1,0 +1,38 @@
+{
+  "id": 879,
+  "title": {
+    "zh": "盈利计划",
+    "en": "Profitable Schemes"
+  },
+  "desc": {
+    "zh": "从四个子集推导人数与封顶利润的计数表。",
+    "en": "Derive a count table for exact members and capped profit from four subsets."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "动态规划",
+      "en": "Dynamic programming"
+    },
+    {
+      "zh": "计数",
+      "en": "Counting"
+    }
+  ],
+  "path": "879/",
+  "leetcodeUrl": "https://leetcode.com/problems/profitable-schemes/",
+  "language": "Python",
+  "complexity": "O(m*n*(minProfit+1)) time; O(n*(minProfit+1)) auxiliary space",
+  "concepts": [
+    {
+      "name": "Capped profit counting DP",
+      "step": 2,
+      "description": "Count subsets by exact members used and threshold-capped profit."
+    },
+    {
+      "name": "Skip/take partition",
+      "step": 1,
+      "description": "Merge equivalent futures without merging distinct choices."
+    }
+  ]
+}
