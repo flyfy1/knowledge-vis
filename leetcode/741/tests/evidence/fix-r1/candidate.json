@@ -1,0 +1,203 @@
+{
+  "problemId": 741,
+  "kind": "author repair candidate; separate independent re-review pending",
+  "candidateId": "741-r1-8e9824b35b5f817e",
+  "frozenAt": "2026-10-25T07:54:47.407875+00:00",
+  "baseCommit": "9b76d2c47b8664d16a70fbfe38454f3f63553b90",
+  "previousReviewedCandidate": "1df03890339676554dd58fa81ae99dcc73c6072d",
+  "previousReport": "specs/reviews/741-review-1-c02e416e.md",
+  "previousReportSha256": "5584efc47efee3c8f6a5c98f64ef560e85cb835d03b09f3d06bdd6aef66be899",
+  "findingStatus": {
+    "741-R1": "fixed awaiting independent review"
+  },
+  "runtimeChanges": [
+    "copy.js: shorten only English p2 label",
+    "index.html: bump copy asset query version"
+  ],
+  "metadataChanged": false,
+  "canonicalLanguage": "Python",
+  "officialInterfaceEvidence": "provenance/official.json",
+  "sourcePair": [
+    "solution.py",
+    "python-code.js",
+    "PYTHON_SOURCE"
+  ],
+  "files": {
+    "BRIEF.md": "b7bbec8f556c0b43d8a3679f44bde00df5bdaf4d9b0ece4b7cf0d13507c11b29",
+    "app.js": "2d805d019682b6232ef899036e6ffe71f4d54c9519d0def30f496210df5f206e",
+    "copy.js": "742475f45d54531162534685a55be2f5041db36b4c73275a03eb23ac72dc4594",
+    "core.js": "3749afe62d7bec57813d2894494023becf2dc642318c0f374508f8bb57e9fcb9",
+    "index.html": "e57fe219c4ffe544db1298fbe0c35332f7599399bb5fd9cc2d9a72b0fc6b7e39",
+    "lesson-entry.json": "ed431af9243528ea8ecc927ca660c169615967c8664dc9863b2137bfab3e0ead",
+    "provenance/official.json": "d2216cca71088c2dc504b54180685cf96282ebefcb1b9f5a6f6283e1d2b585ee",
+    "python-code.js": "a5339ef1eb509f17b67eed1300f07bb9506cf7190a979acaf8ed3fd27218a70c",
+    "solution.py": "bf7335abc35abe708bee936858f16b11e1a0e6c7968c6cb833fc47d97208a786",
+    "style.css": "2b6f107c91536796ff586efae7d93d214783f7787a268d40e5b3335392db7db9",
+    "tests/SELF-CHECK.md": "0240fbd1c8659573baf01febd63fc17c24abd353c485cbea14160075103e5f02",
+    "tests/browser.cjs": "82ec94f18ef0d5f55864fbd369cd09dabe7a1430a92279ffcb2b6abc6f2a5280",
+    "tests/check.py": "aa2f2640e2d0ec6aa5e820103a27790f6c88478d3a38ad2282684a4f03894438",
+    "tests/core.cjs": "14b1759fff0dffc1ad68312561be289ac4b009c09501ce1d4e96d78e87c093ab",
+    "tests/evidence/browser.json": "c343a24154a6b04848f242a8828375c374f3539c1d2b62eea3a1b1e2c48fd5ab",
+    "tests/evidence/candidate.json": "beee07c39a38b04f4436a664d5d448ce2fb05347ffc5c9fd4f0f344cd992e2a7",
+    "tests/evidence/en-1440-board.png": "82994019dbfd638ca5c1000516d18da97d547d541a125cffcc24c92dc7dbdcae",
+    "tests/evidence/en-1440-dependencies.png": "6194216e004bbf325e523034dc0872d168ae4df8c362870459c8ed18ea5e86a1",
+    "tests/evidence/en-320-board.png": "8fb448363415cfdc38c399ecad9b483fbd105165f6a3cbe6cc8c4e076b5401df",
+    "tests/evidence/en-320-dependencies.png": "fc67ffe5a5f7cedefaa1167581e415ff9ad0d2ee3654663daa81e9993c9df9f1",
+    "tests/evidence/en-390-board.png": "d0f28f4bc623a448ac6e0a03fe8ee525ce52ab53a8cf7c2ada72e9c1481d43cd",
+    "tests/evidence/en-390-dependencies.png": "1d6cdd8e62faf2c715ea6aed94efa5d24dad2dacb169424a8e92b3276326fff0",
+    "tests/evidence/en-736-board.png": "856b48f8fa6f3d4446d6a87c31958e6e2148323571248be029fa652fba2cd68e",
+    "tests/evidence/en-736-dependencies.png": "5f06397bacc3ac1218aef0a6a17fb046f32a1ca66880699d21d9834130306024",
+    "tests/evidence/en-hand.png": "4a346e7e7b09114461d11e3b7eb269f4cf16f08d5bc80ed13b9df3ab2deb4865",
+    "tests/evidence/en-header.png": "6caaddfa65bcc4e1532cc691e622862a21988eecf7c1319864414fe49fbc0012",
+    "tests/evidence/en-quiz.png": "5c2fed6f585b2fbbbfe0d23e3641d5ad88c45ce48c1aa3727d1980f00b76dca3",
+    "tests/evidence/en-single.png": "6eac8f8f6a9e2e895a73890a1da211ebd834dcca5ead754ee2deb73ac2255659",
+    "tests/evidence/en-source.png": "d66d811df1624ecd8df2fbc3f57632ab7b64f8059c62f6de339797510476b035",
+    "tests/evidence/en-unreachable.png": "40ad7a6f432d4859ea03e6304c41662d966bfbe1741e455ebd237a32c14c3098",
+    "tests/evidence/en-zoom200.png": "1c056d43235bebafb95e026ca78f2a71568752edfd128dbaae1f413abbdfe826",
+    "tests/evidence/fix-r1/after/browser.json": "c343a24154a6b04848f242a8828375c374f3539c1d2b62eea3a1b1e2c48fd5ab",
+    "tests/evidence/fix-r1/after/en-1440-board.png": "82994019dbfd638ca5c1000516d18da97d547d541a125cffcc24c92dc7dbdcae",
+    "tests/evidence/fix-r1/after/en-1440-dependencies.png": "6194216e004bbf325e523034dc0872d168ae4df8c362870459c8ed18ea5e86a1",
+    "tests/evidence/fix-r1/after/en-320-board.png": "8fb448363415cfdc38c399ecad9b483fbd105165f6a3cbe6cc8c4e076b5401df",
+    "tests/evidence/fix-r1/after/en-320-dependencies.png": "fc67ffe5a5f7cedefaa1167581e415ff9ad0d2ee3654663daa81e9993c9df9f1",
+    "tests/evidence/fix-r1/after/en-320-direct.png": "e674d8db4db43a1cf68be60b08fc59ba631739edcd49849f44abb0676fbdfce0",
+    "tests/evidence/fix-r1/after/en-320-roundtrip.png": "e674d8db4db43a1cf68be60b08fc59ba631739edcd49849f44abb0676fbdfce0",
+    "tests/evidence/fix-r1/after/en-390-board.png": "d0f28f4bc623a448ac6e0a03fe8ee525ce52ab53a8cf7c2ada72e9c1481d43cd",
+    "tests/evidence/fix-r1/after/en-390-dependencies.png": "1d6cdd8e62faf2c715ea6aed94efa5d24dad2dacb169424a8e92b3276326fff0",
+    "tests/evidence/fix-r1/after/en-390-direct.png": "9785f2f95d6d922d2e1045ae0ed0162232e4703b9e4000efe00252423829db7d",
+    "tests/evidence/fix-r1/after/en-390-roundtrip.png": "9785f2f95d6d922d2e1045ae0ed0162232e4703b9e4000efe00252423829db7d",
+    "tests/evidence/fix-r1/after/en-736-board.png": "856b48f8fa6f3d4446d6a87c31958e6e2148323571248be029fa652fba2cd68e",
+    "tests/evidence/fix-r1/after/en-736-dependencies.png": "5f06397bacc3ac1218aef0a6a17fb046f32a1ca66880699d21d9834130306024",
+    "tests/evidence/fix-r1/after/en-hand.png": "4a346e7e7b09114461d11e3b7eb269f4cf16f08d5bc80ed13b9df3ab2deb4865",
+    "tests/evidence/fix-r1/after/en-header.png": "6caaddfa65bcc4e1532cc691e622862a21988eecf7c1319864414fe49fbc0012",
+    "tests/evidence/fix-r1/after/en-quiz.png": "5c2fed6f585b2fbbbfe0d23e3641d5ad88c45ce48c1aa3727d1980f00b76dca3",
+    "tests/evidence/fix-r1/after/en-single.png": "6eac8f8f6a9e2e895a73890a1da211ebd834dcca5ead754ee2deb73ac2255659",
+    "tests/evidence/fix-r1/after/en-source.png": "d66d811df1624ecd8df2fbc3f57632ab7b64f8059c62f6de339797510476b035",
+    "tests/evidence/fix-r1/after/en-unreachable.png": "40ad7a6f432d4859ea03e6304c41662d966bfbe1741e455ebd237a32c14c3098",
+    "tests/evidence/fix-r1/after/en-zoom200.png": "1c056d43235bebafb95e026ca78f2a71568752edfd128dbaae1f413abbdfe826",
+    "tests/evidence/fix-r1/after/numerical.json": "c1c6db64bb063db1a4cfc0d26166fb76e48c714ce1ab5ba43e49f9ded1499a3e",
+    "tests/evidence/fix-r1/after/preset-readability.json": "842b185922bb7d1339c74c82cd75e0fb29e8b741ee45ddae3f2d52f9e8e1e765",
+    "tests/evidence/fix-r1/after/rendered-meaning.json": "afc5c536ff33e69e34558977f2bdb9e8dbc0fad841ee4d669c8c92d7a2cb051f",
+    "tests/evidence/fix-r1/after/zh-1440-board.png": "16f7f73e911035f8aa102279e6960fa78d4eba34433a92f712036c7a789be393",
+    "tests/evidence/fix-r1/after/zh-1440-dependencies.png": "5ec5a052348e09906655bcb54cb70e8189d28ce8eff87bcf5865bc8225c9621d",
+    "tests/evidence/fix-r1/after/zh-320-board.png": "0c417004e81bb399207576816eff609a2ad21bc7e2760fe1714350efe62638d0",
+    "tests/evidence/fix-r1/after/zh-320-dependencies.png": "9b293cec72fbb18799aa1e5a1a30f9f7e398e18fe76038a40550d2aa04fd0186",
+    "tests/evidence/fix-r1/after/zh-320-switch.png": "2a380eb74e97f125a2ae8656629029a36e69cc94a0f2fe6564fc8a50b328c6ab",
+    "tests/evidence/fix-r1/after/zh-390-board.png": "0fb32afb852dc2bd67521f7ffaa5387067f4409711ce9a8ceb03bf37c8516dfb",
+    "tests/evidence/fix-r1/after/zh-390-dependencies.png": "39a354be0091417156d5ed2373769a1f94db4cfd4123865dd8a4026d9cce4471",
+    "tests/evidence/fix-r1/after/zh-390-switch.png": "f113cc9dd40b1b2dd7bcf0b4ba2fe5ea25e8beeff129a049f58e21aac4cde4f4",
+    "tests/evidence/fix-r1/after/zh-736-board.png": "fd30c37ecda64c0d46bbf741e77a9f9e239801cca75b29a4bbe30640f34169fd",
+    "tests/evidence/fix-r1/after/zh-736-dependencies.png": "20256ca8e9fc6ee6d5388c9d2e9967f20d0668360e86195d2c585a55dc72e604",
+    "tests/evidence/fix-r1/after/zh-hand.png": "c6d001f557d3f6d02d8970124ded40f054cd15004b8ddd97061a5218f3c829ee",
+    "tests/evidence/fix-r1/after/zh-header.png": "ac3b5ae7b6d875bed59f6c5e1207e9203ef42200e1a7184422573c8f0dfabc12",
+    "tests/evidence/fix-r1/after/zh-quiz.png": "942ce21b29045d1f400ba89713dee83a51edfd805ef6effebdbe882eda3b08c7",
+    "tests/evidence/fix-r1/after/zh-single.png": "ae0b9afd7a3d513357b69cd2855ad374f65b8b4945bfb2ed0a4b1c3c8c1334dd",
+    "tests/evidence/fix-r1/after/zh-source.png": "3a06ebe2d26ef5ad8c78da6e99afcef08574142e4b3b029bda8dd1d068136624",
+    "tests/evidence/fix-r1/after/zh-unreachable.png": "8258bca2a0bb2866b60c96a892f11b961fb16c7a5f1e9a12a40cbac0f1db26fa",
+    "tests/evidence/fix-r1/after/zh-zoom200.png": "89b3108aa18c59a5fffd7bfd4f5e788ab7148974cfc942338088dbb762a2d9c7",
+    "tests/evidence/fix-r1/before/en-320-direct.png": "b5fb18e14550ae69f3ccb27562447e6778c00c4232dec4a0ee3a5775f39c570e",
+    "tests/evidence/fix-r1/before/en-320-roundtrip.png": "b5fb18e14550ae69f3ccb27562447e6778c00c4232dec4a0ee3a5775f39c570e",
+    "tests/evidence/fix-r1/before/en-390-direct.png": "02a722d34061a66472d4930967dd3e92116542a68e56300af42272e24fac20fc",
+    "tests/evidence/fix-r1/before/en-390-roundtrip.png": "02a722d34061a66472d4930967dd3e92116542a68e56300af42272e24fac20fc",
+    "tests/evidence/fix-r1/before/preset-readability.json": "8d092f6b15242c348eb52fd36162beb855db0c29874bb88640c2c58b9c2f9b67",
+    "tests/evidence/fix-r1/before/zh-320-switch.png": "2a380eb74e97f125a2ae8656629029a36e69cc94a0f2fe6564fc8a50b328c6ab",
+    "tests/evidence/fix-r1/before/zh-390-switch.png": "f113cc9dd40b1b2dd7bcf0b4ba2fe5ea25e8beeff129a049f58e21aac4cde4f4",
+    "tests/evidence/fix-r1/preflight.json": "3c8cfb4cd4402b2d97fb3af647b30413baa1e44103dd1c7fb7279d16f7a5856b",
+    "tests/evidence/numerical.json": "c1c6db64bb063db1a4cfc0d26166fb76e48c714ce1ab5ba43e49f9ded1499a3e",
+    "tests/evidence/rendered-meaning.json": "45dbb412fc529a090cacaf999490ea661c888567f3cd23235235bf36d3283c1e",
+    "tests/evidence/zh-1440-board.png": "16f7f73e911035f8aa102279e6960fa78d4eba34433a92f712036c7a789be393",
+    "tests/evidence/zh-1440-dependencies.png": "5ec5a052348e09906655bcb54cb70e8189d28ce8eff87bcf5865bc8225c9621d",
+    "tests/evidence/zh-320-board.png": "0c417004e81bb399207576816eff609a2ad21bc7e2760fe1714350efe62638d0",
+    "tests/evidence/zh-320-dependencies.png": "9b293cec72fbb18799aa1e5a1a30f9f7e398e18fe76038a40550d2aa04fd0186",
+    "tests/evidence/zh-390-board.png": "0fb32afb852dc2bd67521f7ffaa5387067f4409711ce9a8ceb03bf37c8516dfb",
+    "tests/evidence/zh-390-dependencies.png": "39a354be0091417156d5ed2373769a1f94db4cfd4123865dd8a4026d9cce4471",
+    "tests/evidence/zh-736-board.png": "fd30c37ecda64c0d46bbf741e77a9f9e239801cca75b29a4bbe30640f34169fd",
+    "tests/evidence/zh-736-dependencies.png": "20256ca8e9fc6ee6d5388c9d2e9967f20d0668360e86195d2c585a55dc72e604",
+    "tests/evidence/zh-hand.png": "c6d001f557d3f6d02d8970124ded40f054cd15004b8ddd97061a5218f3c829ee",
+    "tests/evidence/zh-header.png": "ac3b5ae7b6d875bed59f6c5e1207e9203ef42200e1a7184422573c8f0dfabc12",
+    "tests/evidence/zh-quiz.png": "942ce21b29045d1f400ba89713dee83a51edfd805ef6effebdbe882eda3b08c7",
+    "tests/evidence/zh-single.png": "ae0b9afd7a3d513357b69cd2855ad374f65b8b4945bfb2ed0a4b1c3c8c1334dd",
+    "tests/evidence/zh-source.png": "3a06ebe2d26ef5ad8c78da6e99afcef08574142e4b3b029bda8dd1d068136624",
+    "tests/evidence/zh-unreachable.png": "8258bca2a0bb2866b60c96a892f11b961fb16c7a5f1e9a12a40cbac0f1db26fa",
+    "tests/evidence/zh-zoom200.png": "89b3108aa18c59a5fffd7bfd4f5e788ab7148974cfc942338088dbb762a2d9c7",
+    "tests/inspect.cjs": "92f72d8a6005ffa41baccc68dd9c728b86a14b4e0edaf44df5e3bb5b4f414422",
+    "tests/oracle.py": "1fdbf4f6891f75d72740b23cd7ac4c84344da4e60a6e3a219297b2491b62197f",
+    "tests/preset-readability.cjs": "8f980e0eb2f79d6e0c207abcf965be81d9dcf22022abe8cbf1580e6816259984"
+  },
+  "sharedReadOnly": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "served": {
+    "index.html": {
+      "url": "http://127.0.0.1:18770/leetcode/741/index.html",
+      "sha256": "e57fe219c4ffe544db1298fbe0c35332f7599399bb5fd9cc2d9a72b0fc6b7e39",
+      "matchesCheckout": true
+    },
+    "copy.js": {
+      "url": "http://127.0.0.1:18770/leetcode/741/copy.js",
+      "sha256": "742475f45d54531162534685a55be2f5041db36b4c73275a03eb23ac72dc4594",
+      "matchesCheckout": true
+    },
+    "app.js": {
+      "url": "http://127.0.0.1:18770/leetcode/741/app.js",
+      "sha256": "2d805d019682b6232ef899036e6ffe71f4d54c9519d0def30f496210df5f206e",
+      "matchesCheckout": true
+    },
+    "core.js": {
+      "url": "http://127.0.0.1:18770/leetcode/741/core.js",
+      "sha256": "3749afe62d7bec57813d2894494023becf2dc642318c0f374508f8bb57e9fcb9",
+      "matchesCheckout": true
+    },
+    "style.css": {
+      "url": "http://127.0.0.1:18770/leetcode/741/style.css",
+      "sha256": "2b6f107c91536796ff586efae7d93d214783f7787a268d40e5b3335392db7db9",
+      "matchesCheckout": true
+    },
+    "solution.py": {
+      "url": "http://127.0.0.1:18770/leetcode/741/solution.py",
+      "sha256": "bf7335abc35abe708bee936858f16b11e1a0e6c7968c6cb833fc47d97208a786",
+      "matchesCheckout": true
+    },
+    "python-code.js": {
+      "url": "http://127.0.0.1:18770/leetcode/741/python-code.js",
+      "sha256": "a5339ef1eb509f17b67eed1300f07bb9506cf7190a979acaf8ed3fd27218a70c",
+      "matchesCheckout": true
+    }
+  },
+  "preflight": {
+    "kind": "author self-check",
+    "command": "python3 -B scripts/register_leetcode_lesson.py 741 --validate-only",
+    "cwd": "/home/songyy/projects/leetcode-hard-campaign-20261018",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "complexity": "O(n³) time; O(n²) auxiliary space"
+  },
+  "checks": {
+    "preset-readability.cjs": {
+      "beforeExitCode": 1,
+      "afterExitCode": 0
+    },
+    "check.py": {
+      "exitCode": 0,
+      "cases": 8926,
+      "intermediateStates": 407181
+    },
+    "browser.cjs": {
+      "exitCode": 0,
+      "statesPerLocale": 261
+    },
+    "inspect.cjs": {
+      "exitCode": 0
+    },
+    "git diff --check": {
+      "exitCode": 0
+    }
+  },
+  "limits": [
+    "author self-check only; independent closure pending",
+    "headless Linux Chromium 156.0.8078.4",
+    "CSS 200% zoom, not browser-menu zoom",
+    "No deployment or LeetCode submission"
+  ]
+}

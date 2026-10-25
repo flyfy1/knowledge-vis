@@ -98,3 +98,80 @@ No real phone, native browser-menu zoom, screen-reader listening session,
 novice teach-back, independent lesson review or LeetCode submission performed.
 No deployment/registration or shared campaign state changes. The next gate is a
 separate source-blind cold walkthrough and review of this frozen candidate.
+
+## 2026-10-25 repair self-check — 741-R1
+
+Status: **fixed awaiting independent review**, not closed or independently
+accepted. Historical report `specs/reviews/741-review-1-c02e416e.md` and original
+`evidence/candidate.json` are preserved. New candidate receipt:
+`evidence/fix-r1/candidate.json` (SHA-256 manifest; no commit requested).
+
+| Finding | Causal fix | Reproduction and evidence | Next gate |
+| --- | --- | --- | --- |
+| 741-R1 | Shorten English p2 from “Official example 2: no path → 0” to “Official 2: no path → 0”; bump copy.js query version. | `tests/preset-readability.cjs`; `evidence/fix-r1/before/` retains the failing closed-selector screenshots/measurements, `after/` retains passing ones at 320/390px in EN/ZH and the EN→ZH→EN roundtrip. | Separate reviewer reruns the unchanged 320px reproduction and 390px control against this candidate, then decides closure. |
+
+The baseline command (repository root)
+`OUTPUT_DIR="$PWD/leetcode/741/tests/evidence/fix-r1/before" node leetcode/741/tests/preset-readability.cjs`
+returned **exit 1**, `741-R1: selected text exceeds closed control text area`.
+At 320px the English text was 234.2404px, versus 206px available after the
+existing 15px left/right padding and a conservative 24px native-arrow allowance.
+The screenshot visibly hides the result. Chinese 320px and English 390px fit.
+The unchanged regression with `OUTPUT_DIR` ending in `fix-r1/after` returned
+**exit 0**: new English width 165.9843px, leaving about 40px spare. Native control
+width stays 262px (client 260px), font stays 16px; Chinese remains 142.7842px.
+Both direct and roundtrip screenshots visibly show identity, no-path scope and
+`→ 0`. The preset still resets to t=0 and finishes with result 0. These measurements
+use Linux Chromium 156.0.8078.4 and the recorded CSS stack, without inferring a
+resolved font. The arrow allowance is bounded to this environment.
+
+The first draft of the screenshot harness captured while shared smooth scrolling
+was still moving. Before the retained baseline run it was corrected to request
+reduced motion, wait two animation frames and assert the selector lies inside the
+viewport. Both retained red and green runs use that same corrected harness.
+
+All following commands ran from the repository root and returned **exit 0**.
+Artifact-producing checks used
+`OUTPUT_DIR="$PWD/leetcode/741/tests/evidence/fix-r1/after"`:
+
+- `python3 -B leetcode/741/tests/check.py`: actual official Python class executed;
+  8,926 oracle cases and 407,181 intermediate JS states pass, including obstacles,
+  singleton grids, n=50, greedy failure, input preservation, localization duplicate
+  detection and exact offline mirror parity.
+- `node leetcode/741/tests/browser.cjs`: 261 selected states per locale, all seven
+  preset results, rewind/replay/reset, all quiz choices and feedback invalidation,
+  locale retention, keyboard, 320/390/736/1440px and CSS 200% zoom pass. Canonical
+  source equals rendered textContent, clipboard, native-key manual fallback and
+  downloaded source including final newline, in both locales. Blocked storage
+  and file:// opening pass; no console/resource/external-request errors.
+- `node leetcode/741/tests/inspect.cjs`: both-locale formula operands and overlap
+  guard, completed-layer ledger 1→3→4, final versus pending labels, shared
+  destination 3+1=4, invalid/unreachable distinction, and prediction explanations
+  pass. Added adversarial greedy t=3 rows (1,2) assertion: chosen predecessor
+  (0,2)=3, gain 2, result 5; last candidate has value 2. Rewind/replay restores
+  exact stage text. This checks candidate/value binding separately from counts.
+- `node leetcode/741/tests/preset-readability.cjs`: required reproduction passes
+  in both locales at 320/390px, with complete selected scope and result.
+- `python3 -B scripts/register_leetcode_lesson.py 741 --validate-only`: **exit 0,
+  empty stdout/stderr**, recorded in `evidence/fix-r1/preflight.json`. Complexity
+  remains the single string `O(n³) time; O(n²) auxiliary space`. No registration.
+- `git diff --check`: no whitespace errors.
+
+Author visually inspected the retained before English 320px capture and after
+English direct/roundtrip 320px, Chinese 320px, both locales at 390px, both 320px
+dense predecessor views and both CSS-200% board captures. The fixed label and
+result are complete; the dense candidate/value/ledger labels remain legible.
+The full browser check records minimum sampled contrast 6.4494:1, focus 8.9372:1,
+and shared plus local CSS 11,649 bytes. No style or color change was needed.
+
+The saved official evidence offers Python3 and TypeScript. Python3's exact
+`Solution.cherryPickup(self, grid: list[list[int]]) -> int` interface matches the
+canonical source. There is no non-Python language contract or supportedLanguages
+list to repair; Python already has preference. Read the registration source-pair
+table: Python maps to solution.py / python-code.js / PYTHON_SOURCE. These files
+remain unchanged and byte parity passes; no mirror regeneration was needed.
+
+Only lesson-local files/evidence changed. Algorithm, recurrence, teaching sequence,
+metadata, shared assets, historical report and prior evidence are preserved.
+No child agents, service changes, commits, registration or deployment. The new
+candidate still needs focused independent re-review of 741-R1; headless Linux
+checks do not claim physical-device, macOS-font or native-browser-zoom coverage.
