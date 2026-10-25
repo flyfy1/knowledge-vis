@@ -7,6 +7,7 @@ It does not rewrite historical acceptance or establish public delivery.
 | Request | New frozen candidate | Fresh review | Outcome |
 | --- | --- | --- | --- |
 | 780-COPY-R1 | `8063cd1919c3816eb74f2096c0afe51e05bf75b6` | [780-review-2-8e1e7b4e](https://github.com/flyfy1/knowledge-vis/blob/d2d9596ae88bdf346a9d5275406baabc19e3f151/specs/reviews/780-review-2-8e1e7b4e.md) | Explicit closure; 100/100; no required open findings |
+| 793-COPY-R1 | `37a0404f4a9e796d8df3c2cfa9a188957fe835fe` | [793-review-2-6ee3ec7c](https://github.com/flyfy1/knowledge-vis/blob/6b1364e3d5960d3ae74e97b9b50e599f5628c5ba/specs/reviews/793-review-2-6ee3ec7c.md) | Explicit closure; 95/100; no required open findings |
 
 Root read the actual #780 report and state after its fresh review
 `780-review-69d63636d18d`. The report identifies the original reproduction,
@@ -18,7 +19,18 @@ independent candidate review, not proof of learner outcomes or official submissi
 Review/accepted checkpoint `d2d9596ae88bdf346a9d5275406baabc19e3f151` was pushed
 and the exact central remote branch head verified. The live main worker had
 advanced to `793-fix-6babf5aace6a`; no active checkout or queue mutation was needed
-for that immutable push. The other eight requests are not closed by this record.
+for that immutable push.
+
+Root subsequently read #793's actual new report and accepted state. Fresh run
+`793-review-4e2b25052f03` explicitly closed the request against its new candidate:
+only footer/key removal and the copy query changed; all algorithm, source, style,
+metadata and remaining bilingual text stayed identical. Actual zh→en→zh trace
+and quiz preservation, page-end layout, keyboard links and exact source transfers
+passed. Reviewer adaptation redirected a hardcoded test output path in memory
+without changing the assertions or overwriting earlier author evidence.
+Checkpoint `6b1364e3d5960d3ae74e97b9b50e599f5628c5ba` was pushed and its exact
+remote head verified while the worker continued `798-fix-31669d4caff7`.
+The remaining seven requests are not closed by this record.
 
 The old public #780 remains until the normal every-20 publication batch verifies
 the new revision. Release eligibility uses changed runtime digests, so this
