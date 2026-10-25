@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "repo": "/home/songyy/projects/leetcode-hard-lane-972-20261026",
+  "queue": [
+    "972"
+  ],
+  "expected_head": "78becd97f109598d173d689d69a7051be8e6724d",
+  "started_at": "2026-10-25T18:34:24.872191+00:00",
+  "status": "completed",
+  "current": null,
+  "problems": {
+    "972": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            3,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/972-review-1-bb491d1d.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh canonical Python examples and counterexample passed.",
+            "Exact displayed, copied, fallback-copied and downloaded source parity verified.",
+            "Both locales, keyboard, rewind/reset, 320/390/desktop and CSS 200% zoom checked; screenshots inspected.",
+            "Non-mutating metadata preflight exited 0."
+          ],
+          "detail": "95/100. No required fixes. One optional teaching advisory: show 6/100 = 3/50 in the hand-addition ledger. Acceptance applies only to the reviewed revision; no publication or LeetCode submission claimed.",
+          "run_id": "972-review-4e4b76d32049",
+          "candidate": "574ed7161620353c1ae02ac2d1a118877ec68961",
+          "candidate_sha256": "428caf0126bb9b62dbf04b8b3c5c3b59c4c423ab7f14010b1cfb1cb4fca9aa71",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "9186464e91058bf63ed704e28e6e808e08b166a6"
+        }
+      ],
+      "author_runs": [
+        "972-author-54f9ce572467"
+      ],
+      "prior_report": "specs/reviews/972-review-1-bb491d1d.md",
+      "candidate": "574ed7161620353c1ae02ac2d1a118877ec68961",
+      "registration_commit": "78becd97f109598d173d689d69a7051be8e6724d",
+      "accepted_at": "2026-10-25T18:50:37.488289+00:00"
+    }
+  },
+  "runs": [
+    {
+      "id": "972-author-54f9ce572467",
+      "problem_id": "972",
+      "role": "author",
+      "started_at": "2026-10-25T18:34:24.959152+00:00",
+      "status": "completed",
+      "candidate": "58cb97e51878f40e234b3e78a8bf9adb24f30c51",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-972-20261026/runs/972-author-54f9ce572467",
+      "session_ids": [
+        "01a17457-ae96-7472-b8cc-8e4a18c79484"
+      ],
+      "finished_at": "2026-10-25T18:45:07.574848+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented and froze the complete bilingual lesson in leetcode/972/. Official Python interface verified; numerical, browser, source-parity, accessibility and metadata preflight checks passed. Evidence and reproducible tests are included. Author self-check complete; independent review remains pending."
+      }
+    },
+    {
+      "id": "972-review-4e4b76d32049",
+      "problem_id": "972",
+      "role": "review",
+      "started_at": "2026-10-25T18:45:16.931043+00:00",
+      "status": "completed",
+      "candidate": "574ed7161620353c1ae02ac2d1a118877ec68961",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-972-20261026/runs/972-review-4e4b76d32049",
+      "session_ids": [
+        "01a17461-a0f4-7803-8033-600b7a589d2b"
+      ],
+      "finished_at": "2026-10-25T18:50:27.338965+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          3,
+          4,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/972-review-1-bb491d1d.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Fresh canonical Python examples and counterexample passed.",
+          "Exact displayed, copied, fallback-copied and downloaded source parity verified.",
+          "Both locales, keyboard, rewind/reset, 320/390/desktop and CSS 200% zoom checked; screenshots inspected.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "95/100. No required fixes. One optional teaching advisory: show 6/100 = 3/50 in the hand-addition ledger. Acceptance applies only to the reviewed revision; no publication or LeetCode submission claimed."
+      }
+    }
+  ],
+  "updated_at": "2026-10-25T18:50:37.501743+00:00"
+}
