@@ -25,3 +25,14 @@
 | precedence repair | 2 | remove the previous term, multiply it, add it back |
 
 Simulation is a trace, never execution of the official submission. The independent oracle enumerates operator/cut choices and evaluates with an AST-like stack; it is separate from the canonical solver.
+
+## Updated official access evidence (2026-10-25)
+
+A dispatcher independently opened the official page normally while logged out,
+observed the statement, examples and constraints, and selected Python3 in the
+visible language menu. See [the structured access record](provenance/official-access-20261025.json)
+and [the inspected screenshot](provenance/official-python3-20261025.jpg).
+The actual visible return annotation is `list[str]`; the canonical solution's
+imported `List[str]` annotation is equivalent for this interface. This capture
+supplements the older author notes and does not itself grant review acceptance.
+The prior official-access finding requires a new independent reviewer decision.
