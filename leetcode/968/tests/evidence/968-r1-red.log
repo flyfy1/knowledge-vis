@@ -1,0 +1,17 @@
+AssertionError [ERR_ASSERTION]: en-1280-two-cameras: current outline must be orange
++ actual - expected
+
++ 'rgb(110, 231, 255)'
+- 'rgb(255, 180, 84)'
+       ^
+    at check (/home/songyy/projects/leetcode-hard-lane-968-20261026/leetcode/968/tests/current_marker.cjs:15:10)
+    at runNextTicks (node:internal/process/task_queues:60:5)
+    at process.processImmediate (node:internal/timers:454:9)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17)
+    at async /home/songyy/projects/leetcode-hard-lane-968-20261026/leetcode/968/tests/current_marker.cjs:23:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'rgb(110, 231, 255)',
+  expected: 'rgb(255, 180, 84)',
+  operator: 'strictEqual'
+}

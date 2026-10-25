@@ -1,0 +1,1604 @@
+{
+  "kind": "author self-check",
+  "finding": "968-R1",
+  "host": "linux",
+  "result": "pass",
+  "rows": [
+    {
+      "label": "en-1280-two-cameras",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 6/7; cameras placed so far: 2.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.E: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.B: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 1.F: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.G: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.C: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 2."
+    },
+    {
+      "label": "en-1280-rewind",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": true,
+          "camera": false,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        }
+      ],
+      "progress": "Completed decisions: 5/7; cameras placed so far: 1.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.E: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.B: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 1.F: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.G: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1."
+    },
+    {
+      "label": "en-1280-replay",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 6/7; cameras placed so far: 2.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.E: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.B: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 1.F: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.G: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.C: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 2."
+    },
+    {
+      "label": "en-1280-locale-roundtrip",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 6/7; cameras placed so far: 2.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.E: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.B: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 1.F: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.G: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.C: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 2."
+    },
+    {
+      "label": "en-1280-before-root-repair",
+      "nodes": [
+        {
+          "text": "A:N",
+          "current": true,
+          "camera": false,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 4/5; cameras placed so far: 1.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.C: left=N, right=C → K. At least one child is N, so install here. Cameras so far: 1.B: left=K, right=C → C. No child is N; a K child covers this node. Cameras so far: 1.A: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1."
+    },
+    {
+      "label": "en-1280-root-repair",
+      "nodes": [
+        {
+          "text": "A:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 5/5; cameras placed so far: 2.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.C: left=N, right=C → K. At least one child is N, so install here. Cameras so far: 1.B: left=K, right=C → C. No child is N; a K child covers this node. Cameras so far: 1.A: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.Root A was N and has no parent; add one camera, N → K. Cameras so far: 2."
+    },
+    {
+      "label": "en-1280-undo-root-repair",
+      "nodes": [
+        {
+          "text": "A:N",
+          "current": true,
+          "camera": false,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 4/5; cameras placed so far: 1.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.C: left=N, right=C → K. At least one child is N, so install here. Cameras so far: 1.B: left=K, right=C → C. No child is N; a K child covers this node. Cameras so far: 1.A: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1."
+    },
+    {
+      "label": "en-1280-replay-root-repair",
+      "nodes": [
+        {
+          "text": "A:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 5/5; cameras placed so far: 2.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.C: left=N, right=C → K. At least one child is N, so install here. Cameras so far: 1.B: left=K, right=C → C. No child is N; a K child covers this node. Cameras so far: 1.A: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.Root A was N and has no parent; add one camera, N → K. Cameras so far: 2."
+    },
+    {
+      "label": "en-1280-default-installation",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "C:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 3/4; cameras placed so far: 1.",
+      "ledger": "C: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.B: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 1."
+    },
+    {
+      "label": "zh-1280-two-cameras",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 6/7；累计放置 2 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。E：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。B：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 1 台。F：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。G：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。C：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 2 台。"
+    },
+    {
+      "label": "zh-1280-rewind",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": true,
+          "camera": false,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        }
+      ],
+      "progress": "已完成决策 5/7；累计放置 1 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。E：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。B：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 1 台。F：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。G：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。"
+    },
+    {
+      "label": "zh-1280-replay",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 6/7；累计放置 2 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。E：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。B：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 1 台。F：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。G：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。C：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 2 台。"
+    },
+    {
+      "label": "zh-1280-locale-roundtrip",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 6/7；累计放置 2 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。E：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。B：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 1 台。F：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。G：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。C：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 2 台。"
+    },
+    {
+      "label": "zh-1280-before-root-repair",
+      "nodes": [
+        {
+          "text": "A:N",
+          "current": true,
+          "camera": false,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 4/5；累计放置 1 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。C：左=N，右=C → K。至少一个孩子为 N，在此装一台；累计 1 台。B：左=K，右=C → C。无 N 孩子，有 K 孩子覆盖本节点；累计 1 台。A：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。"
+    },
+    {
+      "label": "zh-1280-root-repair",
+      "nodes": [
+        {
+          "text": "A:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 5/5；累计放置 2 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。C：左=N，右=C → K。至少一个孩子为 N，在此装一台；累计 1 台。B：左=K，右=C → C。无 N 孩子，有 K 孩子覆盖本节点；累计 1 台。A：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。根 A 原为 N，没有父节点；补装一台，N → K。累计 2 台。"
+    },
+    {
+      "label": "zh-1280-undo-root-repair",
+      "nodes": [
+        {
+          "text": "A:N",
+          "current": true,
+          "camera": false,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 4/5；累计放置 1 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。C：左=N，右=C → K。至少一个孩子为 N，在此装一台；累计 1 台。B：左=K，右=C → C。无 N 孩子，有 K 孩子覆盖本节点；累计 1 台。A：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。"
+    },
+    {
+      "label": "zh-1280-replay-root-repair",
+      "nodes": [
+        {
+          "text": "A:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 5/5；累计放置 2 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。C：左=N，右=C → K。至少一个孩子为 N，在此装一台；累计 1 台。B：左=K，右=C → C。无 N 孩子，有 K 孩子覆盖本节点；累计 1 台。A：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。根 A 原为 N，没有父节点；补装一台，N → K。累计 2 台。"
+    },
+    {
+      "label": "zh-1280-default-installation",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "C:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 3/4；累计放置 1 台。",
+      "ledger": "C：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。B：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 1 台。"
+    },
+    {
+      "label": "en-320-two-cameras",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 6/7; cameras placed so far: 2.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.E: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.B: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 1.F: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.G: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.C: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 2."
+    },
+    {
+      "label": "en-320-rewind",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": true,
+          "camera": false,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        }
+      ],
+      "progress": "Completed decisions: 5/7; cameras placed so far: 1.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.E: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.B: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 1.F: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.G: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1."
+    },
+    {
+      "label": "en-320-replay",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 6/7; cameras placed so far: 2.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.E: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.B: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 1.F: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.G: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.C: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 2."
+    },
+    {
+      "label": "en-320-locale-roundtrip",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 6/7; cameras placed so far: 2.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.E: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.B: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 1.F: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.G: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.C: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 2."
+    },
+    {
+      "label": "en-320-before-root-repair",
+      "nodes": [
+        {
+          "text": "A:N",
+          "current": true,
+          "camera": false,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 4/5; cameras placed so far: 1.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.C: left=N, right=C → K. At least one child is N, so install here. Cameras so far: 1.B: left=K, right=C → C. No child is N; a K child covers this node. Cameras so far: 1.A: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1."
+    },
+    {
+      "label": "en-320-root-repair",
+      "nodes": [
+        {
+          "text": "A:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 5/5; cameras placed so far: 2.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.C: left=N, right=C → K. At least one child is N, so install here. Cameras so far: 1.B: left=K, right=C → C. No child is N; a K child covers this node. Cameras so far: 1.A: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.Root A was N and has no parent; add one camera, N → K. Cameras so far: 2."
+    },
+    {
+      "label": "en-320-undo-root-repair",
+      "nodes": [
+        {
+          "text": "A:N",
+          "current": true,
+          "camera": false,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 4/5; cameras placed so far: 1.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.C: left=N, right=C → K. At least one child is N, so install here. Cameras so far: 1.B: left=K, right=C → C. No child is N; a K child covers this node. Cameras so far: 1.A: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1."
+    },
+    {
+      "label": "en-320-replay-root-repair",
+      "nodes": [
+        {
+          "text": "A:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 5/5; cameras placed so far: 2.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.C: left=N, right=C → K. At least one child is N, so install here. Cameras so far: 1.B: left=K, right=C → C. No child is N; a K child covers this node. Cameras so far: 1.A: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.Root A was N and has no parent; add one camera, N → K. Cameras so far: 2."
+    },
+    {
+      "label": "en-320-default-installation",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "C:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "Completed decisions: 3/4; cameras placed so far: 1.",
+      "ledger": "C: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.B: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 1."
+    },
+    {
+      "label": "zh-320-two-cameras",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 6/7；累计放置 2 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。E：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。B：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 1 台。F：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。G：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。C：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 2 台。"
+    },
+    {
+      "label": "zh-320-rewind",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": true,
+          "camera": false,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        }
+      ],
+      "progress": "已完成决策 5/7；累计放置 1 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。E：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。B：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 1 台。F：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。G：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。"
+    },
+    {
+      "label": "zh-320-replay",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 6/7；累计放置 2 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。E：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。B：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 1 台。F：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。G：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。C：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 2 台。"
+    },
+    {
+      "label": "zh-320-locale-roundtrip",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "C:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "E:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "F:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "G:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 6/7；累计放置 2 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。E：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。B：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 1 台。F：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。G：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。C：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 2 台。"
+    },
+    {
+      "label": "zh-320-before-root-repair",
+      "nodes": [
+        {
+          "text": "A:N",
+          "current": true,
+          "camera": false,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 4/5；累计放置 1 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。C：左=N，右=C → K。至少一个孩子为 N，在此装一台；累计 1 台。B：左=K，右=C → C。无 N 孩子，有 K 孩子覆盖本节点；累计 1 台。A：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。"
+    },
+    {
+      "label": "zh-320-root-repair",
+      "nodes": [
+        {
+          "text": "A:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 5/5；累计放置 2 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。C：左=N，右=C → K。至少一个孩子为 N，在此装一台；累计 1 台。B：左=K，右=C → C。无 N 孩子，有 K 孩子覆盖本节点；累计 1 台。A：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。根 A 原为 N，没有父节点；补装一台，N → K。累计 2 台。"
+    },
+    {
+      "label": "zh-320-undo-root-repair",
+      "nodes": [
+        {
+          "text": "A:N",
+          "current": true,
+          "camera": false,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 4/5；累计放置 1 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。C：左=N，右=C → K。至少一个孩子为 N，在此装一台；累计 1 台。B：左=K，右=C → C。无 N 孩子，有 K 孩子覆盖本节点；累计 1 台。A：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。"
+    },
+    {
+      "label": "zh-320-replay-root-repair",
+      "nodes": [
+        {
+          "text": "A:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "B:C",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "C:K",
+          "current": false,
+          "camera": true,
+          "stroke": "rgb(110, 231, 255)",
+          "width": "3px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 5/5；累计放置 2 台。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。C：左=N，右=C → K。至少一个孩子为 N，在此装一台；累计 1 台。B：左=K，右=C → C。无 N 孩子，有 K 孩子覆盖本节点；累计 1 台。A：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。根 A 原为 N，没有父节点；补装一台，N → K。累计 2 台。"
+    },
+    {
+      "label": "zh-320-default-installation",
+      "nodes": [
+        {
+          "text": "A:?",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "B:K",
+          "current": true,
+          "camera": true,
+          "stroke": "rgb(255, 180, 84)",
+          "width": "4px"
+        },
+        {
+          "text": "C:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        },
+        {
+          "text": "D:N",
+          "current": false,
+          "camera": false,
+          "stroke": "rgb(154, 167, 184)",
+          "width": "2px"
+        }
+      ],
+      "progress": "已完成决策 3/4；累计放置 1 台。",
+      "ledger": "C：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。B：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 1 台。"
+    }
+  ]
+}

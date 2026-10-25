@@ -1,0 +1,194 @@
+{
+  "kind": "author self-check",
+  "url": "http://127.0.0.1:18791/leetcode/968/",
+  "host": "linux",
+  "log": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "final": "All nodes covered. Minimum cameras: 1; positions: B.",
+      "ledger": "C: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.B: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 1.A: left=K, right=C → C. No child is N; a K child covers this node. Cameras so far: 1."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "final": "All nodes covered. Minimum cameras: 2; positions: D, A.",
+      "ledger": "E: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.D: left=C, right=N → K. At least one child is N, so install here. Cameras so far: 1.C: left=K, right=C → C. No child is N; a K child covers this node. Cameras so far: 1.B: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.A: left=N, right=C → K. At least one child is N, so install here. Cameras so far: 2."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "final": "All nodes covered. Minimum cameras: 1; positions: A.",
+      "ledger": "A: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.Root A was N and has no parent; add one camera, N → K. Cameras so far: 1."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "final": "All nodes covered. Minimum cameras: 2; positions: C, A.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.C: left=N, right=C → K. At least one child is N, so install here. Cameras so far: 1.B: left=K, right=C → C. No child is N; a K child covers this node. Cameras so far: 1.A: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.Root A was N and has no parent; add one camera, N → K. Cameras so far: 2."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "final": "All nodes covered. Minimum cameras: 2; positions: B, C.",
+      "ledger": "D: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.E: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.B: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 1.F: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.G: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 1.C: left=N, right=N → K. At least one child is N, so install here. Cameras so far: 2.A: left=K, right=K → C. No child is N; a K child covers this node. Cameras so far: 2."
+    },
+    {
+      "lang": "en",
+      "option": 0,
+      "feedback": "Follow each waiting demand again. G=N, F=K, E=C, D=N, C=K, B=C, A=N. Repair A last: 3 cameras at F, C, and A. Two cameras miss a demand; four are unnecessary. Each camera covers at most 3 chain nodes, so two can cover at most 6 of the 7 nodes."
+    },
+    {
+      "lang": "en",
+      "option": 1,
+      "feedback": "Follow each waiting demand again. G=N, F=K, E=C, D=N, C=K, B=C, A=N. Repair A last: 3 cameras at F, C, and A. Two cameras miss a demand; four are unnecessary. Each camera covers at most 3 chain nodes, so two can cover at most 6 of the 7 nodes."
+    },
+    {
+      "lang": "en",
+      "option": 2,
+      "feedback": "Correct. G=N, F=K, E=C, D=N, C=K, B=C, A=N. Repair A last: 3 cameras at F, C, and A. Two cameras miss a demand; four are unnecessary. Each camera covers at most 3 chain nodes, so two can cover at most 6 of the 7 nodes."
+    },
+    {
+      "lang": "en",
+      "clipboard": "automatic and native fallback byte-equal",
+      "host": "linux",
+      "sentinelReset": true
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "final": "全部节点已覆盖。最少 1 台；位置：B。",
+      "ledger": "C：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。B：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 1 台。A：左=K，右=C → C。无 N 孩子，有 K 孩子覆盖本节点；累计 1 台。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "final": "全部节点已覆盖。最少 2 台；位置：D, A。",
+      "ledger": "E：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。D：左=C，右=N → K。至少一个孩子为 N，在此装一台；累计 1 台。C：左=K，右=C → C。无 N 孩子，有 K 孩子覆盖本节点；累计 1 台。B：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。A：左=N，右=C → K。至少一个孩子为 N，在此装一台；累计 2 台。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "final": "全部节点已覆盖。最少 1 台；位置：A。",
+      "ledger": "A：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。根 A 原为 N，没有父节点；补装一台，N → K。累计 1 台。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "final": "全部节点已覆盖。最少 2 台；位置：C, A。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。C：左=N，右=C → K。至少一个孩子为 N，在此装一台；累计 1 台。B：左=K，右=C → C。无 N 孩子，有 K 孩子覆盖本节点；累计 1 台。A：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。根 A 原为 N，没有父节点；补装一台，N → K。累计 2 台。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "final": "全部节点已覆盖。最少 2 台；位置：B, C。",
+      "ledger": "D：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。E：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。B：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 1 台。F：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。G：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 1 台。C：左=N，右=N → K。至少一个孩子为 N，在此装一台；累计 2 台。A：左=K，右=K → C。无 N 孩子，有 K 孩子覆盖本节点；累计 2 台。"
+    },
+    {
+      "lang": "zh",
+      "option": 0,
+      "feedback": "再看每个等待需求。 G=N，F=K，E=C，D=N，C=K，B=C，A=N；最后给 A 补一台，共 3 台（F、C、A）。2 台漏掉一个需求，4 台不是最少。每台在链上最多覆盖 3 个节点，2 台最多覆盖 6 个，也不足以覆盖 7 个。"
+    },
+    {
+      "lang": "zh",
+      "option": 1,
+      "feedback": "再看每个等待需求。 G=N，F=K，E=C，D=N，C=K，B=C，A=N；最后给 A 补一台，共 3 台（F、C、A）。2 台漏掉一个需求，4 台不是最少。每台在链上最多覆盖 3 个节点，2 台最多覆盖 6 个，也不足以覆盖 7 个。"
+    },
+    {
+      "lang": "zh",
+      "option": 2,
+      "feedback": "正确。 G=N，F=K，E=C，D=N，C=K，B=C，A=N；最后给 A 补一台，共 3 台（F、C、A）。2 台漏掉一个需求，4 台不是最少。每台在链上最多覆盖 3 个节点，2 台最多覆盖 6 个，也不足以覆盖 7 个。"
+    },
+    {
+      "lang": "zh",
+      "clipboard": "automatic and native fallback byte-equal",
+      "host": "linux",
+      "sentinelReset": true
+    }
+  ],
+  "contrastRows": [
+    {
+      "ink": "text",
+      "bg": "bg",
+      "ratio": 16.086987125379448
+    },
+    {
+      "ink": "text",
+      "bg": "panel",
+      "ratio": 14.704584598678618
+    },
+    {
+      "ink": "text",
+      "bg": "panel2",
+      "ratio": 13.397069143240783
+    },
+    {
+      "ink": "muted",
+      "bg": "bg",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "ink": "muted",
+      "bg": "panel",
+      "ratio": 7.078851579017443
+    },
+    {
+      "ink": "muted",
+      "bg": "panel2",
+      "ratio": 6.449407898769069
+    },
+    {
+      "ink": "accent",
+      "bg": "bg",
+      "ratio": 13.100679028115637
+    },
+    {
+      "ink": "accent",
+      "bg": "panel",
+      "ratio": 11.974898815275662
+    },
+    {
+      "ink": "accent",
+      "bg": "panel2",
+      "ratio": 10.910104011097095
+    },
+    {
+      "ink": "accent2",
+      "bg": "bg",
+      "ratio": 10.731637051347173
+    },
+    {
+      "ink": "accent2",
+      "bg": "panel",
+      "ratio": 9.809435643476732
+    },
+    {
+      "ink": "accent2",
+      "bg": "panel2",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "cssBytes": 11961,
+  "focus": {
+    "outline": "3px",
+    "style": "solid"
+  },
+  "errors": [],
+  "localRequests": 8,
+  "checks": [
+    "all presets / both locales",
+    "all endpoints, rewind/replay/reset",
+    "hand coverage toggle",
+    "prediction/reveal/change",
+    "locale preserves experiment",
+    "source/display/download/clipboard exact parity",
+    "native fallback copy per-locale verified fresh sentinel",
+    "320/390/736/1440 + 200% CSS zoom",
+    "keyboard tab/Enter and focus outline",
+    "forced colors / reduced motion",
+    "blocked storage",
+    "related anchors",
+    "local assets"
+  ],
+  "result": "pass"
+}

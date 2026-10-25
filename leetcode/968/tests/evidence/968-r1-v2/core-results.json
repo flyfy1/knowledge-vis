@@ -1,0 +1,15 @@
+{
+  "kind": "author self-check",
+  "cases": 630,
+  "frames": 4931,
+  "checks": [
+    "independent subset oracle",
+    "descendant coverage invariant",
+    "actual coverage versus N/K/C",
+    "child operands",
+    "camera count and identity",
+    "source parity",
+    "unique bilingual keys"
+  ],
+  "result": "pass"
+}
