@@ -1,0 +1,224 @@
+{
+  "authorSelfCheck": true,
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "checks": [
+    {
+      "lang": "en",
+      "allPresets": true,
+      "allOptions": true,
+      "sourceParity": true,
+      "fallbackNativeCopy": true
+    },
+    {
+      "lang": "zh",
+      "allPresets": true,
+      "allOptions": true,
+      "sourceParity": true,
+      "fallbackNativeCopy": true
+    },
+    {
+      "name": "desktop",
+      "lang": "zh",
+      "zoom": 1,
+      "selectBudget": {
+        "width": 908,
+        "textWidth": 73.453125,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "name": "desktop",
+      "lang": "en",
+      "zoom": 1,
+      "selectBudget": {
+        "width": 908,
+        "textWidth": 73.453125,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "name": "phone390",
+      "lang": "zh",
+      "zoom": 1,
+      "selectBudget": {
+        "width": 330,
+        "textWidth": 73.453125,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "name": "phone390",
+      "lang": "en",
+      "zoom": 1,
+      "selectBudget": {
+        "width": 330,
+        "textWidth": 73.453125,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "name": "phone320",
+      "lang": "zh",
+      "zoom": 1,
+      "selectBudget": {
+        "width": 260,
+        "textWidth": 73.453125,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "name": "phone320",
+      "lang": "en",
+      "zoom": 1,
+      "selectBudget": {
+        "width": 260,
+        "textWidth": 73.453125,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "name": "tablet",
+      "lang": "zh",
+      "zoom": 1,
+      "selectBudget": {
+        "width": 644,
+        "textWidth": 73.453125,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "name": "tablet",
+      "lang": "en",
+      "zoom": 1,
+      "selectBudget": {
+        "width": 644,
+        "textWidth": 73.453125,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "name": "zoom200",
+      "lang": "zh",
+      "zoom": 2,
+      "selectBudget": {
+        "width": 548,
+        "textWidth": 73.4453125,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "name": "zoom200",
+      "lang": "en",
+      "zoom": 2,
+      "selectBudget": {
+        "width": 548,
+        "textWidth": 73.4453125,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    }
+  ],
+  "related": [
+    {
+      "lang": "en",
+      "label": "#689: preserve the earlier candidate on ties",
+      "url": "http://127.0.0.1:18770/leetcode/689/#step2",
+      "excerpt": "03Reuse side maximaHow can we avoid scanning the same side repeatedly? W[i] sums the k values starting at i; m=n−k+1 is the window count. Sliding one position removes nums[i−1] and adds nums[i+k−1]. In the official example, W[2]=3 and W[3]=3−nums[2]+nums[4]=3−1+6=8. All W values are already computed in the initial view; the trace then builds the side summaries.The hand calculation only needs the best start on each side. Define L[i] as the earliest maximum-sum start in 0…i. Scanning left to right, the old summary already covers 0…i−1; compare only i with it. Keep the old, earlier start on ties, using >. Define R[i] as the earliest maximum-sum start in i…m−1. Scanning right to left, the new i is earlier on ties, so use ≥. The invariant is the fact preserved after every assignment: each filled entry names the earliest maximum over its stated range.j = k … m−k−1;  candidate = [L[j−k], j, R[j+k]];  total = W[L[j−k]] + W[j] + W[R[j+k]]Build L, then R, then test middle starts. Watch how > and ≥ handle equal sums; the all-ties preset makes this clear. Each action completes one assignment or candidate comparison; Back restores the entire state. Table entries L/R are starting positions, not sums; “pending” does not mean 0.Scenario (changing restarts this trace; the exercise is independent)Tiny hand case · k=1Official example 1 · greedy failsOfficial example 2 · all tiesMinimum length · three equal valuesn=3k · only one legal tripleThis teaching trace is a JavaScript simulation, not exe"
+    },
+    {
+      "lang": "en",
+      "label": "#732: count overlapping intervals with endpoint events",
+      "url": "http://127.0.0.1:18770/leetcode/732/#step2",
+      "excerpt": "03 · Add one event, then sweep every endpointHow do endpoint changes become a return value? This is a browser simulation, not execution of Python. First change two deltas (net count changes at those coordinates), then restart the prefix sum (running total) at 0. Only after the full scan is best the return value for this call.Keep the preset fixed and advance: inspect the new event and the two before/after deltas, then active and best in the ledger. Back restores the complete state. Changing the preset restarts this experiment; the independent prediction is unaffected. No operations are omitted.Booking sequence (change restarts)Hand case · 3 eventsOfficial · 6 eventsTouching · 2 eventsDuplicates · 3 eventsLarge times · 3 events← Back one stepApply next operation →Reset experimentFinish all bookingsOperation 0/14 · 0 events added · 0 calls returnedEmpty calendar; book has not been called.Added events (horizontal time uses one scale for this preset)No events or return values yet.Endpoint ledger for this callEndpoint ledger for this callTimeDeltaActive afterBest so farStatusReturn history of completed callsNo events or return values yet."
+    },
+    {
+      "lang": "zh",
+      "label": "#689：同分时保留更早候选",
+      "url": "http://127.0.0.1:18770/leetcode/689/#step2",
+      "excerpt": "03复用左右最优这一步要回答：怎样不反复扫描同一侧？W[i] 是起点 i 的 k 个数之和，m=n−k+1 是窗口数。相邻窗口只移一格：减去离开的 nums[i−1]，加上进入的 nums[i+k−1]。例如官方例子 W[2]=3，W[3]=3−nums[2]+nums[4]=3−1+6=8。下图一开始已算好全部 W，后续演示左右摘要。从手算可见，我们只需要每侧最好的起点。定义 L[i] 为 0…i 中和最大且最早的起点：从左向右，旧摘要已覆盖 0…i−1，只需与 i 比较；同和时保留旧起点，所以用 >。定义 R[i] 为 i…m−1 中和最大且最早的起点：从右向左，同和时新起点 i 更早，所以用 ≥。这就是不变量：每填一格，已填格都准确代表各自范围内最早的最大窗口。j = k … m−k−1;  candidate = [L[j−k], j, R[j+k]];  total = W[L[j−k]] + W[j] + W[R[j+k]]先推进 L，再推进 R，最后测试各中间起点。观察同和时 > 与 ≥ 的不同结果；切换到“全同和”更明显。每次只完成一次赋值或一次候选比较；后退恢复整个状态。表内 L/R 是起点，不是窗口和；“待算”不是 0。场景（更换会重启本轨迹，不影响独立练习）手算小例 · k=1官方例 1 · 贪心失误官方例 2 · 全同和最小长度 · 三个相同数n=3k · 唯一起点组合教学轨迹是 JavaScript 模拟，不是 Python 提交代码的执行。所有教学帧完整保留；没有省略扫描。nums=[2,1,4,1,3]; k=1; W=[2,1,4,1,3]后退一次操作完成下一次操作重置完成全部操作已完成操作 0/13。W 已计算；L、R 尚未填入。窗口卡片：起点 → 内容 → 和起点 0[2]窗口和 2起点 1[1]窗口和 1起点 2[4]窗口和 4起点 3[1]窗口和 1起点 4[3]窗口和 3摘要累计表（左右滚动可读全表）起点 iW[i]：窗口和L[i]：0…i 最优起点R[i]：i…m−1 最优起点02待算待算11待算待算24待算待算31待算待算43待算待算尚未测试三窗口候选。已测试候选的记录尚无候选记录。"
+    },
+    {
+      "lang": "zh",
+      "label": "#732：用端点事件计数重叠区间",
+      "url": "http://127.0.0.1:18770/leetcode/732/#step2",
+      "excerpt": "03 · 添加一场，再扫描所有端点这一步要回答：添加会议后，端点变化如何成为返回值？这是浏览器模拟，不是执行 Python。每次先修改两个 delta（该坐标的净人数变化），再从 0 开始计算前缀和（依次累加变化）。只有全部扫描结束，best 才是本次返回值。保持预设不变，逐步前进：先看新增会议和两个 delta 的前后值，再看表格中 active 与 best。后退应完全恢复。更换预设会重置本实验；不影响独立预测题。所有操作均展示，无跳步。选择预订序列（切换会重置）手算 · 3 场官方 · 6 场相接 · 2 场重复 · 3 场大端点 · 3 场← 撤回一步执行下一操作 →重置实验完成全部预订操作 0/14 · 已添加 0 场 · 已返回 0 次空日历；尚未调用 book。已添加的会议（横轴按当前预设的时间范围同比例绘制）暂无会议或返回值。本次调用的端点扫描账本本次调用的端点扫描账本坐标净变化此后人数截至此处最大值状态已完成调用的返回历史暂无会议或返回值。"
+    }
+  ],
+  "colors": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".btn",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#scanEnd:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".mask>div",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "textarea",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    }
+  ],
+  "focus": {
+    "width": "3px",
+    "color": "rgb(255, 180, 84)",
+    "style": "solid"
+  },
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18770/leetcode/798/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/798/style.css?v=798-r1",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/798/copy.js?v=798-copy-r1",
+    "http://127.0.0.1:18770/leetcode/798/core.js?v=798-r1",
+    "http://127.0.0.1:18770/leetcode/798/python-code.js?v=798-r1",
+    "http://127.0.0.1:18770/leetcode/798/app.js?v=798-r1"
+  ],
+  "cssBytes": 10635
+}
