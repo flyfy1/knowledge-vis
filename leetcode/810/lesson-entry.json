@@ -1,0 +1,33 @@
+{
+  "id": 810,
+  "title": {
+    "zh": "黑板异或游戏",
+    "en": "Chalkboard XOR Game"
+  },
+  "desc": {
+    "zh": "从一次擦除看清输赢规则，用异或与奇偶性代替博弈搜索。",
+    "en": "Explore losing erasures, then replace game search with XOR and parity."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "博弈",
+      "en": "Game theory"
+    },
+    {
+      "zh": "位运算",
+      "en": "Bit manipulation"
+    }
+  ],
+  "path": "810/",
+  "leetcodeUrl": "https://leetcode.com/problems/chalkboard-xor-game/",
+  "language": "Python",
+  "complexity": "O(n) time; O(1) auxiliary space",
+  "concepts": [
+    {
+      "name": "XOR and parity game invariant",
+      "step": 2,
+      "description": "Nonzero even positions have a safe move; odd nonzero positions lose."
+    }
+  ]
+}
