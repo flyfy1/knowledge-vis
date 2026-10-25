@@ -1,0 +1,100 @@
+{
+  "source": "28efc3067c656f4cba8f5c90477b4506aa8eb6c4",
+  "ids": [
+    "780",
+    "793",
+    "798",
+    "801",
+    "815",
+    "903",
+    "920",
+    "940",
+    "956"
+  ],
+  "requests": {
+    "780": {
+      "path": "specs/reviews/workflow-copy-repair-requests-20261026/780.md",
+      "sha256": "79235a599df5139b2e8dc1c2a51fe673fd7b28bf46b2d3a3bbec34a1b22e280b",
+      "candidate": "c214c6549b53618d96782b6f827a5018c4c7f6e4",
+      "prior_report": "specs/reviews/780-review-1-847f9d24.md",
+      "copy_sha256": "5db7c700615f16b2b7047d08efcc92271e4d80e1c51acee5b04074966ff28eec",
+      "html_sha256": "07504ffdf07cd570bcd898cc946c1674f1ddf1081b8910c81f4b2e9e81f7b7e2"
+    },
+    "793": {
+      "path": "specs/reviews/workflow-copy-repair-requests-20261026/793.md",
+      "sha256": "ff52e23452b5099a60fc80e9a9fe1bed1e0840d4408c66793509335edb7536e5",
+      "candidate": "59d0c9b1f395064dc3af7be66dadd6c18d92944d",
+      "prior_report": "specs/reviews/793-review-1-5c6a024b.md",
+      "copy_sha256": "1903e71ade99cf448d787c791434c6dfb8c3cb1f239513df8a8a2937208a2a57",
+      "html_sha256": "786fcb39ed2415ca317b641017667ec87bc48638c89c8e79e8dcfecc82e9861e"
+    },
+    "798": {
+      "path": "specs/reviews/workflow-copy-repair-requests-20261026/798.md",
+      "sha256": "da3da5361f94e48e2a91ddb39e537146f2aff9939b7220b17a368f884d151318",
+      "candidate": "cc3d785f667dd8e20edf6c6f326e8aebc018e888",
+      "prior_report": "specs/reviews/798-review-1-4a15ff20.md",
+      "copy_sha256": "cc5de11bb225b70a2a6c27f696846843a70606b24710f790b0a91b91c5808ead",
+      "html_sha256": "9e18222b92b8ea1017fa92dd181f58aff236ca3d28795915789c18ff99d7b8c6"
+    },
+    "801": {
+      "path": "specs/reviews/workflow-copy-repair-requests-20261026/801.md",
+      "sha256": "8bf72192c53809c60cf6bedf2379af8c185ce775346f4de59d0eee598af4b83a",
+      "candidate": "154c1becf178b798dfbd80acbb79fabdd262ae68",
+      "prior_report": "specs/reviews/801-review-1-3074702f.md",
+      "copy_sha256": "4c31d62aa17b4a18f67a8fdf715c22609482b701dd6eb0577505eb24e2d00e2b",
+      "html_sha256": "db0369bd3b5ba590b948e1accbd89a2c6c21038ce56dc409e3f5cc8a7528f3ea"
+    },
+    "815": {
+      "path": "specs/reviews/workflow-copy-repair-requests-20261026/815.md",
+      "sha256": "5c9697057a2218726823f12e58494fedde6221d5d19d87da9a1a8a25cd76977a",
+      "candidate": "7a7ff5b2128f7548e85e9a81357e098e5ddd2756",
+      "prior_report": "specs/reviews/815-review-1-631b8576.md",
+      "copy_sha256": "9e87671536530ef7ee25957335ab7c8c9aa0c709d96fa715a379bd974635d483",
+      "html_sha256": "6ed65b706ccdb47043b5ab89064f0a201754d0a24b6c7f430c585a1c3b5e545f"
+    },
+    "903": {
+      "path": "specs/reviews/workflow-copy-repair-requests-20261026/903.md",
+      "sha256": "5227f5ede9949c1bc677c06fa8c6a2a940dabf4e43b41829ef8be64750ad0476",
+      "candidate": "26f8fd8ec1e79a233779b82a4c8ee3d63edaee17",
+      "prior_report": "specs/reviews/903-review-1-52a18398.md",
+      "copy_sha256": "34f85edf1c57beadc06e08e276ec2daa7563c7abbd31240a34e18b16bd7397c4",
+      "html_sha256": "707ce97b1f4fedb51fdd5ca0bf0e428bfa64d23d8544db4c8fc7f3830386ddc9"
+    },
+    "920": {
+      "path": "specs/reviews/workflow-copy-repair-requests-20261026/920.md",
+      "sha256": "70b97c693528cb26a70d8f1ad8497c9d96812ab551704090f6d24057146e666e",
+      "candidate": "e1dfa23199ec290c1e795f870689ce075e3d79f8",
+      "prior_report": "specs/reviews/920-review-1-62e8ca13.md",
+      "copy_sha256": "419e48c6f59e8a30c36359bab8708b97dce782967d52bc33b9eafca740aa7969",
+      "html_sha256": "26521829a6e3dff2bd83f9e81c6300838542877e4d18a0805172e7f62790cdb4"
+    },
+    "940": {
+      "path": "specs/reviews/workflow-copy-repair-requests-20261026/940.md",
+      "sha256": "56df85c64f2ae135ce2d8323c052eba978bb50b231d899c840b2a07a0e6a5981",
+      "candidate": "4d65eab80efc4cff1f122918d021f0c9e308e686",
+      "prior_report": "specs/reviews/940-review-1-e4da4b0e.md",
+      "copy_sha256": "db79c8f2ba6489ef7bf4af67e232f9d0c3e80ed3a442ad8a8f2f6f6b1e1c3e93",
+      "html_sha256": "f8efd06fa5d97dda71c3f8f58f64d7ebf8061dab81f951d1479bf2e1c2d8ffe8"
+    },
+    "956": {
+      "path": "specs/reviews/workflow-copy-repair-requests-20261026/956.md",
+      "sha256": "635cfac82ede95dbb081fa8ced9935b28d0234fed4928ea9b5d10bd7d2f7e77f",
+      "candidate": "61c1660d36c3e2b77aa2249c0daeeb60133cb0ae",
+      "prior_report": "specs/reviews/956-review-1-9f531ca4.md",
+      "copy_sha256": "872ece4bb291745e20d74708b0ece42a7ed4ef58ed3613dc01ba13e68e53fb5d",
+      "html_sha256": "e5a0add8198360b9e3ae4655e82433c32fa5c896d56e7f651f62271959ab6cce"
+    }
+  },
+  "documents": {
+    "specs/reviews/workflow-copy-repair-requests-20261026/780.md": "79235a599df5139b2e8dc1c2a51fe673fd7b28bf46b2d3a3bbec34a1b22e280b",
+    "specs/reviews/workflow-copy-repair-requests-20261026/793.md": "ff52e23452b5099a60fc80e9a9fe1bed1e0840d4408c66793509335edb7536e5",
+    "specs/reviews/workflow-copy-repair-requests-20261026/798.md": "da3da5361f94e48e2a91ddb39e537146f2aff9939b7220b17a368f884d151318",
+    "specs/reviews/workflow-copy-repair-requests-20261026/801.md": "8bf72192c53809c60cf6bedf2379af8c185ce775346f4de59d0eee598af4b83a",
+    "specs/reviews/workflow-copy-repair-requests-20261026/815.md": "5c9697057a2218726823f12e58494fedde6221d5d19d87da9a1a8a25cd76977a",
+    "specs/reviews/workflow-copy-repair-requests-20261026/903.md": "5227f5ede9949c1bc677c06fa8c6a2a940dabf4e43b41829ef8be64750ad0476",
+    "specs/reviews/workflow-copy-repair-requests-20261026/920.md": "70b97c693528cb26a70d8f1ad8497c9d96812ab551704090f6d24057146e666e",
+    "specs/reviews/workflow-copy-repair-requests-20261026/940.md": "56df85c64f2ae135ce2d8323c052eba978bb50b231d899c840b2a07a0e6a5981",
+    "specs/reviews/workflow-copy-repair-requests-20261026/956.md": "635cfac82ede95dbb081fa8ced9935b28d0234fed4928ea9b5d10bd7d2f7e77f",
+    "specs/reviews/workflow-copy-repair-requests-20261026/README.md": "9c7747a2a299d19d3c3b329fa9d4a423fe2403141e3b4fd6484878bb8ee7584a"
+  }
+}

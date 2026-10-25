@@ -1,0 +1,15 @@
+test_bad_dispatch_cannot_read_runtime_or_start_operation (__main__.StateGuards.test_bad_dispatch_cannot_read_runtime_or_start_operation) ... ok
+test_boundary_allows_operator_itself_but_rejects_remaining_native_or_campaign (__main__.StateGuards.test_boundary_allows_operator_itself_but_rejects_remaining_native_or_campaign) ... ok
+test_document_adoption_cannot_overwrite_or_change_runtime (__main__.StateGuards.test_document_adoption_cannot_overwrite_or_change_runtime) ... ok
+test_exact_nine_reopening_preserves_history_and_paused_entry (__main__.StateGuards.test_exact_nine_reopening_preserves_history_and_paused_entry) ... ok
+test_fresh_fix_requires_new_run_thread_turn_and_native_child (__main__.StateGuards.test_fresh_fix_requires_new_run_thread_turn_and_native_child) ... ok
+test_no_active_target_or_budget_reset (__main__.StateGuards.test_no_active_target_or_budget_reset) ... ok
+test_pins_hash_and_fixed_request_source (__main__.StateGuards.test_pins_hash_and_fixed_request_source) ... ok
+test_publication_projection_counts_changed_runtime_not_unique_released_ids (__main__.StateGuards.test_publication_projection_counts_changed_runtime_not_unique_released_ids) ... ok
+test_real_runner_dispatches_fix_with_new_request_without_registration (__main__.StateGuards.test_real_runner_dispatches_fix_with_new_request_without_registration) ... ok
+test_unrelated_state_mutations_are_rejected (__main__.StateGuards.test_unrelated_state_mutations_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.172s
+
+OK
