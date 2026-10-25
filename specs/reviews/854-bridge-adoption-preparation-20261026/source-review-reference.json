@@ -1,0 +1,17 @@
+{
+  "status": "local-immutable-reference-not-final-adoption-pins",
+  "candidate": "27b9930daf25f9fb1651038bff1605969cb27f01",
+  "source_base": "cf1a31fc75c66ca79e54513e050b7e0ba31b6e70",
+  "review_revision": "47d97f6bf07dd1f4b8c7e1ca493ca3d21b3b9c7b",
+  "report_path": "specs/reviews/854-bridge-review-20261026.md",
+  "report_sha256": "13a61dde9645bf34465152bb811f15f35dd532c01e65a692ebba8cc26040334d",
+  "receipt_path": "specs/reviews/854-bridge-review-evidence-20261026/root-review-receipt.json",
+  "receipt_sha256": "911e37983fe1a2a934244f94e1fbba3d4772d99158f35a3b41278771b86a4de8",
+  "verdict": "focused-independent-acceptance",
+  "score": 97.5,
+  "required_open": [],
+  "push_confirmation": "Root reported exact branch push47d97f6; this preparer made no remote query. Must reverify at final freeze.",
+  "limits": "Review verified clipboard API payload parity; IAB OS readback was empty. Author actual OS fallback evidence is separate. Not campaign acceptance.",
+  "source_payload_count": 32,
+  "review_artifacts_automatically_adopted": false
+}

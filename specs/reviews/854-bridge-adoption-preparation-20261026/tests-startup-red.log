@@ -1,0 +1,47 @@
+Operator SHA-256: dcc3b49b36850a0fca4e31d480b692c1d5f57c8fe57561896b592d64a425c1a1
+test_fresh_start_requires_exact854_fix_role_and_problem (__main__.Preparation.test_fresh_start_requires_exact854_fix_role_and_problem) ... 
+  test_fresh_start_requires_exact854_fix_role_and_problem (__main__.Preparation.test_fresh_start_requires_exact854_fix_role_and_problem) (kind='author') ... FAIL
+  test_fresh_start_requires_exact854_fix_role_and_problem (__main__.Preparation.test_fresh_start_requires_exact854_fix_role_and_problem) (kind='review') ... FAIL
+  test_fresh_start_requires_exact854_fix_role_and_problem (__main__.Preparation.test_fresh_start_requires_exact854_fix_role_and_problem) (kind='wrong-run-problem') ... FAIL
+  test_fresh_start_requires_exact854_fix_role_and_problem (__main__.Preparation.test_fresh_start_requires_exact854_fix_role_and_problem) (kind='wrong-expected') ... FAIL
+
+======================================================================
+FAIL: test_fresh_start_requires_exact854_fix_role_and_problem (__main__.Preparation.test_fresh_start_requires_exact854_fix_role_and_problem) (kind='author')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/854-bridge-adoption-preparation-20261026/test_preparation.py", line 189, in test_fresh_start_requires_exact854_fix_role_and_problem
+    with self.subTest(kind=kind),self.assertRaises(RuntimeError):
+                                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+======================================================================
+FAIL: test_fresh_start_requires_exact854_fix_role_and_problem (__main__.Preparation.test_fresh_start_requires_exact854_fix_role_and_problem) (kind='review')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/854-bridge-adoption-preparation-20261026/test_preparation.py", line 189, in test_fresh_start_requires_exact854_fix_role_and_problem
+    with self.subTest(kind=kind),self.assertRaises(RuntimeError):
+                                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+======================================================================
+FAIL: test_fresh_start_requires_exact854_fix_role_and_problem (__main__.Preparation.test_fresh_start_requires_exact854_fix_role_and_problem) (kind='wrong-run-problem')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/854-bridge-adoption-preparation-20261026/test_preparation.py", line 189, in test_fresh_start_requires_exact854_fix_role_and_problem
+    with self.subTest(kind=kind),self.assertRaises(RuntimeError):
+                                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+======================================================================
+FAIL: test_fresh_start_requires_exact854_fix_role_and_problem (__main__.Preparation.test_fresh_start_requires_exact854_fix_role_and_problem) (kind='wrong-expected')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/854-bridge-adoption-preparation-20261026/test_preparation.py", line 189, in test_fresh_start_requires_exact854_fix_role_and_problem
+    with self.subTest(kind=kind),self.assertRaises(RuntimeError):
+                                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=4)

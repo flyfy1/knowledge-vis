@@ -1,0 +1,26 @@
+{
+  "status": "disabled-preparation-awaiting-independent-review-and-post-import-pins",
+  "operator_sha256": "0c8f5fcded88f98920cb3e128509889c580082e9fa80c2375bbde3433769728f",
+  "pins_sha256": "6cba37cf0901b7cce8534a17390af84414851aa8bea98bddd7557308eb5f8f08",
+  "testsPassed": 12,
+  "source_payload_count": 32,
+  "protected_files": 4,
+  "live_operator_executed": false,
+  "pi_access": false,
+  "commit_performed": false,
+  "disposable_git_test_only": true,
+  "files": {
+    "DESIGN.md": "da48fdeeefea266273a232923a0bc5d1c40822d175f27d3b58822294e6e30644",
+    "README.md": "7270bd014f51611870554029202896a833ef34a2dc3939c62149b98c0a24ab81",
+    "adaptation.diff": "9506044e28b5c1db31cf616c6e64f456459c16bd67dc50ba3488c6a34c600092",
+    "operate.py": "0c8f5fcded88f98920cb3e128509889c580082e9fa80c2375bbde3433769728f",
+    "payload-manifest.json": "35cb72e2f7e5003a9c33865d57ec678a190f61392c36f2ebd95962e64e53535d",
+    "pending-pins.json": "6cba37cf0901b7cce8534a17390af84414851aa8bea98bddd7557308eb5f8f08",
+    "source-review-reference.json": "a339777d3e73586223899d9181f665e0e65eea7e17b0a311fd6ae25455b6b9bf",
+    "test_preparation.py": "d47a91518e98a88305dba6efeb6b41c27b60cfed519cb0ca04b3f1182d0ede87",
+    "tests-initial-fixture-failure.log": "8f4e7477fdb1158d6c2ec4b97c1e8abd70c3f8e5cce8869cc1d9689b9d1a17ec",
+    "tests-startup-green.log": "022693ef12e9159936ad6785d856ed7ae6a84088274f4c6dc76faf386a33519c",
+    "tests-startup-red.log": "c7ccccd415914e73591d092da2ec544c5562e646d2343f84f1238b143e113ded",
+    "tests.log": "64a8b1766ae12555eb405d80f2ff43a9271a804088e94c7577ce2a27a4cc487a"
+  }
+}

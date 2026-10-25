@@ -1,0 +1,29 @@
+test_actual_source_inventory_and_protected_files (__main__.Preparation.test_actual_source_inventory_and_protected_files) ... ok
+test_current_old_bytes_and_added_path_refused (__main__.Preparation.test_current_old_bytes_and_added_path_refused) ... ok
+test_disabled_before_input_io (__main__.Preparation.test_disabled_before_input_io) ... ok
+test_durable_preparation_precedes_payload_and_next854_guard (__main__.Preparation.test_durable_preparation_precedes_payload_and_next854_guard) ... ok
+test_exact_commit_tree_rejects_unrelated_changes (__main__.Preparation.test_exact_commit_tree_rejects_unrelated_changes) ... ok
+test_existing_transition_preserves_history_queue_and995 (__main__.Preparation.test_existing_transition_preserves_history_queue_and995) ... ERROR
+test_pending_review_push_acceptance_current_previous (__main__.Preparation.test_pending_review_push_acceptance_current_previous) ... ok
+test_previous_receipt_requires_both_completed_imports (__main__.Preparation.test_previous_receipt_requires_both_completed_imports) ... ok
+test_source_addition_mode_drift_and_review_mismatch_refused (__main__.Preparation.test_source_addition_mode_drift_and_review_mismatch_refused) ... ok
+
+======================================================================
+ERROR: test_existing_transition_preserves_history_queue_and995 (__main__.Preparation.test_existing_transition_preserves_history_queue_and995)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/854-bridge-adoption-preparation-20261026/test_preparation.py", line 135, in test_existing_transition_preserves_history_queue_and995
+    R.verify_transition(before,after,'new',PENDING,record)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/workflow-copy-repair-transition-preparation-20261026/reopen.py", line 107, in verify_transition
+    require(after==expected,'Unexpected state delta during nine-entry reopening')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/workflow-copy-repair-transition-preparation-20261026/reopen.py", line 36, in require
+    if not ok:raise RuntimeError(message)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Unexpected state delta during nine-entry reopening
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.049s
+
+FAILED (errors=1)
