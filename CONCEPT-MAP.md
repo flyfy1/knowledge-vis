@@ -1674,3 +1674,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Exact rational invariant | `leetcode/972/#step2` | Each parsed part contributes its exact place-value fraction. |
 
 <!-- /leetcode-972-campaign -->
+
+
+<!-- leetcode-975-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Monotonic stack | `leetcode/975/#step1` | Resolve forced targets in value order. |
+| Parity dynamic programming | `leetcode/975/#step2` | Compute two reachability states backward. |
+
+<!-- /leetcode-975-campaign -->
