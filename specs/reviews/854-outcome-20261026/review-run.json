@@ -1,0 +1,33 @@
+{
+  "id": "854-review-0add7000fba0",
+  "problem_id": "854",
+  "role": "review",
+  "started_at": "2026-10-25T22:05:14.589592+00:00",
+  "status": "completed",
+  "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+  "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/854-review-0add7000fba0",
+  "session_ids": [
+    "01a17518-b387-7960-b6d6-60e162d298e1"
+  ],
+  "finished_at": "2026-10-25T22:09:10.591973+00:00",
+  "result": {
+    "outcome": "accepted",
+    "scores": [
+      4,
+      3,
+      4,
+      4,
+      4,
+      3
+    ],
+    "required_open": [],
+    "report_path": "specs/reviews/854-review-1-9601268b.md",
+    "evidence": [
+      "Cold browser walkthrough saved before source audit.",
+      "Canonical Python verified against independent examples and 4,653 oracle comparisons.",
+      "Bilingual interactions, layouts, keyboard, contrast and exact source transfer passed.",
+      "Non-mutating metadata preflight passed."
+    ],
+    "detail": "92.5/100. No required fixes. Limitations and optional teaching advisory recorded; publication and LeetCode submission not claimed."
+  }
+}

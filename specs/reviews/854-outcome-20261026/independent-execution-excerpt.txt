@@ -1,0 +1,16 @@
+independent case abac baca predicted 2 canonical 2 oracle 2
+independent case acbb bcba predicted 1 canonical 1 oracle 1
+independent case a a predicted 0 canonical 0 oracle 0
+independent case abcdef fbcdea predicted 1 canonical 1 oracle 1
+independent case aaaaaaaaaabbbbbbbbbb bbbbbbbbbbaaaaaaaaaa predicted 10 canonical 10 oracle mismatch lower bound 10 and 10 direct pairs
+independent ternary length-five ordered pairs 4653 PASS
+served parity index.html 6ca50f1e3ac44e2f379e836730e023cbaf74512c52984bc73a7d6260fdc601d4
+served parity solution.py 7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068
+served parity python-code.js 36b61694050f9499e8d02a2078002bba5e295769447d44afdfcc1c48de845238
+served parity app.js 05c724a4f2ce37ea4f7272c5dfa76c1def7fddeb6de41caa2e5e54c171d17550
+served parity core.js d33efab4b0e02bc1c47d060cc27c59ba054767da502c4f2955ce9dff2ce47dc0
+served parity copy.js e46d8424f2ac041c6b310ba9a040e8e840677bcee13d1416525e2a14abce6533
+served parity style.css 8631f5c8720e508d28351bd1edfbb2d62b6709798efb4a2f2c9ff4a696bdb295
+served parity ../common.js f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b
+served parity ../style.css 6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27
+official interface 854 K-Similar Strings False [{'lang': 'Python3', 'langSlug': 'python3', 'code': 'class Solution:\n    def kSimilarity(self, s1: str, s2: str) -> int:\n        '}]

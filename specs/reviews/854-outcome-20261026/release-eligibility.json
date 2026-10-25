@@ -1,0 +1,126 @@
+{
+  "captured_at": "2026-10-25T22:14:24.180105+00:00",
+  "revision": "5d9cf8fc351f19c9e747b8c5e424858b2cee6e3b",
+  "current": {
+    "problem_id": "857",
+    "stage": "author",
+    "started_at": "2026-10-25T22:09:22.950135+00:00",
+    "run_id": "857-author-6ff773b703f3"
+  },
+  "eligible_changed_versions": 3,
+  "eligible_ids": [
+    "854",
+    "982",
+    "987"
+  ],
+  "prospective_ids": [
+    "854",
+    "982",
+    "987"
+  ],
+  "same_digest_candidate_refresh_ids": [],
+  "released_ids": 138,
+  "pending": null,
+  "state_sha256": "f46d0dfcf9cc9b391f6b01c18fa6dec19b3c71b5c4c939432d6431549fb56134",
+  "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+  "registry_sha256": "f8301c9c621aeb95592d1ce2e46d9080f2b38563b4d3a82899ed0b76db6f6649",
+  "publisher_sha256": "7292c88e2ae035667a1bc723b076fb3d8d3d8562dc8428f3f66f74dc60f764d8",
+  "state_unchanged": true,
+  "ledger_unchanged": true,
+  "accepted": {
+    "854": {
+      "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+      "digest": "e3e1a7788469ffcfff5fa5c80868b8979d9afa72e1896b819b035aa7bdb2cbd3",
+      "review": "specs/reviews/854-review-1-9601268b.md",
+      "registry": {
+        "id": 854,
+        "title": {
+          "zh": "\u76f8\u4f3c\u5ea6\u4e3a K \u7684\u5b57\u7b26\u4e32",
+          "en": "K-Similar Strings"
+        },
+        "desc": {
+          "zh": "\u4ece\u4eb2\u624b\u4ea4\u6362\u5230\u4fdd\u7559\u6700\u77ed\u8def\u5f84\u7684\u9996\u9519\u526a\u679d BFS\u3002",
+          "en": "Derive first-mismatch BFS pruning from concrete swaps."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u5e7f\u5ea6\u4f18\u5148\u641c\u7d22",
+            "en": "Breadth-first search"
+          },
+          {
+            "zh": "\u5b57\u7b26\u4e32",
+            "en": "Strings"
+          }
+        ],
+        "path": "854/",
+        "leetcodeUrl": "https://leetcode.com/problems/k-similar-strings/",
+        "language": "Python",
+        "complexity": "O(S n\u00b2) time; O(S n) space, S = n! / product of letter-count factorials"
+      }
+    },
+    "982": {
+      "candidate": "71cac9c38ae78f8ec6a477ca05c7781ab9377fd2",
+      "digest": "78a3050316ffc0b4d6bf3db80a31ee62e25407aeafd728dd9df29f7bf83c1d20",
+      "review": "specs/reviews/982-review-1-94eb2c64.md",
+      "registry": {
+        "id": 982,
+        "title": {
+          "zh": "\u6309\u4f4d\u4e0e\u4e3a\u96f6\u7684\u4e09\u5143\u7ec4",
+          "en": "Triples with Bitwise AND Equal To Zero"
+        },
+        "desc": {
+          "zh": "\u4fdd\u7559\u6709\u5e8f\u6570\u5bf9\u7684\u6b21\u6570\uff0c\u518d\u7528\u5b50\u96c6\u6c42\u548c\u7edf\u8ba1\u517c\u5bb9\u7684\u7b2c\u4e09\u4e2a\u6570\u3002",
+          "en": "Preserve ordered-pair multiplicities, then sum compatible masks for each third value."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u4f4d\u8fd0\u7b97",
+            "en": "Bit manipulation"
+          },
+          {
+            "zh": "\u5b50\u96c6\u6c42\u548c",
+            "en": "Subset sums"
+          }
+        ],
+        "path": "982/",
+        "leetcodeUrl": "https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/",
+        "language": "Python",
+        "complexity": "O(n\u00b2 + B\u00b72^B) time; O(2^B) auxiliary space, B = max(1, bit_length(max(nums))) \u2264 16"
+      }
+    },
+    "987": {
+      "candidate": "bed2e3d724fb024efd46c65ad1ba52fc5fa20f9f",
+      "digest": "c5a206f866ad4452447dd0d24d4596c6c8ca7abbcfbc1cf2954adb025a9f8b6b",
+      "review": "specs/reviews/987-review-1-0d4cbd13.md",
+      "registry": {
+        "id": 987,
+        "title": {
+          "zh": "\u4e8c\u53c9\u6811\u7684\u5782\u5e8f\u904d\u5386",
+          "en": "Vertical Order Traversal of a Binary Tree"
+        },
+        "desc": {
+          "zh": "\u7528\u5750\u6807\u4e0e\u4e09\u5c42\u6392\u5e8f\u89c4\u5219\u89e3\u51b3\u540c\u4f4d\u7f6e\u8282\u70b9\u7684\u51b2\u7a81\u3002",
+          "en": "Use coordinates and three ordering keys to resolve nodes sharing a position."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u4e8c\u53c9\u6811",
+            "en": "Binary tree"
+          },
+          {
+            "zh": "\u6392\u5e8f",
+            "en": "Sorting"
+          }
+        ],
+        "path": "987/",
+        "leetcodeUrl": "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/",
+        "language": "Python",
+        "complexity": "O(n log n) time; O(n) auxiliary space and O(n) output space"
+      }
+    }
+  },
+  "method": "Read-only _reviewed acceptance/immutable-source/registration gates then digest inequality against released; never called maybe_publish, refresh/save, locking, staging or deployment."
+}

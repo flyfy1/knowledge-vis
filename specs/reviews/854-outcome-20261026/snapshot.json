@@ -1,0 +1,356 @@
+{
+  "captured_at": "2026-10-25T22:14:23.111805+00:00",
+  "state_status": "running",
+  "current": {
+    "problem_id": "857",
+    "stage": "author",
+    "started_at": "2026-10-25T22:09:22.950135+00:00",
+    "run_id": "857-author-6ff773b703f3"
+  },
+  "expected_head": "5d9cf8fc351f19c9e747b8c5e424858b2cee6e3b",
+  "entry854": {
+    "status": "accepted_local",
+    "rounds": 1,
+    "new": true,
+    "phase": "done",
+    "reviews": [
+      {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          3,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/854-review-1-9601268b.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Canonical Python verified against independent examples and 4,653 oracle comparisons.",
+          "Bilingual interactions, layouts, keyboard, contrast and exact source transfer passed.",
+          "Non-mutating metadata preflight passed."
+        ],
+        "detail": "92.5/100. No required fixes. Limitations and optional teaching advisory recorded; publication and LeetCode submission not claimed.",
+        "run_id": "854-review-0add7000fba0",
+        "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+        "candidate_sha256": "71998716fbdb4babb1e84235c7555fdd31b611f0c2c10878976176e4fce79a14",
+        "weighted_score": 92.5,
+        "round": 1,
+        "commit": "440d49b6e7e0ff916278062e20f63860e65a170c"
+      }
+    ],
+    "author_runs": [
+      "854-author-679ce856a357"
+    ],
+    "prior_report": "specs/reviews/854-review-1-9601268b.md",
+    "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+    "registration_commit": "5d9cf8fc351f19c9e747b8c5e424858b2cee6e3b",
+    "accepted_at": "2026-10-25T22:09:21.819991+00:00"
+  },
+  "target_review": {
+    "outcome": "accepted",
+    "scores": [
+      4,
+      3,
+      4,
+      4,
+      4,
+      3
+    ],
+    "required_open": [],
+    "report_path": "specs/reviews/854-review-1-9601268b.md",
+    "evidence": [
+      "Cold browser walkthrough saved before source audit.",
+      "Canonical Python verified against independent examples and 4,653 oracle comparisons.",
+      "Bilingual interactions, layouts, keyboard, contrast and exact source transfer passed.",
+      "Non-mutating metadata preflight passed."
+    ],
+    "detail": "92.5/100. No required fixes. Limitations and optional teaching advisory recorded; publication and LeetCode submission not claimed.",
+    "run_id": "854-review-0add7000fba0",
+    "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+    "candidate_sha256": "71998716fbdb4babb1e84235c7555fdd31b611f0c2c10878976176e4fce79a14",
+    "weighted_score": 92.5,
+    "round": 1,
+    "commit": "440d49b6e7e0ff916278062e20f63860e65a170c"
+  },
+  "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+  "review_commit": "440d49b6e7e0ff916278062e20f63860e65a170c",
+  "registration_commit": "5d9cf8fc351f19c9e747b8c5e424858b2cee6e3b",
+  "lesson_trees": {
+    "candidate": "59af9f72e9667e3dbe157c872207cc4edef3c5ff",
+    "review": "59af9f72e9667e3dbe157c872207cc4edef3c5ff",
+    "registration": "59af9f72e9667e3dbe157c872207cc4edef3c5ff"
+  },
+  "review_changed_paths": [
+    "specs/reviews/854-evidence/854-review-1-9601268b/browser-results.json",
+    "specs/reviews/854-evidence/854-review-1-9601268b/cold-initial.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/cold-target.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/core-results.json",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-1440-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-1440-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-1440-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-1440-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-320-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-320-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-320-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-320-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-390-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-390-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-390-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-390-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-736-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-736-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-736-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-736-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-desktop-top.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-exercise.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/independent-en-320-middle.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/independent-zh-320-middle.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/keyboard-focus.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/solution-results.json",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-1440-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-1440-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-1440-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-1440-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-320-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-320-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-320-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-320-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-390-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-390-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-390-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-390-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-736-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-736-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-736-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-736-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-desktop-top.png",
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-exercise.png",
+    "specs/reviews/854-review-1-9601268b.md"
+  ],
+  "review_evidence_inventory": {
+    "specs/reviews/854-evidence/854-review-1-9601268b/browser-results.json": {
+      "sha256": "0975c23df6a2cd64584671ba94dc158dca12074f8f39b42f6301b5f5010abd7f",
+      "bytes": 31239,
+      "archived": true
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/cold-initial.png": {
+      "sha256": "fce46de3220c3f5c96cc2b6e781b2889d2368f1fdb8ab323d0d00801fd142125",
+      "bytes": 752610,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/cold-target.png": {
+      "sha256": "e93790cd3b7b1ec89f56b479725314affc7bb6355216430d61bc00ab7b3951ee",
+      "bytes": 788074,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/core-results.json": {
+      "sha256": "eeeef0dd953f4e870b084e953e27c4780b1149d8d04fa5ab417ca56a857d5a4b",
+      "bytes": 207,
+      "archived": true
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-1440-zoom1-controls.png": {
+      "sha256": "c97fe3e953f27be2aebbfbfe111ccc7d2678a5ab56b2f8f9e481a5f90db57999",
+      "bytes": 115396,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-1440-zoom1-trace.png": {
+      "sha256": "22c6a2cc526edbe53b257a3d96595492728c7a94370e26138b6116d285130bab",
+      "bytes": 135495,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-1440-zoom2-controls.png": {
+      "sha256": "4d703249c8782e0d742af3da77b78fc9a01114e894de40aa42a6b83b030a1f0a",
+      "bytes": 138856,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-1440-zoom2-trace.png": {
+      "sha256": "203e6199128705c712a6da7c7214080eeb86cf70e1487663cb05c89db812e788",
+      "bytes": 129051,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-320-zoom1-controls.png": {
+      "sha256": "784fe0cb1673e5b79fd6747de1fb1c7465366d2edd396bfc43454a92b30e9896",
+      "bytes": 69297,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-320-zoom1-trace.png": {
+      "sha256": "33403ece867a4817cd8ba48ebf0887a2955dc173f899de1e8f38961698d78ee9",
+      "bytes": 68789,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-320-zoom2-controls.png": {
+      "sha256": "0ff2cad00220b34f162822d9d4fc95fd9150fe8ad3db48f509c56286f28a7652",
+      "bytes": 60787,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-320-zoom2-trace.png": {
+      "sha256": "af6021f71d53d80bfc594039adf8af5ad59df323b2a74578c082747af7816655",
+      "bytes": 41327,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-390-zoom1-controls.png": {
+      "sha256": "4eb3f612b6c2415b8d45e38c30eea73344da7d0876fc345447749b6aa97029e7",
+      "bytes": 78628,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-390-zoom1-trace.png": {
+      "sha256": "87b4b20ab145d783f7a81f050ff6d9e489b3929ce62733a2115297e4e87a2086",
+      "bytes": 72209,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-390-zoom2-controls.png": {
+      "sha256": "dba2ac8c3c4be8761b3c0bba863081cea027f9714f8636adef4d636e92761caa",
+      "bytes": 69675,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-390-zoom2-trace.png": {
+      "sha256": "934a0e3d6a04eb7c9ee74af1d51c675c3238037554dae4632ccdaab8f3e20614",
+      "bytes": 60784,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-736-zoom1-controls.png": {
+      "sha256": "8de54f50acd52359df589d9a45e386bbcfda8d77fbfe84b93671f3dac2f10556",
+      "bytes": 108518,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-736-zoom1-trace.png": {
+      "sha256": "facb3b73cdee19d7c47a876aad585c00772a42f908909dc17aebddf732e38d38",
+      "bytes": 113463,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-736-zoom2-controls.png": {
+      "sha256": "e5ed9fbd3a200a2d0490933b60332c53acecf31b9f41d8477c46110f57472fbe",
+      "bytes": 92592,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-736-zoom2-trace.png": {
+      "sha256": "5ed990302c19c7d82a35999320197260005b243d25a1b1342823cce60650918a",
+      "bytes": 88893,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-desktop-top.png": {
+      "sha256": "f4f993f080379159cc77b97878a324b442fc4eca76fdffb1ce76d2076ed36947",
+      "bytes": 122207,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/en-exercise.png": {
+      "sha256": "fb23c359a5611f715e8f28519d88cfb634661807d6f2dfd20b596c1bde8c144d",
+      "bytes": 78487,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/independent-en-320-middle.png": {
+      "sha256": "86352b1dd53701a3fcdc75dcf084958c21b61dac3223930915e2f7dd66b5c4fc",
+      "bytes": 70584,
+      "archived": true
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/independent-zh-320-middle.png": {
+      "sha256": "6e3216faa304ffa00b19b2424845a0fc732d12e588a90e8636ff42e59ee96a11",
+      "bytes": 90908,
+      "archived": true
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/keyboard-focus.png": {
+      "sha256": "7888380e57e0acc7cdd68af52a06f61dbd95e9e3005b7ef10fe92ace58d1f2b9",
+      "bytes": 2692,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/solution-results.json": {
+      "sha256": "e90a61bb38bc65d987a286f76a9d3ad2db8e7d4a89c508749c8f681039570917",
+      "bytes": 675,
+      "archived": true
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-1440-zoom1-controls.png": {
+      "sha256": "2e56bb8ce539caea656a66704431fa27642b14b71fec7c7a72f79e0ea7c2a9d9",
+      "bytes": 125821,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-1440-zoom1-trace.png": {
+      "sha256": "1a8976aaa17671ecd7ffe82dc07ecd69a791cfdaa58cfd6742998d1f3cfbcc4b",
+      "bytes": 177099,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-1440-zoom2-controls.png": {
+      "sha256": "8e071a42900bb500af558f239c33ff9f13e6148962db349770c16c0d104fe7b1",
+      "bytes": 149854,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-1440-zoom2-trace.png": {
+      "sha256": "f65dc39db02519fcefb37d0198a9d0b3cec7b1c2eb6a60a32dfce282bfd2d55f",
+      "bytes": 144932,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-320-zoom1-controls.png": {
+      "sha256": "fbc8b3c8633151d8d04f2b7c88e9a7c57f9cfd809b8caaf99f1d53bbd7fbf0d0",
+      "bytes": 78645,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-320-zoom1-trace.png": {
+      "sha256": "0be1751a971ea5a28140ad0e07ab5167ff406f52a857bde83804217ecfe10b8a",
+      "bytes": 75971,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-320-zoom2-controls.png": {
+      "sha256": "85ffd83e2e6d21a655ac7bbe228cdd9412ca82a23b83b7adedd686e803b7392c",
+      "bytes": 63185,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-320-zoom2-trace.png": {
+      "sha256": "1b53fc05e35e3939f344f925a19882130539e282536c7bfc608ec2e8c289b940",
+      "bytes": 42282,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-390-zoom1-controls.png": {
+      "sha256": "d0752414a0902c4917c05b2c2a7fb343aa6a39604c6f5d9c638f89654e1a796b",
+      "bytes": 91881,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-390-zoom1-trace.png": {
+      "sha256": "3c8f3f834209f46137fbe7ea9650be53e6dbd003b7d287586294777c6d29e947",
+      "bytes": 88385,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-390-zoom2-controls.png": {
+      "sha256": "6bedde95466e402e69fecc3557b2827fd3cd27c8db221f0d2ab8a6e919ee5a84",
+      "bytes": 68191,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-390-zoom2-trace.png": {
+      "sha256": "d5b5a2b760b019baedc4c2542c41afac35952b4d0bd370313827802a1ae10328",
+      "bytes": 59865,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-736-zoom1-controls.png": {
+      "sha256": "21ba74f84c057fe5ac54cf3919e6f062544bf24b2f3dc164d6a2f0d5e4f7cc17",
+      "bytes": 119935,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-736-zoom1-trace.png": {
+      "sha256": "9d4f44e2a9b09a28cd9c4fc4218b6f3102b939c51fb75cf1558293b7bb8fe373",
+      "bytes": 157697,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-736-zoom2-controls.png": {
+      "sha256": "569522f8efb077e4be9b1aaaa592cfdd7c454e438fb7ebcfb8b972427d488c16",
+      "bytes": 109980,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-736-zoom2-trace.png": {
+      "sha256": "7ca923e7cbc4a34b875cf360ac45bb0c0774946370c3788bd6b832f438b40051",
+      "bytes": 94144,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-desktop-top.png": {
+      "sha256": "53c4377d221f6064f1f32789516d1659af759a7347638c1c2b4ca749572bc427",
+      "bytes": 141916,
+      "archived": false
+    },
+    "specs/reviews/854-evidence/854-review-1-9601268b/zh-exercise.png": {
+      "sha256": "85dc460bf05dc3d09de2e920b51cec4b1c5bec3c5486e5b7a5e25c48c175bf36",
+      "bytes": 86004,
+      "archived": false
+    }
+  },
+  "stop_present": false
+}
