@@ -2277,6 +2277,28 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
+    "id": 664,
+    "title": {
+      "zh": "奇怪的打印机",
+      "en": "Strange Printer"
+    },
+    "desc": {
+      "zh": "从覆盖 aba 到共享打印轮次，推导区间动态规划。",
+      "en": "From overwriting aba to sharing a print turn: derive interval dynamic programming."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "区间动态规划",
+        "en": "Interval dynamic programming"
+      }
+    ],
+    "path": "664/",
+    "leetcodeUrl": "https://leetcode.com/problems/strange-printer/",
+    "language": "Python",
+    "complexity": "O(n³) time; O(n²) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

@@ -1199,3 +1199,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Rolling prefix decoding counts | `leetcode/639/#step2` | Extend the two preceding prefix counts through disjoint final-token cases. |
 
 <!-- /leetcode-639-campaign -->
+
+
+<!-- leetcode-664-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Interval DP with shared print turns | `leetcode/664/#step2` | Share the final character’s turn with a matching earlier position and independently repair the gap. |
+
+<!-- /leetcode-664-campaign -->
