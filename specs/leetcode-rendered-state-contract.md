@@ -229,3 +229,36 @@ roundtrip. No exhaustive cross-product of fonts, browsers or controls is propose
 This adds no runtime dependency, universal renderer, new layout, scoring dimension
 or retroactive re-review campaign. Adoption applies to future candidates; concrete
 new defects in existing lessons retain the ordinary repair-and-review procedure.
+
+## 9. Check cost bounds at valid parameter boundaries
+
+Define each complexity parameter and its counting convention beside the claim.
+For a bound with several independent parameters, check whether one can be zero
+while input processing, output materialization, or base-level work remains large.
+Use the actual displayed baseline as well as the canonical implementation; a
+correct optimized solution does not make an incorrect baseline explanation valid.
+
+For example, let n be formula length, A the number of expanded atom entries, and
+d the maximum number of enclosing parentheses, so d=0 without parentheses. An
+expansion baseline still constructs and tallies A entries for `H1000`. The bound
+`O(n + A*d)` loses that work at d=0. A suitable bound is `O(n + A*(d+1))`, with an
+explanation that the extra level includes the top-level expansion and tally. An
+alternative convention counting the base parsing level in d must explicitly say
+d>=1. Do not silently change the meaning of depth between prose and formula.
+
+Independently check one valid degenerate case and one nondegenerate case, such as
+`H1000` (d=0, A=1000) and `(H1000)2` (d=1, A=2000). Read the actual loops or copies
+that perform the claimed work and inspect both rendered locale explanations.
+Use safe small expansions; allocating the billion-entry teaching example is not
+necessary. A measured allocation or timing can support an observation, but is
+not by itself proof of an asymptotic bound. Numerical output equality also does
+not validate a time or space claim.
+
+This is a targeted mathematical check, not a rule to append `+1` mechanically to
+every expression or benchmark every lesson. Preserve the stated valid domain,
+the distinction between input size and expanded/output size, and the separate
+costs of the baseline, submission and teaching snapshots. A reproduced false
+cost claim follows the existing required-finding and repair/re-review gates.
+It adds no scoring dimension or retroactive acceptance change. The dispatcher
+adopts this section for subsequent candidates at a stopped campaign boundary;
+already frozen candidates retain their recorded shared-policy identity.
