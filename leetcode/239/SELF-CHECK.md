@@ -160,3 +160,69 @@ addition. Deferred layout redesign and suboperation animation need a separate
 teaching requirement. Real devices, browser-toolbar zoom, public delivery,
 LeetCode submission acceptance and novice comprehension remain unverified.
 Separate independent re-review of this frozen candidate is the next step.
+## Navigation repair author self-check — 2026-10-25 — 239-NAV-R1
+
+This appendix records author evidence for a new candidate, not independent
+acceptance or publication. Prior reports, acceptance and evidence remain historical.
+Candidate identity and file hashes: `tests/evidence/navigation-repair-20261025/candidate-sha256.json`.
+
+Finding mapping: **239-NAV-R1** replaces `../10/#step3` and its misleading “same
+domination” label with `../84/#step1` / “#84 · Monotonic stack: settle rectangle
+boundaries” / “#84 · 单调栈：确定矩形边界”; replaces `../42/#step1` and its prefix-summary
+label with `../327/#step1` / “#327 · Prefix sums: subtract to obtain a range sum” /
+“#327 · 前缀和：相减得到区间和”. Only the two anchors, their localized labels and the
+copy asset cache version change in the runtime. Submission and embedded mirror
+are unchanged and still byte-exact. `language-contract.json` already lists both
+Python and TypeScript; lesson-local official selector evidence supports the
+preferred faithful `Solution.maxSlidingWindow` Python interface. No metadata
+repair or source regeneration was necessary.
+
+Red/green: `OUTPUT_DIR=leetcode/239/tests/evidence/navigation-repair-20261025/red node
+leetcode/239/tests/navigation-regression.js` reproduced the original rendered
+Chinese label failure (exit 1; `red.txt`). After the repair, the same semantic
+assertions pass (`green.txt`, `green/results.json`). The harness additionally waits
+for shared smooth scrolling to settle and requires the focused link to be on
+screen before taking screenshots. This tightened screenshot/viewport check does
+not relax the original failure assertion. No hard algorithm bug was involved;
+the defect was the authored label/target mismatch identified by the supplied report.
+
+Browser evidence: Linux, Chromium version recorded in `green/results.json`,
+preview `http://127.0.0.1:18770`, 320×900, zh → en → zh. Each link has the exact
+reviewed visible label and href; Shift+Tab then Tab focuses it with the existing
+outline, and Enter navigates to the exact lesson path and `#step1`. Both targets
+are present as lesson links in the served collection. The destination checks read
+the actual visible explanation: #84's increasing indices/nondecreasing-height
+stack and excluded-boundary width `i−left−1`; #327's removal of the first i
+elements from a prefix, yielding `P[j]−P[i]`. Thus the check verifies the concept,
+not merely an existing fragment. Inspected the EN and Chinese focused-link and
+destination screenshots: the English labels wrap fully, the Chinese labels fit,
+focus remains visible, and the destination explains the promised mechanism.
+No page errors or HTTP error responses were observed.
+
+Preserved regressions (all run from repository root; each browser command used
+`OUTPUT_DIR=leetcode/239/tests/evidence/navigation-repair-20261025/<directory>`):
+
+- `node leetcode/239/tests/navigation-regression.js` → passed (`green/`).
+- `node leetcode/239/tests/rendered-membership.js` → 242 frame checks passed
+  (`frames/`), covering initial/partial/full intervals, deque identity/value,
+  cumulative outputs, all presets, bilingual switches, rewind/replay and zoom.
+- `node leetcode/239/tests/title-regression.js` → passed (`title-source/`), with
+  exact localized numbered H1, official URL, preserved state, formula, prediction
+  invalidation, exact rendered/mirror/offline/download source, automatic clipboard
+  and native Linux Control+C fallback from a distinct sentinel.
+- `node leetcode/239/tests/trace-copy-check.js` → passed (`copy/`), including
+  duplicate-key detection, two-string locale pairs, localized removal reasons,
+  scope labels, cost boundaries, prediction and unavailable storage.
+- `node leetcode/239/tests/browser-check.js` → passed (`legacy/`).
+- `python3 -B leetcode/239/tests/test_solution.py` → solution/oracle checks passed;
+  actual canonical Python executes against direct window scans.
+- `node leetcode/239/tests/test_core.js` → trace invariants passed.
+- `python3 -B scripts/register_leetcode_lesson.py 239 --validate-only` → exit 0,
+  no stdout/stderr. Complexity remains the single nonempty string
+  `O(n) time; O(k) auxiliary space`. Preflight output and explicit exit result are
+  recorded in `preflight.txt`; no registration was run.
+
+Limits: these checks use the local served collection and browser, not a public
+deployment, real mobile device, learner study or LeetCode submission. A separate
+reviewer must assess the frozen candidate and explicitly close 239-NAV-R1. Normal
+publication remains pending; this self-check does not grant acceptance.
