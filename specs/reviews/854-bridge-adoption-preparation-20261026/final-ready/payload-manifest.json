@@ -1,0 +1,173 @@
+{
+  "observed_base": "cf1a31fc75c66ca79e54513e050b7e0ba31b6e70",
+  "observed_candidate": "27b9930daf25f9fb1651038bff1605969cb27f01",
+  "status": "source-inventory-only-review-and-adoption-pending",
+  "files": {
+    "leetcode/854/BRIDGE-SELF-CHECK.md": {
+      "before_sha256": null,
+      "after_sha256": "f37648faee52c603a56663f6f6e982c7aaa58e0572a79039b9693ce7bc75441c",
+      "mode": "100644"
+    },
+    "leetcode/854/BRIEF.md": {
+      "before_sha256": "c6e911411cb2e54654ec6aad73f6cc889f7a7e1f10a3fd9d03aff9bbd2fda899",
+      "after_sha256": "af2893fe04a470c63624db9795b714bf0869e44a0d57a4bbc4be0ec03d5fe887",
+      "mode": "100644"
+    },
+    "leetcode/854/app.js": {
+      "before_sha256": "05c724a4f2ce37ea4f7272c5dfa76c1def7fddeb6de41caa2e5e54c171d17550",
+      "after_sha256": "092d5296027fcc349572608ea70d7efcc33eca116210999cec37e779a2094f44",
+      "mode": "100644"
+    },
+    "leetcode/854/copy.js": {
+      "before_sha256": "e46d8424f2ac041c6b310ba9a040e8e840677bcee13d1416525e2a14abce6533",
+      "after_sha256": "c670f28f5990932a7b02ae20b3dee9e73ac693d4a3c1759feccb32cfc3e139f3",
+      "mode": "100644"
+    },
+    "leetcode/854/index.html": {
+      "before_sha256": "6ca50f1e3ac44e2f379e836730e023cbaf74512c52984bc73a7d6260fdc601d4",
+      "after_sha256": "0441b7ffb565f14c50226b0f7dec5649dd96a53f309e190186ea347e33802010",
+      "mode": "100644"
+    },
+    "leetcode/854/style.css": {
+      "before_sha256": "8631f5c8720e508d28351bd1edfbb2d62b6709798efb4a2f2c9ff4a696bdb295",
+      "after_sha256": "663ba1e76209dd9d74a0d7652f1e05432c344f2c4acdf68843662377a7296b12",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/README.md": {
+      "before_sha256": "8f6c4565d003f58d1e600b861cff6c2fc431e12f7633fdab4d623cd008cd13a2",
+      "after_sha256": "13213949f4671a8e890b62b94647280483ea6564aaed2981c359c0b9051b33db",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/bridge-browser.json": {
+      "before_sha256": null,
+      "after_sha256": "44b933135c85cde1064b8cec81b76923d8713bab5c9ac45478e3a5a2d4df68de",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/browser-run.log": {
+      "before_sha256": null,
+      "after_sha256": "1ab40b27911b35b0a2be363aa0cef357f8890581eecd2afec90144e143bf36a9",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/clip-capture-initial.log": {
+      "before_sha256": null,
+      "after_sha256": "ab66effd1b9cb77b921c4d09360f9764fe686fa4fa2d4ac00253a5bbaf8f2a05",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/contrast-capture-initial.log": {
+      "before_sha256": null,
+      "after_sha256": "6960b49cc29f8bd3c5847e839ce4e852528cc7c12ae5276579722b1376653111",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/en-1440-zoom1-reassignment.png": {
+      "before_sha256": null,
+      "after_sha256": "c104e258c5685930caa5e4ad708f0e15c290a5f7a60f31c397a45c230c54ac58",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/en-1440-zoom2-reassignment.png": {
+      "before_sha256": null,
+      "after_sha256": "d4e4f0d9cfa5d7c76f51d37436a47ed54cff0bd5630ed2eaa965490258b9231a",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/en-320-zoom1-reassignment.png": {
+      "before_sha256": null,
+      "after_sha256": "eccbab0f930480508a56e3dc660a6b0e572fd9e8b66bd307c747d68102a3cec6",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/focus-capture-initial.log": {
+      "before_sha256": null,
+      "after_sha256": "1987bbe0e807c2b11935abe4388247784166414bf3fa5e8177fdef21bb366827",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/forced-colors.png": {
+      "before_sha256": null,
+      "after_sha256": "c3b5511ae9b7313cd9a811907708edc74d96f2e1e1206dc34558a4e9f37a13ac",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/manifest.json": {
+      "before_sha256": null,
+      "after_sha256": "559c6fee2b42c363f908059234e8c44f4adfa4c401d73ff85e17ec76ec5d1e6b",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/metadata-validation.log": {
+      "before_sha256": null,
+      "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/unchanged-source.json": {
+      "before_sha256": null,
+      "after_sha256": "14472f11846660ea429fa16ed8206b0b4bc4e84ef6200296f8f296e6f523b233",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/validation.json": {
+      "before_sha256": null,
+      "after_sha256": "76bb30d96209574843abf2285b5d81f83bdfc43f28485c3fc22aec5a0318b64f",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/zh-1440-zoom1-reassignment.png": {
+      "before_sha256": null,
+      "after_sha256": "910a3d2665d36ba7b1823b850ba3e59b06a7772012bf172b3e9bf66313ece496",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/zh-1440-zoom2-reassignment.png": {
+      "before_sha256": null,
+      "after_sha256": "5f5d92f1e529236143ee665440d68b3251863efeaf7e3631de9a06e9c769c1f2",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/bridge-evidence/zh-320-zoom1-reassignment.png": {
+      "before_sha256": null,
+      "after_sha256": "a2eba695d89c0c09e8a73a5f2b36a7cefad5e46efae580d9a17eda15d1053f57",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/build_page.py": {
+      "before_sha256": "1175c89158353cf78f8b608f18fb70266244ec1b5dbf40025287b2df3b9acf60",
+      "after_sha256": "a8eb49d5135fd4d3ed58fa77e00f9ddfd21e0bdb3d0c9fe4a5db418d61e90bac",
+      "mode": "100644"
+    },
+    "leetcode/854/tests/test_bridge_browser.cjs": {
+      "before_sha256": null,
+      "after_sha256": "d0c779baa4e8c9173e32f94afd7db4f5d5c42ae4627e7efea39603e2bdb911a4",
+      "mode": "100644"
+    },
+    "specs/proposals/leetcode-tagged-cycle-teaching-20261026.md": {
+      "before_sha256": null,
+      "after_sha256": "44350b8e045341d24a3b2acae1a8c5a56cb148057c94beb09b3c515be797a943",
+      "mode": "100644"
+    },
+    "specs/proposals/leetcode-tagged-cycle-teaching-evidence-20261026/result.json": {
+      "before_sha256": null,
+      "after_sha256": "4ecee1fa750d28f7724bf0bff9ec4cef421576cc508fbe84ada08d60e1a1c820",
+      "mode": "100644"
+    },
+    "specs/proposals/leetcode-tagged-cycle-teaching-evidence-20261026/verify.py": {
+      "before_sha256": null,
+      "after_sha256": "175630afba8ec9edc8cffce172528b120fca3e08ccad25714bfcb1f772f6f89a",
+      "mode": "100644"
+    },
+    "specs/reviews/854-outcome-20261026.md": {
+      "before_sha256": null,
+      "after_sha256": "06998d3d30c7ebc2b11bf0c70a3108e3f196d3da578c094f946d77335498a2c9",
+      "mode": "100644"
+    },
+    "specs/reviews/854-outcome-20261026/854-review-1-9601268b.md": {
+      "before_sha256": null,
+      "after_sha256": "4e2a60a96948e7a6d51783423ac5d91162b57f878a9e73d4267ff81bcc7cd705",
+      "mode": "100644"
+    },
+    "specs/reviews/854-tagged-cycle-design-review-20261026.md": {
+      "before_sha256": null,
+      "after_sha256": "d2c5b1f747501fe3f092a883e7465b4d55795fb7e38b65843be7e721ec13d3a9",
+      "mode": "100644"
+    },
+    "specs/reviews/854-tagged-cycle-revision-request-20261026.md": {
+      "before_sha256": null,
+      "after_sha256": "a70c0e1f7b42883ebb1d8545df8975e5d7dc7f53947e7f8e41ccc2a5d77da923",
+      "mode": "100644"
+    }
+  },
+  "protected": {
+    "solution.py": "7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068",
+    "python-code.js": "36b61694050f9499e8d02a2078002bba5e295769447d44afdfcc1c48de845238",
+    "core.js": "d33efab4b0e02bc1c47d060cc27c59ba054767da502c4f2955ce9dff2ce47dc0",
+    "lesson-entry.json": "7ba6fb81eabb97640a8664d7c97e50ccfde754bfabcf1b7272813c8c968a91bc"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "observed_at": "2026-10-25T23:48:43.012457+00:00",
+  "operator_pid": 1904720,
+  "operator_exists": true,
+  "operator_args": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import9961000-only-20261026-641c280f-dispatch/operate.py",
+    "--dispatch",
+    "root-reviewed-import9961000-only-20261026-641c280f",
+    "--pins",
+    "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import9961000-only-20261026-641c280f-dispatch/pins.json",
+    "--helper",
+    "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import9961000-only-20261026-641c280f-dispatch/helper.py"
+  ],
+  "receipt": {
+    "owner": "import9961000-only-20261026-641c280f",
+    "status": "importing-old-policy",
+    "created_at": "2026-10-25T23:43:21.528921+00:00",
+    "imports": [],
+    "lanes": [
+      {
+        "id": "996",
+        "lane_head": "af88d4a6f1c7727420c024fe3abce66c795fccb0",
+        "candidate": "0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38",
+        "score": 100.0,
+        "required_open": [],
+        "run_ids": [
+          "996-author-9180dd0f5b54",
+          "996-review-67e31a100281",
+          "996-fix-c44013a158e2",
+          "996-review-29cd3a98b546"
+        ]
+      },
+      {
+        "id": "1000",
+        "lane_head": "30516661a5cfc0673c2dcfaa018444e2ffa2c85b",
+        "candidate": "20f52a5cf74957ddacf1a7627ed882defe6a70f5",
+        "score": 92.5,
+        "required_open": [],
+        "run_ids": [
+          "1000-author-3a58ffe68610",
+          "1000-review-0970e8f06123"
+        ]
+      }
+    ],
+    "pre_stop_plan": {
+      "next_problem_id": "879",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992"
+        ],
+        "incoming": [
+          "1000",
+          "996"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "1000",
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992",
+          "996"
+        ],
+        "upper_bound": 11
+      }
+    },
+    "stop": {
+      "owner": "import9961000-only-20261026-641c280f",
+      "created_at": "2026-10-25T23:43:26.960441+00:00",
+      "reason": "Finish current stage; import independently accepted996/1000 under unchanged policy, then resume the normal queue.",
+      "lane_ids": [
+        "996",
+        "1000"
+      ]
+    },
+    "boundary_plan": {
+      "next_problem_id": "879",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992"
+        ],
+        "incoming": [
+          "1000",
+          "996"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "1000",
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992",
+          "996"
+        ],
+        "upper_bound": 11
+      }
+    },
+    "boundary_head": "cdb3caf0e2b26c04f6521215fe65c88280fe8ad9"
+  }
+}

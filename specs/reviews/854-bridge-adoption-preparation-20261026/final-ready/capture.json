@@ -1,0 +1,2020 @@
+{
+  "pins": {
+    "policy": {
+      "scripts/import_leetcode_lane.py": "8642a573383d052ce6e227bd8c2374f9c50f2fc1e8e9b312a6186607015344e0",
+      "scripts/leetcode_campaign.py": "a1258a0e7eba60e1d813bf0f9ede57a71f92cd504f6afb7bd0553d68d41c65ed",
+      "scripts/leetcode_publish.py": "7292c88e2ae035667a1bc723b076fb3d8d3d8562dc8428f3f66f74dc60f764d8",
+      "scripts/leetcode_registry.py": "a23b9b9e4feec966969c0b4c60f16e19cc2616ea0e1b2e587d15605e739349d6",
+      "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+      "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+      "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+      "scripts/campaign-prompts/author.md": "5f7feaa56f9f8f1f3f434e1fe4576cc2a10da21594c9aef829cab86e69dae06b",
+      "scripts/campaign-prompts/review.md": "129537defd8df8fda1c84c3bea80b62c8c717275f558128d8b62b02319838a1b",
+      "scripts/campaign-prompts/fix.md": "176376ca977b1b8e0f4444612efdf91b8a7d49e1f1c614e8985544828bb774d4",
+      "specs/reviews/workflow-copy-repair-requests-20261026/780.md": "79235a599df5139b2e8dc1c2a51fe673fd7b28bf46b2d3a3bbec34a1b22e280b",
+      "specs/reviews/workflow-copy-repair-requests-20261026/793.md": "ff52e23452b5099a60fc80e9a9fe1bed1e0840d4408c66793509335edb7536e5",
+      "specs/reviews/workflow-copy-repair-requests-20261026/798.md": "da3da5361f94e48e2a91ddb39e537146f2aff9939b7220b17a368f884d151318",
+      "specs/reviews/workflow-copy-repair-requests-20261026/801.md": "8bf72192c53809c60cf6bedf2379af8c185ce775346f4de59d0eee598af4b83a",
+      "specs/reviews/workflow-copy-repair-requests-20261026/815.md": "5c9697057a2218726823f12e58494fedde6221d5d19d87da9a1a8a25cd76977a",
+      "specs/reviews/workflow-copy-repair-requests-20261026/903.md": "5227f5ede9949c1bc677c06fa8c6a2a940dabf4e43b41829ef8be64750ad0476",
+      "specs/reviews/workflow-copy-repair-requests-20261026/920.md": "70b97c693528cb26a70d8f1ad8497c9d96812ab551704090f6d24057146e666e",
+      "specs/reviews/workflow-copy-repair-requests-20261026/940.md": "56df85c64f2ae135ce2d8323c052eba978bb50b231d899c840b2a07a0e6a5981",
+      "specs/reviews/workflow-copy-repair-requests-20261026/956.md": "635cfac82ede95dbb081fa8ced9935b28d0234fed4928ea9b5d10bd7d2f7e77f",
+      "specs/reviews/workflow-copy-repair-requests-20261026/README.md": "9c7747a2a299d19d3c3b329fa9d4a423fe2403141e3b4fd6484878bb8ee7584a",
+      "scripts/register_leetcode_lesson.py": "7ba274cd733a36528d98c85fe87b46d5535bc34898567b0c14f36fda37f81310",
+      "scripts/leetcode_static_versions.py": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e"
+    },
+    "launcher_sha256": "94056740463e5f9ec4fe63d0d2c56d1ccbf1ab60556f7952580fe58512127e70",
+    "queue_sha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+    "status": "frozen-source-reviewed-post9961000-import",
+    "source_revision": "27b9930daf25f9fb1651038bff1605969cb27f01",
+    "source_base": "cf1a31fc75c66ca79e54513e050b7e0ba31b6e70",
+    "source_push": {
+      "head": "47d97f6bf07dd1f4b8c7e1ca493ca3d21b3b9c7b",
+      "ref": "refs/heads/codex/leetcode-854-proof-bridge"
+    },
+    "source_review": {
+      "candidate": "27b9930daf25f9fb1651038bff1605969cb27f01",
+      "revision": "47d97f6bf07dd1f4b8c7e1ca493ca3d21b3b9c7b",
+      "report_path": "specs/reviews/854-bridge-review-20261026.md",
+      "report_sha256": "13a61dde9645bf34465152bb811f15f35dd532c01e65a692ebba8cc26040334d",
+      "outcome": "accepted",
+      "required_open": [],
+      "receipt_path": "specs/reviews/854-bridge-review-evidence-20261026/root-review-receipt.json",
+      "receipt_sha256": "911e37983fe1a2a934244f94e1fbba3d4772d99158f35a3b41278771b86a4de8"
+    },
+    "previous_owner": "import9961000-only-20261026-641c280f",
+    "previous_receipt_sha256": "483b6b7723bd84fa174afe8f7e58051653ebe56b2e793ad1694f5f4a4f7e9cbe",
+    "central": {
+      "head": "453476e12d04ae75d14b149fa26e3446cdb088ca",
+      "current": {
+        "problem_id": "879",
+        "stage": "review",
+        "started_at": "2026-10-25T23:51:55.033227+00:00",
+        "run_id": "879-review-f819a846b820"
+      },
+      "runner_pid": 1965599,
+      "native_pid": 1965929,
+      "session_id": "01a1757a-5dad-7a63-ab9f-51fad99ac40f"
+    },
+    "release": {
+      "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+      "released_count": 138,
+      "pending": null,
+      "last_receipt": {
+        "id": "84dfd908f5c94592918eb4ecb72eb87e",
+        "revision": "7fd4aa457c318f053d7dc722fd63b3012bccb838",
+        "files": {
+          "leetcode/780/app.js": "980ee1ffc6294fc7d50e1d81726547c868454ce54a55cd227ca1d6d0f6c34c36",
+          "leetcode/780-codex/app.js": "980ee1ffc6294fc7d50e1d81726547c868454ce54a55cd227ca1d6d0f6c34c36",
+          "leetcode/780/candidate.json": "ff6327c0902fdc99ef0ff745e9964bbd48e34ab1dbdff85671db6c23dbb3a28a",
+          "leetcode/780-codex/candidate.json": "ff6327c0902fdc99ef0ff745e9964bbd48e34ab1dbdff85671db6c23dbb3a28a",
+          "leetcode/780/copy.js": "779ba86fead137699edcb2bbf44d05ef16d90701fec8ea03227dc984771d23f0",
+          "leetcode/780-codex/copy.js": "779ba86fead137699edcb2bbf44d05ef16d90701fec8ea03227dc984771d23f0",
+          "leetcode/780/core.js": "7b2f64745f5a8bdbbe10ef31e66ca72977a3841f9652a3bf14292c025f183d93",
+          "leetcode/780-codex/core.js": "7b2f64745f5a8bdbbe10ef31e66ca72977a3841f9652a3bf14292c025f183d93",
+          "leetcode/780/index.html": "bf9376baa2f4756ad8cf50f0ce5eef05cebe7ccc028c55639106a247cce5124e",
+          "leetcode/780-codex/index.html": "2f5369ddedfd38d3c770124f1cbae1dbf30c1a0f49ec3012e899103bdd9bd5ab",
+          "leetcode/780/python-code.js": "e3e6d3cf79a7be1a04296a09009cf19b5566be717b9260c2f70ecc040dca838b",
+          "leetcode/780-codex/python-code.js": "e3e6d3cf79a7be1a04296a09009cf19b5566be717b9260c2f70ecc040dca838b",
+          "leetcode/780/solution.py": "3da0f1594a2bef609c96da97c2d41b6a93fabd84246a3ac7b312432e90e126a5",
+          "leetcode/780-codex/solution.py": "3da0f1594a2bef609c96da97c2d41b6a93fabd84246a3ac7b312432e90e126a5",
+          "leetcode/780/style.css": "bad6bc8dde949a4272e9dfb596c0a80000eabc291f82337658d4802838912e38",
+          "leetcode/780-codex/style.css": "bad6bc8dde949a4272e9dfb596c0a80000eabc291f82337658d4802838912e38",
+          "leetcode/793/app.js": "2fb1b08653c49f96b1dac34d46dc6230557d23bab506a6907f4d2ee20048d5cc",
+          "leetcode/793-codex/app.js": "2fb1b08653c49f96b1dac34d46dc6230557d23bab506a6907f4d2ee20048d5cc",
+          "leetcode/793/candidate-copy-r1.json": "6081fc00cc0e747180ecda7621759d6085a7bb6effe08aec75dd8b87d9fb24f1",
+          "leetcode/793-codex/candidate-copy-r1.json": "6081fc00cc0e747180ecda7621759d6085a7bb6effe08aec75dd8b87d9fb24f1",
+          "leetcode/793/candidate.json": "37c4c39225fdf64037bdeba7fc1901ce64b1dfd0c87ef3b6af842f80932f1e9e",
+          "leetcode/793-codex/candidate.json": "37c4c39225fdf64037bdeba7fc1901ce64b1dfd0c87ef3b6af842f80932f1e9e",
+          "leetcode/793/copy.js": "459afe94ffb24dc70ed119bd9709d731c6034255a16fa08c5795fc944659ac5a",
+          "leetcode/793-codex/copy.js": "459afe94ffb24dc70ed119bd9709d731c6034255a16fa08c5795fc944659ac5a",
+          "leetcode/793/core.js": "13c3e4c9a734a69400125683ddd2cd6d26a9a104a0dca71ee7a6ce8a3ceae86c",
+          "leetcode/793-codex/core.js": "13c3e4c9a734a69400125683ddd2cd6d26a9a104a0dca71ee7a6ce8a3ceae86c",
+          "leetcode/793/index.html": "b16897482d19a179bd2a95d31e8f1447ac241986b032e96f825361271be1059c",
+          "leetcode/793-codex/index.html": "f180a067820462c881d39b6c294778c53aaa135b58bcf338d41f185090f4dc84",
+          "leetcode/793/python-code.js": "0474b987cfd690023cdffa2084d3c68acb0ddd46724454841aa41b2327669091",
+          "leetcode/793-codex/python-code.js": "0474b987cfd690023cdffa2084d3c68acb0ddd46724454841aa41b2327669091",
+          "leetcode/793/solution.py": "7d899881c97a830cf9f8e91ffefaa9d9ce248e93fc3ad54532d0e4831e372e57",
+          "leetcode/793-codex/solution.py": "7d899881c97a830cf9f8e91ffefaa9d9ce248e93fc3ad54532d0e4831e372e57",
+          "leetcode/793/style.css": "dd551d84e99031dc80bb58966bc3489d13c9d015005b76629e561347b4c6fb52",
+          "leetcode/793-codex/style.css": "dd551d84e99031dc80bb58966bc3489d13c9d015005b76629e561347b4c6fb52",
+          "leetcode/798/app.js": "5900fc1266ae6be61a87da057dee1ea68567030b0ae24452b9fff6b25c3d9d25",
+          "leetcode/798-codex/app.js": "5900fc1266ae6be61a87da057dee1ea68567030b0ae24452b9fff6b25c3d9d25",
+          "leetcode/798/copy.js": "0f79e1e46c6dac59d6087c9abdea7fe796b15374db833391d2a49d99db507365",
+          "leetcode/798-codex/copy.js": "0f79e1e46c6dac59d6087c9abdea7fe796b15374db833391d2a49d99db507365",
+          "leetcode/798/core.js": "980a6b2d358d07d2c3fa29f160be7e13b857dc7c2e27a52a09b9d4cd0c26d4db",
+          "leetcode/798-codex/core.js": "980a6b2d358d07d2c3fa29f160be7e13b857dc7c2e27a52a09b9d4cd0c26d4db",
+          "leetcode/798/index.html": "576fdc62cacd7b1d72ab5ddd2eecdfbb65d8c48398ca5293eb51b75ce9dd24ef",
+          "leetcode/798-codex/index.html": "906707febd4b073b253352c1af285e3b36ebd1d20dc8021e54b702ce1dd56920",
+          "leetcode/798/python-code.js": "a3d08ddc619ca1426f88c777fd5c52b69ea951a41989e42d77b3333ef005bd05",
+          "leetcode/798-codex/python-code.js": "a3d08ddc619ca1426f88c777fd5c52b69ea951a41989e42d77b3333ef005bd05",
+          "leetcode/798/solution.py": "f1b2add3552b878bfb2dafe6138a6dda5e8f002ea4648d4d65a49e5dd0ec368b",
+          "leetcode/798-codex/solution.py": "f1b2add3552b878bfb2dafe6138a6dda5e8f002ea4648d4d65a49e5dd0ec368b",
+          "leetcode/798/style.css": "0df865b957c5f5f5c5c4028a7ac16c99b081900af187ff32d741fb85a10a52e1",
+          "leetcode/798-codex/style.css": "0df865b957c5f5f5c5c4028a7ac16c99b081900af187ff32d741fb85a10a52e1",
+          "leetcode/801/app.js": "75d6321fc0a235bc3347d3b8c6f5e57c7d9152fddd263733d215b9b96682d5f4",
+          "leetcode/801-codex/app.js": "75d6321fc0a235bc3347d3b8c6f5e57c7d9152fddd263733d215b9b96682d5f4",
+          "leetcode/801/copy.js": "3409843e1001b9aa1b86d8605f86193beba494241fbf3ff3b66b95a87af8f8e4",
+          "leetcode/801-codex/copy.js": "3409843e1001b9aa1b86d8605f86193beba494241fbf3ff3b66b95a87af8f8e4",
+          "leetcode/801/core.js": "234bc028c32433207c79acdfde06fcf921a0bab1142d54d6dba3f17cca2c82ec",
+          "leetcode/801-codex/core.js": "234bc028c32433207c79acdfde06fcf921a0bab1142d54d6dba3f17cca2c82ec",
+          "leetcode/801/index.html": "21d79daad6de82f001769b736a0e8347d05b6218fcef201de64e6278864e773b",
+          "leetcode/801-codex/index.html": "5f450e38b1c4aee5060161992db8ad6591a7e42803eea1409a16e4eecee77bca",
+          "leetcode/801/python-code.js": "a0f2bf9982e91a51f41af32fafaab9d91cea3da9edbf361eecaac7f5473b90c0",
+          "leetcode/801-codex/python-code.js": "a0f2bf9982e91a51f41af32fafaab9d91cea3da9edbf361eecaac7f5473b90c0",
+          "leetcode/801/solution.py": "f91a2d3e6ab348192f8b834578855f8ef45093b5e743de74c5aed667397cbcf4",
+          "leetcode/801-codex/solution.py": "f91a2d3e6ab348192f8b834578855f8ef45093b5e743de74c5aed667397cbcf4",
+          "leetcode/801/style.css": "bee051d34276181dd98160f501b9388505df09270a677e26cbc93c00b05535f0",
+          "leetcode/801-codex/style.css": "bee051d34276181dd98160f501b9388505df09270a677e26cbc93c00b05535f0",
+          "leetcode/810/app.js": "675849fdf9ee9e90ead97a0820a7d0347e4cbddd6480e5736f5cced933a58d9d",
+          "leetcode/810-codex/app.js": "675849fdf9ee9e90ead97a0820a7d0347e4cbddd6480e5736f5cced933a58d9d",
+          "leetcode/810/copy.js": "d8d80a5803c1f944f206a152e11f41fe33054688b6e6400cbdb45f142a5d04d9",
+          "leetcode/810-codex/copy.js": "d8d80a5803c1f944f206a152e11f41fe33054688b6e6400cbdb45f142a5d04d9",
+          "leetcode/810/core.js": "b6ea5af0a730bd7755779b2098c36b0cbb38169e1acd1bcb982b493e3d65b214",
+          "leetcode/810-codex/core.js": "b6ea5af0a730bd7755779b2098c36b0cbb38169e1acd1bcb982b493e3d65b214",
+          "leetcode/810/index.html": "25c6b053b6b0c16f782e3f5bab40e77e818fe663a3076abb0a98bd71f2831de2",
+          "leetcode/810-codex/index.html": "c626a92936e6c3faee62dac35102e2829e60d0d64dbe03a9bf7e48e6ac56a6fc",
+          "leetcode/810/python-code.js": "f520f790dc8155b983fad2a172873823f90a102744a21925bc94e8798f9d547b",
+          "leetcode/810-codex/python-code.js": "f520f790dc8155b983fad2a172873823f90a102744a21925bc94e8798f9d547b",
+          "leetcode/810/solution.py": "0f9231a5c6c82ec6e696730be6c16344e537b36e252306f93e588ed4dc03149b",
+          "leetcode/810-codex/solution.py": "0f9231a5c6c82ec6e696730be6c16344e537b36e252306f93e588ed4dc03149b",
+          "leetcode/810/style.css": "4754f40286ae83d6e5c387ba066f6f3f3419284135ade7e397ac7ba3814e6ae5",
+          "leetcode/810-codex/style.css": "4754f40286ae83d6e5c387ba066f6f3f3419284135ade7e397ac7ba3814e6ae5",
+          "leetcode/815/app.js": "82cdaab88efd5da8194a01a7471666728adca2974040ef07970ff07e1b533b2a",
+          "leetcode/815-codex/app.js": "82cdaab88efd5da8194a01a7471666728adca2974040ef07970ff07e1b533b2a",
+          "leetcode/815/candidate-copy-r1.json": "447cbf3aaf4132eeda74998ac857148c78daa16987f40b0240558527f8ea0672",
+          "leetcode/815-codex/candidate-copy-r1.json": "447cbf3aaf4132eeda74998ac857148c78daa16987f40b0240558527f8ea0672",
+          "leetcode/815/candidate.json": "4c8e8018ec5c28f92b2725ec747cb92b1c0f42f91320cc4eec853a038f3e7f92",
+          "leetcode/815-codex/candidate.json": "4c8e8018ec5c28f92b2725ec747cb92b1c0f42f91320cc4eec853a038f3e7f92",
+          "leetcode/815/copy.js": "035faeb52414c8d4b2faeb17a1692d2176ebec062d6bf3e1daf8e03433ac25cd",
+          "leetcode/815-codex/copy.js": "035faeb52414c8d4b2faeb17a1692d2176ebec062d6bf3e1daf8e03433ac25cd",
+          "leetcode/815/core.js": "712356dec8b88aa57cad5642b24c1fe657dc2e3b11a5880be624afad0296bc0b",
+          "leetcode/815-codex/core.js": "712356dec8b88aa57cad5642b24c1fe657dc2e3b11a5880be624afad0296bc0b",
+          "leetcode/815/index.html": "d1aeb8440867bd8ce44ec6882adf9b2995743aa2eca97770f90492cd6fc4a59d",
+          "leetcode/815-codex/index.html": "3a23d3c4f4c79b1f9565064977ecd5926076ee85d5e72754a3ed62c19944a26c",
+          "leetcode/815/python-code.js": "01b853e07ef4c56193640736d9cb06432d36006d16360d695cabf4dd1134a3a7",
+          "leetcode/815-codex/python-code.js": "01b853e07ef4c56193640736d9cb06432d36006d16360d695cabf4dd1134a3a7",
+          "leetcode/815/solution.py": "97c860fe70c63fb0f918775710e394171a9ea7989a2ec698bddc194d1effeb87",
+          "leetcode/815-codex/solution.py": "97c860fe70c63fb0f918775710e394171a9ea7989a2ec698bddc194d1effeb87",
+          "leetcode/815/style.css": "c6673f1b05a789267ae826bd91f42aba3f23aa5ed41149084946efd0db7a9548",
+          "leetcode/815-codex/style.css": "c6673f1b05a789267ae826bd91f42aba3f23aa5ed41149084946efd0db7a9548",
+          "leetcode/818/app.js": "c55d2e4eb5d84bf25cb69d004ed1dae0551e2b6267f865629de668b3a31576da",
+          "leetcode/818-codex/app.js": "c55d2e4eb5d84bf25cb69d004ed1dae0551e2b6267f865629de668b3a31576da",
+          "leetcode/818/candidate.json": "06205f60e2427012de6cb2412232b23b6cace12d1df0e8b80ba4808a881770a4",
+          "leetcode/818-codex/candidate.json": "06205f60e2427012de6cb2412232b23b6cace12d1df0e8b80ba4808a881770a4",
+          "leetcode/818/copy.js": "276ef9076b9bc43cca13b79652115131fa2bb8c5921ceada5d53c96e2823ad63",
+          "leetcode/818-codex/copy.js": "276ef9076b9bc43cca13b79652115131fa2bb8c5921ceada5d53c96e2823ad63",
+          "leetcode/818/core.js": "c7bf48d66c835d144e752ebd19899f27d804cb3b8edadf271b23639e12853860",
+          "leetcode/818-codex/core.js": "c7bf48d66c835d144e752ebd19899f27d804cb3b8edadf271b23639e12853860",
+          "leetcode/818/index.html": "6c307459733b6c19cfb966d7287e3c22c36f3d54d6da96f817db99f7f4472706",
+          "leetcode/818-codex/index.html": "3ffce4dbc6765c5bdaa077bd96fc1b762b6148851b52f5966d7e8fe5f74d4a32",
+          "leetcode/818/python-code.js": "eeb856c07f274d79f7d7e98cade0906720cd83cf3c9ca417da9fa1995d5266d1",
+          "leetcode/818-codex/python-code.js": "eeb856c07f274d79f7d7e98cade0906720cd83cf3c9ca417da9fa1995d5266d1",
+          "leetcode/818/solution.py": "da9a9a40d5d90c856d82b984333419be4246821b037108faeee0eddae0ab6d68",
+          "leetcode/818-codex/solution.py": "da9a9a40d5d90c856d82b984333419be4246821b037108faeee0eddae0ab6d68",
+          "leetcode/818/style.css": "5415e7c5b5929520a0a2262561d9ccf1982d85b86d535be8f2423dfb779ae3c4",
+          "leetcode/818-codex/style.css": "5415e7c5b5929520a0a2262561d9ccf1982d85b86d535be8f2423dfb779ae3c4",
+          "leetcode/827/app.js": "08a015ea97a5136796fd1c500bc710a16f22ffd4780ee16181659eadbc6aeeac",
+          "leetcode/827-codex/app.js": "08a015ea97a5136796fd1c500bc710a16f22ffd4780ee16181659eadbc6aeeac",
+          "leetcode/827/candidate.json": "e9a7778593bcf6461726604cbe427b64619e1a5cd3a417c42cfdb3c6adc8869e",
+          "leetcode/827-codex/candidate.json": "e9a7778593bcf6461726604cbe427b64619e1a5cd3a417c42cfdb3c6adc8869e",
+          "leetcode/827/copy.js": "ee102d269e63c9f1c4a55e56e8fb56500eecb54b3d9d76d6702dda3215f6c6dd",
+          "leetcode/827-codex/copy.js": "ee102d269e63c9f1c4a55e56e8fb56500eecb54b3d9d76d6702dda3215f6c6dd",
+          "leetcode/827/core.js": "9300580b1b55e5641f3042b13cc3623f5712bd37ea2ffb378fdb24e0fea5da62",
+          "leetcode/827-codex/core.js": "9300580b1b55e5641f3042b13cc3623f5712bd37ea2ffb378fdb24e0fea5da62",
+          "leetcode/827/index.html": "289f6da7f9af43be711e32e1bafaac7e88abffb84396c4f8864c9ed556617797",
+          "leetcode/827-codex/index.html": "b290c06eda8ed3f55d675dde4eaec24de34c586947d47f26d7e6d920997b2512",
+          "leetcode/827/python-code.js": "563bb6070cc80a9fc0b3e0b7755e2eff795d6b63a5a7594ef1bc5b4738eef562",
+          "leetcode/827-codex/python-code.js": "563bb6070cc80a9fc0b3e0b7755e2eff795d6b63a5a7594ef1bc5b4738eef562",
+          "leetcode/827/solution.py": "a39448aeb82148cbebe625063d8d3921827c333ffa36bc223e0fb0d59708691b",
+          "leetcode/827-codex/solution.py": "a39448aeb82148cbebe625063d8d3921827c333ffa36bc223e0fb0d59708691b",
+          "leetcode/827/style.css": "54b807f52df8534a16a4ada86b89f7b7bfd037bcca41515889b6adac8ab5713b",
+          "leetcode/827-codex/style.css": "54b807f52df8534a16a4ada86b89f7b7bfd037bcca41515889b6adac8ab5713b",
+          "leetcode/828/app.js": "fd3dad609e83ce14dae529088add1de0a63630efb191fbfa0ac80ef8ed194f11",
+          "leetcode/828-codex/app.js": "fd3dad609e83ce14dae529088add1de0a63630efb191fbfa0ac80ef8ed194f11",
+          "leetcode/828/copy.js": "7a81ee494c7b54922df52772ec7581edb7fdd4cd97362a72f43948a6aae96fde",
+          "leetcode/828-codex/copy.js": "7a81ee494c7b54922df52772ec7581edb7fdd4cd97362a72f43948a6aae96fde",
+          "leetcode/828/core.js": "f0bc4ba4539bb63cfe5ef87dc50beffe2ea1fa418dde6189f59f6d65acd95e6d",
+          "leetcode/828-codex/core.js": "f0bc4ba4539bb63cfe5ef87dc50beffe2ea1fa418dde6189f59f6d65acd95e6d",
+          "leetcode/828/index.html": "1e8760f39b31aaa2a3915b726105de2febcd6a47a003241db029b46cdc32f2ea",
+          "leetcode/828-codex/index.html": "a7f4e0fc2a5e3ce543e3082a68299157eba3ebba5e3db7c263c8bf42cd1764cd",
+          "leetcode/828/python-code.js": "37a6d4f8e85826efaaac423ef07e4ad8cd2c77fa5c193eb89ec0970d85d48e0b",
+          "leetcode/828-codex/python-code.js": "37a6d4f8e85826efaaac423ef07e4ad8cd2c77fa5c193eb89ec0970d85d48e0b",
+          "leetcode/828/solution.py": "8a124f56e4aa857b3901f6a310158bdf5dbecc55f892e85e50af3b3b920e901c",
+          "leetcode/828-codex/solution.py": "8a124f56e4aa857b3901f6a310158bdf5dbecc55f892e85e50af3b3b920e901c",
+          "leetcode/828/style.css": "4ce56eb8a095fdea17f7a1ebb0974d31c314a2a4816973621f7de485b8a98cb7",
+          "leetcode/828-codex/style.css": "4ce56eb8a095fdea17f7a1ebb0974d31c314a2a4816973621f7de485b8a98cb7",
+          "leetcode/829/app.js": "c1242d90d967f641dbf1165fa4984acb3d92cb2f0ef17f0a5e4376a5b7edfb79",
+          "leetcode/829-codex/app.js": "c1242d90d967f641dbf1165fa4984acb3d92cb2f0ef17f0a5e4376a5b7edfb79",
+          "leetcode/829/copy.js": "39b87776eb7163db86aa433e9efe43dd1f1c08424b019fedb9bb64f84ffa3812",
+          "leetcode/829-codex/copy.js": "39b87776eb7163db86aa433e9efe43dd1f1c08424b019fedb9bb64f84ffa3812",
+          "leetcode/829/core.js": "7f0526f16c86d415451d5355034fdeeba6408b64798ed8f24638f022da8f9e7f",
+          "leetcode/829-codex/core.js": "7f0526f16c86d415451d5355034fdeeba6408b64798ed8f24638f022da8f9e7f",
+          "leetcode/829/index.html": "8d461273b74d60d677e8fe9ef3170c25caedbd4912a3533cf9087808ecbc70dc",
+          "leetcode/829-codex/index.html": "58e08a0b58a9650302b1917e0eb4ef27687a4229d927243f861a079f37b6c0b3",
+          "leetcode/829/python-code.js": "889f306cdbdcd5c454012aa33378348c152dd9f2cf2e17e380bdb993f9161139",
+          "leetcode/829-codex/python-code.js": "889f306cdbdcd5c454012aa33378348c152dd9f2cf2e17e380bdb993f9161139",
+          "leetcode/829/solution.py": "890565cfdc772ed56bbcec415ab73b2729751a2ee2ecc6de718797e9c3c7efe3",
+          "leetcode/829-codex/solution.py": "890565cfdc772ed56bbcec415ab73b2729751a2ee2ecc6de718797e9c3c7efe3",
+          "leetcode/829/style.css": "89bb5affbc759cd1b792ce86dfd41b028d15ea33728a58aee7b55a21092fe075",
+          "leetcode/829-codex/style.css": "89bb5affbc759cd1b792ce86dfd41b028d15ea33728a58aee7b55a21092fe075",
+          "leetcode/834/app.js": "556964412fd0563ccec3970fe98dade605ec8a1b01322da1fc89ec1c79c8761e",
+          "leetcode/834-codex/app.js": "556964412fd0563ccec3970fe98dade605ec8a1b01322da1fc89ec1c79c8761e",
+          "leetcode/834/copy.js": "c57f4c9a828d69a31b9e72a5e5dfc2a4ef776b7dccc5ee4c904788183fdf1838",
+          "leetcode/834-codex/copy.js": "c57f4c9a828d69a31b9e72a5e5dfc2a4ef776b7dccc5ee4c904788183fdf1838",
+          "leetcode/834/core.js": "6f341973ea6dfce7dcaf9a8f2ad9b493f11d62173d7d7f9280b09ad0d8154fa1",
+          "leetcode/834-codex/core.js": "6f341973ea6dfce7dcaf9a8f2ad9b493f11d62173d7d7f9280b09ad0d8154fa1",
+          "leetcode/834/index.html": "22f51a4952f4b328fe9351be9e5bafc740d9aa1a2ffc430ab84235b6fcc221d7",
+          "leetcode/834-codex/index.html": "331705dd3051a46beeb005d51b48006212ac9dc2c32cc228fa59647f0d54a1f1",
+          "leetcode/834/python-code.js": "1ac8654e9613b8ca5ee43082b0a1c548c7461226ca891093944fb98b1486cca2",
+          "leetcode/834-codex/python-code.js": "1ac8654e9613b8ca5ee43082b0a1c548c7461226ca891093944fb98b1486cca2",
+          "leetcode/834/solution.py": "22cad233c054f17c7dfa7f57663d4bb9bcdc12283bb8fbc7333ca3bbc2739e61",
+          "leetcode/834-codex/solution.py": "22cad233c054f17c7dfa7f57663d4bb9bcdc12283bb8fbc7333ca3bbc2739e61",
+          "leetcode/834/style.css": "ddcbee2f49e9dfe820566d45c6be3d0d96f498575984f828461be9a29b96c023",
+          "leetcode/834-codex/style.css": "ddcbee2f49e9dfe820566d45c6be3d0d96f498575984f828461be9a29b96c023",
+          "leetcode/839/app.js": "43adbdfd0cc214a071ccb41ca8101d2a764f6bc7d6a7b36e4d3e3c51fd2fb0d5",
+          "leetcode/839-codex/app.js": "43adbdfd0cc214a071ccb41ca8101d2a764f6bc7d6a7b36e4d3e3c51fd2fb0d5",
+          "leetcode/839/candidate.json": "9a1b0dd65798d14c464cab8ce428bf8d341eac0fffe228b04898f7a2b51c5f62",
+          "leetcode/839-codex/candidate.json": "9a1b0dd65798d14c464cab8ce428bf8d341eac0fffe228b04898f7a2b51c5f62",
+          "leetcode/839/copy.js": "07eb984ee35bdebb003f738cad53530d2798aebb1c3858f754579375e00c90da",
+          "leetcode/839-codex/copy.js": "07eb984ee35bdebb003f738cad53530d2798aebb1c3858f754579375e00c90da",
+          "leetcode/839/core.js": "0055afb36f5a29c4fbcfef3726ae1e0151a5c3a597c7829972deebbe366238cd",
+          "leetcode/839-codex/core.js": "0055afb36f5a29c4fbcfef3726ae1e0151a5c3a597c7829972deebbe366238cd",
+          "leetcode/839/index.html": "e2ac7e870fb0f366f5141a3146f5b0b5a9cb965c5e8f0b48a53392dd78876f56",
+          "leetcode/839-codex/index.html": "3e1b4020aa8af85f4add1a61b64bf4bee0616eb634d5f90a97e3ee3703a82551",
+          "leetcode/839/python-code.js": "b4cb7f287e7f8a1c4eb02e6dd4a8fb8976e69c1a02ba4c683a75eb94d6699b80",
+          "leetcode/839-codex/python-code.js": "b4cb7f287e7f8a1c4eb02e6dd4a8fb8976e69c1a02ba4c683a75eb94d6699b80",
+          "leetcode/839/solution.py": "3a3fc21fa1d2cb75af0106ad222067fdf15cb35a6505bbd64cc40d4c222b2218",
+          "leetcode/839-codex/solution.py": "3a3fc21fa1d2cb75af0106ad222067fdf15cb35a6505bbd64cc40d4c222b2218",
+          "leetcode/839/style.css": "54f54be5b343d6e718494ed40e1ce9f408cd6cb2ff3fed228b047cf6f983d2dc",
+          "leetcode/839-codex/style.css": "54f54be5b343d6e718494ed40e1ce9f408cd6cb2ff3fed228b047cf6f983d2dc",
+          "leetcode/843/app.js": "aab7eb9dcdb24a55a0d1c265bccb59fc97b5c21236455ece987378dbab07526e",
+          "leetcode/843-codex/app.js": "aab7eb9dcdb24a55a0d1c265bccb59fc97b5c21236455ece987378dbab07526e",
+          "leetcode/843/candidate.json": "93002935eda0e885bb15a2d34aaaf2caa262eee52d3b1e9ef55dbdb5773881e6",
+          "leetcode/843-codex/candidate.json": "93002935eda0e885bb15a2d34aaaf2caa262eee52d3b1e9ef55dbdb5773881e6",
+          "leetcode/843/copy.js": "7811c587179f85366346a0ef77fad46b4735428b17613522cb730f0fdcb7d053",
+          "leetcode/843-codex/copy.js": "7811c587179f85366346a0ef77fad46b4735428b17613522cb730f0fdcb7d053",
+          "leetcode/843/core.js": "dd5ae115a5988c71164432995a8def755283b95fedf53318aed186b4f48f5ecb",
+          "leetcode/843-codex/core.js": "dd5ae115a5988c71164432995a8def755283b95fedf53318aed186b4f48f5ecb",
+          "leetcode/843/index.html": "bf0fe15cf5fd399bf43bd462ec4286d85e810df5af17ae3bf205511cd85467f6",
+          "leetcode/843-codex/index.html": "2dd447c803f8ee243df54ae0221267a4ca0e95afa0825a7e12d1a3dccedce2c7",
+          "leetcode/843/python-code.js": "3d3287def904402b4390f999cf8b67e49e28b086c64cab63410059b80aa663b2",
+          "leetcode/843-codex/python-code.js": "3d3287def904402b4390f999cf8b67e49e28b086c64cab63410059b80aa663b2",
+          "leetcode/843/solution.py": "51f9e29c91ca3ffe6238f13dfa0f0b632081274be4747ac67cfbf627b986dc05",
+          "leetcode/843-codex/solution.py": "51f9e29c91ca3ffe6238f13dfa0f0b632081274be4747ac67cfbf627b986dc05",
+          "leetcode/843/style.css": "82daf852ce99603d981dc6be831d1567a659d4a23c15f1f3d290c178acb9b89a",
+          "leetcode/843-codex/style.css": "82daf852ce99603d981dc6be831d1567a659d4a23c15f1f3d290c178acb9b89a",
+          "leetcode/847/app.js": "59a47c0b30b3a4e97b6ae7a8b2e5ac85b992ebcec79b74427e8da63946eb3933",
+          "leetcode/847-codex/app.js": "59a47c0b30b3a4e97b6ae7a8b2e5ac85b992ebcec79b74427e8da63946eb3933",
+          "leetcode/847/candidate.json": "9076ad80cba9cf2cbb1354cf8dd55d828a6ed693fd2629138955c73d415f0807",
+          "leetcode/847-codex/candidate.json": "9076ad80cba9cf2cbb1354cf8dd55d828a6ed693fd2629138955c73d415f0807",
+          "leetcode/847/copy.js": "c4e09860a137a04fd18d814979993c3a6beffb2836da3dc5f0b56c1cfe9d0f0a",
+          "leetcode/847-codex/copy.js": "c4e09860a137a04fd18d814979993c3a6beffb2836da3dc5f0b56c1cfe9d0f0a",
+          "leetcode/847/core.js": "5e6a64b969ec4ff3ef64e75a12403ebb3b6cc3551b7338c536c21a62bae14f38",
+          "leetcode/847-codex/core.js": "5e6a64b969ec4ff3ef64e75a12403ebb3b6cc3551b7338c536c21a62bae14f38",
+          "leetcode/847/index.html": "ba4f4d3d2db5f0e74e689e2d752a1283409c139f78515843292beb5e25d87700",
+          "leetcode/847-codex/index.html": "d078c4fc2f76833f8db5ce2cbd479a3904c37a8ee55d522f7ce1e81821baa7d2",
+          "leetcode/847/python-code.js": "ce1a72879cbbd059b37afc1f88bfb2675a8cbe9b8898287de2bc41a131f31e63",
+          "leetcode/847-codex/python-code.js": "ce1a72879cbbd059b37afc1f88bfb2675a8cbe9b8898287de2bc41a131f31e63",
+          "leetcode/847/solution.py": "4d529eb2794cceaaa22169f3e84e05ed14f06358ddf1fa1cf3f679522292045e",
+          "leetcode/847-codex/solution.py": "4d529eb2794cceaaa22169f3e84e05ed14f06358ddf1fa1cf3f679522292045e",
+          "leetcode/847/style.css": "70ffb8be81d2c1884f7f5bdfeb195c3c274459509f9a5309652511b1b4a8255d",
+          "leetcode/847-codex/style.css": "70ffb8be81d2c1884f7f5bdfeb195c3c274459509f9a5309652511b1b4a8255d",
+          "leetcode/850/app.js": "bb7360395d915644820580f62b0a60c5e3d90038c5e736ba71762baf65683e5b",
+          "leetcode/850-codex/app.js": "bb7360395d915644820580f62b0a60c5e3d90038c5e736ba71762baf65683e5b",
+          "leetcode/850/copy.js": "b18a62fcb3b4ea6b6fe5910258970bf8c9a043e96cdc831dded02dce8849f271",
+          "leetcode/850-codex/copy.js": "b18a62fcb3b4ea6b6fe5910258970bf8c9a043e96cdc831dded02dce8849f271",
+          "leetcode/850/core.js": "002589f7b412861c3070a3150fb4690ed1e432f6f58571d058a0c94a2effe88a",
+          "leetcode/850-codex/core.js": "002589f7b412861c3070a3150fb4690ed1e432f6f58571d058a0c94a2effe88a",
+          "leetcode/850/index.html": "c8d55d91348709f26c41f06955b7019947680d616feeb10661dba4ebdcf0ed07",
+          "leetcode/850-codex/index.html": "44c0b952ccfcc7d11a677e635086324d572638e9e6f6c2382df53f7af20cc753",
+          "leetcode/850/python-code.js": "6dc071dc71f3c7157b1299cff4c9a752affc2699466e5b8868164e074801e1fa",
+          "leetcode/850-codex/python-code.js": "6dc071dc71f3c7157b1299cff4c9a752affc2699466e5b8868164e074801e1fa",
+          "leetcode/850/solution.py": "2a20b4eb16dc4bffe95affc932c5d8e1937249b720a136ec8e1f5090b295051a",
+          "leetcode/850-codex/solution.py": "2a20b4eb16dc4bffe95affc932c5d8e1937249b720a136ec8e1f5090b295051a",
+          "leetcode/850/style.css": "c551dab6bb8095ce55a2c1a4855ef63ffe41098fa0dffa095fd6902c4966fa41",
+          "leetcode/850-codex/style.css": "c551dab6bb8095ce55a2c1a4855ef63ffe41098fa0dffa095fd6902c4966fa41",
+          "leetcode/960/app.js": "1f9b27e03fc2ca20d94ff86aae89658165d8e10052203dbfbf72e58ea7b55442",
+          "leetcode/960-codex/app.js": "1f9b27e03fc2ca20d94ff86aae89658165d8e10052203dbfbf72e58ea7b55442",
+          "leetcode/960/copy.js": "60781b9e2bc2cccf787968b99753410c6fefcaa45ec5f9c4bc41974dec5b089c",
+          "leetcode/960-codex/copy.js": "60781b9e2bc2cccf787968b99753410c6fefcaa45ec5f9c4bc41974dec5b089c",
+          "leetcode/960/core.js": "6c55e1aa31283a65420c25d5d241bbc6f3103653a49049545711d46c10376493",
+          "leetcode/960-codex/core.js": "6c55e1aa31283a65420c25d5d241bbc6f3103653a49049545711d46c10376493",
+          "leetcode/960/index.html": "5ccd6c273ca57e7f74dafa097f596f4702c55886c87bae5c3267f7bc5a7529a8",
+          "leetcode/960-codex/index.html": "76000742f3148b438ddcdea12aef20fe7d0ccad4f3fc6d36ea3420e2bfe5cf92",
+          "leetcode/960/python-code.js": "3172ec6abd3548cbc5ac07aa0f4a6cebe33e0ef5d82f8fea56492f122ce4ca24",
+          "leetcode/960-codex/python-code.js": "3172ec6abd3548cbc5ac07aa0f4a6cebe33e0ef5d82f8fea56492f122ce4ca24",
+          "leetcode/960/solution.py": "3799b28e3f572097135d0afe25d50366b6f89825c4ca7efbd5e9bf14ad2e56ac",
+          "leetcode/960-codex/solution.py": "3799b28e3f572097135d0afe25d50366b6f89825c4ca7efbd5e9bf14ad2e56ac",
+          "leetcode/960/style.css": "5a1a7f93562b4020d8f4021d9cc9b3bcae55b99464b4a1ef68510aa3a081d6e5",
+          "leetcode/960-codex/style.css": "5a1a7f93562b4020d8f4021d9cc9b3bcae55b99464b4a1ef68510aa3a081d6e5",
+          "leetcode/968/app.js": "1b70bd1d9bcf2fa6be0a68e95fbc3225ac1a1f223a64b4daf4388eb148d687cf",
+          "leetcode/968-codex/app.js": "1b70bd1d9bcf2fa6be0a68e95fbc3225ac1a1f223a64b4daf4388eb148d687cf",
+          "leetcode/968/copy.js": "a9d5e6e4e32cf5a38c61d21456bb563ec1ebc0a7434745ed62e307d53f87039c",
+          "leetcode/968-codex/copy.js": "a9d5e6e4e32cf5a38c61d21456bb563ec1ebc0a7434745ed62e307d53f87039c",
+          "leetcode/968/core.js": "f94b6dc09dfe5e79ec55193c565437361a29d9d646cddb773ef70be12aa1c5dc",
+          "leetcode/968-codex/core.js": "f94b6dc09dfe5e79ec55193c565437361a29d9d646cddb773ef70be12aa1c5dc",
+          "leetcode/968/index.html": "e86114fa89c58ceb4a59f54f62b8b36dfd01588135f4a3338e61f2305d0e6d81",
+          "leetcode/968-codex/index.html": "fc5c421284e5b8c48595c84c658c6b03505507ff51460b80020a5a85ff3e6919",
+          "leetcode/968/python-code.js": "972388daafc90cfa38c364a2e80235a3d92771fa0cabca9120cae81b6d1a0ed1",
+          "leetcode/968-codex/python-code.js": "972388daafc90cfa38c364a2e80235a3d92771fa0cabca9120cae81b6d1a0ed1",
+          "leetcode/968/solution.py": "b7428a60e1ab3b6f6180a8b8f4201b03d34e7a39857dd4091f62e85ffd7f9f31",
+          "leetcode/968-codex/solution.py": "b7428a60e1ab3b6f6180a8b8f4201b03d34e7a39857dd4091f62e85ffd7f9f31",
+          "leetcode/968/style.css": "874b1ce27607a66d1f55ddee88d78b7e7d45ad203c2cb03f249f801057282684",
+          "leetcode/968-codex/style.css": "874b1ce27607a66d1f55ddee88d78b7e7d45ad203c2cb03f249f801057282684",
+          "leetcode/972/CANDIDATE.json": "5c969318238b28cf377433b92bde22252e04c02b4ab85d6d84e7dddee6c709ed",
+          "leetcode/972-codex/CANDIDATE.json": "5c969318238b28cf377433b92bde22252e04c02b4ab85d6d84e7dddee6c709ed",
+          "leetcode/972/app.js": "3636528f548e48a2be6a50370d9c1e54d821c7d935fba0007b19d7b513a473db",
+          "leetcode/972-codex/app.js": "3636528f548e48a2be6a50370d9c1e54d821c7d935fba0007b19d7b513a473db",
+          "leetcode/972/copy.js": "12bff2f91c4ce921fdee9ba7eb5c302ebf20f1be1320a23145380e8f89aee37b",
+          "leetcode/972-codex/copy.js": "12bff2f91c4ce921fdee9ba7eb5c302ebf20f1be1320a23145380e8f89aee37b",
+          "leetcode/972/core.js": "14eb7b071981e1a846041e6cf509510e1fdfe7339e82ca53b5aac8114a204cec",
+          "leetcode/972-codex/core.js": "14eb7b071981e1a846041e6cf509510e1fdfe7339e82ca53b5aac8114a204cec",
+          "leetcode/972/index.html": "f222fc81523a6638e17aa7832cad4156faf7ebdbdcd1e5c03a8ed1ff392eab3e",
+          "leetcode/972-codex/index.html": "3a3e550a8ba2a68a5c2170146fc1ffc56231b9891cc4705a7b2da8827c621d50",
+          "leetcode/972/python-code.js": "25bfea23bae1651660275bb17ee96de06573f989a9b8645da832224fb97f2d0c",
+          "leetcode/972-codex/python-code.js": "25bfea23bae1651660275bb17ee96de06573f989a9b8645da832224fb97f2d0c",
+          "leetcode/972/solution.py": "5a12b666978e34d384e92f744e63f0b2733356b1c9cc9de8f184bf8a5263e075",
+          "leetcode/972-codex/solution.py": "5a12b666978e34d384e92f744e63f0b2733356b1c9cc9de8f184bf8a5263e075",
+          "leetcode/972/style.css": "3ab962cf72632788999faff5b03f8e8f4b6ef4ecb069331f84197c15ac6930c9",
+          "leetcode/972-codex/style.css": "3ab962cf72632788999faff5b03f8e8f4b6ef4ecb069331f84197c15ac6930c9",
+          "leetcode/975/CANDIDATE.json": "d1dc8009bf3730fd11825f15c1bb319ba664f8ce38fcf9b7caaf71f84849893d",
+          "leetcode/975-codex/CANDIDATE.json": "d1dc8009bf3730fd11825f15c1bb319ba664f8ce38fcf9b7caaf71f84849893d",
+          "leetcode/975/app.js": "41fad186157d4d14437a7faa8ba07297a0b56314ccc97210305ac9b2bd97880c",
+          "leetcode/975-codex/app.js": "41fad186157d4d14437a7faa8ba07297a0b56314ccc97210305ac9b2bd97880c",
+          "leetcode/975/copy.js": "0c14e911cf45be968060d2f4cf50f68e22589e5f99b2662950a73ef146a48e6c",
+          "leetcode/975-codex/copy.js": "0c14e911cf45be968060d2f4cf50f68e22589e5f99b2662950a73ef146a48e6c",
+          "leetcode/975/core.js": "b62f86c2ac765e3bf4bee14f81112e91b0e59e9967c3eb2a5ea16af6fcd5f29f",
+          "leetcode/975-codex/core.js": "b62f86c2ac765e3bf4bee14f81112e91b0e59e9967c3eb2a5ea16af6fcd5f29f",
+          "leetcode/975/index.html": "c67647bd026261acde7a67a6344a50b54152c74ee30b764bb011a9a91577d7bc",
+          "leetcode/975-codex/index.html": "beda3030b1a53ef4c1391f3cd81c272ba829550a45ac2c0f11f2995bde0b2064",
+          "leetcode/975/python-code.js": "8ece636e1994c3edec22d4c04ece8f94723ab72f8c77b542010dd95c8f41706f",
+          "leetcode/975-codex/python-code.js": "8ece636e1994c3edec22d4c04ece8f94723ab72f8c77b542010dd95c8f41706f",
+          "leetcode/975/solution.py": "90787ce70f745d0db62c28732886b435d6dc282babc9e1c30a74f77971a55d89",
+          "leetcode/975-codex/solution.py": "90787ce70f745d0db62c28732886b435d6dc282babc9e1c30a74f77971a55d89",
+          "leetcode/975/style.css": "9dd0754f7ba498efedb0f8da1a56214f902bd656e704d474dde76b445af1e258",
+          "leetcode/975-codex/style.css": "9dd0754f7ba498efedb0f8da1a56214f902bd656e704d474dde76b445af1e258",
+          "leetcode/980/CANDIDATE.json": "73b8f03bca50a89c52928b59a3f997ef2f79f0a016ad67271d995199f6a69c07",
+          "leetcode/980-codex/CANDIDATE.json": "73b8f03bca50a89c52928b59a3f997ef2f79f0a016ad67271d995199f6a69c07",
+          "leetcode/980/app.js": "2b169fe8e97e514f383b5827d3d54e8c066c5d1d76805d1067cdeecb2d37ba8b",
+          "leetcode/980-codex/app.js": "2b169fe8e97e514f383b5827d3d54e8c066c5d1d76805d1067cdeecb2d37ba8b",
+          "leetcode/980/copy.js": "c79f361b1588d475197e4f41378d1cef1e122ea1dbeca18f70a7613b735035ac",
+          "leetcode/980-codex/copy.js": "c79f361b1588d475197e4f41378d1cef1e122ea1dbeca18f70a7613b735035ac",
+          "leetcode/980/core.js": "77d48a03a718ecb782194fc4015606c9291ab08500a83a838e570cb442496c70",
+          "leetcode/980-codex/core.js": "77d48a03a718ecb782194fc4015606c9291ab08500a83a838e570cb442496c70",
+          "leetcode/980/index.html": "0d561116c6792ba61f3ce8f678c636f19bcb5b753d667620d8ffa28aa426e438",
+          "leetcode/980-codex/index.html": "6f5444d5b3d72bda0e200b94ea21e90bd6aa7430ffa6b0f151c3cb2f72eed01f",
+          "leetcode/980/python-code.js": "ba4da97738dba62eb9486b60c189cb370bd542fda2f2ca46ccf1933d40ac0ab2",
+          "leetcode/980-codex/python-code.js": "ba4da97738dba62eb9486b60c189cb370bd542fda2f2ca46ccf1933d40ac0ab2",
+          "leetcode/980/solution.py": "abe291bca8cc7c644450e598ab5128269691de7dbf2410e3ac9603ea9de9921f",
+          "leetcode/980-codex/solution.py": "abe291bca8cc7c644450e598ab5128269691de7dbf2410e3ac9603ea9de9921f",
+          "leetcode/980/style.css": "5bd36c2eb3005858df028e9f0ddd57458acbb1f34653bdd75f8a0360b86930a6",
+          "leetcode/980-codex/style.css": "5bd36c2eb3005858df028e9f0ddd57458acbb1f34653bdd75f8a0360b86930a6",
+          "leetcode/problems.config.js": "abc236a1e9da0ddd04cf7644c497dbd42d0fc2beaf663dfbac4e5d13cc80fc6a",
+          "leetcode/problems.codex.config.js": "10920666280a717dfc634baeeccf74e23806e6405ca8ddc11e6f5d47600afc1d",
+          "leetcode/index.html": "62a5793580f37432f6f991a3e72a61b94587fc3ec70268a052ab5825432353d8",
+          "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+          "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+        },
+        "public_files": {
+          "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+          "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+          "leetcode/780/app.js": "980ee1ffc6294fc7d50e1d81726547c868454ce54a55cd227ca1d6d0f6c34c36",
+          "leetcode/780-codex/app.js": "980ee1ffc6294fc7d50e1d81726547c868454ce54a55cd227ca1d6d0f6c34c36",
+          "leetcode/780/candidate.json": "ff6327c0902fdc99ef0ff745e9964bbd48e34ab1dbdff85671db6c23dbb3a28a",
+          "leetcode/780-codex/candidate.json": "ff6327c0902fdc99ef0ff745e9964bbd48e34ab1dbdff85671db6c23dbb3a28a",
+          "leetcode/780/copy.js": "779ba86fead137699edcb2bbf44d05ef16d90701fec8ea03227dc984771d23f0",
+          "leetcode/780-codex/copy.js": "779ba86fead137699edcb2bbf44d05ef16d90701fec8ea03227dc984771d23f0",
+          "leetcode/780/core.js": "7b2f64745f5a8bdbbe10ef31e66ca72977a3841f9652a3bf14292c025f183d93",
+          "leetcode/780-codex/core.js": "7b2f64745f5a8bdbbe10ef31e66ca72977a3841f9652a3bf14292c025f183d93",
+          "leetcode/780/index.html": "bf9376baa2f4756ad8cf50f0ce5eef05cebe7ccc028c55639106a247cce5124e",
+          "leetcode/780-codex/index.html": "2f5369ddedfd38d3c770124f1cbae1dbf30c1a0f49ec3012e899103bdd9bd5ab",
+          "leetcode/780/python-code.js": "e3e6d3cf79a7be1a04296a09009cf19b5566be717b9260c2f70ecc040dca838b",
+          "leetcode/780-codex/python-code.js": "e3e6d3cf79a7be1a04296a09009cf19b5566be717b9260c2f70ecc040dca838b",
+          "leetcode/780/solution.py": "3da0f1594a2bef609c96da97c2d41b6a93fabd84246a3ac7b312432e90e126a5",
+          "leetcode/780-codex/solution.py": "3da0f1594a2bef609c96da97c2d41b6a93fabd84246a3ac7b312432e90e126a5",
+          "leetcode/780/style.css": "bad6bc8dde949a4272e9dfb596c0a80000eabc291f82337658d4802838912e38",
+          "leetcode/780-codex/style.css": "bad6bc8dde949a4272e9dfb596c0a80000eabc291f82337658d4802838912e38",
+          "leetcode/793/app.js": "2fb1b08653c49f96b1dac34d46dc6230557d23bab506a6907f4d2ee20048d5cc",
+          "leetcode/793-codex/app.js": "2fb1b08653c49f96b1dac34d46dc6230557d23bab506a6907f4d2ee20048d5cc",
+          "leetcode/793/candidate-copy-r1.json": "6081fc00cc0e747180ecda7621759d6085a7bb6effe08aec75dd8b87d9fb24f1",
+          "leetcode/793-codex/candidate-copy-r1.json": "6081fc00cc0e747180ecda7621759d6085a7bb6effe08aec75dd8b87d9fb24f1",
+          "leetcode/793/candidate.json": "37c4c39225fdf64037bdeba7fc1901ce64b1dfd0c87ef3b6af842f80932f1e9e",
+          "leetcode/793-codex/candidate.json": "37c4c39225fdf64037bdeba7fc1901ce64b1dfd0c87ef3b6af842f80932f1e9e",
+          "leetcode/793/copy.js": "459afe94ffb24dc70ed119bd9709d731c6034255a16fa08c5795fc944659ac5a",
+          "leetcode/793-codex/copy.js": "459afe94ffb24dc70ed119bd9709d731c6034255a16fa08c5795fc944659ac5a",
+          "leetcode/793/core.js": "13c3e4c9a734a69400125683ddd2cd6d26a9a104a0dca71ee7a6ce8a3ceae86c",
+          "leetcode/793-codex/core.js": "13c3e4c9a734a69400125683ddd2cd6d26a9a104a0dca71ee7a6ce8a3ceae86c",
+          "leetcode/793/index.html": "b16897482d19a179bd2a95d31e8f1447ac241986b032e96f825361271be1059c",
+          "leetcode/793-codex/index.html": "f180a067820462c881d39b6c294778c53aaa135b58bcf338d41f185090f4dc84",
+          "leetcode/793/python-code.js": "0474b987cfd690023cdffa2084d3c68acb0ddd46724454841aa41b2327669091",
+          "leetcode/793-codex/python-code.js": "0474b987cfd690023cdffa2084d3c68acb0ddd46724454841aa41b2327669091",
+          "leetcode/793/solution.py": "7d899881c97a830cf9f8e91ffefaa9d9ce248e93fc3ad54532d0e4831e372e57",
+          "leetcode/793-codex/solution.py": "7d899881c97a830cf9f8e91ffefaa9d9ce248e93fc3ad54532d0e4831e372e57",
+          "leetcode/793/style.css": "dd551d84e99031dc80bb58966bc3489d13c9d015005b76629e561347b4c6fb52",
+          "leetcode/793-codex/style.css": "dd551d84e99031dc80bb58966bc3489d13c9d015005b76629e561347b4c6fb52",
+          "leetcode/798/app.js": "5900fc1266ae6be61a87da057dee1ea68567030b0ae24452b9fff6b25c3d9d25",
+          "leetcode/798-codex/app.js": "5900fc1266ae6be61a87da057dee1ea68567030b0ae24452b9fff6b25c3d9d25",
+          "leetcode/798/copy.js": "0f79e1e46c6dac59d6087c9abdea7fe796b15374db833391d2a49d99db507365",
+          "leetcode/798-codex/copy.js": "0f79e1e46c6dac59d6087c9abdea7fe796b15374db833391d2a49d99db507365",
+          "leetcode/798/core.js": "980a6b2d358d07d2c3fa29f160be7e13b857dc7c2e27a52a09b9d4cd0c26d4db",
+          "leetcode/798-codex/core.js": "980a6b2d358d07d2c3fa29f160be7e13b857dc7c2e27a52a09b9d4cd0c26d4db",
+          "leetcode/798/index.html": "576fdc62cacd7b1d72ab5ddd2eecdfbb65d8c48398ca5293eb51b75ce9dd24ef",
+          "leetcode/798-codex/index.html": "906707febd4b073b253352c1af285e3b36ebd1d20dc8021e54b702ce1dd56920",
+          "leetcode/798/python-code.js": "a3d08ddc619ca1426f88c777fd5c52b69ea951a41989e42d77b3333ef005bd05",
+          "leetcode/798-codex/python-code.js": "a3d08ddc619ca1426f88c777fd5c52b69ea951a41989e42d77b3333ef005bd05",
+          "leetcode/798/solution.py": "f1b2add3552b878bfb2dafe6138a6dda5e8f002ea4648d4d65a49e5dd0ec368b",
+          "leetcode/798-codex/solution.py": "f1b2add3552b878bfb2dafe6138a6dda5e8f002ea4648d4d65a49e5dd0ec368b",
+          "leetcode/798/style.css": "0df865b957c5f5f5c5c4028a7ac16c99b081900af187ff32d741fb85a10a52e1",
+          "leetcode/798-codex/style.css": "0df865b957c5f5f5c5c4028a7ac16c99b081900af187ff32d741fb85a10a52e1",
+          "leetcode/801/app.js": "75d6321fc0a235bc3347d3b8c6f5e57c7d9152fddd263733d215b9b96682d5f4",
+          "leetcode/801-codex/app.js": "75d6321fc0a235bc3347d3b8c6f5e57c7d9152fddd263733d215b9b96682d5f4",
+          "leetcode/801/copy.js": "3409843e1001b9aa1b86d8605f86193beba494241fbf3ff3b66b95a87af8f8e4",
+          "leetcode/801-codex/copy.js": "3409843e1001b9aa1b86d8605f86193beba494241fbf3ff3b66b95a87af8f8e4",
+          "leetcode/801/core.js": "234bc028c32433207c79acdfde06fcf921a0bab1142d54d6dba3f17cca2c82ec",
+          "leetcode/801-codex/core.js": "234bc028c32433207c79acdfde06fcf921a0bab1142d54d6dba3f17cca2c82ec",
+          "leetcode/801/index.html": "21d79daad6de82f001769b736a0e8347d05b6218fcef201de64e6278864e773b",
+          "leetcode/801-codex/index.html": "5f450e38b1c4aee5060161992db8ad6591a7e42803eea1409a16e4eecee77bca",
+          "leetcode/801/python-code.js": "a0f2bf9982e91a51f41af32fafaab9d91cea3da9edbf361eecaac7f5473b90c0",
+          "leetcode/801-codex/python-code.js": "a0f2bf9982e91a51f41af32fafaab9d91cea3da9edbf361eecaac7f5473b90c0",
+          "leetcode/801/solution.py": "f91a2d3e6ab348192f8b834578855f8ef45093b5e743de74c5aed667397cbcf4",
+          "leetcode/801-codex/solution.py": "f91a2d3e6ab348192f8b834578855f8ef45093b5e743de74c5aed667397cbcf4",
+          "leetcode/801/style.css": "bee051d34276181dd98160f501b9388505df09270a677e26cbc93c00b05535f0",
+          "leetcode/801-codex/style.css": "bee051d34276181dd98160f501b9388505df09270a677e26cbc93c00b05535f0",
+          "leetcode/810/app.js": "675849fdf9ee9e90ead97a0820a7d0347e4cbddd6480e5736f5cced933a58d9d",
+          "leetcode/810-codex/app.js": "675849fdf9ee9e90ead97a0820a7d0347e4cbddd6480e5736f5cced933a58d9d",
+          "leetcode/810/copy.js": "d8d80a5803c1f944f206a152e11f41fe33054688b6e6400cbdb45f142a5d04d9",
+          "leetcode/810-codex/copy.js": "d8d80a5803c1f944f206a152e11f41fe33054688b6e6400cbdb45f142a5d04d9",
+          "leetcode/810/core.js": "b6ea5af0a730bd7755779b2098c36b0cbb38169e1acd1bcb982b493e3d65b214",
+          "leetcode/810-codex/core.js": "b6ea5af0a730bd7755779b2098c36b0cbb38169e1acd1bcb982b493e3d65b214",
+          "leetcode/810/index.html": "25c6b053b6b0c16f782e3f5bab40e77e818fe663a3076abb0a98bd71f2831de2",
+          "leetcode/810-codex/index.html": "c626a92936e6c3faee62dac35102e2829e60d0d64dbe03a9bf7e48e6ac56a6fc",
+          "leetcode/810/python-code.js": "f520f790dc8155b983fad2a172873823f90a102744a21925bc94e8798f9d547b",
+          "leetcode/810-codex/python-code.js": "f520f790dc8155b983fad2a172873823f90a102744a21925bc94e8798f9d547b",
+          "leetcode/810/solution.py": "0f9231a5c6c82ec6e696730be6c16344e537b36e252306f93e588ed4dc03149b",
+          "leetcode/810-codex/solution.py": "0f9231a5c6c82ec6e696730be6c16344e537b36e252306f93e588ed4dc03149b",
+          "leetcode/810/style.css": "4754f40286ae83d6e5c387ba066f6f3f3419284135ade7e397ac7ba3814e6ae5",
+          "leetcode/810-codex/style.css": "4754f40286ae83d6e5c387ba066f6f3f3419284135ade7e397ac7ba3814e6ae5",
+          "leetcode/815/app.js": "82cdaab88efd5da8194a01a7471666728adca2974040ef07970ff07e1b533b2a",
+          "leetcode/815-codex/app.js": "82cdaab88efd5da8194a01a7471666728adca2974040ef07970ff07e1b533b2a",
+          "leetcode/815/candidate-copy-r1.json": "447cbf3aaf4132eeda74998ac857148c78daa16987f40b0240558527f8ea0672",
+          "leetcode/815-codex/candidate-copy-r1.json": "447cbf3aaf4132eeda74998ac857148c78daa16987f40b0240558527f8ea0672",
+          "leetcode/815/candidate.json": "4c8e8018ec5c28f92b2725ec747cb92b1c0f42f91320cc4eec853a038f3e7f92",
+          "leetcode/815-codex/candidate.json": "4c8e8018ec5c28f92b2725ec747cb92b1c0f42f91320cc4eec853a038f3e7f92",
+          "leetcode/815/copy.js": "035faeb52414c8d4b2faeb17a1692d2176ebec062d6bf3e1daf8e03433ac25cd",
+          "leetcode/815-codex/copy.js": "035faeb52414c8d4b2faeb17a1692d2176ebec062d6bf3e1daf8e03433ac25cd",
+          "leetcode/815/core.js": "712356dec8b88aa57cad5642b24c1fe657dc2e3b11a5880be624afad0296bc0b",
+          "leetcode/815-codex/core.js": "712356dec8b88aa57cad5642b24c1fe657dc2e3b11a5880be624afad0296bc0b",
+          "leetcode/815/index.html": "d1aeb8440867bd8ce44ec6882adf9b2995743aa2eca97770f90492cd6fc4a59d",
+          "leetcode/815-codex/index.html": "3a23d3c4f4c79b1f9565064977ecd5926076ee85d5e72754a3ed62c19944a26c",
+          "leetcode/815/python-code.js": "01b853e07ef4c56193640736d9cb06432d36006d16360d695cabf4dd1134a3a7",
+          "leetcode/815-codex/python-code.js": "01b853e07ef4c56193640736d9cb06432d36006d16360d695cabf4dd1134a3a7",
+          "leetcode/815/solution.py": "97c860fe70c63fb0f918775710e394171a9ea7989a2ec698bddc194d1effeb87",
+          "leetcode/815-codex/solution.py": "97c860fe70c63fb0f918775710e394171a9ea7989a2ec698bddc194d1effeb87",
+          "leetcode/815/style.css": "c6673f1b05a789267ae826bd91f42aba3f23aa5ed41149084946efd0db7a9548",
+          "leetcode/815-codex/style.css": "c6673f1b05a789267ae826bd91f42aba3f23aa5ed41149084946efd0db7a9548",
+          "leetcode/818/app.js": "c55d2e4eb5d84bf25cb69d004ed1dae0551e2b6267f865629de668b3a31576da",
+          "leetcode/818-codex/app.js": "c55d2e4eb5d84bf25cb69d004ed1dae0551e2b6267f865629de668b3a31576da",
+          "leetcode/818/candidate.json": "06205f60e2427012de6cb2412232b23b6cace12d1df0e8b80ba4808a881770a4",
+          "leetcode/818-codex/candidate.json": "06205f60e2427012de6cb2412232b23b6cace12d1df0e8b80ba4808a881770a4",
+          "leetcode/818/copy.js": "276ef9076b9bc43cca13b79652115131fa2bb8c5921ceada5d53c96e2823ad63",
+          "leetcode/818-codex/copy.js": "276ef9076b9bc43cca13b79652115131fa2bb8c5921ceada5d53c96e2823ad63",
+          "leetcode/818/core.js": "c7bf48d66c835d144e752ebd19899f27d804cb3b8edadf271b23639e12853860",
+          "leetcode/818-codex/core.js": "c7bf48d66c835d144e752ebd19899f27d804cb3b8edadf271b23639e12853860",
+          "leetcode/818/index.html": "6c307459733b6c19cfb966d7287e3c22c36f3d54d6da96f817db99f7f4472706",
+          "leetcode/818-codex/index.html": "3ffce4dbc6765c5bdaa077bd96fc1b762b6148851b52f5966d7e8fe5f74d4a32",
+          "leetcode/818/python-code.js": "eeb856c07f274d79f7d7e98cade0906720cd83cf3c9ca417da9fa1995d5266d1",
+          "leetcode/818-codex/python-code.js": "eeb856c07f274d79f7d7e98cade0906720cd83cf3c9ca417da9fa1995d5266d1",
+          "leetcode/818/solution.py": "da9a9a40d5d90c856d82b984333419be4246821b037108faeee0eddae0ab6d68",
+          "leetcode/818-codex/solution.py": "da9a9a40d5d90c856d82b984333419be4246821b037108faeee0eddae0ab6d68",
+          "leetcode/818/style.css": "5415e7c5b5929520a0a2262561d9ccf1982d85b86d535be8f2423dfb779ae3c4",
+          "leetcode/818-codex/style.css": "5415e7c5b5929520a0a2262561d9ccf1982d85b86d535be8f2423dfb779ae3c4",
+          "leetcode/827/app.js": "08a015ea97a5136796fd1c500bc710a16f22ffd4780ee16181659eadbc6aeeac",
+          "leetcode/827-codex/app.js": "08a015ea97a5136796fd1c500bc710a16f22ffd4780ee16181659eadbc6aeeac",
+          "leetcode/827/candidate.json": "e9a7778593bcf6461726604cbe427b64619e1a5cd3a417c42cfdb3c6adc8869e",
+          "leetcode/827-codex/candidate.json": "e9a7778593bcf6461726604cbe427b64619e1a5cd3a417c42cfdb3c6adc8869e",
+          "leetcode/827/copy.js": "ee102d269e63c9f1c4a55e56e8fb56500eecb54b3d9d76d6702dda3215f6c6dd",
+          "leetcode/827-codex/copy.js": "ee102d269e63c9f1c4a55e56e8fb56500eecb54b3d9d76d6702dda3215f6c6dd",
+          "leetcode/827/core.js": "9300580b1b55e5641f3042b13cc3623f5712bd37ea2ffb378fdb24e0fea5da62",
+          "leetcode/827-codex/core.js": "9300580b1b55e5641f3042b13cc3623f5712bd37ea2ffb378fdb24e0fea5da62",
+          "leetcode/827/index.html": "289f6da7f9af43be711e32e1bafaac7e88abffb84396c4f8864c9ed556617797",
+          "leetcode/827-codex/index.html": "b290c06eda8ed3f55d675dde4eaec24de34c586947d47f26d7e6d920997b2512",
+          "leetcode/827/python-code.js": "563bb6070cc80a9fc0b3e0b7755e2eff795d6b63a5a7594ef1bc5b4738eef562",
+          "leetcode/827-codex/python-code.js": "563bb6070cc80a9fc0b3e0b7755e2eff795d6b63a5a7594ef1bc5b4738eef562",
+          "leetcode/827/solution.py": "a39448aeb82148cbebe625063d8d3921827c333ffa36bc223e0fb0d59708691b",
+          "leetcode/827-codex/solution.py": "a39448aeb82148cbebe625063d8d3921827c333ffa36bc223e0fb0d59708691b",
+          "leetcode/827/style.css": "54b807f52df8534a16a4ada86b89f7b7bfd037bcca41515889b6adac8ab5713b",
+          "leetcode/827-codex/style.css": "54b807f52df8534a16a4ada86b89f7b7bfd037bcca41515889b6adac8ab5713b",
+          "leetcode/828/app.js": "fd3dad609e83ce14dae529088add1de0a63630efb191fbfa0ac80ef8ed194f11",
+          "leetcode/828-codex/app.js": "fd3dad609e83ce14dae529088add1de0a63630efb191fbfa0ac80ef8ed194f11",
+          "leetcode/828/copy.js": "7a81ee494c7b54922df52772ec7581edb7fdd4cd97362a72f43948a6aae96fde",
+          "leetcode/828-codex/copy.js": "7a81ee494c7b54922df52772ec7581edb7fdd4cd97362a72f43948a6aae96fde",
+          "leetcode/828/core.js": "f0bc4ba4539bb63cfe5ef87dc50beffe2ea1fa418dde6189f59f6d65acd95e6d",
+          "leetcode/828-codex/core.js": "f0bc4ba4539bb63cfe5ef87dc50beffe2ea1fa418dde6189f59f6d65acd95e6d",
+          "leetcode/828/index.html": "1e8760f39b31aaa2a3915b726105de2febcd6a47a003241db029b46cdc32f2ea",
+          "leetcode/828-codex/index.html": "a7f4e0fc2a5e3ce543e3082a68299157eba3ebba5e3db7c263c8bf42cd1764cd",
+          "leetcode/828/python-code.js": "37a6d4f8e85826efaaac423ef07e4ad8cd2c77fa5c193eb89ec0970d85d48e0b",
+          "leetcode/828-codex/python-code.js": "37a6d4f8e85826efaaac423ef07e4ad8cd2c77fa5c193eb89ec0970d85d48e0b",
+          "leetcode/828/solution.py": "8a124f56e4aa857b3901f6a310158bdf5dbecc55f892e85e50af3b3b920e901c",
+          "leetcode/828-codex/solution.py": "8a124f56e4aa857b3901f6a310158bdf5dbecc55f892e85e50af3b3b920e901c",
+          "leetcode/828/style.css": "4ce56eb8a095fdea17f7a1ebb0974d31c314a2a4816973621f7de485b8a98cb7",
+          "leetcode/828-codex/style.css": "4ce56eb8a095fdea17f7a1ebb0974d31c314a2a4816973621f7de485b8a98cb7",
+          "leetcode/829/app.js": "c1242d90d967f641dbf1165fa4984acb3d92cb2f0ef17f0a5e4376a5b7edfb79",
+          "leetcode/829-codex/app.js": "c1242d90d967f641dbf1165fa4984acb3d92cb2f0ef17f0a5e4376a5b7edfb79",
+          "leetcode/829/copy.js": "39b87776eb7163db86aa433e9efe43dd1f1c08424b019fedb9bb64f84ffa3812",
+          "leetcode/829-codex/copy.js": "39b87776eb7163db86aa433e9efe43dd1f1c08424b019fedb9bb64f84ffa3812",
+          "leetcode/829/core.js": "7f0526f16c86d415451d5355034fdeeba6408b64798ed8f24638f022da8f9e7f",
+          "leetcode/829-codex/core.js": "7f0526f16c86d415451d5355034fdeeba6408b64798ed8f24638f022da8f9e7f",
+          "leetcode/829/index.html": "8d461273b74d60d677e8fe9ef3170c25caedbd4912a3533cf9087808ecbc70dc",
+          "leetcode/829-codex/index.html": "58e08a0b58a9650302b1917e0eb4ef27687a4229d927243f861a079f37b6c0b3",
+          "leetcode/829/python-code.js": "889f306cdbdcd5c454012aa33378348c152dd9f2cf2e17e380bdb993f9161139",
+          "leetcode/829-codex/python-code.js": "889f306cdbdcd5c454012aa33378348c152dd9f2cf2e17e380bdb993f9161139",
+          "leetcode/829/solution.py": "890565cfdc772ed56bbcec415ab73b2729751a2ee2ecc6de718797e9c3c7efe3",
+          "leetcode/829-codex/solution.py": "890565cfdc772ed56bbcec415ab73b2729751a2ee2ecc6de718797e9c3c7efe3",
+          "leetcode/829/style.css": "89bb5affbc759cd1b792ce86dfd41b028d15ea33728a58aee7b55a21092fe075",
+          "leetcode/829-codex/style.css": "89bb5affbc759cd1b792ce86dfd41b028d15ea33728a58aee7b55a21092fe075",
+          "leetcode/834/app.js": "556964412fd0563ccec3970fe98dade605ec8a1b01322da1fc89ec1c79c8761e",
+          "leetcode/834-codex/app.js": "556964412fd0563ccec3970fe98dade605ec8a1b01322da1fc89ec1c79c8761e",
+          "leetcode/834/copy.js": "c57f4c9a828d69a31b9e72a5e5dfc2a4ef776b7dccc5ee4c904788183fdf1838",
+          "leetcode/834-codex/copy.js": "c57f4c9a828d69a31b9e72a5e5dfc2a4ef776b7dccc5ee4c904788183fdf1838",
+          "leetcode/834/core.js": "6f341973ea6dfce7dcaf9a8f2ad9b493f11d62173d7d7f9280b09ad0d8154fa1",
+          "leetcode/834-codex/core.js": "6f341973ea6dfce7dcaf9a8f2ad9b493f11d62173d7d7f9280b09ad0d8154fa1",
+          "leetcode/834/index.html": "22f51a4952f4b328fe9351be9e5bafc740d9aa1a2ffc430ab84235b6fcc221d7",
+          "leetcode/834-codex/index.html": "331705dd3051a46beeb005d51b48006212ac9dc2c32cc228fa59647f0d54a1f1",
+          "leetcode/834/python-code.js": "1ac8654e9613b8ca5ee43082b0a1c548c7461226ca891093944fb98b1486cca2",
+          "leetcode/834-codex/python-code.js": "1ac8654e9613b8ca5ee43082b0a1c548c7461226ca891093944fb98b1486cca2",
+          "leetcode/834/solution.py": "22cad233c054f17c7dfa7f57663d4bb9bcdc12283bb8fbc7333ca3bbc2739e61",
+          "leetcode/834-codex/solution.py": "22cad233c054f17c7dfa7f57663d4bb9bcdc12283bb8fbc7333ca3bbc2739e61",
+          "leetcode/834/style.css": "ddcbee2f49e9dfe820566d45c6be3d0d96f498575984f828461be9a29b96c023",
+          "leetcode/834-codex/style.css": "ddcbee2f49e9dfe820566d45c6be3d0d96f498575984f828461be9a29b96c023",
+          "leetcode/839/app.js": "43adbdfd0cc214a071ccb41ca8101d2a764f6bc7d6a7b36e4d3e3c51fd2fb0d5",
+          "leetcode/839-codex/app.js": "43adbdfd0cc214a071ccb41ca8101d2a764f6bc7d6a7b36e4d3e3c51fd2fb0d5",
+          "leetcode/839/candidate.json": "9a1b0dd65798d14c464cab8ce428bf8d341eac0fffe228b04898f7a2b51c5f62",
+          "leetcode/839-codex/candidate.json": "9a1b0dd65798d14c464cab8ce428bf8d341eac0fffe228b04898f7a2b51c5f62",
+          "leetcode/839/copy.js": "07eb984ee35bdebb003f738cad53530d2798aebb1c3858f754579375e00c90da",
+          "leetcode/839-codex/copy.js": "07eb984ee35bdebb003f738cad53530d2798aebb1c3858f754579375e00c90da",
+          "leetcode/839/core.js": "0055afb36f5a29c4fbcfef3726ae1e0151a5c3a597c7829972deebbe366238cd",
+          "leetcode/839-codex/core.js": "0055afb36f5a29c4fbcfef3726ae1e0151a5c3a597c7829972deebbe366238cd",
+          "leetcode/839/index.html": "e2ac7e870fb0f366f5141a3146f5b0b5a9cb965c5e8f0b48a53392dd78876f56",
+          "leetcode/839-codex/index.html": "3e1b4020aa8af85f4add1a61b64bf4bee0616eb634d5f90a97e3ee3703a82551",
+          "leetcode/839/python-code.js": "b4cb7f287e7f8a1c4eb02e6dd4a8fb8976e69c1a02ba4c683a75eb94d6699b80",
+          "leetcode/839-codex/python-code.js": "b4cb7f287e7f8a1c4eb02e6dd4a8fb8976e69c1a02ba4c683a75eb94d6699b80",
+          "leetcode/839/solution.py": "3a3fc21fa1d2cb75af0106ad222067fdf15cb35a6505bbd64cc40d4c222b2218",
+          "leetcode/839-codex/solution.py": "3a3fc21fa1d2cb75af0106ad222067fdf15cb35a6505bbd64cc40d4c222b2218",
+          "leetcode/839/style.css": "54f54be5b343d6e718494ed40e1ce9f408cd6cb2ff3fed228b047cf6f983d2dc",
+          "leetcode/839-codex/style.css": "54f54be5b343d6e718494ed40e1ce9f408cd6cb2ff3fed228b047cf6f983d2dc",
+          "leetcode/843/app.js": "aab7eb9dcdb24a55a0d1c265bccb59fc97b5c21236455ece987378dbab07526e",
+          "leetcode/843-codex/app.js": "aab7eb9dcdb24a55a0d1c265bccb59fc97b5c21236455ece987378dbab07526e",
+          "leetcode/843/candidate.json": "93002935eda0e885bb15a2d34aaaf2caa262eee52d3b1e9ef55dbdb5773881e6",
+          "leetcode/843-codex/candidate.json": "93002935eda0e885bb15a2d34aaaf2caa262eee52d3b1e9ef55dbdb5773881e6",
+          "leetcode/843/copy.js": "7811c587179f85366346a0ef77fad46b4735428b17613522cb730f0fdcb7d053",
+          "leetcode/843-codex/copy.js": "7811c587179f85366346a0ef77fad46b4735428b17613522cb730f0fdcb7d053",
+          "leetcode/843/core.js": "dd5ae115a5988c71164432995a8def755283b95fedf53318aed186b4f48f5ecb",
+          "leetcode/843-codex/core.js": "dd5ae115a5988c71164432995a8def755283b95fedf53318aed186b4f48f5ecb",
+          "leetcode/843/index.html": "bf0fe15cf5fd399bf43bd462ec4286d85e810df5af17ae3bf205511cd85467f6",
+          "leetcode/843-codex/index.html": "2dd447c803f8ee243df54ae0221267a4ca0e95afa0825a7e12d1a3dccedce2c7",
+          "leetcode/843/python-code.js": "3d3287def904402b4390f999cf8b67e49e28b086c64cab63410059b80aa663b2",
+          "leetcode/843-codex/python-code.js": "3d3287def904402b4390f999cf8b67e49e28b086c64cab63410059b80aa663b2",
+          "leetcode/843/solution.py": "51f9e29c91ca3ffe6238f13dfa0f0b632081274be4747ac67cfbf627b986dc05",
+          "leetcode/843-codex/solution.py": "51f9e29c91ca3ffe6238f13dfa0f0b632081274be4747ac67cfbf627b986dc05",
+          "leetcode/843/style.css": "82daf852ce99603d981dc6be831d1567a659d4a23c15f1f3d290c178acb9b89a",
+          "leetcode/843-codex/style.css": "82daf852ce99603d981dc6be831d1567a659d4a23c15f1f3d290c178acb9b89a",
+          "leetcode/847/app.js": "59a47c0b30b3a4e97b6ae7a8b2e5ac85b992ebcec79b74427e8da63946eb3933",
+          "leetcode/847-codex/app.js": "59a47c0b30b3a4e97b6ae7a8b2e5ac85b992ebcec79b74427e8da63946eb3933",
+          "leetcode/847/candidate.json": "9076ad80cba9cf2cbb1354cf8dd55d828a6ed693fd2629138955c73d415f0807",
+          "leetcode/847-codex/candidate.json": "9076ad80cba9cf2cbb1354cf8dd55d828a6ed693fd2629138955c73d415f0807",
+          "leetcode/847/copy.js": "c4e09860a137a04fd18d814979993c3a6beffb2836da3dc5f0b56c1cfe9d0f0a",
+          "leetcode/847-codex/copy.js": "c4e09860a137a04fd18d814979993c3a6beffb2836da3dc5f0b56c1cfe9d0f0a",
+          "leetcode/847/core.js": "5e6a64b969ec4ff3ef64e75a12403ebb3b6cc3551b7338c536c21a62bae14f38",
+          "leetcode/847-codex/core.js": "5e6a64b969ec4ff3ef64e75a12403ebb3b6cc3551b7338c536c21a62bae14f38",
+          "leetcode/847/index.html": "ba4f4d3d2db5f0e74e689e2d752a1283409c139f78515843292beb5e25d87700",
+          "leetcode/847-codex/index.html": "d078c4fc2f76833f8db5ce2cbd479a3904c37a8ee55d522f7ce1e81821baa7d2",
+          "leetcode/847/python-code.js": "ce1a72879cbbd059b37afc1f88bfb2675a8cbe9b8898287de2bc41a131f31e63",
+          "leetcode/847-codex/python-code.js": "ce1a72879cbbd059b37afc1f88bfb2675a8cbe9b8898287de2bc41a131f31e63",
+          "leetcode/847/solution.py": "4d529eb2794cceaaa22169f3e84e05ed14f06358ddf1fa1cf3f679522292045e",
+          "leetcode/847-codex/solution.py": "4d529eb2794cceaaa22169f3e84e05ed14f06358ddf1fa1cf3f679522292045e",
+          "leetcode/847/style.css": "70ffb8be81d2c1884f7f5bdfeb195c3c274459509f9a5309652511b1b4a8255d",
+          "leetcode/847-codex/style.css": "70ffb8be81d2c1884f7f5bdfeb195c3c274459509f9a5309652511b1b4a8255d",
+          "leetcode/850/app.js": "bb7360395d915644820580f62b0a60c5e3d90038c5e736ba71762baf65683e5b",
+          "leetcode/850-codex/app.js": "bb7360395d915644820580f62b0a60c5e3d90038c5e736ba71762baf65683e5b",
+          "leetcode/850/copy.js": "b18a62fcb3b4ea6b6fe5910258970bf8c9a043e96cdc831dded02dce8849f271",
+          "leetcode/850-codex/copy.js": "b18a62fcb3b4ea6b6fe5910258970bf8c9a043e96cdc831dded02dce8849f271",
+          "leetcode/850/core.js": "002589f7b412861c3070a3150fb4690ed1e432f6f58571d058a0c94a2effe88a",
+          "leetcode/850-codex/core.js": "002589f7b412861c3070a3150fb4690ed1e432f6f58571d058a0c94a2effe88a",
+          "leetcode/850/index.html": "c8d55d91348709f26c41f06955b7019947680d616feeb10661dba4ebdcf0ed07",
+          "leetcode/850-codex/index.html": "44c0b952ccfcc7d11a677e635086324d572638e9e6f6c2382df53f7af20cc753",
+          "leetcode/850/python-code.js": "6dc071dc71f3c7157b1299cff4c9a752affc2699466e5b8868164e074801e1fa",
+          "leetcode/850-codex/python-code.js": "6dc071dc71f3c7157b1299cff4c9a752affc2699466e5b8868164e074801e1fa",
+          "leetcode/850/solution.py": "2a20b4eb16dc4bffe95affc932c5d8e1937249b720a136ec8e1f5090b295051a",
+          "leetcode/850-codex/solution.py": "2a20b4eb16dc4bffe95affc932c5d8e1937249b720a136ec8e1f5090b295051a",
+          "leetcode/850/style.css": "c551dab6bb8095ce55a2c1a4855ef63ffe41098fa0dffa095fd6902c4966fa41",
+          "leetcode/850-codex/style.css": "c551dab6bb8095ce55a2c1a4855ef63ffe41098fa0dffa095fd6902c4966fa41",
+          "leetcode/960/app.js": "1f9b27e03fc2ca20d94ff86aae89658165d8e10052203dbfbf72e58ea7b55442",
+          "leetcode/960-codex/app.js": "1f9b27e03fc2ca20d94ff86aae89658165d8e10052203dbfbf72e58ea7b55442",
+          "leetcode/960/copy.js": "60781b9e2bc2cccf787968b99753410c6fefcaa45ec5f9c4bc41974dec5b089c",
+          "leetcode/960-codex/copy.js": "60781b9e2bc2cccf787968b99753410c6fefcaa45ec5f9c4bc41974dec5b089c",
+          "leetcode/960/core.js": "6c55e1aa31283a65420c25d5d241bbc6f3103653a49049545711d46c10376493",
+          "leetcode/960-codex/core.js": "6c55e1aa31283a65420c25d5d241bbc6f3103653a49049545711d46c10376493",
+          "leetcode/960/index.html": "5ccd6c273ca57e7f74dafa097f596f4702c55886c87bae5c3267f7bc5a7529a8",
+          "leetcode/960-codex/index.html": "76000742f3148b438ddcdea12aef20fe7d0ccad4f3fc6d36ea3420e2bfe5cf92",
+          "leetcode/960/python-code.js": "3172ec6abd3548cbc5ac07aa0f4a6cebe33e0ef5d82f8fea56492f122ce4ca24",
+          "leetcode/960-codex/python-code.js": "3172ec6abd3548cbc5ac07aa0f4a6cebe33e0ef5d82f8fea56492f122ce4ca24",
+          "leetcode/960/solution.py": "3799b28e3f572097135d0afe25d50366b6f89825c4ca7efbd5e9bf14ad2e56ac",
+          "leetcode/960-codex/solution.py": "3799b28e3f572097135d0afe25d50366b6f89825c4ca7efbd5e9bf14ad2e56ac",
+          "leetcode/960/style.css": "5a1a7f93562b4020d8f4021d9cc9b3bcae55b99464b4a1ef68510aa3a081d6e5",
+          "leetcode/960-codex/style.css": "5a1a7f93562b4020d8f4021d9cc9b3bcae55b99464b4a1ef68510aa3a081d6e5",
+          "leetcode/968/app.js": "1b70bd1d9bcf2fa6be0a68e95fbc3225ac1a1f223a64b4daf4388eb148d687cf",
+          "leetcode/968-codex/app.js": "1b70bd1d9bcf2fa6be0a68e95fbc3225ac1a1f223a64b4daf4388eb148d687cf",
+          "leetcode/968/copy.js": "a9d5e6e4e32cf5a38c61d21456bb563ec1ebc0a7434745ed62e307d53f87039c",
+          "leetcode/968-codex/copy.js": "a9d5e6e4e32cf5a38c61d21456bb563ec1ebc0a7434745ed62e307d53f87039c",
+          "leetcode/968/core.js": "f94b6dc09dfe5e79ec55193c565437361a29d9d646cddb773ef70be12aa1c5dc",
+          "leetcode/968-codex/core.js": "f94b6dc09dfe5e79ec55193c565437361a29d9d646cddb773ef70be12aa1c5dc",
+          "leetcode/968/index.html": "e86114fa89c58ceb4a59f54f62b8b36dfd01588135f4a3338e61f2305d0e6d81",
+          "leetcode/968-codex/index.html": "fc5c421284e5b8c48595c84c658c6b03505507ff51460b80020a5a85ff3e6919",
+          "leetcode/968/python-code.js": "972388daafc90cfa38c364a2e80235a3d92771fa0cabca9120cae81b6d1a0ed1",
+          "leetcode/968-codex/python-code.js": "972388daafc90cfa38c364a2e80235a3d92771fa0cabca9120cae81b6d1a0ed1",
+          "leetcode/968/solution.py": "b7428a60e1ab3b6f6180a8b8f4201b03d34e7a39857dd4091f62e85ffd7f9f31",
+          "leetcode/968-codex/solution.py": "b7428a60e1ab3b6f6180a8b8f4201b03d34e7a39857dd4091f62e85ffd7f9f31",
+          "leetcode/968/style.css": "874b1ce27607a66d1f55ddee88d78b7e7d45ad203c2cb03f249f801057282684",
+          "leetcode/968-codex/style.css": "874b1ce27607a66d1f55ddee88d78b7e7d45ad203c2cb03f249f801057282684",
+          "leetcode/972/CANDIDATE.json": "5c969318238b28cf377433b92bde22252e04c02b4ab85d6d84e7dddee6c709ed",
+          "leetcode/972-codex/CANDIDATE.json": "5c969318238b28cf377433b92bde22252e04c02b4ab85d6d84e7dddee6c709ed",
+          "leetcode/972/app.js": "3636528f548e48a2be6a50370d9c1e54d821c7d935fba0007b19d7b513a473db",
+          "leetcode/972-codex/app.js": "3636528f548e48a2be6a50370d9c1e54d821c7d935fba0007b19d7b513a473db",
+          "leetcode/972/copy.js": "12bff2f91c4ce921fdee9ba7eb5c302ebf20f1be1320a23145380e8f89aee37b",
+          "leetcode/972-codex/copy.js": "12bff2f91c4ce921fdee9ba7eb5c302ebf20f1be1320a23145380e8f89aee37b",
+          "leetcode/972/core.js": "14eb7b071981e1a846041e6cf509510e1fdfe7339e82ca53b5aac8114a204cec",
+          "leetcode/972-codex/core.js": "14eb7b071981e1a846041e6cf509510e1fdfe7339e82ca53b5aac8114a204cec",
+          "leetcode/972/index.html": "f222fc81523a6638e17aa7832cad4156faf7ebdbdcd1e5c03a8ed1ff392eab3e",
+          "leetcode/972-codex/index.html": "3a3e550a8ba2a68a5c2170146fc1ffc56231b9891cc4705a7b2da8827c621d50",
+          "leetcode/972/python-code.js": "25bfea23bae1651660275bb17ee96de06573f989a9b8645da832224fb97f2d0c",
+          "leetcode/972-codex/python-code.js": "25bfea23bae1651660275bb17ee96de06573f989a9b8645da832224fb97f2d0c",
+          "leetcode/972/solution.py": "5a12b666978e34d384e92f744e63f0b2733356b1c9cc9de8f184bf8a5263e075",
+          "leetcode/972-codex/solution.py": "5a12b666978e34d384e92f744e63f0b2733356b1c9cc9de8f184bf8a5263e075",
+          "leetcode/972/style.css": "3ab962cf72632788999faff5b03f8e8f4b6ef4ecb069331f84197c15ac6930c9",
+          "leetcode/972-codex/style.css": "3ab962cf72632788999faff5b03f8e8f4b6ef4ecb069331f84197c15ac6930c9",
+          "leetcode/975/CANDIDATE.json": "d1dc8009bf3730fd11825f15c1bb319ba664f8ce38fcf9b7caaf71f84849893d",
+          "leetcode/975-codex/CANDIDATE.json": "d1dc8009bf3730fd11825f15c1bb319ba664f8ce38fcf9b7caaf71f84849893d",
+          "leetcode/975/app.js": "41fad186157d4d14437a7faa8ba07297a0b56314ccc97210305ac9b2bd97880c",
+          "leetcode/975-codex/app.js": "41fad186157d4d14437a7faa8ba07297a0b56314ccc97210305ac9b2bd97880c",
+          "leetcode/975/copy.js": "0c14e911cf45be968060d2f4cf50f68e22589e5f99b2662950a73ef146a48e6c",
+          "leetcode/975-codex/copy.js": "0c14e911cf45be968060d2f4cf50f68e22589e5f99b2662950a73ef146a48e6c",
+          "leetcode/975/core.js": "b62f86c2ac765e3bf4bee14f81112e91b0e59e9967c3eb2a5ea16af6fcd5f29f",
+          "leetcode/975-codex/core.js": "b62f86c2ac765e3bf4bee14f81112e91b0e59e9967c3eb2a5ea16af6fcd5f29f",
+          "leetcode/975/index.html": "c67647bd026261acde7a67a6344a50b54152c74ee30b764bb011a9a91577d7bc",
+          "leetcode/975-codex/index.html": "beda3030b1a53ef4c1391f3cd81c272ba829550a45ac2c0f11f2995bde0b2064",
+          "leetcode/975/python-code.js": "8ece636e1994c3edec22d4c04ece8f94723ab72f8c77b542010dd95c8f41706f",
+          "leetcode/975-codex/python-code.js": "8ece636e1994c3edec22d4c04ece8f94723ab72f8c77b542010dd95c8f41706f",
+          "leetcode/975/solution.py": "90787ce70f745d0db62c28732886b435d6dc282babc9e1c30a74f77971a55d89",
+          "leetcode/975-codex/solution.py": "90787ce70f745d0db62c28732886b435d6dc282babc9e1c30a74f77971a55d89",
+          "leetcode/975/style.css": "9dd0754f7ba498efedb0f8da1a56214f902bd656e704d474dde76b445af1e258",
+          "leetcode/975-codex/style.css": "9dd0754f7ba498efedb0f8da1a56214f902bd656e704d474dde76b445af1e258",
+          "leetcode/980/CANDIDATE.json": "73b8f03bca50a89c52928b59a3f997ef2f79f0a016ad67271d995199f6a69c07",
+          "leetcode/980-codex/CANDIDATE.json": "73b8f03bca50a89c52928b59a3f997ef2f79f0a016ad67271d995199f6a69c07",
+          "leetcode/980/app.js": "2b169fe8e97e514f383b5827d3d54e8c066c5d1d76805d1067cdeecb2d37ba8b",
+          "leetcode/980-codex/app.js": "2b169fe8e97e514f383b5827d3d54e8c066c5d1d76805d1067cdeecb2d37ba8b",
+          "leetcode/980/copy.js": "c79f361b1588d475197e4f41378d1cef1e122ea1dbeca18f70a7613b735035ac",
+          "leetcode/980-codex/copy.js": "c79f361b1588d475197e4f41378d1cef1e122ea1dbeca18f70a7613b735035ac",
+          "leetcode/980/core.js": "77d48a03a718ecb782194fc4015606c9291ab08500a83a838e570cb442496c70",
+          "leetcode/980-codex/core.js": "77d48a03a718ecb782194fc4015606c9291ab08500a83a838e570cb442496c70",
+          "leetcode/980/index.html": "0d561116c6792ba61f3ce8f678c636f19bcb5b753d667620d8ffa28aa426e438",
+          "leetcode/980-codex/index.html": "6f5444d5b3d72bda0e200b94ea21e90bd6aa7430ffa6b0f151c3cb2f72eed01f",
+          "leetcode/980/python-code.js": "ba4da97738dba62eb9486b60c189cb370bd542fda2f2ca46ccf1933d40ac0ab2",
+          "leetcode/980-codex/python-code.js": "ba4da97738dba62eb9486b60c189cb370bd542fda2f2ca46ccf1933d40ac0ab2",
+          "leetcode/980/solution.py": "abe291bca8cc7c644450e598ab5128269691de7dbf2410e3ac9603ea9de9921f",
+          "leetcode/980-codex/solution.py": "abe291bca8cc7c644450e598ab5128269691de7dbf2410e3ac9603ea9de9921f",
+          "leetcode/980/style.css": "5bd36c2eb3005858df028e9f0ddd57458acbb1f34653bdd75f8a0360b86930a6",
+          "leetcode/980-codex/style.css": "5bd36c2eb3005858df028e9f0ddd57458acbb1f34653bdd75f8a0360b86930a6",
+          "leetcode/problems.config.js": "abc236a1e9da0ddd04cf7644c497dbd42d0fc2beaf663dfbac4e5d13cc80fc6a",
+          "leetcode/problems.codex.config.js": "10920666280a717dfc634baeeccf74e23806e6405ca8ddc11e6f5d47600afc1d",
+          "leetcode/index.html": "62a5793580f37432f6f991a3e72a61b94587fc3ec70268a052ab5825432353d8",
+          "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+          "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+        },
+        "entries": [
+          {
+            "id": 780,
+            "title": {
+              "zh": "\u5230\u8fbe\u7ec8\u70b9",
+              "en": "Reaching Points"
+            },
+            "desc": {
+              "zh": "\u4ece\u52a0\u6cd5\u5012\u63a8\u5230\u53d6\u4f59\uff0c\u8bc1\u660e\u8fb9\u754c\u4e0a\u7684\u6574\u9664\u68c0\u67e5\u3002",
+              "en": "Reverse additions into remainders, then prove the boundary divisibility test."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u6570\u5b66",
+                "en": "Math"
+              },
+              {
+                "zh": "\u9006\u5411\u63a8\u7406",
+                "en": "Backward reasoning"
+              }
+            ],
+            "path": "780-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/reaching-points/",
+            "language": "Python",
+            "complexity": "O(1 + log(max(tx, ty))) time; O(1) auxiliary space"
+          },
+          {
+            "id": 793,
+            "title": {
+              "zh": "\u9636\u4e58\u51fd\u6570\u540e K \u4e2a\u96f6",
+              "en": "Preimage Size of Factorial Zeroes Function"
+            },
+            "desc": {
+              "zh": "\u4ece 24! \u5230 25! \u7684\u8df3\u8dc3\uff0c\u63a8\u5bfc\u4e24\u4e2a\u8fb9\u754c\u4e4b\u5dee\u3002",
+              "en": "Use the jump from 24! to 25! to derive a count from two search boundaries."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u4e8c\u5206\u67e5\u627e",
+                "en": "Binary search"
+              },
+              {
+                "zh": "\u6570\u5b66",
+                "en": "Math"
+              }
+            ],
+            "path": "793-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/preimage-size-of-factorial-zeroes-function/",
+            "language": "Python",
+            "complexity": "O(log\u00b2(k+2)) time; O(1) auxiliary space"
+          },
+          {
+            "id": 798,
+            "title": {
+              "zh": "\u5f97\u5206\u6700\u9ad8\u7684\u6700\u5c0f\u8f6e\u8c03",
+              "en": "Smallest Rotation with Highest Score"
+            },
+            "desc": {
+              "zh": "\u4ece\u6bcf\u4e2a\u503c\u7684\u5931\u5206\u533a\u95f4\u63a8\u5bfc\u5dee\u5206\u626b\u63cf\u3002",
+              "en": "Derive a difference scan from each value\u2019s losing rotations."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u5dee\u5206\u6570\u7ec4",
+                "en": "Difference array"
+              },
+              {
+                "zh": "\u5faa\u73af\u7d22\u5f15",
+                "en": "Circular indexing"
+              }
+            ],
+            "path": "798-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/smallest-rotation-with-highest-score/",
+            "language": "Python",
+            "complexity": "O(n) time; O(n) space"
+          },
+          {
+            "id": 801,
+            "title": {
+              "zh": "\u4f7f\u5e8f\u5217\u9012\u589e\u7684\u6700\u5c0f\u4ea4\u6362\u6b21\u6570",
+              "en": "Minimum Swaps To Make Sequences Increasing"
+            },
+            "desc": {
+              "zh": "\u4ece\u4e00\u6b21\u7ad6\u76f4\u4ea4\u6362\u63a8\u5bfc\u4fdd\u7559\u4e24\u79cd\u7ed3\u5c3e\u7684\u52a8\u6001\u89c4\u5212\u3002",
+              "en": "Derive a two-ending dynamic program from vertical swaps."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u52a8\u6001\u89c4\u5212",
+                "en": "Dynamic programming"
+              }
+            ],
+            "path": "801-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/",
+            "language": "Python",
+            "complexity": "O(n) time; O(1) auxiliary space"
+          },
+          {
+            "id": 810,
+            "title": {
+              "zh": "\u9ed1\u677f\u5f02\u6216\u6e38\u620f",
+              "en": "Chalkboard XOR Game"
+            },
+            "desc": {
+              "zh": "\u4ece\u4e00\u6b21\u64e6\u9664\u770b\u6e05\u8f93\u8d62\u89c4\u5219\uff0c\u7528\u5f02\u6216\u4e0e\u5947\u5076\u6027\u4ee3\u66ff\u535a\u5f08\u641c\u7d22\u3002",
+              "en": "Explore losing erasures, then replace game search with XOR and parity."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u535a\u5f08",
+                "en": "Game theory"
+              },
+              {
+                "zh": "\u4f4d\u8fd0\u7b97",
+                "en": "Bit manipulation"
+              }
+            ],
+            "path": "810-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/chalkboard-xor-game/",
+            "language": "Python",
+            "complexity": "O(n) time; O(1) auxiliary space"
+          },
+          {
+            "id": 815,
+            "title": {
+              "zh": "\u516c\u4ea4\u8def\u7ebf",
+              "en": "Bus Routes"
+            },
+            "desc": {
+              "zh": "\u4ece\u4e00\u6b21\u4e0a\u8f66\u89e3\u9501\u6574\u6761\u7ebf\u8def\uff0c\u63a8\u5bfc\u6309\u4e58\u8f66\u6570\u5206\u5c42\u7684\u641c\u7d22\u4e0e\u4e00\u6b21\u626b\u63cf\u4e0d\u53d8\u91cf\u3002",
+              "en": "Unlock an entire route per boarding and derive BFS layers with a scan-once invariant."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u5e7f\u5ea6\u4f18\u5148\u641c\u7d22",
+                "en": "Breadth-first search"
+              },
+              {
+                "zh": "\u5012\u6392\u7d22\u5f15",
+                "en": "Inverted index"
+              }
+            ],
+            "path": "815-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/bus-routes/",
+            "language": "Python",
+            "complexity": "O(M + R) expected time; O(M + R) auxiliary space, M = total route entries, R = route count"
+          },
+          {
+            "id": 818,
+            "title": {
+              "zh": "\u8d5b\u8f66",
+              "en": "Race Car"
+            },
+            "desc": {
+              "zh": "\u4ece\u5b8c\u6574\u72b6\u6001\u7684\u5206\u5c42\u641c\u7d22\uff0c\u63a8\u5bfc\u4e50\u89c2\u4e0b\u754c\u5e76\u7528 A* \u51cf\u5c11\u63a2\u7d22\u3002",
+              "en": "Derive an optimistic bound from full-state BFS and prioritize exploration with A*."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u5e7f\u5ea6\u4f18\u5148\u641c\u7d22",
+                "en": "Breadth-first search"
+              },
+              {
+                "zh": "\u72b6\u6001\u5efa\u6a21",
+                "en": "State modeling"
+              },
+              {
+                "zh": "A* \u641c\u7d22",
+                "en": "A* search"
+              }
+            ],
+            "path": "818-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/race-car/",
+            "language": "Python",
+            "complexity": "O(D * 2^D) time; O(2^D) space, conservative unit-cost bounds for optimal command depth D; heap work O(Q log Q) for Q generated entries"
+          },
+          {
+            "id": 827,
+            "title": {
+              "zh": "\u6700\u5927\u4eba\u5de5\u5c9b",
+              "en": "Making A Large Island"
+            },
+            "desc": {
+              "zh": "\u7ed9\u5c9b\u7f16\u53f7\uff0c\u7528\u4e0d\u540c\u90bb\u5c9b\u7684\u9762\u79ef\u6c42\u4e00\u6b21\u7ffb\u8f6c\u7684\u6536\u76ca\u3002",
+              "en": "Label islands and combine distinct neighboring areas for one flip."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u8fde\u901a\u5206\u91cf",
+                "en": "Connected components"
+              },
+              {
+                "zh": "\u6d2a\u6c34\u586b\u5145",
+                "en": "Flood fill"
+              }
+            ],
+            "path": "827-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/making-a-large-island/",
+            "language": "Python",
+            "complexity": "O(n\u00b2) time; O(n\u00b2) auxiliary space"
+          },
+          {
+            "id": 828,
+            "title": {
+              "zh": "\u7edf\u8ba1\u6240\u6709\u5b50\u4e32\u4e2d\u7684\u552f\u4e00\u5b57\u7b26",
+              "en": "Count Unique Characters of All Substrings of a Given String"
+            },
+            "desc": {
+              "zh": "\u4ece ABA \u7684\u516d\u4e2a\u5b50\u4e32\uff0c\u63a8\u5bfc\u6bcf\u4e2a\u5b57\u7b26\u4f4d\u7f6e\u7684\u8d21\u732e\u3002",
+              "en": "Derive occurrence contributions from the six substrings of ABA."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u8d21\u732e\u8ba1\u6570",
+                "en": "Contribution counting"
+              },
+              {
+                "zh": "\u5b57\u7b26\u4e32",
+                "en": "Strings"
+              }
+            ],
+            "path": "828-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/count-unique-characters-of-all-substrings-of-a-given-string/",
+            "language": "Python",
+            "complexity": "O(n) time; O(n) auxiliary space"
+          },
+          {
+            "id": 829,
+            "title": {
+              "zh": "\u8fde\u7eed\u6574\u6570\u6c42\u548c",
+              "en": "Consecutive Numbers Sum"
+            },
+            "desc": {
+              "zh": "\u51cf\u6389\u9012\u589e\u7684\u53f0\u9636\uff0c\u7528\u957f\u5ea6\u4e0e\u6574\u9664\u6761\u4ef6\u6570\u51fa\u6b63\u6574\u6570\u5e8f\u5217\u3002",
+              "en": "Remove the increasing offsets, then count lengths with an equal-sharing test."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u6570\u5b66",
+                "en": "Mathematics"
+              },
+              {
+                "zh": "\u679a\u4e3e\u957f\u5ea6",
+                "en": "Length enumeration"
+              }
+            ],
+            "path": "829-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/consecutive-numbers-sum/",
+            "language": "Python",
+            "complexity": "O(sqrt(n)) time; O(1) auxiliary space"
+          },
+          {
+            "id": 834,
+            "title": {
+              "zh": "\u6811\u4e2d\u8ddd\u79bb\u4e4b\u548c",
+              "en": "Sum of Distances in Tree"
+            },
+            "desc": {
+              "zh": "\u5207\u5f00\u4e00\u6761\u8fb9\uff0c\u6570\u6e05\u53d8\u8fd1\u548c\u53d8\u8fdc\u7684\u8282\u70b9\uff0c\u63a8\u5bfc\u7ebf\u6027\u6362\u6839\u7b97\u6cd5\u3002",
+              "en": "Cut one edge, count who gets closer or farther, and derive linear rerooting."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u6811",
+                "en": "Tree"
+              },
+              {
+                "zh": "\u6362\u6839\u52a8\u6001\u89c4\u5212",
+                "en": "Rerooting DP"
+              }
+            ],
+            "path": "834-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/sum-of-distances-in-tree/",
+            "language": "Python",
+            "complexity": "O(n) time; O(n) auxiliary space"
+          },
+          {
+            "id": 839,
+            "title": {
+              "zh": "\u76f8\u4f3c\u5b57\u7b26\u4e32\u7ec4",
+              "en": "Similar String Groups"
+            },
+            "desc": {
+              "zh": "\u4ece\u4e00\u6b21\u4ea4\u6362\u5230\u8fde\u901a\u5206\u7ec4\uff0c\u63a8\u5bfc\u5e76\u67e5\u96c6\u7684\u4e0d\u53d8\u91cf\u3002",
+              "en": "From one swap to connected groups: derive the disjoint-set invariant."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u5e76\u67e5\u96c6",
+                "en": "Disjoint sets"
+              },
+              {
+                "zh": "\u56fe\u8fde\u901a\u6027",
+                "en": "Graph connectivity"
+              }
+            ],
+            "path": "839-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/similar-string-groups/",
+            "language": "Python",
+            "complexity": "O(n\u00b2(L + log n)) time; O(n) auxiliary space, for n words of length L (conservative bound)"
+          },
+          {
+            "id": 843,
+            "title": {
+              "zh": "\u731c\u731c\u8fd9\u4e2a\u5355\u8bcd",
+              "en": "Guess the Word"
+            },
+            "desc": {
+              "zh": "\u7528\u9010\u4f4d\u5339\u914d\u6392\u9664\u5019\u9009\uff0c\u518d\u7528\u6700\u574f\u56de\u590d\u6876\u9009\u62e9\u63d0\u95ee\u3002",
+              "en": "Filter by positional matches and choose guesses by worst reply buckets."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u4ea4\u4e92\u5f0f\u641c\u7d22",
+                "en": "Interactive search"
+              },
+              {
+                "zh": "\u6781\u5c0f\u5316\u6700\u574f\u60c5\u51b5",
+                "en": "Minimax"
+              }
+            ],
+            "path": "843-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/guess-the-word/",
+            "language": "Python",
+            "complexity": "O(n\u00b2L + Gn\u00b2) time; O(n\u00b2) auxiliary space, L=6 and G\u2264n (worst-case O(n\u00b3+n\u00b2L) time)"
+          },
+          {
+            "id": 847,
+            "title": {
+              "zh": "\u8bbf\u95ee\u6240\u6709\u8282\u70b9\u7684\u6700\u77ed\u8def\u5f84",
+              "en": "Shortest Path Visiting All Nodes"
+            },
+            "desc": {
+              "zh": "\u4ece\u91cd\u590d\u7ecf\u8fc7\u4e2d\u5fc3\u7684\u661f\u5f62\u8d70\u6cd5\uff0c\u63a8\u5bfc\u8bb0\u5f55\u5f53\u524d\u4f4d\u7f6e\u4e0e\u8bbf\u95ee\u96c6\u5408\u7684\u591a\u8d77\u70b9\u641c\u7d22\u3002",
+              "en": "Derive a search over current nodes and visited sets from a walk that revisits a star\u2019s center."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u5e7f\u5ea6\u4f18\u5148\u641c\u7d22",
+                "en": "Breadth-first search"
+              },
+              {
+                "zh": "\u4f4d\u63a9\u7801",
+                "en": "Bitmask"
+              }
+            ],
+            "path": "847-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/shortest-path-visiting-all-nodes/",
+            "language": "Python",
+            "complexity": "O((n+m)2^n) expected time; O(n2^n) auxiliary space, m = undirected edges"
+          },
+          {
+            "id": 850,
+            "title": {
+              "zh": "\u77e9\u5f62\u9762\u79ef II",
+              "en": "Rectangle Area II"
+            },
+            "desc": {
+              "zh": "\u628a\u91cd\u53e0\u77e9\u5f62\u5207\u6210\u7ad6\u6761\uff0c\u7528\u533a\u95f4\u5408\u5e76\u8ba1\u7b97\u8986\u76d6\u9ad8\u5ea6\u3002",
+              "en": "Slice overlapping rectangles into strips and merge their covered heights."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u626b\u63cf\u7ebf",
+                "en": "Sweep line"
+              },
+              {
+                "zh": "\u533a\u95f4\u5408\u5e76",
+                "en": "Interval merging"
+              }
+            ],
+            "path": "850-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/rectangle-area-ii/",
+            "language": "Python",
+            "complexity": "O(n\u00b2 log n) time; O(n) auxiliary space"
+          },
+          {
+            "id": 960,
+            "title": {
+              "zh": "\u5220\u5217\u9020\u5e8f III",
+              "en": "Delete Columns to Make Sorted III"
+            },
+            "desc": {
+              "zh": "\u4ece\u5171\u4eab\u5217\u7684\u517c\u5bb9\u5173\u7cfb\u63a8\u5bfc\u6700\u957f\u4fdd\u7559\u94fe\u3002",
+              "en": "Derive a longest kept chain from shared-column compatibility."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u52a8\u6001\u89c4\u5212",
+                "en": "Dynamic programming"
+              },
+              {
+                "zh": "\u5b50\u5e8f\u5217",
+                "en": "Subsequences"
+              }
+            ],
+            "path": "960-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/delete-columns-to-make-sorted-iii/",
+            "language": "Python",
+            "complexity": "O(nm\u00b2) time; O(m) auxiliary space"
+          },
+          {
+            "id": 968,
+            "title": {
+              "zh": "\u76d1\u63a7\u4e8c\u53c9\u6811",
+              "en": "Binary Tree Cameras"
+            },
+            "desc": {
+              "zh": "\u4ece\u4e09\u8282\u70b9\u8986\u76d6\u5b9e\u9a8c\u63a8\u5bfc\u540e\u5e8f\u904d\u5386\u7684\u4e09\u79cd\u72b6\u6001\u4e0e\u6700\u5c11\u6444\u50cf\u5934\u3002",
+              "en": "Derive three postorder states from a tiny camera coverage experiment."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u4e8c\u53c9\u6811",
+                "en": "Binary trees"
+              },
+              {
+                "zh": "\u8d2a\u5fc3",
+                "en": "Greedy"
+              },
+              {
+                "zh": "\u540e\u5e8f\u904d\u5386",
+                "en": "Postorder traversal"
+              }
+            ],
+            "path": "968-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/binary-tree-cameras/",
+            "language": "Python",
+            "complexity": "O(n) time; O(n) auxiliary space"
+          },
+          {
+            "id": 972,
+            "title": {
+              "zh": "\u76f8\u7b49\u7684\u6709\u7406\u6570",
+              "en": "Equal Rational Numbers"
+            },
+            "desc": {
+              "zh": "\u628a\u65e0\u9650\u5faa\u73af\u5c0f\u6570\u53d8\u6210\u7cbe\u786e\u5206\u6570\uff0c\u8fa8\u8ba4\u4e0d\u540c\u5199\u6cd5\u80cc\u540e\u7684\u540c\u4e00\u4e2a\u6570\u3002",
+              "en": "Turn repeating decimals into exact fractions and compare different spellings."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u6570\u5b66",
+                "en": "Math"
+              },
+              {
+                "zh": "\u5b57\u7b26\u4e32",
+                "en": "Strings"
+              }
+            ],
+            "path": "972-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/equal-rational-numbers/",
+            "language": "Python",
+            "complexity": "O(n) parsing time; O(n) auxiliary space under the official bounded-digit arithmetic model"
+          },
+          {
+            "id": 975,
+            "title": {
+              "zh": "\u5947\u5076\u8df3",
+              "en": "Odd Even Jump"
+            },
+            "desc": {
+              "zh": "\u4ece\u5f3a\u5236\u8df3\u8dc3\u63a8\u5bfc\u6392\u5e8f\u3001\u6808\u4e0e\u53cc\u72b6\u6001\u5012\u63a8\u3002",
+              "en": "Derive sorted targets and two-state reachability from forced jumps."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u5355\u8c03\u6808",
+                "en": "Monotonic stack"
+              },
+              {
+                "zh": "\u52a8\u6001\u89c4\u5212",
+                "en": "Dynamic programming"
+              }
+            ],
+            "path": "975-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/odd-even-jump/",
+            "language": "Python",
+            "complexity": "O(n log n) time; O(n) auxiliary space"
+          },
+          {
+            "id": 980,
+            "title": {
+              "zh": "\u4e0d\u540c\u8def\u5f84 III",
+              "en": "Unique Paths III"
+            },
+            "desc": {
+              "zh": "\u4ece\u63d0\u524d\u5230\u8fbe\u7ec8\u70b9\u7684\u5931\u8d25\uff0c\u63a8\u5bfc\u8986\u76d6\u6bcf\u4e2a\u683c\u5b50\u7684\u56de\u6eaf\u8ba1\u6570\u3002",
+              "en": "Derive complete-walk backtracking from an early arrival that fails."
+            },
+            "difficulty": "hard",
+            "topics": [
+              {
+                "zh": "\u56de\u6eaf",
+                "en": "Backtracking"
+              },
+              {
+                "zh": "\u7f51\u683c\u641c\u7d22",
+                "en": "Grid search"
+              }
+            ],
+            "path": "980-codex/",
+            "leetcodeUrl": "https://leetcode.com/problems/unique-paths-iii/",
+            "language": "Python",
+            "complexity": "O(mn + 3^V) time; O(V) auxiliary space, V non-obstacle cells"
+          }
+        ],
+        "route_layout": "codex-static-v1",
+        "accepted": {
+          "780": {
+            "candidate": "8063cd1919c3816eb74f2096c0afe51e05bf75b6",
+            "digest": "90e960f45400195f70094979ad5dc36554fc3abac3725a97b5e89f51981ad31e",
+            "review": "specs/reviews/780-review-2-8e1e7b4e.md"
+          },
+          "793": {
+            "candidate": "37a0404f4a9e796d8df3c2cfa9a188957fe835fe",
+            "digest": "cccafc8d6769edcd6c792c6d824bea9c97c6bbfa1f867a4b70c6e8b9cac204aa",
+            "review": "specs/reviews/793-review-2-6ee3ec7c.md"
+          },
+          "798": {
+            "candidate": "f1f2ef5f4dea85495b1f343e529e87e69b00685a",
+            "digest": "8e3cd68ca0a3a69e59fd7d84f62263c4a5adb2e21dbecbf06701d97040e57cd9",
+            "review": "specs/reviews/798-review-2-9bfc817e.md"
+          },
+          "801": {
+            "candidate": "84fc897f098887350f64045e36cc45cf7cdb5e88",
+            "digest": "e99962f2ea226a5803a9f5afc9aaf07d0bbe6409d60b1c07ffd561a0ed624a69",
+            "review": "specs/reviews/801-review-2-91de8989.md"
+          },
+          "810": {
+            "candidate": "489ed9a1950386a0514b43411e5f60901d28ede7",
+            "digest": "d41903f2965b28124cd79445f6deeb54da6703bedd19a537cb2cd4cc4b7e5044",
+            "review": "specs/reviews/810-review-1-30cf767f.md"
+          },
+          "815": {
+            "candidate": "705954022f0c2766672d44d7897958deb8b2a3fa",
+            "digest": "18eebbf75933c3c2958910c93608fa77a56a2322eec7c6e46929b45f0ab98616",
+            "review": "specs/reviews/815-review-2-d71a5634.md"
+          },
+          "818": {
+            "candidate": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+            "digest": "b91a8254ee14329c58d5c4cd43ee52a84dafaa38ed972c6f84667307761c8ef0",
+            "review": "specs/reviews/818-review-2-7f650b93.md"
+          },
+          "827": {
+            "candidate": "33686548c3c385cdb14b5b7262e4ca58a3b8d2f4",
+            "digest": "da960e6a7e0848d15b0e8c2f8672e5e0c8d0dfffba50a76b709c6ea0266d4170",
+            "review": "specs/reviews/827-review-1-6b930f83.md"
+          },
+          "828": {
+            "candidate": "263ebb65069e827fb935cd2dc7130803d14ce3ee",
+            "digest": "73556356ebf327f004d3f7e7a860969f9a7080aa51a2f1b1db0c32a5ddcd577b",
+            "review": "specs/reviews/828-review-1-19f7b706.md"
+          },
+          "829": {
+            "candidate": "0609ad2ae0e4c53c393225e5873152023724b3e3",
+            "digest": "be017438e1b65ff202269acfb0122becdfc1e4ca61be0a025125a8a0b55c2b16",
+            "review": "specs/reviews/829-review-1-e16dc71f.md"
+          },
+          "834": {
+            "candidate": "3dcefbc04619ae11869ea34581ea71c38daee06c",
+            "digest": "c66f1152e235118eb23e83c09c8ed04b6ae9fbef3daeabeb7c6435cf571df700",
+            "review": "specs/reviews/834-review-1-68508693.md"
+          },
+          "839": {
+            "candidate": "c55fd55af1e63d663440acf4c56bf4d233c6304d",
+            "digest": "b3fa48f00ebbfd232e5740dc22e925803b1fa8963d1033dd2cc700e56c0fd9d6",
+            "review": "specs/reviews/839-review-1-38f3fa43.md"
+          },
+          "843": {
+            "candidate": "1997af1228f21cd85a3c7506928dc2587a0a7a9f",
+            "digest": "74a308f1869468ef3dd2828a0a976a9aa8b65817428b4c69727564defdf5febd",
+            "review": "specs/reviews/843-review-3-0fd20aa5.md"
+          },
+          "847": {
+            "candidate": "4ba7fa4678b8ad916bfafa7a93edbebb1e2f2f10",
+            "digest": "90767504f2afc23e797872eba1f22f504081a6f7c6ecb9ceaa75a9538357f31e",
+            "review": "specs/reviews/847-review-1-4efcd822.md"
+          },
+          "850": {
+            "candidate": "c3a389dcbaad4d2a2a5eb330772b9366dd3c426e",
+            "digest": "549a416af05f8a10836a560e6ff755bd3d8a043818db00f2dc3ab8f4cb837ee4",
+            "review": "specs/reviews/850-review-1-ba13eaa4.md"
+          },
+          "960": {
+            "candidate": "a85f8ad95c969aae56e1c9f698c21c175c7464cb",
+            "digest": "438377031403bbdaa4a542052d22e563eadc0b82f3addd35f77984f66ba80c10",
+            "review": "specs/reviews/960-review-1-63cccd65.md"
+          },
+          "968": {
+            "candidate": "611b194292b72d89d4e64b984256efce09f5ab4e",
+            "digest": "868f7c561b09cc49a15753227d666694416a8b1119f56d94fbb6cbfe096c0642",
+            "review": "specs/reviews/968-review-2-9fca39e7.md"
+          },
+          "972": {
+            "candidate": "574ed7161620353c1ae02ac2d1a118877ec68961",
+            "digest": "697cc04356682080e92cf20b509a5778c01a4f3bc7493df410831542d47357de",
+            "review": "specs/reviews/972-review-1-bb491d1d.md"
+          },
+          "975": {
+            "candidate": "bc00150bef56379abd88333f62211cf7b16146c9",
+            "digest": "f8a64b5e871169d4e063b46db43ec5878e7518c4568715aa674329a51368cf9a",
+            "review": "specs/reviews/975-review-1-d2ae4c19.md"
+          },
+          "980": {
+            "candidate": "a440fe53769a1831f8e2f8f4f4bbd0195ff0906c",
+            "digest": "e75fd35a4c6dbf732dddeaed18d2c1f12447a850415a64ec675b5d1be2771566",
+            "review": "specs/reviews/980-review-1-43fed71e.md"
+          }
+        },
+        "verification": {
+          "lessons": 20,
+          "ignoredKnownBeaconFailures": 0,
+          "ignoredCloudflareRumRequests": 60,
+          "retiredRedirectDocuments": 0
+        },
+        "published_at": "2026-10-25T21:51:41.057626+00:00"
+      }
+    },
+    "accepted": {
+      "854": {
+        "entry": {
+          "status": "accepted_local",
+          "rounds": 1,
+          "new": true,
+          "phase": "done",
+          "reviews": [
+            {
+              "outcome": "accepted",
+              "scores": [
+                4,
+                3,
+                4,
+                4,
+                4,
+                3
+              ],
+              "required_open": [],
+              "report_path": "specs/reviews/854-review-1-9601268b.md",
+              "evidence": [
+                "Cold browser walkthrough saved before source audit.",
+                "Canonical Python verified against independent examples and 4,653 oracle comparisons.",
+                "Bilingual interactions, layouts, keyboard, contrast and exact source transfer passed.",
+                "Non-mutating metadata preflight passed."
+              ],
+              "detail": "92.5/100. No required fixes. Limitations and optional teaching advisory recorded; publication and LeetCode submission not claimed.",
+              "run_id": "854-review-0add7000fba0",
+              "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+              "candidate_sha256": "71998716fbdb4babb1e84235c7555fdd31b611f0c2c10878976176e4fce79a14",
+              "weighted_score": 92.5,
+              "round": 1,
+              "commit": "440d49b6e7e0ff916278062e20f63860e65a170c"
+            }
+          ],
+          "author_runs": [
+            "854-author-679ce856a357"
+          ],
+          "prior_report": "specs/reviews/854-review-1-9601268b.md",
+          "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+          "registration_commit": "5d9cf8fc351f19c9e747b8c5e424858b2cee6e3b",
+          "accepted_at": "2026-10-25T22:09:21.819991+00:00"
+        },
+        "entry_sha256": "864ec9e7423010f7056f5093ad591b9fc317bdf95fd102013966a1f0a1e6a9eb",
+        "runs_sha256": "06e8d5354457594fe5fb4224455745a6e2b688cf8a5ca0d1682130e1566ebf5d",
+        "lesson_git_tree": "59af9f72e9667e3dbe157c872207cc4edef3c5ff",
+        "runtime_sha256": {
+          "BRIEF.md": "c6e911411cb2e54654ec6aad73f6cc889f7a7e1f10a3fd9d03aff9bbd2fda899",
+          "SELF-CHECK.md": "c097b939478c0c94950a60088f0483d1ee7bb88d04410c64cd7576a5dd331edb",
+          "app.js": "05c724a4f2ce37ea4f7272c5dfa76c1def7fddeb6de41caa2e5e54c171d17550",
+          "candidate.json": "0e5fabc090abe75f382f008e4baceb0f57ced62813b0b79c4b72ec671ce4f90b",
+          "copy.js": "e46d8424f2ac041c6b310ba9a040e8e840677bcee13d1416525e2a14abce6533",
+          "core.js": "d33efab4b0e02bc1c47d060cc27c59ba054767da502c4f2955ce9dff2ce47dc0",
+          "index.html": "6ca50f1e3ac44e2f379e836730e023cbaf74512c52984bc73a7d6260fdc601d4",
+          "lesson-entry.json": "7ba6fb81eabb97640a8664d7c97e50ccfde754bfabcf1b7272813c8c968a91bc",
+          "python-code.js": "36b61694050f9499e8d02a2078002bba5e295769447d44afdfcc1c48de845238",
+          "solution.py": "7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068",
+          "style.css": "8631f5c8720e508d28351bd1edfbb2d62b6709798efb4a2f2c9ff4a696bdb295",
+          "tests/README.md": "8f6c4565d003f58d1e600b861cff6c2fc431e12f7633fdab4d623cd008cd13a2",
+          "tests/baseline.py": "9314a26bed5157c398d1b6c0d9438b8f2386daa2bb901d2785d1cb1945c34f90",
+          "tests/browser.cjs": "fd2989bd7d5eaf573e38a10dbab9e1d7bd16024dca9c660e5af01efa37154307",
+          "tests/build_page.py": "1175c89158353cf78f8b608f18fb70266244ec1b5dbf40025287b2df3b9acf60",
+          "tests/evidence/author-corrections.json": "a65a73d63e037f756e5b164edb619fc99b883f2dbd67fdd39f2f29eb5ff81dff",
+          "tests/evidence/browser-results.json": "0975c23df6a2cd64584671ba94dc158dca12074f8f39b42f6301b5f5010abd7f",
+          "tests/evidence/core-results.json": "eeeef0dd953f4e870b084e953e27c4780b1149d8d04fa5ab417ca56a857d5a4b",
+          "tests/evidence/en-1440-zoom1-controls.png": "c97fe3e953f27be2aebbfbfe111ccc7d2678a5ab56b2f8f9e481a5f90db57999",
+          "tests/evidence/en-1440-zoom1-trace.png": "22c6a2cc526edbe53b257a3d96595492728c7a94370e26138b6116d285130bab",
+          "tests/evidence/en-1440-zoom2-controls.png": "4d703249c8782e0d742af3da77b78fc9a01114e894de40aa42a6b83b030a1f0a",
+          "tests/evidence/en-1440-zoom2-trace.png": "203e6199128705c712a6da7c7214080eeb86cf70e1487663cb05c89db812e788",
+          "tests/evidence/en-320-zoom1-controls.png": "784fe0cb1673e5b79fd6747de1fb1c7465366d2edd396bfc43454a92b30e9896",
+          "tests/evidence/en-320-zoom1-trace.png": "33403ece867a4817cd8ba48ebf0887a2955dc173f899de1e8f38961698d78ee9",
+          "tests/evidence/en-320-zoom2-controls.png": "0ff2cad00220b34f162822d9d4fc95fd9150fe8ad3db48f509c56286f28a7652",
+          "tests/evidence/en-320-zoom2-trace.png": "af6021f71d53d80bfc594039adf8af5ad59df323b2a74578c082747af7816655",
+          "tests/evidence/en-390-zoom1-controls.png": "4eb3f612b6c2415b8d45e38c30eea73344da7d0876fc345447749b6aa97029e7",
+          "tests/evidence/en-390-zoom1-trace.png": "87b4b20ab145d783f7a81f050ff6d9e489b3929ce62733a2115297e4e87a2086",
+          "tests/evidence/en-390-zoom2-controls.png": "dba2ac8c3c4be8761b3c0bba863081cea027f9714f8636adef4d636e92761caa",
+          "tests/evidence/en-390-zoom2-trace.png": "934a0e3d6a04eb7c9ee74af1d51c675c3238037554dae4632ccdaab8f3e20614",
+          "tests/evidence/en-736-zoom1-controls.png": "8de54f50acd52359df589d9a45e386bbcfda8d77fbfe84b93671f3dac2f10556",
+          "tests/evidence/en-736-zoom1-trace.png": "facb3b73cdee19d7c47a876aad585c00772a42f908909dc17aebddf732e38d38",
+          "tests/evidence/en-736-zoom2-controls.png": "e5ed9fbd3a200a2d0490933b60332c53acecf31b9f41d8477c46110f57472fbe",
+          "tests/evidence/en-736-zoom2-trace.png": "5ed990302c19c7d82a35999320197260005b243d25a1b1342823cce60650918a",
+          "tests/evidence/en-desktop-top.png": "f4f993f080379159cc77b97878a324b442fc4eca76fdffb1ce76d2076ed36947",
+          "tests/evidence/en-exercise.png": "fb23c359a5611f715e8f28519d88cfb634661807d6f2dfd20b596c1bde8c144d",
+          "tests/evidence/keyboard-focus.png": "7888380e57e0acc7cdd68af52a06f61dbd95e9e3005b7ef10fe92ace58d1f2b9",
+          "tests/evidence/official.json": "d71207d1775517f38f6b1ef2ed45a175c62b9866b7043f80c67274e4dc94ee1b",
+          "tests/evidence/preflight.json": "b4dde9fa7dcba5aee612e288a88278bcb58f561a0b4a57bd8758301ac3abac25",
+          "tests/evidence/solution-results.json": "e90a61bb38bc65d987a286f76a9d3ad2db8e7d4a89c508749c8f681039570917",
+          "tests/evidence/zh-1440-zoom1-controls.png": "2e56bb8ce539caea656a66704431fa27642b14b71fec7c7a72f79e0ea7c2a9d9",
+          "tests/evidence/zh-1440-zoom1-trace.png": "1a8976aaa17671ecd7ffe82dc07ecd69a791cfdaa58cfd6742998d1f3cfbcc4b",
+          "tests/evidence/zh-1440-zoom2-controls.png": "8e071a42900bb500af558f239c33ff9f13e6148962db349770c16c0d104fe7b1",
+          "tests/evidence/zh-1440-zoom2-trace.png": "f65dc39db02519fcefb37d0198a9d0b3cec7b1c2eb6a60a32dfce282bfd2d55f",
+          "tests/evidence/zh-320-zoom1-controls.png": "fbc8b3c8633151d8d04f2b7c88e9a7c57f9cfd809b8caaf99f1d53bbd7fbf0d0",
+          "tests/evidence/zh-320-zoom1-trace.png": "0be1751a971ea5a28140ad0e07ab5167ff406f52a857bde83804217ecfe10b8a",
+          "tests/evidence/zh-320-zoom2-controls.png": "85ffd83e2e6d21a655ac7bbe228cdd9412ca82a23b83b7adedd686e803b7392c",
+          "tests/evidence/zh-320-zoom2-trace.png": "1b53fc05e35e3939f344f925a19882130539e282536c7bfc608ec2e8c289b940",
+          "tests/evidence/zh-390-zoom1-controls.png": "d0752414a0902c4917c05b2c2a7fb343aa6a39604c6f5d9c638f89654e1a796b",
+          "tests/evidence/zh-390-zoom1-trace.png": "3c8f3f834209f46137fbe7ea9650be53e6dbd003b7d287586294777c6d29e947",
+          "tests/evidence/zh-390-zoom2-controls.png": "6bedde95466e402e69fecc3557b2827fd3cd27c8db221f0d2ab8a6e919ee5a84",
+          "tests/evidence/zh-390-zoom2-trace.png": "d5b5a2b760b019baedc4c2542c41afac35952b4d0bd370313827802a1ae10328",
+          "tests/evidence/zh-736-zoom1-controls.png": "21ba74f84c057fe5ac54cf3919e6f062544bf24b2f3dc164d6a2f0d5e4f7cc17",
+          "tests/evidence/zh-736-zoom1-trace.png": "9d4f44e2a9b09a28cd9c4fc4218b6f3102b939c51fb75cf1558293b7bb8fe373",
+          "tests/evidence/zh-736-zoom2-controls.png": "569522f8efb077e4be9b1aaaa592cfdd7c454e438fb7ebcfb8b972427d488c16",
+          "tests/evidence/zh-736-zoom2-trace.png": "7ca923e7cbc4a34b875cf360ac45bb0c0774946370c3788bd6b832f438b40051",
+          "tests/evidence/zh-desktop-top.png": "53c4377d221f6064f1f32789516d1659af759a7347638c1c2b4ca749572bc427",
+          "tests/evidence/zh-exercise.png": "85dc460bf05dc3d09de2e920b51cec4b1c5bec3c5486e5b7a5e25c48c175bf36",
+          "tests/test_core.cjs": "9922a422d3f8c802389b755a5c6df5201bd411e0e51def5358d4addd78247312",
+          "tests/test_solution.py": "60e8d4c49eb97921bdee4268c278f3aec737cf6f67b693c2643b28e51a41ecee"
+        },
+        "report_sha256": "4e2a60a96948e7a6d51783423ac5d91162b57f878a9e73d4267ff81bcc7cd705"
+      }
+    },
+    "requests": {
+      "854": {
+        "path": "specs/reviews/854-tagged-cycle-revision-request-20261026.md"
+      }
+    },
+    "payload_manifest_sha256": "35cb72e2f7e5003a9c33865d57ec678a190f61392c36f2ebd95962e64e53535d"
+  },
+  "previous_receipt": {
+    "owner": "import9961000-only-20261026-641c280f",
+    "status": "completed-resumed",
+    "created_at": "2026-10-25T23:43:21.528921+00:00",
+    "imports": [
+      {
+        "version": 1,
+        "status": "completed",
+        "problem_id": "996",
+        "central_before": "cdb3caf0e2b26c04f6521215fe65c88280fe8ad9",
+        "lane_head": "af88d4a6f1c7727420c024fe3abce66c795fccb0",
+        "lane_repo": "/home/songyy/projects/leetcode-hard-lane-996-20261026",
+        "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026",
+        "candidate": "0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38",
+        "run_ids": [
+          "996-author-9180dd0f5b54",
+          "996-review-67e31a100281",
+          "996-fix-c44013a158e2",
+          "996-review-29cd3a98b546"
+        ],
+        "started_at": "2026-10-25T23:49:36.349454+00:00",
+        "updated_at": "2026-10-25T23:49:39.054674+00:00",
+        "merged_head": "cfbcc96548d3e17255493ce7e4bd4d376e32859e"
+      },
+      {
+        "version": 1,
+        "status": "completed",
+        "problem_id": "1000",
+        "central_before": "cfbcc96548d3e17255493ce7e4bd4d376e32859e",
+        "lane_head": "30516661a5cfc0673c2dcfaa018444e2ffa2c85b",
+        "lane_repo": "/home/songyy/projects/leetcode-hard-lane-1000-20261026",
+        "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026",
+        "candidate": "20f52a5cf74957ddacf1a7627ed882defe6a70f5",
+        "run_ids": [
+          "1000-author-3a58ffe68610",
+          "1000-review-0970e8f06123"
+        ],
+        "started_at": "2026-10-25T23:51:22.424138+00:00",
+        "updated_at": "2026-10-25T23:51:25.168829+00:00",
+        "merged_head": "453476e12d04ae75d14b149fa26e3446cdb088ca"
+      }
+    ],
+    "lanes": [
+      {
+        "id": "996",
+        "lane_head": "af88d4a6f1c7727420c024fe3abce66c795fccb0",
+        "candidate": "0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38",
+        "score": 100.0,
+        "required_open": [],
+        "run_ids": [
+          "996-author-9180dd0f5b54",
+          "996-review-67e31a100281",
+          "996-fix-c44013a158e2",
+          "996-review-29cd3a98b546"
+        ]
+      },
+      {
+        "id": "1000",
+        "lane_head": "30516661a5cfc0673c2dcfaa018444e2ffa2c85b",
+        "candidate": "20f52a5cf74957ddacf1a7627ed882defe6a70f5",
+        "score": 92.5,
+        "required_open": [],
+        "run_ids": [
+          "1000-author-3a58ffe68610",
+          "1000-review-0970e8f06123"
+        ]
+      }
+    ],
+    "pre_stop_plan": {
+      "next_problem_id": "879",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992"
+        ],
+        "incoming": [
+          "1000",
+          "996"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "1000",
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992",
+          "996"
+        ],
+        "upper_bound": 11
+      }
+    },
+    "stop": {
+      "owner": "import9961000-only-20261026-641c280f",
+      "created_at": "2026-10-25T23:43:26.960441+00:00",
+      "reason": "Finish current stage; import independently accepted996/1000 under unchanged policy, then resume the normal queue.",
+      "lane_ids": [
+        "996",
+        "1000"
+      ]
+    },
+    "boundary_plan": {
+      "next_problem_id": "879",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992"
+        ],
+        "incoming": [
+          "1000",
+          "996"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "1000",
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992",
+          "996"
+        ],
+        "upper_bound": 11
+      }
+    },
+    "boundary_head": "cdb3caf0e2b26c04f6521215fe65c88280fe8ad9",
+    "post_import_plan": {
+      "next_problem_id": "879",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "1000",
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992",
+          "996"
+        ],
+        "incoming": [],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "1000",
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992",
+          "996"
+        ],
+        "upper_bound": 11
+      }
+    },
+    "imported_head": "453476e12d04ae75d14b149fa26e3446cdb088ca",
+    "policy_preserved": true,
+    "launch": {
+      "pid": 1965599,
+      "queue_count": 984,
+      "continuous": true,
+      "state": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress.json"
+    },
+    "ordinary_resume_proof": {
+      "registration_commits": [],
+      "agent_candidate": "453476e12d04ae75d14b149fa26e3446cdb088ca",
+      "prior_reviews_and_runs_preserved": true
+    },
+    "completed_at": "2026-10-25T23:51:59.672379+00:00",
+    "fresh_agent": {
+      "current": {
+        "problem_id": "879",
+        "stage": "review",
+        "started_at": "2026-10-25T23:51:55.033227+00:00",
+        "run_id": "879-review-f819a846b820"
+      },
+      "session_id": "01a1757a-5dad-7a63-ab9f-51fad99ac40f",
+      "native_codex_pids": [
+        1965929
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a1757a-5dad-7a63-ab9f-51fad99ac40f"
+        },
+        {
+          "type": "turn.started"
+        }
+      ]
+    },
+    "pushed_head": "453476e12d04ae75d14b149fa26e3446cdb088ca",
+    "ledger_preserved": true
+  },
+  "accepted854_runs": [
+    {
+      "id": "854-author-679ce856a357",
+      "problem_id": "854",
+      "role": "author",
+      "started_at": "2026-10-25T21:51:41.189020+00:00",
+      "status": "completed",
+      "candidate": "7fd4aa457c318f053d7dc722fd63b3012bccb838",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/854-author-679ce856a357",
+      "session_ids": [
+        "01a1750c-4a1a-7c02-a106-9269fa0e867f"
+      ],
+      "finished_at": "2026-10-25T22:01:30.520195+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented the complete bilingual #854 lesson in leetcode/854/. Official Python interface verified; oracle, invariant, browser, source-parity, accessibility and metadata preflight checks passed. Candidate and evidence frozen. Independent review remains pending."
+      }
+    },
+    {
+      "id": "854-review-0add7000fba0",
+      "problem_id": "854",
+      "role": "review",
+      "started_at": "2026-10-25T22:05:14.589592+00:00",
+      "status": "completed",
+      "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/854-review-0add7000fba0",
+      "session_ids": [
+        "01a17518-b387-7960-b6d6-60e162d298e1"
+      ],
+      "finished_at": "2026-10-25T22:09:10.591973+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          3,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/854-review-1-9601268b.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Canonical Python verified against independent examples and 4,653 oracle comparisons.",
+          "Bilingual interactions, layouts, keyboard, contrast and exact source transfer passed.",
+          "Non-mutating metadata preflight passed."
+        ],
+        "detail": "92.5/100. No required fixes. Limitations and optional teaching advisory recorded; publication and LeetCode submission not claimed."
+      }
+    }
+  ],
+  "source_review_receipt": {
+    "candidate": "27b9930daf25f9fb1651038bff1605969cb27f01",
+    "verdict": "focused-independent-acceptance",
+    "score": 97.5,
+    "required_open": [],
+    "closed": [
+      "854-BRIDGE-R1",
+      "854-A01"
+    ],
+    "runtime_unchanged_during_review": true,
+    "files": {
+      "specs/reviews/854-bridge-review-evidence-20261026/coldwalk-browser-observations.json": "f6d0a5bbad5fc3cec1069220c442f1afc7470139f3ce13b5366fe358c79b2df6",
+      "specs/reviews/854-bridge-review-evidence-20261026/computed-style-focus.json": "dc1c2f7b905ef755f5ed0ccbaf556fcd71aef12c7ad2e94fed89afe6a1e6e24d",
+      "specs/reviews/854-bridge-review-evidence-20261026/contrast-source-parity.json": "9814d25d777addee0f0b66965fce1f8baa76661d14941e033662c5691305af4d",
+      "specs/reviews/854-bridge-review-evidence-20261026/copied.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "specs/reviews/854-bridge-review-evidence-20261026/copy-api-payload.json": "e69f75085947bc51ed919b2abd4024d80f44725b1e661e6e6794aa3f823a8d75",
+      "specs/reviews/854-bridge-review-evidence-20261026/displayed.py": "7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068",
+      "specs/reviews/854-bridge-review-evidence-20261026/en-1440-csszoom2.png": "da399813f99baec8c4fce2671a7d6c884df2f0af4b7cdf379812b798075bc715",
+      "specs/reviews/854-bridge-review-evidence-20261026/en-320-csszoom2-heading.png": "2b9f036c88943d5bf8569782762b86435df207d28be70b87da031e689789e0e1",
+      "specs/reviews/854-bridge-review-evidence-20261026/en-320-csszoom2.png": "68b4235f34f9b6aaec72752cab92d92f5c0a0c8bce292977314c65c7716aa983",
+      "specs/reviews/854-bridge-review-evidence-20261026/en-320-mapping-counters.png": "41602bf3d5c9610f1cffeb1cec0c3d67b7673c411cfed1a0b56ab8174f1c231c",
+      "specs/reviews/854-bridge-review-evidence-20261026/en-row4.png": "c421896e57e7c3824319c0fd8277d5e2f15141579c10c7905ffd5f9f1ff297e0",
+      "specs/reviews/854-bridge-review-evidence-20261026/extreme-layout.json": "7b8235cc481dd6ab4698410ffbfe8d6f529f569a9c1c15ad97fcee53248e95be",
+      "specs/reviews/854-bridge-review-evidence-20261026/forced-reduced.json": "27d99b8da3ef742e35414a977dce2e4ed539bc4a5d5eba9cb150c7926b5d2a29",
+      "specs/reviews/854-bridge-review-evidence-20261026/forced-reduced.png": "78adb5c631238da451643272156a605fcb4fd2d6adba96123fa960354f7afb4a",
+      "specs/reviews/854-bridge-review-evidence-20261026/heading-geometry.json": "49d93ea19cf75da9329601a841627bcd3af79da16a97aa777aa43234d79709b1",
+      "specs/reviews/854-bridge-review-evidence-20261026/independence.json": "3ad04a532db0b4df4f3466b28fc09f6c11d9422a48316734fcc0bb408c4436e1",
+      "specs/reviews/854-bridge-review-evidence-20261026/keyboard-focus.png": "84548dafb4b071b099eae95ca67403807bcae647b12c02cd04e071935aac89b4",
+      "specs/reviews/854-bridge-review-evidence-20261026/mobile-all-rows.json": "eec198037e5a55071318a3a9f0a352657384e0ae5e3175a7b38d15bea22f43df",
+      "specs/reviews/854-bridge-review-evidence-20261026/preset-keyboard.json": "0560ce766944f32e6990a9e0588a5fa0f5fcb299d1087b4ece2ef2afc3571f60",
+      "specs/reviews/854-bridge-review-evidence-20261026/source-arithmetic-audit.json": "25f2a4f5255e90932661ce93d6764467cfb0f8d9b129e4ef4f6595a02f5cf2d3",
+      "specs/reviews/854-bridge-review-evidence-20261026/zh-1440-csszoom2.png": "5e0f12df9be0227350c6839aa696fac4a40db4491a70c55bb75d5c0e9e334b93",
+      "specs/reviews/854-bridge-review-evidence-20261026/zh-320-csszoom2.png": "15b2414e00bf5d395c946990db3338a40814a876418542690e0345e0b92c3567",
+      "specs/reviews/854-bridge-review-evidence-20261026/zh-320-mapping-counters.png": "ca1e36982c3d2256262795bbeec39ffbf89e5992ecade1575e67dfcb87262753",
+      "specs/reviews/854-bridge-review-evidence-20261026/zh-320-row2.png": "48297c40d9b81966130b3f59c765bef6b33c390274a2c18675619f0757f4098d",
+      "specs/reviews/854-bridge-review-evidence-20261026/zh-row4.png": "459f15e7c7501aaa47da678ffcdd6337304f53f22be3cf10621601329c6f5a80",
+      "specs/reviews/854-bridge-review-evidence-20261026/zoom-all-rows.json": "7cd313d05137f22a8377cd1dd141c829ec82efc6520f74db671f0747e5302e9e",
+      "specs/reviews/854-bridge-review-20261026.md": "13a61dde9645bf34465152bb811f15f35dd532c01e65a692ebba8cc26040334d"
+    }
+  },
+  "source_review_report": "# Independent review of 854 proof bridge \u2014 2026-10-26\n\nCandidate: 27b9930daf25f9fb1651038bff1605969cb27f01. Reviewer: fresh agent /root/review_854_bridge (not author). Preview: http://127.0.0.1:19854/leetcode/854/. Frozen rubric: specs/leetcode-review-gates.md, six dimensions unchanged. This cold record was saved before reading revision request, implementation source, prior reviews, or author evidence.\n\n## Cold walkthrough (recorded before source audit)\n\n- Problem: transform anagram s1 to s2 with arbitrary-position swaps; return minimum number, zero-based positions. Hand derivation abc -> bac -> bca uses 2, and three mismatches exclude 1. BFS checks unit-cost layers, preserves every distinct suffix, and seen prevents repeated work. Baseline tries O(n\u00b2) swaps with O(n) string work; pruned version keeps at most n partners with the same O(n) work.\n- Before revealing snapshot 2, predicted aabc stays fixed, actual swaps stay 0, cycle (0 3 2 1) becomes (0)(1 3 2), and assignment cost changes 3 -> 2. Observed exactly that. Visible text explicitly says 3 was a worse assignment's cost, not an original-problem lower bound.\n- Before snapshot 3, predicted swap (1,2), aabc -> abac, cycles (0)(1)(2 3), actual count 1, remaining 1. Observed exactly that, including token-carried destinations and labeled highlights.\n- Before snapshot 4, predicted swap (2,3), abac -> abca, four singleton cycles, actual 2 and remaining 0, disabled Next. Observed exactly that; the stated three-mismatch lower bound proves optimum 2.\n- Used Enter to rewind row 4 -> 3; it restored abac and counts 1/1. Switching EN -> ZH preserved row 3. Read all four Chinese rows using Previous/Next; Space activated Next. Both languages distinguish reassignment and physical motion, preserve target abca, and warn that the proof only guarantees some eligible optimal partner, so all eligible j must remain.\n- Expanded BFS independently to abc -> bac, depth 1; proof stayed at row 4. Resetting proof restored its initial row while BFS remained depth 1. Start Previous and end Next are disabled. Prediction exercise: independently chose {3}; j=1 is already correct, whereas swap (0,3) directly reaches bbca. Correct feedback reconstructs the tempting wrong route through bacb.\n- Fresh reviewer-selected input for later executable check: aab -> baa. Prediction is one swap (0,2); j=1 must be excluded because target[1]=a is already correct. Equal aa -> aa needs 0. This is a code check because UI offers presets only.\n- Invariant paraphrase: correct positions can be singleton cycles in an optimal occurrence assignment; the predecessor of first mismatch i in its remaining cycle is misplaced and lies after i. A physical swap removes i from that cycle and spends precisely one unit of its optimum. BFS retains at least one such optimal continuation without knowing which eligible j it is.\n- Python mapping observed in the UI: a layer consists of queue entries with common depth; popleft gives FIFO; test equality before scanning i; list(state) plus swapping and join creates child without mutating parent; seen is set upon enqueue. Cost O(Vn\u00b2) time/O(Vn) space is conservative and distinct from stored rewind snapshots.\n\nCold evidence: 854-bridge-review-evidence-20261026/coldwalk-browser-observations.json; en-row4.png; zh-row4.png. Desktop screenshot shows position/token/destination associations and text labels on highlights. Device/zoom, source parity, exact diff and score audit follow below; no verdict yet.\n\n## Source and focused regression audit\n\n- Reviewed exact diff `cf1a31fc75c66ca79e54513e050b7e0ba31b6e70..27b9930daf25f9fb1651038bff1605969cb27f01`, then the approved revision request and independent design review. Runtime changes are the proof widget insertion, 24 bilingual copy entries, one `bridgeRow` index and renderer/handlers, layout styles and versioned references; generator/brief changes match. Additional diff files are review/proposal/self-check/test artifacts. Author self-check scripts/results were not used as independent evidence.\n- The new widget is between the cycle definition and general singleton argument in `#step2`; four row arrays, counts and labels match the approved contract. Its handlers call only `renderBridge`; locale render preserves the row. No timer, animation, request, storage or solver modification is introduced.\n- Independently calculated cycles from the four destination arrays: cycle counts 1,2,3,4 imply remaining fixed-assignment costs 3,2,1,0. Checked target-letter compatibility at every destination and physically permuted both tokens and their destinations for swaps (1,2) and (2,3). Reassignment alone leaves token order and spent count unchanged. The two real swaps attain the independently derived lower bound 2. These tiny calculations corroborate the example; the general cycle argument supplies the proof.\n- Reviewer-selected `aab -> baa` returned 1 in canonical Python, matching the recorded prediction; `aa -> aa` returned 0 and the bridge input returned 2. Displayed Python, mirror JSON value, downloaded HTTP source and actual argument passed to `navigator.clipboard.writeText` match canonical source byte-for-byte. The write wrapper called the original API and was then removed. IAB clipboard readback returned empty despite successful UI/API completion, so physical OS pasteboard delivery is not claimed. This is a review-environment limitation, not evidence of a changed source-transfer defect.\n- Canonical `solution.py`, `python-code.js`, `core.js`, and `lesson-entry.json` are byte-identical between base and candidate. All eight local lesson runtime assets fetched from the preview match frozen candidate bytes; SHA-256 values are in `source-arithmetic-audit.json`. `python3 -B scripts/register_leetcode_lesson.py 854 --validate-only` exited 0 without output. No registry mutation occurred.\n- Duplicate-key detection parsed the entire copy namespace: 109 unique keys, including 24 new bridge keys, each with two nonempty strings. All four rendered EN/ZH rows were checked semantically against their action, mapping, counters and explanation, not merely key presence.\n- State isolation: hand exercise remained at `bac`/1 swap; BFS remained depth 1; selected/revealed prediction stayed correct; source panel stayed open and copy status stayed complete across bridge changes. Conversely, changing to preset F reset only BFS; jumping to its target produced depth 2/`abca` while the bridge stayed at snapshot 2.\n\n## Device and accessibility evidence\n\n- Inspected desktop rendering, all four rows in EN/ZH at 320 px, and all four in EN/ZH at 1440 px with **200% CSS body zoom**. This is CSS magnification, not a claim of native browser zoom or physical mobile-device testing. No essential element overflow or document horizontal overflow appeared in those matrices. Locale changes at every row preserved the row.\n- Additionally inspected the dense reassignment row at combined 320 px + 200% CSS zoom in both languages. Full labels and counters remain readable with considerable vertical scrolling. English heading `reassignment` overflows its own content box by about 5.2 rendered px, but glyph right edge 291.19 is inside card right edge 304 and viewport 320; the settled screenshot shows no clipping or text collision. This is not a required finding.\n- Enter/Space activate the controls; Tab follows Previous -> Next -> Reset. Native endpoint disabled states observed; 48 px control height, 3 px orange keyboard focus outline and 4 px offset measured. Forced colors retain double-border plus textual change markers and visible focus; reduced-motion emulation leaves snapshots static.\n- Calculated from rendered colors: body/panel 14.70:1, body/panel2 13.40:1, muted/panel2 6.45:1, change marker/panel2 8.94:1, focus/panel 9.81:1. No change relies on hue alone. Temporary zoom, media emulation and viewport overrides were restored.\n\nEvidence directory: `854-bridge-review-evidence-20261026/`. Key files: `coldwalk-browser-observations.json`, `source-arithmetic-audit.json`, `independence.json`, `preset-keyboard.json`, `mobile-all-rows.json`, `zoom-all-rows.json`, `extreme-layout.json`, `heading-geometry.json`, `computed-style-focus.json`, `contrast-source-parity.json`, `copy-api-payload.json`, and corresponding PNGs. The empty `copied.py` preserves the unsuccessful IAB clipboard readback; it is not the canonical or captured copy payload.\n\n## Findings, scores and verdict\n\n**Required open finding IDs: none.** `854-BRIDGE-R1`: fulfilled for this frozen candidate. Original low optional advisory `854-A01`: **closed by this reviewer** against `27b9930daf25f9fb1651038bff1605969cb27f01`; the cold walkthrough could instantiate the equal-letter destination exchange before the general proof. This closure does not rewrite the original advisory's severity or the historical 92.5/100 acceptance. No new required finding or regression was observed in the reviewed scope.\n\n| Dimension | Score / 4 | Weighted points | Evidence |\n| --- | ---: | ---: | --- |\n| Problem, terms, hand calculation | 4 | 15 | Explicit anagrams/output/indices; manual two-swap result and lower bound. |\n| Causal derivation and saved work | 4 | 20 | Baseline vs pruned candidate cost; concrete zero-cost reassignment; general singleton proof and greedy counterexample remain. |\n| Maintained state and correctness | 4 | 20 | Four mappings independently reconstructed; spent/remaining counts, optimal-route invariant and boundaries agree. |\n| Interaction and visual meaning | 4 | 20 | Predictions precede reveals; reversible snapshots, native endpoints, separate counters and old-state preservation verified. |\n| Transfer to Python and cost | 4 | 15 | Fresh executable case, immutable-parent mapping, source/API-argument parity and unchanged conservative costs. |\n| Bilingual and device access | 3 | 7.5 | Equivalent full reasoning, keyboard/contrast and width/zoom checks pass; very narrow magnification requires substantial scrolling. |\n\n**Total: 97.5/100. Verdict: independently accepted for the focused 854-BRIDGE-R1 revision and inspected prerequisite path at candidate `27b9930daf25f9fb1651038bff1605969cb27f01`.** Every dimension is at least 3 and no required fix remains. This is a focused follow-up against the stated accepted base, not a new broad solver sweep or retrospective rewrite of the prior report.\n\nP0 is complete in the reviewed scope. P1/P2: no additional feature needed. Deferred arbitrary matching input, animations and a generic permutation component remain appropriately out of scope.\n\nLimitations: one independent agent review, no measured novice teach-back; browser emulation rather than physical phone or assistive-technology user testing; clipboard API payload parity rather than confirmed OS paste; no re-execution of the unchanged solver's broad exhaustive suite, unchanged source fallback failure injection, or public deployment checks. Exact model identifier is not asserted. No implementation, registry, queue, Pi, publication, server-runtime or commit mutation was performed; only this review report/evidence were added.\n",
+  "observation": {
+    "at": "2026-10-25T23:52:58.954314+00:00",
+    "read_only": true,
+    "object_fetch_performed_here": false,
+    "head": "453476e12d04ae75d14b149fa26e3446cdb088ca",
+    "current": {
+      "problem_id": "879",
+      "stage": "review",
+      "started_at": "2026-10-25T23:51:55.033227+00:00",
+      "run_id": "879-review-f819a846b820"
+    },
+    "runner_pid": 1965599,
+    "native_pid": 1965929,
+    "native_args": [
+      "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex",
+      "exec",
+      "-m",
+      "gpt-6.1-sol",
+      "-c",
+      "model_reasoning_effort=\"medium\"",
+      "-c",
+      "approval_policy=\"never\"",
+      "--sandbox",
+      "danger-full-access",
+      "--json",
+      "-o",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/879-review-f819a846b820/final.json",
+      "--output-schema",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/879-review-f819a846b820/schema.json",
+      "-C",
+      "/home/songyy/projects/leetcode-hard-campaign-20261018",
+      "-"
+    ],
+    "native_cwd": "/home/songyy/projects/leetcode-hard-campaign-20261018",
+    "session_id": "01a1757a-5dad-7a63-ab9f-51fad99ac40f",
+    "progress_sha256": "a3c4924a9074f88db1a0f792eb83178d1b180f9149afdf046f8e0e04f33777f0",
+    "previous_receipt_sha256": "483b6b7723bd84fa174afe8f7e58051653ebe56b2e793ad1694f5f4a4f7e9cbe",
+    "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+    "released_count": 138,
+    "pending": null,
+    "queue_sha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+    "lane_processes_absent": true,
+    "reservation_sha256": {
+      "lane-964-reservation.json": "1391726fbffbaed6867556691ab3562eb7671d34e29ae4a25f6a686782c77e7b",
+      "lane-689-reservation.json": "957831825f83cca2a81d1495f5931a5359be35ceda528a1c87c1c95e489738a1",
+      "lane-493-reservation.json": "bd5d56429c319dd527b5ad22901a1cd3aab373c1f56bfa06343775c50db1646a",
+      "lane-675-reservation.json": "87df66947101571a188f25df599bf1238a5561d5c4867289261ead14f3834411",
+      "lane-514-reservation.json": "e7fe9cbfba39aef217a9019b7a12ca2ecfc9a47a346e3f96d9e914decc8a6172",
+      "lane-940-reservation.json": "5b76e20709a6c9eeeddaf7c42163e8cf9ef98b43b8229d274d92c3f282a7d0c0",
+      "lane-591-reservation.json": "535dfc500dccf1643e6242d21a182558d5b85d128a01a53271cd2d26a1614431",
+      "lane-996-reservation.json": "e100a0e24eaf70748f43937cfa0fb35904cf64e2cb671d5e4bc89bcc1e3c1c1d",
+      "lane-691-reservation.json": "98030c13682c693724ae81a11b79abd53f43b1515a943cbcf3098a0ce924eb5d",
+      "lane-719-reservation.json": "fc2adb66f580defa40a497604adcc5aaecff21b479448cc571c8e09e29fd56c6",
+      "lane-730-reservation.json": "20427007930c034eea0211f8b854b3a4ae6169b2b328ecda4adba73fa3f89a3c",
+      "lane-975-reservation.json": "5f1d4b55b4f872626f2ee855e61a7d1b989b1d8fb863818a18b7f213fd573dfe",
+      "lane-920-reservation.json": "014e874bb8c8233273adab34d4955eec74129d58468bf2c293e951de5c64777a",
+      "lane-903-reservation.json": "5b06657652d970bc8c8355daa26df21aa24df481506139d3b6b65d6b953aad2c",
+      "lane-732-reservation.json": "8e7e3e7a702ea3d53fc561a001c56a895a805ecd2a5f59ae077252586489f78a",
+      "lane-668-reservation.json": "efa5d6646bc5cd9401b6606cadf5327af2150690973e3b6136f9b94df081880a",
+      "lane-1000-reservation.json": "adf91b1db8eea6b7fd2537063450f1bc24325a8051ad6d2d4554de2bbfa45df7",
+      "lane-685-reservation.json": "56aed95f678dc1d8d91fe8e675b523c4f8d22c0892bc86d2fb2708739e17d751",
+      "lane-679-reservation.json": "aefea8a9b6b11aae939883a8d7368989d61c36a8c7e8f70f41b7da05cf441a56",
+      "lane-630-reservation.json": "5f858def91db8e6047aef65a989e23de92bc3fad11956d44c1041b74cd9a9e59",
+      "lane-992-reservation.json": "743847f0bae29bdb02c0457de911b86a9624d3fac06fda0e5ed3131524d7dd67",
+      "lane-956-reservation.json": "2d803b066a25cecb5e11b79795207973d5139ac4160a7b612f908f9c6ff9e2c1",
+      "lane-587-reservation.json": "f1b39130581fbf4b564480a095b02059dac564627b345e17616ea3b129807c8f",
+      "lane-726-reservation.json": "a063db9317c0b9296cf4ae00ab8a22e69fbaa5f6ab1543d8ff23d329afbbdf81",
+      "lane-715-reservation.json": "b25d3d805556cae8ec64562843965ddb47f654391d0c3115a2c6f607ef66cb3c",
+      "lane-632-reservation.json": "72ccc9eb1d331edf2bcedbf81cd594e3462118eaa657557af04c9ef687179ee3",
+      "lane-995-reservation.json": "7ccb873defeb0ac608d3553fb52d91a4d8d6327e20b7d8f2b19a77c86ed51ed2",
+      "lane-987-reservation.json": "3630636658d7a226112b861b2db4cb965dedff2572c0e66a8d08bed3697715f6",
+      "lane-805-reservation.json": "0bf09414ce4f665a4c1a86696edc8a31f5d14ffc446489bbb230a25f424c450c",
+      "lane-600-reservation.json": "dfe301eaca4783047f0f72f50686a54395b139b1c0e1b7165e32094e2fd568c1",
+      "lane-629-reservation.json": "57960b62012cf346e8bd01b0cdf56d193438c86fdc400cbec5498a494b07a580",
+      "lane-639-reservation.json": "da5c5716212986b8673f02442685fd2a3020fa1c817474507192bbf09785b2bc",
+      "lane-546-reservation.json": "8a54265d4b218e2c24b313d3bfba83b88c710a04818558539d26d55cfa22f46e",
+      "lane-972-reservation.json": "730e84123d5ba2078f1365fbedc3a93d153f4f0ba1af6474f713767acab51b13",
+      "lane-803-reservation.json": "43180abdc6b7b9536314bb24d41b327b330440b78b6ac38dacb2ab511baeb15c",
+      "lane-664-reservation.json": "6945aabd7f0ed8f16d7b51c609fda8e2915e201fe610e23fe615843dc5832f45",
+      "lane-982-reservation.json": "b7c9a16c2df5c48aded36075f9a88b9bbd6629ebcad00048d81a57b888d119e2",
+      "lane-968-reservation.json": "78f6300b81f4ed440c7c852a41c86d4f2de84bfa71b719855d3942738e93f42d",
+      "lane-517-reservation.json": "80c1825b01216de411d0e6f801608c8c5d9d4e18d954c85f17cfb7c80a3c6af1",
+      "lane-699-reservation.json": "e6c7488e18c4fbe6a3e3731b967451ce1b04717004fcab2042e9fe3b4e6c22e9",
+      "lane-980-reservation.json": "8950c15acc28f73cc68cc461235c85b251b62f1cafa3ac2c8767bb4adf71b6ba",
+      "lane-552-reservation.json": "c2358e06a98890b7dd2e0378aa9de2170c3da7d978d57c93d73b077971a27b39",
+      "lane-960-reservation.json": "177a719d6c687d7da3cadceabaeb97095136c547db8068b778d7cf16f548011e"
+    },
+    "current_dirty_paths": [
+      "?? specs/reviews/879-evidence/879-review-1-1363ac59/cold-desktop.png",
+      "?? specs/reviews/879-evidence/879-review-1-1363ac59/cold-revealed.png"
+    ],
+    "current_prompt_sha256": "69bbb4949970dfc50560e644636494c9b11184ef6ccbeb4f4bac32c78f077a18",
+    "allowed_current_scope": "specs/reviews/879-evidence/879-review-1-1363ac59",
+    "payload_paths": [
+      "leetcode/854/BRIDGE-SELF-CHECK.md",
+      "leetcode/854/BRIEF.md",
+      "leetcode/854/app.js",
+      "leetcode/854/copy.js",
+      "leetcode/854/index.html",
+      "leetcode/854/style.css",
+      "leetcode/854/tests/README.md",
+      "leetcode/854/tests/bridge-evidence/bridge-browser.json",
+      "leetcode/854/tests/bridge-evidence/browser-run.log",
+      "leetcode/854/tests/bridge-evidence/clip-capture-initial.log",
+      "leetcode/854/tests/bridge-evidence/contrast-capture-initial.log",
+      "leetcode/854/tests/bridge-evidence/en-1440-zoom1-reassignment.png",
+      "leetcode/854/tests/bridge-evidence/en-1440-zoom2-reassignment.png",
+      "leetcode/854/tests/bridge-evidence/en-320-zoom1-reassignment.png",
+      "leetcode/854/tests/bridge-evidence/focus-capture-initial.log",
+      "leetcode/854/tests/bridge-evidence/forced-colors.png",
+      "leetcode/854/tests/bridge-evidence/manifest.json",
+      "leetcode/854/tests/bridge-evidence/metadata-validation.log",
+      "leetcode/854/tests/bridge-evidence/unchanged-source.json",
+      "leetcode/854/tests/bridge-evidence/validation.json",
+      "leetcode/854/tests/bridge-evidence/zh-1440-zoom1-reassignment.png",
+      "leetcode/854/tests/bridge-evidence/zh-1440-zoom2-reassignment.png",
+      "leetcode/854/tests/bridge-evidence/zh-320-zoom1-reassignment.png",
+      "leetcode/854/tests/build_page.py",
+      "leetcode/854/tests/test_bridge_browser.cjs",
+      "specs/proposals/leetcode-tagged-cycle-teaching-20261026.md",
+      "specs/proposals/leetcode-tagged-cycle-teaching-evidence-20261026/result.json",
+      "specs/proposals/leetcode-tagged-cycle-teaching-evidence-20261026/verify.py",
+      "specs/reviews/854-outcome-20261026.md",
+      "specs/reviews/854-outcome-20261026/854-review-1-9601268b.md",
+      "specs/reviews/854-tagged-cycle-design-review-20261026.md",
+      "specs/reviews/854-tagged-cycle-revision-request-20261026.md"
+    ],
+    "protected_files": {
+      "solution.py": "7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068",
+      "python-code.js": "36b61694050f9499e8d02a2078002bba5e295769447d44afdfcc1c48de845238",
+      "core.js": "d33efab4b0e02bc1c47d060cc27c59ba054767da502c4f2955ce9dff2ce47dc0",
+      "lesson-entry.json": "7ba6fb81eabb97640a8664d7c97e50ccfde754bfabcf1b7272813c8c968a91bc"
+    },
+    "plan_before": {
+      "next_problem_id": "879",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "1000",
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992",
+          "996"
+        ],
+        "incoming": [],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [
+          "854"
+        ],
+        "upper_bound_ids": [
+          "1000",
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992",
+          "996"
+        ],
+        "upper_bound": 11
+      }
+    },
+    "plan_after854_reopen": {
+      "next_problem_id": "854",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "1000",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992",
+          "996"
+        ],
+        "incoming": [],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [
+          "854"
+        ],
+        "upper_bound_ids": [
+          "1000",
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992",
+          "996"
+        ],
+        "upper_bound": 11
+      }
+    },
+    "854_projected_ineligible": true,
+    "995_entry": {
+      "status": "changes_required",
+      "rounds": 1,
+      "new": true,
+      "phase": "fix",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/995-review-1-c18c137a.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.",
+            "Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.",
+            "Non-mutating metadata preflight exited 0."
+          ],
+          "detail": "95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication.",
+          "run_id": "995-review-f5d78a25ecbc",
+          "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+          "candidate_sha256": "20e4b739f8b1a7fae70008c3172e060d0b2c28876e550fab8aaed24fcf3942c4",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "5a5cd3c329aec4854ea61f0ae5d15b1826f94a21"
+        }
+      ],
+      "author_runs": [
+        "995-author-ab095f2912c3"
+      ],
+      "prior_report": "specs/reviews/995-teaching-copy-repair-request-20261026.md",
+      "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c"
+    },
+    "995_runs_sha256": "a55847db4d416108dab4de3ed25783f854881997a8ed74ba13709c246aba70d1"
+  }
+}

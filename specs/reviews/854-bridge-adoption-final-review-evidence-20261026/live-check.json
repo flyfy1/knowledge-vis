@@ -1,0 +1,53 @@
+{
+  "observedAt": "2026-10-25T23:54:38.353314+00:00",
+  "readOnly": true,
+  "head": "453476e12d04ae75d14b149fa26e3446cdb088ca",
+  "current": {
+    "problem_id": "879",
+    "stage": "review",
+    "started_at": "2026-10-25T23:51:55.033227+00:00",
+    "run_id": "879-review-f819a846b820"
+  },
+  "runner": 1965599,
+  "native": 1965929,
+  "session": "01a1757a-5dad-7a63-ab9f-51fad99ac40f",
+  "sourceRevision": "27b9930daf25f9fb1651038bff1605969cb27f01",
+  "sourceReviewRevision": "47d97f6bf07dd1f4b8c7e1ca493ca3d21b3b9c7b",
+  "payloadPathsVerified": 32,
+  "protectedFilesVerified": 4,
+  "old854HistoryAndRuntimeVerified": true,
+  "priorReceiptSha256": "483b6b7723bd84fa174afe8f7e58051653ebe56b2e793ad1694f5f4a4f7e9cbe",
+  "priorOperatorAbsent": true,
+  "queueCount": 984,
+  "ledgerSha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+  "releasedCount": 138,
+  "pending": null,
+  "eligible": [
+    "1000",
+    "854",
+    "857",
+    "862",
+    "864",
+    "871",
+    "878",
+    "982",
+    "987",
+    "992",
+    "996"
+  ],
+  "projectedEligibleWithout854": [
+    "1000",
+    "857",
+    "862",
+    "864",
+    "871",
+    "878",
+    "982",
+    "987",
+    "992",
+    "996"
+  ],
+  "noActiveLanes": true,
+  "sourceReceiptAndEvidenceHashesVerified": true,
+  "progressAndLedgerStable": true
+}

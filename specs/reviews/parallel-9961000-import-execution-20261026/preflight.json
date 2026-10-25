@@ -1,0 +1,1058 @@
+{
+  "pins": {
+    "status": "frozen-accepted-pair",
+    "ids": [
+      "996",
+      "1000"
+    ],
+    "lanes": {
+      "996": {
+        "head": "af88d4a6f1c7727420c024fe3abce66c795fccb0",
+        "entry": {
+          "status": "accepted_local",
+          "rounds": 2,
+          "new": true,
+          "phase": "done",
+          "reviews": [
+            {
+              "outcome": "changes_required",
+              "scores": [
+                4,
+                4,
+                4,
+                4,
+                3,
+                4
+              ],
+              "required_open": [
+                "996-R1-COST-01"
+              ],
+              "report_path": "specs/reviews/996-review-1-1d9a6502.md",
+              "evidence": [
+                "Cold browser walkthrough saved before source inspection.",
+                "Canonical Python passed fresh examples and boundary checks.",
+                "Both locales passed interaction, clipboard fallback, and exact source-parity checks.",
+                "320/390/desktop layouts and 200% CSS zoom inspected.",
+                "Metadata preflight exited 0.",
+                "Fixed-k checks exposed omitted O(n) preprocessing work."
+              ],
+              "detail": "96.25/100. Required correction: both languages should state O(n + k\u00b2) preprocessing, accounting for Counter(nums).",
+              "run_id": "996-review-67e31a100281",
+              "candidate": "f3eec8c23092990d0309b8f227d5e2a2cf233d1d",
+              "candidate_sha256": "ac3efcd80cda6c9f907b5b9df2eae14c52f96fb7fa3b1ec7bc4c7da7b8de4519",
+              "weighted_score": 96.25,
+              "round": 1,
+              "commit": "03cdc24b4aadb90bbe616279aeccf093c0267c91"
+            },
+            {
+              "outcome": "accepted",
+              "scores": [
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "required_open": [],
+              "report_path": "specs/reviews/996-review-2-f1f3e97e.md",
+              "evidence": [
+                "Cold browser walkthrough saved before source inspection.",
+                "Fresh canonical Python checks: [2,2,7] \u2192 3; [1,1,3] \u2192 1.",
+                "Both locales, keyboard, rewind/reset, narrow layouts and 200% CSS zoom checked.",
+                "Exact source, clipboard fallback and download parity passed.",
+                "Non-mutating metadata preflight passed; 996-R1-COST-01 closed."
+              ],
+              "detail": "100/100 for the frozen candidate. Report documents limitations and one process deviation: author contrast evidence was regenerated with identical bytes; no tracked content changed.",
+              "run_id": "996-review-29cd3a98b546",
+              "candidate": "0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38",
+              "candidate_sha256": "90a85bc0f836913fcd93ab14c8bd7c2046381ed883652e32b62899520db6e96f",
+              "weighted_score": 100.0,
+              "round": 2,
+              "commit": "82715e0ead4491d2c2020432b6011a25a5ba52db"
+            }
+          ],
+          "author_runs": [
+            "996-author-9180dd0f5b54",
+            "996-fix-c44013a158e2"
+          ],
+          "prior_report": "specs/reviews/996-review-2-f1f3e97e.md",
+          "candidate": "0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38",
+          "registration_commit": "af88d4a6f1c7727420c024fe3abce66c795fccb0",
+          "accepted_at": "2026-10-25T23:37:34.744167+00:00"
+        },
+        "entry_sha256": "410f951b7f7eff843dd279464f1fe84ebe2f06f0550cd4c2125d5d2c8d433e2f",
+        "runs_sha256": "4bb32832cc9aecfaa14a4247f64a1d1d8bb3059a1bf4b0c9d5715c05948c7b5c",
+        "progress_sha256": "03bd07ee536f8ea71ed5d9575581d551f4cd4f2ec7bf962a387044f3abeb4bf4",
+        "report_sha256": "69d4dfb73a45d6d05f298390e01c194b0b8f1c151cc39c6235092c73b4ed8cea",
+        "reservation": {
+          "id": "996",
+          "base": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+          "repo": "/home/songyy/projects/leetcode-hard-lane-996-20261026",
+          "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026",
+          "port": 18799,
+          "nice": 10,
+          "status": "started",
+          "started_at": "2026-10-25T23:14:09.786115+00:00",
+          "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+          "publication_enabled": false,
+          "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+          "runner_pid": 1871480,
+          "observed_current": {
+            "problem_id": "996",
+            "stage": "author",
+            "started_at": "2026-10-25T23:14:30.395999+00:00",
+            "run_id": "996-author-9180dd0f5b54"
+          }
+        }
+      },
+      "1000": {
+        "head": "30516661a5cfc0673c2dcfaa018444e2ffa2c85b",
+        "entry": {
+          "status": "accepted_local",
+          "rounds": 1,
+          "new": true,
+          "phase": "done",
+          "reviews": [
+            {
+              "outcome": "accepted",
+              "scores": [
+                4,
+                3,
+                4,
+                4,
+                4,
+                3
+              ],
+              "required_open": [],
+              "report_path": "specs/reviews/1000-review-1-9b1fcffc.md",
+              "evidence": [
+                "Cold browser walkthrough saved before source inspection.",
+                "Fresh canonical Python checks confirmed costs 10 and 48, with intermediate states and nonmutation verified.",
+                "Bilingual rewind, reset, prediction changes, keyboard and source-transfer checks passed.",
+                "320/390/desktop layouts and 200% CSS zoom exercised; screenshots inspected.",
+                "Non-mutating metadata preflight exited 0."
+              ],
+              "detail": "92.5/100. Accepted for revision 20f52a5cf74957ddacf1a7627ed882defe6a70f5. No required findings remain. Publication and human comprehension were not assessed.",
+              "run_id": "1000-review-0970e8f06123",
+              "candidate": "20f52a5cf74957ddacf1a7627ed882defe6a70f5",
+              "candidate_sha256": "b720eda1914b75f8670cea7ace9d84c0865cab5920226173ed0acc5e1ef6cfe8",
+              "weighted_score": 92.5,
+              "round": 1,
+              "commit": "134bfbe9767a8f92fa3f1263c1f2c2d7a3485b4d"
+            }
+          ],
+          "author_runs": [
+            "1000-author-3a58ffe68610"
+          ],
+          "prior_report": "specs/reviews/1000-review-1-9b1fcffc.md",
+          "candidate": "20f52a5cf74957ddacf1a7627ed882defe6a70f5",
+          "registration_commit": "30516661a5cfc0673c2dcfaa018444e2ffa2c85b",
+          "accepted_at": "2026-10-25T23:33:39.067860+00:00"
+        },
+        "entry_sha256": "71f5eeb2d1f8b082cb3eb217eb5519350931c75b2614dbd85be74d71e77955c5",
+        "runs_sha256": "1d56ac9d7c906ec2cb19ca5b8858dceb5daf773337a688991aaa52025026bdaa",
+        "progress_sha256": "63549e97efd5ef488659eb9fb60b22044a626bfcb981ab9b6dc22c9ba7157c78",
+        "report_sha256": "d94c1be8a7b78bf12785345fd3f2e03e3596cc2dfbbb210641dee9399bff3ce5",
+        "reservation": {
+          "id": "1000",
+          "base": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+          "repo": "/home/songyy/projects/leetcode-hard-lane-1000-20261026",
+          "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026",
+          "port": 18800,
+          "nice": 10,
+          "status": "started",
+          "started_at": "2026-10-25T23:14:32.123201+00:00",
+          "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+          "publication_enabled": false,
+          "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+          "runner_pid": 1871874,
+          "observed_current": {
+            "problem_id": "1000",
+            "stage": "author",
+            "started_at": "2026-10-25T23:14:51.757178+00:00",
+            "run_id": "1000-author-3a58ffe68610"
+          }
+        }
+      }
+    },
+    "lane_base": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+    "queue_sha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+    "policy": {
+      "scripts/import_leetcode_lane.py": "8642a573383d052ce6e227bd8c2374f9c50f2fc1e8e9b312a6186607015344e0",
+      "scripts/leetcode_campaign.py": "a1258a0e7eba60e1d813bf0f9ede57a71f92cd504f6afb7bd0553d68d41c65ed",
+      "scripts/leetcode_publish.py": "7292c88e2ae035667a1bc723b076fb3d8d3d8562dc8428f3f66f74dc60f764d8",
+      "scripts/leetcode_registry.py": "a23b9b9e4feec966969c0b4c60f16e19cc2616ea0e1b2e587d15605e739349d6",
+      "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+      "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+      "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+      "scripts/campaign-prompts/author.md": "5f7feaa56f9f8f1f3f434e1fe4576cc2a10da21594c9aef829cab86e69dae06b",
+      "scripts/campaign-prompts/review.md": "129537defd8df8fda1c84c3bea80b62c8c717275f558128d8b62b02319838a1b",
+      "scripts/campaign-prompts/fix.md": "176376ca977b1b8e0f4444612efdf91b8a7d49e1f1c614e8985544828bb774d4",
+      "specs/reviews/workflow-copy-repair-requests-20261026/780.md": "79235a599df5139b2e8dc1c2a51fe673fd7b28bf46b2d3a3bbec34a1b22e280b",
+      "specs/reviews/workflow-copy-repair-requests-20261026/793.md": "ff52e23452b5099a60fc80e9a9fe1bed1e0840d4408c66793509335edb7536e5",
+      "specs/reviews/workflow-copy-repair-requests-20261026/798.md": "da3da5361f94e48e2a91ddb39e537146f2aff9939b7220b17a368f884d151318",
+      "specs/reviews/workflow-copy-repair-requests-20261026/801.md": "8bf72192c53809c60cf6bedf2379af8c185ce775346f4de59d0eee598af4b83a",
+      "specs/reviews/workflow-copy-repair-requests-20261026/815.md": "5c9697057a2218726823f12e58494fedde6221d5d19d87da9a1a8a25cd76977a",
+      "specs/reviews/workflow-copy-repair-requests-20261026/903.md": "5227f5ede9949c1bc677c06fa8c6a2a940dabf4e43b41829ef8be64750ad0476",
+      "specs/reviews/workflow-copy-repair-requests-20261026/920.md": "70b97c693528cb26a70d8f1ad8497c9d96812ab551704090f6d24057146e666e",
+      "specs/reviews/workflow-copy-repair-requests-20261026/940.md": "56df85c64f2ae135ce2d8323c052eba978bb50b231d899c840b2a07a0e6a5981",
+      "specs/reviews/workflow-copy-repair-requests-20261026/956.md": "635cfac82ede95dbb081fa8ced9935b28d0234fed4928ea9b5d10bd7d2f7e77f",
+      "specs/reviews/workflow-copy-repair-requests-20261026/README.md": "9c7747a2a299d19d3c3b329fa9d4a423fe2403141e3b4fd6484878bb8ee7584a",
+      "scripts/register_leetcode_lesson.py": "7ba274cd733a36528d98c85fe87b46d5535bc34898567b0c14f36fda37f81310",
+      "scripts/leetcode_static_versions.py": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e"
+    },
+    "launcher_sha256": "94056740463e5f9ec4fe63d0d2c56d1ccbf1ab60556f7952580fe58512127e70",
+    "central": {
+      "head": "3f86d6a43303d4dedcc1f9e2aafe1449e8fd43af",
+      "current": {
+        "problem_id": "879",
+        "stage": "author",
+        "started_at": "2026-10-25T23:37:31.121338+00:00",
+        "run_id": "879-author-ce034589b597"
+      },
+      "runner_pid": 1865819,
+      "resume_plan": {
+        "next_problem_id": "879",
+        "registration_ids": [],
+        "publication_bound": {
+          "eligible": [
+            "854",
+            "857",
+            "862",
+            "864",
+            "871",
+            "878",
+            "982",
+            "987",
+            "992"
+          ],
+          "incoming": [
+            "1000",
+            "996"
+          ],
+          "registration_ids": [],
+          "reopened_upper_bound_ids": [],
+          "upper_bound_ids": [
+            "1000",
+            "854",
+            "857",
+            "862",
+            "864",
+            "871",
+            "878",
+            "982",
+            "987",
+            "992",
+            "996"
+          ],
+          "upper_bound": 11
+        }
+      }
+    },
+    "release": {
+      "id": "84dfd908f5c94592918eb4ecb72eb87e",
+      "revision": "7fd4aa457c318f053d7dc722fd63b3012bccb838",
+      "receipt_sha256": "218c639dab100046ba7cd6f687a13d769a230b2d601d9b33346dd78835023014",
+      "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6"
+    },
+    "queued995_capture": {
+      "entry": {
+        "status": "changes_required",
+        "rounds": 1,
+        "new": true,
+        "phase": "fix",
+        "reviews": [
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              3,
+              4,
+              4,
+              4,
+              4
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/995-review-1-c18c137a.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source inspection.",
+              "Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.",
+              "Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.",
+              "Non-mutating metadata preflight exited 0."
+            ],
+            "detail": "95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication.",
+            "run_id": "995-review-f5d78a25ecbc",
+            "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+            "candidate_sha256": "20e4b739f8b1a7fae70008c3172e060d0b2c28876e550fab8aaed24fcf3942c4",
+            "weighted_score": 95.0,
+            "round": 1,
+            "commit": "5a5cd3c329aec4854ea61f0ae5d15b1826f94a21"
+          }
+        ],
+        "author_runs": [
+          "995-author-ab095f2912c3"
+        ],
+        "prior_report": "specs/reviews/995-teaching-copy-repair-request-20261026.md",
+        "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c"
+      },
+      "entry_sha256": "c994bf1e89411e8f4e8313877786a0c2de764ec5799f8ff780345869fd20bfdc",
+      "runs_sha256": "a55847db4d416108dab4de3ed25783f854881997a8ed74ba13709c246aba70d1",
+      "maintenance": [
+        {
+          "kind": "reopen-accepted-995-copy",
+          "request_id": "995-COPY-R1",
+          "at": "2026-10-25T23:06:36.491432+00:00",
+          "source_revision": "f090946dfb330ae3eb4a423b1ad3b367b83d8890",
+          "before": "ed09b7a448393b2c7b0084f36c198354a6c0d1ea",
+          "prior_accepted_entry": {
+            "status": "accepted_local",
+            "rounds": 1,
+            "new": true,
+            "phase": "done",
+            "reviews": [
+              {
+                "outcome": "accepted",
+                "scores": [
+                  4,
+                  3,
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                "required_open": [],
+                "report_path": "specs/reviews/995-review-1-c18c137a.md",
+                "evidence": [
+                  "Cold browser walkthrough saved before source inspection.",
+                  "Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.",
+                  "Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.",
+                  "Non-mutating metadata preflight exited 0."
+                ],
+                "detail": "95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication.",
+                "run_id": "995-review-f5d78a25ecbc",
+                "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+                "candidate_sha256": "20e4b739f8b1a7fae70008c3172e060d0b2c28876e550fab8aaed24fcf3942c4",
+                "weighted_score": 95.0,
+                "round": 1,
+                "commit": "5a5cd3c329aec4854ea61f0ae5d15b1826f94a21"
+              }
+            ],
+            "author_runs": [
+              "995-author-ab095f2912c3"
+            ],
+            "prior_report": "specs/reviews/995-review-1-c18c137a.md",
+            "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+            "registration_commit": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+            "accepted_at": "2026-10-25T22:36:24.169208+00:00"
+          },
+          "previous_current": {
+            "problem_id": "871",
+            "stage": "author",
+            "started_at": "2026-10-25T22:55:31.562794+00:00",
+            "run_id": "871-author-3c117e1396eb"
+          },
+          "after": "6c68b23cc306067de5a912195a3c7edeebc2a0be"
+        }
+      ],
+      "request_sha256": "e68c8e47386c982e7545212213fcdc3905a4270a6f885ff474484d8a0290270b",
+      "handoff_receipt_sha256": "86159f93f1a918035f10c47c6bbda09409b8a914c0320dfee40551b305eed343",
+      "publication_ineligible": true
+    }
+  },
+  "observation": {
+    "observed_at": "2026-10-25T23:43:10.917395+00:00",
+    "read_only": true,
+    "head": "3f86d6a43303d4dedcc1f9e2aafe1449e8fd43af",
+    "current": {
+      "problem_id": "879",
+      "stage": "author",
+      "started_at": "2026-10-25T23:37:31.121338+00:00",
+      "run_id": "879-author-ce034589b597"
+    },
+    "central_progress_sha256": "94e96e67d1c07ee0064dcc255a685e5e859b3ac9b8f948de7d416d0fdca8740f",
+    "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+    "resume_plan": {
+      "next_problem_id": "879",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992"
+        ],
+        "incoming": [
+          "1000",
+          "996"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "1000",
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992",
+          "996"
+        ],
+        "upper_bound": 11
+      }
+    },
+    "central_runner_pid": 1865819,
+    "native_proof": {
+      "current": {
+        "problem_id": "879",
+        "stage": "author",
+        "started_at": "2026-10-25T23:37:31.121338+00:00",
+        "run_id": "879-author-ce034589b597"
+      },
+      "session_id": "01a1756d-2f73-7060-8df8-f3bacfc08a6b",
+      "native_codex_pids": [
+        1900058
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a1756d-2f73-7060-8df8-f3bacfc08a6b"
+        },
+        {
+          "type": "turn.started"
+        }
+      ]
+    },
+    "native": {
+      "args": [
+        "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex",
+        "exec",
+        "-m",
+        "gpt-6.1-sol",
+        "-c",
+        "model_reasoning_effort=\"medium\"",
+        "-c",
+        "approval_policy=\"never\"",
+        "--sandbox",
+        "danger-full-access",
+        "--json",
+        "-o",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/879-author-ce034589b597/final.json",
+        "--output-schema",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/879-author-ce034589b597/schema.json",
+        "-C",
+        "/home/songyy/projects/leetcode-hard-campaign-20261018",
+        "-"
+      ],
+      "ppid": 1900051,
+      "cwd": "/home/songyy/projects/leetcode-hard-campaign-20261018"
+    },
+    "current_prompt_sha256": "621977906d763e3e837024da4a23da46f16b073d9e2d00103289078bd9293a1a",
+    "allowed_dirty_scope": {
+      "stage": "author",
+      "prefix": "leetcode/879/",
+      "trackedChangesAllowedWithinPrefix": true
+    },
+    "current_dirty_paths": [
+      "?? leetcode/879/BRIEF.md",
+      "?? leetcode/879/app.js",
+      "?? leetcode/879/copy.js",
+      "?? leetcode/879/core.js",
+      "?? leetcode/879/index.html",
+      "?? leetcode/879/lesson-entry.json",
+      "?? leetcode/879/provenance/official.json",
+      "?? leetcode/879/python-code.js",
+      "?? leetcode/879/solution.py",
+      "?? leetcode/879/style.css",
+      "?? leetcode/879/tests/browser.cjs",
+      "?? leetcode/879/tests/build_copy.py",
+      "?? leetcode/879/tests/evidence/asset-diagnostics.json",
+      "?? leetcode/879/tests/evidence/browser-result.json",
+      "?? leetcode/879/tests/evidence/core-results.json",
+      "?? leetcode/879/tests/evidence/python-results.json",
+      "?? leetcode/879/tests/evidence/state-1440-en.png",
+      "?? leetcode/879/tests/evidence/state-1440-zh.png",
+      "?? leetcode/879/tests/evidence/state-320-en.png",
+      "?? leetcode/879/tests/evidence/state-320-zh.png",
+      "?? leetcode/879/tests/evidence/state-390-en.png",
+      "?? leetcode/879/tests/evidence/state-390-zh.png",
+      "?? leetcode/879/tests/evidence/state-736-en.png",
+      "?? leetcode/879/tests/evidence/state-736-zh.png",
+      "?? leetcode/879/tests/evidence/zoom-200-en.png",
+      "?? leetcode/879/tests/evidence/zoom-200-zh.png",
+      "?? leetcode/879/tests/test_core.cjs",
+      "?? leetcode/879/tests/test_solution.py"
+    ],
+    "lane_processes_absent": true,
+    "queue_count": 984,
+    "lane_base_same_shared": true,
+    "reservation_hashes": {
+      "lane-964-reservation.json": "1391726fbffbaed6867556691ab3562eb7671d34e29ae4a25f6a686782c77e7b",
+      "lane-689-reservation.json": "957831825f83cca2a81d1495f5931a5359be35ceda528a1c87c1c95e489738a1",
+      "lane-493-reservation.json": "bd5d56429c319dd527b5ad22901a1cd3aab373c1f56bfa06343775c50db1646a",
+      "lane-675-reservation.json": "87df66947101571a188f25df599bf1238a5561d5c4867289261ead14f3834411",
+      "lane-514-reservation.json": "e7fe9cbfba39aef217a9019b7a12ca2ecfc9a47a346e3f96d9e914decc8a6172",
+      "lane-940-reservation.json": "5b76e20709a6c9eeeddaf7c42163e8cf9ef98b43b8229d274d92c3f282a7d0c0",
+      "lane-591-reservation.json": "535dfc500dccf1643e6242d21a182558d5b85d128a01a53271cd2d26a1614431",
+      "lane-996-reservation.json": "69ed9909c0589b848674121387cdb5f157069f0ecf49f8c2dda7b9c399633b59",
+      "lane-691-reservation.json": "98030c13682c693724ae81a11b79abd53f43b1515a943cbcf3098a0ce924eb5d",
+      "lane-719-reservation.json": "fc2adb66f580defa40a497604adcc5aaecff21b479448cc571c8e09e29fd56c6",
+      "lane-730-reservation.json": "20427007930c034eea0211f8b854b3a4ae6169b2b328ecda4adba73fa3f89a3c",
+      "lane-975-reservation.json": "5f1d4b55b4f872626f2ee855e61a7d1b989b1d8fb863818a18b7f213fd573dfe",
+      "lane-920-reservation.json": "014e874bb8c8233273adab34d4955eec74129d58468bf2c293e951de5c64777a",
+      "lane-903-reservation.json": "5b06657652d970bc8c8355daa26df21aa24df481506139d3b6b65d6b953aad2c",
+      "lane-732-reservation.json": "8e7e3e7a702ea3d53fc561a001c56a895a805ecd2a5f59ae077252586489f78a",
+      "lane-668-reservation.json": "efa5d6646bc5cd9401b6606cadf5327af2150690973e3b6136f9b94df081880a",
+      "lane-1000-reservation.json": "7e03882bd90dca65f3fe116378387f123eda2609b72f29a082c134a94d3dc39c",
+      "lane-685-reservation.json": "56aed95f678dc1d8d91fe8e675b523c4f8d22c0892bc86d2fb2708739e17d751",
+      "lane-679-reservation.json": "aefea8a9b6b11aae939883a8d7368989d61c36a8c7e8f70f41b7da05cf441a56",
+      "lane-630-reservation.json": "5f858def91db8e6047aef65a989e23de92bc3fad11956d44c1041b74cd9a9e59",
+      "lane-992-reservation.json": "743847f0bae29bdb02c0457de911b86a9624d3fac06fda0e5ed3131524d7dd67",
+      "lane-956-reservation.json": "2d803b066a25cecb5e11b79795207973d5139ac4160a7b612f908f9c6ff9e2c1",
+      "lane-587-reservation.json": "f1b39130581fbf4b564480a095b02059dac564627b345e17616ea3b129807c8f",
+      "lane-726-reservation.json": "a063db9317c0b9296cf4ae00ab8a22e69fbaa5f6ab1543d8ff23d329afbbdf81",
+      "lane-715-reservation.json": "b25d3d805556cae8ec64562843965ddb47f654391d0c3115a2c6f607ef66cb3c",
+      "lane-632-reservation.json": "72ccc9eb1d331edf2bcedbf81cd594e3462118eaa657557af04c9ef687179ee3",
+      "lane-995-reservation.json": "7ccb873defeb0ac608d3553fb52d91a4d8d6327e20b7d8f2b19a77c86ed51ed2",
+      "lane-987-reservation.json": "3630636658d7a226112b861b2db4cb965dedff2572c0e66a8d08bed3697715f6",
+      "lane-805-reservation.json": "0bf09414ce4f665a4c1a86696edc8a31f5d14ffc446489bbb230a25f424c450c",
+      "lane-600-reservation.json": "dfe301eaca4783047f0f72f50686a54395b139b1c0e1b7165e32094e2fd568c1",
+      "lane-629-reservation.json": "57960b62012cf346e8bd01b0cdf56d193438c86fdc400cbec5498a494b07a580",
+      "lane-639-reservation.json": "da5c5716212986b8673f02442685fd2a3020fa1c817474507192bbf09785b2bc",
+      "lane-546-reservation.json": "8a54265d4b218e2c24b313d3bfba83b88c710a04818558539d26d55cfa22f46e",
+      "lane-972-reservation.json": "730e84123d5ba2078f1365fbedc3a93d153f4f0ba1af6474f713767acab51b13",
+      "lane-803-reservation.json": "43180abdc6b7b9536314bb24d41b327b330440b78b6ac38dacb2ab511baeb15c",
+      "lane-664-reservation.json": "6945aabd7f0ed8f16d7b51c609fda8e2915e201fe610e23fe615843dc5832f45",
+      "lane-982-reservation.json": "b7c9a16c2df5c48aded36075f9a88b9bbd6629ebcad00048d81a57b888d119e2",
+      "lane-968-reservation.json": "78f6300b81f4ed440c7c852a41c86d4f2de84bfa71b719855d3942738e93f42d",
+      "lane-517-reservation.json": "80c1825b01216de411d0e6f801608c8c5d9d4e18d954c85f17cfb7c80a3c6af1",
+      "lane-699-reservation.json": "e6c7488e18c4fbe6a3e3731b967451ce1b04717004fcab2042e9fe3b4e6c22e9",
+      "lane-980-reservation.json": "8950c15acc28f73cc68cc461235c85b251b62f1cafa3ac2c8767bb4adf71b6ba",
+      "lane-552-reservation.json": "c2358e06a98890b7dd2e0378aa9de2170c3da7d978d57c93d73b077971a27b39",
+      "lane-960-reservation.json": "177a719d6c687d7da3cadceabaeb97095136c547db8068b778d7cf16f548011e"
+    }
+  },
+  "archives": {
+    "996": {
+      "progress": {
+        "version": 1,
+        "repo": "/home/songyy/projects/leetcode-hard-lane-996-20261026",
+        "queue": [
+          "996"
+        ],
+        "expected_head": "af88d4a6f1c7727420c024fe3abce66c795fccb0",
+        "started_at": "2026-10-25T23:14:30.123449+00:00",
+        "status": "completed",
+        "current": null,
+        "problems": {
+          "996": {
+            "status": "accepted_local",
+            "rounds": 2,
+            "new": true,
+            "phase": "done",
+            "reviews": [
+              {
+                "outcome": "changes_required",
+                "scores": [
+                  4,
+                  4,
+                  4,
+                  4,
+                  3,
+                  4
+                ],
+                "required_open": [
+                  "996-R1-COST-01"
+                ],
+                "report_path": "specs/reviews/996-review-1-1d9a6502.md",
+                "evidence": [
+                  "Cold browser walkthrough saved before source inspection.",
+                  "Canonical Python passed fresh examples and boundary checks.",
+                  "Both locales passed interaction, clipboard fallback, and exact source-parity checks.",
+                  "320/390/desktop layouts and 200% CSS zoom inspected.",
+                  "Metadata preflight exited 0.",
+                  "Fixed-k checks exposed omitted O(n) preprocessing work."
+                ],
+                "detail": "96.25/100. Required correction: both languages should state O(n + k\u00b2) preprocessing, accounting for Counter(nums).",
+                "run_id": "996-review-67e31a100281",
+                "candidate": "f3eec8c23092990d0309b8f227d5e2a2cf233d1d",
+                "candidate_sha256": "ac3efcd80cda6c9f907b5b9df2eae14c52f96fb7fa3b1ec7bc4c7da7b8de4519",
+                "weighted_score": 96.25,
+                "round": 1,
+                "commit": "03cdc24b4aadb90bbe616279aeccf093c0267c91"
+              },
+              {
+                "outcome": "accepted",
+                "scores": [
+                  4,
+                  4,
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                "required_open": [],
+                "report_path": "specs/reviews/996-review-2-f1f3e97e.md",
+                "evidence": [
+                  "Cold browser walkthrough saved before source inspection.",
+                  "Fresh canonical Python checks: [2,2,7] \u2192 3; [1,1,3] \u2192 1.",
+                  "Both locales, keyboard, rewind/reset, narrow layouts and 200% CSS zoom checked.",
+                  "Exact source, clipboard fallback and download parity passed.",
+                  "Non-mutating metadata preflight passed; 996-R1-COST-01 closed."
+                ],
+                "detail": "100/100 for the frozen candidate. Report documents limitations and one process deviation: author contrast evidence was regenerated with identical bytes; no tracked content changed.",
+                "run_id": "996-review-29cd3a98b546",
+                "candidate": "0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38",
+                "candidate_sha256": "90a85bc0f836913fcd93ab14c8bd7c2046381ed883652e32b62899520db6e96f",
+                "weighted_score": 100.0,
+                "round": 2,
+                "commit": "82715e0ead4491d2c2020432b6011a25a5ba52db"
+              }
+            ],
+            "author_runs": [
+              "996-author-9180dd0f5b54",
+              "996-fix-c44013a158e2"
+            ],
+            "prior_report": "specs/reviews/996-review-2-f1f3e97e.md",
+            "candidate": "0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38",
+            "registration_commit": "af88d4a6f1c7727420c024fe3abce66c795fccb0",
+            "accepted_at": "2026-10-25T23:37:34.744167+00:00"
+          }
+        },
+        "runs": [
+          {
+            "id": "996-author-9180dd0f5b54",
+            "problem_id": "996",
+            "role": "author",
+            "started_at": "2026-10-25T23:14:30.395999+00:00",
+            "status": "completed",
+            "candidate": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+            "directory": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-author-9180dd0f5b54",
+            "session_ids": [
+              "01a17558-1c90-7cd0-976c-7f3beab58eed"
+            ],
+            "finished_at": "2026-10-25T23:24:58.464587+00:00",
+            "result": {
+              "outcome": "ready",
+              "detail": "Implemented the complete bilingual #996 lesson in leetcode/996/. Official Python interface verified; oracle, trace invariants, real-browser interactions, source transfer, responsive layouts, contrast, and metadata preflight pass. Candidate hashes and author evidence are frozen. Independent review remains pending; no acceptance or deployment claimed."
+            }
+          },
+          {
+            "id": "996-review-67e31a100281",
+            "problem_id": "996",
+            "role": "review",
+            "started_at": "2026-10-25T23:25:11.093157+00:00",
+            "status": "completed",
+            "candidate": "f3eec8c23092990d0309b8f227d5e2a2cf233d1d",
+            "directory": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-review-67e31a100281",
+            "session_ids": [
+              "01a17561-e4d1-7a70-940f-ca3695122afc"
+            ],
+            "finished_at": "2026-10-25T23:30:43.468435+00:00",
+            "result": {
+              "outcome": "changes_required",
+              "scores": [
+                4,
+                4,
+                4,
+                4,
+                3,
+                4
+              ],
+              "required_open": [
+                "996-R1-COST-01"
+              ],
+              "report_path": "specs/reviews/996-review-1-1d9a6502.md",
+              "evidence": [
+                "Cold browser walkthrough saved before source inspection.",
+                "Canonical Python passed fresh examples and boundary checks.",
+                "Both locales passed interaction, clipboard fallback, and exact source-parity checks.",
+                "320/390/desktop layouts and 200% CSS zoom inspected.",
+                "Metadata preflight exited 0.",
+                "Fixed-k checks exposed omitted O(n) preprocessing work."
+              ],
+              "detail": "96.25/100. Required correction: both languages should state O(n + k\u00b2) preprocessing, accounting for Counter(nums)."
+            }
+          },
+          {
+            "id": "996-fix-c44013a158e2",
+            "problem_id": "996",
+            "role": "fix",
+            "started_at": "2026-10-25T23:30:59.988121+00:00",
+            "status": "completed",
+            "candidate": "03cdc24b4aadb90bbe616279aeccf093c0267c91",
+            "directory": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-fix-c44013a158e2",
+            "session_ids": [
+              "01a17567-380d-7563-a6a3-737439070fb0"
+            ],
+            "finished_at": "2026-10-25T23:33:09.882266+00:00",
+            "result": {
+              "outcome": "ready",
+              "detail": "Fixed 996-R1-COST-01 in both locales: preprocessing now correctly states O(n+k\u00b2) with a concrete counting example. Added a regression that failed before repair and passes afterward. Python, simulation, bilingual browser/source-transfer checks, and metadata preflight all passed. Evidence and candidate hashes are saved under leetcode/996/tests/evidence/r1-cost-fix/. Ready for separate independent re-review; acceptance remains pending."
+            }
+          },
+          {
+            "id": "996-review-29cd3a98b546",
+            "problem_id": "996",
+            "role": "review",
+            "started_at": "2026-10-25T23:33:20.816161+00:00",
+            "status": "completed",
+            "candidate": "0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38",
+            "directory": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-review-29cd3a98b546",
+            "session_ids": [
+              "01a17569-5b71-7191-9bda-ea1542435a71"
+            ],
+            "finished_at": "2026-10-25T23:37:22.116863+00:00",
+            "result": {
+              "outcome": "accepted",
+              "scores": [
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "required_open": [],
+              "report_path": "specs/reviews/996-review-2-f1f3e97e.md",
+              "evidence": [
+                "Cold browser walkthrough saved before source inspection.",
+                "Fresh canonical Python checks: [2,2,7] \u2192 3; [1,1,3] \u2192 1.",
+                "Both locales, keyboard, rewind/reset, narrow layouts and 200% CSS zoom checked.",
+                "Exact source, clipboard fallback and download parity passed.",
+                "Non-mutating metadata preflight passed; 996-R1-COST-01 closed."
+              ],
+              "detail": "100/100 for the frozen candidate. Report documents limitations and one process deviation: author contrast evidence was regenerated with identical bytes; no tracked content changed."
+            }
+          }
+        ],
+        "updated_at": "2026-10-25T23:37:34.759120+00:00"
+      },
+      "rawProgress": "{\n  \"version\": 1,\n  \"repo\": \"/home/songyy/projects/leetcode-hard-lane-996-20261026\",\n  \"queue\": [\n    \"996\"\n  ],\n  \"expected_head\": \"af88d4a6f1c7727420c024fe3abce66c795fccb0\",\n  \"started_at\": \"2026-10-25T23:14:30.123449+00:00\",\n  \"status\": \"completed\",\n  \"current\": null,\n  \"problems\": {\n    \"996\": {\n      \"status\": \"accepted_local\",\n      \"rounds\": 2,\n      \"new\": true,\n      \"phase\": \"done\",\n      \"reviews\": [\n        {\n          \"outcome\": \"changes_required\",\n          \"scores\": [\n            4,\n            4,\n            4,\n            4,\n            3,\n            4\n          ],\n          \"required_open\": [\n            \"996-R1-COST-01\"\n          ],\n          \"report_path\": \"specs/reviews/996-review-1-1d9a6502.md\",\n          \"evidence\": [\n            \"Cold browser walkthrough saved before source inspection.\",\n            \"Canonical Python passed fresh examples and boundary checks.\",\n            \"Both locales passed interaction, clipboard fallback, and exact source-parity checks.\",\n            \"320/390/desktop layouts and 200% CSS zoom inspected.\",\n            \"Metadata preflight exited 0.\",\n            \"Fixed-k checks exposed omitted O(n) preprocessing work.\"\n          ],\n          \"detail\": \"96.25/100. Required correction: both languages should state O(n + k\u00b2) preprocessing, accounting for Counter(nums).\",\n          \"run_id\": \"996-review-67e31a100281\",\n          \"candidate\": \"f3eec8c23092990d0309b8f227d5e2a2cf233d1d\",\n          \"candidate_sha256\": \"ac3efcd80cda6c9f907b5b9df2eae14c52f96fb7fa3b1ec7bc4c7da7b8de4519\",\n          \"weighted_score\": 96.25,\n          \"round\": 1,\n          \"commit\": \"03cdc24b4aadb90bbe616279aeccf093c0267c91\"\n        },\n        {\n          \"outcome\": \"accepted\",\n          \"scores\": [\n            4,\n            4,\n            4,\n            4,\n            4,\n            4\n          ],\n          \"required_open\": [],\n          \"report_path\": \"specs/reviews/996-review-2-f1f3e97e.md\",\n          \"evidence\": [\n            \"Cold browser walkthrough saved before source inspection.\",\n            \"Fresh canonical Python checks: [2,2,7] \u2192 3; [1,1,3] \u2192 1.\",\n            \"Both locales, keyboard, rewind/reset, narrow layouts and 200% CSS zoom checked.\",\n            \"Exact source, clipboard fallback and download parity passed.\",\n            \"Non-mutating metadata preflight passed; 996-R1-COST-01 closed.\"\n          ],\n          \"detail\": \"100/100 for the frozen candidate. Report documents limitations and one process deviation: author contrast evidence was regenerated with identical bytes; no tracked content changed.\",\n          \"run_id\": \"996-review-29cd3a98b546\",\n          \"candidate\": \"0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38\",\n          \"candidate_sha256\": \"90a85bc0f836913fcd93ab14c8bd7c2046381ed883652e32b62899520db6e96f\",\n          \"weighted_score\": 100.0,\n          \"round\": 2,\n          \"commit\": \"82715e0ead4491d2c2020432b6011a25a5ba52db\"\n        }\n      ],\n      \"author_runs\": [\n        \"996-author-9180dd0f5b54\",\n        \"996-fix-c44013a158e2\"\n      ],\n      \"prior_report\": \"specs/reviews/996-review-2-f1f3e97e.md\",\n      \"candidate\": \"0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38\",\n      \"registration_commit\": \"af88d4a6f1c7727420c024fe3abce66c795fccb0\",\n      \"accepted_at\": \"2026-10-25T23:37:34.744167+00:00\"\n    }\n  },\n  \"runs\": [\n    {\n      \"id\": \"996-author-9180dd0f5b54\",\n      \"problem_id\": \"996\",\n      \"role\": \"author\",\n      \"started_at\": \"2026-10-25T23:14:30.395999+00:00\",\n      \"status\": \"completed\",\n      \"candidate\": \"6c68b23cc306067de5a912195a3c7edeebc2a0be\",\n      \"directory\": \"/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-author-9180dd0f5b54\",\n      \"session_ids\": [\n        \"01a17558-1c90-7cd0-976c-7f3beab58eed\"\n      ],\n      \"finished_at\": \"2026-10-25T23:24:58.464587+00:00\",\n      \"result\": {\n        \"outcome\": \"ready\",\n        \"detail\": \"Implemented the complete bilingual #996 lesson in leetcode/996/. Official Python interface verified; oracle, trace invariants, real-browser interactions, source transfer, responsive layouts, contrast, and metadata preflight pass. Candidate hashes and author evidence are frozen. Independent review remains pending; no acceptance or deployment claimed.\"\n      }\n    },\n    {\n      \"id\": \"996-review-67e31a100281\",\n      \"problem_id\": \"996\",\n      \"role\": \"review\",\n      \"started_at\": \"2026-10-25T23:25:11.093157+00:00\",\n      \"status\": \"completed\",\n      \"candidate\": \"f3eec8c23092990d0309b8f227d5e2a2cf233d1d\",\n      \"directory\": \"/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-review-67e31a100281\",\n      \"session_ids\": [\n        \"01a17561-e4d1-7a70-940f-ca3695122afc\"\n      ],\n      \"finished_at\": \"2026-10-25T23:30:43.468435+00:00\",\n      \"result\": {\n        \"outcome\": \"changes_required\",\n        \"scores\": [\n          4,\n          4,\n          4,\n          4,\n          3,\n          4\n        ],\n        \"required_open\": [\n          \"996-R1-COST-01\"\n        ],\n        \"report_path\": \"specs/reviews/996-review-1-1d9a6502.md\",\n        \"evidence\": [\n          \"Cold browser walkthrough saved before source inspection.\",\n          \"Canonical Python passed fresh examples and boundary checks.\",\n          \"Both locales passed interaction, clipboard fallback, and exact source-parity checks.\",\n          \"320/390/desktop layouts and 200% CSS zoom inspected.\",\n          \"Metadata preflight exited 0.\",\n          \"Fixed-k checks exposed omitted O(n) preprocessing work.\"\n        ],\n        \"detail\": \"96.25/100. Required correction: both languages should state O(n + k\u00b2) preprocessing, accounting for Counter(nums).\"\n      }\n    },\n    {\n      \"id\": \"996-fix-c44013a158e2\",\n      \"problem_id\": \"996\",\n      \"role\": \"fix\",\n      \"started_at\": \"2026-10-25T23:30:59.988121+00:00\",\n      \"status\": \"completed\",\n      \"candidate\": \"03cdc24b4aadb90bbe616279aeccf093c0267c91\",\n      \"directory\": \"/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-fix-c44013a158e2\",\n      \"session_ids\": [\n        \"01a17567-380d-7563-a6a3-737439070fb0\"\n      ],\n      \"finished_at\": \"2026-10-25T23:33:09.882266+00:00\",\n      \"result\": {\n        \"outcome\": \"ready\",\n        \"detail\": \"Fixed 996-R1-COST-01 in both locales: preprocessing now correctly states O(n+k\u00b2) with a concrete counting example. Added a regression that failed before repair and passes afterward. Python, simulation, bilingual browser/source-transfer checks, and metadata preflight all passed. Evidence and candidate hashes are saved under leetcode/996/tests/evidence/r1-cost-fix/. Ready for separate independent re-review; acceptance remains pending.\"\n      }\n    },\n    {\n      \"id\": \"996-review-29cd3a98b546\",\n      \"problem_id\": \"996\",\n      \"role\": \"review\",\n      \"started_at\": \"2026-10-25T23:33:20.816161+00:00\",\n      \"status\": \"completed\",\n      \"candidate\": \"0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38\",\n      \"directory\": \"/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-review-29cd3a98b546\",\n      \"session_ids\": [\n        \"01a17569-5b71-7191-9bda-ea1542435a71\"\n      ],\n      \"finished_at\": \"2026-10-25T23:37:22.116863+00:00\",\n      \"result\": {\n        \"outcome\": \"accepted\",\n        \"scores\": [\n          4,\n          4,\n          4,\n          4,\n          4,\n          4\n        ],\n        \"required_open\": [],\n        \"report_path\": \"specs/reviews/996-review-2-f1f3e97e.md\",\n        \"evidence\": [\n          \"Cold browser walkthrough saved before source inspection.\",\n          \"Fresh canonical Python checks: [2,2,7] \u2192 3; [1,1,3] \u2192 1.\",\n          \"Both locales, keyboard, rewind/reset, narrow layouts and 200% CSS zoom checked.\",\n          \"Exact source, clipboard fallback and download parity passed.\",\n          \"Non-mutating metadata preflight passed; 996-R1-COST-01 closed.\"\n        ],\n        \"detail\": \"100/100 for the frozen candidate. Report documents limitations and one process deviation: author contrast evidence was regenerated with identical bytes; no tracked content changed.\"\n      }\n    }\n  ],\n  \"updated_at\": \"2026-10-25T23:37:34.759120+00:00\"\n}\n",
+      "report": "# Independent review: 996 \u2014 Number of Squareful Arrays\n\nCandidate: `0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38`. URL: http://127.0.0.1:18799/leetcode/996/. Target: basic Python, lists, loops, functions and elementary recursion. Reviewer: this independent review run; model identity unavailable. Frozen weights: 15,20,20,20,15,10. No publication or submission claim.\n\n## Cold walkthrough (saved before source, contracts, tests or prior reviews)\n\nOnly the frozen rubric was read before opening the candidate in Chromium through Playwright. Desktop viewport 1440\u00d71000. Screenshots: `996-evidence/996-review-2-f1f3e97e/cold-desktop.png`, `cold-finished.png`.\n\n| Teaching step / question | Action | Observable result | My causal conclusion |\n| --- | --- | --- | --- |\n| 00: Which reorderings qualify? | Read definitions; predict 8 must be in the middle, two orders; click reveal | All six orders and their sums appear; two pass, four contain 18 | Every adjacent pair must pass, so 8 separates 1 and 17; reversing changes positions and is counted |\n| 01: Why not count copies? | Read baseline, hand-enumerate labeled versus value permutations of [2,2,2] | Baseline uses permutations, set, all and zip with each explained; six labeled copies yield one sequence | Choosing labels overcounts; a set of remaining values instead loses multiplicity. Counts retain exactly the needed information. Early rejection avoids completing illegal prefixes |\n| 02: How build every order once? | Advance eight events from initial state | Choose 1: counts (0,1,1); choose 8: (0,0,1); choose 17: all zero; separate accept event adds [1,8,17]; undo 17 then 8 returns prefix [1]; reject 17 reports sum 18 without changing counts; undo 1 restores initial counts | Prefix legality and original-count-minus-usage are preserved. Acceptance adds once; undo restores availability for sibling branches; rejection must not consume anything |\n| 02: What does history mean? | Previous from event 8; then Finish | Event 7 restores prefix [1] and counts (0,1,1); final event 25 has empty prefix, initial counts and exactly [1,8,17], [17,8,1] in ledger | Backward navigation replays snapshots; ledger records accepted complete orders rather than current prefix. End is restored search state, not the last solution |\n| 03: Can equal values recur? | Predict 1 for [0,1,1] before checking; select answer 1 and check; change to 0 and check | Correct feedback identifies [1,0,1], sums 1 and 1; changing clears feedback; wrong check explains reuse versus duplicate identities | Reuse is allowed while count remains; endpoints containing adjacent 1s fail. This tests a new arrangement, not recall of the first answer |\n| 04: How does this become Python? | Read displayed code and mapping; map event 2 | With sorted values [1,8,17], j=1 decrements counts[1], calls dfs(1,left\u22121), then increments it on return; code omits the pedagogical prefix | last indexes the prior value and left measures progress; zero left returns 1. Positive counts and compatibility guard choices. Finite decreasing left terminates; independent branches sum without duplicates |\n| Bilingual reasoning | Switch EN \u2192 \u4e2d after wrong feedback | Definitions, copy counterexample, invariant, snapshots, prediction explanation, implementation mapping and costs all appear in Chinese; selected prediction and feedback persist | Both texts explain the same causal chain, including snapshot-after-operation semantics and the simulator/Python distinction |\n\nIndependent fresh predictions recorded before execution: **[2,2,7] \u2192 3**, since all three distinct value sequences have only sums 4 or 9. Counterexample to \u201crepeated values cannot be reused\u201d: **[1,1,3] \u2192 1**, only [1,3,1]; other orders have sum 2. Neither is a preset: later execution is explicitly a **code check**, not a custom-input UI experiment. Invariant: remaining counts equal original multiplicities less prefix use, and prefix pairs are square. Excluded adjacent [1,1] cannot become legal by adding a suffix.\n\nCold-read assessment: the page itself supplies the definitions, concrete before/after counts, baseline cost, optimization bridge, duplicate argument and termination argument. No author notes were used to supply explanations.\n\n## Source and official-contract audit\n\nAfter saving the cold walkthrough, read the rendered-state contract, canonical Python, mirror, HTML, renderer, simulator, bilingual dictionary and locale consumer, CSS, test programs and the earlier 996 review. `git rev-parse HEAD` returned the requested candidate. Nine served runtime/source assets matched checkout bytes; SHA-256 receipts are in `996-evidence/996-review-2-f1f3e97e/independent-checks.json`. Canonical Python SHA-256: `0075faaa73aef51ec54192dffbaa04987f05100aafe84a4f9f062d9411c4086f`.\n\nRead the [official statement](https://leetcode.com/problems/number-of-squareful-arrays/) normally through the web tool. It confirms square adjacent sums, distinctness by values at positions, examples returning 2 and 1, and bounds n=1\u202612, values 0\u202610\u2079. No access bypass was used. The lesson-local saved official response supplies the Python3 interface `Solution.numSquarefulPerms(self, nums: list[int]) -> int`, matching the canonical callable. This is faithful Python, not an analogy. No non-Python language contract is needed; no live language-selector inspection is claimed. `LANGUAGE_FILES` in `scripts/register_leetcode_lesson.py` specifies `solution.py`, `python-code.js`, `PYTHON_SOURCE`, which are the actual source/mirror/export used here.\n\nThe canonical code constructs its own Counter and counts list, leaving nums unchanged. It precomputes exact integer-square compatibility. Each call represents a legal prefix implicitly by last and remaining counts. Every child consumes one available copy, reduces left, and restores the shared count after return. The caller's integer arguments remain unchanged. Zero left accepts once. Each distinct next value partitions legal orders uniquely, so summing children neither omits an order nor counts copy identities. A failed pair never descends. The compatibility matrix handles self-pairs (including zero), rather than banning equal neighbors indiscriminately.\n\nCost audit: Counter requires O(n), sorting O(k log k), matrix O(k\u00b2); k\u22651 permits O(n+k\u00b2) preprocessing. At most the labeled permutation tree's number of prefixes is explored, with at most n candidates scanned per node, so O(n\u00b7n!) is a conservative search bound. Matrix/counts plus depth n use O(n+k\u00b2) auxiliary space. The baseline really materializes length-n tuples and stores a set: O(n\u00b7n!) worst-case time and space are justified. Snapshot/ledger storage is explicitly additional simulation memory. Both localized paragraphs distinguish these costs.\n\n## Verification and observations\n\nInspected all six executable test programs before running them. Every listed test command used `EVIDENCE_DIR=$PWD/specs/reviews/996-evidence/996-review-2-f1f3e97e`, except the non-mutating preflight. No builder or registration command was run. Python used `-B`. Results marked `author self-check` are the frozen author's harness executed during this review; their labels are not independent teaching judgments.\n\n| Command from repository root | Observed result |\n| --- | --- |\n| `python3 -B scripts/register_leetcode_lesson.py 996 --validate-only` | Exit 0, no stdout. Metadata complexity is exactly one nonempty string covering time and space |\n| `python3 -B leetcode/996/tests/check.py` | Exit 0; 629 independent permutation-oracle cases, four length-12 boundaries, exact mirror and duplicate builder-key checks |\n| `node leetcode/996/tests/core.cjs` | Exit 0; 369 traces, 16,608 event-invariant checks |\n| `python3 -B leetcode/996/tests/cost.py` | Exit 0; fixed k=1 reads 1/6/12 input entries; both localized preprocessing claims checked |\n| `python3 -B leetcode/996/tests/contrast.py` | Exit 0; minimum tested opaque palette ratio 6.449 |\n| `node leetcode/996/tests/browser.cjs` | Exit 0; 202 rendered events, both locales, six presets, all prediction choices, endpoints, rewind/reset, clipboard and downloads, offline mirror and denied storage |\n| `node leetcode/996/tests/supplement.cjs` | Exit 0; dense states, selected-label budgets, keyboard continuation links, forced-colors focus |\n\nIndependent checks in `independent-checks.json` executed the actual canonical source via runpy and compared small cases with deduplicated permutations. Cold predictions held: [2,2,7]\u21923 and [1,1,3]\u21921. Additional cases: [0]\u21921, [10\u2079]\u21921, [0,0]\u21921; 1+999950883=31622\u00b2 gives two orders, increasing the second number by one gives zero. At length 12, all zeros and all twos each give 1, all 10\u2079 give 0, and six 1s plus six 8s give 7 (place the six 1s in six of seven gaps around the 8s). Inputs were unchanged. These are code checks, not UI custom-input experiments.\n\nIndependent browser checks in `independent-browser.json` confirmed event 4\u21923 removes the accepted ledger row while retaining the full prefix; replay restores the row. Keyboard Space selected the prediction and Enter revealed it. Changing preset reset the trace to event 0 while retaining exercise feedback as promised. Locale changes preserved the dense [1,8,1,8] prefix, zero remaining counts and one ledger row. At event 6 of [1,1,8,8], both languages explicitly say acceptance adds a ledger entry and returns to the parent. This matches the accounting boundary rather than treating the earlier completed-prefix frame as already accepted. Reject text binds to its actual nonsquare sum; undo text binds to the restored copy. The independent oracle preset totals are 2,1,3,3,1,0, matching rendered endpoints.\n\nThe production dictionary itself was parsed with duplicate-key rejection before evaluation: 77 unique keys, all zh/en string pairs. The consumer indexes those pairs correctly. Both rendered invariant formulas retain all operands and causal explanations. A zh\u2192en\u2192zh roundtrip at 320px checked exact localized H1 and document title including #996. Copy fallback, incorrect prediction, and algorithm operation messages were inspected as separate semantic paths.\n\nSource parity: canonical bytes, decoded mirror, rendered `textContent`, copied clipboard text and downloaded bytes match exactly including the final newline in both locales. Successful automatic copy used the browser clipboard. Before **each** manual fallback attempt the harness wrote a distinct sentinel and verified readback, then injected automatic-write denial, invoked the real Copy control, checked focus/full selection and dispatched Linux **Control+C**. Readback exactly matched canonical source. No trimming, newline normalization, test-written source replacement or DOM-only transfer claim was used.\n\n## Device, screenshot and accessibility inspection\n\nBrowser: real Chromium 156.0.8078.4, Linux. NODE_PATH was inherited; launch used `process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. Checked 320, 390, 736 and 1440px widths, with 100% and 200% **CSS layout zoom**. This is reproducible layout stress, not evidence of native browser-chrome zoom or physical phone pinch zoom. State remained available through resizing/zoom. Code is component-scrollable and keyboard focusable. Section navigation scrolls horizontally within its own component. Prefix tiles and count badges wrap with their labels; dense ledger remains legible. Narrow 200% views require considerable vertical scrolling but retain essential words and values. Disabled controls keep opacity 1 with muted text; keyboard focus is a solid 3px outline with offset. No lesson page errors or failed local assets were reported.\n\nCaptured and inspected the full-page cold desktop image, English 320 dense state, settled Chinese 320 state/control/header images, English 320/200% cost paragraph, Chinese 390/200% dense state, and both desktop 200% dense states. An initial Chinese dense screenshot omitted tile paint despite its DOM state; a fresh independent settled capture, `settled-zh-320-state.png`, visibly shows all four tiles and their correct labels. This capture anomaly was retained, not classified as a reproduced product defect. `settled-zh-320-controls.png` shows the complete selected [1,1,8,8] label and all four control labels at 320px. Budget at 320/200%: 100px select client width versus 52.50px measured text +16px padding +20px arrow reserve. Font stack: PingFang SC, Microsoft YaHei, system-ui, sans-serif at 14px; no exact resolved font assertion is made. No text collision or persistent essential-content clipping was established.\n\nCalibrated the actual contrast helper against black/white and primary-color luminances .2126/.7152/.0722. Its #747474-on-black ratio is 4.492948, correctly below 4.5. Opaque palette measurements agree with the CSS; readable disabled states use muted-on-panel rather than faded opacity. This does not establish exhaustive compositing or screen-reader accessibility.\n\nFollowed both continuation links with keyboard in both locales. Saved destination excerpts in `supplement-results.json` show #51 step2 teaching undo/restoring constraints for siblings, and #940 step2 teaching removal of duplicate strings by ending group. Labels accurately identify the relevant concepts. Both destinations are served locally; production-release availability is outside this review.\n\n## Earlier finding closure\n\n**996-R1-COST-01 \u2014 closed; medium severity; required cost correction.** Original candidate `f3eec8c23092990d0309b8f227d5e2a2cf233d1d`; step 04, EN/ZH, any input, reproduced previously at 390px. Original action: scroll below Copy Python and read the unqualified O(k\u00b2) preprocessing claim. Expected O(n+k\u00b2), including Counter's O(n) scan; actual old text omitted it. Violated frozen Python/actual-cost requirement and rendered-state contract \u00a79. Original report and evidence remain preserved in `996-review-1-1d9a6502.md` and its own evidence directory.\n\nFix candidate: **0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38**. The diff changes the two cost strings, their served cache version, and adds the cost regression and browser checks; canonical algorithm and other teaching mechanics are unchanged. Current cold read, served-copy/source inspection, fixed-k instrumentation (n=1/6/12, k=1, visits 1/6/12), corrected rendered paragraphs in both locales, and passing `cost.py` establish closure against this candidate. Evidence here: `cost-results.json`, `browser-results.json`, `en-390-zoom1-cost.png`, `zh-390-zoom1-cost.png`, and 320/200% cost captures. Reviewer recheck: complete in this run. Owner's required next action: none for this finding. No other inherited required finding was identified.\n\n## Scores and conclusion\n\n| Frozen dimension | Score /4 | Observation and rationale |\n| --- | ---: | --- |\n| Problem/terms/hand calculation | 4 | Tiny six-order worked example precedes abstraction; all adjacent sums, duplicate identity, singleton and bounds explained |\n| Causal derivation/saved work | 4 | Explicit factorial baseline, pruning at first bad pair, labeled-copy counterexample, and counts-versus-set bridge |\n| State/correctness | 4 | Reconstructable call\u2192child\u2192return\u2192sibling sequence, concrete counts, invariant, uniqueness/completeness and decreasing-left termination |\n| Interaction/visual meaning | 4 | Choose/accept/undo/reject snapshots and ledger boundary observable; prediction/reveal/change, rewind/reset/endpoints and retained state checked |\n| Python/cost | 4 | Faithful executable callable, fresh code checks and mutation evidence; exact source transfer; corrected cost justified at fixed-k boundary |\n| Bilingual/device | 4 | Equivalent causal reasoning and localized identity; keyboard, narrow/zoom layouts, readable disabled states and calibrated contrast checked |\n\nWeighted score: **100/100**. Outcome: **accepted** for this frozen local candidate. Required open IDs: **none**. The earlier cost finding is closed on explicit current-candidate regression evidence, not on author claims or aggregate test counts. This is independent lesson review, separate from publication.\n\nLimitations: no real-human comprehension study, online LeetCode submission, production delivery, live official language-selector inspection, other-browser/OS/font proof, native browser-chrome zoom, or exhaustive assistive-technology audit is claimed.\n\nProcess deviation: during additional contrast-helper calibration, `runpy.run_path` executed the helper without EVIDENCE_DIR set. It rewrote `leetcode/996/tests/evidence/contrast.json` with **identical bytes**, contrary to the instruction not to regenerate author evidence. The explicit byte comparison against HEAD passed, with receipt in `independent-checks.json`; no tracked content changed. This is a review-process error, not a lesson defect. All other generated review files are in the exclusive evidence directory and this report. Final `git status --short` showed only these two new review paths; no implementation/shared/test/Git/service changes, commits, deployments, agents or schedules were made.\n",
+      "reportPath": "specs/reviews/996-review-2-f1f3e97e.md",
+      "lessonTrees": {
+        "candidate": "2ea68438b7d5abbe3216b11282d2eeb306448c75",
+        "review": "2ea68438b7d5abbe3216b11282d2eeb306448c75",
+        "registration": "2ea68438b7d5abbe3216b11282d2eeb306448c75"
+      },
+      "canonicalSha256": "0075faaa73aef51ec54192dffbaa04987f05100aafe84a4f9f062d9411c4086f",
+      "lessonEntry": {
+        "id": 996,
+        "title": {
+          "zh": "\u6b63\u65b9\u5f62\u6570\u7ec4\u7684\u6570\u76ee",
+          "en": "Number of Squareful Arrays"
+        },
+        "desc": {
+          "zh": "\u7528\u5269\u4f59\u6b21\u6570\u56de\u6eaf\uff0c\u65e2\u68c0\u67e5\u76f8\u90bb\u5e73\u65b9\u548c\uff0c\u53c8\u907f\u514d\u91cd\u590d\u6392\u5217\u3002",
+          "en": "Track remaining counts to build legal squareful orders without duplicates."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u56de\u6eaf",
+            "en": "Backtracking"
+          },
+          {
+            "zh": "\u8ba1\u6570",
+            "en": "Counting"
+          }
+        ],
+        "path": "996/",
+        "leetcodeUrl": "https://leetcode.com/problems/number-of-squareful-arrays/",
+        "language": "Python",
+        "complexity": "O(n*n! + k\u00b2) time; O(n + k\u00b2) auxiliary space, k distinct values",
+        "concepts": [
+          {
+            "name": "Remaining-count backtracking invariant",
+            "step": 2,
+            "description": "Consume and restore one copy per distinct value to enumerate each legal value sequence exactly once."
+          }
+        ]
+      },
+      "registryEntry": {
+        "id": 996,
+        "title": {
+          "zh": "\u6b63\u65b9\u5f62\u6570\u7ec4\u7684\u6570\u76ee",
+          "en": "Number of Squareful Arrays"
+        },
+        "desc": {
+          "zh": "\u7528\u5269\u4f59\u6b21\u6570\u56de\u6eaf\uff0c\u65e2\u68c0\u67e5\u76f8\u90bb\u5e73\u65b9\u548c\uff0c\u53c8\u907f\u514d\u91cd\u590d\u6392\u5217\u3002",
+          "en": "Track remaining counts to build legal squareful orders without duplicates."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u56de\u6eaf",
+            "en": "Backtracking"
+          },
+          {
+            "zh": "\u8ba1\u6570",
+            "en": "Counting"
+          }
+        ],
+        "path": "996/",
+        "leetcodeUrl": "https://leetcode.com/problems/number-of-squareful-arrays/",
+        "language": "Python",
+        "complexity": "O(n*n! + k\u00b2) time; O(n + k\u00b2) auxiliary space, k distinct values"
+      },
+      "remoteRegistration": "af88d4a6f1c7727420c024fe3abce66c795fccb0",
+      "reviewedProof": {
+        "candidate": "0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38",
+        "digest": "43972d4d80174b2700291ded85091667ce240575ae199e2062162d3df4bf70f5",
+        "review": "specs/reviews/996-review-2-f1f3e97e.md",
+        "registry": {
+          "id": 996,
+          "title": {
+            "zh": "\u6b63\u65b9\u5f62\u6570\u7ec4\u7684\u6570\u76ee",
+            "en": "Number of Squareful Arrays"
+          },
+          "desc": {
+            "zh": "\u7528\u5269\u4f59\u6b21\u6570\u56de\u6eaf\uff0c\u65e2\u68c0\u67e5\u76f8\u90bb\u5e73\u65b9\u548c\uff0c\u53c8\u907f\u514d\u91cd\u590d\u6392\u5217\u3002",
+            "en": "Track remaining counts to build legal squareful orders without duplicates."
+          },
+          "difficulty": "hard",
+          "topics": [
+            {
+              "zh": "\u56de\u6eaf",
+              "en": "Backtracking"
+            },
+            {
+              "zh": "\u8ba1\u6570",
+              "en": "Counting"
+            }
+          ],
+          "path": "996/",
+          "leetcodeUrl": "https://leetcode.com/problems/number-of-squareful-arrays/",
+          "language": "Python",
+          "complexity": "O(n*n! + k\u00b2) time; O(n + k\u00b2) auxiliary space, k distinct values"
+        }
+      },
+      "reviewedAssetSha256": {
+        "leetcode/996/app.js": "a321da84add6f6ac9ded530b6887313d20eca0510c596c9a33afcdd7a0c9ca4d",
+        "leetcode/996/copy.js": "9a34fdf5a066a0bc04e56d079e92309e46dcdad8379c9f40eb45b29f10bd5334",
+        "leetcode/996/core.js": "dccadc6f0faa6067e1cd84f5f4ddd592c7af07170d7829cf1da7d8a0849dc132",
+        "leetcode/996/index.html": "8638db8af993a84035df9e570d3a2d49bc47c0d65c62e76b5138469442ed2c85",
+        "leetcode/996/python-code.js": "a2223e3567312b138b77f57653628c65ae4f368b0a8692d41da1dc3f87d4b141",
+        "leetcode/996/solution.py": "0075faaa73aef51ec54192dffbaa04987f05100aafe84a4f9f062d9411c4086f",
+        "leetcode/996/style.css": "8e95c5a99ec9b536defd4d0ae92244b5b2b923f00c6be887be35c15aa08791fa"
+      }
+    },
+    "1000": {
+      "progress": {
+        "version": 1,
+        "repo": "/home/songyy/projects/leetcode-hard-lane-1000-20261026",
+        "queue": [
+          "1000"
+        ],
+        "expected_head": "30516661a5cfc0673c2dcfaa018444e2ffa2c85b",
+        "started_at": "2026-10-25T23:14:51.518873+00:00",
+        "status": "completed",
+        "current": null,
+        "problems": {
+          "1000": {
+            "status": "accepted_local",
+            "rounds": 1,
+            "new": true,
+            "phase": "done",
+            "reviews": [
+              {
+                "outcome": "accepted",
+                "scores": [
+                  4,
+                  3,
+                  4,
+                  4,
+                  4,
+                  3
+                ],
+                "required_open": [],
+                "report_path": "specs/reviews/1000-review-1-9b1fcffc.md",
+                "evidence": [
+                  "Cold browser walkthrough saved before source inspection.",
+                  "Fresh canonical Python checks confirmed costs 10 and 48, with intermediate states and nonmutation verified.",
+                  "Bilingual rewind, reset, prediction changes, keyboard and source-transfer checks passed.",
+                  "320/390/desktop layouts and 200% CSS zoom exercised; screenshots inspected.",
+                  "Non-mutating metadata preflight exited 0."
+                ],
+                "detail": "92.5/100. Accepted for revision 20f52a5cf74957ddacf1a7627ed882defe6a70f5. No required findings remain. Publication and human comprehension were not assessed.",
+                "run_id": "1000-review-0970e8f06123",
+                "candidate": "20f52a5cf74957ddacf1a7627ed882defe6a70f5",
+                "candidate_sha256": "b720eda1914b75f8670cea7ace9d84c0865cab5920226173ed0acc5e1ef6cfe8",
+                "weighted_score": 92.5,
+                "round": 1,
+                "commit": "134bfbe9767a8f92fa3f1263c1f2c2d7a3485b4d"
+              }
+            ],
+            "author_runs": [
+              "1000-author-3a58ffe68610"
+            ],
+            "prior_report": "specs/reviews/1000-review-1-9b1fcffc.md",
+            "candidate": "20f52a5cf74957ddacf1a7627ed882defe6a70f5",
+            "registration_commit": "30516661a5cfc0673c2dcfaa018444e2ffa2c85b",
+            "accepted_at": "2026-10-25T23:33:39.067860+00:00"
+          }
+        },
+        "runs": [
+          {
+            "id": "1000-author-3a58ffe68610",
+            "problem_id": "1000",
+            "role": "author",
+            "started_at": "2026-10-25T23:14:51.757178+00:00",
+            "status": "completed",
+            "candidate": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+            "directory": "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026/runs/1000-author-3a58ffe68610",
+            "session_ids": [
+              "01a17558-700c-7460-90ec-32d20d8337d0"
+            ],
+            "finished_at": "2026-10-25T23:28:04.346567+00:00",
+            "result": {
+              "outcome": "ready",
+              "detail": "Complete bilingual lesson and frozen author evidence delivered in leetcode/1000/. Python/oracle, intermediate-state, browser, source-transfer, accessibility, and metadata preflight checks passed. Independent review remains pending; nothing was registered or deployed."
+            }
+          },
+          {
+            "id": "1000-review-0970e8f06123",
+            "problem_id": "1000",
+            "role": "review",
+            "started_at": "2026-10-25T23:28:19.917230+00:00",
+            "status": "completed",
+            "candidate": "20f52a5cf74957ddacf1a7627ed882defe6a70f5",
+            "directory": "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026/runs/1000-review-0970e8f06123",
+            "session_ids": [
+              "01a17564-c465-79f0-921b-77fbe0446160"
+            ],
+            "finished_at": "2026-10-25T23:33:26.662459+00:00",
+            "result": {
+              "outcome": "accepted",
+              "scores": [
+                4,
+                3,
+                4,
+                4,
+                4,
+                3
+              ],
+              "required_open": [],
+              "report_path": "specs/reviews/1000-review-1-9b1fcffc.md",
+              "evidence": [
+                "Cold browser walkthrough saved before source inspection.",
+                "Fresh canonical Python checks confirmed costs 10 and 48, with intermediate states and nonmutation verified.",
+                "Bilingual rewind, reset, prediction changes, keyboard and source-transfer checks passed.",
+                "320/390/desktop layouts and 200% CSS zoom exercised; screenshots inspected.",
+                "Non-mutating metadata preflight exited 0."
+              ],
+              "detail": "92.5/100. Accepted for revision 20f52a5cf74957ddacf1a7627ed882defe6a70f5. No required findings remain. Publication and human comprehension were not assessed."
+            }
+          }
+        ],
+        "updated_at": "2026-10-25T23:33:39.079862+00:00"
+      },
+      "rawProgress": "{\n  \"version\": 1,\n  \"repo\": \"/home/songyy/projects/leetcode-hard-lane-1000-20261026\",\n  \"queue\": [\n    \"1000\"\n  ],\n  \"expected_head\": \"30516661a5cfc0673c2dcfaa018444e2ffa2c85b\",\n  \"started_at\": \"2026-10-25T23:14:51.518873+00:00\",\n  \"status\": \"completed\",\n  \"current\": null,\n  \"problems\": {\n    \"1000\": {\n      \"status\": \"accepted_local\",\n      \"rounds\": 1,\n      \"new\": true,\n      \"phase\": \"done\",\n      \"reviews\": [\n        {\n          \"outcome\": \"accepted\",\n          \"scores\": [\n            4,\n            3,\n            4,\n            4,\n            4,\n            3\n          ],\n          \"required_open\": [],\n          \"report_path\": \"specs/reviews/1000-review-1-9b1fcffc.md\",\n          \"evidence\": [\n            \"Cold browser walkthrough saved before source inspection.\",\n            \"Fresh canonical Python checks confirmed costs 10 and 48, with intermediate states and nonmutation verified.\",\n            \"Bilingual rewind, reset, prediction changes, keyboard and source-transfer checks passed.\",\n            \"320/390/desktop layouts and 200% CSS zoom exercised; screenshots inspected.\",\n            \"Non-mutating metadata preflight exited 0.\"\n          ],\n          \"detail\": \"92.5/100. Accepted for revision 20f52a5cf74957ddacf1a7627ed882defe6a70f5. No required findings remain. Publication and human comprehension were not assessed.\",\n          \"run_id\": \"1000-review-0970e8f06123\",\n          \"candidate\": \"20f52a5cf74957ddacf1a7627ed882defe6a70f5\",\n          \"candidate_sha256\": \"b720eda1914b75f8670cea7ace9d84c0865cab5920226173ed0acc5e1ef6cfe8\",\n          \"weighted_score\": 92.5,\n          \"round\": 1,\n          \"commit\": \"134bfbe9767a8f92fa3f1263c1f2c2d7a3485b4d\"\n        }\n      ],\n      \"author_runs\": [\n        \"1000-author-3a58ffe68610\"\n      ],\n      \"prior_report\": \"specs/reviews/1000-review-1-9b1fcffc.md\",\n      \"candidate\": \"20f52a5cf74957ddacf1a7627ed882defe6a70f5\",\n      \"registration_commit\": \"30516661a5cfc0673c2dcfaa018444e2ffa2c85b\",\n      \"accepted_at\": \"2026-10-25T23:33:39.067860+00:00\"\n    }\n  },\n  \"runs\": [\n    {\n      \"id\": \"1000-author-3a58ffe68610\",\n      \"problem_id\": \"1000\",\n      \"role\": \"author\",\n      \"started_at\": \"2026-10-25T23:14:51.757178+00:00\",\n      \"status\": \"completed\",\n      \"candidate\": \"6c68b23cc306067de5a912195a3c7edeebc2a0be\",\n      \"directory\": \"/home/songyy/projects/leetcode-hard-lane-state-1000-20261026/runs/1000-author-3a58ffe68610\",\n      \"session_ids\": [\n        \"01a17558-700c-7460-90ec-32d20d8337d0\"\n      ],\n      \"finished_at\": \"2026-10-25T23:28:04.346567+00:00\",\n      \"result\": {\n        \"outcome\": \"ready\",\n        \"detail\": \"Complete bilingual lesson and frozen author evidence delivered in leetcode/1000/. Python/oracle, intermediate-state, browser, source-transfer, accessibility, and metadata preflight checks passed. Independent review remains pending; nothing was registered or deployed.\"\n      }\n    },\n    {\n      \"id\": \"1000-review-0970e8f06123\",\n      \"problem_id\": \"1000\",\n      \"role\": \"review\",\n      \"started_at\": \"2026-10-25T23:28:19.917230+00:00\",\n      \"status\": \"completed\",\n      \"candidate\": \"20f52a5cf74957ddacf1a7627ed882defe6a70f5\",\n      \"directory\": \"/home/songyy/projects/leetcode-hard-lane-state-1000-20261026/runs/1000-review-0970e8f06123\",\n      \"session_ids\": [\n        \"01a17564-c465-79f0-921b-77fbe0446160\"\n      ],\n      \"finished_at\": \"2026-10-25T23:33:26.662459+00:00\",\n      \"result\": {\n        \"outcome\": \"accepted\",\n        \"scores\": [\n          4,\n          3,\n          4,\n          4,\n          4,\n          3\n        ],\n        \"required_open\": [],\n        \"report_path\": \"specs/reviews/1000-review-1-9b1fcffc.md\",\n        \"evidence\": [\n          \"Cold browser walkthrough saved before source inspection.\",\n          \"Fresh canonical Python checks confirmed costs 10 and 48, with intermediate states and nonmutation verified.\",\n          \"Bilingual rewind, reset, prediction changes, keyboard and source-transfer checks passed.\",\n          \"320/390/desktop layouts and 200% CSS zoom exercised; screenshots inspected.\",\n          \"Non-mutating metadata preflight exited 0.\"\n        ],\n        \"detail\": \"92.5/100. Accepted for revision 20f52a5cf74957ddacf1a7627ed882defe6a70f5. No required findings remain. Publication and human comprehension were not assessed.\"\n      }\n    }\n  ],\n  \"updated_at\": \"2026-10-25T23:33:39.079862+00:00\"\n}\n",
+      "report": "# Independent review: Minimum Cost to Merge Stones\n\nCandidate: `20f52a5cf74957ddacf1a7627ed882defe6a70f5`; URL: http://127.0.0.1:18800/leetcode/1000/ . Review run: `1000-review-1-9b1fcffc`. Reviewer/model identity unavailable; no human comprehension or successful submission is claimed.\n\nFrozen interpretation: six dimensions weighted 15/20/20/20/15/10; faithful official Python preferred. Target reader knows basic Python, lists, loops, functions and elementary recursion.\n\n## Cold browser walkthrough (saved before source audit)\n\nOnly the frozen rubric was read before opening the page in Playwright Chromium at 1366\u00d7900. No brief, source, author evidence, tests or previous review was read. Screenshots: `1000-evidence/1000-review-1-9b1fcffc/cold-initial.png` and `cold-completed.png`.\n\n1. **Two payments.** Question: why 14 rather than original sum 9? Action: read the three-pile introduction, press Merge once twice, then Undo one merge. The page explains 3+2=5, then 5+4=9, with the alternate first merge costing 6+9=15. The buttons operated; the initial capture shows original piles. Causal conclusion: a stone is charged on every merge containing it, so early grouping changes later payments. (Exact dynamic pile/history text will be rechecked after saving this cold record; the first extraction accidentally focused on the separate DP section.)\n2. **Why count piles?** Question: why is a cheapest-next-merge strategy insufficient, and what information must be remembered? Action: read baseline recursion and count example. Observation: [6,4,4,6] costs 42 with the middle-first choice versus 40 with end pairs; the list-copy recursion tries every adjacent block; k=3 reduces count by two, making four piles impossible but five possible. Paraphrase: local price omits repeated future charges; interval endpoints alone cannot distinguish whether a final k-way merge is available. D(i,j,p) preserves that missing pile count. The page defines interval, inclusive original indices, dynamic programming, and infinity.\n3. **Build the answers.** Question: what supplies each minimum and why is the transition exhaustive? Action: complete each of six states for preset A. Observations in order: D(0,1,2)=0 (cut 0 gives 0+0), D(0,1,1)=5 (0+5), D(1,2,2)=0, D(1,2,1)=6, D(0,2,2)=5 (cut 0 gives 0+6=6, cut 1 gives 5+0=5), D(0,2,1)=14 (5+9). All prior rows remain marked Complete; only newest row has a star. Paraphrase: a cut partitions final piles without charging anything; the last actual merge adds the unchanged original interval sum. Every result has a first-pile boundary, so scanning boundaries excludes no construction. Shorter intervals and same-interval p=k must already be completed. Infeasible states are infinity and omitted, explicitly explained. The displayed invariant covers all feasible states through completed length.\n4. **Predict, then reveal.** Question: minimum for [2,1,4,3,2], k=3? Before reveal I predicted 19: possible first payments 7,8,9, followed by the fixed total 12. Action: select 19 and Check and explain. Observation: Correct; first [2,1,4] leaves [7,3,2], pays 7+12=19, count path 5\u21923\u21921. Paraphrase: feasibility and fixed final payment reduce this particular five-pile choice to comparing first triples. This is separate from table navigation.\n5. **Map to Python.** Question: how do those numbers become executable operations? Action: read mapping and open complete submission disclosure. Observation: dp[i][j][p], increasing length, cut m, infinity, prefix[0]=0, and prefix[j+1]\u2212prefix[i] are explained; the visible cut 1 maps to 5+0, followed by +9. Code uses Solution.mergeStones, skips impossible counts, fills p\u22652 before p=1, and returns an integer. Paraphrase: memoized interval answers replace repeated recursive subproblems; a prefix difference retrieves preserved interval totals. The stated bounds are O(n\u00b3k) time and O(n\u00b2k) auxiliary space, without mutating input or charging tutorial history to submission cost. Boundaries n=1, k>n, and excluded empty input are explained.\n\n### Independent predictions recorded before executable checking\n\nThe experiment offers presets A\u2013H, no custom input. Thus these independent choices are **code checks**, not custom UI experiments.\n\n- Fresh tiny input [1,3,2], k=2: predict **10**. First left costs 4+6=10; first right costs 5+6=11. (Both orders enumerated manually.)\n- Fresh greedy counterexample [7,5,5,7], k=2: predict **48**, while cheapest-middle-first costs 10+17+24=51. End pairs give 12+12+24=48. Other first-left continuations give 12+17+24=53 or 12+12+24=48; symmetry covers first-right. Thus 48 is independently exhaustive.\n- Boundary predictions: [9], k=30 \u21920; [1,2], k=3 \u2192\u22121; [1,2,3], k=3 \u21926. Count condition excludes two-to-one with triples.\n\nCold conclusion: no missing causal bridge was needed from author notes. The lesson moves from tangible repeated payments through a failing greedy rule and exhaustive baseline to explicit state and recurrence. The table is textual rather than a physical merge animation, but labels explain its meaning. Source/interaction/device audit follows below.\n\n## Post-cold source and statement audit\n\n`git rev-parse HEAD` returned the requested candidate exactly. Tracked files remained unchanged (`git status --short` showed only this new report/evidence). Seven served lesson files were compared byte-for-byte with checkout: index.html, style.css, copy.js, core.js, app.js, python-code.js, solution.py. SHA-256 receipts are in `independent.json`. The browser loaded the actual candidate rather than a reconstructed screenshot.\n\nRead the [official statement](https://leetcode.com/problems/minimum-cost-to-merge-stones/) normally after the cold walk. It confirms exactly k consecutive **current** piles, payment equal to their sum, minimum total or \u22121, n=1..30, positive sizes \u2264100, k=2..30, and official examples 20/\u22121/25. Canonical Python uses the faithful `class Solution: mergeStones(self, stones, k)` callable, returns an integer, and preserves the argument. Python is supported directly; no non-Python fallback contract is invoked or needed. Read `LANGUAGE_FILES` in scripts/register_leetcode_lesson.py: canonical/mirror/export are solution.py / python-code.js (`PYTHON_SOURCE`) / solution.py. No conceptual analogy is advertised as submission code.\n\nInspected canonical Python, core.js, app.js, index.html, copy.js, style.css, shared common.js, and each executed test before running it. The baseline copies its child lists rather than undoing shared mutation. Its factorial path count for k=2 and conservative O(n\u00b7n!) time / O(n\u00b2) retained-list space are valid. The optimized code fills increasing lengths, skips infeasible counts, uses only shorter subintervals for splits, then same-interval k piles for the one-pile state. Infinity initialization, singleton zero, feasibility guard and finite final answer agree with the teaching. Prefix sums preserve original-position meanings. The O(n\u00b3k) time and O(n\u00b2k) auxiliary space claims are conservative bounds including allocation; n\u22651 and k\u22652 avoid zero-parameter ambiguity. A more compact DP is not required for correctness.\n\n### Independent executable calculations\n\nActual canonical solution.py was imported and executed with bytecode disabled. Fresh predictions [1,3,2], k=2 \u219210 and [7,5,5,7], k=2 \u219248 were confirmed, including nonmutation. Direct enumeration of legal current-pile merges independently confirmed every relevant intermediate canonical cell for these cases, singleton [9], k=30, [1,2,3], k=3 and an additional [4,1,7,2,3], k=3 \u219227 (first triple payments 12,10,12; final 17). These checks covered 125 interval/count cells, including infinity. [1,2], k=3 returned \u22121 before allocating DP. Max-size [100]\u00d730 returned 3000 for k=30, \u22121 for k=29, and 14800 for k=2. The last expectation follows 30 equal leaves at depths 4/5: two at depth 4 and 28 at depth 5, giving 100\u00d7(8+140). These remain **code checks**, not custom browser inputs. Receipt: `independent.json`.\n\n### Reproduced test commands and results\n\nAll evidence-generating commands were run with `EVIDENCE_DIR=specs/reviews/1000-evidence/1000-review-1-9b1fcffc`. Tests were inspected first; no build_copy.py, registration, or candidate-asset generation was run. Existing runner JSON retains its literal \u201cauthor\u201d labels: these are reruns by this review, not an adopted author review or a human learning result.\n\n- `python3 -B leetcode/1000/tests/test_solution.py`: exit 0; 4,868 exhaustive/seeded calls, 18,187 intermediate cells, exact mirror and 100 unique two-language localization pairs. Oracle is direct merge-order enumeration, not the production recurrence.\n- `node leetcode/1000/tests/test_core.cjs`: exit 0; 6,317 frames, 105,666 retained rows, 5,639 candidates checked against those oracle fixtures; all finite cuts and history independence checked.\n- `node leetcode/1000/tests/browser.cjs`: exit 0; all eight presets in both locales, 16 viewport/zoom combinations, no page errors or failed/external assets. Exact code/download/copy/fallback assertions passed.\n- `node leetcode/1000/tests/visual.cjs`, `zoom-table.cjs`, `accessibility.cjs`, `related.cjs`: each exit 0; targeted current/failure/source/fallback captures, scrollable zoomed columns, disabled-control contrast and real keyboard link navigation passed.\n- **Required safe preflight:** `python3 -B scripts/register_leetcode_lesson.py 1000 --validate-only`, from repository root: **exit 0, no output**. Metadata complexity is exactly the nonempty string `O(n\u00b3k) time; O(n\u00b2k) auxiliary space`.\n\n## Rendered-state and interaction observations\n\nBrowser: Chromium 156.0.8078.4, Linux. The source-blind step-1 readout was subsequently rechecked directly: [5,4], two piles, paid 5; [9], one pile, total 5+9=14, both payment lines retained; undo restored two piles/paid 5 and removed the second payment. This resolves the cold extraction limitation without supplying any missing teaching explanation.\n\nAll presets A\u2013H finish at 14,20,\u22121,25,40,0,4,\u22121 in both languages. Inputs are displayed separately from letter-only selectors, avoiding a misleading selector result claim. Rewind/replay reproduces the entire event/candidate/ledger/progress text; reset and complete-all recover exact initial/terminal snapshots. Disabled endpoints remain legible, use dashed borders, and prevent movement past bounds. Preset changes restart the table as labeled. The independent prediction stays independent of table changes; selecting a different prediction clears prior feedback before a fresh reveal. All three answers give causally appropriate feedback, including omitted first payment and current-pile adjacency.\n\nAdversarial rendered check: preset B [3,2,4,1], k=2, Complete all states then Previous state. D(0,3,2)=10 lists cuts 0\u21920+12=12, 1\u21925+5=10, 2\u219214+0=14. The optimum is **not the last enumerated cut**; both languages mark cut 1 correctly and mark the others higher. Rewind/replay and resizing 320\u2192390\u21921366 preserve that state. Following one more transition adds original interval sum 10 to obtain 20. See `adversarial-en.png`, `adversarial-zh.png` and `candidates-en.png` / `candidates-zh-roundtrip.png`; the latter captures show the component's left columns, with remaining columns intentionally horizontally scrollable. DOM text, arithmetic and screenshots were assessed together.\n\nThe completion frame convention is explicit: every ledger row is complete; the newly completed row has \u2605 plus distinct color, while older rows retain Complete. It does not describe highlighting as unfinished data. Frame counts exclude bases; final answer stays pending until completion. Initial infeasible presets return \u22121 without pretending a merge occurred. Singleton preset F reports 0 at initialization. Source and tutorial storage boundaries are explicit.\n\nLocale binding: copy.js was parsed with duplicate-key rejection before overwrite, all consumed entries have [zh,en] shape, and shared common.js consumes that shape. Read the complete bilingual reasoning, including lower-bound/attainment proof, prefix bounds, feasibility, baseline parent/child/sibling and complexity. Rendered formulas retain both full operands and conditions in both locales. zh\u2192en\u2192zh at390px preserved preset B at11/12, with H1/document title respectively `#1000 \u00b7 \u5408\u5e76\u77f3\u5934\u7684\u6700\u4f4e\u6210\u672c` / `1000 \u00b7 \u5408\u5e76\u77f3\u5934\u7684\u6700\u4f4e\u6210\u672c` and the official English identity. Candidate/merge/guard/feedback/manual-copy messages match their actual meanings; no unrelated fallback string supplies algorithm reasoning.\n\nSource fidelity: mirror decoding, DOM `textContent`, real automatic clipboard readback, downloaded bytes and manual fallback transfer equal canonical source exactly, including final newline. Both fallback attempts seeded and read back a fresh distinct non-source sentinel **before** automatic writes were denied; actual Copy then focused/selected the complete readonly textarea, and Linux Control+C transferred source for exact native clipboard readback. No whitespace trimming or source injection was used to pass equality. See browser.json and download-en.py / download-zh.py.\n\n## Device, accessibility and screenshot inspection\n\nExercised 320/390/736/1440 widths at100%/200% CSS body zoom, both languages. This is a desktop zoom approximation, not browser-chrome zoom or physical-device evidence. Page width stayed within viewport; long text wraps. Native selector A\u2013H labels fit closed controls: at320px/200% the select has96 CSS px versus39.856 required including20px arrow reserve. Recorded CSS stack is PingFang SC, Microsoft YaHei, system-ui, sans-serif; actual installed/resolved CJK font was not independently identified.\n\nInspected cold-initial, focus-en-ledger, focus-zh-fallback, en-320-z1-controls, zh-320-z2-controls, en-390-z2-prediction, zh-header, adversarial-en, candidate captures, and zoom-table-en-320 columns0/1 plus zh-320 column2. Controls, source fallback selection, current state identity/value/status and bilingual text are readable. Narrow/zoomed tables require deliberate component panning: columns remain separate rather than intersecting. Current-row association is retained by a shared row and semantic table headers/caption; keyboard ArrowRight scroll was exercised. At200% this requires substantial scrolling and loses simultaneous column overview, a minor usability friction rather than inaccessible essential content. Screenshot framing sometimes shows only part of a section; this is not clipping of lesson content.\n\nKeyboard Tab/Enter, visible3px focus, nav anchors, focusable table/code, endpoint behavior and native fallback were exercised. Controls meet the runner's48px height check. Solid-color sRGB helper was inspected/calibrated with primaries, black/white21 and #747474-on-black4.492948073111701 (fails4.5 correctly). Actual enabled text minimum7.07885; disabled/endpoint control minimum6.44941, opacity1. Focus contrast \u22653. These calculations cover tested solid surfaces, not every possible composited pixel. Reduced motion/forced colors, denied localStorage, already-loaded offline operation and local file opening also passed.\n\nRelated links were keyboard-activated at320px in each locale. The served #312 step1 actually explains fixing the last balloon and two shorter intervals; #546 step2 explains an extra saved-box count. Both support their labels. Their local preview availability is established, not their acceptance or any future production release.\n\n## Findings, scores and conclusion\n\nNo earlier review report for1000 was present when searched after the cold walkthrough. There are no inherited findings to close. **Required open IDs: none.** No implementation changes were made. No blocking source/access/browser evidence remains within the requested local review scope.\n\n| Dimension | Score | Weighted | Observation/rationale |\n| --- | ---: | ---: | --- |\n| Problem, terms, hand calculation | 4 | 15 | Concrete3\u21922\u21921 piles and retained5/9 payments precede abstraction; alternate order proves14. Input/output, adjacency and inclusive indices are defined. |\n| Causal derivation and saved work | 3 | 15 | Exhaustive baseline, repeated intervals, failing greedy rule, explicit pile-count state and complete split/final-payment proof are reconstructable. The jump from list recursion to three-index storage is dense; repeated-interval reuse is explained in prose rather than traced across two baseline branches. Minor reader effort remains, without a missing causal bridge. |\n| Maintained state and correctness | 4 | 20 | Feasibility, infinity/base, shorter dependencies, same-interval ordering, attainability and final answer all agree with independent intermediate checks. |\n| Interaction and visual meaning | 4 | 20 | Concrete transitions, persistent history, non-last optimum, clear completed-frame semantics and prediction/change/reveal work; data and markers stay distinct. |\n| Python and cost | 4 | 15 | Faithful executable interface, exact source transfers, explicit visual operands\u2192code mapping, fresh cases, nonmutation and justified conservative bounds. |\n| Bilingual/device access | 3 | 7.5 | Equivalent full reasoning and state retention, keyboard, contrast and narrow/zoom checks pass; wide tables impose panning and overview friction at200%. |\n\n**Total92.5/100; every dimension\u22653; outcome: accepted for candidate20f52a5cf74957ddacf1a7627ed882defe6a70f5.** This is independent lesson-review acceptance, separate from publication. Limitations: automated Chromium on Linux, simulated widths/CSS zoom, preset-only UI, no physical novice study, no successful LeetCode submission, no production verification. Scores follow observed explanations and independently checked transitions; test counts and screenshot existence alone did not determine them.\n",
+      "reportPath": "specs/reviews/1000-review-1-9b1fcffc.md",
+      "lessonTrees": {
+        "candidate": "9625a504254fcf359c4bbc02b61b64c33d87c424",
+        "review": "9625a504254fcf359c4bbc02b61b64c33d87c424",
+        "registration": "9625a504254fcf359c4bbc02b61b64c33d87c424"
+      },
+      "canonicalSha256": "3548086f5e854398ca6aefc0a61b5085d0aae6bd59531e956e45d3383f33ff8c",
+      "lessonEntry": {
+        "id": 1000,
+        "title": {
+          "zh": "\u5408\u5e76\u77f3\u5934\u7684\u6700\u4f4e\u6210\u672c",
+          "en": "Minimum Cost to Merge Stones"
+        },
+        "desc": {
+          "zh": "\u4ece\u6bcf\u6b21\u4ed8\u8d39\u5230\u533a\u95f4\u4e0e\u5806\u6570\uff1a\u63a8\u5bfc\u5408\u6cd5\u5408\u5e76\u7684\u52a8\u6001\u89c4\u5212\u3002",
+          "en": "From merge payments to interval states with an explicit pile count."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u533a\u95f4\u52a8\u6001\u89c4\u5212",
+            "en": "Interval DP"
+          }
+        ],
+        "path": "1000/",
+        "leetcodeUrl": "https://leetcode.com/problems/minimum-cost-to-merge-stones/",
+        "language": "Python",
+        "complexity": "O(n\u00b3k) time; O(n\u00b2k) auxiliary space",
+        "concepts": [
+          {
+            "name": "Interval DP with pile counts",
+            "step": 3,
+            "description": "Split an interval into a first pile and a remaining forest, then charge the legal final merge."
+          }
+        ]
+      },
+      "registryEntry": {
+        "id": 1000,
+        "title": {
+          "zh": "\u5408\u5e76\u77f3\u5934\u7684\u6700\u4f4e\u6210\u672c",
+          "en": "Minimum Cost to Merge Stones"
+        },
+        "desc": {
+          "zh": "\u4ece\u6bcf\u6b21\u4ed8\u8d39\u5230\u533a\u95f4\u4e0e\u5806\u6570\uff1a\u63a8\u5bfc\u5408\u6cd5\u5408\u5e76\u7684\u52a8\u6001\u89c4\u5212\u3002",
+          "en": "From merge payments to interval states with an explicit pile count."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u533a\u95f4\u52a8\u6001\u89c4\u5212",
+            "en": "Interval DP"
+          }
+        ],
+        "path": "1000/",
+        "leetcodeUrl": "https://leetcode.com/problems/minimum-cost-to-merge-stones/",
+        "language": "Python",
+        "complexity": "O(n\u00b3k) time; O(n\u00b2k) auxiliary space"
+      },
+      "remoteRegistration": "30516661a5cfc0673c2dcfaa018444e2ffa2c85b",
+      "reviewedProof": {
+        "candidate": "20f52a5cf74957ddacf1a7627ed882defe6a70f5",
+        "digest": "3303f93ede3a9c6f1af86ac6b68a84fd22cdad62e69b9071c0053b52e33faf27",
+        "review": "specs/reviews/1000-review-1-9b1fcffc.md",
+        "registry": {
+          "id": 1000,
+          "title": {
+            "zh": "\u5408\u5e76\u77f3\u5934\u7684\u6700\u4f4e\u6210\u672c",
+            "en": "Minimum Cost to Merge Stones"
+          },
+          "desc": {
+            "zh": "\u4ece\u6bcf\u6b21\u4ed8\u8d39\u5230\u533a\u95f4\u4e0e\u5806\u6570\uff1a\u63a8\u5bfc\u5408\u6cd5\u5408\u5e76\u7684\u52a8\u6001\u89c4\u5212\u3002",
+            "en": "From merge payments to interval states with an explicit pile count."
+          },
+          "difficulty": "hard",
+          "topics": [
+            {
+              "zh": "\u533a\u95f4\u52a8\u6001\u89c4\u5212",
+              "en": "Interval DP"
+            }
+          ],
+          "path": "1000/",
+          "leetcodeUrl": "https://leetcode.com/problems/minimum-cost-to-merge-stones/",
+          "language": "Python",
+          "complexity": "O(n\u00b3k) time; O(n\u00b2k) auxiliary space"
+        }
+      },
+      "reviewedAssetSha256": {
+        "leetcode/1000/app.js": "23b0fdc9e3608e37a4048f8da246f4479c4c6a51617b0407a48ba94cd32cd7a4",
+        "leetcode/1000/copy.js": "6b3f71434e207fe6d16919a8aee0640a0875981fe0fcbedfb3ef1a288fda376d",
+        "leetcode/1000/core.js": "efed443f806a3a77debb33721fe28dabbc327e91e60f1e67b6d61d8fccf639b5",
+        "leetcode/1000/index.html": "f4309136c0f7f26af50e8559d75f9ba4de6a2bfe95613965ffa17ac07f42c9da",
+        "leetcode/1000/python-code.js": "47cb16419333d2b8b1fbe317efe9060e0c241ecb2c02041d997b02f5d308b263",
+        "leetcode/1000/solution.py": "3548086f5e854398ca6aefc0a61b5085d0aae6bd59531e956e45d3383f33ff8c",
+        "leetcode/1000/style.css": "52edb93b13a91d37a7dd4da099f46465286147fb562a009a98db5907a2ca4bb0"
+      }
+    }
+  }
+}

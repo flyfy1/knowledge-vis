@@ -1,0 +1,24 @@
+{
+  "observed_at": "2026-10-25T23:52:38.929859+00:00",
+  "previous_receipt_sha256": "483b6b7723bd84fa174afe8f7e58051653ebe56b2e793ad1694f5f4a4f7e9cbe",
+  "operator_exited": true,
+  "object_present_before": false,
+  "object_fetch_performed": true,
+  "read_only": false,
+  "object_fetch_command": [
+    "git",
+    "-C",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018",
+    "fetch",
+    "--no-tags",
+    "origin",
+    "47d97f6bf07dd1f4b8c7e1ca493ca3d21b3b9c7b"
+  ],
+  "fetch_exit": 0,
+  "fetch_stdout": "",
+  "fetch_stderr": "From github.com:flyfy1/knowledge-vis\n * branch              47d97f6bf07dd1f4b8c7e1ca493ca3d21b3b9c7b -> FETCH_HEAD\n",
+  "head_before": "453476e12d04ae75d14b149fa26e3446cdb088ca",
+  "head_after": "453476e12d04ae75d14b149fa26e3446cdb088ca",
+  "checkout_or_campaign_mutation_command_performed": false,
+  "source_object_verified": true
+}

@@ -1,0 +1,15 @@
+--- disabled/operate.py
++++ final-ready/operate.py
+@@ -15,10 +15,10 @@
+ 
+ OWNER='854-bridge-adoption-20261026-185d4ba0'
+ DISPATCH='root-reviewed-854-bridge-adoption-20261026'
+-PINS_SHA=None  # Disabled: source review, push, post-import/live pins and independent review pending.
++PINS_SHA='94098e2f6d632acbd189d59fb3b522968ce80a914285c213ce478a59bc2a05ff'  # Frozen proposal: independent final review and separate root dispatch required.
+ CAMPAIGN_HELPER_SHA='f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698'
+ REOPEN_HELPER_SHA='a268466fe6101841437c730e0e7448961be4637ee60d9fe4a760c0ea6fca3424'
+-PREVIOUS_OWNER=None  # Resolve only from the actual completed996/1000 import receipt.
++PREVIOUS_OWNER='import9961000-only-20261026-641c280f'  # Actual completed import; raw receipt hash is pinned.
+ POLICY_PATH='specs/leetcode-rendered-state-contract.md'
+ NEW_POLICY='816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c'
+ STATIC_SHA='f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e'
