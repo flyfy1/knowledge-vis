@@ -1,0 +1,62 @@
+{
+  "source": "/tmp/leetcode-732-frozen-02dd49d-20261025/leetcode/732/tests/browser.cjs",
+  "reference": "https://www.w3.org/TR/WCAG22/#dfn-relative-luminance",
+  "results": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "rgb": [
+        255,
+        0,
+        0
+      ],
+      "actual": 0.2126,
+      "expected": 0.2126
+    },
+    {
+      "rgb": [
+        0,
+        255,
+        0
+      ],
+      "actual": 0.7152,
+      "expected": 0.7152
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        255
+      ],
+      "actual": 0.0722,
+      "expected": 0.0722
+    },
+    {
+      "rgb": [
+        128,
+        128,
+        128
+      ],
+      "actual": 0.21586050011389923,
+      "expected": 0.21586050011389923
+    }
+  ],
+  "falsePassWitness": null,
+  "pass": true
+}

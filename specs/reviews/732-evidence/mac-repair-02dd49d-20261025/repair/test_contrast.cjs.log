@@ -1,0 +1,75 @@
+{
+  "finding": "732-MAC-R1",
+  "reference": "https://www.w3.org/TR/WCAG22/#dfn-relative-luminance",
+  "values": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "expected": 1,
+      "actual": 1
+    },
+    {
+      "rgb": [
+        255,
+        0,
+        0
+      ],
+      "expected": 0.2126,
+      "actual": 0.2126
+    },
+    {
+      "rgb": [
+        0,
+        255,
+        0
+      ],
+      "expected": 0.7152,
+      "actual": 0.7152
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        255
+      ],
+      "expected": 0.0722,
+      "actual": 0.0722
+    },
+    {
+      "rgb": [
+        128,
+        128,
+        128
+      ],
+      "expected": 0.21586050011389926,
+      "actual": 0.21586050011389923
+    }
+  ],
+  "blackWhite": 21,
+  "threshold": {
+    "minimum": 4.5,
+    "negative": {
+      "hex": "#747474",
+      "on": "#000000",
+      "ratio": 4.492948073111701
+    },
+    "positive": {
+      "hex": "#757575",
+      "on": "#000000",
+      "ratio": 4.557768319672582
+    }
+  },
+  "status": "pass"
+}

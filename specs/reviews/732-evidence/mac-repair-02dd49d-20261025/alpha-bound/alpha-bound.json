@@ -1,0 +1,32 @@
+{
+  "scope": "Supplemental conservative sRGB source-over bound for the recorded 96-percent opaque nav surface; not an exact sampled background ratio",
+  "foreground": [
+    154,
+    167,
+    184
+  ],
+  "surface": [
+    13,
+    17,
+    23
+  ],
+  "alpha": 0.96,
+  "arbitraryBackdropChannelRange": [
+    0,
+    255
+  ],
+  "compositedBackgroundChannelLowerBound": [
+    12.48,
+    16.32,
+    22.08
+  ],
+  "compositedBackgroundChannelUpperBound": [
+    22.68000000000001,
+    26.52000000000001,
+    32.28000000000001
+  ],
+  "minimumContrastOverAnySDRBackdrop": 7.106577177430489,
+  "threshold": 4.5,
+  "passes": true,
+  "limitation": "Original and corrected-color-recalculation JSON stripped alpha and must not be read as exact composited-nav contrast. This bound addresses that recorded pair without rewriting historical evidence. Assumes standard sRGB source-over with opaque foreground; does not establish other opacity/filter/gradient effects."
+}
