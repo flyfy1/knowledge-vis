@@ -1366,3 +1366,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Synchronized grid path DP | `leetcode/741/#step2` | Reverse a return path, synchronize by row + column, and count shared cells once. |
 
 <!-- /leetcode-741-campaign -->
+
+
+<!-- leetcode-745-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Prefix–suffix pair invariant | `leetcode/745/#step2` | Enumerate all nonempty end pairs and retain the latest matching original index. |
+
+<!-- /leetcode-745-campaign -->
