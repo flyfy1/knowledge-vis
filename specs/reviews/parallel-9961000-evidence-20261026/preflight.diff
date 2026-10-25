@@ -1,0 +1,33 @@
+--- specs/reviews/parallel-9961000-launch-preparation-20261026/after-995-queued-handoff/preflight.pending.py
++++ preflight.py
+@@ -1,15 +1,14 @@
+ """Read-only launch eligibility census. Does not reserve ports or mutate Pi files."""
+-raise RuntimeError('Disabled preparation: await completed queued #995 handoff, frozen identities and separate root review.')
+ import pathlib,json,subprocess,hashlib,datetime,os,re,importlib.util,sys,socket
+ repo=pathlib.Path('/home/songyy/projects/leetcode-hard-campaign-20261018');root=pathlib.Path('/home/songyy/projects');state_dir=root/'leetcode-hard-campaign-state-20261018'
+ receipt_path=state_dir/'995-copy-repair-20261026-9d027af3.json'
+ receipt_bytes=receipt_path.read_bytes()
+-assert hashlib.sha256(receipt_bytes).hexdigest()=='__PENDING_995COPY_RECEIPT_SHA256__'
++assert hashlib.sha256(receipt_bytes).hexdigest()=='86159f93f1a918035f10c47c6bbda09409b8a914c0320dfee40551b305eed343'
+ receipt=json.loads(receipt_bytes)
+ assert receipt['owner']=='995-copy-repair-20261026-9d027af3'
+ assert receipt['status']=='completed-resumed',receipt['status']
+ assert receipt['queued_repair_id']=='995' and receipt['queue_preserved'] is True and receipt['ledger_preserved'] is True
+-base='__PENDING_995COPY_BASE__'
++base='6c68b23cc306067de5a912195a3c7edeebc2a0be'
+ assert receipt['pushed_head']==base
+ assert receipt['resume_proof']['agent_candidate']==base and receipt['fresh_agent']
+ s=json.loads((state_dir/'progress.json').read_text());head=subprocess.check_output(['git','-C',str(repo),'rev-parse','HEAD'],text=True).strip();current=s['current'];run=next(r for r in s['runs'] if r['id']==current['run_id']);events=[]
+@@ -39,10 +38,10 @@
+ assert len(native)==1,native
+ assert '-o' in native[0]['args'] and pathlib.Path(native[0]['args'][native[0]['args'].index('-o')+1]).parent==pathlib.Path(run['directory'])
+ assert pathlib.Path(f'/proc/{native[0]["pid"]}/cwd').resolve()==repo
+-pins_path=pathlib.Path('__PENDING_995COPY_PINS_PATH__')
++pins_path=pathlib.Path('/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch/pins.json')
+ pins_bytes=pins_path.read_bytes()
+ pins_sha=hashlib.sha256(pins_bytes).hexdigest()
+-assert pins_sha=='__PENDING_995COPY_PINS_SHA256__'
++assert pins_sha=='b8daf2ba46ff675f5cc14f6ddca7e1816d14348b3438b228f13c4e6fa60ff93c'
+ approved_pins=json.loads(pins_bytes)
+ for name,digest in approved_pins['policy'].items():
+  assert hashlib.sha256((repo/name).read_bytes()).hexdigest()==digest,name

@@ -1,0 +1,76 @@
+{
+  "observedAt": "2026-10-25T23:05:46.023368+00:00",
+  "operatorAlive": true,
+  "receipt": {
+    "owner": "995-copy-repair-20261026-9d027af3",
+    "status": "waiting-for-natural-boundary",
+    "created_at": "2026-10-25T22:58:39.540273+00:00",
+    "pre_stop_plan": {
+      "next_problem_id": "871",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "incoming": [],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [
+          "995"
+        ],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 8
+      }
+    },
+    "stop": {
+      "owner": "995-copy-repair-20261026-9d027af3",
+      "created_at": "2026-10-25T22:58:46.886815+00:00",
+      "reason": "Finish current stage; adopt reviewed995-COPY-R1 and queue only995 for ordinary fix/review without reprioritizing."
+    }
+  },
+  "receiptSha256": "94c1d97bfb7bee02f5c1cd3693b1f383770f50b7e8b825da78c12a9d14e482e5",
+  "receiptRawBase64": "ewogICJvd25lciI6ICI5OTUtY29weS1yZXBhaXItMjAyNjEwMjYtOWQwMjdhZjMiLAogICJzdGF0dXMiOiAid2FpdGluZy1mb3ItbmF0dXJhbC1ib3VuZGFyeSIsCiAgImNyZWF0ZWRfYXQiOiAiMjAyNi0xMC0yNVQyMjo1ODozOS41NDAyNzMrMDA6MDAiLAogICJwcmVfc3RvcF9wbGFuIjogewogICAgIm5leHRfcHJvYmxlbV9pZCI6ICI4NzEiLAogICAgInJlZ2lzdHJhdGlvbl9pZHMiOiBbXSwKICAgICJwdWJsaWNhdGlvbl9ib3VuZCI6IHsKICAgICAgImVsaWdpYmxlIjogWwogICAgICAgICI4NTQiLAogICAgICAgICI4NTciLAogICAgICAgICI4NjIiLAogICAgICAgICI4NjQiLAogICAgICAgICI5ODIiLAogICAgICAgICI5ODciLAogICAgICAgICI5OTIiLAogICAgICAgICI5OTUiCiAgICAgIF0sCiAgICAgICJpbmNvbWluZyI6IFtdLAogICAgICAicmVnaXN0cmF0aW9uX2lkcyI6IFtdLAogICAgICAicmVvcGVuZWRfdXBwZXJfYm91bmRfaWRzIjogWwogICAgICAgICI5OTUiCiAgICAgIF0sCiAgICAgICJ1cHBlcl9ib3VuZF9pZHMiOiBbCiAgICAgICAgIjg1NCIsCiAgICAgICAgIjg1NyIsCiAgICAgICAgIjg2MiIsCiAgICAgICAgIjg2NCIsCiAgICAgICAgIjk4MiIsCiAgICAgICAgIjk4NyIsCiAgICAgICAgIjk5MiIsCiAgICAgICAgIjk5NSIKICAgICAgXSwKICAgICAgInVwcGVyX2JvdW5kIjogOAogICAgfQogIH0sCiAgInN0b3AiOiB7CiAgICAib3duZXIiOiAiOTk1LWNvcHktcmVwYWlyLTIwMjYxMDI2LTlkMDI3YWYzIiwKICAgICJjcmVhdGVkX2F0IjogIjIwMjYtMTAtMjVUMjI6NTg6NDYuODg2ODE1KzAwOjAwIiwKICAgICJyZWFzb24iOiAiRmluaXNoIGN1cnJlbnQgc3RhZ2U7IGFkb3B0IHJldmlld2VkOTk1LUNPUFktUjEgYW5kIHF1ZXVlIG9ubHk5OTUgZm9yIG9yZGluYXJ5IGZpeC9yZXZpZXcgd2l0aG91dCByZXByaW9yaXRpemluZy4iCiAgfQp9Cg==",
+  "dispatch": {
+    "pid": 1857482,
+    "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch",
+    "args": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch/operate.py",
+      "--dispatch",
+      "root-reviewed-995-copy-repair-20261026",
+      "--pins",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch/pins.json",
+      "--campaign-helper",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch/campaign-helper.py",
+      "--reopen-helper",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch/reopen-helper.py"
+    ],
+    "sha256": {
+      "operate.py": "2cc99b2622895aaf3dc87c83131dfb4ab2b70e123a424845409dd428788fe280",
+      "pins.json": "b8daf2ba46ff675f5cc14f6ddca7e1816d14348b3438b228f13c4e6fa60ff93c",
+      "campaign-helper.py": "f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698",
+      "reopen-helper.py": "a268466fe6101841437c730e0e7448961be4637ee60d9fe4a760c0ea6fca3424"
+    }
+  },
+  "dispatchRawBase64": "ewogICJwaWQiOiAxODU3NDgyLAogICJkaXJlY3RvcnkiOiAiL2hvbWUvc29uZ3l5L3Byb2plY3RzL2xlZXRjb2RlLWhhcmQtY2FtcGFpZ24tc3RhdGUtMjAyNjEwMTgvOTk1LWNvcHktcmVwYWlyLTIwMjYxMDI2LTlkMDI3YWYzLWRpc3BhdGNoIiwKICAiYXJncyI6IFsKICAgICIvdXNyL2Jpbi9weXRob24zIiwKICAgICItQiIsCiAgICAiL2hvbWUvc29uZ3l5L3Byb2plY3RzL2xlZXRjb2RlLWhhcmQtY2FtcGFpZ24tc3RhdGUtMjAyNjEwMTgvOTk1LWNvcHktcmVwYWlyLTIwMjYxMDI2LTlkMDI3YWYzLWRpc3BhdGNoL29wZXJhdGUucHkiLAogICAgIi0tZGlzcGF0Y2giLAogICAgInJvb3QtcmV2aWV3ZWQtOTk1LWNvcHktcmVwYWlyLTIwMjYxMDI2IiwKICAgICItLXBpbnMiLAogICAgIi9ob21lL3Nvbmd5eS9wcm9qZWN0cy9sZWV0Y29kZS1oYXJkLWNhbXBhaWduLXN0YXRlLTIwMjYxMDE4Lzk5NS1jb3B5LXJlcGFpci0yMDI2MTAyNi05ZDAyN2FmMy1kaXNwYXRjaC9waW5zLmpzb24iLAogICAgIi0tY2FtcGFpZ24taGVscGVyIiwKICAgICIvaG9tZS9zb25neXkvcHJvamVjdHMvbGVldGNvZGUtaGFyZC1jYW1wYWlnbi1zdGF0ZS0yMDI2MTAxOC85OTUtY29weS1yZXBhaXItMjAyNjEwMjYtOWQwMjdhZjMtZGlzcGF0Y2gvY2FtcGFpZ24taGVscGVyLnB5IiwKICAgICItLXJlb3Blbi1oZWxwZXIiLAogICAgIi9ob21lL3Nvbmd5eS9wcm9qZWN0cy9sZWV0Y29kZS1oYXJkLWNhbXBhaWduLXN0YXRlLTIwMjYxMDE4Lzk5NS1jb3B5LXJlcGFpci0yMDI2MTAyNi05ZDAyN2FmMy1kaXNwYXRjaC9yZW9wZW4taGVscGVyLnB5IgogIF0sCiAgInNoYTI1NiI6IHsKICAgICJvcGVyYXRlLnB5IjogIjJjYzk5YjI2MjI4OTVhYWYzZGM4N2M4MzEzMWRmYjRhYjJiNzBlMTIzYTQyNDg0NTQwOWRkNDI4Nzg4ZmUyODAiLAogICAgInBpbnMuanNvbiI6ICJiOGRhZjJiYTQ2ZmY2NzVmNWNjMTRmNmRkY2E3ZTE4MTZkMTQzNDhiMzQzOGIyMjhmMTNjNGU2ZmE2MGZmOTNjIiwKICAgICJjYW1wYWlnbi1oZWxwZXIucHkiOiAiZjBjNGFjNzA4YTRiMDIwOWM3YTY1MjI3ODdiMzhhMDQ5MjNhYzkyMmQ2MWQ4YWZhMGRiZWNmN2I4YWQ2MTY5OCIsCiAgICAicmVvcGVuLWhlbHBlci5weSI6ICJhMjY4NDY2ZmU2MTAxODQxNDM3YzczMGUwZTc0NDg5NjFiZTQ2MzdlZTYwZDlmZTRhNzYwYzBlYTZmY2EzNDI0IgogIH0KfQ==",
+  "externalPinsPath": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch/pins.json",
+  "externalPinsSha256": "b8daf2ba46ff675f5cc14f6ddca7e1816d14348b3438b228f13c4e6fa60ff93c",
+  "externalOperatorSha256": "2cc99b2622895aaf3dc87c83131dfb4ab2b70e123a424845409dd428788fe280",
+  "readOnly": true
+}

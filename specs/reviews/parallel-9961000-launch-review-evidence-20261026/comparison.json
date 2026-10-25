@@ -1,0 +1,16 @@
+{
+  "observed_at": "2026-10-25T23:08:14.897000+00:00",
+  "runtime_matches": true,
+  "actual": {
+    "base": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+    "centralHead": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+    "run": "871-review-5c5479d608a1",
+    "problem": "871",
+    "stage": "review",
+    "session": "01a17551-4500-7f91-b832-4d15fa2f15fa"
+  },
+  "runner_match": true,
+  "native_match": true,
+  "mem_available_kib": 1962428,
+  "reservation_count": 41
+}

@@ -1,0 +1,15 @@
+test_approved_handoff_source_identity_and_schema (__main__.Templates.test_approved_handoff_source_identity_and_schema) ... ok
+test_artifact_hashes (__main__.Templates.test_artifact_hashes) ... ok
+test_declared_reversal_restores_exact_originals (__main__.Templates.test_declared_reversal_restores_exact_originals) ... ok
+test_disabled_before_import_read_or_write (__main__.Templates.test_disabled_before_import_read_or_write) ... ok
+test_hashes_before_import_with_compatible_static_source (__main__.Templates.test_hashes_before_import_with_compatible_static_source) ... ok
+test_original_native_scope_resource_target_guards_retained (__main__.Templates.test_original_native_scope_resource_target_guards_retained) ... ok
+test_original_parent_files_unchanged (__main__.Templates.test_original_parent_files_unchanged) ... ok
+test_receipt_digest_checked_before_json_or_pins (__main__.Templates.test_receipt_digest_checked_before_json_or_pins) ... ok
+test_unresolved_actual_identities (__main__.Templates.test_unresolved_actual_identities) ... ok
+test_valid_handoff_schema_only (__main__.Templates.test_valid_handoff_schema_only) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.013s
+
+OK

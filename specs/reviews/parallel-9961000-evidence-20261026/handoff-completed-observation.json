@@ -1,0 +1,233 @@
+{
+  "observedAt": "2026-10-25T23:07:09.313874+00:00",
+  "operatorAlive": false,
+  "receipt": {
+    "owner": "995-copy-repair-20261026-9d027af3",
+    "status": "completed-resumed",
+    "created_at": "2026-10-25T22:58:39.540273+00:00",
+    "pre_stop_plan": {
+      "next_problem_id": "871",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "incoming": [],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [
+          "995"
+        ],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 8
+      }
+    },
+    "stop": {
+      "owner": "995-copy-repair-20261026-9d027af3",
+      "created_at": "2026-10-25T22:58:46.886815+00:00",
+      "reason": "Finish current stage; adopt reviewed995-COPY-R1 and queue only995 for ordinary fix/review without reprioritizing."
+    },
+    "boundary_plan": {
+      "next_problem_id": "871",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "incoming": [],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [
+          "995"
+        ],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 8
+      }
+    },
+    "boundary_head": "ed09b7a448393b2c7b0084f36c198354a6c0d1ea",
+    "post_reopen_plan": {
+      "next_problem_id": "871",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "982",
+          "987",
+          "992"
+        ],
+        "incoming": [],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [
+          "995"
+        ],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 8
+      }
+    },
+    "maintenance": {
+      "kind": "reopen-accepted-995-copy",
+      "request_id": "995-COPY-R1",
+      "at": "2026-10-25T23:06:36.491432+00:00",
+      "source_revision": "f090946dfb330ae3eb4a423b1ad3b367b83d8890",
+      "before": "ed09b7a448393b2c7b0084f36c198354a6c0d1ea",
+      "prior_accepted_entry": {
+        "status": "accepted_local",
+        "rounds": 1,
+        "new": true,
+        "phase": "done",
+        "reviews": [
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              3,
+              4,
+              4,
+              4,
+              4
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/995-review-1-c18c137a.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source inspection.",
+              "Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.",
+              "Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.",
+              "Non-mutating metadata preflight exited 0."
+            ],
+            "detail": "95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication.",
+            "run_id": "995-review-f5d78a25ecbc",
+            "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+            "candidate_sha256": "20e4b739f8b1a7fae70008c3172e060d0b2c28876e550fab8aaed24fcf3942c4",
+            "weighted_score": 95.0,
+            "round": 1,
+            "commit": "5a5cd3c329aec4854ea61f0ae5d15b1826f94a21"
+          }
+        ],
+        "author_runs": [
+          "995-author-ab095f2912c3"
+        ],
+        "prior_report": "specs/reviews/995-review-1-c18c137a.md",
+        "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+        "registration_commit": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+        "accepted_at": "2026-10-25T22:36:24.169208+00:00"
+      },
+      "previous_current": {
+        "problem_id": "871",
+        "stage": "author",
+        "started_at": "2026-10-25T22:55:31.562794+00:00",
+        "run_id": "871-author-3c117e1396eb"
+      },
+      "after": "6c68b23cc306067de5a912195a3c7edeebc2a0be"
+    },
+    "head": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+    "launch": {
+      "pid": 1865819,
+      "queue_count": 984,
+      "continuous": true,
+      "state": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress.json"
+    },
+    "resume_proof": {
+      "registration_commits": [],
+      "agent_candidate": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+      "prior_reviews_and_runs_preserved": true
+    },
+    "completed_at": "2026-10-25T23:07:06.453480+00:00",
+    "fresh_agent": {
+      "current": {
+        "problem_id": "871",
+        "stage": "review",
+        "started_at": "2026-10-25T23:07:01.674474+00:00",
+        "run_id": "871-review-5c5479d608a1"
+      },
+      "session_id": "01a17551-4500-7f91-b832-4d15fa2f15fa",
+      "native_codex_pids": [
+        1866040
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a17551-4500-7f91-b832-4d15fa2f15fa"
+        },
+        {
+          "type": "turn.started"
+        }
+      ]
+    },
+    "pushed_head": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+    "ledger_preserved": true,
+    "queued_repair_id": "995",
+    "queue_preserved": true
+  },
+  "receiptSha256": "86159f93f1a918035f10c47c6bbda09409b8a914c0320dfee40551b305eed343",
+  "receiptRawBase64": "ewogICJvd25lciI6ICI5OTUtY29weS1yZXBhaXItMjAyNjEwMjYtOWQwMjdhZjMiLAogICJzdGF0dXMiOiAiY29tcGxldGVkLXJlc3VtZWQiLAogICJjcmVhdGVkX2F0IjogIjIwMjYtMTAtMjVUMjI6NTg6MzkuNTQwMjczKzAwOjAwIiwKICAicHJlX3N0b3BfcGxhbiI6IHsKICAgICJuZXh0X3Byb2JsZW1faWQiOiAiODcxIiwKICAgICJyZWdpc3RyYXRpb25faWRzIjogW10sCiAgICAicHVibGljYXRpb25fYm91bmQiOiB7CiAgICAgICJlbGlnaWJsZSI6IFsKICAgICAgICAiODU0IiwKICAgICAgICAiODU3IiwKICAgICAgICAiODYyIiwKICAgICAgICAiODY0IiwKICAgICAgICAiOTgyIiwKICAgICAgICAiOTg3IiwKICAgICAgICAiOTkyIiwKICAgICAgICAiOTk1IgogICAgICBdLAogICAgICAiaW5jb21pbmciOiBbXSwKICAgICAgInJlZ2lzdHJhdGlvbl9pZHMiOiBbXSwKICAgICAgInJlb3BlbmVkX3VwcGVyX2JvdW5kX2lkcyI6IFsKICAgICAgICAiOTk1IgogICAgICBdLAogICAgICAidXBwZXJfYm91bmRfaWRzIjogWwogICAgICAgICI4NTQiLAogICAgICAgICI4NTciLAogICAgICAgICI4NjIiLAogICAgICAgICI4NjQiLAogICAgICAgICI5ODIiLAogICAgICAgICI5ODciLAogICAgICAgICI5OTIiLAogICAgICAgICI5OTUiCiAgICAgIF0sCiAgICAgICJ1cHBlcl9ib3VuZCI6IDgKICAgIH0KICB9LAogICJzdG9wIjogewogICAgIm93bmVyIjogIjk5NS1jb3B5LXJlcGFpci0yMDI2MTAyNi05ZDAyN2FmMyIsCiAgICAiY3JlYXRlZF9hdCI6ICIyMDI2LTEwLTI1VDIyOjU4OjQ2Ljg4NjgxNSswMDowMCIsCiAgICAicmVhc29uIjogIkZpbmlzaCBjdXJyZW50IHN0YWdlOyBhZG9wdCByZXZpZXdlZDk5NS1DT1BZLVIxIGFuZCBxdWV1ZSBvbmx5OTk1IGZvciBvcmRpbmFyeSBmaXgvcmV2aWV3IHdpdGhvdXQgcmVwcmlvcml0aXppbmcuIgogIH0sCiAgImJvdW5kYXJ5X3BsYW4iOiB7CiAgICAibmV4dF9wcm9ibGVtX2lkIjogIjg3MSIsCiAgICAicmVnaXN0cmF0aW9uX2lkcyI6IFtdLAogICAgInB1YmxpY2F0aW9uX2JvdW5kIjogewogICAgICAiZWxpZ2libGUiOiBbCiAgICAgICAgIjg1NCIsCiAgICAgICAgIjg1NyIsCiAgICAgICAgIjg2MiIsCiAgICAgICAgIjg2NCIsCiAgICAgICAgIjk4MiIsCiAgICAgICAgIjk4NyIsCiAgICAgICAgIjk5MiIsCiAgICAgICAgIjk5NSIKICAgICAgXSwKICAgICAgImluY29taW5nIjogW10sCiAgICAgICJyZWdpc3RyYXRpb25faWRzIjogW10sCiAgICAgICJyZW9wZW5lZF91cHBlcl9ib3VuZF9pZHMiOiBbCiAgICAgICAgIjk5NSIKICAgICAgXSwKICAgICAgInVwcGVyX2JvdW5kX2lkcyI6IFsKICAgICAgICAiODU0IiwKICAgICAgICAiODU3IiwKICAgICAgICAiODYyIiwKICAgICAgICAiODY0IiwKICAgICAgICAiOTgyIiwKICAgICAgICAiOTg3IiwKICAgICAgICAiOTkyIiwKICAgICAgICAiOTk1IgogICAgICBdLAogICAgICAidXBwZXJfYm91bmQiOiA4CiAgICB9CiAgfSwKICAiYm91bmRhcnlfaGVhZCI6ICJlZDA5YjdhNDQ4MzkzYjJjN2IwMDg0ZjM2YzE5ODM1NGE2YzBkMWVhIiwKICAicG9zdF9yZW9wZW5fcGxhbiI6IHsKICAgICJuZXh0X3Byb2JsZW1faWQiOiAiODcxIiwKICAgICJyZWdpc3RyYXRpb25faWRzIjogW10sCiAgICAicHVibGljYXRpb25fYm91bmQiOiB7CiAgICAgICJlbGlnaWJsZSI6IFsKICAgICAgICAiODU0IiwKICAgICAgICAiODU3IiwKICAgICAgICAiODYyIiwKICAgICAgICAiODY0IiwKICAgICAgICAiOTgyIiwKICAgICAgICAiOTg3IiwKICAgICAgICAiOTkyIgogICAgICBdLAogICAgICAiaW5jb21pbmciOiBbXSwKICAgICAgInJlZ2lzdHJhdGlvbl9pZHMiOiBbXSwKICAgICAgInJlb3BlbmVkX3VwcGVyX2JvdW5kX2lkcyI6IFsKICAgICAgICAiOTk1IgogICAgICBdLAogICAgICAidXBwZXJfYm91bmRfaWRzIjogWwogICAgICAgICI4NTQiLAogICAgICAgICI4NTciLAogICAgICAgICI4NjIiLAogICAgICAgICI4NjQiLAogICAgICAgICI5ODIiLAogICAgICAgICI5ODciLAogICAgICAgICI5OTIiLAogICAgICAgICI5OTUiCiAgICAgIF0sCiAgICAgICJ1cHBlcl9ib3VuZCI6IDgKICAgIH0KICB9LAogICJtYWludGVuYW5jZSI6IHsKICAgICJraW5kIjogInJlb3Blbi1hY2NlcHRlZC05OTUtY29weSIsCiAgICAicmVxdWVzdF9pZCI6ICI5OTUtQ09QWS1SMSIsCiAgICAiYXQiOiAiMjAyNi0xMC0yNVQyMzowNjozNi40OTE0MzIrMDA6MDAiLAogICAgInNvdXJjZV9yZXZpc2lvbiI6ICJmMDkwOTQ2ZGZiMzMwYWUzZWI0YTQyM2IxYWQzYjM2N2I4M2Q4ODkwIiwKICAgICJiZWZvcmUiOiAiZWQwOWI3YTQ0ODM5M2IyYzdiMDA4NGYzNmMxOTgzNTRhNmMwZDFlYSIsCiAgICAicHJpb3JfYWNjZXB0ZWRfZW50cnkiOiB7CiAgICAgICJzdGF0dXMiOiAiYWNjZXB0ZWRfbG9jYWwiLAogICAgICAicm91bmRzIjogMSwKICAgICAgIm5ldyI6IHRydWUsCiAgICAgICJwaGFzZSI6ICJkb25lIiwKICAgICAgInJldmlld3MiOiBbCiAgICAgICAgewogICAgICAgICAgIm91dGNvbWUiOiAiYWNjZXB0ZWQiLAogICAgICAgICAgInNjb3JlcyI6IFsKICAgICAgICAgICAgNCwKICAgICAgICAgICAgMywKICAgICAgICAgICAgNCwKICAgICAgICAgICAgNCwKICAgICAgICAgICAgNCwKICAgICAgICAgICAgNAogICAgICAgICAgXSwKICAgICAgICAgICJyZXF1aXJlZF9vcGVuIjogW10sCiAgICAgICAgICAicmVwb3J0X3BhdGgiOiAic3BlY3MvcmV2aWV3cy85OTUtcmV2aWV3LTEtYzE4YzEzN2EubWQiLAogICAgICAgICAgImV2aWRlbmNlIjogWwogICAgICAgICAgICAiQ29sZCBicm93c2VyIHdhbGt0aHJvdWdoIHNhdmVkIGJlZm9yZSBzb3VyY2UgaW5zcGVjdGlvbi4iLAogICAgICAgICAgICAiQ2Fub25pY2FsIFB5dGhvbiBtYXRjaGVkIDMsNTg2IGluZGVwZW5kZW50bHkgZW51bWVyYXRlZCBjYXNlcywgaW5jbHVkaW5nIGZyZXNoIHByZWRpY3Rpb25zLiIsCiAgICAgICAgICAgICJCb3RoIGxvY2FsZXMgcGFzc2VkIGludGVyYWN0aW9uLCBrZXlib2FyZCwgbGF5b3V0IGFuZCBleGFjdCBzb3VyY2UtdHJhbnNmZXIgY2hlY2tzOyBzY3JlZW5zaG90cyBpbnNwZWN0ZWQuIiwKICAgICAgICAgICAgIk5vbi1tdXRhdGluZyBtZXRhZGF0YSBwcmVmbGlnaHQgZXhpdGVkIDAuIgogICAgICAgICAgXSwKICAgICAgICAgICJkZXRhaWwiOiAiOTUvMTAwLiBObyByZXF1aXJlZCBmaW5kaW5nczsgdHdvIG9wdGlvbmFsIHdvcmRpbmcvbmF2aWdhdGlvbiBhZHZpc29yaWVzLiBSZXZpZXcgaXMgc2VwYXJhdGUgZnJvbSBwdWJsaWNhdGlvbi4iLAogICAgICAgICAgInJ1bl9pZCI6ICI5OTUtcmV2aWV3LWY1ZDc4YTI1ZWNiYyIsCiAgICAgICAgICAiY2FuZGlkYXRlIjogImQ4NGNmYjUyNjUxMDNkNmQzMjFmZGMzZjBkNWRkNGIzZTE3YWMxM2MiLAogICAgICAgICAgImNhbmRpZGF0ZV9zaGEyNTYiOiAiMjBlNGI3MzlmOGIxYTdmYWU3MDAwOGMzMTcyZTA2MGQwYjJjMjg4NzZlNTUwZmFiOGFhZWQyNGZjZjM5NDJjNCIsCiAgICAgICAgICAid2VpZ2h0ZWRfc2NvcmUiOiA5NS4wLAogICAgICAgICAgInJvdW5kIjogMSwKICAgICAgICAgICJjb21taXQiOiAiNWE1Y2QzYzMyOWFlYzQ4NTRlYTYxZjBhZTVkMTViMTgyNmY5NGEyMSIKICAgICAgICB9CiAgICAgIF0sCiAgICAgICJhdXRob3JfcnVucyI6IFsKICAgICAgICAiOTk1LWF1dGhvci1hYjA5NWYyOTEyYzMiCiAgICAgIF0sCiAgICAgICJwcmlvcl9yZXBvcnQiOiAic3BlY3MvcmV2aWV3cy85OTUtcmV2aWV3LTEtYzE4YzEzN2EubWQiLAogICAgICAiY2FuZGlkYXRlIjogImQ4NGNmYjUyNjUxMDNkNmQzMjFmZGMzZjBkNWRkNGIzZTE3YWMxM2MiLAogICAgICAicmVnaXN0cmF0aW9uX2NvbW1pdCI6ICIyZWY1YzUyNWM3NTBkODAwMjY5Y2MzM2VkNTY1ZjlhODBiNzUyYTIzIiwKICAgICAgImFjY2VwdGVkX2F0IjogIjIwMjYtMTAtMjVUMjI6MzY6MjQuMTY5MjA4KzAwOjAwIgogICAgfSwKICAgICJwcmV2aW91c19jdXJyZW50IjogewogICAgICAicHJvYmxlbV9pZCI6ICI4NzEiLAogICAgICAic3RhZ2UiOiAiYXV0aG9yIiwKICAgICAgInN0YXJ0ZWRfYXQiOiAiMjAyNi0xMC0yNVQyMjo1NTozMS41NjI3OTQrMDA6MDAiLAogICAgICAicnVuX2lkIjogIjg3MS1hdXRob3ItM2MxMTdlMTM5NmViIgogICAgfSwKICAgICJhZnRlciI6ICI2YzY4YjIzY2MzMDYwNjdkZTVhOTEyMTk1YTNjN2VkZWViYzJhMGJlIgogIH0sCiAgImhlYWQiOiAiNmM2OGIyM2NjMzA2MDY3ZGU1YTkxMjE5NWEzYzdlZGVlYmMyYTBiZSIsCiAgImxhdW5jaCI6IHsKICAgICJwaWQiOiAxODY1ODE5LAogICAgInF1ZXVlX2NvdW50IjogOTg0LAogICAgImNvbnRpbnVvdXMiOiB0cnVlLAogICAgInN0YXRlIjogIi9ob21lL3Nvbmd5eS9wcm9qZWN0cy9sZWV0Y29kZS1oYXJkLWNhbXBhaWduLXN0YXRlLTIwMjYxMDE4L3Byb2dyZXNzLmpzb24iCiAgfSwKICAicmVzdW1lX3Byb29mIjogewogICAgInJlZ2lzdHJhdGlvbl9jb21taXRzIjogW10sCiAgICAiYWdlbnRfY2FuZGlkYXRlIjogIjZjNjhiMjNjYzMwNjA2N2RlNWE5MTIxOTVhM2M3ZWRlZWJjMmEwYmUiLAogICAgInByaW9yX3Jldmlld3NfYW5kX3J1bnNfcHJlc2VydmVkIjogdHJ1ZQogIH0sCiAgImNvbXBsZXRlZF9hdCI6ICIyMDI2LTEwLTI1VDIzOjA3OjA2LjQ1MzQ4MCswMDowMCIsCiAgImZyZXNoX2FnZW50IjogewogICAgImN1cnJlbnQiOiB7CiAgICAgICJwcm9ibGVtX2lkIjogIjg3MSIsCiAgICAgICJzdGFnZSI6ICJyZXZpZXciLAogICAgICAic3RhcnRlZF9hdCI6ICIyMDI2LTEwLTI1VDIzOjA3OjAxLjY3NDQ3NCswMDowMCIsCiAgICAgICJydW5faWQiOiAiODcxLXJldmlldy01YzU0NzlkNjA4YTEiCiAgICB9LAogICAgInNlc3Npb25faWQiOiAiMDFhMTc1NTEtNDUwMC03ZjkxLWI4MzItNGQxNWZhMmYxNWZhIiwKICAgICJuYXRpdmVfY29kZXhfcGlkcyI6IFsKICAgICAgMTg2NjA0MAogICAgXSwKICAgICJldmVudHMiOiBbCiAgICAgIHsKICAgICAgICAidHlwZSI6ICJ0aHJlYWQuc3RhcnRlZCIsCiAgICAgICAgInRocmVhZF9pZCI6ICIwMWExNzU1MS00NTAwLTdmOTEtYjgzMi00ZDE1ZmEyZjE1ZmEiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAidHlwZSI6ICJ0dXJuLnN0YXJ0ZWQiCiAgICAgIH0KICAgIF0KICB9LAogICJwdXNoZWRfaGVhZCI6ICI2YzY4YjIzY2MzMDYwNjdkZTVhOTEyMTk1YTNjN2VkZWViYzJhMGJlIiwKICAibGVkZ2VyX3ByZXNlcnZlZCI6IHRydWUsCiAgInF1ZXVlZF9yZXBhaXJfaWQiOiAiOTk1IiwKICAicXVldWVfcHJlc2VydmVkIjogdHJ1ZQp9Cg==",
+  "dispatch": {
+    "pid": 1857482,
+    "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch",
+    "args": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch/operate.py",
+      "--dispatch",
+      "root-reviewed-995-copy-repair-20261026",
+      "--pins",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch/pins.json",
+      "--campaign-helper",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch/campaign-helper.py",
+      "--reopen-helper",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch/reopen-helper.py"
+    ],
+    "sha256": {
+      "operate.py": "2cc99b2622895aaf3dc87c83131dfb4ab2b70e123a424845409dd428788fe280",
+      "pins.json": "b8daf2ba46ff675f5cc14f6ddca7e1816d14348b3438b228f13c4e6fa60ff93c",
+      "campaign-helper.py": "f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698",
+      "reopen-helper.py": "a268466fe6101841437c730e0e7448961be4637ee60d9fe4a760c0ea6fca3424"
+    }
+  },
+  "dispatchRawBase64": "ewogICJwaWQiOiAxODU3NDgyLAogICJkaXJlY3RvcnkiOiAiL2hvbWUvc29uZ3l5L3Byb2plY3RzL2xlZXRjb2RlLWhhcmQtY2FtcGFpZ24tc3RhdGUtMjAyNjEwMTgvOTk1LWNvcHktcmVwYWlyLTIwMjYxMDI2LTlkMDI3YWYzLWRpc3BhdGNoIiwKICAiYXJncyI6IFsKICAgICIvdXNyL2Jpbi9weXRob24zIiwKICAgICItQiIsCiAgICAiL2hvbWUvc29uZ3l5L3Byb2plY3RzL2xlZXRjb2RlLWhhcmQtY2FtcGFpZ24tc3RhdGUtMjAyNjEwMTgvOTk1LWNvcHktcmVwYWlyLTIwMjYxMDI2LTlkMDI3YWYzLWRpc3BhdGNoL29wZXJhdGUucHkiLAogICAgIi0tZGlzcGF0Y2giLAogICAgInJvb3QtcmV2aWV3ZWQtOTk1LWNvcHktcmVwYWlyLTIwMjYxMDI2IiwKICAgICItLXBpbnMiLAogICAgIi9ob21lL3Nvbmd5eS9wcm9qZWN0cy9sZWV0Y29kZS1oYXJkLWNhbXBhaWduLXN0YXRlLTIwMjYxMDE4Lzk5NS1jb3B5LXJlcGFpci0yMDI2MTAyNi05ZDAyN2FmMy1kaXNwYXRjaC9waW5zLmpzb24iLAogICAgIi0tY2FtcGFpZ24taGVscGVyIiwKICAgICIvaG9tZS9zb25neXkvcHJvamVjdHMvbGVldGNvZGUtaGFyZC1jYW1wYWlnbi1zdGF0ZS0yMDI2MTAxOC85OTUtY29weS1yZXBhaXItMjAyNjEwMjYtOWQwMjdhZjMtZGlzcGF0Y2gvY2FtcGFpZ24taGVscGVyLnB5IiwKICAgICItLXJlb3Blbi1oZWxwZXIiLAogICAgIi9ob21lL3Nvbmd5eS9wcm9qZWN0cy9sZWV0Y29kZS1oYXJkLWNhbXBhaWduLXN0YXRlLTIwMjYxMDE4Lzk5NS1jb3B5LXJlcGFpci0yMDI2MTAyNi05ZDAyN2FmMy1kaXNwYXRjaC9yZW9wZW4taGVscGVyLnB5IgogIF0sCiAgInNoYTI1NiI6IHsKICAgICJvcGVyYXRlLnB5IjogIjJjYzk5YjI2MjI4OTVhYWYzZGM4N2M4MzEzMWRmYjRhYjJiNzBlMTIzYTQyNDg0NTQwOWRkNDI4Nzg4ZmUyODAiLAogICAgInBpbnMuanNvbiI6ICJiOGRhZjJiYTQ2ZmY2NzVmNWNjMTRmNmRkY2E3ZTE4MTZkMTQzNDhiMzQzOGIyMjhmMTNjNGU2ZmE2MGZmOTNjIiwKICAgICJjYW1wYWlnbi1oZWxwZXIucHkiOiAiZjBjNGFjNzA4YTRiMDIwOWM3YTY1MjI3ODdiMzhhMDQ5MjNhYzkyMmQ2MWQ4YWZhMGRiZWNmN2I4YWQ2MTY5OCIsCiAgICAicmVvcGVuLWhlbHBlci5weSI6ICJhMjY4NDY2ZmU2MTAxODQxNDM3YzczMGUwZTc0NDg5NjFiZTQ2MzdlZTYwZDlmZTRhNzYwYzBlYTZmY2EzNDI0IgogIH0KfQ==",
+  "externalPinsPath": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch/pins.json",
+  "externalPinsSha256": "b8daf2ba46ff675f5cc14f6ddca7e1816d14348b3438b228f13c4e6fa60ff93c",
+  "externalOperatorSha256": "2cc99b2622895aaf3dc87c83131dfb4ab2b70e123a424845409dd428788fe280",
+  "readOnly": true
+}

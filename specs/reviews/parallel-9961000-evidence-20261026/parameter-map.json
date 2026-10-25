@@ -1,0 +1,108 @@
+{
+  "status": "exact-proposal-awaiting-independent-root-review-and-separate-dispatch",
+  "sources": {
+    "launch.py": {
+      "path": "specs/reviews/parallel-9961000-launch-preparation-20261026/after-995-queued-handoff/launch.pending.py",
+      "sha256": "35045331153db7194b92ba21fcab73639b93cdf366907bcfe33eadfa8d862359"
+    },
+    "preflight.py": {
+      "path": "specs/reviews/parallel-9961000-launch-preparation-20261026/after-995-queued-handoff/preflight.pending.py",
+      "sha256": "e66694dcdded8f21537d4dc82e0d7ffe95d0b7749dcb6bb37806252edc478d4f"
+    }
+  },
+  "removedDisableLine": "raise RuntimeError('Disabled preparation: await completed queued #995 handoff, frozen identities and separate root review.')\n",
+  "substitutions": {
+    "launch.py": [
+      {
+        "from": "BASE='__PENDING_995COPY_BASE__'",
+        "to": "BASE='6c68b23cc306067de5a912195a3c7edeebc2a0be'"
+      },
+      {
+        "from": "CENTRAL_HEAD='__PENDING_995COPY_CENTRAL_HEAD__'",
+        "to": "CENTRAL_HEAD='6c68b23cc306067de5a912195a3c7edeebc2a0be'"
+      },
+      {
+        "from": "CENTRAL_RUN='__PENDING_995COPY_CENTRAL_RUN__'",
+        "to": "CENTRAL_RUN='871-review-5c5479d608a1'"
+      },
+      {
+        "from": "'__PENDING_995COPY_PROBLEM__'",
+        "to": "'871'"
+      },
+      {
+        "from": "'__PENDING_995COPY_STAGE__'",
+        "to": "'review'"
+      },
+      {
+        "from": "'__PENDING_995COPY_SESSION__'",
+        "to": "'01a17551-4500-7f91-b832-4d15fa2f15fa'"
+      }
+    ],
+    "preflight.py": [
+      {
+        "from": "__PENDING_995COPY_BASE__",
+        "to": "6c68b23cc306067de5a912195a3c7edeebc2a0be"
+      },
+      {
+        "from": "__PENDING_995COPY_RECEIPT_SHA256__",
+        "to": "86159f93f1a918035f10c47c6bbda09409b8a914c0320dfee40551b305eed343"
+      },
+      {
+        "from": "__PENDING_995COPY_PINS_PATH__",
+        "to": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch/pins.json"
+      },
+      {
+        "from": "__PENDING_995COPY_PINS_SHA256__",
+        "to": "b8daf2ba46ff675f5cc14f6ddca7e1816d14348b3438b228f13c4e6fa60ff93c"
+      }
+    ]
+  },
+  "runtime": {
+    "base": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+    "centralHead": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+    "run": "871-review-5c5479d608a1",
+    "problem": "871",
+    "stage": "review",
+    "session": "01a17551-4500-7f91-b832-4d15fa2f15fa"
+  },
+  "externalNativeProof": {
+    "runner": 1865819,
+    "native": {
+      "pid": 1866040,
+      "ppid": 1866033,
+      "args": [
+        "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex",
+        "exec",
+        "-m",
+        "gpt-6.1-sol",
+        "-c",
+        "model_reasoning_effort=\"medium\"",
+        "-c",
+        "approval_policy=\"never\"",
+        "--sandbox",
+        "danger-full-access",
+        "--json",
+        "-o",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/871-review-5c5479d608a1/final.json",
+        "--output-schema",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/871-review-5c5479d608a1/schema.json",
+        "-C",
+        "/home/songyy/projects/leetcode-hard-campaign-20261018",
+        "-"
+      ]
+    }
+  },
+  "handoffReceiptSha256": "86159f93f1a918035f10c47c6bbda09409b8a914c0320dfee40551b305eed343",
+  "externalPinsPath": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/995-copy-repair-20261026-9d027af3-dispatch/pins.json",
+  "externalPinsSha256": "b8daf2ba46ff675f5cc14f6ddca7e1816d14348b3438b228f13c4e6fa60ff93c",
+  "artifacts": {
+    "launch.py": "75c880000eb7f66eff3c2758e84e045294e5a04a279dcbcfd6a7a0382f5088f8",
+    "preflight.py": "d14d4e15b4fa53ff8a384b01e8a351d7e178af328bf5291cfdc7458c4c7e09be",
+    "preflight.json": "2b7f3a75990192b61fe4ee07bf20ad6e0ae27a3466f97f2821d82926712bb64c",
+    "handoff-receipt.json": "86159f93f1a918035f10c47c6bbda09409b8a914c0320dfee40551b305eed343",
+    "handoff-dispatch.json": "902de292415a9cca4c5da4671b4cc77c8b6ed410592aaa69abf7f9cf07d1fe41"
+  },
+  "launchExecuted": false,
+  "piPersistentMutation": false,
+  "authorContextInjection": false
+}
