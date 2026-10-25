@@ -1,0 +1,20 @@
+{
+  "id": "964",
+  "base": "8cedba5490bb862133f157a9d6af619cee323fb9",
+  "repo": "/home/songyy/projects/leetcode-hard-lane-964-20261026",
+  "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-964-20261026",
+  "port": 18790,
+  "nice": 10,
+  "status": "started",
+  "started_at": "2026-10-25T17:51:06.513521+00:00",
+  "policy_sha256": "d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa",
+  "publication_enabled": false,
+  "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+  "runner_pid": 1412828,
+  "observed_current": {
+    "problem_id": "964",
+    "stage": "author",
+    "started_at": "2026-10-25T17:51:33.761526+00:00",
+    "run_id": "964-author-da971470b79b"
+  }
+}

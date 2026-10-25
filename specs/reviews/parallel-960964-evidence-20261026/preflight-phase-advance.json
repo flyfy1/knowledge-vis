@@ -1,0 +1,17 @@
+{
+  "observed_at": "2026-10-25T17:49:35.476223+00:00",
+  "prior_guard": {
+    "head": "8cedba5490bb862133f157a9d6af619cee323fb9",
+    "run": "780-fix-254724282282"
+  },
+  "fresh_observation": {
+    "head": "8063cd1919c3816eb74f2096c0afe51e05bf75b6",
+    "run": "780-review-69d63636d18d",
+    "session": "01a1742e-1d0e-7372-9a6c-3ad3e2325d13",
+    "native_pid": 1410172
+  },
+  "same_shared_passed": true,
+  "immutable_lane_base": "8cedba5490bb862133f157a9d6af619cee323fb9",
+  "remote_mutations_before_guard_failure": false,
+  "resolution": "Refresh only central observation pins after actual fresh run and unchanged shared-tree verification; no launcher had been copied or run."
+}
