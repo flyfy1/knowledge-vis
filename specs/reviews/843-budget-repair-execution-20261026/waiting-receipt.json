@@ -1,0 +1,64 @@
+{
+  "owner": "843-budget-repair-20261026-91db47a2",
+  "status": "waiting-for-natural-boundary",
+  "created_at": "2026-10-25T21:14:48.023813+00:00",
+  "pre_stop_plan": {
+    "next_problem_id": "850",
+    "registration_ids": [],
+    "publication_bound": {
+      "eligible": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "818",
+        "827",
+        "828",
+        "829",
+        "834",
+        "839",
+        "843",
+        "847",
+        "960",
+        "968",
+        "972",
+        "975",
+        "980"
+      ],
+      "incoming": [],
+      "registration_ids": [],
+      "reopened_upper_bound_ids": [
+        "843"
+      ],
+      "upper_bound_ids": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "818",
+        "827",
+        "828",
+        "829",
+        "834",
+        "839",
+        "843",
+        "847",
+        "960",
+        "968",
+        "972",
+        "975",
+        "980"
+      ],
+      "upper_bound": 19
+    }
+  },
+  "stop": {
+    "owner": "843-budget-repair-20261026-91db47a2",
+    "created_at": "2026-10-25T21:14:58.775910+00:00",
+    "reason": "Finish current stage; adopt reviewed843-BUDGET-R1 evidence and reopen only843 through ordinary fix/review."
+  }
+}
