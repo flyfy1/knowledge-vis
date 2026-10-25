@@ -1,0 +1,28 @@
+{
+  "platform": "darwin",
+  "browser": "151.0.7922.34",
+  "url": "http://127.0.0.1:54123/leetcode/668/",
+  "geometry": {
+    "width": 1440,
+    "height": 1000,
+    "dpr": 1
+  },
+  "records": [
+    {
+      "fromSurface": false,
+      "success": false,
+      "error": "cdpSession.send: Protocol error (Page.captureScreenshot): Unable to capture screenshot"
+    },
+    {
+      "fromSurface": true,
+      "success": true,
+      "file": "capture-1.png",
+      "bytes": 179034
+    },
+    {
+      "fromSurface": false,
+      "success": false,
+      "error": "cdpSession.send: Protocol error (Page.captureScreenshot): Unable to capture screenshot"
+    }
+  ]
+}

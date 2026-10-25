@@ -1,0 +1,320 @@
+{
+  "kind": "author supplementary layout self-check",
+  "checks": [
+    {
+      "lang": "en",
+      "width": 262,
+      "preset": 0,
+      "text": "3×3 · k=5 · Example 1",
+      "textWidth": 174.69358825683594,
+      "padding": 30,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "gridWidth": 262,
+      "gridViewport": 262
+    },
+    {
+      "lang": "en",
+      "width": 262,
+      "preset": 1,
+      "text": "2×3 · k=6 · Example 2",
+      "textWidth": 178.00559997558594,
+      "padding": 30,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "gridWidth": 262,
+      "gridViewport": 262
+    },
+    {
+      "lang": "en",
+      "width": 262,
+      "preset": 2,
+      "text": "3×3 · k=4 · Skipped count",
+      "textWidth": 208.18161010742188,
+      "padding": 30,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "gridWidth": 262,
+      "gridViewport": 262
+    },
+    {
+      "lang": "en",
+      "width": 262,
+      "preset": 3,
+      "text": "1×7 · k=4 · One row",
+      "textWidth": 158.3896026611328,
+      "padding": 30,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "gridWidth": 262,
+      "gridViewport": 262
+    },
+    {
+      "lang": "en",
+      "width": 262,
+      "preset": 4,
+      "text": "1×1 · k=1 · Already done",
+      "textWidth": 188.8216094970703,
+      "padding": 30,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "gridWidth": 262,
+      "gridViewport": 262
+    },
+    {
+      "lang": "en",
+      "width": 262,
+      "preset": 5,
+      "text": "4×5 · k=1 · First rank",
+      "textWidth": 167.86160278320312,
+      "padding": 30,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "gridWidth": 262,
+      "gridViewport": 262
+    },
+    {
+      "lang": "en",
+      "width": 332,
+      "preset": 0,
+      "text": "3×3 · k=5 · Example 1",
+      "textWidth": 174.69358825683594,
+      "padding": 30,
+      "bodyWidth": 390,
+      "viewport": 390,
+      "gridWidth": 332,
+      "gridViewport": 332
+    },
+    {
+      "lang": "en",
+      "width": 332,
+      "preset": 1,
+      "text": "2×3 · k=6 · Example 2",
+      "textWidth": 178.00559997558594,
+      "padding": 30,
+      "bodyWidth": 390,
+      "viewport": 390,
+      "gridWidth": 332,
+      "gridViewport": 332
+    },
+    {
+      "lang": "en",
+      "width": 332,
+      "preset": 2,
+      "text": "3×3 · k=4 · Skipped count",
+      "textWidth": 208.18161010742188,
+      "padding": 30,
+      "bodyWidth": 390,
+      "viewport": 390,
+      "gridWidth": 332,
+      "gridViewport": 332
+    },
+    {
+      "lang": "en",
+      "width": 332,
+      "preset": 3,
+      "text": "1×7 · k=4 · One row",
+      "textWidth": 158.3896026611328,
+      "padding": 30,
+      "bodyWidth": 390,
+      "viewport": 390,
+      "gridWidth": 332,
+      "gridViewport": 332
+    },
+    {
+      "lang": "en",
+      "width": 332,
+      "preset": 4,
+      "text": "1×1 · k=1 · Already done",
+      "textWidth": 188.8216094970703,
+      "padding": 30,
+      "bodyWidth": 390,
+      "viewport": 390,
+      "gridWidth": 332,
+      "gridViewport": 332
+    },
+    {
+      "lang": "en",
+      "width": 332,
+      "preset": 5,
+      "text": "4×5 · k=1 · First rank",
+      "textWidth": 167.86160278320312,
+      "padding": 30,
+      "bodyWidth": 390,
+      "viewport": 390,
+      "gridWidth": 332,
+      "gridViewport": 332
+    },
+    {
+      "lang": "en",
+      "historyKeyboardScroll": 40
+    },
+    {
+      "lang": "en",
+      "syntheticWrapping": {
+        "width": 262,
+        "scroll": 259,
+        "viewport": 320,
+        "body": 320
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 262,
+      "preset": 0,
+      "text": "3×3 · k=5 · 官方例 1",
+      "textWidth": 158.37362670898438,
+      "padding": 30,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "gridWidth": 262,
+      "gridViewport": 262
+    },
+    {
+      "lang": "zh",
+      "width": 262,
+      "preset": 1,
+      "text": "2×3 · k=6 · 官方例 2",
+      "textWidth": 161.68563842773438,
+      "padding": 30,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "gridWidth": 262,
+      "gridViewport": 262
+    },
+    {
+      "lang": "zh",
+      "width": 262,
+      "preset": 2,
+      "text": "3×3 · k=4 · 跳过等号",
+      "textWidth": 162.43763732910156,
+      "padding": 30,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "gridWidth": 262,
+      "gridViewport": 262
+    },
+    {
+      "lang": "zh",
+      "width": 262,
+      "preset": 3,
+      "text": "1×7 · k=4 · 单行",
+      "textWidth": 126.00563049316406,
+      "padding": 30,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "gridWidth": 262,
+      "gridViewport": 262
+    },
+    {
+      "lang": "zh",
+      "width": 262,
+      "preset": 4,
+      "text": "1×1 · k=1 · 已收敛",
+      "textWidth": 136.67764282226562,
+      "padding": 30,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "gridWidth": 262,
+      "gridViewport": 262
+    },
+    {
+      "lang": "zh",
+      "width": 262,
+      "preset": 5,
+      "text": "4×5 · k=1 · 最小名次",
+      "textWidth": 159.3656463623047,
+      "padding": 30,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "gridWidth": 262,
+      "gridViewport": 262
+    },
+    {
+      "lang": "zh",
+      "width": 332,
+      "preset": 0,
+      "text": "3×3 · k=5 · 官方例 1",
+      "textWidth": 158.37362670898438,
+      "padding": 30,
+      "bodyWidth": 390,
+      "viewport": 390,
+      "gridWidth": 332,
+      "gridViewport": 332
+    },
+    {
+      "lang": "zh",
+      "width": 332,
+      "preset": 1,
+      "text": "2×3 · k=6 · 官方例 2",
+      "textWidth": 161.68563842773438,
+      "padding": 30,
+      "bodyWidth": 390,
+      "viewport": 390,
+      "gridWidth": 332,
+      "gridViewport": 332
+    },
+    {
+      "lang": "zh",
+      "width": 332,
+      "preset": 2,
+      "text": "3×3 · k=4 · 跳过等号",
+      "textWidth": 162.43763732910156,
+      "padding": 30,
+      "bodyWidth": 390,
+      "viewport": 390,
+      "gridWidth": 332,
+      "gridViewport": 332
+    },
+    {
+      "lang": "zh",
+      "width": 332,
+      "preset": 3,
+      "text": "1×7 · k=4 · 单行",
+      "textWidth": 126.00563049316406,
+      "padding": 30,
+      "bodyWidth": 390,
+      "viewport": 390,
+      "gridWidth": 332,
+      "gridViewport": 332
+    },
+    {
+      "lang": "zh",
+      "width": 332,
+      "preset": 4,
+      "text": "1×1 · k=1 · 已收敛",
+      "textWidth": 136.67764282226562,
+      "padding": 30,
+      "bodyWidth": 390,
+      "viewport": 390,
+      "gridWidth": 332,
+      "gridViewport": 332
+    },
+    {
+      "lang": "zh",
+      "width": 332,
+      "preset": 5,
+      "text": "4×5 · k=1 · 最小名次",
+      "textWidth": 159.3656463623047,
+      "padding": 30,
+      "bodyWidth": 390,
+      "viewport": 390,
+      "gridWidth": 332,
+      "gridViewport": 332
+    },
+    {
+      "lang": "zh",
+      "historyKeyboardScroll": 308
+    },
+    {
+      "lang": "zh",
+      "syntheticWrapping": {
+        "width": 262,
+        "scroll": 259,
+        "viewport": 320,
+        "body": 320
+      }
+    }
+  ],
+  "errors": []
+}

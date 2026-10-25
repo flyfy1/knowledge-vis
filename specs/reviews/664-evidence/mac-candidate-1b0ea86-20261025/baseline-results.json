@@ -1,0 +1,15 @@
+{
+  "executed": "BFS code captured from rendered DOM",
+  "cases": {
+    "a": 1,
+    "aba": 2,
+    "aaabbb": 2,
+    "abc": 3,
+    "abab": 3,
+    "ababa": 3,
+    "abcba": 3,
+    "aabb": 2,
+    "abca": 3,
+    "bcacba": 4
+  }
+}
