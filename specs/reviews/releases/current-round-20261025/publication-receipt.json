@@ -1,0 +1,855 @@
+{
+  "release": {
+    "id": "b045af6e30a64e1fa2557bad275f79a2",
+    "revision": "e64356fbeaa7fb1c8793d1a8febcac4ae8e9e394",
+    "files": {
+      "leetcode/239/app.js": "96830337cbcccb4dfd89cdd36dc5aa613ac461c0821bd2e3a095b2dfeb6d0e6c",
+      "leetcode/239/copy.js": "163e37433451910b173920fb3ac64672420d3c460939a176269ed4ebe16a1ed8",
+      "leetcode/239/core.js": "80e75a099b98c1c8f6fdd2c16def82544d623aeb2b745f321d21fbd74f63f4fd",
+      "leetcode/239/index.html": "b59b1fcda824c5f956078ee4921c9baf6389a2e6b5c429f91450581357a80770",
+      "leetcode/239/python-code.js": "f0f79ef1d414e944365cae4f2bd7b33925bd9498e8f93c6ec58b81dbe3135a0e",
+      "leetcode/239/solution.py": "6be17b3f7dae2dbe1627d4fc6fd17d1a7cc1ac55cc5adf7c4ca18d03af576f8d",
+      "leetcode/736/app.js": "c007d19dc7ed14b192234d0c5f4757e2d01ad5574243aa33d0b251fbbd44034f",
+      "leetcode/736/baseline-code.js": "54e5af996a59a9a1c92fbf836775fda317aa3f4c2bf35a551e73c1cf060eef83",
+      "leetcode/736/copy.js": "1185c107f0193f18f55ff69a09425440a6d571c33c6e8a6bf26b7a0312954e25",
+      "leetcode/736/core.js": "8ce489fdffb1507333002b2fcca5e350d0ef86231310272d404cd6e7dcaa9f3a",
+      "leetcode/736/index.html": "fba6d09140f464e8f45f1bfea3c6cb8a2bcb867212eb2f05c3a7798b51f37b0b",
+      "leetcode/736/python-code.js": "90d9e2e1dd0af989a583f473b775630ae7da7f659e3eab1857f80def2d4be3bb",
+      "leetcode/736/solution.py": "bd92aee8e5f59738c585a54d6bb68949a408d6a7e71bb02d7b78fee3dc4874f2",
+      "leetcode/736/style.css": "c597dc5dc38e75a56be2349f7f67eb6a52bf5d92f5662397b25863350355c667",
+      "leetcode/741/app.js": "2d805d019682b6232ef899036e6ffe71f4d54c9519d0def30f496210df5f206e",
+      "leetcode/741/copy.js": "742475f45d54531162534685a55be2f5041db36b4c73275a03eb23ac72dc4594",
+      "leetcode/741/core.js": "3749afe62d7bec57813d2894494023becf2dc642318c0f374508f8bb57e9fcb9",
+      "leetcode/741/index.html": "e57fe219c4ffe544db1298fbe0c35332f7599399bb5fd9cc2d9a72b0fc6b7e39",
+      "leetcode/741/python-code.js": "a5339ef1eb509f17b67eed1300f07bb9506cf7190a979acaf8ed3fd27218a70c",
+      "leetcode/741/solution.py": "bf7335abc35abe708bee936858f16b11e1a0e6c7968c6cb833fc47d97208a786",
+      "leetcode/741/style.css": "2b6f107c91536796ff586efae7d93d214783f7787a268d40e5b3335392db7db9",
+      "leetcode/745/app.js": "04776b1644d3235516b8acc25005e18084d486fb0ca90ec2a59dd680a27806af",
+      "leetcode/745/copy.js": "e1a00bc97197eb40212ceb9a0eab3f8936c433a16090b3d36ecec1317e666e18",
+      "leetcode/745/core.js": "ebc2cf087ab5da6594c79c824f493ea935a2c4d535184979f88f1d61f926138b",
+      "leetcode/745/index.html": "8592d1ca13aa5553db445fe7542d473cf30f1fe2850fa72ac2826e17c3066504",
+      "leetcode/745/python-code.js": "8f70490f7220df8e5d391a23113da7e93e05fab10d2a7253f66e355b60303b58",
+      "leetcode/745/solution.py": "f1e4b4da6652b7a25b26648e9765054a683600c3db5c7ad038c36597dea1a259",
+      "leetcode/745/style.css": "54e796fc91881b9b35dd17d440b07b13469896d45bd606e184d7e020472396f5",
+      "leetcode/749/app.js": "8be91b12f420e4971318e4f53b7a42f56ef2b05cffcc4e9361a3036fe9ef53aa",
+      "leetcode/749/candidate-sha256.json": "d4ae9e13177afbd39f8bc57cb82fa4f68eeb8cb8d2715a01534c7b86aaa20655",
+      "leetcode/749/copy.js": "d6e702bba52cda8f9c01074f4a31b827ea7433a9a102e57f925f83c1b8b70464",
+      "leetcode/749/core.js": "da43de1cb1471e149182d7a5a87315ca8a9795489f18d00ff016465e286500a1",
+      "leetcode/749/index.html": "d3bfe705c7cb3c782a32e9174d34f12a0b01d94c6e06ef32d69cb4f54b08d3b8",
+      "leetcode/749/python-code.js": "f6193d56b86feaada395a52a7e44780f567c3e7ec31996307946becc2e962466",
+      "leetcode/749/solution.py": "153a1fd72752b7e7f2b4f325897c4ef0e41b03480ffad96b1797cbaa32ee80c5",
+      "leetcode/749/style.css": "f33ba510e3ce1d051ab96432d5594f9acaa53561a87ae5a9c37ff5883d74daf0",
+      "leetcode/753/app.js": "19d7a825c992baa83c05fb589dfb88b6f8cbec2af884e20a0cccd1a5ce9215f3",
+      "leetcode/753/copy.js": "28208f75a9bc5768a052ce50afae3729e44571bf7919a322652dc5b4d33feb5b",
+      "leetcode/753/core.js": "4e043f47746f447da95d885d60fb328e8609f16f8e00ed1724d4aacd520a0f76",
+      "leetcode/753/index.html": "e41f4cd6de74538dad23cccc5836b005fbd74d90712a698fdc312466a63676cb",
+      "leetcode/753/python-code.js": "4f228995a34c7d533a6e8f349b83c0248ec7fd678990924c28651fbe306f686b",
+      "leetcode/753/solution.py": "ccbc1be89985a1aa961d5e37c25dac6db9c33982e1a660ddc3e603aa15a47147",
+      "leetcode/753/style.css": "6e2706f65268cce899041ace786574e4b9dbb03893142fcb160b61638d99b1ca",
+      "leetcode/757/app.js": "432651f9942fcb2928c94ec2c00445f530b8cf1f1996c9a0e0020f8a4905d5e0",
+      "leetcode/757/copy.js": "1962d59900d556542c6400137f3e9e6941eb59b7b959def7dfbb02617b750b4d",
+      "leetcode/757/core.js": "5900928d98dcac96fcec8bf4bd3420d53e5687f6d0cd3daf52b7dcc16d75a878",
+      "leetcode/757/index.html": "8a9a9bacbc0efaece262e1d8014f93da716d0b6293a8ed390a08e38b6f0a5058",
+      "leetcode/757/python-code.js": "6ee79f6dc1bee9d566efe510c4ee6b4a32ee2554e715ca8945aa28a4a61cc9cc",
+      "leetcode/757/solution.py": "66910482435d4c150c3c36593800ea1fcb8dbf23c012e6fb9369ddb762a1a0f1",
+      "leetcode/757/style.css": "d30e998956cc6d2df6bc33cd5cff5364dc752a1adf6997f10fec67a92bdc1356",
+      "leetcode/761/app.js": "2563436a84c0ef14479fdb39d5439d9117b9c55a4cc71cccf0da566dae1643c8",
+      "leetcode/761/copy.js": "ee0e753a01ce3ac2426a6618ef7dc4a0eb120e5996d858b6b166b7827f6bb86b",
+      "leetcode/761/core.js": "8480043c34d07ccd3336bf2fcd45378f76c2d94684c4576e363f5c84e22abe27",
+      "leetcode/761/index.html": "a2642c735267c9a8e130a7716b66c07bf64f404a0bf0401651f21d8e92d6864d",
+      "leetcode/761/python-code.js": "5e63254035509e4fb935384751eb2e33ea8fd22aba0d77ae4cf6606af047d7d8",
+      "leetcode/761/solution.py": "9f03a979041168cf7b8a2ca28be8786aaa989a94e0405c2f9537f41ab4a5e5c2",
+      "leetcode/761/style.css": "828bfde2eb7df53530e4a6f50c29220a4047dd9d4eec87013a7b1285091f506c",
+      "leetcode/765/app.js": "0fc5549f2f851026cb4b27d0fa2d6a8ef0142bfee369a638b834360ba83f2b81",
+      "leetcode/765/copy.js": "39d1e972ab35e68d70d6f4b80159a176755473d788b9f900307a8598b5f42a5e",
+      "leetcode/765/core.js": "4255509493625b564f1a41587db3b9773240d26cd5b9c4a30bc1668a09f10a45",
+      "leetcode/765/index.html": "008d39faf3eb4a00bfeaa138c5bf1838f92efefbe371de1fb399931fd0e3538d",
+      "leetcode/765/python-code.js": "0c77a1642e4b6bedd280193ecb002a336966ba1156e76d91eefd75b74eb85318",
+      "leetcode/765/solution.py": "c359058093535eb91b174ca647cc7f607564e11672dcd63951fc93654968ddb7",
+      "leetcode/765/style.css": "9e87196287b5c01697bd5497122f8ab4c723f0abb795a55fd0a7f755ee3c3326",
+      "leetcode/768/app.js": "673c8942de86d8d1a73ca3ae315a4715bca83e9706ddf9dc4b4e92bb60261a60",
+      "leetcode/768/copy.js": "f6bdad240169a9e90aee2bd47263e18fbab9baa430a5b09435c56ff2b80ca572",
+      "leetcode/768/core.js": "da2defadc45b514892fdc619d439fccac5f8622d545aa51f1c049413d8b0ff9f",
+      "leetcode/768/index.html": "1b12c7a745e9729fade65f92fa50a9b62a550ba126c1138ba134a6d658aec747",
+      "leetcode/768/python-code.js": "f18843306ad45ec856f582b72272d9b4d7495671cb652fe99a0df368e3c2c2c2",
+      "leetcode/768/solution.py": "b378baafbc25735adbe6671dae0391c67e5c0ae9e7a76d59115c3aaf1714d43c",
+      "leetcode/768/style.css": "b69bb0be4b58869549f041f34071ba0cc966e509b9b918ef21b38fc100d7d044",
+      "leetcode/770/app.js": "6d63c1849d50d5d8d670e60f69501af3014d52f56d22ea01bf28487a8acdb3b1",
+      "leetcode/770/baseline-code.js": "7e279ac491c6a94372f3d09447c25081e4bf97c9f59bf03345e347a1610cd3ba",
+      "leetcode/770/baseline.py": "b676dc1ed6ffe995b5d635cbe646d2109a118da5a404889d19acb772afc7fbb6",
+      "leetcode/770/candidate-manifest.json": "94b550dc5bbc9e816861feeb6543f178e6e4961ebb39aad8be4778f2457aa8cc",
+      "leetcode/770/copy.js": "904005d2d16b437f23f16a07f721f8b6dbd385c13fa96cbda689a033e5dd0c49",
+      "leetcode/770/core.js": "34901091c2baeaaf8a671fc9e3f79f5c5c3de0967deb7c39d626d3e7a590d20c",
+      "leetcode/770/index.html": "234dfc8b2d212c236b525fec77255fef47035c281537ab82918c17ddcc09f707",
+      "leetcode/770/python-code.js": "8ff67a023b9c67c9b74a7daa44961812d6a94ede5dfc6c2967392f4e0f7f806d",
+      "leetcode/770/solution.py": "2ad2f65964e748413ff9533765df74d7cef8cf1dae23b3cd74174acf5102ff86",
+      "leetcode/770/style.css": "b2b856f36c9e1fccdb5ff995c139b11d9cc722392f9a849d8de8561570ec4756",
+      "leetcode/773/app.js": "4fbf3c58d51a0570465f64f58645dd9efdc4a9d2ef7cda37c8b73b40f44c5a66",
+      "leetcode/773/candidate.json": "0bb24fd09109bba0e23f01b53450379f49884c89c3099d52f7599809976477de",
+      "leetcode/773/copy.js": "e9d3f22b5fb9c5194ff736c00302a987e91cb13124f13689282d416b4ea6463e",
+      "leetcode/773/core.js": "815d9b038f06cbcbbee1a2fd95b4e8c478668b90a6996e98b41f8755194b09c9",
+      "leetcode/773/index.html": "8cc3be30e0bb5251cc797cb3c753f14d1e4ccd4595126dd46aa5872a403f8bb5",
+      "leetcode/773/python-code.js": "21dbfcbf02be53bfc6c88cbc2e94f2cbf5b0d97a050ce7bcc1f02664bab069e5",
+      "leetcode/773/solution.py": "a24fdc4f8c888cd004edaa9aafc7d6b347e0979a554d483c8d98fcdc62765149",
+      "leetcode/773/style.css": "9085f29ec062afb15166ad311eda6878c94cad8638c58667ecfee91d2e056bef",
+      "leetcode/778/app.js": "6792e93b455abb16eb90b69829e1bea3d79d03e8f07eb23d3c8355d068d5200e",
+      "leetcode/778/copy.js": "483a08db758b40dd8dc29c5fb02d6a957b6b3edd5e3210d2aa490ccc0b65b665",
+      "leetcode/778/core.js": "94259a7ec75500920fdfb5f57b0c6d2b8dbb72c90135f4c22c67bde2a6ce844e",
+      "leetcode/778/index.html": "c30ffcf501f3075507e997d0c02795b4eff7e4d57c119489350e5e89669ee3f5",
+      "leetcode/778/python-code.js": "db944bac1d8be55eafbbee743fcb8546d15f9e57f25c9f93248f324eb287cee0",
+      "leetcode/778/solution.py": "a72bd5d22b5630034d5dce0589afc6056c3bd98cc0b4c5f7eb8fd747a143bbbb",
+      "leetcode/778/style.css": "1708cc43c064790dba2531166db706c5b9050019ea7168ca50a83178e4e9c88c",
+      "leetcode/780/app.js": "980ee1ffc6294fc7d50e1d81726547c868454ce54a55cd227ca1d6d0f6c34c36",
+      "leetcode/780/candidate.json": "4d6959c9e716c6dc20f8ab0ff95e4f9851f0ad980f15cc9ac98a0f8a0859ad21",
+      "leetcode/780/copy.js": "5db7c700615f16b2b7047d08efcc92271e4d80e1c51acee5b04074966ff28eec",
+      "leetcode/780/core.js": "7b2f64745f5a8bdbbe10ef31e66ca72977a3841f9652a3bf14292c025f183d93",
+      "leetcode/780/index.html": "07504ffdf07cd570bcd898cc946c1674f1ddf1081b8910c81f4b2e9e81f7b7e2",
+      "leetcode/780/python-code.js": "e3e6d3cf79a7be1a04296a09009cf19b5566be717b9260c2f70ecc040dca838b",
+      "leetcode/780/solution.py": "3da0f1594a2bef609c96da97c2d41b6a93fabd84246a3ac7b312432e90e126a5",
+      "leetcode/780/style.css": "bad6bc8dde949a4272e9dfb596c0a80000eabc291f82337658d4802838912e38",
+      "leetcode/782/app.js": "d92d4257660ce48fdfc73828ad707b9b66ec1a0b1ed73dd323c6288c0e68e770",
+      "leetcode/782/candidate-mac-proof-handoff-20261025.json": "bbc7af9fef7092099ea07e9497819f95655dcd7b389288b6e32be50a2651d95e",
+      "leetcode/782/candidate-repair-20261025.json": "923c04e7d3da65df6f18ee2bea5e5883e95fe4323a7e7ffc9c16f5ba0614e6d5",
+      "leetcode/782/candidate.json": "37a8c88946ce9c66082ba394bc24a5796a27208be7d0fa7526de9b410ea15ca1",
+      "leetcode/782/copy.js": "34393454a920dc4869604110ba8135177761d6adfa46d2137357396427280ceb",
+      "leetcode/782/core.js": "0525040215ca3a26f13a25c14c46c1bc4575fa662d2cd7672cff2d650bee3b79",
+      "leetcode/782/index.html": "a7450470858b323735e45d29d63954bbbc5cb1f0adc4c21d6a02080b0f2eeda5",
+      "leetcode/782/python-code.js": "2fd3278af6bdb4ad65fa8ebe222bf40f2558ff08ece2555be0525438c1154f2e",
+      "leetcode/782/solution.py": "ac8b4b7d27f3c06300f98b9f50b559512c29c16ea35b6f62dc2545fb9a326e0b",
+      "leetcode/782/style.css": "567d69d0df944d63cafa57653808eaf128a9c76885a46263a255d51c678d68cc",
+      "leetcode/803/app.js": "d205c21062638b47d04c1d288c3e31e557add4b458b34f30be0a953eab7a31b1",
+      "leetcode/803/baseline.py": "7623135ae2c2a4b23b0592ec7806289c9876a5eb5772edabb0e755b3c0eb3ebc",
+      "leetcode/803/copy.js": "8f84f8294d716f66a44043b08d1f8e2a2419258f2cc49b7050bce06da4569678",
+      "leetcode/803/core.js": "988d729439ca24eb72786d8157c8e4dc03ff9b0cb7019c05753ff6327b94e4af",
+      "leetcode/803/index.html": "1bca5af1a0de82c3f35c7f6f8e948425e3e9c61f63802b7cdd36e2576d8d3fa3",
+      "leetcode/803/python-code.js": "3b3ed84ab692de83a572e5136cc538407b97feb70ee73df1ff82125d8b9296bf",
+      "leetcode/803/solution.py": "e22005d6ed4213dfd82d59b80684bcb65231c77aad847496964b0647f1b3f389",
+      "leetcode/803/style.css": "ca0553a6943f81e5d927c3ae5d8c48e2702fb253e571815166f0109cc33ffd75",
+      "leetcode/805/app.js": "b1a33a81299d41be597f64f0680fdb65e67ba84e8f3005a99637440074a2a4b3",
+      "leetcode/805/copy.js": "6a7ee8bc5cb86fa2bebeec91d906d3360971d54952e80b122ed3f8533294c1d8",
+      "leetcode/805/core.js": "294d7f664b692b5200c02d69e212e0f3072199efe5a332f5c244646ce5d1edec",
+      "leetcode/805/index.html": "ed798e2c2e4bf417ff5a6412217fffa133faa893a843ee4606d14be9ab594c18",
+      "leetcode/805/python-code.js": "efc65387c57551076c1576bf41fedc1451c5a5536e57571673f83225f88a288d",
+      "leetcode/805/solution.py": "8ddf768d68632fe00838ed1bb43ba5cb4c8b0db27094b682eec98afa3a750dd9",
+      "leetcode/805/style.css": "7ad48c421b85a9d8c2aec2abe5316d46b11d1c58fb1d288528dc2d3317e8f8fb",
+      "leetcode/problems.config.js": "3e670e3847e6f21b1da1182be07aca1707031f8b326e7913a8770c2a480720d1",
+      "leetcode/index.html": "06f7bb1cee1dea73a4817091d0f2e098fc87a5ea0b86c2acd170087c3621ac9b",
+      "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+      "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+    },
+    "public_files": {
+      "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+      "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+      "leetcode/239/app.js": "96830337cbcccb4dfd89cdd36dc5aa613ac461c0821bd2e3a095b2dfeb6d0e6c",
+      "leetcode/239/copy.js": "163e37433451910b173920fb3ac64672420d3c460939a176269ed4ebe16a1ed8",
+      "leetcode/239/core.js": "80e75a099b98c1c8f6fdd2c16def82544d623aeb2b745f321d21fbd74f63f4fd",
+      "leetcode/239/index.html": "b59b1fcda824c5f956078ee4921c9baf6389a2e6b5c429f91450581357a80770",
+      "leetcode/239/python-code.js": "f0f79ef1d414e944365cae4f2bd7b33925bd9498e8f93c6ec58b81dbe3135a0e",
+      "leetcode/239/solution.py": "6be17b3f7dae2dbe1627d4fc6fd17d1a7cc1ac55cc5adf7c4ca18d03af576f8d",
+      "leetcode/736/app.js": "c007d19dc7ed14b192234d0c5f4757e2d01ad5574243aa33d0b251fbbd44034f",
+      "leetcode/736/baseline-code.js": "54e5af996a59a9a1c92fbf836775fda317aa3f4c2bf35a551e73c1cf060eef83",
+      "leetcode/736/copy.js": "1185c107f0193f18f55ff69a09425440a6d571c33c6e8a6bf26b7a0312954e25",
+      "leetcode/736/core.js": "8ce489fdffb1507333002b2fcca5e350d0ef86231310272d404cd6e7dcaa9f3a",
+      "leetcode/736/index.html": "fba6d09140f464e8f45f1bfea3c6cb8a2bcb867212eb2f05c3a7798b51f37b0b",
+      "leetcode/736/python-code.js": "90d9e2e1dd0af989a583f473b775630ae7da7f659e3eab1857f80def2d4be3bb",
+      "leetcode/736/solution.py": "bd92aee8e5f59738c585a54d6bb68949a408d6a7e71bb02d7b78fee3dc4874f2",
+      "leetcode/736/style.css": "c597dc5dc38e75a56be2349f7f67eb6a52bf5d92f5662397b25863350355c667",
+      "leetcode/741/app.js": "2d805d019682b6232ef899036e6ffe71f4d54c9519d0def30f496210df5f206e",
+      "leetcode/741/copy.js": "742475f45d54531162534685a55be2f5041db36b4c73275a03eb23ac72dc4594",
+      "leetcode/741/core.js": "3749afe62d7bec57813d2894494023becf2dc642318c0f374508f8bb57e9fcb9",
+      "leetcode/741/index.html": "e57fe219c4ffe544db1298fbe0c35332f7599399bb5fd9cc2d9a72b0fc6b7e39",
+      "leetcode/741/python-code.js": "a5339ef1eb509f17b67eed1300f07bb9506cf7190a979acaf8ed3fd27218a70c",
+      "leetcode/741/solution.py": "bf7335abc35abe708bee936858f16b11e1a0e6c7968c6cb833fc47d97208a786",
+      "leetcode/741/style.css": "2b6f107c91536796ff586efae7d93d214783f7787a268d40e5b3335392db7db9",
+      "leetcode/745/app.js": "04776b1644d3235516b8acc25005e18084d486fb0ca90ec2a59dd680a27806af",
+      "leetcode/745/copy.js": "e1a00bc97197eb40212ceb9a0eab3f8936c433a16090b3d36ecec1317e666e18",
+      "leetcode/745/core.js": "ebc2cf087ab5da6594c79c824f493ea935a2c4d535184979f88f1d61f926138b",
+      "leetcode/745/index.html": "8592d1ca13aa5553db445fe7542d473cf30f1fe2850fa72ac2826e17c3066504",
+      "leetcode/745/python-code.js": "8f70490f7220df8e5d391a23113da7e93e05fab10d2a7253f66e355b60303b58",
+      "leetcode/745/solution.py": "f1e4b4da6652b7a25b26648e9765054a683600c3db5c7ad038c36597dea1a259",
+      "leetcode/745/style.css": "54e796fc91881b9b35dd17d440b07b13469896d45bd606e184d7e020472396f5",
+      "leetcode/749/app.js": "8be91b12f420e4971318e4f53b7a42f56ef2b05cffcc4e9361a3036fe9ef53aa",
+      "leetcode/749/candidate-sha256.json": "d4ae9e13177afbd39f8bc57cb82fa4f68eeb8cb8d2715a01534c7b86aaa20655",
+      "leetcode/749/copy.js": "d6e702bba52cda8f9c01074f4a31b827ea7433a9a102e57f925f83c1b8b70464",
+      "leetcode/749/core.js": "da43de1cb1471e149182d7a5a87315ca8a9795489f18d00ff016465e286500a1",
+      "leetcode/749/index.html": "d3bfe705c7cb3c782a32e9174d34f12a0b01d94c6e06ef32d69cb4f54b08d3b8",
+      "leetcode/749/python-code.js": "f6193d56b86feaada395a52a7e44780f567c3e7ec31996307946becc2e962466",
+      "leetcode/749/solution.py": "153a1fd72752b7e7f2b4f325897c4ef0e41b03480ffad96b1797cbaa32ee80c5",
+      "leetcode/749/style.css": "f33ba510e3ce1d051ab96432d5594f9acaa53561a87ae5a9c37ff5883d74daf0",
+      "leetcode/753/app.js": "19d7a825c992baa83c05fb589dfb88b6f8cbec2af884e20a0cccd1a5ce9215f3",
+      "leetcode/753/copy.js": "28208f75a9bc5768a052ce50afae3729e44571bf7919a322652dc5b4d33feb5b",
+      "leetcode/753/core.js": "4e043f47746f447da95d885d60fb328e8609f16f8e00ed1724d4aacd520a0f76",
+      "leetcode/753/index.html": "e41f4cd6de74538dad23cccc5836b005fbd74d90712a698fdc312466a63676cb",
+      "leetcode/753/python-code.js": "4f228995a34c7d533a6e8f349b83c0248ec7fd678990924c28651fbe306f686b",
+      "leetcode/753/solution.py": "ccbc1be89985a1aa961d5e37c25dac6db9c33982e1a660ddc3e603aa15a47147",
+      "leetcode/753/style.css": "6e2706f65268cce899041ace786574e4b9dbb03893142fcb160b61638d99b1ca",
+      "leetcode/757/app.js": "432651f9942fcb2928c94ec2c00445f530b8cf1f1996c9a0e0020f8a4905d5e0",
+      "leetcode/757/copy.js": "1962d59900d556542c6400137f3e9e6941eb59b7b959def7dfbb02617b750b4d",
+      "leetcode/757/core.js": "5900928d98dcac96fcec8bf4bd3420d53e5687f6d0cd3daf52b7dcc16d75a878",
+      "leetcode/757/index.html": "8a9a9bacbc0efaece262e1d8014f93da716d0b6293a8ed390a08e38b6f0a5058",
+      "leetcode/757/python-code.js": "6ee79f6dc1bee9d566efe510c4ee6b4a32ee2554e715ca8945aa28a4a61cc9cc",
+      "leetcode/757/solution.py": "66910482435d4c150c3c36593800ea1fcb8dbf23c012e6fb9369ddb762a1a0f1",
+      "leetcode/757/style.css": "d30e998956cc6d2df6bc33cd5cff5364dc752a1adf6997f10fec67a92bdc1356",
+      "leetcode/761/app.js": "2563436a84c0ef14479fdb39d5439d9117b9c55a4cc71cccf0da566dae1643c8",
+      "leetcode/761/copy.js": "ee0e753a01ce3ac2426a6618ef7dc4a0eb120e5996d858b6b166b7827f6bb86b",
+      "leetcode/761/core.js": "8480043c34d07ccd3336bf2fcd45378f76c2d94684c4576e363f5c84e22abe27",
+      "leetcode/761/index.html": "a2642c735267c9a8e130a7716b66c07bf64f404a0bf0401651f21d8e92d6864d",
+      "leetcode/761/python-code.js": "5e63254035509e4fb935384751eb2e33ea8fd22aba0d77ae4cf6606af047d7d8",
+      "leetcode/761/solution.py": "9f03a979041168cf7b8a2ca28be8786aaa989a94e0405c2f9537f41ab4a5e5c2",
+      "leetcode/761/style.css": "828bfde2eb7df53530e4a6f50c29220a4047dd9d4eec87013a7b1285091f506c",
+      "leetcode/765/app.js": "0fc5549f2f851026cb4b27d0fa2d6a8ef0142bfee369a638b834360ba83f2b81",
+      "leetcode/765/copy.js": "39d1e972ab35e68d70d6f4b80159a176755473d788b9f900307a8598b5f42a5e",
+      "leetcode/765/core.js": "4255509493625b564f1a41587db3b9773240d26cd5b9c4a30bc1668a09f10a45",
+      "leetcode/765/index.html": "008d39faf3eb4a00bfeaa138c5bf1838f92efefbe371de1fb399931fd0e3538d",
+      "leetcode/765/python-code.js": "0c77a1642e4b6bedd280193ecb002a336966ba1156e76d91eefd75b74eb85318",
+      "leetcode/765/solution.py": "c359058093535eb91b174ca647cc7f607564e11672dcd63951fc93654968ddb7",
+      "leetcode/765/style.css": "9e87196287b5c01697bd5497122f8ab4c723f0abb795a55fd0a7f755ee3c3326",
+      "leetcode/768/app.js": "673c8942de86d8d1a73ca3ae315a4715bca83e9706ddf9dc4b4e92bb60261a60",
+      "leetcode/768/copy.js": "f6bdad240169a9e90aee2bd47263e18fbab9baa430a5b09435c56ff2b80ca572",
+      "leetcode/768/core.js": "da2defadc45b514892fdc619d439fccac5f8622d545aa51f1c049413d8b0ff9f",
+      "leetcode/768/index.html": "1b12c7a745e9729fade65f92fa50a9b62a550ba126c1138ba134a6d658aec747",
+      "leetcode/768/python-code.js": "f18843306ad45ec856f582b72272d9b4d7495671cb652fe99a0df368e3c2c2c2",
+      "leetcode/768/solution.py": "b378baafbc25735adbe6671dae0391c67e5c0ae9e7a76d59115c3aaf1714d43c",
+      "leetcode/768/style.css": "b69bb0be4b58869549f041f34071ba0cc966e509b9b918ef21b38fc100d7d044",
+      "leetcode/770/app.js": "6d63c1849d50d5d8d670e60f69501af3014d52f56d22ea01bf28487a8acdb3b1",
+      "leetcode/770/baseline-code.js": "7e279ac491c6a94372f3d09447c25081e4bf97c9f59bf03345e347a1610cd3ba",
+      "leetcode/770/baseline.py": "b676dc1ed6ffe995b5d635cbe646d2109a118da5a404889d19acb772afc7fbb6",
+      "leetcode/770/candidate-manifest.json": "94b550dc5bbc9e816861feeb6543f178e6e4961ebb39aad8be4778f2457aa8cc",
+      "leetcode/770/copy.js": "904005d2d16b437f23f16a07f721f8b6dbd385c13fa96cbda689a033e5dd0c49",
+      "leetcode/770/core.js": "34901091c2baeaaf8a671fc9e3f79f5c5c3de0967deb7c39d626d3e7a590d20c",
+      "leetcode/770/index.html": "234dfc8b2d212c236b525fec77255fef47035c281537ab82918c17ddcc09f707",
+      "leetcode/770/python-code.js": "8ff67a023b9c67c9b74a7daa44961812d6a94ede5dfc6c2967392f4e0f7f806d",
+      "leetcode/770/solution.py": "2ad2f65964e748413ff9533765df74d7cef8cf1dae23b3cd74174acf5102ff86",
+      "leetcode/770/style.css": "b2b856f36c9e1fccdb5ff995c139b11d9cc722392f9a849d8de8561570ec4756",
+      "leetcode/773/app.js": "4fbf3c58d51a0570465f64f58645dd9efdc4a9d2ef7cda37c8b73b40f44c5a66",
+      "leetcode/773/candidate.json": "0bb24fd09109bba0e23f01b53450379f49884c89c3099d52f7599809976477de",
+      "leetcode/773/copy.js": "e9d3f22b5fb9c5194ff736c00302a987e91cb13124f13689282d416b4ea6463e",
+      "leetcode/773/core.js": "815d9b038f06cbcbbee1a2fd95b4e8c478668b90a6996e98b41f8755194b09c9",
+      "leetcode/773/index.html": "8cc3be30e0bb5251cc797cb3c753f14d1e4ccd4595126dd46aa5872a403f8bb5",
+      "leetcode/773/python-code.js": "21dbfcbf02be53bfc6c88cbc2e94f2cbf5b0d97a050ce7bcc1f02664bab069e5",
+      "leetcode/773/solution.py": "a24fdc4f8c888cd004edaa9aafc7d6b347e0979a554d483c8d98fcdc62765149",
+      "leetcode/773/style.css": "9085f29ec062afb15166ad311eda6878c94cad8638c58667ecfee91d2e056bef",
+      "leetcode/778/app.js": "6792e93b455abb16eb90b69829e1bea3d79d03e8f07eb23d3c8355d068d5200e",
+      "leetcode/778/copy.js": "483a08db758b40dd8dc29c5fb02d6a957b6b3edd5e3210d2aa490ccc0b65b665",
+      "leetcode/778/core.js": "94259a7ec75500920fdfb5f57b0c6d2b8dbb72c90135f4c22c67bde2a6ce844e",
+      "leetcode/778/index.html": "c30ffcf501f3075507e997d0c02795b4eff7e4d57c119489350e5e89669ee3f5",
+      "leetcode/778/python-code.js": "db944bac1d8be55eafbbee743fcb8546d15f9e57f25c9f93248f324eb287cee0",
+      "leetcode/778/solution.py": "a72bd5d22b5630034d5dce0589afc6056c3bd98cc0b4c5f7eb8fd747a143bbbb",
+      "leetcode/778/style.css": "1708cc43c064790dba2531166db706c5b9050019ea7168ca50a83178e4e9c88c",
+      "leetcode/780/app.js": "980ee1ffc6294fc7d50e1d81726547c868454ce54a55cd227ca1d6d0f6c34c36",
+      "leetcode/780/candidate.json": "4d6959c9e716c6dc20f8ab0ff95e4f9851f0ad980f15cc9ac98a0f8a0859ad21",
+      "leetcode/780/copy.js": "5db7c700615f16b2b7047d08efcc92271e4d80e1c51acee5b04074966ff28eec",
+      "leetcode/780/core.js": "7b2f64745f5a8bdbbe10ef31e66ca72977a3841f9652a3bf14292c025f183d93",
+      "leetcode/780/index.html": "07504ffdf07cd570bcd898cc946c1674f1ddf1081b8910c81f4b2e9e81f7b7e2",
+      "leetcode/780/python-code.js": "e3e6d3cf79a7be1a04296a09009cf19b5566be717b9260c2f70ecc040dca838b",
+      "leetcode/780/solution.py": "3da0f1594a2bef609c96da97c2d41b6a93fabd84246a3ac7b312432e90e126a5",
+      "leetcode/780/style.css": "bad6bc8dde949a4272e9dfb596c0a80000eabc291f82337658d4802838912e38",
+      "leetcode/782/app.js": "d92d4257660ce48fdfc73828ad707b9b66ec1a0b1ed73dd323c6288c0e68e770",
+      "leetcode/782/candidate-mac-proof-handoff-20261025.json": "bbc7af9fef7092099ea07e9497819f95655dcd7b389288b6e32be50a2651d95e",
+      "leetcode/782/candidate-repair-20261025.json": "923c04e7d3da65df6f18ee2bea5e5883e95fe4323a7e7ffc9c16f5ba0614e6d5",
+      "leetcode/782/candidate.json": "37a8c88946ce9c66082ba394bc24a5796a27208be7d0fa7526de9b410ea15ca1",
+      "leetcode/782/copy.js": "34393454a920dc4869604110ba8135177761d6adfa46d2137357396427280ceb",
+      "leetcode/782/core.js": "0525040215ca3a26f13a25c14c46c1bc4575fa662d2cd7672cff2d650bee3b79",
+      "leetcode/782/index.html": "a7450470858b323735e45d29d63954bbbc5cb1f0adc4c21d6a02080b0f2eeda5",
+      "leetcode/782/python-code.js": "2fd3278af6bdb4ad65fa8ebe222bf40f2558ff08ece2555be0525438c1154f2e",
+      "leetcode/782/solution.py": "ac8b4b7d27f3c06300f98b9f50b559512c29c16ea35b6f62dc2545fb9a326e0b",
+      "leetcode/782/style.css": "567d69d0df944d63cafa57653808eaf128a9c76885a46263a255d51c678d68cc",
+      "leetcode/803/app.js": "d205c21062638b47d04c1d288c3e31e557add4b458b34f30be0a953eab7a31b1",
+      "leetcode/803/baseline.py": "7623135ae2c2a4b23b0592ec7806289c9876a5eb5772edabb0e755b3c0eb3ebc",
+      "leetcode/803/copy.js": "8f84f8294d716f66a44043b08d1f8e2a2419258f2cc49b7050bce06da4569678",
+      "leetcode/803/core.js": "988d729439ca24eb72786d8157c8e4dc03ff9b0cb7019c05753ff6327b94e4af",
+      "leetcode/803/index.html": "1bca5af1a0de82c3f35c7f6f8e948425e3e9c61f63802b7cdd36e2576d8d3fa3",
+      "leetcode/803/python-code.js": "3b3ed84ab692de83a572e5136cc538407b97feb70ee73df1ff82125d8b9296bf",
+      "leetcode/803/solution.py": "e22005d6ed4213dfd82d59b80684bcb65231c77aad847496964b0647f1b3f389",
+      "leetcode/803/style.css": "ca0553a6943f81e5d927c3ae5d8c48e2702fb253e571815166f0109cc33ffd75",
+      "leetcode/805/app.js": "b1a33a81299d41be597f64f0680fdb65e67ba84e8f3005a99637440074a2a4b3",
+      "leetcode/805/copy.js": "6a7ee8bc5cb86fa2bebeec91d906d3360971d54952e80b122ed3f8533294c1d8",
+      "leetcode/805/core.js": "294d7f664b692b5200c02d69e212e0f3072199efe5a332f5c244646ce5d1edec",
+      "leetcode/805/index.html": "ed798e2c2e4bf417ff5a6412217fffa133faa893a843ee4606d14be9ab594c18",
+      "leetcode/805/python-code.js": "efc65387c57551076c1576bf41fedc1451c5a5536e57571673f83225f88a288d",
+      "leetcode/805/solution.py": "8ddf768d68632fe00838ed1bb43ba5cb4c8b0db27094b682eec98afa3a750dd9",
+      "leetcode/805/style.css": "7ad48c421b85a9d8c2aec2abe5316d46b11d1c58fb1d288528dc2d3317e8f8fb",
+      "leetcode/problems.config.js": "3e670e3847e6f21b1da1182be07aca1707031f8b326e7913a8770c2a480720d1",
+      "leetcode/index.html": "06f7bb1cee1dea73a4817091d0f2e098fc87a5ea0b86c2acd170087c3621ac9b",
+      "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+      "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+    },
+    "entries": [
+      {
+        "id": 239,
+        "title": {
+          "zh": "\u6ed1\u52a8\u7a97\u53e3\u6700\u5927\u503c",
+          "en": "Sliding Window Maximum"
+        },
+        "desc": {
+          "zh": "\u4ece\u91cd\u590d\u626b\u63cf\u51fa\u53d1\uff0c\u63a8\u5bfc\u5355\u8c03\u53cc\u7aef\u961f\u5217\u5982\u4f55\u5728\u7ebf\u7ef4\u62a4\u6bcf\u4e2a\u7a97\u53e3\u7684\u6700\u5927\u503c\u3002",
+          "en": "Start from repeated scans and derive a monotonic deque that maintains every window maximum online."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u6570\u7ec4",
+            "en": "Array"
+          },
+          {
+            "zh": "\u5355\u8c03\u961f\u5217",
+            "en": "Monotonic deque"
+          }
+        ],
+        "path": "239/",
+        "leetcodeUrl": "https://leetcode.com/problems/sliding-window-maximum/",
+        "language": "Python",
+        "complexity": "O(n) time; O(k) auxiliary space"
+      },
+      {
+        "id": 736,
+        "title": {
+          "zh": "Lisp \u8bed\u6cd5\u89e3\u6790",
+          "en": "Parse Lisp Expression"
+        },
+        "desc": {
+          "zh": "\u9010\u6b65\u89e3\u6790\u8868\u8fbe\u5f0f\uff0c\u89c2\u5bdf\u53d8\u91cf\u5982\u4f55\u906e\u853d\u4e0e\u6062\u590d\u3002",
+          "en": "Parse expressions and watch variable bindings hide and restore."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u9012\u5f52\u89e3\u6790",
+            "en": "Recursive parsing"
+          },
+          {
+            "zh": "\u4f5c\u7528\u57df",
+            "en": "Scope"
+          }
+        ],
+        "path": "736/",
+        "leetcodeUrl": "https://leetcode.com/problems/parse-lisp-expression/",
+        "language": "Python",
+        "complexity": "O(n) expected time; O(n) auxiliary space, n = expression character length"
+      },
+      {
+        "id": 741,
+        "title": {
+          "zh": "\u6458\u6a31\u6843",
+          "en": "Cherry Pickup"
+        },
+        "desc": {
+          "zh": "\u628a\u5f80\u8fd4\u53d8\u6210\u540c\u6b65\u884c\u8d70\uff0c\u63a8\u5bfc\u53ea\u8bb0\u4e24\u884c\u5750\u6807\u7684\u52a8\u6001\u89c4\u5212\u3002",
+          "en": "Reverse the return path and derive a synchronized two-traveler dynamic program."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u52a8\u6001\u89c4\u5212",
+            "en": "Dynamic Programming"
+          },
+          {
+            "zh": "\u7f51\u683c\u8def\u5f84",
+            "en": "Grid Paths"
+          }
+        ],
+        "path": "741/",
+        "leetcodeUrl": "https://leetcode.com/problems/cherry-pickup/",
+        "language": "Python",
+        "complexity": "O(n\u00b3) time; O(n\u00b2) auxiliary space"
+      },
+      {
+        "id": 745,
+        "title": {
+          "zh": "\u524d\u7f00\u548c\u540e\u7f00\u641c\u7d22",
+          "en": "Prefix and Suffix Search"
+        },
+        "desc": {
+          "zh": "\u628a\u77ed\u5355\u8bcd\u7684\u4e24\u7aef\u914d\u5bf9\uff0c\u63a8\u5bfc\u6700\u5927\u4e0b\u6807\u4e3a\u4f55\u80fd\u5b89\u5168\u8986\u76d6\u3002",
+          "en": "Pair the ends of short words and derive why later indices safely overwrite earlier ones."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u54c8\u5e0c\u8868",
+            "en": "Hash map"
+          },
+          {
+            "zh": "\u5b57\u7b26\u4e32",
+            "en": "Strings"
+          }
+        ],
+        "path": "745/",
+        "leetcodeUrl": "https://leetcode.com/problems/prefix-and-suffix-search/",
+        "language": "Python",
+        "complexity": "Expected O(nL\u00b3) construction time; O(nL\u00b3) space; O(|pref|+|suff|) time per query"
+      },
+      {
+        "id": 749,
+        "title": {
+          "zh": "\u9694\u79bb\u75c5\u6bd2",
+          "en": "Contain Virus"
+        },
+        "desc": {
+          "zh": "\u5206\u6e05\u53d7\u5a01\u80c1\u683c\u4e0e\u5899\u8fb9\uff0c\u51bb\u7ed3\u65e5\u521d\u8fb9\u754c\uff0c\u9010\u591c\u6a21\u62df\u9694\u79bb\u4e0e\u6269\u6563\u3002",
+          "en": "Separate threatened cells from wall edges, freeze day-start frontiers, and simulate quarantine and spread."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u7f51\u683c\u6a21\u62df",
+            "en": "Grid simulation"
+          },
+          {
+            "zh": "\u8fde\u901a\u533a\u57df",
+            "en": "Connected components"
+          },
+          {
+            "zh": "\u96c6\u5408\u53bb\u91cd",
+            "en": "Set deduplication"
+          }
+        ],
+        "path": "749/",
+        "leetcodeUrl": "https://leetcode.com/problems/contain-virus/",
+        "language": "Python",
+        "complexity": "O((D+1)mn) time, D \u2264 mn, hence O((mn)\u00b2) worst case; O(mn) auxiliary space"
+      },
+      {
+        "id": 753,
+        "title": {
+          "zh": "\u7834\u89e3\u4fdd\u9669\u7bb1",
+          "en": "Cracking the Safe"
+        },
+        "desc": {
+          "zh": "\u8ba9\u76f8\u90bb\u5bc6\u7801\u91cd\u53e0\uff0c\u7528\u6bcf\u6761\u8fb9\u4e00\u6b21\u6784\u9020\u6700\u77ed\u5f00\u9501\u4e32\u3002",
+          "en": "Overlap passwords and use each edge once to build a shortest unlocking string."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u6b27\u62c9\u56de\u8def",
+            "en": "Euler circuit"
+          },
+          {
+            "zh": "de Bruijn \u5e8f\u5217",
+            "en": "de Bruijn sequence"
+          }
+        ],
+        "path": "753/",
+        "leetcodeUrl": "https://leetcode.com/problems/cracking-the-safe/",
+        "language": "Python",
+        "complexity": "O(k^n + n) time; O(k^n + n) space including output"
+      },
+      {
+        "id": 757,
+        "title": {
+          "zh": "\u8bbe\u7f6e\u4ea4\u96c6\u5927\u5c0f\u81f3\u5c11\u4e3a\u4e8c",
+          "en": "Set Intersection Size At Least Two"
+        },
+        "desc": {
+          "zh": "\u4ece\u624b\u9009\u6574\u6570\u63a8\u5bfc\u6700\u53f3\u8d2a\u5fc3\uff0c\u7528\u4e24\u4e2a\u6700\u5927\u70b9\u7ef4\u62a4\u6240\u6709\u533a\u95f4\u7684\u8986\u76d6\u3002",
+          "en": "Derive rightmost greedy choices and cover intervals using only the two largest selected points."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u8d2a\u5fc3",
+            "en": "Greedy"
+          },
+          {
+            "zh": "\u533a\u95f4\u8986\u76d6",
+            "en": "Interval covering"
+          }
+        ],
+        "path": "757/",
+        "leetcodeUrl": "https://leetcode.com/problems/set-intersection-size-at-least-two/",
+        "language": "Python",
+        "complexity": "O(n log n) time; O(n) auxiliary space for sorting"
+      },
+      {
+        "id": 761,
+        "title": {
+          "zh": "\u7279\u6b8a\u7684\u4e8c\u8fdb\u5236\u5e8f\u5217",
+          "en": "Special Binary String"
+        },
+        "desc": {
+          "zh": "\u4ece\u524d\u7f00\u4f59\u989d\u53d1\u73b0\u6700\u5c0f\u5757\uff0c\u9012\u5f52\u4f18\u5316\u5185\u90e8\u5e76\u8bc1\u660e\u5144\u5f1f\u5757\u7684\u964d\u5e8f\u6392\u5217\u3002",
+          "en": "Discover minimal blocks through prefix balance, optimize their interiors, and prove descending sibling order."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u9012\u5f52",
+            "en": "Recursion"
+          },
+          {
+            "zh": "\u5b57\u7b26\u4e32",
+            "en": "Strings"
+          },
+          {
+            "zh": "\u8d2a\u5fc3",
+            "en": "Greedy"
+          }
+        ],
+        "path": "761/",
+        "leetcodeUrl": "https://leetcode.com/problems/special-binary-string/",
+        "language": "Python",
+        "complexity": "O(n\u00b2 log n) time; O(n\u00b2) auxiliary space (conservative bounds for slicing implementation)"
+      },
+      {
+        "id": 765,
+        "title": {
+          "zh": "\u60c5\u4fa3\u7275\u624b",
+          "en": "Couples Holding Hands"
+        },
+        "desc": {
+          "zh": "\u56fa\u5b9a\u4e00\u4e2a\u5ea7\u4f4d\u5bf9\uff0c\u627e\u56de\u4f34\u4fa3\uff1b\u7528\u73af\u8bc1\u660e\u4ea4\u6362\u6b21\u6570\u6700\u5c11\u3002",
+          "en": "Repair one seat pair at a time, then prove the swap count with cycles."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u8d2a\u5fc3",
+            "en": "Greedy"
+          },
+          {
+            "zh": "\u4f4d\u7f6e\u6620\u5c04",
+            "en": "Position map"
+          },
+          {
+            "zh": "\u73af",
+            "en": "Cycles"
+          }
+        ],
+        "path": "765/",
+        "leetcodeUrl": "https://leetcode.com/problems/couples-holding-hands/",
+        "language": "Python",
+        "complexity": "O(n) time; O(n) auxiliary space, where n is the number of couples"
+      },
+      {
+        "id": 768,
+        "title": {
+          "zh": "\u6700\u591a\u80fd\u5b8c\u6210\u6392\u5e8f\u7684\u5757 II",
+          "en": "Max Chunks To Make Sorted II"
+        },
+        "desc": {
+          "zh": "\u4ece\u4eb2\u624b\u5207\u5206\u5230\u524d\u7f00\u6700\u5927\u503c\u4e0e\u540e\u7f00\u6700\u5c0f\u503c\uff0c\u63a8\u5bfc\u6240\u6709\u5b89\u5168\u5207\u53e3\u3002",
+          "en": "Derive every safe cut using prefix maxima and suffix minima, starting with hand-sorted chunks."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u6570\u7ec4",
+            "en": "Arrays"
+          },
+          {
+            "zh": "\u524d\u7f00\u4e0e\u540e\u7f00",
+            "en": "Prefixes and suffixes"
+          },
+          {
+            "zh": "\u8d2a\u5fc3",
+            "en": "Greedy"
+          }
+        ],
+        "path": "768/",
+        "leetcodeUrl": "https://leetcode.com/problems/max-chunks-to-make-sorted-ii/",
+        "language": "Python",
+        "complexity": "O(n) time; O(n) auxiliary space"
+      },
+      {
+        "id": 770,
+        "title": {
+          "zh": "\u57fa\u672c\u8ba1\u7b97\u5668 IV",
+          "en": "Basic Calculator IV"
+        },
+        "desc": {
+          "zh": "\u4ece\u56db\u4e2a\u624b\u7b97\u4e58\u79ef\u63a8\u5bfc\u89c4\u8303\u9879\u952e\u3001\u9012\u5f52\u89e3\u6790\u4e0e\u7a00\u758f\u591a\u9879\u5f0f\u8fd0\u7b97\u3002",
+          "en": "Derive canonical term keys, recursive parsing and sparse polynomial arithmetic from four hand products."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u7b26\u53f7\u8ba1\u7b97",
+            "en": "Symbolic arithmetic"
+          },
+          {
+            "zh": "\u9012\u5f52\u89e3\u6790",
+            "en": "Recursive parsing"
+          },
+          {
+            "zh": "\u54c8\u5e0c\u8868",
+            "en": "Hash maps"
+          }
+        ],
+        "path": "770/",
+        "leetcodeUrl": "https://leetcode.com/problems/basic-calculator-iv/",
+        "language": "Python",
+        "complexity": "O(E + n(P+1)\u00b2(D+1)log(D+2) + P log(P+1)(D+1)) key operations; O(E + n(P+1)(D+1)) auxiliary space plus output strings"
+      },
+      {
+        "id": 773,
+        "title": {
+          "zh": "\u6ed1\u52a8\u8c1c\u9898",
+          "en": "Sliding Puzzle"
+        },
+        "desc": {
+          "zh": "\u4ece\u4e00\u6b21\u7a7a\u4f4d\u4ea4\u6362\u63a8\u5bfc\u5e7f\u5ea6\u4f18\u5148\u641c\u7d22\uff0c\u7528\u5b8c\u6574\u5c42\u8bc1\u660e\u6700\u5c11\u79fb\u52a8\u6b21\u6570\u3002",
+          "en": "Derive breadth-first search from a blank swap and prove minimum moves with complete layers."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u5e7f\u5ea6\u4f18\u5148\u641c\u7d22",
+            "en": "Breadth-first search"
+          },
+          {
+            "zh": "\u72b6\u6001\u7a7a\u95f4",
+            "en": "State space"
+          }
+        ],
+        "path": "773/",
+        "leetcodeUrl": "https://leetcode.com/problems/sliding-puzzle/",
+        "language": "Python",
+        "complexity": "O(V+E) time; O(V) auxiliary space for fixed six-cell states, V \u2264 720 and E \u2264 3V"
+      },
+      {
+        "id": 778,
+        "title": {
+          "zh": "\u6c34\u4f4d\u4e0a\u5347\u7684\u6cf3\u6c60\u4e2d\u6e38\u6cf3",
+          "en": "Swim in Rising Water"
+        },
+        "desc": {
+          "zh": "\u4ece\u8def\u5f84\u6700\u9ad8\u70b9\u63a8\u5bfc\u6700\u5c0f\u74f6\u9888\u641c\u7d22\uff0c\u9010\u6b65\u8bc1\u660e\u6700\u65e9\u53ef\u8fbe\u6c34\u4f4d\u3002",
+          "en": "Derive a minimum-bottleneck search from path maxima and prove the earliest reachable water level."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u56fe\u641c\u7d22",
+            "en": "Graph search"
+          },
+          {
+            "zh": "\u6700\u5c0f\u5806",
+            "en": "Min-heap"
+          }
+        ],
+        "path": "778/",
+        "leetcodeUrl": "https://leetcode.com/problems/swim-in-rising-water/",
+        "language": "Python",
+        "complexity": "O(n\u00b2 log n) time; O(n\u00b2) auxiliary space"
+      },
+      {
+        "id": 780,
+        "title": {
+          "zh": "\u5230\u8fbe\u7ec8\u70b9",
+          "en": "Reaching Points"
+        },
+        "desc": {
+          "zh": "\u4ece\u52a0\u6cd5\u5012\u63a8\u5230\u53d6\u4f59\uff0c\u8bc1\u660e\u8fb9\u754c\u4e0a\u7684\u6574\u9664\u68c0\u67e5\u3002",
+          "en": "Reverse additions into remainders, then prove the boundary divisibility test."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u6570\u5b66",
+            "en": "Math"
+          },
+          {
+            "zh": "\u9006\u5411\u63a8\u7406",
+            "en": "Backward reasoning"
+          }
+        ],
+        "path": "780/",
+        "leetcodeUrl": "https://leetcode.com/problems/reaching-points/",
+        "language": "Python",
+        "complexity": "O(1 + log(max(tx, ty))) time; O(1) auxiliary space"
+      },
+      {
+        "id": 782,
+        "title": {
+          "zh": "\u53d8\u4e3a\u68cb\u76d8",
+          "en": "Transform to Chessboard"
+        },
+        "desc": {
+          "zh": "\u4ece\u6574\u884c\u6574\u5217\u4ea4\u6362\uff0c\u63a8\u5bfc\u53ef\u884c\u6027\u4e0e\u6700\u5c11\u4ea4\u6362\u6b21\u6570\u3002",
+          "en": "Derive feasibility and minimum swaps from preserved row relationships."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u4e0d\u53d8\u91cf",
+            "en": "Invariants"
+          },
+          {
+            "zh": "\u8d2a\u5fc3",
+            "en": "Greedy"
+          }
+        ],
+        "path": "782/",
+        "leetcodeUrl": "https://leetcode.com/problems/transform-to-chessboard/",
+        "language": "Python",
+        "complexity": "O(n\u00b2) time; O(1) auxiliary space"
+      },
+      {
+        "id": 803,
+        "title": {
+          "zh": "\u6253\u7816\u5757",
+          "en": "Bricks Falling When Hit"
+        },
+        "desc": {
+          "zh": "\u5012\u5e8f\u8865\u7816\uff0c\u7528\u5c4b\u9876\u8fde\u901a\u6570\u7684\u589e\u91cf\u63a8\u5bfc\u6389\u843d\u6570\u91cf\u3002",
+          "en": "Reverse the hits and derive fallen counts from growth in roof connectivity."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u5e76\u67e5\u96c6",
+            "en": "Union-find"
+          },
+          {
+            "zh": "\u9006\u5e8f\u5904\u7406",
+            "en": "Reverse processing"
+          }
+        ],
+        "path": "803/",
+        "leetcodeUrl": "https://leetcode.com/problems/bricks-falling-when-hit/",
+        "language": "Python",
+        "complexity": "O((mn + H) \u03b1(mn)) amortized time; O(mn + H) auxiliary space"
+      },
+      {
+        "id": 805,
+        "title": {
+          "zh": "\u6570\u7ec4\u7684\u5747\u503c\u5206\u5272",
+          "en": "Split Array With Same Average"
+        },
+        "desc": {
+          "zh": "\u4ece\u4e09\u5f20\u6570\u5b57\u5361\u7247\u63a8\u5bfc\u7b49\u5747\u503c\u6761\u4ef6\uff0c\u7528\u6298\u534a\u5b50\u96c6\u548c\u5bfb\u627e\u975e\u7a7a\u5206\u7ec4\u3002",
+          "en": "Derive an exact average condition, then pair count-indexed subset sums from two halves."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u6298\u534a\u641c\u7d22",
+            "en": "Meet in the middle"
+          },
+          {
+            "zh": "\u5b50\u96c6\u548c",
+            "en": "Subset sum"
+          }
+        ],
+        "path": "805/",
+        "leetcodeUrl": "https://leetcode.com/problems/split-array-with-same-average/",
+        "language": "Python",
+        "complexity": "O(n \u00b7 2^ceil(n/2)) expected time; O(2^ceil(n/2)) space"
+      }
+    ],
+    "accepted": {
+      "239": {
+        "candidate": "08d7986c52ed70aefe1b0a970a210c73d6291a49",
+        "digest": "afceba3a42d780561807c028a877215b12123d072d526eb7e3ba802517e7df97",
+        "review": "specs/reviews/239-review-4-bd768111.md"
+      },
+      "736": {
+        "candidate": "fd5760e3a18bdc79f365db1aa62bea9e38b2671f",
+        "digest": "3e3eed8288f116be1939abf45b534892a2ca0c125bc42a2dee97943df78626c4",
+        "review": "specs/reviews/736-review-1-7f33b1b5.md"
+      },
+      "741": {
+        "candidate": "0931d834e513da00498c1944124bc3f3e532339b",
+        "digest": "c5463891a91f02c3e26e2a83f8583506ae671d47116e57ce1fe41d684bf367f2",
+        "review": "specs/reviews/741-review-2-27f468af.md"
+      },
+      "745": {
+        "candidate": "4a3d34fb6f4093b5e73a614d16d9a4bcf59107ca",
+        "digest": "4376146ef4fd3c2119e272f9da5944e9e5e887e70caaf090bd095b1adc21da67",
+        "review": "specs/reviews/745-review-1-c55c2ad7.md"
+      },
+      "749": {
+        "candidate": "d54c84ee031f37d8040bbb2f316d021bb4450a35",
+        "digest": "9981de40a7668cacc9736b29134e2f6be779f4a8f5bf78bc37fd6f29fbc65e09",
+        "review": "specs/reviews/749-review-1-6409dfb1.md"
+      },
+      "753": {
+        "candidate": "50fd1cbd00cb9d3c0a89a422bc224369cfa35618",
+        "digest": "2776d0a961325b941409d59cc75481aff324ef33394d566cf117ad0226b5a45b",
+        "review": "specs/reviews/753-review-1-4f811c55.md"
+      },
+      "757": {
+        "candidate": "1cc9f57b4cda2f4f8b2c1b223114f003bb728534",
+        "digest": "ed1a2cb95fba787b355c61e3812623d83d89764417cb9b5d956c9e8f34a0ae6d",
+        "review": "specs/reviews/757-review-1-01365567.md"
+      },
+      "761": {
+        "candidate": "cd125c135af86cad6ed83ed04cff1a3b8b2b7101",
+        "digest": "4a0a04c85ab222d8da57dbb1af6d6ef587e6aa21b957e5e89c9bcd9616fbf7eb",
+        "review": "specs/reviews/761-review-1-09028efe.md"
+      },
+      "765": {
+        "candidate": "8d44249808b43d9d56ad26592d276443a9994649",
+        "digest": "8e0d98bf62143c1c52dbdab4ee1e02273e923a3cdc68747bc9bdc745dfe26caa",
+        "review": "specs/reviews/765-review-2-6f37bca9.md"
+      },
+      "768": {
+        "candidate": "0b25921b05d72cc6549aa4064fc5b82a42cd50e7",
+        "digest": "a4f948ee6314e1524de6f68758b732d5b8acdf1e425e666711f0fe69fe904f73",
+        "review": "specs/reviews/768-review-1-cdfb9cf9.md"
+      },
+      "770": {
+        "candidate": "b042f446318bd53113f6d784d8d5fde41110aa30",
+        "digest": "57fba8e6cd10706b61abd4d1dede3f276825afcb77df0938609c8764f8926251",
+        "review": "specs/reviews/770-review-1-6f9bbf1f.md"
+      },
+      "773": {
+        "candidate": "de0f38a8b5a87a0240d7822821aca38aa6f406d1",
+        "digest": "7a9531a357a00f2bd7d5a7bd3a07a2a13b5ac3bb05eb46b592373d74c74afbb3",
+        "review": "specs/reviews/773-review-1-aa279396.md"
+      },
+      "778": {
+        "candidate": "41ea45d5f0735ccffaa05f10679a1aa25784c602",
+        "digest": "770eddd7eaff70aaafc5077b443e5f2e8061c267ee6620728de2d76313c864da",
+        "review": "specs/reviews/778-review-1-14539111.md"
+      },
+      "780": {
+        "candidate": "c214c6549b53618d96782b6f827a5018c4c7f6e4",
+        "digest": "b543a9c949c15d98f4cdd6577a540ad9ef991e22498db3b6b793c29432889864",
+        "review": "specs/reviews/780-review-1-847f9d24.md"
+      },
+      "782": {
+        "candidate": "754e04a1cc401f1ae62116137a1e3054855f3292",
+        "digest": "75d1ab0fbfef8cf408e002a23c6a5979ccc08d3dbcd016c874a59cf4530459ff",
+        "review": "specs/reviews/782-review-3-7cc542bd.md"
+      },
+      "803": {
+        "candidate": "eb9692b38d758c81cfdcba57506377f20cb99ede",
+        "digest": "deb1500e3699d74dbd5e12b79fbac0072756f337c79fe02a30e1d94582559d58",
+        "review": "specs/reviews/803-review-2-226e2788.md"
+      },
+      "805": {
+        "candidate": "df8f6919bd2904df939664074267534472135146",
+        "digest": "cf18636174f48ac512490ed2f2ca94f4b32cef7dd85377f4fdc425f0ee3780f9",
+        "review": "specs/reviews/805-review-1-1e77e9d2.md"
+      }
+    },
+    "verification": {
+      "lessons": 17,
+      "ignoredKnownBeaconFailures": 0
+    },
+    "published_at": "2026-10-25T13:09:31.919252+00:00"
+  },
+  "released_count": 119,
+  "pending": null,
+  "state": {
+    "status": "run_limit_reached",
+    "current": null,
+    "expected_head": "e64356fbeaa7fb1c8793d1a8febcac4ae8e9e394",
+    "queue_count": 984,
+    "counts": {
+      "accepted_local": 119,
+      "blocked": 39
+    },
+    "stop": {
+      "owner": "root-import803805-20261025",
+      "reason": "Current round complete. Freeze accepted content for user-requested one-time publication; campaign goal remains paused."
+    }
+  },
+  "protected_after": {
+    "index.html": "5c2fd1c30fee38137595f1599465970696c30fdf58ea687894741be508a49053",
+    "pages.config.js": "b75957b10f86d26c112447ca45327f3b3ff30aecbdeb12518b178cf81e81e0eb"
+  },
+  "release_stages": []
+}
