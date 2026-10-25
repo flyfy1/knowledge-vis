@@ -31,3 +31,11 @@ State inventory × both locales: hand mask 0..15, valid/invalid; trace initial/m
 P0: complete bilingual causal story, reversible hand and ledger, Python/oracle tests, browser/source/contrast checks. P1: precise local related anchors and two served related lessons. P2: none. Deferred: custom arbitrary inputs (preset scope sufficient), animations (manual causal inspection), browser Python runtime (not needed), registry and concept-map writes (dispatcher ownership), independent teaching review (separate run required).
 
 Evidence limits: author self-check only; no actual novice study, LeetCode submission, physical device or deployment verification. Candidate identity will be frozen in tests/evidence/candidate.json after checks.
+
+## 2026-10-26 — bounded copy revision, 801-COPY-R1
+
+Owner request authorizes this new candidate. Reconfirmed all seven runtime files match historical accepted base `154c1becf178b798dfbd80acbb79fabdd262ae68`, including the report's exact copy/HTML SHA-256 values. Website-design skill applied: reuse the existing surface/tokens; no new feature/layout. P0 is preservation of teaching, algorithm, source/interface and interaction semantics. P1/highest-return slice removes the bilingual workflow footer, its sole HTML binding and unused `foot` key; changed copy asset reference is `copy.js?v=801-copy-r1`. P2 has no additions. Other teaching/copy refinements remain deferred under the report's narrow scope.
+
+`app.js`, `core.js`, `solution.py`, `python-code.js`, `style.css` remain byte-identical to the accepted base. `sim`, `originalLabel`, `p4` and every other localization entry remain exact. Metadata already has one complexity string, `O(n) time; O(1) auxiliary space`; canonical Python matches the recorded official Python3 interface, so no language exception or regeneration is needed.
+
+Finding status: **801-COPY-R1 fixed awaiting separate independent review**, never independently closed by this author. Append-only self-check and exact diff: `tests/SELF-CHECK.md` and `tests/evidence/copy-r1/`. New frozen identity is `tests/evidence/copy-r1/candidate.json`. Historical acceptance/reports and prior evidence remain untouched. No registration, release, service, shared asset or campaign-state change.

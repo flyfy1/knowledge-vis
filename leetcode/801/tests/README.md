@@ -20,3 +20,23 @@ Python tests enumerate every pair of length 2..4 over values 0..3, execute all f
 Browser checks cover both locales, 16 hand masks, all five presets, all adjacent rewind/replay snapshots, endpoints/reset, every prediction/reveal/change path, locale preservation, source DOM/copy/download parity, actual host-native manual fallback copies with a separately verified sentinel on each attempt, blocked storage, file:// offline source, forced colors/reduced motion, 320/390/736/1440 widths, native Chrome 200% tab zoom, keyboard/focus/deep links, select text budgets and contrast calibration. The test-only extension supplies native tab zoom; it is not a runtime lesson asset.
 
 The main browser result separates an existing #10 destination's missing /favicon.ico from #801 runtime errors. Its exact location/page is retained rather than repaired outside ownership. Every other console or response error is a failure. The source is not submitted to LeetCode. No independent teaching review or novice outcome is claimed.
+
+## Focused workflow-copy repair (801-COPY-R1)
+
+From the repository root:
+
+```sh
+python3 -B leetcode/801/tests/test_copy_repair.py
+OUTPUT_DIR=leetcode/801/tests/evidence/copy-r1/after node leetcode/801/tests/test_copy_repair.cjs
+# Existing browser suite; includes exact success/fallback clipboard and download checks:
+OUTPUT_DIR=leetcode/801/tests/evidence/copy-r1/after node leetcode/801/tests/test_browser.cjs
+python3 -B scripts/register_leetcode_lesson.py 801 --validate-only
+OUTPUT_DIR=leetcode/801/tests/evidence/copy-r1 python3 -B leetcode/801/tests/freeze_candidate.py
+```
+
+The retained `copy-r1/before/` result is the intentional pre-fix browser failure.
+Do not overwrite it on reproduction. New receipts live under `copy-r1/` and do
+not replace the original candidate or its self-check evidence. Broad numerical
+suites are unnecessary for this copy-only diff; the focused Python check executes
+five official/fresh/equality fixtures and verifies the protected bytes and exact
+allowlisted HTML/copy diff.
