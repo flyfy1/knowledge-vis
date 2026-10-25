@@ -1,0 +1,131 @@
+{
+  "outcome": "accepted_local",
+  "score": 95,
+  "required_open": [],
+  "optional_open": [
+    "864-N1"
+  ],
+  "final_run_state_equal": true,
+  "candidate_review_registration_lesson_tree_equal": true,
+  "lesson_tree": "b19c162d10ccfe2959f96bbc502a9bfc598b276b",
+  "source_sha256": "d68552a2c4bf233875e7f687d1dd758be8df720de5f9683c1ffbdba9f4a12d17",
+  "source_mirror_exact": true,
+  "signature": [
+    "self",
+    "grid"
+  ],
+  "session_ids": [
+    "01a17542-763c-7103-a644-a510f6ac1932"
+  ],
+  "fresh_code_checks_and_wrong_position_only_search_exit_zero_confirmed": true,
+  "review_harness_counts": {
+    "logic_cases": 2648,
+    "exhaustive_maps": 2400,
+    "random_maps": 240,
+    "max_grid_answer": 29
+  },
+  "remote_matches_registration": true,
+  "scope": "Immutable source and terminal identities, original exit-zero evidence extraction, existing screenshot inspection. No fresh algorithm/browser execution, clipboard, Pi mutation, push or publication.",
+  "files": {
+    "864-review-1-182d7fc1.md": {
+      "sha256": "1116044d9cbf5de4d31fce7ce73af282ecfad44cede756f75be2661f7d156827",
+      "bytes": 17474
+    },
+    "author-runs.json": {
+      "sha256": "9a8a9eae05e42d6449eddd9c851c80b173998c7704a0ec1015bf4fbc3a07d744",
+      "bytes": 853
+    },
+    "branch-observation.json": {
+      "sha256": "9fd39f4c801d5e9a40cfff02871242cbeb8409f3fb33c9ecbef55cd08fc935f8",
+      "bytes": 544
+    },
+    "candidate/BRIEF.md": {
+      "sha256": "025262a77d3e5ee2fb76ce7813f7ac4beb79ffd1d4c0862e9609850d05c37f28",
+      "bytes": 6568
+    },
+    "candidate/app.js": {
+      "sha256": "94f3ea6c78cb2161647f80c380f108a6d10d1b77e4e997cbd6972a7c15012b7f",
+      "bytes": 4086
+    },
+    "candidate/copy.js": {
+      "sha256": "9c4bfe23c315f7c2f485c388d0f08bf0d52cb0ac13b9167c979b0c43b46a573f",
+      "bytes": 20532
+    },
+    "candidate/core.js": {
+      "sha256": "5a689581711fb41f6dd2ce9805aac3a9f490813644d0545d2770b07e8cae93e6",
+      "bytes": 1517
+    },
+    "candidate/index.html": {
+      "sha256": "9aff5f5bf7cd594930ec9f24f98ac55926d8863fb4e7bfb5a4443064ebdb7ef1",
+      "bytes": 7710
+    },
+    "candidate/lesson-entry.json": {
+      "sha256": "e4bdeaaabccb093a64e1b47551bc06ba799ef6e87268ce48a12bd13516a431b3",
+      "bytes": 1019
+    },
+    "candidate/python-code.js": {
+      "sha256": "3378c0e333aa38e001240c7e30e761bd83e5ffeada1facb16e58813cf74eacbc",
+      "bytes": 1416
+    },
+    "candidate/solution.py": {
+      "sha256": "d68552a2c4bf233875e7f687d1dd758be8df720de5f9683c1ffbdba9f4a12d17",
+      "bytes": 1351
+    },
+    "candidate/style.css": {
+      "sha256": "a1fe4525d53e00656f2b35683613eb13e49002dbbf6ce5fc6fa927486b9ceb11",
+      "bytes": 2180
+    },
+    "independent-execution-excerpt.txt": {
+      "sha256": "eceac1c98c1ac16c936afcceb5489a89cc71ffc1cadf865f85f93e1ae2917563",
+      "bytes": 223
+    },
+    "review-events.jsonl.gz": {
+      "sha256": "b6906a48fe1fda6cdb1c6d900c2afa4b20f48c84eb3becc4903b9f94d43238f8",
+      "bytes": 66081
+    },
+    "review-evidence/board-320-en.png": {
+      "sha256": "459e48a2e9fabc82ba9ef1bb1c627526876f68cdd4c211b324dfa146e1bdde0c",
+      "bytes": 4473
+    },
+    "review-evidence/board-320-zh.png": {
+      "sha256": "c1a9c27467ea46a228ba00da9382aa3f0a92cb2b3e4ee2502c1598251ece96cf",
+      "bytes": 4253
+    },
+    "review-evidence/browser.json": {
+      "sha256": "817d67f1b1de3478dbd19d4ea91bed0fc42abcd109364a2b0eb2bf31716b2121",
+      "bytes": 12031
+    },
+    "review-evidence/dense-320-zh.png": {
+      "sha256": "53f8ad565e15d286b4bf9a05d02cceb9310f5733b5c5e5dcdda5c14555ab6432",
+      "bytes": 54304
+    },
+    "review-evidence/logic.json": {
+      "sha256": "33c904bbee247e380093f0e7c674a31b88a5844700c828e58b56587a2c1949d6",
+      "bytes": 440
+    },
+    "review-evidence/revisit-390-en.png": {
+      "sha256": "625f252ab74ab6881f9ef4a589aec19b86c0c228fdcd4315636dd26ea15c95d6",
+      "bytes": 71500
+    },
+    "review-evidence/semantic-binding.json": {
+      "sha256": "36b311c5b254b9dc3eb2ef0f3ff78ee70b24fb8291b5c5ebf315c8f08e149a6d",
+      "bytes": 4267
+    },
+    "review-evidence/zoom-settled-zh.png": {
+      "sha256": "8f56121a8e033c8fe31fc17b4957d366be73045f156b4a45584930e8a4f319da",
+      "bytes": 83013
+    },
+    "review-final.json": {
+      "sha256": "63e7597d60763851737520cf1beaa99dd783499071340d8c826501d7ca18844b",
+      "bytes": 580
+    },
+    "review-run.json": {
+      "sha256": "1635cea9aa0a36875b0b86be765c0f6af80784b7950b6435b803d52372c5aae4",
+      "bytes": 1164
+    },
+    "snapshot.json": {
+      "sha256": "98885a9a664c43b89f06f0d1fdb07930ced8f89b4133a394e7dfa8c36bd2295f",
+      "bytes": 12854
+    }
+  }
+}

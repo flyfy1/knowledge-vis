@@ -1,0 +1,682 @@
+{
+  "pins": {
+    "policy": {
+      "scripts/import_leetcode_lane.py": "8642a573383d052ce6e227bd8c2374f9c50f2fc1e8e9b312a6186607015344e0",
+      "scripts/leetcode_campaign.py": "a1258a0e7eba60e1d813bf0f9ede57a71f92cd504f6afb7bd0553d68d41c65ed",
+      "scripts/leetcode_publish.py": "7292c88e2ae035667a1bc723b076fb3d8d3d8562dc8428f3f66f74dc60f764d8",
+      "scripts/leetcode_registry.py": "a23b9b9e4feec966969c0b4c60f16e19cc2616ea0e1b2e587d15605e739349d6",
+      "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+      "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+      "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+      "scripts/campaign-prompts/author.md": "5f7feaa56f9f8f1f3f434e1fe4576cc2a10da21594c9aef829cab86e69dae06b",
+      "scripts/campaign-prompts/review.md": "129537defd8df8fda1c84c3bea80b62c8c717275f558128d8b62b02319838a1b",
+      "scripts/campaign-prompts/fix.md": "176376ca977b1b8e0f4444612efdf91b8a7d49e1f1c614e8985544828bb774d4",
+      "specs/reviews/workflow-copy-repair-requests-20261026/780.md": "79235a599df5139b2e8dc1c2a51fe673fd7b28bf46b2d3a3bbec34a1b22e280b",
+      "specs/reviews/workflow-copy-repair-requests-20261026/793.md": "ff52e23452b5099a60fc80e9a9fe1bed1e0840d4408c66793509335edb7536e5",
+      "specs/reviews/workflow-copy-repair-requests-20261026/798.md": "da3da5361f94e48e2a91ddb39e537146f2aff9939b7220b17a368f884d151318",
+      "specs/reviews/workflow-copy-repair-requests-20261026/801.md": "8bf72192c53809c60cf6bedf2379af8c185ce775346f4de59d0eee598af4b83a",
+      "specs/reviews/workflow-copy-repair-requests-20261026/815.md": "5c9697057a2218726823f12e58494fedde6221d5d19d87da9a1a8a25cd76977a",
+      "specs/reviews/workflow-copy-repair-requests-20261026/903.md": "5227f5ede9949c1bc677c06fa8c6a2a940dabf4e43b41829ef8be64750ad0476",
+      "specs/reviews/workflow-copy-repair-requests-20261026/920.md": "70b97c693528cb26a70d8f1ad8497c9d96812ab551704090f6d24057146e666e",
+      "specs/reviews/workflow-copy-repair-requests-20261026/940.md": "56df85c64f2ae135ce2d8323c052eba978bb50b231d899c840b2a07a0e6a5981",
+      "specs/reviews/workflow-copy-repair-requests-20261026/956.md": "635cfac82ede95dbb081fa8ced9935b28d0234fed4928ea9b5d10bd7d2f7e77f",
+      "specs/reviews/workflow-copy-repair-requests-20261026/README.md": "9c7747a2a299d19d3c3b329fa9d4a423fe2403141e3b4fd6484878bb8ee7584a",
+      "scripts/register_leetcode_lesson.py": "7ba274cd733a36528d98c85fe87b46d5535bc34898567b0c14f36fda37f81310",
+      "scripts/leetcode_static_versions.py": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e"
+    },
+    "launcher_sha256": "94056740463e5f9ec4fe63d0d2c56d1ccbf1ab60556f7952580fe58512127e70",
+    "queue_sha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+    "status": "frozen-for-independent-final-review",
+    "source_revision": "f090946dfb330ae3eb4a423b1ad3b367b83d8890",
+    "documents": {
+      "specs/reviews/995-teaching-copy-repair-request-20261026.md": "e68c8e47386c982e7545212213fcdc3905a4270a6f885ff474484d8a0290270b"
+    },
+    "requests": {
+      "995": {
+        "path": "specs/reviews/995-teaching-copy-repair-request-20261026.md"
+      }
+    },
+    "accepted": {
+      "995": {
+        "entry": {
+          "status": "accepted_local",
+          "rounds": 1,
+          "new": true,
+          "phase": "done",
+          "reviews": [
+            {
+              "outcome": "accepted",
+              "scores": [
+                4,
+                3,
+                4,
+                4,
+                4,
+                4
+              ],
+              "required_open": [],
+              "report_path": "specs/reviews/995-review-1-c18c137a.md",
+              "evidence": [
+                "Cold browser walkthrough saved before source inspection.",
+                "Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.",
+                "Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.",
+                "Non-mutating metadata preflight exited 0."
+              ],
+              "detail": "95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication.",
+              "run_id": "995-review-f5d78a25ecbc",
+              "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+              "candidate_sha256": "20e4b739f8b1a7fae70008c3172e060d0b2c28876e550fab8aaed24fcf3942c4",
+              "weighted_score": 95.0,
+              "round": 1,
+              "commit": "5a5cd3c329aec4854ea61f0ae5d15b1826f94a21"
+            }
+          ],
+          "author_runs": [
+            "995-author-ab095f2912c3"
+          ],
+          "prior_report": "specs/reviews/995-review-1-c18c137a.md",
+          "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+          "registration_commit": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+          "accepted_at": "2026-10-25T22:36:24.169208+00:00"
+        },
+        "entry_sha256": "2c890f485eaedf4fe72a1c190191cbe66373eae984b3ba08cc1db260755168bf",
+        "runs_sha256": "a55847db4d416108dab4de3ed25783f854881997a8ed74ba13709c246aba70d1",
+        "lesson_git_tree": "9fb98cd2eb0d740e233c2e52a1fe2eb318b4de87",
+        "runtime_sha256": {
+          "BRIEF.md": "50a73842bc0c4531527a59da412285f0213b45e1359f5a099f8d96a1cfcbb600",
+          "app.js": "5e3f5bfa03d2bd50b3ca312e7430317edf80faedaa03aced013a06615289fe56",
+          "copy.js": "b90154c25fc04a318545d1d497b85c0d7aca96845f53a0cf9ce309fe2f014aee",
+          "core.js": "bdf1528e1d12cc3a3aaf24fd656ca7a6f0d5d20d402f01958984e9b2f3d54fe6",
+          "index.html": "144e8ea92fcb7ad7cccf05d106943d7c8182c9ba53a91d9bbe1954fe2ba97f00",
+          "lesson-entry.json": "dcaf19f39fbe5d6a8bc2d96e3ad580c6d7bf701791c4b60a5cfd8e035e0de6c6",
+          "python-code.js": "27e528d8b5be9e493b59947a5351b577caed2ebecef6d9c515a768c4ac218466",
+          "solution.py": "31cc55e456b9d13a0350ec26272a1601f19a9832c3dde85f5f123c54d7c848b9",
+          "style.css": "4ad467f067489544cafcc9f882a8bd10e6a1fc2a4ab410871516fdc66f33b293",
+          "tests/README.md": "8ac8fb7d8448799e4cd777f715083f5819b200f7c1bbe050f34fe6d8c8f59f1c",
+          "tests/browser.cjs": "3ecab67eb163ebadc57252329c34adbfd82cde0333de8765155ffe205e01d8c3",
+          "tests/evidence/SELF-CHECK.md": "16d0526fe9d86017c9198c93265da6c83562421e799a104c59f7b82906c46bae",
+          "tests/evidence/browser.json": "6e0ac9a22af1ea65c3c21fc177958f91cc87617467d451c58e57ee4b96dac916",
+          "tests/evidence/candidate-manifest.json": "30cc9b54c2957e138dbf73faad33fe67d345cc106fa42b2de0fa3b6db31e76e9",
+          "tests/evidence/capture-before-settle-zh-source.png": "3fb5e6e908820fecae45d2853939cd982d3f0b87d3af4210349be6cdbbd3db2c",
+          "tests/evidence/core.json": "9d4c7da677a98d7a84cf8fe5f79e47d6575f3d7f1428b683efa9327b69904443",
+          "tests/evidence/download-en.py": "31cc55e456b9d13a0350ec26272a1601f19a9832c3dde85f5f123c54d7c848b9",
+          "tests/evidence/download-zh.py": "31cc55e456b9d13a0350ec26272a1601f19a9832c3dde85f5f123c54d7c848b9",
+          "tests/evidence/en-1440-z1-bits.png": "2d98fe4124feea664cea56ec5aae262975669b8e2a4ea9ffb188a43f0896d733",
+          "tests/evidence/en-1440-z1-controls.png": "b82b670ed4a9de2931c2cd04b78904118eec22176fd949e3eea57e3e223c088e",
+          "tests/evidence/en-1440-z1-prediction.png": "540175cd9658ce07eb1d2263d624229b4696024af761d44191c7d9d4c8c3b75e",
+          "tests/evidence/en-1440-z2-bits.png": "5e384adf053e314bef3c39dc617a54e3a66c755c63c4903a5175a6c2d572d320",
+          "tests/evidence/en-1440-z2-controls.png": "40ecd4c1806221bb7a79ff9640c82dacd8ddd6b3ad459ae524fa44f75d0fb53f",
+          "tests/evidence/en-1440-z2-prediction.png": "d7ce67dc15d41193dd6782b76b2dbcc311330e40d31e9531077615a2910b7664",
+          "tests/evidence/en-320-z1-bits.png": "969b77db5bb82143e64e948c34acb8bc8da3a5ba81c25ec796946f64cdc87bc1",
+          "tests/evidence/en-320-z1-controls.png": "ee32cd2217f561bf192e9fd6f887c655ef7718448441b62c8fa3cda2cf481834",
+          "tests/evidence/en-320-z1-prediction.png": "cc9c6c5f48b06d13855b2940f03f72aa64e6c57033a6516c7038b76217f19774",
+          "tests/evidence/en-320-z2-bits.png": "39459f4aca77d3c819f614045164033de13bac94929c502299c540b28e2e6202",
+          "tests/evidence/en-320-z2-controls.png": "8754dbe0024d538388ace7f7dbdcb1eb979fb97f881c0b44115eddb4b0008a3c",
+          "tests/evidence/en-320-z2-prediction.png": "c40c94e85db63dbd904c0cd123c1316ddd74a69b30896f925082cbf911aeb3b7",
+          "tests/evidence/en-390-z1-bits.png": "265550cabca07f46154e6a00585cd7211bbeaa8e0b784131b1b3fd893ba9c5bf",
+          "tests/evidence/en-390-z1-controls.png": "9c58c5aa562e36422a39f14da3c94d3b12c26ab8aaea40b7400482e8c747d274",
+          "tests/evidence/en-390-z1-prediction.png": "f5424d3bc4410d19ce154e2c4ce6c3ff3d1b7353bfafd885187ee5340bbcd5c6",
+          "tests/evidence/en-390-z2-bits.png": "b26c4c4f5fdd38d55c1204efe977a8c3e8f7c5b8ecefb80a0960ecefbc61aa0a",
+          "tests/evidence/en-390-z2-controls.png": "e3884ac1a97fd1eb3de3f9062ac75bf48a178d97c5f4871b3feb70349812dc18",
+          "tests/evidence/en-390-z2-prediction.png": "e8570b0b84b8ed2570e10fbef50acda6d5ea62939653df2ac9e86e5d16d6154a",
+          "tests/evidence/en-736-z1-bits.png": "df3e5ee4a68fa4bc45435aa81fc228cd77cd0e3bac05521ecc07a2ac0e0bf102",
+          "tests/evidence/en-736-z1-controls.png": "aae6f419b07e074692504fceea69e6b6e874761c61171a887c90cc7bb913cee6",
+          "tests/evidence/en-736-z1-prediction.png": "89156d4e7a8027276ffc88b00abd68eb2b7c8d4f55bee347e3aaf80dcadb44d3",
+          "tests/evidence/en-736-z2-bits.png": "57b7c71f9725b315a3201dd5c489edd73abe6ba7660ebc7dafce6436c8509cfd",
+          "tests/evidence/en-736-z2-controls.png": "24d1ed4b9e1a67fd661a84f5e96884a258939d57ae53ea9adf167fcdd992bc6d",
+          "tests/evidence/en-736-z2-prediction.png": "81330ead7f31665685b25998490f2724a135caf890aec0a318552e6d6f2d3683",
+          "tests/evidence/en-header.png": "d5c46219021b9d45c97471bb9fc60890dea5f2b0a3747379a558d591be6a6171",
+          "tests/evidence/focus-en-expiry-ledger.png": "62b3aa68af697eadbbcd384febb08cd3cd909575acfcee1035872c9b7791aa68",
+          "tests/evidence/focus-en-failure.png": "5c7364ab840f642289316794a584feebba82f5f0e1ae27f81032b1c4c0e4b678",
+          "tests/evidence/focus-en-fallback.png": "5d4967e1921c3d5a737599fdd002544d2aff2b52aec2c37feda136418e10f850",
+          "tests/evidence/focus-en-overlap.png": "ecb920322f8e364fe4fc32c5d3056fb07516269437c138ff9bc17d3758da8752",
+          "tests/evidence/focus-en-source.png": "81b49f4418c875c1a22198094b58e8c2dc0a968b0f52bcf9ce2ccc134dfa029c",
+          "tests/evidence/focus-en-zoom-current.png": "ca5a0ea19b5fe16e956de429682f96a559d7859a4f1012f7e599d2eb9146d0e9",
+          "tests/evidence/focus-zh-expiry-ledger.png": "5553c645b167c407f5bda4e3ba321c113f3ef20c71f9102d2c4a000f42875883",
+          "tests/evidence/focus-zh-failure.png": "8f80b88d657be74d3fd927ae22578fc260fe48c3103dd4ea30c71221b0ab8379",
+          "tests/evidence/focus-zh-fallback.png": "21bd43208149913c88f165dbaa0fa4832c1241353b21b392728bf7c02b5f729d",
+          "tests/evidence/focus-zh-overlap.png": "d78450972671eb5dc7bc75d76d5299a99898ad4d9870e2db917fbc1adc9a3f3b",
+          "tests/evidence/focus-zh-source.png": "2ffa6c0d4f05ee18af1b9cc911ccb060c5680e9323aef2a5d8f085e0d554d239",
+          "tests/evidence/focus-zh-zoom-current.png": "46715d308748861b876b1f9d16cc1a993b24e34160b84eff148a170bf766292c",
+          "tests/evidence/numerical.json": "5b8efc084a4c2bef6b5c69f903d39d715da13a1746ced7988e2a9f8f74abe749",
+          "tests/evidence/official-verification.md": "83d0f04ca002927744902161e1e3e0554384e9410c732753ee7c442c9eb0236c",
+          "tests/evidence/official.json": "f988a77cacf51179e3c2f008582ec85e65fa09ae1eae922f462806b8d355b5e8",
+          "tests/evidence/preflight.json": "63f3e026c21deaee00e49fd10d523741d967b43adaa3b2cc4cdb4c6d50b439d2",
+          "tests/evidence/sheet-1.jpg": "8fbd370a0870ad760a4b95d8778a9ca974f00ace0771dc34240e1d1ed65600c6",
+          "tests/evidence/sheet-2.jpg": "ae00d6cce1272565e8a8d451ce51a7f7affb1e5c62ee4614f0fbd796c3ebecfd",
+          "tests/evidence/sheet-3.jpg": "dfb555c8818da3ccab343f314b61baf530f9ea35e5e0d799a9f41371864a46ce",
+          "tests/evidence/sheet-4.jpg": "abf6fe4c7048a119c0fb441efcc039ebd3f78903ffd6bfc89a8f87fa53e26dd1",
+          "tests/evidence/sheet-5.jpg": "eced2e6c57c189cf9bdc7cffa6e789634f1015118eb37bef0fbb1e7f305e13c7",
+          "tests/evidence/sheet-6.jpg": "4971a899ea947be363bc7392577bc9dc14df25ee65297f8e875d79ce83d61d9f",
+          "tests/evidence/sheet-7.jpg": "6157ab866c9e5ab57721cb8e6f44bd7f91fcd49e2f78e26c39c438da45d1fdd0",
+          "tests/evidence/sheet-8.jpg": "f5d087be197165126875b2ed91a845ff78fc19a64b04b0552d6f4dfb4061b367",
+          "tests/evidence/source-zh-fresh.png": "fdeb2667d743f15f31cca9a2ba53bfef8386b7c7a873861330111c9ed6d4efb3",
+          "tests/evidence/visual.json": "ac1995d3965bc05153f7ad88dea306cfe7be8cba357c5cf9ce20e9b43ec91a2c",
+          "tests/evidence/zh-1440-z1-bits.png": "6452cf4393ccabcfef9cd9e4f6fea2b0e018fb67447029c5b79857c0196fcd1e",
+          "tests/evidence/zh-1440-z1-controls.png": "24a73bfde9dcfe2b82ed0e7ec3104c4b7dea37cc71c032ffb90d46a58c6a86e5",
+          "tests/evidence/zh-1440-z1-prediction.png": "8a7d193f8c1d94b5088ab4b4af41c24c80ff0002183588197d70df20ae70c21a",
+          "tests/evidence/zh-1440-z2-bits.png": "e5b52d0980a7350067fba5f72be8eda8b7a526203a96db42b2f5825fea3f5681",
+          "tests/evidence/zh-1440-z2-controls.png": "6a2201f0f63c94e64026bb1a0bcd79ccae8bebb74940ad061ad26feeaf38994a",
+          "tests/evidence/zh-1440-z2-prediction.png": "43ae14d9c79ac0c16aff7fb688f51bbe93017ceb21c6e723bd781a370e5febce",
+          "tests/evidence/zh-320-z1-bits.png": "0605756af188b36e89651b3cc207476713771a0a36a31fe3d857011bc42bdddf",
+          "tests/evidence/zh-320-z1-controls.png": "6831a3e33038efaa7ba858a0ea71fcf490750fefe3188fc5fae04dc0be533d1b",
+          "tests/evidence/zh-320-z1-prediction.png": "5eb54fcd01d599c2a5bf044ab79d7faafc613ca79d27c4e3b13a87eb28870b7e",
+          "tests/evidence/zh-320-z2-bits.png": "cb38819252bb60ba36f84178f2a92f9eff261d4c3c2fbeb3e2cd6d2acecff49c",
+          "tests/evidence/zh-320-z2-controls.png": "cfd542260529640634dfa1a54f1e7fe21e5e8413e15f973dd2c942b6cbda2838",
+          "tests/evidence/zh-320-z2-prediction.png": "8b153b85e835d78eadefeaf9646a6bc4ea99a32e4274a928a56620bfc82c6593",
+          "tests/evidence/zh-390-z1-bits.png": "b0ae7039bf99080e54c7a2979f62dc1be661088b72f77ea459ad84e909d58366",
+          "tests/evidence/zh-390-z1-controls.png": "7483c86c700a29624ad6f10dcc4d68ab06c00b9de2ad93d437e13550746b83b6",
+          "tests/evidence/zh-390-z1-prediction.png": "062f4dd4150b559a4fe488743ff553c4bd1b81c0fd92b95696b1433abeef6bf0",
+          "tests/evidence/zh-390-z2-bits.png": "b018597db6baca68883d27f86ecacdd3103be620ddd95cc6ceb5b60781bddc51",
+          "tests/evidence/zh-390-z2-controls.png": "a2a28b02b7f1dd5fdbcc29fa1a2519fabf00bf3951e4fddd120016a3e03a1c8c",
+          "tests/evidence/zh-390-z2-prediction.png": "c3024fd9e6c09a2963dad4885c6abb0ee7881c7e9714951e6076ca0bcdeea700",
+          "tests/evidence/zh-736-z1-bits.png": "6cfc96c15d5c52120d82e188430df9db8de8240d9a14fece014037c90ece69e0",
+          "tests/evidence/zh-736-z1-controls.png": "3bcdff6b0384a1ffad4b1e4af4987ee0a9d0583345179413d6add81f4608bef7",
+          "tests/evidence/zh-736-z1-prediction.png": "4add224b8b32a1589635b8b1e73ee081c6e73fed9a4dd3323e2225bb21341087",
+          "tests/evidence/zh-736-z2-bits.png": "cfe6df90dac0261b632efc4757ec9e389856d8fedd05e3b72402f5a788af7d80",
+          "tests/evidence/zh-736-z2-controls.png": "8761c66c9b879a3b9fad61bdcb2c2bc3b852ecea089ae5ee4346bf5c00f81ab5",
+          "tests/evidence/zh-736-z2-prediction.png": "6f47bf4e1ef22e70760694bb646f51cc4f4685460fa90939cec87d803306334d",
+          "tests/evidence/zh-header.png": "c64d18bb6a5cdcd932f63dfa08d74327822b7aa18cdfcf663d27749124f4403e",
+          "tests/evidence/zoom-before.png": "a2c6430610c242a546c1e16ebaacb60497b330967fb98f7ec1e50e6003418290",
+          "tests/make_sheets.py": "e878c62710678e8aef4d2a09535b5f178009723a56eeba74a846fb5528b91125",
+          "tests/test_core.cjs": "10c3ef7d7ef271d344993c60b0bfa298c021b5c406822b64a9f3cea5eee257e6",
+          "tests/test_solution.py": "ab5d0413c14ad41f9def7c17280dfe11502f8402c23fb05d0844f2ad3eaa1fbd",
+          "tests/visual.cjs": "542a3bcd18032c771b5fc62adb639efe8bca23567f019c4231d3a8ca1da58330"
+        },
+        "report_sha256": "b21c0af543f3f9379fdd99ba319e7177d027509070883ba878b2be09c066c97d"
+      }
+    },
+    "previous_receipt_sha256": "3a147fcf48a32cde5414d7da7e861776728b164b0918639d70c97a079906de2a",
+    "capture": {
+      "head": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78",
+      "current": {
+        "problem_id": "864",
+        "stage": "review",
+        "started_at": "2026-10-25T22:50:51.326690+00:00",
+        "run_id": "864-review-7fed1ec4a8a0"
+      },
+      "runner_pid": 1851151,
+      "native_pid": 1851411,
+      "session_id": "01a17542-763c-7103-a644-a510f6ac1932",
+      "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+      "resume_plan_before": {
+        "next_problem_id": "864",
+        "registration_ids": [],
+        "publication_bound": {
+          "eligible": [
+            "854",
+            "857",
+            "862",
+            "982",
+            "987",
+            "992",
+            "995"
+          ],
+          "incoming": [],
+          "registration_ids": [],
+          "reopened_upper_bound_ids": [
+            "995"
+          ],
+          "upper_bound_ids": [
+            "854",
+            "857",
+            "862",
+            "982",
+            "987",
+            "992",
+            "995"
+          ],
+          "upper_bound": 7
+        }
+      },
+      "resume_plan_after_queued_reopen": {
+        "next_problem_id": "864",
+        "registration_ids": [],
+        "publication_bound": {
+          "eligible": [
+            "854",
+            "857",
+            "862",
+            "982",
+            "987",
+            "992"
+          ],
+          "incoming": [],
+          "registration_ids": [],
+          "reopened_upper_bound_ids": [
+            "995"
+          ],
+          "upper_bound_ids": [
+            "854",
+            "857",
+            "862",
+            "982",
+            "987",
+            "992",
+            "995"
+          ],
+          "upper_bound": 7
+        }
+      }
+    }
+  },
+  "previous_receipt": {
+    "owner": "import992995-only-20261026-888bb6ac",
+    "status": "completed-resumed",
+    "created_at": "2026-10-25T22:43:15.305924+00:00",
+    "imports": [
+      {
+        "version": 1,
+        "status": "completed",
+        "problem_id": "992",
+        "central_before": "0f70390daac7691e6894b90a77414f0feb2f74b3",
+        "lane_head": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+        "lane_repo": "/home/songyy/projects/leetcode-hard-lane-992-20261026",
+        "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-992-20261026",
+        "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+        "run_ids": [
+          "992-author-bd39779c66e3",
+          "992-review-67f5902a3c90"
+        ],
+        "started_at": "2026-10-25T22:48:43.154991+00:00",
+        "updated_at": "2026-10-25T22:48:45.392156+00:00",
+        "merged_head": "fa0f53a49c93c42dbfe764913f568c8ca70726ba"
+      },
+      {
+        "version": 1,
+        "status": "completed",
+        "problem_id": "995",
+        "central_before": "fa0f53a49c93c42dbfe764913f568c8ca70726ba",
+        "lane_head": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+        "lane_repo": "/home/songyy/projects/leetcode-hard-lane-995-20261026",
+        "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-995-20261026",
+        "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+        "run_ids": [
+          "995-author-ab095f2912c3",
+          "995-review-f5d78a25ecbc"
+        ],
+        "started_at": "2026-10-25T22:50:23.712938+00:00",
+        "updated_at": "2026-10-25T22:50:26.007409+00:00",
+        "merged_head": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78"
+      }
+    ],
+    "lanes": [
+      {
+        "id": "992",
+        "lane_head": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+        "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+        "score": 100.0,
+        "required_open": [],
+        "run_ids": [
+          "992-author-bd39779c66e3",
+          "992-review-67f5902a3c90"
+        ]
+      },
+      {
+        "id": "995",
+        "lane_head": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+        "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+        "score": 95.0,
+        "required_open": [],
+        "run_ids": [
+          "995-author-ab095f2912c3",
+          "995-review-f5d78a25ecbc"
+        ]
+      }
+    ],
+    "pre_stop_plan": {
+      "next_problem_id": "864",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987"
+        ],
+        "incoming": [
+          "992",
+          "995"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 7
+      }
+    },
+    "stop": {
+      "owner": "import992995-only-20261026-888bb6ac",
+      "created_at": "2026-10-25T22:43:18.654095+00:00",
+      "reason": "Finish current stage; import independently accepted992/995 under unchanged policy, then resume the normal queue.",
+      "lane_ids": [
+        "992",
+        "995"
+      ]
+    },
+    "boundary_plan": {
+      "next_problem_id": "864",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987"
+        ],
+        "incoming": [
+          "992",
+          "995"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 7
+      }
+    },
+    "boundary_head": "0f70390daac7691e6894b90a77414f0feb2f74b3",
+    "post_import_plan": {
+      "next_problem_id": "864",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "incoming": [],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 7
+      }
+    },
+    "imported_head": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78",
+    "policy_preserved": true,
+    "launch": {
+      "pid": 1851151,
+      "queue_count": 984,
+      "continuous": true,
+      "state": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress.json"
+    },
+    "ordinary_resume_proof": {
+      "registration_commits": [],
+      "agent_candidate": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78",
+      "prior_reviews_and_runs_preserved": true
+    },
+    "completed_at": "2026-10-25T22:50:55.940369+00:00",
+    "fresh_agent": {
+      "current": {
+        "problem_id": "864",
+        "stage": "review",
+        "started_at": "2026-10-25T22:50:51.326690+00:00",
+        "run_id": "864-review-7fed1ec4a8a0"
+      },
+      "session_id": "01a17542-763c-7103-a644-a510f6ac1932",
+      "native_codex_pids": [
+        1851411
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a17542-763c-7103-a644-a510f6ac1932"
+        },
+        {
+          "type": "turn.started"
+        }
+      ]
+    },
+    "pushed_head": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78",
+    "ledger_preserved": true
+  },
+  "observation": {
+    "at": "2026-10-25T22:52:53.183501+00:00",
+    "read_only": true,
+    "head": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78",
+    "current": {
+      "problem_id": "864",
+      "stage": "review",
+      "started_at": "2026-10-25T22:50:51.326690+00:00",
+      "run_id": "864-review-7fed1ec4a8a0"
+    },
+    "central_progress_sha256": "5319522a73f0ce230823b860ae21b2265e139ae240c8ab26e80fa5bfceb40729",
+    "previous_receipt_sha256": "3a147fcf48a32cde5414d7da7e861776728b164b0918639d70c97a079906de2a",
+    "previous_pushed_head": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78",
+    "imports_schema_keys": [
+      [
+        "version",
+        "status",
+        "problem_id",
+        "central_before",
+        "lane_head",
+        "lane_repo",
+        "lane_state_dir",
+        "candidate",
+        "run_ids",
+        "started_at",
+        "updated_at",
+        "merged_head"
+      ],
+      [
+        "version",
+        "status",
+        "problem_id",
+        "central_before",
+        "lane_head",
+        "lane_repo",
+        "lane_state_dir",
+        "candidate",
+        "run_ids",
+        "started_at",
+        "updated_at",
+        "merged_head"
+      ]
+    ],
+    "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+    "released_count": 138,
+    "pending": null,
+    "995_unpublished": true,
+    "995_projected_ineligible": true,
+    "queue_preserved_by_projection": true,
+    "reservation_sha256": {
+      "lane-964-reservation.json": "1391726fbffbaed6867556691ab3562eb7671d34e29ae4a25f6a686782c77e7b",
+      "lane-689-reservation.json": "957831825f83cca2a81d1495f5931a5359be35ceda528a1c87c1c95e489738a1",
+      "lane-493-reservation.json": "bd5d56429c319dd527b5ad22901a1cd3aab373c1f56bfa06343775c50db1646a",
+      "lane-675-reservation.json": "87df66947101571a188f25df599bf1238a5561d5c4867289261ead14f3834411",
+      "lane-514-reservation.json": "e7fe9cbfba39aef217a9019b7a12ca2ecfc9a47a346e3f96d9e914decc8a6172",
+      "lane-940-reservation.json": "5b76e20709a6c9eeeddaf7c42163e8cf9ef98b43b8229d274d92c3f282a7d0c0",
+      "lane-591-reservation.json": "535dfc500dccf1643e6242d21a182558d5b85d128a01a53271cd2d26a1614431",
+      "lane-691-reservation.json": "98030c13682c693724ae81a11b79abd53f43b1515a943cbcf3098a0ce924eb5d",
+      "lane-719-reservation.json": "fc2adb66f580defa40a497604adcc5aaecff21b479448cc571c8e09e29fd56c6",
+      "lane-730-reservation.json": "20427007930c034eea0211f8b854b3a4ae6169b2b328ecda4adba73fa3f89a3c",
+      "lane-975-reservation.json": "5f1d4b55b4f872626f2ee855e61a7d1b989b1d8fb863818a18b7f213fd573dfe",
+      "lane-920-reservation.json": "014e874bb8c8233273adab34d4955eec74129d58468bf2c293e951de5c64777a",
+      "lane-903-reservation.json": "5b06657652d970bc8c8355daa26df21aa24df481506139d3b6b65d6b953aad2c",
+      "lane-732-reservation.json": "8e7e3e7a702ea3d53fc561a001c56a895a805ecd2a5f59ae077252586489f78a",
+      "lane-668-reservation.json": "efa5d6646bc5cd9401b6606cadf5327af2150690973e3b6136f9b94df081880a",
+      "lane-685-reservation.json": "56aed95f678dc1d8d91fe8e675b523c4f8d22c0892bc86d2fb2708739e17d751",
+      "lane-679-reservation.json": "aefea8a9b6b11aae939883a8d7368989d61c36a8c7e8f70f41b7da05cf441a56",
+      "lane-630-reservation.json": "5f858def91db8e6047aef65a989e23de92bc3fad11956d44c1041b74cd9a9e59",
+      "lane-992-reservation.json": "743847f0bae29bdb02c0457de911b86a9624d3fac06fda0e5ed3131524d7dd67",
+      "lane-956-reservation.json": "2d803b066a25cecb5e11b79795207973d5139ac4160a7b612f908f9c6ff9e2c1",
+      "lane-587-reservation.json": "f1b39130581fbf4b564480a095b02059dac564627b345e17616ea3b129807c8f",
+      "lane-726-reservation.json": "a063db9317c0b9296cf4ae00ab8a22e69fbaa5f6ab1543d8ff23d329afbbdf81",
+      "lane-715-reservation.json": "b25d3d805556cae8ec64562843965ddb47f654391d0c3115a2c6f607ef66cb3c",
+      "lane-632-reservation.json": "72ccc9eb1d331edf2bcedbf81cd594e3462118eaa657557af04c9ef687179ee3",
+      "lane-995-reservation.json": "7ccb873defeb0ac608d3553fb52d91a4d8d6327e20b7d8f2b19a77c86ed51ed2",
+      "lane-987-reservation.json": "3630636658d7a226112b861b2db4cb965dedff2572c0e66a8d08bed3697715f6",
+      "lane-805-reservation.json": "0bf09414ce4f665a4c1a86696edc8a31f5d14ffc446489bbb230a25f424c450c",
+      "lane-600-reservation.json": "dfe301eaca4783047f0f72f50686a54395b139b1c0e1b7165e32094e2fd568c1",
+      "lane-629-reservation.json": "57960b62012cf346e8bd01b0cdf56d193438c86fdc400cbec5498a494b07a580",
+      "lane-639-reservation.json": "da5c5716212986b8673f02442685fd2a3020fa1c817474507192bbf09785b2bc",
+      "lane-546-reservation.json": "8a54265d4b218e2c24b313d3bfba83b88c710a04818558539d26d55cfa22f46e",
+      "lane-972-reservation.json": "730e84123d5ba2078f1365fbedc3a93d153f4f0ba1af6474f713767acab51b13",
+      "lane-803-reservation.json": "43180abdc6b7b9536314bb24d41b327b330440b78b6ac38dacb2ab511baeb15c",
+      "lane-664-reservation.json": "6945aabd7f0ed8f16d7b51c609fda8e2915e201fe610e23fe615843dc5832f45",
+      "lane-982-reservation.json": "b7c9a16c2df5c48aded36075f9a88b9bbd6629ebcad00048d81a57b888d119e2",
+      "lane-968-reservation.json": "78f6300b81f4ed440c7c852a41c86d4f2de84bfa71b719855d3942738e93f42d",
+      "lane-517-reservation.json": "80c1825b01216de411d0e6f801608c8c5d9d4e18d954c85f17cfb7c80a3c6af1",
+      "lane-699-reservation.json": "e6c7488e18c4fbe6a3e3731b967451ce1b04717004fcab2042e9fe3b4e6c22e9",
+      "lane-980-reservation.json": "8950c15acc28f73cc68cc461235c85b251b62f1cafa3ac2c8767bb4adf71b6ba",
+      "lane-552-reservation.json": "c2358e06a98890b7dd2e0378aa9de2170c3da7d978d57c93d73b077971a27b39",
+      "lane-960-reservation.json": "177a719d6c687d7da3cadceabaeb97095136c547db8068b778d7cf16f548011e"
+    },
+    "policy_matches": true,
+    "launcher_matches": true,
+    "lane_processes_absent": true,
+    "runner_pid": 1851151,
+    "native_pid": 1851411,
+    "native_cwd": "/home/songyy/projects/leetcode-hard-campaign-20261018",
+    "native_output": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/864-review-7fed1ec4a8a0/final.json",
+    "session_id": "01a17542-763c-7103-a644-a510f6ac1932",
+    "resume_plan_before": {
+      "next_problem_id": "864",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "incoming": [],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [
+          "995"
+        ],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 7
+      }
+    },
+    "resume_plan_after_queued_reopen": {
+      "next_problem_id": "864",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992"
+        ],
+        "incoming": [],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [
+          "995"
+        ],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 7
+      }
+    },
+    "accepted995": {
+      "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+      "rounds": 1,
+      "score": 95.0,
+      "report": "specs/reviews/995-review-1-c18c137a.md",
+      "lesson_tree": "9fb98cd2eb0d740e233c2e52a1fe2eb318b4de87"
+    },
+    "imported995_runs": [
+      {
+        "id": "995-author-ab095f2912c3",
+        "problem_id": "995",
+        "role": "author",
+        "started_at": "2026-10-25T22:15:44.915979+00:00",
+        "status": "completed",
+        "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+        "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/995-author-ab095f2912c3",
+        "session_ids": [
+          "01a17522-52b0-7a80-87e5-e202107b030b"
+        ],
+        "finished_at": "2026-10-25T22:26:35.899262+00:00",
+        "result": {
+          "outcome": "ready",
+          "detail": "Completed bilingual interactive lesson in leetcode/995/. Official Python3 interface verified; oracle, invariant, browser, source-parity, accessibility, and metadata preflight checks passed. Evidence and frozen candidate manifest saved locally. Ready for separate independent review; no acceptance or deployment claimed."
+        },
+        "source_directory": "/home/songyy/projects/leetcode-hard-lane-state-995-20261026/runs/995-author-ab095f2912c3"
+      },
+      {
+        "id": "995-review-f5d78a25ecbc",
+        "problem_id": "995",
+        "role": "review",
+        "started_at": "2026-10-25T22:26:46.359029+00:00",
+        "status": "completed",
+        "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+        "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/995-review-f5d78a25ecbc",
+        "session_ids": [
+          "01a1752c-6919-7672-9e6a-5f7e07a8145c"
+        ],
+        "finished_at": "2026-10-25T22:36:13.754303+00:00",
+        "result": {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/995-review-1-c18c137a.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.",
+            "Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.",
+            "Non-mutating metadata preflight exited 0."
+          ],
+          "detail": "95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication."
+        },
+        "source_directory": "/home/songyy/projects/leetcode-hard-lane-state-995-20261026/runs/995-review-f5d78a25ecbc"
+      }
+    ]
+  }
+}

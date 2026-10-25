@@ -1,0 +1,19 @@
+test_actual_git_adoption_preserves_lesson_tree_and_reopens_only995 (reviewed995tests.Adoption.test_actual_git_adoption_preserves_lesson_tree_and_reopens_only995) ... ok
+test_hook_runtime_mutation_does_not_checkpoint_or_reopen (reviewed995tests.Adoption.test_hook_runtime_mutation_does_not_checkpoint_or_reopen) ... ok
+test_actual_completed_receipt_schema_and_request_source (__main__.FinalBinding.test_actual_completed_receipt_schema_and_request_source) ... ok
+test_actual_projection_preserves_order_and_ineligibility (__main__.FinalBinding.test_actual_projection_preserves_order_and_ineligibility) ... ok
+test_only_two_constants_changed (__main__.FinalBinding.test_only_two_constants_changed) ... ok
+test_actual_next_plan_keeps_pending_registration_prefix (reviewed995tests.Guards.test_actual_next_plan_keeps_pending_registration_prefix) ... ok
+test_disabled_before_input_or_runtime_access (reviewed995tests.Guards.test_disabled_before_input_or_runtime_access) ... ok
+test_narrow_payload_rejects_escape_wrong_hash_and_unrelated_policy (reviewed995tests.Guards.test_narrow_payload_rejects_escape_wrong_hash_and_unrelated_policy) ... ok
+test_not_accepted_or_exhausted_budget_cannot_reopen (reviewed995tests.Guards.test_not_accepted_or_exhausted_budget_cannot_reopen) ... ok
+test_only995_reopens_and_all_prior_history_and_budget_remain (reviewed995tests.Guards.test_only995_reopens_and_all_prior_history_and_budget_remain) ... ok
+test_pending_release_or20_rejects_even_before_reopen (reviewed995tests.Guards.test_pending_release_or20_rejects_even_before_reopen) ... ok
+test_queued_repair_remains_publication_ineligible_without_queue_priority (reviewed995tests.Guards.test_queued_repair_remains_publication_ineligible_without_queue_priority) ... ok
+test_startup_waits_only_live_exact_snapshot_then_actual_next (reviewed995tests.Guards.test_startup_waits_only_live_exact_snapshot_then_actual_next) ... ok
+test_wrong_previous_import_receipt_refuses (reviewed995tests.Guards.test_wrong_previous_import_receipt_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.475s
+
+OK

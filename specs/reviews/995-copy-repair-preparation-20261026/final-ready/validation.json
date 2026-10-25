@@ -1,0 +1,24 @@
+{
+  "status": "prepared-not-dispatched",
+  "tests_passed": 14,
+  "only_operator_changes": [
+    "PINS_SHA",
+    "PREVIOUS_OWNER"
+  ],
+  "pi_mutations": false,
+  "source_revision": "f090946dfb330ae3eb4a423b1ad3b367b83d8890",
+  "sha256": {
+    "operate.py": "2cc99b2622895aaf3dc87c83131dfb4ab2b70e123a424845409dd428788fe280",
+    "pins.json": "b8daf2ba46ff675f5cc14f6ddca7e1816d14348b3438b228f13c4e6fa60ff93c",
+    "test_final.py": "c87bd91c62be64ea4d213a15c540136ac44b83b7083a994f53ff3b9f5673cf8d",
+    "previous-import-receipt.json": "3a147fcf48a32cde5414d7da7e861776728b164b0918639d70c97a079906de2a",
+    "runtime-readonly-observation.json": "113d8a3824695eb77e5cb5bf03faa551ec2a4a37686e951b46536b674388cabf",
+    "capture-readonly.py": "c295518f8109f786862d3dcc334707019d33c501e8982d3a3dcf5ffd7588386a",
+    "capture-input.json": "ccd67845f479a6f17e85f2b68549a82afabd1f5931ae921ab710b6500709b311",
+    "capture.stdout.json": "20f3f38d822bf19b65e1c357f89a3020dc39b177bf4dab0c72ac04ffb678b983",
+    "capture.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "two-constant-diff.patch": "11add9f87b0c81a97ac5b8a28cd1985acef2a363bbf63c43318e1375d5445984",
+    "tests.log": "84bdd0bb1e7d7ed03244d4e752a0c07565d2c41d3cd86f6de37a3c273a97c662",
+    "README.md": "f060631384dc9095b4c7b31b715bcf8b0cb0ff7476e1d65086b5fba733356a53"
+  }
+}

@@ -1,0 +1,8 @@
+['@..aA'] 3 unmutated
+['b.A@.aB'] 7 unmutated
+['@', 'a', 'A'] 1 unmutated
+['@#aA'] -1 unmutated
+['@abcdefABCDEF'] 6 unmutated
+['a.A@bB'] -1 unmutated
+square-only counterexample: -1
+Focused bilingual semantic binding passed

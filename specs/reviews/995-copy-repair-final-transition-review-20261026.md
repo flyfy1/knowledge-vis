@@ -1,0 +1,34 @@
+# Final independent review: queued #995 copy-repair handoff
+
+**Approved for the exact bounded queued handoff; no required findings.** Operator SHA-256 `2cc99b2622895aaf3dc87c83131dfb4ab2b70e123a424845409dd428788fe280`; pins SHA-256 `b8daf2ba46ff675f5cc14f6ddca7e1816d14348b3438b228f13c4e6fa60ff93c`. Separate root dispatch and fresh live guards remain necessary. Approval does not assert the repair is implemented or #995fix is the next agent.
+
+Verified all12 manifest hashes and read the final README/schema/source request. Reversing only PINS_SHA and PREVIOUS_OWNER reconstructs approved disabled `f5c220bf…` exactly. The actual preceding receipt uses `imports[*].problem_id`, has completed entries for992/995, status completed-resumed, ledger_preserved=true and pushed HEAD `d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78`. Its raw hash is `3a147fcf48a32cde5414d7da7e861776728b164b0918639d70c97a079906de2a`; the final previous_guard accepts that actual schema.
+
+Independently ran **14 final tests, all passed in0.475s**, including the prior real disposable Git/scope/transition/publication cases and final binding checks. [Log](995-copy-repair-final-review-evidence-20261026/tests.log). The earlier structural review's actual registration-prefix/history test remains applicable; its helper/control flow did not change.
+
+The single adopted request is a regular100644 blob at exact commit `f090946dfb330ae3eb4a423b1ad3b367b83d8890`, path `specs/reviews/995-teaching-copy-repair-request-20261026.md`, SHA-256 `e68c8e47386c982e7545212213fcdc3905a4270a6f885ff474484d8a0290270b`. Independently read/hashed the committed blob and checked its mode. Its scope retains the old95-point report, addresses the two existing optional copy advisories through a new future candidate/review, and does not authorize algorithm/source/policy changes. References to historical archives do not expand the one-file adoption allowlist.
+
+## Independent fresh consistency
+
+Reran the inspected capture body on Pi using Python `-B`, with hash-bound helper sources and input pins. At **2026-10-25 22:53:50 UTC / October26 06:53:50 SGT**, **all resulting pins, accepted995 identity/history and previous receipt matched the frozen proposal exactly**. [Fresh capture](995-copy-repair-final-review-evidence-20261026/capture.json), [comparison](995-copy-repair-final-review-evidence-20261026/comparison.json), [stderr](995-copy-repair-final-review-evidence-20261026/capture.stderr).
+
+- Imported995 entry hash `2c890f485eaedf4fe72a1c190191cbe66373eae984b3ba08cc1db260755168bf`; actual relocated central run-history hash `a55847db4d416108dab4de3ed25783f854881997a8ed74ba13709c246aba70d1`. Each run retains original lane source_directory and uses the exact central runs directory. These are not substituted pre-import lane hashes.
+- Candidate `d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c`, round1/95-point acceptance, tree `9fb98cd2eb0d740e233c2e52a1fe2eb318b4de87`, report hash `b21c0af543f3f9379fdd99ba319e7177d027509070883ba878b2be09c066c97d`, and all tracked lesson bytes match. `_reviewed` validates current acceptance before projection.
+- Central HEAD/saved HEAD `d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78`; reviewer `864-review-7fed1ec4a8a0`; runner1851151/native1851411; session `01a17542-763c-7103-a644-a510f6ac1932`. Fresh thread/turn, native ancestry/cwd/output path, one worker, no lane processes, inactive/imported reservations and no STOP were observed. Importer PID1810489 had exited.
+- Ordered984queue and policy/runtime/launcher identities match. Ledger hash remains `163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6`,138 released identities, pending=null,995 unreleased.
+
+The actual in-memory transition preserves queue order/history and makes995 changes_required/fix. Actual publisher `_reviewed` then returns no995 payload; eligible count drops from7 to6, while the conservative union retaining995 stays **7<20**. Actual-next remains864 at this observation, not995. This projection is not a state write or evidence of a completed repair.
+
+## Operational boundary
+
+The unchanged operator rereads the ordinary stopped state and computes its actual next agent/registration prefix. A later phase advance must be reflected honestly in the operator's fresh checks and dispatcher evidence, not confused with the captured #864 phase. Exact ownership, accepted995 history, unpublished/pending-release refusal and conservative publication bounds still apply before STOP, at adoption and before resume. Partial commits/checkpoints/maintenance/STOP stay inspectable; do not blindly retry or claim atomic crash recovery.
+
+Future996/1000 BASE must bind this **later handoff's real completed-resumed receipt/pushed_head**, after request adoption, because the request participates in the importer's shared tree. The previous pair-import receipt is insufficient. No next-lane launch, prioritization, source repair, rescore or policy adoption is approved by this report.
+
+Only local review artifacts were written. Remote activity was read-only; no STOP, source/state mutation, adoption, commit/push, launcher execution, import or publication was performed by this review.
+
+## Clarification: observed identity versus dynamic execution guards
+
+The captured #864 HEAD, run, runner/native PIDs and session above are **dated observation evidence, not executable frozen-current guards**. This wrapper does not compare its dispatch-time current run/HEAD against those capture fields. Its executable pins bind #995's accepted entry, relocated history, tree/runtime/report, ordered queue, runtime/policy dependencies, previous operation receipt and exact request payload. It checks the live running checkpoint/HEAD and sole central runner, then takes an owned natural STOP; under the normal checkout/release locks it validates the actual stopped state and recomputes the actual next agent, registration prefix and conservative publication bound. Exact fresh native proof is required after restart; root separately checks the actual native worker before dispatch.
+
+Root subsequently reported natural completion of #864 (accepted95; registration `a3a3d5ef724394fb4ab04c9073daece67744f289`) and `871-author-3c117e1396eb` starting at22:55:31UTC, with STOP absent. This is root-supplied later observation, not a second independent capture. The earlier 7<20 projection and #864 identity must not be presented as current: the operator must recalculate its live bound and next agent. Such ordinary advancement is compatible with this deliberately dynamic handoff contract while the frozen #995 inputs, queue, receipt and runtime remain intact and all fresh guards pass. It does not require changing observation-only pins or weakening any guard. No concrete defect was found on re-reading `execute`, `accepted_guard`, `resume_plan` and `publication_bound`; exact-hash approval above remains unchanged.

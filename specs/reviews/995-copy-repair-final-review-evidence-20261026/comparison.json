@@ -1,0 +1,78 @@
+{
+  "time": "2026-10-25T22:53:50.915546+00:00",
+  "all_pins_match": true,
+  "captured_current": {
+    "head": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78",
+    "current": {
+      "problem_id": "864",
+      "stage": "review",
+      "started_at": "2026-10-25T22:50:51.326690+00:00",
+      "run_id": "864-review-7fed1ec4a8a0"
+    },
+    "runner_pid": 1851151,
+    "native_pid": 1851411,
+    "session_id": "01a17542-763c-7103-a644-a510f6ac1932",
+    "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+    "resume_plan_before": {
+      "next_problem_id": "864",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "incoming": [],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [
+          "995"
+        ],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 7
+      }
+    },
+    "resume_plan_after_queued_reopen": {
+      "next_problem_id": "864",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992"
+        ],
+        "incoming": [],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [
+          "995"
+        ],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 7
+      }
+    }
+  },
+  "accepted_entry_runs_match": true,
+  "previous_receipt_matches": true
+}
