@@ -3519,6 +3519,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n + n log(k+1)) time; O(n+k) auxiliary space"
   },
   {
+    "id": 862,
+    "title": {
+      "zh": "和至少为 K 的最短子数组",
+      "en": "Shortest Subarray with Sum at Least K"
+    },
+    "desc": {
+      "zh": "从负数反例推导前缀和与双端队列的两种安全删除。",
+      "en": "Derive two safe deque removals from prefix sums and a negative-value counterexample."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "前缀和",
+        "en": "Prefix sums"
+      },
+      {
+        "zh": "单调队列",
+        "en": "Monotonic deque"
+      }
+    ],
+    "path": "862/",
+    "leetcodeUrl": "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",

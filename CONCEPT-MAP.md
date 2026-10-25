@@ -1782,3 +1782,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Proportional pay rate sweep | `leetcode/857/#step2` | Keep the k smallest qualities among workers admitted by rate. |
 
 <!-- /leetcode-857-campaign -->
+
+
+<!-- leetcode-862-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Prefix difference | `leetcode/862/#step1` | Exclusive-end interval sums |
+| Monotonic deque | `leetcode/862/#step2` | Settle feasible starts and remove dominated prefixes |
+
+<!-- /leetcode-862-campaign -->
