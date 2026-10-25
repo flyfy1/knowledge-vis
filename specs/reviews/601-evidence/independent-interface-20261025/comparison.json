@@ -1,0 +1,24 @@
+{
+  "candidate": "19aa80163e63c52809206f13fd78dd38ffb806ba",
+  "canonicalPath": "leetcode/601/solution.py",
+  "officialLanguage": "Pandas",
+  "officialSlug": "pythondata",
+  "officialSignature": {
+    "name": "human_traffic",
+    "args": "arguments(args=[arg(arg='stadium', annotation=Attribute(value=Name(id='pd', ctx=Load()), attr='DataFrame', ctx=Load()))])",
+    "returns": "Attribute(value=Name(id='pd', ctx=Load()), attr='DataFrame', ctx=Load())"
+  },
+  "candidateSignature": {
+    "name": "human_traffic",
+    "args": "arguments(args=[arg(arg='stadium', annotation=Attribute(value=Name(id='pd', ctx=Load()), attr='DataFrame', ctx=Load()))])",
+    "returns": "Attribute(value=Name(id='pd', ctx=Load()), attr='DataFrame', ctx=Load())"
+  },
+  "signatureMatches": true,
+  "languages": [
+    "MySQL",
+    "MS SQL Server",
+    "PostgreSQL",
+    "Oracle",
+    "Pandas"
+  ]
+}
