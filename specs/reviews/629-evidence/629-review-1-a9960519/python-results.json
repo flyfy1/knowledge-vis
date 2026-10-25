@@ -1,0 +1,56 @@
+{
+  "kind": "author canonical Python execution self-check",
+  "status": "PASS",
+  "exhaustiveN": "1..8, every feasible k plus impossible targets",
+  "seed": 629,
+  "seededCases": 180,
+  "intermediateCanonicalChecks": 2247,
+  "maxBounds": [
+    [
+      1000,
+      0,
+      1
+    ],
+    [
+      1000,
+      1,
+      999
+    ],
+    [
+      1000,
+      2,
+      499499
+    ],
+    [
+      45,
+      990,
+      1
+    ],
+    [
+      45,
+      989,
+      44
+    ],
+    [
+      1,
+      1000,
+      0
+    ],
+    [
+      1000,
+      1000,
+      663677020
+    ],
+    [
+      46,
+      1000,
+      158154198
+    ],
+    [
+      100,
+      500,
+      914483099
+    ]
+  ],
+  "seconds": 0.948
+}

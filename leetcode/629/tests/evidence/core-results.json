@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "kind": "author bounded simulation and copy checks",
+  "frames": 455,
+  "transitions": 420,
+  "presets": [
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      5,
+      6
+    ]
+  ],
+  "localizationKeys": 83,
+  "duplicateKeys": 0,
+  "mirror": "exact"
+}

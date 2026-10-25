@@ -1,0 +1,8 @@
+Author browser run history (2026-10-25):
+1. Initial full run PASS before the table-caption improvement.
+2. Rerun after the caption improvement ended with Playwright "Target page, context or browser has been closed" while waiting to click #end during viewport checks (browser.cjs:65). No assertion identified a lesson defect. This attempt is not a passing result for the revised candidate.
+3. Fresh rerun is recorded by the final browser-results.json and self-check report. Supplementary run has its own extra-browser-results.json.
+
+No independent reviewer ran in this author session. This note retains the interrupted author attempt without treating an earlier pass as verification of later edits.
+
+Final supplemental copy rerun initially asserted success before the asynchronous native clipboard promise had updated the status. The test now waits for nonempty acknowledged copy feedback before checking its bilingual success text. This was a test timing correction; runtime source was unchanged. The subsequent supplemental result is recorded separately.
