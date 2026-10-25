@@ -1,0 +1,4 @@
+{"running": ["node", "/tmp/leetcode-699-native-keyboard-probe-20261025.cjs"], "candidate": "f7c327b4cd6cf3ba04779e034952c7e22d912ba6"}
+{"host":"darwin","browser":"151.0.7922.34","expectedByOriginalLinuxTest":"3","records":[{"name":"lesson","steps":[{"key":"focused","value":"4","focused":true},{"key":"Home","value":"4","focused":true},{"key":"ArrowDown","value":"4","focused":true},{"key":"Enter","value":"4","focused":true}]},{"name":"plain-native-no-handlers","steps":[{"key":"focused","value":"4","focused":true},{"key":"Home","value":"4","focused":true},{"key":"ArrowDown","value":"4","focused":true},{"key":"Enter","value":"4","focused":true}]}]}
+{"running": ["node", "leetcode/699/tests/accessibility.cjs"], "candidate": "f7c327b4cd6cf3ba04779e034952c7e22d912ba6"}
+{ measurements: 28, hitTargets: 15 }

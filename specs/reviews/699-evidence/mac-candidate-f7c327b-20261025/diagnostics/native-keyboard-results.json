@@ -1,0 +1,57 @@
+{
+  "host": "darwin",
+  "browser": "151.0.7922.34",
+  "expectedByOriginalLinuxTest": "3",
+  "records": [
+    {
+      "name": "lesson",
+      "steps": [
+        {
+          "key": "focused",
+          "value": "4",
+          "focused": true
+        },
+        {
+          "key": "Home",
+          "value": "4",
+          "focused": true
+        },
+        {
+          "key": "ArrowDown",
+          "value": "4",
+          "focused": true
+        },
+        {
+          "key": "Enter",
+          "value": "4",
+          "focused": true
+        }
+      ]
+    },
+    {
+      "name": "plain-native-no-handlers",
+      "steps": [
+        {
+          "key": "focused",
+          "value": "4",
+          "focused": true
+        },
+        {
+          "key": "Home",
+          "value": "4",
+          "focused": true
+        },
+        {
+          "key": "ArrowDown",
+          "value": "4",
+          "focused": true
+        },
+        {
+          "key": "Enter",
+          "value": "4",
+          "focused": true
+        }
+      ]
+    }
+  ]
+}
