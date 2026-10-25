@@ -1,0 +1,12 @@
+{
+  "status": "blocked",
+  "checks": "Saved GraphQL response is valid JSON; identity, paid flag, unavailable statement and snippets confirmed. This is an access-evidence self-check only.",
+  "files": {
+    "BRIEF.md": "86b3e76aacfa50ee4e87c1b84a5a2e885cef1ca935b0530f9351f7a86dd22c89",
+    "tests/evidence/access-results.json": "fcd87639dee64b2a3cf2ea03f29b0eb7e2cc12247793fee3935910c4afa00e90",
+    "tests/evidence/graphql-request.json": "9a28cf6b03b967d711a73c0a2db4c00c6a5d1042f4cb12bdcfcfbfd3c8489ded",
+    "tests/evidence/official-graphql.json": "fe62a93081e3776bd44b6c2ed40d9ac1865b99899927b8b28b4d5338d0a640b7",
+    "tests/evidence/official-page.html": "7bab0add3b79a7e400ba94deb805a67e941c1e2ae33cc3b6a79d910cdcf476f9",
+    "tests/evidence/official-web-extract.txt": "91ef849a8c95720629cd3e8420ca88a53c5b9dd730229f9adb1c11e9288462cd"
+  }
+}
