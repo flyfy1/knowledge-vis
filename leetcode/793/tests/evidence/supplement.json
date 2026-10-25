@@ -1,0 +1,115 @@
+{
+  "kind": "author supplementary self-check",
+  "rewind": [
+    {
+      "locale": "en",
+      "k": 0,
+      "frames": 8
+    },
+    {
+      "locale": "en",
+      "k": 3,
+      "frames": 11
+    },
+    {
+      "locale": "en",
+      "k": 5,
+      "frames": 12
+    },
+    {
+      "locale": "en",
+      "k": 6,
+      "frames": 12
+    },
+    {
+      "locale": "en",
+      "k": 24,
+      "frames": 16
+    },
+    {
+      "locale": "en",
+      "k": 1000000000,
+      "frames": 66
+    },
+    {
+      "locale": "zh",
+      "k": 0,
+      "frames": 8
+    },
+    {
+      "locale": "zh",
+      "k": 3,
+      "frames": 11
+    },
+    {
+      "locale": "zh",
+      "k": 5,
+      "frames": 12
+    },
+    {
+      "locale": "zh",
+      "k": 6,
+      "frames": 12
+    },
+    {
+      "locale": "zh",
+      "k": 24,
+      "frames": 16
+    },
+    {
+      "locale": "zh",
+      "k": 1000000000,
+      "frames": 66
+    }
+  ],
+  "focus": [
+    {
+      "locale": "en",
+      "outline": "3px",
+      "offset": "4px",
+      "parentOverflow": "visible",
+      "visible": true,
+      "color": "rgb(255, 180, 84)",
+      "background": "rgb(13, 17, 23)",
+      "contrast": 10.731637051347173
+    },
+    {
+      "locale": "zh",
+      "outline": "3px",
+      "offset": "4px",
+      "parentOverflow": "visible",
+      "visible": true,
+      "color": "rgb(255, 180, 84)",
+      "background": "rgb(13, 17, 23)",
+      "contrast": 10.731637051347173
+    }
+  ],
+  "inspection": [],
+  "disabled": [
+    {
+      "id": "minus",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "opacity": "1"
+    },
+    {
+      "id": "prev",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "opacity": "1"
+    },
+    {
+      "id": "reveal",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "opacity": "1"
+    }
+  ],
+  "disabledContrast": 7.078851579017443,
+  "forcedColors": {
+    "outline": "3px",
+    "color": "rgb(0, 0, 0)"
+  },
+  "sourceKeyboardHorizontalScroll": true,
+  "status": "passed"
+}

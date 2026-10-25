@@ -1,0 +1,313 @@
+{
+  "kind": "author browser self-check",
+  "host": "linux",
+  "screenshots": [
+    "en-320-trace.png",
+    "en-320-heading.png",
+    "zh-320-trace.png",
+    "zh-320-heading.png",
+    "en-390-trace.png",
+    "zh-390-trace.png",
+    "en-736-trace.png",
+    "zh-736-trace.png",
+    "en-1440-trace.png",
+    "en-1440-heading.png",
+    "zh-1440-trace.png",
+    "zh-1440-heading.png",
+    "en-200percent.png",
+    "zh-200percent.png"
+  ],
+  "states": [
+    {
+      "locale": "en",
+      "k": 0,
+      "comparisons": 6,
+      "final": "Final: L(1)=5, L(0)=0; match count=5−0=5."
+    },
+    {
+      "locale": "en",
+      "k": 3,
+      "comparisons": 9,
+      "final": "Final: L(4)=20, L(3)=15; match count=20−15=5."
+    },
+    {
+      "locale": "en",
+      "k": 5,
+      "comparisons": 10,
+      "final": "Final: L(6)=25, L(5)=25; match count=25−25=0."
+    },
+    {
+      "locale": "en",
+      "k": 6,
+      "comparisons": 10,
+      "final": "Final: L(7)=30, L(6)=25; match count=30−25=5."
+    },
+    {
+      "locale": "en",
+      "k": 24,
+      "comparisons": 14,
+      "final": "Final: L(25)=105, L(24)=100; match count=105−100=5."
+    },
+    {
+      "locale": "en",
+      "k": 1000000000,
+      "comparisons": 64,
+      "final": "Final: L(1000000001)=4000000020, L(1000000000)=4000000015; match count=4000000020−4000000015=5."
+    },
+    {
+      "locale": "en",
+      "manualCopyAttempt": 0,
+      "hostShortcut": "Control+C",
+      "sentinelVerified": true,
+      "exactTransfer": true
+    },
+    {
+      "locale": "en",
+      "manualCopyAttempt": 1,
+      "hostShortcut": "Control+C",
+      "sentinelVerified": true,
+      "exactTransfer": true
+    },
+    {
+      "locale": "zh",
+      "k": 0,
+      "comparisons": 6,
+      "final": "最终：L(1)=5，L(0)=0；匹配个数=5−0=5。"
+    },
+    {
+      "locale": "zh",
+      "k": 3,
+      "comparisons": 9,
+      "final": "最终：L(4)=20，L(3)=15；匹配个数=20−15=5。"
+    },
+    {
+      "locale": "zh",
+      "k": 5,
+      "comparisons": 10,
+      "final": "最终：L(6)=25，L(5)=25；匹配个数=25−25=0。"
+    },
+    {
+      "locale": "zh",
+      "k": 6,
+      "comparisons": 10,
+      "final": "最终：L(7)=30，L(6)=25；匹配个数=30−25=5。"
+    },
+    {
+      "locale": "zh",
+      "k": 24,
+      "comparisons": 14,
+      "final": "最终：L(25)=105，L(24)=100；匹配个数=105−100=5。"
+    },
+    {
+      "locale": "zh",
+      "k": 1000000000,
+      "comparisons": 64,
+      "final": "最终：L(1000000001)=4000000020，L(1000000000)=4000000015；匹配个数=4000000020−4000000015=5。"
+    },
+    {
+      "locale": "zh",
+      "manualCopyAttempt": 0,
+      "hostShortcut": "Control+C",
+      "sentinelVerified": true,
+      "exactTransfer": true
+    },
+    {
+      "locale": "zh",
+      "manualCopyAttempt": 1,
+      "hostShortcut": "Control+C",
+      "sentinelVerified": true,
+      "exactTransfer": true
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "geometry": {
+        "viewport": 320,
+        "scroll": 320,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 194
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 194
+          }
+        ]
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "geometry": {
+        "viewport": 320,
+        "scroll": 320,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 194
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 194
+          }
+        ]
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "geometry": {
+        "viewport": 390,
+        "scroll": 390,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 264
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 264
+          }
+        ]
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "geometry": {
+        "viewport": 390,
+        "scroll": 390,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 264
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 264
+          }
+        ]
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "geometry": {
+        "viewport": 736,
+        "scroll": 736,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 582
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 582
+          }
+        ]
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "geometry": {
+        "viewport": 736,
+        "scroll": 736,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 582
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 582
+          }
+        ]
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "geometry": {
+        "viewport": 1440,
+        "scroll": 1440,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 846
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 846
+          }
+        ]
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "geometry": {
+        "viewport": 1440,
+        "scroll": 1440,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 846
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 846
+          }
+        ]
+      }
+    }
+  ],
+  "links": [],
+  "contrast": [],
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18770/leetcode/793/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/793/style.css?v=793-r1",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/793/copy.js?v=793-r1",
+    "http://127.0.0.1:18770/leetcode/793/core.js?v=793-r1",
+    "http://127.0.0.1:18770/leetcode/793/python-code.js?v=793-r1",
+    "http://127.0.0.1:18770/leetcode/793/app.js?v=793-r1"
+  ],
+  "zoom": "200% CSS zoom in Chromium at 1440px; text and component reflow checked. Physical browser chrome zoom/real devices unverified.",
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(/partition|划分|C\\(mid\\)|mid/.test(body))\n\n    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/793/tests/browser.cjs:68:376"
+}
