@@ -1,0 +1,7 @@
+{
+  "command": "python3 -B scripts/register_leetcode_lesson.py 843 --validate-only",
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "",
+  "complexity": "O(n\u00b2L + Gn\u00b2) time; O(n\u00b2) auxiliary space, L=6 and G\u2264n (worst-case O(n\u00b3+n\u00b2L) time)"
+}

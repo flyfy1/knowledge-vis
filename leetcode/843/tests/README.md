@@ -43,3 +43,18 @@ python3 -B leetcode/843/tests/test_budget.py --source leetcode/843/tests/evidenc
 python3 -B leetcode/843/tests/test_budget.py --source leetcode/843/tests/evidence/budget-r2/before.py --diagnostic-bound 30 --output leetcode/843/tests/evidence/budget-r2/diagnostic30.json
 # Exit 0: all fixtures pass; diagnostic only, not the canonical repair.
 ```
+
+
+843-R2-SELECT01 selected-value regression (author check):
+
+```sh
+OUTPUT_DIR="$PWD/leetcode/843/tests/evidence/select-r3/green" node leetcode/843/tests/selection_browser.cjs
+```
+
+Checks complete adjacent selected text for presets 6/8 at 320/390/1280 in
+zh→en→zh, normal size and CSS zoom 2. It verifies the description association,
+wrapping geometry, full screenshot visibility and retained round/candidate state.
+`select-r3/red/selection-results.json` preserves the pre-fix exit-1 result from
+the initial normal-size test: full selected-scenario readout missing. The final
+test additionally covers zoom and visible capture bounds. This is a readout
+repair; it does not assert that native option text itself now fits the select.

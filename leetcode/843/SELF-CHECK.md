@@ -142,3 +142,62 @@ No child agents, commits, registration, acceptance changes, publishing or servic
 changes occurred. Independent closure of 843-BUDGET-R1 on this new frozen
 candidate remains the next action. Real devices, screen readers, browser-chrome
 zoom, actual novice learning and production/LeetCode acceptance remain unverified.
+
+
+## Candidate r3 — 843-R2-SELECT01 author repair (2026-10-26)
+
+Independent finding closure: **pending separate re-review**. Prior review and
+843-BUDGET-R1 history remain unchanged. Only lesson 843 files/evidence changed.
+
+Finding mapping: `843-R2-SELECT01` → `app.js` derives `presetSelection` from the
+active localized preset, `index.html` places it directly after the select and
+associates it using `aria-describedby`, and `style.css` permits wrapping. The
+lesson-local HTML generator retains the same markup. Native single-line text
+may still clip; the adjacent readout exposes every character, including 22 words,
+budget 10 and infeasible-control purpose, or budget 11 and bmmmmm. Runtime asset
+query versions are `843-select-r3`. This follows the independent report's stated
+repair option. No canonical source or algorithm changes were necessary.
+
+Before repair, `OUTPUT_DIR="$PWD/leetcode/843/tests/evidence/select-r3/red" node
+leetcode/843/tests/selection_browser.cjs` exited 1: “Full selected-scenario readout
+is missing”. `red/selection-results.json` preserves the failure. The report's
+Chromium/Linux native-control clipping reproduction is the causal evidence:
+intrinsic single-line labels exceed available width. The fix gives the same
+selection a wrapping text surface rather than changing algorithms or budgets.
+This was a bounded presentation defect, not a hard algorithm bug investigation.
+
+Executed from repository root; new output in `tests/evidence/select-r3/green/`:
+
+- `OUTPUT_DIR="$PWD/leetcode/843/tests/evidence/select-r3/green" python3 -B leetcode/843/tests/test_solution.py`: exit 0, 1,211 actual canonical Python cases.
+- `OUTPUT_DIR="$PWD/leetcode/843/tests/evidence/select-r3/green" node leetcode/843/tests/test_core.cjs`: exit 0, 3,068 frames, 87 unique two-string localization pairs, exact mirror parity.
+- `python3 -B leetcode/843/tests/test_budget.py --output leetcode/843/tests/evidence/select-r3/green/budget-results.json`: exit 0; all secrets in 20/22/24-word families, official lists and singleton succeed under their declared budgets.
+- `OUTPUT_DIR="$PWD/leetcode/843/tests/evidence/select-r3/green" node leetcode/843/tests/browser.cjs`: exit 0; nine presets/all frames in both locales, complete formulas, next-probe identity/buckets, cumulative calls matching ledger, rewind/replay, scoped prediction feedback and locale preservation. Exact embedded/displayed/downloaded/copied canonical Python bytes including final newline. Linux Control+C fallback succeeds in each locale after verifying a fresh distinct non-source clipboard sentinel. Keyboard, forced-color focus, local/offline assets, blocked storage, 320/390/736/1440 layouts and CSS zoom 2 pass. Sampled contrast remains ≥7.07:1; combined CSS 10,944 bytes.
+- `OUTPUT_DIR="$PWD/leetcode/843/tests/evidence/select-r3/green" node leetcode/843/tests/focused.cjs`: exit 0, both locales, touch targets and horizontal table access.
+- `OUTPUT_DIR="$PWD/leetcode/843/tests/evidence/select-r3/green" node leetcode/843/tests/budget_browser.cjs`: exit 0, four bilingual narrow/desktop checks of known at 10, actual success at 11 and exhausted control, with replay.
+- `OUTPUT_DIR="$PWD/leetcode/843/tests/evidence/select-r3/green" node leetcode/843/tests/selection_browser.cjs`: exit 0, 36 selected-value checks at 320/390/1280, presets 6/8, zh→en→zh and CSS zoom 1/2. Exact adjacent text and description association, wrapping text bounds and full screenshot visibility; candidate set and one-call ledger retained on locale change.
+- `node --check leetcode/843/app.js`, `node --check leetcode/843/tests/selection_browser.cjs`, `git diff --check`: exit 0.
+- **`python3 -B scripts/register_leetcode_lesson.py 843 --validate-only`: exit 0, empty stdout/stderr.** Recorded in `tests/evidence/select-r3/preflight.json`. Complexity remains exactly one nonempty time-and-space string. No registration run.
+
+Inspected screenshots: normal-size `en-320-preset8-4.png`,
+`en-390-preset8-10.png`, `zh-320-preset8-5.png`, plus final zoom captures
+`en-320-zoom2-preset8-10.png` and `zh-320-zoom2-preset8-11.png`.
+The adjacent selection shows the full count, budget and control purpose at normal
+size; zoom captures show readable multiline text. Native select clipping itself
+is retained as the reason for the adjacent description. Browser/platform and
+computed font stacks, line geometry and screenshots are in selection-results.json;
+no exact installed-font resolution or physical-device claim is made.
+
+Read canonical source/mirror/export pairs from scripts/register_leetcode_lesson.py:
+Python uses solution.py, python-code.js, PYTHON_SOURCE. Re-read saved official
+Python3 stub in official-graphql.json and official-verification.md: faithful
+(words, master) -> None; available Python and TypeScript are recorded in the
+capture, and Python remains preferred. Non-Python language-contract.json and its
+supportedLanguages gate are inapplicable. No omitted preferred language or source
+regeneration is involved. Source SHA-256 remains
+51f9e29c91ca3ffe6238f13dfa0f0b632081274be4747ac67cfbf627b986dc05.
+
+candidate.json freezes this revision, metadata and evidence hashes for separate
+review. No child agents, commit, push, deployment, service changes, report/rubric
+edits or self-acceptance. Physical devices, browser-chrome zoom, real learner
+comprehension and LeetCode submission remain unverified. Historical advisory
+843-R1-A01 is not claimed repaired.

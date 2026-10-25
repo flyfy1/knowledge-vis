@@ -3,3 +3,5 @@
 .btn{max-width:100%;overflow-wrap:anywhere}
 .head-top{flex-wrap:wrap}.lang-toggle{margin-left:auto}
 .explain,li,h1,h2,h3,.tagline{overflow-wrap:anywhere}
+
+#presetSelection{overflow-wrap:anywhere;white-space:normal}
