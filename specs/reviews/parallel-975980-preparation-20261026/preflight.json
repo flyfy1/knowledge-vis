@@ -1,0 +1,67 @@
+{
+  "observedAt": "2026-10-25T18:55:05.615948+00:00",
+  "mode": "read-only dispatcher preparation; not dispatch authorization",
+  "centralHead": "263ebb65069e827fb935cd2dc7130803d14ce3ee",
+  "expectedHead": "263ebb65069e827fb935cd2dc7130803d14ce3ee",
+  "centralRecordedCurrent": {
+    "problem_id": "828",
+    "stage": "review",
+    "started_at": "2026-10-25T18:54:44.905358+00:00",
+    "run_id": "828-review-e7d2ca4bbcdf"
+  },
+  "centralRecordedStatus": "running",
+  "stopExists": false,
+  "catalogSnapshotAt": "2026-10-18T08:59:47.124517+00:00",
+  "catalogCount": 984,
+  "queueCount": 984,
+  "matchingReservationsById": [],
+  "reservationReadErrors": [],
+  "targets": [
+    {
+      "id": 975,
+      "catalogRecord": {
+        "id": 975,
+        "slug": "odd-even-jump",
+        "title": "Odd Even Jump",
+        "paidOnly": false,
+        "officialUrl": "https://leetcode.com/problems/odd-even-jump/",
+        "categories": [
+          "algorithms"
+        ]
+      },
+      "inQueue": true,
+      "queueIndex": 201,
+      "registered": false,
+      "problemRecord": null,
+      "stateRunIds": [],
+      "runDirectories": [],
+      "reservationFiles": [],
+      "trackedLessonPaths": [],
+      "lessonDirectoryExists": false,
+      "lanePaths": []
+    },
+    {
+      "id": 980,
+      "catalogRecord": {
+        "id": 980,
+        "slug": "unique-paths-iii",
+        "title": "Unique Paths III",
+        "paidOnly": false,
+        "officialUrl": "https://leetcode.com/problems/unique-paths-iii/",
+        "categories": [
+          "algorithms"
+        ]
+      },
+      "inQueue": true,
+      "queueIndex": 202,
+      "registered": false,
+      "problemRecord": null,
+      "stateRunIds": [],
+      "runDirectories": [],
+      "reservationFiles": [],
+      "trackedLessonPaths": [],
+      "lessonDirectoryExists": false,
+      "lanePaths": []
+    }
+  ]
+}
