@@ -1,8 +1,9 @@
 # Proposal: verify manual source copying with the browser host's shortcut
 
-Status: proposed, not active policy. Applies to future candidate tests only after
-independent review and dispatcher adoption at a safe campaign boundary. Existing
-frozen candidates and historical reports remain unchanged.
+Status: independently reviewed and adopted at the boundary recorded in
+[the adoption receipt](../reviews/clipboard-policy-adoption-20261025.md).
+Applies to future candidate tests. Existing frozen candidates and historical
+reports remain unchanged.
 
 ## Observed failure and purpose
 

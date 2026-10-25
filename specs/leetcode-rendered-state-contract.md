@@ -86,6 +86,28 @@ enough. Keep any platform clipboard newline conversion explicit in the evidence
 rather than silently claiming byte equality. Downloaded bytes and the embedded
 string still have to match the canonical source exactly.
 
+For manual fallback copying, use the operating system hosting the browser's
+actual shortcut: Meta+C on macOS, Control+C on Linux/Windows. Locale, mobile
+viewport and user-agent emulation do not establish that host. A local runner
+can supply its host platform; record it explicitly for a remote browser rather
+than inferring it from the test client's platform.
+
+Seed a distinct non-source clipboard sentinel before the fallback scenario.
+Check focus and full selection, dispatch the actual copy action, and read back
+the canonical source. Do not substitute a test-written source value, DOM-only
+selection checks, or weakened equality. If readback is unavailable, record the
+verification gap instead of claiming transfer success. Preserve the newline
+conversion and exact mirror/download boundaries above.
+
+When a frozen test uses the wrong host shortcut, preserve its failure and
+diagnose it before assigning a runtime defect. A separately documented host-key
+adapter may retain the original assertions while changing only that shortcut;
+bind both tests and results to the same candidate and name the command that
+actually passed. A harness correction is not a runtime repair or acceptance.
+This clarification derives from the independently reviewed
+[native clipboard proposal](proposals/leetcode-native-clipboard-checks-20261025.md)
+and applies at the recorded adoption boundary without rewriting past evidence.
+
 For multiple languages, compare each labeled source with its own canonical file.
 The JavaScript-specific Python concept comparison remains separately labeled
 and cannot replace the original callable contract.

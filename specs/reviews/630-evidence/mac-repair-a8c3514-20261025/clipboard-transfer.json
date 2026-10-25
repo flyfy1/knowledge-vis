@@ -1,0 +1,87 @@
+{
+  "finding": "630-MAC-002",
+  "kind": "author negative-control self-check",
+  "platform": "darwin",
+  "browser": "151.0.7922.34",
+  "records": [
+    {
+      "lang": "en",
+      "mode": "stale-source-no-action",
+      "hostPlatform": "MacIntel",
+      "shortcut": "Meta+C",
+      "selection": [
+        0,
+        424,
+        true
+      ],
+      "equalsSource": true,
+      "unchangedFromSeed": true
+    },
+    {
+      "lang": "en",
+      "mode": "sentinel-no-action",
+      "hostPlatform": "MacIntel",
+      "shortcut": "Meta+C",
+      "selection": [
+        0,
+        424,
+        true
+      ],
+      "equalsSource": false,
+      "unchangedFromSeed": true
+    },
+    {
+      "lang": "en",
+      "mode": "sentinel-host-copy",
+      "hostPlatform": "MacIntel",
+      "shortcut": "Meta+C",
+      "selection": [
+        0,
+        424,
+        true
+      ],
+      "equalsSource": true,
+      "unchangedFromSeed": false
+    },
+    {
+      "lang": "zh",
+      "mode": "stale-source-no-action",
+      "hostPlatform": "MacIntel",
+      "shortcut": "Meta+C",
+      "selection": [
+        0,
+        424,
+        true
+      ],
+      "equalsSource": true,
+      "unchangedFromSeed": true
+    },
+    {
+      "lang": "zh",
+      "mode": "sentinel-no-action",
+      "hostPlatform": "MacIntel",
+      "shortcut": "Meta+C",
+      "selection": [
+        0,
+        424,
+        true
+      ],
+      "equalsSource": false,
+      "unchangedFromSeed": true
+    },
+    {
+      "lang": "zh",
+      "mode": "sentinel-host-copy",
+      "hostPlatform": "MacIntel",
+      "shortcut": "Meta+C",
+      "selection": [
+        0,
+        424,
+        true
+      ],
+      "equalsSource": true,
+      "unchangedFromSeed": false
+    }
+  ],
+  "result": "pass"
+}
