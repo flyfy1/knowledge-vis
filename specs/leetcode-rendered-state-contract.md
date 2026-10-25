@@ -297,3 +297,37 @@ library, rubric dimension or retroactive acceptance change. A reproduced test
 defect follows the ordinary repair and independent re-review procedure. Adopt
 this clarification for future candidates at a stopped boundary, retaining the
 shared-policy identity and historical results of already frozen candidates.
+
+## 11. Verify lesson identity in the rendered bilingual heading
+
+Check the actual visible H1 after selecting each locale, including a zh → en → zh
+roundtrip at a supported narrow width. It must contain the official problem
+number clearly and the corresponding localized title from the reviewed lesson
+metadata, for example `#239 · 滑动窗口最大值`. A number in the browser title,
+eyebrow, collection card or URL does not substitute for the H1. Check the document
+title's localized identity too, and retain the exact official LeetCode problem
+URL. Language switching must preserve the existing teaching interaction state.
+
+Assert the expected localized strings, not merely that a heading exists or that
+the Chinese view still contains the English title. #262's former assertion that
+the Chinese H1 contained `Trips` accepted an English-only title and therefore
+could not detect the defect. Preserve the meaningful interaction and source
+parity checks when repairing such an assertion. A new regression for a reproduced
+failure must fail against the defective candidate and pass against the repair.
+
+Some formal names legitimately match in both locales; the reviewed Chinese and
+English names for #502 are both `IPO`. Do not require every pair of headings to
+differ. Allow identical titles when both reviewed metadata values are identical,
+while independently inspecting translated explanatory content and language
+controls. Changed main text is a useful publication smoke check, but does not
+prove that every sentence is correctly translated. Independent lesson review
+still checks the actual bilingual explanation.
+
+A public title failure reopens that lesson for a real repair and fresh separate
+review. Retain its prior acceptance as history. A publication-check false
+positive instead requires a focused red-capable check and independent review of
+the gate correction; it does not waive other lesson defects or establish public
+delivery. Successful release accounting follows the original full public hash
+and browser verification gates. This clarification adds no rubric dimension or
+retroactive re-review campaign; adopt it for subsequent candidates at an idle
+campaign boundary and preserve already frozen policy identities.
