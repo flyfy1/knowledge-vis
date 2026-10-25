@@ -2801,6 +2801,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(k^n + n) time; O(k^n + n) space including output"
   },
   {
+    "id": 757,
+    "title": {
+      "zh": "设置交集大小至少为二",
+      "en": "Set Intersection Size At Least Two"
+    },
+    "desc": {
+      "zh": "从手选整数推导最右贪心，用两个最大点维护所有区间的覆盖。",
+      "en": "Derive rightmost greedy choices and cover intervals using only the two largest selected points."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "区间覆盖",
+        "en": "Interval covering"
+      }
+    ],
+    "path": "757/",
+    "leetcodeUrl": "https://leetcode.com/problems/set-intersection-size-at-least-two/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space for sorting"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
