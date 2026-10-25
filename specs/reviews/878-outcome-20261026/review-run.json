@@ -1,0 +1,34 @@
+{
+  "id": "878-review-a18a47a54e24",
+  "problem_id": "878",
+  "role": "review",
+  "started_at": "2026-10-25T23:32:44.418156+00:00",
+  "status": "completed",
+  "candidate": "182a1942bec389f66f1358cc6e91f9b37c856ecb",
+  "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/878-review-a18a47a54e24",
+  "session_ids": [
+    "01a17568-ccd1-7592-8c2f-33efb83581d6"
+  ],
+  "finished_at": "2026-10-25T23:37:14.342565+00:00",
+  "result": {
+    "outcome": "accepted",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "required_open": [],
+    "report_path": "specs/reviews/878-review-2-21a177b1.md",
+    "evidence": [
+      "Cold browser walkthrough saved before source audit.",
+      "Canonical Python passed fresh examples and boundary checks.",
+      "Both locales passed interaction, keyboard, narrow-layout and 200% magnification checks; screenshots inspected.",
+      "Exact displayed, copied, downloaded and fallback source parity verified.",
+      "Metadata preflight passed; 878-R1 closed against this candidate."
+    ],
+    "detail": "100/100. Accepted for revision 182a1942bec389f66f1358cc6e91f9b37c856ecb. Publication and successful LeetCode submission are not claimed."
+  }
+}

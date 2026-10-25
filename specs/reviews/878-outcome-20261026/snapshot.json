@@ -1,0 +1,365 @@
+{
+  "captured_at": "2026-10-25T23:37:51.704936+00:00",
+  "state_status": "running",
+  "current": {
+    "problem_id": "879",
+    "stage": "author",
+    "started_at": "2026-10-25T23:37:31.121338+00:00",
+    "run_id": "879-author-ce034589b597"
+  },
+  "expected_head": "3f86d6a43303d4dedcc1f9e2aafe1449e8fd43af",
+  "entry878": {
+    "status": "accepted_local",
+    "rounds": 2,
+    "new": true,
+    "phase": "done",
+    "reviews": [
+      {
+        "outcome": "changes_required",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          2,
+          4
+        ],
+        "required_open": [
+          "878-R1"
+        ],
+        "report_path": "specs/reviews/878-review-1-e7e2fb2d.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Fresh canonical Python checks confirmed (8,4,7)=21 and (3,3,6)=9.",
+          "Bilingual source, clipboard, fallback and download parity passed.",
+          "320/390/desktop layout, keyboard and 200% CSS magnification checked.",
+          "Non-mutating metadata preflight passed.",
+          "Step 5 code-mapping bullets contain input labels instead of explanations."
+        ],
+        "detail": "92.5/100; acceptance withheld because Python-transfer teaching scores below 3 and required finding 878-R1 remains open.",
+        "run_id": "878-review-908c6bc0f087",
+        "candidate": "6edbe661e03cd4d7a07f979a3f2269d54e5ac4a0",
+        "candidate_sha256": "6ed5bf6fba0e66759f984ec0c17617f3c9d120a64f6edc39626bc30930e1a0db",
+        "weighted_score": 92.5,
+        "round": 1,
+        "commit": "25ae6a90ae9d329bdcf0cfe98e64c78350aef879"
+      },
+      {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/878-review-2-21a177b1.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Canonical Python passed fresh examples and boundary checks.",
+          "Both locales passed interaction, keyboard, narrow-layout and 200% magnification checks; screenshots inspected.",
+          "Exact displayed, copied, downloaded and fallback source parity verified.",
+          "Metadata preflight passed; 878-R1 closed against this candidate."
+        ],
+        "detail": "100/100. Accepted for revision 182a1942bec389f66f1358cc6e91f9b37c856ecb. Publication and successful LeetCode submission are not claimed.",
+        "run_id": "878-review-a18a47a54e24",
+        "candidate": "182a1942bec389f66f1358cc6e91f9b37c856ecb",
+        "candidate_sha256": "e53bb9853c40a2948baaccf19bd00e02705ccad84c2d67d775ca0d57933497e8",
+        "weighted_score": 100.0,
+        "round": 2,
+        "commit": "67b52b9978aac26384b1b428f6513aeac097387b"
+      }
+    ],
+    "author_runs": [
+      "878-author-004c6e7e9e78",
+      "878-fix-4f4526c6a7fa"
+    ],
+    "prior_report": "specs/reviews/878-review-2-21a177b1.md",
+    "candidate": "182a1942bec389f66f1358cc6e91f9b37c856ecb",
+    "registration_commit": "3f86d6a43303d4dedcc1f9e2aafe1449e8fd43af",
+    "accepted_at": "2026-10-25T23:37:27.305059+00:00"
+  },
+  "target_review": {
+    "outcome": "accepted",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "required_open": [],
+    "report_path": "specs/reviews/878-review-2-21a177b1.md",
+    "evidence": [
+      "Cold browser walkthrough saved before source audit.",
+      "Canonical Python passed fresh examples and boundary checks.",
+      "Both locales passed interaction, keyboard, narrow-layout and 200% magnification checks; screenshots inspected.",
+      "Exact displayed, copied, downloaded and fallback source parity verified.",
+      "Metadata preflight passed; 878-R1 closed against this candidate."
+    ],
+    "detail": "100/100. Accepted for revision 182a1942bec389f66f1358cc6e91f9b37c856ecb. Publication and successful LeetCode submission are not claimed.",
+    "run_id": "878-review-a18a47a54e24",
+    "candidate": "182a1942bec389f66f1358cc6e91f9b37c856ecb",
+    "candidate_sha256": "e53bb9853c40a2948baaccf19bd00e02705ccad84c2d67d775ca0d57933497e8",
+    "weighted_score": 100.0,
+    "round": 2,
+    "commit": "67b52b9978aac26384b1b428f6513aeac097387b"
+  },
+  "candidate": "182a1942bec389f66f1358cc6e91f9b37c856ecb",
+  "review_commit": "67b52b9978aac26384b1b428f6513aeac097387b",
+  "registration_commit": "3f86d6a43303d4dedcc1f9e2aafe1449e8fd43af",
+  "lesson_trees": {
+    "candidate": "fbdc05dedf37cc6bcf0b7678cb47eb4f1c107a23",
+    "review": "fbdc05dedf37cc6bcf0b7678cb47eb4f1c107a23",
+    "registration": "fbdc05dedf37cc6bcf0b7678cb47eb4f1c107a23"
+  },
+  "review_changed_paths": [
+    "specs/reviews/878-evidence/878-review-2-21a177b1/access-result.json",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/asset-diagnostics.json",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/browser-result.json",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/cold-initial.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/cold-operated.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/core-result.json",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/count-320-en.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/count-320-zh.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/fit-progress.json",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/independent-checks.json",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/independent-keyboard-390-zh.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/independent-keyboard.json",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/lesson-en.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/lesson-zh.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-bullets-en-320.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-bullets-en-zoom200.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-bullets-zh-320.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-bullets-zh-zoom200.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-en-1280.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-en-320.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-en-390.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-result.json",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-zh-1280.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-zh-320.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-zh-390.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/prediction-320-en.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/prediction-320-zh.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/python-result.json",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-1440-en.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-1440-zh.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-320-en.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-320-zh.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-390-en.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-390-zh.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-736-en.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-736-zh.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/trace-320-en.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/trace-320-zh.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/zoom-200-en.png",
+    "specs/reviews/878-evidence/878-review-2-21a177b1/zoom-200-zh.png",
+    "specs/reviews/878-review-2-21a177b1.md"
+  ],
+  "review_evidence_inventory": {
+    "specs/reviews/878-evidence/878-review-2-21a177b1/access-result.json": {
+      "sha256": "c941d636232f4f6aedf57cca1df858b84d1dc0b4a0b264a19ba4b14645a225c9",
+      "bytes": 5612,
+      "archived": true
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/asset-diagnostics.json": {
+      "sha256": "e4ff7c86cf12d9ae3ebe39b25c5e1f5805d80b601a9782e1c4d04677d4513fbe",
+      "bytes": 55,
+      "archived": true
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/browser-result.json": {
+      "sha256": "9a205c30a82ecc7399c5a9c013a389a34fbe847450d62c83d295f5d332a5c544",
+      "bytes": 19080,
+      "archived": true
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/cold-initial.png": {
+      "sha256": "12676fd15f8e0cc7f035a13fc37d0fe123c73289ad22b95f6dc4c2e5ed7b93e9",
+      "bytes": 831821,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/cold-operated.png": {
+      "sha256": "6d977c6b6039990d5cd6d3ae0173d7b9988138abedabc78a1041696043be23f5",
+      "bytes": 875547,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/core-result.json": {
+      "sha256": "0bd8c82cfbd04af71448ce4711bc141e3381f2bf836224d219e3eaf53748756d",
+      "bytes": 19665,
+      "archived": true
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/count-320-en.png": {
+      "sha256": "e5f5a37aa9d43e673371c80497dffd9b0d360835f90091f058181a1c6d64d9e1",
+      "bytes": 54238,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/count-320-zh.png": {
+      "sha256": "5b31cd8feb22f68496f2ca612eab49ef3387b7c5087111ae3b448c6fa5d204de",
+      "bytes": 67709,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/fit-progress.json": {
+      "sha256": "9082b3f30efc841db09af33d34d194721d3e7d71ee50ee16a59d5b5ce3cfc69a",
+      "bytes": 1612,
+      "archived": true
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/independent-checks.json": {
+      "sha256": "5cfbe7e3f394b0c0376050a0408368e37b41733412b65337bd71b92b71cd6955",
+      "bytes": 16423,
+      "archived": true
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/independent-keyboard-390-zh.png": {
+      "sha256": "493bfe02f0619db3cdd82ad1848cf6e9cbf2437d51c3cda13a76805a8498b9f9",
+      "bytes": 70748,
+      "archived": true
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/independent-keyboard.json": {
+      "sha256": "fe617f4d9c5c3b233583b61c7230337528809b720ba0166ff566d3a1eeffda14",
+      "bytes": 3148,
+      "archived": true
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/lesson-en.png": {
+      "sha256": "76d8dee07eb6bfc053e2f3e0da2696ef2e3487827baee729d6bc47e7ffd8cb30",
+      "bytes": 926134,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/lesson-zh.png": {
+      "sha256": "f06813d11200daba2c276f214e533687f25878353495d862b525c37073e0d5ec",
+      "bytes": 1016186,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-bullets-en-320.png": {
+      "sha256": "620914dfe8687567d0ebcea643d5a91758a283ad5b187d65af9e5ea40cb69472",
+      "bytes": 82279,
+      "archived": true
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-bullets-en-zoom200.png": {
+      "sha256": "1f0d9eccd3c06ad4ce5d1c5bf041177eeb1c8fe2e73b1b8ff8ede7e674005cda",
+      "bytes": 183798,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-bullets-zh-320.png": {
+      "sha256": "9fbce1cbb0344806aae5aaf520ffa8d0990757bb390b31b947d2642486bc23ac",
+      "bytes": 86485,
+      "archived": true
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-bullets-zh-zoom200.png": {
+      "sha256": "765259bd90935dfbd8f6e8089f0015ecb4081a67a6be057fbdde93d77e76b51a",
+      "bytes": 178645,
+      "archived": true
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-en-1280.png": {
+      "sha256": "ca2af9e4d88f4aa10534ef40ae8709c4edc2e0b8ac8517058dadbd29168402d1",
+      "bytes": 200578,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-en-320.png": {
+      "sha256": "2e474fa56a99bb046c7bea015e1fd0ca201fc9cbffd12cb216bb1e0df3b117b8",
+      "bytes": 82872,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-en-390.png": {
+      "sha256": "68f6b8b44973ab98fccdb35da15ab8c9e31d3ec9f114fbe756503b4c5c7cc25b",
+      "bytes": 111126,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-result.json": {
+      "sha256": "d389f288c6bd5340d8f95cee6786a18ca54f39f06cca2b144cda17b7befd67df",
+      "bytes": 2427,
+      "archived": true
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-zh-1280.png": {
+      "sha256": "0a242061ebea73bb6b166606d6344a9c0de488546c90363f87ad672e51d620f0",
+      "bytes": 243462,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-zh-320.png": {
+      "sha256": "aae3146e39816a090646f1861a1d32b3d3ef404940c878a9edb2f765b5a182e3",
+      "bytes": 112373,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/mapping-zh-390.png": {
+      "sha256": "ba5b0ebba49626b16564367f23007ce797c003e2a6f56947028fec5c3fe09d40",
+      "bytes": 138489,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/prediction-320-en.png": {
+      "sha256": "68534e53c6eb813b34163ebd205ecf2293b67781e7c949d98b4355c78d080e0d",
+      "bytes": 74770,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/prediction-320-zh.png": {
+      "sha256": "8fb3726cbd26d271e297c1f23ae15f59bf5f7c85331f54bbb5e72d66edea664b",
+      "bytes": 87654,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/python-result.json": {
+      "sha256": "8baeae659b16197b326e5294f728344ab8ed74b966092ffd3fd83cbcc58b9e88",
+      "bytes": 1281,
+      "archived": true
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-1440-en.png": {
+      "sha256": "8768bccf5e09f42c4e92ba0649a74494be0158997da9357015b4f7f2f820bd3e",
+      "bytes": 131932,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-1440-zh.png": {
+      "sha256": "fc4400edbb80d37af84c2f13940580ef0e068ce0e74fe9cb7e2c7bbdb7792e17",
+      "bytes": 162455,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-320-en.png": {
+      "sha256": "9f456c953b0c0d600bd97e2e5a56280ad72ce04891f5319fde46101496f22927",
+      "bytes": 58960,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-320-zh.png": {
+      "sha256": "e5f6c9412d9da88c21755bc39ac50e5c73cdb92d4968e66e38a7220dd71c14e9",
+      "bytes": 65810,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-390-en.png": {
+      "sha256": "83248b98c390f387db3564a996affd855c4bf03a7f960147495396a31e2afb0c",
+      "bytes": 66413,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-390-zh.png": {
+      "sha256": "b9e4e041ebb72cf168e753614c275829ab7f7a6637c8c0e389e871dc82bb6af7",
+      "bytes": 76901,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-736-en.png": {
+      "sha256": "5314c351d639172bf915fc9d967ea6b20a3f794941f7145d57644e95b55f27ca",
+      "bytes": 102866,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/state-736-zh.png": {
+      "sha256": "dac520a1eaa3b8f9a6661f5806e19b37e059b9a5f63d31604d7f4d94c45a55d2",
+      "bytes": 126255,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/trace-320-en.png": {
+      "sha256": "607be410ecb0cfb7ec18708bf33a94d676bddc1e20fe5090b7f31d0c9c6ea0d4",
+      "bytes": 52184,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/trace-320-zh.png": {
+      "sha256": "32dbc938e1adb0ad505ace5497781beebeb9f90f2c6ace37e1fd7e2e7df20c5e",
+      "bytes": 62298,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/zoom-200-en.png": {
+      "sha256": "2c8ec722dc0d25141d1d935e79435ac77f0db9319af74ec3b0ea7428688d39ae",
+      "bytes": 100115,
+      "archived": false
+    },
+    "specs/reviews/878-evidence/878-review-2-21a177b1/zoom-200-zh.png": {
+      "sha256": "c10c77203175bffa0cce1205cc52f780e2142863597836b53a19e610e6dd797c",
+      "bytes": 108727,
+      "archived": false
+    }
+  },
+  "stop_present": false
+}

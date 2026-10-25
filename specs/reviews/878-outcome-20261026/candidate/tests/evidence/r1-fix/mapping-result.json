@@ -1,0 +1,26 @@
+{
+  "finding": "878-R1",
+  "result": "pass",
+  "browser": "156.0.8078.4",
+  "platform": "linux",
+  "observed": [
+    {
+      "locale": "en",
+      "bullets": [
+        "Keep n=4, a=2, b=3. lcm = (a // gcd(a, b)) * b gives 6, used to subtract duplicates in every test. lo, hi = 1, n * min(a, b) gives [1,8]: the multiples 2, 4, 6, 8 already supply four magical numbers, so rank 4 lies in this inclusive interval.",
+        "In [1,8], mid = (lo + hi) // 2 gives 4. count = mid // a + mid // b - mid // lcm gives 2+1−0=3, below n=4. Thus lo = mid + 1 changes lo from 1 to 5 while hi stays 8, giving [5,8]. Since every value through 4 has at most three magical numbers, excluding them cannot lose rank 4.",
+        "Next, [5,8] tests mid=6: count is 3+2−1=4, enough for n=4, so execution takes else. hi = mid changes hi from 8 to 6 while lo stays 5, giving [5,6]. Rank 4 is at most 6, so keep mid itself and continue finding the first sufficient value; count=n alone is no reason to return. Testing mid=5 gives count=3, too few, so lo becomes 6, leaving [6,6]. Now while lo < hi stops, and return lo % 1_000_000_007 returns the remainder of 6, namely 6. Apply modulo only after locating the true answer."
+      ],
+      "trace": "[1,8] -> mid4/count3 -> [5,8] -> mid6/count4 -> [5,6]"
+    },
+    {
+      "locale": "zh",
+      "bullets": [
+        "沿用 n=4、a=2、b=3。lcm = (a // gcd(a, b)) * b 得到 6，供每轮减去重复项。lo, hi = 1, n * min(a, b) 得到 [1,8]：2、4、6、8 已提供 4 个神奇数字，所以第 4 个一定在这个闭区间内。",
+        "在 [1,8] 中，mid = (lo + hi) // 2 得到 4。count = mid // a + mid // b - mid // lcm 算出 2+1−0=3，小于 n=4。因此执行 lo = mid + 1，把 lo 从 1 改为 5，hi 仍为 8，得到 [5,8]。不超过 4 的每个值都只有至多 3 个神奇数字，全部排除仍不会丢掉第 4 个。",
+        "接着在 [5,8] 试 mid=6，count 为 3+2−1=4，已够 n=4，进入 else。hi = mid 把 hi 从 8 改为 6，lo 仍为 5，得到 [5,6]：第 4 个不大于 6，所以保留 mid 本身，继续找第一个够数的位置，不能仅凭 count=n 就返回。再试 mid=5，count=3，不够，lo 变为 6，剩 [6,6]。此时 while lo < hi 停止，return lo % 1_000_000_007 返回 6 的余数 6；取余只在定位真实答案之后进行。"
+      ],
+      "trace": "[1,8] -> mid4/count3 -> [5,8] -> mid6/count4 -> [5,6]"
+    }
+  ]
+}

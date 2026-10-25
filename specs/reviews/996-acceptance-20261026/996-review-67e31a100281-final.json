@@ -1,0 +1,15 @@
+{
+  "outcome": "changes_required",
+  "scores": [4, 4, 4, 4, 3, 4],
+  "required_open": ["996-R1-COST-01"],
+  "report_path": "specs/reviews/996-review-1-1d9a6502.md",
+  "evidence": [
+    "Cold browser walkthrough saved before source inspection.",
+    "Canonical Python passed fresh examples and boundary checks.",
+    "Both locales passed interaction, clipboard fallback, and exact source-parity checks.",
+    "320/390/desktop layouts and 200% CSS zoom inspected.",
+    "Metadata preflight exited 0.",
+    "Fixed-k checks exposed omitted O(n) preprocessing work."
+  ],
+  "detail": "96.25/100. Required correction: both languages should state O(n + k²) preprocessing, accounting for Counter(nums)."
+}

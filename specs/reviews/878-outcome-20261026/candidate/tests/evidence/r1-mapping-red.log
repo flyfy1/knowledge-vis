@@ -1,0 +1,11 @@
+AssertionError [ERR_ASSERTION]: en map0 missing lcm = (a // gcd(a, b)) * b: n=4 · a=2 · b=3
+    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/878/tests/mapping.cjs:17:57
+    at runNextTicks (node:internal/process/task_queues:60:5)
+    at process.processImmediate (node:internal/timers:454:9)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '=='
+}
