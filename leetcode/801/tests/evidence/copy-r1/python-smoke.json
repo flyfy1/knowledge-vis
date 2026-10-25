@@ -1,0 +1,95 @@
+{
+  "finding": "801-COPY-R1",
+  "status": "PASS",
+  "kind": "author self-check",
+  "cases": [
+    {
+      "nums1": [
+        1,
+        3,
+        5,
+        4
+      ],
+      "nums2": [
+        1,
+        2,
+        3,
+        7
+      ],
+      "expected": 1
+    },
+    {
+      "nums1": [
+        0,
+        3,
+        5,
+        8,
+        9
+      ],
+      "nums2": [
+        2,
+        1,
+        4,
+        6,
+        9
+      ],
+      "expected": 1
+    },
+    {
+      "nums1": [
+        0,
+        4,
+        3,
+        4
+      ],
+      "nums2": [
+        0,
+        2,
+        5,
+        6
+      ],
+      "expected": 1
+    },
+    {
+      "nums1": [
+        0,
+        5,
+        4,
+        8,
+        7
+      ],
+      "nums2": [
+        1,
+        2,
+        6,
+        5,
+        9
+      ],
+      "expected": 2
+    },
+    {
+      "nums1": [
+        1,
+        1
+      ],
+      "nums2": [
+        0,
+        2
+      ],
+      "expected": 1
+    }
+  ],
+  "nonmutation": "PASS",
+  "offlineMirror": "exact UTF-8 including final newline",
+  "language": "Python, faithful preferred official Python3 interface",
+  "officialEvidence": "provenance/official.json",
+  "languageContract": "default Python; no supportedLanguages list or exception needed",
+  "acceptedBase": "154c1becf178b798dfbd80acbb79fabdd262ae68",
+  "protectedBeforeAndAfterSha256": {
+    "app.js": "75d6321fc0a235bc3347d3b8c6f5e57c7d9152fddd263733d215b9b96682d5f4",
+    "core.js": "234bc028c32433207c79acdfde06fcf921a0bab1142d54d6dba3f17cca2c82ec",
+    "solution.py": "f91a2d3e6ab348192f8b834578855f8ef45093b5e743de74c5aed667397cbcf4",
+    "python-code.js": "a0f2bf9982e91a51f41af32fafaab9d91cea3da9edbf361eecaac7f5473b90c0",
+    "style.css": "bee051d34276181dd98160f501b9388505df09270a677e26cbc93c00b05535f0"
+  }
+}

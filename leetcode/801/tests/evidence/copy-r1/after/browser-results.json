@@ -1,0 +1,843 @@
+{
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "url": "http://127.0.0.1:18770/leetcode/801/",
+  "states": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "original": "Column i=0Top · nums10Bottom · nums20Column i=1Top · nums14Bottom · nums22Column i=2Top · nums13Bottom · nums25Column i=3Top · nums14Bottom · nums26",
+      "progress": "Processed 2/4 columns; current i=1.",
+      "history": "i=0: no left neighbor. keep=0, swap=1.After i=1; old keep=0, old swap=1S same: 0 < 4 and 0 < 2 → passC cross: 0 < 2 and 0 < 4 → passold keep → new keep (S)Candidate 0; legal continuationold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate 2; legal continuationold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=0; new swap=1 (unit: swaps)",
+      "final": "Not the full-array answer yet; costs cover only the processed prefix."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "original": "Column i=0Top · nums10Bottom · nums20Column i=1Top · nums14Bottom · nums22Column i=2Top · nums13Bottom · nums25Column i=3Top · nums14Bottom · nums26",
+      "progress": "Processed 3/4 columns; current i=2.",
+      "history": "i=0: no left neighbor. keep=0, swap=1.After i=1; old keep=0, old swap=1S same: 0 < 4 and 0 < 2 → passC cross: 0 < 2 and 0 < 4 → passold keep → new keep (S)Candidate 0; legal continuationold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate 2; legal continuationold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=0; new swap=1 (unit: swaps)After i=2; old keep=0, old swap=1S same: 4 < 3 and 2 < 5 → failC cross: 4 < 5 and 2 < 3 → passold keep → new keep (S)Candidate ∞; adjacent-value guard failsold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate ∞; adjacent-value guard failsold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=1; new swap=1 (unit: swaps)",
+      "final": "Not the full-array answer yet; costs cover only the processed prefix."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "original": "Column i=0Top · nums10Bottom · nums20Column i=1Top · nums14Bottom · nums22Column i=2Top · nums13Bottom · nums25Column i=3Top · nums14Bottom · nums26",
+      "progress": "Processed 4/4 columns; current i=3.",
+      "history": "i=0: no left neighbor. keep=0, swap=1.After i=1; old keep=0, old swap=1S same: 0 < 4 and 0 < 2 → passC cross: 0 < 2 and 0 < 4 → passold keep → new keep (S)Candidate 0; legal continuationold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate 2; legal continuationold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=0; new swap=1 (unit: swaps)After i=2; old keep=0, old swap=1S same: 4 < 3 and 2 < 5 → failC cross: 4 < 5 and 2 < 3 → passold keep → new keep (S)Candidate ∞; adjacent-value guard failsold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate ∞; adjacent-value guard failsold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=1; new swap=1 (unit: swaps)After i=3; old keep=1, old swap=1S same: 3 < 4 and 5 < 6 → passC cross: 3 < 6 and 5 < 4 → failold keep → new keep (S)Candidate 1; legal continuationold swap → new keep (C)Candidate ∞; adjacent-value guard failsold swap → new swap (S, add 1)Candidate 2; legal continuationold keep → new swap (C, add 1)Candidate ∞; adjacent-value guard failsNew keep=1; new swap=2 (unit: swaps)",
+      "final": "All columns processed. min(keep, swap)=1 swaps."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "original": "Column i=0Top · nums11Bottom · nums21Column i=1Top · nums13Bottom · nums22Column i=2Top · nums15Bottom · nums23Column i=3Top · nums14Bottom · nums27",
+      "progress": "Processed 2/4 columns; current i=1.",
+      "history": "i=0: no left neighbor. keep=0, swap=1.After i=1; old keep=0, old swap=1S same: 1 < 3 and 1 < 2 → passC cross: 1 < 2 and 1 < 3 → passold keep → new keep (S)Candidate 0; legal continuationold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate 2; legal continuationold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=0; new swap=1 (unit: swaps)",
+      "final": "Not the full-array answer yet; costs cover only the processed prefix."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "original": "Column i=0Top · nums11Bottom · nums21Column i=1Top · nums13Bottom · nums22Column i=2Top · nums15Bottom · nums23Column i=3Top · nums14Bottom · nums27",
+      "progress": "Processed 3/4 columns; current i=2.",
+      "history": "i=0: no left neighbor. keep=0, swap=1.After i=1; old keep=0, old swap=1S same: 1 < 3 and 1 < 2 → passC cross: 1 < 2 and 1 < 3 → passold keep → new keep (S)Candidate 0; legal continuationold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate 2; legal continuationold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=0; new swap=1 (unit: swaps)After i=2; old keep=0, old swap=1S same: 3 < 5 and 2 < 3 → passC cross: 3 < 3 and 2 < 5 → failold keep → new keep (S)Candidate 0; legal continuationold swap → new keep (C)Candidate ∞; adjacent-value guard failsold swap → new swap (S, add 1)Candidate 2; legal continuationold keep → new swap (C, add 1)Candidate ∞; adjacent-value guard failsNew keep=0; new swap=2 (unit: swaps)",
+      "final": "Not the full-array answer yet; costs cover only the processed prefix."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "original": "Column i=0Top · nums11Bottom · nums21Column i=1Top · nums13Bottom · nums22Column i=2Top · nums15Bottom · nums23Column i=3Top · nums14Bottom · nums27",
+      "progress": "Processed 4/4 columns; current i=3.",
+      "history": "i=0: no left neighbor. keep=0, swap=1.After i=1; old keep=0, old swap=1S same: 1 < 3 and 1 < 2 → passC cross: 1 < 2 and 1 < 3 → passold keep → new keep (S)Candidate 0; legal continuationold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate 2; legal continuationold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=0; new swap=1 (unit: swaps)After i=2; old keep=0, old swap=1S same: 3 < 5 and 2 < 3 → passC cross: 3 < 3 and 2 < 5 → failold keep → new keep (S)Candidate 0; legal continuationold swap → new keep (C)Candidate ∞; adjacent-value guard failsold swap → new swap (S, add 1)Candidate 2; legal continuationold keep → new swap (C, add 1)Candidate ∞; adjacent-value guard failsNew keep=0; new swap=2 (unit: swaps)After i=3; old keep=0, old swap=2S same: 5 < 4 and 3 < 7 → failC cross: 5 < 7 and 3 < 4 → passold keep → new keep (S)Candidate ∞; adjacent-value guard failsold swap → new keep (C)Candidate 2; legal continuationold swap → new swap (S, add 1)Candidate ∞; adjacent-value guard failsold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=2; new swap=1 (unit: swaps)",
+      "final": "All columns processed. min(keep, swap)=1 swaps."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "original": "Column i=0Top · nums10Bottom · nums22Column i=1Top · nums13Bottom · nums21Column i=2Top · nums15Bottom · nums24Column i=3Top · nums18Bottom · nums26Column i=4Top · nums19Bottom · nums29",
+      "progress": "Processed 2/5 columns; current i=1.",
+      "history": "i=0: no left neighbor. keep=0, swap=1.After i=1; old keep=0, old swap=1S same: 0 < 3 and 2 < 1 → failC cross: 0 < 1 and 2 < 3 → passold keep → new keep (S)Candidate ∞; adjacent-value guard failsold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate ∞; adjacent-value guard failsold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=1; new swap=1 (unit: swaps)",
+      "final": "Not the full-array answer yet; costs cover only the processed prefix."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "original": "Column i=0Top · nums10Bottom · nums22Column i=1Top · nums13Bottom · nums21Column i=2Top · nums15Bottom · nums24Column i=3Top · nums18Bottom · nums26Column i=4Top · nums19Bottom · nums29",
+      "progress": "Processed 3/5 columns; current i=2.",
+      "history": "i=0: no left neighbor. keep=0, swap=1.After i=1; old keep=0, old swap=1S same: 0 < 3 and 2 < 1 → failC cross: 0 < 1 and 2 < 3 → passold keep → new keep (S)Candidate ∞; adjacent-value guard failsold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate ∞; adjacent-value guard failsold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=1; new swap=1 (unit: swaps)After i=2; old keep=1, old swap=1S same: 3 < 5 and 1 < 4 → passC cross: 3 < 4 and 1 < 5 → passold keep → new keep (S)Candidate 1; legal continuationold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate 2; legal continuationold keep → new swap (C, add 1)Candidate 2; legal continuationNew keep=1; new swap=2 (unit: swaps)",
+      "final": "Not the full-array answer yet; costs cover only the processed prefix."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "original": "Column i=0Top · nums10Bottom · nums22Column i=1Top · nums13Bottom · nums21Column i=2Top · nums15Bottom · nums24Column i=3Top · nums18Bottom · nums26Column i=4Top · nums19Bottom · nums29",
+      "progress": "Processed 4/5 columns; current i=3.",
+      "history": "i=0: no left neighbor. keep=0, swap=1.After i=1; old keep=0, old swap=1S same: 0 < 3 and 2 < 1 → failC cross: 0 < 1 and 2 < 3 → passold keep → new keep (S)Candidate ∞; adjacent-value guard failsold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate ∞; adjacent-value guard failsold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=1; new swap=1 (unit: swaps)After i=2; old keep=1, old swap=1S same: 3 < 5 and 1 < 4 → passC cross: 3 < 4 and 1 < 5 → passold keep → new keep (S)Candidate 1; legal continuationold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate 2; legal continuationold keep → new swap (C, add 1)Candidate 2; legal continuationNew keep=1; new swap=2 (unit: swaps)After i=3; old keep=1, old swap=2S same: 5 < 8 and 4 < 6 → passC cross: 5 < 6 and 4 < 8 → passold keep → new keep (S)Candidate 1; legal continuationold swap → new keep (C)Candidate 2; legal continuationold swap → new swap (S, add 1)Candidate 3; legal continuationold keep → new swap (C, add 1)Candidate 2; legal continuationNew keep=1; new swap=2 (unit: swaps)",
+      "final": "Not the full-array answer yet; costs cover only the processed prefix."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "original": "Column i=0Top · nums10Bottom · nums22Column i=1Top · nums13Bottom · nums21Column i=2Top · nums15Bottom · nums24Column i=3Top · nums18Bottom · nums26Column i=4Top · nums19Bottom · nums29",
+      "progress": "Processed 5/5 columns; current i=4.",
+      "history": "i=0: no left neighbor. keep=0, swap=1.After i=1; old keep=0, old swap=1S same: 0 < 3 and 2 < 1 → failC cross: 0 < 1 and 2 < 3 → passold keep → new keep (S)Candidate ∞; adjacent-value guard failsold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate ∞; adjacent-value guard failsold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=1; new swap=1 (unit: swaps)After i=2; old keep=1, old swap=1S same: 3 < 5 and 1 < 4 → passC cross: 3 < 4 and 1 < 5 → passold keep → new keep (S)Candidate 1; legal continuationold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate 2; legal continuationold keep → new swap (C, add 1)Candidate 2; legal continuationNew keep=1; new swap=2 (unit: swaps)After i=3; old keep=1, old swap=2S same: 5 < 8 and 4 < 6 → passC cross: 5 < 6 and 4 < 8 → passold keep → new keep (S)Candidate 1; legal continuationold swap → new keep (C)Candidate 2; legal continuationold swap → new swap (S, add 1)Candidate 3; legal continuationold keep → new swap (C, add 1)Candidate 2; legal continuationNew keep=1; new swap=2 (unit: swaps)After i=4; old keep=1, old swap=2S same: 8 < 9 and 6 < 9 → passC cross: 8 < 9 and 6 < 9 → passold keep → new keep (S)Candidate 1; legal continuationold swap → new keep (C)Candidate 2; legal continuationold swap → new swap (S, add 1)Candidate 3; legal continuationold keep → new swap (C, add 1)Candidate 2; legal continuationNew keep=1; new swap=2 (unit: swaps)",
+      "final": "All columns processed. min(keep, swap)=1 swaps."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "original": "Column i=0Top · nums11Bottom · nums21Column i=1Top · nums12Bottom · nums22",
+      "progress": "Processed 2/2 columns; current i=1.",
+      "history": "i=0: no left neighbor. keep=0, swap=1.After i=1; old keep=0, old swap=1S same: 1 < 2 and 1 < 2 → passC cross: 1 < 2 and 1 < 2 → passold keep → new keep (S)Candidate 0; legal continuationold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate 2; legal continuationold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=0; new swap=1 (unit: swaps)",
+      "final": "All columns processed. min(keep, swap)=0 swaps."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "original": "Column i=0Top · nums11Bottom · nums20Column i=1Top · nums11Bottom · nums22",
+      "progress": "Processed 2/2 columns; current i=1.",
+      "history": "i=0: no left neighbor. keep=0, swap=1.After i=1; old keep=0, old swap=1S same: 1 < 1 and 0 < 2 → failC cross: 1 < 2 and 0 < 1 → passold keep → new keep (S)Candidate ∞; adjacent-value guard failsold swap → new keep (C)Candidate 1; legal continuationold swap → new swap (S, add 1)Candidate ∞; adjacent-value guard failsold keep → new swap (C, add 1)Candidate 1; legal continuationNew keep=1; new swap=1 (unit: swaps)",
+      "final": "All columns processed. min(keep, swap)=1 swaps."
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "original": "列 i=0上排 nums10下排 nums20列 i=1上排 nums14下排 nums22列 i=2上排 nums13下排 nums25列 i=3上排 nums14下排 nums26",
+      "progress": "已处理 2/4 列；当前 i=1。",
+      "history": "i=0：无左邻居。keep=0，swap=1。处理完 i=1；旧 keep=0，旧 swap=1S 同朝向：0 < 4 且 0 < 2 → 通过C 异朝向：0 < 2 且 0 < 4 → 通过旧 keep → 新 keep（S）候选 0；合法连接旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 2；合法连接旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=0；新 swap=1（单位：交换次数）",
+      "final": "尚非全数组答案；这里只统计当前已处理前缀。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "original": "列 i=0上排 nums10下排 nums20列 i=1上排 nums14下排 nums22列 i=2上排 nums13下排 nums25列 i=3上排 nums14下排 nums26",
+      "progress": "已处理 3/4 列；当前 i=2。",
+      "history": "i=0：无左邻居。keep=0，swap=1。处理完 i=1；旧 keep=0，旧 swap=1S 同朝向：0 < 4 且 0 < 2 → 通过C 异朝向：0 < 2 且 0 < 4 → 通过旧 keep → 新 keep（S）候选 0；合法连接旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 2；合法连接旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=0；新 swap=1（单位：交换次数）处理完 i=2；旧 keep=0，旧 swap=1S 同朝向：4 < 3 且 2 < 5 → 失败C 异朝向：4 < 5 且 2 < 3 → 通过旧 keep → 新 keep（S）候选 ∞；相邻值检验失败旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 ∞；相邻值检验失败旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=1；新 swap=1（单位：交换次数）",
+      "final": "尚非全数组答案；这里只统计当前已处理前缀。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "original": "列 i=0上排 nums10下排 nums20列 i=1上排 nums14下排 nums22列 i=2上排 nums13下排 nums25列 i=3上排 nums14下排 nums26",
+      "progress": "已处理 4/4 列；当前 i=3。",
+      "history": "i=0：无左邻居。keep=0，swap=1。处理完 i=1；旧 keep=0，旧 swap=1S 同朝向：0 < 4 且 0 < 2 → 通过C 异朝向：0 < 2 且 0 < 4 → 通过旧 keep → 新 keep（S）候选 0；合法连接旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 2；合法连接旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=0；新 swap=1（单位：交换次数）处理完 i=2；旧 keep=0，旧 swap=1S 同朝向：4 < 3 且 2 < 5 → 失败C 异朝向：4 < 5 且 2 < 3 → 通过旧 keep → 新 keep（S）候选 ∞；相邻值检验失败旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 ∞；相邻值检验失败旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=1；新 swap=1（单位：交换次数）处理完 i=3；旧 keep=1，旧 swap=1S 同朝向：3 < 4 且 5 < 6 → 通过C 异朝向：3 < 6 且 5 < 4 → 失败旧 keep → 新 keep（S）候选 1；合法连接旧 swap → 新 keep（C）候选 ∞；相邻值检验失败旧 swap → 新 swap（S，加 1）候选 2；合法连接旧 keep → 新 swap（C，加 1）候选 ∞；相邻值检验失败新 keep=1；新 swap=2（单位：交换次数）",
+      "final": "全部列已处理。min(keep, swap)=1 次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "original": "列 i=0上排 nums11下排 nums21列 i=1上排 nums13下排 nums22列 i=2上排 nums15下排 nums23列 i=3上排 nums14下排 nums27",
+      "progress": "已处理 2/4 列；当前 i=1。",
+      "history": "i=0：无左邻居。keep=0，swap=1。处理完 i=1；旧 keep=0，旧 swap=1S 同朝向：1 < 3 且 1 < 2 → 通过C 异朝向：1 < 2 且 1 < 3 → 通过旧 keep → 新 keep（S）候选 0；合法连接旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 2；合法连接旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=0；新 swap=1（单位：交换次数）",
+      "final": "尚非全数组答案；这里只统计当前已处理前缀。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "original": "列 i=0上排 nums11下排 nums21列 i=1上排 nums13下排 nums22列 i=2上排 nums15下排 nums23列 i=3上排 nums14下排 nums27",
+      "progress": "已处理 3/4 列；当前 i=2。",
+      "history": "i=0：无左邻居。keep=0，swap=1。处理完 i=1；旧 keep=0，旧 swap=1S 同朝向：1 < 3 且 1 < 2 → 通过C 异朝向：1 < 2 且 1 < 3 → 通过旧 keep → 新 keep（S）候选 0；合法连接旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 2；合法连接旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=0；新 swap=1（单位：交换次数）处理完 i=2；旧 keep=0，旧 swap=1S 同朝向：3 < 5 且 2 < 3 → 通过C 异朝向：3 < 3 且 2 < 5 → 失败旧 keep → 新 keep（S）候选 0；合法连接旧 swap → 新 keep（C）候选 ∞；相邻值检验失败旧 swap → 新 swap（S，加 1）候选 2；合法连接旧 keep → 新 swap（C，加 1）候选 ∞；相邻值检验失败新 keep=0；新 swap=2（单位：交换次数）",
+      "final": "尚非全数组答案；这里只统计当前已处理前缀。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "original": "列 i=0上排 nums11下排 nums21列 i=1上排 nums13下排 nums22列 i=2上排 nums15下排 nums23列 i=3上排 nums14下排 nums27",
+      "progress": "已处理 4/4 列；当前 i=3。",
+      "history": "i=0：无左邻居。keep=0，swap=1。处理完 i=1；旧 keep=0，旧 swap=1S 同朝向：1 < 3 且 1 < 2 → 通过C 异朝向：1 < 2 且 1 < 3 → 通过旧 keep → 新 keep（S）候选 0；合法连接旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 2；合法连接旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=0；新 swap=1（单位：交换次数）处理完 i=2；旧 keep=0，旧 swap=1S 同朝向：3 < 5 且 2 < 3 → 通过C 异朝向：3 < 3 且 2 < 5 → 失败旧 keep → 新 keep（S）候选 0；合法连接旧 swap → 新 keep（C）候选 ∞；相邻值检验失败旧 swap → 新 swap（S，加 1）候选 2；合法连接旧 keep → 新 swap（C，加 1）候选 ∞；相邻值检验失败新 keep=0；新 swap=2（单位：交换次数）处理完 i=3；旧 keep=0，旧 swap=2S 同朝向：5 < 4 且 3 < 7 → 失败C 异朝向：5 < 7 且 3 < 4 → 通过旧 keep → 新 keep（S）候选 ∞；相邻值检验失败旧 swap → 新 keep（C）候选 2；合法连接旧 swap → 新 swap（S，加 1）候选 ∞；相邻值检验失败旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=2；新 swap=1（单位：交换次数）",
+      "final": "全部列已处理。min(keep, swap)=1 次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "original": "列 i=0上排 nums10下排 nums22列 i=1上排 nums13下排 nums21列 i=2上排 nums15下排 nums24列 i=3上排 nums18下排 nums26列 i=4上排 nums19下排 nums29",
+      "progress": "已处理 2/5 列；当前 i=1。",
+      "history": "i=0：无左邻居。keep=0，swap=1。处理完 i=1；旧 keep=0，旧 swap=1S 同朝向：0 < 3 且 2 < 1 → 失败C 异朝向：0 < 1 且 2 < 3 → 通过旧 keep → 新 keep（S）候选 ∞；相邻值检验失败旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 ∞；相邻值检验失败旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=1；新 swap=1（单位：交换次数）",
+      "final": "尚非全数组答案；这里只统计当前已处理前缀。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "original": "列 i=0上排 nums10下排 nums22列 i=1上排 nums13下排 nums21列 i=2上排 nums15下排 nums24列 i=3上排 nums18下排 nums26列 i=4上排 nums19下排 nums29",
+      "progress": "已处理 3/5 列；当前 i=2。",
+      "history": "i=0：无左邻居。keep=0，swap=1。处理完 i=1；旧 keep=0，旧 swap=1S 同朝向：0 < 3 且 2 < 1 → 失败C 异朝向：0 < 1 且 2 < 3 → 通过旧 keep → 新 keep（S）候选 ∞；相邻值检验失败旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 ∞；相邻值检验失败旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=1；新 swap=1（单位：交换次数）处理完 i=2；旧 keep=1，旧 swap=1S 同朝向：3 < 5 且 1 < 4 → 通过C 异朝向：3 < 4 且 1 < 5 → 通过旧 keep → 新 keep（S）候选 1；合法连接旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 2；合法连接旧 keep → 新 swap（C，加 1）候选 2；合法连接新 keep=1；新 swap=2（单位：交换次数）",
+      "final": "尚非全数组答案；这里只统计当前已处理前缀。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "original": "列 i=0上排 nums10下排 nums22列 i=1上排 nums13下排 nums21列 i=2上排 nums15下排 nums24列 i=3上排 nums18下排 nums26列 i=4上排 nums19下排 nums29",
+      "progress": "已处理 4/5 列；当前 i=3。",
+      "history": "i=0：无左邻居。keep=0，swap=1。处理完 i=1；旧 keep=0，旧 swap=1S 同朝向：0 < 3 且 2 < 1 → 失败C 异朝向：0 < 1 且 2 < 3 → 通过旧 keep → 新 keep（S）候选 ∞；相邻值检验失败旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 ∞；相邻值检验失败旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=1；新 swap=1（单位：交换次数）处理完 i=2；旧 keep=1，旧 swap=1S 同朝向：3 < 5 且 1 < 4 → 通过C 异朝向：3 < 4 且 1 < 5 → 通过旧 keep → 新 keep（S）候选 1；合法连接旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 2；合法连接旧 keep → 新 swap（C，加 1）候选 2；合法连接新 keep=1；新 swap=2（单位：交换次数）处理完 i=3；旧 keep=1，旧 swap=2S 同朝向：5 < 8 且 4 < 6 → 通过C 异朝向：5 < 6 且 4 < 8 → 通过旧 keep → 新 keep（S）候选 1；合法连接旧 swap → 新 keep（C）候选 2；合法连接旧 swap → 新 swap（S，加 1）候选 3；合法连接旧 keep → 新 swap（C，加 1）候选 2；合法连接新 keep=1；新 swap=2（单位：交换次数）",
+      "final": "尚非全数组答案；这里只统计当前已处理前缀。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "original": "列 i=0上排 nums10下排 nums22列 i=1上排 nums13下排 nums21列 i=2上排 nums15下排 nums24列 i=3上排 nums18下排 nums26列 i=4上排 nums19下排 nums29",
+      "progress": "已处理 5/5 列；当前 i=4。",
+      "history": "i=0：无左邻居。keep=0，swap=1。处理完 i=1；旧 keep=0，旧 swap=1S 同朝向：0 < 3 且 2 < 1 → 失败C 异朝向：0 < 1 且 2 < 3 → 通过旧 keep → 新 keep（S）候选 ∞；相邻值检验失败旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 ∞；相邻值检验失败旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=1；新 swap=1（单位：交换次数）处理完 i=2；旧 keep=1，旧 swap=1S 同朝向：3 < 5 且 1 < 4 → 通过C 异朝向：3 < 4 且 1 < 5 → 通过旧 keep → 新 keep（S）候选 1；合法连接旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 2；合法连接旧 keep → 新 swap（C，加 1）候选 2；合法连接新 keep=1；新 swap=2（单位：交换次数）处理完 i=3；旧 keep=1，旧 swap=2S 同朝向：5 < 8 且 4 < 6 → 通过C 异朝向：5 < 6 且 4 < 8 → 通过旧 keep → 新 keep（S）候选 1；合法连接旧 swap → 新 keep（C）候选 2；合法连接旧 swap → 新 swap（S，加 1）候选 3；合法连接旧 keep → 新 swap（C，加 1）候选 2；合法连接新 keep=1；新 swap=2（单位：交换次数）处理完 i=4；旧 keep=1，旧 swap=2S 同朝向：8 < 9 且 6 < 9 → 通过C 异朝向：8 < 9 且 6 < 9 → 通过旧 keep → 新 keep（S）候选 1；合法连接旧 swap → 新 keep（C）候选 2；合法连接旧 swap → 新 swap（S，加 1）候选 3；合法连接旧 keep → 新 swap（C，加 1）候选 2；合法连接新 keep=1；新 swap=2（单位：交换次数）",
+      "final": "全部列已处理。min(keep, swap)=1 次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "original": "列 i=0上排 nums11下排 nums21列 i=1上排 nums12下排 nums22",
+      "progress": "已处理 2/2 列；当前 i=1。",
+      "history": "i=0：无左邻居。keep=0，swap=1。处理完 i=1；旧 keep=0，旧 swap=1S 同朝向：1 < 2 且 1 < 2 → 通过C 异朝向：1 < 2 且 1 < 2 → 通过旧 keep → 新 keep（S）候选 0；合法连接旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 2；合法连接旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=0；新 swap=1（单位：交换次数）",
+      "final": "全部列已处理。min(keep, swap)=0 次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "original": "列 i=0上排 nums11下排 nums20列 i=1上排 nums11下排 nums22",
+      "progress": "已处理 2/2 列；当前 i=1。",
+      "history": "i=0：无左邻居。keep=0，swap=1。处理完 i=1；旧 keep=0，旧 swap=1S 同朝向：1 < 1 且 0 < 2 → 失败C 异朝向：1 < 2 且 0 < 1 → 通过旧 keep → 新 keep（S）候选 ∞；相邻值检验失败旧 swap → 新 keep（C）候选 1；合法连接旧 swap → 新 swap（S，加 1）候选 ∞；相邻值检验失败旧 keep → 新 swap（C，加 1）候选 1；合法连接新 keep=1；新 swap=1（单位：交换次数）",
+      "final": "全部列已处理。min(keep, swap)=1 次。"
+    }
+  ],
+  "errors": [],
+  "destinationErrors": [
+    {
+      "message": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "location": {
+        "url": "http://127.0.0.1:18770/favicon.ico",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "page": "http://127.0.0.1:18770/leetcode/10/#step1"
+    }
+  ],
+  "localRequestsOnly": true,
+  "contrast": [
+    {
+      "fg": "#e8edf4",
+      "bg": "#0d1117",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#161b22",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#1c2330",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#0a0e14",
+      "ratio": 16.440224808744848,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#0d1117",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#161b22",
+      "ratio": 7.078851579017443,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#1c2330",
+      "ratio": 6.449407898769069,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#0a0e14",
+      "ratio": 7.914396395614137,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#0d1117",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#161b22",
+      "ratio": 11.974898815275662,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#1c2330",
+      "ratio": 10.910104011097095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#0a0e14",
+      "ratio": 13.388343428810314,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#0d1117",
+      "ratio": 10.731637051347173,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#161b22",
+      "ratio": 9.809435643476732,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#1c2330",
+      "ratio": 8.937191437807625,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#0a0e14",
+      "ratio": 10.967282084266706,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#7ee2a8",
+      "bg": "#0d1117",
+      "ratio": 12.013623247863544,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#7ee2a8",
+      "bg": "#161b22",
+      "ratio": 10.981256963037128,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#7ee2a8",
+      "bg": "#1c2330",
+      "ratio": 10.004815697188947,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#7ee2a8",
+      "bg": "#0a0e14",
+      "ratio": 12.277418103408936,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ff7a93",
+      "bg": "#0d1117",
+      "ratio": 7.621336463114408,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ff7a93",
+      "bg": "#161b22",
+      "ratio": 6.966412411684981,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ff7a93",
+      "bg": "#1c2330",
+      "ratio": 6.34696669826778,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ff7a93",
+      "bg": "#0a0e14",
+      "ratio": 7.788685589174909,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#0d1117",
+      "ratio": 12.615602281385614,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#161b22",
+      "ratio": 11.531506152401557,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#1c2330",
+      "ratio": 10.506137335107907,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#0a0e14",
+      "ratio": 12.89261537833187,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#0d1117",
+      "bg": "#6ee7ff",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#3c2c16",
+      "ratio": 11.413861737674878,
+      "threshold": 4.5
+    }
+  ],
+  "rendered": [
+    {
+      "selector": "reveal",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "48px"
+    },
+    {
+      "selector": "prev",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "48px"
+    },
+    {
+      "selector": "preset",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "48px"
+    },
+    {
+      "selector": "swap1",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(60, 44, 22)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "48px"
+    },
+    {
+      "selector": "",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "0px"
+    },
+    {
+      "selector": "",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "0px"
+    },
+    {
+      "selector": "feedback",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "0px"
+    },
+    {
+      "selector": "candidate",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "auto"
+    }
+  ],
+  "zoom": {
+    "innerWidth": 720,
+    "devicePixelRatio": 2,
+    "nativeFactor": 2
+  },
+  "cssBytes": 13193,
+  "fits": [
+    {
+      "width": 320,
+      "lang": "zh",
+      "text": "贪心反例",
+      "measured": 64.0001220703125,
+      "available": 206,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "text": "官方例 1",
+      "measured": 61.31211853027344,
+      "available": 206,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "text": "官方例 2",
+      "measured": 61.31211853027344,
+      "available": 206,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "text": "两种检验都通过",
+      "measured": 112.00021362304688,
+      "available": 206,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "text": "相等迫使交换",
+      "measured": 96.00018310546875,
+      "available": 206,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "text": "Greedy counterexample",
+      "measured": 180.46437072753906,
+      "available": 206,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "text": "Official example 1",
+      "measured": 134.11227416992188,
+      "available": 206,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "text": "Official example 2",
+      "measured": 134.11227416992188,
+      "available": 206,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "text": "Both guards pass",
+      "measured": 130.7042694091797,
+      "available": 206,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "text": "Equality forces swap",
+      "measured": 153.00830078125,
+      "available": 206,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "text": "贪心反例",
+      "measured": 64.0001220703125,
+      "available": 276,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "text": "官方例 1",
+      "measured": 61.31211853027344,
+      "available": 276,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "text": "官方例 2",
+      "measured": 61.31211853027344,
+      "available": 276,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "text": "两种检验都通过",
+      "measured": 112.00021362304688,
+      "available": 276,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "text": "相等迫使交换",
+      "measured": 96.00018310546875,
+      "available": 276,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "text": "Greedy counterexample",
+      "measured": 180.46437072753906,
+      "available": 276,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "text": "Official example 1",
+      "measured": 134.11227416992188,
+      "available": 276,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "text": "Official example 2",
+      "measured": 134.11227416992188,
+      "available": 276,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "text": "Both guards pass",
+      "measured": 130.7042694091797,
+      "available": 276,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "text": "Equality forces swap",
+      "measured": 153.00830078125,
+      "available": 276,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "zh",
+      "text": "贪心反例",
+      "measured": 64.0001220703125,
+      "available": 590,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "zh",
+      "text": "官方例 1",
+      "measured": 61.31211853027344,
+      "available": 590,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "zh",
+      "text": "官方例 2",
+      "measured": 61.31211853027344,
+      "available": 590,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "zh",
+      "text": "两种检验都通过",
+      "measured": 112.00021362304688,
+      "available": 590,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "zh",
+      "text": "相等迫使交换",
+      "measured": 96.00018310546875,
+      "available": 590,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "en",
+      "text": "Greedy counterexample",
+      "measured": 180.46437072753906,
+      "available": 590,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "en",
+      "text": "Official example 1",
+      "measured": 134.11227416992188,
+      "available": 590,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "en",
+      "text": "Official example 2",
+      "measured": 134.11227416992188,
+      "available": 590,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "en",
+      "text": "Both guards pass",
+      "measured": 130.7042694091797,
+      "available": 590,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "en",
+      "text": "Equality forces swap",
+      "measured": 153.00830078125,
+      "available": 590,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "text": "贪心反例",
+      "measured": 64.0001220703125,
+      "available": 854,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "text": "官方例 1",
+      "measured": 61.31211853027344,
+      "available": 854,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "text": "官方例 2",
+      "measured": 61.31211853027344,
+      "available": 854,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "text": "两种检验都通过",
+      "measured": 112.00021362304688,
+      "available": 854,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "text": "相等迫使交换",
+      "measured": 96.00018310546875,
+      "available": 854,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "text": "Greedy counterexample",
+      "measured": 180.46437072753906,
+      "available": 854,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "text": "Official example 1",
+      "measured": 134.11227416992188,
+      "available": 854,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "text": "Official example 2",
+      "measured": 134.11227416992188,
+      "available": 854,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "text": "Both guards pass",
+      "measured": 130.7042694091797,
+      "available": 854,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "text": "Equality forces swap",
+      "measured": 153.00830078125,
+      "available": 854,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    }
+  ],
+  "links": [
+    {
+      "lang": "zh",
+      "label": "重看四条状态连接",
+      "url": "http://127.0.0.1:18770/leetcode/801/#step2",
+      "section": "03哪些历史可以合并？前缀是已经处理的列 0..i。令 keep 表示两排前缀都递增、且第 i 列不换时的最小交换数；swap 表示第 i 列交换时的最小交换数。同一结尾的最后两个数完全相同，未来能否接上只看它们，因此只保留最便宜的历史。第 0 列没有左邻居：不换花 0 次，交换花 1 次，故 (keep, swap)=(0,1)。这种复用较短前缀最小代价的方法叫动态规划。#10：字符前缀的动态规划状态先看 i=1：原值是 (0,0) → (4,2)。同朝向时比较 0<4 且 0<2，异朝向时比较 0<2 且 0<4，都通过。于是新 keep=min(0,1)=0，新 swap=min(1+1,0+1)=1。到 i=2，原值 (4,2) → (3,5) 的同朝向比较失败（4<3 为假），只有异朝向通过（4<5 且 2<3）；新 keep=旧 swap=1，新 swap=旧 keep+1=1。这就是“暂时更贵的结尾”后来有用的原因。每对相邻列有四种朝向组合。S（同朝向）检验原上排与原上排、原下排与原下排：适用于都不换或都换。C（异朝向）交叉检验原上排与原下排：适用于只换一列。两种检验可能同时通过，所以代码用两个 if，而不是 if/else。当前列换了才加 1，旧列的交换早已计入。下面“条件 ? x : ∞”表示通过时取 x，失败时排除该候选。S: nums1[i−1] < nums1[i] ∧ nums2[i−1] < nums2[i]\nC: nums1[i−1] < nums2[i] ∧ nums2[i−1] < nums1[i]\nnext_keep = min(S ? keep : ∞, C ? swap : ∞)\nnext_swap = min(S ? swap+1 : ∞, C ? keep+1 : ∞)选预设会从第 0 列重新开始，仅重置此实验。每次“处理下一列”完成该列的两种最小代价；看新卡片里的实际比较、四条候选及保留的历史。退一步会恢复完整前缀。∞ 表示这个结尾没有合法历史，不是尚未计算。可视化是 JavaScript 状态模拟，不是执行 Python。保留的 O(n) 教学历史不计入提交代码的 O(1) 辅助空间；小预设展示全部列，没有跳步。预设（重启推演）贪心反例官方例 1官方例 2两种检验都通过相等迫使交换下方始终是原始输入数值，不随推演交换；橙框标出刚处理完的列。列 i=0上排 nums10下排 nums20列 i=1上排 nums14下排 nums22列 i=2上排 nums13下排 nums25列 i=3上排 nums14下排 nums26← 撤回一列处理下一列 →回到第 0 列处理到结尾已处理 1/4 列；当前 i=0。已完成的前缀：最小代价历史i=0：无左邻居。keep=0，swap=1。尚非全数组答案；这里只统计当前已处理前缀。"
+    },
+    {
+      "lang": "zh",
+      "label": "重看结尾为何足够",
+      "url": "http://127.0.0.1:18770/leetcode/801/#step3",
+      "section": "04两个结尾足够吗？试一个新例子这里的不变量（每次处理后都成立的结论）是：keep / swap 分别是两排前缀递增且最后一列不换 / 换的最小交换数。归纳起点是 (0,1)。任何合法的下一段历史都属于四种连接之一；其旧前缀代价至少是对应的旧最小值，所以不会比候选更便宜。反过来，选取这个旧最小值对应的历史，只要相邻比较通过，就能接上当前列，达到候选代价。对所有合法候选取最小值，恰好得到新最小值。为什么无需保留完整历史？固定最后一列朝向后，最后两个数固定；未来比较与更早的选择无关。同结尾更贵的历史接上任何相同后缀仍然更贵。最终不限制最后一列，所以答案取 min(keep, swap)。新输入：nums1=[0,5,4,8,7]，nums2=[1,2,6,5,9]。处理完全部五列，(keep, swap) 是多少？这里 keep / swap 仍是末列不换 / 换的最小交换数。先选，再揭晓；答案不依赖上面的预设。预测最终两个代价(1, 1)：只记住全局最小值(∞, 2)：只保留从未交换的前缀(2, 2)：两种结尾分别取最小值核对并解释清除预测先选择一个预测。"
+    },
+    {
+      "lang": "zh",
+      "label": "#10：字符前缀的动态规划状态",
+      "url": "http://127.0.0.1:18770/leetcode/10/#step1",
+      "section": "02为什么能省去工作？怎样把“同一对子问题只算一次”变成下面的表？直接给递归加缓存，可以保存后缀结果。这里改用另一种方向：从短到长求两个前缀（开头的部分），分析匹配的最后一段，而不是递归中的第一段。不倒转字符串，也不把后缀缓存原样当作前缀表。dp[i][j] 表示 s 的前 i 个字符与 p 的前 j 个字符能否完全匹配。普通字符或 . 只看左上格 dp[i−1][j−1]。遇到 x*，零次用 dp[i][j−2]；一次以上要求当前字符匹配 x，再用 dp[i−1][j]。仍看 aa / a*a*b：dp[1][2] 是 “a” / “a*”，为真；dp[1][4] 是 “a” / “a*a*”，也为真（末组取零次）。因此 dp[2][4] 为真：末组再消费一个 a，沿用 dp[1][4]。此时模式位置 j=4 不变，仍可重复。最后 dp[2][5] 是 “aa” / “a*a*b”：a 不匹配 b，所以为假。每个格只保存这两个前缀的答案，之前如何分配 a 不必保存；多个后续格需要它时直接读取。这些情况覆盖且仅覆盖最后一段匹配：要么 x* 没用字符，要么它用了当前最后一个字符。第二种保留 j，因此还能继续重复。空串只匹配空模式或可以全部删去的 x*；dp[0][0]=真。表按行计算；每个格的依赖都位于左边或上一行，已经确定。行列表示前缀长度，不是字符下标。T/F 表示真假，· 尚未计算；橙色边框标出依赖，青色标当前格。对比独立星号的递推"
+    },
+    {
+      "lang": "zh",
+      "label": "#123：股票问题的四种状态",
+      "url": "http://127.0.0.1:18770/leetcode/123/#step1",
+      "section": "02把过去压缩成现金这一步要回答：未来真的需要知道所有交易日期吗？先定义现金：从零开始，卖出收入减去买入支出，不含手中股票的价值。现金可为负数；持有时的现金不是已经结算的利润。每处理一段天数，只保留四类历史的最大现金：h1 = 持有、最多买入一次；s1 = 空仓（不持股）、最多完成一笔；h2 = 持有、最多买入两次；s2 = 空仓、最多完成两笔。“最多”是额度，不是已完成次数；h2 也可代表只买过一次的历史。四个值可来自不同历史，不能当成同一条交易记录。仍看 [2,5,1,4]。第 1 天后 (h1,s1,h2,s2)=(-2,0,-2,0)。第 2 天卖出可得 -2+5=3，变为 (-2,3,-2,3)。第 3 天低价 1 到来：第一次买入可用 -1 替代 -2；第二次买入可用昨天的 3 支付 1，现金为 2，变为 (-1,3,2,3)。第 4 天卖出第二股得到 2+4=6，最终 (-1,3,2,6)。持股现金 2 为正，表示此前已赚的钱超过这次买价。每一类都只比较“保持昨天”与“今天做最后一个动作”。价格为 p：h1 比较不变与 -p；s1 比较不变与旧 h1+p；h2 比较不变与旧 s1-p；s2 比较不变与旧 h2+p。不需要第 3 次买入，因为额度只有两次；空仓时不能卖、持股时不能再买。使用旧值让同一天只发生一个动作。若允许同日卖出再买入，同价下可合并这两笔而保持利润不变；同日买卖也无利润。因此这种写法不降低答案。h1′ = max(h1, −p)s1′ = max(s1, h1 + p)h2′ = max(h2, s1 − p)s2′ = max(s2, h2 + p)还没看价格时，空仓可以不交易，所以 s1=s2=0；持股不可能，所以 h1=h2=−∞（不可达的标记，不是真实亏损）。max 是取较大值。每一天都重复这种“按条件保留最大现金”的方法，这就是动态规划：保存足够的子问题答案，避免重算所有历史。"
+    },
+    {
+      "lang": "en",
+      "label": "Revisit the four state connections",
+      "url": "http://127.0.0.1:18770/leetcode/801/#step2",
+      "section": "03Which histories can be merged?A prefix is the processed columns 0..i. keep is the minimum swaps for two increasing prefixes with column i unchanged; swap is the minimum with column i exchanged. Histories sharing an ending have exactly the same last two values, so they allow exactly the same future continuations. Keep only the cheapest history per ending. Column 0 has no left neighbor: keeping costs 0, exchanging costs 1, so (keep, swap)=(0,1). Reusing minimum costs for smaller prefixes this way is called dynamic programming. #10: dynamic programming over string prefixesAt i=1, original pairs are (0,0) → (4,2). Equal orientations compare 0<4 and 0<2; opposite orientations compare 0<2 and 0<4. Both pass. New keep=min(0,1)=0; new swap=min(1+1,0+1)=1. At i=2, (4,2) → (3,5) fails the equal-orientation test because 4<3 is false. Only opposite orientations pass: 4<5 and 2<3. New keep=old swap=1; new swap=old keep+1=1. This is why a temporarily more expensive ending can matter later.Four orientation combinations connect adjacent columns. Guard S (same orientation) compares original top to top and bottom to bottom; it covers both kept or both swapped. Guard C (cross orientation) compares original top to bottom and bottom to top; it covers exactly one swapped column. Both guards can pass, so code uses two independent if statements. Add 1 only when the current column is swapped; previous swaps are already counted. Below, “condition ? x : ∞” means use x when the guard passes, otherwise exclude that candidate.S: nums1[i−1] < nums1[i] ∧ nums2[i−1] < nums2[i]\nC: nums1[i−1] < nums2[i] ∧ nums2[i−1] < nums1[i]\nnext_keep = min(S ? keep : ∞, C ? swap : ∞)\nnext_swap = min(S ? swap+1 : ∞, C ? keep+1 : ∞)Changing preset restarts this experiment at column 0 only. Each “Process next column” completes both minimum costs for that column. Read the actual comparisons, four candidates and retained history in the new card. Back restores the full prefix. ∞ means this ending has no valid history, rather than not yet calculated.This is a JavaScript state simulation, not Python execution. Its O(n) teaching history is separate from the submission’s O(1) auxiliary space. Every column of these small presets is shown.Preset (restarts trace)Greedy counterexampleOfficial example 1Official example 2Both guards passEquality forces swapThe values below remain the original input, without simulated swaps. An orange outline marks the column just processed.Column i=0Top · nums10Bottom · nums20Column i=1Top · nums14Bottom · nums22Column i=2Top · nums13Bottom · nums25Column i=3Top · nums14Bottom · nums26← Undo one columnProcess next column →Reset to column 0Process to endProcessed 1/4 columns; current i=0.Completed prefixes: minimum-cost historyi=0: no left neighbor. keep=0, swap=1.Not the full-array answer yet; costs cover only the processed prefix."
+    },
+    {
+      "lang": "en",
+      "label": "Revisit why endings suffice",
+      "url": "http://127.0.0.1:18770/leetcode/801/#step3",
+      "section": "04Are two endings enough? Try a fresh caseThe invariant—a claim true after every processed column—is that keep / swap are the minimum costs for two increasing prefixes ending with an unchanged / exchanged column. The base is (0,1). Every legal extended history uses one of the four connections. Its old prefix costs at least the corresponding old minimum, so it cannot beat that candidate. Conversely, a history attaining that old minimum can extend whenever the adjacent comparisons pass, attaining the candidate cost. Minimizing over all legal candidates therefore gives exactly the new minimum.Why discard full histories? Once the last orientation is fixed, the last two values are fixed. Future comparisons do not depend on earlier choices. A more expensive history with that same ending stays more expensive after any identical suffix. The final orientation is unrestricted, so return min(keep, swap).Fresh input: nums1=[0,5,4,8,7], nums2=[1,2,6,5,9]. After all five columns, what is (keep, swap)? These are still the minimum swap counts ending with the last column kept / swapped. Choose before revealing; this exercise is independent of the trace preset.Predict both final costs(1, 1): retain only one global minimum(∞, 2): retain only never-swapped prefixes(2, 2): minimize each ending separatelyCheck & explainClear predictionChoose a prediction first."
+    },
+    {
+      "lang": "en",
+      "label": " #10: dynamic programming over string prefixes",
+      "url": "http://127.0.0.1:18770/leetcode/10/#step1",
+      "section": "02Why can we skip work?How does solving each pair once become the table below? One option is to cache the recursion’s suffix answers. Here we choose another direction: build answers for prefixes (the beginnings) from short to long, reasoning about the last part of a match rather than the recursion’s first part. We neither reverse the strings nor relabel the suffix cache as a prefix table.dp[i][j] means the first i text characters fully match the first j pattern characters. An ordinary atom or . uses the diagonal dp[i−1][j−1]. For x*, zero repeats use dp[i][j−2]; one more repeat requires an atom match and dp[i−1][j].Keep aa / a*a*b: dp[1][2] asks about \"a\" / \"a*\", true. dp[1][4] asks about \"a\" / \"a*a*\", also true (use the last group zero times). Then dp[2][4] is true: consume another a with the last group and reuse dp[1][4]. Pattern position j=4 stays unchanged, allowing repetition. Finally dp[2][5] asks about \"aa\" / \"a*a*b\": a cannot match b, so it is false. Each cell stores only that prefix pair’s answer; how earlier a characters were allocated need not be stored. Later cells can read this answer whenever they need it.These cases cover exactly the last part of a match: x* consumes nothing, or consumes the last text character. Keeping j in the second case allows further repetition. Empty text matches only the empty pattern or removable x* groups; dp[0][0]=true.Fill row by row; each dependency is already known to the left or above. Row and column coordinates are prefix lengths, not character indices. T/F mean true/false, · means uncomputed; orange marks dependencies and cyan marks the current cell.Compare the standalone-star recurrence"
+    },
+    {
+      "lang": "en",
+      "label": " #123: four states for stock transactions",
+      "url": "http://127.0.0.1:18770/leetcode/123/#step1",
+      "section": "02Summarize the past as cashQuestion: does the future need every past trade date? Define cash as sale receipts minus purchase payments, starting from zero and excluding the value of a held share. Cash may be negative. Cash while holding a share is not realized profit.For each processed prefix of days, keep the greatest cash in four classes: h1 = holding, at most one buy; s1 = flat (no share), at most one completed trade; h2 = holding, at most two buys; s2 = flat, at most two completed trades. These are budgets, not exact action counts: h2 also includes histories with only one buy. The four maxima may come from different histories; they are not one trade log.Stay with [2,5,1,4]. After day 1, (h1,s1,h2,s2)=(-2,0,-2,0). Selling on day 2 yields -2+5=3, giving (-2,3,-2,3). At price 1 on day 3, a first buy improves -2 to -1. A second buy can spend 1 from yesterday’s cash 3, leaving 2: (-1,3,2,3). Selling that share on day 4 yields 2+4=6, ending at (-1,3,2,6). Positive holding cash 2 means previous earnings exceed the new purchase price.Each class compares “keep yesterday” with “make the last action today.” At price p: h1 compares staying with -p; s1 with old h1+p; h2 with old s1-p; s2 with old h2+p. There is no third buy because the budget is two. A flat history cannot sell, and a holding history cannot buy again. Reading old values permits only one action per day. If a sale and repurchase share a day, merge those trades at the same price without changing profit; a same-day buy/sell also earns zero. Thus this restriction does not reduce the answer.h1′ = max(h1, −p)s1′ = max(s1, h1 + p)h2′ = max(h2, s1 − p)s2′ = max(s2, h2 + p)Before any price, doing nothing is flat, so s1=s2=0. Holding is impossible, so h1=h2=−∞, an unreachable marker rather than an actual loss. max chooses the larger value. Repeating this best-cash summary each day is dynamic programming: preserve sufficient answers for smaller prefixes instead of recomputing all histories."
+    }
+  ],
+  "clipboard": "success and per-attempt verified sentinel; actual host keyboard fallback exact",
+  "source": "DOM, clipboard, fallback keyboard readback, downloaded bytes exact",
+  "screenshots": "generated; inspection recorded separately"
+}

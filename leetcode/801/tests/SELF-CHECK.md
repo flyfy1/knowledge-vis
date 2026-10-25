@@ -25,3 +25,43 @@ One pre-existing destination-only error remains outside this lesson: #10 request
 Harness history is retained in evidence/harness-notes.md: an initial missing-candidate sampling precondition was fixed; a conservative select-fit failure was repaired by giving the select its container width without weakening its budget; the unrelated destination favicon was diagnosed and separated. The final full suite uses the same original fit predicate.
 
 Unverified: independent cold review, actual learner comprehension, physical devices, macOS/native font behavior, public deployment and LeetCode acceptance. The candidate is ready for the designated separate review only. No registry, campaign or historical review record was changed.
+
+## 2026-10-26 — 801-COPY-R1 author repair evidence
+
+Status: **fixed awaiting independent review**. This append records a new candidate;
+the historical acceptance and original self-check above remain historical evidence.
+Accepted base: `154c1becf178b798dfbd80acbb79fabdd262ae68`. Before hashes and
+base comparison: `evidence/copy-r1/base-hashes.json`. Frozen new candidate:
+`evidence/copy-r1/candidate.json`; exact runtime diff: `evidence/copy-r1/runtime.diff`.
+
+Fix mapping: **801-COPY-R1** → deleted the entire `footer.site-foot[data-i18n=foot]`
+and its unused bilingual `foot` key. The only additional runtime edit updates the
+copy asset cache query. No replacement claim or component was added. Static exact
+base-diff assertions prove all neighboring copy, including `sim`, `originalLabel`
+and `p4`, remains unchanged. Five required runtime files remain byte-identical;
+all before/after SHA-256 values are recorded in `python-smoke.json`.
+
+- Pre-fix `OUTPUT_DIR=leetcode/801/tests/evidence/copy-r1/before node leetcode/801/tests/test_copy_repair.cjs`: expected FAIL, exit 1, actual footer count 1 versus required 0. Result and Chinese page-end screenshot retained under `copy-r1/before/`.
+- `python3 -B leetcode/801/tests/test_copy_repair.py`: PASS. Actual canonical Python execution on both official examples, the greedy counterexample, the fresh five-column transfer and equality boundary; nonmutation; exact offline mirror including final newline; faithful official Python3 signature; exact allowlisted diff and five unchanged runtime hashes. This deliberately avoids rerunning the broad numerical suites for a prose deletion.
+- `OUTPUT_DIR=leetcode/801/tests/evidence/copy-r1/after node leetcode/801/tests/test_copy_repair.cjs`: PASS. Actual rendered zh→en→zh at 320px retains i=2 (3/4 processed) and revealed prediction (2,2); no footer/key/missing bindings/old wording, no page-end gap, no overflow or console/page/network errors. All source controls and four related links remain reachable by sequential Tab. Preserved limitations and localized source/interface distinctions recorded as actual text. Native Chrome zoom confirmed factor 2, DPR 2, innerWidth 720; bilingual page-end captures retained.
+- `OUTPUT_DIR=leetcode/801/tests/evidence/copy-r1/after node leetcode/801/tests/test_browser.cjs`: PASS. Existing interaction/source regression covers full formulas, candidate values, initial/middle/end and rewind/replay, hand cost scope, independent prediction scope/change/reset and locale state; all presets, 320/390/736/1440 widths, native zoom, keyboard/links, blocked storage and offline source. DOM `textContent`, copy success, download bytes and decoded mirror equal canonical source, with final newline. Each manual fallback attempt seeded and verified its own fresh sentinel, then used actual Linux Control+C and exact clipboard readback. Zero #801 errors; the existing destination-only #10 favicon error remains explicitly distinguished. Browser/host/results are in `after/browser-results.json`.
+- `python3 -B scripts/register_leetcode_lesson.py 801 --validate-only`, executed from repository root: PASS, exit 0, empty stdout/stderr. Receipt in `copy-r1/preflight.json`; validate-only makes no registration or state changes. Metadata already conforms and is unchanged.
+
+Visual self-inspection opened `after/end-320-zh.png`, `after/end-320-en.png`,
+`after/end-zoom200-zh.png`, `after/end-zoom200-en.png`: the source controls and
+related links wrap and remain readable; the removed footer leaves no orphan
+block. The existing section bottom padding remains. No CSS or color changed;
+existing browser contrast checks still pass. This is Linux Chromium evidence,
+not physical-device or macOS font verification.
+
+Harness note: an initial ad-hoc interface assertion incorrectly expected `List[int]`.
+The stored official Python3 snippet actually uses `list[int]`, exactly as canonical
+source does. The durable focused check uses that actual signature and passes;
+this was a harness assumption, not a runtime/interface repair. The five execution
+fixtures and mirror equality had passed before that assertion. No runtime code
+was changed for this check.
+
+Separate reviewer next action: verify the frozen candidate identity, rendered
+bilingual footer removal, preserved limitations and affected page-end layout,
+then explicitly close 801-COPY-R1 if satisfied. No independent closure, actual
+LeetCode submission, novice learning outcome or public deployment is claimed.

@@ -1,0 +1,52 @@
+{
+  "problemId": 801,
+  "frozenAt": "2026-10-25T18:14:28.784001+00:00",
+  "status": "author self-checked; independent review pending",
+  "candidateSha256": "ec8ec8dfa44f960b6000a2bbfd5556524924e74bf68741e50b231800ccce7b48",
+  "files": {
+    "BRIEF.md": "4af5c08d2d0fd74bd96e344c703b80df8df3fa9c3b45920f9bc1a9484dc76941",
+    "app.js": "75d6321fc0a235bc3347d3b8c6f5e57c7d9152fddd263733d215b9b96682d5f4",
+    "copy.js": "3409843e1001b9aa1b86d8605f86193beba494241fbf3ff3b66b95a87af8f8e4",
+    "core.js": "234bc028c32433207c79acdfde06fcf921a0bab1142d54d6dba3f17cca2c82ec",
+    "index.html": "5f450e38b1c4aee5060161992db8ad6591a7e42803eea1409a16e4eecee77bca",
+    "lesson-entry.json": "0f32f5538c44d2a010187803745a2ae40974280e09eafd22679e1f5716d315df",
+    "provenance/README.md": "94728cadf67b8fbca655b2c5d0ec435946e806b0be821e813723798702c429f4",
+    "provenance/official.json": "71204d8d2a58a03043bc18fe362bc1ab184d16302cae51b716e1d976394e9da8",
+    "python-code.js": "a0f2bf9982e91a51f41af32fafaab9d91cea3da9edbf361eecaac7f5473b90c0",
+    "solution.py": "f91a2d3e6ab348192f8b834578855f8ef45093b5e743de74c5aed667397cbcf4",
+    "style.css": "bee051d34276181dd98160f501b9388505df09270a677e26cbc93c00b05535f0",
+    "tests/README.md": "0590dad5c8c6ec611d96a10963ae3021679d5d0ac8d03123ba937ae3c91f187d",
+    "tests/SELF-CHECK.md": "ea9aa1d33df60749f76e7faac9684e51f046a67aae7b5af674b8e15fbb293bd0",
+    "tests/freeze_candidate.py": "bcb3a9ba8109eb6a3e058a7f9c53e6d2589200a94edb49de835fe88d8ae47022",
+    "tests/test_access.cjs": "662d3051f2938572ce6e7e4bfe3cba2c9b70fec9cf70616884271f2dbd7556b8",
+    "tests/test_browser.cjs": "ef34675e082e656ca4c388ff098ed51fc642343cd3bd446c679fb4f10e92f833",
+    "tests/test_copy_repair.cjs": "287b307e3fd2b12e4bbd89674a7a24eddba274fc4b11dcff1a8cfbb61b6cdd9d",
+    "tests/test_copy_repair.py": "c116737d34385a98d1bb65317c7baf6c45800a8f0d4e300641a89a7d9e0b0643",
+    "tests/test_core.cjs": "2e605d57c8a7d4c2eee6e71ceae32ebb8ad76552c9cc9448f24c8b8703829c40",
+    "tests/test_solution.py": "3693fe5f75385f25525c33fd6b0672ec855415081ee8605d26c45a262cbc5f68",
+    "tests/zoom-extension/manifest.json": "633fe6b85a91caf5e9ec10f239ed239f3de9f2e9f3d25d6cdbf5643c97104eb9",
+    "tests/zoom-extension/worker.js": "c795ee441ad1ddf015863b3167b26025ea188f04a441f7688b9224f6f93d5fb3"
+  },
+  "sharedPolicyAndRuntime": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "WORKFLOW.md": "6a1f5a72f96d98a720be0aee0af40d75d837d281761842151e00fa7015c240a6",
+    "UI-I18N-SPEC.md": "16ca9aebcaf6cc4863428d3abbfb675599c31b37d1d717783323697884e62b81",
+    "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+    "specs/leetcode-hard-traces.md": "5cb2edb1f223cde061d67e8cfe255f220876667c1d4c091bdbac49f67c6f2c35",
+    "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+    "specs/leetcode-rendered-state-contract.md": "d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa",
+    "specs/reviews/leetcode-all-hard-design-review.md": "a1d9d6bc23d15e7369eb04252ff00d0302d5b1786641f5c7f7587ecf64d31086",
+    "scripts/register_leetcode_lesson.py": "7ba274cd733a36528d98c85fe87b46d5535bc34898567b0c14f36fda37f81310"
+  },
+  "relatedDestinations": {
+    "leetcode/10/index.html": "332367fc143822d04b35435a1118c434d80ef1033f39ab744cc61a24467a5a66",
+    "leetcode/10/copy.js": "22574319bfe7b3ce5683fa2a26077d5ad3d469a544a8180cec3744fee3aaa923",
+    "leetcode/10/app.js": "e487270264c886448c4adcb162fa14207b2929cb0575aa4159092bd2b79d91c2",
+    "leetcode/123/index.html": "1fa47e76e793e4e2c9a1b6d020c0c50afb603f6d75ee49bf105330cca0d2b106",
+    "leetcode/123/copy.js": "f76f95449c2e938c3effb5febbf009f836de995e5d55b7668f2d1b3beedde6b3",
+    "leetcode/123/app.js": "6aa98280c36ae5a10d39a55eddf8204ad05dd67b3f2bcf0ee807b2fc60ea7ad1"
+  },
+  "preflight": "pass; exit 0",
+  "scope": "leetcode/801 only; no registration, commit, deployment or acceptance"
+}
