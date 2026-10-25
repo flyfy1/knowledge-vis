@@ -3415,6 +3415,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²L + Gn²) time; O(n²) auxiliary space, L=6 and G≤10"
   },
   {
+    "id": 847,
+    "title": {
+      "zh": "访问所有节点的最短路径",
+      "en": "Shortest Path Visiting All Nodes"
+    },
+    "desc": {
+      "zh": "从重复经过中心的星形走法，推导记录当前位置与访问集合的多起点搜索。",
+      "en": "Derive a search over current nodes and visited sets from a walk that revisits a star’s center."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "位掩码",
+        "en": "Bitmask"
+      }
+    ],
+    "path": "847/",
+    "leetcodeUrl": "https://leetcode.com/problems/shortest-path-visiting-all-nodes/",
+    "language": "Python",
+    "complexity": "O((n+m)2^n) expected time; O(n2^n) auxiliary space, m = undirected edges"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
