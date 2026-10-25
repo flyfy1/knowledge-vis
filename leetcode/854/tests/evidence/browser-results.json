@@ -1,0 +1,938 @@
+{
+  "kind": "author browser self-check",
+  "result": "pass",
+  "records": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "frames": 3,
+      "answer": 2,
+      "visible": {
+        "frameRead": "Snapshot 2/2; depth d=2 swaps; cumulative distinct strings enqueued: 3; target in frontier: minimum 2 swaps.",
+        "frontier": "bca ✓",
+        "events": "Parent bac; first mismatch i=1, needs c; candidate j=[2].Swap (1, 2) → bca; first visit, enqueue in new frontier.",
+        "ledger": "Depth 0 (0 swaps): abcDepth 1 (1 swaps): bac"
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "frames": 2,
+      "answer": 1,
+      "visible": {
+        "frameRead": "Snapshot 1/1; depth d=1 swaps; cumulative distinct strings enqueued: 2; target in frontier: minimum 1 swaps.",
+        "frontier": "ba ✓",
+        "events": "Parent ab; first mismatch i=0, needs b; candidate j=[1].Swap (0, 1) → ba; first visit, enqueue in new frontier.",
+        "ledger": "Depth 0 (0 swaps): ab"
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "frames": 3,
+      "answer": 2,
+      "visible": {
+        "frameRead": "Snapshot 2/2; depth d=2 swaps; cumulative distinct strings enqueued: 5; target in frontier: minimum 2 swaps.",
+        "frontier": "abcbacabcabc ✓",
+        "events": "Parent ababcc; first mismatch i=2, needs c; candidate j=[4].Swap (2, 4) → abcbac; first visit, enqueue in new frontier.Parent abbacc; first mismatch i=2, needs c; candidate j=[4].Swap (2, 4) → abcabc; first visit, enqueue in new frontier.",
+        "ledger": "Depth 0 (0 swaps): aabbccDepth 1 (1 swaps): ababcc, abbacc"
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "frames": 1,
+      "answer": 0,
+      "visible": {
+        "frameRead": "Snapshot 0/0; depth d=0 swaps; cumulative distinct strings enqueued: 1; target in frontier: minimum 0 swaps.",
+        "frontier": "aa ✓",
+        "events": "",
+        "ledger": ""
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "frames": 6,
+      "answer": 5,
+      "visible": {
+        "frameRead": "Snapshot 5/5; depth d=5 swaps; cumulative distinct strings enqueued: 6; target in frontier: minimum 5 swaps.",
+        "frontier": "fabcde ✓",
+        "events": "Parent fabced; first mismatch i=4, needs d; candidate j=[5].Swap (4, 5) → fabcde; first visit, enqueue in new frontier.",
+        "ledger": "Depth 0 (0 swaps): abcdefDepth 1 (1 swaps): fbcdeaDepth 2 (2 swaps): facdebDepth 3 (3 swaps): fabdecDepth 4 (4 swaps): fabced"
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "frames": 3,
+      "answer": 2,
+      "visible": {
+        "frameRead": "Snapshot 2/2; depth d=2 swaps; cumulative distinct strings enqueued: 3; target in frontier: minimum 2 swaps.",
+        "frontier": "abca ✓",
+        "events": "Parent abac; first mismatch i=2, needs c; candidate j=[3].Swap (2, 3) → abca; first visit, enqueue in new frontier.",
+        "ledger": "Depth 0 (0 swaps): aabcDepth 1 (1 swaps): abac"
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 6,
+      "frames": 3,
+      "answer": 2,
+      "visible": {
+        "frameRead": "Snapshot 2/2; depth d=2 swaps; cumulative distinct strings enqueued: 4; target in frontier: minimum 2 swaps.",
+        "frontier": "aabbccdd ✓",
+        "events": "Parent aabccbdd; first mismatch i=3, needs b; candidate j=[5].Swap (3, 5) → aabbccdd; first visit, enqueue in new frontier.Parent aabcbcdd; first mismatch i=3, needs b; candidate j=[4].Swap (3, 4) → aabbccdd; already enqueued, skip duplicate.",
+        "ledger": "Depth 0 (0 swaps): aaccbbddDepth 1 (1 swaps): aabccbdd, aabcbcdd"
+      }
+    },
+    {
+      "locale": "en",
+      "rule": "For the current string state, let i be the leftmost index with state[i] ≠ s2[i]. Try only j > i with state[j] = s2[i] and state[j] ≠ s2[j]. The last condition avoids borrowing a letter from an already correct position. Equal character counts guarantee that the unmatched part contains a misplaced copy of the needed letter. Keep every such j rather than choosing one greedily.",
+      "wrong": "Counterexample: aabbcc → abcabc. Fixing the first mismatch using only the leftmost available letter gives aabbcc → ababcc → abcbac → abcabc, taking 3 swaps. Another choice gives aabbcc → abbacc (swap 1,3) → abcabc (swap 2,4), taking only 2. Repeated letters do not make the resulting suffixes equivalent. Four positions initially differ, so at least 2 swaps are necessary.",
+      "feedback": "Check the letter condition again. The answer is {3}. At j=3, abcb has b while the target needs a there, so this b is misplaced. Swapping (0,3) immediately gives bbca in 1 swap. Index 1 also holds b but is already correct. Borrowing it gives bacb, requiring another swap (1,3). Matching the needed letter alone is insufficient; exclude already correct sources."
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "frames": 3,
+      "answer": 2,
+      "visible": {
+        "frameRead": "快照 2/2；当前层 d=2 次交换；累计入队 3 个不同字符串；目标已在前沿：最少 2 次交换。",
+        "frontier": "bca ✓",
+        "events": "父状态 bac；首错 i=1，需要 c；候选 j=[2]。交换 (1, 2) → bca；首次到达，加入新前沿。",
+        "ledger": "深度 0（0 次交换）：abc深度 1（1 次交换）：bac"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "frames": 2,
+      "answer": 1,
+      "visible": {
+        "frameRead": "快照 1/1；当前层 d=1 次交换；累计入队 2 个不同字符串；目标已在前沿：最少 1 次交换。",
+        "frontier": "ba ✓",
+        "events": "父状态 ab；首错 i=0，需要 b；候选 j=[1]。交换 (0, 1) → ba；首次到达，加入新前沿。",
+        "ledger": "深度 0（0 次交换）：ab"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "frames": 3,
+      "answer": 2,
+      "visible": {
+        "frameRead": "快照 2/2；当前层 d=2 次交换；累计入队 5 个不同字符串；目标已在前沿：最少 2 次交换。",
+        "frontier": "abcbacabcabc ✓",
+        "events": "父状态 ababcc；首错 i=2，需要 c；候选 j=[4]。交换 (2, 4) → abcbac；首次到达，加入新前沿。父状态 abbacc；首错 i=2，需要 c；候选 j=[4]。交换 (2, 4) → abcabc；首次到达，加入新前沿。",
+        "ledger": "深度 0（0 次交换）：aabbcc深度 1（1 次交换）：ababcc, abbacc"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "frames": 1,
+      "answer": 0,
+      "visible": {
+        "frameRead": "快照 0/0；当前层 d=0 次交换；累计入队 1 个不同字符串；目标已在前沿：最少 0 次交换。",
+        "frontier": "aa ✓",
+        "events": "",
+        "ledger": ""
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "frames": 6,
+      "answer": 5,
+      "visible": {
+        "frameRead": "快照 5/5；当前层 d=5 次交换；累计入队 6 个不同字符串；目标已在前沿：最少 5 次交换。",
+        "frontier": "fabcde ✓",
+        "events": "父状态 fabced；首错 i=4，需要 d；候选 j=[5]。交换 (4, 5) → fabcde；首次到达，加入新前沿。",
+        "ledger": "深度 0（0 次交换）：abcdef深度 1（1 次交换）：fbcdea深度 2（2 次交换）：facdeb深度 3（3 次交换）：fabdec深度 4（4 次交换）：fabced"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "frames": 3,
+      "answer": 2,
+      "visible": {
+        "frameRead": "快照 2/2；当前层 d=2 次交换；累计入队 3 个不同字符串；目标已在前沿：最少 2 次交换。",
+        "frontier": "abca ✓",
+        "events": "父状态 abac；首错 i=2，需要 c；候选 j=[3]。交换 (2, 3) → abca；首次到达，加入新前沿。",
+        "ledger": "深度 0（0 次交换）：aabc深度 1（1 次交换）：abac"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 6,
+      "frames": 3,
+      "answer": 2,
+      "visible": {
+        "frameRead": "快照 2/2；当前层 d=2 次交换；累计入队 4 个不同字符串；目标已在前沿：最少 2 次交换。",
+        "frontier": "aabbccdd ✓",
+        "events": "父状态 aabccbdd；首错 i=3，需要 b；候选 j=[5]。交换 (3, 5) → aabbccdd；首次到达，加入新前沿。父状态 aabcbcdd；首错 i=3，需要 b；候选 j=[4]。交换 (3, 4) → aabbccdd；已入队，跳过重复。",
+        "ledger": "深度 0（0 次交换）：aaccbbdd深度 1（1 次交换）：aabccbdd, aabcbcdd"
+      }
+    },
+    {
+      "locale": "zh",
+      "rule": "对当前字符串 state，令 i 为最左边 state[i] ≠ s2[i] 的下标。只尝试 j > i 且 state[j] = s2[i] 且 state[j] ≠ s2[j]。最后一个条件避免从已经正确的位置借字母。异位词保证：未匹配部分中一定有一个尚未放对的所需字母。仍须保留所有这样的 j，而非贪心选一个。",
+      "wrong": "反例：aabbcc → abcabc。若每次修好第一个错误位置，却只用最左边的可用字母，会走 aabbcc → ababcc → abcbac → abcabc，花 3 次。保留另一个选择则可走 aabbcc → abbacc（交换 1、3）→ abcabc（交换 2、4），只花 2 次。重复字母并不代表后续状态等价。初始有 4 处不同，所以至少需要 2 次。",
+      "feedback": "再检查字母条件。 答案是 {3}。abcb 的 j=3 是 b，目标该处要 a，所以它尚未放对。交换 (0,3) 直接得到 bbca，只需 1 次。j=1 虽然也是 b，却已经正确；若从那里借字母，会得到 bacb，还需交换 (1,3) 才到目标。保留所需字母还不够，必须排除已经放对的来源。"
+    }
+  ],
+  "layouts": [
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 1,
+      "doc": 320,
+      "available": 320,
+      "select": {
+        "width": 286,
+        "text": 50.04808044433594,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "client": 283,
+          "scroll": 283
+        },
+        {
+          "client": 283,
+          "scroll": 283
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "available": 320,
+      "select": {
+        "width": 126,
+        "text": 50.04808044433594,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 126,
+          "scroll": 126
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 120,
+          "scroll": 120
+        },
+        {
+          "client": 123,
+          "scroll": 123
+        },
+        {
+          "client": 123,
+          "scroll": 123
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 1,
+      "doc": 390,
+      "available": 390,
+      "select": {
+        "width": 356,
+        "text": 50.04808044433594,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "client": 353,
+          "scroll": 353
+        },
+        {
+          "client": 353,
+          "scroll": 353
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "available": 390,
+      "select": {
+        "width": 161,
+        "text": 50.04808044433594,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 161,
+          "scroll": 161
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "client": 158,
+          "scroll": 158
+        },
+        {
+          "client": 158,
+          "scroll": 158
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "zoom": 1,
+      "doc": 736,
+      "available": 736,
+      "select": {
+        "width": 646,
+        "text": 50.04808044433594,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 646,
+          "scroll": 646
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "client": 643,
+          "scroll": 643
+        },
+        {
+          "client": 643,
+          "scroll": 643
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "zoom": 2,
+      "doc": 736,
+      "available": 736,
+      "select": {
+        "width": 278,
+        "text": 50.04808044433594,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 278,
+          "scroll": 278
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "client": 275,
+          "scroll": 275
+        },
+        {
+          "client": 275,
+          "scroll": 275
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 1,
+      "doc": 1440,
+      "available": 1440,
+      "select": {
+        "width": 910,
+        "text": 50.04808044433594,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "client": 907,
+          "scroll": 907
+        },
+        {
+          "client": 907,
+          "scroll": 907
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "available": 1440,
+      "select": {
+        "width": 630,
+        "text": 50.04808044433594,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "client": 627,
+          "scroll": 627
+        },
+        {
+          "client": 627,
+          "scroll": 627
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 1,
+      "doc": 320,
+      "available": 320,
+      "select": {
+        "width": 286,
+        "text": 46.27207946777344,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "client": 283,
+          "scroll": 283
+        },
+        {
+          "client": 283,
+          "scroll": 283
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "available": 320,
+      "select": {
+        "width": 126,
+        "text": 46.27207946777344,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 126,
+          "scroll": 126
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 120,
+          "scroll": 120
+        },
+        {
+          "client": 123,
+          "scroll": 123
+        },
+        {
+          "client": 123,
+          "scroll": 123
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 1,
+      "doc": 390,
+      "available": 390,
+      "select": {
+        "width": 356,
+        "text": 46.27207946777344,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "client": 353,
+          "scroll": 353
+        },
+        {
+          "client": 353,
+          "scroll": 353
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "available": 390,
+      "select": {
+        "width": 161,
+        "text": 46.27207946777344,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 161,
+          "scroll": 161
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "client": 158,
+          "scroll": 158
+        },
+        {
+          "client": 158,
+          "scroll": 158
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "zoom": 1,
+      "doc": 736,
+      "available": 736,
+      "select": {
+        "width": 646,
+        "text": 46.27207946777344,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 646,
+          "scroll": 646
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "client": 643,
+          "scroll": 643
+        },
+        {
+          "client": 643,
+          "scroll": 643
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "zoom": 2,
+      "doc": 736,
+      "available": 736,
+      "select": {
+        "width": 278,
+        "text": 46.27207946777344,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 278,
+          "scroll": 278
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "client": 275,
+          "scroll": 275
+        },
+        {
+          "client": 275,
+          "scroll": 275
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "doc": 1440,
+      "available": 1440,
+      "select": {
+        "width": 910,
+        "text": 46.27207946777344,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "client": 907,
+          "scroll": 907
+        },
+        {
+          "client": 907,
+          "scroll": 907
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "available": 1440,
+      "select": {
+        "width": 630,
+        "text": 46.27207946777344,
+        "padding": 30,
+        "arrowReserve": 24
+      },
+      "parts": [
+        {
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "client": 106,
+          "scroll": 106
+        },
+        {
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "client": 627,
+          "scroll": 627
+        },
+        {
+          "client": 627,
+          "scroll": 627
+        }
+      ]
+    }
+  ],
+  "clipboard": [
+    {
+      "locale": "en",
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "nativeReadbackExact": true
+    },
+    {
+      "locale": "zh",
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "nativeReadbackExact": true
+    }
+  ],
+  "source": "exact rendered/embedded/download/success-copy/native-fallback including final newline",
+  "focus": {
+    "active": true,
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrasts": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".event",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".state-string",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#swapB",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#tracePrev",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#traceNext",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#langToggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "focus on panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "state border on panel2",
+      "ratio": 6.449407898769069
+    }
+  ],
+  "cssBytes": 11817,
+  "linkRecords": [
+    {
+      "href": "../",
+      "url": "http://127.0.0.1:18770/leetcode/",
+      "status": 200
+    },
+    {
+      "href": "#step0",
+      "url": "http://127.0.0.1:18770/leetcode/854/#step0",
+      "status": 200
+    },
+    {
+      "href": "#step1",
+      "url": "http://127.0.0.1:18770/leetcode/854/#step1",
+      "status": 200
+    },
+    {
+      "href": "#step2",
+      "url": "http://127.0.0.1:18770/leetcode/854/#step2",
+      "status": 200
+    },
+    {
+      "href": "#step3",
+      "url": "http://127.0.0.1:18770/leetcode/854/#step3",
+      "status": 200
+    },
+    {
+      "href": "#step4",
+      "url": "http://127.0.0.1:18770/leetcode/854/#step4",
+      "status": 200
+    },
+    {
+      "href": "../773/#step2",
+      "url": "http://127.0.0.1:18770/leetcode/773/#step2",
+      "status": 200
+    },
+    {
+      "href": "solution.py",
+      "url": "http://127.0.0.1:18770/leetcode/854/solution.py",
+      "status": 200
+    },
+    {
+      "href": "../126/#step2",
+      "url": "http://127.0.0.1:18770/leetcode/126/#step2",
+      "status": 200
+    },
+    {
+      "locale": "en",
+      "label": "Word Ladder II: compare shortest BFS layers and multiple paths",
+      "href": "../126/#step2",
+      "destinationText": "0303 · Expand and inspectWhich routes did this expansion add? Choose a preset (this resets this experiment), hold its dictionary fixed, and expand one word at a time. Read the new edges, then the matching parent list on each word card. Rewind and advance to check that both parents return unchanged. Distance counts replacements; each horizontal group is one layer, and each card lists words that can immediately precede it on a shortest route.The browser visualization simulates the algorithm; it does not execute the Python below. Each frame snapshots one fully expanded queue word, retaining all discovered words and parents. The final frame reconstructs answers. No expansion events are omitted. Teaching snapshots are additional storage, outside the submission’s space bound.Preset (changing resets the trace)Tiny: aa → bb, two routesOfficial example 1: hit → cogOfficial example 2: cog absentStart is in the dictionaryOne-letter words, direct routeEnd exists but is disconnectedDictionary: ab, ba, bb← Previous snapshotExpand next word →Jump to reconstructed answersReset experimentSnapshot positionSnapshot 0/4 · start aa · end bbInitial: only the start, at distance 0. No word has been expanded.Queue (first in, first out; not yet expanded): aaDistance 0aaStart; no parentsCompleted expansions (retained history)Reconstructed complete answersAnswers are reconstructed in the final frame.",
+      "keyboardActivated": true,
+      "targetHtmlSha256": "3a3d8359c162740f4eb79c23c1a25f86a8b40e47ffbbb95837cc3eb6cc33238f"
+    },
+    {
+      "locale": "en",
+      "label": "Sliding Puzzle: compare a state graph generated by swaps",
+      "href": "../773/#step2",
+      "destinationText": "03Search by layersHow can the first encounter with the goal prove the fewest moves? Breadth-first search (BFS) explores one move count at a time. The frontier contains every newly discovered state at distance d; seen is the set of all discovered states. The start is layer 0 because no move has been made.Keep 123405: 0 occupies position 4 (zero-based, row-major), so it can swap only with positions 1, 3, 5. This gives 103425, 123045, 123450, each reachable in 1 move. The last is the goal and layer 0 was not, so the answer is 1. Later, when 103425 generates 123405, seen rejects it: that board was already found at layer 0, and returning cannot improve its distance.This yields the invariant: on entering layer d, the frontier is exactly the states whose shortest distance is d, and seen is exactly those within distance d. One edge from the frontier reaches a state within d+1 moves. An unseen state cannot be within d moves, or it would already have been discovered. Its distance is therefore exactly d+1. Mark it seen immediately to avoid duplicates within the new layer. Every (d+1)-move path has a penultimate state within d moves, so the next layer misses no state either. This proof relies on every edge costing one move.Word Ladder II: retain shortest paths by layer →Finish “One move”, then select “Five moves”. Advance layer by layer and inspect the retained layer ledger. Each frame sho",
+      "keyboardActivated": true,
+      "targetHtmlSha256": "8cc3be30e0bb5251cc797cb3c753f14d1e4ccd4595126dd46aa5872a403f8bb5"
+    },
+    {
+      "locale": "zh",
+      "label": "单词接龙 II：比较 BFS 的最短层与多条路径",
+      "href": "../126/#step2",
+      "destinationText": "0303 · 逐次展开实验这次展开具体增加了哪些来路？选择预设（会重置本实验），保持词表不变，逐次点“展开下一个词”。先看新增边，再看对应词卡的父词列表；最后回退一次再前进，检查两条来路能否原样恢复。距离表示替换次数；每个横向组是一层，卡片列出可在最短路中紧接其前的父词。浏览器可视化是算法模拟，并非执行下面的 Python。每帧是一个队列词完全展开后的快照，保留所有已发现词和父词；最后一帧重建答案。没有省略展开事件。教学快照的存储不计入提交代码的空间复杂度。预设（切换会重置轨迹）小例：aa → bb，两条路官方例 1：hit → cog官方例 2：缺少 cog起点在词表内一位词，直接到达终点存在，但不连通词表：ab, ba, bb← 回退快照展开下一个词 →跳至重建答案重置本实验快照位置快照 0/4 · 起点 aa · 终点 bb初始：只有起点，距离 0。尚未展开词。队列（先进先出、尚未展开）：aa距离 0aa起点，无父词已完成的展开（保留历史）重建的完整答案到最后一帧才重建答案。",
+      "keyboardActivated": true,
+      "targetHtmlSha256": "3a3d8359c162740f4eb79c23c1a25f86a8b40e47ffbbb95837cc3eb6cc33238f"
+    },
+    {
+      "locale": "zh",
+      "label": "滑动谜题：比较交换生成的状态图",
+      "href": "../773/#step2",
+      "destinationText": "03逐层搜索这一步要回答：怎样知道第一次遇到目标就是最少步数？广度优先搜索（BFS）按步数一层层找。前沿是“刚发现、距离同为 d 步”的所有状态；seen 是已经发现的状态集合。起点在第 0 层，因为尚未移动。仍看 123405：0 在位置 4（从 0 开始按行编号），只能换位置 1、3、5，于是得到 103425、123045、123450。这三块棋盘都是 1 步可达。123450 已是目标，且第 0 层不是目标，所以答案是 1。下一次从 103425 生成 123405 时，seen 会拒绝它：它早在第 0 层就出现过，绕回去不会让路更短。由此得到不变量：进入第 d 层时，前沿恰好包含最短距离为 d 的状态，seen 恰好包含距离不超过 d 的状态。扩展前沿的一条边只会得到距离至多 d+1 的状态；未见过的状态不可能距离 ≤d，否则早已发现。因此新状态的距离恰为 d+1，发现时立即加入 seen，防止同层重复。任何 d+1 步的路径，其倒数第二个状态距离至多 d，所以新一层也不会漏掉状态。所有边都代表 1 次移动，此证明才成立。单词接龙 II：按层保留最短路径 →先用“一步到达”走到末尾，再选“五步到达”，逐层前进，查看保留的层记录。每帧显示进入该层时的全部前沿；候选账本展示上一层第一个状态的扩展，其余状态也已完整扩展。切换预设会重启此搜索。搜索预设（更换即重启）一步到达 · 123405五步到达 · 412503无法到达 · 123540已完成 · 123450换一个起点 · 012453教学模拟：JavaScript 按完整层生成快照，并非执行下面的 Python。Python 用队列逐个取出状态，可能在一层中途返回；最少步数相同。未截断任何层或前沿。一步到达 · 123405回到上一层生成下一层重置跳到搜索结论帧 0/1 · 进入第 0 层 · 前沿 1 个状态 · 累计发现 1 个状态。尚未给出最终答案。本层全部前沿棋盘空前沿：没有更多可达状态。每块棋盘始终为 2×3。极窄缩放时，可横滑棋盘，或聚焦棋盘后按左右方向键查看三列。123405123405累计层记录：已扩展层 → 本层状态数 → 新发现数尚未扩展起点。上一层首个状态的候选账本尚未扩展起点。",
+      "keyboardActivated": true,
+      "targetHtmlSha256": "8cc3be30e0bb5251cc797cb3c753f14d1e4ccd4595126dd46aa5872a403f8bb5"
+    }
+  ],
+  "storageDenied": true,
+  "offline": true,
+  "errors": [],
+  "badAssets": [],
+  "external": [],
+  "zoomMethod": "CSS zoom:2 in real Chromium; browser-chrome zoom and real devices not tested",
+  "browser": "156.0.8078.4",
+  "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+  "contrastCalibration": {
+    "black": 0,
+    "white": 1,
+    "red": 0.2126,
+    "green": 0.7152,
+    "blue": 0.0722,
+    "blackWhite": 21,
+    "nearThreshold": 4.492948073111701
+  },
+  "contrastScope": "solid rendered backgrounds; local nav made solid; WCAG sRGB weights calibrated against black, white, primaries and unrounded near-4.5 failure"
+}
