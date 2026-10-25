@@ -3025,6 +3025,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(1 + log(max(tx, ty))) time; O(1) auxiliary space"
   },
   {
+    "id": 805,
+    "title": {
+      "zh": "数组的均值分割",
+      "en": "Split Array With Same Average"
+    },
+    "desc": {
+      "zh": "从三张数字卡片推导等均值条件，用折半子集和寻找非空分组。",
+      "en": "Derive an exact average condition, then pair count-indexed subset sums from two halves."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "折半搜索",
+        "en": "Meet in the middle"
+      },
+      {
+        "zh": "子集和",
+        "en": "Subset sum"
+      }
+    ],
+    "path": "805/",
+    "leetcodeUrl": "https://leetcode.com/problems/split-array-with-same-average/",
+    "language": "Python",
+    "complexity": "O(n · 2^ceil(n/2)) expected time; O(2^ceil(n/2)) space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
