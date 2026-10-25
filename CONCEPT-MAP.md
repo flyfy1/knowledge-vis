@@ -1764,3 +1764,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Lexicographic ordering | `leetcode/987/#step3` | Sort column, then row, then value; group contiguous columns. |
 
 <!-- /leetcode-987-campaign -->
+
+
+<!-- leetcode-995-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Forced leftmost flip | `leetcode/995/#step2` | Why each left-to-right decision is forced. |
+| Flip parity and expiry | `leetcode/995/#step3` | Replace interval writes with two boundary toggles. |
+
+<!-- /leetcode-995-campaign -->
