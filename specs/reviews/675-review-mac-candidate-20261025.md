@@ -37,3 +37,24 @@ local preview server. Result files retain their original “author self-check”
 labels, but these copies were independently rerun by the dispatcher on Mac.
 Online judge acceptance, public delivery, physical devices and learning outcomes
 are not established by these checks.
+
+## Later independent finding and native red reproduction
+
+The independent review `675-review-1-feae1887.md` requires `675-R1-01`: English
+selected preset descriptions clip at 320px, including their move-count unit.
+Passing the four original scripts above did not cover this defect. No acceptance
+is implied by their passing result.
+
+A separate Mac probe checks all six presets in both locales at 320/390px. Three
+320px English labels exceed even the full 230px content budget before reserving
+arrow space: detour 252.576px, official unreachable example 255.040px, and
+multiple-leg revisits 261.408px. The inspected detour screenshot displays the
+number 10 without its required move-count unit. The CSS stack is recorded,
+without claiming a uniquely resolved font. The zero-arrow comparison is a
+conservative necessary-fit test, not sufficient proof of native-arrow clearance.
+
+The exact red probe, result and screenshots are retained for unchanged rerun.
+The author is repairing the independent finding. Lane 675 will pause only after
+its active fix ends so candidate-bound native proof can reach the independent
+reviewer before closure. This follow-up supersedes any interpretation of the
+initial selected screenshots as comprehensive selected-label validation.
