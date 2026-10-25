@@ -1199,3 +1199,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Rolling prefix decoding counts | `leetcode/639/#step2` | Extend the two preceding prefix counts through disjoint final-token cases. |
 
 <!-- /leetcode-639-campaign -->
+
+
+<!-- leetcode-601-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Consecutive-ID triple witnesses | `leetcode/601/#step1` | Derive complete runs from overlapping valid triples. |
+| Union invariant | `leetcode/601/#step2` | Marked IDs equal the union of all complete triples tested so far. |
+
+<!-- /leetcode-601-campaign -->
