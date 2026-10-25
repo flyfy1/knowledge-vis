@@ -32,3 +32,25 @@ zoom metrics and a separately scoped related-destination favicon warning.
 
 These tests and screenshots are author self-checks. They do not establish an
 independent lesson review, LeetCode acceptance, deployment or learner outcomes.
+
+Margin repair supplements (same OUTPUT_DIR/PREVIEW_ROOT environment):
+
+```bash
+node leetcode/765/tests/test_margin.cjs
+node leetcode/765/tests/test_rendered_contract.cjs
+node leetcode/765/tests/test_margin.cjs --stress
+node leetcode/765/tests/test_margin.cjs --stress --legacy-label
+```
+
+The first checks all five selected presets at 320/390/1440px in both languages
+after a locale roundtrip, records canvas/DOM widths with the original 24px
+reserve, and captures each closed select. The second checks a hand-calculated
+complete four-couple trace, remaining-minimum formula, cumulative swaps, replay,
+and independent prediction scope. The original full browser suite stays unchanged.
+`--stress` defaults to a synthetic 16.7px select font; `STRESS_FONT=17` tests 17px.
+`--legacy-label` replays only the old label through a test-only copy.js response
+before localization initializes; it does not edit lesson files. At 16.7px the old
+label fails and repaired label passes on the recorded Linux host; at 17px both
+fail. Neither stress case establishes Mac verification. Separate OUTPUT_DIR values
+preserve red and green artifacts. Run the unchanged original full suite on native
+Mac against the frozen repair candidate before closing `765-MAC-MARGIN-01`.

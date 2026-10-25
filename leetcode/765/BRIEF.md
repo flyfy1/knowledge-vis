@@ -87,3 +87,19 @@ Tests accept OUTPUT_DIR for generated evidence. Run non-mutating registration
 preflight only. Related links point to actual rendered #41 placement and local proof/trace anchors; shared files untouched.
 
 Chinese title is an authored translation; official English title and interface are captured.
+
+## 2026-10-25 margin repair candidate
+
+Dispatcher-adopted scope: `765-MAC-MARGIN-01` in
+`specs/reviews/765-review-mac-margin-repair-request-20261025.md`, following the
+independent Mac diagnosis. Reuse the approved design and all five preset identities.
+The learner still compares partner swaps on the eight-person counterexample.
+P0/highest-return change: English preset 3 becomes `8 people: counterexample`;
+bump only the copy asset reference. Chinese meaning, tokens, font, padding,
+algorithm, trace and original 24px-reserve assertion stay unchanged.
+P1/P2: none. Deferred: font/layout changes, because the adopted label repair
+requires neither. Self-check mapping and verification limits are appended in
+`tests/SELF-CHECK.md`; candidate hashes are in
+`tests/evidence/margin-repair-20261025/candidate.json`.
+This is a new repair candidate, not independent acceptance. Native Mac full-suite
+verification is still required; Linux and synthetic font checks cannot replace it.
