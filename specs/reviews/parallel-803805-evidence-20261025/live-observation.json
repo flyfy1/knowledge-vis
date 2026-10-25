@@ -1,0 +1,128 @@
+{
+  "observed_at": "2026-10-25T12:15:47.065650+00:00",
+  "workers": [
+    {
+      "label": "central",
+      "runner_pid": 1074502,
+      "nice": 0,
+      "status": "running",
+      "current": {
+        "problem_id": "782",
+        "stage": "author",
+        "started_at": "2026-10-25T12:04:45.729444+00:00",
+        "run_id": "782-author-ac9f09445a31"
+      },
+      "children": [
+        {
+          "pid": 1075123,
+          "argv": [
+            "node",
+            "/home/songyy/.local/bin/codex",
+            "exec",
+            "-m",
+            "gpt-6.1-sol",
+            "-c",
+            "model_reasoning_effort=\"medium\"",
+            "-c",
+            "approval_policy=\"never\"",
+            "--sandbox",
+            "danger-full-access",
+            "--json",
+            "-o",
+            "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/782-author-ac9f09445a31/final.json",
+            "--output-schema",
+            "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/782-author-ac9f09445a31/schema.json",
+            "-C",
+            "/home/songyy/projects/leetcode-hard-campaign-20261018",
+            "-"
+          ]
+        }
+      ],
+      "event_bytes": 524685,
+      "publication_enabled": true
+    },
+    {
+      "label": "803",
+      "runner_pid": 1081738,
+      "nice": 10,
+      "status": "running",
+      "current": {
+        "problem_id": "803",
+        "stage": "author",
+        "started_at": "2026-10-25T12:15:13.670672+00:00",
+        "run_id": "803-author-d6989155a5b0"
+      },
+      "children": [
+        {
+          "pid": 1081775,
+          "argv": [
+            "node",
+            "/home/songyy/.local/bin/codex",
+            "exec",
+            "-m",
+            "gpt-6.1-sol",
+            "-c",
+            "model_reasoning_effort=\"medium\"",
+            "-c",
+            "approval_policy=\"never\"",
+            "--sandbox",
+            "danger-full-access",
+            "--json",
+            "-o",
+            "/home/songyy/projects/leetcode-hard-lane-state-803-20261025/runs/803-author-d6989155a5b0/final.json",
+            "--output-schema",
+            "/home/songyy/projects/leetcode-hard-lane-state-803-20261025/runs/803-author-d6989155a5b0/schema.json",
+            "-C",
+            "/home/songyy/projects/leetcode-hard-lane-803-20261025",
+            "-"
+          ]
+        }
+      ],
+      "event_bytes": 340173,
+      "publication_enabled": false
+    },
+    {
+      "label": "805",
+      "runner_pid": 1082143,
+      "nice": 10,
+      "status": "running",
+      "current": {
+        "problem_id": "805",
+        "stage": "author",
+        "started_at": "2026-10-25T12:15:26.058064+00:00",
+        "run_id": "805-author-2ab2362ae2fc"
+      },
+      "children": [
+        {
+          "pid": 1082199,
+          "argv": [
+            "node",
+            "/home/songyy/.local/bin/codex",
+            "exec",
+            "-m",
+            "gpt-6.1-sol",
+            "-c",
+            "model_reasoning_effort=\"medium\"",
+            "-c",
+            "approval_policy=\"never\"",
+            "--sandbox",
+            "danger-full-access",
+            "--json",
+            "-o",
+            "/home/songyy/projects/leetcode-hard-lane-state-805-20261025/runs/805-author-2ab2362ae2fc/final.json",
+            "--output-schema",
+            "/home/songyy/projects/leetcode-hard-lane-state-805-20261025/runs/805-author-2ab2362ae2fc/schema.json",
+            "-C",
+            "/home/songyy/projects/leetcode-hard-lane-805-20261025",
+            "-"
+          ]
+        }
+      ],
+      "event_bytes": 207923,
+      "publication_enabled": false
+    }
+  ],
+  "central_stop": false,
+  "released": 103,
+  "pending_release": null
+}
