@@ -3281,6 +3281,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(26) = O(1) auxiliary space"
   },
   {
+    "id": 956,
+    "title": {
+      "zh": "最高的广告牌",
+      "en": "Tallest Billboard"
+    },
+    "desc": {
+      "zh": "从焊接两根等高支架，推导高度差动态规划。",
+      "en": "Derive difference-state DP by welding two equal supports."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "状态压缩",
+        "en": "State compression"
+      }
+    ],
+    "path": "956/",
+    "leetcodeUrl": "https://leetcode.com/problems/tallest-billboard/",
+    "language": "Python",
+    "complexity": "O(nS) expected time; O(S) auxiliary space, S = sum(rods)"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
