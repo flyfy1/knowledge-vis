@@ -1,0 +1,8 @@
+{
+  "scope": "Diagnostic copy of publisher gate collects every missing heading ID and 250ms settled text; original gate remains unchanged",
+  "release": "b1aeec15655d493c88b66eced787cb9f",
+  "seconds": 71.13719064404722,
+  "exit_code": 1,
+  "stdout": "{\"headingFailures\":[{\"id\":239,\"lang\":\"zh\",\"immediate\":\"\u6ed1\u52a8\u7a97\u53e3\u6700\u5927\u503c\",\"settled\":\"\u6ed1\u52a8\u7a97\u53e3\u6700\u5927\u503c\"},{\"id\":239,\"lang\":\"en\",\"immediate\":\"Sliding Window Maximum\",\"settled\":\"Sliding Window Maximum\"},{\"id\":262,\"kind\":\"untranslated\",\"texts\":[\"#262 \u00b7 Trips and Users\",\"#262 \u00b7 Trips and Users\"]},{\"id\":502,\"kind\":\"untranslated\",\"texts\":[\"#502 \u00b7 IPO\",\"#502 \u00b7 IPO\"]}]}\n",
+  "stderr": "Error: Heading failures collected\n    at [eval]:48:137\n"
+}

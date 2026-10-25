@@ -283,7 +283,7 @@ const input = JSON.parse(process.argv[1]);
    await page.goto(input.base+'/leetcode/'+item.id+'/',{waitUntil:'domcontentloaded'});
    await page.locator('h1').waitFor({state:'visible'});
    await settleLocal();
-   const texts=[];
+   const texts=[], mainTexts=[];
    for(const lang of ['zh','en']) {
     const button=page.locator('[data-lang="'+lang+'"]');
     if(await button.count()!==1) throw new Error('Missing language switch '+item.id+': '+lang);
@@ -292,9 +292,13 @@ const input = JSON.parse(process.argv[1]);
     if(!heading.includes(String(item.id))) throw new Error('Missing lesson ID '+item.id);
     texts.push(heading);
     if(!await page.locator('a').evaluateAll((links,url)=>links.some(a=>a.href===url),item.leetcodeUrl)) throw new Error('Missing official lesson link '+item.id);
-    if(await page.locator('main').innerText().then(t=>t.trim().length)<100) throw new Error('Empty lesson '+item.id);
+    const mainText=await page.locator('main').innerText();
+    if(mainText.trim().length<100) throw new Error('Empty lesson '+item.id);
+    mainTexts.push(mainText);
    }
-   if(texts[0]===texts[1]) throw new Error('Heading did not translate '+item.id);
+   // Reviewed localized names can legitimately be identical (for example IPO).
+   if(texts[0]===texts[1] && item.title.zh!==item.title.en) throw new Error('Heading did not translate '+item.id);
+   if(mainTexts[0]===mainTexts[1]) throw new Error('Lesson content did not translate '+item.id);
   }
   if(errors.length) throw new Error(errors.join('\n'));
   console.log(JSON.stringify({lessons:input.entries.length, ignoredKnownBeaconFailures:ignored.length}));

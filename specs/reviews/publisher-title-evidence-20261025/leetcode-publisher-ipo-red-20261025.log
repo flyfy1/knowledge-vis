@@ -1,0 +1,21 @@
+F
+======================================================================
+FAIL: test_identical_title_with_translated_body (__main__.BrowserGateTests.test_identical_title_with_translated_body)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/songyy/Documents/knowledge-vis/scripts/test_leetcode_publish_browser.py", line 52, in test_identical_title_with_translated_body
+    self.check_page(['#502 · IPO'] * 2, ['逐步解释投资选择。' * 30, 'Explain project selection. ' * 30],
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    {'zh': 'IPO', 'en': 'IPO'}, True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/songyy/Documents/knowledge-vis/scripts/test_leetcode_publish_browser.py", line 49, in check_page
+    self.assertEqual(result.returncode == 0, should_pass, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : Error: Heading did not translate 502
+    at [eval]:46:34
+
+
+----------------------------------------------------------------------
+Ran 1 test in 1.305s
+
+FAILED (failures=1)
