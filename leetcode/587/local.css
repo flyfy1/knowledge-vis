@@ -2,3 +2,6 @@ button,.btn,select,.lang-toggle button,.step-nav a,.prediction-options label,sum
 select{max-width:100%;width:auto}.state-grid>div{min-width:0}
 
 .site-head .official-link,.back-link{min-height:48px;display:inline-flex;align-items:center}
+
+/* 587-MAC-001: preserve 16px text while reserving more native-select room. */
+#preset{padding-inline:6px;width:100%;max-width:30rem}
