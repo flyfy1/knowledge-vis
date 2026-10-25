@@ -1,0 +1,48 @@
+{
+  "result": "PASS",
+  "kind": "author self-check",
+  "checks": [
+    "en: all presets; endpoints; rewind; hand; all quiz options; source/copy/download",
+    "zh: all presets; endpoints; rewind; hand; all quiz options; source/copy/download",
+    "Both locale switches preserve state; denied clipboard fallback selected, native linux shortcut readback equals source",
+    "320/390/736/1440 both locales; CSS layout zoom 200%, fractional intermediate state"
+  ],
+  "focus": {
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "renderedColors": {
+    "text": [
+      "rgb(232, 237, 244)",
+      "rgba(0, 0, 0, 0)"
+    ],
+    "stage": "rgb(22, 27, 34)",
+    "disabled": [
+      "rgb(232, 237, 244)",
+      "rgb(28, 35, 48)"
+    ],
+    "focus": "rgb(232, 237, 244)"
+  },
+  "contrast": {
+    "body": 16.086987125379448,
+    "stage": 14.704584598678618,
+    "muted": 6.449407898769069,
+    "disabled": 7.078851579017443,
+    "selected": 13.100679028115637,
+    "focus": 9.809435643476732
+  },
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18783/leetcode/679/",
+    "http://127.0.0.1:18783/leetcode/style.css",
+    "http://127.0.0.1:18783/leetcode/679/style.css?v=679-1",
+    "http://127.0.0.1:18783/leetcode/common.js",
+    "http://127.0.0.1:18783/leetcode/679/copy.js?v=679-r1-fix",
+    "http://127.0.0.1:18783/leetcode/679/core.js?v=679-1",
+    "http://127.0.0.1:18783/leetcode/679/python-code.js?v=679-1",
+    "http://127.0.0.1:18783/leetcode/679/app.js?v=679-1"
+  ],
+  "screenshots": 22,
+  "limitations": "Headless Chromium; CSS layout zoom used for 200%; no real-device or learner evidence"
+}

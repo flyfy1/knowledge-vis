@@ -32,3 +32,20 @@ zoom 2, not device pixel ratio or a claim of physical device testing.
 Frozen author evidence is under evidence/. Independent reviewers should choose
 an external OUTPUT_DIR to avoid modifying the candidate. Self-check evidence
 is not independent lesson acceptance or a LeetCode submission result.
+
+Review repair regressions (679-R1), from repository root:
+
+```bash
+OUTPUT_DIR=leetcode/679/tests/evidence/r1-fix node leetcode/679/tests/selected-label.cjs
+OUTPUT_DIR=leetcode/679/tests/evidence/r1-fix node leetcode/679/tests/rendered-contract.cjs
+```
+
+The closed-selector check preserves 320×950 and 390×950, EN/zh, p4 at frame 0/7,
+including locale roundtrip. It captures the settled viewport using instant
+scrolling, measures the actual computed font and label, and conservatively
+reserves 16 additional pixels for this Chromium/Linux native arrow. That is a
+local guard, not a universal native-control metric. Inspect the screenshots.
+The rendered-contract check binds fraction values/card groups/formula, hand
+operation counts and history, rewind/replay, and independent prediction scope.
+Original evidence is retained; r1-before/ reproduces the old label's failure,
+and r1-fix/ contains repair evidence. A separate reviewer must close the finding.

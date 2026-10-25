@@ -82,3 +82,69 @@ are author evidence, not actual learner outcomes or an independent review.
 
 Candidate hashes are in candidate-sha256.json. A separate reviewer must review
 this frozen lesson and run independent checks before acceptance/release.
+
+## 2026-10-25 · 679-R1 repair self-check
+
+Candidate: **679-r1-fix**, frozen separately in `../candidate-r1-sha256.json`.
+Base: c368c0b018d41763af8de9d6ac36a323900bb4a3; original candidate manifest and
+independent report are preserved. Status: **fixed awaiting independent review**.
+This is author evidence; reviewer closure has not been granted.
+
+|Finding|Cause and fix|Regression evidence|Next action|
+|---|---|---|---|
+|679-R1|English p4 label was wider than the closed 320px native select. Replace “intermediate below one” with “intermediate < 1”; preserve full input, intermediate meaning, 16px type and existing control. Bump copy.js query version.|`evidence/r1-before/run.txt` is red; identical final `selected-label.cjs` passes on repaired copy, in `evidence/r1-fix/selected-label-run.txt`. Inspect before/after `en-320-selected.png`, repaired `en-320-roundtrip-selected.png`, Chinese counterpart, and 390px captures.|Independent reviewer rechecks frozen candidate and decides closure.|
+
+Measured in headless Chromium **156.0.8078.4 on Linux**, matching the report's
+browser/platform and unchanged reproduction: 320×950, section 03, p4, 0/7,
+closed select. Font stack: 16px `"PingFang SC", "Microsoft YaHei", system-ui,
+sans-serif`; no claim about the resolved installed font. Control outer width
+262px, client width 260px, padding 15px per side; conservative extra arrow
+reserve 16px leaves 214px. Original text measured **251.60px**; repaired text
+**196.38px**. Chinese remains **184.61px**. At 390px the control is 332px wide.
+All eight cases (both locales × both widths × direct/roundtrip) passed. Inspected
+the closed 320 English direct/roundtrip and Chinese roundtrip, plus both 390
+locale screenshots: complete labels including `< 1` and 小于一的中间值 are visible.
+An initial screenshot attempt caught smooth scrolling at the page header;
+the final runner uses instant scrolling. Before/after evidence was regenerated
+using that same final runner; the old-label red output is retained.
+
+Commands run from repository root (OUTPUT_DIR is
+`leetcode/679/tests/evidence/r1-fix` for test commands):
+
+- `python3 -B leetcode/679/tests/test_solution.py`: PASS; actual canonical Python,
+  all 495 unordered hands (404 solvable), 200 seeded ordered hands, 6258 observed
+  recursive calls and input preservation.
+- `node leetcode/679/tests/test_core.cjs`: PASS; 34 frames, expression/card
+  partition, failed subtree/return, zero handling, bilingual pair shape and
+  duplicate-key detection, exact decoded Python mirror including final newline.
+- `node leetcode/679/tests/browser.cjs`: PASS; both locales, all five preset
+  results, endpoints/reset/rewind/replay, every prediction, state/focus on locale
+  switch, exact displayed/copied/downloaded Python source, selected manual
+  fallback and actual Linux Control+C readback, keyboard, contrast, local assets,
+  blocked storage, reduced motion/forced colors, zero console/resource errors.
+  Layout checks at 320/390/736/1440 and 200% CSS layout zoom. Inspected repaired
+  English 320 and Chinese 390 dense fraction stages and English zoom viewport.
+- `node leetcode/679/tests/selected-label.cjs`: PASS with unchanged red-case
+  actions on repaired label; see selected-label-results.json for full geometry.
+- `node leetcode/679/tests/rendered-contract.cjs`: PASS; both locales at fraction
+  frame 5/7 show 8 using D and 1/3 using A,B,C, exact `(3 − (8 ÷ 3)) = 1/3`.
+  Rewind/replay and locale roundtrip preserve the identity/value pair. Hand
+  readout counts 0..3 completed operations and history lengths 0..3, then rewinds
+  and replays. No cumulative search-count claim exists: the trace counts excerpt
+  frames. Prediction remains scoped to the separate [2,3,7,8] child [-1,-1];
+  feedback lists −2,0,1 and alternate parent solution, survives preset changes,
+  and hides on answer change.
+- `python3 -B scripts/register_leetcode_lesson.py 679 --validate-only`: **PASS,
+  exit 0, empty stdout/stderr**, from repository root; receipt `evidence/r1-fix/preflight.txt`.
+  Complexity remains one nonempty time-and-space string; no metadata repair needed.
+
+Read registration's exact `Python: solution.py / python-code.js / PYTHON_SOURCE`
+pair. Canonical Python is supported by the saved official Python3 snippet in
+provenance/official.json and remains preferred; no non-Python language exception
+or supportedLanguages exclusion is involved. Source/mirror did not need
+regeneration. Served runtime files match local bytes (served-source-receipt.json).
+No shared files, registry, services or prior review/acceptance state were edited.
+
+Limits: headless Chromium on Linux, synthetic CSS zoom, no physical device,
+macOS, real learner, production delivery, or LeetCode submission claims. The
+separate independent re-review and finding closure remain pending.

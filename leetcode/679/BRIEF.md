@@ -62,3 +62,15 @@ P1: duplicate identities, fraction/zero boundaries and independent shape oracle.
 P2: none. Deferred: free expression editor, automatic animation, universal
 renderer, live Python execution (scope and runtime cost without teaching need).
 No learner success, LeetCode acceptance, independent approval or release claimed.
+
+## Review repair candidate 679-r1-fix (2026-10-25)
+
+Adopt required finding 679-R1 from specs/reviews/679-review-1-1146fc56.md:
+shorten the English p4 selector to `[1,5,5,5] · intermediate < 1`.
+The same input and intermediate-value distinction remain explicit; `< 1` means
+below one. Reuse the existing native selector, tokens, type size and layout.
+This is a narrow copy correction under the existing design, with no new feature.
+P0: complete closed label at 320px, after locale roundtrip, and at 390px.
+P1/P2: none. Previously deferred features remain deferred for the same reasons.
+The copy.js asset reference is bumped. See tests/SELF-CHECK.md for red/green
+receipts and the new candidate manifest; independent re-review is pending.
