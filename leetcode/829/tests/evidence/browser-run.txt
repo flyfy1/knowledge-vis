@@ -1,0 +1,122 @@
+{
+  "result": "pass",
+  "records": 32,
+  "layouts": 14,
+  "clipboard": [
+    {
+      "locale": "en",
+      "repeat": 0,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "exactNativeReadback": true
+    },
+    {
+      "locale": "en",
+      "repeat": 1,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "exactNativeReadback": true
+    },
+    {
+      "locale": "zh",
+      "repeat": 0,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "exactNativeReadback": true
+    },
+    {
+      "locale": "zh",
+      "repeat": 1,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "exactNativeReadback": true
+    }
+  ],
+  "contrasts": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#prev",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#hand2",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(60, 44, 22)",
+      "ratio": 11.413861737674878
+    },
+    {
+      "selector": ".lang-toggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".tile span",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#feedback",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".candidate-row b",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": ".candidate-row p",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "focus/panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "control border/panel2",
+      "ratio": 6.449407898769069
+    }
+  ],
+  "cssBytes": 11881
+}

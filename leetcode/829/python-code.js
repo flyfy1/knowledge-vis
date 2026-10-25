@@ -1,0 +1,1 @@
+window.PYTHON_SOURCE = "class Solution:\n    def consecutiveNumbersSum(self, n: int) -> int:\n        answer = 0\n        k = 1\n        while k * (k + 1) // 2 <= n:\n            remaining = n - k * (k - 1) // 2\n            if remaining % k == 0:\n                answer += 1\n            k += 1\n        return answer\n";

@@ -1,0 +1,880 @@
+{
+  "kind": "author real-browser self-check",
+  "result": "pass",
+  "browser": "156.0.8078.4",
+  "records": [
+    {
+      "locale": "en",
+      "branch": "hand",
+      "k": 1,
+      "read": "One group: 5−0=5, so a=5, giving [5].",
+      "tiles": "Term 1Base 5 + offset 0 = 5"
+    },
+    {
+      "locale": "en",
+      "branch": "hand",
+      "k": 2,
+      "read": "Remove the extra 1 in the second group: 5−(0+1)=4. Share into two bases of 2, then restore offsets 0 and 1 to get 2 and 3.",
+      "tiles": "Term 1Base 2 + offset 0 = 2Term 2Base 2 + offset 1 = 3"
+    },
+    {
+      "locale": "en",
+      "branch": "hand",
+      "k": 3,
+      "read": "Removing 0+1+2 leaves 2, which cannot split evenly into three groups. We can reject this length even earlier: the smallest three terms, 1+2+3=6, already exceed 5. Longer sequences have larger minimum sums. Thus 5 has two ways.",
+      "tiles": "Term 1Minimum term 1 = 1Term 2Minimum term 2 = 2Term 3Minimum term 3 = 3"
+    },
+    {
+      "locale": "en",
+      "branch": "preset endpoint",
+      "n": 5,
+      "expected": 2,
+      "frame": "n=5 · Checks completed 3/3 · 2 ways found · final answer",
+      "event": "Stop check k=3: minimum total 6 > 5. This and all longer lengths are impossible; the final count is 2.",
+      "ledger": "Length k=1 · Accepted ✓Offsets T=0; R=5; R % k=0Start a=5: 5 = 5; cumulative count 1Length k=2 · Accepted ✓Offsets T=1; R=4; R % k=0Start a=2: 2 + 3 = 5; cumulative count 2",
+      "guard": "Next loop guard: k=4, minimum total 10.",
+      "guardHidden": true
+    },
+    {
+      "locale": "en",
+      "branch": "preset endpoint",
+      "n": 9,
+      "expected": 3,
+      "frame": "n=9 · Checks completed 4/4 · 3 ways found · final answer",
+      "event": "Stop check k=4: minimum total 10 > 9. This and all longer lengths are impossible; the final count is 3.",
+      "ledger": "Length k=1 · Accepted ✓Offsets T=0; R=9; R % k=0Start a=9: 9 = 9; cumulative count 1Length k=2 · Accepted ✓Offsets T=1; R=8; R % k=0Start a=4: 4 + 5 = 9; cumulative count 2Length k=3 · Accepted ✓Offsets T=3; R=6; R % k=0Start a=2: 2 + 3 + 4 = 9; cumulative count 3",
+      "guard": "Next loop guard: k=5, minimum total 15.",
+      "guardHidden": true
+    },
+    {
+      "locale": "en",
+      "branch": "preset endpoint",
+      "n": 15,
+      "expected": 4,
+      "frame": "n=15 · Checks completed 6/6 · 4 ways found · final answer",
+      "event": "Stop check k=6: minimum total 21 > 15. This and all longer lengths are impossible; the final count is 4.",
+      "ledger": "Length k=1 · Accepted ✓Offsets T=0; R=15; R % k=0Start a=15: 15 = 15; cumulative count 1Length k=2 · Accepted ✓Offsets T=1; R=14; R % k=0Start a=7: 7 + 8 = 15; cumulative count 2Length k=3 · Accepted ✓Offsets T=3; R=12; R % k=0Start a=4: 4 + 5 + 6 = 15; cumulative count 3Length k=4 · Rejected ×Offsets T=6; R=9; R % k=1Cannot share into 4 integer bases; cumulative count remains 3Length k=5 · Accepted ✓Offsets T=10; R=5; R % k=0Start a=1: 1 + 2 + 3 + 4 + 5 = 15; cumulative count 4",
+      "guard": "Next loop guard: k=7, minimum total 28.",
+      "guardHidden": true
+    },
+    {
+      "locale": "en",
+      "branch": "preset endpoint",
+      "n": 1,
+      "expected": 1,
+      "frame": "n=1 · Checks completed 2/2 · 1 ways found · final answer",
+      "event": "Stop check k=2: minimum total 3 > 1. This and all longer lengths are impossible; the final count is 1.",
+      "ledger": "Length k=1 · Accepted ✓Offsets T=0; R=1; R % k=0Start a=1: 1 = 1; cumulative count 1",
+      "guard": "Next loop guard: k=3, minimum total 6.",
+      "guardHidden": true
+    },
+    {
+      "locale": "en",
+      "branch": "preset endpoint",
+      "n": 8,
+      "expected": 1,
+      "frame": "n=8 · Checks completed 4/4 · 1 ways found · final answer",
+      "event": "Stop check k=4: minimum total 10 > 8. This and all longer lengths are impossible; the final count is 1.",
+      "ledger": "Length k=1 · Accepted ✓Offsets T=0; R=8; R % k=0Start a=8: 8 = 8; cumulative count 1Length k=2 · Rejected ×Offsets T=1; R=7; R % k=1Cannot share into 2 integer bases; cumulative count remains 1Length k=3 · Rejected ×Offsets T=3; R=5; R % k=2Cannot share into 3 integer bases; cumulative count remains 1",
+      "guard": "Next loop guard: k=5, minimum total 15.",
+      "guardHidden": true
+    },
+    {
+      "locale": "en",
+      "branch": "preset endpoint",
+      "n": 16,
+      "expected": 1,
+      "frame": "n=16 · Checks completed 6/6 · 1 ways found · final answer",
+      "event": "Stop check k=6: minimum total 21 > 16. This and all longer lengths are impossible; the final count is 1.",
+      "ledger": "Length k=1 · Accepted ✓Offsets T=0; R=16; R % k=0Start a=16: 16 = 16; cumulative count 1Length k=2 · Rejected ×Offsets T=1; R=15; R % k=1Cannot share into 2 integer bases; cumulative count remains 1Length k=3 · Rejected ×Offsets T=3; R=13; R % k=1Cannot share into 3 integer bases; cumulative count remains 1Length k=4 · Rejected ×Offsets T=6; R=10; R % k=2Cannot share into 4 integer bases; cumulative count remains 1Length k=5 · Rejected ×Offsets T=10; R=6; R % k=1Cannot share into 5 integer bases; cumulative count remains 1",
+      "guard": "Next loop guard: k=7, minimum total 28.",
+      "guardHidden": true
+    },
+    {
+      "locale": "en",
+      "branch": "preset endpoint",
+      "n": 45,
+      "expected": 6,
+      "frame": "n=45 · Checks completed 10/10 · 6 ways found · final answer",
+      "event": "Stop check k=10: minimum total 55 > 45. This and all longer lengths are impossible; the final count is 6.",
+      "ledger": "Length k=1 · Accepted ✓Offsets T=0; R=45; R % k=0Start a=45: 45 = 45; cumulative count 1Length k=2 · Accepted ✓Offsets T=1; R=44; R % k=0Start a=22: 22 + 23 = 45; cumulative count 2Length k=3 · Accepted ✓Offsets T=3; R=42; R % k=0Start a=14: 14 + 15 + 16 = 45; cumulative count 3Length k=4 · Rejected ×Offsets T=6; R=39; R % k=3Cannot share into 4 integer bases; cumulative count remains 3Length k=5 · Accepted ✓Offsets T=10; R=35; R % k=0Start a=7: 7 + 8 + 9 + 10 + 11 = 45; cumulative count 4Length k=6 · Accepted ✓Offsets T=15; R=30; R % k=0Start a=5: 5 + 6 + 7 + 8 + 9 + 10 = 45; cumulative count 5Length k=7 · Rejected ×Offsets T=21; R=24; R % k=3Cannot share into 7 integer bases; cumulative count remains 5Length k=8 · Rejected ×Offsets T=28; R=17; R % k=1Cannot share into 8 integer bases; cumulative count remains 5Length k=9 · Accepted ✓Offsets T=36; R=9; R % k=0Start a=1: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45; cumulative count 6",
+      "guard": "Next loop guard: k=11, minimum total 66.",
+      "guardHidden": true
+    },
+    {
+      "locale": "en",
+      "branch": "prediction",
+      "choice": "0",
+      "feedback": "Revise that prediction. The minimum total 1+2+3+4=10≤18. Offsets total 6, so R=18−6=12 and 12%4=0. Thus a=3 and 3+4+5+6=18. Even lengths can work; starting at 4 would give 4+5+6+7=22, exceeding 18."
+    },
+    {
+      "locale": "en",
+      "branch": "prediction",
+      "choice": "1",
+      "feedback": "Correct prediction. The minimum total 1+2+3+4=10≤18. Offsets total 6, so R=18−6=12 and 12%4=0. Thus a=3 and 3+4+5+6=18. Even lengths can work; starting at 4 would give 4+5+6+7=22, exceeding 18."
+    },
+    {
+      "locale": "en",
+      "branch": "prediction",
+      "choice": "2",
+      "feedback": "Revise that prediction. The minimum total 1+2+3+4=10≤18. Offsets total 6, so R=18−6=12 and 12%4=0. Thus a=3 and 3+4+5+6=18. Even lengths can work; starting at 4 would give 4+5+6+7=22, exceeding 18."
+    },
+    {
+      "locale": "en",
+      "branch": "copy fallback",
+      "text": "Automatic copy is unavailable; the full source is selected for manual copying."
+    },
+    {
+      "locale": "zh",
+      "branch": "hand",
+      "k": 1,
+      "read": "只需一组：5−0=5，a=5，得到 [5]。",
+      "tiles": "第 1 项底数 5 + 偏移 0 = 5"
+    },
+    {
+      "locale": "zh",
+      "branch": "hand",
+      "k": 2,
+      "read": "去掉第二组多出的 1：5−(0+1)=4。均分成两份得到 2、2，再补回 0、1，得到 2、3。",
+      "tiles": "第 1 项底数 2 + 偏移 0 = 2第 2 项底数 2 + 偏移 1 = 3"
+    },
+    {
+      "locale": "zh",
+      "branch": "hand",
+      "k": 3,
+      "read": "去掉 0+1+2 后剩 2，不能均分成三份。更早就能排除：最小的三项 1+2+3=6，已超过 5。更长的序列只会更大。所以 5 共两种。",
+      "tiles": "第 1 项最小第 1 项 = 1第 2 项最小第 2 项 = 2第 3 项最小第 3 项 = 3"
+    },
+    {
+      "locale": "zh",
+      "branch": "preset endpoint",
+      "n": 5,
+      "expected": 2,
+      "frame": "n=5 · 已完成检查 3/3 · 已通过 2 种 · 最终答案",
+      "event": "停止检查 k=3：最小总和 6 > 5。这个长度及更长长度均不可能；最终共 2 种。",
+      "ledger": "长度 k=1 · 通过 ✓偏移 T=0；R=5；R % k=0起点 a=5：5 = 5；累计 1 种长度 k=2 · 通过 ✓偏移 T=1；R=4；R % k=0起点 a=2：2 + 3 = 5；累计 2 种",
+      "guard": "下次循环检查 k=4，最小总和 10。",
+      "guardHidden": true
+    },
+    {
+      "locale": "zh",
+      "branch": "preset endpoint",
+      "n": 9,
+      "expected": 3,
+      "frame": "n=9 · 已完成检查 4/4 · 已通过 3 种 · 最终答案",
+      "event": "停止检查 k=4：最小总和 10 > 9。这个长度及更长长度均不可能；最终共 3 种。",
+      "ledger": "长度 k=1 · 通过 ✓偏移 T=0；R=9；R % k=0起点 a=9：9 = 9；累计 1 种长度 k=2 · 通过 ✓偏移 T=1；R=8；R % k=0起点 a=4：4 + 5 = 9；累计 2 种长度 k=3 · 通过 ✓偏移 T=3；R=6；R % k=0起点 a=2：2 + 3 + 4 = 9；累计 3 种",
+      "guard": "下次循环检查 k=5，最小总和 15。",
+      "guardHidden": true
+    },
+    {
+      "locale": "zh",
+      "branch": "preset endpoint",
+      "n": 15,
+      "expected": 4,
+      "frame": "n=15 · 已完成检查 6/6 · 已通过 4 种 · 最终答案",
+      "event": "停止检查 k=6：最小总和 21 > 15。这个长度及更长长度均不可能；最终共 4 种。",
+      "ledger": "长度 k=1 · 通过 ✓偏移 T=0；R=15；R % k=0起点 a=15：15 = 15；累计 1 种长度 k=2 · 通过 ✓偏移 T=1；R=14；R % k=0起点 a=7：7 + 8 = 15；累计 2 种长度 k=3 · 通过 ✓偏移 T=3；R=12；R % k=0起点 a=4：4 + 5 + 6 = 15；累计 3 种长度 k=4 · 不通过 ×偏移 T=6；R=9；R % k=1不能均分成 4 个整数底数；累计仍是 3 种长度 k=5 · 通过 ✓偏移 T=10；R=5；R % k=0起点 a=1：1 + 2 + 3 + 4 + 5 = 15；累计 4 种",
+      "guard": "下次循环检查 k=7，最小总和 28。",
+      "guardHidden": true
+    },
+    {
+      "locale": "zh",
+      "branch": "preset endpoint",
+      "n": 1,
+      "expected": 1,
+      "frame": "n=1 · 已完成检查 2/2 · 已通过 1 种 · 最终答案",
+      "event": "停止检查 k=2：最小总和 3 > 1。这个长度及更长长度均不可能；最终共 1 种。",
+      "ledger": "长度 k=1 · 通过 ✓偏移 T=0；R=1；R % k=0起点 a=1：1 = 1；累计 1 种",
+      "guard": "下次循环检查 k=3，最小总和 6。",
+      "guardHidden": true
+    },
+    {
+      "locale": "zh",
+      "branch": "preset endpoint",
+      "n": 8,
+      "expected": 1,
+      "frame": "n=8 · 已完成检查 4/4 · 已通过 1 种 · 最终答案",
+      "event": "停止检查 k=4：最小总和 10 > 8。这个长度及更长长度均不可能；最终共 1 种。",
+      "ledger": "长度 k=1 · 通过 ✓偏移 T=0；R=8；R % k=0起点 a=8：8 = 8；累计 1 种长度 k=2 · 不通过 ×偏移 T=1；R=7；R % k=1不能均分成 2 个整数底数；累计仍是 1 种长度 k=3 · 不通过 ×偏移 T=3；R=5；R % k=2不能均分成 3 个整数底数；累计仍是 1 种",
+      "guard": "下次循环检查 k=5，最小总和 15。",
+      "guardHidden": true
+    },
+    {
+      "locale": "zh",
+      "branch": "preset endpoint",
+      "n": 16,
+      "expected": 1,
+      "frame": "n=16 · 已完成检查 6/6 · 已通过 1 种 · 最终答案",
+      "event": "停止检查 k=6：最小总和 21 > 16。这个长度及更长长度均不可能；最终共 1 种。",
+      "ledger": "长度 k=1 · 通过 ✓偏移 T=0；R=16；R % k=0起点 a=16：16 = 16；累计 1 种长度 k=2 · 不通过 ×偏移 T=1；R=15；R % k=1不能均分成 2 个整数底数；累计仍是 1 种长度 k=3 · 不通过 ×偏移 T=3；R=13；R % k=1不能均分成 3 个整数底数；累计仍是 1 种长度 k=4 · 不通过 ×偏移 T=6；R=10；R % k=2不能均分成 4 个整数底数；累计仍是 1 种长度 k=5 · 不通过 ×偏移 T=10；R=6；R % k=1不能均分成 5 个整数底数；累计仍是 1 种",
+      "guard": "下次循环检查 k=7，最小总和 28。",
+      "guardHidden": true
+    },
+    {
+      "locale": "zh",
+      "branch": "preset endpoint",
+      "n": 45,
+      "expected": 6,
+      "frame": "n=45 · 已完成检查 10/10 · 已通过 6 种 · 最终答案",
+      "event": "停止检查 k=10：最小总和 55 > 45。这个长度及更长长度均不可能；最终共 6 种。",
+      "ledger": "长度 k=1 · 通过 ✓偏移 T=0；R=45；R % k=0起点 a=45：45 = 45；累计 1 种长度 k=2 · 通过 ✓偏移 T=1；R=44；R % k=0起点 a=22：22 + 23 = 45；累计 2 种长度 k=3 · 通过 ✓偏移 T=3；R=42；R % k=0起点 a=14：14 + 15 + 16 = 45；累计 3 种长度 k=4 · 不通过 ×偏移 T=6；R=39；R % k=3不能均分成 4 个整数底数；累计仍是 3 种长度 k=5 · 通过 ✓偏移 T=10；R=35；R % k=0起点 a=7：7 + 8 + 9 + 10 + 11 = 45；累计 4 种长度 k=6 · 通过 ✓偏移 T=15；R=30；R % k=0起点 a=5：5 + 6 + 7 + 8 + 9 + 10 = 45；累计 5 种长度 k=7 · 不通过 ×偏移 T=21；R=24；R % k=3不能均分成 7 个整数底数；累计仍是 5 种长度 k=8 · 不通过 ×偏移 T=28；R=17；R % k=1不能均分成 8 个整数底数；累计仍是 5 种长度 k=9 · 通过 ✓偏移 T=36；R=9；R % k=0起点 a=1：1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45；累计 6 种",
+      "guard": "下次循环检查 k=11，最小总和 66。",
+      "guardHidden": true
+    },
+    {
+      "locale": "zh",
+      "branch": "prediction",
+      "choice": "0",
+      "feedback": "需要调整判断。 最小总和 1+2+3+4=10≤18。偏移共 6，R=18−6=12，12%4=0，所以 a=3，3+4+5+6=18。偶数长度同样可能；若起点是 4，则 4+5+6+7=22，超过 18。"
+    },
+    {
+      "locale": "zh",
+      "branch": "prediction",
+      "choice": "1",
+      "feedback": "判断正确。 最小总和 1+2+3+4=10≤18。偏移共 6，R=18−6=12，12%4=0，所以 a=3，3+4+5+6=18。偶数长度同样可能；若起点是 4，则 4+5+6+7=22，超过 18。"
+    },
+    {
+      "locale": "zh",
+      "branch": "prediction",
+      "choice": "2",
+      "feedback": "需要调整判断。 最小总和 1+2+3+4=10≤18。偏移共 6，R=18−6=12，12%4=0，所以 a=3，3+4+5+6=18。偶数长度同样可能；若起点是 4，则 4+5+6+7=22，超过 18。"
+    },
+    {
+      "locale": "zh",
+      "branch": "copy fallback",
+      "text": "自动复制不可用；完整源码已选中，请手动复制。"
+    },
+    {
+      "locale": "en",
+      "branch": "related anchor",
+      "id": 483,
+      "text": "033 · Derive what can be discardedFor a fixed m, how can one comparison reject many bases? Here m is the highest exponent and Sₘ(k) is the value of m + 1 ones. With n = 13 and m = 2: S₂(2) = 7, S₂(3) = 13, S₂(4) = 21. Increasing k increases every nonconstant term, so the sum is strictly increasing.Start with lower bound lo = 2. Since kᵐ ≤ n < 2ᴸ, a safe upper bound is hi = 2^ceil(L/m), where ceil rounds upward. For 13, L = 4 and m = 2, giving [2,4]. Try midpoint k = 3: start total at 1, then com"
+    },
+    {
+      "locale": "en",
+      "branch": "related anchor",
+      "id": 233,
+      "text": "Step 2 · Derive the three casesIs current 0, 1, or larger?The question: where does n cut the cycle? Split n into higher (digits left of f), current (the digit at f), and lower (digits right of f). Each full cycle contributes f ones. In the tail, current=0 has not reached 1; current=1 reaches lower+1; current≥2 completes another f.Enter n or move the factor. Inspect the three parts, then reveal. The history keeps each contribution.nPlace factor fhigher=1, current=3, lower=0 → 2FormulaReveal contr"
+    },
+    {
+      "locale": "zh",
+      "branch": "related anchor",
+      "id": 483,
+      "text": "033 · 推导可以丢弃的范围这一步要回答：固定 m 后，怎样一次排除许多进制？m 是最高指数，Sₘ(k) 是 m + 1 个 1 的值。以 n = 13、m = 2 为例：S₂(2) = 7，S₂(3) = 13，S₂(4) = 21。k 变大时，每个非恒定项都变大，所以和值严格递增。初始下界 lo = 2。因为 kᵐ ≤ n < 2ᴸ，可安全取上界 hi = 2^ceil(L/m)，其中 ceil 表示向上取整。对 13，L = 4、m = 2，得到 [2,4]。试中点 k = 3，先从 total = 1 开始，再做 1×3+1 = 4、4×3+1 = 13，恰好命中。维护的不变量（每次比较前都成立的保证）是：固定 m 下，尚未排除的所有可行进制都在闭区间 [lo,hi] 中。和值太小，就排除所有 ≤ k 的进制，令 lo = k + 1；和值太大，就排除所有 ≥ k 的进制，令 hi = k − 1。相等才返回。lo > hi 表示这个 m 无解，改试 m − 1。不能只把浮点 m 次方根取整当答案：它只近似 kᵐ，遗漏其余正项。例如 n = 16、m = 2，floor(√1"
+    },
+    {
+      "locale": "zh",
+      "branch": "related anchor",
+      "id": 233,
+      "text": "第 2 步 · 从周期推出公式current 是 0、1，还是更大？这一步要回答：一个位置的周期被 n 截在哪里？把 n 拆成 higher（f 左侧的数）、current（当前位）、lower（f 右侧的数）。每个完整周期在当前位放 f 个 1；尾巴若 current=0 没走到 1，若 current=1 走到 lower+1，若 current≥2 则完整多走一轮。输入 n 或拖动因子，先观察三段数值，再点揭晓。历史行保留每一轮贡献。n数位因子 fhigher=1, current=3, lower=0 → 2公式揭晓本位贡献"
+    }
+  ],
+  "layouts": [
+    {
+      "locale": "en",
+      "width": 320,
+      "doc": 320,
+      "viewport": 320,
+      "rows": [
+        {
+          "w": 272,
+          "scroll": 272
+        },
+        {
+          "w": 274,
+          "scroll": 274
+        },
+        {
+          "w": 274,
+          "scroll": 274
+        },
+        {
+          "w": 271,
+          "scroll": 271
+        },
+        {
+          "w": 271,
+          "scroll": 271
+        },
+        {
+          "w": 271,
+          "scroll": 271
+        },
+        {
+          "w": 271,
+          "scroll": 271
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "doc": 390,
+      "viewport": 390,
+      "rows": [
+        {
+          "w": 166,
+          "scroll": 166
+        },
+        {
+          "w": 166,
+          "scroll": 166
+        },
+        {
+          "w": 344,
+          "scroll": 344
+        },
+        {
+          "w": 344,
+          "scroll": 344
+        },
+        {
+          "w": 341,
+          "scroll": 341
+        },
+        {
+          "w": 341,
+          "scroll": 341
+        },
+        {
+          "w": 341,
+          "scroll": 341
+        },
+        {
+          "w": 341,
+          "scroll": 341
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "doc": 736,
+      "viewport": 736,
+      "rows": [
+        {
+          "w": 182,
+          "scroll": 182
+        },
+        {
+          "w": 182,
+          "scroll": 182
+        },
+        {
+          "w": 646,
+          "scroll": 646
+        },
+        {
+          "w": 646,
+          "scroll": 646
+        },
+        {
+          "w": 643,
+          "scroll": 643
+        },
+        {
+          "w": 643,
+          "scroll": 643
+        },
+        {
+          "w": 643,
+          "scroll": 643
+        },
+        {
+          "w": 643,
+          "scroll": 643
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "doc": 1440,
+      "viewport": 1440,
+      "rows": [
+        {
+          "w": 182,
+          "scroll": 182
+        },
+        {
+          "w": 182,
+          "scroll": 182
+        },
+        {
+          "w": 910,
+          "scroll": 910
+        },
+        {
+          "w": 910,
+          "scroll": 910
+        },
+        {
+          "w": 907,
+          "scroll": 907
+        },
+        {
+          "w": 907,
+          "scroll": 907
+        },
+        {
+          "w": 907,
+          "scroll": 907
+        },
+        {
+          "w": 907,
+          "scroll": 907
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "doc": 320,
+      "viewport": 320,
+      "rows": [
+        {
+          "w": 131,
+          "scroll": 131
+        },
+        {
+          "w": 131,
+          "scroll": 131
+        },
+        {
+          "w": 274,
+          "scroll": 274
+        },
+        {
+          "w": 274,
+          "scroll": 274
+        },
+        {
+          "w": 271,
+          "scroll": 271
+        },
+        {
+          "w": 271,
+          "scroll": 271
+        },
+        {
+          "w": 271,
+          "scroll": 271
+        },
+        {
+          "w": 271,
+          "scroll": 271
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "doc": 390,
+      "viewport": 390,
+      "rows": [
+        {
+          "w": 166,
+          "scroll": 166
+        },
+        {
+          "w": 166,
+          "scroll": 166
+        },
+        {
+          "w": 344,
+          "scroll": 344
+        },
+        {
+          "w": 344,
+          "scroll": 344
+        },
+        {
+          "w": 341,
+          "scroll": 341
+        },
+        {
+          "w": 341,
+          "scroll": 341
+        },
+        {
+          "w": 341,
+          "scroll": 341
+        },
+        {
+          "w": 341,
+          "scroll": 341
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "doc": 736,
+      "viewport": 736,
+      "rows": [
+        {
+          "w": 167,
+          "scroll": 167
+        },
+        {
+          "w": 167,
+          "scroll": 167
+        },
+        {
+          "w": 646,
+          "scroll": 646
+        },
+        {
+          "w": 646,
+          "scroll": 646
+        },
+        {
+          "w": 643,
+          "scroll": 643
+        },
+        {
+          "w": 643,
+          "scroll": 643
+        },
+        {
+          "w": 643,
+          "scroll": 643
+        },
+        {
+          "w": 643,
+          "scroll": 643
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "doc": 1440,
+      "viewport": 1440,
+      "rows": [
+        {
+          "w": 167,
+          "scroll": 167
+        },
+        {
+          "w": 167,
+          "scroll": 167
+        },
+        {
+          "w": 910,
+          "scroll": 910
+        },
+        {
+          "w": 910,
+          "scroll": 910
+        },
+        {
+          "w": 907,
+          "scroll": 907
+        },
+        {
+          "w": 907,
+          "scroll": 907
+        },
+        {
+          "w": 907,
+          "scroll": 907
+        },
+        {
+          "w": 907,
+          "scroll": 907
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "viewport": 320,
+      "rows": [
+        {
+          "w": 114,
+          "scroll": 114
+        },
+        {
+          "w": 114,
+          "scroll": 114
+        },
+        {
+          "w": 111,
+          "scroll": 111
+        },
+        {
+          "w": 111,
+          "scroll": 111
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "viewport": 390,
+      "rows": [
+        {
+          "w": 149,
+          "scroll": 149
+        },
+        {
+          "w": 149,
+          "scroll": 149
+        },
+        {
+          "w": 146,
+          "scroll": 146
+        },
+        {
+          "w": 146,
+          "scroll": 146
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "viewport": 1440,
+      "rows": [
+        {
+          "w": 630,
+          "scroll": 630
+        },
+        {
+          "w": 630,
+          "scroll": 630
+        },
+        {
+          "w": 627,
+          "scroll": 627
+        },
+        {
+          "w": 627,
+          "scroll": 627
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "viewport": 320,
+      "rows": [
+        {
+          "w": 114,
+          "scroll": 114
+        },
+        {
+          "w": 114,
+          "scroll": 114
+        },
+        {
+          "w": 111,
+          "scroll": 111
+        },
+        {
+          "w": 111,
+          "scroll": 111
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "viewport": 390,
+      "rows": [
+        {
+          "w": 149,
+          "scroll": 149
+        },
+        {
+          "w": 149,
+          "scroll": 149
+        },
+        {
+          "w": 146,
+          "scroll": 146
+        },
+        {
+          "w": 146,
+          "scroll": 146
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "viewport": 1440,
+      "rows": [
+        {
+          "w": 630,
+          "scroll": 630
+        },
+        {
+          "w": 630,
+          "scroll": 630
+        },
+        {
+          "w": 627,
+          "scroll": 627
+        },
+        {
+          "w": 627,
+          "scroll": 627
+        }
+      ]
+    }
+  ],
+  "clipboard": [
+    {
+      "locale": "en",
+      "repeat": 0,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "exactNativeReadback": true
+    },
+    {
+      "locale": "en",
+      "repeat": 1,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "exactNativeReadback": true
+    },
+    {
+      "locale": "zh",
+      "repeat": 0,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "exactNativeReadback": true
+    },
+    {
+      "locale": "zh",
+      "repeat": 1,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "exactNativeReadback": true
+    }
+  ],
+  "focus": {
+    "active": true,
+    "outline": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrasts": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#prev",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#hand2",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(60, 44, 22)",
+      "ratio": 11.413861737674878
+    },
+    {
+      "selector": ".lang-toggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".tile span",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#feedback",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".candidate-row b",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": ".candidate-row p",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "focus/panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "control border/panel2",
+      "ratio": 6.449407898769069
+    }
+  ],
+  "links": [
+    "../",
+    "#step0",
+    "#step1",
+    "#step2",
+    "#step3",
+    "#step4",
+    "solution.py",
+    "../483/#step2",
+    "../233/#step2"
+  ],
+  "cssBytes": 11881,
+  "errors": [],
+  "localAssetsOnly": true,
+  "storageDenied": true,
+  "offline": true,
+  "sourceParity": "embedded / rendered / downloaded / successful clipboard / native manual fallback exact",
+  "zoomMethod": "CSS zoom 2; native chrome zoom and real devices unverified"
+}

@@ -1,0 +1,102 @@
+{
+  "kind": "author supplementary state audit",
+  "result": "pass",
+  "contrasts": [
+    {
+      "selector": "#prev",
+      "state": "initial disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443,
+      "disabled": true,
+      "opacity": "1"
+    },
+    {
+      "selector": "#reveal",
+      "state": "unchosen disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443,
+      "disabled": true,
+      "opacity": "1"
+    },
+    {
+      "selector": "#next",
+      "state": "terminal disabled primary",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443,
+      "disabled": true,
+      "opacity": "1"
+    },
+    {
+      "selector": "#feedback",
+      "state": "correct reveal",
+      "fg": "rgb(126, 226, 168)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.004815697188947,
+      "opacity": "1"
+    },
+    {
+      "selector": "#feedback",
+      "state": "incorrect reveal",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783,
+      "opacity": "1"
+    }
+  ],
+  "anchors": [
+    {
+      "locale": "en",
+      "step": 0,
+      "active": true
+    },
+    {
+      "locale": "en",
+      "step": 1,
+      "active": true
+    },
+    {
+      "locale": "en",
+      "step": 2,
+      "active": true
+    },
+    {
+      "locale": "en",
+      "step": 3,
+      "active": true
+    },
+    {
+      "locale": "en",
+      "step": 4,
+      "active": true
+    },
+    {
+      "locale": "zh",
+      "step": 0,
+      "active": true
+    },
+    {
+      "locale": "zh",
+      "step": 1,
+      "active": true
+    },
+    {
+      "locale": "zh",
+      "step": 2,
+      "active": true
+    },
+    {
+      "locale": "zh",
+      "step": 3,
+      "active": true
+    },
+    {
+      "locale": "zh",
+      "step": 4,
+      "active": true
+    }
+  ],
+  "method": "Rendered disabled/correct/incorrect state color pairs; awaited actual active navigation before capture"
+}

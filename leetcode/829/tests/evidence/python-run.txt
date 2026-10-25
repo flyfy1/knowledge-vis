@@ -1,0 +1,22 @@
+{
+  "kind": "author computational self-check",
+  "result": "pass",
+  "smallExhaustive": "n=1..1000, independently grow terms from each start",
+  "largeSeed": 829,
+  "largeCases": 290,
+  "largeOracle": "factor the odd part and count its divisors",
+  "intermediate": "before each k, count equals oracle sequences with smaller length; guard ensures remaining>=k; exact sequence identity; stop excludes all untested lengths",
+  "officialExamples": {
+    "5": 2,
+    "9": 3,
+    "15": 4
+  },
+  "maxInput": {
+    "n": 1000000000,
+    "answer": 10,
+    "testedLengths": 44720
+  },
+  "displayedBaseline": "executed exact HTML baseline n=1..100",
+  "sourceMirrorParity": true,
+  "time": "2026-10-25T19:11:44.763355+00:00"
+}
