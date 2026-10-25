@@ -1149,3 +1149,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | monotone chain | `leetcode/587/#step2` | Repeated strict-right-turn removal in two sorted scans |
 
 <!-- /leetcode-587-campaign -->
+
+
+<!-- leetcode-600-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Binary suffix counting | `leetcode/600/#step1` | Split valid padded bit strings into leading 0 and leading 10 cases. |
+| First-different-bit partition | `leetcode/600/#step2` | Count disjoint smaller-prefix branches and stop the equal path at adjacent ones. |
+
+<!-- /leetcode-600-campaign -->

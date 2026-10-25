@@ -2147,6 +2147,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) auxiliary space worst case, O(d) stack for valid input"
   },
   {
+    "id": 600,
+    "title": {
+      "zh": "不含连续 1 的非负整数",
+      "en": "Non-negative Integers without Consecutive Ones"
+    },
+    "desc": {
+      "zh": "从二进制小例子推导后缀计数，按首次不同的位划分答案。",
+      "en": "Count binary suffixes and partition answers by their first differing bit."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数位动态规划",
+        "en": "Digit dynamic programming"
+      },
+      {
+        "zh": "计数",
+        "en": "Counting"
+      }
+    ],
+    "path": "600/",
+    "leetcodeUrl": "https://leetcode.com/problems/non-negative-integers-without-consecutive-ones/",
+    "language": "Python",
+    "complexity": "O(log n) time; O(log n) auxiliary space (unit-cost arithmetic within the official bounds)"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
