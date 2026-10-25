@@ -1,0 +1,6 @@
+{"running": ["node", "/tmp/leetcode-679-preset-probe-20261025.cjs"], "candidate": "bc79795d3b2b0b151533594f9f3b95af2d64f526"}
+{"records":20,"failures":[]}
+{"running": ["node", "leetcode/679/tests/selected-label.cjs"], "candidate": "bc79795d3b2b0b151533594f9f3b95af2d64f526"}
+PASS 679-R1: both locales, 320/390, closed label and locale roundtrip
+{"running": ["node", "leetcode/679/tests/rendered-contract.cjs"], "candidate": "bc79795d3b2b0b151533594f9f3b95af2d64f526"}
+PASS rendered formula, identity/value, operation counts, rewind/replay, prediction scope in both locales

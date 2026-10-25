@@ -1,0 +1,7 @@
+{"running": ["node", "/tmp/leetcode-679-preset-probe-20261025.cjs"], "candidate": "c368c0b018d41763af8de9d6ac36a323900bb4a3"}
+{"records":20,"failures":[{"viewportWidth":320,"lang":"en","index":4,"label":"[1,5,5,5] · intermediate below one","font":"16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif","width":260,"paddingLeft":15,"paddingRight":15,"arrowAllowance":0,"textWidth":261.7759704589844,"available":230,"fits":false}]}
+Traceback (most recent call last):
+  File "/tmp/leetcode-679-preset-probe-runner-20261025.py", line 18, in <module>
+    if r.returncode:raise RuntimeError('Check failed: '+str(cmd))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Check failed: ['node', '/tmp/leetcode-679-preset-probe-20261025.cjs']

@@ -1,0 +1,19 @@
+{
+  "method": "chrome.tabs.setZoom(2)",
+  "zoom": [
+    {
+      "lang": "en",
+      "dpr": 2,
+      "width": 640,
+      "scroll": 640,
+      "cssZoom": ""
+    },
+    {
+      "lang": "zh",
+      "dpr": 2,
+      "width": 640,
+      "scroll": 640,
+      "cssZoom": ""
+    }
+  ]
+}

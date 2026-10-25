@@ -1,0 +1,22 @@
+{"running": ["python3", "-B", "leetcode/679/tests/test_solution.py"], "candidate": "c368c0b018d41763af8de9d6ac36a323900bb4a3"}
+{"kind": "author self-check", "exhaustive_unordered_hands": 495, "solvable": 404, "seeded_ordered_hands": 200, "seed": 679, "monitored_calls": 6258, "lengths": [1, 2, 3, 4], "oracle": "Independent contiguous interval expression sets over all card permutations; covers the five binary shapes", "result": "PASS"}
+{"running": ["node", "leetcode/679/tests/test_core.cjs"], "candidate": "c368c0b018d41763af8de9d6ac36a323900bb4a3"}
+PASS 34 frames; 11056 CSS bytes
+{"running": ["node", "leetcode/679/tests/browser.cjs"], "candidate": "c368c0b018d41763af8de9d6ac36a323900bb4a3"}
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'1' !== '2'
+
+    at /private/tmp/leetcode-679-frozen-c368c0b-20261025/leetcode/679/tests/browser.cjs:70:142 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '1',
+  expected: '2',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+Traceback (most recent call last):
+  File "/tmp/leetcode-679-frozen-mac-check-20261025.py", line 18, in <module>
+    if r.returncode:raise RuntimeError('Check failed: '+str(cmd))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Check failed: ['node', 'leetcode/679/tests/browser.cjs']
