@@ -1,0 +1,11 @@
+{
+  "kind": "author core self-check",
+  "status": "PASS",
+  "exhaustiveInputs": 4095,
+  "framesChecked": 18883,
+  "largeCases": 691,
+  "branchPartitionInvariant": "all frames for n<=256",
+  "suffixCounts": "k=0..15 independent enumeration",
+  "localization": "unique keys, two nonempty strings, matching placeholders",
+  "sourceMirrorExact": true
+}

@@ -1,0 +1,13 @@
+{
+  "kind": "author supplemental browser check",
+  "status": "PASS",
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "width": 320,
+  "all30Bits": true,
+  "canonicalSourceExact": true,
+  "sourceDisclosurePreserved": true,
+  "placeValueProof": "2ⁱ−1 and f[i] visible in both locales"
+}
