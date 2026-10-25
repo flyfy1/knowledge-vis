@@ -1467,3 +1467,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Minimum bottleneck path | `leetcode/778/#step2` | Extend a path by max, then settle the smallest discovered bottleneck. |
 
 <!-- /leetcode-778-campaign -->
+
+
+<!-- leetcode-780-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Forced reverse moves | `leetcode/780/#step1` | Derive the unique positive predecessor from the larger coordinate. |
+| Modulo and reachability boundary | `leetcode/780/#step2` | Batch forced subtractions and finish using a divisible nonnegative difference. |
+
+<!-- /leetcode-780-campaign -->

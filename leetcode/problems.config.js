@@ -2999,6 +2999,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n² log n) time; O(n²) auxiliary space"
   },
   {
+    "id": 780,
+    "title": {
+      "zh": "到达终点",
+      "en": "Reaching Points"
+    },
+    "desc": {
+      "zh": "从加法倒推到取余，证明边界上的整除检查。",
+      "en": "Reverse additions into remainders, then prove the boundary divisibility test."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数学",
+        "en": "Math"
+      },
+      {
+        "zh": "逆向推理",
+        "en": "Backward reasoning"
+      }
+    ],
+    "path": "780/",
+    "leetcodeUrl": "https://leetcode.com/problems/reaching-points/",
+    "language": "Python",
+    "complexity": "O(1 + log(max(tx, ty))) time; O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
