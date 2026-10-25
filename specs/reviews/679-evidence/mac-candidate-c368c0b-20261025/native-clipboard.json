@@ -1,0 +1,29 @@
+{
+  "platform": "darwin",
+  "records": [
+    {
+      "lang": "en",
+      "selection": {
+        "focus": true,
+        "start": 0,
+        "end": 860
+      },
+      "distinctSentinel": true,
+      "noActionDoesNotEqualSource": true,
+      "shortcut": "Meta+C",
+      "exactTransfer": true
+    },
+    {
+      "lang": "zh",
+      "selection": {
+        "focus": true,
+        "start": 0,
+        "end": 860
+      },
+      "distinctSentinel": true,
+      "noActionDoesNotEqualSource": true,
+      "shortcut": "Meta+C",
+      "exactTransfer": true
+    }
+  ]
+}
