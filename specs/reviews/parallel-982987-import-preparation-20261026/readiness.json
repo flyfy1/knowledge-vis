@@ -1,0 +1,155 @@
+{
+  "observed_at": "2026-10-25T21:41:47.092696+00:00",
+  "base": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+  "central_head": "1997af1228f21cd85a3c7506928dc2587a0a7a9f",
+  "central_status": "running",
+  "central_current": {
+    "problem_id": "843",
+    "stage": "review",
+    "started_at": "2026-10-25T21:41:22.203208+00:00",
+    "run_id": "843-review-455d52b6e77c"
+  },
+  "central_progress_sha256": "ec5c908839f7f688e526fc6c970250abb299355c956a619e61869f7cc2cdeb02",
+  "queue_count": 984,
+  "stop_exists": false,
+  "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b",
+  "released_count": 119,
+  "pending_release": null,
+  "digest_qualified_eligible": [
+    "780",
+    "793",
+    "798",
+    "801",
+    "810",
+    "815",
+    "818",
+    "827",
+    "828",
+    "829",
+    "834",
+    "839",
+    "847",
+    "960",
+    "968",
+    "972",
+    "975",
+    "980"
+  ],
+  "eligible_count": 18,
+  "same_digest_pointer_refresh_ids": [],
+  "pending_registration_ids": [],
+  "incoming_upper_bound_ids": [
+    "780",
+    "793",
+    "798",
+    "801",
+    "810",
+    "815",
+    "818",
+    "827",
+    "828",
+    "829",
+    "834",
+    "839",
+    "847",
+    "960",
+    "968",
+    "972",
+    "975",
+    "980",
+    "982",
+    "987"
+  ],
+  "incoming_upper_bound": 20,
+  "lanes": {
+    "982": {
+      "head": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+      "progress_sha256": "47dc5c7b63aa3551268a298a7c8f435e903709a836681e20e56167f323d7adc3",
+      "status": "running",
+      "current": {
+        "problem_id": "982",
+        "stage": "author",
+        "started_at": "2026-10-25T21:30:49.910959+00:00",
+        "run_id": "982-author-4532e76a05c3"
+      },
+      "entry": {
+        "status": "pending",
+        "rounds": 0,
+        "new": true,
+        "phase": "author",
+        "reviews": [],
+        "author_runs": [],
+        "prior_report": ""
+      },
+      "runner_pid": 1700254,
+      "runner_exists": true,
+      "shared_matches_central": true,
+      "reservation": {
+        "id": "982",
+        "base": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+        "repo": "/home/songyy/projects/leetcode-hard-lane-982-20261026",
+        "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-982-20261026",
+        "port": 18795,
+        "nice": 10,
+        "status": "started",
+        "started_at": "2026-10-25T21:30:21.394634+00:00",
+        "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+        "publication_enabled": false,
+        "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+        "runner_pid": 1700254,
+        "observed_current": {
+          "problem_id": "982",
+          "stage": "author",
+          "started_at": "2026-10-25T21:30:49.910959+00:00",
+          "run_id": "982-author-4532e76a05c3"
+        }
+      },
+      "unstarted_centrally": true
+    },
+    "987": {
+      "head": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+      "progress_sha256": "731a48ee29a58e3a44a4501a5a299d837538995a4996e7d6391795fb88bbb210",
+      "status": "running",
+      "current": {
+        "problem_id": "987",
+        "stage": "author",
+        "started_at": "2026-10-25T21:31:17.787044+00:00",
+        "run_id": "987-author-a21aea0fbd64"
+      },
+      "entry": {
+        "status": "pending",
+        "rounds": 0,
+        "new": true,
+        "phase": "author",
+        "reviews": [],
+        "author_runs": [],
+        "prior_report": ""
+      },
+      "runner_pid": 1700716,
+      "runner_exists": true,
+      "shared_matches_central": true,
+      "reservation": {
+        "id": "987",
+        "base": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+        "repo": "/home/songyy/projects/leetcode-hard-lane-987-20261026",
+        "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-987-20261026",
+        "port": 18796,
+        "nice": 10,
+        "status": "started",
+        "started_at": "2026-10-25T21:30:51.628527+00:00",
+        "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+        "publication_enabled": false,
+        "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+        "runner_pid": 1700716,
+        "observed_current": {
+          "problem_id": "987",
+          "stage": "author",
+          "started_at": "2026-10-25T21:31:17.787044+00:00",
+          "run_id": "987-author-a21aea0fbd64"
+        }
+      },
+      "unstarted_centrally": true
+    }
+  },
+  "read_only": true
+}
