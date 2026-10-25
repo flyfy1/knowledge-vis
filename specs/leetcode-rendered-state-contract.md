@@ -92,11 +92,16 @@ viewport and user-agent emulation do not establish that host. A local runner
 can supply its host platform; record it explicitly for a remote browser rather
 than inferring it from the test client's platform.
 
-Seed a distinct non-source clipboard sentinel before the fallback scenario.
-Check focus and full selection, dispatch the actual copy action, and read back
-the canonical source. Do not substitute a test-written source value, DOM-only
-selection checks, or weakened equality. If readback is unavailable, record the
-verification gap instead of claiming transfer success. Preserve the newline
+Before **each** manual-fallback transfer attempt, including each locale or
+repeated attempt inside a loop, write a fresh, distinct non-source clipboard
+sentinel and read it back to verify that reset succeeded. Do this before
+disabling automatic writes for the fallback test. Then invoke the real Copy
+control, check focus and full selection, dispatch the host's actual copy action,
+and read back the canonical source exactly. Seeding once outside a locale loop
+is insufficient: a failed later copy could otherwise reuse the previous source.
+Do not substitute a test-written source value, DOM-only selection checks, or
+weakened equality. If reset or readback cannot be verified, record the gap
+instead of claiming that attempt transferred the source. Preserve the newline
 conversion and exact mirror/download boundaries above.
 
 When a frozen test uses the wrong host shortcut, preserve its failure and
@@ -211,6 +216,17 @@ font stack. Identical CSS stacks do not prove identical available fonts or glyph
 widths: the #587 labels fit on Pi but clipped on Mac with the same 260px control.
 Do not infer an exact resolved font solely from the stack or attribute every
 platform difference to one unverified font.
+
+A failed width-budget assertion establishes a failed predicate, not by itself
+visible clipping. Compare the computed font measurement with a rendered-text
+measurement and inspect the closed control. If they disagree, diagnose the
+measurement; if a conservative reserve fails while the label remains complete,
+record both facts. A deliberately overlong diagnostic label can check whether
+the capture exposes clipping, but it is not lesson content or evidence that the
+original label clips. Do not lower the arrow reserve or waive an existing failed
+check merely to obtain a pass. Shorter equivalent copy may provide margin while
+retaining the original predicate; preserve the count, scope and purpose, create
+a new candidate, and verify the original case and full relevant suite against it.
 
 When integration finds a platform-specific clipping regression, retain the red
 case and rerun that unchanged case on the affected platform against the repaired
@@ -371,3 +387,12 @@ advisory for repair, create a new candidate and obtain fresh separate review of
 the closure and preserved behavior. Keep historical reviews and release receipts.
 Adopt this clarification at a recorded idle boundary for subsequent candidates;
 already frozen candidates retain their recorded shared-policy identity.
+
+## Repeated-copy and fit-evidence clarification
+
+The section 4 per-attempt sentinel requirement and section 8 conservative-budget
+classification were independently reviewed in the [proposal review](reviews/repeat-copy-and-fit-spec-review-20261025.md).
+See the [proposal](proposals/leetcode-repeat-copy-and-fit-evidence-20261025.md) and
+[dispatcher adoption status](reviews/repeat-copy-and-fit-spec-adoption-20261025.md).
+These local changes do not alter already frozen central candidates; operational
+adoption must be recorded separately before new campaign work uses them.
