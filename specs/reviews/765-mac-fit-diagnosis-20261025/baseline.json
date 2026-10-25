@@ -1,0 +1,176 @@
+{
+  "browser": "151.0.7922.34",
+  "platform": "darwin",
+  "records": [
+    {
+      "lang": "zh",
+      "preset": 0,
+      "label": "官方例 1 · 4 人",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 112.67201232910156,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "label": "官方例 2 · 已配好",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 132.99203491210938,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "label": "6 人 · 一条长链",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 116.76803588867188,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "label": "8 人 · 反例",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 84.08001708984375,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "label": "8 人 · 两条链",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 100.4000244140625,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "label": "Example 1 · 4 people",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 164.27195739746094,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "label": "Example 2 · paired",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 148.84796142578125,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "label": "6 people · one chain",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 161.93597412109375,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "label": "8 people · counterexample",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 209.43997192382812,
+      "available": 206,
+      "pass": false
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "label": "8 people · two chains",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 170.23997497558594,
+      "available": 206,
+      "pass": true
+    }
+  ]
+}

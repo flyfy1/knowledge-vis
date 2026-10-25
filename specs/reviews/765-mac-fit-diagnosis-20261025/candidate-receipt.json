@@ -1,0 +1,240 @@
+{
+  "acceptedCandidate": "7ec592bddf5642212cdcb3363510982354da780e",
+  "suppliedSnapshotCommit": "81bee47",
+  "snapshotRoot": "/tmp/leetcode-765-778-candidate-20261025",
+  "checkedFiles": 46,
+  "allMatch": true,
+  "checks": [
+    {
+      "path": "leetcode/765/BRIEF.md",
+      "sha256": "e8609a3196061b72b112da962f8f6b77915a2ec6885e640efe62fa3f7b2f9bf7",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/app.js",
+      "sha256": "0fc5549f2f851026cb4b27d0fa2d6a8ef0142bfee369a638b834360ba83f2b81",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/copy.js",
+      "sha256": "a17699cca4918d03ee9573e0ee5135bb8228bd889b62c7a66409219819712015",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/core.js",
+      "sha256": "4255509493625b564f1a41587db3b9773240d26cd5b9c4a30bc1668a09f10a45",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/index.html",
+      "sha256": "2482616e0ae78a7d793a588594d22fc7dabe9b96067bd403ca82d4e2a3081529",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/lesson-entry.json",
+      "sha256": "f6297c2b30a4d64c4069a1eb84113d6566ac6b3ae80dd87623283f1d7e3e140e",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/provenance/official.json",
+      "sha256": "525add77a06cff9244c4d4a6b742e2a5d3bea618da1775684a8ab36f96fed262",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/python-code.js",
+      "sha256": "0c77a1642e4b6bedd280193ecb002a336966ba1156e76d91eefd75b74eb85318",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/solution.py",
+      "sha256": "c359058093535eb91b174ca647cc7f607564e11672dcd63951fc93654968ddb7",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/style.css",
+      "sha256": "9e87196287b5c01697bd5497122f8ab4c723f0abb795a55fd0a7f755ee3c3326",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/README.md",
+      "sha256": "f1e2ec1e78c39d616b1686040824ac3d59652cd3acd04dc9b5636da2f594f80e",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/SELF-CHECK.md",
+      "sha256": "682be172d8fb5b006934b0481bb5079b5baf6977ca7a03219d7d04d8e1cfdcdb",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/browser-results.json",
+      "sha256": "88476489ede7d7360c01bb544d3c6a93e64e9d20c2621ef5fb2f0fc3739de98a",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/candidate.json",
+      "sha256": "36f544fbc25abb01c773d0fc625f546c21400e7bff80678a89fb1098cb697da8",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/core-results.json",
+      "sha256": "818b0e45b7e04bb724218232c245dfc21153ce5d516988c187ed47fd83cf6882",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/forced-colors.png",
+      "sha256": "2be043f32b67e64bd5516bc1a797ed81702a0d37bc6759d2e0ddc56939d5855e",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/header-1440-en.png",
+      "sha256": "9ba7b6de568e0f5c5c68fd1f755147c30d16f28241dd8891151e06f4e87de469",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/header-1440-zh.png",
+      "sha256": "fc321093d37a33f147ed01a3d829e7db5bf9574fc02eb9618445362fa34967b2",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/header-320-en.png",
+      "sha256": "f58d056483f008ced91e3d77eb79d21021ef8cc1e233184f93b154c48ead686e",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/header-320-zh.png",
+      "sha256": "d0fc91bf760efc27d8ecf776bdba7fb0c0425ca1e4f0f3907b6c37f5d2a7946c",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/oracle-fixtures.json",
+      "sha256": "179b19d5718df499b6af6b2c49807ac3e762f380759cd5302bbbe328db7aab11",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/preflight.json",
+      "sha256": "135d0cc18fedcaf6f45aa77b9435317f6d28920e8b27237cfa211dbe55905ad9",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/python-results.json",
+      "sha256": "bef49476c82dd63d34b2322542a4c60787d1348bbfd622e91d7e4a73afad2dd5",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/quiz-1440-en.png",
+      "sha256": "049ac601a1da093b919e45fafe2b35227b63483d05b2ae708bc12dc751faf8ba",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/quiz-1440-zh.png",
+      "sha256": "aa2f7bf5604b8602d065c946b89ebe3e97bb1c08e6fdbe17e95865e76b4379c5",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/quiz-320-en.png",
+      "sha256": "7d621dcbe9df7e438eac943120d10cbeb06c47da457829d539da238f7bcfd52a",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/quiz-320-zh.png",
+      "sha256": "7b0beab0d559b9dbf3317cb5fbdbc47ecebc5a657e192feaf76aa40977d21373",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/quiz-390-en.png",
+      "sha256": "4fdbd1d98519658ca75c9807808fc481b1bbbfb805cd21972250b590c4401845",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/quiz-390-zh.png",
+      "sha256": "760d8edf829cfea2f98a4a1ff7ed7777445b6ca28d4bf42fae5947f40d28406a",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/quiz-736-en.png",
+      "sha256": "97ceeee04b47565dff67bf25147dfe996b0bc54ed72198de4a24a4683f024699",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/quiz-736-zh.png",
+      "sha256": "2f8d6bed14f6609756ed36dad0957415fbba722f3677f730a2e7155a78ad0a1b",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/trace-1440-en.png",
+      "sha256": "2496d7f56b748c025843b48206edd46a52bedff54a466f915773dbf5a241b440",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/trace-1440-zh.png",
+      "sha256": "e4e6b119bb20ee0195da1b69da684bdf975a423d3d89a6fc90f857df9dc0704d",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/trace-320-en.png",
+      "sha256": "80bb54639661b2624e0f0e32d605c1a11560c6fbf3ab101bd50d7186449af584",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/trace-320-zh.png",
+      "sha256": "7003700099259732065ee96e9cadc8f99bd0a415603545b1e0f85dfb8f2d97bb",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/trace-390-en.png",
+      "sha256": "e24cf500f57866ab98504a14e76028176496043a45b2600a6da0193197e11b3a",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/trace-390-zh.png",
+      "sha256": "f2054f2543982eb2f827224b6765817bdf19da183c764901d3f6bdd3156e8d6b",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/trace-736-en.png",
+      "sha256": "29090bc08435ed59d41b5304bbe780612708132dc725cc074cb42a63daaa3fe9",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/trace-736-zh.png",
+      "sha256": "9a3cccbb98dfdd8f98d56184206740eec68674373425b0b6e0ca81e38545bc2e",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/zoom200-en.png",
+      "sha256": "3298a27f2df4fdd3e7f915c545c69a115a17441749723848a065b5c3fc8eea12",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/evidence/zoom200-zh.png",
+      "sha256": "14e7c883b93852b53a29466ad91b6bfa4e1b47c60294a5e8d35bad2a83dd1461",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/test_browser.cjs",
+      "sha256": "addc2e5f5c8f97a2fd31bcdd854caaf425dbf745f4e014ca0af877c777fb0e48",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/test_core.cjs",
+      "sha256": "a0f39255dea9666fc24390a143695fab4cf9fc451b33298518f4f4f5a159993e",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/test_solution.py",
+      "sha256": "63b4f535a7aea197eab1d37379301433db4adbb6c5201f7016df06e5f17f751c",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/zoom-extension/manifest.json",
+      "sha256": "633fe6b85a91caf5e9ec10f239ed239f3de9f2e9f3d25d6cdbf5643c97104eb9",
+      "matchesAcceptedCandidate": true
+    },
+    {
+      "path": "leetcode/765/tests/zoom-extension/worker.js",
+      "sha256": "84a1b1cae6dd7a3863f9fd46146f1697b203e4d264781573b4443537ae7d7528",
+      "matchesAcceptedCandidate": true
+    }
+  ],
+  "scope": "Entire 765 tree checked after diagnostic browser runs; probes used temporary DOM overrides only."
+}
