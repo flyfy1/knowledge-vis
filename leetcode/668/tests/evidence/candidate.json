@@ -1,0 +1,29 @@
+{
+  "problemId": 668,
+  "status": "author self-checked; independent review pending",
+  "frozenAt": "2026-10-25T03:17:32.473730+00:00",
+  "preview": "http://127.0.0.1:18783/leetcode/668/",
+  "sha256": {
+    "BRIEF.md": "ba675960f96f18d6d5a5c216a92c02df96523b38fab0817fee2c99e07193c477",
+    "SELF-CHECK.md": "89bd546a5e5305e2e32467710b0173ab63a52bb1feff1408340162121e05026d",
+    "app.js": "cb0f4db3ebd93a515749f790b6e5900f5e3294d7a7272af1f7206f1f50ecfb2e",
+    "copy.js": "433ba32d0d2a7096f6b0491b0531942e08f3276ecba38491857cf92c8625ed5d",
+    "core.js": "b158ee4c2b7ac484c0dd116914ee9e2dfb69802e9b30eaebdaf0a4816543f9c9",
+    "index.html": "c877b645547d5d8d6a1a5beb5ff9f18d202981ba63d107943c4556e4272aea31",
+    "lesson-entry.json": "615e4f38602efa0e410e29331c6270a277428507d0bf6a47c82627f7b5fb5f2f",
+    "provenance/README.md": "67cda9adc14880b8ee2b35d1bd5eb9385c5575a5b662bcedebc0e1064324b65c",
+    "provenance/official-graphql.json": "ff3e92a3eaab429fbcee37dc6b067b425820087f30dce08d94bc9ff83b12c7a3",
+    "python-code.js": "2e8bee54ff41e39f97cb05e1e18209be5f055bbdb8a89f6d3fc3c0c0e2836827",
+    "solution.py": "1a23f6713520b655db64d0daf66ac8536aa523b8f19c3fc459b522f4599e4daa",
+    "style.css": "b40c3ef4896e4f04763824d46cd9e07b3e352af511faabd6273549f9bbfe4808",
+    "tests/README.md": "724dbae7a9f6f3cee33c54767e7220dd7828b97e0d7812cf4ba0513eaab80be3",
+    "tests/browser.cjs": "53880dc1495c563926d28ea6aef83cb19b00404c306e6d55d2ec9a4d12b5f4dc",
+    "tests/layout-audit.cjs": "e4c978710c2bec01d8bcb51972dfb9b492099ad5006919daa6e2fecb83a6b7ef",
+    "tests/test_core.cjs": "8db6ade4963fe1f784ece9034289f53339aa0c1b7fe045a67bf65922e989cc3c",
+    "tests/test_solution.py": "15430a931227e36dcb1c10c1efc29ab22b30d73e6d874ddf4bf42ed773b306cc"
+  },
+  "sharedDependencies": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}

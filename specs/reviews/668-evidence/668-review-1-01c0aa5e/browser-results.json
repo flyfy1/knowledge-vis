@@ -1,0 +1,1070 @@
+{
+  "kind": "author browser self-check",
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18783/leetcode/668/",
+    "http://127.0.0.1:18783/leetcode/style.css",
+    "http://127.0.0.1:18783/leetcode/668/style.css?v=668-1",
+    "http://127.0.0.1:18783/leetcode/common.js",
+    "http://127.0.0.1:18783/leetcode/668/copy.js?v=668-1",
+    "http://127.0.0.1:18783/leetcode/668/core.js?v=668-1",
+    "http://127.0.0.1:18783/leetcode/668/python-code.js?v=668-1",
+    "http://127.0.0.1:18783/leetcode/668/app.js?v=668-1",
+    "http://127.0.0.1:18783/leetcode/668/",
+    "http://127.0.0.1:18783/leetcode/style.css",
+    "http://127.0.0.1:18783/leetcode/668/style.css?v=668-1",
+    "http://127.0.0.1:18783/leetcode/common.js",
+    "http://127.0.0.1:18783/leetcode/668/copy.js?v=668-1",
+    "http://127.0.0.1:18783/leetcode/668/core.js?v=668-1",
+    "http://127.0.0.1:18783/leetcode/668/python-code.js?v=668-1",
+    "http://127.0.0.1:18783/leetcode/668/app.js?v=668-1",
+    "file:///home/songyy/projects/leetcode-hard-lane-668-20261025/leetcode/668/index.html",
+    "file:///home/songyy/projects/leetcode-hard-lane-668-20261025/leetcode/style.css",
+    "file:///home/songyy/projects/leetcode-hard-lane-668-20261025/leetcode/668/style.css?v=668-1",
+    "file:///home/songyy/projects/leetcode-hard-lane-668-20261025/leetcode/common.js",
+    "file:///home/songyy/projects/leetcode-hard-lane-668-20261025/leetcode/668/copy.js?v=668-1",
+    "file:///home/songyy/projects/leetcode-hard-lane-668-20261025/leetcode/668/core.js?v=668-1",
+    "file:///home/songyy/projects/leetcode-hard-lane-668-20261025/leetcode/668/python-code.js?v=668-1",
+    "file:///home/songyy/projects/leetcode-hard-lane-668-20261025/leetcode/668/app.js?v=668-1",
+    "http://127.0.0.1:18783/leetcode/668/",
+    "http://127.0.0.1:18783/leetcode/style.css",
+    "http://127.0.0.1:18783/leetcode/668/style.css?v=668-1",
+    "http://127.0.0.1:18783/leetcode/common.js",
+    "http://127.0.0.1:18783/leetcode/668/copy.js?v=668-1",
+    "http://127.0.0.1:18783/leetcode/668/core.js?v=668-1",
+    "http://127.0.0.1:18783/leetcode/668/python-code.js?v=668-1",
+    "http://127.0.0.1:18783/leetcode/668/app.js?v=668-1"
+  ],
+  "states": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "round": 0,
+      "progress": "m=3, n=3, k=5 · 0/3 rounds completed",
+      "intervalValue": "[1, 9]",
+      "testValue": "No test yet",
+      "decision": "Initial state: [1,9]. C(0)=0<k and C(9)=9≥k. When lo<hi, completing a round counts at mid and then updates a bound.",
+      "terminal": "",
+      "labRows": "",
+      "history": "No completed rounds yet."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "round": 1,
+      "progress": "m=3, n=3, k=5 · 1/3 rounds completed",
+      "intervalValue": "[1, 5]",
+      "testValue": "5 → 6",
+      "decision": "Completed: old interval [1,9], mid=5, C(mid)=6≥k=5. mid is sufficient; keep it and set hi=5. New interval: [1,5].",
+      "terminal": "",
+      "labRows": "Row 1: 3 cellsRow 2: 2 cellsRow 3: 1 cells",
+      "history": "1[1, 9]5 → 6[1, 5]Enough: hi=mid"
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "round": 2,
+      "progress": "m=3, n=3, k=5 · 2/3 rounds completed",
+      "intervalValue": "[1, 3]",
+      "testValue": "3 → 5",
+      "decision": "Completed: old interval [1,5], mid=3, C(mid)=5≥k=5. mid is sufficient; keep it and set hi=3. New interval: [1,3].",
+      "terminal": "",
+      "labRows": "Row 1: 3 cellsRow 2: 1 cellsRow 3: 1 cells",
+      "history": "1[1, 9]5 → 6[1, 5]Enough: hi=mid2[1, 5]3 → 5[1, 3]Enough: hi=mid"
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "round": 3,
+      "progress": "m=3, n=3, k=5 · 3/3 rounds completed",
+      "intervalValue": "[3, 3]",
+      "testValue": "2 → 3",
+      "decision": "Completed: old interval [1,3], mid=2, C(mid)=3<k=5. Exclude mid and every smaller value; set lo=3. New interval: [3,3].",
+      "terminal": "Converged: lo=hi=3; the final answer is 3.",
+      "labRows": "Row 1: 2 cellsRow 2: 1 cellsRow 3: 0 cells",
+      "history": "1[1, 9]5 → 6[1, 5]Enough: hi=mid2[1, 5]3 → 5[1, 3]Enough: hi=mid3[1, 3]2 → 3[3, 3]Too few: lo=mid+1"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "round": 0,
+      "progress": "m=2, n=3, k=6 · 0/2 rounds completed",
+      "intervalValue": "[1, 6]",
+      "testValue": "No test yet",
+      "decision": "Initial state: [1,6]. C(0)=0<k and C(6)=6≥k. When lo<hi, completing a round counts at mid and then updates a bound.",
+      "terminal": "Converged: lo=hi=3; the final answer is 3.",
+      "labRows": "",
+      "history": "No completed rounds yet."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "round": 1,
+      "progress": "m=2, n=3, k=6 · 1/2 rounds completed",
+      "intervalValue": "[4, 6]",
+      "testValue": "3 → 4",
+      "decision": "Completed: old interval [1,6], mid=3, C(mid)=4<k=6. Exclude mid and every smaller value; set lo=4. New interval: [4,6].",
+      "terminal": "Converged: lo=hi=3; the final answer is 3.",
+      "labRows": "Row 1: 3 cellsRow 2: 1 cells",
+      "history": "1[1, 6]3 → 4[4, 6]Too few: lo=mid+1"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "round": 2,
+      "progress": "m=2, n=3, k=6 · 2/2 rounds completed",
+      "intervalValue": "[6, 6]",
+      "testValue": "5 → 5",
+      "decision": "Completed: old interval [4,6], mid=5, C(mid)=5<k=6. Exclude mid and every smaller value; set lo=6. New interval: [6,6].",
+      "terminal": "Converged: lo=hi=6; the final answer is 6.",
+      "labRows": "Row 1: 3 cellsRow 2: 2 cells",
+      "history": "1[1, 6]3 → 4[4, 6]Too few: lo=mid+12[4, 6]5 → 5[6, 6]Too few: lo=mid+1"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "round": 0,
+      "progress": "m=3, n=3, k=4 · 0/3 rounds completed",
+      "intervalValue": "[1, 9]",
+      "testValue": "No test yet",
+      "decision": "Initial state: [1,9]. C(0)=0<k and C(9)=9≥k. When lo<hi, completing a round counts at mid and then updates a bound.",
+      "terminal": "Converged: lo=hi=6; the final answer is 6.",
+      "labRows": "",
+      "history": "No completed rounds yet."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "round": 1,
+      "progress": "m=3, n=3, k=4 · 1/3 rounds completed",
+      "intervalValue": "[1, 5]",
+      "testValue": "5 → 6",
+      "decision": "Completed: old interval [1,9], mid=5, C(mid)=6≥k=4. mid is sufficient; keep it and set hi=5. New interval: [1,5].",
+      "terminal": "Converged: lo=hi=6; the final answer is 6.",
+      "labRows": "Row 1: 3 cellsRow 2: 2 cellsRow 3: 1 cells",
+      "history": "1[1, 9]5 → 6[1, 5]Enough: hi=mid"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "round": 2,
+      "progress": "m=3, n=3, k=4 · 2/3 rounds completed",
+      "intervalValue": "[1, 3]",
+      "testValue": "3 → 5",
+      "decision": "Completed: old interval [1,5], mid=3, C(mid)=5≥k=4. mid is sufficient; keep it and set hi=3. New interval: [1,3].",
+      "terminal": "Converged: lo=hi=6; the final answer is 6.",
+      "labRows": "Row 1: 3 cellsRow 2: 1 cellsRow 3: 1 cells",
+      "history": "1[1, 9]5 → 6[1, 5]Enough: hi=mid2[1, 5]3 → 5[1, 3]Enough: hi=mid"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "round": 3,
+      "progress": "m=3, n=3, k=4 · 3/3 rounds completed",
+      "intervalValue": "[3, 3]",
+      "testValue": "2 → 3",
+      "decision": "Completed: old interval [1,3], mid=2, C(mid)=3<k=4. Exclude mid and every smaller value; set lo=3. New interval: [3,3].",
+      "terminal": "Converged: lo=hi=3; the final answer is 3.",
+      "labRows": "Row 1: 2 cellsRow 2: 1 cellsRow 3: 0 cells",
+      "history": "1[1, 9]5 → 6[1, 5]Enough: hi=mid2[1, 5]3 → 5[1, 3]Enough: hi=mid3[1, 3]2 → 3[3, 3]Too few: lo=mid+1"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "round": 0,
+      "progress": "m=1, n=7, k=4 · 0/3 rounds completed",
+      "intervalValue": "[1, 7]",
+      "testValue": "No test yet",
+      "decision": "Initial state: [1,7]. C(0)=0<k and C(7)=7≥k. When lo<hi, completing a round counts at mid and then updates a bound.",
+      "terminal": "Converged: lo=hi=3; the final answer is 3.",
+      "labRows": "",
+      "history": "No completed rounds yet."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "round": 1,
+      "progress": "m=1, n=7, k=4 · 1/3 rounds completed",
+      "intervalValue": "[1, 4]",
+      "testValue": "4 → 4",
+      "decision": "Completed: old interval [1,7], mid=4, C(mid)=4≥k=4. mid is sufficient; keep it and set hi=4. New interval: [1,4].",
+      "terminal": "Converged: lo=hi=3; the final answer is 3.",
+      "labRows": "Row 1: 4 cells",
+      "history": "1[1, 7]4 → 4[1, 4]Enough: hi=mid"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "round": 2,
+      "progress": "m=1, n=7, k=4 · 2/3 rounds completed",
+      "intervalValue": "[3, 4]",
+      "testValue": "2 → 2",
+      "decision": "Completed: old interval [1,4], mid=2, C(mid)=2<k=4. Exclude mid and every smaller value; set lo=3. New interval: [3,4].",
+      "terminal": "Converged: lo=hi=3; the final answer is 3.",
+      "labRows": "Row 1: 2 cells",
+      "history": "1[1, 7]4 → 4[1, 4]Enough: hi=mid2[1, 4]2 → 2[3, 4]Too few: lo=mid+1"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "round": 3,
+      "progress": "m=1, n=7, k=4 · 3/3 rounds completed",
+      "intervalValue": "[4, 4]",
+      "testValue": "3 → 3",
+      "decision": "Completed: old interval [3,4], mid=3, C(mid)=3<k=4. Exclude mid and every smaller value; set lo=4. New interval: [4,4].",
+      "terminal": "Converged: lo=hi=4; the final answer is 4.",
+      "labRows": "Row 1: 3 cells",
+      "history": "1[1, 7]4 → 4[1, 4]Enough: hi=mid2[1, 4]2 → 2[3, 4]Too few: lo=mid+13[3, 4]3 → 3[4, 4]Too few: lo=mid+1"
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "round": 0,
+      "progress": "m=1, n=1, k=1 · 0/0 rounds completed",
+      "intervalValue": "[1, 1]",
+      "testValue": "No test yet",
+      "decision": "Initial state: [1,1]. C(0)=0<k and C(1)=1≥k. When lo<hi, completing a round counts at mid and then updates a bound.",
+      "terminal": "Converged: lo=hi=1; the final answer is 1.",
+      "labRows": "",
+      "history": "No completed rounds yet."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "round": 0,
+      "progress": "m=4, n=5, k=1 · 0/5 rounds completed",
+      "intervalValue": "[1, 20]",
+      "testValue": "No test yet",
+      "decision": "Initial state: [1,20]. C(0)=0<k and C(20)=20≥k. When lo<hi, completing a round counts at mid and then updates a bound.",
+      "terminal": "Converged: lo=hi=1; the final answer is 1.",
+      "labRows": "",
+      "history": "No completed rounds yet."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "round": 1,
+      "progress": "m=4, n=5, k=1 · 1/5 rounds completed",
+      "intervalValue": "[1, 10]",
+      "testValue": "10 → 15",
+      "decision": "Completed: old interval [1,20], mid=10, C(mid)=15≥k=1. mid is sufficient; keep it and set hi=10. New interval: [1,10].",
+      "terminal": "Converged: lo=hi=1; the final answer is 1.",
+      "labRows": "Row 1: 5 cellsRow 2: 5 cellsRow 3: 3 cellsRow 4: 2 cells",
+      "history": "1[1, 20]10 → 15[1, 10]Enough: hi=mid"
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "round": 2,
+      "progress": "m=4, n=5, k=1 · 2/5 rounds completed",
+      "intervalValue": "[1, 5]",
+      "testValue": "5 → 9",
+      "decision": "Completed: old interval [1,10], mid=5, C(mid)=9≥k=1. mid is sufficient; keep it and set hi=5. New interval: [1,5].",
+      "terminal": "Converged: lo=hi=1; the final answer is 1.",
+      "labRows": "Row 1: 5 cellsRow 2: 2 cellsRow 3: 1 cellsRow 4: 1 cells",
+      "history": "1[1, 20]10 → 15[1, 10]Enough: hi=mid2[1, 10]5 → 9[1, 5]Enough: hi=mid"
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "round": 3,
+      "progress": "m=4, n=5, k=1 · 3/5 rounds completed",
+      "intervalValue": "[1, 3]",
+      "testValue": "3 → 5",
+      "decision": "Completed: old interval [1,5], mid=3, C(mid)=5≥k=1. mid is sufficient; keep it and set hi=3. New interval: [1,3].",
+      "terminal": "Converged: lo=hi=1; the final answer is 1.",
+      "labRows": "Row 1: 3 cellsRow 2: 1 cellsRow 3: 1 cellsRow 4: 0 cells",
+      "history": "1[1, 20]10 → 15[1, 10]Enough: hi=mid2[1, 10]5 → 9[1, 5]Enough: hi=mid3[1, 5]3 → 5[1, 3]Enough: hi=mid"
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "round": 4,
+      "progress": "m=4, n=5, k=1 · 4/5 rounds completed",
+      "intervalValue": "[1, 2]",
+      "testValue": "2 → 3",
+      "decision": "Completed: old interval [1,3], mid=2, C(mid)=3≥k=1. mid is sufficient; keep it and set hi=2. New interval: [1,2].",
+      "terminal": "Converged: lo=hi=1; the final answer is 1.",
+      "labRows": "Row 1: 2 cellsRow 2: 1 cellsRow 3: 0 cellsRow 4: 0 cells",
+      "history": "1[1, 20]10 → 15[1, 10]Enough: hi=mid2[1, 10]5 → 9[1, 5]Enough: hi=mid3[1, 5]3 → 5[1, 3]Enough: hi=mid4[1, 3]2 → 3[1, 2]Enough: hi=mid"
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "round": 5,
+      "progress": "m=4, n=5, k=1 · 5/5 rounds completed",
+      "intervalValue": "[1, 1]",
+      "testValue": "1 → 1",
+      "decision": "Completed: old interval [1,2], mid=1, C(mid)=1≥k=1. mid is sufficient; keep it and set hi=1. New interval: [1,1].",
+      "terminal": "Converged: lo=hi=1; the final answer is 1.",
+      "labRows": "Row 1: 1 cellsRow 2: 0 cellsRow 3: 0 cellsRow 4: 0 cells",
+      "history": "1[1, 20]10 → 15[1, 10]Enough: hi=mid2[1, 10]5 → 9[1, 5]Enough: hi=mid3[1, 5]3 → 5[1, 3]Enough: hi=mid4[1, 3]2 → 3[1, 2]Enough: hi=mid5[1, 2]1 → 1[1, 1]Enough: hi=mid"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "round": 0,
+      "progress": "m=3，n=3，k=5 · 已完成 0/3 轮",
+      "intervalValue": "[1, 9]",
+      "testValue": "尚未测试",
+      "decision": "初始状态：[1,9]。C(0)=0<k，C(9)=9≥k。lo<hi 时，完成一轮会先数 mid 再更新边界。",
+      "terminal": "Converged: lo=hi=1; the final answer is 1.",
+      "labRows": "",
+      "history": "还没有完成的轮次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "round": 1,
+      "progress": "m=3，n=3，k=5 · 已完成 1/3 轮",
+      "intervalValue": "[1, 5]",
+      "testValue": "5 → 6",
+      "decision": "刚完成：旧区间 [1,9]，mid=5，C(mid)=6≥k=5。mid 已够，保留 mid 并令 hi=5；新区间 [1,5]。",
+      "terminal": "Converged: lo=hi=1; the final answer is 1.",
+      "labRows": "第 1 行：3 格第 2 行：2 格第 3 行：1 格",
+      "history": "1[1, 9]5 → 6[1, 5]够：hi=mid"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "round": 2,
+      "progress": "m=3，n=3，k=5 · 已完成 2/3 轮",
+      "intervalValue": "[1, 3]",
+      "testValue": "3 → 5",
+      "decision": "刚完成：旧区间 [1,5]，mid=3，C(mid)=5≥k=5。mid 已够，保留 mid 并令 hi=3；新区间 [1,3]。",
+      "terminal": "Converged: lo=hi=1; the final answer is 1.",
+      "labRows": "第 1 行：3 格第 2 行：1 格第 3 行：1 格",
+      "history": "1[1, 9]5 → 6[1, 5]够：hi=mid2[1, 5]3 → 5[1, 3]够：hi=mid"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "round": 3,
+      "progress": "m=3，n=3，k=5 · 已完成 3/3 轮",
+      "intervalValue": "[3, 3]",
+      "testValue": "2 → 3",
+      "decision": "刚完成：旧区间 [1,3]，mid=2，C(mid)=3<k=5。mid 还不够，排除它与更小值，令 lo=3；新区间 [3,3]。",
+      "terminal": "已收敛：lo=hi=3，最终答案是 3。",
+      "labRows": "第 1 行：2 格第 2 行：1 格第 3 行：0 格",
+      "history": "1[1, 9]5 → 6[1, 5]够：hi=mid2[1, 5]3 → 5[1, 3]够：hi=mid3[1, 3]2 → 3[3, 3]不足：lo=mid+1"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "round": 0,
+      "progress": "m=2，n=3，k=6 · 已完成 0/2 轮",
+      "intervalValue": "[1, 6]",
+      "testValue": "尚未测试",
+      "decision": "初始状态：[1,6]。C(0)=0<k，C(6)=6≥k。lo<hi 时，完成一轮会先数 mid 再更新边界。",
+      "terminal": "已收敛：lo=hi=3，最终答案是 3。",
+      "labRows": "",
+      "history": "还没有完成的轮次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "round": 1,
+      "progress": "m=2，n=3，k=6 · 已完成 1/2 轮",
+      "intervalValue": "[4, 6]",
+      "testValue": "3 → 4",
+      "decision": "刚完成：旧区间 [1,6]，mid=3，C(mid)=4<k=6。mid 还不够，排除它与更小值，令 lo=4；新区间 [4,6]。",
+      "terminal": "已收敛：lo=hi=3，最终答案是 3。",
+      "labRows": "第 1 行：3 格第 2 行：1 格",
+      "history": "1[1, 6]3 → 4[4, 6]不足：lo=mid+1"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "round": 2,
+      "progress": "m=2，n=3，k=6 · 已完成 2/2 轮",
+      "intervalValue": "[6, 6]",
+      "testValue": "5 → 5",
+      "decision": "刚完成：旧区间 [4,6]，mid=5，C(mid)=5<k=6。mid 还不够，排除它与更小值，令 lo=6；新区间 [6,6]。",
+      "terminal": "已收敛：lo=hi=6，最终答案是 6。",
+      "labRows": "第 1 行：3 格第 2 行：2 格",
+      "history": "1[1, 6]3 → 4[4, 6]不足：lo=mid+12[4, 6]5 → 5[6, 6]不足：lo=mid+1"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "round": 0,
+      "progress": "m=3，n=3，k=4 · 已完成 0/3 轮",
+      "intervalValue": "[1, 9]",
+      "testValue": "尚未测试",
+      "decision": "初始状态：[1,9]。C(0)=0<k，C(9)=9≥k。lo<hi 时，完成一轮会先数 mid 再更新边界。",
+      "terminal": "已收敛：lo=hi=6，最终答案是 6。",
+      "labRows": "",
+      "history": "还没有完成的轮次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "round": 1,
+      "progress": "m=3，n=3，k=4 · 已完成 1/3 轮",
+      "intervalValue": "[1, 5]",
+      "testValue": "5 → 6",
+      "decision": "刚完成：旧区间 [1,9]，mid=5，C(mid)=6≥k=4。mid 已够，保留 mid 并令 hi=5；新区间 [1,5]。",
+      "terminal": "已收敛：lo=hi=6，最终答案是 6。",
+      "labRows": "第 1 行：3 格第 2 行：2 格第 3 行：1 格",
+      "history": "1[1, 9]5 → 6[1, 5]够：hi=mid"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "round": 2,
+      "progress": "m=3，n=3，k=4 · 已完成 2/3 轮",
+      "intervalValue": "[1, 3]",
+      "testValue": "3 → 5",
+      "decision": "刚完成：旧区间 [1,5]，mid=3，C(mid)=5≥k=4。mid 已够，保留 mid 并令 hi=3；新区间 [1,3]。",
+      "terminal": "已收敛：lo=hi=6，最终答案是 6。",
+      "labRows": "第 1 行：3 格第 2 行：1 格第 3 行：1 格",
+      "history": "1[1, 9]5 → 6[1, 5]够：hi=mid2[1, 5]3 → 5[1, 3]够：hi=mid"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "round": 3,
+      "progress": "m=3，n=3，k=4 · 已完成 3/3 轮",
+      "intervalValue": "[3, 3]",
+      "testValue": "2 → 3",
+      "decision": "刚完成：旧区间 [1,3]，mid=2，C(mid)=3<k=4。mid 还不够，排除它与更小值，令 lo=3；新区间 [3,3]。",
+      "terminal": "已收敛：lo=hi=3，最终答案是 3。",
+      "labRows": "第 1 行：2 格第 2 行：1 格第 3 行：0 格",
+      "history": "1[1, 9]5 → 6[1, 5]够：hi=mid2[1, 5]3 → 5[1, 3]够：hi=mid3[1, 3]2 → 3[3, 3]不足：lo=mid+1"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "round": 0,
+      "progress": "m=1，n=7，k=4 · 已完成 0/3 轮",
+      "intervalValue": "[1, 7]",
+      "testValue": "尚未测试",
+      "decision": "初始状态：[1,7]。C(0)=0<k，C(7)=7≥k。lo<hi 时，完成一轮会先数 mid 再更新边界。",
+      "terminal": "已收敛：lo=hi=3，最终答案是 3。",
+      "labRows": "",
+      "history": "还没有完成的轮次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "round": 1,
+      "progress": "m=1，n=7，k=4 · 已完成 1/3 轮",
+      "intervalValue": "[1, 4]",
+      "testValue": "4 → 4",
+      "decision": "刚完成：旧区间 [1,7]，mid=4，C(mid)=4≥k=4。mid 已够，保留 mid 并令 hi=4；新区间 [1,4]。",
+      "terminal": "已收敛：lo=hi=3，最终答案是 3。",
+      "labRows": "第 1 行：4 格",
+      "history": "1[1, 7]4 → 4[1, 4]够：hi=mid"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "round": 2,
+      "progress": "m=1，n=7，k=4 · 已完成 2/3 轮",
+      "intervalValue": "[3, 4]",
+      "testValue": "2 → 2",
+      "decision": "刚完成：旧区间 [1,4]，mid=2，C(mid)=2<k=4。mid 还不够，排除它与更小值，令 lo=3；新区间 [3,4]。",
+      "terminal": "已收敛：lo=hi=3，最终答案是 3。",
+      "labRows": "第 1 行：2 格",
+      "history": "1[1, 7]4 → 4[1, 4]够：hi=mid2[1, 4]2 → 2[3, 4]不足：lo=mid+1"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "round": 3,
+      "progress": "m=1，n=7，k=4 · 已完成 3/3 轮",
+      "intervalValue": "[4, 4]",
+      "testValue": "3 → 3",
+      "decision": "刚完成：旧区间 [3,4]，mid=3，C(mid)=3<k=4。mid 还不够，排除它与更小值，令 lo=4；新区间 [4,4]。",
+      "terminal": "已收敛：lo=hi=4，最终答案是 4。",
+      "labRows": "第 1 行：3 格",
+      "history": "1[1, 7]4 → 4[1, 4]够：hi=mid2[1, 4]2 → 2[3, 4]不足：lo=mid+13[3, 4]3 → 3[4, 4]不足：lo=mid+1"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "round": 0,
+      "progress": "m=1，n=1，k=1 · 已完成 0/0 轮",
+      "intervalValue": "[1, 1]",
+      "testValue": "尚未测试",
+      "decision": "初始状态：[1,1]。C(0)=0<k，C(1)=1≥k。lo<hi 时，完成一轮会先数 mid 再更新边界。",
+      "terminal": "已收敛：lo=hi=1，最终答案是 1。",
+      "labRows": "",
+      "history": "还没有完成的轮次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "round": 0,
+      "progress": "m=4，n=5，k=1 · 已完成 0/5 轮",
+      "intervalValue": "[1, 20]",
+      "testValue": "尚未测试",
+      "decision": "初始状态：[1,20]。C(0)=0<k，C(20)=20≥k。lo<hi 时，完成一轮会先数 mid 再更新边界。",
+      "terminal": "已收敛：lo=hi=1，最终答案是 1。",
+      "labRows": "",
+      "history": "还没有完成的轮次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "round": 1,
+      "progress": "m=4，n=5，k=1 · 已完成 1/5 轮",
+      "intervalValue": "[1, 10]",
+      "testValue": "10 → 15",
+      "decision": "刚完成：旧区间 [1,20]，mid=10，C(mid)=15≥k=1。mid 已够，保留 mid 并令 hi=10；新区间 [1,10]。",
+      "terminal": "已收敛：lo=hi=1，最终答案是 1。",
+      "labRows": "第 1 行：5 格第 2 行：5 格第 3 行：3 格第 4 行：2 格",
+      "history": "1[1, 20]10 → 15[1, 10]够：hi=mid"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "round": 2,
+      "progress": "m=4，n=5，k=1 · 已完成 2/5 轮",
+      "intervalValue": "[1, 5]",
+      "testValue": "5 → 9",
+      "decision": "刚完成：旧区间 [1,10]，mid=5，C(mid)=9≥k=1。mid 已够，保留 mid 并令 hi=5；新区间 [1,5]。",
+      "terminal": "已收敛：lo=hi=1，最终答案是 1。",
+      "labRows": "第 1 行：5 格第 2 行：2 格第 3 行：1 格第 4 行：1 格",
+      "history": "1[1, 20]10 → 15[1, 10]够：hi=mid2[1, 10]5 → 9[1, 5]够：hi=mid"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "round": 3,
+      "progress": "m=4，n=5，k=1 · 已完成 3/5 轮",
+      "intervalValue": "[1, 3]",
+      "testValue": "3 → 5",
+      "decision": "刚完成：旧区间 [1,5]，mid=3，C(mid)=5≥k=1。mid 已够，保留 mid 并令 hi=3；新区间 [1,3]。",
+      "terminal": "已收敛：lo=hi=1，最终答案是 1。",
+      "labRows": "第 1 行：3 格第 2 行：1 格第 3 行：1 格第 4 行：0 格",
+      "history": "1[1, 20]10 → 15[1, 10]够：hi=mid2[1, 10]5 → 9[1, 5]够：hi=mid3[1, 5]3 → 5[1, 3]够：hi=mid"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "round": 4,
+      "progress": "m=4，n=5，k=1 · 已完成 4/5 轮",
+      "intervalValue": "[1, 2]",
+      "testValue": "2 → 3",
+      "decision": "刚完成：旧区间 [1,3]，mid=2，C(mid)=3≥k=1。mid 已够，保留 mid 并令 hi=2；新区间 [1,2]。",
+      "terminal": "已收敛：lo=hi=1，最终答案是 1。",
+      "labRows": "第 1 行：2 格第 2 行：1 格第 3 行：0 格第 4 行：0 格",
+      "history": "1[1, 20]10 → 15[1, 10]够：hi=mid2[1, 10]5 → 9[1, 5]够：hi=mid3[1, 5]3 → 5[1, 3]够：hi=mid4[1, 3]2 → 3[1, 2]够：hi=mid"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "round": 5,
+      "progress": "m=4，n=5，k=1 · 已完成 5/5 轮",
+      "intervalValue": "[1, 1]",
+      "testValue": "1 → 1",
+      "decision": "刚完成：旧区间 [1,2]，mid=1，C(mid)=1≥k=1。mid 已够，保留 mid 并令 hi=1；新区间 [1,1]。",
+      "terminal": "已收敛：lo=hi=1，最终答案是 1。",
+      "labRows": "第 1 行：1 格第 2 行：0 格第 3 行：0 格第 4 行：0 格",
+      "history": "1[1, 20]10 → 15[1, 10]够：hi=mid2[1, 10]5 → 9[1, 5]够：hi=mid3[1, 5]3 → 5[1, 3]够：hi=mid4[1, 3]2 → 3[1, 2]够：hi=mid5[1, 2]1 → 1[1, 1]够：hi=mid"
+    }
+  ],
+  "layouts": [
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 1,
+      "innerWidth": 320,
+      "outerWidth": 500,
+      "dpr": 1,
+      "scrollWidth": 320,
+      "selectWidth": 262,
+      "textWidth": 157.12033081054688,
+      "selectPadding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "table": {
+        "x": 50,
+        "y": 3595.921875,
+        "width": 220,
+        "height": 201,
+        "top": 3595.921875,
+        "right": 270,
+        "bottom": 3796.921875,
+        "left": 50
+      },
+      "bodyFont": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 1,
+      "innerWidth": 390,
+      "outerWidth": 500,
+      "dpr": 1,
+      "scrollWidth": 390,
+      "selectWidth": 332,
+      "textWidth": 157.12033081054688,
+      "selectPadding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "table": {
+        "x": 85,
+        "y": -963.875,
+        "width": 220,
+        "height": 201,
+        "top": -963.875,
+        "right": 305,
+        "bottom": -762.875,
+        "left": 85
+      },
+      "bodyFont": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "zoom": 1,
+      "innerWidth": 736,
+      "outerWidth": 736,
+      "dpr": 1,
+      "scrollWidth": 736,
+      "selectWidth": 646,
+      "textWidth": 157.12033081054688,
+      "selectPadding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "table": {
+        "x": 258,
+        "y": -826.25,
+        "width": 220,
+        "height": 231,
+        "top": -826.25,
+        "right": 478,
+        "bottom": -595.25,
+        "left": 258
+      },
+      "bodyFont": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 1,
+      "innerWidth": 1440,
+      "outerWidth": 1440,
+      "dpr": 1,
+      "scrollWidth": 1440,
+      "selectWidth": 910,
+      "textWidth": 157.12033081054688,
+      "selectPadding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "table": {
+        "x": 610,
+        "y": 356.5,
+        "width": 220,
+        "height": 231,
+        "top": 356.5,
+        "right": 830,
+        "bottom": 587.5,
+        "left": 610
+      },
+      "bodyFont": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 1,
+      "innerWidth": 320,
+      "outerWidth": 500,
+      "dpr": 1,
+      "scrollWidth": 320,
+      "selectWidth": 262,
+      "textWidth": 140.83229064941406,
+      "selectPadding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "table": {
+        "x": 50,
+        "y": 2711.828125,
+        "width": 220,
+        "height": 201,
+        "top": 2711.828125,
+        "right": 270,
+        "bottom": 2912.828125,
+        "left": 50
+      },
+      "bodyFont": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 1,
+      "innerWidth": 390,
+      "outerWidth": 500,
+      "dpr": 1,
+      "scrollWidth": 390,
+      "selectWidth": 332,
+      "textWidth": 140.83229064941406,
+      "selectPadding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "table": {
+        "x": 85,
+        "y": -473.921875,
+        "width": 220,
+        "height": 201,
+        "top": -473.921875,
+        "right": 305,
+        "bottom": -272.921875,
+        "left": 85
+      },
+      "bodyFont": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "zoom": 1,
+      "innerWidth": 736,
+      "outerWidth": 736,
+      "dpr": 1,
+      "scrollWidth": 736,
+      "selectWidth": 646,
+      "textWidth": 140.83229064941406,
+      "selectPadding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "table": {
+        "x": 258,
+        "y": -393.984375,
+        "width": 220,
+        "height": 231,
+        "top": -393.984375,
+        "right": 478,
+        "bottom": -162.984375,
+        "left": 258
+      },
+      "bodyFont": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "innerWidth": 1440,
+      "outerWidth": 1440,
+      "dpr": 1,
+      "scrollWidth": 1440,
+      "selectWidth": 910,
+      "textWidth": 140.83229064941406,
+      "selectPadding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "table": {
+        "x": 610,
+        "y": 356.25,
+        "width": 220,
+        "height": 231,
+        "top": 356.25,
+        "right": 830,
+        "bottom": 587.25,
+        "left": 610
+      },
+      "bodyFont": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "innerWidth": 720,
+      "outerWidth": 1440,
+      "dpr": 2,
+      "scrollWidth": 720,
+      "selectWidth": 630,
+      "textWidth": 157.12033081054688,
+      "selectPadding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "table": {
+        "x": 250,
+        "y": 669.046875,
+        "width": 220,
+        "height": 231,
+        "top": 669.046875,
+        "right": 470,
+        "bottom": 900.046875,
+        "left": 250
+      },
+      "bodyFont": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "innerWidth": 720,
+      "outerWidth": 1440,
+      "dpr": 2,
+      "scrollWidth": 720,
+      "selectWidth": 630,
+      "textWidth": 140.83229064941406,
+      "selectPadding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "table": {
+        "x": 250,
+        "y": 610.796875,
+        "width": 220,
+        "height": 231,
+        "top": 610.796875,
+        "right": 470,
+        "bottom": 841.796875,
+        "left": 250
+      },
+      "bodyFont": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    }
+  ],
+  "screenshots": [
+    "en-copy-fallback.png",
+    "en-320-lab.png",
+    "en-320-controls.png",
+    "en-320-hand.png",
+    "en-320-header.png",
+    "en-320-prediction.png",
+    "en-390-lab.png",
+    "en-736-lab.png",
+    "en-1440-lab.png",
+    "zh-copy-fallback.png",
+    "zh-320-lab.png",
+    "zh-320-controls.png",
+    "zh-320-hand.png",
+    "zh-320-header.png",
+    "zh-320-prediction.png",
+    "zh-390-lab.png",
+    "zh-736-lab.png",
+    "zh-1440-lab.png",
+    "forced-colors.png",
+    "en-zoom200.png",
+    "en-zoom200-controls.png",
+    "zh-zoom200.png",
+    "zh-zoom200-controls.png"
+  ],
+  "checks": [
+    {
+      "lang": "en",
+      "option": 0,
+      "feedback": "Compare the row contributions and invariant again. Row 1 has at most four cells: min(4,6)=4. Row 2 contributes 2, 4, 6: three cells. Row 3 contributes 3, 6: two cells. So C(6)=4+3+2=9≥7; set hi=6, leaving [1,6]. A gives the wrong cell count and mistakes sufficiency for a final answer. B reverses the direction and discards the answer. The invariant still holds: C(0)=0<7≤C(6)=9. Duplicates can make the count exceed k; we cannot return mid yet."
+    },
+    {
+      "lang": "en",
+      "option": 1,
+      "feedback": "Compare the row contributions and invariant again. Row 1 has at most four cells: min(4,6)=4. Row 2 contributes 2, 4, 6: three cells. Row 3 contributes 3, 6: two cells. So C(6)=4+3+2=9≥7; set hi=6, leaving [1,6]. A gives the wrong cell count and mistakes sufficiency for a final answer. B reverses the direction and discards the answer. The invariant still holds: C(0)=0<7≤C(6)=9. Duplicates can make the count exceed k; we cannot return mid yet."
+    },
+    {
+      "lang": "en",
+      "option": 2,
+      "feedback": "Correct. Row 1 has at most four cells: min(4,6)=4. Row 2 contributes 2, 4, 6: three cells. Row 3 contributes 3, 6: two cells. So C(6)=4+3+2=9≥7; set hi=6, leaving [1,6]. A gives the wrong cell count and mistakes sufficiency for a final answer. B reverses the direction and discards the answer. The invariant still holds: C(0)=0<7≤C(6)=9. Duplicates can make the count exceed k; we cannot return mid yet."
+    },
+    {
+      "lang": "en",
+      "copy": "Full source copied."
+    },
+    {
+      "lang": "en",
+      "fallback": "Clipboard unavailable; the full source is selected for manual copying.",
+      "selectedCharacters": 419,
+      "clipboardReplacedSentinel": true
+    },
+    {
+      "lang": "zh",
+      "option": 0,
+      "feedback": "再对照逐行贡献与不变量。 第 1 行最多 4 格：min(4,6)=4；第 2 行取 2、4、6，共 3 格；第 3 行取 3、6，共 2 格。因此 C(6)=4+3+2=9≥7，应令 hi=6，留下 [1,6]。A 的格子总数错误，也把“够了”误当成最终答案；B 把方向反了，会排除答案。不变量仍成立：C(0)=0<7≤C(6)=9。重复值使计数可以超过 k；此刻还不能返回 mid。"
+    },
+    {
+      "lang": "zh",
+      "option": 1,
+      "feedback": "再对照逐行贡献与不变量。 第 1 行最多 4 格：min(4,6)=4；第 2 行取 2、4、6，共 3 格；第 3 行取 3、6，共 2 格。因此 C(6)=4+3+2=9≥7，应令 hi=6，留下 [1,6]。A 的格子总数错误，也把“够了”误当成最终答案；B 把方向反了，会排除答案。不变量仍成立：C(0)=0<7≤C(6)=9。重复值使计数可以超过 k；此刻还不能返回 mid。"
+    },
+    {
+      "lang": "zh",
+      "option": 2,
+      "feedback": "判断正确。 第 1 行最多 4 格：min(4,6)=4；第 2 行取 2、4、6，共 3 格；第 3 行取 3、6，共 2 格。因此 C(6)=4+3+2=9≥7，应令 hi=6，留下 [1,6]。A 的格子总数错误，也把“够了”误当成最终答案；B 把方向反了，会排除答案。不变量仍成立：C(0)=0<7≤C(6)=9。重复值使计数可以超过 k；此刻还不能返回 mid。"
+    },
+    {
+      "lang": "zh",
+      "copy": "已复制完整源代码。"
+    },
+    {
+      "lang": "zh",
+      "fallback": "剪贴板不可用；完整代码已选中，请手动复制。",
+      "selectedCharacters": 419,
+      "clipboardReplacedSentinel": true
+    },
+    "all presets and trace frames in both languages; replay; endpoints; reset; threshold values; all quiz choices; locale state; actual keyboard; focus; real clipboard/manual Ctrl+C/download parity; local anchors; denied storage; file offline; forced colors; reduced motion; native tab zoom 200%"
+  ],
+  "browser": "156.0.8078.4",
+  "contrast": [
+    {
+      "selector": ".explain",
+      "foreground": [
+        201,
+        212,
+        226
+      ],
+      "background": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 12.615602281385614,
+      "opacity": "1"
+    },
+    {
+      "selector": ".hint",
+      "foreground": [
+        154,
+        167,
+        184
+      ],
+      "background": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095,
+      "opacity": "1"
+    },
+    {
+      "selector": ".formula",
+      "foreground": [
+        232,
+        237,
+        244
+      ],
+      "background": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783,
+      "opacity": "1"
+    },
+    {
+      "selector": "#next",
+      "foreground": [
+        13,
+        17,
+        23
+      ],
+      "background": [
+        110,
+        231,
+        255
+      ],
+      "ratio": 13.100679028115637,
+      "opacity": "1"
+    },
+    {
+      "selector": "#prev:disabled",
+      "foreground": [
+        154,
+        167,
+        184
+      ],
+      "background": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069,
+      "opacity": "1"
+    },
+    {
+      "selector": "#langToggle .active",
+      "foreground": [
+        13,
+        17,
+        23
+      ],
+      "background": [
+        110,
+        231,
+        255
+      ],
+      "ratio": 13.100679028115637,
+      "opacity": "1"
+    },
+    {
+      "selector": "#countTable td.included",
+      "foreground": [
+        13,
+        17,
+        23
+      ],
+      "background": [
+        110,
+        231,
+        255
+      ],
+      "ratio": 13.100679028115637,
+      "opacity": "1"
+    },
+    {
+      "selector": "#labTable th",
+      "foreground": [
+        154,
+        167,
+        184
+      ],
+      "background": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443,
+      "opacity": "1"
+    },
+    {
+      "selector": "#feedback",
+      "foreground": [
+        232,
+        237,
+        244
+      ],
+      "background": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783,
+      "opacity": "1"
+    },
+    {
+      "selector": "#copy",
+      "foreground": [
+        13,
+        17,
+        23
+      ],
+      "background": [
+        110,
+        231,
+        255
+      ],
+      "ratio": 13.100679028115637,
+      "opacity": "1"
+    },
+    {
+      "selector": "#next focus (4px offset, adjacent parent surface)",
+      "ratio": 9.809435643476732,
+      "foreground": [
+        255,
+        180,
+        84
+      ],
+      "background": [
+        22,
+        27,
+        34
+      ]
+    },
+    {
+      "selector": ".table-wrap focus (4px offset, adjacent parent surface)",
+      "ratio": 10.731637051347173,
+      "foreground": [
+        255,
+        180,
+        84
+      ],
+      "background": [
+        13,
+        17,
+        23
+      ]
+    }
+  ],
+  "cssBytes": 12046
+}
