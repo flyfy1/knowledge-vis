@@ -23,3 +23,12 @@ EVIDENCE_DIR=leetcode/587/tests/evidence/r1-fix node leetcode/587/tests/preset-s
 ```
 
 This reads rendered selected options in both locales at 1365/320/390px, compares hand-calculated input/boundary counts, tests initial/event-4/final states and language-switch preservation, and checks selected text fits beside the native arrow. Screenshots cover Garden and Two pops. It uses a test-only instant-scroll style to avoid animation delays between the selector and locale buttons. The pre-fix red result is retained separately in `tests/evidence/r1-fix-before/`; later author results never close the independent finding.
+
+Mac integration repair regression (587-MAC-001):
+
+```sh
+PREVIEW_URL=http://127.0.0.1:18770 EVIDENCE_DIR=leetcode/587/tests/evidence/mac-fix node leetcode/587/tests/width-budget.cjs
+PREVIEW_URL=http://127.0.0.1:18770 EVIDENCE_DIR=leetcode/587/tests/evidence/mac-fix node leetcode/587/tests/preset-scope.cjs
+```
+
+`width-budget.cjs` records native selected-text measurements and a synthetic 17.6px (+10%) font-size sensitivity check in both locales for all six options at 320px, padding-only variation, and locale roundtrip. The stress checks leave at least 8px spare after reserving 16px for the native arrow. This is additional author regression coverage, not emulation of the actual Mac font. The original `preset-scope.cjs` fit assertion remains intact and covers 320/390/1365. Red baseline and original dispatcher Mac measurements are retained in `evidence/mac-fix-before/`; the insufficient initial padding attempt is retained in `evidence/mac-fix-intermediate/`. Final evidence goes in `evidence/mac-fix/`. Dispatcher must rerun the original native Mac regression and inspect rendering before closing the integration finding.
