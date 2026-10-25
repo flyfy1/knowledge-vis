@@ -1192,3 +1192,12 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Sorted capital frontier and max heap | `leetcode/502/#step2` | Admit each project once; extract the largest affordable profit. |
 
 <!-- /leetcode-502-campaign -->
+
+
+<!-- leetcode-591-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| tag-validation | `leetcode/591/#step2` | Ordered pending tags, one enclosing root and opaque CDATA scanning |
+
+<!-- /leetcode-591-campaign -->
