@@ -1391,3 +1391,12 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Binary search on distance | `leetcode/719/#step2` | Find the first threshold with at least k pairs. |
 
 <!-- /leetcode-719-campaign -->
+
+
+<!-- leetcode-730-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Counting distinct palindromes by outer character | `leetcode/730/#step2` | Use the earliest and latest occurrence to partition distinct palindrome strings without duplicates. |
+
+<!-- /leetcode-730-campaign -->
