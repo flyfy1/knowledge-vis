@@ -1833,3 +1833,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Python heap implementation | `leetcode/871/#step4` | Negative fuel values implement a max-heap with heapq. |
 
 <!-- /leetcode-871-campaign -->
+
+
+<!-- leetcode-878-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Count a union of multiples | `leetcode/878/#step1` | Subtract common multiples exactly once using their least common multiple. |
+| First-true integer binary search | `leetcode/878/#step2` | Retain the smallest integer whose inclusive count reaches the requested rank. |
+
+<!-- /leetcode-878-campaign -->
