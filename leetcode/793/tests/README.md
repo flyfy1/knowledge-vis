@@ -44,3 +44,10 @@ publication are not established by these checks.
 `supplement.cjs` checks full backwards traversal in both locales, final bound
 labels, 48px control geometry, disabled computed styles and contrast, focus
 geometry and contrast, forced colors, and keyboard scrolling of the source.
+
+Focused footer revision regression: `node leetcode/793/tests/copy-r1.cjs`.
+It writes only tests/evidence/copy-r1/ and checks the repaired copy against the
+captured original dictionary, protected hashes, rendered locale/state behavior,
+source transfers, keyboard order and page-end layout. Preserve frozen outputs
+when performing independent review (copy the lesson-local test/output paths to
+an isolated checkout). Historical suites and evidence above remain unchanged.

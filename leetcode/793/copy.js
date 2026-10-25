@@ -338,9 +338,5 @@ window.LESSON_COPY = {
   "related2": [
     "延伸 #668：寻找第一个足够的值",
     "Continue to #668: find the first sufficient value"
-  ],
-  "foot": [
-    "作者自查候选；独立教学评审待进行。没有声称 LeetCode 已接受或真实学习者已掌握。",
-    "Author self-checked candidate; independent teaching review is pending. No LeetCode acceptance or observed learner outcomes are claimed."
   ]
 };
