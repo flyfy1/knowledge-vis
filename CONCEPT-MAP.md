@@ -1040,3 +1040,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Endpoint dynamic programming | `leetcode/514/#step2` | Keep the cheapest spelling cost for every possible dial endpoint. |
 
 <!-- /leetcode-514-campaign -->
+
+
+<!-- leetcode-282-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Backtracking choices | `leetcode/282/#step1` | Cut or join each digit gap and undo after recursion. |
+| Precedence repair with last | `leetcode/282/#step2` | Replace the last additive term when multiplying. |
+
+<!-- /leetcode-282-campaign -->

@@ -1039,6 +1039,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(log₁₀ num) time; O(log₁₀ num) space"
   },
   {
+    "id": 282,
+    "title": {
+      "zh": "表达式添加运算符",
+      "en": "Expression Add Operators"
+    },
+    "desc": {
+      "zh": "用回溯枚举切分，用 last 修正乘法优先级。",
+      "en": "Enumerate cuts with backtracking and preserve precedence with last."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "回溯",
+        "en": "Backtracking"
+      },
+      {
+        "zh": "表达式求值",
+        "en": "Expression evaluation"
+      }
+    ],
+    "path": "282/",
+    "leetcodeUrl": "https://leetcode.com/problems/expression-add-operators/",
+    "language": "Python",
+    "complexity": "O(n·4^n) time; O(n²) recursion auxiliary space for immutable expression prefixes, plus output space"
+  },
+  {
     "id": 295,
     "title": {
       "zh": "数据流的中位数",
