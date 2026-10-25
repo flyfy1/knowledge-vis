@@ -69,3 +69,14 @@ review its completeness/optimality proof, boundary cases, executable behavior an
 teaching/source parity against that new frozen candidate. Keep high-memory tests
 off the constrained Pi. This is a diagnostic handoff, not a preemptive rejection
 of the still-active author's work.
+
+## Frozen-source reconciliation
+
+On 2026-10-26 Singapore time, the normal author had finished and central state recorded
+candidate `c7a325e5a48d2da000609ea93d23f8d255d03bdd`, with fresh independent review
+`818-review-23290c1abcd2` running. A read-only hash of its `solution.py` still
+matched `ba7639466dde736ade02f547425edca0bbac2734afa6a7ac03c91a59bbf29fb9`.
+Thus these callable measurements also apply to that frozen source. The ordinary
+review outcome is still pending; this observation does not replace it. Author
+evidence covers target 10000 and other cases, but does not list 9809. Future
+candidate changes require another source reconciliation before reusing results.
