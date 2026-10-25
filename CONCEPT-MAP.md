@@ -1288,3 +1288,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Pivot-letter branch filtering | `leetcode/691/#step2` | Reorder any solution to begin with a sticker covering a chosen missing letter. |
 
 <!-- /leetcode-691-campaign -->
+
+
+<!-- leetcode-715-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| 半开区间 / Half-open intervals | `leetcode/715/#step0` | Left included, right excluded; removal preserves the right endpoint. |
+| 边界奇偶性 / Endpoint parity | `leetcode/715/#step1` | Strictly increasing alternating endpoints encode tracked real intervals. |
+| 区间替换 / Interval replacement | `leetcode/715/#step2` | Parity determines new boundaries when assigning coverage on a range. |
+
+<!-- /leetcode-715-campaign -->
