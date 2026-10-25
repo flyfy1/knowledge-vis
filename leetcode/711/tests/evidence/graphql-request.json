@@ -1,0 +1,6 @@
+{
+  "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId title titleSlug isPaidOnly content exampleTestcases sampleTestCase\n    metaData codeSnippets { lang langSlug code }\n  }\n}",
+  "variables": {
+    "titleSlug": "number-of-distinct-islands-ii"
+  }
+}
