@@ -54,6 +54,20 @@ separate evidence. Self-review never substitutes for independent acceptance.
 Use the gate document for reviewer independence, six-dimension scoring,
 per-lesson coverage, revision scope, and required-finding closure.
 
+## Workflow records and learner copy
+
+Keep transient author, review and publication status in the BRIEF, self-check
+evidence, independent review reports and campaign/release records, not
+learner-facing lesson copy. Do not announce temporary workflow states such as
+“author candidate” or “independent review pending” in the lesson UI, or add
+workflow completion badges. Retain stable limitations that help the learner
+interpret the material, such as a teaching simulation not executing the displayed
+submission or a conceptual comparison differing from the original interface,
+beside the relevant content. Omitting workflow copy does not assert acceptance.
+Never insert an unearned completion claim or rewrite a frozen candidate after
+review to update status; any runtime-copy change follows the normal new-candidate
+and independent-review process.
+
 ## Before writing the page
 
 1. Open the official problem. Verify the definition, examples, constraints,
