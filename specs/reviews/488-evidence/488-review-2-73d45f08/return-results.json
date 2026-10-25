@@ -1,0 +1,136 @@
+{
+  "finding": "488-R1",
+  "status": "pass",
+  "answer": 2,
+  "returns": [
+    {
+      "event": "return",
+      "state": [
+        "RBRBBR",
+        ""
+      ],
+      "value": 6
+    },
+    {
+      "event": "return",
+      "state": [
+        "BRRBBR",
+        ""
+      ],
+      "value": 6
+    },
+    {
+      "event": "return",
+      "state": [
+        "BRBRBR",
+        ""
+      ],
+      "value": 6
+    },
+    {
+      "event": "return",
+      "state": [
+        "BRBBRR",
+        ""
+      ],
+      "value": 6
+    },
+    {
+      "event": "return",
+      "state": [
+        "BRBBR",
+        "R"
+      ],
+      "value": 6
+    },
+    {
+      "event": "return",
+      "state": [
+        "",
+        ""
+      ],
+      "value": 0
+    },
+    {
+      "event": "return",
+      "state": [
+        "RR",
+        "R"
+      ],
+      "value": 1
+    },
+    {
+      "event": "return",
+      "state": [
+        "RRBBRB",
+        ""
+      ],
+      "value": 6
+    },
+    {
+      "event": "return",
+      "state": [
+        "RBRBRB",
+        ""
+      ],
+      "value": 6
+    },
+    {
+      "event": "return",
+      "state": [
+        "RBBRRB",
+        ""
+      ],
+      "value": 6
+    },
+    {
+      "event": "return",
+      "state": [
+        "RBBRBR",
+        ""
+      ],
+      "value": 6
+    },
+    {
+      "event": "return",
+      "state": [
+        "RBBRB",
+        "R"
+      ],
+      "value": 6
+    },
+    {
+      "event": "return",
+      "state": [
+        "RRBBR",
+        "B"
+      ],
+      "value": 1
+    },
+    {
+      "event": "return",
+      "state": [
+        "RBRBR",
+        "B"
+      ],
+      "value": 6
+    },
+    {
+      "event": "return",
+      "state": [
+        "RBBRR",
+        "B"
+      ],
+      "value": 1
+    },
+    {
+      "event": "return",
+      "state": [
+        "RBBR",
+        "BR"
+      ],
+      "value": 2
+    }
+  ],
+  "parentUpdatesVerified": true
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "board": "YRRYY",
+    "hand": "RY",
+    "prediction": 1,
+    "actual": 1,
+    "oracle": 1
+  },
+  {
+    "board": "YRRBY",
+    "hand": "RBB",
+    "prediction": -1,
+    "actual": -1,
+    "oracle": -1
+  },
+  {
+    "board": "RRBBRR",
+    "hand": "R",
+    "prediction": -1,
+    "actual": -1,
+    "oracle": -1
+  },
+  {
+    "board": "RBRB",
+    "hand": "RB",
+    "prediction": -1,
+    "actual": -1,
+    "oracle": -1
+  },
+  {
+    "board": "",
+    "hand": "R",
+    "prediction": 0,
+    "actual": 0,
+    "oracle": 0
+  },
+  {
+    "board": "R",
+    "hand": "",
+    "prediction": -1,
+    "actual": -1,
+    "oracle": -1
+  },
+  {
+    "board": "Y",
+    "hand": "YY",
+    "prediction": 2,
+    "actual": 2,
+    "oracle": 2
+  },
+  {
+    "board": "YY",
+    "hand": "Y",
+    "prediction": 1,
+    "actual": 1,
+    "oracle": 1
+  },
+  {
+    "board": "RRBBYYGGYYBBRRWW",
+    "hand": "GW",
+    "prediction": 2,
+    "actual": 2,
+    "oracle": 2
+  },
+  {
+    "board": "RBRBRBRBRBRBRBRB",
+    "hand": "YYYYY",
+    "prediction": -1,
+    "actual": -1,
+    "oracle": -1
+  }
+]

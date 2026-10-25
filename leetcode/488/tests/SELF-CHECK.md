@@ -85,3 +85,76 @@ not spawn reviewers or agents. The independent reviewer should start with only
 the preview URL and frozen identity, before reading this report or the brief.
 `evidence/candidate.json` identifies the final source, tests, evidence and shared
 asset hashes. Any later source or metadata correction creates a new candidate.
+
+## Revision 2 — 488-R1 fixed awaiting independent review
+
+This appends author evidence to the original self-check. Historical review
+`specs/reviews/488-review-1-a9cfefd1.md` remains unchanged. New candidate:
+`488-repair-v2`, identified by `evidence/revision-2/candidate.json`; no commit,
+registration, acceptance update or release is claimed.
+
+**Fix mapping:** 488-R1 → section 5, `returnTitle`, `returnFailure`,
+`returnSibling`, `returnMinimum` in `copy.js` and their visible HTML bindings.
+The bilingual worked sequence follows parent `(RBBR,BR)` → failed child
+`(BRBBR,R)` returning 6 → unchanged parent best `min(6,1+6)=6` → next B gap 1
+collapsing RBBBR to RR → child `(RR,R)` → empty child returning 0 → child
+returning 1 → parent best `min(6,1+1)=2`. It explains immutable string arguments,
+no undo, the remaining enumeration, the lower bound, sentinel meaning, and
+future cost versus previously spent balls. Sampled branches are explicitly
+labeled; no complete search trace is implied. Existing layout and tokens reused.
+
+The focused regression initially failed for the missing rendered bridge
+(`returnTitle`); after the repair it passes. `test_returns.py` observes the actual
+canonical Python calls/returns and parent local variables, including both best
+updates and final return 2. This is author runtime evidence, not independent
+acceptance. See `revision-2/initial-regression.json` and `return-results.json`.
+
+All commands ran from the repository root, with
+`OUTPUT_DIR=leetcode/488/tests/evidence/revision-2` for emitting test suites:
+
+- `python3 -B leetcode/488/tests/test_returns.py`: PASS, concrete returns and
+  immutable parent arguments across the two sibling branches.
+- `python3 -B leetcode/488/tests/test_solution.py`: PASS, 656 cases / 532
+  exhaustive cases, 172 actual solve entries and 280 collapse returns.
+- `python3 -B leetcode/488/tests/test_contract.py`: PASS, 99 unique bilingual
+  pairs, exact canonical/mirror parity and 5 visible baseline executions.
+- `node leetcode/488/tests/test_core.cjs`: PASS, 19 frames and stable-state,
+  remaining-hand/spent-ball accounting and source parity checks.
+- `node leetcode/488/tests/browser.cjs`: PASS, existing controls and presets,
+  both locales at 320/390/736/1440, locale changes after interaction, complete
+  recurrence, prediction scope/change invalidation, rewind/replay, clipboard
+  success and actual fallback keyboard copy, exact display/download/mirror,
+  offline source and blocked storage. New bridge text checked in both locales
+  and captured at 320/390/1440. Zero page/console/HTTP errors. Full rendered
+  bridge text is recorded under finding 488-R1 in `browser-results.json`.
+- `node leetcode/488/tests/zoom.cjs`: PASS, actual tab zoom read back as 2,
+  both locales at physical widths 1440/780 (effective 720/390). New paragraphs
+  additionally captured at effective 390 with no page overflow.
+- `python3 -B scripts/register_leetcode_lesson.py 488 --validate-only`: PASS,
+  exit 0, empty stdout/stderr; exact cwd/command/time in
+  `revision-2/preflight.json`. Metadata already has one nonempty time-and-space
+  complexity string, so no metadata repair was needed. Registration never ran.
+
+Visually opened EN/zh 320 sibling paragraphs and EN/zh effective-390 actual
+200% zoom minimum paragraphs. Board/hand strings, return values and formulas
+wrap readably; no text collisions observed. Each paragraph is ordinary page
+content, so viewport screenshots may show adjoining paragraphs partially above
+or below the scroll position. Browser records all paragraph text separately.
+Existing ball diagrams, stable/pending phase labels and path/answer accounting
+retain their regression coverage. Contrast remains the existing measured pairs;
+CSS is unchanged at 11,827 combined bytes.
+
+Canonical Python and its mirror are unchanged; regeneration was unnecessary.
+Read registration policy's exact Python triple `solution.py`, `python-code.js`,
+`PYTHON_SOURCE`. Existing official selector evidence includes faithful Python3
+and TypeScript; Python remains the preferred selected interface. There is no
+non-Python language contract or supportedLanguages list that omits them.
+`revision-2/served-parity.json` verifies all seven lesson runtime/source assets
+served by the supplied preview match local bytes exactly. New source/test hashes
+freeze this candidate for separate review.
+
+Independent reviewer next action: fresh walkthrough of the recursive bridge and
+its prerequisites in both locales; compare the concrete returns with canonical
+Python and decide closure of 488-R1. No finding is marked independently closed.
+Real devices, novice teach-back, online judging and production delivery remain
+unverified. Only `leetcode/488/` changed; no child agents were used.

@@ -1,0 +1,264 @@
+{
+  "status": "pass",
+  "log": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "events": 3,
+      "endpoints": true,
+      "rewind": true
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "events": 3,
+      "endpoints": true,
+      "rewind": true
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "events": 5,
+      "endpoints": true,
+      "rewind": true
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "events": 4,
+      "endpoints": true,
+      "rewind": true
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "events": 3,
+      "endpoints": true,
+      "rewind": true
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "events": 3,
+      "endpoints": true,
+      "rewind": true
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "events": 5,
+      "endpoints": true,
+      "rewind": true
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "events": 4,
+      "endpoints": true,
+      "rewind": true
+    }
+  ],
+  "semantic": [
+    {
+      "lang": "en",
+      "state": "RR/B",
+      "observed": "State (RR, B): there are only two R balls in total, so no triple can ever form. Minimum remaining cost = −1 (impossible). The same board has a different answer."
+    },
+    {
+      "lang": "en",
+      "state": "RR/R",
+      "observed": "State (RR, R): insert R to get RRR, then remove it. Minimum remaining cost = 1 ball."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "endpoint": "Exact answer for this input = 1. One ball clears it; zero cannot clear a nonempty board."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "endpoint": "Exact answer for this input = 2. A lone G needs two more to form a triple; the hand has enough. The other three need not be used."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "endpoint": "Exact answer for this input = 2. Add R, then B; the four W balls finally disappear in a cascade. Zero cannot work, and no single insertion clears both separated RR and BB groups, so at least two are needed."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "endpoint": "Exact answer for this input = -1. There are only two W balls across board and hand, so they can never form a triple. No path can clear the board."
+    },
+    {
+      "lang": "en",
+      "answer": "0",
+      "feedback": "Revise this conclusion. The hands have identical color counts, so these are the same state. Insert B: RBBBR → RR. Then insert R: RRR → empty, for 2 balls. A single B leaves RR; a single R cannot remove BB, so 1 is insufficient. Hand order does not restrict choices; board order determines adjacency."
+    },
+    {
+      "lang": "en",
+      "answer": "1",
+      "feedback": "Revise this conclusion. The hands have identical color counts, so these are the same state. Insert B: RBBBR → RR. Then insert R: RRR → empty, for 2 balls. A single B leaves RR; a single R cannot remove BB, so 1 is insufficient. Hand order does not restrict choices; board order determines adjacency."
+    },
+    {
+      "lang": "en",
+      "answer": "2",
+      "feedback": "Correct prediction. The hands have identical color counts, so these are the same state. Insert B: RBBBR → RR. Then insert R: RRR → empty, for 2 balls. A single B leaves RR; a single R cannot remove BB, so 1 is insufficient. Hand order does not restrict choices; board order determines adjacency."
+    },
+    {
+      "lang": "en",
+      "formula": "F(empty,H)=0; F(b,H)=min[1+F(collapse(insert(b,c,i)), H−{c})] over every available color c and gap i; no successful branch means ∞.",
+      "operation": "Insert R at gap 2; spend one R from the hand, then check for runs.",
+      "progress": "Event 1/5 · Balls spent on this path: 1 · Removal pending: do not insert another ball yet"
+    },
+    {
+      "finding": "488-R1",
+      "lang": "en",
+      "bridge": {
+        "returnTitle": "Follow a call back, then try its sibling",
+        "returnFailure": "Trace the state from the exercise: solve(\"RBBR\", \"BR\") must return the fewest balls still needed. The parent starts with best=6. Here 6 means failure, not six balls spent, because the hand holds at most five. Take B, making rest=\"R\". Inserting at gap 0 makes BRBBR without removal. The child solve(\"BRBBR\", \"R\") has only one R: no R insertion forms a consecutive triple, and the board stays nonempty, so every branch fails and the child returns 6. Back in the parent, best=min(6,1+6)=6; this failed branch does not improve the answer.",
+        "returnSibling": "After the return, the parent still holds row=\"RBBR\" and remaining=\"BR\". Slicing and concatenation created new strings; the child has its own row and remaining arguments. It did not modify the parent strings in place, so no undo is needed. The parent gap loop next tries the same B at gap 1: RBBBR loses BBB and becomes RR, still with rest=\"R\". The child solve(\"RR\", \"R\") inserts R to make RRR, removes it, then calls solve(\"\", \"\"). The empty board returns 0. That child therefore sets best=min(6,1+0)=1 and returns 1.",
+        "returnMinimum": "Back in the original parent, best=min(6,1+1)=2: the outer 1 pays for its B insertion, and the returned 1 pays for the later R. All removals are free. Finding 2 does not end this parent call; the code returns early only on finding 1 for a nonempty board. It checks the other unskipped B gaps and R insertions, then returns the minimum, 2. A single B leaves at least RR; a single R cannot remove BB, so no branch can beat 2. We have hand-worked just two neighboring branches, not the whole search tree. The cache saves the future minimum 2, not the balls already spent reaching this state."
+      }
+    },
+    {
+      "lang": "zh",
+      "state": "RR/B",
+      "observed": "状态 (RR, B)：总共只有两颗 R，没有办法组成三颗，剩余最小代价 = −1（不可能）。相同棋盘，答案却不同。"
+    },
+    {
+      "lang": "zh",
+      "state": "RR/R",
+      "observed": "状态 (RR, R)：插 R 得 RRR，再消除，剩余最小代价 = 1 球。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "endpoint": "本输入的精确答案 = 1。一球清空；非空棋盘不能用零球清空。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "endpoint": "本输入的精确答案 = 2。单个 G 需要再补两颗才能成三；手里够用。多余三颗不必使用。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "endpoint": "本输入的精确答案 = 2。先补 R 再补 B，最后四颗 W 连锁消除。零球不行；任意一球都无法同时清掉两种被隔开的 RR 和 BB，因此至少两球。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "endpoint": "本输入的精确答案 = -1。W 在棋盘与手牌中一共只有两颗，永远无法组成三颗；所以任何路径都不能清空。"
+    },
+    {
+      "lang": "zh",
+      "answer": "0",
+      "feedback": "这个结论需要修正。 两手牌的颜色计数相同，所以都是同一状态。插 B：RBBBR → RR；再插 R：RRR → 空，共 2 球。一球 B 只剩 RR；一球 R 不会消掉 BB；因此 1 球不够。手牌顺序不限制选择，棋盘顺序却决定哪些球相邻。"
+    },
+    {
+      "lang": "zh",
+      "answer": "1",
+      "feedback": "这个结论需要修正。 两手牌的颜色计数相同，所以都是同一状态。插 B：RBBBR → RR；再插 R：RRR → 空，共 2 球。一球 B 只剩 RR；一球 R 不会消掉 BB；因此 1 球不够。手牌顺序不限制选择，棋盘顺序却决定哪些球相邻。"
+    },
+    {
+      "lang": "zh",
+      "answer": "2",
+      "feedback": "预测正确。 两手牌的颜色计数相同，所以都是同一状态。插 B：RBBBR → RR；再插 R：RRR → 空，共 2 球。一球 B 只剩 RR；一球 R 不会消掉 BB；因此 1 球不够。手牌顺序不限制选择，棋盘顺序却决定哪些球相邻。"
+    },
+    {
+      "lang": "zh",
+      "formula": "F(空,H)=0；F(b,H)=min[1+F(collapse(插入(b,c,i)), H−{c})]，枚举手中颜色 c 与所有空隙 i；无成功分支为 ∞。",
+      "operation": "在空隙 2 插入 R，手牌扣除一颗 R；随后检查连续段。",
+      "progress": "事件 1/5 · 此路径已用 1 球 · 待继续消除，不可插下一球"
+    },
+    {
+      "finding": "488-R1",
+      "lang": "zh",
+      "bridge": {
+        "returnTitle": "跟着一次调用返回，再试相邻分支",
+        "returnFailure": "用刚才的状态跟踪 solve(\"RBBR\", \"BR\")：父调用要返回最少还需几球，先设 best=6。这里 6 表示失败，不是花了六球，因为手牌最多只有五球。先取 B，rest=\"R\"；在空隙 0 插入后得到 BRBBR，没有消除。子调用 solve(\"BRBBR\", \"R\") 只剩一颗 R：所有 R 插法都凑不出连续三颗，棋盘又不空，所以各分支失败，子调用返回 6。回到父调用，best=min(6,1+6)=6；这个失败分支没有改善答案。",
+        "returnSibling": "返回后，父调用仍持有 row=\"RBBR\"、remaining=\"BR\"。切片与拼接创建了新的字符串，子调用中的 row 和 remaining 是子调用自己的参数；它没有就地改掉父调用的字符串，因此不用撤销。父调用的 gap 循环接着试同一颗 B 的空隙 1：RBBBR 消除 BBB 后变成 RR，仍用 rest=\"R\"。子调用 solve(\"RR\", \"R\") 插 R 得到 RRR，消除后调用 solve(\"\", \"\")，空棋盘返回 0。因此这个子调用的 best=min(6,1+0)=1，并返回 1。",
+        "returnMinimum": "现在回到原父调用，best=min(6,1+1)=2：外面的 1 是父调用插入的 B，子调用返回的 1 是以后插入的 R，消除都免费。父调用不能因为找到 2 就提前返回；代码只在非空棋盘找到 1 时提前返回。它还会检查其余未跳过的 B 空隙与 R 插法，最后返回最小值 2。一球 B 最多留下 RR，一球 R 消不掉 BB，所以没有分支能低于 2。这只手算了两个相邻分支，不是完整搜索树；缓存保存的是未来最少球数 2，不是走到这里已经用掉的球数。"
+      }
+    },
+    {
+      "lang": "en",
+      "copyFallback": "Clipboard unavailable. The full source is selected below; copy it manually."
+    },
+    {
+      "lang": "zh",
+      "copyFallback": "剪贴板不可用。下方已选中完整源码，请手动复制。"
+    }
+  ],
+  "viewports": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "200% CSS zoom in real headless Chromium at 1440px; not OS/browser chrome zoom",
+  "sourceDisplayMirrorClipboardDownloadParity": true,
+  "manualFallbackKeyboardCopyParity": true,
+  "blockedStorage": true,
+  "outline": {
+    "width": "3px",
+    "offset": "4px",
+    "color": "rgb(255, 180, 84)",
+    "style": "solid"
+  },
+  "contrasts": [
+    {
+      "name": "body",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "name": "muted on panel",
+      "foreground": "#9aa7b8",
+      "background": "#161b22",
+      "ratio": 7.078851579017443
+    },
+    {
+      "name": "ball",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "name": "disabled",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "name": "primary",
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "name": "focus on panel",
+      "foreground": "#ffb454",
+      "background": "#161b22",
+      "ratio": 9.809435643476732
+    },
+    {
+      "name": "text on panel2",
+      "foreground": "#e8edf4",
+      "background": "#1c2330",
+      "ratio": 13.397069143240783
+    }
+  ],
+  "errors": [],
+  "localAssetRequests": [
+    "http://127.0.0.1:18770/leetcode/488/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/488/style.css?v=1",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/488/copy.js?v=2",
+    "http://127.0.0.1:18770/leetcode/488/core.js?v=1",
+    "http://127.0.0.1:18770/leetcode/488/python-code.js?v=1",
+    "http://127.0.0.1:18770/leetcode/488/app.js?v=1"
+  ]
+}

@@ -53,6 +53,23 @@ function ratio(a,b){a=lum(a);b=lum(b);return (Math.max(a,b)+.05)/(Math.min(a,b)+
   await page.locator('[name="prediction"][value="0"]').check();assert(!(await page.locator('#feedback').textContent()).includes('RBBBR'));
   await page.selectOption('#preset','2');await page.locator('#next').click();const state=await snapshot();await page.locator(`[data-lang="${lang==='en'?'zh':'en'}"]`).click();await page.locator(`[data-lang="${lang}"]`).click();assert.deepEqual(await snapshot(),state);
   const formula=await page.locator('[data-i18n="formula"]').textContent();assert(formula.includes('1+F(collapse('));assert(formula.includes('H−{c}'));semantic.push({lang,formula,operation:await page.locator('#operation').textContent(),progress:await page.locator('#progress').textContent()});
+  const bridge={};
+  for(const key of ['returnTitle','returnFailure','returnSibling','returnMinimum']){
+   bridge[key]=await page.locator(`[data-i18n="${key}"]`).textContent();
+   assert.equal(bridge[key],await page.evaluate(({key,lang})=>COPY[key][lang==='zh'?0:1],{key,lang}));
+  }
+  assert(bridge.returnFailure.includes('best=min(6,1+6)=6'));
+  assert(bridge.returnSibling.includes('best=min(6,1+0)=1'));
+  assert(bridge.returnMinimum.includes('best=min(6,1+1)=2'));
+  semantic.push({finding:'488-R1',lang,bridge});
+  for(const width of [320,390,1440]){
+   await page.setViewportSize({width,height:1000});
+   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+   for(const key of ['returnFailure','returnSibling','returnMinimum']){
+    await page.locator(`[data-i18n="${key}"]`).scrollIntoViewIfNeeded();
+    await page.screenshot({path:path.join(out,`${lang}-${width}-${key}.png`)});
+   }
+  }
   for(const width of [320,390,736,1440]){
    await page.setViewportSize({width,height:1000});
    for(let p=0;p<4;p++){await page.selectOption('#preset',String(p));const frames=await page.evaluate(p=>ZumaLesson.trace(ZumaLesson.presets[p]),p);for(let i=1;i<frames.length;i++){await page.locator('#next').click();assert.equal(await page.locator('#afterText').textContent(),frames[i].row||(lang==='zh'?'空 ∅':'Empty ∅'));assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}}

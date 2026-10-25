@@ -117,3 +117,15 @@ scrolling reveals long rows, while the complete string below each diagram stays
 visible. At the longest teaching insertion there are 9 balls. Both locales have
 actual Chromium tab-zoom checks at 200%, supplementing CSS zoom tests. The test
 extension lives only in `tests/zoom-extension/` and is not a page asset.
+
+## Review repair candidate v2 — 488-R1
+The existing independent review requires a concrete recursive return bridge.
+Reuse section 5 and its paragraph styling; no new layout or widget. P0 and the
+highest-return slice: work parent RBBR/BR, failed child BRBBR/R returning 6,
+then sibling RR/R returning 1 via the empty state, updating parent best to 2.
+Explain immutable caller arguments and why no undo occurs. The other branches
+remain explicitly omitted from the hand calculation, but are checked by Python.
+P1: focused runtime-return and bilingual rendered-text regressions. P2/deferred:
+additional search-tree visualization, since the review requests only a short
+worked explanation and the existing five-section design already owns this task.
+Use existing tokens and locale lifecycle. Independent closure remains pending.
