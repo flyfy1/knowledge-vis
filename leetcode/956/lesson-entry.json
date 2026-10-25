@@ -1,0 +1,38 @@
+{
+  "id": 956,
+  "title": {
+    "zh": "最高的广告牌",
+    "en": "Tallest Billboard"
+  },
+  "desc": {
+    "zh": "从焊接两根等高支架，推导高度差动态规划。",
+    "en": "Derive difference-state DP by welding two equal supports."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "动态规划",
+      "en": "Dynamic programming"
+    },
+    {
+      "zh": "状态压缩",
+      "en": "State compression"
+    }
+  ],
+  "path": "956/",
+  "leetcodeUrl": "https://leetcode.com/problems/tallest-billboard/",
+  "language": "Python",
+  "complexity": "O(nS) expected time; O(S) auxiliary space, S = sum(rods)",
+  "concepts": [
+    {
+      "name": "Difference-state DP",
+      "step": 2,
+      "description": "Keep the best shorter support per absolute height gap."
+    },
+    {
+      "name": "Snapshot updates",
+      "step": 4,
+      "description": "Read old prefix states to use each rod at most once."
+    }
+  ]
+}

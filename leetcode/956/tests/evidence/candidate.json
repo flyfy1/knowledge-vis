@@ -1,0 +1,24 @@
+{
+  "candidate": "956-author-1",
+  "createdAt": "2026-10-25T16:52:10.211204+00:00",
+  "status": "author-ready; independent review pending",
+  "baseCommit": "154c1becf178b798dfbd80acbb79fabdd262ae68",
+  "files": {
+    "BRIEF.md": "1220caac06d4e414d7e4bcb3d994610a4dc4f9ce19f7ca28ece7554b67b3ffe8",
+    "app.js": "cbc1e41b73a33919084ade648c6505fd6bac0ec9719430b6235520181b2e4c32",
+    "copy.js": "872ece4bb291745e20d74708b0ece42a7ed4ef58ed3613dc01ba13e68e53fb5d",
+    "core.js": "f7b79cc1dff4ee82c9d09d7a6763d22b21046846ce41a06474f68cf5e70ce396",
+    "index.html": "e5a0add8198360b9e3ae4655e82433c32fa5c896d56e7f651f62271959ab6cce",
+    "lesson-entry.json": "73aa84b4b535278027176b6fa2d68250bfeddbf37d7af901fc3f25195bc8e9b2",
+    "python-code.js": "0274b9fc2ac70541067a7a61a5073fedb890d05b1e1ba9f9a2ad1180a2028ab3",
+    "solution.py": "87fc37cd8f9a07072d49ad9759cbfdf14f922e0ebdcf92f96d28df6504cd41ce",
+    "style.css": "53e25a13dac7c5589bcda2fda95fa0a7e24c8ed86ee706dede700b99304b897a",
+    "tests/README.md": "829cfe4f67bd2f82740a0ce9a7bbbf01ea07ee3dacced7749c586f0fada6f925",
+    "tests/SELF-CHECK.md": "b9ba5a0252932b9d643156a5ce1590b3e1fbdc9286f79a020022edd1e6d0af06",
+    "tests/browser.cjs": "82ed02a171a7f1aa83c4ad4111e6ca8c9b386856a4f0e6a32d0d379a1d6bbc79",
+    "tests/evidence/official-source.md": "85ec4e488ff29e3b05a0a5388d62d630c928141198d7c3a5e3db5d19fcea4908",
+    "tests/evidence/official.json": "6d8a3d2567c630380acb3507e45dddee70386d9fd76adbc8f3be801e1daaa3c4",
+    "tests/test_core.cjs": "02a9fdff96e7f20a1d221a45d4e78ae16f6ca29aab55c06739d1aad335ec1bf7",
+    "tests/test_solution.py": "ca267d5215a706a52ba4abadb463d5bf45c7a291719557e9af7052ec84e01aa9"
+  }
+}
