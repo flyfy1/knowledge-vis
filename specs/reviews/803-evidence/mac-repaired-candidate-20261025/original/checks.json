@@ -1,0 +1,36 @@
+[
+  {
+    "id": 803,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "803",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.037
+  },
+  {
+    "id": 803,
+    "name": "check.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/803/tests/check.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.452
+  },
+  {
+    "id": 803,
+    "name": "browser.cjs",
+    "command": [
+      "node",
+      "leetcode/803/tests/browser.cjs"
+    ],
+    "exit_code": 1,
+    "seconds": 1.54
+  }
+]

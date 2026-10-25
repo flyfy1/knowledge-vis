@@ -1,0 +1,369 @@
+{
+  "url": "http://127.0.0.1:18785/leetcode/803/",
+  "host": "darwin",
+  "clipboard": "native success and four fresh-sentinel manual transfers, exact final newline",
+  "zoomMethod": "CSS zoom 2 on html: doubles all layout/control/font sizes at each viewport",
+  "evidence": [
+    {
+      "lang": "en",
+      "p": 0,
+      "final": "[2]",
+      "detail": "Original index i=0, cell (1,0): R 2 → 5; fallen count 2. The newly connected group includes the restored brick; exclude it."
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "final": "[0, 0]",
+      "detail": "Original index i=0, cell (1,1): R 3 → 4; fallen count 0. The newly connected group includes the restored brick; exclude it."
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "final": "[0, 0]",
+      "detail": "Original index i=0, cell (1,1): R 5 → 6; fallen count 0. The newly connected group includes the restored brick; exclude it."
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "final": "[2, 0]",
+      "detail": "Original index i=0, cell (1,0): R 2 → 5; fallen count 2. The newly connected group includes the restored brick; exclude it."
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "final": "[0, 0]",
+      "detail": "Original index i=0, cell (0,1): R 2 → 2; fallen count 0. Originally empty: skip; no brick added."
+    },
+    {
+      "lang": "en",
+      "choice": "0",
+      "feedback": "Revise this prediction. The first hit disconnects (1,1), (1,2), and (2,1): three fall. The second hit finds (1,2) empty: zero fall. In reverse, restoring (1,2) leaves it disconnected and R stays 2. Restoring (1,0) grows R from 2 to 6: 6−2−1=3. [2,1] misses the whole-group fall at the first hit; [4,0] counts the directly erased brick."
+    },
+    {
+      "lang": "en",
+      "choice": "1",
+      "feedback": "Revise this prediction. The first hit disconnects (1,1), (1,2), and (2,1): three fall. The second hit finds (1,2) empty: zero fall. In reverse, restoring (1,2) leaves it disconnected and R stays 2. Restoring (1,0) grows R from 2 to 6: 6−2−1=3. [2,1] misses the whole-group fall at the first hit; [4,0] counts the directly erased brick."
+    },
+    {
+      "lang": "en",
+      "choice": "2",
+      "feedback": "Correct. The first hit disconnects (1,1), (1,2), and (2,1): three fall. The second hit finds (1,2) empty: zero fall. In reverse, restoring (1,2) leaves it disconnected and R stays 2. Restoring (1,0) grows R from 2 to 6: 6−2−1=3. [2,1] misses the whole-group fall at the first hit; [4,0] counts the directly erased brick."
+    },
+    {
+      "lang": "en",
+      "copyStatus": "Full source copied."
+    },
+    {
+      "lang": "en",
+      "repeat": 0,
+      "host": "darwin",
+      "shortcut": "Meta+c",
+      "fallbackStatus": "Automatic copy is unavailable. Full source selected; use your system copy shortcut.",
+      "sentinelVerified": true,
+      "transferExact": true
+    },
+    {
+      "lang": "en",
+      "repeat": 1,
+      "host": "darwin",
+      "shortcut": "Meta+c",
+      "fallbackStatus": "Automatic copy is unavailable. Full source selected; use your system copy shortcut.",
+      "sentinelVerified": true,
+      "transferExact": true
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "final": "[2]",
+      "detail": "原下标 i=0，位置 (1,0)：R 2 → 5；本次掉落数 2。新接入的组含补回砖，减去它。"
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "final": "[0, 0]",
+      "detail": "原下标 i=0，位置 (1,1)：R 3 → 4；本次掉落数 0。新接入的组含补回砖，减去它。"
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "final": "[0, 0]",
+      "detail": "原下标 i=0，位置 (1,1)：R 5 → 6；本次掉落数 0。新接入的组含补回砖，减去它。"
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "final": "[2, 0]",
+      "detail": "原下标 i=0，位置 (1,0)：R 2 → 5；本次掉落数 2。新接入的组含补回砖，减去它。"
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "final": "[0, 0]",
+      "detail": "原下标 i=0，位置 (0,1)：R 2 → 2；本次掉落数 0。原始空位：跳过，不增加任何砖。"
+    },
+    {
+      "lang": "zh",
+      "choice": "0",
+      "feedback": "需要修正。 第一次敲后 (1,1)、(1,2)、(2,1) 都失去屋顶路径，掉落 3 块；第二次 (1,2) 已是空位，掉落 0。倒序先补 (1,2) 仍悬空，R=2 不变；再补 (1,0)，R 从 2 到 6，6−2−1=3。[2,1] 忽略了第一击的整组掉落；[4,0] 多算了直接敲中的砖。"
+    },
+    {
+      "lang": "zh",
+      "choice": "1",
+      "feedback": "需要修正。 第一次敲后 (1,1)、(1,2)、(2,1) 都失去屋顶路径，掉落 3 块；第二次 (1,2) 已是空位，掉落 0。倒序先补 (1,2) 仍悬空，R=2 不变；再补 (1,0)，R 从 2 到 6，6−2−1=3。[2,1] 忽略了第一击的整组掉落；[4,0] 多算了直接敲中的砖。"
+    },
+    {
+      "lang": "zh",
+      "choice": "2",
+      "feedback": "正确。 第一次敲后 (1,1)、(1,2)、(2,1) 都失去屋顶路径，掉落 3 块；第二次 (1,2) 已是空位，掉落 0。倒序先补 (1,2) 仍悬空，R=2 不变；再补 (1,0)，R 从 2 到 6，6−2−1=3。[2,1] 忽略了第一击的整组掉落；[4,0] 多算了直接敲中的砖。"
+    },
+    {
+      "lang": "zh",
+      "copyStatus": "已复制完整源码。"
+    },
+    {
+      "lang": "zh",
+      "repeat": 0,
+      "host": "darwin",
+      "shortcut": "Meta+c",
+      "fallbackStatus": "自动复制不可用。已选中完整源码，请使用系统复制快捷键。",
+      "sentinelVerified": true,
+      "transferExact": true
+    },
+    {
+      "lang": "zh",
+      "repeat": 1,
+      "host": "darwin",
+      "shortcut": "Meta+c",
+      "fallbackStatus": "自动复制不可用。已选中完整源码，请使用系统复制快捷键。",
+      "sentinelVerified": true,
+      "transferExact": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "overflow": false,
+      "trace": "Original index i=0, cell (1,0): R 2 → 5; fallen count 2. The newly connected group includes the restored brick; exclude it.",
+      "formula": "result[i] = max(0, R_after − R_before − 1)"
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "overflow": false,
+      "trace": "Original index i=0, cell (1,0): R 2 → 5; fallen count 2. The newly connected group includes the restored brick; exclude it.",
+      "formula": "result[i] = max(0, R_after − R_before − 1)"
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "overflow": false,
+      "trace": "Original index i=0, cell (1,0): R 2 → 5; fallen count 2. The newly connected group includes the restored brick; exclude it.",
+      "formula": "result[i] = max(0, R_after − R_before − 1)"
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "overflow": false,
+      "trace": "Original index i=0, cell (1,0): R 2 → 5; fallen count 2. The newly connected group includes the restored brick; exclude it.",
+      "formula": "result[i] = max(0, R_after − R_before − 1)"
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "overflow": false,
+      "trace": "Original index i=0, cell (1,0): R 2 → 5; fallen count 2. The newly connected group includes the restored brick; exclude it.",
+      "formula": "result[i] = max(0, R_after − R_before − 1)"
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "overflow": false,
+      "trace": "Original index i=0, cell (1,0): R 2 → 5; fallen count 2. The newly connected group includes the restored brick; exclude it.",
+      "formula": "result[i] = max(0, R_after − R_before − 1)"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "overflow": false,
+      "trace": "Original index i=0, cell (1,0): R 2 → 5; fallen count 2. The newly connected group includes the restored brick; exclude it.",
+      "formula": "result[i] = max(0, R_after − R_before − 1)"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "overflow": false,
+      "trace": "Original index i=0, cell (1,0): R 2 → 5; fallen count 2. The newly connected group includes the restored brick; exclude it.",
+      "formula": "result[i] = max(0, R_after − R_before − 1)"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "overflow": false,
+      "trace": "原下标 i=0，位置 (1,0)：R 2 → 5；本次掉落数 2。新接入的组含补回砖，减去它。",
+      "formula": "result[i] = max(0, R后 − R前 − 1)"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "overflow": false,
+      "trace": "原下标 i=0，位置 (1,0)：R 2 → 5；本次掉落数 2。新接入的组含补回砖，减去它。",
+      "formula": "result[i] = max(0, R后 − R前 − 1)"
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "overflow": false,
+      "trace": "原下标 i=0，位置 (1,0)：R 2 → 5；本次掉落数 2。新接入的组含补回砖，减去它。",
+      "formula": "result[i] = max(0, R后 − R前 − 1)"
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "overflow": false,
+      "trace": "原下标 i=0，位置 (1,0)：R 2 → 5；本次掉落数 2。新接入的组含补回砖，减去它。",
+      "formula": "result[i] = max(0, R后 − R前 − 1)"
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "overflow": false,
+      "trace": "原下标 i=0，位置 (1,0)：R 2 → 5；本次掉落数 2。新接入的组含补回砖，减去它。",
+      "formula": "result[i] = max(0, R后 − R前 − 1)"
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "overflow": false,
+      "trace": "原下标 i=0，位置 (1,0)：R 2 → 5；本次掉落数 2。新接入的组含补回砖，减去它。",
+      "formula": "result[i] = max(0, R后 − R前 − 1)"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "overflow": false,
+      "trace": "原下标 i=0，位置 (1,0)：R 2 → 5；本次掉落数 2。新接入的组含补回砖，减去它。",
+      "formula": "result[i] = max(0, R后 − R前 − 1)"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "overflow": false,
+      "trace": "原下标 i=0，位置 (1,0)：R 2 → 5；本次掉落数 2。新接入的组含补回砖，减去它。",
+      "formula": "result[i] = max(0, R后 − R前 − 1)"
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "th",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".brick-grid td.supported",
+      "fg": "rgb(126, 226, 168)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.004815697188947
+    },
+    {
+      "selector": ".brick-grid td.unconnected",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "#prev:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "a",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "pre",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(9, 14, 22)",
+      "ratio": 16.437295258072666
+    },
+    {
+      "selector": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "label",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": "#feedback.correct",
+      "fg": "rgb(126, 226, 168)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.004815697188947
+    },
+    {
+      "selector": "#manualSource",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "active locale focus ring",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "cssBytes": 11718,
+  "screenshotMethod": "Element trace captures hide sticky navigation only during capture to avoid full-element compositor overlays; zoom viewport images retain it. Native viewport screenshots verify keyboard horizontal scrolling.",
+  "errors": [],
+  "network": [
+    "http://127.0.0.1:18785/leetcode/803/",
+    "http://127.0.0.1:18785/leetcode/style.css",
+    "http://127.0.0.1:18785/leetcode/803/style.css?v=6",
+    "http://127.0.0.1:18785/leetcode/common.js",
+    "http://127.0.0.1:18785/leetcode/803/copy.js?v=2",
+    "http://127.0.0.1:18785/leetcode/803/core.js?v=1",
+    "http://127.0.0.1:18785/leetcode/803/python-code.js?v=1",
+    "http://127.0.0.1:18785/leetcode/803/app.js?v=2"
+  ]
+}

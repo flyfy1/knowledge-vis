@@ -1,0 +1,9 @@
+{
+  "candidate": "eb9692b38d758c81cfdcba57506377f20cb99ede",
+  "changed": [
+    "leetcode/803/tests/browser.cjs"
+  ],
+  "original_test_sha256": "528818064f451b27cfc7956d7d53629dfa3721ec9bcb3b057f0e92ae2ca5f7b4",
+  "adapted_test_sha256": "45ab96b69556e08beb4b25ef76ee9bfadea1e81a1882065c9e3afbf6f52322c4",
+  "scope": "External host shortcut and host receipt only; assertions unchanged"
+}

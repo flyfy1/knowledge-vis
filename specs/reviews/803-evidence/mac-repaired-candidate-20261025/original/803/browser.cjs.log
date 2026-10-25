@@ -1,0 +1,76 @@
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ '803-en-0-1792932426045'
+- 'class Solution:\n' +
+-   '    def hitBricks(self, grid: list[list[int]], hits: list[list[int]]) -> list[int]:\n' +
+-   '        m, n = len(grid), len(grid[0])\n' +
+-   '        roof = m * n\n' +
+-   '        parent = list(range(roof + 1))\n' +
+-   '        size = [1] * (roof + 1)\n' +
+-   '        work = [row[:] for row in grid]\n' +
+-   '        for r, c in hits:\n' +
+-   '            work[r][c] = 0\n' +
+-   '\n' +
+-   '        def find(x):\n' +
+-   '            while parent[x] != x:\n' +
+-   '                parent[x] = parent[parent[x]]\n' +
+-   '                x = parent[x]\n' +
+-   '            return x\n' +
+-   '\n' +
+-   '        def union(a, b):\n' +
+-   '            a, b = find(a), find(b)\n' +
+-   '            if a == b:\n' +
+-   '                return\n' +
+-   '            if size[a] < size[b]:\n' +
+-   '                a, b = b, a\n' +
+-   '            parent[b] = a\n' +
+-   '            size[a] += size[b]\n' +
+-   '\n' +
+-   '        for r in range(m):\n' +
+-   '            for c in range(n):\n' +
+-   '                if work[r][c]:\n' +
+-   '                    cell = r * n + c\n' +
+-   '                    if r == 0:\n' +
+-   '                        union(cell, roof)\n' +
+-   '                    if r > 0 and work[r - 1][c]:\n' +
+-   '                        union(cell, cell - n)\n' +
+-   '                    if c > 0 and work[r][c - 1]:\n' +
+-   '                        union(cell, cell - 1)\n' +
+-   '\n' +
+-   '        result = [0] * len(hits)\n' +
+-   '        for i in range(len(hits) - 1, -1, -1):\n' +
+-   '            r, c = hits[i]\n' +
+-   '            if grid[r][c] == 0:\n' +
+-   '                continue\n' +
+-   '            before = size[find(roof)]\n' +
+-   '            work[r][c] = 1\n' +
+-   '            cell = r * n + c\n' +
+-   '            if r == 0:\n' +
+-   '                union(cell, roof)\n' +
+-   '            for dr, dc in ((-1, 0), (1, 0), (0, -1), (0, 1)):\n' +
+-   '                nr, nc = r + dr, c + dc\n' +
+-   '                if 0 <= nr < m and 0 <= nc < n and work[nr][nc]:\n' +
+-   '                    union(cell, nr * n + nc)\n' +
+-   '            after = size[find(roof)]\n' +
+-   '            result[i] = max(0, after - before - 1)\n' +
+-   '        return result\n'
+
+    at /private/tmp/leetcode-803-repaired-candidate-20261025/leetcode/803/tests/browser.cjs:57:50 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '803-en-0-1792932426045',
+  expected: 'class Solution:\n' +
+    '    def hitBricks(self, grid: list[list[int]], hits: list[list[int]]) -> list[int]:\n' +
+    '        m, n = len(grid), len(grid[0])\n' +
+    '        roof = m * n\n' +
+    '        parent = list(range(roof + 1))\n' +
+    '        size = [1] * (roof + 1)\n' +
+    '        work = [row[:] for row in grid]\n' +
+    '        for r, c in hits:\n' +
+    '            work[r][c] = 0\n' +
+    '\n' +
+    '...',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
