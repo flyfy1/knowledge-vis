@@ -1081,3 +1081,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | merge sort counting | `leetcode/493/#step2` | Disjoint within-half and cross-half pair accounting |
 
 <!-- /leetcode-493-campaign -->
+
+
+<!-- leetcode-488-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Zuma stable board and remaining hand | `leetcode/488/#step2` | Normalize every chain reaction before caching the complete board and hand state. |
+| Exact memoized insertion search | `leetcode/488/#step4` | Enumerate all legal successor states, including setup moves, and reuse identical subproblems. |
+
+<!-- /leetcode-488-campaign -->
