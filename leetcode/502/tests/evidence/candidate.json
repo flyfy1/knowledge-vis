@@ -1,0 +1,34 @@
+{
+  "candidateId": "1cc86beed4c396224ee1943d7025be7d564437fd9482f3556db5a6570f03da54",
+  "frozenAt": "2026-10-25T01:37:36.072243+00:00",
+  "status": "author self-checked; independent review pending",
+  "files": {
+    "BRIEF.md": "8563ece21626474c516f0f643221eb2daa2d4078b55deb6006abf3cc23c78b34",
+    "SELF-CHECK.md": "7fb7a86bfba26f128d8bf5d0d54d4b338603b5b0d9c82cd3ab58278d2b8033a9",
+    "app.js": "b7c448300dcb36f549d5b316c71a84db3e5bdf7e8feb31d19781666bb1160475",
+    "copy.js": "0ffb128fffff332e895e61e029ef60b9433376c5368728083db10db0af38a27c",
+    "core.js": "9682ae292545299c3b6c329f91474d0e79939a302918dab546ee9b9aa18e2cf8",
+    "index.html": "26af3e912cbfd4160e37d86acbd04ca80ad94426e4042a3f4efe703d6e486f4b",
+    "lesson-entry.json": "61be20f4ed8a4393a28dd07c7e1f86689f7ef3113702560be39d135677b54851",
+    "provenance/README.md": "9e329576c329b548f9230bef8c0c1209f144bd40cb8c393c35e2c5adb8eea14f",
+    "provenance/official-graphql.json": "2eb9b3a84e40b16bd5b4b31f6d63af11525d8a8f28736a6c02a183799f5d6799",
+    "python-code.js": "d655e15ffb73c0a01fb743a337eb2d6bec02c20dc9069e02c724fc6d8d737686",
+    "solution.py": "43472124002ea4ade93cb0751b4f59df5e37650da2960c19ea8399d67ab3d94f",
+    "style.css": "9aadf8f418ccb3ef480e908ba7fd8f13ecd2b84075eaa22b27f4bf22a9cca1c6",
+    "tests/README.md": "cd695feeeec12145ea9e79a3ab1df3b9a159d18ddca7698d4e160e18dbdc11b9",
+    "tests/browser.cjs": "4c5c5087908ee6ac84a9721cba31645dd4b5c3ce3c00c3c369b4f4275bbf9c4e",
+    "tests/check.py": "361b6144fa9801cc9d8307b2488eac1886b37e2aa0a95f9a9950025df6a88854",
+    "tests/core.cjs": "282a9e96f8811d68eec8c867f4e77899226ef12fc93bb9033c7b5c98da340bdf"
+  },
+  "sharedDependencies": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "metadataPreflight": {
+    "command": "python3 -B scripts/register_leetcode_lesson.py 502 --validate-only",
+    "cwd": "/home/songyy/projects/leetcode-hard-campaign-20261018",
+    "exitCode": 0,
+    "stdout": "",
+    "mutating": false
+  }
+}
