@@ -1,0 +1,225 @@
+{
+  "status": "pass",
+  "url": "http://127.0.0.1:18770/leetcode/710/",
+  "host": "linux",
+  "browser": "156.0.8078.4",
+  "checks": [
+    "en:preset0:every-operation/back/replay/reset/end/tickets",
+    "en:preset1:every-operation/back/replay/reset/end/tickets",
+    "en:preset2:every-operation/back/replay/reset/end/tickets",
+    "en:preset3:every-operation/back/replay/reset/end/tickets",
+    "en:preset4:every-operation/back/replay/reset/end/tickets",
+    "en:preset5:every-operation/back/replay/reset/end/tickets",
+    "en:render/mirror/copy/download-exact",
+    "zh:preset0:every-operation/back/replay/reset/end/tickets",
+    "zh:preset1:every-operation/back/replay/reset/end/tickets",
+    "zh:preset2:every-operation/back/replay/reset/end/tickets",
+    "zh:preset3:every-operation/back/replay/reset/end/tickets",
+    "zh:preset4:every-operation/back/replay/reset/end/tickets",
+    "zh:preset5:every-operation/back/replay/reset/end/tickets",
+    "zh:render/mirror/copy/download-exact",
+    "locale and independent quiz state preservation",
+    "320:en:layout/select/domain/roundtrip",
+    "320:zh:layout/select/domain/roundtrip",
+    "390:en:layout/select/domain/roundtrip",
+    "390:zh:layout/select/domain/roundtrip",
+    "736:en:layout/select/domain/roundtrip",
+    "736:zh:layout/select/domain/roundtrip",
+    "1440:en:layout/select/domain/roundtrip",
+    "1440:zh:layout/select/domain/roundtrip",
+    "file:// offline source and simulation"
+  ],
+  "screenshots": [
+    "320-en-complete.png",
+    "320-en-skip.png",
+    "320-zh-complete.png",
+    "320-zh-skip.png",
+    "390-en-complete.png",
+    "390-en-skip.png",
+    "390-zh-complete.png",
+    "390-zh-skip.png",
+    "736-en-complete.png",
+    "736-en-skip.png",
+    "736-zh-complete.png",
+    "736-zh-skip.png",
+    "1440-en-complete.png",
+    "1440-en-skip.png",
+    "1440-zh-complete.png",
+    "1440-zh-skip.png",
+    "zoom200-en.png",
+    "zoom200-zh.png",
+    "forced-colors.png",
+    "hand-en.png",
+    "quiz-en.png",
+    "code-en.png",
+    "hand-zh.png",
+    "quiz-zh.png",
+    "code-zh.png"
+  ],
+  "semantic": [
+    {
+      "locale": "en",
+      "action": "skip",
+      "expected": "blocked 4; high now 5",
+      "observed": "Repair ticket 1: candidate 4 is blocked and cannot be a target. high: 4 → 5; map unchanged."
+    },
+    {
+      "locale": "en",
+      "action": "skip",
+      "expected": "blocked 5; high now 6",
+      "observed": "Repair ticket 1: candidate 5 is blocked and cannot be a target. high: 5 → 6; map unchanged."
+    },
+    {
+      "locale": "zh",
+      "action": "skip",
+      "expected": "blocked 4; high now 5",
+      "observed": "修补票号 1：候选 4 在黑名单中，不能当目标。high：4 → 5；映射不变。"
+    },
+    {
+      "locale": "zh",
+      "action": "skip",
+      "expected": "blocked 5; high now 6",
+      "observed": "修补票号 1：候选 5 在黑名单中，不能当目标。high：5 → 6；映射不变。"
+    },
+    {
+      "locale": "en",
+      "action": "predict 0 then reveal",
+      "observed": "Recheck the invariant. 5 already belongs to ticket 1 and cannot be reused. high=6 is blocked, so skip to 7 and assign 3→7. The complete mapping is 0→0, 1→5, 2→2, 3→7, 4→4. Since 7 is high, it is never drawn directly as a ticket; only ticket 3 returns it, giving 1/5 rather than 2/5. Mapping 3 to 5 would reuse a target and omit 7."
+    },
+    {
+      "locale": "en",
+      "action": "predict 1 then reveal",
+      "observed": "Correct prediction. 5 already belongs to ticket 1 and cannot be reused. high=6 is blocked, so skip to 7 and assign 3→7. The complete mapping is 0→0, 1→5, 2→2, 3→7, 4→4. Since 7 is high, it is never drawn directly as a ticket; only ticket 3 returns it, giving 1/5 rather than 2/5. Mapping 3 to 5 would reuse a target and omit 7."
+    },
+    {
+      "locale": "en",
+      "action": "predict 2 then reveal",
+      "observed": "Recheck the invariant. 5 already belongs to ticket 1 and cannot be reused. high=6 is blocked, so skip to 7 and assign 3→7. The complete mapping is 0→0, 1→5, 2→2, 3→7, 4→4. Since 7 is high, it is never drawn directly as a ticket; only ticket 3 returns it, giving 1/5 rather than 2/5. Mapping 3 to 5 would reuse a target and omit 7."
+    },
+    {
+      "locale": "zh",
+      "action": "predict 0 then reveal",
+      "observed": "再核对不变量。 5 已分给票号 1，不能复用；high=6 被禁用，跳到 7，得到 3→7。完整关系为 0→0、1→5、2→2、3→7、4→4。7 在高区间，自己不会作为票被抽到，只有票号 3 返回 7，所以是 1/5，不是 2/5。把 3 也映射到 5 会重复使用目标并漏掉 7。"
+    },
+    {
+      "locale": "zh",
+      "action": "predict 1 then reveal",
+      "observed": "预测正确。 5 已分给票号 1，不能复用；high=6 被禁用，跳到 7，得到 3→7。完整关系为 0→0、1→5、2→2、3→7、4→4。7 在高区间，自己不会作为票被抽到，只有票号 3 返回 7，所以是 1/5，不是 2/5。把 3 也映射到 5 会重复使用目标并漏掉 7。"
+    },
+    {
+      "locale": "zh",
+      "action": "predict 2 then reveal",
+      "observed": "再核对不变量。 5 已分给票号 1，不能复用；high=6 被禁用，跳到 7，得到 3→7。完整关系为 0→0、1→5、2→2、3→7、4→4。7 在高区间，自己不会作为票被抽到，只有票号 3 返回 7，所以是 1/5，不是 2/5。把 3 也映射到 5 会重复使用目标并漏掉 7。"
+    },
+    {
+      "locale": "en",
+      "action": "clipboard denial",
+      "observed": "Automatic copy unavailable. Manually copy the fully selected source below."
+    },
+    {
+      "locale": "zh",
+      "action": "clipboard denial",
+      "observed": "自动复制不可用。请在下方已全选的源码框中手动复制。"
+    }
+  ],
+  "contrast": [
+    {
+      "sel": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "sel": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "sel": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "sel": ".stage",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "sel": "#event",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "sel": "#progress",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#next",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "#prev",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#preset",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".value.blocked b",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".value span",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".active-row",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 9.809435643476732
+    },
+    {
+      "sel": "#copyStatus",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "sel": "#pythonCode",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(9, 14, 22)",
+      "ratio": 16.437295258072666
+    }
+  ],
+  "boundaries": {
+    "border": "rgb(154, 167, 184)",
+    "bg": "rgb(28, 35, 48)",
+    "focus": "rgb(255, 180, 84)",
+    "outer": "rgb(22, 27, 34)"
+  },
+  "cssBytes": 11496,
+  "errors": [],
+  "bad": [],
+  "external": [],
+  "keyboard": true,
+  "storageDenied": true,
+  "clipboard": "native success and native manual fallback, exact final newline; distinct sentinel; Control+C",
+  "zoom": "200% CSS browser rendering zoom at 1440; not physical device evidence"
+}
