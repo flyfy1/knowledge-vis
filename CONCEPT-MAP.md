@@ -1210,3 +1210,24 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Palindrome candidate completeness | `leetcode/564/#step2` | Neighboring prefixes and digit-length boundaries cover the nearest other palindrome. |
 
 <!-- /leetcode-564-campaign -->
+
+
+<!-- leetcode-587-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| convex hull boundary | `leetcode/587/#step0` | All perimeter trees, including collinear edge trees |
+| signed turn | `leetcode/587/#step1` | Integer cross product distinguishes left, straight and right |
+| monotone chain | `leetcode/587/#step2` | Repeated strict-right-turn removal in two sorted scans |
+
+<!-- /leetcode-587-campaign -->
+
+
+<!-- leetcode-600-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Binary suffix counting | `leetcode/600/#step1` | Split valid padded bit strings into leading 0 and leading 10 cases. |
+| First-different-bit partition | `leetcode/600/#step2` | Count disjoint smaller-prefix branches and stop the equal path at adjacent ones. |
+
+<!-- /leetcode-600-campaign -->

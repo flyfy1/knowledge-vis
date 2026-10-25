@@ -1,0 +1,37 @@
+{
+  "problemId": 587,
+  "candidate": "587-fix-C2-5e661f0c0156",
+  "createdAt": "2026-10-25T01:56:59.432203+00:00",
+  "status": "author self-checked; ready for separate independent re-review",
+  "baseCheckoutRevision": "8b274e22e96cbd06126d0f8bab89c5c533521aaa",
+  "previousReviewedCandidate": "3dcdc9d79d62799195aafc8de4f0fc1131d4826c",
+  "previousReview": "specs/reviews/587-review-1-da1b547a.md",
+  "findingFixes": {
+    "587-R1-F1": "fixed awaiting independent review"
+  },
+  "contentHash": "5e661f0c0156cbfd0806352387fcb5f29cf9368a0a76fb7100c700a436b4f1a2",
+  "sha256": {
+    "BRIEF.md": "1f84294d00f4d2ee2c623a4d18f633699e494cf93ad36c22963dd07f3f38241e",
+    "SELF-CHECK.md": "a597fe73fd313bd081de8627210a81bfa9f6b92ec605c6b1e6c529dada0859d7",
+    "app.js": "b8f5b5f434e851fc1e824eed9ecb5410b525288ad929ecf6532a8651459bdfe2",
+    "copy.js": "23057c898e5914b84a7ff8bf5c065f05c3f634178feab6b23e415777a0da0dce",
+    "core.js": "cb784fb402b4328c5ba021d5ad489524cf4a4c4095ecf952cb6c237843156fe6",
+    "index.html": "c9b97217831b09e2391a512bd5dd92d457a616f910e67b3262533c7128839faa",
+    "lesson-entry.json": "4523761e1076a4119647bbd34ed003d44583ecaba22b565f6621aada286ad2c1",
+    "local.css": "bdbed3ee4a68e8dd9e3e4816845643a01a5040bd7d62386470b79b153e8bc0ba",
+    "provenance/official.json": "ff3ab23f48747be7617502a3747d7b68d2fb144432ffa193a5102feda24b53aa",
+    "python-code.js": "b1b0daf6ba80c58fc9a47e6c10a1fc1796ab3bfbee4dce02232092e9421a39f0",
+    "solution.py": "2c2604b69057f628fb6ab080897361ffae4ce3106564cc220eb871c58b4747c3",
+    "tests/README.md": "359b09b7c1f13a2817ab34f0bbcd1704809dc16b86db2867939e4bf48119abe1",
+    "tests/browser.cjs": "e33a2b9e9cb80814a8d138d86bdb3e064aa10ee9ee1fabdd2bc83e8737a2db60",
+    "tests/check_algorithm.py": "8c610118fa0ed568254722b05bba1e42bc4f53e43d559fd7117949dda86d1c46",
+    "tests/check_core.cjs": "a09e73a591ce9eb4c49dfc25204c3238f9118712b1a5c98060870a4e367beb69",
+    "tests/preset-scope.cjs": "722bda1db1e112ed96957dc97de66420fb0727c126a83809478555854aa35e52"
+  },
+  "sharedReadOnlySha256": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "evidenceDirectory": "tests/evidence/r1-fix",
+  "preflight": "python3 -B scripts/register_leetcode_lesson.py 587 --validate-only; exit 0; no stdout/stderr"
+}

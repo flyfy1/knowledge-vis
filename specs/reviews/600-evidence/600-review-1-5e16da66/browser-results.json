@@ -1,0 +1,1301 @@
+{
+  "kind": "author real Chromium self-check",
+  "status": "PASS",
+  "coverage": [
+    {
+      "lang": "en",
+      "n": 1,
+      "frames": 3,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 2,
+      "frames": 4,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 5,
+      "frames": 5,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 6,
+      "frames": 3,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 8,
+      "frames": 6,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 10,
+      "frames": 6,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 12,
+      "frames": 3,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 1000000000,
+      "frames": 3,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "option": "0",
+      "feedback": "This choice misses or adds integers. The answer is 8. Branch 0??? has f[3] = 5 fillings (0, 1, 2, 4, 5); branch 10?? has f[2] = 3 (8, 9, 10). Equal prefix 11 is invalid, so stop without processing 01 or including 13. Choosing 5 misses the second branch; choosing 6 misses it and wrongly adds invalid 13."
+    },
+    {
+      "lang": "en",
+      "option": "1",
+      "feedback": "This choice misses or adds integers. The answer is 8. Branch 0??? has f[3] = 5 fillings (0, 1, 2, 4, 5); branch 10?? has f[2] = 3 (8, 9, 10). Equal prefix 11 is invalid, so stop without processing 01 or including 13. Choosing 5 misses the second branch; choosing 6 misses it and wrongly adds invalid 13."
+    },
+    {
+      "lang": "en",
+      "option": "2",
+      "feedback": "Correct choice. The answer is 8. Branch 0??? has f[3] = 5 fillings (0, 1, 2, 4, 5); branch 10?? has f[2] = 3 (8, 9, 10). Equal prefix 11 is invalid, so stop without processing 01 or including 13. Choosing 5 misses the second branch; choosing 6 misses it and wrongly adds invalid 13."
+    },
+    {
+      "lang": "zh",
+      "n": 1,
+      "frames": 3,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 2,
+      "frames": 4,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 5,
+      "frames": 5,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 6,
+      "frames": 3,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 8,
+      "frames": 6,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 10,
+      "frames": 6,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 12,
+      "frames": 3,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 1000000000,
+      "frames": 3,
+      "allIntermediateValues": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "option": "0",
+      "feedback": "这个选择遗漏或多算了数。 答案为 8：0??? 有 f[3] = 5 种（0、1、2、4、5）；10?? 有 f[2] = 3 种（8、9、10）。相等前缀 11 已无效，所以停止，既不处理 01，也不加 13。选 5 漏掉第二分支；选 6 则漏掉第二分支并错加了不合法的 13。"
+    },
+    {
+      "lang": "zh",
+      "option": "1",
+      "feedback": "这个选择遗漏或多算了数。 答案为 8：0??? 有 f[3] = 5 种（0、1、2、4、5）；10?? 有 f[2] = 3 种（8、9、10）。相等前缀 11 已无效，所以停止，既不处理 01，也不加 13。选 5 漏掉第二分支；选 6 则漏掉第二分支并错加了不合法的 13。"
+    },
+    {
+      "lang": "zh",
+      "option": "2",
+      "feedback": "选择正确。 答案为 8：0??? 有 f[3] = 5 种（0、1、2、4、5）；10?? 有 f[2] = 3 种（8、9、10）。相等前缀 11 已无效，所以停止，既不处理 01，也不加 13。选 5 漏掉第二分支；选 6 则漏掉第二分支并错加了不合法的 13。"
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "bitGeometry": [
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        }
+      ],
+      "controls": ">=48px",
+      "noPageOverflow": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "bitGeometry": [
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        },
+        {
+          "width": 52,
+          "scroll": 52
+        }
+      ],
+      "controls": ">=48px",
+      "noPageOverflow": true
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "bitGeometry": [
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        }
+      ],
+      "controls": ">=48px",
+      "noPageOverflow": true
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "bitGeometry": [
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        },
+        {
+          "width": 56,
+          "scroll": 56
+        }
+      ],
+      "controls": ">=48px",
+      "noPageOverflow": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "bitGeometry": [
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        }
+      ],
+      "controls": ">=48px",
+      "noPageOverflow": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "bitGeometry": [
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        },
+        {
+          "width": 46,
+          "scroll": 46
+        }
+      ],
+      "controls": ">=48px",
+      "noPageOverflow": true
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "bitGeometry": [
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        }
+      ],
+      "controls": ">=48px",
+      "noPageOverflow": true
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "bitGeometry": [
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        },
+        {
+          "width": 54,
+          "scroll": 54
+        }
+      ],
+      "controls": ">=48px",
+      "noPageOverflow": true
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "foreground": "rgb(201, 212, 226)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".formula",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".ledger-item",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".bit span",
+      "foreground": "rgb(110, 231, 255)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "selector": ".bit.completed span",
+      "foreground": "rgb(110, 231, 255)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "selector": "#next:disabled",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#langToggle button:not(.active)",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "#langToggle button.active",
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a:not(.active)",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgba(13, 17, 23, 0.96)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#copy",
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#feedback",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "focus accent2 / panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "control border muted / panel2",
+      "ratio": 6.449407898769069
+    }
+  ],
+  "cssBytes": 11339,
+  "errors": [],
+  "badResponses": [],
+  "externalRequests": [],
+  "sourceParity": "exact displayed, native browser clipboard, mock payload, selected text and Control+C fallback, downloaded bytes",
+  "zoom": "CSS zoom 2 at 1440; both locales",
+  "blockedStorageOffline": true,
+  "keyboard": true,
+  "forcedColors": true
+}

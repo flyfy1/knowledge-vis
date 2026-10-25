@@ -1,0 +1,5 @@
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(text.includes('('+expected[p].length+' '))
+
+    at /home/songyy/projects/leetcode-hard-lane-587-20261025/leetcode/587/tests/browser.cjs:41:4

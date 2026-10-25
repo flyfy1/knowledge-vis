@@ -1,0 +1,13 @@
+{
+  "kind": "author numerical self-check",
+  "status": "PASS",
+  "exhaustive": "0..20000 vs incremental string baseline and independent digit recursion",
+  "largeCases": 691,
+  "seed": 600,
+  "officialExamples": true,
+  "maxInput": {
+    "n": 1000000000,
+    "expected": 2178309
+  },
+  "sourceMirrorExact": true
+}
