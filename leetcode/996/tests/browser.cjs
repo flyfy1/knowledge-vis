@@ -12,6 +12,17 @@ const source=fs.readFileSync(path.join(P,'solution.py'),'utf8');
   await page.click(`[data-lang=${lang}]`);
   assert.equal(await page.locator('html').getAttribute('lang'),lang==='en'?'en':'zh-CN');
   assert.equal(await page.locator('#pythonSource').textContent(),source);
+  const cost=await page.locator('[data-i18n=cost]').textContent();
+  assert(cost.includes(lang==='en'?'Preprocessing takes O(n+k²)':'预处理 O(n+k²)'));
+  for(const term of ['O(n)', 'O(k log k)', 'O(k²)', 'k≥1'])assert(cost.includes(term));
+  results.locales.push({lang,cost});
+  for(const [width,zoom] of [[390,1],[320,2]]){
+   await page.setViewportSize({width,height:1000});await page.evaluate(z=>document.body.style.zoom=z,zoom);
+   await page.locator('[data-i18n=cost]').scrollIntoViewIfNeeded();
+   assert(await page.locator('[data-i18n=cost]').evaluate(e=>e.scrollWidth<=e.clientWidth+1));
+   await page.screenshot({path:path.join(out,`${lang}-${width}-zoom${zoom}-cost.png`)});
+  }
+  await page.evaluate(()=>document.body.style.zoom=1);await page.setViewportSize({width:1440,height:1000});
   await page.click('#handReveal');assert.equal(await page.locator('#hand').isVisible(),true);assert((await page.locator('#hand').textContent()).includes('18'));await page.click('#handReveal');
   for(let p=0;p<presets.length;p++){
    await page.selectOption('#preset',String(p));const frames=trace(presets[p]).frames;

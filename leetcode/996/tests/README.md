@@ -5,6 +5,7 @@ PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH inherited. Browser tests use the already run
 http://127.0.0.1:18799 preview and start no service.
 
 ```
+EVIDENCE_DIR=/tmp/996-review python3 -B leetcode/996/tests/cost.py
 EVIDENCE_DIR=/tmp/996-review python3 -B leetcode/996/tests/check.py
 EVIDENCE_DIR=/tmp/996-review node leetcode/996/tests/core.cjs
 EVIDENCE_DIR=/tmp/996-review python3 -B leetcode/996/tests/contrast.py
@@ -36,3 +37,8 @@ other platforms are not inferred from it. Host platform is recorded in results.
 The author's tests and screenshot inspection do not constitute an independent
 lesson review, actual learner evidence, production verification, or LeetCode
 submission acceptance. Review the frozen file hashes in evidence/manifest.json.
+
+R1 cost regression: cost.py executes the unchanged canonical callable on fixed-k
+inputs of lengths 1/6/12 and records actual input visits, then rejects the old
+full-preprocessing claim in either locale. browser.cjs checks the served phase
+explanation and captures it at 390px and 320px with CSS zoom 2.
