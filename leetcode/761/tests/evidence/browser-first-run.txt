@@ -1,0 +1,6 @@
+Author self-check, first run: node leetcode/761/tests/browser.cjs
+Failed at browser.cjs line 61: button target height >=48px.
+Diagnosis: shared .btn specificity overrode generic local button minimum; measured 46px with min-height 44px.
+Local repair: add .btn to the 48px selector. Not an independent review finding or acceptance.
+Additional inspection: 390px at CSS zoom 200% clipped the descriptive native select label (text 134.2px + padding 30px > width 131px). Repair: numeric preset values, with full meaning in surrounding prose, and 8px inline padding. Added rendered text-width assertion and focused ledger screenshots.
+Second run: added conservative 24px arrow allowance detected the selector intrinsic width of 110px was short by 3.2px (text 73.2 + padding16 + allowance24). Set width280px bounded by max-width100% to use available space. Full rerun follows.

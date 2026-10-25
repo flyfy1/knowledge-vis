@@ -1,0 +1,174 @@
+{
+  "states": [
+    {
+      "lang": "en",
+      "preset": "101100",
+      "frames": 26,
+      "result": "Return this call’s result 110010. If a parent exists, it next rebuilds the shell."
+    },
+    {
+      "lang": "en",
+      "preset": "11011000",
+      "frames": 39,
+      "result": "Return this call’s result 11100100. If a parent exists, it next rebuilds the shell."
+    },
+    {
+      "lang": "en",
+      "preset": "10",
+      "frames": 10,
+      "result": "Return this call’s result 10. If a parent exists, it next rebuilds the shell."
+    },
+    {
+      "lang": "en",
+      "preset": "111000",
+      "frames": 30,
+      "result": "Return this call’s result 111000. If a parent exists, it next rebuilds the shell."
+    },
+    {
+      "lang": "en",
+      "preset": "101010",
+      "frames": 24,
+      "result": "Return this call’s result 101010. If a parent exists, it next rebuilds the shell."
+    },
+    {
+      "lang": "en",
+      "prediction": 0,
+      "feedback": "Not quite. The split is 10 | 111000. The interior 1100 of 111000 has one minimal block, and further stripping cannot change it. Descending order is 111000 | 10, giving 11100010. The answer 11110000 changes the nesting structure and is unreachable; leaving the input unchanged misses a legal improvement."
+    },
+    {
+      "lang": "en",
+      "prediction": 1,
+      "feedback": "Not quite. The split is 10 | 111000. The interior 1100 of 111000 has one minimal block, and further stripping cannot change it. Descending order is 111000 | 10, giving 11100010. The answer 11110000 changes the nesting structure and is unreachable; leaving the input unchanged misses a legal improvement."
+    },
+    {
+      "lang": "en",
+      "prediction": 2,
+      "feedback": "Correct. The split is 10 | 111000. The interior 1100 of 111000 has one minimal block, and further stripping cannot change it. Descending order is 111000 | 10, giving 11100010. The answer 11110000 changes the nesting structure and is unreachable; leaving the input unchanged misses a legal improvement."
+    },
+    {
+      "lang": "zh",
+      "preset": "101100",
+      "frames": 26,
+      "result": "返回本层结果 110010。若有父调用，接下来回父层组装外壳。"
+    },
+    {
+      "lang": "zh",
+      "preset": "11011000",
+      "frames": 39,
+      "result": "返回本层结果 11100100。若有父调用，接下来回父层组装外壳。"
+    },
+    {
+      "lang": "zh",
+      "preset": "10",
+      "frames": 10,
+      "result": "返回本层结果 10。若有父调用，接下来回父层组装外壳。"
+    },
+    {
+      "lang": "zh",
+      "preset": "111000",
+      "frames": 30,
+      "result": "返回本层结果 111000。若有父调用，接下来回父层组装外壳。"
+    },
+    {
+      "lang": "zh",
+      "preset": "101010",
+      "frames": 24,
+      "result": "返回本层结果 101010。若有父调用，接下来回父层组装外壳。"
+    },
+    {
+      "lang": "zh",
+      "prediction": 0,
+      "feedback": "还不对。 切分是 10 | 111000。111000 的内部 1100 只有一个最小块，继续剥壳也无法改变它。于是两块降序为 111000 | 10，结果 11100010。11110000 改变了嵌套结构，不可达；保持原串漏掉一次有效提升。"
+    },
+    {
+      "lang": "zh",
+      "prediction": 1,
+      "feedback": "还不对。 切分是 10 | 111000。111000 的内部 1100 只有一个最小块，继续剥壳也无法改变它。于是两块降序为 111000 | 10，结果 11100010。11110000 改变了嵌套结构，不可达；保持原串漏掉一次有效提升。"
+    },
+    {
+      "lang": "zh",
+      "prediction": 2,
+      "feedback": "正确。 切分是 10 | 111000。111000 的内部 1100 只有一个最小块，继续剥壳也无法改变它。于是两块降序为 111000 | 10，结果 11100010。11110000 改变了嵌套结构，不可达；保持原串漏掉一次有效提升。"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "event": "The child returned 10; the parent appends 1100 to parts and moves start to 6."
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "event": "The child returned 10; the parent appends 1100 to parts and moves start to 6."
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "event": "The child returned 10; the parent appends 1100 to parts and moves start to 6."
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "event": "The child returned 10; the parent appends 1100 to parts and moves start to 6."
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "event": "子调用返回 10；父层把 1100 加入 parts，start 移至 6。"
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "event": "子调用返回 10；父层把 1100 加入 parts，start 移至 6。"
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "event": "子调用返回 10；父层把 1100 加入 parts，start 移至 6。"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "event": "子调用返回 10；父层把 1100 加入 parts，start 移至 6。"
+    }
+  ],
+  "source": [
+    {
+      "lang": "en",
+      "parity": "display/copy/native fallback/download exact",
+      "host": "linux"
+    },
+    {
+      "lang": "zh",
+      "parity": "display/copy/native fallback/download exact",
+      "host": "linux"
+    }
+  ],
+  "errors": [],
+  "bad": [],
+  "external": [],
+  "focus": {
+    "active": true,
+    "width": "3px",
+    "style": "solid"
+  },
+  "contrast": {
+    "text/bg": 16.086987125379448,
+    "text/panel": 14.704584598678618,
+    "text/panel2": 13.397069143240783,
+    "muted/bg": 7.7443462241265095,
+    "muted/panel": 7.078851579017443,
+    "muted/panel2": 6.449407898769069,
+    "accent/bg": 13.100679028115637,
+    "accent/panel": 11.974898815275662,
+    "accent/panel2": 10.910104011097095,
+    "accent2/bg": 10.731637051347173,
+    "accent2/panel": 9.809435643476732,
+    "accent2/panel2": 8.937191437807625
+  },
+  "cssBytes": 10779,
+  "browser": "156.0.8078.4",
+  "zoom": "CSS layout zoom 200%",
+  "result": "pass"
+}
