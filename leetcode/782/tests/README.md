@@ -31,3 +31,16 @@ Bilingual dictionary keys are checked in the acorn AST before evaluation.
 Author evidence only. Actual novice learning, independent review, LeetCode
 acceptance, real-device browsers, other operating systems/fonts, and public
 deployment are not established by these checks.
+
+For the 782-MAC-FIT-01 repair, also run:
+
+```bash
+OUTPUT_DIR=leetcode/782/tests/evidence/repair-20261025/green node leetcode/782/tests/selected-label.cjs
+```
+
+This checks all seven labels at 320px through EN→ZH→EN using the original
+`textWidth + padding + 20 <= clientWidth` predicate, captures the failure-preset
+control, and locks the dispatcher-approved English wording. The saved `red/`
+run fails the wording assertion on the old candidate; Linux fits the old text,
+so that local failure is not a reproduction of Mac clipping. Original Mac red
+evidence remains in specs/reviews unchanged. All original suites are retained.
