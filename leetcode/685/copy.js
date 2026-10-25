@@ -35,7 +35,7 @@ window.COPY = {
 "lab":["操作任务：保持当前输入不变，逐条完成父节点扫描，再逐条测试连通组；观察边表、组的前后变化和完整历史。换预设仅重启此追踪；后退恢复整个快照。行号从 1 开始，Python 下标从 0 开始。","Task: keep the input fixed, finish the parent scan one edge at a time, then test connectivity one edge at a time. Watch the edge table, component changes and full history. A new preset restarts only this trace; Back restores a whole snapshot. Display rows start at 1; Python indices start at 0."],
 "simulation":["这是 JavaScript 教学模拟，并非执行下方 Python。只演示 3–5 个节点，所有扫描和测试均保留，没有跳帧；读数表示本帧操作完成后。","This is a JavaScript teaching simulation, not execution of the Python below. All scans and tests for these 3–5-node inputs are retained without omitted frames; readouts describe the state after the current operation."],
 "preset":["输入预设（更换会重启追踪）","Input preset (changing it restarts the trace)"],
-"p0":["官方 1 · 仅双亲","Official 1 · Two parents only"],"p1":["官方 2 · 仅环","Official 2 · Cycle only"],"p2":["双亲与环并存","Two parents plus cycle"],"p3":["答案不是最后一行","Answer precedes the last row"],"p4":["两个节点互相指向","Two opposite arrows"],
+"p0":["官方 1 · 仅双亲","Official 1 · Two parents only"],"p1":["官方 2 · 仅环","Official 2 · Cycle only"],"p2":["双亲与环并存","Two parents plus cycle"],"p3":["答案不是最后一行","Answer before last row"],"p4":["两个节点互相指向","Two opposite arrows"],
 "prev":["后退一帧","Back one frame"],"next":["完成下一项操作","Complete next operation"],"reset":["重置追踪","Reset trace"],"end":["跳到最终决策","Go to final decision"],
 "progress":["已完成操作 {k}/{total} · {phase}","Completed operations {k}/{total} · {phase}"],
 "start":["起点：尚未扫描边。每个节点单独成组。","Start: no edge scanned. Every node is a separate component."],

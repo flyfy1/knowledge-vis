@@ -70,3 +70,14 @@ all presets/endpoints/replay, quiz every option, copy native/fallback, source pa
 storage denial, local links/assets, contrast and screenshots visually inspected.
 All evidence is author self-check, not independent review or novice teach-back.
 Shared registry/concept map remain untouched per ownership; registration deferred.
+
+## R1 repair candidate — 2026-10-25
+
+Finding 685-R1-001 is fixed awaiting independent re-review. Reuse the approved
+surface and tokens; shorten only preset 3's English label to “Answer before last
+row,” preserving input-order meaning and 16px type. Bump the local copy asset
+query. No new feature/layout or teaching/algorithm change is required.
+P0 and highest-return slice: complete closed selected text at 320/390px, both
+locales and EN→ZH→EN. P1/P2: none. Deferred: broader UI changes have no finding
+or demonstrated need. Regression and source/runtime checks are recorded in
+`tests/evidence/r1-fix/self-check.md`; the prior review remains historical evidence.

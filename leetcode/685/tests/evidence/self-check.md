@@ -102,3 +102,11 @@ Limits: author self-check only; no independent six-dimension lesson review,
 real-device accessibility audit, actual novice teach-back, official submission
 acceptance or production publication. Next action is a fresh-context independent
 review of the candidate identified in ../../candidate-sha256.json.
+
+## R1 repair addendum — 2026-10-25
+
+The independent report found required issue **685-R1-001** after the initial
+self-check above. Its result remains changes_required for that prior candidate.
+A new label repair candidate is self-checked and **fixed awaiting review**;
+see [repair evidence](r1-fix/self-check.md) and the current candidate manifest.
+This append does not mark the finding independently accepted or closed.
