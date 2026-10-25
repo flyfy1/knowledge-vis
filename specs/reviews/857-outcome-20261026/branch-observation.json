@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-10-25T22:23:40.999419+00:00",
+  "branch": "codex/all-hard-20261018",
+  "local_head": "bb8908e05271b1033987b5a3eadd94b8b801a932",
+  "registered_head": "bb8908e05271b1033987b5a3eadd94b8b801a932",
+  "remote_head": "5d9cf8fc351f19c9e747b8c5e424858b2cee6e3b",
+  "remote_is_ancestor_of_registration": true,
+  "unpushed_registration_commits": [
+    "b811406fd3f139d2db34907bfd817f69ef87ccf1",
+    "770f2b56e11c22df5b67743b99294016edc3f75a",
+    "bb8908e05271b1033987b5a3eadd94b8b801a932"
+  ],
+  "worktree_status": "?? leetcode/862/\n",
+  "note": "Read-only ls-remote and immutable Git comparison; no fetch/push. Active author worktree status is preserved, not cleaned."
+}

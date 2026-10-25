@@ -1,0 +1,93 @@
+{
+  "original_commentary": "The cold walkthrough shows the tiny payroll calculation, the running quality sum, and why removing the largest quality helps. For an independent code check, I predict quality `[3,1,2]`, wages `[3,4,4]`, `k=2` returns `10`. The lowest-rate pair costs `10`, the smallest-quality pair costs `12`, and the remaining pair costs `24`. The UI accepts presets only, so I\u2019ll label this as a code check.",
+  "exact_fraction_pair_calculations": {
+    "reviewer_fresh": [
+      {
+        "indices": [
+          0,
+          1
+        ],
+        "rate": "4",
+        "sum_quality": 4,
+        "bill": "16"
+      },
+      {
+        "indices": [
+          0,
+          2
+        ],
+        "rate": "2",
+        "sum_quality": 5,
+        "bill": "10"
+      },
+      {
+        "indices": [
+          1,
+          2
+        ],
+        "rate": "4",
+        "sum_quality": 3,
+        "bill": "12"
+      }
+    ],
+    "lesson_tiny": [
+      {
+        "indices": [
+          0,
+          1
+        ],
+        "rate": "3",
+        "sum_quality": 5,
+        "bill": "15"
+      },
+      {
+        "indices": [
+          0,
+          2
+        ],
+        "rate": "4",
+        "sum_quality": 3,
+        "bill": "12"
+      },
+      {
+        "indices": [
+          1,
+          2
+        ],
+        "rate": "4",
+        "sum_quality": 4,
+        "bill": "16"
+      }
+    ],
+    "lesson_prediction": [
+      {
+        "indices": [
+          0,
+          1
+        ],
+        "rate": "3",
+        "sum_quality": 6,
+        "bill": "18"
+      },
+      {
+        "indices": [
+          0,
+          2
+        ],
+        "rate": "4",
+        "sum_quality": 7,
+        "bill": "28"
+      },
+      {
+        "indices": [
+          1,
+          2
+        ],
+        "rate": "4",
+        "sum_quality": 5,
+        "bill": "20"
+      }
+    ]
+  },
+  "conclusion": "24 was the original commentary remaining-pair error for reviewer fresh input indices0+1. The report corrects that bill to16. Its phrase third group refers to commentary order [0+2,1+2,0+1], whereas the preceding explicit indexed report list orders [0+1,0+2,1+2]; the third group in that indexed list is12. Candidate tiny and prediction teaching arithmetic is correct; the reviewer fresh input is not a lesson preset. Original report/events preserved unchanged."
+}

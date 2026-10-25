@@ -1,0 +1,13 @@
+independent [3, 1, 2] [3, 4, 4] 2 => 10.0
+independent [5, 1, 1] [5, 2, 3] 2 => 6.0
+independent [7] [13] 1 => 13.0
+independent [2, 2, 2] [3, 3, 3] 2 => 6.0
+independent [10000, 1] [1, 10000] 2 => 100010000.0
+independent seed 782929: 200 Fraction subset cases passed
+served exact index.html a54d851d964de827efcc386af7853ed21ca98b1b417fe2d84d8e6bd82f2b83e0
+served exact app.js f0aa31bb518964c8a3aa1fe018898ec63b8e1bda7852d134ce46dc774c2555ba
+served exact core.js 6c9c959684262be5fdeda60f345cc84c74e85ee58aeea290cffdf6fa14b1b525
+served exact copy.js 3420bf69e06c1cfd213165352eb363abfca4fb561cb7d56a6e31d04f6ee90d0f
+served exact style.css 48b625b7f36517a779033c20e18ce7df0dff6d428b507ce20d69044e937cf09b
+served exact solution.py 869229e889a4386934ab0eb94313d6feb07c280875d05cb003ae8e4b31f77cb0
+served exact python-code.js 1ea3116437fa36f80e9c27f27b2da7047ef66e6a2bbbba86078425b0908c1585

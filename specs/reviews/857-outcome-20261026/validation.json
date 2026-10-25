@@ -1,0 +1,156 @@
+{
+  "outcome": "accepted_local",
+  "score": 96.25,
+  "required_open": [],
+  "optional_open": [
+    "857-R1-A1"
+  ],
+  "final_run_state_equal": true,
+  "candidate_review_registration_lesson_tree_equal": true,
+  "lesson_tree": "ee6314fff4dd6ec7a2bd54e5ef95ef69c5c0ada3",
+  "source_sha256": "869229e889a4386934ab0eb94313d6feb07c280875d05cb003ae8e4b31f77cb0",
+  "source_mirror_exact": true,
+  "signature": [
+    "self",
+    "quality",
+    "wage",
+    "k"
+  ],
+  "session_ids": [
+    "01a17524-7cd0-7be1-94b3-8ba93db75a10"
+  ],
+  "independent_200_fraction_oracle_exit_zero_confirmed": true,
+  "reported_harness_counts": {
+    "fraction_cases": 29205,
+    "max_n_checks": 5,
+    "core_snapshots": 474,
+    "supplement_states": 48
+  },
+  "recorded_drop_final": {
+    "current_id": 2,
+    "removed_id": 2,
+    "retained_ids": [
+      0,
+      1
+    ],
+    "current_cost": 9,
+    "best_cost": 6
+  },
+  "pre_and_post_root_push_identity_checked": true,
+  "scope": "Archive/source/event identities and recorded state checks; inspected existing Drop screenshot. No fresh algorithm or browser suites, clipboard, remote mutation, push or publication.",
+  "files": {
+    "857-review-1-782929cf.md": {
+      "sha256": "e5fc72cd898936d64999e4f695b5705653b8b4447ef0c5ee21c4430c9cd1c3a7",
+      "bytes": 18123
+    },
+    "author-runs.json": {
+      "sha256": "9a9f1cc83edbda9ad683cd57536ce6f8c2744791495f1ab527f5a5182e1c31d1",
+      "bytes": 878
+    },
+    "branch-observation.json": {
+      "sha256": "1ed1dae5877b547b73096cb31d6888a9ac72b0072a8955ba7ff352cc0027bf83",
+      "bytes": 690
+    },
+    "candidate/BRIEF.md": {
+      "sha256": "071a3ec7dd4cb2af8f3a924c76ed1aae80470a3758a089ba78c893c526d0e140",
+      "bytes": 5611
+    },
+    "candidate/app.js": {
+      "sha256": "f0aa31bb518964c8a3aa1fe018898ec63b8e1bda7852d134ce46dc774c2555ba",
+      "bytes": 3567
+    },
+    "candidate/copy.js": {
+      "sha256": "3420bf69e06c1cfd213165352eb363abfca4fb561cb7d56a6e31d04f6ee90d0f",
+      "bytes": 18485
+    },
+    "candidate/core.js": {
+      "sha256": "6c9c959684262be5fdeda60f345cc84c74e85ee58aeea290cffdf6fa14b1b525",
+      "bytes": 1148
+    },
+    "candidate/index.html": {
+      "sha256": "a54d851d964de827efcc386af7853ed21ca98b1b417fe2d84d8e6bd82f2b83e0",
+      "bytes": 6509
+    },
+    "candidate/lesson-entry.json": {
+      "sha256": "8ce9655b9f0d8411052d7b786a06013fb3b7c2b154f3a6aed90ed42f2018f7fb",
+      "bytes": 796
+    },
+    "candidate/python-code.js": {
+      "sha256": "1ea3116437fa36f80e9c27f27b2da7047ef66e6a2bbbba86078425b0908c1585",
+      "bytes": 611
+    },
+    "candidate/solution.py": {
+      "sha256": "869229e889a4386934ab0eb94313d6feb07c280875d05cb003ae8e4b31f77cb0",
+      "bytes": 566
+    },
+    "candidate/style.css": {
+      "sha256": "48b625b7f36517a779033c20e18ce7df0dff6d428b507ce20d69044e937cf09b",
+      "bytes": 1481
+    },
+    "independent-execution-excerpt.txt": {
+      "sha256": "61233c4d09559cbce52171194cc530de37f2408d3367c357f5b42b863e16ffa8",
+      "bytes": 881
+    },
+    "remote-after-root-push.json": {
+      "sha256": "964aef1c662169d168e78f0da3f77806aada40121b1bb1aa9858adb24fb06e7d",
+      "bytes": 344
+    },
+    "review-events.jsonl.gz": {
+      "sha256": "a974b4293ef82ad4859a97a1308294a125c7b6f9ae6908c368eb91d7f838faf5",
+      "bytes": 69126
+    },
+    "review-evidence/browser-results.json": {
+      "sha256": "4b7a1b17b194a00b84ff6c86bd0f2a1b31b132b7a3e4aa08a01aa38c059e79ba",
+      "bytes": 34224
+    },
+    "review-evidence/core-results.json": {
+      "sha256": "1dee996777a7afef77fd29492b81a1644d766cd3ba728923970708bd601bdcd6",
+      "bytes": 16439
+    },
+    "review-evidence/en-320-preset3-dense.png": {
+      "sha256": "d93ab6cdfee222a32517a6675ce8cf53d4955802c711f7848f8eab7629f0426f",
+      "bytes": 69752
+    },
+    "review-evidence/en-320-zoom2-controls.png": {
+      "sha256": "fc80e183a6c046fbe2ce60ce15acd60520f8933ad13e0d7f62902c63b0f8444d",
+      "bytes": 48146
+    },
+    "review-evidence/independent-zh320-drop.png": {
+      "sha256": "0dde8c39fe06e56100d2cdd17cb9c6d134436f0aece289472d7756b0172d2900",
+      "bytes": 92012
+    },
+    "review-evidence/oracle-fixtures.json": {
+      "sha256": "5aa6302ad26ce7571e0d31a75d2099e7a3fd5f1f3f7237872e9368b5964832aa",
+      "bytes": 10445
+    },
+    "review-evidence/python-results.json": {
+      "sha256": "b3990a23248004b600452f32da0f866ba3b918ccd9764536bdea434937514fcc",
+      "bytes": 129
+    },
+    "review-evidence/supplement-results.json": {
+      "sha256": "6f8b509fb3d569bed69617701862b4e069ae843219caaa2a0c146d140e14a7cd",
+      "bytes": 60031
+    },
+    "review-evidence/zh-390-preset2-dense.png": {
+      "sha256": "9fe73d93b74f043f88151b192c1439258f30c237b91fb52aa41f9129eb7dfa40",
+      "bytes": 103983
+    },
+    "review-final.json": {
+      "sha256": "3fa3d21e61ee1cd22ea2d783fdc9b03269f5e5853d07f6cff7b1b4617fb901da",
+      "bytes": 685
+    },
+    "review-run.json": {
+      "sha256": "3f1702b404c614c1ec0b8ab78e51f39282191eeb79eae218d84884a7cfe84890",
+      "bytes": 1269
+    },
+    "snapshot.json": {
+      "sha256": "4f4131d27cbf5d7349d39dee55d41173625dfb213bd160e6bb2f5b74cd40e856",
+      "bytes": 21900
+    },
+    "arithmetic-clarification.json": {
+      "sha256": "32768d1da2bcaae7ab1129e84af728a695a773258ffd216053d63e67d4286081",
+      "bytes": 2322
+    }
+  },
+  "report_only_arithmetic_clarification": "Exact Fraction recalculation confirms commentary remaining-pair correction16; report ordinal has differing list order; candidate tiny and prediction arithmetic correct."
+}
