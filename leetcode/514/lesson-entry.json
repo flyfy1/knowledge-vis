@@ -1,0 +1,29 @@
+{
+  "id": 514,
+  "title": {
+    "zh": "自由之路",
+    "en": "Freedom Trail"
+  },
+  "desc": {
+    "zh": "从转盘的两条路，到按终点保留最小代价。",
+    "en": "From two arcs on a dial to minimum costs at each endpoint."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "动态规划",
+      "en": "Dynamic programming"
+    }
+  ],
+  "path": "514/",
+  "leetcodeUrl": "https://leetcode.com/problems/freedom-trail/",
+  "language": "Python",
+  "complexity": "O(m n²) time; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "Endpoint dynamic programming",
+      "step": 2,
+      "description": "Keep the cheapest spelling cost for every possible dial endpoint."
+    }
+  ]
+}
