@@ -24,3 +24,28 @@
 | invariant | 3 | a fact kept true after every update |
 
 Simulation is a visual trace of the algorithm’s state, never execution of the submitted Python. The baseline oracle in `tests/test_solution.py` is independently written with direct window scans.
+
+## 2026-10-25 review repair scope
+
+Adopt the supplied independent review `specs/reviews/239-review-2-99bc6fb4.md`:
+P0 / highest-return change is **239-R2-01**, aligning array membership with the
+completed insertion frame. At i=-1 no input is processed or highlighted. At
+0<=i<k-1 highlight only [0,i], label it partial and emit nothing. Thereafter
+highlight [i-k+1,i], label it a full window after the update; output is cumulative
+across all completed full windows. State expired indices and unprocessed indices
+in nearby text so the meaning is available beyond color. Preserve section 01's
+left-edge convention and the existing core snapshots. Rewind and locale changes
+must restore the same interval, deque and output.
+
+P1 adopts **239-R2-N1** (localized dynamic reasons and an index:value legend) and
+**239-R2-N2** (n=len(nums), exact baseline value-visit count, k=n boundary and
+k=n/2 example). P2 has no deliverable. Deferred: layout redesign and suboperation
+animation have no need in this scoped repair; reconsider only with a separate
+teaching requirement. Publication requires separate independent review.
+
+This carries forward the established layout and shared styling; no new feature,
+layout, design token, animation, service or dependency is needed. Use existing
+hint/readout typography for the scope and legend. Allowed presentation changes
+are cell membership and localized explanatory readouts. All canonical Python,
+core state, control transitions, prediction input and source transfer semantics
+remain under regression checks.
