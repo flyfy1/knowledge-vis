@@ -36,3 +36,34 @@ The actual visible return annotation is `list[str]`; the canonical solution's
 imported `List[str]` annotation is equivalent for this interface. This capture
 supplements the older author notes and does not itself grant review acceptance.
 The prior official-access finding requires a new independent reviewer decision.
+
+## Review-4 correction contract (2026-10-25)
+
+Reuse verdict: correct the existing five-step lesson and its existing trace/formula/
+source regions. This work implements the independent review's required corrections
+(L282-FORMULA-001, L282-STATE-001, L282-COPY-FALLBACK-001); it adds no new page or
+layout. That review supplies the defect/design direction. A fresh independent
+review of this candidate remains pending; no child-agent review is authorized.
+
+P0 / highest-return scope: show each active recurrence with substituted arithmetic;
+work through `105/5` using explicit child arguments, saved parents, returns,
+leading-zero rejection and both terminal outcomes; provide exact manual source
+copy. The trace counts displayed teaching frames only, labels skipped subtrees,
+and highlights the next-slice index, including no highlight at `index=len(num)`.
+A fresh `122/-3` multi-select asks about signed last and the completion test.
+P1: repair mapping headings, label step 01 as a worked example, correct the
+literal expression length to 2n−1, and improve primary-action contrast.
+P2 / deferred: extra decoration and custom-input execution have no demonstrated
+need for closing this review. Actual novice teach-back and native browser zoom
+require a separate validation occasion; neither is claimed here.
+
+Token correction: `--primary: #0b526b`, action foreground `--ink: #eaf5fb` explicitly
+applied on `.btn.primary` to override the shared stylesheet's foreground. Existing
+typography, spacing, surfaces and static layout remain the approved contract.
+Fallback is a read-only, labeled textarea on the existing source surface, with
+canonical LF-preserving value and native select/copy. Locale changes preserve
+trace index, operator, quiz selections/reveal, verification preset and fallback.
+This supersedes the original learning-loop/step-04 `232` exercise: `232` stays the
+worked precedence example and verification preset; the retrieval exercise is now
+`122/-3`. In Python, immutable child arguments leave parent state intact, so
+returning needs no in-place string undo.
