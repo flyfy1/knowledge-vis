@@ -1350,3 +1350,13 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Frozen top-height invariant | `leetcode/699/#step2` | The maximum intersecting earlier top is the exact landing base. |
 
 <!-- /leetcode-699-campaign -->
+
+
+<!-- leetcode-691-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Remaining-letter memoization | `leetcode/691/#step2` | Cache the minimum additional stickers by immutable missing-letter counts. |
+| Pivot-letter branch filtering | `leetcode/691/#step2` | Reorder any solution to begin with a sticker covering a chosen missing letter. |
+
+<!-- /leetcode-691-campaign -->

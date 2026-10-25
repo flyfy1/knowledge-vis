@@ -1,0 +1,52 @@
+{
+  "candidate": "691-author-1",
+  "frozenAt": "2026-10-25T04:37:49.587634+00:00",
+  "status": "author self-checked; independent review pending",
+  "files": {
+    "BRIEF.md": "92513fc5a21d6a005a9fc2fc1c6570091d0a469d1f9215e95be1c7d6d90c2e6a",
+    "app.js": "5268512eaf769a466c4d60bfd21fd157ecc02a09073c99970f60752b194f87cc",
+    "copy.js": "e788a14cceb9f0850b8e46bbea74149ee26e7c9efaca97b84334f8661f332bad",
+    "core.js": "10df08088d37a2443c4c1f8400b30139c03f3a304066f924401487ca349b1838",
+    "index.html": "6b1460a310d38b4a161373634f51c91248c4dc3119e0f9e2e58957ab52c11ee4",
+    "lesson-entry.json": "024652625af2e6b5ea999987aadd95d94beb058186ceb2a3eee41d3f0006cd81",
+    "provenance/official.json": "32bc852e85924bf638a2def244b7c6d829eb5acb0e9176bd9b764493714720ac",
+    "python-code.js": "198c5628c05148f6246c4438d8d9dd7e9c385fe9c8e07fe976644a13a59c3934",
+    "solution.py": "88680076d70ab2a450ff60d16560c4536d86a6b1d35e764b3a8144865b976252",
+    "style.css": "5d62e294bb86337196eb5bbb7c726092b9d7dc1cacc037c33e58a13198b57b21",
+    "tests/README.md": "138541a5d8085e152c0375be685bcc61f9bb4c74487c11d0aa52ae5ff5e85a1c",
+    "tests/SELF-CHECK.md": "85d9818bf55a50b6c4ca3319939a5f6d948cf440fb6526e36b34c7cc3b5768dd",
+    "tests/browser.cjs": "0230833eea8c4a4bb8f63daa5165de75ac9cf63d0a6a261799f2194082771457",
+    "tests/check.py": "95e7aa57f9ea1570eb8db2e5fb730aa3eb5beb6420cc2838793288f2a094a847"
+  },
+  "sharedReadOnly": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "evidence": {
+    "browser-results.json": "866061209f1fa8bde3a61b07e3179ba3d2e5f2e7db066885eff04bd0d542dc9e",
+    "copy-fallback.png": "bb47d5ea380b9333abcd2b5dd28d83fd9f17c180b594079360d600a170e11674",
+    "core-results.json": "54d4df689c1e9e51e6bb988a45011b7d9879df971d538d9dd00539586670901a",
+    "downloaded-solution.py": "88680076d70ab2a450ff60d16560c4536d86a6b1d35e764b3a8144865b976252",
+    "en-1440-quiz.png": "40143181dd734c58d8cc3469360c29bb58f3619c03004602ce9f72adb683ad62",
+    "en-1440-trace.png": "4f1fac738ceeb2dc8acd214a6c42c0059f07e627dc71f1a595dc7c766a22e92b",
+    "en-320-quiz.png": "fb59c71102efdfc8e4e45d926f4a64a82fdd20e1a7a70288e0548b0ccd48a3d5",
+    "en-320-trace.png": "3333ac25dd6b11c70abc3cbfc46c6f948f988e5c551df9faa0508f8ca03ffcff",
+    "en-390-quiz.png": "102aae531ca5ff5a7d7f02d772955f6bccfc347da740962056fb7dc54fbc5879",
+    "en-390-trace.png": "130ee1085eac3f8420612a85ac2ceec57821bf3eacccede9e025823b76231205",
+    "en-736-quiz.png": "614ca91b99b60706fa5400107451de5192bc6d965bdede8af6bd6f8c2ebe3f46",
+    "en-736-trace.png": "f837de2eaf5cd84f1e98fe06d937a855f06ae6985cc90b64488853ac63ef4230",
+    "en-zoom200.png": "1cbdeb18e1c9fe61426255893475d767e7364a93c8e0474f0f74adc0aa2e54d5",
+    "metadata-preflight.json": "731cf0c2fec9ef03a4f24aa2ffdde5a21ec1680fc14d7ae66bc96898643df87b",
+    "ordinary-390-header.png": "5569d6fb267906f7768c9969ccc18eb1d12c82d0664f37e4e296819b2c298126",
+    "zh-1440-quiz.png": "025e86c9f4cbff9c0c592edba61691d7650052486a2685c5f0e475959294787b",
+    "zh-1440-trace.png": "ce7a8a992c215020373b444b852f9d589163a3c09784ef5dd4bf646eca15f8ed",
+    "zh-320-quiz.png": "c8a3db0bee31ab726f6666d2ce6aed7fb015623cf2cd62d736bc6ba0686897a6",
+    "zh-320-trace.png": "5066d1feda3285d02913e7da7d29e5fdb10a3f4f109226c3fb9c1ec27d95a8a9",
+    "zh-390-quiz.png": "92f201b828664952677d25bd6310845c954a5d22f72ae227c70cc5593ecbdc7b",
+    "zh-390-trace.png": "309c8b701d717dbed2c9e36f083ce8a967bcc0783dc35c35689f0a2e23cebff2",
+    "zh-736-quiz.png": "3892b4c0f12ac6e1bdc034ef6c9b524d5e2a789d66220d7a6d7afa753c3b242c",
+    "zh-736-trace.png": "66971a257ae7204b7e6c08b5be00f1b2522815671425de36e42210f76f21cda1",
+    "zh-hand-390.png": "e144c614ae567032261a46a3a92e44ca399efbe2b48282cb9e859fcb6e022b69",
+    "zh-zoom200.png": "f0d86aab94d992b9e1b1ab14334b3731d288977687ca01157282d5492c761769"
+  }
+}

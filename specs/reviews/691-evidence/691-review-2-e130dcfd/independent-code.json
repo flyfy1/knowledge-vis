@@ -1,0 +1,199 @@
+{
+  "fresh": [
+    {
+      "stickers": [
+        "aa",
+        "bc"
+      ],
+      "target": "aaabc",
+      "predicted": 3,
+      "observed": 3,
+      "oracle": 3
+    },
+    {
+      "stickers": [
+        "aab",
+        "ac",
+        "bd"
+      ],
+      "target": "aabcd",
+      "predicted": 2,
+      "observed": 3,
+      "oracle": 3
+    },
+    {
+      "stickers": [
+        "aabc",
+        "aad",
+        "bce"
+      ],
+      "target": "aabcde",
+      "predicted": 2,
+      "observed": 2,
+      "oracle": 2
+    },
+    {
+      "stickers": [
+        "a"
+      ],
+      "target": "b",
+      "predicted": -1,
+      "observed": -1,
+      "oracle": -1
+    },
+    {
+      "stickers": [
+        "a"
+      ],
+      "target": "aaa",
+      "predicted": 3,
+      "observed": 3,
+      "oracle": 3
+    },
+    {
+      "stickers": [
+        "aaaaaaaaaa"
+      ],
+      "target": "aaaaaaaaaaaaaaa",
+      "predicted": 2,
+      "observed": 2,
+      "oracle": 2
+    },
+    {
+      "stickers": [
+        "abcdefghij",
+        "klmno"
+      ],
+      "target": "abcdefghijklmno",
+      "predicted": 2,
+      "observed": 2,
+      "oracle": 2
+    },
+    {
+      "stickers": [
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "target": "aaaaaaaaaaaaaaa",
+      "predicted": 15,
+      "observed": 15,
+      "oracle": 15
+    },
+    {
+      "stickers": [
+        "zzzab"
+      ],
+      "target": "aab",
+      "predicted": 2,
+      "observed": 2,
+      "oracle": 2
+    },
+    {
+      "stickers": [
+        "a"
+      ],
+      "target": "",
+      "predicted": 0,
+      "observed": 0,
+      "oracle": 0
+    }
+  ],
+  "randomCases": 100,
+  "seed": 130691,
+  "oracle": "enumeration of sticker multisets by increasing physical copies; identical types deduplicated",
+  "receipts": [
+    {
+      "file": "index.html",
+      "sha256": "92bd1936f05b5b42efc87728f75656a8d7e4100cd02c272a5b5d87bed2485cc4",
+      "httpExact": true
+    },
+    {
+      "file": "core.js",
+      "sha256": "10df08088d37a2443c4c1f8400b30139c03f3a304066f924401487ca349b1838",
+      "httpExact": true
+    },
+    {
+      "file": "app.js",
+      "sha256": "5268512eaf769a466c4d60bfd21fd157ecc02a09073c99970f60752b194f87cc",
+      "httpExact": true
+    },
+    {
+      "file": "copy.js",
+      "sha256": "6519058faa6ad2e0fa3b1eccefb008b9e87a688ecdf28f77391900bb43297599",
+      "httpExact": true
+    },
+    {
+      "file": "python-code.js",
+      "sha256": "198c5628c05148f6246c4438d8d9dd7e9c385fe9c8e07fe976644a13a59c3934",
+      "httpExact": true
+    },
+    {
+      "file": "solution.py",
+      "sha256": "88680076d70ab2a450ff60d16560c4536d86a6b1d35e764b3a8144865b976252",
+      "httpExact": true
+    },
+    {
+      "file": "style.css",
+      "sha256": "5d62e294bb86337196eb5bbb7c726092b9d7dc1cacc037c33e58a13198b57b21",
+      "httpExact": true
+    },
+    {
+      "file": "../common.js",
+      "sha256": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+      "httpExact": true
+    },
+    {
+      "file": "../style.css",
+      "sha256": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+      "httpExact": true
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "kind": "author self-check",
+  "command": "python3 -B scripts/register_leetcode_lesson.py 691 --validate-only",
+  "cwd": "/home/songyy/projects/leetcode-hard-lane-691-20261025",
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "",
+  "complexity": "O(nLm + nmS) time; O(nm + mS + m\u00b2) auxiliary space, S = product(count(c)+1) <= 2^m"
+}

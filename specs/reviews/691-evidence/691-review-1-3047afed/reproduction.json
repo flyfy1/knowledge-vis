@@ -1,0 +1,41 @@
+{
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "zoom": 1,
+  "geometry": {
+    "rect": {
+      "x": 29,
+      "y": 398.296875,
+      "width": 262,
+      "height": 48,
+      "top": 398.296875,
+      "right": 291,
+      "bottom": 446.296875,
+      "left": 29
+    },
+    "selected": "Length-15 target, missing letters · −1",
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "textWidth": 276.24029541015625,
+    "paddingLeft": "15px",
+    "paddingRight": "15px",
+    "border": "1px"
+  },
+  "semantics": [
+    {
+      "lang": "en",
+      "progress": "Event 28/32; final answer not displayed yet",
+      "calls": "Remaining aab; tuple (2, 1); best candidate so far 2Remaining ab; tuple (1, 1); best candidate so far 1",
+      "history": "Return to ab: sticker a, child b has value 1; candidate 2; best so far 1.",
+      "formula": "F(0)=0; child[j]=max(0,r[j]−sticker[j]); F(r)=min(1+F(child)), over sticker[p]>0 only; no feasible branch means ∞.",
+      "feedback": "That prediction does not hold. The answer is 3. Six letters are missing and each sticker supplies at most two, so at least three are needed; ab+ac+bc attains it. Only the first sticker must cover a. After ab, the remainder is abcc; ac and bc can follow. Skipping is local to a call, not a global ban. Two ignores multiplicity; four treats a local skip as permanent deletion."
+    },
+    {
+      "lang": "zh",
+      "progress": "事件 28/32；最终答案尚未展示",
+      "calls": "剩余 aab；元组 (2, 1)；当前最小候选 2剩余 ab；元组 (1, 1)；当前最小候选 1",
+      "history": "返回父 ab：贴纸 a 的子 b 值 1；候选 2；当前最小 1。",
+      "formula": "F(0)=0；child[j]=max(0,r[j]−sticker[j])；F(r)=min(1+F(child))，只枚举 sticker[p]>0；无可行分支为 ∞。",
+      "feedback": "这个预测不成立。 答案是 3。共缺 6 个字母，每张至多供 2 个，所以至少 3 张；ab+ac+bc 恰好满足。根调用只要求第一张含 a；先用 ab 后剩 abcc，之后可以用 ac 和 bc。跳过只是当前调用的筛选，不是全局禁用。2 忽略份数，4 把局部跳过误当成永久删除。"
+    }
+  ]
+}
