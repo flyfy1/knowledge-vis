@@ -2947,6 +2947,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(E + n(P+1)²(D+1)log(D+2) + P log(P+1)(D+1)) key operations; O(E + n(P+1)(D+1)) auxiliary space plus output strings"
   },
   {
+    "id": 773,
+    "title": {
+      "zh": "滑动谜题",
+      "en": "Sliding Puzzle"
+    },
+    "desc": {
+      "zh": "从一次空位交换推导广度优先搜索，用完整层证明最少移动次数。",
+      "en": "Derive breadth-first search from a blank swap and prove minimum moves with complete layers."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "状态空间",
+        "en": "State space"
+      }
+    ],
+    "path": "773/",
+    "leetcodeUrl": "https://leetcode.com/problems/sliding-puzzle/",
+    "language": "Python",
+    "complexity": "O(V+E) time; O(V) auxiliary space for fixed six-cell states, V ≤ 720 and E ≤ 3V"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
