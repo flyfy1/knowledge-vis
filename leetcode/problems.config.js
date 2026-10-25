@@ -3623,6 +3623,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(log(min(a,b)) + log(n*min(a,b))) integer operations; O(1) auxiliary integer cells"
   },
   {
+    "id": 879,
+    "title": {
+      "zh": "盈利计划",
+      "en": "Profitable Schemes"
+    },
+    "desc": {
+      "zh": "从四个子集推导人数与封顶利润的计数表。",
+      "en": "Derive a count table for exact members and capped profit from four subsets."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "计数",
+        "en": "Counting"
+      }
+    ],
+    "path": "879/",
+    "leetcodeUrl": "https://leetcode.com/problems/profitable-schemes/",
+    "language": "Python",
+    "complexity": "O(m*n*(minProfit+1)) time; O(n*(minProfit+1)) auxiliary space"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",

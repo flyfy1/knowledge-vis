@@ -1861,3 +1861,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Interval DP with pile counts | `leetcode/1000/#step3` | Split an interval into a first pile and a remaining forest, then charge the legal final merge. |
 
 <!-- /leetcode-1000-campaign -->
+
+
+<!-- leetcode-879-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Capped profit counting DP | `leetcode/879/#step2` | Count subsets by exact members used and threshold-capped profit. |
+| Skip/take partition | `leetcode/879/#step1` | Merge equivalent futures without merging distinct choices. |
+
+<!-- /leetcode-879-campaign -->
