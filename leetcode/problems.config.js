@@ -1987,6 +1987,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
+    "id": 552,
+    "title": {
+      "zh": "学生出勤记录 II",
+      "en": "Student Attendance Record II"
+    },
+    "desc": {
+      "zh": "从两天考勤推导六状态计数，逐日检查来源与不变式。",
+      "en": "Derive six attendance states and inspect each day’s incoming counts."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "计数",
+        "en": "Counting"
+      }
+    ],
+    "path": "552/",
+    "leetcodeUrl": "https://leetcode.com/problems/student-attendance-record-ii/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
