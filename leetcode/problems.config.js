@@ -3025,6 +3025,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(1 + log(max(tx, ty))) time; O(1) auxiliary space"
   },
   {
+    "id": 803,
+    "title": {
+      "zh": "打砖块",
+      "en": "Bricks Falling When Hit"
+    },
+    "desc": {
+      "zh": "倒序补砖，用屋顶连通数的增量推导掉落数量。",
+      "en": "Reverse the hits and derive fallen counts from growth in roof connectivity."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "并查集",
+        "en": "Union-find"
+      },
+      {
+        "zh": "逆序处理",
+        "en": "Reverse processing"
+      }
+    ],
+    "path": "803/",
+    "leetcodeUrl": "https://leetcode.com/problems/bricks-falling-when-hit/",
+    "language": "Python",
+    "complexity": "O((mn + H) α(mn)) amortized time; O(mn + H) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
