@@ -2173,6 +2173,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(log n) time; O(log n) auxiliary space (unit-cost arithmetic within the official bounds)"
   },
   {
+    "id": 629,
+    "title": {
+      "zh": "K 个逆序对数组",
+      "en": "K Inverse Pairs Array"
+    },
+    "desc": {
+      "zh": "插入最大值，数清新增逆序对，再让相邻计数和共享计算。",
+      "en": "Insert the largest value, count its new inversions, then reuse neighboring sums."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "滑动窗口计数",
+        "en": "Sliding window counting"
+      }
+    ],
+    "path": "629/",
+    "leetcodeUrl": "https://leetcode.com/problems/k-inverse-pairs-array/",
+    "language": "Python",
+    "complexity": "O(n(k+1)) time; O(k+1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
