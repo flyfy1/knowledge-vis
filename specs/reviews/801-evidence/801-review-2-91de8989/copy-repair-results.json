@@ -1,0 +1,91 @@
+{
+  "finding": "801-COPY-R1",
+  "kind": "author self-check",
+  "host": "linux",
+  "url": "http://127.0.0.1:18770/leetcode/801/",
+  "states": [
+    {
+      "lang": "zh",
+      "width": 320,
+      "trace": "i=2, processed 3/4",
+      "prediction": "revealed (2,2), retained",
+      "focus": [
+        "复制 Python",
+        "下载 solution.py",
+        "查看官方接口 Python 源码",
+        "重看四条状态连接",
+        "重看结尾为何足够",
+        "#10：字符前缀的动态规划状态",
+        "#123：股票问题的四种状态"
+      ],
+      "geometry": {
+        "width": 320,
+        "scrollWidth": 320,
+        "bottomGap": 0.078125
+      },
+      "limitations": [
+        "可视化是 JavaScript 状态模拟，不是执行 Python。保留的 O(n) 教学历史不计入提交代码的 O(1) 辅助空间；小预设展示全部列，没有跳步。",
+        "下方始终是原始输入数值，不随推演交换；橙框标出刚处理完的列。",
+        "下面是可提交的官方 Python3 接口 Solution.minSwap(nums1, nums2)，返回整数。页面并未运行这段 Python；本地测试会真正调用它，再与枚举基线核对。"
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "trace": "i=2, processed 3/4",
+      "prediction": "revealed (2,2), retained",
+      "focus": [
+        "Copy Python",
+        "Download solution.py",
+        "Inspect Python source for the official interface",
+        "Revisit the four state connections",
+        "Revisit why endings suffice",
+        " #10: dynamic programming over string prefixes",
+        " #123: four states for stock transactions"
+      ],
+      "geometry": {
+        "width": 320,
+        "scrollWidth": 320,
+        "bottomGap": -0.21875
+      },
+      "limitations": [
+        "This is a JavaScript state simulation, not Python execution. Its O(n) teaching history is separate from the submission’s O(1) auxiliary space. Every column of these small presets is shown.",
+        "The values below remain the original input, without simulated swaps. An orange outline marks the column just processed.",
+        "Below is the submittable official Python3 interface, Solution.minSwap(nums1, nums2), returning an integer. The page does not execute this Python. Local tests actually call it and compare it with mask enumeration."
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "trace": "i=2, processed 3/4",
+      "prediction": "revealed (2,2), retained",
+      "focus": [
+        "复制 Python",
+        "下载 solution.py",
+        "查看官方接口 Python 源码",
+        "重看四条状态连接",
+        "重看结尾为何足够",
+        "#10：字符前缀的动态规划状态",
+        "#123：股票问题的四种状态"
+      ],
+      "geometry": {
+        "width": 320,
+        "scrollWidth": 320,
+        "bottomGap": 0.078125
+      },
+      "limitations": [
+        "可视化是 JavaScript 状态模拟，不是执行 Python。保留的 O(n) 教学历史不计入提交代码的 O(1) 辅助空间；小预设展示全部列，没有跳步。",
+        "下方始终是原始输入数值，不随推演交换；橙框标出刚处理完的列。",
+        "下面是可提交的官方 Python3 接口 Solution.minSwap(nums1, nums2)，返回整数。页面并未运行这段 Python；本地测试会真正调用它，再与枚举基线核对。"
+      ]
+    }
+  ],
+  "errors": [],
+  "browser": "156.0.8078.4",
+  "zoom": {
+    "innerWidth": 720,
+    "devicePixelRatio": 2,
+    "nativeFactor": 2
+  },
+  "status": "PASS"
+}

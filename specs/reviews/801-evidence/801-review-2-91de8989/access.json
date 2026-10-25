@@ -1,0 +1,150 @@
+[
+  {
+    "lang": "zh",
+    "source": {
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(9, 14, 22)"
+    },
+    "buttons": [
+      {
+        "text": "中",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "EN",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "交换 / 撤销 i=0",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "交换 / 撤销 i=1",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "交换 / 撤销 i=2",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "交换 / 撤销 i=3",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "← 撤回一列",
+        "disabled": true,
+        "height": 48
+      },
+      {
+        "text": "处理下一列 →",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "回到第 0 列",
+        "disabled": true,
+        "height": 48
+      },
+      {
+        "text": "处理到结尾",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "核对并解释",
+        "disabled": true,
+        "height": 48
+      },
+      {
+        "text": "清除预测",
+        "disabled": true,
+        "height": 48
+      },
+      {
+        "text": "复制 Python",
+        "disabled": false,
+        "height": 48
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "source": {
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(9, 14, 22)"
+    },
+    "buttons": [
+      {
+        "text": "中",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "EN",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "Swap / undo i=0",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "Swap / undo i=1",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "Swap / undo i=2",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "Swap / undo i=3",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "← Undo one column",
+        "disabled": true,
+        "height": 48
+      },
+      {
+        "text": "Process next column →",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "Reset to column 0",
+        "disabled": true,
+        "height": 48
+      },
+      {
+        "text": "Process to end",
+        "disabled": false,
+        "height": 48
+      },
+      {
+        "text": "Check & explain",
+        "disabled": true,
+        "height": 48
+      },
+      {
+        "text": "Clear prediction",
+        "disabled": true,
+        "height": 48
+      },
+      {
+        "text": "Copy Python",
+        "disabled": false,
+        "height": 48
+      }
+    ]
+  }
+]
