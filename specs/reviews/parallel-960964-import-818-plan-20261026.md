@@ -1,4 +1,4 @@
-# Next ordinary boundary: #960/#964 import and #818 resource follow-up
+# Next ordinary boundary: #960/#964 import and #818/#964 follow-ups
 
 Preparation only. No STOP, transition script, dispatch, queue expansion or state mutation is performed by this plan. Wait for genuine independent acceptance and exited processes from both reserved lanes. Their immutable original base remains `8cedba5490bb862133f157a9d6af619cee323fb9`.
 
@@ -17,8 +17,8 @@ Both paths are excluded from the existing importer shared-policy comparison. Do 
 
 1. Freeze each lane's independently accepted candidate/report/source fingerprint, registration head, runs/sessions and exited process evidence. Recheck target IDs remain unstarted centrally and shared policy matches; record all current state, ledger and ordinary metadata. Preserve existing reservations and receipts.
 2. Adapt the established one-off import operator, with exact pins and independent review before dispatch. Own a uniquely marked STOP and allow the active central stage to finish naturally. Confirm no central writer, clean expected HEAD and the existing import/checkout/state gates. Do not interrupt a child or reset a dirty tree.
-3. Import both accepted lanes with the unchanged importer and retain its full provenance. Adopt exactly the two fixed documents in a separate truthful commit; verify the exact tree diff and immutable payload hashes.
-4. Reopen only #818 using the proven ordinary revision representation: preserve candidate, rounds, original runs/reviews and historical acceptance in an appended maintenance record/backup; set its ordinary phase to fix, status to changes_required and prior_report to the request. Do not fabricate a reviewer finding or erase acceptance history. Preserve all other problem entries, queue order, runs, release ledger and runtime policy.
+3. Import both accepted lanes with the unchanged importer and retain its full provenance. Adopt exactly the two fixed #818 documents plus the independently checked numeric-review #964 normalization request described below, in a separate truthful commit; verify the exact tree diff and immutable payload hashes.
+4. Reopen only #818 and #964 using the proven ordinary revision representation: preserve candidates, rounds, original runs/reviews and historical acceptance in an appended maintenance record/backup; set their ordinary phase to fix, status to changes_required and prior_report to the respective request. Do not fabricate reviewer findings or erase acceptance history. Preserve all other problem entries, queue order, runs, release ledger and runtime policy.
 5. Account for ordinary registration-only stages before the first new agent. Reuse the existing registration commit/path/provenance validation and fresh run/thread/turn/native-child proof. Do not hardcode #780 or #818 as the next agent: earlier copy revisions or a pending ordinary registration may precede it.
 6. Before resume, prove the no-publication transaction gate with a conservative bound: obtain actual existing changed-digest eligible IDs using unchanged read-only publisher semantics, then add deduplicated incoming lane IDs and each ordinary pending-registration ID at most once. Ignore any reduction from reopening #818. Require this upper bound to be below 20. The former accepted-count-minus-released-count shortcut is insufficient after reopening/reaccepting lessons. If the bound reaches 20, inspect or wait for a normal release rather than invent a future-registry simulator, modify the ledger, disable publication or launch while claiming no publication.
 7. Push the exact durable operation head; remove only the owned STOP; resume the unchanged continuous launcher with maximum six rounds. Verify genuinely new event/session identity and native descendant. Any normal registration advancement must be validated and its exact head pushed separately, preserving the live author's checkout. Retain partial receipts/STOP on failure and report a concrete recovery path without blind retry.
@@ -36,6 +36,18 @@ its own or blindly retry a partially applied transaction. Also retain the earlie
 guards against an existing pending release or a same-digest receipt refresh when
 claiming that ledger bytes stay unchanged.
 
-## Current observation, not future dispatch guards
+## Selected #964 follow-up
+
+Both lanes subsequently accepted and exited: #960 at 100/100 and #964 at92.5/100.
+The original #964 report's optional 964-R1-A1 recommends a concrete fractional
+carry in its dense proof paragraph. The dispatcher selects this bounded teaching
+improvement under `964-NORMALIZE-R1`; original acceptance remains historical and
+optional high-zoom layout advisory964-R1-A2 is not selected. Adopt only
+`specs/reviews/964-review-normalization-request-20261026.md` as the third document,
+with its immutable source commit/hash frozen separately in the reviewed operator.
+It reuses the existing proof binding and requires a fresh independent review.
+Ignore any publication-bound reduction from reopening either818 or964.
+
+## Earlier observation, not future dispatch guards
 
 At the preparation read, both lanes were still authoring: #960 run `960-author-8cc7542bb675`, runner1412196; #964 run `964-author-da971470b79b`, runner1412828. Central runner1407470 was reviewing #793, and STOP was absent. These live facts are not immutable dispatch pins. Final acceptance and boundary pins must come from later authoritative state.
