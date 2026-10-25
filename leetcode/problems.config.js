@@ -2537,6 +2537,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "Expected O(b + 1) initialization time and space; expected O(1) time per pick, one random API call"
   },
   {
+    "id": 715,
+    "title": {
+      "zh": "Range 模块",
+      "en": "Range Module"
+    },
+    "desc": {
+      "zh": "从挖去一段区间，推导有序边界的奇偶规则。",
+      "en": "Derive endpoint parity by cutting, joining, and querying real-number ranges."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "有序边界",
+        "en": "Sorted endpoints"
+      },
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      }
+    ],
+    "path": "715/",
+    "leetcodeUrl": "https://leetcode.com/problems/range-module/",
+    "language": "Python",
+    "complexity": "O(k) time per update, O(log(k+1)) per query; O(k) space for k endpoints"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

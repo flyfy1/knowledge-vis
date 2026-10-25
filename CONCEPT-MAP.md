@@ -1298,3 +1298,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Random API calls and rejection sampling | `leetcode/710/#step1` | Compare materialization, unbiased retries and one-call remapping. |
 
 <!-- /leetcode-710-campaign -->
+
+
+<!-- leetcode-715-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| 半开区间 / Half-open intervals | `leetcode/715/#step0` | Left included, right excluded; removal preserves the right endpoint. |
+| 边界奇偶性 / Endpoint parity | `leetcode/715/#step1` | Strictly increasing alternating endpoints encode tracked real intervals. |
+| 区间替换 / Interval replacement | `leetcode/715/#step2` | Parity determines new boundaries when assigning coverage on a range. |
+
+<!-- /leetcode-715-campaign -->
