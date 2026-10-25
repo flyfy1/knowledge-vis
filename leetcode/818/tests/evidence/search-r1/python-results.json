@@ -1,0 +1,294 @@
+{
+  "kind": "author self-check",
+  "records": [
+    {
+      "target": 1,
+      "answer": 1,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 2,
+      "answer": 4,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 3,
+      "answer": 2,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 4,
+      "answer": 5,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 5,
+      "answer": 7,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 6,
+      "answer": 5,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 7,
+      "answer": 3,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 8,
+      "answer": 6,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 9,
+      "answer": 8,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 10,
+      "answer": 7,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 11,
+      "answer": 10,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 12,
+      "answer": 7,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 13,
+      "answer": 9,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 14,
+      "answer": 6,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 15,
+      "answer": 4,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 16,
+      "answer": 7,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 17,
+      "answer": 9,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 18,
+      "answer": 8,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 19,
+      "answer": 11,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 20,
+      "answer": 12,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 21,
+      "answer": 10,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 22,
+      "answer": 9,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 23,
+      "answer": 12,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 24,
+      "answer": 9,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 25,
+      "answer": 11,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 1,
+      "answer": 1,
+      "seconds": 6.500049494206905e-06,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 3,
+      "answer": 2,
+      "seconds": 6.036949343979359e-06,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 6,
+      "answer": 5,
+      "seconds": 1.2519070878624916e-05,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 43,
+      "answer": 13,
+      "seconds": 0.00029524206183850765,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 77,
+      "answer": 13,
+      "seconds": 0.00020429701544344425,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 328,
+      "answer": 25,
+      "seconds": 0.008081331965513527,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 403,
+      "answer": 29,
+      "seconds": 0.020428508054465055,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 446,
+      "answer": 21,
+      "seconds": 0.0022341629955917597,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 478,
+      "answer": 20,
+      "seconds": 0.0015838999534025788,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 482,
+      "answer": 20,
+      "seconds": 0.0015383251011371613,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 497,
+      "answer": 16,
+      "seconds": 0.00042594701517373323,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 547,
+      "answer": 23,
+      "seconds": 0.0036174319684505463,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 548,
+      "answer": 22,
+      "seconds": 0.0027073699748143554,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 551,
+      "answer": 26,
+      "seconds": 0.00917974696494639,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 590,
+      "answer": 26,
+      "seconds": 0.008740928955376148,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 787,
+      "answer": 31,
+      "seconds": 0.02946832694578916,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 809,
+      "answer": 34,
+      "seconds": 0.054620460025034845,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 835,
+      "answer": 29,
+      "seconds": 0.018151752068661153,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 849,
+      "answer": 32,
+      "seconds": 0.035389533964917064,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 902,
+      "answer": 24,
+      "seconds": 0.004567141993902624,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 931,
+      "answer": 27,
+      "seconds": 0.010314475977793336,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 8191,
+      "answer": 13,
+      "seconds": 3.6202953197062016e-05,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 8192,
+      "answer": 16,
+      "seconds": 3.883300814777613e-05,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 9809,
+      "answer": 56,
+      "seconds": 2.9103692939970642,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 9879,
+      "answer": 55,
+      "seconds": 2.1181861800141633,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 9999,
+      "answer": 43,
+      "seconds": 0.26011565793305635,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    },
+    {
+      "target": 10000,
+      "answer": 45,
+      "seconds": 0.383532403036952,
+      "oracle": "distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof"
+    }
+  ],
+  "mersenne_boundaries": 13,
+  "sourceParity": true
+}

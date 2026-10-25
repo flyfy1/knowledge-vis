@@ -31,3 +31,58 @@ Validation: independent raw command enumeration for small cases; independent dis
 
 ## Author completion
 Author self-check complete; metadata validate-only exited0. Evidence and limitations: SELF-CHECK.md and tests/evidence/. Frozen candidate identity: candidate.json. Independent review pending; next action is a fresh cold walkthrough under the six-dimension rubric. No acceptance or publication claimed.
+
+
+## 2026-10-26 — 818-SEARCH-R1 revision (supersedes current algorithm above)
+
+Adopted design and request: specs/reviews/818-review-search-alternative-design-20261026.md
+and specs/reviews/818-review-search-alternative-request-20261026.md. This revision
+reuses the existing page, anchors, sandbox, BFS and target2 exercise. The basic-Python
+reader now derives an optimistic remaining-command bound, manually follows a full
+small A* search and reconstructs exact unbounded Python. The prior sections document
+the original BFS candidate; canonical step4 and complexity are replaced as follows.
+
+|Step|Known|Single question|Input / quantity|Action / observation|Conditions|
+|---|---|---|---|---|---|
+|4 bridge|Full-state BFS, A/R and unit costs|How can a bound safely postpone exploration?|target6 default;3,5 presets / g,h,f, pending entries|next/back/reset/end after each pop; both children, sorted pending view, retained history, counts|No clipping/caps; best-g improvements and stale skip; return only on nonstale minimum-f goal pop|
+|4 Python|Lower-bound proof and manual search|How do Python's heap and dictionary retain optimality?|Solution.racecar(target: int) -> int / minimum commands|map three bound branches and each child enqueue to exact Python|O(Q log Q) heap work; conservative O(D*2^D) time, O(2^D) space under unit-cost integer/hash assumption|
+
+Bound sequence: target5's unique shortest AARARAA disproves distance-only pruning;
+v=2 gives acceleration displacements0,2,6,14; derive v*(2**k-1) by bounding each
+command's possible displacement. Facing the target: q=(d+v-1)//v, h=q.bit_length();
+facing away: at least one R, then magnitude1 and gap at least d, hence
+h=1+d.bit_length(); arrived:0. Bounds constrain possibility, not feasible routes.
+Admissibility plus a frontier prefix of any cheaper solution proves goal-pop
+optimality. h>=0, unit costs and finite branching bound relevant prefixes by
+optimal depth D, proving termination without clipping. Only strictly better
+arrivals enqueue; old stale entries can remain until popped.
+
+All former exact tokens,48px controls and no-motion policy remain. Frames are
+snapshots after a pop and its expansion/skip/return, initial has no pop. Counts
+separate generated heap entries (including stale), unique pairs and expansions
+(excluding goal pops). The pending view is sorted (f,-g,p,s), not a heap backing
+array. Target5 has a real improved-g event and a stale pending entry; no preset
+has a stale pop. Larger Python tests exercise actual stale pops. Goal frames
+generate no children. Preset changes reset only this experiment; locale roundtrip
+preserves all experiments, prediction and source state. New rows use the existing
+wrapping ledger at320px. Synchronous presets have no loading/auth/reconnect state.
+
+P0/highest-return: bound derivation, complete small A* search, exact Python,
+proof and candidate-specific regressions. P1: small same-graph BFS/A* count
+comparison (target6:24 vs5 expansions), with accounting boundary beside it.
+P2:none. Deferred: unproved smaller-distance DP, geometry clipping, arbitrary
+browser targets, automatic animation, heap internals, new shared frameworks.
+
+818-RESOURCE-R1's DP choice is superseded, not proved. Preserve original95/100
+acceptance and blocked investigation33686548c3c385cdb14b5b7262e4ca58a3b8d2f4;
+this revision claims neither new independent acceptance nor publication.
+Python remains the preferred faithful official interface, supported by the
+lesson-local official-graphql.json Python3 starter. No language exception applies.
+Source pair from scripts/register_leetcode_lesson.py: solution.py / python-code.js,
+window.PYTHON_SOURCE, compared without whitespace normalization.
+
+Author self-check and hash receipt: SELF-CHECK.md, candidate.json and
+ tests/evidence/search-r1/. Root owns frozen-source Mac survey and isolated resource
+measurements, to be recorded at specs/reviews/818-review-search-resource-measurement-20261026.md
+before separate review. Its absence during authoring is expected and does not
+prevent completing this candidate. No full-range, Mac or official-judge claim.

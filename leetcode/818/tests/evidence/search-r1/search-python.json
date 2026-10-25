@@ -1,0 +1,149 @@
+{
+  "records": [
+    {
+      "pops": 3,
+      "expansions": 2,
+      "improvements": 0,
+      "stale": 0,
+      "generated": 5,
+      "peak_heap": 3,
+      "target": 3,
+      "answer": 2,
+      "seconds": 6.744498386979103e-05,
+      "stored_states": 5
+    },
+    {
+      "pops": 22,
+      "expansions": 21,
+      "improvements": 1,
+      "stale": 0,
+      "generated": 36,
+      "peak_heap": 15,
+      "target": 5,
+      "answer": 7,
+      "seconds": 0.00017614895477890968,
+      "stored_states": 35
+    },
+    {
+      "pops": 6,
+      "expansions": 5,
+      "improvements": 0,
+      "stale": 0,
+      "generated": 11,
+      "peak_heap": 6,
+      "target": 6,
+      "answer": 5,
+      "seconds": 4.768592771142721e-05,
+      "stored_states": 11
+    },
+    {
+      "pops": 552620,
+      "expansions": 551148,
+      "improvements": 4937,
+      "stale": 1471,
+      "generated": 673953,
+      "peak_heap": 121334,
+      "target": 9809,
+      "answer": 56,
+      "seconds": 4.668571855057962,
+      "stored_states": 669016
+    },
+    {
+      "pops": 479541,
+      "expansions": 478281,
+      "improvements": 4253,
+      "stale": 1259,
+      "generated": 585697,
+      "peak_heap": 106157,
+      "target": 9879,
+      "answer": 55,
+      "seconds": 3.9866099919890985,
+      "stored_states": 581444
+    },
+    {
+      "pops": 99436,
+      "expansions": 99193,
+      "improvements": 829,
+      "stale": 242,
+      "generated": 125345,
+      "peak_heap": 25910,
+      "target": 10000,
+      "answer": 45,
+      "seconds": 0.7792044410016388,
+      "stored_states": 124516
+    }
+  ],
+  "comparisons": [
+    {
+      "target": 5,
+      "astar": {
+        "pops": 22,
+        "expansions": 21,
+        "improvements": 1,
+        "stale": 0,
+        "generated": 36,
+        "peak_heap": 15,
+        "target": 5,
+        "answer": 7,
+        "seconds": 0.00019714899826794863,
+        "stored_states": 35
+      },
+      "bfs": {
+        "answer": 7,
+        "expanded": 79,
+        "stored_states": 125
+      }
+    },
+    {
+      "target": 6,
+      "astar": {
+        "pops": 6,
+        "expansions": 5,
+        "improvements": 0,
+        "stale": 0,
+        "generated": 11,
+        "peak_heap": 6,
+        "target": 6,
+        "answer": 5,
+        "seconds": 4.1982042603194714e-05,
+        "stored_states": 11
+      },
+      "bfs": {
+        "answer": 5,
+        "expanded": 24,
+        "stored_states": 43
+      }
+    },
+    {
+      "target": 100,
+      "astar": {
+        "pops": 696,
+        "expansions": 692,
+        "improvements": 9,
+        "stale": 3,
+        "generated": 955,
+        "peak_heap": 260,
+        "target": 100,
+        "answer": 19,
+        "seconds": 0.004157216986641288,
+        "stored_states": 946
+      },
+      "bfs": {
+        "answer": 19,
+        "expanded": 4332,
+        "stored_states": 5669
+      }
+    }
+  ],
+  "sole_shortest_target5": [
+    "AARARAA"
+  ],
+  "bound_route_checks": 455,
+  "actual_python_js_stream_parity": true,
+  "hypotheses": {
+    "ordering": "less exploration confirmed on identical graph",
+    "position_only": "cannot reach 5; rejected",
+    "distance_only": "sole shortest word increases gap; rejected"
+  },
+  "limits": "No full-range or Mac resource claim"
+}
