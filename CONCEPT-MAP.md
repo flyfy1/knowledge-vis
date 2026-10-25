@@ -1228,3 +1228,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | First sufficient value invariant | `leetcode/668/#step2` | Keep C(lo−1)<k≤C(hi) while shrinking an inclusive value interval. |
 
 <!-- /leetcode-668-campaign -->
+
+
+<!-- leetcode-675-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Ordered shortest paths | `leetcode/675/#step1` | Static walkability makes the sum of shortest required legs optimal. |
+| Breadth-first search layers | `leetcode/675/#step2` | Discover each cell once at its shortest unit-cost distance. |
+
+<!-- /leetcode-675-campaign -->
