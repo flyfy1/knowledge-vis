@@ -2277,6 +2277,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
+    "id": 668,
+    "title": {
+      "zh": "乘法表中第 k 小的数",
+      "en": "Kth Smallest Number in Multiplication Table"
+    },
+    "desc": {
+      "zh": "从逐行数格子推导答案二分，保留重复值并证明区间边界。",
+      "en": "Count cells row by row, then derive a binary search that keeps duplicates and preserves answer bounds."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "答案二分",
+        "en": "Binary search on values"
+      },
+      {
+        "zh": "逐行计数",
+        "en": "Row counting"
+      }
+    ],
+    "path": "668/",
+    "leetcodeUrl": "https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/",
+    "language": "Python",
+    "complexity": "O(min(m,n) log(mn)) time; O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
