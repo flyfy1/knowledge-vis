@@ -1288,3 +1288,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Pivot-letter branch filtering | `leetcode/691/#step2` | Reorder any solution to begin with a sticker covering a chosen missing letter. |
 
 <!-- /leetcode-691-campaign -->
+
+
+<!-- leetcode-719-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Pair distance counting | `leetcode/719/#step1` | Count a contiguous block of left endpoints for each sorted right endpoint. |
+| Binary search on distance | `leetcode/719/#step2` | Find the first threshold with at least k pairs. |
+
+<!-- /leetcode-719-campaign -->
