@@ -1,0 +1,48 @@
+{
+  "kind": "author self-check",
+  "oracle": "unrestricted all-pair-swap BFS",
+  "exhaustiveAndSeededCases": 4926,
+  "fixtures": [
+    [
+      "ab",
+      "ba",
+      1
+    ],
+    [
+      "abc",
+      "bca",
+      2
+    ],
+    [
+      "aabbcc",
+      "abcabc",
+      2
+    ],
+    [
+      "abcb",
+      "bbca",
+      1
+    ],
+    [
+      "aaaaaaaaaaaaaaaaaaaa",
+      "aaaaaaaaaaaaaaaaaaaa",
+      0
+    ],
+    [
+      "aaaaaaaaaabbbbbbbbbb",
+      "bbbbbbbbbbaaaaaaaaaa",
+      10
+    ],
+    [
+      "abcdeabcdeabcdeabcde",
+      "abcdeabcdeabcdeabcde",
+      0
+    ],
+    [
+      "aaaaaaaaaaaaaaaaaaab",
+      "baaaaaaaaaaaaaaaaaaa",
+      1
+    ]
+  ],
+  "result": "pass"
+}
