@@ -147,6 +147,11 @@ product is required. Apply the existing frozen-candidate review and closure gate
 
 ## Repository pattern
 
+Apply the [rendered-state and source-fidelity checks](leetcode-rendered-state-contract.md)
+to localized formulas, candidate/value labels, cumulative metrics, prediction
+scope, and exact source transfer. These clarify existing gates without changing
+the rubric or historical acceptance records.
+
 - Collection entry: `/leetcode/`, registered once in root `pages.config.js` under
   category `leetcode`, stage `university`.
 - Problem entry: `/leetcode/<id>/`, registered in `leetcode/problems.config.js`

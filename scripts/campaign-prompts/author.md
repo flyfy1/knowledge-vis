@@ -7,6 +7,7 @@ The human requests every current Hard problem, with a separate agent review for
 each. This is the author run only. Do not claim independent acceptance. Read
 WORKFLOW.md, UI-I18N-SPEC.md, specs/leetcode-explainers.md,
 specs/leetcode-hard-traces.md, specs/leetcode-review-gates.md,
+specs/leetcode-rendered-state-contract.md,
 specs/reviews/leetcode-all-hard-design-review.md, and
 ~/Documents/agent-skills/website-design/SKILL.md. Product/design review and dispatcher
 adjudication already approve the reused lesson pattern; keep that contract and

@@ -5,6 +5,8 @@ Preview: {base_url}
 Previous report: {prior_report}
 
 Read the report, candidate, existing BRIEF and repository teaching/review specs.
+Use specs/leetcode-rendered-state-contract.md for applicable formula, frame-label,
+cumulative-count, prediction-scope, and exact-source regressions.
 Read ~/Documents/agent-skills/website-design/SKILL.md for UI work; for a hard bug
 read ~/Documents/agent-skills/diagnosing-bugs/SKILL.md, establish a failing feedback
 loop and test ranked falsifiable hypotheses. Preserve working behavior. Own only
