@@ -1,0 +1,71 @@
+{
+  "status": "prepared-only-pending-stage-b",
+  "source": "specs/reviews/parallel-968972-evidence-20261026/launch.py",
+  "sourceSha256": "012137ab9eabb43cb6b9038ab6065312d8287724540d67fb362038ac4a5caa05",
+  "pendingLauncherSha256": "9cd775670a13266a93016e6bccbbd76ff110777c599115dd889c674f79b97379",
+  "substitutions": [
+    {
+      "from": "BASE='58cb97e51878f40e234b3e78a8bf9adb24f30c51'",
+      "to": "BASE='__PENDING_STAGE_B_BASE__'"
+    },
+    {
+      "from": "CENTRAL_HEAD='58cb97e51878f40e234b3e78a8bf9adb24f30c51'",
+      "to": "CENTRAL_HEAD='__PENDING_STAGE_B_CENTRAL_HEAD__'"
+    },
+    {
+      "from": "CENTRAL_RUN='818-fix-0dbe90734960'",
+      "to": "CENTRAL_RUN='__PENDING_STAGE_B_CENTRAL_RUN__'"
+    },
+    {
+      "from": "s['current']['problem_id']=='818'",
+      "to": "s['current']['problem_id']=='__PENDING_STAGE_B_PROBLEM__'"
+    },
+    {
+      "from": "s['current']['stage']=='fix'",
+      "to": "s['current']['stage']=='__PENDING_STAGE_B_STAGE__'"
+    },
+    {
+      "from": "e.get('thread_id')=='01a17453-eaf8-7033-b7d8-04655e3b33c0'",
+      "to": "e.get('thread_id')=='__PENDING_STAGE_B_SESSION__'"
+    },
+    {
+      "from": "['968','972']",
+      "to": "['975','980']"
+    },
+    {
+      "from": "parallel-launch-968972.lock",
+      "to": "parallel-launch-975980.lock"
+    },
+    {
+      "from": "[('968',18791),('972',18792)]",
+      "to": "[('975',18793),('980',18794)]"
+    }
+  ],
+  "dispatcherOfficialPrepCommit": "74f2c6729ab50f1781b2fb5fadc2ff267e27d634",
+  "dispatcherOfficialPrepFilesSha256": {
+    "specs/reviews/parallel-975980-preparation-20261026/975-official-access.json": "60cd219f1d53458ba001802cb480c47713106a066e1e9b26d0d1081796848e30",
+    "specs/reviews/parallel-975980-preparation-20261026/975.md": "8fe3f54360cbc97daf17580ff734430a3f437e244be1337ad0c9fcc7dce1c12a",
+    "specs/reviews/parallel-975980-preparation-20261026/980-official-access.json": "0e73fc885f1a04e38f2e72fafdcb12e1be56ec13e9a8e316f7e8770db6c4c4a8",
+    "specs/reviews/parallel-975980-preparation-20261026/980.md": "8ef64c87f5306d30c57789a25d6da9dff73728a3d01ecc355a60bbe67c9da4a9",
+    "specs/reviews/parallel-975980-preparation-20261026/README.md": "8ccaefe64485e1c77e79b7bdab79c9c58aea89e095d308c180e4cce78d21baa5",
+    "specs/reviews/parallel-975980-preparation-20261026/preflight.json": "94cf07e2155154ba1de8fc37c01d2ea84165d78085a27ad7f9cd0576b0dda1fa"
+  },
+  "authorContextInjection": false,
+  "targets": [
+    {
+      "id": "975",
+      "port": 18793,
+      "branch": "codex/lane-975-20261026",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-975-20261026",
+      "state": "/home/songyy/projects/leetcode-hard-lane-state-975-20261026"
+    },
+    {
+      "id": "980",
+      "port": 18794,
+      "branch": "codex/lane-980-20261026",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-980-20261026",
+      "state": "/home/songyy/projects/leetcode-hard-lane-state-980-20261026"
+    }
+  ],
+  "observationSha256": "92eff3b10f540a8d03ac64dd1e965994ce550b1f799ef474056ede2e93f225b1"
+}

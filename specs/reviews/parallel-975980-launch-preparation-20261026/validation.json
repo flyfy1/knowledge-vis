@@ -1,0 +1,24 @@
+{
+  "validatedAt": "2026-10-25T19:23:01.983025+00:00",
+  "status": "prepared-only-pending-stage-b",
+  "sourceSha256": "012137ab9eabb43cb6b9038ab6065312d8287724540d67fb362038ac4a5caa05",
+  "pendingLauncherSha256": "9cd775670a13266a93016e6bccbbd76ff110777c599115dd889c674f79b97379",
+  "parameterSubstitutionCount": 9,
+  "pendingStageBPins": 6,
+  "reverseSubstitutionByteIdentical": true,
+  "reverseSubstitutionAstIdentical": true,
+  "localStaticTestsPassed": 7,
+  "officialPrepCommittedHashesVerified": true,
+  "remoteMutationPerformed": false,
+  "launcherExecuted": false,
+  "dispatchAuthorized": false,
+  "filesSha256": {
+    "README.md": "6973a68a5d13064f6b951fc217a243163e567c4bfe3e234e14554e767af44c25",
+    "launch.pending.py": "9cd775670a13266a93016e6bccbbd76ff110777c599115dd889c674f79b97379",
+    "parameter-map.json": "8132afd129893ce1831ff5c10875f87c9304b2c5907a9dc0c2269c06d55dc18a",
+    "parameter-only.diff": "4596391b9046a2368cc51dfd9d13ca85820721a26ad920fd809d015c88357308",
+    "read-only-observation.json": "92eff3b10f540a8d03ac64dd1e965994ce550b1f799ef474056ede2e93f225b1",
+    "test_parameters.py": "3eea1f5ab6f7708ac4470d32acc056b24852eb0f68fef1c7815731113116ebc7",
+    "tests.log": "0d6653413f55f7cf64dbfab59b6b29c640ade8e63585414ab2a44a0892a5ed0a"
+  }
+}

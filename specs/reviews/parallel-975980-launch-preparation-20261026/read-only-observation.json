@@ -1,0 +1,59 @@
+{
+  "observedAt": "2026-10-25T19:20:07.355537+00:00",
+  "notLaunchPreflight": true,
+  "centralHead": "835700570acedda88ea8228286673bf7dca13881",
+  "expectedHead": "835700570acedda88ea8228286673bf7dca13881",
+  "recordedStatus": "running",
+  "recordedCurrent": {
+    "problem_id": "834",
+    "stage": "author",
+    "started_at": "2026-10-25T19:17:40.238618+00:00",
+    "run_id": "834-author-57bbfcb6e22d"
+  },
+  "STOPexists": true,
+  "queueCount": 984,
+  "renderedStateContractSha256": "d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa",
+  "targetOrPortReservations": [],
+  "notImportedReservations": [
+    {
+      "file": "lane-972-reservation.json",
+      "id": "972",
+      "port": 18792,
+      "status": "started"
+    },
+    {
+      "file": "lane-968-reservation.json",
+      "id": "968",
+      "port": 18791,
+      "status": "started"
+    }
+  ],
+  "targets": [
+    {
+      "id": "975",
+      "port": 18793,
+      "queued": true,
+      "problemRecord": null,
+      "runIds": [],
+      "runDirectories": [],
+      "reservationFileExists": false,
+      "repoExists": false,
+      "stateExists": false,
+      "branchExists": false,
+      "portListeners": []
+    },
+    {
+      "id": "980",
+      "port": 18794,
+      "queued": true,
+      "problemRecord": null,
+      "runIds": [],
+      "runDirectories": [],
+      "reservationFileExists": false,
+      "repoExists": false,
+      "stateExists": false,
+      "branchExists": false,
+      "portListeners": []
+    }
+  ]
+}
