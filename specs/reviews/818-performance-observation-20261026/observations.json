@@ -1,0 +1,56 @@
+{
+  "scope": "Read-only copied in-progress source, not an accepted candidate or official LeetCode execution",
+  "source_sha256": "ba7639466dde736ade02f547425edca0bbac2734afa6a7ac03c91a59bbf29fb9",
+  "platform": "macOS; Python resource ru_maxrss bytes",
+  "observations": [
+    {
+      "target": 3,
+      "answer": 2,
+      "seconds": 5.709e-06,
+      "maxrss_bytes": 15302656
+    },
+    {
+      "target": 6,
+      "answer": 5,
+      "seconds": 1.2542e-05,
+      "maxrss_bytes": 15564800
+    },
+    {
+      "target": 10000,
+      "answer": 45,
+      "seconds": 0.335738291,
+      "maxrss_bytes": 198852608
+    },
+    {
+      "target": 9809,
+      "answer": 56,
+      "seconds": 2.40751375,
+      "maxrss_bytes": 1194819584
+    },
+    {
+      "target": 9879,
+      "answer": 55,
+      "seconds": 2.001583082,
+      "maxrss_bytes": 838664192
+    }
+  ],
+  "worst_instruction_counts_by_independent_recurrence": [
+    [
+      9809,
+      56
+    ],
+    [
+      9879,
+      55
+    ],
+    [
+      9876,
+      55
+    ],
+    [
+      9811,
+      55
+    ]
+  ],
+  "boundary": "Four-second subprocess timeout; all returned. No official TLE, OOM or acceptance claim; do not repeat high-memory cases on constrained Pi."
+}
