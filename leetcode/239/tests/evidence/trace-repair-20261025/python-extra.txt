@@ -1,0 +1,2 @@
+6015 exhaustive legal (array,k) cases with nonmutation; two fresh cases and n=100000 closed-form case passed
+Baseline check: n=4,k=4 -> 4 visits; n=4,k=2 -> 6 visits; n=100000,k=50000 -> 2500050000

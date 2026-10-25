@@ -1,0 +1,43 @@
+{
+  "receipts": [
+    {
+      "lang": "en",
+      "initial": "Initial state: no elements processed; no highlighted interval, deque or cumulative output.",
+      "partial": "After update: partial interval [0, 0], values [1]; no output yet. Elements to the right are unprocessed.",
+      "scope": "After update: full window [2, 4], values [-1, -3, 5]; indices to the left have expired, elements to the right are unprocessed. Output retains maxima of all completed windows.",
+      "removed": "Removed this step: 1 (expired), 3 (dominated), 2 (dominated)",
+      "legend": "Cells show zero-based indices above values. Deque notation is index:value; for example, 1:3 means nums[1]=3. Changing preset restarts this trace.",
+      "baseline": "Let n=len(nums). Scan all k values in each of n−k+1 windows: exactly (n−k+1)k value visits, taking O((n−k+1)k) time, bounded by O(nk). Adjacent windows reread k−1 values. For n=100000 and k=50000, this is 50001×50000=2500050000 value visits; at k=n there is only one window and n visits."
+    },
+    {
+      "lang": "zh",
+      "initial": "初始状态：尚未处理任何元素；无高亮区间，队列与累计输出均为空。",
+      "partial": "更新后：不足 k 个元素的区间 [0, 0]，值 [1]；尚不输出。右侧元素尚未处理。",
+      "scope": "更新后：完整窗口 [2, 4]，值 [-1, -3, 5]；左侧索引已过期，右侧元素尚未处理。输出保留所有已完成窗口的最大值。",
+      "removed": "本步移除：1 (已过期), 3 (被新值支配), 2 (被新值支配)",
+      "legend": "格子上方是从 0 开始的索引，下方是值。队列记法 索引:值，例如 1:3 表示 nums[1]=3。切换预设会重置此轨迹。",
+      "baseline": "令 n=len(nums)。每个窗口扫描全部 k 个值；共有 n−k+1 个窗口，因此恰好读取 (n−k+1)k 个值，时间为 O((n−k+1)k)，上界 O(nk)。相邻窗口重复读取 k−1 个值。例如 n=100000、k=50000 时，读取 50001×50000=2500050000 个值；而 k=n 时只有一个窗口，只需读取 n 个值。"
+    },
+    {
+      "lang": "en",
+      "initial": "Initial state: no elements processed; no highlighted interval, deque or cumulative output.",
+      "partial": "After update: partial interval [0, 0], values [1]; no output yet. Elements to the right are unprocessed.",
+      "scope": "After update: full window [2, 4], values [-1, -3, 5]; indices to the left have expired, elements to the right are unprocessed. Output retains maxima of all completed windows.",
+      "removed": "Removed this step: 1 (expired), 3 (dominated), 2 (dominated)",
+      "legend": "Cells show zero-based indices above values. Deque notation is index:value; for example, 1:3 means nums[1]=3. Changing preset restarts this trace.",
+      "baseline": "Let n=len(nums). Scan all k values in each of n−k+1 windows: exactly (n−k+1)k value visits, taking O((n−k+1)k) time, bounded by O(nk). Adjacent windows reread k−1 values. For n=100000 and k=50000, this is 50001×50000=2500050000 value visits; at k=n there is only one window and n visits."
+    },
+    {
+      "lang": "en",
+      "readout": "previous max 9 → expired; correct max 2"
+    },
+    {
+      "lang": "zh",
+      "readout": "上一个最大值 9 → 已过期；正确最大值 3"
+    }
+  ],
+  "duplicateKeys": "none",
+  "copyShape": "all two-string pairs",
+  "keyboard": "Enter advances insertion",
+  "blockedStorage": "initialized and switched locale"
+}

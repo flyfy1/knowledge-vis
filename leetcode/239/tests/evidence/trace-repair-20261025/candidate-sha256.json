@@ -1,0 +1,32 @@
+{
+  "candidate": "239-trace-repair-20261025",
+  "baseRevision": "05626658e37d506dfbe233e30c4a55db4232a1ba",
+  "status": "author self-checked; separate independent re-review pending",
+  "files": {
+    "leetcode/239/BRIEF.md": "56cbdf8ce8c69460f37f64903f8773d441bca9d56ebf5cb8357f6a063d0e7f10",
+    "leetcode/239/SELF-CHECK.md": "87836559da5b70ab724da451b8717a06e06c47466af21154a347b0b52ecf96a1",
+    "leetcode/239/app.js": "96830337cbcccb4dfd89cdd36dc5aa613ac461c0821bd2e3a095b2dfeb6d0e6c",
+    "leetcode/239/copy.js": "0ad155c910559c4f7a35327d2a3d20e10be43c7fa2f5172ad3d420e30d34a33a",
+    "leetcode/239/core.js": "80e75a099b98c1c8f6fdd2c16def82544d623aeb2b745f321d21fbd74f63f4fd",
+    "leetcode/239/index.html": "567aae261fb698426b1ced109ec1196395458217972af921fdc170f992b96679",
+    "leetcode/239/language-contract.json": "3798639fef3fd6778e2623c6ee91bb80538f0bf39eaf25c7a754ec282fc4903b",
+    "leetcode/239/lesson-entry.json": "b50a68c4a0fac27186f86d9672f2ecf2b637108608ec6d4752a81620e5bc0e07",
+    "leetcode/239/python-code.js": "f0f79ef1d414e944365cae4f2bd7b33925bd9498e8f93c6ec58b81dbe3135a0e",
+    "leetcode/239/solution.py": "6be17b3f7dae2dbe1627d4fc6fd17d1a7cc1ac55cc5adf7c4ca18d03af576f8d",
+    "leetcode/239/tests/browser-check.js": "c91a95f0e96fc848f92d6b07486f09196ef9c7107d739a9adf9d5acb5a5df553",
+    "leetcode/239/tests/rendered-membership.js": "5d8349ade30d3b8351aa2283b32522156ab6a6649ce0362f4ae6e857ea518f10",
+    "leetcode/239/tests/test_core.js": "8de39305185b8673f9c4674eaee1d2ec6cb37ee5588d2be143a579c5f05edce9",
+    "leetcode/239/tests/test_solution.py": "4d7230b073b41c71741e8098d9810f9cf5bf77566b1e8f622a34bc412d5006e2",
+    "leetcode/239/tests/title-regression.js": "417d653d153bc31172b93797570a54ddeb013679979f08d45d2265a4958d25c5",
+    "leetcode/239/tests/trace-copy-check.js": "0935bda081b792a267a7f957654ddfd3f0f4a0395765ce511dba527d8105c50b"
+  },
+  "readOnlySharedPolicy": {
+    "specs/leetcode-explainers.md": "6d4cc609772cb6c6382148568107a0ffd8b6c40cbbf4af473f2519ab364a2945",
+    "specs/leetcode-hard-traces.md": "5cb2edb1f223cde061d67e8cfe255f220876667c1d4c091bdbac49f67c6f2c35",
+    "specs/leetcode-rendered-state-contract.md": "778d83c31d92213bf4338a1a11f654985ce7fd71ba0a364c0297a16720c79cf7",
+    "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+    "scripts/register_leetcode_lesson.py": "7ba274cd733a36528d98c85fe87b46d5535bc34898567b0c14f36fda37f81310",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}

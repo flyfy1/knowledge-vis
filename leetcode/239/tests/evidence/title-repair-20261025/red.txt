@@ -1,0 +1,12 @@
+AssertionError [ERR_ASSERTION]: 239-PUB-R1 zh/320
++ actual - expected
+
++ '滑动窗口最大值'
+- '#239 · 滑动窗口最大值'
+    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/239/tests/title-regression.js:45:16 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '滑动窗口最大值',
+  expected: '#239 · 滑动窗口最大值',
+  operator: 'strictEqual'
+}
