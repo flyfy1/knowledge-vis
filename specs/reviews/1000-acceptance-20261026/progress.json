@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "repo": "/home/songyy/projects/leetcode-hard-lane-1000-20261026",
+  "queue": [
+    "1000"
+  ],
+  "expected_head": "30516661a5cfc0673c2dcfaa018444e2ffa2c85b",
+  "started_at": "2026-10-25T23:14:51.518873+00:00",
+  "status": "completed",
+  "current": null,
+  "problems": {
+    "1000": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            3
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/1000-review-1-9b1fcffc.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh canonical Python checks confirmed costs 10 and 48, with intermediate states and nonmutation verified.",
+            "Bilingual rewind, reset, prediction changes, keyboard and source-transfer checks passed.",
+            "320/390/desktop layouts and 200% CSS zoom exercised; screenshots inspected.",
+            "Non-mutating metadata preflight exited 0."
+          ],
+          "detail": "92.5/100. Accepted for revision 20f52a5cf74957ddacf1a7627ed882defe6a70f5. No required findings remain. Publication and human comprehension were not assessed.",
+          "run_id": "1000-review-0970e8f06123",
+          "candidate": "20f52a5cf74957ddacf1a7627ed882defe6a70f5",
+          "candidate_sha256": "b720eda1914b75f8670cea7ace9d84c0865cab5920226173ed0acc5e1ef6cfe8",
+          "weighted_score": 92.5,
+          "round": 1,
+          "commit": "134bfbe9767a8f92fa3f1263c1f2c2d7a3485b4d"
+        }
+      ],
+      "author_runs": [
+        "1000-author-3a58ffe68610"
+      ],
+      "prior_report": "specs/reviews/1000-review-1-9b1fcffc.md",
+      "candidate": "20f52a5cf74957ddacf1a7627ed882defe6a70f5",
+      "registration_commit": "30516661a5cfc0673c2dcfaa018444e2ffa2c85b",
+      "accepted_at": "2026-10-25T23:33:39.067860+00:00"
+    }
+  },
+  "runs": [
+    {
+      "id": "1000-author-3a58ffe68610",
+      "problem_id": "1000",
+      "role": "author",
+      "started_at": "2026-10-25T23:14:51.757178+00:00",
+      "status": "completed",
+      "candidate": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026/runs/1000-author-3a58ffe68610",
+      "session_ids": [
+        "01a17558-700c-7460-90ec-32d20d8337d0"
+      ],
+      "finished_at": "2026-10-25T23:28:04.346567+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Complete bilingual lesson and frozen author evidence delivered in leetcode/1000/. Python/oracle, intermediate-state, browser, source-transfer, accessibility, and metadata preflight checks passed. Independent review remains pending; nothing was registered or deployed."
+      }
+    },
+    {
+      "id": "1000-review-0970e8f06123",
+      "problem_id": "1000",
+      "role": "review",
+      "started_at": "2026-10-25T23:28:19.917230+00:00",
+      "status": "completed",
+      "candidate": "20f52a5cf74957ddacf1a7627ed882defe6a70f5",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026/runs/1000-review-0970e8f06123",
+      "session_ids": [
+        "01a17564-c465-79f0-921b-77fbe0446160"
+      ],
+      "finished_at": "2026-10-25T23:33:26.662459+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          3,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/1000-review-1-9b1fcffc.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Fresh canonical Python checks confirmed costs 10 and 48, with intermediate states and nonmutation verified.",
+          "Bilingual rewind, reset, prediction changes, keyboard and source-transfer checks passed.",
+          "320/390/desktop layouts and 200% CSS zoom exercised; screenshots inspected.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "92.5/100. Accepted for revision 20f52a5cf74957ddacf1a7627ed882defe6a70f5. No required findings remain. Publication and human comprehension were not assessed."
+      }
+    }
+  ],
+  "updated_at": "2026-10-25T23:33:39.079862+00:00"
+}

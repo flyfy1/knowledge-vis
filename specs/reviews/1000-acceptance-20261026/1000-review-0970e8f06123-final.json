@@ -1,0 +1,14 @@
+{
+  "outcome": "accepted",
+  "scores": [4, 3, 4, 4, 4, 3],
+  "required_open": [],
+  "report_path": "specs/reviews/1000-review-1-9b1fcffc.md",
+  "evidence": [
+    "Cold browser walkthrough saved before source inspection.",
+    "Fresh canonical Python checks confirmed costs 10 and 48, with intermediate states and nonmutation verified.",
+    "Bilingual rewind, reset, prediction changes, keyboard and source-transfer checks passed.",
+    "320/390/desktop layouts and 200% CSS zoom exercised; screenshots inspected.",
+    "Non-mutating metadata preflight exited 0."
+  ],
+  "detail": "92.5/100. Accepted for revision 20f52a5cf74957ddacf1a7627ed882defe6a70f5. No required findings remain. Publication and human comprehension were not assessed."
+}

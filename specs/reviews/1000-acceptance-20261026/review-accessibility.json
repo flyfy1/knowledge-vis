@@ -1,0 +1,270 @@
+{
+  "kind": "author disabled/endpoint state contrast, calibrated solid sRGB helper",
+  "rows": [
+    {
+      "lang": "en",
+      "phase": "initial",
+      "sel": "#prev",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "Previous state",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "en",
+      "phase": "initial",
+      "sel": "#next",
+      "disabled": false,
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "Complete next state",
+      "ratio": 13.397069143240783
+    },
+    {
+      "lang": "en",
+      "phase": "initial",
+      "sel": "#reset",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "Reset state table",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "en",
+      "phase": "initial",
+      "sel": "#end",
+      "disabled": false,
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "Complete all states",
+      "ratio": 13.397069143240783
+    },
+    {
+      "lang": "en",
+      "phase": "initial",
+      "sel": "#reveal",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "Check and explain",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "en",
+      "phase": "initial",
+      "sel": "#handPrev",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "Undo one merge",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "en",
+      "phase": "endpoint",
+      "sel": "#prev",
+      "disabled": false,
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "Previous state",
+      "ratio": 13.397069143240783
+    },
+    {
+      "lang": "en",
+      "phase": "endpoint",
+      "sel": "#next",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "Complete next state",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "en",
+      "phase": "endpoint",
+      "sel": "#reset",
+      "disabled": false,
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "Reset state table",
+      "ratio": 13.397069143240783
+    },
+    {
+      "lang": "en",
+      "phase": "endpoint",
+      "sel": "#end",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "Complete all states",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "en",
+      "phase": "endpoint",
+      "sel": "#reveal",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "Check and explain",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "en",
+      "phase": "endpoint",
+      "sel": "#handPrev",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "Undo one merge",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "zh",
+      "phase": "initial",
+      "sel": "#prev",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "退回一个状态",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "zh",
+      "phase": "initial",
+      "sel": "#next",
+      "disabled": false,
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "完成下个状态",
+      "ratio": 13.397069143240783
+    },
+    {
+      "lang": "zh",
+      "phase": "initial",
+      "sel": "#reset",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "重置状态表",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "zh",
+      "phase": "initial",
+      "sel": "#end",
+      "disabled": false,
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "完成所有状态",
+      "ratio": 13.397069143240783
+    },
+    {
+      "lang": "zh",
+      "phase": "initial",
+      "sel": "#reveal",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "核对并解释",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "zh",
+      "phase": "initial",
+      "sel": "#handPrev",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "撤回一次合并",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "zh",
+      "phase": "endpoint",
+      "sel": "#prev",
+      "disabled": false,
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "退回一个状态",
+      "ratio": 13.397069143240783
+    },
+    {
+      "lang": "zh",
+      "phase": "endpoint",
+      "sel": "#next",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "完成下个状态",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "zh",
+      "phase": "endpoint",
+      "sel": "#reset",
+      "disabled": false,
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "重置状态表",
+      "ratio": 13.397069143240783
+    },
+    {
+      "lang": "zh",
+      "phase": "endpoint",
+      "sel": "#end",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "完成所有状态",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "zh",
+      "phase": "endpoint",
+      "sel": "#reveal",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "核对并解释",
+      "ratio": 6.449407898769069
+    },
+    {
+      "lang": "zh",
+      "phase": "endpoint",
+      "sel": "#handPrev",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "text": "撤回一次合并",
+      "ratio": 6.449407898769069
+    }
+  ],
+  "minimumContrast": 6.449407898769069
+}
