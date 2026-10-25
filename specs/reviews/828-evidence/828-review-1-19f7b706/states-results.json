@@ -1,0 +1,106 @@
+{
+  "result": "pass",
+  "kind": "author settled native-select and contrast self-check",
+  "records": [
+    {
+      "locale": "zh",
+      "selected": "LEETCODE",
+      "zoom": 2,
+      "settledMs": 250
+    },
+    {
+      "locale": "zh",
+      "colors": [
+        {
+          "selector": "#prev",
+          "fg": "rgb(154, 167, 184)",
+          "bg": "rgb(22, 27, 34)",
+          "opacity": "1",
+          "ratio": 7.078851579017443
+        },
+        {
+          "selector": "#feedback",
+          "fg": "rgb(126, 226, 168)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 10.004815697188947
+        },
+        {
+          "selector": "#handGrid [aria-pressed=true]",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(60, 44, 22)",
+          "opacity": "1",
+          "ratio": 11.413861737674878
+        },
+        {
+          "selector": ".position small",
+          "fg": "rgb(154, 167, 184)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 6.449407898769069
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "navigationContrastOverConservativeWhite": 7.1065771774304896
+    },
+    {
+      "locale": "zh",
+      "label": "#76：为什么字符集合不能替代频次",
+      "href": "../76/#step0",
+      "url": "http://127.0.0.1:18770/leetcode/76/#step0",
+      "destination": "01先手算：两个 A 都要有这一步要回答：s = ABAAC 中，哪一段连续字符能提供 t = AAC 要求的两个 A 和一个 C，而且最短？子串就是连续的一段；窗口是正在考虑的子串。覆盖表示每种字符的数量至少达到 t 的要求，字符顺序不必相同。官方范围：1 ≤ m,n ≤ 100000，m、n 分别是 s、t 的长度；仅大小写英文字母，A 与 a 不同。无解返回空串。官方测试保证答案唯一。把位置写出来：0:A，1:B，2:A，3:A，4:C从右端 4 开始检查：[0,4] = ABAAC，A:3、C:1，长 5；去掉位置 0 的 A 得到 BAAC，A:2、C:1，长 4；再去掉 B 得到 AAC，长 3，仍覆盖。再去掉一个 A 得到 AC，A:1，不够了。少于 3 个字符不可能提供 3 份需求，所以 AAC 最短。这里 [left,right] 包含两端，位置从 0 开始。一个诱人的错法：只检查字符集合。AC 和 AAC 都含 A、C，但 s = AC、t = AAC 无解。另一个错法：找到第一个覆盖就停；ABAAC 虽然覆盖，却比 AAC 长。官方例子：ADOBECODEBANC / ABC → BANC；a / a → a；a / aa → 空串。可靠起点：枚举每个起点和终点怎样保证不错过答案？固定起点 left，向右逐个加字符，累计数量，检查所有需求，保留最短窗口。下面是完整的小输入基线；还没有复用不同起点之间的工作。from collections import Counter\n\ndef baseline(s, t):\n    need = Counter(t)\n    best = None\n    for left in range(len(s)):\n        have = Counter()\n        for right in range(left, len(s)):\n            have[s[right]] += 1\n            if all(have[c] >= need[c] for c in need):\n                width = right - left + 1\n                if best is None or width < best[1] - best[0]:\n                    best = (left, right + 1)\n    return \"\" if best is None else s[best[0]:best[1]]若 k 是 t 中不同字符的数量，每个窗口检查 k 项，代价 O(n + m²k)，额外计数空间 O(52)。m = 100000 时约有 50 亿个窗口。瓶颈是反复计数和检查；我们希望每个字符只进出一次。"
+    },
+    {
+      "locale": "en",
+      "selected": "LEETCODE",
+      "zoom": 2,
+      "settledMs": 250
+    },
+    {
+      "locale": "en",
+      "colors": [
+        {
+          "selector": "#prev",
+          "fg": "rgb(154, 167, 184)",
+          "bg": "rgb(22, 27, 34)",
+          "opacity": "1",
+          "ratio": 7.078851579017443
+        },
+        {
+          "selector": "#feedback",
+          "fg": "rgb(126, 226, 168)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 10.004815697188947
+        },
+        {
+          "selector": "#handGrid [aria-pressed=true]",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(60, 44, 22)",
+          "opacity": "1",
+          "ratio": 11.413861737674878
+        },
+        {
+          "selector": ".position small",
+          "fg": "rgb(154, 167, 184)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 6.449407898769069
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "navigationContrastOverConservativeWhite": 7.1065771774304896
+    },
+    {
+      "locale": "en",
+      "label": "#76: why a letter set cannot replace frequencies",
+      "href": "../76/#step0",
+      "url": "http://127.0.0.1:18770/leetcode/76/#step0",
+      "destination": "01By hand: both copies of A matterWhich continuous piece of s = ABAAC supplies the two As and one C requested by t = AAC, with the shortest length? A substring is a continuous slice; a window is the slice under consideration. To cover t, each character count must meet its requested count. Their order need not match t.Official bounds: 1 ≤ m,n ≤ 100000, where m and n are the lengths of s and t. Inputs contain English letters; A and a differ. Return an empty string if no window exists. Official tests guarantee a unique answer.Write the positions: 0:A, 1:B, 2:A, 3:A, 4:CInspect windows ending at position 4: [0,4] = ABAAC has A:3, C:1 and length 5. Remove A at position 0: BAAC has A:2, C:1 and length 4. Remove B: AAC has length 3 and still covers. Remove another A: AC has only one A and fails. Fewer than 3 characters cannot supply 3 requested copies, so AAC is shortest. Bounds [left,right] include both endpoints; positions start at 0.A tempting mistake is checking only the set of letters. AC and AAC both contain A and C, yet s = AC, t = AAC has no solution. Stopping at the first covering window also fails: ABAAC covers, but AAC is shorter.Official examples: ADOBECODEBANC / ABC → BANC; a / a → a; a / aa → empty string.A reliable baseline: try every start and endHow can we avoid missing an answer? Fix left, add characters one at a time to the right, check every required count, and kee"
+    }
+  ]
+}
