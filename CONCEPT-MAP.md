@@ -1340,3 +1340,13 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Filtered forest invariant | `leetcode/685/#step2` | DSU groups equal the undirected components of retained edges. |
 
 <!-- /leetcode-685-campaign -->
+
+
+<!-- leetcode-699-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Positive-width interval overlap | `leetcode/699/#step1` | Strict interval intersection excludes brushing edges. |
+| Frozen top-height invariant | `leetcode/699/#step2` | The maximum intersecting earlier top is the exact landing base. |
+
+<!-- /leetcode-699-campaign -->

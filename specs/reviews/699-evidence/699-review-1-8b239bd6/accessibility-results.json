@@ -1,0 +1,396 @@
+{
+  "measurements": [
+    {
+      "viewport": 320,
+      "locale": "en",
+      "preset": 0,
+      "arrowAllowance": 16,
+      "label": "Hand case extended",
+      "textWidth": 152.7843017578125,
+      "width": 238,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 320,
+      "locale": "en",
+      "preset": 1,
+      "arrowAllowance": 16,
+      "label": "Official example 1",
+      "textWidth": 134.11227416992188,
+      "width": 238,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 320,
+      "locale": "en",
+      "preset": 2,
+      "arrowAllowance": 16,
+      "label": "Official example 2: touch",
+      "textWidth": 185.47238159179688,
+      "width": 238,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 320,
+      "locale": "en",
+      "preset": 3,
+      "arrowAllowance": 16,
+      "label": "Bridge a gap",
+      "textWidth": 95.79220581054688,
+      "width": 238,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 320,
+      "locale": "en",
+      "preset": 4,
+      "arrowAllowance": 16,
+      "label": "Identical footprints",
+      "textWidth": 143.5683135986328,
+      "width": 238,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 320,
+      "locale": "en",
+      "preset": 5,
+      "arrowAllowance": 16,
+      "label": "One square",
+      "textWidth": 87.2481689453125,
+      "width": 238,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 320,
+      "locale": "en",
+      "event6": "Square #3 tests earlier #1 (its top=3): common endpoints are 3 and 4, 3 < 4: positive overlap. base: 0 → 3. This is the maximum over only the tested part.",
+      "output": "Output through this frame = [3, 3]; later answers not produced yet"
+    },
+    {
+      "viewport": 320,
+      "locale": "zh",
+      "preset": 0,
+      "arrowAllowance": 16,
+      "label": "手算延伸",
+      "textWidth": 64.0001220703125,
+      "width": 162,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 320,
+      "locale": "zh",
+      "preset": 1,
+      "arrowAllowance": 16,
+      "label": "官方例 1",
+      "textWidth": 61.31211853027344,
+      "width": 162,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 320,
+      "locale": "zh",
+      "preset": 2,
+      "arrowAllowance": 16,
+      "label": "官方例 2：擦边",
+      "textWidth": 109.31221008300781,
+      "width": 162,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 320,
+      "locale": "zh",
+      "preset": 3,
+      "arrowAllowance": 16,
+      "label": "跨缝支撑",
+      "textWidth": 64.0001220703125,
+      "width": 162,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 320,
+      "locale": "zh",
+      "preset": 4,
+      "arrowAllowance": 16,
+      "label": "同位置堆叠",
+      "textWidth": 80.00015258789062,
+      "width": 162,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 320,
+      "locale": "zh",
+      "preset": 5,
+      "arrowAllowance": 16,
+      "label": "单个方块",
+      "textWidth": 64.0001220703125,
+      "width": 162,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 320,
+      "locale": "zh",
+      "event6": "方块 #3 检查旧块 #1（其 top=3）：共有端点为 3 和 4，3 < 4，有正宽度重叠。base：0 → 3。这里只是已检查部分的最大值。",
+      "output": "截至本帧的输出 = [3, 3]；后续答案尚未产生"
+    },
+    {
+      "viewport": 390,
+      "locale": "en",
+      "preset": 0,
+      "arrowAllowance": 16,
+      "label": "Hand case extended",
+      "textWidth": 152.7843017578125,
+      "width": 238,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 390,
+      "locale": "en",
+      "preset": 1,
+      "arrowAllowance": 16,
+      "label": "Official example 1",
+      "textWidth": 134.11227416992188,
+      "width": 238,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 390,
+      "locale": "en",
+      "preset": 2,
+      "arrowAllowance": 16,
+      "label": "Official example 2: touch",
+      "textWidth": 185.47238159179688,
+      "width": 238,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 390,
+      "locale": "en",
+      "preset": 3,
+      "arrowAllowance": 16,
+      "label": "Bridge a gap",
+      "textWidth": 95.79220581054688,
+      "width": 238,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 390,
+      "locale": "en",
+      "preset": 4,
+      "arrowAllowance": 16,
+      "label": "Identical footprints",
+      "textWidth": 143.5683135986328,
+      "width": 238,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 390,
+      "locale": "en",
+      "preset": 5,
+      "arrowAllowance": 16,
+      "label": "One square",
+      "textWidth": 87.2481689453125,
+      "width": 238,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 390,
+      "locale": "en",
+      "event6": "Square #3 tests earlier #1 (its top=3): common endpoints are 3 and 4, 3 < 4: positive overlap. base: 0 → 3. This is the maximum over only the tested part.",
+      "output": "Output through this frame = [3, 3]; later answers not produced yet"
+    },
+    {
+      "viewport": 390,
+      "locale": "zh",
+      "preset": 0,
+      "arrowAllowance": 16,
+      "label": "手算延伸",
+      "textWidth": 64.0001220703125,
+      "width": 162,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 390,
+      "locale": "zh",
+      "preset": 1,
+      "arrowAllowance": 16,
+      "label": "官方例 1",
+      "textWidth": 61.31211853027344,
+      "width": 162,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 390,
+      "locale": "zh",
+      "preset": 2,
+      "arrowAllowance": 16,
+      "label": "官方例 2：擦边",
+      "textWidth": 109.31221008300781,
+      "width": 162,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 390,
+      "locale": "zh",
+      "preset": 3,
+      "arrowAllowance": 16,
+      "label": "跨缝支撑",
+      "textWidth": 64.0001220703125,
+      "width": 162,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 390,
+      "locale": "zh",
+      "preset": 4,
+      "arrowAllowance": 16,
+      "label": "同位置堆叠",
+      "textWidth": 80.00015258789062,
+      "width": 162,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 390,
+      "locale": "zh",
+      "preset": 5,
+      "arrowAllowance": 16,
+      "label": "单个方块",
+      "textWidth": 64.0001220703125,
+      "width": 162,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 390,
+      "locale": "zh",
+      "event6": "方块 #3 检查旧块 #1（其 top=3）：共有端点为 3 和 4，3 < 4，有正宽度重叠。base：0 → 3。这里只是已检查部分的最大值。",
+      "output": "截至本帧的输出 = [3, 3]；后续答案尚未产生"
+    }
+  ],
+  "hit": [
+    {
+      "id": "中",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "id": "EN",
+      "width": 49.0625,
+      "height": 48
+    },
+    {
+      "id": "Official problem ↗",
+      "width": 134.515625,
+      "height": 48
+    },
+    {
+      "id": "handLeft",
+      "width": 62,
+      "height": 48
+    },
+    {
+      "id": "preset",
+      "width": 238,
+      "height": 48
+    },
+    {
+      "id": "prev",
+      "width": 160.203125,
+      "height": 48
+    },
+    {
+      "id": "next",
+      "width": 188.359375,
+      "height": 48
+    },
+    {
+      "id": "reset",
+      "width": 126.03125,
+      "height": 48
+    },
+    {
+      "id": "end",
+      "width": 156.515625,
+      "height": 48
+    },
+    {
+      "id": "A · (7, 8, 8)",
+      "width": 358,
+      "height": 48
+    },
+    {
+      "id": "B · (0, 1, 7)",
+      "width": 358,
+      "height": 48
+    },
+    {
+      "id": "C · (2, 3, 7)",
+      "width": 358,
+      "height": 48
+    },
+    {
+      "id": "reveal",
+      "width": 172.078125,
+      "height": 48
+    },
+    {
+      "id": "copy",
+      "width": 126.71875,
+      "height": 48
+    },
+    {
+      "id": "Download solution.py",
+      "width": 163.09375,
+      "height": 48
+    }
+  ],
+  "selectorArrowAllowance": "16px observed Chromium/Linux allowance, not a universal platform claim",
+  "focusPreserved": true,
+  "keyboardHorizontalScroll": true
+}
