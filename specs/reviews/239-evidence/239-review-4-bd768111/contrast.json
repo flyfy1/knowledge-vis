@@ -1,0 +1,57 @@
+{
+  "colors": [
+    {
+      "sel": ".hint",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1"
+    },
+    {
+      "sel": ".btn.primary",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1"
+    },
+    {
+      "sel": ".array-cell.current .array-value",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 75, 89)",
+      "opacity": "1"
+    },
+    {
+      "sel": "#dequeReadout",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1"
+    },
+    {
+      "sel": "#prev",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1"
+    }
+  ],
+  "ratios": [
+    {
+      "fg": "9aa7b8",
+      "bg": "161b22",
+      "ratio": 7.078851579017443
+    },
+    {
+      "fg": "e8edf4",
+      "bg": "1c2330",
+      "ratio": 13.397069143240783
+    },
+    {
+      "fg": "e8edf4",
+      "bg": "164b59",
+      "ratio": 8.170621139356324
+    },
+    {
+      "fg": "0d1117",
+      "bg": "6ee7ff",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "calibration": "white/black=21; RGB weights .2126/.7152/.0722; #747474 on black <4.5"
+}
