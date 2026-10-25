@@ -1,0 +1,343 @@
+{
+  "owner": "import968972-search818-stage-a-20261026-4b7e902d",
+  "status": "failed-inspect-no-retry",
+  "document_sources": {
+    "specs/reviews/818-review-search-alternative-design-20261026.md": "a1d48550f44a65bc936de1706642a1b9ad858afd",
+    "specs/reviews/818-review-search-alternative-request-20261026.md": "a1d48550f44a65bc936de1706642a1b9ad858afd"
+  },
+  "created_at": "2026-10-25T19:19:06.682895+00:00",
+  "lanes": [
+    {
+      "id": "968",
+      "lane_head": "5c25864eef5c09e0e007cafb81626e73803dbfae",
+      "candidate": "611b194292b72d89d4e64b984256efce09f5ab4e",
+      "score": 95.0,
+      "required_open": [],
+      "run_ids": [
+        "968-author-ada4a312abf5",
+        "968-review-d31caa3b2d37",
+        "968-fix-8320be058fe2",
+        "968-review-21a196af52bb"
+      ]
+    },
+    {
+      "id": "972",
+      "lane_head": "78becd97f109598d173d689d69a7051be8e6724d",
+      "candidate": "574ed7161620353c1ae02ac2d1a118877ec68961",
+      "score": 95.0,
+      "required_open": [],
+      "run_ids": [
+        "972-author-54f9ce572467",
+        "972-review-4e4b76d32049"
+      ]
+    }
+  ],
+  "pre_stop_resume_plan": {
+    "next_problem_id": "834",
+    "registration_ids": [],
+    "publication_bound": {
+      "eligible": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "827",
+        "828",
+        "829",
+        "960"
+      ],
+      "incoming": [
+        "968",
+        "972"
+      ],
+      "registration_ids": [],
+      "reopened_upper_bound_ids": [
+        "818"
+      ],
+      "upper_bound_ids": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "818",
+        "827",
+        "828",
+        "829",
+        "960",
+        "968",
+        "972"
+      ],
+      "upper_bound": 13
+    }
+  },
+  "stop": {
+    "owner": "import968972-search818-stage-a-20261026-4b7e902d",
+    "created_at": "2026-10-25T19:19:15.657345+00:00",
+    "reason": "Finish current stage; import accepted 968/972, adopt two fixed search docs, reopen blocked818, then arm a second STOP during its fresh fix for Mac handoff.",
+    "lane_ids": [
+      "968",
+      "972"
+    ]
+  },
+  "central_before_stop": {
+    "head": "835700570acedda88ea8228286673bf7dca13881",
+    "current": {
+      "problem_id": "834",
+      "stage": "author",
+      "started_at": "2026-10-25T19:17:40.238618+00:00",
+      "run_id": "834-author-57bbfcb6e22d"
+    }
+  },
+  "boundary_resume_plan": {
+    "next_problem_id": "834",
+    "registration_ids": [],
+    "publication_bound": {
+      "eligible": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "827",
+        "828",
+        "829",
+        "960"
+      ],
+      "incoming": [
+        "968",
+        "972"
+      ],
+      "registration_ids": [],
+      "reopened_upper_bound_ids": [
+        "818"
+      ],
+      "upper_bound_ids": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "818",
+        "827",
+        "828",
+        "829",
+        "960",
+        "968",
+        "972"
+      ],
+      "upper_bound": 13
+    }
+  },
+  "boundary_head": "66fd2c7555f4f076966283cbf3dae45a45ce245a",
+  "imports": [
+    {
+      "version": 1,
+      "status": "completed",
+      "problem_id": "968",
+      "central_before": "66fd2c7555f4f076966283cbf3dae45a45ce245a",
+      "lane_head": "5c25864eef5c09e0e007cafb81626e73803dbfae",
+      "lane_repo": "/home/songyy/projects/leetcode-hard-lane-968-20261026",
+      "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-968-20261026",
+      "candidate": "611b194292b72d89d4e64b984256efce09f5ab4e",
+      "run_ids": [
+        "968-author-ada4a312abf5",
+        "968-review-d31caa3b2d37",
+        "968-fix-8320be058fe2",
+        "968-review-21a196af52bb"
+      ],
+      "started_at": "2026-10-25T19:31:37.585718+00:00",
+      "updated_at": "2026-10-25T19:31:41.058298+00:00",
+      "merged_head": "179bfddae90219742873d520cf151e6aa54e6a49"
+    },
+    {
+      "version": 1,
+      "status": "completed",
+      "problem_id": "972",
+      "central_before": "179bfddae90219742873d520cf151e6aa54e6a49",
+      "lane_head": "78becd97f109598d173d689d69a7051be8e6724d",
+      "lane_repo": "/home/songyy/projects/leetcode-hard-lane-972-20261026",
+      "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-972-20261026",
+      "candidate": "574ed7161620353c1ae02ac2d1a118877ec68961",
+      "run_ids": [
+        "972-author-54f9ce572467",
+        "972-review-4e4b76d32049"
+      ],
+      "started_at": "2026-10-25T19:33:05.689150+00:00",
+      "updated_at": "2026-10-25T19:33:07.835219+00:00",
+      "merged_head": "48b53c8e7786af264ee196a6bcf91de2f1e706fe"
+    }
+  ],
+  "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b",
+  "post_import_resume_plan": {
+    "next_problem_id": "834",
+    "registration_ids": [],
+    "publication_bound": {
+      "eligible": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "827",
+        "828",
+        "829",
+        "960",
+        "968",
+        "972"
+      ],
+      "incoming": [],
+      "registration_ids": [],
+      "reopened_upper_bound_ids": [
+        "818"
+      ],
+      "upper_bound_ids": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "818",
+        "827",
+        "828",
+        "829",
+        "960",
+        "968",
+        "972"
+      ],
+      "upper_bound": 13
+    }
+  },
+  "prior_problems_preserved": true,
+  "prior_runs_preserved": true,
+  "queue_preserved": true,
+  "maintenance": {
+    "kind": "reopen-blocked-818-search",
+    "request_id": "818-SEARCH-R1",
+    "supersedes_algorithm_choice": "818-RESOURCE-R1 distance-DP (proof unresolved)",
+    "at": "2026-10-25T19:33:11.799048+00:00",
+    "document_sources": {
+      "specs/reviews/818-review-search-alternative-design-20261026.md": "a1d48550f44a65bc936de1706642a1b9ad858afd",
+      "specs/reviews/818-review-search-alternative-request-20261026.md": "a1d48550f44a65bc936de1706642a1b9ad858afd"
+    },
+    "before": "48b53c8e7786af264ee196a6bcf91de2f1e706fe",
+    "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import968972-search818-stage-a-20261026-4b7e902d-before-reopen.json",
+    "previous_current": {
+      "problem_id": "834",
+      "stage": "author",
+      "started_at": "2026-10-25T19:17:40.238618+00:00",
+      "run_id": "834-author-57bbfcb6e22d"
+    },
+    "prior_blocked_entry": {
+      "status": "blocked",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            3,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/818-review-1-ad85dc73.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh targets 5, 8, 9 and 12 matched independent enumeration and canonical Python.",
+            "Bilingual interactions, narrow layouts, 200% CSS zoom and keyboard checks passed.",
+            "Exact displayed, copied, fallback-copied and downloaded source parity verified.",
+            "Metadata validate-only preflight exited 0."
+          ],
+          "detail": "95/100. No required findings; one optional interaction enhancement. Acceptance applies to the reviewed revision, separate from publication.",
+          "run_id": "818-review-23290c1abcd2",
+          "candidate": "c7a325e5a48d2da000609ea93d23f8d255d03bdd",
+          "candidate_sha256": "83a8069f961359f214501200ea00e681ba50a813eb0bb8eaa8fa2bee2b120d8c",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "111078a89cafcfbd7fa2835d2895d12c74c375fe"
+        }
+      ],
+      "author_runs": [
+        "818-author-a80a467fbe94",
+        "818-fix-0dbe90734960"
+      ],
+      "prior_report": "specs/reviews/818-review-resource-improvement-request-20261026.md",
+      "candidate": "33686548c3c385cdb14b5b7262e4ca58a3b8d2f4",
+      "detail": "818-RESOURCE-R1 remains open: the DP completeness proof and required Mac resource measurements are missing. Working lesson preserved; Python, core, bilingual browser checks and metadata validate-only passed. Investigation and fix-status mapping appended to leetcode/818/SELF-CHECK.md. Next: complete the proof, implement and verify the DP extension, then freeze a candidate for separate re-review."
+    },
+    "after": "f3347117f4e4370e8d83c77a1cf9e9f14ccae554"
+  },
+  "request_before": {
+    "head": "48b53c8e7786af264ee196a6bcf91de2f1e706fe",
+    "progress_sha256": "5fde9c67caaf999ef24bc92facd980c928af43dc0ce61d9ae61b9558c42bef21",
+    "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b"
+  },
+  "request_commit": "f3347117f4e4370e8d83c77a1cf9e9f14ccae554",
+  "reopened_ids": [
+    "818"
+  ],
+  "final_head": "f3347117f4e4370e8d83c77a1cf9e9f14ccae554",
+  "resume_plan": {
+    "next_problem_id": "818",
+    "registration_ids": [],
+    "publication_bound": {
+      "eligible": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "827",
+        "828",
+        "829",
+        "960",
+        "968",
+        "972"
+      ],
+      "incoming": [],
+      "registration_ids": [],
+      "reopened_upper_bound_ids": [
+        "818"
+      ],
+      "upper_bound_ids": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "818",
+        "827",
+        "828",
+        "829",
+        "960",
+        "968",
+        "972"
+      ],
+      "upper_bound": 13
+    }
+  },
+  "launch": {
+    "pid": 1582005,
+    "queue_count": 984,
+    "continuous": true,
+    "state": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress.json"
+  },
+  "error": "Runner not active while arming author handoff",
+  "failed_at": "2026-10-25T19:33:32.402717+00:00",
+  "owned_stop_present": true,
+  "recovery": "Inspect receipt, saved/actual HEAD, importer receipts and STOP owner. Do not reset, relaunch, revert acceptance, or retry this operator. No active agent was signaled."
+}

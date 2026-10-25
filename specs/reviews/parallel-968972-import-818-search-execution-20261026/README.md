@@ -1,0 +1,3 @@
+# Preserved Stage A failure evidence
+
+See [execution report](../parallel-968972-import-818-search-execution-20261026.md). The transaction failed during startup observation after completing imports, request adoption/reopening and exact push. No new818 author/reviewer started. receipt-failed.json is the unmodified historical failure receipt. progress-failed.json, STOP-preserved.json, before-reopen.json and importer/reservation receipts preserve state/history. failure-observation.json and failure-locks-and-times.json record clean exact head, absent processes/free locks, hashes and timing; runner.log ends in a normal stopped result. No recovery was performed by this archive.

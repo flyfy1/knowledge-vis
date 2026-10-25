@@ -1,0 +1,30 @@
+{
+  "status": "preserved-failure-evidence-validated",
+  "checks": [
+    "both imports completed and original acceptance entries exact",
+    "request adoption/head pushed exactly",
+    "only818 ordinary reopening fields changed; blockeddetail archived",
+    "423 historical runs unchanged; zero newauthor/reviewer",
+    "984 queue and releaseledger unchanged",
+    "all observed processes absent and three locks free",
+    "clean actual/saved/remote head agrees",
+    "original STOP ownership and exactbytes preserved"
+  ],
+  "sha256": {
+    "failure-locks-and-times.json": "3832c18cb3faebf36e093cc8b1443d8344454e1527d06d44c25a5c917d445e7d",
+    "import-972-receipt.json": "71f62d7e663ffc550331501e9ae101e71972a858769968c7d14060d9ae6a4ab7",
+    "lane-972-reservation.json": "730e84123d5ba2078f1365fbedc3a93d153f4f0ba1af6474f713767acab51b13",
+    "runner.log": "ed6eddf57f84cf570d453055024b837007603d3d11e016146bb2ddbbb5b15060",
+    "lane-968-reservation.json": "78f6300b81f4ed440c7c852a41c86d4f2de84bfa71b719855d3942738e93f42d",
+    "failure-observation.json": "3c8f2380c4de6dfbf0e09d2dc19eab14db27fe14b15c024feae44d5c11488428",
+    "dispatch.json": "df652b86e2151cc8038ba5f2f571ac2d7fa25793ba3bdc688821fbb11f0b42d3",
+    "progress-failed.json": "5c21d881696fd532ebee3f0966bf4d978554aac5d0d1cd595ff8ee23d0fd4bd7",
+    "receipt-failed.json": "723aa5cf0ddc654e05eeb091ee499f2423cffdbcdd2bf2e1893ce80466e618ad",
+    "before-reopen.json": "5fde9c67caaf999ef24bc92facd980c928af43dc0ce61d9ae61b9558c42bef21",
+    "observe-failure.py": "256fd09a87c9d3726929396aaabd9865db620465459eda6901fc8b53415f2cd5",
+    "import-968-receipt.json": "7a89ef7ed7d4e13125b97dd3651ca8e9e50228eafc91402cc1c5766b313235aa",
+    "operator-output.log": "e0a23ea7affe4b15b0cd469d085b93301d8e94dd281468d518afb246e2fa907b",
+    "STOP-preserved.json": "0d004ea04e2c96b5202d1b132fa038faa85eb9c062d21a5dc52140883c1c4000",
+    "transfer.jsonl": "18011829da59a5ee43979b9cad4610985f49c34797a52b81fe47e3d0456b7084"
+  }
+}

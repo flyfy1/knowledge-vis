@@ -1,0 +1,89 @@
+{
+  "observed_at": "2026-10-25T19:35:07.344092+00:00",
+  "receipt_status": "failed-inspect-no-retry",
+  "error": "Runner not active while arming author handoff",
+  "head": "f3347117f4e4370e8d83c77a1cf9e9f14ccae554",
+  "remote_head": "f3347117f4e4370e8d83c77a1cf9e9f14ccae554",
+  "worktree_status": "",
+  "state_status": "stopped",
+  "current": null,
+  "pids_present": {
+    "1523670": false,
+    "1582005": false,
+    "1481177": false
+  },
+  "campaign_or_native_processes": [],
+  "runs_identical_to_before_reopen": true,
+  "runs_added": 0,
+  "queue_identical": true,
+  "queue_count": 984,
+  "accepted_count": 130,
+  "released_count": 119,
+  "pending_release": null,
+  "progress_sha256": "5c21d881696fd532ebee3f0966bf4d978554aac5d0d1cd595ff8ee23d0fd4bd7",
+  "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b",
+  "ledger_preserved": true,
+  "stop_raw_sha256": "0d004ea04e2c96b5202d1b132fa038faa85eb9c062d21a5dc52140883c1c4000",
+  "stop": {
+    "owner": "import968972-search818-stage-a-20261026-4b7e902d",
+    "created_at": "2026-10-25T19:19:15.657345+00:00",
+    "reason": "Finish current stage; import accepted 968/972, adopt two fixed search docs, reopen blocked818, then arm a second STOP during its fresh fix for Mac handoff.",
+    "lane_ids": [
+      "968",
+      "972"
+    ]
+  },
+  "818": {
+    "status": "changes_required",
+    "rounds": 1,
+    "new": true,
+    "phase": "fix",
+    "reviews": [
+      {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          3,
+          4,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/818-review-1-ad85dc73.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Fresh targets 5, 8, 9 and 12 matched independent enumeration and canonical Python.",
+          "Bilingual interactions, narrow layouts, 200% CSS zoom and keyboard checks passed.",
+          "Exact displayed, copied, fallback-copied and downloaded source parity verified.",
+          "Metadata validate-only preflight exited 0."
+        ],
+        "detail": "95/100. No required findings; one optional interaction enhancement. Acceptance applies to the reviewed revision, separate from publication.",
+        "run_id": "818-review-23290c1abcd2",
+        "candidate": "c7a325e5a48d2da000609ea93d23f8d255d03bdd",
+        "candidate_sha256": "83a8069f961359f214501200ea00e681ba50a813eb0bb8eaa8fa2bee2b120d8c",
+        "weighted_score": 95.0,
+        "round": 1,
+        "commit": "111078a89cafcfbd7fa2835d2895d12c74c375fe"
+      }
+    ],
+    "author_runs": [
+      "818-author-a80a467fbe94",
+      "818-fix-0dbe90734960"
+    ],
+    "prior_report": "specs/reviews/818-review-search-alternative-request-20261026.md",
+    "candidate": "33686548c3c385cdb14b5b7262e4ca58a3b8d2f4"
+  },
+  "834": {
+    "status": "review_pending",
+    "rounds": 0,
+    "new": true,
+    "phase": "review",
+    "reviews": [],
+    "author_runs": [
+      "834-author-57bbfcb6e22d"
+    ],
+    "prior_report": "",
+    "candidate": "66fd2c7555f4f076966283cbf3dae45a45ce245a"
+  }
+}

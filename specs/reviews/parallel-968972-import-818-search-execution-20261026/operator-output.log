@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import968972-search818-stage-a-20261026-f0c4ac70.py", line 646, in <module>
+    main()
+  File "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import968972-search818-stage-a-20261026-f0c4ac70.py", line 642, in main
+    execute()
+  File "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import968972-search818-stage-a-20261026-f0c4ac70.py", line 557, in execute
+    observed = fresh_fix_record(resumed, old_ids)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import968972-search818-stage-a-20261026-f0c4ac70.py", line 389, in fresh_fix_record
+    require(state['status'] == 'running', 'Runner not active while arming author handoff')
+  File "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import968972-search818-stage-a-20261026-f0c4ac70.py", line 35, in require
+    raise RuntimeError(message)
+RuntimeError: Runner not active while arming author handoff
