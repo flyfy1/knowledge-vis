@@ -1,0 +1,22 @@
+{
+  "kind": "supersede-failed-pending-release",
+  "at": "2026-10-25T06:54:59.445771+00:00",
+  "failed_release_id": "b1aeec15655d493c88b66eced787cb9f",
+  "source_revision": "7e35e4d6040aa295d1de0269996d8b91ba5d20a3",
+  "repaired_revision": "674107302fc9a1a3d7cab177150b5a6909259bd5",
+  "repair_ids": [
+    "239",
+    "262"
+  ],
+  "successful_releases_unchanged": 1,
+  "released_unchanged": 3,
+  "registry_sha_before": "bb7bed421706ec3cf34f321ee9fbc2c3e027a1c3efd439e4a69a522f6133cdb8",
+  "observed_materialized_registry_sha": "b6053ffefb6704b9aefdf234b127be4b9287dc92afcf834931619b9633244311",
+  "production_files_verified": 712,
+  "reason": "node failed: Error: Missing lesson ID 239\n    at [eval]:41:50\n",
+  "scope": "No successful release recorded; only physical registry ownership baseline acknowledges the already materialized failed batch. Original publisher must independently stage and verify all 100 again.",
+  "status": "completed",
+  "ledger_backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-supersede-failed-release-ledger-20261025.json",
+  "progress_backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-supersede-failed-release-progress-20261025.json",
+  "updated_at": "2026-10-25T06:54:59.520616+00:00"
+}

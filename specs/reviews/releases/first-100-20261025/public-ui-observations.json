@@ -1,0 +1,34 @@
+{
+  "observed_at": "2026-10-25T07:01:31.450461+00:00",
+  "surface": "Codex in-app browser; ordinary public URLs, no release query",
+  "collection": {
+    "url": "https://visual.integ.life/leetcode/",
+    "count_text": "找到 104 / 104 篇可用课程",
+    "clear_numbered_titles_and_official_links": true
+  },
+  "239": {
+    "url": "https://visual.integ.life/leetcode/239/",
+    "h1": "#239 · 滑动窗口最大值",
+    "official_url": "https://leetcode.com/problems/sliding-window-maximum/",
+    "after_four_next_actions": {
+      "interval": "[1, 3]",
+      "values": "[3, -1, -3]",
+      "processed_index": 3,
+      "output": "[3, 3]",
+      "deque": "1:3 → 2:-1 → 3:-3"
+    }
+  },
+  "262": {
+    "url": "https://visual.integ.life/leetcode/262/",
+    "h1": "#262 · 行程与用户",
+    "official_url": "https://leetcode.com/problems/trips-and-users/",
+    "observed": [
+      "guarded eligibility transition",
+      "active ID table",
+      "two merge stages",
+      "sum=1 count=3 rate=0.33",
+      "T and U cost definitions"
+    ]
+  },
+  "limit": "Accessible UI observations and interaction; not a screenshot or exhaustive learner test."
+}

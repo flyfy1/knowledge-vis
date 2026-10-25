@@ -1,0 +1,20 @@
+{
+  "observed_at": "2026-10-25T07:00:08.656326+00:00",
+  "status": "running",
+  "current": {
+    "problem_id": "736",
+    "stage": "author",
+    "started_at": "2026-10-25T07:00:02.705658+00:00",
+    "run_id": "736-author-97bb5b462351"
+  },
+  "expected_head": "f9961afb66d3cd451665fd76cc9a6c47ae6b415b",
+  "queue_count": 984,
+  "accepted_local": 103,
+  "blocked": 36,
+  "released": 103,
+  "successful_releases": 2,
+  "pending": null,
+  "superseded_failed_release_ids": [
+    "b1aeec15655d493c88b66eced787cb9f"
+  ]
+}
