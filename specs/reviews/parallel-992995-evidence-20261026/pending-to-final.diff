@@ -1,0 +1,30 @@
+--- specs/reviews/parallel-992995-launch-preparation-20261026/launch.pending.py
++++ launch.py
+@@ -3,9 +3,9 @@
+ ROOT=pathlib.Path('/home/songyy/projects')
+ REPO=ROOT/'leetcode-hard-campaign-20261018'
+ STATE=ROOT/'leetcode-hard-campaign-state-20261018'
+-BASE='__PENDING_IMPORT982987_BASE__'
+-CENTRAL_HEAD='__PENDING_IMPORT982987_CENTRAL_HEAD__'
+-CENTRAL_RUN='__PENDING_IMPORT982987_CENTRAL_RUN__'
++BASE='1be3c657ef0c1ef3152f8abced78df2e278f09da'
++CENTRAL_HEAD='1be3c657ef0c1ef3152f8abced78df2e278f09da'
++CENTRAL_RUN='854-review-0add7000fba0'
+ POLICY='816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c'
+ 
+ def read(p): return json.loads(p.read_text())
+@@ -62,11 +62,11 @@
+     s=read(STATE/'progress.json')
+     assert s['status']=='running' and not (STATE/'STOP').exists()
+     assert s['expected_head']==CENTRAL_HEAD and git('rev-parse','HEAD')==CENTRAL_HEAD
+-    assert s['current']['problem_id']=='__PENDING_IMPORT982987_PROBLEM__'
+-    assert s['current']['stage']=='__PENDING_IMPORT982987_STAGE__' and s['current']['run_id']==CENTRAL_RUN
++    assert s['current']['problem_id']=='854'
++    assert s['current']['stage']=='review' and s['current']['run_id']==CENTRAL_RUN
+     run=next(r for r in s['runs'] if r['id']==CENTRAL_RUN)
+     events=[json.loads(line) for line in (pathlib.Path(run['directory'])/'events.jsonl').read_text().splitlines() if line.startswith('{')]
+-    assert any(e.get('type')=='thread.started' and e.get('thread_id')=='__PENDING_IMPORT982987_SESSION__' for e in events)
++    assert any(e.get('type')=='thread.started' and e.get('thread_id')=='01a17518-b387-7960-b6d6-60e162d298e1' for e in events)
+     assert len(s['queue'])==984
+     for pid in ['992','995']:
+         assert pid in s['queue'] and pid not in s['problems']

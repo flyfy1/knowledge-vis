@@ -1,0 +1,25 @@
+{
+  "observedAt": "2026-10-25T22:07:40.879471+00:00",
+  "status": "prepared-awaiting-root-review-and-separate-dispatch",
+  "passed": true,
+  "staticTests": 8,
+  "launcherControlFlowUnchanged": true,
+  "overallParameterSubstitutions": 9,
+  "resolvedPendingParameters": 6,
+  "pendingArtifactsUnchanged": true,
+  "actualReadOnlyPreflightPassed": true,
+  "laneLaunchPerformed": false,
+  "remoteFileMutation": false,
+  "files": {
+    "README.md": "6587f619436c3688f2297e20dd64b38daca22157ec32457a9e14cc61de8f8b2d",
+    "launch.py": "d222c9545aeeb0304292fe2d55c93c169a2516693610a41c983b078ef6a2d890",
+    "parameter-map.json": "9fb4a7941b5f436d8a8e6d836e3d7026046a07799be68fc50866ef9c417fc05c",
+    "parameter-only.diff": "ad6872a5f815edd8c455ec72211924a20e3d43e11d8d82d2f250c60214ad734c",
+    "pending-to-final.diff": "2c3fc57a2306c43ea8cd8c86f50b85467b552da1e5e3cd3704042f80ac35625c",
+    "preflight-enabled.diff": "3e68e1997bd1caa661c24524f6f33480007a08c9bf75ec04709d9652949f6a08",
+    "preflight.json": "284165351cb1414202045feb428dd6f92f317af66f3dc91e0af2ebd7bbecc39d",
+    "preflight.py": "1614f6868e620d276026bd0b49484c3389ef7f649dd61dc6cab449f0aacc9d86",
+    "test_parameters.py": "09ddf9bad2fc8159058bedc4ba1d54adb512b08657fe639775fdbb08821f394a",
+    "tests.log": "637ad693971420b70a01476cd5d51065ecc3c7af270c41cfe91899ec8c2db4bd"
+  }
+}

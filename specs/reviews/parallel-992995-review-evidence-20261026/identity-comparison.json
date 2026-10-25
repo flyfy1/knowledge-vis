@@ -1,0 +1,24 @@
+{
+  "observed_at": "2026-10-25T22:08:40.132739+00:00",
+  "base": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+  "central_head": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+  "central_current": {
+    "problem_id": "854",
+    "stage": "review",
+    "started_at": "2026-10-25T22:05:14.589592+00:00",
+    "run_id": "854-review-0add7000fba0"
+  },
+  "central_session": "01a17518-b387-7960-b6d6-60e162d298e1",
+  "central_runner_pid": 1774575,
+  "mem_available_kib": 1991204,
+  "allowed_dirty_scope": {
+    "stage": "review",
+    "report": "specs/reviews/854-review-1-9601268b.md",
+    "evidence": "specs/reviews/854-evidence/854-review-1-9601268b",
+    "trackedChangesAllowed": false
+  },
+  "native_pid": 1774809,
+  "frozen_identity_matches": true,
+  "import_receipt_matches": true,
+  "reservations": 39
+}

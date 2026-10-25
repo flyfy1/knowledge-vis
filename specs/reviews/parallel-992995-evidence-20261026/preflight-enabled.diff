@@ -1,0 +1,11 @@
+--- specs/reviews/parallel-992995-launch-preparation-20261026/preflight.pending.py
++++ preflight.py
+@@ -4,7 +4,7 @@
+ receipt_path=state_dir/'import982987-only-20261026-891ce2d4.json'
+ receipt_bytes=receipt_path.read_bytes();receipt=json.loads(receipt_bytes)
+ assert receipt['status']=='completed-resumed',receipt['status']
+-base='__PENDING_IMPORT982987_BASE__'
++base='1be3c657ef0c1ef3152f8abced78df2e278f09da'
+ assert receipt['pushed_head']==base
+ assert receipt['ordinary_resume_proof']['agent_candidate']==base and receipt['fresh_agent']
+ s=json.loads((state_dir/'progress.json').read_text());head=subprocess.check_output(['git','-C',str(repo),'rev-parse','HEAD'],text=True).strip();current=s['current'];run=next(r for r in s['runs'] if r['id']==current['run_id']);events=[]
