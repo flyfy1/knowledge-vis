@@ -1,0 +1,38 @@
+{
+  "id": 960,
+  "title": {
+    "zh": "删列造序 III",
+    "en": "Delete Columns to Make Sorted III"
+  },
+  "desc": {
+    "zh": "从共享列的兼容关系推导最长保留链。",
+    "en": "Derive a longest kept chain from shared-column compatibility."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "动态规划",
+      "en": "Dynamic programming"
+    },
+    {
+      "zh": "子序列",
+      "en": "Subsequences"
+    }
+  ],
+  "path": "960/",
+  "leetcodeUrl": "https://leetcode.com/problems/delete-columns-to-make-sorted-iii/",
+  "language": "Python",
+  "complexity": "O(nm²) time; O(m) auxiliary space",
+  "concepts": [
+    {
+      "name": "Column compatibility",
+      "step": 2,
+      "description": "Test every row before linking columns."
+    },
+    {
+      "name": "Ending-column dynamic programming",
+      "step": 2,
+      "description": "Longest valid chain ending at each column."
+    }
+  ]
+}
