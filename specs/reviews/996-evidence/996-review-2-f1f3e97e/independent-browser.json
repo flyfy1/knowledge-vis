@@ -1,0 +1,25 @@
+{
+  "acceptRewindReplay": true,
+  "keyboardPrediction": true,
+  "presetPreservesExercise": true,
+  "rows": [
+    {
+      "lang": "en",
+      "title": "#996 · Number of Squareful Arrays",
+      "operation": "All copies are used: accept this order, add one ledger entry, then return to the parent call.",
+      "path": "1818",
+      "counts": "1 → 08 → 0",
+      "ledger": "[1, 8, 1, 8]",
+      "statePreserved": true
+    },
+    {
+      "lang": "zh",
+      "title": "#996 · 正方形数组的数目",
+      "operation": "所有副本都已用完：接收当前序列，账本增加一项；接着返回父调用。",
+      "path": "1818",
+      "counts": "1 → 08 → 0",
+      "ledger": "[1, 8, 1, 8]",
+      "statePreserved": true
+    }
+  ]
+}

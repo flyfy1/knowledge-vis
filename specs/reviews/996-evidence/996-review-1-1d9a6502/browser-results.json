@@ -1,0 +1,208 @@
+{
+  "kind": "author self-check",
+  "host": "linux",
+  "locales": [
+    {
+      "lang": "en",
+      "presets": 6,
+      "predictions": 3,
+      "sourceParity": true,
+      "keyboard": true,
+      "anchor": true
+    },
+    {
+      "lang": "zh",
+      "presets": 6,
+      "predictions": 3,
+      "sourceParity": true,
+      "keyboard": true,
+      "anchor": true
+    }
+  ],
+  "screenshots": [
+    "en-320-zoom1.png",
+    "en-320-zoom2.png",
+    "en-390-zoom1.png",
+    "en-390-zoom2.png",
+    "en-736-zoom1.png",
+    "en-736-zoom2.png",
+    "en-1440-zoom1.png",
+    "en-1440-zoom2.png",
+    "zh-320-zoom1.png",
+    "zh-320-zoom2.png",
+    "zh-390-zoom1.png",
+    "zh-390-zoom2.png",
+    "zh-736-zoom1.png",
+    "zh-736-zoom2.png",
+    "zh-1440-zoom1.png",
+    "zh-1440-zoom2.png"
+  ],
+  "layout": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 320,
+        "width": 320
+      }
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 320,
+        "width": 320
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 736,
+        "width": 736
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 736,
+        "width": 736
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 320,
+        "width": 320
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 320,
+        "width": 320
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 736,
+        "width": 736
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 736,
+        "width": 736
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 1440,
+        "width": 1440
+      }
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "en",
+      "sentinelVerified": true,
+      "successfulCopy": true,
+      "nativeFallbackTransfer": true,
+      "shortcut": "Control+C"
+    },
+    {
+      "lang": "zh",
+      "sentinelVerified": true,
+      "successfulCopy": true,
+      "nativeFallbackTransfer": true,
+      "shortcut": "Control+C"
+    }
+  ],
+  "eventChecks": 202,
+  "errors": [],
+  "badAssets": [],
+  "remoteRequests": [],
+  "blockedStorage": true,
+  "offlineMirror": true
+}

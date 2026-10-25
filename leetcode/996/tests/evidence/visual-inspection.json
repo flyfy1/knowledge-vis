@@ -1,0 +1,20 @@
+{
+  "kind": "author visual self-check",
+  "inspected": [
+    "en-overview.jpg",
+    "zh-overview.jpg",
+    "dense-overview.jpg",
+    "en-320-zoom1-dense.png",
+    "zh-390-zoom1-dense.png",
+    "en-1440-zoom2-dense.png",
+    "zh-320-zoom2-dense.png"
+  ],
+  "observations": [
+    "Reviewed all 28 viewport captures in three contact sheets; opened four dense captures individually.",
+    "Reject sum 2 matches candidate 1 after prefix [1]. Counts remain 1→1, 8→2.",
+    "Accepted prefix [1,8,1,8] has counts 1→0, 8→0 and exactly one ledger entry.",
+    "320/390 normal layouts keep values and counts readable; 2x CSS layout zoom reflows tiles and counts, with vertical scrolling.",
+    "At 2x, lower content can be outside the viewport; it remains reachable by scrolling. Sticky navigation uses deliberate horizontal scrolling.",
+    "No visible text/label collisions in inspected states."
+  ]
+}
