@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-10-25T04:03:07.825748+00:00",
+  "officialUrl": "https://leetcode.com/problems/k-empty-slots/",
+  "authentication": "None; public requests only",
+  "requests": [
+    {
+      "name": "official-page",
+      "url": "https://leetcode.com/problems/k-empty-slots/",
+      "status": 403,
+      "capture": "official-page.html",
+      "subscriptionMessagePresent": false
+    },
+    {
+      "name": "official-graphql",
+      "url": "https://leetcode.com/graphql/",
+      "status": 200,
+      "capture": "official-graphql.json",
+      "observedQuestion": {
+        "questionId": "683",
+        "questionFrontendId": "683",
+        "title": "K Empty Slots",
+        "titleSlug": "k-empty-slots",
+        "isPaidOnly": true,
+        "content": null,
+        "exampleTestcases": "[1,3,2]\n1\n[1,2,3]\n1",
+        "sampleTestCase": "[1,3,2]\n1",
+        "metaData": "{\n  \"name\": \"kEmptySlots\",\n  \"params\": [\n    {\n      \"name\": \"bulbs\",\n      \"type\": \"integer[]\"\n    },\n    {\n      \"name\": \"k\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+        "codeSnippets": null
+      },
+      "contractAccessible": false
+    }
+  ]
+}
