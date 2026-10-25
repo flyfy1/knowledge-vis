@@ -1,0 +1,42 @@
+{
+  "status": "disabled-pending-both-acceptances-not-dispatchable",
+  "source": "specs/reviews/parallel-982987-import-preparation-20261026/operate.py",
+  "sourceCommit": "8f7d005b91072d953251ecb7f3188388b873351a",
+  "sourceSha256": "e0e530655dd21c90a95c5a0b0baa7f6b4e84fa96ae359c6cd72da3e34d5798f6",
+  "helperSource": "specs/reviews/parallel-968972-import-818-search-preparation-20261026/operate.py",
+  "helperSha256": "f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698",
+  "owner": "import992995-only-20261026-888bb6ac",
+  "dispatchToken": "root-reviewed-import992995-only-20261026-888bb6ac",
+  "pinsSha256Constant": null,
+  "targetIds": [
+    "992",
+    "995"
+  ],
+  "laneBase": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+  "substitutions": [
+    {
+      "from": "OWNER='import982987-only-20261026-891ce2d4'",
+      "to": "OWNER='import992995-only-20261026-888bb6ac'"
+    },
+    {
+      "from": "DISPATCH='root-reviewed-import982987-only-20261026'",
+      "to": "DISPATCH='root-reviewed-import992995-only-20261026-888bb6ac'"
+    },
+    {
+      "from": "PINS_SHA='0d9dec18554ed18154ac5b4137371b08382bd217c290149fd048a46987387a01'  # Frozen for independent final review; separate root dispatch required.",
+      "to": "PINS_SHA=None  # Disabled preparation: both completed acceptance pins and fresh review are required."
+    },
+    {
+      "from": "IDS=('982','987')",
+      "to": "IDS=('992','995')"
+    },
+    {
+      "from": "import independently accepted982/987 under unchanged policy",
+      "to": "import independently accepted992/995 under unchanged policy"
+    }
+  ],
+  "actualParameterSubstitutionCount": 5,
+  "operatorSha256": "e75a434a0829b46b3233d34a03f78094453ec6c02b47cbab0df0b8bb2eca101a",
+  "pendingPinsSha256": "f8d059331391db8c734ca26fcecf3d6112754311e6092d99a26082e571d39567",
+  "policySha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c"
+}

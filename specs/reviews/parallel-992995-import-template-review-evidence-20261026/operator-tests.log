@@ -1,0 +1,22 @@
+test_actual_gated_runner_startup_and_natural_stop (__main__.Guards.test_actual_gated_runner_startup_and_natural_stop) ... ok
+test_changed_importer_is_refused_before_module_execution (__main__.Guards.test_changed_importer_is_refused_before_module_execution) ... ok
+test_default_refuses_before_file_or_runtime_access (__main__.Guards.test_default_refuses_before_file_or_runtime_access) ... ok
+test_existing_publication_bound_keeps_18_plus_2_refusal (__main__.Guards.test_existing_publication_bound_keeps_18_plus_2_refusal) ... ok
+test_new_wrong_agent_or_completed_run_refuses (__main__.Guards.test_new_wrong_agent_or_completed_run_refuses) ... ok
+test_pending_json_refuses_even_if_digest_is_supplied_locally (__main__.Guards.test_pending_json_refuses_even_if_digest_is_supplied_locally) ... ok
+test_pending_registration_and_pending_release_keep_refusal (__main__.Guards.test_pending_registration_and_pending_release_keep_refusal) ... ok
+test_pending_unaccepted_or_missing_runtime_pins_refuse (__main__.Guards.test_pending_unaccepted_or_missing_runtime_pins_refuse) ... ok
+test_reservation_preservation_and_active_other_lane (__main__.Guards.test_reservation_preservation_and_active_other_lane) ... ok
+test_restore_never_overwrites_foreign_stop (__main__.Guards.test_restore_never_overwrites_foreign_stop) ... ok
+test_stopped_startup_only_exact_snapshot_and_live_pid (__main__.Guards.test_stopped_startup_only_exact_snapshot_and_live_pid) ... ok
+test_frozen_identity_release_and_pending_refuse_before_stop (__main__.ImportOnly.test_frozen_identity_release_and_pending_refuse_before_stop) ... ok
+test_operator_has_no_policy_or_reopen_mutation_path (__main__.ImportOnly.test_operator_has_no_policy_or_reopen_mutation_path) ... ok
+test_second_import_failure_retains_first_receipt_and_reservation (__main__.PartialImport.test_second_import_failure_retains_first_receipt_and_reservation) ... ok
+test_changed_order_after_projection_refused_before_stop (__main__.QueueDriftDuringExecute.test_changed_order_after_projection_refused_before_stop) ... ok
+test_changed_order_during_wait_refused_before_import (__main__.QueueDriftDuringExecute.test_changed_order_during_wait_refused_before_import) ... ok
+test_actual_runner_registration_and_review_history_proof (__main__.Registration.test_actual_runner_registration_and_review_history_proof) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 3.113s
+
+OK

@@ -1,0 +1,25 @@
+{
+  "observedAt": "2026-10-25T22:29:15.182674+00:00",
+  "status": "disabled-pending-both-completed-acceptances-not-dispatchable",
+  "passed": true,
+  "substitutionTests": 5,
+  "operatorInterfaceTests": 17,
+  "parameterSubstitutions": 5,
+  "controlFlowUnchanged": true,
+  "helperUnchanged": true,
+  "realAgentLaunch": false,
+  "piMutation": false,
+  "liveAcceptanceOrDispatchPinsFrozen": false,
+  "files": {
+    "README.md": "27c76337f1eaf316d411f2b88ed702def9059f7ea5dad543469543d6e4368dda",
+    "operate.py": "e75a434a0829b46b3233d34a03f78094453ec6c02b47cbab0df0b8bb2eca101a",
+    "parameter-map.json": "1ce3937f2f2ae902ae7d6bb07c8a6e23c0cfe693cde2642b318d1e32da81bc33",
+    "parameter-only.diff": "1212b0feba9139dc045fde8e1e08aef629873acd592b37058c6c744309ba5f2b",
+    "pending-pins.json": "f8d059331391db8c734ca26fcecf3d6112754311e6092d99a26082e571d39567",
+    "reservation-observation.json": "17cb6eaf25e7138a06fa5a30a31727ff071cb0ca9d73dd3ef8ce053b8f22db18",
+    "substitution-tests.log": "22979370f9c7dad148e7a87995bf6edcc7cfd2b2aa103bd426887ad49aff13c7",
+    "test_operate.py": "0e7ec9e81871104927efd91f3f345ef937c7023a4b98d05390a84e3acdf44dc3",
+    "test_substitutions.py": "a7dc34d5352a03a7267fb154b4328f2a1bb31b2b3a317ae040815893e3b41c77",
+    "tests.log": "2d40a2e0a874b97efea2aa25e345562adc1d72f8dfdf64cc7caf7596e2650db8"
+  }
+}
