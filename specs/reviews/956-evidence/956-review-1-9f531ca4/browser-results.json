@@ -1,0 +1,242 @@
+{
+  "status": "pass",
+  "host": "linux",
+  "browser": "156.0.8078.4",
+  "viewports": [
+    {
+      "lang": "en",
+      "width": 320,
+      "budget": {
+        "text": 86.88020324707031,
+        "width": 252,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "budget": {
+        "text": 86.88020324707031,
+        "width": 318,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "budget": {
+        "text": 86.88020324707031,
+        "width": 318,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "budget": {
+        "text": 86.88020324707031,
+        "width": 318,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "budget": {
+        "text": 86.88020324707031,
+        "width": 252,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "budget": {
+        "text": 86.88020324707031,
+        "width": 318,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "budget": {
+        "text": 86.88020324707031,
+        "width": 318,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "budget": {
+        "text": 86.88020324707031,
+        "width": 318,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "en",
+      "sentinelVerified": true,
+      "automaticExact": true,
+      "nativeFallbackExact": true,
+      "shortcut": "Control+C"
+    },
+    {
+      "lang": "zh",
+      "sentinelVerified": true,
+      "automaticExact": true,
+      "nativeFallbackExact": true,
+      "shortcut": "Control+C"
+    }
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "state": "[1,2,3], completed 2, gap1",
+      "observed": "Gap d=1: old shorter height 0 → new best shorter height 1.",
+      "candidates": "Old (d=1, h=0) → skip → new h=0: dominated by a taller candidateOld (d=1, h=0) → shorter side → new h=1: attains the retained maximum (ties included)"
+    },
+    {
+      "lang": "zh",
+      "state": "[1,2,3], completed 2, gap1",
+      "observed": "差值 d=1：旧表矮高 0 → 新表最佳矮高 1。",
+      "candidates": "旧 (d=1, h=0) → 不用 → 新 h=0：被更高候选支配旧 (d=1, h=0) → 放到矮边 → 新 h=1：达到保留的最大值（并列也算）"
+    },
+    {
+      "related": "../805/#step2",
+      "lang": "zh",
+      "observed": "2 · 各搜一半，再补足目标这一步要回答：怎样保留所有可能性，又不枚举整个数组的 2ⁿ 个子集？固定左右两半的位置。L[i] 记录左半恰选 i 个位置的所有不同总和；R[j] 同理。{} 表示没有可能的和，{0} 表示有一个和为 0 的选择。空选择必须保留：个数 0，总和 0。仍看 [1,2,3]，左半 [1]，右半 [2,3]。右半先只有 R[0]={0}；加入 2 后 R[1]={2}；再加入 3 时，跳过它保留 {2}，选它得到 0+3=3 和 2+3=5，所以 R[1]={2,3}、R[2]={5}。必须从旧集合读：新生成的 3 不能再加一次 3。同样的个数与总和只保留一次，因为后面的配对只依赖这两项。要选 k 个、总和 target=k·S/n，若左边选 i 个、和为 a，右边就必须选 j=k−i 个、和为 target−a。例如 k=1、target=2：i=0、a=0，需要 R[1] 包含 2，确实如此。不记录个数会误把不同大小的组混在一起。这个“两边枚举后配对”的方法叫折半搜索。不变量（每一步都成立的事实）：处理半边的前 p 个位置后，第 c 个集合恰好含有从这 p 个"
+    },
+    {
+      "related": "../805/#step2",
+      "lang": "en",
+      "observed": "2 · Search halves, then fill the gapHow can we keep every possibility without enumerating 2ⁿ full-array subsets? Fix two disjoint halves of the positions. L[i] holds every distinct sum from exactly i left positions; R[j] does the same on the right. {} means no reachable sum; {0} means sum zero is reachable. Keep the empty selection: count 0, sum 0.Keep [1,2,3], split into left [1] and right [2,3]. Initially R[0]={0}. Adding 2 creates R[1]={2}. On adding 3, skipping keeps {2}; taking it creates 0"
+    },
+    {
+      "related": "../920/#step2",
+      "lang": "zh",
+      "observed": "2 · 不记歌名，为什么仍然能正确扩展？这一步要回答：长度相同、用过的不同歌曲数也相同的合法前缀，下一步选择数是否一样？前缀指歌单开头的一段，暂时允许没用全歌曲。定义 dp[i][j]：从全部 n 首有名字的歌中，构成长度 i、恰好用过 j 首不同歌曲的合法前缀数。动态规划就是复用这些小问题的计数。延伸：用有限状态统计序列（#552）仍看 n=2、k=1：第一首有 A 或 B，dp[1][1]=2。再放一首，不能立即重播，所以 dp[2][1]=0，dp[2][2]=2（AB、BA）。第三首若是新歌，必须来自 dp[2][1]，贡献 0×1；若是旧歌，来自 AB 或 BA，每个都只有一首不在末尾，贡献 2×1。合计 dp[3][2]=2。对目标 (i,j)，按最后一首是否首次出现分两类：新歌来自 (i−1,j−1)，还有 n−j+1 首未用；重播来自 (i−1,j)，用过 j 首，但最近 k 首被禁用。合法前缀的最近 k 次（若不够则取全部）一定互不相同，否则早已违反规则。因此旧歌可选 max(j−k,0) 首；当 j<k 时没有可重播歌曲。不同历史的歌名虽不同，可选数量却相同。dp["
+    },
+    {
+      "related": "../920/#step2",
+      "lang": "en",
+      "observed": "2 · Why can we group different histories?Do legal prefixes of the same length and used-song count have the same number of next choices? A prefix is an initial part of a playlist; it may still omit songs. Define dp[i][j] as the number of legal length-i prefixes using exactly j distinct labeled songs out of all n. Dynamic programming reuses these smaller counts.More: count sequences with finite states (#552)Keep n=2, k=1. The first play is A or B, so dp[1][1]=2. No immediate replay is allowed, so "
+    }
+  ],
+  "contrast": [
+    {
+      "color": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "text": "← Knowledge Index",
+      "ratio": 13.100679028115637
+    },
+    {
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "text": "中",
+      "ratio": 7.078851579017443
+    },
+    {
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "text": "EN",
+      "ratio": 13.100679028115637
+    },
+    {
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "text": "#956 · Tallest Billboard",
+      "ratio": 16.086987125379448
+    },
+    {
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "text": "Weld rods of lengths 1, 2 and 3 into two equal sup",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "text": "Show / hide hand calculation",
+      "ratio": 13.397069143240783
+    },
+    {
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(10, 14, 20)",
+      "text": "1 · Why not always grow the shorter side?",
+      "ratio": 16.440224808744848
+    },
+    {
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(9, 14, 22)",
+      "text": "def baseline(rods):\n    def visit(i, a, b):\n      ",
+      "ratio": 16.437295258072666
+    },
+    {
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "text": "First isolate adding to the shorter side: fix d=2,",
+      "ratio": 14.704584598678618
+    },
+    {
+      "color": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "text": "1 → 4",
+      "ratio": 8.937191437807625
+    },
+    {
+      "color": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "text": "5 rods → 7",
+      "ratio": 10.910104011097095
+    }
+  ],
+  "focus": {
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "focusContrast": 8.937191437807625,
+  "localRequests": [
+    "http://127.0.0.1:18788/leetcode/956/",
+    "http://127.0.0.1:18788/leetcode/style.css",
+    "http://127.0.0.1:18788/leetcode/956/style.css?v=956-1",
+    "http://127.0.0.1:18788/leetcode/common.js",
+    "http://127.0.0.1:18788/leetcode/956/copy.js?v=956-1",
+    "http://127.0.0.1:18788/leetcode/956/core.js?v=956-1",
+    "http://127.0.0.1:18788/leetcode/956/python-code.js?v=956-1",
+    "http://127.0.0.1:18788/leetcode/956/app.js?v=956-1",
+    "http://127.0.0.1:18788/leetcode/805/",
+    "http://127.0.0.1:18788/leetcode/style.css",
+    "http://127.0.0.1:18788/leetcode/805/style.css?v=1",
+    "http://127.0.0.1:18788/leetcode/common.js",
+    "http://127.0.0.1:18788/leetcode/805/copy.js?v=1",
+    "http://127.0.0.1:18788/leetcode/805/core.js?v=1",
+    "http://127.0.0.1:18788/leetcode/805/python-code.js?v=1",
+    "http://127.0.0.1:18788/leetcode/805/app.js?v=1"
+  ],
+  "errors": [],
+  "failed": [],
+  "relatedKeyboard": true,
+  "storageDenied": true,
+  "offline": true,
+  "cssBytes": 11658
+}
