@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "oracle": "exhaustive strings, independently grouped",
+  "presets": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    10
+  ],
+  "frames": "all days through n=10",
+  "sourceParity": true,
+  "uniqueBilingualKeys": 67
+}

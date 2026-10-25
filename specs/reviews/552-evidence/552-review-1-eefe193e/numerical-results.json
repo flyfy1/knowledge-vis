@@ -1,0 +1,31 @@
+{
+  "kind": "author numerical self-check",
+  "exhaustiveLengths": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "seed": 552,
+  "seededCases": 60,
+  "largeCases": {
+    "10101": 183236316,
+    "99999": 816671055,
+    "100000": 749184020
+  },
+  "transferSuffixes": [
+    "PP",
+    "PA",
+    "PL",
+    "AP",
+    "AL"
+  ],
+  "result": "PASS"
+}
