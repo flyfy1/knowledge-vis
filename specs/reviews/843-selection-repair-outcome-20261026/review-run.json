@@ -1,0 +1,35 @@
+{
+  "id": "843-review-455d52b6e77c",
+  "problem_id": "843",
+  "role": "review",
+  "started_at": "2026-10-25T21:41:22.203208+00:00",
+  "status": "completed",
+  "candidate": "1997af1228f21cd85a3c7506928dc2587a0a7a9f",
+  "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/843-review-455d52b6e77c",
+  "session_ids": [
+    "01a17502-d81d-7aa2-a303-d3c27cab2908"
+  ],
+  "finished_at": "2026-10-25T21:46:21.423246+00:00",
+  "result": {
+    "outcome": "accepted",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      3
+    ],
+    "required_open": [],
+    "report_path": "specs/reviews/843-review-3-0fd20aa5.md",
+    "evidence": [
+      "Cold browser walkthrough saved before source audit.",
+      "Fresh canonical Python execution matched predictions and preserved input.",
+      "Independent browser oracle verified 56 calls across nine presets.",
+      "Bilingual interaction, layout, keyboard, source parity and native copy fallback checks passed.",
+      "843-R2-SELECT01 closed; budget regression closure rechecked.",
+      "Non-mutating metadata preflight exited 0."
+    ],
+    "detail": "97.5/100. No required findings remain. Minor reading friction persists at extreme narrow CSS zoom. Acceptance is separate from publication."
+  }
+}

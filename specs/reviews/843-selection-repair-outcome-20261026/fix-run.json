@@ -1,0 +1,17 @@
+{
+  "id": "843-fix-081c2d94c98e",
+  "problem_id": "843",
+  "role": "fix",
+  "started_at": "2026-10-25T21:37:19.188693+00:00",
+  "status": "completed",
+  "candidate": "c71cac9683d6569fd3d2c593ce8e271b5a229d0e",
+  "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/843-fix-081c2d94c98e",
+  "session_ids": [
+    "01a174ff-23b4-7932-8aef-d2fc93105459"
+  ],
+  "finished_at": "2026-10-25T21:41:11.286039+00:00",
+  "result": {
+    "outcome": "ready",
+    "detail": "Fixed 843-R2-SELECT01 with a complete wrapping scenario readout. Python, regression, bilingual browser, source-parity and 36 selection checks passed. Metadata preflight exited 0. Evidence appended to leetcode/843/SELF-CHECK.md; candidate 843-select-r3 frozen for separate independent re-review."
+  }
+}

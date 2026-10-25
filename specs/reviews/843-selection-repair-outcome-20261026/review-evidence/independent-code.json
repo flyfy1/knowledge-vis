@@ -1,0 +1,35 @@
+{
+  "assets": {
+    "index.html": "2dd447c803f8ee243df54ae0221267a4ca0e95afa0825a7e12d1a3dccedce2c7",
+    "app.js": "aab7eb9dcdb24a55a0d1c265bccb59fc97b5c21236455ece987378dbab07526e",
+    "core.js": "dd5ae115a5988c71164432995a8def755283b95fedf53318aed186b4f48f5ecb",
+    "copy.js": "7811c587179f85366346a0ef77fad46b4735428b17613522cb730f0fdcb7d053",
+    "style.css": "82daf852ce99603d981dc6be831d1567a659d4a23c15f1f3d290c178acb9b89a",
+    "python-code.js": "3d3287def904402b4390f999cf8b67e49e28b086c64cab63410059b80aa663b2",
+    "solution.py": "51f9e29c91ca3ffe6238f13dfa0f0b632081274be4747ac67cfbf627b986dc05",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b"
+  },
+  "freshInput": [
+    "aaaaaa",
+    "aaaaba",
+    "bbbbaa"
+  ],
+  "calls": [
+    [
+      "aaaaaa",
+      2
+    ],
+    [
+      "bbbbaa",
+      6
+    ]
+  ],
+  "noMutation": true,
+  "equalityCounterexample": [
+    6,
+    5,
+    2
+  ],
+  "permutationScore": 0
+}

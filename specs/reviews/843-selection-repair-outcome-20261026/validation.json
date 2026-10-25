@@ -1,0 +1,215 @@
+{
+  "outcome": "accepted_local",
+  "required_open": [],
+  "closed_findings": [
+    "843-R2-SELECT01",
+    "843-BUDGET-R1"
+  ],
+  "source_sha256": "51f9e29c91ca3ffe6238f13dfa0f0b632081274be4747ac67cfbf627b986dc05",
+  "canonical_core_mirror_copy_unchanged_from_round2": true,
+  "candidate_review_registration_tree_equal": true,
+  "prior_two_review_records_exactly_preserved": true,
+  "final_run_state_result_equal": true,
+  "session_ids": [
+    "01a17502-d81d-7aa2-a303-d3c27cab2908"
+  ],
+  "selection_records": 36,
+  "selection_distinct_locale_width_zoom_scenario_combinations": 24,
+  "selection_text_geometry_checked_from_records": true,
+  "independent_browser_recorded_calls": 56,
+  "budget_recorded_trace_recomputation": [
+    {
+      "fixture": "family20",
+      "budget": 10,
+      "tested": 20,
+      "found": 20,
+      "maxCalls": 10
+    },
+    {
+      "fixture": "family22",
+      "budget": 11,
+      "tested": 22,
+      "found": 22,
+      "maxCalls": 11
+    },
+    {
+      "fixture": "family24",
+      "budget": 30,
+      "tested": 24,
+      "found": 24,
+      "maxCalls": 12
+    },
+    {
+      "fixture": "official4",
+      "budget": 10,
+      "tested": 4,
+      "found": 4,
+      "maxCalls": 2
+    },
+    {
+      "fixture": "official2",
+      "budget": 10,
+      "tested": 2,
+      "found": 2,
+      "maxCalls": 2
+    },
+    {
+      "fixture": "singleton",
+      "budget": 10,
+      "tested": 1,
+      "found": 1,
+      "maxCalls": 1
+    }
+  ],
+  "scope": "Archived identities, recorded trace arithmetic/selection geometry, exact mirror/asset hashes, and two existing screenshot inspections; no new algorithm/browser runs or remote mutations.",
+  "files": {
+    "843-review-3-0fd20aa5.md": {
+      "sha256": "0693b1885a2a7d270a9856edc540e7d0c8004add8ec4365fbee29286ef31ffd0",
+      "bytes": 24201
+    },
+    "candidate/BRIEF.md": {
+      "sha256": "66f1ccc8e4f443fc045545439cc12a7ff053db994e735da37289a32058038525",
+      "bytes": 8967
+    },
+    "candidate/app.js": {
+      "sha256": "aab7eb9dcdb24a55a0d1c265bccb59fc97b5c21236455ece987378dbab07526e",
+      "bytes": 3575
+    },
+    "candidate/candidate.json": {
+      "sha256": "93002935eda0e885bb15a2d34aaaf2caa262eee52d3b1e9ef55dbdb5773881e6",
+      "bytes": 15748
+    },
+    "candidate/copy.js": {
+      "sha256": "7811c587179f85366346a0ef77fad46b4735428b17613522cb730f0fdcb7d053",
+      "bytes": 19554
+    },
+    "candidate/core.js": {
+      "sha256": "dd5ae115a5988c71164432995a8def755283b95fedf53318aed186b4f48f5ecb",
+      "bytes": 2102
+    },
+    "candidate/index.html": {
+      "sha256": "2dd447c803f8ee243df54ae0221267a4ca0e95afa0825a7e12d1a3dccedce2c7",
+      "bytes": 6775
+    },
+    "candidate/lesson-entry.json": {
+      "sha256": "34229d9f52bf42c814a37c31cca3bd7b5dc7da35c5f2f55df7f0003e8040b776",
+      "bytes": 982
+    },
+    "candidate/python-code.js": {
+      "sha256": "3d3287def904402b4390f999cf8b67e49e28b086c64cab63410059b80aa663b2",
+      "bytes": 1426
+    },
+    "candidate/solution.py": {
+      "sha256": "51f9e29c91ca3ffe6238f13dfa0f0b632081274be4747ac67cfbf627b986dc05",
+      "bytes": 1364
+    },
+    "candidate/style.css": {
+      "sha256": "82daf852ce99603d981dc6be831d1567a659d4a23c15f1f3d290c178acb9b89a",
+      "bytes": 1519
+    },
+    "candidate/tests/evidence/official-graphql.json": {
+      "sha256": "f6f8de5823269d6e309f79568e53c6aba38d17be5662d0e3b7906b01eeefb921",
+      "bytes": 9241
+    },
+    "candidate/tests/evidence/official-verification.md": {
+      "sha256": "fb6252ffe7c8ebdb5b3c73f932f0e65b9358f1540f0d2532d3f9af024f7b3536",
+      "bytes": 746
+    },
+    "fix-run.json": {
+      "sha256": "c03a561c05b48f3272fea4eac2fb5c4cd7fca90a23888666aeb410260a627862",
+      "bytes": 789
+    },
+    "handoff-receipt.json": {
+      "sha256": "85e981af4d5d0681f392d8565b31fc4502ee6518fcce5491090d8abf6657467b",
+      "bytes": 5428
+    },
+    "historical-review.md": {
+      "sha256": "909b409ecfceeef96c8d6c2ddbe75a5bad0b9c1a54fa81f7c96f8be7e93c6847",
+      "bytes": 20358
+    },
+    "review-events.jsonl.gz": {
+      "sha256": "327a2cf897c80c9559460bfad62491fe84fc8991655fdca3e2b37488ad2266d8",
+      "bytes": 115211
+    },
+    "review-evidence/browser-results.json": {
+      "sha256": "088e144a12d5ed37f70b694efc9a68c2bd58c1450632f8b9097aa7820e7b6ffc",
+      "bytes": 24723
+    },
+    "review-evidence/budget-browser-results.json": {
+      "sha256": "21449e86ade7b5c5803dce9f127c03877511d31548674a2056d21e6a4327825a",
+      "bytes": 17172
+    },
+    "review-evidence/contrast-calibration.json": {
+      "sha256": "70fffde4c986ca71fff77843e8bc62c864e32537bc698cdac7c4004a9cee58f6",
+      "bytes": 386
+    },
+    "review-evidence/core-results.json": {
+      "sha256": "1bb2eae262fa394f1e08b8758ee77e4617c49c224c378213b7a27d54160a96af",
+      "bytes": 214
+    },
+    "review-evidence/en-1280-zoom1-preset8-28.png": {
+      "sha256": "29e1786163d6f52052603a96e1a15f8d66f5ecb5deaeb76841a4b2a25a291559",
+      "bytes": 115973
+    },
+    "review-evidence/en-320-found11.png": {
+      "sha256": "3371c1cc2a2e0f4a0f032848a2e7a2aa49c7d06ab5004b0cedd63ec319c0c8d9",
+      "bytes": 66732
+    },
+    "review-evidence/en-320-zoom1-preset8-4.png": {
+      "sha256": "f65aa6e4ddc2806bc843396a01d1ec376fe48421ffe10145c857314db2abec26",
+      "bytes": 72218
+    },
+    "review-evidence/en-320-zoom2-preset8-10.png": {
+      "sha256": "282b72641f7ea147e7c01b8390429eb0ae9d150e63a40ce127389496f68375ef",
+      "bytes": 43811
+    },
+    "review-evidence/en-390-zoom1-preset8-16.png": {
+      "sha256": "beea2dfaacab8878d7134ae81084accfd3b423353f384f929525e3a0e02b2ed0",
+      "bytes": 81671
+    },
+    "review-evidence/focused-results.json": {
+      "sha256": "b2d8043014082c1824141c6e6b048a04f6bf0d360bc86290423179bada8d8954",
+      "bytes": 3634
+    },
+    "review-evidence/green.json": {
+      "sha256": "25d39c3d1724d5abb01b761c561b1acae61312ad235cb7fa916603076d8baa2c",
+      "bytes": 248646
+    },
+    "review-evidence/independent-browser.json": {
+      "sha256": "ea5339e4d2110a147f3558391e541e51dfe330c430d8d7adcc33d94bbe389ae5",
+      "bytes": 19248
+    },
+    "review-evidence/independent-code.json": {
+      "sha256": "cc325513374a4780491a46ab02bfe7e7d188603cf0c927c76780655b6630222e",
+      "bytes": 1050
+    },
+    "review-evidence/selection-results.json": {
+      "sha256": "97a8b162458c7899d34772ac21bcdb4f981c23755c22145474114a991326eac6",
+      "bytes": 45947
+    },
+    "review-evidence/solution-results.json": {
+      "sha256": "869f0d57e4a304e636950a0a99171bac8d2610d052072c41b4cf45f1c9997a04",
+      "bytes": 617
+    },
+    "review-evidence/zh-320-exhausted10.png": {
+      "sha256": "ac8b5fcaaa2e54959d66fb1da63a80c51ff0ba2fbe55c0725513604f0607b657",
+      "bytes": 99109
+    },
+    "review-evidence/zh-390-zoom1-preset6-12.png": {
+      "sha256": "1d88911ffbad5ae64877058e562932555c98f2ea995aa07b0a526bf6b897aefb",
+      "bytes": 96200
+    },
+    "review-final.json": {
+      "sha256": "1ba885b160e453c5b73dee8f8ca64b3c3b6b0d3809b279a288352e474accca31",
+      "bytes": 685
+    },
+    "review-run.json": {
+      "sha256": "0f4b94a6d69a54d4f65e9b800aa80eb2967860cd36444121c0547d132b7c3618",
+      "bytes": 1276
+    },
+    "snapshot.json": {
+      "sha256": "d659d3e89e62a24727eabea360c71e4efe6c20c0ec07b006636f15e29f629980",
+      "bytes": 33482
+    }
+  }
+}

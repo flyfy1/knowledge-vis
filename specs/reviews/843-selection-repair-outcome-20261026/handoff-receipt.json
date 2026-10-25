@@ -1,0 +1,210 @@
+{
+  "owner": "843-budget-repair-20261026-91db47a2",
+  "status": "completed-fresh843fix-running",
+  "created_at": "2026-10-25T21:14:48.023813+00:00",
+  "pre_stop_plan": {
+    "next_problem_id": "850",
+    "registration_ids": [],
+    "publication_bound": {
+      "eligible": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "818",
+        "827",
+        "828",
+        "829",
+        "834",
+        "839",
+        "843",
+        "847",
+        "960",
+        "968",
+        "972",
+        "975",
+        "980"
+      ],
+      "incoming": [],
+      "registration_ids": [],
+      "reopened_upper_bound_ids": [
+        "843"
+      ],
+      "upper_bound_ids": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "818",
+        "827",
+        "828",
+        "829",
+        "834",
+        "839",
+        "843",
+        "847",
+        "960",
+        "968",
+        "972",
+        "975",
+        "980"
+      ],
+      "upper_bound": 19
+    }
+  },
+  "stop": {
+    "owner": "843-budget-repair-20261026-91db47a2",
+    "created_at": "2026-10-25T21:14:58.775910+00:00",
+    "reason": "Finish current stage; adopt reviewed843-BUDGET-R1 evidence and reopen only843 through ordinary fix/review."
+  },
+  "boundary_plan": {
+    "next_problem_id": "850",
+    "registration_ids": [],
+    "publication_bound": {
+      "eligible": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "818",
+        "827",
+        "828",
+        "829",
+        "834",
+        "839",
+        "843",
+        "847",
+        "960",
+        "968",
+        "972",
+        "975",
+        "980"
+      ],
+      "incoming": [],
+      "registration_ids": [],
+      "reopened_upper_bound_ids": [
+        "843"
+      ],
+      "upper_bound_ids": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "818",
+        "827",
+        "828",
+        "829",
+        "834",
+        "839",
+        "843",
+        "847",
+        "960",
+        "968",
+        "972",
+        "975",
+        "980"
+      ],
+      "upper_bound": 19
+    }
+  },
+  "boundary_head": "cab5a3248ffa3efa3521cd2c00b171cc2fcb555f",
+  "maintenance": {
+    "kind": "reopen-accepted-843-budget",
+    "request_id": "843-BUDGET-R1",
+    "at": "2026-10-25T21:25:32.809420+00:00",
+    "source_revision": "2bc56ba008ac7460ebecf71580d1b1c03fdfde0e",
+    "before": "cab5a3248ffa3efa3521cd2c00b171cc2fcb555f",
+    "prior_accepted_entry": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            3
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/843-review-1-7f018940.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Independent Python prediction and all 13 preset rounds verified.",
+            "Exact source, download, clipboard and native fallback parity passed.",
+            "Bilingual controls, rewind, reset, keyboard and device layouts checked; screenshots inspected.",
+            "Non-mutating metadata preflight exited 0."
+          ],
+          "detail": "97.5/100. No required findings. Extreme CSS zoom causes minor reading friction; browser-chrome zoom and physical devices remain unverified. Acceptance is separate from publication.",
+          "run_id": "843-review-3eddda02bfb3",
+          "candidate": "617cb7c7e49f533b46c66dc9a53e7c6cefd71cbf",
+          "candidate_sha256": "1d250a986544479a34a24ca1c0f7cbacd48fb80f699dd0a6d5e9822ef59b04c7",
+          "weighted_score": 97.5,
+          "round": 1,
+          "commit": "3cf37ae3fabd1e6c1cc8da54015b3569d085df75"
+        }
+      ],
+      "author_runs": [
+        "843-author-5ecd89a97e60"
+      ],
+      "prior_report": "specs/reviews/843-review-1-7f018940.md",
+      "candidate": "617cb7c7e49f533b46c66dc9a53e7c6cefd71cbf",
+      "registration_commit": "ad547b9105dd0b1164cb2774de27c65a4898e5c9",
+      "accepted_at": "2026-10-25T20:52:47.125660+00:00"
+    },
+    "previous_current": {
+      "problem_id": "850",
+      "stage": "author",
+      "started_at": "2026-10-25T21:13:32.780409+00:00",
+      "run_id": "850-author-615b6b44e95c"
+    },
+    "after": "854d1bdc83efc13ae49716190ba8db858e4dd0fc"
+  },
+  "head": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+  "launch": {
+    "pid": 1696215,
+    "queue_count": 984,
+    "continuous": true,
+    "state": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress.json"
+  },
+  "resume_proof": {
+    "registration_commits": [],
+    "agent_candidate": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+    "prior_reviews_and_runs_preserved": true
+  },
+  "completed_at": "2026-10-25T21:25:59.237911+00:00",
+  "fresh_fix": {
+    "current": {
+      "problem_id": "843",
+      "stage": "fix",
+      "started_at": "2026-10-25T21:25:57.953060+00:00",
+      "run_id": "843-fix-d56cf6178cb9"
+    },
+    "session_id": "01a174f4-bc5c-7992-be3a-69f166e491b8",
+    "native_codex_pids": [
+      1696569
+    ],
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a174f4-bc5c-7992-be3a-69f166e491b8"
+      },
+      {
+        "type": "turn.started"
+      }
+    ]
+  },
+  "ledger_preserved": true
+}
