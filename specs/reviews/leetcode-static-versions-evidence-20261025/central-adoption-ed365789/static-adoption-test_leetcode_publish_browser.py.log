@@ -1,0 +1,20 @@
+test_codex_destination_and_legacy_query_fragment_redirects (test_leetcode_publish_browser.BrowserGateTests.test_codex_destination_and_legacy_query_fragment_redirects) ... ok
+test_completed_redirect_does_not_require_abandoned_document_end_event (test_leetcode_publish_browser.BrowserGateTests.test_completed_redirect_does_not_require_abandoned_document_end_event) ... ok
+test_current_resource_stall_still_fails_with_url_diagnostics (test_leetcode_publish_browser.BrowserGateTests.test_current_resource_stall_still_fails_with_url_diagnostics) ... ok
+test_different_localized_titles (test_leetcode_publish_browser.BrowserGateTests.test_different_localized_titles) ... ok
+test_empty_content_is_rejected (test_leetcode_publish_browser.BrowserGateTests.test_empty_content_is_rejected) ... ok
+test_get_to_rum_path_is_not_telemetry (test_leetcode_publish_browser.BrowserGateTests.test_get_to_rum_path_is_not_telemetry) ... ok
+test_identical_title_and_untranslated_body_is_rejected (test_leetcode_publish_browser.BrowserGateTests.test_identical_title_and_untranslated_body_is_rejected) ... ok
+test_identical_title_with_translated_body (test_leetcode_publish_browser.BrowserGateTests.test_identical_title_with_translated_body) ... ok
+test_missing_current_resource_remains_a_required_failure (test_leetcode_publish_browser.BrowserGateTests.test_missing_current_resource_remains_a_required_failure) ... ok
+test_missing_problem_id_is_rejected (test_leetcode_publish_browser.BrowserGateTests.test_missing_problem_id_is_rejected) ... ok
+test_other_origin_rum_path_is_not_exempt (test_leetcode_publish_browser.BrowserGateTests.test_other_origin_rum_path_is_not_exempt) ... ok
+test_same_origin_rum_http_failure_is_counted_separately (test_leetcode_publish_browser.BrowserGateTests.test_same_origin_rum_http_failure_is_counted_separately) ... ok
+test_slow_ordinary_post_is_not_telemetry (test_leetcode_publish_browser.BrowserGateTests.test_slow_ordinary_post_is_not_telemetry) ... ok
+test_slow_same_origin_rum_post_is_counted_separately (test_leetcode_publish_browser.BrowserGateTests.test_slow_same_origin_rum_post_is_counted_separately) ... ok
+test_untranslated_title_is_rejected (test_leetcode_publish_browser.BrowserGateTests.test_untranslated_title_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 61.084s
+
+OK

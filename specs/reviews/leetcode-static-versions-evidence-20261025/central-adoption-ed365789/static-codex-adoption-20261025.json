@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "status": "resumed-verified",
+  "started_at": "2026-10-25T15:26:33.144222+00:00",
+  "dispatch": "root-public-verified-20261025",
+  "source_revision": "eaf81f0713a59a1a5dea28885b3069bf81424f93",
+  "allowlist": [
+    "index.html",
+    "scripts/leetcode_static_versions.py",
+    "scripts/build_leetcode_static.py",
+    "scripts/leetcode_publish.py",
+    "scripts/leetcode_campaign.py",
+    "scripts/test_leetcode_static_versions.py",
+    "scripts/test_leetcode_publish.py",
+    "scripts/test_leetcode_publish_browser.py",
+    "scripts/test_campaign_publication.py",
+    "scripts/test_leetcode_collection.cjs",
+    "tests/leetcode-home-section.cjs",
+    "specs/leetcode-all-hard-campaign.md",
+    "specs/leetcode-static-versions.md"
+  ],
+  "public_receipt": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/static-codex-public-20261025.json",
+  "public_receipt_sha256": "ae4a1d2ba226c7e22f6c09ffe1ca8d3bfa80805ca11d2ed799e8c993b00cd28f",
+  "tests": [
+    {
+      "pattern": "test_campaign_publication.py",
+      "exit_code": 0,
+      "log": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/static-adoption-test_campaign_publication.py.log",
+      "sha256": "84097c0e88d8305ad81aafc30a0a491afb486c92475660feb8ed6dca455af8d7"
+    },
+    {
+      "pattern": "test_leetcode_static_versions.py",
+      "exit_code": 0,
+      "log": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/static-adoption-test_leetcode_static_versions.py.log",
+      "sha256": "c17e9ae604425356f32e71aba030223a109e38237ddd9738161f8c5590784cbd"
+    },
+    {
+      "pattern": "test_leetcode_publish.py",
+      "exit_code": 0,
+      "log": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/static-adoption-test_leetcode_publish.py.log",
+      "sha256": "6f0e09ecac450f5ccc118b51cf5eb2b2b0b34441049aecc46c95a67c70e07a5f"
+    },
+    {
+      "pattern": "test_leetcode_publish_browser.py",
+      "exit_code": 0,
+      "log": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/static-adoption-test_leetcode_publish_browser.py.log",
+      "sha256": "455450f078fecb229e412e50976e1e611d1deb0e11ce2c313473670cd604bd35"
+    }
+  ],
+  "before": {
+    "head": "e64356fbeaa7fb1c8793d1a8febcac4ae8e9e394",
+    "expected_head": "e64356fbeaa7fb1c8793d1a8febcac4ae8e9e394",
+    "status": "run_limit_reached",
+    "current": null,
+    "progress_sha256": "c39a5caf9d97bf953f184f06f7b49e25f6f9f26e9fcba64b100cdf85b661def5",
+    "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b",
+    "problems_sha256": "602c9da34526bd69a55a8fd688db731bb4996fd733cc454f636af10d005125d5",
+    "runs_sha256": "f660b957624390c8e416e2607dfb3c4a6f7d80112d2a341e048b343d2d8ce73b",
+    "queue_sha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+    "protected_git_objects": {
+      "leetcode": "8cb841750514b389cd130e8dab295d9571b08ec0",
+      "CONCEPT-MAP.md": "aff4847b16db1b30b0d49fcdafab9ac922c7ffe4",
+      "specs/reviews": "bb5d0f8a1714d6c6da44773c2c7ae2586395f0f6"
+    },
+    "launcher_sha256": "6646c725481e1ce8997fa528c676bc8e9dc102f1ed8aa7c361dca3db29ae7caf",
+    "stop_sha256": "bf35937ee7c3d69839cd98b7bca438535415186b0c098f84620764a5dca08925",
+    "accepted_count": 119
+  },
+  "source_sha256": {
+    "index.html": "c3849c37493a2d919e03b500c46f2a5404d3528189af52eb46a51a005dfc72ac",
+    "scripts/leetcode_static_versions.py": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e",
+    "scripts/build_leetcode_static.py": "72f5d2097b4f687d36b9d0bb238ae36e5f9a6bdad1cfc77412e4844205291356",
+    "scripts/leetcode_publish.py": "7292c88e2ae035667a1bc723b076fb3d8d3d8562dc8428f3f66f74dc60f764d8",
+    "scripts/leetcode_campaign.py": "a1258a0e7eba60e1d813bf0f9ede57a71f92cd504f6afb7bd0553d68d41c65ed",
+    "scripts/test_leetcode_static_versions.py": "a53c15551a3b12e38b696450adb5d81a9a7302e5a0e02bce9cbbb389e4043b3a",
+    "scripts/test_leetcode_publish.py": "e5d536f720bfd985a65ec7d701fdfa24e3769cc2601e1f6a752b9121b0677c52",
+    "scripts/test_leetcode_publish_browser.py": "97d1fcf062abd7201cedee1428b8e67454c4dcf7b8ce9f07983b4885d51d2a08",
+    "scripts/test_campaign_publication.py": "4afa7c0a7982f02fc492186895928a414507a0aedf32ff1cc8cb5d0e3a77f013",
+    "scripts/test_leetcode_collection.cjs": "9d353d0c491de2eba26b145c05a8451fdedd557b2cbc8a0fbe3cdc6991fddb64",
+    "tests/leetcode-home-section.cjs": "2263dc103e2f429fb7cda474b68faf227b4dec02df2b7ee23984597051ad2b8f",
+    "specs/leetcode-all-hard-campaign.md": "bfa6a4c5730e0318746ad8df32794ae4031b6d381d493d72e1c1ed4b056582c4",
+    "specs/leetcode-static-versions.md": "501734b9e3a7a2dc06660bdbb78d98de18dda76f83ae2b30fdef3340ea4ab8d2"
+  },
+  "new_commit": "ed3657893efdf3c0372edd64e6eceae46fd27c6d",
+  "after_adoption": {
+    "head": "ed3657893efdf3c0372edd64e6eceae46fd27c6d",
+    "expected_head": "ed3657893efdf3c0372edd64e6eceae46fd27c6d",
+    "status": "run_limit_reached",
+    "current": null,
+    "progress_sha256": "e676bf7646b91ba80d2e229a7f04afa247932690c4ddf2b1ec2d402253178d06",
+    "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b",
+    "problems_sha256": "602c9da34526bd69a55a8fd688db731bb4996fd733cc454f636af10d005125d5",
+    "runs_sha256": "f660b957624390c8e416e2607dfb3c4a6f7d80112d2a341e048b343d2d8ce73b",
+    "queue_sha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+    "protected_git_objects": {
+      "leetcode": "8cb841750514b389cd130e8dab295d9571b08ec0",
+      "CONCEPT-MAP.md": "aff4847b16db1b30b0d49fcdafab9ac922c7ffe4",
+      "specs/reviews": "bb5d0f8a1714d6c6da44773c2c7ae2586395f0f6"
+    },
+    "launcher_sha256": "94056740463e5f9ec4fe63d0d2c56d1ccbf1ab60556f7952580fe58512127e70",
+    "stop_sha256": "bf35937ee7c3d69839cd98b7bca438535415186b0c098f84620764a5dca08925",
+    "accepted_count": 119
+  },
+  "preserved": {
+    "problems_sha256": true,
+    "runs_sha256": true,
+    "queue_sha256": true,
+    "ledger_sha256": true,
+    "protected_git_objects": true,
+    "stop_sha256": true
+  },
+  "launch": {
+    "pid": 1241653,
+    "queue_count": 984,
+    "continuous": true,
+    "state": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress.json"
+  },
+  "finished_at": "2026-10-25T15:28:27.762380+00:00",
+  "runner_pid": 1241653,
+  "current": {
+    "problem_id": "793",
+    "stage": "author",
+    "started_at": "2026-10-25T15:28:27.605078+00:00",
+    "run_id": "793-author-d9f52ae1029b"
+  },
+  "prior_records_preserved": true,
+  "queue_sha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+  "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b"
+}

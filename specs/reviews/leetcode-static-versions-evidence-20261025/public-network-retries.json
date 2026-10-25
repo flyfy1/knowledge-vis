@@ -1,0 +1,86 @@
+{
+  "leetcode/123/copy.js": {
+    "initial": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected": "f76f95449c2e938c3effb5febbf009f836de995e5d55b7668f2d1b3beedde6b3",
+      "ok": false,
+      "error": "curl: (35) Recv failure: Connection reset by peer\n"
+    },
+    "retry": {
+      "sha256": "f76f95449c2e938c3effb5febbf009f836de995e5d55b7668f2d1b3beedde6b3",
+      "expected": "f76f95449c2e938c3effb5febbf009f836de995e5d55b7668f2d1b3beedde6b3",
+      "ok": true,
+      "error": null
+    }
+  },
+  "leetcode/174/index.html": {
+    "initial": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected": "85473827a4a5972c13f7d4d6563285c226839e54c879f4da64ad050e8f0ed7bd",
+      "ok": false,
+      "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to visual.integ.life:443 \n"
+    },
+    "retry": {
+      "sha256": "85473827a4a5972c13f7d4d6563285c226839e54c879f4da64ad050e8f0ed7bd",
+      "expected": "85473827a4a5972c13f7d4d6563285c226839e54c879f4da64ad050e8f0ed7bd",
+      "ok": true,
+      "error": null
+    }
+  },
+  "leetcode/330/core.js": {
+    "initial": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected": "c6928c1d5f455b3e9867d7ea78969b0f72535c26af5d71af3b61e652cc25252c",
+      "ok": false,
+      "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to visual.integ.life:443 \n"
+    },
+    "retry": {
+      "sha256": "c6928c1d5f455b3e9867d7ea78969b0f72535c26af5d71af3b61e652cc25252c",
+      "expected": "c6928c1d5f455b3e9867d7ea78969b0f72535c26af5d71af3b61e652cc25252c",
+      "ok": true,
+      "error": null
+    }
+  },
+  "leetcode/354/copy.js": {
+    "initial": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected": "087d5d8bda014ca69b3172b18de8afe344076a9cf51f5d42d3079d042f94be94",
+      "ok": false,
+      "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to visual.integ.life:443 \n"
+    },
+    "retry": {
+      "sha256": "087d5d8bda014ca69b3172b18de8afe344076a9cf51f5d42d3079d042f94be94",
+      "expected": "087d5d8bda014ca69b3172b18de8afe344076a9cf51f5d42d3079d042f94be94",
+      "ok": true,
+      "error": null
+    }
+  },
+  "leetcode/42/copy.js": {
+    "initial": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected": "f2abcfce607340e0ea9d990e1f5cd99131c4e90eb57a8eaa9c3a1f41c9dcf9ab",
+      "ok": false,
+      "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to visual.integ.life:443 \n"
+    },
+    "retry": {
+      "sha256": "f2abcfce607340e0ea9d990e1f5cd99131c4e90eb57a8eaa9c3a1f41c9dcf9ab",
+      "expected": "f2abcfce607340e0ea9d990e1f5cd99131c4e90eb57a8eaa9c3a1f41c9dcf9ab",
+      "ok": true,
+      "error": null
+    }
+  },
+  "leetcode/679/candidate-sha256.json": {
+    "initial": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected": "43611bf216f32d807f30dc657632bbd6d45cc537e62381b666c00495f948e06a",
+      "ok": false,
+      "error": "curl: (28) Operation timed out after 45005 milliseconds with 0 bytes received\ncurl: (28) Operation timed out after 45005 milliseconds with 0 bytes received\ncurl: (28) Operation timed out after 45011 milliseconds with 0 bytes received\n"
+    },
+    "retry": {
+      "sha256": "43611bf216f32d807f30dc657632bbd6d45cc537e62381b666c00495f948e06a",
+      "expected": "43611bf216f32d807f30dc657632bbd6d45cc537e62381b666c00495f948e06a",
+      "ok": true,
+      "error": null
+    }
+  }
+}

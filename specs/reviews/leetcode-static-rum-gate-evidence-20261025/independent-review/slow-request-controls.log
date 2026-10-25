@@ -1,0 +1,9 @@
+test_slow_same_origin_rum_post_is_counted_separately (test_leetcode_publish_browser.BrowserGateTests.test_slow_same_origin_rum_post_is_counted_separately) ... ok
+test_slow_ordinary_post_is_not_telemetry (test_leetcode_publish_browser.BrowserGateTests.test_slow_ordinary_post_is_not_telemetry) ... ok
+test_get_to_rum_path_is_not_telemetry (test_leetcode_publish_browser.BrowserGateTests.test_get_to_rum_path_is_not_telemetry) ... ok
+test_current_resource_stall_still_fails_with_url_diagnostics (test_leetcode_publish_browser.BrowserGateTests.test_current_resource_stall_still_fails_with_url_diagnostics) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 33.356s
+
+OK
