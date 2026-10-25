@@ -1,0 +1,16 @@
+{
+  "observed_at": "2026-10-25T17:37:21.387796+00:00",
+  "requested_commit": "df20386a06ceb4a0c76193cead0f303840d8393e",
+  "remote_before": "c274dca824d7f3b4347ff66712d7dbfb965757ce",
+  "remote_after": "df20386a06ceb4a0c76193cead0f303840d8393e",
+  "accepted_candidate": "c7a325e5a48d2da000609ea93d23f8d255d03bdd",
+  "prior_report": "specs/reviews/818-review-1-ad85dc73.md",
+  "current": {
+    "problem_id": "827",
+    "stage": "author",
+    "started_at": "2026-10-25T17:35:25.959687+00:00",
+    "run_id": "827-author-3473529a8530"
+  },
+  "working_tree_mutated": false,
+  "resource_followup": "Still open; existing independent review does not assess the archived9809 memory case."
+}

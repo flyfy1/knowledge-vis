@@ -1,0 +1,155 @@
+{
+  "owner": "workflow-copy-reopen-nine-20261026-6a2e0d39",
+  "status": "completed-resumed",
+  "source": "28efc3067c656f4cba8f5c90477b4506aa8eb6c4",
+  "created_at": "2026-10-25T17:35:57.779316+00:00",
+  "request_documents": {
+    "specs/reviews/workflow-copy-repair-requests-20261026/780.md": "79235a599df5139b2e8dc1c2a51fe673fd7b28bf46b2d3a3bbec34a1b22e280b",
+    "specs/reviews/workflow-copy-repair-requests-20261026/793.md": "ff52e23452b5099a60fc80e9a9fe1bed1e0840d4408c66793509335edb7536e5",
+    "specs/reviews/workflow-copy-repair-requests-20261026/798.md": "da3da5361f94e48e2a91ddb39e537146f2aff9939b7220b17a368f884d151318",
+    "specs/reviews/workflow-copy-repair-requests-20261026/801.md": "8bf72192c53809c60cf6bedf2379af8c185ce775346f4de59d0eee598af4b83a",
+    "specs/reviews/workflow-copy-repair-requests-20261026/815.md": "5c9697057a2218726823f12e58494fedde6221d5d19d87da9a1a8a25cd76977a",
+    "specs/reviews/workflow-copy-repair-requests-20261026/903.md": "5227f5ede9949c1bc677c06fa8c6a2a940dabf4e43b41829ef8be64750ad0476",
+    "specs/reviews/workflow-copy-repair-requests-20261026/920.md": "70b97c693528cb26a70d8f1ad8497c9d96812ab551704090f6d24057146e666e",
+    "specs/reviews/workflow-copy-repair-requests-20261026/940.md": "56df85c64f2ae135ce2d8323c052eba978bb50b231d899c840b2a07a0e6a5981",
+    "specs/reviews/workflow-copy-repair-requests-20261026/956.md": "635cfac82ede95dbb081fa8ced9935b28d0234fed4928ea9b5d10bd7d2f7e77f",
+    "specs/reviews/workflow-copy-repair-requests-20261026/README.md": "9c7747a2a299d19d3c3b329fa9d4a423fe2403141e3b4fd6484878bb8ee7584a"
+  },
+  "startup_eligible_preflight": [
+    "810",
+    "818"
+  ],
+  "stop": {
+    "owner": "workflow-copy-reopen-nine-20261026-6a2e0d39",
+    "created_at": "2026-10-25T17:36:02.620307+00:00",
+    "reason": "Finish active stage; adopt fixed COPY-R1 requests, preserve acceptance history, reopen nine entries for ordinary fix/fresh review and resume every20/max6."
+  },
+  "previous_current": {
+    "problem_id": "827",
+    "stage": "author",
+    "started_at": "2026-10-25T17:35:25.959687+00:00",
+    "run_id": "827-author-3473529a8530"
+  },
+  "updated_at": "2026-10-25T17:45:14.946507+00:00",
+  "maintenance": {
+    "kind": "reopen-workflow-copy-nine",
+    "at": "2026-10-25T17:45:04.015295+00:00",
+    "source": "28efc3067c656f4cba8f5c90477b4506aa8eb6c4",
+    "before": "1bb9edb791868ed6d3ca2d7ce3d9d0d1b6022be3",
+    "problem_ids": [
+      "780",
+      "793",
+      "798",
+      "801",
+      "815",
+      "903",
+      "920",
+      "940",
+      "956"
+    ],
+    "findings": [
+      "780-COPY-R1",
+      "793-COPY-R1",
+      "798-COPY-R1",
+      "801-COPY-R1",
+      "815-COPY-R1",
+      "903-COPY-R1",
+      "920-COPY-R1",
+      "940-COPY-R1",
+      "956-COPY-R1"
+    ],
+    "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/workflow-copy-reopen-nine-20261026-6a2e0d39-before.json",
+    "previous_current": {
+      "problem_id": "827",
+      "stage": "author",
+      "started_at": "2026-10-25T17:35:25.959687+00:00",
+      "run_id": "827-author-3473529a8530"
+    },
+    "prior_acceptance": {
+      "780": {
+        "accepted_at": "2026-10-25T12:04:42.612410+00:00",
+        "registration_commit": "bf3e607fd478a5f7ffaab995642e7f6adda52c44",
+        "prior_report": "specs/reviews/780-review-1-847f9d24.md"
+      },
+      "793": {
+        "accepted_at": "2026-10-25T15:52:03.763852+00:00",
+        "registration_commit": "a3f1c03b665834dea952f4fc02aa4ecab6465251",
+        "prior_report": "specs/reviews/793-review-1-5c6a024b.md"
+      },
+      "798": {
+        "accepted_at": "2026-10-25T16:11:39.642832+00:00",
+        "registration_commit": "e102555374976fbd3464818bb533f91f1fedecbd",
+        "prior_report": "specs/reviews/798-review-1-4a15ff20.md"
+      },
+      "801": {
+        "accepted_at": "2026-10-25T16:39:50.929944+00:00",
+        "registration_commit": "ebb5a2b3ec75400e7e06f85f7e5d6169a30b9ef9",
+        "prior_report": "specs/reviews/801-review-1-3074702f.md"
+      },
+      "815": {
+        "accepted_at": "2026-10-25T17:21:43.764527+00:00",
+        "registration_commit": "c274dca824d7f3b4347ff66712d7dbfb965757ce",
+        "prior_report": "specs/reviews/815-review-1-631b8576.md"
+      },
+      "903": {
+        "accepted_at": "2026-10-25T16:09:43.188419+00:00",
+        "registration_commit": "6c9b7462f8b0d28555b63d4950484e64a7dd9e56",
+        "prior_report": "specs/reviews/903-review-1-52a18398.md"
+      },
+      "920": {
+        "accepted_at": "2026-10-25T16:09:33.655562+00:00",
+        "registration_commit": "24f6c68bbf131f074fe714f9256434e125e3fe7e",
+        "prior_report": "specs/reviews/920-review-1-62e8ca13.md"
+      },
+      "940": {
+        "accepted_at": "2026-10-25T16:52:48.393609+00:00",
+        "registration_commit": "1f4226439bfd723e37bbba2f573d961cc200bfb5",
+        "prior_report": "specs/reviews/940-review-1-e4da4b0e.md"
+      },
+      "956": {
+        "accepted_at": "2026-10-25T16:57:45.031690+00:00",
+        "registration_commit": "9e1fe1d5c3bcc7d310eb3fa13a115a18787da87e",
+        "prior_report": "specs/reviews/956-review-1-9f531ca4.md"
+      }
+    },
+    "after": "8cedba5490bb862133f157a9d6af619cee323fb9"
+  },
+  "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b",
+  "startup_eligible": [
+    "810",
+    "818"
+  ],
+  "request_commit": "8cedba5490bb862133f157a9d6af619cee323fb9",
+  "prior_state_preserved": true,
+  "launch": {
+    "pid": 1407470,
+    "queue_count": 984,
+    "continuous": true,
+    "state": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress.json"
+  },
+  "completed_at": "2026-10-25T17:45:14.946485+00:00",
+  "fresh_resume": {
+    "current": {
+      "problem_id": "780",
+      "stage": "fix",
+      "started_at": "2026-10-25T17:45:13.460889+00:00",
+      "run_id": "780-fix-254724282282"
+    },
+    "session_id": "01a1742a-a3e5-76b1-b78b-d8c41697e124",
+    "native_codex_pids": [
+      1407606
+    ],
+    "candidate": "8cedba5490bb862133f157a9d6af619cee323fb9",
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a1742a-a3e5-76b1-b78b-d8c41697e124"
+      },
+      {
+        "type": "turn.started"
+      }
+    ]
+  },
+  "stop_removed": true,
+  "release_ledger_preserved": true
+}
