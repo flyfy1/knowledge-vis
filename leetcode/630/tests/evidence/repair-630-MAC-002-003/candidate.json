@@ -1,0 +1,25 @@
+{
+  "kind": "author frozen candidate, no independent acceptance",
+  "candidate": "630-mac-002-003-701caaa08e167510",
+  "manifestSHA256": "701caaa08e1675109318952989f06cd14b5c995c22dfffeec684a0128db8fc8b",
+  "baseCommit": "974d680d24080b3595f2480eef03edd1056be45a",
+  "platform": "Linux-6.8.0-1065-raspi-aarch64-with-glibc2.39",
+  "createdAt": "2026-10-25T03:21:54.585498+00:00",
+  "sharedDependenciesReadOnly": {
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b"
+  },
+  "previewVerifiedBytes": {
+    "index.html": "39bf07f0da1a1b0d2d80c8636732038883f076b7a1cce0528ba2457ebd856685",
+    "copy.js": "4fc241aa2a492f6c512df977ac7521ae078f61a334cd7831d16556ee95e1af33",
+    "app.js": "d7a89bac9bb1765ddf04c68fc89b03ad1f1add592423086ed202cfca69d21a22",
+    "core.js": "109de6929ff70aebf4625b45b9c034acf82faf0a3c4c7facd1c83a6ec9e71b61",
+    "python-code.js": "1fe424d9cb0459eb8eaa46b2bf98a4658e7e3d92cb284d78ad39039938aa6329",
+    "solution.py": "db8ec526313ccf4f6ac59a1f021fd0468eaf59ab4e8490801b7f24dd886314ad",
+    "style.css": "66595b092e60157a302437e081cf2c6e069f7c3c48930e67c02e0c97ed6a0a58"
+  },
+  "originalProbeSHA256": "ed85e2019e55ce21a3dc02a3fcb28c3817de16b332685d5631a506fd1685a397",
+  "originalProbeMatchesPriorMacEvidence": true,
+  "nativeMacEvidence": "pending",
+  "independentReview": "pending"
+}

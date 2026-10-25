@@ -53,10 +53,19 @@ const reports=[],errors=[],requests=[];
  assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),source);
  await setLang('zh');assert.match(await page.locator('#copyStatus').textContent(),/已复制/);await setLang('en');
  const downloadPromise=page.waitForEvent('download');await page.locator('a[download]').click();const download=await downloadPromise;assert.equal(fs.readFileSync(await download.path(),'utf8'),source);
+ const sentinel='630-MAC-002 fresh non-source clipboard sentinel';
+ assert.notEqual(sentinel,source);
+ await page.evaluate(value=>navigator.clipboard.writeText(value),sentinel);
+ assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),sentinel);
+ const hostPlatform=await page.evaluate(()=>navigator.platform);
+ const copyShortcut=/Mac/.test(hostPlatform)?'Meta+C':'Control+C';
  await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{readText:navigator.clipboard.readText.bind(navigator.clipboard),writeText:async()=>{throw Error('intentional clipboard test');}}}));
  await page.locator('#copyPython').click();assert(await page.locator('#sourceFallback').isVisible());assert.equal(await page.locator('#manualSource').inputValue(),source);
  assert.deepEqual(await page.locator('#manualSource').evaluate(e=>[e.selectionStart,e.selectionEnd,document.activeElement===e]),[0,source.length,true]);
- await page.keyboard.press('Control+C');assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),source);
+ // Negative control: selection alone cannot satisfy source equality.
+ assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),sentinel);
+ assert.notEqual(await page.evaluate(()=>navigator.clipboard.readText()),source);
+ await page.keyboard.press(copyShortcut);assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),source);
  await setLang('zh');assert.match(await page.locator('#copyStatus').textContent(),/手动复制/);assert(await page.locator('#sourceDetails').evaluate(e=>e.open));await setLang('en');
  // A keyboard-only endpoint action and visible focus.
  await page.locator('#traceReset').focus();await page.keyboard.press('Enter');assert(await page.locator('#tracePrev').isDisabled());
@@ -110,6 +119,6 @@ const reports=[],errors=[],requests=[];
  const copyFile=fs.readFileSync(path.join(root,'copy.js'),'utf8');const keys=[...copyFile.matchAll(/(?:^|[,{])\s*(\w+):\[/g)].map(m=>m[1]);assert.equal(keys.length,new Set(keys).size);
  const pairs=await page.evaluate(()=>Object.entries(window.LESSON_COPY).every(([k,v])=>Array.isArray(v)&&v.length===2&&v.every(x=>typeof x==='string'&&x.length)));assert(pairs);
  const cssBytes=fs.statSync(path.join(root,'style.css')).size+fs.statSync(path.join(root,'../style.css')).size;assert(cssBytes<25000);
- fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify({kind:'author browser self-check',reports,source:'rendered, actual clipboard read, selected fallback, downloaded exact parity',state:'locale preservation, prediction invalidation, keyboard Enter and focus, blocked storage, local requests',widths:[320,390,736,1440],zoom:'200% CSS zoom in Chromium',contrast:colors,cssBytes,errors,result:'pass'},null,2)+'\n');
+ fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify({kind:'author browser self-check',reports,source:'rendered, actual clipboard read, sentinel-seeded manual transfer, downloaded exact parity',manualCopy:{hostPlatform,copyShortcut,sentinelVerifiedBeforeCopy:true,fullSelection:true,exactSourceAfterCopy:true},state:'locale preservation, prediction invalidation, keyboard Enter and focus, blocked storage, local requests',widths:[320,390,736,1440],zoom:'200% CSS zoom in Chromium',contrast:colors,cssBytes,errors,result:'pass'},null,2)+'\n');
  await browser.close();console.log('PASS browser checks; screenshots require author visual inspection.');
 })().catch(e=>{console.error(e);process.exit(1)});

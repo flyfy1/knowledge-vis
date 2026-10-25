@@ -31,8 +31,15 @@ fs.mkdirSync(out,{recursive:true});
     // Independent expected output counts, explicitly scoped to courses in both locales.
     const count=[2,3,1,0,3][index];
     assert.match(data.label,new RegExp(lang==='en'?`${count} courses?`:`可选 ${count} 门`));
-    records.push({viewportWidth:width,lang,index,...data});
+    const scope=await page.locator('label[for="preset"]').textContent();
+    assert.equal(scope,lang==='en'?'Input preset · maximum courses':'输入预设 · 最多可选门数','630-MAC-003: visible count scope');
+    records.push({viewportWidth:width,lang,index,scope,...data});
     await page.locator('#preset').screenshot({path:path.join(out,`${lang}-${width}-${index}.png`)});
+    if(width===320&&(index===0||index===3)){
+     await page.locator('label[for="preset"]').scrollIntoViewIfNeeded();
+     const clip=await page.evaluate(()=>{const a=document.querySelector('label[for="preset"]').getBoundingClientRect(),b=document.querySelector('#preset').getBoundingClientRect();const x=Math.min(a.x,b.x),y=Math.min(a.y,b.y);return {x:x+scrollX,y:y+scrollY,width:Math.max(a.right,b.right)-x,height:Math.max(a.bottom,b.bottom)-y};});
+     await page.screenshot({path:path.join(out,`${lang}-${width}-${index}-scope.png`),fullPage:true,clip});
+    }
    }
   }
  }

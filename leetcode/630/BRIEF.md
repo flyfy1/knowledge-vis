@@ -84,3 +84,14 @@ count checks. P1: synthetic 20px sensitivity check, separately labeled. P2: none
 Deferred: native Mac evidence must come from a Mac running the frozen candidate;
 Linux passing cannot close this integration finding. Retain the original probe
 unchanged and supply its checksum and rerun instructions for that handoff.
+
+## 2026-10-25 follow-up repair — 630-MAC-002 / 630-MAC-003
+
+Reuse the approved page and native selector. P0/highest-return work is an explicit
+visible output scope in the selector label (`Input preset · maximum courses` /
+`输入预设 · 最多可选门数`) and a manual-copy assertion that distinguishes fresh
+transfer from stale clipboard contents. Option identities/counts, full inputs,
+16px type and shared tokens stay as approved. No new feature or layout.
+P1: retain paired scope/control crops and a bilingual clipboard negative control.
+P2: none. Deferred evidence: native Mac unchanged clipping probe and fresh
+independent review of this candidate; Linux cannot resolve native Mac closure.
