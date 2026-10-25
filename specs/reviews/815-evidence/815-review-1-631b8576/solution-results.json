@@ -1,0 +1,11 @@
+{
+  "kind": "author computational self-check",
+  "result": "pass",
+  "canonicalCalls": 7592,
+  "oracle": "Floyd-Warshall on route-intersection graph",
+  "baseline": "pairwise graph BFS checked on all exhaustive and random small cases",
+  "seed": 815,
+  "maxima": "M=100000, R=500; cyclic wrap, disjoint, shared hub, 500-bus chain",
+  "mutation": "unchanged input verified",
+  "mirror": "exact bytes including final newline"
+}

@@ -1,0 +1,8 @@
+{
+  "kind": "author trace self-check",
+  "result": "pass",
+  "cases": 6295,
+  "framesTested": 12851,
+  "invariants": "independent route-graph distances; frontier equality; monotone snapshots; route-once expansion; causal via stop; per-layer entry scan accounting",
+  "seed": 815
+}
