@@ -1031,3 +1031,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Count tree rank selection | `leetcode/480/#step2` | Use left subtree counts to preserve the desired occurrence rank. |
 
 <!-- /leetcode-480-campaign -->
+
+
+<!-- leetcode-517-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Cut-flow conservation | `leetcode/517/#step1` | A prefix surplus fixes the net flow across its boundary. |
+| Parallel sender bottleneck | `leetcode/517/#step2` | Combine cut throughput and positive local surplus in one scan. |
+
+<!-- /leetcode-517-campaign -->
