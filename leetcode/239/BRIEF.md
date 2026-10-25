@@ -49,3 +49,27 @@ hint/readout typography for the scope and legend. Allowed presentation changes
 are cell membership and localized explanatory readouts. All canonical Python,
 core state, control transitions, prediction input and source transfer semantics
 remain under regression checks.
+
+## 2026-10-25 related-concept navigation repair — 239-NAV-R1
+
+Adopt `specs/reviews/239-review-navigation-repair-request-20261025.md` as the
+independent navigation review and dispatcher adjudication. Reuse the existing
+related-links component for a learner finishing the deque lesson. The smallest
+useful outcome is an accurate continuation into a concept actually explained at
+the destination. P0 preserves the accepted algorithm, frames, numbered headings,
+official URL, exact source transfers and locale state. P1 / highest-return slice
+replaces both labels and destinations together: `../84/#step1` teaches a monotonic
+stack settling rectangle boundaries; `../327/#step1` teaches prefix subtraction
+for a range sum. A stack pop here settles a rectangle contribution; it is not the
+deque's domination discard. Prefix subtraction does not compute a window maximum.
+P2 has no decorative work. Deferred: broader navigation/layout redesign lacks a
+demonstrated need; reconsider only with a separate concrete finding.
+
+No new layout, tokens, dependencies or interaction state. Existing shared link
+color, typography, wrapping and keyboard focus remain the contract. Validate
+actual bilingual labels/hrefs, native keyboard activation, exact fragments,
+visible destination explanations, served collection membership and narrow-width
+readability with `tests/navigation-regression.js`. Preserve existing regression
+assertions and archive new results under `tests/evidence/navigation-repair-20261025/`.
+This is a new author candidate; separate reviewer closure of 239-NAV-R1 and normal
+publication remain pending. Historical acceptance is unchanged.

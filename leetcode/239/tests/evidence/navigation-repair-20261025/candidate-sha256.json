@@ -1,0 +1,41 @@
+{
+  "candidate": "5f704ba84ae9893ffcfe0ddd33d1833f84a2883d728ac94e250dfcd2d6b296a0",
+  "status": "author candidate frozen for separate independent re-review; 239-NAV-R1 closure pending",
+  "baseGitRevision": "539c2429437ec4f0330be19d30e9289f42f3671c",
+  "files": {
+    "leetcode/239/BRIEF.md": "27ec76d433bd3132b6a4743c07e9247ecda0478f5eee501b1ea563d80120bf37",
+    "leetcode/239/SELF-CHECK.md": "86ed0e095c674152311d9a404f1b53ad6f0c9e8d257467525e2495096890975f",
+    "leetcode/239/app.js": "96830337cbcccb4dfd89cdd36dc5aa613ac461c0821bd2e3a095b2dfeb6d0e6c",
+    "leetcode/239/copy.js": "163e37433451910b173920fb3ac64672420d3c460939a176269ed4ebe16a1ed8",
+    "leetcode/239/core.js": "80e75a099b98c1c8f6fdd2c16def82544d623aeb2b745f321d21fbd74f63f4fd",
+    "leetcode/239/index.html": "b59b1fcda824c5f956078ee4921c9baf6389a2e6b5c429f91450581357a80770",
+    "leetcode/239/language-contract.json": "3798639fef3fd6778e2623c6ee91bb80538f0bf39eaf25c7a754ec282fc4903b",
+    "leetcode/239/lesson-entry.json": "b50a68c4a0fac27186f86d9672f2ecf2b637108608ec6d4752a81620e5bc0e07",
+    "leetcode/239/python-code.js": "f0f79ef1d414e944365cae4f2bd7b33925bd9498e8f93c6ec58b81dbe3135a0e",
+    "leetcode/239/solution.py": "6be17b3f7dae2dbe1627d4fc6fd17d1a7cc1ac55cc5adf7c4ca18d03af576f8d",
+    "leetcode/239/tests/browser-check.js": "c91a95f0e96fc848f92d6b07486f09196ef9c7107d739a9adf9d5acb5a5df553",
+    "leetcode/239/tests/navigation-regression.js": "8119124f525e5e819c5f601b310f8adc2925ecb5dde10e611d4245b646aa21fa",
+    "leetcode/239/tests/rendered-membership.js": "5d8349ade30d3b8351aa2283b32522156ab6a6649ce0362f4ae6e857ea518f10",
+    "leetcode/239/tests/test_core.js": "8de39305185b8673f9c4674eaee1d2ec6cb37ee5588d2be143a579c5f05edce9",
+    "leetcode/239/tests/test_solution.py": "4d7230b073b41c71741e8098d9810f9cf5bf77566b1e8f622a34bc412d5006e2",
+    "leetcode/239/tests/title-regression.js": "417d653d153bc31172b93797570a54ddeb013679979f08d45d2265a4958d25c5",
+    "leetcode/239/tests/trace-copy-check.js": "0935bda081b792a267a7f957654ddfd3f0f4a0395765ce511dba527d8105c50b"
+  },
+  "servedRuntimeSha256": {
+    "leetcode/239/app.js": "96830337cbcccb4dfd89cdd36dc5aa613ac461c0821bd2e3a095b2dfeb6d0e6c",
+    "leetcode/239/copy.js": "163e37433451910b173920fb3ac64672420d3c460939a176269ed4ebe16a1ed8",
+    "leetcode/239/core.js": "80e75a099b98c1c8f6fdd2c16def82544d623aeb2b745f321d21fbd74f63f4fd",
+    "leetcode/239/python-code.js": "f0f79ef1d414e944365cae4f2bd7b33925bd9498e8f93c6ec58b81dbe3135a0e",
+    "leetcode/239/lesson-entry.json": "b50a68c4a0fac27186f86d9672f2ecf2b637108608ec6d4752a81620e5bc0e07",
+    "leetcode/239/solution.py": "6be17b3f7dae2dbe1627d4fc6fd17d1a7cc1ac55cc5adf7c4ca18d03af576f8d",
+    "leetcode/239/language-contract.json": "3798639fef3fd6778e2623c6ee91bb80538f0bf39eaf25c7a754ec282fc4903b",
+    "leetcode/239/index.html": "b59b1fcda824c5f956078ee4921c9baf6389a2e6b5c429f91450581357a80770"
+  },
+  "preview": "http://127.0.0.1:18770",
+  "sourcePair": [
+    "solution.py",
+    "python-code.js",
+    "PYTHON_SOURCE"
+  ],
+  "note": "No commit, registration, acceptance-state change or publication performed."
+}
