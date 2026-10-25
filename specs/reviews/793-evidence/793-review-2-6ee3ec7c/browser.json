@@ -1,0 +1,2214 @@
+{
+  "kind": "author browser self-check",
+  "host": "linux",
+  "screenshots": [
+    "en-320-trace.png",
+    "en-320-operation.png",
+    "en-320-heading.png",
+    "zh-320-trace.png",
+    "zh-320-operation.png",
+    "zh-320-heading.png",
+    "en-390-trace.png",
+    "en-390-operation.png",
+    "zh-390-trace.png",
+    "zh-390-operation.png",
+    "en-736-trace.png",
+    "zh-736-trace.png",
+    "en-1440-trace.png",
+    "en-1440-heading.png",
+    "zh-1440-trace.png",
+    "zh-1440-heading.png",
+    "en-200percent.png",
+    "zh-200percent.png"
+  ],
+  "states": [
+    {
+      "locale": "en",
+      "k": 0,
+      "comparisons": 6,
+      "final": "Final: L(1)=5, L(0)=0; match count=5−0=5."
+    },
+    {
+      "locale": "en",
+      "k": 3,
+      "comparisons": 9,
+      "final": "Final: L(4)=20, L(3)=15; match count=20−15=5."
+    },
+    {
+      "locale": "en",
+      "k": 5,
+      "comparisons": 10,
+      "final": "Final: L(6)=25, L(5)=25; match count=25−25=0."
+    },
+    {
+      "locale": "en",
+      "k": 6,
+      "comparisons": 10,
+      "final": "Final: L(7)=30, L(6)=25; match count=30−25=5."
+    },
+    {
+      "locale": "en",
+      "k": 24,
+      "comparisons": 14,
+      "final": "Final: L(25)=105, L(24)=100; match count=105−100=5."
+    },
+    {
+      "locale": "en",
+      "k": 1000000000,
+      "comparisons": 64,
+      "final": "Final: L(1000000001)=4000000020, L(1000000000)=4000000015; match count=4000000020−4000000015=5."
+    },
+    {
+      "locale": "en",
+      "manualCopyAttempt": 0,
+      "hostShortcut": "Control+C",
+      "sentinelVerified": true,
+      "exactTransfer": true
+    },
+    {
+      "locale": "en",
+      "manualCopyAttempt": 1,
+      "hostShortcut": "Control+C",
+      "sentinelVerified": true,
+      "exactTransfer": true
+    },
+    {
+      "locale": "zh",
+      "k": 0,
+      "comparisons": 6,
+      "final": "最终：L(1)=5，L(0)=0；匹配个数=5−0=5。"
+    },
+    {
+      "locale": "zh",
+      "k": 3,
+      "comparisons": 9,
+      "final": "最终：L(4)=20，L(3)=15；匹配个数=20−15=5。"
+    },
+    {
+      "locale": "zh",
+      "k": 5,
+      "comparisons": 10,
+      "final": "最终：L(6)=25，L(5)=25；匹配个数=25−25=0。"
+    },
+    {
+      "locale": "zh",
+      "k": 6,
+      "comparisons": 10,
+      "final": "最终：L(7)=30，L(6)=25；匹配个数=30−25=5。"
+    },
+    {
+      "locale": "zh",
+      "k": 24,
+      "comparisons": 14,
+      "final": "最终：L(25)=105，L(24)=100；匹配个数=105−100=5。"
+    },
+    {
+      "locale": "zh",
+      "k": 1000000000,
+      "comparisons": 64,
+      "final": "最终：L(1000000001)=4000000020，L(1000000000)=4000000015；匹配个数=4000000020−4000000015=5。"
+    },
+    {
+      "locale": "zh",
+      "manualCopyAttempt": 0,
+      "hostShortcut": "Control+C",
+      "sentinelVerified": true,
+      "exactTransfer": true
+    },
+    {
+      "locale": "zh",
+      "manualCopyAttempt": 1,
+      "hostShortcut": "Control+C",
+      "sentinelVerified": true,
+      "exactTransfer": true
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "geometry": {
+        "viewport": 320,
+        "scroll": 320,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 194
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 194
+          }
+        ]
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "geometry": {
+        "viewport": 320,
+        "scroll": 320,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 194
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 194
+          }
+        ]
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "geometry": {
+        "viewport": 390,
+        "scroll": 390,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 264
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 264
+          }
+        ]
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "geometry": {
+        "viewport": 390,
+        "scroll": 390,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 264
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 264
+          }
+        ]
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "geometry": {
+        "viewport": 736,
+        "scroll": 736,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 582
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 582
+          }
+        ]
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "geometry": {
+        "viewport": 736,
+        "scroll": 736,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 582
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 582
+          }
+        ]
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "geometry": {
+        "viewport": 1440,
+        "scroll": 1440,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 846
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 846
+          }
+        ]
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "geometry": {
+        "viewport": 1440,
+        "scroll": 1440,
+        "selects": [
+          {
+            "id": "preset",
+            "text": "k = 1,000,000,000",
+            "textWidth": 130.4003143310547,
+            "available": 846
+          },
+          {
+            "id": "quiz",
+            "text": "k = 29",
+            "textWidth": 44.320098876953125,
+            "available": 846
+          }
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "locale": "en",
+      "label": "Continue to #4: comparisons decide binary-search direction",
+      "href": "http://127.0.0.1:18770/leetcode/4/#step2",
+      "fragmentText": "03What changes in one operation?Every candidate satisfies i+j=half; a valid cut remains in [lo,hi]. Once both cross comparisons hold, odd length uses max(aL,bL), while even length averages it with min(aR,bR).Keep one input fixed and execute the next operation. Inspect both cuts and all four boundaries; predict the search direction first. The readout shows the updated search range while the cuts retain the just-tested positions; rewind restores all state.\nExperiment input (changing restarts)Odd totalEven total and boundaryOne empty arrayDuplicates and negativesDecrease i: exclude the wrong direction\n[[1,3],[2]]\nRewind one operationExecute next operationRestart this experiment\nEvent positionEvent 0 / 2\nInitial state; no operation has run.\nHighlight and underline mark positions involved in this operation; indices appear below values.Shorter array a20Array b1031\nPrevious stateNo previous frame yet.\nAlgorithm state (variables and diagram indices)lo0hi1half2i∅j∅\n\nCorresponding Python operation (focused excerpt)lo, hi = 0, m\nRecent operations (up to 6 retained)0: Initial state; no operation has run.\n"
+    },
+    {
+      "locale": "en",
+      "label": "Continue to #668: find the first sufficient value",
+      "href": "http://127.0.0.1:18770/leetcode/668/#step2",
+      "fragmentText": "033 · Eliminate half the valuesWhich answers can we exclude using C(x), the number of cells with value ≤x? For 3×3 and k=5, C(2)=3: only three cells are ≤2, so the fifth must exceed 2. But C(3)=5: five cells are already ≤3, so the answer is at most 3.Increasing x never removes a qualifying cell: C is nondecreasing. The answer is therefore the first integer x with C(x)≥k. Requiring C(x)=k fails: in the same 3×3 table with k=4, C(2)=3 and C(3)=5. The count skips 4, yet the fourth cell is still 3.Let lo and hi bound an inclusive interval containing the answer, and mid=⌊(lo+hi)/2⌋. If C(mid)<k, mid and every smaller value are insufficient: set lo=mid+1. If C(mid)≥k, mid could be the answer: set hi=mid, rather than mid−1. The default first round tests mid=5 in [1,9]; C(5)=3+2+1=6, leaving [1,5]. The next round tests 3; C(3)=5, leaving [1,3]. This halving of the candidate value range is binary search on the answer.These observations give an invariant, a fact kept after every round: C(lo−1)<k≤C(hi). Every value left of lo is insufficient, while hi is sufficient, so the first sufficient value remains in [lo,hi]. Initially lo=1 and hi=m×n, since C(0)=0 and C(m×n)=m×n.This is a JavaScript teaching simulation, not execution of the Python submission in the browser. Each frame completes one full count and interval update; the initial frame has not counted yet. Cell marks refer to the just-tested mid, while the updated interval is labeled separately. No rounds are omitted.Keep a preset fixed and choose “Complete one count round.” Compare the old interval with the new one, then compare retained ranges in the history. “Back one round” restores every value. Changing the preset restarts this experiment; the threshold slider and prediction stay unchanged.Preset (changing restarts)3×3 · k="
+    },
+    {
+      "locale": "zh",
+      "label": "延伸 #4：用比较决定二分方向",
+      "href": "http://127.0.0.1:18770/leetcode/4/#step2",
+      "fragmentText": "03一次操作改变什么？每次候选都满足 i+j=half；合法切口仍在 [lo,hi]。一旦交叉比较都成立，奇数长度取 max(aL,bL)，偶数长度再与 min(aR,bR) 平均。固定一组输入，移动“执行下一次操作”。观察两条切口和四个边界，先判断该往哪边移动；读数是操作后的范围，切口保留刚测试的位置；回退恢复全部状态。\n实验输入（切换会重启）奇数总长度偶数与边界一个空数组重复与负数减小 i：排除错误方向\n[[1,3],[2]]\n回退一次操作执行下一次操作重启当前实验\n事件位置事件 0 / 2\n初始状态；尚未执行操作。\n高亮与下划线标记当前操作涉及的位置；数字下方是下标。较短数组 a20数组 b1031\n上一次状态还没有上一帧。\n算法状态（变量与图示索引）lo0hi1half2i∅j∅\n\n对应 Python 操作（局部展开）lo, hi = 0, m\n最近的操作（保留最多 6 条）0: 初始状态；尚未执行操作。\n"
+    },
+    {
+      "locale": "zh",
+      "label": "延伸 #668：寻找第一个足够的值",
+      "href": "http://127.0.0.1:18770/leetcode/668/#step2",
+      "fragmentText": "033 · 排除一半候选值这一步要回答：知道 C(x)（值≤x 的格子数），能排除哪些答案？在 3×3、k=5 中，C(2)=3，只有 3 格 ≤2，所以第 5 格一定大于 2；C(3)=5，已有 5 格 ≤3，所以答案至多是 3。把 x 增大，原来符合的格子不会消失，这叫单调不减。因而答案就是第一个满足 C(x)≥k 的整数 x。不能要求 C(x)=k：同一个 3×3 表若取 k=4，C(2)=3 而 C(3)=5，计数直接跳过 4，但第 4 格仍是 3。让 lo、hi 表示包含答案的闭区间端点（两端都包括），mid=⌊(lo+hi)/2⌋。若 C(mid)<k，则 mid 及更小值都不够，令 lo=mid+1；若 C(mid)≥k，则 mid 可能恰好是答案，令 hi=mid，不能用 mid−1。默认首轮 [1,9] 测 mid=5，C(5)=3+2+1=6，留下 [1,5]；下一轮测 3，C(3)=5，留下 [1,3]。 这种每轮把候选数值范围缩小约一半的方法，叫作答案二分。从观察得到不变量（每轮后仍成立的事实）：C(lo−1)<k≤C(hi)。lo 左侧全部不够，hi 已经够，因此第一个够的值仍在 [lo,hi]。初始 lo=1、hi=m×n，因为 C(0)=0、C(m×n)=m×n。下方是 JavaScript 教学模拟，不是在浏览器执行 Python 提交。每帧完成一次完整计数与区间更新；初始帧尚未计数。格子标记始终对应“刚测试的 mid”，更新后的区间另行标注。没有跳过轮次。操作：保持预设不变，点“完成一轮计数”，看旧区间如何变成新区间，并在历史表对比每轮保留下来的范围。点“退回一轮”应还原所有值。换预设会重启此实验，计数滑块和预测题不受影响。预设（切换会重启）3×3 · k=5 · 官方例 12×3 · k=6 · 官方例 23×3 · k=4 · 跳过等号1×7 · k=4 · 单行1×1 · k=1 · 已收敛4×5 · k=1 · 最小名次退回一轮完成一轮计数重置此实验跳到收敛已完成的计数轮次m=3，n=3，k=5 · 已完成 0/3 轮当前答案区间（初始或更新后）[1, 9]刚测试的 mid 与 C(mid)尚未测试初始状态：[1,9]。C(0)=0<k，C(9)=9≥k。lo<hi 时，完成一轮会先数 mid 再更新边界。3×3 表；尚未测试，不标记计数格子行 i / 列 j123112322463369历史表可横向滚动；键盘聚焦后用左右方向键。完整历史：每行是一轮完成后的边界轮次旧 [lo,hi]mid → C(mid)新 [lo,hi]更新原因还没有完成的轮次。"
+    }
+  ],
+  "contrast": [
+    {
+      "tag": "A",
+      "id": "",
+      "text": "← LeetCode 知识目录",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 13,
+      "weight": "400",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "tag": "BUTTON",
+      "id": "",
+      "text": "中",
+      "fg": [
+        13,
+        17,
+        23
+      ],
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "tag": "BUTTON",
+      "id": "",
+      "text": "EN",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 7.078851579017443,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SPAN",
+      "id": "",
+      "text": "困难 · 数学 · Python",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 13,
+      "weight": "400",
+      "ratio": 8.937191437807625,
+      "threshold": 4.5
+    },
+    {
+      "tag": "H1",
+      "id": "",
+      "text": "#793 · 阶乘函数后 K 个零",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 28,
+      "weight": "700",
+      "ratio": 16.086987125379448,
+      "threshold": 3
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "24! 末尾有 4 个零，25! 却有 6 个。恰好 5 个零的阶乘去哪了？",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 17,
+      "weight": "400",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "输入整数 k，0 ≤ k ≤ 10⁹。返回满足 f(x)=k 的非负整数 x 的个数，而不是其中一个 x。",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "text": "官方题目 ↗",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "text": "1 · 数零",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 14,
+      "weight": "400",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "text": "2 · 五个或零个",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 14,
+      "weight": "400",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "text": "3 · 两个边界",
+      "fg": [
+        13,
+        17,
+        23
+      ],
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "size": 14,
+      "weight": "400",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "text": "4 · 先预测",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 14,
+      "weight": "400",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "text": "5 · Python",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 14,
+      "weight": "400",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "01",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 13,
+      "weight": "400",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "tag": "H2",
+      "id": "",
+      "text": "为什么 25! 一次多了两个零？",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 23,
+      "weight": "700",
+      "ratio": 16.086987125379448,
+      "threshold": 3
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "阶乘 x! 是 1 到 x 的乘积，约定 0!=1。f(x) 表示 x! 十进制末尾的零的个数。一个零需要一个因子 10，即一对 2 和 5",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 12.615602281385614,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "24! 中的 5 来自 5、10、15、20，共 4 个。乘上 25=5×5 时又添两个，得到 6。每个 5 的倍数贡献一层；25 的倍数再",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 12.615602281385614,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "f(x) = ⌊x/5⌋ + ⌊x/25⌋ + ⌊x/125⌋ + …",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "保持计数规则不变：把 x 从 24 调到 25，再退回。看下面贡献清单中新增的 25 为什么出现两次。此手算实验只开放 x=0…30。",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 14,
+      "weight": "400",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "tag": "LABEL",
+      "id": "",
+      "text": "阶乘输入 x",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "tag": "BUTTON",
+      "id": "minus",
+      "text": "x 减 1",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "BUTTON",
+      "id": "plus",
+      "text": "x 加 1",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "BUTTON",
+      "id": "handReset",
+      "text": "重置此实验",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "handRead",
+      "text": "当前 x=25；f(25)=6 个末尾零。",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "LI",
+      "id": "",
+      "text": "5 的倍数：5, 10, 15, 20, 25 → 本层 5 个 5",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "tag": "LI",
+      "id": "",
+      "text": "25 的倍数：25 → 本层 1 个 5",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "清单列的是乘积中的因子，不是阶乘的十进制数字；同一个 25 在两层出现，表示它含有两个 5。此范围内更高层贡献为 0。",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 14,
+      "weight": "400",
+      "ratio": 7.078851579017443,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "02",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "size": 13,
+      "weight": "400",
+      "ratio": 13.388343428810314,
+      "threshold": 4.5
+    },
+    {
+      "tag": "H2",
+      "id": "",
+      "text": "为什么答案只能是 0 或 5？",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "size": 23,
+      "weight": "700",
+      "ratio": 16.440224808744848,
+      "threshold": 3
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "哪些输入 x 会得到同一个末尾零数 k？这些输入的集合叫作原像。先看 k=5：表中每张卡片列出一段输入 x 及共同的输出 f(x)。20…2",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 12.89261537833187,
+      "threshold": 4.5
+    },
+    {
+      "tag": "B",
+      "id": "",
+      "text": "输入 x=0…4",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "700",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SPAN",
+      "id": "",
+      "text": "共同输出 f(x)=0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "B",
+      "id": "",
+      "text": "输入 x=5…9",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "700",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SPAN",
+      "id": "",
+      "text": "共同输出 f(x)=1",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "B",
+      "id": "",
+      "text": "输入 x=20…24",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "700",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SPAN",
+      "id": "",
+      "text": "共同输出 f(x)=4",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "B",
+      "id": "",
+      "text": "输入 x=25…29",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "700",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SPAN",
+      "id": "",
+      "text": "共同输出 f(x)=6",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "B",
+      "id": "",
+      "text": "输入 x=30…34",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "700",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SPAN",
+      "id": "",
+      "text": "共同输出 f(x)=7",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "把非负整数写成 x=5q+r，q 是整除 5 的商，余数 r 在 0…4。上式给出 f(5q+r)=q+f(q)，与 r 无关。q 增加 1",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 12.89261537833187,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "诱人的错误：直接令 x=5k，或者只算 ⌊x/5⌋。k=5 时，这两种想法都会把 25 当成答案；但 f(25)=5+1=6，根本不匹配。只",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 16.440224808744848,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "一个正确基线：逐个检查 x=0…5(k+1)−1，累加 f(x)=k 的次数。后面都不可能匹配，因为 f(5(k+1))≥k+1，且 f 不",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 12.89261537833187,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SUMMARY",
+      "id": "",
+      "text": "查看正确扫描基线（Python）",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.388343428810314,
+      "threshold": 4.5
+    },
+    {
+      "tag": "CODE",
+      "id": "",
+      "text": "def baseline(k):\n    def f(x):\n        total = 0\n        while x:\n    ",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        9,
+        14,
+        22
+      ],
+      "size": 13,
+      "weight": "400",
+      "ratio": 16.437295258072666,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "03",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 13,
+      "weight": "400",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "tag": "H2",
+      "id": "",
+      "text": "不扫描所有 x，怎样数出匹配区间？",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 23,
+      "weight": "700",
+      "ratio": 16.086987125379448,
+      "threshold": 3
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "定义 f(x) 为 x! 的末尾零数，它单调不减，即 x 增大时输出不会变小。定义 L(t) 为第一个满足 f(x)≥t 的非负整数 x。满",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 12.615602281385614,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "匹配个数 = L(k+1) − L(k)",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "二分查找每次保留以下事实（不变量）：L(t) 位于闭区间 [lo,hi]，所有 x<lo 都不够，所有 x≥hi 都够。初始 lo=0；hi",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "若 f(mid)<t，则 mid 及其左侧全部不够，令 lo=mid+1；否则 mid 及其右侧都够，令 hi=mid，保留 mid，因为它",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 12.615602281385614,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "选择 k 会重新开始两个搜索。先前进一次，读测试前区间、mid 的 f 值和新边界；再后退、重放，检查历史完全恢复。第一阶段求 L(k)，第",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 14,
+      "weight": "400",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "tag": "LABEL",
+      "id": "",
+      "text": "选择 k（更换会重启轨迹）",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SELECT",
+      "id": "preset",
+      "text": "k = 0k = 3k = 5k = 6k = 24k = 1,000,000,000",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "算法状态模拟；并非在浏览器执行 Python 提交。每帧在一次比较完成后显示新边界，历史保留测试前边界。阶段起点没有已完成比较；没有省略步骤",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 14,
+      "weight": "400",
+      "ratio": 7.078851579017443,
+      "threshold": 4.5
+    },
+    {
+      "tag": "BUTTON",
+      "id": "prev",
+      "text": "后退一帧",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "BUTTON",
+      "id": "next",
+      "text": "下一次搜索操作",
+      "fg": [
+        13,
+        17,
+        23
+      ],
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "tag": "BUTTON",
+      "id": "traceReset",
+      "text": "重置此实验",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "BUTTON",
+      "id": "end",
+      "text": "完成两个搜索",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "frameRead",
+      "text": "帧 1/11 · 阶段 1/2 · k=5 · 当前目标 t=5",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SPAN",
+      "id": "",
+      "text": "当前下界 lo",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 6.449407898769069,
+      "threshold": 4.5
+    },
+    {
+      "tag": "B",
+      "id": "loValue",
+      "text": "16",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 22,
+      "weight": "700",
+      "ratio": 13.397069143240783,
+      "threshold": 3
+    },
+    {
+      "tag": "SPAN",
+      "id": "",
+      "text": "当前上界 hi",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 6.449407898769069,
+      "threshold": 4.5
+    },
+    {
+      "tag": "B",
+      "id": "hiValue",
+      "text": "30",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 22,
+      "weight": "700",
+      "ratio": 13.397069143240783,
+      "threshold": 3
+    },
+    {
+      "tag": "P",
+      "id": "operation",
+      "text": "测试前 [0,30]：mid=15，f(mid)=3 < 5。排除 x≤15；新范围 [16,30]。",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "result",
+      "text": "两个搜索尚未全部结束；最终匹配个数待定。",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "H3",
+      "id": "",
+      "text": "已完成比较的历史（按发生顺序，含两个阶段）",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 19,
+      "weight": "700",
+      "ratio": 14.704584598678618,
+      "threshold": 3
+    },
+    {
+      "tag": "LI",
+      "id": "",
+      "text": "L(5) · 测试前 [0,30]：mid=15，f(mid)=3 < 5。排除 x≤15；新范围 [16,30]。",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 11.974898815275662,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "04",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "size": 13,
+      "weight": "400",
+      "ratio": 13.388343428810314,
+      "threshold": 4.5
+    },
+    {
+      "tag": "H2",
+      "id": "",
+      "text": "把规则带到一次更大的跳跃",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "size": 23,
+      "weight": "700",
+      "ratio": 16.440224808744848,
+      "threshold": 3
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "新问题：给定 k，有多少非负整数 x 的阶乘末尾恰好有 k 个零？不运行上面的搜索，利用五个一组与额外的 5 因子来预测。选择答案后再揭晓；",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 12.89261537833187,
+      "threshold": 4.5
+    },
+    {
+      "tag": "LABEL",
+      "id": "",
+      "text": "选择新题（更换会清除本题答案）",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SELECT",
+      "id": "quiz",
+      "text": "k = 29k = 31",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "LEGEND",
+      "id": "",
+      "text": "预测匹配输入的个数",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "tag": "LABEL",
+      "id": "",
+      "text": "0 个输入",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SPAN",
+      "id": "",
+      "text": "0 个输入",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "tag": "LABEL",
+      "id": "",
+      "text": "5 个输入",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SPAN",
+      "id": "",
+      "text": "5 个输入",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "tag": "LABEL",
+      "id": "",
+      "text": "1 个输入",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SPAN",
+      "id": "",
+      "text": "1 个输入",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "tag": "BUTTON",
+      "id": "reveal",
+      "text": "揭晓并解释",
+      "fg": [
+        13,
+        17,
+        23
+      ],
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "tag": "BUTTON",
+      "id": "predictionReset",
+      "text": "重置此实验",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "feedback",
+      "text": "预测正确。 答案是 0。f(124)=24+4=28；125=5³ 使下一步增加 3，f(125)=25+5+1=31。29（以及 30）被",
+      "fg": [
+        126,
+        226,
+        168
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 10.004815697188947,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "05",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 13,
+      "weight": "400",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "tag": "H2",
+      "id": "",
+      "text": "把边界证明写成 Python",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 23,
+      "weight": "700",
+      "ratio": 16.086987125379448,
+      "threshold": 3
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "代码如何对应轨迹？这是官方支持的 Python 接口：Solution.preimageSizeFZF(k) 返回一个整数。f(x) 是 x",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 12.615602281385614,
+      "threshold": 4.5
+    },
+    {
+      "tag": "LI",
+      "id": "",
+      "text": "zeros：反复 x//=5 得到 ⌊x/5⌋、⌊x/25⌋ 等，累加所有层；0 不进入循环，所以 f(0)=0。",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5
+    },
+    {
+      "tag": "LI",
+      "id": "",
+      "text": "first_at_least：lo、hi、mid 与轨迹同名。if 分支对应“不够，排除 mid”；else 对应“够，保留 mid”。返回",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5
+    },
+    {
+      "tag": "LI",
+      "id": "",
+      "text": "最后一行求 L(k+1)−L(k)。代码先求右边界，轨迹先展示左边界；两次搜索相互独立，所以顺序不影响结果。",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "以 k 为输入值，并按固定宽度整数算术计费：每次 zeros 最多 O(log(k+2)) 次整除，每次二分最多 O(log(k+2)) 次",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 12.615602281385614,
+      "threshold": 4.5
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "text": "边界：k=0 返回 5（x=0…4）；k=5 返回 0；k=3 返回 5。25、125 等处必须计入额外的 5。教学轨迹保存每次比较及历史，",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 12.615602281385614,
+      "threshold": 4.5
+    },
+    {
+      "tag": "BUTTON",
+      "id": "copyPython",
+      "text": "复制 Python",
+      "fg": [
+        13,
+        17,
+        23
+      ],
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "text": "下载 solution.py",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SPAN",
+      "id": "copyStatus",
+      "text": "自动复制不可用；完整源码已选中，请用系统复制快捷键。",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5
+    },
+    {
+      "tag": "SUMMARY",
+      "id": "",
+      "text": "查看完整 Python 提交源码",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "tag": "CODE",
+      "id": "pythonCode",
+      "text": "class Solution:\n    def preimageSizeFZF(self, k: int) -> int:\n        ",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        9,
+        14,
+        22
+      ],
+      "size": 13,
+      "weight": "400",
+      "ratio": 16.437295258072666,
+      "threshold": 4.5
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "text": "延伸 #4：用比较决定二分方向",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "text": "延伸 #668：寻找第一个足够的值",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "size": 16,
+      "weight": "400",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    }
+  ],
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18770/leetcode/793/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/793/style.css?v=793-r1",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/793/copy.js?v=793-copy-r1",
+    "http://127.0.0.1:18770/leetcode/793/core.js?v=793-r1",
+    "http://127.0.0.1:18770/leetcode/793/python-code.js?v=793-r1",
+    "http://127.0.0.1:18770/leetcode/793/app.js?v=793-r1"
+  ],
+  "zoom": "200% CSS zoom in Chromium at 1440px; text and component reflow checked. Physical browser chrome zoom/real devices unverified.",
+  "contrastCalibration": {
+    "blackWhite": 21,
+    "nearThreshold": 4.492948073111701,
+    "red": 0.2126,
+    "green": 0.7152,
+    "blue": 0.0722
+  },
+  "browser": "156.0.8078.4",
+  "cssBytes": 11334,
+  "status": "passed"
+}
