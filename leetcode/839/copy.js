@@ -1,0 +1,362 @@
+window.LESSON_COPY = {
+  "docTitle": [
+    "#839 · 相似字符串组",
+    "#839 · Similar String Groups"
+  ],
+  "title": [
+    "#839 · 相似字符串组",
+    "#839 · Similar String Groups"
+  ],
+  "back": [
+    "← LeetCode 知识索引",
+    "← LeetCode collection"
+  ],
+  "hard": [
+    "困难 · 图连通性",
+    "Hard · Graph connectivity"
+  ],
+  "official": [
+    "官方题目 ↗",
+    "Official problem ↗"
+  ],
+  "intro": [
+    "把 tars 的两个字母交换成 rats，再交换成 arts。起点和终点未必相似，却已经属于同一组。",
+    "Swap two letters of tars to get rats, then swap again to get arts. The endpoints need not be similar to belong to the same group."
+  ],
+  "nav0": [
+    "1 · 亲手交换",
+    "1 · Swap by hand"
+  ],
+  "nav1": [
+    "2 · 边与路径",
+    "2 · Edges and paths"
+  ],
+  "nav2": [
+    "3 · 逐对合并",
+    "3 · Merge pairs"
+  ],
+  "nav3": [
+    "4 · 先预测",
+    "4 · Predict first"
+  ],
+  "nav4": [
+    "5 · Python 与边界",
+    "5 · Python and limits"
+  ],
+  "s0t": [
+    "一次交换，与一条交换链",
+    "One swap versus a chain"
+  ],
+  "s0e": [
+    "这一步要回答：tars 与 arts 不相似，为什么仍能同组？下标从 0 开始。相似指两个字符串完全相同，或在其中一个字符串中交换两个不同位置的字母后相同。tars → rats 交换位置 0、2；rats → arts 交换位置 0、1。tars 与 arts 在位置 0、1、2 都不同，一次交换改不了三个位置。",
+    "Why can tars and arts share a group despite not being similar? Indices start at 0. Similar means identical, or equal after swapping letters at two distinct positions in one string. tars → rats swaps positions 0 and 2; rats → arts swaps positions 0 and 1. tars and arts differ at positions 0, 1 and 2, so one swap cannot fix them."
+  ],
+  "contract": [
+    "输入 strs 的每个词都是其他词的字母异位词：字母及其数量相同，顺序可不同。共有 1–300 个词，每个长 1–300，只有小写英文字母。求通过若干条相似关系连通的组数；孤立词自己成一组。重复词合法，不必交换也相似。",
+    "Every word in strs is an anagram of every other word: the same letters with the same counts, possibly in a different order. There are 1–300 words of length 1–300, using lowercase English letters. Count groups connected through similarity relations; an isolated word is a group. Duplicate words are valid and similar without any swap."
+  ],
+  "handTask": [
+    "操作：先点「交换 0 ↔ 2」，再点「交换 0 ↔ 1」。固定目标 arts，观察当前词和不同位置；撤销后应回到上一词。这里试的是交换规则，不是提交代码。",
+    "Try “Swap 0 ↔ 2”, then “Swap 0 ↔ 1”. Keep the target arts fixed and watch the word and mismatch positions. Undo should restore the previous word. This explores the swap rule; it does not run the submission."
+  ],
+  "swap02": [
+    "交换 0 ↔ 2",
+    "Swap 0 ↔ 2"
+  ],
+  "swap01": [
+    "交换 0 ↔ 1",
+    "Swap 0 ↔ 1"
+  ],
+  "undo": [
+    "撤销一次交换",
+    "Undo one swap"
+  ],
+  "reset": [
+    "重置",
+    "Reset"
+  ],
+  "handRead": [
+    "当前词 {word}；目标 arts；不同位置：{diff}。{relation}",
+    "Current word {word}; target arts; mismatch positions: {diff}. {relation}"
+  ],
+  "direct": [
+    "两词直接相似。",
+    "These words are directly similar."
+  ],
+  "notDirect": [
+    "两词不直接相似。",
+    "These words are not directly similar."
+  ],
+  "none": [
+    "无",
+    "none"
+  ],
+  "handHistory": [
+    "已做交换：{h}",
+    "Swaps made: {h}"
+  ],
+  "noSwaps": [
+    "尚未交换",
+    "no swaps yet"
+  ],
+  "s1t": [
+    "先把所有相似关系画出来",
+    "Start with every similarity edge"
+  ],
+  "s1e": [
+    "这一步要回答：如何准确地数「组」？把每个输入位置当作一个顶点（词的身份）；两词直接相似时连一条边。路径是连续的边，连通分量是能通过路径互达的最大顶点集合，也就是本题的一组。tars—rats—arts 是一个分量，star 没有边，单独成组，所以官方第一例是 2。第二例 omv—ovm 只差交换位置 1、2，答案是 1。",
+    "How can we count groups precisely? Treat each input position as a vertex, the identity of that word occurrence. Join two vertices by an edge if their words are directly similar. A path is a sequence of edges. A connected component is a maximal set of vertices joined by paths: one group here. tars—rats—arts is one component; star has no edges and stands alone, giving 2 in the first official example. In the second, omv—ovm swaps positions 1 and 2, giving 1."
+  ],
+  "wrong": [
+    "错误捷径：只与本组第一个词比较。输入 [tars, rats, arts] 时，arts 与代表 tars 不相似，会被错误分开；但 rats 是连接它们的桥。要求组内任意两词都直接相似，也会犯同样错误。",
+    "Tempting shortcut: compare only with the first word of each group. For [tars, rats, arts], this separates arts because it is not similar to representative tars. But rats connects them. Requiring every pair inside a group to be directly similar makes the same mistake."
+  ],
+  "baseline": [
+    "正确基线：逐对检查并保存所有边，再用广度优先搜索（反复访问尚未访问的相邻顶点）走完整个分量。每次从一个未访问顶点出发，就发现一组。graph 的每个小列表存一个顶点的邻居；seen 是已访问编号的集合。sum 把每个比较的 True 计为 1、False 计为 0，得到不同位置数 d。队列 queue 存待扩展顶点，head 是下一项的位置，避免从列表头删除元素。",
+    "Correct baseline: test every pair, store all edges, then use breadth-first search, repeatedly visiting unvisited neighbors, to explore each component. Starting from each unvisited vertex discovers one group. Each list inside graph stores one vertex’s neighbors; seen is the set of visited IDs. sum counts each True comparison as 1 and False as 0 to obtain the mismatch count d. queue stores vertices to explore, and head indexes the next one rather than deleting from the front."
+  ],
+  "baselineCode": [
+    "展开：显式图基线 Python",
+    "Expand: explicit-graph baseline Python"
+  ],
+  "baselineCost": [
+    "n 是词数，L 是词长。基线逐对逐字比较，耗时 O(n²L)，最坏存 O(n²) 条邻接记录，另需 O(n) 访问标记和队列。n=300 时有 44,850 对；L=300 时至多检查 13,455,000 个字符位置。下一步仍检查所有对，节省的是边的存储，并非消除两两比较。",
+    "Let n be the number of words and L their length. The baseline scans characters for each pair in O(n²L) time, storing O(n²) adjacency entries in the worst case plus O(n) visited flags and queue space. At n=300 there are 44,850 pairs; at L=300 at most 13,455,000 character positions are checked. The next method still tests every pair; it saves edge storage rather than removing pairwise comparison."
+  ],
+  "s2t": [
+    "边可以忘记，连接关系必须留下",
+    "Forget edges, retain connectivity"
+  ],
+  "s2e": [
+    "这一步要回答：不保存所有边，如何保留分组？先推导直接相似的检查：一次交换最多影响两个位置，所以有三个或更多不同位置一定失败。零个不同位置说明相同。若恰好两个位置不同，因输入保证字母数量相同，这两个字母必定交叉匹配，交换即可。只有一个不同位置不可能出现在合法异位词中。",
+    "How can we retain groups without storing all edges? First derive the direct test. A swap affects at most two positions, so three or more mismatches must fail. Zero mismatches means identical. With exactly two mismatches, the anagram guarantee forces the two letters to cross-match, so swapping works. Exactly one mismatch is impossible for valid anagrams."
+  ],
+  "derive": [
+    "从 [tars], [rats], [arts], [star] 四组出发。检查 tars—rats 后，两个组变一个，4 → 3；tars—arts 不相似，保持 3；之后 rats—arts 把 arts 接入，3 → 2。并查集就是跟踪这些不相交集合的数据结构。parent[x] 指向同组的另一个编号；沿指针走到指向自己的根。find(x) 找这个代表。合并只连接两个不同的根；size[root] 记录该根的成员数，小组挂到大组。",
+    "Start with four sets: [tars], [rats], [arts], [star]. Testing tars—rats joins two sets, 4 → 3. tars—arts fails, leaving 3. Later rats—arts brings arts into the set, 3 → 2. A disjoint-set structure tracks these separate sets. parent[x] points toward a representative; following pointers reaches a root that points to itself. find(x) locates that root. Merge only distinct roots; size[root] counts members, and the smaller set attaches to the larger."
+  ],
+  "invariant": [
+    "不变量（每次操作后仍成立的事实）：处理完任意前缀的词对后，并查集恰好表示「已处理的相似边」形成的连通分量，也就是通过这些边的路径互相可达的组。初始没有边，单点组正确。不相似的对不加边；相似的对若根不同，就恰好连接两分量，组数减 1；若根相同，已有路径，新边不会减少组数。所有词对处理完，所有相似边都已考虑，留下的组数就是答案。",
+    "Invariant, a fact preserved after each operation: after any prefix of pair tests, the sets are exactly the connected components of the processed similarity edges: the groups joined by paths of those edges. Initially there are no edges, so singleton sets are correct. A dissimilar pair adds no edge. A similar pair with distinct roots joins exactly two components, reducing the count by 1. Equal roots mean a path already exists, so another edge cannot reduce the count. After all pairs, every similarity edge has been considered, so the remaining count is the answer."
+  ],
+  "traceTask": [
+    "选预设会从头重启本实验。逐对检查，观察当前两词的橙色下划线（不同位置）、合并前后组数及累计记录，再后退一步核对。编号代表输入位置，重复词也保留各自编号。",
+    "Changing the preset restarts this experiment. Test pairs and watch orange underlines (mismatch positions), the before/after group counts, and the accumulated ledger. Step back to check restoration. IDs are input positions; duplicate words keep distinct IDs."
+  ],
+  "presetLabel": [
+    "输入预设",
+    "Input preset"
+  ],
+  "preset0": [
+    "官方例 1",
+    "Official example 1"
+  ],
+  "preset1": [
+    "官方例 2",
+    "Official example 2"
+  ],
+  "preset2": [
+    "单个词",
+    "One word"
+  ],
+  "preset3": [
+    "重复词",
+    "Duplicates"
+  ],
+  "preset4": [
+    "三个位置不同",
+    "Three mismatches"
+  ],
+  "preset5": [
+    "通过中间词连接",
+    "A connecting word"
+  ],
+  "preset6": [
+    "重复字母",
+    "Repeated letters"
+  ],
+  "sim": [
+    "教学模拟：每帧是一对词检查及可能合并之后；保留全部词对。为解释而列出所有不同位置，Python 在第三个不同位置就停止。这里不执行 Python。快照和历史的存储不属于提交的辅助空间。",
+    "Teaching simulation: each frame follows a pair test and any merge; every pair is retained. It lists all mismatch positions for explanation, while Python stops at the third. It does not execute Python. Snapshot and history storage are separate from submission auxiliary space."
+  ],
+  "input": [
+    "strs = {words}",
+    "strs = {words}"
+  ],
+  "prev": [
+    "退回上一对",
+    "Back one pair"
+  ],
+  "next": [
+    "检查下一对",
+    "Test next pair"
+  ],
+  "end": [
+    "查看全部词对后",
+    "Show all pairs processed"
+  ],
+  "frame": [
+    "已检查 {at}/{total} 对；当前组数 {count}。{status}",
+    "Pairs tested {at}/{total}; current group count {count}. {status}"
+  ],
+  "initial": [
+    "尚未检查，所有词各自成组。",
+    "No pairs tested; every word is a singleton."
+  ],
+  "done": [
+    "全部检查完成，这是最终答案。",
+    "All pairs tested; this is the final answer."
+  ],
+  "partial": [
+    "还有未检查的词对，这不是最终答案。",
+    "Untested pairs remain; this is not the final answer."
+  ],
+  "pair": [
+    "刚检查编号 {i}、{j}；不同位置 {diff}；组数 {before} → {after}。{action}",
+    "Just tested IDs {i}, {j}; mismatch positions {diff}; groups {before} → {after}. {action}"
+  ],
+  "merged": [
+    "直接相似，根不同：合并。",
+    "Directly similar, different roots: merge."
+  ],
+  "already": [
+    "直接相似，根相同：已有路径，不再减数。",
+    "Directly similar, same root: already connected, no decrement."
+  ],
+  "rejected": [
+    "不直接相似：不加边。",
+    "Not directly similar: no edge added."
+  ],
+  "word": [
+    "编号 {i}: {word}",
+    "ID {i}: {word}"
+  ],
+  "groupsTitle": [
+    "当前分组：括号内为词的编号与内容",
+    "Current sets: word IDs and contents"
+  ],
+  "group": [
+    "根 {root}，成员数 {size}：{members}",
+    "Root {root}, size {size}: {members}"
+  ],
+  "parentsTitle": [
+    "当前 parent 指针（编号 → 父编号）",
+    "Current parent pointers (ID → parent ID)"
+  ],
+  "parentHelp": [
+    "根指向自己。size 只在根处有意义；find 会把访问到的指针跳向祖父，让以后更快到根。这改变指针，不改变分组。",
+    "A root points to itself. size is meaningful only at roots. find redirects visited pointers toward their grandparents to shorten later searches; this changes pointers, not membership."
+  ],
+  "ledgerTitle": [
+    "累计词对检查记录",
+    "Accumulated pair-test ledger"
+  ],
+  "empty": [
+    "尚无检查记录。",
+    "No pairs tested yet."
+  ],
+  "s3t": [
+    "迁移：重复词会多出一组吗？",
+    "Transfer: does a duplicate add a group?"
+  ],
+  "s3e": [
+    "这一步要回答：输入 [\"abc\", \"bac\", \"bca\", \"bca\"] 的最终组数是多少？每个位置起初单独成组。注意 abc 与 bca 有三个不同位置，而最后两个词完全相同。先选择，再揭晓；这里与上面的模拟互相独立。",
+    "How many groups remain for [\"abc\", \"bac\", \"bca\", \"bca\"]? Each position starts in its own set. Notice that abc and bca differ at three positions, while the last two words are identical. Choose before revealing; this exercise is independent of the simulation above."
+  ],
+  "predictionLegend": [
+    "最终组数？",
+    "Final group count?"
+  ],
+  "option0": [
+    "2 组：只看 abc 与 bca",
+    "2 groups: compare only abc and bca"
+  ],
+  "option1": [
+    "1 组：考虑全部连接路径",
+    "1 group: account for all connecting paths"
+  ],
+  "option2": [
+    "0 组：每条相似边都减一次",
+    "0 groups: decrement for every similarity edge"
+  ],
+  "reveal": [
+    "揭晓并解释",
+    "Reveal and explain"
+  ],
+  "await": [
+    "先选一个答案，再点击揭晓。",
+    "Choose an answer, then reveal."
+  ],
+  "correct": [
+    "预测正确。",
+    "Correct prediction."
+  ],
+  "incorrect": [
+    "再检查连接路径和根是否相同。",
+    "Check the connecting paths and whether roots already match."
+  ],
+  "answer": [
+    "答案是 1。abc—bac 交换 0、1；bac—bca 交换 1、2；两份 bca 相同。它们通过路径全部相连，即使 abc 与 bca 不直接相似。四个单点组只需三次成功合并；根已相同的相似对不再减数，所以不会变成 0。",
+    "The answer is 1. abc—bac swaps 0 and 1; bac—bca swaps 1 and 2; the two bca words are identical. Paths connect all four even though abc and bca are not directly similar. Four singleton sets need only three successful merges. A similar pair whose roots already match does not decrement the count, so it cannot become 0."
+  ],
+  "s4t": [
+    "把分组不变量落实到 Python",
+    "Turn the grouping invariant into Python"
+  ],
+  "s4e": [
+    "这一步要回答：每个可见变化对应哪段提交代码？下面是官方 Python3 接口 Solution.numSimilarGroups(strs)，返回整数，不修改输入。并查集是分组记录器，根是组的代表，parent 是朝代表走的指针；它不要求组内任意两个词直接相似。",
+    "Which submission lines cause each visible change? Below is the official Python3 interface, Solution.numSimilarGroups(strs), returning an integer without mutating input. The disjoint-set structure tracks groups; a root represents a group, and parent points toward that representative. Members of a group need not all be directly similar."
+  ],
+  "map1": [
+    "similar：累计不同位置；超过 2 立即失败；最终接受 0 或 2。若去掉异位词保证，ab 与 cd 虽然只差两位却无法交换得到，不能只数位置。",
+    "similar counts mismatches, rejects immediately above 2, and finally accepts 0 or 2. Without the anagram guarantee, ab and cd differ at two positions but cannot be made equal by a swap: counting alone would fail."
+  ],
+  "map2": [
+    "find：while 沿 parent 向根走；令指针指向祖父以缩短路径。a != b 才合并，否则已有连接。比如 rats—arts 把两个不同根连接，groups 从 3 减为 2。",
+    "find follows parent pointers with a while loop, redirecting each to its grandparent to shorten paths. Merge only when a != b; otherwise the connection exists already. For rats—arts, distinct roots join and groups falls from 3 to 2."
+  ],
+  "map3": [
+    "size：总让小组挂到大组；若一个成员的深度增加，它所在组的大小至少翻倍，所以深度最多 log₂n。size 只在根处读取，旧根的数值无需清空。双层 for 枚举每个无序词对一次。",
+    "size attaches the smaller group to the larger. Whenever a member gains a level, its group size at least doubles, so depth is at most log₂n. Only root sizes are read; old root sizes need not be cleared. The nested for loops enumerate each unordered pair once."
+  ],
+  "cost": [
+    "n 为词数、L 为词长。给出保守上界：每对扫描至多 L 个位置，并做至多两个 O(log n) 的 find，总时间 O(n²(L + log n))，另有 O(n) 初始化；在 n,L ≥ 1 的合法范围已包含在该上界中。路径缩短还能改善摊还开销，但这里不依赖它来证明上界。parent 与 size 各长 n，辅助空间 O(n)，不存邻接表，不使用递归栈。",
+    "For n words of length L, a conservative bound is O(n²(L + log n)) time: each pair scans at most L positions and performs at most two O(log n) finds. O(n) initialization is included for the valid n,L ≥ 1 domain. Path shortening improves amortized work further, but the bound does not rely on that. parent and size each have n entries, so auxiliary space is O(n). No adjacency list or recursive stack is stored."
+  ],
+  "boundaries": [
+    "边界：单个词返回 1；相同词归一组；[abc, bca] 虽是异位词但要两次交换，返回 2；[aab, aba, baa] 都能一次交换，返回 1。空列表和非异位词不在官方输入范围内。测试会实际执行此 Python；页面的逐帧图仅用于解释。",
+    "Boundaries: one word returns 1; identical words form one group; [abc, bca] are anagrams but need two swaps, so return 2; [aab, aba, baa] are connected by single swaps, so return 1. Empty lists and non-anagrams are outside the official input domain. Tests execute this Python; the page trace is an explanatory simulation."
+  ],
+  "copy": [
+    "复制 Python",
+    "Copy Python"
+  ],
+  "download": [
+    "下载 solution.py",
+    "Download solution.py"
+  ],
+  "source": [
+    "查看完整 Python 源码",
+    "View complete Python source"
+  ],
+  "copied": [
+    "源码已复制。",
+    "Source copied."
+  ],
+  "fallback": [
+    "自动复制不可用：源码已全选，请手动复制。",
+    "Automatic copy unavailable: the source is selected for manual copying."
+  ],
+  "manualCopy": [
+    "完整源码（已全选，可用系统复制快捷键）",
+    "Complete source (selected; use the system copy shortcut)"
+  ],
+  "related1": [
+    "继续：#815 用广度优先搜索展开可达集合",
+    "Continue: #815 expands reachable sets with breadth-first search"
+  ],
+  "related2": [
+    "对照：#765 用环给交换次数建立下界",
+    "Compare: #765 uses cycles to bound the number of swaps"
+  ]
+};
