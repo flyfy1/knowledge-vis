@@ -1,0 +1,19 @@
+{
+  "platform": "darwin",
+  "records": [
+    {
+      "locale": "en",
+      "key": "Meta+C",
+      "sentinelVerifiedBeforeKey": true,
+      "exactReadback": true,
+      "status": "Clipboard unavailable. The full source below is selected for manual copying."
+    },
+    {
+      "locale": "zh",
+      "key": "Meta+C",
+      "sentinelVerifiedBeforeKey": true,
+      "exactReadback": true,
+      "status": "剪贴板不可用。下方已选中完整源码，请手动复制。"
+    }
+  ]
+}
