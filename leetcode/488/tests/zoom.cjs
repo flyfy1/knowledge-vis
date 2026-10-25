@@ -21,6 +21,16 @@ const out=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(o
    await page.evaluate(()=>scrollBy(0,document.querySelector('#progress').getBoundingClientRect().top-document.querySelector('.step-nav').getBoundingClientRect().height-20));
    await page.waitForTimeout(100);const session=await context.newCDPSession(page);const capture=await session.send('Page.captureScreenshot',{format:'png',fromSurface:true,captureBeyondViewport:false});fs.writeFileSync(path.join(out,`${lang}-actual-zoom200-${width}.png`),Buffer.from(capture.data,'base64'));await session.detach();results.push({lang,viewport:width,zoom:2,...dimensions,balls});
   }
+  for(const lang of ['en','zh']){
+   await page.setViewportSize({width:780,height:1100});await page.locator(`[data-lang="${lang}"]`).click();
+   for(const key of ['returnFailure','returnSibling','returnMinimum']){
+    await page.locator(`[data-i18n="${key}"]`).scrollIntoViewIfNeeded();
+    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+    const session=await context.newCDPSession(page);
+    const capture=await session.send('Page.captureScreenshot',{format:'png',fromSurface:true,captureBeyondViewport:false});
+    fs.writeFileSync(path.join(out,`${lang}-zoom200-${key}.png`),Buffer.from(capture.data,'base64'));await session.detach();
+   }
+  }
   await worker.evaluate(id=>chrome.tabs.setZoom(id,1),tab);assert.equal(await worker.evaluate(id=>chrome.tabs.getZoom(id),tab),1);assert.equal(errors.length,0);
   fs.writeFileSync(path.join(out,'zoom-results.json'),JSON.stringify({status:'pass',method:'chrome.tabs.setZoom(tabId, 2), read back with getZoom; effective width and DPR asserted',results,errors},null,2)+'\n');
   console.log('Actual 200% tab zoom checks passed.');
