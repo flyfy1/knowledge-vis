@@ -1,0 +1,15 @@
+{
+  "id": 749,
+  "title": {"zh": "隔离病毒", "en": "Contain Virus"},
+  "desc": {"zh": "分清受威胁格与墙边，冻结日初边界，逐夜模拟隔离与扩散。", "en": "Separate threatened cells from wall edges, freeze day-start frontiers, and simulate quarantine and spread."},
+  "difficulty": "hard",
+  "topics": [{"zh": "网格模拟", "en": "Grid simulation"}, {"zh": "连通区域", "en": "Connected components"}, {"zh": "集合去重", "en": "Set deduplication"}],
+  "path": "749/",
+  "leetcodeUrl": "https://leetcode.com/problems/contain-virus/",
+  "language": "Python",
+  "complexity": "O((D+1)mn) time, D ≤ mn, hence O((mn)²) worst case; O(mn) auxiliary space",
+  "concepts": [
+    {"name": "Threatened cells versus wall edges", "step": 0, "description": "Deduplicate healthy targets but count each boundary edge."},
+    {"name": "Frozen-frontier simulation", "step": 2, "description": "Compute all regions before quarantine and simultaneous one-layer spread."}
+  ]
+}
