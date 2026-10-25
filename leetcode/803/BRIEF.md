@@ -81,3 +81,23 @@ P2: none. Deferred: arbitrary editing and DSU parent animation (extra state and 
 needed learning benefit); public registration/deployment and independent review
 (outside author scope). Related links use existing graph and DSU anchors; metadata
 provides local concept anchors without changing the shared concept registry.
+
+## 803-R1 repair contract — 2026-10-25
+
+Reuse verdict: repair the existing preset control within this lesson. The existing
+independent review requests full selected identity at narrow 200% zoom; this is
+the P0/highest-return slice. Keep the native selector and its keyboard behavior,
+using the stable A–E identities as complete option text. Immediately below it,
+show the existing full localized preset name as wrapping text, followed by the
+unchanged forward-hit description. Associate both paragraphs via aria-describedby.
+This preserves the descriptive wording and makes the complete selected identity
+readable without relying on a native single-line control to wrap.
+
+Presentation hooks: #preset display:block; .preset-selected margin-block:8px 0
+and overflow-wrap:anywhere. Reuse the existing type, palette, focus and spacing
+tokens. No source/algorithm, trace transitions, prediction rules or shared assets
+change. Check all five identities, D at intermediate/end, both locales, 320/390
+at CSS zoom 2, keyboard use and locale retention; rerun the existing full suite.
+P1/P2: none in this repair. Deferred: optional 803-A1 parent/size teaching table;
+the review identifies it as advisory and it needs a separate teaching change.
+Independent closure of 803-R1 remains pending against the new frozen candidate.
