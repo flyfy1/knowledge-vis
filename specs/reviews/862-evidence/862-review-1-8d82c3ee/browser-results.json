@@ -1,0 +1,1488 @@
+{
+  "type": "author self-check",
+  "result": "pass",
+  "candidateHashes": {
+    "index.html": "5552beb0fdc7cf11dc4e0b82cc3f22b55e6a66e14b867fbc589523fad152493e",
+    "app.js": "fe6cea98bdcef83e51a5fd12afbd3ff500b2cf5b24e44199ec9a4edbbb24f4ea",
+    "copy.js": "7134f8909a1f1dedc94d90e03349ad8b67321fe7fc742fb593ec438f8534a432",
+    "core.js": "32cc35ce48d2857e46333ce99d88032da381bd1771f01bba17a82bca19912f4d",
+    "style.css": "969187e3f048805f0e64220e1d99122b3cea760f0a3bd433eeb27088fd4fc06f",
+    "solution.py": "45ca24b284d6e3e836a9374f494c8401523c63f667c6cf166c72671bbddf3e95",
+    "python-code.js": "4ddcdb6f59099d456d767ba5f9397aec2309456bc0661fc9f46497815ee993e6",
+    "lesson-entry.json": "ea9dd84d2ff1e565eee86b0c801aeea6d22a496872beaa93e16982996188b36f"
+  },
+  "records": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "state": {
+        "frameRead": "Operation 7/7; All prefixes processed; final answer 3.",
+        "bestRead": "Best length found: 3; attaining interval: [0, 3).",
+        "prefixes": "0: 01: 22: 1candidate3: 3current · candidate",
+        "members": "2:1 → 3:3",
+        "ledger": "Append prefix index 0 (P=0); this round is complete, with indices and P values strictly increasing.Append prefix index 1 (P=2); this round is complete, with indices and P values strictly increasing.End j=2, P[j]=1 ≤ P[1]=2. The new start is later with no larger prefix; remove back 1.Append prefix index 2 (P=1); this round is complete, with indices and P values strictly increasing.End j=3, P[j]=3: 3−P[0](0)=3 ≥ 3. Settle [0,3), length 3, and remove front 0.Append prefix index 3 (P=3); this round is complete, with indices and P values strictly increasing.All prefixes processed; final answer 3."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "state": {
+        "frameRead": "Operation 4/4; All prefixes processed; final answer 1.",
+        "bestRead": "Best length found: 1; attaining interval: [0, 1).",
+        "prefixes": "0: 01: 1current · candidate",
+        "members": "1:1",
+        "ledger": "Append prefix index 0 (P=0); this round is complete, with indices and P values strictly increasing.End j=1, P[j]=1: 1−P[0](0)=1 ≥ 1. Settle [0,1), length 1, and remove front 0.Append prefix index 1 (P=1); this round is complete, with indices and P values strictly increasing.All prefixes processed; final answer 1."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "state": {
+        "frameRead": "Operation 4/4; All prefixes processed; final answer -1.",
+        "bestRead": "Best length found: no feasible segment yet; attaining interval: empty.",
+        "prefixes": "0: 0candidate1: 1candidate2: 3current · candidate",
+        "members": "0:0 → 1:1 → 2:3",
+        "ledger": "Append prefix index 0 (P=0); this round is complete, with indices and P values strictly increasing.Append prefix index 1 (P=1); this round is complete, with indices and P values strictly increasing.Append prefix index 2 (P=3); this round is complete, with indices and P values strictly increasing.All prefixes processed; final answer -1."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "state": {
+        "frameRead": "Operation 8/8; All prefixes processed; final answer 1.",
+        "bestRead": "Best length found: 1; attaining interval: [2, 3).",
+        "prefixes": "0: 01: 12: 03: 3current · candidate",
+        "members": "3:3",
+        "ledger": "Append prefix index 0 (P=0); this round is complete, with indices and P values strictly increasing.Append prefix index 1 (P=1); this round is complete, with indices and P values strictly increasing.End j=2, P[j]=0 ≤ P[1]=1. The new start is later with no larger prefix; remove back 1.End j=2, P[j]=0 ≤ P[0]=0. The new start is later with no larger prefix; remove back 0.Append prefix index 2 (P=0); this round is complete, with indices and P values strictly increasing.End j=3, P[j]=3: 3−P[2](0)=3 ≥ 3. Settle [2,3), length 1, and remove front 2.Append prefix index 3 (P=3); this round is complete, with indices and P values strictly increasing.All prefixes processed; final answer 1."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "state": {
+        "frameRead": "Operation 12/12; All prefixes processed; final answer 1.",
+        "bestRead": "Best length found: 1; attaining interval: [4, 5).",
+        "prefixes": "0: 01: 22: 03: 24: 05: 5current · candidate",
+        "members": "5:5",
+        "ledger": "Append prefix index 0 (P=0); this round is complete, with indices and P values strictly increasing.Append prefix index 1 (P=2); this round is complete, with indices and P values strictly increasing.End j=2, P[j]=0 ≤ P[1]=2. The new start is later with no larger prefix; remove back 1.End j=2, P[j]=0 ≤ P[0]=0. The new start is later with no larger prefix; remove back 0.Append prefix index 2 (P=0); this round is complete, with indices and P values strictly increasing.Append prefix index 3 (P=2); this round is complete, with indices and P values strictly increasing.End j=4, P[j]=0 ≤ P[3]=2. The new start is later with no larger prefix; remove back 3.End j=4, P[j]=0 ≤ P[2]=0. The new start is later with no larger prefix; remove back 2.Append prefix index 4 (P=0); this round is complete, with indices and P values strictly increasing.End j=5, P[j]=5: 5−P[4](0)=5 ≥ 5. Settle [4,5), length 1, and remove front 4.Append prefix index 5 (P=5); this round is complete, with indices and P values strictly increasing.All prefixes processed; final answer 1."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "state": {
+        "frameRead": "Operation 10/10; All prefixes processed; final answer 3.",
+        "bestRead": "Best length found: 3; attaining interval: [2, 5).",
+        "prefixes": "0: 01: 842: 473: 79candidate4: 119candidate5: 214current · candidate",
+        "members": "3:79 → 4:119 → 5:214",
+        "ledger": "Append prefix index 0 (P=0); this round is complete, with indices and P values strictly increasing.Append prefix index 1 (P=84); this round is complete, with indices and P values strictly increasing.End j=2, P[j]=47 ≤ P[1]=84. The new start is later with no larger prefix; remove back 1.Append prefix index 2 (P=47); this round is complete, with indices and P values strictly increasing.Append prefix index 3 (P=79); this round is complete, with indices and P values strictly increasing.Append prefix index 4 (P=119); this round is complete, with indices and P values strictly increasing.End j=5, P[j]=214: 214−P[0](0)=214 ≥ 167. Settle [0,5), length 5, and remove front 0.End j=5, P[j]=214: 214−P[2](47)=167 ≥ 167. Settle [2,5), length 3, and remove front 2.Append prefix index 5 (P=214); this round is complete, with indices and P values strictly increasing.All prefixes processed; final answer 3."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 6,
+      "state": {
+        "frameRead": "Operation 6/6; All prefixes processed; final answer -1.",
+        "bestRead": "Best length found: no feasible segment yet; attaining interval: empty.",
+        "prefixes": "0: 01: -32: -5current · candidate",
+        "members": "2:-5",
+        "ledger": "Append prefix index 0 (P=0); this round is complete, with indices and P values strictly increasing.End j=1, P[j]=-3 ≤ P[0]=0. The new start is later with no larger prefix; remove back 0.Append prefix index 1 (P=-3); this round is complete, with indices and P values strictly increasing.End j=2, P[j]=-5 ≤ P[1]=-3. The new start is later with no larger prefix; remove back 1.Append prefix index 2 (P=-5); this round is complete, with indices and P values strictly increasing.All prefixes processed; final answer -1."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 7,
+      "state": {
+        "frameRead": "Operation 5/5; All prefixes processed; final answer 2.",
+        "bestRead": "Best length found: 2; attaining interval: [0, 2).",
+        "prefixes": "0: 01: 100000candidate2: 200000current · candidate",
+        "members": "1:100000 → 2:200000",
+        "ledger": "Append prefix index 0 (P=0); this round is complete, with indices and P values strictly increasing.Append prefix index 1 (P=100000); this round is complete, with indices and P values strictly increasing.End j=2, P[j]=200000: 200000−P[0](0)=200000 ≥ 200000. Settle [0,2), length 2, and remove front 0.Append prefix index 2 (P=200000); this round is complete, with indices and P values strictly increasing.All prefixes processed; final answer 2."
+      }
+    },
+    {
+      "locale": "en",
+      "formula": "sum(nums[i:j]) = P[j] − P[i] ≥ k; length = j − i, 0 ≤ i < j ≤ n",
+      "wrong": "Tempting rule: expand when the sum is too small, shrink only while it is sufficient. For [1,−1,3], k=3, the full segment sums to 3, so record length 3. Removing 1 leaves sum 2, so shrinking stops and misses [3]. Removing −1 would raise 2 to 3! With negatives, shrinking need not decrease the sum.",
+      "capNote": "Snapshots and history support teaching rewind and are separate from submission space. A removal frame represents that one completed removal, not a completed round.",
+      "feedback": "Recheck both removal rules. Answer: deque [3], length 1. At j=2, P[2]=1≤P[1]=3 removes 1, leaving [0,2]. At j=3, 6−0=6≥5 settles length 3 and removes 0; then 6−1=5≥5 settles length 1 and removes 2. Finally append 3. A misses front settlement; C ignores domination."
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "state": {
+        "frameRead": "操作 7/7；所有前缀处理完毕；最终答案 3。",
+        "bestRead": "最短已发现：3；对应区间：[0, 3)。",
+        "prefixes": "0: 01: 22: 1候选3: 3当前 · 候选",
+        "members": "2:1 → 3:3",
+        "ledger": "加入前缀下标 0（P=0）；本轮完成，队列下标和 P 值严格递增。加入前缀下标 1（P=2）；本轮完成，队列下标和 P 值严格递增。右端 j=2，P[j]=1 ≤ P[1]=2；新起点更晚且前缀不更大，移除队尾 1。加入前缀下标 2（P=1）；本轮完成，队列下标和 P 值严格递增。右端 j=3，P[j]=3；3−P[0](0)=3 ≥ 3，结算 [0,3)，长度 3，移除队首 0。加入前缀下标 3（P=3）；本轮完成，队列下标和 P 值严格递增。所有前缀处理完毕；最终答案 3。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "state": {
+        "frameRead": "操作 4/4；所有前缀处理完毕；最终答案 1。",
+        "bestRead": "最短已发现：1；对应区间：[0, 1)。",
+        "prefixes": "0: 01: 1当前 · 候选",
+        "members": "1:1",
+        "ledger": "加入前缀下标 0（P=0）；本轮完成，队列下标和 P 值严格递增。右端 j=1，P[j]=1；1−P[0](0)=1 ≥ 1，结算 [0,1)，长度 1，移除队首 0。加入前缀下标 1（P=1）；本轮完成，队列下标和 P 值严格递增。所有前缀处理完毕；最终答案 1。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "state": {
+        "frameRead": "操作 4/4；所有前缀处理完毕；最终答案 -1。",
+        "bestRead": "最短已发现：尚无可行段；对应区间：空。",
+        "prefixes": "0: 0候选1: 1候选2: 3当前 · 候选",
+        "members": "0:0 → 1:1 → 2:3",
+        "ledger": "加入前缀下标 0（P=0）；本轮完成，队列下标和 P 值严格递增。加入前缀下标 1（P=1）；本轮完成，队列下标和 P 值严格递增。加入前缀下标 2（P=3）；本轮完成，队列下标和 P 值严格递增。所有前缀处理完毕；最终答案 -1。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "state": {
+        "frameRead": "操作 8/8；所有前缀处理完毕；最终答案 1。",
+        "bestRead": "最短已发现：1；对应区间：[2, 3)。",
+        "prefixes": "0: 01: 12: 03: 3当前 · 候选",
+        "members": "3:3",
+        "ledger": "加入前缀下标 0（P=0）；本轮完成，队列下标和 P 值严格递增。加入前缀下标 1（P=1）；本轮完成，队列下标和 P 值严格递增。右端 j=2，P[j]=0 ≤ P[1]=1；新起点更晚且前缀不更大，移除队尾 1。右端 j=2，P[j]=0 ≤ P[0]=0；新起点更晚且前缀不更大，移除队尾 0。加入前缀下标 2（P=0）；本轮完成，队列下标和 P 值严格递增。右端 j=3，P[j]=3；3−P[2](0)=3 ≥ 3，结算 [2,3)，长度 1，移除队首 2。加入前缀下标 3（P=3）；本轮完成，队列下标和 P 值严格递增。所有前缀处理完毕；最终答案 1。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "state": {
+        "frameRead": "操作 12/12；所有前缀处理完毕；最终答案 1。",
+        "bestRead": "最短已发现：1；对应区间：[4, 5)。",
+        "prefixes": "0: 01: 22: 03: 24: 05: 5当前 · 候选",
+        "members": "5:5",
+        "ledger": "加入前缀下标 0（P=0）；本轮完成，队列下标和 P 值严格递增。加入前缀下标 1（P=2）；本轮完成，队列下标和 P 值严格递增。右端 j=2，P[j]=0 ≤ P[1]=2；新起点更晚且前缀不更大，移除队尾 1。右端 j=2，P[j]=0 ≤ P[0]=0；新起点更晚且前缀不更大，移除队尾 0。加入前缀下标 2（P=0）；本轮完成，队列下标和 P 值严格递增。加入前缀下标 3（P=2）；本轮完成，队列下标和 P 值严格递增。右端 j=4，P[j]=0 ≤ P[3]=2；新起点更晚且前缀不更大，移除队尾 3。右端 j=4，P[j]=0 ≤ P[2]=0；新起点更晚且前缀不更大，移除队尾 2。加入前缀下标 4（P=0）；本轮完成，队列下标和 P 值严格递增。右端 j=5，P[j]=5；5−P[4](0)=5 ≥ 5，结算 [4,5)，长度 1，移除队首 4。加入前缀下标 5（P=5）；本轮完成，队列下标和 P 值严格递增。所有前缀处理完毕；最终答案 1。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "state": {
+        "frameRead": "操作 10/10；所有前缀处理完毕；最终答案 3。",
+        "bestRead": "最短已发现：3；对应区间：[2, 5)。",
+        "prefixes": "0: 01: 842: 473: 79候选4: 119候选5: 214当前 · 候选",
+        "members": "3:79 → 4:119 → 5:214",
+        "ledger": "加入前缀下标 0（P=0）；本轮完成，队列下标和 P 值严格递增。加入前缀下标 1（P=84）；本轮完成，队列下标和 P 值严格递增。右端 j=2，P[j]=47 ≤ P[1]=84；新起点更晚且前缀不更大，移除队尾 1。加入前缀下标 2（P=47）；本轮完成，队列下标和 P 值严格递增。加入前缀下标 3（P=79）；本轮完成，队列下标和 P 值严格递增。加入前缀下标 4（P=119）；本轮完成，队列下标和 P 值严格递增。右端 j=5，P[j]=214；214−P[0](0)=214 ≥ 167，结算 [0,5)，长度 5，移除队首 0。右端 j=5，P[j]=214；214−P[2](47)=167 ≥ 167，结算 [2,5)，长度 3，移除队首 2。加入前缀下标 5（P=214）；本轮完成，队列下标和 P 值严格递增。所有前缀处理完毕；最终答案 3。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 6,
+      "state": {
+        "frameRead": "操作 6/6；所有前缀处理完毕；最终答案 -1。",
+        "bestRead": "最短已发现：尚无可行段；对应区间：空。",
+        "prefixes": "0: 01: -32: -5当前 · 候选",
+        "members": "2:-5",
+        "ledger": "加入前缀下标 0（P=0）；本轮完成，队列下标和 P 值严格递增。右端 j=1，P[j]=-3 ≤ P[0]=0；新起点更晚且前缀不更大，移除队尾 0。加入前缀下标 1（P=-3）；本轮完成，队列下标和 P 值严格递增。右端 j=2，P[j]=-5 ≤ P[1]=-3；新起点更晚且前缀不更大，移除队尾 1。加入前缀下标 2（P=-5）；本轮完成，队列下标和 P 值严格递增。所有前缀处理完毕；最终答案 -1。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 7,
+      "state": {
+        "frameRead": "操作 5/5；所有前缀处理完毕；最终答案 2。",
+        "bestRead": "最短已发现：2；对应区间：[0, 2)。",
+        "prefixes": "0: 01: 100000候选2: 200000当前 · 候选",
+        "members": "1:100000 → 2:200000",
+        "ledger": "加入前缀下标 0（P=0）；本轮完成，队列下标和 P 值严格递增。加入前缀下标 1（P=100000）；本轮完成，队列下标和 P 值严格递增。右端 j=2，P[j]=200000；200000−P[0](0)=200000 ≥ 200000，结算 [0,2)，长度 2，移除队首 0。加入前缀下标 2（P=200000）；本轮完成，队列下标和 P 值严格递增。所有前缀处理完毕；最终答案 2。"
+      }
+    },
+    {
+      "locale": "zh",
+      "formula": "sum(nums[i:j]) = P[j] − P[i] ≥ k；长度 = j − i，0 ≤ i < j ≤ n",
+      "wrong": "诱人的错误：和不足就只扩展，和足够才收缩。对 [1,−1,3]、k=3，扩展到整段和 3，记录长度 3；删去 1 后和为 2，就停止收缩，漏掉 [3]。再删 −1 会让和从 2 增至 3！负数使“收缩只会减小和”的前提失效。",
+      "capNote": "快照和历史只供教学回退；不计入下方提交代码的空间。图中间的删除帧只代表该次删除已完成，并不声称整轮完成。",
+      "feedback": "再对照两种删除规则。 答案：队列 [3]，长度 1。j=2 时 P[2]=1≤P[1]=3，先删除 1，留下 [0,2]。j=3 时 6−0=6≥5，结算长度 3 并删 0；再算 6−1=5≥5，结算长度 1 并删 2；最后加入 3。选项 A 漏掉队首结算，C 忽略了支配删除。"
+    }
+  ],
+  "layouts": [
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 1,
+      "doc": 320,
+      "available": 320,
+      "parts": [
+        {
+          "client": 270,
+          "scroll": 270
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 135,
+          "scroll": 135
+        },
+        {
+          "client": 270,
+          "scroll": 270
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        }
+      ],
+      "select": {
+        "width": 268,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "available": 320,
+      "parts": [
+        {
+          "client": 110,
+          "scroll": 110
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 104,
+          "scroll": 104
+        },
+        {
+          "client": 110,
+          "scroll": 110
+        },
+        {
+          "client": 86,
+          "scroll": 86
+        },
+        {
+          "client": 86,
+          "scroll": 86
+        },
+        {
+          "client": 86,
+          "scroll": 86
+        },
+        {
+          "client": 86,
+          "scroll": 86
+        },
+        {
+          "client": 86,
+          "scroll": 86
+        },
+        {
+          "client": 86,
+          "scroll": 86
+        },
+        {
+          "client": 86,
+          "scroll": 86
+        }
+      ],
+      "select": {
+        "width": 108,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 1,
+      "doc": 390,
+      "available": 390,
+      "parts": [
+        {
+          "client": 340,
+          "scroll": 340
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 135,
+          "scroll": 135
+        },
+        {
+          "client": 340,
+          "scroll": 340
+        },
+        {
+          "client": 316,
+          "scroll": 316
+        },
+        {
+          "client": 316,
+          "scroll": 316
+        },
+        {
+          "client": 316,
+          "scroll": 316
+        },
+        {
+          "client": 316,
+          "scroll": 316
+        },
+        {
+          "client": 316,
+          "scroll": 316
+        },
+        {
+          "client": 316,
+          "scroll": 316
+        },
+        {
+          "client": 316,
+          "scroll": 316
+        }
+      ],
+      "select": {
+        "width": 338,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "available": 390,
+      "parts": [
+        {
+          "client": 145,
+          "scroll": 145
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 135,
+          "scroll": 135
+        },
+        {
+          "client": 145,
+          "scroll": 145
+        },
+        {
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "client": 121,
+          "scroll": 121
+        }
+      ],
+      "select": {
+        "width": 143,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "zoom": 1,
+      "doc": 736,
+      "available": 736,
+      "parts": [
+        {
+          "client": 646,
+          "scroll": 646
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 135,
+          "scroll": 135
+        },
+        {
+          "client": 646,
+          "scroll": 646
+        },
+        {
+          "client": 622,
+          "scroll": 622
+        },
+        {
+          "client": 622,
+          "scroll": 622
+        },
+        {
+          "client": 622,
+          "scroll": 622
+        },
+        {
+          "client": 622,
+          "scroll": 622
+        },
+        {
+          "client": 622,
+          "scroll": 622
+        },
+        {
+          "client": 622,
+          "scroll": 622
+        },
+        {
+          "client": 622,
+          "scroll": 622
+        }
+      ],
+      "select": {
+        "width": 644,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "zoom": 2,
+      "doc": 736,
+      "available": 736,
+      "parts": [
+        {
+          "client": 278,
+          "scroll": 278
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 135,
+          "scroll": 135
+        },
+        {
+          "client": 278,
+          "scroll": 278
+        },
+        {
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "client": 254,
+          "scroll": 254
+        }
+      ],
+      "select": {
+        "width": 276,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 1,
+      "doc": 1440,
+      "available": 1440,
+      "parts": [
+        {
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 135,
+          "scroll": 135
+        },
+        {
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "client": 886,
+          "scroll": 886
+        },
+        {
+          "client": 886,
+          "scroll": 886
+        },
+        {
+          "client": 886,
+          "scroll": 886
+        },
+        {
+          "client": 886,
+          "scroll": 886
+        },
+        {
+          "client": 886,
+          "scroll": 886
+        },
+        {
+          "client": 886,
+          "scroll": 886
+        },
+        {
+          "client": 886,
+          "scroll": 886
+        }
+      ],
+      "select": {
+        "width": 908,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "available": 1440,
+      "parts": [
+        {
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 135,
+          "scroll": 135
+        },
+        {
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "client": 606,
+          "scroll": 606
+        },
+        {
+          "client": 606,
+          "scroll": 606
+        },
+        {
+          "client": 606,
+          "scroll": 606
+        },
+        {
+          "client": 606,
+          "scroll": 606
+        },
+        {
+          "client": 606,
+          "scroll": 606
+        },
+        {
+          "client": 606,
+          "scroll": 606
+        },
+        {
+          "client": 606,
+          "scroll": 606
+        }
+      ],
+      "select": {
+        "width": 628,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 1,
+      "doc": 320,
+      "available": 320,
+      "parts": [
+        {
+          "client": 270,
+          "scroll": 270
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 270,
+          "scroll": 270
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        }
+      ],
+      "select": {
+        "width": 268,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "available": 320,
+      "parts": [
+        {
+          "client": 110,
+          "scroll": 110
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 110,
+          "scroll": 110
+        },
+        {
+          "client": 86,
+          "scroll": 86
+        },
+        {
+          "client": 86,
+          "scroll": 86
+        },
+        {
+          "client": 86,
+          "scroll": 86
+        },
+        {
+          "client": 86,
+          "scroll": 86
+        },
+        {
+          "client": 86,
+          "scroll": 86
+        },
+        {
+          "client": 86,
+          "scroll": 86
+        },
+        {
+          "client": 86,
+          "scroll": 86
+        }
+      ],
+      "select": {
+        "width": 108,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 1,
+      "doc": 390,
+      "available": 390,
+      "parts": [
+        {
+          "client": 340,
+          "scroll": 340
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 340,
+          "scroll": 340
+        },
+        {
+          "client": 316,
+          "scroll": 316
+        },
+        {
+          "client": 316,
+          "scroll": 316
+        },
+        {
+          "client": 316,
+          "scroll": 316
+        },
+        {
+          "client": 316,
+          "scroll": 316
+        },
+        {
+          "client": 316,
+          "scroll": 316
+        },
+        {
+          "client": 316,
+          "scroll": 316
+        },
+        {
+          "client": 316,
+          "scroll": 316
+        }
+      ],
+      "select": {
+        "width": 338,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "available": 390,
+      "parts": [
+        {
+          "client": 145,
+          "scroll": 145
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 145,
+          "scroll": 145
+        },
+        {
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "client": 121,
+          "scroll": 121
+        }
+      ],
+      "select": {
+        "width": 143,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "zoom": 1,
+      "doc": 736,
+      "available": 736,
+      "parts": [
+        {
+          "client": 646,
+          "scroll": 646
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 646,
+          "scroll": 646
+        },
+        {
+          "client": 622,
+          "scroll": 622
+        },
+        {
+          "client": 622,
+          "scroll": 622
+        },
+        {
+          "client": 622,
+          "scroll": 622
+        },
+        {
+          "client": 622,
+          "scroll": 622
+        },
+        {
+          "client": 622,
+          "scroll": 622
+        },
+        {
+          "client": 622,
+          "scroll": 622
+        },
+        {
+          "client": 622,
+          "scroll": 622
+        }
+      ],
+      "select": {
+        "width": 644,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "zoom": 2,
+      "doc": 736,
+      "available": 736,
+      "parts": [
+        {
+          "client": 278,
+          "scroll": 278
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 278,
+          "scroll": 278
+        },
+        {
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "client": 254,
+          "scroll": 254
+        },
+        {
+          "client": 254,
+          "scroll": 254
+        }
+      ],
+      "select": {
+        "width": 276,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "doc": 1440,
+      "available": 1440,
+      "parts": [
+        {
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "client": 886,
+          "scroll": 886
+        },
+        {
+          "client": 886,
+          "scroll": 886
+        },
+        {
+          "client": 886,
+          "scroll": 886
+        },
+        {
+          "client": 886,
+          "scroll": 886
+        },
+        {
+          "client": 886,
+          "scroll": 886
+        },
+        {
+          "client": 886,
+          "scroll": 886
+        },
+        {
+          "client": 886,
+          "scroll": 886
+        }
+      ],
+      "select": {
+        "width": 908,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "available": 1440,
+      "parts": [
+        {
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "client": 606,
+          "scroll": 606
+        },
+        {
+          "client": 606,
+          "scroll": 606
+        },
+        {
+          "client": 606,
+          "scroll": 606
+        },
+        {
+          "client": 606,
+          "scroll": 606
+        },
+        {
+          "client": 606,
+          "scroll": 606
+        },
+        {
+          "client": 606,
+          "scroll": 606
+        },
+        {
+          "client": 606,
+          "scroll": 606
+        }
+      ],
+      "select": {
+        "width": 628,
+        "text": 11.85601806640625,
+        "padding": 30,
+        "reserve": 24
+      }
+    }
+  ],
+  "clipboard": [
+    {
+      "locale": "en",
+      "attempt": 0,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinel": true,
+      "exactReadback": true
+    },
+    {
+      "locale": "en",
+      "attempt": 1,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinel": true,
+      "exactReadback": true
+    },
+    {
+      "locale": "zh",
+      "attempt": 0,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinel": true,
+      "exactReadback": true
+    },
+    {
+      "locale": "zh",
+      "attempt": 1,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinel": true,
+      "exactReadback": true
+    }
+  ],
+  "links": [
+    {
+      "href": "../",
+      "status": 200
+    },
+    {
+      "href": "#step0",
+      "status": 200
+    },
+    {
+      "href": "#step1",
+      "status": 200
+    },
+    {
+      "href": "#step2",
+      "status": 200
+    },
+    {
+      "href": "#step3",
+      "status": 200
+    },
+    {
+      "href": "#step4",
+      "status": 200
+    },
+    {
+      "href": "solution.py",
+      "status": 200
+    },
+    {
+      "href": "../327/#step1",
+      "status": 200
+    },
+    {
+      "href": "../239/#step2",
+      "status": 200
+    },
+    {
+      "locale": "en",
+      "label": "Explore #327: subtract prefixes for interval sums",
+      "href": "../327/#step1",
+      "destination": "02Why is a range sum a difference of two totals?Can we get a range sum without adding its elements again? Prefix P[k] is the total of the first k elements; P[0]=0 means taking none. Here j is an exclusive end. The original inclusive interval [i,j−1] sums to P[j]−P[i]: subtract the first i elements, leaving i through j−1.Keep the array fixed and select i<j. Compare the two P values with the remaining elements below. In these formulas, j is always a prefix index.Select prefix indices (i,j)i=0, j=1i=0, j=2i=0, j=3i=1, j=2i=1, j=3i=2, j=3Prefix index k and total P[k]P[0]=0P[1]=-2P[2]=3P[3]=2P[1] − P[0] = -2 − (0) = -2; original interval [0,0] = [-2]: Count.We now count prefix-index pairs with i<j and lower ≤ P[j]−P[i] ≤ upper. P[0] lets ranges starting at index 0 use the same formula. Prefix differences make one sum O(1), but enumerating all index pairs is still O(n²).",
+      "sha256": "beaf4c39928df6a6c27fe5e665ded16317b62f02b384d69f7981faf5f76799c2",
+      "keyboard": true
+    },
+    {
+      "locale": "en",
+      "label": "Explore #239: discard maximum candidates with a deque",
+      "href": "../239/#step2",
+      "destination": "03Discover the monotonic dequeQuestion: when a new value arrives, which old indices are still worth keeping? A deque is a queue with operations at both ends. Store indices and keep their values decreasing from front to back.Preset[1,3,-1,-3,5,3,6,7], k=3[9,1,2,3], k=2[4,4,2,4,1], k=3[-5,-2,-7], k=2PreviousNext stepResetComplete traceCells show zero-based indices above values. Deque notation is index:value; for example, 1:3 means nums[1]=3. Changing preset restarts this trace.01132-13-345536677Initial state: no elements processed; no highlighted interval, deque or cumulative output.Processed index —; output emptyDeque (front → back)emptyFirst remove expired indices, then values dominated by the new value, then append the new index. Emit the front only after the first full window.Invariant: after each update, indices increase and their values strictly decrease. When nonempty, the front is the maximum of the processed interval. Before k elements arrive, this interval is partial and emits no output.",
+      "sha256": "b59b1fcda824c5f956078ee4921c9baf6389a2e6b5c429f91450581357a80770",
+      "keyboard": true
+    },
+    {
+      "locale": "zh",
+      "label": "延伸 #327：前缀相减得到区间和",
+      "href": "../327/#step1",
+      "destination": "02一段的和为什么是两个总数之差？这一步要回答：能不能不用重加一段元素？前缀 P[k] 是前 k 个元素的总和；P[0]=0 表示一个也没取。这里 j 是不包含的右边界，原题的闭区间 [i,j−1] 的和就是 P[j]−P[i]：减去前 i 个，剩下 i 到 j−1。保持数组不变，选择一对 i<j；比较两个 P 值与下方留下的元素。所有公式中的 j 都是前缀下标。选择前缀下标 (i,j)i=0, j=1i=0, j=2i=0, j=3i=1, j=2i=1, j=3i=2, j=3前缀下标 k 与总和 P[k]P[0]=0P[1]=-2P[2]=3P[3]=2P[1] − P[0] = -2 − (0) = -2；原区间 [0,0] = [-2]：计入。因此目标变成：数出 i<j 且 lower ≤ P[j]−P[i] ≤ upper 的前缀下标对。P[0] 让从下标 0 开始的区间也能用同一式子。前缀差只把每次求和降到 O(1)，枚举所有下标对仍是 O(n²)。",
+      "sha256": "beaf4c39928df6a6c27fe5e665ded16317b62f02b384d69f7981faf5f76799c2",
+      "keyboard": true
+    },
+    {
+      "locale": "zh",
+      "label": "延伸 #239：用双端队列淘汰最大值候选",
+      "href": "../239/#step2",
+      "destination": "03发现单调队列这一步要回答：新值到来时，哪些旧索引仍值得保留？双端队列（deque）是两端都能进出的队列。我们让它保存索引，并保持对应值从前到后递减。预设[1,3,-1,-3,5,3,6,7], k=3[9,1,2,3], k=2[4,4,2,4,1], k=3[-5,-2,-7], k=2上一步下一步重置走到结束格子上方是从 0 开始的索引，下方是值。队列记法 索引:值，例如 1:3 表示 nums[1]=3。切换预设会重置此轨迹。01132-13-345536677初始状态：尚未处理任何元素；无高亮区间，队列与累计输出均为空。处理到索引 —；输出 空队列（前 → 后）空先删过期，再删被新值支配，最后入队。只有窗口形成后才输出队首值。不变量：每次更新后，队列索引递增、对应值严格递减；非空时，队首是已处理区间的最大值。前 k−1 个元素只形成不足 k 个元素的区间，还不输出。",
+      "sha256": "b59b1fcda824c5f956078ee4921c9baf6389a2e6b5c429f91450581357a80770",
+      "keyboard": true
+    }
+  ],
+  "focus": {
+    "active": true,
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrast": {
+    "calibration": {
+      "black": 0,
+      "white": 1,
+      "red": 0.2126,
+      "green": 0.7152,
+      "blue": 0.0722,
+      "blackWhite": 21,
+      "nearThreshold": 4.492948073111701
+    },
+    "pairs": [
+      {
+        "selector": "body",
+        "fg": "rgb(232, 237, 244)",
+        "bg": "rgb(13, 17, 23)",
+        "ratio": 16.086987125379448
+      },
+      {
+        "selector": ".hint",
+        "fg": "rgb(154, 167, 184)",
+        "bg": "rgb(13, 17, 23)",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "selector": ".explain",
+        "fg": "rgb(201, 212, 226)",
+        "bg": "rgb(13, 17, 23)",
+        "ratio": 12.615602281385614
+      },
+      {
+        "selector": ".prefix",
+        "fg": "rgb(232, 237, 244)",
+        "bg": "rgb(28, 35, 48)",
+        "ratio": 13.397069143240783
+      },
+      {
+        "selector": ".prefix.current",
+        "fg": "rgb(110, 231, 255)",
+        "bg": "rgb(28, 35, 48)",
+        "ratio": 10.910104011097095
+      },
+      {
+        "selector": ".prefix.candidate",
+        "fg": "rgb(110, 231, 255)",
+        "bg": "rgb(28, 35, 48)",
+        "ratio": 10.910104011097095
+      },
+      {
+        "selector": "#traceNext",
+        "fg": "rgb(154, 167, 184)",
+        "bg": "rgb(28, 35, 48)",
+        "ratio": 6.449407898769069
+      },
+      {
+        "selector": "#tracePrev",
+        "fg": "rgb(232, 237, 244)",
+        "bg": "rgb(28, 35, 48)",
+        "ratio": 13.397069143240783
+      },
+      {
+        "selector": "#langToggle .active",
+        "fg": "rgb(13, 17, 23)",
+        "bg": "rgb(110, 231, 255)",
+        "ratio": 13.100679028115637
+      },
+      {
+        "selector": ".step-nav a",
+        "fg": "rgb(154, 167, 184)",
+        "bg": "rgb(13, 17, 23)",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "selector": ".readout",
+        "fg": "rgb(232, 237, 244)",
+        "bg": "rgb(28, 35, 48)",
+        "ratio": 13.397069143240783
+      },
+      {
+        "selector": "focus on panel2",
+        "ratio": 8.937191437807625
+      }
+    ]
+  },
+  "cssBytes": 11294,
+  "errors": [],
+  "bad": [],
+  "external": [],
+  "relatedWarnings": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "url": "http://127.0.0.1:18770/favicon.ico",
+      "page": "http://127.0.0.1:18770/leetcode/239/#step2"
+    }
+  ],
+  "browser": "156.0.8078.4",
+  "zoom": "CSS zoom 2 in real Chromium; real devices and browser chrome zoom not tested",
+  "sourceParity": "exact embedded/rendered/copied/downloaded and repeated native manual fallback",
+  "offline": true,
+  "storageDenied": true
+}
