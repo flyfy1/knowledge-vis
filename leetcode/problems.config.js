@@ -2095,6 +2095,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(d) time; O(d) space for d ≤ 18 decimal digits (bounded integer arithmetic)"
   },
   {
+    "id": 587,
+    "title": {
+      "zh": "安装栅栏",
+      "en": "Erect the Fence"
+    },
+    "desc": {
+      "zh": "从直线边界与带符号转弯，推导保留共线树的单调链。",
+      "en": "Derive a monotone chain that retains every tree on straight fence edges."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "凸包",
+        "en": "Convex hull"
+      },
+      {
+        "zh": "单调链",
+        "en": "Monotone chain"
+      }
+    ],
+    "path": "587/",
+    "leetcodeUrl": "https://leetcode.com/problems/erect-the-fence/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space"
+  },
+  {
     "id": 591,
     "title": {
       "zh": "标签验证器",
@@ -2119,6 +2145,32 @@ window.LEETCODE_PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/tag-validator/",
     "language": "Python",
     "complexity": "O(n) time; O(n) auxiliary space worst case, O(d) stack for valid input"
+  },
+  {
+    "id": 600,
+    "title": {
+      "zh": "不含连续 1 的非负整数",
+      "en": "Non-negative Integers without Consecutive Ones"
+    },
+    "desc": {
+      "zh": "从二进制小例子推导后缀计数，按首次不同的位划分答案。",
+      "en": "Count binary suffixes and partition answers by their first differing bit."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数位动态规划",
+        "en": "Digit dynamic programming"
+      },
+      {
+        "zh": "计数",
+        "en": "Counting"
+      }
+    ],
+    "path": "600/",
+    "leetcodeUrl": "https://leetcode.com/problems/non-negative-integers-without-consecutive-ones/",
+    "language": "Python",
+    "complexity": "O(log n) time; O(log n) auxiliary space (unit-cost arithmetic within the official bounds)"
   },
   {
     "id": 2916,

@@ -1,0 +1,43 @@
+{
+  "id": 587,
+  "title": {
+    "zh": "安装栅栏",
+    "en": "Erect the Fence"
+  },
+  "desc": {
+    "zh": "从直线边界与带符号转弯，推导保留共线树的单调链。",
+    "en": "Derive a monotone chain that retains every tree on straight fence edges."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "凸包",
+      "en": "Convex hull"
+    },
+    {
+      "zh": "单调链",
+      "en": "Monotone chain"
+    }
+  ],
+  "path": "587/",
+  "leetcodeUrl": "https://leetcode.com/problems/erect-the-fence/",
+  "language": "Python",
+  "complexity": "O(n log n) time; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "convex hull boundary",
+      "step": 0,
+      "description": "All perimeter trees, including collinear edge trees"
+    },
+    {
+      "name": "signed turn",
+      "step": 1,
+      "description": "Integer cross product distinguishes left, straight and right"
+    },
+    {
+      "name": "monotone chain",
+      "step": 2,
+      "description": "Repeated strict-right-turn removal in two sorted scans"
+    }
+  ]
+}
