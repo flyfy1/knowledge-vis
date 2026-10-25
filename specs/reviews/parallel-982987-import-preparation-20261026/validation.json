@@ -1,0 +1,20 @@
+{
+  "status": "prepared-for-independent-review-not-dispatched",
+  "validated_at": "2026-10-25T21:55:56.189061+00:00",
+  "tests": 16,
+  "tests_exit_code": 0,
+  "test_command": "python3 -B specs/reviews/parallel-982987-import-preparation-20261026/test_operate.py",
+  "sha256": {
+    "operate.py": "e0e530655dd21c90a95c5a0b0baa7f6b4e84fa96ae359c6cd72da3e34d5798f6",
+    "pins.json": "0d9dec18554ed18154ac5b4137371b08382bd217c290149fd048a46987387a01",
+    "test_operate.py": "6e9d5384674e00efdd8c3573f45800e5e2ab5d458c8737af7c4bdfa76de22e6d",
+    "capture-readonly.py": "f710df1d184714c58bf32841846194a38c9aa6446dbee4e98c9216b0dfd286da"
+  },
+  "helper_sha256": "f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698",
+  "runtime_mutations": false,
+  "remaining_gates": [
+    "independent exact operator/pins review",
+    "explicit root dispatch authorization",
+    "all live guards including frozen854author identity and release ledger still match"
+  ]
+}

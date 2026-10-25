@@ -1,0 +1,49 @@
+{
+  "observed_at": "2026-10-25T21:53:24.628595+00:00",
+  "read_only": true,
+  "head": "7fd4aa457c318f053d7dc722fd63b3012bccb838",
+  "central_status": "running",
+  "current": {
+    "problem_id": "854",
+    "stage": "author",
+    "started_at": "2026-10-25T21:51:41.189020+00:00",
+    "run_id": "854-author-679ce856a357"
+  },
+  "queue_count": 984,
+  "central_progress_sha256": "cab76f4435c54a998ccd084b2004644626ec88b4e9ff9319b675453f61efe9c8",
+  "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+  "resume_plan": {
+    "next_problem_id": "854",
+    "registration_ids": [],
+    "publication_bound": {
+      "eligible": [],
+      "incoming": [
+        "982",
+        "987"
+      ],
+      "registration_ids": [],
+      "reopened_upper_bound_ids": [],
+      "upper_bound_ids": [
+        "982",
+        "987"
+      ],
+      "upper_bound": 2
+    }
+  },
+  "central_runner_pid": 1696215,
+  "lane_processes_absent": true,
+  "accepted_lanes": {
+    "982": {
+      "head": "1086f89c87cb74432d9222deba3414138d4e1b2f",
+      "candidate": "71cac9c38ae78f8ec6a477ca05c7781ab9377fd2",
+      "score": 95.0,
+      "required_open": []
+    },
+    "987": {
+      "head": "5e97917082c9c4b71bb26567617345a98d9171c8",
+      "candidate": "bed2e3d724fb024efd46c65ad1ba52fc5fa20f9f",
+      "score": 92.5,
+      "required_open": []
+    }
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "status": "frozen-accepted-pair",
+  "ids": [
+    "982",
+    "987"
+  ],
+  "lanes": {
+    "982": {
+      "head": "1086f89c87cb74432d9222deba3414138d4e1b2f",
+      "entry": {
+        "status": "accepted_local",
+        "rounds": 1,
+        "new": true,
+        "phase": "done",
+        "reviews": [
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              3,
+              4,
+              4,
+              4,
+              4
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/982-review-1-94eb2c64.md",
+            "evidence": [
+              "Saved cold browser walkthrough before inspecting source.",
+              "Canonical Python independently confirmed [0,3]\u21927 and [3,6,9]\u219212.",
+              "Verified bilingual traces, keyboard operation, rewind/reset, narrow layouts, and 200% CSS zoom.",
+              "Exact display, clipboard, native fallback, and download source parity passed.",
+              "Metadata validate-only preflight exited 0.",
+              "Screenshots and rerun receipts saved in specs/reviews/982-evidence/982-review-1-94eb2c64/."
+            ],
+            "detail": "Accepted at 95/100 for the specified revision. One optional prose-density advisory; no required fixes. Publication and successful LeetCode submission are not claimed.",
+            "run_id": "982-review-7c751ff0e6a4",
+            "candidate": "71cac9c38ae78f8ec6a477ca05c7781ab9377fd2",
+            "candidate_sha256": "4971c3865cfaf56677d08d2dcc3a32296f7216ae5d775caa7617caf179b93d81",
+            "weighted_score": 95.0,
+            "round": 1,
+            "commit": "d14378e1ba918febbed19e6470e668c653b44062"
+          }
+        ],
+        "author_runs": [
+          "982-author-4532e76a05c3"
+        ],
+        "prior_report": "specs/reviews/982-review-1-94eb2c64.md",
+        "candidate": "71cac9c38ae78f8ec6a477ca05c7781ab9377fd2",
+        "registration_commit": "1086f89c87cb74432d9222deba3414138d4e1b2f",
+        "accepted_at": "2026-10-25T21:48:53.508555+00:00"
+      },
+      "entry_sha256": "832a709e1fbc929c4d42428a52ec46cf8130bf984aa97f7857ecadd7b6a12ec0",
+      "runs_sha256": "2dfb474227012436c4ae86234c19be8bf1855dc2c05889d3bca7b65a8b5299a8",
+      "progress_sha256": "c33e9f2b1f07cb8c60eee85426a22e0c39288e46ea91a963996502dd5126be08",
+      "report_sha256": "7cd0d5b10ece99f3f35b778681c20cbdb5883548539bcc467b3159678ed72165",
+      "reservation": {
+        "id": "982",
+        "base": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+        "repo": "/home/songyy/projects/leetcode-hard-lane-982-20261026",
+        "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-982-20261026",
+        "port": 18795,
+        "nice": 10,
+        "status": "started",
+        "started_at": "2026-10-25T21:30:21.394634+00:00",
+        "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+        "publication_enabled": false,
+        "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+        "runner_pid": 1700254,
+        "observed_current": {
+          "problem_id": "982",
+          "stage": "author",
+          "started_at": "2026-10-25T21:30:49.910959+00:00",
+          "run_id": "982-author-4532e76a05c3"
+        }
+      }
+    },
+    "987": {
+      "head": "5e97917082c9c4b71bb26567617345a98d9171c8",
+      "entry": {
+        "status": "accepted_local",
+        "rounds": 1,
+        "new": true,
+        "phase": "done",
+        "reviews": [
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              4,
+              4,
+              3,
+              4,
+              3
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/987-review-1-0d4cbd13.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source audit.",
+              "Canonical Python passed fresh examples, counterexample, mutation and depth-boundary checks.",
+              "Both locales passed rewind/reset, prediction changes, keyboard and exact clipboard/download parity checks.",
+              "320/390/desktop and 200% content-zoom screenshots inspected.",
+              "Non-mutating metadata preflight exited 0; tracked candidate files unchanged."
+            ],
+            "detail": "92.5/100. No required findings. Minor narrow-grid panning friction documented; acceptance is separate from publication.",
+            "run_id": "987-review-71e766664c30",
+            "candidate": "bed2e3d724fb024efd46c65ad1ba52fc5fa20f9f",
+            "candidate_sha256": "eda7cf55268e7b5eaf8eba9db710b39038c7cda397199a3a41f111c5fe935e98",
+            "weighted_score": 92.5,
+            "round": 1,
+            "commit": "f2771b23a8f46667bc4e84dc8f81ee95a8050c81"
+          }
+        ],
+        "author_runs": [
+          "987-author-a21aea0fbd64"
+        ],
+        "prior_report": "specs/reviews/987-review-1-0d4cbd13.md",
+        "candidate": "bed2e3d724fb024efd46c65ad1ba52fc5fa20f9f",
+        "registration_commit": "5e97917082c9c4b71bb26567617345a98d9171c8",
+        "accepted_at": "2026-10-25T21:50:20.806768+00:00"
+      },
+      "entry_sha256": "e2252624e6c52f324d9743a1ca4fe932de82e5761fa701ad87752ec7f5d4e9cf",
+      "runs_sha256": "bcefefb3316f6452d4da5ce515f04223011b453ec796cd74b1f87ed0fd42e34f",
+      "progress_sha256": "4dc7a1043d0a544dfa7b7086fa9bfeeececbce8bc0aab4f2cbf0fdbcdbdfbeb1",
+      "report_sha256": "0bf42fb753e5d1f85e7bdf5c59288629650a46a834887d25db4036df22b2a3de",
+      "reservation": {
+        "id": "987",
+        "base": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+        "repo": "/home/songyy/projects/leetcode-hard-lane-987-20261026",
+        "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-987-20261026",
+        "port": 18796,
+        "nice": 10,
+        "status": "started",
+        "started_at": "2026-10-25T21:30:51.628527+00:00",
+        "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+        "publication_enabled": false,
+        "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+        "runner_pid": 1700716,
+        "observed_current": {
+          "problem_id": "987",
+          "stage": "author",
+          "started_at": "2026-10-25T21:31:17.787044+00:00",
+          "run_id": "987-author-a21aea0fbd64"
+        }
+      }
+    }
+  },
+  "lane_base": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+  "queue_sha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+  "policy": {
+    "scripts/import_leetcode_lane.py": "8642a573383d052ce6e227bd8c2374f9c50f2fc1e8e9b312a6186607015344e0",
+    "scripts/leetcode_campaign.py": "a1258a0e7eba60e1d813bf0f9ede57a71f92cd504f6afb7bd0553d68d41c65ed",
+    "scripts/leetcode_publish.py": "7292c88e2ae035667a1bc723b076fb3d8d3d8562dc8428f3f66f74dc60f764d8",
+    "scripts/leetcode_registry.py": "a23b9b9e4feec966969c0b4c60f16e19cc2616ea0e1b2e587d15605e739349d6",
+    "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+    "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+    "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+    "scripts/campaign-prompts/author.md": "5f7feaa56f9f8f1f3f434e1fe4576cc2a10da21594c9aef829cab86e69dae06b",
+    "scripts/campaign-prompts/review.md": "129537defd8df8fda1c84c3bea80b62c8c717275f558128d8b62b02319838a1b",
+    "scripts/campaign-prompts/fix.md": "176376ca977b1b8e0f4444612efdf91b8a7d49e1f1c614e8985544828bb774d4",
+    "specs/reviews/workflow-copy-repair-requests-20261026/780.md": "79235a599df5139b2e8dc1c2a51fe673fd7b28bf46b2d3a3bbec34a1b22e280b",
+    "specs/reviews/workflow-copy-repair-requests-20261026/793.md": "ff52e23452b5099a60fc80e9a9fe1bed1e0840d4408c66793509335edb7536e5",
+    "specs/reviews/workflow-copy-repair-requests-20261026/798.md": "da3da5361f94e48e2a91ddb39e537146f2aff9939b7220b17a368f884d151318",
+    "specs/reviews/workflow-copy-repair-requests-20261026/801.md": "8bf72192c53809c60cf6bedf2379af8c185ce775346f4de59d0eee598af4b83a",
+    "specs/reviews/workflow-copy-repair-requests-20261026/815.md": "5c9697057a2218726823f12e58494fedde6221d5d19d87da9a1a8a25cd76977a",
+    "specs/reviews/workflow-copy-repair-requests-20261026/903.md": "5227f5ede9949c1bc677c06fa8c6a2a940dabf4e43b41829ef8be64750ad0476",
+    "specs/reviews/workflow-copy-repair-requests-20261026/920.md": "70b97c693528cb26a70d8f1ad8497c9d96812ab551704090f6d24057146e666e",
+    "specs/reviews/workflow-copy-repair-requests-20261026/940.md": "56df85c64f2ae135ce2d8323c052eba978bb50b231d899c840b2a07a0e6a5981",
+    "specs/reviews/workflow-copy-repair-requests-20261026/956.md": "635cfac82ede95dbb081fa8ced9935b28d0234fed4928ea9b5d10bd7d2f7e77f",
+    "specs/reviews/workflow-copy-repair-requests-20261026/README.md": "9c7747a2a299d19d3c3b329fa9d4a423fe2403141e3b4fd6484878bb8ee7584a",
+    "scripts/register_leetcode_lesson.py": "7ba274cd733a36528d98c85fe87b46d5535bc34898567b0c14f36fda37f81310",
+    "scripts/leetcode_static_versions.py": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e"
+  },
+  "launcher_sha256": "94056740463e5f9ec4fe63d0d2c56d1ccbf1ab60556f7952580fe58512127e70",
+  "release": {
+    "id": "84dfd908f5c94592918eb4ecb72eb87e",
+    "revision": "7fd4aa457c318f053d7dc722fd63b3012bccb838",
+    "receipt_sha256": "218c639dab100046ba7cd6f687a13d769a230b2d601d9b33346dd78835023014",
+    "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6"
+  },
+  "central": {
+    "head": "7fd4aa457c318f053d7dc722fd63b3012bccb838",
+    "current": {
+      "problem_id": "854",
+      "stage": "author",
+      "started_at": "2026-10-25T21:51:41.189020+00:00",
+      "run_id": "854-author-679ce856a357"
+    },
+    "runner_pid": 1696215,
+    "resume_plan": {
+      "next_problem_id": "854",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [],
+        "incoming": [
+          "982",
+          "987"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "982",
+          "987"
+        ],
+        "upper_bound": 2
+      }
+    }
+  }
+}
