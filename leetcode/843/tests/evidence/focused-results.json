@@ -1,0 +1,179 @@
+{
+  "result": "pass",
+  "records": [
+    {
+      "locale": "en",
+      "terminal": "The secret was actually guessed and returned 6.",
+      "touchTargets": [
+        {
+          "text": "中",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "text": "EN",
+          "w": 49.0625,
+          "h": 48
+        },
+        {
+          "text": "Show / hide position comparison",
+          "w": 277.96875,
+          "h": 48
+        },
+        {
+          "text": "Python · baseline / 基线",
+          "w": 358,
+          "h": 48
+        },
+        {
+          "text": "Back one round",
+          "w": 144.109375,
+          "h": 48
+        },
+        {
+          "text": "Guess and filter one round",
+          "w": 226.578125,
+          "h": 48
+        },
+        {
+          "text": "Reset experiment",
+          "w": 158.03125,
+          "h": 48
+        },
+        {
+          "text": "Go to final round",
+          "w": 153.484375,
+          "h": 48
+        },
+        {
+          "text": "Only aaaabb",
+          "w": 328,
+          "h": 48
+        },
+        {
+          "text": "aaaaaa and aabbbb",
+          "w": 328,
+          "h": 48
+        },
+        {
+          "text": "aaaaaa, aaaabb and aabbbb",
+          "w": 328,
+          "h": 48
+        },
+        {
+          "text": "Check and explain",
+          "w": 162.40625,
+          "h": 48
+        },
+        {
+          "text": "Reset experiment",
+          "w": 158.03125,
+          "h": 48
+        },
+        {
+          "text": "Copy Python",
+          "w": 126.71875,
+          "h": 48
+        },
+        {
+          "text": "Download solution.py",
+          "w": 195.09375,
+          "h": 48
+        },
+        {
+          "text": "View Python submission source",
+          "w": 358,
+          "h": 48
+        }
+      ],
+      "tableRightScroll": true
+    },
+    {
+      "locale": "zh",
+      "terminal": "已实际提问秘密并收到 6。",
+      "touchTargets": [
+        {
+          "text": "中",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "text": "EN",
+          "w": 49.0625,
+          "h": 48
+        },
+        {
+          "text": "显示 / 隐藏逐位对照",
+          "w": 174.28125,
+          "h": 48
+        },
+        {
+          "text": "Python · baseline / 基线",
+          "w": 358,
+          "h": 48
+        },
+        {
+          "text": "撤回一轮",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "text": "提问并过滤一轮",
+          "w": 138.015625,
+          "h": 48
+        },
+        {
+          "text": "重置本实验",
+          "w": 106.015625,
+          "h": 48
+        },
+        {
+          "text": "跳到最后一轮",
+          "w": 122.015625,
+          "h": 48
+        },
+        {
+          "text": "只有 aaaabb",
+          "w": 328,
+          "h": 48
+        },
+        {
+          "text": "aaaaaa 和 aabbbb",
+          "w": 328,
+          "h": 48
+        },
+        {
+          "text": "aaaaaa、aaaabb 和 aabbbb",
+          "w": 328,
+          "h": 48
+        },
+        {
+          "text": "核对并解释",
+          "w": 106.015625,
+          "h": 48
+        },
+        {
+          "text": "重置本实验",
+          "w": 106.015625,
+          "h": 48
+        },
+        {
+          "text": "复制 Python",
+          "w": 121.234375,
+          "h": 48
+        },
+        {
+          "text": "下载 solution.py",
+          "w": 150.96875,
+          "h": 48
+        },
+        {
+          "text": "查看官方接口 Python 源码",
+          "w": 358,
+          "h": 48
+        }
+      ],
+      "tableRightScroll": true
+    }
+  ]
+}
