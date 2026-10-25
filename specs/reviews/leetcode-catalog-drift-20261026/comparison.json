@@ -1,0 +1,54 @@
+{
+  "observedAt": "2026-10-25T17:57:14.616471+00:00",
+  "observedAtSingapore": "2026-10-26T01:57:14.616471+08:00",
+  "source": "https://leetcode.com/api/problems/all/",
+  "requestCount": 1,
+  "httpStatus": 200,
+  "selectedResponseHeaders": [
+    "date: Sun, 25 Oct 2026 17:57:13 GMT",
+    "content-type: text/html; charset=utf-8",
+    "cf-cache-status: DYNAMIC"
+  ],
+  "rawResponseSha256": "71306d3fe7e0b11bb0b53dfa9c8d98da32c9f1bb5962a1acbdec1c210bcca532",
+  "rawResponseBytes": 2113979,
+  "rawResponseGzip": "official-all-response.json.gz",
+  "frozenCatalogPath": "leetcode/catalog/hard-problems.json",
+  "frozenCatalogSha256": "fb4ac08e84b8825cd380cdac8ccb791f0e53ecf3660e7445b9ac623f43e85fb6",
+  "frozenSnapshotAt": "2026-10-18T08:59:47.124517+00:00",
+  "frozenSourceResponseSha256": "979b8216f2a4c48fcbc9f1a824eeb0a5bdca98d99c0ed6baa4714764a06f8e7a",
+  "previous": {
+    "allReturned": 4086,
+    "allReported": 4086,
+    "hard": 984,
+    "freeHard": 789,
+    "paidHard": 195
+  },
+  "current": {
+    "allReturned": 4095,
+    "allReported": 4095,
+    "hard": 986,
+    "freeHard": 791,
+    "paidHard": 195
+  },
+  "addedToHardSet": [
+    {
+      "id": 4091,
+      "title": "Count Magical Substring Pairs II",
+      "slug": "count-magical-substring-pairs-ii",
+      "difficultyLevel": 3,
+      "paidOnly": false,
+      "hidden": false
+    },
+    {
+      "id": 4095,
+      "title": "Count Frequency Staircase Subarrays II",
+      "slug": "count-frequency-staircase-subarrays-ii",
+      "difficultyLevel": 3,
+      "paidOnly": false,
+      "hidden": false
+    }
+  ],
+  "removedFromHardSet": [],
+  "changedFrozenHardRecords": [],
+  "scope": "Compare current all endpoint to retained frozen Hard records; the prior full all response is not present in this checked-out catalog. Added-to-Hard records cannot be distinguished here as new problems versus prior non-Hard promotions. No category endpoint or per-problem statement crawl performed."
+}
