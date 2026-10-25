@@ -1180,3 +1180,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Sliding sum over a DP row | `leetcode/629/#step2` | Add the entering count and remove the expired count while retaining separate previous and current rows. |
 
 <!-- /leetcode-629-campaign -->
+
+
+<!-- leetcode-632-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Minimum-frontier range scan | `leetcode/632/#step2` | Advance the smallest selected row value while maintaining the largest selected value. |
+
+<!-- /leetcode-632-campaign -->
