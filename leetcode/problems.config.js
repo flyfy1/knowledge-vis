@@ -3229,6 +3229,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(M + R) expected time; O(M + R) auxiliary space, M = total route entries, R = route count"
   },
   {
+    "id": 818,
+    "title": {
+      "zh": "赛车",
+      "en": "Race Car"
+    },
+    "desc": {
+      "zh": "用位置与速度的完整状态，逐层寻找最短指令。",
+      "en": "Search complete position–speed states one command layer at a time."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "状态建模",
+        "en": "State modeling"
+      }
+    ],
+    "path": "818/",
+    "leetcodeUrl": "https://leetcode.com/problems/race-car/",
+    "language": "Python",
+    "complexity": "O(2^D) time; O(2^D) space, conservative unit-cost bounds for minimum instruction count D"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",

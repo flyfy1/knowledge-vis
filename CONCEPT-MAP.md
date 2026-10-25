@@ -1595,3 +1595,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Stop-to-route inverted index | `leetcode/815/#step2` | Look up incident routes without building all pairwise intersections. |
 
 <!-- /leetcode-815-campaign -->
+
+
+<!-- leetcode-818-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Race Car state-space BFS | `leetcode/818/#step2` | Full position and signed speed pairs preserve future actions; unit-cost layers prove shortest arrival. |
+
+<!-- /leetcode-818-campaign -->
