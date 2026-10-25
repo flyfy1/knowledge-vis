@@ -1,0 +1,48 @@
+{
+  "status": "pending-request-and-actual-post-import-state-no-dispatch",
+  "source_revision": null,
+  "documents": {},
+  "previous_receipt_sha256": null,
+  "accepted": {
+    "843": null
+  },
+  "requests": {
+    "843": {
+      "path": "specs/reviews/843-review-budget-request-20261026.md"
+    }
+  },
+  "queue_sha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+  "policy": {
+    "scripts/import_leetcode_lane.py": "8642a573383d052ce6e227bd8c2374f9c50f2fc1e8e9b312a6186607015344e0",
+    "scripts/leetcode_campaign.py": "a1258a0e7eba60e1d813bf0f9ede57a71f92cd504f6afb7bd0553d68d41c65ed",
+    "scripts/leetcode_publish.py": "7292c88e2ae035667a1bc723b076fb3d8d3d8562dc8428f3f66f74dc60f764d8",
+    "scripts/leetcode_registry.py": "a23b9b9e4feec966969c0b4c60f16e19cc2616ea0e1b2e587d15605e739349d6",
+    "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+    "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+    "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+    "scripts/campaign-prompts/author.md": "5f7feaa56f9f8f1f3f434e1fe4576cc2a10da21594c9aef829cab86e69dae06b",
+    "scripts/campaign-prompts/review.md": "129537defd8df8fda1c84c3bea80b62c8c717275f558128d8b62b02319838a1b",
+    "scripts/campaign-prompts/fix.md": "176376ca977b1b8e0f4444612efdf91b8a7d49e1f1c614e8985544828bb774d4",
+    "specs/reviews/workflow-copy-repair-requests-20261026/780.md": "79235a599df5139b2e8dc1c2a51fe673fd7b28bf46b2d3a3bbec34a1b22e280b",
+    "specs/reviews/workflow-copy-repair-requests-20261026/793.md": "ff52e23452b5099a60fc80e9a9fe1bed1e0840d4408c66793509335edb7536e5",
+    "specs/reviews/workflow-copy-repair-requests-20261026/798.md": "da3da5361f94e48e2a91ddb39e537146f2aff9939b7220b17a368f884d151318",
+    "specs/reviews/workflow-copy-repair-requests-20261026/801.md": "8bf72192c53809c60cf6bedf2379af8c185ce775346f4de59d0eee598af4b83a",
+    "specs/reviews/workflow-copy-repair-requests-20261026/815.md": "5c9697057a2218726823f12e58494fedde6221d5d19d87da9a1a8a25cd76977a",
+    "specs/reviews/workflow-copy-repair-requests-20261026/903.md": "5227f5ede9949c1bc677c06fa8c6a2a940dabf4e43b41829ef8be64750ad0476",
+    "specs/reviews/workflow-copy-repair-requests-20261026/920.md": "70b97c693528cb26a70d8f1ad8497c9d96812ab551704090f6d24057146e666e",
+    "specs/reviews/workflow-copy-repair-requests-20261026/940.md": "56df85c64f2ae135ce2d8323c052eba978bb50b231d899c840b2a07a0e6a5981",
+    "specs/reviews/workflow-copy-repair-requests-20261026/956.md": "635cfac82ede95dbb081fa8ced9935b28d0234fed4928ea9b5d10bd7d2f7e77f",
+    "specs/reviews/workflow-copy-repair-requests-20261026/README.md": "9c7747a2a299d19d3c3b329fa9d4a423fe2403141e3b4fd6484878bb8ee7584a",
+    "scripts/register_leetcode_lesson.py": "7ba274cd733a36528d98c85fe87b46d5535bc34898567b0c14f36fda37f81310",
+    "scripts/leetcode_static_versions.py": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e"
+  },
+  "launcher_sha256": "94056740463e5f9ec4fe63d0d2c56d1ccbf1ab60556f7952580fe58512127e70",
+  "pending": [
+    "Final843-BUDGET-R1 request/evidence and immutable source commit",
+    "Successful975/980 import-policy-resume receipt with observed raw hash",
+    "Actual accepted843 entry/runs/report/lesson/runtime hashes after prior operation",
+    "Fresh queue/publication/other-lane preflight",
+    "Independent final review and explicit root dispatch"
+  ],
+  "policy_basis": "Required future adopted policy only; not a claim the previous operation has completed"
+}

@@ -1,0 +1,11 @@
+--- structurally-reviewed-disabled/operate.py
++++ final-review/operate.py
+@@ -15,7 +15,7 @@
+ 
+ OWNER='843-budget-repair-20261026-91db47a2'
+ DISPATCH='root-reviewed-843-budget-repair-20261026'
+-PINS_SHA=None  # Final request/evidence and post-import actual runtime pins pending.
++PINS_SHA='1ddd6bf0460798971b109465d8fe8ee95644479fe003fcd5ccd50d7fc18670e4'  # Frozen for final independent review; separate root dispatch required.
+ CAMPAIGN_HELPER_SHA='f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698'
+ REOPEN_HELPER_SHA='a268466fe6101841437c730e0e7448961be4637ee60d9fe4a760c0ea6fca3424'
+ PREVIOUS_OWNER='import975980-overlap-policy-20261026-5e38ab71'

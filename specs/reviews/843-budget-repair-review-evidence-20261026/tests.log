@@ -1,0 +1,14 @@
+test_actual_git_adoption_preserves_lesson_tree_and_reopens_only843 (__main__.Adoption.test_actual_git_adoption_preserves_lesson_tree_and_reopens_only843) ... ok
+test_hook_runtime_mutation_does_not_checkpoint_or_reopen (__main__.Adoption.test_hook_runtime_mutation_does_not_checkpoint_or_reopen) ... ok
+test_disabled_before_input_or_runtime_access (__main__.Guards.test_disabled_before_input_or_runtime_access) ... ok
+test_narrow_payload_rejects_escape_wrong_hash_and_unrelated_policy (__main__.Guards.test_narrow_payload_rejects_escape_wrong_hash_and_unrelated_policy) ... ok
+test_not_accepted_or_exhausted_budget_cannot_reopen (__main__.Guards.test_not_accepted_or_exhausted_budget_cannot_reopen) ... ok
+test_only843_reopens_and_all_prior_history_and_budget_remain (__main__.Guards.test_only843_reopens_and_all_prior_history_and_budget_remain) ... ok
+test_pending_release_or20_rejects_even_before_reopen (__main__.Guards.test_pending_release_or20_rejects_even_before_reopen) ... ok
+test_startup_waits_only_live_exact_snapshot_then843fix (__main__.Guards.test_startup_waits_only_live_exact_snapshot_then843fix) ... ok
+test_wrong_previous_operation_or_policy_refuses (__main__.Guards.test_wrong_previous_operation_or_policy_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.516s
+
+OK

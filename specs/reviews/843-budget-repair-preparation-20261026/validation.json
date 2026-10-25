@@ -1,0 +1,22 @@
+{
+  "status": "frozen_for_final_independent_review_no_dispatch",
+  "runtime_mutation": false,
+  "dispatch_enabled": "Exact pins bound; separate root dispatch required",
+  "tests_passed": 9,
+  "test_command": "python3 -B specs/reviews/843-budget-repair-preparation-20261026/test_operate.py",
+  "structurally_reviewed_disabled_operator_sha256": "958ef5aa858a3ad8f88820a011ef442c1100a4fe2e2dec9af37f3a0455eaf1df",
+  "publication_bound_observed": 18,
+  "sha256": {
+    "operate.py": "149c7da2b4e811161977c23dbfe391020ba36c7c59934d70d0254e025b44c8dc",
+    "pins.json": "1ddd6bf0460798971b109465d8fe8ee95644479fe003fcd5ccd50d7fc18670e4",
+    "pending-pins.json": "8656898ff3672c59eba5afbc18c40d004f22f421bc76822704e3d1aa2810fb61",
+    "test_operate.py": "32967b7b6f3d5a0aa89c305afccf06b9bd8c5ee7cf480a3badb115a23fe906d9",
+    "tests.log": "217c62e955e8259150b58f27d3b3dd80404cd09a7f7b2a2e633fd58636664fb4",
+    "README.md": "e39571ae1d04679fdb7a7400d178b68085d1be5d66cfe3a312045e7d54dcdadd",
+    "captured-runtime-pins.json": "1c9a25d2a1bcf4330d54784d8d7d2d18b4ccd0bfd9c2d23825e7fc2f2dec2506",
+    "runtime-readonly-observation.json": "d1d0b636ef73955db926ce8fec455714f47ca8d33e6edeae561301d7810d0c20",
+    "payload-validation.json": "22bd63a071a1155e246638d10103e8c80c5af0a081db252cba905a836786a270",
+    "disabled-to-final.diff": "1ec8c6da6554df73f193ebe760b24053037fd541d3110df43bbc89975cabf82c",
+    "capture-readonly.py": "245775f83299979b38de9aa660685312f5211a94b530fefe80189dcbc60613ff"
+  }
+}
