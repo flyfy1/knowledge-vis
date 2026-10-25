@@ -1,0 +1,36 @@
+{
+  "observed_at": "2026-10-25T17:30:44.045742+00:00",
+  "mode": "read-only preparation; not dispatch authorization",
+  "central_head": "c7a325e5a48d2da000609ea93d23f8d255d03bdd",
+  "central_status": "running",
+  "central_current": {
+    "problem_id": "818",
+    "stage": "review",
+    "started_at": "2026-10-25T17:30:43.942712+00:00",
+    "run_id": "818-review-23290c1abcd2"
+  },
+  "central_expected_head": "c7a325e5a48d2da000609ea93d23f8d255d03bdd",
+  "stop_exists": false,
+  "targets": [
+    {
+      "id": 960,
+      "problem_record": null,
+      "run_directories": [],
+      "reservation_files": [],
+      "tracked_lesson_paths": [],
+      "lesson_directory_exists": false,
+      "lane_paths": [],
+      "queue_index": 197
+    },
+    {
+      "id": 964,
+      "problem_record": null,
+      "run_directories": [],
+      "reservation_files": [],
+      "tracked_lesson_paths": [],
+      "lesson_directory_exists": false,
+      "lane_paths": [],
+      "queue_index": 198
+    }
+  ]
+}
