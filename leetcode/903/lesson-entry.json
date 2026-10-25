@@ -1,0 +1,38 @@
+{
+  "id": 903,
+  "title": {
+    "zh": "DI 序列的有效排列",
+    "en": "Valid Permutations for DI Sequence"
+  },
+  "desc": {
+    "zh": "从末尾排名推导计数状态，逐格观察前缀与后缀求和。",
+    "en": "Derive counts by final rank and inspect prefix and suffix contributions."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "动态规划",
+      "en": "Dynamic programming"
+    },
+    {
+      "zh": "前缀和",
+      "en": "Prefix sums"
+    }
+  ],
+  "path": "903/",
+  "leetcodeUrl": "https://leetcode.com/problems/valid-permutations-for-di-sequence/",
+  "language": "Python",
+  "complexity": "O(n²) time; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "Rank-based counting",
+      "step": 1,
+      "description": "Standardize prefixes and count by final rank."
+    },
+    {
+      "name": "Prefix and suffix DP sums",
+      "step": 4,
+      "description": "Accumulate a row in linear time."
+    }
+  ]
+}
