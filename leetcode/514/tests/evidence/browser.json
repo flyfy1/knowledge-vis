@@ -1,0 +1,330 @@
+{
+  "presets": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "frames": 3,
+      "status": "forward/back/replay/reset/end/range passed"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "frames": 3,
+      "status": "forward/back/replay/reset/end/range passed"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "frames": 3,
+      "status": "forward/back/replay/reset/end/range passed"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "frames": 8,
+      "status": "forward/back/replay/reset/end/range passed"
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "frames": 4,
+      "status": "forward/back/replay/reset/end/range passed"
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "frames": 3,
+      "status": "forward/back/replay/reset/end/range passed"
+    },
+    {
+      "lang": "en",
+      "preset": 6,
+      "frames": 2,
+      "status": "forward/back/replay/reset/end/range passed"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "frames": 3,
+      "status": "forward/back/replay/reset/end/range passed"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "frames": 3,
+      "status": "forward/back/replay/reset/end/range passed"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "frames": 3,
+      "status": "forward/back/replay/reset/end/range passed"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "frames": 8,
+      "status": "forward/back/replay/reset/end/range passed"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "frames": 4,
+      "status": "forward/back/replay/reset/end/range passed"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "frames": 3,
+      "status": "forward/back/replay/reset/end/range passed"
+    },
+    {
+      "lang": "zh",
+      "preset": 6,
+      "frames": 2,
+      "status": "forward/back/replay/reset/end/range passed"
+    }
+  ],
+  "states": [
+    {
+      "lang": "en",
+      "input": "abxxcbx / bc",
+      "progress": "Cheapest cumulative cost in this layer: 5 steps; key is complete; this is the final answer",
+      "candidates": "All candidates for the just-completed layerSource pTarget qOld costRotationsPressCandidate totalComparisonb (1)c (4)2316A cheaper route reaches this targetb (5)c (4)3115Minimum for this target (ties allowed)"
+    },
+    {
+      "lang": "en",
+      "choice": 0,
+      "feedback": "This choice misses necessary steps or discards a better endpoint. The cumulative costs at b(1) and b(6) are 2 and 4; retain both. At c(5), coming from 1 costs 2+4+1=7; coming from 6 costs 4+1+1=6. Thus 6 is optimal. 7 keeps only the nearest b; 4 counts rotations but omits two presses. Merge routes at the same endpoint, but do not discard different endpoints just because one currently costs more."
+    },
+    {
+      "lang": "en",
+      "choice": 1,
+      "feedback": "This choice misses necessary steps or discards a better endpoint. The cumulative costs at b(1) and b(6) are 2 and 4; retain both. At c(5), coming from 1 costs 2+4+1=7; coming from 6 costs 4+1+1=6. Thus 6 is optimal. 7 keeps only the nearest b; 4 counts rotations but omits two presses. Merge routes at the same endpoint, but do not discard different endpoints just because one currently costs more."
+    },
+    {
+      "lang": "en",
+      "choice": 2,
+      "feedback": "Correct. The cumulative costs at b(1) and b(6) are 2 and 4; retain both. At c(5), coming from 1 costs 2+4+1=7; coming from 6 costs 4+1+1=6. Thus 6 is optimal. 7 keeps only the nearest b; 4 counts rotations but omits two presses. Merge routes at the same endpoint, but do not discard different endpoints just because one currently costs more."
+    },
+    {
+      "lang": "en",
+      "copyFallback": "Copy manually from the selected text box."
+    },
+    {
+      "lang": "zh",
+      "input": "abxxcbx / bc",
+      "progress": "当前层最小累计成本：5 步；key 已拼完，这是最终答案",
+      "candidates": "刚完成这一层的所有候选来源 p终点 q旧成本转动格数按钮候选总成本比较结果b (1)c (4)2316同终点有更便宜路线b (5)c (4)3115达到该终点最小值（可并列）"
+    },
+    {
+      "lang": "zh",
+      "choice": 0,
+      "feedback": "这个选择漏算了必要步骤，或丢掉了更好的停点。 到 b(1) 的累计成本 2，到 b(6) 的成本 4，两个都要留。到 c(5)：从 1 来要 2+4+1=7；从 6 来要 4+1+1=6，所以答案 6。7 是只留最近 b 的结果；4 只算转动，漏了两次按钮。同一停点可合并，不同停点不能凭当前成本删掉。"
+    },
+    {
+      "lang": "zh",
+      "choice": 1,
+      "feedback": "这个选择漏算了必要步骤，或丢掉了更好的停点。 到 b(1) 的累计成本 2，到 b(6) 的成本 4，两个都要留。到 c(5)：从 1 来要 2+4+1=7；从 6 来要 4+1+1=6，所以答案 6。7 是只留最近 b 的结果；4 只算转动，漏了两次按钮。同一停点可合并，不同停点不能凭当前成本删掉。"
+    },
+    {
+      "lang": "zh",
+      "choice": 2,
+      "feedback": "正确。 到 b(1) 的累计成本 2，到 b(6) 的成本 4，两个都要留。到 c(5)：从 1 来要 2+4+1=7；从 6 来要 4+1+1=6，所以答案 6。7 是只留最近 b 的结果；4 只算转动，漏了两次按钮。同一停点可合并，不同停点不能凭当前成本删掉。"
+    },
+    {
+      "lang": "zh",
+      "copyFallback": "请从已选中的文本框手动复制。"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "scroll": 320,
+      "table": 278,
+      "stage": 296
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "scroll": 320,
+      "table": 236,
+      "stage": 272
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "scroll": 390,
+      "table": 348,
+      "stage": 366
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "scroll": 390,
+      "table": 306,
+      "stage": 342
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "scroll": 736,
+      "table": 646,
+      "stage": 688
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "scroll": 736,
+      "table": 556,
+      "stage": 640
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "scroll": 1440,
+      "table": 910,
+      "stage": 952
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "scroll": 1440,
+      "table": 1260,
+      "stage": 1344
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "scroll": 320,
+      "table": 278,
+      "stage": 296
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "scroll": 320,
+      "table": 236,
+      "stage": 272
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "scroll": 390,
+      "table": 348,
+      "stage": 366
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "scroll": 390,
+      "table": 306,
+      "stage": 342
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "scroll": 736,
+      "table": 646,
+      "stage": 688
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "scroll": 736,
+      "table": 556,
+      "stage": 640
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "scroll": 1440,
+      "table": 910,
+      "stage": 952
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "scroll": 1440,
+      "table": 1260,
+      "stage": 1344
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "color": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".btn:disabled",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".btn.primary",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".ring-cell.live",
+      "color": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "selector": "th",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    }
+  ],
+  "focus": {
+    "style": "none",
+    "width": "3px",
+    "color": "rgb(232, 237, 244)"
+  },
+  "errors": [],
+  "assets": "local only",
+  "source": "display/copy/fallback selection/download exact",
+  "storage": "denied storage and file:// offline passed",
+  "cssBytes": 11321
+}
