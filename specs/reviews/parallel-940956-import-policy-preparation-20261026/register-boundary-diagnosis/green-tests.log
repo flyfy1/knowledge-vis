@@ -1,0 +1,11 @@
+test_incoming_lanes_count_toward_19_to_20_projection (__main__.RegisterBoundary.test_incoming_lanes_count_toward_19_to_20_projection) ... ok
+test_predicts_real_next_agent_after_registration (__main__.RegisterBoundary.test_predicts_real_next_agent_after_registration) ... ok
+test_real_registration_head_and_unchanged_review_proof (__main__.RegisterBoundary.test_real_registration_head_and_unchanged_review_proof) ... ok
+test_registration_19_to_20_is_rejected_before_resume (__main__.RegisterBoundary.test_registration_19_to_20_is_rejected_before_resume) ... ok
+test_review_boundary_refreshes_candidate_without_rewriting_prior_reviews (__main__.RegisterBoundary.test_review_boundary_refreshes_candidate_without_rewriting_prior_reviews) ... ok
+test_unrelated_post_registration_head_is_rejected (__main__.RegisterBoundary.test_unrelated_post_registration_head_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.592s
+
+OK

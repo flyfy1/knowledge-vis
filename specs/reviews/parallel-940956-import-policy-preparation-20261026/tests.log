@@ -1,0 +1,16 @@
+test_atomic_save_preserves_metadata_and_exclusive_receipt (__main__.Guards.test_atomic_save_preserves_metadata_and_exclusive_receipt) ... ok
+test_expected_head_only_preserves_even_timestamp (__main__.Guards.test_expected_head_only_preserves_even_timestamp) ... ok
+test_fresh_agent_requires_new_identity_events_and_native_descendant (__main__.Guards.test_fresh_agent_requires_new_identity_events_and_native_descendant) ... ok
+test_import_preserves_ordinary_metadata_and_prior_history (__main__.Guards.test_import_preserves_ordinary_metadata_and_prior_history) ... ok
+test_payload_accepts_reviewed_exact_bytes_rejects_wrong_old_new_or_extra_path (__main__.Guards.test_payload_accepts_reviewed_exact_bytes_rejects_wrong_old_new_or_extra_path) ... ok
+test_tree_requires_only_four_paths_and_new_reports (__main__.Guards.test_tree_requires_only_four_paths_and_new_reports) ... ok
+test_wrong_dispatch_rejected_before_runtime_or_remote_access (__main__.Guards.test_wrong_dispatch_rejected_before_runtime_or_remote_access) ... ok
+test_changed_stop_fails_before_policy_write (__main__.PolicyIntegration.test_changed_stop_fails_before_policy_write) ... ok
+test_dirty_checkout_fails_before_policy_copy (__main__.PolicyIntegration.test_dirty_checkout_fails_before_policy_copy) ... ok
+test_hook_unexpected_tracked_change_fails_before_checkpoint (__main__.PolicyIntegration.test_hook_unexpected_tracked_change_fails_before_checkpoint) ... ok
+test_real_git_policy_adoption_changes_exact_allowlist_and_head_only (__main__.PolicyIntegration.test_real_git_policy_adoption_changes_exact_allowlist_and_head_only) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.257s
+
+OK

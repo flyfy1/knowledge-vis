@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-25T17:10:24.347125+00:00",
+  "test_exit_code": 0,
+  "operator_sha256": "5cb088c8291af1b7efd8d84838b50d32c1f92de7c43f3007a184da057776f35d",
+  "tests_sha256": "3583b4272b797772c51a01bef40565d89d7dd196eca0c75970068b91d236dfd9",
+  "remote_mutations": false,
+  "initial_fixture_issue": "First integration-test attempt used the macOS /var temporary path alias; the importer correctly rejected a non-canonical checkout root. Fixture now resolves /private/var; no operator guard was relaxed.",
+  "source": "3116c71722cf4db1e2c12a7453902a6fd748b314",
+  "scope": "Four fixed paths; no remote dispatch",
+  "registration_tests_sha256": "269ddced49b007af7fc1b66546064ff21ebde2919601c9d4e70cf2661285c2e9",
+  "base_tests": 11,
+  "register_boundary_tests": 6,
+  "registered_resume_guard": "real runner registration chain and metadata proven; projected pending includes deterministic registration prefix"
+}

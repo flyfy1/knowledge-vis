@@ -1,0 +1,28 @@
+test_predicts_real_next_agent_after_registration (__main__.RegisterBoundary.test_predicts_real_next_agent_after_registration) ... FAIL
+test_registration_19_to_20_is_rejected_before_resume (__main__.RegisterBoundary.test_registration_19_to_20_is_rejected_before_resume) ... FAIL
+
+======================================================================
+FAIL: test_predicts_real_next_agent_after_registration (__main__.RegisterBoundary.test_predicts_real_next_agent_after_registration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/parallel-940956-import-policy-preparation-20261026/test_register_boundary.py", line 45, in test_predicts_real_next_agent_after_registration
+    self.assertEqual(plan['next_problem_id'],actual)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '4' != '10'
+- 4
++ 10
+
+
+======================================================================
+FAIL: test_registration_19_to_20_is_rejected_before_resume (__main__.RegisterBoundary.test_registration_19_to_20_is_rejected_before_resume)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/parallel-940956-import-policy-preparation-20261026/test_register_boundary.py", line 51, in test_registration_19_to_20_is_rejected_before_resume
+    with self.assertRaisesRegex(RuntimeError,'publication threshold'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.282s
+
+FAILED (failures=2)

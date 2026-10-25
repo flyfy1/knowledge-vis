@@ -1,0 +1,71 @@
+test_author_scope_excludes_shared_and_review_files (test_leetcode_campaign.CampaignTests.test_author_scope_excludes_shared_and_review_files) ... ok
+test_checkout_lock_blocks_different_state_directories (test_leetcode_campaign.CampaignTests.test_checkout_lock_blocks_different_state_directories) ... ok
+test_complete_new_lesson_rejects_metadata_before_reviewer_launch (test_leetcode_campaign.CampaignTests.test_complete_new_lesson_rejects_metadata_before_reviewer_launch) ... ok
+test_complete_valid_new_lesson_dispatches_review (test_leetcode_campaign.CampaignTests.test_complete_valid_new_lesson_dispatches_review) ... ok
+test_content_blocked_continues (test_leetcode_campaign.CampaignTests.test_content_blocked_continues) ... ok
+test_exception_files_and_parity_are_checked_before_review (test_leetcode_campaign.CampaignTests.test_exception_files_and_parity_are_checked_before_review) ... ok
+test_existing_lesson_is_reviewed_first (test_leetcode_campaign.CampaignTests.test_existing_lesson_is_reviewed_first) ... ok
+test_failed_review_is_not_skipped_on_resume (test_leetcode_campaign.CampaignTests.test_failed_review_is_not_skipped_on_resume) ... ok
+test_invalid_metadata_fails_before_review_or_acceptance (test_leetcode_campaign.CampaignTests.test_invalid_metadata_fails_before_review_or_acceptance) ... ok
+test_javascript_missing_comparison_stops_before_review (test_leetcode_campaign.CampaignTests.test_javascript_missing_comparison_stops_before_review) ... ok
+test_javascript_owner_exception_requires_native_solution_even_with_typescript (test_leetcode_campaign.CampaignTests.test_javascript_owner_exception_requires_native_solution_even_with_typescript) ... ok
+test_javascript_python_only_candidate_is_authored_again (test_leetcode_campaign.CampaignTests.test_javascript_python_only_candidate_is_authored_again) ... ok
+test_missing_report_stops (test_leetcode_campaign.CampaignTests.test_missing_report_stops) ... ok
+test_nonzero_stops_queue_and_clean_resume_retries_problem (test_leetcode_campaign.CampaignTests.test_nonzero_stops_queue_and_clean_resume_retries_problem) ... ok
+test_prior_evidence_cannot_be_overwritten (test_leetcode_campaign.CampaignTests.test_prior_evidence_cannot_be_overwritten) ... ok
+test_python_required_files_unchanged_and_javascript_policy_scoped (test_leetcode_campaign.CampaignTests.test_python_required_files_unchanged_and_javascript_policy_scoped) ... ok
+test_queue_identity_and_external_commit_rejected (test_leetcode_campaign.CampaignTests.test_queue_identity_and_external_commit_rejected) ... ok
+test_registered_historical_lesson_dispatches_without_metadata (test_leetcode_campaign.CampaignTests.test_registered_historical_lesson_dispatches_without_metadata) ... ok
+test_review_mutation_and_missing_report_stop (test_leetcode_campaign.CampaignTests.test_review_mutation_and_missing_report_stop) ... ok
+test_round_bound_continues_but_never_accepts (test_leetcode_campaign.CampaignTests.test_round_bound_continues_but_never_accepts) ... ok
+test_run_count_keeps_full_queue_and_resumes_remaining (test_leetcode_campaign.CampaignTests.test_run_count_keeps_full_queue_and_resumes_remaining) ... ok
+test_saved_new_review_rejects_metadata_preserving_provenance (test_leetcode_campaign.CampaignTests.test_saved_new_review_rejects_metadata_preserving_provenance) ... FAIL
+test_score_gating_and_strict_schema (test_leetcode_campaign.CampaignTests.test_score_gating_and_strict_schema) ... ok
+test_selection_preserves_paid_and_explicit_order (test_leetcode_campaign.CampaignTests.test_selection_preserves_paid_and_explicit_order) ... ok
+test_stop_file_and_dry_run_start_no_agents (test_leetcode_campaign.CampaignTests.test_stop_file_and_dry_run_start_no_agents) ... ok
+test_timeout_terminates_descendants_and_stops_queue (test_leetcode_campaign.CampaignTests.test_timeout_terminates_descendants_and_stops_queue) ... ok
+test_unregistered_partial_lesson_is_authored_before_review (test_leetcode_campaign.CampaignTests.test_unregistered_partial_lesson_is_authored_before_review) ... ok
+test_predicts_real_next_agent_after_registration (__main__.RegisterBoundary.test_predicts_real_next_agent_after_registration) ... FAIL
+test_registration_19_to_20_is_rejected_before_resume (__main__.RegisterBoundary.test_registration_19_to_20_is_rejected_before_resume) ... FAIL
+
+======================================================================
+FAIL: test_saved_new_review_rejects_metadata_preserving_provenance (test_leetcode_campaign.CampaignTests.test_saved_new_review_rejects_metadata_preserving_provenance)
+----------------------------------------------------------------------
+leetcode_campaign.CampaignError: State belongs to another checkout or queue; use the original selection
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/songyy/Documents/knowledge-vis/scripts/test_leetcode_campaign.py", line 279, in test_saved_new_review_rejects_metadata_preserving_provenance
+    self.assert_invalid_review_entry_rejected(resumed=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/songyy/Documents/knowledge-vis/scripts/test_leetcode_campaign.py", line 254, in assert_invalid_review_entry_rejected
+    with self.assertRaisesRegex(campaign.CampaignError, 'complexity.*nonempty string'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "complexity.*nonempty string" does not match "State belongs to another checkout or queue; use the original selection"
+
+======================================================================
+FAIL: test_predicts_real_next_agent_after_registration (__main__.RegisterBoundary.test_predicts_real_next_agent_after_registration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/parallel-940956-import-policy-preparation-20261026/test_register_boundary.py", line 45, in test_predicts_real_next_agent_after_registration
+    self.assertEqual(plan['next_problem_id'],actual)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '4' != '10'
+- 4
++ 10
+
+
+======================================================================
+FAIL: test_registration_19_to_20_is_rejected_before_resume (__main__.RegisterBoundary.test_registration_19_to_20_is_rejected_before_resume)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/parallel-940956-import-policy-preparation-20261026/test_register_boundary.py", line 51, in test_registration_19_to_20_is_rejected_before_resume
+    with self.assertRaisesRegex(RuntimeError,'publication threshold'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+----------------------------------------------------------------------
+Ran 29 tests in 21.341s
+
+FAILED (failures=3)
