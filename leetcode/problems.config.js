@@ -4017,6 +4017,28 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n*n! + k²) time; O(n + k²) auxiliary space, k distinct values"
   },
   {
+    "id": 1000,
+    "title": {
+      "zh": "合并石头的最低成本",
+      "en": "Minimum Cost to Merge Stones"
+    },
+    "desc": {
+      "zh": "从每次付费到区间与堆数：推导合法合并的动态规划。",
+      "en": "From merge payments to interval states with an explicit pile count."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "区间动态规划",
+        "en": "Interval DP"
+      }
+    ],
+    "path": "1000/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimum-cost-to-merge-stones/",
+    "language": "Python",
+    "complexity": "O(n³k) time; O(n²k) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
