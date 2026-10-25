@@ -1,0 +1,20 @@
+{
+  "kind": "author non-mutating metadata preflight",
+  "at": "2026-10-25T04:12:54.387553+00:00",
+  "cwd": "/home/songyy/projects/leetcode-hard-lane-689-20261025",
+  "command": "python3 -B scripts/register_leetcode_lesson.py 689 --validate-only",
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "",
+  "candidate": {
+    "index.html": "55ac5060e6a9b39081ea56118f4e1a5f01d5ef4aaf587311d11a66206e98ca4c",
+    "app.js": "ca36ff866d44215950f4e87fc2cf567910dd455a5ef0d20d12492cf6848aa322",
+    "copy.js": "655eca47b53d31513cf8f2fb804ca2cf59e8a5fe8be8e7c18b525c88882cdce9",
+    "core.js": "e4f68a2b1897e40d9c32aa4a1d70900f50ddde25b24ec5c81e5e8f52b66d3306",
+    "style.css": "5cacfbac4a526fd177e18e0944adcd7c212ae4604dac64e59866a5851e776923",
+    "solution.py": "cd3cc6bf00689e98a16289efe5a76b61f75423f588ef0c5d7912a0ed3639a8ac",
+    "python-code.js": "25aa87c2012f20a35ba8c3799de595c29f0733d14028b858b186b7b390bd4445",
+    "lesson-entry.json": "47389696d8f42eb84027965056129fc50d4728945057f91c01a7ebf666fd6776",
+    "BRIEF.md": "ededc52feeadc46cbe1c59a1abd8fb3440d84e60528f461c126e35f349bd78ee"
+  }
+}
