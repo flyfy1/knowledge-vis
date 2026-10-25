@@ -1,0 +1,173 @@
+{
+  "owner": "campaign-runner-import940956-policy-20261026-2fb1c8d0",
+  "status": "completed-resumed",
+  "source": "3116c71722cf4db1e2c12a7453902a6fd748b314",
+  "created_at": "2026-10-25T17:15:06.602066+00:00",
+  "lanes": [
+    {
+      "id": "940",
+      "lane_head": "1f4226439bfd723e37bbba2f573d961cc200bfb5",
+      "candidate": "4d65eab80efc4cff1f122918d021f0c9e308e686",
+      "score": 96.25,
+      "required_open": [],
+      "run_ids": [
+        "940-author-cc4876758b6c",
+        "940-review-597cb77ec7f8"
+      ]
+    },
+    {
+      "id": "956",
+      "lane_head": "9e1fe1d5c3bcc7d310eb3fa13a115a18787da87e",
+      "candidate": "61c1660d36c3e2b77aa2249c0daeeb60133cb0ae",
+      "score": 96.25,
+      "required_open": [],
+      "run_ids": [
+        "956-author-fb7c12e20c39",
+        "956-review-164bec576eae"
+      ]
+    }
+  ],
+  "pre_stop_resume_plan": {
+    "next_problem_id": "815",
+    "registration_ids": [],
+    "projected_pending": 8
+  },
+  "stop": {
+    "owner": "campaign-runner-import940956-policy-20261026-2fb1c8d0",
+    "created_at": "2026-10-25T17:15:12.796028+00:00",
+    "reason": "Finish current stage; import accepted 940/956 under frozen policy, adopt reviewed four-file guidance, push and resume every20/max6.",
+    "lane_ids": [
+      "940",
+      "956"
+    ]
+  },
+  "central_before_stop": {
+    "head": "7a7ff5b2128f7548e85e9a81357e098e5ddd2756",
+    "current": {
+      "problem_id": "815",
+      "stage": "review",
+      "started_at": "2026-10-25T17:13:20.334895+00:00",
+      "run_id": "815-review-03789d57843e"
+    }
+  },
+  "boundary_resume_plan": {
+    "next_problem_id": "818",
+    "registration_ids": [
+      "815"
+    ],
+    "projected_pending": 9
+  },
+  "boundary_head": "500fcb1c4b1860c0ebf7ca606a2516679982c342",
+  "imports": [
+    {
+      "version": 1,
+      "status": "completed",
+      "problem_id": "940",
+      "central_before": "500fcb1c4b1860c0ebf7ca606a2516679982c342",
+      "lane_head": "1f4226439bfd723e37bbba2f573d961cc200bfb5",
+      "lane_repo": "/home/songyy/projects/leetcode-hard-lane-940-20261026",
+      "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-940-20261026",
+      "candidate": "4d65eab80efc4cff1f122918d021f0c9e308e686",
+      "run_ids": [
+        "940-author-cc4876758b6c",
+        "940-review-597cb77ec7f8"
+      ],
+      "started_at": "2026-10-25T17:20:10.804535+00:00",
+      "updated_at": "2026-10-25T17:20:12.568038+00:00",
+      "merged_head": "eb9a97947c3417d07d777e1dfb691cd3693bd620"
+    },
+    {
+      "version": 1,
+      "status": "completed",
+      "problem_id": "956",
+      "central_before": "eb9a97947c3417d07d777e1dfb691cd3693bd620",
+      "lane_head": "9e1fe1d5c3bcc7d310eb3fa13a115a18787da87e",
+      "lane_repo": "/home/songyy/projects/leetcode-hard-lane-956-20261026",
+      "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-956-20261026",
+      "candidate": "61c1660d36c3e2b77aa2249c0daeeb60133cb0ae",
+      "run_ids": [
+        "956-author-fb7c12e20c39",
+        "956-review-164bec576eae"
+      ],
+      "started_at": "2026-10-25T17:21:28.434609+00:00",
+      "updated_at": "2026-10-25T17:21:30.357272+00:00",
+      "merged_head": "d3f5adecc75c7d481924b87975ea20d1499c13bf"
+    }
+  ],
+  "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b",
+  "post_import_resume_plan": {
+    "next_problem_id": "818",
+    "registration_ids": [
+      "815"
+    ],
+    "projected_pending": 9
+  },
+  "prior_problems_preserved": true,
+  "prior_runs_preserved": true,
+  "queue_preserved": true,
+  "policy_before": {
+    "head": "d3f5adecc75c7d481924b87975ea20d1499c13bf",
+    "progress_sha256": "317a9b5f04300f49a7cfc7a7fadf9fdb90a7ac9852b2e644b4cf13d0a9374b9c",
+    "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b"
+  },
+  "policy_after": {
+    "head": "38ded12cc4335f3b7366981500d080dfbf8a75f6",
+    "progress_sha256": "ad8aca2027d75948e8b955aa7d0a9beacb24d0e0da7e312341ef4e1ef68f6edc",
+    "only_expected_head_changed": true,
+    "ledger_preserved": true,
+    "changed_paths": [
+      "specs/leetcode-explainers.md",
+      "scripts/campaign-prompts/author.md",
+      "specs/reviews/leetcode-baseline-syntax-spec-review-20261026.md",
+      "specs/reviews/leetcode-workflow-copy-spec-review-20261026.md"
+    ]
+  },
+  "final_head": "38ded12cc4335f3b7366981500d080dfbf8a75f6",
+  "resume_plan": {
+    "next_problem_id": "818",
+    "registration_ids": [
+      "815"
+    ],
+    "projected_pending": 9
+  },
+  "launch": {
+    "pid": 1391706,
+    "queue_count": 984,
+    "continuous": true,
+    "state": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress.json"
+  },
+  "ordinary_registration_proof": {
+    "registration_commits": [
+      {
+        "problem_id": "815",
+        "head": "c274dca824d7f3b4347ff66712d7dbfb965757ce"
+      }
+    ],
+    "agent_candidate": "c274dca824d7f3b4347ff66712d7dbfb965757ce",
+    "prior_reviews_and_runs_preserved": true
+  },
+  "completed_at": "2026-10-25T17:21:47.756620+00:00",
+  "fresh_resume": {
+    "current": {
+      "problem_id": "818",
+      "stage": "author",
+      "started_at": "2026-10-25T17:21:46.092275+00:00",
+      "run_id": "818-author-a80a467fbe94"
+    },
+    "session_id": "01a17415-2a3b-7c82-acdd-a5a3dee2441b",
+    "native_codex_pids": [
+      1392186
+    ],
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a17415-2a3b-7c82-acdd-a5a3dee2441b"
+      },
+      {
+        "type": "turn.started"
+      }
+    ]
+  },
+  "stop_removed": true,
+  "release_ledger_preserved": true
+}

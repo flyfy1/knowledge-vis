@@ -1,0 +1,53 @@
+{
+  "owner": "campaign-runner-import940956-policy-20261026-2fb1c8d0",
+  "status": "waiting-for-boundary",
+  "source": "3116c71722cf4db1e2c12a7453902a6fd748b314",
+  "created_at": "2026-10-25T17:15:06.602066+00:00",
+  "lanes": [
+    {
+      "id": "940",
+      "lane_head": "1f4226439bfd723e37bbba2f573d961cc200bfb5",
+      "candidate": "4d65eab80efc4cff1f122918d021f0c9e308e686",
+      "score": 96.25,
+      "required_open": [],
+      "run_ids": [
+        "940-author-cc4876758b6c",
+        "940-review-597cb77ec7f8"
+      ]
+    },
+    {
+      "id": "956",
+      "lane_head": "9e1fe1d5c3bcc7d310eb3fa13a115a18787da87e",
+      "candidate": "61c1660d36c3e2b77aa2249c0daeeb60133cb0ae",
+      "score": 96.25,
+      "required_open": [],
+      "run_ids": [
+        "956-author-fb7c12e20c39",
+        "956-review-164bec576eae"
+      ]
+    }
+  ],
+  "pre_stop_resume_plan": {
+    "next_problem_id": "815",
+    "registration_ids": [],
+    "projected_pending": 8
+  },
+  "stop": {
+    "owner": "campaign-runner-import940956-policy-20261026-2fb1c8d0",
+    "created_at": "2026-10-25T17:15:12.796028+00:00",
+    "reason": "Finish current stage; import accepted 940/956 under frozen policy, adopt reviewed four-file guidance, push and resume every20/max6.",
+    "lane_ids": [
+      "940",
+      "956"
+    ]
+  },
+  "central_before_stop": {
+    "head": "7a7ff5b2128f7548e85e9a81357e098e5ddd2756",
+    "current": {
+      "problem_id": "815",
+      "stage": "review",
+      "started_at": "2026-10-25T17:13:20.334895+00:00",
+      "run_id": "815-review-03789d57843e"
+    }
+  }
+}

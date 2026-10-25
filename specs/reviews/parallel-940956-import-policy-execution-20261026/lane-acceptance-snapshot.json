@@ -1,0 +1,205 @@
+{
+  "observed_at": "2026-10-25T17:18:36.258334+00:00",
+  "lanes": {
+    "940": {
+      "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-940-20261026",
+      "status": "completed",
+      "current": null,
+      "head": "1f4226439bfd723e37bbba2f573d961cc200bfb5",
+      "entry": {
+        "status": "accepted_local",
+        "rounds": 1,
+        "new": true,
+        "phase": "done",
+        "reviews": [
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              4,
+              4,
+              4,
+              3,
+              4
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/940-review-1-e4da4b0e.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source inspection.",
+              "Independent canonical Python checks: baa \u2192 5, 3,279 short inputs, length-2000 boundaries and invariants.",
+              "Bilingual controls, rewind/reset, prediction changes, keyboard, narrow layouts and native 200% zoom passed; screenshots inspected.",
+              "Exact displayed, mirrored, copied, fallback-copied and downloaded Python parity passed.",
+              "Non-mutating metadata preflight passed."
+            ],
+            "detail": "Accepted at 96.25/100 for the specified revision. One optional advisory concerns unexplained baseline bit-mask syntax. No publication or learner-comprehension claim.",
+            "run_id": "940-review-597cb77ec7f8",
+            "candidate": "4d65eab80efc4cff1f122918d021f0c9e308e686",
+            "candidate_sha256": "ebca41a328f158dd83fad97aa9ff8dc48c3081be7ffb0888df7c48754727820a",
+            "weighted_score": 96.25,
+            "round": 1,
+            "commit": "9872485300a7be99046a1d6319c6d4cbafc9f3be"
+          }
+        ],
+        "author_runs": [
+          "940-author-cc4876758b6c"
+        ],
+        "prior_report": "specs/reviews/940-review-1-e4da4b0e.md",
+        "candidate": "4d65eab80efc4cff1f122918d021f0c9e308e686",
+        "registration_commit": "1f4226439bfd723e37bbba2f573d961cc200bfb5",
+        "accepted_at": "2026-10-25T16:52:48.393609+00:00"
+      },
+      "runs": [
+        {
+          "id": "940-author-cc4876758b6c",
+          "problem_id": "940",
+          "role": "author",
+          "started_at": "2026-10-25T16:38:38.208081+00:00",
+          "status": "completed",
+          "candidate": "154c1becf178b798dfbd80acbb79fabdd262ae68",
+          "directory": "/home/songyy/projects/leetcode-hard-lane-state-940-20261026/runs/940-author-cc4876758b6c",
+          "session_ids": [
+            "01a173ed-ae8d-73b0-b2a2-7c6a85aaaa16"
+          ],
+          "finished_at": "2026-10-25T16:47:54.881171+00:00",
+          "result": {
+            "outcome": "ready",
+            "detail": "Implemented bilingual #940 lesson in leetcode/940/. Verified official Python interface; passed 10,083 solution checks, 24,627 trace checks, browser interactions, source parity, mobile/200% zoom, and metadata preflight. Inspected screenshots and froze evidence. Ready for separate independent review; no acceptance or deployment claimed."
+          }
+        },
+        {
+          "id": "940-review-597cb77ec7f8",
+          "problem_id": "940",
+          "role": "review",
+          "started_at": "2026-10-25T16:48:05.497601+00:00",
+          "status": "completed",
+          "candidate": "4d65eab80efc4cff1f122918d021f0c9e308e686",
+          "directory": "/home/songyy/projects/leetcode-hard-lane-state-940-20261026/runs/940-review-597cb77ec7f8",
+          "session_ids": [
+            "01a173f6-5733-73b1-b035-e700a890a815"
+          ],
+          "finished_at": "2026-10-25T16:52:38.217600+00:00",
+          "result": {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              4,
+              4,
+              4,
+              3,
+              4
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/940-review-1-e4da4b0e.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source inspection.",
+              "Independent canonical Python checks: baa \u2192 5, 3,279 short inputs, length-2000 boundaries and invariants.",
+              "Bilingual controls, rewind/reset, prediction changes, keyboard, narrow layouts and native 200% zoom passed; screenshots inspected.",
+              "Exact displayed, mirrored, copied, fallback-copied and downloaded Python parity passed.",
+              "Non-mutating metadata preflight passed."
+            ],
+            "detail": "Accepted at 96.25/100 for the specified revision. One optional advisory concerns unexplained baseline bit-mask syntax. No publication or learner-comprehension claim."
+          }
+        }
+      ]
+    },
+    "956": {
+      "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-956-20261026",
+      "status": "completed",
+      "current": null,
+      "head": "9e1fe1d5c3bcc7d310eb3fa13a115a18787da87e",
+      "entry": {
+        "status": "accepted_local",
+        "rounds": 1,
+        "new": true,
+        "phase": "done",
+        "reviews": [
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              4,
+              4,
+              4,
+              3,
+              4
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/956-review-1-9f531ca4.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source inspection.",
+              "Canonical Python and independent prefix-map checks passed.",
+              "Both locales, keyboard, narrow layouts, zoom and exact clipboard/download parity checked.",
+              "Non-mutating metadata preflight passed."
+            ],
+            "detail": "96.25/100. No required findings. Minor dictionary-syntax teaching friction; access and platform limitations documented.",
+            "run_id": "956-review-164bec576eae",
+            "candidate": "61c1660d36c3e2b77aa2249c0daeeb60133cb0ae",
+            "candidate_sha256": "455569a82bc701c8f5c27b4caf2e6c32f446f404e7e841310fd922072f613ef7",
+            "weighted_score": 96.25,
+            "round": 1,
+            "commit": "2c5f544688454b904ab64a3d10a18c3c14cb9630"
+          }
+        ],
+        "author_runs": [
+          "956-author-fb7c12e20c39"
+        ],
+        "prior_report": "specs/reviews/956-review-1-9f531ca4.md",
+        "candidate": "61c1660d36c3e2b77aa2249c0daeeb60133cb0ae",
+        "registration_commit": "9e1fe1d5c3bcc7d310eb3fa13a115a18787da87e",
+        "accepted_at": "2026-10-25T16:57:45.031690+00:00"
+      },
+      "runs": [
+        {
+          "id": "956-author-fb7c12e20c39",
+          "problem_id": "956",
+          "role": "author",
+          "started_at": "2026-10-25T16:39:07.770331+00:00",
+          "status": "completed",
+          "candidate": "154c1becf178b798dfbd80acbb79fabdd262ae68",
+          "directory": "/home/songyy/projects/leetcode-hard-lane-state-956-20261026/runs/956-author-fb7c12e20c39",
+          "session_ids": [
+            "01a173ee-2369-7e33-af76-9aec1880bd5e"
+          ],
+          "finished_at": "2026-10-25T16:52:20.766962+00:00",
+          "result": {
+            "outcome": "ready",
+            "detail": "Implemented the complete bilingual #956 lesson in leetcode/956/. Official Python interface verified; oracle, invariant, browser, source-parity, accessibility and metadata preflight checks passed. Evidence and frozen candidate manifest are included. Independent review remains pending; no submission or deployment performed."
+          }
+        },
+        {
+          "id": "956-review-164bec576eae",
+          "problem_id": "956",
+          "role": "review",
+          "started_at": "2026-10-25T16:52:30.688654+00:00",
+          "status": "completed",
+          "candidate": "61c1660d36c3e2b77aa2249c0daeeb60133cb0ae",
+          "directory": "/home/songyy/projects/leetcode-hard-lane-state-956-20261026/runs/956-review-164bec576eae",
+          "session_ids": [
+            "01a173fa-628e-7c22-9c31-1e91e88e6fa4"
+          ],
+          "finished_at": "2026-10-25T16:57:36.565035+00:00",
+          "result": {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              4,
+              4,
+              4,
+              3,
+              4
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/956-review-1-9f531ca4.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source inspection.",
+              "Canonical Python and independent prefix-map checks passed.",
+              "Both locales, keyboard, narrow layouts, zoom and exact clipboard/download parity checked.",
+              "Non-mutating metadata preflight passed."
+            ],
+            "detail": "96.25/100. No required findings. Minor dictionary-syntax teaching friction; access and platform limitations documented."
+          }
+        }
+      ]
+    }
+  }
+}

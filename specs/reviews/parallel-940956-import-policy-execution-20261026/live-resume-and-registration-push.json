@@ -1,0 +1,47 @@
+{
+  "observed_at": "2026-10-25T17:22:35.609829+00:00",
+  "status": "running",
+  "current": {
+    "problem_id": "818",
+    "stage": "author",
+    "started_at": "2026-10-25T17:21:46.092275+00:00",
+    "run_id": "818-author-a80a467fbe94"
+  },
+  "runner_pid": 1391706,
+  "campaign_pids": [
+    1391706
+  ],
+  "native_codex": [
+    {
+      "pid": 1392186,
+      "executable": "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex"
+    }
+  ],
+  "policy_pushed_head": "38ded12cc4335f3b7366981500d080dfbf8a75f6",
+  "ordinary_registration_head": "c274dca824d7f3b4347ff66712d7dbfb965757ce",
+  "registration_remote_before": "38ded12cc4335f3b7366981500d080dfbf8a75f6",
+  "registration_remote_after": "c274dca824d7f3b4347ff66712d7dbfb965757ce",
+  "current_head": "c274dca824d7f3b4347ff66712d7dbfb965757ce",
+  "expected_head": "c274dca824d7f3b4347ff66712d7dbfb965757ce",
+  "STOP_exists": false,
+  "accepted_local": 128,
+  "released": 119,
+  "pending": [
+    "793",
+    "798",
+    "801",
+    "810",
+    "815",
+    "903",
+    "920",
+    "940",
+    "956"
+  ],
+  "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b",
+  "policy_sha256": {
+    "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+    "scripts/campaign-prompts/author.md": "5f7feaa56f9f8f1f3f434e1fe4576cc2a10da21594c9aef829cab86e69dae06b",
+    "specs/reviews/leetcode-baseline-syntax-spec-review-20261026.md": "a8d04609ccb62cf79d947210156ac99c64f23e5ab3da717c5cdc513f3d7314b1",
+    "specs/reviews/leetcode-workflow-copy-spec-review-20261026.md": "e1ead272a7b986d24117f00c750e65943cfe3b0b8b243ad9a5fe30e2c355da29"
+  }
+}
