@@ -1,0 +1,25 @@
+{
+  "validatedAt": "2026-10-25T20:58:32.098687+00:00",
+  "readOnly": true,
+  "reportAndSourceCopiesExact": true,
+  "candidateAndRegisteredLessonTreeEqual": true,
+  "reviewRunCompleted": true,
+  "allRecordedCommandExitCodesZero": true,
+  "noUniversalTenCallGuaranteeInferred": true,
+  "noBrowserOrClipboardTestsRunByFollowup": true,
+  "noStateStopImportOrPublicationAction": true,
+  "filesSha256": {
+    "843-review-1-7f018940.md": "909b409ecfceeef96c8d6c2ddbe75a5bad0b9c1a54fa81f7c96f8be7e93c6847",
+    "843-review-3eddda02bfb3-events.jsonl.gz": "6811fcc88c89f563846d426a66ffcc501da17b8f6f7c4ffcced0b914fc9a4f15",
+    "BRIEF.md": "5585368af0c1851076d128f923b338fbfbffa0a9511c0f586243a69b6ec792fd",
+    "identity-and-count-validation.json": "96b8d82fe65260af8c68ade1ced700a9cbf474c25ba5bf73b5a2df9aed0d7c16",
+    "lesson-entry.json": "5a53c66d7e736d610d41df40e99695689771f21705fc773d9fa246ab5d8dfc37",
+    "review-run-evidence.json": "09cd960aff0596710c3f53cec9570cea67a96260352fd39bc29677ca2a3ba3c4",
+    "snapshot.json": "0edc3ee5cea71ab9a76b64abe0018bbb0cbbc4e65506df1e7318e8701db7df11",
+    "solution.py": "dc0d1552f34cc429efa9f3ff12daf0c9c42f6ca5604d97ae64dc42aa2b7bff30",
+    "../843-acceptance-20261026.md": "f54fd1cd2a18a073d49418c08ee792fab2ab29876dd0ef866802bdb470f8de5a"
+  },
+  "subsequentRequiredFindingNotedAt": "2026-10-25T21:09:23.555164+00:00",
+  "subsequentRequiredFinding": "843-BUDGET-R1",
+  "originalReviewAndSourceUnchanged": true
+}

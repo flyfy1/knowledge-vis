@@ -1,0 +1,62 @@
+{
+  "observedAt": "2026-10-25T21:03:35.081867+00:00",
+  "source": "https://leetcode.com/graphql/",
+  "officialUrl": "https://leetcode.com/problems/guess-the-word/",
+  "ordinaryUnauthenticatedAccess": true,
+  "httpStatus": 200,
+  "request": {
+    "operationName": "questionData",
+    "variables": {
+      "titleSlug": "guess-the-word"
+    },
+    "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionFrontendId title titleSlug difficulty isPaidOnly content metaData codeSnippets { lang langSlug code } exampleTestcases sampleTestCase } }"
+  },
+  "responseFile": "official-response.json",
+  "responseSha256": "d8e324bb043388237b057944abddf296b3e449359798fa3619189dad1e9a6f85",
+  "responseBytes": 11023,
+  "metadata": {
+    "name": "findSecretWord",
+    "params": [
+      {
+        "name": "secret",
+        "type": "string"
+      },
+      {
+        "name": "words",
+        "type": "string[]"
+      },
+      {
+        "name": "allowedGuesses",
+        "type": "integer"
+      }
+    ],
+    "return": {
+      "type": "void"
+    },
+    "manual": true,
+    "languages": [
+      "cpp",
+      "java",
+      "python",
+      "c",
+      "csharp",
+      "javascript",
+      "ruby",
+      "swift",
+      "golang",
+      "python3",
+      "scala",
+      "kotlin",
+      "rust",
+      "php",
+      "typescript"
+    ],
+    "typescriptCustomType": "class Master {\n    __secret: string;\n    __wordset: Set<string>;\n    __guesses: number;\n    __found: boolean;\n    constructor(secret: string, wordlist: string[], numguesses: number) {\n        this.__secret = secret;\n        this.__wordset = new Set(wordlist);\n        this.__guesses = numguesses;\n        this.__found = false;\n    }\n\n    guess(word: string): number {\n        this.__guesses -= 1;\n        if (word == this.__secret) {\n            this.__found = true;\n            return word.length;\n        }\n        if (!this.__wordset.has(word))\n            return -1;\n\n        var matches = 0;\n        for (var i = 0; i < word.length; ++i)\n            if (word[i] == this.__secret[i])\n                matches += 1;\n        return matches;\n    }\n\n    getGuesses(): number {\n        return this.__guesses;\n    }\n        \n    getFound(): boolean {\n        return this.__found;\n    }\n};"
+  },
+  "python3Snippet": {
+    "lang": "Python3",
+    "langSlug": "python3",
+    "code": "# \"\"\"\n# This is Master's API interface.\n# You should not implement it, or speculate about its implementation\n# \"\"\"\n# class Master:\n#     def guess(self, word: str) -> int:\n\nclass Solution:\n    def findSecretWord(self, words: List[str], master: 'Master') -> None:\n        "
+  },
+  "sourceLimitations": "Normal public API/page reads only; no authenticated judge submission, hidden test membership, or live language-selector verification."
+}

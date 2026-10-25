@@ -1,0 +1,1758 @@
+{
+  "case": "family20",
+  "variant": "diagnostic11",
+  "diagnosticOnly": true,
+  "canonicalSha256": "dc0d1552f34cc429efa9f3ff12daf0c9c42f6ca5604d97ae64dc42aa2b7bff30",
+  "executedSourceSha256": "8baf295f8f02b664e88f616af2bbe63547aaa4cd20035c55b62adda3f7a9e279",
+  "wordCount": 20,
+  "words": [
+    "accccc",
+    "addddd",
+    "aeeeee",
+    "afffff",
+    "aggggg",
+    "ahhhhh",
+    "aiiiii",
+    "ajjjjj",
+    "akkkkk",
+    "alllll",
+    "bccccc",
+    "bddddd",
+    "beeeee",
+    "bfffff",
+    "bggggg",
+    "bhhhhh",
+    "biiiii",
+    "bjjjjj",
+    "bkkkkk",
+    "blllll"
+  ],
+  "budget": 10,
+  "allSecrets": true,
+  "testedSecrets": 20,
+  "foundCount": 20,
+  "maximumCalls": 10,
+  "passed": true,
+  "seconds": 0.03464879101375118,
+  "rows": [
+    {
+      "secret": "accccc",
+      "budget": 10,
+      "calls": 1,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "accccc"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 6,
+          "before": 20,
+          "after": 1,
+          "survivors": [
+            "accccc"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "addddd",
+      "budget": 10,
+      "calls": 2,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "addddd"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 1,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "addddd",
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "addddd",
+          "reply": 6,
+          "before": 9,
+          "after": 1,
+          "survivors": [
+            "addddd"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "aeeeee",
+      "budget": 10,
+      "calls": 3,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "aeeeee"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 1,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "addddd",
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "addddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aeeeee",
+          "reply": 6,
+          "before": 8,
+          "after": 1,
+          "survivors": [
+            "aeeeee"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "afffff",
+      "budget": 10,
+      "calls": 4,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "afffff"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 1,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "addddd",
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "addddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aeeeee",
+          "reply": 1,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "afffff",
+          "reply": 6,
+          "before": 7,
+          "after": 1,
+          "survivors": [
+            "afffff"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "aggggg",
+      "budget": 10,
+      "calls": 5,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "aggggg"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 1,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "addddd",
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "addddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aeeeee",
+          "reply": 1,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "afffff",
+          "reply": 1,
+          "before": 7,
+          "after": 6,
+          "survivors": [
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aggggg",
+          "reply": 6,
+          "before": 6,
+          "after": 1,
+          "survivors": [
+            "aggggg"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "ahhhhh",
+      "budget": 10,
+      "calls": 6,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "ahhhhh"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 1,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "addddd",
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "addddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aeeeee",
+          "reply": 1,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "afffff",
+          "reply": 1,
+          "before": 7,
+          "after": 6,
+          "survivors": [
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aggggg",
+          "reply": 1,
+          "before": 6,
+          "after": 5,
+          "survivors": [
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "ahhhhh",
+          "reply": 6,
+          "before": 5,
+          "after": 1,
+          "survivors": [
+            "ahhhhh"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "aiiiii",
+      "budget": 10,
+      "calls": 7,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "aiiiii"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 1,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "addddd",
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "addddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aeeeee",
+          "reply": 1,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "afffff",
+          "reply": 1,
+          "before": 7,
+          "after": 6,
+          "survivors": [
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aggggg",
+          "reply": 1,
+          "before": 6,
+          "after": 5,
+          "survivors": [
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "ahhhhh",
+          "reply": 1,
+          "before": 5,
+          "after": 4,
+          "survivors": [
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aiiiii",
+          "reply": 6,
+          "before": 4,
+          "after": 1,
+          "survivors": [
+            "aiiiii"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "ajjjjj",
+      "budget": 10,
+      "calls": 8,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "ajjjjj"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 1,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "addddd",
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "addddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aeeeee",
+          "reply": 1,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "afffff",
+          "reply": 1,
+          "before": 7,
+          "after": 6,
+          "survivors": [
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aggggg",
+          "reply": 1,
+          "before": 6,
+          "after": 5,
+          "survivors": [
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "ahhhhh",
+          "reply": 1,
+          "before": 5,
+          "after": 4,
+          "survivors": [
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aiiiii",
+          "reply": 1,
+          "before": 4,
+          "after": 3,
+          "survivors": [
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "ajjjjj",
+          "reply": 6,
+          "before": 3,
+          "after": 1,
+          "survivors": [
+            "ajjjjj"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "akkkkk",
+      "budget": 10,
+      "calls": 9,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "akkkkk"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 1,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "addddd",
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "addddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aeeeee",
+          "reply": 1,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "afffff",
+          "reply": 1,
+          "before": 7,
+          "after": 6,
+          "survivors": [
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aggggg",
+          "reply": 1,
+          "before": 6,
+          "after": 5,
+          "survivors": [
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "ahhhhh",
+          "reply": 1,
+          "before": 5,
+          "after": 4,
+          "survivors": [
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aiiiii",
+          "reply": 1,
+          "before": 4,
+          "after": 3,
+          "survivors": [
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "ajjjjj",
+          "reply": 1,
+          "before": 3,
+          "after": 2,
+          "survivors": [
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "akkkkk",
+          "reply": 6,
+          "before": 2,
+          "after": 1,
+          "survivors": [
+            "akkkkk"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "alllll",
+      "budget": 10,
+      "calls": 10,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "alllll"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 1,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "addddd",
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "addddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "aeeeee",
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aeeeee",
+          "reply": 1,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "afffff",
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "afffff",
+          "reply": 1,
+          "before": 7,
+          "after": 6,
+          "survivors": [
+            "aggggg",
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aggggg",
+          "reply": 1,
+          "before": 6,
+          "after": 5,
+          "survivors": [
+            "ahhhhh",
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "ahhhhh",
+          "reply": 1,
+          "before": 5,
+          "after": 4,
+          "survivors": [
+            "aiiiii",
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "aiiiii",
+          "reply": 1,
+          "before": 4,
+          "after": 3,
+          "survivors": [
+            "ajjjjj",
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "ajjjjj",
+          "reply": 1,
+          "before": 3,
+          "after": 2,
+          "survivors": [
+            "akkkkk",
+            "alllll"
+          ]
+        },
+        {
+          "guess": "akkkkk",
+          "reply": 1,
+          "before": 2,
+          "after": 1,
+          "survivors": [
+            "alllll"
+          ]
+        },
+        {
+          "guess": "alllll",
+          "reply": 6,
+          "before": 1,
+          "after": 1,
+          "survivors": [
+            "alllll"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "bccccc",
+      "budget": 10,
+      "calls": 2,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "bccccc"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 5,
+          "before": 20,
+          "after": 1,
+          "survivors": [
+            "bccccc"
+          ]
+        },
+        {
+          "guess": "bccccc",
+          "reply": 6,
+          "before": 1,
+          "after": 1,
+          "survivors": [
+            "bccccc"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "bddddd",
+      "budget": 10,
+      "calls": 2,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "bddddd"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 0,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "bddddd",
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bddddd",
+          "reply": 6,
+          "before": 9,
+          "after": 1,
+          "survivors": [
+            "bddddd"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "beeeee",
+      "budget": 10,
+      "calls": 3,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "beeeee"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 0,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "bddddd",
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bddddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "beeeee",
+          "reply": 6,
+          "before": 8,
+          "after": 1,
+          "survivors": [
+            "beeeee"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "bfffff",
+      "budget": 10,
+      "calls": 4,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "bfffff"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 0,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "bddddd",
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bddddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "beeeee",
+          "reply": 1,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bfffff",
+          "reply": 6,
+          "before": 7,
+          "after": 1,
+          "survivors": [
+            "bfffff"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "bggggg",
+      "budget": 10,
+      "calls": 5,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "bggggg"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 0,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "bddddd",
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bddddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "beeeee",
+          "reply": 1,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bfffff",
+          "reply": 1,
+          "before": 7,
+          "after": 6,
+          "survivors": [
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bggggg",
+          "reply": 6,
+          "before": 6,
+          "after": 1,
+          "survivors": [
+            "bggggg"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "bhhhhh",
+      "budget": 10,
+      "calls": 6,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "bhhhhh"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 0,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "bddddd",
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bddddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "beeeee",
+          "reply": 1,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bfffff",
+          "reply": 1,
+          "before": 7,
+          "after": 6,
+          "survivors": [
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bggggg",
+          "reply": 1,
+          "before": 6,
+          "after": 5,
+          "survivors": [
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bhhhhh",
+          "reply": 6,
+          "before": 5,
+          "after": 1,
+          "survivors": [
+            "bhhhhh"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "biiiii",
+      "budget": 10,
+      "calls": 7,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "biiiii"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 0,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "bddddd",
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bddddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "beeeee",
+          "reply": 1,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bfffff",
+          "reply": 1,
+          "before": 7,
+          "after": 6,
+          "survivors": [
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bggggg",
+          "reply": 1,
+          "before": 6,
+          "after": 5,
+          "survivors": [
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bhhhhh",
+          "reply": 1,
+          "before": 5,
+          "after": 4,
+          "survivors": [
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "biiiii",
+          "reply": 6,
+          "before": 4,
+          "after": 1,
+          "survivors": [
+            "biiiii"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "bjjjjj",
+      "budget": 10,
+      "calls": 8,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "bjjjjj"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 0,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "bddddd",
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bddddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "beeeee",
+          "reply": 1,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bfffff",
+          "reply": 1,
+          "before": 7,
+          "after": 6,
+          "survivors": [
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bggggg",
+          "reply": 1,
+          "before": 6,
+          "after": 5,
+          "survivors": [
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bhhhhh",
+          "reply": 1,
+          "before": 5,
+          "after": 4,
+          "survivors": [
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "biiiii",
+          "reply": 1,
+          "before": 4,
+          "after": 3,
+          "survivors": [
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bjjjjj",
+          "reply": 6,
+          "before": 3,
+          "after": 1,
+          "survivors": [
+            "bjjjjj"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "bkkkkk",
+      "budget": 10,
+      "calls": 9,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "bkkkkk"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 0,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "bddddd",
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bddddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "beeeee",
+          "reply": 1,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bfffff",
+          "reply": 1,
+          "before": 7,
+          "after": 6,
+          "survivors": [
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bggggg",
+          "reply": 1,
+          "before": 6,
+          "after": 5,
+          "survivors": [
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bhhhhh",
+          "reply": 1,
+          "before": 5,
+          "after": 4,
+          "survivors": [
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "biiiii",
+          "reply": 1,
+          "before": 4,
+          "after": 3,
+          "survivors": [
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bjjjjj",
+          "reply": 1,
+          "before": 3,
+          "after": 2,
+          "survivors": [
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bkkkkk",
+          "reply": 6,
+          "before": 2,
+          "after": 1,
+          "survivors": [
+            "bkkkkk"
+          ]
+        }
+      ]
+    },
+    {
+      "secret": "blllll",
+      "budget": 10,
+      "calls": 10,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "blllll"
+      ],
+      "trace": [
+        {
+          "guess": "accccc",
+          "reply": 0,
+          "before": 20,
+          "after": 9,
+          "survivors": [
+            "bddddd",
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bddddd",
+          "reply": 1,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "beeeee",
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "beeeee",
+          "reply": 1,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "bfffff",
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bfffff",
+          "reply": 1,
+          "before": 7,
+          "after": 6,
+          "survivors": [
+            "bggggg",
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bggggg",
+          "reply": 1,
+          "before": 6,
+          "after": 5,
+          "survivors": [
+            "bhhhhh",
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bhhhhh",
+          "reply": 1,
+          "before": 5,
+          "after": 4,
+          "survivors": [
+            "biiiii",
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "biiiii",
+          "reply": 1,
+          "before": 4,
+          "after": 3,
+          "survivors": [
+            "bjjjjj",
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bjjjjj",
+          "reply": 1,
+          "before": 3,
+          "after": 2,
+          "survivors": [
+            "bkkkkk",
+            "blllll"
+          ]
+        },
+        {
+          "guess": "bkkkkk",
+          "reply": 1,
+          "before": 2,
+          "after": 1,
+          "survivors": [
+            "blllll"
+          ]
+        },
+        {
+          "guess": "blllll",
+          "reply": 6,
+          "before": 1,
+          "after": 1,
+          "survivors": [
+            "blllll"
+          ]
+        }
+      ]
+    }
+  ]
+}

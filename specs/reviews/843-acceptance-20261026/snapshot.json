@@ -1,0 +1,195 @@
+{
+  "observedAt": "2026-10-25T20:56:33.345028+00:00",
+  "stateSha256": "bceecd21a5735c72a45f9bebe4e40b7cb664074d05224df834ef8748f0ea40d4",
+  "centralHead": "ad547b9105dd0b1164cb2774de27c65a4898e5c9",
+  "expectedHead": "ad547b9105dd0b1164cb2774de27c65a4898e5c9",
+  "stateStatus": "running",
+  "current": {
+    "problem_id": "847",
+    "stage": "author",
+    "started_at": "2026-10-25T20:52:52.471703+00:00",
+    "run_id": "847-author-87c3b4798d43"
+  },
+  "STOPexists": true,
+  "queueLength": 984,
+  "problemStatusCounts": {
+    "accepted_local": 134,
+    "blocked": 39,
+    "changes_required": 5,
+    "pending": 1
+  },
+  "acceptedLocalCount": 134,
+  "registryCount": 140,
+  "registryEntry": {
+    "id": 843,
+    "title": {
+      "zh": "\u731c\u731c\u8fd9\u4e2a\u5355\u8bcd",
+      "en": "Guess the Word"
+    },
+    "desc": {
+      "zh": "\u7528\u9010\u4f4d\u5339\u914d\u6392\u9664\u5019\u9009\uff0c\u518d\u7528\u6700\u574f\u56de\u590d\u6876\u9009\u62e9\u63d0\u95ee\u3002",
+      "en": "Filter by positional matches and choose guesses by worst reply buckets."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "\u4ea4\u4e92\u5f0f\u641c\u7d22",
+        "en": "Interactive search"
+      },
+      {
+        "zh": "\u6781\u5c0f\u5316\u6700\u574f\u60c5\u51b5",
+        "en": "Minimax"
+      }
+    ],
+    "path": "843/",
+    "leetcodeUrl": "https://leetcode.com/problems/guess-the-word/",
+    "language": "Python",
+    "complexity": "O(n\u00b2L + Gn\u00b2) time; O(n\u00b2) auxiliary space, L=6 and G\u226410"
+  },
+  "registrySha256": "554a0d635e9d1be9ed2d0e75928c1cb5dae336fa457096c91d332ce45dc0838b",
+  "entry": {
+    "status": "accepted_local",
+    "rounds": 1,
+    "new": true,
+    "phase": "done",
+    "reviews": [
+      {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/843-review-1-7f018940.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Independent Python prediction and all 13 preset rounds verified.",
+          "Exact source, download, clipboard and native fallback parity passed.",
+          "Bilingual controls, rewind, reset, keyboard and device layouts checked; screenshots inspected.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "97.5/100. No required findings. Extreme CSS zoom causes minor reading friction; browser-chrome zoom and physical devices remain unverified. Acceptance is separate from publication.",
+        "run_id": "843-review-3eddda02bfb3",
+        "candidate": "617cb7c7e49f533b46c66dc9a53e7c6cefd71cbf",
+        "candidate_sha256": "1d250a986544479a34a24ca1c0f7cbacd48fb80f699dd0a6d5e9822ef59b04c7",
+        "weighted_score": 97.5,
+        "round": 1,
+        "commit": "3cf37ae3fabd1e6c1cc8da54015b3569d085df75"
+      }
+    ],
+    "author_runs": [
+      "843-author-5ecd89a97e60"
+    ],
+    "prior_report": "specs/reviews/843-review-1-7f018940.md",
+    "candidate": "617cb7c7e49f533b46c66dc9a53e7c6cefd71cbf",
+    "registration_commit": "ad547b9105dd0b1164cb2774de27c65a4898e5c9",
+    "accepted_at": "2026-10-25T20:52:47.125660+00:00"
+  },
+  "runs": [
+    {
+      "id": "843-author-5ecd89a97e60",
+      "problem_id": "843",
+      "role": "author",
+      "started_at": "2026-10-25T20:37:50.490098+00:00",
+      "status": "completed",
+      "candidate": "7b841718e8034cf9b325e74bc40941bd7aac7972",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/843-author-5ecd89a97e60",
+      "session_ids": [
+        "01a174c8-af0e-7ae1-b864-5c02710ee59d"
+      ],
+      "finished_at": "2026-10-25T20:47:01.427921+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Completed bilingual #843 lesson in leetcode/843/. Official Python interface verified; computational, browser, source-parity, accessibility, and metadata preflight checks passed. Candidate hashes and author evidence recorded. Independent review remains pending; no acceptance or publication claimed."
+      }
+    },
+    {
+      "id": "843-review-3eddda02bfb3",
+      "problem_id": "843",
+      "role": "review",
+      "started_at": "2026-10-25T20:47:11.707633+00:00",
+      "status": "completed",
+      "candidate": "617cb7c7e49f533b46c66dc9a53e7c6cefd71cbf",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/843-review-3eddda02bfb3",
+      "session_ids": [
+        "01a174d1-3fb2-7a42-9c22-444bc255696e"
+      ],
+      "finished_at": "2026-10-25T20:52:36.588655+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/843-review-1-7f018940.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Independent Python prediction and all 13 preset rounds verified.",
+          "Exact source, download, clipboard and native fallback parity passed.",
+          "Bilingual controls, rewind, reset, keyboard and device layouts checked; screenshots inspected.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "97.5/100. No required findings. Extreme CSS zoom causes minor reading friction; browser-chrome zoom and physical devices remain unverified. Acceptance is separate from publication."
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "history": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/843-review-1-7f018940.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Independent Python prediction and all 13 preset rounds verified.",
+          "Exact source, download, clipboard and native fallback parity passed.",
+          "Bilingual controls, rewind, reset, keyboard and device layouts checked; screenshots inspected.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "97.5/100. No required findings. Extreme CSS zoom causes minor reading friction; browser-chrome zoom and physical devices remain unverified. Acceptance is separate from publication.",
+        "run_id": "843-review-3eddda02bfb3",
+        "candidate": "617cb7c7e49f533b46c66dc9a53e7c6cefd71cbf",
+        "candidate_sha256": "1d250a986544479a34a24ca1c0f7cbacd48fb80f699dd0a6d5e9822ef59b04c7",
+        "weighted_score": 97.5,
+        "round": 1,
+        "commit": "3cf37ae3fabd1e6c1cc8da54015b3569d085df75"
+      },
+      "reportText": "# Independent review: 843 \u2014 Guess the Word\n\nCandidate: `617cb7c7e49f533b46c66dc9a53e7c6cefd71cbf`.\nURL: http://127.0.0.1:18770/leetcode/843/. Target: basic Python, lists, loops, functions, elementary recursion. Review run: `843-review-1-7f018940`; no invented reviewer/model identity. Frozen weights: 15/20/20/20/15/10. Python interface interpretation applies.\n\n## Cold walkthrough (saved before any source, tests, brief or earlier review)\n\nOnly the frozen rubric was read before opening the candidate with Playwright Chromium. Desktop 1280\u00d7900. The following records describe rendered content and actions, not author notes.\n\n| Step / question | Action | Observable result | Causal paraphrase |\n|---|---|---|---|\n| 1. What does one reply count? | Read the two fixed words, show position comparison. | Six columns show acckzz above ccbazz; \u2713 at 2,5,6, \u00d7 elsewhere; reply 3. | Count equality at the same index, not common letters. abcdef/fedcba exposes the tempting letter-set rule. |\n| 2. After reply 3, which words remain? | Read and hand-check ccbazz against the four listed words; expand baseline later during audit. | Rendered scores [3,6,2,2]; only acckzz agrees. The text explicitly still requires guessing that survivor. | Equality to the actual reply is necessary: a score greater than 3 is contradictory too. Prior replies remain satisfied because each filter acts on the already consistent set. |\n| 3. Which guess saves calls? | Inspect initial table, advance once, then again. | Initial acckzz worst bucket 1 vs ccbazz 2, eiowzz 3, abcczz 2. First call acckzz \u21922 changes C from four words to eiowzz; ledger retains before/after sizes. Next comparison marks eiowzz chosen (worst 0), acckzz used. Second call eiowzz \u21926 ends successfully. | A bucket means possible secrets yielding the same reply. Minimize largest unsuccessful bucket; successful 6 is excluded. A singleton is knowledge, not a completed successful call. Highlighting indicates chosen/used probes; candidate chips are actual retained data. |\n| 4. Can the equality rule transfer? | Select \u201caaaaaa and aabbbb\u201d, check, change to \u201cOnly aaaabb\u201d, check again. | Correct explanation gives [4,6,4,2]. Changing choice hides prior explanation; wrong reveal says check equality, with the same explicit scores. | Reply 4 preserves both score-4 words, not the guess itself. The answer does not determine which survivor is the secret. |\n| 5. How does it map to Python? | Read rendered implementation explanation and costs, without opening source yet. | Names matches, buckets, key, used and equality comprehension are explicitly connected to table/probe/filter behavior; signature describes Master, None and absent budget parameter. | Cached pair scores implement the columns; bucket counts implement table cells; equality filtering implements 4\u21921. The quadratic cache replaces repeated letter comparisons. Actual executable parity remains for audit. |\n\nTeaching order: concrete columns \u2192 four-word filtering and wrong rule \u2192 buckets and minimax \u2192 a different-word exercise \u2192 implementation. Candidate, invariant, bucket and minimax are explained before formal notation. The text distinguishes strict progress without a cap from an unproved ten-call guarantee, and gives 26 repeated-letter words as a failure family. Initial actions above were exploratory; no pre-reveal prediction record is claimed for them.\n\nCold screenshots: `843-evidence/843-review-1-7f018940/cold-count.png`, `cold-round2.png` (full-page browser captures; inspection pending at this save).\n\n### Predictions recorded before subsequent reveals / executable checks\n\n- UI: choose \u201cOne word\u201d, then advance. Prediction: initial C has one word, zero calls; one call returns 6, ends, ledger 1\u21921. Back should restore zero calls and the same singleton; final should reproduce one successful call.\n- Fresh independent custom **code check**, since the UI has only presets: words [abcdef, abcdeg, abzzzz], secret abcdeg. Predicted scores for probe abcdef: [6,5,2]; worst size 1 ties abcdeg, so original order chooses abcdef, reply 5 leaves abcdeg, next call abcdeg returns 6. Input list should remain unchanged.\n- Fresh counterexample **code check**: same words, guess abcdef, observed reply 5. \u201cAt least the reply\u201d incorrectly retains abcdef (score 6); exact equality retains only abcdeg. Permutation abcdef/fedcba must score zero despite identical letter sets.\n\nNo source or earlier review has been opened at this checkpoint.\n\n## Audit after the saved cold walkthrough\n\n### Candidate identity and official contract\n\n`git rev-parse HEAD` returned the requested revision. `git diff --exit-code` passed; the only untracked paths were this report and its evidence directory. Every fetched lesson runtime/source asset matched its checkout bytes, including shared `../style.css` and `../common.js`. SHA-256 identity anchors:\n\n- index.html: `2524ec96f51a866fc617b9cf7a8e19144680e54138344f5f43bc50b54feab914`\n- app.js: `14ef08de056e92377ebe3d5fa5f90f27737c21305653a7165000960be486f3fd`\n- core.js: `9c29aa7e40e2fb6e81dd8f4ed3e6db2b25a82977f97e80cc4984df99ae7a18b6`\n- copy.js: `a513cb37bf9ddf2557daa8027a740c9ca0777ce80eae5be49498c77610448262`\n- solution.py: `dc0d1552f34cc429efa9f3ff12daf0c9c42f6ca5604d97ae64dc42aa2b7bff30`\n- python-code.js: `03c550d385d7d1a4699357bd15c75dc66b1749a93246683461c584b79537c95d`\n- shared style.css: `6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27`\n- shared common.js: `f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b`\n\nRead the [official statement](https://leetcode.com/problems/guess-the-word/) through normal web access: unique six-letter lowercase words; n=1..100; secret in words; exact positional reply, illegal guesses \u22121; 10..30 calls; must actually guess the secret. The generated-case qualification is accurately described. Direct Chromium navigation encountered Cloudflare security verification; no bypass was attempted. The normally accessible statement supplied independent statement/constraint evidence. The lesson-local saved `tests/evidence/official-graphql.json` and `official-verification.md` contain the Python3 selector stub: `Solution.findSecretWord(self, words: List[str], master: 'Master') -> None`, with judge-supplied `Master.guess(word: str) -> int`. That stub matches canonical code. This saved interface capture is author evidence, distinguished from my independent statement read. No non-Python contract or conceptual substitution is involved; the additional non-Python selector audit is inapplicable.\n\nRead `LANGUAGE_FILES` in `scripts/register_leetcode_lesson.py`: Python requires `solution.py`, `python-code.js`, export `PYTHON_SOURCE`. These are the actual files audited. No earlier review report for 843 was found after the cold walk, so there are no earlier finding IDs to close.\n\n### Independent predictions, transitions and correctness\n\nThe recorded singleton UI prediction passed: zero calls/one candidate initially; one actual call aaaaaa\u21926, ledger 1\u21921, next/end disabled; back restored zero calls; end reproduced the successful frame.\n\nExecuted the actual canonical `solution.py` with an independent judge on the fresh list [abcdef, abcdeg, abzzzz]. The exact predicted call sequence occurred: [(abcdef,5),(abcdeg,6)], return None, input list unchanged. Independently calculated scores [6,5,2]. Exact-equality survivors for reply 5 were [abcdeg]; the tempting \u22655 rule incorrectly also retained abcdef. Independently checked abcdef/fedcba=0. These are **code checks**, not invented custom-input browser experiments.\n\nAn additional independently written browser oracle (no import of core.js, no use of its trace/formatter) recomputed every candidate partition and tie selection from raw words. It compared all seven bucket counts and the chosen probe before each call. All 13 rendered calls across all five presets agreed:\n\n| Preset / secret | Independently checked complete calls |\n|---|---|\n| Four words / eiowzz | acckzz\u21922, eiowzz\u21926 |\n| Two words / khaled | hamada\u21920, khaled\u21926 |\n| One word / aaaaaa | aaaaaa\u21926 |\n| Six disjoint / ffffff | aaaaaa\u21920, bbbbbb\u21920, cccccc\u21920, dddddd\u21920, eeeeee\u21920, ffffff\u21926 |\n| Bucket ties / aabbbb | aaaaaa\u21922, aabbbb\u21926 |\n\nThe maintained invariant is exact agreement with **all** history. Each new filter starts from prior survivors; equality cannot delete the truthful secret and inequality proves inconsistency. In the four-word intermediate frame, all readouts agree: one completed call, singleton eiowzz, previous guess acckzz used, eiowzz chosen with worst unsuccessful bucket 0, ledger 4\u21921. Final frame retains that singleton, records two calls and reply 6, and removes the next-probe table. Candidate identity and values refer to the same frame. A failed call excludes its own probe; an unused candidate remains available, giving a worst-bucket bound of c\u22121. Thus strict progress and an uncapped n-call bound follow; a universal ten-call bound does not.\n\nThe 26 repeated-letter stress case stopped after ten unsuccessful calls as advertised. This checks the expressly stated heuristic limitation, not an assertion of success on arbitrary lists. No successful online submission is claimed.\n\n### Visual-to-code mapping and costs\n\nActual source precomputes matches[i][j] using equal-index zip pairs; the four-word first frame's score 2 is matches[0][2]. Current candidate indices initially [0,1,2,3]; the equality comprehension after reply 2 produces [2], whose chip is eiowzz. For the next choice, the eiowzz probe has no score-0..5 candidates, so max(buckets)=0; tuple ordering selects it. The final reply 6 returns before another filtering pass. The visual's seven reply columns include success, while Python deliberately allocates six **unsuccessful** buckets and guards score<6. Those representations agree, rather than being an off-by-one defect.\n\nPrecomputation performs n\u00b2 comparisons of L=6 positions and allocates n\u00b2 scores. Each round scans n probes and at most n candidates; linear membership `probe not in candidates` per probe adds O(n\u00b2), already within the stated bound. Candidates, used, buckets and keys add O(n) or constant storage beyond the matrix. Therefore O(n\u00b2L+Gn\u00b2) time and O(n\u00b2) auxiliary space are valid, including n=1 and early success. No mutation of words occurs. The displayed baseline loops over the existing input and uses constant extra space, up to n judge calls; it really fails the budget for the 26-word last-secret example. Browser snapshot storage is expressly separate from submission memory.\n\n### Tests inspected before execution\n\nRead test_solution.py, test_core.cjs, browser.cjs and focused.cjs before running any of them. The Python/core/browser/focused runners support OUTPUT_DIR; all generated output was redirected to this run's exclusive evidence directory. Build scripts were not run. Author assets/evidence were not regenerated. The rerun JSON retains the harness's literal \u201cauthor self-check\u201d labels; these are independently rerun author tests, not an invented second reviewer or comprehension study.\n\nCommands from repository root:\n\n```sh\nOUTPUT_DIR=\"$PWD/specs/reviews/843-evidence/843-review-1-7f018940\" python3 -B leetcode/843/tests/test_solution.py\nOUTPUT_DIR=\"$PWD/specs/reviews/843-evidence/843-review-1-7f018940\" node leetcode/843/tests/test_core.cjs\nOUTPUT_DIR=\"$PWD/specs/reviews/843-evidence/843-review-1-7f018940\" node leetcode/843/tests/browser.cjs\nOUTPUT_DIR=\"$PWD/specs/reviews/843-evidence/843-review-1-7f018940\" node leetcode/843/tests/focused.cjs\npython3 -B scripts/register_leetcode_lesson.py 843 --validate-only\n```\n\nAll exited 0. Preflight was silent on success, was run twice, and made no candidate changes. `lesson-entry.json` complexity is exactly the single nonempty string `O(n\u00b2L + Gn\u00b2) time; O(n\u00b2) auxiliary space, L=6 and G\u226410`.\n\nComputational harness observations: 1,211 canonical Python cases, including every secret in every nonempty subset of an eight-word pool, official examples, n=100 samples and budget stress; 3,068 core frames with exact history consistency and independently recomputed buckets. These support runtime checks, not the teaching scores by themselves. Separate fresh predictions and the independent rendered oracle above supplied additional reviewer-selected checks.\n\n### Interaction, localization, source transfer and accessibility\n\nChromium 156.0.8078.4 on Linux, executable selected through PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH when set. No page errors, missing assets or external runtime requests were observed in the browser suite. Offline file opening and denied-localStorage initialization also worked.\n\nBoth locales: checked initial/middle/final states, every preset, back/forward replay, reset/end, disabled endpoints, show/hide comparison, all three prediction options, explanation invalidation after changing choice, prediction reset, and locale switches after reveal. Changing the scenario resets that experiment while preserving the independent prediction, exactly as its adjacent text promises. Rendered formula in each locale contains complete `C_new`, `C_old`, `match(guess,w)=reply` and max over B\u2080..B\u2085; hand scores agree. Chinese explanation retains the positional rather than letter-set distinction, exact equality rather than \u2265, actual terminal call, invariant, tie rules, unsuccessful buckets, progress/ten-call distinction, and code costs. No materially different translation was found. Duplicate-key detection covered all 80 COPY keys before parsing, and every consumed value was a two-string locale pair; semantic feedback/state binding was also checked visibly, not inferred from keys.\n\nAdded explicit full H1/document-title checks through zh\u2192en\u2192zh at 320, 390 and 1280 widths, with an intermediate round and revealed prediction retained. Exact H1s: `#843 \u00b7 \u731c\u731c\u8fd9\u4e2a\u5355\u8bcd` / `#843 \u00b7 Guess the Word`; exact document titles: `#843 \u731c\u731c\u8fd9\u4e2a\u5355\u8bcd` / `#843 Guess the Word`. Source remains code in Python in either locale, with translated surrounding explanations.\n\nExact source parity passed without trimming: canonical UTF-8 source equals decoded mirror/export, rendered `textContent`, downloaded bytes and successful clipboard text, including final newline. Each locale's manual fallback attempt first wrote and read back its own distinct non-source sentinel, then disabled automatic clipboard writes, invoked the actual Copy control, confirmed textarea focus/full selection, pressed Linux **Control+C**, and read back the exact full source through the native clipboard. The clipboard was not test-seeded with source. Both transfers passed.\n\nWidths 320/390/desktop were exercised in both languages; screenshots were captured and inspected, including ordinary and dense intermediate states, terminal disabled controls, top/title, prediction, selected preset and horizontally scrolled table. CSS font stack is PingFang SC, Microsoft YaHei, system-ui, sans-serif; exact installed glyph fallback was not independently identified. At 320 the long four-word selected label remains complete in the closed control in both locales. Candidate chips remain whole at normal zoom. The table intentionally has a 600px minimum width, with a nearby scroll instruction. Its left and right portions remain associated through column headings. Keyboard focus and ArrowRight scrolling were independently exercised (scrollLeft 0\u219240); Enter advances, Tab reaches reset, and focus outline is visible, including forced colors. Touch-target checks passed at 390px.\n\nAt 200% **CSS zoom** in real Chromium (320/390/1440 viewports), no page-wide overflow was reported. Desktop remains clear; 320px readouts break long English words across lines and require extensive vertical scrolling. This is visible friction, not lost or contradictory state; words/counts remain accessible through scrolling. It is the reason for the bilingual/device score of 3. Browser-chrome zoom and physical mobile devices were not exercised; CSS zoom is the recorded approximation, not a claim about every zoom implementation.\n\nDisabled controls use readable muted text rather than reduced opacity. Measured ordinary body contrast 16.087:1, hint 7.744:1, disabled previous button 7.079:1, active table cells 12.298:1; focus against panel 8.937:1. Before relying on these numbers, extracted and exercised the **actual** lum/ratio helper used by browser.cjs: black 0, white 1, primary red/green/blue .2126/.7152/.0722, black/white 21, and #747474 on black 4.492948073111701 (<4.5). Coefficients/calibration passed. Solid and composited panel colors are covered; this is not a claim of exhaustive perceptual accessibility testing.\n\nBoth related links resolve in the served collection: `../4/#step2` discusses preserving a valid binary-search cut while excluding a wrong direction; `../37/#step2` discusses sets matching the board and retaining consistent candidates during backtracking. These support their labels. The bilingual labels were read; this is local navigation evidence, not publication verification.\n\n### Inspected screenshot evidence\n\nAll paths below are relative to `specs/reviews/843-evidence/843-review-1-7f018940/`:\n\n- Cold full pages: cold-count.png, cold-round2.png.\n- Dense state: en-320-trace.png, zh-390-trace.png.\n- 200% approximation: en-320-zoom200.png, en-390-zoom200.png, zh-1440-zoom200.png.\n- Identity/closed select: en-390-top.png, zh-390-top.png, zh-320-identity.png, en-320-select.png, zh-320-select.png.\n- Right table/terminal/prediction: en-table-right.png, zh-terminal.png, zh-prediction.png, en-320-table-right-settled.png, zh-320-table-right-settled.png.\n\nAdditional suite captures and JSON results remain in the same exclusive directory. No earlier evidence was changed.\n\n## Findings and score rationale\n\nNo required finding was reproduced. Required open IDs: **none**. No earlier finding was closed by inference.\n\nNon-required observation `843-R1-A01` (minor usability friction; open advisory): at EN/320px/CSS zoom 2, select preset 3, advance once, scroll to frameRead. Expected: accessible state with manageable line flow. Actual: all state remains available, but narrow padding forces fragments such as \u201ccomplet / ed\u201d and \u201ccandidat / es\u201d; see en-320-zoom200.png. This affects polish/reading effort, not correctness or essential access. Suggested owner action: consider reducing nested padding at extreme zoom; no candidate repair was performed or required for this review.\n\n| Dimension | Score /4 | Weight | Observation supporting score |\n|---|---:|---:|---|\n| Problem, terms, hand calculation | 4 | 15 | Six explicit positional columns, hand-computed reply 3, legal inputs/interface and actual-success semantics explained. |\n| Causal derivation and saved work | 4 | 20 | Baseline call cost, equality counterexample, concrete competing bucket sizes, minimax bridge and honest ten-call limitation are reconstructable. |\n| Maintained state and correctness | 4 | 20 | History-consistency invariant, inclusion/exclusion proof, strict progress, singleton success and full intermediate/endpoint checks agree. |\n| Interaction and visual meaning | 4 | 20 | Recorded singleton prediction verified; table, chips and ledger have distinct meanings; replay, reveal/change and locale retention pass. |\n| Python/cost | 4 | 15 | Actual faithful source executed on independently chosen input; explicit table-to-index mapping, parity/native copy, mutation and actual loop/space costs checked. |\n| Bilingual/device | 3 | 10 | Equivalent reasoning and keyboard access at narrow/desktop widths; extreme CSS zoom introduces visible reading friction, with no essential loss. |\n\nWeighted total: **97.5/100**. Every dimension is at least 3; no required finding remains.\n\n## Conclusion and limits\n\n**Accepted** for this frozen candidate and local independent-review scope. This is separate from publication. Evidence establishes the observed explanation, interactions, executable behavior and source fidelity; it does not establish real human comprehension, a successful LeetCode submission, or universal ten-call success. Official direct-browser security verification, author-origin saved selector evidence, CSS rather than browser-chrome zoom, and lack of physical-device testing are explicitly bounded above. Candidate implementation, tests, shared files, services and prior evidence were not modified.\n",
+      "reportSha256": "909b409ecfceeef96c8d6c2ddbe75a5bad0b9c1a54fa81f7c96f8be7e93c6847"
+    }
+  ],
+  "sources": {
+    "solution.py": {
+      "text": "from typing import List\n\n\nclass Solution:\n    def findSecretWord(self, words: List[str], master: 'Master') -> None:\n        n = len(words)\n        matches = [[0] * n for _ in range(n)]\n        for i in range(n):\n            for j in range(n):\n                matches[i][j] = sum(a == b for a, b in zip(words[i], words[j]))\n\n        candidates = list(range(n))\n        used = set()\n        # Ten calls respect the minimum official budget; this is a heuristic.\n        for _ in range(10):\n            if not candidates:\n                return\n            best = None\n            for probe in range(n):\n                if probe in used:\n                    continue\n                buckets = [0] * 6\n                for possible in candidates:\n                    score = matches[probe][possible]\n                    if score < 6:\n                        buckets[score] += 1\n                key = (max(buckets), probe not in candidates, probe)\n                if best is None or key < best[0]:\n                    best = (key, probe)\n            probe = best[1]\n            used.add(probe)\n            reply = master.guess(words[probe])\n            if reply == 6:\n                return\n            candidates = [i for i in candidates if matches[probe][i] == reply]\n",
+      "sha256": "dc0d1552f34cc429efa9f3ff12daf0c9c42f6ca5604d97ae64dc42aa2b7bff30"
+    },
+    "lesson-entry.json": {
+      "text": "{\n  \"id\": 843,\n  \"title\": {\n    \"zh\": \"\u731c\u731c\u8fd9\u4e2a\u5355\u8bcd\",\n    \"en\": \"Guess the Word\"\n  },\n  \"desc\": {\n    \"zh\": \"\u7528\u9010\u4f4d\u5339\u914d\u6392\u9664\u5019\u9009\uff0c\u518d\u7528\u6700\u574f\u56de\u590d\u6876\u9009\u62e9\u63d0\u95ee\u3002\",\n    \"en\": \"Filter by positional matches and choose guesses by worst reply buckets.\"\n  },\n  \"difficulty\": \"hard\",\n  \"topics\": [\n    {\n      \"zh\": \"\u4ea4\u4e92\u5f0f\u641c\u7d22\",\n      \"en\": \"Interactive search\"\n    },\n    {\n      \"zh\": \"\u6781\u5c0f\u5316\u6700\u574f\u60c5\u51b5\",\n      \"en\": \"Minimax\"\n    }\n  ],\n  \"path\": \"843/\",\n  \"leetcodeUrl\": \"https://leetcode.com/problems/guess-the-word/\",\n  \"language\": \"Python\",\n  \"complexity\": \"O(n\u00b2L + Gn\u00b2) time; O(n\u00b2) auxiliary space, L=6 and G\u226410\",\n  \"concepts\": [\n    {\n      \"name\": \"Candidate consistency\",\n      \"step\": 1,\n      \"description\": \"Filter the words by exact agreement with every reply.\"\n    },\n    {\n      \"name\": \"Worst reply bucket\",\n      \"step\": 2,\n      \"description\": \"Minimize the largest non-success reply group.\"\n    }\n  ]\n}\n",
+      "sha256": "5a53c66d7e736d610d41df40e99695689771f21705fc773d9fa246ab5d8dfc37"
+    },
+    "BRIEF.md": {
+      "text": "# #843 Guess the Word \u2014 author candidate r1\n\nAuthor run: Codex; exact model identifier unavailable. Independent review: pending;\nno acceptance, submission, publication or actual learner outcome claimed.\nCategory: computing / leetcode; stage: university. Reader: basic Python loops,\nlists, functions. Product verdict: reuse approved collection lesson pattern from\nspecs/reviews/leetcode-all-hard-design-review.md and dispatcher adjudication.\nScope: one static bilingual lesson, local controls and local evidence only.\n\nOfficial source: https://leetcode.com/problems/guess-the-word/ verified 2026-10-26\nvia public GraphQL (raw capture tests/evidence/official-graphql.json). Python3\nselector supplies Solution.findSecretWord(self, words: List[str], master: 'Master')\n-> None. Master.guess returns positional matches, -1 for a non-list guess. One\nmust actually guess the secret within allowedGuesses, which is not an argument.\nUnique lowercase words: n=1..100, length 6; secret in list; budget 10..30. Examples:\nacckzz / [acckzz,ccbazz,eiowzz,abcczz], 10; hamada / [hamada,khaled], 10.\n\nLearning loop: calculate six positional comparisons \u2192 retain consistent words \u2192\ncompare reply groups \u2192 replay minimax choices \u2192 transfer invariant \u2192 code.\nOutputs: visible comparison positions, reply buckets, cumulative guess ledger,\nexact remaining candidates, prediction feedback, canonical Python source.\n\n## Steps (five fields each)\n0. Known: six letters and equality. Question: what does a reply count? Input:\nacckzz/ccbazz; output 3 positions. Action: reveal/hide comparison; observe columns\n2,5,6 only. Conditions: same positions, not shared letters or rearrangements.\n1. Known: match score. Question: which secrets remain? Input: same four words,\nguess ccbazz, reply 3. Output acckzz. Action: inspect fixed before/after values.\nConditions: secret belongs to list and replies are truthful. Baseline: scan original\nlist; compare 100 calls versus budget. Counterexample: equal score is required,\nnot score at least reply; common letters alone are insufficient.\n2. Known: exact filtering. Question: which legal guess leaves least uncertainty\nin its worst reply? Input: candidate set; output bucket counts, chosen probe and\nfiltered set. Action: presets restart; forward/back/end/reset show complete round\nsnapshots and retained history. Conditions: one-step minimax, fixed deterministic\nties, not an optimal decision tree or guaranteed ten-call solver for all lists.\n3. Known: filter invariant. Question: which words survive a fresh reply? Input:\n[aaaaaa,aaaabb,aabbbb,bbbbbb], guess aaaabb, reply 4. Output aaaaaa,aabbbb.\nAction: predict then reveal; change selection clears feedback. Conditions: no\nanswer or derived highlighting before reveal; locale retains selection/reveal.\n4. Known: buckets/filter. Question: how is this submitted and what does it cost?\nInput: source; output None, Master calls. Action: source/copy/manual fallback/\ndownload. Conditions: Python official API; browser trace simulates, never executes\nPython; ten-call conservative cap, no hidden access to secret or budget.\n\n## Term dependency table\nPositional match: step0, equality at the same index. Candidate: step1, word\nconsistent with all replies. Invariant: step1, fact retained after every round.\nBucket: step2, candidate group sharing a reply to one probe. Worst bucket: step2,\nlargest non-success group. Minimax: step2, minimize that largest group.\nEvery step restates its needed terms locally. Related deep links: #4 step2 and\n#37 step2 (existing lesson anchors), for elimination and candidate consistency.\n\n## Design contract\nExact shared tokens from ../style.css: bg #0d1117, panel #161b22, panel2 #1c2330,\nline #2b3547, text #e8edf4, muted #9aa7b8, accent #6ee7ff, accent2 #ffb454,\ngood #7ee2a8, bad #ff7a93. System fonts, shared size/spacing/radii. Local CSS\nonly raises hit areas to 48px, restores disabled legibility, wraps words/tables.\nNo new visual framework, external assets, ambient motion, service or timers.\nP0/highest-return: causal numbers, exact filter, reversible buckets, bilingual\nstates, original Python tests and actual browser evidence. P1: source parity,\nkeyboard, clipboard recovery, constraints and adversarial limitation. P2: none.\nDeferred: arbitrary word editing (input validity obscures core experiment), auto\nplay (manual rounds expose causality), global optimal strategy search (exponential).\n\n## State/verification contract\nBoth locales: hand hidden/revealed; each preset initial/middle/terminal; prev/next\ndisabled endpoints; prediction unselected/selected/revealed/changed; copy success/\nmanual recovery. Locale retains all algorithm and exercise state and focus.\nPreset resets trace only; reset restores trace only; separate exercise reset.\nNo loading/network/reconnect state: runtime fully local. Tests accept OUTPUT_DIR.\nNumerical checks use independent positional oracle, exhaustive small dictionaries,\nseeded lists, official examples, intermediate candidate invariants, budget stress.\nBrowser checks include widths 320/390/736/1440, zoom, local requests, keyboard,\nblocked storage, both copy paths with per-attempt sentinels and exact byte parity.\nSelf-check and candidate manifest will be stored locally. Independent cold review\nis still required and is outside this author run.\n\n## Author completion record\nAuthor self-check complete; independent review pending. Evidence: SELF-CHECK.md,\ntests/evidence/*-results.json and preflight.json. Candidate identity: candidate.json.\nMetadata preflight `python3 -B scripts/register_leetcode_lesson.py 843 --validate-only`\npassed with exit 0 and empty stdout/stderr. No registration, publication, commit,\nagent delegation or independent acceptance occurred.\n",
+      "sha256": "5585368af0c1851076d128f923b338fbfbffa0a9511c0f586243a69b6ec792fd"
+    }
+  },
+  "candidateLessonTree": "7544d86e2d527e633b0a8c2ee81783d8712b47cf",
+  "readOnly": true,
+  "stateUnchangedDuringRead": true
+}

@@ -1,0 +1,49 @@
+{
+  "observedAt": "2026-10-25T20:57:04.585359+00:00",
+  "candidate": "617cb7c7e49f533b46c66dc9a53e7c6cefd71cbf",
+  "reviewCommit": "3cf37ae3fabd1e6c1cc8da54015b3569d085df75",
+  "registrationCommit": "ad547b9105dd0b1164cb2774de27c65a4898e5c9",
+  "currentHead": "ad547b9105dd0b1164cb2774de27c65a4898e5c9",
+  "lessonTrees": {
+    "617cb7c7e49f533b46c66dc9a53e7c6cefd71cbf": "7544d86e2d527e633b0a8c2ee81783d8712b47cf",
+    "ad547b9105dd0b1164cb2774de27c65a4898e5c9": "7544d86e2d527e633b0a8c2ee81783d8712b47cf"
+  },
+  "candidateSourceSha256": "dc0d1552f34cc429efa9f3ff12daf0c9c42f6ca5604d97ae64dc42aa2b7bff30",
+  "registeredSourceSha256": "dc0d1552f34cc429efa9f3ff12daf0c9c42f6ca5604d97ae64dc42aa2b7bff30",
+  "reportSha256": "909b409ecfceeef96c8d6c2ddbe75a5bad0b9c1a54fa81f7c96f8be7e93c6847",
+  "acceptedLocalCount": 134,
+  "registryCount": 140,
+  "registeredNotCurrentlyAccepted": [
+    {
+      "id": 903,
+      "currentStatus": "changes_required",
+      "phase": "fix"
+    },
+    {
+      "id": 920,
+      "currentStatus": "changes_required",
+      "phase": "fix"
+    },
+    {
+      "id": 940,
+      "currentStatus": "changes_required",
+      "phase": "fix"
+    },
+    {
+      "id": 956,
+      "currentStatus": "changes_required",
+      "phase": "fix"
+    },
+    {
+      "id": 964,
+      "currentStatus": "changes_required",
+      "phase": "fix"
+    },
+    {
+      "id": 2916,
+      "currentStatus": null,
+      "phase": null
+    }
+  ],
+  "queueLength": 984
+}
