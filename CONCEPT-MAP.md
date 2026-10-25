@@ -1050,3 +1050,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Precedence repair with last | `leetcode/282/#step2` | Replace the last additive term when multiplying. |
 
 <!-- /leetcode-282-campaign -->
+
+
+<!-- leetcode-493-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| reverse pairs | `leetcode/493/#step0` | Strict doubled comparison at original ordered indices |
+| monotone prefix counting | `leetcode/493/#step1` | Sorted right prefix and nondecreasing boundary |
+| merge sort counting | `leetcode/493/#step2` | Disjoint within-half and cross-half pair accounting |
+
+<!-- /leetcode-493-campaign -->
