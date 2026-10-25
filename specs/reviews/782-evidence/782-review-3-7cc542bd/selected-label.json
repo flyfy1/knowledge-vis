@@ -1,0 +1,218 @@
+{
+  "finding": "782-MAC-FIT-01",
+  "host": "linux",
+  "browser": "156.0.8078.4",
+  "measurements": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "text": "Official 1 · 4×4, answer 2",
+      "textWidth": 182.41636657714844,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 27.583633422851562
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "text": "Hand · 3×3, answer 1",
+      "textWidth": 157.12030029296875,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 52.87969970703125
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "text": "Official 2 · 2×2, answer 0",
+      "textWidth": 182.41636657714844,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 27.583633422851562
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "text": "Official 3 · 2×2, answer −1",
+      "textWidth": 191.76011657714844,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 18.239883422851562
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "text": "Four-corner failure: −1",
+      "textWidth": 168.16006469726562,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 41.839935302734375
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "text": "Unbalanced columns · −1",
+      "textWidth": 189.08811950683594,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 20.911880493164062
+    },
+    {
+      "locale": "en",
+      "preset": 6,
+      "text": "Odd size, starts with 1 · 0",
+      "textWidth": 187.18438720703125,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 22.81561279296875
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "text": "官方例 1 · 4×4，答案 2",
+      "textWidth": 162.68832397460938,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 47.311676025390625
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "text": "手算例 · 3×3，答案 1",
+      "textWidth": 149.3762969970703,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 60.62370300292969
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "text": "官方例 2 · 已完成，答案 0",
+      "textWidth": 183.2323455810547,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 26.767654418945312
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "text": "官方例 3 · 缺一种行，−1",
+      "textWidth": 172.4160614013672,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 37.58393859863281
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "text": "四角检查失败 · −1",
+      "textWidth": 127.10397338867188,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 82.89602661132812
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "text": "列类型失衡 · −1",
+      "textWidth": 111.10394287109375,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 98.89605712890625
+    },
+    {
+      "locale": "zh",
+      "preset": 6,
+      "text": "奇数且以 1 开头 · 0",
+      "textWidth": 135.2322540283203,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 74.76774597167969
+    },
+    {
+      "locale": "en",
+      "preset": 0,
+      "text": "Official 1 · 4×4, answer 2",
+      "textWidth": 182.41636657714844,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 27.583633422851562
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "text": "Hand · 3×3, answer 1",
+      "textWidth": 157.12030029296875,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 52.87969970703125
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "text": "Official 2 · 2×2, answer 0",
+      "textWidth": 182.41636657714844,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 27.583633422851562
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "text": "Official 3 · 2×2, answer −1",
+      "textWidth": 191.76011657714844,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 18.239883422851562
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "text": "Four-corner failure: −1",
+      "textWidth": 168.16006469726562,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 41.839935302734375
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "text": "Unbalanced columns · −1",
+      "textWidth": 189.08811950683594,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 20.911880493164062
+    },
+    {
+      "locale": "en",
+      "preset": 6,
+      "text": "Odd size, starts with 1 · 0",
+      "textWidth": 187.18438720703125,
+      "width": 260,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "margin": 22.81561279296875
+    }
+  ],
+  "status": "passed"
+}
