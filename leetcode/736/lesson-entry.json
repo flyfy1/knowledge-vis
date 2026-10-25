@@ -1,0 +1,38 @@
+{
+  "id": 736,
+  "title": {
+    "zh": "Lisp 语法解析",
+    "en": "Parse Lisp Expression"
+  },
+  "desc": {
+    "zh": "逐步解析表达式，观察变量如何遮蔽与恢复。",
+    "en": "Parse expressions and watch variable bindings hide and restore."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "递归解析",
+      "en": "Recursive parsing"
+    },
+    {
+      "zh": "作用域",
+      "en": "Scope"
+    }
+  ],
+  "path": "736/",
+  "leetcodeUrl": "https://leetcode.com/problems/parse-lisp-expression/",
+  "language": "Python",
+  "complexity": "O(n) expected time; O(n) auxiliary space, n = expression character length",
+  "concepts": [
+    {
+      "name": "Lexical scope",
+      "step": 2,
+      "description": "Track per-name binding stacks and restore outer values."
+    },
+    {
+      "name": "Recursive descent",
+      "step": 4,
+      "description": "Consume exactly one expression per recursive call."
+    }
+  ]
+}
