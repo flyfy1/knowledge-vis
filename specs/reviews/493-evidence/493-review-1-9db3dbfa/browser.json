@@ -1,0 +1,248 @@
+{
+  "kind": "author self-check",
+  "result": "pass",
+  "records": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "frames": 10,
+      "terminal": "Operation progress 10/10; cumulative counted pairs = 2 (final only at completion)."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "frames": 10,
+      "terminal": "Operation progress 10/10; cumulative counted pairs = 3 (final only at completion)."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "frames": 5,
+      "terminal": "Operation progress 5/5; cumulative counted pairs = 1 (final only at completion)."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "frames": 3,
+      "terminal": "Operation progress 3/3; cumulative counted pairs = 1 (final only at completion)."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "frames": 1,
+      "terminal": "Operation progress 1/1; cumulative counted pairs = 0 (final only at completion)."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "frames": 5,
+      "terminal": "Operation progress 5/5; cumulative counted pairs = 2 (final only at completion)."
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "geometry": {
+        "scroll": 320,
+        "width": 320,
+        "top": -1632.75,
+        "nav": 66
+      },
+      "renderedOperation": "Original block [0,5), split 2. Finished scanning x=3; q moved from 0 to 1, cross contribution +1. Right prefix [0,q) satisfies x>2y; position q fails if it exists.",
+      "renderedCells": "R[0]=1; 3>2: CountR[1]=2; 3>4: ExcludeR[2]=3; 3>6: Exclude"
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "geometry": {
+        "scroll": 390,
+        "width": 390,
+        "top": -1164.5,
+        "nav": 66
+      },
+      "renderedOperation": "Original block [0,5), split 2. Finished scanning x=3; q moved from 0 to 1, cross contribution +1. Right prefix [0,q) satisfies x>2y; position q fails if it exists.",
+      "renderedCells": "R[0]=1; 3>2: CountR[1]=2; 3>4: ExcludeR[2]=3; 3>6: Exclude"
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "geometry": {
+        "scroll": 736,
+        "width": 736,
+        "top": -534.390625,
+        "nav": 70
+      },
+      "renderedOperation": "Original block [0,5), split 2. Finished scanning x=3; q moved from 0 to 1, cross contribution +1. Right prefix [0,q) satisfies x>2y; position q fails if it exists.",
+      "renderedCells": "R[0]=1; 3>2: CountR[1]=2; 3>4: ExcludeR[2]=3; 3>6: Exclude"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "geometry": {
+        "scroll": 1440,
+        "width": 1440,
+        "top": -434.0625,
+        "nav": 70
+      },
+      "renderedOperation": "Original block [0,5), split 2. Finished scanning x=3; q moved from 0 to 1, cross contribution +1. Right prefix [0,q) satisfies x>2y; position q fails if it exists.",
+      "renderedCells": "R[0]=1; 3>2: CountR[1]=2; 3>4: ExcludeR[2]=3; 3>6: Exclude"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "frames": 10,
+      "terminal": "操作进度 10/10；已累计计入 2 对（仅完成时才是最终答案）。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "frames": 10,
+      "terminal": "操作进度 10/10；已累计计入 3 对（仅完成时才是最终答案）。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "frames": 5,
+      "terminal": "操作进度 5/5；已累计计入 1 对（仅完成时才是最终答案）。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "frames": 3,
+      "terminal": "操作进度 3/3；已累计计入 1 对（仅完成时才是最终答案）。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "frames": 1,
+      "terminal": "操作进度 1/1；已累计计入 0 对（仅完成时才是最终答案）。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "frames": 5,
+      "terminal": "操作进度 5/5；已累计计入 2 对（仅完成时才是最终答案）。"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "geometry": {
+        "scroll": 320,
+        "width": 320,
+        "top": -915.796875,
+        "nav": 66
+      },
+      "renderedOperation": "原块 [0,5)，切点 2。x=3 扫描完毕；q 从 0 到 1，本次 +1 对。右前缀 [0,q) 全满足 x>2y；q 处若存在则失败。",
+      "renderedCells": "R[0]=1；3>2：计入R[1]=2；3>4：排除R[2]=3；3>6：排除"
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "geometry": {
+        "scroll": 390,
+        "width": 390,
+        "top": -723.09375,
+        "nav": 66
+      },
+      "renderedOperation": "原块 [0,5)，切点 2。x=3 扫描完毕；q 从 0 到 1，本次 +1 对。右前缀 [0,q) 全满足 x>2y；q 处若存在则失败。",
+      "renderedCells": "R[0]=1；3>2：计入R[1]=2；3>4：排除R[2]=3；3>6：排除"
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "geometry": {
+        "scroll": 736,
+        "width": 736,
+        "top": 95.609375,
+        "nav": 70
+      },
+      "renderedOperation": "原块 [0,5)，切点 2。x=3 扫描完毕；q 从 0 到 1，本次 +1 对。右前缀 [0,q) 全满足 x>2y；q 处若存在则失败。",
+      "renderedCells": "R[0]=1；3>2：计入R[1]=2；3>4：排除R[2]=3；3>6：排除"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "geometry": {
+        "scroll": 1440,
+        "width": 1440,
+        "top": 95.9375,
+        "nav": 70
+      },
+      "renderedOperation": "原块 [0,5)，切点 2。x=3 扫描完毕；q 从 0 到 1，本次 +1 对。右前缀 [0,q) 全满足 x>2y；q 处若存在则失败。",
+      "renderedCells": "R[0]=1；3>2：计入R[1]=2；3>4：排除R[2]=3；3>6：排除"
+    }
+  ],
+  "focus": {
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrast": [
+    {
+      "sel": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "sel": ".hint",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "sel": ".value",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".btn.primary",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "#tracePrev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "sel": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgba(13, 17, 23, 0.96)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "sel": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "textarea",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    }
+  ],
+  "errors": [],
+  "assets": [
+    "http://127.0.0.1:18776/leetcode/493/",
+    "http://127.0.0.1:18776/leetcode/style.css",
+    "http://127.0.0.1:18776/leetcode/493/local.css?v=493-1",
+    "http://127.0.0.1:18776/leetcode/common.js",
+    "http://127.0.0.1:18776/leetcode/493/python-code.js?v=493-1",
+    "http://127.0.0.1:18776/leetcode/493/core.js?v=493-1",
+    "http://127.0.0.1:18776/leetcode/493/copy.js?v=493-1",
+    "http://127.0.0.1:18776/leetcode/493/app.js?v=493-1"
+  ],
+  "cssBytes": 10898,
+  "limits": "Chromium desktop emulation; CSS zoom 2 models 200% layout zoom. No physical mobile, novice outcomes, deployment or independent review."
+}

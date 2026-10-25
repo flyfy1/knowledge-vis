@@ -1,0 +1,26 @@
+{
+  "candidateId": "7a11fcb9c08c4efcde1c5947d8fe328f49a40a2167bf16feec2ddb7c128a257c",
+  "at": "2026-10-25T00:48:21.379427+00:00",
+  "scope": "Runtime, brief, provenance, metadata and test sources; generated evidence and SELF-CHECK excluded to avoid recursive hashing. No commit or independent acceptance.",
+  "files": {
+    "BRIEF.md": "8ac7e5ee569d80e39f9feba180b6c8b5949ac68df745f49d4cade5737a45f18a",
+    "app.js": "f0b82273804ce4d47c837bcf3ad6f4d23c0f5a7f2747183bd16353d088300a8b",
+    "copy.js": "192edd7d4ed790e8d6ec0afe9e520080b6c661272fe035973a8df38a8d0f0d89",
+    "core.js": "6c48bd94118e698133f30c5ad39eab58d855e4b8e71d741c6682882d1e3bf79b",
+    "index.html": "bae3d061ca4fd70d4e269eb27ed60100a001dd752131cdd4d0bc1748fb7c1494",
+    "lesson-entry.json": "9a6c5553e578d33dfeedee02293e0b8519c63be93591326d205a6b6671655f27",
+    "local.css": "82ca4f075142a36aa9ac978e7139766ae1dfdea2f82daa355fb0fe518f29638b",
+    "provenance/README.md": "85a9e3ae26420639db87669ab0f272b7e52b7b1d4e57f415a8e4f7d5a3953a1c",
+    "provenance/official-graphql.json": "6053a0a23ea947481b9f02080bd3d583a1a69462a16c2e56553b92c91fa91e19",
+    "python-code.js": "41c245a3381ea2677e3b9597d179b1767b39a3fadd23625411e04c8fc3dd021c",
+    "solution.py": "d1af2500b2a7d3c53add7bf5910a7afbac4be92f862d0a39d2a7d1d2eba6de2e",
+    "tests/README.md": "9077eaf47d5911f023c6d80e62b190ba2dc13fedd6360492476083394dd686cc",
+    "tests/browser.cjs": "dcec3f35234edfd9afcd1132c85b8ea425001a7a40688189bb1c2cdfc5cc0b7a",
+    "tests/check.py": "d0b8734a5d3dda3d0665f95f376e003eccfbdd8b58b159a0e5fb2031b239048d",
+    "tests/core.cjs": "02a2195df98219b010cea940fad0a3f83600d88e60d74018dacbb605481eee05"
+  },
+  "sharedReadOnly": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}
