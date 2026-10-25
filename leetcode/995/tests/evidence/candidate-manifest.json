@@ -1,0 +1,39 @@
+{
+  "candidate": "995-author-1",
+  "frozenAt": "2026-10-25T22:26:31.043188+00:00",
+  "runtimeSha256": "86b03138dd1ddee328ad9c07d7e42452e3bb379827592853694b8dd94ab328c1",
+  "authorStatus": "self-checked; ready for separate review",
+  "independentReview": "pending",
+  "reviewerRun": null,
+  "acceptedRevision": null,
+  "deployedRevision": null,
+  "files": {
+    "BRIEF.md": "50a73842bc0c4531527a59da412285f0213b45e1359f5a099f8d96a1cfcbb600",
+    "app.js": "5e3f5bfa03d2bd50b3ca312e7430317edf80faedaa03aced013a06615289fe56",
+    "copy.js": "b90154c25fc04a318545d1d497b85c0d7aca96845f53a0cf9ce309fe2f014aee",
+    "core.js": "bdf1528e1d12cc3a3aaf24fd656ca7a6f0d5d20d402f01958984e9b2f3d54fe6",
+    "index.html": "144e8ea92fcb7ad7cccf05d106943d7c8182c9ba53a91d9bbe1954fe2ba97f00",
+    "lesson-entry.json": "dcaf19f39fbe5d6a8bc2d96e3ad580c6d7bf701791c4b60a5cfd8e035e0de6c6",
+    "python-code.js": "27e528d8b5be9e493b59947a5351b577caed2ebecef6d9c515a768c4ac218466",
+    "solution.py": "31cc55e456b9d13a0350ec26272a1601f19a9832c3dde85f5f123c54d7c848b9",
+    "style.css": "4ad467f067489544cafcc9f882a8bd10e6a1fc2a4ab410871516fdc66f33b293",
+    "tests/README.md": "8ac8fb7d8448799e4cd777f715083f5819b200f7c1bbe050f34fe6d8c8f59f1c",
+    "tests/browser.cjs": "3ecab67eb163ebadc57252329c34adbfd82cde0333de8765155ffe205e01d8c3",
+    "tests/evidence/SELF-CHECK.md": "16d0526fe9d86017c9198c93265da6c83562421e799a104c59f7b82906c46bae",
+    "tests/evidence/browser.json": "6e0ac9a22af1ea65c3c21fc177958f91cc87617467d451c58e57ee4b96dac916",
+    "tests/evidence/core.json": "9d4c7da677a98d7a84cf8fe5f79e47d6575f3d7f1428b683efa9327b69904443",
+    "tests/evidence/numerical.json": "5b8efc084a4c2bef6b5c69f903d39d715da13a1746ced7988e2a9f8f74abe749",
+    "tests/evidence/official-verification.md": "83d0f04ca002927744902161e1e3e0554384e9410c732753ee7c442c9eb0236c",
+    "tests/evidence/official.json": "f988a77cacf51179e3c2f008582ec85e65fa09ae1eae922f462806b8d355b5e8",
+    "tests/evidence/preflight.json": "63f3e026c21deaee00e49fd10d523741d967b43adaa3b2cc4cdb4c6d50b439d2",
+    "tests/evidence/visual.json": "ac1995d3965bc05153f7ad88dea306cfe7be8cba357c5cf9ce20e9b43ec91a2c",
+    "tests/make_sheets.py": "e878c62710678e8aef4d2a09535b5f178009723a56eeba74a846fb5528b91125",
+    "tests/test_core.cjs": "10c3ef7d7ef271d344993c60b0bfa298c021b5c406822b64a9f3cea5eee257e6",
+    "tests/test_solution.py": "ab5d0413c14ad41f9def7c17280dfe11502f8402c23fb05d0844f2ad3eaa1fbd",
+    "tests/visual.cjs": "542a3bcd18032c771b5fc62adb639efe8bca23567f019c4231d3a8ca1da58330"
+  },
+  "sharedAssets": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}

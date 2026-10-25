@@ -1,0 +1,93 @@
+{
+  "kind": "author visual-state capture; inspection recorded separately",
+  "evidence": [
+    {
+      "lang": "en",
+      "kind": "overlap",
+      "text": "Index 1\n1\nOriginal 1\n✓ Fixed\nJust checked",
+      "outline": "rgb(255, 180, 84)",
+      "border": "rgb(110, 231, 255)",
+      "labels": [
+        {
+          "text": "Index 1",
+          "top": 88.234375,
+          "bottom": 109.234375,
+          "left": 147,
+          "right": 227
+        },
+        {
+          "text": "1",
+          "top": 109.234375,
+          "bottom": 151.234375,
+          "left": 147,
+          "right": 227
+        },
+        {
+          "text": "Original 1",
+          "top": 151.234375,
+          "bottom": 172.234375,
+          "left": 147,
+          "right": 227
+        },
+        {
+          "text": "✓ Fixed",
+          "top": 172.234375,
+          "bottom": 193.234375,
+          "left": 147,
+          "right": 227
+        },
+        {
+          "text": "Just checked",
+          "top": 193.234375,
+          "bottom": 214.234375,
+          "left": 147,
+          "right": 227
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "kind": "overlap",
+      "text": "位置 1\n1\n原值 1\n✓ 已定\n当前检查",
+      "outline": "rgb(255, 180, 84)",
+      "border": "rgb(110, 231, 255)",
+      "labels": [
+        {
+          "text": "位置 1",
+          "top": 88.390625,
+          "bottom": 109.390625,
+          "left": 147,
+          "right": 227
+        },
+        {
+          "text": "1",
+          "top": 109.390625,
+          "bottom": 151.390625,
+          "left": 147,
+          "right": 227
+        },
+        {
+          "text": "原值 1",
+          "top": 151.390625,
+          "bottom": 172.390625,
+          "left": 147,
+          "right": 227
+        },
+        {
+          "text": "✓ 已定",
+          "top": 172.390625,
+          "bottom": 193.390625,
+          "left": 147,
+          "right": 227
+        },
+        {
+          "text": "当前检查",
+          "top": 193.390625,
+          "bottom": 214.390625,
+          "left": 147,
+          "right": 227
+        }
+      ]
+    }
+  ]
+}
