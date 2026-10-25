@@ -1,0 +1,45 @@
+{
+  "problemId": 660,
+  "officialSource": "https://leetcode.com/problems/remove-9/",
+  "requests": [
+    {
+      "url": "https://leetcode.com/problems/remove-9/",
+      "accessedAt": "2026-10-25T03:38:22.264345+00:00",
+      "httpStatus": 403,
+      "bodyFile": "official-page.html",
+      "request": null
+    },
+    {
+      "url": "https://leetcode.com/graphql/",
+      "accessedAt": "2026-10-25T03:38:22.339896+00:00",
+      "httpStatus": 200,
+      "bodyFile": "official-graphql.json",
+      "request": {
+        "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId questionFrontendId title titleSlug isPaidOnly difficulty\n    content exampleTestcases sampleTestCase metaData\n    codeSnippets { lang langSlug code }\n  }\n}",
+        "variables": {
+          "titleSlug": "remove-9"
+        }
+      }
+    }
+  ],
+  "observed": {
+    "paidOnly": true,
+    "statementAvailable": false,
+    "languageSnippetsAvailable": false,
+    "rawSampleInputs": "9\n10",
+    "metadata": {
+      "name": "newInteger",
+      "params": [
+        {
+          "name": "n",
+          "type": "integer"
+        }
+      ],
+      "return": {
+        "type": "integer"
+      }
+    }
+  },
+  "scope": "Unauthenticated public official requests; no cookies or credentials used.",
+  "blocked": true
+}
