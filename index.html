@@ -9,7 +9,7 @@
   :root{
     --bg:#0a0e14; --panel:#111826; --panel2:#0d1420; --line:#1f2c42;
     --text:#e6edf6; --dim:#93a5bd; --cyan:#67d7f9; --cyan-d:#164e63;
-    --amber:#f5b04c; --green:#4ade80;
+    --amber:#f5b04c; --green:#4ade80; --on-cyan:#08131a;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -34,7 +34,7 @@
     background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:5px 15px}
   .chip:hover{color:var(--text);border-color:var(--cyan-d)}
   .chip.on{background:var(--cyan);border-color:var(--cyan);color:#08131a;font-weight:700}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:8px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin-top:8px}
   a.card,div.card{display:block;background:linear-gradient(180deg,var(--panel),var(--panel2));
     border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;
     text-decoration:none;color:var(--text);position:relative;overflow:hidden}
@@ -58,6 +58,35 @@
   .go{margin-top:16px;color:var(--cyan);font-size:14px}
   footer{margin-top:52px;color:var(--dim);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
   .empty{color:var(--dim);border:1px dashed var(--line);border-radius:16px;padding:28px;text-align:center;grid-column:1/-1;margin:0}
+  [hidden]{display:none!important}
+  .chip,.lang-toggle button{min-width:48px;min-height:48px}
+  :focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+  .lang-toggle button:focus-visible{outline-offset:-3px}
+  .lang-toggle button.on:focus-visible{outline-color:var(--on-cyan)}
+  .leetcode-search{margin-top:26px}
+  .leetcode-search label{display:block;font-weight:700;margin-bottom:8px}
+  .search-row{display:flex;flex-wrap:wrap;gap:8px}
+  .search-row input{flex:1 1 300px;min-width:0;width:100%;min-height:48px;
+    font:inherit;color:var(--text);background:var(--panel2);border:1px solid var(--dim);
+    border-radius:12px;padding:12px}
+  .section-button{font:inherit;min-height:48px;min-width:48px;padding:8px 16px;
+    color:var(--cyan);background:var(--panel2);border:1px solid var(--dim);
+    border-radius:12px;cursor:pointer}
+  .search-help,.result-status{font-size:.875rem;color:var(--dim);margin:12px 0 0}
+  .section-error{margin-top:16px}
+  .section-error p{color:var(--text)}
+  article.lesson-card{background:linear-gradient(180deg,var(--panel),var(--panel2));
+    border:1px solid var(--line);border-radius:16px;padding:22px;overflow-wrap:anywhere}
+  .lesson-card h2{font-size:1.25rem;line-height:1.35;margin:12px 0;font-weight:700}
+  .lesson-card h2 a{display:flex;align-items:center;min-height:48px;color:var(--text);text-decoration:none}
+  .lesson-card a:hover{text-decoration:underline}
+  .problem-number{color:var(--cyan);white-space:nowrap}
+  .lesson-card p{font-size:1rem;margin:0 0 16px;color:var(--dim)}
+  .lesson-meta{display:flex;flex-wrap:wrap;gap:8px;font-size:.875rem;color:var(--dim)}
+  .lesson-actions{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:16px}
+  .lesson-actions a{display:inline-flex;align-items:center;min-height:48px;color:var(--cyan);font-size:.875rem}
+  @media(prefers-reduced-motion:reduce){a.card{transition:none}a.card:hover{transform:none}}
+  @media(forced-colors:active){:focus-visible,.lang-toggle button.on:focus-visible{outline-color:Highlight}}
   @media (max-width:560px){
     .wrap{padding:38px 16px 56px}
     h1{font-size:31px}
@@ -79,13 +108,26 @@
     <div class="chips" id="stageChips" role="group" aria-label="Stage filter / 学段筛选" style="margin-top:10px"></div>
   </header>
 
+  <section id="leetcodeSearch" class="leetcode-search" hidden aria-labelledby="searchLabel">
+    <label id="searchLabel" for="problemSearch" data-i18n="searchLabel"></label>
+    <div class="search-row">
+      <input id="problemSearch" type="search" aria-describedby="searchHelp" autocomplete="off" spellcheck="false">
+      <button id="clearSearch" class="section-button" type="button" data-i18n="clearSearch"></button>
+    </div>
+    <p id="searchHelp" class="search-help" data-i18n="searchHelp"></p>
+    <p id="resultCount" class="result-status" role="status" aria-live="polite" aria-atomic="true"></p>
+    <div id="sectionError" class="section-error" hidden>
+      <p data-i18n="loadError"></p>
+      <button id="retryLessons" class="section-button" type="button" data-i18n="retry"></button>
+    </div>
+  </section>
   <main id="grid" class="grid" aria-live="polite"></main>
   <noscript><p class="empty">这个索引页需要 JavaScript 才能列出条目。</p></noscript>
 
   <footer data-i18n-html="footerText">新增条目登记在 <b>pages.config.js</b> 配置里；每页都是纯静态、可离线打开的单页。</footer>
 </div>
 
-<script src="pages.config.js?v=lc2916-1"></script>
+<script src="pages.config.js?v=8f89773"></script>
 <script>
 (function(){
   'use strict';
@@ -96,6 +138,10 @@
       intro: '把难懂的知识点，做成<b>可以上手玩的交互页</b>：每页一个主题，由浅入深，一步一个交互，玩到最后就懂了。',
       allChip: '全部', allStage: '全部学段', badgeLive: '已上线', badgePlanned: '筹备中', goOpen: '打开 →',
       emptyText: '还没有登记任何知识页。',
+      searchLabel:'查找 LeetCode 课程', searchHelp:'输入准确题号（如 #51）、中英文题名或知识点。多个词用空格分隔，需同时匹配。',
+      clearSearch:'清空搜索', loading:'正在读取课程列表…', loadError:'暂时无法读取课程列表，请重试。', retry:'重试',
+      count:'找到 {shown} / {total} 篇可用课程', noMatches:'没有匹配的课程。试试题号、题名或知识点，或清空搜索。',
+      emptyCollection:'课程列表目前为空。', hard:'困难', explore:'开始推导 →', official:'LeetCode 原题 ↗',
       emptyFilter: '这个组合下还没有条目，敬请期待。',
       footerText: '新增条目登记在 <b>pages.config.js</b> 配置里；每页都是纯静态、可离线打开的单页。'
     },
@@ -104,6 +150,10 @@
       intro: 'Tough ideas, turned into <b>pages you can play with</b>: one topic per page, shallow to deep, one interaction per step — play to the end, and it clicks.',
       allChip: 'All', allStage: 'All stages', badgeLive: 'Live', badgePlanned: 'Planned', goOpen: 'Open →',
       emptyText: 'No knowledge pages have been registered yet.',
+      searchLabel:'Find a LeetCode lesson', searchHelp:'Enter an exact ID (such as #51), a title in either language, or a topic. Space-separated words must all match.',
+      clearSearch:'Clear search', loading:'Loading lessons…', loadError:'The lesson list could not be loaded. Please retry.', retry:'Retry',
+      count:'{shown} of {total} available lessons', noMatches:'No matching lessons. Try an ID, title or topic, or clear the search.',
+      emptyCollection:'This collection currently has no lessons.', hard:'Hard', explore:'Explore the lesson →', official:'View on LeetCode ↗',
       emptyFilter: 'Nothing under this combination yet — stay tuned.',
       footerText: 'New entries are registered in the <b>pages.config.js</b> config; every page is a single static page that also works offline.'
     }
@@ -136,7 +186,7 @@
   var categories = window.KNOWLEDGE_CATEGORIES || [];
   var stages = window.KNOWLEDGE_STAGES || [];
   var pages = (window.KNOWLEDGE_PAGES || []).slice();
-  var activeCat = 'all'; // 筛选状态仅内存，不持久化
+  var activeCat = 'all';
   var activeStage = 'all';
 
   function catName(id) {
@@ -159,7 +209,7 @@
         b.type = 'button';
         b.className = 'chip';
         b.dataset.cat = d.id;
-        b.addEventListener('click', function(){ activeCat = d.id; renderChips(); renderCards(); });
+        b.addEventListener('click', function(){ selectCategory(d.id); });
         chipsBox.appendChild(b);
       });
     }
@@ -167,6 +217,7 @@
       var id = b.dataset.cat;
       b.textContent = id === 'all' ? t('allChip') : catName(id);
       b.classList.toggle('on', activeCat === id);
+      b.setAttribute('aria-pressed', String(activeCat === id));
     });
   }
 
@@ -188,11 +239,17 @@
       var id = b.dataset.stage;
       b.textContent = id === 'all' ? t('allStage') : stageName(id);
       b.classList.toggle('on', activeStage === id);
+      b.setAttribute('aria-pressed', String(activeStage === id));
     });
   }
 
   function renderCards() {
     grid.innerHTML = '';
+    var isLeetCode = activeCat === 'leetcode';
+    stageBox.hidden = isLeetCode;
+    searchSection.hidden = !isLeetCode;
+    grid.setAttribute('aria-live', isLeetCode ? 'off' : 'polite');
+    if (isLeetCode) { renderLessons(); return; }
     if (!pages.length) {
       var p0 = document.createElement('p');
       p0.className = 'empty'; p0.textContent = t('emptyText');
@@ -215,6 +272,18 @@
       var el = document.createElement(live ? 'a' : 'div');
       el.className = 'card' + (live ? '' : ' planned');
       if (live) el.href = pg.path;
+      if (live && pg.category === 'leetcode') {
+        var categoryUrl = new URL(location.href);
+        categoryUrl.searchParams.set('category', 'leetcode');
+        if (searchInput.value) categoryUrl.searchParams.set('q', searchInput.value);
+        else categoryUrl.searchParams.delete('q');
+        el.href = categoryUrl.href;
+        el.addEventListener('click', function(event) {
+          if (event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+          event.preventDefault(); selectCategory('leetcode');
+          chipsBox.querySelector('[data-cat="leetcode"]').focus();
+        });
+      }
       var badge = '<span class="badge ' + (live ? 'live' : 'planned') + '">' +
                   (live ? t('badgeLive') : t('badgePlanned')) + '</span>';
       var cat = pg.category ? '<span class="cat-badge"></span>' : '';
@@ -235,6 +304,134 @@
     });
   }
 
+
+  // This adapter reads the campaign-owned registry without owning its release lifecycle.
+  var searchSection = document.getElementById('leetcodeSearch');
+  var searchInput = document.getElementById('problemSearch');
+  var resultCount = document.getElementById('resultCount');
+  var sectionError = document.getElementById('sectionError');
+  var lessons = [], lessonCards = [], loadState = 'idle', loadToken = 0, composing = false, compositionQuery = '';
+  var normalized = function(value) { return value.normalize('NFKC').toLowerCase(); };
+  function saveView(push) {
+    var url = new URL(location.href);
+    if (activeCat === 'all') url.searchParams.delete('category');
+    else url.searchParams.set('category', activeCat);
+    var query = composing ? compositionQuery : searchInput.value;
+    if (activeCat === 'leetcode' && query) url.searchParams.set('q', query);
+    else url.searchParams.delete('q');
+    try { history[push ? 'pushState' : 'replaceState'](history.state, '', url); } catch (_) {}
+  }
+  function readView() {
+    var url = new URL(location.href), category = url.searchParams.get('category');
+    activeCat = categories.some(function(c) { return c.id === category; }) ? category : 'all';
+    if (activeCat === 'leetcode') searchInput.value = url.searchParams.get('q') || '';
+  }
+  function selectCategory(id) {
+    if (activeCat === id) return;
+    activeCat = id; saveView(true); renderChips(); renderCards();
+  }
+  function validateLessons(data) {
+    var ids = new Set();
+    var bilingual = function(value) { return value && ['zh','en'].every(function(l) { return typeof value[l] === 'string' && value[l].trim().length > 0; }); };
+    if (!Array.isArray(data) || !data.every(function(p) {
+      if (!p || !Number.isInteger(p.id) || p.id <= 0 || ids.has(p.id)) return false;
+      ids.add(p.id);
+      return bilingual(p.title) && bilingual(p.desc) && Array.isArray(p.topics) && p.topics.every(bilingual) &&
+        p.difficulty === 'hard' && (p.path === p.id + '/' || p.path === p.id + '-codex/') &&
+        typeof p.leetcodeUrl === 'string' && /^https:\/\/leetcode\.com\/problems\/[a-z0-9-]+\/$/.test(p.leetcodeUrl) &&
+        typeof p.language === 'string' && p.language.trim().length > 0 &&
+        typeof p.complexity === 'string' && p.complexity.trim().length > 0;
+    })) throw new Error('Invalid lesson registry');
+    return data.slice().sort(function(a,b) { return a.id-b.id; });
+  }
+  function loadLessons() {
+    if (loadState === 'loading') return;
+    loadState = 'loading';
+    var token = ++loadToken;
+    var url = new URL('leetcode/problems.config.js', location.href);
+    // Each page session sees the latest published batch, even through a caching proxy.
+    if (location.protocol !== 'file:') url.searchParams.set('v', Date.now() + '-' + token);
+    var controller = new AbortController(), script, timer;
+    var request = location.protocol === 'file:' ? new Promise(function(resolve,reject) {
+      script = document.createElement('script'); script.src = url.href;
+      script.onload = function() { resolve(window.LEETCODE_PROBLEMS); };
+      script.onerror = function() { reject(new Error('Local registry unavailable')); };
+      document.head.appendChild(script);
+    }) : fetch(url, {cache:'no-store', signal:controller.signal}).then(function(response) {
+      if (!response.ok) throw new Error('Registry request failed');
+      return response.text();
+    }).then(function(source) {
+      var match = source.match(/^\s*(?:\/\*[\s\S]*?\*\/\s*)?window\.LEETCODE_PROBLEMS\s*=\s*(\[[\s\S]*\])\s*;?\s*$/);
+      if (!match) throw new Error('Invalid registry envelope');
+      return JSON.parse(match[1]);
+    });
+    var timeout = new Promise(function(_,reject) {
+      timer = setTimeout(function() { controller.abort(); reject(new Error('Registry timeout')); },15000);
+    });
+    Promise.race([request,timeout]).then(validateLessons).then(function(data) {
+      if (token !== loadToken) return;
+      lessons = data; loadState = 'ready';
+    }).catch(function() { if (token === loadToken) loadState = 'error'; }).finally(function() {
+      clearTimeout(timer); if (script) script.remove();
+      if (token === loadToken && activeCat === 'leetcode') renderCards();
+    });
+  }
+  function node(tag, className, text) {
+    var el = document.createElement(tag); if (className) el.className = className;
+    if (text !== undefined) el.textContent = text; return el;
+  }
+  function filterLessons() {
+    if (activeCat !== 'leetcode' || loadState !== 'ready') return;
+    var query = normalized((composing ? compositionQuery : searchInput.value).trim());
+    var id = /^#?\d+$/.test(query) ? Number(query.replace(/^#/,'')) : null;
+    var tokens = query.split(/\s+/).filter(Boolean), shown = 0;
+    lessonCards.forEach(function(entry) {
+      var matches = id !== null ? entry.id === id : tokens.every(function(token) { return entry.search.includes(token); });
+      entry.element.hidden = !matches; if (matches) shown++;
+    });
+    resultCount.textContent = t('count').replace('{shown}',shown).replace('{total}',lessons.length);
+    var empty = document.getElementById('emptyLessons');
+    empty.hidden = shown > 0; empty.textContent = t(lessons.length ? 'noMatches' : 'emptyCollection');
+  }
+  function renderLessons() {
+    lessonCards = []; sectionError.hidden = loadState !== 'error';
+    if (loadState === 'idle') loadLessons();
+    if (loadState !== 'ready') {
+      resultCount.textContent = t(loadState === 'error' ? 'loadError' : 'loading'); return;
+    }
+    var fragment = document.createDocumentFragment();
+    lessons.forEach(function(p) {
+      var card = node('article','lesson-card'); card.dataset.problemId = p.id;
+      var meta = node('div','lesson-meta');
+      [t('hard'),p.language,p.complexity].forEach(function(label) { meta.appendChild(node('span','',label)); });
+      var heading = node('h2'), link = node('a','lesson-link');
+      var lessonUrl = new URL('leetcode/' + p.path + (location.protocol === 'file:' ? 'index.html' : ''), location.href).href;
+      link.href = lessonUrl;
+      var title = node('span'); title.append(node('span','problem-number','#' + p.id), document.createTextNode(' · ' + pick(p.title)));
+      link.appendChild(title); heading.appendChild(link);
+      var tags = node('div','tags'); p.topics.forEach(function(topic) { tags.appendChild(node('span','tag',pick(topic))); });
+      var actions = node('div','lesson-actions'), open = node('a','',t('explore')), official = node('a','official-link',t('official'));
+      open.href = lessonUrl; open.setAttribute('aria-label','#' + p.id + ' · ' + t('explore'));
+      official.href = p.leetcodeUrl; official.target = '_blank'; official.rel = 'noopener noreferrer';
+      official.setAttribute('aria-label','#' + p.id + ' · ' + t('official'));
+      actions.append(open,official); card.append(meta,heading,node('p','',pick(p.desc)),tags,actions); fragment.appendChild(card);
+      lessonCards.push({element:card,id:p.id,search:normalized([p.title.zh,p.title.en].concat(p.topics.flatMap(function(topic) { return [topic.zh,topic.en]; })).join(' '))});
+    });
+    var empty = node('p','empty'); empty.id = 'emptyLessons'; fragment.appendChild(empty);
+    grid.appendChild(fragment); filterLessons();
+  }
+  searchInput.addEventListener('compositionstart',function() { compositionQuery = searchInput.value; composing = true; });
+  searchInput.addEventListener('compositionend',function() { composing = false; saveView(false); filterLessons(); });
+  searchInput.addEventListener('input',function(event) { if (!composing && !event.isComposing) { saveView(false); filterLessons(); } });
+  document.getElementById('clearSearch').addEventListener('click',function() {
+    searchInput.value = ''; composing = false; saveView(false); filterLessons(); searchInput.focus();
+  });
+  document.getElementById('retryLessons').addEventListener('click',function() {
+    searchInput.focus(); loadLessons(); renderCards();
+  });
+  window.addEventListener('popstate',function() { composing = false; readView(); renderChips(); renderCards(); });
+  readView();
+
   function applyLang() {
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
     document.title = t('docTitle');
@@ -242,6 +439,7 @@
     document.querySelectorAll('[data-i18n-html]').forEach(function(el){ el.innerHTML = t(el.getAttribute('data-i18n-html')); });
     document.querySelectorAll('#langToggle button').forEach(function(b){
       b.classList.toggle('on', b.dataset.lang === lang);
+      b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
     });
     renderChips();
     renderStageChips();

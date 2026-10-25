@@ -41,6 +41,13 @@ class PublishTests(unittest.TestCase):
             self.lesson(pid)
         self.baseline = self.commit('Previously public baseline')
         shutil.copytree(self.repo / 'leetcode', self.root / 'leetcode')
+        # Existing production has completed the independently verified static
+        # migration; canonical registry bytes and acceptance digests stay numeric.
+        for pid in (4, 51, 52):
+            for path, data in publisher.codex_runtime(pid, publisher._lesson(self.repo, self.baseline, str(pid))).items():
+                target = self.root / path
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(data)
         (self.root / 'unrelated.html').write_text('Keep this page')
         self.state = {'expected_head': self.baseline, 'queue': list(map(str, self.ids)), 'problems': {}, 'runs': []}
 
@@ -93,18 +100,28 @@ class PublishTests(unittest.TestCase):
     def ledger(self):
         return json.loads((self.state_dir / 'releases.json').read_text())
 
+    def test_default_batch_waits_at_19_and_publishes_20(self):
+        self.accept(range(1000, 1020))
+        self.state['problems']['1019']['status'] = 'review_pending'
+        with patch.object(publisher, '_verify_public', return_value={'testAdapter': True}) as verify:
+            self.assertEqual(self.publish()['accepted_unreleased'], 19)
+            verify.assert_not_called()
+            self.state['problems']['1019']['status'] = 'accepted_local'
+            self.assertEqual(len(self.publish()['ids']), 20)
+            verify.assert_called_once()
+
     def test_99_wait_100_publish_unique_and_preserve_legacy(self):
         self.accept(range(1000, 1100))
         self.state['problems']['1099']['status'] = 'review_pending'
         original = copy.deepcopy(self.state)
         with patch.object(publisher, '_verify_public', return_value={'testAdapter': True}) as verify:
-            self.assertEqual(self.publish()['accepted_unreleased'], 99)
+            self.assertEqual(self.publish(batch_size=100)['accepted_unreleased'], 99)
             verify.assert_not_called()
             self.state['problems']['1099']['status'] = 'accepted_local'
-            result = self.publish()
+            result = self.publish(batch_size=100)
             self.assertEqual(len(result['ids']), 100)
             verify.assert_called_once()
-            self.assertEqual(self.publish()['accepted_unreleased'], 0)
+            self.assertEqual(self.publish(batch_size=100)['accepted_unreleased'], 0)
         self.assertEqual((self.root / 'unrelated.html').read_text(), 'Keep this page')
         self.assertEqual({entry['id'] for entry in read_registry(self.root / 'leetcode/problems.config.js')}, {4, 51, 52, *range(1000, 1100)})
         self.assertFalse((self.root / 'leetcode/1000/tests').exists())
@@ -113,6 +130,95 @@ class PublishTests(unittest.TestCase):
         self.assertFalse(list(self.root.rglob('*backup*')))
         original['problems']['1099']['status'] = 'accepted_local'
         self.assertEqual(self.state, original, 'Publisher must not mutate campaign state')
+
+    def test_new_release_has_physical_versions_dual_registry_and_original_acceptance(self):
+        self.accept([1000])
+        source = publisher._lesson(self.repo, self.state['expected_head'], '1000')
+        original_registry = (self.repo / 'leetcode/problems.config.js').read_bytes()
+        expected_digest = publisher._fingerprint(source, self.entries['1000'])
+        with patch.object(publisher, '_verify_public', return_value={'testAdapter': True}) as verify:
+            self.publish(batch_size=1)
+        for path, data in source.items():
+            self.assertEqual((self.root / path.replace('/1000/', '/1000-codex/')).read_bytes(), data)
+            if not path.endswith('/index.html'):
+                self.assertEqual((self.root / path).read_bytes(), data)
+        self.assertIn(b'location.replace', (self.root / 'leetcode/1000/index.html').read_bytes())
+        canonical = read_registry(self.root / 'leetcode/problems.config.js')
+        generated = read_registry(self.root / 'leetcode/problems.codex.config.js')
+        self.assertTrue(all(row['path'] == f"{row['id']}/" for row in canonical))
+        self.assertEqual(generated, publisher.codex_registry(canonical))
+        self.assertIn('problems.codex.config.js?v=', (self.root / 'leetcode/index.html').read_text())
+        derived_hash = publisher._sha((self.root / 'leetcode/problems.codex.config.js').read_bytes())[:12]
+        self.assertIn(derived_hash, (self.root / 'leetcode/index.html').read_text())
+        self.assertEqual(verify.call_args.args[2][0]['path'], '1000-codex/')
+        self.assertEqual(self.ledger()['released']['1000']['digest'], expected_digest)
+        self.assertEqual((self.repo / 'leetcode/problems.config.js').read_bytes(), original_registry)
+        self.assertEqual(publisher._lesson(self.repo, self.state['expected_head'], '1000'), source)
+
+    def test_version_assets_precede_redirects_and_discovery(self):
+        self.accept([1000])
+        actual_replace = publisher.os.replace
+        replaced = []
+        def observed(source, destination):
+            if Path(destination).resolve().is_relative_to(self.root.resolve()):
+                replaced.append(Path(destination).resolve().relative_to(self.root.resolve()).as_posix())
+            return actual_replace(source, destination)
+        with patch.object(publisher, '_verify_public', return_value={'testAdapter': True}), patch.object(publisher.os, 'replace', side_effect=observed):
+            self.publish(batch_size=1)
+        redirect = replaced.index('leetcode/1000/index.html')
+        self.assertTrue(all(index < redirect for index, path in enumerate(replaced) if path.startswith('leetcode/1000-codex/')))
+        self.assertLess(redirect, replaced.index('leetcode/problems.config.js'))
+        self.assertLess(redirect, replaced.index('leetcode/problems.codex.config.js'))
+        self.assertEqual(replaced[-1], 'leetcode/index.html')
+
+    def test_historical_pending_replays_numeric_bytes_without_regeneration(self):
+        self.accept([1000])
+        self.publish()  # Establish a ledger; fewer than20 remains unpublished.
+        ledger = self.ledger()
+        source = publisher._lesson(self.repo, self.state['expected_head'], '1000')
+        payload = {**source, 'leetcode/problems.config.js': (self.repo / 'leetcode/problems.config.js').read_bytes(),
+                   'leetcode/index.html': (self.repo / 'leetcode/index.html').read_bytes()}
+        stage = self.state_dir / ('release-stage-' + 'b' * 32)
+        for path, data in payload.items():
+            target = stage / path
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(data)
+        ledger['pending'] = {'id': 'b' * 32, 'revision': self.state['expected_head'], 'stage': stage.name,
+            'files': {path: publisher._sha(data) for path, data in payload.items()},
+            'entries': [copy.deepcopy(self.entries['1000'])],
+            'accepted': {'1000': {'candidate': self.state['problems']['1000']['candidate'],
+                                  'digest': publisher._fingerprint(source, self.entries['1000']),
+                                  'review': 'specs/reviews/1000-review.md'}}}
+        (self.state_dir / 'releases.json').write_text(json.dumps(ledger))
+        with patch.object(publisher, '_verify_public', return_value={'testAdapter': True}) as verify:
+            self.assertEqual(self.publish()['status'], 'published')
+        self.assertEqual((self.root / 'leetcode/1000/index.html').read_bytes(), source['leetcode/1000/index.html'])
+        self.assertFalse((self.root / 'leetcode/1000-codex').exists())
+        self.assertEqual(verify.call_args.args[2][0]['path'], '1000/')
+        self.assertNotIn('route_layout', self.ledger()['releases'][-1])
+
+    def test_missing_prior_static_migration_cannot_advertise_nonexistent_versions(self):
+        self.accept([1000])
+        shutil.rmtree(self.root / 'leetcode/4-codex')
+        with self.assertRaisesRegex(publisher.PublicationError, 'Static route migration must precede'):
+            self.publish(batch_size=1)
+        self.assertFalse((self.root / 'leetcode/1000').exists())
+
+    def test_cross_lesson_html_navigation_and_version_asset_dependencies(self):
+        original = self.lesson
+        def navigation(pid):
+            original(pid)
+            if pid == 1000:
+                path = self.repo / 'leetcode/1000/index.html'
+                path.write_text(path.read_text() + '<a href="../51/index.html#step1">Earlier lesson</a><a href="../51-codex/index.html">Version</a><a href="../51-codex/solution.py" download>Python</a>')
+        with patch.object(self, 'lesson', side_effect=navigation):
+            self.accept([1000])
+        with patch.object(publisher, '_verify_public', return_value={'testAdapter': True}) as verify:
+            self.publish(batch_size=1)
+        hashes = verify.call_args.args[1]
+        self.assertIn('leetcode/51-codex/solution.py', hashes)
+        self.assertNotIn('leetcode/51/index.html', hashes)
+        self.assertNotIn('leetcode/51-codex/index.html', hashes)
 
     def test_historical_public_problem_counts_when_independently_accepted(self):
         self.accept([4])

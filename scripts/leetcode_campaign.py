@@ -454,7 +454,7 @@ def parser():
     result.add_argument("--stop-file", type=Path)
     result.add_argument("--publish-root", type=Path, help="Explicit production directory; enables accepted batch publication")
     result.add_argument("--public-base", help="Public site origin used for release verification")
-    result.add_argument("--publish-every", type=int, default=100)
+    result.add_argument("--publish-every", type=int, default=20)
     result.add_argument("--dry-run", action="store_true")
     return result
 
