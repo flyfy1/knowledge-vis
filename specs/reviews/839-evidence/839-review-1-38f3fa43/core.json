@@ -1,0 +1,11 @@
+{
+  "type": "author self-check",
+  "solutionCases": 2184,
+  "traceInputs": 314,
+  "intermediateFrames": 3296,
+  "oracle": "Enumerate actual single-swap neighbors; traverse graph independently.",
+  "maximum": "300 words, each length 300; 300 duplicate words length 300",
+  "sourceMirrorExact": true,
+  "copyKeysUnique": 90,
+  "result": "pass"
+}

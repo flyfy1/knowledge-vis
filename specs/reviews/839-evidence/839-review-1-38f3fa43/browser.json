@@ -1,0 +1,494 @@
+{
+  "type": "author self-check",
+  "result": "pass",
+  "hostPlatform": "linux",
+  "checks": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "pairs": 6,
+      "finalGroups": 2,
+      "states": [
+        "Pairs tested 1/6; current group count 3. Untested pairs remain; this is not the final answer.",
+        "Pairs tested 2/6; current group count 3. Untested pairs remain; this is not the final answer.",
+        "Pairs tested 3/6; current group count 3. Untested pairs remain; this is not the final answer.",
+        "Pairs tested 4/6; current group count 2. Untested pairs remain; this is not the final answer.",
+        "Pairs tested 5/6; current group count 2. Untested pairs remain; this is not the final answer.",
+        "Pairs tested 6/6; current group count 2. All pairs tested; this is the final answer."
+      ]
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "pairs": 1,
+      "finalGroups": 1,
+      "states": [
+        "Pairs tested 1/1; current group count 1. All pairs tested; this is the final answer."
+      ]
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "pairs": 0,
+      "finalGroups": 1,
+      "states": []
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "pairs": 3,
+      "finalGroups": 1,
+      "states": [
+        "Pairs tested 1/3; current group count 2. Untested pairs remain; this is not the final answer.",
+        "Pairs tested 2/3; current group count 1. Untested pairs remain; this is not the final answer.",
+        "Pairs tested 3/3; current group count 1. All pairs tested; this is the final answer."
+      ]
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "pairs": 1,
+      "finalGroups": 2,
+      "states": [
+        "Pairs tested 1/1; current group count 2. All pairs tested; this is the final answer."
+      ]
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "pairs": 3,
+      "finalGroups": 1,
+      "states": [
+        "Pairs tested 1/3; current group count 2. Untested pairs remain; this is not the final answer.",
+        "Pairs tested 2/3; current group count 2. Untested pairs remain; this is not the final answer.",
+        "Pairs tested 3/3; current group count 1. All pairs tested; this is the final answer."
+      ]
+    },
+    {
+      "locale": "en",
+      "preset": 6,
+      "pairs": 3,
+      "finalGroups": 1,
+      "states": [
+        "Pairs tested 1/3; current group count 2. Untested pairs remain; this is not the final answer.",
+        "Pairs tested 2/3; current group count 1. Untested pairs remain; this is not the final answer.",
+        "Pairs tested 3/3; current group count 1. All pairs tested; this is the final answer."
+      ]
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "pairs": 6,
+      "finalGroups": 2,
+      "states": [
+        "已检查 1/6 对；当前组数 3。还有未检查的词对，这不是最终答案。",
+        "已检查 2/6 对；当前组数 3。还有未检查的词对，这不是最终答案。",
+        "已检查 3/6 对；当前组数 3。还有未检查的词对，这不是最终答案。",
+        "已检查 4/6 对；当前组数 2。还有未检查的词对，这不是最终答案。",
+        "已检查 5/6 对；当前组数 2。还有未检查的词对，这不是最终答案。",
+        "已检查 6/6 对；当前组数 2。全部检查完成，这是最终答案。"
+      ]
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "pairs": 1,
+      "finalGroups": 1,
+      "states": [
+        "已检查 1/1 对；当前组数 1。全部检查完成，这是最终答案。"
+      ]
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "pairs": 0,
+      "finalGroups": 1,
+      "states": []
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "pairs": 3,
+      "finalGroups": 1,
+      "states": [
+        "已检查 1/3 对；当前组数 2。还有未检查的词对，这不是最终答案。",
+        "已检查 2/3 对；当前组数 1。还有未检查的词对，这不是最终答案。",
+        "已检查 3/3 对；当前组数 1。全部检查完成，这是最终答案。"
+      ]
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "pairs": 1,
+      "finalGroups": 2,
+      "states": [
+        "已检查 1/1 对；当前组数 2。全部检查完成，这是最终答案。"
+      ]
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "pairs": 3,
+      "finalGroups": 1,
+      "states": [
+        "已检查 1/3 对；当前组数 2。还有未检查的词对，这不是最终答案。",
+        "已检查 2/3 对；当前组数 2。还有未检查的词对，这不是最终答案。",
+        "已检查 3/3 对；当前组数 1。全部检查完成，这是最终答案。"
+      ]
+    },
+    {
+      "locale": "zh",
+      "preset": 6,
+      "pairs": 3,
+      "finalGroups": 1,
+      "states": [
+        "已检查 1/3 对；当前组数 2。还有未检查的词对，这不是最终答案。",
+        "已检查 2/3 对；当前组数 1。还有未检查的词对，这不是最终答案。",
+        "已检查 3/3 对；当前组数 1。全部检查完成，这是最终答案。"
+      ]
+    }
+  ],
+  "semantic": [
+    {
+      "locale": "en",
+      "state": "tars vs arts: rejected with 3 mismatches; count remains 3",
+      "observed": "Just tested IDs 0, 2; mismatch positions 0, 1, 2; groups 3 → 3. Not directly similar: no edge added."
+    },
+    {
+      "locale": "en",
+      "state": "prediction option 0",
+      "observed": "Check the connecting paths and whether roots already match. The answer is 1. abc—bac swaps 0 and 1; bac—bca swaps 1 and 2; the two bca words are identical. Paths connect all four even though abc and bca are not directly similar. Four singleton sets need only three successful merges. A similar pair whose roots already match does not decrement the count, so it cannot become 0."
+    },
+    {
+      "locale": "en",
+      "state": "prediction option 1",
+      "observed": "Correct prediction. The answer is 1. abc—bac swaps 0 and 1; bac—bca swaps 1 and 2; the two bca words are identical. Paths connect all four even though abc and bca are not directly similar. Four singleton sets need only three successful merges. A similar pair whose roots already match does not decrement the count, so it cannot become 0."
+    },
+    {
+      "locale": "en",
+      "state": "prediction option 2",
+      "observed": "Check the connecting paths and whether roots already match. The answer is 1. abc—bac swaps 0 and 1; bac—bca swaps 1 and 2; the two bca words are identical. Paths connect all four even though abc and bca are not directly similar. Four singleton sets need only three successful merges. A similar pair whose roots already match does not decrement the count, so it cannot become 0."
+    },
+    {
+      "locale": "en",
+      "state": "manual clipboard fallback",
+      "observed": "Automatic copy unavailable: the source is selected for manual copying."
+    },
+    {
+      "locale": "zh",
+      "state": "tars vs arts: rejected with 3 mismatches; count remains 3",
+      "observed": "刚检查编号 0、2；不同位置 0, 1, 2；组数 3 → 3。不直接相似：不加边。"
+    },
+    {
+      "locale": "zh",
+      "state": "prediction option 0",
+      "observed": "再检查连接路径和根是否相同。 答案是 1。abc—bac 交换 0、1；bac—bca 交换 1、2；两份 bca 相同。它们通过路径全部相连，即使 abc 与 bca 不直接相似。四个单点组只需三次成功合并；根已相同的相似对不再减数，所以不会变成 0。"
+    },
+    {
+      "locale": "zh",
+      "state": "prediction option 1",
+      "observed": "预测正确。 答案是 1。abc—bac 交换 0、1；bac—bca 交换 1、2；两份 bca 相同。它们通过路径全部相连，即使 abc 与 bca 不直接相似。四个单点组只需三次成功合并；根已相同的相似对不再减数，所以不会变成 0。"
+    },
+    {
+      "locale": "zh",
+      "state": "prediction option 2",
+      "observed": "再检查连接路径和根是否相同。 答案是 1。abc—bac 交换 0、1；bac—bca 交换 1、2；两份 bca 相同。它们通过路径全部相连，即使 abc 与 bca 不直接相似。四个单点组只需三次成功合并；根已相同的相似对不再减数，所以不会变成 0。"
+    },
+    {
+      "locale": "zh",
+      "state": "manual clipboard fallback",
+      "observed": "自动复制不可用：源码已全选，请手动复制。"
+    }
+  ],
+  "fit": [
+    {
+      "locale": "zh",
+      "viewportWidth": 320,
+      "width": 268,
+      "text": 112.00021362304688,
+      "selectedText": "官方例 1",
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "reserve": 52
+    },
+    {
+      "locale": "zh",
+      "viewportWidth": 390,
+      "width": 338,
+      "text": 112.00021362304688,
+      "selectedText": "官方例 1",
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "reserve": 52
+    },
+    {
+      "locale": "zh",
+      "viewportWidth": 736,
+      "width": 644,
+      "text": 112.00021362304688,
+      "selectedText": "官方例 1",
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "reserve": 52
+    },
+    {
+      "locale": "zh",
+      "viewportWidth": 1440,
+      "width": 908,
+      "text": 112.00021362304688,
+      "selectedText": "官方例 1",
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "reserve": 52
+    },
+    {
+      "locale": "en",
+      "viewportWidth": 320,
+      "width": 268,
+      "text": 140.40028381347656,
+      "selectedText": "Official example 1",
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "reserve": 52
+    },
+    {
+      "locale": "en",
+      "viewportWidth": 390,
+      "width": 338,
+      "text": 140.40028381347656,
+      "selectedText": "Official example 1",
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "reserve": 52
+    },
+    {
+      "locale": "en",
+      "viewportWidth": 736,
+      "width": 644,
+      "text": 140.40028381347656,
+      "selectedText": "Official example 1",
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "reserve": 52
+    },
+    {
+      "locale": "en",
+      "viewportWidth": 1440,
+      "width": 908,
+      "text": 140.40028381347656,
+      "selectedText": "Official example 1",
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "reserve": 52
+    }
+  ],
+  "links": [
+    {
+      "locale": "en",
+      "label": "Continue: #815 expands reachable sets with breadth-first search",
+      "href": "../815/#step2",
+      "labelKey": "related1",
+      "url": "http://127.0.0.1:18770/leetcode/815/#step2",
+      "text": "03Why can a route be scanned just once?How do we look up only buses we can board? Build by_stop, mapping each stop to the route IDs serving it: an inverted index. A frontier contains newly discovered stops with the same minimum boarding count. Initially [1] has distance 0. In example 1, stop 1 finds R0=[1,2,7]; boarding it first discovers 2 and 7. Stop 7 then finds R1=[3,6,7]; a second boarding discovers 3 and 6.Why skip R0 on the second layer? Its stops 1, 2, and 7 are already exposed; boarding it again adds no destination. used_routes records expanded routes. seen_stops records discovered stops, marking them when queued so the same layer cannot add duplicates. Looking up a route differs from scanning it: several stops may look up its ID, but its stop list is expanded once.Invariant (a fact preserved by each expansion): on entry to layer d, frontier stops have minimum boarding count d, and all lower-distance stops have been expanded. An unused route touching them reaches all its stops within d+1 boardings. Conversely, any trip of d+1 boardings takes its last bus from a stop reachable within d boardings; earlier layers must already find that stop or expose that route. Thus first discovery cannot miss a shorter trip, and rescanning old routes adds nothing. An empty frontier means no further trip exists, so return -1. If source equals target, no boarding is needed: return 0.Study BFS layers and same-layer paths in Word Ladder II →Choose a case and expand layers. First inspect which stop activates each new route, then read the distance labels on all discovered stops. Solid cyan borders mark the frontier; a dashed border marks the target, also named in text. Rewind, End, and Reset are available. A preset change restarts only this trace.Trace preset (changing restarts it)Official 1Official 2Long direct rideAlready thereMissing sourceOverlapping routesSingle-stop islandTeaching simulation, not Python execution: each frame completes a whole layer and retains the full history of these small cases. Python can return immediately upon discovering the target; the diagram may show other stops from that same layer. Snapshot storage is tutorial overhead, outside the submission space bound.Routes [[1,2,7],[3,6,7]]; source 1 → target 6. Route IDs R0, R1… are zero-based input indices.← Rewind a layerExpand next layer →Reset experimentGo to trace endFrame 0/2; frontier layer 0; 1 stops discovered; 0 routes expanded. Target not yet reached; keep expanding.Route status: unexpanded / boarding layer of expansionR0: [1, 2, 7] · unexpandedR1: [3, 6, 7] · unexpandedAll discovered stops: labels show minimum boardingsStop 1 · buses: 0 · frontierThis layer: route activation causes and new stopsNo new route expansion in this frame.Expansion history (one complete layer per row)No expansion yet; the source has distance 0."
+    },
+    {
+      "locale": "en",
+      "label": "Compare: #765 uses cycles to bound the number of swaps",
+      "href": "../765/#step3",
+      "labelKey": "related2",
+      "url": "http://127.0.0.1:18770/leetcode/765/#step3",
+      "text": "04Why can no solution use fewer swaps?Why is the valid arrangement optimal? Make each couple label k=person ID//2 a vertex (a point); each seat pair is an edge (a line) joining its two couple labels. For [0,2 | 1,3], the edges are 0—1 and 0—1. Vertices reachable along edges form a connected component. Each couple supplies exactly two people, so two edge ends meet at each vertex. A loop (both ends equal) counts twice. Each component is a closed cycle: a loop, two parallel edges, or a longer cycle.A swap exchanges two endpoints of two edges. Swapping within one edge leaves the graph unchanged; exchanging endpoints across cycles merges them; exchanging endpoints within one cycle can split it into at most two cycles. Thus one swap increases the component count by at most 1. The goal is n loops, one per couple (n is the couple count). Starting with c components needs at least n−c swaps. A greedy repair joins the two ends of one couple into a loop, leaving the rest of its old cycle closed: exactly one new component. Skipping a loop costs nothing. Greedy therefore uses exactly n−c swaps, attaining the lower bound.In the counterexample [0,2 | 3,4 | 5,6 | 7,1], the edges are 0—1, 1—2, 2—3, 3—0: n=4 and c=1, so the lower bound is 3. The three swaps in the previous step attain it.Current simulation: connected groups of couple labels {0,1}; c=1, minimum remaining n−c=1 swaps. Groups are computed for the proof only; the submission builds no graph.Independent exercise: [4,1 | 2,7 | 0,5 | 6,3]. All four seat pairs are bad. What is the minimum swap count? First derive the couple-label edges (person ID divided by 2, rounded down), then count cycles. This exercise is independent of the simulation above.Predict before revealingA · 1 swapB · 3 swapsC · 2 swapsCheck and reveal whyClear predictionChoose an answer; the explanation appears after reveal."
+    },
+    {
+      "locale": "zh",
+      "label": "继续：#815 用广度优先搜索展开可达集合",
+      "href": "../815/#step2",
+      "labelKey": "related1",
+      "url": "http://127.0.0.1:18770/leetcode/815/#step2",
+      "text": "03一层增加一次上车，为什么线路只扫一次？这一步要回答：怎样只查真正能上的车？先建 by_stop：站点→经过它的线路编号，这叫倒排索引（由站点反查线路）。前沿 frontier 是刚发现、最少上车数相同的站点。初始前沿 [1] 距离为 0。示例 1 中，站 1 查到线路 R0=[1,2,7]，第一次上车新到 2、7；再从 7 查到 R1=[3,6,7]，第二次上车新到 3、6。为什么第二层不再扫描 R0？它的 1、2、7 已全部暴露，再上同一辆车不会增加目的地。used_routes 记录已展开的线路；seen_stops 记录已发现站点，并在入队时标记，避免同层重复加入。查线路与扫线路不同：同一线路编号可能被多个站查到，但它的站点列表只展开一次。不变量（每次扩展后仍成立的事实）：进入第 d 层时，前沿站点的最少上车数都是 d，距离更小的站点已经展开。从它们上一条未用线路，就能用 d+1 次上车到该线路的每个站。反过来，任意 d+1 次上车的行程，其最后一辆车必接在至多 d 次上车可达的站点；之前各层一定已找到它或这条线路。因此首次发现不能错过更短行程，重扫旧线路也无益。前沿为空则无法再扩展，返回 -1；若起点就是终点，则无需上车，返回 0。用单词阶梯学习 BFS 分层与保留同层路径 →实验：选示例，逐层展开，先看新线路通过哪个站被激活，再看所有已发现站点的距离标签。实线青色边框标前沿，虚线标目标；文字也标明状态。撤销、到末尾、重置均可用。换示例只重启本追踪。选择追踪示例（切换会重启）官方例 1官方例 2一车长路原地到达起点缺席重叠线路单站孤岛教学模拟，不是运行 Python：每帧完成整层，保留全部小例子的历史。Python 在首次发现目标时即可提前返回；动画可能多展示同层的其他站。快照存储是教学开销，不属于提交解法的空间界。线路 [[1,2,7],[3,6,7]]；起点 1 → 终点 6。线路编号 R0、R1… 使用从 0 开始的输入索引。← 撤回一层展开下一层 →重置本实验到追踪末尾帧 0/2；当前前沿层 0；已发现 1 个站；已展开 0 条线路。尚未到目标，继续扩展。线路状态：未展开 / 已展开于哪次上车R0：[1, 2, 7] · 未展开R1：[3, 6, 7] · 未展开累积已发现站点：标签是最少上车数站 1 · 0 次 · 前沿本层原因：新展开线路与新发现站点本帧没有新展开线路。累计扩展记录（每行是一整层）尚未扩展；起点的距离为 0。"
+    },
+    {
+      "locale": "zh",
+      "label": "对照：#765 用环给交换次数建立下界",
+      "href": "../765/#step3",
+      "labelKey": "related2",
+      "url": "http://127.0.0.1:18770/leetcode/765/#step3",
+      "text": "04为什么不能用更少的交换？这一步要回答：合法安排为何还是最优？把情侣编号 k=人编号//2 当作一个点（顶点），把同一座位对中的两个人连成一条线（边）。例如 [0,2 | 1,3] 的边是 0—1 和 0—1。沿边能互相到达的点组成一个连通分量。每个点恰有两个人，因此恰有两条边接到它；一条自环（边两端相同）算接到两次。每个分量就是闭合的环，可以是一条自环、两条平行边或更长的环。一次交换只是把两条边的两个端点对调。同一条边内交换不改图；不同环的边互换会合并环；同一环的两条边互换至多把它分成两个环。所以每次交换至多增加 1 个分量。最终每对情侣占一个座位对，即 n 个自环（n 是情侣数）。如果初始有 c 个分量，至少需要 n−c 次交换。贪心在不匹配的对中把同情侣的两个端点连在一起，恰好切出一个自环，原环剩下的部分仍闭合：分量恰好 +1。跳过自环不花交换。由此贪心恰用 n−c 次，达到下界。反例 [0,2 | 3,4 | 5,6 | 7,1] 的情侣边为 0—1、1—2、2—3、3—0：n=4，c=1，下界为 3。上一步的 3 次交换刚好达到它。当前模拟：情侣标签的连通组 {0,1}；c=1，剩余最少 n−c=1 次。这里只为证明计算分组，提交代码不用建图。独立练习：[4,1 | 2,7 | 0,5 | 6,3]。有 4 个坏座位对，最少需要几次交换？先写出情侣边（人的编号整除 2），再用环的数量判断；此练习不随上面的模拟变化。先预测，再揭晓A · 1 次B · 3 次C · 2 次核对并揭晓原因清除预测请选择一个答案；原因将在揭晓后出现。"
+    }
+  ],
+  "contrast": [
+    {
+      "fg": "e8edf4",
+      "bg": "0d1117",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5
+    },
+    {
+      "fg": "9aa7b8",
+      "bg": "0d1117",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "6ee7ff",
+      "bg": "0d1117",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "fg": "ffb454",
+      "bg": "0d1117",
+      "ratio": 10.731637051347173,
+      "threshold": 4.5
+    },
+    {
+      "fg": "c9d4e2",
+      "bg": "0d1117",
+      "ratio": 12.615602281385614,
+      "threshold": 4.5
+    },
+    {
+      "fg": "7ee2a8",
+      "bg": "0d1117",
+      "ratio": 12.013623247863544,
+      "threshold": 4.5
+    },
+    {
+      "fg": "e8edf4",
+      "bg": "161b22",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "fg": "9aa7b8",
+      "bg": "161b22",
+      "ratio": 7.078851579017443,
+      "threshold": 4.5
+    },
+    {
+      "fg": "6ee7ff",
+      "bg": "161b22",
+      "ratio": 11.974898815275662,
+      "threshold": 4.5
+    },
+    {
+      "fg": "ffb454",
+      "bg": "161b22",
+      "ratio": 9.809435643476732,
+      "threshold": 4.5
+    },
+    {
+      "fg": "c9d4e2",
+      "bg": "161b22",
+      "ratio": 11.531506152401557,
+      "threshold": 4.5
+    },
+    {
+      "fg": "7ee2a8",
+      "bg": "161b22",
+      "ratio": 10.981256963037128,
+      "threshold": 4.5
+    },
+    {
+      "fg": "e8edf4",
+      "bg": "1c2330",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "fg": "9aa7b8",
+      "bg": "1c2330",
+      "ratio": 6.449407898769069,
+      "threshold": 4.5
+    },
+    {
+      "fg": "6ee7ff",
+      "bg": "1c2330",
+      "ratio": 10.910104011097095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "ffb454",
+      "bg": "1c2330",
+      "ratio": 8.937191437807625,
+      "threshold": 4.5
+    },
+    {
+      "fg": "c9d4e2",
+      "bg": "1c2330",
+      "ratio": 10.506137335107907,
+      "threshold": 4.5
+    },
+    {
+      "fg": "7ee2a8",
+      "bg": "1c2330",
+      "ratio": 10.004815697188947,
+      "threshold": 4.5
+    },
+    {
+      "fg": "e8edf4",
+      "bg": "0a0e14",
+      "ratio": 16.440224808744848,
+      "threshold": 4.5
+    },
+    {
+      "fg": "9aa7b8",
+      "bg": "0a0e14",
+      "ratio": 7.914396395614137,
+      "threshold": 4.5
+    },
+    {
+      "fg": "6ee7ff",
+      "bg": "0a0e14",
+      "ratio": 13.388343428810314,
+      "threshold": 4.5
+    },
+    {
+      "fg": "ffb454",
+      "bg": "0a0e14",
+      "ratio": 10.967282084266706,
+      "threshold": 4.5
+    },
+    {
+      "fg": "c9d4e2",
+      "bg": "0a0e14",
+      "ratio": 12.89261537833187,
+      "threshold": 4.5
+    },
+    {
+      "fg": "7ee2a8",
+      "bg": "0a0e14",
+      "ratio": 12.277418103408936,
+      "threshold": 4.5
+    }
+  ],
+  "rendered": {
+    "color": "rgb(13, 17, 23)",
+    "background": "rgb(110, 231, 255)"
+  },
+  "cssBytes": 11207,
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18770/leetcode/839/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/839/style.css?v=839-r1",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/839/core.js?v=839-r1",
+    "http://127.0.0.1:18770/leetcode/839/python-code.js?v=839-r1",
+    "http://127.0.0.1:18770/leetcode/839/copy.js?v=839-r1",
+    "http://127.0.0.1:18770/leetcode/839/app.js?v=839-r1",
+    "http://127.0.0.1:18770/leetcode/815/",
+    "http://127.0.0.1:18770/leetcode/815/style.css?v=815-r1",
+    "http://127.0.0.1:18770/leetcode/815/copy.js?v=815-copy-r1",
+    "http://127.0.0.1:18770/leetcode/815/core.js?v=815-r1",
+    "http://127.0.0.1:18770/leetcode/815/python-code.js?v=815-r1",
+    "http://127.0.0.1:18770/leetcode/815/app.js?v=815-r1",
+    "http://127.0.0.1:18770/leetcode/765/",
+    "http://127.0.0.1:18770/leetcode/765/style.css?v=765-1",
+    "http://127.0.0.1:18770/leetcode/765/copy.js?v=765-margin-20261025",
+    "http://127.0.0.1:18770/leetcode/765/core.js?v=765-1",
+    "http://127.0.0.1:18770/leetcode/765/python-code.js?v=765-1",
+    "http://127.0.0.1:18770/leetcode/765/app.js?v=765-1"
+  ],
+  "limits": "Chromium headless; synthetic CSS zoom=2; no real-device or novice-comprehension claim."
+}
