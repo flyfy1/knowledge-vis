@@ -1,0 +1,36 @@
+# Planned #968/#972 import and #818 cross-host search revision
+
+**Plan only: no STOP, dispatch script or runtime/state change.** Wait for both lanes to be independently accepted and their real runners/native children to exit. Keep their frozen shared base `58cb97e51878f40e234b3e78a8bf9adb24f30c51`, the finite984 queue, existing source policy and every20/max6 settings. #972 is reported accepted95/exited; #968 remains under review. Freeze complete acceptance/run/report/source pins from authoritative state before preparing the one-off operation.
+
+## Fixed revision and preservation
+
+Adopt exactly two new documents from `a1d48550f44a65bc936de1706642a1b9ad858afd`:
+
+- `specs/reviews/818-review-search-alternative-design-20261026.md`: SHA256 `3b09c41938373edd6abf2770d9873ad9c9888ef2ce1da4c19dff8fe633630ade`.
+- `specs/reviews/818-review-search-alternative-request-20261026.md`: SHA256 `c8953ac8442b86fe3a63f97b1ed7832bda39897a798f1249cbc50af8b4e81528`.
+
+The new818-SEARCH-R1 request supersedes the unresolved smaller-distance DP choice, not its missing proof. Independent A* proof supports correctness; the completed exploratory10,000-target Mac survey is evidence for its own bytes only. Preserve original95/100 review, blocked commit `33686548c3c385cdb14b5b7262e4ca58a3b8d2f4`, fix run `818-fix-0dbe90734960`, all author/reviewer sessions, round1 budget and prior maintenance records. On ordinary reopening, append the blocked status/detail/candidate/request to maintenance plus a full backup. Change only current status to changes_required, phase to fix, prior_report to the new request; archive/remove the stale live `detail`. Keep candidate and all review/run history until the normal runner replaces the candidate.
+
+## Stage A: import, start author, stop before review
+
+Use the existing reviewed import/ownership/receipt pattern after independent review of exact operation bytes. Acquire an owned natural central boundary without interrupting its active agent. Under existing release/state/checkout gates, import968/972 unchanged, verify provenance and shared-tree equality, adopt the two pinned documents, reopen only blocked818, and push the exact durable head.
+
+Before installing the first STOP, at the actual boundary, and before resume, use unchanged publisher digest eligibility plus deduplicated incoming IDs, pending registrations and reopened818 as a conservative bound below20. Refuse pending publication or same-digest pointer refresh. For already-released pending registrations, use only the approved throwaway status projection against the current registry; if a changed target row makes that projection incompatible, preserve/refuse instead of inventing future registry contents. The measured improvement may later change818's complexity row: let its ordinary post-review registration update that row within the normal allowlist, preserving all other rows.
+
+Predict the real next agent, accounting for registration-only prefixes. Require it to be818 fix before this cross-host handoff; if another live phase would precede it, refuse this combined start and plan the correct ordinary boundary. Resume through the unchanged launcher, then install a new uniquely owned STOP **as soon as that fresh818 fix is recorded**. Verify the fresh run/thread/turn and native child before declaring the measurement handoff armed; immediately recheck the same active stage/run. Leave the STOP installed while that author works. The ordinary runner will commit its result and check STOP before the next stage.
+
+This is an observed-success protocol, **not deterministic prevention by polling**. If the author finishes before STOP is armed, the current stage differs, or any new818 reviewer starts, preserve the receipt/STOP and refuse continuation. Signal no active agent; do not blindly retry or count a premature review toward this gate. Elapsed time is never proof.
+
+At the eventual stopped boundary require: author outcome ready, phase review/status review_pending, clean saved HEAD, runner and native child gone, complete author result/provenance, and **zero new818 reviewer runs since the pre-author snapshot**. A blocked/failed author is an inspectable stop, not permission to fabricate a candidate. Reacquire ownership gates and freeze candidate commit, full lesson tree and exact canonical source SHA256. Preserve the whole state and ledger for Stage B. This intentional waiting boundary must remain visibly owned with a receipt describing the Mac action needed.
+
+## Stage B: immutable Mac validation, evidence adoption, fresh review
+
+Root copies the committed canonical bytes to an isolated Mac evidence directory and verifies the SHA256 before and after execution. Run the full official1..10000 survey and isolated representative resource measurements, including9809/9879/10000 and the actual worst observed cases. Capture environment, commands, limits, every target/result, cap/timeout/error outcomes, elapsed time and process peak memory. Use independent small enumeration and the separately checked A* proof; numerical DP agreement is corroboration only. Existing exploratory measurements cannot stand in for changed bytes. Do not run the old high-memory BFS on Pi or mark Linux authors blocked solely for lacking Mac access.
+
+If evidence fails or is incomplete, preserve the measurement STOP and report the failure; no reviewer/publication resume. If it passes, prepare a fixed allowlist of the predetermined `specs/reviews/818-review-search-resource-measurement-20261026.md` report explicitly required by the new brief and any necessary `specs/reviews/818-evidence/<unique-run>/` artifacts. Bind them to author candidate/source SHA and raw-result hashes. At the still-clean owned boundary commit only these external evidence files; verify the lesson tree/source, prior runs/reviews, queue and ledger remain unchanged, and checkpoint only expected_head. Numeric-review/evidence paths preserve shared-policy compatibility.
+
+The reviewer candidate is then the evidence-adoption HEAD, whose818 lesson tree and canonical source must equal the measured author's tree/bytes. Recheck the no-publication bound, push the exact head, remove only the owned STOP, and resume unchanged continuous/max6. Require a fresh818 review run/thread/turn/native child, distinct from every author and earlier reviewer. Preserve cold walkthrough before source/report inspection; the subsequent audit must inspect the candidate-bound Mac report and explicitly close818-SEARCH-R1, stating that the old DP choice was superseded rather than proved. No new acceptance is claimed by the operator or measurement report. Later ordinary independent acceptance, registration, batch publication and public verification remain distinct.
+
+## Risks and refusal conditions
+
+The critical risks are missing the author→review boundary, source bytes changing after measurement, a cap/partial survey mistaken for success, pending registration causing a ledger refresh, or a report failing to reach the review audit. Each needs explicit evidence; none is resolved by waiting a plausible duration. Preserve all partial receipts, immutable outputs and owned STOP on a failed gate, and give root a concrete recovery decision. No shared runtime hook, generic coordinator, queue reset, duplicate author or additional lane is proposed.
