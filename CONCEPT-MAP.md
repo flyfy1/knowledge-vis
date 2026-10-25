@@ -1624,3 +1624,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Two-state digit DP | `leetcode/964/#step3` | Keep the processed residue and its complement. |
 
 <!-- /leetcode-964-campaign -->
+
+
+<!-- leetcode-968-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Coverage obligations | `leetcode/968/#step2` | Summarize what a subtree needs from its parent. |
+| Postorder greedy | `leetcode/968/#step3` | Cover a child demand at its parent and repair the root. |
+
+<!-- /leetcode-968-campaign -->

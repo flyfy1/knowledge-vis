@@ -3411,6 +3411,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(1 + log_x(target)) time; O(1) auxiliary space"
   },
   {
+    "id": 968,
+    "title": {
+      "zh": "监控二叉树",
+      "en": "Binary Tree Cameras"
+    },
+    "desc": {
+      "zh": "从三节点覆盖实验推导后序遍历的三种状态与最少摄像头。",
+      "en": "Derive three postorder states from a tiny camera coverage experiment."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二叉树",
+        "en": "Binary trees"
+      },
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "后序遍历",
+        "en": "Postorder traversal"
+      }
+    ],
+    "path": "968/",
+    "leetcodeUrl": "https://leetcode.com/problems/binary-tree-cameras/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
