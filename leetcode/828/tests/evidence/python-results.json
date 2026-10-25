@@ -1,0 +1,12 @@
+{
+  "kind": "author computational self-check",
+  "result": "pass",
+  "exhaustive_and_seeded_cases": 10340,
+  "official_examples": 3,
+  "max_length_cases": 2,
+  "copy_keys": 74,
+  "duplicate_keys": false,
+  "source_mirror_exact": true,
+  "oracle": "Independent Counter on every substring; no neighbor formula",
+  "max_alternating_expected": "end occurrences 2 each; other n-2 occurrences 4 each = 4n-4"
+}

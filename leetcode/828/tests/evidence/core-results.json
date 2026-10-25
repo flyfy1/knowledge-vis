@@ -1,0 +1,6 @@
+{
+  "result": "pass",
+  "cases": 3286,
+  "checks": "Every intermediate per-position count, legal pair, boundary, cumulative total, frame count and nonaliasing",
+  "oracle": "enumerate substrings and assign unique occurrences independently"
+}
