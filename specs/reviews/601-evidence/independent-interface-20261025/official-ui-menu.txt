@@ -1,0 +1,400 @@
+Browser tab: 1, Title: "Human Traffic of Stadium - LeetCode", URL: "https://leetcode.com/problems/human-traffic-of-stadium/".
+0 AXWebArea Human Traffic of Stadium - LeetCode, URL: leetcode.com/problems/human-traffic-of-stadium/
+	1 container
+		2 container
+			3 content list
+				4 link Description: LeetCode Logo, Value: leetcode.com/
+			5 button Problem List, Expand Panel
+				6 text Problem List
+			7 link Description: Prev Question, Value: leetcode.com/problems/non-negative-integers-without-consecutive-ones
+			8 link Description: Next Question, Value: leetcode.com/problems/friend-requests-ii-who-has-the-most-friends
+			161 link Description: Pick one, Value: leetcode.com/problems/groups-of-strings
+			9 container ide-top-btns
+				10 container
+					11 button You need to log in / sign up to debug
+						12 image
+					13 button Run
+					14 button Submit
+						15 text Submit
+				16 container
+					17 button Note
+					18 button Ask Leet
+						19 image
+			20 container
+				21 pop up button (collapsed) Layouts, Secondary Actions: Expand
+					22 button Description: Layouts, ID: qd-layout-manager-btn
+				23 button Description: Settings, ID: nav-setting-btn
+				24 button Stopwatch
+				25 link Description: Register, Value: leetcode.com/accounts/signup/?next=%2Fproblems%2Fhuman-traffic-of-stadium%2Fdescription%2F
+				26 text or
+				27 button Log in, ID: navbar_sign_in_button
+				28 link Description: Premium, Value: leetcode.com/subscribe/?ref=lp_pl&source=qd
+		29 container
+			30 container
+				31 container description_tab
+					32 text Description
+				33 container editorial_tab
+					34 container
+						35 text Editorial Editorial
+				36 container solutions_tab
+					37 container
+						38 text Solutions Solutions
+				39 container submissions_tab
+					40 container
+						41 text Submissions Submissions
+			42 container code_tabbar_outer
+				43 container code_tab
+					44 text Code
+				45 button
+				46 button
+			47 container
+				48 container testcase_tab
+					49 text Testcase
+				50 container result_tab
+					51 container
+						52 text Test Result Test Result
+			53 container 4870d6bb-d9d4-9408-c53c-f22550a38b19
+				54 container
+					55 heading 601. Human Traffic of Stadium, Value: 1
+						56 link Description: 601. Human Traffic of Stadium, Value: leetcode.com/problems/human-traffic-of-stadium/
+					57 text Hard
+					58 text Topics
+					59 image premium lock icon
+					60 text Companies
+					61 container
+						62 text SQL Schema
+						63 image
+					64 container
+						65 text Pandas Schema
+						66 image
+					67 container
+						68 text Table:  Stadium
+					69 text +---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| id            | int     |
+| visit_date    | date    |
+| people        | int     |
++---------------+---------+
+visit_date is the column with unique values for this table.
+Each row of this table contains the visit date and visit id to the stadium with the number of people during the visit.
+As the id increases, the date increases as well.
+
+					70 container
+						71 text Write a solution to display the records with three or more rows with  consecutive id 's, and the number of people is greater than or equal to 100 for each.
+					72 container
+						73 text Return the result table ordered by  visit_date  in  ascending order .
+					74 text The result format is in the following example.
+					75 text Example 1:
+					76 container
+						77 text Input:  
+Stadium table:
++------+------------+-----------+
+| id   | visit_date | people    |
++------+------------+-----------+
+| 1    | 2017-01-01 | 10        |
+| 2    | 2017-01-02 | 109       |
+| 3    | 2017-01-03 | 150       |
+| 4    | 2017-01-04 | 99        |
+| 5    | 2017-01-05 | 145       |
+| 6    | 2017-01-06 | 1455      |
+| 7    | 2017-01-07 | 199       |
+| 8    | 2017-01-09 | 188       |
++------+------------+-----------+
+ Output:  
++------+------------+-----------+
+| id   | visit_date | people    |
++------+------------+-----------+
+| 5    | 2017-01-05 | 145       |
+| 6    | 2017-01-06 | 1455      |
+| 7    | 2017-01-07 | 199       |
+| 8    | 2017-01-09 | 188       |
++------+------------+-----------+
+ Explanation:  
+The four rows with ids 5, 6, 7, and 8 have consecutive ids and each of them has >= 100 people attended. Note that row 8 was included even though the visit_date was not the next day after row 7.
+The rows with ids 2 and 3 are not included because we need at least three consecutive ids.
+
+					325 text Advertisement
+					79 text Accepted 206,239 / 392.7K Acceptance Rate 52.5 %
+					80 text Topics
+					81 image
+					82 link Description: Database, Value: leetcode.com/tag/database/
+					83 container
+						84 image icon
+						85 text Companies
+						86 image
+					87 text Discussion (102)
+					88 image
+					89 container
+						90 text entry area (settable)
+						91 pop up button (collapsed) Choose a type, ID: headlessui-menu-button-_r_r_, Secondary Actions: Expand
+							92 text Choose a type
+						93 button (disabled) Comment
+					94 text 💡 Discussion Rules
+					95 container
+						96 text 1. Please don't post  any solutions  in this discussion.
+					97 text 2. The problem discussion is for asking questions about the problem or for sharing tips - anything except for solutions.
+					98 text 3. If you'd like to share your solution for feedback and ideas, please head to the solutions tab and post it there.
+					99 pop up button (collapsed) Sort by:Best, ID: headlessui-menu-button-_r_u_, Secondary Actions: Expand
+						100 container
+							101 text Sort by : Best
+					163 link leetcode.com/u/odsteel/
+					164 link Description: odsteel, Value: leetcode.com/u/odsteel/
+					165 image Feb LeetCoding Challenge
+					166 text Feb 24, 2024
+					167 container
+						168 container
+							169 text DELETE
+							170 text FROM  discussion
+							171 text WHERE  content  LIKE  sql;
+						172 text Please stop it :)
+					173 text 143
+					174 container
+						175 image
+						176 text Show 4 Replies
+					177 container
+						178 image
+						179 text Reply
+					180 link leetcode.com/u/yaitme/
+					181 link Description: yaitme, Value: leetcode.com/u/yaitme/
+					182 text Sep 19, 2023
+					183 container
+						184 text Why do ppl keep posting answers, even when others explicitly request that they don't want to see them? There's an answer board for that but every time I try to get more info on a question in the discussion it's just a bunch of answers and it ruins the problem for me.
+					185 text 48
+					186 container
+						187 image
+						188 text Reply
+					189 link leetcode.com/u/mariachi/
+					190 link Description: mariachi, Value: leetcode.com/u/mariachi/
+					191 text Jun 01, 2018
+					192 container
+						193 text I want to avoid looking at anyone's solution before trying it myself, but I don't understand the problem as written. What is meant by 3 consecutive rows? All rows are distinct as far as I can see.
+					194 text 41
+					195 container
+						196 image
+						197 text Show 3 Replies
+					198 container
+						199 image
+						200 text Reply
+					201 link leetcode.com/u/Haze-SRP/
+					202 link Description: Haze-SRP, Value: leetcode.com/u/Haze-SRP/
+					203 image 100 Days Badge 2025
+					204 text Jun 24, 2025
+					205 container
+						206 container
+							207 text get the "consecutive ID" pattern trick! My summary:
+							208 content list
+								209 container
+									210 AXListMarker • 
+									211 text Filter only rows with people >= 100.
+								212 container
+									213 AXListMarker • 
+									214 text Use  id - ROW_NUMBER()  to group consecutive IDs.
+								215 container
+									216 AXListMarker • 
+									217 text Use  COUNT(*) OVER (PARTITION BY grp)  to find sequences with 3+ rows.
+								218 container
+									219 AXListMarker • 
+									220 text No need for joins or nested queries — just window function magic.
+							221 text For anyone looking for a clean, complete explanation of this approach (without using JOINs), I highly recommend this post:
+							222 text 👉 
+							223 link Description: Super Easy Solution with complete explaination, Value: leetcode.com/link/?target=https%3A%2F%2Fleetcode.com%2Fproblems%2Fhuman-traffic-of-stadium%2Fsolutions%2F6880810%2F100-complete-explaination-no-joins-by-ha-jx9e%2F
+							224 text Helped me truly understand how to group rows based on ID patterns. Hope it helps you too! 🙌
+						225 container
+							226 text Read more
+					227 text Tip
+					228 text 18
+					229 container
+						230 image
+						231 text Show 1 Replies
+					232 container
+						233 image
+						234 text Reply
+					235 link leetcode.com/u/owenljn/
+					236 link Description: owenljn, Value: leetcode.com/u/owenljn/
+					237 text Feb 06, 2018
+					238 container
+						239 container
+							240 text There's a bug in testcase, one of your testcase has wrong answer as follows: as you can see in this picture, id from 28 to 30 are not consecutive dates so they should not be included or the date for id 30 should be changed to "2017-05-30"
+						241 container
+							242 text Read more
+					243 image comment-image-0
+					244 text 15
+					245 container
+						246 image
+						247 text Show 2 Replies
+					248 container
+						249 image
+						250 text Reply
+					251 link leetcode.com/u/anish_sule/
+					252 link Description: anish sule, Value: leetcode.com/u/anish_sule/
+					253 image Top SQL 50
+					254 text Apr 15, 2024
+					255 container
+						256 container
+							257 text whole  Discussion  section is nothing but -
+							258 text either  solution
+							259 text or  whats wrong with my code?
+							260 text <code>
+					261 text 12
+					262 container
+						263 image
+						264 text Show 2 Replies
+					265 container
+						266 image
+						267 text Reply
+					268 link leetcode.com/u/potatoArmy/
+					269 link Description: potatoarmy, Value: leetcode.com/u/potatoArmy/
+					270 image Guardian
+					271 text Nov 15, 2025
+					272 container
+						273 text The function name in Pandas (human_traffic) 💀
+					274 text 6
+					275 container
+						276 image
+						277 text Show 1 Replies
+					278 container
+						279 image
+						280 text Reply
+					281 link leetcode.com/u/JAYESHx19/
+					282 link Description: JAYESHx19, Value: leetcode.com/u/JAYESHx19/
+					283 text Aug 21, 2025
+					284 container
+						285 container
+							286 text Do id - row_number() you will get the consecutive id's then people>100 and count(*)>=3 done!!
+							287 text hope this helps!!
+					288 text Tip
+					289 text 5
+					290 container
+						291 image
+						292 text Reply
+					293 link leetcode.com/u/Heroics/
+					294 link Description: Heroics, Value: leetcode.com/u/Heroics/
+					295 image 50 Days Badge 2024
+					296 text Jan 13, 2026
+					297 container
+						298 text HINT: We can think about segmenting the data set into streaks. We know the current row will start a new streak by if people >= 100 in this row and people < 100 in the previous row.
+					299 text 2
+					300 container
+						301 image
+						302 text Show 1 Replies
+					303 container
+						304 image
+						305 text Reply
+					306 link leetcode.com/u/Ankit_Deswal/
+					307 link Description: Ankit_Deswal, Value: leetcode.com/u/Ankit_Deswal/
+					308 text Oct 29, 2022
+					309 container
+						310 container
+							311 text WITH CTE
+							312 text AS
+							313 text (SELECT *,
+							314 text id-ROW_NUMBER() OVER (ORDER BY id) AS DIFF
+							315 text FROM Stadium
+							316 text WHERE people >= 100)
+							317 text SELECT
+							318 text id, visit_date, people
+							319 text FROM CTE
+							320 text WHERE DIFF IN (SELECT DIFF FROM CTE GROUP BY DIFF HAVING COUNT(1) >= 3)
+					321 text 2
+					322 container
+						323 image
+						324 text Reply
+					103 container
+						104 button (disabled) prev
+							105 image
+						106 button 1
+						107 button 2
+						108 button 3
+						109 button 4
+						110 button 5
+						111 button 6
+						112 button (disabled) gap
+							113 image
+						114 button 11
+						115 button next
+							116 image
+					117 text Copyright © 2026 LeetCode. All rights reserved.
+				118 button 903
+					119 text 903
+				120 button
+				121 button 102
+					122 text 102
+				123 button
+			124 container editor
+				125 pop up button (expanded) Pandas, Secondary Actions: Collapse
+					126 text Pandas
+				127 button Auto
+				128 button
+				129 button
+				130 button
+				131 button
+					132 image
+				133 container
+					134 editor (settable) Description: Code editor, Value: import pandas as pd
+
+def human_traffic(stadium: pd.DataFrame) -> pd.DataFrame:
+    
+				135 text Saved
+				136 text Ln 1, Col 1
+				137 text You need to 
+				138 link Description: log in / sign up, Value: leetcode.com/accounts/login/?next=%2Fproblems%2Fhuman-traffic-of-stadium%2Fdescription%2F
+				139 text  to run or submit
+			140 container ed5f5943-6285-d450-04e1-91499559c137
+				141 container
+					142 button Case 1
+					143 button
+						144 image
+					145 text Stadium  =
+					146 container | id | visit_date | people |
+| -- | ---------- | ------ |
+| 1  | 2017-01-01 | 10     |
+| 2  | 2017-01-02 | 109    |
+| 3  | 2017-01-03 | 150    |
+| 4  | 2017-01-04 | 99     |
+| 5  | 2017-01-05 | 145    |
+| 6  | 2017-01-06 | 1455   |
+| 7  | 2017-01-07 | 199    |
+| 8  | 2017-01-09 | 188    |
+						147 text | id | visit_date | people |
+| -- | ---------- | ------ |
+| 1  | 2017-01-01 | 10     |
+| 2  | 2017-01-02 | 109    |
+| 3  | 2017-01-03 | 150    |
+| 4  | 2017-01-04 | 99     |
+| 5  | 2017-01-05 | 145    |
+| 6  | 2017-01-06 | 1455   |
+| 7  | 2017-01-07 | 199    |
+| 8  | 2017-01-09 | 188    |
+					148 container
+						149 text entry area (settable) [object Object]
+							150 text [object Object]
+				151 link support.leetcode.com/hc/en-us/articles/32442719377939-How-to-create-test-cases-on-LeetCode
+		152 container Notifications (F8)
+			153 content list
+		154 container
+			155 link leetcode.com/problemset/
+			156 image
+			157 container
+				158 text field (settable)
+				159 button
+				160 button
+		326 container radix-_r_1i_
+			327 container
+				328 text MySQL
+				329 image
+			330 container
+				331 text MS SQL Server
+				332 image
+			333 container
+				334 text PostgreSQL
+				335 image
+			336 container
+				337 text Oracle
+				338 image
+			339 container
+				340 image
+				341 text Pandas
+				342 image
+
+The focused UI element is 125 pop up button (expanded) Pandas, Secondary Actions: Collapse
