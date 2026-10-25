@@ -1,0 +1,29 @@
+{
+  "officialUrl": "https://leetcode.com/problems/guess-the-word/",
+  "checkedAt": "2026-10-25T21:30:47.769216+00:00",
+  "statementCheck": "Public official page reopened with web tool; 10\u201330 calls, actual successful call, legal listed words and generated reasonable-strategy qualification retained.",
+  "interfaceEvidence": "../official-graphql.json",
+  "interfaceEvidenceSha256": "f6f8de5823269d6e309f79568e53c6aba38d17be5662d0e3b7906b01eeefb921",
+  "availableLanguages": [
+    "C++",
+    "Java",
+    "Python3",
+    "Python",
+    "JavaScript",
+    "TypeScript",
+    "C#",
+    "C",
+    "Go",
+    "Kotlin",
+    "Swift",
+    "Rust",
+    "Ruby",
+    "PHP",
+    "Scala"
+  ],
+  "canonicalLanguage": "Python",
+  "rationale": "Faithful preferred Python3 available. TypeScript also available; neither omitted in interface evidence. No non-Python language contract is required.",
+  "pythonInterface": "# \"\"\"\n# This is Master's API interface.\n# You should not implement it, or speculate about its implementation\n# \"\"\"\n# class Master:\n#     def guess(self, word: str) -> int:\n\nclass Solution:\n    def findSecretWord(self, words: List[str], master: 'Master') -> None:\n        ",
+  "typeScriptInterface": "/**\n * // This is the Master's API interface.\n * // You should not implement it, or speculate about its implementation\n * class Master {\n *      guess(word: string): number {}\n * }\n */\n\nfunction findSecretWord(words: string[], master: Master) {\n\n};",
+  "sourceMirrorPair": "solution.py / python-code.js / window.PYTHON_SOURCE (read from scripts/register_leetcode_lesson.py)"
+}

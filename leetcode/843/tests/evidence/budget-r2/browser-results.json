@@ -1,0 +1,664 @@
+{
+  "kind": "author browser self-check",
+  "result": "pass",
+  "records": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "terminal": {
+        "frameRead": "Calls completed: 2; 1 candidates remain. Secret: eiowzz.",
+        "candidates": "eiowzz",
+        "buckets": "",
+        "ledger": "Guess acckzz → reply 2; 4 candidates → 1: eiowzzGuess eiowzz → reply 6; 1 candidates → 1: eiowzz",
+        "terminal": "The secret was actually guessed and returned 6."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "terminal": {
+        "frameRead": "Calls completed: 2; 1 candidates remain. Secret: khaled.",
+        "candidates": "khaled",
+        "buckets": "",
+        "ledger": "Guess hamada → reply 0; 2 candidates → 1: khaledGuess khaled → reply 6; 1 candidates → 1: khaled",
+        "terminal": "The secret was actually guessed and returned 6."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "terminal": {
+        "frameRead": "Calls completed: 1; 1 candidates remain. Secret: aaaaaa.",
+        "candidates": "aaaaaa",
+        "buckets": "",
+        "ledger": "Guess aaaaaa → reply 6; 1 candidates → 1: aaaaaa",
+        "terminal": "The secret was actually guessed and returned 6."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "terminal": {
+        "frameRead": "Calls completed: 6; 1 candidates remain. Secret: ffffff.",
+        "candidates": "ffffff",
+        "buckets": "",
+        "ledger": "Guess aaaaaa → reply 0; 6 candidates → 5: bbbbbb, cccccc, dddddd, eeeeee, ffffffGuess bbbbbb → reply 0; 5 candidates → 4: cccccc, dddddd, eeeeee, ffffffGuess cccccc → reply 0; 4 candidates → 3: dddddd, eeeeee, ffffffGuess dddddd → reply 0; 3 candidates → 2: eeeeee, ffffffGuess eeeeee → reply 0; 2 candidates → 1: ffffffGuess ffffff → reply 6; 1 candidates → 1: ffffff",
+        "terminal": "The secret was actually guessed and returned 6."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "terminal": {
+        "frameRead": "Calls completed: 2; 1 candidates remain. Secret: aabbbb.",
+        "candidates": "aabbbb",
+        "buckets": "",
+        "ledger": "Guess aaaaaa → reply 2; 4 candidates → 1: aabbbbGuess aabbbb → reply 6; 1 candidates → 1: aabbbb",
+        "terminal": "The secret was actually guessed and returned 6."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "terminal": {
+        "frameRead": "Calls completed: 10; 1 candidates remain. Secret: blllll.",
+        "candidates": "blllll",
+        "buckets": "",
+        "ledger": "Guess accccc → reply 0; 20 candidates → 9: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllllGuess bddddd → reply 1; 9 candidates → 8: beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllllGuess beeeee → reply 1; 8 candidates → 7: bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllllGuess bfffff → reply 1; 7 candidates → 6: bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllllGuess bggggg → reply 1; 6 candidates → 5: bhhhhh, biiiii, bjjjjj, bkkkkk, blllllGuess bhhhhh → reply 1; 5 candidates → 4: biiiii, bjjjjj, bkkkkk, blllllGuess biiiii → reply 1; 4 candidates → 3: bjjjjj, bkkkkk, blllllGuess bjjjjj → reply 1; 3 candidates → 2: bkkkkk, blllllGuess bkkkkk → reply 1; 2 candidates → 1: blllllGuess blllll → reply 6; 1 candidates → 1: blllll",
+        "terminal": "The secret was actually guessed and returned 6."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 6,
+      "terminal": {
+        "frameRead": "Calls completed: 11; 1 candidates remain. Secret: bmmmmm.",
+        "candidates": "bmmmmm",
+        "buckets": "",
+        "ledger": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmmGuess bddddd → reply 1; 10 candidates → 9: beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmmGuess beeeee → reply 1; 9 candidates → 8: bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmmGuess bfffff → reply 1; 8 candidates → 7: bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmmGuess bggggg → reply 1; 7 candidates → 6: bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmmGuess bhhhhh → reply 1; 6 candidates → 5: biiiii, bjjjjj, bkkkkk, blllll, bmmmmmGuess biiiii → reply 1; 5 candidates → 4: bjjjjj, bkkkkk, blllll, bmmmmmGuess bjjjjj → reply 1; 4 candidates → 3: bkkkkk, blllll, bmmmmmGuess bkkkkk → reply 1; 3 candidates → 2: blllll, bmmmmmGuess blllll → reply 1; 2 candidates → 1: bmmmmmGuess bmmmmm → reply 6; 1 candidates → 1: bmmmmm",
+        "terminal": "The secret was actually guessed and returned 6."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 7,
+      "terminal": {
+        "frameRead": "Calls completed: 12; 1 candidates remain. Secret: bnnnnn.",
+        "candidates": "bnnnnn",
+        "buckets": "",
+        "ledger": "Guess accccc → reply 0; 24 candidates → 11: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm, bnnnnnGuess bddddd → reply 1; 11 candidates → 10: beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm, bnnnnnGuess beeeee → reply 1; 10 candidates → 9: bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm, bnnnnnGuess bfffff → reply 1; 9 candidates → 8: bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm, bnnnnnGuess bggggg → reply 1; 8 candidates → 7: bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm, bnnnnnGuess bhhhhh → reply 1; 7 candidates → 6: biiiii, bjjjjj, bkkkkk, blllll, bmmmmm, bnnnnnGuess biiiii → reply 1; 6 candidates → 5: bjjjjj, bkkkkk, blllll, bmmmmm, bnnnnnGuess bjjjjj → reply 1; 5 candidates → 4: bkkkkk, blllll, bmmmmm, bnnnnnGuess bkkkkk → reply 1; 4 candidates → 3: blllll, bmmmmm, bnnnnnGuess blllll → reply 1; 3 candidates → 2: bmmmmm, bnnnnnGuess bmmmmm → reply 1; 2 candidates → 1: bnnnnnGuess bnnnnn → reply 6; 1 candidates → 1: bnnnnn",
+        "terminal": "The secret was actually guessed and returned 6."
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 8,
+      "terminal": {
+        "frameRead": "Calls completed: 10; 1 candidates remain. Secret: bmmmmm.",
+        "candidates": "bmmmmm",
+        "buckets": "",
+        "ledger": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmmGuess bddddd → reply 1; 10 candidates → 9: beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmmGuess beeeee → reply 1; 9 candidates → 8: bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmmGuess bfffff → reply 1; 8 candidates → 7: bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmmGuess bggggg → reply 1; 7 candidates → 6: bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmmGuess bhhhhh → reply 1; 6 candidates → 5: biiiii, bjjjjj, bkkkkk, blllll, bmmmmmGuess biiiii → reply 1; 5 candidates → 4: bjjjjj, bkkkkk, blllll, bmmmmmGuess bjjjjj → reply 1; 4 candidates → 3: bkkkkk, blllll, bmmmmmGuess bkkkkk → reply 1; 3 candidates → 2: blllll, bmmmmmGuess blllll → reply 1; 2 candidates → 1: bmmmmm",
+        "terminal": "Simulation budget exhausted; not successful. Knowing a lone candidate does not count as guessing it."
+      }
+    },
+    {
+      "locale": "en",
+      "formula": "C_new = {w ∈ C_old : match(guess, w) = reply}; choose = argmin max(|B₀|,…,|B₅|)",
+      "feedback": "Check the equality condition. The scores are [4, 6, 4, 2], so retain aaaaaa and aabbbb. Guess aaaabb scores 6 against itself, contradicting reply 4; “at least 4” is insufficient. Both survivors fit the reply; it does not yet identify the secret.",
+      "middle": {
+        "frameRead": "Calls completed: 1; 1 candidates remain. Secret: eiowzz.",
+        "candidates": "eiowzz",
+        "buckets": "acckzz00100001Usedccbazz00100001Availableeiowzz00000010Chosen nextabcczz00100001Available",
+        "ledger": "Guess acckzz → reply 2; 4 candidates → 1: eiowzz",
+        "terminal": "One candidate is known, but has not been successfully guessed; one call is still needed."
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "terminal": {
+        "frameRead": "已完成 2 次调用；剩余 1 个候选词。秘密：eiowzz。",
+        "candidates": "eiowzz",
+        "buckets": "",
+        "ledger": "提问 acckzz → 回复 2；4 个候选 → 1 个：eiowzz提问 eiowzz → 回复 6；1 个候选 → 1 个：eiowzz",
+        "terminal": "已实际提问秘密并收到 6。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "terminal": {
+        "frameRead": "已完成 2 次调用；剩余 1 个候选词。秘密：khaled。",
+        "candidates": "khaled",
+        "buckets": "",
+        "ledger": "提问 hamada → 回复 0；2 个候选 → 1 个：khaled提问 khaled → 回复 6；1 个候选 → 1 个：khaled",
+        "terminal": "已实际提问秘密并收到 6。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "terminal": {
+        "frameRead": "已完成 1 次调用；剩余 1 个候选词。秘密：aaaaaa。",
+        "candidates": "aaaaaa",
+        "buckets": "",
+        "ledger": "提问 aaaaaa → 回复 6；1 个候选 → 1 个：aaaaaa",
+        "terminal": "已实际提问秘密并收到 6。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "terminal": {
+        "frameRead": "已完成 6 次调用；剩余 1 个候选词。秘密：ffffff。",
+        "candidates": "ffffff",
+        "buckets": "",
+        "ledger": "提问 aaaaaa → 回复 0；6 个候选 → 5 个：bbbbbb, cccccc, dddddd, eeeeee, ffffff提问 bbbbbb → 回复 0；5 个候选 → 4 个：cccccc, dddddd, eeeeee, ffffff提问 cccccc → 回复 0；4 个候选 → 3 个：dddddd, eeeeee, ffffff提问 dddddd → 回复 0；3 个候选 → 2 个：eeeeee, ffffff提问 eeeeee → 回复 0；2 个候选 → 1 个：ffffff提问 ffffff → 回复 6；1 个候选 → 1 个：ffffff",
+        "terminal": "已实际提问秘密并收到 6。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "terminal": {
+        "frameRead": "已完成 2 次调用；剩余 1 个候选词。秘密：aabbbb。",
+        "candidates": "aabbbb",
+        "buckets": "",
+        "ledger": "提问 aaaaaa → 回复 2；4 个候选 → 1 个：aabbbb提问 aabbbb → 回复 6；1 个候选 → 1 个：aabbbb",
+        "terminal": "已实际提问秘密并收到 6。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "terminal": {
+        "frameRead": "已完成 10 次调用；剩余 1 个候选词。秘密：blllll。",
+        "candidates": "blllll",
+        "buckets": "",
+        "ledger": "提问 accccc → 回复 0；20 个候选 → 9 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll提问 bddddd → 回复 1；9 个候选 → 8 个：beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll提问 beeeee → 回复 1；8 个候选 → 7 个：bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll提问 bfffff → 回复 1；7 个候选 → 6 个：bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll提问 bggggg → 回复 1；6 个候选 → 5 个：bhhhhh, biiiii, bjjjjj, bkkkkk, blllll提问 bhhhhh → 回复 1；5 个候选 → 4 个：biiiii, bjjjjj, bkkkkk, blllll提问 biiiii → 回复 1；4 个候选 → 3 个：bjjjjj, bkkkkk, blllll提问 bjjjjj → 回复 1；3 个候选 → 2 个：bkkkkk, blllll提问 bkkkkk → 回复 1；2 个候选 → 1 个：blllll提问 blllll → 回复 6；1 个候选 → 1 个：blllll",
+        "terminal": "已实际提问秘密并收到 6。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 6,
+      "terminal": {
+        "frameRead": "已完成 11 次调用；剩余 1 个候选词。秘密：bmmmmm。",
+        "candidates": "bmmmmm",
+        "buckets": "",
+        "ledger": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm提问 bddddd → 回复 1；10 个候选 → 9 个：beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm提问 beeeee → 回复 1；9 个候选 → 8 个：bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm提问 bfffff → 回复 1；8 个候选 → 7 个：bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm提问 bggggg → 回复 1；7 个候选 → 6 个：bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm提问 bhhhhh → 回复 1；6 个候选 → 5 个：biiiii, bjjjjj, bkkkkk, blllll, bmmmmm提问 biiiii → 回复 1；5 个候选 → 4 个：bjjjjj, bkkkkk, blllll, bmmmmm提问 bjjjjj → 回复 1；4 个候选 → 3 个：bkkkkk, blllll, bmmmmm提问 bkkkkk → 回复 1；3 个候选 → 2 个：blllll, bmmmmm提问 blllll → 回复 1；2 个候选 → 1 个：bmmmmm提问 bmmmmm → 回复 6；1 个候选 → 1 个：bmmmmm",
+        "terminal": "已实际提问秘密并收到 6。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 7,
+      "terminal": {
+        "frameRead": "已完成 12 次调用；剩余 1 个候选词。秘密：bnnnnn。",
+        "candidates": "bnnnnn",
+        "buckets": "",
+        "ledger": "提问 accccc → 回复 0；24 个候选 → 11 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm, bnnnnn提问 bddddd → 回复 1；11 个候选 → 10 个：beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm, bnnnnn提问 beeeee → 回复 1；10 个候选 → 9 个：bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm, bnnnnn提问 bfffff → 回复 1；9 个候选 → 8 个：bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm, bnnnnn提问 bggggg → 回复 1；8 个候选 → 7 个：bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm, bnnnnn提问 bhhhhh → 回复 1；7 个候选 → 6 个：biiiii, bjjjjj, bkkkkk, blllll, bmmmmm, bnnnnn提问 biiiii → 回复 1；6 个候选 → 5 个：bjjjjj, bkkkkk, blllll, bmmmmm, bnnnnn提问 bjjjjj → 回复 1；5 个候选 → 4 个：bkkkkk, blllll, bmmmmm, bnnnnn提问 bkkkkk → 回复 1；4 个候选 → 3 个：blllll, bmmmmm, bnnnnn提问 blllll → 回复 1；3 个候选 → 2 个：bmmmmm, bnnnnn提问 bmmmmm → 回复 1；2 个候选 → 1 个：bnnnnn提问 bnnnnn → 回复 6；1 个候选 → 1 个：bnnnnn",
+        "terminal": "已实际提问秘密并收到 6。"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 8,
+      "terminal": {
+        "frameRead": "已完成 10 次调用；剩余 1 个候选词。秘密：bmmmmm。",
+        "candidates": "bmmmmm",
+        "buckets": "",
+        "ledger": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm提问 bddddd → 回复 1；10 个候选 → 9 个：beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm提问 beeeee → 回复 1；9 个候选 → 8 个：bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm提问 bfffff → 回复 1；8 个候选 → 7 个：bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm提问 bggggg → 回复 1；7 个候选 → 6 个：bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm提问 bhhhhh → 回复 1；6 个候选 → 5 个：biiiii, bjjjjj, bkkkkk, blllll, bmmmmm提问 biiiii → 回复 1；5 个候选 → 4 个：bjjjjj, bkkkkk, blllll, bmmmmm提问 bjjjjj → 回复 1；4 个候选 → 3 个：bkkkkk, blllll, bmmmmm提问 bkkkkk → 回复 1；3 个候选 → 2 个：blllll, bmmmmm提问 blllll → 回复 1；2 个候选 → 1 个：bmmmmm",
+        "terminal": "模拟预算已耗尽，未成功。即使已知唯一候选，也不能算猜中。"
+      }
+    },
+    {
+      "locale": "zh",
+      "formula": "C_new = {w ∈ C_old : match(guess, w) = reply}；choose = argmin max(|B₀|,…,|B₅|)",
+      "feedback": "再检查相等条件。 逐词匹配数是 [4, 6, 4, 2]，所以保留 aaaaaa 和 aabbbb。aaaabb 自身的 6 与回复 4 矛盾，不能因为“至少 4”而保留。两个词都符合当前回复；还不能判断哪个是真秘密。",
+      "middle": {
+        "frameRead": "已完成 1 次调用；剩余 1 个候选词。秘密：eiowzz。",
+        "candidates": "eiowzz",
+        "buckets": "acckzz00100001已提问ccbazz00100001可用eiowzz00000010下一次选择abcczz00100001可用",
+        "ledger": "提问 acckzz → 回复 2；4 个候选 → 1 个：eiowzz",
+        "terminal": "已推断唯一候选，但尚未实际猜中；还需一次调用。"
+      }
+    },
+    {
+      "locale": "en",
+      "copyFallback": "Automatic copy unavailable. The full source is selected below; press Ctrl+C (⌘C on macOS)."
+    },
+    {
+      "locale": "zh",
+      "copyFallback": "自动复制不可用。下方已全选，请按 Ctrl+C（macOS 为 ⌘C）。"
+    }
+  ],
+  "layouts": [
+    {
+      "locale": "en",
+      "width": 320,
+      "doc": 320,
+      "available": 320,
+      "words": [
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        }
+      ],
+      "table": {
+        "client": 258,
+        "scroll": 600
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "doc": 390,
+      "available": 390,
+      "words": [
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        }
+      ],
+      "table": {
+        "client": 328,
+        "scroll": 600
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "doc": 736,
+      "available": 736,
+      "words": [
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        }
+      ],
+      "table": {
+        "client": 646,
+        "scroll": 646
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "doc": 1440,
+      "available": 1440,
+      "words": [
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        }
+      ],
+      "table": {
+        "client": 910,
+        "scroll": 910
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "doc": 320,
+      "available": 320,
+      "words": [
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        }
+      ],
+      "table": {
+        "client": 258,
+        "scroll": 600
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "doc": 390,
+      "available": 390,
+      "words": [
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        }
+      ],
+      "table": {
+        "client": 328,
+        "scroll": 600
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "doc": 736,
+      "available": 736,
+      "words": [
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        }
+      ],
+      "table": {
+        "client": 646,
+        "scroll": 646
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "doc": 1440,
+      "available": 1440,
+      "words": [
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        },
+        {
+          "client": 74,
+          "scroll": 74
+        }
+      ],
+      "table": {
+        "client": 910,
+        "scroll": 910
+      }
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "available": 320
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "available": 390
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "available": 1440
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "available": 320
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "available": 390
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "available": 1440
+    }
+  ],
+  "clipboard": [
+    {
+      "locale": "en",
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "nativeReadbackExact": true
+    },
+    {
+      "locale": "zh",
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "nativeReadbackExact": true
+    }
+  ],
+  "sourceParity": "rendered, embedded, download, clipboard success and actual native manual-fallback copy; exact final newline",
+  "focus": {
+    "active": true,
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13,17,23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13,17,23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13,17,23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": "#prev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22,27,34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28,35,48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#langToggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110,231,255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13,17,23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "th",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22,27,34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "td",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(29.040000000000003,43.32,51.68000000000001)",
+      "ratio": 12.297634538021912
+    },
+    {
+      "selector": "focus vs panel2",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "cssBytes": 10883,
+  "links": [
+    {
+      "href": "../",
+      "status": 200
+    },
+    {
+      "href": "#step0",
+      "status": 200
+    },
+    {
+      "href": "#step1",
+      "status": 200
+    },
+    {
+      "href": "#step2",
+      "status": 200
+    },
+    {
+      "href": "#step3",
+      "status": 200
+    },
+    {
+      "href": "#step4",
+      "status": 200
+    },
+    {
+      "href": "solution.py",
+      "status": 200
+    },
+    {
+      "href": "../4/#step2",
+      "status": 200
+    },
+    {
+      "href": "../37/#step2",
+      "status": 200
+    }
+  ],
+  "storageDenied": true,
+  "offline": true,
+  "errors": [],
+  "assets": [],
+  "external": [],
+  "browser": "156.0.8078.4",
+  "zoomMethod": "CSS zoom 2 in real Chromium; real device and browser-chrome zoom unverified"
+}

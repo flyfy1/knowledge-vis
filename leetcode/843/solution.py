@@ -11,10 +11,10 @@ class Solution:
 
         candidates = list(range(n))
         used = set()
-        # Ten calls respect the minimum official budget; this is a heuristic.
-        for _ in range(10):
-            if not candidates:
-                return
+        # The API supplies no budget. Continue until an actual successful call.
+        # Failed minimax probes strictly shrink candidates: at most n calls.
+        # This is not a universal guarantee for a case's 10–30 call budget.
+        while candidates:
             best = None
             for probe in range(n):
                 if probe in used:

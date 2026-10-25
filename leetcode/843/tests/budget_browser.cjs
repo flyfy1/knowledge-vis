@@ -1,0 +1,50 @@
+'use strict';
+const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const out=process.env.OUTPUT_DIR||path.join(__dirname,'evidence/budget-r2');
+(async()=>{
+ const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});
+ const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'}),records=[],errors=[];
+ page.on('pageerror',e=>errors.push(e.message));
+ await page.goto((process.env.PREVIEW_URL||'http://127.0.0.1:18770')+'/leetcode/843/');
+ await page.waitForFunction(()=>document.querySelector('#frameRead').textContent.length>0);
+ const state=()=>page.evaluate(()=>Object.fromEntries(['frameRead','terminal','ledger','buckets','candidates'].map(id=>[id,document.getElementById(id).textContent])));
+ for(const locale of ['en','zh'])for(const width of [320,1440]){
+  await page.setViewportSize({width,height:1000});await page.locator(`[data-lang=${locale}]`).click();
+  await page.locator('#preset').selectOption('6');
+  assert.equal(await page.locator('#ledger li').count(),0);
+  // After first reply 0, independently known ten-word bucket; chosen next bddddd.
+  await page.locator('#next').click();
+  assert.deepEqual(await page.locator('#candidates code').allTextContents(),Array.from('defghijklm',c=>'b'+c.repeat(5)));
+  assert.equal(await page.locator('#buckets .changed th').textContent(),'bddddd');
+  assert((await page.locator('#ledger li').textContent()).includes('accccc'));
+  for(let turn=1;turn<10;turn++)await page.locator('#next').click();
+  assert.equal(await page.locator('#ledger li').count(),10);
+  assert.deepEqual(await page.locator('#candidates code').allTextContents(),['bmmmmm']);
+  assert((await page.locator('#terminal').textContent()).includes(locale==='en'?'has not been successfully guessed':'尚未实际猜中'));
+  assert.equal(await page.locator('#buckets .changed th').textContent(),'bmmmmm');
+  assert.equal(await page.locator('#next').isEnabled(),true);
+  const known=await state();
+  await page.locator(`[data-lang=${locale==='en'?'zh':'en'}]`).click();
+  assert.equal(await page.locator('#ledger li').count(),10);
+  await page.locator(`[data-lang=${locale}]`).click();assert.deepEqual(await state(),known);
+  await page.locator('#frameRead').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,`${locale}-${width}-known10.png`)});
+  await page.locator('#next').click();
+  assert.equal(await page.locator('#ledger li').count(),11);
+  assert((await page.locator('#ledger li').last().textContent()).includes('6'));
+  assert((await page.locator('#terminal').textContent()).includes(locale==='en'?'actually guessed':'已实际提问'));
+  const found=await state();await page.locator('#prev').click();assert.deepEqual(await state(),known);
+  await page.locator('#next').click();assert.deepEqual(await state(),found);
+  await page.locator('#frameRead').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,`${locale}-${width}-found11.png`)});
+  await page.locator('#preset').selectOption('8');await page.locator('#end').click();
+  assert.equal(await page.locator('#ledger li').count(),10);
+  assert.deepEqual(await page.locator('#candidates code').allTextContents(),['bmmmmm']);
+  assert((await page.locator('#terminal').textContent()).includes(locale==='en'?'exhausted; not successful':'耗尽，未成功'));
+  assert(await page.locator('#next').isDisabled());assert(await page.locator('.table-wrap').isHidden());
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+  const exhausted=await state();await page.locator('#frameRead').scrollIntoViewIfNeeded();
+  await page.screenshot({path:path.join(out,`${locale}-${width}-exhausted10.png`)});
+  records.push({locale,width,expected:'known at 10; actual success at 11; budget-10 control exhausted',known,found,exhausted});
+ }
+ assert.deepEqual(errors,[]);fs.writeFileSync(path.join(out,'budget-browser-results.json'),JSON.stringify({finding:'843-BUDGET-R1',result:'pass',records,errors},null,2)+'\n');
+ console.log({result:'pass',checks:records.length});await browser.close();
+})().catch(e=>{console.error(e);process.exit(1);});

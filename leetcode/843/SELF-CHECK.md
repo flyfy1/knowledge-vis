@@ -67,3 +67,78 @@ separates the JavaScript teaching simulation from Python execution.
 
 Reproduction commands and OUTPUT_DIR behavior: tests/README.md. Canonical candidate
 hashes are in candidate.json. Independent review remains the next required gate.
+
+## Budget repair r2 — 843-BUDGET-R1 (2026-10-26)
+
+The r1 entries above describe the historical candidate, including its defective
+cap. They are not current acceptance evidence. This append records author
+self-checks for **843-budget-r2**; fresh independent review/closure is pending.
+Canonical solution SHA-256:
+`51f9e29c91ca3ffe6238f13dfa0f0b632081274be4747ac67cfbf627b986dc05`.
+`candidate.json` freezes the new metadata, source, UI, tests and evidence hashes.
+Prior candidate manifest and exact source are retained in
+`tests/evidence/budget-r2/prior-candidate.json` and `before.py`.
+
+### Fix mapping to the required finding
+
+| Finding / request part | Change | Observed evidence |
+| --- | --- | --- |
+| 843-BUDGET-R1 §1: premature return | Replace arbitrary ten-round cap with `while candidates`; retain official Python `(words, master) -> None` and identical deterministic minimax ranking | `red.json`: 20/22 and 20/24 found, exit 1. `diagnostic11.json`: 22/22, but 22/24, exit 1 overall. `diagnostic30.json`: all fixtures pass, exit 0. `green.json`: canonical all 73 secrets pass, maxima 10/11/12 for 20/22/24 words under budgets 10/11/30 |
+| 843-BUDGET-R1 §2: actual-success semantics and source parity | Continue through a known singleton; only reply 6 means found. JavaScript simulation uses same strategy, with separately disclosed simulation budgets. Exhaustion has its own unsuccessful state | `test_budget.py` uses a slots-only closure-backed Master: strict budgets, no exposed budget/secret fields, independent positional replies and minimax choice, exact history survivors at the actual API seam, strict shrinkage on failure, no calls after success, legal/nonrepeated guesses, −1 on illegal guesses, no input mutation and None return. `test_core.cjs` compares every paired-family frame with actual Python call traces |
+| 843-BUDGET-R1 §3: bilingual teaching and costs | Update `limit`, `progress`, `map3`, `cost`, core loop, metadata, source mirror and asset versions. Keep explicit heuristic/budget limitation; prove G≤n termination. Existing selector adds paired controls | Both locale browser runs show known singleton after 10, actual success at 11, and unsuccessful budget-10 exhaustion. New budget example hand-calculates first 22-word buckets as 10/10/1/1. Complexity is one time-and-space string with G≤n |
+| 843-BUDGET-R1 §4: real callable regressions before fix | New `test_budget.py` executed red before canonical edits; exact red source and one-variable diagnostic variants retained. Existing small/exhaustive/seeded and official fixtures preserved | `red.json`, `diagnostic11.json`, `diagnostic30.json`, `green.json`; reproduction commands in tests/README.md. Diagnostic bounds are not canonical fixes |
+
+Confirmed causal hypothesis: the cap stopped a correctly filtering, correctly
+ranked strategy before the actual successful call. Raising just the bound fixed
+the 22-word family at 11 and the 24-word family at 12. The unchanged strategy
+continues to satisfy the tested ten-call controls; this is finite evidence,
+not a theorem that extra rounds are safe on every ten-call dictionary.
+
+The final stop is justified by progress, not by guessing the hidden allowance:
+a current-candidate probe has worst failed bucket ≤c−1, so minimax also strictly
+shrinks C on each failure. Failed used probes are not candidates. A singleton
+wins the candidate tie rule and is guessed. Hence truthful listed inputs finish
+in at most n actual calls. This does **not** prove G≤allowedGuesses on every
+generated case. No hidden-test membership, universal minimax optimality, full
+hidden-judge pass, or actual LeetCode submission is claimed. The simulator's
+known budget is never passed to the Python submission.
+
+### Commands actually run and results
+
+All new output is in `tests/evidence/budget-r2/`, preserving older evidence.
+The red/diagnostic commands and their expected exits are in tests/README.md.
+The following were executed from the repository root:
+
+- `python3 -B leetcode/843/tests/test_budget.py --output leetcode/843/tests/evidence/budget-r2/green.json`: exit 0; all 73 secrets across six fixtures, strict budgets.
+- `OUTPUT_DIR=leetcode/843/tests/evidence/budget-r2 python3 -B leetcode/843/tests/test_solution.py`: exit 0; 1,211 cases, n=1..100, exhaustive small dictionaries, seed 843, both official lists. The separate 26-disjoint-word stress succeeds in 26 with budget 30; no false ten-call success claim.
+- `OUTPUT_DIR=leetcode/843/tests/evidence/budget-r2 node leetcode/843/tests/test_core.cjs`: exit 0; 3,068 small-oracle frames plus paired-family Python/JS trace parity, exhaustion control, 87 bilingual pairs, duplicate-key and exact source-mirror checks.
+- `OUTPUT_DIR=leetcode/843/tests/evidence/budget-r2 node leetcode/843/tests/browser.cjs`: exit 0; all nine presets/every frame in EN and zh-CN, cumulative calls versus ledger length, next-probe identity/buckets, rewind/replay, reset/end, locale-after-interaction, hidden/revealed/changed prediction scope and complete formula operands. Exact embedded/displayed/downloaded source and automatic/native manual clipboard transfers, including final newline. Each locale fallback resets and verifies a distinct non-source sentinel; actual Linux Control+C and exact clipboard readback pass.
+- `OUTPUT_DIR=leetcode/843/tests/evidence/budget-r2 node leetcode/843/tests/focused.cjs`: exit 0; touch targets, horizontal scrolling and focused screenshots in both locales.
+- `OUTPUT_DIR=leetcode/843/tests/evidence/budget-r2 node leetcode/843/tests/budget_browser.cjs`: exit 0; independent expected first bucket, known at 10 / success at 11 / exhausted at 10, cumulative counts and next-probe identity, locale preservation and replay at 320/1440 in both locales. `budget-browser-results.json` retains expected and observed readouts.
+- `node --check leetcode/843/app.js` and `node --check leetcode/843/core.js`: exit 0. `git diff --check`: exit 0.
+- **`python3 -B scripts/register_leetcode_lesson.py 843 --validate-only`: exit 0; stdout/stderr empty.** Full command, cwd, timestamp and result in `preflight.json`. No registration was run.
+
+Browser checks use the supplied preview and Chromium executable. Main layout
+checks cover 320/390/736/1440px and CSS zoom 2, both languages; no page overflow,
+console/asset errors or external runtime requests. Sampled text contrast ≥7.07:1,
+focus contrast 8.94:1; CSS remains 10,883 bytes. Keyboard, source fallback,
+blocked storage and local file/offline loading pass. New runtime assets are
+cache-versioned as 843-budget-r2. No CSS, shared files or services changed.
+
+Author visually inspected r2 images `en-1440-known10.png`,
+`zh-320-known10.png`, `en-320-found11.png`, `zh-320-found11.png`,
+`en-320-exhausted10.png`, and `zh-1440-exhausted10.png`: status/readout and
+candidate labels are readable and wrap; success/exhaustion are visibly distinct;
+cumulative ledger remains, and terminal next-round tables are hidden.
+
+Official statement reopened at the official URL; archived official Python3 and
+TypeScript snippets were re-read and asserted in `official-recheck.json`.
+Python is faithful and preferred. No non-Python language-contract.json exists
+or is needed; neither preferred interface is omitted from the retained official
+language evidence. The source/mirror/export table in
+`scripts/register_leetcode_lesson.py` was read; exact Python pair verified.
+
+No child agents, commits, registration, acceptance changes, publishing or service
+changes occurred. Independent closure of 843-BUDGET-R1 on this new frozen
+candidate remains the next action. Real devices, screen readers, browser-chrome
+zoom, actual novice learning and production/LeetCode acceptance remain unverified.
