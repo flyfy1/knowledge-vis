@@ -3235,8 +3235,8 @@ window.LEETCODE_PROBLEMS = [
       "en": "Race Car"
     },
     "desc": {
-      "zh": "用位置与速度的完整状态，逐层寻找最短指令。",
-      "en": "Search complete position–speed states one command layer at a time."
+      "zh": "从完整状态的分层搜索，推导乐观下界并用 A* 减少探索。",
+      "en": "Derive an optimistic bound from full-state BFS and prioritize exploration with A*."
     },
     "difficulty": "hard",
     "topics": [
@@ -3247,12 +3247,16 @@ window.LEETCODE_PROBLEMS = [
       {
         "zh": "状态建模",
         "en": "State modeling"
+      },
+      {
+        "zh": "A* 搜索",
+        "en": "A* search"
       }
     ],
     "path": "818/",
     "leetcodeUrl": "https://leetcode.com/problems/race-car/",
     "language": "Python",
-    "complexity": "O(2^D) time; O(2^D) space, conservative unit-cost bounds for minimum instruction count D"
+    "complexity": "O(D * 2^D) time; O(2^D) space, conservative unit-cost bounds for optimal command depth D; heap work O(Q log Q) for Q generated entries"
   },
   {
     "id": 827,
