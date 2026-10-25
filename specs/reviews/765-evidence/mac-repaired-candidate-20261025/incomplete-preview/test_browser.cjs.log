@@ -1,0 +1,12 @@
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok((await page.locator('#step2').textContent()).includes('x−1'))
+
+    at /private/tmp/leetcode-765-repaired-candidate-20261025/leetcode/765/tests/test_browser.cjs:84:130 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

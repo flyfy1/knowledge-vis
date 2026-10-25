@@ -1,0 +1,66 @@
+[
+  {
+    "id": 765,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "765",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.047
+  },
+  {
+    "id": 765,
+    "name": "test_solution.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/765/tests/test_solution.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.27
+  },
+  {
+    "id": 765,
+    "name": "test_core.cjs",
+    "command": [
+      "node",
+      "leetcode/765/tests/test_core.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.062
+  },
+  {
+    "id": 765,
+    "name": "test_browser.cjs",
+    "command": [
+      "node",
+      "leetcode/765/tests/test_browser.cjs"
+    ],
+    "exit_code": 1,
+    "seconds": 7.792
+  },
+  {
+    "id": 765,
+    "name": "test_margin.cjs",
+    "command": [
+      "node",
+      "leetcode/765/tests/test_margin.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 4.403
+  },
+  {
+    "id": 765,
+    "name": "test_rendered_contract.cjs",
+    "command": [
+      "node",
+      "leetcode/765/tests/test_rendered_contract.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 1.381
+  }
+]
