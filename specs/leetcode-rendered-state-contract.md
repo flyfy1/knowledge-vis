@@ -90,6 +90,57 @@ For multiple languages, compare each labeled source with its own canonical file.
 The JavaScript-specific Python concept comparison remains separately labeled
 and cannot replace the original callable contract.
 
+## 5. Bind examples and indices to their stated input
+
+Check each advertised preset result against an independent calculation or oracle,
+then compare it with the completed rendered trace. Include labels in selectors,
+worked examples and prediction feedback; checking only the final answer panel
+misses contradictory promises elsewhere on the page. Reuse the same verified
+expected value where appropriate, but do not use the production formatter or
+algorithm as its own independent oracle.
+
+For #312, `[0,4,2]` has optimum 12: burst 0, then 2, then 4 to earn 0+8+4.
+A selector advertising 8 contradicts a correct terminal DP value of 12.
+
+When a representation adds padding, sentinels, compression or another index
+mapping, name the convention beside the question and the relevant readout.
+For original `[2,1,2]` and padded `[1,2,1,2,1]`, zero-based original index 2
+means padded index 3, whose value is 2. Padded index 2 instead has value 1.
+A bare “index 2” cannot distinguish these operations. Verify the intended
+operands and distractors in both locales rather than inferring them from a score.
+
+## 6. Make one recursive branch reconstructable
+
+For a lesson whose essential mechanism is recursion or backtracking, work one
+small call, child, return and sibling sequence with concrete values. Show which
+input remains, which state belongs to the parent, what the child changes and why
+returning leaves or restores the correct state. Explain the terminal condition
+and whether a completed branch is accepted, rejected or aggregated. A separate
+memory-stack widget is not required; the existing trace or nearby prose can do it.
+
+Immutable arguments remain in the caller; mutable shared state may need explicit
+undo. Teach the mechanism used by the actual canonical code rather than claiming
+that every return performs an in-place undo. A sampled teaching trace must label
+omitted branches and define its highlighting from an algorithm-state quantity,
+not an unexplained frame ordinal. During the cold walkthrough, the reviewer must
+be able to reconstruct this one sequence without filling gaps from source notes.
+
+## 7. Separate feasible decompositions from optimal ones
+
+For an optimization recurrence, identify each legal solution's matching candidate
+and bound its value by that candidate's optimum. Then optimize over candidates
+and explain why a legal construction attains the selected bound.
+Do not assume that an arbitrary solution already contains optimal subsolutions.
+Use the direction appropriate to minimization or maximization and the actual
+dependencies of the problem; this is not a required wording template.
+
+In #312 with `[3,1,5]`, bursting 3, then 1, then 5 earns 3+5+5=13. Its left
+suborder earns 8, not the optimal 30 with the final 5 kept alive. Every order
+decomposes into feasible side orders; each side is bounded by its subproblem
+optimum. Conversely, joining optimal sides while preserving the fixed last
+balloon attains the candidate total. Numerical tests of the recurrence cannot
+validate a contradictory proof sentence. Check the reasoning in both languages.
+
 ## Evidence and adoption
 
 Authors run applicable checks on their candidate. Independent reviewers first
@@ -112,3 +163,12 @@ Evidence behind this supplement:
 [312 closure](reviews/312-review-2-c539971a.md),
 [315 round 1](reviews/315-review-1-a478793f.md), and
 [315 closure](reviews/315-review-3-d972db1d.md).
+
+Further concrete failures and corrections:
+[312 index reopening](reviews/312-reopened-index-convention-20261025.md),
+[312 preset/proof findings](reviews/312-review-3-d7af6df0.md),
+[282 recursive-state findings](reviews/282-review-4-e7ac0d6f.md), and
+[282 closure](reviews/282-review-5-260e1690.md).
+These examples clarify the existing mathematical correctness and reconstructable
+teaching gates; they do not grant acceptance to another candidate or retrospectively
+change a historical review outcome.
