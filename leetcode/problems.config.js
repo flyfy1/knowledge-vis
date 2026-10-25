@@ -1887,6 +1887,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O((log n)^2) integer operations; O(1) integer cells (O(log n) bits) extra space"
   },
   {
+    "id": 488,
+    "title": {
+      "zh": "祖玛游戏",
+      "en": "Zuma Game"
+    },
+    "desc": {
+      "zh": "从连锁消除推导完整状态与记忆化搜索。",
+      "en": "Derive complete search states from chain reactions."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "记忆化搜索",
+        "en": "Memoized search"
+      },
+      {
+        "zh": "状态建模",
+        "en": "State modeling"
+      }
+    ],
+    "path": "488/",
+    "leetcodeUrl": "https://leetcode.com/problems/zuma-game/",
+    "language": "Python",
+    "complexity": "O(5SL³) time; O(S(L+h)+hL) space, where L=n+h and S is the exponential number of visited states"
+  },
+  {
     "id": 493,
     "title": {
       "zh": "翻转对",
