@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-25T12:04:38.990738+00:00",
+  "kind": "prospective-spec-adoption",
+  "before": "9c1df77e8fa8b9b78891eb374a2677b36538dcc2",
+  "source": "0c2cd7c6c676acb19fdb23d87f15eefc1f60089d",
+  "paths": [
+    "specs/leetcode-rendered-state-contract.md",
+    "specs/proposals/leetcode-repeat-copy-and-fit-evidence-20261025.md",
+    "specs/reviews/repeat-copy-and-fit-spec-review-20261025.md",
+    "specs/reviews/repeat-copy-and-fit-spec-adoption-20261025.md"
+  ],
+  "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-repeat-copy-fit-policy-adoption-20261025.json",
+  "previous_current": {
+    "problem_id": "780",
+    "stage": "review",
+    "started_at": "2026-10-25T11:55:15.399331+00:00",
+    "run_id": "780-review-754e7a8c5af5"
+  },
+  "spec_before_sha256": "226a94fb0cd222398b710718253d7ed46cd77f986ed61eef7e25c14213845dcc",
+  "780_review": {
+    "outcome": "accepted",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "required_open": [],
+    "report_path": "specs/reviews/780-review-1-847f9d24.md",
+    "evidence": [
+      "Cold browser walkthrough saved before source audit.",
+      "Canonical Python passed 13,225 independent forward-oracle cases and fresh boundary checks.",
+      "Both locales, rewind/reset, predictions, keyboard, narrow layouts and 200% CSS zoom verified.",
+      "Exact source, download, clipboard and native fallback parity passed.",
+      "Non-mutating metadata preflight exited 0."
+    ],
+    "detail": "100/100; no required findings. Acceptance applies to revision c214c6549b53618d96782b6f827a5018c4c7f6e4 and is separate from publication.",
+    "run_id": "780-review-754e7a8c5af5",
+    "candidate": "c214c6549b53618d96782b6f827a5018c4c7f6e4",
+    "candidate_sha256": "f82028ccf641708f89a671586dfa4d0009ee3530a7ff313820b5a690c6dfd62a",
+    "weighted_score": 100.0,
+    "round": 1,
+    "commit": "9c1df77e8fa8b9b78891eb374a2677b36538dcc2"
+  },
+  "scope": "Sections4and8 for subsequent candidates after frozen765and780 reviews. Preserve all problem entries, runs, queue and release bytes.",
+  "after": "08666055ce84308eba093ff528d5371dcafacad3",
+  "spec_after_sha256": "d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa",
+  "status": "completed",
+  "updated_at": "2026-10-25T12:04:39.225104+00:00"
+}
