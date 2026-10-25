@@ -262,15 +262,34 @@ const input = JSON.parse(process.argv[1]);
  const browser = await chromium.launch({headless:true, ...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH ? {executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH} : {})});
  try {
   const page = await browser.newPage({viewport:{width:1280,height:900}});
-  let errors=[], ignored=[], localPending=new Set();
+  let errors=[], ignored=[], localPending=new Map(), retiredRedirectDocuments=0;
   const origin=new URL(input.base).origin;
-  page.on('request', r=>{if(new URL(r.url()).origin===origin) localPending.add(r);});
+  page.on('request', r=>{if(new URL(r.url()).origin===origin) localPending.set(r, {url:r.url(), method:r.method(), type:r.resourceType(), mainDocument:r.isNavigationRequest() && r.frame()===page.mainFrame(), startedAt:Date.now(), documentAtStart:page.url()});});
+  page.on('response', r=>{const pending=localPending.get(r.request()); if(pending) pending.status=r.status();});
   page.on('requestfinished', r=>localPending.delete(r));
   page.on('requestfailed', r=>localPending.delete(r));
-  async function settleLocal() {
+  async function settleLocal(verifiedRedirect) {
    const until=Date.now()+10000;
-   while(localPending.size && Date.now()<until) await page.waitForTimeout(50);
-   if(localPending.size) throw new Error('First-party resources did not finish');
+   while(localPending.size && Date.now()<until) {
+    // Chromium can omit terminal events for an intermediate document replaced
+    // by its client-side redirect. Retire only that HTTP200 main document after
+    // the exact fixed destination, query and fragment have been verified.
+    if(verifiedRedirect && page.url()===verifiedRedirect) {
+     const target=new URL(verifiedRedirect),numeric=target.pathname.replace(/-codex\/$/,'/');
+     if(target.origin===origin && /\/leetcode\/[1-9][0-9]*-codex\/$/.test(target.pathname)) {
+      for(const [request,record] of localPending) {
+       const source=new URL(record.url);
+       if(record.mainDocument && record.type==='document' && record.status===200 &&
+          source.origin===target.origin && source.search===target.search &&
+          (source.pathname===numeric || source.pathname===numeric+'index.html')) {
+        localPending.delete(request); retiredRedirectDocuments++;
+       }
+      }
+     }
+    }
+    if(localPending.size) await page.waitForTimeout(50);
+   }
+   if(localPending.size) throw new Error('First-party resources did not finish at '+page.url()+': '+JSON.stringify([...localPending.values()].map(r=>({...r, elapsedMs:Date.now()-r.startedAt}))));
   }
   const knownBeacon='https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092';
   page.on('pageerror', e => errors.push(String(e)));
@@ -315,14 +334,14 @@ const input = JSON.parse(process.argv[1]);
     for(const suffix of ['', 'index.html']) {
      const state='?route-check=a%2Fb&value=%E4%B8%AD#step0';
      await page.goto(input.base+'/leetcode/'+item.id+'/'+suffix+state,{waitUntil:'domcontentloaded'});
-     await page.waitForURL(input.base+'/leetcode/'+route+state);
-     await settleLocal();
+     await page.waitForURL(input.base+'/leetcode/'+route+state,{waitUntil:'domcontentloaded'});
+     await settleLocal(input.base+'/leetcode/'+route+state);
      if(page.url()!==input.base+'/leetcode/'+route+state) throw new Error('Legacy redirect lost URL state '+item.id);
     }
    }
   }
   if(errors.length) throw new Error(errors.join('\n'));
-  console.log(JSON.stringify({lessons:input.entries.length, ignoredKnownBeaconFailures:ignored.length}));
+  console.log(JSON.stringify({lessons:input.entries.length, ignoredKnownBeaconFailures:ignored.length, retiredRedirectDocuments}));
  } finally {await browser.close();}
 })().catch(e=>{console.error(e);process.exit(1)});
 '''

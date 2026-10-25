@@ -1,0 +1,8 @@
+{
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Error: First-party resources did not finish at http://127.0.0.1:18778/leetcode/25-codex/?route-check=a%2Fb&value=%E4%B8%AD#step0: [{\"url\":\"http://127.0.0.1:18778/leetcode/25/index.html?route-check=a%2Fb&value=%E4%B8%AD\",\"method\":\"GET\",\"type\":\"document\",\"startedAt\":1792939462740,\"documentAtStart\":\"http://127.0.0.1:18778/leetcode/25-codex/?route-check=a%2Fb&value=%E4%B8%AD#step0\",\"status\":200,\"elapsedMs\":10044}]\n    at settleLocal ([eval]:17:32)\n    at async [eval]:63:6\n",
+  "lessons": 120,
+  "elapsed_seconds": 11.121,
+  "change": "pending URL/status diagnostics only; original 10000ms deadline retained"
+}

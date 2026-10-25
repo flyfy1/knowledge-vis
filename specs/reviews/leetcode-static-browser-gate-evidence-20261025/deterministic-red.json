@@ -1,0 +1,10 @@
+{
+  "source_revision": "104f82ca86ab2e48b402c2ffacb3bc142acac2c6",
+  "purpose": "Deterministic real Chromium regression with only intermediate redirect terminal events omitted",
+  "expected": "red",
+  "tests_run": 1,
+  "failures": 1,
+  "errors": 0,
+  "elapsed_seconds": 10.87,
+  "output": "test_completed_redirect_does_not_require_abandoned_document_end_event (test_leetcode_publish_browser.BrowserGateTests.test_completed_redirect_does_not_require_abandoned_document_end_event) ... FAIL\n\n======================================================================\nFAIL: test_completed_redirect_does_not_require_abandoned_document_end_event (test_leetcode_publish_browser.BrowserGateTests.test_completed_redirect_does_not_require_abandoned_document_end_event)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/Users/songyy/Documents/knowledge-vis/scripts/test_leetcode_publish_browser.py\", line 111, in test_completed_redirect_does_not_require_abandoned_document_end_event\n    result = self.check_page(['#502 \u00b7 \u9879\u76ee\u9009\u62e9', '#502 \u00b7 Project selection'],\n                    ['\u9010\u6b65\u89e3\u91ca\u6295\u8d44\u9009\u62e9\u3002' * 30, 'Explain project selection. ' * 30],\n                    {'zh': '\u9879\u76ee\u9009\u62e9', 'en': 'Project selection'}, True,\n                    route='502-codex/', omit_redirect_end=True)\n  File \"/Users/songyy/Documents/knowledge-vis/scripts/test_leetcode_publish_browser.py\", line 93, in check_page\n    self.assertEqual(result.returncode == 0, should_pass, result.stdout + result.stderr)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: False != True : Error: First-party resources did not finish\n    at settleLocal ([eval]:29:32)\n    at async [eval]:75:6\n\n\n----------------------------------------------------------------------\nRan 1 test in 10.870s\n\nFAILED (failures=1)\n"
+}

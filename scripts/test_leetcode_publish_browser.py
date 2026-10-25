@@ -15,7 +15,7 @@ from leetcode_static_versions import codex_runtime
 
 
 class BrowserGateTests(unittest.TestCase):
-    def check_page(self, headings, bodies, titles, should_pass, route=None):
+    def check_page(self, headings, bodies, titles, should_pass, route=None, omit_redirect_end=False, stall_resource=False, missing_resource=False, resource_on_redirect=False):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             lesson = root / 'leetcode' / '502'
@@ -31,6 +31,11 @@ class BrowserGateTests(unittest.TestCase):
                 'document.querySelector("main").textContent=bodies[i];}'
                 'document.querySelector("[data-lang=zh]").onclick=()=>show(0);'
                 'document.querySelector("[data-lang=en]").onclick=()=>show(1);show(1);</script>')
+            if stall_resource or missing_resource:
+                index = lesson / 'index.html'
+                resource = ('<script>if(location.search.includes("route-check=")){const image=document.createElement("img");image.src="pending.png";image.alt="";document.body.append(image);}</script>'
+                            if resource_on_redirect else '<img src="pending.png" alt="">')
+                index.write_text(index.read_text() + resource)
             if route == '502-codex/':
                 runtime = {'leetcode/502/index.html': (lesson / 'index.html').read_bytes(),
                            'leetcode/502/app.js': b'// Inline fixture initializes the lesson.\n'}
@@ -38,7 +43,19 @@ class BrowserGateTests(unittest.TestCase):
                     target = root / path
                     target.parent.mkdir(parents=True, exist_ok=True)
                     target.write_bytes(content)
+            release_stall = threading.Event()
             class Quiet(http.server.SimpleHTTPRequestHandler):
+                def do_GET(self):
+                    if stall_resource and self.path.split('?')[0].endswith('/pending.png'):
+                        self.send_response(200)
+                        self.send_header('Content-Type', 'image/png')
+                        self.send_header('Content-Length', '100')
+                        self.end_headers()
+                        self.wfile.write(b'\x89PNG\r\n\x1a\n')
+                        self.wfile.flush()
+                        release_stall.wait(25)
+                        return
+                    super().do_GET()
                 def log_message(self, *args):
                     pass
             server = http.server.ThreadingHTTPServer(('127.0.0.1', 0),
@@ -46,15 +63,35 @@ class BrowserGateTests(unittest.TestCase):
             thread = threading.Thread(target=server.serve_forever, daemon=True)
             thread.start()
             try:
-                result = subprocess.run(['node', '-e', BROWSER_CHECK, json.dumps({
+                script = BROWSER_CHECK
+                if omit_redirect_end:
+                    # Model Chromium's observed missing terminal events for a
+                    # replaced redirect document; retain real asset events/UI.
+                    script = r'''const driver=require('playwright');
+const launch=driver.chromium.launch.bind(driver.chromium);
+driver.chromium.launch=async(...args)=>{
+ const browser=await launch(...args),newPage=browser.newPage.bind(browser);
+ browser.newPage=async(...args)=>{
+  const page=await newPage(...args),on=page.on.bind(page);
+  page.on=(name,listener)=>on(name,['requestfinished','requestfailed'].includes(name)?r=>{
+   if(!(r.resourceType()==='document' && /^\/leetcode\/502\/(?:index\.html)?$/.test(new URL(r.url()).pathname))) listener(r);
+  }:listener);
+  return page;
+ };
+ return browser;
+};
+''' + script
+                result = subprocess.run(['node', '-e', script, json.dumps({
                     'base': f'http://127.0.0.1:{server.server_port}',
                     'entries': [{'id': 502, 'title': titles, 'leetcodeUrl': official, **({'path': route} if route else {})}]
                 })], capture_output=True, text=True, env=os.environ.copy(), timeout=30)
             finally:
+                release_stall.set()
                 server.shutdown()
                 server.server_close()
                 thread.join()
             self.assertEqual(result.returncode == 0, should_pass, result.stdout + result.stderr)
+            return result
 
     def test_identical_title_with_translated_body(self):
         self.check_page(['#502 · IPO'] * 2, ['逐步解释投资选择。' * 30, 'Explain project selection. ' * 30],
@@ -69,6 +106,31 @@ class BrowserGateTests(unittest.TestCase):
         self.check_page(['#502 · 项目选择', '#502 · Project selection'],
                         ['逐步解释投资选择。' * 30, 'Explain project selection. ' * 30],
                         {'zh': '项目选择', 'en': 'Project selection'}, True, route='502-codex/')
+
+    def test_completed_redirect_does_not_require_abandoned_document_end_event(self):
+        result = self.check_page(['#502 · 项目选择', '#502 · Project selection'],
+                        ['逐步解释投资选择。' * 30, 'Explain project selection. ' * 30],
+                        {'zh': '项目选择', 'en': 'Project selection'}, True,
+                        route='502-codex/', omit_redirect_end=True)
+
+        self.assertEqual(json.loads(result.stdout)['retiredRedirectDocuments'], 2)
+
+    def test_current_resource_stall_still_fails_with_url_diagnostics(self):
+        result = self.check_page(['#502 · 项目选择', '#502 · Project selection'],
+                        ['逐步解释投资选择。' * 30, 'Explain project selection. ' * 30],
+                        {'zh': '项目选择', 'en': 'Project selection'}, False,
+                        route='502-codex/', stall_resource=True, resource_on_redirect=True, omit_redirect_end=True)
+        self.assertIn('First-party resources did not finish', result.stderr)
+        self.assertIn('/leetcode/502-codex/pending.png', result.stderr)
+        self.assertIn('"type":"image"', result.stderr)
+
+    def test_missing_current_resource_remains_a_required_failure(self):
+        result = self.check_page(['#502 · 项目选择', '#502 · Project selection'],
+                        ['逐步解释投资选择。' * 30, 'Explain project selection. ' * 30],
+                        {'zh': '项目选择', 'en': 'Project selection'}, False,
+                        route='502-codex/', missing_resource=True, resource_on_redirect=True, omit_redirect_end=True)
+        self.assertIn('HTTP 404:', result.stderr)
+        self.assertIn('/pending.png', result.stderr)
 
     def test_untranslated_title_is_rejected(self):
         self.check_page(['#502 · Project selection'] * 2,
