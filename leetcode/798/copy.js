@@ -330,9 +330,5 @@ window.LESSON_COPY = {
   "related2": [
     "#732：用端点事件计数重叠区间",
     "#732: count overlapping intervals with endpoint events"
-  ],
-  "foot": [
-    "作者自查候选；独立教学评审待完成。模拟不等于执行；未声称 LeetCode 提交通过。",
-    "Author self-checked candidate; independent teaching review pending. Simulation is separate from execution; no LeetCode acceptance is claimed."
   ]
 };
