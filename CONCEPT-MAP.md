@@ -1458,3 +1458,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | State graph | `leetcode/773/#step1` | Encode complete boards and connect them with legal blank swaps. |
 
 <!-- /leetcode-773-campaign -->
+
+
+<!-- leetcode-778-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Minimum bottleneck path | `leetcode/778/#step2` | Extend a path by max, then settle the smallest discovered bottleneck. |
+
+<!-- /leetcode-778-campaign -->
