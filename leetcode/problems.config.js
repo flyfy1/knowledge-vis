@@ -3203,6 +3203,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
+    "id": 815,
+    "title": {
+      "zh": "公交路线",
+      "en": "Bus Routes"
+    },
+    "desc": {
+      "zh": "从一次上车解锁整条线路，推导按乘车数分层的搜索与一次扫描不变量。",
+      "en": "Unlock an entire route per boarding and derive BFS layers with a scan-once invariant."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "倒排索引",
+        "en": "Inverted index"
+      }
+    ],
+    "path": "815/",
+    "leetcodeUrl": "https://leetcode.com/problems/bus-routes/",
+    "language": "Python",
+    "complexity": "O(M + R) expected time; O(M + R) auxiliary space, M = total route entries, R = route count"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",

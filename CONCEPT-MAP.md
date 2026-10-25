@@ -1585,3 +1585,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Snapshot updates | `leetcode/956/#step4` | Read old prefix states to use each rod at most once. |
 
 <!-- /leetcode-956-campaign -->
+
+
+<!-- leetcode-815-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Bus-count BFS layers | `leetcode/815/#step2` | First discovery minimizes boardings; scan each route only once. |
+| Stop-to-route inverted index | `leetcode/815/#step2` | Look up incident routes without building all pairwise intersections. |
+
+<!-- /leetcode-815-campaign -->
