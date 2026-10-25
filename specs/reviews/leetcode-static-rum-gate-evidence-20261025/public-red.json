@@ -1,0 +1,10 @@
+{
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Error: First-party resources did not finish at https://visual.integ.life/leetcode/23-codex/: [{\"url\":\"https://visual.integ.life/cdn-cgi/rum?\",\"method\":\"POST\",\"type\":\"xhr\",\"mainDocument\":false,\"startedAt\":1792941019793,\"documentAtStart\":\"https://visual.integ.life/leetcode/10-codex/?route-check=a%2Fb&value=%E4%B8%AD#step0\",\"elapsedMs\":10081}]\n    at settleLocal ([eval]:35:32)\n    at async [eval]:59:4\n",
+  "lessons": 120,
+  "ordinary_version_urls": true,
+  "encoded_query_fragment_legacy_routes": true,
+  "seconds": 13.670088052749634,
+  "harness_sha256": "ab2b55e1007b637b5adcade6182fd61ccacb90b2eac47d88769b6a154959ae73"
+}

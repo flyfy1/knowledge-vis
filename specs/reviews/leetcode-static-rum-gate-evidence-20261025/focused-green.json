@@ -1,0 +1,7 @@
+{
+  "tests_run": 6,
+  "failures": 0,
+  "errors": 0,
+  "elapsed_seconds": 35.122,
+  "output": "test_slow_same_origin_rum_post_is_counted_separately (test_leetcode_publish_browser.BrowserGateTests.test_slow_same_origin_rum_post_is_counted_separately) ... ok\ntest_slow_ordinary_post_is_not_telemetry (test_leetcode_publish_browser.BrowserGateTests.test_slow_ordinary_post_is_not_telemetry) ... ok\ntest_get_to_rum_path_is_not_telemetry (test_leetcode_publish_browser.BrowserGateTests.test_get_to_rum_path_is_not_telemetry) ... ok\ntest_same_origin_rum_http_failure_is_counted_separately (test_leetcode_publish_browser.BrowserGateTests.test_same_origin_rum_http_failure_is_counted_separately) ... ok\ntest_other_origin_rum_path_is_not_exempt (test_leetcode_publish_browser.BrowserGateTests.test_other_origin_rum_path_is_not_exempt) ... ok\ntest_current_resource_stall_still_fails_with_url_diagnostics (test_leetcode_publish_browser.BrowserGateTests.test_current_resource_stall_still_fails_with_url_diagnostics) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 35.122s\n\nOK\n"
+}
