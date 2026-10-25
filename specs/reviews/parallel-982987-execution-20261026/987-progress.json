@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "repo": "/home/songyy/projects/leetcode-hard-lane-987-20261026",
+  "queue": [
+    "987"
+  ],
+  "expected_head": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+  "started_at": "2026-10-25T21:31:17.514248+00:00",
+  "status": "running",
+  "current": {
+    "problem_id": "987",
+    "stage": "author",
+    "started_at": "2026-10-25T21:31:17.787044+00:00",
+    "run_id": "987-author-a21aea0fbd64"
+  },
+  "problems": {
+    "987": {
+      "status": "pending",
+      "rounds": 0,
+      "new": true,
+      "phase": "author",
+      "reviews": [],
+      "author_runs": [],
+      "prior_report": ""
+    }
+  },
+  "runs": [
+    {
+      "id": "987-author-a21aea0fbd64",
+      "problem_id": "987",
+      "role": "author",
+      "started_at": "2026-10-25T21:31:17.787044+00:00",
+      "status": "running",
+      "candidate": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-987-20261026/runs/987-author-a21aea0fbd64",
+      "session_ids": []
+    }
+  ],
+  "updated_at": "2026-10-25T21:31:17.787072+00:00"
+}

@@ -1,0 +1,36 @@
+{
+  "status": "both-lanes-started",
+  "validated_at": "2026-10-25T21:33:23.664889+00:00",
+  "source_commit": "1e6c06c0da772f102aa8d78cb202ca1eded78fb1",
+  "launcher_sha256": "042e95a37d31100524e862db7e354e664310df535eccd7736aa2415c16196463",
+  "preflight_sha256": "ec01c22261e9150cc5c45a01754ac3179e7a69ac84c900cff2c3d36e33ec70e2",
+  "dispatch_count": 1,
+  "checks": {
+    "frozen_preflight_identity_matched": true,
+    "exact_transferred_launcher_hash_matched": true,
+    "three_real_runners": true,
+    "distinct_live_native_ancestry_cwd_output_bindings": true,
+    "distinct_fresh_thread_turn_and_completed_output": true,
+    "lanes_nice10_max6_single_id_no_publication": true,
+    "ledger_unchanged": true,
+    "central_natural_advance_same_shared_passed": true,
+    "all_stop_files_absent": true
+  },
+  "artifact_sha256": {
+    "982-progress.json": "47dc5c7b63aa3551268a298a7c8f435e903709a836681e20e56167f323d7adc3",
+    "982-reservation.json": "ebe8e5a2e622ec05cd4c59a067dc186662b1ad2e4a285175fe65eca348eccdac",
+    "982-startup-events.jsonl.gz": "374a492070994da2e37ad6d3cd8c150c82cd66fb5d55f0d8c58dcf52195cb8a1",
+    "987-progress.json": "731a48ee29a58e3a44a4501a5a299d837538995a4996e7d6391795fb88bbb210",
+    "987-reservation.json": "383b878901854a3d009cb63ec80f973aec0071ecfa729aab8666fc8608f0d5d2",
+    "987-startup-events.jsonl.gz": "a0a0d1c72ae5d36d3622a93685689848daceb856b5366c12c63349a364c675d0",
+    "dispatch.json": "2efb64bf272df1d465ac54332bbaa2e9cd4d7d15072fbb1daecc73b5c787ebbd",
+    "final-observation.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launcher-output.log": "e9a2a25d97f41137ed7894a81eae9dffae6c7871ee09a895f2b654aca5a666b5",
+    "live-launch.json": "67bd1b98d19611355b5c268dcc6b3282a5b2821fd137438cab3baba59374e2a7",
+    "observation.stderr": "1ff5b2ff891eaefbdcdccfceddeefdd61fa0b55e2bcd3dd5230f05f54a5ea98c",
+    "preflight-comparison.json": "6b5a85b39ccbfb00314eda89befc2ba79baa939756aac30a2b30c219cd5a7635",
+    "preflight.json": "df321729e64e21c69c382d45d8874d88ceb42f2d72fd018b5b210cffc0e12aac",
+    "preflight.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "transfer.json": "4dfd33f8fa1ad500b8d4ce2fbfd479f5f371c3fbca320925d1c9695fbabc85e2"
+  }
+}
