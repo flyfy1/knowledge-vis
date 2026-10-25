@@ -1,0 +1,116 @@
+{
+  "expected_head": "bf3e607fd478a5f7ffaab995642e7f6adda52c44",
+  "problems": {
+    "780": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/780-review-1-847f9d24.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Canonical Python passed 13,225 independent forward-oracle cases and fresh boundary checks.",
+            "Both locales, rewind/reset, predictions, keyboard, narrow layouts and 200% CSS zoom verified.",
+            "Exact source, download, clipboard and native fallback parity passed.",
+            "Non-mutating metadata preflight exited 0."
+          ],
+          "detail": "100/100; no required findings. Acceptance applies to revision c214c6549b53618d96782b6f827a5018c4c7f6e4 and is separate from publication.",
+          "run_id": "780-review-754e7a8c5af5",
+          "candidate": "c214c6549b53618d96782b6f827a5018c4c7f6e4",
+          "candidate_sha256": "f82028ccf641708f89a671586dfa4d0009ee3530a7ff313820b5a690c6dfd62a",
+          "weighted_score": 100.0,
+          "round": 1,
+          "commit": "9c1df77e8fa8b9b78891eb374a2677b36538dcc2"
+        }
+      ],
+      "author_runs": [
+        "780-author-c004498974c8"
+      ],
+      "prior_report": "specs/reviews/780-review-1-847f9d24.md",
+      "candidate": "c214c6549b53618d96782b6f827a5018c4c7f6e4",
+      "registration_commit": "bf3e607fd478a5f7ffaab995642e7f6adda52c44",
+      "accepted_at": "2026-10-25T12:04:42.612410+00:00"
+    }
+  },
+  "current": {
+    "problem_id": "782",
+    "stage": "author",
+    "started_at": "2026-10-25T12:04:45.729444+00:00",
+    "run_id": "782-author-ac9f09445a31"
+  },
+  "runs": [
+    {
+      "id": "780-author-c004498974c8",
+      "problem_id": "780",
+      "role": "author",
+      "started_at": "2026-10-25T11:14:45.112800+00:00",
+      "status": "completed",
+      "candidate": "81bee47c5d50bf5ec2c916a3e38b7b98a176cf53",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/780-author-c004498974c8",
+      "session_ids": [
+        "01a172c5-2803-7b61-ada6-b593c5c86910"
+      ],
+      "finished_at": "2026-10-25T11:31:50.423807+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented and froze leetcode/780/ as candidate r4. Passed 15,774 solution/oracle cases, 34,934 intermediate checks, bilingual Chromium tests, source-transfer checks, and metadata preflight (exit 0). Screenshots inspected; evidence and reproducible tests included. Ready for separate independent review; no acceptance or deployment claimed."
+      }
+    },
+    {
+      "id": "780-review-754e7a8c5af5",
+      "problem_id": "780",
+      "role": "review",
+      "started_at": "2026-10-25T11:55:15.399331+00:00",
+      "status": "completed",
+      "candidate": "c214c6549b53618d96782b6f827a5018c4c7f6e4",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/780-review-754e7a8c5af5",
+      "session_ids": [
+        "01a172ea-3d75-7d72-ae13-c059027da8d2"
+      ],
+      "finished_at": "2026-10-25T12:00:52.046221+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/780-review-1-847f9d24.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Canonical Python passed 13,225 independent forward-oracle cases and fresh boundary checks.",
+          "Both locales, rewind/reset, predictions, keyboard, narrow layouts and 200% CSS zoom verified.",
+          "Exact source, download, clipboard and native fallback parity passed.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "100/100; no required findings. Acceptance applies to revision c214c6549b53618d96782b6f827a5018c4c7f6e4 and is separate from publication."
+      }
+    },
+    {
+      "id": "782-author-ac9f09445a31",
+      "problem_id": "782",
+      "role": "author",
+      "started_at": "2026-10-25T12:04:45.729444+00:00",
+      "status": "running",
+      "candidate": "bf3e607fd478a5f7ffaab995642e7f6adda52c44",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/782-author-ac9f09445a31",
+      "session_ids": []
+    }
+  ]
+}

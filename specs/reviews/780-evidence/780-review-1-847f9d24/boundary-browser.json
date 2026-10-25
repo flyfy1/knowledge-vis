@@ -1,0 +1,142 @@
+[
+  {
+    "tabOrder": [
+      {
+        "tag": "A",
+        "lang": "",
+        "href": "../",
+        "height": 48
+      },
+      {
+        "tag": "BUTTON",
+        "lang": "zh",
+        "href": null,
+        "height": 48
+      },
+      {
+        "tag": "BUTTON",
+        "lang": "en",
+        "href": null,
+        "height": 48
+      },
+      {
+        "tag": "A",
+        "lang": "",
+        "href": "https://leetcode.com/problems/reaching-points/",
+        "height": 48
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "locale": "en",
+    "preset": "3",
+    "readout": "Frame 1/1; fixed start (3, 2); current backward target (3, 7). Final result: unreachable (false).",
+    "operation": "x equals sx; only y may increase. Difference 5, increment sx=3; 5 % 3 = 2. Final result: unreachable (false)."
+  },
+  {
+    "width": 320,
+    "locale": "en",
+    "preset": "5",
+    "readout": "Frame 2/2; fixed start (1, 1); current backward target (2, 0). Final result: unreachable (false).",
+    "operation": "Current (2, 0) has a coordinate below its start. Forward coordinates never decrease, so it is unreachable."
+  },
+  {
+    "width": 320,
+    "locale": "en",
+    "preset": "7",
+    "readout": "Frame 1/1; fixed start (1, 1); current backward target (1, 1000000000). Final result: reachable (true).",
+    "operation": "x equals sx; only y may increase. Difference 999999999, increment sx=1; 999999999 % 1 = 0. Final result: reachable (true)."
+  },
+  {
+    "width": 320,
+    "locale": "en",
+    "preset": "8",
+    "readout": "Frame 1/1; fixed start (5, 3); current backward target (4, 9). Final result: unreachable (false).",
+    "operation": "Current (4, 9) has a coordinate below its start. Forward coordinates never decrease, so it is unreachable."
+  },
+  {
+    "width": 320,
+    "locale": "zh",
+    "preset": "3",
+    "readout": "帧 1/1；固定起点 (3, 2)；当前倒推目标 (3, 7)。最终结果：不可达（false）。",
+    "operation": "x 已等于 sx；只可增加 y。差值 5，步长 sx=3；5 % 3 = 2。最终结果：不可达（false）。"
+  },
+  {
+    "width": 320,
+    "locale": "zh",
+    "preset": "5",
+    "readout": "帧 2/2；固定起点 (1, 1)；当前倒推目标 (2, 0)。最终结果：不可达（false）。",
+    "operation": "当前 (2, 0) 已有坐标低于起点。正向坐标从不减小，所以不可达。"
+  },
+  {
+    "width": 320,
+    "locale": "zh",
+    "preset": "7",
+    "readout": "帧 1/1；固定起点 (1, 1)；当前倒推目标 (1, 1000000000)。最终结果：可达（true）。",
+    "operation": "x 已等于 sx；只可增加 y。差值 999999999，步长 sx=1；999999999 % 1 = 0。最终结果：可达（true）。"
+  },
+  {
+    "width": 320,
+    "locale": "zh",
+    "preset": "8",
+    "readout": "帧 1/1；固定起点 (5, 3)；当前倒推目标 (4, 9)。最终结果：不可达（false）。",
+    "operation": "当前 (4, 9) 已有坐标低于起点。正向坐标从不减小，所以不可达。"
+  },
+  {
+    "width": 390,
+    "locale": "en",
+    "preset": "3",
+    "readout": "Frame 1/1; fixed start (3, 2); current backward target (3, 7). Final result: unreachable (false).",
+    "operation": "x equals sx; only y may increase. Difference 5, increment sx=3; 5 % 3 = 2. Final result: unreachable (false)."
+  },
+  {
+    "width": 390,
+    "locale": "en",
+    "preset": "5",
+    "readout": "Frame 2/2; fixed start (1, 1); current backward target (2, 0). Final result: unreachable (false).",
+    "operation": "Current (2, 0) has a coordinate below its start. Forward coordinates never decrease, so it is unreachable."
+  },
+  {
+    "width": 390,
+    "locale": "en",
+    "preset": "7",
+    "readout": "Frame 1/1; fixed start (1, 1); current backward target (1, 1000000000). Final result: reachable (true).",
+    "operation": "x equals sx; only y may increase. Difference 999999999, increment sx=1; 999999999 % 1 = 0. Final result: reachable (true)."
+  },
+  {
+    "width": 390,
+    "locale": "en",
+    "preset": "8",
+    "readout": "Frame 1/1; fixed start (5, 3); current backward target (4, 9). Final result: unreachable (false).",
+    "operation": "Current (4, 9) has a coordinate below its start. Forward coordinates never decrease, so it is unreachable."
+  },
+  {
+    "width": 390,
+    "locale": "zh",
+    "preset": "3",
+    "readout": "帧 1/1；固定起点 (3, 2)；当前倒推目标 (3, 7)。最终结果：不可达（false）。",
+    "operation": "x 已等于 sx；只可增加 y。差值 5，步长 sx=3；5 % 3 = 2。最终结果：不可达（false）。"
+  },
+  {
+    "width": 390,
+    "locale": "zh",
+    "preset": "5",
+    "readout": "帧 2/2；固定起点 (1, 1)；当前倒推目标 (2, 0)。最终结果：不可达（false）。",
+    "operation": "当前 (2, 0) 已有坐标低于起点。正向坐标从不减小，所以不可达。"
+  },
+  {
+    "width": 390,
+    "locale": "zh",
+    "preset": "7",
+    "readout": "帧 1/1；固定起点 (1, 1)；当前倒推目标 (1, 1000000000)。最终结果：可达（true）。",
+    "operation": "x 已等于 sx；只可增加 y。差值 999999999，步长 sx=1；999999999 % 1 = 0。最终结果：可达（true）。"
+  },
+  {
+    "width": 390,
+    "locale": "zh",
+    "preset": "8",
+    "readout": "帧 1/1；固定起点 (5, 3)；当前倒推目标 (4, 9)。最终结果：不可达（false）。",
+    "operation": "当前 (4, 9) 已有坐标低于起点。正向坐标从不减小，所以不可达。"
+  }
+]
