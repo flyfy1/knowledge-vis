@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "translationKeys": 95,
+  "duplicateKeysChecked": true,
+  "allPairsValid": true,
+  "visibleBaselineExecuted": 5,
+  "exactSourceParity": true,
+  "officialPythonSelector": {
+    "lang": "Python3",
+    "langSlug": "python3",
+    "code": "class Solution:\n    def findMinStep(self, board: str, hand: str) -> int:\n        "
+  },
+  "totalShippedCSSBytes": 11827
+}
