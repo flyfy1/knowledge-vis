@@ -1,0 +1,35 @@
+{
+  "accessedAt": "2026-10-25T10:37:12.748093+00:00",
+  "officialSource": "https://leetcode.com/problems/basic-calculator-iii/",
+  "accessMode": "Public unauthenticated requests; no credentials or cookies loaded",
+  "requests": [
+    {
+      "url": "https://leetcode.com/problems/basic-calculator-iii/",
+      "method": "GET",
+      "status": 403,
+      "finalUrl": "https://leetcode.com/problems/basic-calculator-iii/",
+      "responseFile": "official-page.html"
+    },
+    {
+      "url": "https://leetcode.com/graphql/",
+      "method": "POST",
+      "status": 200,
+      "finalUrl": "https://leetcode.com/graphql/",
+      "responseFile": "official-graphql.json",
+      "observedQuestion": {
+        "questionId": "785",
+        "questionFrontendId": "772",
+        "title": "Basic Calculator III",
+        "titleSlug": "basic-calculator-iii",
+        "isPaidOnly": true,
+        "content": null,
+        "exampleTestcases": "\"1+1\"\n\"6-4/2\"\n\"2*(5+5*2)/3+(6/2+8)\"",
+        "metaData": "{\r\n  \"name\": \"calculate\",\r\n  \"params\": [\r\n    {\r\n      \"name\": \"s\",\r\n      \"type\": \"string\"\r\n    }\r\n  ],\r\n  \"return\": {\r\n    \"type\": \"integer\"\r\n  }\r\n}",
+        "codeSnippets": null
+      }
+    }
+  ],
+  "statementAvailable": false,
+  "interfacesAvailable": false,
+  "outcome": "blocked"
+}
