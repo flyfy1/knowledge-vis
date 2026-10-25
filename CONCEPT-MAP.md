@@ -1159,3 +1159,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | First-different-bit partition | `leetcode/600/#step2` | Count disjoint smaller-prefix branches and stop the equal path at adjacent ones. |
 
 <!-- /leetcode-600-campaign -->
+
+
+<!-- leetcode-629-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Insertion counting bijection | `leetcode/629/#step1` | Insert the unique maximum to add exactly the number of smaller values to its right. |
+| Sliding sum over a DP row | `leetcode/629/#step2` | Add the entering count and remove the expired count while retaining separate previous and current rows. |
+
+<!-- /leetcode-629-campaign -->
