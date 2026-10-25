@@ -263,8 +263,14 @@ const input = JSON.parse(process.argv[1]);
  try {
   const page = await browser.newPage({viewport:{width:1280,height:900}});
   let errors=[], ignored=[], localPending=new Map(), retiredRedirectDocuments=0;
+  const ignoredCloudflareRum=new Set();
   const origin=new URL(input.base).origin;
-  page.on('request', r=>{if(new URL(r.url()).origin===origin) localPending.set(r, {url:r.url(), method:r.method(), type:r.resourceType(), mainDocument:r.isNavigationRequest() && r.frame()===page.mainFrame(), startedAt:Date.now(), documentAtStart:page.url()});});
+  function isCloudflareRum(request) {
+   const url=new URL(request.url());
+   return url.origin===origin && url.pathname==='/cdn-cgi/rum' && request.method()==='POST' &&
+          !request.isNavigationRequest() && ['xhr','fetch'].includes(request.resourceType());
+  }
+  page.on('request', r=>{if(isCloudflareRum(r)){ignoredCloudflareRum.add(r);return;} if(new URL(r.url()).origin===origin) localPending.set(r, {url:r.url(), method:r.method(), type:r.resourceType(), mainDocument:r.isNavigationRequest() && r.frame()===page.mainFrame(), startedAt:Date.now(), documentAtStart:page.url()});});
   page.on('response', r=>{const pending=localPending.get(r.request()); if(pending) pending.status=r.status();});
   page.on('requestfinished', r=>localPending.delete(r));
   page.on('requestfailed', r=>localPending.delete(r));
@@ -293,8 +299,8 @@ const input = JSON.parse(process.argv[1]);
   }
   const knownBeacon='https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092';
   page.on('pageerror', e => errors.push(String(e)));
-  page.on('requestfailed', r => {if(r.url()===knownBeacon) ignored.push(r.url()); else errors.push('Failed request: '+r.url());});
-  page.on('response', r => {if(r.status()>=400) errors.push('HTTP '+r.status()+': '+r.url());});
+  page.on('requestfailed', r => {if(isCloudflareRum(r)) ignoredCloudflareRum.add(r); else if(r.url()===knownBeacon) ignored.push(r.url()); else errors.push('Failed request: '+r.url());});
+  page.on('response', r => {if(r.status()>=400){if(isCloudflareRum(r.request())) ignoredCloudflareRum.add(r.request()); else errors.push('HTTP '+r.status()+': '+r.url());}});
   await page.goto(input.base+'/leetcode/', {waitUntil:'domcontentloaded'});
   await page.locator('[data-problem-id]').first().waitFor({state:'visible'});
   await settleLocal();
@@ -341,7 +347,7 @@ const input = JSON.parse(process.argv[1]);
    }
   }
   if(errors.length) throw new Error(errors.join('\n'));
-  console.log(JSON.stringify({lessons:input.entries.length, ignoredKnownBeaconFailures:ignored.length, retiredRedirectDocuments}));
+  console.log(JSON.stringify({lessons:input.entries.length, ignoredKnownBeaconFailures:ignored.length, ignoredCloudflareRumRequests:ignoredCloudflareRum.size, retiredRedirectDocuments}));
  } finally {await browser.close();}
 })().catch(e=>{console.error(e);process.exit(1)});
 '''
