@@ -1,0 +1,381 @@
+{
+  "result": "pass",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "clipboardShortcut": "Control+C",
+  "zoom": "CSS layout zoom: 200%; not native-device evidence",
+  "copyKeys": 70,
+  "evidence": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "expected": "H2MgO2",
+      "observed": "Final output: H2MgO2",
+      "operations": 6
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "expected": "H2O",
+      "observed": "Final output: H2O",
+      "operations": 3
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "expected": "K4N2O14S4",
+      "observed": "Final output: K4N2O14S4",
+      "operations": 10
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "expected": "He",
+      "observed": "Final output: He",
+      "operations": 2
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "expected": "H7O5",
+      "observed": "Final output: H7O5",
+      "operations": 9
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "expected": "Be12H2",
+      "observed": "Final output: Be12H2",
+      "operations": 3
+    },
+    {
+      "locale": "en",
+      "preset": 6,
+      "expected": "H7O3",
+      "observed": "Final output: H7O3",
+      "operations": 8
+    },
+    {
+      "locale": "en",
+      "prediction": 0,
+      "observed": "Not quite. Your choice also multiplied Na and H outside the group by 3. Inside the group, He:2 and O:1 become He:6 and O:3 after ×3. Parent Na:1 is not multiplied; the final H adds one. Sort names as H, He, Na, O to get HHe6NaO3."
+    },
+    {
+      "locale": "en",
+      "prediction": 1,
+      "observed": "Correct. Inside the group, He:2 and O:1 become He:6 and O:3 after ×3. Parent Na:1 is not multiplied; the final H adds one. Sort names as H, He, Na, O to get HHe6NaO3."
+    },
+    {
+      "locale": "en",
+      "prediction": 2,
+      "observed": "Not quite. Your choice multiplied only the last O inside the group, missing He. Inside the group, He:2 and O:1 become He:6 and O:3 after ×3. Parent Na:1 is not multiplied; the final H adds one. Sort names as H, He, Na, O to get HHe6NaO3."
+    },
+    {
+      "locale": "en",
+      "source": "rendered/copied/manual-native-copy/download parity",
+      "fallback": "Automatic copy unavailable. The complete code below is selected for manual copying.",
+      "host": "linux"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "expected": "H2MgO2",
+      "observed": "最终输出：H2MgO2",
+      "operations": 6
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "expected": "H2O",
+      "observed": "最终输出：H2O",
+      "operations": 3
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "expected": "K4N2O14S4",
+      "observed": "最终输出：K4N2O14S4",
+      "operations": 10
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "expected": "He",
+      "observed": "最终输出：He",
+      "operations": 2
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "expected": "H7O5",
+      "observed": "最终输出：H7O5",
+      "operations": 9
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "expected": "Be12H2",
+      "observed": "最终输出：Be12H2",
+      "operations": 3
+    },
+    {
+      "locale": "zh",
+      "preset": 6,
+      "expected": "H7O3",
+      "observed": "最终输出：H7O3",
+      "operations": 8
+    },
+    {
+      "locale": "zh",
+      "prediction": 0,
+      "observed": "尚不正确。 你的选项把组外的 Na 和 H 也乘了 3。 组内 He:2、O:1 乘 3 后是 He:6、O:3。父层 Na:1 不乘 3，末尾 H:1 再相加。按名称排序是 H、He、Na、O，得到 HHe6NaO3。"
+    },
+    {
+      "locale": "zh",
+      "prediction": 1,
+      "observed": "正确。 组内 He:2、O:1 乘 3 后是 He:6、O:3。父层 Na:1 不乘 3，末尾 H:1 再相加。按名称排序是 H、He、Na、O，得到 HHe6NaO3。"
+    },
+    {
+      "locale": "zh",
+      "prediction": 2,
+      "observed": "尚不正确。 你的选项只乘了组内最后的 O，漏乘了 He。 组内 He:2、O:1 乘 3 后是 He:6、O:3。父层 Na:1 不乘 3，末尾 H:1 再相加。按名称排序是 H、He、Na、O，得到 HHe6NaO3。"
+    },
+    {
+      "locale": "zh",
+      "source": "rendered/copied/manual-native-copy/download parity",
+      "fallback": "自动复制不可用；已选中下方完整代码，请手动复制。",
+      "host": "linux"
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "preset": 2,
+      "step": 9,
+      "select": {
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 256,
+        "textWidth": 111.64822387695312,
+        "padding": 30
+      },
+      "cardGeometry": [
+        {
+          "width": 255,
+          "scroll": 255
+        },
+        {
+          "width": 255,
+          "scroll": 255
+        },
+        {
+          "width": 255,
+          "scroll": 255
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "preset": 2,
+      "step": 9,
+      "select": {
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 278,
+        "textWidth": 111.64822387695312,
+        "padding": 30
+      },
+      "cardGeometry": [
+        {
+          "width": 325,
+          "scroll": 325
+        },
+        {
+          "width": 325,
+          "scroll": 325
+        },
+        {
+          "width": 325,
+          "scroll": 325
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "preset": 2,
+      "step": 9,
+      "select": {
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 278,
+        "textWidth": 111.64822387695312,
+        "padding": 30
+      },
+      "cardGeometry": [
+        {
+          "width": 312,
+          "scroll": 312
+        },
+        {
+          "width": 312,
+          "scroll": 312
+        },
+        {
+          "width": 312,
+          "scroll": 312
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "preset": 2,
+      "step": 9,
+      "select": {
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 278,
+        "textWidth": 111.64822387695312,
+        "padding": 30
+      },
+      "cardGeometry": [
+        {
+          "width": 444,
+          "scroll": 444
+        },
+        {
+          "width": 444,
+          "scroll": 444
+        },
+        {
+          "width": 444,
+          "scroll": 444
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "preset": 2,
+      "step": 9,
+      "select": {
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 256,
+        "textWidth": 111.64822387695312,
+        "padding": 30
+      },
+      "cardGeometry": [
+        {
+          "width": 255,
+          "scroll": 255
+        },
+        {
+          "width": 255,
+          "scroll": 255
+        },
+        {
+          "width": 255,
+          "scroll": 255
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "preset": 2,
+      "step": 9,
+      "select": {
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 278,
+        "textWidth": 111.64822387695312,
+        "padding": 30
+      },
+      "cardGeometry": [
+        {
+          "width": 325,
+          "scroll": 325
+        },
+        {
+          "width": 325,
+          "scroll": 325
+        },
+        {
+          "width": 325,
+          "scroll": 325
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "preset": 2,
+      "step": 9,
+      "select": {
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 278,
+        "textWidth": 111.64822387695312,
+        "padding": 30
+      },
+      "cardGeometry": [
+        {
+          "width": 312,
+          "scroll": 312
+        },
+        {
+          "width": 312,
+          "scroll": 312
+        },
+        {
+          "width": 312,
+          "scroll": 312
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "preset": 2,
+      "step": 9,
+      "select": {
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 278,
+        "textWidth": 111.64822387695312,
+        "padding": 30
+      },
+      "cardGeometry": [
+        {
+          "width": 444,
+          "scroll": 444
+        },
+        {
+          "width": 444,
+          "scroll": 444
+        },
+        {
+          "width": 444,
+          "scroll": 444
+        }
+      ]
+    }
+  ],
+  "contrast": {
+    "text/bg": 16.086987125379448,
+    "text/panel": 14.704584598678618,
+    "text/panel2": 13.397069143240783,
+    "muted/bg": 7.7443462241265095,
+    "muted/panel": 7.078851579017443,
+    "muted/panel2": 6.449407898769069,
+    "accent/bg": 13.100679028115637,
+    "accent/panel": 11.974898815275662,
+    "accent/panel2": 10.910104011097095,
+    "accent2/bg": 10.731637051347173,
+    "accent2/panel": 9.809435643476732,
+    "accent2/panel2": 8.937191437807625
+  },
+  "focus": {
+    "active": true,
+    "outline": "solid",
+    "width": "3px"
+  },
+  "errors": [],
+  "bad": [],
+  "external": [],
+  "cssBytes": 11066
+}

@@ -2589,6 +2589,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n + n log(W+1)) time; O(n) space, W=max(nums)-min(nums)"
   },
   {
+    "id": 726,
+    "title": {
+      "zh": "原子的数量",
+      "en": "Number of Atoms"
+    },
+    "desc": {
+      "zh": "逐层计数，理解括号怎样改变原子数量。",
+      "en": "Count one group at a time and see exactly what parentheses multiply."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "栈",
+        "en": "Stack"
+      },
+      {
+        "zh": "字符串解析",
+        "en": "Parsing"
+      }
+    ],
+    "path": "726/",
+    "leetcodeUrl": "https://leetcode.com/problems/number-of-atoms/",
+    "language": "Python",
+    "complexity": "O(n² + kL log k) time; O(n) auxiliary space"
+  },
+  {
     "id": 730,
     "title": {
       "zh": "统计不同回文子序列",
