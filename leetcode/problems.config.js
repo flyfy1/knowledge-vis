@@ -2887,6 +2887,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) auxiliary space, where n is the number of couples"
   },
   {
+    "id": 768,
+    "title": {
+      "zh": "最多能完成排序的块 II",
+      "en": "Max Chunks To Make Sorted II"
+    },
+    "desc": {
+      "zh": "从亲手切分到前缀最大值与后缀最小值，推导所有安全切口。",
+      "en": "Derive every safe cut using prefix maxima and suffix minima, starting with hand-sorted chunks."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数组",
+        "en": "Arrays"
+      },
+      {
+        "zh": "前缀与后缀",
+        "en": "Prefixes and suffixes"
+      },
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      }
+    ],
+    "path": "768/",
+    "leetcodeUrl": "https://leetcode.com/problems/max-chunks-to-make-sorted-ii/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
