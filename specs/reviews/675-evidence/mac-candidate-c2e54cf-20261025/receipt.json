@@ -195,5 +195,14 @@
       "exit_code": 0
     }
   ],
-  "browser_executable": "/Users/songyy/Library/Caches/ms-playwright/chromium-1234/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing"
+  "browser_executable": "/Users/songyy/Library/Caches/ms-playwright/chromium-1234/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+  "label_probe_commands": [
+    {
+      "argv": [
+        "node",
+        "/tmp/leetcode-675-preset-probe-20261025.cjs"
+      ],
+      "exit_code": 1
+    }
+  ]
 }
