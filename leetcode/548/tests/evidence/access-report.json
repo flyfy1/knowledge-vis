@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-25T01:44:37.024361+00:00",
+  "officialUrl": "https://leetcode.com/problems/split-array-with-equal-sum/",
+  "authentication": "none; no credentials read",
+  "page": {
+    "url": "https://leetcode.com/problems/split-array-with-equal-sum/",
+    "status": 403,
+    "body": "page.html"
+  },
+  "graphql": {
+    "url": "https://leetcode.com/graphql/",
+    "status": 200,
+    "body": "graphql.json",
+    "request": {
+      "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId title titleSlug isPaidOnly content exampleTestcases\n    codeSnippets { lang langSlug code }\n  }\n}",
+      "variables": {
+        "titleSlug": "split-array-with-equal-sum"
+      }
+    },
+    "observedQuestion": {
+      "questionId": "548",
+      "title": "Split Array with Equal Sum",
+      "titleSlug": "split-array-with-equal-sum",
+      "isPaidOnly": true,
+      "content": null,
+      "exampleTestcases": "[1,2,1,2,1,2,1]\n[1,2,1,2,1,2,1,2]",
+      "codeSnippets": null
+    }
+  },
+  "contractAccessible": false
+}

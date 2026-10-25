@@ -1,0 +1,35 @@
+{
+  "verifiedAt": "2026-10-25T01:42:35.475532+00:00",
+  "officialSource": "https://leetcode.com/problems/word-abbreviation/",
+  "authentication": "Public unauthenticated requests; no credentials or cookies supplied.",
+  "requests": [
+    {
+      "method": "GET",
+      "url": "https://leetcode.com/problems/word-abbreviation/",
+      "status": 403,
+      "capture": "official-page.txt"
+    },
+    {
+      "method": "POST",
+      "url": "https://leetcode.com/graphql/",
+      "status": 200,
+      "capture": "official-graphql.txt",
+      "observed": {
+        "questionId": "527",
+        "questionFrontendId": "527",
+        "title": "Word Abbreviation",
+        "titleSlug": "word-abbreviation",
+        "isPaidOnly": true,
+        "difficulty": "Hard",
+        "content": null,
+        "exampleTestcases": "[\"like\",\"god\",\"internal\",\"me\",\"internet\",\"interval\",\"intension\",\"face\",\"intrusion\"]\n[\"aa\",\"aaa\"]",
+        "sampleTestCase": "[\"like\",\"god\",\"internal\",\"me\",\"internet\",\"interval\",\"intension\",\"face\",\"intrusion\"]",
+        "metaData": "{\n  \"name\": \"wordsAbbreviation\",\n  \"params\": [\n    {\n      \"name\": \"words\",\n      \"type\": \"list<string>\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"list<string>\"\n  }\n}",
+        "codeSnippets": null
+      },
+      "statementAvailable": false,
+      "languageSnippetsAvailable": false
+    }
+  ],
+  "blocked": true
+}
