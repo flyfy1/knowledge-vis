@@ -1822,3 +1822,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Bitmask state | `leetcode/864/#step4` | Encode permanent keys as bits and deduplicate complete states. |
 
 <!-- /leetcode-864-campaign -->
+
+
+<!-- leetcode-871-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Reach and eligibility | `leetcode/871/#step2` | Only stations at or before reach may enter the candidate pool. |
+| Greedy exchange | `leetcode/871/#step2` | The largest reachable unchosen supply is safe to select. |
+| Python heap implementation | `leetcode/871/#step4` | Negative fuel values implement a max-heap with heapq. |
+
+<!-- /leetcode-871-campaign -->

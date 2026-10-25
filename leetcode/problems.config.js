@@ -3571,6 +3571,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(mn · 2^k) time; O(mn · 2^k) auxiliary space"
   },
   {
+    "id": 871,
+    "title": {
+      "zh": "最低加油次数",
+      "en": "Minimum Number of Refueling Stops"
+    },
+    "desc": {
+      "zh": "从可达距离推导最大堆贪心，用可回退的补给记录证明最少停靠次数。",
+      "en": "Derive the maximum-fuel greedy choice from reachable distance, then inspect a reversible refueling ledger."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "堆",
+        "en": "Heap"
+      }
+    ],
+    "path": "871/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimum-number-of-refueling-stops/",
+    "language": "Python",
+    "complexity": "O(n log(n+1)) time; O(n) auxiliary space"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
