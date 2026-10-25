@@ -1400,3 +1400,12 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Counting distinct palindromes by outer character | `leetcode/730/#step2` | Use the earliest and latest occurrence to partition distinct palindrome strings without duplicates. |
 
 <!-- /leetcode-730-campaign -->
+
+
+<!-- leetcode-726-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Nested formula counting | `leetcode/726/#step2` | Keep one atom-count map per open group; multiply only the completed child. |
+
+<!-- /leetcode-726-campaign -->

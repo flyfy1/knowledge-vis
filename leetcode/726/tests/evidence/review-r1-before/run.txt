@@ -1,0 +1,27 @@
+{"finding":"726-R1","result":"fail","baseline":[{"formula":"H1000","n":5,"d":0,"A":1000,"counts":{"H":1000},"peakBytes":16488},{"formula":"H100000","n":7,"d":0,"A":100000,"counts":{"H":100000},"peakBytes":1600488},{"formula":"(H2O)3","n":6,"d":1,"A":9,"counts":{"H":6,"O":3},"peakBytes":768}],"observations":[{"locale":"en","width":320,"text":"Why avoid submitting this? The short input H1000000000 needs a billion H entries. With A expanded atoms and nesting depth d, the baseline uses up to O(n + A·d) time and O(n + A) space before sorting. Copying depends on the expanded size, not just input length n. A count table stores H:1000000000 instead of a billion copies."},{"locale":"en","width":390,"text":"Why avoid submitting this? The short input H1000000000 needs a billion H entries. With A expanded atoms and nesting depth d, the baseline uses up to O(n + A·d) time and O(n + A) space before sorting. Copying depends on the expanded size, not just input length n. A count table stores H:1000000000 instead of a billion copies."},{"locale":"en","width":1440,"text":"Why avoid submitting this? The short input H1000000000 needs a billion H entries. With A expanded atoms and nesting depth d, the baseline uses up to O(n + A·d) time and O(n + A) space before sorting. Copying depends on the expanded size, not just input length n. A count table stores H:1000000000 instead of a billion copies."},{"locale":"zh","width":320,"text":"为什么不用它提交？短字符串 H1000000000 就要存十亿个 H。若展开后有 A 个原子、嵌套深度为 d，基线最多花 O(n + A·d) 时间及 O(n + A) 空间（不含排序）；复制开销取决于展开数量，而不只是输入长度 n。计数表只存 H:1000000000，不存十亿个副本。"},{"locale":"zh","width":390,"text":"为什么不用它提交？短字符串 H1000000000 就要存十亿个 H。若展开后有 A 个原子、嵌套深度为 d，基线最多花 O(n + A·d) 时间及 O(n + A) 空间（不含排序）；复制开销取决于展开数量，而不只是输入长度 n。计数表只存 H:1000000000，不存十亿个副本。"},{"locale":"zh","width":1440,"text":"为什么不用它提交？短字符串 H1000000000 就要存十亿个 H。若展开后有 A 个原子、嵌套深度为 d，基线最多花 O(n + A·d) 时间及 O(n + A) 空间（不含排序）；复制开销取决于展开数量，而不只是输入长度 n。计数表只存 H:1000000000，不存十亿个副本。"}],"failures":["en/320: missing base-level expansion term","en/320: missing zero-depth boundary","en/320: missing base-level work explanation","en/320: retains incorrect bound","en/390: missing base-level expansion term","en/390: missing zero-depth boundary","en/390: missing base-level work explanation","en/390: retains incorrect bound","en/1440: missing base-level expansion term","en/1440: missing zero-depth boundary","en/1440: missing base-level work explanation","en/1440: retains incorrect bound","zh/320: missing base-level expansion term","zh/320: missing zero-depth boundary","zh/320: missing base-level work explanation","zh/320: retains incorrect bound","zh/390: missing base-level expansion term","zh/390: missing zero-depth boundary","zh/390: missing base-level work explanation","zh/390: retains incorrect bound","zh/1440: missing base-level expansion term","zh/1440: missing zero-depth boundary","zh/1440: missing base-level work explanation","zh/1440: retains incorrect bound"],"browser":"156.0.8078.4","host":"linux"}
+AssertionError [ERR_ASSERTION]: Expected values to be loosely deep-equal:
+
+[
+  'en/320: missing base-level expansion term',
+  'en/320: missing zero-depth boundary',
+  'en/320: missing base-level work explanation',
+  'en/320: retains incorrect bound',
+  'en/390: missing base-level expansion term',
+  'en/390: missing zero-depth boundary',
+  'en/390: missing base-level work explanation',
+  'en/390: retains incorrect bound',
+  'en/1440: missing base-level expansion term',
+  'en/1440: missing zero-depth boundary',
+  'en/1440: missing base-level work explanation',
+  'en/1440: retains...
+
+should loosely deep-equal
+
+[]
+    at /home/songyy/projects/leetcode-hard-lane-726-20261025/leetcode/726/tests/review-r1.cjs:47:10 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [Array],
+  expected: [],
+  operator: 'deepEqual'
+}
