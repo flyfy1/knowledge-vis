@@ -2039,6 +2039,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
+    "id": 587,
+    "title": {
+      "zh": "安装栅栏",
+      "en": "Erect the Fence"
+    },
+    "desc": {
+      "zh": "从直线边界与带符号转弯，推导保留共线树的单调链。",
+      "en": "Derive a monotone chain that retains every tree on straight fence edges."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "凸包",
+        "en": "Convex hull"
+      },
+      {
+        "zh": "单调链",
+        "en": "Monotone chain"
+      }
+    ],
+    "path": "587/",
+    "leetcodeUrl": "https://leetcode.com/problems/erect-the-fence/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
