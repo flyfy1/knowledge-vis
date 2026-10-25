@@ -79,3 +79,86 @@ Final commands ran from the repository root. Browser commands used `PREVIEW_URL=
 Visual author inspection: `en-320-width-stress.png` shows complete “Official 1: 5 boundary trees” at enlarged test font with visible arrow room. `en-preset5-320.png` shows complete “2 pops: 3 boundary trees” and its four sorted input points; `zh-preset5-320.png` shows the unchanged Chinese count and associated state/turn labels. `en-preset0-1365.png` shows the desktop selector and garden event 4/25: remove B=(0,2), cross=−2, C=(1,0) pending. Readouts and controls remain readable; no new layout or teaching mechanism was introduced.
 
 Only lesson-local files/evidence were changed. No commits, agents, shared assets, registry, review reports/rubric, campaign state, services or deployment changes. No debug instrumentation was added to runtime files. CANDIDATE.json freezes C3 with source hashes. **Finding status: repair implemented awaiting independent review/native Mac confirmation; not closed.** Next action: dispatcher reruns the original Mac regression and visually inspects the frozen candidate, then an independent reviewer records the affected-path conclusion. Pi/Linux success alone does not establish the integration finding fixed.
+
+
+## Review 3 follow-up — 587-MAC-001 (2026-10-25)
+
+Disposition: **blocked on required native Mac evidence**. This append supersedes
+previous author readiness wording for this follow-up. Read the complete previous
+report `specs/reviews/587-review-3-09d91a86.md`, current candidate, BRIEF, teaching,
+trace, review and rendered-state contracts, and the website-design and
+diagnosing-bugs skills. The review found no additional implementation defect;
+its only required open ID is 587-MAC-001. Runtime sources, teaching copy, tests,
+metadata and embedded source remain unchanged. No speculative replacement fix
+was made. This is an evidence/documentation follow-up, not independent closure.
+
+Finding mapping:
+
+- **587-MAC-001** → existing `local.css` full-width 6px-padding selector and
+  `copy.js` shorter explicit boundary labels retained; fresh Linux regression in
+  `tests/evidence/review3-followup/`. Repair remains awaiting native Mac recheck.
+- **587-R1-F1** → existing explicit boundary-count scope preserved and checked
+  against independent input/boundary counts [6/5,6/5,3/3,1/1,4/4,4/3]. This run
+  does not alter the historical review's closure of that ID.
+
+P0/highest-return work: establish the exact outstanding requirement and recheck
+existing count scope and selected text fit. P1/P2: none. Deferred: further UI or
+algorithm edits without a failing current implementation case; native Mac
+verification requires the designated environment. No new layout or feature.
+The diagnosing-bugs feedback-loop/hypothesis phases were not repeated because
+this run makes no bug fix: the preserved original red evidence and confirmed
+platform-font width cause remain in `tests/evidence/mac-fix-before/`. Linux
+success and synthetic font stress cannot falsify a Mac-only rendering failure.
+
+All commands below ran from the repository root with
+`PREVIEW_URL=http://127.0.0.1:18770` and
+`EVIDENCE_DIR=leetcode/587/tests/evidence/review3-followup` for output-producing
+tests; Python additionally used `PYTHONDONTWRITEBYTECODE=1`:
+
+- `python3 -B leetcode/587/tests/check_algorithm.py` — exit 0; 920 actual
+  canonical Python cases, including exhaustive 3×3 subsets, seeded cases and
+  n=3000; 34,955 independently checked trace snapshots; 95 unique bilingual
+  pairs; exact offline mirror parity. See `algorithm.json`.
+- `node leetcode/587/tests/browser.cjs` — exit 0; 96 localized semantic states,
+  16 screenshots, no browser errors. Both locales, every preset/transition,
+  rewind/replay, endpoints, prediction selection/reveal/change/reset and locale
+  preservation, formula arithmetic, successful/manual-fallback clipboard,
+  byte-exact source/download, keyboard, denied storage, offline source,
+  320/390/736/1440 widths, contrast and CSS 200% zoom stress passed.
+- `node leetcode/587/tests/preset-scope.cjs` — exit 0; 72 initial/event-4 states
+  across both locales and 1365/320/390px, all six labels, locale roundtrip,
+  independent input/boundary counts, final union and selected-text fit passed.
+- `node leetcode/587/tests/width-budget.cjs` — exit 0; 48 width measurements;
+  minimum spare margin 5.4026px across all modes. The +10% font-size mode
+  separately retains the required ≥8px margin. This is Linux Chromium and
+  synthetic sensitivity evidence, **not native Mac evidence**.
+- `python3 -B scripts/register_leetcode_lesson.py 587 --validate-only` — exit 0,
+  empty stdout/stderr; safe validation only. See `preflight.json`. Complexity
+  remains one string: `O(n log n) time; O(n) auxiliary space`.
+
+A separate read-only served-byte check matched index.html, app.js, copy.js,
+core.js, local.css, solution.py and python-code.js to checkout bytes; see
+`served-source.json`. Read the exact `LANGUAGE_FILES` mapping in
+`scripts/register_leetcode_lesson.py`: Python uses solution.py / python-code.js /
+PYTHON_SOURCE. The saved official snippets include the faithful Python3 callable
+(and TypeScript); canonical Python already has preference. No non-Python
+language-contract or supportedLanguages list is present or needed. Exact
+663-byte source is retained, including the final newline; no regeneration needed.
+
+Visually inspected fresh `en-preset5-320.png`, `zh-preset5-320.png` and
+`en-320-width-stress.png`. Complete repeated-pop labels and the stressed English
+Official 1 boundary-count label remain visible beside the arrow. Chinese event
+4 correctly shows cross=1≥0, retaining B before appending C; labels/readouts wrap.
+These inspected results establish only this Linux rendering. The host reports
+Linux and uses the provided chrome-linux-arm64 executable.
+
+Missing evidence/next action: a dispatcher or reviewer with **native Mac
+Chromium** must run the original selector regression on these exact runtime
+bytes, inspect all six labels beside the arrow at 320px, also cover 390/desktop
+and locale switching after interaction, and attach candidate-specific results
+and screenshots. Report 3 explicitly requires that environment and cannot be
+closed by these Linux checks. No native Mac environment is available in this
+workspace. No child agents, services, registration, report/rubric edits, shared
+assets, commits, deployment or external messages were used. The C4 manifest
+freezes only this documentation/evidence follow-up and leaves the implementation
+hashes equal to reviewed C3; independent acceptance remains pending.

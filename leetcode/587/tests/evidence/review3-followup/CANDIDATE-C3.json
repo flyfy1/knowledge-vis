@@ -1,0 +1,40 @@
+{
+  "problemId": 587,
+  "candidate": "587-fix-C3-b5557a38c747",
+  "createdAt": "2026-10-25T02:18:20.336333+00:00",
+  "status": "author self-checked; ready for separate independent re-review; native Mac verification pending",
+  "baseCheckoutRevision": "700e5ce080b324a3816547c608c5f3c67fed689a",
+  "previousReviewedCandidate": "f5816b88f3e7e280e4c89878a0e6490d1a3522e6",
+  "previousReview": "specs/reviews/587-review-dispatcher-mac-20261025.md",
+  "previousFrozenManifest": "tests/evidence/mac-fix-before/CANDIDATE-C2.json",
+  "findingFixes": {
+    "587-MAC-001": "repair implemented awaiting independent review and dispatcher native Mac regression/visual confirmation; not closed"
+  },
+  "contentHash": "b5557a38c74750acbdc487452dd99e9965ddd144717fd64719b025c05c057dda",
+  "sha256": {
+    "BRIEF.md": "4c2edbe32853b2c7d7b2e8c043f44a94e7dda6ac287193c111eace13c4acd500",
+    "SELF-CHECK.md": "2ca49f6b3d0ce6a7824e66c9994fee126141840baa26dbdf47d3f8259194f80d",
+    "app.js": "b8f5b5f434e851fc1e824eed9ecb5410b525288ad929ecf6532a8651459bdfe2",
+    "copy.js": "acd2510e3005eb26e0cbd85985193d02076d5f8fa7d015d6dcbce42dcd02d92a",
+    "core.js": "cb784fb402b4328c5ba021d5ad489524cf4a4c4095ecf952cb6c237843156fe6",
+    "index.html": "600562e848373e6924839a19e1029b096ca5a8a71d5cf42ef116fbb778f27e1f",
+    "lesson-entry.json": "4523761e1076a4119647bbd34ed003d44583ecaba22b565f6621aada286ad2c1",
+    "local.css": "be76fa9c8930f112cbdefdd6057181c11c762f9c1c7457e8430ab61a65a59932",
+    "provenance/official.json": "ff3ab23f48747be7617502a3747d7b68d2fb144432ffa193a5102feda24b53aa",
+    "python-code.js": "b1b0daf6ba80c58fc9a47e6c10a1fc1796ab3bfbee4dce02232092e9421a39f0",
+    "solution.py": "2c2604b69057f628fb6ab080897361ffae4ce3106564cc220eb871c58b4747c3",
+    "tests/README.md": "aade63662d7487c8cdd8abe030ea9705224c95d9ce5f94b5acf8b5843f351394",
+    "tests/browser.cjs": "e33a2b9e9cb80814a8d138d86bdb3e064aa10ee9ee1fabdd2bc83e8737a2db60",
+    "tests/check_algorithm.py": "8c610118fa0ed568254722b05bba1e42bc4f53e43d559fd7117949dda86d1c46",
+    "tests/check_core.cjs": "a09e73a591ce9eb4c49dfc25204c3238f9118712b1a5c98060870a4e367beb69",
+    "tests/preset-scope.cjs": "722bda1db1e112ed96957dc97de66420fb0727c126a83809478555854aa35e52",
+    "tests/width-budget.cjs": "f0650584fd3ecaf0420f464161dfb96e2e5ad61e01a23ba6e1a0344857ffc87c"
+  },
+  "sharedReadOnlySha256": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "evidenceDirectory": "tests/evidence/mac-fix",
+  "preflight": "python3 -B scripts/register_leetcode_lesson.py 587 --validate-only; exit 0; no stdout/stderr",
+  "pendingEvidence": "Original native Mac regression and rendered inspection required for integration closure; Linux and synthetic stress results do not supply this evidence."
+}

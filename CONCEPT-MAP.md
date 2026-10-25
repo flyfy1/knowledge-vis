@@ -1231,3 +1231,14 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | First-different-bit partition | `leetcode/600/#step2` | Count disjoint smaller-prefix branches and stop the equal path at adjacent ones. |
 
 <!-- /leetcode-600-campaign -->
+
+
+<!-- leetcode-630-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Deadline ordering | `leetcode/630/#step1` | Exchange adjacent inverted deadlines without losing feasibility. |
+| Longest-course removal | `leetcode/630/#step2` | Repair the first overload while preserving an optimal possible count. |
+| Max heap | `leetcode/630/#step4` | Negated durations expose the longest retained course. |
+
+<!-- /leetcode-630-campaign -->

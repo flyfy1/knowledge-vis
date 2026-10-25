@@ -1,0 +1,115 @@
+{
+  "platform": "darwin",
+  "browser": "151.0.7922.34",
+  "viewportWidth": 320,
+  "records": [
+    {
+      "variant": "baseline",
+      "index": 0,
+      "label": "Replacement: [[4,4],[2,5],[2,6]] → 2",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 214,
+      "measured": 271.05963134765625,
+      "fits": false
+    },
+    {
+      "variant": "baseline",
+      "index": 3,
+      "label": "All impossible [[3,2],[4,3]] → 0",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 214,
+      "measured": 233.20362854003906,
+      "fits": false
+    },
+    {
+      "variant": "baseline",
+      "index": 4,
+      "label": "Tied deadlines and durations → 3",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 214,
+      "measured": 259.61962890625,
+      "fits": false
+    },
+    {
+      "variant": "short-labels-only",
+      "index": 0,
+      "label": "Replacement: 2 courses",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 214,
+      "measured": 186.15997314453125,
+      "fits": true
+    },
+    {
+      "variant": "short-labels-only",
+      "index": 3,
+      "label": "All impossible: 0 courses",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 214,
+      "measured": 192.68798828125,
+      "fits": true
+    },
+    {
+      "variant": "short-labels-only",
+      "index": 4,
+      "label": "Tied values: 3 courses",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 197,
+      "measured": 173.4559783935547,
+      "fits": true
+    },
+    {
+      "variant": "zero-padding-only",
+      "index": 0,
+      "label": "Replacement: [[4,4],[2,5],[2,6]] → 2",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 244,
+      "measured": 271.05963134765625,
+      "fits": false
+    },
+    {
+      "variant": "zero-padding-only",
+      "index": 3,
+      "label": "All impossible [[3,2],[4,3]] → 0",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 244,
+      "measured": 233.20362854003906,
+      "fits": true
+    },
+    {
+      "variant": "zero-padding-only",
+      "index": 4,
+      "label": "Tied deadlines and durations → 3",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 244,
+      "measured": 259.61962890625,
+      "fits": false
+    },
+    {
+      "variant": "Arial-only",
+      "index": 0,
+      "label": "Replacement: [[4,4],[2,5],[2,6]] → 2",
+      "font": "16px Arial",
+      "available": 214,
+      "measured": 248.1328125,
+      "fits": false
+    },
+    {
+      "variant": "Arial-only",
+      "index": 3,
+      "label": "All impossible [[3,2],[4,3]] → 0",
+      "font": "16px Arial",
+      "available": 214,
+      "measured": 211.6484375,
+      "fits": true
+    },
+    {
+      "variant": "Arial-only",
+      "index": 4,
+      "label": "Tied deadlines and durations → 3",
+      "font": "16px Arial",
+      "available": 214,
+      "measured": 238.671875,
+      "fits": false
+    }
+  ]
+}
