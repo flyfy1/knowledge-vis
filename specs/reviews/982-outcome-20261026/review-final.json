@@ -1,0 +1,15 @@
+{
+  "outcome": "accepted",
+  "scores": [4, 3, 4, 4, 4, 4],
+  "required_open": [],
+  "report_path": "specs/reviews/982-review-1-94eb2c64.md",
+  "evidence": [
+    "Saved cold browser walkthrough before inspecting source.",
+    "Canonical Python independently confirmed [0,3]→7 and [3,6,9]→12.",
+    "Verified bilingual traces, keyboard operation, rewind/reset, narrow layouts, and 200% CSS zoom.",
+    "Exact display, clipboard, native fallback, and download source parity passed.",
+    "Metadata validate-only preflight exited 0.",
+    "Screenshots and rerun receipts saved in specs/reviews/982-evidence/982-review-1-94eb2c64/."
+  ],
+  "detail": "Accepted at 95/100 for the specified revision. One optional prose-density advisory; no required fixes. Publication and successful LeetCode submission are not claimed."
+}

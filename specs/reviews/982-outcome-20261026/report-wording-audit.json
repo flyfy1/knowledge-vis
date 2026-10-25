@@ -1,0 +1,144 @@
+{
+  "observedAt": "2026-10-25T21:50:42.852227+00:00",
+  "scope": "Local direct enumeration of report-only historical prediction wording; no lesson execution or acceptance rewrite.",
+  "input": [
+    1,
+    2,
+    4
+  ],
+  "validTotal": 24,
+  "validFirstTwoEqualThirdDifferent": [
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      2
+    ],
+    [
+      2,
+      2,
+      0
+    ],
+    [
+      2,
+      2,
+      1
+    ]
+  ],
+  "count": 6,
+  "originalReportIncorrectIntermediateCount": 12,
+  "correctTotalRetained": 24,
+  "originalExactQuote": "first-two equal with different third gives twelve triples, and pairwise-distinct triples give six",
+  "context": "Original review cold-prediction paragraph, attempted correction for [1,2,4]. Original report preserved.",
+  "correctDecomposition": {
+    "firstTwoEqualThirdDifferent": "3 * 2 = 6",
+    "firstTwoDifferent": "6 * 3 = 18",
+    "total": "6 + 18 = 24"
+  },
+  "firstTwoDifferentTriples": [
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      2,
+      0
+    ],
+    [
+      0,
+      2,
+      1
+    ],
+    [
+      0,
+      2,
+      2
+    ],
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      2
+    ],
+    [
+      1,
+      2,
+      0
+    ],
+    [
+      1,
+      2,
+      1
+    ],
+    [
+      1,
+      2,
+      2
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      1
+    ],
+    [
+      2,
+      0,
+      2
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ],
+    [
+      2,
+      1,
+      2
+    ]
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "repo": "/home/songyy/projects/leetcode-hard-lane-982-20261026",
+  "queue": [
+    "982"
+  ],
+  "expected_head": "1086f89c87cb74432d9222deba3414138d4e1b2f",
+  "started_at": "2026-10-25T21:30:49.643481+00:00",
+  "status": "completed",
+  "current": null,
+  "problems": {
+    "982": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/982-review-1-94eb2c64.md",
+          "evidence": [
+            "Saved cold browser walkthrough before inspecting source.",
+            "Canonical Python independently confirmed [0,3]→7 and [3,6,9]→12.",
+            "Verified bilingual traces, keyboard operation, rewind/reset, narrow layouts, and 200% CSS zoom.",
+            "Exact display, clipboard, native fallback, and download source parity passed.",
+            "Metadata validate-only preflight exited 0.",
+            "Screenshots and rerun receipts saved in specs/reviews/982-evidence/982-review-1-94eb2c64/."
+          ],
+          "detail": "Accepted at 95/100 for the specified revision. One optional prose-density advisory; no required fixes. Publication and successful LeetCode submission are not claimed.",
+          "run_id": "982-review-7c751ff0e6a4",
+          "candidate": "71cac9c38ae78f8ec6a477ca05c7781ab9377fd2",
+          "candidate_sha256": "4971c3865cfaf56677d08d2dcc3a32296f7216ae5d775caa7617caf179b93d81",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "d14378e1ba918febbed19e6470e668c653b44062"
+        }
+      ],
+      "author_runs": [
+        "982-author-4532e76a05c3"
+      ],
+      "prior_report": "specs/reviews/982-review-1-94eb2c64.md",
+      "candidate": "71cac9c38ae78f8ec6a477ca05c7781ab9377fd2",
+      "registration_commit": "1086f89c87cb74432d9222deba3414138d4e1b2f",
+      "accepted_at": "2026-10-25T21:48:53.508555+00:00"
+    }
+  },
+  "runs": [
+    {
+      "id": "982-author-4532e76a05c3",
+      "problem_id": "982",
+      "role": "author",
+      "started_at": "2026-10-25T21:30:49.910959+00:00",
+      "status": "completed",
+      "candidate": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-982-20261026/runs/982-author-4532e76a05c3",
+      "session_ids": [
+        "01a174f9-3155-7ac0-bfdf-41021c3e0150"
+      ],
+      "finished_at": "2026-10-25T21:42:02.827890+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented the complete bilingual #982 lesson in leetcode/982/. Verified the official Python interface; 1,578 solution cases, 8,084 trace frames, browser checks, source-transfer parity, and metadata preflight passed. Frozen hashes and evidence are recorded. Independent review remains pending; no acceptance or deployment claimed."
+      }
+    },
+    {
+      "id": "982-review-7c751ff0e6a4",
+      "problem_id": "982",
+      "role": "review",
+      "started_at": "2026-10-25T21:42:17.312262+00:00",
+      "status": "completed",
+      "candidate": "71cac9c38ae78f8ec6a477ca05c7781ab9377fd2",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-982-20261026/runs/982-review-7c751ff0e6a4",
+      "session_ids": [
+        "01a17503-aee5-79a0-846f-9efdaf6f3af7"
+      ],
+      "finished_at": "2026-10-25T21:48:40.556625+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          3,
+          4,
+          4,
+          4,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/982-review-1-94eb2c64.md",
+        "evidence": [
+          "Saved cold browser walkthrough before inspecting source.",
+          "Canonical Python independently confirmed [0,3]→7 and [3,6,9]→12.",
+          "Verified bilingual traces, keyboard operation, rewind/reset, narrow layouts, and 200% CSS zoom.",
+          "Exact display, clipboard, native fallback, and download source parity passed.",
+          "Metadata validate-only preflight exited 0.",
+          "Screenshots and rerun receipts saved in specs/reviews/982-evidence/982-review-1-94eb2c64/."
+        ],
+        "detail": "Accepted at 95/100 for the specified revision. One optional prose-density advisory; no required fixes. Publication and successful LeetCode submission are not claimed."
+      }
+    }
+  ],
+  "updated_at": "2026-10-25T21:48:53.528204+00:00"
+}

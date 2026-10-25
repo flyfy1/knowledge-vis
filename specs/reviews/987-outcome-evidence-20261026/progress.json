@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "repo": "/home/songyy/projects/leetcode-hard-lane-987-20261026",
+  "queue": [
+    "987"
+  ],
+  "expected_head": "5e97917082c9c4b71bb26567617345a98d9171c8",
+  "started_at": "2026-10-25T21:31:17.514248+00:00",
+  "status": "completed",
+  "current": null,
+  "problems": {
+    "987": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            3,
+            4,
+            3
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/987-review-1-0d4cbd13.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Canonical Python passed fresh examples, counterexample, mutation and depth-boundary checks.",
+            "Both locales passed rewind/reset, prediction changes, keyboard and exact clipboard/download parity checks.",
+            "320/390/desktop and 200% content-zoom screenshots inspected.",
+            "Non-mutating metadata preflight exited 0; tracked candidate files unchanged."
+          ],
+          "detail": "92.5/100. No required findings. Minor narrow-grid panning friction documented; acceptance is separate from publication.",
+          "run_id": "987-review-71e766664c30",
+          "candidate": "bed2e3d724fb024efd46c65ad1ba52fc5fa20f9f",
+          "candidate_sha256": "eda7cf55268e7b5eaf8eba9db710b39038c7cda397199a3a41f111c5fe935e98",
+          "weighted_score": 92.5,
+          "round": 1,
+          "commit": "f2771b23a8f46667bc4e84dc8f81ee95a8050c81"
+        }
+      ],
+      "author_runs": [
+        "987-author-a21aea0fbd64"
+      ],
+      "prior_report": "specs/reviews/987-review-1-0d4cbd13.md",
+      "candidate": "bed2e3d724fb024efd46c65ad1ba52fc5fa20f9f",
+      "registration_commit": "5e97917082c9c4b71bb26567617345a98d9171c8",
+      "accepted_at": "2026-10-25T21:50:20.806768+00:00"
+    }
+  },
+  "runs": [
+    {
+      "id": "987-author-a21aea0fbd64",
+      "problem_id": "987",
+      "role": "author",
+      "started_at": "2026-10-25T21:31:17.787044+00:00",
+      "status": "completed",
+      "candidate": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-987-20261026/runs/987-author-a21aea0fbd64",
+      "session_ids": [
+        "01a174f9-9ece-7dd1-9194-e68450d0fc0c"
+      ],
+      "finished_at": "2026-10-25T21:44:28.968811+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented and froze the complete bilingual lesson in leetcode/987/. Official Python interface verified; 10,676 solution checks, simulation invariants, bilingual Chromium checks, source parity, and metadata preflight passed. Evidence and hashes recorded. Independent review remains pending; only this lesson folder changed."
+      }
+    },
+    {
+      "id": "987-review-71e766664c30",
+      "problem_id": "987",
+      "role": "review",
+      "started_at": "2026-10-25T21:44:43.808074+00:00",
+      "status": "completed",
+      "candidate": "bed2e3d724fb024efd46c65ad1ba52fc5fa20f9f",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-987-20261026/runs/987-review-71e766664c30",
+      "session_ids": [
+        "01a17505-ec38-77f3-87ca-8fa9134c95c9"
+      ],
+      "finished_at": "2026-10-25T21:50:10.384156+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          3,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/987-review-1-0d4cbd13.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Canonical Python passed fresh examples, counterexample, mutation and depth-boundary checks.",
+          "Both locales passed rewind/reset, prediction changes, keyboard and exact clipboard/download parity checks.",
+          "320/390/desktop and 200% content-zoom screenshots inspected.",
+          "Non-mutating metadata preflight exited 0; tracked candidate files unchanged."
+        ],
+        "detail": "92.5/100. No required findings. Minor narrow-grid panning friction documented; acceptance is separate from publication."
+      }
+    }
+  ],
+  "updated_at": "2026-10-25T21:50:20.816705+00:00"
+}

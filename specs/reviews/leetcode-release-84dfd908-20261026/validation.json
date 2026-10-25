@@ -1,0 +1,46 @@
+{
+  "captured_at": "2026-10-25T21:52:18.909301+00:00",
+  "release_id": "84dfd908f5c94592918eb4ecb72eb87e",
+  "revision": "7fd4aa457c318f053d7dc722fd63b3012bccb838",
+  "published_at": "2026-10-25T21:51:41.057626+00:00",
+  "pending": null,
+  "batch_ids": [
+    "780",
+    "793",
+    "798",
+    "801",
+    "810",
+    "815",
+    "818",
+    "827",
+    "828",
+    "829",
+    "834",
+    "839",
+    "843",
+    "847",
+    "850",
+    "960",
+    "968",
+    "972",
+    "975",
+    "980"
+  ],
+  "batch_count": 20,
+  "staged_file_count": 311,
+  "public_file_count": 313,
+  "public_browser_verification": {
+    "lessons": 20,
+    "ignoredKnownBeaconFailures": 0,
+    "ignoredCloudflareRumRequests": 60,
+    "retiredRedirectDocuments": 0
+  },
+  "released_count": 138,
+  "released_bindings_match": true,
+  "artifacts_sha256": {
+    "progress.json.gz": "0ef0d1e612af59379ba7f8118d219b5de5096043a085ac5e063c07d9173fda38",
+    "releases.json.gz": "3f08f1789f88bd8648907e8ffcc8294699b9ee2a127a905303e47c580ab04415",
+    "release-receipt.json": "774831b5f880663138bf688ae4a685e0d8f29ba0b3a4bd3f620c4e7bc6bc4a51",
+    "terminal-observation.json": "374b8d8740805252a43ceb8c0ca56a66a7b7a196bba922347dfed0e2e018f7fd"
+  }
+}

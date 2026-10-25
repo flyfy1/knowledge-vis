@@ -1,0 +1,238 @@
+{
+  "outcome": "accepted_local",
+  "weighted_score": 95,
+  "required_open": [],
+  "candidate_is_refreshed_review_head_not_author_commit": true,
+  "author_candidate_review_registration_lesson_trees_equal": true,
+  "final_run_state_result_equal": true,
+  "source_sha256": "2a20b4eb16dc4bffe95affc932c5d8e1937249b720a136ec8e1f5090b295051a",
+  "source_mirror_exact": true,
+  "signature": [
+    "self",
+    "rectangles"
+  ],
+  "session_ids": [
+    "01a17507-fbc9-7fe3-93c7-ea6e66beb6f2"
+  ],
+  "bounded_local_canonical_archive_checks": [
+    {
+      "name": "overlap",
+      "rectangles": [
+        [
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          0,
+          3,
+          2
+        ]
+      ],
+      "expected": 5,
+      "actual": 5,
+      "input_unchanged": true
+    },
+    {
+      "name": "offset_y_gap",
+      "rectangles": [
+        [
+          1,
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          4,
+          3,
+          6
+        ]
+      ],
+      "expected": 6,
+      "actual": 6,
+      "input_unchanged": true
+    },
+    {
+      "name": "x_gap",
+      "rectangles": [
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          4,
+          1
+        ]
+      ],
+      "expected": 2,
+      "actual": 2,
+      "input_unchanged": true
+    },
+    {
+      "name": "nesting",
+      "rectangles": [
+        [
+          0,
+          0,
+          4,
+          4
+        ],
+        [
+          1,
+          1,
+          2,
+          2
+        ]
+      ],
+      "expected": 16,
+      "actual": 16,
+      "input_unchanged": true
+    },
+    {
+      "name": "touching",
+      "rectangles": [
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          2
+        ]
+      ],
+      "expected": 2,
+      "actual": 2,
+      "input_unchanged": true
+    },
+    {
+      "name": "modulo",
+      "rectangles": [
+        [
+          0,
+          0,
+          1000000000,
+          1000000000
+        ]
+      ],
+      "expected": 49,
+      "actual": 49,
+      "input_unchanged": true
+    }
+  ],
+  "review_counts": {
+    "canonical": 2169,
+    "core_cases": 1006,
+    "core_frames": 3860,
+    "browser_transitions": 52
+  },
+  "scope": "Exact saved bytes and terminal identities; six bounded local canonical checks; inspected existing EN320/ZH390 screenshots. No browser/clipboard rerun or remote mutation.",
+  "files": {
+    "850-review-1-ba13eaa4.md": {
+      "sha256": "65dd47bcf46c897a3cb6a564e5f677d3beabfc015810712fe944aa657acf23be",
+      "bytes": 17216
+    },
+    "author-runs.json": {
+      "sha256": "d6e92cafe55e9cee94852d5abd59c103912afe82908fbe12773884e359babdb3",
+      "bytes": 853
+    },
+    "candidate/BRIEF.md": {
+      "sha256": "9a91015508797d1f1e21857dbb1c9a9d701e629eef8cb8831daef505ad9f09a0",
+      "bytes": 5548
+    },
+    "candidate/app.js": {
+      "sha256": "bb7360395d915644820580f62b0a60c5e3d90038c5e736ba71762baf65683e5b",
+      "bytes": 4065
+    },
+    "candidate/copy.js": {
+      "sha256": "b18a62fcb3b4ea6b6fe5910258970bf8c9a043e96cdc831dded02dce8849f271",
+      "bytes": 15948
+    },
+    "candidate/core.js": {
+      "sha256": "002589f7b412861c3070a3150fb4690ed1e432f6f58571d058a0c94a2effe88a",
+      "bytes": 1105
+    },
+    "candidate/index.html": {
+      "sha256": "44c0b952ccfcc7d11a677e635086324d572638e9e6f6c2382df53f7af20cc753",
+      "bytes": 5921
+    },
+    "candidate/lesson-entry.json": {
+      "sha256": "be90f2f336633bdbf4999af18b98f89acb933d5cf599f40f298143252f8162bd",
+      "bytes": 921
+    },
+    "candidate/python-code.js": {
+      "sha256": "6dc071dc71f3c7157b1299cff4c9a752affc2699466e5b8868164e074801e1fa",
+      "bytes": 816
+    },
+    "candidate/solution.py": {
+      "sha256": "2a20b4eb16dc4bffe95affc932c5d8e1937249b720a136ec8e1f5090b295051a",
+      "bytes": 768
+    },
+    "candidate/style.css": {
+      "sha256": "c551dab6bb8095ce55a2c1a4855ef63ffe41098fa0dffa095fd6902c4966fa41",
+      "bytes": 1933
+    },
+    "review-events.jsonl.gz": {
+      "sha256": "557f8c288cc9a67abe61ab8ff68e0a5db9fc005ac5db1d7c18312c8d14c1c0bb",
+      "bytes": 55641
+    },
+    "review-evidence/browser-results.json": {
+      "sha256": "4ac3eabd82ec44d2c6e27f7726a61060f8e4b0d47f6d4d62bc9d542aa093ad2a",
+      "bytes": 16107
+    },
+    "review-evidence/core-results.json": {
+      "sha256": "ef203dcdb71c8215653bb0662f51b8e2a1f4dee78faec8f45b706f3344dfecdb",
+      "bytes": 129
+    },
+    "review-evidence/en-1440-diagram.png": {
+      "sha256": "1fb47a680b3c162330d4062aa10c10e751f7f13a83d0773ce63330ee2f236a0b",
+      "bytes": 66749
+    },
+    "review-evidence/en-320-diagram.png": {
+      "sha256": "a971de848fa8cfc8dbfbf7e1a7722983c4af18b31debe83307d81588bc0d6af7",
+      "bytes": 50939
+    },
+    "review-evidence/en-zoom200-ledger.png": {
+      "sha256": "f756a5d53438d5c22564be5202ccaa0996cfa5301d03d0288df3e76c81fea0a7",
+      "bytes": 97865
+    },
+    "review-evidence/python-results.json": {
+      "sha256": "393044d810f4eb41465cc4ef3c0d09cb1a1733c379443f05c97725af33482f30",
+      "bytes": 214
+    },
+    "review-evidence/zh-320-identity.png": {
+      "sha256": "c40cd9db075277a450ba3bee7e41fa01c85fe391282229cdeb15711352971564",
+      "bytes": 96529
+    },
+    "review-evidence/zh-320-prediction.png": {
+      "sha256": "10cd261e4c86d76899877b2783fb5abecbb09abb97057b26b36c7adb831417ed",
+      "bytes": 88401
+    },
+    "review-evidence/zh-390-diagram.png": {
+      "sha256": "4b40b72b6f9a0b71a087c6907e97d4a4659e386ab62c413236d0290204c2ac19",
+      "bytes": 60839
+    },
+    "review-final.json": {
+      "sha256": "061d3fed24d230b9694f1efe04f4e67a185b61dffb8c4eb31f0bebf83b0e1eb1",
+      "bytes": 613
+    },
+    "review-run.json": {
+      "sha256": "8fd034d86d0843fc457eec4367ae7ae4168ebc65b2ad821daf89e1ed20ccc142",
+      "bytes": 1197
+    },
+    "snapshot.json": {
+      "sha256": "378e0ab904b2c88ce79fb4229ac06f38339052dce695f690576759937f3a3df1",
+      "bytes": 12304
+    }
+  }
+}

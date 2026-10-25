@@ -1,0 +1,29 @@
+{
+  "observedAt": "2026-10-25T21:50:05.978121+00:00",
+  "psExit": 1,
+  "psOutput": "    PID    PPID  NI     ELAPSED COMMAND\n",
+  "reservation": {
+    "id": "982",
+    "base": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+    "repo": "/home/songyy/projects/leetcode-hard-lane-982-20261026",
+    "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-982-20261026",
+    "port": 18795,
+    "nice": 10,
+    "status": "started",
+    "started_at": "2026-10-25T21:30:21.394634+00:00",
+    "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+    "publication_enabled": false,
+    "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+    "runner_pid": 1700254,
+    "observed_current": {
+      "problem_id": "982",
+      "stage": "author",
+      "started_at": "2026-10-25T21:30:49.910959+00:00",
+      "run_id": "982-author-4532e76a05c3"
+    }
+  },
+  "reservationSha256": "ebe8e5a2e622ec05cd4c59a067dc186662b1ad2e4a285175fe65eca348eccdac",
+  "remoteExit": 0,
+  "remoteStdout": "1086f89c87cb74432d9222deba3414138d4e1b2f\trefs/heads/codex/lane-982-20261026\n",
+  "remoteStderr": ""
+}
