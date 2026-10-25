@@ -1,0 +1,664 @@
+{
+  "kind": "author browser self-check; independent review pending",
+  "checkedAt": "2026-10-25T23:29:44.602Z",
+  "browserVersion": "156.0.8078.4",
+  "hostPlatform": "linux",
+  "presets": [
+    {
+      "lang": "en",
+      "p": 0,
+      "expected": 14,
+      "terminal": "State progress 6/6 (excluding bases); Final return value: 14."
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "expected": 20,
+      "terminal": "State progress 12/12 (excluding bases); Final return value: 20."
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "expected": -1,
+      "terminal": "State progress 0/0 (excluding bases); Final return value: -1."
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "expected": 25,
+      "terminal": "State progress 14/14 (excluding bases); Final return value: 25."
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "expected": 40,
+      "terminal": "State progress 12/12 (excluding bases); Final return value: 40."
+    },
+    {
+      "lang": "en",
+      "p": 5,
+      "expected": 0,
+      "terminal": "State progress 0/0 (excluding bases); Final return value: 0."
+    },
+    {
+      "lang": "en",
+      "p": 6,
+      "expected": 4,
+      "terminal": "State progress 7/7 (excluding bases); Final return value: 4."
+    },
+    {
+      "lang": "en",
+      "p": 7,
+      "expected": -1,
+      "terminal": "State progress 0/0 (excluding bases); Final return value: -1."
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "expected": 14,
+      "terminal": "状态进度 6/6（不含初值）；最终返回值：14。"
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "expected": 20,
+      "terminal": "状态进度 12/12（不含初值）；最终返回值：20。"
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "expected": -1,
+      "terminal": "状态进度 0/0（不含初值）；最终返回值：-1。"
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "expected": 25,
+      "terminal": "状态进度 14/14（不含初值）；最终返回值：25。"
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "expected": 40,
+      "terminal": "状态进度 12/12（不含初值）；最终返回值：40。"
+    },
+    {
+      "lang": "zh",
+      "p": 5,
+      "expected": 0,
+      "terminal": "状态进度 0/0（不含初值）；最终返回值：0。"
+    },
+    {
+      "lang": "zh",
+      "p": 6,
+      "expected": 4,
+      "terminal": "状态进度 7/7（不含初值）；最终返回值：4。"
+    },
+    {
+      "lang": "zh",
+      "p": 7,
+      "expected": -1,
+      "terminal": "状态进度 0/0（不含初值）；最终返回值：-1。"
+    }
+  ],
+  "feedback": [
+    {
+      "lang": "en",
+      "option": 0,
+      "text": "That omits the first merge payment. The three possible first blocks cost 7, 8, and 9; the minimum is 7. Merging [2,1,4] leaves [7,3,2]; the final merge costs 12, totaling 19. The count condition (5−1) % (3−1)=0 holds. The first move leaves three piles, not two."
+    },
+    {
+      "lang": "en",
+      "option": 1,
+      "text": "Correct. The three possible first blocks cost 7, 8, and 9; the minimum is 7. Merging [2,1,4] leaves [7,3,2]; the final merge costs 12, totaling 19. The count condition (5−1) % (3−1)=0 holds. The first move leaves three piles, not two."
+    },
+    {
+      "lang": "en",
+      "option": 2,
+      "text": "Adjacency refers to current piles; three piles remain after the first merge. The three possible first blocks cost 7, 8, and 9; the minimum is 7. Merging [2,1,4] leaves [7,3,2]; the final merge costs 12, totaling 19. The count condition (5−1) % (3−1)=0 holds. The first move leaves three piles, not two."
+    },
+    {
+      "lang": "zh",
+      "option": 0,
+      "text": "少算了第一笔合并费用。 第一步三种相邻组的费用分别为 7、8、9；最低 7。选 [2,1,4] 后得到 [7,3,2]，最后付 12，总计 19。堆数条件 (5−1) % (3−1)=0 成立；第一步留下三堆，而不是两堆。"
+    },
+    {
+      "lang": "zh",
+      "option": 1,
+      "text": "正确。 第一步三种相邻组的费用分别为 7、8、9；最低 7。选 [2,1,4] 后得到 [7,3,2]，最后付 12，总计 19。堆数条件 (5−1) % (3−1)=0 成立；第一步留下三堆，而不是两堆。"
+    },
+    {
+      "lang": "zh",
+      "option": 2,
+      "text": "相邻是针对当前堆；第一步后还会有三堆。 第一步三种相邻组的费用分别为 7、8、9；最低 7。选 [2,1,4] 后得到 [7,3,2]，最后付 12，总计 19。堆数条件 (5−1) % (3−1)=0 成立；第一步留下三堆，而不是两堆。"
+    }
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "event": "Just completed D(0,2,2) = 5. Compare every finite cut below; omitted cuts include ∞ and cannot form the target pile counts.",
+      "candidates": "0\t0\t6\t6\tHigher\n1\t5\t0\t5\t✓ Minimum (ties allowed)",
+      "current": "D(0,2,2)\t5\t★ Just completed"
+    },
+    {
+      "lang": "en",
+      "event": "Just completed D(0,2,1) = D(0,2,k) + interval sum = 5 + 9 = 14. The added payment is the actual final merge."
+    },
+    {
+      "lang": "zh",
+      "event": "刚完成 D(0,2,2) = 5。比较下表所有有限切口；未列切口含 ∞，无法形成目标堆数。",
+      "candidates": "0\t0\t6\t6\t较高\n1\t5\t0\t5\t✓ 最低（可并列）",
+      "current": "D(0,2,2)\t5\t★ 刚完成"
+    },
+    {
+      "lang": "zh",
+      "event": "刚完成 D(0,2,1) = D(0,2,k) + 区间总和 = 5 + 9 = 14。这笔费用对应实际最后一次合并。"
+    }
+  ],
+  "geometry": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "pageWidth": 320,
+      "viewport": 320,
+      "tableWidth": 258,
+      "tableScroll": 540,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 256,
+        "arrowReserve": 20,
+        "needed": 39.85601806640625
+      }
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "pageWidth": 320,
+      "viewport": 320,
+      "tableWidth": 98,
+      "tableScroll": 540,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 96,
+        "arrowReserve": 20,
+        "needed": 39.85601806640625
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "pageWidth": 390,
+      "viewport": 390,
+      "tableWidth": 328,
+      "tableScroll": 540,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 326,
+        "arrowReserve": 20,
+        "needed": 39.85601806640625
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "pageWidth": 390,
+      "viewport": 390,
+      "tableWidth": 133,
+      "tableScroll": 540,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 131,
+        "arrowReserve": 20,
+        "needed": 39.85601806640625
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "pageWidth": 736,
+      "viewport": 736,
+      "tableWidth": 646,
+      "tableScroll": 646,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 644,
+        "arrowReserve": 20,
+        "needed": 61.85601806640625
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "pageWidth": 736,
+      "viewport": 736,
+      "tableWidth": 278,
+      "tableScroll": 540,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 276,
+        "arrowReserve": 20,
+        "needed": 61.85601806640625
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "pageWidth": 1440,
+      "viewport": 1440,
+      "tableWidth": 910,
+      "tableScroll": 910,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 908,
+        "arrowReserve": 20,
+        "needed": 61.85601806640625
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "pageWidth": 1440,
+      "viewport": 1440,
+      "tableWidth": 630,
+      "tableScroll": 630,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 628,
+        "arrowReserve": 20,
+        "needed": 61.85601806640625
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "pageWidth": 320,
+      "viewport": 320,
+      "tableWidth": 258,
+      "tableScroll": 540,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 256,
+        "arrowReserve": 20,
+        "needed": 39.85601806640625
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "pageWidth": 320,
+      "viewport": 320,
+      "tableWidth": 98,
+      "tableScroll": 540,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 96,
+        "arrowReserve": 20,
+        "needed": 39.85601806640625
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "pageWidth": 390,
+      "viewport": 390,
+      "tableWidth": 328,
+      "tableScroll": 540,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 326,
+        "arrowReserve": 20,
+        "needed": 39.85601806640625
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "pageWidth": 390,
+      "viewport": 390,
+      "tableWidth": 133,
+      "tableScroll": 540,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 131,
+        "arrowReserve": 20,
+        "needed": 39.85601806640625
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "pageWidth": 736,
+      "viewport": 736,
+      "tableWidth": 646,
+      "tableScroll": 646,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 644,
+        "arrowReserve": 20,
+        "needed": 61.85601806640625
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "pageWidth": 736,
+      "viewport": 736,
+      "tableWidth": 278,
+      "tableScroll": 540,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 276,
+        "arrowReserve": 20,
+        "needed": 61.85601806640625
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "pageWidth": 1440,
+      "viewport": 1440,
+      "tableWidth": 910,
+      "tableScroll": 910,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 908,
+        "arrowReserve": 20,
+        "needed": 61.85601806640625
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "pageWidth": 1440,
+      "viewport": 1440,
+      "tableWidth": 630,
+      "tableScroll": 630,
+      "budget": {
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "width": 628,
+        "arrowReserve": 20,
+        "needed": 61.85601806640625
+      }
+    }
+  ],
+  "contrast": [
+    {
+      "sel": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "sel": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "sel": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "sel": "#progress",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "sel": "#event",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#prev",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#next",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#langToggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": ".step-nav a",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "#code",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(9, 14, 22)",
+      "ratio": 16.437295258072666
+    },
+    {
+      "sel": "#fallbackSource",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#copyStatus",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "sel": "#reveal",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#preset",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#download",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "th",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "sel": "td",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "sel": ".current-row",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "en",
+      "sentinelResetVerified": true,
+      "nativeCopy": true,
+      "fallbackShortcut": "Control+C",
+      "exactBytes": true
+    },
+    {
+      "lang": "zh",
+      "sentinelResetVerified": true,
+      "nativeCopy": true,
+      "fallbackShortcut": "Control+C",
+      "exactBytes": true
+    }
+  ],
+  "errors": [],
+  "badAssets": [],
+  "external": [],
+  "contrastCalibration": {
+    "primaries": true,
+    "blackWhite": 21,
+    "thresholdRatio": 4.492948073111701,
+    "thresholdPass": false,
+    "scope": "solid opaque text surfaces; shared nearly opaque nav evaluated against its panel background"
+  },
+  "controlSizes": [
+    {
+      "label": "← LeetCode 题集",
+      "height": 48
+    },
+    {
+      "label": "中",
+      "height": 48
+    },
+    {
+      "label": "EN",
+      "height": 48
+    },
+    {
+      "label": "官方题目 ↗",
+      "height": 48
+    },
+    {
+      "label": "1 · 先算两笔钱",
+      "height": 48
+    },
+    {
+      "label": "2 · 为什么要记堆数",
+      "height": 48
+    },
+    {
+      "label": "3 · 逐格构造答案",
+      "height": 48
+    },
+    {
+      "label": "4 · 先预测再揭晓",
+      "height": 48
+    },
+    {
+      "label": "5 · 对应到 Python",
+      "height": 48
+    },
+    {
+      "label": "撤回一次合并",
+      "height": 48
+    },
+    {
+      "label": "合并一次",
+      "height": 48
+    },
+    {
+      "label": "ABCDEFGH",
+      "height": 48
+    },
+    {
+      "label": "退回一个状态",
+      "height": 48
+    },
+    {
+      "label": "完成下个状态",
+      "height": 48
+    },
+    {
+      "label": "重置状态表",
+      "height": 48
+    },
+    {
+      "label": "完成所有状态",
+      "height": 48
+    },
+    {
+      "label": "12",
+      "height": 48
+    },
+    {
+      "label": "19",
+      "height": 48
+    },
+    {
+      "label": "−1",
+      "height": 48
+    },
+    {
+      "label": "核对并解释",
+      "height": 48
+    },
+    {
+      "label": "查看完整 Python 提交代码",
+      "height": 48
+    },
+    {
+      "label": "复制 Python",
+      "height": 48
+    },
+    {
+      "label": "下载 solution.py",
+      "height": 48
+    },
+    {
+      "label": "回看：堆数与切口",
+      "height": 48
+    },
+    {
+      "label": "戳气球：最后一步与区间",
+      "height": 48
+    },
+    {
+      "label": "移除盒子：为什么要多记一个状态",
+      "height": 48
+    }
+  ],
+  "focusContrast": 8.937191437807625,
+  "keyboardTableScroll": true,
+  "forcedColorsAndReducedMotion": true,
+  "blockedStorageOffline": true,
+  "fileOpening": true,
+  "cssBytes": 11583
+}

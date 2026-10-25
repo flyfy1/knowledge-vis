@@ -1,0 +1,38 @@
+[
+  {
+    "lang": "en",
+    "label": "Burst Balloons: last operations and intervals",
+    "destination": "http://127.0.0.1:18800/leetcode/312/#step1",
+    "heading": "02 · Fix the last move",
+    "observedText": "02\n\n02 · Fix the last move\n\nThis step answers one question: how can an interval’s boundaries stay fixed while we compute it? Add sentinel 1s outside, and let dp[left][right] be the maximum coins from bursting every balloon in the open interval (left,right).\n\nLet last be the final balloon burst inside the interval. At that moment only last remains between left and right, so its gain is forced: values[left]×values[last]×values[right]. The two sides finish earlier; choosing an optimal order for each gives dp[left][last] and dp[last][right].\n\ndp[left][right] = max over last ( dp[left][last] + dp[last][right] + v[left]·v[last]·v[right] )\n\nInvariant: while computing dp[left][right], the two outside values are fixed; every candidate last splits the work into two shorter, disjoint open intervals. Keeping only the best total is safe because the rest of the computation connects through those fixed boundaries.\n\nTempting wrong rule: burst the currently largest value first. In [3,1,5], bursting 5 first earns only 5, while bursting 1 first earns 15; a local maximum has no fixed neighbors.",
+    "semanticObservation": "Fixing the final balloon keeps interval boundaries fixed and yields two shorter subproblems.",
+    "targetRevision": "local preview target; no deployment/release identity verified"
+  },
+  {
+    "lang": "en",
+    "label": "Remove Boxes: why an extra state matters",
+    "destination": "http://127.0.0.1:18800/leetcode/546/#step2",
+    "heading": "03 · Remember the boxes waiting on the right",
+    "observedText": "03\n\n03 · Remember the boxes waiting on the right\n\nWhy can the same interval have different answers? An interval [l,r] covers original positions l through r, inclusive. In [1,2,1], the left singleton alone scores 1; if another 1 is saved on its right to leave with it, it scores 4. Remembering just l and r loses that difference. Define dp(l,r,k) as the maximum score from clearing interval [l,r] together with k extra boxes saved on its right, all the color of boxes[r]. Those extra boxes stay together, waiting for the right endpoint.\n\nFix the right endpoint r. It has two possible destinations. ① Join no earlier box in the interval: clear [l,r−1], then remove r with the k saved boxes for (k+1)². ② Join an equal-colored position m: clear the separating interval [m+1,r−1], then count r as one more box saved for m, giving dp(l,m,k+1). A different-colored m cannot be a partner. Clearing the middle first constructs a legal order; it does not prescribe the timing of every optimal order.\n\ndp(l,r,k) = max( dp(l,r−1,0) + (k+1)², max_{l≤m<r, boxes[m]=boxes[r]} [dp(m+1,r−1,0) + dp(l,m,k+1)] ); l>r ⇒ 0\n\nInvariant—the meaning every call must preserve: k counts only boxes outside the interval waiting to leave with its rightmost color. The middle subproblem must not score them. A merge transfers just endpoint r, so k increases by 1, not by the length of the middle interval. Identical (l,r,k) states have identical future choices. Memoization caches that answer instead of recomputing it along another path.\n\nWhy is no better order missed? Keeping adjacent equal boxes together cannot reduce the optimum: splitting them early opens no passage across the boxes still kept, and their joined square reward is at least as large. Thus an optimum can preserve the saved equal-color group. In any such legal order, examine the removal containing r. If it contains no earlier same-color position, its reward plus the remaining feasible order is bounded by candidate ①. Otherwise let m be the largest earlier original position in that group. Everything between m and r must leave first. Scores from the middle and the remaining part are bounded by the two optimal subproblems in candidate ②. Every legal order is therefore bounded by some candidate. Conversely, every candidate is attained by a legal construction: clear the middle and concatenate optimal child orders. Maximizing gives the optimum. Each call shortens the interval; an empty interval earns zero, so recursion terminates.\n\nA concrete call an",
+    "semanticObservation": "The same interval scores differently depending on extra saved boxes; dp(l,r,k) records that count.",
+    "targetRevision": "local preview target; no deployment/release identity verified"
+  },
+  {
+    "lang": "zh",
+    "label": "戳气球：最后一步与区间",
+    "destination": "http://127.0.0.1:18800/leetcode/312/#step1",
+    "heading": "02 · 把最后一步固定",
+    "observedText": "02\n\n02 · 把最后一步固定\n\n这一步只回答一个问题：怎样让某一段的边界在计算时不再变化？给区间外加两个哨兵 1，令 dp[left][right] 表示开区间 (left,right) 内所有气球都被戳破的最大金币。\n\n把 last 设为这段中最后被戳破的气球。到那一刻，left 和 right 之间只剩 last，因此它的收益一定是 values[left]×values[last]×values[right]；两侧更早完成；分别选择各侧最优顺序时，贡献 dp[left][last] 与 dp[last][right]。\n\ndp[left][right] = max over last ( dp[left][last] + dp[last][right] + v[left]·v[last]·v[right] )\n\n不变量：在计算 dp[left][right] 时，区间外的两个值已经固定；每个候选 last 都把问题拆成两个更短且互不重叠的开区间。只保留最佳金币，正因为任何后续收益只通过这两个固定边界连接。\n\n错误直觉：把“当前最大分数”先戳掉。反例 [3,1,5] 中先戳 5 只得 5，而先戳 1 可得 15；局部最大值没有固定邻居。",
+    "semanticObservation": "Fixing the final balloon keeps interval boundaries fixed and yields two shorter subproblems.",
+    "targetRevision": "local preview target; no deployment/release identity verified"
+  },
+  {
+    "lang": "zh",
+    "label": "移除盒子：为什么要多记一个状态",
+    "destination": "http://127.0.0.1:18800/leetcode/546/#step2",
+    "heading": "03 · 记住等在右边的盒子",
+    "observedText": "03\n\n03 · 记住等在右边的盒子\n\n这一步要回答：同一个区间，为何会有不同答案？区间 [l,r] 是原数组从 l 到 r 的位置，含两端。对 [1,2,1]，独立移除左边单盒的分数是 1；若右边还保留着一个同色 1 等待与它一起移除，分数就变成 4。所以只记 l、r 不够。定义 dp(l,r,k)：清空区间 [l,r]，并清空已保留在右边、与 boxes[r] 同色的 k 个额外盒子，所能得到的最大分数。这 k 个盒子保持在一起，等待右端的盒子。\n\n固定右端 r，有两种去向。① 不与区间内更早的盒子合并：清空 [l,r−1]，再将 r 与保留的 k 个一起移除，得 (k+1)²。② 与某个同色位置 m 合并：先清空隔在两者之间的 [m+1,r−1]，然后把 r 也算进 m 的保留盒子，求 dp(l,m,k+1)。颜色不同的位置不能作为 m。这里“先清空”是合法构造的顺序，不是说每个最优执行都只能按这一时间顺序操作。\n\ndp(l,r,k) = max( dp(l,r−1,0) + (k+1)², max_{l≤m<r, boxes[m]=boxes[r]} [dp(m+1,r−1,0) + dp(l,m,k+1)] ); l>r ⇒ 0\n\n不变量（每个调用都要兑现的含义）：k 只计入区间外、等着与右端同色盒子一起移除的盒子；中间子问题不能把它们提前计分。合并时只有右端 r 被转交，因此 k 加 1，而不是加中间区间的长度。相同 (l,r,k) 的未来选择完全相同；记忆化就是缓存这个答案，避免沿不同路径重算。\n\n为什么不会漏掉更好的顺序？相邻同色盒子保留到一起移除不会降低最优值：当它们之间没有隔物时，提前拆开不会开放一条跨越仍保留盒子的新通道，而合并的平方收益不小。因此可以选一个不拆散已保留同色组的最优解。在任一这样的合法解中，考察含 r 的移除组：若没有更早的同色位置，它的得分与其余可行顺序至多为候选①；否则取组内最大的较早原位置 m，中间的盒子必须先离开。中间与其余部分的得分分别不超过候选②的两个最优子问题。故每个合法解均被某个候选上界覆盖。反过来，每个候选都能通过先清中间、再拼接子问题的最优顺序合法实现。取最大值便得到最优分数。每次调用都缩短区间；空区间不产生分数，递归终止。\n\n具体调用与返回（[1,2,1]）：父调用 dp(0,2,0) 先收到 dp(0,1,0)=2，直接移除候选为 2+1=3。再检查兄弟分支 m=0：子调用 dp(1,1,0) 返回 1；随后 dp(0,0,1) 表示左侧的 1 带一个保留的 1，返回 4（其空子调用 dp(0,−1,0)=0）。父调用比较 3 与 1+4，返回 5。子调用用新的整数参数，不修改父调用；返回不需要对数组做原地撤销。\n\n独立小实验，固定输入 [1,2,1]。改变额外保留盒子数 k，再逐个检查根调用候选；看子问题的实际值，而不是只看最大值。k>0 是增加同色右侧盒子的教学状态，不是改变官方原输入的答案。这里只枚举根候选，所有子调用由数值模型完整求值，但不展开其搜索轨迹。\n\n右侧额外同色盒子 k（切换重置候选检查）\n0\n1\n2\n← 上一候选\n检查下一候选 →\n重置候选\n检查全部候选\n\n根状态 dp(0,2,0) · 已检查 0/2 · 最优值尚未确定\n\n已检查的候选（顺序固定，同分保留先者）",
+    "semanticObservation": "The same interval scores differently depending on extra saved boxes; dp(l,r,k) records that count.",
+    "targetRevision": "local preview target; no deployment/release identity verified"
+  }
+]

@@ -1,0 +1,202 @@
+{
+  "checks": [
+    {
+      "a": [
+        1,
+        3,
+        2
+      ],
+      "k": 2,
+      "expected": 10,
+      "actual": 10,
+      "unchanged": true,
+      "cells": 12
+    },
+    {
+      "a": [
+        7,
+        5,
+        5,
+        7
+      ],
+      "k": 2,
+      "expected": 48,
+      "actual": 48,
+      "unchanged": true,
+      "cells": 20
+    },
+    {
+      "a": [
+        9
+      ],
+      "k": 30,
+      "expected": 0,
+      "actual": 0,
+      "unchanged": true,
+      "cells": 30
+    },
+    {
+      "a": [
+        1,
+        2
+      ],
+      "k": 3,
+      "expected": -1,
+      "actual": -1,
+      "unchanged": true,
+      "cells": 0
+    },
+    {
+      "a": [
+        1,
+        2,
+        3
+      ],
+      "k": 3,
+      "expected": 6,
+      "actual": 6,
+      "unchanged": true,
+      "cells": 18
+    },
+    {
+      "a": [
+        4,
+        1,
+        7,
+        2,
+        3
+      ],
+      "k": 3,
+      "expected": 27,
+      "actual": 27,
+      "unchanged": true,
+      "cells": 45
+    },
+    {
+      "a": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "k": 30,
+      "expected": 3000,
+      "actual": 3000,
+      "unchanged": true,
+      "cells": 0
+    },
+    {
+      "a": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "k": 29,
+      "expected": -1,
+      "actual": -1,
+      "unchanged": true,
+      "cells": 0
+    },
+    {
+      "a": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "k": 2,
+      "expected": 14800,
+      "actual": 14800,
+      "unchanged": true,
+      "cells": 0
+    }
+  ],
+  "servedSHA256": {
+    "index.html": "f4309136c0f7f26af50e8559d75f9ba4de6a2bfe95613965ffa17ac07f42c9da",
+    "style.css": "52edb93b13a91d37a7dd4da099f46465286147fb562a009a98db5907a2ca4bb0",
+    "copy.js": "6b3f71434e207fe6d16919a8aee0640a0875981fe0fcbedfb3ef1a288fda376d",
+    "core.js": "efed443f806a3a77debb33721fe28dabbc327e91e60f1e67b6d61d8fccf639b5",
+    "app.js": "23b0fdc9e3608e37a4048f8da246f4479c4c6a51617b0407a48ba94cd32cd7a4",
+    "python-code.js": "47cb16419333d2b8b1fbe317efe9060e0c241ecb2c02041d997b02f5d308b263",
+    "solution.py": "3548086f5e854398ca6aefc0a61b5085d0aae6bd59531e956e45d3383f33ff8c"
+  }
+}
