@@ -1,0 +1,25 @@
+{
+  "status": "refused-before-transfer-zero-spawn",
+  "observedAt": "2026-10-25T23:11:44.113243+00:00",
+  "reason": "Central ordinary queue advanced naturally from frozen #871 review to #878 author. Exact observation comparison rejected dispatch.",
+  "approvedSource": "288c77a8d80a2e44ab80268226a60674906c4d2e",
+  "approvedLauncherSha256": "75c880000eb7f66eff3c2758e84e045294e5a04a279dcbcfd6a7a0382f5088f8",
+  "base": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+  "actualHead": "cf1a31fc75c66ca79e54513e050b7e0ba31b6e70",
+  "actualCurrent": {
+    "problem_id": "878",
+    "stage": "author",
+    "started_at": "2026-10-25T23:11:30.966203+00:00",
+    "run_id": "878-author-004c6e7e9e78"
+  },
+  "actualSession": "01a17555-5f63-7560-97fa-cc0c74925f3f",
+  "actualRunnerPid": 1865819,
+  "actualNativePid": 1869815,
+  "launcherTransferred": false,
+  "launcherExecuted": false,
+  "newReservations": 0,
+  "spawnCount": 0,
+  "piPersistentMutation": false,
+  "repinned": false,
+  "retried": false
+}

@@ -1,0 +1,263 @@
+{
+  "result": "pass",
+  "browser": "156.0.8078.4",
+  "platform": "linux",
+  "semantic": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "endpoint": "Finished: reach=25 ≥ target=25; minimum 1 stops."
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "endpoint": "Finished: reach=110 ≥ target=100; minimum 2 stops."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "endpoint": "Finished: reach=60 ≥ target=60; minimum 1 stops."
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "endpoint": "Cannot continue: reach=1 < target=100 and the pool is empty. Answer −1."
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "endpoint": "Finished: reach=1 ≥ target=1; minimum 0 stops."
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "endpoint": "Finished: reach=30 ≥ target=30; minimum 2 stops."
+    },
+    {
+      "locale": "en",
+      "choice": 0,
+      "feedback": "Recheck eligibility. Initially reach=25, so only the 10- and 30-liter supplies qualify. Choose 30 to reach 55; only then admit the 20 liters at mile 50. Choose 20 to reach 75 in two stops. One stop reaches at most 25+30=55, so one is insufficient. The 10 liters at mile 10 are unnecessary, so three is excessive."
+    },
+    {
+      "locale": "en",
+      "choice": 1,
+      "feedback": "Recheck eligibility. Initially reach=25, so only the 10- and 30-liter supplies qualify. Choose 30 to reach 55; only then admit the 20 liters at mile 50. Choose 20 to reach 75 in two stops. One stop reaches at most 25+30=55, so one is insufficient. The 10 liters at mile 10 are unnecessary, so three is excessive."
+    },
+    {
+      "locale": "en",
+      "choice": 2,
+      "feedback": "Correct. Initially reach=25, so only the 10- and 30-liter supplies qualify. Choose 30 to reach 55; only then admit the 20 liters at mile 50. Choose 20 to reach 75 in two stops. One stop reaches at most 25+30=55, so one is insufficient. The 10 liters at mile 10 are unnecessary, so three is excessive."
+    },
+    {
+      "locale": "en",
+      "fallback": "Automatic copy unavailable. Full source selected; use your system copy shortcut.",
+      "nativeTransfer": "exact with verified fresh sentinel; Linux Control+C"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "endpoint": "终点：reach=25 ≥ target=25；最少 1 次。"
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "endpoint": "终点：reach=110 ≥ target=100；最少 2 次。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "endpoint": "终点：reach=60 ≥ target=60；最少 1 次。"
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "endpoint": "无法继续：reach=1 < target=100 且候选池为空。答案 −1。"
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "endpoint": "终点：reach=1 ≥ target=1；最少 0 次。"
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "endpoint": "终点：reach=30 ≥ target=30；最少 2 次。"
+    },
+    {
+      "locale": "zh",
+      "choice": 0,
+      "feedback": "再检查可达条件。 初始可达 25，只能候选 10 升与 30 升。选 30 后 reach=55，才可纳入位置 50 的 20 升。选 20 后 reach=75，共 2 次。一次最多到 25+30=55，所以 1 次不够；位置 10 的 10 升无需取走，因此 3 次多余。"
+    },
+    {
+      "locale": "zh",
+      "choice": 1,
+      "feedback": "再检查可达条件。 初始可达 25，只能候选 10 升与 30 升。选 30 后 reach=55，才可纳入位置 50 的 20 升。选 20 后 reach=75，共 2 次。一次最多到 25+30=55，所以 1 次不够；位置 10 的 10 升无需取走，因此 3 次多余。"
+    },
+    {
+      "locale": "zh",
+      "choice": 2,
+      "feedback": "正确。 初始可达 25，只能候选 10 升与 30 升。选 30 后 reach=55，才可纳入位置 50 的 20 升。选 20 后 reach=75，共 2 次。一次最多到 25+30=55，所以 1 次不够；位置 10 的 10 升无需取走，因此 3 次多余。"
+    },
+    {
+      "locale": "zh",
+      "fallback": "自动复制不可用。已选中完整源码，请按系统复制快捷键。",
+      "nativeTransfer": "exact with verified fresh sentinel; Linux Control+C"
+    }
+  ],
+  "fit": [
+    {
+      "viewport": 320,
+      "locale": "en",
+      "width": 260,
+      "text": 134.11227416992188,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 210
+    },
+    {
+      "viewport": 320,
+      "locale": "zh",
+      "width": 260,
+      "text": 141.31227111816406,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 210
+    },
+    {
+      "viewport": 390,
+      "locale": "en",
+      "width": 330,
+      "text": 134.11227416992188,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 280
+    },
+    {
+      "viewport": 390,
+      "locale": "zh",
+      "width": 330,
+      "text": 141.31227111816406,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 280
+    },
+    {
+      "viewport": 736,
+      "locale": "en",
+      "width": 237,
+      "text": 134.11227416992188,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 187
+    },
+    {
+      "viewport": 736,
+      "locale": "zh",
+      "width": 192,
+      "text": 141.31227111816406,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 142
+    },
+    {
+      "viewport": 1440,
+      "locale": "en",
+      "width": 237,
+      "text": 134.11227416992188,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 187
+    },
+    {
+      "viewport": 1440,
+      "locale": "zh",
+      "width": 192,
+      "text": 141.31227111816406,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 142
+    }
+  ],
+  "related": [
+    {
+      "locale": "en",
+      "label": " #23: heap merging of sorted sources",
+      "url": "http://127.0.0.1:18770/leetcode/23/#step1",
+      "excerpt": "02Why can we skip work?A min-heap is a complete binary tree stored in an array; parents are no greater than children, so the root is the minimum. Array position h has children 2h+1 and 2h+2. Store only the first remaining node of each list.After removing the root, move the last candidate to the root and swap downward with the smaller child until heap order returns. A new successor sifts upward from the end. Each operation follows at most O(log k) levels. Siblings need not be ordered; the heap array is not sorted.For heap values [1,3,2,7], pop 1 and move the last value 7 to the root: [7,3,2]. The smaller child is 2; swap to get [2,3,7]. Insert 4: [2,3,7,4]. Since 4 ≥ its parent 3, stop. Repair follows one parent–child path instead of scanning every head.Before each pop, each nonempty remaining list contributes exactly one head. The global remaining minimum is among those heads; the output prefix is sorted. source:index is permanent node identity; h in the heap is a storage position.Observe node identity and pointer rewiring"
+    },
+    {
+      "locale": "en",
+      "label": "#42: safe decisions from known boundaries",
+      "url": "http://127.0.0.1:18770/leetcode/42/#step1",
+      "excerpt": "02Why can we skip work?left and right bound the unsettled region. left_max is the highest wall through left, and right_max the highest from right to the end. Include the current endpoint bars before comparing these maxima.If left_max≤right_max, a wall at least left_max high already exists to the right. Thus the left position is limited exactly by left_max; taller unseen interior walls cannot change the smaller bound. Add left_max−height[left] and advance left. The right case is symmetric.Each position outside the pointers has been settled exactly once. Gray blocks are bars, cyan blocks confirmed water; no cyan at an unsettled position does not mean it will remain dry. water is the settled total. Displayed pointers have advanced to the next cell; maxima refresh at the start of the next operation.Infer an answer from boundary information"
+    },
+    {
+      "locale": "zh",
+      "label": "#23：堆如何合并多个有序来源",
+      "url": "http://127.0.0.1:18770/leetcode/23/#step1",
+      "excerpt": "02为什么能省去工作？最小堆是一棵以数组保存的完全二叉树，父节点值不大于孩子；根就是所有候选中最小的。数组下标 h 的孩子是 2h+1、2h+2。只保存每条尚未耗尽链表的第一个节点。取出根后，用末尾候选填补根，再与较小孩子交换，直到堆序恢复。新后继从末尾向上交换。两种操作最多沿树高 O(log k) 移动。堆不要求兄弟之间有序，所以不要把它误读成排好序的数组。例如堆数组 [1,3,2,7]：弹出 1，用末尾 7 补根，暂成 [7,3,2]；较小孩子是 2，交换后为 [2,3,7]。再插入 4 得 [2,3,7,4]，4 ≥ 父节点 3，不再上移。只沿一条父子路径修复，不扫描每个头。每次弹出前，每条非空剩余链表恰好贡献一个头；全局最小剩余值必在这些头中。输出前缀有序。图中 source:index 是永久节点身份，堆括号中的 h 是存储位置。观察节点身份与指针重连"
+    },
+    {
+      "locale": "zh",
+      "label": "#42：用边界事实保证安全决策",
+      "url": "http://127.0.0.1:18770/leetcode/42/#step1",
+      "excerpt": "02为什么能省去工作？left、right 围住尚未结算区域。left_max 包含从起点到 left 的最高墙，right_max 包含从 right 到末尾的最高墙；先把当前两端柱子纳入最大值，再比较。若 left_max≤right_max，左端右侧已经存在至少 left_max 高的墙，所以左端水位恰好由 left_max 决定；未知内部墙再高也改变不了这个较小限制。结算 left_max−height[left] 后推进左端。另一侧完全对称。指针外的位置已且仅已结算一次。图中灰块为柱高，青块为已确认的水；未结算位置没有画水不表示它最终不存水。water 是已结算总量。帧中的指针已移向下一格；最高墙在下次操作开始时刷新。从边界信息推断答案"
+    }
+  ],
+  "contrasts": [
+    {
+      "fg": "e8edf4",
+      "bg": "161b22",
+      "ratio": 14.704584598678618
+    },
+    {
+      "fg": "9aa7b8",
+      "bg": "161b22",
+      "ratio": 7.078851579017443
+    },
+    {
+      "fg": "9aa7b8",
+      "bg": "1c2330",
+      "ratio": 6.449407898769069
+    },
+    {
+      "fg": "6ee7ff",
+      "bg": "161b22",
+      "ratio": 11.974898815275662
+    },
+    {
+      "fg": "ffb454",
+      "bg": "161b22",
+      "ratio": 9.809435643476732
+    },
+    {
+      "fg": "ffb454",
+      "bg": "1c2330",
+      "ratio": 8.937191437807625
+    },
+    {
+      "fg": "c9d4e2",
+      "bg": "0a0e14",
+      "ratio": 12.89261537833187
+    },
+    {
+      "fg": "e8edf4",
+      "bg": "090e16",
+      "ratio": 16.437295258072666
+    },
+    {
+      "fg": "0d1117",
+      "bg": "6ee7ff",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "errors": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "url": "http://127.0.0.1:18770/favicon.ico",
+      "page": "http://127.0.0.1:18770/leetcode/23/#step1"
+    }
+  ],
+  "badAssets": [],
+  "zoom": "Real Chromium CSS zoom=2 at 1440px (200% page magnification); narrow viewports tested separately. Native browser chrome zoom and physical devices unverified."
+}

@@ -1,0 +1,28 @@
+--- original/launch.py
++++ refresh-878-author/launch.py
+@@ -4,8 +4,8 @@
+ REPO=ROOT/'leetcode-hard-campaign-20261018'
+ STATE=ROOT/'leetcode-hard-campaign-state-20261018'
+ BASE='6c68b23cc306067de5a912195a3c7edeebc2a0be'
+-CENTRAL_HEAD='6c68b23cc306067de5a912195a3c7edeebc2a0be'
+-CENTRAL_RUN='871-review-5c5479d608a1'
++CENTRAL_HEAD='cf1a31fc75c66ca79e54513e050b7e0ba31b6e70'
++CENTRAL_RUN='878-author-004c6e7e9e78'
+ POLICY='816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c'
+ 
+ def read(p): return json.loads(p.read_text())
+@@ -62,11 +62,11 @@
+     s=read(STATE/'progress.json')
+     assert s['status']=='running' and not (STATE/'STOP').exists()
+     assert s['expected_head']==CENTRAL_HEAD and git('rev-parse','HEAD')==CENTRAL_HEAD
+-    assert s['current']['problem_id']=='871'
+-    assert s['current']['stage']=='review' and s['current']['run_id']==CENTRAL_RUN
++    assert s['current']['problem_id']=='878'
++    assert s['current']['stage']=='author' and s['current']['run_id']==CENTRAL_RUN
+     run=next(r for r in s['runs'] if r['id']==CENTRAL_RUN)
+     events=[json.loads(line) for line in (pathlib.Path(run['directory'])/'events.jsonl').read_text().splitlines() if line.startswith('{')]
+-    assert any(e.get('type')=='thread.started' and e.get('thread_id')=='01a17551-4500-7f91-b832-4d15fa2f15fa' for e in events)
++    assert any(e.get('type')=='thread.started' and e.get('thread_id')=='01a17555-5f63-7560-97fa-cc0c74925f3f' for e in events)
+     assert len(s['queue'])==984
+     for pid in ['996','1000']:
+         assert pid in s['queue'] and pid not in s['problems']

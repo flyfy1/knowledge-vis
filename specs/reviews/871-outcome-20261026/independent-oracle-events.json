@@ -1,0 +1,13 @@
+[
+  {
+    "type": "item.completed",
+    "item": {
+      "id": "item_17",
+      "type": "command_execution",
+      "command": "/bin/bash -lc \"python3 -B <<'PY'\nimport importlib.util,random,copy,json\np='leetcode/871/solution.py'\nspec=importlib.util.spec_from_file_location('actual',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)\ndef oracle(t,s,a):\n best=len(a)+1\n for mask in range(1<<len(a)):\n  fuel=s;pos=0;count=0\n  for i,(x,v) in enumerate(a):\n   if mask&(1<<i):\n    fuel-=x-pos;pos=x\n    if fuel<0:break\n    fuel+=v;count+=1\n  else:\n   if fuel>=t-pos:best=min(best,count)\n return best if best<=len(a) else -1\ncases=[(31,10,[[5,6],[10,12],[22,9]],2),(20,3,[[4,100],[5,1]],-1),(20,10,[], -1),(10,10,[],0),(21,5,[[5,8],[10,8]],2),(10**9,1,[[1,999999999]],1),(501,1,[[i,1] for i in range(1,501)],500)]\nfor t,s,a,e in cases:\n old=copy.deepcopy(a);got=m.Solution().minRefuelStops(t,s,a);assert got==e and old==a;print(t,s,'n='+str(len(a)),got)\nr=random.Random(47913)\nfor _ in range(600):\n t=r.randrange(2,60);a=[[p,r.randrange(1,30)] for p in sorted(r.sample(range(1,t),r.randrange(min(8,t-1)+1)))];s=r.randrange(1,40);old=copy.deepcopy(a);assert m.Solution().minRefuelStops(t,s,a)==oracle(t,s,a) and a==old\nprint('Independent physical subset oracle: 600 cases passed, no input mutation')\nPY\"",
+      "aggregated_output": "31 10 n=3 2\n20 3 n=2 -1\n20 10 n=0 -1\n10 10 n=0 0\n21 5 n=2 2\n1000000000 1 n=1 1\n501 1 n=500 500\nIndependent physical subset oracle: 600 cases passed, no input mutation\n",
+      "exit_code": 0,
+      "status": "completed"
+    }
+  }
+]

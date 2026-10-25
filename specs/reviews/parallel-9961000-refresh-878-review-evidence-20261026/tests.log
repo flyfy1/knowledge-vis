@@ -1,0 +1,11 @@
+test_base_receipt_policy_unchanged (__main__.Refresh.test_base_receipt_policy_unchanged) ... ok
+test_exact_five_changes_reversible (__main__.Refresh.test_exact_five_changes_reversible) ... ok
+test_exact_live_identity (__main__.Refresh.test_exact_live_identity) ... ok
+test_preflight_unchanged (__main__.Refresh.test_preflight_unchanged) ... ok
+test_safe_launch_controls_retained (__main__.Refresh.test_safe_launch_controls_retained) ... ok
+test_target_readiness (__main__.Refresh.test_target_readiness) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK

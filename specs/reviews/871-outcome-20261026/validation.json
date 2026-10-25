@@ -1,0 +1,134 @@
+{
+  "validatedAt": "2026-10-25T23:13:14.859561+00:00",
+  "checks": {
+    "completedAcceptedAgreement": true,
+    "lessonTreesEqual": true,
+    "canonicalShaVerified": true,
+    "archivedOriginalEvidenceHashesVerified": true,
+    "independentOracleEventExitZero": true,
+    "rootPushReadOnlyRemoteVerified": true,
+    "candidateServedHashesVerified": 7
+  },
+  "report": {
+    "path": "specs/reviews/871-outcome-20261026.md",
+    "sha256": "cfba0cd5656ef810bed1d893135ad231011cb341d958305ecc795745cd41fe91"
+  },
+  "files": {
+    "871-review-1-04735bd3.md": {
+      "sha256": "bc00e50b1b3c9adadeed80be23c5e06051dfd46374a78193c2d647c84f12c89a",
+      "bytes": 18280
+    },
+    "author-runs.json": {
+      "sha256": "bd3d1d4fb6c6053d3e4ac9d89c5b9d7c48ccc8ab4d95bbfb19cc404f2910d165",
+      "bytes": 902
+    },
+    "branch-observation.json": {
+      "sha256": "14e746d8831b5ce6175e514eece8f070b2e611fb23e33348752b2b15fbae295f",
+      "bytes": 624
+    },
+    "candidate/BRIEF.md": {
+      "sha256": "33307d25d156c73c6e3fded4b2a2f428379737ce1bd3a0b517cd7d8db62c83f5",
+      "bytes": 5626
+    },
+    "candidate/app.js": {
+      "sha256": "a37d5b32a8168a872f092c884ef1ff53fdcca37841906a6b2543ee5ab65ce9ea",
+      "bytes": 3563
+    },
+    "candidate/copy.js": {
+      "sha256": "497aa7fbfa696fa8044f6e5d9b120ca2d76b68108606a7d53bc33487252c3f70",
+      "bytes": 18508
+    },
+    "candidate/core.js": {
+      "sha256": "9482db54ab12ee8e0f6ffc2eab07424c33ea92af860c3fa3d3715befbf7b370b",
+      "bytes": 1156
+    },
+    "candidate/index.html": {
+      "sha256": "3b46e9b1fe922abaf997fdaba1815fe83b4488fa0aaf4d54447774d66e62f7b4",
+      "bytes": 6047
+    },
+    "candidate/lesson-entry.json": {
+      "sha256": "6cbfb0da6140eabde8761dbee077b1869a6afb5ab0006959e1b6cdd6534c7318",
+      "bytes": 1160
+    },
+    "candidate/python-code.js": {
+      "sha256": "e8eb546ce20fac128c68f0e64fa009ffbb3be5ec6605048a0b947521e2f35fa9",
+      "bytes": 564
+    },
+    "candidate/solution.py": {
+      "sha256": "7043180ca7c400d54282cddd1fd4e46ba172341714078cbba4c51bf2c20a1de7",
+      "bytes": 519
+    },
+    "candidate/style.css": {
+      "sha256": "ff1f9bc7f821fbb85009f1b87c23b915d1285d191a26c859e301a969152ac4da",
+      "bytes": 1693
+    },
+    "independent-oracle-events.json": {
+      "sha256": "29501d92afe1344d18cd67af08e01567b0de5e908ca461e16dca11312e08b254",
+      "bytes": 1608
+    },
+    "remote-after-root-push.json": {
+      "sha256": "a103e73b5502ea9a3713cdcde2002b5dcc5bfe731dd15ee16d6e26879f25be0c",
+      "bytes": 264
+    },
+    "review-events.jsonl.gz": {
+      "sha256": "9c68e694813a2254cf651865324e750ca32908bc54d741ec16195d16b2291bc9",
+      "bytes": 71356
+    },
+    "review-evidence/asset-diagnostics.json": {
+      "sha256": "1423eadd5cebbe534986f100178af56c382fb8849213972f1df4ae099de417d8",
+      "bytes": 262
+    },
+    "review-evidence/browser-result.json": {
+      "sha256": "9b1dc1b663f501167d881d61d5a512cb8095595e63ed27286d86b631da48dd00",
+      "bytes": 11747
+    },
+    "review-evidence/cold-counterexample.png": {
+      "sha256": "6510cb593ad6e30aa0ddb4aa8b6980cc60b11ee0d3e0375b7c1360e0184002f9",
+      "bytes": 803617
+    },
+    "review-evidence/core-result.json": {
+      "sha256": "88fb3423f0f9c19ec829f053b286f640a243f3f3b9ba44d3c64651bebda6374d",
+      "bytes": 179
+    },
+    "review-evidence/independent-overlap-320-en.png": {
+      "sha256": "e92f8295748a9044188e87bb5053e96c2993f030affd5f17adfbeb976692cce4",
+      "bytes": 58586
+    },
+    "review-evidence/independent-overlap-320-zh.png": {
+      "sha256": "d46d14938422a3d1063124454440796ddd796db4abf6bb5579231d97f930456c",
+      "bytes": 69386
+    },
+    "review-evidence/oracle-fixtures.json": {
+      "sha256": "c71ff10dc0fa95fa675fc47b6a77888d73682a2fad5dd39083889e6d53fdf23a",
+      "bytes": 1024030
+    },
+    "review-evidence/python-result.json": {
+      "sha256": "0e6ea0d32ffbb0bb613e57813b8758f912bffb44e3416bc5d06aca8aadcfd1eb",
+      "bytes": 54
+    },
+    "review-evidence/served-hashes.json": {
+      "sha256": "212e6bb9c936d9e3e8406e2cc7f68769e6421cfc8c3cf95f5e9c9ea4a6cae55e",
+      "bytes": 756
+    },
+    "review-evidence/zoom-200-en.png": {
+      "sha256": "ad3da2339c40ed05a27eba33df4fadac5c6848afcabbae95c54ed9e496aeabe8",
+      "bytes": 104869
+    },
+    "review-evidence/zoom-200-zh.png": {
+      "sha256": "9c5a95b333423bd98d7eff46747af729f125ce2659f479d66f4e0dfc7a614d48",
+      "bytes": 107018
+    },
+    "review-final.json": {
+      "sha256": "a7cdad6bec3f3e23e5e433907ea16f0e5f07bd510d352cc08521f4b4e9d42615",
+      "bytes": 696
+    },
+    "review-run.json": {
+      "sha256": "5849f3d908609dc9ff57c070afc8874b05aa86c722f9e15ed82db53ecc1e30bd",
+      "bytes": 1222
+    },
+    "snapshot.json": {
+      "sha256": "b8ffed87844882477626daf578617671ff3b6a041e3293c3713a5a07f88f8f59",
+      "bytes": 9908
+    }
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "captured_at": "2026-10-25T23:11:45.930899+00:00",
+  "state_status": "running",
+  "current": {
+    "problem_id": "878",
+    "stage": "author",
+    "started_at": "2026-10-25T23:11:30.966203+00:00",
+    "run_id": "878-author-004c6e7e9e78"
+  },
+  "expected_head": "cf1a31fc75c66ca79e54513e050b7e0ba31b6e70",
+  "entry871": {
+    "status": "accepted_local",
+    "rounds": 1,
+    "new": true,
+    "phase": "done",
+    "reviews": [
+      {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          3,
+          4,
+          4,
+          4,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/871-review-1-04735bd3.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Canonical Python passed fresh predictions and 600 independent oracle cases.",
+          "Bilingual controls, rewind, prediction changes, source parity and native fallback copying passed.",
+          "Inspected 320/390/desktop and 200% magnification screenshots.",
+          "Served assets matched candidate bytes; metadata preflight exited 0."
+        ],
+        "detail": "Accepted at 95/100. One optional advisory concerns unexplained baseline for/else syntax. Limitations are recorded in the report.",
+        "run_id": "871-review-5c5479d608a1",
+        "candidate": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+        "candidate_sha256": "216983774600286f9d2b2f43de5e1a41b40a4e358facf68bf80683816d59cd6a",
+        "weighted_score": 95.0,
+        "round": 1,
+        "commit": "2e82ac5c816dc4372b8ce83dd6afaabea1a93bf7"
+      }
+    ],
+    "author_runs": [
+      "871-author-3c117e1396eb"
+    ],
+    "prior_report": "specs/reviews/871-review-1-04735bd3.md",
+    "candidate": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+    "registration_commit": "cf1a31fc75c66ca79e54513e050b7e0ba31b6e70",
+    "accepted_at": "2026-10-25T23:11:28.461449+00:00"
+  },
+  "target_review": {
+    "outcome": "accepted",
+    "scores": [
+      4,
+      3,
+      4,
+      4,
+      4,
+      4
+    ],
+    "required_open": [],
+    "report_path": "specs/reviews/871-review-1-04735bd3.md",
+    "evidence": [
+      "Cold browser walkthrough saved before source audit.",
+      "Canonical Python passed fresh predictions and 600 independent oracle cases.",
+      "Bilingual controls, rewind, prediction changes, source parity and native fallback copying passed.",
+      "Inspected 320/390/desktop and 200% magnification screenshots.",
+      "Served assets matched candidate bytes; metadata preflight exited 0."
+    ],
+    "detail": "Accepted at 95/100. One optional advisory concerns unexplained baseline for/else syntax. Limitations are recorded in the report.",
+    "run_id": "871-review-5c5479d608a1",
+    "candidate": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+    "candidate_sha256": "216983774600286f9d2b2f43de5e1a41b40a4e358facf68bf80683816d59cd6a",
+    "weighted_score": 95.0,
+    "round": 1,
+    "commit": "2e82ac5c816dc4372b8ce83dd6afaabea1a93bf7"
+  },
+  "candidate": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+  "review_commit": "2e82ac5c816dc4372b8ce83dd6afaabea1a93bf7",
+  "registration_commit": "cf1a31fc75c66ca79e54513e050b7e0ba31b6e70",
+  "lesson_trees": {
+    "candidate": "55211525a9da0e67bb71226b60f16768ef948c74",
+    "review": "55211525a9da0e67bb71226b60f16768ef948c74",
+    "registration": "55211525a9da0e67bb71226b60f16768ef948c74"
+  },
+  "review_changed_paths": [
+    "specs/reviews/871-evidence/871-review-1-04735bd3/asset-diagnostics.json",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/browser-result.json",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/cold-counterexample.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/cold-desktop.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/core-result.json",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/independent-overlap-320-en.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/independent-overlap-320-zh.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/oracle-fixtures.json",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/preset-320-en.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/preset-320-zh.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/python-result.json",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/served-hashes.json",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-1440-en.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-1440-zh.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-320-en.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-320-zh.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-390-en.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-390-zh.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-736-en.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-736-zh.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/zoom-200-en.png",
+    "specs/reviews/871-evidence/871-review-1-04735bd3/zoom-200-zh.png",
+    "specs/reviews/871-review-1-04735bd3.md"
+  ],
+  "review_evidence_inventory": {
+    "specs/reviews/871-evidence/871-review-1-04735bd3/asset-diagnostics.json": {
+      "sha256": "1423eadd5cebbe534986f100178af56c382fb8849213972f1df4ae099de417d8",
+      "bytes": 262,
+      "archived": true
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/browser-result.json": {
+      "sha256": "9b1dc1b663f501167d881d61d5a512cb8095595e63ed27286d86b631da48dd00",
+      "bytes": 11747,
+      "archived": true
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/cold-counterexample.png": {
+      "sha256": "6510cb593ad6e30aa0ddb4aa8b6980cc60b11ee0d3e0375b7c1360e0184002f9",
+      "bytes": 803617,
+      "archived": true
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/cold-desktop.png": {
+      "sha256": "8ba0bd1b6f1b4651121e1bfb8c42b82b542f2c6c71ded5a462e4cb6803ab35b4",
+      "bytes": 776802,
+      "archived": false
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/core-result.json": {
+      "sha256": "88fb3423f0f9c19ec829f053b286f640a243f3f3b9ba44d3c64651bebda6374d",
+      "bytes": 179,
+      "archived": true
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/independent-overlap-320-en.png": {
+      "sha256": "e92f8295748a9044188e87bb5053e96c2993f030affd5f17adfbeb976692cce4",
+      "bytes": 58586,
+      "archived": true
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/independent-overlap-320-zh.png": {
+      "sha256": "d46d14938422a3d1063124454440796ddd796db4abf6bb5579231d97f930456c",
+      "bytes": 69386,
+      "archived": true
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/oracle-fixtures.json": {
+      "sha256": "c71ff10dc0fa95fa675fc47b6a77888d73682a2fad5dd39083889e6d53fdf23a",
+      "bytes": 1024030,
+      "archived": true
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/preset-320-en.png": {
+      "sha256": "060954e3a45c3164bfc4b2403b25e0be7bc64d4cb80fa4a0f0ea196e9833f0ce",
+      "bytes": 70093,
+      "archived": false
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/preset-320-zh.png": {
+      "sha256": "e1b9354d5120fa7b419b65a2af03eb09aa2e4759895bc606fa7e8804fefa89dc",
+      "bytes": 93702,
+      "archived": false
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/python-result.json": {
+      "sha256": "0e6ea0d32ffbb0bb613e57813b8758f912bffb44e3416bc5d06aca8aadcfd1eb",
+      "bytes": 54,
+      "archived": true
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/served-hashes.json": {
+      "sha256": "212e6bb9c936d9e3e8406e2cc7f68769e6421cfc8c3cf95f5e9c9ea4a6cae55e",
+      "bytes": 756,
+      "archived": true
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-1440-en.png": {
+      "sha256": "613602cc292181c5b5084eb84c5ed49d7105a4b85165ca74ea553671f095f0fa",
+      "bytes": 125199,
+      "archived": false
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-1440-zh.png": {
+      "sha256": "c67395ff1438e9814ff94cbaf4fabb60bbf2bb11a5bc6e2c0e65457d4679c689",
+      "bytes": 165959,
+      "archived": false
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-320-en.png": {
+      "sha256": "cb7011a8a55b404fdda0c63ddf92bc11bcfb23ae600a0c92c66305a1cad62772",
+      "bytes": 51924,
+      "archived": false
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-320-zh.png": {
+      "sha256": "aab4655685388547141bc7d73082cd8644a05fce63f9f98836dd026cfa727555",
+      "bytes": 74064,
+      "archived": false
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-390-en.png": {
+      "sha256": "836d6571cda06eac86f13cbaf231dc15ec65c38a80384817ca92329b9c2eee83",
+      "bytes": 62269,
+      "archived": false
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-390-zh.png": {
+      "sha256": "9ad7b1744eed8bc384c895618a6ee33059ee3d09664b480dea8b818e101c5bcd",
+      "bytes": 87595,
+      "archived": false
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-736-en.png": {
+      "sha256": "ffc42f31e8041736a8530c3c8009fa27ffcf36a3dbecc175067d611e36ff84c2",
+      "bytes": 109836,
+      "archived": false
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/state-736-zh.png": {
+      "sha256": "e29836a1633f0fec5e60fd32bfe9b9976aa71107cbdc00af930eef5121999867",
+      "bytes": 141625,
+      "archived": false
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/zoom-200-en.png": {
+      "sha256": "ad3da2339c40ed05a27eba33df4fadac5c6848afcabbae95c54ed9e496aeabe8",
+      "bytes": 104869,
+      "archived": true
+    },
+    "specs/reviews/871-evidence/871-review-1-04735bd3/zoom-200-zh.png": {
+      "sha256": "9c5a95b333423bd98d7eff46747af729f125ce2659f479d66f4e0dfc7a614d48",
+      "bytes": 107018,
+      "archived": true
+    }
+  },
+  "stop_present": false
+}

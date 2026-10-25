@@ -1,0 +1,34 @@
+{
+  "id": "871-review-5c5479d608a1",
+  "problem_id": "871",
+  "role": "review",
+  "started_at": "2026-10-25T23:07:01.674474+00:00",
+  "status": "completed",
+  "candidate": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+  "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/871-review-5c5479d608a1",
+  "session_ids": [
+    "01a17551-4500-7f91-b832-4d15fa2f15fa"
+  ],
+  "finished_at": "2026-10-25T23:11:16.629617+00:00",
+  "result": {
+    "outcome": "accepted",
+    "scores": [
+      4,
+      3,
+      4,
+      4,
+      4,
+      4
+    ],
+    "required_open": [],
+    "report_path": "specs/reviews/871-review-1-04735bd3.md",
+    "evidence": [
+      "Cold browser walkthrough saved before source audit.",
+      "Canonical Python passed fresh predictions and 600 independent oracle cases.",
+      "Bilingual controls, rewind, prediction changes, source parity and native fallback copying passed.",
+      "Inspected 320/390/desktop and 200% magnification screenshots.",
+      "Served assets matched candidate bytes; metadata preflight exited 0."
+    ],
+    "detail": "Accepted at 95/100. One optional advisory concerns unexplained baseline for/else syntax. Limitations are recorded in the report."
+  }
+}

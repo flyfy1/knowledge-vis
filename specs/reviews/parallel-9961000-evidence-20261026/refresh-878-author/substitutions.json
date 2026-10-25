@@ -1,0 +1,22 @@
+[
+  [
+    "CENTRAL_HEAD='6c68b23cc306067de5a912195a3c7edeebc2a0be'",
+    "CENTRAL_HEAD='cf1a31fc75c66ca79e54513e050b7e0ba31b6e70'"
+  ],
+  [
+    "CENTRAL_RUN='871-review-5c5479d608a1'",
+    "CENTRAL_RUN='878-author-004c6e7e9e78'"
+  ],
+  [
+    "s['current']['problem_id']=='871'",
+    "s['current']['problem_id']=='878'"
+  ],
+  [
+    "s['current']['stage']=='review'",
+    "s['current']['stage']=='author'"
+  ],
+  [
+    "'01a17551-4500-7f91-b832-4d15fa2f15fa'",
+    "'01a17555-5f63-7560-97fa-cc0c74925f3f'"
+  ]
+]

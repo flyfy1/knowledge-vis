@@ -1,0 +1,17 @@
+{
+  "observed_at": "2026-10-25T23:12:44.987309+00:00",
+  "comparison": {
+    "base": true,
+    "central_head": true,
+    "central_expected_head": true,
+    "central_current": true,
+    "central_runner_pid": true,
+    "central_session": true,
+    "central_native": true,
+    "policy_sha256": true,
+    "995_queued_handoff_receipt_sha256": true,
+    "approved_995_queued_handoff_pins_sha256": true
+  },
+  "memory": 1958124,
+  "reservations": 41
+}

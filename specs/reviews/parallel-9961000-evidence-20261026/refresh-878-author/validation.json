@@ -1,0 +1,18 @@
+{
+  "status": "prepared-awaiting-independent-review",
+  "launchExecuted": false,
+  "piMutation": false,
+  "testsPassed": 6,
+  "sha256": {
+    "README.md": "2b14dcbb09dfa7431d254164700f9c53e5e3cf3b56dfe6e8b6e2a9b49cbaa3a9",
+    "launch.diff": "8c8b9a73e55a89546f75908d60afe74a495913983c2c84d971a24612a8100f31",
+    "launch.py": "d58b169d614e1042a82284103ac809877e78803a41d4a5445bd00588b5d05560",
+    "preflight.json": "91054d91067f661d3dfb8668d7856a40fcc9359487e294ee43509429e84d7676",
+    "preflight.py": "d14d4e15b4fa53ff8a384b01e8a351d7e178af328bf5291cfdc7458c4c7e09be",
+    "preflight.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preflight.stdout": "91054d91067f661d3dfb8668d7856a40fcc9359487e294ee43509429e84d7676",
+    "substitutions.json": "7085035c775186545b0575825a258d03f745e89c5087de883c9579c94cf58363",
+    "test_refresh.py": "c6d72eb97dc872d0ae192c15e82f96bf0f6d97e1d4431ea02524ac2928c5c35a",
+    "tests.log": "b99ea75adc0304a440a1a65cf3723c543bcccad36527001d7b568fda664a1f82"
+  }
+}
