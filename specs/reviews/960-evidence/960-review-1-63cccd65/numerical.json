@@ -1,0 +1,13 @@
+{
+  "kind": "author numerical self-check",
+  "cases": 7064,
+  "exhaustive": "binary matrices n=1,m<=8; n=2,m<=5; n=3,m<=4",
+  "seed": 960,
+  "randomCases": 500,
+  "baselineCode": "executed on 500 seeded cases",
+  "officialExamples": "pass",
+  "maxBounds": "pass",
+  "mutation": "unchanged",
+  "copyKeys": 86,
+  "mirror": "exact"
+}
