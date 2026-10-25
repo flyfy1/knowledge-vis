@@ -1405,3 +1405,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Greedy exchange proof | `leetcode/757/#step2` | Move required points right while preserving a feasible optimal extension. |
 
 <!-- /leetcode-757-campaign -->
+
+
+<!-- leetcode-761-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Prefix balance and minimal special blocks | `leetcode/761/#step1` | Zero returns locate the boundaries of indecomposable special substrings. |
+| Recursive canonicalization | `leetcode/761/#step2` | Optimize the interior, preserve its shell, then sort siblings. |
+| Prefix-free sibling exchange proof | `leetcode/761/#step3` | Minimal special blocks justify ordinary descending lexical sorting. |
+
+<!-- /leetcode-761-campaign -->
