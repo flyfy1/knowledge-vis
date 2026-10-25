@@ -1,0 +1,361 @@
+{
+  "status": "frozen-accepted-pair",
+  "ids": [
+    "996",
+    "1000"
+  ],
+  "lanes": {
+    "996": {
+      "head": "af88d4a6f1c7727420c024fe3abce66c795fccb0",
+      "entry": {
+        "status": "accepted_local",
+        "rounds": 2,
+        "new": true,
+        "phase": "done",
+        "reviews": [
+          {
+            "outcome": "changes_required",
+            "scores": [
+              4,
+              4,
+              4,
+              4,
+              3,
+              4
+            ],
+            "required_open": [
+              "996-R1-COST-01"
+            ],
+            "report_path": "specs/reviews/996-review-1-1d9a6502.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source inspection.",
+              "Canonical Python passed fresh examples and boundary checks.",
+              "Both locales passed interaction, clipboard fallback, and exact source-parity checks.",
+              "320/390/desktop layouts and 200% CSS zoom inspected.",
+              "Metadata preflight exited 0.",
+              "Fixed-k checks exposed omitted O(n) preprocessing work."
+            ],
+            "detail": "96.25/100. Required correction: both languages should state O(n + k\u00b2) preprocessing, accounting for Counter(nums).",
+            "run_id": "996-review-67e31a100281",
+            "candidate": "f3eec8c23092990d0309b8f227d5e2a2cf233d1d",
+            "candidate_sha256": "ac3efcd80cda6c9f907b5b9df2eae14c52f96fb7fa3b1ec7bc4c7da7b8de4519",
+            "weighted_score": 96.25,
+            "round": 1,
+            "commit": "03cdc24b4aadb90bbe616279aeccf093c0267c91"
+          },
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/996-review-2-f1f3e97e.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source inspection.",
+              "Fresh canonical Python checks: [2,2,7] \u2192 3; [1,1,3] \u2192 1.",
+              "Both locales, keyboard, rewind/reset, narrow layouts and 200% CSS zoom checked.",
+              "Exact source, clipboard fallback and download parity passed.",
+              "Non-mutating metadata preflight passed; 996-R1-COST-01 closed."
+            ],
+            "detail": "100/100 for the frozen candidate. Report documents limitations and one process deviation: author contrast evidence was regenerated with identical bytes; no tracked content changed.",
+            "run_id": "996-review-29cd3a98b546",
+            "candidate": "0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38",
+            "candidate_sha256": "90a85bc0f836913fcd93ab14c8bd7c2046381ed883652e32b62899520db6e96f",
+            "weighted_score": 100.0,
+            "round": 2,
+            "commit": "82715e0ead4491d2c2020432b6011a25a5ba52db"
+          }
+        ],
+        "author_runs": [
+          "996-author-9180dd0f5b54",
+          "996-fix-c44013a158e2"
+        ],
+        "prior_report": "specs/reviews/996-review-2-f1f3e97e.md",
+        "candidate": "0cd4cc9fd8de9a9e349a8d9c74313cb7c3ec3b38",
+        "registration_commit": "af88d4a6f1c7727420c024fe3abce66c795fccb0",
+        "accepted_at": "2026-10-25T23:37:34.744167+00:00"
+      },
+      "entry_sha256": "410f951b7f7eff843dd279464f1fe84ebe2f06f0550cd4c2125d5d2c8d433e2f",
+      "runs_sha256": "4bb32832cc9aecfaa14a4247f64a1d1d8bb3059a1bf4b0c9d5715c05948c7b5c",
+      "progress_sha256": "03bd07ee536f8ea71ed5d9575581d551f4cd4f2ec7bf962a387044f3abeb4bf4",
+      "report_sha256": "69d4dfb73a45d6d05f298390e01c194b0b8f1c151cc39c6235092c73b4ed8cea",
+      "reservation": {
+        "id": "996",
+        "base": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+        "repo": "/home/songyy/projects/leetcode-hard-lane-996-20261026",
+        "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026",
+        "port": 18799,
+        "nice": 10,
+        "status": "started",
+        "started_at": "2026-10-25T23:14:09.786115+00:00",
+        "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+        "publication_enabled": false,
+        "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+        "runner_pid": 1871480,
+        "observed_current": {
+          "problem_id": "996",
+          "stage": "author",
+          "started_at": "2026-10-25T23:14:30.395999+00:00",
+          "run_id": "996-author-9180dd0f5b54"
+        }
+      }
+    },
+    "1000": {
+      "head": "30516661a5cfc0673c2dcfaa018444e2ffa2c85b",
+      "entry": {
+        "status": "accepted_local",
+        "rounds": 1,
+        "new": true,
+        "phase": "done",
+        "reviews": [
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              3,
+              4,
+              4,
+              4,
+              3
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/1000-review-1-9b1fcffc.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source inspection.",
+              "Fresh canonical Python checks confirmed costs 10 and 48, with intermediate states and nonmutation verified.",
+              "Bilingual rewind, reset, prediction changes, keyboard and source-transfer checks passed.",
+              "320/390/desktop layouts and 200% CSS zoom exercised; screenshots inspected.",
+              "Non-mutating metadata preflight exited 0."
+            ],
+            "detail": "92.5/100. Accepted for revision 20f52a5cf74957ddacf1a7627ed882defe6a70f5. No required findings remain. Publication and human comprehension were not assessed.",
+            "run_id": "1000-review-0970e8f06123",
+            "candidate": "20f52a5cf74957ddacf1a7627ed882defe6a70f5",
+            "candidate_sha256": "b720eda1914b75f8670cea7ace9d84c0865cab5920226173ed0acc5e1ef6cfe8",
+            "weighted_score": 92.5,
+            "round": 1,
+            "commit": "134bfbe9767a8f92fa3f1263c1f2c2d7a3485b4d"
+          }
+        ],
+        "author_runs": [
+          "1000-author-3a58ffe68610"
+        ],
+        "prior_report": "specs/reviews/1000-review-1-9b1fcffc.md",
+        "candidate": "20f52a5cf74957ddacf1a7627ed882defe6a70f5",
+        "registration_commit": "30516661a5cfc0673c2dcfaa018444e2ffa2c85b",
+        "accepted_at": "2026-10-25T23:33:39.067860+00:00"
+      },
+      "entry_sha256": "71f5eeb2d1f8b082cb3eb217eb5519350931c75b2614dbd85be74d71e77955c5",
+      "runs_sha256": "1d56ac9d7c906ec2cb19ca5b8858dceb5daf773337a688991aaa52025026bdaa",
+      "progress_sha256": "63549e97efd5ef488659eb9fb60b22044a626bfcb981ab9b6dc22c9ba7157c78",
+      "report_sha256": "d94c1be8a7b78bf12785345fd3f2e03e3596cc2dfbbb210641dee9399bff3ce5",
+      "reservation": {
+        "id": "1000",
+        "base": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+        "repo": "/home/songyy/projects/leetcode-hard-lane-1000-20261026",
+        "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026",
+        "port": 18800,
+        "nice": 10,
+        "status": "started",
+        "started_at": "2026-10-25T23:14:32.123201+00:00",
+        "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+        "publication_enabled": false,
+        "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+        "runner_pid": 1871874,
+        "observed_current": {
+          "problem_id": "1000",
+          "stage": "author",
+          "started_at": "2026-10-25T23:14:51.757178+00:00",
+          "run_id": "1000-author-3a58ffe68610"
+        }
+      }
+    }
+  },
+  "lane_base": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+  "queue_sha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+  "policy": {
+    "scripts/import_leetcode_lane.py": "8642a573383d052ce6e227bd8c2374f9c50f2fc1e8e9b312a6186607015344e0",
+    "scripts/leetcode_campaign.py": "a1258a0e7eba60e1d813bf0f9ede57a71f92cd504f6afb7bd0553d68d41c65ed",
+    "scripts/leetcode_publish.py": "7292c88e2ae035667a1bc723b076fb3d8d3d8562dc8428f3f66f74dc60f764d8",
+    "scripts/leetcode_registry.py": "a23b9b9e4feec966969c0b4c60f16e19cc2616ea0e1b2e587d15605e739349d6",
+    "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+    "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+    "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+    "scripts/campaign-prompts/author.md": "5f7feaa56f9f8f1f3f434e1fe4576cc2a10da21594c9aef829cab86e69dae06b",
+    "scripts/campaign-prompts/review.md": "129537defd8df8fda1c84c3bea80b62c8c717275f558128d8b62b02319838a1b",
+    "scripts/campaign-prompts/fix.md": "176376ca977b1b8e0f4444612efdf91b8a7d49e1f1c614e8985544828bb774d4",
+    "specs/reviews/workflow-copy-repair-requests-20261026/780.md": "79235a599df5139b2e8dc1c2a51fe673fd7b28bf46b2d3a3bbec34a1b22e280b",
+    "specs/reviews/workflow-copy-repair-requests-20261026/793.md": "ff52e23452b5099a60fc80e9a9fe1bed1e0840d4408c66793509335edb7536e5",
+    "specs/reviews/workflow-copy-repair-requests-20261026/798.md": "da3da5361f94e48e2a91ddb39e537146f2aff9939b7220b17a368f884d151318",
+    "specs/reviews/workflow-copy-repair-requests-20261026/801.md": "8bf72192c53809c60cf6bedf2379af8c185ce775346f4de59d0eee598af4b83a",
+    "specs/reviews/workflow-copy-repair-requests-20261026/815.md": "5c9697057a2218726823f12e58494fedde6221d5d19d87da9a1a8a25cd76977a",
+    "specs/reviews/workflow-copy-repair-requests-20261026/903.md": "5227f5ede9949c1bc677c06fa8c6a2a940dabf4e43b41829ef8be64750ad0476",
+    "specs/reviews/workflow-copy-repair-requests-20261026/920.md": "70b97c693528cb26a70d8f1ad8497c9d96812ab551704090f6d24057146e666e",
+    "specs/reviews/workflow-copy-repair-requests-20261026/940.md": "56df85c64f2ae135ce2d8323c052eba978bb50b231d899c840b2a07a0e6a5981",
+    "specs/reviews/workflow-copy-repair-requests-20261026/956.md": "635cfac82ede95dbb081fa8ced9935b28d0234fed4928ea9b5d10bd7d2f7e77f",
+    "specs/reviews/workflow-copy-repair-requests-20261026/README.md": "9c7747a2a299d19d3c3b329fa9d4a423fe2403141e3b4fd6484878bb8ee7584a",
+    "scripts/register_leetcode_lesson.py": "7ba274cd733a36528d98c85fe87b46d5535bc34898567b0c14f36fda37f81310",
+    "scripts/leetcode_static_versions.py": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e"
+  },
+  "launcher_sha256": "94056740463e5f9ec4fe63d0d2c56d1ccbf1ab60556f7952580fe58512127e70",
+  "central": {
+    "head": "3f86d6a43303d4dedcc1f9e2aafe1449e8fd43af",
+    "current": {
+      "problem_id": "879",
+      "stage": "author",
+      "started_at": "2026-10-25T23:37:31.121338+00:00",
+      "run_id": "879-author-ce034589b597"
+    },
+    "runner_pid": 1865819,
+    "resume_plan": {
+      "next_problem_id": "879",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992"
+        ],
+        "incoming": [
+          "1000",
+          "996"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "1000",
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992",
+          "996"
+        ],
+        "upper_bound": 11
+      }
+    }
+  },
+  "release": {
+    "id": "84dfd908f5c94592918eb4ecb72eb87e",
+    "revision": "7fd4aa457c318f053d7dc722fd63b3012bccb838",
+    "receipt_sha256": "218c639dab100046ba7cd6f687a13d769a230b2d601d9b33346dd78835023014",
+    "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6"
+  },
+  "queued995_capture": {
+    "entry": {
+      "status": "changes_required",
+      "rounds": 1,
+      "new": true,
+      "phase": "fix",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/995-review-1-c18c137a.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.",
+            "Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.",
+            "Non-mutating metadata preflight exited 0."
+          ],
+          "detail": "95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication.",
+          "run_id": "995-review-f5d78a25ecbc",
+          "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+          "candidate_sha256": "20e4b739f8b1a7fae70008c3172e060d0b2c28876e550fab8aaed24fcf3942c4",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "5a5cd3c329aec4854ea61f0ae5d15b1826f94a21"
+        }
+      ],
+      "author_runs": [
+        "995-author-ab095f2912c3"
+      ],
+      "prior_report": "specs/reviews/995-teaching-copy-repair-request-20261026.md",
+      "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c"
+    },
+    "entry_sha256": "c994bf1e89411e8f4e8313877786a0c2de764ec5799f8ff780345869fd20bfdc",
+    "runs_sha256": "a55847db4d416108dab4de3ed25783f854881997a8ed74ba13709c246aba70d1",
+    "maintenance": [
+      {
+        "kind": "reopen-accepted-995-copy",
+        "request_id": "995-COPY-R1",
+        "at": "2026-10-25T23:06:36.491432+00:00",
+        "source_revision": "f090946dfb330ae3eb4a423b1ad3b367b83d8890",
+        "before": "ed09b7a448393b2c7b0084f36c198354a6c0d1ea",
+        "prior_accepted_entry": {
+          "status": "accepted_local",
+          "rounds": 1,
+          "new": true,
+          "phase": "done",
+          "reviews": [
+            {
+              "outcome": "accepted",
+              "scores": [
+                4,
+                3,
+                4,
+                4,
+                4,
+                4
+              ],
+              "required_open": [],
+              "report_path": "specs/reviews/995-review-1-c18c137a.md",
+              "evidence": [
+                "Cold browser walkthrough saved before source inspection.",
+                "Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.",
+                "Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.",
+                "Non-mutating metadata preflight exited 0."
+              ],
+              "detail": "95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication.",
+              "run_id": "995-review-f5d78a25ecbc",
+              "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+              "candidate_sha256": "20e4b739f8b1a7fae70008c3172e060d0b2c28876e550fab8aaed24fcf3942c4",
+              "weighted_score": 95.0,
+              "round": 1,
+              "commit": "5a5cd3c329aec4854ea61f0ae5d15b1826f94a21"
+            }
+          ],
+          "author_runs": [
+            "995-author-ab095f2912c3"
+          ],
+          "prior_report": "specs/reviews/995-review-1-c18c137a.md",
+          "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+          "registration_commit": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+          "accepted_at": "2026-10-25T22:36:24.169208+00:00"
+        },
+        "previous_current": {
+          "problem_id": "871",
+          "stage": "author",
+          "started_at": "2026-10-25T22:55:31.562794+00:00",
+          "run_id": "871-author-3c117e1396eb"
+        },
+        "after": "6c68b23cc306067de5a912195a3c7edeebc2a0be"
+      }
+    ],
+    "request_sha256": "e68c8e47386c982e7545212213fcdc3905a4270a6f885ff474484d8a0290270b",
+    "handoff_receipt_sha256": "86159f93f1a918035f10c47c6bbda09409b8a914c0320dfee40551b305eed343",
+    "publication_ineligible": true
+  }
+}

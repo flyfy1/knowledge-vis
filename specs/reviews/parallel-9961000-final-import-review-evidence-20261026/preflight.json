@@ -1,0 +1,162 @@
+{
+  "observation": {
+    "observed_at": "2026-10-25T23:41:00.414276+00:00",
+    "read_only": true,
+    "head": "3f86d6a43303d4dedcc1f9e2aafe1449e8fd43af",
+    "current": {
+      "problem_id": "879",
+      "stage": "author",
+      "started_at": "2026-10-25T23:37:31.121338+00:00",
+      "run_id": "879-author-ce034589b597"
+    },
+    "central_progress_sha256": "94e96e67d1c07ee0064dcc255a685e5e859b3ac9b8f948de7d416d0fdca8740f",
+    "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+    "resume_plan": {
+      "next_problem_id": "879",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992"
+        ],
+        "incoming": [
+          "1000",
+          "996"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "1000",
+          "854",
+          "857",
+          "862",
+          "864",
+          "871",
+          "878",
+          "982",
+          "987",
+          "992",
+          "996"
+        ],
+        "upper_bound": 11
+      }
+    },
+    "central_runner_pid": 1865819,
+    "native_proof": {
+      "current": {
+        "problem_id": "879",
+        "stage": "author",
+        "started_at": "2026-10-25T23:37:31.121338+00:00",
+        "run_id": "879-author-ce034589b597"
+      },
+      "session_id": "01a1756d-2f73-7060-8df8-f3bacfc08a6b",
+      "native_codex_pids": [
+        1900058
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a1756d-2f73-7060-8df8-f3bacfc08a6b"
+        },
+        {
+          "type": "turn.started"
+        }
+      ]
+    },
+    "native": {
+      "args": [
+        "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex",
+        "exec",
+        "-m",
+        "gpt-6.1-sol",
+        "-c",
+        "model_reasoning_effort=\"medium\"",
+        "-c",
+        "approval_policy=\"never\"",
+        "--sandbox",
+        "danger-full-access",
+        "--json",
+        "-o",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/879-author-ce034589b597/final.json",
+        "--output-schema",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/879-author-ce034589b597/schema.json",
+        "-C",
+        "/home/songyy/projects/leetcode-hard-campaign-20261018",
+        "-"
+      ],
+      "ppid": 1900051,
+      "cwd": "/home/songyy/projects/leetcode-hard-campaign-20261018"
+    },
+    "current_prompt_sha256": "621977906d763e3e837024da4a23da46f16b073d9e2d00103289078bd9293a1a",
+    "allowed_dirty_scope": {
+      "stage": "author",
+      "prefix": "leetcode/879/",
+      "trackedChangesAllowedWithinPrefix": true
+    },
+    "current_dirty_paths": [
+      "?? leetcode/879/BRIEF.md",
+      "?? leetcode/879/core.js",
+      "?? leetcode/879/lesson-entry.json",
+      "?? leetcode/879/provenance/official.json",
+      "?? leetcode/879/python-code.js",
+      "?? leetcode/879/solution.py",
+      "?? leetcode/879/style.css"
+    ],
+    "lane_processes_absent": true,
+    "queue_count": 984,
+    "lane_base_same_shared": true,
+    "reservation_hashes": {
+      "lane-964-reservation.json": "1391726fbffbaed6867556691ab3562eb7671d34e29ae4a25f6a686782c77e7b",
+      "lane-689-reservation.json": "957831825f83cca2a81d1495f5931a5359be35ceda528a1c87c1c95e489738a1",
+      "lane-493-reservation.json": "bd5d56429c319dd527b5ad22901a1cd3aab373c1f56bfa06343775c50db1646a",
+      "lane-675-reservation.json": "87df66947101571a188f25df599bf1238a5561d5c4867289261ead14f3834411",
+      "lane-514-reservation.json": "e7fe9cbfba39aef217a9019b7a12ca2ecfc9a47a346e3f96d9e914decc8a6172",
+      "lane-940-reservation.json": "5b76e20709a6c9eeeddaf7c42163e8cf9ef98b43b8229d274d92c3f282a7d0c0",
+      "lane-591-reservation.json": "535dfc500dccf1643e6242d21a182558d5b85d128a01a53271cd2d26a1614431",
+      "lane-996-reservation.json": "69ed9909c0589b848674121387cdb5f157069f0ecf49f8c2dda7b9c399633b59",
+      "lane-691-reservation.json": "98030c13682c693724ae81a11b79abd53f43b1515a943cbcf3098a0ce924eb5d",
+      "lane-719-reservation.json": "fc2adb66f580defa40a497604adcc5aaecff21b479448cc571c8e09e29fd56c6",
+      "lane-730-reservation.json": "20427007930c034eea0211f8b854b3a4ae6169b2b328ecda4adba73fa3f89a3c",
+      "lane-975-reservation.json": "5f1d4b55b4f872626f2ee855e61a7d1b989b1d8fb863818a18b7f213fd573dfe",
+      "lane-920-reservation.json": "014e874bb8c8233273adab34d4955eec74129d58468bf2c293e951de5c64777a",
+      "lane-903-reservation.json": "5b06657652d970bc8c8355daa26df21aa24df481506139d3b6b65d6b953aad2c",
+      "lane-732-reservation.json": "8e7e3e7a702ea3d53fc561a001c56a895a805ecd2a5f59ae077252586489f78a",
+      "lane-668-reservation.json": "efa5d6646bc5cd9401b6606cadf5327af2150690973e3b6136f9b94df081880a",
+      "lane-1000-reservation.json": "7e03882bd90dca65f3fe116378387f123eda2609b72f29a082c134a94d3dc39c",
+      "lane-685-reservation.json": "56aed95f678dc1d8d91fe8e675b523c4f8d22c0892bc86d2fb2708739e17d751",
+      "lane-679-reservation.json": "aefea8a9b6b11aae939883a8d7368989d61c36a8c7e8f70f41b7da05cf441a56",
+      "lane-630-reservation.json": "5f858def91db8e6047aef65a989e23de92bc3fad11956d44c1041b74cd9a9e59",
+      "lane-992-reservation.json": "743847f0bae29bdb02c0457de911b86a9624d3fac06fda0e5ed3131524d7dd67",
+      "lane-956-reservation.json": "2d803b066a25cecb5e11b79795207973d5139ac4160a7b612f908f9c6ff9e2c1",
+      "lane-587-reservation.json": "f1b39130581fbf4b564480a095b02059dac564627b345e17616ea3b129807c8f",
+      "lane-726-reservation.json": "a063db9317c0b9296cf4ae00ab8a22e69fbaa5f6ab1543d8ff23d329afbbdf81",
+      "lane-715-reservation.json": "b25d3d805556cae8ec64562843965ddb47f654391d0c3115a2c6f607ef66cb3c",
+      "lane-632-reservation.json": "72ccc9eb1d331edf2bcedbf81cd594e3462118eaa657557af04c9ef687179ee3",
+      "lane-995-reservation.json": "7ccb873defeb0ac608d3553fb52d91a4d8d6327e20b7d8f2b19a77c86ed51ed2",
+      "lane-987-reservation.json": "3630636658d7a226112b861b2db4cb965dedff2572c0e66a8d08bed3697715f6",
+      "lane-805-reservation.json": "0bf09414ce4f665a4c1a86696edc8a31f5d14ffc446489bbb230a25f424c450c",
+      "lane-600-reservation.json": "dfe301eaca4783047f0f72f50686a54395b139b1c0e1b7165e32094e2fd568c1",
+      "lane-629-reservation.json": "57960b62012cf346e8bd01b0cdf56d193438c86fdc400cbec5498a494b07a580",
+      "lane-639-reservation.json": "da5c5716212986b8673f02442685fd2a3020fa1c817474507192bbf09785b2bc",
+      "lane-546-reservation.json": "8a54265d4b218e2c24b313d3bfba83b88c710a04818558539d26d55cfa22f46e",
+      "lane-972-reservation.json": "730e84123d5ba2078f1365fbedc3a93d153f4f0ba1af6474f713767acab51b13",
+      "lane-803-reservation.json": "43180abdc6b7b9536314bb24d41b327b330440b78b6ac38dacb2ab511baeb15c",
+      "lane-664-reservation.json": "6945aabd7f0ed8f16d7b51c609fda8e2915e201fe610e23fe615843dc5832f45",
+      "lane-982-reservation.json": "b7c9a16c2df5c48aded36075f9a88b9bbd6629ebcad00048d81a57b888d119e2",
+      "lane-968-reservation.json": "78f6300b81f4ed440c7c852a41c86d4f2de84bfa71b719855d3942738e93f42d",
+      "lane-517-reservation.json": "80c1825b01216de411d0e6f801608c8c5d9d4e18d954c85f17cfb7c80a3c6af1",
+      "lane-699-reservation.json": "e6c7488e18c4fbe6a3e3731b967451ce1b04717004fcab2042e9fe3b4e6c22e9",
+      "lane-980-reservation.json": "8950c15acc28f73cc68cc461235c85b251b62f1cafa3ac2c8767bb4adf71b6ba",
+      "lane-552-reservation.json": "c2358e06a98890b7dd2e0378aa9de2170c3da7d978d57c93d73b077971a27b39",
+      "lane-960-reservation.json": "177a719d6c687d7da3cadceabaeb97095136c547db8068b778d7cf16f548011e"
+    }
+  },
+  "pinsMatch": true
+}

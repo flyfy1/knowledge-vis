@@ -1,0 +1,11 @@
+--- disabled/operate.py
++++ final-ready/operate.py
+@@ -14,7 +14,7 @@
+ 
+ OWNER='import9961000-only-20261026-641c280f'
+ DISPATCH='root-reviewed-import9961000-only-20261026-641c280f'
+-PINS_SHA=None  # Disabled preparation: both completed acceptance pins and fresh review are required.
++PINS_SHA='d5842e36977e38f3bcc095d9610818af577c778307664ab498352b3feeb257b0'  # Disabled preparation: both completed acceptance pins and fresh review are required.
+ HELPER_SHA='f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698'
+ POLICY_PATH='specs/leetcode-rendered-state-contract.md'
+ POLICY_SHA='816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c'
