@@ -1,0 +1,16 @@
+{
+  "kind": "author simulation self-check",
+  "cases": 8194,
+  "frameCount": 58416,
+  "results": [
+    2,
+    3,
+    -1,
+    2,
+    1,
+    0,
+    -1,
+    1
+  ],
+  "checks": "BFS result, raw-value reconstruction, expired and entry/decision parity, fixed prefix, exact deep snapshots, copy pair/placeholder shape"
+}

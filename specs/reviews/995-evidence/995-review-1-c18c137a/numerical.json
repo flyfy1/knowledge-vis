@@ -1,0 +1,12 @@
+{
+  "kind": "author self-check, not independent review",
+  "exhaustiveCases": 18434,
+  "exhaustiveDomain": "all binary arrays n=1..10, all k=1..n",
+  "oracle": "BFS over whole-array states, distance from all-ones target",
+  "seed": 995,
+  "seededCases": 1000,
+  "officialFreshAndMaxCases": 9,
+  "inputUnchanged": true,
+  "exactMirror": true,
+  "uniqueCopyKeys": 102
+}
