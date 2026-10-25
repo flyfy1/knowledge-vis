@@ -29,8 +29,25 @@ class PublicationIntegrationTests(unittest.TestCase):
         self.run_queue()
         self.assertEqual([len(s['problems']) for s,_ in self.calls], [0,1,2,2])
         self.assertEqual([o['flush'] for _,o in self.calls], [False,False,False,True])
-        self.assertTrue(all(o['batch_size']==100 for _,o in self.calls))
+        self.assertTrue(all(o['batch_size']==20 for _,o in self.calls))
         self.assertEqual(self.fixture.progress()['status'], 'completed')
+
+    def test_resuming_with_twenty_default_preserves_prior_acceptance(self):
+        self.run_queue('', '--publish-every', '100', '--run-count', '1')
+        self.assertTrue(all(o['batch_size']==100 for _,o in self.calls))
+        before = self.fixture.progress()
+        accepted = copy.deepcopy(before['problems']['4'])
+        prior_runs = [run for run in before['runs'] if run['problem_id']=='4']
+        self.calls.clear()
+
+        self.run_queue()
+
+        after = self.fixture.progress()
+        self.assertTrue(all(o['batch_size']==20 for _,o in self.calls))
+        self.assertEqual(self.calls[0][0]['problems']['4'], accepted)
+        self.assertEqual(after['problems']['4'], accepted)
+        self.assertEqual([run for run in after['runs'] if run['problem_id']=='4'], prior_runs)
+        self.assertEqual(after['status'], 'completed')
 
     def test_partial_queue_never_flushes_remainder(self):
         self.run_queue('', '--ids', '4')

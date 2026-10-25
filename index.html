@@ -337,7 +337,7 @@
       if (!p || !Number.isInteger(p.id) || p.id <= 0 || ids.has(p.id)) return false;
       ids.add(p.id);
       return bilingual(p.title) && bilingual(p.desc) && Array.isArray(p.topics) && p.topics.every(bilingual) &&
-        p.difficulty === 'hard' && p.path === p.id + '/' &&
+        p.difficulty === 'hard' && (p.path === p.id + '/' || p.path === p.id + '-codex/') &&
         typeof p.leetcodeUrl === 'string' && /^https:\/\/leetcode\.com\/problems\/[a-z0-9-]+\/$/.test(p.leetcodeUrl) &&
         typeof p.language === 'string' && p.language.trim().length > 0 &&
         typeof p.complexity === 'string' && p.complexity.trim().length > 0;
