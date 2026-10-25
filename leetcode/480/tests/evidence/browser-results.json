@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "checks": [
+    "en: every frame of all 5 presets forward/back, counts, answers, routes, endpoints, reset/end",
+    "en: keyboard range; every prediction, reveal/change, locale preservation and preset isolation",
+    "en: exact displayed/copied/downloaded source; denied clipboard focuses selected manual source; locale preserves source disclosure",
+    "en: 320/390/736/1440, 200% CSS zoom, populated node geometry, keyboard Enter and focus, every deep navigation and related target",
+    "zh: every frame of all 5 presets forward/back, counts, answers, routes, endpoints, reset/end",
+    "zh: keyboard range; every prediction, reveal/change, locale preservation and preset isolation",
+    "zh: exact displayed/copied/downloaded source; denied clipboard focuses selected manual source; locale preserves source disclosure",
+    "zh: 320/390/736/1440, 200% CSS zoom, populated node geometry, keyboard Enter and focus, every deep navigation and related target",
+    "storage denial uses in-memory locale; no runtime Python request",
+    "measured rendered contrast, forced-colors focus, reduced-motion, 120 Latin/CJK text wrap"
+  ],
+  "screenshots": [
+    "en-manual.png",
+    "en-320-tree.png",
+    "en-320-trace.png",
+    "en-320-duplicates.png",
+    "en-390-tree.png",
+    "en-736-tree.png",
+    "en-1440-tree.png",
+    "en-1440-trace.png",
+    "en-zoom200-tree.png",
+    "zh-manual.png",
+    "zh-320-tree.png",
+    "zh-320-trace.png",
+    "zh-320-duplicates.png",
+    "zh-390-tree.png",
+    "zh-736-tree.png",
+    "zh-1440-tree.png",
+    "zh-1440-trace.png",
+    "zh-zoom200-tree.png"
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".step-nav a",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".btn:disabled",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "a",
+      "color": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".tree-node-box",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".ledger-item",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#next",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "focusContrast": 8.937191437807625,
+  "cssBytes": 11767,
+  "errors": [],
+  "externalRuntimeRequests": [],
+  "zoom": "CSS layout zoom 2 at 1440; physical devices/browser UI zoom unverified"
+}
