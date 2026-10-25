@@ -1,0 +1,11 @@
+The first supplemental accessibility run expected focus on Next after reaching
+the terminal frame. Next was natively disabled, so focus correctly remained on
+the table and the Next outline read 'none'. This was a harness error, not a
+runtime defect. The corrected test resets the trace before checking Next in
+forced-colors mode; all previous assertions remain. Command:
+node leetcode/834/tests/access.cjs
+
+The second diagnostic used programmatic focus immediately after a pointer click;
+:focus-visible correctly did not apply. The final test uses Shift+Tab twice from
+Reset (via End to Next) and asserts activeElement before reading the outline.
+It checks actual keyboard focus without forcing CSS focus state.

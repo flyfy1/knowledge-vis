@@ -1,0 +1,8 @@
+Author self-check, candidate development r1, Chromium Linux, 390x900.
+Keyboard focus then Enter on related links changed hash but inherited smooth
+scrolling left target above viewport, even after 1200ms:
+#step2 top=-4960.09375; #step0 top=-7512.5. Sticky nav height=70.
+Direct nav activation reached step2 at top=71.90625.
+Fix in author candidate r2: set local html scroll-behavior:auto, matching BRIEF's
+no-motion design and preventing competing focus/fragment smooth scrolls.
+This is author-detected and author-rechecked, not independent review closure.

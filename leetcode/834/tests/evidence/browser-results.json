@@ -1,0 +1,205 @@
+{
+  "status": "pass",
+  "browser": "156.0.8078.4",
+  "platform": "linux",
+  "url": "http://127.0.0.1:18770/leetcode/834/",
+  "errors": [],
+  "observed": [
+    {
+      "lang": "en",
+      "frame": "Operation 5/7 · Start 0→1: 3 nodes closer, 1 farther; 6−3+1=4",
+      "formula": "answer[v] = answer[u] − size[v] + (n − size[v]) = answer[u] + n − 2 × size[v]"
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "selectFit": {
+        "text": "4-node path",
+        "width": 260,
+        "needed": 145.37619018554688,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "selectFit": {
+        "text": "4-node path",
+        "width": 330,
+        "needed": 145.37619018554688,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "selectFit": {
+        "text": "4-node path",
+        "width": 644,
+        "needed": 145.37619018554688,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "selectFit": {
+        "text": "4-node path",
+        "width": 908,
+        "needed": 145.37619018554688,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "focus": {
+        "style": "solid",
+        "width": "3px",
+        "color": "rgb(255, 180, 84)"
+      }
+    },
+    {
+      "lang": "zh",
+      "frame": "操作 5/7 · 起点 0→1：3 点变近，1 点变远；6−3+1=4",
+      "formula": "answer[v] = answer[u] − size[v] + (n − size[v]) = answer[u] + n − 2 × size[v]"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "selectFit": {
+        "text": "四点路径",
+        "width": 260,
+        "needed": 118.0001220703125,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "selectFit": {
+        "text": "四点路径",
+        "width": 330,
+        "needed": 118.0001220703125,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "selectFit": {
+        "text": "四点路径",
+        "width": 644,
+        "needed": 118.0001220703125,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "selectFit": {
+        "text": "四点路径",
+        "width": 908,
+        "needed": 118.0001220703125,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "focus": {
+        "style": "solid",
+        "width": "3px",
+        "color": "rgb(255, 180, 84)"
+      }
+    }
+  ],
+  "contrast": [
+    {
+      "fg": "--text",
+      "bg": "--bg",
+      "ratio": 16.086987125379448
+    },
+    {
+      "fg": "--text",
+      "bg": "--panel",
+      "ratio": 14.704584598678618
+    },
+    {
+      "fg": "--text",
+      "bg": "--panel2",
+      "ratio": 13.397069143240783
+    },
+    {
+      "fg": "--muted",
+      "bg": "--bg",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel",
+      "ratio": 7.078851579017443
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel2",
+      "ratio": 6.449407898769069
+    },
+    {
+      "fg": "--accent",
+      "bg": "--bg",
+      "ratio": 13.100679028115637
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel",
+      "ratio": 11.974898815275662
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel2",
+      "ratio": 10.910104011097095
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--bg",
+      "ratio": 10.731637051347173
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel",
+      "ratio": 9.809435643476732
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "fg": "--good",
+      "bg": "--bg",
+      "ratio": 12.013623247863544
+    },
+    {
+      "fg": "--good",
+      "bg": "--panel",
+      "ratio": 10.981256963037128
+    },
+    {
+      "fg": "--good",
+      "bg": "--panel2",
+      "ratio": 10.004815697188947
+    }
+  ],
+  "cssBytes": 11422,
+  "zoom": "CSS zoom 2 at 720×500 viewport, synthetic 200% layout stress; not real device zoom",
+  "manualClipboard": "Fresh per-locale sentinel verified; native host shortcut copied selected fallback exactly",
+  "assets": [
+    "http://127.0.0.1:18770/leetcode/834/",
+    "http://127.0.0.1:18770/leetcode/834/style.css?v=834-r3",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/834/core.js?v=834-r3",
+    "http://127.0.0.1:18770/leetcode/834/copy.js?v=834-r3",
+    "http://127.0.0.1:18770/leetcode/834/python-code.js?v=834-r3",
+    "http://127.0.0.1:18770/leetcode/834/app.js?v=834-r3"
+  ]
+}

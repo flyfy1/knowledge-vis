@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "cases": 1742,
+  "frames": 43582,
+  "checks": [
+    "independent BFS final and partial summaries",
+    "edge-cut per-node deltas",
+    "snapshot isolation",
+    "exact source mirror",
+    "unique bilingual keys"
+  ]
+}
