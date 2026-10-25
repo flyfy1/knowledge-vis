@@ -3051,6 +3051,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) time; O(1) auxiliary space"
   },
   {
+    "id": 793,
+    "title": {
+      "zh": "阶乘函数后 K 个零",
+      "en": "Preimage Size of Factorial Zeroes Function"
+    },
+    "desc": {
+      "zh": "从 24! 到 25! 的跳跃，推导两个边界之差。",
+      "en": "Use the jump from 24! to 25! to derive a count from two search boundaries."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      },
+      {
+        "zh": "数学",
+        "en": "Math"
+      }
+    ],
+    "path": "793/",
+    "leetcodeUrl": "https://leetcode.com/problems/preimage-size-of-factorial-zeroes-function/",
+    "language": "Python",
+    "complexity": "O(log²(k+2)) time; O(1) auxiliary space"
+  },
+  {
     "id": 803,
     "title": {
       "zh": "打砖块",
