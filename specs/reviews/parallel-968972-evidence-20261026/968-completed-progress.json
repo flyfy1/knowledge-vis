@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "repo": "/home/songyy/projects/leetcode-hard-lane-968-20261026",
+  "queue": [
+    "968"
+  ],
+  "expected_head": "5c25864eef5c09e0e007cafb81626e73803dbfae",
+  "started_at": "2026-10-25T18:34:06.569729+00:00",
+  "status": "completed",
+  "current": null,
+  "problems": {
+    "968": {
+      "status": "accepted_local",
+      "rounds": 2,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "changes_required",
+          "scores": [
+            4,
+            4,
+            4,
+            3,
+            4,
+            4
+          ],
+          "required_open": [
+            "968-R1"
+          ],
+          "report_path": "specs/reviews/968-review-1-1fe9cf12.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Canonical Python and independent examples passed; metadata preflight exited 0.",
+            "Both locales, narrow layouts, keyboard, zoom and exact source transfers checked.",
+            "Full-tree decision 6/7: older B camera and current C camera have identical cyan outlines, contradicting the promised orange current marker."
+          ],
+          "detail": "95/100. Required visual finding 968-R1 remains open despite passing algorithm and browser tests.",
+          "run_id": "968-review-d31caa3b2d37",
+          "candidate": "fe87684237ab7c00f0b6c08692b9187691be8d3c",
+          "candidate_sha256": "63caa2b70dc4ec1f593a7513576828ed5b5c1b2ea84583285a5b5bd42b9178af",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "679fd3c6183879e62f719374325c46bae8da59e4"
+        },
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/968-review-2-9fca39e7.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh Python inputs and counterexample matched an independent oracle.",
+            "Both locales, keyboard, narrow layouts and 200% zoom checked; screenshots inspected.",
+            "Exact source, clipboard fallback and download parity passed.",
+            "968-R1 closed with rendered regression evidence.",
+            "Non-mutating metadata preflight passed."
+          ],
+          "detail": "95/100. Accepted for revision 611b194292b72d89d4e64b984256efce09f5ab4e. No publication or successful LeetCode submission claimed.",
+          "run_id": "968-review-21a196af52bb",
+          "candidate": "611b194292b72d89d4e64b984256efce09f5ab4e",
+          "candidate_sha256": "716447bec17f73a2b35096c61a6566e8f3c989838d3b40d895bc2e2d0bcc45f5",
+          "weighted_score": 95.0,
+          "round": 2,
+          "commit": "41349faa0a2cfe9c7f9fac0b2e9ea8aebaa25120"
+        }
+      ],
+      "author_runs": [
+        "968-author-ada4a312abf5",
+        "968-fix-8320be058fe2"
+      ],
+      "prior_report": "specs/reviews/968-review-2-9fca39e7.md",
+      "candidate": "611b194292b72d89d4e64b984256efce09f5ab4e",
+      "registration_commit": "5c25864eef5c09e0e007cafb81626e73803dbfae",
+      "accepted_at": "2026-10-25T19:06:47.532136+00:00"
+    }
+  },
+  "runs": [
+    {
+      "id": "968-author-ada4a312abf5",
+      "problem_id": "968",
+      "role": "author",
+      "started_at": "2026-10-25T18:34:07.175431+00:00",
+      "status": "completed",
+      "candidate": "58cb97e51878f40e234b3e78a8bf9adb24f30c51",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-968-20261026/runs/968-author-ada4a312abf5",
+      "session_ids": [
+        "01a17457-68f2-7141-bebb-cebe22c0bb3e"
+      ],
+      "finished_at": "2026-10-25T18:48:30.432922+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented the complete bilingual #968 lesson in leetcode/968/. Official Python interface verified; oracle, invariant, browser, clipboard, source-parity, accessibility and metadata checks passed. Evidence and frozen hashes recorded. Ready for separate independent review; no acceptance or deployment claimed."
+      }
+    },
+    {
+      "id": "968-review-d31caa3b2d37",
+      "problem_id": "968",
+      "role": "review",
+      "started_at": "2026-10-25T18:48:42.005653+00:00",
+      "status": "completed",
+      "candidate": "fe87684237ab7c00f0b6c08692b9187691be8d3c",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-968-20261026/runs/968-review-d31caa3b2d37",
+      "session_ids": [
+        "01a17464-c2bc-72e0-9d18-ed36086e7468"
+      ],
+      "finished_at": "2026-10-25T18:58:19.718017+00:00",
+      "result": {
+        "outcome": "changes_required",
+        "scores": [
+          4,
+          4,
+          4,
+          3,
+          4,
+          4
+        ],
+        "required_open": [
+          "968-R1"
+        ],
+        "report_path": "specs/reviews/968-review-1-1fe9cf12.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Canonical Python and independent examples passed; metadata preflight exited 0.",
+          "Both locales, narrow layouts, keyboard, zoom and exact source transfers checked.",
+          "Full-tree decision 6/7: older B camera and current C camera have identical cyan outlines, contradicting the promised orange current marker."
+        ],
+        "detail": "95/100. Required visual finding 968-R1 remains open despite passing algorithm and browser tests."
+      }
+    },
+    {
+      "id": "968-fix-8320be058fe2",
+      "problem_id": "968",
+      "role": "fix",
+      "started_at": "2026-10-25T18:58:28.711671+00:00",
+      "status": "completed",
+      "candidate": "679fd3c6183879e62f719374325c46bae8da59e4",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-968-20261026/runs/968-fix-8320be058fe2",
+      "session_ids": [
+        "01a1746d-b4f4-7b23-8827-af9a6cdc15b3"
+      ],
+      "finished_at": "2026-10-25T19:01:44.668496+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Fixed 968-R1 and froze candidate 968-author-20261026-v2 for separate re-review. Preserved the failing regression; repaired checks pass in both locales, including rewind/replay and root repair. Python, core, browser, offline and metadata preflight checks passed. Evidence: leetcode/968/tests/evidence/968-r1-v2/ and appended self-check.md. Independent acceptance remains pending."
+      }
+    },
+    {
+      "id": "968-review-21a196af52bb",
+      "problem_id": "968",
+      "role": "review",
+      "started_at": "2026-10-25T19:01:54.028940+00:00",
+      "status": "completed",
+      "candidate": "611b194292b72d89d4e64b984256efce09f5ab4e",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-968-20261026/runs/968-review-21a196af52bb",
+      "session_ids": [
+        "01a17470-d7b7-7300-945f-8b606fcbd042"
+      ],
+      "finished_at": "2026-10-25T19:06:37.750134+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          3,
+          4,
+          4,
+          4,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/968-review-2-9fca39e7.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Fresh Python inputs and counterexample matched an independent oracle.",
+          "Both locales, keyboard, narrow layouts and 200% zoom checked; screenshots inspected.",
+          "Exact source, clipboard fallback and download parity passed.",
+          "968-R1 closed with rendered regression evidence.",
+          "Non-mutating metadata preflight passed."
+        ],
+        "detail": "95/100. Accepted for revision 611b194292b72d89d4e64b984256efce09f5ab4e. No publication or successful LeetCode submission claimed."
+      }
+    }
+  ],
+  "updated_at": "2026-10-25T19:06:47.544546+00:00"
+}
