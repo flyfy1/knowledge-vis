@@ -1,0 +1,1472 @@
+{
+  "result": "pass",
+  "kind": "author self-check",
+  "browser": "156.0.8078.4",
+  "platform": "linux",
+  "records": [
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 1,
+      "scenario": "6",
+      "selected": "22 词 · 预算 11 · bmmmmm",
+      "geometry": {
+        "top": 145.734375,
+        "bottom": 170.234375,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 258,
+        "height": 24.5,
+        "client": 258,
+        "scroll": 258,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 256,
+        "selectedTextWidth": 202.78443908691406,
+        "lines": [
+          {
+            "left": 31,
+            "right": 208.4375,
+            "top": 147.734375,
+            "bottom": 166.734375
+          }
+        ],
+        "left": 31,
+        "right": 289,
+        "doc": 320,
+        "viewport": 320
+      },
+      "screenshot": "zh-320-zoom1-preset6-0.png",
+      "ledgerBeforeLocale": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 1,
+      "scenario": "6",
+      "selected": "22 words · budget 11 · bmmmmm",
+      "geometry": {
+        "top": 146.03125,
+        "bottom": 170.53125,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 258,
+        "height": 24.5,
+        "client": 258,
+        "scroll": 258,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 256,
+        "selectedTextWidth": 255.0405731201172,
+        "lines": [
+          {
+            "left": 31,
+            "right": 254.171875,
+            "top": 148.03125,
+            "bottom": 167.03125
+          }
+        ],
+        "left": 31,
+        "right": 289,
+        "doc": 320,
+        "viewport": 320
+      },
+      "screenshot": "en-320-zoom1-preset6-1.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 1,
+      "scenario": "6",
+      "selected": "22 词 · 预算 11 · bmmmmm",
+      "geometry": {
+        "top": 145.734375,
+        "bottom": 170.234375,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 258,
+        "height": 24.5,
+        "client": 258,
+        "scroll": 258,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 256,
+        "selectedTextWidth": 202.78443908691406,
+        "lines": [
+          {
+            "left": 31,
+            "right": 208.4375,
+            "top": 147.734375,
+            "bottom": 166.734375
+          }
+        ],
+        "left": 31,
+        "right": 289,
+        "doc": 320,
+        "viewport": 320
+      },
+      "screenshot": "zh-320-zoom1-preset6-2.png",
+      "ledgerBeforeLocale": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 1,
+      "scenario": "8",
+      "selected": "22 词 · 不可行预算 10 对照",
+      "geometry": {
+        "top": 145.734375,
+        "bottom": 170.234375,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 258,
+        "height": 24.5,
+        "client": 258,
+        "scroll": 258,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 256,
+        "selectedTextWidth": 189.6963653564453,
+        "lines": [
+          {
+            "left": 31,
+            "right": 196.984375,
+            "top": 147.734375,
+            "bottom": 166.734375
+          }
+        ],
+        "left": 31,
+        "right": 289,
+        "doc": 320,
+        "viewport": 320
+      },
+      "screenshot": "zh-320-zoom1-preset8-3.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 1,
+      "scenario": "8",
+      "selected": "22 words · infeasible budget-10 control",
+      "geometry": {
+        "top": 146.03125,
+        "bottom": 170.53125,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 258,
+        "height": 24.5,
+        "client": 258,
+        "scroll": 258,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 256,
+        "selectedTextWidth": 292.52862548828125,
+        "lines": [
+          {
+            "left": 31,
+            "right": 286.96875,
+            "top": 148.03125,
+            "bottom": 167.03125
+          }
+        ],
+        "left": 31,
+        "right": 289,
+        "doc": 320,
+        "viewport": 320
+      },
+      "screenshot": "en-320-zoom1-preset8-4.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 1,
+      "scenario": "8",
+      "selected": "22 词 · 不可行预算 10 对照",
+      "geometry": {
+        "top": 145.734375,
+        "bottom": 170.234375,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 258,
+        "height": 24.5,
+        "client": 258,
+        "scroll": 258,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 256,
+        "selectedTextWidth": 189.6963653564453,
+        "lines": [
+          {
+            "left": 31,
+            "right": 196.984375,
+            "top": 147.734375,
+            "bottom": 166.734375
+          }
+        ],
+        "left": 31,
+        "right": 289,
+        "doc": 320,
+        "viewport": 320
+      },
+      "screenshot": "zh-320-zoom1-preset8-5.png",
+      "ledgerBeforeLocale": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 2,
+      "scenario": "6",
+      "selected": "22 词 · 预算 11 · bmmmmm",
+      "geometry": {
+        "top": 450.84375,
+        "bottom": 548.84375,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 196,
+        "height": 98,
+        "client": 98,
+        "scroll": 98,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 96,
+        "selectedTextWidth": 202.78443908691406,
+        "lines": [
+          {
+            "left": 62,
+            "right": 246.703125,
+            "top": 455.84375,
+            "bottom": 493.84375
+          },
+          {
+            "left": 62,
+            "right": 224.90625,
+            "top": 504.84375,
+            "bottom": 542.84375
+          }
+        ],
+        "left": 62,
+        "right": 258,
+        "doc": 320,
+        "viewport": 320
+      },
+      "screenshot": "zh-320-zoom2-preset6-6.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 2,
+      "scenario": "6",
+      "selected": "22 words · budget 11 · bmmmmm",
+      "geometry": {
+        "top": 426.71875,
+        "bottom": 573.71875,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 196,
+        "height": 147,
+        "client": 98,
+        "scroll": 98,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 96,
+        "selectedTextWidth": 255.0405731201172,
+        "lines": [
+          {
+            "left": 62,
+            "right": 196.6875,
+            "top": 431.71875,
+            "bottom": 469.71875
+          },
+          {
+            "left": 62,
+            "right": 210.96875,
+            "top": 480.71875,
+            "bottom": 518.71875
+          },
+          {
+            "left": 62,
+            "right": 210.125,
+            "top": 529.71875,
+            "bottom": 567.71875
+          }
+        ],
+        "left": 62,
+        "right": 258,
+        "doc": 320,
+        "viewport": 320
+      },
+      "screenshot": "en-320-zoom2-preset6-7.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 2,
+      "scenario": "6",
+      "selected": "22 词 · 预算 11 · bmmmmm",
+      "geometry": {
+        "top": 450.84375,
+        "bottom": 548.84375,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 196,
+        "height": 98,
+        "client": 98,
+        "scroll": 98,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 96,
+        "selectedTextWidth": 202.78443908691406,
+        "lines": [
+          {
+            "left": 62,
+            "right": 246.703125,
+            "top": 455.84375,
+            "bottom": 493.84375
+          },
+          {
+            "left": 62,
+            "right": 224.90625,
+            "top": 504.84375,
+            "bottom": 542.84375
+          }
+        ],
+        "left": 62,
+        "right": 258,
+        "doc": 320,
+        "viewport": 320
+      },
+      "screenshot": "zh-320-zoom2-preset6-8.png",
+      "ledgerBeforeLocale": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 2,
+      "scenario": "8",
+      "selected": "22 词 · 不可行预算 10 对照",
+      "geometry": {
+        "top": 450.84375,
+        "bottom": 548.84375,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 196,
+        "height": 98,
+        "client": 98,
+        "scroll": 98,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 96,
+        "selectedTextWidth": 189.6963653564453,
+        "lines": [
+          {
+            "left": 62,
+            "right": 235.390625,
+            "top": 455.84375,
+            "bottom": 493.84375
+          },
+          {
+            "left": 62,
+            "right": 220.59375,
+            "top": 504.84375,
+            "bottom": 542.84375
+          }
+        ],
+        "left": 62,
+        "right": 258,
+        "doc": 320,
+        "viewport": 320
+      },
+      "screenshot": "zh-320-zoom2-preset8-9.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 2,
+      "scenario": "8",
+      "selected": "22 words · infeasible budget-10 control",
+      "geometry": {
+        "top": 401.71875,
+        "bottom": 597.71875,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 196,
+        "height": 196,
+        "client": 98,
+        "scroll": 98,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 96,
+        "selectedTextWidth": 292.52862548828125,
+        "lines": [
+          {
+            "left": 62,
+            "right": 196.6875,
+            "top": 406.71875,
+            "bottom": 444.71875
+          },
+          {
+            "left": 62,
+            "right": 188.546875,
+            "top": 455.71875,
+            "bottom": 493.71875
+          },
+          {
+            "left": 62,
+            "right": 197.921875,
+            "top": 504.71875,
+            "bottom": 542.71875
+          },
+          {
+            "left": 62,
+            "right": 154.96875,
+            "top": 553.71875,
+            "bottom": 591.71875
+          }
+        ],
+        "left": 62,
+        "right": 258,
+        "doc": 320,
+        "viewport": 320
+      },
+      "screenshot": "en-320-zoom2-preset8-10.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 2,
+      "scenario": "8",
+      "selected": "22 词 · 不可行预算 10 对照",
+      "geometry": {
+        "top": 450.84375,
+        "bottom": 548.84375,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 196,
+        "height": 98,
+        "client": 98,
+        "scroll": 98,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 96,
+        "selectedTextWidth": 189.6963653564453,
+        "lines": [
+          {
+            "left": 62,
+            "right": 235.390625,
+            "top": 455.84375,
+            "bottom": 493.84375
+          },
+          {
+            "left": 62,
+            "right": 220.59375,
+            "top": 504.84375,
+            "bottom": 542.84375
+          }
+        ],
+        "left": 62,
+        "right": 258,
+        "doc": 320,
+        "viewport": 320
+      },
+      "screenshot": "zh-320-zoom2-preset8-11.png",
+      "ledgerBeforeLocale": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 1,
+      "scenario": "6",
+      "selected": "22 词 · 预算 11 · bmmmmm",
+      "geometry": {
+        "top": 145.640625,
+        "bottom": 170.140625,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 328,
+        "height": 24.5,
+        "client": 328,
+        "scroll": 328,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 326,
+        "selectedTextWidth": 202.78443908691406,
+        "lines": [
+          {
+            "left": 31,
+            "right": 208.4375,
+            "top": 147.640625,
+            "bottom": 166.640625
+          }
+        ],
+        "left": 31,
+        "right": 359,
+        "doc": 390,
+        "viewport": 390
+      },
+      "screenshot": "zh-390-zoom1-preset6-12.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 1,
+      "scenario": "6",
+      "selected": "22 words · budget 11 · bmmmmm",
+      "geometry": {
+        "top": 146.234375,
+        "bottom": 170.734375,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 328,
+        "height": 24.5,
+        "client": 328,
+        "scroll": 328,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 326,
+        "selectedTextWidth": 255.0405731201172,
+        "lines": [
+          {
+            "left": 31,
+            "right": 254.171875,
+            "top": 148.234375,
+            "bottom": 167.234375
+          }
+        ],
+        "left": 31,
+        "right": 359,
+        "doc": 390,
+        "viewport": 390
+      },
+      "screenshot": "en-390-zoom1-preset6-13.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 1,
+      "scenario": "6",
+      "selected": "22 词 · 预算 11 · bmmmmm",
+      "geometry": {
+        "top": 145.640625,
+        "bottom": 170.140625,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 328,
+        "height": 24.5,
+        "client": 328,
+        "scroll": 328,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 326,
+        "selectedTextWidth": 202.78443908691406,
+        "lines": [
+          {
+            "left": 31,
+            "right": 208.4375,
+            "top": 147.640625,
+            "bottom": 166.640625
+          }
+        ],
+        "left": 31,
+        "right": 359,
+        "doc": 390,
+        "viewport": 390
+      },
+      "screenshot": "zh-390-zoom1-preset6-14.png",
+      "ledgerBeforeLocale": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 1,
+      "scenario": "8",
+      "selected": "22 词 · 不可行预算 10 对照",
+      "geometry": {
+        "top": 145.640625,
+        "bottom": 170.140625,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 328,
+        "height": 24.5,
+        "client": 328,
+        "scroll": 328,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 326,
+        "selectedTextWidth": 189.6963653564453,
+        "lines": [
+          {
+            "left": 31,
+            "right": 196.984375,
+            "top": 147.640625,
+            "bottom": 166.640625
+          }
+        ],
+        "left": 31,
+        "right": 359,
+        "doc": 390,
+        "viewport": 390
+      },
+      "screenshot": "zh-390-zoom1-preset8-15.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 1,
+      "scenario": "8",
+      "selected": "22 words · infeasible budget-10 control",
+      "geometry": {
+        "top": 146.234375,
+        "bottom": 170.734375,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 328,
+        "height": 24.5,
+        "client": 328,
+        "scroll": 328,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 326,
+        "selectedTextWidth": 292.52862548828125,
+        "lines": [
+          {
+            "left": 31,
+            "right": 286.96875,
+            "top": 148.234375,
+            "bottom": 167.234375
+          }
+        ],
+        "left": 31,
+        "right": 359,
+        "doc": 390,
+        "viewport": 390
+      },
+      "screenshot": "en-390-zoom1-preset8-16.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 1,
+      "scenario": "8",
+      "selected": "22 词 · 不可行预算 10 对照",
+      "geometry": {
+        "top": 145.640625,
+        "bottom": 170.140625,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 328,
+        "height": 24.5,
+        "client": 328,
+        "scroll": 328,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 326,
+        "selectedTextWidth": 189.6963653564453,
+        "lines": [
+          {
+            "left": 31,
+            "right": 196.984375,
+            "top": 147.640625,
+            "bottom": 166.640625
+          }
+        ],
+        "left": 31,
+        "right": 359,
+        "doc": 390,
+        "viewport": 390
+      },
+      "screenshot": "zh-390-zoom1-preset8-17.png",
+      "ledgerBeforeLocale": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 2,
+      "scenario": "6",
+      "selected": "22 词 · 预算 11 · bmmmmm",
+      "geometry": {
+        "top": 451.25,
+        "bottom": 549.25,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 266,
+        "height": 98,
+        "client": 133,
+        "scroll": 133,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 131,
+        "selectedTextWidth": 202.78443908691406,
+        "lines": [
+          {
+            "left": 62,
+            "right": 261.484375,
+            "top": 456.25,
+            "bottom": 494.25
+          },
+          {
+            "left": 62,
+            "right": 210.125,
+            "top": 505.25,
+            "bottom": 543.25
+          }
+        ],
+        "left": 62,
+        "right": 328,
+        "doc": 390,
+        "viewport": 390
+      },
+      "screenshot": "zh-390-zoom2-preset6-18.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 2,
+      "scenario": "6",
+      "selected": "22 words · budget 11 · bmmmmm",
+      "geometry": {
+        "top": 450.53125,
+        "bottom": 548.53125,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 266,
+        "height": 98,
+        "client": 133,
+        "scroll": 133,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 131,
+        "selectedTextWidth": 255.0405731201172,
+        "lines": [
+          {
+            "left": 62,
+            "right": 298.828125,
+            "top": 455.53125,
+            "bottom": 493.53125
+          },
+          {
+            "left": 62,
+            "right": 264.21875,
+            "top": 504.53125,
+            "bottom": 542.53125
+          }
+        ],
+        "left": 62,
+        "right": 328,
+        "doc": 390,
+        "viewport": 390
+      },
+      "screenshot": "en-390-zoom2-preset6-19.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 2,
+      "scenario": "6",
+      "selected": "22 词 · 预算 11 · bmmmmm",
+      "geometry": {
+        "top": 451.25,
+        "bottom": 549.25,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 266,
+        "height": 98,
+        "client": 133,
+        "scroll": 133,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 131,
+        "selectedTextWidth": 202.78443908691406,
+        "lines": [
+          {
+            "left": 62,
+            "right": 261.484375,
+            "top": 456.25,
+            "bottom": 494.25
+          },
+          {
+            "left": 62,
+            "right": 210.125,
+            "top": 505.25,
+            "bottom": 543.25
+          }
+        ],
+        "left": 62,
+        "right": 328,
+        "doc": 390,
+        "viewport": 390
+      },
+      "screenshot": "zh-390-zoom2-preset6-20.png",
+      "ledgerBeforeLocale": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 2,
+      "scenario": "8",
+      "selected": "22 词 · 不可行预算 10 对照",
+      "geometry": {
+        "top": 451.25,
+        "bottom": 549.25,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 266,
+        "height": 98,
+        "client": 133,
+        "scroll": 133,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 131,
+        "selectedTextWidth": 189.6963653564453,
+        "lines": [
+          {
+            "left": 62,
+            "right": 291.390625,
+            "top": 456.25,
+            "bottom": 494.25
+          },
+          {
+            "left": 62,
+            "right": 157.3125,
+            "top": 505.25,
+            "bottom": 543.25
+          }
+        ],
+        "left": 62,
+        "right": 328,
+        "doc": 390,
+        "viewport": 390
+      },
+      "screenshot": "zh-390-zoom2-preset8-21.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 2,
+      "scenario": "8",
+      "selected": "22 words · infeasible budget-10 control",
+      "geometry": {
+        "top": 426.53125,
+        "bottom": 573.53125,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 266,
+        "height": 147,
+        "client": 133,
+        "scroll": 133,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 131,
+        "selectedTextWidth": 292.52862548828125,
+        "lines": [
+          {
+            "left": 62,
+            "right": 196.6875,
+            "top": 431.53125,
+            "bottom": 469.53125
+          },
+          {
+            "left": 62,
+            "right": 299.703125,
+            "top": 480.53125,
+            "bottom": 518.53125
+          },
+          {
+            "left": 62,
+            "right": 194.28125,
+            "top": 529.53125,
+            "bottom": 567.53125
+          }
+        ],
+        "left": 62,
+        "right": 328,
+        "doc": 390,
+        "viewport": 390
+      },
+      "screenshot": "en-390-zoom2-preset8-22.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 2,
+      "scenario": "8",
+      "selected": "22 词 · 不可行预算 10 对照",
+      "geometry": {
+        "top": 451.25,
+        "bottom": 549.25,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 266,
+        "height": 98,
+        "client": 133,
+        "scroll": 133,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 131,
+        "selectedTextWidth": 189.6963653564453,
+        "lines": [
+          {
+            "left": 62,
+            "right": 291.390625,
+            "top": 456.25,
+            "bottom": 494.25
+          },
+          {
+            "left": 62,
+            "right": 157.3125,
+            "top": 505.25,
+            "bottom": 543.25
+          }
+        ],
+        "left": 62,
+        "right": 328,
+        "doc": 390,
+        "viewport": 390
+      },
+      "screenshot": "zh-390-zoom2-preset8-23.png",
+      "ledgerBeforeLocale": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 1280,
+      "zoom": 1,
+      "scenario": "6",
+      "selected": "22 词 · 预算 11 · bmmmmm",
+      "geometry": {
+        "top": 145.5625,
+        "bottom": 170.0625,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 910,
+        "height": 24.5,
+        "client": 910,
+        "scroll": 910,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 908,
+        "selectedTextWidth": 202.78443908691406,
+        "lines": [
+          {
+            "left": 185,
+            "right": 362.4375,
+            "top": 147.5625,
+            "bottom": 166.5625
+          }
+        ],
+        "left": 185,
+        "right": 1095,
+        "doc": 1280,
+        "viewport": 1280
+      },
+      "screenshot": "zh-1280-zoom1-preset6-24.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "en",
+      "width": 1280,
+      "zoom": 1,
+      "scenario": "6",
+      "selected": "22 words · budget 11 · bmmmmm",
+      "geometry": {
+        "top": 146.3125,
+        "bottom": 170.8125,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 910,
+        "height": 24.5,
+        "client": 910,
+        "scroll": 910,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 908,
+        "selectedTextWidth": 255.0405731201172,
+        "lines": [
+          {
+            "left": 185,
+            "right": 408.171875,
+            "top": 148.3125,
+            "bottom": 167.3125
+          }
+        ],
+        "left": 185,
+        "right": 1095,
+        "doc": 1280,
+        "viewport": 1280
+      },
+      "screenshot": "en-1280-zoom1-preset6-25.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 1280,
+      "zoom": 1,
+      "scenario": "6",
+      "selected": "22 词 · 预算 11 · bmmmmm",
+      "geometry": {
+        "top": 145.5625,
+        "bottom": 170.0625,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 910,
+        "height": 24.5,
+        "client": 910,
+        "scroll": 910,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 908,
+        "selectedTextWidth": 202.78443908691406,
+        "lines": [
+          {
+            "left": 185,
+            "right": 362.4375,
+            "top": 147.5625,
+            "bottom": 166.5625
+          }
+        ],
+        "left": 185,
+        "right": 1095,
+        "doc": 1280,
+        "viewport": 1280
+      },
+      "screenshot": "zh-1280-zoom1-preset6-26.png",
+      "ledgerBeforeLocale": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 1280,
+      "zoom": 1,
+      "scenario": "8",
+      "selected": "22 词 · 不可行预算 10 对照",
+      "geometry": {
+        "top": 145.5625,
+        "bottom": 170.0625,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 910,
+        "height": 24.5,
+        "client": 910,
+        "scroll": 910,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 908,
+        "selectedTextWidth": 189.6963653564453,
+        "lines": [
+          {
+            "left": 185,
+            "right": 350.984375,
+            "top": 147.5625,
+            "bottom": 166.5625
+          }
+        ],
+        "left": 185,
+        "right": 1095,
+        "doc": 1280,
+        "viewport": 1280
+      },
+      "screenshot": "zh-1280-zoom1-preset8-27.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "en",
+      "width": 1280,
+      "zoom": 1,
+      "scenario": "8",
+      "selected": "22 words · infeasible budget-10 control",
+      "geometry": {
+        "top": 146.3125,
+        "bottom": 170.8125,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 910,
+        "height": 24.5,
+        "client": 910,
+        "scroll": 910,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 908,
+        "selectedTextWidth": 292.52862548828125,
+        "lines": [
+          {
+            "left": 185,
+            "right": 440.96875,
+            "top": 148.3125,
+            "bottom": 167.3125
+          }
+        ],
+        "left": 185,
+        "right": 1095,
+        "doc": 1280,
+        "viewport": 1280
+      },
+      "screenshot": "en-1280-zoom1-preset8-28.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 1280,
+      "zoom": 1,
+      "scenario": "8",
+      "selected": "22 词 · 不可行预算 10 对照",
+      "geometry": {
+        "top": 145.5625,
+        "bottom": 170.0625,
+        "navBottom": 70,
+        "viewportHeight": 1000,
+        "width": 910,
+        "height": 24.5,
+        "client": 910,
+        "scroll": 910,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 908,
+        "selectedTextWidth": 189.6963653564453,
+        "lines": [
+          {
+            "left": 185,
+            "right": 350.984375,
+            "top": 147.5625,
+            "bottom": 166.5625
+          }
+        ],
+        "left": 185,
+        "right": 1095,
+        "doc": 1280,
+        "viewport": 1280
+      },
+      "screenshot": "zh-1280-zoom1-preset8-29.png",
+      "ledgerBeforeLocale": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 1280,
+      "zoom": 2,
+      "scenario": "6",
+      "selected": "22 词 · 预算 11 · bmmmmm",
+      "geometry": {
+        "top": 475.671875,
+        "bottom": 524.671875,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 1100,
+        "height": 49,
+        "client": 550,
+        "scroll": 550,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 548,
+        "selectedTextWidth": 202.78443908691406,
+        "lines": [
+          {
+            "left": 90,
+            "right": 444.875,
+            "top": 480.671875,
+            "bottom": 518.671875
+          }
+        ],
+        "left": 90,
+        "right": 1190,
+        "doc": 1280,
+        "viewport": 1280
+      },
+      "screenshot": "zh-1280-zoom2-preset6-30.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "en",
+      "width": 1280,
+      "zoom": 2,
+      "scenario": "6",
+      "selected": "22 words · budget 11 · bmmmmm",
+      "geometry": {
+        "top": 475.453125,
+        "bottom": 524.453125,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 1100,
+        "height": 49,
+        "client": 550,
+        "scroll": 550,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 548,
+        "selectedTextWidth": 255.0405731201172,
+        "lines": [
+          {
+            "left": 90,
+            "right": 536.328125,
+            "top": 480.453125,
+            "bottom": 518.453125
+          }
+        ],
+        "left": 90,
+        "right": 1190,
+        "doc": 1280,
+        "viewport": 1280
+      },
+      "screenshot": "en-1280-zoom2-preset6-31.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 1280,
+      "zoom": 2,
+      "scenario": "6",
+      "selected": "22 词 · 预算 11 · bmmmmm",
+      "geometry": {
+        "top": 475.671875,
+        "bottom": 524.671875,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 1100,
+        "height": 49,
+        "client": 550,
+        "scroll": 550,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 548,
+        "selectedTextWidth": 202.78443908691406,
+        "lines": [
+          {
+            "left": 90,
+            "right": 444.875,
+            "top": 480.671875,
+            "bottom": 518.671875
+          }
+        ],
+        "left": 90,
+        "right": 1190,
+        "doc": 1280,
+        "viewport": 1280
+      },
+      "screenshot": "zh-1280-zoom2-preset6-32.png",
+      "ledgerBeforeLocale": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 1280,
+      "zoom": 2,
+      "scenario": "8",
+      "selected": "22 词 · 不可行预算 10 对照",
+      "geometry": {
+        "top": 475.671875,
+        "bottom": 524.671875,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 1100,
+        "height": 49,
+        "client": 550,
+        "scroll": 550,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 548,
+        "selectedTextWidth": 189.6963653564453,
+        "lines": [
+          {
+            "left": 90,
+            "right": 421.984375,
+            "top": 480.671875,
+            "bottom": 518.671875
+          }
+        ],
+        "left": 90,
+        "right": 1190,
+        "doc": 1280,
+        "viewport": 1280
+      },
+      "screenshot": "zh-1280-zoom2-preset8-33.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "en",
+      "width": 1280,
+      "zoom": 2,
+      "scenario": "8",
+      "selected": "22 words · infeasible budget-10 control",
+      "geometry": {
+        "top": 475.453125,
+        "bottom": 524.453125,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 1100,
+        "height": 49,
+        "client": 550,
+        "scroll": 550,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 548,
+        "selectedTextWidth": 292.52862548828125,
+        "lines": [
+          {
+            "left": 90,
+            "right": 601.9375,
+            "top": 480.453125,
+            "bottom": 518.453125
+          }
+        ],
+        "left": 90,
+        "right": 1190,
+        "doc": 1280,
+        "viewport": 1280
+      },
+      "screenshot": "en-1280-zoom2-preset8-34.png",
+      "ledgerBeforeLocale": "提问 accccc → 回复 0；22 个候选 → 10 个：bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    },
+    {
+      "locale": "zh",
+      "width": 1280,
+      "zoom": 2,
+      "scenario": "8",
+      "selected": "22 词 · 不可行预算 10 对照",
+      "geometry": {
+        "top": 475.671875,
+        "bottom": 524.671875,
+        "navBottom": 140,
+        "viewportHeight": 1000,
+        "width": 1100,
+        "height": 49,
+        "client": 550,
+        "scroll": 550,
+        "whiteSpace": "normal",
+        "overflow": "visible",
+        "textOverflow": "clip",
+        "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "selectClient": 548,
+        "selectedTextWidth": 189.6963653564453,
+        "lines": [
+          {
+            "left": 90,
+            "right": 421.984375,
+            "top": 480.671875,
+            "bottom": 518.671875
+          }
+        ],
+        "left": 90,
+        "right": 1190,
+        "doc": 1280,
+        "viewport": 1280
+      },
+      "screenshot": "zh-1280-zoom2-preset8-35.png",
+      "ledgerBeforeLocale": "Guess accccc → reply 0; 22 candidates → 10: bddddd, beeeee, bfffff, bggggg, bhhhhh, biiiii, bjjjjj, bkkkkk, blllll, bmmmmm"
+    }
+  ]
+}

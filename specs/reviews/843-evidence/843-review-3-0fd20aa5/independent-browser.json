@@ -1,0 +1,1172 @@
+{
+  "records": [
+    {
+      "preset": 0,
+      "calls": 1,
+      "guess": "acckzz",
+      "reply": 2,
+      "before": [
+        "acckzz",
+        "ccbazz",
+        "eiowzz",
+        "abcczz"
+      ],
+      "after": [
+        "eiowzz"
+      ]
+    },
+    {
+      "preset": 0,
+      "calls": 2,
+      "guess": "eiowzz",
+      "reply": 6,
+      "before": [
+        "eiowzz"
+      ],
+      "after": [
+        "eiowzz"
+      ]
+    },
+    {
+      "preset": 1,
+      "calls": 1,
+      "guess": "hamada",
+      "reply": 0,
+      "before": [
+        "hamada",
+        "khaled"
+      ],
+      "after": [
+        "khaled"
+      ]
+    },
+    {
+      "preset": 1,
+      "calls": 2,
+      "guess": "khaled",
+      "reply": 6,
+      "before": [
+        "khaled"
+      ],
+      "after": [
+        "khaled"
+      ]
+    },
+    {
+      "preset": 2,
+      "calls": 1,
+      "guess": "aaaaaa",
+      "reply": 6,
+      "before": [
+        "aaaaaa"
+      ],
+      "after": [
+        "aaaaaa"
+      ]
+    },
+    {
+      "preset": 3,
+      "calls": 1,
+      "guess": "aaaaaa",
+      "reply": 0,
+      "before": [
+        "aaaaaa",
+        "bbbbbb",
+        "cccccc",
+        "dddddd",
+        "eeeeee",
+        "ffffff"
+      ],
+      "after": [
+        "bbbbbb",
+        "cccccc",
+        "dddddd",
+        "eeeeee",
+        "ffffff"
+      ]
+    },
+    {
+      "preset": 3,
+      "calls": 2,
+      "guess": "bbbbbb",
+      "reply": 0,
+      "before": [
+        "bbbbbb",
+        "cccccc",
+        "dddddd",
+        "eeeeee",
+        "ffffff"
+      ],
+      "after": [
+        "cccccc",
+        "dddddd",
+        "eeeeee",
+        "ffffff"
+      ]
+    },
+    {
+      "preset": 3,
+      "calls": 3,
+      "guess": "cccccc",
+      "reply": 0,
+      "before": [
+        "cccccc",
+        "dddddd",
+        "eeeeee",
+        "ffffff"
+      ],
+      "after": [
+        "dddddd",
+        "eeeeee",
+        "ffffff"
+      ]
+    },
+    {
+      "preset": 3,
+      "calls": 4,
+      "guess": "dddddd",
+      "reply": 0,
+      "before": [
+        "dddddd",
+        "eeeeee",
+        "ffffff"
+      ],
+      "after": [
+        "eeeeee",
+        "ffffff"
+      ]
+    },
+    {
+      "preset": 3,
+      "calls": 5,
+      "guess": "eeeeee",
+      "reply": 0,
+      "before": [
+        "eeeeee",
+        "ffffff"
+      ],
+      "after": [
+        "ffffff"
+      ]
+    },
+    {
+      "preset": 3,
+      "calls": 6,
+      "guess": "ffffff",
+      "reply": 6,
+      "before": [
+        "ffffff"
+      ],
+      "after": [
+        "ffffff"
+      ]
+    },
+    {
+      "preset": 4,
+      "calls": 1,
+      "guess": "aaaaaa",
+      "reply": 2,
+      "before": [
+        "aaaaaa",
+        "aaaabb",
+        "aabbbb",
+        "bbbbbb"
+      ],
+      "after": [
+        "aabbbb"
+      ]
+    },
+    {
+      "preset": 4,
+      "calls": 2,
+      "guess": "aabbbb",
+      "reply": 6,
+      "before": [
+        "aabbbb"
+      ],
+      "after": [
+        "aabbbb"
+      ]
+    },
+    {
+      "preset": 5,
+      "calls": 1,
+      "guess": "accccc",
+      "reply": 0,
+      "before": [
+        "accccc",
+        "addddd",
+        "aeeeee",
+        "afffff",
+        "aggggg",
+        "ahhhhh",
+        "aiiiii",
+        "ajjjjj",
+        "akkkkk",
+        "alllll",
+        "bccccc",
+        "bddddd",
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ],
+      "after": [
+        "bddddd",
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ]
+    },
+    {
+      "preset": 5,
+      "calls": 2,
+      "guess": "bddddd",
+      "reply": 1,
+      "before": [
+        "bddddd",
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ],
+      "after": [
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ]
+    },
+    {
+      "preset": 5,
+      "calls": 3,
+      "guess": "beeeee",
+      "reply": 1,
+      "before": [
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ],
+      "after": [
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ]
+    },
+    {
+      "preset": 5,
+      "calls": 4,
+      "guess": "bfffff",
+      "reply": 1,
+      "before": [
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ],
+      "after": [
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ]
+    },
+    {
+      "preset": 5,
+      "calls": 5,
+      "guess": "bggggg",
+      "reply": 1,
+      "before": [
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ],
+      "after": [
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ]
+    },
+    {
+      "preset": 5,
+      "calls": 6,
+      "guess": "bhhhhh",
+      "reply": 1,
+      "before": [
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ],
+      "after": [
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ]
+    },
+    {
+      "preset": 5,
+      "calls": 7,
+      "guess": "biiiii",
+      "reply": 1,
+      "before": [
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ],
+      "after": [
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ]
+    },
+    {
+      "preset": 5,
+      "calls": 8,
+      "guess": "bjjjjj",
+      "reply": 1,
+      "before": [
+        "bjjjjj",
+        "bkkkkk",
+        "blllll"
+      ],
+      "after": [
+        "bkkkkk",
+        "blllll"
+      ]
+    },
+    {
+      "preset": 5,
+      "calls": 9,
+      "guess": "bkkkkk",
+      "reply": 1,
+      "before": [
+        "bkkkkk",
+        "blllll"
+      ],
+      "after": [
+        "blllll"
+      ]
+    },
+    {
+      "preset": 5,
+      "calls": 10,
+      "guess": "blllll",
+      "reply": 6,
+      "before": [
+        "blllll"
+      ],
+      "after": [
+        "blllll"
+      ]
+    },
+    {
+      "preset": 6,
+      "calls": 1,
+      "guess": "accccc",
+      "reply": 0,
+      "before": [
+        "accccc",
+        "addddd",
+        "aeeeee",
+        "afffff",
+        "aggggg",
+        "ahhhhh",
+        "aiiiii",
+        "ajjjjj",
+        "akkkkk",
+        "alllll",
+        "ammmmm",
+        "bccccc",
+        "bddddd",
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "bddddd",
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 6,
+      "calls": 2,
+      "guess": "bddddd",
+      "reply": 1,
+      "before": [
+        "bddddd",
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 6,
+      "calls": 3,
+      "guess": "beeeee",
+      "reply": 1,
+      "before": [
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 6,
+      "calls": 4,
+      "guess": "bfffff",
+      "reply": 1,
+      "before": [
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 6,
+      "calls": 5,
+      "guess": "bggggg",
+      "reply": 1,
+      "before": [
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 6,
+      "calls": 6,
+      "guess": "bhhhhh",
+      "reply": 1,
+      "before": [
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 6,
+      "calls": 7,
+      "guess": "biiiii",
+      "reply": 1,
+      "before": [
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 6,
+      "calls": 8,
+      "guess": "bjjjjj",
+      "reply": 1,
+      "before": [
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 6,
+      "calls": 9,
+      "guess": "bkkkkk",
+      "reply": 1,
+      "before": [
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 6,
+      "calls": 10,
+      "guess": "blllll",
+      "reply": 1,
+      "before": [
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 6,
+      "calls": 11,
+      "guess": "bmmmmm",
+      "reply": 6,
+      "before": [
+        "bmmmmm"
+      ],
+      "after": [
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 7,
+      "calls": 1,
+      "guess": "accccc",
+      "reply": 0,
+      "before": [
+        "accccc",
+        "addddd",
+        "aeeeee",
+        "afffff",
+        "aggggg",
+        "ahhhhh",
+        "aiiiii",
+        "ajjjjj",
+        "akkkkk",
+        "alllll",
+        "ammmmm",
+        "annnnn",
+        "bccccc",
+        "bddddd",
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ],
+      "after": [
+        "bddddd",
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ]
+    },
+    {
+      "preset": 7,
+      "calls": 2,
+      "guess": "bddddd",
+      "reply": 1,
+      "before": [
+        "bddddd",
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ],
+      "after": [
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ]
+    },
+    {
+      "preset": 7,
+      "calls": 3,
+      "guess": "beeeee",
+      "reply": 1,
+      "before": [
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ],
+      "after": [
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ]
+    },
+    {
+      "preset": 7,
+      "calls": 4,
+      "guess": "bfffff",
+      "reply": 1,
+      "before": [
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ],
+      "after": [
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ]
+    },
+    {
+      "preset": 7,
+      "calls": 5,
+      "guess": "bggggg",
+      "reply": 1,
+      "before": [
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ],
+      "after": [
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ]
+    },
+    {
+      "preset": 7,
+      "calls": 6,
+      "guess": "bhhhhh",
+      "reply": 1,
+      "before": [
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ],
+      "after": [
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ]
+    },
+    {
+      "preset": 7,
+      "calls": 7,
+      "guess": "biiiii",
+      "reply": 1,
+      "before": [
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ],
+      "after": [
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ]
+    },
+    {
+      "preset": 7,
+      "calls": 8,
+      "guess": "bjjjjj",
+      "reply": 1,
+      "before": [
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ],
+      "after": [
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ]
+    },
+    {
+      "preset": 7,
+      "calls": 9,
+      "guess": "bkkkkk",
+      "reply": 1,
+      "before": [
+        "bkkkkk",
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ],
+      "after": [
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ]
+    },
+    {
+      "preset": 7,
+      "calls": 10,
+      "guess": "blllll",
+      "reply": 1,
+      "before": [
+        "blllll",
+        "bmmmmm",
+        "bnnnnn"
+      ],
+      "after": [
+        "bmmmmm",
+        "bnnnnn"
+      ]
+    },
+    {
+      "preset": 7,
+      "calls": 11,
+      "guess": "bmmmmm",
+      "reply": 1,
+      "before": [
+        "bmmmmm",
+        "bnnnnn"
+      ],
+      "after": [
+        "bnnnnn"
+      ]
+    },
+    {
+      "preset": 7,
+      "calls": 12,
+      "guess": "bnnnnn",
+      "reply": 6,
+      "before": [
+        "bnnnnn"
+      ],
+      "after": [
+        "bnnnnn"
+      ]
+    },
+    {
+      "preset": 8,
+      "calls": 1,
+      "guess": "accccc",
+      "reply": 0,
+      "before": [
+        "accccc",
+        "addddd",
+        "aeeeee",
+        "afffff",
+        "aggggg",
+        "ahhhhh",
+        "aiiiii",
+        "ajjjjj",
+        "akkkkk",
+        "alllll",
+        "ammmmm",
+        "bccccc",
+        "bddddd",
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "bddddd",
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 8,
+      "calls": 2,
+      "guess": "bddddd",
+      "reply": 1,
+      "before": [
+        "bddddd",
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 8,
+      "calls": 3,
+      "guess": "beeeee",
+      "reply": 1,
+      "before": [
+        "beeeee",
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 8,
+      "calls": 4,
+      "guess": "bfffff",
+      "reply": 1,
+      "before": [
+        "bfffff",
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 8,
+      "calls": 5,
+      "guess": "bggggg",
+      "reply": 1,
+      "before": [
+        "bggggg",
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 8,
+      "calls": 6,
+      "guess": "bhhhhh",
+      "reply": 1,
+      "before": [
+        "bhhhhh",
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 8,
+      "calls": 7,
+      "guess": "biiiii",
+      "reply": 1,
+      "before": [
+        "biiiii",
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 8,
+      "calls": 8,
+      "guess": "bjjjjj",
+      "reply": 1,
+      "before": [
+        "bjjjjj",
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 8,
+      "calls": 9,
+      "guess": "bkkkkk",
+      "reply": 1,
+      "before": [
+        "bkkkkk",
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "blllll",
+        "bmmmmm"
+      ]
+    },
+    {
+      "preset": 8,
+      "calls": 10,
+      "guess": "blllll",
+      "reply": 1,
+      "before": [
+        "blllll",
+        "bmmmmm"
+      ],
+      "after": [
+        "bmmmmm"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "locale": "zh",
+      "h1": "#843 · 猜猜这个单词",
+      "formula": "C_new = {w ∈ C_old : match(guess, w) = reply}；choose = argmin max(|B₀|,…,|B₅|)"
+    },
+    {
+      "locale": "en",
+      "h1": "#843 · Guess the Word",
+      "formula": "C_new = {w ∈ C_old : match(guess, w) = reply}; choose = argmin max(|B₀|,…,|B₅|)"
+    },
+    {
+      "locale": "zh",
+      "h1": "#843 · 猜猜这个单词",
+      "formula": "C_new = {w ∈ C_old : match(guess, w) = reply}；choose = argmin max(|B₀|,…,|B₅|)"
+    }
+  ],
+  "keyboardScroll": 40
+}
