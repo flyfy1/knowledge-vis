@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-25T07:14:10.415131+00:00",
+  "kind": "reopen-navigation-advisory",
+  "before": "e0c84ff15965900aa1edbbe319355fd127bc10d5",
+  "source": "d0c90f43f4f4c6202fe72fd3693c98d5edfe9561",
+  "problem_id": "239",
+  "finding": "239-NAV-R1",
+  "paths": [
+    "specs/reviews/239-review-related-links-20261025.md",
+    "specs/reviews/239-review-navigation-repair-request-20261025.md"
+  ],
+  "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-239-navigation-reopen-20261025.json",
+  "previous_current": {
+    "problem_id": "736",
+    "stage": "author",
+    "started_at": "2026-10-25T07:00:02.705658+00:00",
+    "run_id": "736-author-97bb5b462351"
+  },
+  "scope": "Reopen selected navigation advisory for a real fix and fresh independent review. Preserve all old runs, reviews, released receipts and full queue. Resume 736 at its saved review phase after the earlier 239 repair.",
+  "prior_acceptance": {
+    "accepted_at": "2026-10-25T06:32:55.272607+00:00",
+    "registration_commit": "8e2d9fffcf6dd48385c6dd7d4907806a5efe012b"
+  },
+  "after": "539c2429437ec4f0330be19d30e9289f42f3671c",
+  "status": "completed",
+  "updated_at": "2026-10-25T07:14:10.634666+00:00"
+}
