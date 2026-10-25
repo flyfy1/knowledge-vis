@@ -1,0 +1,49 @@
+{
+  "observedAt": "2026-10-25T23:17:57.403082+00:00",
+  "readOnly": true,
+  "centralHead": "cf1a31fc75c66ca79e54513e050b7e0ba31b6e70",
+  "expectedHead": "cf1a31fc75c66ca79e54513e050b7e0ba31b6e70",
+  "current": {
+    "problem_id": "878",
+    "stage": "author",
+    "started_at": "2026-10-25T23:11:30.966203+00:00",
+    "run_id": "878-author-004c6e7e9e78"
+  },
+  "progressSha256": "3292537ba0e7e28c4ecff74d72efc41594379973abb604649ee6fb71d960dcf5",
+  "queueLength": 984,
+  "queueSha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+  "following1012": [
+    "1028",
+    "1032",
+    "1036",
+    "1044",
+    "1063",
+    "1067"
+  ],
+  "targets": [
+    {
+      "id": "1028",
+      "queueIndex": 211,
+      "problemRecord": null,
+      "runIds": [],
+      "runDirectories": [],
+      "reservations": [],
+      "lessonExists": false,
+      "trackedLessonPaths": [],
+      "lanePaths": [],
+      "laneBranches": []
+    },
+    {
+      "id": "1032",
+      "queueIndex": 212,
+      "problemRecord": null,
+      "runIds": [],
+      "runDirectories": [],
+      "reservations": [],
+      "lessonExists": false,
+      "trackedLessonPaths": [],
+      "lanePaths": [],
+      "laneBranches": []
+    }
+  ]
+}

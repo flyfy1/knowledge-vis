@@ -1,0 +1,733 @@
+{
+  "status": "passed",
+  "treeCaseCount": 10,
+  "streamCaseCount": 12,
+  "soleRightChildRejectedAsOutsideContract": true,
+  "treeMethod": "Forward preorder encoding of manually specified valid trees plus independent breadth-first display; not a recovery solver.",
+  "streamMethod": "Literal full-stream suffix checks with matching-word witnesses; not a scalable implementation.",
+  "treeCases": [
+    {
+      "case": "official-1",
+      "nestedTree": [
+        1,
+        [
+          2,
+          [
+            3,
+            null,
+            null
+          ],
+          [
+            4,
+            null,
+            null
+          ]
+        ],
+        [
+          5,
+          [
+            6,
+            null,
+            null
+          ],
+          [
+            7,
+            null,
+            null
+          ]
+        ]
+      ],
+      "traversal": "1-2--3--4-5--6--7",
+      "levelOrder": [
+        1,
+        2,
+        5,
+        3,
+        4,
+        6,
+        7
+      ]
+    },
+    {
+      "case": "official-2",
+      "nestedTree": [
+        1,
+        [
+          2,
+          [
+            3,
+            [
+              4,
+              null,
+              null
+            ],
+            null
+          ],
+          null
+        ],
+        [
+          5,
+          [
+            6,
+            [
+              7,
+              null,
+              null
+            ],
+            null
+          ],
+          null
+        ]
+      ],
+      "traversal": "1-2--3---4-5--6---7",
+      "levelOrder": [
+        1,
+        2,
+        5,
+        3,
+        null,
+        6,
+        null,
+        4,
+        null,
+        7
+      ]
+    },
+    {
+      "case": "official-3",
+      "nestedTree": [
+        1,
+        [
+          401,
+          [
+            349,
+            [
+              90,
+              null,
+              null
+            ],
+            null
+          ],
+          [
+            88,
+            null,
+            null
+          ]
+        ],
+        null
+      ],
+      "traversal": "1-401--349---90--88",
+      "levelOrder": [
+        1,
+        401,
+        null,
+        349,
+        88,
+        90
+      ]
+    },
+    {
+      "case": "singleton",
+      "nestedTree": [
+        1,
+        null,
+        null
+      ],
+      "traversal": "1",
+      "levelOrder": [
+        1
+      ]
+    },
+    {
+      "case": "maximum-value-token",
+      "nestedTree": [
+        1000000000,
+        null,
+        null
+      ],
+      "traversal": "1000000000",
+      "levelOrder": [
+        1000000000
+      ]
+    },
+    {
+      "case": "sole-left-child",
+      "nestedTree": [
+        1,
+        [
+          2,
+          null,
+          null
+        ],
+        null
+      ],
+      "traversal": "1-2",
+      "levelOrder": [
+        1,
+        2
+      ]
+    },
+    {
+      "case": "multidigit-and-depth-return",
+      "nestedTree": [
+        12,
+        [
+          34,
+          [
+            56,
+            null,
+            null
+          ],
+          null
+        ],
+        [
+          78,
+          null,
+          null
+        ]
+      ],
+      "traversal": "12-34--56-78",
+      "levelOrder": [
+        12,
+        34,
+        78,
+        56
+      ]
+    },
+    {
+      "case": "repeated-values-are-distinct-nodes",
+      "nestedTree": [
+        7,
+        [
+          7,
+          [
+            7,
+            null,
+            null
+          ],
+          null
+        ],
+        [
+          7,
+          null,
+          null
+        ]
+      ],
+      "traversal": "7-7--7-7",
+      "levelOrder": [
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "case": "return-from-depth-three-to-one",
+      "nestedTree": [
+        1,
+        [
+          2,
+          [
+            3,
+            [
+              4,
+              null,
+              null
+            ],
+            null
+          ],
+          null
+        ],
+        [
+          5,
+          null,
+          null
+        ]
+      ],
+      "traversal": "1-2--3---4-5",
+      "levelOrder": [
+        1,
+        2,
+        5,
+        3,
+        null,
+        null,
+        null,
+        4
+      ]
+    },
+    {
+      "case": "same-depth-sibling",
+      "nestedTree": [
+        1,
+        [
+          2,
+          [
+            3,
+            null,
+            null
+          ],
+          [
+            4,
+            null,
+            null
+          ]
+        ],
+        [
+          5,
+          null,
+          null
+        ]
+      ],
+      "traversal": "1-2--3--4-5",
+      "levelOrder": [
+        1,
+        2,
+        5,
+        3,
+        4
+      ]
+    }
+  ],
+  "streamCases": [
+    {
+      "case": "official-1",
+      "words": [
+        "cd",
+        "f",
+        "kl"
+      ],
+      "letters": "abcdefghijkl",
+      "answers": [
+        false,
+        false,
+        false,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "frames": [
+        {
+          "letter": "a",
+          "stream": "a",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "b",
+          "stream": "ab",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "c",
+          "stream": "abc",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "d",
+          "stream": "abcd",
+          "matchingWords": [
+            "cd"
+          ],
+          "answer": true
+        },
+        {
+          "letter": "e",
+          "stream": "abcde",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "f",
+          "stream": "abcdef",
+          "matchingWords": [
+            "f"
+          ],
+          "answer": true
+        },
+        {
+          "letter": "g",
+          "stream": "abcdefg",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "h",
+          "stream": "abcdefgh",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "i",
+          "stream": "abcdefghi",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "j",
+          "stream": "abcdefghij",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "k",
+          "stream": "abcdefghijk",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "l",
+          "stream": "abcdefghijkl",
+          "matchingWords": [
+            "kl"
+          ],
+          "answer": true
+        }
+      ]
+    },
+    {
+      "case": "official-intro",
+      "words": [
+        "abc",
+        "xyz"
+      ],
+      "letters": "axyz",
+      "answers": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "frames": [
+        {
+          "letter": "a",
+          "stream": "a",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "x",
+          "stream": "ax",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "y",
+          "stream": "axy",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "z",
+          "stream": "axyz",
+          "matchingWords": [
+            "xyz"
+          ],
+          "answer": true
+        }
+      ]
+    },
+    {
+      "case": "past-substring-is-not-current-suffix",
+      "words": [
+        "ab"
+      ],
+      "letters": "aba",
+      "answers": [
+        false,
+        true,
+        false
+      ],
+      "frames": [
+        {
+          "letter": "a",
+          "stream": "a",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "b",
+          "stream": "ab",
+          "matchingWords": [
+            "ab"
+          ],
+          "answer": true
+        },
+        {
+          "letter": "a",
+          "stream": "aba",
+          "matchingWords": [],
+          "answer": false
+        }
+      ]
+    },
+    {
+      "case": "overlap-survives-a-match",
+      "words": [
+        "aa"
+      ],
+      "letters": "aaa",
+      "answers": [
+        false,
+        true,
+        true
+      ],
+      "frames": [
+        {
+          "letter": "a",
+          "stream": "a",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "a",
+          "stream": "aa",
+          "matchingWords": [
+            "aa"
+          ],
+          "answer": true
+        },
+        {
+          "letter": "a",
+          "stream": "aaa",
+          "matchingWords": [
+            "aa"
+          ],
+          "answer": true
+        }
+      ]
+    },
+    {
+      "case": "shared-prefix-terminal-is-not-leaf-only",
+      "words": [
+        "ab",
+        "abc"
+      ],
+      "letters": "abcf",
+      "answers": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "frames": [
+        {
+          "letter": "a",
+          "stream": "a",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "b",
+          "stream": "ab",
+          "matchingWords": [
+            "ab"
+          ],
+          "answer": true
+        },
+        {
+          "letter": "c",
+          "stream": "abc",
+          "matchingWords": [
+            "abc"
+          ],
+          "answer": true
+        },
+        {
+          "letter": "f",
+          "stream": "abcf",
+          "matchingWords": [],
+          "answer": false
+        }
+      ]
+    },
+    {
+      "case": "two-words-end-together",
+      "words": [
+        "a",
+        "ba"
+      ],
+      "letters": "ba",
+      "answers": [
+        false,
+        true
+      ],
+      "frames": [
+        {
+          "letter": "b",
+          "stream": "b",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "a",
+          "stream": "ba",
+          "matchingWords": [
+            "a",
+            "ba"
+          ],
+          "answer": true
+        }
+      ]
+    },
+    {
+      "case": "duplicate-dictionary-words",
+      "words": [
+        "a",
+        "a"
+      ],
+      "letters": "ab",
+      "answers": [
+        true,
+        false
+      ],
+      "frames": [
+        {
+          "letter": "a",
+          "stream": "a",
+          "matchingWords": [
+            "a",
+            "a"
+          ],
+          "answer": true
+        },
+        {
+          "letter": "b",
+          "stream": "ab",
+          "matchingWords": [],
+          "answer": false
+        }
+      ]
+    },
+    {
+      "case": "direction-matters",
+      "words": [
+        "ab"
+      ],
+      "letters": "ba",
+      "answers": [
+        false,
+        false
+      ],
+      "frames": [
+        {
+          "letter": "b",
+          "stream": "b",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "a",
+          "stream": "ba",
+          "matchingWords": [],
+          "answer": false
+        }
+      ]
+    },
+    {
+      "case": "word-longer-than-current-stream",
+      "words": [
+        "abc"
+      ],
+      "letters": "ab",
+      "answers": [
+        false,
+        false
+      ],
+      "frames": [
+        {
+          "letter": "a",
+          "stream": "a",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "b",
+          "stream": "ab",
+          "matchingWords": [],
+          "answer": false
+        }
+      ]
+    },
+    {
+      "case": "singleton-word",
+      "words": [
+        "z"
+      ],
+      "letters": "zz",
+      "answers": [
+        true,
+        true
+      ],
+      "frames": [
+        {
+          "letter": "z",
+          "stream": "z",
+          "matchingWords": [
+            "z"
+          ],
+          "answer": true
+        },
+        {
+          "letter": "z",
+          "stream": "zz",
+          "matchingWords": [
+            "z"
+          ],
+          "answer": true
+        }
+      ]
+    },
+    {
+      "case": "suffix-not-whole-stream",
+      "words": [
+        "ab"
+      ],
+      "letters": "cab",
+      "answers": [
+        false,
+        false,
+        true
+      ],
+      "frames": [
+        {
+          "letter": "c",
+          "stream": "c",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "a",
+          "stream": "ca",
+          "matchingWords": [],
+          "answer": false
+        },
+        {
+          "letter": "b",
+          "stream": "cab",
+          "matchingWords": [
+            "ab"
+          ],
+          "answer": true
+        }
+      ]
+    },
+    {
+      "case": "empty-query-sequence",
+      "words": [
+        "a"
+      ],
+      "letters": "",
+      "answers": [],
+      "frames": []
+    }
+  ]
+}

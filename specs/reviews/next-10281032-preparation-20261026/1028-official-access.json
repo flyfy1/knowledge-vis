@@ -1,0 +1,31 @@
+{
+  "observedAt": "2026-10-25T23:18:22.890885+00:00",
+  "source": "https://leetcode.com/graphql/",
+  "officialUrl": "https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/",
+  "httpStatus": 200,
+  "access": "ordinary public unauthenticated GraphQL GET; no bypass",
+  "requestCount": 1,
+  "request": {
+    "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug content difficulty isPaidOnly exampleTestcases sampleTestCase metaData codeSnippets { lang langSlug code } topicTags { name slug } } }",
+    "variables": {
+      "titleSlug": "recover-a-tree-from-preorder-traversal"
+    },
+    "operationName": "questionData"
+  },
+  "requestMethod": "GET",
+  "requestUrl": "https://leetcode.com/graphql/?query=query+questionData%28%24titleSlug%3A+String%21%29+%7B+question%28titleSlug%3A+%24titleSlug%29+%7B+questionId+questionFrontendId+title+titleSlug+content+difficulty+isPaidOnly+exampleTestcases+sampleTestCase+metaData+codeSnippets+%7B+lang+langSlug+code+%7D+topicTags+%7B+name+slug+%7D+%7D+%7D&variables=%7B%22titleSlug%22%3A%22recover-a-tree-from-preorder-traversal%22%7D&operationName=questionData",
+  "responseFile": "1028-official-response.json",
+  "responseSha256": "a74c87ae1a772c76ab9452661ba60c6db49c52d9598cdeeb9c4fb22f43692933",
+  "responseBytes": 10984,
+  "frozenCatalogSnapshotAt": "2026-10-18T08:59:47.124517+00:00",
+  "frozenCatalogRecord": {
+    "id": 1028,
+    "slug": "recover-a-tree-from-preorder-traversal",
+    "title": "Recover a Tree From Preorder Traversal",
+    "paidOnly": false,
+    "officialUrl": "https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/",
+    "categories": [
+      "algorithms"
+    ]
+  }
+}

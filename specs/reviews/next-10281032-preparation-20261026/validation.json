@@ -1,0 +1,25 @@
+{
+  "preparedAt": "2026-10-25T23:21:08.505203+00:00",
+  "status": "dispatcher-reference-only",
+  "checks": {
+    "command": "python3 -B specs/reviews/next-10281032-preparation-20261026/check-examples.py",
+    "treeCases": 10,
+    "streamCases": 12,
+    "soleRightNegativeCheck": true
+  },
+  "sourceAccess": "ordinary public unauthenticated GraphQL GET, one response per problem",
+  "authorPromptInjection": false,
+  "piMutation": false,
+  "files": {
+    "1028-official-access.json": "de459b7b493757183b41036a7409d385579ce3e619abf3bd66bddad392ac0c37",
+    "1028-official-response.json": "a74c87ae1a772c76ab9452661ba60c6db49c52d9598cdeeb9c4fb22f43692933",
+    "1028.md": "130d79a5da7520d00aede8b3ce32228d3c8eb6d0021dc2d96aedfb24904fca10",
+    "1032-official-access.json": "381c08c0f51306a9e4bfe003346202583491c6d7a153692d2cc409fb9362a661",
+    "1032-official-response.json": "685b12585a0eb791447fdcc5115a25497509b8f531138016cc383edbdd7e4ff2",
+    "1032.md": "1b1e90c6340329af6fb21353e4e4d20ffb1e43199ce806002fa4afeed2a21914",
+    "README.md": "119550f82c0da996633929d4a5504113b5d990f154bf447867c0c0a6603f84b9",
+    "check-examples.py": "f1a1b8488f2c7e23eeb55885d0860d554f01fabc380bb3cfc652a71644218877",
+    "example-checks.json": "f3b9a14e689fa2d5a0e72d79d6d21e83bdd3d96cc2b2aca9a137fc4d92b6428f",
+    "target-detail.json": "f0565667b87cf5fc6508a1a7d3379c51904bc228e6ae761a940025a80ddb20ba"
+  }
+}
