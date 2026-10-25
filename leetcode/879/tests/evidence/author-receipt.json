@@ -1,0 +1,50 @@
+{
+  "problemId": 879,
+  "author": "Codex (exact model unavailable)",
+  "authorStatus": "self-checked",
+  "independentReview": {
+    "status": "pending",
+    "reviewer": null,
+    "run": null
+  },
+  "verifiedAt": "2026-10-25T23:46:04.217813+00:00",
+  "preview": "http://127.0.0.1:18770/leetcode/879/",
+  "canonicalLanguage": "Python",
+  "canonicalInterface": "Solution.profitableSchemes(self, n: int, minProfit: int, group: list[int], profit: list[int]) -> int",
+  "commands": [
+    {
+      "command": "python3 -B leetcode/879/tests/test_solution.py",
+      "exitCode": 0,
+      "cases": 10235
+    },
+    {
+      "command": "node leetcode/879/tests/test_core.cjs",
+      "exitCode": 0,
+      "cases": 9834,
+      "prefixFrames": 38141
+    },
+    {
+      "command": "node leetcode/879/tests/browser.cjs",
+      "exitCode": 0
+    },
+    {
+      "command": "python3 -B scripts/register_leetcode_lesson.py 879 --validate-only",
+      "cwd": "repository root",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "cssBytes": 11061,
+  "browser": "Chromium 156.0.8078.4 / Linux",
+  "inspectedScreenshots": "State EN/zh at 320/390/736/1440; 200% CSS page zoom EN/zh; 320 controls, 390 headings and quiz feedback EN/zh",
+  "ownRuntimeAssetErrors": [],
+  "inheritedNavigationDiagnostic": "Related #10 page requests /favicon.ico and receives 404; outside authored scope, preserved in asset-diagnostics.json",
+  "limitations": [
+    "No independent review or learner study",
+    "No LeetCode submission",
+    "No production deployment",
+    "Physical devices, native browser chrome zoom, screen-reader speech unverified"
+  ],
+  "freeze": "See tests/candidate-manifest.json; any source or metadata fix is a new candidate."
+}
