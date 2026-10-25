@@ -1,0 +1,8 @@
+const fs=require('fs'),path=require('path'),assert=require('assert'),core=require('../core.js');
+const out=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(out,{recursive:true});
+function oracle(rows){const m=rows[0].length,ending=Array(m).fill(0);for(let mask=1;mask<2**m;mask++){const ids=[];for(let j=0;j<m;j++)if(mask&(1<<j))ids.push(j);const valid=rows.every(s=>{let w=ids.map(i=>s[i]).join('');return w===[...w].sort().join('')});if(valid)ending[ids.at(-1)]=Math.max(ending[ids.at(-1)],ids.length);}return ending;}
+let cases=0;
+function check(rows){const expected=oracle(rows),model=core.trace(rows);assert.equal(model.frames.length,rows[0].length+1);for(let k=1;k<model.frames.length;k++){const f=model.frames[k];assert.deepEqual(f.dp,expected.slice(0,k));assert.equal(f.path.length,Math.max(...f.dp));assert.equal(f.pairs.length,k-1);let v=1;for(const p of f.pairs){assert.equal(p.old,v);assert.equal(p.ok,rows.every(s=>s[p.i]<=s[p.j]));assert.equal(p.candidate,p.ok?expected[p.i]+1:null);v=p.ok?Math.max(v,p.candidate):v;assert.equal(p.value,v);}assert.equal(f.dp[k-1],v);for(const row of rows){const w=f.path.map(i=>row[i]).join('');assert.equal(w,[...w].sort().join(''));}}cases++;}
+core.presets.forEach(check);
+for(let mask=0;mask<4096;mask++){const bits=mask.toString(2).padStart(12,'0').replaceAll('0','a').replaceAll('1','b');check([bits.slice(0,4),bits.slice(4,8),bits.slice(8)]);}
+fs.writeFileSync(path.join(out,'core.json'),JSON.stringify({type:'author trace invariant check',cases,allEndingLengths:'independent exhaustive subset oracle',pairOldNew:'pass',paths:'pass'},null,2));console.log({cases,result:'pass'});

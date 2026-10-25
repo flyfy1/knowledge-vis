@@ -1,0 +1,10 @@
+{
+  "kind": "author metadata preflight",
+  "command": "python3 -B scripts/register_leetcode_lesson.py 960 --validate-only",
+  "cwd": "/home/songyy/projects/leetcode-hard-lane-960-20261026",
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "",
+  "verifiedAt": "2026-10-26T02:01:38.117031+08:00",
+  "mutations": "none; validate-only"
+}
