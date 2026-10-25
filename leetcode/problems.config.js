@@ -2719,6 +2719,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n³) time; O(n²) auxiliary space"
   },
   {
+    "id": 745,
+    "title": {
+      "zh": "前缀和后缀搜索",
+      "en": "Prefix and Suffix Search"
+    },
+    "desc": {
+      "zh": "把短单词的两端配对，推导最大下标为何能安全覆盖。",
+      "en": "Pair the ends of short words and derive why later indices safely overwrite earlier ones."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "哈希表",
+        "en": "Hash map"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "745/",
+    "leetcodeUrl": "https://leetcode.com/problems/prefix-and-suffix-search/",
+    "language": "Python",
+    "complexity": "Expected O(nL³) construction time; O(nL³) space; O(|pref|+|suff|) time per query"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
