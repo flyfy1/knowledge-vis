@@ -38,7 +38,17 @@ The fresh reviewer checked actual bilingual trace/quiz preservation, page-end
 layout, keyboard links and exact source transfers. Optional 798-A1 remains open;
 this record does not imply closure of that separate presentation suggestion.
 Checkpoint `ef907807c5e04902df41b2d48c5a5fb858efd79e` was pushed while the live
-worker continued #801. The remaining six requests are not closed by this record.
+worker continued #801.
+
+Root then read the actual #801 closure and accepted state. Fresh review
+`801-review-2a988e03292d` accepted candidate
+`84fc897f098887350f64045e36cc45cf7cdb5e88` at96.25/100, explicitly closing
+801-COPY-R1 in [801-review-2-91de8989](https://github.com/flyfy1/knowledge-vis/blob/44b14a9a1bacfe998b5c2d25d7cfb03daaeb00ea/specs/reviews/801-review-2-91de8989.md).
+The reviewer checked restricted runtime changes, protected source bytes, preserved
+original-input/simulation text, locale trace/quiz state, keyboard links and native
+200% zoom. Optional baseline-syntax advisory801-A1 remains open. Its accepted
+checkpoint `44b14a9a1bacfe998b5c2d25d7cfb03daaeb00ea` was pushed while815 fix
+continued. The remaining five requests are not closed by this record.
 
 The old public #780 remains until the normal every-20 publication batch verifies
 the new revision. Release eligibility uses changed runtime digests, so this
