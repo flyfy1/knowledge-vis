@@ -3519,6 +3519,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) auxiliary space"
   },
   {
+    "id": 972,
+    "title": {
+      "zh": "相等的有理数",
+      "en": "Equal Rational Numbers"
+    },
+    "desc": {
+      "zh": "把无限循环小数变成精确分数，辨认不同写法背后的同一个数。",
+      "en": "Turn repeating decimals into exact fractions and compare different spellings."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数学",
+        "en": "Math"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "972/",
+    "leetcodeUrl": "https://leetcode.com/problems/equal-rational-numbers/",
+    "language": "Python",
+    "complexity": "O(n) parsing time; O(n) auxiliary space under the official bounded-digit arithmetic model"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
