@@ -1189,3 +1189,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Minimum-frontier range scan | `leetcode/632/#step2` | Advance the smallest selected row value while maintaining the largest selected value. |
 
 <!-- /leetcode-632-campaign -->
+
+
+<!-- leetcode-639-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Disjoint final-token counting | `leetcode/639/#step1` | Count valid one-digit and two-digit endings without admitting zero as a wildcard. |
+| Rolling prefix decoding counts | `leetcode/639/#step2` | Extend the two preceding prefix counts through disjoint final-token cases. |
+
+<!-- /leetcode-639-campaign -->
