@@ -1375,3 +1375,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Prefix–suffix pair invariant | `leetcode/745/#step2` | Enumerate all nonempty end pairs and retain the latest matching original index. |
 
 <!-- /leetcode-745-campaign -->
+
+
+<!-- leetcode-749-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Threatened cells versus wall edges | `leetcode/749/#step0` | Deduplicate healthy targets but count each boundary edge. |
+| Frozen-frontier simulation | `leetcode/749/#step2` | Compute all regions before quarantine and simultaneous one-layer spread. |
+
+<!-- /leetcode-749-campaign -->

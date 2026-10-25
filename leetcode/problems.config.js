@@ -2745,6 +2745,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "Expected O(nL³) construction time; O(nL³) space; O(|pref|+|suff|) time per query"
   },
   {
+    "id": 749,
+    "title": {
+      "zh": "隔离病毒",
+      "en": "Contain Virus"
+    },
+    "desc": {
+      "zh": "分清受威胁格与墙边，冻结日初边界，逐夜模拟隔离与扩散。",
+      "en": "Separate threatened cells from wall edges, freeze day-start frontiers, and simulate quarantine and spread."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "网格模拟",
+        "en": "Grid simulation"
+      },
+      {
+        "zh": "连通区域",
+        "en": "Connected components"
+      },
+      {
+        "zh": "集合去重",
+        "en": "Set deduplication"
+      }
+    ],
+    "path": "749/",
+    "leetcodeUrl": "https://leetcode.com/problems/contain-virus/",
+    "language": "Python",
+    "complexity": "O((D+1)mn) time, D ≤ mn, hence O((mn)²) worst case; O(mn) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
