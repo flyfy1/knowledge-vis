@@ -2973,6 +2973,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(V+E) time; O(V) auxiliary space for fixed six-cell states, V ≤ 720 and E ≤ 3V"
   },
   {
+    "id": 778,
+    "title": {
+      "zh": "水位上升的泳池中游泳",
+      "en": "Swim in Rising Water"
+    },
+    "desc": {
+      "zh": "从路径最高点推导最小瓶颈搜索，逐步证明最早可达水位。",
+      "en": "Derive a minimum-bottleneck search from path maxima and prove the earliest reachable water level."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "图搜索",
+        "en": "Graph search"
+      },
+      {
+        "zh": "最小堆",
+        "en": "Min-heap"
+      }
+    ],
+    "path": "778/",
+    "leetcodeUrl": "https://leetcode.com/problems/swim-in-rising-water/",
+    "language": "Python",
+    "complexity": "O(n² log n) time; O(n²) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
