@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "kind": "author Chromium supplementary checks",
+  "browser": "156.0.8078.4",
+  "checks": [
+    {
+      "lang": "en",
+      "copy": "native clipboard exact, localized success",
+      "table": "rightmost current count entirely visible after horizontal scroll",
+      "headerWidth": 320
+    },
+    {
+      "lang": "zh",
+      "copy": "native clipboard exact, localized success",
+      "table": "rightmost current count entirely visible after horizontal scroll",
+      "headerWidth": 320
+    }
+  ]
+}
