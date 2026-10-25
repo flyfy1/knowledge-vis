@@ -1,0 +1,233 @@
+{
+  "status": "pass",
+  "selectedLabels": [
+    {
+      "width": 256,
+      "locale": "en",
+      "preset": 0,
+      "text": "Hand case · one hole",
+      "ink": 167.43997192382812,
+      "padding": 30
+    },
+    {
+      "width": 256,
+      "locale": "en",
+      "preset": 1,
+      "text": "Official · two holes",
+      "ink": 150.57595825195312,
+      "padding": 30
+    },
+    {
+      "width": 256,
+      "locale": "en",
+      "preset": 2,
+      "text": "Empty blacklist",
+      "ink": 118.06398010253906,
+      "padding": 30
+    },
+    {
+      "width": 256,
+      "locale": "en",
+      "preset": 3,
+      "text": "High-value skips",
+      "ink": 130.6079864501953,
+      "padding": 30
+    },
+    {
+      "width": 256,
+      "locale": "en",
+      "preset": 4,
+      "text": "One allowed value",
+      "ink": 140.78396606445312,
+      "padding": 30
+    },
+    {
+      "width": 256,
+      "locale": "en",
+      "preset": 5,
+      "text": "High blacklist only",
+      "ink": 141.88796997070312,
+      "padding": 30
+    },
+    {
+      "width": 256,
+      "locale": "zh",
+      "preset": 0,
+      "text": "手算 · 一个洞",
+      "ink": 101.21603393554688,
+      "padding": 30
+    },
+    {
+      "width": 256,
+      "locale": "zh",
+      "preset": 1,
+      "text": "官方 · 两个洞",
+      "ink": 101.21603393554688,
+      "padding": 30
+    },
+    {
+      "width": 256,
+      "locale": "zh",
+      "preset": 2,
+      "text": "空黑名单",
+      "ink": 65.280029296875,
+      "padding": 30
+    },
+    {
+      "width": 256,
+      "locale": "zh",
+      "preset": 3,
+      "text": "高区间连续跳过",
+      "ink": 114.24005126953125,
+      "padding": 30
+    },
+    {
+      "width": 256,
+      "locale": "zh",
+      "preset": 4,
+      "text": "仅一个可用值",
+      "ink": 97.9200439453125,
+      "padding": 30
+    },
+    {
+      "width": 256,
+      "locale": "zh",
+      "preset": 5,
+      "text": "高区间黑名单",
+      "ink": 97.9200439453125,
+      "padding": 30
+    },
+    {
+      "width": 326,
+      "locale": "en",
+      "preset": 0,
+      "text": "Hand case · one hole",
+      "ink": 167.43997192382812,
+      "padding": 30
+    },
+    {
+      "width": 326,
+      "locale": "en",
+      "preset": 1,
+      "text": "Official · two holes",
+      "ink": 150.57595825195312,
+      "padding": 30
+    },
+    {
+      "width": 326,
+      "locale": "en",
+      "preset": 2,
+      "text": "Empty blacklist",
+      "ink": 118.06398010253906,
+      "padding": 30
+    },
+    {
+      "width": 326,
+      "locale": "en",
+      "preset": 3,
+      "text": "High-value skips",
+      "ink": 130.6079864501953,
+      "padding": 30
+    },
+    {
+      "width": 326,
+      "locale": "en",
+      "preset": 4,
+      "text": "One allowed value",
+      "ink": 140.78396606445312,
+      "padding": 30
+    },
+    {
+      "width": 326,
+      "locale": "en",
+      "preset": 5,
+      "text": "High blacklist only",
+      "ink": 141.88796997070312,
+      "padding": 30
+    },
+    {
+      "width": 326,
+      "locale": "zh",
+      "preset": 0,
+      "text": "手算 · 一个洞",
+      "ink": 101.21603393554688,
+      "padding": 30
+    },
+    {
+      "width": 326,
+      "locale": "zh",
+      "preset": 1,
+      "text": "官方 · 两个洞",
+      "ink": 101.21603393554688,
+      "padding": 30
+    },
+    {
+      "width": 326,
+      "locale": "zh",
+      "preset": 2,
+      "text": "空黑名单",
+      "ink": 65.280029296875,
+      "padding": 30
+    },
+    {
+      "width": 326,
+      "locale": "zh",
+      "preset": 3,
+      "text": "高区间连续跳过",
+      "ink": 114.24005126953125,
+      "padding": 30
+    },
+    {
+      "width": 326,
+      "locale": "zh",
+      "preset": 4,
+      "text": "仅一个可用值",
+      "ink": 97.9200439453125,
+      "padding": 30
+    },
+    {
+      "width": 326,
+      "locale": "zh",
+      "preset": 5,
+      "text": "高区间黑名单",
+      "ink": 97.9200439453125,
+      "padding": 30
+    }
+  ],
+  "disabledContrast": [
+    {
+      "id": "next",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 7.078851579017443
+    },
+    {
+      "id": "end",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 7.078851579017443
+    },
+    {
+      "id": "next",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 7.078851579017443
+    },
+    {
+      "id": "end",
+      "disabled": true,
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 7.078851579017443
+    }
+  ],
+  "keyboardScrollableLedgerAndSource": true,
+  "host": "darwin"
+}

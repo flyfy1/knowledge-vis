@@ -1,0 +1,12 @@
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'3' !== '1'
+
+    at /private/tmp/leetcode-710-frozen-9e47442-20261025/leetcode/710/tests/browser.cjs:98:145 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '3',
+  expected: '1',
+  operator: 'strictEqual',
+  diff: 'simple'
+}

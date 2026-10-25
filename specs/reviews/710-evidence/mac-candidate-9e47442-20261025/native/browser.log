@@ -1,0 +1,17 @@
+{
+  labels: 24,
+  clipboard: [
+    {
+      lang: 'en',
+      sentinelVerifiedBeforeKey: true,
+      shortcut: 'Meta+C',
+      exactCharacters: 501
+    },
+    {
+      lang: 'zh',
+      sentinelVerifiedBeforeKey: true,
+      shortcut: 'Meta+C',
+      exactCharacters: 501
+    }
+  ]
+}
