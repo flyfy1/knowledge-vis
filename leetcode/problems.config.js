@@ -3545,6 +3545,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) auxiliary space"
   },
   {
+    "id": 864,
+    "title": {
+      "zh": "获取所有钥匙的最短路径",
+      "en": "Shortest Path to Get All Keys"
+    },
+    "desc": {
+      "zh": "同一格子，不同钥匙：从手算路线推导完整状态的分层搜索。",
+      "en": "Same square, different keys: derive a layered search over position and inventory."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "位掩码",
+        "en": "Bitmask"
+      }
+    ],
+    "path": "864/",
+    "leetcodeUrl": "https://leetcode.com/problems/shortest-path-to-get-all-keys/",
+    "language": "Python",
+    "complexity": "O(mn · 2^k) time; O(mn · 2^k) auxiliary space"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
