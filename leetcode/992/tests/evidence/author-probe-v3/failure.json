@@ -1,0 +1,9 @@
+{
+  "kind": "author probe",
+  "testSha256": "432cf0afeda6ef7589b7c96b79d6f8641f20b24f1cca59737f0dec438fee72a5",
+  "result": "failed global console error check",
+  "message": "One favicon.ico 404 while following related #2916. All earlier numerical, control, source, contrast assertions completed.",
+  "reproduction": "Separate real Chromium navigation to http://127.0.0.1:18797/leetcode/2916/#step1 emitted console error at http://127.0.0.1:18797/favicon.ico",
+  "scope": "Existing sibling lesson has no inline favicon. No ownership authorization to edit it.",
+  "test_revision": "Record this exact favicon URL in siblingWarnings with current page URL; preserve errors check on every other asset/runtime error."
+}

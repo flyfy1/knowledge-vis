@@ -1,0 +1,10 @@
+{
+  "kind": "author probe failure",
+  "command": "OUTPUT_DIR=leetcode/992/tests/evidence node leetcode/992/tests/browser.cjs",
+  "testSha256": "7edb0b134bbc44a77fd66db4398490edb681020c20ac696c72e83baa422ea4ff",
+  "result": "failed after behavioral checks",
+  "failure": "Expanded contrast assertion measured focus after pointer actions had moved focus. Non-focused active EN button inherited outlineColor rgb(13,17,23); ratio 1.094. Earlier actual keyboard-focus assertion passed with 3px accent2 outline.",
+  "diagnosis": "test state setup error; no runtime focus defect established",
+  "repair": "Focus EN via actual Tab/Shift+Tab immediately before computed focus contrast, assert :focus-visible and width3. Preserve all thresholds.",
+  "additional_refinement": "Current array-cell text had AA ratio6.65 using accent; use shared text token to exceed target7."
+}

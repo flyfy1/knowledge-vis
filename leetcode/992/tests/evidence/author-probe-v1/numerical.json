@@ -1,0 +1,22 @@
+{
+  "kind": "author numerical self-check",
+  "result": "pass",
+  "small_cases": 6503,
+  "frames": 45267,
+  "max_n": 20000,
+  "official_examples": [
+    7,
+    3
+  ],
+  "source_mirror": "exact including final newline",
+  "copy_keys": 93,
+  "oracle": "independent materialized intervals and sets",
+  "intermediate": [
+    "earliest legal start",
+    "both contributions",
+    "prefix total",
+    "exact positive frequencies",
+    "removal indices"
+  ],
+  "review": "independent review pending"
+}

@@ -3861,6 +3861,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n) time; O(n) auxiliary space and O(n) output space"
   },
   {
+    "id": 992,
+    "title": {
+      "zh": "K 个不同整数的子数组",
+      "en": "Subarrays with K Different Integers"
+    },
+    "desc": {
+      "zh": "从手算到两个左边界：用至多计数相减，恰好数出 k 种值的连续区间。",
+      "en": "Derive two left boundaries and subtract at-most counts to count exactly-k intervals."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "滑动窗口",
+        "en": "Sliding window"
+      },
+      {
+        "zh": "频次计数",
+        "en": "Frequency counting"
+      }
+    ],
+    "path": "992/",
+    "leetcodeUrl": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
+    "language": "Python",
+    "complexity": "O(n) expected time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
