@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>964 · Least Operators to Express Number</title><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="style.css"></head><body>
+<header class="site-head"><div class="head-top"><a class="back-link" href="../" data-i18n="back"></a><div role="group" id="langToggle" class="lang-toggle"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div></div><h1 data-i18n="title"></h1><p class="tagline" data-i18n="intro"></p><a class="official-link" href="https://leetcode.com/problems/least-operators-to-express-number/" data-i18n="official"></a></header>
+<nav class="step-nav"><div class="step-nav-inner"><a href="#step1" data-i18n="nav1"></a><a href="#step2" data-i18n="nav2"></a><a href="#step3" data-i18n="nav3"></a><a href="#step4" data-i18n="nav4"></a><a href="#step5" data-i18n="nav5"></a></div></nav>
+<main>
+<section id="step1" class="step" data-step="1"><div class="step-inner"><h2 data-i18n="h1"></h2><p class="explain" data-i18n="p1"></p><p data-i18n="limits"></p><div class="stage"><label for="hand" data-i18n="handLabel"></label><select id="hand"><option value="7">7</option><option value="8" selected>8</option><option value="9">9</option></select><p id="handResult" class="formula" aria-live="polite"></p></div></div></section>
+<section id="step2" class="step" data-step="2"><div class="step-inner"><h2 data-i18n="h2"></h2><p class="explain" data-i18n="p2"></p><p data-i18n="baseline"></p><details><summary data-i18n="baseSource"></summary><p data-i18n="baseHelp"></p><pre tabindex="0"><code>from fractions import Fraction
+from itertools import product
+
+
+def evaluate(x, operators):
+    # Fold a multiplication/division term before committing its signed value.
+    total, term = Fraction(0), Fraction(x)
+    for op in operators:
+        if op == &#x27;*&#x27;:
+            term *= x
+        elif op == &#x27;/&#x27;:
+            term /= x
+        else:
+            total += term
+            term = Fraction(x if op == &#x27;+&#x27; else -x)
+    return total + term
+
+
+def baseline(x, target):
+    count = 0
+    while True:
+        for operators in product(&#x27;+-*/&#x27;, repeat=count):
+            if evaluate(x, operators) == target:
+                return count
+        count += 1
+</code></pre></details><p class="question" data-i18n="charge"></p><p data-i18n="derive"></p><p class="question" data-i18n="worked"></p></div></section>
+<section id="step3" class="step" data-step="3"><div class="step-inner"><h2 data-i18n="h3"></h2><p class="explain" data-i18n="p3"></p><p data-i18n="transition"></p><div class="stage"><label for="preset" data-i18n="preset"></label><select id="preset"><option value="0" data-i18n="pre0"></option><option value="1" data-i18n="pre1"></option><option value="2" data-i18n="pre2"></option><option value="3" data-i18n="pre3"></option><option value="4" data-i18n="pre4"></option><option value="5" data-i18n="pre5"></option></select><p id="progress" class="readout" aria-live="polite"></p><div class="controls"><button class="btn" id="prev" data-i18n="backStep"></button><button class="btn primary" id="next" data-i18n="next"></button><button class="btn" id="reset" data-i18n="reset"></button><button class="btn" id="end" data-i18n="end"></button></div><ol id="ledger"></ol><p id="result" class="readout" aria-live="polite"></p></div><p data-i18n="proof"></p></div></section>
+<section id="step4" class="step" data-step="4"><div class="step-inner"><h2 data-i18n="h4"></h2><p class="explain" data-i18n="p4"></p><fieldset class="prediction-options"><legend data-i18n="choose"></legend><label><input type="radio" name="prediction" value="0"><span data-i18n="opt0"></span></label><label><input type="radio" name="prediction" value="1"><span data-i18n="opt1"></span></label><label><input type="radio" name="prediction" value="2"><span data-i18n="opt2"></span></label></fieldset><button id="reveal" class="btn primary" disabled data-i18n="reveal"></button><p id="feedback" class="readout" hidden aria-live="polite"></p></div></section>
+<section id="step5" class="step" data-step="5"><div class="step-inner"><h2 data-i18n="h5"></h2><p class="explain" data-i18n="p5"></p><p data-i18n="costs"></p><details id="sourceDetails"><summary data-i18n="source"></summary><pre tabindex="0"><code id="code"></code></pre></details><div class="solution-actions"><button class="btn" id="copy" data-i18n="copy"></button><a class="btn" id="download" href="solution.py" download="solution.py" data-i18n="download"></a></div><p id="copyStatus" role="status"></p><div id="manualCopy" hidden><label for="fallbackSource" data-i18n="manualLabel"></label><textarea id="fallbackSource" readonly rows="12" spellcheck="false"></textarea></div><h3 data-i18n="related"></h3><div class="related"><a href="#step2" data-i18n="link1"></a><a href="../956/#step2" data-i18n="link2"></a><a href="../920/#step2" data-i18n="link3"></a></div></div></section>
+</main><script src="../common.js"></script><script src="copy.js"></script><script src="core.js"></script><script src="python-code.js"></script><script src="app.js"></script></body></html>
