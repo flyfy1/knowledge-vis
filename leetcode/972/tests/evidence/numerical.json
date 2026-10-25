@@ -1,0 +1,61 @@
+{
+  "kind": "author self-check",
+  "exhaustiveStrings": 192,
+  "exhaustivePairs": 36864,
+  "seed": 972,
+  "randomPairs": 2000,
+  "intermediatePrefixChecks": 20000,
+  "boundaries": [
+    [
+      "0.(52)",
+      "0.5(25)",
+      true
+    ],
+    [
+      "0.1666(6)",
+      "0.166(66)",
+      true
+    ],
+    [
+      "0.9(9)",
+      "1.",
+      true
+    ],
+    [
+      "1",
+      "1.",
+      true
+    ],
+    [
+      "0.(06)",
+      "0.(6)",
+      false
+    ],
+    [
+      "0.25(0)",
+      "0.25",
+      true
+    ],
+    [
+      "0.0000(1)",
+      "0",
+      false
+    ],
+    [
+      "9999.9999(9999)",
+      "10000",
+      true
+    ],
+    [
+      "9999.9999(9999)",
+      "9999.9999",
+      false
+    ],
+    [
+      "0.12(9)",
+      "0.13",
+      true
+    ]
+  ],
+  "result": "pass"
+}
