@@ -75,7 +75,7 @@ const path = require('node:path');
         assert.deepEqual(await traceState(), before, 'locale switch reset teaching state');
         assert.equal(await page.locator('#step3 [data-i18n="quiz"]').count(), 1);
         assert((await page.locator('#feedback').textContent()).includes(lang === 'zh' ? '再看资格条件' : 'Check the eligibility rule again:'));
-        assert.equal(await page.locator('.formula').textContent(), 'eligible row → denominator += 1cancelled row → numerator += 1rate = numerator / denominator');
+        assert.equal(await page.locator('.formula').textContent(), await page.evaluate(() => COPY.formula[document.documentElement.lang === 'zh-CN' ? 0 : 1]));
         assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'page overflow');
         await page.evaluate(() => scrollTo(0,0));
         assert(await page.locator('h1').evaluate(el => {

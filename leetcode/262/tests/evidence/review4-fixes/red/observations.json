@@ -1,0 +1,30 @@
+{
+  "failures": [
+    "FIND-262-003 en: missing [1, 3, 4, 10, 11, 12, 13]",
+    "FIND-262-004 en: missing excluded row changes neither count",
+    "FIND-262-003 zh: missing [1, 3, 4, 10, 11, 12, 13]",
+    "FIND-262-004 zh: missing 排除行不改变任何计数"
+  ],
+  "observations": [
+    {
+      "id": "FIND-262-003",
+      "lang": "en",
+      "text": "055. Map it to the Pandas submissionLine-by-line mapping`active` keeps only users_id values with banned == \"No\".The two merges constrain client_id and driver_id separately: both endpoints must be eligible.`groupby(\"request_at\")` aggregates sum/count of cancelled, then round(2) produces Cancellation Rate.Cost: one join and one grouping, expected O(T + U) time and O(T + U) space (hash join/grouping).Official Python/Pandas sourceCopy sourceDownload solution.pyClipboard access was denied; copy from the text area below.Official Python/Pandas sourceimport pandas as pd\n\n\ndef trips_and_users(trips: pd.DataFrame, users: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"Return daily cancellation rates for trips with two unbanned endpoints.\"\"\"\n    active = users.loc[users[\"banned\"] == \"No\", [\"users_id\"]]\n    eligible = trips.merge(active.rename(columns={\"users_id\": \"client_id\"}), on=\"client_id\")\n    eligible = eligible.merge(active.rename(columns={\"users_id\": \"driver_id\"}), on=\"driver_id\")\n    window = eligible.loc[\n        eligible[\"request_at\"].between(\"2013-10-01\", \"2013-10-03\")\n    ].copy()\n    window[\"cancelled\"] = window[\"status\"].ne(\"completed\").astype(int)\n    result = (\n        window.groupby(\"request_at\", as_index=False)[\"cancelled\"]\n        .agg([\"sum\", \"count\"])\n        .rename(columns={\"sum\": \"cancelled\", \"count\": \"requests\"})\n    )\n    result[\"Cancellation Rate\"] = (result[\"cancelled\"] / result[\"requests\"]).round(2)\n    return result.rename(columns={\"request_at\": \"Day\"})[[\"Day\", \"Cancellation Rate\"]]\nThe executable submission interface is `trips_and_users(trips: pd.DataFrame, users: pd.DataFrame) -> pd.DataFrame`. The code below is an offline mirror of that interface; the animation is only a teaching simulation.Related conceptsLearn Pandas joins in #41 →Learn conditional aggregation in #135 →"
+    },
+    {
+      "id": "FIND-262-004",
+      "lang": "en",
+      "text": "033. Derive the invariantInvariant: after any processed prefix, each day’s (numerator, denominator) exactly describes eligible rows in that prefix; the next row adds one to denominator and adds one to numerator only when cancelled.A correct baseline scans every trip by day and looks up both Users rows repeatedly. It preserves the rule but repeats work; one eligibility join followed by groupby keeps the same counts with less repeated scanning.eligible row → denominator += 1cancelled row → numerator += 1rate = numerator / denominator"
+    },
+    {
+      "id": "FIND-262-003",
+      "lang": "zh",
+      "text": "055. 映射到 Pandas 提交代码逐句对应`active` 只保留 Users 中 banned == \"No\" 的 users_id。两次 merge 分别约束 client_id 与 driver_id；这是“两端都合资格”的连接。`groupby(\"request_at\")` 汇总 cancelled 的 sum/count，再 round(2) 得到 Cancellation Rate。成本：一次连接与一次分组，期望 O(T + U) 时间、O(T + U) 空间（哈希连接/分组）。官方 Python/Pandas 源码复制源码下载 solution.py浏览器拒绝剪贴板；请从下方文本框复制。官方 Python/Pandas 源码import pandas as pd\n\n\ndef trips_and_users(trips: pd.DataFrame, users: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"Return daily cancellation rates for trips with two unbanned endpoints.\"\"\"\n    active = users.loc[users[\"banned\"] == \"No\", [\"users_id\"]]\n    eligible = trips.merge(active.rename(columns={\"users_id\": \"client_id\"}), on=\"client_id\")\n    eligible = eligible.merge(active.rename(columns={\"users_id\": \"driver_id\"}), on=\"driver_id\")\n    window = eligible.loc[\n        eligible[\"request_at\"].between(\"2013-10-01\", \"2013-10-03\")\n    ].copy()\n    window[\"cancelled\"] = window[\"status\"].ne(\"completed\").astype(int)\n    result = (\n        window.groupby(\"request_at\", as_index=False)[\"cancelled\"]\n        .agg([\"sum\", \"count\"])\n        .rename(columns={\"sum\": \"cancelled\", \"count\": \"requests\"})\n    )\n    result[\"Cancellation Rate\"] = (result[\"cancelled\"] / result[\"requests\"]).round(2)\n    return result.rename(columns={\"request_at\": \"Day\"})[[\"Day\", \"Cancellation Rate\"]]\n可执行提交接口是 `trips_and_users(trips: pd.DataFrame, users: pd.DataFrame) -> pd.DataFrame`。下方代码展示的是官方接口的离线镜像；动画只是教学模拟。相关概念去 #41 学 Pandas 连接 →去 #135 学按条件聚合 →"
+    },
+    {
+      "id": "FIND-262-004",
+      "lang": "zh",
+      "text": "033. 从观察得到不变量不变量：处理完任意前缀后，每个日期的 (numerator, denominator) 都正好描述该前缀中合资格行；下一行只会把 denominator 加 1，并在取消时把 numerator 加 1。基线做法可以逐日扫描所有 trip，再查两张 Users 表。它是正确的，但重复扫描和连接会让大输入变慢；一次筛选连接后再 groupby，仍保留同一计数逻辑。eligible row → denominator += 1cancelled row → numerator += 1rate = numerator / denominator"
+    }
+  ]
+}

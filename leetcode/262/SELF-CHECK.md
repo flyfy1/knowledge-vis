@@ -94,3 +94,106 @@ Limits: local Chromium and Pandas self-checks establish the tested behavior only
 No public deployment, independent acceptance, LeetCode submission, real-device or
 novice-comprehension result is claimed. Next action: independently re-review the
 frozen candidate against `262-PUB-R1` and the required complete review scope.
+
+## Review-4 required-finding repair — 2026-10-25 (author self-check)
+
+Candidate: `262-review4-fixes-20261025`, an uncommitted lesson-local snapshot on
+base HEAD `f1f6e25eb6ed50a9d3ad7ecea2429dca6adeae7d`.
+Exact candidate files and served-byte hashes are frozen in
+`tests/evidence/review4-fixes/candidate.json`. No commit requested or made.
+Prior report `specs/reviews/262-review-4-45c98297.md` remains historical evidence;
+its findings are **fixed awaiting independent re-review**, not author-closed.
+
+Fix mapping:
+
+- **FIND-262-003:** section 3 defines T/U and a correct full-scan baseline:
+  first four sample trips × three dates = 12 date checks, with two complete
+  eight-user scans per trip = 64 user-row checks. Section 5 works the actual
+  active one-column table `[1,3,4,10,11,12,13]`, renamed match keys, default
+  inner-merge matching and surviving trip IDs after each merge. A banned-driver
+  variant shows why the second merge matters; unique user keys explain why
+  joins do not multiply trips. Date filtering/copy, status-to-integer conversion,
+  `[0,0,1]`, grouping, sum=1/count=3, rounding and output columns all map to
+  executable Pandas. The cost now names **two** merges, expected hash lookup,
+  fixed three date groups, and intermediate-frame storage. A fresh 7→70/71 case
+  transfers to 0.50 with an absent day and an outside-window exclusion. Both
+  locales have the same causal values and conditions. Related links no longer
+  advertise unrelated lessons #41/#135 as Pandas join/aggregation lessons.
+- **FIND-262-004:** section 3 and its localized formula explicitly guard BOTH
+  increments by eligibility. Excluded rows change neither counter. The worked
+  transitions are #1 `(0,1)` → excluded cancelled #2 `(0,1)` → completed #3
+  `(0,2)` → eligible cancelled #4 `(1,3)`. Initial state, processed prefix and
+  termination are explained. The actual counter interaction was already correct.
+
+Applied `/home/songyy/Documents/agent-skills/website-design/SKILL.md` to the
+existing design, following the supplied independent repair direction; no new
+feature/layout or styling tokens were introduced. P0/highest-return scope is
+these two findings and their bilingual regressions. P1/P2 decoration is out of
+scope. No required fix is deferred. Canonical Python, source mirror, renderer,
+CSS and metadata are unchanged; only lesson-local teaching and evidence changed.
+
+Feedback loop and commands (all from repository root):
+
+- Red: `OUTPUT_DIR=leetcode/262/tests/evidence/review4-fixes/red node leetcode/262/tests/test_teaching.cjs`
+  — exit 1 before product edits. `tests/red-review4-rerun.log` and red
+  `observations.json` retain missing worked active IDs and excluded-row guard in
+  both locales. The first attempt waited for a disabled Reset; the harness was
+  changed to click only when enabled. No runtime fix was needed for that wait.
+- Harness corrections after content edits: baseline's 64 checks belong to
+  section 3, so the bridge assertion reads sections 3 and 5; the multi-element
+  locator uses allTextContents joined with a newline. Failed logs
+  `teaching-green.log` / `teaching-final.log` remain, clearly separate from the
+  final passing run. These are harness failures, not extra product defects.
+- Green: `OUTPUT_DIR=leetcode/262/tests/evidence/review4-fixes/green-final node leetcode/262/tests/test_teaching.cjs`
+  — exit 0, `teaching-final-rerun.log`. Checks unique COPY keys, two-string
+  locale-pair shape, rendered bridge/guard meanings, excluded #2 and replay in
+  EN/zh at 320/390/1280. Captures both sections at CSS zoom 100% and 200%.
+- `OUTPUT_DIR=leetcode/262/tests/evidence/review4-fixes/browser node leetcode/262/tests/test_browser.cjs`
+  — exit 0, `browser.log`. Existing exact identity, interaction and no-overflow
+  checks pass at 320/390/736/1440 in both languages. Source mirror, rendered
+  textContent, real successful copy, downloaded bytes and manual fallback copy
+  equal solution.py including final newline. Linux Control+C follows a distinct
+  clipboard sentinel and forced writeText rejection, with actual readback.
+  Locale changes retain preset, processed prefix, choices and revealed feedback;
+  changing the prediction clears feedback. Offline already-rendered source works.
+- `OUTPUT_DIR=leetcode/262/tests/evidence/review4-fixes/states node leetcode/262/tests/test_rendered_states.cjs`
+  — exit 0, `states.log`. Independently specified count pairs match all 11
+  initial/processed sample prefixes in each locale, including the excluded rows;
+  final day rewinds `(1,2)` → `(0,1)` and replays exactly. Transfer ends with
+  `(0,1)` and `(1,1)`. Guarded rendered formulas retain complete operands.
+- `/tmp/venv262/bin/python -B leetcode/262/tests/test_solution.py`
+  — exit 0, `oracle checks passed`.
+- `/tmp/venv262/bin/python -B leetcode/262/tests/test_worked_bridge.py`
+  — exit 0 under Pandas 3.1.0. Executes the taught intermediate tables, a banned
+  driver counterexample, fresh transfer, 150 seeded cases against the separate
+  loop/set oracle, empty/all-excluded dates and deep input nonmutation checks.
+- **Metadata gate:** `python3 -B scripts/register_leetcode_lesson.py 262 --validate-only`
+  — exit 0 with empty stdout/stderr. Receipt in `candidate.json`. Complexity is
+  exactly the nonempty string `O(T + U) expected time; O(T + U) space`.
+  No registration, metadata fix or campaign/acceptance alteration was performed.
+- `git diff --check` — exit 0. Preview responses match the recorded local SHA-256
+  hashes for HTML, copy, app, CSS, canonical Python, mirror, metadata and BRIEF.
+
+Read the exact language/source pairs in `scripts/register_leetcode_lesson.py`:
+Python uses solution.py / python-code.js / PYTHON_SOURCE. Retained the faithful
+preferred Python/Pandas interface supported by existing local official evidence;
+no non-Python contract or supportedLanguages list applies. Re-read the official
+statement through normal web access on 2026-10-25 at
+https://leetcode.com/problems/trips-and-users/ : keys, status enum, both-endpoint
+rule, inclusive dates, rounding and sample agree. No live submission made.
+
+Visual observations: inspected complete EN/zh 390px bridge captures and focused
+390px driver-merge, grouping, formula and invariant screenshots in `states/`.
+Text wraps, with no label/value collisions. Complete-element screenshots include
+an in-image sticky-navigation capture artifact; settled viewport captures show
+unobscured text below the navigation. Inspected EN 320px CSS-zoom-200% evidence:
+large text remains reachable, with the existing narrow zoom layout requiring
+horizontal panning. No claim of browser-menu zoom, real-device or resolved glyph
+font verification. CSS/font stack is unchanged (PingFang SC, Microsoft YaHei,
+system-ui, sans-serif); Chromium on Linux used the provided executable path.
+No new color pairs or contrast measurement helper were introduced.
+
+Evidence boundary: this is author verification, not independent closure, novice
+comprehension testing, publication or LeetCode acceptance. Next action: separately
+review this frozen candidate's affected teaching steps and prerequisites against
+FIND-262-003 and FIND-262-004, retaining the report's historical result.

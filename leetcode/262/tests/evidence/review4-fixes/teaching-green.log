@@ -1,0 +1,15 @@
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   'FIND-262-003 en: missing 64',
++   'FIND-262-003 zh: missing 64'
++ ]
+- []
+    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/262/tests/test_teaching.cjs:46:12 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [Array],
+  expected: [],
+  operator: 'deepStrictEqual'
+}
