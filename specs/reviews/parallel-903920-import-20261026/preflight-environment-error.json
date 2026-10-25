@@ -1,0 +1,5 @@
+{
+  "error": "Noninteractive SSH PATH did not include node; read_registry raised FileNotFoundError before STOP creation.",
+  "correction": "Use exact existing launcher Node22/runtime environment; repeat all guards unchanged.",
+  "state_mutations": false
+}

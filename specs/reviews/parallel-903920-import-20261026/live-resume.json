@@ -1,0 +1,49 @@
+{
+  "observed_at": "2026-10-25T16:35:50.997554+00:00",
+  "status": "running",
+  "runner_pid": 1321967,
+  "campaign_pids": [
+    1321967
+  ],
+  "argv_without_ids": [
+    "/usr/bin/python3",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/scripts/leetcode_campaign.py",
+    "--repo",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018",
+    "--state-dir",
+    "/home/songyy/projects/leetcode-hard-campaign-state-20261018",
+    "--port",
+    "18770",
+    "--publish-root",
+    "/home/songyy/projects/visual-site",
+    "--public-base",
+    "https://visual.integ.life",
+    "--publish-every",
+    "20",
+    "--max-rounds",
+    "6"
+  ],
+  "queue_arg_count": 984,
+  "queue_arg_sha256": "56b04a53fbd823ef1d683017422168138ff825bf814e7a3021ee5af3a7699f69",
+  "current": {
+    "problem_id": "801",
+    "stage": "review",
+    "started_at": "2026-10-25T16:32:51.934709+00:00",
+    "run_id": "801-review-afcbad55df80"
+  },
+  "candidate": "154c1becf178b798dfbd80acbb79fabdd262ae68",
+  "run_status": "running",
+  "fresh_events": [
+    {
+      "type": "thread.started",
+      "thread_id": "01a173e8-6462-7b32-9d24-dd05e9563690"
+    },
+    {
+      "type": "turn.started"
+    }
+  ],
+  "head": "154c1becf178b798dfbd80acbb79fabdd262ae68",
+  "remote_branch_head": "154c1becf178b798dfbd80acbb79fabdd262ae68",
+  "STOP_exists": false,
+  "accepted_local": 123
+}

@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "status": "completed-resumed",
+  "owner": "campaign-runner-import903920-20261026-f17200ef",
+  "created_at": "2026-10-25T16:12:40.314798+00:00",
+  "lanes": [
+    {
+      "id": "903",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-903-20261025",
+      "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-903-20261025",
+      "lane_head": "6c9b7462f8b0d28555b63d4950484e64a7dd9e56",
+      "candidate": "26f8fd8ec1e79a233779b82a4c8ee3d63edaee17",
+      "score": 96.25,
+      "required_open": [],
+      "report": "specs/reviews/903-review-1-52a18398.md",
+      "run_ids": [
+        "903-author-d5f00646d74d",
+        "903-review-827a40e8be29"
+      ],
+      "reviewer_sessions": [
+        [
+          "01a173cc-c1f3-7923-b97e-14a021754623"
+        ]
+      ],
+      "runner_exited": 1252722
+    },
+    {
+      "id": "920",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-920-20261025",
+      "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-920-20261025",
+      "lane_head": "24f6c68bbf131f074fe714f9256434e125e3fe7e",
+      "candidate": "e1dfa23199ec290c1e795f870689ce075e3d79f8",
+      "score": 96.25,
+      "required_open": [],
+      "report": "specs/reviews/920-review-1-62e8ca13.md",
+      "run_ids": [
+        "920-author-9990eb728a2d",
+        "920-review-319e160767fb"
+      ],
+      "reviewer_sessions": [
+        [
+          "01a173cd-d57a-70c3-990b-c017823d0091"
+        ]
+      ],
+      "runner_exited": 1253012
+    }
+  ],
+  "central_before_stop": {
+    "head": "e102555374976fbd3464818bb533f91f1fedecbd",
+    "current": {
+      "problem_id": "801",
+      "stage": "author",
+      "started_at": "2026-10-25T16:11:40.674700+00:00",
+      "run_id": "801-author-010c3d00eab3"
+    },
+    "status": "running"
+  },
+  "stop": {
+    "owner": "campaign-runner-import903920-20261026-f17200ef",
+    "created_at": "2026-10-25T16:12:40.314798+00:00",
+    "reason": "Finish the active stage, import independently accepted lanes903/920, then resume the same every20 continuous queue. Do not interrupt agents.",
+    "lane_ids": [
+      "903",
+      "920"
+    ],
+    "resume_command": "python3 /home/songyy/projects/leetcode-hard-campaign-state-20261018/launch.py --continuous --max-rounds 6"
+  },
+  "updated_at": "2026-10-25T16:32:42.142294+00:00",
+  "operator_started_at": "2026-10-25T16:18:27.253574+00:00",
+  "boundary_at": "2026-10-25T16:29:44.096869+00:00",
+  "central_before": "3b4bb5d716d5ca6d15e0a6c9bfe66c442a8c219e",
+  "prior_problems_sha256": "6f9e9b77eb60d6a0e87a1ce910ae50fd291011e8cad4f6c1b6da7137dea8348e",
+  "prior_runs_sha256": "5aab5f59c6b9478fc3af8a9b7db968dd1f0edbbf52576f83112b90a222c2b487",
+  "queue_sha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+  "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b",
+  "imports": [
+    {
+      "version": 1,
+      "status": "completed",
+      "problem_id": "903",
+      "central_before": "3b4bb5d716d5ca6d15e0a6c9bfe66c442a8c219e",
+      "lane_head": "6c9b7462f8b0d28555b63d4950484e64a7dd9e56",
+      "lane_repo": "/home/songyy/projects/leetcode-hard-lane-903-20261025",
+      "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-903-20261025",
+      "candidate": "26f8fd8ec1e79a233779b82a4c8ee3d63edaee17",
+      "run_ids": [
+        "903-author-d5f00646d74d",
+        "903-review-827a40e8be29"
+      ],
+      "started_at": "2026-10-25T16:31:10.113642+00:00",
+      "updated_at": "2026-10-25T16:31:11.996562+00:00",
+      "merged_head": "258db1dba652c6b5f064f2f0deeddaffa4483887"
+    },
+    {
+      "version": 1,
+      "status": "completed",
+      "problem_id": "920",
+      "central_before": "258db1dba652c6b5f064f2f0deeddaffa4483887",
+      "lane_head": "24f6c68bbf131f074fe714f9256434e125e3fe7e",
+      "lane_repo": "/home/songyy/projects/leetcode-hard-lane-920-20261025",
+      "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-920-20261025",
+      "candidate": "e1dfa23199ec290c1e795f870689ce075e3d79f8",
+      "run_ids": [
+        "920-author-9990eb728a2d",
+        "920-review-319e160767fb"
+      ],
+      "started_at": "2026-10-25T16:32:28.169446+00:00",
+      "updated_at": "2026-10-25T16:32:29.522256+00:00",
+      "merged_head": "154c1becf178b798dfbd80acbb79fabdd262ae68"
+    }
+  ],
+  "final_head": "154c1becf178b798dfbd80acbb79fabdd262ae68",
+  "accepted_local": 123,
+  "released_count": 119,
+  "prior_problems_preserved": true,
+  "prior_runs_preserved": true,
+  "queue_preserved": true,
+  "release_ledger_preserved": true,
+  "launch": {
+    "pid": 1321967,
+    "queue_count": 984,
+    "continuous": true,
+    "state": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress.json"
+  },
+  "completed_at": "2026-10-25T16:32:42.142270+00:00",
+  "runner_pid": 1321967,
+  "current": {
+    "problem_id": "801",
+    "stage": "author",
+    "started_at": "2026-10-25T16:11:40.674700+00:00",
+    "run_id": "801-author-010c3d00eab3"
+  },
+  "stop_removed": true
+}
