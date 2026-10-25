@@ -1,0 +1,30 @@
+{
+  "candidate": "968-author-20261026-v1",
+  "frozenAt": "2026-10-25T18:48:22.423255+00:00",
+  "authorStatus": "self-checked",
+  "independentReviewStatus": "pending",
+  "deploymentStatus": "not deployed",
+  "files": {
+    "BRIEF.md": "81612daa43adfd42f3ea8f7294aaf8f6fe67398a9bd781f60105f89992489272",
+    "app.js": "1b70bd1d9bcf2fa6be0a68e95fbc3225ac1a1f223a64b4daf4388eb148d687cf",
+    "copy.js": "a9d5e6e4e32cf5a38c61d21456bb563ec1ebc0a7434745ed62e307d53f87039c",
+    "core.js": "f94b6dc09dfe5e79ec55193c565437361a29d9d646cddb773ef70be12aa1c5dc",
+    "index.html": "372bb4f2f283eaa9ce5968c5331e199f9a93d48007954b32d69b4c17facbb596",
+    "lesson-entry.json": "af42c4ce174891c638bda436f8224debed10f238c15ba63992151338d7041036",
+    "python-code.js": "972388daafc90cfa38c364a2e80235a3d92771fa0cabca9120cae81b6d1a0ed1",
+    "solution.py": "b7428a60e1ab3b6f6180a8b8f4201b03d34e7a39857dd4091f62e85ffd7f9f31",
+    "style.css": "6b892cfb65e17a892c308c1a00eaffea91c7e1c93cab7f24ab6d2df7e30f6d49",
+    "tests/README.md": "e769ce164d577cfaffd454afda713fba95d56ff28fd9db3a68073abb5b3e0b85",
+    "tests/browser.cjs": "1bc74acf7bd3a872f4b98a402f7836c621ac46d774949d7276bfca7297dac5d2",
+    "tests/capture_focus.cjs": "394c6f126633f42f0eaf5606d598e29d82782b281bdb3e6b922ee80e85faf86a",
+    "tests/offline.cjs": "5f4e27860b4e40daf9c63dbefd6446b7744c17e3575ba611ad245edc32ab231e",
+    "tests/test_core.cjs": "7d25561b2d0b319e8940394feb1df23e2f8dc1c5424e1653a3da5a81b1724320",
+    "tests/test_solution.py": "e325f6770e7842d29b98da2ab09975334ac1e498d60d14f5cfd9f1b13d6d0388",
+    "tests/write_copy.py": "56d44afe66af3ec7a5a37f6a6a3f072fb675057145a503a7db2bd4c3c82ad996"
+  },
+  "sharedReadOnlyDependencies": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "evidenceScope": "Generated evidence excluded from hash list to permit separate reviewer output; runtime, BRIEF and test sources included."
+}

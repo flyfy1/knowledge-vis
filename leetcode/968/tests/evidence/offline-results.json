@@ -1,0 +1,73 @@
+{
+  "kind": "author self-check",
+  "result": "pass",
+  "errors": [],
+  "report": [
+    {
+      "lang": "en",
+      "offlineSource": "exact",
+      "measurements": [
+        {
+          "text": "Example 1 · min 1",
+          "width": 132.4962615966797,
+          "available": 232
+        },
+        {
+          "text": "Example 2 · min 2",
+          "width": 132.4962615966797,
+          "available": 232
+        },
+        {
+          "text": "Single root · min 1",
+          "width": 136.2722625732422,
+          "available": 232
+        },
+        {
+          "text": "Chain (4) · min 2",
+          "width": 120.80020141601562,
+          "available": 232
+        },
+        {
+          "text": "Full tree · min 2",
+          "width": 115.6162109375,
+          "available": 232
+        }
+      ],
+      "firstLeaf": "C: left=C, right=C → N. Neither child supplies a camera; wait for the parent. Cameras so far: 0.",
+      "lastReturn": "A: left=K, right=C → C. No child is N; a K child covers this node. Cameras so far: 1."
+    },
+    {
+      "lang": "zh",
+      "offlineSource": "exact",
+      "measurements": [
+        {
+          "text": "官方例 1：四节点，最少 1 台",
+          "width": 206.78439331054688,
+          "available": 232
+        },
+        {
+          "text": "官方例 2：五节点，最少 2 台",
+          "width": 206.78439331054688,
+          "available": 232
+        },
+        {
+          "text": "单个根：最少 1 台",
+          "width": 129.4722442626953,
+          "available": 232
+        },
+        {
+          "text": "四节点链：最少 2 台",
+          "width": 145.47227478027344,
+          "available": 232
+        },
+        {
+          "text": "满三层树：最少 2 台",
+          "width": 145.47227478027344,
+          "available": 232
+        }
+      ],
+      "firstLeaf": "C：左=C，右=C → N。没有孩子提供摄像头，等待父节点；累计 0 台。",
+      "lastReturn": "A：左=K，右=C → C。无 N 孩子，有 K 孩子覆盖本节点；累计 1 台。"
+    }
+  ]
+}
