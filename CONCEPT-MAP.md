@@ -1081,3 +1081,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | merge sort counting | `leetcode/493/#step2` | Disjoint within-half and cross-half pair accounting |
 
 <!-- /leetcode-493-campaign -->
+
+
+<!-- leetcode-546-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Interval DP with a carried boundary | `leetcode/546/#step2` | Remember saved equal-color boxes while clearing the separating interval. |
+
+<!-- /leetcode-546-campaign -->

@@ -1961,6 +1961,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
+    "id": 546,
+    "title": {
+      "zh": "移除盒子",
+      "en": "Remove Boxes"
+    },
+    "desc": {
+      "zh": "清空中间，合并两端：为何区间还要记住保留的同色盒子。",
+      "en": "Clear the middle and join the ends: why an interval must remember saved boxes."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "区间动态规划",
+        "en": "Interval dynamic programming"
+      },
+      {
+        "zh": "记忆化搜索",
+        "en": "Memoized recursion"
+      }
+    ],
+    "path": "546/",
+    "leetcodeUrl": "https://leetcode.com/problems/remove-boxes/",
+    "language": "Python",
+    "complexity": "O(n⁴) time; O(n³) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
