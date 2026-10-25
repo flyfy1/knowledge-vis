@@ -1132,3 +1132,13 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Parallel sender bottleneck | `leetcode/517/#step2` | Combine cut throughput and positive local surplus in one scan. |
 
 <!-- /leetcode-517-campaign -->
+
+
+<!-- leetcode-483-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| All-ones geometric sum | `leetcode/483/#step0` | Read base-k place values as 1+k+...+k^m. |
+| Monotone exact search | `leetcode/483/#step2` | Discard impossible integer bases using an inclusive interval invariant. |
+
+<!-- /leetcode-483-campaign -->
