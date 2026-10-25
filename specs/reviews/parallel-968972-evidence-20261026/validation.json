@@ -1,0 +1,55 @@
+{
+  "status": "prepared_not_dispatched",
+  "source_sha256": "943794458f663fe6734fc1eda2e877e38f7455acdf022b865c77a261be47eb68",
+  "launcher_sha256": "012137ab9eabb43cb6b9038ab6065312d8287724540d67fb362038ac4a5caa05",
+  "preflight_sha256": "ad57fc3239baf3bc6a5af2737180c594823f682dcc322b76e01698433a1dc3bb",
+  "parameter_replacement_count": 9,
+  "reverse_replacements_equal_original": true,
+  "ast_structure_unchanged_after_constant_normalization": true,
+  "python_syntax_valid": true,
+  "base": "58cb97e51878f40e234b3e78a8bf9adb24f30c51",
+  "central_head": "58cb97e51878f40e234b3e78a8bf9adb24f30c51",
+  "central_run": "818-fix-0dbe90734960",
+  "central_session": "01a17453-eaf8-7033-b7d8-04655e3b33c0",
+  "control_flow_changed": false,
+  "author_prompt_changed": false,
+  "dispatch_authorized_by_this_preparation": false,
+  "replacements": [
+    {
+      "from": "BASE='8cedba5490bb862133f157a9d6af619cee323fb9'",
+      "to": "BASE='58cb97e51878f40e234b3e78a8bf9adb24f30c51'"
+    },
+    {
+      "from": "CENTRAL_HEAD='8063cd1919c3816eb74f2096c0afe51e05bf75b6'",
+      "to": "CENTRAL_HEAD='58cb97e51878f40e234b3e78a8bf9adb24f30c51'"
+    },
+    {
+      "from": "CENTRAL_RUN='780-review-69d63636d18d'",
+      "to": "CENTRAL_RUN='818-fix-0dbe90734960'"
+    },
+    {
+      "from": "s['current']['problem_id']=='780'",
+      "to": "s['current']['problem_id']=='818'"
+    },
+    {
+      "from": "s['current']['stage']=='review'",
+      "to": "s['current']['stage']=='fix'"
+    },
+    {
+      "from": "'01a1742e-1d0e-7372-9a6c-3ad3e2325d13'",
+      "to": "'01a17453-eaf8-7033-b7d8-04655e3b33c0'"
+    },
+    {
+      "from": "['960','964']",
+      "to": "['968','972']"
+    },
+    {
+      "from": "parallel-launch-960964.lock",
+      "to": "parallel-launch-968972.lock"
+    },
+    {
+      "from": "plan=[('960',18789),('964',18790)]",
+      "to": "plan=[('968',18791),('972',18792)]"
+    }
+  ]
+}
