@@ -1,0 +1,22 @@
+[
+  {
+    "locale": "en",
+    "frame": "Frame 13/14 · target height 4 at (0,1) · completed distance layer 3, frontier has 2 cells. Completed-leg walking total: 6 moves.",
+    "ledger": "Cut 2: (0,0) → (0,2), leg 2 moves; cumulative 0 + 2 = 2 moves.Cut 3: (0,2) → (2,0), leg 4 moves; cumulative 2 + 4 = 6 moves.",
+    "board": "1d 2·4d 3F T2d ·×1d 1·0#·1d 3F3d 0×1d 1·1d 2·",
+    "baseline": "A correct baseline models each positive cell as a vertex and each legal move as a connection: this is a graph. Number a cell as row×column-count+column. d[a,b] denotes the shortest distance between cells a and b; k is an intermediate cell. Compute every pair’s shortest distance: initialize neighbors to 1, self-distance to 0, and others to infinity. Allow each vertex k as an intermediate stop and update d[a,b] = min(d[a,b], d[a,k]+d[k,b]). This is the Floyd–Warshall baseline. With V = m×n cells, it takes O(V³) time and O(V²) space: about 15.6 billion updates at 2500 cells. We only need distances between consecutive sorted targets, not every pair.",
+    "example": "Back to [1,3,2]: sorted targets are columns 2 and 1. Distances d[0,2]=2 and d[2,1]=1 sum to 3. These endpoint distances stay unchanged after a cut."
+  },
+  {
+    "locale": "zh",
+    "frame": "帧 13/14 · 目标高度 4 在 (0,1) · 已完成距离 3 层，前沿有 2 格。已完成路段的行走总数：6 步。",
+    "ledger": "砍 2：(0,0) → (0,2)，本段 2 步；累计 0 + 2 = 2 步。砍 3：(0,2) → (2,0)，本段 4 步；累计 2 + 4 = 6 步。",
+    "board": "1d 2·4d 3F T2d ·×1d 1·0#·1d 3F3d 0×1d 1·1d 2·",
+    "baseline": "正确基线：把每个正数格看作一个点，合法的一步连接两个点，这叫图。给格子编号：行×列数+列。d[a,b] 表示编号 a、b 两格的最短距离，k 是中转格。为所有点对计算最短距离：先把相邻点距离设为 1、自己到自己设为 0，其余设为无穷，再依次允许每个点作为中转点，更新 d[a,b] = min(d[a,b], d[a,k]+d[k,b])。这就是 Floyd–Warshall 基线。V = m×n 个格时，时间 O(V³)、空间 O(V²)；2500 格意味着约 156 亿次更新。我们只需要排序后相邻目标的距离，不需要所有点对。",
+    "example": "回到 [1,3,2]：排序后目标在第 2 列、第 1 列。距离 d[0,2]=2、d[2,1]=1，故相加为 3。图中两个端点距离在砍树前后都不变。"
+  },
+  {
+    "end": "帧 14/14 · 目标高度 4 在 (0,1) · 全部砍完；最终答案 9。已完成路段的行走总数：9 步。",
+    "ledger": "砍 2：(0,0) → (0,2)，本段 2 步；累计 0 + 2 = 2 步。砍 3：(0,2) → (2,0)，本段 4 步；累计 2 + 4 = 6 步。砍 4：(2,0) → (0,1)，本段 3 步；累计 6 + 3 = 9 步。"
+  }
+]
