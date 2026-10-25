@@ -1,0 +1,9 @@
+AssertionError [ERR_ASSERTION]: {"text":"Four-corner check fails · −1","textWidth":219.57357788085938,"width":260,"padding":30,"font":"16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"}
+    at /private/tmp/leetcode-782-candidate-20261025/leetcode/782/tests/browser.cjs:66:494 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

@@ -1,0 +1,101 @@
+{
+  "browser": "151.0.7922.34",
+  "platform": "darwin",
+  "records": [
+    {
+      "mode": "baseline-dom",
+      "label": "Four-corner check fails · −1",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "normal",
+      "whiteSpace": "normal",
+      "letterSpacing": "normal",
+      "width": 260,
+      "height": 46,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "canvas": 219.57357788085938,
+      "dom": 219.578125,
+      "available": 210,
+      "pass": false
+    },
+    {
+      "mode": "locale-roundtrip",
+      "label": "Four-corner check fails · −1",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "normal",
+      "whiteSpace": "normal",
+      "letterSpacing": "normal",
+      "width": 260,
+      "height": 46,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "canvas": 219.57357788085938,
+      "dom": 219.578125,
+      "available": 210,
+      "pass": false
+    },
+    {
+      "mode": "failure-label-only",
+      "label": "Four-corner failure · −1",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "normal",
+      "whiteSpace": "normal",
+      "letterSpacing": "normal",
+      "width": 260,
+      "height": 46,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "canvas": 184.77359008789062,
+      "dom": 184.78125,
+      "available": 210,
+      "pass": true
+    },
+    {
+      "mode": "colon-label-only",
+      "label": "Four-corner failure: −1",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "normal",
+      "whiteSpace": "normal",
+      "letterSpacing": "normal",
+      "width": 260,
+      "height": 46,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "canvas": 175.34959411621094,
+      "dom": 175.359375,
+      "available": 210,
+      "pass": true
+    },
+    {
+      "mode": "original-width390-only",
+      "label": "Four-corner check fails · −1",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "normal",
+      "whiteSpace": "normal",
+      "letterSpacing": "normal",
+      "width": 330,
+      "height": 46,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "canvas": 219.57357788085938,
+      "dom": 219.578125,
+      "available": 280,
+      "pass": true
+    }
+  ]
+}

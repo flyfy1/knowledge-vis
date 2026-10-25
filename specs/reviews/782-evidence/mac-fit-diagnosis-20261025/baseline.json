@@ -1,0 +1,244 @@
+{
+  "browser": "151.0.7922.34",
+  "platform": "darwin",
+  "records": [
+    {
+      "lang": "zh",
+      "preset": 0,
+      "label": "官方例 1 · 4×4，答案 2",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 174.72564697265625,
+      "available": 210,
+      "pass": true
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "label": "手算例 · 3×3，答案 1",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 159.10964965820312,
+      "available": 210,
+      "pass": true
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "label": "官方例 2 · 已完成，答案 0",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 197.3120574951172,
+      "available": 210,
+      "pass": true
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "label": "官方例 3 · 缺一种行，−1",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 181.9896697998047,
+      "available": 210,
+      "pass": true
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "label": "四角检查失败 · −1",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 133.94166564941406,
+      "available": 210,
+      "pass": true
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "label": "列类型失衡 · −1",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 117.62165832519531,
+      "available": 210,
+      "pass": true
+    },
+    {
+      "lang": "zh",
+      "preset": 6,
+      "label": "奇数且以 1 开头 · 0",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 145.1840362548828,
+      "available": 210,
+      "pass": true
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "label": "Official 1 · 4×4, answer 2",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 198.29356384277344,
+      "available": 210,
+      "pass": true
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "label": "Hand · 3×3, answer 1",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 166.2615966796875,
+      "available": 210,
+      "pass": true
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "label": "Official 2 · 2×2, answer 0",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 201.30157470703125,
+      "available": 210,
+      "pass": true
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "label": "Official 3 · 2×2, answer −1",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 207.9471893310547,
+      "available": 210,
+      "pass": true
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "label": "Four-corner check fails · −1",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 219.57357788085938,
+      "available": 210,
+      "pass": false
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "label": "Unbalanced columns · −1",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 196.22959899902344,
+      "available": 210,
+      "pass": true
+    },
+    {
+      "lang": "en",
+      "preset": 6,
+      "label": "Odd size, starts with 1 · 0",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "canvasFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 201.67996215820312,
+      "available": 210,
+      "pass": true
+    }
+  ]
+}
