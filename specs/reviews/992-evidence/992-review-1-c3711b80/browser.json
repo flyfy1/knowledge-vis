@@ -1,0 +1,1247 @@
+{
+  "kind": "author browser self-check",
+  "result": "pass",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "errors": [],
+  "siblingWarnings": [
+    {
+      "message": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "location": "http://127.0.0.1:18797/favicon.ico",
+      "page": "http://127.0.0.1:18797/leetcode/2916/#step1",
+      "scope": "Existing related page favicon; #992 uses inline data favicon"
+    }
+  ],
+  "requests": [
+    "http://127.0.0.1:18797/leetcode/992/",
+    "http://127.0.0.1:18797/leetcode/style.css?v=992-3",
+    "http://127.0.0.1:18797/leetcode/992/style.css?v=992-3",
+    "http://127.0.0.1:18797/leetcode/common.js?v=992-3",
+    "http://127.0.0.1:18797/leetcode/992/copy.js?v=992-3",
+    "http://127.0.0.1:18797/leetcode/992/core.js?v=992-3",
+    "http://127.0.0.1:18797/leetcode/992/python-code.js?v=992-3",
+    "http://127.0.0.1:18797/leetcode/992/app.js?v=992-3",
+    "http://127.0.0.1:18797/leetcode/76/",
+    "http://127.0.0.1:18797/leetcode/style.css",
+    "http://127.0.0.1:18797/leetcode/76/style.css?v=76-r1",
+    "http://127.0.0.1:18797/leetcode/common.js",
+    "http://127.0.0.1:18797/leetcode/76/copy.js?v=76-r1",
+    "http://127.0.0.1:18797/leetcode/76/core.js?v=76-r1",
+    "http://127.0.0.1:18797/leetcode/76/python-code.js?v=76-r1",
+    "http://127.0.0.1:18797/leetcode/76/app.js?v=76-r1",
+    "http://127.0.0.1:18797/leetcode/2916/",
+    "http://127.0.0.1:18797/leetcode/style.css?v=lc-ids1",
+    "http://127.0.0.1:18797/leetcode/common.js?v=lc2916-astra2",
+    "http://127.0.0.1:18797/leetcode/2916/copy.js?v=lc-ids1",
+    "http://127.0.0.1:18797/leetcode/2916/core.js?v=lc2916-astra2",
+    "http://127.0.0.1:18797/leetcode/2916/python-code.js?v=lc2916-astra2",
+    "http://127.0.0.1:18797/leetcode/2916/app.js?v=lc2916-astra2"
+  ],
+  "observations": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "input": [
+        1,
+        2,
+        1
+      ],
+      "k": 2,
+      "expected": 3,
+      "result": "This round adds 2; answer for the completed prefix = 3.",
+      "window": "Limit t=2: window [0,2]left: 0 → 0; 2 distinct after append, before shrinking.freq after shrinking: {\"1\":2,\"2\":1}; intervals with at most 2 distinct this round: 3.No removals needed.Limit t=1: window [2,2]left: 1 → 2; 2 distinct after append, before shrinking.freq after shrinking: {\"1\":1}; intervals with at most 1 distinct this round: 1.Remove 2 at index 1 → remaining frequency: 0, delete its key.",
+      "ledger": "011001211123123"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "input": [
+        1,
+        2,
+        1,
+        2,
+        3
+      ],
+      "k": 2,
+      "expected": 7,
+      "result": "This round adds 1; answer for the completed prefix = 7.",
+      "window": "Limit t=2: window [3,4]left: 0 → 3; 3 distinct after append, before shrinking.freq after shrinking: {\"2\":1,\"3\":1}; intervals with at most 2 distinct this round: 2.Remove 1 at index 0 → remaining frequency: 1.Remove 2 at index 1 → remaining frequency: 1.Remove 1 at index 2 → remaining frequency: 0, delete its key.Limit t=1: window [4,4]left: 3 → 4; 2 distinct after append, before shrinking.freq after shrinking: {\"3\":1}; intervals with at most 1 distinct this round: 1.Remove 2 at index 3 → remaining frequency: 0, delete its key.",
+      "ledger": "0110012111231233413642117"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "input": [
+        1,
+        2,
+        1,
+        3,
+        4
+      ],
+      "k": 3,
+      "expected": 3,
+      "result": "This round adds 1; answer for the completed prefix = 3.",
+      "window": "Limit t=3: window [2,4]left: 0 → 2; 4 distinct after append, before shrinking.freq after shrinking: {\"1\":1,\"3\":1,\"4\":1}; intervals with at most 3 distinct this round: 3.Remove 1 at index 0 → remaining frequency: 1.Remove 2 at index 1 → remaining frequency: 0, delete its key.Limit t=2: window [3,4]left: 2 → 3; 3 distinct after append, before shrinking.freq after shrinking: {\"3\":1,\"4\":1}; intervals with at most 2 distinct this round: 2.Remove 1 at index 2 → remaining frequency: 0, delete its key.",
+      "ledger": "0110012200233003422243213"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "input": [
+        1,
+        1,
+        1
+      ],
+      "k": 1,
+      "expected": 6,
+      "result": "This round adds 3; answer for the completed prefix = 6.",
+      "window": "Limit t=1: window [0,2]left: 0 → 0; 1 distinct after append, before shrinking.freq after shrinking: {\"1\":3}; intervals with at most 1 distinct this round: 3.No removals needed.Limit t=0: window empty windowleft: 2 → 3; 1 distinct after append, before shrinking.freq after shrinking: {}; intervals with at most 0 distinct this round: 0.Remove 1 at index 2 → remaining frequency: 0, delete its key.",
+      "ledger": "010111202323036"
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "input": [
+        1,
+        2,
+        3
+      ],
+      "k": 2,
+      "expected": 2,
+      "result": "This round adds 1; answer for the completed prefix = 2.",
+      "window": "Limit t=2: window [1,2]left: 0 → 1; 3 distinct after append, before shrinking.freq after shrinking: {\"2\":1,\"3\":1}; intervals with at most 2 distinct this round: 2.Remove 1 at index 0 → remaining frequency: 0, delete its key.Limit t=1: window [2,2]left: 1 → 2; 2 distinct after append, before shrinking.freq after shrinking: {\"3\":1}; intervals with at most 1 distinct this round: 1.Remove 2 at index 1 → remaining frequency: 0, delete its key.",
+      "ledger": "011001211122112"
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "input": [
+        1
+      ],
+      "k": 1,
+      "expected": 1,
+      "result": "This round adds 1; answer for the completed prefix = 1.",
+      "window": "Limit t=1: window [0,0]left: 0 → 0; 1 distinct after append, before shrinking.freq after shrinking: {\"1\":1}; intervals with at most 1 distinct this round: 1.No removals needed.Limit t=0: window empty windowleft: 0 → 1; 1 distinct after append, before shrinking.freq after shrinking: {}; intervals with at most 0 distinct this round: 0.Remove 1 at index 0 → remaining frequency: 0, delete its key.",
+      "ledger": "01011"
+    },
+    {
+      "lang": "en",
+      "preset": 6,
+      "input": [
+        1,
+        1,
+        1
+      ],
+      "k": 3,
+      "expected": 0,
+      "result": "This round adds 0; answer for the completed prefix = 0.",
+      "window": "Limit t=3: window [0,2]left: 0 → 0; 1 distinct after append, before shrinking.freq after shrinking: {\"1\":3}; intervals with at most 3 distinct this round: 3.No removals needed.Limit t=2: window [0,2]left: 0 → 0; 1 distinct after append, before shrinking.freq after shrinking: {\"1\":3}; intervals with at most 2 distinct this round: 3.No removals needed.",
+      "ledger": "011001220023300"
+    },
+    {
+      "lang": "en",
+      "prediction": "0",
+      "feedback": "Compare the missing or extra intervals. left_2=1 (start 0 includes three values: 1,2,3), and left_1=3 (both occurrences of 2 must leave to retain only 3). Thus 3−1=2: [1,3]=[2,2,3] and [2,3]=[2,3]. Choosing 1 misses the second interval; choosing 3 also counts the singleton [3,3]."
+    },
+    {
+      "lang": "en",
+      "prediction": "1",
+      "feedback": "Your prediction is correct. left_2=1 (start 0 includes three values: 1,2,3), and left_1=3 (both occurrences of 2 must leave to retain only 3). Thus 3−1=2: [1,3]=[2,2,3] and [2,3]=[2,3]. Choosing 1 misses the second interval; choosing 3 also counts the singleton [3,3]."
+    },
+    {
+      "lang": "en",
+      "prediction": "2",
+      "feedback": "Compare the missing or extra intervals. left_2=1 (start 0 includes three values: 1,2,3), and left_1=3 (both occurrences of 2 must leave to retain only 3). Thus 3−1=2: [1,3]=[2,2,3] and [2,3]=[2,3]. Choosing 1 misses the second interval; choosing 3 also counts the singleton [3,3]."
+    },
+    {
+      "lang": "en",
+      "attempt": 0,
+      "host": "linux",
+      "clipboard": "verified sentinel → denied automatic write → native manual transfer → exact source",
+      "fallback": "Automatic copy is unavailable. The complete source below is selected; use your system copy shortcut."
+    },
+    {
+      "lang": "en",
+      "attempt": 1,
+      "host": "linux",
+      "clipboard": "verified sentinel → denied automatic write → native manual transfer → exact source",
+      "fallback": "Automatic copy is unavailable. The complete source below is selected; use your system copy shortcut."
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "input": [
+        1,
+        2,
+        1
+      ],
+      "k": 2,
+      "expected": 3,
+      "result": "本轮新增 2 个；已完成前缀的答案 = 3。",
+      "window": "上限 t=2：窗口 [0,2]left：0 → 0；加入后、收缩前 2 种。收缩后的 freq：{\"1\":2,\"2\":1}；本轮至多 2 种有 3 个区间。无需移出。上限 t=1：窗口 [2,2]left：1 → 2；加入后、收缩前 2 种。收缩后的 freq：{\"1\":1}；本轮至多 1 种有 1 个区间。移出索引 1 的 2 → 该值余 0 次，删除该键。",
+      "ledger": "011001211123123"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "input": [
+        1,
+        2,
+        1,
+        2,
+        3
+      ],
+      "k": 2,
+      "expected": 7,
+      "result": "本轮新增 1 个；已完成前缀的答案 = 7。",
+      "window": "上限 t=2：窗口 [3,4]left：0 → 3；加入后、收缩前 3 种。收缩后的 freq：{\"2\":1,\"3\":1}；本轮至多 2 种有 2 个区间。移出索引 0 的 1 → 该值余 1 次。移出索引 1 的 2 → 该值余 1 次。移出索引 2 的 1 → 该值余 0 次，删除该键。上限 t=1：窗口 [4,4]left：3 → 4；加入后、收缩前 2 种。收缩后的 freq：{\"3\":1}；本轮至多 1 种有 1 个区间。移出索引 3 的 2 → 该值余 0 次，删除该键。",
+      "ledger": "0110012111231233413642117"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "input": [
+        1,
+        2,
+        1,
+        3,
+        4
+      ],
+      "k": 3,
+      "expected": 3,
+      "result": "本轮新增 1 个；已完成前缀的答案 = 3。",
+      "window": "上限 t=3：窗口 [2,4]left：0 → 2；加入后、收缩前 4 种。收缩后的 freq：{\"1\":1,\"3\":1,\"4\":1}；本轮至多 3 种有 3 个区间。移出索引 0 的 1 → 该值余 1 次。移出索引 1 的 2 → 该值余 0 次，删除该键。上限 t=2：窗口 [3,4]left：2 → 3；加入后、收缩前 3 种。收缩后的 freq：{\"3\":1,\"4\":1}；本轮至多 2 种有 2 个区间。移出索引 2 的 1 → 该值余 0 次，删除该键。",
+      "ledger": "0110012200233003422243213"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "input": [
+        1,
+        1,
+        1
+      ],
+      "k": 1,
+      "expected": 6,
+      "result": "本轮新增 3 个；已完成前缀的答案 = 6。",
+      "window": "上限 t=1：窗口 [0,2]left：0 → 0；加入后、收缩前 1 种。收缩后的 freq：{\"1\":3}；本轮至多 1 种有 3 个区间。无需移出。上限 t=0：窗口 空窗口left：2 → 3；加入后、收缩前 1 种。收缩后的 freq：{}；本轮至多 0 种有 0 个区间。移出索引 2 的 1 → 该值余 0 次，删除该键。",
+      "ledger": "010111202323036"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "input": [
+        1,
+        2,
+        3
+      ],
+      "k": 2,
+      "expected": 2,
+      "result": "本轮新增 1 个；已完成前缀的答案 = 2。",
+      "window": "上限 t=2：窗口 [1,2]left：0 → 1；加入后、收缩前 3 种。收缩后的 freq：{\"2\":1,\"3\":1}；本轮至多 2 种有 2 个区间。移出索引 0 的 1 → 该值余 0 次，删除该键。上限 t=1：窗口 [2,2]left：1 → 2；加入后、收缩前 2 种。收缩后的 freq：{\"3\":1}；本轮至多 1 种有 1 个区间。移出索引 1 的 2 → 该值余 0 次，删除该键。",
+      "ledger": "011001211122112"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "input": [
+        1
+      ],
+      "k": 1,
+      "expected": 1,
+      "result": "本轮新增 1 个；已完成前缀的答案 = 1。",
+      "window": "上限 t=1：窗口 [0,0]left：0 → 0；加入后、收缩前 1 种。收缩后的 freq：{\"1\":1}；本轮至多 1 种有 1 个区间。无需移出。上限 t=0：窗口 空窗口left：0 → 1；加入后、收缩前 1 种。收缩后的 freq：{}；本轮至多 0 种有 0 个区间。移出索引 0 的 1 → 该值余 0 次，删除该键。",
+      "ledger": "01011"
+    },
+    {
+      "lang": "zh",
+      "preset": 6,
+      "input": [
+        1,
+        1,
+        1
+      ],
+      "k": 3,
+      "expected": 0,
+      "result": "本轮新增 0 个；已完成前缀的答案 = 0。",
+      "window": "上限 t=3：窗口 [0,2]left：0 → 0；加入后、收缩前 1 种。收缩后的 freq：{\"1\":3}；本轮至多 3 种有 3 个区间。无需移出。上限 t=2：窗口 [0,2]left：0 → 0；加入后、收缩前 1 种。收缩后的 freq：{\"1\":3}；本轮至多 2 种有 3 个区间。无需移出。",
+      "ledger": "011001220023300"
+    },
+    {
+      "lang": "zh",
+      "prediction": "0",
+      "feedback": "再对照漏计或多计的区间。 left_2=1（起点 0 含 1、2、3 三种），left_1=3（两个 2 都要移出才能只剩 3）。所以 3−1=2：区间 [1,3]=[2,2,3] 与 [2,3]=[2,3]。选 1 漏掉第二个；选 3 把只有一种值的 [3,3] 也算进去了。"
+    },
+    {
+      "lang": "zh",
+      "prediction": "1",
+      "feedback": "选择正确。 left_2=1（起点 0 含 1、2、3 三种），left_1=3（两个 2 都要移出才能只剩 3）。所以 3−1=2：区间 [1,3]=[2,2,3] 与 [2,3]=[2,3]。选 1 漏掉第二个；选 3 把只有一种值的 [3,3] 也算进去了。"
+    },
+    {
+      "lang": "zh",
+      "prediction": "2",
+      "feedback": "再对照漏计或多计的区间。 left_2=1（起点 0 含 1、2、3 三种），left_1=3（两个 2 都要移出才能只剩 3）。所以 3−1=2：区间 [1,3]=[2,2,3] 与 [2,3]=[2,3]。选 1 漏掉第二个；选 3 把只有一种值的 [3,3] 也算进去了。"
+    },
+    {
+      "lang": "zh",
+      "attempt": 0,
+      "host": "linux",
+      "clipboard": "verified sentinel → denied automatic write → native manual transfer → exact source",
+      "fallback": "自动复制不可用。下方源码已全选，请按系统复制快捷键。"
+    },
+    {
+      "lang": "zh",
+      "attempt": 1,
+      "host": "linux",
+      "clipboard": "verified sentinel → denied automatic write → native manual transfer → exact source",
+      "fallback": "自动复制不可用。下方源码已全选，请按系统复制快捷键。"
+    },
+    {
+      "lang": "en",
+      "related": "#76: maintain a window covering all required characters",
+      "url": "http://127.0.0.1:18797/leetcode/76/#step2",
+      "targetText": "03Experiment: expand, then shrinkWith the right edge fixed, how far can the left edge move? Choose a preset, keep t fixed, and execute the next operation. Watch the window outline, counts and ledger. While covered, record the candidate before removing the leftmost character. When coverage fails, stop shrinking and expand right. Changing a preset or applying inputs restarts this trace; the prediction exercise is independent.This is a JavaScript teaching simulation, not execution of Python in the browser. Each frame follows one completed operation; no events are omitted. Teaching inputs allow 1–18 English letters; the submission supports 100000. Retaining every snapshot is a teaching cost, separate from submission memory.The window includes positions left through right; initial right=−1 means empty. need is the requirement, have the current count, and missing the number of missing copies; 0 means covered. best is the shortest checked window so far, which may differ from the current window.Preset (changing restarts the trace)Worked: ABAAC / AACSurplus: AAAC / AACOfficial: ADOBECODEBANC / ABCToo few copies: a / aaExactly one: a / aCase matters: aA / AACustom inputChoose s and t (1–18 English letters each). Apply restarts the trace; invalid input preserves the current trace.stApply and restartUndo one operationExecute next operationReset traceOperation position (move either way)Completed 0 / 12 events · s=ABAAC · t=AACInitialized: empty window, missing=3. Expand the right edge first.Current window (outline + IN marker)Tiles show zero-based positions above letters. L and R mark current endpoints. Wrapped tiles keep the same string order. A zero missing count allows shrinking.0AL 1B2A3A4CCurrent: left=0, right=-1, window=\"\", missing=3 (not covered)Shortest checked: none yet; positions —; length —.Required and current countsLetterneed: requiredhave: currentMissing copiesA202C101Completed-operation ledgerEach row is a snapshot after its operation. Rewinding restores the window, counts and best together.EventWindow afterwardMissing copiesBest so far0 · Initialize[0,-1] \"\"3—"
+    },
+    {
+      "lang": "en",
+      "related": "#2916: group by right endpoint to sum squared distinct counts",
+      "url": "http://127.0.0.1:18797/leetcode/2916/#step1",
+      "targetText": "\n  Step 1 · Regroup the workEach subarray has exactly one right endpointThe question: can we partition the subarrays without omissions or overlap? Fix a right endpoint r and group nums[0..r], nums[1..r], …, nums[r..r]. Call this group’s contribution F(r); the answer is the sum of all F(r).F(r) = Σl=0..r distinct(nums[l..r])²answer = F(0) + F(1) + … + F(n−1)Keep [1, 2, 1] fixed and advance the right endpoint. Inspect the new group, then the retained history below: contributions 1, 5, 9 sum to 15.\n  Previous endpointNext endpoint01r1221\n    Left endpoint lSubarrayDistinct count dSquared count0[1]11F(0) = 1r = 0; this group’s F(r) = 1; accumulated answer = 1.\n  \n  Start with correct Python: O(n²)from typing import List\n\ndef brute(nums: List[int]) -> int:\n    answer = 0\n    for left in range(len(nums)):\n        seen = set()\n        for right in range(left, len(nums)):\n            seen.add(nums[right])\n            answer += len(seen) ** 2\n    return answer % (10**9 + 7)Fix the left endpoint and extend the right one, adding to a set incrementally instead of rebuilding it from slices. Every subarray still needs a visit: n = 100,000 gives 5,000,050,000 subarrays. We need to update them in batches. Explore how Big O describes growth.\n"
+    },
+    {
+      "lang": "zh",
+      "related": "#76：用频次维持覆盖全部字符的窗口",
+      "url": "http://127.0.0.1:18797/leetcode/76/#step2",
+      "targetText": "03实验：扩展，再收缩这一步要回答：右端固定时，左端能移多远？选择预设，保持 t 不变，点击“执行下一操作”，观察窗口边框、计数与账本。覆盖时先记录候选再移除左边字符；一旦欠缺就停止收缩，继续扩展右端。换预设或应用输入会从头开始；预测题独立保留。这是 JavaScript 教学模拟，不是在浏览器执行 Python。每帧表示一个刚完成的操作，不省略事件。输入限 1–18 个英文字母；官方解法支持 100000。保留全部快照是教学开销，不计入提交解法的空间。窗口含位置 left 到 right；初始 right=−1 表示空窗口。need 是需求，have 是当前数量；missing 是欠缺副本数，0 表示覆盖。best 是已经检查过的最短窗口，不一定是当前窗口。预设（更换后重置轨迹）手算：ABAAC / AAC多余副本：AAAC / AAC官方：ADOBECODEBANC / ABC数量不足：a / aa刚好一个：a / a区分大小写：aA / AA自选输入自选 s 与 t（每项 1–18 个英文字母）。应用后重置轨迹；不合法时保留原轨迹。st应用并从头开始退回上一操作执行下一操作重置轨迹操作位置（可前后拖动）已完成 0 / 12 个事件 · s=ABAAC · t=AAC初始化：窗口为空，missing=3。先扩展右端。当前窗口（边框 +“内”标记）方块上方为零起始位置，中间为字符；L、R 是当前左右端点。方块换行不改变字符串顺序。欠缺为 0 时可收缩。0AL 1B2A3A4C当前：left=0，right=-1，窗口=\"\"，missing=3（未覆盖）已检查最短：尚无；位置 —；长度 —。需求与当前数量字符need：需求have：当前尚欠副本A202C101已完成操作账本每行是操作后的快照。退回会同时恢复窗口、数量与最短记录。事件操作后窗口欠缺副本最短记录0 · 初始化[0,-1] \"\"3—"
+    },
+    {
+      "lang": "zh",
+      "related": "#2916：按右端点分组，累计不同值个数的平方",
+      "url": "http://127.0.0.1:18797/leetcode/2916/#step1",
+      "targetText": "\n  第 1 步 · 把问题分组每个子数组，都有且只有一个右端点这一步要回答：能否把所有子数组分成不重不漏的几组？固定右端点 r，把 nums[0..r]、nums[1..r]、…、nums[r..r] 放在同一组。这组的贡献记作 F(r)，答案就是所有 F(r) 的和。F(r) = Σl=0..r distinct(nums[l..r])²answer = F(0) + F(1) + … + F(n−1)保持数组 [1, 2, 1] 不变，逐次推进右端点。看表里新出现哪组子数组，再看下方保留下来的历史贡献：1、5、9，累加得到 15。\n  上一个右端点推进右端点01r1221\n    左端点 l子数组不同个数 d平方贡献0[1]11F(0) = 1r = 0；本组 F(r) = 1；目前累加答案 = 1。\n  \n  先写出能算对的 Python：O(n²)from typing import List\n\ndef brute(nums: List[int]) -> int:\n    answer = 0\n    for left in range(len(nums)):\n        seen = set()\n        for right in range(left, len(nums)):\n            seen.add(nums[right])\n            answer += len(seen) ** 2\n    return answer % (10**9 + 7)固定左端点，再扩展右端点，用集合增量统计不同数字，避免反复切片建集合。每个子数组仍需处理一次；n = 100,000 时共有 5,000,050,000 个子数组。我们需要省掉逐个处理的工作。到排序页看大 O 如何描述增长。\n"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "scroll": 320,
+      "buttons": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ],
+      "cells": [
+        47.59375,
+        47.59375,
+        47.609375,
+        47.59375,
+        47.59375
+      ],
+      "selectFit": [
+        {
+          "label": "Hand example",
+          "text": 108.81620788574219,
+          "budget": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Official 1",
+          "text": 65.85614013671875,
+          "budget": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Official 2",
+          "text": 65.85614013671875,
+          "budget": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Repeated, k=1",
+          "text": 106.75224304199219,
+          "budget": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "All distinct",
+          "text": 77.52015686035156,
+          "budget": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Singleton",
+          "text": 71.13613891601562,
+          "budget": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Too few types",
+          "text": 102.70420837402344,
+          "budget": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ],
+      "arrowReserve": 32
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "scroll": 390,
+      "buttons": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ],
+      "cells": [
+        61.59375,
+        61.59375,
+        61.609375,
+        61.59375,
+        61.59375
+      ],
+      "selectFit": [
+        {
+          "label": "Hand example",
+          "text": 108.81620788574219,
+          "budget": 264,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Official 1",
+          "text": 65.85614013671875,
+          "budget": 264,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Official 2",
+          "text": 65.85614013671875,
+          "budget": 264,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Repeated, k=1",
+          "text": 106.75224304199219,
+          "budget": 264,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "All distinct",
+          "text": 77.52015686035156,
+          "budget": 264,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Singleton",
+          "text": 71.13613891601562,
+          "budget": 264,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Too few types",
+          "text": 102.70420837402344,
+          "budget": 264,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ],
+      "arrowReserve": 32
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "scroll": 736,
+      "buttons": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ],
+      "cells": [
+        122.796875,
+        122.796875,
+        122.796875,
+        122.796875,
+        122.8125
+      ],
+      "selectFit": [
+        {
+          "label": "Hand example",
+          "text": 108.81620788574219,
+          "budget": 582,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Official 1",
+          "text": 65.85614013671875,
+          "budget": 582,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Official 2",
+          "text": 65.85614013671875,
+          "budget": 582,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Repeated, k=1",
+          "text": 106.75224304199219,
+          "budget": 582,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "All distinct",
+          "text": 77.52015686035156,
+          "budget": 582,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Singleton",
+          "text": 71.13613891601562,
+          "budget": 582,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Too few types",
+          "text": 102.70420837402344,
+          "budget": 582,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ],
+      "arrowReserve": 32
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "scroll": 1440,
+      "buttons": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ],
+      "cells": [
+        175.59375,
+        175.59375,
+        175.609375,
+        175.59375,
+        175.609375
+      ],
+      "selectFit": [
+        {
+          "label": "Hand example",
+          "text": 108.81620788574219,
+          "budget": 846,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Official 1",
+          "text": 65.85614013671875,
+          "budget": 846,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Official 2",
+          "text": 65.85614013671875,
+          "budget": 846,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Repeated, k=1",
+          "text": 106.75224304199219,
+          "budget": 846,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "All distinct",
+          "text": 77.52015686035156,
+          "budget": 846,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Singleton",
+          "text": 71.13613891601562,
+          "budget": 846,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Too few types",
+          "text": 102.70420837402344,
+          "budget": 846,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ],
+      "arrowReserve": 32
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "scroll": 320,
+      "buttons": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ],
+      "cells": [
+        47.59375,
+        47.59375,
+        47.609375,
+        47.59375,
+        47.59375
+      ],
+      "selectFit": [
+        {
+          "label": "手算例",
+          "text": 48.000091552734375,
+          "budget": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "官方例 1",
+          "text": 61.31211853027344,
+          "budget": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "官方例 2",
+          "text": 61.31211853027344,
+          "budget": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "重复值，k=1",
+          "text": 90.84819030761719,
+          "budget": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "各不相同",
+          "text": 64.0001220703125,
+          "budget": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "单元素",
+          "text": 48.000091552734375,
+          "budget": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "种类不够",
+          "text": 64.0001220703125,
+          "budget": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ],
+      "arrowReserve": 32
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "scroll": 390,
+      "buttons": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ],
+      "cells": [
+        61.59375,
+        61.59375,
+        61.609375,
+        61.59375,
+        61.59375
+      ],
+      "selectFit": [
+        {
+          "label": "手算例",
+          "text": 48.000091552734375,
+          "budget": 264,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "官方例 1",
+          "text": 61.31211853027344,
+          "budget": 264,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "官方例 2",
+          "text": 61.31211853027344,
+          "budget": 264,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "重复值，k=1",
+          "text": 90.84819030761719,
+          "budget": 264,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "各不相同",
+          "text": 64.0001220703125,
+          "budget": 264,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "单元素",
+          "text": 48.000091552734375,
+          "budget": 264,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "种类不够",
+          "text": 64.0001220703125,
+          "budget": 264,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ],
+      "arrowReserve": 32
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "scroll": 736,
+      "buttons": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ],
+      "cells": [
+        122.796875,
+        122.796875,
+        122.796875,
+        122.796875,
+        122.8125
+      ],
+      "selectFit": [
+        {
+          "label": "手算例",
+          "text": 48.000091552734375,
+          "budget": 582,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "官方例 1",
+          "text": 61.31211853027344,
+          "budget": 582,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "官方例 2",
+          "text": 61.31211853027344,
+          "budget": 582,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "重复值，k=1",
+          "text": 90.84819030761719,
+          "budget": 582,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "各不相同",
+          "text": 64.0001220703125,
+          "budget": 582,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "单元素",
+          "text": 48.000091552734375,
+          "budget": 582,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "种类不够",
+          "text": 64.0001220703125,
+          "budget": 582,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ],
+      "arrowReserve": 32
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "scroll": 1440,
+      "buttons": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ],
+      "cells": [
+        175.59375,
+        175.59375,
+        175.609375,
+        175.59375,
+        175.609375
+      ],
+      "selectFit": [
+        {
+          "label": "手算例",
+          "text": 48.000091552734375,
+          "budget": 846,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "官方例 1",
+          "text": 61.31211853027344,
+          "budget": 846,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "官方例 2",
+          "text": 61.31211853027344,
+          "budget": 846,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "重复值，k=1",
+          "text": 90.84819030761719,
+          "budget": 846,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "各不相同",
+          "text": 64.0001220703125,
+          "budget": 846,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "单元素",
+          "text": 48.000091552734375,
+          "budget": 846,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "种类不够",
+          "text": 64.0001220703125,
+          "budget": 846,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ],
+      "arrowReserve": 32
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".stage",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": ".hint",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".btn:disabled",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".btn:not(:disabled)",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#langToggle button.active",
+      "color": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".readout",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "a",
+      "color": "rgb(110, 231, 255)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".window-box",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".start.exact",
+      "color": "rgb(255, 180, 84)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 9.809435643476732
+    },
+    {
+      "selector": ".start.excluded",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".array-cell.current .array-value",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(22, 75, 89)",
+      "ratio": 8.170621139356324
+    },
+    {
+      "selector": "th",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "focus against panel",
+      "color": "rgb(255, 180, 84)",
+      "background": "rgb(22,27,34)",
+      "ratio": 9.809435643476732
+    }
+  ],
+  "focus": {
+    "outline": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "zoom": "CSS root zoom 2, Chromium",
+  "capture": "Focused stage PNGs hide sticky nav using screenshot-only CSS to avoid tall-element capture overlay; viewport/page captures and navigation tests retain nav",
+  "limits": [
+    "No physical device testing",
+    "No independent review, learner study, public deployment or LeetCode submission"
+  ]
+}
