@@ -1091,3 +1091,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Exact memoized insertion search | `leetcode/488/#step4` | Enumerate all legal successor states, including setup moves, and reuse identical subproblems. |
 
 <!-- /leetcode-488-campaign -->
+
+
+<!-- leetcode-552-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Attendance counting with six states | `leetcode/552/#step2` | Group valid prefixes by absences used and trailing late run. |
+| Counting invariant and rolling arrays | `leetcode/552/#step4` | Maintain disjoint counts with fresh next-day storage. |
+
+<!-- /leetcode-552-campaign -->
