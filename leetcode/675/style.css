@@ -3,3 +3,6 @@ button:disabled{opacity:1;color:var(--muted);background:var(--panel2)}button,sel
 .head-top{flex-wrap:wrap}.lang-toggle{margin-left:auto}
 .btn:disabled{background:var(--panel2);color:var(--muted);border-color:var(--muted)}
 .lang-toggle:focus-within{outline:3px solid var(--accent2);outline-offset:4px}
+
+/* Let the closed native preset control grow with wrapped labels, including zoom. */
+#preset{width:100%;field-sizing:content}

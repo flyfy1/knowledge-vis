@@ -17,3 +17,20 @@ All result/screenshot emitters accept `OUT_DIR`. Use the same directory for the 
 Zoom evidence uses CSS `zoom:2` in real Chromium. Browser-chrome zoom and physical device checks remain unverified. The initial harness assumptions and actual visual repairs are retained in `evidence/harness-note.txt`; failed/obsolete visual evidence is identified there. Audit montages are derived from the individual screenshots and are not runtime assets.
 
 `build_copy.py` is a narrowly scoped authoring helper, not a reviewer check; it writes only `../copy.js`. Do not run it to test a frozen candidate. All review checks above are read-only with respect to runtime files.
+
+Required-finding regression (675-R1-01):
+
+```bash
+OUT_DIR="$PWD/leetcode/675/tests/evidence/r1-fix" node leetcode/675/tests/selected-labels.cjs
+```
+
+Checks all six closed labels in both locales at 320/390px and 100%/200% CSS zoom,
+including the preset-4 locale roundtrip. Records actual font, text/padding/control
+geometry, vertical and horizontal clipping, native content sizing, and screenshots
+for the two reported presets. Inspect screenshots as well as geometry. A wrapped
+label can legitimately be wider than one line; it must have sufficient height.
+The 24px arrow allowance is a conservative observation for this Linux Chromium
+control, not a universal browser constant. `STYLESHEET_UNDER_TEST` optionally
+serves a saved stylesheet through Playwright request interception to repeat this
+same check against the original CSS without mutating the runtime or service.
+`evidence/r1-before/` retains that red reproduction; it is not repaired evidence.
