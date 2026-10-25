@@ -1,0 +1,13 @@
+{
+  "kind": "author self-check",
+  "cases": 3783,
+  "snapshots": 94920,
+  "maximum_n": 20000,
+  "official_expected": [
+    2,
+    3,
+    3
+  ],
+  "status": "pass",
+  "oracle": "direct suffix selection then independent alternating path walks"
+}
