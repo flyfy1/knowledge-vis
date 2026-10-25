@@ -1138,3 +1138,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Palindrome candidate completeness | `leetcode/564/#step2` | Neighboring prefixes and digit-length boundaries cover the nearest other palindrome. |
 
 <!-- /leetcode-564-campaign -->
+
+
+<!-- leetcode-587-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| convex hull boundary | `leetcode/587/#step0` | All perimeter trees, including collinear edge trees |
+| signed turn | `leetcode/587/#step1` | Integer cross product distinguishes left, straight and right |
+| monotone chain | `leetcode/587/#step2` | Repeated strict-right-turn removal in two sorted scans |
+
+<!-- /leetcode-587-campaign -->
