@@ -180,3 +180,110 @@ Mac full-suite execution of the newly frozen candidate and fresh separate review
 remain pending with the dispatcher. Real devices, native toolbar zoom, public
 delivery and LeetCode acceptance are unverified. No service, shared file, review
 report, acceptance record, campaign state, registry, commit or deployment changed.
+
+
+## Mac proof handoff self-check — 782-r3, 2026-10-25
+
+Status: **ready for separate re-review; independent acceptance pending**.
+Finding **782-MAC-FIT-01: fixed awaiting review of this handoff candidate**.
+This append supersedes the earlier statement that actual repaired-candidate Mac
+execution is pending. It preserves that statement as the historical evidence
+boundary at the time of r2. No runtime, canonical source, metadata or original
+test assertion changed in this round. New freeze:
+[../candidate-mac-proof-handoff-20261025.json](../candidate-mac-proof-handoff-20261025.json).
+
+### Finding mapping and separately attributed affected-host proof
+
+The [handoff](../../../specs/reviews/782-review-mac-proof-handoff-20261025.md)
+requests incorporation of supplied proof, with no runtime change. The latest full
+[independent review](../../../specs/reviews/782-review-2-4f9587dd.md) remains
+historically `changes_required`; its sole required finding is 782-MAC-FIT-01.
+Its score and outcome have not been changed here. The optional syntax advisory
+remains optional and unchanged.
+
+For **782-MAC-FIT-01**, the earlier repair shortened only the English preset-4
+label to `Four-corner failure: −1` and updated its asset cache reference. The
+[dispatcher Mac execution report](../../../specs/reviews/782-review-mac-repaired-candidate-20261025.md)
+now supplies actual Darwin Chromium 151.0.7922.34 execution against
+`efa6a0356f63e851c594c346dd2ec07b644655e7`. Its immutable
+[receipt](../../../specs/reviews/782-evidence/mac-repaired-candidate-20261025/results/candidate-parity.json)
+records 189 exported files with no changed or added files after execution.
+All [six commands](../../../specs/reviews/782-evidence/mac-repaired-candidate-20261025/results/checks.json)
+passed, including the original complete browser suite and targeted all-seven
+preset EN→ZH→EN geometry at 320px. The runner and before-manifest are archived
+[alongside the results](../../../specs/reviews/782-evidence/mac-repaired-candidate-20261025/).
+
+The [separately authored supplemental review](../../../specs/reviews/782-review-mac-repair-closure-20261025.md)
+judges the supplied evidence sufficient to close the affected-Mac regression
+against that tested revision. This is that reviewer's bounded conclusion, not
+my independent acceptance of this new candidate. The next reviewer must
+adjudicate the finding and normal lesson gates against the frozen handoff.
+I did not run a Mac browser or perform its clipboard transfers. I read the
+archived receipts and personally inspected the supplied English and Chinese
+failure-label screenshots: the complete label, −1 and arrow are visible.
+Recorded English width is 175.350px within the unchanged 210px text budget,
+leaving 34.650px spare. The original 20px arrow reserve remains unchanged.
+
+### Identity and fresh local regression evidence
+
+Before editing documentation, checked all **131 lesson-local files** in the
+supplied Mac manifest against both current bytes and immutable Git bytes at the
+tested revision: all exact. Also checked the four original suites (check.py,
+core.cjs, browser.cjs, focused.cjs) against failing candidate
+`0e53a2131353accc11a5ef746c5eba164efb14e4`: byte-identical. The current HTTP
+responses match local index.html, style.css, copy.js, core.js, app.js,
+python-code.js, solution.py and shared common.js/style.css. Shared files were
+only read. The before-edit checks and command receipts are in
+[evidence/mac-proof-handoff-20261025/verification.json](evidence/mac-proof-handoff-20261025/verification.json).
+Only this documentation, new local evidence and the new freeze are changed.
+
+All commands below ran from the repository root and exited **0**. Test outputs
+were redirected with `OUTPUT_DIR=leetcode/782/tests/evidence/mac-proof-handoff-20261025`;
+older red/green and independent evidence remain untouched.
+
+- `python3 -B scripts/register_leetcode_lesson.py 782 --validate-only`: PASS,
+  empty stdout/stderr. Complexity remains exactly the nonempty string
+  `O(n²) time; O(1) auxiliary space`. No registration performed.
+- `python3 -B leetcode/782/tests/check.py`: actual official Python interface,
+  704 oracle cases, exhaustive 2×2/3×3, seeded and n=29/30 boundaries, no mutation.
+- `node leetcode/782/tests/core.cjs`: 704 fixtures / 3,291 frames; target identity,
+  intermediate swaps, cumulative moves/history, snapshot isolation, AST duplicate
+  keys, two-string locale pairs and exact offline mirror.
+- `node leetcode/782/tests/browser.cjs`: complete unchanged suite, EN and zh,
+  all presets and frame rewind/replay; hand undo/reset; all prediction choices,
+  change invalidation and locale preservation; complete rendered XOR formula;
+  exact textContent/source/copy/download including final newline; actual native
+  Control+C fallback on this Linux host, fresh written/read-back non-source
+  sentinel before each locale attempt. Four widths (320/390/736/1440), CSS
+  zoom=2, keyboard/focus, local links, contrast, offline and blocked storage
+  passed, with no console or asset errors. 36 screenshots retained.
+- `node leetcode/782/tests/focused.cjs`: populated row-swap frame and 200% CSS
+  board geometry in both locales passed.
+- `node leetcode/782/tests/selected-label.cjs`: seven presets, EN→ZH→EN at
+  320px, exact repaired wording and terminal −1 passed with the original width
+  predicate. Personally inspected both new local failure-label screenshots;
+  complete labels and results are visible.
+
+Rendered-state regression scope is unchanged: four-corner formula and
+mismatch/2 operands, after-operation frame labels, performed-swap totals versus
+pending/final minimum, and prediction input 110/001/110 remain consistent.
+The Python source/mirror pair is exactly the registration table's
+solution.py / python-code.js / PYTHON_SOURCE. Saved official selector evidence
+includes faithful Python3 and TypeScript; Python is canonical and is not omitted
+or replaced. No non-Python language contract is necessary. No embedded source
+regeneration was necessary because no canonical bytes changed.
+
+Read website-design and diagnosing-bugs skills. Applied the former to preserved
+UI verification, reusing the existing approved BRIEF. No new feature/layout:
+P0 is attributed proof and candidate identity; P1/P2 none. No new hard bug was
+investigated, so new reproduction/hypothesis/instrumentation phases are not
+applicable; the prior red loop, ranked hypotheses and confirmed width cause
+remain above and in unchanged historical evidence. Font/layout redesign and
+optional syntax changes remain deferred outside this evidence-only handoff.
+
+These are author self-checks plus explicitly attributed supplied Mac evidence.
+They establish neither independent acceptance of r3, real-device coverage,
+native browser-menu zoom, public delivery, novice teach-back nor judge acceptance.
+No review report, rubric, registry, campaign state, service, commit or deployment
+was changed. Next action: separate reviewer verifies frozen bytes, evaluates the
+Mac evidence for 782-MAC-FIT-01, and records their own conclusion.
