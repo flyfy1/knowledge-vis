@@ -1,0 +1,37 @@
+[
+  {
+    "command": "node leetcode/732/tests/test_contrast.cjs",
+    "cwd": "/home/songyy/projects/leetcode-hard-lane-732-20261025",
+    "exitCode": 0,
+    "stdout": "{\n  \"finding\": \"732-MAC-R1\",\n  \"reference\": \"https://www.w3.org/TR/WCAG22/#dfn-relative-luminance\",\n  \"values\": [\n    {\n      \"rgb\": [\n        0,\n        0,\n        0\n      ],\n      \"expected\": 0,\n      \"actual\": 0\n    },\n    {\n      \"rgb\": [\n        255,\n        255,\n        255\n      ],\n      \"expected\": 1,\n      \"actual\": 1\n    },\n    {\n      \"rgb\": [\n        255,\n        0,\n        0\n      ],\n      \"expected\": 0.2126,\n      \"actual\": 0.2126\n    },\n    {\n      \"rgb\": [\n        0,\n        255,\n        0\n      ],\n      \"expected\": 0.7152,\n      \"actual\": 0.7152\n    },\n    {\n      \"rgb\": [\n        0,\n        0,\n        255\n      ],\n      \"expected\": 0.0722,\n      \"actual\": 0.0722\n    },\n    {\n      \"rgb\": [\n        128,\n        128,\n        128\n      ],\n      \"expected\": 0.21586050011389926,\n      \"actual\": 0.2158605001138992\n    }\n  ],\n  \"blackWhite\": 21,\n  \"threshold\": {\n    \"minimum\": 4.5,\n    \"negative\": {\n      \"hex\": \"#747474\",\n      \"on\": \"#000000\",\n      \"ratio\": 4.492948073111701\n    },\n    \"positive\": {\n      \"hex\": \"#757575\",\n      \"on\": \"#000000\",\n      \"ratio\": 4.557768319672582\n    }\n  },\n  \"status\": \"pass\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": "python3 -B leetcode/732/tests/test_solution.py",
+    "cwd": "/home/songyy/projects/leetcode-hard-lane-732-20261025",
+    "exitCode": 0,
+    "stdout": "PASS 1314 sequences; 7034 calls\n",
+    "stderr": ""
+  },
+  {
+    "command": "node leetcode/732/tests/test_core.cjs",
+    "cwd": "/home/songyy/projects/leetcode-hard-lane-732-20261025",
+    "exitCode": 0,
+    "stdout": "PASS 13210 frames\n",
+    "stderr": ""
+  },
+  {
+    "command": "python3 -B leetcode/732/tests/test_copy.py",
+    "cwd": "/home/songyy/projects/leetcode-hard-lane-732-20261025",
+    "exitCode": 0,
+    "stdout": "PASS 86 unique bilingual keys and static bindings\n",
+    "stderr": ""
+  },
+  {
+    "command": "python3 -B scripts/register_leetcode_lesson.py 732 --validate-only",
+    "cwd": "/home/songyy/projects/leetcode-hard-lane-732-20261025",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]
