@@ -1,0 +1,9 @@
+test_delayed_launch_waits_then_arms_fresh_fix_before_review (__main__.DelayedActualRunner.test_delayed_launch_waits_then_arms_fresh_fix_before_review) ... ok
+test_changed_stopped_snapshot_refuses (__main__.StartupControls.test_changed_stopped_snapshot_refuses) ... ok
+test_dead_pid_refuses_unchanged_stopped_snapshot (__main__.StartupControls.test_dead_pid_refuses_unchanged_stopped_snapshot) ... ok
+test_failed_state_and_premature_review_refuse (__main__.StartupControls.test_failed_state_and_premature_review_refuse) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.303s
+
+OK

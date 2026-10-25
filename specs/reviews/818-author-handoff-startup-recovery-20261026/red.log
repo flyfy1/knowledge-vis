@@ -1,0 +1,23 @@
+test_delayed_launch_waits_then_arms_fresh_fix_before_review (__main__.DelayedActualRunner.test_delayed_launch_waits_then_arms_fresh_fix_before_review) ... ERROR
+
+======================================================================
+ERROR: test_delayed_launch_waits_then_arms_fresh_fix_before_review (__main__.DelayedActualRunner.test_delayed_launch_waits_then_arms_fresh_fix_before_review)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/818-author-handoff-startup-recovery-20261026/test_startup.py", line 62, in test_delayed_launch_waits_then_arms_fresh_fix_before_review
+    self.assertIsNone(observe(case.progress(),before,set(),process.poll() is None))
+                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/818-author-handoff-startup-recovery-20261026/test_startup.py", line 26, in observe
+    return op.fresh_fix_record(state,old_ids)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/parallel-968972-import-818-search-preparation-20261026/operate.py", line 389, in fresh_fix_record
+    require(state['status'] == 'running', 'Runner not active while arming author handoff')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/parallel-968972-import-818-search-preparation-20261026/operate.py", line 35, in require
+    raise RuntimeError(message)
+RuntimeError: Runner not active while arming author handoff
+
+----------------------------------------------------------------------
+Ran 1 test in 1.302s
+
+FAILED (errors=1)

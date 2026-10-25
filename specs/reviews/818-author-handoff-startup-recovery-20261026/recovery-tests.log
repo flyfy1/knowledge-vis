@@ -1,0 +1,13 @@
+test_changed_importer_and_observer_refuse_before_execution (__main__.ModuleLoadGuards.test_changed_importer_and_observer_refuse_before_execution) ... ok
+test_cli_does_not_import_observer_before_dispatch_guard (__main__.ModuleLoadGuards.test_cli_does_not_import_observer_before_dispatch_guard) ... ok
+test_actual_failed_snapshot_is_launch_only_admissible (__main__.RecoveryGuards.test_actual_failed_snapshot_is_launch_only_admissible) ... ok
+test_advanced_state_wrong_head_or_history_count_refuses (__main__.RecoveryGuards.test_advanced_state_wrong_head_or_history_count_refuses) ... ok
+test_disabled_entrypoint_has_no_runtime_or_pin_access (__main__.RecoveryGuards.test_disabled_entrypoint_has_no_runtime_or_pin_access) ... ok
+test_recovery_has_distinct_lineage (__main__.RecoveryGuards.test_recovery_has_distinct_lineage) ... ok
+test_restore_is_byte_exact_and_never_overwrites_foreign_stop (__main__.RecoveryGuards.test_restore_is_byte_exact_and_never_overwrites_foreign_stop) ... ok
+test_unrelated_failure_or_stop_owner_refuses (__main__.RecoveryGuards.test_unrelated_failure_or_stop_owner_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.065s
+
+OK

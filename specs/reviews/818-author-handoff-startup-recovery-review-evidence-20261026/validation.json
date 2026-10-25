@@ -1,0 +1,23 @@
+{
+  "hashes": {
+    "recover.py": "1745fe1d3425a21f0a72b3f5a8dbc9d21a7dec827ed80acb523dbb0d180aa0bd",
+    "pins.json": "70db45a389f137b558aa7d368bedc71866fc4016c6e3c6b347a61ef0031dbaa7",
+    "startup_observer.py": "3b884fbc94e584a3894374a4156895e44f7aa53a616afc757f955c32664680e5",
+    "test_recover.py": "9ccd6f54386fdbfbbd2fb17bf8cb940463b1746ce62ae15ab5c51f5918f2a930"
+  },
+  "runs": [
+    {
+      "name": "original-red",
+      "exit_code": 1
+    },
+    {
+      "name": "corrected-green",
+      "exit_code": 0
+    },
+    {
+      "name": "recovery-guards",
+      "exit_code": 0
+    }
+  ],
+  "scope": "Independent local actual-runner/fake-CLI tests and archived-state guards only; no remote actions"
+}

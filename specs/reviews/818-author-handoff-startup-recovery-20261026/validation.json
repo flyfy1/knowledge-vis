@@ -1,0 +1,21 @@
+{
+  "status": "prepared_for_independent_review_no_dispatch",
+  "confirmed_hypothesis": "H1: live launched runner can precede replacement of exact stopped snapshot",
+  "tests": {
+    "startup_actual_runner_and_controls": 4,
+    "recovery_snapshot_guards": 8,
+    "actual_candidate_measurement": false
+  },
+  "runtime_writes": false,
+  "sha256": {
+    "recover.py": "1745fe1d3425a21f0a72b3f5a8dbc9d21a7dec827ed80acb523dbb0d180aa0bd",
+    "pins.json": "70db45a389f137b558aa7d368bedc71866fc4016c6e3c6b347a61ef0031dbaa7",
+    "startup_observer.py": "3b884fbc94e584a3894374a4156895e44f7aa53a616afc757f955c32664680e5",
+    "test_startup.py": "14fc3468101b335f1a11ac525e4e2b492e4fef5dabffaf26577901281d982265",
+    "test_recover.py": "9ccd6f54386fdbfbbd2fb17bf8cb940463b1746ce62ae15ab5c51f5918f2a930",
+    "red.log": "938e841a547793434576d17e9115fb44adc3f681027d46ee4e1d30b0a1bb15c7",
+    "green.log": "58f5fa9b23e1c83bfc14e857c9b00a4b849e881c74f83ac84405b268b5ab08e6",
+    "recovery-tests.log": "d394eafdb65141d74bb317b0ef426399c6e85341f18b18873c4927317e686265",
+    "README.md": "e04d6197301b94d717c17bec1b423b524e7d4fc892a169f0ffe39b4e232ef400"
+  }
+}
