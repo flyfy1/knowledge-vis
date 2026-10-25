@@ -1,0 +1,21 @@
+{
+  "candidate": "878-author-v1",
+  "frozenAt": "2026-10-25T23:23:35.430156+00:00",
+  "problemId": 878,
+  "author": {
+    "agent": "Codex",
+    "exactModel": "unavailable",
+    "stage": "self-checked",
+    "evidence": "SELF-CHECK.md"
+  },
+  "independentReview": {
+    "stage": "pending",
+    "reviewer": null,
+    "run": null,
+    "score": null,
+    "accepted": false
+  },
+  "leetcodeSubmission": "not performed",
+  "deployment": "not performed",
+  "nextAction": "Dispatcher to assign separate source-blind cold review of the frozen candidate; no author acceptance claim."
+}

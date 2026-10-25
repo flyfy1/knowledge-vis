@@ -1,0 +1,15 @@
+{
+  "stage": "unfrozen author draft",
+  "copySha256": "a519810c851e74a8f4614d63075da0f850305cbab09478556f89848ede616ce1",
+  "test": "node leetcode/878/tests/browser.cjs",
+  "result": "failed",
+  "case": "320px English maximum preset",
+  "measured": {
+    "width": 256,
+    "text": 288.4646301269531,
+    "available": 206,
+    "font": "16px PingFang SC, Microsoft YaHei, system-ui, sans-serif"
+  },
+  "visualInspection": "draft-select-320-en.png shows truncated wrapped text in closed native selector",
+  "fix": "Shorten labels, preserve all n/a/b values and full numeric readout. Same width predicate retained."
+}

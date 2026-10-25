@@ -1,0 +1,447 @@
+{
+  "result": "pass",
+  "browser": "156.0.8078.4",
+  "platform": "linux",
+  "semantics": [
+    {
+      "locale": "en",
+      "x": 1,
+      "count": "x=1: 0 + 0 − 0 = 0 distinct magical numbers."
+    },
+    {
+      "locale": "en",
+      "x": 5,
+      "count": "x=5: 2 + 1 − 0 = 3 distinct magical numbers."
+    },
+    {
+      "locale": "en",
+      "x": 6,
+      "count": "x=6: 3 + 2 − 1 = 4 distinct magical numbers."
+    },
+    {
+      "locale": "en",
+      "x": 7,
+      "count": "x=7: 3 + 2 − 1 = 4 distinct magical numbers."
+    },
+    {
+      "locale": "en",
+      "x": 18,
+      "count": "x=18: 9 + 6 − 3 = 12 distinct magical numbers."
+    },
+    {
+      "locale": "en",
+      "frame": 1,
+      "before": "[1, 8]",
+      "test": "Just tested mid=4: C(mid)=2+1−0=3; target rank n=4.",
+      "after": "[5, 8]",
+      "decision": "Test mid=4 in [1, 8]: C=3<n, exclude values ≤4; retain [5, 8]."
+    },
+    {
+      "locale": "en",
+      "frame": 2,
+      "before": "[5, 8]",
+      "test": "Just tested mid=6: C(mid)=3+2−1=4; target rank n=4.",
+      "after": "[5, 6]",
+      "decision": "Test mid=6 in [5, 8]: C=4≥n, exclude values >6; retain [5, 6]."
+    },
+    {
+      "locale": "en",
+      "frame": 3,
+      "before": "[5, 6]",
+      "test": "Just tested mid=5: C(mid)=2+1−0=3; target rank n=4.",
+      "after": "[6, 6]",
+      "decision": "Test mid=5 in [5, 6]: C=3<n, exclude values ≤5; retain [6, 6]."
+    },
+    {
+      "locale": "en",
+      "preset": 0,
+      "endpoint": "Interval is a single point: rank 4 = 6; returned remainder = 6."
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "endpoint": "Interval is a single point: rank 1 = 2; returned remainder = 2."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "endpoint": "Interval is a single point: rank 5 = 16; returned remainder = 16."
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "endpoint": "Interval is a single point: rank 6 = 12; returned remainder = 12."
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "endpoint": "Interval is a single point: rank 4 = 12; returned remainder = 12."
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "endpoint": "Interval is a single point: rank 1000000000 = 40000000000000; returned remainder = 999720007."
+    },
+    {
+      "locale": "en",
+      "choice": 0,
+      "feedback": "Check the boundary. Keep [12,16]. C(16)=7 only proves that rank 7 is at most 16; 16 is divisible by neither 3 nor 5. The sequence is 3, 5, 6, 9, 10, 12, 15, so rank 7 is 15. Returning now is wrong, and retaining [17,21] loses 15. Testing smaller values locates the first crossing of 7."
+    },
+    {
+      "locale": "en",
+      "choice": 1,
+      "feedback": "Correct. Keep [12,16]. C(16)=7 only proves that rank 7 is at most 16; 16 is divisible by neither 3 nor 5. The sequence is 3, 5, 6, 9, 10, 12, 15, so rank 7 is 15. Returning now is wrong, and retaining [17,21] loses 15. Testing smaller values locates the first crossing of 7."
+    },
+    {
+      "locale": "en",
+      "choice": 2,
+      "feedback": "Check the boundary. Keep [12,16]. C(16)=7 only proves that rank 7 is at most 16; 16 is divisible by neither 3 nor 5. The sequence is 3, 5, 6, 9, 10, 12, 15, so rank 7 is 15. Returning now is wrong, and retaining [17,21] loses 15. Testing smaller values locates the first crossing of 7."
+    },
+    {
+      "locale": "en",
+      "copy": "automatic clipboard, downloaded bytes, rendered text and native fallback all exact including final newline",
+      "fallback": "Automatic copy unavailable. Full source selected; use your system copy shortcut.",
+      "sentinel": "878-en-1792970556227",
+      "host": "linux"
+    },
+    {
+      "locale": "zh",
+      "x": 1,
+      "count": "x=1：0 + 0 − 0 = 0 个不同的神奇数字。"
+    },
+    {
+      "locale": "zh",
+      "x": 5,
+      "count": "x=5：2 + 1 − 0 = 3 个不同的神奇数字。"
+    },
+    {
+      "locale": "zh",
+      "x": 6,
+      "count": "x=6：3 + 2 − 1 = 4 个不同的神奇数字。"
+    },
+    {
+      "locale": "zh",
+      "x": 7,
+      "count": "x=7：3 + 2 − 1 = 4 个不同的神奇数字。"
+    },
+    {
+      "locale": "zh",
+      "x": 18,
+      "count": "x=18：9 + 6 − 3 = 12 个不同的神奇数字。"
+    },
+    {
+      "locale": "zh",
+      "frame": 1,
+      "before": "[1, 8]",
+      "test": "刚测试 mid=4：C(mid)=2+1−0=3；目标名次 n=4。",
+      "after": "[5, 8]",
+      "decision": "测试 [1, 8] 的 mid=4：C=3<n，排除 ≤4；保留 [5, 8]。"
+    },
+    {
+      "locale": "zh",
+      "frame": 2,
+      "before": "[5, 8]",
+      "test": "刚测试 mid=6：C(mid)=3+2−1=4；目标名次 n=4。",
+      "after": "[5, 6]",
+      "decision": "测试 [5, 8] 的 mid=6：C=4≥n，排除 >6；保留 [5, 6]。"
+    },
+    {
+      "locale": "zh",
+      "frame": 3,
+      "before": "[5, 6]",
+      "test": "刚测试 mid=5：C(mid)=2+1−0=3；目标名次 n=4。",
+      "after": "[6, 6]",
+      "decision": "测试 [5, 6] 的 mid=5：C=3<n，排除 ≤5；保留 [6, 6]。"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "endpoint": "区间合为一点：第 4 个数 = 6；返回余数 = 6。"
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "endpoint": "区间合为一点：第 1 个数 = 2；返回余数 = 2。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "endpoint": "区间合为一点：第 5 个数 = 16；返回余数 = 16。"
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "endpoint": "区间合为一点：第 6 个数 = 12；返回余数 = 12。"
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "endpoint": "区间合为一点：第 4 个数 = 12；返回余数 = 12。"
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "endpoint": "区间合为一点：第 1000000000 个数 = 40000000000000；返回余数 = 999720007。"
+    },
+    {
+      "locale": "zh",
+      "choice": 0,
+      "feedback": "再看边界。 应保留 [12,16]。C(16)=7 只说明第 7 个不大于 16；16 本身不能被 3 或 5 整除。实际序列为 3、5、6、9、10、12、15，第 7 个是 15。立即返回会错；保留 [17,21] 又会丢掉 15。继续检查更小的值，才找到第一次达到 7 的位置。"
+    },
+    {
+      "locale": "zh",
+      "choice": 1,
+      "feedback": "正确。 应保留 [12,16]。C(16)=7 只说明第 7 个不大于 16；16 本身不能被 3 或 5 整除。实际序列为 3、5、6、9、10、12、15，第 7 个是 15。立即返回会错；保留 [17,21] 又会丢掉 15。继续检查更小的值，才找到第一次达到 7 的位置。"
+    },
+    {
+      "locale": "zh",
+      "choice": 2,
+      "feedback": "再看边界。 应保留 [12,16]。C(16)=7 只说明第 7 个不大于 16；16 本身不能被 3 或 5 整除。实际序列为 3、5、6、9、10、12、15，第 7 个是 15。立即返回会错；保留 [17,21] 又会丢掉 15。继续检查更小的值，才找到第一次达到 7 的位置。"
+    },
+    {
+      "locale": "zh",
+      "copy": "automatic clipboard, downloaded bytes, rendered text and native fallback all exact including final newline",
+      "fallback": "自动复制不可用。完整源码已选中；请用系统复制快捷键。",
+      "sentinel": "878-zh-1792970572287",
+      "host": "linux"
+    }
+  ],
+  "fit": [
+    {
+      "viewport": 320,
+      "locale": "en",
+      "width": 256,
+      "text": 138.43231201171875,
+      "available": 206,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 320,
+      "locale": "zh",
+      "width": 256,
+      "text": 138.43231201171875,
+      "available": 206,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 390,
+      "locale": "en",
+      "width": 326,
+      "text": 138.43231201171875,
+      "available": 276,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 390,
+      "locale": "zh",
+      "width": 326,
+      "text": 138.43231201171875,
+      "available": 276,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 736,
+      "locale": "en",
+      "width": 644,
+      "text": 138.43231201171875,
+      "available": 594,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 736,
+      "locale": "zh",
+      "width": 644,
+      "text": 138.43231201171875,
+      "available": 594,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 1440,
+      "locale": "en",
+      "width": 908,
+      "text": 138.43231201171875,
+      "available": 858,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "viewport": 1440,
+      "locale": "zh",
+      "width": 908,
+      "text": 138.43231201171875,
+      "available": 858,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    }
+  ],
+  "focusChecks": [
+    {
+      "locale": "en",
+      "viewport": 320,
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    },
+    {
+      "locale": "zh",
+      "viewport": 320,
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    },
+    {
+      "locale": "en",
+      "viewport": 390,
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    },
+    {
+      "locale": "zh",
+      "viewport": 390,
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    },
+    {
+      "locale": "en",
+      "viewport": 736,
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    },
+    {
+      "locale": "zh",
+      "viewport": 736,
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    },
+    {
+      "locale": "en",
+      "viewport": 1440,
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    },
+    {
+      "locale": "zh",
+      "viewport": 1440,
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    }
+  ],
+  "links": [
+    {
+      "locale": "en",
+      "label": " #668: kth value with duplicates and counting bounds",
+      "url": "http://127.0.0.1:18770/leetcode/668/#step2",
+      "excerpt": "033 · Eliminate half the valuesWhich answers can we exclude using C(x), the number of cells with value ≤x? For 3×3 and k=5, C(2)=3: only three cells are ≤2, so the fifth must exceed 2. But C(3)=5: five cells are already ≤3, so the answer is at most 3.Increasing x never removes a qualifying cell: C is nondecreasing. The answer is therefore the first integer x with C(x)≥k. Requiring C(x)=k fails: in the same 3×3 table with k=4, C(2)=3 and C(3)=5. The count skips 4, yet the fourth cell is still 3.Let lo and hi bound an inclusive interval containing the answer, and mid=⌊(lo+hi)/2⌋. If C(mid)<k, mid and every smaller value are insufficient: set lo=mid+1. If C(mid)≥k, mid could be the answer: set hi=mid, rather than mid−1. The default first round tests mid=5 in [1,9]; C(5)=3+2+1=6, leaving [1,5]. The next round tests 3; C(3)=5, leaving [1,3]. This halving of the candidate value range is binary search on the answer.These observations give an invariant, a fact kept after every round: C(lo−1)<k≤C(hi). Every value left of lo is insufficient, while hi is sufficient, so the first sufficient value remains in [lo,hi]. Initially lo=1 and hi=m×n, since C(0)=0 and C(m×n)=m×n.This is a JavaScript te"
+    },
+    {
+      "locale": "en",
+      "label": " #793: boundaries of a staircase count",
+      "url": "http://127.0.0.1:18770/leetcode/793/#step2",
+      "excerpt": "03How can we count matches without scanning every x?Let f(x) be the trailing-zero count of x!. It is monotone: increasing x never decreases the output. Define L(t) as the first nonnegative integer x with f(x)≥t. Inputs with f(x)=k run exactly from L(k) through L(k+1)−1. Their count is the difference of these boundaries. When k is skipped, the two boundaries coincide.Number of matches = L(k+1) − L(k)Binary search preserves these facts, called an invariant: L(t) lies in the closed interval [lo,hi], every x<lo is insufficient, and every x≥hi is sufficient. Initially lo=0; hi=5(t+1) is sufficient because its first layer alone supplies t+1 factors of 5. Test mid=⌊(lo+hi)/2⌋.If f(mid)<t, mid and everything to its left are insufficient, so set lo=mid+1. Otherwise mid and everything to its right are sufficient; set hi=mid and keep mid because it might be the first. Each comparison shrinks the interval. At lo=hi, the invariant proves this is L(t). For k=5, the searches find L(5)=25 and L(6)=25, giving zero matches.Selecting k restarts both searches. Advance once and read the interval before the test, f(mid), and the new bounds. Rewind and replay to restore the same history. Phase one finds "
+    },
+    {
+      "locale": "zh",
+      "label": "#668：有重复值的第 k 小与计数边界",
+      "url": "http://127.0.0.1:18770/leetcode/668/#step2",
+      "excerpt": "033 · 排除一半候选值这一步要回答：知道 C(x)（值≤x 的格子数），能排除哪些答案？在 3×3、k=5 中，C(2)=3，只有 3 格 ≤2，所以第 5 格一定大于 2；C(3)=5，已有 5 格 ≤3，所以答案至多是 3。把 x 增大，原来符合的格子不会消失，这叫单调不减。因而答案就是第一个满足 C(x)≥k 的整数 x。不能要求 C(x)=k：同一个 3×3 表若取 k=4，C(2)=3 而 C(3)=5，计数直接跳过 4，但第 4 格仍是 3。让 lo、hi 表示包含答案的闭区间端点（两端都包括），mid=⌊(lo+hi)/2⌋。若 C(mid)<k，则 mid 及更小值都不够，令 lo=mid+1；若 C(mid)≥k，则 mid 可能恰好是答案，令 hi=mid，不能用 mid−1。默认首轮 [1,9] 测 mid=5，C(5)=3+2+1=6，留下 [1,5]；下一轮测 3，C(3)=5，留下 [1,3]。 这种每轮把候选数值范围缩小约一半的方法，叫作答案二分。从观察得到不变量（每轮后仍成立的事实）：C(lo−1)<k≤C(hi)。lo 左侧全部不够，hi 已经够，因此第一个够的值仍在 [lo,hi]。初始 lo=1、hi=m×n，因为 C(0)=0、C(m×n)=m×n。下方是 JavaScript 教学模拟，不是在浏览器执行 Python 提交。每帧完成一次完整计数与区间更新；初始帧尚未计数。格子标记始终对应“刚测试的 mid”，更新后的区间另行标注。没有跳过轮次。操作：保持预设不变，点“完成一轮计数”，看旧区间如何变成新区间，并在历史表对比每轮保留下来的范围。点“退回一轮”应还原所有值。换预设会重启此实验，计数滑块和预测题不受影响。预设（切换会重启）3×3 · k=5 · 官方例 12×3 · k=6 · 官方例 23×3 · k=4 · 跳过等号1×7 · k=4 · 单行1×1 · k=1 · 已收敛4×5 · k=1 · 最小名次退回一轮完成一轮计数重置此实验跳到收敛已完成的计数轮次m=3，n=3，k=5 · 已完成 0/3 轮当前答案区间（初始或更新后）[1, 9]刚测试的 mid 与 C(mid)尚未测试初始状态：[1,9]。C(0)=0<k，C(9)=9≥k。lo<hi 时，完成一轮会先数 mid 再更新边界。3×3 表；尚未测试，不标记计数格子行 i / 列 j123112322463369历史表可横向滚动；键盘聚焦后用左右方向键。完整历史：每行是一轮完成后的边界轮次旧 [lo,hi]mid → C(mid)新 [lo,hi]更新原因还没有完成的轮次。"
+    },
+    {
+      "locale": "zh",
+      "label": "#793：阶梯计数函数的边界",
+      "url": "http://127.0.0.1:18770/leetcode/793/#step2",
+      "excerpt": "03不扫描所有 x，怎样数出匹配区间？定义 f(x) 为 x! 的末尾零数，它单调不减，即 x 增大时输出不会变小。定义 L(t) 为第一个满足 f(x)≥t 的非负整数 x。满足 f(x)=k 的输入，正好从 L(k) 到 L(k+1)−1。因此个数是两个边界之差；如果 k 被跳过，两个边界会重合。匹配个数 = L(k+1) − L(k)二分查找每次保留以下事实（不变量）：L(t) 位于闭区间 [lo,hi]，所有 x<lo 都不够，所有 x≥hi 都够。初始 lo=0；hi=5(t+1) 一定够，因为仅第一层就有 t+1 个 5。取 mid=⌊(lo+hi)/2⌋。若 f(mid)<t，则 mid 及其左侧全部不够，令 lo=mid+1；否则 mid 及其右侧都够，令 hi=mid，保留 mid，因为它可能就是第一个。每次区间都缩小；lo=hi 时，不变量证明这就是 L(t)。k=5 的两个搜索分别得到 L(5)=25 与 L(6)=25，差为 0。选择 k 会重新开始两个搜索。先前进一次，读测试前区间、mid 的 f 值和新边界；再后退、重放，检查历史完全恢复。第一阶段求 L(k)，第二阶段求 L(k+1)。选择 k（更换会重启轨迹）k = 0k = 3k = 5k = 6k = 24k = 1,000,000,000算法状态模拟；并非在浏览器执行 Python 提交。每帧在一次比较完成后显示新边界，历史保留测试前边界。阶段起点没有已完成比较；没有省略步骤。后退一帧下一次搜索操作重置此实验完成两个搜索帧 0/11 · 阶段 1/2 · k=5 · 当前目标 t=5当前下界 lo0当前上界 hi30本阶段开始：lo=0，hi=5×(5+1)=30；尚未测试 mid。两个搜索尚未全部结束；最终匹配个数待定。已完成比较的历史（按发生顺序，含两个阶段）尚无比较记录。"
+    }
+  ],
+  "rendered": {
+    "color": "rgb(154, 167, 184)",
+    "background": "rgb(22, 27, 34)",
+    "opacity": "1"
+  },
+  "contrastCalibration": {
+    "primaries": [
+      [
+        "000000",
+        0
+      ],
+      [
+        "ffffff",
+        1
+      ],
+      [
+        "ff0000",
+        0.2126
+      ],
+      [
+        "00ff00",
+        0.7152
+      ],
+      [
+        "0000ff",
+        0.0722
+      ]
+    ],
+    "blackWhite": 21,
+    "nearThreshold": 4.492948073111701
+  },
+  "contrasts": [
+    {
+      "fg": "e8edf4",
+      "bg": "161b22",
+      "ratio": 14.704584598678618
+    },
+    {
+      "fg": "9aa7b8",
+      "bg": "161b22",
+      "ratio": 7.078851579017443
+    },
+    {
+      "fg": "9aa7b8",
+      "bg": "1c2330",
+      "ratio": 6.449407898769069
+    },
+    {
+      "fg": "6ee7ff",
+      "bg": "161b22",
+      "ratio": 11.974898815275662
+    },
+    {
+      "fg": "ffb454",
+      "bg": "161b22",
+      "ratio": 9.809435643476732
+    },
+    {
+      "fg": "ffb454",
+      "bg": "1c2330",
+      "ratio": 8.937191437807625
+    },
+    {
+      "fg": "c9d4e2",
+      "bg": "0a0e14",
+      "ratio": 12.89261537833187
+    },
+    {
+      "fg": "e8edf4",
+      "bg": "090e16",
+      "ratio": 16.437295258072666
+    },
+    {
+      "fg": "0d1117",
+      "bg": "6ee7ff",
+      "ratio": 13.100679028115637
+    },
+    {
+      "fg": "ffb454",
+      "bg": "0d1117",
+      "ratio": 10.731637051347173
+    }
+  ],
+  "cssBytes": 11965,
+  "errors": [],
+  "badAssets": [],
+  "external": [],
+  "zoom": "Chromium CSS zoom=2 at 1440px; narrow widths tested independently. Native chrome zoom/physical devices not tested."
+}
