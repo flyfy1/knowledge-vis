@@ -1,0 +1,31 @@
+{
+  "problemId": 843,
+  "revision": "843-author-r1",
+  "author": "Codex",
+  "exactModel": "unavailable",
+  "status": "author-self-checked",
+  "independentReview": "pending",
+  "deployedRevision": null,
+  "createdAt": "2026-10-25T20:46:57.746465+00:00",
+  "sha256": {
+    "BRIEF.md": "5585368af0c1851076d128f923b338fbfbffa0a9511c0f586243a69b6ec792fd",
+    "SELF-CHECK.md": "961f4dfb8b64ce6dc09ef1f278cb71b215209655c63a9e8856e90d43bd0e30da",
+    "app.js": "14ef08de056e92377ebe3d5fa5f90f27737c21305653a7165000960be486f3fd",
+    "copy.js": "a513cb37bf9ddf2557daa8027a740c9ca0777ce80eae5be49498c77610448262",
+    "core.js": "9c29aa7e40e2fb6e81dd8f4ed3e6db2b25a82977f97e80cc4984df99ae7a18b6",
+    "index.html": "2524ec96f51a866fc617b9cf7a8e19144680e54138344f5f43bc50b54feab914",
+    "lesson-entry.json": "5a53c66d7e736d610d41df40e99695689771f21705fc773d9fa246ab5d8dfc37",
+    "python-code.js": "03c550d385d7d1a4699357bd15c75dc66b1749a93246683461c584b79537c95d",
+    "solution.py": "dc0d1552f34cc429efa9f3ff12daf0c9c42f6ca5604d97ae64dc42aa2b7bff30",
+    "style.css": "f6c937662c7380f8cd7d22e74d9992c0c3f9087cd241b2322dee7ffa2ab1c3d8",
+    "tests/README.md": "38707fdf2c55593a27afe6262173ca90fb056e6341034c5728adda640ddfba93",
+    "tests/browser.cjs": "c583a467f116da66391ec8cf3df3810ff95bffc7f88ac08a8dfa97c0f848ef04",
+    "tests/build_copy.py": "7378c3413dadcf2b5c8d827418fd474fed89dd3791d30fecdc8e3500876ac74b",
+    "tests/build_html.py": "1ad0788715d4573c6b85c2d158b595665e68f4af5b6a947ac1e96c8a7ac11c81",
+    "tests/focused.cjs": "f0bf6cb360bea8e0c1a091d93cb054b88486eb3c8929dc92ddfd13aea21decff",
+    "tests/test_core.cjs": "fad967c4384715897127b66b4774095adef63efa1ae71c5ac788a1c4ac9572c1",
+    "tests/test_solution.py": "2727341774523d91d2b45f155c2c40c5e28f597c98ac8b544a1014f031f0ed2e"
+  },
+  "officialEvidenceSha256": "f6f8de5823269d6e309f79568e53c6aba38d17be5662d0e3b7906b01eeefb921",
+  "evidenceBoundary": "Self-check results and screenshots are author evidence, not independent acceptance."
+}

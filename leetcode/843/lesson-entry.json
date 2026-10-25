@@ -1,0 +1,38 @@
+{
+  "id": 843,
+  "title": {
+    "zh": "猜猜这个单词",
+    "en": "Guess the Word"
+  },
+  "desc": {
+    "zh": "用逐位匹配排除候选，再用最坏回复桶选择提问。",
+    "en": "Filter by positional matches and choose guesses by worst reply buckets."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "交互式搜索",
+      "en": "Interactive search"
+    },
+    {
+      "zh": "极小化最坏情况",
+      "en": "Minimax"
+    }
+  ],
+  "path": "843/",
+  "leetcodeUrl": "https://leetcode.com/problems/guess-the-word/",
+  "language": "Python",
+  "complexity": "O(n²L + Gn²) time; O(n²) auxiliary space, L=6 and G≤10",
+  "concepts": [
+    {
+      "name": "Candidate consistency",
+      "step": 1,
+      "description": "Filter the words by exact agreement with every reply."
+    },
+    {
+      "name": "Worst reply bucket",
+      "step": 2,
+      "description": "Minimize the largest non-success reply group."
+    }
+  ]
+}
