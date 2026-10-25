@@ -1,0 +1,13 @@
+test_artifact_hashes (__main__.Templates.test_artifact_hashes) ... ok
+test_disabled_before_io (__main__.Templates.test_disabled_before_io) ... ok
+test_exact_bridge_receipt_schema (__main__.Templates.test_exact_bridge_receipt_schema) ... ok
+test_exact_reversal (__main__.Templates.test_exact_reversal) ... ok
+test_guard_changes_rejected_by_reversal (__main__.Templates.test_guard_changes_rejected_by_reversal) ... ok
+test_pending_no_readiness_claim (__main__.Templates.test_pending_no_readiness_claim) ... ok
+test_preserved_dependency_and_scope_guards (__main__.Templates.test_preserved_dependency_and_scope_guards) ... ok
+test_reference_adapter_schema_only_not_final_identity (__main__.Templates.test_reference_adapter_schema_only_not_final_identity) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.014s
+
+OK

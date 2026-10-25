@@ -1,0 +1,18 @@
+{
+  "preparedAt": "2026-10-25T23:52:43.239299+00:00",
+  "status": "disabled-pending-854-bridge-adoption-not-dispatchable",
+  "testsPassed": 8,
+  "piAccessPerformed": false,
+  "preflightPerformed": false,
+  "readinessClaim": false,
+  "files": {
+    "README.md": "7e7c9c7234b09102d2b88c97bc9dd89f69bd08dd3f1d0316fc8ecb2db1f4b279",
+    "launch.pending.py": "59c7ed8b1ecea2c5a35711f72855ac6357aadfb8ffc8a5147e5d14ed214cd366",
+    "launch.pending.py.diff": "3bdcd6d18156ec28ed144cea312424e1dcad545ab8a01a1df86df57ecaa158ea",
+    "parameter-map.json": "10d95c6592e6e24ed8d94529e2e21c120bde8cb8611a3fc46e5163acbfba92b9",
+    "preflight.pending.py": "8a2e5724bd0eea2c8dbc16e98ceb48ec604eee84cf16b93365b41f2dc64dd522",
+    "preflight.pending.py.diff": "02e0352ea30fa64c0655e6d53f1594eafe5b24e474084044d11d7761ec229bcd",
+    "test_templates.py": "b69cc797ef151fd17450317c6954e5b7e1cb0a99dbc65b41cd392e8c184c3b06",
+    "tests.log": "0a4b0fbaebfd0f454a97712b30009caa79780213db5aea16dd92d9cfd6112e79"
+  }
+}

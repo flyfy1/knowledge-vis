@@ -1,0 +1,169 @@
+{
+  "status": "disabled-pending-854-bridge-adoption-not-dispatchable",
+  "sources": {
+    "launch.pending.py": {
+      "path": "specs/reviews/parallel-9961000-launch-preparation-20261026/after-995-queued-handoff/launch.pending.py",
+      "sha256": "35045331153db7194b92ba21fcab73639b93cdf366907bcfe33eadfa8d862359"
+    },
+    "preflight.pending.py": {
+      "path": "specs/reviews/parallel-9961000-launch-preparation-20261026/after-995-queued-handoff/preflight.pending.py",
+      "sha256": "e66694dcdded8f21537d4dc82e0d7ffe95d0b7749dcb6bb37806252edc478d4f"
+    }
+  },
+  "substitutions": {
+    "launch.pending.py": [
+      {
+        "from": "raise RuntimeError('Disabled preparation: await completed queued #995 handoff, frozen identities and separate root review.')\n",
+        "to": "raise RuntimeError('Disabled preparation: await completed #854 bridge adoption, frozen identities and separate root review.')\n"
+      },
+      {
+        "from": "__PENDING_995COPY_BASE__",
+        "to": "__PENDING_854BRIDGE_BASE__"
+      },
+      {
+        "from": "__PENDING_995COPY_CENTRAL_HEAD__",
+        "to": "__PENDING_854BRIDGE_CENTRAL_HEAD__"
+      },
+      {
+        "from": "__PENDING_995COPY_CENTRAL_RUN__",
+        "to": "__PENDING_854BRIDGE_CENTRAL_RUN__"
+      },
+      {
+        "from": "__PENDING_995COPY_PROBLEM__",
+        "to": "__PENDING_854BRIDGE_PROBLEM__"
+      },
+      {
+        "from": "__PENDING_995COPY_STAGE__",
+        "to": "__PENDING_854BRIDGE_STAGE__"
+      },
+      {
+        "from": "__PENDING_995COPY_SESSION__",
+        "to": "__PENDING_854BRIDGE_SESSION__"
+      },
+      {
+        "from": "['996','1000']",
+        "to": "['1001','1012']"
+      },
+      {
+        "from": "parallel-launch-9961000.lock",
+        "to": "parallel-launch-10011012.lock"
+      },
+      {
+        "from": "[('996',18799),('1000',18800)]",
+        "to": "[('1001',18801),('1012',18802)]"
+      }
+    ],
+    "preflight.pending.py": [
+      {
+        "from": "raise RuntimeError('Disabled preparation: await completed queued #995 handoff, frozen identities and separate root review.')\n",
+        "to": "raise RuntimeError('Disabled preparation: await completed #854 bridge adoption, frozen identities and separate root review.')\n"
+      },
+      {
+        "from": "995-copy-repair-20261026-9d027af3",
+        "to": "854-bridge-adoption-20261026-185d4ba0"
+      },
+      {
+        "from": "__PENDING_995COPY_BASE__",
+        "to": "__PENDING_854BRIDGE_BASE__"
+      },
+      {
+        "from": "__PENDING_995COPY_RECEIPT_SHA256__",
+        "to": "__PENDING_854BRIDGE_RECEIPT_SHA256__"
+      },
+      {
+        "from": "__PENDING_995COPY_PINS_PATH__",
+        "to": "__PENDING_854BRIDGE_PINS_PATH__"
+      },
+      {
+        "from": "__PENDING_995COPY_PINS_SHA256__",
+        "to": "__PENDING_854BRIDGE_PINS_SHA256__"
+      },
+      {
+        "from": "receipt['queued_repair_id']=='995'",
+        "to": "receipt['queued_repair_id']=='854'"
+      },
+      {
+        "from": "assert receipt['resume_proof']['agent_candidate']==base and receipt['fresh_agent']",
+        "to": "assert receipt['resume_proof']['agent_candidate']==base and receipt['fresh_agent']\nassert receipt['fresh_agent']['current']['problem_id']=='854' and receipt['fresh_agent']['current']['stage']=='fix'"
+      },
+      {
+        "from": "[('996',18799),('1000',18800)]",
+        "to": "[('1001',18801),('1012',18802)]"
+      },
+      {
+        "from": "6d2a1b0e7109954d45f32a1dc47606e06c1c6f99",
+        "to": "d36d073f970fd50d1cabbce310d8e3294829a53a"
+      },
+      {
+        "from": "995_queued_handoff_receipt",
+        "to": "854_bridge_handoff_receipt"
+      },
+      {
+        "from": "approved_995_queued_handoff_pins_sha256",
+        "to": "approved_854_bridge_handoff_pins_sha256"
+      }
+    ]
+  },
+  "disableLine": "raise RuntimeError('Disabled preparation: await completed #854 bridge adoption, frozen identities and separate root review.')\n",
+  "futureOwner": "854-bridge-adoption-20261026-185d4ba0",
+  "expectedReceiptStatus": "completed-resumed",
+  "requiredReceiptFields": {
+    "queued_repair_id": "854",
+    "queue_preserved": true,
+    "ledger_preserved": true,
+    "fresh_agent.current.problem_id": "854",
+    "fresh_agent.current.stage": "fix"
+  },
+  "baseSource": "Future receipt.pushed_head == receipt.resume_proof.agent_candidate; never current pair import or source proposal head",
+  "staticSource": "Same future receipt-bound BASE; handoff pins have no lane_base",
+  "disabled854AdapterReference": {
+    "operate.py": {
+      "path": "specs/reviews/854-bridge-adoption-preparation-20261026/operate.py",
+      "sha256": "0c8f5fcded88f98920cb3e128509889c580082e9fa80c2375bbde3433769728f"
+    },
+    "pending-pins.json": {
+      "path": "specs/reviews/854-bridge-adoption-preparation-20261026/pending-pins.json",
+      "sha256": "6cba37cf0901b7cce8534a17390af84414851aa8bea98bddd7557308eb5f8f08"
+    }
+  },
+  "finalReceiptSha256": null,
+  "finalOperatorSha256": null,
+  "externalPinsPath": null,
+  "externalPinsSha256": null,
+  "finalRuntimePins": {
+    "base": null,
+    "centralHead": null,
+    "run": null,
+    "problem": null,
+    "stage": null,
+    "session": null,
+    "runnerPid": null,
+    "nativePid": null
+  },
+  "targets": [
+    {
+      "id": "1001",
+      "port": 18801,
+      "repo": "/home/songyy/projects/leetcode-hard-lane-1001-20261026",
+      "state": "/home/songyy/projects/leetcode-hard-lane-state-1001-20261026",
+      "branch": "codex/lane-1001-20261026"
+    },
+    {
+      "id": "1012",
+      "port": 18802,
+      "repo": "/home/songyy/projects/leetcode-hard-lane-1012-20261026",
+      "state": "/home/songyy/projects/leetcode-hard-lane-state-1012-20261026",
+      "branch": "codex/lane-1012-20261026"
+    }
+  ],
+  "policySha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+  "dispatcherOfficialPrepSource": "d36d073f970fd50d1cabbce310d8e3294829a53a",
+  "authorContextInjection": false,
+  "piAccessPerformed": false,
+  "preflightPerformed": false,
+  "readinessClaim": false,
+  "artifacts": {
+    "launch.pending.py": "59c7ed8b1ecea2c5a35711f72855ac6357aadfb8ffc8a5147e5d14ed214cd366",
+    "preflight.pending.py": "8a2e5724bd0eea2c8dbc16e98ceb48ec604eee84cf16b93365b41f2dc64dd522"
+  }
+}
