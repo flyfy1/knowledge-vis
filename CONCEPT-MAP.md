@@ -1744,3 +1744,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | interval union invariant | `leetcode/850/#step2` | Sorted intervals add only the uncovered suffix. |
 
 <!-- /leetcode-850-campaign -->
+
+
+<!-- leetcode-982-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Ordered pair AND frequencies | `leetcode/982/#step1` | Preserve repeated indices when grouping AND results. |
+| Subset-sum transform | `leetcode/982/#step2` | Partition masks by one bit to build compatible-pair totals. |
+
+<!-- /leetcode-982-campaign -->
