@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-10-25T02:55:22.585967+00:00",
+  "officialUrl": "https://leetcode.com/problems/human-traffic-of-stadium/",
+  "method": "Normal in-app browser navigation; expand MySQL language selector and select Pandas",
+  "languagesObserved": [
+    "MySQL",
+    "MS SQL Server",
+    "PostgreSQL",
+    "Oracle",
+    "Pandas"
+  ],
+  "selected": "Pandas",
+  "interface": "import pandas as pd\n\ndef human_traffic(stadium: pd.DataFrame) -> pd.DataFrame:\n    ",
+  "authenticated": false,
+  "submittedCode": false,
+  "browserWarningOrCaptchaBypassed": false,
+  "candidate": "19aa80163e63c52809206f13fd78dd38ffb806ba"
+}
