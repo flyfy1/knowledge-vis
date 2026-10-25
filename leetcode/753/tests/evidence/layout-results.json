@@ -1,0 +1,179 @@
+{
+  "selects": [
+    {
+      "lang": "zh",
+      "label": "n=2, k=2 · 四条边",
+      "width": 260,
+      "text": 124.09625244140625,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "zh",
+      "label": "n=1, k=2 · 空后缀",
+      "width": 260,
+      "text": 124.09625244140625,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "zh",
+      "label": "n=3, k=2 · 八条边",
+      "width": 260,
+      "text": 124.09625244140625,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "zh",
+      "label": "n=4, k=1 · 只有零",
+      "width": 260,
+      "text": 124.09625244140625,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "zh",
+      "label": "n=2, k=3 · 三种数字",
+      "width": 260,
+      "text": 140.09628295898438,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "en",
+      "label": "n=2, k=2 · four edges",
+      "width": 260,
+      "text": 157.32833862304688,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "en",
+      "label": "n=1, k=2 · empty suffix",
+      "width": 260,
+      "text": 169.16836547851562,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "en",
+      "label": "n=3, k=2 · eight edges",
+      "width": 260,
+      "text": 164.30435180664062,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "en",
+      "label": "n=4, k=1 · only zero",
+      "width": 260,
+      "text": 144.62429809570312,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "en",
+      "label": "n=2, k=3 · three digits",
+      "width": 260,
+      "text": 161.63233947753906,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    }
+  ],
+  "captures": [
+    "zh-320-header.png",
+    "zh-320-derivation.png",
+    "zh-1440-source.png",
+    "en-320-header.png",
+    "en-320-derivation.png",
+    "en-1440-source.png"
+  ],
+  "checks": [
+    "zh narrow roundtrip preserves hand state and identity",
+    "en narrow roundtrip preserves hand state and identity",
+    "forced-colors keeps focus outline"
+  ],
+  "controls": [
+    {
+      "text": "中",
+      "w": 48,
+      "h": 48
+    },
+    {
+      "text": "EN",
+      "w": 48,
+      "h": 48
+    },
+    {
+      "text": "← Undo one digit",
+      "w": 157.890625,
+      "h": 48
+    },
+    {
+      "text": "Type next digit →",
+      "w": 156.625,
+      "h": 48
+    },
+    {
+      "text": "Reset keystrokes",
+      "w": 151.65625,
+      "h": 48
+    },
+    {
+      "text": "n=2, k=2 · four edgesn=1, k=2 · empty suffixn=3, k=2 · eight edgesn=4, k=1 · only zeron=2, k=3 · three digits",
+      "w": 262,
+      "h": 48
+    },
+    {
+      "text": "← Undo action",
+      "w": 137.5625,
+      "h": 48
+    },
+    {
+      "text": "Apply next action →",
+      "w": 175.640625,
+      "h": 48
+    },
+    {
+      "text": "Reset trace",
+      "w": 109.359375,
+      "h": 48
+    },
+    {
+      "text": "Go to final answer",
+      "w": 162.625,
+      "h": 48
+    },
+    {
+      "text": "Check prediction",
+      "w": 151.6875,
+      "h": 48
+    },
+    {
+      "text": "Reset prediction",
+      "w": 147.875,
+      "h": 48
+    },
+    {
+      "text": "Copy Python source",
+      "w": 181.09375,
+      "h": 48
+    },
+    {
+      "text": "Download solution.py",
+      "w": 195.09375,
+      "h": 48
+    }
+  ]
+}

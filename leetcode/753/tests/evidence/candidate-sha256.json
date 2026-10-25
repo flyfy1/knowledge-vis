@@ -1,0 +1,36 @@
+{
+  "candidateId": "753-author-1",
+  "frozenAt": "2026-10-25T08:56:28.024775+00:00",
+  "baseHead": "3a2275382f0b5a1e04e125ea49601efbc9777b5a",
+  "lessonFiles": {
+    "BRIEF.md": "2802f6103f5100108d11f07eeba6f335a0984fa11bee23a35baa0e2ad424b866",
+    "SELF-CHECK.md": "4f1e02e88134f8946842df799289763156f14b1f8b0de247f65ca30401b982fc",
+    "app.js": "19d7a825c992baa83c05fb589dfb88b6f8cbec2af884e20a0cccd1a5ce9215f3",
+    "copy.js": "28208f75a9bc5768a052ce50afae3729e44571bf7919a322652dc5b4d33feb5b",
+    "core.js": "4e043f47746f447da95d885d60fb328e8609f16f8e00ed1724d4aacd520a0f76",
+    "index.html": "e41f4cd6de74538dad23cccc5836b005fbd74d90712a698fdc312466a63676cb",
+    "lesson-entry.json": "2e9b516f261a2ae3e79c6c600fb4ce7a88a79ff1f831ddeaf33d14bfe99289a3",
+    "provenance/official.json": "3ddb0083045de94aa9a79a63e36ba4fe4af3a6fb06a4d7fb9c0403f0ab643c64",
+    "python-code.js": "4f228995a34c7d533a6e8f349b83c0248ec7fd678990924c28651fbe306f686b",
+    "solution.py": "ccbc1be89985a1aa961d5e37c25dac6db9c33982e1a660ddc3e603aa15a47147",
+    "style.css": "6e2706f65268cce899041ace786574e4b9dbb03893142fcb160b61638d99b1ca",
+    "tests/README.md": "838998b7ca84ae6a7bdda2f5b6bbe93f577e563684e8724a90ac84241a5d2eb3",
+    "tests/browser.cjs": "42c5a5951c2cc71fc840ac54890a3583ea43ab9206aedb45fbec49524a3eafd0",
+    "tests/contact_sheet.py": "600969ceb1f2f77094cd23a1d9a3cdf29702006089ff13f3092111c3f805138a",
+    "tests/layout.cjs": "54825ff00a6cf61e41856528185b19b2a5a73d2e10aa3ea8fc7a031e9658992b",
+    "tests/test_core.cjs": "b34150d915c35ff68aa5ff369c8ba58b23e015096e38db58d66eed0b06c8d7fd",
+    "tests/test_solution.py": "02467d78c1e331635da5202b77ffc680281f95eb79496877acbb4ef1ddd37813"
+  },
+  "sharedReadOnlyDependencies": {
+    "WORKFLOW.md": "6a1f5a72f96d98a720be0aee0af40d75d837d281761842151e00fa7015c240a6",
+    "UI-I18N-SPEC.md": "16ca9aebcaf6cc4863428d3abbfb675599c31b37d1d717783323697884e62b81",
+    "specs/leetcode-explainers.md": "6d4cc609772cb6c6382148568107a0ffd8b6c40cbbf4af473f2519ab364a2945",
+    "specs/leetcode-hard-traces.md": "5cb2edb1f223cde061d67e8cfe255f220876667c1d4c091bdbac49f67c6f2c35",
+    "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+    "specs/leetcode-rendered-state-contract.md": "226a94fb0cd222398b710718253d7ed46cd77f986ed61eef7e25c14213845dcc",
+    "specs/reviews/leetcode-all-hard-design-review.md": "a1d9d6bc23d15e7369eb04252ff00d0302d5b1786641f5c7f7587ecf64d31086",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "status": "author self-checked; separate independent review pending"
+}
