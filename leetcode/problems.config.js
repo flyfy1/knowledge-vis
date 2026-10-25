@@ -2225,6 +2225,58 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n) time; O(n) auxiliary space"
   },
   {
+    "id": 632,
+    "title": {
+      "zh": "最小区间",
+      "en": "Smallest Range Covering Elements from K Lists"
+    },
+    "desc": {
+      "zh": "从逐行选数推导最小堆，观察最小覆盖区间如何收紧。",
+      "en": "Derive a min-heap scan by selecting one value per row and discarding dominated choices."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "最小堆",
+        "en": "Min-heap"
+      },
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      }
+    ],
+    "path": "632/",
+    "leetcodeUrl": "https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/",
+    "language": "Python",
+    "complexity": "O(N log(k+1)) time; O(k) auxiliary space, where N is the total number of elements"
+  },
+  {
+    "id": 639,
+    "title": {
+      "zh": "解码方法 II",
+      "en": "Decode Ways II"
+    },
+    "desc": {
+      "zh": "从具体星号替换出发，按最后一个字母分组，推导常数空间的前缀计数。",
+      "en": "Count concrete wildcard choices, partition by the final letter, and derive constant-space prefix counting."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "组合计数",
+        "en": "Combinatorial counting"
+      }
+    ],
+    "path": "639/",
+    "leetcodeUrl": "https://leetcode.com/problems/decode-ways-ii/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
