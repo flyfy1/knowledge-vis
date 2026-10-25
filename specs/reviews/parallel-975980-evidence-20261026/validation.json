@@ -1,0 +1,31 @@
+{
+  "validatedAt": "2026-10-25T20:18:50.557389+00:00",
+  "status": "prepared-awaiting-root-independent-review-and-dispatch",
+  "sourceSha256": "012137ab9eabb43cb6b9038ab6065312d8287724540d67fb362038ac4a5caa05",
+  "launcherSha256": "977739897dfb2a58d1c9eba9b20b43346226d35eea515181263edf18f7d0b348",
+  "parameterSubstitutionCount": 9,
+  "pendingToFinalPinSubstitutions": 6,
+  "reverseSubstitutionByteIdentical": true,
+  "reverseSubstitutionAstIdentical": true,
+  "localStaticTestsPassed": 7,
+  "officialPrepCommittedHashesVerified": true,
+  "preflightObservedAt": "2026-10-25T20:18:38.658596+00:00",
+  "stageBReceiptSha256": "087947f9a714926de08f1e88d35f9584c09a0dfd9683fe294d6e3e3b1718f2ad",
+  "remoteMutationPerformed": false,
+  "launcherExecuted": false,
+  "dispatchAuthorized": false,
+  "filesSha256": {
+    "README.md": "49b04539b074424bf3e5bb5c61f71fd3bf03fb7629d650fc6ea67131bd3541c7",
+    "initial-probe-refusal.json": "91df606fdd90c2268849b347befc110e35beb07003b808328f3a3ccf4a61d50e",
+    "launch.py": "977739897dfb2a58d1c9eba9b20b43346226d35eea515181263edf18f7d0b348",
+    "parameter-map.json": "bc2b6f49509d98bef72832bcead26f48640063f527968af7a609b88427dc1396",
+    "parameter-only.diff": "f65ca410d6ed53916776de3707e0d34e5a14b241f604d9dfe5e22d8de80c5095",
+    "pending-to-final.diff": "1facb275e69b098c39fe9339637abbfbcfcc9eae6bf4cc734fa23aab300c046d",
+    "preflight.json": "1c2e68ef2193d7691a6a3ed1e48efd6c8b8b8f72222d240998e56b1d9f398c6b",
+    "preflight.py": "787782dcbd0fc732583a29366b9eb86b792f23db674c0589888750f1c9e6c752",
+    "test_parameters.py": "7b693f27ad9c7fb3f9a32678e6e5578ab1acea60246aeaba6ed5e8551ebe90b9",
+    "tests.log": "e586fc0f3bb2a05f4c80f07d1b4c6171e830592f6c7aaf70d4af3b0aa3ebd072"
+  },
+  "approvedRuntimeHashesVerifiedBeforeImporterExecution": true,
+  "launcherUnchangedAfterGuardOrderCorrection": true
+}
