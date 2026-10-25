@@ -3103,6 +3103,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n · 2^ceil(n/2)) expected time; O(2^ceil(n/2)) space"
   },
   {
+    "id": 920,
+    "title": {
+      "zh": "播放列表的数量",
+      "en": "Number of Music Playlists"
+    },
+    "desc": {
+      "zh": "从 A、B 的三次播放出发，推导新歌与重播的计数递推。",
+      "en": "Count tiny A/B playlists, then derive the new-song and replay transitions."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "组合计数",
+        "en": "Combinatorial counting"
+      }
+    ],
+    "path": "920/",
+    "leetcodeUrl": "https://leetcode.com/problems/number-of-music-playlists/",
+    "language": "Python",
+    "complexity": "O(goal * n) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
