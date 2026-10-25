@@ -71,3 +71,15 @@ all quiz answers, locale retention, copy and native-key manual fallback,
 source/download parity, blocked storage, 320/390/736/1440 and CSS 200% zoom,
 keyboard/focus, local assets, deep links, contrast. Screenshots inspected by
 author; no novice study, independent acceptance or LeetCode submission claim.
+
+## Review repair 741-R1 (2026-10-25)
+
+Required P0: the closed English official-example-2 selector must retain example
+identity, no-path scope and result at 320px, including a locale roundtrip. Shorten
+only its English label to “Official 2: no path → 0”; retain the existing 16px font,
+native select, layout and tokens. Bump the changed copy asset reference. P1/P2:
+none; no new layout or interaction. Existing algorithm and teaching sequence stay
+within the original brief. Regression: reproduce the old clipping, measure the
+actual text/control/padding with a bounded Linux Chromium arrow allowance, inspect
+settled screenshots, and verify both locales at 320/390px plus existing tests.
+Evidence: `tests/evidence/fix-r1/`; independent closure remains pending.

@@ -8,13 +8,26 @@ const out=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(o
  for(const lang of ['en','zh']){
   await page.click(`[data-lang=${lang}]`);await page.setViewportSize({width:320,height:1000});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:path.join(out,`${lang}-header.png`)});
   await page.selectOption('#handRoute','split');await page.locator('#handBoard').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,`${lang}-hand.png`)});
-  await page.selectOption('#preset','0');await page.click('#end');await page.locator('[data-state="1,1"]').click();const merge=await page.locator('#event').textContent();assert(merge.includes('3+1=4'));const formula=await page.locator('[data-i18n=formula]').textContent();assert(formula.includes('p1')&&formula.includes('p2')&&formula.includes('r1≠r2'));
+  await page.selectOption('#preset','0');
+  // Completed-layer accounting on the hand-worked all-1 square: 1, 3, 4.
+  for(const [t,totals] of [[0,[1]],[1,[1,3]],[2,[1,3,4]]]){
+   if(t)await page.click('#next');
+   assert((await page.locator('#progress').textContent()).includes(`t=${t} / 2`));
+   assert.deepEqual(await page.locator('#ledger .ledger-item').allTextContents(),totals.map((v,i)=>lang==='en'?`t=${i}: ${v}`:`t=${i}：${v}`));
+   assert((await page.locator('#output').textContent()).includes(t===2?'4':lang==='en'?'incomplete':'尚未完成'));
+  }
+  await page.locator('[data-state="1,1"]').click();const merge=await page.locator('#event').textContent();assert(merge.includes('3+1=4'));const formula=await page.locator('[data-i18n=formula]').textContent();assert(formula.includes('Dₜ₋₁[p1,p2] + gain')&&formula.includes('p1 ∈ {r1,r1−1}')&&formula.includes('p2 ∈ {r2,r2−1}')&&formula.includes('r1≠r2'));
+  // Best candidate is not the last candidate: identity must stay with value 3.
+  await page.selectOption('#preset','6');for(let i=0;i<3;i++)await page.click('#next');await page.locator('[data-state="1,2"]').click();
+  const adversarial=await page.locator('#event').textContent();assert(adversarial.includes('(0,2)')&&adversarial.includes('3+2=5'));
+  assert.equal(await page.locator('#predBody tr').last().locator('td').last().textContent(),'2');
+  const retained=await page.locator('#step2 .stage').textContent();await page.click('#prev');await page.click('#next');assert.equal(await page.locator('#step2 .stage').textContent(),retained);
   await page.selectOption('#preset','2');await page.click('#end');await page.locator('[data-state="2,2"]').click();const unreachable=await page.locator('#event').textContent();assert(unreachable.includes(lang==='en'?'all four predecessors are unreachable':'四个前驱都不可达'));assert((await page.locator('#output').textContent()).includes('0'));await page.locator('#predBody').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,`${lang}-unreachable.png`)});
   await page.selectOption('#preset','1');await page.locator('[data-state="0,1"]').click();const invalid=await page.locator('#event').textContent();assert(invalid.includes(lang==='en'?'outside the grid or a thorn':'越界或有荆棘'));
   await page.selectOption('#preset','4');assert(await page.locator('#next').isDisabled());await page.locator('#step2 .controls').first().scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,`${lang}-single.png`)});
   await page.check('input[name=prediction][value="1"]');await page.check('input[name=prediction][value="0"]');assert(await page.locator('#feedback').isHidden());await page.click('#reveal');await page.locator('#feedback').scrollIntoViewIfNeeded();const feedback=await page.locator('#feedback').textContent();assert(feedback.includes(lang==='en'?'Choosing 3 omits the new cherry':'选 3 漏掉了当前新樱桃'));await page.screenshot({path:path.join(out,`${lang}-quiz.png`)});
   await page.locator('#sourceDetails summary').click();await page.locator('#sourceDetails').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,`${lang}-source.png`)});await page.locator('#sourceDetails summary').click();
-  evidence.push({lang,case:'2x2 all ones, merged final endpoint',merge,formula,unreachable,invalid,feedback});
+  evidence.push({lang,case:'2x2 all ones, merged final endpoint',merge,formula,completedLayerLedger:[1,3,4],adversarial,rewindReplay:'exact stage text',unreachable,invalid,feedback});
  }
  fs.writeFileSync(path.join(out,'rendered-meaning.json'),JSON.stringify({kind:'author self-check',evidence},null,2));await browser.close();console.log('Rendered semantic branches and supplemental captures passed.');
 })().catch(e=>{console.error(e);process.exit(1)});
