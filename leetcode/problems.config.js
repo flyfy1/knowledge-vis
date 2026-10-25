@@ -3783,6 +3783,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n) time; O(n) auxiliary space and O(n) output space"
   },
   {
+    "id": 995,
+    "title": {
+      "zh": "K 连续位的最小翻转次数",
+      "en": "Minimum Number of K Consecutive Bit Flips"
+    },
+    "desc": {
+      "zh": "从左端的必选翻转，推导奇偶性与到期事件的线性扫描。",
+      "en": "Derive a linear parity-and-expiry scan from forced leftmost flips."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "差分事件",
+        "en": "Difference events"
+      }
+    ],
+    "path": "995/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
