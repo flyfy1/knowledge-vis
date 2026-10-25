@@ -1987,6 +1987,58 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
+    "id": 546,
+    "title": {
+      "zh": "移除盒子",
+      "en": "Remove Boxes"
+    },
+    "desc": {
+      "zh": "清空中间，合并两端：为何区间还要记住保留的同色盒子。",
+      "en": "Clear the middle and join the ends: why an interval must remember saved boxes."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "区间动态规划",
+        "en": "Interval dynamic programming"
+      },
+      {
+        "zh": "记忆化搜索",
+        "en": "Memoized recursion"
+      }
+    ],
+    "path": "546/",
+    "leetcodeUrl": "https://leetcode.com/problems/remove-boxes/",
+    "language": "Python",
+    "complexity": "O(n⁴) time; O(n³) auxiliary space"
+  },
+  {
+    "id": 552,
+    "title": {
+      "zh": "学生出勤记录 II",
+      "en": "Student Attendance Record II"
+    },
+    "desc": {
+      "zh": "从两天考勤推导六状态计数，逐日检查来源与不变式。",
+      "en": "Derive six attendance states and inspect each day’s incoming counts."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "计数",
+        "en": "Counting"
+      }
+    ],
+    "path": "552/",
+    "leetcodeUrl": "https://leetcode.com/problems/student-attendance-record-ii/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

@@ -1,0 +1,261 @@
+{
+  "passed": true,
+  "scope": "author browser self-check",
+  "observations": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "mode": "optimal",
+      "final": 5
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "mode": "greedy",
+      "final": 3
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "mode": "optimal",
+      "final": 21
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "mode": "greedy",
+      "final": 13
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "mode": "optimal",
+      "final": 23
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "mode": "greedy",
+      "final": 17
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "mode": "optimal",
+      "final": 9
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "mode": "greedy",
+      "final": 9
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "mode": "optimal",
+      "final": 3
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "mode": "greedy",
+      "final": 3
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "mode": "optimal",
+      "final": 1
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "mode": "greedy",
+      "final": 1
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "mode": "optimal",
+      "final": 5
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "mode": "greedy",
+      "final": 3
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "mode": "optimal",
+      "final": 21
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "mode": "greedy",
+      "final": 13
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "mode": "optimal",
+      "final": 23
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "mode": "greedy",
+      "final": 17
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "mode": "optimal",
+      "final": 9
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "mode": "greedy",
+      "final": 9
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "mode": "optimal",
+      "final": 3
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "mode": "greedy",
+      "final": 3
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "mode": "optimal",
+      "final": 1
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "mode": "greedy",
+      "final": 1
+    }
+  ],
+  "screenshots": [
+    "en-320-step1-viewport.png",
+    "en-320-step1.png",
+    "en-320-step2-viewport.png",
+    "en-320-step2.png",
+    "en-390-step1-viewport.png",
+    "en-390-step1.png",
+    "en-390-step2-viewport.png",
+    "en-390-step2.png",
+    "en-736-step1-viewport.png",
+    "en-736-step1.png",
+    "en-736-step2-viewport.png",
+    "en-736-step2.png",
+    "en-1440-step1-viewport.png",
+    "en-1440-step1.png",
+    "en-1440-step2-viewport.png",
+    "en-1440-step2.png",
+    "zh-320-step1-viewport.png",
+    "zh-320-step1.png",
+    "zh-320-step2-viewport.png",
+    "zh-320-step2.png",
+    "zh-390-step1-viewport.png",
+    "zh-390-step1.png",
+    "zh-390-step2-viewport.png",
+    "zh-390-step2.png",
+    "zh-736-step1-viewport.png",
+    "zh-736-step1.png",
+    "zh-736-step2-viewport.png",
+    "zh-736-step2.png",
+    "zh-1440-step1-viewport.png",
+    "zh-1440-step1.png",
+    "zh-1440-step2-viewport.png",
+    "zh-1440-step2.png",
+    "en-quiz-320.png",
+    "zh-quiz-320.png",
+    "en-zoom200-viewport.png",
+    "en-zoom200.png",
+    "zh-zoom200-viewport.png",
+    "zh-zoom200.png"
+  ],
+  "contrast": [
+    {
+      "fg": "--text",
+      "bg": "--bg",
+      "ratio": 16.09
+    },
+    {
+      "fg": "--text",
+      "bg": "--panel",
+      "ratio": 14.7
+    },
+    {
+      "fg": "--text",
+      "bg": "--panel2",
+      "ratio": 13.4
+    },
+    {
+      "fg": "--muted",
+      "bg": "--bg",
+      "ratio": 7.74
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel",
+      "ratio": 7.08
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel2",
+      "ratio": 6.45
+    },
+    {
+      "fg": "--accent",
+      "bg": "--bg",
+      "ratio": 13.1
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel",
+      "ratio": 11.97
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel2",
+      "ratio": 10.91
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--bg",
+      "ratio": 10.73
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel",
+      "ratio": 9.81
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel2",
+      "ratio": 8.94
+    }
+  ],
+  "focus": {
+    "tag": "A",
+    "outline": "3px"
+  },
+  "deepLinkY": 67.484375,
+  "errors": [],
+  "allRequestsLocal": true,
+  "clipboard": "native Chromium clipboard write/read exact; adapter payload exact; rejection fallback selection verified",
+  "zoom": "body zoom 2 on 720 CSS px viewport (stricter than half-width desktop layout)"
+}

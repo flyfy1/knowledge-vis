@@ -1,0 +1,11 @@
+{
+  "scope": "author self-check, not independent review or judge acceptance",
+  "canonical_cases": 3485,
+  "exhaustive": "all ternary arrays of lengths 0..7 (empty is defensive only)",
+  "seeded": 200,
+  "seed": 546,
+  "max_length": 100,
+  "canonical_intermediate_states": 94,
+  "seconds": 17.728,
+  "passed": true
+}

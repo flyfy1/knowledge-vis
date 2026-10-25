@@ -1,0 +1,446 @@
+{
+  "kind": "author browser self-check",
+  "result": "PASS",
+  "coverage": [
+    {
+      "lang": "en",
+      "n": 1,
+      "allDays": true,
+      "endpoints": true,
+      "rewindReplay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 2,
+      "allDays": true,
+      "endpoints": true,
+      "rewindReplay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 3,
+      "allDays": true,
+      "endpoints": true,
+      "rewindReplay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 4,
+      "allDays": true,
+      "endpoints": true,
+      "rewindReplay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 6,
+      "allDays": true,
+      "endpoints": true,
+      "rewindReplay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 10,
+      "allDays": true,
+      "endpoints": true,
+      "rewindReplay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "quizChoice": "0",
+      "feedback": "Check which first step is forbidden. PLL is in (0,2): zero A used and two trailing L. The first step can only be P or A. P leads to (0,0), allowing P, L, A next; A leads to (1,0), allowing only P, L. Thus 3+2=5: PP, PL, PA, AP, AL. The answer 7 also counts LP and LA, which immediately create LLL. The answer 9 additionally counts AA and LL. The key is the current trailing run, not just the days remaining."
+    },
+    {
+      "lang": "en",
+      "quizChoice": "1",
+      "feedback": "Correct prediction. PLL is in (0,2): zero A used and two trailing L. The first step can only be P or A. P leads to (0,0), allowing P, L, A next; A leads to (1,0), allowing only P, L. Thus 3+2=5: PP, PL, PA, AP, AL. The answer 7 also counts LP and LA, which immediately create LLL. The answer 9 additionally counts AA and LL. The key is the current trailing run, not just the days remaining."
+    },
+    {
+      "lang": "en",
+      "quizChoice": "2",
+      "feedback": "Check which first step is forbidden. PLL is in (0,2): zero A used and two trailing L. The first step can only be P or A. P leads to (0,0), allowing P, L, A next; A leads to (1,0), allowing only P, L. Thus 3+2=5: PP, PL, PA, AP, AL. The answer 7 also counts LP and LA, which immediately create LLL. The answer 9 additionally counts AA and LL. The key is the current trailing run, not just the days remaining."
+    },
+    {
+      "lang": "zh",
+      "n": 1,
+      "allDays": true,
+      "endpoints": true,
+      "rewindReplay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 2,
+      "allDays": true,
+      "endpoints": true,
+      "rewindReplay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 3,
+      "allDays": true,
+      "endpoints": true,
+      "rewindReplay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 4,
+      "allDays": true,
+      "endpoints": true,
+      "rewindReplay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 6,
+      "allDays": true,
+      "endpoints": true,
+      "rewindReplay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 10,
+      "allDays": true,
+      "endpoints": true,
+      "rewindReplay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "quizChoice": "0",
+      "feedback": "再检查被禁止的第一步。 PLL 位于 (0,2)：已用 0 个 A，末尾有 2 个连续 L。第一步只能 P 或 A：接 P 后为 (0,0)，第二步有 P、L、A 三种；接 A 后为 (1,0)，第二步只有 P、L 两种。因此是 3+2=5，后缀为 PP、PL、PA、AP、AL。7 额外计入 LP、LA，它们第一步就形成 LLL；9 还额外计入 AA、LL。关键是使用当前末尾连续 L，而非只数剩余天数。"
+    },
+    {
+      "lang": "zh",
+      "quizChoice": "1",
+      "feedback": "预测正确。 PLL 位于 (0,2)：已用 0 个 A，末尾有 2 个连续 L。第一步只能 P 或 A：接 P 后为 (0,0)，第二步有 P、L、A 三种；接 A 后为 (1,0)，第二步只有 P、L 两种。因此是 3+2=5，后缀为 PP、PL、PA、AP、AL。7 额外计入 LP、LA，它们第一步就形成 LLL；9 还额外计入 AA、LL。关键是使用当前末尾连续 L，而非只数剩余天数。"
+    },
+    {
+      "lang": "zh",
+      "quizChoice": "2",
+      "feedback": "再检查被禁止的第一步。 PLL 位于 (0,2)：已用 0 个 A，末尾有 2 个连续 L。第一步只能 P 或 A：接 P 后为 (0,0)，第二步有 P、L、A 三种；接 A 后为 (1,0)，第二步只有 P、L 两种。因此是 3+2=5，后缀为 PP、PL、PA、AP、AL。7 额外计入 LP、LA，它们第一步就形成 LLL；9 还额外计入 AA、LL。关键是使用当前末尾连续 L，而非只数剩余天数。"
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "geometry": [
+        {
+          "width": 256,
+          "scroll": 256
+        },
+        {
+          "width": 256,
+          "scroll": 256
+        },
+        {
+          "width": 256,
+          "scroll": 256
+        },
+        {
+          "width": 256,
+          "scroll": 256
+        },
+        {
+          "width": 256,
+          "scroll": 256
+        },
+        {
+          "width": 256,
+          "scroll": 256
+        }
+      ],
+      "controls": ">=48px"
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "geometry": [
+        {
+          "width": 326,
+          "scroll": 326
+        },
+        {
+          "width": 326,
+          "scroll": 326
+        },
+        {
+          "width": 326,
+          "scroll": 326
+        },
+        {
+          "width": 326,
+          "scroll": 326
+        },
+        {
+          "width": 326,
+          "scroll": 326
+        },
+        {
+          "width": 326,
+          "scroll": 326
+        }
+      ],
+      "controls": ">=48px"
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "geometry": [
+        {
+          "width": 313,
+          "scroll": 313
+        },
+        {
+          "width": 313,
+          "scroll": 313
+        },
+        {
+          "width": 313,
+          "scroll": 313
+        },
+        {
+          "width": 313,
+          "scroll": 313
+        },
+        {
+          "width": 313,
+          "scroll": 313
+        },
+        {
+          "width": 313,
+          "scroll": 313
+        }
+      ],
+      "controls": ">=48px"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "geometry": [
+        {
+          "width": 291,
+          "scroll": 291
+        },
+        {
+          "width": 291,
+          "scroll": 291
+        },
+        {
+          "width": 291,
+          "scroll": 291
+        },
+        {
+          "width": 291,
+          "scroll": 291
+        },
+        {
+          "width": 291,
+          "scroll": 291
+        },
+        {
+          "width": 291,
+          "scroll": 291
+        }
+      ],
+      "controls": ">=48px"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "geometry": [
+        {
+          "width": 256,
+          "scroll": 256
+        },
+        {
+          "width": 256,
+          "scroll": 256
+        },
+        {
+          "width": 256,
+          "scroll": 256
+        },
+        {
+          "width": 256,
+          "scroll": 256
+        },
+        {
+          "width": 256,
+          "scroll": 256
+        },
+        {
+          "width": 256,
+          "scroll": 256
+        }
+      ],
+      "controls": ">=48px"
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "geometry": [
+        {
+          "width": 326,
+          "scroll": 326
+        },
+        {
+          "width": 326,
+          "scroll": 326
+        },
+        {
+          "width": 326,
+          "scroll": 326
+        },
+        {
+          "width": 326,
+          "scroll": 326
+        },
+        {
+          "width": 326,
+          "scroll": 326
+        },
+        {
+          "width": 326,
+          "scroll": 326
+        }
+      ],
+      "controls": ">=48px"
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "geometry": [
+        {
+          "width": 313,
+          "scroll": 313
+        },
+        {
+          "width": 313,
+          "scroll": 313
+        },
+        {
+          "width": 313,
+          "scroll": 313
+        },
+        {
+          "width": 313,
+          "scroll": 313
+        },
+        {
+          "width": 313,
+          "scroll": 313
+        },
+        {
+          "width": 313,
+          "scroll": 313
+        }
+      ],
+      "controls": ">=48px"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "geometry": [
+        {
+          "width": 291,
+          "scroll": 291
+        },
+        {
+          "width": 291,
+          "scroll": 291
+        },
+        {
+          "width": 291,
+          "scroll": 291
+        },
+        {
+          "width": 291,
+          "scroll": 291
+        },
+        {
+          "width": 291,
+          "scroll": 291
+        },
+        {
+          "width": 291,
+          "scroll": 291
+        }
+      ],
+      "controls": ">=48px"
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".state-cell h4",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "selector": ".state-cell b",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".state-cell li",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#next:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#langToggle button:not(.active)",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".step-nav a:not(.active)",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgba(13, 17, 23, 0.96)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "focus accent2 / panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "focus accent2 / accent selected",
+      "ratio": 10.731637051347173
+    }
+  ],
+  "errors": [],
+  "badResponses": [],
+  "externalRequests": [],
+  "sourceParity": "display, copy, manual selection, download all exact",
+  "zoom": "document CSS zoom=2 at 1440px, both locales (headless layout check)",
+  "offlineStorageDenied": true,
+  "keyboard": true,
+  "forcedColors": true
+}
