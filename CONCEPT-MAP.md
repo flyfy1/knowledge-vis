@@ -1547,3 +1547,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Rolling count rows | `leetcode/920/#step4` | Keep the previous length row while constructing the next one. |
 
 <!-- /leetcode-920-campaign -->
+
+
+<!-- leetcode-940-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Ending-letter counting invariant | `leetcode/940/#step2` | Partition distinct subsequences by their final letter and replace one group. |
+
+<!-- /leetcode-940-campaign -->
