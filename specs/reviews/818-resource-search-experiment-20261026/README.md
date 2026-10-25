@@ -56,7 +56,7 @@ revision; the campaign continued to827. Root can run future Mac measurements onc
 a replacement candidate exists, so Linux author location is a coordination issue,
 not a mathematical or permanent access blocker.
 
-## Ongoing full-range survey
+## Completed full-range survey
 
 `python3 full_range.py` examines every official target1..10000 using two Mac
 workers, a1,000,000-state/10-second cap per target and a20-minute overall survey
@@ -66,3 +66,11 @@ check only; that reference does not resolve its missing normal-form proof.
 The separately examined A* admissibility argument supports its exact search.
 Cap/deadline outcomes remain explicit missing coverage, never fabricated answers.
 This survey is an experiment and does not revise the adopted lesson design.
+
+The survey completed in285.124 seconds: all10,000 targets found an answer and
+matched the numerical reference; no cap/deadline or mismatch occurred. Root
+independently parsed every row and verified the exact1..10000 target set and
+terminal summary. The largest stored-state count was669,016 at9809. Full-range
+rows, progress and source hashes are pinned in full-range-validation.json.
+This is not a full-range RSS measurement: the isolated RSS evidence above covers
+only selected inputs. Concurrent survey timings are not isolated benchmarks.

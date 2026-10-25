@@ -1,0 +1,21 @@
+{
+  "status": "verified_complete_experiment",
+  "targets": 10000,
+  "caps": 0,
+  "mismatches": 0,
+  "max_states": 669016,
+  "max_states_targets": [
+    9809
+  ],
+  "hashes": {
+    "probe.py": "09442d8de215dddc1d3f9c8757c39288b037c9596c2c749606040eefa3b0c8da",
+    "full_range.py": "fbafc1cff4fd8982fcb0221a202359e931a4405e321faa5c3cafc7dc23709108",
+    "full-range-rows.jsonl": "943b744e012bf0f1a534cb74f84cfff646cf6b392b7bbe905e338700d394de4f",
+    "full-range-progress.json": "6135187ef11d10081d734dadd62a2e3ecb10ea33faba474ea193c4e99ba20db4"
+  },
+  "limits": [
+    "Reference DP is a numerical comparison, not its normal-form proof",
+    "Survey timings use two concurrent workers; isolated RSS evidence is only for selected inputs",
+    "No lesson candidate, official submission or public delivery"
+  ]
+}
