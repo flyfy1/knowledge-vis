@@ -1,0 +1,9 @@
+{
+  "checks": [
+    "generated homepage -> physical route -> Back; both languages",
+    "legacy directory and index preserve encoded/duplicate query and fragment",
+    "explicit version index and exact downloadable source",
+    "old strict-numeric root remains compatible with separate numeric registry",
+    "no-JS fallback destination and zero page/resource errors"
+  ]
+}

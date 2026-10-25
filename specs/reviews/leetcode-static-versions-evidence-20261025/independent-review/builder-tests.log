@@ -1,0 +1,11 @@
+test_builder_rejects_unsafe_nonruntime_and_foreign_input (test_leetcode_static_versions.StaticVersionTests.test_builder_rejects_unsafe_nonruntime_and_foreign_input) ... ok
+test_discovery_uses_sibling_registry_and_keeps_other_bytes (test_leetcode_static_versions.StaticVersionTests.test_discovery_uses_sibling_registry_and_keeps_other_bytes) ... ok
+test_physical_copies_are_exact_and_numeric_assets_remain (test_leetcode_static_versions.StaticVersionTests.test_physical_copies_are_exact_and_numeric_assets_remain) ... ok
+test_redirect_uses_replace_and_preserves_encoded_query_fragment (test_leetcode_static_versions.StaticVersionTests.test_redirect_uses_replace_and_preserves_encoded_query_fragment) ... ok
+test_registry_only_changes_exact_path_and_is_idempotent (test_leetcode_static_versions.StaticVersionTests.test_registry_only_changes_exact_path_and_is_idempotent) ... ok
+test_unsafe_mismatched_and_duplicate_registry_routes_rejected (test_leetcode_static_versions.StaticVersionTests.test_unsafe_mismatched_and_duplicate_registry_routes_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.040s
+
+OK

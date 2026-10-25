@@ -1,0 +1,14 @@
+{
+  "base": "/var/folders/18/3c7fh_097mx8tfs_lsffbv1h0000gn/T/static-routes-independent-02efikol",
+  "root": "/var/folders/18/3c7fh_097mx8tfs_lsffbv1h0000gn/T/static-routes-independent-02efikol/generated",
+  "revision": "1cbf46f96d64080a6da6d34dc76ce2c72e94a150",
+  "files": 22,
+  "checks": [
+    "numeric registry exact bytes",
+    "derived registry path-only",
+    "runtime copied exactly",
+    "canonical source clean",
+    "both discovery documents derived",
+    "no Claude discovery"
+  ]
+}

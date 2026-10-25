@@ -1,0 +1,12 @@
+test_blocked_queue_never_flushes_or_claims_complete (test_campaign_publication.PublicationIntegrationTests.test_blocked_queue_never_flushes_or_claims_complete) ... ok
+test_calls_at_clean_accepted_boundary_and_flushes_only_full_catalog (test_campaign_publication.PublicationIntegrationTests.test_calls_at_clean_accepted_boundary_and_flushes_only_full_catalog) ... ok
+test_partial_queue_never_flushes_remainder (test_campaign_publication.PublicationIntegrationTests.test_partial_queue_never_flushes_remainder) ... ok
+test_publication_failure_stops_before_next_author (test_campaign_publication.PublicationIntegrationTests.test_publication_failure_stops_before_next_author) ... ok
+test_resuming_with_twenty_default_preserves_prior_acceptance (test_campaign_publication.PublicationIntegrationTests.test_resuming_with_twenty_default_preserves_prior_acceptance) ... ok
+test_stop_file_prevents_release_and_agent_start (test_campaign_publication.PublicationIntegrationTests.test_stop_file_prevents_release_and_agent_start) ... ok
+test_target_must_be_explicit_and_separate (test_campaign_publication.PublicationIntegrationTests.test_target_must_be_explicit_and_separate) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 7.556s
+
+OK

@@ -1,0 +1,12 @@
+test_codex_destination_and_legacy_query_fragment_redirects (test_leetcode_publish_browser.BrowserGateTests.test_codex_destination_and_legacy_query_fragment_redirects) ... ok
+test_different_localized_titles (test_leetcode_publish_browser.BrowserGateTests.test_different_localized_titles) ... ok
+test_empty_content_is_rejected (test_leetcode_publish_browser.BrowserGateTests.test_empty_content_is_rejected) ... ok
+test_identical_title_and_untranslated_body_is_rejected (test_leetcode_publish_browser.BrowserGateTests.test_identical_title_and_untranslated_body_is_rejected) ... ok
+test_identical_title_with_translated_body (test_leetcode_publish_browser.BrowserGateTests.test_identical_title_with_translated_body) ... ok
+test_missing_problem_id_is_rejected (test_leetcode_publish_browser.BrowserGateTests.test_missing_problem_id_is_rejected) ... ok
+test_untranslated_title_is_rejected (test_leetcode_publish_browser.BrowserGateTests.test_untranslated_title_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 5.654s
+
+OK
