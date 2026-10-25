@@ -1,0 +1,38 @@
+{
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "rows": [
+    {
+      "lang": "en",
+      "title": "#996 · Number of Squareful Arrays",
+      "heading": "#996 · Number of Squareful Arrays",
+      "cost": "Costs: n is the entry count, k the distinct-value count. Preprocessing takes O(k²); a conservative search bound is O(n·n!) time, still factorial. Depth n, O(k) counts and an O(k²) compatibility matrix give O(n+k²) auxiliary space. The simulation additionally stores every snapshot and ledger; those are not submission memory.",
+      "rewindAcceptLedger": true,
+      "keyboardPrediction": true,
+      "presetPreservesPrediction": true,
+      "localePreservesIntermediate": true,
+      "styles": {
+        "color": "rgb(232, 237, 244)",
+        "background": "rgb(28, 35, 48)",
+        "opacity": "1",
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "title": "#996 · 正方形数组的数目",
+      "heading": "#996 · 正方形数组的数目",
+      "cost": "成本：n 是元素数，k 是不同值数。预处理 O(k²)；搜索的保守上界是 O(n·n!) 时间，仍可能是阶乘级。递归深度 n，次数 O(k)，兼容矩阵 O(k²)，合计辅助空间 O(n+k²)。模拟还保存全部快照与账本，这些不计入提交空间。",
+      "rewindAcceptLedger": true,
+      "keyboardPrediction": true,
+      "presetPreservesPrediction": true,
+      "localePreservesIntermediate": true,
+      "styles": {
+        "color": "rgb(232, 237, 244)",
+        "background": "rgb(28, 35, 48)",
+        "opacity": "1",
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    }
+  ]
+}

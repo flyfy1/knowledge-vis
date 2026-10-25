@@ -1,0 +1,200 @@
+{
+  "freshCanonicalCases": [
+    {
+      "input": [
+        0,
+        0,
+        0
+      ],
+      "result": 1,
+      "expected": 1,
+      "orders": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "unmutated": true
+    },
+    {
+      "input": [
+        2,
+        2
+      ],
+      "result": 1,
+      "expected": 1,
+      "orders": [
+        [
+          2,
+          2
+        ]
+      ],
+      "unmutated": true
+    },
+    {
+      "input": [
+        1,
+        1,
+        8
+      ],
+      "result": 1,
+      "expected": 1,
+      "orders": [
+        [
+          1,
+          8,
+          1
+        ]
+      ],
+      "unmutated": true
+    },
+    {
+      "input": [
+        0,
+        1,
+        1
+      ],
+      "result": 1,
+      "expected": 1,
+      "orders": [
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "unmutated": true
+    },
+    {
+      "input": [
+        0,
+        0
+      ],
+      "result": 1,
+      "expected": 1,
+      "orders": [
+        [
+          0,
+          0
+        ]
+      ],
+      "unmutated": true
+    },
+    {
+      "input": [
+        1000000000
+      ],
+      "result": 1,
+      "expected": 1,
+      "orders": [
+        [
+          1000000000
+        ]
+      ],
+      "unmutated": true
+    },
+    {
+      "input": [
+        1,
+        999950883
+      ],
+      "result": 2,
+      "expected": 2,
+      "orders": [
+        [
+          1,
+          999950883
+        ],
+        [
+          999950883,
+          1
+        ]
+      ],
+      "unmutated": true
+    },
+    {
+      "input": [
+        1,
+        999950884
+      ],
+      "result": 0,
+      "expected": 0,
+      "orders": [],
+      "unmutated": true
+    },
+    {
+      "input": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "result": 7,
+      "expected": 7,
+      "orders": null,
+      "unmutated": true
+    },
+    {
+      "input": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "result": 1,
+      "expected": 1,
+      "orders": null,
+      "unmutated": true
+    },
+    {
+      "input": [
+        1000000000,
+        1000000000,
+        1000000000,
+        1000000000,
+        1000000000,
+        1000000000,
+        1000000000,
+        1000000000,
+        1000000000,
+        1000000000,
+        1000000000,
+        1000000000
+      ],
+      "result": 0,
+      "expected": 0,
+      "orders": null,
+      "unmutated": true
+    }
+  ],
+  "shippedCopyUniqueKeys": 77,
+  "contrastCalibration": "black/white/R/G/B and #747474 on black checked using exact helper",
+  "servedSourceSha256": {
+    "leetcode/996/index.html": "2a5ecb2086aca42085d7632495b0be5d2b9bc7e877c05cdb1065cc0eefca4997",
+    "leetcode/996/app.js": "a321da84add6f6ac9ded530b6887313d20eca0510c596c9a33afcdd7a0c9ca4d",
+    "leetcode/996/core.js": "dccadc6f0faa6067e1cd84f5f4ddd592c7af07170d7829cf1da7d8a0849dc132",
+    "leetcode/996/copy.js": "eb6ac3a92084a3614a2f0efc36014230ddabcf88057b0c60c6f2871f7bea5a9c",
+    "leetcode/996/solution.py": "0075faaa73aef51ec54192dffbaa04987f05100aafe84a4f9f062d9411c4086f",
+    "leetcode/996/python-code.js": "a2223e3567312b138b77f57653628c65ae4f368b0a8692d41da1dc3f87d4b141",
+    "leetcode/996/style.css": "8e95c5a99ec9b536defd4d0ae92244b5b2b923f00c6be887be35c15aa08791fa",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}
