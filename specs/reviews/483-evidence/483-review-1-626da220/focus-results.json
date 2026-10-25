@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "screenshots": [
+    "en-320-ledger.png",
+    "en-zoom200-values.png",
+    "en-320-quiz.png",
+    "en-320-manual.png",
+    "zh-320-ledger.png",
+    "zh-zoom200-values.png",
+    "zh-320-quiz.png",
+    "zh-320-manual.png"
+  ],
+  "coverage": "320px ledger/quiz/manual source; 200% populated arithmetic and result in both languages"
+}

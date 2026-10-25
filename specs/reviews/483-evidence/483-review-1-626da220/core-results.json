@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "fixtures": 364,
+  "rounds": 6380,
+  "checks": [
+    "independent power sums for every intermediate total",
+    "early-stop semantics",
+    "inclusive bounds and exhaustive no-loss invariant for n<=300",
+    "descending exponents",
+    "immutable cumulative history length",
+    "deterministic snapshots",
+    "unique bilingual copy keys"
+  ],
+  "copyKeys": 89
+}
