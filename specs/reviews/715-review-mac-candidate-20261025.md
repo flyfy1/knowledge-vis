@@ -1,0 +1,13 @@
+# LeetCode 715: frozen candidate Mac verification
+
+Candidate: `74be86455bbaa280a8d86559c32361b782969961`. This is root-agent host verification, not the separate teaching review or publication. Evidence: [mac-candidate-74be864-20261025](715-evidence/mac-candidate-74be864-20261025/).
+
+All 161 exported lesson/shared/related-HTML files matched the frozen Git revision byte-for-byte before execution and stayed unchanged afterward. Results went outside the frozen export. Browser: macOS Chromium 151.0.7922.34; executable and per-file hashes are in receipts.
+
+All four original commands passed without adapters: Python canonical checks, JS core invariants, full browser checks, and focused keyboard/disabled-state checks. Python recorded 41,800 oracle checks, all 32 small coverage states, 10,000 sequential calls, 3,000 large-coordinate calls and a maximum-call-count scenario. Core recorded 10,025 frames. The browser recorded 362 state checks, 25 screenshots, both locales, all five presets at 320/390/736/1440 widths, 11,881 CSS bytes and no runtime/resource errors. Exact source display, mirror, download, native clipboard and real Meta+C fallback passed. Forced-colors keyboard focus, disabled contrast, prediction invalidation, locale state preservation, deep links, blocked storage and file opening passed. The original zoom check is explicitly 200% CSS reflow, not native browser zoom.
+
+An additional unchanged-candidate probe checked all five selected native labels in both locales at 320/390 pixels (20 measurements with a 24-pixel arrow reserve) and captured each locale's longest closed option. The clipboard supplement verified a distinct non-source sentinel by actual readback immediately before Meta+C, complete focus/selection, and exact 883-character source after the shortcut in both languages.
+
+Visually inspected: `original/en-320-preset4-diagram.png`, `zh-320-preset1-diagram.png`, `en-320-header.png`, `en-zoom200.png`, and both `native/*-320-longest-native-select.png`. The large-coordinate cut preserves all endpoint digits in wrapped arrays and interval chips. The bridge example changes [2,4,6,8] to [2,8] with matching bands and included/excluded endpoint markers. The header exposes #715 and the official link. Both longest native labels and arrows are fully visible. The CSS zoom screenshot's sticky navigation overlays the viewport top; the deep-link geometry check separately passed (section top 95.875, nav bottom 70).
+
+No candidate files were modified and no Mac runtime defect was reproduced. This does not itself accept the lesson, replace the independent cold teaching review, establish public delivery, or claim physical-device or human-comprehension testing.

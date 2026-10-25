@@ -1,0 +1,36 @@
+[
+  {
+    "label": "blank",
+    "fromSurface": false,
+    "ok": false,
+    "error": "cdpSession.send: Protocol error (Page.captureScreenshot): Unable to capture screenshot"
+  },
+  {
+    "label": "blank",
+    "fromSurface": true,
+    "ok": true
+  },
+  {
+    "label": "blank",
+    "fromSurface": false,
+    "ok": false,
+    "error": "cdpSession.send: Protocol error (Page.captureScreenshot): Unable to capture screenshot"
+  },
+  {
+    "label": "lesson",
+    "fromSurface": false,
+    "ok": false,
+    "error": "cdpSession.send: Protocol error (Page.captureScreenshot): Unable to capture screenshot"
+  },
+  {
+    "label": "lesson",
+    "fromSurface": true,
+    "ok": true
+  },
+  {
+    "label": "lesson",
+    "fromSurface": false,
+    "ok": false,
+    "error": "cdpSession.send: Protocol error (Page.captureScreenshot): Unable to capture screenshot"
+  }
+]

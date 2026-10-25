@@ -1,0 +1,6 @@
+cdpSession.send: Protocol error (Page.captureScreenshot): Unable to capture screenshot
+    at shot (/private/tmp/leetcode-719-frozen-6b5b115-20261025/leetcode/719/tests/browser.cjs:10:244)
+    at async /private/tmp/leetcode-719-frozen-6b5b115-20261025/leetcode/719/tests/browser.cjs:40:675 {
+  log: [],
+  name: 'Error'
+}

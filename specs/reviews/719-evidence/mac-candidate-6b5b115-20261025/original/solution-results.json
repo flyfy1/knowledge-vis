@@ -1,0 +1,12 @@
+{
+  "kind": "author computational self-check",
+  "canonicalInvocations": 86077,
+  "oracle": "all index-pair absolute differences, sorted independently",
+  "exhaustive": "every ordered array length 2\u20266 over 0\u20263; every rank",
+  "seed": 719,
+  "seededArrays": 300,
+  "largeClosedFormCases": 5,
+  "copyKeys": 92,
+  "sourceMirrorExact": true,
+  "inputPreserved": true
+}
