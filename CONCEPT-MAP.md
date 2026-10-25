@@ -1537,3 +1537,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Prefix and suffix DP sums | `leetcode/903/#step4` | Accumulate a row in linear time. |
 
 <!-- /leetcode-903-campaign -->
+
+
+<!-- leetcode-920-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Playlist counting by used-song count | `leetcode/920/#step2` | Partition extensions into a new song or an eligible replay. |
+| Rolling count rows | `leetcode/920/#step4` | Keep the previous length row while constructing the next one. |
+
+<!-- /leetcode-920-campaign -->
