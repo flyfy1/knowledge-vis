@@ -1,0 +1,20 @@
+{
+  "kind": "author self-check",
+  "at": "2026-10-25T15:47:56.636295+00:00",
+  "python": {
+    "factorialOracle": 150,
+    "accumulatedFactorOracle": 5001,
+    "largeSeededAndBoundaryOracle": 3010,
+    "displayedBaseline": 151,
+    "maxConstraintResult": 5
+  },
+  "core": {
+    "cases": 8011,
+    "frames": 333385,
+    "zeroFactorizationChecks": 1001,
+    "results": "all results and intermediate invariants pass"
+  },
+  "sourceMirror": "exact including newline",
+  "copy": "unique keys; every value two nonempty strings",
+  "notes": "No LeetCode submission or independent reviewer. Unit-cost integer cells complexity; no timing claim."
+}
