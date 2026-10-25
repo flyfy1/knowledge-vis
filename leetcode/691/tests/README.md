@@ -34,3 +34,22 @@ runner retains endpoint, text, anchor and clipboard assertions, with explicit
 waits and correct text expectations. Component captures were adjusted for a
 sticky screenshot artifact. These diagnostics do not constitute reviewer findings
 or independent acceptance.
+
+Focused R691-01 repair checks (write only lesson-local evidence):
+
+```sh
+node leetcode/691/tests/selected-label.cjs
+node leetcode/691/tests/rendered-state.cjs
+```
+
+The first checks closed selected labels in the browser's computed font, every
+preset in both languages, 320/390/1440 widths and 640 at 200% CSS layout zoom,
+then event 3, locale roundtrip and the impossible endpoint. It records a 20 CSS px
+native-arrow reserve for this Chromium control, not a universal arrow width;
+screenshots must also be inspected. Initial harness calibration used 24 px and
+rejected the unchanged intrinsic-width p5 by 3 px; the final 20 px check was rerun
+red against the original p6 and green against the repair. Original R691-01 still
+fails even with no arrow reserve. Neither type size nor padding was reduced.
+The second checks the tiny trace at event 28: sticker a, child b=1, candidate 2,
+best 1, 29 retained entries including event zero; rewind/replay, formula operands
+and fresh prediction scope/feedback invalidation are checked in both locales.
