@@ -1,9 +1,13 @@
-# #975/#980 launcher — refreshed for #839 author, awaiting root review
+# #975/#980 launcher — dispatched and live verified
 
-Prepared 2026-10-26. **No launcher has been transferred or executed.** Both prior
-root-authorized attempts refused during read-only preflight as central naturally
-advanced. No lane reservation, checkout, worker, runtime or policy write occurred.
-Root must review this refreshed exact hash before any execution.
+Prepared 2026-10-26, then independently approved and dispatched once at 04:28:48
+SGT from commit `63c53437`. The launcher exited successfully at 04:29:42; the
+subsequent live census confirms three runners and two distinct fresh lane agents.
+See [dispatch.json](dispatch.json), [live-launch.json](live-launch.json),
+[execution-validation.json](execution-validation.json) and the
+[launch report](../parallel-975980-launch-20261026.md). Earlier failed preflight
+attempts remain preserved as zero-spawn history. The preparation details below
+explain the approved boundary; they are not a second dispatch instruction.
 
 Launcher SHA-256: `17709040ee542e912e697aedca65e0800a5e6c5b77535fafb3aa3597b1cd25a8`.
 Read-only preflight SHA-256: `988302a994cfd3b89cbfe01b184008fe4c96287c7f1032c8e612173962e1c60d`.
@@ -75,7 +79,8 @@ preserve the second zero-spawn refusal after advancement to #839 author.
 [initial-probe-refusal.json](initial-probe-refusal.json) records an earlier harmless
 read-only total-cleanliness probe; that extra gate was not part of the launcher.
 
-After root review, immediate fresh preflight must still match all frozen parameters.
+The successful execution followed root review and immediate fresh matching preflight.
+For any later distinct action, frozen parameters must be revalidated.
 If central advances, preserve the refusal and report new observation pins before
 execution; keep BASE and verify shared-tree equality. No STOP/policy waiver.
 The existing launcher retains exclusive lock/reservation guards, all-prior-imported,
@@ -95,5 +100,5 @@ Seven static tests pass, including byte/AST restoration, exact source/launcher a
 live-pin bindings, target parameters, and STOP/reservation/publication negative
 controls. Tests parse but never import/execute the launcher. Run
 `python3 -B specs/reviews/parallel-975980-evidence-20261026/test_parameters.py`.
-See [tests.log](tests.log) and [validation.json](validation.json). This evidence is
-preparation integrity, not a launched or independently accepted lesson.
+See [tests.log](tests.log) and [validation.json](validation.json). The static validation remains historical preparation integrity. The separate execution
+receipt proves launch; independent lesson acceptance is still pending.

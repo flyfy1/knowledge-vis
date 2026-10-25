@@ -1,0 +1,16 @@
+{
+  "authorizedAction": "One exact root-authorized dispatch after fresh matching preflight",
+  "approvedCommit": "63c53437",
+  "sha256": "17709040ee542e912e697aedca65e0800a5e6c5b77535fafb3aa3597b1cd25a8",
+  "preflightSha256": "988302a994cfd3b89cbfe01b184008fe4c96287c7f1032c8e612173962e1c60d",
+  "transfer": {
+    "path": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/parallel-launch-975980-20261026-17709040.py",
+    "sha256": "17709040ee542e912e697aedca65e0800a5e6c5b77535fafb3aa3597b1cd25a8"
+  },
+  "status": "launcher_exited",
+  "at": "2026-10-25T20:28:48.334315+00:00",
+  "localSshPid": 24002,
+  "executionStartedAt": "2026-10-25T20:28:48.340571+00:00",
+  "exitCode": 0,
+  "executionFinishedAt": "2026-10-25T20:29:42.660724+00:00"
+}

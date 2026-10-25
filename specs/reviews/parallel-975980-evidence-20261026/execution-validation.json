@@ -1,0 +1,25 @@
+{
+  "validatedAt": "2026-10-25T20:30:34.258773+00:00",
+  "status": "launched-and-live-observed",
+  "approvedLauncherSha256": "17709040ee542e912e697aedca65e0800a5e6c5b77535fafb3aa3597b1cd25a8",
+  "operatorExecutions": 1,
+  "operatorExitCode": 0,
+  "campaignRunnerCount": 3,
+  "bothLaneRunnerAndNativeNice": 10,
+  "distinctFreshNativeThreadTurn": true,
+  "maxRounds": 6,
+  "publicationEnabled": false,
+  "centralFrozenPinsUnchanged": true,
+  "STOPAbsent": true,
+  "candidateBase": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+  "filesSha256": {
+    "dispatch.json": "62b7d5620bd5d452147613e6f3e7d928b3e2b00c09775be63dbf727e475a4f33",
+    "dispatch-final-preflight.json": "a879b38be7ac1ea5156ca1ba1ee813a625150dcb41663c4990ffa3fa14c6e8ef",
+    "launch-output.log": "186c2dd7493f3a030e38af7c614c4233d273cd935173b0867c978621b7499a16",
+    "launch-errors.log": "9c4d4bf2b0efa26a6c5362a34fd4adbdafab5bb89123f8b37dd671c4cbf9e15f",
+    "observe.py": "6ff8ca46a1921c9bf5f7d9a0e55da4d39b4d4696099aa6ca545a548cf89ff16f",
+    "live-launch.json": "b13edf5f2b4e8009e4878023d65177bf828a34a395cc26147377fcbb06c56825",
+    "lane-975-reservation.json": "25abef203bb93da0b95c86384a6bd28ebc2ec202149c70e5388c285f9f33d5a3",
+    "lane-980-reservation.json": "820b34b40ff27de91b631d6a50ca6188c7b314e7000ade8682b4aa2ebf83861e"
+  }
+}

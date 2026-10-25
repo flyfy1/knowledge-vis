@@ -1,0 +1,212 @@
+{
+  "observed_at": "2026-10-25T20:30:34.159931+00:00",
+  "worker_count": 3,
+  "lanes": [
+    {
+      "id": "975",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-975-20261026",
+      "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-975-20261026",
+      "port": 18793,
+      "reservation": {
+        "id": "975",
+        "base": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+        "repo": "/home/songyy/projects/leetcode-hard-lane-975-20261026",
+        "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-975-20261026",
+        "port": 18793,
+        "nice": 10,
+        "status": "started",
+        "started_at": "2026-10-25T20:28:48.642712+00:00",
+        "policy_sha256": "d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa",
+        "publication_enabled": false,
+        "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+        "runner_pid": 1613669,
+        "observed_current": {
+          "problem_id": "975",
+          "stage": "author",
+          "started_at": "2026-10-25T20:29:11.169156+00:00",
+          "run_id": "975-author-357096f29cf1"
+        }
+      },
+      "worker": {
+        "pid": 1613669,
+        "ppid": 1,
+        "args": [
+          "/usr/bin/python3",
+          "/home/songyy/projects/leetcode-hard-lane-975-20261026/scripts/leetcode_campaign.py",
+          "--repo",
+          "/home/songyy/projects/leetcode-hard-lane-975-20261026",
+          "--state-dir",
+          "/home/songyy/projects/leetcode-hard-lane-state-975-20261026",
+          "--ids",
+          "975",
+          "--port",
+          "18793",
+          "--max-rounds",
+          "6"
+        ]
+      },
+      "nice": 10,
+      "native_nice": 10,
+      "preview_listening": true,
+      "current": {
+        "problem_id": "975",
+        "stage": "author",
+        "started_at": "2026-10-25T20:29:11.169156+00:00",
+        "run_id": "975-author-357096f29cf1"
+      },
+      "candidate": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+      "expected_head": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+      "session": "01a174c0-c196-7702-8469-9d1ba3637168",
+      "native": {
+        "pid": 1613714,
+        "ppid": 1613707,
+        "args": [
+          "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex",
+          "exec",
+          "-m",
+          "gpt-6.1-sol",
+          "-c",
+          "model_reasoning_effort=\"medium\"",
+          "-c",
+          "approval_policy=\"never\"",
+          "--sandbox",
+          "danger-full-access",
+          "--json",
+          "-o",
+          "/home/songyy/projects/leetcode-hard-lane-state-975-20261026/runs/975-author-357096f29cf1/final.json",
+          "--output-schema",
+          "/home/songyy/projects/leetcode-hard-lane-state-975-20261026/runs/975-author-357096f29cf1/schema.json",
+          "-C",
+          "/home/songyy/projects/leetcode-hard-lane-975-20261026",
+          "-"
+        ]
+      },
+      "events_bytes": 264831,
+      "turn_started": true
+    },
+    {
+      "id": "980",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-980-20261026",
+      "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-980-20261026",
+      "port": 18794,
+      "reservation": {
+        "id": "980",
+        "base": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+        "repo": "/home/songyy/projects/leetcode-hard-lane-980-20261026",
+        "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-980-20261026",
+        "port": 18794,
+        "nice": 10,
+        "status": "started",
+        "started_at": "2026-10-25T20:29:13.081930+00:00",
+        "policy_sha256": "d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa",
+        "publication_enabled": false,
+        "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+        "runner_pid": 1614229,
+        "observed_current": {
+          "problem_id": "980",
+          "stage": "author",
+          "started_at": "2026-10-25T20:29:40.427530+00:00",
+          "run_id": "980-author-4e73af33ad61"
+        }
+      },
+      "worker": {
+        "pid": 1614229,
+        "ppid": 1,
+        "args": [
+          "/usr/bin/python3",
+          "/home/songyy/projects/leetcode-hard-lane-980-20261026/scripts/leetcode_campaign.py",
+          "--repo",
+          "/home/songyy/projects/leetcode-hard-lane-980-20261026",
+          "--state-dir",
+          "/home/songyy/projects/leetcode-hard-lane-state-980-20261026",
+          "--ids",
+          "980",
+          "--port",
+          "18794",
+          "--max-rounds",
+          "6"
+        ]
+      },
+      "nice": 10,
+      "native_nice": 10,
+      "preview_listening": true,
+      "current": {
+        "problem_id": "980",
+        "stage": "author",
+        "started_at": "2026-10-25T20:29:40.427530+00:00",
+        "run_id": "980-author-4e73af33ad61"
+      },
+      "candidate": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+      "expected_head": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+      "session": "01a174c1-3532-7970-89f4-1959f5540f0e",
+      "native": {
+        "pid": 1614278,
+        "ppid": 1614266,
+        "args": [
+          "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex",
+          "exec",
+          "-m",
+          "gpt-6.1-sol",
+          "-c",
+          "model_reasoning_effort=\"medium\"",
+          "-c",
+          "approval_policy=\"never\"",
+          "--sandbox",
+          "danger-full-access",
+          "--json",
+          "-o",
+          "/home/songyy/projects/leetcode-hard-lane-state-980-20261026/runs/980-author-4e73af33ad61/final.json",
+          "--output-schema",
+          "/home/songyy/projects/leetcode-hard-lane-state-980-20261026/runs/980-author-4e73af33ad61/schema.json",
+          "-C",
+          "/home/songyy/projects/leetcode-hard-lane-980-20261026",
+          "-"
+        ]
+      },
+      "events_bytes": 299229,
+      "turn_started": true
+    }
+  ],
+  "central": {
+    "head": "96e82a2f927f7506f2dd97956f1b837e67c9df1e",
+    "pid": 1600975,
+    "current": {
+      "problem_id": "839",
+      "stage": "author",
+      "started_at": "2026-10-25T20:22:55.936997+00:00",
+      "run_id": "839-author-ed3a2c092deb"
+    },
+    "native": {
+      "pid": 1609492,
+      "ppid": 1609485,
+      "args": [
+        "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex",
+        "exec",
+        "-m",
+        "gpt-6.1-sol",
+        "-c",
+        "model_reasoning_effort=\"medium\"",
+        "-c",
+        "approval_policy=\"never\"",
+        "--sandbox",
+        "danger-full-access",
+        "--json",
+        "-o",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/839-author-ed3a2c092deb/final.json",
+        "--output-schema",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/839-author-ed3a2c092deb/schema.json",
+        "-C",
+        "/home/songyy/projects/leetcode-hard-campaign-20261018",
+        "-"
+      ]
+    },
+    "stop_exists": false,
+    "unchanged_since_preflight": true
+  },
+  "mem_available_kib": 1802552,
+  "loadavg": [
+    1.24755859375,
+    0.91064453125,
+    0.748046875
+  ]
+}
