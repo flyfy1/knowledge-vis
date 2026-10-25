@@ -2693,6 +2693,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) expected time; O(n) auxiliary space, n = expression character length"
   },
   {
+    "id": 741,
+    "title": {
+      "zh": "摘樱桃",
+      "en": "Cherry Pickup"
+    },
+    "desc": {
+      "zh": "把往返变成同步行走，推导只记两行坐标的动态规划。",
+      "en": "Reverse the return path and derive a synchronized two-traveler dynamic program."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic Programming"
+      },
+      {
+        "zh": "网格路径",
+        "en": "Grid Paths"
+      }
+    ],
+    "path": "741/",
+    "leetcodeUrl": "https://leetcode.com/problems/cherry-pickup/",
+    "language": "Python",
+    "complexity": "O(n³) time; O(n²) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
