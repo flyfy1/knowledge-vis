@@ -1,0 +1,24 @@
+{
+  "operator_sha256": "a42e8435f8cec2b2ec86fd533c0add113ebe65c6dd2c2c12be7a63a5ab4e2d1b",
+  "pins_sha256": "cba2aa3afe9fd177d4dd2d44d378f94c89375f803b7d2f47ca7c7067988fcb04",
+  "tests_sha256": "7b2f031f7653dec3c08973acefcb4b2a2bc304835dc5461d636cea08335f5686",
+  "independent_tests": {
+    "count": 15,
+    "exit_code": 0,
+    "real_agents_started": 0
+  },
+  "actual_payload_validation": {
+    "targets": 10000,
+    "isolated_targets": [
+      9809,
+      9879,
+      10000
+    ],
+    "summary_sha256": "f71d4d7d34e2118c34868916c1487ec1f22f59d8f5e0f4f1415d58eb7e1f4ffc",
+    "source_sha256": "da9a9a40d5d90c856d82b984333419be4246821b037108faeee0eddae0ab6d68"
+  },
+  "actual_archived_receipt_stop_state_ledger_policy_match": true,
+  "checkpoint_only_expected_head": true,
+  "approval": "No required corrections found; independent review approval for these exact bytes only. Separate root dispatch remains required.",
+  "remote_mutations": false
+}

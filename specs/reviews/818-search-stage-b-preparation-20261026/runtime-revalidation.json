@@ -1,0 +1,20 @@
+{
+  "observed_at": "2026-10-25T20:09:14.143940+00:00",
+  "head": "9277b8fb633c26904b03231d1127ed816baad6c4",
+  "remote_head": "9277b8fb633c26904b03231d1127ed816baad6c4",
+  "clean": true,
+  "state_status": "stopped",
+  "818_status": "review_pending",
+  "input_sha256": {
+    "stage_a_receipt_sha256": "15fe60191bada03236ebbaa1fd56705d670447ccdfb21615782ae8551f553949",
+    "stop_sha256": "3f6953af77d712e814a5c3f2e49b1b1d478f7fce7f7981eff3bcf84ff6d4983b",
+    "progress_sha256": "e3ddb30dac89238c0495766e7f195636c529ad463f138fb7b792ad8caf7bef69",
+    "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b"
+  },
+  "policy_matches": true,
+  "launcher_matches": true,
+  "lesson_and_source_match": true,
+  "original_failed_receipt_preserved": true,
+  "checkout_or_runner_pids": [],
+  "operation": "read-only static runtime revalidation; no locks or writes"
+}

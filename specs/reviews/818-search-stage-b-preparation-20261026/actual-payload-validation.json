@@ -1,0 +1,24 @@
+{
+  "source_revision": "5dbbecea81eed51264af2abcc1ea312ac2d24c2e",
+  "file_count": 8,
+  "result": {
+    "targets": 10000,
+    "isolated_targets": [
+      9809,
+      9879,
+      10000
+    ],
+    "summary_sha256": "f71d4d7d34e2118c34868916c1487ec1f22f59d8f5e0f4f1415d58eb7e1f4ffc",
+    "source_sha256": "da9a9a40d5d90c856d82b984333419be4246821b037108faeee0eddae0ab6d68"
+  },
+  "sha256": {
+    "specs/reviews/818-evidence/818-search-mac-20261026-9277b8fb633c/binding.json": "13d454a05590624afd04f71196035fb00cb98ba3cfccf03985a1b9ff8634d3b7",
+    "specs/reviews/818-evidence/818-search-mac-20261026-9277b8fb633c/canonical.py": "da9a9a40d5d90c856d82b984333419be4246821b037108faeee0eddae0ab6d68",
+    "specs/reviews/818-evidence/818-search-mac-20261026-9277b8fb633c/environment.json": "b1a51ad0d8fbf7928a7e0ff615cb2ea4051c85b67dc177a34bde17037299eb22",
+    "specs/reviews/818-evidence/818-search-mac-20261026-9277b8fb633c/isolated.jsonl": "fc23bc5356bcc038fa2d93fdfe990915c70f30b6792d845aaacca6061f9052f1",
+    "specs/reviews/818-evidence/818-search-mac-20261026-9277b8fb633c/progress.json": "5966b9d7c95976d5221a3acef39ca59abe019dfe277b1c1254d858180865fcbe",
+    "specs/reviews/818-evidence/818-search-mac-20261026-9277b8fb633c/summary.json": "f71d4d7d34e2118c34868916c1487ec1f22f59d8f5e0f4f1415d58eb7e1f4ffc",
+    "specs/reviews/818-evidence/818-search-mac-20261026-9277b8fb633c/survey.jsonl": "a0d870308e69b45cf29fb32e7e05383de3732c3a3b126f1c78df5ad1ece715aa",
+    "specs/reviews/818-review-search-resource-measurement-20261026.md": "6ebe975fc79469a99848261a72238a58afddb1172fd6b1de26f373c04e18112e"
+  }
+}

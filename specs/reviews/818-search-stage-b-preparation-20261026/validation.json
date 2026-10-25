@@ -1,18 +1,21 @@
 {
-  "status": "prepared_disabled_pending_actual_candidate_and_measurements",
+  "status": "frozen_for_final_independent_review_no_dispatch",
   "test_command": "python3 -B specs/reviews/818-search-stage-b-preparation-20261026/test_operate.py",
   "tests_passed": 15,
   "exit_code": 0,
-  "actual_candidate_measurement": false,
+  "actual_candidate_measurement": true,
   "runtime_mutation": false,
-  "dispatch_enabled": false,
+  "dispatch_enabled": "Exact pins bound; explicit root dispatch still required",
   "sha256": {
-    "operate.py": "06d40ac7414e289b14d5d01f8cc7eb1b934bdbd152e8107c15f160a63ba20c1d",
-    "test_operate.py": "9a5b05fdb472f3ed835877b2a1c5759a90c47a670a14da25a47d92f26014c9f3",
-    "README.md": "0819a702098c8b504dda8ae2f986d5c89ddb2ec2d9766eefcd531594d01622fc",
-    "tests.log": "5dd8797948cf4ff48925aa16236bec192d1e57bd3ba2a1bc848943b737f6c4ca",
-    "pending-runtime-pins.json": "0c377500eed1c04734dd07f4dce0d8d615a05e52c5b5b235f6e7cf35554f97bc"
+    "operate.py": "a42e8435f8cec2b2ec86fd533c0add113ebe65c6dd2c2c12be7a63a5ab4e2d1b",
+    "test_operate.py": "7b2f031f7653dec3c08973acefcb4b2a2bc304835dc5461d636cea08335f5686",
+    "README.md": "434a1e19308e0428243d5b79e0322f17cfff3f6648667fccbf09361901b2adb3",
+    "tests.log": "52f3b3910283c5384cab545387f8c664cf00d0fe4cfb7c8d3beb65014712ffb1",
+    "pending-runtime-pins.json": "0c377500eed1c04734dd07f4dce0d8d615a05e52c5b5b235f6e7cf35554f97bc",
+    "pins.json": "cba2aa3afe9fd177d4dd2d44d378f94c89375f803b7d2f47ca7c7067988fcb04",
+    "actual-payload-validation.json": "fd11929be60115223272b532c2381e6bb6a242f8f89765600e51015fa004770e",
+    "runtime-revalidation.json": "7060fbda45a27b812e4250b2879c1492158439831a5f6686305707af6a25a9c7"
   },
   "lineage": "Successful recovery receipt only; original failed Stage A preserved",
-  "runtime_input_capture": "Actual frozen archive only; payload/report/source revision unresolved; operator unchanged and disabled"
+  "runtime_input_capture": "Actual runtime revalidated read-only; exact8file payload from5dbbecea validated; no dispatch"
 }

@@ -204,7 +204,8 @@ class RecoveryLineage(unittest.TestCase):
         self.assertEqual(op.recovered_handoff(receipt,failed),receipt['frozen_author'])
         self.assertEqual(json.loads(failed)['status'],'failed-inspect-no-retry')
         self.assertEqual(op.HANDOFF_OWNER,'818-search-author-startup-recovery-20261026-32c8d741-author-to-mac')
-        self.assertIsNone(op.REVIEWED_PINS_SHA256)
+        with patch.object(op, 'REVIEWED_PINS_SHA256', None):
+            self.assertIsNone(op.REVIEWED_PINS_SHA256)
 
     def test_old_failed_receipt_cannot_be_relabelled_success(self):
         receipt,failed=self.fixture();receipt['owner']='import968972-search818-stage-a-20261026-4b7e902d'

@@ -1,10 +1,11 @@
 # Stage B preparation: adopt measured #818 evidence and resume review
 
-**Not dispatchable.** `REVIEWED_PINS_SHA256 = None` rejects even the correct dispatch
-token before reading a pins file or runtime. A recovered author candidate is frozen; successful actual
-measurement/report adoption inputs remain pending. Root must complete the steps below, freeze exact future
-pins/operator hashes, and arrange separate independent review before enabling use.
-This folder contains no live pins and authorizes no production action.
+**Frozen for final independent review; no dispatch performed.** Actual runtime
+inputs, successful Mac artifacts and the report are pinned in `pins.json`. The
+operator now binds that exact pins digest and still requires explicit root
+dispatch. Independent final review and root authorization remain required. The
+previous disabled preparation gate remains covered by tests using a `None`
+fixture; no actual runtime fields were guessed.
 
 The one-off operator's interface is a reviewed pins file plus explicit dispatch.
 It adopts one report and one exact evidence directory, changes only saved
@@ -59,14 +60,15 @@ with exactly these keys:
 | `evidence_prefix` | Exact fresh directory including trailing slash |
 
 Commit only that immutable evidence/report through root's ordinary source workflow.
-The future pins must include exact `source_revision`, `files` path→SHA mapping,
+The final pins include exact `source_revision`, `files` path→SHA mapping,
 `evidence_prefix`, `candidate`, `lesson_tree`, `source_sha256`,
 `stage_a_receipt_sha256`, `stop_sha256`, `progress_sha256`, `ledger_sha256`,
 `policy` path→SHA mapping and `launcher_sha256`. Required runtime/policy paths are
 explicit in `REQUIRED_POLICY`; include other current policy pins as appropriate.
-Set no guessed candidate/receipt values. Pin the actual completed evidence commit,
-not moving main. Operator changes needed to set the reviewed pins digest also
-require exact independent review.
+The completed evidence/report commit is exactly
+`5dbbecea81eed51264af2abcc1ea312ac2d24c2e`. All eight payload files are read from
+that commit and hashed again. This final operator/pins pair requires independent
+review; it does not track moving main.
 
 ## Evidence and adoption guards
 
@@ -113,12 +115,16 @@ identity and default refusal before runtime access. The 10000-row synthetic
 fixture is **not** an actual candidate measurement or numerical acceptance claim.
 The real runner test intercepts `run_agent` before any real agent starts.
 
-No Pi mutation, source authoring, full-range execution, measurement report or
-candidate acceptance was performed. The successful recovered handoff receipt is archived; actual successful Mac
-evidence and its report remain pending. After they arrive, revalidate real artifact compatibility, freeze pins,
-complete independent operator review, and obtain root's separate exact dispatch.
+This preparation performed no Pi mutation, source authoring or candidate
+acceptance. Root completed the exact canonical Mac measurements and report.
+`actual-payload-validation.json` records successful validation of all10000 rows
+and isolated9809/9879/10000 from the fixed source commit. `runtime-revalidation.json`
+records read-only live confirmation of the stopped clean candidate, raw
+receipt/STOP/progress/ledger, policy/launcher, unchanged failed receipt and absence
+of checkout/runner processes at2026-10-25T20:09:14UTC. Final independent review and
+root's separate exact dispatch remain required.
 
-## Captured runtime inputs (still disabled)
+## Captured runtime inputs and final pins
 
 `pending-runtime-pins.json` records only actual frozen runtime identities from the
 successful recovery archive. Candidate `9277b8fb633c26904b03231d1127ed816baad6c4`,
@@ -127,5 +133,7 @@ launcher hash are captured and cross-checked. Its provenance paths identify the
 read-only source artifacts, including `policy-hashes.json` (committed bytes match)
 and `releases-frozen.json`. This is explicitly not a dispatch pins file: no
 `source_revision`, payload hashes, report or successful measurement is invented.
-Final payload binding and runtime revalidation remain required. The operator's
-`REVIEWED_PINS_SHA256` remains `None`.
+That pending capture is retained as historical preparation evidence. The actual
+final payload/report and source commit now appear in `pins.json`; they were
+validated without rerunning the expensive canonical survey. Dispatch revalidates
+all runtime pins again. The final review must approve these exact bytes.

@@ -29,9 +29,9 @@ REQUIRED_POLICY = {'scripts/import_leetcode_lane.py', 'scripts/leetcode_campaign
                    'scripts/register_leetcode_lesson.py', 'scripts/campaign-prompts/review.md',
                    'specs/leetcode-explainers.md', 'specs/leetcode-review-gates.md',
                    'specs/leetcode-rendered-state-contract.md'}
-# No candidate or measurement exists at preparation time. Exact independent
-# review must freeze future pins and this operator before enabling dispatch.
-REVIEWED_PINS_SHA256 = None
+# Exact candidate and successful measurement pins are frozen for final review.
+# Execution still requires the separate explicit reviewed root dispatch.
+REVIEWED_PINS_SHA256 = 'cba2aa3afe9fd177d4dd2d44d378f94c89375f803b7d2f47ca7c7067988fcb04'
 ARTIFACTS = {'canonical.py', 'environment.json', 'survey.jsonl', 'isolated.jsonl',
              'progress.json', 'summary.json', 'binding.json'}
 imp = None
