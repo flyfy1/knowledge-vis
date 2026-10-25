@@ -1,0 +1,82 @@
+{
+  "result": "pass",
+  "exhaustive": 7840,
+  "seeded": 350,
+  "seed": 878,
+  "boundaries": [
+    {
+      "input": [
+        1,
+        2,
+        3
+      ],
+      "raw": 2,
+      "residue": 2
+    },
+    {
+      "input": [
+        4,
+        2,
+        3
+      ],
+      "raw": 6,
+      "residue": 6
+    },
+    {
+      "input": [
+        1000000000,
+        40000,
+        40000
+      ],
+      "raw": 40000000000000,
+      "residue": 999720007
+    },
+    {
+      "input": [
+        1000000000,
+        39999,
+        40000
+      ],
+      "raw": 20000000000000,
+      "residue": 999860007
+    },
+    {
+      "input": [
+        1000000000,
+        2,
+        40000
+      ],
+      "raw": 2000000000,
+      "residue": 999999993
+    },
+    {
+      "input": [
+        1000000000,
+        39999,
+        39999
+      ],
+      "raw": 39999000000000,
+      "residue": 999720014
+    },
+    {
+      "input": [
+        1,
+        40000,
+        39999
+      ],
+      "raw": 39999,
+      "residue": 39999
+    },
+    {
+      "input": [
+        7,
+        3,
+        5
+      ],
+      "raw": 15,
+      "residue": 15
+    }
+  ],
+  "execution": "Actual Solution.nthMagicalNumber; no LeetCode submission performed",
+  "oracles": "Direct divisibility enumeration; distinct values within one LCM period"
+}
