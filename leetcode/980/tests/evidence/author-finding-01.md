@@ -1,0 +1,1 @@
+Author visual self-check finding (not independent review): v1 en-early.png at 390px shows selected default preset text wrapping/clipping inside native select. Runtime and numeric behavior passed, but the label must fit. Fix candidate v2 shortens preset labels while keeping their count and meaning; existing v1 evidence remains historical. No prior independent acceptance exists.
