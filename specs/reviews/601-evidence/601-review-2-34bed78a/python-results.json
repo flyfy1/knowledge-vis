@@ -1,0 +1,13 @@
+{
+  "kind": "author self-check",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "pandas": "3.1.0",
+  "canonicalCases": 2698,
+  "nullablePeopleExtension": "pass",
+  "mirror": "exact",
+  "officialLiteralExample": "exact DataFrame match, including date gap and sorted output",
+  "oracle": "maximal-run partition, independent of triple enumeration",
+  "exhaustive": "3^7 absent/99/100 states, shuffled physical row order",
+  "seed": 601,
+  "localizationKeys": 95
+}
