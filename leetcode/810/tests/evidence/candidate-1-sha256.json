@@ -1,0 +1,27 @@
+{
+  "candidate": "810-author-candidate-1",
+  "frozenAt": "2026-10-25T16:51:39.665131+00:00",
+  "baseCommit": "ebb5a2b3ec75400e7e06f85f7e5d6169a30b9ef9",
+  "scope": "Author self-check; independent review pending",
+  "files": {
+    "index.html": "c626a92936e6c3faee62dac35102e2829e60d0d64dbe03a9bf7e48e6ac56a6fc",
+    "app.js": "01d68b5b23b331b80604aa70afdec887c1158466b5e9cdc3f7cf2683b9c39ee5",
+    "copy.js": "d8d80a5803c1f944f206a152e11f41fe33054688b6e6400cbdb45f142a5d04d9",
+    "core.js": "b6ea5af0a730bd7755779b2098c36b0cbb38169e1acd1bcb982b493e3d65b214",
+    "style.css": "4754f40286ae83d6e5c387ba066f6f3f3419284135ade7e397ac7ba3814e6ae5",
+    "solution.py": "0f9231a5c6c82ec6e696730be6c16344e537b36e252306f93e588ed4dc03149b",
+    "python-code.js": "f520f790dc8155b983fad2a172873823f90a102744a21925bc94e8798f9d547b",
+    "lesson-entry.json": "3766ce6a15ac61f5ef07f85d6e43c5d964192e019e5f99a9540855464f34e2a3",
+    "BRIEF.md": "95314e1a2ca3e89b712748147e3da323b9c5dba398ef69af5ecba5562854a167",
+    "provenance/official.json": "dd372d57d4e131ac997c59e66d62021259e23c28b0d9454cf2e0e0409cca29ec",
+    "tests/test_solution.py": "479a4ef5a7b129636508736aada93c350b367b663ace739c843cf4fe12b1977e",
+    "tests/test_core.cjs": "a10f770a1d0489854f424841adaab282b805975097c5cd48020ffb8192dc40bd",
+    "tests/browser.cjs": "d9680bd46f53067faa50966539998922f0738eeb15da433b91a9e3d6fde8aeaf",
+    "tests/README.md": "ec323839db8cb103289764c60bb3f681479896a038634850fb825e64bc89d8cc",
+    "tests/iteration-notes.md": "cb6c457dcb96827a5efc75141c974312f9891139078d960ef5527ef63890b431"
+  },
+  "sharedFiles": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}

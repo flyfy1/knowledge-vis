@@ -1,0 +1,1 @@
+window.PYTHON_SOURCE = "class Solution:\n    def xorGame(self, nums: list[int]) -> bool:\n        total = 0\n        for value in nums:\n            total ^= value\n        return total == 0 or len(nums) % 2 == 0\n";
