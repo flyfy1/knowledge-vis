@@ -36,3 +36,25 @@ Author teaching walk: AA changes(0,1)→(1,2)→(3,4); R changes speed only. Pos
 Harness corrections (not runtime defects) are documented in tests/evidence/harness-notes.md. The baseline exposes product() with a local bilingual explanation. No arithmetic truncation or artificial position bound is used. Conservative exponential bounds are intentional; there is no claimed polynomial optimization. Snapshot storage is explicitly extra teaching memory.
 
 Real devices, screen-reader speech, public deployment, official judge time/memory acceptance, actual learner comprehension and independent teaching review remain unverified. Next action: a separate reviewer must cold-walk the frozen candidate and apply the six-dimension rubric before acceptance. Candidate hashes live in candidate.json. No historical acceptance record was altered.
+
+## 2026-10-26 resource request — unfinished follow-up
+
+**818-RESOURCE-R1 remains OPEN.** The preceding completion section describes the
+prior BFS candidate only. No revised submission or learner-facing resource fix
+has been frozen or independently accepted in this follow-up. The completeness
+argument for the requested smaller-distance recurrence and the requested isolated
+Mac resource measurements are missing. The host available here is Linux.
+
+Preservation checks passed: original core regression, actual Python/raw-command
+comparison for 1..25, and browser regression in both locales, including source
+transfers and existing interactions. The safe command
+`python3 -B scripts/register_leetcode_lesson.py 818 --validate-only` ran from the
+repository root and exited 0 with empty stdout/stderr. No metadata was changed.
+These results do not constitute validation of the unimplemented DP extension.
+
+Full finding mapping, exploratory alternatives, command receipts and separate
+preservation results: [resource-r1-investigation/README.md](tests/evidence/resource-r1-investigation/README.md).
+Next action: finish and examine the optimal-path completeness proof, implement
+the corresponding bilingual DP extension, collect the specified resource and
+regression evidence, and freeze a new candidate for a separate reviewer.
+The prior candidate manifest and all historical review evidence are preserved.
