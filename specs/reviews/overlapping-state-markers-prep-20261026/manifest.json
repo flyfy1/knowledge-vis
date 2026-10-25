@@ -1,0 +1,15 @@
+{
+  "status": "local preparation only; independent patch review and operational adoption pending",
+  "base_source_revision": "556280c2d98d89ae786ec3e0bd407a65f39424ff",
+  "allowed_target_paths": [
+    "specs/leetcode-rendered-state-contract.md"
+  ],
+  "base_sha256": "d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa",
+  "proposed_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+  "patch_sha256": "3133b56b6d7e0cd60ad5d3af13a26d3c264831ea428491fff3f4325c433f1605",
+  "proposal_sha256": "80b29506d901db2613a5631b10b5ed836604bd7e1f5229c4084b2e39961b9141",
+  "placement": "Two root-approved paragraphs appended to section 2, before section 3",
+  "adoption_boundary": "After Stage B and verified absence of active cross-policy author/fix/review lanes; retain frozen policy identities and historical results",
+  "runtime_changes": false,
+  "rubric_changes": false
+}
