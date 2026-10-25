@@ -1,0 +1,17 @@
+{"running": ["node", "/tmp/leetcode-679-select-full-chrome-probe-20261025.cjs"], "candidate": "c368c0b018d41763af8de9d6ac36a323900bb4a3"}
+[{"control":"#preset","sequence":["ArrowDown","Enter"],"steps":[{"key":"ArrowDown","value":"1"},{"key":"Enter","value":"1"}]},{"control":"#preset","sequence":["Space","ArrowDown","Enter"],"steps":[{"key":"Space","value":"1"},{"key":"ArrowDown","value":"1"},{"key":"Enter","value":"1"}]},{"control":"#preset","sequence":["ArrowDown","ArrowDown","Enter"],"steps":[{"key":"ArrowDown","value":"1"},{"key":"ArrowDown","value":"1"},{"key":"Enter","value":"1"}]},{"control":"#nativeControl","sequence":["ArrowDown","Enter"],"steps":[{"key":"ArrowDown","value":"1"},{"key":"Enter","value":"1"}]},{"control":"#nativeControl","sequence":["Space","ArrowDown","Enter"],"steps":[{"key":"Space","value":"1"},{"key":"ArrowDown","value":"1"},{"key":"Enter","value":"1"}]},{"control":"#nativeControl","sequence":["ArrowDown","ArrowDown","Enter"],"steps":[{"key":"ArrowDown","value":"1"},{"key":"ArrowDown","value":"1"},{"key":"Enter","value":"1"}]}]
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'1' !== '2'
+
+    at /private/tmp/leetcode-679-select-full-chrome-probe-20261025.cjs:11:54 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '1',
+  expected: '2',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+Recorded failure; continue independent supplemental check
+{"running": ["node", "/tmp/leetcode-679-native-supplement-20261025.cjs"], "candidate": "c368c0b018d41763af8de9d6ac36a323900bb4a3"}
+PASS native clipboard in both locales and actual browser zoom

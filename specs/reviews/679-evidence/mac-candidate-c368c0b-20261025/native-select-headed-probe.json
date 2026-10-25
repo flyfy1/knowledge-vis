@@ -1,0 +1,128 @@
+{
+  "platform": "darwin",
+  "browser": "151.0.7922.34",
+  "rows": [
+    {
+      "control": "#preset",
+      "sequence": [
+        "ArrowDown",
+        "Enter"
+      ],
+      "steps": [
+        {
+          "key": "ArrowDown",
+          "value": "1"
+        },
+        {
+          "key": "Enter",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "control": "#preset",
+      "sequence": [
+        "Space",
+        "ArrowDown",
+        "Enter"
+      ],
+      "steps": [
+        {
+          "key": "Space",
+          "value": "1"
+        },
+        {
+          "key": "ArrowDown",
+          "value": "1"
+        },
+        {
+          "key": "Enter",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "control": "#preset",
+      "sequence": [
+        "ArrowDown",
+        "ArrowDown",
+        "Enter"
+      ],
+      "steps": [
+        {
+          "key": "ArrowDown",
+          "value": "1"
+        },
+        {
+          "key": "ArrowDown",
+          "value": "1"
+        },
+        {
+          "key": "Enter",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "control": "#nativeControl",
+      "sequence": [
+        "ArrowDown",
+        "Enter"
+      ],
+      "steps": [
+        {
+          "key": "ArrowDown",
+          "value": "1"
+        },
+        {
+          "key": "Enter",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "control": "#nativeControl",
+      "sequence": [
+        "Space",
+        "ArrowDown",
+        "Enter"
+      ],
+      "steps": [
+        {
+          "key": "Space",
+          "value": "1"
+        },
+        {
+          "key": "ArrowDown",
+          "value": "1"
+        },
+        {
+          "key": "Enter",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "control": "#nativeControl",
+      "sequence": [
+        "ArrowDown",
+        "ArrowDown",
+        "Enter"
+      ],
+      "steps": [
+        {
+          "key": "ArrowDown",
+          "value": "1"
+        },
+        {
+          "key": "ArrowDown",
+          "value": "1"
+        },
+        {
+          "key": "Enter",
+          "value": "1"
+        }
+      ]
+    }
+  ]
+}

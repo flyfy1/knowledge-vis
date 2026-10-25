@@ -1,0 +1,209 @@
+{
+  "candidate": "c368c0b018d41763af8de9d6ac36a323900bb4a3",
+  "frozen_root": "/tmp/leetcode-679-frozen-c368c0b-20261025",
+  "hashes": {
+    "leetcode/.gitignore": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+    "leetcode/10/index.html": "332367fc143822d04b35435a1118c434d80ef1033f39ab744cc61a24467a5a66",
+    "leetcode/115/index.html": "4adf9943ba763a14ea0eb50a8710863abe2ab066ce627761443e9d81f6d729ee",
+    "leetcode/123/index.html": "1fa47e76e793e4e2c9a1b6d020c0c50afb603f6d75ee49bf105330cca0d2b106",
+    "leetcode/124/index.html": "c4cf03aaf64d101704ba7330f232c39b6d0bb88142bc972030ca93647ad2c1a5",
+    "leetcode/126/index.html": "3a3d8359c162740f4eb79c23c1a25f86a8b40e47ffbbb95837cc3eb6cc33238f",
+    "leetcode/127/index.html": "8443d325c68532e70d3491797276877f20b31fa817206c80fc22d21850363f5e",
+    "leetcode/132/index.html": "ed6069178f50f0fd24498c2653f2b9773fdffa3388d5b5eab6bd88b0c5c1a138",
+    "leetcode/135/index.html": "176ae6f9ffc0a9c7714ce57810d9303eabb9ac9736198591e0c6dc15e74337a5",
+    "leetcode/140/index.html": "13d08dca6cc6b4e786a5eda0b5f7b16db3294cbb425dc072e4c8ee714b24601d",
+    "leetcode/149/index.html": "8b57c2746e5a6b504d36afbc3221e97e0d459c5fddbf557040cc374f8b120e03",
+    "leetcode/154/index.html": "bc311d54599d47ede9d6c7e8d68b553e93e52d363f630b36579fa7c16b58a84f",
+    "leetcode/174/index.html": "c20d0be170c98c90e230e340fcc7dd273dcd0d22ab09768b589cdacdc1ed3302",
+    "leetcode/185/index.html": "ee381ef1f669862e444b21ddb25f9321f41334010bb0ddba00114fa9de194ed2",
+    "leetcode/188/index.html": "8398d51f36ef9368310de585cf78b5a47a7fe91f8b31db283a84e9bfa0d95c4c",
+    "leetcode/212/index.html": "6d7d3ca8b94a1f05a15ce646b872949f6cb0e7eb0d7cadee371ec3d49efe7cc0",
+    "leetcode/214/index.html": "42845588bf5e50f89bd5aba43fa5121230b2f1682607d0e52f4bc076f6939111",
+    "leetcode/218/index.html": "e46f2c961b2ef8d67e9b03a35f6ff790641348765e19923c49e014fd500af093",
+    "leetcode/220/index.html": "e4c903d531ea36a699935f1723add78883d29ec69d7ee5674bad20a87929a382",
+    "leetcode/224/index.html": "fec079c55b40f9b0595b5e5c432d16f3fc295baf9163882681001ad8d4a05f77",
+    "leetcode/23/index.html": "686a925f13e68e46c7be4f9072ff7aa11d37a463368fe79c3e7b25ecd60c71c6",
+    "leetcode/233/index.html": "642bc620aee4a6268364257cbc839af9bab53ede30e5c72c7135974b94d4a813",
+    "leetcode/239/index.html": "529af8ffc7f78a1844263769188a47b73ae4da8e01073d51c3654200fa5dc565",
+    "leetcode/25/index.html": "bca5f7c88b4f0bf4fcd4629773619962acbdc11262b8048cc51fe79f1f90cde5",
+    "leetcode/262/index.html": "18c89bb19a7ab609a8052ac13ee107f683841ef4a78003967f80fee0b66453d8",
+    "leetcode/273/index.html": "ba5d13227c6b32375ec4b2d1cb718cc05b7fbefb3554538de27a86897c09cf54",
+    "leetcode/282/index.html": "895ec4b1b8f12749e6ad97daa4cc2e05f7fbe3b22fec03aa335e24a3b646963e",
+    "leetcode/2916/index.html": "af7a77c919ab2d6a7e2fd365265937fc80e226200361b482c41366705d6e812f",
+    "leetcode/295/index.html": "0075ec5edd8af1f69737a936d8aa63617a8dd5531d862258f7c72c91774bab54",
+    "leetcode/297/index.html": "384e942f3877328f35d0df1bb170bc8575a1438173682da0dd7f83298aacc238",
+    "leetcode/30/index.html": "fba251e09ca7befe27359ae111701ff4a3e438dbf399cd7c7692cd05ea370b7f",
+    "leetcode/301/index.html": "e9748ce7e060382fa52788346bf7ed7d21c9e8988d7456a1b8a5a1d35e06b9f7",
+    "leetcode/312/index.html": "67c4e0c8be5e0d080a17958088cfc2ee45cab4fdae7692e7bacccae9550c299c",
+    "leetcode/315/index.html": "9f160d7bb47a243d0e8bbdfd4f3a097e3f8ed7a4101cc91c5e823bdf29b396c8",
+    "leetcode/32/index.html": "8fc6f3eb7ac35b3d009b43fb2c4a07b0f94285f7c985b37c6b6f82e3c9145a0c",
+    "leetcode/321/index.html": "c26799ea648056f86df4764e49206ed12a8f6a71cb6917fceab5b401da0e458e",
+    "leetcode/327/index.html": "beaf4c39928df6a6c27fe5e665ded16317b62f02b384d69f7981faf5f76799c2",
+    "leetcode/329/index.html": "82b08cb05098919e12ff602cd18867a0ba7341f302f47bcedcdc71e995c4421e",
+    "leetcode/330/index.html": "12a249d2eb467580ee8566664d3f0752941c1d6a9537ffe462a03b6c1bb04016",
+    "leetcode/332/index.html": "6d28e286ebc8618719b82d59091810522a47871f5b8dc95b5ee7a01d62745ebe",
+    "leetcode/335/index.html": "961e617af18f1049025b2695bab1fc997657a4815e71edac81a070bed9e22dac",
+    "leetcode/336/index.html": "6e67d8cc5ab136fe77144885cee4b4ca12030e117ea25bc4aa0f9d0e29344971",
+    "leetcode/352/index.html": "33a1edaa9cae82ba4aaffd58edad89be832df30d991932abb32eaedd57efbb47",
+    "leetcode/354/index.html": "43de4473ec27a602904275c5a764c2e02f594b7e724ad8938a5363a8c51ba06c",
+    "leetcode/363/index.html": "46307ecf5998be4cf36e08efdfcc9ceab5c59319daef38003d6dde67736e20d8",
+    "leetcode/37/index.html": "7f4d07d490eaf152e62148cbe079ffc361ff9123165d76c5d030157a77b6e957",
+    "leetcode/381/index.html": "2ecc6537fb9071034c667209314606cd530911ca262917eefe5ab5751f1a8afc",
+    "leetcode/391/index.html": "aa55a68f0ec41267bc393cc060d2604127996b210de117ba7b743cbc8dd00c0f",
+    "leetcode/4/index.html": "f45291209e6bb74e12fde60cdfe97e9571c5d84268f330fb082140ea0750e9ba",
+    "leetcode/403/index.html": "6e936a861a5d71c28af0d60c66132095f5027a0cf1d637624fc63e6b3f1fd54b",
+    "leetcode/407/index.html": "bb025d801f93c026e560cb1cd34152cb6544d1e8a9193fc6822de26a6d472a0c",
+    "leetcode/41/index.html": "1b10a05385a4b3962c0eaaa890287216d6308ea5994e2b76054535a2b8cfc0cd",
+    "leetcode/410/index.html": "50d9b58dc253804a4c423dd9897f17d06e6e4c83306b3a8e351a3becfac4452b",
+    "leetcode/42/index.html": "b23b8735477b6732966ebba7a56be1a97d2ad13e27809af7235dc8843bbf783d",
+    "leetcode/420/index.html": "26f84db4d433adc102b65453ac7e4107d707b533a01c9b9a95e82b0f1b2efc2f",
+    "leetcode/432/index.html": "bce13c008d4f0782f3647ce04113f9999cbe91ff33ae9742f1e00ce519458ddb",
+    "leetcode/44/index.html": "08040a7f7ec32284ee4ae35a11c98b71ea17e783a34078986d0db02c494375ed",
+    "leetcode/440/index.html": "bd60dbba62a37e940172a1e30410f056d64ec9cbfc99c9df7d0a7b2c8a82236b",
+    "leetcode/446/index.html": "131e1e742dc3bf577d126d214d909444a4153bb10dde8411c0eb3ddb5c3cd0f1",
+    "leetcode/458/index.html": "50f98a19b9720f6cb94e6aa71cb37e10a8c3a4b68f7a60f339a06c77d4146332",
+    "leetcode/460/index.html": "00004cd27fcc40f36740114c8a86ce8cf98af0441ebce475fb674b95792b07eb",
+    "leetcode/466/index.html": "31185b287a56da847b5c8e0fdb86ca558efea1be4e64464b708579117628a904",
+    "leetcode/472/index.html": "accd71d23c2c0d683e3346856fbfdf34dedc969e0f6667bda4a52941bb96b490",
+    "leetcode/479/index.html": "7ce853d274242173e77b5d14113de16f2e821dd51c866f14055399b7ac9e3d40",
+    "leetcode/480/index.html": "7ec8cffbffd5e4b8e5e5013bd3c2ce20b84a5faf4ac1e1ab18450806b44d963f",
+    "leetcode/483/index.html": "a1458af4e0d2b72248d04f566a1b4572c4baf22b3d0f486121ea2c97ab5dd255",
+    "leetcode/488/index.html": "2f003253edf6e5f4421ee9d206454ae09ecfe5415602bc28478d63551813f25a",
+    "leetcode/493/index.html": "bae3d061ca4fd70d4e269eb27ed60100a001dd752131cdd4d0bc1748fb7c1494",
+    "leetcode/502/index.html": "26af3e912cbfd4160e37d86acbd04ca80ad94426e4042a3f4efe703d6e486f4b",
+    "leetcode/51/index.html": "93615703c08334e2afd8590a1fd8677b598e22eb339c56e3b6a7c7bda8da8c0b",
+    "leetcode/514/index.html": "ca3648ac1d7f5cdae96334905709a496e435d93d7f6c416def796d35362820ba",
+    "leetcode/517/index.html": "fc2d058d88b8104ecd289653d22e200f8aa043e7652cd8b20ff88eea04750911",
+    "leetcode/52/index.html": "d523b9f5651ae93984c57f59e71921a654d931e8dcb612dfbfb9e9ba6a1c2e2f",
+    "leetcode/546/index.html": "ad460c98f0768803664c0c8b3c28874494aaba61f95bf95c7078c6704393f473",
+    "leetcode/552/index.html": "8056bb47b487e42f1d85315b460fcb69055258343a8f0f1f80c25a8962750cdf",
+    "leetcode/564/index.html": "ea0bdcd0669ad1dcdd4d2bdd7717abd034c09c3b321452c9dd74e5ac9887b34b",
+    "leetcode/587/index.html": "600562e848373e6924839a19e1029b096ca5a8a71d5cf42ef116fbb778f27e1f",
+    "leetcode/591/index.html": "8017ceea765753296d8e0417cda12db964967190fc8ec62cae963f7d5e745a0b",
+    "leetcode/60/index.html": "6cf8ae119dcedebbbb1d39b74b701c367c107dfb69322a1d244e70549dc42baa",
+    "leetcode/600/index.html": "b0323a4c7eb96c61b7584abb1c065550e047dea7afad962c5ea839ba1f0d5f9f",
+    "leetcode/601/index.html": "e641cba0a9e6841420762e50b32604cfc7a2184db8c8c32bf5f8c857c02c6d4b",
+    "leetcode/629/index.html": "a335675465a26fb4d98d502157b74a3dbb7da0d8b11442215a797d24ccb62b38",
+    "leetcode/630/index.html": "39bf07f0da1a1b0d2d80c8636732038883f076b7a1cce0528ba2457ebd856685",
+    "leetcode/632/index.html": "9ce6e9cf8cd8da5913213b036e7d7fa9d12d39003092c201d20034a659082fae",
+    "leetcode/639/index.html": "274ba8f7101b3299e34c6410d6fe5ce8f668981126ff0bbd59cb092723f640d2",
+    "leetcode/65/index.html": "1a93f07e837afcdc8b188b194a1ca22d182577eb48347108bfa1a6ede896c29b",
+    "leetcode/664/index.html": "188fcde6d750fb65c8ac4029fde65c01ed8d26ba9c6dbaf4904683c7b33f462a",
+    "leetcode/668/index.html": "c877b645547d5d8d6a1a5beb5ff9f18d202981ba63d107943c4556e4272aea31",
+    "leetcode/679/BRIEF.md": "cf81d853772d1f04d65ac95d39317f104e8e99128b942152d00805beee25f8df",
+    "leetcode/679/app.js": "3126ee82fe70e6ffec607622b142759a780f7088e50b3109ddce2476131a8425",
+    "leetcode/679/candidate-sha256.json": "43611bf216f32d807f30dc657632bbd6d45cc537e62381b666c00495f948e06a",
+    "leetcode/679/copy.js": "0a55ac0016da2d11b223f139beb0f8c958dd0701663f9f257da351b884a288e6",
+    "leetcode/679/core.js": "7c840e142e867cf48fed959039513eaaadf71eb7f400bca5c6f3c32bf90b1d48",
+    "leetcode/679/index.html": "9f9b03e97a6555b7ce655c640841039cdc1b6b1717db11e03ea65c1d09118022",
+    "leetcode/679/lesson-entry.json": "e674064be441daf66c0550f861e4b72947d54e3db193d146769082598948316b",
+    "leetcode/679/provenance/official.json": "e7c1cbc840f64278161c9060bb322b08500e168f833b7f22e532f6a7f51f9529",
+    "leetcode/679/python-code.js": "46a64b77b26e902ed11197d1b7299054a08824f942e48302fe6809574d23df95",
+    "leetcode/679/solution.py": "53ee8883ad3f38573f124b67834e57bbbdd7a066fd7b686dc657950f142b53c8",
+    "leetcode/679/style.css": "d5f09641e83947da211a57cbee7f9b80fb5547470fd94eb8fe4715970f816c47",
+    "leetcode/679/tests/README.md": "c87c03247ea4235152a1466df21aef7f3aee3d1da4a75816031be48bc0bd8f1b",
+    "leetcode/679/tests/SELF-CHECK.md": "8a13a4f8864cfae6c3dffd383b14ce941cbca0b920fc130101d144155e7c7b65",
+    "leetcode/679/tests/browser.cjs": "508891814bb3639710ed5d2f2ca3dbb6312c30cc0e8bfeefa6958460a2b2db89",
+    "leetcode/679/tests/evidence/browser-results.json": "1e475284698f7c824be7f64b9c29ed8910b697b37e2103596ffacdad9ab76b5b",
+    "leetcode/679/tests/evidence/core-results.json": "218ab2302d7296112e870c3010c39bd334305b65b2332b3780c41d5aae97de6a",
+    "leetcode/679/tests/evidence/en-1440-stage.png": "5f7375c3858541b52b26f3ff5a2e79c0d754f872d9ac1b4a4724e2d285443564",
+    "leetcode/679/tests/evidence/en-1440.png": "f5ee932886c369a75bd61107d2e45a77736c55fde4f47d1d44c02ff46ac48b7c",
+    "leetcode/679/tests/evidence/en-320-stage.png": "5ad4c2e5c1c9b6616c892a6ec4e5722fad46e021f14d05129fe76355badbaea7",
+    "leetcode/679/tests/evidence/en-320.png": "3b83767d7c92a2e8d7d548d3c253fb54890a33cf0df6c94a31a75e5ee5b51512",
+    "leetcode/679/tests/evidence/en-390-stage.png": "2f21e3551e1983fd3612374f943c4fb36dfe62d343c242b77ad3d385a7039c08",
+    "leetcode/679/tests/evidence/en-390.png": "6088ad280844339540db033c757678daa2e6146bdb24b9b5e11005000151fd31",
+    "leetcode/679/tests/evidence/en-736-stage.png": "560d5eca04debaa7de699529b8dc4c9a797fdff9ec29a04335641a1524b27237",
+    "leetcode/679/tests/evidence/en-736.png": "b18280ef298cb3f396ba8eb1539da4202109054b746e550d0c3144c1f602649b",
+    "leetcode/679/tests/evidence/en-header-inspect.png": "c9b7a3cd1171b23db3b2dcdff2bf377daf1075c50b29e13f82fc4126845374a9",
+    "leetcode/679/tests/evidence/en-zoom200-stage.png": "e4d1f0f7993318fe440dd4b3a41743bea0f783e61d317f928d7fd1d257f8293a",
+    "leetcode/679/tests/evidence/en-zoom200-viewport.png": "23c7318afa7a2364f5dfbd9bb7d31770afcd73d7380674adef5c98776c0804b9",
+    "leetcode/679/tests/evidence/en-zoom200.png": "e923b9aac5eb060b9e4167e1b7ca1e7b7cbf23fffb93fc58d266964f5fbc03d3",
+    "leetcode/679/tests/evidence/preflight.txt": "2452a4e73bb2d5d0271320d7cbb50ff323e8a4c02d147ac71d81b73f23432d98",
+    "leetcode/679/tests/evidence/solution-results.json": "9b1dfca98ac4a16c2e64591bab9e90ac96113606e78b772dbf77725a97643304",
+    "leetcode/679/tests/evidence/zh-1440-stage.png": "aa4f7f432fce12a53acd1b9f919a5105eb4aa7d69832fc5b2291e2e97100168d",
+    "leetcode/679/tests/evidence/zh-1440.png": "fd61cbfdbcea84b709db5f72ffc1d5f59690c383e47162425cbaa410648f6c50",
+    "leetcode/679/tests/evidence/zh-320-stage.png": "05c28a4916fedbf55bb5f33ddb78829997c8fa970e17fc25c640579cf2bbcad1",
+    "leetcode/679/tests/evidence/zh-320.png": "3d0beaf3042a5920cd7197b0c92631508f12e636b4fbd905b0f4c64731431ebe",
+    "leetcode/679/tests/evidence/zh-390-stage.png": "825e618169ddd0b8cf77958ffe2f38423ba72bbe8e8ae11275fe82434a8ffc3e",
+    "leetcode/679/tests/evidence/zh-390.png": "a697741c09553ff5a029927bbf008f40b8a6c2c235f4eb4eeeeadab8c9d0eac2",
+    "leetcode/679/tests/evidence/zh-736-stage.png": "38f1c4d204093cfc41c799432ed2ee54d5b9cc91de4f372e01ce86a39484a61a",
+    "leetcode/679/tests/evidence/zh-736.png": "d7c6e4f6d08d7ab916c014f367d5350f294dfb2fdbf0579a9aaed83f2d416100",
+    "leetcode/679/tests/evidence/zh-header-inspect.png": "150af13b431738dee1f078763f1966dc7c6139f03d5460e4961fe8d30dfd9d5f",
+    "leetcode/679/tests/evidence/zh-zoom200-stage.png": "af7a8302c40e3b35ae730e756f80591f9f633667bc82c7fe31b79b061936afbc",
+    "leetcode/679/tests/evidence/zh-zoom200-viewport.png": "5452124a741edde43b4b7cf98ab47a173332a2448dd634b24700228d8b821ea8",
+    "leetcode/679/tests/evidence/zh-zoom200.png": "00ada36a720e60e81e316f76b52b7ae6b20863a411fcc42011593dcd56493a0a",
+    "leetcode/679/tests/test_core.cjs": "77873c9c802d55b493ee9d5743348f083a09d4677b3433942231d76350c4f09b",
+    "leetcode/679/tests/test_solution.py": "4c4f4819e3fb9f5442177094706324ded8a5f6319e8adf1f0144db800b6a53f5",
+    "leetcode/68/index.html": "4a1926046e4ddb4513219e9b122f1d7ea3dbf05f650cfbb824b231dc91471c69",
+    "leetcode/76/index.html": "193fd90f1866d85a0c7f4994aeaa24597ace595aa832430d849826d599b3e15f",
+    "leetcode/84/index.html": "5d0a10c4a5a149ca42de0b9ba900287c4f51925789e4e99dc39cc5e6c5620f1d",
+    "leetcode/85/index.html": "558a6c9303d0f6347e43cc0755901b3b2a7477410b4a02a5ba4cefdc391b26e6",
+    "leetcode/87/index.html": "412103c2d0069105038c7bfdd4f15b28dcc5471eb91a9cc0213dd30273261b73",
+    "leetcode/COLLECTION-BRIEF.md": "69e421f1a4f640b9cfb12a3ba0769b0ec5f0c69d9ad63547480eef96d2ab48f0",
+    "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7",
+    "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/index.html": "7b13c14125e52caf063009aa1c9b81fe759aae02107d0c09e52548a3fa971251",
+    "leetcode/problems.config.js": "e27dff8fd6e4a0df5a6859a2befbcdd300b9ddfca8a3e2ea92085a6fc901884f",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "leetcode/679/tests/test_solution.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "node",
+        "leetcode/679/tests/test_core.cjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "node",
+        "leetcode/679/tests/browser.cjs"
+      ],
+      "exit_code": 1
+    }
+  ],
+  "browser_executable": "/Users/songyy/Library/Caches/ms-playwright/chromium-1234/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+  "supplement_commands": [
+    {
+      "argv": [
+        "node",
+        "/tmp/leetcode-679-select-probe-20261025.cjs"
+      ],
+      "exit_code": 1
+    }
+  ],
+  "full_chrome_probe_and_native_commands": [
+    {
+      "argv": [
+        "node",
+        "/tmp/leetcode-679-select-full-chrome-probe-20261025.cjs"
+      ],
+      "exit_code": 1
+    },
+    {
+      "argv": [
+        "node",
+        "/tmp/leetcode-679-native-supplement-20261025.cjs"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "headed_probe_commands": [
+    {
+      "argv": [
+        "node",
+        "/tmp/leetcode-679-select-headed-probe-20261025.cjs"
+      ],
+      "exit_code": 0
+    }
+  ]
+}
