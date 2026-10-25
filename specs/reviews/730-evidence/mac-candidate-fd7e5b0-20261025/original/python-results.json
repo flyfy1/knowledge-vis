@@ -1,0 +1,30 @@
+{
+  "kind": "author self-check",
+  "oracle_cases": 2054,
+  "official_examples": [
+    6,
+    104860361
+  ],
+  "max_cases": [
+    {
+      "length": 1000,
+      "prefix": "aaaaaaaaaaaaaaaa",
+      "actual": 1000,
+      "independent": 1000
+    },
+    {
+      "length": 1000,
+      "prefix": "abcdabcdabcdabcd",
+      "actual": 108153352,
+      "independent": 108153352
+    },
+    {
+      "length": 1000,
+      "prefix": "bbabdcdaacccaacb",
+      "actual": 559867626,
+      "independent": 559867626
+    }
+  ],
+  "source_parity": true,
+  "elapsed_seconds": 0.695
+}
