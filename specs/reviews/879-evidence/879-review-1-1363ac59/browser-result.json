@@ -1,0 +1,299 @@
+{
+  "result": "pass",
+  "browser": "156.0.8078.4",
+  "platform": "linux",
+  "semantic": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "endpoint": "Processed 2/2 crimes; qualifying subsets of this prefix = 2 (only the final frame is the full answer).",
+      "operation": "Just processed index 1: members g=2, profit h=3. Each line below reads the old table; skipping keeps its original cell, and all contributions write to the new table.",
+      "moves": "Old (0,0) has 1: skip keeps it; take adds 1 to (2,3).Old (2,2) has 1: skip keeps it; take adds 1 to (4,3).",
+      "formula": "Skip: nxt[u][p] += dp[u][p]. Take (if u+g ≤ n): nxt[u+g][min(P,p+h)] += dp[u][p]. Here g and h are the current crime’s member cost and profit."
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "endpoint": "Processed 3/3 crimes; qualifying subsets of this prefix = 7 (only the final frame is the full answer).",
+      "operation": "Just processed index 2: members g=5, profit h=8. Each line below reads the old table; skipping keeps its original cell, and all contributions write to the new table.",
+      "moves": "Old (0,0) has 1: skip keeps it; take adds 1 to (5,5).Old (2,5) has 1: skip keeps it; take adds 1 to (7,5).Old (3,5) has 1: skip keeps it; take adds 1 to (8,5).Old (5,5) has 1: skip keeps it; take adds 1 to (10,5).",
+      "formula": "Skip: nxt[u][p] += dp[u][p]. Take (if u+g ≤ n): nxt[u+g][min(P,p+h)] += dp[u][p]. Here g and h are the current crime’s member cost and profit."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "endpoint": "Processed 2/2 crimes; qualifying subsets of this prefix = 1 (only the final frame is the full answer).",
+      "operation": "Just processed index 1: members g=2, profit h=3. Each line below reads the old table; skipping keeps its original cell, and all contributions write to the new table.",
+      "moves": "Old (0,0) has 1: skip keeps it; take adds 1 to (2,3).Old (2,2) has 1: skip keeps it; take needs 4 members > n, rejected.",
+      "formula": "Skip: nxt[u][p] += dp[u][p]. Take (if u+g ≤ n): nxt[u+g][min(P,p+h)] += dp[u][p]. Here g and h are the current crime’s member cost and profit."
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "endpoint": "Processed 2/2 crimes; qualifying subsets of this prefix = 4 (only the final frame is the full answer).",
+      "operation": "Just processed index 1: members g=1, profit h=0. Each line below reads the old table; skipping keeps its original cell, and all contributions write to the new table.",
+      "moves": "Old (0,0) has 1: skip keeps it; take adds 1 to (1,0).Old (1,0) has 1: skip keeps it; take adds 1 to (2,0).",
+      "formula": "Skip: nxt[u][p] += dp[u][p]. Take (if u+g ≤ n): nxt[u+g][min(P,p+h)] += dp[u][p]. Here g and h are the current crime’s member cost and profit."
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "endpoint": "Processed 1/1 crimes; qualifying subsets of this prefix = 0 (only the final frame is the full answer).",
+      "operation": "Just processed index 0: members g=2, profit h=5. Each line below reads the old table; skipping keeps its original cell, and all contributions write to the new table.",
+      "moves": "Old (0,0) has 1: skip keeps it; take needs 2 members > n, rejected.",
+      "formula": "Skip: nxt[u][p] += dp[u][p]. Take (if u+g ≤ n): nxt[u+g][min(P,p+h)] += dp[u][p]. Here g and h are the current crime’s member cost and profit."
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "endpoint": "Processed 1/1 crimes; qualifying subsets of this prefix = 0 (only the final frame is the full answer).",
+      "operation": "Just processed index 0: members g=1, profit h=2. Each line below reads the old table; skipping keeps its original cell, and all contributions write to the new table.",
+      "moves": "Old (0,0) has 1: skip keeps it; take adds 1 to (1,2).",
+      "formula": "Skip: nxt[u][p] += dp[u][p]. Take (if u+g ≤ n): nxt[u+g][min(P,p+h)] += dp[u][p]. Here g and h are the current crime’s member cost and profit."
+    },
+    {
+      "locale": "en",
+      "choice": 0,
+      "feedback": "Compare the subsets with the counts. Answer: 5 — {0}, {1}, {0,1}, {0,2}, {1,2}. The qualifying column is dp[1][2]=2, dp[2][2]=1, dp[3][2]=2, totaling 5. Merged cells must add distinct subsets; {0,1,2} requires 4 members, exceeding n=3, so exclude it. The empty subset and {2} earn 0 and do not qualify."
+    },
+    {
+      "locale": "en",
+      "choice": 1,
+      "feedback": "Correct. Answer: 5 — {0}, {1}, {0,1}, {0,2}, {1,2}. The qualifying column is dp[1][2]=2, dp[2][2]=1, dp[3][2]=2, totaling 5. Merged cells must add distinct subsets; {0,1,2} requires 4 members, exceeding n=3, so exclude it. The empty subset and {2} earn 0 and do not qualify."
+    },
+    {
+      "locale": "en",
+      "choice": 2,
+      "feedback": "Compare the subsets with the counts. Answer: 5 — {0}, {1}, {0,1}, {0,2}, {1,2}. The qualifying column is dp[1][2]=2, dp[2][2]=1, dp[3][2]=2, totaling 5. Merged cells must add distinct subsets; {0,1,2} requires 4 members, exceeding n=3, so exclude it. The empty subset and {2} earn 0 and do not qualify."
+    },
+    {
+      "locale": "en",
+      "fallback": "Automatic copy is unavailable. The full source is selected; use your system copy shortcut.",
+      "nativeTransfer": "exact with verified fresh sentinel; Linux Control+C"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "endpoint": "已处理 2/2 项；当前前缀达标子集数 = 2（仅最后一帧是全题答案）。",
+      "operation": "刚处理下标 1：人数 g=2，利润 h=3。下列每行从旧表读取；“不选”均保留原位置，计数都写入新表。",
+      "moves": "旧 (0,0) 有 1 个：不选保留；选则给 (2,3) 加 1。旧 (2,2) 有 1 个：不选保留；选则给 (4,3) 加 1。",
+      "formula": "不选：nxt[u][p] += dp[u][p]；选（若 u+g ≤ n）：nxt[u+g][min(P,p+h)] += dp[u][p]。其中 g、h 是当前犯罪的人数和利润。"
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "endpoint": "已处理 3/3 项；当前前缀达标子集数 = 7（仅最后一帧是全题答案）。",
+      "operation": "刚处理下标 2：人数 g=5，利润 h=8。下列每行从旧表读取；“不选”均保留原位置，计数都写入新表。",
+      "moves": "旧 (0,0) 有 1 个：不选保留；选则给 (5,5) 加 1。旧 (2,5) 有 1 个：不选保留；选则给 (7,5) 加 1。旧 (3,5) 有 1 个：不选保留；选则给 (8,5) 加 1。旧 (5,5) 有 1 个：不选保留；选则给 (10,5) 加 1。",
+      "formula": "不选：nxt[u][p] += dp[u][p]；选（若 u+g ≤ n）：nxt[u+g][min(P,p+h)] += dp[u][p]。其中 g、h 是当前犯罪的人数和利润。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "endpoint": "已处理 2/2 项；当前前缀达标子集数 = 1（仅最后一帧是全题答案）。",
+      "operation": "刚处理下标 1：人数 g=2，利润 h=3。下列每行从旧表读取；“不选”均保留原位置，计数都写入新表。",
+      "moves": "旧 (0,0) 有 1 个：不选保留；选则给 (2,3) 加 1。旧 (2,2) 有 1 个：不选保留；选需 4 人 > n，拒绝。",
+      "formula": "不选：nxt[u][p] += dp[u][p]；选（若 u+g ≤ n）：nxt[u+g][min(P,p+h)] += dp[u][p]。其中 g、h 是当前犯罪的人数和利润。"
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "endpoint": "已处理 2/2 项；当前前缀达标子集数 = 4（仅最后一帧是全题答案）。",
+      "operation": "刚处理下标 1：人数 g=1，利润 h=0。下列每行从旧表读取；“不选”均保留原位置，计数都写入新表。",
+      "moves": "旧 (0,0) 有 1 个：不选保留；选则给 (1,0) 加 1。旧 (1,0) 有 1 个：不选保留；选则给 (2,0) 加 1。",
+      "formula": "不选：nxt[u][p] += dp[u][p]；选（若 u+g ≤ n）：nxt[u+g][min(P,p+h)] += dp[u][p]。其中 g、h 是当前犯罪的人数和利润。"
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "endpoint": "已处理 1/1 项；当前前缀达标子集数 = 0（仅最后一帧是全题答案）。",
+      "operation": "刚处理下标 0：人数 g=2，利润 h=5。下列每行从旧表读取；“不选”均保留原位置，计数都写入新表。",
+      "moves": "旧 (0,0) 有 1 个：不选保留；选需 2 人 > n，拒绝。",
+      "formula": "不选：nxt[u][p] += dp[u][p]；选（若 u+g ≤ n）：nxt[u+g][min(P,p+h)] += dp[u][p]。其中 g、h 是当前犯罪的人数和利润。"
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "endpoint": "已处理 1/1 项；当前前缀达标子集数 = 0（仅最后一帧是全题答案）。",
+      "operation": "刚处理下标 0：人数 g=1，利润 h=2。下列每行从旧表读取；“不选”均保留原位置，计数都写入新表。",
+      "moves": "旧 (0,0) 有 1 个：不选保留；选则给 (1,2) 加 1。",
+      "formula": "不选：nxt[u][p] += dp[u][p]；选（若 u+g ≤ n）：nxt[u+g][min(P,p+h)] += dp[u][p]。其中 g、h 是当前犯罪的人数和利润。"
+    },
+    {
+      "locale": "zh",
+      "choice": 0,
+      "feedback": "再对照子集与计数。 答案 5：{0}、{1}、{0,1}、{0,2}、{1,2}。最终达标列 dp[1][2]=2，dp[2][2]=1，dp[3][2]=2，总计 5。合并格仍须累加不同子集；{0,1,2} 需 4 人，超过 n=3，必须排除。空集与 {2} 的利润为 0，不达标。"
+    },
+    {
+      "locale": "zh",
+      "choice": 1,
+      "feedback": "正确。 答案 5：{0}、{1}、{0,1}、{0,2}、{1,2}。最终达标列 dp[1][2]=2，dp[2][2]=1，dp[3][2]=2，总计 5。合并格仍须累加不同子集；{0,1,2} 需 4 人，超过 n=3，必须排除。空集与 {2} 的利润为 0，不达标。"
+    },
+    {
+      "locale": "zh",
+      "choice": 2,
+      "feedback": "再对照子集与计数。 答案 5：{0}、{1}、{0,1}、{0,2}、{1,2}。最终达标列 dp[1][2]=2，dp[2][2]=1，dp[3][2]=2，总计 5。合并格仍须累加不同子集；{0,1,2} 需 4 人，超过 n=3，必须排除。空集与 {2} 的利润为 0，不达标。"
+    },
+    {
+      "locale": "zh",
+      "fallback": "自动复制不可用。源码已全选，请按系统复制快捷键。",
+      "nativeTransfer": "exact with verified fresh sentinel; Linux Control+C"
+    }
+  ],
+  "fit": [
+    {
+      "viewport": 320,
+      "locale": "en",
+      "width": 260,
+      "text": 134.11227416992188,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 210
+    },
+    {
+      "viewport": 320,
+      "locale": "zh",
+      "width": 260,
+      "text": 61.31211853027344,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 210
+    },
+    {
+      "viewport": 390,
+      "locale": "en",
+      "width": 330,
+      "text": 134.11227416992188,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 280
+    },
+    {
+      "viewport": 390,
+      "locale": "zh",
+      "width": 330,
+      "text": 61.31211853027344,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 280
+    },
+    {
+      "viewport": 736,
+      "locale": "en",
+      "width": 660,
+      "text": 134.11227416992188,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 610
+    },
+    {
+      "viewport": 736,
+      "locale": "zh",
+      "width": 660,
+      "text": 61.31211853027344,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 610
+    },
+    {
+      "viewport": 1440,
+      "locale": "en",
+      "width": 908,
+      "text": 134.11227416992188,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 858
+    },
+    {
+      "viewport": 1440,
+      "locale": "zh",
+      "width": 908,
+      "text": 61.31211853027344,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "available": 858
+    }
+  ],
+  "related": [
+    {
+      "locale": "en",
+      "label": "Regex matching: defining prefix states →",
+      "url": "http://127.0.0.1:18770/leetcode/10/#step2",
+      "excerpt": "03What changes in one operation?Fill row by row; each dependency is already known to the left or above. Row and column coordinates are prefix lengths, not character indices. T/F mean true/false, · means uncomputed; orange marks dependencies and cyan marks the current cell.Advance one cell at a time, especially the two-left and one-up dependencies of *. Rewind with the input fixed and locate the source of each result; earlier conclusions stay visible.\nExperiment input (changing restarts)Zero and repeated atomsFull match requiredDot plus starRepeat keeps its atom\n[\"aab\",\"c*a*b\"]\nRewind one operationExecute next operationRestart this experiment\nEvent positionEvent 0 / 23\nEmpty text matches an empty pattern. ε is an empty prefix; · means not computed.\nRows: text prefixes; columns: pattern prefixes. Cyan=current; orange border=dependency; T/F=true/false; ·=uncomputed.i \\ j0: ε1: c2: *3: a4: *5: b0: εT·····1: a······2: a······3: b······\nPrevious stateNo previous frame yet.\nAlgorithm state (variables and diagram indices)i0j0\n\nCorresponding Python operation (focused excerpt)dp[0][0] = True\nRecent operations (up to 6 retained)0: Empty text matches an empty pattern. ε is an empty prefix; · means not computed.\n"
+    },
+    {
+      "locale": "en",
+      "label": "Wildcard matching: another two-dimensional transition →",
+      "url": "http://127.0.0.1:18770/leetcode/44/#step2",
+      "excerpt": "03What changes in one operation?The view retains the full table to explain dependencies; Python stores two rows. Coordinates are prefix lengths, ε is empty, T/F mean true/false, and · means uncomputed. Empty text matches only all-star prefixes.Keep the default input and advance to event 16: inspect how left F and above T make the current star cell T, then rewind to compare. Switching to the empty-text preset restarts the experiment; observe that only all-star prefixes can be true in row zero.\nExperiment input (changing restarts)Variable-length starQuestion mark is not enoughEmpty text and repeated starsNonempty text, empty pattern\n[\"adceb\",\"*a*b\"]\nRewind one operationExecute next operationRestart this experiment\nEvent positionEvent 0 / 29\nEmpty text matches an empty pattern. ε is an empty prefix; · means not computed.\nRows: text prefixes; columns: pattern prefixes. Cyan=current; orange border=dependency; T/F=true/false; ·=uncomputed.i \\ j0: ε1: *2: a3: *4: b0: εT····1: a·····2: d·····3: c·····4: e·····5: b·····\nPrevious stateNo previous frame yet.\nAlgorithm state (variables and diagram indices)i0j0\n\nCorresponding Python operation (focused excerpt)dp[0][0] = True\nRecent operations (up to 6 retained)0: Empty text matches an empty pattern. ε is an empty prefix; · means not computed.\n"
+    },
+    {
+      "locale": "zh",
+      "label": "正则匹配：看前缀状态如何定义 →",
+      "url": "http://127.0.0.1:18770/leetcode/10/#step2",
+      "excerpt": "03一次操作改变什么？表按行计算；每个格的依赖都位于左边或上一行，已经确定。行列表示前缀长度，不是字符下标。T/F 表示真假，· 尚未计算；橙色边框标出依赖，青色标当前格。逐格计算，特别比较 * 列的左移两格与向上一格。保持输入不变并回退，看当前结果来自哪个已知格；表格保留此前所有结论。\n实验输入（切换会重启）零次与重复不能部分匹配点号加星号重复不能换字母\n[\"aab\",\"c*a*b\"]\n回退一次操作执行下一次操作重启当前实验\n事件位置事件 0 / 23\n空串匹配空模式。ε 表示空前缀；· 表示尚未计算。\n行：文本前缀；列：模式前缀。青色=当前；橙边=依赖；T/F=真假；·=待算。i \\ j0: ε1: c2: *3: a4: *5: b0: εT·····1: a······2: a······3: b······\n上一次状态还没有上一帧。\n算法状态（变量与图示索引）i0j0\n\n对应 Python 操作（局部展开）dp[0][0] = True\n最近的操作（保留最多 6 条）0: 空串匹配空模式。ε 表示空前缀；· 表示尚未计算。\n"
+    },
+    {
+      "locale": "zh",
+      "label": "通配符：比较另一种二维状态转移 →",
+      "url": "http://127.0.0.1:18770/leetcode/44/#step2",
+      "excerpt": "03一次操作改变什么？图为解释依赖保留完整表；Python 只保留两行。行列是前缀长度，ε 是空前缀；T/F 是真假，· 尚未计算。空文本只匹配完全由 * 组成的前缀。保持默认输入，逐格推进到事件 16，观察左格 F、上格 T 如何使当前 * 格为 T，再回退比较。切换空串预设会重启实验；观察第 0 行只有全星号前缀能为真。\n实验输入（切换会重启）任意长度星号问号仍需匹配剩余空串与多个星号非空文本，空模式\n[\"adceb\",\"*a*b\"]\n回退一次操作执行下一次操作重启当前实验\n事件位置事件 0 / 29\n空串匹配空模式。ε 表示空前缀；· 表示尚未计算。\n行：文本前缀；列：模式前缀。青色=当前；橙边=依赖；T/F=真假；·=待算。i \\ j0: ε1: *2: a3: *4: b0: εT····1: a·····2: d·····3: c·····4: e·····5: b·····\n上一次状态还没有上一帧。\n算法状态（变量与图示索引）i0j0\n\n对应 Python 操作（局部展开）dp[0][0] = True\n最近的操作（保留最多 6 条）0: 空串匹配空模式。ε 表示空前缀；· 表示尚未计算。\n"
+    }
+  ],
+  "contrasts": [
+    {
+      "fg": "e8edf4",
+      "bg": "161b22",
+      "ratio": 14.704584598678618
+    },
+    {
+      "fg": "9aa7b8",
+      "bg": "161b22",
+      "ratio": 7.078851579017443
+    },
+    {
+      "fg": "9aa7b8",
+      "bg": "1c2330",
+      "ratio": 6.449407898769069
+    },
+    {
+      "fg": "6ee7ff",
+      "bg": "161b22",
+      "ratio": 11.974898815275662
+    },
+    {
+      "fg": "ffb454",
+      "bg": "161b22",
+      "ratio": 9.809435643476732
+    },
+    {
+      "fg": "ffb454",
+      "bg": "1c2330",
+      "ratio": 8.937191437807625
+    },
+    {
+      "fg": "c9d4e2",
+      "bg": "0a0e14",
+      "ratio": 12.89261537833187
+    },
+    {
+      "fg": "e8edf4",
+      "bg": "090e16",
+      "ratio": 16.437295258072666
+    },
+    {
+      "fg": "0d1117",
+      "bg": "6ee7ff",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "errors": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "url": "http://127.0.0.1:18770/favicon.ico",
+      "page": "http://127.0.0.1:18770/leetcode/10/#step2"
+    }
+  ],
+  "badAssets": [],
+  "zoom": "Real Chromium CSS zoom=2 at 1440px (200% page magnification); narrow viewports tested separately. Native browser chrome zoom and physical devices unverified."
+}

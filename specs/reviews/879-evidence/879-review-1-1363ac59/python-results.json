@@ -1,0 +1,8 @@
+{
+  "result": "pass",
+  "cases": 10235,
+  "exhaustive": "m=1..3, g=1..3,h=0..2,n=1..3,P=0..3",
+  "seed": 879,
+  "maxima": "2^100 subsets; threshold 100; oversized choices; unreachable profit",
+  "copyKeys": 90
+}
