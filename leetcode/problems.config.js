@@ -3493,6 +3493,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(S n²) time; O(S n) space, S = n! / product of letter-count factorials"
   },
   {
+    "id": 857,
+    "title": {
+      "zh": "雇佣 K 名工人的最低成本",
+      "en": "Minimum Cost to Hire K Workers"
+    },
+    "desc": {
+      "zh": "从共同工资单价推导排序与最大堆。",
+      "en": "Derive a rate sweep and max-heap from proportional pay."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "堆",
+        "en": "Heap"
+      }
+    ],
+    "path": "857/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimum-cost-to-hire-k-workers/",
+    "language": "Python",
+    "complexity": "O(n log n + n log(k+1)) time; O(n+k) auxiliary space"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
