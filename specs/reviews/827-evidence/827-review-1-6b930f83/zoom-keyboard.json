@@ -1,0 +1,23 @@
+{
+  "kind": "author focus/zoom self-check",
+  "result": "pass",
+  "records": [
+    {
+      "locale": "en",
+      "left": 40,
+      "client": 126,
+      "scroll": 168,
+      "focus": true,
+      "rightCell": "2(0,2)"
+    },
+    {
+      "locale": "zh",
+      "left": 40,
+      "client": 126,
+      "scroll": 168,
+      "focus": true,
+      "rightCell": "2(0,2)"
+    }
+  ],
+  "scope": "CSS zoom 2; focused ArrowRight horizontal grid scroll"
+}

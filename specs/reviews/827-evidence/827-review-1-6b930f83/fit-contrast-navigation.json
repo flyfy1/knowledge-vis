@@ -1,0 +1,79 @@
+{
+  "calibration": {
+    "black": 0,
+    "white": 1,
+    "red": 0.2126,
+    "green": 0.7152,
+    "blue": 0.0722,
+    "blackWhite": 21,
+    "nearThreshold": 4.492948073111701
+  },
+  "select": [
+    {
+      "l": "en",
+      "value": "Diagonal islands · official 1",
+      "width": 284,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "textWidth": 199.3923797607422,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "l": "en",
+      "value": "Repeated island · official 2",
+      "width": 284,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "textWidth": 195.88839721679688,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "l": "zh",
+      "value": "对角双岛 · 官方例1",
+      "width": 284,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "textWidth": 133.76025390625,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "l": "zh",
+      "value": "重复邻岛 · 官方例2",
+      "width": 284,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "textWidth": 133.76025390625,
+      "padding": 30,
+      "arrowReserve": 24
+    }
+  ],
+  "navigation": [
+    {
+      "l": "en",
+      "label": "State exploration: visit Frog Jump",
+      "url": "../403/#step2",
+      "target": "Accumulate possible arrival lengths\n\nHow can we avoid enumerating routes without losing a possible crossing? R[x] is the set of possible previous jump lengths on reaching coordinate x; a set merges duplicate lengths. Start with R[0]={0}. This artificial 0 is not a real jump: only 1 among candidates −1, 0, 1 is positive, enforcing the required first hop.\n\nA separate algorithm simulation, not execution of the Python below. Cards are ordered by coordinate; spacing does not represent river distance. Each shows x and the discovered R[x]; ∅ means no arrival discovered yet. The orange border marks the source just processed. Changing a preset resets this simulation. Each “Process next state” checks all three candidates for one (x,k), retaining discovered sets and operation history.\n\nKeep the defau"
+    },
+    {
+      "l": "en",
+      "label": "Queue traversal: visit Sliding Puzzle",
+      "url": "../773/#step2",
+      "target": "03\n\nSearch by layers\n\nHow can the first encounter with the goal prove the fewest moves? Breadth-first search (BFS) explores one move count at a time. The frontier contains every newly discovered state at distance d; seen is the set of all discovered states. The start is layer 0 because no move has been made.\n\nKeep 123405: 0 occupies position 4 (zero-based, row-major), so it can swap only with positions 1, 3, 5. This gives 103425, 123045, 123450, each reachable in 1 move. The last is the goal and layer 0 was not, so the answer is 1. Later, when 103425 generates 123405, seen rejects it: that board was already found at layer 0, and returning cannot improve its distance.\n\nThis yields the invariant: on entering layer d, the frontier is exactly the states whose shortest distance is d, and seen i"
+    },
+    {
+      "l": "zh",
+      "label": "连通遍历：查看青蛙跳河中的状态探索",
+      "url": "../403/#step2",
+      "target": "让可能的跳长逐步累积\n\n这一步要回答：如何不枚举路线，又不丢掉能过河的可能？R[x] 是到达坐标 x 时可能的上一跳长度集合，集合会自动合并重复长度。初始只放 R[0]={0}：这个人为的 0 不是实际跳跃；三个候选 −1、0、1 中只有 1 为正，恰好强制第一跳为 1。\n\n独立的算法模拟，不是运行下方 Python。卡片按坐标排序、间距不代表河面距离；每卡显示坐标 x 和已发现的 R[x]，∅ 表示尚未发现到达方式。橙色边框标明刚处理的来源。选择预设会重置此模拟；每次“处理下一状态”检查一个 (x,k) 的全部三个候选，所有已发现集合及操作记录保留。\n\n保持默认预设，前进到处理 (3,2)。观察 R[3] 已有 {1,2}，而 R[6] 从 ∅ 变成 {3}；再后退，确认这次新增消失。来源状态不是青蛙唯一的实际位置，而是正在展开的一种可能。\n\n石头预设（更换重置模拟）\n两种到达：0,1,2,3,6\n官方例 1 · 可过河\n官方例 2 · 不可过河\n首跳缺石：0,2\n最小输入：0,1\n逐次加速：0,1,3,6,10,15\n后退一个状态\n处理下一状态\n重置此模拟\n处理至结束\n\n初始：仅有 (0,0)。已处理 0 / 6 个状态；末石是否可达尚未判定。\n\n坐标 x=0\n已发现 R[x]\n{0}\n坐标 x=1\n已发现 R[x]\n∅\n坐标 x=2\n已发现 R[x]\n∅\n坐标 x=3\n已发现 R[x]\n∅\n坐标 x=6\n已发现 R[x]\n∅\n\n尚未结束；当前末石集合为 ∅。非空已经证明能到达；空集合还不能证明不能到达。\n\n累积操作记录\n\n为什么这些集合可靠？不变式（每步都保持为真的陈述）是：R[x] 中每个 k 都有合法路线作证；处理完坐标小于 x 的全部石头后，R[x] 恰好含有所有合法到达跳长。初始 (0,0) 正确。每次添加只来自已证实的 (x,k)，且长度为正、符合相邻跳长规"
+    },
+    {
+      "l": "zh",
+      "label": "队列遍历：查看滑动谜题中的分层搜索",
+      "url": "../773/#step2",
+      "target": "03\n\n逐层搜索\n\n这一步要回答：怎样知道第一次遇到目标就是最少步数？广度优先搜索（BFS）按步数一层层找。前沿是“刚发现、距离同为 d 步”的所有状态；seen 是已经发现的状态集合。起点在第 0 层，因为尚未移动。\n\n仍看 123405：0 在位置 4（从 0 开始按行编号），只能换位置 1、3、5，于是得到 103425、123045、123450。这三块棋盘都是 1 步可达。123450 已是目标，且第 0 层不是目标，所以答案是 1。下一次从 103425 生成 123405 时，seen 会拒绝它：它早在第 0 层就出现过，绕回去不会让路更短。\n\n由此得到不变量：进入第 d 层时，前沿恰好包含最短距离为 d 的状态，seen 恰好包含距离不超过 d 的状态。扩展前沿的一条边只会得到距离至多 d+1 的状态；未见过的状态不可能距离 ≤d，否则早已发现。因此新状态的距离恰为 d+1，发现时立即加入 seen，防止同层重复。任何 d+1 步的路径，其倒数第二个状态距离至多 d，所以新一层也不会漏掉状态。所有边都代表 1 次移动，此证明才成立。\n\n单词接龙 II：按层保留最短路径 →\n\n先用“一步到达”走到末尾，再选“五步到达”，逐层前进，查看保留的层记录。每帧显示进入该层时的全部前沿；候选账本展示上一层第一个状态的扩展，其余状态也已完整扩展。切换预设会重启此搜索。\n\n搜索预设（更换即重启）\n一步到达 · 123405\n五步到达 · 412503\n无法到达 · 123540\n已完成 · 123450\n换一个起点 · 012453\n\n教学模拟：JavaScript 按完整层生成快照，并非执行下面的 Python。Python 用队列逐个取出状态，可能在一层中途返回；最少步数相同。未截断任何层或前沿。\n\n一步到达 · 123405\n\n回到上一层\n生成下一层\n重置\n跳到搜索结"
+    }
+  ]
+}

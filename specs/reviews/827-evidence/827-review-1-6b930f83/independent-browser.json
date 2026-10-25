@@ -1,0 +1,174 @@
+{
+  "binding": [
+    {
+      "file": "index.html",
+      "sha256": "b290c06eda8ed3f55d675dde4eaec24de34c586947d47f26d7e6d920997b2512"
+    },
+    {
+      "file": "app.js",
+      "sha256": "08a015ea97a5136796fd1c500bc710a16f22ffd4780ee16181659eadbc6aeeac"
+    },
+    {
+      "file": "core.js",
+      "sha256": "9300580b1b55e5641f3042b13cc3623f5712bd37ea2ffb378fdb24e0fea5da62"
+    },
+    {
+      "file": "copy.js",
+      "sha256": "ee102d269e63c9f1c4a55e56e8fb56500eecb54b3d9d76d6702dda3215f6c6dd"
+    },
+    {
+      "file": "python-code.js",
+      "sha256": "563bb6070cc80a9fc0b3e0b7755e2eff795d6b63a5a7594ef1bc5b4738eef562"
+    },
+    {
+      "file": "solution.py",
+      "sha256": "a39448aeb82148cbebe625063d8d3921827c333ffa36bc223e0fb0d59708691b"
+    },
+    {
+      "file": "style.css",
+      "sha256": "54b807f52df8534a16a4ada86b89f7b7bfd037bcca41515889b6adac8ab5713b"
+    },
+    {
+      "file": "../common.js",
+      "sha256": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b"
+    },
+    {
+      "file": "../style.css",
+      "sha256": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+    }
+  ],
+  "records": [
+    {
+      "l": "en",
+      "preset": 0,
+      "expected": 3,
+      "read": "Operation 5/5 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 3 cells"
+    },
+    {
+      "l": "en",
+      "preset": 1,
+      "expected": 4,
+      "read": "Operation 3/3 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 4 cells"
+    },
+    {
+      "l": "en",
+      "preset": 2,
+      "expected": 4,
+      "read": "Operation 2/2 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 4 cells"
+    },
+    {
+      "l": "en",
+      "preset": 3,
+      "expected": 1,
+      "read": "Operation 5/5 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 1 cells"
+    },
+    {
+      "l": "en",
+      "preset": 4,
+      "expected": 9,
+      "read": "Operation 3/3 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 9 cells"
+    },
+    {
+      "l": "en",
+      "preset": 5,
+      "expected": 4,
+      "read": "Operation 8/8 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 4 cells"
+    },
+    {
+      "l": "en",
+      "preset": 6,
+      "expected": 1,
+      "read": "Operation 2/2 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 1 cells"
+    },
+    {
+      "l": "en",
+      "preset": 7,
+      "expected": 1,
+      "read": "Operation 2/2 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 1 cells"
+    },
+    {
+      "l": "zh",
+      "preset": 0,
+      "expected": 3,
+      "read": "操作 5/5 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 3 格"
+    },
+    {
+      "l": "zh",
+      "preset": 1,
+      "expected": 4,
+      "read": "操作 3/3 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 4 格"
+    },
+    {
+      "l": "zh",
+      "preset": 2,
+      "expected": 4,
+      "read": "操作 2/2 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 4 格"
+    },
+    {
+      "l": "zh",
+      "preset": 3,
+      "expected": 1,
+      "read": "操作 5/5 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 1 格"
+    },
+    {
+      "l": "zh",
+      "preset": 4,
+      "expected": 9,
+      "read": "操作 3/3 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 9 格"
+    },
+    {
+      "l": "zh",
+      "preset": 5,
+      "expected": 4,
+      "read": "操作 8/8 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 4 格"
+    },
+    {
+      "l": "zh",
+      "preset": 6,
+      "expected": 1,
+      "read": "操作 2/2 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 1 格"
+    },
+    {
+      "l": "zh",
+      "preset": 7,
+      "expected": 1,
+      "read": "操作 2/2 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 1 格"
+    }
+  ],
+  "roundtrip": [
+    {
+      "l": "zh",
+      "h1": "#827 · 最大人工岛",
+      "title": "#827 最大人工岛",
+      "frame": "操作 2/3 · 已测试水格 (1,1)，候选面积 4 · best（已编号岛及已测候选最大值）= 4 格",
+      "derive": "对一个水格 z，seen 是它四个方向中不同的陆地编号集合。新岛面积 A(z)=1+Σ area[k]，k∈seen。集合会把重复编号合并。邻接同岛两次不会创造新陆地；不接触 z 的岛也无法经唯一的新陆格进入这个岛。",
+      "ledger": "(1,1) 邻格 ID [2,2] → 去重 [2]：1 + 3 = 4 格"
+    },
+    {
+      "l": "en",
+      "h1": "#827 · Making A Large Island",
+      "title": "#827 Making A Large Island",
+      "frame": "Operation 2/3 · Tested zero (1,1), candidate area 4 · best (completed islands and tested candidates) = 4 cells",
+      "derive": "For a water cell z, seen is the set of distinct land IDs among its four neighbors. Its new island has area A(z)=1+Σ area[k], for k∈seen. The set merges repeated IDs. Touching one island twice adds no new land; an island not touching z cannot enter the new island through the single added cell.",
+      "ledger": "(1,1) neighbor IDs [2,2] → distinct [2]: 1 + 3 = 4 cells"
+    },
+    {
+      "l": "zh",
+      "h1": "#827 · 最大人工岛",
+      "title": "#827 最大人工岛",
+      "frame": "操作 2/3 · 已测试水格 (1,1)，候选面积 4 · best（已编号岛及已测候选最大值）= 4 格",
+      "derive": "对一个水格 z，seen 是它四个方向中不同的陆地编号集合。新岛面积 A(z)=1+Σ area[k]，k∈seen。集合会把重复编号合并。邻接同岛两次不会创造新陆地；不接触 z 的岛也无法经唯一的新陆格进入这个岛。",
+      "ledger": "(1,1) 邻格 ID [2,2] → 去重 [2]：1 + 3 = 4 格"
+    }
+  ],
+  "related": [
+    {
+      "href": "../403/#step2",
+      "text": "Accumulate possible arrival lengths\n\nHow can we avoid enumerating routes without losing a possible crossing? R[x] is the set of possible previous jump lengths on reaching coordinate x; a set merges duplicate lengths. Start with R[0]={0}. This artificial 0 is not a real jump: only 1 among candidates −1, 0, 1 is positive, enforcing the required first hop.\n\nA separate algorithm simulation, not execution of the Python below. Cards are ordered by coordinate; spacing does not represent river distance. Each shows x and the discovered R[x]; ∅ means no arrival discovered yet. The orange border marks the source just processed. Changing a preset resets this simulation. Each “Process next state” checks all three candidates for one (x,k), retaining discovered sets and operation history.\n\nKeep the default preset and advance through (3,2). Observe R[3]={1,2} and R[6] changing from ∅ to {3}; go back to remove that addition. The source is one possibility being expanded, rather than the frog’s only actual position.\n\nStones preset (change resets simulation)\nTwo arrivals: 0,1,2,3,6\nOfficial example 1 · reachable\nOfficial example 2 · blocked\nMissing first landing: 0,2\nMinimum input: 0,1\nIncreasing jumps: 0,1,3,6,10,15\nUndo one state\nProcess next state\nReset this simulation\nProcess to end\n\nInitial: only (0,0). Processed 0 / 6 states; last-stone reachability is not decided yet.\n\nCoordinate x=0\nDiscovered R[x]\n{0}\nCoordinate x=1\nDiscovered R[x]\n∅\nCoordinate x=2\nDiscovered R[x]\n∅\nCoordinate x=3\nDiscovered R[x]\n∅\nCoordinate x=6\nDiscovered R[x]\n∅\n\nNot finished; the last stone’s current set is ∅. A nonempty set already proves reachability; an empty set does not yet prove failure.\n\nCumulative operation history\n\nWhy trust these sets? An invariant is a statement that stays true after every operation: every k in R[x] has a legal route witnessing it; once all stones before x are processed, R[x] contains exactly all legal arrival lengths. The artificial initial (0,0) is valid. Each addition comes from a witnessed (x,k), uses a positive permitted length and lands on a stone, so it invents no route. Conversely, the last hop of any real route comes from a smaller coordinate; that predecessor was processed, so its arrival length must be added.\n\nEvery move goes forward, so updates write to later stones and never change the source set being iterated. One pass in increasing coordinate order suffices. At the end, the last set is nonempty exactly when a crossing exists. The diagram stores history snapshots for undo; the submission does not."
+    },
+    {
+      "href": "../773/#step2",
+      "text": "03\n\nSearch by layers\n\nHow can the first encounter with the goal prove the fewest moves? Breadth-first search (BFS) explores one move count at a time. The frontier contains every newly discovered state at distance d; seen is the set of all discovered states. The start is layer 0 because no move has been made.\n\nKeep 123405: 0 occupies position 4 (zero-based, row-major), so it can swap only with positions 1, 3, 5. This gives 103425, 123045, 123450, each reachable in 1 move. The last is the goal and layer 0 was not, so the answer is 1. Later, when 103425 generates 123405, seen rejects it: that board was already found at layer 0, and returning cannot improve its distance.\n\nThis yields the invariant: on entering layer d, the frontier is exactly the states whose shortest distance is d, and seen is exactly those within distance d. One edge from the frontier reaches a state within d+1 moves. An unseen state cannot be within d moves, or it would already have been discovered. Its distance is therefore exactly d+1. Mark it seen immediately to avoid duplicates within the new layer. Every (d+1)-move path has a penultimate state within d moves, so the next layer misses no state either. This proof relies on every edge costing one move.\n\nWord Ladder II: retain shortest paths by layer →\n\nFinish “One move”, then select “Five moves”. Advance layer by layer and inspect the retained layer ledger. Each frame shows the full frontier on entering that layer. The candidate ledger details the previous layer’s first state; all other states were also fully expanded. Changing the preset restarts this search.\n\nSearch preset (changing restarts)\nOne move · 123405\nFive moves · 412503\nUnreachable · 123540\nAlready solved · 123450\nAnother start · 012453\n\nTeaching simulation: JavaScript creates complete-layer snapshots; it does not execute the Python below. Python removes states individually from a queue and may return partway through a layer; the minimum move count is the same. No layer or frontier is truncated.\n\nOne move · 123405\n\nPrevious layer\nGenerate next layer\nReset\nJump to conclusion\n\nFrame 0/1 · Entering layer 0 · Frontier: 1 states · Discovered so far: 1 states. No final answer yet.\n\nAll frontier boards in this layer\n\nEvery board remains 2×3. At very narrow zoom, swipe within a board, or focus it and use the arrow keys to see all three columns.\n\n123405\n1\n2\n3\n4\n0\n5\nCumulative layer ledger: expanded layer → states in that layer → newly discovered\n\nThe start has not been expanded yet.\n\nCandidate ledger for the previous layer’s first state\n\nThe start has not been expanded yet."
+    }
+  ]
+}

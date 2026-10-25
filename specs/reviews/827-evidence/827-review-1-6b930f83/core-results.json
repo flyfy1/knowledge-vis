@@ -1,0 +1,15 @@
+{
+  "kind": "author model self-check",
+  "result": "pass",
+  "cases": 880,
+  "frames": 9388,
+  "invariants": [
+    "complete exact connected labels",
+    "all land labeled before tests",
+    "candidate area matches actual-flip reachability",
+    "best equals tested maximum",
+    "snapshot independence",
+    "source exact",
+    "duplicate keys rejected"
+  ]
+}
