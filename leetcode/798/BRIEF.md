@@ -25,3 +25,13 @@ Exact shared tokens from ../style.css: bg #0d1117, panel #161b22, panel2 #1c2330
 All branches in zh/en: initial/middle/end/rewind, preset restart, zero/no-bad/wrap/nonwrap, quiz pending/selected/revealed/changed, copy pending/success/fallback. Locale preserves state and focus. No network operations during runtime; loading/reconnect inapplicable.
 
 P0: causal explanations, honest interval renderer, bilingual controls, numerical/browser checks and exact source parity. Highest-return slice is interval mask plus prefix ledger. P1: related links and source fallback. P2/deferred: decoration, autoplay, free input, universal renderer (unnecessary scope). Simulation snapshots cost O(n²) for tiny presets; submission O(n) time/space. No actual learner, submission acceptance or public release claims.
+
+## 2026-10-26 — 798-COPY-R1 candidate revision
+
+Author scope: the supplied follow-up request `specs/reviews/workflow-copy-repair-requests-20261026/798.md` selects reuse of the approved surface and removal of the workflow footer. No new feature or layout. The immediate learner task remains understanding rotation scores; this revision removes transient author/review status from the page end. The neighboring `sim` explanation remains byte-for-byte unchanged in both languages.
+
+Reconfirmed all seven runtime files equal accepted base `cc3d785f667dd8e20edf6c6f326e8aebc018e888` before editing. New candidate `798-copy-r1-20261026` is identified by the file hashes in `tests/evidence/copy-r1-after/candidate.json` (aggregate identity `9f310cc0390da9e5bc80464b7401ca9dff83238efe26b5e5f8f0bf0d37e3ffb0`). Only runtime changes: delete the footer element, delete unused bilingual `foot`, and update the copy asset query to `798-copy-r1`. No replacement status/acceptance text. `app.js`, `core.js`, `solution.py`, `python-code.js`, `style.css`, and metadata retain their base hashes.
+
+P0: preserve teaching, algorithm, source interface and locale-retained state. P1/highest-return slice: the requested bilingual footer removal with focused proof. P2: none. Deferred: other teaching/copy/design changes, because this request explicitly bounds the revision. Existing token, focus and spacing contracts are reused unchanged.
+
+`798-COPY-R1` is **fixed awaiting separate independent review**, not independently closed. Append-only author evidence and reproduction commands are in `tests/SELF-CHECK.md`. No historical acceptance, review report, registry, campaign state, service or publication record changed.

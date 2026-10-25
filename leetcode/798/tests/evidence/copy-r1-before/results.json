@@ -1,0 +1,77 @@
+{
+  "finding": "798-COPY-R1",
+  "authorSelfCheck": true,
+  "base": "cc3d785f667dd8e20edf6c6f326e8aebc018e888",
+  "hashes": {
+    "index.html": {
+      "base": "9e18222b92b8ea1017fa92dd181f58aff236ca3d28795915789c18ff99d7b8c6",
+      "candidate": "9e18222b92b8ea1017fa92dd181f58aff236ca3d28795915789c18ff99d7b8c6"
+    },
+    "copy.js": {
+      "base": "cc5de11bb225b70a2a6c27f696846843a70606b24710f790b0a91b91c5808ead",
+      "candidate": "cc5de11bb225b70a2a6c27f696846843a70606b24710f790b0a91b91c5808ead"
+    },
+    "app.js": {
+      "base": "5900fc1266ae6be61a87da057dee1ea68567030b0ae24452b9fff6b25c3d9d25",
+      "candidate": "5900fc1266ae6be61a87da057dee1ea68567030b0ae24452b9fff6b25c3d9d25"
+    },
+    "core.js": {
+      "base": "980a6b2d358d07d2c3fa29f160be7e13b857dc7c2e27a52a09b9d4cd0c26d4db",
+      "candidate": "980a6b2d358d07d2c3fa29f160be7e13b857dc7c2e27a52a09b9d4cd0c26d4db"
+    },
+    "solution.py": {
+      "base": "f1b2add3552b878bfb2dafe6138a6dda5e8f002ea4648d4d65a49e5dd0ec368b",
+      "candidate": "f1b2add3552b878bfb2dafe6138a6dda5e8f002ea4648d4d65a49e5dd0ec368b"
+    },
+    "python-code.js": {
+      "base": "a3d08ddc619ca1426f88c777fd5c52b69ea951a41989e42d77b3333ef005bd05",
+      "candidate": "a3d08ddc619ca1426f88c777fd5c52b69ea951a41989e42d77b3333ef005bd05"
+    },
+    "style.css": {
+      "base": "0df865b957c5f5f5c5c4028a7ac16c99b081900af187ff32d741fb85a10a52e1",
+      "candidate": "0df865b957c5f5f5c5c4028a7ac16c99b081900af187ff32d741fb85a10a52e1"
+    },
+    "lesson-entry.json": {
+      "base": "c263a234bbcd1e2a289ca48ff0a03bb6e1c3abdd59b10dcc75bac08924a06de3",
+      "candidate": "c263a234bbcd1e2a289ca48ff0a03bb6e1c3abdd59b10dcc75bac08924a06de3"
+    }
+  },
+  "host": "linux",
+  "states": [
+    {
+      "lang": "zh",
+      "footerCount": 1,
+      "sim": "教学模拟：下表由浏览器数值模型生成，不是运行 Python 提交代码。第 1、3、4 节共享输入。",
+      "retained": {
+        "preset": "1",
+        "hand": "0 : 21 : 3",
+        "rows": "033201-1231",
+        "selected": "1"
+      }
+    },
+    {
+      "lang": "en",
+      "footerCount": 1,
+      "sim": "Teaching simulation: the browser model generates these tables; it does not execute the Python submission. Sections 1, 3 and 4 share the input.",
+      "retained": {
+        "preset": "1",
+        "hand": "0 : 21 : 3",
+        "rows": "033201-1231",
+        "selected": "1"
+      }
+    },
+    {
+      "lang": "zh",
+      "footerCount": 1,
+      "sim": "教学模拟：下表由浏览器数值模型生成，不是运行 Python 提交代码。第 1、3、4 节共享输入。",
+      "retained": {
+        "preset": "1",
+        "hand": "0 : 21 : 3",
+        "rows": "033201-1231",
+        "selected": "1"
+      }
+    }
+  ],
+  "errors": [],
+  "browser": "156.0.8078.4"
+}

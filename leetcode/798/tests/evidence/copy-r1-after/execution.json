@@ -1,0 +1,43 @@
+{
+  "authorSelfCheck": true,
+  "input": [
+    3,
+    0,
+    1,
+    2
+  ],
+  "oracleScores": [
+    3,
+    4,
+    1,
+    2
+  ],
+  "expectedEarliestBest": 1,
+  "actualPythonReturn": 1,
+  "inputUnchanged": true,
+  "exactOfflineMirror": true,
+  "supportedOfficialInterfaces": [
+    "C++",
+    "Java",
+    "Python3",
+    "Python",
+    "JavaScript",
+    "TypeScript",
+    "C#",
+    "C",
+    "Go",
+    "Kotlin",
+    "Swift",
+    "Rust",
+    "Ruby",
+    "PHP",
+    "Dart",
+    "Scala",
+    "Elixir",
+    "Erlang",
+    "Racket"
+  ],
+  "canonicalLanguage": "Python",
+  "interface": "Solution.bestRotation(self, nums: list[int]) -> int",
+  "harnessCorrection": "Initial inline smoke check incorrectly expected [3,1,2,3]; physical rotations give [3,4,1,2]. No runtime change."
+}

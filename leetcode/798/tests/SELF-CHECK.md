@@ -42,3 +42,40 @@ Harness notes: a first pass attempted the intentionally disabled singleton End b
 ## Limits and next action
 
 No independent teaching review, physical mobile device, browser UI/OS magnifier test, public deployment verification, accepted LeetCode submission or actual learner outcome is claimed. Zoom evidence uses browser CSS zoom=2. The next action is a separate reviewer run against this frozen candidate, using the repository's six-dimension rubric and fresh cold walkthrough. Reproduction commands accept OUTPUT_DIR so reviewer evidence need not overwrite the candidate.
+
+## 2026-10-26 append — 798-COPY-R1 author fix evidence
+
+Finding status: **fixed awaiting independent re-review**. The historical accepted candidate remains historical evidence. This is an author self-check, not independent closure or release authority.
+
+Base: `cc3d785f667dd8e20edf6c6f326e8aebc018e888`; checkout HEAD at start: `6b1364e3d5960d3ae74e97b9b50e599f5628c5ba`. Read the supplied request, existing candidate/BRIEF, explainer and trace specs, review gates, rendered-state contract, website-design skill and registration source/mirror table. The report's narrow repair needs no algorithm or hard-bug changes. P0 preserves semantics; P1 removes the footer; P2 has no additions. Other refinements deferred per request.
+
+### Finding-to-fix mapping and identity
+
+`798-COPY-R1`: removed `<footer class="site-foot" data-i18n="foot"></footer>` and its only bilingual dictionary entry. A pre-edit consumer search found the HTML binding and dictionary declaration only; neither app nor core consumes `foot`. The copy script query changes from `798-r1` to `798-copy-r1`. All remaining copy pairs equal the base, including the full `sim` pair. No claim of acceptance replaces the removed text.
+
+The exact bilingual diff is `evidence/copy-r1-after/runtime.diff`. Frozen runtime+metadata manifest: `evidence/copy-r1-after/candidate.json`, aggregate SHA-256 `9f310cc0390da9e5bc80464b7401ca9dff83238efe26b5e5f8f0bf0d37e3ffb0` (compact sorted filename-to-SHA256 JSON). New HTML SHA-256: `906707febd4b073b253352c1af285e3b36ebd1d20dc8021e54b702ce1dd56920`; new copy SHA-256: `0f79e1e46c6dac59d6087c9abdea7fe796b15374db833391d2a49d99db507365`.
+
+Before/after hashes of the five explicitly protected files are equal in both `evidence/copy-r1-before/results.json` and `evidence/copy-r1-after/results.json`. Metadata is also unchanged; complexity remains the single string `O(n) time; O(n) space`. Python is the preferred official interface, corroborated by the lesson-local official GraphQL capture; it also lists TypeScript. No `supportedLanguages` contract exists to omit either interface, and no non-Python language contract is required. Canonical pair read from registration policy: `solution.py` / `python-code.js` / `PYTHON_SOURCE`.
+
+### Reproduction and observed results
+
+From repository root, with the existing preview and supplied browser environment:
+
+```sh
+OUTPUT_DIR=leetcode/798/tests/evidence/copy-r1-after node leetcode/798/tests/copy-r1.cjs
+python3 -B leetcode/798/tests/copy-r1-python.py
+python3 -B scripts/register_leetcode_lesson.py 798 --validate-only
+```
+
+- Pre-edit focused browser check failed on `798-COPY-R1: workflow footer must be absent`, after capturing zh→en→zh at 320px. `evidence/copy-r1-before/results.json` records footerCount=1 for each locale state, original runtime hashes, preserved state and no errors. The screenshots retain the old wording. No historical evidence was overwritten.
+- Post-edit focused check passes on local Chromium 156.0.8078.4, Linux. Served bytes equal candidate hashes. Every static localization binding matches its exact locale string, there are no duplicate dictionary keys, and the footer/key are absent. All surviving dictionary pairs equal the base. Console, page and HTTP error list is empty.
+- On official example 1 `[2,3,1,4,0]`, hand k=1 and scan through k=1 remain unchanged across zh→en→zh. Direct score checking yields 2 then 3; the scan ledger is `[k,event,bad,score,best-k] = [0,3,3,2,0]`, then `[1,-1,2,3,1]`. The readout says 2/5 rotations processed and distinguishes current/best scanned candidates; final result remains hidden. These are counts of rotations and losing entries, not a cumulative comparison counter. The complete losing-interval formula and after-event frame explanation remain intact.
+- Independent quiz remains selected and revealed across the locale roundtrip: n=5, i=0, v=3 loses at k={0,3,4}, since new indices are {0,2,1}. Feedback retains `l=(0−3+1+5)%5=3`. Its scope remains this single value, separate from the preset and total score.
+- In each locale, displayed `textContent`, embedded/offline source, automatic clipboard text, actual native manual-fallback copy and downloaded bytes equal canonical Python exactly, including the final newline. Each fallback attempt first writes and verifies its own distinct sentinel, then forces write rejection, checks textarea focus/full selection and presses Linux Control+C. Offline file loading also matches canonical source.
+- Page-end captures at 320px and 1280px with CSS zoom=2 were visually inspected in both locales: `evidence/copy-r1-after/end-{zh,en}-320-zoom1.png` and `end-{zh,en}-1280-zoom2.png`. Related links wrap, focus outlines remain visible, and no footer gap survives. Document width equals viewport width; measured main-end gap is under one pixel. Real Shift+Tab/Tab reaches both neighboring links in order. No styles or tokens changed.
+- Actual canonical Python executed on fresh `[3,0,1,2]`: physical rotations score `[3,4,1,2]`, so best k=1; return is 1 and input is unchanged. Exact offline mirror also passes. Recorded in `evidence/copy-r1-after/execution.json`. No broad numerical suites were rerun for this prose-only change, as requested.
+- Mandatory safe preflight `python3 -B scripts/register_leetcode_lesson.py 798 --validate-only` returned **exit 0**, with empty stdout/stderr. Exact command/result recorded in `evidence/copy-r1-after/preflight.json`. No registration was run; no metadata fix was necessary.
+
+Harness corrections are retained in `evidence/copy-r1-after/harness-notes.txt`: an incorrect initial handwritten smoke expectation and an immediate visibility assertion racing asynchronous clipboard completion. Only the assertions/wait were corrected; no runtime repair followed either harness issue.
+
+Next action: a fresh reviewer must inspect this hash-bound candidate and independently close `798-COPY-R1` against the narrow report requirements. Physical devices, browser UI zoom, public delivery, learner outcomes and LeetCode submission acceptance remain unverified. This candidate is ready for that separate re-review only.

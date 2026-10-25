@@ -1,0 +1,183 @@
+{
+  "finding": "798-COPY-R1",
+  "authorSelfCheck": true,
+  "base": "cc3d785f667dd8e20edf6c6f326e8aebc018e888",
+  "hashes": {
+    "index.html": {
+      "base": "9e18222b92b8ea1017fa92dd181f58aff236ca3d28795915789c18ff99d7b8c6",
+      "candidate": "906707febd4b073b253352c1af285e3b36ebd1d20dc8021e54b702ce1dd56920"
+    },
+    "copy.js": {
+      "base": "cc5de11bb225b70a2a6c27f696846843a70606b24710f790b0a91b91c5808ead",
+      "candidate": "0f79e1e46c6dac59d6087c9abdea7fe796b15374db833391d2a49d99db507365"
+    },
+    "app.js": {
+      "base": "5900fc1266ae6be61a87da057dee1ea68567030b0ae24452b9fff6b25c3d9d25",
+      "candidate": "5900fc1266ae6be61a87da057dee1ea68567030b0ae24452b9fff6b25c3d9d25"
+    },
+    "core.js": {
+      "base": "980a6b2d358d07d2c3fa29f160be7e13b857dc7c2e27a52a09b9d4cd0c26d4db",
+      "candidate": "980a6b2d358d07d2c3fa29f160be7e13b857dc7c2e27a52a09b9d4cd0c26d4db"
+    },
+    "solution.py": {
+      "base": "f1b2add3552b878bfb2dafe6138a6dda5e8f002ea4648d4d65a49e5dd0ec368b",
+      "candidate": "f1b2add3552b878bfb2dafe6138a6dda5e8f002ea4648d4d65a49e5dd0ec368b"
+    },
+    "python-code.js": {
+      "base": "a3d08ddc619ca1426f88c777fd5c52b69ea951a41989e42d77b3333ef005bd05",
+      "candidate": "a3d08ddc619ca1426f88c777fd5c52b69ea951a41989e42d77b3333ef005bd05"
+    },
+    "style.css": {
+      "base": "0df865b957c5f5f5c5c4028a7ac16c99b081900af187ff32d741fb85a10a52e1",
+      "candidate": "0df865b957c5f5f5c5c4028a7ac16c99b081900af187ff32d741fb85a10a52e1"
+    },
+    "lesson-entry.json": {
+      "base": "c263a234bbcd1e2a289ca48ff0a03bb6e1c3abdd59b10dcc75bac08924a06de3",
+      "candidate": "c263a234bbcd1e2a289ca48ff0a03bb6e1c3abdd59b10dcc75bac08924a06de3"
+    }
+  },
+  "host": "linux",
+  "states": [
+    {
+      "lang": "zh",
+      "footerCount": 0,
+      "sim": "教学模拟：下表由浏览器数值模型生成，不是运行 Python 提交代码。第 1、3、4 节共享输入。",
+      "formula": "v>0：l=(i−v+1+n)%n，r=i。l≤r 时用闭区间 [l,r]；否则拆成 [l,n−1] 和 [0,r]。闭区间包括两端。",
+      "scanRead": "已处理 2/5 个轮调；当前 k=1：bad=2，分数=3；已扫描最优 k=1，分数=3。",
+      "rows": [
+        [
+          "0",
+          "3",
+          "3",
+          "2",
+          "0"
+        ],
+        [
+          "1",
+          "-1",
+          "2",
+          "3",
+          "1"
+        ]
+      ],
+      "feedback": "正确。 l=(0−3+1+5)%5=3，r=0，所以拆成 [3,4] 与 [0,0]：{0,3,4}。k=0,1,2,3,4 的新下标依次为 0,4,3,2,1；只有 0,2,1 小于 3。{0,1,2} 混淆了新下标与轮调；{3,4} 漏掉跨越边界的 k=0。",
+      "retained": {
+        "preset": "1",
+        "hand": "0 : 21 : 3",
+        "rows": "033201-1231",
+        "selected": "1"
+      }
+    },
+    {
+      "lang": "en",
+      "footerCount": 0,
+      "sim": "Teaching simulation: the browser model generates these tables; it does not execute the Python submission. Sections 1, 3 and 4 share the input.",
+      "formula": "For v>0: l=(i−v+1+n)%n, r=i. If l≤r use inclusive interval [l,r]; otherwise split into [l,n−1] and [0,r]. Inclusive means both endpoints count.",
+      "scanRead": "Processed 2/5 rotations; current k=1: bad=2, score=3; best scanned k=1, score=3.",
+      "rows": [
+        [
+          "0",
+          "3",
+          "3",
+          "2",
+          "0"
+        ],
+        [
+          "1",
+          "-1",
+          "2",
+          "3",
+          "1"
+        ]
+      ],
+      "feedback": "Correct. l=(0−3+1+5)%5=3, r=0, so split into [3,4] and [0,0]: {0,3,4}. For k=0,1,2,3,4 the new indices are 0,4,3,2,1; only 0,2,1 are below 3. {0,1,2} confuses new indices with rotations; {3,4} misses k=0 across the boundary.",
+      "retained": {
+        "preset": "1",
+        "hand": "0 : 21 : 3",
+        "rows": "033201-1231",
+        "selected": "1"
+      }
+    },
+    {
+      "lang": "zh",
+      "footerCount": 0,
+      "sim": "教学模拟：下表由浏览器数值模型生成，不是运行 Python 提交代码。第 1、3、4 节共享输入。",
+      "formula": "v>0：l=(i−v+1+n)%n，r=i。l≤r 时用闭区间 [l,r]；否则拆成 [l,n−1] 和 [0,r]。闭区间包括两端。",
+      "scanRead": "已处理 2/5 个轮调；当前 k=1：bad=2，分数=3；已扫描最优 k=1，分数=3。",
+      "rows": [
+        [
+          "0",
+          "3",
+          "3",
+          "2",
+          "0"
+        ],
+        [
+          "1",
+          "-1",
+          "2",
+          "3",
+          "1"
+        ]
+      ],
+      "feedback": "正确。 l=(0−3+1+5)%5=3，r=0，所以拆成 [3,4] 与 [0,0]：{0,3,4}。k=0,1,2,3,4 的新下标依次为 0,4,3,2,1；只有 0,2,1 小于 3。{0,1,2} 混淆了新下标与轮调；{3,4} 漏掉跨越边界的 k=0。",
+      "retained": {
+        "preset": "1",
+        "hand": "0 : 21 : 3",
+        "rows": "033201-1231",
+        "selected": "1"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "geometry": {
+        "width": 320,
+        "scrollWidth": 320,
+        "bottomGap": 0.421875
+      },
+      "keyboardRelatedLinks": true,
+      "exactSourceTransfer": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "zoom": 2,
+      "geometry": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "bottomGap": 0.046875
+      },
+      "keyboardRelatedLinks": true,
+      "exactSourceTransfer": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "geometry": {
+        "width": 320,
+        "scrollWidth": 320,
+        "bottomGap": 0.03125
+      },
+      "keyboardRelatedLinks": true,
+      "exactSourceTransfer": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "zoom": 2,
+      "geometry": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "bottomGap": 0.265625
+      },
+      "keyboardRelatedLinks": true,
+      "exactSourceTransfer": true
+    }
+  ],
+  "errors": [],
+  "browser": "156.0.8078.4",
+  "result": "pass"
+}

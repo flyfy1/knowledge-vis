@@ -1,0 +1,9 @@
+First focused run passed. Extended rerun (served-byte and frame assertions added)
+failed at copy-r1.cjs:71: assert(await ...isHidden()) immediately after clicking
+Copy to restore automatic copying. The application awaits clipboard.writeText()
+before hiding the fallback. The test observed the pending operation, so the runner
+now waits for the hidden state. No runtime edit was made for this harness race.
+
+Initial inline Python smoke assertion incorrectly expected scores [3,1,2,3] for
+[3,0,1,2]. Physical rotations give [3,4,1,2]; the corrected executable check uses
+this oracle and expects k=1. No algorithm change was made.
