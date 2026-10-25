@@ -71,3 +71,15 @@ Validation: numerical oracle, exhaustive/seeded generated valid expressions, max
 length, intermediate snapshot invariant, browser both locales and all presets/endpoints,
 prediction/copy/fallback/download, responsive/zoom/keyboard/contrast. Separate reviewer is
 pending; no LeetCode submission, learner outcome, real-device, or public-deployment claim.
+
+## Review R1 correction — candidate 726-r1-fix-20261025
+
+Required finding 726-R1 is fixed awaiting separate review. Step 02 now defines
+n as input character length, A as fully expanded atom occurrences, and d as maximum
+parenthesis depth (zero without parentheses). Its expansion baseline bound is
+O(n + A·(d+1)) time and O(n + A) space before sorting. The base-level build and
+tally account for A even at d=0; each enclosing group may copy entries again.
+The added (H2O)3 example has child length 3, expanded A=9, d=1.
+This reuses the existing reviewed teaching surface and tokens; no new layout.
+P0 is the bilingual cost correction and regression; P1 is frozen evidence;
+P2 none. Existing deferred features remain deferred.
