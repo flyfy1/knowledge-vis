@@ -1,0 +1,75 @@
+{
+  "independentChecks": [
+    {
+      "x": 4,
+      "target": 7,
+      "expected": 3,
+      "actual": 3,
+      "exhaustiveFirstWitness": "4+4-4/4"
+    },
+    {
+      "x": 3,
+      "target": 2,
+      "expected": 2,
+      "actual": 2,
+      "exhaustiveFirstWitness": "3-3/3"
+    },
+    {
+      "x": 2,
+      "target": 1,
+      "expected": 1,
+      "actual": 1,
+      "exhaustiveFirstWitness": "2/2"
+    },
+    {
+      "x": 100,
+      "target": 1,
+      "expected": 1,
+      "actual": 1,
+      "exhaustiveFirstWitness": "100/100"
+    },
+    {
+      "x": 100,
+      "target": 100,
+      "expected": 0,
+      "actual": 0,
+      "exhaustiveFirstWitness": "100"
+    },
+    {
+      "x": 2,
+      "target": 16,
+      "expected": 3,
+      "actual": 3,
+      "exhaustiveFirstWitness": "2*2*2*2"
+    },
+    {
+      "x": 4,
+      "target": 15,
+      "expected": 3,
+      "actual": 3,
+      "exhaustiveFirstWitness": "4*4-4/4"
+    },
+    {
+      "boundary": [
+        2,
+        200000000
+      ],
+      "actual": 113
+    },
+    {
+      "boundary": [
+        100,
+        200000000
+      ],
+      "actual": 7
+    },
+    {
+      "boundary": [
+        100,
+        100000000
+      ],
+      "actual": 3
+    }
+  ],
+  "canonicalSHA256": "93ea2b82ff8fb223e9f837d8fb26d24e1c941fd680d1a8d1035f0a46edcd3132"
+}
