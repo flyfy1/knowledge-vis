@@ -101,4 +101,13 @@ live-pin bindings, target parameters, and STOP/reservation/publication negative
 controls. Tests parse but never import/execute the launcher. Run
 `python3 -B specs/reviews/parallel-975980-evidence-20261026/test_parameters.py`.
 See [tests.log](tests.log) and [validation.json](validation.json). The static validation remains historical preparation integrity. The separate execution
-receipt proves launch; independent lesson acceptance is still pending.
+receipt proves launch; at that 04:30 SGT observation independent acceptance was
+still pending.
+
+## Subsequent acceptance archive — 2026-10-26
+
+Both lanes later completed and were accepted locally. See [acceptance-audit.md](acceptance-audit.md)
+for frozen identities, full preserved reports, all run histories, optional findings,
+the interrupted #980 harness, and explicitly separate supplemental coverage closure.
+[acceptance-validation.json](acceptance-validation.json) freezes the archive hashes.
+This follow-up performed no import, publication, STOP or acceptance-history rewrite.
