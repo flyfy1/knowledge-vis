@@ -1180,3 +1180,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Sliding sum over a DP row | `leetcode/629/#step2` | Add the entering count and remove the expired count while retaining separate previous and current rows. |
 
 <!-- /leetcode-629-campaign -->
+
+
+<!-- leetcode-639-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Disjoint final-token counting | `leetcode/639/#step1` | Count valid one-digit and two-digit endings without admitting zero as a wildcard. |
+| Rolling prefix decoding counts | `leetcode/639/#step2` | Extend the two preceding prefix counts through disjoint final-token cases. |
+
+<!-- /leetcode-639-campaign -->
