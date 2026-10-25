@@ -17,7 +17,9 @@ sentinel unchanged, including after a 200ms read delay; Meta+c copied the exact
 source. Confirmed cause: a Linux copy shortcut in the test, not loss of selection
 or failed source transfer in the lesson. The archived original remains unchanged.
 
-A separate Mac adapter changes only that key to Meta+c on darwin. All original
+A separate Mac adapter changes only that key to Meta+c on darwin. For reproduction,
+place the archived adapter beside the original test in the frozen lesson tests
+directory; its relative source paths intentionally stay unchanged. All original
 assertions remain. With that explicit adaptation, the full browser suite passed:
 both locales, presets, coefficient and trace interactions, prediction changes,
 keyboard controls, actual native clipboard success and selected manual fallback,
