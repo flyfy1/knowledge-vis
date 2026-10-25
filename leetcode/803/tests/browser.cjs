@@ -12,14 +12,27 @@ const source=fs.readFileSync(path.join(__dirname,'../solution.py'),'utf8'),core=
  assert.equal(await page.locator('#pythonSource').textContent(),source);
  async function locale(lang){await page.locator(`[data-lang=${lang}]`).click();assert.equal(await page.locator('html').getAttribute('lang'),lang==='en'?'en':'zh-CN');}
  async function frameMatch(p,k){const expected=core.trace(core.presets[p]).frames[k];for(const side of ['before','after']){const labels=await page.locator(`#${side}Grid td`).allTextContents();assert.deepEqual(labels,expected[side].grid.flatMap((row,r)=>row.map((v,c)=>v?(expected[side].seen[r][c]?'S':'U'):'·')));assert((await page.locator(`#${side}Caption`).textContent()).includes('R='+expected[side].size));}assert.equal(await page.locator('#result').textContent(),'['+expected.answer.map(v=>v===null?'?':v).join(', ')+']');}
+ async function accounting(p,k){
+  const en=await page.locator('html').getAttribute('lang')==='en';
+  assert.equal(await page.locator('[data-i18n=formula]').textContent(),en?'result[i] = max(0, R_after − R_before − 1)':'result[i] = max(0, R后 − R前 − 1)');
+  assert((await page.locator('#progress').textContent()).includes(`${k}/${core.presets[p].hits.length}`));
+  assert.equal(await page.locator('#history li').count(),k+1);
+  if(p===3&&k===1){
+   // Hand calculation: restored (1,2) is still disconnected; no roof growth.
+   const detail=await page.locator('#detail').textContent();
+   assert(detail.includes('i=1'));assert(detail.includes('(1,2)'));assert(detail.includes('R 2 → 2'));
+   assert(detail.includes(en?'roof group does not grow':'屋顶组不增长'));
+  }
+ }
  for(const lang of ['en','zh']){
   await locale(lang);
   await page.locator('#handReveal').click();assert(await page.locator('#hand').isVisible());assert((await page.locator('#hand').textContent()).includes('result=[2]'));await page.locator('#handReveal').click();assert(await page.locator('#hand').isHidden());
   for(let p=0;p<5;p++){
    await page.selectOption('#preset',String(p));await page.locator('#reset').evaluate(b=>{if(!b.disabled)b.click();});await frameMatch(p,0);assert(await page.locator('#prev').isDisabled());
-   for(let k=1;k<=core.presets[p].hits.length;k++){await page.locator('#next').click();await frameMatch(p,k);}
+   await accounting(p,0);
+   for(let k=1;k<=core.presets[p].hits.length;k++){await page.locator('#next').click();await frameMatch(p,k);await accounting(p,k);}
    assert(await page.locator('#next').isDisabled());assert(await page.locator('#end').isDisabled());
-   await page.locator('#prev').click();await frameMatch(p,core.presets[p].hits.length-1);await page.locator('#next').click();await frameMatch(p,core.presets[p].hits.length);
+   await page.locator('#prev').click();await frameMatch(p,core.presets[p].hits.length-1);await accounting(p,core.presets[p].hits.length-1);await page.locator('#next').click();await frameMatch(p,core.presets[p].hits.length);await accounting(p,core.presets[p].hits.length);
    const state=await page.locator('#traceStage').textContent();await locale(lang==='en'?'zh':'en');await frameMatch(p,core.presets[p].hits.length);await locale(lang);assert.equal(await page.locator('#traceStage').textContent(),state);
    evidence.push({lang,p,final:await page.locator('#result').textContent(),detail:await page.locator('#detail').textContent()});
    await page.locator('#reset').click();await frameMatch(p,0);await page.locator('#end').click();await frameMatch(p,core.presets[p].hits.length);

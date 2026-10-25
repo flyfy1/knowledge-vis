@@ -16,6 +16,7 @@
   }
   function traceRender(){
     const f=model.frames[index],done=index===model.frames.length-1;
+    $('presetSelected').textContent=t('presetShort'+$('preset').value);
     $('presetName').textContent=t('preset'+$('preset').value);
     $('prev').disabled=index===0;$('reset').disabled=index===0;$('next').disabled=done;$('end').disabled=done;
     $('progress').textContent=t('progress',{k:index,total:model.hits.length,state:t(done?'done':index?'running':'initial')});

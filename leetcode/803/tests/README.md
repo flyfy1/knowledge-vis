@@ -6,6 +6,7 @@ Run from the repository root. Use an external OUTPUT_DIR to keep the candidate f
 OUTPUT_DIR=/tmp/803-review python3 -B leetcode/803/tests/check.py
 OUTPUT_DIR=/tmp/803-review node leetcode/803/tests/browser.cjs
 python3 -B scripts/register_leetcode_lesson.py 803 --validate-only
+OUTPUT_DIR=/tmp/803-review/selected node leetcode/803/tests/selected-label.cjs
 ```
 
 Python 3.9+ and Node are needed. The browser runner uses installed Playwright via
@@ -41,3 +42,14 @@ outside scrolling regions, with table aria-labelledby associations.
 All emitted data, JSON, screenshots and downloads honor OUTPUT_DIR. Numeric
 helpers emit only stdout. Official provenance is retained input, not refetched
 by tests. These are author self-checks; separate review remains pending.
+
+selected-label.cjs covers 803-R1: the closed native control must fit its complete
+A–E identity with text/padding and a conservative 24 CSS px Chromium arrow budget.
+The full localized name wraps directly below it; both it and the hit description
+are associated with the control. Every preset is checked in both locales at
+320/390 and CSS zoom 2, including D intermediate/end captures and locale retention.
+Read the captures as well as the width predicate: a conservative budget alone
+does not prove clipping. repair-r1/red retains the original visible failure;
+repair-r1/green retains the repaired selected identities and full descriptions.
+browser.cjs also asserts exact formulas and completed-hit/ledger accounting at
+initial/intermediate/end and rewind/replay states in both locales.

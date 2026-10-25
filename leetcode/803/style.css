@@ -5,3 +5,5 @@ button,.btn,select,.lang-toggle button,.solution-actions a{min-height:48px}.btn:
 .board-caption{margin-block:8px}
 .boards>div{min-width:0}
 .lang-toggle button.active:focus-visible{outline-color:var(--bg)}
+#preset{display:block}
+.preset-selected{margin-block:8px 0;overflow-wrap:anywhere}
