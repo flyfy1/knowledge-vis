@@ -1,0 +1,157 @@
+{
+  "passed": true,
+  "checks": [
+    "en: all frames of six presets forward/back; endpoint, reset/end and exact totals/history checks",
+    "en: every prediction reveal/change; locale and preset isolation; keyboard range/Enter/focus; displayed/copied/downloaded exact source; denied clipboard selects manual source",
+    "en: 320/390/736/1440 populated geometry, six presets; 200% CSS zoom; six deep nav targets and two related anchors",
+    "zh: all frames of six presets forward/back; endpoint, reset/end and exact totals/history checks",
+    "zh: every prediction reveal/change; locale and preset isolation; keyboard range/Enter/focus; displayed/copied/downloaded exact source; denied clipboard selects manual source",
+    "zh: 320/390/736/1440 populated geometry, six presets; 200% CSS zoom; six deep nav targets and two related anchors",
+    "storage denial preserves in-memory locale; file:// works with offline source and local simulation"
+  ],
+  "meaning": [
+    {
+      "lang": "en",
+      "preset": "13",
+      "pos": 1,
+      "kind": "high",
+      "observed": "Accumulated value 40 > 13: k = 3 is too large. Every base ≥ 3 also fails; discard them."
+    },
+    {
+      "lang": "en",
+      "preset": "13",
+      "pos": 3,
+      "kind": "equal",
+      "observed": "Sum 13 = 13: return base 3. All larger m have failed, so this is the smallest good base."
+    },
+    {
+      "lang": "en",
+      "preset": "16",
+      "pos": 4,
+      "kind": "low",
+      "observed": "Sum 15 < 16: k = 2 is too small. Every base ≤ 2 gives a sum no greater than this; discard them."
+    },
+    {
+      "lang": "en",
+      "preset": "3",
+      "pos": 1,
+      "kind": "fallback",
+      "observed": "All m ≥ 2 failed. Use two ones: 1 + 2 = 3. Return 2."
+    },
+    {
+      "lang": "zh",
+      "preset": "13",
+      "pos": 1,
+      "kind": "high",
+      "observed": "当前累积值 40 > 13：k = 3 太大，所有 ≥ 3 的进制都不可能，排除它们。"
+    },
+    {
+      "lang": "zh",
+      "preset": "13",
+      "pos": 3,
+      "kind": "equal",
+      "observed": "和值 13 = 13：返回进制 3。更大的 m 已全部失败，因此它是最小好进制。"
+    },
+    {
+      "lang": "zh",
+      "preset": "16",
+      "pos": 4,
+      "kind": "low",
+      "observed": "和值 15 < 16：k = 2 太小，所有 ≤ 2 的进制给出的和值都不大于当前值，排除它们。"
+    },
+    {
+      "lang": "zh",
+      "preset": "3",
+      "pos": 1,
+      "kind": "fallback",
+      "observed": "所有 m ≥ 2 都失败。用两位 11：1 + 2 = 3，返回 2。"
+    }
+  ],
+  "screenshots": [
+    "en-exercise.png",
+    "en-intro.png",
+    "en-320-trace.png",
+    "en-320-values.png",
+    "en-390-trace.png",
+    "en-390-values.png",
+    "en-736-trace.png",
+    "en-1440-trace.png",
+    "en-zoom200.png",
+    "zh-exercise.png",
+    "zh-intro.png",
+    "zh-320-trace.png",
+    "zh-320-values.png",
+    "zh-390-trace.png",
+    "zh-390-values.png",
+    "zh-736-trace.png",
+    "zh-1440-trace.png",
+    "zh-zoom200.png"
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(10, 14, 20)",
+      "ratio": 16.440224808744848
+    },
+    {
+      "selector": ".step-nav a",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".btn:disabled",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "a",
+      "color": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#next",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#event",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": "#progress",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    }
+  ],
+  "focusContrast": 8.937191437807625,
+  "cssBytes": 12271,
+  "errors": [],
+  "externalRequests": [],
+  "zoom": "CSS layout zoom=2 at 1440; physical device/browser chrome zoom unverified"
+}
