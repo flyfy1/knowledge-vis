@@ -205,5 +205,14 @@
       ],
       "exit_code": 0
     }
+  ],
+  "label_probe_commands": [
+    {
+      "argv": [
+        "node",
+        "/tmp/leetcode-679-preset-probe-20261025.cjs"
+      ],
+      "exit_code": 1
+    }
   ]
 }

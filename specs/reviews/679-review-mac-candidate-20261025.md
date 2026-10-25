@@ -60,3 +60,19 @@ path. Original failure logs, diagnostic probes, supplemental scripts/results and
 inspected screenshots are retained. Use the frozen archive as working directory,
 an external OUTPUT_DIR, PREVIEW_URL pointing to its local server, and the
 installed full Playwright Chromium executable for the zoom supplement.
+
+## Native reproduction of 679-R1
+
+A separate 20-case selected-label probe at 320/390px in EN/ZH reproduces the
+review finding on Mac. At 320px, English preset 4 has text width 261.776px in a
+260px control with 15px padding on each side, leaving only 230px even before
+reserving native-arrow space. The screenshot visibly ends partway through
+“below”; the semantic description is incomplete. The computed CSS font stack
+is recorded without claiming which installed font resolved each glyph.
+
+The zero-arrow budget is deliberately a necessary text-content fit condition,
+not sufficient proof that a repaired label clears its arrow. Repair verification
+must rerun this unchanged probe and inspect selected-label screenshots. The
+unchanged probe, red result and image are retained. Lane 679 was instructed to
+stop at the natural post-fix boundary so repaired Mac evidence can be supplied
+to its independent reviewer before closing 679-R1.
