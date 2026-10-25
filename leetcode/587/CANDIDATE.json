@@ -1,19 +1,19 @@
 {
   "problemId": 587,
-  "candidate": "587-fix-C3-b5557a38c747",
-  "createdAt": "2026-10-25T02:18:20.336333+00:00",
-  "status": "author self-checked; ready for separate independent re-review; native Mac verification pending",
-  "baseCheckoutRevision": "700e5ce080b324a3816547c608c5f3c67fed689a",
-  "previousReviewedCandidate": "f5816b88f3e7e280e4c89878a0e6490d1a3522e6",
-  "previousReview": "specs/reviews/587-review-dispatcher-mac-20261025.md",
-  "previousFrozenManifest": "tests/evidence/mac-fix-before/CANDIDATE-C2.json",
+  "candidate": "587-followup-C4-0c34745af77e",
+  "createdAt": "2026-10-25T02:24:46.852580+00:00",
+  "status": "blocked: required native Mac regression evidence unavailable; implementation unchanged from reviewed C3",
+  "baseCheckoutRevision": "4f42bb0e85d4016a7c96572fd3db354aa63c055b",
+  "previousReviewedCandidate": "c7cbe5d941ea468d521aa27a4c1320e21d69f503",
+  "previousReview": "specs/reviews/587-review-3-09d91a86.md",
+  "previousFrozenManifest": "tests/evidence/review3-followup/CANDIDATE-C3.json",
   "findingFixes": {
-    "587-MAC-001": "repair implemented awaiting independent review and dispatcher native Mac regression/visual confirmation; not closed"
+    "587-MAC-001": "existing repair retained; required native Mac recheck unavailable; open, not independently accepted"
   },
-  "contentHash": "b5557a38c74750acbdc487452dd99e9965ddd144717fd64719b025c05c057dda",
+  "contentHash": "0c34745af77e92f5656f15169c94923bb5cb8ec34ce4103c91d65b847562f083",
   "sha256": {
     "BRIEF.md": "4c2edbe32853b2c7d7b2e8c043f44a94e7dda6ac287193c111eace13c4acd500",
-    "SELF-CHECK.md": "2ca49f6b3d0ce6a7824e66c9994fee126141840baa26dbdf47d3f8259194f80d",
+    "SELF-CHECK.md": "830bebe5ebfdd4bb5a1a6bf95287adaa72d0154453b0aadc2ccbb594a03ff4c2",
     "app.js": "b8f5b5f434e851fc1e824eed9ecb5410b525288ad929ecf6532a8651459bdfe2",
     "copy.js": "acd2510e3005eb26e0cbd85985193d02076d5f8fa7d015d6dcbce42dcd02d92a",
     "core.js": "cb784fb402b4328c5ba021d5ad489524cf4a4c4095ecf952cb6c237843156fe6",
@@ -34,7 +34,9 @@
     "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
     "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
   },
-  "evidenceDirectory": "tests/evidence/mac-fix",
+  "evidenceDirectory": "tests/evidence/review3-followup",
   "preflight": "python3 -B scripts/register_leetcode_lesson.py 587 --validate-only; exit 0; no stdout/stderr",
-  "pendingEvidence": "Original native Mac regression and rendered inspection required for integration closure; Linux and synthetic stress results do not supply this evidence."
+  "pendingEvidence": "Original native Mac regression and rendered inspection required for integration closure; Linux and synthetic stress results do not supply this evidence.",
+  "changeScope": "Documentation/evidence only; runtime, canonical/mirror sources, metadata and tests unchanged.",
+  "contentHashAlgorithm": "SHA-256 of compact JSON sha256 map with sorted keys"
 }
