@@ -1,0 +1,11 @@
+AssertionError [ERR_ASSERTION]: [{"width":320,"lang":"en","i":-1,"phase":"forward","key":"members","expected":[],"actual":[0,1,2]},{"width":320,"lang":"zh","i":-1,"phase":"forward","key":"members","expected":[],"actual":[0,1,2]},{"width":320,"lang":"en","i":0,"phase":"forward","key":"members","expected":[0],"actual":[0,1,2]},{"width":320,"lang":"zh","i":0,"phase":"forward","key":"members","expected":[0],"actual":[0,1,2]},{"width":320,"lang":"en","i":1,"phase":"forward","key":"members","expected":[0,1],"actual":[1,2,3]},{"width":320,"lang":"en","i":1,"phase":"forward","key":"previous","expected":[],"actual":[0]}]
+
+404 !== 0
+
+    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/239/tests/rendered-membership.js:68:38 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 404,
+  expected: 0,
+  operator: 'strictEqual'
+}
