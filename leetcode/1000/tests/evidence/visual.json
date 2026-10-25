@@ -1,0 +1,26 @@
+{
+  "kind": "author targeted browser states; screenshots require human/author inspection",
+  "states": [
+    {
+      "lang": "en",
+      "state": "completed and just-completed coexist",
+      "row": "D(0,2,2)\t5\t★ Just completed"
+    },
+    {
+      "lang": "en",
+      "state": "global count failure",
+      "text": "Pile-count guard: (n−1) is not divisible by (k−1). No interval computation is needed; return −1."
+    },
+    {
+      "lang": "zh",
+      "state": "completed and just-completed coexist",
+      "row": "D(0,2,2)\t5\t★ 刚完成"
+    },
+    {
+      "lang": "zh",
+      "state": "global count failure",
+      "text": "堆数检查：(n−1) 不能被 (k−1) 整除。无需计算区间，返回 −1。"
+    }
+  ],
+  "longTextWrap": true
+}

@@ -1,0 +1,14 @@
+const {chromium}=require('playwright'),fs=require('fs'),path=require('path'),assert=require('assert');
+const O=process.env.EVIDENCE_DIR||path.join(__dirname,'evidence'),URL=process.env.PREVIEW_URL||'http://127.0.0.1:18800/leetcode/1000/';
+(async()=>{fs.mkdirSync(O,{recursive:true});const browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});const p=await browser.newPage({viewport:{width:390,height:1000},reducedMotion:'reduce'});await p.goto(URL);const states=[];
+for(const lang of ['en','zh']){
+ await p.locator(`[data-lang=${lang}]`).click();await p.selectOption('#preset','0');for(let i=0;i<5;i++)await p.locator('#next').click();
+ await p.locator('#ledgerScroll').evaluate(e=>window.scrollBy(0,e.getBoundingClientRect().top-document.querySelector('.step-nav').getBoundingClientRect().height-12));await p.screenshot({path:path.join(O,`focus-${lang}-ledger.png`)});
+ const row=await p.locator('#ledger tr.current-row').innerText();assert(row.includes('D(0,2,2)'));assert(row.includes('5'));assert(row.includes('★'));states.push({lang,state:'completed and just-completed coexist',row});
+ await p.selectOption('#preset','2');await p.locator('#event').evaluate(e=>window.scrollBy(0,e.getBoundingClientRect().top-document.querySelector('.step-nav').getBoundingClientRect().height-12));await p.screenshot({path:path.join(O,`focus-${lang}-failure.png`)});states.push({lang,state:'global count failure',text:await p.locator('#event').innerText()});
+ await p.locator('#sourceDetails').evaluate(e=>e.open=true);await p.locator('#sourceDetails').evaluate(e=>window.scrollBy(0,e.getBoundingClientRect().top-document.querySelector('.step-nav').getBoundingClientRect().height-12));await p.screenshot({path:path.join(O,`focus-${lang}-source.png`)});
+ await p.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw Error('denied')}}}));await p.locator('#copy').click();await p.locator('#manualCopy').evaluate(e=>window.scrollBy(0,e.getBoundingClientRect().top-document.querySelector('.step-nav').getBoundingClientRect().height-12));await p.screenshot({path:path.join(O,`focus-${lang}-fallback.png`)});
+ // Verify ordinary CJK and 120-character text wrapping without changing candidate files.
+ await p.setViewportSize({width:320,height:1000});await p.locator('#copyStatus').evaluate(e=>e.textContent='X'.repeat(120)+'这是用于测量长文本换行的临时测试');assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await p.setViewportSize({width:390,height:1000});
+}
+fs.writeFileSync(path.join(O,'visual.json'),JSON.stringify({kind:'author targeted browser states; screenshots require human/author inspection',states,longTextWrap:true},null,2));await browser.close();console.log('Targeted captures and long-text geometry passed');})().catch(e=>{console.error(e);process.exit(1)});
