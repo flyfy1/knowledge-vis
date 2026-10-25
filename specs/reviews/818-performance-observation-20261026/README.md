@@ -30,3 +30,42 @@ The existing normal review remains authoritative. Preserve the author's right to
 finish and improve its candidate; this snapshot may already be superseded. A
 future fix requires its own clear invariant/proof, targeted boundary evidence and
 fresh independent review, rather than accepting a pruning heuristic from tests.
+
+
+## Independent assessment — 2026-10-26
+
+A separate reviewer verified copied-source SHA-256
+`ba7639466dde736ade02f547425edca0bbac2734afa6a7ac03c91a59bbf29fb9`
+and compared its actual BFS with the recurrence for targets 1–64: all agreed.
+Recurrence-only checks returned 56 for 9809, 55 for 9879 and 45 for 10000.
+No large BFS case was repeated; no Pi access, active-author edit or new candidate
+acceptance occurred.
+
+The recurrence's overshoot branch uses `n` accelerations, a reversal and the
+mirrored residual distance. Its undershoot branch uses `n-1` accelerations,
+a reversal, `m` backward accelerations and another reversal, leaving distance
+`target - 2**(n-1) + 2**m` at cost `n+m+1`. These expressions match the instruction
+semantics; the small independent comparisons support the implementation but do
+not substitute for proving the recurrence's exhaustive optimal decomposition.
+Ranking minimum instruction counts does not establish a worst-memory input.
+
+The observed 1,194,819,584-byte process peak is a concrete feasibility concern
+that a frozen review must assess, not proof of an official resource-limit
+violation. Current lesson rules require actual time/space justification and
+constraint-relevant evidence; they specify no hard memory ceiling. The fresh
+subprocess measurement includes interpreter and other process allocations;
+callable timing excludes startup, and four seconds is a local diagnostic timeout.
+All recorded calls returned, so neither TLE nor OOM was observed.
+
+If the final candidate retains this source, the fresh independent reviewer must
+reconcile its exact hash, inspect its actual state-growth/cost claims, and assess
+representative difficult valid targets as well as the maximum numeric target.
+Unbounded BFS explores reachable position/speed states through the answer depth;
+a small visual trace is not a bound on the submitted callable. Any required
+finding must identify a concrete incorrect cost claim, missing constraint/cost
+justification, or demonstrated execution failure under an evidenced environment,
+not an invented LeetCode budget. If pruning or a different algorithm is adopted,
+review its completeness/optimality proof, boundary cases, executable behavior and
+teaching/source parity against that new frozen candidate. Keep high-memory tests
+off the constrained Pi. This is a diagnostic handoff, not a preemptive rejection
+of the still-active author's work.
