@@ -1,0 +1,89 @@
+{"running": ["node", "/tmp/leetcode-675-preset-probe-20261025.cjs"], "candidate": "7dec91fc5955f310f1b864e65af2d8be3b0bccfe"}
+{"records":24,"failures":[{"viewportWidth":320,"lang":"en","index":1,"label":"Detour around a wall · 10 moves","font":"16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif","width":260,"paddingLeft":15,"paddingRight":15,"arrowAllowance":0,"textWidth":252.57598876953125,"available":230,"fits":false},{"viewportWidth":320,"lang":"en","index":2,"label":"Official example 2 · unreachable","font":"16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif","width":260,"paddingLeft":15,"paddingRight":15,"arrowAllowance":0,"textWidth":255.0399169921875,"available":230,"fits":false},{"viewportWidth":320,"lang":"en","index":4,"label":"Multiple legs & revisits · 9 moves","font":"16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif","width":260,"paddingLeft":15,"paddingRight":15,"arrowAllowance":0,"textWidth":261.407958984375,"available":230,"fits":false}]}
+Retain original failure; continue independent checks
+{"running": ["node", "leetcode/675/tests/selected-labels.cjs"], "candidate": "7dec91fc5955f310f1b864e65af2d8be3b0bccfe"}
+{"result":"pass","checks":48,"wrappedChecks":30,"clippedChecks":0}
+{"running": ["node", "leetcode/675/tests/browser.cjs"], "candidate": "7dec91fc5955f310f1b864e65af2d8be3b0bccfe"}
+trace checked en 0 7
+trace checked en 1 14
+trace checked en 2 11
+trace checked en 3 2
+trace checked en 4 15
+trace checked en 5 1
+trace checked zh 0 7
+trace checked zh 1 14
+trace checked zh 2 11
+trace checked zh 3 2
+trace checked zh 4 15
+trace checked zh 5 1
+{
+  "result": "pass",
+  "records": 12,
+  "layouts": 14,
+  "cssBytes": 11680,
+  "contrasts": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".cell",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#tracePrev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#traceNext",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#langToggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#copyStatus",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": "focus on panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "cell border",
+      "ratio": 10.910104011097095
+    }
+  ]
+}
+{"running": ["node", "leetcode/675/tests/focused.cjs"], "candidate": "7dec91fc5955f310f1b864e65af2d8be3b0bccfe"}
