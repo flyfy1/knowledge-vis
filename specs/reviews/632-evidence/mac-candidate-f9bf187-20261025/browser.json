@@ -1,0 +1,338 @@
+{
+  "nativeClipboard": "write/read exact equality passed",
+  "browser": "151.0.7922.34",
+  "states": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "frames": 4,
+      "final": "best (among evaluated) [4,6]; width 2",
+      "stop": "Ended: minimum 5 comes from list 1, which has no successor. This candidate has been evaluated. best is now the final answer."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "frames": 9,
+      "final": "best (among evaluated) [20,24]; width 4",
+      "stop": "Ended: minimum 20 comes from list 2, which has no successor. This candidate has been evaluated. best is now the final answer."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "frames": 7,
+      "final": "best (among evaluated) [1,1]; width 0",
+      "stop": "Ended: minimum 3 comes from list 1, which has no successor. This candidate has been evaluated. best is now the final answer."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "frames": 3,
+      "final": "best (among evaluated) [-5,-4]; width 1",
+      "stop": "Ended: minimum -1 comes from list 1, which has no successor. This candidate has been evaluated. best is now the final answer."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "frames": 3,
+      "final": "best (among evaluated) [-2,-2]; width 0",
+      "stop": "Ended: minimum 9 comes from list 1, which has no successor. This candidate has been evaluated. best is now the final answer."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "frames": 1,
+      "final": "best (among evaluated) [1,20]; width 19",
+      "stop": "Ended: minimum 1 comes from list 1, which has no successor. This candidate has been evaluated. best is now the final answer."
+    },
+    {
+      "lang": "en",
+      "answer": "0",
+      "feedback": "Check coverage of every row and whether a shorter range is possible. Selections are (2,4,6) → (8,4,6) → (8,9,6) → (8,9,10). Candidates are [2,6], [4,8], [6,9], [8,10], with widths 4,4,3,2. Minimum 8 now exhausts A, so return [8,10]. [2,6] stops too early; [9,10] misses A."
+    },
+    {
+      "lang": "en",
+      "answer": "1",
+      "feedback": "Correct. Selections are (2,4,6) → (8,4,6) → (8,9,6) → (8,9,10). Candidates are [2,6], [4,8], [6,9], [8,10], with widths 4,4,3,2. Minimum 8 now exhausts A, so return [8,10]. [2,6] stops too early; [9,10] misses A."
+    },
+    {
+      "lang": "en",
+      "answer": "2",
+      "feedback": "Check coverage of every row and whether a shorter range is possible. Selections are (2,4,6) → (8,4,6) → (8,9,6) → (8,9,10). Candidates are [2,6], [4,8], [6,9], [8,10], with widths 4,4,3,2. Minimum 8 now exhausts A, so return [8,10]. [2,6] stops too early; [9,10] misses A."
+    },
+    {
+      "lang": "en",
+      "copy": "success",
+      "text": "Complete source copied."
+    },
+    {
+      "lang": "en",
+      "copy": "fallback",
+      "text": "Clipboard unavailable: the complete source is selected below for manual copying."
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "select": {
+        "width": 260,
+        "text": 138.43194580078125,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "select": {
+        "width": 330,
+        "text": 138.43194580078125,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "select": {
+        "width": 644,
+        "text": 138.43194580078125,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "select": {
+        "width": 908,
+        "text": 138.43194580078125,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "focus": {
+        "outline": "solid",
+        "width": "3px"
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "frames": 4,
+      "final": "best（已比较中的最佳）[4,6]；宽度 2",
+      "stop": "已结束：最小值 5 来自清单 1，该行没有后继；当前候选已比较。best 现在是最终答案。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "frames": 9,
+      "final": "best（已比较中的最佳）[20,24]；宽度 4",
+      "stop": "已结束：最小值 20 来自清单 2，该行没有后继；当前候选已比较。best 现在是最终答案。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "frames": 7,
+      "final": "best（已比较中的最佳）[1,1]；宽度 0",
+      "stop": "已结束：最小值 3 来自清单 1，该行没有后继；当前候选已比较。best 现在是最终答案。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "frames": 3,
+      "final": "best（已比较中的最佳）[-5,-4]；宽度 1",
+      "stop": "已结束：最小值 -1 来自清单 1，该行没有后继；当前候选已比较。best 现在是最终答案。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "frames": 3,
+      "final": "best（已比较中的最佳）[-2,-2]；宽度 0",
+      "stop": "已结束：最小值 9 来自清单 1，该行没有后继；当前候选已比较。best 现在是最终答案。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "frames": 1,
+      "final": "best（已比较中的最佳）[1,20]；宽度 19",
+      "stop": "已结束：最小值 1 来自清单 1，该行没有后继；当前候选已比较。best 现在是最终答案。"
+    },
+    {
+      "lang": "zh",
+      "answer": "0",
+      "feedback": "再核对每行是否覆盖，以及是否还能缩短。 选值依次为 (2,4,6) → (8,4,6) → (8,9,6) → (8,9,10)。候选为 [2,6]、[4,8]、[6,9]、[8,10]，宽度 4、4、3、2。此时最小值 8 所在 A 已耗尽，返回 [8,10]。[2,6] 过早停止；[9,10] 不覆盖 A。"
+    },
+    {
+      "lang": "zh",
+      "answer": "1",
+      "feedback": "正确。 选值依次为 (2,4,6) → (8,4,6) → (8,9,6) → (8,9,10)。候选为 [2,6]、[4,8]、[6,9]、[8,10]，宽度 4、4、3、2。此时最小值 8 所在 A 已耗尽，返回 [8,10]。[2,6] 过早停止；[9,10] 不覆盖 A。"
+    },
+    {
+      "lang": "zh",
+      "answer": "2",
+      "feedback": "再核对每行是否覆盖，以及是否还能缩短。 选值依次为 (2,4,6) → (8,4,6) → (8,9,6) → (8,9,10)。候选为 [2,6]、[4,8]、[6,9]、[8,10]，宽度 4、4、3、2。此时最小值 8 所在 A 已耗尽，返回 [8,10]。[2,6] 过早停止；[9,10] 不覆盖 A。"
+    },
+    {
+      "lang": "zh",
+      "copy": "success",
+      "text": "已复制完整源码。"
+    },
+    {
+      "lang": "zh",
+      "copy": "fallback",
+      "text": "剪贴板不可用：下方已选中完整源码，请手动复制。"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "select": {
+        "width": 260,
+        "text": 77.56802368164062,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "select": {
+        "width": 330,
+        "text": 77.56802368164062,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "select": {
+        "width": 644,
+        "text": 77.56802368164062,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "select": {
+        "width": 908,
+        "text": 77.56802368164062,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "focus": {
+        "outline": "solid",
+        "width": "3px"
+      }
+    }
+  ],
+  "screenshots": [
+    "en-prediction.png",
+    "en-fallback.png",
+    "en-320-trace.png",
+    "en-320-rows.png",
+    "en-320-candidateRead.png",
+    "en-320-bestRead.png",
+    "en-320-select.png",
+    "en-390-trace.png",
+    "en-390-rows.png",
+    "en-390-candidateRead.png",
+    "en-390-bestRead.png",
+    "en-736-trace.png",
+    "en-1440-trace.png",
+    "en-zoom200.png",
+    "zh-prediction.png",
+    "zh-fallback.png",
+    "zh-320-trace.png",
+    "zh-320-rows.png",
+    "zh-320-candidateRead.png",
+    "zh-320-bestRead.png",
+    "zh-320-select.png",
+    "zh-390-trace.png",
+    "zh-390-rows.png",
+    "zh-390-candidateRead.png",
+    "zh-390-bestRead.png",
+    "zh-736-trace.png",
+    "zh-1440-trace.png",
+    "zh-zoom200.png"
+  ],
+  "contrast": [
+    {
+      "role": "body/panel",
+      "fg": "e8edf4",
+      "bg": "161b22",
+      "ratio": 14.704584598678618
+    },
+    {
+      "role": "disabled",
+      "fg": "9aa7b8",
+      "bg": "1c2330",
+      "ratio": 6.449407898769069
+    },
+    {
+      "role": "muted",
+      "fg": "9aa7b8",
+      "bg": "0d1117",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "role": "selected",
+      "fg": "6ee7ff",
+      "bg": "1c2330",
+      "ratio": 10.910104011097095
+    },
+    {
+      "role": "primary",
+      "fg": "0d1117",
+      "bg": "6ee7ff",
+      "ratio": 13.100679028115637
+    },
+    {
+      "role": "focus",
+      "fg": "ffb454",
+      "bg": "161b22",
+      "ratio": 9.809435643476732
+    },
+    {
+      "role": "correct",
+      "fg": "7ee2a8",
+      "bg": "1c2330",
+      "ratio": 10.004815697188947
+    },
+    {
+      "role": "explanation",
+      "fg": "c9d4e2",
+      "bg": "0a0e14",
+      "ratio": 12.89261537833187
+    }
+  ],
+  "offline": "file:// source and initial trace passed",
+  "forcedColors": "visible 3px focus outline; reduced-motion scroll auto",
+  "renderedColors": {
+    "candidateRead": {
+      "color": "rgb(0, 0, 0)",
+      "background": "rgb(255, 255, 255)",
+      "opacity": "1"
+    },
+    "bestRead": {
+      "color": "rgb(0, 0, 0)",
+      "background": "rgb(255, 255, 255)",
+      "opacity": "1"
+    },
+    "traceNext": {
+      "color": "rgb(96, 0, 0)",
+      "background": "rgb(255, 255, 255)",
+      "opacity": "1"
+    }
+  },
+  "cssBytes": 11483,
+  "assetRequests": [
+    "http://127.0.0.1:18782/leetcode/632/",
+    "http://127.0.0.1:18782/leetcode/632/style.css?v=632-1",
+    "http://127.0.0.1:18782/leetcode/style.css",
+    "http://127.0.0.1:18782/leetcode/632/python-code.js?v=632-1",
+    "http://127.0.0.1:18782/leetcode/common.js",
+    "http://127.0.0.1:18782/leetcode/632/core.js?v=632-1",
+    "http://127.0.0.1:18782/leetcode/632/copy.js?v=632-1",
+    "http://127.0.0.1:18782/leetcode/632/app.js?v=632-1"
+  ],
+  "errors": [],
+  "result": "passed"
+}

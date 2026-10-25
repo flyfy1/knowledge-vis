@@ -1,0 +1,39 @@
+{
+  "platform": "darwin",
+  "browser": "151.0.7922.34",
+  "records": [
+    {
+      "mode": "Control+c",
+      "selection": {
+        "active": true,
+        "start": 0,
+        "end": 764,
+        "length": 764
+      },
+      "equalsSource": false,
+      "stillSentinel": true
+    },
+    {
+      "mode": "Meta+c",
+      "selection": {
+        "active": true,
+        "start": 0,
+        "end": 764,
+        "length": 764
+      },
+      "equalsSource": true,
+      "stillSentinel": false
+    },
+    {
+      "mode": "Control+c-delayed",
+      "selection": {
+        "active": true,
+        "start": 0,
+        "end": 764,
+        "length": 764
+      },
+      "equalsSource": false,
+      "stillSentinel": true
+    }
+  ]
+}
