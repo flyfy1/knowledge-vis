@@ -3025,6 +3025,84 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(1 + log(max(tx, ty))) time; O(1) auxiliary space"
   },
   {
+    "id": 782,
+    "title": {
+      "zh": "变为棋盘",
+      "en": "Transform to Chessboard"
+    },
+    "desc": {
+      "zh": "从整行整列交换，推导可行性与最少交换次数。",
+      "en": "Derive feasibility and minimum swaps from preserved row relationships."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "不变量",
+        "en": "Invariants"
+      },
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      }
+    ],
+    "path": "782/",
+    "leetcodeUrl": "https://leetcode.com/problems/transform-to-chessboard/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(1) auxiliary space"
+  },
+  {
+    "id": 803,
+    "title": {
+      "zh": "打砖块",
+      "en": "Bricks Falling When Hit"
+    },
+    "desc": {
+      "zh": "倒序补砖，用屋顶连通数的增量推导掉落数量。",
+      "en": "Reverse the hits and derive fallen counts from growth in roof connectivity."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "并查集",
+        "en": "Union-find"
+      },
+      {
+        "zh": "逆序处理",
+        "en": "Reverse processing"
+      }
+    ],
+    "path": "803/",
+    "leetcodeUrl": "https://leetcode.com/problems/bricks-falling-when-hit/",
+    "language": "Python",
+    "complexity": "O((mn + H) α(mn)) amortized time; O(mn + H) auxiliary space"
+  },
+  {
+    "id": 805,
+    "title": {
+      "zh": "数组的均值分割",
+      "en": "Split Array With Same Average"
+    },
+    "desc": {
+      "zh": "从三张数字卡片推导等均值条件，用折半子集和寻找非空分组。",
+      "en": "Derive an exact average condition, then pair count-indexed subset sums from two halves."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "折半搜索",
+        "en": "Meet in the middle"
+      },
+      {
+        "zh": "子集和",
+        "en": "Subset sum"
+      }
+    ],
+    "path": "805/",
+    "leetcodeUrl": "https://leetcode.com/problems/split-array-with-same-average/",
+    "language": "Python",
+    "complexity": "O(n · 2^ceil(n/2)) expected time; O(2^ceil(n/2)) space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
