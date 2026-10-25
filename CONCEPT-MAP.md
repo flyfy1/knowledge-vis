@@ -1101,3 +1101,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Counting invariant and rolling arrays | `leetcode/552/#step4` | Maintain disjoint counts with fresh next-day storage. |
 
 <!-- /leetcode-552-campaign -->
+
+
+<!-- leetcode-546-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Interval DP with a carried boundary | `leetcode/546/#step2` | Remember saved equal-color boxes while clearing the separating interval. |
+
+<!-- /leetcode-546-campaign -->
