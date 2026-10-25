@@ -1,0 +1,46 @@
+{
+  "status": "disabled-preparation-not-independent-approval",
+  "source": "specs/reviews/parallel-992995-import-preparation-20261026/operate.py",
+  "sourceSha256": "e75a434a0829b46b3233d34a03f78094453ec6c02b47cbab0df0b8bb2eca101a",
+  "helperSource": "specs/reviews/parallel-968972-import-818-search-preparation-20261026/operate.py",
+  "helperSha256": "f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698",
+  "substitutions": [
+    {
+      "from": "OWNER='import992995-only-20261026-888bb6ac'",
+      "to": "OWNER='import9961000-only-20261026-641c280f'"
+    },
+    {
+      "from": "DISPATCH='root-reviewed-import992995-only-20261026-888bb6ac'",
+      "to": "DISPATCH='root-reviewed-import9961000-only-20261026-641c280f'"
+    },
+    {
+      "from": "IDS=('992','995')",
+      "to": "IDS=('996','1000')"
+    },
+    {
+      "from": "independently accepted992/995 under unchanged policy",
+      "to": "independently accepted996/1000 under unchanged policy"
+    }
+  ],
+  "operatorSha256": "8ed2ce05bf4a4ac273e6d3aac1dd3adceb2329b6854b3a27c179bb5ff562f6a4",
+  "targetIds": [
+    "996",
+    "1000"
+  ],
+  "lanePaths": {
+    "996": {
+      "repo": "/home/songyy/projects/leetcode-hard-lane-996-20261026",
+      "state": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026",
+      "branch": "codex/lane-996-20261026"
+    },
+    "1000": {
+      "repo": "/home/songyy/projects/leetcode-hard-lane-1000-20261026",
+      "state": "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026",
+      "branch": "codex/lane-1000-20261026"
+    }
+  },
+  "laneBase": null,
+  "policyModified": false,
+  "queued995RepairModified": false,
+  "piAccessPerformed": false
+}

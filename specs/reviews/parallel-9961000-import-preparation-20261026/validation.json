@@ -1,0 +1,16 @@
+{
+  "status": "disabled-preparation-not-independent-approval",
+  "testsPassed": 6,
+  "piAccessPerformed": false,
+  "operatorExecuted": false,
+  "commitPerformed": false,
+  "files": {
+    "README.md": "3b3b6e6f997f8c2b6bc0eb6c717d3284e4412202441d8f13f32191034b8f5952",
+    "operate.py": "8ed2ce05bf4a4ac273e6d3aac1dd3adceb2329b6854b3a27c179bb5ff562f6a4",
+    "parameter-map.json": "9efcd5353eb4ef9046deeaf17687b7d45cd33ae030c983f677095cabe6444c47",
+    "parameter-only.diff": "ec9655e2a95b4f0d6f61c2c78d1909e5f7076a732c857c38ed40bf53bea5d565",
+    "pending-pins.json": "1e580fa9c425ca9823433fc68e2a9612615dd7c5801010bf986894b96c16b48b",
+    "test_preparation.py": "ec6e06bd539eac3ebe220faa388966879f97933867c6b3f91f056ebc8ff2b01d",
+    "tests.log": "92b0731f04354602c377871281bdf14d0c243168a1d89d19455de857bb0b0aa6"
+  }
+}

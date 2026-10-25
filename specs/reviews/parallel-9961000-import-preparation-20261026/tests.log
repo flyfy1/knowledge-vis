@@ -1,0 +1,11 @@
+test_all_acceptance_and_head_pins_pending (__main__.Preparation.test_all_acceptance_and_head_pins_pending) ... ok
+test_control_flow_changes_fail_reversal (__main__.Preparation.test_control_flow_changes_fail_reversal) ... ok
+test_disabled_main_refuses_before_any_input_read (__main__.Preparation.test_disabled_main_refuses_before_any_input_read) ... ok
+test_exact_four_substitution_reversal (__main__.Preparation.test_exact_four_substitution_reversal) ... ok
+test_helper_and_policy_unchanged (__main__.Preparation.test_helper_and_policy_unchanged) ... ok
+test_pending_schema_refuses_before_helper_import (__main__.Preparation.test_pending_schema_refuses_before_helper_import) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.010s
+
+OK

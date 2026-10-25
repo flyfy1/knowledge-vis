@@ -1,0 +1,30 @@
+--- specs/reviews/parallel-992995-import-preparation-20261026/operate.py
++++ specs/reviews/parallel-9961000-import-preparation-20261026/operate.py
+@@ -12,15 +12,15 @@
+ import sys
+ import time
+ 
+-OWNER='import992995-only-20261026-888bb6ac'
+-DISPATCH='root-reviewed-import992995-only-20261026-888bb6ac'
++OWNER='import9961000-only-20261026-641c280f'
++DISPATCH='root-reviewed-import9961000-only-20261026-641c280f'
+ PINS_SHA=None  # Disabled preparation: both completed acceptance pins and fresh review are required.
+ HELPER_SHA='f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698'
+ POLICY_PATH='specs/leetcode-rendered-state-contract.md'
+ POLICY_SHA='816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c'
+ STATIC_PATH='scripts/leetcode_static_versions.py'
+ STATIC_SHA='f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e'
+-IDS=('992','995')
++IDS=('996','1000')
+ REQUIRED_POLICY={'scripts/import_leetcode_lane.py','scripts/leetcode_campaign.py','scripts/leetcode_publish.py',
+                  'scripts/leetcode_registry.py','scripts/register_leetcode_lesson.py','scripts/campaign-prompts/author.md',
+                  'scripts/campaign-prompts/fix.md','scripts/campaign-prompts/review.md','specs/leetcode-explainers.md',
+@@ -139,7 +139,7 @@
+             require(all(pid not in latest['problems'] and not any(r['problem_id']==pid for r in latest['runs']) for pid in IDS),'Central reached reserved ID')
+             initial_guard(op,latest,central)
+             record['pre_stop_plan']=op.resume_plan(latest,op.read(STATE/'releases.json'),incoming=IDS)
+-            stop={'owner':OWNER,'created_at':op.imp.now(),'reason':'Finish current stage; import independently accepted992/995 under unchanged policy, then resume the normal queue.','lane_ids':list(IDS)}
++            stop={'owner':OWNER,'created_at':op.imp.now(),'reason':'Finish current stage; import independently accepted996/1000 under unchanged policy, then resume the normal queue.','lane_ids':list(IDS)}
+             pre_stop=op.read(STATE/'progress.json');initial_guard(op,pre_stop,central)
+             pre_stop_queue=pre_stop['queue']
+             require(len(pre_stop_queue)==984 and op.canonical(pre_stop_queue)==op.pins['queue_sha256'],'Finite queue identity differs before STOP')
