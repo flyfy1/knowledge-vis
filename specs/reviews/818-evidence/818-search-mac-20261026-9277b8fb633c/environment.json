@@ -1,0 +1,30 @@
+{
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "sys_platform": "darwin",
+  "machine": "arm64",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+  "cpu_count": 18,
+  "load_average_at_start": [
+    1.4912109375,
+    1.83154296875,
+    1.86962890625
+  ],
+  "source_path": "/private/tmp/818-frozen-9277b8fb633c26904b03231d1127ed816baad6c4.py",
+  "frozen_path": "/Users/songyy/Documents/knowledge-vis/specs/reviews/818-evidence/818-search-mac-20261026-9277b8fb633c/canonical.py",
+  "source_sha256": "da9a9a40d5d90c856d82b984333419be4246821b037108faeee0eddae0ab6d68",
+  "harness_sha256": "94a3d9c9567af65c32bdd72bddd3d1eaa167a8e9d901335237a89ba5880a7386",
+  "started_utc": "2026-10-25T19:55:15Z",
+  "workers": 2,
+  "wall_seconds": 1800.0,
+  "per_target_seconds": 15.0,
+  "target_range": [
+    1,
+    10000
+  ],
+  "test_only_limited_coverage": false,
+  "rss_method": "resource.getrusage(RUSAGE_SELF).ru_maxrss; Darwin bytes; whole fresh process peak",
+  "isolation": "one fresh -I -B Python process per target; canonical stdout/stderr discarded",
+  "timing": "call_seconds excludes compile/import; process_wall_seconds includes startup/cleanup",
+  "overall_bound": "monotonic deadline covers survey and isolated reruns; process-group cleanup may add bounded grace"
+}
