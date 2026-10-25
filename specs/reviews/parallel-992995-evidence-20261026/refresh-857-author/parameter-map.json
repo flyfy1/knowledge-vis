@@ -1,0 +1,67 @@
+{
+  "targets": [
+    {
+      "id": "992",
+      "port": 18797,
+      "branch": "codex/lane-992-20261026",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-992-20261026",
+      "state": "/home/songyy/projects/leetcode-hard-lane-state-992-20261026"
+    },
+    {
+      "id": "995",
+      "port": 18798,
+      "branch": "codex/lane-995-20261026",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-995-20261026",
+      "state": "/home/songyy/projects/leetcode-hard-lane-state-995-20261026"
+    }
+  ],
+  "policySha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+  "dispatcherOfficialPrepCommit": "d3d2aa8eb61c17081beffdca687f9f2d15555973",
+  "authorContextInjection": false,
+  "approvedImportOperatorSource": "8f7d005b91072d953251ecb7f3188388b873351a",
+  "approvedImportPinsPath": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import982987-only-20261026-e0e53065/pins.json",
+  "approvedImportPinsSha256": "0d9dec18554ed18154ac5b4137371b08382bd217c290149fd048a46987387a01",
+  "staticDependencySourceField": "approved_pins[lane_base]",
+  "staticDependencySourceRevision": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+  "status": "refreshed-observation-awaiting-independent-review-no-dispatch",
+  "source": "specs/reviews/parallel-992995-evidence-20261026/launch.py",
+  "sourceSha256": "d222c9545aeeb0304292fe2d55c93c169a2516693610a41c983b078ef6a2d890",
+  "actualParameterSubstitutionCount": 5,
+  "substitutions": [
+    {
+      "from": "CENTRAL_HEAD='1be3c657ef0c1ef3152f8abced78df2e278f09da'",
+      "to": "CENTRAL_HEAD='5d9cf8fc351f19c9e747b8c5e424858b2cee6e3b'"
+    },
+    {
+      "from": "CENTRAL_RUN='854-review-0add7000fba0'",
+      "to": "CENTRAL_RUN='857-author-6ff773b703f3'"
+    },
+    {
+      "from": "s['current']['problem_id']=='854'",
+      "to": "s['current']['problem_id']=='857'"
+    },
+    {
+      "from": "s['current']['stage']=='review'",
+      "to": "s['current']['stage']=='author'"
+    },
+    {
+      "from": "e.get('thread_id')=='01a17518-b387-7960-b6d6-60e162d298e1'",
+      "to": "e.get('thread_id')=='01a1751c-7c80-77f2-95bc-3c72095f217c'"
+    }
+  ],
+  "immutableBase": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+  "launcherSha256": "b04075f86c3ae1b7c210b26d468988595c8dc34d4ef6b912ffce0ebf0922e132",
+  "preflightScriptSha256": "1614f6868e620d276026bd0b49484c3389ef7f649dd61dc6cab449f0aacc9d86",
+  "preflightSha256": "237d5cfbe0f7db3453dad74d962d9cdb1df7624d047b90c4b3bdf696213c9826",
+  "centralNativePid": 1778062,
+  "centralRunnerPid": 1774575,
+  "importReceiptSha256": "cb5fdd343af51ee94fd03ec2caa438e115e5d8173558050cfa19304754510e46",
+  "resolvedPins": {
+    "__PENDING_IMPORT982987_BASE__": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+    "__PENDING_IMPORT982987_CENTRAL_HEAD__": "5d9cf8fc351f19c9e747b8c5e424858b2cee6e3b",
+    "__PENDING_IMPORT982987_CENTRAL_RUN__": "857-author-6ff773b703f3",
+    "__PENDING_IMPORT982987_PROBLEM__": "857",
+    "__PENDING_IMPORT982987_STAGE__": "author",
+    "__PENDING_IMPORT982987_SESSION__": "01a1751c-7c80-77f2-95bc-3c72095f217c"
+  }
+}

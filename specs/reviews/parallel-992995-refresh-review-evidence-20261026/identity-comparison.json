@@ -1,0 +1,23 @@
+{
+  "observed_at": "2026-10-25T22:13:39.512993+00:00",
+  "base": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+  "central_head": "5d9cf8fc351f19c9e747b8c5e424858b2cee6e3b",
+  "central_current": {
+    "problem_id": "857",
+    "stage": "author",
+    "started_at": "2026-10-25T22:09:22.950135+00:00",
+    "run_id": "857-author-6ff773b703f3"
+  },
+  "central_session": "01a1751c-7c80-77f2-95bc-3c72095f217c",
+  "central_runner_pid": 1774575,
+  "mem_available_kib": 1984552,
+  "allowed_dirty_scope": {
+    "stage": "author",
+    "prefix": "leetcode/857/",
+    "source": "Exact Own ONLY instruction plus current prompt problem metadata",
+    "trackedChangesAllowedWithinPrefix": true
+  },
+  "all_frozen_pins_match": true,
+  "native_pid": 1778062,
+  "reservation_count": 39
+}

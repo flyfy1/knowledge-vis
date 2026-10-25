@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-10-25T22:12:02.313005+00:00",
+  "status": "refreshed-proposal-awaiting-review-no-dispatch",
+  "passed": true,
+  "staticTests": 8,
+  "observationParameterChanges": 5,
+  "immutableBaseUnchanged": true,
+  "preflightScriptUnchanged": true,
+  "originalApprovedAndRefusalArtifactsUnchanged": true,
+  "laneExecution": false,
+  "remoteFileMutation": false,
+  "files": {
+    "README.md": "5af79dc22f5e25168a1f3ae8cb136a9fba3125010887a2695bb50186435dba25",
+    "launch.py": "b04075f86c3ae1b7c210b26d468988595c8dc34d4ef6b912ffce0ebf0922e132",
+    "observation-only.diff": "a889ed2dcb058db2db8ab5e71ac7747196d0c4e43dde715112bb735f15888741",
+    "parameter-map.json": "bd3108e31f66610fc9d9514067446a068a8b0fb6d7ee0d28f54dea6ecb339e55",
+    "preflight.json": "237d5cfbe0f7db3453dad74d962d9cdb1df7624d047b90c4b3bdf696213c9826",
+    "preflight.py": "1614f6868e620d276026bd0b49484c3389ef7f649dd61dc6cab449f0aacc9d86",
+    "preserved-artifacts.json": "2027ed8345821b590c36033ee8b8773acda56dcea79338f2fb4d367650229502",
+    "test_parameters.py": "c383bb114f2e3dd2c444fbb0895e0c9d5f1e17aabc47eb166e74d7b040a47927",
+    "tests.log": "637ad693971420b70a01476cd5d51065ecc3c7af270c41cfe91899ec8c2db4bd"
+  }
+}

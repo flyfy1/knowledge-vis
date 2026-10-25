@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-25T22:10:14.595752+00:00",
+  "checks": {
+    "base": true,
+    "central_head": false,
+    "central_expected_head": false,
+    "central_session": false,
+    "central_runner_pid": true,
+    "982987_import_receipt_sha256": true,
+    "run": false,
+    "stage": false,
+    "native": false
+  },
+  "all_match": false,
+  "actual_current": {
+    "problem_id": "857",
+    "stage": "author",
+    "started_at": "2026-10-25T22:09:22.950135+00:00",
+    "run_id": "857-author-6ff773b703f3"
+  },
+  "native": 1778062,
+  "mem_kib": 1981828
+}
