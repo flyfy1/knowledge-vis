@@ -2351,6 +2351,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(min(m,n) log(mn)) time; O(1) auxiliary space"
   },
   {
+    "id": 679,
+    "title": {
+      "zh": "24 点游戏",
+      "en": "24 Game"
+    },
+    "desc": {
+      "zh": "用两两合并与精确分数，穷尽四张牌的合法表达式。",
+      "en": "Reduce pairs with exact fractions to cover every legal four-card expression."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "回溯",
+        "en": "Backtracking"
+      },
+      {
+        "zh": "分数运算",
+        "en": "Rational arithmetic"
+      }
+    ],
+    "path": "679/",
+    "leetcodeUrl": "https://leetcode.com/problems/24-game/",
+    "language": "Python",
+    "complexity": "O(1) time and O(1) auxiliary space for exactly four bounded cards"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
