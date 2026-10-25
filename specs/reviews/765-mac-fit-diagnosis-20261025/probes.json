@@ -1,0 +1,118 @@
+{
+  "browser": "151.0.7922.34",
+  "platform": "darwin",
+  "records": [
+    {
+      "mode": "baseline-dom",
+      "label": "8 people · counterexample",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "canvasWidth": 209.43997192382812,
+      "domWidth": 209.453125,
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "available24": 206,
+      "available16": 214,
+      "pass24": false
+    },
+    {
+      "mode": "locale-roundtrip",
+      "label": "8 people · counterexample",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "canvasWidth": 209.43997192382812,
+      "domWidth": 209.453125,
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "available24": 206,
+      "available16": 214,
+      "pass24": false
+    },
+    {
+      "mode": "padding12-only",
+      "label": "8 people · counterexample",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "canvasWidth": 209.43997192382812,
+      "domWidth": 209.453125,
+      "clientWidth": 260,
+      "padding": [
+        "12px",
+        "12px"
+      ],
+      "available24": 212,
+      "available16": 220,
+      "pass24": true
+    },
+    {
+      "mode": "short-label-only",
+      "label": "8 people: counterexample",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "canvasWidth": 200.01597595214844,
+      "domWidth": 200.03125,
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "available24": 206,
+      "available16": 214,
+      "pass24": true
+    },
+    {
+      "mode": "width390-only",
+      "label": "8 people · counterexample",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "canvasWidth": 209.43997192382812,
+      "domWidth": 209.453125,
+      "clientWidth": 330,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "available24": 276,
+      "available16": 284,
+      "pass24": true
+    },
+    {
+      "mode": "concise-label-only",
+      "label": "8-person counterexample",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "canvasWidth": 200.65597534179688,
+      "domWidth": 200.65625,
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "available24": 206,
+      "available16": 214,
+      "pass24": true
+    },
+    {
+      "mode": "long-label-positive-control",
+      "label": "8 people · counterexample demonstration",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "canvasWidth": 326.303955078125,
+      "domWidth": 326.3125,
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "available24": 206,
+      "available16": 214,
+      "pass24": false
+    }
+  ]
+}
