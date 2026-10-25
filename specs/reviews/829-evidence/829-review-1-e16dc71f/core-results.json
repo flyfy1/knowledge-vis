@@ -1,0 +1,10 @@
+{
+  "kind": "author core self-check",
+  "result": "pass",
+  "exhaustive": "n=1..1000",
+  "oracle": "grow sums by starting integer; no production length formula",
+  "intermediateFrames": true,
+  "duplicateKeyAstObjects": 1,
+  "localeKeys": 84,
+  "sourceMirrorExact": true
+}
