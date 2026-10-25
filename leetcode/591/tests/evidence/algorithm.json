@@ -1,0 +1,15 @@
+{
+  "kind": "author self-check, not independent acceptance",
+  "pythonCases": 26177,
+  "officialExamples": 3,
+  "boundaryCases": 21,
+  "seed": 591,
+  "maxOfficialLengthChecked": 500,
+  "core": {
+    "cases": 26177,
+    "framesChecked": 70202,
+    "presets": 10,
+    "sourceMirror": "exact",
+    "copyPairs": 91
+  }
+}

@@ -2069,6 +2069,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
+    "id": 591,
+    "title": {
+      "zh": "标签验证器",
+      "en": "Tag Validator"
+    },
+    "desc": {
+      "zh": "用待闭合标签栈区分嵌套、CDATA 与唯一根标签。",
+      "en": "Track pending tags to validate nesting, opaque CDATA, and one enclosing root."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "栈",
+        "en": "Stack"
+      },
+      {
+        "zh": "字符串解析",
+        "en": "String parsing"
+      }
+    ],
+    "path": "591/",
+    "leetcodeUrl": "https://leetcode.com/problems/tag-validator/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space worst case, O(d) stack for valid input"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
