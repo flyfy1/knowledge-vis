@@ -3653,6 +3653,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n) time; O(n) auxiliary space"
   },
   {
+    "id": 980,
+    "title": {
+      "zh": "不同路径 III",
+      "en": "Unique Paths III"
+    },
+    "desc": {
+      "zh": "从提前到达终点的失败，推导覆盖每个格子的回溯计数。",
+      "en": "Derive complete-walk backtracking from an early arrival that fails."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "回溯",
+        "en": "Backtracking"
+      },
+      {
+        "zh": "网格搜索",
+        "en": "Grid search"
+      }
+    ],
+    "path": "980/",
+    "leetcodeUrl": "https://leetcode.com/problems/unique-paths-iii/",
+    "language": "Python",
+    "complexity": "O(mn + 3^V) time; O(V) auxiliary space, V non-obstacle cells"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
