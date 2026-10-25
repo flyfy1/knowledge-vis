@@ -69,3 +69,18 @@ Independent subset oracle, exhaustive short arrays, seeded cases, official examp
 locales/presets/endpoints/replay/predictions/copy success+fallback/source/download/blocked
 storage/local assets/focus/320,390,736,1440 and 200% zoom. Evidence output path configurable.
 No claim of LeetCode submission, learner outcomes or independent acceptance.
+
+## 2026-10-25 repair contract — 630-MAC-001
+
+Reuse the approved layout and tokens. The dispatcher finding authorizes a narrow
+label repair: all five selected presets retain their identity and explicit output
+course counts; their full arrays stay in inputRead. Shorten labels locally, keep
+16px type, native selection, shared font, inputs and trace semantics. Bump only
+the changed copy asset reference. No new feature/layout or independent acceptance.
+
+P0/highest-return slice: readable closed labels at 320/390 and desktop, both
+locales and a locale roundtrip; rendered-control regression plus exact input and
+count checks. P1: synthetic 20px sensitivity check, separately labeled. P2: none.
+Deferred: native Mac evidence must come from a Mac running the frozen candidate;
+Linux passing cannot close this integration finding. Retain the original probe
+unchanged and supply its checksum and rerun instructions for that handoff.
