@@ -1,0 +1,53 @@
+{
+  "observed_at": "2026-10-25T19:55:36.430822+00:00",
+  "status": "stopped",
+  "current": {
+    "problem_id": "818",
+    "stage": "fix",
+    "started_at": "2026-10-25T19:44:35.528541+00:00",
+    "run_id": "818-fix-4a6861765951"
+  },
+  "head": "9277b8fb633c26904b03231d1127ed816baad6c4",
+  "expected_head": "9277b8fb633c26904b03231d1127ed816baad6c4",
+  "remote_head": "9277b8fb633c26904b03231d1127ed816baad6c4",
+  "worktree": "",
+  "lesson_tree": "1c14e1c5ebe8dab5602e7cd9a2c1ec9f3b16221a",
+  "source_sha256": "da9a9a40d5d90c856d82b984333419be4246821b037108faeee0eddae0ab6d68",
+  "progress_sha256": "e3ddb30dac89238c0495766e7f195636c529ad463f138fb7b792ad8caf7bef69",
+  "stop_sha256": "3f6953af77d712e814a5c3f2e49b1b1d478f7fce7f7981eff3bcf84ff6d4983b",
+  "failed_receipt_sha256": "723aa5cf0ddc654e05eeb091ee499f2423cffdbcdd2bf2e1893ce80466e618ad",
+  "recovery_receipt_sha256": "15fe60191bada03236ebbaa1fd56705d670447ccdfb21615782ae8551f553949",
+  "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b",
+  "queue_count": 984,
+  "run_count": 424,
+  "accepted_local": 130,
+  "blocked": 39,
+  "entry818": {
+    "status": "review_pending",
+    "phase": "review",
+    "rounds": 1,
+    "candidate": "9277b8fb633c26904b03231d1127ed816baad6c4",
+    "author_runs": [
+      "818-author-a80a467fbe94",
+      "818-fix-0dbe90734960",
+      "818-fix-4a6861765951"
+    ]
+  },
+  "pids_present": {
+    "1523670": false,
+    "1582005": false,
+    "1586319": false,
+    "1586631": false,
+    "1586901": false
+  },
+  "campaign_processes": [],
+  "locks": {
+    "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runner.lock": "free",
+    "/home/songyy/projects/leetcode-hard-campaign-state-20261018/release.lock": "free",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/.git/leetcode-campaign.lock": "free"
+  },
+  "existing_818_review_run_ids": [
+    "818-review-23290c1abcd2"
+  ],
+  "new_review_run_ids": []
+}

@@ -1,0 +1,106 @@
+{
+  "owner": "818-search-author-startup-recovery-20261026-32c8d741",
+  "status": "waiting-for-Mac",
+  "created_at": "2026-10-25T19:44:24.964094+00:00",
+  "recovery_of": "import968972-search818-stage-a-20261026-4b7e902d",
+  "confirmed_cause": "H1: launched PID may be live before it replaces the exact persisted stopped prelaunch snapshot.",
+  "prior_head": "f3347117f4e4370e8d83c77a1cf9e9f14ccae554",
+  "publication_bound": {
+    "eligible": [
+      "780",
+      "793",
+      "798",
+      "801",
+      "810",
+      "815",
+      "827",
+      "828",
+      "829",
+      "960",
+      "968",
+      "972"
+    ],
+    "incoming": [],
+    "registration_ids": [],
+    "reopened_upper_bound_ids": [
+      "818"
+    ],
+    "upper_bound_ids": [
+      "780",
+      "793",
+      "798",
+      "801",
+      "810",
+      "815",
+      "818",
+      "827",
+      "828",
+      "829",
+      "960",
+      "968",
+      "972"
+    ],
+    "upper_bound": 13
+  },
+  "launch": {
+    "pid": 1586631,
+    "queue_count": 984,
+    "continuous": true,
+    "state": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress.json"
+  },
+  "handoff_stop": {
+    "owner": "818-search-author-startup-recovery-20261026-32c8d741-author-to-mac",
+    "transaction": "818-search-author-startup-recovery-20261026-32c8d741",
+    "recovery_of": "import968972-search818-stage-a-20261026-4b7e902d",
+    "created_at": "2026-10-25T19:44:35.638376+00:00",
+    "reason": "Finish only this fresh 818 fix; stop before review for exact Mac measurements. Reviewed Stage B required.",
+    "run_id": "818-fix-4a6861765951"
+  },
+  "ordinary_resume_proof": {
+    "registration_commits": [],
+    "agent_candidate": "f3347117f4e4370e8d83c77a1cf9e9f14ccae554",
+    "prior_reviews_and_runs_preserved": true
+  },
+  "fresh_author": {
+    "current": {
+      "problem_id": "818",
+      "stage": "fix",
+      "started_at": "2026-10-25T19:44:35.528541+00:00",
+      "run_id": "818-fix-4a6861765951"
+    },
+    "session_id": "01a17497-ebf5-7bf1-82fe-3c78f9d11828",
+    "native_codex_pids": [
+      1586901
+    ],
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a17497-ebf5-7bf1-82fe-3c78f9d11828"
+      },
+      {
+        "type": "turn.started"
+      }
+    ]
+  },
+  "pre_author_head": "f3347117f4e4370e8d83c77a1cf9e9f14ccae554",
+  "zero_new_818_reviews": true,
+  "stage_a_complete": true,
+  "completed_at": "2026-10-25T19:54:36.644000+00:00",
+  "frozen_author": {
+    "author_run_id": "818-fix-4a6861765951",
+    "candidate": "9277b8fb633c26904b03231d1127ed816baad6c4",
+    "lesson_tree": "1c14e1c5ebe8dab5602e7cd9a2c1ec9f3b16221a",
+    "source_path": "leetcode/818/solution.py",
+    "source_sha256": "da9a9a40d5d90c856d82b984333419be4246821b037108faeee0eddae0ab6d68",
+    "source_bytes": 1426,
+    "state_backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/818-search-author-startup-recovery-20261026-32c8d741-waiting-for-mac-state.json",
+    "state_sha256": "e3ddb30dac89238c0495766e7f195636c529ad463f138fb7b792ad8caf7bef69",
+    "zero_new_818_reviews": true,
+    "expected_measurement_report": "specs/reviews/818-review-search-resource-measurement-20261026.md",
+    "pushed_head": "9277b8fb633c26904b03231d1127ed816baad6c4"
+  },
+  "release_ledger_preserved": true,
+  "owned_stop_present": true,
+  "failed_stage_a_receipt_preserved": true,
+  "recovery": "Keep this recovery author-to-Mac STOP. Root measures exact candidate; separately reviewed Stage B binds this successful recovery receipt. No review or acceptance yet."
+}

@@ -1,8 +1,8 @@
 # Stage B preparation: adopt measured #818 evidence and resume review
 
 **Not dispatchable.** `REVIEWED_PINS_SHA256 = None` rejects even the correct dispatch
-token before reading a pins file or runtime. No frozen recovered author candidate or actual
-measurement exists yet. Root must complete the steps below, freeze exact future
+token before reading a pins file or runtime. A recovered author candidate is frozen; successful actual
+measurement/report adoption inputs remain pending. Root must complete the steps below, freeze exact future
 pins/operator hashes, and arrange separate independent review before enabling use.
 This folder contains no live pins and authorizes no production action.
 
@@ -114,6 +114,18 @@ fixture is **not** an actual candidate measurement or numerical acceptance claim
 The real runner test intercepts `run_agent` before any real agent starts.
 
 No Pi mutation, source authoring, full-range execution, measurement report or
-candidate acceptance was performed. The successful recovered handoff receipt and actual Mac evidence are
-pending. After they arrive, revalidate real artifact compatibility, freeze pins,
+candidate acceptance was performed. The successful recovered handoff receipt is archived; actual successful Mac
+evidence and its report remain pending. After they arrive, revalidate real artifact compatibility, freeze pins,
 complete independent operator review, and obtain root's separate exact dispatch.
+
+## Captured runtime inputs (still disabled)
+
+`pending-runtime-pins.json` records only actual frozen runtime identities from the
+successful recovery archive. Candidate `9277b8fb633c26904b03231d1127ed816baad6c4`,
+source/tree, raw receipt/STOP/progress/ledger hashes, all required policy hashes and
+launcher hash are captured and cross-checked. Its provenance paths identify the
+read-only source artifacts, including `policy-hashes.json` (committed bytes match)
+and `releases-frozen.json`. This is explicitly not a dispatch pins file: no
+`source_revision`, payload hashes, report or successful measurement is invented.
+Final payload binding and runtime revalidation remain required. The operator's
+`REVIEWED_PINS_SHA256` remains `None`.

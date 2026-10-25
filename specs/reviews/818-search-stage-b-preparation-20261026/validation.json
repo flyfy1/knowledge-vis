@@ -9,8 +9,10 @@
   "sha256": {
     "operate.py": "06d40ac7414e289b14d5d01f8cc7eb1b934bdbd152e8107c15f160a63ba20c1d",
     "test_operate.py": "9a5b05fdb472f3ed835877b2a1c5759a90c47a670a14da25a47d92f26014c9f3",
-    "README.md": "2fde438a2d484d9d22adcc84198889da56f8b0b35f02a660b9439ee1affba9a3",
-    "tests.log": "5dd8797948cf4ff48925aa16236bec192d1e57bd3ba2a1bc848943b737f6c4ca"
+    "README.md": "0819a702098c8b504dda8ae2f986d5c89ddb2ec2d9766eefcd531594d01622fc",
+    "tests.log": "5dd8797948cf4ff48925aa16236bec192d1e57bd3ba2a1bc848943b737f6c4ca",
+    "pending-runtime-pins.json": "0c377500eed1c04734dd07f4dce0d8d615a05e52c5b5b235f6e7cf35554f97bc"
   },
-  "lineage": "Successful recovery receipt only; original failed Stage A preserved"
+  "lineage": "Successful recovery receipt only; original failed Stage A preserved",
+  "runtime_input_capture": "Actual frozen archive only; payload/report/source revision unresolved; operator unchanged and disabled"
 }
