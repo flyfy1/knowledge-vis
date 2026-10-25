@@ -31,3 +31,18 @@ Branch matrix, both locales: initial, layer, cut, success, unreachable, first/la
 ## Priorities
 
 P0: causal route, independent-leg proof, reversible BFS board+ledger, fresh prediction, equivalent bilingual copy, executable Python and exact source parity, device/access tests. Highest-return 20%: taller-tree crossing plus retained distance layers exposes the key mechanism. P1: related concept anchors and reproducible oracle evidence. P2: none. Deferred: autoplay, arbitrary grid editor, general renderer and decoration; they add state without improving this small observation task. No registry or concept-map mutation in author scope.
+
+## Required repair 675-R1-01 (2026-10-25)
+
+Reuse the existing native preset control and all copy/state. The independent
+review requests complete selected labels at 320px and zoom; its local-control
+repair recommendation is adopted. The closed control now uses the available
+width and `field-sizing:content`, so its existing wrapped text determines its
+height instead of clipping at the 48px minimum. No typography, color, spacing,
+state ownership, algorithm, or teaching sequence changes. This is a narrow
+readability repair to the reviewed design, not a new feature/layout. P0 and the
+highest-return slice: complete native labels, arrow, move units, both locales,
+roundtrip, 320/390px and 200% CSS zoom. P1/P2: none added. Deferred: other browser
+engines/physical devices require their own evidence; independent closure remains
+pending. Modern Chromium support for CSS field-sizing is verified locally; no
+cross-browser claim is made.
