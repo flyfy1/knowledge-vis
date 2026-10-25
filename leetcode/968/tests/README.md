@@ -6,6 +6,7 @@ Run from the repository root. No server is started. Default preview is the exist
 LESSON_EVIDENCE_DIR=/tmp/968-review python3 -B leetcode/968/tests/test_solution.py
 LESSON_EVIDENCE_DIR=/tmp/968-review node leetcode/968/tests/test_core.cjs
 LESSON_EVIDENCE_DIR=/tmp/968-review node leetcode/968/tests/browser.cjs
+LESSON_EVIDENCE_DIR=/tmp/968-review node leetcode/968/tests/current_marker.cjs
 LESSON_EVIDENCE_DIR=/tmp/968-review node leetcode/968/tests/capture_focus.cjs
 LESSON_EVIDENCE_DIR=/tmp/968-review node leetcode/968/tests/offline.cjs
 python3 -B scripts/register_leetcode_lesson.py 968 --validate-only
@@ -18,3 +19,5 @@ The browser test uses actual Chromium and native host clipboard shortcuts (Contr
 Python oracle: undirected neighbor set-cover enumeration, independent of postorder rules. Core oracle likewise enumerates subsets with independent edge coverage, then checks every return frame. Saved N states describe return-time obligations and may subsequently be covered by an ancestor; they are not current coverage flags.
 
 Full-page screenshots retain source and fallback disclosures after tests. Focused captures avoid the capture-dependent sticky navigation overlay. Inspect screenshots visually; generating them alone is not a visual review.
+
+`current_marker.cjs` is the 968-R1 rendered regression: an older camera alongside the current camera, default-tree installation, root repair, rewind/replay and locale roundtrips at 1280px and 320px. It checks computed SVG strokes and retained K labels/camera identities, and captures focused diagrams. The unchanged assertion failed against the reviewed CSS; `evidence/968-r1-red.log` preserves that result.
