@@ -1,0 +1,31 @@
+{
+  "validatedAt": "2026-10-25T21:27:53.144139+00:00",
+  "status": "prepared-awaiting-root-independent-review-and-separate-dispatch",
+  "launcherSha256": "042e95a37d31100524e862db7e354e664310df535eccd7736aa2415c16196463",
+  "preflightSha256": "ec01c22261e9150cc5c45a01754ac3179e7a69ac84c900cff2c3d36e33ec70e2",
+  "sourceLauncherSha256": "17709040ee542e912e697aedca65e0800a5e6c5b77535fafb3aa3597b1cd25a8",
+  "parameterSubstitutions": 10,
+  "resolvedPendingPins": 6,
+  "byteAndAstReverseIdentical": true,
+  "staticTestsPassed": 8,
+  "preflightObservedAt": "2026-10-25T21:26:25.795592+00:00",
+  "843RepairReceiptSha256": "85e981af4d5d0681f392d8565b31fc4502ee6518fcce5491090d8abf6657467b",
+  "sourceHashesVerifiedBeforeImporterExecution": true,
+  "freshFixMatchesCompletedReceipt": true,
+  "officialPrepCommittedHashesVerified": true,
+  "noLauncherExecuted": true,
+  "noRemoteFilesOrStateWritten": true,
+  "pendingTemplatesPreserved": true,
+  "filesSha256": {
+    "README.md": "30420f4aa9baafc1944d2ca193b27db756e918fdce2125c560f9f75b618b839d",
+    "launch.py": "042e95a37d31100524e862db7e354e664310df535eccd7736aa2415c16196463",
+    "parameter-map.json": "7aa697f9d0cd4113ba7015047ae514c410deb91dfe3a6a7b5640ff2339dc7a38",
+    "parameter-only.diff": "1a062df5f344c95e963eee8dbc25504aedc9e041db1e98ad284ba81ad9651181",
+    "pending-to-final.diff": "77ca1ef9691a1715e839f760a5a68907f2cd4ed052840047de4a302a7803cf5c",
+    "preflight-enabled.diff": "9da312ac0a653cf7c7e3be2b694adeaa5d037f16fe0c48078c6239f8aae33640",
+    "preflight.json": "57f86f784e542c0f0af2f77b15360a4b21eacc0b84c06d16175567bc3d614ff5",
+    "preflight.py": "ec01c22261e9150cc5c45a01754ac3179e7a69ac84c900cff2c3d36e33ec70e2",
+    "test_parameters.py": "359a7ed22dbd55dff0a439ae5589cbd3569225b5899b266f032ddedad92fe8ba",
+    "tests.log": "637ad693971420b70a01476cd5d51065ecc3c7af270c41cfe91899ec8c2db4bd"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "status": "prepared-awaiting-root-independent-review-and-separate-dispatch",
+  "source": "specs/reviews/parallel-975980-evidence-20261026/launch.py",
+  "sourceSha256": "17709040ee542e912e697aedca65e0800a5e6c5b77535fafb3aa3597b1cd25a8",
+  "actualParameterSubstitutionCount": 10,
+  "substitutions": [
+    {
+      "from": "BASE='2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba'",
+      "to": "BASE='854d1bdc83efc13ae49716190ba8db858e4dd0fc'"
+    },
+    {
+      "from": "CENTRAL_HEAD='96e82a2f927f7506f2dd97956f1b837e67c9df1e'",
+      "to": "CENTRAL_HEAD='854d1bdc83efc13ae49716190ba8db858e4dd0fc'"
+    },
+    {
+      "from": "CENTRAL_RUN='839-author-ed3a2c092deb'",
+      "to": "CENTRAL_RUN='843-fix-d56cf6178cb9'"
+    },
+    {
+      "from": "s['current']['problem_id']=='839'",
+      "to": "s['current']['problem_id']=='843'"
+    },
+    {
+      "from": "s['current']['stage']=='author'",
+      "to": "s['current']['stage']=='fix'"
+    },
+    {
+      "from": "e.get('thread_id')=='01a174bb-07c4-7881-855c-30619660e8d7'",
+      "to": "e.get('thread_id')=='01a174f4-bc5c-7992-be3a-69f166e491b8'"
+    },
+    {
+      "from": "POLICY='d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa'",
+      "to": "POLICY='816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c'"
+    },
+    {
+      "from": "['975','980']",
+      "to": "['982','987']"
+    },
+    {
+      "from": "parallel-launch-975980.lock",
+      "to": "parallel-launch-982987.lock"
+    },
+    {
+      "from": "[('975',18793),('980',18794)]",
+      "to": "[('982',18795),('987',18796)]"
+    }
+  ],
+  "dispatcherOfficialPrepCommit": "062a793491ca1962d4474b64c0c382a4f247a702",
+  "dispatcherOfficialPrepFilesSha256": {
+    "specs/reviews/next-982987-preparation-20261026/982-official-access.json": "97806d61e9b712f34ea8673fa9642ff9838131ef0662d603156b7d120eafd87a",
+    "specs/reviews/next-982987-preparation-20261026/982-official-response.json": "5c237cc0702ff966a3ce612a91ae064816036e545711ebe264d79ddd7ba16ead",
+    "specs/reviews/next-982987-preparation-20261026/982.md": "4409cb1d091eddf33c18ecdfa6e1f6cf42e5a851daef8d0d867a891c4bc476a7",
+    "specs/reviews/next-982987-preparation-20261026/987-official-access.json": "5cd441da12036918e8f709b922fab32b6a8eddea47086f5f0c0b416d41cf5308",
+    "specs/reviews/next-982987-preparation-20261026/987-official-response.json": "b39900253f886373cff30d6768592cd7ce6f99425e0cf62a29242ad956e34659",
+    "specs/reviews/next-982987-preparation-20261026/987.md": "eb60933e00a81b36a8c014a344f20988ce429ea566957aed4e37d15af3698a1f",
+    "specs/reviews/next-982987-preparation-20261026/README.md": "2b9742b30ba08eacb49fb673852405cb789dff1a10dba9ef64ff0570d07cce1b",
+    "specs/reviews/next-982987-preparation-20261026/preflight.json": "82d21defceb924336d1ed30795da3d28122238ce2684225c9a412370ba33fdc1",
+    "specs/reviews/next-982987-preparation-20261026/root-example-checks.json": "35f3bb3a68e5822cbc00fc8f6cc963e960aed5f21d528df58a99e32c7c75d734",
+    "specs/reviews/next-982987-preparation-20261026/validation.json": "140a3276b57eedac9650f132ea829288c9d0ac086e773c84c32eda0933a823ec"
+  },
+  "authorContextInjection": false,
+  "policySha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+  "targets": [
+    {
+      "id": "982",
+      "port": 18795,
+      "branch": "codex/lane-982-20261026",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-982-20261026",
+      "state": "/home/songyy/projects/leetcode-hard-lane-state-982-20261026"
+    },
+    {
+      "id": "987",
+      "port": 18796,
+      "branch": "codex/lane-987-20261026",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-987-20261026",
+      "state": "/home/songyy/projects/leetcode-hard-lane-state-987-20261026"
+    }
+  ],
+  "pendingTemplateSha256": "465a733c667547199d648d6093998f9c6da2a56f783be1900a7f488684fbfa2f",
+  "launcherSha256": "042e95a37d31100524e862db7e354e664310df535eccd7736aa2415c16196463",
+  "preflightScriptSha256": "ec01c22261e9150cc5c45a01754ac3179e7a69ac84c900cff2c3d36e33ec70e2",
+  "preflightSha256": "57f86f784e542c0f0af2f77b15360a4b21eacc0b84c06d16175567bc3d614ff5",
+  "resolvedPins": {
+    "__PENDING_843_ADOPTION_BASE__": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+    "__PENDING_843_CENTRAL_HEAD__": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+    "__PENDING_843_CENTRAL_RUN__": "843-fix-d56cf6178cb9",
+    "__PENDING_843_PROBLEM__": "843",
+    "__PENDING_843_STAGE__": "fix",
+    "__PENDING_843_SESSION__": "01a174f4-bc5c-7992-be3a-69f166e491b8"
+  },
+  "centralNativePid": 1696569,
+  "centralRunnerPid": 1696215,
+  "repairReceiptSha256": "85e981af4d5d0681f392d8565b31fc4502ee6518fcce5491090d8abf6657467b"
+}

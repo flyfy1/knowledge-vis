@@ -1,0 +1,11 @@
+--- specs/reviews/parallel-982987-launch-preparation-20261026/preflight.pending.py
++++ specs/reviews/parallel-982987-evidence-20261026/preflight.py
+@@ -4,7 +4,7 @@
+ receipt_path=state_dir/'843-budget-repair-20261026-91db47a2.json'
+ receipt_bytes=receipt_path.read_bytes();receipt=json.loads(receipt_bytes)
+ assert receipt['status']=='completed-fresh843fix-running',receipt['status']
+-base='__PENDING_843_ADOPTION_BASE__'
++base='854d1bdc83efc13ae49716190ba8db858e4dd0fc'
+ assert receipt['head']==base
+ s=json.loads((state_dir/'progress.json').read_text());head=subprocess.check_output(['git','-C',str(repo),'rev-parse','HEAD'],text=True).strip();current=s['current'];run=next(r for r in s['runs'] if r['id']==current['run_id']);events=[]
+ for line in (pathlib.Path(run['directory'])/'events.jsonl').read_text().splitlines():
