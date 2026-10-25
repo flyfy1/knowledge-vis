@@ -1,0 +1,69 @@
+{
+  "problemId": 282,
+  "officialUrl": "https://leetcode.com/problems/expression-add-operators/",
+  "observedAt": "2026-10-25T00:11:39.878907+00:00",
+  "captureMethod": "Normal browser navigation in the Codex in-app browser; visible language-menu selection of Python3; logged out. No CAPTCHA, paywall, or access control was bypassed.",
+  "title": "Expression Add Operators",
+  "difficulty": "Hard",
+  "contractSummary": "Enumerate expressions formed from the ordered input digits using binary addition, subtraction and multiplication, with optional concatenation. Match the integer target. Reject multi-digit operands beginning with zero.",
+  "constraints": {
+    "numLengthMin": 1,
+    "numLengthMax": 10,
+    "numAlphabet": "decimal digits",
+    "targetMin": -2147483648,
+    "targetMax": 2147483647
+  },
+  "examples": [
+    {
+      "num": "123",
+      "target": 6,
+      "outputs": [
+        "1*2*3",
+        "1+2+3"
+      ]
+    },
+    {
+      "num": "232",
+      "target": 8,
+      "outputs": [
+        "2*3+2",
+        "2+3*2"
+      ]
+    },
+    {
+      "num": "3456237490",
+      "target": 9191,
+      "outputs": []
+    }
+  ],
+  "visibleLanguageOptions": [
+    "C++",
+    "Java",
+    "Python3",
+    "Python",
+    "JavaScript",
+    "TypeScript",
+    "C#",
+    "C",
+    "Go",
+    "Kotlin",
+    "Swift",
+    "Rust",
+    "Ruby",
+    "PHP",
+    "Dart",
+    "Scala",
+    "Elixir",
+    "Erlang",
+    "Racket"
+  ],
+  "selectedLanguage": "Python3",
+  "visibleTemplate": "class Solution:\n    def addOperators(self, num: str, target: int) -> list[str]:\n        ",
+  "screenshot": "official-python3-20261025.jpg",
+  "screenshotSha256": "ed66a6394160f9c9d517c2b16c9baf764f493c97403bfee3bfb1c868ba710bbd",
+  "evidenceLimits": [
+    "This is dispatcher source-access evidence, not independent lesson acceptance.",
+    "No code was run or submitted on LeetCode.",
+    "The browser snapshot shows the statement and Python3 template; constraints were observed in the accessibility tree and official text response."
+  ]
+}
