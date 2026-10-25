@@ -1,0 +1,57 @@
+{
+  "candidate": "262-review4-fixes-20261025",
+  "baseHead": "f1f6e25eb6ed50a9d3ad7ecea2429dca6adeae7d",
+  "createdAt": "2026-10-25T14:46:08.465269+08:00",
+  "status": "self-checked candidate; independent re-review pending",
+  "checks": [
+    {
+      "command": "/tmp/venv262/bin/python -B leetcode/262/tests/test_solution.py",
+      "exitCode": 0,
+      "stdout": "oracle checks passed\n",
+      "stderr": ""
+    },
+    {
+      "command": "/tmp/venv262/bin/python -B leetcode/262/tests/test_worked_bridge.py",
+      "exitCode": 0,
+      "stdout": "worked active/client/driver/cancelled tables, banned-driver counterexample, fresh transfer, 150 seeded oracle cases and input nonmutation passed; pandas=3.1.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "python3 -B scripts/register_leetcode_lesson.py 262 --validate-only",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "index.html": "434830dc4946e52ff40e785f8f6c4b4845c15dcdf77b51471a50e71f6ae0a5ec",
+    "copy.js": "4f584898ec669908b5aeabc515e6e471b8c7cfbfab935962b0b6e85afa83ec0b",
+    "app.js": "b9c981b22100ce3adc2c2d28b1006da92a7d556ecf3a7682454e80c507fd8f63",
+    "style.css": "dca5f9842f568a58da772d12ae3a5b9678ed3b4f953569186194f8061e38b904",
+    "solution.py": "2d49b818d54bb4ad29aed89069637841ee259538fa47cc96bd8c76710bbab4c2",
+    "python-code.js": "a2bec0063d6f90c57caf9dfab3dfa021e1f99d7d54d1b7968190ab77a4a54979",
+    "lesson-entry.json": "68326e14f6e5db31410b811aec608b170f114dd10ce39c417a5f256144787824",
+    "BRIEF.md": "706c5f3565f547d635aa6ea67f63da20d11039347d84aba3256c515978d8e6d8",
+    "tests/test_browser.cjs": "fb2d99ce8b57ea0df506c2e77cdee89d96bd7f10ca34a89e88f859e081f7c633",
+    "tests/test_teaching.cjs": "de7d4132868c7a71a8879b5a1eb7b8368dfdccdb46b3aba301bdcc2c51fa29df",
+    "tests/test_worked_bridge.py": "346652edd527aa0809446877065f8a49bb5ba6d655b775ac673ee9f0bf390db2",
+    "tests/test_rendered_states.cjs": "3042a6e483c4ce426a4102cb949646ee3a19623bcfcc7f29be75a38c54676b89",
+    "SELF-CHECK.md": "3190becab9bebb4560d669a0f13b94bfba9048de599fc44ebfb283ec5bfcaae7"
+  },
+  "previewSha256": {
+    "index.html": "434830dc4946e52ff40e785f8f6c4b4845c15dcdf77b51471a50e71f6ae0a5ec",
+    "copy.js": "4f584898ec669908b5aeabc515e6e471b8c7cfbfab935962b0b6e85afa83ec0b",
+    "app.js": "b9c981b22100ce3adc2c2d28b1006da92a7d556ecf3a7682454e80c507fd8f63",
+    "style.css": "dca5f9842f568a58da772d12ae3a5b9678ed3b4f953569186194f8061e38b904",
+    "solution.py": "2d49b818d54bb4ad29aed89069637841ee259538fa47cc96bd8c76710bbab4c2",
+    "python-code.js": "a2bec0063d6f90c57caf9dfab3dfa021e1f99d7d54d1b7968190ab77a4a54979",
+    "lesson-entry.json": "68326e14f6e5db31410b811aec608b170f114dd10ce39c417a5f256144787824",
+    "BRIEF.md": "706c5f3565f547d635aa6ea67f63da20d11039347d84aba3256c515978d8e6d8"
+  }
+}

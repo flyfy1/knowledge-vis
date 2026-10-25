@@ -1,0 +1,24 @@
+{
+  "candidate": "262-pub-r1-20261025",
+  "createdAt": "2026-10-25T06:36:04.661782+00:00",
+  "status": "fixed awaiting independent re-review",
+  "findingIds": [
+    "262-PUB-R1"
+  ],
+  "baseCommit": "8e2d9fffcf6dd48385c6dd7d4907806a5efe012b",
+  "files": {
+    "leetcode/262/BRIEF.md": "8e4da6c637dc64ea467cddb758f6e0766cc8c1366af0236494a0f6d0da0f56c2",
+    "leetcode/262/SELF-CHECK.md": "af52e5bf8372c433ba542eb530a0dd705248b590110179c56c9f4a0658cd93d4",
+    "leetcode/262/app.js": "b9c981b22100ce3adc2c2d28b1006da92a7d556ecf3a7682454e80c507fd8f63",
+    "leetcode/262/copy.js": "fe1e2f4382c334177587738376761e6dbc814a92b9f28cae39fa894e9d89de04",
+    "leetcode/262/index.html": "16ad12917e7c5fde468f32c13ea1a83efeaf9b8fb8ec1e5fda7f844be4173399",
+    "leetcode/262/lesson-entry.json": "68326e14f6e5db31410b811aec608b170f114dd10ce39c417a5f256144787824",
+    "leetcode/262/provenance/official-capture.md": "3a5563084382070de4c0451d91cf1fb13dc71f8d823bf98d10c9cd77a84f4145",
+    "leetcode/262/provenance/official-graphql.json": "8808ad434af6b1fdd68a0ea973f28a32548f24a067be49b9d0d8ff4e747767b1",
+    "leetcode/262/python-code.js": "a2bec0063d6f90c57caf9dfab3dfa021e1f99d7d54d1b7968190ab77a4a54979",
+    "leetcode/262/solution.py": "2d49b818d54bb4ad29aed89069637841ee259538fa47cc96bd8c76710bbab4c2",
+    "leetcode/262/style.css": "dca5f9842f568a58da772d12ae3a5b9678ed3b4f953569186194f8061e38b904",
+    "leetcode/262/tests/test_browser.cjs": "64afc27b3cfdd7d059b3503ff63ddb54417ab2eb23077cb147df70ee862f18e8",
+    "leetcode/262/tests/test_solution.py": "7b1e5b42a1e151285aaad23b7e89a5fc8581583ae2d83b07e7c8244b9dae9ca9"
+  }
+}

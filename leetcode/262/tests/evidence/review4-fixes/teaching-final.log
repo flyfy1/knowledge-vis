@@ -1,0 +1,10 @@
+locator.textContent: Error: strict mode violation: locator('#step2, #step4') resolved to 2 elements:
+    1) <section id="step2" class="step" data-step="2">…</section> aka locator('#step2')
+    2) <section id="step4" class="step" data-step="4">…</section> aka locator('#step4')
+
+Call log:
+[2m  - waiting for locator('#step2, #step4')[22m
+
+    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/262/tests/test_teaching.cjs:24:51 {
+  log: [ "  - waiting for locator('#step2, #step4')" ]
+}
