@@ -1861,6 +1861,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n) time; O(n) auxiliary space plus O(n-k+1) output"
   },
   {
+    "id": 493,
+    "title": {
+      "zh": "翻转对",
+      "en": "Reverse Pairs"
+    },
+    "desc": {
+      "zh": "从严格倍数比较推导归并计数。",
+      "en": "Derive merge counting from strict doubled comparisons."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "归并排序",
+        "en": "Merge sort"
+      },
+      {
+        "zh": "双指针",
+        "en": "Two pointers"
+      }
+    ],
+    "path": "493/",
+    "leetcodeUrl": "https://leetcode.com/problems/reverse-pairs/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space"
+  },
+  {
     "id": 514,
     "title": {
       "zh": "自由之路",
