@@ -88,6 +88,5 @@ c('fallback','自动复制不可用。源码已全选，请使用系统复制快
 c('manualCopy','完整源码（只读，可手动复制）','Complete source (read-only, ready for manual copy)')
 c('related1','用单词阶梯学习 BFS 分层与保留同层路径 →','Study BFS layers and same-layer paths in Word Ladder II →')
 c('related2','用滑动谜题学习完整状态的最短步数 →','Study shortest move counts over complete states in Sliding Puzzle →')
-c('foot','作者自检候选；独立评审待进行。教学模拟不等于提交执行；未声称 LeetCode 已接受或真实学习者已掌握。','Author self-checked candidate; independent review pending. Simulation is separate from submission execution; no LeetCode acceptance or learner outcome is claimed.')
 (P/'copy.js').write_text('window.LESSON_COPY = '+json.dumps(pairs,ensure_ascii=False,indent=2)+';\n')
 print('unique bilingual keys:',len(pairs))

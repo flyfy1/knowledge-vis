@@ -1,0 +1,11 @@
+AssertionError [ERR_ASSERTION]: 815-COPY-R1: transient workflow footer must be removed
+
+1 !== 0
+
+    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/815/tests/copy-repair.cjs:12:9 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual'
+}

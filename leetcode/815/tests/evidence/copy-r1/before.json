@@ -1,0 +1,388 @@
+{
+  "finding": "815-COPY-R1",
+  "head": "44b14a9a1bacfe998b5c2d25d7cfb03daaeb00ea",
+  "protected": {
+    "app.js": "82cdaab88efd5da8194a01a7471666728adca2974040ef07970ff07e1b533b2a",
+    "core.js": "712356dec8b88aa57cad5642b24c1fe657dc2e3b11a5880be624afad0296bc0b",
+    "solution.py": "97c860fe70c63fb0f918775710e394171a9ea7989a2ec698bddc194d1effeb87",
+    "python-code.js": "01b853e07ef4c56193640736d9cb06432d36006d16360d695cabf4dd1134a3a7",
+    "style.css": "c6673f1b05a789267ae826bd91f42aba3f23aa5ed41149084946efd0db7a9548",
+    "lesson-entry.json": "029c2476c83a7338844086750e54b40b4ea42d68decbd3589f4b4ab9b6878643"
+  },
+  "copy": {
+    "docTitle": [
+      "#815 公交路线 · 一次上车能去哪？",
+      "#815 Bus Routes · What does one boarding unlock?"
+    ],
+    "back": [
+      "← LeetCode 知识索引",
+      "← LeetCode collection"
+    ],
+    "hard": [
+      "困难 · Python",
+      "Hard · Python"
+    ],
+    "title": [
+      "#815 · 公交路线",
+      "#815 · Bus Routes"
+    ],
+    "intro": [
+      "你站在 1 号站。A 车循环经过 [1,7]，B 车循环经过 [7,6]。去 6 号站，需要上几次车？",
+      "You are at stop 1. Bus A loops through [1,7]; bus B loops through [7,6]. How many buses must you board to reach stop 6?"
+    ],
+    "official": [
+      "官方题目 ↗",
+      "Official problem ↗"
+    ],
+    "nav0": [
+      "1 · 手算上车",
+      "1 · Board by hand"
+    ],
+    "nav1": [
+      "2 · 正确计价",
+      "2 · Count the right cost"
+    ],
+    "nav2": [
+      "3 · 逐层解锁",
+      "3 · Unlock by layers"
+    ],
+    "nav3": [
+      "4 · 先预测",
+      "4 · Predict first"
+    ],
+    "nav4": [
+      "5 · 对应代码",
+      "5 · Map to code"
+    ],
+    "s0t": [
+      "一次上车究竟解锁哪些站？",
+      "Which stops does one boarding unlock?"
+    ],
+    "s0e": [
+      "这一步要回答：怎样从 1 到 6？站点是编号地点；线路是一辆车不断循环的站点列表。上车次数是答案的单位，不是经过的站数。你起初不在车上；坐上 A，就能到 7；在那里换乘 B，才到 6。因此这趟行程是 2 次上车、1 次换乘。",
+      "How do you get from 1 to 6? A stop is a numbered place; a route is the list one bus visits repeatedly. The answer counts boardings, not stops passed. You start off-bus. Board A to reach 7, then board B there to reach 6: two boardings and one transfer."
+    ],
+    "contract": [
+      "正式任务：给定线路数组 routes、起点 source 和终点 target，返回仅乘公交到达目标所需的最少上车次数；到不了返回 -1。你起初不在车上，同一辆车沿其线路无限循环。",
+      "Formal task: given routes, source, and target, return the fewest bus boardings needed to reach the target using buses only, or -1 if unreachable. You start off-bus; each bus repeats its route forever."
+    ],
+    "handTask": [
+      "实验：先上 A，再上 B。观察可达站点如何累积；撤销应同时还原乘车数和站点。仅能乘坐与已到达站点相交的线路。这里记录这趟行程，不宣称任意点击都最优。",
+      "Try A, then B. Watch reachable stops accumulate; Undo restores both stops and boarding count. You may board only a route touching a stop you can already reach. This records your journey; arbitrary clicks are not promised to be optimal."
+    ],
+    "boardA": [
+      "上 A：[1,7]",
+      "Board A: [1,7]"
+    ],
+    "boardB": [
+      "上 B：[7,6]",
+      "Board B: [7,6]"
+    ],
+    "undo": [
+      "撤销一次上车",
+      "Undo a boarding"
+    ],
+    "reset": [
+      "重置本实验",
+      "Reset experiment"
+    ],
+    "manualRead": [
+      "这趟行程已上车 {n} 次；{status}。",
+      "This journey: {n} boardings; {status}."
+    ],
+    "arrived": [
+      "已到目标 6",
+      "target 6 reached"
+    ],
+    "notArrived": [
+      "还未到目标 6",
+      "target 6 not yet reached"
+    ],
+    "manualStops": [
+      "已可达站点（可继续等车，忽略时间）",
+      "Reachable stops (waiting time is irrelevant)"
+    ],
+    "manualHistory": [
+      "上车历史：{h}",
+      "Boarding history: {h}"
+    ],
+    "none": [
+      "无",
+      "none"
+    ],
+    "s1t": [
+      "为什么不能按经过的站数搜索？",
+      "Why does counting stop hops fail?"
+    ],
+    "s1e": [
+      "这一步要回答：搜索中的一次扩展应该花多少钱？原题允许车无限循环，所以同一线路中的任意站都能乘同一辆车到达；即使目标排在起点之前，绕一圈即可。没有时刻表、行车时间或步行选择。上面 A→B 的公共站 7 允许换乘；各自列表不相交就无法换乘。",
+      "What should one search expansion cost? Each bus repeats forever, so one boarding can reach every stop on that route. A target listed before the boarding stop is still reachable on the next loop. There are no timetables, travel-time costs, or walking options. Above, shared stop 7 permits a transfer from A to B; disjoint routes do not."
+    ],
+    "wrong": [
+      "反例：A=[1,2,3,6]，B=[1,9]，C=[9,6]。按相邻站间的跳数，1→9→6 是 2 跳，少于 A 的 3 跳；但它要坐 B、C 两辆车，A 只需 1 辆。即使正确地按“上车”计价，把答案误当换乘次数也会得到 0 而非 1。",
+      "Counterexample: A=[1,2,3,6], B=[1,9], C=[9,6]. Counting adjacent-stop hops favors 1→9→6 (two hops) over A (three hops), yet B then C needs two buses while A needs one. Counting transfers instead of boardings also fails: a direct ride has zero transfers but costs one bus."
+    ],
+    "baseline": [
+      "正确基线：把每条线路当一个节点，共享站点的两条线路之间连边，表示可再上 1 辆车。先把含起点的线路标成距离 1，再做广度优先搜索（BFS）：先扩展所有同乘车数的节点，再处理下一层。以下可运行基线先两两求线路交集。",
+      "A correct baseline uses one node per route and an edge for a shared stop, meaning you can board one more bus. Routes containing the source start at distance 1. Breadth-first search (BFS) expands all nodes with one boarding count before the next count. The runnable baseline below first intersects every pair of routes."
+    ],
+    "baselineCode": [
+      "查看正确但较慢的基线 Python",
+      "Inspect the correct, slower Python baseline"
+    ],
+    "baselineCost": [
+      "设 R 为线路条数，M 为所有线路长度之和。建集合花 O(M)，两两交集总成本上界 O(RM)，搜索再花 O(R²)；总时间 O(RM+R²)，额外空间 O(M+R²)。O 表示随输入增大时的增长上界。R 可到 500，M 可到 100000：我们不想反复检查共享站点，也不想显式存所有线路对。",
+      "Let R be the route count and M the total number of route entries. Sets cost O(M) to build; pairwise intersections cost at most O(RM), then search costs O(R²). Total: O(RM+R²) time and O(M+R²) extra space. O describes a growth bound as input grows. With R up to 500 and M up to 100000, repeated intersection checks and storing all route pairs are avoidable."
+    ],
+    "s2t": [
+      "一层增加一次上车，为什么线路只扫一次？",
+      "Why can a route be scanned just once?"
+    ],
+    "s2e": [
+      "这一步要回答：怎样只查真正能上的车？先建 by_stop：站点→经过它的线路编号，这叫倒排索引（由站点反查线路）。前沿 frontier 是刚发现、最少上车数相同的站点。初始前沿 [1] 距离为 0。示例 1 中，站 1 查到线路 R0=[1,2,7]，第一次上车新到 2、7；再从 7 查到 R1=[3,6,7]，第二次上车新到 3、6。",
+      "How do we look up only buses we can board? Build by_stop, mapping each stop to the route IDs serving it: an inverted index. A frontier contains newly discovered stops with the same minimum boarding count. Initially [1] has distance 0. In example 1, stop 1 finds R0=[1,2,7]; boarding it first discovers 2 and 7. Stop 7 then finds R1=[3,6,7]; a second boarding discovers 3 and 6."
+    ],
+    "derive": [
+      "为什么第二层不再扫描 R0？它的 1、2、7 已全部暴露，再上同一辆车不会增加目的地。used_routes 记录已展开的线路；seen_stops 记录已发现站点，并在入队时标记，避免同层重复加入。查线路与扫线路不同：同一线路编号可能被多个站查到，但它的站点列表只展开一次。",
+      "Why skip R0 on the second layer? Its stops 1, 2, and 7 are already exposed; boarding it again adds no destination. used_routes records expanded routes. seen_stops records discovered stops, marking them when queued so the same layer cannot add duplicates. Looking up a route differs from scanning it: several stops may look up its ID, but its stop list is expanded once."
+    ],
+    "invariant": [
+      "不变量（每次扩展后仍成立的事实）：进入第 d 层时，前沿站点的最少上车数都是 d，距离更小的站点已经展开。从它们上一条未用线路，就能用 d+1 次上车到该线路的每个站。反过来，任意 d+1 次上车的行程，其最后一辆车必接在至多 d 次上车可达的站点；之前各层一定已找到它或这条线路。因此首次发现不能错过更短行程，重扫旧线路也无益。前沿为空则无法再扩展，返回 -1；若起点就是终点，则无需上车，返回 0。",
+      "Invariant (a fact preserved by each expansion): on entry to layer d, frontier stops have minimum boarding count d, and all lower-distance stops have been expanded. An unused route touching them reaches all its stops within d+1 boardings. Conversely, any trip of d+1 boardings takes its last bus from a stop reachable within d boardings; earlier layers must already find that stop or expose that route. Thus first discovery cannot miss a shorter trip, and rescanning old routes adds nothing. An empty frontier means no further trip exists, so return -1. If source equals target, no boarding is needed: return 0."
+    ],
+    "traceTask": [
+      "实验：选示例，逐层展开，先看新线路通过哪个站被激活，再看所有已发现站点的距离标签。实线青色边框标前沿，虚线标目标；文字也标明状态。撤销、到末尾、重置均可用。换示例只重启本追踪。",
+      "Choose a case and expand layers. First inspect which stop activates each new route, then read the distance labels on all discovered stops. Solid cyan borders mark the frontier; a dashed border marks the target, also named in text. Rewind, End, and Reset are available. A preset change restarts only this trace."
+    ],
+    "sim": [
+      "教学模拟，不是运行 Python：每帧完成整层，保留全部小例子的历史。Python 在首次发现目标时即可提前返回；动画可能多展示同层的其他站。快照存储是教学开销，不属于提交解法的空间界。",
+      "Teaching simulation, not Python execution: each frame completes a whole layer and retains the full history of these small cases. Python can return immediately upon discovering the target; the diagram may show other stops from that same layer. Snapshot storage is tutorial overhead, outside the submission space bound."
+    ],
+    "presetLabel": [
+      "选择追踪示例（切换会重启）",
+      "Trace preset (changing restarts it)"
+    ],
+    "preset0": [
+      "官方例 1",
+      "Official 1"
+    ],
+    "preset1": [
+      "官方例 2",
+      "Official 2"
+    ],
+    "preset2": [
+      "一车长路",
+      "Long direct ride"
+    ],
+    "preset3": [
+      "原地到达",
+      "Already there"
+    ],
+    "preset4": [
+      "起点缺席",
+      "Missing source"
+    ],
+    "preset5": [
+      "重叠线路",
+      "Overlapping routes"
+    ],
+    "preset6": [
+      "单站孤岛",
+      "Single-stop island"
+    ],
+    "input": [
+      "线路 {r}；起点 {s} → 终点 {t}。线路编号 R0、R1… 使用从 0 开始的输入索引。",
+      "Routes {r}; source {s} → target {t}. Route IDs R0, R1… are zero-based input indices."
+    ],
+    "prev": [
+      "← 撤回一层",
+      "← Rewind a layer"
+    ],
+    "next": [
+      "展开下一层 →",
+      "Expand next layer →"
+    ],
+    "end": [
+      "到追踪末尾",
+      "Go to trace end"
+    ],
+    "frame": [
+      "帧 {i}/{n}；当前前沿层 {d}；已发现 {count} 个站；已展开 {used} 条线路。{status}",
+      "Frame {i}/{n}; frontier layer {d}; {count} stops discovered; {used} routes expanded. {status}"
+    ],
+    "pending": [
+      "尚未到目标，继续扩展。",
+      "Target not yet reached; keep expanding."
+    ],
+    "found": [
+      "已证实最少上车数：{d}。",
+      "Proved minimum boardings: {d}."
+    ],
+    "exhausted": [
+      "前沿为空；无路可达，答案 -1。",
+      "Frontier empty; unreachable, answer -1."
+    ],
+    "routesTitle": [
+      "线路状态：未展开 / 已展开于哪次上车",
+      "Route status: unexpanded / boarding layer of expansion"
+    ],
+    "routeUnused": [
+      "R{b}：[{stops}] · 未展开",
+      "R{b}: [{stops}] · unexpanded"
+    ],
+    "routeUsed": [
+      "R{b}：[{stops}] · 第 {d} 次上车展开",
+      "R{b}: [{stops}] · expanded at boarding {d}"
+    ],
+    "stopsTitle": [
+      "累积已发现站点：标签是最少上车数",
+      "All discovered stops: labels show minimum boardings"
+    ],
+    "chip": [
+      "站 {s} · {d} 次{flags}",
+      "Stop {s} · buses: {d}{flags}"
+    ],
+    "frontFlag": [
+      " · 前沿",
+      " · frontier"
+    ],
+    "targetFlag": [
+      " · 目标",
+      " · target"
+    ],
+    "eventsTitle": [
+      "本层原因：新展开线路与新发现站点",
+      "This layer: route activation causes and new stops"
+    ],
+    "noEvents": [
+      "本帧没有新展开线路。",
+      "No new route expansion in this frame."
+    ],
+    "event": [
+      "从站 {via} 上 R{bus}；新发现 [{fresh}]。",
+      "Board R{bus} at stop {via}; newly discover [{fresh}]."
+    ],
+    "ledgerTitle": [
+      "累计扩展记录（每行是一整层）",
+      "Expansion history (one complete layer per row)"
+    ],
+    "noHistory": [
+      "尚未扩展；起点的距离为 0。",
+      "No expansion yet; the source has distance 0."
+    ],
+    "layer": [
+      "层 {from}→{to}：展开 {routes} 条新线路，扫描 {scans} 个线路站点条目，新发现 {newStops} 个站。",
+      "Layer {from}→{to}: new routes: {routes}; route entries scanned: {scans}; new stops: {newStops}."
+    ],
+    "s3t": [
+      "换一张地图，你会选择哪条路？",
+      "Can you transfer the rule to a new map?"
+    ],
+    "s3e": [
+      "这一步要回答：最短乘车数是否也意味着经过最少的站？全新线路 A=[2,4,9,11]，B=[2,8]，C=[8,11]。起点 2，终点 11。先选最少上车数，再揭晓理由；别把换乘次数当上车次数。",
+      "Does the fewest buses also mean the fewest stop hops? New routes: A=[2,4,9,11], B=[2,8], C=[8,11]. Travel from 2 to 11. Choose the minimum boarding count before revealing the reasoning; distinguish transfers from boardings."
+    ],
+    "predictionLegend": [
+      "从 2 到 11，最少上几次车？",
+      "Minimum boardings from 2 to 11?"
+    ],
+    "option0": [
+      "0：无需换车",
+      "0: no transfer needed"
+    ],
+    "option1": [
+      "2：先 B 后 C",
+      "2: B then C"
+    ],
+    "option2": [
+      "1：一直乘 A",
+      "1: stay on A"
+    ],
+    "reveal": [
+      "揭晓并解释",
+      "Reveal and explain"
+    ],
+    "await": [
+      "答案隐藏。先选择，再揭晓；更改选择会清除反馈。",
+      "Answer hidden. Choose, then reveal; changing the choice clears feedback."
+    ],
+    "correct": [
+      "判断正确。",
+      "Correct."
+    ],
+    "incorrect": [
+      "再看上车的计价单位。",
+      "Check the unit: boardings."
+    ],
+    "answer": [
+      "答案是 1。第 0 层为 {2}；上 A 一次就暴露 4、9、11，上 B 暴露 8。因此首次发现 11 在第 1 层。B→C 虽然只有两跳，却需 2 辆车；0 是换乘次数而不是上车次数。",
+      "The answer is 1. Layer 0 is {2}. Boarding A once exposes 4, 9, and 11; boarding B exposes 8. Thus 11 is first discovered in layer 1. B→C has only two hops but needs two buses. Zero counts transfers, not boardings."
+    ],
+    "s4t": [
+      "把“整条线路只扫一次”写进 Python",
+      "Encode “scan each route once” in Python"
+    ],
+    "s4e": [
+      "这一步要回答：图上的一次上车对应哪段代码？以下是官方 Python 3 接口的完整提交源码。队列 queue 按先入先出存 (stop, buses)，buses 是到该站的最少上车数。浏览器只模拟小例子；独立测试实际执行这个 Solution 方法。",
+      "Which code performs the diagram’s boarding? Below is the complete source for the official Python 3 interface. The FIFO queue stores (stop, buses), where buses is the minimum boarding count to that stop. The browser simulates small examples; separate tests execute this Solution method."
+    ],
+    "map1": [
+      "建 by_stop：线路 R0 中每个站都映射到 0。站 7 可反查 R0、R1，无需两两比较线路。",
+      "Build by_stop: every stop on R0 maps to 0. Stop 7 looks up R0 and R1 without pairwise route comparisons."
+    ],
+    "map2": [
+      "used_routes.add(bus) 对应线路首次激活；for nxt in routes[bus] 暴露整条线路。seen_stops 让每站至多入队一次，防止公共站重复堆积。",
+      "used_routes.add(bus) marks the first activation; for nxt in routes[bus] exposes the whole route. seen_stops enqueues each stop at most once, preventing duplicate shared stops."
+    ],
+    "map3": [
+      "示例 1：出队 (7,1)，展开 R1，看到目标 6，就 return buses+1 = 2。已用线路直接 continue；队列耗尽才返回 -1。",
+      "Example 1: pop (7,1), expand R1, encounter target 6, and return buses+1 = 2. Already-used routes take continue; only an exhausted queue returns -1."
+    ],
+    "cost": [
+      "成本：R=线路数，M=总线路站点条目数。建索引扫描 M 项；每个已发现站只出队一次，其索引列表的总检查数不超过 M；每条线路的站点列表只扫一次，总共也不超过 M。因此在哈希查找期望 O(1) 下，时间 O(M+R)，额外空间 O(M+R)，包括索引、队列和两个集合。source=target 时在建索引前直接返回，时间和额外空间均为 O(1)。不会修改 routes。",
+      "Cost: R is the route count; M is the total number of route entries. Index construction scans M entries. Each discovered stop is popped at most once, so its index-list lookups sum to at most M. Each route’s stop list is scanned once, also totaling at most M. With expected O(1) hash operations, time and extra space are O(M+R), including the index, queue, and both sets. When source=target, the early return precedes indexing and takes O(1) time and extra space. routes is not mutated."
+    ],
+    "boundaries": [
+      "边界：起点=终点时，即使该站不在任何线路中也返回 0；起点缺席且不同于终点则返回 -1；只在一条线路内可返回 1，即使要绕回列表开头。官方范围：1≤R≤500；每条线路长度 1..100000，M≤100000；同线路内站点互异；所有站点与起终点编号在 0..999999。空线路输入不在原题范围内。",
+      "Boundaries: source=target returns 0 even when the stop is absent from all routes. A missing source with a different target returns -1. One route suffices even if it must loop back to the start of its list. Official limits: 1≤R≤500, route lengths 1..100000, M≤100000, distinct stops within each route, and stop/source/target IDs in 0..999999. Empty-route inputs are outside the contract."
+    ],
+    "copy": [
+      "复制 Python 源码",
+      "Copy Python source"
+    ],
+    "download": [
+      "下载 solution.py",
+      "Download solution.py"
+    ],
+    "source": [
+      "查看完整 Python 提交源码",
+      "Show complete Python submission source"
+    ],
+    "copied": [
+      "已复制完整源码。",
+      "Complete source copied."
+    ],
+    "fallback": [
+      "自动复制不可用。源码已全选，请使用系统复制快捷键。",
+      "Automatic copy unavailable. Source selected; use your system copy shortcut."
+    ],
+    "manualCopy": [
+      "完整源码（只读，可手动复制）",
+      "Complete source (read-only, ready for manual copy)"
+    ],
+    "related1": [
+      "用单词阶梯学习 BFS 分层与保留同层路径 →",
+      "Study BFS layers and same-layer paths in Word Ladder II →"
+    ],
+    "related2": [
+      "用滑动谜题学习完整状态的最短步数 →",
+      "Study shortest move counts over complete states in Sliding Puzzle →"
+    ],
+    "foot": [
+      "作者自检候选；独立评审待进行。教学模拟不等于提交执行；未声称 LeetCode 已接受或真实学习者已掌握。",
+      "Author self-checked candidate; independent review pending. Simulation is separate from submission execution; no LeetCode acceptance or learner outcome is claimed."
+    ]
+  },
+  "index": "<!doctype html>\n<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"icon\" href=\"data:,\"><title>#815 Bus Routes</title><link rel=\"stylesheet\" href=\"../style.css\"><link rel=\"stylesheet\" href=\"style.css?v=815-r1\"></head><body>\n<header class=\"site-head\"><div class=\"head-top\"><a class=\"back-link\" href=\"../\" data-i18n=\"back\"></a><div class=\"lang-toggle\" id=\"langToggle\" aria-label=\"语言 / Language\"><button type=\"button\" data-lang=\"zh\">中</button><button type=\"button\" data-lang=\"en\">EN</button></div></div><span class=\"badge\" data-i18n=\"hard\"></span><h1 data-i18n=\"title\"></h1><p class=\"tagline\" data-i18n=\"intro\"></p><a class=\"official-link\" href=\"https://leetcode.com/problems/bus-routes/\" target=\"_blank\" rel=\"noopener\" data-i18n=\"official\"></a></header>\n<nav class=\"step-nav\" aria-label=\"学习步骤 / Lesson steps\"><div class=\"step-nav-inner\"><a href=\"#step0\" data-i18n=\"nav0\"></a><a href=\"#step1\" data-i18n=\"nav1\"></a><a href=\"#step2\" data-i18n=\"nav2\"></a><a href=\"#step3\" data-i18n=\"nav3\"></a><a href=\"#step4\" data-i18n=\"nav4\"></a></div></nav><main><section class=\"step\" id=\"step0\"><div class=\"step-inner\"><p class=\"step-kicker\">01</p><h2 data-i18n=\"s0t\"></h2><p class=\"explain\" data-i18n=\"s0e\"></p><p class=\"explain\" data-i18n=\"contract\"></p><p class=\"hint\" data-i18n=\"handTask\"></p><div class=\"stage\"><div class=\"controls\"><button type=\"button\" id=\"boardA\" class=\"btn primary\" data-step=\"0\" data-i18n=\"boardA\"></button><button type=\"button\" id=\"boardB\" class=\"btn primary\" data-step=\"0\" data-i18n=\"boardB\"></button><button type=\"button\" id=\"undo\" class=\"btn \" data-step=\"0\" data-i18n=\"undo\"></button><button type=\"button\" id=\"manualReset\" class=\"btn \" data-step=\"0\" data-i18n=\"reset\"></button></div><p id=\"manualRead\" class=\"readout\" aria-live=\"polite\"></p><h3 data-i18n=\"manualStops\"></h3><div id=\"manualStops\" class=\"stop-list\"></div><p id=\"manualHistory\"></p></div></div></section><section class=\"step\" id=\"step1\"><div class=\"step-inner\"><p class=\"step-kicker\">02</p><h2 data-i18n=\"s1t\"></h2><p class=\"explain\" data-i18n=\"s1e\"></p><p class=\"explain\" data-i18n=\"wrong\"></p><p class=\"explain\" data-i18n=\"baseline\"></p><details><summary data-i18n=\"baselineCode\"></summary><pre tabindex=\"0\" aria-label=\"基线 Python / Baseline Python\"><code>from collections import deque\n\n\ndef baseline(routes, source, target):\n    if source == target:\n        return 0\n    stops = [set(route) for route in routes]\n    graph = [[] for _ in routes]\n    for i in range(len(routes)):\n        for j in range(i):\n            if stops[i] &amp; stops[j]:\n                graph[i].append(j)\n                graph[j].append(i)\n    queue = deque((i, 1) for i, s in enumerate(stops) if source in s)\n    seen = {i for i, _ in queue}\n    while queue:\n        bus, count = queue.popleft()\n        if target in stops[bus]:\n            return count\n        for nxt in graph[bus]:\n            if nxt not in seen:\n                seen.add(nxt)\n                queue.append((nxt, count + 1))\n    return -1\n</code></pre></details><p class=\"explain\" data-i18n=\"baselineCost\"></p></div></section><section class=\"step\" id=\"step2\"><div class=\"step-inner\"><p class=\"step-kicker\">03</p><h2 data-i18n=\"s2t\"></h2><p class=\"explain\" data-i18n=\"s2e\"></p><p class=\"explain\" data-i18n=\"derive\"></p><p class=\"explain question\" data-i18n=\"invariant\"></p><a href=\"../126/#step2\" data-i18n=\"related1\"></a><p class=\"hint\" data-i18n=\"traceTask\"></p><div class=\"stage\"><label for=\"preset\" data-i18n=\"presetLabel\"></label><select id=\"preset\" data-step=\"2\"><option value=\"0\" data-i18n=\"preset0\"></option><option value=\"1\" data-i18n=\"preset1\"></option><option value=\"2\" data-i18n=\"preset2\"></option><option value=\"3\" data-i18n=\"preset3\"></option><option value=\"4\" data-i18n=\"preset4\"></option><option value=\"5\" data-i18n=\"preset5\"></option><option value=\"6\" data-i18n=\"preset6\"></option></select><p class=\"hint\" data-i18n=\"sim\"></p><p id=\"inputRead\"></p><div class=\"controls\"><button type=\"button\" id=\"tracePrev\" class=\"btn \" data-step=\"2\" data-i18n=\"prev\"></button><button type=\"button\" id=\"traceNext\" class=\"btn primary\" data-step=\"2\" data-i18n=\"next\"></button><button type=\"button\" id=\"traceReset\" class=\"btn \" data-step=\"2\" data-i18n=\"reset\"></button><button type=\"button\" id=\"traceLast\" class=\"btn \" data-step=\"2\" data-i18n=\"end\"></button></div><p id=\"frameRead\" class=\"readout\" aria-live=\"polite\"></p><h3 data-i18n=\"routesTitle\"></h3><div id=\"routeRows\"></div><h3 data-i18n=\"stopsTitle\"></h3><div id=\"stopRows\" class=\"stop-list\"></div><h3 data-i18n=\"eventsTitle\"></h3><p id=\"emptyEvents\" data-i18n=\"noEvents\"></p><ul id=\"events\" class=\"trace-log\"></ul><h3 data-i18n=\"ledgerTitle\"></h3><p id=\"emptyLedger\" data-i18n=\"noHistory\"></p><ol id=\"ledger\" class=\"trace-log\"></ol></div></div></section><section class=\"step\" id=\"step3\"><div class=\"step-inner\"><p class=\"step-kicker\">04</p><h2 data-i18n=\"s3t\"></h2><p class=\"explain\" data-i18n=\"s3e\"></p><div class=\"stage\"><fieldset class=\"prediction-options\"><legend data-i18n=\"predictionLegend\"></legend><label><input type=\"radio\" data-step=\"3\" name=\"prediction\" value=\"0\"><span data-i18n=\"option0\"></span></label><label><input type=\"radio\" data-step=\"3\" name=\"prediction\" value=\"1\"><span data-i18n=\"option1\"></span></label><label><input type=\"radio\" data-step=\"3\" name=\"prediction\" value=\"2\"><span data-i18n=\"option2\"></span></label></fieldset><div class=\"controls\"><button type=\"button\" id=\"reveal\" class=\"btn primary\" data-step=\"3\" data-i18n=\"reveal\" disabled></button><button type=\"button\" id=\"predictionReset\" class=\"btn \" data-step=\"3\" data-i18n=\"reset\"></button></div><p id=\"predictionFeedback\" class=\"readout\" aria-live=\"polite\"></p></div></div></section><section class=\"step\" id=\"step4\"><div class=\"step-inner\"><p class=\"step-kicker\">05</p><h2 data-i18n=\"s4t\"></h2><p class=\"explain\" data-i18n=\"s4e\"></p><ul><li data-i18n=\"map1\"></li><li data-i18n=\"map2\"></li><li data-i18n=\"map3\"></li></ul><p class=\"explain\" data-i18n=\"cost\"></p><p class=\"explain\" data-i18n=\"boundaries\"></p><div class=\"solution-actions\"><button type=\"button\" id=\"copyPython\" class=\"btn primary\" data-step=\"4\" data-i18n=\"copy\"></button><a class=\"btn\" href=\"solution.py\" download data-i18n=\"download\"></a><span id=\"copyStatus\" role=\"status\"></span></div><div id=\"sourceFallback\" hidden><label for=\"manualSource\" data-i18n=\"manualCopy\"></label><textarea id=\"manualSource\" readonly rows=\"12\" spellcheck=\"false\"></textarea></div><details id=\"sourceDetails\"><summary data-i18n=\"source\"></summary><pre tabindex=\"0\" aria-label=\"Python 源码 / Python source\"><code id=\"pythonCode\"></code></pre></details><div class=\"related\"><a href=\"../126/#step2\" data-i18n=\"related1\"></a><a href=\"../773/#step2\" data-i18n=\"related2\"></a></div></div></section></main><footer class=\"site-foot\" data-i18n=\"foot\"></footer><noscript>请启用 JavaScript。 / Enable JavaScript. <a href=\"solution.py\">Python</a></noscript><script src=\"../common.js\"></script><script src=\"copy.js?v=815-r1\"></script><script src=\"core.js?v=815-r1\"></script><script src=\"python-code.js?v=815-r1\"></script><script src=\"app.js?v=815-r1\"></script></body></html>",
+  "registryContains815": true
+}

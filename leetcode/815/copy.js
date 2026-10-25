@@ -366,9 +366,5 @@ window.LESSON_COPY = {
   "related2": [
     "用滑动谜题学习完整状态的最短步数 →",
     "Study shortest move counts over complete states in Sliding Puzzle →"
-  ],
-  "foot": [
-    "作者自检候选；独立评审待进行。教学模拟不等于提交执行；未声称 LeetCode 已接受或真实学习者已掌握。",
-    "Author self-checked candidate; independent review pending. Simulation is separate from submission execution; no LeetCode acceptance or learner outcome is claimed."
   ]
 };

@@ -1,0 +1,91 @@
+{
+  "kind": "author focused self-check",
+  "result": "pass",
+  "records": [
+    {
+      "locale": "en",
+      "disabledPrimary": {
+        "disabled": true,
+        "fg": "rgb(154, 167, 184)",
+        "bg": "rgb(28, 35, 48)"
+      },
+      "contrast": [
+        {
+          "selector": "#routeRows .used",
+          "fg": "rgb(110, 231, 255)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 10.910104011097095
+        },
+        {
+          "selector": "#stopRows .front",
+          "fg": "rgb(110, 231, 255)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 10.910104011097095
+        },
+        {
+          "selector": "#stopRows .goal",
+          "fg": "rgb(255, 180, 84)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 8.937191437807625
+        },
+        {
+          "selector": "#predictionFeedback.correct",
+          "fg": "rgb(126, 226, 168)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 10.004815697188947
+        },
+        {
+          "selector": "#traceNext:disabled",
+          "fg": "rgb(154, 167, 184)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 6.449407898769069
+        }
+      ],
+      "predictionWrongAfterChange": true,
+      "headingRoundtripAt320": true
+    },
+    {
+      "locale": "zh",
+      "disabledPrimary": {
+        "disabled": true,
+        "fg": "rgb(154, 167, 184)",
+        "bg": "rgb(28, 35, 48)"
+      },
+      "contrast": [
+        {
+          "selector": "#routeRows .used",
+          "fg": "rgb(110, 231, 255)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 10.910104011097095
+        },
+        {
+          "selector": "#stopRows .front",
+          "fg": "rgb(110, 231, 255)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 10.910104011097095
+        },
+        {
+          "selector": "#stopRows .goal",
+          "fg": "rgb(255, 180, 84)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 8.937191437807625
+        },
+        {
+          "selector": "#predictionFeedback.correct",
+          "fg": "rgb(126, 226, 168)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 10.004815697188947
+        },
+        {
+          "selector": "#traceNext:disabled",
+          "fg": "rgb(154, 167, 184)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 6.449407898769069
+        }
+      ],
+      "predictionWrongAfterChange": true,
+      "headingRoundtripAt320": true
+    }
+  ],
+  "errors": []
+}

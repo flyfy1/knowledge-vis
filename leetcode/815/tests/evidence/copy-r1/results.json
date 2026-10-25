@@ -1,0 +1,120 @@
+{
+  "kind": "author self-check; separate re-review pending",
+  "finding": "815-COPY-R1",
+  "result": "pass",
+  "browser": "156.0.8078.4",
+  "platform": "linux",
+  "protectedHashes": {
+    "app.js": "82cdaab88efd5da8194a01a7471666728adca2974040ef07970ff07e1b533b2a",
+    "core.js": "712356dec8b88aa57cad5642b24c1fe657dc2e3b11a5880be624afad0296bc0b",
+    "solution.py": "97c860fe70c63fb0f918775710e394171a9ea7989a2ec698bddc194d1effeb87",
+    "python-code.js": "01b853e07ef4c56193640736d9cb06432d36006d16360d695cabf4dd1134a3a7",
+    "style.css": "c6673f1b05a789267ae826bd91f42aba3f23aa5ed41149084946efd0db7a9548",
+    "lesson-entry.json": "029c2476c83a7338844086750e54b40b4ea42d68decbd3589f4b4ab9b6878643"
+  },
+  "records": [
+    {
+      "locale": "zh",
+      "zoom": 1,
+      "frame": "帧 1/2；当前前沿层 1；已发现 3 个站；已展开 1 条线路。尚未到目标，继续扩展。",
+      "sim": "教学模拟，不是运行 Python：每帧完成整层，保留全部小例子的历史。Python 在首次发现目标时即可提前返回；动画可能多展示同层的其他站。快照存储是教学开销，不属于提交解法的空间界。",
+      "s4e": "这一步要回答：图上的一次上车对应哪段代码？以下是官方 Python 3 接口的完整提交源码。队列 queue 按先入先出存 (stop, buses)，buses 是到该站的最少上车数。浏览器只模拟小例子；独立测试实际执行这个 Solution 方法。",
+      "geometry": {
+        "width": 320,
+        "scrollWidth": 320,
+        "end": 999.671875,
+        "viewport": 1000,
+        "footer": false,
+        "focus": "用滑动谜题学习完整状态的最短步数 →",
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "screenshot": "zh-320-zoom1-0-end.png"
+    },
+    {
+      "locale": "en",
+      "zoom": 1,
+      "frame": "Frame 1/2; frontier layer 1; 3 stops discovered; 1 routes expanded. Target not yet reached; keep expanding.",
+      "sim": "Teaching simulation, not Python execution: each frame completes a whole layer and retains the full history of these small cases. Python can return immediately upon discovering the target; the diagram may show other stops from that same layer. Snapshot storage is tutorial overhead, outside the submission space bound.",
+      "s4e": "Which code performs the diagram’s boarding? Below is the complete source for the official Python 3 interface. The FIFO queue stores (stop, buses), where buses is the minimum boarding count to that stop. The browser simulates small examples; separate tests execute this Solution method.",
+      "geometry": {
+        "width": 320,
+        "scrollWidth": 320,
+        "end": 1000.21875,
+        "viewport": 1000,
+        "footer": false,
+        "focus": "Study shortest move counts over complete states in Sliding Puzzle →",
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "screenshot": "en-320-zoom1-1-end.png"
+    },
+    {
+      "locale": "zh",
+      "zoom": 1,
+      "frame": "帧 1/2；当前前沿层 1；已发现 3 个站；已展开 1 条线路。尚未到目标，继续扩展。",
+      "sim": "教学模拟，不是运行 Python：每帧完成整层，保留全部小例子的历史。Python 在首次发现目标时即可提前返回；动画可能多展示同层的其他站。快照存储是教学开销，不属于提交解法的空间界。",
+      "s4e": "这一步要回答：图上的一次上车对应哪段代码？以下是官方 Python 3 接口的完整提交源码。队列 queue 按先入先出存 (stop, buses)，buses 是到该站的最少上车数。浏览器只模拟小例子；独立测试实际执行这个 Solution 方法。",
+      "geometry": {
+        "width": 320,
+        "scrollWidth": 320,
+        "end": 999.671875,
+        "viewport": 1000,
+        "footer": false,
+        "focus": "用滑动谜题学习完整状态的最短步数 →",
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "screenshot": "zh-320-zoom1-2-end.png"
+    },
+    {
+      "locale": "zh",
+      "zoom": 2,
+      "frame": "帧 1/2；当前前沿层 1；已发现 3 个站；已展开 1 条线路。尚未到目标，继续扩展。",
+      "sim": "教学模拟，不是运行 Python：每帧完成整层，保留全部小例子的历史。Python 在首次发现目标时即可提前返回；动画可能多展示同层的其他站。快照存储是教学开销，不属于提交解法的空间界。",
+      "s4e": "这一步要回答：图上的一次上车对应哪段代码？以下是官方 Python 3 接口的完整提交源码。队列 queue 按先入先出存 (stop, buses)，buses 是到该站的最少上车数。浏览器只模拟小例子；独立测试实际执行这个 Solution 方法。",
+      "geometry": {
+        "width": 320,
+        "scrollWidth": 320,
+        "end": 999.90625,
+        "viewport": 1000,
+        "footer": false,
+        "focus": "用滑动谜题学习完整状态的最短步数 →",
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "screenshot": "zh-320-zoom2-3-end.png"
+    },
+    {
+      "locale": "en",
+      "zoom": 2,
+      "frame": "Frame 1/2; frontier layer 1; 3 stops discovered; 1 routes expanded. Target not yet reached; keep expanding.",
+      "sim": "Teaching simulation, not Python execution: each frame completes a whole layer and retains the full history of these small cases. Python can return immediately upon discovering the target; the diagram may show other stops from that same layer. Snapshot storage is tutorial overhead, outside the submission space bound.",
+      "s4e": "Which code performs the diagram’s boarding? Below is the complete source for the official Python 3 interface. The FIFO queue stores (stop, buses), where buses is the minimum boarding count to that stop. The browser simulates small examples; separate tests execute this Solution method.",
+      "geometry": {
+        "width": 320,
+        "scrollWidth": 320,
+        "end": 1000.375,
+        "viewport": 1000,
+        "footer": false,
+        "focus": "Study shortest move counts over complete states in Sliding Puzzle →",
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "screenshot": "en-320-zoom2-4-end.png"
+    },
+    {
+      "locale": "zh",
+      "zoom": 2,
+      "frame": "帧 1/2；当前前沿层 1；已发现 3 个站；已展开 1 条线路。尚未到目标，继续扩展。",
+      "sim": "教学模拟，不是运行 Python：每帧完成整层，保留全部小例子的历史。Python 在首次发现目标时即可提前返回；动画可能多展示同层的其他站。快照存储是教学开销，不属于提交解法的空间界。",
+      "s4e": "这一步要回答：图上的一次上车对应哪段代码？以下是官方 Python 3 接口的完整提交源码。队列 queue 按先入先出存 (stop, buses)，buses 是到该站的最少上车数。浏览器只模拟小例子；独立测试实际执行这个 Solution 方法。",
+      "geometry": {
+        "width": 320,
+        "scrollWidth": 320,
+        "end": 999.90625,
+        "viewport": 1000,
+        "footer": false,
+        "focus": "用滑动谜题学习完整状态的最短步数 →",
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "screenshot": "zh-320-zoom2-5-end.png"
+    }
+  ],
+  "errors": []
+}
