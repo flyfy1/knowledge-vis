@@ -1,0 +1,21 @@
+{
+  "frozenAt": "2026-10-25T23:16:43.450072+00:00",
+  "status": "both-started",
+  "singleDispatch": true,
+  "priorRefusalPreserved": true,
+  "workerCount": 3,
+  "launcherAbsent": true,
+  "files": {
+    "README.md": "1f2defd222a630bb1ad7bc7e789334f3d3dbd08675315697014ddd1abd156715",
+    "dispatch-started.json": "c4a7503716f784b238809e9820b7a5ebe078a96942a40a45782270f205864eee",
+    "dispatch.json": "d0e5954fa8c31ab08984e4e4b749a5d0fef9da638b8edd938d3c3a96152fdc65",
+    "dispatch.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launcher-output.log": "9708d0989e1432648ba71e83b60b365c6bd71c7844caba654cffa3a37831574d",
+    "observe-readonly.py": "530474cf2c5d48848cf1c42c0eaf7721357e0f8e70b24b97dee0b97c1943627f",
+    "preflight-comparison.json": "bea90f4dd9d2b010e42433fdd76f66df29b011204aa1c4d0bb5c1b7858be8fb8",
+    "preflight.json": "410189e1c534c31c9aa33e12b9118d4764bf1bccb263d2712c6e993777fd3753",
+    "preflight.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "startup-observation.json": "098a1300c3905557ed5b875c7e5e2faf5c689df8a43cb94f63745cab4fa39a54",
+    "startup-proof.json": "aeea5e82130eb35e0b2bb525fa8a65b2b32587b3a901ce1efdb50b5215dbb258"
+  }
+}

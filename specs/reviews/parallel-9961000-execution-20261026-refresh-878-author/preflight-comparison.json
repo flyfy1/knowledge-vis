@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-25T23:13:56.753146+00:00",
+  "exitCode": 0,
+  "launcherTransferred": false,
+  "launcherExecuted": false,
+  "comparison": {
+    "base": true,
+    "central_head": true,
+    "central_expected_head": true,
+    "central_current": true,
+    "central_status": true,
+    "central_runner_pid": true,
+    "central_session": true,
+    "central_native": true,
+    "policy_sha256": true,
+    "queue_length": true,
+    "995_queued_handoff_receipt_sha256": true,
+    "approved_995_queued_handoff_pins_sha256": true
+  },
+  "allMatch": true,
+  "actualCurrent": {
+    "problem_id": "878",
+    "stage": "author",
+    "started_at": "2026-10-25T23:11:30.966203+00:00",
+    "run_id": "878-author-004c6e7e9e78"
+  }
+}

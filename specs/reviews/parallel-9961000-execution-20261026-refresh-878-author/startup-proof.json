@@ -1,0 +1,76 @@
+{
+  "observedAt": "2026-10-25T23:15:11.155469+00:00",
+  "status": "both-started",
+  "singleDispatch": true,
+  "launcherAbsent": true,
+  "launcherExitCodeCaptured": false,
+  "terminalStartedRecords": [
+    {
+      "id": "996",
+      "base": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-996-20261026",
+      "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026",
+      "port": 18799,
+      "nice": 10,
+      "status": "started",
+      "started_at": "2026-10-25T23:14:09.786115+00:00",
+      "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+      "publication_enabled": false,
+      "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+      "runner_pid": 1871480,
+      "observed_current": {
+        "problem_id": "996",
+        "stage": "author",
+        "started_at": "2026-10-25T23:14:30.395999+00:00",
+        "run_id": "996-author-9180dd0f5b54"
+      }
+    },
+    {
+      "id": "1000",
+      "base": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-1000-20261026",
+      "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026",
+      "port": 18800,
+      "nice": 10,
+      "status": "started",
+      "started_at": "2026-10-25T23:14:32.123201+00:00",
+      "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+      "publication_enabled": false,
+      "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+      "runner_pid": 1871874,
+      "observed_current": {
+        "problem_id": "1000",
+        "stage": "author",
+        "started_at": "2026-10-25T23:14:51.757178+00:00",
+        "run_id": "1000-author-3a58ffe68610"
+      }
+    }
+  ],
+  "workerCount": 3,
+  "lanes": [
+    {
+      "id": "996",
+      "port": 18799,
+      "runnerPid": 1871480,
+      "nativePid": 1871523,
+      "session": "01a17558-1c90-7cd0-976c-7f3beab58eed",
+      "run": "996-author-9180dd0f5b54",
+      "nice": 10,
+      "publicationEnabled": false
+    },
+    {
+      "id": "1000",
+      "port": 18800,
+      "runnerPid": 1871874,
+      "nativePid": 1871917,
+      "session": "01a17558-700c-7460-90ec-32d20d8337d0",
+      "run": "1000-author-3a58ffe68610",
+      "nice": 10,
+      "publicationEnabled": false
+    }
+  ],
+  "centralCheckpointUnchanged": true,
+  "policyUnchanged": true,
+  "ledgerUnchanged": true,
+  "stopAbsent": true
+}

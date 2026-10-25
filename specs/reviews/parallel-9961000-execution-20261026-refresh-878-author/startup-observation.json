@@ -1,0 +1,249 @@
+{
+  "at": "2026-10-25T23:15:11.155469+00:00",
+  "launcherAlive": false,
+  "launcherSha256": "d58b169d614e1042a82284103ac809877e78803a41d4a5445bd00588b5d05560",
+  "workers": {
+    "1865819": {
+      "args": [
+        "/usr/bin/python3",
+        "/home/songyy/projects/leetcode-hard-campaign-20261018/scripts/leetcode_campaign.py",
+        "--repo",
+        "/home/songyy/projects/leetcode-hard-campaign-20261018",
+        "--state-dir",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018",
+        "--ids",
+        "51,52,60,65,4,10,23,25,30,32,37,41,42,44,68,76,84,85,87,115,123,124,126,127,132,135,140,149,154,158,174,185,188,212,214,218,220,224,233,239,248,262,265,269,272,273,282,295,296,297,301,302,305,312,315,317,321,327,329,330,332,335,336,352,354,358,363,381,391,403,407,410,411,420,425,428,431,432,440,446,458,460,465,466,471,472,479,480,483,488,489,493,499,502,514,517,527,546,548,552,564,568,569,571,579,587,588,591,600,601,615,618,629,630,631,632,639,642,644,656,660,664,668,675,679,683,685,689,691,699,710,711,715,716,719,726,727,730,732,736,741,745,749,753,757,759,761,765,768,770,772,773,774,778,780,782,793,798,801,803,805,810,815,818,827,828,829,834,839,843,847,850,854,857,862,864,871,878,879,882,887,891,895,899,902,903,906,913,920,924,927,928,936,940,943,952,956,960,964,968,972,975,980,982,987,992,995,996,1000,1001,1012,1028,1032,1036,1044,1063,1067,1074,1088,1092,1095,1096,1097,1106,1121,1125,1127,1147,1153,1157,1159,1163,1168,1172,1178,1183,1187,1192,1194,1199,1203,1206,1210,1216,1220,1223,1224,1225,1231,1235,1240,1246,1250,1255,1259,1263,1269,1274,1278,1284,1289,1293,1298,1301,1307,1312,1316,1320,1326,1330,1335,1336,1340,1345,1349,1354,1359,1363,1368,1369,1373,1377,1383,1384,1388,1392,1397,1402,1406,1411,1412,1416,1420,1425,1434,1439,1444,1449,1453,1458,1463,1467,1473,1478,1479,1483,1489,1494,1499,1505,1510,1515,1516,1520,1521,1526,1531,1537,1542,1547,1548,1553,1563,1568,1569,1575,1579,1585,1591,1595,1597,1601,1606,1610,1611,1617,1622,1627,1632,1635,1639,1643,1645,1649,1651,1655,1659,1665,1671,1675,1681,1687,1691,1692,1697,1703,1707,1713,1714,1719,1723,1724,1728,1735,1739,1745,1751,1755,1761,1766,1767,1770,1771,1776,1782,1787,1788,1793,1799,1803,1808,1815,1819,1825,1830,1835,1840,1842,1847,1851,1857,1862,1866,1872,1879,1883,1889,1892,1896,1900,1912,1916,1917,1919,1923,1924,1928,1931,1932,1938,1944,1948,1955,1956,1960,1964,1970,1972,1977,1982,1987,1994,1998,2003,2004,2005,2009,2010,2014,2019,2025,2030,2035,2040,2045,2050,2056,2060,2065,2071,2076,2081,2088,2092,2097,2102,2106,2111,2117,2118,2122,2123,2127,2132,2136,2141,2143,2147,2151,2153,2156,2157,2158,2163,2167,2172,2173,2179,2183,2188,2193,2197,2199,2203,2204,2209,2213,2218,2223,2227,2234,2242,2246,2247,2251,2252,2253,2254,2258,2262,2263,2267,2272,2276,2277,2281,2286,2290,2296,2301,2302,2306,2307,2312,2313,2318,2321,2322,2328,2334,2338,2344,2350,2354,2355,2360,2361,2362,2366,2371,2376,2382,2386,2392,2398,2402,2403,2407,2412,2416,2421,2426,2430,2435,2440,2444,2448,2449,2454,2458,2459,2463,2468,2472,2474,2478,2479,2484,2488,2493,2494,2499,2503,2508,2509,2514,2518,2519,2524,2528,2532,2534,2538,2543,2547,2551,2552,2561,2565,2569,2573,2577,2581,2584,2585,2589,2603,2604,2608,2612,2613,2617,2630,2642,2646,2647,2650,2659,2663,2675,2681,2691,2699,2701,2702,2709,2713,2714,2719,2720,2732,2736,2742,2751,2752,2753,2756,2759,2763,2781,2790,2791,2792,2793,2801,2809,2813,2814,2818,2819,2827,2835,2836,2842,2846,2851,2858,2862,2867,2868,2872,2876,2897,2902,2911,2912,2916,2920,2921,2926,2927,2931,2935,2940,2941,2945,2949,2953,2954,2959,2963,2968,2969,2972,2973,2977,2983,2991,2994,2995,2999,3003,3008,3009,3013,3017,3018,3022,3027,3031,3036,3037,3041,3045,3049,3052,3057,3060,3061,3068,3072,3077,3082,3086,3088,3093,3098,3102,3103,3104,3108,3113,3116,3117,3123,3130,3134,3139,3141,3145,3149,3154,3156,3161,3165,3171,3177,3181,3187,3188,3193,3197,3203,3209,3213,3214,3219,3225,3229,3231,3235,3236,3241,3244,3245,3250,3251,3256,3257,3260,3261,3266,3267,3268,3269,3272,3273,3276,3277,3279,3283,3287,3288,3292,3298,3299,3303,3307,3311,3312,3313,3317,3320,3321,3327,3329,3333,3336,3337,3343,3347,3348,3351,3352,3357,3359,3363,3367,3368,3369,3373,3374,3378,3382,3383,3384,3385,3389,3390,3395,3398,3399,3401,3405,3406,3410,3414,3416,3420,3425,3426,3430,3435,3441,3444,3445,3448,3449,3451,3454,3455,3459,3463,3464,3470,3474,3480,3482,3485,3486,3490,3495,3500,3501,3504,3505,3506,3509,3510,3515,3518,3519,3525,3526,3530,3533,3534,3538,3539,3544,3547,3548,3549,3553,3554,3559,3562,3563,3569,3574,3575,3579,3585,3590,3594,3600,3605,3609,3614,3615,3617,3620,3621,3624,3625,3630,3632,3636,3640,3646,3651,3655,3661,3666,3671,3673,3677,3681,3686,3691,3695,3699,3700,3704,3710,3715,3721,3725,3729,3734,3735,3739,3743,3748,3749,3753,3757,3762,3764,3768,3772,3777,3782,3785,3786,3791,3797,3801,3802,3806,3812,3816,3821,3826,3830,3832,3836,3841,3845,3850,3855,3859,3864,3869,3873,3878,3883,3886,3887,3888,3892,3897,3901,3906,3910,3911,3915,3916,3920,3924,3928,3929,3930,3934,3939,3943,3944,3948,3949,3953,3956,3957,3962,3966,3967,3971,3972,3973,3977,3981,3985,3989,3990,3995,3999,4003,4004,4005,4007,4009,4013,4017,4018,4023,4027,4028,4029,4033,4037,4041,4042,4046,4047,4051,4055,4059,4060,4064,4068,4073,4077,4081,4082,4086",
+        "--port",
+        "18770",
+        "--publish-root",
+        "/home/songyy/projects/visual-site",
+        "--public-base",
+        "https://visual.integ.life",
+        "--publish-every",
+        "20",
+        "--max-rounds",
+        "6"
+      ],
+      "ppid": 1,
+      "cwd": "/home/songyy/projects/leetcode-hard-campaign-20261018"
+    },
+    "1871480": {
+      "args": [
+        "/usr/bin/python3",
+        "/home/songyy/projects/leetcode-hard-lane-996-20261026/scripts/leetcode_campaign.py",
+        "--repo",
+        "/home/songyy/projects/leetcode-hard-lane-996-20261026",
+        "--state-dir",
+        "/home/songyy/projects/leetcode-hard-lane-state-996-20261026",
+        "--ids",
+        "996",
+        "--port",
+        "18799",
+        "--max-rounds",
+        "6"
+      ],
+      "ppid": 1,
+      "cwd": "/home/songyy/projects/leetcode-hard-lane-996-20261026"
+    },
+    "1871874": {
+      "args": [
+        "/usr/bin/python3",
+        "/home/songyy/projects/leetcode-hard-lane-1000-20261026/scripts/leetcode_campaign.py",
+        "--repo",
+        "/home/songyy/projects/leetcode-hard-lane-1000-20261026",
+        "--state-dir",
+        "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026",
+        "--ids",
+        "1000",
+        "--port",
+        "18800",
+        "--max-rounds",
+        "6"
+      ],
+      "ppid": 1,
+      "cwd": "/home/songyy/projects/leetcode-hard-lane-1000-20261026"
+    }
+  },
+  "central": {
+    "current": {
+      "problem_id": "878",
+      "stage": "author",
+      "started_at": "2026-10-25T23:11:30.966203+00:00",
+      "run_id": "878-author-004c6e7e9e78"
+    },
+    "expectedHead": "cf1a31fc75c66ca79e54513e050b7e0ba31b6e70",
+    "progressSha256": "3292537ba0e7e28c4ecff74d72efc41594379973abb604649ee6fb71d960dcf5",
+    "queueLength": 984,
+    "runnerPid": 1865819
+  },
+  "head": "cf1a31fc75c66ca79e54513e050b7e0ba31b6e70",
+  "stopAbsent": true,
+  "policySha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+  "ledgerSha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+  "lanes": {
+    "996": {
+      "reservation": {
+        "id": "996",
+        "base": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+        "repo": "/home/songyy/projects/leetcode-hard-lane-996-20261026",
+        "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026",
+        "port": 18799,
+        "nice": 10,
+        "status": "started",
+        "started_at": "2026-10-25T23:14:09.786115+00:00",
+        "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+        "publication_enabled": false,
+        "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+        "runner_pid": 1871480,
+        "observed_current": {
+          "problem_id": "996",
+          "stage": "author",
+          "started_at": "2026-10-25T23:14:30.395999+00:00",
+          "run_id": "996-author-9180dd0f5b54"
+        }
+      },
+      "current": {
+        "problem_id": "996",
+        "stage": "author",
+        "started_at": "2026-10-25T23:14:30.395999+00:00",
+        "run_id": "996-author-9180dd0f5b54"
+      },
+      "status": "running",
+      "runnerPid": 1871480,
+      "nice": 10,
+      "run": {
+        "id": "996-author-9180dd0f5b54",
+        "problem_id": "996",
+        "role": "author",
+        "started_at": "2026-10-25T23:14:30.395999+00:00",
+        "status": "running",
+        "candidate": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+        "directory": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-author-9180dd0f5b54",
+        "session_ids": []
+      },
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a17558-1c90-7cd0-976c-7f3beab58eed"
+        },
+        {
+          "type": "turn.started"
+        }
+      ],
+      "native": {
+        "1871523": {
+          "args": [
+            "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex",
+            "exec",
+            "-m",
+            "gpt-6.1-sol",
+            "-c",
+            "model_reasoning_effort=\"medium\"",
+            "-c",
+            "approval_policy=\"never\"",
+            "--sandbox",
+            "danger-full-access",
+            "--json",
+            "-o",
+            "/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-author-9180dd0f5b54/final.json",
+            "--output-schema",
+            "/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-author-9180dd0f5b54/schema.json",
+            "-C",
+            "/home/songyy/projects/leetcode-hard-lane-996-20261026",
+            "-"
+          ],
+          "ppid": 1871516,
+          "cwd": "/home/songyy/projects/leetcode-hard-lane-996-20261026"
+        }
+      }
+    },
+    "1000": {
+      "reservation": {
+        "id": "1000",
+        "base": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+        "repo": "/home/songyy/projects/leetcode-hard-lane-1000-20261026",
+        "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026",
+        "port": 18800,
+        "nice": 10,
+        "status": "started",
+        "started_at": "2026-10-25T23:14:32.123201+00:00",
+        "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+        "publication_enabled": false,
+        "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+        "runner_pid": 1871874,
+        "observed_current": {
+          "problem_id": "1000",
+          "stage": "author",
+          "started_at": "2026-10-25T23:14:51.757178+00:00",
+          "run_id": "1000-author-3a58ffe68610"
+        }
+      },
+      "current": {
+        "problem_id": "1000",
+        "stage": "author",
+        "started_at": "2026-10-25T23:14:51.757178+00:00",
+        "run_id": "1000-author-3a58ffe68610"
+      },
+      "status": "running",
+      "runnerPid": 1871874,
+      "nice": 10,
+      "run": {
+        "id": "1000-author-3a58ffe68610",
+        "problem_id": "1000",
+        "role": "author",
+        "started_at": "2026-10-25T23:14:51.757178+00:00",
+        "status": "running",
+        "candidate": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+        "directory": "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026/runs/1000-author-3a58ffe68610",
+        "session_ids": []
+      },
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a17558-700c-7460-90ec-32d20d8337d0"
+        },
+        {
+          "type": "turn.started"
+        }
+      ],
+      "native": {
+        "1871917": {
+          "args": [
+            "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex",
+            "exec",
+            "-m",
+            "gpt-6.1-sol",
+            "-c",
+            "model_reasoning_effort=\"medium\"",
+            "-c",
+            "approval_policy=\"never\"",
+            "--sandbox",
+            "danger-full-access",
+            "--json",
+            "-o",
+            "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026/runs/1000-author-3a58ffe68610/final.json",
+            "--output-schema",
+            "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026/runs/1000-author-3a58ffe68610/schema.json",
+            "-C",
+            "/home/songyy/projects/leetcode-hard-lane-1000-20261026",
+            "-"
+          ],
+          "ppid": 1871910,
+          "cwd": "/home/songyy/projects/leetcode-hard-lane-1000-20261026"
+        }
+      }
+    }
+  },
+  "earlierPartialObservation": {
+    "at": "2026-10-25T23:14:41.225005+00:00",
+    "launcherAlive": true,
+    "workerPids": [
+      "1865819",
+      "1871480"
+    ],
+    "reservationStatuses": {
+      "996": "started",
+      "1000": "prepared"
+    }
+  }
+}
