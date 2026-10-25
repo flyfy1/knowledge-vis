@@ -1,0 +1,24 @@
+{
+  "candidate": "282-review5-a488e531fb2ac189dba0456c56758a595fd322b7692e6cee3695c1a177b4ef52",
+  "baseHead": "f4ebe24d46837496b208b56197828b5eeaaf130e",
+  "status": "author self-checked; independent re-review pending",
+  "sha256": {
+    "BRIEF.md": "8ed37e28a68a0e2445feff30f5e15235bec875a9de4826e9bf37eda7a54dfd19",
+    "SELF-CHECK.md": "f5b793ea628040d063e7f38c647247eddbc9c21ea0e72f6b20711b1c6aabbef1",
+    "app.js": "0633d8e27b5b955edc9e159fc2497963c031557fde2470bf00021056cbc59fb6",
+    "copy.js": "8e74aabb8177c389f764e487e180799f130b6bb89fef75124e587fce985a41e4",
+    "core.js": "177d8150751187b0073c48ce27ba38751b0a12faab35dc6a7d604d671f3eadc4",
+    "index.html": "895ec4b1b8f12749e6ad97daa4cc2e05f7fbe3b22fec03aa335e24a3b646963e",
+    "lesson-entry.json": "08409353773773d38eeab1a767698ece56a2ec07bf28073cc6214c61d0101852",
+    "provenance/official-access-20261025.json": "6ec4867026ed1802eab3baed1fddc199203ed82cf46ceff7c206568687914a88",
+    "provenance/official-python3-20261025.jpg": "ed66a6394160f9c9d517c2b16c9baf764f493c97403bfee3bfb1c868ba710bbd",
+    "python-code.js": "5092f63ded411d48d2925b624392f823445422a0f623d9a8a6b064efebeef6d4",
+    "solution.py": "0bc7dbf2d90c12e1087da6aafc8694a5fe5eea1ab1712ce85329c4ea9aedb84b",
+    "tests/browser-check.mjs": "5866a451c5ff8f810a96dd9d36d5b3d735b8bf411ea37eea050c7546f2eab14a",
+    "tests/review-browser.cjs": "ebb28d4b92a7132efe0ed68fd2b9ee4f337f9acf42fbefaa860507771beb5e85",
+    "tests/review-regressions.cjs": "e0f9a2169f193380a87071f7c7374102a6171c44475feb1e8784d4e611ce47c8",
+    "tests/test_parity.py": "12d0f13cf6ff42ed0a82d48a2837b64ffec319dc2b7b891e4e8e16ba268cfe9f",
+    "tests/test_solution.py": "fef373e090e8034a84cb132d2a8035aed226005b6ab579031c65a45cfa6ff601",
+    "tests/test_trace.py": "dfb44d62b8f0a2da23add7cfd26150f22fe9c5713975a643103672deec4bc5d8"
+  }
+}
