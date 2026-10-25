@@ -1,0 +1,170 @@
+[
+  {
+    "mode": "baseline",
+    "preset": 1,
+    "label": "Official 1 · 5 boundary trees",
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "control": 260,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "width": 219.93594360351562,
+    "available": 214,
+    "pass": false
+  },
+  {
+    "mode": "baseline",
+    "preset": 2,
+    "label": "Official 2 · 3 boundary trees",
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "control": 260,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "width": 223.05593872070312,
+    "available": 214,
+    "pass": false
+  },
+  {
+    "mode": "baseline",
+    "preset": 5,
+    "label": "Two pops · 3 boundary trees",
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "control": 260,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "width": 226.59197998046875,
+    "available": 214,
+    "pass": false
+  },
+  {
+    "mode": "font-only-Arial",
+    "preset": 1,
+    "label": "Official 1 · 5 boundary trees",
+    "font": "16px Arial",
+    "control": 253,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "width": 196.25,
+    "available": 207,
+    "pass": true
+  },
+  {
+    "mode": "font-only-Arial",
+    "preset": 2,
+    "label": "Official 2 · 3 boundary trees",
+    "font": "16px Arial",
+    "control": 253,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "width": 196.25,
+    "available": 207,
+    "pass": true
+  },
+  {
+    "mode": "font-only-Arial",
+    "preset": 5,
+    "label": "Two pops · 3 boundary trees",
+    "font": "16px Arial",
+    "control": 253,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "width": 202.78125,
+    "available": 207,
+    "pass": true
+  },
+  {
+    "mode": "padding-only-8px",
+    "preset": 1,
+    "label": "Official 1 · 5 boundary trees",
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "control": 260,
+    "padding": [
+      "8px",
+      "8px"
+    ],
+    "width": 219.93594360351562,
+    "available": 228,
+    "pass": true
+  },
+  {
+    "mode": "padding-only-8px",
+    "preset": 2,
+    "label": "Official 2 · 3 boundary trees",
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "control": 260,
+    "padding": [
+      "8px",
+      "8px"
+    ],
+    "width": 223.05593872070312,
+    "available": 228,
+    "pass": true
+  },
+  {
+    "mode": "padding-only-8px",
+    "preset": 5,
+    "label": "Two pops · 3 boundary trees",
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "control": 260,
+    "padding": [
+      "8px",
+      "8px"
+    ],
+    "width": 226.59197998046875,
+    "available": 228,
+    "pass": true
+  },
+  {
+    "mode": "locale-roundtrip",
+    "preset": 1,
+    "label": "Official 1 · 5 boundary trees",
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "control": 260,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "width": 219.93594360351562,
+    "available": 214,
+    "pass": false
+  },
+  {
+    "mode": "locale-roundtrip",
+    "preset": 2,
+    "label": "Official 2 · 3 boundary trees",
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "control": 260,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "width": 223.05593872070312,
+    "available": 214,
+    "pass": false
+  },
+  {
+    "mode": "locale-roundtrip",
+    "preset": 5,
+    "label": "Two pops · 3 boundary trees",
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "control": 260,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "width": 226.59197998046875,
+    "available": 214,
+    "pass": false
+  }
+]
