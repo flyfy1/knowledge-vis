@@ -1,0 +1,394 @@
+{
+  "kind": "author self-check",
+  "host": "linux",
+  "semantics": [
+    {
+      "locale": "zh",
+      "action": "all six presets; every event, rewind/replay, reset/end",
+      "expected": [
+        12,
+        27,
+        18,
+        0,
+        1,
+        24
+      ],
+      "observed": "All f/g cells and final counts match independent fixtures"
+    },
+    {
+      "locale": "zh",
+      "action": "wrong/correct/wrong predictions, reveal/change and locale roundtrip",
+      "expected": "8 pairs for fixed k; compatible nonzero masks retained",
+      "observed": "再检查数对的次数。 答案是 8：f[0]=4，来自两种方向的 1 与 2；f[2]=4，来自两个值为 2 的位置各自独立选择。子掩码 0、2 都允许，所以 g[2]=4+4=8。选 4 漏掉非零但兼容的掩码 2；选 1 丢掉位置与顺序。唯一不合格的数对是 (0,0)，因为 1&1&1=1。这里不是在求所有 k 的总答案。"
+    },
+    {
+      "locale": "en",
+      "action": "all six presets; every event, rewind/replay, reset/end",
+      "expected": [
+        12,
+        27,
+        18,
+        0,
+        1,
+        24
+      ],
+      "observed": "All f/g cells and final counts match independent fixtures"
+    },
+    {
+      "locale": "en",
+      "action": "wrong/correct/wrong predictions, reveal/change and locale roundtrip",
+      "expected": "8 pairs for fixed k; compatible nonzero masks retained",
+      "observed": "Check the pair multiplicities again. The answer is 8: f[0]=4 comes from 1 paired with either 2 in both directions; f[2]=4 comes from independently choosing the two positions holding 2. Both submasks 0 and 2 are allowed, so g[2]=4+4=8. Choosing 4 misses the nonzero but compatible mask 2; choosing 1 discards positions and order. Only pair (0,0) fails, since 1&1&1=1. This is not the total over all k."
+    }
+  ],
+  "layouts": [
+    {
+      "locale": "zh",
+      "width": 320,
+      "scroll": 320,
+      "select": 262,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "[4,2,1] · 三个位",
+      "selectedFit": {
+        "text": 107.168212890625,
+        "available": 206
+      }
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "scroll": 320,
+      "select": 262,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "[4,2,1] · Three bits",
+      "selectedFit": {
+        "text": 133.85626220703125,
+        "available": 206
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "scroll": 390,
+      "select": 332,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "[4,2,1] · 三个位",
+      "selectedFit": {
+        "text": 107.168212890625,
+        "available": 276
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "scroll": 390,
+      "select": 332,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "[4,2,1] · Three bits",
+      "selectedFit": {
+        "text": 133.85626220703125,
+        "available": 276
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "scroll": 736,
+      "select": 646,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "[4,2,1] · 三个位",
+      "selectedFit": {
+        "text": 107.168212890625,
+        "available": 590
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "scroll": 736,
+      "select": 646,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "[4,2,1] · Three bits",
+      "selectedFit": {
+        "text": 133.85626220703125,
+        "available": 590
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "scroll": 1440,
+      "select": 910,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "[4,2,1] · 三个位",
+      "selectedFit": {
+        "text": 107.168212890625,
+        "available": 854
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "scroll": 1440,
+      "select": 910,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "[4,2,1] · Three bits",
+      "selectedFit": {
+        "text": 133.85626220703125,
+        "available": 854
+      }
+    }
+  ],
+  "clipboard": [
+    {
+      "locale": "zh",
+      "sentinelVerified": true,
+      "nativeShortcut": "Control+C",
+      "exact": true,
+      "feedback": "自动复制不可用。完整源代码已选中，请使用系统复制快捷键。"
+    },
+    {
+      "locale": "en",
+      "sentinelVerified": true,
+      "nativeShortcut": "Control+C",
+      "exact": true,
+      "feedback": "Automatic copy is unavailable. Full source selected; use your system copy shortcut."
+    }
+  ],
+  "links": [
+    {
+      "locale": "zh",
+      "label": "有序数对：为什么要保留次数",
+      "href": "#step1",
+      "resolved": "http://127.0.0.1:18795/leetcode/982/#step1",
+      "heading": "02 · 哪些重复计算能合并？"
+    },
+    {
+      "locale": "zh",
+      "label": "子集求和：按一位划分不相交集合",
+      "href": "#step2",
+      "resolved": "http://127.0.0.1:18795/leetcode/982/#step2",
+      "heading": "03 · 怎样一次求出所有兼容数对总数？"
+    },
+    {
+      "locale": "zh",
+      "label": "#600：把二进制后缀分成互不重叠的两类",
+      "href": "../600/#step1",
+      "resolved": "http://127.0.0.1:18795/leetcode/600/#step1",
+      "heading": "02 · 数一段自由后缀"
+    },
+    {
+      "locale": "zh",
+      "label": "#552：按状态保留计数，而非枚举每条记录",
+      "href": "../552/#step2",
+      "resolved": "http://127.0.0.1:18795/leetcode/552/#step2",
+      "heading": "03 · 看六个计数如何累积"
+    },
+    {
+      "locale": "en",
+      "label": "Ordered pairs: why multiplicity matters",
+      "href": "#step1",
+      "resolved": "http://127.0.0.1:18795/leetcode/982/#step1",
+      "heading": "02 · Which repeated work can we combine?"
+    },
+    {
+      "locale": "en",
+      "label": "Subset sums: split disjoint families by one bit",
+      "href": "#step2",
+      "resolved": "http://127.0.0.1:18795/leetcode/982/#step2",
+      "heading": "03 · How can we precompute every compatible-pair total?"
+    },
+    {
+      "locale": "en",
+      "label": "#600: split binary suffixes into two disjoint groups",
+      "href": "../600/#step1",
+      "resolved": "http://127.0.0.1:18795/leetcode/600/#step1",
+      "heading": "02 · Count a free suffix"
+    },
+    {
+      "locale": "en",
+      "label": "#552: retain state counts instead of enumerating records",
+      "href": "../552/#step2",
+      "resolved": "http://127.0.0.1:18795/leetcode/552/#step2",
+      "heading": "03 · Watch six counts accumulate"
+    }
+  ],
+  "contrast": [
+    {
+      "tag": "A",
+      "text": "← Knowledge Index",
+      "color": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "BUTTON",
+      "text": "中",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "BUTTON",
+      "text": "EN",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "H1",
+      "text": "#982 · Triples with Bitwise AND Equal To Zero",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "Positions may repeat, and order counts. First keep the 1-bit",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "SPAN",
+      "text": "Hard · Python",
+      "color": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SPAN",
+      "text": "0: 2 = 10₂",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "H2",
+      "text": "02 · Which repeated work can we combine?",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(10, 14, 20)",
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "CODE",
+      "text": "def baseline(nums):\n    answer = 0\n    for a in nums:\n      ",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(9, 14, 22)",
+      "ratio": 16.437295258072666
+    },
+    {
+      "tag": "LABEL",
+      "text": "Preset (changing restarts this experiment)",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Apply next operation",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "SUMMARY",
+      "text": "Retained operation history",
+      "color": "rgb(110, 231, 255)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 11.974898815275662
+    },
+    {
+      "tag": "P",
+      "text": "Correct. The answer is 8: f[0]=4 comes from 1 paired with ei",
+      "color": "rgb(126, 226, 168)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.004815697188947
+    }
+  ],
+  "focus": {
+    "width": "3px",
+    "color": "rgb(255, 180, 84)",
+    "offset": "4px"
+  },
+  "controlHeights": [
+    {
+      "text": "中",
+      "height": 48
+    },
+    {
+      "text": "EN",
+      "height": 48
+    },
+    {
+      "text": "Show / hide all eight choices",
+      "height": 48
+    },
+    {
+      "text": "[2,1,3] · Official[0,0,0] · All zero[1,1,2] · Repeats[7] · All bits shared[0] · One zero[4,2,1] · Three bits",
+      "height": 48
+    },
+    {
+      "text": "Undo one operation",
+      "height": 48
+    },
+    {
+      "text": "Apply next operation",
+      "height": 48
+    },
+    {
+      "text": "Reset to start",
+      "height": 48
+    },
+    {
+      "text": "Jump to end",
+      "height": 48
+    },
+    {
+      "text": "A · 4 pairs",
+      "height": 48
+    },
+    {
+      "text": "B · 8 pairs",
+      "height": 48
+    },
+    {
+      "text": "C · 1 pair",
+      "height": 48
+    },
+    {
+      "text": "Check reasoning",
+      "height": 48
+    },
+    {
+      "text": "Copy Python",
+      "height": 48
+    }
+  ],
+  "errors": [],
+  "localRequests": [
+    "http://127.0.0.1:18795/leetcode/982/",
+    "http://127.0.0.1:18795/leetcode/style.css",
+    "http://127.0.0.1:18795/leetcode/982/style.css?v=1",
+    "http://127.0.0.1:18795/leetcode/common.js",
+    "http://127.0.0.1:18795/leetcode/982/copy.js?v=1",
+    "http://127.0.0.1:18795/leetcode/982/core.js?v=1",
+    "http://127.0.0.1:18795/leetcode/982/python-code.js?v=1",
+    "http://127.0.0.1:18795/leetcode/982/app.js?v=1",
+    "http://127.0.0.1:18795/leetcode/600/",
+    "http://127.0.0.1:18795/leetcode/600/style.css?v=600-1",
+    "http://127.0.0.1:18795/leetcode/600/copy.js?v=600-1",
+    "http://127.0.0.1:18795/leetcode/600/core.js?v=600-1",
+    "http://127.0.0.1:18795/leetcode/600/python-code.js?v=600-1",
+    "http://127.0.0.1:18795/leetcode/600/app.js?v=600-1",
+    "http://127.0.0.1:18795/leetcode/552/",
+    "http://127.0.0.1:18795/leetcode/552/style.css?v=552-1",
+    "http://127.0.0.1:18795/leetcode/552/copy.js?v=552-1",
+    "http://127.0.0.1:18795/leetcode/552/core.js?v=552-1",
+    "http://127.0.0.1:18795/leetcode/552/python-code.js?v=552-1",
+    "http://127.0.0.1:18795/leetcode/552/app.js?v=552-1"
+  ],
+  "zoom": "CSS layout zoom 200%; desktop Chromium, not a physical-device/browser-toolbar claim",
+  "browser": "156.0.8078.4",
+  "fontStack": "PingFang SC, Microsoft YaHei, system-ui, sans-serif; actual fallback depends on host"
+}

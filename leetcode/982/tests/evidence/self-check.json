@@ -1,0 +1,95 @@
+{
+  "problemId": 982,
+  "candidate": "982-author-candidate-1",
+  "at": "2026-10-25T21:41:58.995544+00:00",
+  "authorStatus": "self-checked",
+  "independentReview": {
+    "status": "pending",
+    "reviewer": null,
+    "acceptanceClaimed": false
+  },
+  "officialEvidence": "tests/evidence/official.json",
+  "python": {
+    "kind": "author self-check",
+    "cases": 1578,
+    "exhaustive": "values 0..3, lengths 1..5",
+    "seed": 982,
+    "random16bit": 200,
+    "officialExamples": [
+      12,
+      27
+    ],
+    "maximumCases": [
+      1000000000,
+      0,
+      875000000
+    ],
+    "mutation": "unchanged",
+    "seconds": 18.89349442603998
+  },
+  "trace": {
+    "kind": "author self-check",
+    "cases": 348,
+    "frames": 8084,
+    "checks": "Independent enumeration of every partial transform cell, pair count, k-prefix contribution; snapshot isolation; duplicate keys and bilingual pair shape"
+  },
+  "browser": {
+    "result": "pass",
+    "evidence": "tests/evidence/browser-results.json",
+    "version": "156.0.8078.4",
+    "errors": [],
+    "locales": [
+      "zh",
+      "en"
+    ],
+    "widths": [
+      320,
+      390,
+      736,
+      1440
+    ],
+    "zoom": "200% CSS layout zoom",
+    "sourceTransfers": "exact display / successful clipboard / native fallback clipboard with per-attempt sentinels / downloads",
+    "contrastMinimum": 6.449407898769069,
+    "focus": {
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "offset": "4px"
+    }
+  },
+  "cssBytes": 11195,
+  "preflight": {
+    "command": "python3 -B scripts/register_leetcode_lesson.py 982 --validate-only",
+    "cwd": "/home/songyy/projects/leetcode-hard-lane-982-20261026",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "at": "2026-10-25T21:41:58.994122+00:00"
+  },
+  "visualInspection": {
+    "performedBy": "author self-check",
+    "observed": "Readable bilingual headings, mobile table rows/headers and current-cell marker; prediction selected/correct feedback; native manual selection; desktop focus and forced colors; clear 200% table captures.",
+    "files": [
+      "heading-zh-320.png",
+      "heading-en-390.png",
+      "trace-zh-320.png",
+      "trace-en-390.png",
+      "trace-en-1440.png",
+      "table-zh-320.png",
+      "table-en-320.png",
+      "prediction-zh-320.png",
+      "manual-en.png",
+      "forced-colors.png",
+      "zoom200-clear-table-zh.png",
+      "zoom200-clear-table-en.png"
+    ],
+    "captureNote": "Earlier element zoom images have sticky-navigation overlay at top; clear-table supplementary captures show caption and every row without modifying product CSS."
+  },
+  "limits": [
+    "Independent lesson review pending",
+    "No learner teach-back or LeetCode submission",
+    "No deployment or public delivery verification",
+    "Desktop Chromium emulation; no physical device or native toolbar-zoom evidence"
+  ],
+  "scope": "Only leetcode/982/ authored; shared assets, registry and campaign records untouched"
+}

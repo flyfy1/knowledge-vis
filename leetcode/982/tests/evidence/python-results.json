@@ -1,0 +1,18 @@
+{
+  "kind": "author self-check",
+  "cases": 1578,
+  "exhaustive": "values 0..3, lengths 1..5",
+  "seed": 982,
+  "random16bit": 200,
+  "officialExamples": [
+    12,
+    27
+  ],
+  "maximumCases": [
+    1000000000,
+    0,
+    875000000
+  ],
+  "mutation": "unchanged",
+  "seconds": 18.89349442603998
+}
