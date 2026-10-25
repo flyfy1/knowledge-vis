@@ -1477,3 +1477,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Modulo and reachability boundary | `leetcode/780/#step2` | Batch forced subtractions and finish using a divisible nonnegative difference. |
 
 <!-- /leetcode-780-campaign -->
+
+
+<!-- leetcode-805-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Count-indexed subset sums | `leetcode/805/#step2` | Build exact sums by selected count and pair two halves. |
+| Equal-average integer condition | `leetcode/805/#step1` | Derive n*s = k*S and restrict the smaller nonempty group. |
+
+<!-- /leetcode-805-campaign -->
