@@ -1,0 +1,435 @@
+{
+  "status": "passed",
+  "type": "author browser self-check",
+  "browser": "156.0.8078.4",
+  "cssBytes": 12035,
+  "contrast": [
+    {
+      "selector": "body",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "color": "rgb(201, 212, 226)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".readout",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".btn.primary",
+      "color": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".btn:disabled",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".token",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".prefix.current",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".prefix.future",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".lang-toggle .active",
+      "color": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18783/leetcode/639/",
+    "http://127.0.0.1:18783/leetcode/style.css",
+    "http://127.0.0.1:18783/leetcode/639/style.css?v=639-1",
+    "http://127.0.0.1:18783/leetcode/common.js",
+    "http://127.0.0.1:18783/leetcode/639/copy.js?v=639-1",
+    "http://127.0.0.1:18783/leetcode/639/core.js?v=639-1",
+    "http://127.0.0.1:18783/leetcode/639/python-code.js?v=639-1",
+    "http://127.0.0.1:18783/leetcode/639/app.js?v=639-1"
+  ],
+  "observations": [
+    {
+      "kind": "formula",
+      "lang": "en",
+      "text": "i ≥ 2: D[i] = (a(s[i−1]) × D[i−1] + b(s[i−2],s[i−1]) × D[i−2]) mod M; D[1] = a(s[0])."
+    },
+    {
+      "kind": "quiz",
+      "lang": "en",
+      "choice": "0",
+      "text": "That prediction does not match. The answer is 9. D[1]=9 and D[2]=9+2=11. But the final 0 cannot stand alone, so D[3]=0×D[2]+1×D[1]=9. The final pair must be 10, with nine choices for the earlier *. Choosing 11 keeps the *1 count without processing 0. Choosing 18 assumes two legal pairs at the end, although the preceding digit is fixed at 1, allowing only 10."
+    },
+    {
+      "kind": "quiz",
+      "lang": "en",
+      "choice": "1",
+      "text": "That prediction does not match. The answer is 9. D[1]=9 and D[2]=9+2=11. But the final 0 cannot stand alone, so D[3]=0×D[2]+1×D[1]=9. The final pair must be 10, with nine choices for the earlier *. Choosing 11 keeps the *1 count without processing 0. Choosing 18 assumes two legal pairs at the end, although the preceding digit is fixed at 1, allowing only 10."
+    },
+    {
+      "kind": "quiz",
+      "lang": "en",
+      "choice": "2",
+      "text": "Correct prediction. The answer is 9. D[1]=9 and D[2]=9+2=11. But the final 0 cannot stand alone, so D[3]=0×D[2]+1×D[1]=9. The final pair must be 10, with nine choices for the earlier *. Choosing 11 keeps the *1 count without processing 0. Choosing 18 assumes two legal pairs at the end, although the preceding digit is fixed at 1, allowing only 10."
+    },
+    {
+      "kind": "copy-fallback",
+      "lang": "en",
+      "text": "Clipboard unavailable; the full source is selected for manual copying."
+    },
+    {
+      "kind": "native-select",
+      "lang": "en",
+      "width": 118,
+      "text": "***",
+      "textWidth": 26.448074340820312,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "kind": "layout",
+      "lang": "en",
+      "width": 320,
+      "ledger": "Prefix emptyD[0] = 1completedPrefix *D[1] = 9completedPrefix **D[2] = 96completedPrefix ***D[3] = 999current",
+      "geometry": [
+        {
+          "width": 256,
+          "scroll": 256,
+          "text": "Prefix emptyD[0] = 1completed"
+        },
+        {
+          "width": 256,
+          "scroll": 256,
+          "text": "Prefix *D[1] = 9completed"
+        },
+        {
+          "width": 256,
+          "scroll": 256,
+          "text": "Prefix **D[2] = 96completed"
+        },
+        {
+          "width": 254,
+          "scroll": 254,
+          "text": "Prefix ***D[3] = 999current"
+        }
+      ]
+    },
+    {
+      "kind": "native-select",
+      "lang": "en",
+      "width": 118,
+      "text": "***",
+      "textWidth": 26.448074340820312,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "kind": "layout",
+      "lang": "en",
+      "width": 390,
+      "ledger": "Prefix emptyD[0] = 1completedPrefix *D[1] = 9completedPrefix **D[2] = 96completedPrefix ***D[3] = 999current",
+      "geometry": [
+        {
+          "width": 157,
+          "scroll": 157,
+          "text": "Prefix emptyD[0] = 1completed"
+        },
+        {
+          "width": 157,
+          "scroll": 157,
+          "text": "Prefix *D[1] = 9completed"
+        },
+        {
+          "width": 157,
+          "scroll": 157,
+          "text": "Prefix **D[2] = 96completed"
+        },
+        {
+          "width": 155,
+          "scroll": 155,
+          "text": "Prefix ***D[3] = 999current"
+        }
+      ]
+    },
+    {
+      "kind": "native-select",
+      "lang": "en",
+      "width": 118,
+      "text": "***",
+      "textWidth": 26.448074340820312,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "kind": "layout",
+      "lang": "en",
+      "width": 736,
+      "ledger": "Prefix emptyD[0] = 1completedPrefix *D[1] = 9completedPrefix **D[2] = 96completedPrefix ***D[3] = 999current",
+      "geometry": [
+        {
+          "width": 111,
+          "scroll": 111,
+          "text": "Prefix emptyD[0] = 1completed"
+        },
+        {
+          "width": 108,
+          "scroll": 108,
+          "text": "Prefix *D[1] = 9completed"
+        },
+        {
+          "width": 121,
+          "scroll": 121,
+          "text": "Prefix **D[2] = 96completed"
+        },
+        {
+          "width": 133,
+          "scroll": 133,
+          "text": "Prefix ***D[3] = 999current"
+        }
+      ]
+    },
+    {
+      "kind": "native-select",
+      "lang": "en",
+      "width": 118,
+      "text": "***",
+      "textWidth": 26.448074340820312,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "kind": "layout",
+      "lang": "en",
+      "width": 1440,
+      "ledger": "Prefix emptyD[0] = 1completedPrefix *D[1] = 9completedPrefix **D[2] = 96completedPrefix ***D[3] = 999current",
+      "geometry": [
+        {
+          "width": 111,
+          "scroll": 111,
+          "text": "Prefix emptyD[0] = 1completed"
+        },
+        {
+          "width": 108,
+          "scroll": 108,
+          "text": "Prefix *D[1] = 9completed"
+        },
+        {
+          "width": 121,
+          "scroll": 121,
+          "text": "Prefix **D[2] = 96completed"
+        },
+        {
+          "width": 133,
+          "scroll": 133,
+          "text": "Prefix ***D[3] = 999current"
+        }
+      ]
+    },
+    {
+      "kind": "formula",
+      "lang": "zh",
+      "text": "i ≥ 2: D[i] = (a(s[i−1]) × D[i−1] + b(s[i−2],s[i−1]) × D[i−2]) mod M；D[1] = a(s[0])。"
+    },
+    {
+      "kind": "quiz",
+      "lang": "zh",
+      "choice": "0",
+      "text": "这次预测不符。 答案是 9。D[1]=9，D[2]=9+2=11；但最后的 0 不能单用，所以 D[3]=0×D[2]+1×D[1]=9。两位末块只能是 10，前面的 * 有 9 种。选 11 是沿用了 *1 的计数，没有处理 0；选 18 则把结尾 0 当成有两个合法配对，实际上它前面固定为 1，只能组成 10。"
+    },
+    {
+      "kind": "quiz",
+      "lang": "zh",
+      "choice": "1",
+      "text": "这次预测不符。 答案是 9。D[1]=9，D[2]=9+2=11；但最后的 0 不能单用，所以 D[3]=0×D[2]+1×D[1]=9。两位末块只能是 10，前面的 * 有 9 种。选 11 是沿用了 *1 的计数，没有处理 0；选 18 则把结尾 0 当成有两个合法配对，实际上它前面固定为 1，只能组成 10。"
+    },
+    {
+      "kind": "quiz",
+      "lang": "zh",
+      "choice": "2",
+      "text": "预测正确。 答案是 9。D[1]=9，D[2]=9+2=11；但最后的 0 不能单用，所以 D[3]=0×D[2]+1×D[1]=9。两位末块只能是 10，前面的 * 有 9 种。选 11 是沿用了 *1 的计数，没有处理 0；选 18 则把结尾 0 当成有两个合法配对，实际上它前面固定为 1，只能组成 10。"
+    },
+    {
+      "kind": "copy-fallback",
+      "lang": "zh",
+      "text": "剪贴板不可用；完整源码已选中，请手动复制。"
+    },
+    {
+      "kind": "native-select",
+      "lang": "zh",
+      "width": 118,
+      "text": "***",
+      "textWidth": 26.448074340820312,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "kind": "layout",
+      "lang": "zh",
+      "width": 320,
+      "ledger": "前缀 空D[0] = 1已完成前缀 *D[1] = 9已完成前缀 **D[2] = 96已完成前缀 ***D[3] = 999当前",
+      "geometry": [
+        {
+          "width": 256,
+          "scroll": 256,
+          "text": "前缀 空D[0] = 1已完成"
+        },
+        {
+          "width": 256,
+          "scroll": 256,
+          "text": "前缀 *D[1] = 9已完成"
+        },
+        {
+          "width": 256,
+          "scroll": 256,
+          "text": "前缀 **D[2] = 96已完成"
+        },
+        {
+          "width": 254,
+          "scroll": 254,
+          "text": "前缀 ***D[3] = 999当前"
+        }
+      ]
+    },
+    {
+      "kind": "native-select",
+      "lang": "zh",
+      "width": 118,
+      "text": "***",
+      "textWidth": 26.448074340820312,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "kind": "layout",
+      "lang": "zh",
+      "width": 390,
+      "ledger": "前缀 空D[0] = 1已完成前缀 *D[1] = 9已完成前缀 **D[2] = 96已完成前缀 ***D[3] = 999当前",
+      "geometry": [
+        {
+          "width": 157,
+          "scroll": 157,
+          "text": "前缀 空D[0] = 1已完成"
+        },
+        {
+          "width": 157,
+          "scroll": 157,
+          "text": "前缀 *D[1] = 9已完成"
+        },
+        {
+          "width": 157,
+          "scroll": 157,
+          "text": "前缀 **D[2] = 96已完成"
+        },
+        {
+          "width": 155,
+          "scroll": 155,
+          "text": "前缀 ***D[3] = 999当前"
+        }
+      ]
+    },
+    {
+      "kind": "native-select",
+      "lang": "zh",
+      "width": 118,
+      "text": "***",
+      "textWidth": 26.448074340820312,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "kind": "layout",
+      "lang": "zh",
+      "width": 736,
+      "ledger": "前缀 空D[0] = 1已完成前缀 *D[1] = 9已完成前缀 **D[2] = 96已完成前缀 ***D[3] = 999当前",
+      "geometry": [
+        {
+          "width": 108,
+          "scroll": 108,
+          "text": "前缀 空D[0] = 1已完成"
+        },
+        {
+          "width": 108,
+          "scroll": 108,
+          "text": "前缀 *D[1] = 9已完成"
+        },
+        {
+          "width": 121,
+          "scroll": 121,
+          "text": "前缀 **D[2] = 96已完成"
+        },
+        {
+          "width": 133,
+          "scroll": 133,
+          "text": "前缀 ***D[3] = 999当前"
+        }
+      ]
+    },
+    {
+      "kind": "native-select",
+      "lang": "zh",
+      "width": 118,
+      "text": "***",
+      "textWidth": 26.448074340820312,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "kind": "layout",
+      "lang": "zh",
+      "width": 1440,
+      "ledger": "前缀 空D[0] = 1已完成前缀 *D[1] = 9已完成前缀 **D[2] = 96已完成前缀 ***D[3] = 999当前",
+      "geometry": [
+        {
+          "width": 108,
+          "scroll": 108,
+          "text": "前缀 空D[0] = 1已完成"
+        },
+        {
+          "width": 108,
+          "scroll": 108,
+          "text": "前缀 *D[1] = 9已完成"
+        },
+        {
+          "width": 121,
+          "scroll": 121,
+          "text": "前缀 **D[2] = 96已完成"
+        },
+        {
+          "width": 133,
+          "scroll": 133,
+          "text": "前缀 ***D[3] = 999当前"
+        }
+      ]
+    }
+  ],
+  "zoom": "200% CSS zoom; 1440px viewport, 720px effective layout",
+  "limits": "Headless Chromium only; no real-device or novice-learning evidence; independent review pending."
+}
