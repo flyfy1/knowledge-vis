@@ -1,0 +1,15 @@
+page.screenshot: Clipped area is either empty or outside the resulting image
+Call log:
+[2m  - taking page screenshot[22m
+[2m  - waiting for fonts to load...[22m
+[2m  - fonts loaded[22m
+
+    at captureBridge (/Users/songyy/.codex/worktrees/leetcode-854-proof-bridge/knowledge-vis/leetcode/854/tests/test_bridge_browser.cjs:17:14)
+    at async /Users/songyy/.codex/worktrees/leetcode-854-proof-bridge/knowledge-vis/leetcode/854/tests/test_bridge_browser.cjs:53:44 {
+  log: [
+    '  - taking page screenshot',
+    '  - waiting for fonts to load...',
+    '  - fonts loaded'
+  ],
+  name: 'Error'
+}

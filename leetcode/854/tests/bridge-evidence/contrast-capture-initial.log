@@ -1,0 +1,9 @@
+page.evaluate: TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'.
+    at eval (eval at evaluate (:311:30), <anonymous>:1:135)
+    at Array.map (<anonymous>)
+    at eval (eval at evaluate (:311:30), <anonymous>:1:87)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+    at /Users/songyy/.codex/worktrees/leetcode-854-proof-bridge/knowledge-vis/leetcode/854/tests/test_bridge_browser.cjs:52:25 {
+  log: []
+}

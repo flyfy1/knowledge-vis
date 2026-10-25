@@ -1,0 +1,11 @@
+AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to:
+
+'none'
+    at /Users/songyy/.codex/worktrees/leetcode-854-proof-bridge/knowledge-vis/leetcode/854/tests/test_bridge_browser.cjs:49:213 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'none',
+  expected: 'none',
+  operator: 'notStrictEqual',
+  diff: 'simple'
+}
