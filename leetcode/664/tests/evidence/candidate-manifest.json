@@ -1,0 +1,104 @@
+{
+  "candidate": "664-author-c1",
+  "frozenAt": "2026-10-25T03:15:32.506980+00:00",
+  "status": "self-checked; independent review pending",
+  "files": {
+    "leetcode/664/BRIEF.md": {
+      "sha256": "edaf9e894f356653ff7cd3ec56c22e91b5d33063eebd6c48c4d1e8cf776f4e97",
+      "bytes": 4319
+    },
+    "leetcode/664/app.js": {
+      "sha256": "779185a5c9431b095d5481288f97c8421397abcee27a4a5a86d054b2444c2248",
+      "bytes": 5121
+    },
+    "leetcode/664/copy.js": {
+      "sha256": "e62d946032e045b68797aadbdf09611d03ba04d70b7e671d9f8ddf9a208300b7",
+      "bytes": 16934
+    },
+    "leetcode/664/core.js": {
+      "sha256": "d21d1076ffa4c8dd776e74852eb02ddd4dd5033e29154716ca19a43827098536",
+      "bytes": 940
+    },
+    "leetcode/664/index.html": {
+      "sha256": "188fcde6d750fb65c8ac4029fde65c01ed8d26ba9c6dbaf4904683c7b33f462a",
+      "bytes": 5599
+    },
+    "leetcode/664/lesson-entry.json": {
+      "sha256": "698c204ad3299de87b9a157bfe53a1589e056934c42f8ec2a7fb31b93eac2cf6",
+      "bytes": 809
+    },
+    "leetcode/664/provenance/README.md": {
+      "sha256": "07faeb8c2d121131747579aeb00fd5131636c6a0a12104cb12aed327bcc7ce65",
+      "bytes": 941
+    },
+    "leetcode/664/provenance/official.json": {
+      "sha256": "c413356d93bd8918a8e9b82ffc16d3a4dc8b9c101d5cc412a7070c82edaa8c51",
+      "bytes": 5431
+    },
+    "leetcode/664/python-code.js": {
+      "sha256": "4b0fc37702e2f0e35321b2135db33334d94e7e6d92dd53931e16c714ee3134a1",
+      "bytes": 547
+    },
+    "leetcode/664/solution.py": {
+      "sha256": "eed70897b7b9cadae9590c26c0a5cd05f695b8bdde44959e7b6900ec9ac9d1f6",
+      "bytes": 507
+    },
+    "leetcode/664/style.css": {
+      "sha256": "b43ef3613a8cb132bd84a59cf68865aaec546830e64f96023959bbcb05d6b7d6",
+      "bytes": 1925
+    },
+    "leetcode/664/tests/README.md": {
+      "sha256": "b692bab5f24dbd9bedc6ba0e98a44611489f5ec59d22b1af9ca43e5f2d18ad30",
+      "bytes": 2466
+    },
+    "leetcode/664/tests/SELF-CHECK.md": {
+      "sha256": "fac08a6d08a0760ea7db5314d42b047a26ba3d5683da2d7b56e4765532521433",
+      "bytes": 4958
+    },
+    "leetcode/664/tests/browser.cjs": {
+      "sha256": "c1bd9d10e44115d4753ee0d1c653685f0de8248ab079cee0513a17ef637ef7a7",
+      "bytes": 10406
+    },
+    "leetcode/664/tests/check.py": {
+      "sha256": "f1a7264e88f454d6f76cb160a70b25f832cd5bcccf1e0537da588a162b82abb2",
+      "bytes": 2296
+    },
+    "leetcode/664/tests/core.cjs": {
+      "sha256": "77d6dab4d71db166dc2cd74ba2ae911e9ef6190bc166dfb4553e8a5df6615ebc",
+      "bytes": 1932
+    },
+    "leetcode/664/tests/source-check.py": {
+      "sha256": "af445bec2d9319089cce3b21ae1e39f6af1f2d978d2e80a5140ce0293b442bd5",
+      "bytes": 600
+    },
+    "leetcode/664/tests/zoom-extension/manifest.json": {
+      "sha256": "c5fae69869b3ef449d55b6974fad0190a864f50d6d245bd54e0f9a29d3c677c0",
+      "bytes": 192
+    },
+    "leetcode/664/tests/zoom-extension/worker.js": {
+      "sha256": "c49ddaacfc6c675ce0d40880e7fa4b900e52e0e4e56a7b2fcc34dc2f140bef58",
+      "bytes": 188
+    },
+    "leetcode/664/tests/zoom.cjs": {
+      "sha256": "f7385b128d0bbe661ccf4ba74623f67b1be34c077638a2e2a819b90304a1b73d",
+      "bytes": 2599
+    },
+    "leetcode/common.js": {
+      "sha256": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+      "bytes": 1608
+    },
+    "leetcode/style.css": {
+      "sha256": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+      "bytes": 9425
+    }
+  },
+  "cssBytes": 11350,
+  "checks": {
+    "pythonCases": 621,
+    "coreSnapshots": 7006,
+    "browserStateRecords": 78,
+    "renderedBaselineCases": 10,
+    "actualBrowserZoom": "200% in both locales",
+    "metadataPreflightExit": 0
+  }
+}

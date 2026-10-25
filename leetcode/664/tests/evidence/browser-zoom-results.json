@@ -1,0 +1,19 @@
+{
+  "method": "Chromium extension tabs.setZoom(2), verified DPR 2 and layout viewport 640 from 1280 CSS viewport; no CSS zoom",
+  "results": [
+    {
+      "lang": "en",
+      "dpr": 2,
+      "innerWidth": 640,
+      "zoom": "",
+      "tableWidth": 550
+    },
+    {
+      "lang": "zh",
+      "dpr": 2,
+      "innerWidth": 640,
+      "zoom": "",
+      "tableWidth": 550
+    }
+  ]
+}
