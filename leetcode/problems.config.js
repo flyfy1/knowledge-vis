@@ -2429,6 +2429,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) auxiliary space"
   },
   {
+    "id": 691,
+    "title": {
+      "zh": "贴纸拼词",
+      "en": "Stickers to Spell Word"
+    },
+    "desc": {
+      "zh": "用剩余字母计数，推导记忆化搜索与安全的分支筛选。",
+      "en": "Derive memoized search and safe branch filtering from missing letter counts."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "记忆化搜索",
+        "en": "Memoization"
+      },
+      {
+        "zh": "字母计数",
+        "en": "Letter counts"
+      }
+    ],
+    "path": "691/",
+    "leetcodeUrl": "https://leetcode.com/problems/stickers-to-spell-word/",
+    "language": "Python",
+    "complexity": "O(nLm + nmS) time; O(nm + mS + m²) auxiliary space, S = product(count(c)+1) <= 2^m"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
