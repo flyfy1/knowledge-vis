@@ -1,0 +1,80 @@
+{
+  "status": "pass",
+  "canonicalInterface": "Solution.findMinStep(board: str, hand: str) -> int",
+  "cases": 656,
+  "exhaustive": 532,
+  "seed": 488,
+  "productionIntermediateInvariants": {
+    "solveEntries": 172,
+    "collapseReturns": 280
+  },
+  "fixtures": [
+    [
+      "WRRBBW",
+      "RB",
+      -1
+    ],
+    [
+      "WWRRBBWW",
+      "WRBRW",
+      2
+    ],
+    [
+      "G",
+      "GGGGG",
+      2
+    ],
+    [
+      "RRBBRR",
+      "B",
+      1
+    ],
+    [
+      "G",
+      "GG",
+      2
+    ],
+    [
+      "RR",
+      "B",
+      -1
+    ],
+    [
+      "RBBR",
+      "BR",
+      2
+    ],
+    [
+      "RBBR",
+      "RB",
+      2
+    ],
+    [
+      "",
+      "R",
+      0
+    ],
+    [
+      "RR",
+      "",
+      -1
+    ],
+    [
+      "RRWWRRBBRR",
+      "WB",
+      2
+    ],
+    [
+      "RRBBYYGGYYBBRRWW",
+      "GWWWW",
+      2
+    ],
+    [
+      "RYBGWRYBGWRYBGWR",
+      "YYYYY",
+      -1
+    ]
+  ],
+  "seconds": 2.606,
+  "limits": "Author computational checks, not independent teaching review or online acceptance."
+}

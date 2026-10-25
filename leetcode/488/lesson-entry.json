@@ -1,0 +1,38 @@
+{
+  "id": 488,
+  "title": {
+    "zh": "祖玛游戏",
+    "en": "Zuma Game"
+  },
+  "desc": {
+    "zh": "从连锁消除推导完整状态与记忆化搜索。",
+    "en": "Derive complete search states from chain reactions."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "记忆化搜索",
+      "en": "Memoized search"
+    },
+    {
+      "zh": "状态建模",
+      "en": "State modeling"
+    }
+  ],
+  "path": "488/",
+  "leetcodeUrl": "https://leetcode.com/problems/zuma-game/",
+  "language": "Python",
+  "complexity": "O(5SL³) time; O(S(L+h)+hL) space, where L=n+h and S is the exponential number of visited states",
+  "concepts": [
+    {
+      "name": "Zuma stable board and remaining hand",
+      "step": 2,
+      "description": "Normalize every chain reaction before caching the complete board and hand state."
+    },
+    {
+      "name": "Exact memoized insertion search",
+      "step": 4,
+      "description": "Enumerate all legal successor states, including setup moves, and reuse identical subproblems."
+    }
+  ]
+}
