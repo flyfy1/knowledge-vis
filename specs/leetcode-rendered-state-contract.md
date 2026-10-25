@@ -240,7 +240,8 @@ correct optimized solution does not make an incorrect baseline explanation valid
 
 For example, let n be formula length, A the number of expanded atom entries, and
 d the maximum number of enclosing parentheses, so d=0 without parentheses. An
-expansion baseline still constructs and tallies A entries for `H1000`. The bound
+expansion baseline still constructs and tallies A entries for `H1000`. For this
+expansion/tally stage before sorting, the bound
 `O(n + A*d)` loses that work at d=0. A suitable bound is `O(n + A*(d+1))`, with an
 explanation that the extra level includes the top-level expansion and tally. An
 alternative convention counting the base parsing level in d must explicitly say
@@ -262,3 +263,37 @@ cost claim follows the existing required-finding and repair/re-review gates.
 It adds no scoring dimension or retroactive acceptance change. The dispatcher
 adopts this section for subsequent candidates at a stopped campaign boundary;
 already frozen candidates retain their recorded shared-policy identity.
+
+## 10. Calibrate numerical accessibility checks before trusting their verdict
+
+When a lesson's custom test computes contrast, verify the actual measurement
+function against independent known values before relying on its pass/fail result.
+For sRGB, use the [WCAG relative-luminance definition](https://www.w3.org/TR/WCAG22/#dfn-relative-luminance):
+linearized channel weights are 0.2126, 0.7152 and 0.0722. Black has luminance 0,
+white 1, and their contrast ratio is 21. Include the primary colors and a case
+near the relevant threshold so a small coefficient error cannot silently pass.
+For example, #747474 on black is approximately 4.492948: it fails a 4.5 threshold
+without rounding up. An incorrect green weight of 0.7322 reports approximately
+4.552328 and incorrectly passes that same pair.
+
+Exercise the function used by the browser check, not an unused replacement with
+the correct constants. When repairing a reproduced defect, preserve a red result
+against the defective function and a passing result against its repair. Recompute the actual recorded colors or
+rerun the rendered-state measurement to distinguish a faulty test from a faulty
+palette. Do not claim a product contrast failure from the calculation bug alone,
+or silently replace the historical test result with corrected evidence.
+
+Continue applying the existing accessibility scope and applicable thresholds;
+this section does not redefine which text is large, which controls are exempt,
+or how to measure transparency, gradients and composited backgrounds. A check
+that only supports solid colors must identify that limit rather than pretend
+to establish contrast for unsupported effects. Record candidate, tested colors,
+formula/reference, threshold and unrounded ratio with the result. Browser and
+state coverage still need their own evidence.
+
+This is a bounded check of a correctness-critical measurement helper, not a new
+accessibility framework or exhaustive testing campaign. It adds no runtime
+library, rubric dimension or retroactive acceptance change. A reproduced test
+defect follows the ordinary repair and independent re-review procedure. Adopt
+this clarification for future candidates at a stopped boundary, retaining the
+shared-policy identity and historical results of already frozen candidates.
