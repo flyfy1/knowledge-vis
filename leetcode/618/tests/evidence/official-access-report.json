@@ -1,0 +1,17 @@
+{
+  "accessedAt": "2026-10-25T03:10:12.906526+00:00",
+  "officialSource": "https://leetcode.com/problems/students-report-by-geography/",
+  "endpoint": "https://leetcode.com/graphql/",
+  "method": "POST",
+  "httpStatus": 200,
+  "access": "Public unauthenticated request; no credentials read or supplied",
+  "request": {
+    "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId questionFrontendId title titleSlug isPaidOnly difficulty\n    content exampleTestcases codeSnippets { lang langSlug code }\n  }\n}",
+    "variables": {
+      "titleSlug": "students-report-by-geography"
+    }
+  },
+  "statementAvailable": false,
+  "interfacesAvailable": false,
+  "conclusion": "Blocked: official statement or submission interfaces unavailable"
+}

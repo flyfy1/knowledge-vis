@@ -1281,3 +1281,22 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Union invariant | `leetcode/601/#step2` | Marked IDs equal the union of all complete triples tested so far. |
 
 <!-- /leetcode-601-campaign -->
+
+
+<!-- leetcode-664-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Interval DP with shared print turns | `leetcode/664/#step2` | Share the final character’s turn with a matching earlier position and independently repair the gap. |
+
+<!-- /leetcode-664-campaign -->
+
+
+<!-- leetcode-668-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Multiplication-table threshold count | `leetcode/668/#step1` | Count cells at most x using clipped row prefixes. |
+| First sufficient value invariant | `leetcode/668/#step2` | Keep C(lo−1)<k≤C(hi) while shrinking an inclusive value interval. |
+
+<!-- /leetcode-668-campaign -->

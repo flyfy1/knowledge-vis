@@ -1,0 +1,8 @@
+{
+  "finding": "630-MAC-003",
+  "command": "PREVIEW_ROOT=http://127.0.0.1:18770 OUTPUT_DIR=<evidence>/red node leetcode/630/tests/preset-labels.cjs",
+  "assertion": "630-MAC-003: visible count scope",
+  "expected": "Input preset \u00b7 maximum courses",
+  "actual": "Input preset",
+  "result": "assertion failed before copy.js repair; retained browser then interrupted"
+}

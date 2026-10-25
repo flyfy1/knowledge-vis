@@ -1,0 +1,68 @@
+{
+  "records": [
+    {
+      "lang": "en",
+      "last": "[0,5], test k=2: 3 + 2 = 5; best so far 4, from j alone.",
+      "geometry": {
+        "label": "bcacba · reject merge",
+        "width": 237,
+        "textWidth": 160.97634887695312,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "padding": "15px 15px"
+      },
+      "replay": true,
+      "keyboard": true
+    },
+    {
+      "lang": "zh",
+      "last": "[0,5] 测试 k=2：3 + 2 = 5；当前最好 4，来自 单印 j。",
+      "geometry": {
+        "label": "bcacba · 拒绝共享",
+        "width": 213,
+        "textWidth": 129.6002655029297,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "padding": "15px 15px"
+      },
+      "replay": true,
+      "keyboard": true
+    }
+  ],
+  "served": [
+    {
+      "file": "index.html",
+      "sha256": "188fcde6d750fb65c8ac4029fde65c01ed8d26ba9c6dbaf4904683c7b33f462a"
+    },
+    {
+      "file": "app.js",
+      "sha256": "779185a5c9431b095d5481288f97c8421397abcee27a4a5a86d054b2444c2248"
+    },
+    {
+      "file": "core.js",
+      "sha256": "d21d1076ffa4c8dd776e74852eb02ddd4dd5033e29154716ca19a43827098536"
+    },
+    {
+      "file": "copy.js",
+      "sha256": "e62d946032e045b68797aadbdf09611d03ba04d70b7e671d9f8ddf9a208300b7"
+    },
+    {
+      "file": "python-code.js",
+      "sha256": "4b0fc37702e2f0e35321b2135db33334d94e7e6d92dd53931e16c714ee3134a1"
+    },
+    {
+      "file": "style.css",
+      "sha256": "b43ef3613a8cb132bd84a59cf68865aaec546830e64f96023959bbcb05d6b7d6"
+    },
+    {
+      "file": "solution.py",
+      "sha256": "eed70897b7b9cadae9590c26c0a5cd05f695b8bdde44959e7b6900ec9ac9d1f6"
+    },
+    {
+      "file": "../common.js",
+      "sha256": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b"
+    },
+    {
+      "file": "../style.css",
+      "sha256": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+    }
+  ]
+}

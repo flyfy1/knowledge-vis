@@ -1,0 +1,8 @@
+{
+  "kind": "author self-check",
+  "cases": 621,
+  "exhaustive": "all abc strings lengths 1..5 against BFS over board states",
+  "seed": 664,
+  "random": 250,
+  "boundaries": "length 100 identical/alternating; 26 distinct; official examples; transfer"
+}

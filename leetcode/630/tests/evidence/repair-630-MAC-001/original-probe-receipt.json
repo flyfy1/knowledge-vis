@@ -1,0 +1,10 @@
+{
+  "finding": "630-MAC-001",
+  "original": "specs/reviews/630-evidence/mac-integration-20261025/leetcode-630-preset-probe-20261025.cjs",
+  "lessonLocalCopy": "leetcode/630/tests/preset-probe-original.cjs",
+  "sha256": "ed85e2019e55ce21a3dc02a3fcb28c3817de16b332685d5631a506fd1685a397",
+  "exactBytesEqual": true,
+  "directLinuxAttempt": "exit 1: default Playwright headless-shell executable missing; not a clipping result",
+  "linuxRerun": "executablePath-only launch wrapper used; script bytes and assertions unchanged",
+  "nativeMacRerun": "pending; Linux launch wrapper is not Mac evidence"
+}
