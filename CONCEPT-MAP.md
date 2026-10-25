@@ -1644,3 +1644,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Unique character count | `leetcode/828/#step0` | Count characters occurring exactly once in each positional substring. |
 
 <!-- /leetcode-828-campaign -->
+
+
+<!-- leetcode-829-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Consecutive sum as equal bases plus offsets | `leetcode/829/#step0` | Calculate a tiny sequence by removing its increasing offsets. |
+| Length enumeration and divisibility invariant | `leetcode/829/#step2` | Use the positive minimum sum and unique starting value to count each representation once. |
+
+<!-- /leetcode-829-campaign -->
