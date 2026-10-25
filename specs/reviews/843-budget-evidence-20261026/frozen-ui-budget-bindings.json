@@ -1,0 +1,266 @@
+{
+  "candidate": "617cb7c7e49f533b46c66dc9a53e7c6cefd71cbf",
+  "files": {
+    "copy.js": {
+      "sha256": "a513cb37bf9ddf2557daa8027a740c9ca0777ce80eae5be49498c77610448262",
+      "lines": [
+        {
+          "line": 4,
+          "text": "    \"#843 Guess the Word\""
+        },
+        {
+          "line": 48,
+          "text": "    \"Place secret acckzz beside guess ccbazz: positions 2, 5 and 6 match, so the reply is 3. A match means equal letters at the same position. Shared letters are insufficient: abcdef and fedcba contain the same letters but score 0.\""
+        },
+        {
+          "line": 51,
+          "text": "    \"官方输入是 1–100 个互不重复的六位小写单词；秘密一定在列表中。Master.guess(word) 返回位置匹配数；列表外的提问返回 −1。必须真正猜中秘密，不能只推断出来。每例允许 10–30 次调用，预算不传给解题函数。\","
+        },
+        {
+          "line": 52,
+          "text": "    \"The official input contains 1–100 unique six-letter lowercase words; the secret is in the list. Master.guess(word) returns positional matches, or −1 for a guess outside the list. You must actually call it with the secret, rather than merely deduce it. Each case allows 10–30 calls; the budget is not passed to your function.\""
+        },
+        {
+          "line": 64,
+          "text": "    \"Secret acckzz · Guess ccbazz · Count first.\""
+        },
+        {
+          "line": 68,
+          "text": "    \"Matching positions 2, 5, 6 → reply 3. Each column: secret above / guess below.\""
+        },
+        {
+          "line": 76,
+          "text": "    \"A candidate is a word consistent with every reply so far. Keep [acckzz, ccbazz, eiowzz, abcczz]. Comparing guess ccbazz with each gives [3, 6, 2, 2]. If the reply is 3, only acckzz remains; you still need to guess acckzz and receive 6 to succeed.\""
+        },
+        {
+          "line": 79,
+          "text": "    \"最简单的基线按原顺序逐个提问，直到回复 6。最多需要 n 次调用、O(1) 额外空间；100 个词时可能超过 10 次预算。离线过滤不花 Master 调用，所以应先用每个回复排除不一致的词。\","
+        },
+        {
+          "line": 80,
+          "text": "    \"A simple baseline guesses each original word in order until reply 6. It needs up to n calls and O(1) extra space; with 100 words it may exceed a budget of 10. Offline comparisons cost no Master calls, so use each reply to discard inconsistent words.\""
+        },
+        {
+          "line": 88,
+          "text": "    \"Invariant—a fact preserved each round: C contains exactly the words consistent with the entire reply history. Initially C is the whole list. The true secret must reproduce the new reply, so filtering cannot delete it; every unequal score contradicts that reply and must be removed. Repeating this argument preserves consistency with all earlier replies.\""
+        },
+        {
+          "line": 92,
+          "text": "    \"How many words could the next guess leave?\""
+        },
+        {
+          "line": 96,
+          "text": "    \"For each legal guess, group the current candidates by possible reply 0–6. Each group is a bucket; its number counts words. Reply 6 succeeds immediately, so the worst bucket is the largest count among replies 0–5. Choosing the guess with the smallest worst bucket is this lesson’s minimax rule: minimize the worst immediate outcome.\""
+        },
+        {
+          "line": 100,
+          "text": "    \"In the same four-word example, acckzz gives buckets 2:[eiowzz], 3:[ccbazz], 4:[abcczz], 6:[acckzz], so its worst bucket has 1 word. Guess ccbazz can leave two words on reply 2, giving worst size 2. Thus acckzz controls the remaining count better. Ties prefer a current candidate, then original input order; never repeat a used guess. An eliminated original word is still a legal probe.\""
+        },
+        {
+          "line": 103,
+          "text": "    \"C_new = {w ∈ C_old : match(guess, w) = reply}；choose = argmin max(|B₀|,…,|B₅|)\","
+        },
+        {
+          "line": 104,
+          "text": "    \"C_new = {w ∈ C_old : match(guess, w) = reply}; choose = argmin max(|B₀|,…,|B₅|)\""
+        },
+        {
+          "line": 106,
+          "text": "  \"limit\": ["
+        },
+        {
+          "line": 107,
+          "text": "    \"这只优化下一次回复，不是整棵决策树的最优解，也不能证明所有列表都在 10 次内成功。例如 26 个各自由同一字母重复六次组成的词，任何错误提问都只返回 0，10 次可能不够。官方说明测试使用合理策略可解。下面的实现保守地最多调用 10 次。\","
+        },
+        {
+          "line": 108,
+          "text": "    \"This optimizes one reply, not the entire decision tree, and proves no universal ten-call guarantee. For example, with 26 words each repeating a different letter six times, every wrong guess returns 0, so ten calls may be insufficient. The official statement says generated tests admit a reasonable strategy. The implementation below conservatively makes at most ten calls.\""
+        },
+        {
+          "line": 111,
+          "text": "    \"为什么会前进？若当前有 c 个候选，提问其中一个：回复 6 则成功；否则至少排除该词，最多留下 c−1 个。minimax 不会选出更大的最坏桶，所以每轮失败都会严格减少候选。但这种递减只证明最多 n 次可解，不证明十次足够。\","
+        },
+        {
+          "line": 112,
+          "text": "    \"Why does this progress? With c candidates, guessing one either succeeds with 6 or rules out at least that word, leaving at most c−1. Minimax cannot choose a larger worst bucket, so every unsuccessful round strictly reduces C. This establishes an n-call bound without the cap, not a ten-call guarantee.\""
+        },
+        {
+          "line": 148,
+          "text": "    \"Teaching simulation: JavaScript generates replies from the disclosed fixed secret; it does not execute the Python below. The table shows candidates and bucket sizes before the next guess; the ledger retains completed calls.\""
+        },
+        {
+          "line": 156,
+          "text": "    \"Guess and filter one round\""
+        },
+        {
+          "line": 168,
+          "text": "    \"Calls completed: {k}; {n} candidates remain. Secret: {secret}.\""
+        },
+        {
+          "line": 172,
+          "text": "    \"The secret was actually guessed and returned 6.\""
+        },
+        {
+          "line": 208,
+          "text": "    \"Cumulative guess ledger\""
+        },
+        {
+          "line": 212,
+          "text": "    \"No calls yet.\""
+        },
+        {
+          "line": 215,
+          "text": "    \"提问 {guess} → 回复 {reply}；{before} 个候选 → {after} 个：{words}\","
+        },
+        {
+          "line": 216,
+          "text": "    \"Guess {guess} → reply {reply}; {before} candidates → {after}: {words}\""
+        },
+        {
+          "line": 224,
+          "text": "    \"Which candidates agree with a new reply? Fresh list: [aaaaaa, aaaabb, aabbbb, bbbbbb]. Guess aaaabb receives 4. Keep the words fixed, choose the remaining candidates, then check. A match still means equal letters at equal positions.\""
+        },
+        {
+          "line": 260,
+          "text": "    \"The scores are [4, 6, 4, 2], so retain aaaaaa and aabbbb. Guess aaaabb scores 6 against itself, contradicting reply 4; “at least 4” is insufficient. Both survivors fit the reply; it does not yet identify the secret.\""
+        },
+        {
+          "line": 267,
+          "text": "    \"Python 的 findSecretWord 返回 None，通过 Master.guess 进行调用；Master 由评测器提供，不要自行实现。secret 和 allowedGuesses 都不是参数。收到 6 就返回；即使只剩一个候选，也必须调用它。\","
+        },
+        {
+          "line": 268,
+          "text": "    \"Python findSecretWord returns None and interacts through Master.guess, supplied by the judge; do not implement Master. Neither secret nor allowedGuesses is a parameter. Return on reply 6; even a lone candidate must be guessed.\""
+        },
+        {
+          "line": 279,
+          "text": "    \"最后的列表推导式逐个检查 matches[probe][i] == reply，只保留满足不变式的下标。十轮上限对应官方最低预算；这不是对任意构造列表的成功证明。\","
+        },
+        {
+          "line": 280,
+          "text": "    \"The final list comprehension tests matches[probe][i] == reply and keeps exactly the indices satisfying the invariant. The ten-round cap respects the minimum official budget; it does not prove success for arbitrary constructed lists.\""
+        },
+        {
+          "line": 283,
+          "text": "    \"令 n 是词数，L=6 是长度，G≤10 是调用轮数。预计算 O(n²L) 时间、O(n²) 空间；每轮比较 n 个探针与至多 n 个候选，O(n²) 时间。总计 O(n²L + Gn²) 时间，O(n²) 额外空间。浏览器额外保存历史快照，不能算作提交空间。\","
+        },
+        {
+          "line": 284,
+          "text": "    \"Let n be the word count, L=6 the length, and G≤10 the number of calls. Precomputation takes O(n²L) time and O(n²) space. Each round compares n probes with at most n candidates in O(n²) time. Total: O(n²L + Gn²) time, O(n²) auxiliary space. Browser history snapshots are additional teaching storage, not submission space.\""
+        },
+        {
+          "line": 288,
+          "text": "    \"Boundaries: one word still needs one call; reply 0 can eliminate many words; reply 6 stops immediately. Nonempty, unique, fixed-length words make score 6 identify exactly one word. Guesses must belong to the original list, as every probe here does. Untruthful replies violate the invariant’s premise.\""
+        },
+        {
+          "line": 316,
+          "text": "    \"Sudoku: maintain consistent candidates ↗\""
+        },
+        {
+          "line": 320,
+          "text": "    \"#843 · Guess the Word\""
+        }
+      ]
+    },
+    "core.js": {
+      "sha256": "9c29aa7e40e2fb6e81dd8f4ed3e6db2b25a82977f97e80cc4984df99ae7a18b6",
+      "lines": [
+        {
+          "line": 23,
+          "text": " for(let turn=0;turn<10&&candidates.length;turn++){"
+        },
+        {
+          "line": 24,
+          "text": "  const before=[...candidates],p=plan(words,candidates,used),guess=words[p.probe],reply=score(guess,secret);"
+        },
+        {
+          "line": 25,
+          "text": "  used.push(p.probe); candidates=candidates.filter(i=>score(guess,words[i])===reply);"
+        },
+        {
+          "line": 26,
+          "text": "  history.push({guess,reply,before,after:[...candidates]});"
+        }
+      ]
+    },
+    "app.js": {
+      "sha256": "14ef08de056e92377ebe3d5fa5f90f27737c21305653a7165000960be486f3fd",
+      "lines": [
+        {
+          "line": 5,
+          "text": " $('handRead').textContent=t(hand?'handResult':'handHidden');$('letters').hidden=!hand;"
+        },
+        {
+          "line": 8,
+          "text": " $('frameRead').textContent=t('frame',{k:at,n:f.candidates.length,secret:data.secret});"
+        },
+        {
+          "line": 9,
+          "text": " $('terminal').textContent=f.done?t('found'):'';"
+        },
+        {
+          "line": 19,
+          "text": " $('empty').textContent=at?'':t('empty');"
+        },
+        {
+          "line": 20,
+          "text": " $('ledger').innerHTML=f.history.map(h=>`<li>${t('history',{guess:h.guess,reply:h.reply,before:h.before.length,after:h.after.length,words:h.after.map(i=>data.words[i]).join(', ')})}</li>`).join('');"
+        },
+        {
+          "line": 22,
+          "text": " $('feedback').textContent=revealed?t(answer===1?'correct':'incorrect')+' '+t('answer'):t('pending');"
+        },
+        {
+          "line": 23,
+          "text": " $('copyStatus').textContent=copyState?t(copyState):'';"
+        },
+        {
+          "line": 34,
+          "text": "$('pythonCode').textContent=window.PYTHON_SOURCE;$('manualSource').value=window.PYTHON_SOURCE;"
+        }
+      ]
+    },
+    "index.html": {
+      "sha256": "2524ec96f51a866fc617b9cf7a8e19144680e54138344f5f43bc50b54feab914",
+      "lines": [
+        {
+          "line": 1,
+          "text": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"icon\" href=\"data:,\"><title>#843 Guess the Word</title><link rel=\"stylesheet\" href=\"../style.css\"><link rel=\"stylesheet\" href=\"style.css?v=843-r1\"></head><body><header class=\"site-head\"><div class=\"head-top\"><a class=\"back-link\" href=\"../\" data-i18n=\"back\"></a><div id=\"langToggle\" class=\"lang-toggle\" aria-label=\"语言 / Language\"><button type=\"button\" data-lang=\"zh\">中</button><button type=\"button\" data-lang=\"en\">EN</button></div></div><span class=\"badge\" data-i18n=\"hard\"></span><h1 data-i18n=\"title\"></h1><p class=\"tagline\" data-i18n=\"intro\"></p><a class=\"official-link\" href=\"https://leetcode.com/problems/guess-the-word/\" data-i18n=\"official\" target=\"_blank\" rel=\"noopener\"></a></header><nav class=\"step-nav\" aria-label=\"学习步骤 / Lesson steps\"><div class=\"step-nav-inner\"><a href=\"#step0\" data-i18n=\"nav0\"></a><a href=\"#step1\" data-i18n=\"nav1\"></a><a href=\"#step2\" data-i18n=\"nav2\"></a><a href=\"#step3\" data-i18n=\"nav3\"></a><a href=\"#step4\" data-i18n=\"nav4\"></a></div></nav><main><section class=\"step\" id=\"step0\"><div class=\"step-inner\"><p class=\"step-kicker\">01</p><h2 class=\"\" data-i18n=\"s0t\"></h2><p class=\"explain\" data-i18n=\"s0e\"></p><p class=\"explain\" data-i18n=\"contract\"></p><p class=\"hint\" data-i18n=\"handTask\"></p><div class=\"stage\"><button type=\"button\" id=\"handToggle\" class=\"btn\" data-step=\"0\" data-i18n=\"handToggle\"></button><p id=\"handRead\" class=\"readout\" aria-live=\"polite\"></p><div id=\"letters\" class=\"letters\" hidden></div></div></div></section><section class=\"step\" id=\"step1\"><div class=\"step-inner\"><p class=\"step-kicker\">02</p><h2 class=\"\" data-i18n=\"s1t\"></h2><p class=\"explain\" data-i18n=\"s1e\"></p><p class=\"explain\" data-i18n=\"baseline\"></p><p class=\"explain\" data-i18n=\"wrong\"></p><p class=\"explain\" data-i18n=\"invariant\"></p><details><summary>Python · baseline / 基线</summary><pre tabindex=\"0\" aria-label=\"基线源码 / Baseline source\"><code>class Solution:"
+        },
+        {
+          "line": 4,
+          "text": "            if master.guess(word) == 6:"
+        },
+        {
+          "line": 6,
+          "text": "</code></pre></details></div></section><section class=\"step\" id=\"step2\"><div class=\"step-inner\"><p class=\"step-kicker\">03</p><h2 class=\"\" data-i18n=\"s2t\"></h2><p class=\"explain\" data-i18n=\"s2e\"></p><p class=\"explain\" data-i18n=\"derive\"></p><p class=\"formula\" data-i18n=\"formula\"></p><p class=\"explain\" data-i18n=\"limit\"></p><p class=\"explain\" data-i18n=\"progress\"></p><div class=\"stage\"><label for=\"preset\" data-i18n=\"presetLabel\"></label><select id=\"preset\" data-step=\"2\"><option value=\"0\" data-i18n=\"preset0\"></option><option value=\"1\" data-i18n=\"preset1\"></option><option value=\"2\" data-i18n=\"preset2\"></option><option value=\"3\" data-i18n=\"preset3\"></option><option value=\"4\" data-i18n=\"preset4\"></option></select><p class=\"hint\" data-i18n=\"presets\"></p><p class=\"hint\" data-i18n=\"sim\"></p><div class=\"controls\"><button type=\"button\" id=\"prev\" class=\"btn\" data-step=\"2\" data-i18n=\"prev\"></button><button type=\"button\" id=\"next\" class=\"btn\" data-step=\"2\" data-i18n=\"next\"></button><button type=\"button\" id=\"reset\" class=\"btn\" data-step=\"2\" data-i18n=\"reset\"></button><button type=\"button\" id=\"end\" class=\"btn\" data-step=\"2\" data-i18n=\"end\"></button></div><p id=\"frameRead\" class=\"readout\" aria-live=\"polite\"></p><p id=\"terminal\"></p><h3 class=\"\" data-i18n=\"candidateTitle\"></h3><div id=\"candidates\" class=\"word-list\"></div><h3 class=\"\" data-i18n=\"tableTitle\"></h3><p class=\"hint\" data-i18n=\"scrollHint\"></p><div class=\"table-wrap\" tabindex=\"0\" aria-label=\"回复桶比较 / Reply bucket comparison\"><table><thead><tr><th scope=\"col\" data-i18n=\"probe\"></th><th scope=\"col\">0</th><th scope=\"col\">1</th><th scope=\"col\">2</th><th scope=\"col\">3</th><th scope=\"col\">4</th><th scope=\"col\">5</th><th scope=\"col\">6</th><th scope=\"col\" data-i18n=\"worst\"></th><th scope=\"col\" data-i18n=\"state\"></th></tr></thead><tbody id=\"buckets\"></tbody></table></div><h3 class=\"\" data-i18n=\"ledgerTitle\"></h3><p id=\"empty\"></p><ol id=\"ledger\" class=\"trace-log\"></ol></div></div></section><section class=\"step\" id=\"step3\"><div class=\"step-inner\"><p class=\"step-kicker\">04</p><h2 class=\"\" data-i18n=\"s3t\"></h2><p class=\"explain\" data-i18n=\"s3e\"></p><div class=\"stage\"><fieldset class=\"prediction-options\"><legend data-i18n=\"legend\"></legend><label><input type=\"radio\" name=\"prediction\" value=\"0\" data-step=\"3\"><span data-i18n=\"option0\"></span></label><label><input type=\"radio\" name=\"prediction\" value=\"1\" data-step=\"3\"><span data-i18n=\"option1\"></span></label><label><input type=\"radio\" name=\"prediction\" value=\"2\" data-step=\"3\"><span data-i18n=\"option2\"></span></label></fieldset><div class=\"controls\"><button type=\"button\" id=\"reveal\" class=\"btn\" data-step=\"3\" data-i18n=\"reveal\"></button><button type=\"button\" id=\"predictionReset\" class=\"btn\" data-step=\"3\" data-i18n=\"reset\"></button></div><p id=\"feedback\" class=\"readout\" aria-live=\"polite\"></p></div></div></section><section class=\"step\" id=\"step4\"><div class=\"step-inner\"><p class=\"step-kicker\">05</p><h2 class=\"\" data-i18n=\"s4t\"></h2><p class=\"explain\" data-i18n=\"s4e\"></p><ul><li class=\"\" data-i18n=\"map1\"></li><li class=\"\" data-i18n=\"map2\"></li><li class=\"\" data-i18n=\"map3\"></li></ul><p class=\"explain\" data-i18n=\"cost\"></p><p class=\"explain\" data-i18n=\"boundaries\"></p><div class=\"solution-actions\"><button type=\"button\" id=\"copyPython\" class=\"btn\" data-step=\"4\" data-i18n=\"copy\"></button><a href=\"solution.py\" download class=\"btn\" data-i18n=\"download\"></a><span id=\"copyStatus\" role=\"status\"></span></div><div id=\"sourceFallback\" hidden><label for=\"manualSource\" data-i18n=\"manualCopy\"></label><textarea id=\"manualSource\" readonly rows=\"12\" spellcheck=\"false\"></textarea></div><details id=\"sourceDetails\"><summary data-i18n=\"source\"></summary><pre tabindex=\"0\" aria-label=\"Python 源码 / Python source\"><code id=\"pythonCode\"></code></pre></details><div class=\"related\"><a href=\"../4/#step2\" data-i18n=\"related1\"></a><a href=\"../37/#step2\" data-i18n=\"related2\"></a></div></div></section></main><noscript>请启用 JavaScript。 / Enable JavaScript. <a href=\"solution.py\">Python</a></noscript><script src=\"../common.js\"></script><script src=\"copy.js?v=843-r1\"></script><script src=\"core.js?v=843-r1\"></script><script src=\"python-code.js?v=843-r1\"></script><script src=\"app.js?v=843-r1\"></script></body></html>"
+        }
+      ]
+    },
+    "lesson-entry.json": {
+      "sha256": "5a53c66d7e736d610d41df40e99695689771f21705fc773d9fa246ab5d8dfc37",
+      "lines": [
+        {
+          "line": 5,
+          "text": "    \"en\": \"Guess the Word\""
+        },
+        {
+          "line": 9,
+          "text": "    \"en\": \"Filter by positional matches and choose guesses by worst reply buckets.\""
+        },
+        {
+          "line": 23,
+          "text": "  \"leetcodeUrl\": \"https://leetcode.com/problems/guess-the-word/\","
+        },
+        {
+          "line": 25,
+          "text": "  \"complexity\": \"O(n²L + Gn²) time; O(n²) auxiliary space, L=6 and G≤10\","
+        },
+        {
+          "line": 28,
+          "text": "      \"name\": \"Candidate consistency\","
+        }
+      ]
+    }
+  }
+}

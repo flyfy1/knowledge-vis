@@ -1,0 +1,186 @@
+{
+  "case": "repeat11",
+  "variant": "diagnostic30",
+  "diagnosticOnly": true,
+  "canonicalSha256": "dc0d1552f34cc429efa9f3ff12daf0c9c42f6ca5604d97ae64dc42aa2b7bff30",
+  "executedSourceSha256": "32b60ae6bdbdb3eb1ea95bcd52a0279f71e5f06ea900130bb498a63a089f961d",
+  "wordCount": 11,
+  "words": [
+    "aaaaaa",
+    "bbbbbb",
+    "cccccc",
+    "dddddd",
+    "eeeeee",
+    "ffffff",
+    "gggggg",
+    "hhhhhh",
+    "iiiiii",
+    "jjjjjj",
+    "kkkkkk"
+  ],
+  "budget": 30,
+  "allSecrets": false,
+  "testedSecrets": 1,
+  "foundCount": 1,
+  "maximumCalls": 11,
+  "passed": true,
+  "seconds": 0.0019103340164292604,
+  "rows": [
+    {
+      "secret": "kkkkkk",
+      "budget": 30,
+      "calls": 11,
+      "found": true,
+      "withinBudget": true,
+      "survivorsOnReturn": [
+        "kkkkkk"
+      ],
+      "trace": [
+        {
+          "guess": "aaaaaa",
+          "reply": 0,
+          "before": 11,
+          "after": 10,
+          "survivors": [
+            "bbbbbb",
+            "cccccc",
+            "dddddd",
+            "eeeeee",
+            "ffffff",
+            "gggggg",
+            "hhhhhh",
+            "iiiiii",
+            "jjjjjj",
+            "kkkkkk"
+          ]
+        },
+        {
+          "guess": "bbbbbb",
+          "reply": 0,
+          "before": 10,
+          "after": 9,
+          "survivors": [
+            "cccccc",
+            "dddddd",
+            "eeeeee",
+            "ffffff",
+            "gggggg",
+            "hhhhhh",
+            "iiiiii",
+            "jjjjjj",
+            "kkkkkk"
+          ]
+        },
+        {
+          "guess": "cccccc",
+          "reply": 0,
+          "before": 9,
+          "after": 8,
+          "survivors": [
+            "dddddd",
+            "eeeeee",
+            "ffffff",
+            "gggggg",
+            "hhhhhh",
+            "iiiiii",
+            "jjjjjj",
+            "kkkkkk"
+          ]
+        },
+        {
+          "guess": "dddddd",
+          "reply": 0,
+          "before": 8,
+          "after": 7,
+          "survivors": [
+            "eeeeee",
+            "ffffff",
+            "gggggg",
+            "hhhhhh",
+            "iiiiii",
+            "jjjjjj",
+            "kkkkkk"
+          ]
+        },
+        {
+          "guess": "eeeeee",
+          "reply": 0,
+          "before": 7,
+          "after": 6,
+          "survivors": [
+            "ffffff",
+            "gggggg",
+            "hhhhhh",
+            "iiiiii",
+            "jjjjjj",
+            "kkkkkk"
+          ]
+        },
+        {
+          "guess": "ffffff",
+          "reply": 0,
+          "before": 6,
+          "after": 5,
+          "survivors": [
+            "gggggg",
+            "hhhhhh",
+            "iiiiii",
+            "jjjjjj",
+            "kkkkkk"
+          ]
+        },
+        {
+          "guess": "gggggg",
+          "reply": 0,
+          "before": 5,
+          "after": 4,
+          "survivors": [
+            "hhhhhh",
+            "iiiiii",
+            "jjjjjj",
+            "kkkkkk"
+          ]
+        },
+        {
+          "guess": "hhhhhh",
+          "reply": 0,
+          "before": 4,
+          "after": 3,
+          "survivors": [
+            "iiiiii",
+            "jjjjjj",
+            "kkkkkk"
+          ]
+        },
+        {
+          "guess": "iiiiii",
+          "reply": 0,
+          "before": 3,
+          "after": 2,
+          "survivors": [
+            "jjjjjj",
+            "kkkkkk"
+          ]
+        },
+        {
+          "guess": "jjjjjj",
+          "reply": 0,
+          "before": 2,
+          "after": 1,
+          "survivors": [
+            "kkkkkk"
+          ]
+        },
+        {
+          "guess": "kkkkkk",
+          "reply": 6,
+          "before": 1,
+          "after": 1,
+          "survivors": [
+            "kkkkkk"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "observedAt": "2026-10-25T21:04:31.880180+00:00",
+  "positionalScoreFixtures": [
+    {
+      "guess": "abcdef",
+      "secret": "abcdef",
+      "expected": 6,
+      "actual": 6
+    },
+    {
+      "guess": "abcdef",
+      "secret": "fedcba",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "guess": "acckzz",
+      "secret": "ccbazz",
+      "expected": 3,
+      "actual": 3
+    },
+    {
+      "guess": "acckzz",
+      "secret": "eiowzz",
+      "expected": 2,
+      "actual": 2
+    },
+    {
+      "guess": "acckzz",
+      "secret": "abcczz",
+      "expected": 4,
+      "actual": 4
+    },
+    {
+      "guess": "accccc",
+      "secret": "bmmmmm",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "guess": "accccc",
+      "secret": "ammmmm",
+      "expected": 1,
+      "actual": 1
+    },
+    {
+      "guess": "accccc",
+      "secret": "bccccc",
+      "expected": 5,
+      "actual": 5
+    }
+  ],
+  "budgetEnforcement": "Master counts all legal calls; fails before a call exceeding supplied case limit. Solution receives only words and Master.",
+  "instrumentation": "At every API call the spy observes algorithm-local candidates; independently reconstructed full-history survivors and minimax key must agree. No secret or budget is supplied to solution beyond ordinary reply."
+}

@@ -1,0 +1,230 @@
+{
+  "observedAt": "2026-10-25T21:07:58.482100+00:00",
+  "words": [
+    "accccc",
+    "addddd",
+    "aeeeee",
+    "afffff",
+    "aggggg",
+    "ahhhhh",
+    "aiiiii",
+    "ajjjjj",
+    "akkkkk",
+    "alllll",
+    "ammmmm",
+    "bccccc",
+    "bddddd",
+    "beeeee",
+    "bfffff",
+    "bggggg",
+    "bhhhhh",
+    "biiiii",
+    "bjjjjj",
+    "bkkkkk",
+    "blllll",
+    "bmmmmm"
+  ],
+  "allFirstProbePartitions": [
+    {
+      "probe": "accccc",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "addddd",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "aeeeee",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "afffff",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "aggggg",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "ahhhhh",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "aiiiii",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "ajjjjj",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "akkkkk",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "alllll",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "ammmmm",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "bccccc",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "bddddd",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "beeeee",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "bfffff",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "bggggg",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "bhhhhh",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "biiiii",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "bjjjjj",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "bkkkkk",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "blllll",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    },
+    {
+      "probe": "bmmmmm",
+      "bucketSizes": {
+        "0": 10,
+        "1": 10,
+        "5": 1,
+        "6": 1
+      }
+    }
+  ],
+  "residualTenWordBucketsTimesAllLegalProbesChecked": 968,
+  "allResidualPartitions": "[10] or [1,9]",
+  "interpretation": "Every first probe has worst-case10 survivors. Within either ten-word bucket, any legal probe separates at most one candidate. Actual successful guessing requires up to10 further calls in that worst branch. First call plus10 gives worst-case11; choosing remaining candidates achieves the bound. This is family-specific, not a universal minimax guarantee."
+}

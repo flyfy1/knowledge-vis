@@ -1,0 +1,11 @@
+--- canonical.py
++++ diagnostic-range11-only.py
+@@ -12,7 +12,7 @@
+         candidates = list(range(n))
+         used = set()
+         # Ten calls respect the minimum official budget; this is a heuristic.
+-        for _ in range(10):
++        for _ in range(11):
+             if not candidates:
+                 return
+             best = None

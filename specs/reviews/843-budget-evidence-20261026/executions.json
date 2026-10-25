@@ -1,0 +1,222 @@
+{
+  "observedAt": "2026-10-25T21:03:08.746533+00:00",
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "specs/reviews/843-budget-evidence-20261026/reproduce.py",
+        "--case",
+        "family22",
+        "--budget",
+        "11",
+        "--all-secrets"
+      ],
+      "exitCode": 1,
+      "resultFile": "family22-canonical-budget11.json",
+      "testedSecrets": 22,
+      "foundCount": 20,
+      "maximumCalls": 10,
+      "seconds": 0.048469375004060566,
+      "firstExecutedBeforeDiagnosticVariants": true
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "specs/reviews/843-budget-evidence-20261026/reproduce.py",
+        "--case",
+        "family22",
+        "--variant",
+        "diagnostic11",
+        "--budget",
+        "11",
+        "--all-secrets"
+      ],
+      "exitCode": 0,
+      "resultFile": "family22-diagnostic11-budget11.json",
+      "testedSecrets": 22,
+      "foundCount": 22,
+      "maximumCalls": 11,
+      "seconds": 0.04853450000518933
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "specs/reviews/843-budget-evidence-20261026/reproduce.py",
+        "--case",
+        "family20",
+        "--variant",
+        "canonical",
+        "--budget",
+        "11",
+        "--all-secrets"
+      ],
+      "exitCode": 0,
+      "resultFile": "family20-canonical-budget11.json",
+      "testedSecrets": 20,
+      "foundCount": 20,
+      "maximumCalls": 10,
+      "seconds": 0.034356582997133955
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "specs/reviews/843-budget-evidence-20261026/reproduce.py",
+        "--case",
+        "family20",
+        "--variant",
+        "diagnostic11",
+        "--budget",
+        "11",
+        "--all-secrets"
+      ],
+      "exitCode": 0,
+      "resultFile": "family20-diagnostic11-budget11.json",
+      "testedSecrets": 20,
+      "foundCount": 20,
+      "maximumCalls": 10,
+      "seconds": 0.03456791600910947
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "specs/reviews/843-budget-evidence-20261026/reproduce.py",
+        "--case",
+        "family24",
+        "--variant",
+        "canonical",
+        "--budget",
+        "30",
+        "--all-secrets"
+      ],
+      "exitCode": 1,
+      "resultFile": "family24-canonical-budget30.json",
+      "testedSecrets": 24,
+      "foundCount": 20,
+      "maximumCalls": 10,
+      "seconds": 0.06223883299389854
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "specs/reviews/843-budget-evidence-20261026/reproduce.py",
+        "--case",
+        "family24",
+        "--variant",
+        "diagnostic30",
+        "--budget",
+        "30",
+        "--all-secrets"
+      ],
+      "exitCode": 0,
+      "resultFile": "family24-diagnostic30-budget30.json",
+      "testedSecrets": 24,
+      "foundCount": 24,
+      "maximumCalls": 12,
+      "seconds": 0.06263870798284188
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "specs/reviews/843-budget-evidence-20261026/reproduce.py",
+        "--case",
+        "repeat11",
+        "--variant",
+        "canonical",
+        "--budget",
+        "30"
+      ],
+      "exitCode": 1,
+      "resultFile": "repeat11-canonical-budget30.json",
+      "testedSecrets": 1,
+      "foundCount": 0,
+      "maximumCalls": 10,
+      "seconds": 0.001910084014525637
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "specs/reviews/843-budget-evidence-20261026/reproduce.py",
+        "--case",
+        "repeat11",
+        "--variant",
+        "diagnostic30",
+        "--budget",
+        "30"
+      ],
+      "exitCode": 0,
+      "resultFile": "repeat11-diagnostic30-budget30.json",
+      "testedSecrets": 1,
+      "foundCount": 1,
+      "maximumCalls": 11,
+      "seconds": 0.0019103340164292604
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "specs/reviews/843-budget-evidence-20261026/reproduce.py",
+        "--case",
+        "family20",
+        "--variant",
+        "canonical",
+        "--budget",
+        "10",
+        "--all-secrets"
+      ],
+      "exitCode": 0,
+      "resultFile": "family20-canonical-budget10.json",
+      "testedSecrets": 20,
+      "foundCount": 20,
+      "maximumCalls": 10,
+      "seconds": 0.034450250008376315
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "specs/reviews/843-budget-evidence-20261026/reproduce.py",
+        "--case",
+        "family20",
+        "--variant",
+        "diagnostic11",
+        "--budget",
+        "10",
+        "--all-secrets"
+      ],
+      "exitCode": 0,
+      "resultFile": "family20-diagnostic11-budget10.json",
+      "testedSecrets": 20,
+      "foundCount": 20,
+      "maximumCalls": 10,
+      "seconds": 0.03464879101375118
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "specs/reviews/843-budget-evidence-20261026/reproduce.py",
+        "--case",
+        "family20",
+        "--variant",
+        "diagnostic30",
+        "--budget",
+        "10",
+        "--all-secrets"
+      ],
+      "exitCode": 0,
+      "resultFile": "family20-diagnostic30-budget10.json",
+      "testedSecrets": 20,
+      "foundCount": 20,
+      "maximumCalls": 10,
+      "seconds": 0.034638665994862095
+    }
+  ]
+}
