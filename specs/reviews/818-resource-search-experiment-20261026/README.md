@@ -55,3 +55,14 @@ unresolved and preserved the working runtime at commit
 revision; the campaign continued to827. Root can run future Mac measurements once
 a replacement candidate exists, so Linux author location is a coordination issue,
 not a mathematical or permanent access blocker.
+
+## Ongoing full-range survey
+
+`python3 full_range.py` examines every official target1..10000 using two Mac
+workers, a1,000,000-state/10-second cap per target and a20-minute overall survey
+deadline. It writes append-only per-target rows and a progress summary. A found
+answer is compared with the familiar smaller-distance DP as a numerical cross
+check only; that reference does not resolve its missing normal-form proof.
+The separately examined A* admissibility argument supports its exact search.
+Cap/deadline outcomes remain explicit missing coverage, never fabricated answers.
+This survey is an experiment and does not revise the adopted lesson design.
