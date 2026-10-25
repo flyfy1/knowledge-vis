@@ -8,7 +8,7 @@ import unittest
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
 SOURCE_SHA = '012137ab9eabb43cb6b9038ab6065312d8287724540d67fb362038ac4a5caa05'
-PENDING_SHA = '467f08885a37290419486c26d25b9e379acf86541d7dab854389513982e7c5bb'
+PENDING_SHA = '17709040ee542e912e697aedca65e0800a5e6c5b77535fafb3aa3597b1cd25a8'
 MAPPING = json.loads((HERE / 'parameter-map.json').read_text())
 SOURCE = (REPO / MAPPING['source']).read_text()
 PENDING = (HERE / 'launch.py').read_text()

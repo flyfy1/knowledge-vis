@@ -9,23 +9,23 @@
     },
     {
       "from": "CENTRAL_HEAD='58cb97e51878f40e234b3e78a8bf9adb24f30c51'",
-      "to": "CENTRAL_HEAD='3dcefbc04619ae11869ea34581ea71c38daee06c'"
+      "to": "CENTRAL_HEAD='96e82a2f927f7506f2dd97956f1b837e67c9df1e'"
     },
     {
       "from": "CENTRAL_RUN='818-fix-0dbe90734960'",
-      "to": "CENTRAL_RUN='834-review-9b08bcf5feee'"
+      "to": "CENTRAL_RUN='839-author-ed3a2c092deb'"
     },
     {
       "from": "s['current']['problem_id']=='818'",
-      "to": "s['current']['problem_id']=='834'"
+      "to": "s['current']['problem_id']=='839'"
     },
     {
       "from": "s['current']['stage']=='fix'",
-      "to": "s['current']['stage']=='review'"
+      "to": "s['current']['stage']=='author'"
     },
     {
       "from": "e.get('thread_id')=='01a17453-eaf8-7033-b7d8-04655e3b33c0'",
-      "to": "e.get('thread_id')=='01a174b7-97c6-7e71-81a4-a286af62b0c5'"
+      "to": "e.get('thread_id')=='01a174bb-07c4-7881-855c-30619660e8d7'"
     },
     {
       "from": "['968','972']",
@@ -66,18 +66,18 @@
       "state": "/home/songyy/projects/leetcode-hard-lane-state-980-20261026"
     }
   ],
-  "launcherSha256": "467f08885a37290419486c26d25b9e379acf86541d7dab854389513982e7c5bb",
+  "launcherSha256": "17709040ee542e912e697aedca65e0800a5e6c5b77535fafb3aa3597b1cd25a8",
   "pendingTemplateSha256": "9cd775670a13266a93016e6bccbbd76ff110777c599115dd889c674f79b97379",
   "stageBPins": {
     "__PENDING_STAGE_B_BASE__": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
-    "__PENDING_STAGE_B_CENTRAL_HEAD__": "3dcefbc04619ae11869ea34581ea71c38daee06c",
-    "__PENDING_STAGE_B_CENTRAL_RUN__": "834-review-9b08bcf5feee",
-    "__PENDING_STAGE_B_PROBLEM__": "834",
-    "__PENDING_STAGE_B_STAGE__": "review",
-    "__PENDING_STAGE_B_SESSION__": "01a174b7-97c6-7e71-81a4-a286af62b0c5"
+    "__PENDING_STAGE_B_CENTRAL_HEAD__": "96e82a2f927f7506f2dd97956f1b837e67c9df1e",
+    "__PENDING_STAGE_B_CENTRAL_RUN__": "839-author-ed3a2c092deb",
+    "__PENDING_STAGE_B_PROBLEM__": "839",
+    "__PENDING_STAGE_B_STAGE__": "author",
+    "__PENDING_STAGE_B_SESSION__": "01a174bb-07c4-7881-855c-30619660e8d7"
   },
-  "preflightSha256": "06b57382ad815ebf86ec54d664d47a2139a5b38a0e75f2fe096ba88e5084a122",
-  "centralNativePid": 1605517,
+  "preflightSha256": "c25aef55deb013ac9118ddd8724da27437ee37e22cd43feb9c6a9c2dc1f172c2",
+  "centralNativePid": 1609492,
   "centralRunnerPid": 1600975,
   "stageBReceiptSha256": "087947f9a714926de08f1e88d35f9584c09a0dfd9683fe294d6e3e3b1718f2ad",
   "actualParameterSubstitutionCount": 9
