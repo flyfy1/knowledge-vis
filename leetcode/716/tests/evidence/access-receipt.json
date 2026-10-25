@@ -1,0 +1,27 @@
+{
+  "verifiedAt": "2026-10-25T05:27:11.635728+00:00",
+  "officialUrl": "https://leetcode.com/problems/max-stack/",
+  "access": "Public requests without authentication, cookies, or credentials",
+  "requests": [
+    {
+      "url": "https://leetcode.com/problems/max-stack/",
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "file": "official-page.html"
+    },
+    {
+      "url": "https://leetcode.com/graphql/",
+      "status": 200,
+      "contentType": "application/json",
+      "file": "graphql-response.json"
+    }
+  ],
+  "observed": {
+    "questionFrontendId": "716",
+    "title": "Max Stack",
+    "isPaidOnly": true,
+    "content": null,
+    "codeSnippets": null
+  },
+  "contractVerified": false
+}
