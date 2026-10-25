@@ -1,0 +1,870 @@
+{
+  "kind": "author browser self-check",
+  "result": "pass",
+  "records": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "frames": 7,
+      "answer": 3,
+      "visible": "Frame 6/6 · target height 3 at (0,1) · all trees cut; final answer 3. Completed-leg walking total: 3 moves."
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "frames": 14,
+      "answer": 10,
+      "visible": "Frame 13/13 · target height 3 at (2,0) · all trees cut; final answer 10. Completed-leg walking total: 10 moves."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "frames": 11,
+      "answer": -1,
+      "visible": "Frame 10/10 · target height 5 at (2,2) · frontier exhausted, target unreachable; final answer -1. Completed-leg walking total: 2 moves."
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "frames": 2,
+      "answer": 0,
+      "visible": "Frame 1/1 · target height 2 at (0,0) · all trees cut; final answer 0. Completed-leg walking total: 0 moves."
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "frames": 15,
+      "answer": 9,
+      "visible": "Frame 14/14 · target height 4 at (0,1) · all trees cut; final answer 9. Completed-leg walking total: 9 moves."
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "frames": 1,
+      "answer": -1,
+      "visible": "Frame 0/0 · target height 2 at (0,1) · start is blocked; cannot depart; final answer -1. Completed-leg walking total: 0 moves."
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "frames": 7,
+      "answer": 3,
+      "visible": "帧 6/6 · 目标高度 3 在 (0,1) · 全部砍完；最终答案 3。已完成路段的行走总数：3 步。"
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "frames": 14,
+      "answer": 10,
+      "visible": "帧 13/13 · 目标高度 3 在 (2,0) · 全部砍完；最终答案 10。已完成路段的行走总数：10 步。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "frames": 11,
+      "answer": -1,
+      "visible": "帧 10/10 · 目标高度 5 在 (2,2) · 前沿耗尽，目标不可达；最终答案 -1。已完成路段的行走总数：2 步。"
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "frames": 2,
+      "answer": 0,
+      "visible": "帧 1/1 · 目标高度 2 在 (0,0) · 全部砍完；最终答案 0。已完成路段的行走总数：0 步。"
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "frames": 15,
+      "answer": 9,
+      "visible": "帧 14/14 · 目标高度 4 在 (0,1) · 全部砍完；最终答案 9。已完成路段的行走总数：9 步。"
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "frames": 1,
+      "answer": -1,
+      "visible": "帧 0/0 · 目标高度 2 在 (0,1) · 起点是障碍，无法出发；最终答案 -1。已完成路段的行走总数：0 步。"
+    }
+  ],
+  "layouts": [
+    {
+      "locale": "en",
+      "width": 320,
+      "doc": 320,
+      "cells": [
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        },
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        },
+        {
+          "w": 82,
+          "scroll": 78,
+          "client": 78
+        },
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        },
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        },
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        },
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        },
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        },
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        }
+      ],
+      "visible": "Frame 6/13 · target height 2 at (0,2) · completed distance layer 6, frontier has 1 cells. Completed-leg walking total: 0 moves."
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "doc": 390,
+      "cells": [
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.34375,
+          "scroll": 101,
+          "client": 101
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.34375,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.34375,
+          "scroll": 103,
+          "client": 103
+        }
+      ],
+      "visible": "Frame 6/13 · target height 2 at (0,2) · completed distance layer 6, frontier has 1 cells. Completed-leg walking total: 0 moves."
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "doc": 736,
+      "cells": [
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 177,
+          "client": 177
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        }
+      ],
+      "visible": "Frame 6/13 · target height 2 at (0,2) · completed distance layer 6, frontier has 1 cells. Completed-leg walking total: 0 moves."
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "doc": 1440,
+      "cells": [
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 177,
+          "client": 177
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        }
+      ],
+      "visible": "Frame 6/13 · target height 2 at (0,2) · completed distance layer 6, frontier has 1 cells. Completed-leg walking total: 0 moves."
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "doc": 320,
+      "cells": [
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        },
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        },
+        {
+          "w": 82,
+          "scroll": 78,
+          "client": 78
+        },
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        },
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        },
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        },
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        },
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        },
+        {
+          "w": 82,
+          "scroll": 80,
+          "client": 80
+        }
+      ],
+      "visible": "帧 6/13 · 目标高度 2 在 (0,2) · 已完成距离 6 层，前沿有 1 格。已完成路段的行走总数：0 步。"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "doc": 390,
+      "cells": [
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.34375,
+          "scroll": 101,
+          "client": 101
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.34375,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.34375,
+          "scroll": 103,
+          "client": 103
+        }
+      ],
+      "visible": "帧 6/13 · 目标高度 2 在 (0,2) · 已完成距离 6 层，前沿有 1 格。已完成路段的行走总数：0 步。"
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "doc": 736,
+      "cells": [
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 177,
+          "client": 177
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        }
+      ],
+      "visible": "帧 6/13 · 目标高度 2 在 (0,2) · 已完成距离 6 层，前沿有 1 格。已完成路段的行走总数：0 步。"
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "doc": 1440,
+      "cells": [
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 177,
+          "client": 177
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "w": 181.328125,
+          "scroll": 179,
+          "client": 179
+        }
+      ],
+      "visible": "帧 6/13 · 目标高度 2 在 (0,2) · 已完成距离 6 层，前沿有 1 格。已完成路段的行走总数：0 步。"
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "available": 320,
+      "cells": [
+        {
+          "scroll": 27,
+          "client": 27
+        },
+        {
+          "scroll": 27,
+          "client": 27
+        },
+        {
+          "scroll": 25,
+          "client": 25
+        },
+        {
+          "scroll": 27,
+          "client": 27
+        },
+        {
+          "scroll": 27,
+          "client": 27
+        },
+        {
+          "scroll": 27,
+          "client": 27
+        },
+        {
+          "scroll": 27,
+          "client": 27
+        },
+        {
+          "scroll": 27,
+          "client": 27
+        },
+        {
+          "scroll": 27,
+          "client": 27
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "available": 390,
+      "cells": [
+        {
+          "scroll": 38,
+          "client": 38
+        },
+        {
+          "scroll": 38,
+          "client": 38
+        },
+        {
+          "scroll": 36,
+          "client": 36
+        },
+        {
+          "scroll": 38,
+          "client": 38
+        },
+        {
+          "scroll": 38,
+          "client": 38
+        },
+        {
+          "scroll": 38,
+          "client": 38
+        },
+        {
+          "scroll": 38,
+          "client": 38
+        },
+        {
+          "scroll": 38,
+          "client": 38
+        },
+        {
+          "scroll": 38,
+          "client": 38
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "available": 1440,
+      "cells": [
+        {
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "scroll": 177,
+          "client": 177
+        },
+        {
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "scroll": 179,
+          "client": 179
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "available": 320,
+      "cells": [
+        {
+          "scroll": 27,
+          "client": 27
+        },
+        {
+          "scroll": 27,
+          "client": 27
+        },
+        {
+          "scroll": 25,
+          "client": 25
+        },
+        {
+          "scroll": 27,
+          "client": 27
+        },
+        {
+          "scroll": 27,
+          "client": 27
+        },
+        {
+          "scroll": 27,
+          "client": 27
+        },
+        {
+          "scroll": 27,
+          "client": 27
+        },
+        {
+          "scroll": 27,
+          "client": 27
+        },
+        {
+          "scroll": 27,
+          "client": 27
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "available": 390,
+      "cells": [
+        {
+          "scroll": 38,
+          "client": 38
+        },
+        {
+          "scroll": 38,
+          "client": 38
+        },
+        {
+          "scroll": 36,
+          "client": 36
+        },
+        {
+          "scroll": 38,
+          "client": 38
+        },
+        {
+          "scroll": 38,
+          "client": 38
+        },
+        {
+          "scroll": 38,
+          "client": 38
+        },
+        {
+          "scroll": 38,
+          "client": 38
+        },
+        {
+          "scroll": 38,
+          "client": 38
+        },
+        {
+          "scroll": 38,
+          "client": 38
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "available": 1440,
+      "cells": [
+        {
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "scroll": 177,
+          "client": 177
+        },
+        {
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "scroll": 179,
+          "client": 179
+        },
+        {
+          "scroll": 179,
+          "client": 179
+        }
+      ]
+    }
+  ],
+  "source": "exact rendered, embedded, clipboard, download and sentinel-seeded native manual-copy parity",
+  "clipboard": {
+    "host": "darwin",
+    "shortcut": "Meta+C",
+    "fullSelection": true,
+    "actualReadback": true
+  },
+  "keyboard": {
+    "active": true,
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrasts": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".cell",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#tracePrev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#traceNext",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#langToggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#copyStatus",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": "focus on panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "cell border",
+      "ratio": 10.910104011097095
+    }
+  ],
+  "cssBytes": 11553,
+  "storageDenied": true,
+  "offline": true,
+  "localErrors": [],
+  "badAssets": [],
+  "externalRequests": [],
+  "zoomMethod": "CSS zoom:2 in real Chromium; browser-chrome zoom and real devices unverified"
+}

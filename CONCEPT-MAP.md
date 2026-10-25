@@ -1238,3 +1238,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Exact rational search | `leetcode/679/#step4` | Fraction values avoid rounding tolerances in the four-card search. |
 
 <!-- /leetcode-679-campaign -->
+
+
+<!-- leetcode-675-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Ordered shortest paths | `leetcode/675/#step1` | Static walkability makes the sum of shortest required legs optimal. |
+| Breadth-first search layers | `leetcode/675/#step2` | Discover each cell once at its shortest unit-cost distance. |
+
+<!-- /leetcode-675-campaign -->

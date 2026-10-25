@@ -1,0 +1,7 @@
+{"running": ["node", "/tmp/leetcode-675-preset-probe-20261025.cjs"], "candidate": "c2e54cf8211dc0ca8ccff212e4863ecee2a8dd04"}
+{"records":24,"failures":[{"viewportWidth":320,"lang":"en","index":1,"label":"Detour around a wall · 10 moves","font":"16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif","width":260,"paddingLeft":15,"paddingRight":15,"arrowAllowance":0,"textWidth":252.57598876953125,"available":230,"fits":false},{"viewportWidth":320,"lang":"en","index":2,"label":"Official example 2 · unreachable","font":"16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif","width":260,"paddingLeft":15,"paddingRight":15,"arrowAllowance":0,"textWidth":255.0399169921875,"available":230,"fits":false},{"viewportWidth":320,"lang":"en","index":4,"label":"Multiple legs & revisits · 9 moves","font":"16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif","width":260,"paddingLeft":15,"paddingRight":15,"arrowAllowance":0,"textWidth":261.407958984375,"available":230,"fits":false}]}
+Traceback (most recent call last):
+  File "/tmp/leetcode-675-preset-probe-runner-20261025.py", line 18, in <module>
+    if r.returncode:raise RuntimeError('Check failed: '+str(cmd))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Check failed: ['node', '/tmp/leetcode-675-preset-probe-20261025.cjs']

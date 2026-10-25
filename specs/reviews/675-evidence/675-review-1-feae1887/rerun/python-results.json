@@ -1,0 +1,17 @@
+{
+  "kind": "author self-check",
+  "canonical": "Python3 Solution.cutOffTree",
+  "global_state_oracle_cases": 649,
+  "official_examples": [
+    6,
+    -1,
+    6
+  ],
+  "maximum_50x50": 4900,
+  "maximum_shuffled_50x50": 83665,
+  "fresh_transfer": 5,
+  "rendered_baseline_executed": true,
+  "input_preserved": true,
+  "copy_pairs": 83,
+  "elapsed_seconds": 4.858
+}

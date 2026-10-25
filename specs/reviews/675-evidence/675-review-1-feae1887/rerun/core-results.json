@@ -1,0 +1,21 @@
+{
+  "kind": "author self-check",
+  "cases": 649,
+  "frames": 6025,
+  "preset_expected": [
+    3,
+    10,
+    -1,
+    0,
+    9,
+    -1
+  ],
+  "checks": [
+    "independent Floyd distances",
+    "every completed ledger entry",
+    "all discovered distance values",
+    "frontier layer",
+    "deep snapshots",
+    "input preservation"
+  ]
+}
