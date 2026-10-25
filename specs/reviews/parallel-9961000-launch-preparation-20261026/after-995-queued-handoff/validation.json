@@ -1,0 +1,21 @@
+{
+  "preparedAt": "2026-10-25T22:58:35.284458+00:00",
+  "status": "disabled-pending-995-queued-handoff-not-dispatchable",
+  "testsPassed": 10,
+  "parentFilesUnchanged": true,
+  "piAccessPerformed": false,
+  "operationalBodiesExecuted": false,
+  "files": {
+    "README.md": "0edd27db895d3d387feb0bf7919116cbbee4386343024164a28c680553f30335",
+    "adaptation-map.json": "9ceb2650b23bf02da75616b1d9a1078e1ad130bb917136e00b0fb4d7eeb86ceb",
+    "launch.pending.py": "35045331153db7194b92ba21fcab73639b93cdf366907bcfe33eadfa8d862359",
+    "launch.pending.py.diff": "b93e8abc2dd5309d279321aa185b8a1594191be92f1e618681a1cd306fbf6d04",
+    "preflight.pending.py": "e66694dcdded8f21537d4dc82e0d7ffe95d0b7749dcb6bb37806252edc478d4f",
+    "preflight.pending.py.diff": "295b93187d6370134b59304f481bbbeeac41d364cf44a1ef726ef6223ff5c3c4",
+    "test_templates.py": "570cc52ff601dca2b76145cff8ba76d97e1364adb4ea7acc826902bf449e8d26",
+    "tests.initial-failed.log": "d254247974b51044daa46925598efb5101f89e3960c3a9702b1ade069728bb67",
+    "tests.log": "25565bec79890c3bd72dae268b762b554e378f293cd1f6ef19673f791bd59fb2",
+    "tests.second-failed.log": "283c8cd324c03e9bbfc0e8f14f800c46207d91d1331b4a17886fe8354bf9179d"
+  },
+  "actualReceiptCaptured": false
+}

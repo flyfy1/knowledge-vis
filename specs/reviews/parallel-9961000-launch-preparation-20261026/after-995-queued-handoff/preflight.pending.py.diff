@@ -1,0 +1,55 @@
+--- ../preflight.pending.py
++++ preflight.pending.py
+@@ -1,13 +1,17 @@
+ """Read-only launch eligibility census. Does not reserve ports or mutate Pi files."""
+-raise RuntimeError('Disabled preparation: await completed #992/#995 import, frozen identities and separate root review.')
++raise RuntimeError('Disabled preparation: await completed queued #995 handoff, frozen identities and separate root review.')
+ import pathlib,json,subprocess,hashlib,datetime,os,re,importlib.util,sys,socket
+ repo=pathlib.Path('/home/songyy/projects/leetcode-hard-campaign-20261018');root=pathlib.Path('/home/songyy/projects');state_dir=root/'leetcode-hard-campaign-state-20261018'
+-receipt_path=state_dir/'import992995-only-20261026-888bb6ac.json'
+-receipt_bytes=receipt_path.read_bytes();receipt=json.loads(receipt_bytes)
++receipt_path=state_dir/'995-copy-repair-20261026-9d027af3.json'
++receipt_bytes=receipt_path.read_bytes()
++assert hashlib.sha256(receipt_bytes).hexdigest()=='__PENDING_995COPY_RECEIPT_SHA256__'
++receipt=json.loads(receipt_bytes)
++assert receipt['owner']=='995-copy-repair-20261026-9d027af3'
+ assert receipt['status']=='completed-resumed',receipt['status']
+-base='__PENDING_IMPORT992995_BASE__'
++assert receipt['queued_repair_id']=='995' and receipt['queue_preserved'] is True and receipt['ledger_preserved'] is True
++base='__PENDING_995COPY_BASE__'
+ assert receipt['pushed_head']==base
+-assert receipt['ordinary_resume_proof']['agent_candidate']==base and receipt['fresh_agent']
++assert receipt['resume_proof']['agent_candidate']==base and receipt['fresh_agent']
+ s=json.loads((state_dir/'progress.json').read_text());head=subprocess.check_output(['git','-C',str(repo),'rev-parse','HEAD'],text=True).strip();current=s['current'];run=next(r for r in s['runs'] if r['id']==current['run_id']);events=[]
+ for line in (pathlib.Path(run['directory'])/'events.jsonl').read_text().splitlines():
+  try:events.append(json.loads(line))
+@@ -35,18 +39,18 @@
+ assert len(native)==1,native
+ assert '-o' in native[0]['args'] and pathlib.Path(native[0]['args'][native[0]['args'].index('-o')+1]).parent==pathlib.Path(run['directory'])
+ assert pathlib.Path(f'/proc/{native[0]["pid"]}/cwd').resolve()==repo
+-pins_path=pathlib.Path('__PENDING_IMPORT992995_PINS_PATH__')
++pins_path=pathlib.Path('__PENDING_995COPY_PINS_PATH__')
+ pins_bytes=pins_path.read_bytes()
+ pins_sha=hashlib.sha256(pins_bytes).hexdigest()
+-assert pins_sha=='__PENDING_IMPORT992995_PINS_SHA256__'
++assert pins_sha=='__PENDING_995COPY_PINS_SHA256__'
+ approved_pins=json.loads(pins_bytes)
+ for name,digest in approved_pins['policy'].items():
+  assert hashlib.sha256((repo/name).read_bytes()).hexdigest()==digest,name
+-# Publisher's transitive static-builder dependency: existing ancestry from hash-pinned import pins.
++# Handoff pins have no lane_base: use the completed receipt-bound BASE for the same static dependency guard.
+ static_path='scripts/leetcode_static_versions.py'
+ static_sha='f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e'
+-subprocess.run(['git','-C',str(repo),'cat-file','-e',approved_pins['lane_base']+'^{commit}'],check=True)
+-assert hashlib.sha256(subprocess.check_output(['git','-C',str(repo),'show',approved_pins['lane_base']+':'+static_path])).hexdigest()==static_sha
++subprocess.run(['git','-C',str(repo),'cat-file','-e',base+'^{commit}'],check=True)
++assert hashlib.sha256(subprocess.check_output(['git','-C',str(repo),'show',base+':'+static_path])).hexdigest()==static_sha
+ assert hashlib.sha256((repo/static_path).read_bytes()).hexdigest()==static_sha
+ sys.path.insert(0,str(repo/'scripts'))
+ spec=importlib.util.spec_from_file_location('lane_import',repo/'scripts/import_leetcode_lane.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);m.same_shared(repo,base,head)
+@@ -95,4 +99,4 @@
+ assert not (state_dir/'STOP').exists() and receipt_path.read_bytes()==receipt_bytes
+ assert pathlib.Path(f'/proc/{native[0]["pid"]}/cmdline').read_bytes().split(b'\0')[0].decode()==native[0]['args'][0]
+ assert subprocess.check_output(['git','-C',str(repo),'rev-parse','HEAD'],text=True).strip()==head
+-print(json.dumps({'observed_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'base':base,'central_head':head,'central_expected_head':s['expected_head'],'central_current':current,'central_status':s['status'],'central_runner_pid':runner,'central_session':sessions[-1],'central_native':native[0],'shared_tree_matches_base':True,'policy_sha256':policy,'campaign_workers':workers,'mem_available_kib':int(mem['MemAvailable'].split()[0]),'loadavg':os.getloadavg(),'reservations':[{'file':r['file'],'id':r['record'].get('id'),'status':r['record']['status']}for r in reservations],'stop_exists':False,'queue_length':984,'targets':targets,'dispatcher_preparation_source':'6d2a1b0e7109954d45f32a1dc47606e06c1c6f99','992995_import_receipt':receipt,'992995_import_receipt_sha256':hashlib.sha256(receipt_bytes).hexdigest(),'current_phase_worktree_paths':dirty,'allowed_dirty_scope':allowed_dirty_scope,'current_prompt_sha256':hashlib.sha256(prompt.encode()).hexdigest(),'approved_992995_import_pins_sha256':pins_sha,'verified_policy_before_import':approved_pins['policy'],'verified_static_dependency_sha256':static_sha,'no_mutation':True},indent=2))
++print(json.dumps({'observed_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'base':base,'central_head':head,'central_expected_head':s['expected_head'],'central_current':current,'central_status':s['status'],'central_runner_pid':runner,'central_session':sessions[-1],'central_native':native[0],'shared_tree_matches_base':True,'policy_sha256':policy,'campaign_workers':workers,'mem_available_kib':int(mem['MemAvailable'].split()[0]),'loadavg':os.getloadavg(),'reservations':[{'file':r['file'],'id':r['record'].get('id'),'status':r['record']['status']}for r in reservations],'stop_exists':False,'queue_length':984,'targets':targets,'dispatcher_preparation_source':'6d2a1b0e7109954d45f32a1dc47606e06c1c6f99','995_queued_handoff_receipt':receipt,'995_queued_handoff_receipt_sha256':hashlib.sha256(receipt_bytes).hexdigest(),'current_phase_worktree_paths':dirty,'allowed_dirty_scope':allowed_dirty_scope,'current_prompt_sha256':hashlib.sha256(prompt.encode()).hexdigest(),'approved_995_queued_handoff_pins_sha256':pins_sha,'verified_policy_before_import':approved_pins['policy'],'verified_static_dependency_sha256':static_sha,'no_mutation':True},indent=2))

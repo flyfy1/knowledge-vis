@@ -1,0 +1,156 @@
+{
+  "status": "disabled-pending-995-queued-handoff-not-dispatchable",
+  "parentFiles": {
+    "README.md": "5cf4a6bb91a0a6ee199ef490d2d6c7a56625ec2609dbefbf29272f987a9b2b4b",
+    "disabled-gate.diff": "95c8c5cffceea647a24b237f67a4494de5466721db837175932323a05890608d",
+    "launch.pending.py": "fbf19b825664c751d429a0eb54894c1559299a0ee207e3415ac90bc18431ad7b",
+    "parameter-map.json": "dac91b0830a634470ac8793949bd60beffb5b35c946749864f59dd97a78799f5",
+    "parameter-only-body.diff": "91bd9467621520b25e292138d99cdeab07e21f38320a3fe0589e828f75e3f207",
+    "preflight-adaptation.diff": "5f9b1ed968817dc1f09943f497432cbe56c61bb717a38af103357267957ce37f",
+    "preflight.pending.py": "951a0879a35501af0151ca6e7094fd1d6f75294517faa9c0f6d07c3e44630a23",
+    "read-only-observation.json": "4f281af5da20d9c36ca96512bd20fad67d93e9c17462743eb50befd799e1be84",
+    "test_templates.py": "9864eb285a7529a7476a0dc0636ad50595780bd1febde771f324a87784f38f1d",
+    "tests.log": "eab02b86e8d13a18760c46ee1964b2065646f69cc4e439371c2d64f523652d89",
+    "validation.json": "1c418568337f898d5a6fad9ea89b99b01d23effe2303338e2ef253593df569fb"
+  },
+  "sources": {
+    "launch.pending.py": {
+      "path": "specs/reviews/parallel-9961000-launch-preparation-20261026/launch.pending.py",
+      "sha256": "fbf19b825664c751d429a0eb54894c1559299a0ee207e3415ac90bc18431ad7b"
+    },
+    "preflight.pending.py": {
+      "path": "specs/reviews/parallel-9961000-launch-preparation-20261026/preflight.pending.py",
+      "sha256": "951a0879a35501af0151ca6e7094fd1d6f75294517faa9c0f6d07c3e44630a23"
+    }
+  },
+  "launcherSubstitutions": [
+    {
+      "from": "raise RuntimeError('Disabled preparation: await completed #992/#995 import, frozen identities and separate root review.')\n",
+      "to": "raise RuntimeError('Disabled preparation: await completed queued #995 handoff, frozen identities and separate root review.')\n"
+    },
+    {
+      "from": "__PENDING_IMPORT992995_BASE__",
+      "to": "__PENDING_995COPY_BASE__"
+    },
+    {
+      "from": "__PENDING_IMPORT992995_CENTRAL_HEAD__",
+      "to": "__PENDING_995COPY_CENTRAL_HEAD__"
+    },
+    {
+      "from": "__PENDING_IMPORT992995_CENTRAL_RUN__",
+      "to": "__PENDING_995COPY_CENTRAL_RUN__"
+    },
+    {
+      "from": "__PENDING_IMPORT992995_PROBLEM__",
+      "to": "__PENDING_995COPY_PROBLEM__"
+    },
+    {
+      "from": "__PENDING_IMPORT992995_STAGE__",
+      "to": "__PENDING_995COPY_STAGE__"
+    },
+    {
+      "from": "__PENDING_IMPORT992995_SESSION__",
+      "to": "__PENDING_995COPY_SESSION__"
+    }
+  ],
+  "preflightSubstitutions": [
+    {
+      "from": "raise RuntimeError('Disabled preparation: await completed #992/#995 import, frozen identities and separate root review.')\n",
+      "to": "raise RuntimeError('Disabled preparation: await completed queued #995 handoff, frozen identities and separate root review.')\n"
+    },
+    {
+      "from": "import992995-only-20261026-888bb6ac.json",
+      "to": "995-copy-repair-20261026-9d027af3.json"
+    },
+    {
+      "from": "receipt_bytes=receipt_path.read_bytes();receipt=json.loads(receipt_bytes)",
+      "to": "receipt_bytes=receipt_path.read_bytes()\nassert hashlib.sha256(receipt_bytes).hexdigest()=='__PENDING_995COPY_RECEIPT_SHA256__'\nreceipt=json.loads(receipt_bytes)\nassert receipt['owner']=='995-copy-repair-20261026-9d027af3'"
+    },
+    {
+      "from": "assert receipt['status']=='completed-resumed',receipt['status']",
+      "to": "assert receipt['status']=='completed-resumed',receipt['status']\nassert receipt['queued_repair_id']=='995' and receipt['queue_preserved'] is True and receipt['ledger_preserved'] is True"
+    },
+    {
+      "from": "__PENDING_IMPORT992995_BASE__",
+      "to": "__PENDING_995COPY_BASE__"
+    },
+    {
+      "from": "receipt['ordinary_resume_proof']['agent_candidate']",
+      "to": "receipt['resume_proof']['agent_candidate']"
+    },
+    {
+      "from": "__PENDING_IMPORT992995_PINS_PATH__",
+      "to": "__PENDING_995COPY_PINS_PATH__"
+    },
+    {
+      "from": "__PENDING_IMPORT992995_PINS_SHA256__",
+      "to": "__PENDING_995COPY_PINS_SHA256__"
+    },
+    {
+      "from": "# Publisher's transitive static-builder dependency: existing ancestry from hash-pinned import pins.",
+      "to": "# Handoff pins have no lane_base: use the completed receipt-bound BASE for the same static dependency guard."
+    },
+    {
+      "from": "approved_pins['lane_base']+'^{commit}'",
+      "to": "base+'^{commit}'"
+    },
+    {
+      "from": "approved_pins['lane_base']+':'+static_path",
+      "to": "base+':'+static_path"
+    },
+    {
+      "from": "992995_import_receipt",
+      "to": "995_queued_handoff_receipt"
+    },
+    {
+      "from": "approved_992995_import_pins_sha256",
+      "to": "approved_995_queued_handoff_pins_sha256"
+    }
+  ],
+  "disableLine": "raise RuntimeError('Disabled preparation: await completed queued #995 handoff, frozen identities and separate root review.')\n",
+  "futureOwner": "995-copy-repair-20261026-9d027af3",
+  "expectedReceiptStatus": "completed-resumed",
+  "requiredReceiptFields": {
+    "queued_repair_id": "995",
+    "queue_preserved": true,
+    "ledger_preserved": true
+  },
+  "baseSource": "receipt.pushed_head corroborated by receipt.resume_proof.agent_candidate",
+  "staticSource": "same future receipt-bound BASE; handoff pins do not contain lane_base",
+  "approvedHandoffSource": {
+    "operatorPath": "specs/reviews/995-copy-repair-preparation-20261026/final-ready/operate.py",
+    "operatorSha256": "2cc99b2622895aaf3dc87c83131dfb4ab2b70e123a424845409dd428788fe280",
+    "pinsPath": "specs/reviews/995-copy-repair-preparation-20261026/final-ready/pins.json",
+    "pinsSha256": "b8daf2ba46ff675f5cc14f6ddca7e1816d14348b3438b228f13c4e6fa60ff93c"
+  },
+  "futureReceiptSha256": null,
+  "futureExternalPinsPath": null,
+  "futureExternalPinsSha256": null,
+  "finalRuntimePins": {
+    "base": null,
+    "centralHead": null,
+    "run": null,
+    "problem": null,
+    "stage": null,
+    "session": null,
+    "runnerPid": null,
+    "nativePid": null
+  },
+  "targets": [
+    {
+      "id": "996",
+      "port": 18799
+    },
+    {
+      "id": "1000",
+      "port": 18800
+    }
+  ],
+  "policySha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+  "authorContextInjection": false,
+  "piAccessPerformed": false,
+  "artifacts": {
+    "launch.pending.py": "35045331153db7194b92ba21fcab73639b93cdf366907bcfe33eadfa8d862359",
+    "preflight.pending.py": "e66694dcdded8f21537d4dc82e0d7ffe95d0b7749dcb6bb37806252edc478d4f"
+  }
+}
