@@ -1081,3 +1081,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | merge sort counting | `leetcode/493/#step2` | Disjoint within-half and cross-half pair accounting |
 
 <!-- /leetcode-493-campaign -->
+
+
+<!-- leetcode-552-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Attendance counting with six states | `leetcode/552/#step2` | Group valid prefixes by absences used and trailing late run. |
+| Counting invariant and rolling arrays | `leetcode/552/#step4` | Maintain disjoint counts with fresh next-day storage. |
+
+<!-- /leetcode-552-campaign -->
