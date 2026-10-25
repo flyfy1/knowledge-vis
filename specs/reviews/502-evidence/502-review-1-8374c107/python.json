@@ -1,0 +1,17 @@
+{
+  "kind": "author self-check",
+  "result": "pass",
+  "exhaustive_cases": 107949,
+  "seed": 502,
+  "random_cases": 1500,
+  "canonical_heap_invariant_operations": 1744,
+  "maximum_size_cases": 3,
+  "official_examples": [
+    4,
+    6
+  ],
+  "transfer": 13,
+  "source_parity": true,
+  "input_unchanged": true,
+  "displayed_baseline_cases": 1500
+}
