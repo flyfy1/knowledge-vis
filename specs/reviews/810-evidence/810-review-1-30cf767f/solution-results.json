@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "cases": 22097,
+  "displayedBaselineCases": 1364,
+  "intermediateCandidateChecks": 112564,
+  "oracleCache": "CacheInfo(hits=131037, misses=18762, maxsize=None, currsize=18762)",
+  "officialExamples": [
+    false,
+    true,
+    true
+  ],
+  "method": "Recursive legal game search with independently recomputed bit-column XOR; maximum fixtures checked by cancellation/forced play."
+}

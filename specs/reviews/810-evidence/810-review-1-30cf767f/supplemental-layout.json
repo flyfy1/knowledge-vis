@@ -1,0 +1,47 @@
+{
+  "initialAttempt": "Failed Error: longest select, conservative text+padding+24 budget before capture. Rerun records unchanged predicate and screenshot for diagnosis.",
+  "checks": [
+    {
+      "lang": "zh",
+      "fit": {
+        "selected": "[2,2,3,3]",
+        "text": 60.00013732910156,
+        "rendered": 60.0078125,
+        "pad": 16,
+        "width": 96,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "budgetPass": false
+      }
+    },
+    {
+      "lang": "zh",
+      "keyboardLastNav": {
+        "left": 97.375,
+        "right": 280.34375,
+        "view": 320
+      },
+      "statePreserved": true
+    },
+    {
+      "lang": "en",
+      "fit": {
+        "selected": "[2,2,3,3]",
+        "text": 60.00013732910156,
+        "rendered": 60.0078125,
+        "pad": 16,
+        "width": 96,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "budgetPass": false
+      }
+    },
+    {
+      "lang": "en",
+      "keyboardLastNav": {
+        "left": 96.578125,
+        "right": 279.546875,
+        "view": 320
+      },
+      "statePreserved": true
+    }
+  ]
+}

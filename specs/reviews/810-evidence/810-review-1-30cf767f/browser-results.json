@@ -1,0 +1,514 @@
+{
+  "errors": [],
+  "assetErrors": [],
+  "external": [],
+  "bindings": [
+    {
+      "lang": "en",
+      "preset": [
+        1,
+        2
+      ],
+      "state": "terminal",
+      "observed": "Bob made X=0 by erasing and loses immediately; Alice wins.",
+      "winner": "Alice"
+    },
+    {
+      "lang": "en",
+      "preset": [
+        1,
+        1,
+        2
+      ],
+      "state": "terminal",
+      "observed": "Alice made X=0 by erasing and loses immediately; Bob wins.",
+      "winner": "Bob"
+    },
+    {
+      "lang": "en",
+      "preset": [
+        0,
+        1
+      ],
+      "state": "terminal",
+      "observed": "Bob made X=0 by erasing and loses immediately; Alice wins.",
+      "winner": "Alice"
+    },
+    {
+      "lang": "en",
+      "preset": [
+        1,
+        2,
+        3
+      ],
+      "state": "terminal",
+      "observed": "Alice starts with X=0 and wins immediately; no new erasure occurs.",
+      "winner": "Alice"
+    },
+    {
+      "lang": "en",
+      "preset": [
+        1
+      ],
+      "state": "terminal",
+      "observed": "Alice made X=0 by erasing and loses immediately; Bob wins.",
+      "winner": "Bob"
+    },
+    {
+      "lang": "en",
+      "preset": [
+        0
+      ],
+      "state": "terminal",
+      "observed": "Alice starts with X=0 and wins immediately; no new erasure occurs.",
+      "winner": "Alice"
+    },
+    {
+      "lang": "en",
+      "preset": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "state": "terminal",
+      "observed": "Alice starts with X=0 and wins immediately; no new erasure occurs.",
+      "winner": "Alice"
+    },
+    {
+      "lang": "en",
+      "state": "unsafe erase 2 from [1,1,2]",
+      "observed": "Alice made X=0 by erasing and loses immediately; Bob wins.",
+      "history": "0 · Initial board [1,1,2]; X=2.1 · Alice erased 2 at index 2: X=2 → 0; loses now."
+    },
+    {
+      "lang": "zh",
+      "preset": [
+        1,
+        2
+      ],
+      "state": "terminal",
+      "observed": "Bob 的擦除使 X=0，立即输；Alice 赢。",
+      "winner": "Alice"
+    },
+    {
+      "lang": "zh",
+      "preset": [
+        1,
+        1,
+        2
+      ],
+      "state": "terminal",
+      "observed": "Alice 的擦除使 X=0，立即输；Bob 赢。",
+      "winner": "Bob"
+    },
+    {
+      "lang": "zh",
+      "preset": [
+        0,
+        1
+      ],
+      "state": "terminal",
+      "observed": "Bob 的擦除使 X=0，立即输；Alice 赢。",
+      "winner": "Alice"
+    },
+    {
+      "lang": "zh",
+      "preset": [
+        1,
+        2,
+        3
+      ],
+      "state": "terminal",
+      "observed": "Alice 开始回合时 X=0，立即赢；没有发生新擦除。",
+      "winner": "Alice"
+    },
+    {
+      "lang": "zh",
+      "preset": [
+        1
+      ],
+      "state": "terminal",
+      "observed": "Alice 的擦除使 X=0，立即输；Bob 赢。",
+      "winner": "Bob"
+    },
+    {
+      "lang": "zh",
+      "preset": [
+        0
+      ],
+      "state": "terminal",
+      "observed": "Alice 开始回合时 X=0，立即赢；没有发生新擦除。",
+      "winner": "Alice"
+    },
+    {
+      "lang": "zh",
+      "preset": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "state": "terminal",
+      "observed": "Alice 开始回合时 X=0，立即赢；没有发生新擦除。",
+      "winner": "Alice"
+    },
+    {
+      "lang": "zh",
+      "state": "unsafe erase 2 from [1,1,2]",
+      "observed": "Alice 的擦除使 X=0，立即输；Bob 赢。",
+      "history": "0 · 初始黑板 [1,1,2]；X=2。1 · Alice 擦下标 2 的 2：X=2 → 0；立即输。"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 97,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 96,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 97,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 97,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 97,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 97,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 97,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 97,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 97,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 96,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 97,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 97,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 97,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 97,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 97,
+        "pad": 16
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "fit": {
+        "text": 46.56010437011719,
+        "width": 97,
+        "pad": 16
+      }
+    }
+  ],
+  "states": 32,
+  "host": "linux",
+  "fallback": [
+    {
+      "lang": "en",
+      "attempt": 0,
+      "sentinel": "810-en-0-distinct-sentinel",
+      "key": "Control+C",
+      "verified": true,
+      "text": "Automatic copy failed. The full source is selected; use your system copy shortcut (Linux/Windows: Ctrl+C, macOS: ⌘C)."
+    },
+    {
+      "lang": "en",
+      "attempt": 1,
+      "sentinel": "810-en-1-distinct-sentinel",
+      "key": "Control+C",
+      "verified": true,
+      "text": "Automatic copy failed. The full source is selected; use your system copy shortcut (Linux/Windows: Ctrl+C, macOS: ⌘C)."
+    },
+    {
+      "lang": "zh",
+      "attempt": 0,
+      "sentinel": "810-zh-0-distinct-sentinel",
+      "key": "Control+C",
+      "verified": true,
+      "text": "自动复制失败。完整源码已选中；请按系统复制快捷键（Linux/Windows：Ctrl+C，macOS：⌘C）。"
+    },
+    {
+      "lang": "zh",
+      "attempt": 1,
+      "sentinel": "810-zh-1-distinct-sentinel",
+      "key": "Control+C",
+      "verified": true,
+      "text": "自动复制失败。完整源码已选中；请按系统复制快捷键（Linux/Windows：Ctrl+C，macOS：⌘C）。"
+    }
+  ],
+  "related": [
+    {
+      "lang": "en",
+      "label": "782: test chessboard feasibility with rectangle XOR",
+      "href": "../782/#step1",
+      "destinationExcerpt": "02Why are some boards impossible?What relationship can no swap repair? In 001 / 110 / 001, rows 0 and 2 are equal, and row 1 is their complement: every 0 becomes 1 and every 1 becomes 0. A column swap moves the same positions in every row, preserving equality and complementation. A row swap only reorders rows. A chessboard has only these two row types, so every original row must equal row 0 or its complement.How do we check this cell by cell? XOR (written ^) returns 0 for equal bits and 1 for different bits. The difference between row i and row 0 must agree in every column: board[i][j] ^ board[0][j] = board[i][0] ^ board[0][0]. Bringing all terms together gives this four-corner test.board[0][0] ^ board[i][0] ^ board[0][j] ^ board[i][j] = 0 (every i,j)This is the invariant: the XOR of the four corners of any rectangle must be 0. Row and column permutations only relabel these rectangles; a rectangle with XOR 1 still exists afterward. If all checks anchored at (0,0) pass, every row is equ"
+    },
+    {
+      "lang": "en",
+      "label": "51: choose, recurse, and undo in constraint search",
+      "href": "../51/#step1",
+      "destinationExcerpt": "022 · When can a branch stop?How can we detect an attack before placing a queen? A prefix means the first r consecutive rows already filled. With exactly one column chosen per row, only three tests remain: column c, diagonal key r−c, and the other diagonal key r+c. For example, (0,1) and (1,2) both have r−c = −1; (0,3) and (1,2) both have r+c = 3. One step along a diagonal changes both coordinates by +1 (preserving the difference), or one by +1 and the other by −1 (preserving the sum).Keep the three kinds of occupied keys in sets cols, down, and up. If a new square hits any set, an existing queen attacks it; adding later queens cannot remove that attack, so this entire branch can stop. Pruning means skipping such a prefix. Missing all three sets proves only local legality, not eventual success: for n=4, the legal prefix [0,2] leaves no possible next row.Invariant: at entry to search(r), placement records exactly the legal columns of the first r rows; the three sets contain exactly thei"
+    },
+    {
+      "lang": "zh",
+      "label": "#782：用矩形异或关系判断棋盘可行性",
+      "href": "../782/#step1",
+      "destinationExcerpt": "02为什么有些棋盘永远修不好？这一步要回答：交换永远不能修复哪种关系？在 001 / 110 / 001 中，第 0 行与第 2 行完全相同，第 1 行恰好相反。“相反”（互补）指每个位置的 0 与 1 都对换。交换列只是把相同的位置一起搬走；相同的两行仍相同，相反的两行仍相反。交换行只改变它们的顺序。棋盘中也只有这两种行，因此原棋盘的每一行必须与第 0 行相同或相反。如何逐格检查？XOR（符号 ^）对两个二进制数，相同给 0，不同给 1。第 i 行相对第 0 行的差异必须在所有列一致：board[i][j] ^ board[0][j] = board[i][0] ^ board[0][0]。移到同一侧，就是下面的四角检查。board[0][0] ^ board[i][0] ^ board[0][j] ^ board[i][j] = 0（所有 i,j）这就是不变量：任意两行、两列围出的四个角，其 XOR 必须为 0。行列置换只重新排列这些矩形；若某个矩形 XOR 为 1，它仍然存在。所有锚定在 (0,0) 的检查通过时，其余矩形也通过，因为每行都已被确定为相同或互补。这里只证明形状兼容，还没证明数量足够。诱人的错误规则：“每行每列的 1 数量平衡就够了。”反例 0011 / 0101 / 1010 / 1100：每行每列恰有两个 1，但左上 2×2 的四角 XOR = 1。不兼容的行无法靠排列修复。反过来，只检查形状也不够：10 / 10 的行都相同，却缺少另一种行。一个正确的慢方法：枚举所有行排列和所有列排列，逐一检查是否成为棋盘。一个排列所需的任意交换数是 n 减去循环个数（循环是被排列串在一起的位置；长度 k 的循环需要 k−1 次交换）。取成功组合的最小总成本。共有 (n!)² 组合，每组检查 n² 格；n=30 不可行。接下来用形状检查与计数跳过所有排列。查看可运行的穷举基线（仅小输入）from itertools import permutations\n\n\ndef swap_cost(order):\n    seen = set()\n    cycles = 0\n    for i in range(len(order)):\n        if i not in seen:\n            cycles += 1\n            whi"
+    },
+    {
+      "lang": "zh",
+      "label": "#51：在约束搜索中选择、递归和撤销",
+      "href": "../51/#step1",
+      "destinationExcerpt": "022 · 何时停止一条分支？怎样在放下一个皇后前知道它一定冲突？“前缀”指已经填好的连续前 r 行。固定每行只选一列后，只剩三项检查：列 c、斜线键 r−c、另一斜线键 r+c。例如 (0,1) 与 (1,2) 的 r−c 都为 −1；(0,3) 与 (1,2) 的 r+c 都为 3。同行沿对角线移动一步时，两个坐标同时加 1（差不变），或一加一减（和不变）。把已用的三个键分别放进 cols、down、up 集合。新位置只要命中一个集合，就已有皇后攻击它，后面再放皇后也无法消除这次攻击，所以整条分支可以剪掉。“剪枝”就是不再探索这样的前缀。如果都没命中，只说明当前合法，并不保证最终有解：n=4 时前缀 [0,2] 就无法填下一行。不变式：每次进入 search(r)，placement 恰好记录前 r 行的合法列；三个集合恰好是这些皇后的 c、r−c、r+c。回溯就是探索一个选择后，删掉它的列和三个键，恢复尝试前的状态，再试下一列。#37 · 看另一种约束搜索与撤销"
+    }
+  ],
+  "relatedAssetErrors": [],
+  "relatedConsoleErrors": [
+    {
+      "message": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "location": {
+        "url": "http://127.0.0.1:18770/favicon.ico",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "focus": {
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrast": [
+    {
+      "a": "text",
+      "b": "panel2",
+      "ratio": 13.397069143240783
+    },
+    {
+      "a": "text",
+      "b": "panel",
+      "ratio": 14.704584598678618
+    },
+    {
+      "a": "muted",
+      "b": "panel2",
+      "ratio": 6.449407898769069
+    },
+    {
+      "a": "muted",
+      "b": "panel",
+      "ratio": 7.078851579017443
+    },
+    {
+      "a": "muted",
+      "b": "bg",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "a": "accent",
+      "b": "bg",
+      "ratio": 13.100679028115637
+    },
+    {
+      "a": "accent",
+      "b": "panel",
+      "ratio": 11.974898815275662
+    },
+    {
+      "a": "accent2",
+      "b": "panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "a": "accent2",
+      "b": "bg",
+      "ratio": 10.731637051347173
+    },
+    {
+      "a": "good",
+      "b": "panel2",
+      "ratio": 10.004815697188947
+    },
+    {
+      "a": "bg",
+      "b": "accent",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+  "cssBytes": 10714,
+  "controls": [
+    {
+      "id": "",
+      "h": 48
+    },
+    {
+      "id": "",
+      "h": 48
+    },
+    {
+      "id": "handReveal",
+      "h": 48
+    },
+    {
+      "id": "preset",
+      "h": 48
+    },
+    {
+      "id": "prev",
+      "h": 48
+    },
+    {
+      "id": "next",
+      "h": 48
+    },
+    {
+      "id": "reset",
+      "h": 48
+    },
+    {
+      "id": "end",
+      "h": 48
+    },
+    {
+      "id": "",
+      "h": 48
+    },
+    {
+      "id": "reveal",
+      "h": 48
+    },
+    {
+      "id": "copy",
+      "h": 48
+    }
+  ],
+  "blockedStorage": true,
+  "offline": true,
+  "result": "PASS",
+  "browser": "156.0.8078.4",
+  "zoom": "CSS layout zoom at 200%; native browser zoom and real devices untested"
+}
