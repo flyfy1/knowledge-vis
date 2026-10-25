@@ -5,6 +5,9 @@ test_limited_summary_or_wrong_harness_refused_even_with_new_hashes (__main__.Evi
 test_missing_observed_rss_worst_is_refused (__main__.EvidenceGuards.test_missing_observed_rss_worst_is_refused) ... ok
 test_source_or_candidate_binding_mismatch_refused (__main__.EvidenceGuards.test_source_or_candidate_binding_mismatch_refused) ... ok
 test_valid_full_coverage_and_observed_worst (__main__.EvidenceGuards.test_valid_full_coverage_and_observed_worst) ... ok
+test_incomplete_or_wrong_lineage_recovery_refused (__main__.RecoveryLineage.test_incomplete_or_wrong_lineage_recovery_refused) ... ok
+test_old_failed_receipt_cannot_be_relabelled_success (__main__.RecoveryLineage.test_old_failed_receipt_cannot_be_relabelled_success) ... ok
+test_only_successful_recovery_receipt_is_handoff (__main__.RecoveryLineage.test_only_successful_recovery_receipt_is_handoff) ... ok
 test_actual_runner_freezes_evidence_adoption_head_for_review (__main__.StateAndDispatch.test_actual_runner_freezes_evidence_adoption_head_for_review) ... ok
 test_checkpoint_changes_expected_head_only (__main__.StateAndDispatch.test_checkpoint_changes_expected_head_only) ... ok
 test_fresh_reviewer_exact_adoption_candidate (__main__.StateAndDispatch.test_fresh_reviewer_exact_adoption_candidate) ... ok
@@ -12,6 +15,6 @@ test_preparation_refuses_before_reading_missing_pins_or_runtime (__main__.StateA
 test_reused_thread_or_rewritten_prior_review_refused (__main__.StateAndDispatch.test_reused_thread_or_rewritten_prior_review_refused) ... ok
 
 ----------------------------------------------------------------------
-Ran 12 tests in 0.420s
+Ran 15 tests in 0.415s
 
 OK

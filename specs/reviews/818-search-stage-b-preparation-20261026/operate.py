@@ -16,8 +16,10 @@ import time
 
 REPO = Path('/home/songyy/projects/leetcode-hard-campaign-20261018')
 STATE = Path('/home/songyy/projects/leetcode-hard-campaign-state-20261018')
-STAGE_A_OWNER = 'import968972-search818-stage-a-20261026-4b7e902d'
-HANDOFF_OWNER = STAGE_A_OWNER + '-author-to-mac'
+FAILED_STAGE_A_OWNER = 'import968972-search818-stage-a-20261026-4b7e902d'
+FAILED_STAGE_A_SHA = '723aa5cf0ddc654e05eeb091ee499f2423cffdbcdd2bf2e1893ce80466e618ad'
+HANDOFF_RECEIPT_OWNER = '818-search-author-startup-recovery-20261026-32c8d741'
+HANDOFF_OWNER = HANDOFF_RECEIPT_OWNER + '-author-to-mac'
 OWNER = '818-search-stage-b-20261026-8f614c20'
 DISPATCH = 'root-reviewed-818-search-stage-b-20261026'
 REPORT = 'specs/reviews/818-review-search-resource-measurement-20261026.md'
@@ -68,6 +70,19 @@ def save(path, value, exclusive=False):
 
 def git(*args):
     return imp.git(REPO, *args)
+
+
+def recovered_handoff(receipt, failed_raw):
+    require(sha(failed_raw) == FAILED_STAGE_A_SHA, 'Original failed Stage A receipt changed')
+    require(receipt['owner'] == HANDOFF_RECEIPT_OWNER and receipt['recovery_of'] == FAILED_STAGE_A_OWNER and
+            receipt['failed_stage_a_receipt_preserved'] is True, 'Recovery receipt lineage differs')
+    frozen = receipt['frozen_author']
+    # stage_a_complete is the recovery operator's compatibility field for the
+    # recovered author handoff; the original Stage A receipt remains failed.
+    require(receipt['status'] == 'waiting-for-Mac' and receipt['stage_a_complete'] is True and
+            receipt['owned_stop_present'] is True and frozen['zero_new_818_reviews'] is True,
+            'Recovered author handoff is not successful')
+    return frozen
 
 
 def payload_paths(pins):
@@ -259,15 +274,14 @@ def execute(pins):
                 policy_guard(pins)
                 quiet_checkout()
                 require(git('branch', '--show-current') == 'codex/all-hard-20261018', 'Wrong central branch')
-                a_raw = (STATE/(STAGE_A_OWNER+'.json')).read_bytes()
-                require(sha(a_raw) == pins['stage_a_receipt_sha256'], 'Stage A receipt changed')
-                stage_a = json.loads(a_raw); frozen = stage_a['frozen_author']
-                require(stage_a['status'] == 'waiting-for-Mac' and stage_a['stage_a_complete'] is True and
-                        stage_a['owned_stop_present'] is True and frozen['zero_new_818_reviews'] is True, 'Stage A is not successful')
-                require(all(frozen[key] == pins[key] for key in ('candidate', 'lesson_tree', 'source_sha256')), 'Frozen Stage A identity differs')
+                a_raw = (STATE/(HANDOFF_RECEIPT_OWNER+'.json')).read_bytes()
+                require(sha(a_raw) == pins['stage_a_receipt_sha256'], 'Successful recovery receipt changed')
+                failed_receipt_path = STATE/(FAILED_STAGE_A_OWNER+'.json')
+                frozen = recovered_handoff(json.loads(a_raw), failed_receipt_path.read_bytes())
+                require(all(frozen[key] == pins[key] for key in ('candidate', 'lesson_tree', 'source_sha256')), 'Frozen recovery identity differs')
                 observed_stop = (STATE/'STOP').read_bytes(); stop = json.loads(observed_stop)
                 require(sha(observed_stop) == pins['stop_sha256'] and stop['owner'] == HANDOFF_OWNER and
-                        stop['transaction'] == STAGE_A_OWNER and stop['run_id'] == frozen['author_run_id'], 'Owned handoff STOP differs')
+                        stop['transaction'] == HANDOFF_RECEIPT_OWNER and stop['recovery_of'] == FAILED_STAGE_A_OWNER and stop['run_id'] == frozen['author_run_id'], 'Owned handoff STOP differs')
                 stop_raw = observed_stop
                 before = imp.validate_checkout(REPO, STATE)
                 require(before['status'] == 'stopped' and before['expected_head'] == pins['candidate'] and
@@ -314,6 +328,7 @@ def execute(pins):
                     (STATE/'STOP').read_bytes() == stop_raw and (STATE/'releases.json').read_bytes() == ledger_raw, 'Checkpoint changed before resume')
             quiet_checkout()
             policy_guard(pins)
+            require(sha(failed_receipt_path.read_bytes()) == FAILED_STAGE_A_SHA, 'Original failed Stage A receipt changed before resume')
             (STATE/'STOP').unlink()
             launch = json.loads(subprocess.check_output([sys.executable, str(STATE/'launch.py'), '--continuous', '--max-rounds', '6'], cwd=REPO, text=True))
             record.update(status='awaiting-fresh-review', launch=launch); save(receipt, record)
@@ -326,7 +341,8 @@ def execute(pins):
                 time.sleep(.5)
             require(proof is not None, 'Fresh reviewer run/session/turn/native proof absent')
             require(imp.head(REPO) == head and git('rev-parse', 'HEAD:leetcode/818') == pins['lesson_tree'] and
-                    (STATE/'releases.json').read_bytes() == ledger_raw and not (STATE/'STOP').exists(), 'Review start changed source/ledger/STOP')
+                    (STATE/'releases.json').read_bytes() == ledger_raw and not (STATE/'STOP').exists() and
+                    sha(failed_receipt_path.read_bytes()) == FAILED_STAGE_A_SHA, 'Review start changed source/ledger/STOP/prior failure receipt')
             record.update(status='completed-review-running', completed_at=imp.now(), fresh_review=proof, release_ledger_preserved=True)
             save(receipt, record); print(json.dumps(record), flush=True)
         except BaseException as error:

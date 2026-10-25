@@ -1,15 +1,16 @@
 {
   "status": "prepared_disabled_pending_actual_candidate_and_measurements",
   "test_command": "python3 -B specs/reviews/818-search-stage-b-preparation-20261026/test_operate.py",
-  "tests_passed": 12,
+  "tests_passed": 15,
   "exit_code": 0,
   "actual_candidate_measurement": false,
   "runtime_mutation": false,
   "dispatch_enabled": false,
   "sha256": {
-    "operate.py": "20041ff880e5d9fb59088e41d2c5bb451867a516817bb8edc209b68baed5abc2",
-    "test_operate.py": "273c97f98542f35e628e3368419d7e0a0dceac0106d74600b44a685d031efad2",
-    "README.md": "707ae754f3614fd0382a5c340020c584aa2afc3fb1cd4b3954c8d267ec48d324",
-    "tests.log": "68856857753c9e3c7b1c9bc300a10c9dc1d472f8338e6d383ea3890cb27765d4"
-  }
+    "operate.py": "06d40ac7414e289b14d5d01f8cc7eb1b934bdbd152e8107c15f160a63ba20c1d",
+    "test_operate.py": "9a5b05fdb472f3ed835877b2a1c5759a90c47a670a14da25a47d92f26014c9f3",
+    "README.md": "2fde438a2d484d9d22adcc84198889da56f8b0b35f02a660b9439ee1affba9a3",
+    "tests.log": "5dd8797948cf4ff48925aa16236bec192d1e57bd3ba2a1bc848943b737f6c4ca"
+  },
+  "lineage": "Successful recovery receipt only; original failed Stage A preserved"
 }

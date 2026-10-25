@@ -189,5 +189,37 @@ class StateAndDispatch(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, 'ordinary history'): op.review_proof(before, live, 10, procs)
 
 
+class RecoveryLineage(unittest.TestCase):
+    def fixture(self):
+        failed=(HERE.parent/'parallel-968972-import-818-search-execution-20261026/receipt-failed.json').read_bytes()
+        receipt={'owner': '818-search-author-startup-recovery-20261026-32c8d741',
+                 'recovery_of': 'import968972-search818-stage-a-20261026-4b7e902d',
+                 'failed_stage_a_receipt_preserved': True, 'status':'waiting-for-Mac',
+                 'stage_a_complete':True, 'owned_stop_present':True,
+                 'frozen_author':{'zero_new_818_reviews':True}}
+        return receipt,failed
+
+    def test_only_successful_recovery_receipt_is_handoff(self):
+        receipt,failed=self.fixture()
+        self.assertEqual(op.recovered_handoff(receipt,failed),receipt['frozen_author'])
+        self.assertEqual(json.loads(failed)['status'],'failed-inspect-no-retry')
+        self.assertEqual(op.HANDOFF_OWNER,'818-search-author-startup-recovery-20261026-32c8d741-author-to-mac')
+        self.assertIsNone(op.REVIEWED_PINS_SHA256)
+
+    def test_old_failed_receipt_cannot_be_relabelled_success(self):
+        receipt,failed=self.fixture();receipt['owner']='import968972-search818-stage-a-20261026-4b7e902d'
+        with self.assertRaisesRegex(RuntimeError,'lineage'):op.recovered_handoff(receipt,failed)
+        receipt,failed=self.fixture();rewritten=json.loads(failed);rewritten['status']='waiting-for-Mac'
+        with self.assertRaisesRegex(RuntimeError,'failed Stage A receipt changed'):op.recovered_handoff(receipt,encoded(rewritten))
+
+    def test_incomplete_or_wrong_lineage_recovery_refused(self):
+        for key,value in [('recovery_of','foreign'),('failed_stage_a_receipt_preserved',False),('status','author-running-stop-armed'),('stage_a_complete',False),('owned_stop_present',False)]:
+            with self.subTest(key=key):
+                receipt,failed=self.fixture();receipt[key]=value
+                with self.assertRaises(RuntimeError):op.recovered_handoff(receipt,failed)
+        receipt,failed=self.fixture();receipt['frozen_author']['zero_new_818_reviews']=False
+        with self.assertRaises(RuntimeError):op.recovered_handoff(receipt,failed)
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

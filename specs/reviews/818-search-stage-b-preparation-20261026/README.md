@@ -1,7 +1,7 @@
 # Stage B preparation: adopt measured #818 evidence and resume review
 
 **Not dispatchable.** `REVIEWED_PINS_SHA256 = None` rejects even the correct dispatch
-token before reading a pins file or runtime. No frozen Stage A candidate or actual
+token before reading a pins file or runtime. No frozen recovered author candidate or actual
 measurement exists yet. Root must complete the steps below, freeze exact future
 pins/operator hashes, and arrange separate independent review before enabling use.
 This folder contains no live pins and authorizes no production action.
@@ -13,14 +13,25 @@ the lesson, rewrite previous review/acceptance, or add a campaign framework.
 
 ## Required frozen inputs
 
-First require successful Stage A receipt
-`import968972-search818-stage-a-20261026-4b7e902d.json`, status `waiting-for-Mac`,
+First require the successful recovery receipt
+`818-search-author-startup-recovery-20261026-32c8d741.json`, status `waiting-for-Mac`,
 with the exact `-author-to-mac` owned STOP still present. Bind its receipt hash,
 STOP hash, stopped progress hash, release-ledger hash, candidate, full lesson tree,
 canonical source SHA and original author run. Revalidate clean actual/saved HEAD,
 the entire 984-ID queue, no live checkout/runner/native process, unchanged policy
-and launcher, and the review_pending #818 entry. Stage A historical state and
+and launcher, and the review_pending #818 entry. Recovered author historical state and
 source identities must agree; a lesson hash alone is insufficient.
+
+The original receipt `import968972-search818-stage-a-20261026-4b7e902d.json`
+remains failed and immutable (SHA256
+`723aa5cf0ddc654e05eeb091ee499f2423cffdbcdd2bf2e1893ce80466e618ad`).
+The new receipt must name it in `recovery_of`, retain
+`failed_stage_a_receipt_preserved: true`, and bind the recovery-owned STOP and
+its transaction. The compatibility field `stage_a_complete: true` denotes the
+**recovered author handoff**, not a rewrite of the original failure. For the same
+reason, future pins key `stage_a_receipt_sha256` binds the new successful recovery
+receipt only. The original failure hash is checked before adoption/resume and
+after the fresh review starts; no prior receipt is written.
 
 Root runs the separately reviewed Mac harness on copied immutable canonical bytes.
 Only a completed successful full-range/isolated result may proceed. Root writes:
@@ -41,7 +52,7 @@ with exactly these keys:
 
 | Key | Required binding |
 | --- | --- |
-| `candidate`, `lesson_tree`, `source_sha256` | Frozen Stage A identity |
+| `candidate`, `lesson_tree`, `source_sha256` | Frozen recovered author identity |
 | `harness_sha256` | `94a3d9c9567af65c32bdd72bddd3d1eaa167a8e9d901335237a89ba5880a7386` |
 | `summary_sha256` | Exact measured summary bytes |
 | `report_path`, `report_sha256` | Fixed report above and its exact bytes |
@@ -78,7 +89,8 @@ reviews/runs, queue and ledger remain unchanged. Push that exact adoption head.
 Before resume, actual digest eligibility must be below20, with no pending release
 or same-digest pointer refresh. The first nonterminal entry must already be #818
 review; an unexpected earlier registration is refused rather than simulated.
-This is narrower than Stage A, which already handled any registration prefix.
+This is narrower than the original Stage A import phase, which already handled
+any registration prefix before the separately recovered author launch.
 Remove only the exact owned STOP, launch the existing continuous/max6/every20
 runner once, and prove a new #818 reviewer ID/thread/turn/native descendant.
 The ordinary runner updates #818's candidate to the evidence-adoption head before
@@ -93,7 +105,7 @@ worker. SIGTERM enters this same preservation path; no agent is signaled.
 
 ## Preparation evidence and remaining gates
 
-Twelve local tests cover synthetic full-range artifact structure, tampering,
+Fifteen local tests cover synthetic full-range artifact structure, tampering,
 limited coverage, wrong harness/platform, duplicate/missing/failed targets,
 isolated worst-case omission, source/report binding, exact expected-head-only
 checkpoint, real runner candidate refresh at review dispatch, stale/reused review
@@ -102,6 +114,6 @@ fixture is **not** an actual candidate measurement or numerical acceptance claim
 The real runner test intercepts `run_agent` before any real agent starts.
 
 No Pi mutation, source authoring, full-range execution, measurement report or
-candidate acceptance was performed. Stage A receipt and actual Mac evidence are
+candidate acceptance was performed. The successful recovered handoff receipt and actual Mac evidence are
 pending. After they arrive, revalidate real artifact compatibility, freeze pins,
 complete independent operator review, and obtain root's separate exact dispatch.

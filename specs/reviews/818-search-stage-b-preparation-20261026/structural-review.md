@@ -33,3 +33,15 @@ Before final approval: read the frozen canonical source, inspect the real Mac
 outputs and report, freeze their exact commit and pins, review the sole enabling
 constant change, and recheck actual Stage A state. None of these pending duties
 is waived by this structural review.
+
+## Recovery lineage follow-up
+
+Root independently reviewed the later diff at operator SHA-256
+`06d40ac7414e289b14d5d01f8cc7eb1b934bdbd152e8107c15f160a63ba20c1d`
+and ran the three new lineage tests successfully. The successful handoff must now
+come from `818-search-author-startup-recovery-20261026-32c8d741`; the original
+failed receipt remains separately hash-checked before adoption, before resume,
+and after reviewer startup. Its failure is not reclassified. STOP ownership and
+transaction lineage match the new recovery. No required correction was found in
+this diff. Final measurement/pin review and the disabled dispatch gate remain
+unchanged; no successful handoff or actual measurements are asserted here.
