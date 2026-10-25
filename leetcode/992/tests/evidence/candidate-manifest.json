@@ -1,0 +1,247 @@
+{
+  "candidate": "992-author-v3",
+  "frozenAt": "2026-10-25T22:27:20.301440+00:00",
+  "baseRevision": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+  "authorStatus": "self-checked; ready for independent review",
+  "independentReview": "pending; no reviewer spawned in author run",
+  "files": {
+    "BRIEF.md": {
+      "sha256": "43bb7edd6fc607d9d0c165be60f8c0e70452b5b8fad2560087ae7046f97fa898",
+      "bytes": 9349
+    },
+    "app.js": {
+      "sha256": "2d4e56c7112d6cfa6ea5ba854ab010c675f8b2d791440ab7a8e64cc1df121d7d",
+      "bytes": 4692
+    },
+    "copy.js": {
+      "sha256": "f85b30730837438578f513e14c36fa207c145b724133e765b9345b597af937b6",
+      "bytes": 18555
+    },
+    "core.js": {
+      "sha256": "bf9ab058d6b417e974cbe9bed883dce56407be05b954b7094f8cfa3051261948",
+      "bytes": 1243
+    },
+    "index.html": {
+      "sha256": "64eaf825328d8adb637de0b22a4c61decb5bb0910801efdd9be769040e8a010d",
+      "bytes": 6105
+    },
+    "lesson-entry.json": {
+      "sha256": "6c0322d6598ca10a5216695e1f083b6e3d16c600df6b62a2c35fe4ec2c1999ff",
+      "bytes": 1040
+    },
+    "python-code.js": {
+      "sha256": "67895bd61230a22414d07c9a519e594bdbfbcf7f8ae6d457847123b5455889ec",
+      "bytes": 689
+    },
+    "solution.py": {
+      "sha256": "597643e0fa4dbc0f383302d78ff074426c811ecad597e2cd8da8841587cce5e3",
+      "bytes": 644
+    },
+    "style.css": {
+      "sha256": "73e27de53e8664250b7c8251c3c19e1056aab5f94edd72746a2b7d3948f9911a",
+      "bytes": 1790
+    },
+    "tests/README.md": {
+      "sha256": "1d1b24ec34895f86f6d8aa9d4c133d7b27ce16554b8731a64b59c4425a7d4427",
+      "bytes": 2795
+    },
+    "tests/browser.cjs": {
+      "sha256": "b2ba9336bbf24620636faf97bb7e897969bf1be694acea744110291870ba5c42",
+      "bytes": 15733
+    },
+    "tests/evidence/SELF-CHECK.md": {
+      "sha256": "425bde5643f5ea387903445358a6b71214ee5fdb1fea4d1b3269839efdcb6f09",
+      "bytes": 5809
+    },
+    "tests/evidence/author-probe-v1/browser.json": {
+      "sha256": "4c8dd070b64391fadc7b9f250b98b1b48eb589bbf78f5596140b2c9fefb74f31",
+      "bytes": 39815
+    },
+    "tests/evidence/author-probe-v1/numerical.json": {
+      "sha256": "9b419153b675a87cb480b8b86fc7dfd14c44f3b152a21ba92f27f64c22b9321e",
+      "bytes": 494
+    },
+    "tests/evidence/author-probe-v2/failure.json": {
+      "sha256": "a3e466919f901064e811860a4cafd99775a137c8b2be25a730fd4b25f93653c9",
+      "bytes": 865
+    },
+    "tests/evidence/author-probe-v3/failure.json": {
+      "sha256": "d36ae9d5023af8786b732a545bab5057c2db2730067296794ba92a02f52df2f4",
+      "bytes": 714
+    },
+    "tests/evidence/browser.json": {
+      "sha256": "d3f2093430ed81fb87ad029610354f0f6cca5d40369a23fe737c11bcdabb81f6",
+      "bytes": 44419
+    },
+    "tests/evidence/en-1440-page.png": {
+      "sha256": "5578f5b933a148f4c2e1c96951e65e8c548396b39614d235a060a873793f8036",
+      "bytes": 831655
+    },
+    "tests/evidence/en-1440-stage.png": {
+      "sha256": "4ab06af1c31212a49cec6ccb11ee3cb23a1f1befd8d4e930c6b397ba0fd8e51a",
+      "bytes": 128650
+    },
+    "tests/evidence/en-320-page.png": {
+      "sha256": "bbb7f4e2119cdeca083ce6c7b84d362e07d0d84dfdba85404dd3fdc03f24bd2c",
+      "bytes": 810931
+    },
+    "tests/evidence/en-320-right.png": {
+      "sha256": "7174059d33b70b2b681995aecc2c38ffd93e6e39f7088294e24ed7fb7d639906",
+      "bytes": 141399
+    },
+    "tests/evidence/en-320-stage.png": {
+      "sha256": "17cf4e241b64b0620c6371c0e3a7f7b143a54c77dcd38c3fdd185912c79cdd5a",
+      "bytes": 143582
+    },
+    "tests/evidence/en-390-page.png": {
+      "sha256": "377e7b39c8e3e715c01f33db67e6728ed426ed4b5cf556b4dd9aae678a0f7479",
+      "bytes": 851750
+    },
+    "tests/evidence/en-390-stage.png": {
+      "sha256": "9564487f642a7d8d4aadd2b64798b17f16e21385d3e6785b58fec3636075cc85",
+      "bytes": 145094
+    },
+    "tests/evidence/en-736-page.png": {
+      "sha256": "b5d0acf8cfaa1ff8d3d773325cd319ad618e59d4928299183c35f3b0d567acfd",
+      "bytes": 828891
+    },
+    "tests/evidence/en-736-stage.png": {
+      "sha256": "ad010b66e55f415de036481d4fdc56f81d5cc75d04bdd5a7965fc6a01b2462bf",
+      "bytes": 137529
+    },
+    "tests/evidence/en-zoom200-stage.png": {
+      "sha256": "21bf5cb56c6ec81b0f6f44076e20a6f56942b84a80eafb6cd7701c883ac7e0a9",
+      "bytes": 299662
+    },
+    "tests/evidence/forced-colors-focus.png": {
+      "sha256": "2514ba2f57b96e1fb73294a959378d6e81adfa649fa395f2f006048573253e37",
+      "bytes": 84515
+    },
+    "tests/evidence/numerical.json": {
+      "sha256": "2cb4e72b587393ba4fecde071cd02fe8a029dd8943e0289befb9dac2517fc738",
+      "bytes": 494
+    },
+    "tests/evidence/official.json": {
+      "sha256": "711e47ae824f31130a765d301411bdcf25cb85fc728ee2e765583f1a2cbac9d6",
+      "bytes": 6387
+    },
+    "tests/evidence/preflight.json": {
+      "sha256": "f309800230d33a91c0eef280f9eed00286f0e7733d63089183a4f98677c7125b",
+      "bytes": 274
+    },
+    "tests/evidence/zh-1440-page.png": {
+      "sha256": "d060d7ad6360cb477706612b0bc92854a7d694ac8c04307c08e6ecedd83a96eb",
+      "bytes": 895484
+    },
+    "tests/evidence/zh-1440-stage.png": {
+      "sha256": "7e6f7f37343a375a1eb0b6b73fc9acd2beef0c850e75deec477df0126746a448",
+      "bytes": 132204
+    },
+    "tests/evidence/zh-320-page.png": {
+      "sha256": "eb7c511ca5c8e0acde80e2c204968eabf25e5691c7e0e444bc6f01879bc9e2b6",
+      "bytes": 832024
+    },
+    "tests/evidence/zh-320-right.png": {
+      "sha256": "e6e89cb1f820f4d7440db6ce852178e8c3e1270e2435da52900df7d067a5bb07",
+      "bytes": 133765
+    },
+    "tests/evidence/zh-320-stage.png": {
+      "sha256": "caea1d8ae83103c0d267f6eabed576384583009a6120536e43365bda9450fc90",
+      "bytes": 137603
+    },
+    "tests/evidence/zh-390-page.png": {
+      "sha256": "632079add01f353a02b831a03af50f9c1176029c21bfed6ebb5206a8a28ee679",
+      "bytes": 841109
+    },
+    "tests/evidence/zh-390-stage.png": {
+      "sha256": "3b87836d255ca8bd509f4f63a5d8bb18fd27f984aac956854d9036f2be5e664e",
+      "bytes": 131008
+    },
+    "tests/evidence/zh-736-page.png": {
+      "sha256": "1e303935ed3acf4b2d2e323c1ef40e782bc7f99a8521ed3f59995d06e693f581",
+      "bytes": 857754
+    },
+    "tests/evidence/zh-736-stage.png": {
+      "sha256": "515acb31b213cb311121fd949152a2fdf9f93f0c9f8ac9be2d2e71d5f9139c76",
+      "bytes": 128836
+    },
+    "tests/evidence/zh-zoom200-stage.png": {
+      "sha256": "0ceb95d0506f862e172073afb4d55a89e2d04d2278958a8eadbea81abcf31a38",
+      "bytes": 279908
+    },
+    "tests/numerical.py": {
+      "sha256": "79c13db552fabeb528b4350716d7898ca77e52cf488224b2b71a004ab3e12f1e",
+      "bytes": 3537
+    }
+  },
+  "sharedReadOnly": {
+    "leetcode/style.css": {
+      "sha256": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+      "bytes": 9425
+    },
+    "leetcode/common.js": {
+      "sha256": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+      "bytes": 1608
+    },
+    "WORKFLOW.md": {
+      "sha256": "6a1f5a72f96d98a720be0aee0af40d75d837d281761842151e00fa7015c240a6",
+      "bytes": 2953
+    },
+    "UI-I18N-SPEC.md": {
+      "sha256": "16ca9aebcaf6cc4863428d3abbfb675599c31b37d1d717783323697884e62b81",
+      "bytes": 10838
+    },
+    "specs/leetcode-explainers.md": {
+      "sha256": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+      "bytes": 21468
+    },
+    "specs/leetcode-hard-traces.md": {
+      "sha256": "5cb2edb1f223cde061d67e8cfe255f220876667c1d4c091bdbac49f67c6f2c35",
+      "bytes": 8793
+    },
+    "specs/leetcode-review-gates.md": {
+      "sha256": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+      "bytes": 15279
+    },
+    "specs/leetcode-rendered-state-contract.md": {
+      "sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+      "bytes": 25996
+    },
+    "specs/reviews/leetcode-all-hard-design-review.md": {
+      "sha256": "a1d9d6bc23d15e7369eb04252ff00d0302d5b1786641f5c7f7587ecf64d31086",
+      "bytes": 22386
+    },
+    "leetcode/76/index.html": {
+      "sha256": "193fd90f1866d85a0c7f4994aeaa24597ace595aa832430d849826d599b3e15f",
+      "bytes": 7376
+    },
+    "leetcode/76/copy.js": {
+      "sha256": "474376c845153320b78e52a20c2d33097df544c96c9698190f58638f6c2fe712",
+      "bytes": 20238
+    },
+    "leetcode/2916/index.html": {
+      "sha256": "af7a77c919ab2d6a7e2fd365265937fc80e226200361b482c41366705d6e812f",
+      "bytes": 11776
+    },
+    "leetcode/2916/copy.js": {
+      "sha256": "850e44ac35ea89feeba7c82814c07b1d2c03dff88b417784a552d43152c9987e",
+      "bytes": 28512
+    }
+  },
+  "preflight": {
+    "command": "python3 -B scripts/register_leetcode_lesson.py 992 --validate-only",
+    "cwd": "/home/songyy/projects/leetcode-hard-lane-992-20261026",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "verifiedAt": "2026-10-25T22:27:20.299921+00:00",
+    "mutating": false
+  },
+  "reviewLimits": [
+    "No LeetCode submission",
+    "No independent acceptance",
+    "No actual learner outcomes",
+    "No registration or publication"
+  ],
+  "knownSiblingWarning": "#2916 root favicon404; preserved in browser.json"
+}
