@@ -3103,6 +3103,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n · 2^ceil(n/2)) expected time; O(2^ceil(n/2)) space"
   },
   {
+    "id": 903,
+    "title": {
+      "zh": "DI 序列的有效排列",
+      "en": "Valid Permutations for DI Sequence"
+    },
+    "desc": {
+      "zh": "从末尾排名推导计数状态，逐格观察前缀与后缀求和。",
+      "en": "Derive counts by final rank and inspect prefix and suffix contributions."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "前缀和",
+        "en": "Prefix sums"
+      }
+    ],
+    "path": "903/",
+    "leetcodeUrl": "https://leetcode.com/problems/valid-permutations-for-di-sequence/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

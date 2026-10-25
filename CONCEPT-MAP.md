@@ -1507,3 +1507,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Alternating sequence swap cost | `leetcode/782/#step2` | Balanced counts and paired mismatches prove the minimum. |
 
 <!-- /leetcode-782-campaign -->
+
+
+<!-- leetcode-903-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Rank-based counting | `leetcode/903/#step1` | Standardize prefixes and count by final rank. |
+| Prefix and suffix DP sums | `leetcode/903/#step4` | Accumulate a row in linear time. |
+
+<!-- /leetcode-903-campaign -->
