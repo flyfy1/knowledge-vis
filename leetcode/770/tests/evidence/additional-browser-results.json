@@ -1,0 +1,58 @@
+{
+  "result": "pass",
+  "host": "linux",
+  "viewport": 320,
+  "headingRoundtrip": "zh → en → zh, state/disclosure/focus preserved",
+  "relatedTargets": [
+    {
+      "locale": "en",
+      "label": " #224 · Parsing parentheses and addition",
+      "href": "../224/#step2",
+      "resolved": "http://127.0.0.1:18770/leetcode/224/#step2",
+      "targetHashes": {
+        "index.html": "fec079c55b40f9b0595b5e5c432d16f3fc295baf9163882681001ad8d4a05f77",
+        "copy.js": "4fcb440966044020f79cbdfa145112904d35d608f5e91cd62517ae95a013a5fe"
+      },
+      "observedSection": "0303 · Watch save and restoreQuestion: what changes after consuming one number or symbol? Choosing a preset restarts this experiment. Keep the expression fixed, advance one item, and compare the marked characters, before/after totals and saved pairs. Rewind to check restoration.Invariant (a fact preserved at each step): total equals the sum of consumed terms at the current parenthesis level. Each saved (outer total, outer sign) pair records a group still awaiting its merge. When a number or group begins, sign is its multiplier, not the sign of the final answer. After a closing parenthesis it is temporarily unused until another operator resets it.This is a simulation of algorithm states, not execution of the Python below. Frames follow complete operations: digit runs are read together, spaces are skipped, and no other operations are omitted. Teaching snapshots are separate from submission memory.Expression preset (change restarts)8-(3-1)-(2+3)12 - (4 + 5)(1+(4+5+2)-3)+(6+8)1-(-2)0 2-1 + 2 1 + 1← Undo last itemConsume next item →Reset to startCompleted operations (scrub to revisit)Operation 0/7; character offsets start at 0Input characters: ␠ denotes a space; a thick solid border marks the item just consumed; dotted borders mark pending characters.80-1(233-415)6Current-level total = 0; stored sign = 1; saved levels = 0Start: total=0, sign=+1, stack empty.Saved contexts (oldest above, stack top below)No saved contextsCumulative operation ledgerEach row records a completed operation. Before and after states surround that row’s operation; future results are hidden.Offset / itemBefore total / signAfter total / signSaved levels",
+      "observation": "Tracks nested-parenthesis subtotal and sign, saving/restoring outer contexts."
+    },
+    {
+      "locale": "en",
+      "label": "#726 · Combining counts by name",
+      "href": "../726/#step2",
+      "resolved": "http://127.0.0.1:18770/leetcode/726/#step2",
+      "targetHashes": {
+        "index.html": "7701953c73ae0f2b6e3574a4ecbc50a0041b182e75d18a7f585f5851621ccd01",
+        "copy.js": "14a5d8806fc5a52650851e4563262b8739d5d5d5f80456dcf10188d28bab9246"
+      },
+      "observedSection": "03 · Keep counts at each levelHow do we separate inside from outside? A dictionary is a name-to-count table. A stack keeps these tables in order; the last table belongs to the innermost group. In Mg(OH)2, reading Mg gives {Mg:1}. At (, keep it and open an empty table. After OH, the outer table is {Mg:1} and the inner table is {O:1,H:1}.At )2, remove the inner table. Compute O: 0 + 1×2 = 2 and H: 0 + 1×2 = 2, then add them to the parent; Mg:1 stays unchanged. With more nesting, this merged table becomes part of its enclosing group. In K4(ON(SO3)2)2, the inner group contributes O:6,S:2. Add the existing O:1,N:1, then multiply by 2: O:14,S:4,N:2. K remains 4.These operations give an invariant, a fact preserved after each complete operation: each table counts exactly the completed units at its own level. It excludes unfinished child groups and any multiplier outside that level. Atoms add only to the last table; opening leaves the parent untouched; closing multiplies each child entry once before merging. Thus the parent prefix is never multiplied accidentally. Valid input ends with one base table containing all atoms. Sorting changes only output order.Try this: keep the formula fixed and advance one operation. Compare the before and after columns. At a close, inspect which counts multiply and which stay unchanged. Back restores the complete state. Choosing another example restarts this trace; the prediction is independent.Teaching simulation, not Python execution in the browser. Each frame completes an atom with its count, an opening parenthesis, or a closing parenthesis with its multiplier. All operations are retained. Tables run from outermost to innermost; the consumed prefix is not the final output.Formula (changing restarts)Mg(OH)2H2OK4(ON(SO3)2)2He(H2O)2(OH)3Be12H2((H)2O)3H← Previous operationNext operation →Reset traceGo to final resultOperation 0/6 · consumed characters 0/7Consumed: (none)Nothing consumed; the base table is empty.Before · outer → innerLevel 0Empty tableAfter · outer → innerLevel 0Empty tableFinal output: not emitted yetCompleted operation history",
+      "observation": "Combines per-name child counts into the parent dictionary after a group multiplier."
+    },
+    {
+      "locale": "zh",
+      "label": "#224 · 括号与加减的解析",
+      "href": "../224/#step2",
+      "resolved": "http://127.0.0.1:18770/leetcode/224/#step2",
+      "targetHashes": {
+        "index.html": "fec079c55b40f9b0595b5e5c432d16f3fc295baf9163882681001ad8d4a05f77",
+        "copy.js": "4fcb440966044020f79cbdfa145112904d35d608f5e91cd62517ae95a013a5fe"
+      },
+      "observedSection": "0303 · 看见保存与恢复问题：每次读完一个数或符号，哪些量变了？选择预设会从起点重启本实验。保持表达式不变，按“处理下一项”，看字符边框、前后总和以及保存数对如何同时变化；用后退验证恢复。不变量（每步都保持的事实）：total 精确表示当前括号层已处理完的项之和；栈里每对 (外层总和, 外层符号) 记录尚未合并的括号。在开始读取一个数或括号组时，sign 是该项的乘数，不是最终答案的正负；闭括号后它暂时无用途，直到下个运算符重设。这里是算法状态模拟，并非执行下方 Python。每帧在完整操作之后；数字整段读取，空格跳过，其余操作不省略。历史快照用于教学，不计入提交的空间。表达式预设（切换会重启）8-(3-1)-(2+3)12 - (4 + 5)(1+(4+5+2)-3)+(6+8)1-(-2)0 2-1 + 2 1 + 1← 撤回上一项处理下一项 →重置到起点已完成操作数（拖动可回看）操作 0/7；字符偏移从 0 开始输入字符：␠ 表示空格；实线粗边框表示刚处理的项，点线表示待处理字符。80-1(233-415)6当前层 total = 0；存储的 sign = 1；保存层数 = 0起点：total=0，sign=+1，栈为空。保存的上下文（上方最早，下方为栈顶）没有保存的上下文累积操作账本每行记录已经完成的操作；前后状态对应同一行操作，不展示未来答案。字符偏移 / 项操作前 total / sign操作后 total / sign保存层数",
+      "observation": "Tracks nested-parenthesis subtotal and sign, saving/restoring outer contexts."
+    },
+    {
+      "locale": "zh",
+      "label": "#726 · 以名称为键合并计数",
+      "href": "../726/#step2",
+      "resolved": "http://127.0.0.1:18770/leetcode/726/#step2",
+      "targetHashes": {
+        "index.html": "7701953c73ae0f2b6e3574a4ecbc50a0041b182e75d18a7f585f5851621ccd01",
+        "copy.js": "14a5d8806fc5a52650851e4563262b8739d5d5d5f80456dcf10188d28bab9246"
+      },
+      "observedSection": "03 · 保留每层的计数怎样隔开“组内”与“组外”？用字典（名称 → 数量的表）压缩计数，用栈保存这些表：栈是按顺序放置的表，最后一张就是当前最内层分组。Mg(OH)2 读到 Mg 后是 {Mg:1}；遇到 ( 时保留它，另开空表。读完 OH 后是外层 {Mg:1}、内层 {O:1,H:1}。遇到 )2，把内层表取出。分别算 O: 0 + 1×2 = 2、H: 0 + 1×2 = 2，加入外层；Mg:1 保持不变。若还有外层括号，新合成的表继续作为它的一部分；例如 K4(ON(SO3)2)2，内组贡献 O:6、S:2，再加组内原有 O:1 和 N:1，外乘 2 得 O:14、S:4、N:2，K 仍为 4。由这些操作得到不变量（每次完整操作后都保持的事实）：每张表恰好计数本层已完成的部分，不含尚未闭合的子组，也尚未乘本层外面的乘数。新元素只加到最后一张表；开组不改变父表；闭组把子表每项乘一次再合并。因此父层前缀不会被误乘。合法输入读完后只剩底表，包含全部原子；排序仅改变输出顺序。操作：保持所选化学式不变，先前进一步，比较操作前后两列；在闭组时看哪些数量相乘、哪些保持不变。后退会恢复完整状态。改选示例会从头开始，预测题独立保留。教学模拟，未在浏览器执行 Python。每帧完成一个元素（含数字）、一个左括号或一个右括号及其乘数；保留全部操作，无跳步。表从外层到内层排列；已读前缀不等于最终输出。化学式（改选会重启）Mg(OH)2H2OK4(ON(SO3)2)2He(H2O)2(OH)3Be12H2((H)2O)3H← 后退一步前进一步 →回到起点到最终结果操作 0/6 · 已读字符 0/7已读：（无）尚未读取；底表为空。操作前 · 外层 → 内层第 0 层空表操作后 · 外层 → 内层第 0 层空表最终输出：尚未排序输出已完成操作记录",
+      "observation": "Combines per-name child counts into the parent dictionary after a group multiplier."
+    }
+  ],
+  "offlineSource": "exact and trace operational via file://",
+  "boundaries": "zero and negative/zero multi-letter substitutions in both locales"
+}
