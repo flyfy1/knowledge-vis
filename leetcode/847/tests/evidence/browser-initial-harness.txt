@@ -1,0 +1,3 @@
+Initial browser run: timeout attempting to click disabled #end after reset in single-node preset. The single-node initial frame is already terminal (correct runtime behavior). Harness corrected to assert disabled End when steps=0. No runtime modification. Separate full rerun follows.
+Second run: immediate isHidden assertion raced the asynchronous clipboard write at browser.cjs line60. Corrected test to wait for hidden state, keeping exact-source clipboard assertions. Native fallback transfers before that point passed. No runtime copy repair.
+Third run after copy formatting refinement: screenshot helper received a multi-element .state-card locator. Corrected to :first-child; this changes capture targeting only, retains layout assertions. Full rerun required.

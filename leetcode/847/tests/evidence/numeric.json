@@ -1,0 +1,15 @@
+{
+  "kind": "author self-check",
+  "exhaustive_connected_n1_to5": 772,
+  "seeded": 180,
+  "canonical_cases": 962,
+  "baseline_small_cases": 44,
+  "source_parity": true,
+  "core": {
+    "cases": 890,
+    "frames": 4342,
+    "states": 43039,
+    "intermediate_invariants": true,
+    "copy_pairs": true
+  }
+}

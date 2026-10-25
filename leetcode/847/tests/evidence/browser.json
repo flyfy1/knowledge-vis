@@ -1,0 +1,444 @@
+{
+  "kind": "author browser self-check",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "url": "http://127.0.0.1:18770/leetcode/847/",
+  "errors": [],
+  "localRuntimeRequests": [
+    "http://127.0.0.1:18770/leetcode/847/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/847/style.css?v=847-r1",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/847/copy.js?v=847-r1",
+    "http://127.0.0.1:18770/leetcode/847/core.js?v=847-r1",
+    "http://127.0.0.1:18770/leetcode/847/python-code.js?v=847-r1",
+    "http://127.0.0.1:18770/leetcode/847/app.js?v=847-r1"
+  ],
+  "semantics": [
+    {
+      "locale": "en",
+      "action": "manual cover and undo/replay",
+      "observed": "Current node 3; 4 edges traversed; visited {0, 1, 2, 3}. Every node has been visited."
+    },
+    {
+      "locale": "en",
+      "preset": 0,
+      "action": "all layers, back/replay and endpoint",
+      "observed": "Current layer d=4 (frame 4/4); 3 new pairs this layer; 22 pairs discovered cumulatively. Shortest covering length = 4 edges."
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "action": "all layers, back/replay and endpoint",
+      "observed": "Current layer d=4 (frame 4/4); 6 new pairs this layer; 44 pairs discovered cumulatively. Shortest covering length = 4 edges."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "action": "all layers, back/replay and endpoint",
+      "observed": "Current layer d=0 (frame 0/0); 1 new pairs this layer; 1 pairs discovered cumulatively. Shortest covering length = 0 edges."
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "action": "all layers, back/replay and endpoint",
+      "observed": "Current layer d=2 (frame 2/2); 2 new pairs this layer; 9 pairs discovered cumulatively. Shortest covering length = 2 edges."
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "action": "all layers, back/replay and endpoint",
+      "observed": "Current layer d=2 (frame 2/2); 3 new pairs this layer; 12 pairs discovered cumulatively. Shortest covering length = 2 edges."
+    },
+    {
+      "locale": "en",
+      "action": "all predictions/reveal/change",
+      "observed": "Check the distance from each endpoint to the missing node. From 2, take 2→3: 1 move. From 0, take 0→1→2→3: 3 moves. Already-visited nodes 1 and 2 must be crossed again. Equal sets can have different remaining costs. Merge only when both endpoint and set agree. A ignores the endpoint; C omits one required edge."
+    },
+    {
+      "locale": "en",
+      "action": "locale roundtrip after interactions",
+      "formula": "(u, mask, d) → (v, mask | (1 << v), d + 1), where v ∈ graph[u]; target full = (1 << n) − 1.",
+      "frame": "Current layer d=1 (frame 1/4); 6 new pairs this layer; 10 pairs discovered cumulatively. No full-coverage state discovered yet.",
+      "maskCause": "From (0, 0001₂), along edge 0→1; 0001 | 0010 = 0011 (binary)."
+    },
+    {
+      "locale": "en",
+      "action": "native fallback copy",
+      "attempt": 0,
+      "sentinelVerified": true,
+      "host": "linux",
+      "exactSource": true,
+      "observed": "Automatic copy unavailable. Full source selected; use your system copy shortcut."
+    },
+    {
+      "locale": "en",
+      "action": "native fallback copy",
+      "attempt": 1,
+      "sentinelVerified": true,
+      "host": "linux",
+      "exactSource": true,
+      "observed": "Automatic copy unavailable. Full source selected; use your system copy shortcut."
+    },
+    {
+      "locale": "zh",
+      "action": "manual cover and undo/replay",
+      "observed": "当前节点 3；已走 4 条边；已访问 {0, 1, 2, 3}。所有节点已到过。"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "action": "all layers, back/replay and endpoint",
+      "observed": "当前层 d=4（帧 4/4）；本层新状态 3 个；累计已发现 22 个状态对。最短覆盖长度 = 4 条边。"
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "action": "all layers, back/replay and endpoint",
+      "observed": "当前层 d=4（帧 4/4）；本层新状态 6 个；累计已发现 44 个状态对。最短覆盖长度 = 4 条边。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "action": "all layers, back/replay and endpoint",
+      "observed": "当前层 d=0（帧 0/0）；本层新状态 1 个；累计已发现 1 个状态对。最短覆盖长度 = 0 条边。"
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "action": "all layers, back/replay and endpoint",
+      "observed": "当前层 d=2（帧 2/2）；本层新状态 2 个；累计已发现 9 个状态对。最短覆盖长度 = 2 条边。"
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "action": "all layers, back/replay and endpoint",
+      "observed": "当前层 d=2（帧 2/2）；本层新状态 3 个；累计已发现 12 个状态对。最短覆盖长度 = 2 条边。"
+    },
+    {
+      "locale": "zh",
+      "action": "all predictions/reveal/change",
+      "observed": "再看终点到未访问节点的距离。 从 2 只走 2→3，需 1 步；从 0 要走 0→1→2→3，需 3 步。后者的 1、2 虽已到过，也必须再经过。集合相同不代表未来代价相同；只有终点与集合同时相同才可合并。A 忽略终点，C 少算了一条必经边。"
+    },
+    {
+      "locale": "zh",
+      "action": "locale roundtrip after interactions",
+      "formula": "(u, mask, d) → (v, mask | (1 << v), d + 1)，其中 v ∈ graph[u]；目标 full = (1 << n) − 1。",
+      "frame": "当前层 d=1（帧 1/4）；本层新状态 6 个；累计已发现 10 个状态对。还未发现覆盖所有节点的状态。",
+      "maskCause": "来自 (0, 0001₂)，沿边 0→1；0001 | 0010 = 0011（二进制）。"
+    },
+    {
+      "locale": "zh",
+      "action": "native fallback copy",
+      "attempt": 0,
+      "sentinelVerified": true,
+      "host": "linux",
+      "exactSource": true,
+      "observed": "自动复制不可用。源码已全选，请使用系统复制快捷键。"
+    },
+    {
+      "locale": "zh",
+      "action": "native fallback copy",
+      "attempt": 1,
+      "sentinelVerified": true,
+      "host": "linux",
+      "exactSource": true,
+      "observed": "自动复制不可用。源码已全选，请使用系统复制快捷键。"
+    }
+  ],
+  "fits": [
+    {
+      "width": 278,
+      "locale": "zh",
+      "label": "例 2 · 五节点",
+      "text": 89.920166015625,
+      "padding": 30,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "width": 278,
+      "locale": "en",
+      "label": "Example 2 · Five nodes",
+      "text": 170.04833984375,
+      "padding": 30,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "width": 348,
+      "locale": "zh",
+      "label": "例 2 · 五节点",
+      "text": 89.920166015625,
+      "padding": 30,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "width": 348,
+      "locale": "en",
+      "label": "Example 2 · Five nodes",
+      "text": 170.04833984375,
+      "padding": 30,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "width": 646,
+      "locale": "zh",
+      "label": "例 2 · 五节点",
+      "text": 89.920166015625,
+      "padding": 30,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "width": 646,
+      "locale": "en",
+      "label": "Example 2 · Five nodes",
+      "text": 170.04833984375,
+      "padding": 30,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "width": 910,
+      "locale": "zh",
+      "label": "例 2 · 五节点",
+      "text": 89.920166015625,
+      "padding": 30,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "width": 910,
+      "locale": "en",
+      "label": "Example 2 · Five nodes",
+      "text": 170.04833984375,
+      "padding": 30,
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    }
+  ],
+  "contrast": {
+    "calibration": true,
+    "solidTextPairs": [
+      {
+        "fg": "rgb(110, 231, 255)",
+        "bg": "rgb(13, 17, 23)",
+        "example": "#815: search layers by bus boardings",
+        "ratio": 13.100679028115637
+      },
+      {
+        "fg": "rgb(154, 167, 184)",
+        "bg": "rgb(22, 27, 34)",
+        "example": "Legend: numbers are node IDs; lines are input edges. Thick r",
+        "ratio": 7.078851579017443
+      },
+      {
+        "fg": "rgb(13, 17, 23)",
+        "bg": "rgb(110, 231, 255)",
+        "example": "Check prediction",
+        "ratio": 13.100679028115637
+      },
+      {
+        "fg": "rgb(232, 237, 244)",
+        "bg": "rgb(13, 17, 23)",
+        "example": "Full source copied.",
+        "ratio": 16.086987125379448
+      },
+      {
+        "fg": "rgb(154, 167, 184)",
+        "bg": "rgb(13, 17, 23)",
+        "example": "4 · Python",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "fg": "rgb(232, 237, 244)",
+        "bg": "rgb(28, 35, 48)",
+        "example": "Download solution.py",
+        "ratio": 13.397069143240783
+      },
+      {
+        "fg": "rgb(154, 167, 184)",
+        "bg": "rgb(28, 35, 48)",
+        "example": "From (2, 10100₂), along edge 2→3; 10100 | 01000 = 11100 (bin",
+        "ratio": 6.449407898769069
+      },
+      {
+        "fg": "rgb(232, 237, 244)",
+        "bg": "rgb(10, 14, 20)",
+        "example": "C · 1 and 2, respectively",
+        "ratio": 16.440224808744848
+      },
+      {
+        "fg": "rgb(232, 237, 244)",
+        "bg": "rgb(9, 14, 22)",
+        "example": "from collections import deque\n\n\nclass Solution:\n    def shor",
+        "ratio": 16.437295258072666
+      },
+      {
+        "fg": "rgb(232, 237, 244)",
+        "bg": "rgb(22, 27, 34)",
+        "example": "Layer 2: 11 new, 26 pairs cumulative",
+        "ratio": 14.704584598678618
+      },
+      {
+        "fg": "rgb(110, 231, 255)",
+        "bg": "rgb(22, 27, 34)",
+        "example": "All new pairs in this layer and their causes",
+        "ratio": 11.974898815275662
+      },
+      {
+        "fg": "rgb(126, 226, 168)",
+        "bg": "rgb(28, 35, 48)",
+        "example": "Correct prediction. From 2, take 2→3: 1 move. From 0, take 0",
+        "ratio": 10.004815697188947
+      }
+    ],
+    "focusRatio": 8.937191437807625
+  },
+  "focus": {
+    "width": "3px",
+    "color": "rgb(255, 180, 84)",
+    "offset": "4px"
+  },
+  "cssBytes": 11939,
+  "targets": [
+    {
+      "id": "BUTTON",
+      "height": 48
+    },
+    {
+      "id": "BUTTON",
+      "height": 48
+    },
+    {
+      "id": "move0",
+      "height": 48
+    },
+    {
+      "id": "move1",
+      "height": 48
+    },
+    {
+      "id": "move2",
+      "height": 48
+    },
+    {
+      "id": "move3",
+      "height": 48
+    },
+    {
+      "id": "undo",
+      "height": 48
+    },
+    {
+      "id": "handReset",
+      "height": 48
+    },
+    {
+      "id": "preset",
+      "height": 48
+    },
+    {
+      "id": "prev",
+      "height": 48
+    },
+    {
+      "id": "next",
+      "height": 48
+    },
+    {
+      "id": "reset",
+      "height": 48
+    },
+    {
+      "id": "end",
+      "height": 48
+    },
+    {
+      "id": "LABEL",
+      "height": 48
+    },
+    {
+      "id": "LABEL",
+      "height": 48
+    },
+    {
+      "id": "LABEL",
+      "height": 48
+    },
+    {
+      "id": "reveal",
+      "height": 48
+    },
+    {
+      "id": "predictionReset",
+      "height": 48
+    },
+    {
+      "id": "copy",
+      "height": 48
+    },
+    {
+      "id": "A",
+      "height": 48
+    }
+  ],
+  "screenshots": [
+    "hand-en.png",
+    "prediction-en.png",
+    "hand-zh.png",
+    "prediction-zh.png",
+    "trace-zh-320.png",
+    "states-zh-320.png",
+    "source-zh-320.png",
+    "trace-en-320.png",
+    "states-en-320.png",
+    "source-en-320.png",
+    "trace-zh-390.png",
+    "trace-en-390.png",
+    "trace-zh-1440.png",
+    "zoom200-zh.png",
+    "trace-en-1440.png",
+    "zoom200-en.png",
+    "keyboard-focus.png",
+    "forced-colors.png"
+  ],
+  "related": [
+    {
+      "locale": "zh",
+      "label": "#773：用 BFS 找最短拼图步数",
+      "url": "http://127.0.0.1:18770/leetcode/773/#step2",
+      "heading": "逐层搜索",
+      "excerpt": "03逐层搜索这一步要回答：怎样知道第一次遇到目标就是最少步数？广度优先搜索（BFS）按步数一层层找。前沿是“刚发现、距离同为 d 步”的所有状态；seen 是已经发现的状态集合。起点在第 0 层，因为尚未移动。仍看 123405：0 在位置 4（从 0 开始按行编号），只能换位置 1、3、5，于是得到 103425、123045、123450。这三块棋盘都是 1 步可达。123450 已是目标，且第 0 层不是目标，所以答案是 1。下一次从 103425 生成 123405 时，seen 会拒绝它：它早在第 0 层就出现过，绕回去不会让路更短。由此得到不变量：进入第 d 层时，前沿恰好包含最短距离为 d 的状态，seen 恰好包含距离不超过 d 的状态。扩展前沿的一条边只会得到距离至多 d+1 的状态；未见过的状态不可能距离 ≤d，否则早已发现。因此新状态的距离恰为 d+1，发现时立即加入 seen，防止同层重复。任何 d+1 步的路径，其倒数第二个状态距离至多 d，所以新一层也不会漏掉状态。所有边都代表 1 次移动，此证明才成立。单词接龙 II：按层保留最短路径 →先用“一步到达”走到末尾，再选“五步到达”，逐层前进，查看保留的层记录。每帧显示进入该层时的全部前沿；候选账本展示上一层第一个状态的扩展，其余状态也已完整扩展。切换预设会重启此搜索。搜索预设（更换即重启）一步到达 · 123405五步到达 · 412503无法到达 · 123540已完成 · 123450换一个起点 · 012453教学模拟：JavaScript 按完整层生成快照，并非执行下面的 Python。Python 用队列逐个取出状态，可能在一层中途返回；最少步数相同。未截断任何层或前沿。一步到达 · 123405回到上一层生成下一层重置跳到搜索结论帧 0/1 · 进入第 0 层 · 前沿 1 个状态 · 累计发现 1 个状态。尚未给出最终答案。本层全部前沿棋盘空前沿：没有更多可达状态。每块棋盘始终为 2×3。极窄缩放时，可横滑棋盘，或聚焦棋盘后按左右方向键查看三列。123405123405累计层记录：已扩展层 → 本层状态数 → 新发现数尚未扩展起点。上一层首个状态的候选账本尚未扩展起点。"
+    },
+    {
+      "locale": "zh",
+      "label": "#815：按上车次数逐层扩展",
+      "url": "http://127.0.0.1:18770/leetcode/815/#step2",
+      "heading": "一层增加一次上车，为什么线路只扫一次？",
+      "excerpt": "03一层增加一次上车，为什么线路只扫一次？这一步要回答：怎样只查真正能上的车？先建 by_stop：站点→经过它的线路编号，这叫倒排索引（由站点反查线路）。前沿 frontier 是刚发现、最少上车数相同的站点。初始前沿 [1] 距离为 0。示例 1 中，站 1 查到线路 R0=[1,2,7]，第一次上车新到 2、7；再从 7 查到 R1=[3,6,7]，第二次上车新到 3、6。为什么第二层不再扫描 R0？它的 1、2、7 已全部暴露，再上同一辆车不会增加目的地。used_routes 记录已展开的线路；seen_stops 记录已发现站点，并在入队时标记，避免同层重复加入。查线路与扫线路不同：同一线路编号可能被多个站查到，但它的站点列表只展开一次。不变量（每次扩展后仍成立的事实）：进入第 d 层时，前沿站点的最少上车数都是 d，距离更小的站点已经展开。从它们上一条未用线路，就能用 d+1 次上车到该线路的每个站。反过来，任意 d+1 次上车的行程，其最后一辆车必接在至多 d 次上车可达的站点；之前各层一定已找到它或这条线路。因此首次发现不能错过更短行程，重扫旧线路也无益。前沿为空则无法再扩展，返回 -1；若起点就是终点，则无需上车，返回 0。用单词阶梯学习 BFS 分层与保留同层路径 →实验：选示例，逐层展开，先看新线路通过哪个站被激活，再看所有已发现站点的距离标签。实线青色边框标前沿，虚线标目标；文字也标明状态。撤销、到末尾、重置均可用。换示例只重启本追踪。选择追踪示例（切换会重启）官方例 1官方例 2一车长路原地到达起点缺席重叠线路单站孤岛教学模拟，不是运行 Python：每帧完成整层，保留全部小例子的历史。Python 在首次发现目标时即可提前返回；动画可能多展示同层的其他站。快照存储是教学开销，不属于提交解法的空间界。线路 [[1,2,7],[3,6,7]]；起点 1 → 终点 6。线路编号 R0、R1… 使用从 0 开始的输入索引。← 撤回一层展开下一层 →重置本实验到追踪末尾帧 0/2；当前前沿层 0；已发现 1 个站；已展开 0 条线路。尚未到目标，继续扩展。线路状态：未展开 / 已展开于哪次上车R0：[1, 2, 7] · 未展开R1：[3, 6, 7] · 未展开累积已发现站点：标签是最少上车数站 1 · 0 次 · 前沿本层原因：新展开线路与新发现站点本帧没有新展开线路。累计扩展记录（每行是一整层）尚未扩展；起点的距离为 0。"
+    },
+    {
+      "locale": "en",
+      "label": "#773: BFS for minimum puzzle moves",
+      "url": "http://127.0.0.1:18770/leetcode/773/#step2",
+      "heading": "Search by layers",
+      "excerpt": "03Search by layersHow can the first encounter with the goal prove the fewest moves? Breadth-first search (BFS) explores one move count at a time. The frontier contains every newly discovered state at distance d; seen is the set of all discovered states. The start is layer 0 because no move has been made.Keep 123405: 0 occupies position 4 (zero-based, row-major), so it can swap only with positions 1, 3, 5. This gives 103425, 123045, 123450, each reachable in 1 move. The last is the goal and layer 0 was not, so the answer is 1. Later, when 103425 generates 123405, seen rejects it: that board was already found at layer 0, and returning cannot improve its distance.This yields the invariant: on entering layer d, the frontier is exactly the states whose shortest distance is d, and seen is exactly those within distance d. One edge from the frontier reaches a state within d+1 moves. An unseen state cannot be within d moves, or it would already have been discovered. Its distance is therefore exactly d+1. Mark it seen immediately to avoid duplicates within the new layer. Every (d+1)-move path has a penultimate state within d moves, so the next layer misses no state either. This proof relies on every edge costing one move.Word Ladder II: retain shortest paths by layer →Finish “One move”, then select “Five moves”. Advance layer by layer and inspect the retained layer ledger. Each frame shows the full frontier on entering that layer. The candidate ledger details the previous layer’s first state; all other states were also fully expanded. Changing the preset restarts this search.Search preset (changing restarts)One move · 123405Five moves · 412503Unreachable · 123540Already solved · 123450Another start · 012453Teaching simulation: JavaScript creates complete-layer snapshots; it does "
+    },
+    {
+      "locale": "en",
+      "label": "#815: search layers by bus boardings",
+      "url": "http://127.0.0.1:18770/leetcode/815/#step2",
+      "heading": "Why can a route be scanned just once?",
+      "excerpt": "03Why can a route be scanned just once?How do we look up only buses we can board? Build by_stop, mapping each stop to the route IDs serving it: an inverted index. A frontier contains newly discovered stops with the same minimum boarding count. Initially [1] has distance 0. In example 1, stop 1 finds R0=[1,2,7]; boarding it first discovers 2 and 7. Stop 7 then finds R1=[3,6,7]; a second boarding discovers 3 and 6.Why skip R0 on the second layer? Its stops 1, 2, and 7 are already exposed; boarding it again adds no destination. used_routes records expanded routes. seen_stops records discovered stops, marking them when queued so the same layer cannot add duplicates. Looking up a route differs from scanning it: several stops may look up its ID, but its stop list is expanded once.Invariant (a fact preserved by each expansion): on entry to layer d, frontier stops have minimum boarding count d, and all lower-distance stops have been expanded. An unused route touching them reaches all its stops within d+1 boardings. Conversely, any trip of d+1 boardings takes its last bus from a stop reachable within d boardings; earlier layers must already find that stop or expose that route. Thus first discovery cannot miss a shorter trip, and rescanning old routes adds nothing. An empty frontier means no further trip exists, so return -1. If source equals target, no boarding is needed: return 0.Study BFS layers and same-layer paths in Word Ladder II →Choose a case and expand layers. First inspect which stop activates each new route, then read the distance labels on all discovered stops. Solid cyan borders mark the frontier; a dashed border marks the target, also named in text. Rewind, End, and Reset are available. A preset change restarts only this trace.Trace preset (changing restarts it)Off"
+    }
+  ],
+  "offlineStorageDenied": true,
+  "limits": [
+    "CSS zoom2 used for 200% zoom coverage; no physical device or OS browser-zoom test.",
+    "Headless Linux Chromium; no independent reviewer or novice study."
+  ]
+}
