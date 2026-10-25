@@ -3307,6 +3307,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) auxiliary space"
   },
   {
+    "id": 829,
+    "title": {
+      "zh": "连续整数求和",
+      "en": "Consecutive Numbers Sum"
+    },
+    "desc": {
+      "zh": "减掉递增的台阶，用长度与整除条件数出正整数序列。",
+      "en": "Remove the increasing offsets, then count lengths with an equal-sharing test."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数学",
+        "en": "Mathematics"
+      },
+      {
+        "zh": "枚举长度",
+        "en": "Length enumeration"
+      }
+    ],
+    "path": "829/",
+    "leetcodeUrl": "https://leetcode.com/problems/consecutive-numbers-sum/",
+    "language": "Python",
+    "complexity": "O(sqrt(n)) time; O(1) auxiliary space"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
