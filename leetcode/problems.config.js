@@ -3467,6 +3467,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n² log n) time; O(n) auxiliary space"
   },
   {
+    "id": 854,
+    "title": {
+      "zh": "相似度为 K 的字符串",
+      "en": "K-Similar Strings"
+    },
+    "desc": {
+      "zh": "从亲手交换到保留最短路径的首错剪枝 BFS。",
+      "en": "Derive first-mismatch BFS pruning from concrete swaps."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "854/",
+    "leetcodeUrl": "https://leetcode.com/problems/k-similar-strings/",
+    "language": "Python",
+    "complexity": "O(S n²) time; O(S n) space, S = n! / product of letter-count factorials"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",

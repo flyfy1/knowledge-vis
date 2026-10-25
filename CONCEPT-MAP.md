@@ -1764,3 +1764,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Lexicographic ordering | `leetcode/987/#step3` | Sort column, then row, then value; group contiguous columns. |
 
 <!-- /leetcode-987-campaign -->
+
+
+<!-- leetcode-854-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| First-mismatch swap pruning | `leetcode/854/#step2` | Preserve an optimal swap route while fixing the first mismatched position. |
+
+<!-- /leetcode-854-campaign -->
