@@ -1,0 +1,9 @@
+{
+  "command": "python3 -B scripts/register_leetcode_lesson.py 726 --validate-only",
+  "cwd": "/home/songyy/projects/leetcode-hard-lane-726-20261025",
+  "at": "2026-10-25T05:33:44.845650+00:00",
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "",
+  "complexity": "O(n\u00b2 + kL log k) time; O(n) auxiliary space"
+}
