@@ -1539,3 +1539,13 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Cycle lower bound | `leetcode/765/#step3` | At most one component is added per swap; greedy reaches n components in n-c swaps. |
 
 <!-- /leetcode-765-campaign -->
+
+
+<!-- leetcode-780-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Forced reverse moves | `leetcode/780/#step1` | Derive the unique positive predecessor from the larger coordinate. |
+| Modulo and reachability boundary | `leetcode/780/#step2` | Batch forced subtractions and finish using a divisible nonnegative difference. |
+
+<!-- /leetcode-780-campaign -->
