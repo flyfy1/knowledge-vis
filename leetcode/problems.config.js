@@ -2857,6 +2857,118 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n² log n) time; O(n²) auxiliary space (conservative bounds for slicing implementation)"
   },
   {
+    "id": 768,
+    "title": {
+      "zh": "最多能完成排序的块 II",
+      "en": "Max Chunks To Make Sorted II"
+    },
+    "desc": {
+      "zh": "从亲手切分到前缀最大值与后缀最小值，推导所有安全切口。",
+      "en": "Derive every safe cut using prefix maxima and suffix minima, starting with hand-sorted chunks."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数组",
+        "en": "Arrays"
+      },
+      {
+        "zh": "前缀与后缀",
+        "en": "Prefixes and suffixes"
+      },
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      }
+    ],
+    "path": "768/",
+    "leetcodeUrl": "https://leetcode.com/problems/max-chunks-to-make-sorted-ii/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
+    "id": 770,
+    "title": {
+      "zh": "基本计算器 IV",
+      "en": "Basic Calculator IV"
+    },
+    "desc": {
+      "zh": "从四个手算乘积推导规范项键、递归解析与稀疏多项式运算。",
+      "en": "Derive canonical term keys, recursive parsing and sparse polynomial arithmetic from four hand products."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "符号计算",
+        "en": "Symbolic arithmetic"
+      },
+      {
+        "zh": "递归解析",
+        "en": "Recursive parsing"
+      },
+      {
+        "zh": "哈希表",
+        "en": "Hash maps"
+      }
+    ],
+    "path": "770/",
+    "leetcodeUrl": "https://leetcode.com/problems/basic-calculator-iv/",
+    "language": "Python",
+    "complexity": "O(E + n(P+1)²(D+1)log(D+2) + P log(P+1)(D+1)) key operations; O(E + n(P+1)(D+1)) auxiliary space plus output strings"
+  },
+  {
+    "id": 773,
+    "title": {
+      "zh": "滑动谜题",
+      "en": "Sliding Puzzle"
+    },
+    "desc": {
+      "zh": "从一次空位交换推导广度优先搜索，用完整层证明最少移动次数。",
+      "en": "Derive breadth-first search from a blank swap and prove minimum moves with complete layers."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "状态空间",
+        "en": "State space"
+      }
+    ],
+    "path": "773/",
+    "leetcodeUrl": "https://leetcode.com/problems/sliding-puzzle/",
+    "language": "Python",
+    "complexity": "O(V+E) time; O(V) auxiliary space for fixed six-cell states, V ≤ 720 and E ≤ 3V"
+  },
+  {
+    "id": 778,
+    "title": {
+      "zh": "水位上升的泳池中游泳",
+      "en": "Swim in Rising Water"
+    },
+    "desc": {
+      "zh": "从路径最高点推导最小瓶颈搜索，逐步证明最早可达水位。",
+      "en": "Derive a minimum-bottleneck search from path maxima and prove the earliest reachable water level."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "图搜索",
+        "en": "Graph search"
+      },
+      {
+        "zh": "最小堆",
+        "en": "Min-heap"
+      }
+    ],
+    "path": "778/",
+    "leetcodeUrl": "https://leetcode.com/problems/swim-in-rising-water/",
+    "language": "Python",
+    "complexity": "O(n² log n) time; O(n²) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

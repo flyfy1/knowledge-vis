@@ -1,0 +1,36 @@
+{
+  "problemId": 773,
+  "status": "author-self-checked; independent review pending",
+  "candidate": "773-author-r1",
+  "frozenAt": "2026-10-25T10:47:37.236975+00:00",
+  "files": {
+    "BRIEF.md": "636eebde009645f82679f971642c881c84b012df97b0fb5bd59fdfc0b287accf",
+    "SELF-CHECK.md": "d96486172f5f38632b703e5fa61fd06f8ecf63edb7c099a76c422a76659c9255",
+    "app.js": "4fbf3c58d51a0570465f64f58645dd9efdc4a9d2ef7cda37c8b73b40f44c5a66",
+    "copy.js": "e9d3f22b5fb9c5194ff736c00302a987e91cb13124f13689282d416b4ea6463e",
+    "core.js": "815d9b038f06cbcbbee1a2fd95b4e8c478668b90a6996e98b41f8755194b09c9",
+    "index.html": "8cc3be30e0bb5251cc797cb3c753f14d1e4ccd4595126dd46aa5872a403f8bb5",
+    "lesson-entry.json": "c49712e73a49c088292740e414bad0ef10aa46c4332b076a39456424166badf3",
+    "python-code.js": "21dbfcbf02be53bfc6c88cbc2e94f2cbf5b0d97a050ce7bcc1f02664bab069e5",
+    "solution.py": "a24fdc4f8c888cd004edaa9aafc7d6b347e0979a554d483c8d98fcdc62765149",
+    "style.css": "9085f29ec062afb15166ad311eda6878c94cad8638c58667ecfee91d2e056bef",
+    "tests/README.md": "8e0bc36b8a25ae5622fe811898776ec5d1c6945afd00bde8b968cccb2d5dfc73",
+    "tests/browser.cjs": "0ed9876d5c0479d188cdb4fda3cd70f5f80d3cd51bf1a99bd5f5a90da38287a6",
+    "tests/build_copy.py": "7985730ae23963554ccbe549a788f787950a0d416b52d66ef635506a5c16db26",
+    "tests/focused.cjs": "af02bcf70a03c41d148ef5be21dbc21445fb11aa2147a5c192979cbc96d83be5",
+    "tests/test_core.cjs": "2e68efdd9c63cd0eb896f5a54e469629f247d98cd4ef249c1dd85ba5ce968153",
+    "tests/test_solution.py": "e06ad9cb4a32b7eed16cd1539fd440bf6f5a1f9eff2f02e4edc31e47ce26139b"
+  },
+  "sharedAssets": {
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b"
+  },
+  "evidence": [
+    "tests/evidence/official.json",
+    "tests/evidence/solution-results.json",
+    "tests/evidence/core-results.json",
+    "tests/evidence/browser-results.json",
+    "tests/evidence/focused-results.json",
+    "tests/evidence/preflight.json"
+  ]
+}
