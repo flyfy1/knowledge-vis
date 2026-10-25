@@ -50,7 +50,7 @@ for i,port in [('975',18793),('980',18794)]:
  targets.append({'id':i,'port':port,'in_queue':i in s['queue'],'problem_record':s['problems'].get(i),'runs':[r['id']for r in s['runs']if r.get('problem_id')==i],'reservation_exists':(state_dir/f'lane-{i}-reservation.json').exists(),'repo_exists':(root/f'leetcode-hard-lane-{i}-20261026').exists(),'state_exists':(root/f'leetcode-hard-lane-state-{i}-20261026').exists(),'branch_exists':subprocess.run(['git','-C',str(repo),'show-ref','--verify','--quiet',f'refs/heads/codex/lane-{i}-20261026']).returncode==0,'port_listeners':[l for l in listeners[1:]if l.split()[3].endswith(':'+str(port))]})
 policy=hashlib.sha256((repo/'specs/leetcode-rendered-state-contract.md').read_bytes()).hexdigest()
 assert policy=='d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa'
-dirty=subprocess.check_output(['git','-C',str(repo),'status','--porcelain'],text=True).splitlines()
+dirty=subprocess.check_output(['git','-C',str(repo),'status','--porcelain','--untracked-files=all'],text=True).splitlines()
 prompt=(pathlib.Path(run['directory'])/'prompt.md').read_text()
 match=re.search(r"This run's exclusive screenshot directory is (specs/reviews/[0-9]+-evidence/[A-Za-z0-9-]+)/\.",prompt)
 allowed_evidence=match[1] if match else None

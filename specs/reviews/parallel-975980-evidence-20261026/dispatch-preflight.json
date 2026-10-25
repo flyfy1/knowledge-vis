@@ -1,0 +1,11 @@
+{
+  "status": "refused-before-mutation",
+  "at": "2026-10-25T20:20:24.931048+00:00",
+  "preflightSha256": "787782dcbd0fc732583a29366b9eb86b792f23db674c0589888750f1c9e6c752",
+  "launcherSha256": "977739897dfb2a58d1c9eba9b20b43346226d35eea515181263edf18f7d0b348",
+  "error": "AssertionError at preflight line58: ['?? specs/reviews/834-evidence/']; subsequent read-only observation confirms central advanced to #834 review.",
+  "launcherTransferred": false,
+  "launcherExecuted": false,
+  "spawnOccurred": false,
+  "observation": "dispatch-refusal-observation.json"
+}

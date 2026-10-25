@@ -8,7 +8,7 @@ import unittest
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
 SOURCE_SHA = '012137ab9eabb43cb6b9038ab6065312d8287724540d67fb362038ac4a5caa05'
-PENDING_SHA = '977739897dfb2a58d1c9eba9b20b43346226d35eea515181263edf18f7d0b348'
+PENDING_SHA = '467f08885a37290419486c26d25b9e379acf86541d7dab854389513982e7c5bb'
 MAPPING = json.loads((HERE / 'parameter-map.json').read_text())
 SOURCE = (REPO / MAPPING['source']).read_text()
 PENDING = (HERE / 'launch.py').read_text()
@@ -16,7 +16,8 @@ PENDING = (HERE / 'launch.py').read_text()
 
 def validate(candidate):
     assert hashlib.sha256(SOURCE.encode()).hexdigest() == SOURCE_SHA
-    assert len(MAPPING['substitutions']) == 9
+    assert len(MAPPING['substitutions']) == MAPPING['actualParameterSubstitutionCount']
+    assert all(c['from'] != c['to'] for c in MAPPING['substitutions'])
     restored = candidate
     for change in reversed(MAPPING['substitutions']):
         assert restored.count(change['to']) == 1

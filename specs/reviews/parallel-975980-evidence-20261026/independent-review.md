@@ -29,3 +29,19 @@ existing threshold. These are dated observations: immediately revalidate before
 dispatch and refuse changed pins. Natural advancement requires a new reviewed
 parameter identity, not a blind retry. After dispatch, require distinct live
 author processes and sessions; ordinary independent lesson review remains required.
+
+## Refreshed observation approval
+
+Root reviewed the subsequent parameter-only diff and complete refreshed preflight
+and independently reran all seven tests successfully. The approved launcher is now
+`467f08885a37290419486c26d25b9e379acf86541d7dab854389513982e7c5bb`,
+with preflight
+`8d22d4b815dd3363d682a86c14472effecd22e1334a4254d6c81049b9b97aab8`.
+The immutable base and shared policy remain unchanged. Central observation pins
+now identify the registered #818 revision and active #834 review. The preflight
+expands untracked files before applying the existing exact prompt-bound allowlist;
+it does not admit unrelated paths. Tests reject identity substitutions and restore
+the original launcher bytes and AST. The prior zero-spawn refusal remains recorded.
+One dispatch of these exact bytes is approved after immediate fresh revalidation;
+changed central identity requires a newly reviewed refresh, and partial execution
+must be observed without rerunning. No lesson acceptance or publication is implied.
