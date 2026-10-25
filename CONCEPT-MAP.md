@@ -1437,3 +1437,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | maximality of all safe cuts | `leetcode/768/#step3` | All safe boundaries coexist; every legal partition uses only safe boundaries. |
 
 <!-- /leetcode-768-campaign -->
+
+
+<!-- leetcode-770-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Canonical polynomial keys | `leetcode/770/#step1` | Sorted variable tuples preserve multiplicity and identify equal terms. |
+| Polynomial parser invariant | `leetcode/770/#step2` | Each returned coefficient map denotes exactly its consumed subexpression after substitution. |
+| Sparse polynomial multiplication | `leetcode/770/#step2` | Distribute every pair and combine coefficients for matching canonical keys. |
+
+<!-- /leetcode-770-campaign -->

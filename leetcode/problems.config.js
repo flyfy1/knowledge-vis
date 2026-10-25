@@ -2917,6 +2917,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) auxiliary space"
   },
   {
+    "id": 770,
+    "title": {
+      "zh": "基本计算器 IV",
+      "en": "Basic Calculator IV"
+    },
+    "desc": {
+      "zh": "从四个手算乘积推导规范项键、递归解析与稀疏多项式运算。",
+      "en": "Derive canonical term keys, recursive parsing and sparse polynomial arithmetic from four hand products."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "符号计算",
+        "en": "Symbolic arithmetic"
+      },
+      {
+        "zh": "递归解析",
+        "en": "Recursive parsing"
+      },
+      {
+        "zh": "哈希表",
+        "en": "Hash maps"
+      }
+    ],
+    "path": "770/",
+    "leetcodeUrl": "https://leetcode.com/problems/basic-calculator-iv/",
+    "language": "Python",
+    "complexity": "O(E + n(P+1)²(D+1)log(D+2) + P log(P+1)(D+1)) key operations; O(E + n(P+1)(D+1)) auxiliary space plus output strings"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
