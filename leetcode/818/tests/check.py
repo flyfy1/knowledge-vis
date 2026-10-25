@@ -36,11 +36,11 @@ for t in range(1, 26):
     assert actual == enumerate_commands(t) == expected[t], (t, actual)
     records.append({'target': t, 'answer': actual, 'oracle': 'raw-string enumeration and independent distance DP'})
 rng = random.Random(818)
-for t in sorted(set([1, 3, 6, 10000, 9999, 8191, 8192] + [rng.randint(1, 1000) for _ in range(18)])):
+for t in sorted(set([1, 3, 6, 9809, 9879, 10000, 9999, 8191, 8192] + [rng.randint(1, 1000) for _ in range(18)])):
     start = time.perf_counter()
     actual = solve(t)
     assert actual == expected[t], (t, actual, expected[t])
-    records.append({'target': t, 'answer': actual, 'seconds': time.perf_counter() - start, 'oracle': 'distance DP'})
+    records.append({'target': t, 'answer': actual, 'seconds': time.perf_counter() - start, 'oracle': 'distance DP numerical corroboration; correctness rests on lower-bound/goal-pop proof'})
 for k in range(1, 14):
     t = (1 << k) - 1
     assert solve(t) == k
