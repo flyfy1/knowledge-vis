@@ -1,0 +1,147 @@
+{
+  "observed_at": "2026-10-25T22:44:27.066840+00:00",
+  "receipt": {
+    "owner": "import992995-only-20261026-888bb6ac",
+    "status": "waiting-for-natural-boundary",
+    "created_at": "2026-10-25T22:43:15.305924+00:00",
+    "imports": [],
+    "lanes": [
+      {
+        "id": "992",
+        "lane_head": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+        "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+        "score": 100.0,
+        "required_open": [],
+        "run_ids": [
+          "992-author-bd39779c66e3",
+          "992-review-67f5902a3c90"
+        ]
+      },
+      {
+        "id": "995",
+        "lane_head": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+        "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+        "score": 95.0,
+        "required_open": [],
+        "run_ids": [
+          "995-author-ab095f2912c3",
+          "995-review-f5d78a25ecbc"
+        ]
+      }
+    ],
+    "pre_stop_plan": {
+      "next_problem_id": "864",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987"
+        ],
+        "incoming": [
+          "992",
+          "995"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 7
+      }
+    },
+    "stop": {
+      "owner": "import992995-only-20261026-888bb6ac",
+      "created_at": "2026-10-25T22:43:18.654095+00:00",
+      "reason": "Finish current stage; import independently accepted992/995 under unchanged policy, then resume the normal queue.",
+      "lane_ids": [
+        "992",
+        "995"
+      ]
+    }
+  },
+  "receiptRawBase64": "ewogICJvd25lciI6ICJpbXBvcnQ5OTI5OTUtb25seS0yMDI2MTAyNi04ODhiYjZhYyIsCiAgInN0YXR1cyI6ICJ3YWl0aW5nLWZvci1uYXR1cmFsLWJvdW5kYXJ5IiwKICAiY3JlYXRlZF9hdCI6ICIyMDI2LTEwLTI1VDIyOjQzOjE1LjMwNTkyNCswMDowMCIsCiAgImltcG9ydHMiOiBbXSwKICAibGFuZXMiOiBbCiAgICB7CiAgICAgICJpZCI6ICI5OTIiLAogICAgICAibGFuZV9oZWFkIjogImVkNDMwYWZiYmUzNDhhMzAyZDZkZGIwY2QzNWY4MTQyZTJhMGMwNGMiLAogICAgICAiY2FuZGlkYXRlIjogImQwYzg1YjJiOTNhNmYyOWUyM2NkZjljNmI3ZjE5OTYzZDI2NmI5YWEiLAogICAgICAic2NvcmUiOiAxMDAuMCwKICAgICAgInJlcXVpcmVkX29wZW4iOiBbXSwKICAgICAgInJ1bl9pZHMiOiBbCiAgICAgICAgIjk5Mi1hdXRob3ItYmQzOTc3OWM2NmUzIiwKICAgICAgICAiOTkyLXJldmlldy02N2Y1OTAyYTNjOTAiCiAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICI5OTUiLAogICAgICAibGFuZV9oZWFkIjogIjJlZjVjNTI1Yzc1MGQ4MDAyNjljYzMzZWQ1NjVmOWE4MGI3NTJhMjMiLAogICAgICAiY2FuZGlkYXRlIjogImQ4NGNmYjUyNjUxMDNkNmQzMjFmZGMzZjBkNWRkNGIzZTE3YWMxM2MiLAogICAgICAic2NvcmUiOiA5NS4wLAogICAgICAicmVxdWlyZWRfb3BlbiI6IFtdLAogICAgICAicnVuX2lkcyI6IFsKICAgICAgICAiOTk1LWF1dGhvci1hYjA5NWYyOTEyYzMiLAogICAgICAgICI5OTUtcmV2aWV3LWY1ZDc4YTI1ZWNiYyIKICAgICAgXQogICAgfQogIF0sCiAgInByZV9zdG9wX3BsYW4iOiB7CiAgICAibmV4dF9wcm9ibGVtX2lkIjogIjg2NCIsCiAgICAicmVnaXN0cmF0aW9uX2lkcyI6IFtdLAogICAgInB1YmxpY2F0aW9uX2JvdW5kIjogewogICAgICAiZWxpZ2libGUiOiBbCiAgICAgICAgIjg1NCIsCiAgICAgICAgIjg1NyIsCiAgICAgICAgIjg2MiIsCiAgICAgICAgIjk4MiIsCiAgICAgICAgIjk4NyIKICAgICAgXSwKICAgICAgImluY29taW5nIjogWwogICAgICAgICI5OTIiLAogICAgICAgICI5OTUiCiAgICAgIF0sCiAgICAgICJyZWdpc3RyYXRpb25faWRzIjogW10sCiAgICAgICJyZW9wZW5lZF91cHBlcl9ib3VuZF9pZHMiOiBbXSwKICAgICAgInVwcGVyX2JvdW5kX2lkcyI6IFsKICAgICAgICAiODU0IiwKICAgICAgICAiODU3IiwKICAgICAgICAiODYyIiwKICAgICAgICAiOTgyIiwKICAgICAgICAiOTg3IiwKICAgICAgICAiOTkyIiwKICAgICAgICAiOTk1IgogICAgICBdLAogICAgICAidXBwZXJfYm91bmQiOiA3CiAgICB9CiAgfSwKICAic3RvcCI6IHsKICAgICJvd25lciI6ICJpbXBvcnQ5OTI5OTUtb25seS0yMDI2MTAyNi04ODhiYjZhYyIsCiAgICAiY3JlYXRlZF9hdCI6ICIyMDI2LTEwLTI1VDIyOjQzOjE4LjY1NDA5NSswMDowMCIsCiAgICAicmVhc29uIjogIkZpbmlzaCBjdXJyZW50IHN0YWdlOyBpbXBvcnQgaW5kZXBlbmRlbnRseSBhY2NlcHRlZDk5Mi85OTUgdW5kZXIgdW5jaGFuZ2VkIHBvbGljeSwgdGhlbiByZXN1bWUgdGhlIG5vcm1hbCBxdWV1ZS4iLAogICAgImxhbmVfaWRzIjogWwogICAgICAiOTkyIiwKICAgICAgIjk5NSIKICAgIF0KICB9Cn0K",
+  "receiptSha256": "aae9de78d5a90cc3d44319460f4880fd0588f906b6c3c8028943af378b4a0613",
+  "operatorAlive": true,
+  "head": "237c625ccf42fe101afd96e2d913c9b933566ecf",
+  "status": "running",
+  "current": {
+    "problem_id": "864",
+    "stage": "author",
+    "started_at": "2026-10-25T22:35:36.464754+00:00",
+    "run_id": "864-author-a939f826b6fa"
+  },
+  "currentRun": {
+    "id": "864-author-a939f826b6fa",
+    "problem_id": "864",
+    "role": "author",
+    "started_at": "2026-10-25T22:35:36.464754+00:00",
+    "status": "running",
+    "candidate": "237c625ccf42fe101afd96e2d913c9b933566ecf",
+    "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/864-author-a939f826b6fa",
+    "session_ids": []
+  },
+  "runnerPid": 1774575,
+  "stop": {
+    "owner": "import992995-only-20261026-888bb6ac",
+    "created_at": "2026-10-25T22:43:18.654095+00:00",
+    "reason": "Finish current stage; import independently accepted992/995 under unchanged policy, then resume the normal queue.",
+    "lane_ids": [
+      "992",
+      "995"
+    ]
+  },
+  "reservation": {
+    "992": {
+      "id": "992",
+      "base": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-992-20261026",
+      "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-992-20261026",
+      "port": 18797,
+      "nice": 10,
+      "status": "started",
+      "started_at": "2026-10-25T22:14:54.383560+00:00",
+      "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+      "publication_enabled": false,
+      "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+      "runner_pid": 1781208,
+      "observed_current": {
+        "problem_id": "992",
+        "stage": "author",
+        "started_at": "2026-10-25T22:15:17.548313+00:00",
+        "run_id": "992-author-bd39779c66e3"
+      }
+    },
+    "995": {
+      "id": "995",
+      "base": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-995-20261026",
+      "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-995-20261026",
+      "port": 18798,
+      "nice": 10,
+      "status": "started",
+      "started_at": "2026-10-25T22:15:19.268574+00:00",
+      "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+      "publication_enabled": false,
+      "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+      "runner_pid": 1781819,
+      "observed_current": {
+        "problem_id": "995",
+        "stage": "author",
+        "started_at": "2026-10-25T22:15:44.915979+00:00",
+        "run_id": "995-author-ab095f2912c3"
+      }
+    }
+  },
+  "ledgerSha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+  "policySha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+  "log": ""
+}

@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-10-25T22:52:41.797698+00:00",
+  "path": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/864-review-7fed1ec4a8a0/events.jsonl",
+  "events": [
+    {
+      "type": "thread.started",
+      "thread_id": "01a17542-763c-7103-a644-a510f6ac1932"
+    },
+    {
+      "type": "turn.started"
+    }
+  ],
+  "fileSha256": "6e9078ade72f648bd408086319781dd35db36741b40a0a589b3d8c1e835adfdf",
+  "note": "Current progress run session_ids is empty until runner collection; live thread identity is verified from events, not assumed already persisted in that list."
+}

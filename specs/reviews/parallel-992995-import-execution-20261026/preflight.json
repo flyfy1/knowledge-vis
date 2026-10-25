@@ -1,0 +1,839 @@
+{
+  "pins": {
+    "status": "frozen-accepted-pair",
+    "ids": [
+      "992",
+      "995"
+    ],
+    "lanes": {
+      "992": {
+        "head": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+        "entry": {
+          "status": "accepted_local",
+          "rounds": 1,
+          "new": true,
+          "phase": "done",
+          "reviews": [
+            {
+              "outcome": "accepted",
+              "scores": [
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "required_open": [],
+              "report_path": "specs/reviews/992-review-1-c3711b80.md",
+              "evidence": [
+                "Cold browser walkthrough saved before source audit.",
+                "Fresh input [2,1,2,3], k=2 returned predicted 4; input unchanged.",
+                "Canonical Python passed 16,739 independently enumerated cases.",
+                "Bilingual interactions, rewind/reset, keyboard, 320/390/desktop and 200% CSS zoom checked; screenshots inspected.",
+                "Exact source, display, copy, fallback and download parity passed.",
+                "Metadata validate-only preflight passed."
+              ],
+              "detail": "100/100; no required findings. Acceptance applies to the reviewed revision only. No human-comprehension, LeetCode-submission or publication claim.",
+              "run_id": "992-review-67f5902a3c90",
+              "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+              "candidate_sha256": "d5892acd35700b0e2fef2f2dd839a13e132754cb6672610239dca3088d86ccb1",
+              "weighted_score": 100.0,
+              "round": 1,
+              "commit": "3451d95894cf401b2462024ca4165565b259e6db"
+            }
+          ],
+          "author_runs": [
+            "992-author-bd39779c66e3"
+          ],
+          "prior_report": "specs/reviews/992-review-1-c3711b80.md",
+          "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+          "registration_commit": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+          "accepted_at": "2026-10-25T22:31:47.804748+00:00"
+        },
+        "entry_sha256": "be685be573c3d1da78f35e37e551d4916c7889c2be0e87d04a79b1d5b912b874",
+        "runs_sha256": "248950c69502c822aa641b48228ee2229e76007157b076999ddf2dabf276eeda",
+        "progress_sha256": "7c7632e045369a078bb065a1e0e76f188892e887f50784bedf0290449755a949",
+        "report_sha256": "d8c8d92884ac9631356548600fe2ec22992fefef0be6b61c298f5c12e733a016",
+        "reservation": {
+          "id": "992",
+          "base": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+          "repo": "/home/songyy/projects/leetcode-hard-lane-992-20261026",
+          "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-992-20261026",
+          "port": 18797,
+          "nice": 10,
+          "status": "started",
+          "started_at": "2026-10-25T22:14:54.383560+00:00",
+          "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+          "publication_enabled": false,
+          "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+          "runner_pid": 1781208,
+          "observed_current": {
+            "problem_id": "992",
+            "stage": "author",
+            "started_at": "2026-10-25T22:15:17.548313+00:00",
+            "run_id": "992-author-bd39779c66e3"
+          }
+        }
+      },
+      "995": {
+        "head": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+        "entry": {
+          "status": "accepted_local",
+          "rounds": 1,
+          "new": true,
+          "phase": "done",
+          "reviews": [
+            {
+              "outcome": "accepted",
+              "scores": [
+                4,
+                3,
+                4,
+                4,
+                4,
+                4
+              ],
+              "required_open": [],
+              "report_path": "specs/reviews/995-review-1-c18c137a.md",
+              "evidence": [
+                "Cold browser walkthrough saved before source inspection.",
+                "Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.",
+                "Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.",
+                "Non-mutating metadata preflight exited 0."
+              ],
+              "detail": "95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication.",
+              "run_id": "995-review-f5d78a25ecbc",
+              "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+              "candidate_sha256": "20e4b739f8b1a7fae70008c3172e060d0b2c28876e550fab8aaed24fcf3942c4",
+              "weighted_score": 95.0,
+              "round": 1,
+              "commit": "5a5cd3c329aec4854ea61f0ae5d15b1826f94a21"
+            }
+          ],
+          "author_runs": [
+            "995-author-ab095f2912c3"
+          ],
+          "prior_report": "specs/reviews/995-review-1-c18c137a.md",
+          "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+          "registration_commit": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+          "accepted_at": "2026-10-25T22:36:24.169208+00:00"
+        },
+        "entry_sha256": "2c890f485eaedf4fe72a1c190191cbe66373eae984b3ba08cc1db260755168bf",
+        "runs_sha256": "a1963f986a4abcb8a26efd21bacd6064ed999ec89b00a9abd675716c04862dbc",
+        "progress_sha256": "f4f988be0f114408dfeb1a25eb194775044a0bf3cc3374bf3b050abf0219a094",
+        "report_sha256": "b21c0af543f3f9379fdd99ba319e7177d027509070883ba878b2be09c066c97d",
+        "reservation": {
+          "id": "995",
+          "base": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+          "repo": "/home/songyy/projects/leetcode-hard-lane-995-20261026",
+          "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-995-20261026",
+          "port": 18798,
+          "nice": 10,
+          "status": "started",
+          "started_at": "2026-10-25T22:15:19.268574+00:00",
+          "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+          "publication_enabled": false,
+          "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+          "runner_pid": 1781819,
+          "observed_current": {
+            "problem_id": "995",
+            "stage": "author",
+            "started_at": "2026-10-25T22:15:44.915979+00:00",
+            "run_id": "995-author-ab095f2912c3"
+          }
+        }
+      }
+    },
+    "lane_base": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+    "queue_sha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+    "policy": {
+      "scripts/import_leetcode_lane.py": "8642a573383d052ce6e227bd8c2374f9c50f2fc1e8e9b312a6186607015344e0",
+      "scripts/leetcode_campaign.py": "a1258a0e7eba60e1d813bf0f9ede57a71f92cd504f6afb7bd0553d68d41c65ed",
+      "scripts/leetcode_publish.py": "7292c88e2ae035667a1bc723b076fb3d8d3d8562dc8428f3f66f74dc60f764d8",
+      "scripts/leetcode_registry.py": "a23b9b9e4feec966969c0b4c60f16e19cc2616ea0e1b2e587d15605e739349d6",
+      "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+      "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+      "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+      "scripts/campaign-prompts/author.md": "5f7feaa56f9f8f1f3f434e1fe4576cc2a10da21594c9aef829cab86e69dae06b",
+      "scripts/campaign-prompts/review.md": "129537defd8df8fda1c84c3bea80b62c8c717275f558128d8b62b02319838a1b",
+      "scripts/campaign-prompts/fix.md": "176376ca977b1b8e0f4444612efdf91b8a7d49e1f1c614e8985544828bb774d4",
+      "specs/reviews/workflow-copy-repair-requests-20261026/780.md": "79235a599df5139b2e8dc1c2a51fe673fd7b28bf46b2d3a3bbec34a1b22e280b",
+      "specs/reviews/workflow-copy-repair-requests-20261026/793.md": "ff52e23452b5099a60fc80e9a9fe1bed1e0840d4408c66793509335edb7536e5",
+      "specs/reviews/workflow-copy-repair-requests-20261026/798.md": "da3da5361f94e48e2a91ddb39e537146f2aff9939b7220b17a368f884d151318",
+      "specs/reviews/workflow-copy-repair-requests-20261026/801.md": "8bf72192c53809c60cf6bedf2379af8c185ce775346f4de59d0eee598af4b83a",
+      "specs/reviews/workflow-copy-repair-requests-20261026/815.md": "5c9697057a2218726823f12e58494fedde6221d5d19d87da9a1a8a25cd76977a",
+      "specs/reviews/workflow-copy-repair-requests-20261026/903.md": "5227f5ede9949c1bc677c06fa8c6a2a940dabf4e43b41829ef8be64750ad0476",
+      "specs/reviews/workflow-copy-repair-requests-20261026/920.md": "70b97c693528cb26a70d8f1ad8497c9d96812ab551704090f6d24057146e666e",
+      "specs/reviews/workflow-copy-repair-requests-20261026/940.md": "56df85c64f2ae135ce2d8323c052eba978bb50b231d899c840b2a07a0e6a5981",
+      "specs/reviews/workflow-copy-repair-requests-20261026/956.md": "635cfac82ede95dbb081fa8ced9935b28d0234fed4928ea9b5d10bd7d2f7e77f",
+      "specs/reviews/workflow-copy-repair-requests-20261026/README.md": "9c7747a2a299d19d3c3b329fa9d4a423fe2403141e3b4fd6484878bb8ee7584a",
+      "scripts/register_leetcode_lesson.py": "7ba274cd733a36528d98c85fe87b46d5535bc34898567b0c14f36fda37f81310",
+      "scripts/leetcode_static_versions.py": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e"
+    },
+    "launcher_sha256": "94056740463e5f9ec4fe63d0d2c56d1ccbf1ab60556f7952580fe58512127e70",
+    "central": {
+      "head": "237c625ccf42fe101afd96e2d913c9b933566ecf",
+      "current": {
+        "problem_id": "864",
+        "stage": "author",
+        "started_at": "2026-10-25T22:35:36.464754+00:00",
+        "run_id": "864-author-a939f826b6fa"
+      },
+      "runner_pid": 1774575,
+      "resume_plan": {
+        "next_problem_id": "864",
+        "registration_ids": [],
+        "publication_bound": {
+          "eligible": [
+            "854",
+            "857",
+            "862",
+            "982",
+            "987"
+          ],
+          "incoming": [
+            "992",
+            "995"
+          ],
+          "registration_ids": [],
+          "reopened_upper_bound_ids": [],
+          "upper_bound_ids": [
+            "854",
+            "857",
+            "862",
+            "982",
+            "987",
+            "992",
+            "995"
+          ],
+          "upper_bound": 7
+        }
+      }
+    },
+    "release": {
+      "id": "84dfd908f5c94592918eb4ecb72eb87e",
+      "revision": "7fd4aa457c318f053d7dc722fd63b3012bccb838",
+      "receipt_sha256": "218c639dab100046ba7cd6f687a13d769a230b2d601d9b33346dd78835023014",
+      "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6"
+    }
+  },
+  "observation": {
+    "observed_at": "2026-10-25T22:42:55.858268+00:00",
+    "read_only": true,
+    "head": "237c625ccf42fe101afd96e2d913c9b933566ecf",
+    "current": {
+      "problem_id": "864",
+      "stage": "author",
+      "started_at": "2026-10-25T22:35:36.464754+00:00",
+      "run_id": "864-author-a939f826b6fa"
+    },
+    "central_progress_sha256": "a24a28511f5bed6f9b988b7fdb02ad6254af9d3687f7dd06d01750c68e89c056",
+    "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+    "resume_plan": {
+      "next_problem_id": "864",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987"
+        ],
+        "incoming": [
+          "992",
+          "995"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 7
+      }
+    },
+    "central_runner_pid": 1774575,
+    "native_proof": {
+      "current": {
+        "problem_id": "864",
+        "stage": "author",
+        "started_at": "2026-10-25T22:35:36.464754+00:00",
+        "run_id": "864-author-a939f826b6fa"
+      },
+      "session_id": "01a17534-7ece-7673-bb9b-a107a54f298f",
+      "native_codex_pids": [
+        1805108
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a17534-7ece-7673-bb9b-a107a54f298f"
+        },
+        {
+          "type": "turn.started"
+        }
+      ]
+    },
+    "native": {
+      "args": [
+        "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex",
+        "exec",
+        "-m",
+        "gpt-6.1-sol",
+        "-c",
+        "model_reasoning_effort=\"medium\"",
+        "-c",
+        "approval_policy=\"never\"",
+        "--sandbox",
+        "danger-full-access",
+        "--json",
+        "-o",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/864-author-a939f826b6fa/final.json",
+        "--output-schema",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/864-author-a939f826b6fa/schema.json",
+        "-C",
+        "/home/songyy/projects/leetcode-hard-campaign-20261018",
+        "-"
+      ],
+      "ppid": 1805101,
+      "cwd": "/home/songyy/projects/leetcode-hard-campaign-20261018"
+    },
+    "current_prompt_sha256": "d1709dbd351cbf337a16ffcf5680a83544e2dd9d97c5e95c9a7acc85f5867cec",
+    "allowed_dirty_scope": {
+      "stage": "author",
+      "prefix": "leetcode/864/",
+      "trackedChangesAllowedWithinPrefix": true
+    },
+    "current_dirty_paths": [
+      "?? leetcode/864/BRIEF.md",
+      "?? leetcode/864/app.js",
+      "?? leetcode/864/copy.js",
+      "?? leetcode/864/core.js",
+      "?? leetcode/864/index.html",
+      "?? leetcode/864/lesson-entry.json",
+      "?? leetcode/864/provenance/official-graphql.json",
+      "?? leetcode/864/provenance/official-verification.md",
+      "?? leetcode/864/python-code.js",
+      "?? leetcode/864/solution.py",
+      "?? leetcode/864/style.css",
+      "?? leetcode/864/tests/browser.cjs",
+      "?? leetcode/864/tests/evidence/logic.json",
+      "?? leetcode/864/tests/evidence/revisit-1440-en.png",
+      "?? leetcode/864/tests/evidence/revisit-1440-zh.png",
+      "?? leetcode/864/tests/evidence/revisit-320-en.png",
+      "?? leetcode/864/tests/evidence/revisit-320-zh.png",
+      "?? leetcode/864/tests/evidence/revisit-390-en.png",
+      "?? leetcode/864/tests/evidence/revisit-390-zh.png",
+      "?? leetcode/864/tests/evidence/revisit-736-en.png",
+      "?? leetcode/864/tests/evidence/revisit-736-zh.png",
+      "?? leetcode/864/tests/oracle.py",
+      "?? leetcode/864/tests/test_logic.py",
+      "?? leetcode/864/tests/trace_cases.cjs"
+    ],
+    "lane_processes_absent": true,
+    "queue_count": 984,
+    "lane_base_same_shared": true,
+    "reservation_hashes": {
+      "lane-964-reservation.json": "1391726fbffbaed6867556691ab3562eb7671d34e29ae4a25f6a686782c77e7b",
+      "lane-689-reservation.json": "957831825f83cca2a81d1495f5931a5359be35ceda528a1c87c1c95e489738a1",
+      "lane-493-reservation.json": "bd5d56429c319dd527b5ad22901a1cd3aab373c1f56bfa06343775c50db1646a",
+      "lane-675-reservation.json": "87df66947101571a188f25df599bf1238a5561d5c4867289261ead14f3834411",
+      "lane-514-reservation.json": "e7fe9cbfba39aef217a9019b7a12ca2ecfc9a47a346e3f96d9e914decc8a6172",
+      "lane-940-reservation.json": "5b76e20709a6c9eeeddaf7c42163e8cf9ef98b43b8229d274d92c3f282a7d0c0",
+      "lane-591-reservation.json": "535dfc500dccf1643e6242d21a182558d5b85d128a01a53271cd2d26a1614431",
+      "lane-691-reservation.json": "98030c13682c693724ae81a11b79abd53f43b1515a943cbcf3098a0ce924eb5d",
+      "lane-719-reservation.json": "fc2adb66f580defa40a497604adcc5aaecff21b479448cc571c8e09e29fd56c6",
+      "lane-730-reservation.json": "20427007930c034eea0211f8b854b3a4ae6169b2b328ecda4adba73fa3f89a3c",
+      "lane-975-reservation.json": "5f1d4b55b4f872626f2ee855e61a7d1b989b1d8fb863818a18b7f213fd573dfe",
+      "lane-920-reservation.json": "014e874bb8c8233273adab34d4955eec74129d58468bf2c293e951de5c64777a",
+      "lane-903-reservation.json": "5b06657652d970bc8c8355daa26df21aa24df481506139d3b6b65d6b953aad2c",
+      "lane-732-reservation.json": "8e7e3e7a702ea3d53fc561a001c56a895a805ecd2a5f59ae077252586489f78a",
+      "lane-668-reservation.json": "efa5d6646bc5cd9401b6606cadf5327af2150690973e3b6136f9b94df081880a",
+      "lane-685-reservation.json": "56aed95f678dc1d8d91fe8e675b523c4f8d22c0892bc86d2fb2708739e17d751",
+      "lane-679-reservation.json": "aefea8a9b6b11aae939883a8d7368989d61c36a8c7e8f70f41b7da05cf441a56",
+      "lane-630-reservation.json": "5f858def91db8e6047aef65a989e23de92bc3fad11956d44c1041b74cd9a9e59",
+      "lane-992-reservation.json": "95a6c0ee1c1c6640ac977d68989f9efdd5aa18e19263a3cf8a55243f62c7b8ec",
+      "lane-956-reservation.json": "2d803b066a25cecb5e11b79795207973d5139ac4160a7b612f908f9c6ff9e2c1",
+      "lane-587-reservation.json": "f1b39130581fbf4b564480a095b02059dac564627b345e17616ea3b129807c8f",
+      "lane-726-reservation.json": "a063db9317c0b9296cf4ae00ab8a22e69fbaa5f6ab1543d8ff23d329afbbdf81",
+      "lane-715-reservation.json": "b25d3d805556cae8ec64562843965ddb47f654391d0c3115a2c6f607ef66cb3c",
+      "lane-632-reservation.json": "72ccc9eb1d331edf2bcedbf81cd594e3462118eaa657557af04c9ef687179ee3",
+      "lane-995-reservation.json": "5ef26a6eb19cabe66822cc7c7d2e75fe4cb29a5a307c3c014dde33e49575c826",
+      "lane-987-reservation.json": "3630636658d7a226112b861b2db4cb965dedff2572c0e66a8d08bed3697715f6",
+      "lane-805-reservation.json": "0bf09414ce4f665a4c1a86696edc8a31f5d14ffc446489bbb230a25f424c450c",
+      "lane-600-reservation.json": "dfe301eaca4783047f0f72f50686a54395b139b1c0e1b7165e32094e2fd568c1",
+      "lane-629-reservation.json": "57960b62012cf346e8bd01b0cdf56d193438c86fdc400cbec5498a494b07a580",
+      "lane-639-reservation.json": "da5c5716212986b8673f02442685fd2a3020fa1c817474507192bbf09785b2bc",
+      "lane-546-reservation.json": "8a54265d4b218e2c24b313d3bfba83b88c710a04818558539d26d55cfa22f46e",
+      "lane-972-reservation.json": "730e84123d5ba2078f1365fbedc3a93d153f4f0ba1af6474f713767acab51b13",
+      "lane-803-reservation.json": "43180abdc6b7b9536314bb24d41b327b330440b78b6ac38dacb2ab511baeb15c",
+      "lane-664-reservation.json": "6945aabd7f0ed8f16d7b51c609fda8e2915e201fe610e23fe615843dc5832f45",
+      "lane-982-reservation.json": "b7c9a16c2df5c48aded36075f9a88b9bbd6629ebcad00048d81a57b888d119e2",
+      "lane-968-reservation.json": "78f6300b81f4ed440c7c852a41c86d4f2de84bfa71b719855d3942738e93f42d",
+      "lane-517-reservation.json": "80c1825b01216de411d0e6f801608c8c5d9d4e18d954c85f17cfb7c80a3c6af1",
+      "lane-699-reservation.json": "e6c7488e18c4fbe6a3e3731b967451ce1b04717004fcab2042e9fe3b4e6c22e9",
+      "lane-980-reservation.json": "8950c15acc28f73cc68cc461235c85b251b62f1cafa3ac2c8767bb4adf71b6ba",
+      "lane-552-reservation.json": "c2358e06a98890b7dd2e0378aa9de2170c3da7d978d57c93d73b077971a27b39",
+      "lane-960-reservation.json": "177a719d6c687d7da3cadceabaeb97095136c547db8068b778d7cf16f548011e"
+    }
+  },
+  "archives": {
+    "992": {
+      "progress": {
+        "version": 1,
+        "repo": "/home/songyy/projects/leetcode-hard-lane-992-20261026",
+        "queue": [
+          "992"
+        ],
+        "expected_head": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+        "started_at": "2026-10-25T22:15:17.309519+00:00",
+        "status": "completed",
+        "current": null,
+        "problems": {
+          "992": {
+            "status": "accepted_local",
+            "rounds": 1,
+            "new": true,
+            "phase": "done",
+            "reviews": [
+              {
+                "outcome": "accepted",
+                "scores": [
+                  4,
+                  4,
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                "required_open": [],
+                "report_path": "specs/reviews/992-review-1-c3711b80.md",
+                "evidence": [
+                  "Cold browser walkthrough saved before source audit.",
+                  "Fresh input [2,1,2,3], k=2 returned predicted 4; input unchanged.",
+                  "Canonical Python passed 16,739 independently enumerated cases.",
+                  "Bilingual interactions, rewind/reset, keyboard, 320/390/desktop and 200% CSS zoom checked; screenshots inspected.",
+                  "Exact source, display, copy, fallback and download parity passed.",
+                  "Metadata validate-only preflight passed."
+                ],
+                "detail": "100/100; no required findings. Acceptance applies to the reviewed revision only. No human-comprehension, LeetCode-submission or publication claim.",
+                "run_id": "992-review-67f5902a3c90",
+                "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+                "candidate_sha256": "d5892acd35700b0e2fef2f2dd839a13e132754cb6672610239dca3088d86ccb1",
+                "weighted_score": 100.0,
+                "round": 1,
+                "commit": "3451d95894cf401b2462024ca4165565b259e6db"
+              }
+            ],
+            "author_runs": [
+              "992-author-bd39779c66e3"
+            ],
+            "prior_report": "specs/reviews/992-review-1-c3711b80.md",
+            "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+            "registration_commit": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+            "accepted_at": "2026-10-25T22:31:47.804748+00:00"
+          }
+        },
+        "runs": [
+          {
+            "id": "992-author-bd39779c66e3",
+            "problem_id": "992",
+            "role": "author",
+            "started_at": "2026-10-25T22:15:17.548313+00:00",
+            "status": "completed",
+            "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+            "directory": "/home/songyy/projects/leetcode-hard-lane-state-992-20261026/runs/992-author-bd39779c66e3",
+            "session_ids": [
+              "01a17521-e645-7982-b1f5-d9a4fc139a46"
+            ],
+            "finished_at": "2026-10-25T22:27:31.711528+00:00",
+            "result": {
+              "outcome": "ready",
+              "detail": "Implemented and froze candidate 992-author-v3 in leetcode/992/. Official Python interface verified; bilingual lesson, reversible simulation, prediction exercise, source controls and reproducible tests complete. Passed 6,503 numerical cases, 45,267 trace states, browser checks and metadata preflight. Evidence recorded; independent review remains pending. Existing related-page favicon warning documented."
+            }
+          },
+          {
+            "id": "992-review-67f5902a3c90",
+            "problem_id": "992",
+            "role": "review",
+            "started_at": "2026-10-25T22:27:42.257651+00:00",
+            "status": "completed",
+            "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+            "directory": "/home/songyy/projects/leetcode-hard-lane-state-992-20261026/runs/992-review-67f5902a3c90",
+            "session_ids": [
+              "01a1752d-4275-7383-8f04-26a51cd96dfb"
+            ],
+            "finished_at": "2026-10-25T22:31:33.036558+00:00",
+            "result": {
+              "outcome": "accepted",
+              "scores": [
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "required_open": [],
+              "report_path": "specs/reviews/992-review-1-c3711b80.md",
+              "evidence": [
+                "Cold browser walkthrough saved before source audit.",
+                "Fresh input [2,1,2,3], k=2 returned predicted 4; input unchanged.",
+                "Canonical Python passed 16,739 independently enumerated cases.",
+                "Bilingual interactions, rewind/reset, keyboard, 320/390/desktop and 200% CSS zoom checked; screenshots inspected.",
+                "Exact source, display, copy, fallback and download parity passed.",
+                "Metadata validate-only preflight passed."
+              ],
+              "detail": "100/100; no required findings. Acceptance applies to the reviewed revision only. No human-comprehension, LeetCode-submission or publication claim."
+            }
+          }
+        ],
+        "updated_at": "2026-10-25T22:31:47.932973+00:00"
+      },
+      "rawProgress": "{\n  \"version\": 1,\n  \"repo\": \"/home/songyy/projects/leetcode-hard-lane-992-20261026\",\n  \"queue\": [\n    \"992\"\n  ],\n  \"expected_head\": \"ed430afbbe348a302d6ddb0cd35f8142e2a0c04c\",\n  \"started_at\": \"2026-10-25T22:15:17.309519+00:00\",\n  \"status\": \"completed\",\n  \"current\": null,\n  \"problems\": {\n    \"992\": {\n      \"status\": \"accepted_local\",\n      \"rounds\": 1,\n      \"new\": true,\n      \"phase\": \"done\",\n      \"reviews\": [\n        {\n          \"outcome\": \"accepted\",\n          \"scores\": [\n            4,\n            4,\n            4,\n            4,\n            4,\n            4\n          ],\n          \"required_open\": [],\n          \"report_path\": \"specs/reviews/992-review-1-c3711b80.md\",\n          \"evidence\": [\n            \"Cold browser walkthrough saved before source audit.\",\n            \"Fresh input [2,1,2,3], k=2 returned predicted 4; input unchanged.\",\n            \"Canonical Python passed 16,739 independently enumerated cases.\",\n            \"Bilingual interactions, rewind/reset, keyboard, 320/390/desktop and 200% CSS zoom checked; screenshots inspected.\",\n            \"Exact source, display, copy, fallback and download parity passed.\",\n            \"Metadata validate-only preflight passed.\"\n          ],\n          \"detail\": \"100/100; no required findings. Acceptance applies to the reviewed revision only. No human-comprehension, LeetCode-submission or publication claim.\",\n          \"run_id\": \"992-review-67f5902a3c90\",\n          \"candidate\": \"d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa\",\n          \"candidate_sha256\": \"d5892acd35700b0e2fef2f2dd839a13e132754cb6672610239dca3088d86ccb1\",\n          \"weighted_score\": 100.0,\n          \"round\": 1,\n          \"commit\": \"3451d95894cf401b2462024ca4165565b259e6db\"\n        }\n      ],\n      \"author_runs\": [\n        \"992-author-bd39779c66e3\"\n      ],\n      \"prior_report\": \"specs/reviews/992-review-1-c3711b80.md\",\n      \"candidate\": \"d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa\",\n      \"registration_commit\": \"ed430afbbe348a302d6ddb0cd35f8142e2a0c04c\",\n      \"accepted_at\": \"2026-10-25T22:31:47.804748+00:00\"\n    }\n  },\n  \"runs\": [\n    {\n      \"id\": \"992-author-bd39779c66e3\",\n      \"problem_id\": \"992\",\n      \"role\": \"author\",\n      \"started_at\": \"2026-10-25T22:15:17.548313+00:00\",\n      \"status\": \"completed\",\n      \"candidate\": \"1be3c657ef0c1ef3152f8abced78df2e278f09da\",\n      \"directory\": \"/home/songyy/projects/leetcode-hard-lane-state-992-20261026/runs/992-author-bd39779c66e3\",\n      \"session_ids\": [\n        \"01a17521-e645-7982-b1f5-d9a4fc139a46\"\n      ],\n      \"finished_at\": \"2026-10-25T22:27:31.711528+00:00\",\n      \"result\": {\n        \"outcome\": \"ready\",\n        \"detail\": \"Implemented and froze candidate 992-author-v3 in leetcode/992/. Official Python interface verified; bilingual lesson, reversible simulation, prediction exercise, source controls and reproducible tests complete. Passed 6,503 numerical cases, 45,267 trace states, browser checks and metadata preflight. Evidence recorded; independent review remains pending. Existing related-page favicon warning documented.\"\n      }\n    },\n    {\n      \"id\": \"992-review-67f5902a3c90\",\n      \"problem_id\": \"992\",\n      \"role\": \"review\",\n      \"started_at\": \"2026-10-25T22:27:42.257651+00:00\",\n      \"status\": \"completed\",\n      \"candidate\": \"d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa\",\n      \"directory\": \"/home/songyy/projects/leetcode-hard-lane-state-992-20261026/runs/992-review-67f5902a3c90\",\n      \"session_ids\": [\n        \"01a1752d-4275-7383-8f04-26a51cd96dfb\"\n      ],\n      \"finished_at\": \"2026-10-25T22:31:33.036558+00:00\",\n      \"result\": {\n        \"outcome\": \"accepted\",\n        \"scores\": [\n          4,\n          4,\n          4,\n          4,\n          4,\n          4\n        ],\n        \"required_open\": [],\n        \"report_path\": \"specs/reviews/992-review-1-c3711b80.md\",\n        \"evidence\": [\n          \"Cold browser walkthrough saved before source audit.\",\n          \"Fresh input [2,1,2,3], k=2 returned predicted 4; input unchanged.\",\n          \"Canonical Python passed 16,739 independently enumerated cases.\",\n          \"Bilingual interactions, rewind/reset, keyboard, 320/390/desktop and 200% CSS zoom checked; screenshots inspected.\",\n          \"Exact source, display, copy, fallback and download parity passed.\",\n          \"Metadata validate-only preflight passed.\"\n        ],\n        \"detail\": \"100/100; no required findings. Acceptance applies to the reviewed revision only. No human-comprehension, LeetCode-submission or publication claim.\"\n      }\n    }\n  ],\n  \"updated_at\": \"2026-10-25T22:31:47.932973+00:00\"\n}\n",
+      "report": "# Independent review: 992\n\nCandidate: d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa. URL: http://127.0.0.1:18797/leetcode/992/. Run: 992-review-1-c3711b80, 2026-10-26. Reviewer: this independent review session; no named human or model identity asserted. Target: basic Python, lists, loops, functions, elementary recursion. Frozen rubric: specs/leetcode-review-gates.md, weights 15/20/20/20/15/10. Applicable canonical preference: faithful Python, then TypeScript. No publication assessment.\n\n## Cold walkthrough (saved before opening repository source, tests, author notes, or earlier reviews)\n\nUsed real Chromium via Playwright, desktop 1280\u00d7900. Read only the frozen rubric before opening the URL. English initially selected. Inspected cold-final.png visually as well as rendered text. Cold screenshots: `992-evidence/992-review-1-c3711b80/cold-initial.png` and `cold-final.png`.\n\n| Teaching step / question | Action | Observable result | My causal paraphrase |\n| --- | --- | --- | --- |\n| 01: what is being counted? | Read definitions and click Inspect next interval six times | [0,0] excluded (1 type), [0,1] included (2), [0,2] included (2), [1,1] excluded (1), [1,2] included (2), [2,2] excluded (1). Running counts 0,1,2,2,3,3. | A nonempty consecutive interval counts once by position if its set of values has size k; repetitions do not create new types. Answer 3. |\n| 02: what repeated work can be saved? | Read baseline, wrong-rule example and cancellation example | Baseline extends every l through every r; 200,010,000 extensions at max n. Exactly-one-window rule misses one at r=2; full length includes singleton. At-most counts 6 and 3. | Counting all valid suffix starts in each at-most window avoids restarting a scan. Subtraction cancels fewer-than-k intervals; over-k intervals are absent from both. |\n| 03: how do left boundaries encode all starts? | Append three endpoints, inspect window cards, removal log, start badges and ledger each time | r=0 boundaries 0/0, frequencies {1:1}/{1:1}, contributions 1\u22121=0. r=1 boundaries 0/1, stricter window deletes 1 at index 0, 2\u22121=1. r=2 boundaries 0/2, limit-2 freq {1:2,2:1}; stricter window deletes 2 at index 1, 3\u22121=2. Ledger running totals 0,1,3 retains previous rounds. | Earlier invalid starts stay invalid when appending. Shrink until the first valid start; all later starts are valid. Difference between earliest starts isolates exactly-k intervals. Highlight marks endpoint, not changed data. |\n| 04: can I predict a new endpoint? | Before reveal predicted 2 at r=3 of [1,2,2,3,1], k=2. Select \u201c2: starts between the boundaries\u201d then reveal. | Correct feedback: left_2=1, left_1=3; [1,3] and [2,3] qualify; singleton does not. | Both 2 occurrences must leave the limit-1 window, but only initial 1 leaves limit-2. Their boundary gap is two. Independently enumerated suffixes confirms this. |\n| 05: how is this executable Python? | Read explanation, expand full submission in browser | Helper adds dictionary counts, repeatedly decrements outgoing values, deletes zero keys, advances left, adds right-left+1, then caller subtracts two helper totals. Text discloses sequential scans vs aligned visual frames. | r=1 stricter transition maps to decrement freq[1], delete key, left+=1, total+=1. Each pointer only advances; two passes stay linear with expected constant-time dictionary operations. nums is read only. |\n\nFresh independently chosen input prediction before source audit: [2,1,2,3], k=2 should return 4: [0,1], [0,2], [1,2], [2,3]. Endpoint contributions 0,1,2,1; final boundaries 2/3. Counterexample to \u201cone exactly-k window adds one\u201d: at r=2, starts 0 and 1 both count, so that rule undercounts. Counterexample to adding full valid-window length: suffix [2,2] has one type. UI exposes seven presets only, no custom input; the fresh input will therefore be a **code check**, not a UI experiment. The quiz is a separate transfer check and explains both wrong choices. No missing causal explanation was supplied by source/author notes during this walk.\n\nCold-read assessment: tiny hand enumeration precedes sets, at-most abstraction, invariant, then dictionary code. New terms and endpoint units are defined. Before/after boundaries and individual removals are visible. Browser text already explains cancellation, earliest validity, empty limit-0 windows, termination and cost. Actual novice comprehension is not measured.\n\n## Subsequent audit\n\nThe following audit was performed after the cold record above was saved.\n\n### Candidate and source receipt\n\n`git rev-parse HEAD` returned the requested d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa. Only this report and its evidence directory were untracked. No candidate files were edited. Independently fetched served bytes equal checkout bytes for index.html, solution.py, python-code.js, core.js, app.js, copy.js, local style.css and shared common.js/style.css. SHA-256 identities:\n\n- index.html: `64eaf825328d8adb637de0b22a4c61decb5bb0910801efdd9be769040e8a010d`\n- solution.py: `597643e0fa4dbc0f383302d78ff074426c811ecad597e2cd8da8841587cce5e3`\n- core.js: `bf9ab058d6b417e974cbe9bed883dce56407be05b954b7094f8cfa3051261948`\n- app.js: `2d4e56c7112d6cfa6ea5ba854ab010c675f8b2d791440ab7a8e64cc1df121d7d`\n- copy.js: `f85b30730837438578f513e14c36fa207c145b724133e765b9345b597af937b6`\n- python-code.js: `67895bd61230a22414d07c9a519e594bdbfbcf7f8ae6d457847123b5455889ec`\n- local style.css: `73e27de53e8664250b7c8251c3c19e1056aab5f94edd72746a2b7d3948f9911a`\n- shared common.js: `f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b`\n- shared style.css: `6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27`\n\nRead the rendered-state contract only after saving the cold record. Audited index.html, app.js, core.js, copy.js, solution.py, style.css, shared locale consumer, metadata, registration language table and both test scripts. No earlier 992 review report exists in this checkout other than this report, so there are no earlier required IDs to close. BRIEF was not needed.\n\n### Official problem and canonical language\n\nRead the [official statement](https://leetcode.com/problems/subarrays-with-k-different-integers/) normally through the web tool: asks for a count of contiguous intervals with exactly k distinct integers; examples return 7 and 3; n\u226420,000 and 1\u2264nums[i],k\u2264n. No access bypass. Saved lesson-local official.json also contains the Python3 callable snippet. Canonical `class Solution` / `subarraysWithKDistinct(self, nums, k) -> int` preserves that callable and integer return; built-in `list[int]` annotations preserve the List[int] input semantics. This is executable Python, not an analogy. No non-Python language contract or supportedLanguages exclusion applies. Read `LANGUAGE_FILES`: Python maps exactly to solution.py, python-code.js, PYTHON_SOURCE.\n\n### Execution and invariants\n\nInspected tests before executing. Commands from repository root (all returned exit 0):\n\n```\nOUTPUT_DIR=specs/reviews/992-evidence/992-review-1-c3711b80 python3 -B leetcode/992/tests/numerical.py\nOUTPUT_DIR=specs/reviews/992-evidence/992-review-1-c3711b80 node leetcode/992/tests/browser.cjs\npython3 -B scripts/register_leetcode_lesson.py 992 --validate-only\n```\n\nPreflight returned no output, success. `lesson-entry.json` complexity is exactly the single nonempty string `O(n) expected time; O(n) auxiliary space`.\n\nThe reused scripts retain their \u201cauthor self-check\u201d JSON labels; these are independent reruns of inspected author tests, not an assertion that those labels establish review independence. numerical.json reports 6,503 small cases, 45,267 frames, max n 20,000, exact source mirror and 95 unique paired translation keys. Its oracle materializes intervals independently, checks mutation, earliest legal starts, both contributions, prefix totals, frequencies and removal indices. Duplicate-key detection occurs before parsing could discard keys. Localization consumer selects index 0/1 of each pair, matching the audited copy representation.\n\nSeparately executed the actual solution.py with `runpy.run_path`, comparing 16,739 valid cases (all length 1\u20135 arrays over 1\u2026n, every valid k) to independently materialized interval sets; all matched and input lists remained unchanged. The fresh code check [2,1,2,3], k=2 returned predicted 4 and oracle 4. Separate core trace check produced boundary pairs (0,0), (0,1), (0,2), (2,3), contributions 0,1,2,1 and cumulative 0,1,3,4. This custom case was never represented as a browser-input experiment.\n\nBoundary execution includes singleton, all equal k=1, all distinct, k=n and too few types. At n=20,000, all equal k=1 gives 200,010,000; all equal k=n gives 0; all distinct k=1 gives 20,000; all distinct k=n gives 1. At limit 0 the helper deletes the appended key and reaches left=r+1, contributing 0. Nonnegative limits ensure shrink terminates before reading beyond the appended endpoint. Keys are present exactly for positive frequencies, so dictionary length is distinct count. Both pointers advance at most n times per scan; two scans give expected O(n) time, worst-case O(n) dictionary space, without mutating nums. Baseline n(n+1)/2, O(n\u00b2) expected time and O(n) space are consistent with its actual loops.\n\n### Rendered interaction and bilingual checks\n\nBrowser rerun: Chromium 156.0.8078.4, Linux, real headless Chromium with executable path environment honored and Playwright resolved through NODE_PATH. browser.json passed with no lesson runtime errors. Every round of all seven presets was independently compared with interval enumeration in each locale; results: 3,7,3,6,2,1,0. Initial state, endpoints, disabled buttons, hand count, complete rewind and replay and reset passed. Snapshot window text and ledger recover exactly on undo/replay. The fixed hand experiment is independent of simulation presets.\n\nIndependently re-read the dense official-1 final state at 390 px in both locales: limit-2 boundary 0\u21923 with 3 distinct before shrinking; removals leave frequencies 1,1,0, deleting only on 0; final {2:1,3:1}. Limit-1 boundary 3\u21924 removes 2 to zero, final {3:1}. Starts 0,1,2 are over k, start 3 exactly k, start 4 fewer; contributions 2\u22121=1 and total 7 agree with ledger 0,1,3,6,7. Formula in both locales renders all operands `(r\u2212left_k+1) \u2212 (r\u2212left_(k\u22121)+1) = left_(k\u22121)\u2212left_k`. Chinese removal, exclusion and cancellation explanations match the mathematical meanings, not merely the existence of their keys.\n\nPrediction reveal is initially disabled. All three choices give appropriate correct/incorrect feedback; changing choice hides old feedback until reveal. The question is always the fixed exercise input, so preserving its answer when the separate simulation preset changes is correct. Locale switches preserve selected preset, endpoint, prediction/reveal and expanded source. Narrow zh\u2192en\u2192zh retains correct localized H1 and document title with #992 and the exact official URL.\n\nCopy success equals canonical text; four fallback transfers (two per locale) each first write and read back a distinct sentinel, then force automatic-write denial, check focus/full source selection and invoke Linux Control+C. Clipboard readback equals canonical source including final newline each time. Decoded offline mirror, window.PYTHON_SOURCE, displayed code via textContent, copied text and downloaded bytes all match actual solution.py without trimming. Offline file:// source and interaction work; storage denial does not break locale or simulation.\n\nKeyboard Enter activates reset, locale and related links; Tab moves focus and a visible 3px outline remains. The narrow table scrolls with ArrowRight while retaining column associations. Related links were followed: #76/#step2 actually explains expansion/shrinking with coverage counts; #2916/#step1 actually groups subarrays by right endpoint and sums squared distinct counts. Labels accurately describe those local served continuations in both languages; this does not claim deployment acceptance for the other lessons. The only recorded sibling warning is #2916\u2019s missing root favicon.ico, not a broken #992 resource or teaching target.\n\n### Layout, contrast, screenshots\n\nGenerated screenshots only in this run\u2019s directory; earlier evidence untouched. Visually inspected cold-final.png, en-320-stage.png, zh-320-stage.png, zh-390-stage.png, en-1440-stage.png, both zoom200-stage.png files and en-320-right.png. Dense windows, before/after counts and removal logs remain readable, with no observed text collision. Narrow cards stack. At 320 px the English \u201ccurrent r\u201d wraps but remains associated with the highlighted value; data, indices and endpoint marker remain distinct. The table is intentionally wider than its region, explains keyboard scrolling, and right-scrolled capture exposes exactly-k and cumulative columns. No page overflow at 320/390/736/1440. All measured buttons/selects reach 48px minimum height. Closed selected labels pass measured font budgets with 32px arrow reserve; the screenshot confirms the selected Official 1 label is complete.\n\n200% was tested with CSS root zoom=2 in Chromium, not browser-chrome zoom or a physical device. Screenshots show the complete dense state and retained column meanings. Focused stage captures hide sticky navigation only during capture, as documented by the test; page screenshots/navigation geometry retain it. Cold full-page screenshot has a sticky-nav capture overlay, which is not a reproducible settled content collision.\n\nReviewed contrast helper uses correct sRGB coefficients .2126/.7152/.0722 and tests black/white/primaries plus #747474 on black = 4.492948\u2026 below 4.5. Actual solid-color ratios: body 16.087, hint 7.744, disabled control 7.079, normal control 13.397, current value 8.171, exact badge 9.809, table headings 7.079, focus vs panel 9.809. Disabled controls remain readable and distinguishable. Scope is the sampled solid-color states, not arbitrary gradients or assistive-technology certification.\n\n## Findings and scores\n\nRequired open IDs: **none**. No implementation correction requested; no prior finding closure claimed.\n\n| Dimension | Score | Weight | Observation supporting score |\n| --- | --- | --- | --- |\n| Problem/terms/hand calculation | 4 | 15 | Nonempty contiguous interval, distinct count, positional counting and inclusive zero-based indices precede six hand decisions and answer 3. |\n| Derivation/saved work | 4 | 20 | Concrete wrong rules, baseline work and 6\u22123 cancellation lead to earliest suffix starts and reuse of monotone pointers; included/excluded cases explained. |\n| Maintained state/correctness | 4 | 20 | Earliest-valid-start proof, exact positive frequencies, repeated removals, limit 0, boundaries and full traces agree with independent oracles. |\n| Interaction/visual meaning | 4 | 20 | Prediction/reveal/change, preserved ledger, rewind/replay and separate hand/simulation state have observed causal outcomes; endpoint marker explicitly differs from data. |\n| Python/cost | 4 | 15 | Faithful executable callable, explicit diagram-to-code bridge, fresh code check, exact transfer parity, input non-mutation and justified expected linear cost. |\n| Bilingual/device | 4 | 10 | Equivalent full formula, boundary/removal/cancellation reasoning and feedback, locale state preservation, readable narrow/zoom states and keyboard access. |\n\nWeighted score: **100/100**. Scores mean independently clear under the frozen rubric; they do not assert perfect pedagogy or measured human understanding. Acceptance thresholds satisfied: \u226585, every dimension \u22653, complete applicable evidence, zero required open findings.\n\nConclusion: **accepted** for candidate d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa in this review scope. Limitations: preset-only UI means independent custom input is code-tested; headless Linux Chromium only, no physical-device/other-platform proof; CSS zoom only; no real human comprehension measurement, successful LeetCode submission, or publication claim.\n",
+      "reportPath": "specs/reviews/992-review-1-c3711b80.md",
+      "lessonTrees": {
+        "candidate": "8f0c8379da4165f9dc126d9189363bb0af6848bb",
+        "review": "8f0c8379da4165f9dc126d9189363bb0af6848bb",
+        "registration": "8f0c8379da4165f9dc126d9189363bb0af6848bb"
+      },
+      "canonicalSha256": "597643e0fa4dbc0f383302d78ff074426c811ecad597e2cd8da8841587cce5e3",
+      "lessonEntry": {
+        "id": 992,
+        "title": {
+          "zh": "K \u4e2a\u4e0d\u540c\u6574\u6570\u7684\u5b50\u6570\u7ec4",
+          "en": "Subarrays with K Different Integers"
+        },
+        "desc": {
+          "zh": "\u4ece\u624b\u7b97\u5230\u4e24\u4e2a\u5de6\u8fb9\u754c\uff1a\u7528\u81f3\u591a\u8ba1\u6570\u76f8\u51cf\uff0c\u6070\u597d\u6570\u51fa k \u79cd\u503c\u7684\u8fde\u7eed\u533a\u95f4\u3002",
+          "en": "Derive two left boundaries and subtract at-most counts to count exactly-k intervals."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u6ed1\u52a8\u7a97\u53e3",
+            "en": "Sliding window"
+          },
+          {
+            "zh": "\u9891\u6b21\u8ba1\u6570",
+            "en": "Frequency counting"
+          }
+        ],
+        "path": "992/",
+        "leetcodeUrl": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
+        "language": "Python",
+        "complexity": "O(n) expected time; O(n) auxiliary space",
+        "concepts": [
+          {
+            "name": "Exactly-k via at-most subtraction",
+            "step": 1,
+            "description": "Cancel intervals with fewer distinct values."
+          },
+          {
+            "name": "Earliest valid start invariant",
+            "step": 2,
+            "description": "Repair frequency windows and count valid starts."
+          }
+        ]
+      },
+      "registryEntry": {
+        "id": 992,
+        "title": {
+          "zh": "K \u4e2a\u4e0d\u540c\u6574\u6570\u7684\u5b50\u6570\u7ec4",
+          "en": "Subarrays with K Different Integers"
+        },
+        "desc": {
+          "zh": "\u4ece\u624b\u7b97\u5230\u4e24\u4e2a\u5de6\u8fb9\u754c\uff1a\u7528\u81f3\u591a\u8ba1\u6570\u76f8\u51cf\uff0c\u6070\u597d\u6570\u51fa k \u79cd\u503c\u7684\u8fde\u7eed\u533a\u95f4\u3002",
+          "en": "Derive two left boundaries and subtract at-most counts to count exactly-k intervals."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u6ed1\u52a8\u7a97\u53e3",
+            "en": "Sliding window"
+          },
+          {
+            "zh": "\u9891\u6b21\u8ba1\u6570",
+            "en": "Frequency counting"
+          }
+        ],
+        "path": "992/",
+        "leetcodeUrl": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
+        "language": "Python",
+        "complexity": "O(n) expected time; O(n) auxiliary space"
+      },
+      "remoteRegistration": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+      "reviewedProof": {
+        "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+        "digest": "0e6004d6a591c12a57f471aa61c4c12763659d8c04de9267aa66dc431dd3c334",
+        "review": "specs/reviews/992-review-1-c3711b80.md",
+        "registry": {
+          "id": 992,
+          "title": {
+            "zh": "K \u4e2a\u4e0d\u540c\u6574\u6570\u7684\u5b50\u6570\u7ec4",
+            "en": "Subarrays with K Different Integers"
+          },
+          "desc": {
+            "zh": "\u4ece\u624b\u7b97\u5230\u4e24\u4e2a\u5de6\u8fb9\u754c\uff1a\u7528\u81f3\u591a\u8ba1\u6570\u76f8\u51cf\uff0c\u6070\u597d\u6570\u51fa k \u79cd\u503c\u7684\u8fde\u7eed\u533a\u95f4\u3002",
+            "en": "Derive two left boundaries and subtract at-most counts to count exactly-k intervals."
+          },
+          "difficulty": "hard",
+          "topics": [
+            {
+              "zh": "\u6ed1\u52a8\u7a97\u53e3",
+              "en": "Sliding window"
+            },
+            {
+              "zh": "\u9891\u6b21\u8ba1\u6570",
+              "en": "Frequency counting"
+            }
+          ],
+          "path": "992/",
+          "leetcodeUrl": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
+          "language": "Python",
+          "complexity": "O(n) expected time; O(n) auxiliary space"
+        }
+      },
+      "reviewedAssetSha256": {
+        "leetcode/992/app.js": "2d4e56c7112d6cfa6ea5ba854ab010c675f8b2d791440ab7a8e64cc1df121d7d",
+        "leetcode/992/copy.js": "f85b30730837438578f513e14c36fa207c145b724133e765b9345b597af937b6",
+        "leetcode/992/core.js": "bf9ab058d6b417e974cbe9bed883dce56407be05b954b7094f8cfa3051261948",
+        "leetcode/992/index.html": "64eaf825328d8adb637de0b22a4c61decb5bb0910801efdd9be769040e8a010d",
+        "leetcode/992/python-code.js": "67895bd61230a22414d07c9a519e594bdbfbcf7f8ae6d457847123b5455889ec",
+        "leetcode/992/solution.py": "597643e0fa4dbc0f383302d78ff074426c811ecad597e2cd8da8841587cce5e3",
+        "leetcode/992/style.css": "73e27de53e8664250b7c8251c3c19e1056aab5f94edd72746a2b7d3948f9911a"
+      }
+    },
+    "995": {
+      "progress": {
+        "version": 1,
+        "repo": "/home/songyy/projects/leetcode-hard-lane-995-20261026",
+        "queue": [
+          "995"
+        ],
+        "expected_head": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+        "started_at": "2026-10-25T22:15:44.629748+00:00",
+        "status": "completed",
+        "current": null,
+        "problems": {
+          "995": {
+            "status": "accepted_local",
+            "rounds": 1,
+            "new": true,
+            "phase": "done",
+            "reviews": [
+              {
+                "outcome": "accepted",
+                "scores": [
+                  4,
+                  3,
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                "required_open": [],
+                "report_path": "specs/reviews/995-review-1-c18c137a.md",
+                "evidence": [
+                  "Cold browser walkthrough saved before source inspection.",
+                  "Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.",
+                  "Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.",
+                  "Non-mutating metadata preflight exited 0."
+                ],
+                "detail": "95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication.",
+                "run_id": "995-review-f5d78a25ecbc",
+                "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+                "candidate_sha256": "20e4b739f8b1a7fae70008c3172e060d0b2c28876e550fab8aaed24fcf3942c4",
+                "weighted_score": 95.0,
+                "round": 1,
+                "commit": "5a5cd3c329aec4854ea61f0ae5d15b1826f94a21"
+              }
+            ],
+            "author_runs": [
+              "995-author-ab095f2912c3"
+            ],
+            "prior_report": "specs/reviews/995-review-1-c18c137a.md",
+            "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+            "registration_commit": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+            "accepted_at": "2026-10-25T22:36:24.169208+00:00"
+          }
+        },
+        "runs": [
+          {
+            "id": "995-author-ab095f2912c3",
+            "problem_id": "995",
+            "role": "author",
+            "started_at": "2026-10-25T22:15:44.915979+00:00",
+            "status": "completed",
+            "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+            "directory": "/home/songyy/projects/leetcode-hard-lane-state-995-20261026/runs/995-author-ab095f2912c3",
+            "session_ids": [
+              "01a17522-52b0-7a80-87e5-e202107b030b"
+            ],
+            "finished_at": "2026-10-25T22:26:35.899262+00:00",
+            "result": {
+              "outcome": "ready",
+              "detail": "Completed bilingual interactive lesson in leetcode/995/. Official Python3 interface verified; oracle, invariant, browser, source-parity, accessibility, and metadata preflight checks passed. Evidence and frozen candidate manifest saved locally. Ready for separate independent review; no acceptance or deployment claimed."
+            }
+          },
+          {
+            "id": "995-review-f5d78a25ecbc",
+            "problem_id": "995",
+            "role": "review",
+            "started_at": "2026-10-25T22:26:46.359029+00:00",
+            "status": "completed",
+            "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+            "directory": "/home/songyy/projects/leetcode-hard-lane-state-995-20261026/runs/995-review-f5d78a25ecbc",
+            "session_ids": [
+              "01a1752c-6919-7672-9e6a-5f7e07a8145c"
+            ],
+            "finished_at": "2026-10-25T22:36:13.754303+00:00",
+            "result": {
+              "outcome": "accepted",
+              "scores": [
+                4,
+                3,
+                4,
+                4,
+                4,
+                4
+              ],
+              "required_open": [],
+              "report_path": "specs/reviews/995-review-1-c18c137a.md",
+              "evidence": [
+                "Cold browser walkthrough saved before source inspection.",
+                "Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.",
+                "Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.",
+                "Non-mutating metadata preflight exited 0."
+              ],
+              "detail": "95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication."
+            }
+          }
+        ],
+        "updated_at": "2026-10-25T22:36:24.181890+00:00"
+      },
+      "rawProgress": "{\n  \"version\": 1,\n  \"repo\": \"/home/songyy/projects/leetcode-hard-lane-995-20261026\",\n  \"queue\": [\n    \"995\"\n  ],\n  \"expected_head\": \"2ef5c525c750d800269cc33ed565f9a80b752a23\",\n  \"started_at\": \"2026-10-25T22:15:44.629748+00:00\",\n  \"status\": \"completed\",\n  \"current\": null,\n  \"problems\": {\n    \"995\": {\n      \"status\": \"accepted_local\",\n      \"rounds\": 1,\n      \"new\": true,\n      \"phase\": \"done\",\n      \"reviews\": [\n        {\n          \"outcome\": \"accepted\",\n          \"scores\": [\n            4,\n            3,\n            4,\n            4,\n            4,\n            4\n          ],\n          \"required_open\": [],\n          \"report_path\": \"specs/reviews/995-review-1-c18c137a.md\",\n          \"evidence\": [\n            \"Cold browser walkthrough saved before source inspection.\",\n            \"Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.\",\n            \"Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.\",\n            \"Non-mutating metadata preflight exited 0.\"\n          ],\n          \"detail\": \"95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication.\",\n          \"run_id\": \"995-review-f5d78a25ecbc\",\n          \"candidate\": \"d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c\",\n          \"candidate_sha256\": \"20e4b739f8b1a7fae70008c3172e060d0b2c28876e550fab8aaed24fcf3942c4\",\n          \"weighted_score\": 95.0,\n          \"round\": 1,\n          \"commit\": \"5a5cd3c329aec4854ea61f0ae5d15b1826f94a21\"\n        }\n      ],\n      \"author_runs\": [\n        \"995-author-ab095f2912c3\"\n      ],\n      \"prior_report\": \"specs/reviews/995-review-1-c18c137a.md\",\n      \"candidate\": \"d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c\",\n      \"registration_commit\": \"2ef5c525c750d800269cc33ed565f9a80b752a23\",\n      \"accepted_at\": \"2026-10-25T22:36:24.169208+00:00\"\n    }\n  },\n  \"runs\": [\n    {\n      \"id\": \"995-author-ab095f2912c3\",\n      \"problem_id\": \"995\",\n      \"role\": \"author\",\n      \"started_at\": \"2026-10-25T22:15:44.915979+00:00\",\n      \"status\": \"completed\",\n      \"candidate\": \"1be3c657ef0c1ef3152f8abced78df2e278f09da\",\n      \"directory\": \"/home/songyy/projects/leetcode-hard-lane-state-995-20261026/runs/995-author-ab095f2912c3\",\n      \"session_ids\": [\n        \"01a17522-52b0-7a80-87e5-e202107b030b\"\n      ],\n      \"finished_at\": \"2026-10-25T22:26:35.899262+00:00\",\n      \"result\": {\n        \"outcome\": \"ready\",\n        \"detail\": \"Completed bilingual interactive lesson in leetcode/995/. Official Python3 interface verified; oracle, invariant, browser, source-parity, accessibility, and metadata preflight checks passed. Evidence and frozen candidate manifest saved locally. Ready for separate independent review; no acceptance or deployment claimed.\"\n      }\n    },\n    {\n      \"id\": \"995-review-f5d78a25ecbc\",\n      \"problem_id\": \"995\",\n      \"role\": \"review\",\n      \"started_at\": \"2026-10-25T22:26:46.359029+00:00\",\n      \"status\": \"completed\",\n      \"candidate\": \"d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c\",\n      \"directory\": \"/home/songyy/projects/leetcode-hard-lane-state-995-20261026/runs/995-review-f5d78a25ecbc\",\n      \"session_ids\": [\n        \"01a1752c-6919-7672-9e6a-5f7e07a8145c\"\n      ],\n      \"finished_at\": \"2026-10-25T22:36:13.754303+00:00\",\n      \"result\": {\n        \"outcome\": \"accepted\",\n        \"scores\": [\n          4,\n          3,\n          4,\n          4,\n          4,\n          4\n        ],\n        \"required_open\": [],\n        \"report_path\": \"specs/reviews/995-review-1-c18c137a.md\",\n        \"evidence\": [\n          \"Cold browser walkthrough saved before source inspection.\",\n          \"Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.\",\n          \"Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.\",\n          \"Non-mutating metadata preflight exited 0.\"\n        ],\n        \"detail\": \"95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication.\"\n      }\n    }\n  ],\n  \"updated_at\": \"2026-10-25T22:36:24.181890+00:00\"\n}\n",
+      "report": "# Independent review of lesson 995\n\nCandidate: `d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c`.\nURL: http://127.0.0.1:18798/leetcode/995/ . Target: basic Python, lists, loops, functions, elementary recursion. Review run identified by this report filename; no model identity asserted.\nFrozen rubric read first: `specs/leetcode-review-gates.md`; weights 15/20/20/20/15/10. Python canonical interpretation applies. This section was saved before opening repository source, author notes, tests, prior reviews, or the rendered-state contract.\n\n## Cold browser walkthrough\n\nReal Chromium via Playwright, 1280\u00d7900, English initial locale. Screenshots: `995-evidence/995-review-1-c18c137a/cold-initial.png` (full page, inspected), `cold-scan.png` (completed scan). Only the rubric and browser-rendered lesson were read before this record.\n\n| Teaching step / question | Action | Visible result | My causal paraphrase |\n| --- | --- | --- | --- |\n| 1: What does a flip do, and why flip an original 1? | Read definitions, click Show next flip twice, then Previous hand step. | Original 010 becomes 100, then 111; rewind restores 100. Index 1 changes 1\u21920\u21921. Answer 2 flips. Domain and zero-based indices are stated. | A window toggles every included bit, including ones. Overlap can restore a bit. Counting original zeros alone cannot decide moves. |\n| 2: Why must the leftmost unresolved zero force a start? | Read forced-choice explanation, counterexample, cancellation argument; expand baseline Python. | Later starts cannot reach i; duplicate starts cancel; 010 refutes zero-count/k and only-flip-zeros. Baseline copies then writes each of k cells. | With earlier starts fixed, start i is the only unused start that can change i. A 1 forbids that start. Every feasible solution must share these choices; overflow means impossible. Repeated k writes are the optimization target. |\n| 3: How do boundary events replace writes? | Read parity/XOR definitions; check all three positions of preset A, then rewind once. | At i=0 ledger 0\u21920\u21921, test 0^0, flip expires 2; effective 100. At i=1 ledger 1\u21921\u21920, test 1^1, flip expires 3; effective 111, last cell still Pending. At i=2 ledger 0\u21921\u21921, test 0^1, skip; final 2. Rewind restores exactly two ledger rows, no final result. | Earlier covering flips determine the current bit by odd/even count. Expire before testing because the old window excludes its endpoint. After each decision, checked prefix is all ones. Actual cell values and checked-status are separate. |\n| 4: Does expiry change a new answer? | For displayed 0110,k=2 choose \u201c3 flips\u201d before clicking Reveal & explain. | Correct prediction; 0110\u21921010\u21921100\u21921111, starts 0,1,2. Explanation says start 0 expires at i=2 and original 1 becomes effective 0. | Overlap parity before expiry is insufficient: removing the expired window forces the third flip. This is a transfer exercise rather than the initial 010 replay. |\n| 5: How does this become Python and what does it cost? | Expand submission details; read mapping and boundary discussion. | `Solution.minKBitFlips`, expire length n+1, expiry XOR before test, overflow guard, start XOR and endpoint record; no assignment to nums. O(n) time/O(n) space explicitly excludes visual snapshots. | Each of n iterations does constant work instead of k cell writes; initialization is linear. End n is legal but not scanned. k=1 counts zeros; k=n mixed bits cannot succeed. |\n\nThe visual scan's i=2 transition maps to `parity ^= expire[i]` (0^1=1), then `(nums[i] ^ parity)==0` is false, so no flip. This mapping was reconstructed from displayed Python, before source audit.\n\nIndependent predictions recorded before source/execution: `[0,0,1,0,0],k=2` \u2192 2 (00100\u219211100\u219211111, starts 0,3). Counterexample `[0,1],k=2` \u2192 \u22121 (01\u219210, no legal remaining window); a zero-count shortcut would suggest one operation. The browser offers only presets A\u2013H, so these are pending **code checks**, not custom-input UI experiments.\n\nCold conclusion: teaching is reconstructable without author notes. New parity and XOR terms are defined; a tiny hand calculation precedes abstraction. Remaining audit: independent execution, official constraints/interface, artifact parity, controls/localization/device/accessibility and metadata checks. No acceptance inferred yet.\n\n## Source, official statement, and candidate identity\n\nAfter saving the cold record, read `specs/leetcode-rendered-state-contract.md`, canonical `solution.py`, `python-code.js`, `core.js`, `app.js`, `copy.js`, HTML/CSS, shared locale consumer, metadata, `LANGUAGE_FILES` and all lesson test programs before executing them. No earlier 995 review was present in `specs/reviews`; no previous finding closure is claimed. Author BRIEF was unnecessary and was not used to fill explanation gaps.\n\n`git rev-parse HEAD` returned the nominated revision. `git diff --name-only d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c -- leetcode/995 leetcode/common.js leetcode/style.css scripts/register_leetcode_lesson.py` returned no differences. Served index, all seven script/stylesheet assets, and downloaded canonical source matched checkout bytes. SHA-256 receipts:\n\n| Asset | SHA-256 |\n| --- | --- |\n| solution.py | `31cc55e456b9d13a0350ec26272a1601f19a9832c3dde85f5f123c54d7c848b9` |\n| python-code.js | `27e528d8b5be9e493b59947a5351b577caed2ebecef6d9c515a768c4ac218466` |\n| core.js | `bdf1528e1d12cc3a3aaf24fd656ca7a6f0d5d20d402f01958984e9b2f3d54fe6` |\n| app.js | `5e3f5bfa03d2bd50b3ca312e7430317edf80faedaa03aced013a06615289fe56` |\n| copy.js | `b90154c25fc04a318545d1d497b85c0d7aca96845f53a0cf9ce309fe2f014aee` |\n| local style.css | `4ad467f067489544cafcc9f882a8bd10e6a1fc2a4ab410871516fdc66f33b293` |\n| shared style.css | `6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27` |\n| common.js | `f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b` |\n\nRead the [official statement](https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/) normally using the web reader. It confirms simultaneous toggling of exactly k contiguous bits, minimum integer count or \u22121, the three examples, n from 1 through 100000 and k from 1 through n; binary input is specified in the prose. A subsequent ordinary Chromium visit returned 403/security verification; no bypass was attempted. Saved lesson-local `tests/evidence/official.json` contains a Python3 snippet with `class Solution` and `minKBitFlips(self, nums: list[int], k: int) -> int`, matching canonical source. The live selector was not independently accessible in Chromium. Python is faithful to the original array/integer callable semantics and is the preferred language; no non-Python exception, analogy or language contract applies. `LANGUAGE_FILES` identifies exactly `solution.py`, `python-code.js`, `PYTHON_SOURCE`.\n\nMetadata complexity is the single nonempty string `O(n) time; O(n) auxiliary space`. Ran from repository root, twice, safely and without registration:\n\n```\npython3 -B scripts/register_leetcode_lesson.py 995 --validate-only\n```\n\nBoth executions exited 0 with no stdout/stderr. No metadata repair or registration was performed.\n\n## Independent computation and invariants\n\nExecuted the actual canonical file via Python `importlib.util.spec_from_file_location`, with `python3 -B`. My separate oracle enumerated every subset of legal window starts, explicitly toggled its cells and minimized the number of starts producing all ones. This differs from the author's BFS and from the greedy/expiry implementation. Exhaustive n=1..8, every binary array and every valid k: **3,586 cases matched**, and input lists remained equal to their before copies.\n\nFresh predictions above were confirmed against both actual Python and this oracle: 00100,k=2 \u2192 2; 01,k=2 \u2192 \u22121. These were code checks, not UI custom-input runs. Further independent boundaries: [1],1\u21920; [0],1\u21921; [0,0],2\u21921; [1,0],2\u2192\u22121; [1,1],2\u21920. For the fresh success, legal starts 0 and 3 produce 11100 then 11111. For the counterexample, the only legal start changes 01 to 10; there is no way to fix the suffix. This excludes the tempting rule that fixing the first original zero is sufficient or that each zero can always be handled independently.\n\nManually checked the dense official preset B beyond the initial hand case:\n\n| i | entry / expiry toggle / parity before test | original XOR before | action / after parity |\n| --- | --- | --- | --- |\n| 0 | 0 / 0 / 0 | 0^0=0 | start 0, expires 3 / 1 |\n| 1 | 1 / 0 / 1 | 0^1=1 | skip / 1 |\n| 2 | 1 / 0 / 1 | 0^1=1 | skip / 1 |\n| 3 | 1 / 1 / 0 | 1^0=1 | skip / 0 |\n| 4 | 0 / 0 / 0 | 0^0=0 | start 4, expires 7 / 1 |\n| 5 | 1 / 0 / 1 | 1^1=0 | start 5, expires 8 / 0 |\n| 6 | 0 / 0 / 0 | 1^0=1 | skip / 0 |\n| 7 | 0 / 1 / 1 | 0^1=1 | skip / 1 |\n\nRendered i=5 agrees: 6/8 checked, starts 0,4,5, three flips, no final result. Effective cells are already all ones, but indices 6 and 7 remain pending. At completion the answer is 3. All advertised preset answers were independently covered by the subset oracle: A\u2013H = 2,3,\u22121,2,1,0,\u22121,1, and matched browser descriptions and terminals in both locales.\n\nThe invariant is about the instant **after expiry, before testing**: the earlier prefix is fixed at 1 and parity counts earlier windows still covering i modulo two. Selecting i never changes that prefix; skipping is safe only for an effective 1. Failure preserves the earlier prefix but leaves the current 0 pending. Browser preset C shows this: final \u22121, flips so far 0, index 2 current/pending, not fixed. Finite scanning ends after n tests or the first impossible required window. Cancellation permits each start to be considered once; uniquely forced starts yield minimum count, not merely a feasible count.\n\nActual Python allocates n+1 expiry cells, scans n positions, and performs constant work per iteration. It does not reconstruct snapshots or mutate nums. Time and auxiliary space are O(n), including initialization, even for immediate failure or all ones. The displayed baseline copies n elements and can toggle k cells at each of O(n) starts: O(nk) time/O(n) extra space; k\u22651 prevents a lost scan term at a zero parameter. Legal endpoint n is stored and not scanned; the strict `i+k>n` rejection is correct.\n\n## Executed checks and observed interactions\n\nAll output paths below were set with `EVIDENCE_DIR=\"$PWD/specs/reviews/995-evidence/995-review-1-c18c137a\"`; the existing preview service was used unchanged. No tracked author evidence was regenerated. The rerun JSON files retain their programs' original **author self-check** labels; their counts are supporting computation, not independent teaching scores.\n\n| Inspected command, then executed | Observed result / saved evidence |\n| --- | --- |\n| `python3 -B leetcode/995/tests/test_solution.py` | Exit 0; 18,434 exhaustive BFS comparisons, 1,000 seeded cases, nine official/fresh/max cases, immutability, mirror equality. `numerical.json`. |\n| `node leetcode/995/tests/test_core.cjs` | Exit 0; 8,194 inputs, 58,416 frames; raw effective values, prefix, entry/expiry/decision parity, expiry indices and deep snapshots checked. `core.json`. |\n| `node leetcode/995/tests/browser.cjs` | Exit 0; all 16 locale/preset combinations, 16 width/zoom combinations, actual clipboard and fallback, source download, keyboard, localization preservation and other checks below. `browser.json`. |\n| `node leetcode/995/tests/visual.cjs` | Exit 0; 12 focused screenshots and `visual.json`, including rendered marker geometry. |\n\nBrowser: Chromium 156.0.8078.4, Linux, Playwright with installed NODE_PATH and `process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` passed as executablePath. Observed no page errors, failed assets or external lesson requests.\n\n- Both hand-step endpoints disable the appropriate control. All scan presets rewind to the exact initial text/state, replay to the same frame, reset, and jump to the same terminal state. Input change restarts that simulation as stated. Terminal next/end are disabled, while rewind/reset remain available.\n- All three quiz choices were selected and revealed in each locale. Changing choice hides stale feedback until a new reveal; wrong choices explain the insufficient-flips and false-impossibility cases. Its input is fixed 0110, independent of the separate scan preset, so scan changes do not require changing the quiz's answer.\n- Locale roundtrip preserves hand/scan position, selected preset, chosen prediction, revealed feedback and open code details. A separate 320px zh\u2192en\u2192zh check confirmed both H1 and document title contain 995 and the corresponding metadata title. Formulas retain full `expire[i]`, `nums[i]`, XOR and ordering in both languages. Chinese prose and visible i=5 feedback independently read and matched the hand table above; no mismatched localization binding found. Acorn AST inspection found 102 unique localization object keys; pair/placeholder shape checks also passed. Shared consumer reads each `[zh,en]` pair consistently.\n- Actual UI copy success was read back from the native clipboard and compared without trimming. Before **each** locale's fallback attempt, a distinct non-source sentinel was written and read back successfully; then automatic writes were denied. Real Copy focused and fully selected the readonly textarea. Linux `Control+C` transferred the complete canonical source, including final newline, independently of the earlier copied value. Mirror, DOM `textContent`, both copied paths and downloaded bytes all matched canonical source exactly. `download-en.py` and `download-zh.py` are review outputs only.\n- Enter advances the focused scan button; Shift+Tab returns to rewind and Enter rewinds. Keyboard focus has a visible 3px outline. Focusable ledger and source regions respond to ArrowRight, permitting access to columns/long code lines. Forced-colors focus and reduced-motion behavior passed. Denied storage, offline after load, and file opening retained working scan/source paths.\n- Separate width-change checks retained dense preset B at 6/8 positions while resizing 320\u2192390\u21921440\u2192320 in both locales. This state preservation is distinct from the layout test's deliberate preset resets.\n\n## Layout, contrast and inspected screenshots\n\nInspected the cold full page and these actual screenshot files in this run's evidence directory:\n\n- `focus-en-overlap.png`, `focus-zh-overlap.png`: at i=1, current+fixed visibly coexist, whereas index 0 is fixed only and index 2 is pending despite value 1. Value, original value, fixed and current labels occupy separate lines; geometry assertions confirm no text intersection. Rewind/replay restores the same distinction in both languages.\n- `en-320-z1-bits.png`, `zh-390-z1-controls.png`, `en-1440-z1-bits.png`: dense B state wraps to rows at narrow widths and stays a single readable row on desktop. The full ledger is readable on desktop; narrower ledger columns remain associated in a keyboard-scrollable table rather than causing page overflow.\n- `focus-en-zoom-current.png`, `focus-zh-zoom-current.png`, `zh-320-z2-controls.png`: at 200% CSS zoom the cards and controls reflow; localized labels wrap, including the long bit-array description, without losing values. More vertical scrolling is needed, but current/fixed meanings remain legible. This is CSS layout zoom stress, not a claim about native OS/browser zoom or physical devices.\n- `focus-en-failure.png`, `focus-zh-expiry-ledger.png`: readable dashed disabled controls; failure and successful expiry semantics agree with cells and cumulative/final readouts.\n- `focus-en-source.png`, `focus-zh-fallback.png`: visible focus, scrollable source, complete selected fallback. A screenshot crops horizontally scrollable code by design; exact source parity was checked separately and keyboard scrolling verified.\n\nAutomated geometry included 320,390,736,1440 widths at 100% and 200% in each locale: page scroll width equaled viewport throughout. The closed selected value is a single letter A\u2013H; the full input/result meaning is in the adjacent localized description. The test measured text plus padding and a 20px arrow reserve and passed; screenshots confirm readable native selections. No resolved font identity across other platforms is inferred.\n\nCalibrated the **actual browser test's extracted luminance function**, not a replacement: black=0, white=1, red=.2126, green=.7152, blue=.0722, black/white contrast=21; #747474/black=4.492948073111701, correctly below 4.5. Recorded solid-color text ratios ranged from 6.449407898769069 (muted card labels, rgb(154,167,184) on rgb(28,35,48)) upward, exceeding 4.5. Current-label contrast was 8.937191437807625. Disabled controls have opacity 1 and readable muted text with dashed borders (visually inspected, then separately checked in both languages). No contrast conclusions about unsupported gradients or other platforms are asserted.\n\n## Findings and related navigation\n\n**Required open findings: none.** No earlier required findings exist in the available 995 review history to close. Two low-severity advisories remain optional; neither prevents reconstructing the core algorithm.\n\n| Stable ID / status | Concrete reproduction and actual | Expected / requirement / next action |\n| --- | --- | --- |\n| 995-A01 / open advisory, low | At this candidate, EN or ZH, 320px, focus the second related link and press Enter. Label promises proving greedy with a prefix invariant; target `../330/#step2` visibly lands on \u201cWhat changes after each consume or patch?\u201d / \u201c\u6bcf\u6b21\u6d88\u8d39\u6216\u8865\u6570\u540e\uff0c\u8fb9\u754c\u5982\u4f55\u6539\u53d8\uff1f\u201d, the state experiment. The section defines miss and its ledger but does not itself give the promised greedy proof. | Rendered-state contract \u00a712: related labels should match destination content. The destination lesson is relevant and available, so this is ancillary anchor precision, not a core teaching blocker. Owner may choose the proof section's verified anchor or describe this link as the coverage-state experiment. Fix revision/regression: pending, not closed. |\n| 995-A02 / open advisory, low | EN, section 2 proof, desktop or narrow: \u201cWindow flips commute\u201d introduces a terse mathematical word. Chinese explicitly says the order does not affect the result. | Target-reader language could be smoother: say \u201cChanging the order of these flips does not change the result.\u201d Leftmost-choice explanation, cancellation, worked overlap and later parity supply the reasoning already, so this is minor vocabulary friction rather than an absent essential bridge. Owner may simplify wording. Fix revision/regression: pending, not closed. |\n\nThe local forced-choice link lands on the reviewed section 2. The other external continuation, `../2916/#step3`, is available and actually derives uniform interval updates from old S/Q and concrete d=[2,2,1], consistent with \u201cincremental interval maintenance.\u201d Both localized link labels were inspected. The 330 destination was keyboard-activated and read in both locales; the test's mere heading-existence assertion would not establish that semantic match. No publication availability or acceptance of those other lessons is claimed.\n\n## Scores and conclusion\n\n| Dimension | Weight | Score / 4 | Observation-based rationale |\n| --- | --- | --- | --- |\n| Problem / terms / hand calculation | 15 | 4 | Binary values, contiguous length k, toggling, zero-based indices and result units are explicit; operated and reconstructed 010\u2192100\u2192111 before abstraction. |\n| Causal derivation / saved work | 20 | 3 | Forced-start proof and cancellation establish minimality; baseline cell writes become two boundary events with concrete values. English \u201ccommute\u201d adds minor target-reader friction (995-A02), but the chain is reconstructable without notes. |\n| Maintained state / correctness | 20 | 4 | Entry/expired/decided instants agree with full manual traces, raw cells and Python; expiry-before-test, overflow, legal endpoint and termination justified; independent oracle agrees. |\n| Interaction / visual meaning | 20 | 4 | Predictions reveal causal feedback; retained ledger and exact rewind/reset work; pending/fixed/current meanings remain visibly distinct, including overlapping status and failure. |\n| Python / actual cost | 15 | 4 | Faithful original callable executed, fresh counterexample/boundaries checked, exact source transfer verified, nonmutation and O(n)/O(n) cost derived from actual allocation/loop. |\n| Bilingual / device access | 10 | 4 | Equivalent substantive reasoning/formulas and semantic state bindings; localized identity and state survive switching/resizing; keyboard, contrast, narrow/desktop and zoom stress pass with screenshot inspection. |\n\nWeighted score: **95/100** = 15 + 15 + 20 + 20 + 15 + 10. Every dimension \u22653; required-open count 0. **Accepted for the identified candidate and review scope**, with optional advisories above. This is independent review, separate from publication.\n\nLimitations: one automated reviewer reconstructed the explanation; no real-human comprehension measurement, successful LeetCode submission, native mobile hardware, native OS zoom, production deployment or cross-platform font equivalence is claimed. The official statement was accessible through the ordinary web reader; the normal Chromium official page was blocked and its live language selector was unavailable, so the Python snippet/interface comparison additionally uses saved official evidence. Browser screenshots support rendered observations, not scores by themselves. Only this exact report and its exclusive evidence directory were written; candidate implementation and earlier evidence were preserved.\n\nAdditional measured font receipt: at 320px in each locale, closed selection B used computed `16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif`; client width 260 CSS px, measured glyph width 10.4000244140625, left/right padding 4px each and test arrow reserve 20px. This records the configured stack, not a claim that PingFang was installed. Separate disabled-state reads returned `disabled=true`, text rgb(154,167,184), background rgb(28,35,48), opacity 1, dashed border in both locales.\n",
+      "reportPath": "specs/reviews/995-review-1-c18c137a.md",
+      "lessonTrees": {
+        "candidate": "9fb98cd2eb0d740e233c2e52a1fe2eb318b4de87",
+        "review": "9fb98cd2eb0d740e233c2e52a1fe2eb318b4de87",
+        "registration": "9fb98cd2eb0d740e233c2e52a1fe2eb318b4de87"
+      },
+      "canonicalSha256": "31cc55e456b9d13a0350ec26272a1601f19a9832c3dde85f5f123c54d7c848b9",
+      "lessonEntry": {
+        "id": 995,
+        "title": {
+          "zh": "K \u8fde\u7eed\u4f4d\u7684\u6700\u5c0f\u7ffb\u8f6c\u6b21\u6570",
+          "en": "Minimum Number of K Consecutive Bit Flips"
+        },
+        "desc": {
+          "zh": "\u4ece\u5de6\u7aef\u7684\u5fc5\u9009\u7ffb\u8f6c\uff0c\u63a8\u5bfc\u5947\u5076\u6027\u4e0e\u5230\u671f\u4e8b\u4ef6\u7684\u7ebf\u6027\u626b\u63cf\u3002",
+          "en": "Derive a linear parity-and-expiry scan from forced leftmost flips."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u8d2a\u5fc3",
+            "en": "Greedy"
+          },
+          {
+            "zh": "\u5dee\u5206\u4e8b\u4ef6",
+            "en": "Difference events"
+          }
+        ],
+        "path": "995/",
+        "leetcodeUrl": "https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/",
+        "language": "Python",
+        "complexity": "O(n) time; O(n) auxiliary space",
+        "concepts": [
+          {
+            "name": "Forced leftmost flip",
+            "step": 2,
+            "description": "Why each left-to-right decision is forced."
+          },
+          {
+            "name": "Flip parity and expiry",
+            "step": 3,
+            "description": "Replace interval writes with two boundary toggles."
+          }
+        ]
+      },
+      "registryEntry": {
+        "id": 995,
+        "title": {
+          "zh": "K \u8fde\u7eed\u4f4d\u7684\u6700\u5c0f\u7ffb\u8f6c\u6b21\u6570",
+          "en": "Minimum Number of K Consecutive Bit Flips"
+        },
+        "desc": {
+          "zh": "\u4ece\u5de6\u7aef\u7684\u5fc5\u9009\u7ffb\u8f6c\uff0c\u63a8\u5bfc\u5947\u5076\u6027\u4e0e\u5230\u671f\u4e8b\u4ef6\u7684\u7ebf\u6027\u626b\u63cf\u3002",
+          "en": "Derive a linear parity-and-expiry scan from forced leftmost flips."
+        },
+        "difficulty": "hard",
+        "topics": [
+          {
+            "zh": "\u8d2a\u5fc3",
+            "en": "Greedy"
+          },
+          {
+            "zh": "\u5dee\u5206\u4e8b\u4ef6",
+            "en": "Difference events"
+          }
+        ],
+        "path": "995/",
+        "leetcodeUrl": "https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/",
+        "language": "Python",
+        "complexity": "O(n) time; O(n) auxiliary space"
+      },
+      "remoteRegistration": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+      "reviewedProof": {
+        "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+        "digest": "c54768fa88b484603c28f3ffcae2e59a3d2247ac38c95795565d8527ad53c8d0",
+        "review": "specs/reviews/995-review-1-c18c137a.md",
+        "registry": {
+          "id": 995,
+          "title": {
+            "zh": "K \u8fde\u7eed\u4f4d\u7684\u6700\u5c0f\u7ffb\u8f6c\u6b21\u6570",
+            "en": "Minimum Number of K Consecutive Bit Flips"
+          },
+          "desc": {
+            "zh": "\u4ece\u5de6\u7aef\u7684\u5fc5\u9009\u7ffb\u8f6c\uff0c\u63a8\u5bfc\u5947\u5076\u6027\u4e0e\u5230\u671f\u4e8b\u4ef6\u7684\u7ebf\u6027\u626b\u63cf\u3002",
+            "en": "Derive a linear parity-and-expiry scan from forced leftmost flips."
+          },
+          "difficulty": "hard",
+          "topics": [
+            {
+              "zh": "\u8d2a\u5fc3",
+              "en": "Greedy"
+            },
+            {
+              "zh": "\u5dee\u5206\u4e8b\u4ef6",
+              "en": "Difference events"
+            }
+          ],
+          "path": "995/",
+          "leetcodeUrl": "https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/",
+          "language": "Python",
+          "complexity": "O(n) time; O(n) auxiliary space"
+        }
+      },
+      "reviewedAssetSha256": {
+        "leetcode/995/app.js": "5e3f5bfa03d2bd50b3ca312e7430317edf80faedaa03aced013a06615289fe56",
+        "leetcode/995/copy.js": "b90154c25fc04a318545d1d497b85c0d7aca96845f53a0cf9ce309fe2f014aee",
+        "leetcode/995/core.js": "bdf1528e1d12cc3a3aaf24fd656ca7a6f0d5d20d402f01958984e9b2f3d54fe6",
+        "leetcode/995/index.html": "144e8ea92fcb7ad7cccf05d106943d7c8182c9ba53a91d9bbe1954fe2ba97f00",
+        "leetcode/995/python-code.js": "27e528d8b5be9e493b59947a5351b577caed2ebecef6d9c515a768c4ac218466",
+        "leetcode/995/solution.py": "31cc55e456b9d13a0350ec26272a1601f19a9832c3dde85f5f123c54d7c848b9",
+        "leetcode/995/style.css": "4ad467f067489544cafcc9f882a8bd10e6a1fc2a4ab410871516fdc66f33b293"
+      }
+    }
+  }
+}

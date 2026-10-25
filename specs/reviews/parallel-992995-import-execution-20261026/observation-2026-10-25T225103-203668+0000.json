@@ -1,0 +1,405 @@
+{
+  "observed_at": "2026-10-25T22:51:03.203668+00:00",
+  "receipt": {
+    "owner": "import992995-only-20261026-888bb6ac",
+    "status": "completed-resumed",
+    "created_at": "2026-10-25T22:43:15.305924+00:00",
+    "imports": [
+      {
+        "version": 1,
+        "status": "completed",
+        "problem_id": "992",
+        "central_before": "0f70390daac7691e6894b90a77414f0feb2f74b3",
+        "lane_head": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+        "lane_repo": "/home/songyy/projects/leetcode-hard-lane-992-20261026",
+        "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-992-20261026",
+        "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+        "run_ids": [
+          "992-author-bd39779c66e3",
+          "992-review-67f5902a3c90"
+        ],
+        "started_at": "2026-10-25T22:48:43.154991+00:00",
+        "updated_at": "2026-10-25T22:48:45.392156+00:00",
+        "merged_head": "fa0f53a49c93c42dbfe764913f568c8ca70726ba"
+      },
+      {
+        "version": 1,
+        "status": "completed",
+        "problem_id": "995",
+        "central_before": "fa0f53a49c93c42dbfe764913f568c8ca70726ba",
+        "lane_head": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+        "lane_repo": "/home/songyy/projects/leetcode-hard-lane-995-20261026",
+        "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-995-20261026",
+        "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+        "run_ids": [
+          "995-author-ab095f2912c3",
+          "995-review-f5d78a25ecbc"
+        ],
+        "started_at": "2026-10-25T22:50:23.712938+00:00",
+        "updated_at": "2026-10-25T22:50:26.007409+00:00",
+        "merged_head": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78"
+      }
+    ],
+    "lanes": [
+      {
+        "id": "992",
+        "lane_head": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+        "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+        "score": 100.0,
+        "required_open": [],
+        "run_ids": [
+          "992-author-bd39779c66e3",
+          "992-review-67f5902a3c90"
+        ]
+      },
+      {
+        "id": "995",
+        "lane_head": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+        "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+        "score": 95.0,
+        "required_open": [],
+        "run_ids": [
+          "995-author-ab095f2912c3",
+          "995-review-f5d78a25ecbc"
+        ]
+      }
+    ],
+    "pre_stop_plan": {
+      "next_problem_id": "864",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987"
+        ],
+        "incoming": [
+          "992",
+          "995"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 7
+      }
+    },
+    "stop": {
+      "owner": "import992995-only-20261026-888bb6ac",
+      "created_at": "2026-10-25T22:43:18.654095+00:00",
+      "reason": "Finish current stage; import independently accepted992/995 under unchanged policy, then resume the normal queue.",
+      "lane_ids": [
+        "992",
+        "995"
+      ]
+    },
+    "boundary_plan": {
+      "next_problem_id": "864",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987"
+        ],
+        "incoming": [
+          "992",
+          "995"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 7
+      }
+    },
+    "boundary_head": "0f70390daac7691e6894b90a77414f0feb2f74b3",
+    "post_import_plan": {
+      "next_problem_id": "864",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "incoming": [],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 7
+      }
+    },
+    "imported_head": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78",
+    "policy_preserved": true,
+    "launch": {
+      "pid": 1851151,
+      "queue_count": 984,
+      "continuous": true,
+      "state": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress.json"
+    },
+    "ordinary_resume_proof": {
+      "registration_commits": [],
+      "agent_candidate": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78",
+      "prior_reviews_and_runs_preserved": true
+    },
+    "completed_at": "2026-10-25T22:50:55.940369+00:00",
+    "fresh_agent": {
+      "current": {
+        "problem_id": "864",
+        "stage": "review",
+        "started_at": "2026-10-25T22:50:51.326690+00:00",
+        "run_id": "864-review-7fed1ec4a8a0"
+      },
+      "session_id": "01a17542-763c-7103-a644-a510f6ac1932",
+      "native_codex_pids": [
+        1851411
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a17542-763c-7103-a644-a510f6ac1932"
+        },
+        {
+          "type": "turn.started"
+        }
+      ]
+    },
+    "pushed_head": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78",
+    "ledger_preserved": true
+  },
+  "receiptRawBase64": "ewogICJvd25lciI6ICJpbXBvcnQ5OTI5OTUtb25seS0yMDI2MTAyNi04ODhiYjZhYyIsCiAgInN0YXR1cyI6ICJjb21wbGV0ZWQtcmVzdW1lZCIsCiAgImNyZWF0ZWRfYXQiOiAiMjAyNi0xMC0yNVQyMjo0MzoxNS4zMDU5MjQrMDA6MDAiLAogICJpbXBvcnRzIjogWwogICAgewogICAgICAidmVyc2lvbiI6IDEsCiAgICAgICJzdGF0dXMiOiAiY29tcGxldGVkIiwKICAgICAgInByb2JsZW1faWQiOiAiOTkyIiwKICAgICAgImNlbnRyYWxfYmVmb3JlIjogIjBmNzAzOTBkYWFjNzY5MWU2ODk0YjkwYTc3NDE0ZjBmZWIyZjc0YjMiLAogICAgICAibGFuZV9oZWFkIjogImVkNDMwYWZiYmUzNDhhMzAyZDZkZGIwY2QzNWY4MTQyZTJhMGMwNGMiLAogICAgICAibGFuZV9yZXBvIjogIi9ob21lL3Nvbmd5eS9wcm9qZWN0cy9sZWV0Y29kZS1oYXJkLWxhbmUtOTkyLTIwMjYxMDI2IiwKICAgICAgImxhbmVfc3RhdGVfZGlyIjogIi9ob21lL3Nvbmd5eS9wcm9qZWN0cy9sZWV0Y29kZS1oYXJkLWxhbmUtc3RhdGUtOTkyLTIwMjYxMDI2IiwKICAgICAgImNhbmRpZGF0ZSI6ICJkMGM4NWIyYjkzYTZmMjllMjNjZGY5YzZiN2YxOTk2M2QyNjZiOWFhIiwKICAgICAgInJ1bl9pZHMiOiBbCiAgICAgICAgIjk5Mi1hdXRob3ItYmQzOTc3OWM2NmUzIiwKICAgICAgICAiOTkyLXJldmlldy02N2Y1OTAyYTNjOTAiCiAgICAgIF0sCiAgICAgICJzdGFydGVkX2F0IjogIjIwMjYtMTAtMjVUMjI6NDg6NDMuMTU0OTkxKzAwOjAwIiwKICAgICAgInVwZGF0ZWRfYXQiOiAiMjAyNi0xMC0yNVQyMjo0ODo0NS4zOTIxNTYrMDA6MDAiLAogICAgICAibWVyZ2VkX2hlYWQiOiAiZmEwZjUzYTQ5YzkzYzQyZGJmZTc2NDkxM2Y1NjhjOGNhNzA3MjZiYSIKICAgIH0sCiAgICB7CiAgICAgICJ2ZXJzaW9uIjogMSwKICAgICAgInN0YXR1cyI6ICJjb21wbGV0ZWQiLAogICAgICAicHJvYmxlbV9pZCI6ICI5OTUiLAogICAgICAiY2VudHJhbF9iZWZvcmUiOiAiZmEwZjUzYTQ5YzkzYzQyZGJmZTc2NDkxM2Y1NjhjOGNhNzA3MjZiYSIsCiAgICAgICJsYW5lX2hlYWQiOiAiMmVmNWM1MjVjNzUwZDgwMDI2OWNjMzNlZDU2NWY5YTgwYjc1MmEyMyIsCiAgICAgICJsYW5lX3JlcG8iOiAiL2hvbWUvc29uZ3l5L3Byb2plY3RzL2xlZXRjb2RlLWhhcmQtbGFuZS05OTUtMjAyNjEwMjYiLAogICAgICAibGFuZV9zdGF0ZV9kaXIiOiAiL2hvbWUvc29uZ3l5L3Byb2plY3RzL2xlZXRjb2RlLWhhcmQtbGFuZS1zdGF0ZS05OTUtMjAyNjEwMjYiLAogICAgICAiY2FuZGlkYXRlIjogImQ4NGNmYjUyNjUxMDNkNmQzMjFmZGMzZjBkNWRkNGIzZTE3YWMxM2MiLAogICAgICAicnVuX2lkcyI6IFsKICAgICAgICAiOTk1LWF1dGhvci1hYjA5NWYyOTEyYzMiLAogICAgICAgICI5OTUtcmV2aWV3LWY1ZDc4YTI1ZWNiYyIKICAgICAgXSwKICAgICAgInN0YXJ0ZWRfYXQiOiAiMjAyNi0xMC0yNVQyMjo1MDoyMy43MTI5MzgrMDA6MDAiLAogICAgICAidXBkYXRlZF9hdCI6ICIyMDI2LTEwLTI1VDIyOjUwOjI2LjAwNzQwOSswMDowMCIsCiAgICAgICJtZXJnZWRfaGVhZCI6ICJkOWQ3OTg5ZTk5NTI3NDlhODNhODBjZGRlNGNlMWQ2YjJjNWY3Yzc4IgogICAgfQogIF0sCiAgImxhbmVzIjogWwogICAgewogICAgICAiaWQiOiAiOTkyIiwKICAgICAgImxhbmVfaGVhZCI6ICJlZDQzMGFmYmJlMzQ4YTMwMmQ2ZGRiMGNkMzVmODE0MmUyYTBjMDRjIiwKICAgICAgImNhbmRpZGF0ZSI6ICJkMGM4NWIyYjkzYTZmMjllMjNjZGY5YzZiN2YxOTk2M2QyNjZiOWFhIiwKICAgICAgInNjb3JlIjogMTAwLjAsCiAgICAgICJyZXF1aXJlZF9vcGVuIjogW10sCiAgICAgICJydW5faWRzIjogWwogICAgICAgICI5OTItYXV0aG9yLWJkMzk3NzljNjZlMyIsCiAgICAgICAgIjk5Mi1yZXZpZXctNjdmNTkwMmEzYzkwIgogICAgICBdCiAgICB9LAogICAgewogICAgICAiaWQiOiAiOTk1IiwKICAgICAgImxhbmVfaGVhZCI6ICIyZWY1YzUyNWM3NTBkODAwMjY5Y2MzM2VkNTY1ZjlhODBiNzUyYTIzIiwKICAgICAgImNhbmRpZGF0ZSI6ICJkODRjZmI1MjY1MTAzZDZkMzIxZmRjM2YwZDVkZDRiM2UxN2FjMTNjIiwKICAgICAgInNjb3JlIjogOTUuMCwKICAgICAgInJlcXVpcmVkX29wZW4iOiBbXSwKICAgICAgInJ1bl9pZHMiOiBbCiAgICAgICAgIjk5NS1hdXRob3ItYWIwOTVmMjkxMmMzIiwKICAgICAgICAiOTk1LXJldmlldy1mNWQ3OGEyNWVjYmMiCiAgICAgIF0KICAgIH0KICBdLAogICJwcmVfc3RvcF9wbGFuIjogewogICAgIm5leHRfcHJvYmxlbV9pZCI6ICI4NjQiLAogICAgInJlZ2lzdHJhdGlvbl9pZHMiOiBbXSwKICAgICJwdWJsaWNhdGlvbl9ib3VuZCI6IHsKICAgICAgImVsaWdpYmxlIjogWwogICAgICAgICI4NTQiLAogICAgICAgICI4NTciLAogICAgICAgICI4NjIiLAogICAgICAgICI5ODIiLAogICAgICAgICI5ODciCiAgICAgIF0sCiAgICAgICJpbmNvbWluZyI6IFsKICAgICAgICAiOTkyIiwKICAgICAgICAiOTk1IgogICAgICBdLAogICAgICAicmVnaXN0cmF0aW9uX2lkcyI6IFtdLAogICAgICAicmVvcGVuZWRfdXBwZXJfYm91bmRfaWRzIjogW10sCiAgICAgICJ1cHBlcl9ib3VuZF9pZHMiOiBbCiAgICAgICAgIjg1NCIsCiAgICAgICAgIjg1NyIsCiAgICAgICAgIjg2MiIsCiAgICAgICAgIjk4MiIsCiAgICAgICAgIjk4NyIsCiAgICAgICAgIjk5MiIsCiAgICAgICAgIjk5NSIKICAgICAgXSwKICAgICAgInVwcGVyX2JvdW5kIjogNwogICAgfQogIH0sCiAgInN0b3AiOiB7CiAgICAib3duZXIiOiAiaW1wb3J0OTkyOTk1LW9ubHktMjAyNjEwMjYtODg4YmI2YWMiLAogICAgImNyZWF0ZWRfYXQiOiAiMjAyNi0xMC0yNVQyMjo0MzoxOC42NTQwOTUrMDA6MDAiLAogICAgInJlYXNvbiI6ICJGaW5pc2ggY3VycmVudCBzdGFnZTsgaW1wb3J0IGluZGVwZW5kZW50bHkgYWNjZXB0ZWQ5OTIvOTk1IHVuZGVyIHVuY2hhbmdlZCBwb2xpY3ksIHRoZW4gcmVzdW1lIHRoZSBub3JtYWwgcXVldWUuIiwKICAgICJsYW5lX2lkcyI6IFsKICAgICAgIjk5MiIsCiAgICAgICI5OTUiCiAgICBdCiAgfSwKICAiYm91bmRhcnlfcGxhbiI6IHsKICAgICJuZXh0X3Byb2JsZW1faWQiOiAiODY0IiwKICAgICJyZWdpc3RyYXRpb25faWRzIjogW10sCiAgICAicHVibGljYXRpb25fYm91bmQiOiB7CiAgICAgICJlbGlnaWJsZSI6IFsKICAgICAgICAiODU0IiwKICAgICAgICAiODU3IiwKICAgICAgICAiODYyIiwKICAgICAgICAiOTgyIiwKICAgICAgICAiOTg3IgogICAgICBdLAogICAgICAiaW5jb21pbmciOiBbCiAgICAgICAgIjk5MiIsCiAgICAgICAgIjk5NSIKICAgICAgXSwKICAgICAgInJlZ2lzdHJhdGlvbl9pZHMiOiBbXSwKICAgICAgInJlb3BlbmVkX3VwcGVyX2JvdW5kX2lkcyI6IFtdLAogICAgICAidXBwZXJfYm91bmRfaWRzIjogWwogICAgICAgICI4NTQiLAogICAgICAgICI4NTciLAogICAgICAgICI4NjIiLAogICAgICAgICI5ODIiLAogICAgICAgICI5ODciLAogICAgICAgICI5OTIiLAogICAgICAgICI5OTUiCiAgICAgIF0sCiAgICAgICJ1cHBlcl9ib3VuZCI6IDcKICAgIH0KICB9LAogICJib3VuZGFyeV9oZWFkIjogIjBmNzAzOTBkYWFjNzY5MWU2ODk0YjkwYTc3NDE0ZjBmZWIyZjc0YjMiLAogICJwb3N0X2ltcG9ydF9wbGFuIjogewogICAgIm5leHRfcHJvYmxlbV9pZCI6ICI4NjQiLAogICAgInJlZ2lzdHJhdGlvbl9pZHMiOiBbXSwKICAgICJwdWJsaWNhdGlvbl9ib3VuZCI6IHsKICAgICAgImVsaWdpYmxlIjogWwogICAgICAgICI4NTQiLAogICAgICAgICI4NTciLAogICAgICAgICI4NjIiLAogICAgICAgICI5ODIiLAogICAgICAgICI5ODciLAogICAgICAgICI5OTIiLAogICAgICAgICI5OTUiCiAgICAgIF0sCiAgICAgICJpbmNvbWluZyI6IFtdLAogICAgICAicmVnaXN0cmF0aW9uX2lkcyI6IFtdLAogICAgICAicmVvcGVuZWRfdXBwZXJfYm91bmRfaWRzIjogW10sCiAgICAgICJ1cHBlcl9ib3VuZF9pZHMiOiBbCiAgICAgICAgIjg1NCIsCiAgICAgICAgIjg1NyIsCiAgICAgICAgIjg2MiIsCiAgICAgICAgIjk4MiIsCiAgICAgICAgIjk4NyIsCiAgICAgICAgIjk5MiIsCiAgICAgICAgIjk5NSIKICAgICAgXSwKICAgICAgInVwcGVyX2JvdW5kIjogNwogICAgfQogIH0sCiAgImltcG9ydGVkX2hlYWQiOiAiZDlkNzk4OWU5OTUyNzQ5YTgzYTgwY2RkZTRjZTFkNmIyYzVmN2M3OCIsCiAgInBvbGljeV9wcmVzZXJ2ZWQiOiB0cnVlLAogICJsYXVuY2giOiB7CiAgICAicGlkIjogMTg1MTE1MSwKICAgICJxdWV1ZV9jb3VudCI6IDk4NCwKICAgICJjb250aW51b3VzIjogdHJ1ZSwKICAgICJzdGF0ZSI6ICIvaG9tZS9zb25neXkvcHJvamVjdHMvbGVldGNvZGUtaGFyZC1jYW1wYWlnbi1zdGF0ZS0yMDI2MTAxOC9wcm9ncmVzcy5qc29uIgogIH0sCiAgIm9yZGluYXJ5X3Jlc3VtZV9wcm9vZiI6IHsKICAgICJyZWdpc3RyYXRpb25fY29tbWl0cyI6IFtdLAogICAgImFnZW50X2NhbmRpZGF0ZSI6ICJkOWQ3OTg5ZTk5NTI3NDlhODNhODBjZGRlNGNlMWQ2YjJjNWY3Yzc4IiwKICAgICJwcmlvcl9yZXZpZXdzX2FuZF9ydW5zX3ByZXNlcnZlZCI6IHRydWUKICB9LAogICJjb21wbGV0ZWRfYXQiOiAiMjAyNi0xMC0yNVQyMjo1MDo1NS45NDAzNjkrMDA6MDAiLAogICJmcmVzaF9hZ2VudCI6IHsKICAgICJjdXJyZW50IjogewogICAgICAicHJvYmxlbV9pZCI6ICI4NjQiLAogICAgICAic3RhZ2UiOiAicmV2aWV3IiwKICAgICAgInN0YXJ0ZWRfYXQiOiAiMjAyNi0xMC0yNVQyMjo1MDo1MS4zMjY2OTArMDA6MDAiLAogICAgICAicnVuX2lkIjogIjg2NC1yZXZpZXctN2ZlZDFlYzRhOGEwIgogICAgfSwKICAgICJzZXNzaW9uX2lkIjogIjAxYTE3NTQyLTc2M2MtNzEwMy1hNjQ0LWE1MTBmNmFjMTkzMiIsCiAgICAibmF0aXZlX2NvZGV4X3BpZHMiOiBbCiAgICAgIDE4NTE0MTEKICAgIF0sCiAgICAiZXZlbnRzIjogWwogICAgICB7CiAgICAgICAgInR5cGUiOiAidGhyZWFkLnN0YXJ0ZWQiLAogICAgICAgICJ0aHJlYWRfaWQiOiAiMDFhMTc1NDItNzYzYy03MTAzLWE2NDQtYTUxMGY2YWMxOTMyIgogICAgICB9LAogICAgICB7CiAgICAgICAgInR5cGUiOiAidHVybi5zdGFydGVkIgogICAgICB9CiAgICBdCiAgfSwKICAicHVzaGVkX2hlYWQiOiAiZDlkNzk4OWU5OTUyNzQ5YTgzYTgwY2RkZTRjZTFkNmIyYzVmN2M3OCIsCiAgImxlZGdlcl9wcmVzZXJ2ZWQiOiB0cnVlCn0K",
+  "receiptSha256": "3a147fcf48a32cde5414d7da7e861776728b164b0918639d70c97a079906de2a",
+  "operatorAlive": false,
+  "head": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78",
+  "status": "running",
+  "current": {
+    "problem_id": "864",
+    "stage": "review",
+    "started_at": "2026-10-25T22:50:51.326690+00:00",
+    "run_id": "864-review-7fed1ec4a8a0"
+  },
+  "currentRun": {
+    "id": "864-review-7fed1ec4a8a0",
+    "problem_id": "864",
+    "role": "review",
+    "started_at": "2026-10-25T22:50:51.326690+00:00",
+    "status": "running",
+    "candidate": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78",
+    "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/864-review-7fed1ec4a8a0",
+    "session_ids": []
+  },
+  "runnerPid": 1851151,
+  "stop": null,
+  "reservation": {
+    "992": {
+      "id": "992",
+      "base": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-992-20261026",
+      "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-992-20261026",
+      "port": 18797,
+      "nice": 10,
+      "status": "imported",
+      "started_at": "2026-10-25T22:14:54.383560+00:00",
+      "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+      "publication_enabled": false,
+      "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+      "runner_pid": 1781208,
+      "observed_current": {
+        "problem_id": "992",
+        "stage": "author",
+        "started_at": "2026-10-25T22:15:17.548313+00:00",
+        "run_id": "992-author-bd39779c66e3"
+      },
+      "imported_head": "fa0f53a49c93c42dbfe764913f568c8ca70726ba",
+      "import_receipt": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/lane-imports/992-10b45d18f7cc492aae06533dc603d2b0.json"
+    },
+    "995": {
+      "id": "995",
+      "base": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-995-20261026",
+      "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-995-20261026",
+      "port": 18798,
+      "nice": 10,
+      "status": "imported",
+      "started_at": "2026-10-25T22:15:19.268574+00:00",
+      "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+      "publication_enabled": false,
+      "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+      "runner_pid": 1781819,
+      "observed_current": {
+        "problem_id": "995",
+        "stage": "author",
+        "started_at": "2026-10-25T22:15:44.915979+00:00",
+        "run_id": "995-author-ab095f2912c3"
+      },
+      "imported_head": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78",
+      "import_receipt": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/lane-imports/995-5dc032502773441dbc2881c106978da0.json"
+    }
+  },
+  "ledgerSha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+  "policySha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+  "log": "{\"owner\": \"import992995-only-20261026-888bb6ac\", \"status\": \"completed-resumed\", \"created_at\": \"2026-10-25T22:43:15.305924+00:00\", \"imports\": [{\"version\": 1, \"status\": \"completed\", \"problem_id\": \"992\", \"central_before\": \"0f70390daac7691e6894b90a77414f0feb2f74b3\", \"lane_head\": \"ed430afbbe348a302d6ddb0cd35f8142e2a0c04c\", \"lane_repo\": \"/home/songyy/projects/leetcode-hard-lane-992-20261026\", \"lane_state_dir\": \"/home/songyy/projects/leetcode-hard-lane-state-992-20261026\", \"candidate\": \"d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa\", \"run_ids\": [\"992-author-bd39779c66e3\", \"992-review-67f5902a3c90\"], \"started_at\": \"2026-10-25T22:48:43.154991+00:00\", \"updated_at\": \"2026-10-25T22:48:45.392156+00:00\", \"merged_head\": \"fa0f53a49c93c42dbfe764913f568c8ca70726ba\"}, {\"version\": 1, \"status\": \"completed\", \"problem_id\": \"995\", \"central_before\": \"fa0f53a49c93c42dbfe764913f568c8ca70726ba\", \"lane_head\": \"2ef5c525c750d800269cc33ed565f9a80b752a23\", \"lane_repo\": \"/home/songyy/projects/leetcode-hard-lane-995-20261026\", \"lane_state_dir\": \"/home/songyy/projects/leetcode-hard-lane-state-995-20261026\", \"candidate\": \"d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c\", \"run_ids\": [\"995-author-ab095f2912c3\", \"995-review-f5d78a25ecbc\"], \"started_at\": \"2026-10-25T22:50:23.712938+00:00\", \"updated_at\": \"2026-10-25T22:50:26.007409+00:00\", \"merged_head\": \"d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78\"}], \"lanes\": [{\"id\": \"992\", \"lane_head\": \"ed430afbbe348a302d6ddb0cd35f8142e2a0c04c\", \"candidate\": \"d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa\", \"score\": 100.0, \"required_open\": [], \"run_ids\": [\"992-author-bd39779c66e3\", \"992-review-67f5902a3c90\"]}, {\"id\": \"995\", \"lane_head\": \"2ef5c525c750d800269cc33ed565f9a80b752a23\", \"candidate\": \"d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c\", \"score\": 95.0, \"required_open\": [], \"run_ids\": [\"995-author-ab095f2912c3\", \"995-review-f5d78a25ecbc\"]}], \"pre_stop_plan\": {\"next_problem_id\": \"864\", \"registration_ids\": [], \"publication_bound\": {\"eligible\": [\"854\", \"857\", \"862\", \"982\", \"987\"], \"incoming\": [\"992\", \"995\"], \"registration_ids\": [], \"reopened_upper_bound_ids\": [], \"upper_bound_ids\": [\"854\", \"857\", \"862\", \"982\", \"987\", \"992\", \"995\"], \"upper_bound\": 7}}, \"stop\": {\"owner\": \"import992995-only-20261026-888bb6ac\", \"created_at\": \"2026-10-25T22:43:18.654095+00:00\", \"reason\": \"Finish current stage; import independently accepted992/995 under unchanged policy, then resume the normal queue.\", \"lane_ids\": [\"992\", \"995\"]}, \"boundary_plan\": {\"next_problem_id\": \"864\", \"registration_ids\": [], \"publication_bound\": {\"eligible\": [\"854\", \"857\", \"862\", \"982\", \"987\"], \"incoming\": [\"992\", \"995\"], \"registration_ids\": [], \"reopened_upper_bound_ids\": [], \"upper_bound_ids\": [\"854\", \"857\", \"862\", \"982\", \"987\", \"992\", \"995\"], \"upper_bound\": 7}}, \"boundary_head\": \"0f70390daac7691e6894b90a77414f0feb2f74b3\", \"post_import_plan\": {\"next_problem_id\": \"864\", \"registration_ids\": [], \"publication_bound\": {\"eligible\": [\"854\", \"857\", \"862\", \"982\", \"987\", \"992\", \"995\"], \"incoming\": [], \"registration_ids\": [], \"reopened_upper_bound_ids\": [], \"upper_bound_ids\": [\"854\", \"857\", \"862\", \"982\", \"987\", \"992\", \"995\"], \"upper_bound\": 7}}, \"imported_head\": \"d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78\", \"policy_preserved\": true, \"launch\": {\"pid\": 1851151, \"queue_count\": 984, \"continuous\": true, \"state\": \"/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress.json\"}, \"ordinary_resume_proof\": {\"registration_commits\": [], \"agent_candidate\": \"d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78\", \"prior_reviews_and_runs_preserved\": true}, \"completed_at\": \"2026-10-25T22:50:55.940369+00:00\", \"fresh_agent\": {\"current\": {\"problem_id\": \"864\", \"stage\": \"review\", \"started_at\": \"2026-10-25T22:50:51.326690+00:00\", \"run_id\": \"864-review-7fed1ec4a8a0\"}, \"session_id\": \"01a17542-763c-7103-a644-a510f6ac1932\", \"native_codex_pids\": [1851411], \"events\": [{\"type\": \"thread.started\", \"thread_id\": \"01a17542-763c-7103-a644-a510f6ac1932\"}, {\"type\": \"turn.started\"}]}, \"pushed_head\": \"d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78\", \"ledger_preserved\": true}\n",
+  "remote": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78\trefs/heads/codex/all-hard-20261018",
+  "native": {
+    "1851411": {
+      "alive": true,
+      "cmdline": "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex exec -m gpt-6.1-sol -c model_reasoning_effort=\"medium\" -c approval_policy=\"never\" --sandbox danger-full-access --json -o /home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/864-review-7fed1ec4a8a0/final.json --output-schema /home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/864-review-7fed1ec4a8a0/schema.json -C /home/songyy/projects/leetcode-hard-campaign-20261018 - ",
+      "cwd": "/home/songyy/projects/leetcode-hard-campaign-20261018"
+    }
+  },
+  "acceptedEntries": {
+    "992": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/992-review-1-c3711b80.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Fresh input [2,1,2,3], k=2 returned predicted 4; input unchanged.",
+            "Canonical Python passed 16,739 independently enumerated cases.",
+            "Bilingual interactions, rewind/reset, keyboard, 320/390/desktop and 200% CSS zoom checked; screenshots inspected.",
+            "Exact source, display, copy, fallback and download parity passed.",
+            "Metadata validate-only preflight passed."
+          ],
+          "detail": "100/100; no required findings. Acceptance applies to the reviewed revision only. No human-comprehension, LeetCode-submission or publication claim.",
+          "run_id": "992-review-67f5902a3c90",
+          "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+          "candidate_sha256": "d5892acd35700b0e2fef2f2dd839a13e132754cb6672610239dca3088d86ccb1",
+          "weighted_score": 100.0,
+          "round": 1,
+          "commit": "3451d95894cf401b2462024ca4165565b259e6db"
+        }
+      ],
+      "author_runs": [
+        "992-author-bd39779c66e3"
+      ],
+      "prior_report": "specs/reviews/992-review-1-c3711b80.md",
+      "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+      "registration_commit": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+      "accepted_at": "2026-10-25T22:31:47.804748+00:00"
+    },
+    "995": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/995-review-1-c18c137a.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.",
+            "Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.",
+            "Non-mutating metadata preflight exited 0."
+          ],
+          "detail": "95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication.",
+          "run_id": "995-review-f5d78a25ecbc",
+          "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+          "candidate_sha256": "20e4b739f8b1a7fae70008c3172e060d0b2c28876e550fab8aaed24fcf3942c4",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "5a5cd3c329aec4854ea61f0ae5d15b1826f94a21"
+        }
+      ],
+      "author_runs": [
+        "995-author-ab095f2912c3"
+      ],
+      "prior_report": "specs/reviews/995-review-1-c18c137a.md",
+      "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+      "registration_commit": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+      "accepted_at": "2026-10-25T22:36:24.169208+00:00"
+    }
+  },
+  "laneImports": [
+    {
+      "version": 1,
+      "status": "completed",
+      "problem_id": "992",
+      "central_before": "0f70390daac7691e6894b90a77414f0feb2f74b3",
+      "lane_head": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+      "lane_repo": "/home/songyy/projects/leetcode-hard-lane-992-20261026",
+      "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-992-20261026",
+      "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+      "run_ids": [
+        "992-author-bd39779c66e3",
+        "992-review-67f5902a3c90"
+      ],
+      "started_at": "2026-10-25T22:48:43.154991+00:00",
+      "updated_at": "2026-10-25T22:48:44.635212+00:00",
+      "merged_head": "fa0f53a49c93c42dbfe764913f568c8ca70726ba",
+      "receipt": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/lane-imports/992-10b45d18f7cc492aae06533dc603d2b0.json"
+    },
+    {
+      "version": 1,
+      "status": "completed",
+      "problem_id": "995",
+      "central_before": "fa0f53a49c93c42dbfe764913f568c8ca70726ba",
+      "lane_head": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+      "lane_repo": "/home/songyy/projects/leetcode-hard-lane-995-20261026",
+      "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-995-20261026",
+      "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+      "run_ids": [
+        "995-author-ab095f2912c3",
+        "995-review-f5d78a25ecbc"
+      ],
+      "started_at": "2026-10-25T22:50:23.712938+00:00",
+      "updated_at": "2026-10-25T22:50:25.322986+00:00",
+      "merged_head": "d9d7989e9952749a83a80cdde4ce1d6b2c5f7c78",
+      "receipt": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/lane-imports/995-5dc032502773441dbc2881c106978da0.json"
+    }
+  ]
+}
