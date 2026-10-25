@@ -1,0 +1,16 @@
+{
+  "kind": "author self-check",
+  "exhaustive_shapes_including_empty": 2056,
+  "max_n": 8,
+  "seed": 968,
+  "random_cases": 160,
+  "boundaries": [
+    "1000-node left chain = 334",
+    "1000-node right chain = 334",
+    "single node = 1",
+    "defensive empty = 0"
+  ],
+  "official_examples": "1, 2",
+  "mutation": "tree identities, values and links preserved",
+  "result": "pass"
+}
