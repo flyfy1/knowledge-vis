@@ -1,0 +1,64 @@
+{
+  "receipt_status": "completed",
+  "status": "running",
+  "current": {
+    "problem_id": "741",
+    "stage": "author",
+    "started_at": "2026-10-25T07:30:49.971054+00:00",
+    "run_id": "741-author-7d41be0e6ea1"
+  },
+  "expected_head": "05e85a09f9bd4d796aa133ea9710dd9812d45b1e",
+  "queue_count": 984,
+  "counts": {
+    "accepted_local": 104,
+    "blocked": 36,
+    "pending": 1
+  },
+  "736": {
+    "status": "accepted_local",
+    "rounds": 1,
+    "new": true,
+    "phase": "done",
+    "reviews": [
+      {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          3,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/736-review-1-7f33b1b5.md",
+        "evidence": [
+          "Source-blind cold walkthrough saved before source audit.",
+          "Canonical Python fresh case returned -5; traced scope restoration matched the browser.",
+          "2037 numerical cases and bilingual browser checks passed.",
+          "Exact source display, clipboard fallback and download parity passed.",
+          "Inspected 320/390/desktop and 200% CSS-zoom screenshots.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "96.25/100; no required findings. Evidence is limited to headless Linux Chromium and CSS zoom. Acceptance is separate from publication.",
+        "run_id": "736-review-8dd8e06cbcd5",
+        "candidate": "fd5760e3a18bdc79f365db1aa62bea9e38b2671f",
+        "candidate_sha256": "951345fd8fece7e4eb1dc2ba82990c2289cf5f5db16e9148d1f979c7e5c79ea1",
+        "weighted_score": 96.25,
+        "round": 1,
+        "commit": "78ba6f113e8c744b93e7abc24af7eeefe5d601f5"
+      }
+    ],
+    "author_runs": [
+      "736-author-97bb5b462351"
+    ],
+    "prior_report": "specs/reviews/736-review-1-7f33b1b5.md",
+    "candidate": "fd5760e3a18bdc79f365db1aa62bea9e38b2671f",
+    "registration_commit": "05e85a09f9bd4d796aa133ea9710dd9812d45b1e",
+    "accepted_at": "2026-10-25T07:30:49.240083+00:00"
+  },
+  "released": 103,
+  "pending": null,
+  "stop_exists": false,
+  "runner_pid": 883425
+}

@@ -1,0 +1,1 @@
+{"kind": "author self-check", "cases": 2037, "traceFrames": 45769, "seed": 736, "maxLength": 2000, "checks": ["independent AST/copy oracle", "exhaustive small arithmetic/scoping", "seeded valid grammar", "binding restoration at every trace frame", "cursor monotonicity", "source mirror parity", "copy keys unique"]}

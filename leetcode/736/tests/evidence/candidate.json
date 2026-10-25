@@ -1,0 +1,32 @@
+{
+  "candidate": "736-author-1",
+  "status": "author self-checked; independent review pending",
+  "frozenAt": "2026-10-25T07:13:19.760784+00:00",
+  "baseHead": "f9961afb66d3cd451665fd76cc9a6c47ae6b415b",
+  "sha256": {
+    "leetcode/736/BRIEF.md": "b934596b41b29dfd9bf94e816689a1a2cf0358c55e06f2304043ae2dee5b0cbb",
+    "leetcode/736/app.js": "c007d19dc7ed14b192234d0c5f4757e2d01ad5574243aa33d0b251fbbd44034f",
+    "leetcode/736/baseline-code.js": "54e5af996a59a9a1c92fbf836775fda317aa3f4c2bf35a551e73c1cf060eef83",
+    "leetcode/736/copy.js": "1185c107f0193f18f55ff69a09425440a6d571c33c6e8a6bf26b7a0312954e25",
+    "leetcode/736/core.js": "8ce489fdffb1507333002b2fcca5e350d0ef86231310272d404cd6e7dcaa9f3a",
+    "leetcode/736/index.html": "fba6d09140f464e8f45f1bfea3c6cb8a2bcb867212eb2f05c3a7798b51f37b0b",
+    "leetcode/736/lesson-entry.json": "df6556ddb36930c4ef02f38b44419fbd5667b8c3f183ab3f54043ae7aaa65383",
+    "leetcode/736/provenance/official-graphql.json": "a0259a94251cdaf6d81e15a58e2e6fe026573b29502371787f5fa22c57501afe",
+    "leetcode/736/provenance/official-page.html": "7dcb78c8b38209ccf894104b98b567d9d8142e8afd5cbfafabc82f53a9fc7623",
+    "leetcode/736/python-code.js": "90d9e2e1dd0af989a583f473b775630ae7da7f659e3eab1857f80def2d4be3bb",
+    "leetcode/736/solution.py": "bd92aee8e5f59738c585a54d6bb68949a408d6a7e71bb02d7b78fee3dc4874f2",
+    "leetcode/736/style.css": "c597dc5dc38e75a56be2349f7f67eb6a52bf5d92f5662397b25863350355c667",
+    "leetcode/736/tests/SELF-CHECK.md": "75efccd6e60c4b67fcd46b1f0e90d3856dd12e7cb5eec02f4538c85bf8dc518e",
+    "leetcode/736/tests/browser.cjs": "dcf67c46b85edb415e1eb50c65c546ab2efa18d216cfe7d4e9538c935966e2af",
+    "leetcode/736/tests/check.py": "e9977da633d5a0374b9d11f6d7869d8a3b7695651dd274e0273df469e87038da",
+    "leetcode/736/tests/inspect.cjs": "d94b73ba5f632fedc2be11cefe07f0c6e62b43a20cc693420c8d319476d9ab7c",
+    "leetcode/736/tests/oracle.py": "6f10535ac51dbbcc5ba38f1350b139e526c0b018809e70d77c2009f1c5bf5816",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "checks": {
+    "numerical": "2037 cases; 45769 trace frames",
+    "browser": "both locales; 7 presets; source transfers; responsive; CSS 200% zoom",
+    "preflight": "exit 0"
+  }
+}

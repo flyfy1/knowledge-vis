@@ -1419,3 +1419,13 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Half-open interval | `leetcode/732/#step0` | Include the start and exclude the end. |
 
 <!-- /leetcode-732-campaign -->
+
+
+<!-- leetcode-736-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Lexical scope | `leetcode/736/#step2` | Track per-name binding stacks and restore outer values. |
+| Recursive descent | `leetcode/736/#step4` | Consume exactly one expression per recursive call. |
+
+<!-- /leetcode-736-campaign -->

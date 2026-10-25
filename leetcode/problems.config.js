@@ -2667,6 +2667,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(b log b) time per book; O(b) space; O(B² log B) time for B calls"
   },
   {
+    "id": 736,
+    "title": {
+      "zh": "Lisp 语法解析",
+      "en": "Parse Lisp Expression"
+    },
+    "desc": {
+      "zh": "逐步解析表达式，观察变量如何遮蔽与恢复。",
+      "en": "Parse expressions and watch variable bindings hide and restore."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "递归解析",
+        "en": "Recursive parsing"
+      },
+      {
+        "zh": "作用域",
+        "en": "Scope"
+      }
+    ],
+    "path": "736/",
+    "leetcodeUrl": "https://leetcode.com/problems/parse-lisp-expression/",
+    "language": "Python",
+    "complexity": "O(n) expected time; O(n) auxiliary space, n = expression character length"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

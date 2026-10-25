@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-25T07:30:47.739670+00:00",
+  "kind": "prospective-spec-adoption",
+  "before": "78ba6f113e8c744b93e7abc24af7eeefe5d601f5",
+  "source": "e40e6260e7ecfd6693f70442a306acf5416cf9b4",
+  "paths": [
+    "specs/leetcode-rendered-state-contract.md",
+    "specs/proposals/leetcode-related-concept-links-20261025.md",
+    "specs/reviews/related-concept-links-spec-review-20261025.md",
+    "specs/reviews/related-concept-links-adoption-request-20261025.md"
+  ],
+  "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-related-links-policy-adoption-20261025.json",
+  "previous_current": {
+    "problem_id": "736",
+    "stage": "review",
+    "started_at": "2026-10-25T07:23:43.844977+00:00",
+    "run_id": "736-review-8dd8e06cbcd5"
+  },
+  "spec_before_sha256": "f1bbcaafcedf8d448e2ac00cb4a23f1cad137cb55160489e99b8f942139c20e4",
+  "736_review": {
+    "outcome": "accepted",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      3,
+      4
+    ],
+    "required_open": [],
+    "report_path": "specs/reviews/736-review-1-7f33b1b5.md",
+    "evidence": [
+      "Source-blind cold walkthrough saved before source audit.",
+      "Canonical Python fresh case returned -5; traced scope restoration matched the browser.",
+      "2037 numerical cases and bilingual browser checks passed.",
+      "Exact source display, clipboard fallback and download parity passed.",
+      "Inspected 320/390/desktop and 200% CSS-zoom screenshots.",
+      "Non-mutating metadata preflight exited 0."
+    ],
+    "detail": "96.25/100; no required findings. Evidence is limited to headless Linux Chromium and CSS zoom. Acceptance is separate from publication.",
+    "run_id": "736-review-8dd8e06cbcd5",
+    "candidate": "fd5760e3a18bdc79f365db1aa62bea9e38b2671f",
+    "candidate_sha256": "951345fd8fece7e4eb1dc2ba82990c2289cf5f5db16e9148d1f979c7e5c79ea1",
+    "weighted_score": 96.25,
+    "round": 1,
+    "commit": "78ba6f113e8c744b93e7abc24af7eeefe5d601f5"
+  },
+  "scope": "Section12 for subsequent candidates, after frozen239 and736 reviews. Preserve all problem entries, runs, queue and release bytes.",
+  "after": "008d48d81165f5db9a2708ca1ff889ede614d1b6",
+  "spec_after_sha256": "226a94fb0cd222398b710718253d7ed46cd77f986ed61eef7e25c14213845dcc",
+  "section_sha256": "27c57059efa5186e8e9f48be316f9adb63c95fe18c377e82de4c1359f814fa2f",
+  "status": "completed",
+  "updated_at": "2026-10-25T07:30:47.969148+00:00"
+}

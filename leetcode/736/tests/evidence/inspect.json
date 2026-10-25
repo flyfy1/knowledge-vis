@@ -1,0 +1,34 @@
+{
+  "kind": "author self-check",
+  "observations": [
+    {
+      "lang": "zh",
+      "return": "let 返回 5；已弹出本层所有绑定，父调用继续。",
+      "sibling": "读取 x 的栈顶，返回 2。",
+      "before": "x : [2, 5]",
+      "after": "x : [2]",
+      "cursor": "事件 10/13 · 下一个词元 i=13/15"
+    },
+    {
+      "lang": "en",
+      "return": "let returns 5; all its bindings have been popped, and the parent continues.",
+      "sibling": "Read the top of x’s stack; return 2.",
+      "before": "x : [2, 5]",
+      "after": "x : [2]",
+      "cursor": "Event 10/13 · Next token i=13/15"
+    },
+    {
+      "lang": "zh",
+      "return": "let 返回 5；已弹出本层所有绑定，父调用继续。",
+      "sibling": "读取 x 的栈顶，返回 2。",
+      "before": "x : [2, 5]",
+      "after": "x : [2]",
+      "cursor": "事件 10/13 · 下一个词元 i=13/15"
+    }
+  ],
+  "official": "https://leetcode.com/problems/parse-lisp-expression/",
+  "relatedAnchors": "200 and exact target IDs",
+  "offline": "exact source, shared locale and local simulation initialized",
+  "pairShape": "all two-string pairs",
+  "forcedColors": "native controls retained; screenshot inspected"
+}
