@@ -1,0 +1,95 @@
+{
+  "kind": "author supplementary self-check",
+  "checks": [
+    {
+      "lang": "en",
+      "scroll": {
+        "position": 40,
+        "outline": "3px"
+      },
+      "contrasts": [
+        {
+          "sel": "#code",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(9, 14, 22)",
+          "ratio": 16.437295258072666
+        },
+        {
+          "sel": "#fallbackSource",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 13.397069143240783
+        },
+        {
+          "sel": "#copyStatus",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(13, 17, 23)",
+          "ratio": 16.086987125379448
+        },
+        {
+          "sel": "#reveal",
+          "fg": "rgb(13, 17, 23)",
+          "bg": "rgb(110, 231, 255)",
+          "ratio": 13.100679028115637
+        },
+        {
+          "sel": "#preset",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 13.397069143240783
+        },
+        {
+          "sel": "#download",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 13.397069143240783
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "scroll": {
+        "position": 40,
+        "outline": "3px"
+      },
+      "contrasts": [
+        {
+          "sel": "#code",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(9, 14, 22)",
+          "ratio": 16.437295258072666
+        },
+        {
+          "sel": "#fallbackSource",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 13.397069143240783
+        },
+        {
+          "sel": "#copyStatus",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(13, 17, 23)",
+          "ratio": 16.086987125379448
+        },
+        {
+          "sel": "#reveal",
+          "fg": "rgb(13, 17, 23)",
+          "bg": "rgb(110, 231, 255)",
+          "ratio": 13.100679028115637
+        },
+        {
+          "sel": "#preset",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 13.397069143240783
+        },
+        {
+          "sel": "#download",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(28, 35, 48)",
+          "ratio": 13.397069143240783
+        }
+      ]
+    }
+  ]
+}

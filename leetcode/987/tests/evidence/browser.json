@@ -1,0 +1,1066 @@
+{
+  "kind": "author browser self-check",
+  "browserVersion": "156.0.8078.4",
+  "hostPlatform": "linux",
+  "checkedAt": "2026-10-25T21:41:43.871Z",
+  "presets": [
+    {
+      "lang": "en",
+      "p": 0,
+      "expected": [
+        [
+          4
+        ],
+        [
+          8,
+          2,
+          9
+        ],
+        [
+          6
+        ]
+      ],
+      "fullRewindReplay": true
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "expected": [
+        [
+          9
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          20
+        ],
+        [
+          7
+        ]
+      ],
+      "fullRewindReplay": true
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "expected": [
+        [
+          0
+        ]
+      ],
+      "fullRewindReplay": true
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "expected": [
+        [
+          5
+        ],
+        [
+          5,
+          5,
+          5
+        ],
+        [
+          5
+        ]
+      ],
+      "fullRewindReplay": true
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "expected": [
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          6
+        ],
+        [
+          8
+        ]
+      ],
+      "fullRewindReplay": true
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "expected": [
+        [
+          4
+        ],
+        [
+          8,
+          2,
+          9
+        ],
+        [
+          6
+        ]
+      ],
+      "fullRewindReplay": true
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "expected": [
+        [
+          9
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          20
+        ],
+        [
+          7
+        ]
+      ],
+      "fullRewindReplay": true
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "expected": [
+        [
+          0
+        ]
+      ],
+      "fullRewindReplay": true
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "expected": [
+        [
+          5
+        ],
+        [
+          5,
+          5,
+          5
+        ],
+        [
+          5
+        ]
+      ],
+      "fullRewindReplay": true
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "expected": [
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          6
+        ],
+        [
+          8
+        ]
+      ],
+      "fullRewindReplay": true
+    }
+  ],
+  "feedback": [
+    {
+      "lang": "en",
+      "option": 0,
+      "text": "A compares value before row, incorrectly placing the root last. The middle-column records are (0,0,10), (0,2,8), (0,2,3). Sorting (col,row,value) gives (0,0,10), (0,2,3), (0,2,8), so B is correct: [10,3,8]. The invariant requires correct coordinates; grouping by value alone or discovery order cannot replace that ordering."
+    },
+    {
+      "lang": "en",
+      "option": 1,
+      "text": "Correct. The middle-column records are (0,0,10), (0,2,8), (0,2,3). Sorting (col,row,value) gives (0,0,10), (0,2,3), (0,2,8), so B is correct: [10,3,8]. The invariant requires correct coordinates; grouping by value alone or discovery order cannot replace that ordering."
+    },
+    {
+      "lang": "en",
+      "option": 2,
+      "text": "C keeps left-first discovery order, failing to resolve the positional tie. The middle-column records are (0,0,10), (0,2,8), (0,2,3). Sorting (col,row,value) gives (0,0,10), (0,2,3), (0,2,8), so B is correct: [10,3,8]. The invariant requires correct coordinates; grouping by value alone or discovery order cannot replace that ordering."
+    },
+    {
+      "lang": "zh",
+      "option": 0,
+      "text": "A 把值放在行之前，错误地把根排到最后。 中间列的记录为 (0,0,10)、(0,2,8)、(0,2,3)。按 (col,row,value) 排序得到 (0,0,10)、(0,2,3)、(0,2,8)，所以答案是 B：[10,3,8]。不变量要求坐标先正确，不能直接按值或发现顺序分组。"
+    },
+    {
+      "lang": "zh",
+      "option": 1,
+      "text": "正确。 中间列的记录为 (0,0,10)、(0,2,8)、(0,2,3)。按 (col,row,value) 排序得到 (0,0,10)、(0,2,3)、(0,2,8)，所以答案是 B：[10,3,8]。不变量要求坐标先正确，不能直接按值或发现顺序分组。"
+    },
+    {
+      "lang": "zh",
+      "option": 2,
+      "text": "C 保留了左侧优先的发现顺序，没有处理同位置的平局。 中间列的记录为 (0,0,10)、(0,2,8)、(0,2,3)。按 (col,row,value) 排序得到 (0,0,10)、(0,2,3)、(0,2,8)，所以答案是 B：[10,3,8]。不变量要求坐标先正确，不能直接按值或发现顺序分组。"
+    }
+  ],
+  "geometry": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "scroll": 320,
+      "gridWidth": 262,
+      "gridScroll": 550
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "scroll": 320,
+      "gridWidth": 102,
+      "gridScroll": 550
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "scroll": 390,
+      "gridWidth": 332,
+      "gridScroll": 550
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "scroll": 390,
+      "gridWidth": 137,
+      "gridScroll": 550
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "scroll": 736,
+      "gridWidth": 646,
+      "gridScroll": 646
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "scroll": 736,
+      "gridWidth": 278,
+      "gridScroll": 550
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "scroll": 1440,
+      "gridWidth": 910,
+      "gridScroll": 910
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "scroll": 1440,
+      "gridWidth": 630,
+      "gridScroll": 630
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "scroll": 320,
+      "gridWidth": 262,
+      "gridScroll": 550
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "scroll": 320,
+      "gridWidth": 102,
+      "gridScroll": 550
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "scroll": 390,
+      "gridWidth": 332,
+      "gridScroll": 550
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "scroll": 390,
+      "gridWidth": 137,
+      "gridScroll": 550
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "scroll": 736,
+      "gridWidth": 646,
+      "gridScroll": 646
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "scroll": 736,
+      "gridWidth": 278,
+      "gridScroll": 550
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "scroll": 1440,
+      "gridWidth": 910,
+      "gridScroll": 910
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "scroll": 1440,
+      "gridWidth": 630,
+      "gridScroll": 630
+    }
+  ],
+  "selectBudgets": [
+    {
+      "lang": "en",
+      "width": 260,
+      "zoom": 1,
+      "padding": 8,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "Tie",
+          "textWidth": 22.04803466796875
+        },
+        {
+          "label": "Ex. 1",
+          "textWidth": 34.96006774902344
+        },
+        {
+          "label": "Node 0",
+          "textWidth": 54.01611328125
+        },
+        {
+          "label": "Equal",
+          "textWidth": 41.72807312011719
+        },
+        {
+          "label": "Chain",
+          "textWidth": 42.9920654296875
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 100,
+      "zoom": 2,
+      "padding": 8,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "Tie",
+          "textWidth": 22.04803466796875
+        },
+        {
+          "label": "Ex. 1",
+          "textWidth": 34.96006774902344
+        },
+        {
+          "label": "Node 0",
+          "textWidth": 54.01611328125
+        },
+        {
+          "label": "Equal",
+          "textWidth": 41.72807312011719
+        },
+        {
+          "label": "Chain",
+          "textWidth": 42.9920654296875
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 330,
+      "zoom": 1,
+      "padding": 8,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "Tie",
+          "textWidth": 22.04803466796875
+        },
+        {
+          "label": "Ex. 1",
+          "textWidth": 34.96006774902344
+        },
+        {
+          "label": "Node 0",
+          "textWidth": 54.01611328125
+        },
+        {
+          "label": "Equal",
+          "textWidth": 41.72807312011719
+        },
+        {
+          "label": "Chain",
+          "textWidth": 42.9920654296875
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 135,
+      "zoom": 2,
+      "padding": 8,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "Tie",
+          "textWidth": 22.04803466796875
+        },
+        {
+          "label": "Ex. 1",
+          "textWidth": 34.96006774902344
+        },
+        {
+          "label": "Node 0",
+          "textWidth": 54.01611328125
+        },
+        {
+          "label": "Equal",
+          "textWidth": 41.72807312011719
+        },
+        {
+          "label": "Chain",
+          "textWidth": 42.9920654296875
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 644,
+      "zoom": 1,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "Tie",
+          "textWidth": 22.04803466796875
+        },
+        {
+          "label": "Ex. 1",
+          "textWidth": 34.96006774902344
+        },
+        {
+          "label": "Node 0",
+          "textWidth": 54.01611328125
+        },
+        {
+          "label": "Equal",
+          "textWidth": 41.72807312011719
+        },
+        {
+          "label": "Chain",
+          "textWidth": 42.9920654296875
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 276,
+      "zoom": 2,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "Tie",
+          "textWidth": 22.04803466796875
+        },
+        {
+          "label": "Ex. 1",
+          "textWidth": 34.96006774902344
+        },
+        {
+          "label": "Node 0",
+          "textWidth": 54.01611328125
+        },
+        {
+          "label": "Equal",
+          "textWidth": 41.72807312011719
+        },
+        {
+          "label": "Chain",
+          "textWidth": 42.9920654296875
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 908,
+      "zoom": 1,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "Tie",
+          "textWidth": 22.04803466796875
+        },
+        {
+          "label": "Ex. 1",
+          "textWidth": 34.96006774902344
+        },
+        {
+          "label": "Node 0",
+          "textWidth": 54.01611328125
+        },
+        {
+          "label": "Equal",
+          "textWidth": 41.72807312011719
+        },
+        {
+          "label": "Chain",
+          "textWidth": 42.9920654296875
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 628,
+      "zoom": 2,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "Tie",
+          "textWidth": 22.04803466796875
+        },
+        {
+          "label": "Ex. 1",
+          "textWidth": 34.96006774902344
+        },
+        {
+          "label": "Node 0",
+          "textWidth": 54.01611328125
+        },
+        {
+          "label": "Equal",
+          "textWidth": 41.72807312011719
+        },
+        {
+          "label": "Chain",
+          "textWidth": 42.9920654296875
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 260,
+      "zoom": 1,
+      "padding": 8,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "冲突",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "例 1",
+          "textWidth": 29.312057495117188
+        },
+        {
+          "label": "单点 0",
+          "textWidth": 45.31208801269531
+        },
+        {
+          "label": "相等",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "左链",
+          "textWidth": 32.00006103515625
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 100,
+      "zoom": 2,
+      "padding": 8,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "冲突",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "例 1",
+          "textWidth": 29.312057495117188
+        },
+        {
+          "label": "单点 0",
+          "textWidth": 45.31208801269531
+        },
+        {
+          "label": "相等",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "左链",
+          "textWidth": 32.00006103515625
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 330,
+      "zoom": 1,
+      "padding": 8,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "冲突",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "例 1",
+          "textWidth": 29.312057495117188
+        },
+        {
+          "label": "单点 0",
+          "textWidth": 45.31208801269531
+        },
+        {
+          "label": "相等",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "左链",
+          "textWidth": 32.00006103515625
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 135,
+      "zoom": 2,
+      "padding": 8,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "冲突",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "例 1",
+          "textWidth": 29.312057495117188
+        },
+        {
+          "label": "单点 0",
+          "textWidth": 45.31208801269531
+        },
+        {
+          "label": "相等",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "左链",
+          "textWidth": 32.00006103515625
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 644,
+      "zoom": 1,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "冲突",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "例 1",
+          "textWidth": 29.312057495117188
+        },
+        {
+          "label": "单点 0",
+          "textWidth": 45.31208801269531
+        },
+        {
+          "label": "相等",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "左链",
+          "textWidth": 32.00006103515625
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 276,
+      "zoom": 2,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "冲突",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "例 1",
+          "textWidth": 29.312057495117188
+        },
+        {
+          "label": "单点 0",
+          "textWidth": 45.31208801269531
+        },
+        {
+          "label": "相等",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "左链",
+          "textWidth": 32.00006103515625
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 908,
+      "zoom": 1,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "冲突",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "例 1",
+          "textWidth": 29.312057495117188
+        },
+        {
+          "label": "单点 0",
+          "textWidth": 45.31208801269531
+        },
+        {
+          "label": "相等",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "左链",
+          "textWidth": 32.00006103515625
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 628,
+      "zoom": 2,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "options": [
+        {
+          "label": "冲突",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "例 1",
+          "textWidth": 29.312057495117188
+        },
+        {
+          "label": "单点 0",
+          "textWidth": 45.31208801269531
+        },
+        {
+          "label": "相等",
+          "textWidth": 32.00006103515625
+        },
+        {
+          "label": "左链",
+          "textWidth": 32.00006103515625
+        }
+      ]
+    }
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "state": "after LR collection",
+      "current": "LR: 9\n(2,0)\ncurrent · collected",
+      "operation": "Pop LR: append (0,2,9). Save (3,1) for its right child and (3,-1) for its left child; a collection event appears only for an existing child. Push right before left so the left side is processed first.",
+      "progress": "Event 3/7 · 3/5 nodes collected",
+      "records": "root → (0,0,8)\nL → (-1,1,4)\nLR → (0,2,9) · current · collected",
+      "border": "rgb(255, 180, 84)",
+      "label": "rgb(255, 180, 84)"
+    },
+    {
+      "lang": "zh",
+      "state": "after LR collection",
+      "current": "LR: 9\n(2,0)\n当前 · 已收集",
+      "operation": "取出 LR：追加 (0,2,9)。为右孩子保存 (3,1)，为左孩子保存 (3,-1)；只在孩子存在时显示下一次收集。先放右再放左，所以下一次优先处理左侧。",
+      "progress": "事件 3/7 · 已收集 3/5 个节点",
+      "records": "root → (0,0,8)\nL → (-1,1,4)\nLR → (0,2,9) · 当前 · 已收集",
+      "border": "rgb(255, 180, 84)",
+      "label": "rgb(255, 180, 84)"
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "#progress",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#event",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": "#result",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#prev",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#langToggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".grid-axis",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".node-card b",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".node-card small",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".node-card.current .state",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "#records li",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": "#comparison",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    }
+  ],
+  "related": [
+    {
+      "href": "http://127.0.0.1:18796/leetcode/124/#step1",
+      "heading": "为什么要存两种量"
+    },
+    {
+      "href": "http://127.0.0.1:18796/leetcode/4/#step1",
+      "heading": "为什么能省去工作？"
+    }
+  ],
+  "errors": [],
+  "badAssets": [],
+  "external": [],
+  "controlSizes": [
+    {
+      "label": "← LeetCode 知识索引",
+      "height": 48
+    },
+    {
+      "label": "中",
+      "height": 48
+    },
+    {
+      "label": "EN",
+      "height": 48
+    },
+    {
+      "label": "官方题目 ↗",
+      "height": 48
+    },
+    {
+      "label": "1 · 手算坐标",
+      "height": 48
+    },
+    {
+      "label": "2 · 平局陷阱",
+      "height": 48
+    },
+    {
+      "label": "3 · 收集与排序",
+      "height": 48
+    },
+    {
+      "label": "4 · 先预测",
+      "height": 48
+    },
+    {
+      "label": "5 · Python",
+      "height": 48
+    },
+    {
+      "label": "交换 LR 与 RL 的值",
+      "height": 48
+    },
+    {
+      "label": "查看独立基线的选择过程",
+      "height": 48
+    },
+    {
+      "label": "冲突例 1单点 0相等左链",
+      "height": 48
+    },
+    {
+      "label": "← 上一事件",
+      "height": 48
+    },
+    {
+      "label": "下一事件 →",
+      "height": 48
+    },
+    {
+      "label": "重置到未收集",
+      "height": 48
+    },
+    {
+      "label": "到最终结果",
+      "height": 48
+    },
+    {
+      "label": "A · [3,8,10]",
+      "height": 48
+    },
+    {
+      "label": "B · [10,3,8]",
+      "height": 48
+    },
+    {
+      "label": "C · [10,8,3]",
+      "height": 48
+    },
+    {
+      "label": "检查并解释",
+      "height": 48
+    },
+    {
+      "label": "查看官方接口的完整 Python 解法",
+      "height": 48
+    },
+    {
+      "label": "复制 Python",
+      "height": 48
+    },
+    {
+      "label": "下载 solution.py",
+      "height": 48
+    },
+    {
+      "label": "回看：坐标为何先于值",
+      "height": 48
+    },
+    {
+      "label": "二叉树：最大路径和中的父子关系",
+      "height": 48
+    },
+    {
+      "label": "排序：两个有序数组中的次序",
+      "height": 48
+    }
+  ],
+  "focusContrast": 8.937191437807625,
+  "forcedColorsAndReducedMotion": true,
+  "blockedStorageOffline": true,
+  "fileOpening": true,
+  "cssBytes": 11776
+}

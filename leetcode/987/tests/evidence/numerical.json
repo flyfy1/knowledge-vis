@@ -1,0 +1,10 @@
+{
+  "kind": "author self-check",
+  "pythonOracleCases": 10676,
+  "exhaustive": "all ordered binary shapes, 1..6 nodes, all 0/1 assignments",
+  "seed": 987,
+  "seededCases": 600,
+  "boundaries": "1000-node left/right/zigzag chains, 0/1000 values, duplicates, defensive empty root",
+  "mutation": "identity/value/child links unchanged in every case",
+  "officialExamples": 3
+}
