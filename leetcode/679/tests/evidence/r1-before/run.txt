@@ -1,0 +1,8 @@
+AssertionError [ERR_ASSERTION]: en 320: selected label 251.60px exceeds 214px
+    at /home/songyy/projects/leetcode-hard-lane-679-20261025/leetcode/679/tests/selected-label.cjs:29:133 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '=='
+}

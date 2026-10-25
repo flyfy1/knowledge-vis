@@ -1,0 +1,38 @@
+{
+  "id": 679,
+  "title": {
+    "zh": "24 点游戏",
+    "en": "24 Game"
+  },
+  "desc": {
+    "zh": "用两两合并与精确分数，穷尽四张牌的合法表达式。",
+    "en": "Reduce pairs with exact fractions to cover every legal four-card expression."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "回溯",
+      "en": "Backtracking"
+    },
+    {
+      "zh": "分数运算",
+      "en": "Rational arithmetic"
+    }
+  ],
+  "path": "679/",
+  "leetcodeUrl": "https://leetcode.com/problems/24-game/",
+  "language": "Python",
+  "complexity": "O(1) time and O(1) auxiliary space for exactly four bounded cards",
+  "concepts": [
+    {
+      "name": "Pair-reduction invariant",
+      "step": 2,
+      "description": "Disjoint subexpressions partition the original card identities."
+    },
+    {
+      "name": "Exact rational search",
+      "step": 4,
+      "description": "Fraction values avoid rounding tolerances in the four-card search."
+    }
+  ]
+}

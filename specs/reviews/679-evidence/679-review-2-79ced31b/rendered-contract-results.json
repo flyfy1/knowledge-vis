@@ -1,0 +1,24 @@
+{
+  "result": "PASS",
+  "kind": "author self-check",
+  "records": [
+    {
+      "lang": "en",
+      "fractionFrame": 5,
+      "groups": "8\n8\nOriginal cards D\n1/3\n(3 − (8 ÷ 3))\nOriginal cards A, B, C",
+      "event": "Child call: (3 − (8 ÷ 3)) = 1/3; remove both inputs, insert one result.",
+      "feedback": "Correct. The two groups already cover all four cards; you cannot borrow another card. The final operation can yield only −2, 0, or 1, so this branch returns false. Negative values are legal. Back at the parent, (7+8−3)×2=24 still works: failure of one child does not reject the whole hand.",
+      "handCounts": "0/3 to 3/3; history 0..3; rewind/replay",
+      "predictionScope": "independent [2,3,7,8] child; preset keeps feedback; changing answer hides it"
+    },
+    {
+      "lang": "zh",
+      "fractionFrame": 5,
+      "groups": "8\n8\n原始牌 D\n1/3\n(3 − (8 ÷ 3))\n原始牌 A, B, C",
+      "event": "子调用：(3 − (8 ÷ 3)) = 1/3；移除两个输入，放入一个结果。",
+      "feedback": "判断正确。 两组已覆盖全部四张牌，不能再借用一张。最后一步只有 −2、0、1 这三种结果，因此本分支返回 false。负数本身合法；回到父调用仍可找到 (7+8−3)×2=24，所以不能把子分支失败当作整副牌无解。",
+      "handCounts": "0/3 to 3/3; history 0..3; rewind/replay",
+      "predictionScope": "independent [2,3,7,8] child; preset keeps feedback; changing answer hides it"
+    }
+  ]
+}

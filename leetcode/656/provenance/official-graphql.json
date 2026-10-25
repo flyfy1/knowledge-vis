@@ -1,0 +1,13 @@
+{
+  "accessedAt": "2026-10-25T03:35:59.783232+00:00",
+  "officialUrl": "https://leetcode.com/problems/coin-path/",
+  "request": {
+    "endpoint": "https://leetcode.com/graphql/",
+    "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug isPaidOnly content exampleTestcases sampleTestCase metaData codeSnippets { lang langSlug code } } }",
+    "variables": {
+      "titleSlug": "coin-path"
+    }
+  },
+  "status": 200,
+  "body": "{\"data\":{\"question\":{\"questionId\":\"656\",\"questionFrontendId\":\"656\",\"title\":\"Coin Path\",\"titleSlug\":\"coin-path\",\"isPaidOnly\":true,\"content\":null,\"exampleTestcases\":\"[1,2,4,-1,2]\\n2\\n[1,2,4,-1,2]\\n1\",\"sampleTestCase\":\"[1,2,4,-1,2]\\n2\",\"metaData\":\"{\\n  \\\"name\\\": \\\"cheapestJump\\\",\\n  \\\"params\\\": [\\n    {\\n      \\\"name\\\": \\\"coins\\\",\\n      \\\"type\\\": \\\"integer[]\\\"\\n    },\\n    {\\n      \\\"name\\\": \\\"maxJump\\\",\\n      \\\"type\\\": \\\"integer\\\"\\n    }\\n  ],\\n  \\\"return\\\": {\\n    \\\"type\\\": \\\"list<integer>\\\"\\n  }\\n}\",\"codeSnippets\":null}}}"
+}

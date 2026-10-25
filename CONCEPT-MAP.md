@@ -1300,3 +1300,13 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | First sufficient value invariant | `leetcode/668/#step2` | Keep C(lo−1)<k≤C(hi) while shrinking an inclusive value interval. |
 
 <!-- /leetcode-668-campaign -->
+
+
+<!-- leetcode-679-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Pair-reduction invariant | `leetcode/679/#step2` | Disjoint subexpressions partition the original card identities. |
+| Exact rational search | `leetcode/679/#step4` | Fraction values avoid rounding tolerances in the four-card search. |
+
+<!-- /leetcode-679-campaign -->
