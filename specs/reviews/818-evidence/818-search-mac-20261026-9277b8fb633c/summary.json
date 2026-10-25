@@ -1,0 +1,26 @@
+{
+  "status": "passed_full_range",
+  "full_official_range_passed": true,
+  "coverage_count": 10000,
+  "expected_count": 10000,
+  "all_targets_recorded": true,
+  "source_immutable": true,
+  "original_sha256_after": "da9a9a40d5d90c856d82b984333419be4246821b037108faeee0eddae0ab6d68",
+  "frozen_sha256_after": "da9a9a40d5d90c856d82b984333419be4246821b037108faeee0eddae0ab6d68",
+  "isolated_targets": [
+    9809,
+    9879,
+    10000
+  ],
+  "elapsed_seconds": 599.065681291977,
+  "error": null,
+  "failed_targets": [],
+  "claims": "Empirical results for exact bytes/environment only; proof, judge limits, acceptance and publication are separate.",
+  "artifact_sha256": {
+    "survey.jsonl": "a0d870308e69b45cf29fb32e7e05383de3732c3a3b126f1c78df5ad1ece715aa",
+    "canonical.py": "da9a9a40d5d90c856d82b984333419be4246821b037108faeee0eddae0ab6d68",
+    "progress.json": "5966b9d7c95976d5221a3acef39ca59abe019dfe277b1c1254d858180865fcbe",
+    "isolated.jsonl": "fc23bc5356bcc038fa2d93fdfe990915c70f30b6792d845aaacca6061f9052f1",
+    "environment.json": "b1a51ad0d8fbf7928a7e0ff615cb2ea4051c85b67dc177a34bde17037299eb22"
+  }
+}
