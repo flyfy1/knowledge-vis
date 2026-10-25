@@ -1,0 +1,199 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "locale": "en",
+      "filename": "swap-en-320.png",
+      "operation": "Swapped row positions 1 ↔ 2; one opposite pair of type mismatches is repaired.",
+      "markedCells": 8
+    },
+    {
+      "locale": "en",
+      "filename": "zoom-board-en.png",
+      "geometry": [
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "filename": "selected-label-en-320.png",
+      "label": "Official 3 · 2×2, answer −1"
+    },
+    {
+      "locale": "zh",
+      "filename": "swap-zh-320.png",
+      "operation": "已交换行 1 ↔ 2；两处相反的类型错位一起修复。",
+      "markedCells": 8
+    },
+    {
+      "locale": "zh",
+      "filename": "zoom-board-zh.png",
+      "geometry": [
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        },
+        {
+          "width": 84,
+          "height": 76,
+          "font": "16px"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "filename": "selected-label-zh-320.png",
+      "label": "官方例 3 · 缺一种行，−1"
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "repo": "/home/songyy/projects/leetcode-hard-campaign-20261018",
+  "status": "run_limit_reached",
+  "expected_head": "e64356fbeaa7fb1c8793d1a8febcac4ae8e9e394",
+  "current": null,
+  "problems": {
+    "782": {
+      "status": "accepted_local",
+      "rounds": 3,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            3,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/782-review-1-f9de8180.md",
+          "evidence": [
+            "Cold browser walkthrough saved before repository source audit.",
+            "Canonical Python matched independent BFS on all 65,536 binary 4\u00d74 boards.",
+            "Both locales passed trace rewind, prediction, keyboard, exact source parity and native clipboard fallback checks.",
+            "Inspected screenshots at 320/390/desktop widths and CSS 200% zoom.",
+            "Non-mutating metadata preflight passed; candidate files unchanged."
+          ],
+          "detail": "96.25/100. No required findings; one optional Python syntax teaching advisory. Evidence is stored in the exclusive review directory. Official browser access encountered a security challenge; the statement was available through normal web access.",
+          "run_id": "782-review-85be323f7d0c",
+          "candidate": "0e53a2131353accc11a5ef746c5eba164efb14e4",
+          "candidate_sha256": "f0558dbad76f9ddf95b7a210d21b3bc31dda36bf1b8e04102a76f95c08512b8b",
+          "weighted_score": 96.25,
+          "round": 1,
+          "commit": "b517b762f7e31a0d701f3ab5879bca14229c381f"
+        },
+        {
+          "outcome": "changes_required",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            3,
+            3
+          ],
+          "required_open": [
+            "782-MAC-FIT-01"
+          ],
+          "report_path": "specs/reviews/782-review-2-4f9587dd.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Canonical Python matched an independent oracle on all 65,536 binary 4\u00d74 boards.",
+            "Bilingual interactions, exact source transfer, clipboard fallback, layouts and contrast passed on Linux.",
+            "Non-mutating metadata preflight passed.",
+            "Screenshots captured and inspected in the exclusive evidence directory."
+          ],
+          "detail": "Score: 93.75/100. Acceptance remains pending the required Mac regression check against this exact repaired candidate.",
+          "run_id": "782-review-cb1f01a739e3",
+          "candidate": "efa6a0356f63e851c594c346dd2ec07b644655e7",
+          "candidate_sha256": "303711451233e86751f53cbdd8fd09033107e3b6622d2a33e7d356d6636afd8a",
+          "weighted_score": 93.75,
+          "round": 2,
+          "commit": "5c4513384fc5170f37c12aafe7cbdd4da2052e23"
+        },
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            3,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/782-review-3-7cc542bd.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Canonical Python matched independent BFS on all 65,536 binary 4\u00d74 boards.",
+            "Bilingual interaction, keyboard, responsive layout, contrast and exact source-transfer checks passed.",
+            "782-MAC-FIT-01 closed against audited Mac regression records and inspected screenshots.",
+            "Non-mutating metadata preflight passed."
+          ],
+          "detail": "96.25/100. No required findings remain open. Acceptance applies to the reviewed revision; publication and human comprehension are not claimed.",
+          "run_id": "782-review-a4775ca9e123",
+          "candidate": "754e04a1cc401f1ae62116137a1e3054855f3292",
+          "candidate_sha256": "07ecef314c6facafcc120c795006304b19bb0f90fa7738d8bdf5e6c244782dfe",
+          "weighted_score": 96.25,
+          "round": 3,
+          "commit": "63360f1873f8119f4ed928cc08c3492416293fae"
+        }
+      ],
+      "author_runs": [
+        "782-author-ac9f09445a31",
+        "782-fix-c54aaacb630f",
+        "782-fix-4213e61f43e8"
+      ],
+      "prior_report": "specs/reviews/782-review-3-7cc542bd.md",
+      "candidate": "754e04a1cc401f1ae62116137a1e3054855f3292",
+      "registration_commit": "e64356fbeaa7fb1c8793d1a8febcac4ae8e9e394",
+      "accepted_at": "2026-10-25T13:04:06.208831+00:00"
+    },
+    "803": {
+      "status": "accepted_local",
+      "rounds": 2,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "changes_required",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            3,
+            3
+          ],
+          "required_open": [
+            "803-R1"
+          ],
+          "report_path": "specs/reviews/803-review-1-0c724915.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Canonical Python passed fresh examples, 500 independent oracle cases, and boundary checks.",
+            "Exact displayed, copied, fallback-copied, and downloaded source parity verified.",
+            "Metadata preflight passed.",
+            "Screenshots confirm preset labels clip at 320/390 px with 200% zoom."
+          ],
+          "detail": "93.75/100; acceptance prevented by required finding 803-R1. Full reproduction, screenshots, score rationale, and limitations are recorded in the report.",
+          "run_id": "803-review-627c02c2a810",
+          "candidate": "3960c91f27e095983bfe639fede452427eb5bc62",
+          "candidate_sha256": "c475964d747b039a104832ca1022ebbb3158ab16b617274ccc0158dae54cc38a",
+          "weighted_score": 93.75,
+          "round": 1,
+          "commit": "d52d2560d8d6df9b36852e48b33ebdffe66e2600"
+        },
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            3,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/803-review-2-226e2788.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Independent custom cases and canonical Python transitions verified.",
+            "Both locales, keyboard, rewind/reset, prediction changes, narrow layouts and 200% CSS zoom checked.",
+            "Exact source parity and native copy/fallback transfers passed.",
+            "803-R1 closed using fresh regression screenshots and selected-label measurements.",
+            "Non-mutating metadata preflight passed."
+          ],
+          "detail": "96.25/100. Accepted for the reviewed candidate and local preview; optional DSU teaching refinement remains.",
+          "run_id": "803-review-3b6717deae1c",
+          "candidate": "eb9692b38d758c81cfdcba57506377f20cb99ede",
+          "candidate_sha256": "6b30a57101ac34fe11eb61b0075a12c7b5cc8ae526c6be23470ba677d8dce7ef",
+          "weighted_score": 96.25,
+          "round": 2,
+          "commit": "e64869cfba52d1562c921926cfb1833d068581cb"
+        }
+      ],
+      "author_runs": [
+        "803-author-d6989155a5b0",
+        "803-fix-280cfe05ab42"
+      ],
+      "prior_report": "specs/reviews/803-review-2-226e2788.md",
+      "candidate": "eb9692b38d758c81cfdcba57506377f20cb99ede",
+      "registration_commit": "d11c202371a905b0682f3f9d3971fb5892a30fdf",
+      "accepted_at": "2026-10-25T12:50:40.472081+00:00"
+    },
+    "805": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            3,
+            3,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/805-review-1-1e77e9d2.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh canonical Python checks: [2,3,7] false; [0,1,5,6] true.",
+            "Bilingual interactions, keyboard, narrow layouts, CSS 200% zoom and screenshots inspected.",
+            "Exact displayed/copied/downloaded source parity and four native fallback-copy attempts passed.",
+            "Non-mutating metadata preflight passed."
+          ],
+          "detail": "91.25/100; no required open findings. Local review only; physical devices, native menu zoom and publication were not verified.",
+          "run_id": "805-review-094f101326af",
+          "candidate": "df8f6919bd2904df939664074267534472135146",
+          "candidate_sha256": "027c7c2096ff827992e07a914734282a6d8ccfcad2897f89c97a4c43add917a8",
+          "weighted_score": 91.25,
+          "round": 1,
+          "commit": "e7a1a9d39fd4276c3f50522dc4145867ccd6ca87"
+        }
+      ],
+      "author_runs": [
+        "805-author-2ab2362ae2fc"
+      ],
+      "prior_report": "specs/reviews/805-review-1-1e77e9d2.md",
+      "candidate": "df8f6919bd2904df939664074267534472135146",
+      "registration_commit": "b2acbef0fa3b2c906b256b12055a09235fedca93",
+      "accepted_at": "2026-10-25T12:38:11.602265+00:00"
+    }
+  },
+  "queue_count": 984,
+  "accepted_count": 119,
+  "lane_imports": [
+    {
+      "version": 1,
+      "status": "completed",
+      "problem_id": "805",
+      "central_before": "5c4513384fc5170f37c12aafe7cbdd4da2052e23",
+      "lane_head": "b2acbef0fa3b2c906b256b12055a09235fedca93",
+      "lane_repo": "/home/songyy/projects/leetcode-hard-lane-805-20261025",
+      "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-805-20261025",
+      "candidate": "df8f6919bd2904df939664074267534472135146",
+      "run_ids": [
+        "805-author-2ab2362ae2fc",
+        "805-review-094f101326af"
+      ],
+      "started_at": "2026-10-25T12:46:12.199653+00:00",
+      "updated_at": "2026-10-25T12:46:13.292533+00:00",
+      "merged_head": "487d9816553284c0f7b895f2d04c937aad120954",
+      "receipt": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/lane-imports/805-f80ce7aabf9a4621a6327e7d78530510.json"
+    },
+    {
+      "version": 1,
+      "status": "completed",
+      "problem_id": "803",
+      "central_before": "fffc7927434684291680e07acdd709a5ae67b084",
+      "lane_head": "d11c202371a905b0682f3f9d3971fb5892a30fdf",
+      "lane_repo": "/home/songyy/projects/leetcode-hard-lane-803-20261025",
+      "lane_state_dir": "/home/songyy/projects/leetcode-hard-lane-state-803-20261025",
+      "candidate": "eb9692b38d758c81cfdcba57506377f20cb99ede",
+      "run_ids": [
+        "803-author-d6989155a5b0",
+        "803-review-627c02c2a810",
+        "803-fix-280cfe05ab42",
+        "803-review-3b6717deae1c"
+      ],
+      "started_at": "2026-10-25T12:56:34.817731+00:00",
+      "updated_at": "2026-10-25T12:56:38.407481+00:00",
+      "merged_head": "754e04a1cc401f1ae62116137a1e3054855f3292",
+      "receipt": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/lane-imports/803-30cc5812578e45ac8fa94bd2cf0fedda.json"
+    }
+  ]
+}

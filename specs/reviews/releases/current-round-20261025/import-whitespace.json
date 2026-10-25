@@ -1,0 +1,10 @@
+{
+  "status": "preserved accepted bytes",
+  "candidate": "df8f6919bd2904df939664074267534472135146",
+  "findings": [
+    "leetcode/805/style.css:1: trailing whitespace.",
+    "leetcode/805/tests/SELF-CHECK.md:3: trailing whitespace.",
+    "leetcode/805/tests/SELF-CHECK.md:4: trailing whitespace."
+  ],
+  "explanation": "Existing accepted minified CSS has a trailing space; Markdown contains hard-line-break spaces. Preserve frozen candidate byte identity. All other staged files pass diff check."
+}

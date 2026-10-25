@@ -1,0 +1,56 @@
+{
+  "servedParity": {
+    "index.html": "ed798e2c2e4bf417ff5a6412217fffa133faa893a843ee4606d14be9ab594c18",
+    "solution.py": "8ddf768d68632fe00838ed1bb43ba5cb4c8b0db27094b682eec98afa3a750dd9",
+    "python-code.js": "efc65387c57551076c1576bf41fedc1451c5a5536e57571673f83225f88a288d",
+    "app.js": "b1a33a81299d41be597f64f0680fdb65e67ba84e8f3005a99637440074a2a4b3",
+    "core.js": "294d7f664b692b5200c02d69e212e0f3072199efe5a332f5c244646ce5d1edec",
+    "copy.js": "6a7ee8bc5cb86fa2bebeec91d906d3360971d54952e80b122ed3f8533294c1d8",
+    "style.css": "7ad48c421b85a9d8c2aec2abe5316d46b11d1c58fb1d288528dc2d3317e8f8fb",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "identities": [
+    "#805 · 数组的均值分割",
+    "#805 · Split Array With Same Average",
+    "#805 · 数组的均值分割"
+  ],
+  "keyboardHistory": {
+    "start": 0,
+    "finish": 200
+  },
+  "related": [
+    {
+      "lang": "en",
+      "label": " #446: extend and accumulate states by position →",
+      "href": "../446/#step2",
+      "url": "http://127.0.0.1:18786/leetcode/446/#step2",
+      "section": "03\n\n03 · Extend one pair at a time\n\nWhat changes after processing one pair of positions? Here dp[k][d] counts subsequences of length at least 2 ending at k with difference d. Position i is the new endpoint, j is the penultimate position, and c is the old source count dp[j][d]. Each frame shows the state after one completed (j,i) update; the running answer contains only processed sequences of length at least 3.\n\nDuring a row, dp[i][d] counts exactly the sequences whose penultimate positions have been processed. At row completion it includes every sequence at that endpoint. Since j<i, source row j is already complete. Equal differences at different endpoints cannot be merged: they have different later positions available to append.\n\nThis is a JavaScript visual simulation, not execution of the Python submission. Small presets retain every update without omissions. Snapshots and the history table are teaching overhead; the submission keeps only n dictionaries.\n\nKeep the preset fixed and process the next pair. Inspect source count c, compare the target before/after, then inspect the answer increment in the history. Back then forward restores the same state. Changing preset restarts only this experiment, preserving the prediction below.\n\nPreset (restarts this experiment)\nHand calculation · [2,4,6]\nOfficial · [2,4,6,8,10]\nDuplicates · [7,7,7,7,7]\nNegative gap · [3,1,−1,−3]\nSingleton · [9]\nWide gaps · [−2³¹,0,2³¹−1]\nNo match · [1,2,4]\nSkip a position · [2,9,4,6]\nPrevious pair\nProcess next pair\nReset trace\nShow all updates\nNumber of completed position pairs\n\nProcessed 0/3 pairs · Running answer 0\n\nPosition 0\n2\nPosition 1\n4\nPosition 2\n6\n\nInitial state: no position pairs processed, all dictionaries empty, running answer 0.\n\nEach row below is one endpoint; entries read difference d : count. An empty row means no saved sequences of length at least 2, not a zero input value.\n\nAll saved states (including two-term starting points)\ndp[0]\nEmpty\ndp[1]\nEmpty\ndp[2]\nEmpty\n\nScroll the history table horizontally; each row is one complete pair update.\n\nCompleted update history\nPosition pair (j,i)\tDifference d\tSource count c\tTarget before → after\tNew answers\tRunning answer\nNo updates yet"
+    },
+    {
+      "lang": "en",
+      "label": "#410: compare the contiguous-partition constraint →",
+      "href": "../410/#step2",
+      "url": "http://127.0.0.1:18786/leetcode/410/#step2",
+      "section": "03\nTurn a cap test into the answer\n\nOur question: how do we find the smallest feasible cap? “Feasible” means exactly k nonempty consecutive groups can all have sums at most B. The previous scan gives groups, the minimum group count for a fixed B.\n\nWhy test groups≤k rather than groups==k? Needing more than k groups is impossible. If fewer suffice, k≤n guarantees a group with at least two items to split. Nonnegative values ensure neither new sum exceeds the original sum. Repeat until there are k groups. For example, [0,0,0] uses one greedy group at B=0 but can still be split into two.\n\nA partition legal under B remains legal under any larger cap. As the cap increases, feasibility can change from false to true but never back: this is monotonicity. We binary-search integer answers, rather than array positions.\n\n#4: compare partition-search boundaries\n\nA cap must hold the largest element, so lo=max(nums) is a lower bound. hi=sum(nums) is feasible: use one group, then split it. lo and hi bound an inclusive interval of candidates for the smallest feasible answer; both endpoints are included.\n\nMaintained fact (invariant): the smallest feasible cap stays inside [lo,hi]. Test the midpoint mid=⌊(lo+hi)/2⌋. If groups≤k, mid works but a smaller answer may exist, so set hi=mid, retaining mid. Otherwise even the minimum count is too large; every cap ≤mid fails, so set lo=mid+1. This justifies discarding half the candidates each round.\n\nFor [2,3,4]: start with [4,9]. Cap 6 uses two groups, leaving [4,6]; cap 5 uses two, leaving [4,5]; cap 4 needs three, leaving [5,5]. Each round shortens the interval. At lo==hi, the sole candidate 5 must be the answer.\n\nReproduce those three rounds, then select Official 1 in the previous section. At each round, inspect the old interval, tested cap and groups, verdict, and new interval. Editing the scan cap above does not change this binary search.\n\nEach step completes one full greedy scan and one bound update. The box shows the interval after the update. Groups in the history belong to the tested mid, rather than the new upper bound. Tutorial snapshots use extra memory beyond the Python workspace.\n\nnums = [2, 3, 4]; k = 2.\n\nCurrent candidate interval [lo,hi] = [4,9]; candidate integers: 6.\n← Back one step\nTest next cap →\nReset to start\nGo to end\n\nCompleted 0/3 rounds. Answer not yet determined; watch the retained interval shrink."
+    },
+    {
+      "lang": "zh",
+      "label": "#446：按位置扩展并累积状态 →",
+      "href": "../446/#step2",
+      "url": "http://127.0.0.1:18786/leetcode/446/#step2",
+      "section": "03\n\n03 · 逐对扩展实验\n\n每次处理一对位置后，究竟哪些数改变？这里 dp[k][d] 计以位置 k 结尾、差值 d、长度至少为 2 的子序列。i 是新结尾，j 是倒数第二个位置，c 是源 dp[j][d] 的旧计数。每帧显示一次 (j,i) 更新完成之后的状态；总答案只含已处理的长度至少为 3 的序列。\n\n逐对处理时，dp[i][d] 精确保存倒数第二个位置已处理的所有序列；一行处理结束后，就包含该结尾的全部序列。因为 j<i，读取的源行 j 已经完成。相同差值但结尾不同不能合并：它们能接上的后续位置不同。\n\n这是 JavaScript 可视化模拟，不是执行 Python 提交。小预设保留全部更新，没有跳步；快照和历史表是教学额外开销，正式解法只存 n 个字典。\n\n保持预设不变，点击“处理下一对”，先看源计数 c，再比较目标旧值/新值和历史中的答案增量。退回再前进应恢复相同状态。改预设仅重启本实验，不清除下面的预测题。\n\n选择预设（会重启本实验）\n手算 · [2,4,6]\n官方 · [2,4,6,8,10]\n重复 · [7,7,7,7,7]\n负差 · [3,1,−1,−3]\n单项 · [9]\n宽差 · [−2³¹,0,2³¹−1]\n无解 · [1,2,4]\n跳过 · [2,9,4,6]\n退回一对\n处理下一对\n回到初始状态\n查看全部处理结果\n已完成的位置对数量\n\n已处理 0/3 对 · 当前累计答案 0\n\n位置 0\n2\n位置 1\n4\n位置 2\n6\n\n初始状态：尚未处理任何位置对，所有字典为空，累计答案为 0。\n\n下列每行对应一个结尾位置；条目写作 差值 d : 数量。空行表示尚无长度至少为 2 的序列；不表示该位置的数值为零。\n\n全部已存状态（含两项起点）\ndp[0]\n空\ndp[1]\n空\ndp[2]\n空\n\n历史表可左右滚动；每行是一对位置的完整更新。\n\n已完成的更新历史\n位置对 (j,i)\t差值 d\t源计数 c\t目标 旧 → 新\t新增答案\t累计答案\n尚无更新"
+    },
+    {
+      "lang": "zh",
+      "label": "#410：对比连续分段的限制 →",
+      "href": "../410/#step2",
+      "url": "http://127.0.0.1:18786/leetcode/410/#step2",
+      "section": "03\n把“上限够不够”变成答案\n\n这一步要回答：怎样找到最小可行上限？这里“可行”指能恰好用 k 个非空连续段，且每段和都不超过 B。上一节扫描给出了固定 B 下的最少段数 groups。\n\n为什么代码检验 groups≤k，而不是 groups==k？若最少需要超过 k 段，当然不行。若只需更少段，因 k≤n，总能找到一个至少有两项的段继续切开；非负数保证两个新段的和都不超过原段。反复切到 k 段即可。例如 [0,0,0] 在 B=0 下贪心只用一段，却能切成两段。\n\n若某切法在 B 下合法，增大 B 后它仍合法。因此可行性随上限从“不行”变为“可行”，不会再变回去；这称为单调性。我们二分的是整数答案，而不是数组的位置。\n\n#4：比较另一种二分边界\n\n任何上限必须容纳最大元素，所以 lo=max(nums) 是下界；hi=sum(nums) 是可行上界（先放一段，再切分）。lo 和 hi 表示仍可能是最小可行答案的闭区间端点，即两端也包括在内。\n\n保持的事实（不变量）：最小可行上限始终在 [lo,hi] 内。取中点 mid=⌊(lo+hi)/2⌋。若 groups≤k，mid 可行，但还可能有更小答案，所以 hi=mid，保留 mid；否则连最少段数都太多，所有 ≤mid 的上限都不行，所以 lo=mid+1。这正是每轮能丢掉一半候选值的原因。\n\n例如 [2,3,4]：从 [4,9] 检验 6 得到两段，缩成 [4,6]；检验 5 得到两段，缩成 [4,5]；检验 4 需要三段，缩成 [5,5]。每轮区间都变短；当 lo==hi，只剩唯一候选 5，必是答案。\n\n先用默认数组复现三轮；再回到上一节选择官方例 1。逐轮查看旧范围、刚检验的上限与分段、判定和新范围。改上一节扫描上限不会改变这里的二分搜索。\n\n每一步完成一次完整贪心扫描及一次边界更新。框内是更新后的候选范围；历史中的分段属于刚检验的 mid，而非新上界。示例快照占额外空间，不是 Python 的工作空间。\n\nnums = [2, 3, 4]；k = 2。\n\n当前候选范围 [lo,hi] = [4,9]；共 6 个整数候选。\n← 退一步\n检验下一上限 →\n重置到开始\n直接到结束\n\n已完成 0/3 轮。还未确定答案；观察保留的区间如何缩小。"
+    }
+  ],
+  "harnessNotes": [
+    "Initial selectOption string matched numeric option label, not intended value. Explicit {value} selects case2 correctly.",
+    "Initial history assertion read before native keyboard scroll settled. After 250ms, Chinese case2 history Home=0 and End=200; separate English diagnostic Home=0 and End=312. No product failure."
+  ]
+}

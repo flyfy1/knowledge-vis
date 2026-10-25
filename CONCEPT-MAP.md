@@ -1549,3 +1549,33 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Modulo and reachability boundary | `leetcode/780/#step2` | Batch forced subtractions and finish using a divisible nonnegative difference. |
 
 <!-- /leetcode-780-campaign -->
+
+
+<!-- leetcode-782-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Chessboard rectangle invariant | `leetcode/782/#step1` | Equal or complementary rows and anchored rectangle XOR. |
+| Alternating sequence swap cost | `leetcode/782/#step2` | Balanced counts and paired mismatches prove the minimum. |
+
+<!-- /leetcode-782-campaign -->
+
+
+<!-- leetcode-803-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Reverse connectivity | `leetcode/803/#step2` | Restore erased bricks and measure growth of the roof-connected component. |
+| Union-find component sizes | `leetcode/803/#step4` | Maintain roof component size by path halving and union by size. |
+
+<!-- /leetcode-803-campaign -->
+
+
+<!-- leetcode-805-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Count-indexed subset sums | `leetcode/805/#step2` | Build exact sums by selected count and pair two halves. |
+| Equal-average integer condition | `leetcode/805/#step1` | Derive n*s = k*S and restrict the smaller nonempty group. |
+
+<!-- /leetcode-805-campaign -->

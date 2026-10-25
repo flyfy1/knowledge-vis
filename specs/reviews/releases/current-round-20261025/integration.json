@@ -1,0 +1,37 @@
+{
+  "source": "e64356fbeaa7fb1c8793d1a8febcac4ae8e9e394",
+  "lessons": {
+    "782": {
+      "files": 183,
+      "candidate": "754e04a1cc401f1ae62116137a1e3054855f3292",
+      "exact": true
+    },
+    "803": {
+      "files": 103,
+      "candidate": "eb9692b38d758c81cfdcba57506377f20cb99ede",
+      "exact": true
+    },
+    "805": {
+      "files": 50,
+      "candidate": "df8f6919bd2904df939664074267534472135146",
+      "exact": true
+    }
+  },
+  "protected_before": {
+    "index.html": "5c2fd1c30fee38137595f1599465970696c30fdf58ea687894741be508a49053",
+    "pages.config.js": "81558d1965b5917615b02437ca98493388d1d0ede89e56c6f19ec2441b340985",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+    "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+  },
+  "protected_after": {
+    "index.html": "5c2fd1c30fee38137595f1599465970696c30fdf58ea687894741be508a49053",
+    "pages.config.js": "81558d1965b5917615b02437ca98493388d1d0ede89e56c6f19ec2441b340985",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+    "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+  },
+  "preexisting_concept_map_preserved": true
+}

@@ -1,0 +1,44 @@
+# Current-round publication preparation — 2026-10-25
+
+Read-only independent source review. Publisher SHA-256: `f5937fc02c2603dfbba395c511578fa6f2a60ad0539e76e696e68ef04fa80494`. Inspected `scripts/leetcode_publish.py`, publication/STOP/parallel-import sections of `specs/leetcode-all-hard-campaign.md`, the first-100 publication report and receipt, and retained target/environment configuration. No live Pi state, network, mutations or publication were performed. Live readiness and exact eligible count remain operator checks.
+
+**Conclusion:** the existing standalone publisher supports the user's one-time instruction without a code or policy change. The parent reports the all-Hard goal is paused; authorization is limited to finishing this round and publishing currently accepted work. Keep future campaign work paused after this release. Use the existing central ledger, a frozen clean saved central HEAD, and `--batch-size N`, where N is the exact current eligible count. Do not use `--flush`: it requires all official catalog IDs accepted. `--batch-size 1` publishes only one lesson per invocation; it does not drain the batch.
+
+## Required boundary and selection
+
+1. Complete this round's required repairs, exact-candidate integration checks and ordinary independent reviews. An unfinished #782 repair or lane-only #803/#805 acceptance cannot be included as central acceptance. Import any accepted lanes using the existing stopped-boundary procedure, preserving their real author/reviewer history, frozen lesson/report bytes, newer central registry entries and full queue. Do not publish from a lane state or transplant a local preview registry into production.
+2. After the bounded `--run-count 1` run exits, retain the owned STOP, verify the central runner and active author/reviewer have actually ended, and verify clean HEAD equals `progress.json.expected_head`. A saved `run_limit_reached` is an acceptable finite boundary with `current` null, no running runs, completed relevant author/review runs and available runtime locks; it need not be rewritten to `stopped`. Verify #782 is actually `accepted_local`/`done` after registration before including it. The status `run_limit_reached` alone is not acceptance proof. Preserve all 984 queue entries and acceptance/run history. The standalone publisher acquires checkout, runner and release locks but does not itself check STOP or stopped status; STOP only suppresses publication in the campaign wrapper. Therefore invoke the standalone command while STOP remains present and do not concurrently restart/import/edit the central checkout.
+3. Require the existing `releases.json` with its matching repo/root/base identity. Inspect `pending` before selecting. A pending release is replayed and verified first, regardless of the new batch size; do not clear it or treat a replay result as publication of the new selection. Require null pending for this planned new batch. Confirm production registry SHA equals the ledger baseline; retain preflight hashes of root `index.html` and unrelated discovery files.
+4. At this frozen boundary, reproduce the publisher's read-only selection: accepted_local entries whose candidate differs from the released candidate are `prospective`; call `_reviewed(repo, state, registry_by_id, HEAD, prospective)`; retain queue-order IDs whose reviewed digest differs from the released digest. Require unique IDs, record that list and its candidate/report/digest map, and set N to its length. The digest includes runtime and reviewed registry metadata. N can include repaired already-released lessons, so accepted-count minus released-count is wrong. Same-digest candidate refreshes do not count. If N is zero, no new publication is necessary. Do not call `maybe_publish` as a preflight: it mutates the ledger/stage/production.
+
+## One-time command
+
+On Pi, after the checks above, set `eligible_count` to that recorded positive integer. Recheck the retained runtime paths exist; the following are the established first-100 environment paths, not a new live discovery:
+
+```sh
+env PATH=/home/songyy/.local/node-v22.23.2-linux-arm64/bin:/home/songyy/.local/bin:/usr/local/bin:/usr/bin:/bin \
+  NODE_PATH=/home/songyy/projects/integ-games/node_modules \
+  PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/home/songyy/.cache/ms-playwright/chromium-1248/chrome-linux-arm64/chrome \
+  python3 /home/songyy/projects/leetcode-hard-campaign-20261018/scripts/leetcode_publish.py \
+  --repo /home/songyy/projects/leetcode-hard-campaign-20261018 \
+  --state-dir /home/songyy/projects/leetcode-hard-campaign-state-20261018 \
+  --publish-root /home/songyy/projects/visual-site \
+  --public-base https://visual.integ.life \
+  --batch-size "$eligible_count"
+```
+
+Capture complete output/exit status and the resulting small receipt. Do not change the saved normal threshold `--publish-every 100`; this command changes only this release's threshold, and does not authorize continuous campaign resumption. No approval or new deployment system is necessary under the user's explicit instruction.
+
+## Preservation and success criteria
+
+The publisher validates independent acceptance, reviewer separation, immutable review report, candidate ancestry, the complete unchanged lesson tree, and reviewed metadata. It merges selected rows into the **production** registry, preserving existing unrelated rows. It ships selected runtimes plus `leetcode/problems.config.js`, generated-cache-version `leetcode/index.html`, and tracked `leetcode/collection.js`/`.css`. Shared runtime dependencies must already match production. Root `index.html`, `pages.config.js` and unrelated pages are not outputs; retain and compare their hashes rather than copying the whole source checkout. The inline homepage should obtain new lessons from the updated production registry.
+
+A successful release requires all staged/shared public hashes and the existing browser gate on every selected lesson. The browser uses ordinary collection/lesson URLs, verifies numbered titles and official links, bilingual content and resource/error completion. Archive the release ID, revision, exact selected candidate/report/digest map, file/public-file counts, verification result and null pending. Check root homepage's ordinary URL separately: its inline list/count/search, a newly published lesson link and official link, both locales, and unchanged root HTML bytes. The publisher gate covers `/leetcode/`, not the root inline view.
+
+The previous verified receipt `b5d3557210f44ff68a57b83fc0b4c5ee` binds 100 lessons, 707 staged files and **712 public files including shared dependencies**, at revision `674107302fc9a1a3d7cab177150b5a6909259bd5`; browser result was 100 lessons/zero ignored beacon failures. That receipt is historical evidence, not proof of today's ledger or delivery.
+
+If publication fails, retain STOP and pending/stage/error evidence. Writes are atomic per file, not across the whole release; files may already be visible while the ledger still correctly refuses success. Resume the same pending release through the existing publisher after diagnosis, or use a separately reviewed recovery if candidate repair is required. Do not advance success from local checks, copied files, or a partial public sample. No old served-content backups are required by current policy. After successful receipt/public checks, integrate/archive the exact accepted history and release evidence through the established repository flow. Retain the owned STOP and leave the campaign goal paused with no live worker. Do not remove STOP or launch the full queue automatically; future campaign resumption requires the user's authorization.
+
+## Finite-run source confirmation
+
+Re-read `scripts/leetcode_campaign.py` (`process_problem`, `publish_if_due`, main loop, lines 330–438 and 505–530). `--run-count 1` counts one previously nonterminal problem after its processing returns; the ordinary fix/review/register sequence remains inside `process_problem`. Once the count is reached, the runner records `run_limit_reached`, clears `current`, saves state and exits the preview/lock scopes. The full saved queue is unchanged. A blocked/needs-review terminal outcome can also reach the same finite limit, so the selected lesson must separately pass `accepted_local` and publisher review gates. Inserting STOP before registration can instead halt at the earlier phase; observe actual saved phase/status rather than assuming registration happened. The standalone publisher does not require the literal state status `stopped`, and acquires its own checkout/runner/release locks. Thus `run_limit_reached` plus the frozen completion checks above is a valid one-time publication boundary without resuming the paused all-Hard goal. No live-state observation or Pi mutation was performed for this amendment.

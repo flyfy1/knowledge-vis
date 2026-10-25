@@ -1,0 +1,860 @@
+{
+  "errors": [],
+  "assetErrors": [],
+  "external": [],
+  "bindings": [
+    {
+      "lang": "en",
+      "state": "right [2], before adding 3",
+      "progress": "Frame 2/4 · Processed position 1 of the right, value 2: keep old sums, and add 2 to each old sum in the next count row.",
+      "sets": "Select 0:{0}Select 1:{2}"
+    },
+    {
+      "lang": "en",
+      "state": "first match i=0 j=1",
+      "result": "Conclusion true: left sum 0 + right sum 2 = 2, selecting 1; the remaining group has the same average."
+    },
+    {
+      "lang": "en",
+      "state": "integer target but impossible",
+      "result": "Conclusion false: every legal k,i pairing was checked; no missing sum was found."
+    },
+    {
+      "lang": "zh",
+      "state": "right [2], before adding 3",
+      "progress": "帧 2/4 · 已处理右半第 1 个位置，值 2：保留旧和，并把每个旧和加 2 放入下一计数行。",
+      "sets": "选 0 个：{0}选 1 个：{2}"
+    },
+    {
+      "lang": "zh",
+      "state": "first match i=0 j=1",
+      "result": "结论 true：左和 0 + 右和 2 = 2，共 1 个；另一组也有相同均值。"
+    },
+    {
+      "lang": "zh",
+      "state": "integer target but impossible",
+      "result": "结论 false：所有合法 k、i 配对都检查完，没有补数命中。"
+    },
+    {
+      "lang": "en",
+      "copyStatus": "Automatic copy is unavailable. The complete source is selected; use your system copy shortcut.",
+      "feedback": "That reasoning does not hold. The answer is true. n=6, S=24; k=1,2,3 have targets 4,8,12. k=1 already works with [4]; equal group sizes are unnecessary. Option 0 checks only divisibility and would fail on [1,1,4]. Option 1 adds an equal-size restriction; even [1,5,6] and [2,4,6] both sum to 12. The set invariant guarantees that sum 4 appears in the count-1 row of its half."
+    },
+    {
+      "lang": "zh",
+      "copyStatus": "自动复制不可用。完整源码已选中，请按系统复制快捷键。",
+      "feedback": "这项推理不成立。 答案是 true。n=6、S=24，k=1,2,3 的目标和分别为 4,8,12。k=1 已可选 [4]；不必两组各 3 个。0 号选项只检验整除，在 [1,1,4] 就会误判；1 号选项额外强加了等大小限制，且 [1,5,6] 与 [2,4,6] 的和也都为 12。集合不变量保证 {4} 会出现在相应半边的计数 1 行。"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 258,
+          "h": 73,
+          "text": "Select 0:{0}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "Select 1:{1, 2, 3, 4}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "Select 2:{3, 4, 5, 6, 7}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "Select 3:{6, 7, 8, 9}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "Select 4:{10}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "Select 0:{0}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "Select 1:{5, 6, 7, 8}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "Select 2:{11, 12, 13, 14, 15}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "Select 3:{18, 19, 20, 21}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "Select 4:{26}",
+          "scroll": 258,
+          "client": 258
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 328,
+          "h": 73,
+          "text": "Select 0:{0}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "Select 1:{1, 2, 3, 4}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "Select 2:{3, 4, 5, 6, 7}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "Select 3:{6, 7, 8, 9}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "Select 4:{10}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "Select 0:{0}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "Select 1:{5, 6, 7, 8}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "Select 2:{11, 12, 13, 14, 15}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "Select 3:{18, 19, 20, 21}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "Select 4:{26}",
+          "scroll": 328,
+          "client": 328
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 315,
+          "h": 73,
+          "text": "Select 0:{0}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "Select 1:{1, 2, 3, 4}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "Select 2:{3, 4, 5, 6, 7}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "Select 3:{6, 7, 8, 9}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "Select 4:{10}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "Select 0:{0}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "Select 1:{5, 6, 7, 8}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "Select 2:{11, 12, 13, 14, 15}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "Select 3:{18, 19, 20, 21}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "Select 4:{26}",
+          "scroll": 315,
+          "client": 315
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 447,
+          "h": 73,
+          "text": "Select 0:{0}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "Select 1:{1, 2, 3, 4}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "Select 2:{3, 4, 5, 6, 7}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "Select 3:{6, 7, 8, 9}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "Select 4:{10}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "Select 0:{0}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "Select 1:{5, 6, 7, 8}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "Select 2:{11, 12, 13, 14, 15}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "Select 3:{18, 19, 20, 21}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "Select 4:{26}",
+          "scroll": 447,
+          "client": 447
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "measured": {
+        "width": 88,
+        "text": 9.152023315429688,
+        "pad": 30
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "measured": {
+        "width": 88,
+        "text": 9.152023315429688,
+        "pad": 30
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "measured": {
+        "width": 88,
+        "text": 9.152023315429688,
+        "pad": 30
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 258,
+          "h": 73,
+          "text": "选 0 个：{0}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "选 1 个：{1, 2, 3, 4}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "选 2 个：{3, 4, 5, 6, 7}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "选 3 个：{6, 7, 8, 9}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "选 4 个：{10}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "选 0 个：{0}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "选 1 个：{5, 6, 7, 8}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "选 2 个：{11, 12, 13, 14, 15}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "选 3 个：{18, 19, 20, 21}",
+          "scroll": 258,
+          "client": 258
+        },
+        {
+          "w": 258,
+          "h": 73,
+          "text": "选 4 个：{26}",
+          "scroll": 258,
+          "client": 258
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 328,
+          "h": 73,
+          "text": "选 0 个：{0}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "选 1 个：{1, 2, 3, 4}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "选 2 个：{3, 4, 5, 6, 7}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "选 3 个：{6, 7, 8, 9}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "选 4 个：{10}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "选 0 个：{0}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "选 1 个：{5, 6, 7, 8}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "选 2 个：{11, 12, 13, 14, 15}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "选 3 个：{18, 19, 20, 21}",
+          "scroll": 328,
+          "client": 328
+        },
+        {
+          "w": 328,
+          "h": 73,
+          "text": "选 4 个：{26}",
+          "scroll": 328,
+          "client": 328
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 315,
+          "h": 73,
+          "text": "选 0 个：{0}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "选 1 个：{1, 2, 3, 4}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "选 2 个：{3, 4, 5, 6, 7}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "选 3 个：{6, 7, 8, 9}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "选 4 个：{10}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "选 0 个：{0}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "选 1 个：{5, 6, 7, 8}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "选 2 个：{11, 12, 13, 14, 15}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "选 3 个：{18, 19, 20, 21}",
+          "scroll": 315,
+          "client": 315
+        },
+        {
+          "w": 315,
+          "h": 73,
+          "text": "选 4 个：{26}",
+          "scroll": 315,
+          "client": 315
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 447,
+          "h": 73,
+          "text": "选 0 个：{0}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "选 1 个：{1, 2, 3, 4}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "选 2 个：{3, 4, 5, 6, 7}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "选 3 个：{6, 7, 8, 9}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "选 4 个：{10}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "选 0 个：{0}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "选 1 个：{5, 6, 7, 8}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "选 2 个：{11, 12, 13, 14, 15}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "选 3 个：{18, 19, 20, 21}",
+          "scroll": 447,
+          "client": 447
+        },
+        {
+          "w": 447,
+          "h": 73,
+          "text": "选 4 个：{26}",
+          "scroll": 447,
+          "client": 447
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "measured": {
+        "width": 88,
+        "text": 9.152023315429688,
+        "pad": 30
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "measured": {
+        "width": 88,
+        "text": 9.152023315429688,
+        "pad": 30
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "measured": {
+        "width": 88,
+        "text": 9.152023315429688,
+        "pad": 30
+      }
+    }
+  ],
+  "states": 92,
+  "host": "linux",
+  "fallback": [
+    {
+      "lang": "en",
+      "attempt": 0,
+      "sentinel": "805-en-0-fresh-non-source",
+      "verified": true,
+      "shortcut": "Control+C"
+    },
+    {
+      "lang": "en",
+      "attempt": 1,
+      "sentinel": "805-en-1-fresh-non-source",
+      "verified": true,
+      "shortcut": "Control+C"
+    },
+    {
+      "lang": "zh",
+      "attempt": 0,
+      "sentinel": "805-zh-0-fresh-non-source",
+      "verified": true,
+      "shortcut": "Control+C"
+    },
+    {
+      "lang": "zh",
+      "attempt": 1,
+      "sentinel": "805-zh-1-fresh-non-source",
+      "verified": true,
+      "shortcut": "Control+C"
+    }
+  ],
+  "focus": {
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrast": [
+    {
+      "a": "text",
+      "b": "panel2",
+      "ratio": 13.397069143240783
+    },
+    {
+      "a": "muted",
+      "b": "panel2",
+      "ratio": 6.449407898769069
+    },
+    {
+      "a": "muted",
+      "b": "panel",
+      "ratio": 7.078851579017443
+    },
+    {
+      "a": "muted",
+      "b": "bg",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "a": "accent",
+      "b": "panel",
+      "ratio": 11.974898815275662
+    },
+    {
+      "a": "accent2",
+      "b": "panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "a": "accent2",
+      "b": "bg",
+      "ratio": 10.731637051347173
+    },
+    {
+      "a": "good",
+      "b": "panel",
+      "ratio": 10.981256963037128
+    },
+    {
+      "a": "bg",
+      "b": "accent",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+  "cssBytes": 11274,
+  "controls": [
+    {
+      "id": "",
+      "h": 48
+    },
+    {
+      "id": "",
+      "h": 48
+    },
+    {
+      "id": "handReveal",
+      "h": 48
+    },
+    {
+      "id": "preset",
+      "h": 48
+    },
+    {
+      "id": "prev",
+      "h": 48
+    },
+    {
+      "id": "next",
+      "h": 48
+    },
+    {
+      "id": "reset",
+      "h": 48
+    },
+    {
+      "id": "end",
+      "h": 48
+    },
+    {
+      "id": "reveal",
+      "h": 48
+    },
+    {
+      "id": "copy",
+      "h": 48
+    }
+  ],
+  "storageBlocked": true,
+  "offline": true,
+  "result": "PASS",
+  "zoom": "CSS layout zoom 200%; native browser zoom/real devices untested",
+  "browser": "156.0.8078.4"
+}

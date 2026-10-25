@@ -1,0 +1,585 @@
+{
+  "revision": "e64356fbeaa7fb1c8793d1a8febcac4ae8e9e394",
+  "ids": [
+    "239",
+    "736",
+    "741",
+    "745",
+    "749",
+    "753",
+    "757",
+    "761",
+    "765",
+    "768",
+    "770",
+    "773",
+    "778",
+    "780",
+    "782",
+    "803",
+    "805"
+  ],
+  "batch_size": 17,
+  "entries": [
+    {
+      "id": 239,
+      "title": {
+        "zh": "\u6ed1\u52a8\u7a97\u53e3\u6700\u5927\u503c",
+        "en": "Sliding Window Maximum"
+      },
+      "desc": {
+        "zh": "\u4ece\u91cd\u590d\u626b\u63cf\u51fa\u53d1\uff0c\u63a8\u5bfc\u5355\u8c03\u53cc\u7aef\u961f\u5217\u5982\u4f55\u5728\u7ebf\u7ef4\u62a4\u6bcf\u4e2a\u7a97\u53e3\u7684\u6700\u5927\u503c\u3002",
+        "en": "Start from repeated scans and derive a monotonic deque that maintains every window maximum online."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u6570\u7ec4",
+          "en": "Array"
+        },
+        {
+          "zh": "\u5355\u8c03\u961f\u5217",
+          "en": "Monotonic deque"
+        }
+      ],
+      "path": "239/",
+      "leetcodeUrl": "https://leetcode.com/problems/sliding-window-maximum/",
+      "language": "Python",
+      "complexity": "O(n) time; O(k) auxiliary space"
+    },
+    {
+      "id": 736,
+      "title": {
+        "zh": "Lisp \u8bed\u6cd5\u89e3\u6790",
+        "en": "Parse Lisp Expression"
+      },
+      "desc": {
+        "zh": "\u9010\u6b65\u89e3\u6790\u8868\u8fbe\u5f0f\uff0c\u89c2\u5bdf\u53d8\u91cf\u5982\u4f55\u906e\u853d\u4e0e\u6062\u590d\u3002",
+        "en": "Parse expressions and watch variable bindings hide and restore."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u9012\u5f52\u89e3\u6790",
+          "en": "Recursive parsing"
+        },
+        {
+          "zh": "\u4f5c\u7528\u57df",
+          "en": "Scope"
+        }
+      ],
+      "path": "736/",
+      "leetcodeUrl": "https://leetcode.com/problems/parse-lisp-expression/",
+      "language": "Python",
+      "complexity": "O(n) expected time; O(n) auxiliary space, n = expression character length"
+    },
+    {
+      "id": 741,
+      "title": {
+        "zh": "\u6458\u6a31\u6843",
+        "en": "Cherry Pickup"
+      },
+      "desc": {
+        "zh": "\u628a\u5f80\u8fd4\u53d8\u6210\u540c\u6b65\u884c\u8d70\uff0c\u63a8\u5bfc\u53ea\u8bb0\u4e24\u884c\u5750\u6807\u7684\u52a8\u6001\u89c4\u5212\u3002",
+        "en": "Reverse the return path and derive a synchronized two-traveler dynamic program."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u52a8\u6001\u89c4\u5212",
+          "en": "Dynamic Programming"
+        },
+        {
+          "zh": "\u7f51\u683c\u8def\u5f84",
+          "en": "Grid Paths"
+        }
+      ],
+      "path": "741/",
+      "leetcodeUrl": "https://leetcode.com/problems/cherry-pickup/",
+      "language": "Python",
+      "complexity": "O(n\u00b3) time; O(n\u00b2) auxiliary space"
+    },
+    {
+      "id": 745,
+      "title": {
+        "zh": "\u524d\u7f00\u548c\u540e\u7f00\u641c\u7d22",
+        "en": "Prefix and Suffix Search"
+      },
+      "desc": {
+        "zh": "\u628a\u77ed\u5355\u8bcd\u7684\u4e24\u7aef\u914d\u5bf9\uff0c\u63a8\u5bfc\u6700\u5927\u4e0b\u6807\u4e3a\u4f55\u80fd\u5b89\u5168\u8986\u76d6\u3002",
+        "en": "Pair the ends of short words and derive why later indices safely overwrite earlier ones."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u54c8\u5e0c\u8868",
+          "en": "Hash map"
+        },
+        {
+          "zh": "\u5b57\u7b26\u4e32",
+          "en": "Strings"
+        }
+      ],
+      "path": "745/",
+      "leetcodeUrl": "https://leetcode.com/problems/prefix-and-suffix-search/",
+      "language": "Python",
+      "complexity": "Expected O(nL\u00b3) construction time; O(nL\u00b3) space; O(|pref|+|suff|) time per query"
+    },
+    {
+      "id": 749,
+      "title": {
+        "zh": "\u9694\u79bb\u75c5\u6bd2",
+        "en": "Contain Virus"
+      },
+      "desc": {
+        "zh": "\u5206\u6e05\u53d7\u5a01\u80c1\u683c\u4e0e\u5899\u8fb9\uff0c\u51bb\u7ed3\u65e5\u521d\u8fb9\u754c\uff0c\u9010\u591c\u6a21\u62df\u9694\u79bb\u4e0e\u6269\u6563\u3002",
+        "en": "Separate threatened cells from wall edges, freeze day-start frontiers, and simulate quarantine and spread."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u7f51\u683c\u6a21\u62df",
+          "en": "Grid simulation"
+        },
+        {
+          "zh": "\u8fde\u901a\u533a\u57df",
+          "en": "Connected components"
+        },
+        {
+          "zh": "\u96c6\u5408\u53bb\u91cd",
+          "en": "Set deduplication"
+        }
+      ],
+      "path": "749/",
+      "leetcodeUrl": "https://leetcode.com/problems/contain-virus/",
+      "language": "Python",
+      "complexity": "O((D+1)mn) time, D \u2264 mn, hence O((mn)\u00b2) worst case; O(mn) auxiliary space"
+    },
+    {
+      "id": 753,
+      "title": {
+        "zh": "\u7834\u89e3\u4fdd\u9669\u7bb1",
+        "en": "Cracking the Safe"
+      },
+      "desc": {
+        "zh": "\u8ba9\u76f8\u90bb\u5bc6\u7801\u91cd\u53e0\uff0c\u7528\u6bcf\u6761\u8fb9\u4e00\u6b21\u6784\u9020\u6700\u77ed\u5f00\u9501\u4e32\u3002",
+        "en": "Overlap passwords and use each edge once to build a shortest unlocking string."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u6b27\u62c9\u56de\u8def",
+          "en": "Euler circuit"
+        },
+        {
+          "zh": "de Bruijn \u5e8f\u5217",
+          "en": "de Bruijn sequence"
+        }
+      ],
+      "path": "753/",
+      "leetcodeUrl": "https://leetcode.com/problems/cracking-the-safe/",
+      "language": "Python",
+      "complexity": "O(k^n + n) time; O(k^n + n) space including output"
+    },
+    {
+      "id": 757,
+      "title": {
+        "zh": "\u8bbe\u7f6e\u4ea4\u96c6\u5927\u5c0f\u81f3\u5c11\u4e3a\u4e8c",
+        "en": "Set Intersection Size At Least Two"
+      },
+      "desc": {
+        "zh": "\u4ece\u624b\u9009\u6574\u6570\u63a8\u5bfc\u6700\u53f3\u8d2a\u5fc3\uff0c\u7528\u4e24\u4e2a\u6700\u5927\u70b9\u7ef4\u62a4\u6240\u6709\u533a\u95f4\u7684\u8986\u76d6\u3002",
+        "en": "Derive rightmost greedy choices and cover intervals using only the two largest selected points."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u8d2a\u5fc3",
+          "en": "Greedy"
+        },
+        {
+          "zh": "\u533a\u95f4\u8986\u76d6",
+          "en": "Interval covering"
+        }
+      ],
+      "path": "757/",
+      "leetcodeUrl": "https://leetcode.com/problems/set-intersection-size-at-least-two/",
+      "language": "Python",
+      "complexity": "O(n log n) time; O(n) auxiliary space for sorting"
+    },
+    {
+      "id": 761,
+      "title": {
+        "zh": "\u7279\u6b8a\u7684\u4e8c\u8fdb\u5236\u5e8f\u5217",
+        "en": "Special Binary String"
+      },
+      "desc": {
+        "zh": "\u4ece\u524d\u7f00\u4f59\u989d\u53d1\u73b0\u6700\u5c0f\u5757\uff0c\u9012\u5f52\u4f18\u5316\u5185\u90e8\u5e76\u8bc1\u660e\u5144\u5f1f\u5757\u7684\u964d\u5e8f\u6392\u5217\u3002",
+        "en": "Discover minimal blocks through prefix balance, optimize their interiors, and prove descending sibling order."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u9012\u5f52",
+          "en": "Recursion"
+        },
+        {
+          "zh": "\u5b57\u7b26\u4e32",
+          "en": "Strings"
+        },
+        {
+          "zh": "\u8d2a\u5fc3",
+          "en": "Greedy"
+        }
+      ],
+      "path": "761/",
+      "leetcodeUrl": "https://leetcode.com/problems/special-binary-string/",
+      "language": "Python",
+      "complexity": "O(n\u00b2 log n) time; O(n\u00b2) auxiliary space (conservative bounds for slicing implementation)"
+    },
+    {
+      "id": 765,
+      "title": {
+        "zh": "\u60c5\u4fa3\u7275\u624b",
+        "en": "Couples Holding Hands"
+      },
+      "desc": {
+        "zh": "\u56fa\u5b9a\u4e00\u4e2a\u5ea7\u4f4d\u5bf9\uff0c\u627e\u56de\u4f34\u4fa3\uff1b\u7528\u73af\u8bc1\u660e\u4ea4\u6362\u6b21\u6570\u6700\u5c11\u3002",
+        "en": "Repair one seat pair at a time, then prove the swap count with cycles."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u8d2a\u5fc3",
+          "en": "Greedy"
+        },
+        {
+          "zh": "\u4f4d\u7f6e\u6620\u5c04",
+          "en": "Position map"
+        },
+        {
+          "zh": "\u73af",
+          "en": "Cycles"
+        }
+      ],
+      "path": "765/",
+      "leetcodeUrl": "https://leetcode.com/problems/couples-holding-hands/",
+      "language": "Python",
+      "complexity": "O(n) time; O(n) auxiliary space, where n is the number of couples"
+    },
+    {
+      "id": 768,
+      "title": {
+        "zh": "\u6700\u591a\u80fd\u5b8c\u6210\u6392\u5e8f\u7684\u5757 II",
+        "en": "Max Chunks To Make Sorted II"
+      },
+      "desc": {
+        "zh": "\u4ece\u4eb2\u624b\u5207\u5206\u5230\u524d\u7f00\u6700\u5927\u503c\u4e0e\u540e\u7f00\u6700\u5c0f\u503c\uff0c\u63a8\u5bfc\u6240\u6709\u5b89\u5168\u5207\u53e3\u3002",
+        "en": "Derive every safe cut using prefix maxima and suffix minima, starting with hand-sorted chunks."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u6570\u7ec4",
+          "en": "Arrays"
+        },
+        {
+          "zh": "\u524d\u7f00\u4e0e\u540e\u7f00",
+          "en": "Prefixes and suffixes"
+        },
+        {
+          "zh": "\u8d2a\u5fc3",
+          "en": "Greedy"
+        }
+      ],
+      "path": "768/",
+      "leetcodeUrl": "https://leetcode.com/problems/max-chunks-to-make-sorted-ii/",
+      "language": "Python",
+      "complexity": "O(n) time; O(n) auxiliary space"
+    },
+    {
+      "id": 770,
+      "title": {
+        "zh": "\u57fa\u672c\u8ba1\u7b97\u5668 IV",
+        "en": "Basic Calculator IV"
+      },
+      "desc": {
+        "zh": "\u4ece\u56db\u4e2a\u624b\u7b97\u4e58\u79ef\u63a8\u5bfc\u89c4\u8303\u9879\u952e\u3001\u9012\u5f52\u89e3\u6790\u4e0e\u7a00\u758f\u591a\u9879\u5f0f\u8fd0\u7b97\u3002",
+        "en": "Derive canonical term keys, recursive parsing and sparse polynomial arithmetic from four hand products."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u7b26\u53f7\u8ba1\u7b97",
+          "en": "Symbolic arithmetic"
+        },
+        {
+          "zh": "\u9012\u5f52\u89e3\u6790",
+          "en": "Recursive parsing"
+        },
+        {
+          "zh": "\u54c8\u5e0c\u8868",
+          "en": "Hash maps"
+        }
+      ],
+      "path": "770/",
+      "leetcodeUrl": "https://leetcode.com/problems/basic-calculator-iv/",
+      "language": "Python",
+      "complexity": "O(E + n(P+1)\u00b2(D+1)log(D+2) + P log(P+1)(D+1)) key operations; O(E + n(P+1)(D+1)) auxiliary space plus output strings"
+    },
+    {
+      "id": 773,
+      "title": {
+        "zh": "\u6ed1\u52a8\u8c1c\u9898",
+        "en": "Sliding Puzzle"
+      },
+      "desc": {
+        "zh": "\u4ece\u4e00\u6b21\u7a7a\u4f4d\u4ea4\u6362\u63a8\u5bfc\u5e7f\u5ea6\u4f18\u5148\u641c\u7d22\uff0c\u7528\u5b8c\u6574\u5c42\u8bc1\u660e\u6700\u5c11\u79fb\u52a8\u6b21\u6570\u3002",
+        "en": "Derive breadth-first search from a blank swap and prove minimum moves with complete layers."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u5e7f\u5ea6\u4f18\u5148\u641c\u7d22",
+          "en": "Breadth-first search"
+        },
+        {
+          "zh": "\u72b6\u6001\u7a7a\u95f4",
+          "en": "State space"
+        }
+      ],
+      "path": "773/",
+      "leetcodeUrl": "https://leetcode.com/problems/sliding-puzzle/",
+      "language": "Python",
+      "complexity": "O(V+E) time; O(V) auxiliary space for fixed six-cell states, V \u2264 720 and E \u2264 3V"
+    },
+    {
+      "id": 778,
+      "title": {
+        "zh": "\u6c34\u4f4d\u4e0a\u5347\u7684\u6cf3\u6c60\u4e2d\u6e38\u6cf3",
+        "en": "Swim in Rising Water"
+      },
+      "desc": {
+        "zh": "\u4ece\u8def\u5f84\u6700\u9ad8\u70b9\u63a8\u5bfc\u6700\u5c0f\u74f6\u9888\u641c\u7d22\uff0c\u9010\u6b65\u8bc1\u660e\u6700\u65e9\u53ef\u8fbe\u6c34\u4f4d\u3002",
+        "en": "Derive a minimum-bottleneck search from path maxima and prove the earliest reachable water level."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u56fe\u641c\u7d22",
+          "en": "Graph search"
+        },
+        {
+          "zh": "\u6700\u5c0f\u5806",
+          "en": "Min-heap"
+        }
+      ],
+      "path": "778/",
+      "leetcodeUrl": "https://leetcode.com/problems/swim-in-rising-water/",
+      "language": "Python",
+      "complexity": "O(n\u00b2 log n) time; O(n\u00b2) auxiliary space"
+    },
+    {
+      "id": 780,
+      "title": {
+        "zh": "\u5230\u8fbe\u7ec8\u70b9",
+        "en": "Reaching Points"
+      },
+      "desc": {
+        "zh": "\u4ece\u52a0\u6cd5\u5012\u63a8\u5230\u53d6\u4f59\uff0c\u8bc1\u660e\u8fb9\u754c\u4e0a\u7684\u6574\u9664\u68c0\u67e5\u3002",
+        "en": "Reverse additions into remainders, then prove the boundary divisibility test."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u6570\u5b66",
+          "en": "Math"
+        },
+        {
+          "zh": "\u9006\u5411\u63a8\u7406",
+          "en": "Backward reasoning"
+        }
+      ],
+      "path": "780/",
+      "leetcodeUrl": "https://leetcode.com/problems/reaching-points/",
+      "language": "Python",
+      "complexity": "O(1 + log(max(tx, ty))) time; O(1) auxiliary space"
+    },
+    {
+      "id": 782,
+      "title": {
+        "zh": "\u53d8\u4e3a\u68cb\u76d8",
+        "en": "Transform to Chessboard"
+      },
+      "desc": {
+        "zh": "\u4ece\u6574\u884c\u6574\u5217\u4ea4\u6362\uff0c\u63a8\u5bfc\u53ef\u884c\u6027\u4e0e\u6700\u5c11\u4ea4\u6362\u6b21\u6570\u3002",
+        "en": "Derive feasibility and minimum swaps from preserved row relationships."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u4e0d\u53d8\u91cf",
+          "en": "Invariants"
+        },
+        {
+          "zh": "\u8d2a\u5fc3",
+          "en": "Greedy"
+        }
+      ],
+      "path": "782/",
+      "leetcodeUrl": "https://leetcode.com/problems/transform-to-chessboard/",
+      "language": "Python",
+      "complexity": "O(n\u00b2) time; O(1) auxiliary space"
+    },
+    {
+      "id": 803,
+      "title": {
+        "zh": "\u6253\u7816\u5757",
+        "en": "Bricks Falling When Hit"
+      },
+      "desc": {
+        "zh": "\u5012\u5e8f\u8865\u7816\uff0c\u7528\u5c4b\u9876\u8fde\u901a\u6570\u7684\u589e\u91cf\u63a8\u5bfc\u6389\u843d\u6570\u91cf\u3002",
+        "en": "Reverse the hits and derive fallen counts from growth in roof connectivity."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u5e76\u67e5\u96c6",
+          "en": "Union-find"
+        },
+        {
+          "zh": "\u9006\u5e8f\u5904\u7406",
+          "en": "Reverse processing"
+        }
+      ],
+      "path": "803/",
+      "leetcodeUrl": "https://leetcode.com/problems/bricks-falling-when-hit/",
+      "language": "Python",
+      "complexity": "O((mn + H) \u03b1(mn)) amortized time; O(mn + H) auxiliary space"
+    },
+    {
+      "id": 805,
+      "title": {
+        "zh": "\u6570\u7ec4\u7684\u5747\u503c\u5206\u5272",
+        "en": "Split Array With Same Average"
+      },
+      "desc": {
+        "zh": "\u4ece\u4e09\u5f20\u6570\u5b57\u5361\u7247\u63a8\u5bfc\u7b49\u5747\u503c\u6761\u4ef6\uff0c\u7528\u6298\u534a\u5b50\u96c6\u548c\u5bfb\u627e\u975e\u7a7a\u5206\u7ec4\u3002",
+        "en": "Derive an exact average condition, then pair count-indexed subset sums from two halves."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u6298\u534a\u641c\u7d22",
+          "en": "Meet in the middle"
+        },
+        {
+          "zh": "\u5b50\u96c6\u548c",
+          "en": "Subset sum"
+        }
+      ],
+      "path": "805/",
+      "leetcodeUrl": "https://leetcode.com/problems/split-array-with-same-average/",
+      "language": "Python",
+      "complexity": "O(n \u00b7 2^ceil(n/2)) expected time; O(2^ceil(n/2)) space"
+    }
+  ],
+  "total": 120,
+  "accepted": {
+    "239": {
+      "candidate": "08d7986c52ed70aefe1b0a970a210c73d6291a49",
+      "digest": "afceba3a42d780561807c028a877215b12123d072d526eb7e3ba802517e7df97",
+      "review": "specs/reviews/239-review-4-bd768111.md"
+    },
+    "736": {
+      "candidate": "fd5760e3a18bdc79f365db1aa62bea9e38b2671f",
+      "digest": "3e3eed8288f116be1939abf45b534892a2ca0c125bc42a2dee97943df78626c4",
+      "review": "specs/reviews/736-review-1-7f33b1b5.md"
+    },
+    "741": {
+      "candidate": "0931d834e513da00498c1944124bc3f3e532339b",
+      "digest": "c5463891a91f02c3e26e2a83f8583506ae671d47116e57ce1fe41d684bf367f2",
+      "review": "specs/reviews/741-review-2-27f468af.md"
+    },
+    "745": {
+      "candidate": "4a3d34fb6f4093b5e73a614d16d9a4bcf59107ca",
+      "digest": "4376146ef4fd3c2119e272f9da5944e9e5e887e70caaf090bd095b1adc21da67",
+      "review": "specs/reviews/745-review-1-c55c2ad7.md"
+    },
+    "749": {
+      "candidate": "d54c84ee031f37d8040bbb2f316d021bb4450a35",
+      "digest": "9981de40a7668cacc9736b29134e2f6be779f4a8f5bf78bc37fd6f29fbc65e09",
+      "review": "specs/reviews/749-review-1-6409dfb1.md"
+    },
+    "753": {
+      "candidate": "50fd1cbd00cb9d3c0a89a422bc224369cfa35618",
+      "digest": "2776d0a961325b941409d59cc75481aff324ef33394d566cf117ad0226b5a45b",
+      "review": "specs/reviews/753-review-1-4f811c55.md"
+    },
+    "757": {
+      "candidate": "1cc9f57b4cda2f4f8b2c1b223114f003bb728534",
+      "digest": "ed1a2cb95fba787b355c61e3812623d83d89764417cb9b5d956c9e8f34a0ae6d",
+      "review": "specs/reviews/757-review-1-01365567.md"
+    },
+    "761": {
+      "candidate": "cd125c135af86cad6ed83ed04cff1a3b8b2b7101",
+      "digest": "4a0a04c85ab222d8da57dbb1af6d6ef587e6aa21b957e5e89c9bcd9616fbf7eb",
+      "review": "specs/reviews/761-review-1-09028efe.md"
+    },
+    "765": {
+      "candidate": "8d44249808b43d9d56ad26592d276443a9994649",
+      "digest": "8e0d98bf62143c1c52dbdab4ee1e02273e923a3cdc68747bc9bdc745dfe26caa",
+      "review": "specs/reviews/765-review-2-6f37bca9.md"
+    },
+    "768": {
+      "candidate": "0b25921b05d72cc6549aa4064fc5b82a42cd50e7",
+      "digest": "a4f948ee6314e1524de6f68758b732d5b8acdf1e425e666711f0fe69fe904f73",
+      "review": "specs/reviews/768-review-1-cdfb9cf9.md"
+    },
+    "770": {
+      "candidate": "b042f446318bd53113f6d784d8d5fde41110aa30",
+      "digest": "57fba8e6cd10706b61abd4d1dede3f276825afcb77df0938609c8764f8926251",
+      "review": "specs/reviews/770-review-1-6f9bbf1f.md"
+    },
+    "773": {
+      "candidate": "de0f38a8b5a87a0240d7822821aca38aa6f406d1",
+      "digest": "7a9531a357a00f2bd7d5a7bd3a07a2a13b5ac3bb05eb46b592373d74c74afbb3",
+      "review": "specs/reviews/773-review-1-aa279396.md"
+    },
+    "778": {
+      "candidate": "41ea45d5f0735ccffaa05f10679a1aa25784c602",
+      "digest": "770eddd7eaff70aaafc5077b443e5f2e8061c267ee6620728de2d76313c864da",
+      "review": "specs/reviews/778-review-1-14539111.md"
+    },
+    "780": {
+      "candidate": "c214c6549b53618d96782b6f827a5018c4c7f6e4",
+      "digest": "b543a9c949c15d98f4cdd6577a540ad9ef991e22498db3b6b793c29432889864",
+      "review": "specs/reviews/780-review-1-847f9d24.md"
+    },
+    "782": {
+      "candidate": "754e04a1cc401f1ae62116137a1e3054855f3292",
+      "digest": "75d1ab0fbfef8cf408e002a23c6a5979ccc08d3dbcd016c874a59cf4530459ff",
+      "review": "specs/reviews/782-review-3-7cc542bd.md"
+    },
+    "803": {
+      "candidate": "eb9692b38d758c81cfdcba57506377f20cb99ede",
+      "digest": "deb1500e3699d74dbd5e12b79fbac0072756f337c79fe02a30e1d94582559d58",
+      "review": "specs/reviews/803-review-2-226e2788.md"
+    },
+    "805": {
+      "candidate": "df8f6919bd2904df939664074267534472135146",
+      "digest": "cf18636174f48ac512490ed2f2ca94f4b32cef7dd85377f4fdc425f0ee3780f9",
+      "review": "specs/reviews/805-review-1-1e77e9d2.md"
+    }
+  },
+  "protected": {
+    "index.html": "5c2fd1c30fee38137595f1599465970696c30fdf58ea687894741be508a49053",
+    "pages.config.js": "b75957b10f86d26c112447ca45327f3b3ff30aecbdeb12518b178cf81e81e0eb"
+  },
+  "state_sha256": "c39a5caf9d97bf953f184f06f7b49e25f6f9f26e9fcba64b100cdf85b661def5",
+  "ledger_sha256": "7e7f21a23de10c3bb050a0268ae2d7365965a2725912680f03c69401e44b655b",
+  "status": "run_limit_reached",
+  "queue_count": 984,
+  "normal_publish_every": 100,
+  "one_time_user_requested": true
+}

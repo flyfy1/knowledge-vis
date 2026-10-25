@@ -1,0 +1,12 @@
+{
+  "finding": "803-R1",
+  "command": "OUTPUT_DIR=leetcode/803/tests/evidence/repair-r1/red node leetcode/803/tests/selected-label.cjs",
+  "exitCode": 1,
+  "state": "original candidate before runtime edits; D, intermediate, English, viewport 320x900, html CSS zoom=2",
+  "failure": "selected text 145.9522705078125 CSS px; control client width 96 CSS px; padding 30 CSS px; visible D \u00b7 Hit clipping confirmed in screenshot",
+  "evidence": [
+    "selected-en-320-z2.png",
+    "selected-label-observed.json"
+  ],
+  "note": "The initial observed JSON width field records control width; the repaired runner records viewportWidth separately."
+}
