@@ -1,0 +1,1 @@
+window.PYTHON_SOURCE = "class Solution:\n    def distinctSubseqII(self, s: str) -> int:\n        mod = 1_000_000_007\n        ending = [0] * 26\n        total = 0\n        for char in s:\n            index = ord(char) - ord('a')\n            new = (total + 1) % mod\n            total = (total - ending[index] + new) % mod\n            ending[index] = new\n        return total\n";
