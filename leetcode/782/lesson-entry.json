@@ -1,0 +1,38 @@
+{
+  "id": 782,
+  "title": {
+    "zh": "变为棋盘",
+    "en": "Transform to Chessboard"
+  },
+  "desc": {
+    "zh": "从整行整列交换，推导可行性与最少交换次数。",
+    "en": "Derive feasibility and minimum swaps from preserved row relationships."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "不变量",
+      "en": "Invariants"
+    },
+    {
+      "zh": "贪心",
+      "en": "Greedy"
+    }
+  ],
+  "path": "782/",
+  "leetcodeUrl": "https://leetcode.com/problems/transform-to-chessboard/",
+  "language": "Python",
+  "complexity": "O(n²) time; O(1) auxiliary space",
+  "concepts": [
+    {
+      "name": "Chessboard rectangle invariant",
+      "step": 1,
+      "description": "Equal or complementary rows and anchored rectangle XOR."
+    },
+    {
+      "name": "Alternating sequence swap cost",
+      "step": 2,
+      "description": "Balanced counts and paired mismatches prove the minimum."
+    }
+  ]
+}
