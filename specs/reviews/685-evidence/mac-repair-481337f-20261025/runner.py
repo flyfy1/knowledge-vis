@@ -1,0 +1,22 @@
+import pathlib,subprocess,os,functools,http.server,threading,json,hashlib
+root=pathlib.Path('/tmp/leetcode-685-frozen-481337f-20261025')
+out=pathlib.Path('/tmp/leetcode-685-mac-481337f-20261025')
+receipt=json.loads((out/'receipt.json').read_text())
+env=os.environ.copy();env['OUTPUT_DIR']=str(out);env['CANDIDATE']=receipt['candidate'];env['NODE_PATH']='/Users/songyy/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules:/Users/songyy/Documents/integ-life/integ-games/node_modules';env['PREVIEW_URL']='http://127.0.0.1:18782/leetcode/685/';env['PREVIEW_ROOT']='http://127.0.0.1:18782'
+env['PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH']=subprocess.check_output(['node','-e','process.stdout.write(require("playwright").chromium.executablePath())'],env=env,text=True)
+class Quiet(http.server.SimpleHTTPRequestHandler):
+ def log_message(self,*args):pass
+class Server(http.server.ThreadingHTTPServer):
+ def handle_error(self,*args):pass
+server=Server(('127.0.0.1',18782),functools.partial(Quiet,directory=str(root)));threading.Thread(target=server.serve_forever,daemon=True).start()
+receipt['commands']=[];receipt['browser_executable']=env['PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH']
+try:
+ for cmd in [['node','leetcode/685/tests/browser.cjs'],['node','leetcode/685/tests/selected-label.cjs'],['node','/tmp/leetcode-685-preset-probe-20261025.cjs']]:
+  print(json.dumps({'running':cmd,'candidate':receipt['candidate']}),flush=True)
+  caseenv=env.copy();caseenv['OUTPUT_DIR']=str(out/('root-probe' if '/tmp/' in cmd[-1] else 'focused' if 'selected-label' in cmd[-1] else 'browser'));r=subprocess.run(cmd,cwd=root,env=caseenv)
+  receipt['commands'].append({'argv':cmd,'exit_code':r.returncode})
+  if r.returncode:raise RuntimeError('Check failed: '+str(cmd))
+finally:
+ server.shutdown();server.server_close()
+ for p,h in receipt['hashes'].items():assert hashlib.sha256((root/p).read_bytes()).hexdigest()==h
+ (out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n')

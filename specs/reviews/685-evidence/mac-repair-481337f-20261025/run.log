@@ -1,0 +1,6 @@
+{"running": ["node", "leetcode/685/tests/browser.cjs"], "candidate": "481337f54b1ba4f0d64f0f1a036d275e3e3d245a"}
+{"result":"pass","layouts":10,"semanticChecks":26,"screenshots":["graph-en-desktop.png","graph-zh-desktop.png","trace-en-320.png","trace-zh-320.png","trace-en-390.png","trace-zh-390.png","trace-en-1440.png","trace-zh-1440.png","zoom200-en.png","zoom200-zh.png"],"contrastMinimum":7.078851579017443,"cssBytes":11778}
+{"running": ["node", "leetcode/685/tests/selected-label.cjs"], "candidate": "481337f54b1ba4f0d64f0f1a036d275e3e3d245a"}
+PASS 685-R1-001: 320/390 closed selection, both locales and EN→ZH→EN; actual-font measurements + screenshots
+{"running": ["node", "/tmp/leetcode-685-preset-probe-20261025.cjs"], "candidate": "481337f54b1ba4f0d64f0f1a036d275e3e3d245a"}
+{"records":20,"failures":[]}
