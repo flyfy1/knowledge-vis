@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "repo": "/home/songyy/projects/leetcode-hard-lane-960-20261026",
+  "queue": [
+    "960"
+  ],
+  "expected_head": "ce87514b3d29d4c3e9b79fc4d560fa54ed8c23c4",
+  "started_at": "2026-10-25T17:51:03.523900+00:00",
+  "status": "completed",
+  "current": null,
+  "problems": {
+    "960": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/960-review-1-63cccd65.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh canonical Python cases and independent subset oracles passed.",
+            "Bilingual controls, keyboard, 320/390/desktop layouts and native 200% zoom verified; screenshots inspected.",
+            "Exact displayed/copied/downloaded source parity and native clipboard fallback passed.",
+            "Non-mutating metadata preflight exited 0."
+          ],
+          "detail": "100/100; no required findings. Acceptance applies to the reviewed revision and environment, separate from publication.",
+          "run_id": "960-review-0cc0d27f1b9c",
+          "candidate": "a85f8ad95c969aae56e1c9f698c21c175c7464cb",
+          "candidate_sha256": "6179ab7460c5fa9e5f1c1d83a1e9ff0705beb71ce75aeac830fc8ff95b9a8949",
+          "weighted_score": 100.0,
+          "round": 1,
+          "commit": "5693be2edbbe8de9a51dd7b4c71fda9ae8e51bb5"
+        }
+      ],
+      "author_runs": [
+        "960-author-8cc7542bb675"
+      ],
+      "prior_report": "specs/reviews/960-review-1-63cccd65.md",
+      "candidate": "a85f8ad95c969aae56e1c9f698c21c175c7464cb",
+      "registration_commit": "ce87514b3d29d4c3e9b79fc4d560fa54ed8c23c4",
+      "accepted_at": "2026-10-25T18:05:52.033749+00:00"
+    }
+  },
+  "runs": [
+    {
+      "id": "960-author-8cc7542bb675",
+      "problem_id": "960",
+      "role": "author",
+      "started_at": "2026-10-25T17:51:03.796535+00:00",
+      "status": "completed",
+      "candidate": "8cedba5490bb862133f157a9d6af619cee323fb9",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-960-20261026/runs/960-author-8cc7542bb675",
+      "session_ids": [
+        "01a1742f-fec1-7383-bda0-caed5b2389cf"
+      ],
+      "finished_at": "2026-10-25T18:01:49.317212+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented the complete bilingual lesson in leetcode/960/. Official Python interface verified; 7,064 solution cases, 4,102 trace cases, real-browser checks, visual inspection, source parity, and metadata preflight passed. Evidence and candidate hashes saved locally. Independent review remains pending; no acceptance or deployment claimed."
+      }
+    },
+    {
+      "id": "960-review-0cc0d27f1b9c",
+      "problem_id": "960",
+      "role": "review",
+      "started_at": "2026-10-25T18:01:57.983938+00:00",
+      "status": "completed",
+      "candidate": "a85f8ad95c969aae56e1c9f698c21c175c7464cb",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-960-20261026/runs/960-review-0cc0d27f1b9c",
+      "session_ids": [
+        "01a17439-f86e-7f82-a769-557c664cd2a0"
+      ],
+      "finished_at": "2026-10-25T18:05:42.397734+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/960-review-1-63cccd65.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Fresh canonical Python cases and independent subset oracles passed.",
+          "Bilingual controls, keyboard, 320/390/desktop layouts and native 200% zoom verified; screenshots inspected.",
+          "Exact displayed/copied/downloaded source parity and native clipboard fallback passed.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "100/100; no required findings. Acceptance applies to the reviewed revision and environment, separate from publication."
+      }
+    }
+  ],
+  "updated_at": "2026-10-25T18:05:52.047235+00:00"
+}
