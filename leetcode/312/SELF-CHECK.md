@@ -109,3 +109,90 @@ phone, production delivery, novice teach-back, LeetCode submission or independen
 acceptance is claimed. Next action: separate reviewer cold-walks the affected
 hand calculation and transfer exercise, then rechecks R312-INDEX-001 and the
 author-found correction against this manifest under the unchanged rubric.
+
+## Review-3 required fixes — 2026-10-25 author self-check
+
+Candidate: `312-review3-fix-20261025`, identified by
+[SHA-256 manifest](tests/evidence/review3/candidate.json). This is a new
+uncommitted candidate for separate independent re-review. The previous report
+`specs/reviews/312-review-3-d7af6df0.md` and its changes-required result remain
+historical evidence. Neither required finding is independently closed here.
+
+| Stable finding | Fix and causal check | Author status |
+| --- | --- | --- |
+| R312-PRESET-001 | Both localized `[0,4,2]` labels now advertise 12. Removing 0, then 2, then 4 yields 0+8+4=12. A first-burst recursive oracle checks **every** advertised preset in both languages; browser terminal `dp[0][4]=12`, highlighted cell 12, and candidates 8/12/10 agree. | fixed awaiting review |
+| R312-PROOF-001 | Replace the arbitrary-optimal-sides claim with upper bound and attainability. Keeping last alive fixes both side boundaries; any feasible side score is at most its optimum. Execute optimal sides then last to attain the candidate. The earlier derivation now explicitly selects optimal side orders. In padded `[1,3,1,5,1]`, actual neighbor simulation checks left 3+5=8 versus dp[0][3]=30, whole 8+5=13 versus 30+5=35, with the same final gain 5. | fixed awaiting review |
+
+Validation completed from the repository root:
+
+- `node leetcode/312/tests/review3-regression.js`: passed. The same regression
+  first reproduced `8 !== 12` before editing; see
+  [failing baseline](tests/evidence/review3-before.txt) and
+  [passing result](tests/evidence/review3-regression.txt). Checks unique COPY
+  keys before evaluation, two-string pair shape, all preset labels against an
+  independent first-burst oracle, each trace candidate's previous-frame operands,
+  one-interval cumulative increments, unchanged unrelated cells, and maximizing
+  identity/value. Proof directions receive structural checks; mathematical
+  meaning was also read in both rendered locales, rather than inferred from
+  matching phrases alone.
+- `python3 -B leetcode/312/tests/test_core.py`: exit 0, printed
+  `python oracle/core checks passed` and
+  `fresh cases, n=300 closed forms and nonmutation passed`. Executes actual
+  `Solution.maxCoins`, exhaustive lengths 0–6 over values 0–3, 20 seeded random
+  inputs, official examples, `[0,4,2]→12`, fresh `[2,3,1]→12`,
+  `[2,3,4]→36`, and n=300 zeros/ones/hundreds → 0/300/298010100.
+  Random tests now compare with the independent removal oracle instead of the
+  solution itself. Input preservation checked for random/fresh/large cases.
+- `node leetcode/312/tests/test_trace.js`: exit 0, trace invariants passed.
+  `node leetcode/312/tests/browser-check.js`: exit 0, existing smoke passed.
+  `node --check` for changed COPY and new test scripts: exit 0.
+- `node leetcode/312/tests/review3-browser.js`: exit 0; see
+  [run result](tests/evidence/review3-browser.txt) and
+  [observations by finding, viewport and locale](tests/evidence/review3/observed.json).
+  Real Chromium uses the supplied executable and NODE_PATH, preview
+  `http://127.0.0.1:18770/leetcode/312/`. Both locales at
+  320/390/736/1440 CSS px and 682px at DPR 2. The latter is a 200% layout/raster
+  emulation, not native browser menu zoom. Checked corrected zero preset and
+  full rendered proof/example, progress 0/6, final 12 and rewind/replay; existing
+  full formula, default frame 5 `(0,3)` maximizing k=1 worth 30 versus k=2 worth
+  8, completed interval count 5/10, final 167, disabled endpoints, reset/preset
+  restart, keyboard Enter, and all quiz choices with explicit reveal. Changing
+  choices hides feedback; locale switching preserves selection and meaning.
+  The fixed exercise remains independent of trace preset changes.
+- Every new proof/preset path has EN/ZH captures in `tests/evidence/review3/`.
+  Visually inspected `en-320-proof.png`, `zh-390-proof.png`,
+  `en-1440-proof.png`, `zh-682-proof.png`, and `en-320-zero.png`.
+  Proof text wraps, and the zero preset agrees with its terminal readout.
+  The narrow DP table retains intentional internal horizontal scrolling;
+  rightmost columns can lie outside the screenshot until scrolled.
+  No page overflow at tested normal sizes and no page/HTTP errors. Existing
+  320px 200% text-enlargement checks cover the exercise, not an assertion of
+  whole-page text-zoom conformance. Longer paragraphs remain vertically scrollable.
+- Exact canonical `solution.py` equals `PYTHON_SOURCE`, rendered `textContent`,
+  successful real clipboard readback, manual fallback textarea and selected text,
+  actual fallback Control+C readback, and downloaded bytes including final newline.
+  No newline normalization was needed. Offline mirror source still displays
+  with the canonical download request blocked. No regeneration needed because
+  canonical source is unchanged. Preview response bytes for index, COPY, core,
+  app, local CSS, mirror and Python matched local files exactly.
+- Read the exact Python pair in `scripts/register_leetcode_lesson.py`:
+  `solution.py` / `python-code.js` / `PYTHON_SOURCE`. Preserved Python contract
+  and lesson-local official-interface evidence; `supportedLanguages` includes
+  Python **and** TypeScript, so neither available preferred interface is omitted.
+  The [official statement](https://leetcode.com/problems/burst-balloons/) was
+  reopened on 2026-10-25 and agrees with the examples/constraints; this fetch
+  exposes no editor language selector, so no new full-selector audit is claimed.
+- `python3 -B scripts/register_leetcode_lesson.py 312 --validate-only`: exit 0,
+  stdout/stderr empty. [Recorded command and result](tests/evidence/review3/preflight.json).
+  Complexity remains exactly one nonempty string:
+  `O(n^3) time; O(n^2) auxiliary space`. No metadata repair was needed.
+- `git diff --check`: passed. Only `leetcode/312/` files changed. COPY cache
+  reference bumped. No shared assets, registry, scripts, historical reports,
+  campaign/acceptance state, Git settings or services edited; no registration,
+  commit, push, deployment, scheduling, credentials or child agents used.
+
+Limits: author self-check on desktop Chromium, not independent teaching approval,
+novice comprehension measurement, physical-phone validation or LeetCode submission.
+Next action: a separate reviewer checks this manifest's candidate under the frozen
+rubric, cold-walks the affected derivation/proof and zero preset, and adjudicates
+R312-PRESET-001 and R312-PROOF-001. No new score or acceptance is assigned here.

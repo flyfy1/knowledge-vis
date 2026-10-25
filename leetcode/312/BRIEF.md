@@ -45,3 +45,20 @@ reviewer must recheck this frozen candidate. No new tokens or CSS are needed.
 Author-found R312-HAND-001: the largest-first counterexample must remove 5 before
 continuing. Its remaining [3,1] yields at most 6, hence 5+3+3=11, not 23. The
 alternative continuation yields 9. Both locales now enumerate these moves.
+
+## Review-3 correction contract (2026-10-25)
+
+Against independent report `specs/reviews/312-review-3-d7af6df0.md`, retain the
+existing lesson and approved layout. Highest-return scope / P0:
+`R312-PRESET-001` corrects the zero preset to 12 in both locales (0, then 2,
+then 4 earns 0+8+4). `R312-PROOF-001` replaces the false arbitrary-order claim
+with two directions: each feasible side is bounded by its optimum; executing
+optimal sides with last and endpoints alive attains the candidate. The same
+[3,1,5] example explicitly replaces left score 8 with 30 while the final gain
+stays 5. Clarify the earlier derivation also means choosing optimal side orders.
+Done means independent first-burst oracle agreement for all advertised presets,
+bilingual rendered proof and arithmetic, and preserved rendered-state/source
+regressions. No token, CSS, control, canonical algorithm or metadata changes.
+P1/P2: none. Deferred: optional trace addend visualization, new features and
+layout changes; they are outside the two required corrections. Independent
+acceptance remains pending separate review of the frozen candidate.
