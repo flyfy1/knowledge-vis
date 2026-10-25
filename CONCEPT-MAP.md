@@ -1319,3 +1319,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Binary search on distance | `leetcode/719/#step2` | Find the first threshold with at least k pairs. |
 
 <!-- /leetcode-719-campaign -->
+
+
+<!-- leetcode-732-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Endpoint sweep | `leetcode/732/#step1` | Group changes at each time and accumulate overlap. |
+| Half-open interval | `leetcode/732/#step0` | Include the start and exclude the end. |
+
+<!-- /leetcode-732-campaign -->
