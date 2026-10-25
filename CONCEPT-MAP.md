@@ -1734,3 +1734,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Multi-source shortest path | `leetcode/847/#step2` | Initialize every allowed starting node at distance zero. |
 
 <!-- /leetcode-847-campaign -->
+
+
+<!-- leetcode-850-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| vertical slabs | `leetcode/850/#step1` | Coverage is constant between consecutive x edges. |
+| interval union invariant | `leetcode/850/#step2` | Sorted intervals add only the uncovered suffix. |
+
+<!-- /leetcode-850-campaign -->

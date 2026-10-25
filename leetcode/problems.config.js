@@ -3441,6 +3441,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O((n+m)2^n) expected time; O(n2^n) auxiliary space, m = undirected edges"
   },
   {
+    "id": 850,
+    "title": {
+      "zh": "矩形面积 II",
+      "en": "Rectangle Area II"
+    },
+    "desc": {
+      "zh": "把重叠矩形切成竖条，用区间合并计算覆盖高度。",
+      "en": "Slice overlapping rectangles into strips and merge their covered heights."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "扫描线",
+        "en": "Sweep line"
+      },
+      {
+        "zh": "区间合并",
+        "en": "Interval merging"
+      }
+    ],
+    "path": "850/",
+    "leetcodeUrl": "https://leetcode.com/problems/rectangle-area-ii/",
+    "language": "Python",
+    "complexity": "O(n² log n) time; O(n) auxiliary space"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
