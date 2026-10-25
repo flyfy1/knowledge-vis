@@ -1,0 +1,584 @@
+{
+  "scope": "author self-check",
+  "platform": "linux",
+  "screenshots": [
+    "en-320-trace.png",
+    "zh-320-trace.png",
+    "en-390-trace.png",
+    "en-hand.png",
+    "zh-390-trace.png",
+    "zh-hand.png",
+    "en-736-trace.png",
+    "zh-736-trace.png",
+    "en-1440-trace.png",
+    "zh-1440-trace.png",
+    "en-prediction.png",
+    "zh-prediction.png",
+    "en-fallback.png",
+    "zh-fallback.png",
+    "source-disclosure.png",
+    "en-zoom200.png",
+    "zh-zoom200.png"
+  ],
+  "stateChecks": 212,
+  "semanticBindings": [
+    {
+      "lang": "en",
+      "x": 4,
+      "text": "At time 4: 1 + 1 + 0 = 2 active events. The peak is 2; at 5 the first event has ended as the third begins."
+    },
+    {
+      "lang": "en",
+      "x": 5,
+      "text": "At time 5: 0 + 1 + 1 = 2 active events. The peak is 2; at 5 the first event has ended as the third begins."
+    },
+    {
+      "lang": "en",
+      "x": 6,
+      "text": "At time 6: 0 + 1 + 0 = 1 active events. The peak is 2; at 5 the first event has ended as the third begins."
+    },
+    {
+      "lang": "en",
+      "option": "0",
+      "text": "Recheck the endpoints. The answer is 2. Net changes are 1:+1, 2:+1, 4:0, 6:−1, 8:−1; prefix sums are 1, 2, 2, 1, 0. At 4 one event ends and another starts, keeping the count at 2. Choosing 1 ignores the new event; choosing 3 incorrectly includes an ending event."
+    },
+    {
+      "lang": "en",
+      "option": "1",
+      "text": "Correct prediction. The answer is 2. Net changes are 1:+1, 2:+1, 4:0, 6:−1, 8:−1; prefix sums are 1, 2, 2, 1, 0. At 4 one event ends and another starts, keeping the count at 2. Choosing 1 ignores the new event; choosing 3 incorrectly includes an ending event."
+    },
+    {
+      "lang": "en",
+      "option": "2",
+      "text": "Recheck the endpoints. The answer is 2. Net changes are 1:+1, 2:+1, 4:0, 6:−1, 8:−1; prefix sums are 1, 2, 2, 1, 0. At 4 one event ends and another starts, keeping the count at 2. Choosing 1 ignores the new event; choosing 3 incorrectly includes an ending event."
+    },
+    {
+      "lang": "zh",
+      "x": 4,
+      "text": "时刻 4：1 + 1 + 0 = 2 场正在进行。三个时刻都最多 2 场；5 时第一场已结束，第三场才开始。"
+    },
+    {
+      "lang": "zh",
+      "x": 5,
+      "text": "时刻 5：0 + 1 + 1 = 2 场正在进行。三个时刻都最多 2 场；5 时第一场已结束，第三场才开始。"
+    },
+    {
+      "lang": "zh",
+      "x": 6,
+      "text": "时刻 6：0 + 1 + 0 = 1 场正在进行。三个时刻都最多 2 场；5 时第一场已结束，第三场才开始。"
+    },
+    {
+      "lang": "zh",
+      "option": "0",
+      "text": "需要重新检查端点。 答案是 2。净变化为 1:+1、2:+1、4:0、6:−1、8:−1；前缀和为 1、2、2、1、0。在 4 一场结束、一场开始，人数保持 2。选 1 忽略新增会议；选 3 把结束端点错误地算进去了。"
+    },
+    {
+      "lang": "zh",
+      "option": "1",
+      "text": "预测正确。 答案是 2。净变化为 1:+1、2:+1、4:0、6:−1、8:−1；前缀和为 1、2、2、1、0。在 4 一场结束、一场开始，人数保持 2。选 1 忽略新增会议；选 3 把结束端点错误地算进去了。"
+    },
+    {
+      "lang": "zh",
+      "option": "2",
+      "text": "需要重新检查端点。 答案是 2。净变化为 1:+1、2:+1、4:0、6:−1、8:−1；前缀和为 1、2、2、1、0。在 4 一场结束、一场开始，人数保持 2。选 1 忽略新增会议；选 3 把结束端点错误地算进去了。"
+    }
+  ],
+  "requests": [
+    "http://127.0.0.1:18786/leetcode/732/",
+    "http://127.0.0.1:18786/leetcode/style.css",
+    "http://127.0.0.1:18786/leetcode/732/style.css?v=732-1",
+    "http://127.0.0.1:18786/leetcode/common.js",
+    "http://127.0.0.1:18786/leetcode/732/copy.js?v=732-1",
+    "http://127.0.0.1:18786/leetcode/732/core.js?v=732-1",
+    "http://127.0.0.1:18786/leetcode/732/python-code.js?v=732-1",
+    "http://127.0.0.1:18786/leetcode/732/app.js?v=732-1"
+  ],
+  "errors": [],
+  "widths": [
+    {
+      "width": 320,
+      "lang": "en",
+      "p": 0,
+      "text": 153.1682891845703,
+      "available": 202,
+      "label": "Hand case · 3 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "p": 1,
+      "text": 127.64825439453125,
+      "available": 202,
+      "label": "Official · 6 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "p": 2,
+      "text": 143.87228393554688,
+      "available": 202,
+      "label": "Touching · 2 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "p": 3,
+      "text": 153.8883056640625,
+      "available": 202,
+      "label": "Duplicates · 3 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "p": 4,
+      "text": 163.4883270263672,
+      "available": 202,
+      "label": "Large times · 3 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "p": 0,
+      "text": 73.92013549804688,
+      "available": 202,
+      "label": "手算 · 3 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "p": 1,
+      "text": 73.92013549804688,
+      "available": 202,
+      "label": "官方 · 6 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "p": 2,
+      "text": 73.92013549804688,
+      "available": 202,
+      "label": "相接 · 2 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "p": 3,
+      "text": 73.92013549804688,
+      "available": 202,
+      "label": "重复 · 3 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "p": 4,
+      "text": 89.920166015625,
+      "available": 202,
+      "label": "大端点 · 3 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "p": 0,
+      "text": 153.1682891845703,
+      "available": 272,
+      "label": "Hand case · 3 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "p": 1,
+      "text": 127.64825439453125,
+      "available": 272,
+      "label": "Official · 6 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "p": 2,
+      "text": 143.87228393554688,
+      "available": 272,
+      "label": "Touching · 2 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "p": 3,
+      "text": 153.8883056640625,
+      "available": 272,
+      "label": "Duplicates · 3 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "p": 4,
+      "text": 163.4883270263672,
+      "available": 272,
+      "label": "Large times · 3 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "p": 0,
+      "text": 73.92013549804688,
+      "available": 272,
+      "label": "手算 · 3 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "p": 1,
+      "text": 73.92013549804688,
+      "available": 272,
+      "label": "官方 · 6 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "p": 2,
+      "text": 73.92013549804688,
+      "available": 272,
+      "label": "相接 · 2 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "p": 3,
+      "text": 73.92013549804688,
+      "available": 272,
+      "label": "重复 · 3 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "p": 4,
+      "text": 89.920166015625,
+      "available": 272,
+      "label": "大端点 · 3 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "en",
+      "p": 0,
+      "text": 153.1682891845703,
+      "available": 590,
+      "label": "Hand case · 3 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "en",
+      "p": 1,
+      "text": 127.64825439453125,
+      "available": 590,
+      "label": "Official · 6 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "en",
+      "p": 2,
+      "text": 143.87228393554688,
+      "available": 590,
+      "label": "Touching · 2 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "en",
+      "p": 3,
+      "text": 153.8883056640625,
+      "available": 590,
+      "label": "Duplicates · 3 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "en",
+      "p": 4,
+      "text": 163.4883270263672,
+      "available": 590,
+      "label": "Large times · 3 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "zh",
+      "p": 0,
+      "text": 73.92013549804688,
+      "available": 590,
+      "label": "手算 · 3 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "zh",
+      "p": 1,
+      "text": 73.92013549804688,
+      "available": 590,
+      "label": "官方 · 6 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "zh",
+      "p": 2,
+      "text": 73.92013549804688,
+      "available": 590,
+      "label": "相接 · 2 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "zh",
+      "p": 3,
+      "text": 73.92013549804688,
+      "available": 590,
+      "label": "重复 · 3 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "lang": "zh",
+      "p": 4,
+      "text": 89.920166015625,
+      "available": 590,
+      "label": "大端点 · 3 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "p": 0,
+      "text": 153.1682891845703,
+      "available": 854,
+      "label": "Hand case · 3 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "p": 1,
+      "text": 127.64825439453125,
+      "available": 854,
+      "label": "Official · 6 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "p": 2,
+      "text": 143.87228393554688,
+      "available": 854,
+      "label": "Touching · 2 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "p": 3,
+      "text": 153.8883056640625,
+      "available": 854,
+      "label": "Duplicates · 3 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "p": 4,
+      "text": 163.4883270263672,
+      "available": 854,
+      "label": "Large times · 3 events",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "p": 0,
+      "text": 73.92013549804688,
+      "available": 854,
+      "label": "手算 · 3 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "p": 1,
+      "text": 73.92013549804688,
+      "available": 854,
+      "label": "官方 · 6 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "p": 2,
+      "text": 73.92013549804688,
+      "available": 854,
+      "label": "相接 · 2 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "p": 3,
+      "text": 73.92013549804688,
+      "available": 854,
+      "label": "重复 · 3 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "p": 4,
+      "text": 89.920166015625,
+      "available": 854,
+      "label": "大端点 · 3 场",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    }
+  ],
+  "source": {
+    "embedded": true,
+    "rendered": true,
+    "nativeCopy": true,
+    "download": true,
+    "manualNative_en": {
+      "shortcut": "Control+C",
+      "exact": true
+    },
+    "manualNative_zh": {
+      "shortcut": "Control+C",
+      "exact": true
+    },
+    "disclosureKeyboard": true
+  },
+  "stateIsolation": true,
+  "keyboardFocus": "A",
+  "deepLink": {
+    "top": 96.0625,
+    "nav": 70
+  },
+  "zoom": "200% CSS zoom at 1280px, reflow/overflow checked",
+  "contrast": {
+    "text": [
+      {
+        "foreground": "rgb(110, 231, 255)",
+        "background": "rgb(13, 17, 23)",
+        "ratio": 13.322641692972569,
+        "example": "A"
+      },
+      {
+        "foreground": "rgb(13, 17, 23)",
+        "background": "rgb(110, 231, 255)",
+        "ratio": 13.322641692972569,
+        "example": "copyPython"
+      },
+      {
+        "foreground": "rgb(154, 167, 184)",
+        "background": "rgb(22, 27, 34)",
+        "ratio": 7.165084672517054,
+        "example": "P"
+      },
+      {
+        "foreground": "rgb(232, 237, 244)",
+        "background": "rgb(13, 17, 23)",
+        "ratio": 16.318441369698235,
+        "example": "LABEL"
+      },
+      {
+        "foreground": "rgb(154, 167, 184)",
+        "background": "rgb(13, 17, 23)",
+        "ratio": 7.849266732183951,
+        "example": "P"
+      },
+      {
+        "foreground": "rgb(154, 167, 184)",
+        "background": "rgba(13, 17, 23, 0.96)",
+        "ratio": 7.849266732183951,
+        "example": "A"
+      },
+      {
+        "foreground": "rgb(201, 212, 226)",
+        "background": "rgb(13, 17, 23)",
+        "ratio": 12.795351695728009,
+        "example": "P"
+      },
+      {
+        "foreground": "rgb(232, 237, 244)",
+        "background": "rgb(28, 35, 48)",
+        "ratio": 13.55502908960639,
+        "example": "download"
+      },
+      {
+        "foreground": "rgb(232, 237, 244)",
+        "background": "rgb(10, 14, 20)",
+        "ratio": 16.6824637268293,
+        "example": "H2"
+      },
+      {
+        "foreground": "rgb(201, 212, 226)",
+        "background": "rgb(10, 14, 20)",
+        "ratio": 13.08078300494906,
+        "example": "P"
+      },
+      {
+        "foreground": "rgb(232, 237, 244)",
+        "background": "rgb(22, 27, 34)",
+        "ratio": 14.8960429205418,
+        "example": "LABEL"
+      },
+      {
+        "foreground": "rgb(126, 226, 168)",
+        "background": "rgb(28, 35, 48)",
+        "ratio": 10.15532261816115,
+        "example": "feedback"
+      }
+    ],
+    "focus": [
+      {
+        "foreground": "rgb(255, 180, 84)",
+        "background": "rgb(13, 17, 23)",
+        "ratio": 10.852841238402977
+      },
+      {
+        "foreground": "rgb(255, 180, 84)",
+        "background": "rgb(22, 27, 34)",
+        "ratio": 9.906852329492196
+      },
+      {
+        "foreground": "rgb(255, 180, 84)",
+        "background": "rgb(28, 35, 48)",
+        "ratio": 9.014989566626276
+      }
+    ],
+    "border": 6.520049095154525
+  },
+  "forcedColorFocus": {
+    "active": "traceNext",
+    "style": "solid",
+    "width": "3px"
+  },
+  "offlineAndBlockedStorage": true,
+  "status": "pass",
+  "browser": "156.0.8078.4",
+  "cssBytes": 11566
+}
