@@ -1,0 +1,53 @@
+{
+  "scope": "author supplemental self-check",
+  "states": [
+    {
+      "lang": "en",
+      "end": false,
+      "id": "tracePrev",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "borderStyle": "dashed",
+      "contrast": 6.449407898769069
+    },
+    {
+      "lang": "en",
+      "end": true,
+      "id": "traceNext",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "borderStyle": "dashed",
+      "contrast": 6.449407898769069
+    },
+    {
+      "lang": "zh",
+      "end": false,
+      "id": "tracePrev",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "borderStyle": "dashed",
+      "contrast": 6.449407898769069
+    },
+    {
+      "lang": "zh",
+      "end": true,
+      "id": "traceNext",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "borderStyle": "dashed",
+      "contrast": 6.449407898769069
+    }
+  ],
+  "status": "pass",
+  "focus": "Tab / Shift+Tab; forced-colors solid 3px outline",
+  "note": "Initial full harness failed a programmatic focus assertion immediately after media emulation. No runtime focus change was made. Isolated programmatic reproduction passed; actual keyboard focus is verified here and in the revised full harness. The precise transient cause is not established.",
+  "landscape": {
+    "width": 736,
+    "height": 390,
+    "overflow": false
+  }
+}

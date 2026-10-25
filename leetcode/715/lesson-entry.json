@@ -1,0 +1,43 @@
+{
+  "id": 715,
+  "title": {
+    "zh": "Range 模块",
+    "en": "Range Module"
+  },
+  "desc": {
+    "zh": "从挖去一段区间，推导有序边界的奇偶规则。",
+    "en": "Derive endpoint parity by cutting, joining, and querying real-number ranges."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "有序边界",
+      "en": "Sorted endpoints"
+    },
+    {
+      "zh": "二分查找",
+      "en": "Binary search"
+    }
+  ],
+  "path": "715/",
+  "leetcodeUrl": "https://leetcode.com/problems/range-module/",
+  "language": "Python",
+  "complexity": "O(k) time per update, O(log(k+1)) per query; O(k) space for k endpoints",
+  "concepts": [
+    {
+      "name": "半开区间 / Half-open intervals",
+      "step": 0,
+      "description": "Left included, right excluded; removal preserves the right endpoint."
+    },
+    {
+      "name": "边界奇偶性 / Endpoint parity",
+      "step": 1,
+      "description": "Strictly increasing alternating endpoints encode tracked real intervals."
+    },
+    {
+      "name": "区间替换 / Interval replacement",
+      "step": 2,
+      "description": "Parity determines new boundaries when assigning coverage on a range."
+    }
+  ]
+}

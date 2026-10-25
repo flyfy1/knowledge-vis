@@ -1,0 +1,381 @@
+{
+  "scope": "author self-check",
+  "platform": "linux",
+  "screenshots": [
+    "en-320-cut.png",
+    "zh-320-cut.png",
+    "en-390-cut.png",
+    "en-390-hand.png",
+    "zh-390-cut.png",
+    "zh-390-hand.png",
+    "en-736-cut.png",
+    "zh-736-cut.png",
+    "en-1440-cut.png",
+    "en-1440-hand.png",
+    "zh-1440-cut.png",
+    "zh-1440-hand.png",
+    "en-390-prediction.png",
+    "zh-390-prediction.png",
+    "en-320-preset1-diagram.png",
+    "en-320-preset4-diagram.png",
+    "en-320-header.png",
+    "zh-320-preset1-diagram.png",
+    "zh-320-preset4-diagram.png",
+    "zh-320-header.png",
+    "en-fallback.png",
+    "zh-fallback.png",
+    "source-disclosure.png",
+    "en-zoom200.png",
+    "zh-zoom200.png"
+  ],
+  "stateChecks": 362,
+  "semanticBindings": [
+    {
+      "lang": "en",
+      "probe": "4",
+      "observed": "x = 4: uncovered. The cut includes its left endpoint 4; queryRange(4,5) is false."
+    },
+    {
+      "lang": "en",
+      "probe": "55",
+      "observed": "x = 5.5: uncovered. Since 4 ≤ 5.5 < 6, the cut removes more than integer points; queryRange(5,6) is false."
+    },
+    {
+      "lang": "en",
+      "probe": "6",
+      "observed": "x = 6: covered. Removing [4,6) excludes 6, so [6,8) survives intact and queryRange(6,8) is true."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "frame": 3,
+      "expected": "both endpoints covered but interior gap; false",
+      "observed": "a = 1 (≤ 3), b = 3 (< 7). Full coverage = false (no); requires a = b and odd a. The query leaves coverage unchanged."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "frame": 4,
+      "expected": "remove internal [4,6] boundaries, replacement []",
+      "observed": "Old array: i = 1 (< 4), j = 3 (≤ 6). Remove slice points[1:3] = [4,6]; insert []."
+    },
+    {
+      "lang": "en",
+      "formula": "a = bisect_right(points,left); b = bisect_left(points,right); answer = (a == b and a % 2 == 1)"
+    },
+    {
+      "lang": "en",
+      "answer": "0",
+      "observed": "That prediction is incorrect. After removal the endpoints are [3,5,9,11]. Adding [6,9) gives i=2, j=3: insert 6 but not 9, producing [3,5,6,11], option C. The query has a=b=3, odd, so true. A wrongly fills [5,6). B’s touching ranges have no gap: 9 should not remain a switch, and its query should not be false."
+    },
+    {
+      "lang": "en",
+      "answer": "1",
+      "observed": "That prediction is incorrect. After removal the endpoints are [3,5,9,11]. Adding [6,9) gives i=2, j=3: insert 6 but not 9, producing [3,5,6,11], option C. The query has a=b=3, odd, so true. A wrongly fills [5,6). B’s touching ranges have no gap: 9 should not remain a switch, and its query should not be false."
+    },
+    {
+      "lang": "en",
+      "answer": "2",
+      "observed": "Correct prediction. After removal the endpoints are [3,5,9,11]. Adding [6,9) gives i=2, j=3: insert 6 but not 9, producing [3,5,6,11], option C. The query has a=b=3, odd, so true. A wrongly fills [5,6). B’s touching ranges have no gap: 9 should not remain a switch, and its query should not be false."
+    },
+    {
+      "lang": "zh",
+      "probe": "4",
+      "observed": "x = 4：未覆盖。4 是删除段的左端点，被删掉；queryRange(4,5) 为 false。"
+    },
+    {
+      "lang": "zh",
+      "probe": "55",
+      "observed": "x = 5.5：未覆盖。4 ≤ 5.5 < 6，所以删除的并非只有整数点；queryRange(5,6) 为 false。"
+    },
+    {
+      "lang": "zh",
+      "probe": "6",
+      "observed": "x = 6：仍覆盖。删除 [4,6) 不含 6，因此 [6,8) 完整保留，queryRange(6,8) 为 true。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "frame": 3,
+      "expected": "both endpoints covered but interior gap; false",
+      "observed": "a = 1（≤ 3），b = 3（< 7）。整段覆盖 = false（否）；需要 a = b 且 a 为奇数。查询不改变覆盖。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "frame": 4,
+      "expected": "remove internal [4,6] boundaries, replacement []",
+      "observed": "旧数组：i = 1（< 4），j = 3（≤ 6）。删除切片 points[1:3] = [4,6]，插入 []。"
+    },
+    {
+      "lang": "zh",
+      "formula": "a = bisect_right(points,left)；b = bisect_left(points,right)；答案 = (a == b 且 a % 2 == 1)"
+    },
+    {
+      "lang": "zh",
+      "answer": "0",
+      "observed": "这次预测不正确。 删除后边界为 [3,5,9,11]。添加 [6,9) 时 i=2、j=3：插入 6，不插入 9，得到 [3,5,6,11]，即 C。查询 a=b=3，为奇数，故 true。A 多覆盖了空隙 [5,6)；B 的相接两段其实没有空隙，9 不应是开关，查询也不应为 false。"
+    },
+    {
+      "lang": "zh",
+      "answer": "1",
+      "observed": "这次预测不正确。 删除后边界为 [3,5,9,11]。添加 [6,9) 时 i=2、j=3：插入 6，不插入 9，得到 [3,5,6,11]，即 C。查询 a=b=3，为奇数，故 true。A 多覆盖了空隙 [5,6)；B 的相接两段其实没有空隙，9 不应是开关，查询也不应为 false。"
+    },
+    {
+      "lang": "zh",
+      "answer": "2",
+      "observed": "预测正确。 删除后边界为 [3,5,9,11]。添加 [6,9) 时 i=2、j=3：插入 6，不插入 9，得到 [3,5,6,11]，即 C。查询 a=b=3，为奇数，故 true。A 多覆盖了空隙 [5,6)；B 的相接两段其实没有空隙，9 不应是开关，查询也不应为 false。"
+    }
+  ],
+  "requests": [
+    "http://127.0.0.1:18782/leetcode/715/",
+    "http://127.0.0.1:18782/leetcode/style.css",
+    "http://127.0.0.1:18782/leetcode/715/style.css?v=715-1",
+    "http://127.0.0.1:18782/leetcode/common.js",
+    "http://127.0.0.1:18782/leetcode/715/copy.js?v=715-1",
+    "http://127.0.0.1:18782/leetcode/715/core.js?v=715-1",
+    "http://127.0.0.1:18782/leetcode/715/python-code.js?v=715-1",
+    "http://127.0.0.1:18782/leetcode/715/app.js?v=715-1",
+    "http://127.0.0.1:18782/leetcode/715/favicon.svg",
+    "http://127.0.0.1:18782/leetcode/715/favicon.svg"
+  ],
+  "errors": [],
+  "widths": [
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 0,
+      "label": "Official example",
+      "text": 120.80024719238281,
+      "available": 206,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 1,
+      "label": "Touch and bridge",
+      "text": 131.21627807617188,
+      "available": 206,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 2,
+      "label": "Repeated & nested",
+      "text": 142.7042999267578,
+      "available": 206,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 3,
+      "label": "Empty & erased",
+      "text": 118.48023986816406,
+      "available": 206,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 4,
+      "label": "Billion boundary",
+      "text": 123.52024841308594,
+      "available": 206,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 0,
+      "label": "官方示例",
+      "text": 64.0001220703125,
+      "available": 206,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 1,
+      "label": "相接与桥接",
+      "text": 80.00015258789062,
+      "available": 206,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 2,
+      "label": "重复与嵌套",
+      "text": 80.00015258789062,
+      "available": 206,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 3,
+      "label": "空状态与清空",
+      "text": 96.00018310546875,
+      "available": 206,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 4,
+      "label": "十亿边界",
+      "text": 64.0001220703125,
+      "available": 206,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    }
+  ],
+  "source": {
+    "embedded": true,
+    "rendered": true,
+    "nativeCopy": true,
+    "download": true,
+    "manualNative_en": {
+      "shortcut": "Control+C",
+      "exact": true
+    },
+    "manualNative_zh": {
+      "shortcut": "Control+C",
+      "exact": true
+    },
+    "disclosureKeyboard": true
+  },
+  "stateIsolation": true,
+  "keyboardFocus": {
+    "tag": "A",
+    "text": "Official problem ↗"
+  },
+  "deepLink": {
+    "top": 95.875,
+    "nav": 70
+  },
+  "zoom": "200% CSS zoom at 1280px, reflow/overflow checked",
+  "contrast": {
+    "text": [
+      {
+        "foreground": "rgb(110, 231, 255)",
+        "background": "rgb(13, 17, 23)",
+        "ratio": 13.100679028115637,
+        "example": "A"
+      },
+      {
+        "foreground": "rgb(13, 17, 23)",
+        "background": "rgb(110, 231, 255)",
+        "ratio": 13.100679028115637,
+        "example": "copyPython"
+      },
+      {
+        "foreground": "rgb(154, 167, 184)",
+        "background": "rgb(22, 27, 34)",
+        "ratio": 7.078851579017443,
+        "example": "axis"
+      },
+      {
+        "foreground": "rgb(232, 237, 244)",
+        "background": "rgb(13, 17, 23)",
+        "ratio": 16.086987125379448,
+        "example": "LABEL"
+      },
+      {
+        "foreground": "rgb(154, 167, 184)",
+        "background": "rgb(13, 17, 23)",
+        "ratio": 7.7443462241265095,
+        "example": "P"
+      },
+      {
+        "foreground": "rgb(154, 167, 184)",
+        "background": "rgba(13, 17, 23, 0.96)",
+        "ratio": 7.7443462241265095,
+        "example": "A"
+      },
+      {
+        "foreground": "rgb(201, 212, 226)",
+        "background": "rgb(13, 17, 23)",
+        "ratio": 12.615602281385614,
+        "example": "P"
+      },
+      {
+        "foreground": "rgb(232, 237, 244)",
+        "background": "rgb(28, 35, 48)",
+        "ratio": 13.397069143240783,
+        "example": "download"
+      },
+      {
+        "foreground": "rgb(255, 180, 84)",
+        "background": "rgb(28, 35, 48)",
+        "ratio": 8.937191437807625,
+        "example": "probe6"
+      },
+      {
+        "foreground": "rgb(232, 237, 244)",
+        "background": "rgb(22, 27, 34)",
+        "ratio": 14.704584598678618,
+        "example": "LABEL"
+      },
+      {
+        "foreground": "rgb(110, 231, 255)",
+        "background": "rgb(10, 14, 20)",
+        "ratio": 13.388343428810314,
+        "example": "P"
+      },
+      {
+        "foreground": "rgb(232, 237, 244)",
+        "background": "rgb(10, 14, 20)",
+        "ratio": 16.440224808744848,
+        "example": "H2"
+      },
+      {
+        "foreground": "rgb(201, 212, 226)",
+        "background": "rgb(10, 14, 20)",
+        "ratio": 12.89261537833187,
+        "example": "P"
+      },
+      {
+        "foreground": "rgb(110, 231, 255)",
+        "background": "rgb(22, 27, 34)",
+        "ratio": 11.974898815275662,
+        "example": "LI"
+      },
+      {
+        "foreground": "rgb(126, 226, 168)",
+        "background": "rgb(28, 35, 48)",
+        "ratio": 10.004815697188947,
+        "example": "feedback"
+      }
+    ],
+    "focus": [
+      {
+        "foreground": "rgb(255, 180, 84)",
+        "background": "rgb(13, 17, 23)",
+        "ratio": 10.731637051347173
+      },
+      {
+        "foreground": "rgb(255, 180, 84)",
+        "background": "rgb(22, 27, 34)",
+        "ratio": 9.809435643476732
+      },
+      {
+        "foreground": "rgb(255, 180, 84)",
+        "background": "rgb(28, 35, 48)",
+        "ratio": 8.937191437807625
+      }
+    ],
+    "border": 6.449407898769069
+  },
+  "forcedColorFocus": {
+    "active": "traceNext",
+    "style": "solid",
+    "width": "3px"
+  },
+  "offlineAndBlockedStorage": true,
+  "status": "pass",
+  "browser": "156.0.8078.4",
+  "cssBytes": 11881
+}
