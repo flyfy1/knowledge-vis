@@ -148,3 +148,101 @@ evidence only. The frozen native Mac command, checksums and screenshot handoff
 are in the evidence README. Native Mac execution and independent assessment are
 the concrete remaining evidence; this run cannot supply them. No prior report,
 rubric, registry, shared assets, campaign state, services or other lessons changed.
+
+## Follow-up self-check — 630-MAC-002 / 630-MAC-003 — 2026-10-25
+
+This append supersedes earlier readiness claims. Status: locally self-checked;
+**blocked on required native Mac evidence for the new frozen candidate**. No
+finding is independently closed. Historical reports and evidence are preserved.
+New evidence: [repair-630-MAC-002-003](tests/evidence/repair-630-MAC-002-003/).
+Candidate identity and hashes: candidate.json and candidate.sha256 in that folder.
+
+Fix mapping:
+
+- **630-MAC-002**: browser.cjs seeds and reads a distinct sentinel immediately
+  before forcing fallback, retains complete focus/selection (0..424), checks that
+  selection alone leaves the sentinel, and presses the browser host's actual
+  shortcut (Meta+C for Mac, Control+C otherwise). Exact canonical equality is
+  asserted only after this action. The test never writes canonical source to
+  satisfy manual transfer. clipboard-transfer.cjs repeats negative controls and
+  actual transfer in fresh contexts in EN and ZH.
+- **630-MAC-003**: copy.js visibly scopes every option count through the associated
+  bilingual label: “Input preset · maximum courses” / “输入预设 · 最多可选门数”.
+  The short option identities and course counts remain intact. Full inputs remain
+  below the selector. index.html bumps the copy asset version. preset-labels.cjs
+  asserts the visible scope as well as independently expected inputs/counts and
+  original width conditions; paired screenshots include both scope and value.
+- **630-MAC-001**: no independent closure claimed. The original probe remains
+  byte-for-byte unchanged. Linux passes are regression evidence only. Native Mac
+  must rerun it against these frozen bytes before the finding can be assessed.
+
+Earlier clipboard limitation: the previous passing browser run seeded canonical
+source through successful automatic copy, then asserted the same value after a
+hard-coded Control+C. That run cannot prove manual transfer, particularly on Mac.
+The historical self-check statements about manual transfer above are superseded
+by this disclosure, not evidence of acceptance or a corrected historical run.
+
+Feedback loop and causal checks: the strengthened semantic test first failed on
+`Input preset`, expecting `Input preset · maximum courses` (exit 1; interrupted
+its retained browser after failure). For the clipboard, ranked falsifiable cases
+were (1) stale canonical data permits equality without copying, (2) sentinel plus
+no action rejects equality, (3) sentinel plus host shortcut yields canonical text.
+All three predictions were observed in both languages: true/false/true equality,
+with complete focus and selection in every case. This reproduces the old false
+positive and supplies a negative control for the corrected regression. The
+website-design and diagnosing-bugs skills were read and applied to this scoped
+repair; no new design gate or feature is introduced.
+
+Commands from repository root, with evidence prefix
+`leetcode/630/tests/evidence/repair-630-MAC-002-003/` and
+`PREVIEW_ROOT=http://127.0.0.1:18770` for browser commands:
+
+- `OUTPUT_DIR=<prefix>negative-control node leetcode/630/tests/clipboard-transfer.cjs`
+  → PASS; six cases (three modes × EN/ZH), exact 424-character source including
+  final newline after actual host copy. Linux Chromium uses Control+C.
+- `OUTPUT_DIR=<prefix>controls node leetcode/630/tests/preset-labels.cjs`
+  → PASS; 45 states (five presets × EN→ZH→EN × 320/390/1440), full inputs,
+  maximum-output count scope, complete selected values and original fit checks.
+- `OUTPUT_DIR=<prefix>linux-original node leetcode/630/tests/run-original-with-executable.cjs`
+  → PASS; unchanged original probe, 20 states, zero clipping failures. Wrapper
+  changes only browser launch executable selection for this Linux environment.
+- `OUTPUT_DIR=<prefix>browser node leetcode/630/tests/browser.cjs`
+  → PASS; both locales, every preset/frame, ledger accounting, rewind/replay,
+  completed-frame labels, hand arithmetic, all fresh prediction answers,
+  feedback invalidation and locale preservation, 320/390/736/1440, CSS zoom 200%,
+  keyboard/focus, local requests and blocked storage. No runtime errors.
+  Canonical mirror, textContent, automatic copy, sentinel-seeded manual copy,
+  download and offline display exactly match solution.py without trimming.
+- `OUTPUT_DIR=<prefix>algorithm python3 -B leetcode/630/tests/test_solution.py`
+  → PASS; actual Python, 2055 cases, 3 official examples, 3 large boundaries,
+  10431 frames, independent subset and sampled all-order oracles, every prefix's
+  optimal retained count/feasibility, operation accounting and input preservation.
+- `python3 -B scripts/register_leetcode_lesson.py 630 --validate-only`
+  → PASS, exit 0, empty stdout/stderr; recorded in preflight.json. Complexity
+  remains exactly one nonempty time/space string. No metadata repair needed.
+
+Read the registration source/mirror table: Python maps solution.py to
+python-code.js / PYTHON_SOURCE. Saved official-graphql.json explicitly includes
+Python3's Solution.scheduleCourse(courses: List[List[int]]) -> int and
+TypeScript's scheduleCourse(courses: number[][]): number. Preferred faithful
+Python remains selected; no supportedLanguages list or non-Python exception is
+present to omit available interfaces. Canonical sources are unchanged and need
+no regeneration. Algorithm and teaching behavior are preserved.
+
+The paired 320px scope/control screenshots and representative bilingual stages
+and 200% zoom images were visually inspected. Scope text wraps naturally, while
+selected identity/count and native arrow remain complete. Stage captures retain
+the previously documented sticky-navigation capture artifact; they do not prove
+all portions of a tall stage are simultaneously visible. A first added paired
+crop attempt used document coordinates without fullPage and failed capture;
+fullPage capture corrected the test harness, followed by a passing full rerun.
+Platform is Linux aarch64, Chromium 156.0.8078.4; navigator.platform reports Linux
+x86_64. CSS uses PingFang SC / Microsoft YaHei / system-ui / sans-serif, 16px
+selector text. Resolved glyph font is not claimed. Native Mac, physical devices,
+novice outcomes, independent acceptance and deployment remain unverified.
+
+Next action: transfer the frozen candidate and hash receipt to native Mac, run
+unchanged tests/preset-probe-original.cjs plus preset-labels.cjs, browser.cjs and
+clipboard-transfer.cjs, retain results and inspected screenshots, then obtain
+separate re-review. See evidence README for exact commands. No report/rubric,
+shared file, registry, campaign state, service or other lesson was changed.
