@@ -4,7 +4,10 @@ Repository: {repo}
 Preview root: {base_url}
 
 The human requests every current Hard problem, with a separate agent review for
-each. This is the author run only. Do not claim independent acceptance. Read
+each. This is the author run only. Do not claim independent acceptance.
+Record author/review status in BRIEF and evidence records, not lesson UI; follow
+the explainer's workflow-copy rule while retaining learner-relevant simulation
+and language limitations. Read
 WORKFLOW.md, UI-I18N-SPEC.md, specs/leetcode-explainers.md,
 specs/leetcode-hard-traces.md, specs/leetcode-review-gates.md,
 specs/leetcode-rendered-state-contract.md,
