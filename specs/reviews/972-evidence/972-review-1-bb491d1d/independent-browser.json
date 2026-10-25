@@ -1,0 +1,41 @@
+[
+  {
+    "lang": "zh",
+    "h1": "#972 · 相等的有理数",
+    "title": "972 · 相等的有理数",
+    "formula": "value = I + A/10^m + B/[10^m × (10^k − 1)]",
+    "proof": "为什么分母有 10^k−1？设 y=0.(B)，乘 10^k 后恰好多出一个完整的 B，尾巴不变，所以 (10^k−1)y=B。再除以 10^m，把尾巴移到非循环位之后。没有循环节时省略尾项；空 A 当作 0。这个不变量（始终保持的事实）是：处理完的各部分之和，恰好等于原字符串的数值。每部分按位值加入，因此既不重算也不漏算。",
+    "progress": "已完成 3/4 个阶段",
+    "left": "解析：I=9999，A=9999，m=4，B=9999，k=4；k=0 表示无循环节。整数 + 有限小数：9999 + 9999/10^4 = 99999999/10000循环尾项：9999/[10^4 × (10^4 − 1)]；完整值 = 10000/1",
+    "right": "解析：I=9999，A=9999，m=4，B=0，k=0；k=0 表示无循环节。整数 + 有限小数：9999 + 9999/10^4 = 99999999/10000循环尾项：0（没有循环节）；完整值 = 99999999/10000",
+    "feedback": "重新看尾项。 0.12(9) = 12/100 + 9/[100×9] = 13/100 = 0.13。只比较 12 与 13 漏掉循环尾项；逐位无限展开也不是必需的，因为相减已经精确包含了整个尾巴。",
+    "selection": "0",
+    "preset": "5"
+  },
+  {
+    "lang": "en",
+    "h1": "#972 · Equal Rational Numbers",
+    "title": "972 · Equal Rational Numbers",
+    "formula": "value = I + A/10^m + B/[10^m × (10^k − 1)]",
+    "proof": "Why 10^k−1? For y=0.(B), multiplying by 10^k exposes exactly one whole B and leaves the tail unchanged. Thus (10^k−1)y=B. Divide by 10^m to move the tail past the finite digits. Omit this term when there is no repeat; treat an empty A as zero. The invariant (a fact preserved throughout) is that the sum of the processed parts equals their value in the original string. Adding by place value neither double-counts nor omits a part.",
+    "progress": "Completed 3/4 phases",
+    "left": "Parsed: I=9999, A=9999, m=4, B=9999, k=4; k=0 means no repeat.Integer + finite part: 9999 + 9999/10^4 = 99999999/10000Repeating tail: 9999/[10^4 × (10^4 − 1)]; complete value = 10000/1",
+    "right": "Parsed: I=9999, A=9999, m=4, B=0, k=0; k=0 means no repeat.Integer + finite part: 9999 + 9999/10^4 = 99999999/10000Repeating tail: 0 (no repeat); complete value = 99999999/10000",
+    "feedback": "Recheck the tail. 0.12(9) = 12/100 + 9/[100×9] = 13/100 = 0.13. Comparing 12 with 13 omits the repeating tail. Infinite expansion is unnecessary because subtraction already accounts for the entire tail exactly.",
+    "selection": "0",
+    "preset": "5"
+  },
+  {
+    "lang": "zh",
+    "h1": "#972 · 相等的有理数",
+    "title": "972 · 相等的有理数",
+    "formula": "value = I + A/10^m + B/[10^m × (10^k − 1)]",
+    "proof": "为什么分母有 10^k−1？设 y=0.(B)，乘 10^k 后恰好多出一个完整的 B，尾巴不变，所以 (10^k−1)y=B。再除以 10^m，把尾巴移到非循环位之后。没有循环节时省略尾项；空 A 当作 0。这个不变量（始终保持的事实）是：处理完的各部分之和，恰好等于原字符串的数值。每部分按位值加入，因此既不重算也不漏算。",
+    "progress": "已完成 3/4 个阶段",
+    "left": "解析：I=9999，A=9999，m=4，B=9999，k=4；k=0 表示无循环节。整数 + 有限小数：9999 + 9999/10^4 = 99999999/10000循环尾项：9999/[10^4 × (10^4 − 1)]；完整值 = 10000/1",
+    "right": "解析：I=9999，A=9999，m=4，B=0，k=0；k=0 表示无循环节。整数 + 有限小数：9999 + 9999/10^4 = 99999999/10000循环尾项：0（没有循环节）；完整值 = 99999999/10000",
+    "feedback": "重新看尾项。 0.12(9) = 12/100 + 9/[100×9] = 13/100 = 0.13。只比较 12 与 13 漏掉循环尾项；逐位无限展开也不是必需的，因为相减已经精确包含了整个尾巴。",
+    "selection": "0",
+    "preset": "5"
+  }
+]
