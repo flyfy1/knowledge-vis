@@ -16,6 +16,7 @@ import io
 import tarfile
 import os
 from pathlib import Path, PurePosixPath
+from html.parser import HTMLParser
 import re
 import shutil
 import subprocess
@@ -24,7 +25,8 @@ from urllib.parse import urljoin, urlsplit
 import uuid
 
 from leetcode_registry import read_registry
-from register_leetcode_lesson import LANGUAGE_FILES
+from leetcode_static_versions import (BUILDER_VERSION, EXCLUDED_PARTS, LANGUAGE_FILES, PROVENANCE_NAMES,
+                                      SOURCE_SUFFIXES, codex_discovery, codex_registry, codex_runtime)
 
 
 class PublicationError(RuntimeError):
@@ -32,14 +34,6 @@ class PublicationError(RuntimeError):
 
 
 WEIGHTS = (15, 20, 20, 20, 15, 10)
-SOURCE_SUFFIXES = {'.html', '.js', '.css', '.py', '.ts', '.json', '.svg', '.png',
-                   '.jpg', '.jpeg', '.webp', '.gif', '.ico', '.woff', '.woff2'}
-SOURCE_SUFFIXES.update(Path(files[0]).suffix for files in LANGUAGE_FILES.values())
-EXCLUDED_PARTS = {'tests', 'test', 'evidence', 'provenance', 'screenshots', '__pycache__', 'node_modules'}
-# Reserved capture names used for official-contract author/reviewer evidence.
-# Runtime JSON stays eligible; classify provenance by its contract, not suffix.
-PROVENANCE_NAMES = {'official-evidence.json', 'official-interface.json',
-                    'official-contract.json', 'official-graphql.json', 'official.json'}
 COLLECTION_ASSETS = {'leetcode/index.html', 'leetcode/problems.config.js',
                      'leetcode/collection.js', 'leetcode/collection.css'}
 
@@ -228,7 +222,19 @@ def _asset_refs(data, relative):
     if suffix not in {'.html', '.css', '.js'}:
         return []
     text = data.decode('utf-8')
-    refs = re.findall(r'(?:src|href)\s*=\s*["\']([^"\']+)', text) if suffix == '.html' else []
+    refs = []
+    if suffix == '.html':
+        class References(HTMLParser):
+            def handle_starttag(self, tag, attrs):
+                for key, value in attrs:
+                    if value is None or key not in {'src', 'href'}:
+                        continue
+                    # HTML anchors are navigation, including generated redirects
+                    # and cross-lesson index links; they are not shared assets.
+                    if tag == 'a' and key == 'href' and PurePosixPath(urlsplit(value).path).suffix.lower() == '.html':
+                        continue
+                    refs.append(value)
+        References().feed(text)
     if suffix == '.css':
         refs += re.findall(r'url\(\s*["\']?([^"\')]+)', text)
     if suffix == '.js':
@@ -256,20 +262,45 @@ const input = JSON.parse(process.argv[1]);
  const browser = await chromium.launch({headless:true, ...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH ? {executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH} : {})});
  try {
   const page = await browser.newPage({viewport:{width:1280,height:900}});
-  let errors=[], ignored=[], localPending=new Set();
+  let errors=[], ignored=[], localPending=new Map(), retiredRedirectDocuments=0;
+  const ignoredCloudflareRum=new Set();
   const origin=new URL(input.base).origin;
-  page.on('request', r=>{if(new URL(r.url()).origin===origin) localPending.add(r);});
+  function isCloudflareRum(request) {
+   const url=new URL(request.url());
+   return url.origin===origin && url.pathname==='/cdn-cgi/rum' && request.method()==='POST' &&
+          !request.isNavigationRequest() && ['xhr','fetch'].includes(request.resourceType());
+  }
+  page.on('request', r=>{if(isCloudflareRum(r)){ignoredCloudflareRum.add(r);return;} if(new URL(r.url()).origin===origin) localPending.set(r, {url:r.url(), method:r.method(), type:r.resourceType(), mainDocument:r.isNavigationRequest() && r.frame()===page.mainFrame(), startedAt:Date.now(), documentAtStart:page.url()});});
+  page.on('response', r=>{const pending=localPending.get(r.request()); if(pending) pending.status=r.status();});
   page.on('requestfinished', r=>localPending.delete(r));
   page.on('requestfailed', r=>localPending.delete(r));
-  async function settleLocal() {
+  async function settleLocal(verifiedRedirect) {
    const until=Date.now()+10000;
-   while(localPending.size && Date.now()<until) await page.waitForTimeout(50);
-   if(localPending.size) throw new Error('First-party resources did not finish');
+   while(localPending.size && Date.now()<until) {
+    // Chromium can omit terminal events for an intermediate document replaced
+    // by its client-side redirect. Retire only that HTTP200 main document after
+    // the exact fixed destination, query and fragment have been verified.
+    if(verifiedRedirect && page.url()===verifiedRedirect) {
+     const target=new URL(verifiedRedirect),numeric=target.pathname.replace(/-codex\/$/,'/');
+     if(target.origin===origin && /\/leetcode\/[1-9][0-9]*-codex\/$/.test(target.pathname)) {
+      for(const [request,record] of localPending) {
+       const source=new URL(record.url);
+       if(record.mainDocument && record.type==='document' && record.status===200 &&
+          source.origin===target.origin && source.search===target.search &&
+          (source.pathname===numeric || source.pathname===numeric+'index.html')) {
+        localPending.delete(request); retiredRedirectDocuments++;
+       }
+      }
+     }
+    }
+    if(localPending.size) await page.waitForTimeout(50);
+   }
+   if(localPending.size) throw new Error('First-party resources did not finish at '+page.url()+': '+JSON.stringify([...localPending.values()].map(r=>({...r, elapsedMs:Date.now()-r.startedAt}))));
   }
   const knownBeacon='https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092';
   page.on('pageerror', e => errors.push(String(e)));
-  page.on('requestfailed', r => {if(r.url()===knownBeacon) ignored.push(r.url()); else errors.push('Failed request: '+r.url());});
-  page.on('response', r => {if(r.status()>=400) errors.push('HTTP '+r.status()+': '+r.url());});
+  page.on('requestfailed', r => {if(isCloudflareRum(r)) ignoredCloudflareRum.add(r); else if(r.url()===knownBeacon) ignored.push(r.url()); else errors.push('Failed request: '+r.url());});
+  page.on('response', r => {if(r.status()>=400){if(isCloudflareRum(r.request())) ignoredCloudflareRum.add(r.request()); else errors.push('HTTP '+r.status()+': '+r.url());}});
   await page.goto(input.base+'/leetcode/', {waitUntil:'domcontentloaded'});
   await page.locator('[data-problem-id]').first().waitFor({state:'visible'});
   await settleLocal();
@@ -278,9 +309,15 @@ const input = JSON.parse(process.argv[1]);
    if(await card.count()!==1) throw new Error('Missing collection card '+item.id);
    if(!await card.innerText().then(t=>t.includes('#'+item.id))) throw new Error('Missing collection ID '+item.id);
    if(await card.locator('a').evaluateAll((links,url)=>links.some(a=>a.href===url),item.leetcodeUrl)!==true) throw new Error('Missing official collection link '+item.id);
+   const route=item.path || item.id+'/';
+   if(route!==item.id+'/' && route!==item.id+'-codex/') throw new Error('Invalid published lesson route '+item.id);
+   const target=input.base+'/leetcode/'+route;
+   if(!await card.locator('a').evaluateAll((links,url)=>links.some(a=>a.href===url),target)) throw new Error('Missing published destination '+item.id);
   }
   for (const item of input.entries) {
-   await page.goto(input.base+'/leetcode/'+item.id+'/',{waitUntil:'domcontentloaded'});
+   const route=item.path || item.id+'/';
+   await page.goto(input.base+'/leetcode/'+route,{waitUntil:'domcontentloaded'});
+   if(new URL(page.url()).pathname!==new URL(input.base+'/leetcode/'+route).pathname) throw new Error('Wrong actual lesson destination '+item.id);
    await page.locator('h1').waitFor({state:'visible'});
    await settleLocal();
    const texts=[], mainTexts=[];
@@ -299,9 +336,18 @@ const input = JSON.parse(process.argv[1]);
    // Reviewed localized names can legitimately be identical (for example IPO).
    if(texts[0]===texts[1] && item.title.zh!==item.title.en) throw new Error('Heading did not translate '+item.id);
    if(mainTexts[0]===mainTexts[1]) throw new Error('Lesson content did not translate '+item.id);
+   if(route===item.id+'-codex/') {
+    for(const suffix of ['', 'index.html']) {
+     const state='?route-check=a%2Fb&value=%E4%B8%AD#step0';
+     await page.goto(input.base+'/leetcode/'+item.id+'/'+suffix+state,{waitUntil:'domcontentloaded'});
+     await page.waitForURL(input.base+'/leetcode/'+route+state,{waitUntil:'domcontentloaded'});
+     await settleLocal(input.base+'/leetcode/'+route+state);
+     if(page.url()!==input.base+'/leetcode/'+route+state) throw new Error('Legacy redirect lost URL state '+item.id);
+    }
+   }
   }
   if(errors.length) throw new Error(errors.join('\n'));
-  console.log(JSON.stringify({lessons:input.entries.length, ignoredKnownBeaconFailures:ignored.length}));
+  console.log(JSON.stringify({lessons:input.entries.length, ignoredKnownBeaconFailures:ignored.length, ignoredCloudflareRumRequests:ignoredCloudflareRum.size, retiredRedirectDocuments}));
  } finally {await browser.close();}
 })().catch(e=>{console.error(e);process.exit(1)});
 '''
@@ -325,7 +371,16 @@ def _apply_pending(root, state_dir, ledger, ledger_path):
         raise PublicationError('Invalid pending stage identity')
     stage = _safe(state_dir, pending['stage'])
     # Index and registry are the discovery switch, after every lesson asset.
-    paths = sorted(pending['files'], key=lambda p: (2 if p == 'leetcode/index.html' else 1 if p == 'leetcode/problems.config.js' else 0, p))
+    def publish_order(path):
+        if path == 'leetcode/index.html':
+            return (3, path)
+        if path in {'leetcode/problems.config.js', 'leetcode/problems.codex.config.js'}:
+            return (2, path)
+        # Historical pending releases keep their exact staged bytes and ordering.
+        if pending.get('route_layout') == BUILDER_VERSION and re.fullmatch(r'leetcode/[1-9][0-9]*/index.html', path):
+            return (1, path)
+        return (0, path)
+    paths = sorted(pending['files'], key=publish_order)
     payload = {}
     for relative in paths:
         payload[relative] = _safe(stage, relative).read_bytes()
@@ -368,7 +423,7 @@ def _apply_pending(root, state_dir, ledger, ledger_path):
     return {'status': 'published', 'ids': list(pending['accepted']), 'revision': pending['revision']}
 
 
-def maybe_publish(repo, state, state_dir, publish_root, public_base, batch_size=100,
+def maybe_publish(repo, state, state_dir, publish_root, public_base, batch_size=20,
                   flush=False, baseline_revision='8bfc3f4'):
     """Return waiting/published. Raise on failed gates; campaign state is untouched.
 
@@ -405,7 +460,9 @@ def maybe_publish(repo, state, state_dir, publish_root, public_base, batch_size=
             baseline_rows = {str(row['id']): row for row in baseline}
             for pid in ('51', '52'):
                 files = _lesson(repo, baseline_revision, pid)
-                if any(_safe(root, path).read_bytes() != data for path, data in files.items()):
+                baseline_public = (codex_runtime(pid, files)
+                                   if _safe(root, f'leetcode/{pid}-codex/index.html').is_file() else files)
+                if any(_safe(root, path).read_bytes() != data for path, data in baseline_public.items()):
                     raise PublicationError(f'Production lesson {pid} differs from baseline')
                 released[pid] = {'candidate': baseline_revision, 'digest': _fingerprint(files, baseline_rows[pid]), 'baseline': True}
             ledger = {'version': 1, 'repo': str(repo), 'publish_root': str(root),
@@ -453,17 +510,27 @@ def maybe_publish(repo, state, state_dir, publish_root, public_base, batch_size=
             raise PublicationError('Production registry changed outside the release ledger')
         current_registry = read_registry(_safe(root, 'leetcode/problems.config.js'))
         merged = {str(entry['id']): entry for entry in current_registry}
+        public_selected = codex_registry([accepted[pid]['registry'] for pid in selected])
         merged.update({pid: accepted[pid]['registry'] for pid in selected})
         entries = [merged[pid] for pid in sorted(merged, key=int)]
         registry_bytes = ('/* Registered lessons, sorted by official frontend ID. */\nwindow.LEETCODE_PROBLEMS = ' +
                           json.dumps(entries, ensure_ascii=False, indent=2) + ';\n').encode()
-        files = {path: data for pid in selected for path, data in accepted[pid]['files'].items()}
+        public_entries = codex_registry(entries)
+        for row in public_entries:
+            if str(row['id']) not in selected and not _safe(root, 'leetcode/' + row['path'] + 'index.html').is_file():
+                raise PublicationError(f"Static route migration must precede publication: {row['path']}")
+        codex_registry_bytes = ('/* Static Codex lesson destinations. */\nwindow.LEETCODE_PROBLEMS = ' +
+                                json.dumps(public_entries, ensure_ascii=False, indent=2) + ';\n').encode()
+        files = {path: data for pid in selected
+                 for path, data in codex_runtime(pid, accepted[pid]['files']).items()}
         files['leetcode/problems.config.js'] = registry_bytes
+        files['leetcode/problems.codex.config.js'] = codex_registry_bytes
         source_index = _tracked_bytes(repo, revision, 'leetcode/index.html').decode()
         if not re.search(r'problems\.config\.js\?v=[^"\']+', source_index):
             raise PublicationError('Collection registry must have an explicit cache version')
-        files['leetcode/index.html'] = re.sub(r'problems\.config\.js\?v=[^"\']+',
-                    'problems.config.js?v=' + _sha(registry_bytes)[:12], source_index).encode()
+        files['leetcode/index.html'] = re.sub(r'problems\.codex\.config\.js\?v=[^"\']+',
+                    'problems.codex.config.js?v=' + _sha(codex_registry_bytes)[:12],
+                    codex_discovery(source_index.encode()).decode()).encode()
         # New reviewed collection assets are allowed; shared legacy assets must
         # already match production so a lesson batch cannot mutate their contract.
         for asset in ('leetcode/collection.js', 'leetcode/collection.css'):
@@ -477,9 +544,11 @@ def maybe_publish(repo, state, state_dir, publish_root, public_base, batch_size=
                 dependency_path = PurePosixPath(dependency)
                 if (dependency_path.name in PROVENANCE_NAMES or
                         set(dependency_path.parts) & EXCLUDED_PARTS or
-                        any(dependency.startswith(f'leetcode/{pid}/') for pid in selected)):
+                        any(dependency.startswith(prefix) for pid in selected
+                            for prefix in (f'leetcode/{pid}/', f'leetcode/{pid}-codex/'))):
                     raise PublicationError(f'Runtime dependency references excluded evidence or authoring metadata: {dependency}')
-                source = _tracked_bytes(repo, revision, dependency)
+                source_dependency = re.sub(r'^leetcode/([1-9][0-9]*)-codex/', r'leetcode/\1/', dependency)
+                source = _tracked_bytes(repo, revision, source_dependency)
                 if _safe(root, dependency).read_bytes() != source:
                     raise PublicationError(f'Unreviewed shared asset differs in production: {dependency}')
                 shared_hashes[dependency] = _sha(source)
@@ -502,7 +571,7 @@ def maybe_publish(repo, state, state_dir, publish_root, public_base, batch_size=
         ledger['pending'] = {'id': release_id, 'revision': revision, 'stage': stage.name,
                              'files': {path: _sha(data) for path, data in files.items()},
                              'public_files': {**shared_hashes, **{path: _sha(data) for path, data in files.items()}},
-                             'entries': [accepted[pid]['registry'] for pid in selected],
+                             'entries': public_selected, 'route_layout': BUILDER_VERSION,
                              'accepted': {pid: {key: accepted[pid][key] for key in ('candidate', 'digest', 'review')}
                                           for pid in selected}}
         _save(ledger_path, ledger)
@@ -514,7 +583,7 @@ def main():
     for name in ('repo', 'state-dir', 'publish-root'):
         parser.add_argument('--' + name, type=Path, required=True)
     parser.add_argument('--public-base', required=True)
-    parser.add_argument('--batch-size', type=int, default=100)
+    parser.add_argument('--batch-size', type=int, default=20)
     parser.add_argument('--baseline-revision', default='8bfc3f4')
     parser.add_argument('--flush', action='store_true')
     args = parser.parse_args()
