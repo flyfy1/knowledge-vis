@@ -1,0 +1,38 @@
+{
+  "id": 757,
+  "title": {
+    "zh": "设置交集大小至少为二",
+    "en": "Set Intersection Size At Least Two"
+  },
+  "desc": {
+    "zh": "从手选整数推导最右贪心，用两个最大点维护所有区间的覆盖。",
+    "en": "Derive rightmost greedy choices and cover intervals using only the two largest selected points."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "贪心",
+      "en": "Greedy"
+    },
+    {
+      "zh": "区间覆盖",
+      "en": "Interval covering"
+    }
+  ],
+  "path": "757/",
+  "leetcodeUrl": "https://leetcode.com/problems/set-intersection-size-at-least-two/",
+  "language": "Python",
+  "complexity": "O(n log n) time; O(n) auxiliary space for sorting",
+  "concepts": [
+    {
+      "name": "Rightmost two-point interval cover",
+      "step": 2,
+      "description": "Sort by end and maintain the two largest chosen integers."
+    },
+    {
+      "name": "Greedy exchange proof",
+      "step": 2,
+      "description": "Move required points right while preserving a feasible optimal extension."
+    }
+  ]
+}
