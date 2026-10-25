@@ -1142,3 +1142,14 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Monotone exact search | `leetcode/483/#step2` | Discard impossible integer bases using an inclusive interval invariant. |
 
 <!-- /leetcode-483-campaign -->
+
+
+<!-- leetcode-493-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| reverse pairs | `leetcode/493/#step0` | Strict doubled comparison at original ordered indices |
+| monotone prefix counting | `leetcode/493/#step1` | Sorted right prefix and nondecreasing boundary |
+| merge sort counting | `leetcode/493/#step2` | Disjoint within-half and cross-half pair accounting |
+
+<!-- /leetcode-493-campaign -->
