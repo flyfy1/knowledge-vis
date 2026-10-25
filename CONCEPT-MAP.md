@@ -1674,3 +1674,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Exact rational invariant | `leetcode/972/#step2` | Each parsed part contributes its exact place-value fraction. |
 
 <!-- /leetcode-972-campaign -->
+
+
+<!-- leetcode-834-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Edge-cut rerooting | `leetcode/834/#step2` | Subtract the child-side count and add the outside count when moving the start. |
+| Subtree distance summaries | `leetcode/834/#step2` | Merge children before parents to obtain subtree sizes and distance sums. |
+
+<!-- /leetcode-834-campaign -->

@@ -3337,6 +3337,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(sqrt(n)) time; O(1) auxiliary space"
   },
   {
+    "id": 834,
+    "title": {
+      "zh": "树中距离之和",
+      "en": "Sum of Distances in Tree"
+    },
+    "desc": {
+      "zh": "切开一条边，数清变近和变远的节点，推导线性换根算法。",
+      "en": "Cut one edge, count who gets closer or farther, and derive linear rerooting."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "树",
+        "en": "Tree"
+      },
+      {
+        "zh": "换根动态规划",
+        "en": "Rerooting DP"
+      }
+    ],
+    "path": "834/",
+    "leetcodeUrl": "https://leetcode.com/problems/sum-of-distances-in-tree/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
