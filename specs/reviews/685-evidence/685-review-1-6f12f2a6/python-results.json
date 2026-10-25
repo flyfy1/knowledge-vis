@@ -1,0 +1,16 @@
+{
+  "kind": "author self-check; not independent review",
+  "seed": 685,
+  "counts": {
+    "exhaustive_n3": 120,
+    "exhaustive_n4": 7920,
+    "seeded_prufer": 1000,
+    "maximum_n1000": 3,
+    "named_cases": 6
+  },
+  "total": 9049,
+  "mutation": "unchanged",
+  "copyKeys": 100,
+  "sourceMirror": "exact including final newline",
+  "result": "pass"
+}

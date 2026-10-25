@@ -1,0 +1,16 @@
+{
+  "kind": "author self-check",
+  "fixtures": 9046,
+  "frames": 127788,
+  "result": "pass",
+  "checks": [
+    "independent BFS partitions",
+    "forest edge count",
+    "snapshot before/after",
+    "incoming prefix indices",
+    "DSU roots and sizes",
+    "merge and rejection preconditions",
+    "no mutation",
+    "independent final oracle"
+  ]
+}
