@@ -101,6 +101,13 @@ survey plus isolated representative resource measurements, and records evidence
 against that exact source. Only after this evidence is durable does the separate
 reviewer begin. No active author or reviewer is interrupted.
 
+The predetermined report path is
+`specs/reviews/818-review-search-resource-measurement-20261026.md`.
+It is intentionally absent during authoring. After the cold walkthrough, the
+fresh reviewer must read that exact file and verify its candidate/source binding;
+missing, incomplete or mismatched evidence leaves818-SEARCH-R1 open. Root's
+handoff checks its presence before resuming review; no prompt discovery by chance.
+
 The fresh reviewer must cold-walk the revised lesson, independently audit the
 lower bound and goal-pop proof, inspect candidate-specific external measurements,
 and explicitly close818-SEARCH-R1. It must state that818-RESOURCE-R1's DP choice was
