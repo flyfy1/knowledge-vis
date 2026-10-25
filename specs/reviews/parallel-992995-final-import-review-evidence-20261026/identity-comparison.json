@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-10-25T22:39:54.118841+00:00",
+  "pins_match": true,
+  "lane_archives_match": true,
+  "native_pid_match": true,
+  "native_session_match": true,
+  "central": {
+    "head": "237c625ccf42fe101afd96e2d913c9b933566ecf",
+    "current": {
+      "problem_id": "864",
+      "stage": "author",
+      "started_at": "2026-10-25T22:35:36.464754+00:00",
+      "run_id": "864-author-a939f826b6fa"
+    },
+    "runner_pid": 1774575,
+    "resume_plan": {
+      "next_problem_id": "864",
+      "registration_ids": [],
+      "publication_bound": {
+        "eligible": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987"
+        ],
+        "incoming": [
+          "992",
+          "995"
+        ],
+        "registration_ids": [],
+        "reopened_upper_bound_ids": [],
+        "upper_bound_ids": [
+          "854",
+          "857",
+          "862",
+          "982",
+          "987",
+          "992",
+          "995"
+        ],
+        "upper_bound": 7
+      }
+    }
+  }
+}
