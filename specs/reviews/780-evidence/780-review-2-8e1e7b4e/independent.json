@@ -1,0 +1,95 @@
+{
+  "freshCodeChecks": [
+    {
+      "input": [
+        2,
+        4,
+        14,
+        6
+      ],
+      "expected": true,
+      "actual": true
+    },
+    {
+      "input": [
+        4,
+        6,
+        6,
+        8
+      ],
+      "expected": false,
+      "actual": false
+    },
+    {
+      "input": [
+        4,
+        4,
+        4,
+        12
+      ],
+      "expected": true,
+      "actual": true
+    },
+    {
+      "input": [
+        4,
+        4,
+        4,
+        10
+      ],
+      "expected": false,
+      "actual": false
+    },
+    {
+      "input": [
+        1000000000,
+        1000000000,
+        1000000000,
+        1000000000
+      ],
+      "expected": true,
+      "actual": true
+    },
+    {
+      "input": [
+        1,
+        1,
+        1000000000,
+        1000000000
+      ],
+      "expected": false,
+      "actual": false
+    },
+    {
+      "input": [
+        1,
+        1,
+        1000000000,
+        1
+      ],
+      "expected": true,
+      "actual": true
+    },
+    {
+      "input": [
+        3,
+        2,
+        3,
+        999999998
+      ],
+      "expected": true,
+      "actual": true
+    },
+    {
+      "input": [
+        3,
+        2,
+        3,
+        1000000000
+      ],
+      "expected": false,
+      "actual": false
+    }
+  ],
+  "independentForwardOracleCases": 30276
+}

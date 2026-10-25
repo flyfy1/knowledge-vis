@@ -1,0 +1,11 @@
+{
+  "canonicalPythonCases": 15774,
+  "oracle": "Forward BFS over bounded positive grid; seeded forward construction for large true cases; closed-form boundary expectations",
+  "seed": 780,
+  "core": {
+    "cases": 15774,
+    "intermediateFrames": 34934,
+    "mirrorExact": true,
+    "copyPairs": 96
+  }
+}
