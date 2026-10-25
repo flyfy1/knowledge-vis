@@ -7,6 +7,7 @@ OUTPUT_DIR=/tmp/878-review-evidence python3 -B leetcode/878/tests/test_solution.
 OUTPUT_DIR=/tmp/878-review-evidence node leetcode/878/tests/test_core.cjs
 OUTPUT_DIR=/tmp/878-review-evidence node leetcode/878/tests/browser.cjs
 OUTPUT_DIR=/tmp/878-review-evidence node leetcode/878/tests/access.cjs
+OUTPUT_DIR=/tmp/878-review-evidence node leetcode/878/tests/mapping.cjs
 python3 -B scripts/register_leetcode_lesson.py 878 --validate-only
 ```
 
@@ -37,3 +38,9 @@ These are author self-checks. Independent lesson review, actual novice teach-bac
 LeetCode submission acceptance, deployment and public delivery are not performed.
 The frozen candidate is identified by evidence/candidate-sha256.json. Use a fresh
 OUTPUT_DIR when reviewing so the candidate's evidence is not rewritten.
+
+`mapping.cjs` is the focused 878-R1 regression. It checks rendered bilingual
+code explanations against concrete Python operations, then compares both
+branches with the hand-calculated default trace. It captures the full bullet
+list at 320px and 200% CSS magnification. The original candidate fails its first
+mapping assertion; the preserved red log is evidence/r1-mapping-red.log.

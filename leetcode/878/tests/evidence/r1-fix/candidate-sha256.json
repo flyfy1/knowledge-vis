@@ -1,0 +1,31 @@
+{
+  "candidate": "878-r1-fix-v2",
+  "status": "self-checked; ready for separate re-review",
+  "findingStatus": {
+    "878-R1": "fixed awaiting independent review"
+  },
+  "historicalReviewCandidate": "6edbe661e03cd4d7a07f979a3f2269d54e5ac4a0",
+  "checkoutBase": "25ae6a90ae9d329bdcf0cfe98e64c78350aef879",
+  "frozenAt": "2026-10-25T23:32:28.481709+00:00",
+  "files": {
+    "leetcode/878/BRIEF.md": "ea3475234f02ff8129ab20fc9738654cfd694064b2e9d2cf8705a7e34d140e90",
+    "leetcode/878/app.js": "cc8447b6476a9748665166a18431d063a901879c0422b81d51a27412e143c625",
+    "leetcode/878/copy.js": "fd9b21816a194e6f5014d060d0c8369574f47fbb4fd319243ac8c01ced1d8b52",
+    "leetcode/878/core.js": "9242c02baba7d9d0426a80a1bab0067f2a7095ef811744b2fbcb1a51470745ba",
+    "leetcode/878/index.html": "6d8a4f7300553fd718dc05002193e52ed757bc421fbe4d1df6eb62de379d288e",
+    "leetcode/878/lesson-entry.json": "34f456fe0585122ac5789169cf55a94aa1d52205d3e6c7d5b9ad52e19886b51f",
+    "leetcode/878/python-code.js": "744a183d3d01a2c9625e6d93ed982f280b687a517df0713d046c7ed8ee3d1ce3",
+    "leetcode/878/solution.py": "cb7ffefd45a9031b51a15eb7f36bf9ac94c0fe404a38cf418cb5328e60f2fd56",
+    "leetcode/878/style.css": "ea5f32e962a43da96e03f920b125b0219071c25ea7b72bec51237c937d225c26",
+    "leetcode/878/tests/README.md": "5bc35ddd80e77030a9e688e073b51f14cd783957b743b71b200789e9244be1cd",
+    "leetcode/878/tests/access.cjs": "1d11d4c77d978225b42c3bd5b91d4e7b6fd7e835acebc3c161185d327631b808",
+    "leetcode/878/tests/browser.cjs": "a17fcf67069959a0104b7d385adc0e5ded90a85dd2275d1614646e964e5da9d1",
+    "leetcode/878/tests/mapping.cjs": "ce55a20d8f7198f486e65dd99f7ce2cdf9016c70e7bb0b9824ddacb18aa8cd8f",
+    "leetcode/878/tests/test_core.cjs": "2b911778f921dac24b46f2456df21a1a7d6560866be5ee246ddd85b14a5d56f8",
+    "leetcode/878/tests/test_solution.py": "2cd67d8d95f1b862b7b7ae12d687c6d7903d44b17ca7113cea3ec2856d5d7506"
+  },
+  "sharedReadOnly": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}

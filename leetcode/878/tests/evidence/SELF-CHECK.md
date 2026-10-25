@@ -147,3 +147,12 @@ release inclusion/public availability must be checked by the release owner.
 Frozen candidate identity: candidate-sha256.json; author/review status: status.json.
 Independent cold teaching review is the next required step. No claims about actual
 learners, independent acceptance, LeetCode acceptance, or production delivery.
+
+## Appended review repair, 2026-10-26
+
+The above v1 record is historical. Independent review subsequently required
+878-R1 (step5 code mappings were input labels). New candidate 878-r1-fix-v2
+restores the bilingual explanations; finding status is fixed awaiting review.
+See [repair self-check](r1-fix/SELF-CHECK.md), red regression
+[log](r1-mapping-red.log), and [candidate hashes](r1-fix/candidate-sha256.json).
+The original review's changes_required outcome is unchanged.
