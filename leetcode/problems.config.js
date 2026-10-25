@@ -2069,6 +2069,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
+    "id": 564,
+    "title": {
+      "zh": "寻找最近的回文数",
+      "en": "Find the Closest Palindrome"
+    },
+    "desc": {
+      "zh": "从镜像前缀推导完整候选集，逐项比较距离与平局。",
+      "en": "Derive a complete set of mirrored-prefix candidates and compare distances and ties."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      },
+      {
+        "zh": "数学",
+        "en": "Mathematics"
+      }
+    ],
+    "path": "564/",
+    "leetcodeUrl": "https://leetcode.com/problems/find-the-closest-palindrome/",
+    "language": "Python",
+    "complexity": "O(d) time; O(d) space for d ≤ 18 decimal digits (bounded integer arithmetic)"
+  },
+  {
     "id": 591,
     "title": {
       "zh": "标签验证器",
