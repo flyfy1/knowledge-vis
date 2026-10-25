@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-25T02:10:01.430675+00:00",
+  "officialUrl": "https://leetcode.com/problems/design-in-memory-file-system/",
+  "authentication": "Public unauthenticated requests; no credentials read or used.",
+  "official-page": {
+    "url": "https://leetcode.com/problems/design-in-memory-file-system/",
+    "httpStatus": 403,
+    "error": "HTTP Error 403: Forbidden",
+    "bodyFile": "official-page-error-body.txt"
+  },
+  "graphql": {
+    "url": "https://leetcode.com/graphql/",
+    "httpStatus": 200,
+    "bodyFile": "graphql-response.json"
+  },
+  "observed": {
+    "questionId": "588",
+    "questionFrontendId": "588",
+    "title": "Design In-Memory File System",
+    "titleSlug": "design-in-memory-file-system",
+    "difficulty": "Hard",
+    "isPaidOnly": true,
+    "content": null,
+    "translatedContent": null,
+    "exampleTestcases": "[\"FileSystem\",\"ls\",\"mkdir\",\"addContentToFile\",\"ls\",\"readContentFromFile\"]\n[[],[\"/\"],[\"/a/b/c\"],[\"/a/b/c/d\",\"hello\"],[\"/\"],[\"/a/b/c/d\"]]",
+    "sampleTestCase": "[\"FileSystem\",\"ls\",\"mkdir\",\"addContentToFile\",\"ls\",\"readContentFromFile\"]\n[[],[\"/\"],[\"/a/b/c\"],[\"/a/b/c/d\",\"hello\"],[\"/\"],[\"/a/b/c/d\"]]",
+    "metaData": "{\r\n    \"classname\": \"FileSystem\",\r\n    \"maxbytesperline\": 200000,\r\n    \"constructor\": {\r\n        \"params\": [\r\n        ]\r\n    },\r\n    \"methods\": [\r\n        {\r\n            \"name\" : \"ls\",\r\n            \"params\": [\r\n                {\r\n                    \"type\": \"string\",\r\n                    \"name\": \"path\"\r\n                }\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"list<string>\"\r\n            }\r\n        },\r\n        {\r\n            \"name\" : \"mkdir\",\r\n            \"params\": [\r\n                {\r\n                    \"type\": \"string\",\r\n                    \"name\": \"path\"\r\n                }\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"void\"\r\n            }\r\n        },\r\n        {\r\n            \"name\" : \"addContentToFile\",\r\n            \"params\": [\r\n                {\r\n                    \"type\": \"string\",\r\n                    \"name\": \"filePath\"\r\n                },\r\n                {\r\n                    \"type\": \"string\",\r\n                    \"name\": \"content\"\r\n                }\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"void\"\r\n            }\r\n        },\r\n        {\r\n            \"name\" : \"readContentFromFile\",\r\n            \"params\": [\r\n                {\r\n                    \"type\": \"string\",\r\n                    \"name\": \"filePath\"\r\n                }\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"string\"\r\n            }\r\n        }\r\n    ],\r\n    \"systemdesign\": true,\r\n    \"params\": [\r\n        {\r\n            \"name\": \"inputs\",\r\n            \"type\": \"integer[]\"\r\n        },\r\n        {\r\n            \"name\": \"inputs\",\r\n            \"type\": \"integer[]\"\r\n        }\r\n    ],\r\n    \"return\": {\r\n        \"type\": \"list<String>\",\r\n        \"dealloc\": true\r\n    }\r\n}",
+    "codeSnippets": null
+  },
+  "contractAvailable": false
+}
