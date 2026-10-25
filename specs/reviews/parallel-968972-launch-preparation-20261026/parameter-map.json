@@ -1,0 +1,96 @@
+{
+  "status": "proposal_only_not_launch_ready",
+  "provenLauncher": {
+    "path": "specs/reviews/parallel-960964-evidence-20261026/launch.py",
+    "sha256": "943794458f663fe6734fc1eda2e877e38f7455acdf022b865c77a261be47eb68"
+  },
+  "fixedPreparationSource": "ca4622c7af1d498ab4fa02dc76a40b44161d715f",
+  "preparationFiles": {
+    "specs/reviews/parallel-968972-preparation-20261026/968-official-access.json": "a1c6fdf3e6a2c4969275dd6d6b5de8d4e0efee11fa3312bece6e7fc5ff429c23",
+    "specs/reviews/parallel-968972-preparation-20261026/968.md": "a76315ba2504b5bc6bb9c436dd8cdb9764f20567e2755d188d9ee0bd77e6277c",
+    "specs/reviews/parallel-968972-preparation-20261026/972-official-access.json": "81e277fada5bd966dd419732bd3f480babf49131e47ee369873f873502b99b9f",
+    "specs/reviews/parallel-968972-preparation-20261026/972.md": "7e3c9f8beda0fd7dbd42c0a64a5cb7981ec070c7a73c1d5b11d05b1fc0436ed0",
+    "specs/reviews/parallel-968972-preparation-20261026/README.md": "ad0522ceed110538898e21362ee1bb2b90c3c7b8f0dab49b81dc533027344304",
+    "specs/reviews/parallel-968972-preparation-20261026/preflight.json": "1759060a289965e9ed3cc5a454ed25e2ba23710143b05968534ec7f9d5213718"
+  },
+  "proposedParameters": {
+    "problemIds": [
+      "968",
+      "972"
+    ],
+    "plan": [
+      [
+        "968",
+        18791
+      ],
+      [
+        "972",
+        18792
+      ]
+    ],
+    "lockBasename": "parallel-launch-968972.lock",
+    "laneRepoTemplate": "/home/songyy/projects/leetcode-hard-lane-{id}-20261026",
+    "laneStateTemplate": "/home/songyy/projects/leetcode-hard-lane-state-{id}-20261026",
+    "branchTemplate": "codex/lane-{id}-20261026",
+    "reservationTemplate": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/lane-{id}-reservation.json",
+    "operatorBasenameTemplate": "parallel-launch-968972-20261026-<reviewed-hash-prefix>.py"
+  },
+  "portsObservation": {
+    "observedAt": "2026-10-25T18:23:51.344466+00:00",
+    "matchingTcpListeners": [],
+    "matchingReservations": [],
+    "reserved": false,
+    "requiresLaunchTimeBindCheck": true
+  },
+  "mustResolveAfterPriorImport": {
+    "BASE": null,
+    "CENTRAL_HEAD": null,
+    "CENTRAL_RUN": null,
+    "centralProblemIdLiteral": null,
+    "centralStageLiteral": null,
+    "threadStartedSessionLiteral": null,
+    "POLICY": null
+  },
+  "unchangedGuards": {
+    "queueLength": 984,
+    "expectedWorkerSequence": [
+      1,
+      2,
+      3
+    ],
+    "allExistingReservationsImported": true,
+    "memoryAvailableKiBStrictlyGreaterThan": 1048576,
+    "nicenessAtLeast": 10,
+    "maxRounds": 6,
+    "publicationArgumentsAllowed": false,
+    "observationTimeoutSeconds": 45,
+    "timeoutAction": "Preserve spawned receipt and re-poll exact process; never blindly restart"
+  },
+  "notPerformed": [
+    "launcher generation",
+    "upload",
+    "STOP",
+    "reservation",
+    "checkout",
+    "worker launch",
+    "policy or prompt mutation",
+    "queue mutation",
+    "publication"
+  ],
+  "dispatcherEvidenceByProblem": {
+    "968": [
+      "specs/reviews/parallel-968972-preparation-20261026/968.md",
+      "specs/reviews/parallel-968972-preparation-20261026/968-official-access.json"
+    ],
+    "972": [
+      "specs/reviews/parallel-968972-preparation-20261026/972.md",
+      "specs/reviews/parallel-968972-preparation-20261026/972-official-access.json"
+    ]
+  },
+  "authorPreparationDelivery": {
+    "directTeachingNoteInjection": false,
+    "preparationAdoptedIntoCentralSharedTree": false,
+    "promptOrRunnerChanges": false,
+    "mode": "Existing standard author flow independently verifies official statement and develops the approved lesson; fixed preparation is dispatcher access evidence only."
+  }
+}
