@@ -1,0 +1,44 @@
+[
+  {
+    "width": 320,
+    "lang": "en",
+    "operation": "i=2: partner 2 is at j=7. Swap seats 3↔7, moving person 4 to 7; pos[2]=3, pos[4]=7. This decision adds 1 swap.",
+    "graph": "Current simulation: connected groups of couple labels {0} {1} {2,3}; c=3, minimum remaining n−c=1 swaps. Groups are computed for the proof only; the submission builds no graph.",
+    "history": "i=0: partner 1 is at j=7. Swap seats 1↔7, moving person 2 to 7; pos[1]=1, pos[2]=7. This decision adds 1 swap.i=2: partner 2 is at j=7. Swap seats 3↔7, moving person 4 to 7; pos[2]=3, pos[4]=7. This decision adds 1 swap."
+  },
+  {
+    "width": 320,
+    "lang": "zh",
+    "operation": "i=2：伴侣 2 在 j=7。交换座位 3↔7，把人 4 移到 7；pos[2]=3，pos[4]=7。本次 +1 次交换。",
+    "graph": "当前模拟：情侣标签的连通组 {0} {1} {2,3}；c=3，剩余最少 n−c=1 次。这里只为证明计算分组，提交代码不用建图。",
+    "history": "i=0：伴侣 1 在 j=7。交换座位 1↔7，把人 2 移到 7；pos[1]=1，pos[2]=7。本次 +1 次交换。i=2：伴侣 2 在 j=7。交换座位 3↔7，把人 4 移到 7；pos[2]=3，pos[4]=7。本次 +1 次交换。"
+  },
+  {
+    "width": 390,
+    "lang": "en",
+    "operation": "i=2: partner 2 is at j=7. Swap seats 3↔7, moving person 4 to 7; pos[2]=3, pos[4]=7. This decision adds 1 swap.",
+    "graph": "Current simulation: connected groups of couple labels {0} {1} {2,3}; c=3, minimum remaining n−c=1 swaps. Groups are computed for the proof only; the submission builds no graph.",
+    "history": "i=0: partner 1 is at j=7. Swap seats 1↔7, moving person 2 to 7; pos[1]=1, pos[2]=7. This decision adds 1 swap.i=2: partner 2 is at j=7. Swap seats 3↔7, moving person 4 to 7; pos[2]=3, pos[4]=7. This decision adds 1 swap."
+  },
+  {
+    "width": 390,
+    "lang": "zh",
+    "operation": "i=2：伴侣 2 在 j=7。交换座位 3↔7，把人 4 移到 7；pos[2]=3，pos[4]=7。本次 +1 次交换。",
+    "graph": "当前模拟：情侣标签的连通组 {0} {1} {2,3}；c=3，剩余最少 n−c=1 次。这里只为证明计算分组，提交代码不用建图。",
+    "history": "i=0：伴侣 1 在 j=7。交换座位 1↔7，把人 2 移到 7；pos[1]=1，pos[2]=7。本次 +1 次交换。i=2：伴侣 2 在 j=7。交换座位 3↔7，把人 4 移到 7；pos[2]=3，pos[4]=7。本次 +1 次交换。"
+  },
+  {
+    "width": 1440,
+    "lang": "en",
+    "operation": "i=2: partner 2 is at j=7. Swap seats 3↔7, moving person 4 to 7; pos[2]=3, pos[4]=7. This decision adds 1 swap.",
+    "graph": "Current simulation: connected groups of couple labels {0} {1} {2,3}; c=3, minimum remaining n−c=1 swaps. Groups are computed for the proof only; the submission builds no graph.",
+    "history": "i=0: partner 1 is at j=7. Swap seats 1↔7, moving person 2 to 7; pos[1]=1, pos[2]=7. This decision adds 1 swap.i=2: partner 2 is at j=7. Swap seats 3↔7, moving person 4 to 7; pos[2]=3, pos[4]=7. This decision adds 1 swap."
+  },
+  {
+    "width": 1440,
+    "lang": "zh",
+    "operation": "i=2：伴侣 2 在 j=7。交换座位 3↔7，把人 4 移到 7；pos[2]=3，pos[4]=7。本次 +1 次交换。",
+    "graph": "当前模拟：情侣标签的连通组 {0} {1} {2,3}；c=3，剩余最少 n−c=1 次。这里只为证明计算分组，提交代码不用建图。",
+    "history": "i=0：伴侣 1 在 j=7。交换座位 1↔7，把人 2 移到 7；pos[1]=1，pos[2]=7。本次 +1 次交换。i=2：伴侣 2 在 j=7。交换座位 3↔7，把人 4 移到 7；pos[2]=3，pos[4]=7。本次 +1 次交换。"
+  }
+]
