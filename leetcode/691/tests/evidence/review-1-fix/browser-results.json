@@ -1,0 +1,207 @@
+{
+  "kind": "author self-check",
+  "hostPlatform": "linux",
+  "traces": [
+    {
+      "lang": "en",
+      "p": 0,
+      "steps": 32,
+      "expected": 2,
+      "text": "Event 32/32; final minimum stickers: 2"
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "steps": 21,
+      "expected": 3,
+      "text": "Event 21/21; final minimum stickers: 3"
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "steps": 5,
+      "expected": -1,
+      "text": "Event 5/5; final minimum stickers: -1"
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "steps": 33,
+      "expected": 2,
+      "text": "Event 33/33; final minimum stickers: 2"
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "steps": 15,
+      "expected": 3,
+      "text": "Event 15/15; final minimum stickers: 3"
+    },
+    {
+      "lang": "en",
+      "p": 5,
+      "steps": 4,
+      "expected": -1,
+      "text": "Event 4/4; final minimum stickers: -1"
+    },
+    {
+      "lang": "en",
+      "p": 6,
+      "steps": 8,
+      "expected": -1,
+      "text": "Event 8/8; final minimum stickers: -1"
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "steps": 32,
+      "expected": 2,
+      "text": "事件 32/32；最终最少张数：2"
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "steps": 21,
+      "expected": 3,
+      "text": "事件 21/21；最终最少张数：3"
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "steps": 5,
+      "expected": -1,
+      "text": "事件 5/5；最终最少张数：-1"
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "steps": 33,
+      "expected": 2,
+      "text": "事件 33/33；最终最少张数：2"
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "steps": 15,
+      "expected": 3,
+      "text": "事件 15/15；最终最少张数：3"
+    },
+    {
+      "lang": "zh",
+      "p": 5,
+      "steps": 4,
+      "expected": -1,
+      "text": "事件 4/4；最终最少张数：-1"
+    },
+    {
+      "lang": "zh",
+      "p": 6,
+      "steps": 8,
+      "expected": -1,
+      "text": "事件 8/8；最终最少张数：-1"
+    }
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "answer": 0,
+      "feedback": "That prediction does not hold. The answer is 3. Six letters are missing and each sticker supplies at most two, so at least three are needed; ab+ac+bc attains it. Only the first sticker must cover a. After ab, the remainder is abcc; ac and bc can follow. Skipping is local to a call, not a global ban. Two ignores multiplicity; four treats a local skip as permanent deletion."
+    },
+    {
+      "lang": "en",
+      "answer": 1,
+      "feedback": "That prediction does not hold. The answer is 3. Six letters are missing and each sticker supplies at most two, so at least three are needed; ab+ac+bc attains it. Only the first sticker must cover a. After ab, the remainder is abcc; ac and bc can follow. Skipping is local to a call, not a global ban. Two ignores multiplicity; four treats a local skip as permanent deletion."
+    },
+    {
+      "lang": "en",
+      "answer": 2,
+      "feedback": "Correct prediction. The answer is 3. Six letters are missing and each sticker supplies at most two, so at least three are needed; ab+ac+bc attains it. Only the first sticker must cover a. After ab, the remainder is abcc; ac and bc can follow. Skipping is local to a call, not a global ban. Two ignores multiplicity; four treats a local skip as permanent deletion."
+    },
+    {
+      "lang": "en",
+      "formula": "F(0)=0; child[j]=max(0,r[j]−sticker[j]); F(r)=min(1+F(child)), over sticker[p]>0 only; no feasible branch means ∞.",
+      "history": "Ready to search remainder aab.Enter call: remaining aab.Parent aab uses ab (covers pivot a) → child a; parent tuple unchanged.Enter call: remaining a.Parent a uses ab (covers pivot a) → child ∅; parent tuple unchanged.Enter call: remaining ∅.Empty remainder: F(∅)=0, ready to return.Return to a: sticker ab, child ∅ has value 0; candidate 1; best so far 1.Parent a uses a (covers pivot a) → child ∅; parent tuple unchanged.Enter call: remaining ∅.Reuse completed F(∅)=0; no further search."
+    },
+    {
+      "lang": "zh",
+      "answer": 0,
+      "feedback": "这个预测不成立。 答案是 3。共缺 6 个字母，每张至多供 2 个，所以至少 3 张；ab+ac+bc 恰好满足。根调用只要求第一张含 a；先用 ab 后剩 abcc，之后可以用 ac 和 bc。跳过只是当前调用的筛选，不是全局禁用。2 忽略份数，4 把局部跳过误当成永久删除。"
+    },
+    {
+      "lang": "zh",
+      "answer": 1,
+      "feedback": "这个预测不成立。 答案是 3。共缺 6 个字母，每张至多供 2 个，所以至少 3 张；ab+ac+bc 恰好满足。根调用只要求第一张含 a；先用 ab 后剩 abcc，之后可以用 ac 和 bc。跳过只是当前调用的筛选，不是全局禁用。2 忽略份数，4 把局部跳过误当成永久删除。"
+    },
+    {
+      "lang": "zh",
+      "answer": 2,
+      "feedback": "预测正确。 答案是 3。共缺 6 个字母，每张至多供 2 个，所以至少 3 张；ab+ac+bc 恰好满足。根调用只要求第一张含 a；先用 ab 后剩 abcc，之后可以用 ac 和 bc。跳过只是当前调用的筛选，不是全局禁用。2 忽略份数，4 把局部跳过误当成永久删除。"
+    },
+    {
+      "lang": "zh",
+      "formula": "F(0)=0；child[j]=max(0,r[j]−sticker[j])；F(r)=min(1+F(child))，只枚举 sticker[p]>0；无可行分支为 ∞。",
+      "history": "准备搜索剩余 aab。进入调用：剩余 aab。父 aab 用 ab（含枢轴 a）→ 子 a；父元组不变。进入调用：剩余 a。父 a 用 ab（含枢轴 a）→ 子 ∅；父元组不变。进入调用：剩余 ∅。空剩余：F(∅)=0，准备返回。返回父 a：贴纸 ab 的子 ∅ 值 0；候选 1；当前最小 1。父 a 用 a（含枢轴 a）→ 子 ∅；父元组不变。进入调用：剩余 ∅。复用已完成的 F(∅)=0，不再搜索。"
+    }
+  ],
+  "contrast": [
+    {
+      "name": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "name": "muted",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "name": "button",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "name": "disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "name": "code",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(9, 14, 22)",
+      "ratio": 16.437295258072666
+    },
+    {
+      "name": "focus on panel",
+      "ratio": 9.809435643476732
+    }
+  ],
+  "focus": {
+    "outline": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "cssBytes": 11725,
+  "errors": [],
+  "badAssets": [],
+  "sourceParity": {
+    "display": true,
+    "clipboard": true,
+    "download": true,
+    "manualNativeCopy": true,
+    "offline": true
+  },
+  "widths": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "200% CSS layout zoom in Chromium",
+  "blockedStorage": true,
+  "keyboard": true,
+  "forcedColors": true,
+  "reducedMotion": true
+}

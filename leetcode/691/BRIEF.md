@@ -83,3 +83,14 @@ subtraction. Browser: locales/presets/endpoints/quiz/copy/fallback/blocked stora
 rendered/copied/downloaded source parity. Artifacts honor OUTPUT_DIR.
 Limits: no LeetCode submission, novice study, physical device test or public
 release is implied by author self-checks.
+
+## R691-01 focused repair candidate (2026-10-25)
+Reuse the reviewed layout, tokens, native selector and state lifecycle. The only
+product change is the English p6 label: “15-letter target · −1”, preserving input
+length scope and advertised result at 320 px. Full target and sticker data remain
+in the adjacent input readout. Chinese copy, algorithm, interface and source pairs
+are unchanged. P0: selected-label readability and bilingual interaction regression;
+P1/P2: no additional work. Deferred: physical devices and other native font
+platforms (unavailable); independent finding closure belongs to the next reviewer.
+Evidence and frozen file receipt: tests/evidence/review-1-fix/. This is an author
+repair awaiting separate re-review, not independent acceptance.

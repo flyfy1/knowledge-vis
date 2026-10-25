@@ -1,0 +1,8 @@
+AssertionError [ERR_ASSERTION]: R691-01 en 320 zoom 1: {"label":"Length-15 target, missing letters · −1","font":"16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif","fontFamily":"\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif","width":262,"height":48,"textWidth":276.24029541015625,"allowance":210,"arrowReserve":20,"value":"6"}
+    at /home/songyy/projects/leetcode-hard-lane-691-20261025/leetcode/691/tests/selected-label.cjs:38:6 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '=='
+}
