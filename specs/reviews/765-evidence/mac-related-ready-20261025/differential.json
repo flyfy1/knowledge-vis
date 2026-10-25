@@ -1,0 +1,91 @@
+{
+  "browser": "151.0.7922.34",
+  "platform": "darwin",
+  "rows": [
+    {
+      "mode": "original",
+      "immediate": "03\n\n\n\n\n\n\n\n\n\n\n\n",
+      "immediatePass": false,
+      "timeout": true,
+      "settled": "03\n\n\n\n\n\n\n\n\n\n\n\n",
+      "settledPass": false,
+      "chinese": "03\n\n\n\n\n\n\n\n\n\n\n\n",
+      "chinesePass": false,
+      "readyState": "complete",
+      "errors": [
+        "ReferenceError: HardModels is not defined"
+      ],
+      "responses": [
+        {
+          "url": "http://127.0.0.1:18866/leetcode/hard-first-ten/style.css?v=hard10-ids1",
+          "status": 404
+        },
+        {
+          "url": "http://127.0.0.1:18866/leetcode/hard-first-ten/core.js?v=hard10-ids1",
+          "status": 404
+        },
+        {
+          "url": "http://127.0.0.1:18866/leetcode/hard-first-ten/lesson.js?v=hard10-ids1",
+          "status": 404
+        }
+      ],
+      "overlay": []
+    },
+    {
+      "mode": "original-repeat",
+      "immediate": "03\n\n\n\n\n\n\n\n\n\n\n\n",
+      "immediatePass": false,
+      "timeout": true,
+      "settled": "03\n\n\n\n\n\n\n\n\n\n\n\n",
+      "settledPass": false,
+      "chinese": "03\n\n\n\n\n\n\n\n\n\n\n\n",
+      "chinesePass": false,
+      "readyState": "complete",
+      "errors": [
+        "ReferenceError: HardModels is not defined"
+      ],
+      "responses": [
+        {
+          "url": "http://127.0.0.1:18866/leetcode/hard-first-ten/style.css?v=hard10-ids1",
+          "status": 404
+        },
+        {
+          "url": "http://127.0.0.1:18866/leetcode/hard-first-ten/core.js?v=hard10-ids1",
+          "status": 404
+        },
+        {
+          "url": "http://127.0.0.1:18866/leetcode/hard-first-ten/lesson.js?v=hard10-ids1",
+          "status": 404
+        }
+      ],
+      "overlay": []
+    },
+    {
+      "mode": "exact-dependency-overlay",
+      "immediate": "03What changes in one operation?Once x reaches x−1 it stays there. Out-of-range values and extra copies fill no new valid destination; the remaining gaps identify the answer. The lower row shows expected values, the upper row current values.Advance through swaps and watch correct slots accumulate. Switch to duplicates and see how “destination already has this value” stops a cycle.\nExperiment input (changing restarts)Chained swapsDuplicate cycle trapAll out of rangeComplete 1…n\n[3,4,-1,1]\nRewind one operationExecute next operationRestart this experiment\nEvent positionEvent 0 / 8\nInitial state; no operation has run.\nHighlight and underline mark positions involved in this operation; indices appear below values.nums: index i should contain i+13041-1213Expected value at each position10213243\nPrevious stateNo previous frame yet.\nDiagram operation markersop_i marks the placement-loop position described by this frame; swap_to marks the destination of a swap just completed in this frame. ∅ means no applicable marker, not Python index −1 or a saved variable. After the first swap, skipping −1 shows op_i=0 and swap_to=∅; Python’s saved target is still 2. The final frame summarizes the scan result with both markers ∅.op_i∅swap_to∅\n\nCorresponding Python operation (focused excerpt)n = len(nums)\nRecent operations (up to 6 retained)0: Initial state; no operation has run.\n",
+      "immediatePass": true,
+      "timeout": false,
+      "settled": "03What changes in one operation?Once x reaches x−1 it stays there. Out-of-range values and extra copies fill no new valid destination; the remaining gaps identify the answer. The lower row shows expected values, the upper row current values.Advance through swaps and watch correct slots accumulate. Switch to duplicates and see how “destination already has this value” stops a cycle.\nExperiment input (changing restarts)Chained swapsDuplicate cycle trapAll out of rangeComplete 1…n\n[3,4,-1,1]\nRewind one operationExecute next operationRestart this experiment\nEvent positionEvent 0 / 8\nInitial state; no operation has run.\nHighlight and underline mark positions involved in this operation; indices appear below values.nums: index i should contain i+13041-1213Expected value at each position10213243\nPrevious stateNo previous frame yet.\nDiagram operation markersop_i marks the placement-loop position described by this frame; swap_to marks the destination of a swap just completed in this frame. ∅ means no applicable marker, not Python index −1 or a saved variable. After the first swap, skipping −1 shows op_i=0 and swap_to=∅; Python’s saved target is still 2. The final frame summarizes the scan result with both markers ∅.op_i∅swap_to∅\n\nCorresponding Python operation (focused excerpt)n = len(nums)\nRecent operations (up to 6 retained)0: Initial state; no operation has run.\n",
+      "settledPass": true,
+      "chinese": "03一次操作改变什么？已放到 x−1 的 x 不再离开。越界数与多余副本不能占用新的有效目标；它们最终所在的缺口指出答案。图下行是目标值，上行是当前值。逐次交换，固定位置看目标是否越来越多被填满；切换到重复值，观察“目标已有相同数”如何停止，而不是无限交换。\n实验输入（切换会重启）连续交换重复导致的循环陷阱全部在范围外1 到 n 齐全\n[3,4,-1,1]\n回退一次操作执行下一次操作重启当前实验\n事件位置事件 0 / 8\n初始状态；尚未执行操作。\n高亮与下划线标记当前操作涉及的位置；数字下方是下标。nums：下标 i 的目标值是 i+13041-1213每个位置应有的数10213243\n上一次状态还没有上一帧。\n图示操作标记op_i 是本帧放置循环检查的位置；swap_to 是本帧刚完成交换的目标下标。∅ 表示本帧没有对应标记，不是 Python 的 −1 下标，也不是保存的变量。第一次交换后跳过 −1 时，图示为 op_i=0、swap_to=∅；Python 上一次保存的 target 仍是 2。最终扫描帧汇总结果，两个标记均为 ∅。op_i∅swap_to∅\n\n对应 Python 操作（局部展开）n = len(nums)\n最近的操作（保留最多 6 条）0: 初始状态；尚未执行操作。\n",
+      "chinesePass": true,
+      "readyState": "complete",
+      "errors": [],
+      "responses": [],
+      "overlay": [
+        {
+          "path": "leetcode/hard-first-ten/style.css",
+          "sha256": "09ebfd4c560ceee4b5c4e15442f37e21e8a9115525f20c74c1a34491af6a48b1"
+        },
+        {
+          "path": "leetcode/hard-first-ten/core.js",
+          "sha256": "342d7cbdf8c1e6f8527e6804ec286157e8fc63513a3c36c61d67c496bd08eeed"
+        },
+        {
+          "path": "leetcode/hard-first-ten/lesson.js",
+          "sha256": "18365da600d3a774aec9afb96deb377fa269fe894424ed6cef41ad9f929c9731"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "candidate": "3193aec4bdbbb13e094664e0de79cac6039f538a",
+  "newRoot": "/tmp/leetcode-765-repaired-candidate-20261025",
+  "oldRoot": "/tmp/leetcode-765-778-candidate-20261025",
+  "newFileCount": 212,
+  "missingDependencies": [
+    {
+      "path": "leetcode/hard-first-ten/style.css",
+      "newExists": false,
+      "oldExists": true,
+      "oldMatchesExactCandidate": true,
+      "candidateSha256": "09ebfd4c560ceee4b5c4e15442f37e21e8a9115525f20c74c1a34491af6a48b1"
+    },
+    {
+      "path": "leetcode/hard-first-ten/core.js",
+      "newExists": false,
+      "oldExists": true,
+      "oldMatchesExactCandidate": true,
+      "candidateSha256": "342d7cbdf8c1e6f8527e6804ec286157e8fc63513a3c36c61d67c496bd08eeed"
+    },
+    {
+      "path": "leetcode/hard-first-ten/lesson.js",
+      "newExists": false,
+      "oldExists": true,
+      "oldMatchesExactCandidate": true,
+      "candidateSha256": "18365da600d3a774aec9afb96deb377fa269fe894424ed6cef41ad9f929c9731"
+    }
+  ],
+  "present765and41FilesChecked": 188,
+  "allPresentCheckedFilesMatch": true,
+  "overlayOnly": true
+}
