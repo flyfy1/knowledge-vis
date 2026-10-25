@@ -1,0 +1,43 @@
+{
+  "id": 630,
+  "title": {
+    "zh": "课程表 III",
+    "en": "Course Schedule III"
+  },
+  "desc": {
+    "zh": "按截止日安排课程，用最长课程替换挽回时间。",
+    "en": "Order courses by deadline and recover time by removing the longest."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "贪心",
+      "en": "Greedy"
+    },
+    {
+      "zh": "堆",
+      "en": "Heap"
+    }
+  ],
+  "path": "630/",
+  "leetcodeUrl": "https://leetcode.com/problems/course-schedule-iii/",
+  "language": "Python",
+  "complexity": "O(n log n) time; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "Deadline ordering",
+      "step": 1,
+      "description": "Exchange adjacent inverted deadlines without losing feasibility."
+    },
+    {
+      "name": "Longest-course removal",
+      "step": 2,
+      "description": "Repair the first overload while preserving an optimal possible count."
+    },
+    {
+      "name": "Max heap",
+      "step": 4,
+      "description": "Negated durations expose the longest retained course."
+    }
+  ]
+}

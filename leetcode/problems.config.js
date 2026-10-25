@@ -2173,6 +2173,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(log n) time; O(log n) auxiliary space (unit-cost arithmetic within the official bounds)"
   },
   {
+    "id": 630,
+    "title": {
+      "zh": "课程表 III",
+      "en": "Course Schedule III"
+    },
+    "desc": {
+      "zh": "按截止日安排课程，用最长课程替换挽回时间。",
+      "en": "Order courses by deadline and recover time by removing the longest."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "堆",
+        "en": "Heap"
+      }
+    ],
+    "path": "630/",
+    "leetcodeUrl": "https://leetcode.com/problems/course-schedule-iii/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
