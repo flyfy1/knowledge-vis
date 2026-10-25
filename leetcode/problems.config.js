@@ -3359,6 +3359,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(nS) expected time; O(S) auxiliary space, S = sum(rods)"
   },
   {
+    "id": 960,
+    "title": {
+      "zh": "删列造序 III",
+      "en": "Delete Columns to Make Sorted III"
+    },
+    "desc": {
+      "zh": "从共享列的兼容关系推导最长保留链。",
+      "en": "Derive a longest kept chain from shared-column compatibility."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "子序列",
+        "en": "Subsequences"
+      }
+    ],
+    "path": "960/",
+    "leetcodeUrl": "https://leetcode.com/problems/delete-columns-to-make-sorted-iii/",
+    "language": "Python",
+    "complexity": "O(nm²) time; O(m) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

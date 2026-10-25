@@ -1,0 +1,459 @@
+{
+  "type": "author browser self-check",
+  "url": "http://127.0.0.1:18789/leetcode/960/",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "zoom": "Native Chromium tabs.setZoom(2), window 1280x1400; CDP fromSurface capture",
+  "zoomMetrics": {
+    "devicePixelRatio": 2,
+    "innerWidth": 640,
+    "outerWidth": 1280,
+    "innerHeight": 656
+  },
+  "colors": {
+    "--bg": [
+      13,
+      17,
+      23
+    ],
+    "--panel": [
+      22,
+      27,
+      34
+    ],
+    "--panel2": [
+      28,
+      35,
+      48
+    ],
+    "--text": [
+      232,
+      237,
+      244
+    ],
+    "--muted": [
+      154,
+      167,
+      184
+    ],
+    "--accent": [
+      110,
+      231,
+      255
+    ],
+    "--accent2": [
+      255,
+      180,
+      84
+    ],
+    "--good": [
+      126,
+      226,
+      168
+    ]
+  },
+  "contrasts": [
+    {
+      "fg": "--text",
+      "bg": "--bg",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--text",
+      "bg": "--panel",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--text",
+      "bg": "--panel2",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--muted",
+      "bg": "--bg",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel",
+      "ratio": 7.078851579017443,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel2",
+      "ratio": 6.449407898769069,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent",
+      "bg": "--bg",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel",
+      "ratio": 11.974898815275662,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel2",
+      "ratio": 10.910104011097095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--bg",
+      "ratio": 10.731637051347173,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel",
+      "ratio": 9.809435643476732,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel2",
+      "ratio": 8.937191437807625,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--good",
+      "bg": "--bg",
+      "ratio": 12.013623247863544,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--good",
+      "bg": "--panel",
+      "ratio": 10.981256963037128,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--good",
+      "bg": "--panel2",
+      "ratio": 10.004815697188947,
+      "threshold": 4.5
+    }
+  ],
+  "focus": {
+    "focused": true,
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "states": [
+    {
+      "language": "en",
+      "preset": 0,
+      "result": "Final minimum deleted columns = 3 − 2 = 1.",
+      "pairs": "Candidate 0 → 2: Row 0: b ≤ c (pass); Row 1: a ≤ c (pass). Compatible, candidate length dp[0]+1 = 2; dp[2]: 1 → 2.Candidate 1 → 2: Row 0: a ≤ c (pass); Row 1: b ≤ c (pass). Compatible, candidate length dp[1]+1 = 2; dp[2]: 2 → 2."
+    },
+    {
+      "language": "en",
+      "preset": 1,
+      "result": "Final minimum deleted columns = 5 − 2 = 3.",
+      "pairs": "Candidate 0 → 4: Row 0: b > a (fail); Row 1: b ≤ b (pass). At least one row decreases: reject; dp[4]: 1 → 1.Candidate 1 → 4: Row 0: a ≤ a (pass); Row 1: b ≤ b (pass). Compatible, candidate length dp[1]+1 = 2; dp[4]: 1 → 2.Candidate 2 → 4: Row 0: b > a (fail); Row 1: a ≤ b (pass). At least one row decreases: reject; dp[4]: 2 → 2.Candidate 3 → 4: Row 0: c > a (fail); Row 1: z > b (fail). At least one row decreases: reject; dp[4]: 2 → 2."
+    },
+    {
+      "language": "en",
+      "preset": 2,
+      "result": "Final minimum deleted columns = 5 − 1 = 4.",
+      "pairs": "Candidate 0 → 4: Row 0: e > a (fail). At least one row decreases: reject; dp[4]: 1 → 1.Candidate 1 → 4: Row 0: d > a (fail). At least one row decreases: reject; dp[4]: 1 → 1.Candidate 2 → 4: Row 0: c > a (fail). At least one row decreases: reject; dp[4]: 1 → 1.Candidate 3 → 4: Row 0: b > a (fail). At least one row decreases: reject; dp[4]: 1 → 1."
+    },
+    {
+      "language": "en",
+      "preset": 3,
+      "result": "Final minimum deleted columns = 3 − 3 = 0.",
+      "pairs": "Candidate 0 → 2: Row 0: g ≤ i (pass); Row 1: d ≤ f (pass); Row 2: a ≤ c (pass). Compatible, candidate length dp[0]+1 = 2; dp[2]: 1 → 2.Candidate 1 → 2: Row 0: h ≤ i (pass); Row 1: e ≤ f (pass); Row 2: b ≤ c (pass). Compatible, candidate length dp[1]+1 = 3; dp[2]: 2 → 3."
+    },
+    {
+      "language": "en",
+      "preset": 4,
+      "result": "Final minimum deleted columns = 3 − 3 = 0.",
+      "pairs": "Candidate 0 → 2: Row 0: a ≤ a (pass); Row 1: b ≤ b (pass). Compatible, candidate length dp[0]+1 = 2; dp[2]: 1 → 2.Candidate 1 → 2: Row 0: a ≤ a (pass); Row 1: b ≤ b (pass). Compatible, candidate length dp[1]+1 = 3; dp[2]: 2 → 3."
+    },
+    {
+      "language": "en",
+      "preset": 5,
+      "result": "Final minimum deleted columns = 3 − 2 = 1.",
+      "pairs": "Candidate 0 → 2: Row 0: c > b (fail); Row 1: a ≤ c (pass). At least one row decreases: reject; dp[2]: 1 → 1.Candidate 1 → 2: Row 0: a ≤ b (pass); Row 1: b ≤ c (pass). Compatible, candidate length dp[1]+1 = 2; dp[2]: 1 → 2."
+    },
+    {
+      "language": "en",
+      "state": "worked terminal",
+      "formula": "dp[j] = max({1} ∪ {dp[i] + 1 : 0 ≤ i < j and i → j is compatible}); answer = m − max(dp)",
+      "pairs": "Candidate 0 → 2: Row 0: b ≤ c (pass); Row 1: a ≤ c (pass). Compatible, candidate length dp[0]+1 = 2; dp[2]: 1 → 2.Candidate 1 → 2: Row 0: a ≤ c (pass); Row 1: b ≤ c (pass). Compatible, candidate length dp[1]+1 = 2; dp[2]: 2 → 2."
+    },
+    {
+      "language": "en",
+      "option": 0,
+      "feedback": "Recheck the best length for each ending. dp = [1,2,2,3]. Column 2’s b cannot follow z, but it can follow column 0’s a. Column 3’s c follows column 2. Keeping [0,2,3] gives \"abc\" and \"acd\", so 4−3=1. Zero fails because z>b; two deletions are feasible but miss the length-3 chain."
+    },
+    {
+      "language": "en",
+      "option": 1,
+      "feedback": "Recheck the best length for each ending. dp = [1,2,2,3]. Column 2’s b cannot follow z, but it can follow column 0’s a. Column 3’s c follows column 2. Keeping [0,2,3] gives \"abc\" and \"acd\", so 4−3=1. Zero fails because z>b; two deletions are feasible but miss the length-3 chain."
+    },
+    {
+      "language": "en",
+      "option": 2,
+      "feedback": "Correct. dp = [1,2,2,3]. Column 2’s b cannot follow z, but it can follow column 0’s a. Column 3’s c follows column 2. Keeping [0,2,3] gives \"abc\" and \"acd\", so 4−3=1. Zero fails because z>b; two deletions are feasible but miss the length-3 chain."
+    },
+    {
+      "language": "en",
+      "clipboard": "native fallback",
+      "attempt": 0,
+      "host": "linux",
+      "sentinelVerified": true,
+      "exactSource": true
+    },
+    {
+      "language": "en",
+      "clipboard": "native fallback",
+      "attempt": 1,
+      "host": "linux",
+      "sentinelVerified": true,
+      "exactSource": true
+    },
+    {
+      "language": "zh",
+      "preset": 0,
+      "result": "最终最少删除列数 = 3 − 2 = 1。",
+      "pairs": "候选 0 → 2：行 0：b ≤ c（通过）; 行 1：a ≤ c（通过）。兼容，候选长度 dp[0]+1 = 2；dp[2]：1 → 2。候选 1 → 2：行 0：a ≤ c（通过）; 行 1：b ≤ c（通过）。兼容，候选长度 dp[1]+1 = 2；dp[2]：2 → 2。"
+    },
+    {
+      "language": "zh",
+      "preset": 1,
+      "result": "最终最少删除列数 = 5 − 2 = 3。",
+      "pairs": "候选 0 → 4：行 0：b > a（不通过）; 行 1：b ≤ b（通过）。至少一行下降，拒绝；dp[4]：1 → 1。候选 1 → 4：行 0：a ≤ a（通过）; 行 1：b ≤ b（通过）。兼容，候选长度 dp[1]+1 = 2；dp[4]：1 → 2。候选 2 → 4：行 0：b > a（不通过）; 行 1：a ≤ b（通过）。至少一行下降，拒绝；dp[4]：2 → 2。候选 3 → 4：行 0：c > a（不通过）; 行 1：z > b（不通过）。至少一行下降，拒绝；dp[4]：2 → 2。"
+    },
+    {
+      "language": "zh",
+      "preset": 2,
+      "result": "最终最少删除列数 = 5 − 1 = 4。",
+      "pairs": "候选 0 → 4：行 0：e > a（不通过）。至少一行下降，拒绝；dp[4]：1 → 1。候选 1 → 4：行 0：d > a（不通过）。至少一行下降，拒绝；dp[4]：1 → 1。候选 2 → 4：行 0：c > a（不通过）。至少一行下降，拒绝；dp[4]：1 → 1。候选 3 → 4：行 0：b > a（不通过）。至少一行下降，拒绝；dp[4]：1 → 1。"
+    },
+    {
+      "language": "zh",
+      "preset": 3,
+      "result": "最终最少删除列数 = 3 − 3 = 0。",
+      "pairs": "候选 0 → 2：行 0：g ≤ i（通过）; 行 1：d ≤ f（通过）; 行 2：a ≤ c（通过）。兼容，候选长度 dp[0]+1 = 2；dp[2]：1 → 2。候选 1 → 2：行 0：h ≤ i（通过）; 行 1：e ≤ f（通过）; 行 2：b ≤ c（通过）。兼容，候选长度 dp[1]+1 = 3；dp[2]：2 → 3。"
+    },
+    {
+      "language": "zh",
+      "preset": 4,
+      "result": "最终最少删除列数 = 3 − 3 = 0。",
+      "pairs": "候选 0 → 2：行 0：a ≤ a（通过）; 行 1：b ≤ b（通过）。兼容，候选长度 dp[0]+1 = 2；dp[2]：1 → 2。候选 1 → 2：行 0：a ≤ a（通过）; 行 1：b ≤ b（通过）。兼容，候选长度 dp[1]+1 = 3；dp[2]：2 → 3。"
+    },
+    {
+      "language": "zh",
+      "preset": 5,
+      "result": "最终最少删除列数 = 3 − 2 = 1。",
+      "pairs": "候选 0 → 2：行 0：c > b（不通过）; 行 1：a ≤ c（通过）。至少一行下降，拒绝；dp[2]：1 → 1。候选 1 → 2：行 0：a ≤ b（通过）; 行 1：b ≤ c（通过）。兼容，候选长度 dp[1]+1 = 2；dp[2]：1 → 2。"
+    },
+    {
+      "language": "zh",
+      "state": "worked terminal",
+      "formula": "dp[j] = max({1} ∪ {dp[i] + 1 : 0 ≤ i < j 且 i → j 兼容})；答案 = m − max(dp)",
+      "pairs": "候选 0 → 2：行 0：b ≤ c（通过）; 行 1：a ≤ c（通过）。兼容，候选长度 dp[0]+1 = 2；dp[2]：1 → 2。候选 1 → 2：行 0：a ≤ c（通过）; 行 1：b ≤ c（通过）。兼容，候选长度 dp[1]+1 = 2；dp[2]：2 → 2。"
+    },
+    {
+      "language": "zh",
+      "option": 0,
+      "feedback": "再检查每个结尾的最好长度。 dp = [1,2,2,3]。列 2 的 b 不能接在 z 后，但可接列 0 的 a；列 3 的 c 接列 2，保留 [0,2,3] 得到 \"abc\"、\"acd\"。所以 4−3=1。0 不行，因为 z>b；2 虽可行，却漏掉了长度 3 的链。"
+    },
+    {
+      "language": "zh",
+      "option": 1,
+      "feedback": "再检查每个结尾的最好长度。 dp = [1,2,2,3]。列 2 的 b 不能接在 z 后，但可接列 0 的 a；列 3 的 c 接列 2，保留 [0,2,3] 得到 \"abc\"、\"acd\"。所以 4−3=1。0 不行，因为 z>b；2 虽可行，却漏掉了长度 3 的链。"
+    },
+    {
+      "language": "zh",
+      "option": 2,
+      "feedback": "正确。 dp = [1,2,2,3]。列 2 的 b 不能接在 z 后，但可接列 0 的 a；列 3 的 c 接列 2，保留 [0,2,3] 得到 \"abc\"、\"acd\"。所以 4−3=1。0 不行，因为 z>b；2 虽可行，却漏掉了长度 3 的链。"
+    },
+    {
+      "language": "zh",
+      "clipboard": "native fallback",
+      "attempt": 0,
+      "host": "linux",
+      "sentinelVerified": true,
+      "exactSource": true
+    },
+    {
+      "language": "zh",
+      "clipboard": "native fallback",
+      "attempt": 1,
+      "host": "linux",
+      "sentinelVerified": true,
+      "exactSource": true
+    },
+    {
+      "language": "en",
+      "width": 320,
+      "optionBudget": {
+        "label": "Official 1 · babca / bbazb",
+        "text": 184.06439208984375,
+        "width": 256,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#960 · Delete Columns to Make Sorted III"
+    },
+    {
+      "language": "zh",
+      "width": 320,
+      "optionBudget": {
+        "label": "官方 1 · babca / bbazb",
+        "text": 163.5203399658203,
+        "width": 256,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#960 · 删列造序 III"
+    },
+    {
+      "language": "en",
+      "width": 390,
+      "optionBudget": {
+        "label": "Official 1 · babca / bbazb",
+        "text": 184.06439208984375,
+        "width": 326,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#960 · Delete Columns to Make Sorted III"
+    },
+    {
+      "language": "zh",
+      "width": 390,
+      "optionBudget": {
+        "label": "官方 1 · babca / bbazb",
+        "text": 163.5203399658203,
+        "width": 326,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#960 · 删列造序 III"
+    },
+    {
+      "language": "en",
+      "width": 736,
+      "optionBudget": {
+        "label": "Official 1 · babca / bbazb",
+        "text": 184.06439208984375,
+        "width": 644,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#960 · Delete Columns to Make Sorted III"
+    },
+    {
+      "language": "zh",
+      "width": 736,
+      "optionBudget": {
+        "label": "官方 1 · babca / bbazb",
+        "text": 163.5203399658203,
+        "width": 644,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#960 · 删列造序 III"
+    },
+    {
+      "language": "en",
+      "width": 1440,
+      "optionBudget": {
+        "label": "Official 1 · babca / bbazb",
+        "text": 184.06439208984375,
+        "width": 908,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#960 · Delete Columns to Make Sorted III"
+    },
+    {
+      "language": "zh",
+      "width": 1440,
+      "optionBudget": {
+        "label": "官方 1 · babca / bbazb",
+        "text": 163.5203399658203,
+        "width": 908,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#960 · 删列造序 III"
+    },
+    {
+      "language": "zh",
+      "target": "http://127.0.0.1:18789/leetcode/115/#step0",
+      "heading": "1 · 数的是位置选择"
+    },
+    {
+      "language": "zh",
+      "target": "http://127.0.0.1:18789/leetcode/801/#step2",
+      "heading": "哪些历史可以合并？"
+    },
+    {
+      "language": "en",
+      "target": "http://127.0.0.1:18789/leetcode/115/#step0",
+      "heading": "1 · Count choices of positions"
+    },
+    {
+      "language": "en",
+      "target": "http://127.0.0.1:18789/leetcode/801/#step2",
+      "heading": "Which histories can be merged?"
+    }
+  ],
+  "screenshots": [
+    "preset-en-320.png",
+    "trace-en-320.png",
+    "table-en-320.png",
+    "pairs-en-320.png",
+    "preset-zh-320.png",
+    "trace-zh-320.png",
+    "table-zh-320.png",
+    "pairs-zh-320.png",
+    "preset-en-390.png",
+    "trace-en-390.png",
+    "table-en-390.png",
+    "pairs-en-390.png",
+    "preset-zh-390.png",
+    "trace-zh-390.png",
+    "table-zh-390.png",
+    "pairs-zh-390.png",
+    "preset-en-736.png",
+    "trace-en-736.png",
+    "table-en-736.png",
+    "pairs-en-736.png",
+    "preset-zh-736.png",
+    "trace-zh-736.png",
+    "table-zh-736.png",
+    "pairs-zh-736.png",
+    "preset-en-1440.png",
+    "trace-en-1440.png",
+    "table-en-1440.png",
+    "pairs-en-1440.png",
+    "preset-zh-1440.png",
+    "trace-zh-1440.png",
+    "table-zh-1440.png",
+    "pairs-zh-1440.png",
+    "prediction-en-390.png",
+    "lesson-en-desktop.png",
+    "prediction-zh-390.png",
+    "lesson-zh-desktop.png",
+    "zoom200-en.png",
+    "zoom200-zh.png"
+  ],
+  "errors": [],
+  "localAssetsOnly": true
+}
