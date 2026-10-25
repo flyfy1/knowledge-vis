@@ -1547,3 +1547,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Rolling count rows | `leetcode/920/#step4` | Keep the previous length row while constructing the next one. |
 
 <!-- /leetcode-920-campaign -->
+
+
+<!-- leetcode-801-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Two-ending prefix DP | `leetcode/801/#step2` | Keep the cheapest valid prefix for each last-column orientation. |
+| Endpoint sufficiency proof | `leetcode/801/#step3` | Histories with identical endpoints have identical future choices. |
+
+<!-- /leetcode-801-campaign -->

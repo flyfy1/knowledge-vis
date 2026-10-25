@@ -3103,6 +3103,28 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) space"
   },
   {
+    "id": 801,
+    "title": {
+      "zh": "使序列递增的最小交换次数",
+      "en": "Minimum Swaps To Make Sequences Increasing"
+    },
+    "desc": {
+      "zh": "从一次竖直交换推导保留两种结尾的动态规划。",
+      "en": "Derive a two-ending dynamic program from vertical swaps."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      }
+    ],
+    "path": "801/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
     "id": 803,
     "title": {
       "zh": "打砖块",
