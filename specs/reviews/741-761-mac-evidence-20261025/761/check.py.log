@@ -1,0 +1,1 @@
+{"result": "pass", "canonicalCases": 302, "exhaustiveMaxLength": 12, "seed": 761, "seededLength14Cases": 100, "traceFrames": 18238, "returnInvariantOracleInputs": 303, "oracle": "all reachable states by legal adjacent-special-substring swaps", "sourceParity": true}

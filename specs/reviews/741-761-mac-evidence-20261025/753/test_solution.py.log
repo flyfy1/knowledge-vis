@@ -1,0 +1,82 @@
+{
+  "official_domain_pairs": 38,
+  "seeded_repeats": 150,
+  "seed": 753,
+  "bfs_oracles": [
+    {
+      "n": 1,
+      "k": 1,
+      "bfs": "0",
+      "length": 1
+    },
+    {
+      "n": 1,
+      "k": 2,
+      "bfs": "01",
+      "length": 2
+    },
+    {
+      "n": 1,
+      "k": 3,
+      "bfs": "012",
+      "length": 3
+    },
+    {
+      "n": 1,
+      "k": 4,
+      "bfs": "0123",
+      "length": 4
+    },
+    {
+      "n": 1,
+      "k": 5,
+      "bfs": "01234",
+      "length": 5
+    },
+    {
+      "n": 2,
+      "k": 1,
+      "bfs": "00",
+      "length": 2
+    },
+    {
+      "n": 2,
+      "k": 2,
+      "bfs": "00110",
+      "length": 5
+    },
+    {
+      "n": 3,
+      "k": 1,
+      "bfs": "000",
+      "length": 3
+    },
+    {
+      "n": 3,
+      "k": 2,
+      "bfs": "0001011100",
+      "length": 10
+    },
+    {
+      "n": 4,
+      "k": 1,
+      "bfs": "0000",
+      "length": 4
+    },
+    {
+      "n": 4,
+      "k": 2,
+      "bfs": "0000100110101111000",
+      "length": 19
+    },
+    {
+      "n": 2,
+      "k": 3,
+      "bfs": "0010211220",
+      "length": 10
+    }
+  ],
+  "localization_keys": 93,
+  "source_parity": true,
+  "rendered_baseline_executed_pairs": 38
+}

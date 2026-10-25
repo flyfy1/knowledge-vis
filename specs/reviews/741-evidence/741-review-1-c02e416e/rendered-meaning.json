@@ -1,0 +1,23 @@
+{
+  "kind": "author self-check",
+  "evidence": [
+    {
+      "lang": "en",
+      "case": "2x2 all ones, merged final endpoint",
+      "merge": "Chosen best predecessor (1,0) has value 3; gain=1; 3+1=4. Parentheses contain predecessor rows; their columns follow from t−1.",
+      "formula": "Dₜ[r1,r2] = max Dₜ₋₁[p1,p2] + gain; p1 ∈ {r1,r1−1}, p2 ∈ {r2,r2−1}. gain = grid[r1][t−r1] + (grid[r2][t−r2] only when r1≠r2).",
+      "unreachable": "The current cells are passable, but all four predecessors are unreachable; D=−∞. A route worth zero is different from no route.",
+      "invalid": "At least one current cell is outside the grid or a thorn; D=−∞. No path is fabricated on the board.",
+      "feedback": "Recheck the predecessor and gain. Predecessor D₁[1,0]=3: the travelers are at (1,0) and (0,1), collecting three cherries including the start. D₁[0,0]=2: both share (0,1). The other predecessor columns are out of bounds. Take the maximum, 3, then add the distinct current cells, 1+0, to obtain 4. Choosing 3 omits the new cherry; choosing 5 adds mutually exclusive histories."
+    },
+    {
+      "lang": "zh",
+      "case": "2x2 all ones, merged final endpoint",
+      "merge": "选中的最佳前驱 (1,0) 值为 3；新增 gain=1；3+1=4。括号里是前驱行号，列由 t−1 决定。",
+      "formula": "Dₜ[r1,r2] = max Dₜ₋₁[p1,p2] + gain；p1 ∈ {r1,r1−1}，p2 ∈ {r2,r2−1}。gain = grid[r1][t−r1] + (r1≠r2 时的 grid[r2][t−r2])。",
+      "unreachable": "当前格可以走，但四个前驱都不可达；D=−∞。零颗樱桃不等于没有路线。",
+      "invalid": "当前两格越界或有荆棘，不能落脚；D=−∞。棋盘不显示虚构路径。",
+      "feedback": "再检查前驱与新增的分工。 前驱 D₁[1,0]=3：两人分别在 (1,0)、(0,1)，包括起点共三颗。D₁[0,0]=2：两人共用 (0,1)。其余前驱列越界。取最大 3，再加当前不同格子的 1+0，得到 4。选 3 漏掉了当前新樱桃；选 5 把互斥的历史相加了。"
+    }
+  ]
+}

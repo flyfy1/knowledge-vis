@@ -1,0 +1,49 @@
+{
+  "host": "darwin",
+  "browser": "151.0.7922.34",
+  "browserLaunch": "local chromium.launch",
+  "results": [
+    {
+      "locale": "en",
+      "sentinel": "745-independent-en-9437a728-9fb6-4090-b802-39f7e877b6fb",
+      "seedVerified": true,
+      "focus": true,
+      "selection": [
+        0,
+        405
+      ],
+      "sourceLength": 405,
+      "sourceSha256": "f1e4b4da6652b7a25b26648e9765054a683600c3db5c7ad038c36597dea1a259",
+      "wrongShortcut": "Control+c",
+      "wrongShortcutRetainedSentinel": true,
+      "actualShortcut": "Meta+c",
+      "clipboardSha256": "f1e4b4da6652b7a25b26648e9765054a683600c3db5c7ad038c36597dea1a259",
+      "exactCanonicalText": true,
+      "exactUtf8Bytes": true,
+      "newlineNormalized": false,
+      "message": "Clipboard unavailable; full source selected. Use your system copy shortcut.",
+      "errors": []
+    },
+    {
+      "locale": "zh",
+      "sentinel": "745-independent-zh-8d9dec5a-595f-4198-995a-a4ae83d1af81",
+      "seedVerified": true,
+      "focus": true,
+      "selection": [
+        0,
+        405
+      ],
+      "sourceLength": 405,
+      "sourceSha256": "f1e4b4da6652b7a25b26648e9765054a683600c3db5c7ad038c36597dea1a259",
+      "wrongShortcut": "Control+c",
+      "wrongShortcutRetainedSentinel": true,
+      "actualShortcut": "Meta+c",
+      "clipboardSha256": "f1e4b4da6652b7a25b26648e9765054a683600c3db5c7ad038c36597dea1a259",
+      "exactCanonicalText": true,
+      "exactUtf8Bytes": true,
+      "newlineNormalized": false,
+      "message": "剪贴板不可用；完整源码已选中，请使用系统复制快捷键。",
+      "errors": []
+    }
+  ]
+}

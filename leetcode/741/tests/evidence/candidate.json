@@ -1,0 +1,40 @@
+{
+  "problemId": 741,
+  "kind": "author candidate; independent review pending",
+  "frozenAt": "2026-10-25T07:41:26.356501+00:00",
+  "baseCommit": "05e85a09f9bd4d796aa133ea9710dd9812d45b1e",
+  "files": {
+    "BRIEF.md": "2a53fd927f5a3d0a335198e6bd9fb206ce8afd8d41ef4fda3b5e32d069d2577e",
+    "app.js": "2d805d019682b6232ef899036e6ffe71f4d54c9519d0def30f496210df5f206e",
+    "copy.js": "7634cdf7dcb9f7f01c778fac1fdfebd65d6525d3a2bb7d1626963892f61c2bec",
+    "core.js": "3749afe62d7bec57813d2894494023becf2dc642318c0f374508f8bb57e9fcb9",
+    "index.html": "cc7ddc850c134b47b05a2f14a079d79357a99c502caafd5bf6ae9f1e3611ba68",
+    "lesson-entry.json": "ed431af9243528ea8ecc927ca660c169615967c8664dc9863b2137bfab3e0ead",
+    "provenance/official.json": "d2216cca71088c2dc504b54180685cf96282ebefcb1b9f5a6f6283e1d2b585ee",
+    "python-code.js": "a5339ef1eb509f17b67eed1300f07bb9506cf7190a979acaf8ed3fd27218a70c",
+    "solution.py": "bf7335abc35abe708bee936858f16b11e1a0e6c7968c6cb833fc47d97208a786",
+    "style.css": "2b6f107c91536796ff586efae7d93d214783f7787a268d40e5b3335392db7db9",
+    "tests/SELF-CHECK.md": "0c01786372a28a9f872dbd6cb15827db581ea94c645c069fe9e8a14d1d41fe68",
+    "tests/browser.cjs": "82ec94f18ef0d5f55864fbd369cd09dabe7a1430a92279ffcb2b6abc6f2a5280",
+    "tests/check.py": "aa2f2640e2d0ec6aa5e820103a27790f6c88478d3a38ad2282684a4f03894438",
+    "tests/core.cjs": "14b1759fff0dffc1ad68312561be289ac4b009c09501ce1d4e96d78e87c093ab",
+    "tests/inspect.cjs": "5ef4b4ad2358f1285305bee3f4da5c4ee76e16a2d63328a127e72dffe6efb31e",
+    "tests/oracle.py": "1fdbf4f6891f75d72740b23cd7ac4c84344da4e60a6e3a219297b2491b62197f"
+  },
+  "sharedReadOnly": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "preflight": {
+    "command": "python3 -B scripts/register_leetcode_lesson.py 741 --validate-only",
+    "cwd": "repository root",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "checks": [
+    "python3 -B leetcode/741/tests/check.py",
+    "node leetcode/741/tests/browser.cjs",
+    "node leetcode/741/tests/inspect.cjs"
+  ]
+}

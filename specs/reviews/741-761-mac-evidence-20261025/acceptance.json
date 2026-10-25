@@ -1,0 +1,291 @@
+{
+  "captured_updated_at": "2026-10-25T09:36:55.510785+00:00",
+  "snapshot": "5887fa0c63eb5eaa3b1966eecb903c4a707030a5",
+  "problems": {
+    "741": {
+      "status": "accepted_local",
+      "rounds": 2,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "changes_required",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            3
+          ],
+          "required_open": [
+            "741-R1"
+          ],
+          "report_path": "specs/reviews/741-review-1-c02e416e.md",
+          "evidence": [
+            "Cold browser walkthrough recorded before source audit.",
+            "Canonical Python passed independent fresh-input checks.",
+            "Metadata preflight passed.",
+            "Bilingual interaction and exact source-transfer checks passed.",
+            "320px English preset selector visibly truncates its advertised result."
+          ],
+          "detail": "97.5/100; acceptance withheld until required readability finding 741-R1 is fixed and rechecked.",
+          "run_id": "741-review-833228b21445",
+          "candidate": "1df03890339676554dd58fa81ae99dcc73c6072d",
+          "candidate_sha256": "7f7b2bb235cdeb07e1633017816822ceffc670b7a59583f783caed1188fcf11d",
+          "weighted_score": 97.5,
+          "round": 1,
+          "commit": "9b76d2c47b8664d16a70fbfe38454f3f63553b90"
+        },
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/741-review-2-27f468af.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Fresh canonical Python checks confirmed predictions 4 and 3; 200 independent oracle cases passed.",
+            "Metadata validate-only preflight passed.",
+            "Bilingual interactions, keyboard, narrow layouts, CSS 200% zoom and exact source transfer passed.",
+            "Screenshots inspected; earlier required finding 741-R1 closed against this candidate."
+          ],
+          "detail": "100/100. No required findings remain. Optional navigation advisory recorded. Evidence is limited to headless Linux Chromium; no publication or LeetCode submission claimed.",
+          "run_id": "741-review-e0edd9f75a7f",
+          "candidate": "0931d834e513da00498c1944124bc3f3e532339b",
+          "candidate_sha256": "9d9671bcf69338c273a8e7fbbe17b98b954460c5a1f448d0709448794f729b79",
+          "weighted_score": 100.0,
+          "round": 2,
+          "commit": "63125e993c57293cc1eca8fe8c2c15b6d4ce8595"
+        }
+      ],
+      "author_runs": [
+        "741-author-7d41be0e6ea1",
+        "741-fix-c7780974b96f"
+      ],
+      "prior_report": "specs/reviews/741-review-2-27f468af.md",
+      "candidate": "0931d834e513da00498c1944124bc3f3e532339b",
+      "registration_commit": "c3716f686d613b76a29519ca3289dd36a1c2d941",
+      "accepted_at": "2026-10-25T08:00:42.663268+00:00"
+    },
+    "745": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            3
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/745-review-1-c55c2ad7.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Fresh canonical Python checks returned predicted 2, 1 and -1; intermediate invariants passed.",
+            "Both locales, rewind/reset, prediction changes, keyboard, narrow layouts and 200% CSS zoom checked.",
+            "Exact displayed/copied/downloaded source parity and native clipboard fallback passed.",
+            "Non-mutating metadata preflight exited 0.",
+            "Screenshots inspected in specs/reviews/745-evidence/745-review-1-c55c2ad7/."
+          ],
+          "detail": "97.5/100. No required findings; one optional English wording advisory. Chromium/Linux scope; no publication or LeetCode submission claim.",
+          "run_id": "745-review-50614a499a8b",
+          "candidate": "4a3d34fb6f4093b5e73a614d16d9a4bcf59107ca",
+          "candidate_sha256": "ec0fa60d99b9927827f43ebe77060e7d20649ee1b94cfcefb04b02bcfabb2ecd",
+          "weighted_score": 97.5,
+          "round": 1,
+          "commit": "ba98ca6398fdb991a69b12351a9c373658f4652e"
+        }
+      ],
+      "author_runs": [
+        "745-author-93c7ac192984"
+      ],
+      "prior_report": "specs/reviews/745-review-1-c55c2ad7.md",
+      "candidate": "4a3d34fb6f4093b5e73a614d16d9a4bcf59107ca",
+      "registration_commit": "cd9acc18e5ab1f35f29de01f6fab24e0bad1e56b",
+      "accepted_at": "2026-10-25T08:22:43.661971+00:00"
+    },
+    "749": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            3,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/749-review-1-6409dfb1.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Fresh canonical Python checks returned predicted 3, 3 and 11 walls, preserving input.",
+            "Both locales, keyboard controls, narrow layouts and 200% CSS zoom checked.",
+            "Exact displayed, copied, fallback-copied and downloaded source parity passed.",
+            "Non-mutating metadata preflight and inspected test reruns passed."
+          ],
+          "detail": "96.25/100. No required fixes; one optional Python syntax teaching advisory. Acceptance covers the identified local candidate, not publication or a LeetCode submission.",
+          "run_id": "749-review-1035627caffa",
+          "candidate": "d54c84ee031f37d8040bbb2f316d021bb4450a35",
+          "candidate_sha256": "765c1ea0f3a4d9f6d45ae10d3b2477024c952c379aba1a66df5e345e5a7caf29",
+          "weighted_score": 96.25,
+          "round": 1,
+          "commit": "fbe8721e99f04ca09725bc6712c7f4930d8c7751"
+        }
+      ],
+      "author_runs": [
+        "749-author-bdbb70d298cc"
+      ],
+      "prior_report": "specs/reviews/749-review-1-6409dfb1.md",
+      "candidate": "d54c84ee031f37d8040bbb2f316d021bb4450a35",
+      "registration_commit": "3a2275382f0b5a1e04e125ea49601efbc9777b5a",
+      "accepted_at": "2026-10-25T08:42:46.050188+00:00"
+    },
+    "753": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/753-review-1-4f811c55.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Fresh canonical Python case n=2,k=4: 17 characters, all 16 passwords covered.",
+            "Both locales, rewind/reset, prediction changes, keyboard and responsive screenshots checked.",
+            "Exact displayed/copied/downloaded source and native clipboard fallback passed.",
+            "Non-mutating metadata preflight passed."
+          ],
+          "detail": "95/100. No required findings; one optional readability advisory. Acceptance applies to the reviewed revision, separately from publication.",
+          "run_id": "753-review-85b49f78f2ba",
+          "candidate": "50fd1cbd00cb9d3c0a89a422bc224369cfa35618",
+          "candidate_sha256": "8a7f07059da7909fd8cc00c77d9ebbf55a09160062380b07def3cf5a315abc0f",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "9d8ebe9d0dc99e789d08f9f3be4d9867cd6ac5fe"
+        }
+      ],
+      "author_runs": [
+        "753-author-a445c34a3662"
+      ],
+      "prior_report": "specs/reviews/753-review-1-4f811c55.md",
+      "candidate": "50fd1cbd00cb9d3c0a89a422bc224369cfa35618",
+      "registration_commit": "82ce528c72cc61a9d47b4ce1484c14145eb4bb5f",
+      "accepted_at": "2026-10-25T09:02:11.983714+00:00"
+    },
+    "757": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/757-review-1-01365567.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Fresh examples executed against canonical Python; predictions matched.",
+            "Bilingual controls, rewind/reset, keyboard, narrow layouts and zoom inspected.",
+            "Exact displayed, copied, fallback and downloaded source parity passed.",
+            "Metadata validate-only preflight exited 0.",
+            "Evidence: specs/reviews/757-evidence/757-review-1-01365567/"
+          ],
+          "detail": "95/100. One optional advisory concerns dense proof pacing. Candidate files unchanged; acceptance is separate from publication.",
+          "run_id": "757-review-14ce2a9335dd",
+          "candidate": "1cc9f57b4cda2f4f8b2c1b223114f003bb728534",
+          "candidate_sha256": "afce46808aa664d37c601fd4750f1871ca50e0578a2ca8c708b485f66892da0e",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "abac5e44ac673ab7313bdeb701d313123f3b71fe"
+        }
+      ],
+      "author_runs": [
+        "757-author-a39da062ab0b"
+      ],
+      "prior_report": "specs/reviews/757-review-1-01365567.md",
+      "candidate": "1cc9f57b4cda2f4f8b2c1b223114f003bb728534",
+      "registration_commit": "8c22c128273186875f7ee4d2a9de7ac5f419f81a",
+      "accepted_at": "2026-10-25T09:17:39.314358+00:00"
+    },
+    "761": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/761-review-1-09028efe.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh canonical Python check: 10110100 \u2192 11010010; legal-swap oracle confirmed.",
+            "Both locales, rewind/reset/endpoints, prediction changes and keyboard controls passed.",
+            "Exact source parity and native clipboard fallback passed.",
+            "Narrow and 200% CSS zoom screenshots inspected.",
+            "Non-mutating metadata preflight passed."
+          ],
+          "detail": "95/100. No required open findings. Acceptance applies to the reviewed candidate, separately from publication.",
+          "run_id": "761-review-1639932075e6",
+          "candidate": "cd125c135af86cad6ed83ed04cff1a3b8b2b7101",
+          "candidate_sha256": "e8429f0aab10aabae97f824332e93afc1e1d319fa2b503fb5aeee9627aa47731",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "0e537652635480987145ed76803129be6e6f4244"
+        }
+      ],
+      "author_runs": [
+        "761-author-0677237978e5"
+      ],
+      "prior_report": "specs/reviews/761-review-1-09028efe.md",
+      "candidate": "cd125c135af86cad6ed83ed04cff1a3b8b2b7101",
+      "registration_commit": "5887fa0c63eb5eaa3b1966eecb903c4a707030a5",
+      "accepted_at": "2026-10-25T09:36:53.288432+00:00"
+    }
+  }
+}

@@ -1,0 +1,3904 @@
+{
+  "kind": "author self-check",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "logs": [
+    {
+      "lang": "en",
+      "phases": 31,
+      "presets": 7,
+      "handShapes": 3,
+      "predictionOptions": 3,
+      "copy": "success + native-key fallback, exact readback",
+      "download": "exact",
+      "widths": [
+        320,
+        390,
+        736,
+        1440
+      ],
+      "zoom": "CSS 200% at 780px",
+      "focus": {
+        "width": "3px",
+        "color": "rgb(255, 180, 84)"
+      }
+    },
+    {
+      "lang": "zh",
+      "phases": 31,
+      "presets": 7,
+      "handShapes": 3,
+      "predictionOptions": 3,
+      "copy": "success + native-key fallback, exact readback",
+      "download": "exact",
+      "widths": [
+        320,
+        390,
+        736,
+        1440
+      ],
+      "zoom": "CSS 200% at 780px",
+      "focus": {
+        "width": "3px",
+        "color": "rgb(255, 180, 84)"
+      }
+    }
+  ],
+  "observations": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "phase": "inspect",
+      "index": 0,
+      "expectedTotal": 0,
+      "observed": "Current cumulative total: 0 walls; not final yet.",
+      "event": "Region B threatens 2 distinct healthy cells and needs 2 walls. It has the most targets; quarantine it next."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "phase": "quarantine",
+      "index": 1,
+      "expectedTotal": 2,
+      "observed": "Current cumulative total: 2 walls; not final yet.",
+      "event": "Marked region B as Q and added 2 walls. Other regions will infect only their frozen targets in the table."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "phase": "spread",
+      "index": 2,
+      "expectedTotal": 2,
+      "observed": "Current cumulative total: 2 walls; not final yet.",
+      "event": "Night ended. Newly added 1s do not spread again tonight; the next phase recomputes connected regions and healthy targets."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "phase": "inspect",
+      "index": 3,
+      "expectedTotal": 2,
+      "observed": "Current cumulative total: 2 walls; not final yet.",
+      "event": "Region A threatens 1 distinct healthy cells and needs 1 walls. It has the most targets; quarantine it next."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "phase": "quarantine",
+      "index": 4,
+      "expectedTotal": 3,
+      "observed": "Current cumulative total: 3 walls; not final yet.",
+      "event": "Marked region A as Q and added 1 walls. Other regions will infect only their frozen targets in the table."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "phase": "spread",
+      "index": 5,
+      "expectedTotal": 3,
+      "observed": "Current cumulative total: 3 walls; not final yet.",
+      "event": "Night ended. Newly added 1s do not spread again tonight; the next phase recomputes connected regions and healthy targets."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "phase": "done",
+      "index": 6,
+      "expectedTotal": 3,
+      "observed": "Final return value: 3 walls.",
+      "event": "No active region remains, or every active region has an empty target set; no more walls are needed."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "phase": "inspect",
+      "index": 0,
+      "expectedTotal": 0,
+      "observed": "Current cumulative total: 0 walls; not final yet.",
+      "event": "Region A threatens 5 distinct healthy cells and needs 5 walls. It has the most targets; quarantine it next."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "phase": "quarantine",
+      "index": 1,
+      "expectedTotal": 5,
+      "observed": "Current cumulative total: 5 walls; not final yet.",
+      "event": "Marked region A as Q and added 5 walls. Other regions will infect only their frozen targets in the table."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "phase": "spread",
+      "index": 2,
+      "expectedTotal": 5,
+      "observed": "Current cumulative total: 5 walls; not final yet.",
+      "event": "Night ended. Newly added 1s do not spread again tonight; the next phase recomputes connected regions and healthy targets."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "phase": "inspect",
+      "index": 3,
+      "expectedTotal": 5,
+      "observed": "Current cumulative total: 5 walls; not final yet.",
+      "event": "Region A threatens 4 distinct healthy cells and needs 5 walls. It has the most targets; quarantine it next."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "phase": "quarantine",
+      "index": 4,
+      "expectedTotal": 10,
+      "observed": "Current cumulative total: 10 walls; not final yet.",
+      "event": "Marked region A as Q and added 5 walls. Other regions will infect only their frozen targets in the table."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "phase": "spread",
+      "index": 5,
+      "expectedTotal": 10,
+      "observed": "Current cumulative total: 10 walls; not final yet.",
+      "event": "Night ended. Newly added 1s do not spread again tonight; the next phase recomputes connected regions and healthy targets."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "phase": "done",
+      "index": 6,
+      "expectedTotal": 10,
+      "observed": "Final return value: 10 walls.",
+      "event": "No active region remains, or every active region has an empty target set; no more walls are needed."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "phase": "inspect",
+      "index": 0,
+      "expectedTotal": 0,
+      "observed": "Current cumulative total: 0 walls; not final yet.",
+      "event": "Region A threatens 1 distinct healthy cells and needs 4 walls. It has the most targets; quarantine it next."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "phase": "quarantine",
+      "index": 1,
+      "expectedTotal": 4,
+      "observed": "Current cumulative total: 4 walls; not final yet.",
+      "event": "Marked region A as Q and added 4 walls. Other regions will infect only their frozen targets in the table."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "phase": "spread",
+      "index": 2,
+      "expectedTotal": 4,
+      "observed": "Current cumulative total: 4 walls; not final yet.",
+      "event": "Night ended. Newly added 1s do not spread again tonight; the next phase recomputes connected regions and healthy targets."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "phase": "done",
+      "index": 3,
+      "expectedTotal": 4,
+      "observed": "Final return value: 4 walls.",
+      "event": "No active region remains, or every active region has an empty target set; no more walls are needed."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "phase": "inspect",
+      "index": 0,
+      "expectedTotal": 0,
+      "observed": "Current cumulative total: 0 walls; not final yet.",
+      "event": "Region B threatens 11 distinct healthy cells and needs 11 walls. It has the most targets; quarantine it next."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "phase": "quarantine",
+      "index": 1,
+      "expectedTotal": 11,
+      "observed": "Current cumulative total: 11 walls; not final yet.",
+      "event": "Marked region B as Q and added 11 walls. Other regions will infect only their frozen targets in the table."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "phase": "spread",
+      "index": 2,
+      "expectedTotal": 11,
+      "observed": "Current cumulative total: 11 walls; not final yet.",
+      "event": "Night ended. Newly added 1s do not spread again tonight; the next phase recomputes connected regions and healthy targets."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "phase": "inspect",
+      "index": 3,
+      "expectedTotal": 11,
+      "observed": "Current cumulative total: 11 walls; not final yet.",
+      "event": "Region A threatens 2 distinct healthy cells and needs 2 walls. It has the most targets; quarantine it next."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "phase": "quarantine",
+      "index": 4,
+      "expectedTotal": 13,
+      "observed": "Current cumulative total: 13 walls; not final yet.",
+      "event": "Marked region A as Q and added 2 walls. Other regions will infect only their frozen targets in the table."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "phase": "spread",
+      "index": 5,
+      "expectedTotal": 13,
+      "observed": "Current cumulative total: 13 walls; not final yet.",
+      "event": "Night ended. Newly added 1s do not spread again tonight; the next phase recomputes connected regions and healthy targets."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "phase": "done",
+      "index": 6,
+      "expectedTotal": 13,
+      "observed": "Final return value: 13 walls.",
+      "event": "No active region remains, or every active region has an empty target set; no more walls are needed."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "phase": "done",
+      "index": 0,
+      "expectedTotal": 0,
+      "observed": "Final return value: 0 walls.",
+      "event": "No active region remains, or every active region has an empty target set; no more walls are needed."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "phase": "done",
+      "index": 0,
+      "expectedTotal": 0,
+      "observed": "Final return value: 0 walls.",
+      "event": "No active region remains, or every active region has an empty target set; no more walls are needed."
+    },
+    {
+      "lang": "en",
+      "preset": 6,
+      "phase": "inspect",
+      "index": 0,
+      "expectedTotal": 0,
+      "observed": "Current cumulative total: 0 walls; not final yet.",
+      "event": "Region A threatens 1 distinct healthy cells and needs 1 walls. It has the most targets; quarantine it next."
+    },
+    {
+      "lang": "en",
+      "preset": 6,
+      "phase": "quarantine",
+      "index": 1,
+      "expectedTotal": 1,
+      "observed": "Current cumulative total: 1 walls; not final yet.",
+      "event": "Marked region A as Q and added 1 walls. Other regions will infect only their frozen targets in the table."
+    },
+    {
+      "lang": "en",
+      "preset": 6,
+      "phase": "spread",
+      "index": 2,
+      "expectedTotal": 1,
+      "observed": "Current cumulative total: 1 walls; not final yet.",
+      "event": "Night ended. Newly added 1s do not spread again tonight; the next phase recomputes connected regions and healthy targets."
+    },
+    {
+      "lang": "en",
+      "preset": 6,
+      "phase": "done",
+      "index": 3,
+      "expectedTotal": 1,
+      "observed": "Final return value: 1 walls.",
+      "event": "No active region remains, or every active region has an empty target set; no more walls are needed."
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "phase": "inspect",
+      "index": 0,
+      "expectedTotal": 0,
+      "observed": "当前累计：0 堵墙；尚非最终结果。",
+      "event": "区域 B 威胁 2 个不同健康格，所需 2 堵墙。它是威胁格数最多的区域，接下来隔离它。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "phase": "quarantine",
+      "index": 1,
+      "expectedTotal": 2,
+      "observed": "当前累计：2 堵墙；尚非最终结果。",
+      "event": "已将区域 B 的感染格改为 Q，新增 2 堵墙。其余区域只会感染表中冻结的旧目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "phase": "spread",
+      "index": 2,
+      "expectedTotal": 2,
+      "observed": "当前累计：2 堵墙；尚非最终结果。",
+      "event": "本夜结束。新出现的 1 本夜不继续扩散；下一阶段重新计算连通区域和健康目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "phase": "inspect",
+      "index": 3,
+      "expectedTotal": 2,
+      "observed": "当前累计：2 堵墙；尚非最终结果。",
+      "event": "区域 A 威胁 1 个不同健康格，所需 1 堵墙。它是威胁格数最多的区域，接下来隔离它。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "phase": "quarantine",
+      "index": 4,
+      "expectedTotal": 3,
+      "observed": "当前累计：3 堵墙；尚非最终结果。",
+      "event": "已将区域 A 的感染格改为 Q，新增 1 堵墙。其余区域只会感染表中冻结的旧目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "phase": "spread",
+      "index": 5,
+      "expectedTotal": 3,
+      "observed": "当前累计：3 堵墙；尚非最终结果。",
+      "event": "本夜结束。新出现的 1 本夜不继续扩散；下一阶段重新计算连通区域和健康目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "phase": "done",
+      "index": 6,
+      "expectedTotal": 3,
+      "observed": "最终返回值：3 堵墙。",
+      "event": "没有活动区域，或所有活动区域的健康目标都是空集；无需增加墙。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "phase": "inspect",
+      "index": 0,
+      "expectedTotal": 0,
+      "observed": "当前累计：0 堵墙；尚非最终结果。",
+      "event": "区域 A 威胁 5 个不同健康格，所需 5 堵墙。它是威胁格数最多的区域，接下来隔离它。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "phase": "quarantine",
+      "index": 1,
+      "expectedTotal": 5,
+      "observed": "当前累计：5 堵墙；尚非最终结果。",
+      "event": "已将区域 A 的感染格改为 Q，新增 5 堵墙。其余区域只会感染表中冻结的旧目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "phase": "spread",
+      "index": 2,
+      "expectedTotal": 5,
+      "observed": "当前累计：5 堵墙；尚非最终结果。",
+      "event": "本夜结束。新出现的 1 本夜不继续扩散；下一阶段重新计算连通区域和健康目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "phase": "inspect",
+      "index": 3,
+      "expectedTotal": 5,
+      "observed": "当前累计：5 堵墙；尚非最终结果。",
+      "event": "区域 A 威胁 4 个不同健康格，所需 5 堵墙。它是威胁格数最多的区域，接下来隔离它。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "phase": "quarantine",
+      "index": 4,
+      "expectedTotal": 10,
+      "observed": "当前累计：10 堵墙；尚非最终结果。",
+      "event": "已将区域 A 的感染格改为 Q，新增 5 堵墙。其余区域只会感染表中冻结的旧目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "phase": "spread",
+      "index": 5,
+      "expectedTotal": 10,
+      "observed": "当前累计：10 堵墙；尚非最终结果。",
+      "event": "本夜结束。新出现的 1 本夜不继续扩散；下一阶段重新计算连通区域和健康目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "phase": "done",
+      "index": 6,
+      "expectedTotal": 10,
+      "observed": "最终返回值：10 堵墙。",
+      "event": "没有活动区域，或所有活动区域的健康目标都是空集；无需增加墙。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "phase": "inspect",
+      "index": 0,
+      "expectedTotal": 0,
+      "observed": "当前累计：0 堵墙；尚非最终结果。",
+      "event": "区域 A 威胁 1 个不同健康格，所需 4 堵墙。它是威胁格数最多的区域，接下来隔离它。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "phase": "quarantine",
+      "index": 1,
+      "expectedTotal": 4,
+      "observed": "当前累计：4 堵墙；尚非最终结果。",
+      "event": "已将区域 A 的感染格改为 Q，新增 4 堵墙。其余区域只会感染表中冻结的旧目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "phase": "spread",
+      "index": 2,
+      "expectedTotal": 4,
+      "observed": "当前累计：4 堵墙；尚非最终结果。",
+      "event": "本夜结束。新出现的 1 本夜不继续扩散；下一阶段重新计算连通区域和健康目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "phase": "done",
+      "index": 3,
+      "expectedTotal": 4,
+      "observed": "最终返回值：4 堵墙。",
+      "event": "没有活动区域，或所有活动区域的健康目标都是空集；无需增加墙。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "phase": "inspect",
+      "index": 0,
+      "expectedTotal": 0,
+      "observed": "当前累计：0 堵墙；尚非最终结果。",
+      "event": "区域 B 威胁 11 个不同健康格，所需 11 堵墙。它是威胁格数最多的区域，接下来隔离它。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "phase": "quarantine",
+      "index": 1,
+      "expectedTotal": 11,
+      "observed": "当前累计：11 堵墙；尚非最终结果。",
+      "event": "已将区域 B 的感染格改为 Q，新增 11 堵墙。其余区域只会感染表中冻结的旧目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "phase": "spread",
+      "index": 2,
+      "expectedTotal": 11,
+      "observed": "当前累计：11 堵墙；尚非最终结果。",
+      "event": "本夜结束。新出现的 1 本夜不继续扩散；下一阶段重新计算连通区域和健康目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "phase": "inspect",
+      "index": 3,
+      "expectedTotal": 11,
+      "observed": "当前累计：11 堵墙；尚非最终结果。",
+      "event": "区域 A 威胁 2 个不同健康格，所需 2 堵墙。它是威胁格数最多的区域，接下来隔离它。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "phase": "quarantine",
+      "index": 4,
+      "expectedTotal": 13,
+      "observed": "当前累计：13 堵墙；尚非最终结果。",
+      "event": "已将区域 A 的感染格改为 Q，新增 2 堵墙。其余区域只会感染表中冻结的旧目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "phase": "spread",
+      "index": 5,
+      "expectedTotal": 13,
+      "observed": "当前累计：13 堵墙；尚非最终结果。",
+      "event": "本夜结束。新出现的 1 本夜不继续扩散；下一阶段重新计算连通区域和健康目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "phase": "done",
+      "index": 6,
+      "expectedTotal": 13,
+      "observed": "最终返回值：13 堵墙。",
+      "event": "没有活动区域，或所有活动区域的健康目标都是空集；无需增加墙。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "phase": "done",
+      "index": 0,
+      "expectedTotal": 0,
+      "observed": "最终返回值：0 堵墙。",
+      "event": "没有活动区域，或所有活动区域的健康目标都是空集；无需增加墙。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "phase": "done",
+      "index": 0,
+      "expectedTotal": 0,
+      "observed": "最终返回值：0 堵墙。",
+      "event": "没有活动区域，或所有活动区域的健康目标都是空集；无需增加墙。"
+    },
+    {
+      "lang": "zh",
+      "preset": 6,
+      "phase": "inspect",
+      "index": 0,
+      "expectedTotal": 0,
+      "observed": "当前累计：0 堵墙；尚非最终结果。",
+      "event": "区域 A 威胁 1 个不同健康格，所需 1 堵墙。它是威胁格数最多的区域，接下来隔离它。"
+    },
+    {
+      "lang": "zh",
+      "preset": 6,
+      "phase": "quarantine",
+      "index": 1,
+      "expectedTotal": 1,
+      "observed": "当前累计：1 堵墙；尚非最终结果。",
+      "event": "已将区域 A 的感染格改为 Q，新增 1 堵墙。其余区域只会感染表中冻结的旧目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 6,
+      "phase": "spread",
+      "index": 2,
+      "expectedTotal": 1,
+      "observed": "当前累计：1 堵墙；尚非最终结果。",
+      "event": "本夜结束。新出现的 1 本夜不继续扩散；下一阶段重新计算连通区域和健康目标。"
+    },
+    {
+      "lang": "zh",
+      "preset": 6,
+      "phase": "done",
+      "index": 3,
+      "expectedTotal": 1,
+      "observed": "最终返回值：1 堵墙。",
+      "event": "没有活动区域，或所有活动区域的健康目标都是空集；无需增加墙。"
+    }
+  ],
+  "contrast": [
+    {
+      "tag": "A",
+      "text": "← LeetCode 知识集",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "BUTTON",
+      "text": "中",
+      "fg": [
+        13,
+        17,
+        23
+      ],
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "BUTTON",
+      "text": "EN",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "P",
+      "text": "困难 · 网格模拟 · Python",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "H1",
+      "text": "#749 · 隔离病毒",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "一块健康格，为什么要两堵墙？先数清格子与边，再让每一夜只扩散一层。",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "A",
+      "text": "官方题目 ↗",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "A",
+      "text": "1 · 一格，两堵墙",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "A",
+      "text": "2 · 选区域，数边界",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "A",
+      "text": "3 · 先冻结，再扩散",
+      "fg": [
+        13,
+        17,
+        23
+      ],
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "A",
+      "text": "4 · 先预测一夜",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "A",
+      "text": "5 · 对照 Python",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "H2",
+      "text": "1 · 一格，两堵墙",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "要回答：右下角的一块健康格，需要几堵墙保护？在 [[1,1],[1,0]] 中，1 是感染格，0 是健康格。只考虑上、下、左、右共享的边，不",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "保持“健康格只有一块”不变，切换形状，看橙色墙线数量如何变化。图内坐标是从 0 开始的（行,列）；Q 表示已隔离的感染格，A 标记连在一起的",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "LABEL",
+      "text": "手算形状",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,0)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q A",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,1)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q A",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,2)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q A",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,0)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q A",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,1)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,2)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q A",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,0)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q A",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,1)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q A",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,2)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q A",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "P",
+      "text": "不同受威胁格：1；共享边 / 墙：4。外边框不建墙。",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "P",
+      "text": "原题：m×n 二进制网格，1 ≤ m,n ≤ 50。区域是上下左右连成一块的未隔离感染格。每天只能隔离一个区域，必须选择下一夜会感染最多不同",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "H2",
+      "text": "2 · 选区域，数边界",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "P",
+      "text": "要回答：哪些信息决定今天隔离谁？区域是通过上下左右相连的、尚未隔离的感染格的最大集合。看一行 [1,0,0,1,1,0]：区域 A 的感染位",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "P",
+      "text": "一个直接基线：先找出各区域，再为每个区域遍历所有健康格，逐一检查四个邻格。下面的 cells 是该区域的坐标集合。对一个健康格，hits 是",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "CODE",
+      "text": "def summarize_slow(grid, cells):\n    targets, edges = set(), 0\n    for",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        9,
+        14,
+        22
+      ],
+      "ratio": 16.437295258072666
+    },
+    {
+      "tag": "P",
+      "text": "可以省掉重复的整图扫描：只遍历每个区域自己的感染格，并检查每格四个邻居。遇到健康邻格就把坐标放入集合 frontier（边界上的不同健康格）",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "A",
+      "text": "邻格遍历：树间路径的逐层搜索 →",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 13.388343428810314
+    },
+    {
+      "tag": "P",
+      "text": "错误捷径：把“不同受威胁格数”当作墙数。L 形会少算一堵墙，包围形会把 4 算成 1。另一种错误是隔离感染格最多的区域：在 [[1,1,0,",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "H2",
+      "text": "3 · 先冻结，再扩散",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "要回答：今晚哪些格子允许扩散？frontier 是某区域在白天开始时邻接的不同健康格；Q 是已隔离、不再活动的感染格。由前面的计数得到不变量",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "在 [1,0,0,1,1,0] 中，先把 B 改成 Q 并累计 2 堵墙，A 再感染列 1，得到 [1,1,0,Q,Q,0]。列 1 今晚刚",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "为什么足够？一次区域遍历恰好覆盖它的所有感染格；每条通向 0 的边贡献一堵墙，集合去重后恰好留下所有可能感染的 0。封闭区域的所有出口都被墙",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "先用默认一行，逐次查看“检查 → 隔离 → 扩散”。比较左右快照、墙数账本和区域表。再切到官方例 1：观察右侧区域变大后，第二天的边界为什么",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "教学模拟，不是执行 Python 提交。保留全部阶段，无跳帧；墙线与账本累计显示。区域字母每天按扫描顺序重新编号，不是永久身份。",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "LABEL",
+      "text": "场景（更换会重置本实验）",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "BUTTON",
+      "text": "← 上一阶段",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "BUTTON",
+      "text": "完成下一阶段 →",
+      "fg": [
+        13,
+        17,
+        23
+      ],
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "BUTTON",
+      "text": "回到开始",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "BUTTON",
+      "text": "查看最终结果",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "P",
+      "text": "阶段 6/6 · 第 3 天 · 结束：已无健康格受到威胁",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "P",
+      "text": "格内显示 0 / 1 / Q 与（行,列）；A、B…是本日开始的区域。下划线标出选中区域；虚线框是它在日初威胁的健康格；橙色粗线是已经建好的",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "H3",
+      "text": "本日开始（未更新）",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,0)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,1)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,2)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,3)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,4)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,5)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,6)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,7)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,0)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,1)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,2)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,3)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,4)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,5)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,6)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,7)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,0)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,1)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,2)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,3)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,4)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,5)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,6)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,7)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,0)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,1)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,2)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,3)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,4)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,5)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,6)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,7)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "H3",
+      "text": "当前阶段完成后",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,0)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,1)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,2)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,3)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,4)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,5)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,6)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(0,7)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,0)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,1)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,2)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,3)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,4)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,5)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,6)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(1,7)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,0)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,1)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,2)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,3)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,4)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,5)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,6)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(2,7)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,0)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,1)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,2)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,3)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,4)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,5)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,6)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "0",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "SMALL",
+      "text": "(3,7)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "B",
+      "text": "Q",
+      "fg": [
+        255,
+        180,
+        84
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "tag": "P",
+      "text": "没有活动区域，或所有活动区域的健康目标都是空集；无需增加墙。",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "H3",
+      "text": "本日开始的统计（本日内保持不变）",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "TH",
+      "text": "区域 / 感染格数",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "TH",
+      "text": "不同健康目标（行,列）",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "TH",
+      "text": "边数 / 需建墙数",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "TD",
+      "text": "无",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "H3",
+      "text": "已建墙账本",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "LI",
+      "text": "第 1 天：区域 A +5 堵；累计 5 堵。",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "LI",
+      "text": "第 2 天：区域 A +5 堵；累计 10 堵。",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "P",
+      "text": "最终返回值：10 堵墙。",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "H2",
+      "text": "4 · 先预测一夜",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "LEGEND",
+      "text": "新场景 [1,0,0,0,1,1,0]。区域是上下左右连通的活动感染格；一夜只感染日初的健康邻格。按规则隔离威胁最多不同健康格的区域后，第一",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "SPAN",
+      "text": "[1,1,1,1,Q,Q,0]",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "SPAN",
+      "text": "[1,1,0,0,Q,Q,0]",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "SPAN",
+      "text": "[Q,0,0,1,1,1,1]",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "BUTTON",
+      "text": "验证预测",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "P",
+      "text": "再检查冻结的邻格。 右侧区域在日初威胁列 3 和 6，左侧只威胁列 1，所以隔离右侧，建 2 堵墙。左侧仅感染列 1，列 2、3 仍为 0。",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "H2",
+      "text": "5 · 对照 Python",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "要回答：怎样把一个白天与一夜映射到 Python？下面是官方 Python3 接口的完整提交。grid 复制输入，不修改调用者的网格；-1 ",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "stack 逐格找连通区域，seen 保证每格只进入一次。cells 保存感染格，frontier 保存不同健康目标，needed 每遇到一",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "令 N=mn，D 为需要建墙的天数。每一天每格与四邻边只处理常数次：O((D+1)mn) 时间，D≤mn，因此最坏 O((mn)²)。额外空",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "全 0：没有区域，返回 0。全 1：有区域但没有健康目标，返回 0。单行也只看左右相邻。包围单个 0：同一格被多条边触碰，每条边都要墙。多个",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "本候选已配备独立的显式墙边基线、穷举和固定种子测试；页面模拟与 Python 提交分别验证。自查不是独立评审，也没有宣称已在 LeetCod",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "BUTTON",
+      "text": "复制 Python",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "A",
+      "text": "下载 solution.py",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "SPAN",
+      "text": "剪贴板不可用。下方已全选完整源码，请按 Ctrl+C（Mac 用 ⌘C）。",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "LABEL",
+      "text": "手动复制完整 Python 源码",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "SUMMARY",
+      "text": "展开完整 Python 提交",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "CODE",
+      "text": "class Solution:\n    def containVirus(self, isInfected: list[list[int]]",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        9,
+        14,
+        22
+      ],
+      "ratio": 16.437295258072666
+    },
+    {
+      "tag": "H3",
+      "text": "继续理解相关概念",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "A",
+      "text": "邻格遍历：树间路径的逐层搜索 →",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "A",
+      "text": "二维网格边界：接雨水的邻格处理 →",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "FOOTER",
+      "text": "作者候选 · 自查证据在 tests/ · 独立评审待进行。",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    }
+  ],
+  "minimumContrast": 6.449407898769069,
+  "focusContrast": 8.937191437807625,
+  "cssBytes": 12322,
+  "errors": [],
+  "external": [],
+  "limits": [
+    "Headless Linux Chromium, not physical devices",
+    "CSS zoom 200%, not browser-menu zoom",
+    "No independent review, learner study or LeetCode submission"
+  ]
+}

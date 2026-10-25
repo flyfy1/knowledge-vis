@@ -1,0 +1,12 @@
+{
+  "host": "darwin",
+  "originalPath": "/tmp/leetcode-741-761-candidate-20261025/leetcode/745/tests/browser.cjs",
+  "originalSHA256": "c6541d2922416cb3d0759d4675fdffdbcd2b15adedf754edb75e16af89dfe733",
+  "adaptedSHA256": "48523471680b6f621db6db909708a895d47226fdea8223a1e7d385e616d41db1",
+  "replacement": {
+    "from": "await p.keyboard.press('Control+c')",
+    "to": "await p.keyboard.press('Meta+c')"
+  },
+  "assertionsUnchanged": true,
+  "outputLabelCaveat": "Frozen test output says Linux Control+C; actual executed shortcut is Meta+c on darwin, as recorded here."
+}

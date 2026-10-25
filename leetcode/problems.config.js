@@ -2693,6 +2693,170 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) expected time; O(n) auxiliary space, n = expression character length"
   },
   {
+    "id": 741,
+    "title": {
+      "zh": "摘樱桃",
+      "en": "Cherry Pickup"
+    },
+    "desc": {
+      "zh": "把往返变成同步行走，推导只记两行坐标的动态规划。",
+      "en": "Reverse the return path and derive a synchronized two-traveler dynamic program."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic Programming"
+      },
+      {
+        "zh": "网格路径",
+        "en": "Grid Paths"
+      }
+    ],
+    "path": "741/",
+    "leetcodeUrl": "https://leetcode.com/problems/cherry-pickup/",
+    "language": "Python",
+    "complexity": "O(n³) time; O(n²) auxiliary space"
+  },
+  {
+    "id": 745,
+    "title": {
+      "zh": "前缀和后缀搜索",
+      "en": "Prefix and Suffix Search"
+    },
+    "desc": {
+      "zh": "把短单词的两端配对，推导最大下标为何能安全覆盖。",
+      "en": "Pair the ends of short words and derive why later indices safely overwrite earlier ones."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "哈希表",
+        "en": "Hash map"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "745/",
+    "leetcodeUrl": "https://leetcode.com/problems/prefix-and-suffix-search/",
+    "language": "Python",
+    "complexity": "Expected O(nL³) construction time; O(nL³) space; O(|pref|+|suff|) time per query"
+  },
+  {
+    "id": 749,
+    "title": {
+      "zh": "隔离病毒",
+      "en": "Contain Virus"
+    },
+    "desc": {
+      "zh": "分清受威胁格与墙边，冻结日初边界，逐夜模拟隔离与扩散。",
+      "en": "Separate threatened cells from wall edges, freeze day-start frontiers, and simulate quarantine and spread."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "网格模拟",
+        "en": "Grid simulation"
+      },
+      {
+        "zh": "连通区域",
+        "en": "Connected components"
+      },
+      {
+        "zh": "集合去重",
+        "en": "Set deduplication"
+      }
+    ],
+    "path": "749/",
+    "leetcodeUrl": "https://leetcode.com/problems/contain-virus/",
+    "language": "Python",
+    "complexity": "O((D+1)mn) time, D ≤ mn, hence O((mn)²) worst case; O(mn) auxiliary space"
+  },
+  {
+    "id": 753,
+    "title": {
+      "zh": "破解保险箱",
+      "en": "Cracking the Safe"
+    },
+    "desc": {
+      "zh": "让相邻密码重叠，用每条边一次构造最短开锁串。",
+      "en": "Overlap passwords and use each edge once to build a shortest unlocking string."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "欧拉回路",
+        "en": "Euler circuit"
+      },
+      {
+        "zh": "de Bruijn 序列",
+        "en": "de Bruijn sequence"
+      }
+    ],
+    "path": "753/",
+    "leetcodeUrl": "https://leetcode.com/problems/cracking-the-safe/",
+    "language": "Python",
+    "complexity": "O(k^n + n) time; O(k^n + n) space including output"
+  },
+  {
+    "id": 757,
+    "title": {
+      "zh": "设置交集大小至少为二",
+      "en": "Set Intersection Size At Least Two"
+    },
+    "desc": {
+      "zh": "从手选整数推导最右贪心，用两个最大点维护所有区间的覆盖。",
+      "en": "Derive rightmost greedy choices and cover intervals using only the two largest selected points."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "区间覆盖",
+        "en": "Interval covering"
+      }
+    ],
+    "path": "757/",
+    "leetcodeUrl": "https://leetcode.com/problems/set-intersection-size-at-least-two/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space for sorting"
+  },
+  {
+    "id": 761,
+    "title": {
+      "zh": "特殊的二进制序列",
+      "en": "Special Binary String"
+    },
+    "desc": {
+      "zh": "从前缀余额发现最小块，递归优化内部并证明兄弟块的降序排列。",
+      "en": "Discover minimal blocks through prefix balance, optimize their interiors, and prove descending sibling order."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "递归",
+        "en": "Recursion"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      },
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      }
+    ],
+    "path": "761/",
+    "leetcodeUrl": "https://leetcode.com/problems/special-binary-string/",
+    "language": "Python",
+    "complexity": "O(n² log n) time; O(n²) auxiliary space (conservative bounds for slicing implementation)"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

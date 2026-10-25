@@ -1,0 +1,81 @@
+{
+  "fresh_and_boundary_execution": [
+    {
+      "n": 2,
+      "k": 4,
+      "length": 17,
+      "distinct": 16,
+      "answer": "00102031121322330"
+    },
+    {
+      "n": 3,
+      "k": 3,
+      "length": 29,
+      "distinct": 27,
+      "answer": "00010020110120210221112122200"
+    },
+    {
+      "n": 1,
+      "k": 10,
+      "length": 10,
+      "distinct": 10,
+      "answer": "0123456789"
+    },
+    {
+      "n": 1,
+      "k": 1,
+      "length": 1,
+      "distinct": 1,
+      "answer": "0"
+    },
+    {
+      "n": 4,
+      "k": 1,
+      "length": 4,
+      "distinct": 1,
+      "answer": "0000"
+    },
+    {
+      "n": 4,
+      "k": 8,
+      "length": 4099,
+      "distinct": 4096,
+      "answer": "not retained"
+    },
+    {
+      "n": 3,
+      "k": 10,
+      "length": 1002,
+      "distinct": 1000,
+      "answer": "not retained"
+    }
+  ],
+  "visited_vertex_counterexample": {
+    "input": [
+      2,
+      3
+    ],
+    "wrong_output": "00",
+    "coverage": "1/9",
+    "missing": [
+      "01",
+      "02",
+      "10",
+      "11",
+      "12",
+      "20",
+      "21",
+      "22"
+    ]
+  },
+  "served_commit_hashes": {
+    "leetcode/753/app.js": "19d7a825c992baa83c05fb589dfb88b6f8cbec2af884e20a0cccd1a5ce9215f3",
+    "leetcode/753/copy.js": "28208f75a9bc5768a052ce50afae3729e44571bf7919a322652dc5b4d33feb5b",
+    "leetcode/753/core.js": "4e043f47746f447da95d885d60fb328e8609f16f8e00ed1724d4aacd520a0f76",
+    "leetcode/753/python-code.js": "4f228995a34c7d533a6e8f349b83c0248ec7fd678990924c28651fbe306f686b",
+    "leetcode/753/style.css": "6e2706f65268cce899041ace786574e4b9dbb03893142fcb160b61638d99b1ca",
+    "leetcode/753/solution.py": "ccbc1be89985a1aa961d5e37c25dac6db9c33982e1a660ddc3e603aa15a47147",
+    "leetcode/753/index.html": "e41f4cd6de74538dad23cccc5836b005fbd74d90712a698fdc312466a63676cb",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}

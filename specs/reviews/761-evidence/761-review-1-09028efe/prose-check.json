@@ -1,0 +1,18 @@
+{
+  "result": "pass",
+  "scope": "Only p21 preset reference changed since candidate-browser.json; numerical code and interface unchanged.",
+  "results": [
+    {
+      "lang": "en",
+      "text": "Choose the 11011000 preset and inspect the full trace: depth 0 pauses on 11011000 → depth 1 handles 101100 → process the empty interior of 10, return ε, rebuild 10 → process sibling block 1100, whose interior 10 returns 10 → this call has parts [10,1100], sorts and returns 110010 → depth 0 wraps it to get 11100100. An empty string has no blocks and returns empty; stripping two bits ensures termination. String arguments are immutable, so no parent string needs undoing.",
+      "selectedLabel": "11011000",
+      "result": "11100100"
+    },
+    {
+      "lang": "zh",
+      "text": "在预设选「11011000」，观察完整轨迹：深度 0 的 11011000 暂停 → 深度 1 处理 101100 → 先处理 10 的空内部，返回 ε，重建 10 → 再处理兄弟块 1100，其内部 10 返回 10 → 本层 parts 为 [10,1100]，排序后返回 110010 → 深度 0 包上外壳得到 11100100。空串没有块，直接返回空串；每次剥两位保证终止。参数是不可变字符串，无需撤销父串。",
+      "selectedLabel": "11011000",
+      "result": "11100100"
+    }
+  ]
+}

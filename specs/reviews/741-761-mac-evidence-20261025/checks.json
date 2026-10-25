@@ -1,0 +1,286 @@
+[
+  {
+    "id": 741,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "741",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.048
+  },
+  {
+    "id": 741,
+    "name": "check.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/741/tests/check.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.662
+  },
+  {
+    "id": 741,
+    "name": "browser.cjs",
+    "command": [
+      "node",
+      "leetcode/741/tests/browser.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 14.638
+  },
+  {
+    "id": 741,
+    "name": "inspect.cjs",
+    "command": [
+      "node",
+      "leetcode/741/tests/inspect.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 1.635
+  },
+  {
+    "id": 741,
+    "name": "preset-readability.cjs",
+    "command": [
+      "node",
+      "leetcode/741/tests/preset-readability.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 1.086
+  },
+  {
+    "id": 745,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "745",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.039
+  },
+  {
+    "id": 745,
+    "name": "test_solution.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/745/tests/test_solution.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.165
+  },
+  {
+    "id": 745,
+    "name": "test_core.cjs",
+    "command": [
+      "node",
+      "leetcode/745/tests/test_core.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.038
+  },
+  {
+    "id": 745,
+    "name": "browser.cjs",
+    "command": [
+      "node",
+      "leetcode/745/tests/browser.cjs"
+    ],
+    "exit_code": 1,
+    "seconds": 6.477
+  },
+  {
+    "id": 749,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "749",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.046
+  },
+  {
+    "id": 749,
+    "name": "check.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/749/tests/check.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.133
+  },
+  {
+    "id": 749,
+    "name": "core.cjs",
+    "command": [
+      "node",
+      "leetcode/749/tests/core.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.096
+  },
+  {
+    "id": 749,
+    "name": "browser.cjs",
+    "command": [
+      "node",
+      "leetcode/749/tests/browser.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 6.622
+  },
+  {
+    "id": 753,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "753",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.047
+  },
+  {
+    "id": 753,
+    "name": "test_solution.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/753/tests/test_solution.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.057
+  },
+  {
+    "id": 753,
+    "name": "test_core.cjs",
+    "command": [
+      "node",
+      "leetcode/753/tests/test_core.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.059
+  },
+  {
+    "id": 753,
+    "name": "browser.cjs",
+    "command": [
+      "node",
+      "leetcode/753/tests/browser.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 7.767
+  },
+  {
+    "id": 753,
+    "name": "layout.cjs",
+    "command": [
+      "node",
+      "leetcode/753/tests/layout.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 1.087
+  },
+  {
+    "id": 757,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "757",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.04
+  },
+  {
+    "id": 757,
+    "name": "test_solution.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/757/tests/test_solution.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.134
+  },
+  {
+    "id": 757,
+    "name": "test_core.cjs",
+    "command": [
+      "node",
+      "leetcode/757/tests/test_core.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.048
+  },
+  {
+    "id": 757,
+    "name": "browser.cjs",
+    "command": [
+      "node",
+      "leetcode/757/tests/browser.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 6.242
+  },
+  {
+    "id": 761,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "761",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.047
+  },
+  {
+    "id": 761,
+    "name": "check.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/761/tests/check.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.146
+  },
+  {
+    "id": 761,
+    "name": "browser.cjs",
+    "command": [
+      "node",
+      "leetcode/761/tests/browser.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 24.839
+  },
+  {
+    "id": 761,
+    "name": "prose-check.cjs",
+    "command": [
+      "node",
+      "leetcode/761/tests/prose-check.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 4.843
+  }
+]

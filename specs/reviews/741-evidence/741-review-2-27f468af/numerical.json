@@ -1,0 +1,13 @@
+{
+  "kind": "author self-check",
+  "cases": 8926,
+  "exhaustive": "all official-valid n=1,2,3 ternary grids",
+  "seeded": 140,
+  "seed": 741,
+  "canonical": "executed Python3 official interface; unchanged input",
+  "intermediate": "every DP state compared with enumerated prefix unions in JS",
+  "boundaries": "n=50 all ones=196; all zero=0; single cells; obstacles; both official examples",
+  "quiz": "independent layer values verified",
+  "greedy": "unique best single path=6, forced total=8, joint total=9",
+  "js": "407181 intermediate states matched independent prefix-union oracle; path histories, candidates, presets, copy key uniqueness and mirror exact."
+}

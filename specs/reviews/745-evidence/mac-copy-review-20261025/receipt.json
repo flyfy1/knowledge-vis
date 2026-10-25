@@ -1,0 +1,30 @@
+{
+  "candidate": "4a3d34fb6f4093b5e73a614d16d9a4bcf59107ca",
+  "batchTip": "5887fa0c63eb5eaa3b1966eecb903c4a707030a5",
+  "lessonTree": "9f3c7de59b9c104bac3d8e531e11231d82dbd274",
+  "candidateFilesCompared": 35,
+  "allFrozenFilesUnchanged": true,
+  "frozenFileCount": 968,
+  "originalTestSha256": "c6541d2922416cb3d0759d4675fdffdbcd2b15adedf754edb75e16af89dfe733",
+  "adapterSha256": "d74a7e546555551a954472ee8c589fb7ec365b39d1b486f73a8d2bb8beafe17c",
+  "commands": [
+    {
+      "name": "adapted-suite",
+      "command": [
+        "node",
+        "/tmp/leetcode-745-mac-copy-adapter.cjs",
+        "/tmp/leetcode-741-761-candidate-20261025/leetcode/745/tests/browser.cjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "focused-probe",
+      "command": [
+        "node",
+        "/Users/songyy/Documents/knowledge-vis/specs/reviews/745-evidence/mac-copy-review-20261025/focused-copy-probe.cjs"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "serverClosed": true
+}

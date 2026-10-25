@@ -1,0 +1,53 @@
+{
+  "source": "5887fa0c63eb5eaa3b1966eecb903c4a707030a5",
+  "lessons": {
+    "741": {
+      "files": 100,
+      "candidate": "0931d834e513da00498c1944124bc3f3e532339b",
+      "exact": true
+    },
+    "745": {
+      "files": 35,
+      "candidate": "4a3d34fb6f4093b5e73a614d16d9a4bcf59107ca",
+      "exact": true
+    },
+    "749": {
+      "files": 50,
+      "candidate": "d54c84ee031f37d8040bbb2f316d021bb4450a35",
+      "exact": true
+    },
+    "753": {
+      "files": 66,
+      "candidate": "50fd1cbd00cb9d3c0a89a422bc224369cfa35618",
+      "exact": true
+    },
+    "757": {
+      "files": 62,
+      "candidate": "1cc9f57b4cda2f4f8b2c1b223114f003bb728534",
+      "exact": true
+    },
+    "761": {
+      "files": 50,
+      "candidate": "cd125c135af86cad6ed83ed04cff1a3b8b2b7101",
+      "exact": true
+    }
+  },
+  "protected_before": {
+    "index.html": "5c2fd1c30fee38137595f1599465970696c30fdf58ea687894741be508a49053",
+    "pages.config.js": "b75957b10f86d26c112447ca45327f3b3ff30aecbdeb12518b178cf81e81e0eb",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+    "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+  },
+  "protected_after": {
+    "index.html": "5c2fd1c30fee38137595f1599465970696c30fdf58ea687894741be508a49053",
+    "pages.config.js": "b75957b10f86d26c112447ca45327f3b3ff30aecbdeb12518b178cf81e81e0eb",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+    "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+  },
+  "registry_sha256": "65f7dbd86132d01738a49853e3f9b2e487d3b5d96c379efa5fd8fb6f7c111677",
+  "published": false
+}

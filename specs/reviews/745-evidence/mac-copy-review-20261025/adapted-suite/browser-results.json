@@ -1,0 +1,601 @@
+{
+  "status": "pass",
+  "base": "http://127.0.0.1:18770/leetcode/745/",
+  "host": "darwin",
+  "results": [
+    {
+      "locale": "en",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "overflow": false
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "overflow": false
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "zoom": "200% CSS zoom at 1440px, effective content width 720px; not OS UI zoom",
+  "nativeCopy": "Linux Control+C; sentinel, full selection, real shortcut, clipboard readback exact",
+  "sourceDisplayCopyDownloadExact": true,
+  "localStorageDenied": true,
+  "consoleErrors": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "contrast": [
+    {
+      "role": "code text",
+      "fg": "e8edf4",
+      "bg": "090e16",
+      "ratio": 16.437295258072666
+    },
+    {
+      "role": "text",
+      "fg": "e8edf4",
+      "bg": "161b22",
+      "ratio": 14.704584598678618
+    },
+    {
+      "role": "muted",
+      "fg": "9aa7b8",
+      "bg": "1c2330",
+      "ratio": 6.449407898769069
+    },
+    {
+      "role": "muted on panel",
+      "fg": "9aa7b8",
+      "bg": "161b22",
+      "ratio": 7.078851579017443
+    },
+    {
+      "role": "accent",
+      "fg": "6ee7ff",
+      "bg": "1c2330",
+      "ratio": 10.910104011097095
+    },
+    {
+      "role": "orange",
+      "fg": "ffb454",
+      "bg": "1c2330",
+      "ratio": 8.937191437807625
+    },
+    {
+      "role": "good",
+      "fg": "7ee2a8",
+      "bg": "161b22",
+      "ratio": 10.981256963037128
+    },
+    {
+      "role": "primary",
+      "fg": "0d1117",
+      "bg": "6ee7ff",
+      "ratio": 13.100679028115637
+    },
+    {
+      "role": "focus",
+      "fg": "ffb454",
+      "bg": "161b22",
+      "ratio": 9.809435643476732
+    }
+  ],
+  "contrastCalibration": "black=0, white=1, primaries=.2126/.7152/.0722, #747474 on black=4.492948073111701 (fails 4.5)",
+  "nativeLabels": [
+    {
+      "locale": "en",
+      "width": 320,
+      "text": "ape / apple / ape",
+      "measured": 137.03994750976562,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "text": "Independent maxima",
+      "measured": 159.82398986816406,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "text": "One-letter / overlap",
+      "measured": 157.26394653320312,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "text": "apple (official)",
+      "measured": 112.17594909667969,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "text": "ape / apple / ape",
+      "measured": 137.03994750976562,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "text": "Independent maxima",
+      "measured": 159.82398986816406,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "text": "One-letter / overlap",
+      "measured": 157.26394653320312,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "text": "apple (official)",
+      "measured": 112.17594909667969,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "text": "ape / apple / ape",
+      "measured": 137.03994750976562,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "text": "Independent maxima",
+      "measured": 159.82398986816406,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "text": "One-letter / overlap",
+      "measured": 157.26394653320312,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "text": "apple (official)",
+      "measured": 112.17594909667969,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "text": "ape / apple / ape",
+      "measured": 137.03994750976562,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "text": "Independent maxima",
+      "measured": 159.82398986816406,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "text": "One-letter / overlap",
+      "measured": 157.26394653320312,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "text": "apple (official)",
+      "measured": 112.17594909667969,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "text": "ape / apple / ape",
+      "measured": 137.03994750976562,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "text": "Independent maxima",
+      "measured": 159.82398986816406,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "text": "One-letter / overlap",
+      "measured": 157.26394653320312,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "text": "apple (official)",
+      "measured": 112.17594909667969,
+      "available": 160,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "text": "ape / apple / ape",
+      "measured": 137.03994750976562,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "text": "独立最大值反例",
+      "measured": 114.24005126953125,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "text": "单字母与重叠",
+      "measured": 97.9200439453125,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "text": "apple（官方）",
+      "measured": 107.24801635742188,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "text": "ape / apple / ape",
+      "measured": 137.03994750976562,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "text": "独立最大值反例",
+      "measured": 114.24005126953125,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "text": "单字母与重叠",
+      "measured": 97.9200439453125,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "text": "apple（官方）",
+      "measured": 107.24801635742188,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "text": "ape / apple / ape",
+      "measured": 137.03994750976562,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "text": "独立最大值反例",
+      "measured": 114.24005126953125,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "text": "单字母与重叠",
+      "measured": 97.9200439453125,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "text": "apple（官方）",
+      "measured": 107.24801635742188,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "text": "ape / apple / ape",
+      "measured": 137.03994750976562,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "text": "独立最大值反例",
+      "measured": 114.24005126953125,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "text": "单字母与重叠",
+      "measured": 97.9200439453125,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "text": "apple（官方）",
+      "measured": 107.24801635742188,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "text": "ape / apple / ape",
+      "measured": 137.03994750976562,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "text": "独立最大值反例",
+      "measured": 114.24005126953125,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "text": "单字母与重叠",
+      "measured": 97.9200439453125,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "text": "apple（官方）",
+      "measured": 107.24801635742188,
+      "available": 138,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    }
+  ],
+  "related": [
+    {
+      "locale": "en",
+      "label": "Palindrome Pairs: match ends with a reversed trie",
+      "url": "http://127.0.0.1:18770/leetcode/336/#step1",
+      "excerpt": "0202 · Match outside, test insideWhat remains after matching the outside of two unequal-length words? A prefix starts at the beginning; a suffix ends at the end. Either may be empty. In s+lls, the left s matches the final s on the right, leaving ll, which must be a palindrome. If the right word is shorter, as in lls+ll, it must reverse the start of the left word. Here ll matches, and the leftover s is a palindrome too, so llsll works.s | ll | sll | s | llHow can matches share work? Insert each candidate right word j backward into a trie: a tree whose edges are characters and whose shared starting paths are stored once. The root path is empty. Path s→l→l stores reversed lls. A node’s end is the index of a right word ending exactly there, or −1. Its pal list contains indices whose unmatched original prefix is a palindrome. While inserting lls: the root leaves lls, which fails; path s leaves ll, which qualifies; path sl leaves l, which qualifies; path sll leaves the empty string, which also qualifies.This derives the invariant, a fact preserved after each move: after reading k characters of left word w, the current path equals w[:k] and the reversal of the final k characters of every reachable right word. Those outside letters need no further checks. ① If end exists, the right word is exhausted: emit only when the left suffix w[k:] is a palindrome. ② If the left word is exhausted, emit right words in that node’s pal list. A missing edge means an outside mismatch, so stop this query. Both cases exclude the same input index."
+    },
+    {
+      "locale": "en",
+      "label": "Concatenated Words: build prefixes through cuts",
+      "url": "http://127.0.0.1:18770/leetcode/472/#step2",
+      "excerpt": "0303 · Test each cutWhich test makes a new boundary reachable? Select a case, then test cuts while keeping its dictionary fixed. Watch the source dp[j], the piece, and destination dp[i]; step back to verify restoration. Changing the case restarts this experiment, without changing the separate prediction below.Each cell is a prefix boundary, not a character index. T/F means true/false; ? means unprocessed. A partial F is not final. Completed cells remain visible. An orange outline marks the last tested destination. The history retains every attempted cut; the search for a prefix stops at its first witness.This trace is a browser simulation, not execution of the Python submission below. Every preset has a complete trace. Teaching snapshots are separate from algorithm auxiliary space.Case (changing restarts the trace)catcat · reuse a pieceabcd · longest-prefix trapcat · exclude self-matchaaaa · multiple pathscatsdog · a gap in the middlea · one-character boundaryTarget: catcat; original dictionary: [\"cat\",\"catcat\"]← Undo one testTest next cut →Reset traceShow final stateTest position (scrub to rewind)Tests completed: 0/17; finished nonempty prefixes: 0Initial: only the empty prefix dp[0]=T; all other prefixes are unprocessed.Retained prefix statesdp[0] · empty prefixcompleteTdp[1] · cunprocessed?dp[2] · caunprocessed?dp[3] · catunprocessed?dp[4] · catcunprocessed?dp[5] · catcaunprocessed?dp[6] · catcatunprocessed?Tests so farNo cut has been tested yet.Source → target / pieceTest result"
+    },
+    {
+      "locale": "zh",
+      "label": "回文对：用反向字典树匹配两端",
+      "url": "http://127.0.0.1:18770/leetcode/336/#step1",
+      "excerpt": "0202 · 消去外侧，保留中间这一步要回答：两个长度不等的单词，匹配外侧后究竟剩什么？前缀是从开头取的一段，后缀是到结尾的一段；两者都可以为空。回到 s+lls：左边 s 与右边最后一个 s 抵消，剩下 ll，必须是回文。若右边单词比较短，例如 lls+ll，则必须先检查它是否等于左边开头的反转；这里 ll 匹配，但剩余 s 也是回文，所以 llsll 成立。s | ll | sll | s | ll怎样共享这些匹配？把每个候选右词 j 反向插入字典树：一棵用字符标记边、相同开头共用路径的树。根的路径为空。沿路径 s→l→l 存储 lls 的反转；某节点的 end 是恰好在此结束的右词下标，无词则为 −1。pal 列表存放：走到此处后，原右词尚未匹配的前缀是回文的下标。插入 lls 时，根剩 lls 不合格；路径 s 剩 ll 合格；路径 sl 剩 l 合格；路径 sll 剩空串也合格。由此得到不变式（每次前进后都成立的事实）：查询左词 w，读了 k 个字符时，当前路径等于 w[:k]，也等于每个可达右词最后 k 个字符的反转。因此已匹配的两侧不用再检查。① 若节点 end 存在，右词已用完，仅当左词剩余后缀 w[k:] 为回文时输出。② 若左词用完，只输出该节点 pal 中的右词。任何缺少的边都意味着外侧不匹配，立即停止该词。两种输出都排除自身下标。"
+    },
+    {
+      "locale": "zh",
+      "label": "连接词：用切点构建完整前缀",
+      "url": "http://127.0.0.1:18770/leetcode/472/#step2",
+      "excerpt": "0303 · 逐次检验切点哪一次检查能让新边界可达？先选场景，再逐次检验；词表保持不变。观察来源 dp[j]、片段与目标 dp[i]，然后后退核对恢复。切换场景会从头开始；不影响下面的独立预测题。每格是一个前缀边界（不是字符下标）。T/F 是真/假；? 是尚未处理；“检验中”的 F 还不是最终结论。“已完成”格会保留。橙色框指出刚检查的目标，完整历史列出已尝试的切点；一旦找到可行切点就停止该前缀的搜索。可视轨迹是浏览器模拟，不是在执行下方 Python 提交。所有预设均展示完整轨迹；快照占用的教学空间不计入算法辅助空间。场景（切换会重置轨迹）catcat · 片段复用abcd · 最长前缀陷阱cat · 排除自匹配aaaa · 多种路径catsdog · 中间有缺口a · 单字符边界目标：catcat；原词表：[\"cat\",\"catcat\"]← 撤回一次检验检验下一个切点 →重置轨迹跳到最终状态检验进度（可拖动回看）已检验 0/17 次；已完成非空前缀数：0初始：仅空前缀 dp[0]=T，其余尚未处理。保留的前缀状态dp[0] · 空前缀已完成Tdp[1] · c尚未处理?dp[2] · ca尚未处理?dp[3] · cat尚未处理?dp[4] · catc尚未处理?dp[5] · catca尚未处理?dp[6] · catcat尚未处理?已发生的检验还没有检验切点。来源 → 目标 / 片段检查结果"
+    }
+  ],
+  "renderedStyles": [
+    {
+      "selector": "BODY.",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1"
+    },
+    {
+      "selector": "BUTTON.active",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1"
+    },
+    {
+      "selector": "A.",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1"
+    },
+    {
+      "selector": "A.",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1"
+    },
+    {
+      "selector": "A.active",
+      "color": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1"
+    },
+    {
+      "selector": "A.",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1"
+    },
+    {
+      "selector": "A.",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1"
+    },
+    {
+      "selector": "DIV.stage",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1"
+    },
+    {
+      "selector": "P.readout",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1"
+    },
+    {
+      "selector": "P.hint",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1"
+    },
+    {
+      "selector": "P.question",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1"
+    },
+    {
+      "selector": "P.hint",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1"
+    },
+    {
+      "selector": "DIV.stage",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1"
+    },
+    {
+      "selector": "BUTTON.btn primary",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1"
+    },
+    {
+      "selector": "BUTTON.btn ",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1"
+    },
+    {
+      "selector": "P.readout",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1"
+    },
+    {
+      "selector": "P.question",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1"
+    },
+    {
+      "selector": "P.readout",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1"
+    },
+    {
+      "selector": "P.hint",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1"
+    },
+    {
+      "selector": "P.hint",
+      "color": "rgb(154, 167, 184)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1"
+    },
+    {
+      "selector": "P.readout",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1"
+    },
+    {
+      "selector": "P.question",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1"
+    }
+  ]
+}

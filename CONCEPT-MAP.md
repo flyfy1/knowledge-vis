@@ -1429,3 +1429,62 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Recursive descent | `leetcode/736/#step4` | Consume exactly one expression per recursive call. |
 
 <!-- /leetcode-736-campaign -->
+
+
+<!-- leetcode-741-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Synchronized grid path DP | `leetcode/741/#step2` | Reverse a return path, synchronize by row + column, and count shared cells once. |
+
+<!-- /leetcode-741-campaign -->
+
+
+<!-- leetcode-745-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Prefix–suffix pair invariant | `leetcode/745/#step2` | Enumerate all nonempty end pairs and retain the latest matching original index. |
+
+<!-- /leetcode-745-campaign -->
+
+
+<!-- leetcode-749-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Threatened cells versus wall edges | `leetcode/749/#step0` | Deduplicate healthy targets but count each boundary edge. |
+| Frozen-frontier simulation | `leetcode/749/#step2` | Compute all regions before quarantine and simultaneous one-layer spread. |
+
+<!-- /leetcode-749-campaign -->
+
+
+<!-- leetcode-753-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Password overlap graph | `leetcode/753/#step1` | Encode length-n passwords as edges between length-(n-1) suffixes. |
+| Iterative Euler circuit | `leetcode/753/#step2` | Consume each password edge once and reverse incoming digits at finishing time. |
+
+<!-- /leetcode-753-campaign -->
+
+
+<!-- leetcode-757-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Rightmost two-point interval cover | `leetcode/757/#step2` | Sort by end and maintain the two largest chosen integers. |
+| Greedy exchange proof | `leetcode/757/#step2` | Move required points right while preserving a feasible optimal extension. |
+
+<!-- /leetcode-757-campaign -->
+
+
+<!-- leetcode-761-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Prefix balance and minimal special blocks | `leetcode/761/#step1` | Zero returns locate the boundaries of indecomposable special substrings. |
+| Recursive canonicalization | `leetcode/761/#step2` | Optimize the interior, preserve its shell, then sort siblings. |
+| Prefix-free sibling exchange proof | `leetcode/761/#step3` | Minimal special blocks justify ordinary descending lexical sorting. |
+
+<!-- /leetcode-761-campaign -->
