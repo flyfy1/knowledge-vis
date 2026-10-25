@@ -2563,6 +2563,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(k) time per update, O(log(k+1)) per query; O(k) space for k endpoints"
   },
   {
+    "id": 719,
+    "title": {
+      "zh": "找出第 K 小的数对距离",
+      "en": "Find K-th Smallest Pair Distance"
+    },
+    "desc": {
+      "zh": "从数对手算到滑动窗口计数与答案二分。",
+      "en": "From hand-counted pairs to window counting and binary search."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二分查找",
+        "en": "Binary Search"
+      },
+      {
+        "zh": "双指针",
+        "en": "Two Pointers"
+      }
+    ],
+    "path": "719/",
+    "leetcodeUrl": "https://leetcode.com/problems/find-k-th-smallest-pair-distance/",
+    "language": "Python",
+    "complexity": "O(n log n + n log(W+1)) time; O(n) space, W=max(nums)-min(nums)"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

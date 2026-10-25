@@ -1381,3 +1381,13 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | 区间替换 / Interval replacement | `leetcode/715/#step2` | Parity determines new boundaries when assigning coverage on a range. |
 
 <!-- /leetcode-715-campaign -->
+
+
+<!-- leetcode-719-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Pair distance counting | `leetcode/719/#step1` | Count a contiguous block of left endpoints for each sorted right endpoint. |
+| Binary search on distance | `leetcode/719/#step2` | Find the first threshold with at least k pairs. |
+
+<!-- /leetcode-719-campaign -->
