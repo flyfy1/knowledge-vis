@@ -1624,3 +1624,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Two-state digit DP | `leetcode/964/#step3` | Keep the processed residue and its complement. |
 
 <!-- /leetcode-964-campaign -->
+
+
+<!-- leetcode-827-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Connected components | `leetcode/827/#step2` | Label each island once and deduplicate adjacent island IDs. |
+| Flood fill | `leetcode/827/#step2` | Use an iterative stack to visit each land cell once. |
+
+<!-- /leetcode-827-campaign -->

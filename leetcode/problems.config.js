@@ -3255,6 +3255,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(2^D) time; O(2^D) space, conservative unit-cost bounds for minimum instruction count D"
   },
   {
+    "id": 827,
+    "title": {
+      "zh": "最大人工岛",
+      "en": "Making A Large Island"
+    },
+    "desc": {
+      "zh": "给岛编号，用不同邻岛的面积求一次翻转的收益。",
+      "en": "Label islands and combine distinct neighboring areas for one flip."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "连通分量",
+        "en": "Connected components"
+      },
+      {
+        "zh": "洪水填充",
+        "en": "Flood fill"
+      }
+    ],
+    "path": "827/",
+    "leetcodeUrl": "https://leetcode.com/problems/making-a-large-island/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(n²) auxiliary space"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
