@@ -1,0 +1,127 @@
+{
+  "outcome": "accepted_local",
+  "score": 97.5,
+  "required_open": [],
+  "final_run_state_equal": true,
+  "candidate_review_registration_lesson_tree_equal": true,
+  "lesson_tree": "c74c49dff8015ec676bea509ae81cb6c1643a504",
+  "source_sha256": "45ca24b284d6e3e836a9374f494c8401523c63f667c6cf166c72671bbddf3e95",
+  "source_mirror_exact": true,
+  "signature": [
+    "self",
+    "nums",
+    "k"
+  ],
+  "session_ids": [
+    "01a17530-fe1a-70e0-b20f-ffa0d0c3358f"
+  ],
+  "independent_4092_case_exit_zero_confirmed": true,
+  "review_harness_counts": {
+    "small_cases": 5574,
+    "intermediate_traces": 1700,
+    "max_size_cases": 4
+  },
+  "related_warning_retained": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "url": "http://127.0.0.1:18770/favicon.ico",
+      "page": "http://127.0.0.1:18770/leetcode/239/#step2"
+    }
+  ],
+  "post_root_push_remote_matches_registration": true,
+  "scope": "Immutable source and terminal identity checks, actual exit-zero evidence extraction, existing screenshot inspection; no fresh algorithm/browser execution, clipboard, Pi mutation, push or publication.",
+  "files": {
+    "862-review-1-8d82c3ee.md": {
+      "sha256": "69766c1f156af218b0ea11da6bccc4069f93f5637f78384811ab7056c8bd6a45",
+      "bytes": 15748
+    },
+    "author-runs.json": {
+      "sha256": "05c01aaefeea54a2af2903f57eb0d44cbf2c725d9d06eb147e869fefc349d072",
+      "bytes": 836
+    },
+    "branch-observation.json": {
+      "sha256": "2672a806d295b41ac1afbf1fa657f3ae01f810d531e976bc805ef333f057d314",
+      "bytes": 526
+    },
+    "candidate/BRIEF.md": {
+      "sha256": "bbaceb76ba2e07fabe416b65645e2873a77f7360b06a5de0a9ac82fe69227852",
+      "bytes": 5590
+    },
+    "candidate/app.js": {
+      "sha256": "fe6cea98bdcef83e51a5fd12afbd3ff500b2cf5b24e44199ec9a4edbbb24f4ea",
+      "bytes": 3555
+    },
+    "candidate/copy.js": {
+      "sha256": "7134f8909a1f1dedc94d90e03349ad8b67321fe7fc742fb593ec438f8534a432",
+      "bytes": 16390
+    },
+    "candidate/core.js": {
+      "sha256": "32cc35ce48d2857e46333ce99d88032da381bd1771f01bba17a82bca19912f4d",
+      "bytes": 930
+    },
+    "candidate/index.html": {
+      "sha256": "5552beb0fdc7cf11dc4e0b82cc3f22b55e6a66e14b867fbc589523fad152493e",
+      "bytes": 6534
+    },
+    "candidate/lesson-entry.json": {
+      "sha256": "ea9dd84d2ff1e565eee86b0c801aeea6d22a496872beaa93e16982996188b36f",
+      "bytes": 962
+    },
+    "candidate/python-code.js": {
+      "sha256": "4ddcdb6f59099d456d767ba5f9397aec2309456bc0661fc9f46497815ee993e6",
+      "bytes": 687
+    },
+    "candidate/solution.py": {
+      "sha256": "45ca24b284d6e3e836a9374f494c8401523c63f667c6cf166c72671bbddf3e95",
+      "bytes": 640
+    },
+    "candidate/style.css": {
+      "sha256": "969187e3f048805f0e64220e1d99122b3cea760f0a3bd433eeb27088fd4fc06f",
+      "bytes": 1869
+    },
+    "independent-execution-excerpt.txt": {
+      "sha256": "a1ab33dcd0f6ae7f3727a4b9e8b39ad528c994328d8d99b8effb7ce69896c912",
+      "bytes": 331
+    },
+    "review-events.jsonl.gz": {
+      "sha256": "3c23831cb8823c2d1ee313d650fc43ebfb19d2890395f9963ea0423a6464fe39",
+      "bytes": 59906
+    },
+    "review-evidence/algorithm-results.json": {
+      "sha256": "b13af8054bd1a1be15ca09af6924e0aa12bd7ebd74598f2b107f659c0213a51a",
+      "bytes": 193
+    },
+    "review-evidence/browser-results.json": {
+      "sha256": "f431ad2f6d9ea822abf6944151085a2f0821ebfdec8ad0a897c12ec3727004bf",
+      "bytes": 45098
+    },
+    "review-evidence/en-320-zoom2-trace.png": {
+      "sha256": "f5070a84262d2b7ae48ff73bb73119eeef713c1701ab9b7ec9e447ba3f826913",
+      "bytes": 33161
+    },
+    "review-evidence/independent-en-390-end.png": {
+      "sha256": "5e318b23b36619ddb325968868f287deb0e752ea4e8228e0b1a2abedde2fd9bd",
+      "bytes": 58419
+    },
+    "review-evidence/independent-zh-320-middle.png": {
+      "sha256": "cc087d7d7a1d17c4c95e7c01a19535a88f4e2f33743fa0420fe36db9c87e3627",
+      "bytes": 54654
+    },
+    "review-evidence/zh-operation4.png": {
+      "sha256": "056c2643fff374ad0ca4763156cf1deb9b37d3db6810dd11cdbfd8dcf243421c",
+      "bytes": 159473
+    },
+    "review-final.json": {
+      "sha256": "285d634f58e63eb991257602266f62f720c99488410951be0f450e3dd3e1a7c9",
+      "bytes": 657
+    },
+    "review-run.json": {
+      "sha256": "b91815e45f69aea0a9123837127acfb8a2e08233190b3529845fc05015b82300",
+      "bytes": 1241
+    },
+    "snapshot.json": {
+      "sha256": "590fe5a555ad94675658f2bfd09d5fb7b03ea82c3a1c08f0c1a2810ca2dcaeef",
+      "bytes": 17268
+    }
+  }
+}

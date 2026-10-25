@@ -1,0 +1,370 @@
+{
+  "captured_at": "2026-10-25T22:36:20.261260+00:00",
+  "state_status": "running",
+  "current": {
+    "problem_id": "864",
+    "stage": "author",
+    "started_at": "2026-10-25T22:35:36.464754+00:00",
+    "run_id": "864-author-a939f826b6fa"
+  },
+  "expected_head": "237c625ccf42fe101afd96e2d913c9b933566ecf",
+  "entry862": {
+    "status": "accepted_local",
+    "rounds": 1,
+    "new": true,
+    "phase": "done",
+    "reviews": [
+      {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/862-review-1-8d82c3ee.md",
+        "evidence": [
+          "Saved source-blind Chromium cold walkthrough before source audit.",
+          "Canonical Python passed 4,092 independently chosen exhaustive cases.",
+          "Both locales, all presets, rewind/reset, prediction changes and narrow layouts passed.",
+          "Exact displayed/copied/downloaded source parity and native clipboard fallback passed.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "97.5/100. No required findings. 200% CSS zoom checked; physical devices and browser-chrome zoom were not tested. Acceptance is separate from publication.",
+        "run_id": "862-review-5a89eb47250c",
+        "candidate": "389ccb02cf5ad864707de3460180d6dfd0f08a78",
+        "candidate_sha256": "304840ae3091d913ad612d7a8e175f27e7d391df3bc4e4be494b9c412c8d8cd9",
+        "weighted_score": 97.5,
+        "round": 1,
+        "commit": "bd1a2925ba14e0cfffcff33fe65ea06d76d46696"
+      }
+    ],
+    "author_runs": [
+      "862-author-6bcaff24bd04"
+    ],
+    "prior_report": "specs/reviews/862-review-1-8d82c3ee.md",
+    "candidate": "389ccb02cf5ad864707de3460180d6dfd0f08a78",
+    "registration_commit": "237c625ccf42fe101afd96e2d913c9b933566ecf",
+    "accepted_at": "2026-10-25T22:35:34.527609+00:00"
+  },
+  "target_review": {
+    "outcome": "accepted",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      3
+    ],
+    "required_open": [],
+    "report_path": "specs/reviews/862-review-1-8d82c3ee.md",
+    "evidence": [
+      "Saved source-blind Chromium cold walkthrough before source audit.",
+      "Canonical Python passed 4,092 independently chosen exhaustive cases.",
+      "Both locales, all presets, rewind/reset, prediction changes and narrow layouts passed.",
+      "Exact displayed/copied/downloaded source parity and native clipboard fallback passed.",
+      "Non-mutating metadata preflight exited 0."
+    ],
+    "detail": "97.5/100. No required findings. 200% CSS zoom checked; physical devices and browser-chrome zoom were not tested. Acceptance is separate from publication.",
+    "run_id": "862-review-5a89eb47250c",
+    "candidate": "389ccb02cf5ad864707de3460180d6dfd0f08a78",
+    "candidate_sha256": "304840ae3091d913ad612d7a8e175f27e7d391df3bc4e4be494b9c412c8d8cd9",
+    "weighted_score": 97.5,
+    "round": 1,
+    "commit": "bd1a2925ba14e0cfffcff33fe65ea06d76d46696"
+  },
+  "candidate": "389ccb02cf5ad864707de3460180d6dfd0f08a78",
+  "review_commit": "bd1a2925ba14e0cfffcff33fe65ea06d76d46696",
+  "registration_commit": "237c625ccf42fe101afd96e2d913c9b933566ecf",
+  "lesson_trees": {
+    "candidate": "c74c49dff8015ec676bea509ae81cb6c1643a504",
+    "review": "c74c49dff8015ec676bea509ae81cb6c1643a504",
+    "registration": "c74c49dff8015ec676bea509ae81cb6c1643a504"
+  },
+  "review_changed_paths": [
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/algorithm-results.json",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/browser-results.json",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/cold-desktop.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-1440-zoom1-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-1440-zoom1-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-1440-zoom2-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-1440-zoom2-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-320-zoom1-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-320-zoom1-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-320-zoom2-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-320-zoom2-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-390-zoom1-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-390-zoom1-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-390-zoom2-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-390-zoom2-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-736-zoom1-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-736-zoom1-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-736-zoom2-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-736-zoom2-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-exercise.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-operation3.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-operation4.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-top.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/independent-copy-fallback.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/independent-en-390-end.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/independent-zh-320-middle.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-1440-zoom1-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-1440-zoom1-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-1440-zoom2-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-1440-zoom2-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-320-zoom1-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-320-zoom1-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-320-zoom2-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-320-zoom2-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-390-zoom1-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-390-zoom1-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-390-zoom2-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-390-zoom2-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-736-zoom1-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-736-zoom1-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-736-zoom2-controls.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-736-zoom2-trace.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-exercise.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-operation3.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-operation4.png",
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-top.png",
+    "specs/reviews/862-review-1-8d82c3ee.md"
+  ],
+  "review_evidence_inventory": {
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/algorithm-results.json": {
+      "sha256": "b13af8054bd1a1be15ca09af6924e0aa12bd7ebd74598f2b107f659c0213a51a",
+      "bytes": 193,
+      "archived": true
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/browser-results.json": {
+      "sha256": "f431ad2f6d9ea822abf6944151085a2f0821ebfdec8ad0a897c12ec3727004bf",
+      "bytes": 45098,
+      "archived": true
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/cold-desktop.png": {
+      "sha256": "a45501d591b1f2fefc4cf1199124d3eb84f7326af2d857621b1cb87a6d35a1d4",
+      "bytes": 711893,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-1440-zoom1-controls.png": {
+      "sha256": "2570ca337b349218f605a121390be5df3d4a978bfd87bc0ffbd167f423141ba4",
+      "bytes": 127839,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-1440-zoom1-trace.png": {
+      "sha256": "2570ca337b349218f605a121390be5df3d4a978bfd87bc0ffbd167f423141ba4",
+      "bytes": 127839,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-1440-zoom2-controls.png": {
+      "sha256": "0d3cb6102262ed3e4ef0b6076152cb5d905d4c7aabfacd45ff1823b3485c8907",
+      "bytes": 133038,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-1440-zoom2-trace.png": {
+      "sha256": "c2c4b7fc99c8929614b38fe527e12760af560e4240a0608cdd33cd1c8c1e8815",
+      "bytes": 108299,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-320-zoom1-controls.png": {
+      "sha256": "7ada83ed1d5441ea5a5cd38a926422841206805f57305289f405db5f0a363678",
+      "bytes": 60753,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-320-zoom1-trace.png": {
+      "sha256": "7ada83ed1d5441ea5a5cd38a926422841206805f57305289f405db5f0a363678",
+      "bytes": 60753,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-320-zoom2-controls.png": {
+      "sha256": "46ce3d399caf8ea51b59fe977960381fdc02ea1c49a2e68243b81ad59c294196",
+      "bytes": 46825,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-320-zoom2-trace.png": {
+      "sha256": "f5070a84262d2b7ae48ff73bb73119eeef713c1701ab9b7ec9e447ba3f826913",
+      "bytes": 33161,
+      "archived": true
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-390-zoom1-controls.png": {
+      "sha256": "b6db6b05fb89f2ecbeacc200d04de392b8c7b59b418e9ac8605c86e86215ba4b",
+      "bytes": 68161,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-390-zoom1-trace.png": {
+      "sha256": "b6db6b05fb89f2ecbeacc200d04de392b8c7b59b418e9ac8605c86e86215ba4b",
+      "bytes": 68161,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-390-zoom2-controls.png": {
+      "sha256": "be92007d8becff4d6a4fed11f8aec482cec50847f8dc7850cec9c105f4fc71d7",
+      "bytes": 61705,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-390-zoom2-trace.png": {
+      "sha256": "17f3ec67b11258049e2cb9d2ea450a55ca7a4a669283d9c1d8b3b7308530530a",
+      "bytes": 45358,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-736-zoom1-controls.png": {
+      "sha256": "d9d02c9cf36956de39d962c0641cfb3f003e1358e8b0e6b1b3a26e2feee5245f",
+      "bytes": 112603,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-736-zoom1-trace.png": {
+      "sha256": "d9d02c9cf36956de39d962c0641cfb3f003e1358e8b0e6b1b3a26e2feee5245f",
+      "bytes": 112603,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-736-zoom2-controls.png": {
+      "sha256": "b34362ae04912e02384dc5b56e572c84dd47ee2f59c8c519d7abdee09691a6c7",
+      "bytes": 96400,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-736-zoom2-trace.png": {
+      "sha256": "3395c499d9dcd52511ccad6b53e06971e89e628308820574e810fe915782a0a3",
+      "bytes": 70876,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-exercise.png": {
+      "sha256": "21927498435adf92e5f20145093e44b9a928b9c4adc384c6009308ef4975c21c",
+      "bytes": 80492,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-operation3.png": {
+      "sha256": "0c09d1a8ce88cc205bb9c086f76f6a40687b0d576590ab3dcc40d4dd193c6c6f",
+      "bytes": 131678,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-operation4.png": {
+      "sha256": "3f47983e9c7d005f2a460eeab078baa1fff5b66ed3b6733edba4d64170514ec1",
+      "bytes": 134191,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/en-top.png": {
+      "sha256": "c5c0d52017b70a6bee1b9972e5eeeb2b3da5896074c5c3671e06413d99b6326d",
+      "bytes": 112143,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/independent-copy-fallback.png": {
+      "sha256": "3e5fa558085d01933f867a8315e1bf05ee51df7738efc84fba5240e8346fc2f2",
+      "bytes": 44627,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/independent-en-390-end.png": {
+      "sha256": "5e318b23b36619ddb325968868f287deb0e752ea4e8228e0b1a2abedde2fd9bd",
+      "bytes": 58419,
+      "archived": true
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/independent-zh-320-middle.png": {
+      "sha256": "cc087d7d7a1d17c4c95e7c01a19535a88f4e2f33743fa0420fe36db9c87e3627",
+      "bytes": 54654,
+      "archived": true
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-1440-zoom1-controls.png": {
+      "sha256": "a395bb3b4add01a337e6ac575dc4abf589b25b342afead4763ffceefe904e6ce",
+      "bytes": 155050,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-1440-zoom1-trace.png": {
+      "sha256": "a395bb3b4add01a337e6ac575dc4abf589b25b342afead4763ffceefe904e6ce",
+      "bytes": 155050,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-1440-zoom2-controls.png": {
+      "sha256": "a73017a7754f05fa932fc15f4120f7e457e81f5b680db038c23e1bf6e18546ba",
+      "bytes": 155705,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-1440-zoom2-trace.png": {
+      "sha256": "679b285bede17332ee602e1f51f99b71817331c7b08931a88520d90dc006d48c",
+      "bytes": 112715,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-320-zoom1-controls.png": {
+      "sha256": "84af1cdf5b61a01b84c04cd194f84c3f69c00ba39f70e0b69bdf70ce9ffef8f8",
+      "bytes": 69229,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-320-zoom1-trace.png": {
+      "sha256": "84af1cdf5b61a01b84c04cd194f84c3f69c00ba39f70e0b69bdf70ce9ffef8f8",
+      "bytes": 69229,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-320-zoom2-controls.png": {
+      "sha256": "5e280492537047cf9cbc3d0959ef1c2961215995e632ec9b2cba78a7d3e255b6",
+      "bytes": 66995,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-320-zoom2-trace.png": {
+      "sha256": "ca802a3cde433d25146205bc2033a47f0712cd800ed6779185cba549410f2ecd",
+      "bytes": 41845,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-390-zoom1-controls.png": {
+      "sha256": "66b563f88a819cdcfb8271e00062d660b682fa2883e99bc302416ddf78abadcb",
+      "bytes": 75075,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-390-zoom1-trace.png": {
+      "sha256": "66b563f88a819cdcfb8271e00062d660b682fa2883e99bc302416ddf78abadcb",
+      "bytes": 75075,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-390-zoom2-controls.png": {
+      "sha256": "446b13f1c05ae960ecd3bdd7ec0a318159bb1c852d540bf841b207e435ab8021",
+      "bytes": 77475,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-390-zoom2-trace.png": {
+      "sha256": "c2b17463c46bc7556c6e3cdbc1f412f2e96540a6dcdd2efeef1c7bd95a27e7b2",
+      "bytes": 51644,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-736-zoom1-controls.png": {
+      "sha256": "6fa9790cd0a76da8bd914d35e7cd6185fded02da1a0c467eaf0f316acd624fd7",
+      "bytes": 133945,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-736-zoom1-trace.png": {
+      "sha256": "6fa9790cd0a76da8bd914d35e7cd6185fded02da1a0c467eaf0f316acd624fd7",
+      "bytes": 133945,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-736-zoom2-controls.png": {
+      "sha256": "90e7e4000ee25bbf64045bc5c9a7503293e80129df31e37d1a95568355531de6",
+      "bytes": 110787,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-736-zoom2-trace.png": {
+      "sha256": "6ca5aae038d6361ebb74eb039df57a21ae2b9c4bd1334b61f278580e13bfec76",
+      "bytes": 78249,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-exercise.png": {
+      "sha256": "62debcf388ed4eab9630d64bec099d3cd52726e14f1025b513b41fb601476e79",
+      "bytes": 95885,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-operation3.png": {
+      "sha256": "c31aacd5095382adca6a2a5e3c1c77fa46b764906313a2c73ee80cb5ee668091",
+      "bytes": 157711,
+      "archived": false
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-operation4.png": {
+      "sha256": "056c2643fff374ad0ca4763156cf1deb9b37d3db6810dd11cdbfd8dcf243421c",
+      "bytes": 159473,
+      "archived": true
+    },
+    "specs/reviews/862-evidence/862-review-1-8d82c3ee/zh-top.png": {
+      "sha256": "a4f9a0cddcc684b52e5f49e38ceab2d946214ef7c0747669963d8d98c5461277",
+      "bytes": 117437,
+      "archived": false
+    }
+  },
+  "stop_present": false
+}

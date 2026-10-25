@@ -1,0 +1,7 @@
+independent [2, -3, 4, 1] 5 2 input unchanged
+independent [2, -2, 4] 4 1 input unchanged
+independent [0, 0, 1] 1 1 input unchanged
+independent [-100000] 1 -1 input unchanged
+independent [100000] 100000 1 input unchanged
+independent 100000 copies of 100000 1000000000 10000 input unchanged
+independent exhaustive oracle 4092 passed
