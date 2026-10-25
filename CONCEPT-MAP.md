@@ -1497,3 +1497,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Union-find component sizes | `leetcode/803/#step4` | Maintain roof component size by path halving and union by size. |
 
 <!-- /leetcode-803-campaign -->
+
+
+<!-- leetcode-782-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Chessboard rectangle invariant | `leetcode/782/#step1` | Equal or complementary rows and anchored rectangle XOR. |
+| Alternating sequence swap cost | `leetcode/782/#step2` | Balanced counts and paired mismatches prove the minimum. |
+
+<!-- /leetcode-782-campaign -->
