@@ -1704,3 +1704,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Worst reply bucket | `leetcode/843/#step2` | Minimize the largest non-success reply group. |
 
 <!-- /leetcode-843-campaign -->
+
+
+<!-- leetcode-975-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Monotonic stack | `leetcode/975/#step1` | Resolve forced targets in value order. |
+| Parity dynamic programming | `leetcode/975/#step2` | Compute two reachability states backward. |
+
+<!-- /leetcode-975-campaign -->

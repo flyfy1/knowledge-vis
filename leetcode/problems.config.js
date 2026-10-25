@@ -3627,6 +3627,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) parsing time; O(n) auxiliary space under the official bounded-digit arithmetic model"
   },
   {
+    "id": 975,
+    "title": {
+      "zh": "奇偶跳",
+      "en": "Odd Even Jump"
+    },
+    "desc": {
+      "zh": "从强制跳跃推导排序、栈与双状态倒推。",
+      "en": "Derive sorted targets and two-state reachability from forced jumps."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "单调栈",
+        "en": "Monotonic stack"
+      },
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      }
+    ],
+    "path": "975/",
+    "leetcodeUrl": "https://leetcode.com/problems/odd-even-jump/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

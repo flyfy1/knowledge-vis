@@ -1,0 +1,813 @@
+{
+  "kind": "author self-check",
+  "result": "pass",
+  "errors": [],
+  "siblingWarnings": [
+    {
+      "message": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "url": "http://127.0.0.1:18793/favicon.ico"
+    }
+  ],
+  "observations": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "ledger": "0212FF1342TF2133FT314-1TF44-1-1TT",
+      "event": "Completed i=0: odd ← even[1] = F; even ← odd[2] = F. A -1 target gives F without reading an array.",
+      "result": "Final good starts: 1, 3, 4; count = 3 (only odd=T)."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "ledger": "0102-1FF11332FF2123-1FF3144-1TF415-1-1TT",
+      "event": "Completed i=0: odd ← even[2] = F; even ← odd[-1] = F. A -1 target gives F without reading an array.",
+      "result": "Final good starts: 3, 4; count = 2 (only odd=T)."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "ledger": "05-13FF114-1TF2334TT34-14FT42-1-1TT",
+      "event": "Completed i=0: odd ← even[-1] = F; even ← odd[3] = F. A -1 target gives F without reading an array.",
+      "result": "Final good starts: 1, 2, 4; count = 3 (only odd=T)."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "ledger": "07-1-1TT",
+      "event": "End i=0: odd=even=T; zero jumps succeed.",
+      "result": "Final good starts: 0; count = 1 (only odd=T)."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "ledger": "0311TT1322TT23-1-1TT",
+      "event": "Completed i=0: odd ← even[1] = T; even ← odd[1] = T. A -1 target gives F without reading an array.",
+      "result": "Final good starts: 0, 1, 2; count = 3 (only odd=T)."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "ledger": "011-1FF122-1FF233-1TF34-1-1TT",
+      "event": "Completed i=0: odd ← even[1] = F; even ← odd[-1] = F. A -1 target gives F without reading an array.",
+      "result": "Final good starts: 2, 3; count = 2 (only odd=T)."
+    },
+    {
+      "lang": "en",
+      "preset": 6,
+      "ledger": "04-11FF13-12FF22-13FT31-1-1TT",
+      "event": "Completed i=0: odd ← even[-1] = F; even ← odd[1] = F. A -1 target gives F without reading an array.",
+      "result": "Final good starts: 3; count = 1 (only odd=T)."
+    },
+    {
+      "lang": "en",
+      "preset": 7,
+      "ledger": "0022TT199999-12FT20-1-1TT",
+      "event": "Completed i=0: odd ← even[2] = T; even ← odd[2] = T. A -1 target gives F without reading an array.",
+      "result": "Final good starts: 0, 2; count = 2 (only odd=T)."
+    },
+    {
+      "lang": "en",
+      "clipboard": "success and denied-write manual transfer exact",
+      "host": "linux",
+      "sentinelVerified": true,
+      "feedback": "Correct. Only indices 1 and 3 are good: 2 starts. From 1 (value 2), odd jumps to 2 (value 3), then even jumps to 3 (value 1), succeeding. Index 0 has no rightward value ≥4; index 2 has none ≥3, so neither can begin an odd jump. Index 3 needs zero jumps. A landing index alone does not determine the next parity state.",
+      "fallback": "Automatic copy unavailable. Full source selected; use your system copy shortcut."
+    },
+    {
+      "lang": "en",
+      "selectFit": [
+        {
+          "label": "Hand case · [2,3,1,1,4]",
+          "textWidth": 164.11233520507812,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Ex 1 · [10,13,12,14,15]",
+          "textWidth": 162.48036193847656,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Example 3 · [5,1,3,4,2]",
+          "textWidth": 163.64834594726562,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Single · [7]",
+          "textWidth": 78.08013916015625,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Equal · [3,3,3]",
+          "textWidth": 100.89619445800781,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Rising · [1,2,3,4]",
+          "textWidth": 118.208251953125,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Falling · [4,3,2,1]",
+          "textWidth": 122.000244140625,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Bounds · [0,99999,0]",
+          "textWidth": 153.13633728027344,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ],
+      "arrowReserve": 32,
+      "platform": "linux"
+    },
+    {
+      "lang": "en",
+      "middleEvent": "Completed i=3: odd ← even[4] = T; even ← odd[-1] = F. A -1 target gives F without reading an array.",
+      "scroll": {
+        "left": 66,
+        "width": 258,
+        "total": 324
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "ledger": "0212FF1342TF2133FT314-1TF44-1-1TT",
+      "event": "完成 i=0：odd ← even[1] = F；even ← odd[2] = F。-1 的读取直接按 F 处理。",
+      "result": "最终好起点：1, 3, 4；数量 = 3（只数 odd=T）。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "ledger": "0102-1FF11332FF2123-1FF3144-1TF415-1-1TT",
+      "event": "完成 i=0：odd ← even[2] = F；even ← odd[-1] = F。-1 的读取直接按 F 处理。",
+      "result": "最终好起点：3, 4；数量 = 2（只数 odd=T）。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "ledger": "05-13FF114-1TF2334TT34-14FT42-1-1TT",
+      "event": "完成 i=0：odd ← even[-1] = F；even ← odd[3] = F。-1 的读取直接按 F 处理。",
+      "result": "最终好起点：1, 2, 4；数量 = 3（只数 odd=T）。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "ledger": "07-1-1TT",
+      "event": "终点 i=0：odd=even=T，零跳成功。",
+      "result": "最终好起点：0；数量 = 1（只数 odd=T）。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "ledger": "0311TT1322TT23-1-1TT",
+      "event": "完成 i=0：odd ← even[1] = T；even ← odd[1] = T。-1 的读取直接按 F 处理。",
+      "result": "最终好起点：0, 1, 2；数量 = 3（只数 odd=T）。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "ledger": "011-1FF122-1FF233-1TF34-1-1TT",
+      "event": "完成 i=0：odd ← even[1] = F；even ← odd[-1] = F。-1 的读取直接按 F 处理。",
+      "result": "最终好起点：2, 3；数量 = 2（只数 odd=T）。"
+    },
+    {
+      "lang": "zh",
+      "preset": 6,
+      "ledger": "04-11FF13-12FF22-13FT31-1-1TT",
+      "event": "完成 i=0：odd ← even[-1] = F；even ← odd[1] = F。-1 的读取直接按 F 处理。",
+      "result": "最终好起点：3；数量 = 1（只数 odd=T）。"
+    },
+    {
+      "lang": "zh",
+      "preset": 7,
+      "ledger": "0022TT199999-12FT20-1-1TT",
+      "event": "完成 i=0：odd ← even[2] = T；even ← odd[2] = T。-1 的读取直接按 F 处理。",
+      "result": "最终好起点：0, 2；数量 = 2（只数 odd=T）。"
+    },
+    {
+      "lang": "zh",
+      "clipboard": "success and denied-write manual transfer exact",
+      "host": "linux",
+      "sentinelVerified": true,
+      "feedback": "正确。 只有索引 1、3，共 2 个。1（值 2）奇数跳到 2（值 3），再偶数跳到 3（值 1），成功。0 没有 ≥4 的右侧值；2 没有 ≥3 的右侧值，都不能开始奇数跳。3 无需跳。落点相同不代表下一跳状态相同。",
+      "fallback": "自动复制不可用。源码已全选，请按系统复制快捷键。"
+    },
+    {
+      "lang": "zh",
+      "selectFit": [
+        {
+          "label": "手算 · [2,3,1,1,4]",
+          "textWidth": 118.04824829101562,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "例 1 · [10,13,12,14,15]",
+          "textWidth": 161.120361328125,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "例 3 · [5,1,3,4,2]",
+          "textWidth": 115.36024475097656,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "单格 · [7]",
+          "textWidth": 64.28811645507812,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "全相等 · [3,3,3]",
+          "textWidth": 107.168212890625,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "递增 · [1,2,3,4]",
+          "textWidth": 104.60821533203125,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "递减 · [4,3,2,1]",
+          "textWidth": 104.60821533203125,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "边界值 · [0,99999,0]",
+          "textWidth": 143.77630615234375,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ],
+      "arrowReserve": 32,
+      "platform": "linux"
+    },
+    {
+      "lang": "zh",
+      "middleEvent": "完成 i=3：odd ← even[4] = T；even ← odd[-1] = F。-1 的读取直接按 F 处理。",
+      "scroll": {
+        "left": 66,
+        "width": 258,
+        "total": 324
+      }
+    },
+    {
+      "lang": "en",
+      "related": "#329: reuse answers along directed paths",
+      "url": "http://127.0.0.1:18793/leetcode/329/#step2",
+      "targetText": "03Make the waiting count visibleOur question: how can we respect dependencies without deep recursion? out counts larger neighbors not yet removed; the ready queue holds unremoved cells with out=0. Process only the queue present at the start of a round. Cells becoming ready during it wait for the next round. This is reverse topological layering: process cells with no remaining successors first.This is a browser teaching simulation, not execution of Python. Changing a preset restarts this experiment. Keep the matrix fixed and remove one round at a time: watch out decrease and finalized L accumulate. Back restores a whole-round snapshot. The ledger retains every completed round and every count change; no rounds are skipped.Matrix presetFour-cell snakeOfficial example 1Official example 2Greedy counterexampleAll equalSingle zeroEach cell starts with its original value. Remaining cells show out; “ready” marks the next round. Removed cells show L and ✓. Row/column coordinates start at 0. An orange border and the word “ready” both mark readiness; color does not encode value magnitude.(0,0)1out=2 · pending(0,1)2out=1 · pending(1,0)4out=0 · ready(1,1)3out=1 · pending← Previous roundRemove next round →Reset this experimentRemove to endCompleted 0/4 rounds; 0/4 cells finalized. Next-round coordinates: (1,0).No cells removed yet. First inspect local peaks with out=0."
+    },
+    {
+      "lang": "en",
+      "related": " #32: retain boundaries with an index stack",
+      "url": "http://127.0.0.1:18793/leetcode/32/#step1",
+      "targetText": "02Why can we skip work?How can we avoid pairing again from every start? In \")()())\", the close at index 0 cannot match; any later valid fragment must start to its right. Save these uncrossable boundary indices and the indices of still-unmatched openings. Use a Python list as a stack: add or remove only at its end. “Push” means append; “pop” removes and returns the last item; “top” means that last item. Start with −1 at the bottom, a virtual boundary before the string, and store unmatched opening indices above it. On (, append(i). On ), pop first; if the list becomes empty, use the current i as the new boundary.A suffix is a contiguous fragment ending at the current index i. If top t remains after the pop, every parenthesis after t through i is paired, giving length i−t. t is either an unmatched opening or the last invalid close; including it would break validity, so we cannot cross it. In the default example, just before i=4 the stack is [0,3]. This close matches index 3; popping leaves [0], so indices 1…4 have length 4−0=4. One calculation joins the two pairs without rescanning indices 1…2.best is the maximum over all processed endpoints; length is only the current valid suffix. The bottom boundary differs from the unmatched openings above it; −1 is not an input character.Sliding windows also preserve contiguity"
+    },
+    {
+      "lang": "zh",
+      "related": "#329：沿有向路径复用答案",
+      "url": "http://127.0.0.1:18793/leetcode/329/#step2",
+      "targetText": "03把“等待”变成可见的计数这一步要回答：怎样不用深递归，也能按依赖顺序计算？out 是还没移除的更大邻居数；就绪队列存 out=0 的未移除格子。一次只处理本轮开始时的队列，期间新就绪的格子留到下一轮。这个顺序叫反向拓扑分层：先处理没有后继的格子。浏览器教学模拟，不是执行 Python。选择预设会重启本实验。保持矩阵不变，逐轮移除；看小格的 out 下降、已完成的 L 累积。后退恢复整轮快照。下方保留全部已完成轮次和每条计数变化，无跳帧。矩阵预设四格蛇形官方例 1官方例 2贪心反例全部相等单格零值每格顶部为原值。未移除：显示 out；“待”表示下一轮就绪。已移除：显示 L 和“✓”。行列坐标从 0 开始。橙色边框与“待”同时标记就绪；颜色不表示数值大小。(0,0)1out=2 · 未定(0,1)2out=1 · 未定(1,0)4out=0 · 待(1,1)3out=1 · 未定← 后退一轮移除下一轮 →重置本实验移除到结束已完成 0/4 轮；已定 0/4 格。下一轮坐标：(1,0)。还没有移除格子。先观察 out=0 的局部峰值。"
+    },
+    {
+      "lang": "zh",
+      "related": "#32：用索引栈保留边界",
+      "url": "http://127.0.0.1:18793/leetcode/32/#step1",
+      "targetText": "02为什么能省去工作？如何避免从每个起点重新配对？仍看 \")()())\"：下标 0 的右括号无法配对，之后的合法片段必须从它右边开始。我们保存这种不能跨过的边界下标，以及尚未配对的左括号下标。用一个 Python 列表作为栈：只在列表末尾添加或删除；入栈 push 就是 append，出栈 pop 就是删除并取出最后一项，栈顶就是最后一项。底部先放 −1，表示字符串开始之前的虚拟边界；其上存未配对左括号的下标。遇 ( 就 append(i)；遇 ) 先 pop()，若列表空了，就用当前 i 作为新边界。后缀是以当前下标 i 结尾的连续片段。若弹出后仍有栈顶 t，则 t 后到 i 的每个括号都已成对，长度为 i−t。t 要么是未配对左括号，要么是最近无效右括号；把它包括进来都会破坏合法性，所以不能跨过。比如默认例子在 i=4 之前栈是 [0,3]；右括号配对下标 3，弹出后剩 [0]，片段下标 1…4 长度是 4−0=4。这样一次计算便连起两对，无需重扫下标 1…2。best 是所有已处理右端点的最长长度；length 只是当前右端点的有效后缀。栈底边界和其余未配对左括号的角色不同，不能把 −1 当输入字符。滑动窗口也必须保留连续性"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "scroll": 320,
+      "selectWidth": 256,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "Rising · [1,2,3,4]",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "scroll": 390,
+      "selectWidth": 326,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "Rising · [1,2,3,4]",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "scroll": 736,
+      "selectWidth": 644,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "Rising · [1,2,3,4]",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "scroll": 1440,
+      "selectWidth": 908,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "Rising · [1,2,3,4]",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "scroll": 320,
+      "selectWidth": 256,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "递增 · [1,2,3,4]",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "scroll": 390,
+      "selectWidth": 326,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "递增 · [1,2,3,4]",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "scroll": 736,
+      "selectWidth": 644,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "递增 · [1,2,3,4]",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "scroll": 1440,
+      "selectWidth": 908,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "递增 · [1,2,3,4]",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    }
+  ],
+  "contrast": [
+    {
+      "selector": ".stage",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": ".hint",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".btn:disabled",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".btn.primary",
+      "color": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#langToggle button.active",
+      "color": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#handLedger li.current",
+      "color": "rgb(255, 180, 84)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 9.809435643476732
+    },
+    {
+      "selector": ".readout",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "a",
+      "color": "rgb(110, 231, 255)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "focus": {
+    "outline": "solid",
+    "width": "3px"
+  },
+  "zoom": "CSS root zoom 2 at 1440px; real Chromium rendering",
+  "requests": [
+    "http://127.0.0.1:18793/leetcode/975/",
+    "http://127.0.0.1:18793/leetcode/style.css?v=975-1",
+    "http://127.0.0.1:18793/leetcode/975/style.css?v=975-1",
+    "http://127.0.0.1:18793/leetcode/common.js?v=975-1",
+    "http://127.0.0.1:18793/leetcode/975/copy.js?v=975-1",
+    "http://127.0.0.1:18793/leetcode/975/core.js?v=975-1",
+    "http://127.0.0.1:18793/leetcode/975/python-code.js?v=975-1",
+    "http://127.0.0.1:18793/leetcode/975/app.js?v=975-1",
+    "http://127.0.0.1:18793/leetcode/329/",
+    "http://127.0.0.1:18793/leetcode/style.css",
+    "http://127.0.0.1:18793/leetcode/329/local.css",
+    "http://127.0.0.1:18793/leetcode/common.js",
+    "http://127.0.0.1:18793/leetcode/329/copy.js",
+    "http://127.0.0.1:18793/leetcode/329/core.js",
+    "http://127.0.0.1:18793/leetcode/329/python-code.js",
+    "http://127.0.0.1:18793/leetcode/329/app.js",
+    "http://127.0.0.1:18793/leetcode/32/",
+    "http://127.0.0.1:18793/leetcode/style.css?v=lc-ids1",
+    "http://127.0.0.1:18793/leetcode/hard-first-ten/style.css?v=hard10-ids1",
+    "http://127.0.0.1:18793/leetcode/common.js?v=lc2916-astra2",
+    "http://127.0.0.1:18793/leetcode/32/copy.js?v=32-r1-r2-fix1",
+    "http://127.0.0.1:18793/leetcode/hard-first-ten/core.js?v=hard10-ids1",
+    "http://127.0.0.1:18793/leetcode/32/python-code.js?v=hard10-ids1",
+    "http://127.0.0.1:18793/leetcode/hard-first-ten/lesson.js?v=hard10-ids1",
+    "http://127.0.0.1:18793/leetcode/32/app.js?v=hard10-ids1"
+  ],
+  "limits": [
+    "No physical mobile device or public deployment tested",
+    "No independent review or learner study"
+  ]
+}
