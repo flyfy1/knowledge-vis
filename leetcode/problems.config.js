@@ -1939,6 +1939,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n) time; O(n) auxiliary space"
   },
   {
+    "id": 502,
+    "title": {
+      "zh": "IPO",
+      "en": "IPO"
+    },
+    "desc": {
+      "zh": "从资金门槛推导最大利润选择，用排序与堆避免重复扫描。",
+      "en": "Derive the affordable-profit greedy rule, then replace repeated scans with sorting and a heap."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "堆",
+        "en": "Heap"
+      },
+      {
+        "zh": "排序",
+        "en": "Sorting"
+      }
+    ],
+    "path": "502/",
+    "leetcodeUrl": "https://leetcode.com/problems/ipo/",
+    "language": "Python",
+    "complexity": "O(n log n + min(k,n) log n) time; O(n) auxiliary space"
+  },
+  {
     "id": 514,
     "title": {
       "zh": "自由之路",
