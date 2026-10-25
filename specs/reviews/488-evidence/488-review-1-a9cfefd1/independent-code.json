@@ -1,0 +1,78 @@
+{
+  "method": "canonical source exec, independent unpruned breadth-first search with regex stabilization",
+  "cases": [
+    {
+      "board": "BB",
+      "hand": "B",
+      "expected": 1,
+      "canonical": 1,
+      "oracle": 1
+    },
+    {
+      "board": "RB",
+      "hand": "RRBB",
+      "expected": 4,
+      "canonical": 4,
+      "oracle": 4
+    },
+    {
+      "board": "RBRB",
+      "hand": "RB",
+      "expected": -1,
+      "canonical": -1,
+      "oracle": -1
+    },
+    {
+      "board": "",
+      "hand": "RGB",
+      "expected": 0,
+      "canonical": 0,
+      "oracle": 0
+    },
+    {
+      "board": "R",
+      "hand": "",
+      "expected": -1,
+      "canonical": -1,
+      "oracle": -1
+    },
+    {
+      "board": "RRBBYYGGYYBBRRWW",
+      "hand": "GW",
+      "expected": 2,
+      "canonical": 2,
+      "oracle": 2
+    },
+    {
+      "board": "RBRBRBRBRBRBRBRB",
+      "hand": "YYYYY",
+      "expected": -1,
+      "canonical": -1,
+      "oracle": -1
+    },
+    {
+      "board": "WW",
+      "hand": "WWWWW",
+      "expected": 1,
+      "canonical": 1,
+      "oracle": 1
+    },
+    {
+      "board": "RRBBRR",
+      "hand": "B",
+      "expected": 1,
+      "canonical": 1,
+      "oracle": 1
+    }
+  ],
+  "sha256": {
+    "leetcode/488/index.html": "0c4bfbc0c6603734c4b82a7e62a13d51818f65b38cc6c7c5eb82be1d93735524",
+    "leetcode/488/app.js": "5474644f8e7370cd34c55e1777e75439348474ce845ab2e6d09ee87a4fee4518",
+    "leetcode/488/copy.js": "f9976700b588b5aa1ab6106eba0c0f016cb93e9ca0ba05d06b6b186704ebd9b2",
+    "leetcode/488/core.js": "1b7153fa6422d224124ea948c4f4f757434e7c208b7eb62029e305c3ca087d09",
+    "leetcode/488/python-code.js": "5d016b8c1eacf6ed250d33295c76cbed11b81c93710d480ba5d1a64861bcca68",
+    "leetcode/488/solution.py": "25ddd3839e87fe7bb543454db89f78b48b04cb3e1ede6bb631ffd8664a03e5a6",
+    "leetcode/488/style.css": "6c0640b2b76341b709affe6a8ca7559a614df1e88fbe4d688eb98885d4ef203e"
+  },
+  "mutation": "strings are immutable; rest and inserted/after are new strings, parent arguments are retained; cache is local to each public call"
+}

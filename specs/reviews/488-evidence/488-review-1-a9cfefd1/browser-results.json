@@ -1,0 +1,244 @@
+{
+  "status": "pass",
+  "log": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "events": 3,
+      "endpoints": true,
+      "rewind": true
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "events": 3,
+      "endpoints": true,
+      "rewind": true
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "events": 5,
+      "endpoints": true,
+      "rewind": true
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "events": 4,
+      "endpoints": true,
+      "rewind": true
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "events": 3,
+      "endpoints": true,
+      "rewind": true
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "events": 3,
+      "endpoints": true,
+      "rewind": true
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "events": 5,
+      "endpoints": true,
+      "rewind": true
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "events": 4,
+      "endpoints": true,
+      "rewind": true
+    }
+  ],
+  "semantic": [
+    {
+      "lang": "en",
+      "state": "RR/B",
+      "observed": "State (RR, B): there are only two R balls in total, so no triple can ever form. Minimum remaining cost = −1 (impossible). The same board has a different answer."
+    },
+    {
+      "lang": "en",
+      "state": "RR/R",
+      "observed": "State (RR, R): insert R to get RRR, then remove it. Minimum remaining cost = 1 ball."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "endpoint": "Exact answer for this input = 1. One ball clears it; zero cannot clear a nonempty board."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "endpoint": "Exact answer for this input = 2. A lone G needs two more to form a triple; the hand has enough. The other three need not be used."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "endpoint": "Exact answer for this input = 2. Add R, then B; the four W balls finally disappear in a cascade. Zero cannot work, and no single insertion clears both separated RR and BB groups, so at least two are needed."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "endpoint": "Exact answer for this input = -1. There are only two W balls across board and hand, so they can never form a triple. No path can clear the board."
+    },
+    {
+      "lang": "en",
+      "answer": "0",
+      "feedback": "Revise this conclusion. The hands have identical color counts, so these are the same state. Insert B: RBBBR → RR. Then insert R: RRR → empty, for 2 balls. A single B leaves RR; a single R cannot remove BB, so 1 is insufficient. Hand order does not restrict choices; board order determines adjacency."
+    },
+    {
+      "lang": "en",
+      "answer": "1",
+      "feedback": "Revise this conclusion. The hands have identical color counts, so these are the same state. Insert B: RBBBR → RR. Then insert R: RRR → empty, for 2 balls. A single B leaves RR; a single R cannot remove BB, so 1 is insufficient. Hand order does not restrict choices; board order determines adjacency."
+    },
+    {
+      "lang": "en",
+      "answer": "2",
+      "feedback": "Correct prediction. The hands have identical color counts, so these are the same state. Insert B: RBBBR → RR. Then insert R: RRR → empty, for 2 balls. A single B leaves RR; a single R cannot remove BB, so 1 is insufficient. Hand order does not restrict choices; board order determines adjacency."
+    },
+    {
+      "lang": "en",
+      "formula": "F(empty,H)=0; F(b,H)=min[1+F(collapse(insert(b,c,i)), H−{c})] over every available color c and gap i; no successful branch means ∞.",
+      "operation": "Insert R at gap 2; spend one R from the hand, then check for runs.",
+      "progress": "Event 1/5 · Balls spent on this path: 1 · Removal pending: do not insert another ball yet"
+    },
+    {
+      "lang": "zh",
+      "state": "RR/B",
+      "observed": "状态 (RR, B)：总共只有两颗 R，没有办法组成三颗，剩余最小代价 = −1（不可能）。相同棋盘，答案却不同。"
+    },
+    {
+      "lang": "zh",
+      "state": "RR/R",
+      "observed": "状态 (RR, R)：插 R 得 RRR，再消除，剩余最小代价 = 1 球。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "endpoint": "本输入的精确答案 = 1。一球清空；非空棋盘不能用零球清空。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "endpoint": "本输入的精确答案 = 2。单个 G 需要再补两颗才能成三；手里够用。多余三颗不必使用。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "endpoint": "本输入的精确答案 = 2。先补 R 再补 B，最后四颗 W 连锁消除。零球不行；任意一球都无法同时清掉两种被隔开的 RR 和 BB，因此至少两球。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "endpoint": "本输入的精确答案 = -1。W 在棋盘与手牌中一共只有两颗，永远无法组成三颗；所以任何路径都不能清空。"
+    },
+    {
+      "lang": "zh",
+      "answer": "0",
+      "feedback": "这个结论需要修正。 两手牌的颜色计数相同，所以都是同一状态。插 B：RBBBR → RR；再插 R：RRR → 空，共 2 球。一球 B 只剩 RR；一球 R 不会消掉 BB；因此 1 球不够。手牌顺序不限制选择，棋盘顺序却决定哪些球相邻。"
+    },
+    {
+      "lang": "zh",
+      "answer": "1",
+      "feedback": "这个结论需要修正。 两手牌的颜色计数相同，所以都是同一状态。插 B：RBBBR → RR；再插 R：RRR → 空，共 2 球。一球 B 只剩 RR；一球 R 不会消掉 BB；因此 1 球不够。手牌顺序不限制选择，棋盘顺序却决定哪些球相邻。"
+    },
+    {
+      "lang": "zh",
+      "answer": "2",
+      "feedback": "预测正确。 两手牌的颜色计数相同，所以都是同一状态。插 B：RBBBR → RR；再插 R：RRR → 空，共 2 球。一球 B 只剩 RR；一球 R 不会消掉 BB；因此 1 球不够。手牌顺序不限制选择，棋盘顺序却决定哪些球相邻。"
+    },
+    {
+      "lang": "zh",
+      "formula": "F(空,H)=0；F(b,H)=min[1+F(collapse(插入(b,c,i)), H−{c})]，枚举手中颜色 c 与所有空隙 i；无成功分支为 ∞。",
+      "operation": "在空隙 2 插入 R，手牌扣除一颗 R；随后检查连续段。",
+      "progress": "事件 1/5 · 此路径已用 1 球 · 待继续消除，不可插下一球"
+    },
+    {
+      "lang": "en",
+      "copyFallback": "Clipboard unavailable. The full source is selected below; copy it manually."
+    },
+    {
+      "lang": "zh",
+      "copyFallback": "剪贴板不可用。下方已选中完整源码，请手动复制。"
+    }
+  ],
+  "viewports": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "200% CSS zoom in real headless Chromium at 1440px; not OS/browser chrome zoom",
+  "sourceDisplayMirrorClipboardDownloadParity": true,
+  "manualFallbackKeyboardCopyParity": true,
+  "blockedStorage": true,
+  "outline": {
+    "width": "3px",
+    "offset": "4px",
+    "color": "rgb(255, 180, 84)",
+    "style": "solid"
+  },
+  "contrasts": [
+    {
+      "name": "body",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "name": "muted on panel",
+      "foreground": "#9aa7b8",
+      "background": "#161b22",
+      "ratio": 7.078851579017443
+    },
+    {
+      "name": "ball",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "name": "disabled",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "name": "primary",
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "name": "focus on panel",
+      "foreground": "#ffb454",
+      "background": "#161b22",
+      "ratio": 9.809435643476732
+    },
+    {
+      "name": "text on panel2",
+      "foreground": "#e8edf4",
+      "background": "#1c2330",
+      "ratio": 13.397069143240783
+    }
+  ],
+  "errors": [],
+  "localAssetRequests": [
+    "http://127.0.0.1:18770/leetcode/488/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/488/style.css?v=1",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/488/copy.js?v=1",
+    "http://127.0.0.1:18770/leetcode/488/core.js?v=1",
+    "http://127.0.0.1:18770/leetcode/488/python-code.js?v=1",
+    "http://127.0.0.1:18770/leetcode/488/app.js?v=1"
+  ]
+}
