@@ -1,0 +1,47 @@
+{
+  "id": 768,
+  "title": {
+    "zh": "最多能完成排序的块 II",
+    "en": "Max Chunks To Make Sorted II"
+  },
+  "desc": {
+    "zh": "从亲手切分到前缀最大值与后缀最小值，推导所有安全切口。",
+    "en": "Derive every safe cut using prefix maxima and suffix minima, starting with hand-sorted chunks."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "数组",
+      "en": "Arrays"
+    },
+    {
+      "zh": "前缀与后缀",
+      "en": "Prefixes and suffixes"
+    },
+    {
+      "zh": "贪心",
+      "en": "Greedy"
+    }
+  ],
+  "path": "768/",
+  "leetcodeUrl": "https://leetcode.com/problems/max-chunks-to-make-sorted-ii/",
+  "language": "Python",
+  "complexity": "O(n) time; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "safe partition boundaries",
+      "step": 1,
+      "description": "A cut is safe exactly when the entire left maximum does not exceed the entire right minimum."
+    },
+    {
+      "name": "prefix maximum and suffix minimum",
+      "step": 2,
+      "description": "Reuse extrema in two linear passes instead of rescanning every side."
+    },
+    {
+      "name": "maximality of all safe cuts",
+      "step": 3,
+      "description": "All safe boundaries coexist; every legal partition uses only safe boundaries."
+    }
+  ]
+}

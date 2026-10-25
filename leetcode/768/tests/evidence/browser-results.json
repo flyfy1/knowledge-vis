@@ -1,0 +1,856 @@
+{
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "url": "http://127.0.0.1:18770/leetcode/768/",
+  "states": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "input": "Fixed input: [2, 1, 3]",
+      "progress": "Operations completed 1/5; cuts tested 0/2; safe cuts found 0.",
+      "operation": "Index 2: the last suffix contains only arr[2]=3, so suffix_min[2]=3.",
+      "values": "Index 0 · arr[0]2Minimum from here to the end—Index 1 · arr[1]1Minimum from here to the end—Index 2 · arr[2]3Minimum from here to the end3",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "input": "Fixed input: [2, 1, 3]",
+      "progress": "Operations completed 2/5; cuts tested 0/2; safe cuts found 0.",
+      "operation": "Index 1: compare arr[1]=1 with suffix_min[2]=3; min(1,3)=1. The value 3 already summarizes everything farther right.",
+      "values": "Index 0 · arr[0]2Minimum from here to the end—Index 1 · arr[1]1Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end3",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "input": "Fixed input: [2, 1, 3]",
+      "progress": "Operations completed 3/5; cuts tested 0/2; safe cuts found 0.",
+      "operation": "Index 0: compare arr[0]=2 with suffix_min[1]=1; min(2,1)=1. The value 1 already summarizes everything farther right.",
+      "values": "Index 0 · arr[0]2Minimum from here to the end1Index 1 · arr[1]1Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end3",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "input": "Fixed input: [2, 1, 3]",
+      "progress": "Operations completed 4/5; cuts tested 1/2; safe cuts found 0.",
+      "operation": "Tested the cut after index 0: left maximum 2 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.",
+      "values": "Index 0 · arr[0]2Minimum from here to the end1Index 1 · arr[1]1Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end3",
+      "history": "Tested the cut after index 0: left maximum 2 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "input": "Fixed input: [2, 1, 3]",
+      "progress": "Operations completed 5/5; cuts tested 2/2; safe cuts found 1.",
+      "operation": "Tested the cut after index 1: left maximum 2 ≤ right minimum 3. Keep: no inversion crosses this cut.",
+      "values": "Index 0 · arr[0]2Minimum from here to the end1Index 1 · arr[1]1Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end3",
+      "history": "Tested the cut after index 0: left maximum 2 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.Tested the cut after index 1: left maximum 2 ≤ right minimum 3. Keep: no inversion crosses this cut.",
+      "final": "Final maximum chunks = 1 + 1 safe cuts = 2. Partition: [2, 1] | [3]."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "input": "Fixed input: [5, 4, 3, 2, 1]",
+      "progress": "Operations completed 1/9; cuts tested 0/4; safe cuts found 0.",
+      "operation": "Index 4: the last suffix contains only arr[4]=1, so suffix_min[4]=1.",
+      "values": "Index 0 · arr[0]5Minimum from here to the end—Index 1 · arr[1]4Minimum from here to the end—Index 2 · arr[2]3Minimum from here to the end—Index 3 · arr[3]2Minimum from here to the end—Index 4 · arr[4]1Minimum from here to the end1",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "input": "Fixed input: [5, 4, 3, 2, 1]",
+      "progress": "Operations completed 2/9; cuts tested 0/4; safe cuts found 0.",
+      "operation": "Index 3: compare arr[3]=2 with suffix_min[4]=1; min(2,1)=1. The value 1 already summarizes everything farther right.",
+      "values": "Index 0 · arr[0]5Minimum from here to the end—Index 1 · arr[1]4Minimum from here to the end—Index 2 · arr[2]3Minimum from here to the end—Index 3 · arr[3]2Minimum from here to the end1Index 4 · arr[4]1Minimum from here to the end1",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "input": "Fixed input: [5, 4, 3, 2, 1]",
+      "progress": "Operations completed 3/9; cuts tested 0/4; safe cuts found 0.",
+      "operation": "Index 2: compare arr[2]=3 with suffix_min[3]=1; min(3,1)=1. The value 1 already summarizes everything farther right.",
+      "values": "Index 0 · arr[0]5Minimum from here to the end—Index 1 · arr[1]4Minimum from here to the end—Index 2 · arr[2]3Minimum from here to the end1Index 3 · arr[3]2Minimum from here to the end1Index 4 · arr[4]1Minimum from here to the end1",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "input": "Fixed input: [5, 4, 3, 2, 1]",
+      "progress": "Operations completed 4/9; cuts tested 0/4; safe cuts found 0.",
+      "operation": "Index 1: compare arr[1]=4 with suffix_min[2]=1; min(4,1)=1. The value 1 already summarizes everything farther right.",
+      "values": "Index 0 · arr[0]5Minimum from here to the end—Index 1 · arr[1]4Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end1Index 3 · arr[3]2Minimum from here to the end1Index 4 · arr[4]1Minimum from here to the end1",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "input": "Fixed input: [5, 4, 3, 2, 1]",
+      "progress": "Operations completed 5/9; cuts tested 0/4; safe cuts found 0.",
+      "operation": "Index 0: compare arr[0]=5 with suffix_min[1]=1; min(5,1)=1. The value 1 already summarizes everything farther right.",
+      "values": "Index 0 · arr[0]5Minimum from here to the end1Index 1 · arr[1]4Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end1Index 3 · arr[3]2Minimum from here to the end1Index 4 · arr[4]1Minimum from here to the end1",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "input": "Fixed input: [5, 4, 3, 2, 1]",
+      "progress": "Operations completed 6/9; cuts tested 1/4; safe cuts found 0.",
+      "operation": "Tested the cut after index 0: left maximum 5 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.",
+      "values": "Index 0 · arr[0]5Minimum from here to the end1Index 1 · arr[1]4Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end1Index 3 · arr[3]2Minimum from here to the end1Index 4 · arr[4]1Minimum from here to the end1",
+      "history": "Tested the cut after index 0: left maximum 5 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "input": "Fixed input: [5, 4, 3, 2, 1]",
+      "progress": "Operations completed 7/9; cuts tested 2/4; safe cuts found 0.",
+      "operation": "Tested the cut after index 1: left maximum 5 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.",
+      "values": "Index 0 · arr[0]5Minimum from here to the end1Index 1 · arr[1]4Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end1Index 3 · arr[3]2Minimum from here to the end1Index 4 · arr[4]1Minimum from here to the end1",
+      "history": "Tested the cut after index 0: left maximum 5 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.Tested the cut after index 1: left maximum 5 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "input": "Fixed input: [5, 4, 3, 2, 1]",
+      "progress": "Operations completed 8/9; cuts tested 3/4; safe cuts found 0.",
+      "operation": "Tested the cut after index 2: left maximum 5 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.",
+      "values": "Index 0 · arr[0]5Minimum from here to the end1Index 1 · arr[1]4Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end1Index 3 · arr[3]2Minimum from here to the end1Index 4 · arr[4]1Minimum from here to the end1",
+      "history": "Tested the cut after index 0: left maximum 5 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.Tested the cut after index 1: left maximum 5 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.Tested the cut after index 2: left maximum 5 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "input": "Fixed input: [5, 4, 3, 2, 1]",
+      "progress": "Operations completed 9/9; cuts tested 4/4; safe cuts found 0.",
+      "operation": "Tested the cut after index 3: left maximum 5 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.",
+      "values": "Index 0 · arr[0]5Minimum from here to the end1Index 1 · arr[1]4Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end1Index 3 · arr[3]2Minimum from here to the end1Index 4 · arr[4]1Minimum from here to the end1",
+      "history": "Tested the cut after index 0: left maximum 5 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.Tested the cut after index 1: left maximum 5 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.Tested the cut after index 2: left maximum 5 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.Tested the cut after index 3: left maximum 5 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.",
+      "final": "Final maximum chunks = 1 + 0 safe cuts = 1. Partition: [5, 4, 3, 2, 1]."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "input": "Fixed input: [2, 1, 3, 4, 4]",
+      "progress": "Operations completed 1/9; cuts tested 0/4; safe cuts found 0.",
+      "operation": "Index 4: the last suffix contains only arr[4]=4, so suffix_min[4]=4.",
+      "values": "Index 0 · arr[0]2Minimum from here to the end—Index 1 · arr[1]1Minimum from here to the end—Index 2 · arr[2]3Minimum from here to the end—Index 3 · arr[3]4Minimum from here to the end—Index 4 · arr[4]4Minimum from here to the end4",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "input": "Fixed input: [2, 1, 3, 4, 4]",
+      "progress": "Operations completed 2/9; cuts tested 0/4; safe cuts found 0.",
+      "operation": "Index 3: compare arr[3]=4 with suffix_min[4]=4; min(4,4)=4. The value 4 already summarizes everything farther right.",
+      "values": "Index 0 · arr[0]2Minimum from here to the end—Index 1 · arr[1]1Minimum from here to the end—Index 2 · arr[2]3Minimum from here to the end—Index 3 · arr[3]4Minimum from here to the end4Index 4 · arr[4]4Minimum from here to the end4",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "input": "Fixed input: [2, 1, 3, 4, 4]",
+      "progress": "Operations completed 3/9; cuts tested 0/4; safe cuts found 0.",
+      "operation": "Index 2: compare arr[2]=3 with suffix_min[3]=4; min(3,4)=3. The value 4 already summarizes everything farther right.",
+      "values": "Index 0 · arr[0]2Minimum from here to the end—Index 1 · arr[1]1Minimum from here to the end—Index 2 · arr[2]3Minimum from here to the end3Index 3 · arr[3]4Minimum from here to the end4Index 4 · arr[4]4Minimum from here to the end4",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "input": "Fixed input: [2, 1, 3, 4, 4]",
+      "progress": "Operations completed 4/9; cuts tested 0/4; safe cuts found 0.",
+      "operation": "Index 1: compare arr[1]=1 with suffix_min[2]=3; min(1,3)=1. The value 3 already summarizes everything farther right.",
+      "values": "Index 0 · arr[0]2Minimum from here to the end—Index 1 · arr[1]1Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end3Index 3 · arr[3]4Minimum from here to the end4Index 4 · arr[4]4Minimum from here to the end4",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "input": "Fixed input: [2, 1, 3, 4, 4]",
+      "progress": "Operations completed 5/9; cuts tested 0/4; safe cuts found 0.",
+      "operation": "Index 0: compare arr[0]=2 with suffix_min[1]=1; min(2,1)=1. The value 1 already summarizes everything farther right.",
+      "values": "Index 0 · arr[0]2Minimum from here to the end1Index 1 · arr[1]1Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end3Index 3 · arr[3]4Minimum from here to the end4Index 4 · arr[4]4Minimum from here to the end4",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "input": "Fixed input: [2, 1, 3, 4, 4]",
+      "progress": "Operations completed 6/9; cuts tested 1/4; safe cuts found 0.",
+      "operation": "Tested the cut after index 0: left maximum 2 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.",
+      "values": "Index 0 · arr[0]2Minimum from here to the end1Index 1 · arr[1]1Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end3Index 3 · arr[3]4Minimum from here to the end4Index 4 · arr[4]4Minimum from here to the end4",
+      "history": "Tested the cut after index 0: left maximum 2 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "input": "Fixed input: [2, 1, 3, 4, 4]",
+      "progress": "Operations completed 7/9; cuts tested 2/4; safe cuts found 1.",
+      "operation": "Tested the cut after index 1: left maximum 2 ≤ right minimum 3. Keep: no inversion crosses this cut.",
+      "values": "Index 0 · arr[0]2Minimum from here to the end1Index 1 · arr[1]1Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end3Index 3 · arr[3]4Minimum from here to the end4Index 4 · arr[4]4Minimum from here to the end4",
+      "history": "Tested the cut after index 0: left maximum 2 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.Tested the cut after index 1: left maximum 2 ≤ right minimum 3. Keep: no inversion crosses this cut.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "input": "Fixed input: [2, 1, 3, 4, 4]",
+      "progress": "Operations completed 8/9; cuts tested 3/4; safe cuts found 2.",
+      "operation": "Tested the cut after index 2: left maximum 3 ≤ right minimum 4. Keep: no inversion crosses this cut.",
+      "values": "Index 0 · arr[0]2Minimum from here to the end1Index 1 · arr[1]1Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end3Index 3 · arr[3]4Minimum from here to the end4Index 4 · arr[4]4Minimum from here to the end4",
+      "history": "Tested the cut after index 0: left maximum 2 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.Tested the cut after index 1: left maximum 2 ≤ right minimum 3. Keep: no inversion crosses this cut.Tested the cut after index 2: left maximum 3 ≤ right minimum 4. Keep: no inversion crosses this cut.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "input": "Fixed input: [2, 1, 3, 4, 4]",
+      "progress": "Operations completed 9/9; cuts tested 4/4; safe cuts found 3.",
+      "operation": "Tested the cut after index 3: left maximum 4 ≤ right minimum 4. Keep: no inversion crosses this cut.",
+      "values": "Index 0 · arr[0]2Minimum from here to the end1Index 1 · arr[1]1Minimum from here to the end1Index 2 · arr[2]3Minimum from here to the end3Index 3 · arr[3]4Minimum from here to the end4Index 4 · arr[4]4Minimum from here to the end4",
+      "history": "Tested the cut after index 0: left maximum 2 > right minimum 1. Reject: a larger left value and smaller right value must be handled within one chunk.Tested the cut after index 1: left maximum 2 ≤ right minimum 3. Keep: no inversion crosses this cut.Tested the cut after index 2: left maximum 3 ≤ right minimum 4. Keep: no inversion crosses this cut.Tested the cut after index 3: left maximum 4 ≤ right minimum 4. Keep: no inversion crosses this cut.",
+      "final": "Final maximum chunks = 1 + 3 safe cuts = 4. Partition: [2, 1] | [3] | [4] | [4]."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "input": "Fixed input: [4, 4, 4]",
+      "progress": "Operations completed 1/5; cuts tested 0/2; safe cuts found 0.",
+      "operation": "Index 2: the last suffix contains only arr[2]=4, so suffix_min[2]=4.",
+      "values": "Index 0 · arr[0]4Minimum from here to the end—Index 1 · arr[1]4Minimum from here to the end—Index 2 · arr[2]4Minimum from here to the end4",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "input": "Fixed input: [4, 4, 4]",
+      "progress": "Operations completed 2/5; cuts tested 0/2; safe cuts found 0.",
+      "operation": "Index 1: compare arr[1]=4 with suffix_min[2]=4; min(4,4)=4. The value 4 already summarizes everything farther right.",
+      "values": "Index 0 · arr[0]4Minimum from here to the end—Index 1 · arr[1]4Minimum from here to the end4Index 2 · arr[2]4Minimum from here to the end4",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "input": "Fixed input: [4, 4, 4]",
+      "progress": "Operations completed 3/5; cuts tested 0/2; safe cuts found 0.",
+      "operation": "Index 0: compare arr[0]=4 with suffix_min[1]=4; min(4,4)=4. The value 4 already summarizes everything farther right.",
+      "values": "Index 0 · arr[0]4Minimum from here to the end4Index 1 · arr[1]4Minimum from here to the end4Index 2 · arr[2]4Minimum from here to the end4",
+      "history": "No cuts tested yet.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "input": "Fixed input: [4, 4, 4]",
+      "progress": "Operations completed 4/5; cuts tested 1/2; safe cuts found 1.",
+      "operation": "Tested the cut after index 0: left maximum 4 ≤ right minimum 4. Keep: no inversion crosses this cut.",
+      "values": "Index 0 · arr[0]4Minimum from here to the end4Index 1 · arr[1]4Minimum from here to the end4Index 2 · arr[2]4Minimum from here to the end4",
+      "history": "Tested the cut after index 0: left maximum 4 ≤ right minimum 4. Keep: no inversion crosses this cut.",
+      "final": "Not finished; the safe-cut count covers only positions already tested."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "input": "Fixed input: [4, 4, 4]",
+      "progress": "Operations completed 5/5; cuts tested 2/2; safe cuts found 2.",
+      "operation": "Tested the cut after index 1: left maximum 4 ≤ right minimum 4. Keep: no inversion crosses this cut.",
+      "values": "Index 0 · arr[0]4Minimum from here to the end4Index 1 · arr[1]4Minimum from here to the end4Index 2 · arr[2]4Minimum from here to the end4",
+      "history": "Tested the cut after index 0: left maximum 4 ≤ right minimum 4. Keep: no inversion crosses this cut.Tested the cut after index 1: left maximum 4 ≤ right minimum 4. Keep: no inversion crosses this cut.",
+      "final": "Final maximum chunks = 1 + 2 safe cuts = 3. Partition: [4] | [4] | [4]."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "input": "Fixed input: [0]",
+      "progress": "Operations completed 1/1; cuts tested 0/0; safe cuts found 0.",
+      "operation": "Index 0: the last suffix contains only arr[0]=0, so suffix_min[0]=0.",
+      "values": "Index 0 · arr[0]0Minimum from here to the end0",
+      "history": "No cuts tested yet.",
+      "final": "Final maximum chunks = 1 + 0 safe cuts = 1. Partition: [0]."
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "input": "固定输入：[2, 1, 3]",
+      "progress": "已完成操作 1/5；已检测切口 0/2；已找到安全切口 0 个。",
+      "operation": "位置 2：最后一个后缀只有 arr[2]=3，所以 suffix_min[2]=3。",
+      "values": "位置 0 · arr[0]2此位置到末尾的最小值—位置 1 · arr[1]1此位置到末尾的最小值—位置 2 · arr[2]3此位置到末尾的最小值3",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "input": "固定输入：[2, 1, 3]",
+      "progress": "已完成操作 2/5；已检测切口 0/2；已找到安全切口 0 个。",
+      "operation": "位置 1：arr[1]=1 与 suffix_min[2]=3 比较，min(1,3)=1。右侧的其余数已被 3 概括。",
+      "values": "位置 0 · arr[0]2此位置到末尾的最小值—位置 1 · arr[1]1此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值3",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "input": "固定输入：[2, 1, 3]",
+      "progress": "已完成操作 3/5；已检测切口 0/2；已找到安全切口 0 个。",
+      "operation": "位置 0：arr[0]=2 与 suffix_min[1]=1 比较，min(2,1)=1。右侧的其余数已被 1 概括。",
+      "values": "位置 0 · arr[0]2此位置到末尾的最小值1位置 1 · arr[1]1此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值3",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "input": "固定输入：[2, 1, 3]",
+      "progress": "已完成操作 4/5；已检测切口 1/2；已找到安全切口 0 个。",
+      "operation": "已检测位置 0 后的切口：左侧最大值 2 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。",
+      "values": "位置 0 · arr[0]2此位置到末尾的最小值1位置 1 · arr[1]1此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值3",
+      "history": "已检测位置 0 后的切口：左侧最大值 2 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "input": "固定输入：[2, 1, 3]",
+      "progress": "已完成操作 5/5；已检测切口 2/2；已找到安全切口 1 个。",
+      "operation": "已检测位置 1 后的切口：左侧最大值 2 ≤ 右侧最小值 3。保留：没有跨切口的逆序。",
+      "values": "位置 0 · arr[0]2此位置到末尾的最小值1位置 1 · arr[1]1此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值3",
+      "history": "已检测位置 0 后的切口：左侧最大值 2 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。已检测位置 1 后的切口：左侧最大值 2 ≤ 右侧最小值 3。保留：没有跨切口的逆序。",
+      "final": "最终最大块数 = 1 + 1 个安全切口 = 2。分块：[2, 1] | [3]。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "input": "固定输入：[5, 4, 3, 2, 1]",
+      "progress": "已完成操作 1/9；已检测切口 0/4；已找到安全切口 0 个。",
+      "operation": "位置 4：最后一个后缀只有 arr[4]=1，所以 suffix_min[4]=1。",
+      "values": "位置 0 · arr[0]5此位置到末尾的最小值—位置 1 · arr[1]4此位置到末尾的最小值—位置 2 · arr[2]3此位置到末尾的最小值—位置 3 · arr[3]2此位置到末尾的最小值—位置 4 · arr[4]1此位置到末尾的最小值1",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "input": "固定输入：[5, 4, 3, 2, 1]",
+      "progress": "已完成操作 2/9；已检测切口 0/4；已找到安全切口 0 个。",
+      "operation": "位置 3：arr[3]=2 与 suffix_min[4]=1 比较，min(2,1)=1。右侧的其余数已被 1 概括。",
+      "values": "位置 0 · arr[0]5此位置到末尾的最小值—位置 1 · arr[1]4此位置到末尾的最小值—位置 2 · arr[2]3此位置到末尾的最小值—位置 3 · arr[3]2此位置到末尾的最小值1位置 4 · arr[4]1此位置到末尾的最小值1",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "input": "固定输入：[5, 4, 3, 2, 1]",
+      "progress": "已完成操作 3/9；已检测切口 0/4；已找到安全切口 0 个。",
+      "operation": "位置 2：arr[2]=3 与 suffix_min[3]=1 比较，min(3,1)=1。右侧的其余数已被 1 概括。",
+      "values": "位置 0 · arr[0]5此位置到末尾的最小值—位置 1 · arr[1]4此位置到末尾的最小值—位置 2 · arr[2]3此位置到末尾的最小值1位置 3 · arr[3]2此位置到末尾的最小值1位置 4 · arr[4]1此位置到末尾的最小值1",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "input": "固定输入：[5, 4, 3, 2, 1]",
+      "progress": "已完成操作 4/9；已检测切口 0/4；已找到安全切口 0 个。",
+      "operation": "位置 1：arr[1]=4 与 suffix_min[2]=1 比较，min(4,1)=1。右侧的其余数已被 1 概括。",
+      "values": "位置 0 · arr[0]5此位置到末尾的最小值—位置 1 · arr[1]4此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值1位置 3 · arr[3]2此位置到末尾的最小值1位置 4 · arr[4]1此位置到末尾的最小值1",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "input": "固定输入：[5, 4, 3, 2, 1]",
+      "progress": "已完成操作 5/9；已检测切口 0/4；已找到安全切口 0 个。",
+      "operation": "位置 0：arr[0]=5 与 suffix_min[1]=1 比较，min(5,1)=1。右侧的其余数已被 1 概括。",
+      "values": "位置 0 · arr[0]5此位置到末尾的最小值1位置 1 · arr[1]4此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值1位置 3 · arr[3]2此位置到末尾的最小值1位置 4 · arr[4]1此位置到末尾的最小值1",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "input": "固定输入：[5, 4, 3, 2, 1]",
+      "progress": "已完成操作 6/9；已检测切口 1/4；已找到安全切口 0 个。",
+      "operation": "已检测位置 0 后的切口：左侧最大值 5 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。",
+      "values": "位置 0 · arr[0]5此位置到末尾的最小值1位置 1 · arr[1]4此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值1位置 3 · arr[3]2此位置到末尾的最小值1位置 4 · arr[4]1此位置到末尾的最小值1",
+      "history": "已检测位置 0 后的切口：左侧最大值 5 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "input": "固定输入：[5, 4, 3, 2, 1]",
+      "progress": "已完成操作 7/9；已检测切口 2/4；已找到安全切口 0 个。",
+      "operation": "已检测位置 1 后的切口：左侧最大值 5 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。",
+      "values": "位置 0 · arr[0]5此位置到末尾的最小值1位置 1 · arr[1]4此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值1位置 3 · arr[3]2此位置到末尾的最小值1位置 4 · arr[4]1此位置到末尾的最小值1",
+      "history": "已检测位置 0 后的切口：左侧最大值 5 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。已检测位置 1 后的切口：左侧最大值 5 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "input": "固定输入：[5, 4, 3, 2, 1]",
+      "progress": "已完成操作 8/9；已检测切口 3/4；已找到安全切口 0 个。",
+      "operation": "已检测位置 2 后的切口：左侧最大值 5 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。",
+      "values": "位置 0 · arr[0]5此位置到末尾的最小值1位置 1 · arr[1]4此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值1位置 3 · arr[3]2此位置到末尾的最小值1位置 4 · arr[4]1此位置到末尾的最小值1",
+      "history": "已检测位置 0 后的切口：左侧最大值 5 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。已检测位置 1 后的切口：左侧最大值 5 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。已检测位置 2 后的切口：左侧最大值 5 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "input": "固定输入：[5, 4, 3, 2, 1]",
+      "progress": "已完成操作 9/9；已检测切口 4/4；已找到安全切口 0 个。",
+      "operation": "已检测位置 3 后的切口：左侧最大值 5 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。",
+      "values": "位置 0 · arr[0]5此位置到末尾的最小值1位置 1 · arr[1]4此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值1位置 3 · arr[3]2此位置到末尾的最小值1位置 4 · arr[4]1此位置到末尾的最小值1",
+      "history": "已检测位置 0 后的切口：左侧最大值 5 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。已检测位置 1 后的切口：左侧最大值 5 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。已检测位置 2 后的切口：左侧最大值 5 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。已检测位置 3 后的切口：左侧最大值 5 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。",
+      "final": "最终最大块数 = 1 + 0 个安全切口 = 1。分块：[5, 4, 3, 2, 1]。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "input": "固定输入：[2, 1, 3, 4, 4]",
+      "progress": "已完成操作 1/9；已检测切口 0/4；已找到安全切口 0 个。",
+      "operation": "位置 4：最后一个后缀只有 arr[4]=4，所以 suffix_min[4]=4。",
+      "values": "位置 0 · arr[0]2此位置到末尾的最小值—位置 1 · arr[1]1此位置到末尾的最小值—位置 2 · arr[2]3此位置到末尾的最小值—位置 3 · arr[3]4此位置到末尾的最小值—位置 4 · arr[4]4此位置到末尾的最小值4",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "input": "固定输入：[2, 1, 3, 4, 4]",
+      "progress": "已完成操作 2/9；已检测切口 0/4；已找到安全切口 0 个。",
+      "operation": "位置 3：arr[3]=4 与 suffix_min[4]=4 比较，min(4,4)=4。右侧的其余数已被 4 概括。",
+      "values": "位置 0 · arr[0]2此位置到末尾的最小值—位置 1 · arr[1]1此位置到末尾的最小值—位置 2 · arr[2]3此位置到末尾的最小值—位置 3 · arr[3]4此位置到末尾的最小值4位置 4 · arr[4]4此位置到末尾的最小值4",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "input": "固定输入：[2, 1, 3, 4, 4]",
+      "progress": "已完成操作 3/9；已检测切口 0/4；已找到安全切口 0 个。",
+      "operation": "位置 2：arr[2]=3 与 suffix_min[3]=4 比较，min(3,4)=3。右侧的其余数已被 4 概括。",
+      "values": "位置 0 · arr[0]2此位置到末尾的最小值—位置 1 · arr[1]1此位置到末尾的最小值—位置 2 · arr[2]3此位置到末尾的最小值3位置 3 · arr[3]4此位置到末尾的最小值4位置 4 · arr[4]4此位置到末尾的最小值4",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "input": "固定输入：[2, 1, 3, 4, 4]",
+      "progress": "已完成操作 4/9；已检测切口 0/4；已找到安全切口 0 个。",
+      "operation": "位置 1：arr[1]=1 与 suffix_min[2]=3 比较，min(1,3)=1。右侧的其余数已被 3 概括。",
+      "values": "位置 0 · arr[0]2此位置到末尾的最小值—位置 1 · arr[1]1此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值3位置 3 · arr[3]4此位置到末尾的最小值4位置 4 · arr[4]4此位置到末尾的最小值4",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "input": "固定输入：[2, 1, 3, 4, 4]",
+      "progress": "已完成操作 5/9；已检测切口 0/4；已找到安全切口 0 个。",
+      "operation": "位置 0：arr[0]=2 与 suffix_min[1]=1 比较，min(2,1)=1。右侧的其余数已被 1 概括。",
+      "values": "位置 0 · arr[0]2此位置到末尾的最小值1位置 1 · arr[1]1此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值3位置 3 · arr[3]4此位置到末尾的最小值4位置 4 · arr[4]4此位置到末尾的最小值4",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "input": "固定输入：[2, 1, 3, 4, 4]",
+      "progress": "已完成操作 6/9；已检测切口 1/4；已找到安全切口 0 个。",
+      "operation": "已检测位置 0 后的切口：左侧最大值 2 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。",
+      "values": "位置 0 · arr[0]2此位置到末尾的最小值1位置 1 · arr[1]1此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值3位置 3 · arr[3]4此位置到末尾的最小值4位置 4 · arr[4]4此位置到末尾的最小值4",
+      "history": "已检测位置 0 后的切口：左侧最大值 2 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "input": "固定输入：[2, 1, 3, 4, 4]",
+      "progress": "已完成操作 7/9；已检测切口 2/4；已找到安全切口 1 个。",
+      "operation": "已检测位置 1 后的切口：左侧最大值 2 ≤ 右侧最小值 3。保留：没有跨切口的逆序。",
+      "values": "位置 0 · arr[0]2此位置到末尾的最小值1位置 1 · arr[1]1此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值3位置 3 · arr[3]4此位置到末尾的最小值4位置 4 · arr[4]4此位置到末尾的最小值4",
+      "history": "已检测位置 0 后的切口：左侧最大值 2 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。已检测位置 1 后的切口：左侧最大值 2 ≤ 右侧最小值 3。保留：没有跨切口的逆序。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "input": "固定输入：[2, 1, 3, 4, 4]",
+      "progress": "已完成操作 8/9；已检测切口 3/4；已找到安全切口 2 个。",
+      "operation": "已检测位置 2 后的切口：左侧最大值 3 ≤ 右侧最小值 4。保留：没有跨切口的逆序。",
+      "values": "位置 0 · arr[0]2此位置到末尾的最小值1位置 1 · arr[1]1此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值3位置 3 · arr[3]4此位置到末尾的最小值4位置 4 · arr[4]4此位置到末尾的最小值4",
+      "history": "已检测位置 0 后的切口：左侧最大值 2 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。已检测位置 1 后的切口：左侧最大值 2 ≤ 右侧最小值 3。保留：没有跨切口的逆序。已检测位置 2 后的切口：左侧最大值 3 ≤ 右侧最小值 4。保留：没有跨切口的逆序。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "input": "固定输入：[2, 1, 3, 4, 4]",
+      "progress": "已完成操作 9/9；已检测切口 4/4；已找到安全切口 3 个。",
+      "operation": "已检测位置 3 后的切口：左侧最大值 4 ≤ 右侧最小值 4。保留：没有跨切口的逆序。",
+      "values": "位置 0 · arr[0]2此位置到末尾的最小值1位置 1 · arr[1]1此位置到末尾的最小值1位置 2 · arr[2]3此位置到末尾的最小值3位置 3 · arr[3]4此位置到末尾的最小值4位置 4 · arr[4]4此位置到末尾的最小值4",
+      "history": "已检测位置 0 后的切口：左侧最大值 2 > 右侧最小值 1。拒绝：左侧有较大数，右侧有较小数，必须在同一块内处理。已检测位置 1 后的切口：左侧最大值 2 ≤ 右侧最小值 3。保留：没有跨切口的逆序。已检测位置 2 后的切口：左侧最大值 3 ≤ 右侧最小值 4。保留：没有跨切口的逆序。已检测位置 3 后的切口：左侧最大值 4 ≤ 右侧最小值 4。保留：没有跨切口的逆序。",
+      "final": "最终最大块数 = 1 + 3 个安全切口 = 4。分块：[2, 1] | [3] | [4] | [4]。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "input": "固定输入：[4, 4, 4]",
+      "progress": "已完成操作 1/5；已检测切口 0/2；已找到安全切口 0 个。",
+      "operation": "位置 2：最后一个后缀只有 arr[2]=4，所以 suffix_min[2]=4。",
+      "values": "位置 0 · arr[0]4此位置到末尾的最小值—位置 1 · arr[1]4此位置到末尾的最小值—位置 2 · arr[2]4此位置到末尾的最小值4",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "input": "固定输入：[4, 4, 4]",
+      "progress": "已完成操作 2/5；已检测切口 0/2；已找到安全切口 0 个。",
+      "operation": "位置 1：arr[1]=4 与 suffix_min[2]=4 比较，min(4,4)=4。右侧的其余数已被 4 概括。",
+      "values": "位置 0 · arr[0]4此位置到末尾的最小值—位置 1 · arr[1]4此位置到末尾的最小值4位置 2 · arr[2]4此位置到末尾的最小值4",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "input": "固定输入：[4, 4, 4]",
+      "progress": "已完成操作 3/5；已检测切口 0/2；已找到安全切口 0 个。",
+      "operation": "位置 0：arr[0]=4 与 suffix_min[1]=4 比较，min(4,4)=4。右侧的其余数已被 4 概括。",
+      "values": "位置 0 · arr[0]4此位置到末尾的最小值4位置 1 · arr[1]4此位置到末尾的最小值4位置 2 · arr[2]4此位置到末尾的最小值4",
+      "history": "还未检测任何切口。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "input": "固定输入：[4, 4, 4]",
+      "progress": "已完成操作 4/5；已检测切口 1/2；已找到安全切口 1 个。",
+      "operation": "已检测位置 0 后的切口：左侧最大值 4 ≤ 右侧最小值 4。保留：没有跨切口的逆序。",
+      "values": "位置 0 · arr[0]4此位置到末尾的最小值4位置 1 · arr[1]4此位置到末尾的最小值4位置 2 · arr[2]4此位置到末尾的最小值4",
+      "history": "已检测位置 0 后的切口：左侧最大值 4 ≤ 右侧最小值 4。保留：没有跨切口的逆序。",
+      "final": "尚未完成；安全切口计数只覆盖已经检测的位置。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "input": "固定输入：[4, 4, 4]",
+      "progress": "已完成操作 5/5；已检测切口 2/2；已找到安全切口 2 个。",
+      "operation": "已检测位置 1 后的切口：左侧最大值 4 ≤ 右侧最小值 4。保留：没有跨切口的逆序。",
+      "values": "位置 0 · arr[0]4此位置到末尾的最小值4位置 1 · arr[1]4此位置到末尾的最小值4位置 2 · arr[2]4此位置到末尾的最小值4",
+      "history": "已检测位置 0 后的切口：左侧最大值 4 ≤ 右侧最小值 4。保留：没有跨切口的逆序。已检测位置 1 后的切口：左侧最大值 4 ≤ 右侧最小值 4。保留：没有跨切口的逆序。",
+      "final": "最终最大块数 = 1 + 2 个安全切口 = 3。分块：[4] | [4] | [4]。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "input": "固定输入：[0]",
+      "progress": "已完成操作 1/1；已检测切口 0/0；已找到安全切口 0 个。",
+      "operation": "位置 0：最后一个后缀只有 arr[0]=0，所以 suffix_min[0]=0。",
+      "values": "位置 0 · arr[0]0此位置到末尾的最小值0",
+      "history": "还未检测任何切口。",
+      "final": "最终最大块数 = 1 + 0 个安全切口 = 1。分块：[0]。"
+    }
+  ],
+  "errors": [],
+  "localRequestsOnly": true,
+  "contrast": [
+    {
+      "fg": "#e8edf4",
+      "bg": "#0d1117",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#161b22",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#1c2330",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#0a0e14",
+      "ratio": 16.440224808744848,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#0d1117",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#161b22",
+      "ratio": 7.078851579017443,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#1c2330",
+      "ratio": 6.449407898769069,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#0a0e14",
+      "ratio": 7.914396395614137,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#0d1117",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#161b22",
+      "ratio": 11.974898815275662,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#1c2330",
+      "ratio": 10.910104011097095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#0a0e14",
+      "ratio": 13.388343428810314,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#0d1117",
+      "ratio": 10.731637051347173,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#161b22",
+      "ratio": 9.809435643476732,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#1c2330",
+      "ratio": 8.937191437807625,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#0a0e14",
+      "ratio": 10.967282084266706,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#7ee2a8",
+      "bg": "#0d1117",
+      "ratio": 12.013623247863544,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#7ee2a8",
+      "bg": "#161b22",
+      "ratio": 10.981256963037128,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#7ee2a8",
+      "bg": "#1c2330",
+      "ratio": 10.004815697188947,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#7ee2a8",
+      "bg": "#0a0e14",
+      "ratio": 12.277418103408936,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ff7a93",
+      "bg": "#0d1117",
+      "ratio": 7.621336463114408,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ff7a93",
+      "bg": "#161b22",
+      "ratio": 6.966412411684981,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ff7a93",
+      "bg": "#1c2330",
+      "ratio": 6.34696669826778,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ff7a93",
+      "bg": "#0a0e14",
+      "ratio": 7.788685589174909,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#0d1117",
+      "ratio": 12.615602281385614,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#161b22",
+      "ratio": 11.531506152401557,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#1c2330",
+      "ratio": 10.506137335107907,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#0a0e14",
+      "ratio": 12.89261537833187,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#0d1117",
+      "bg": "#6ee7ff",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#3c2c16",
+      "ratio": 11.413861737674878,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#161b22",
+      "ratio": 9.809435643476732,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#0d1117",
+      "ratio": 10.731637051347173,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#1c2330",
+      "ratio": 8.937191437807625,
+      "threshold": 4.5
+    }
+  ],
+  "rendered": [
+    {
+      "selector": "reveal",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "48px"
+    },
+    {
+      "selector": "next",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "48px"
+    },
+    {
+      "selector": "preset",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "48px"
+    },
+    {
+      "selector": "cut1",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(60, 44, 22)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "48px"
+    },
+    {
+      "selector": "",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "0px"
+    },
+    {
+      "selector": "",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "0px"
+    },
+    {
+      "selector": "feedback",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "minHeight": "0px"
+    }
+  ],
+  "zoom": {
+    "innerWidth": 720,
+    "devicePixelRatio": 2,
+    "nativeFactor": 2
+  },
+  "cssBytes": 11975,
+  "clipboard": "success and denied fallback actual host shortcut exact after sentinel",
+  "source": "DOM, clipboard, fallback keyboard readback, downloaded bytes exact",
+  "screenshots": "generated; inspection recorded separately"
+}
