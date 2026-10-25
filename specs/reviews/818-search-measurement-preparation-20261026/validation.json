@@ -1,0 +1,12 @@
+{
+  "status": "prepared-not-used-on-candidate",
+  "validated_at": "2026-10-25T19:04:30.305077+00:00",
+  "tests_passed": 8,
+  "exit_code": 0,
+  "hashes": {
+    "measure.py": "94a3d9c9567af65c32bdd72bddd3d1eaa167a8e9d901335237a89ba5880a7386",
+    "test_measure.py": "004ba1f5f8b6917738c8c0cc8824559c96d912383b01f8e440151c507c1b189b"
+  },
+  "coverage": "CLI fixture targets1..12 only; no full-range or real future candidate execution",
+  "pi_actions": false
+}

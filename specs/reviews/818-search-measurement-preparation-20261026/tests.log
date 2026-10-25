@@ -1,0 +1,13 @@
+test_existing_output_is_never_overwritten (__main__.MeasurementCLI.test_existing_output_is_never_overwritten) ... ok
+test_hash_mismatch_refuses_before_output_creation (__main__.MeasurementCLI.test_hash_mismatch_refuses_before_output_creation) ... ok
+test_invalid_return_and_exception_are_not_answers (__main__.MeasurementCLI.test_invalid_return_and_exception_are_not_answers) ... ok
+test_snapshot_mutation_is_detected_and_original_unchanged (__main__.MeasurementCLI.test_snapshot_mutation_is_detected_and_original_unchanged) ... ok
+test_timeout_and_overall_deadline_are_recorded_not_partial_answers (__main__.MeasurementCLI.test_timeout_and_overall_deadline_are_recorded_not_partial_answers) ... ok
+test_timeout_cleans_descendant_process_group (__main__.MeasurementCLI.test_timeout_cleans_descendant_process_group) ... ok
+test_tiny_real_astar_actual_callable_parity_and_isolated_rss (__main__.MeasurementCLI.test_tiny_real_astar_actual_callable_parity_and_isolated_rss) ... ok
+test_wrong_return_records_each_target_as_mismatch (__main__.MeasurementCLI.test_wrong_return_records_each_target_as_mismatch) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.840s
+
+OK
