@@ -1,0 +1,6 @@
+{
+  "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId questionFrontendId title titleSlug isPaidOnly\n    content exampleTestcases codeSnippets { lang langSlug code }\n  }\n}",
+  "variables": {
+    "titleSlug": "minimum-window-subsequence"
+  }
+}
