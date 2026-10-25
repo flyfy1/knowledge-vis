@@ -1,0 +1,354 @@
+window.LESSON_COPY = {
+  "docTitle": [
+    "#773 滑动谜题 · 分层找最短路",
+    "#773 Sliding Puzzle · Shortest paths by layers"
+  ],
+  "title": [
+    "#773 · 滑动谜题",
+    "#773 · Sliding Puzzle"
+  ],
+  "back": [
+    "← LeetCode 知识索引",
+    "← LeetCode collection"
+  ],
+  "hard": [
+    "困难 · Python",
+    "Hard · Python"
+  ],
+  "official": [
+    "官方题目 ↗",
+    "Official problem ↗"
+  ],
+  "intro": [
+    "六个格子、一个空位。给出 2×3 棋盘，只能让 0 与上下左右相邻的数字交换。求到 [[1,2,3],[4,5,0]] 的最少移动次数；到不了则返回 -1。",
+    "Six squares, one blank. Given a 2×3 board, swap 0 with an orthogonally adjacent tile. Find the fewest moves to [[1,2,3],[4,5,0]], or return -1 if unreachable."
+  ],
+  "nav0": [
+    "1 · 一次移动",
+    "1 · One move"
+  ],
+  "s0t": [
+    "一次移动",
+    "One move"
+  ],
+  "nav1": [
+    "2 · 避免兜圈",
+    "2 · Avoid loops"
+  ],
+  "s1t": [
+    "避免兜圈",
+    "Avoid loops"
+  ],
+  "nav2": [
+    "3 · 逐层搜索",
+    "3 · Search by layers"
+  ],
+  "s2t": [
+    "逐层搜索",
+    "Search by layers"
+  ],
+  "nav3": [
+    "4 · 先预测",
+    "4 · Predict first"
+  ],
+  "s3t": [
+    "先预测",
+    "Predict first"
+  ],
+  "nav4": [
+    "5 · 写成 Python",
+    "5 · Build the Python"
+  ],
+  "s4t": [
+    "写成 Python",
+    "Build the Python"
+  ],
+  "s0e": [
+    "这一步要回答：眼前的棋盘离目标有几步？0 是空位；一次移动只交换空位与一个上下左右相邻的数字。下面第一行已经是 1、2、3，第二行是 4、0、5。交换 0 与 5，就得到目标，恰好 1 步。",
+    "How many moves is this board from the goal? The blank is 0; one move swaps it with a tile directly above, below, left or right. The top row is already 1, 2, 3 and the bottom row is 4, 0, 5. Swapping 0 with 5 reaches the goal in exactly 1 move."
+  ],
+  "handTask": [
+    "先点 5，再撤销。也可点其他可移动数字，观察历史怎样增长。灰色按钮不可移动；棋盘的两行就是输入的两行，不可斜着交换。这个手动实验独立于后面的搜索。",
+    "Click 5, then Undo. Try another enabled tile and watch the board history grow. Disabled tiles cannot move; the two rows match the input rows, and diagonal swaps are illegal. This manual experiment is independent of the search below."
+  ],
+  "scrollHint": [
+    "每块棋盘始终为 2×3。极窄缩放时，可横滑棋盘，或聚焦棋盘后按左右方向键查看三列。",
+    "Every board remains 2×3. At very narrow zoom, swipe within a board, or focus it and use the arrow keys to see all three columns."
+  ],
+  "blank": [
+    "空位 0",
+    "Blank 0"
+  ],
+  "tile": [
+    "第 {r} 行第 {c} 列，数字 {v}，{action}",
+    "Row {r}, column {c}, tile {v}, {action}"
+  ],
+  "legal": [
+    "可与空位交换",
+    "can swap with the blank"
+  ],
+  "illegal": [
+    "不可与空位交换",
+    "cannot swap with the blank"
+  ],
+  "manualRead": [
+    "已手动移动 {n} 次。{status}",
+    "Manual moves made: {n}. {status}"
+  ],
+  "solved": [
+    "当前等于目标。",
+    "The current board equals the goal."
+  ],
+  "notSolved": [
+    "当前还不是目标。",
+    "The current board is not the goal yet."
+  ],
+  "undo": [
+    "撤销一次移动",
+    "Undo one move"
+  ],
+  "reset": [
+    "重置",
+    "Reset"
+  ],
+  "history": [
+    "保留的棋盘历史（每个箭头 = 一次移动）",
+    "Retained board history (each arrow = one move)"
+  ],
+  "s1e": [
+    "这一步要回答：为什么不能随便尝试，碰到目标就结束？把一个完整棋盘叫作一个状态，把一次合法移动叫作两个状态间的一条边。123405 是按行连接两行的写法，即 [[1,2,3],[4,0,5]]；每一位仍代表固定格子，不是数字大小。",
+    "Why not try arbitrary moves and stop at a goal? A state is one complete board; an edge connects two states one legal move apart. The row-by-row string 123405 means [[1,2,3],[4,0,5]]. Each character occupies a fixed square; the string is not a numeric magnitude."
+  ],
+  "wrong": [
+    "反例：从 123405 把 0 与 5 交换会到 123450；接着再交换又回到 123405。盲目递归会无限兜圈。随意尝试找到的路径也未必最短：先经 103425 → 013425 再折返至起点然后到目标，共 5 步，而直接交换只需 1 步。不能把“找到一条路”当成“证明最短”。",
+    "Counterexample: swapping 0 with 5 takes 123405 to 123450, and swapping back returns to 123405. Blind recursion can loop forever. Arbitrary first-found routes need not be shortest: go via 103425 → 013425, retrace to the start, then reach the goal: 5 moves instead of 1. Finding a route alone does not prove it is shortest."
+  ],
+  "baseline": [
+    "一个正确但重复工作的基线：列出全部 6! = 720 个状态，将起点距离设为 0，其余设为无穷大。反复扫描每条边 u→v，用 d[v] = min(d[v], d[u]+1) 松弛（即改善已知步数），直到一整轮没有变化。最短路不必重复状态，因此最多 719 轮就足够。每轮重扫已稳定的距离很浪费；下面改成只处理新找到的一层。",
+    "A correct baseline with repeated work: list all 6! = 720 states, set the start distance to 0 and all others to infinity. Repeatedly scan every edge u→v and relax it (improve its known distance) with d[v] = min(d[v], d[u]+1), until a full pass changes nothing. A shortest path never needs a repeated state, so 719 passes suffice. Rescanning settled distances wastes work; next we process only each newly discovered layer."
+  ],
+  "baselineCode": [
+    "正确基线的核心（完整可运行版本在本地测试中）",
+    "Correct baseline core (complete executable version in local tests)"
+  ],
+  "baselineCost": [
+    "若 V 为状态数、E 为合法边数，此基线最坏 O(VE) 时间、O(V+E) 空间（存图）。每个状态至多有 3 个相邻状态。我们不需要为每个状态预存所有路径。",
+    "With V states and E legal edges, this baseline costs O(VE) time and O(V+E) space when storing the graph. Each state has at most 3 neighbors. We never need to retain every possible route."
+  ],
+  "s2e": [
+    "这一步要回答：怎样知道第一次遇到目标就是最少步数？广度优先搜索（BFS）按步数一层层找。前沿是“刚发现、距离同为 d 步”的所有状态；seen 是已经发现的状态集合。起点在第 0 层，因为尚未移动。",
+    "How can the first encounter with the goal prove the fewest moves? Breadth-first search (BFS) explores one move count at a time. The frontier contains every newly discovered state at distance d; seen is the set of all discovered states. The start is layer 0 because no move has been made."
+  ],
+  "derive": [
+    "仍看 123405：0 在位置 4（从 0 开始按行编号），只能换位置 1、3、5，于是得到 103425、123045、123450。这三块棋盘都是 1 步可达。123450 已是目标，且第 0 层不是目标，所以答案是 1。下一次从 103425 生成 123405 时，seen 会拒绝它：它早在第 0 层就出现过，绕回去不会让路更短。",
+    "Keep 123405: 0 occupies position 4 (zero-based, row-major), so it can swap only with positions 1, 3, 5. This gives 103425, 123045, 123450, each reachable in 1 move. The last is the goal and layer 0 was not, so the answer is 1. Later, when 103425 generates 123405, seen rejects it: that board was already found at layer 0, and returning cannot improve its distance."
+  ],
+  "invariant": [
+    "由此得到不变量：进入第 d 层时，前沿恰好包含最短距离为 d 的状态，seen 恰好包含距离不超过 d 的状态。扩展前沿的一条边只会得到距离至多 d+1 的状态；未见过的状态不可能距离 ≤d，否则早已发现。因此新状态的距离恰为 d+1，发现时立即加入 seen，防止同层重复。任何 d+1 步的路径，其倒数第二个状态距离至多 d，所以新一层也不会漏掉状态。所有边都代表 1 次移动，此证明才成立。",
+    "This yields the invariant: on entering layer d, the frontier is exactly the states whose shortest distance is d, and seen is exactly those within distance d. One edge from the frontier reaches a state within d+1 moves. An unseen state cannot be within d moves, or it would already have been discovered. Its distance is therefore exactly d+1. Mark it seen immediately to avoid duplicates within the new layer. Every (d+1)-move path has a penultimate state within d moves, so the next layer misses no state either. This proof relies on every edge costing one move."
+  ],
+  "traceTask": [
+    "先用“一步到达”走到末尾，再选“五步到达”，逐层前进，查看保留的层记录。每帧显示进入该层时的全部前沿；候选账本展示上一层第一个状态的扩展，其余状态也已完整扩展。切换预设会重启此搜索。",
+    "Finish “One move”, then select “Five moves”. Advance layer by layer and inspect the retained layer ledger. Each frame shows the full frontier on entering that layer. The candidate ledger details the previous layer’s first state; all other states were also fully expanded. Changing the preset restarts this search."
+  ],
+  "sim": [
+    "教学模拟：JavaScript 按完整层生成快照，并非执行下面的 Python。Python 用队列逐个取出状态，可能在一层中途返回；最少步数相同。未截断任何层或前沿。",
+    "Teaching simulation: JavaScript creates complete-layer snapshots; it does not execute the Python below. Python removes states individually from a queue and may return partway through a layer; the minimum move count is the same. No layer or frontier is truncated."
+  ],
+  "presetLabel": [
+    "搜索预设（更换即重启）",
+    "Search preset (changing restarts)"
+  ],
+  "preset0": [
+    "一步到达 · 123405",
+    "One move · 123405"
+  ],
+  "preset1": [
+    "五步到达 · 412503",
+    "Five moves · 412503"
+  ],
+  "preset2": [
+    "无法到达 · 123540",
+    "Unreachable · 123540"
+  ],
+  "preset3": [
+    "已完成 · 123450",
+    "Already solved · 123450"
+  ],
+  "preset4": [
+    "换一个起点 · 012453",
+    "Another start · 012453"
+  ],
+  "prev": [
+    "回到上一层",
+    "Previous layer"
+  ],
+  "next": [
+    "生成下一层",
+    "Generate next layer"
+  ],
+  "end": [
+    "跳到搜索结论",
+    "Jump to conclusion"
+  ],
+  "frame": [
+    "帧 {i}/{n} · 进入第 {d} 层 · 前沿 {count} 个状态 · 累计发现 {seen} 个状态。{result}",
+    "Frame {i}/{n} · Entering layer {d} · Frontier: {count} states · Discovered so far: {seen} states. {result}"
+  ],
+  "pending": [
+    "尚未给出最终答案。",
+    "No final answer yet."
+  ],
+  "found": [
+    "目标首次出现在此层，答案 = {d} 次移动。",
+    "The goal first appears in this layer. Answer = {d} moves."
+  ],
+  "exhausted": [
+    "前沿为空，可达状态已全部搜索，答案 = -1。",
+    "The frontier is empty; every reachable state has been searched. Answer = -1."
+  ],
+  "frontTitle": [
+    "本层全部前沿棋盘",
+    "All frontier boards in this layer"
+  ],
+  "boardLabel": [
+    "棋盘 {s}，两行各三个格子",
+    "Board {s}, two rows of three squares"
+  ],
+  "empty": [
+    "空前沿：没有更多可达状态。",
+    "Empty frontier: no more reachable states."
+  ],
+  "ledgerTitle": [
+    "累计层记录：已扩展层 → 本层状态数 → 新发现数",
+    "Cumulative layer ledger: expanded layer → states in that layer → newly discovered"
+  ],
+  "layerRow": [
+    "第 {depth} 层：{count} 个状态 → 新发现 {added} 个状态",
+    "Layer {depth}: {count} states → {added} new states"
+  ],
+  "noExpansion": [
+    "尚未扩展起点。",
+    "The start has not been expanded yet."
+  ],
+  "sampleTitle": [
+    "上一层首个状态的候选账本",
+    "Candidate ledger for the previous layer’s first state"
+  ],
+  "sampleParent": [
+    "从 {s} 出发，逐个交换相邻数字：",
+    "From {s}, swap each adjacent tile in turn:"
+  ],
+  "candidate": [
+    "交换数字 {tile} → {state}：{decision}",
+    "Swap tile {tile} → {state}: {decision}"
+  ],
+  "admit": [
+    "新状态，加入 seen 与下一层",
+    "new state; add to seen and the next layer"
+  ],
+  "reject": [
+    "已经发现，跳过",
+    "already discovered; skip"
+  ],
+  "s3e": [
+    "这一步要回答：还没搜索完，能否已经证明最短？下面是独立的新场景：从 [[0,1,3],[4,2,5]]（013425）搜索，已经完整处理第 0、1、2 层，都没有目标；生成的第 3 层第一次包含目标。这里“一层”仍指最短步数相同的状态集合。",
+    "Can you prove the minimum before finishing the whole search? Here is an independent new scenario: from [[0,1,3],[4,2,5]] (013425), layers 0, 1, 2 have been fully processed without finding the goal. The newly generated layer 3 contains the goal for the first time. A layer still means states with the same shortest move count."
+  ],
+  "predictionLegend": [
+    "根据层不变量，此时应返回什么？",
+    "Using the layer invariant, what should be returned now?"
+  ],
+  "option0": [
+    "还不能返回，必须遍历全部 720 个排列",
+    "Cannot return yet; must inspect all 720 permutations"
+  ],
+  "option1": [
+    "3：这是最少移动次数",
+    "3: this is the minimum move count"
+  ],
+  "option2": [
+    "4：还要把目标算作一次移动",
+    "4: count the goal as another move"
+  ],
+  "reveal": [
+    "验证预测",
+    "Check prediction"
+  ],
+  "await": [
+    "先选一个答案，再验证；改变选择会隐藏旧反馈。",
+    "Choose an answer, then check it. Changing your choice hides previous feedback."
+  ],
+  "correct": [
+    "正确。",
+    "Correct."
+  ],
+  "incorrect": [
+    "再想想层的含义。",
+    "Reconsider what a layer counts."
+  ],
+  "answer": [
+    "答案是 3。第 0、1、2 层已排除了所有更短路径；第 3 层给出一条 3 步路径，所以既有下界也有可达证明。目标是一个状态，不是额外的一次移动。不必遍历无法到达的排列，也不必继续搜索更深层。",
+    "The answer is 3. Layers 0, 1, 2 ruled out every shorter route, and layer 3 supplies a 3-move route. We have both a lower bound and a reachable construction. The goal is a state, not an extra move. Unreachable permutations and deeper layers need not be explored."
+  ],
+  "s4e": [
+    "这一步要回答：如何把层不变量落实到可提交的 Python？队列是先进先出的待处理状态序列。起点以 (start, 0) 入队；每次从左侧取出，再把未见邻居以 moves+1 放到右侧。这样弹出的步数不会递减，等价于逐层搜索。",
+    "How does the layer invariant become submittable Python? A queue processes pending states in first-in-first-out order. Enqueue (start, 0); remove from the left and append unseen neighbors on the right with moves+1. Removed move counts never decrease, giving the same layer order."
+  ],
+  "map1": [
+    "start：按行编码完整棋盘。neighbors[4] = (1, 3, 5)，正是手算中空位 4 的合法交换位置；位置 2 与 3 并不相邻，不能只按字符串相差 1 判断。",
+    "start encodes the entire board row by row. neighbors[4] = (1, 3, 5), exactly the legal swap positions in the hand calculation. Positions 2 and 3 are not adjacent: neighboring string characters alone do not define legal moves."
+  ],
+  "map2": [
+    "queue.popleft()：取当前最浅的待处理状态。若等于目标，立即返回它携带的 moves；起点已完成时返回 0。",
+    "queue.popleft() takes the shallowest pending state. If it equals the goal, return its moves immediately. An already solved starting board returns 0."
+  ],
+  "map3": [
+    "tiles 只改当前状态的副本。nxt 不在 seen 时先记录、再入队；同一状态只入队一次。队列为空说明所有可达状态均已检查，返回 -1。原始 board 不变。",
+    "tiles changes only a copy of the current state. If nxt is not in seen, record it before enqueueing: each state enters the queue once. An empty queue means every reachable state was checked, so return -1. The input board remains unchanged."
+  ],
+  "cost": [
+    "令 V 为从起点可达的状态数，E 为这些状态的合法边数。固定六个格子时，复制与哈希棋盘都是常数工作，因此 O(V+E) 时间、O(V) 辅助空间；V ≤ 720，E ≤ 3V（实际每个连通部分只有 360 个状态）。若把格子数 B 当作变量，编码复制成本也要计入，可用 O(B·B!) 时间、O(B·B!) 空间作粗上界，不能把任意大棋盘的字符串当成常数。教学快照另外保留历史，不属于提交代码空间。",
+    "Let V be the reachable states and E their legal edges. With six fixed cells, copying and hashing a board cost constant work, so time is O(V+E) and auxiliary space is O(V); V ≤ 720 and E ≤ 3V (each connected component actually contains 360 states). If cell count B were variable, encoding copies must also count: O(B·B!) time and space give a coarse bound. Strings on arbitrarily large boards are not constant-cost. Teaching snapshots retain additional history outside submission space."
+  ],
+  "boundaries": [
+    "边界：目标输入返回 0；123540 搜索耗尽后返回 -1；不做对角移动；0..5 各一次、恰好 2×3 是官方前提，空输入不在契约中。无需先学排列奇偶性：搜索耗尽本身就是不可达证明。",
+    "Boundaries: a solved input returns 0; 123540 returns -1 after search exhaustion; diagonal moves are forbidden. The official contract requires exactly 2×3 cells containing 0..5 once each; empty input is outside it. Permutation parity is not required: exhaustion itself proves unreachability."
+  ],
+  "copy": [
+    "复制 Python",
+    "Copy Python"
+  ],
+  "download": [
+    "下载 solution.py",
+    "Download solution.py"
+  ],
+  "source": [
+    "查看完整官方接口 Python 解法",
+    "View full Python solution for the official interface"
+  ],
+  "copied": [
+    "已复制完整源码。",
+    "Full source copied."
+  ],
+  "fallback": [
+    "剪贴板不可用；已选中下面的源码，请手动复制。",
+    "Clipboard unavailable; the source below is selected for manual copying."
+  ],
+  "manualCopy": [
+    "手动复制完整 Python 源码",
+    "Manually copy the complete Python source"
+  ],
+  "related1": [
+    "单词接龙 II：按层保留最短路径 →",
+    "Word Ladder II: retain shortest paths by layer →"
+  ],
+  "related2": [
+    "截断树木：网格上的等权最短路 →",
+    "Cut Off Trees: equal-cost shortest paths on a grid →"
+  ],
+  "foot": [
+    "作者自查候选；教学模拟与 Python 执行分开验证。独立评审、实际学习者效果与 LeetCode 提交结果尚未取得。",
+    "Author self-checked candidate; the teaching simulation and Python execution are tested separately. Independent review, actual learner outcomes, and a LeetCode submission result are pending."
+  ]
+};
