@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "authorSelfCheck": true,
+  "cases": 2648,
+  "exhaustive2x3": 2400,
+  "seed": 864,
+  "randomCases": 240,
+  "maxGridAnswer": 29,
+  "checks": [
+    "canonical Python vs explicit-set relaxation oracle",
+    "every trace layer and discovered shortest distance",
+    "immutable input",
+    "official examples",
+    "one row/column",
+    "six keys",
+    "source mirror exact",
+    "copy duplicate-key and pair shape"
+  ]
+}

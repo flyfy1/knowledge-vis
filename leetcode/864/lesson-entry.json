@@ -1,0 +1,38 @@
+{
+  "id": 864,
+  "title": {
+    "zh": "获取所有钥匙的最短路径",
+    "en": "Shortest Path to Get All Keys"
+  },
+  "desc": {
+    "zh": "同一格子，不同钥匙：从手算路线推导完整状态的分层搜索。",
+    "en": "Same square, different keys: derive a layered search over position and inventory."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "广度优先搜索",
+      "en": "Breadth-first search"
+    },
+    {
+      "zh": "位掩码",
+      "en": "Bitmask"
+    }
+  ],
+  "path": "864/",
+  "leetcodeUrl": "https://leetcode.com/problems/shortest-path-to-get-all-keys/",
+  "language": "Python",
+  "complexity": "O(mn · 2^k) time; O(mn · 2^k) auxiliary space",
+  "concepts": [
+    {
+      "name": "BFS with inventory",
+      "step": 2,
+      "description": "Search position and key inventory in equal-distance layers."
+    },
+    {
+      "name": "Bitmask state",
+      "step": 4,
+      "description": "Encode permanent keys as bits and deduplicate complete states."
+    }
+  ]
+}
