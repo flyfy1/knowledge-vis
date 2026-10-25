@@ -3939,6 +3939,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) auxiliary space"
   },
   {
+    "id": 996,
+    "title": {
+      "zh": "正方形数组的数目",
+      "en": "Number of Squareful Arrays"
+    },
+    "desc": {
+      "zh": "用剩余次数回溯，既检查相邻平方和，又避免重复排列。",
+      "en": "Track remaining counts to build legal squareful orders without duplicates."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "回溯",
+        "en": "Backtracking"
+      },
+      {
+        "zh": "计数",
+        "en": "Counting"
+      }
+    ],
+    "path": "996/",
+    "leetcodeUrl": "https://leetcode.com/problems/number-of-squareful-arrays/",
+    "language": "Python",
+    "complexity": "O(n*n! + k²) time; O(n + k²) auxiliary space, k distinct values"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
