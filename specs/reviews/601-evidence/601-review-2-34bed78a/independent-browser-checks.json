@@ -1,0 +1,39 @@
+[
+  {
+    "locale": "zh",
+    "formula": "若 s∈eligible 且 s+1∈eligible 且 s+2∈eligible，则 marked ← marked ∪ {s,s+1,s+2}。",
+    "event": "刚测试 s=5：5、6、7 都在 eligible。marked 从 [4, 5, 6] 变为 [4, 5, 6, 7]；只加入新证据，不重复已有编号。",
+    "feedback": "预测正确。 答案 [20,21,22]。起点 20 的三连齐全，能证明这三行。23 只有 99 人，打断连续性；24 与 26 又缺 25，不能凑成三连。按不变式取完整三连的并集，既不会误收 24、26，也不会因后面的断点丢掉 20、21、22。"
+  },
+  {
+    "locale": "en",
+    "formula": "If s∈eligible and s+1∈eligible and s+2∈eligible, then marked ← marked ∪ {s,s+1,s+2}.",
+    "event": "Just tested s=5: 5, 6, 7 all belong to eligible. marked changes from [4, 5, 6] to [4, 5, 6, 7]; existing IDs are not duplicated.",
+    "feedback": "Correct prediction. Answer: [20,21,22]. Start 20 has a complete triple and proves these three rows. ID 23 has only 99 people and breaks continuity; 24 and 26 also lack 25 and form no triple. The union invariant excludes 24 and 26 while preserving the already-proved 20,21,22 despite the later break."
+  },
+  {
+    "disabled": {
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    }
+  },
+  {
+    "manualClipboard": "real Control+c/readback exact",
+    "characters": 438
+  },
+  {
+    "servedHashes": {
+      "index.html": "e641cba0a9e6841420762e50b32604cfc7a2184db8c8c32bf5f8c857c02c6d4b",
+      "app.js": "4a2e8608f7516d41c19824385b68ed36ce2c0299bd730f2b3cad92f19004a960",
+      "core.js": "d957af961f2814ee0a73fba07f71259d2e4a3baa996eedc24314a4826b4cc76a",
+      "copy.js": "df23bfd11fcc9c673c6d8047ea22a8b618124d2d7c4305cea5400391658a5867",
+      "style.css": "edd022395b2c7080ea2ccf7cd91acadc1c0c8732d3c86b7eb82a8bac93ec91e0",
+      "python-code.js": "0dedcdf08375180babddbeb5162224b5164faf0c53ada132913a550ee4fe0746",
+      "solution.py": "5620bf82036cf773a3352d3862e3c93e45d9681ed603c4868c3adec2c4b4d563",
+      "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+      "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+    }
+  }
+]
