@@ -1,0 +1,27 @@
+{
+  "candidate": "01a641174b7ef7456ba4e458f15cff8f23f41c1864b06f4b8d6cb8d44dab5696",
+  "frozenAt": "2026-10-25T05:07:54.682908+00:00",
+  "files": {
+    "BRIEF.md": "f77e4aaef71f38065bbea95d0731f4b8c837421631f82ec37749f2919d07f8cf",
+    "app.js": "272f575084358a9473939092c0e57f430acf28c19988ed7acf253410825047e3",
+    "copy.js": "ea97683fc0a8c855f9aefe2d0f89efe046b2e8216a3e5abdcf17262527f940b1",
+    "core.js": "58b6cac5a7a6641d39fe19f839d91c0f86614cd9df3df5c34969b3265e65f327",
+    "favicon.svg": "36f205bf1d8806a889ffb2891219fe9df23d249dd850015c81d34ddbb4cc05ba",
+    "index.html": "324fd20d33c323b1f56bf7b92e143c3c5a552ec55b35337e5440b80235759220",
+    "lesson-entry.json": "d710e430e0bec6da673f1bbfad6e83d3645ce018c8f55d3dd9388a17c40cc8d8",
+    "provenance/README.md": "f74863de6a6030fe11dd699ab70837143ce8b974122bd3950ea8071f27dc79b5",
+    "provenance/official-graphql.json": "e9b024ecd1dbc7ae85d67f8ba2ab9e400b2dc8f72a38a673f0d56066a898bcf3",
+    "python-code.js": "1b4ee4a922897d133d2c5ba9a3a2c414e613f55ce12f1e764cd53308c7bd9e72",
+    "solution.py": "07564c7af836b183d992aba89c78ef9fb4601797da693e44b0019dd118e1166c",
+    "style.css": "7017fe4f582c633c1564c6f100815fcb1f3eb98fb217adeaedbb24228a1fdef0",
+    "tests/README.md": "2c0b8b714fe868cf5d62b935d987d8faebac1b9904b8776af8bc9a33010e5758",
+    "tests/browser.cjs": "a60a2a34256f849ba1bd1947b72c9ed2536ee7fe95066a9b3f3bfe23c8ee0b69",
+    "tests/test_core.cjs": "cccc91ff9e6f4bab77d963b6a8f4f07e30669396389e24e0c538aeb477af84cf",
+    "tests/test_solution.py": "9fc11e4d51b642994ec0aa67c00eaa4932ba4b8f08528882c822ea88288dab35"
+  },
+  "sharedReadOnlyDependencies": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "status": "author candidate; independent review pending"
+}
