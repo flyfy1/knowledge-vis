@@ -1,7 +1,7 @@
 # Proposal: selected-label width across font environments
 
-Status: independently reviewed, not adopted. Requires safe central adoption
-after active lanes using the current shared policy are imported. The separate
+Status: adopted at the safe central integration boundary on 2026-10-25, after
+lanes #629 and #630 using the previous shared policy were imported. The separate
 [document review](../reviews/font-metrics-proposal-review-20261025.md) found no
 required changes. Both advisory refinements are adopted below: explicit evidence
 handoff and contextual native-arrow allowances. These clarify the reviewed scope.
