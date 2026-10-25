@@ -3077,6 +3077,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(log²(k+2)) time; O(1) auxiliary space"
   },
   {
+    "id": 798,
+    "title": {
+      "zh": "得分最高的最小轮调",
+      "en": "Smallest Rotation with Highest Score"
+    },
+    "desc": {
+      "zh": "从每个值的失分区间推导差分扫描。",
+      "en": "Derive a difference scan from each value’s losing rotations."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "差分数组",
+        "en": "Difference array"
+      },
+      {
+        "zh": "循环索引",
+        "en": "Circular indexing"
+      }
+    ],
+    "path": "798/",
+    "leetcodeUrl": "https://leetcode.com/problems/smallest-rotation-with-highest-score/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) space"
+  },
+  {
     "id": 803,
     "title": {
       "zh": "打砖块",

@@ -1517,3 +1517,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Preimage via lower boundaries | `leetcode/793/#step2` | Subtract first-at-least boundaries while preserving a monotone-search invariant. |
 
 <!-- /leetcode-793-campaign -->
+
+
+<!-- leetcode-798-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Losing rotation intervals | `leetcode/798/#step2` | Split a circular interval into linear intervals. |
+| Difference prefix invariant | `leetcode/798/#step3` | Count active losing intervals and preserve earliest ties. |
+
+<!-- /leetcode-798-campaign -->
