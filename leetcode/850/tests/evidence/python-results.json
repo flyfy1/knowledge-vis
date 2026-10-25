@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "checks": 2169,
+  "maxUniqueBoundariesSeconds": 0.0036763401003554463,
+  "oracles": [
+    "unit-cell set",
+    "inclusion-exclusion"
+  ],
+  "sourceMirrorExact": true,
+  "uniqueCopyKeys": 78
+}
