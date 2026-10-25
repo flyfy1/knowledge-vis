@@ -1822,3 +1822,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Bitmask state | `leetcode/864/#step4` | Encode permanent keys as bits and deduplicate complete states. |
 
 <!-- /leetcode-864-campaign -->
+
+
+<!-- leetcode-1000-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Interval DP with pile counts | `leetcode/1000/#step3` | Split an interval into a first pile and a remaining forest, then charge the legal final merge. |
+
+<!-- /leetcode-1000-campaign -->
