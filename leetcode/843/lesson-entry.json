@@ -22,7 +22,7 @@
   "path": "843/",
   "leetcodeUrl": "https://leetcode.com/problems/guess-the-word/",
   "language": "Python",
-  "complexity": "O(n²L + Gn²) time; O(n²) auxiliary space, L=6 and G≤10",
+  "complexity": "O(n²L + Gn²) time; O(n²) auxiliary space, L=6 and G≤n (worst-case O(n³+n²L) time)",
   "concepts": [
     {
       "name": "Candidate consistency",

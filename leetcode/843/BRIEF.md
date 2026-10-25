@@ -1,4 +1,4 @@
-# #843 Guess the Word — author candidate r1
+# #843 Guess the Word — budget repair candidate r2
 
 Author run: Codex; exact model identifier unavailable. Independent review: pending;
 no acceptance, submission, publication or actual learner outcome claimed.
@@ -41,7 +41,9 @@ answer or derived highlighting before reveal; locale retains selection/reveal.
 4. Known: buckets/filter. Question: how is this submitted and what does it cost?
 Input: source; output None, Master calls. Action: source/copy/manual fallback/
 download. Conditions: Python official API; browser trace simulates, never executes
-Python; ten-call conservative cap, no hidden access to secret or budget.
+Python; continue while candidates remain, succeed only on reply 6; no hidden
+access to secret or budget. Failed probes strictly shrink C, so G≤n; no universal
+case-budget guarantee is claimed.
 
 ## Term dependency table
 Positional match: step0, equality at the same index. Candidate: step1, word
@@ -64,7 +66,8 @@ Deferred: arbitrary word editing (input validity obscures core experiment), auto
 play (manual rounds expose causality), global optimal strategy search (exponential).
 
 ## State/verification contract
-Both locales: hand hidden/revealed; each preset initial/middle/terminal; prev/next
+Both locales: hand hidden/revealed; each of nine presets initial/middle/terminal;
+known singleton before success, actual success and budget exhaustion; prev/next
 disabled endpoints; prediction unselected/selected/revealed/changed; copy success/
 manual recovery. Locale retains all algorithm and exercise state and focus.
 Preset resets trace only; reset restores trace only; separate exercise reset.
@@ -82,3 +85,30 @@ tests/evidence/*-results.json and preflight.json. Candidate identity: candidate.
 Metadata preflight `python3 -B scripts/register_leetcode_lesson.py 843 --validate-only`
 passed with exit 0 and empty stdout/stderr. No registration, publication, commit,
 agent delegation or independent acceptance occurred.
+
+## 843-BUDGET-R1 repair boundary (2026-10-26)
+
+Reuse the existing controls, layout, colors and locale state ownership. This is
+a repair of the independently requested stopping/status behavior, not a new
+layout or feature platform. The archived request supplies the defect/adjudication
+boundary; fresh independent lesson review is pending. P0/highest-return: make
+the missing actual call, retain exact history and probe choices, distinguish
+known/success/exhausted in both locales, and preserve source transfer. P1:
+paired-family preset evidence in the existing selector. P2: none. Deferred:
+universal decision-tree optimization (exponential and outside this repair);
+real hardware and actual judge submission (no such evidence is available).
+
+New bounded input/output: 20/22/24 words formed as a/b plus five copies of
+c…l / c…m / c…n. Every secret tested at budgets 10/11/30, observed maxima
+10/11/12. The 22-word budget-10 control is deliberately infeasible for all
+secrets, not an official-test claim. After ten calls bmmmmm is known; an
+eleventh actual call is necessary. Show this before declaring success. Only
+the teaching simulator receives disclosed budget data; the canonical official
+Python callable remains (words, master) -> None. The source has no arbitrary
+10/30 cap and reads no judge state. G≤n proves termination under truthful
+replies, not feasibility for every hidden case budget or global minimax optimality.
+
+The original r1 self-check below/elsewhere remains historical. New checks and
+red/diagnostic/green evidence are in tests/evidence/budget-r2/; SELF-CHECK.md
+appends the finding mapping. candidate.json freezes this new candidate, not a
+change to the historical acceptance or report.

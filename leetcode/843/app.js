@@ -6,16 +6,16 @@ function render(){
  $('letters').innerHTML=Array.from('acckzz').map((c,i)=>`<div class="letter ${c==='ccbazz'[i]?'hit':''}"><small>${i+1}</small><br>${c}<br>${'ccbazz'[i]}<br>${c==='ccbazz'[i]?'✓':'×'}</div>`).join('');
  const data=C.presets[preset],f=frames[at];
  $('frameRead').textContent=t('frame',{k:at,n:f.candidates.length,secret:data.secret});
- $('terminal').textContent=f.done?t('found'):'';
+ $('terminal').textContent=f.done?t('found'):f.exhausted?t('exhausted'):f.candidates.length===1?t('known'):'';
  $('prev').disabled=at===0;$('next').disabled=at===frames.length-1;$('end').disabled=at===frames.length-1;
  $('candidates').innerHTML=f.candidates.map(i=>`<code>${data.words[i]}</code>`).join('');
  $('buckets').innerHTML='';
- if(!f.done){
+ if(!f.done&&!f.exhausted){
   const plan=C.plan(data.words,f.candidates,f.used);
   $('buckets').innerHTML=plan.rows.map(r=>`<tr class="${r.i===plan.probe?'changed':''}"><th scope="row"><code>${r.word}</code></th>${r.buckets.map(n=>`<td>${n}</td>`).join('')}<td>${r.worst}</td><td>${t(r.used?'used':r.i===plan.probe?'chosen':'available')}</td></tr>`).join('');
  }
- $('buckets').closest('.table-wrap').hidden=f.done;
- document.querySelector('[data-i18n=tableTitle]').hidden=f.done;document.querySelector('[data-i18n=scrollHint]').hidden=f.done;
+ $('buckets').closest('.table-wrap').hidden=f.done||!!f.exhausted;
+ document.querySelector('[data-i18n=tableTitle]').hidden=f.done||!!f.exhausted;document.querySelector('[data-i18n=scrollHint]').hidden=f.done||!!f.exhausted;
  $('empty').textContent=at?'':t('empty');
  $('ledger').innerHTML=f.history.map(h=>`<li>${t('history',{guess:h.guess,reply:h.reply,before:h.before.length,after:h.after.length,words:h.after.map(i=>data.words[i]).join(', ')})}</li>`).join('');
  $('reveal').disabled=answer===null;
@@ -23,7 +23,7 @@ function render(){
  $('copyStatus').textContent=copyState?t(copyState):'';
 }
 $('handToggle').onclick=()=>{hand=!hand;render();};
-$('preset').onchange=()=>{preset=Number($('preset').value);const p=C.presets[preset];frames=C.trace(p.words,p.secret);at=0;render();};
+$('preset').onchange=()=>{preset=Number($('preset').value);const p=C.presets[preset];frames=C.trace(p.words,p.secret,p.budget);at=0;render();};
 $('prev').onclick=()=>{at=Math.max(0,at-1);render();};
 $('next').onclick=()=>{at=Math.min(frames.length-1,at+1);render();};
 $('end').onclick=()=>{at=frames.length-1;render();};

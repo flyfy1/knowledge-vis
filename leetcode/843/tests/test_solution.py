@@ -7,12 +7,12 @@ spec=importlib.util.spec_from_file_location('solution',root/'solution.py');m=imp
 def oracle(a,b):
     return len([i for i in range(6) if a[i]==b[i]])
 class Judge:
-    def __init__(self,words,secret):
-        self.words=words;self.secret=secret;self.history=[];self.candidates=words[:]
+    def __init__(self,words,secret,budget=10):
+        self.budget=budget;self.words=words;self.secret=secret;self.history=[];self.candidates=words[:]
     def guess(self,word):
         assert word in self.words
         assert word not in [h['guess'] for h in self.history]
-        assert len(self.history)<10
+        assert len(self.history)<self.budget
         # Independent partition enumeration, independent of solution's cached matrix.
         ranked=[]
         for i,probe in enumerate(self.words):
@@ -29,9 +29,9 @@ class Judge:
         return reply
 count=0;maxcalls=0
 
-def check(words,secret,success=True):
+def check(words,secret,success=True,budget=10):
     global count,maxcalls
-    j=Judge(words,secret);original=words[:]
+    j=Judge(words,secret,budget);original=words[:]
     assert m.Solution().findSecretWord(words,j) is None
     assert words==original
     if success: assert j.history[-1]['reply']==6,(words,secret,j.history)
@@ -51,9 +51,9 @@ for size in [1,2,3,10,30,100]:
         for secret in rng.sample(words,min(4,size)):check(words,secret)
 for words in [['acckzz','ccbazz','eiowzz','abcczz'],['hamada','khaled']]:
     for secret in words:check(words,secret)
-stress=check([c*6 for c in 'abcdefghijklmnopqrstuvwxyz'],'zzzzzz',False)
-assert len(stress.history)==10 and stress.history[-1]['reply']!=6
+stress=check([c*6 for c in 'abcdefghijklmnopqrstuvwxyz'],'zzzzzz',budget=30)
+assert len(stress.history)==26 and stress.history[-1]['reply']==6
 # Correct brute-force baseline always succeeds in <=n calls, but violates budget here.
 assert next(i+1 for i,w in enumerate(stress.words) if oracle(w,'zzzzzz')==6)==26
-result={'kind':'author computational self-check','result':'pass','cases':count,'exhaustive':'all 255 nonempty subsets of eight 6-letter words; every secret','seed':843,'maxCallsObserved':maxcalls,'boundary':'n=1, zero replies, n=100, unique words, actual terminal guess, unchanged input','budgetStress':'26 disjoint words: ten-call heuristic intentionally cannot find final word; documented limitation','officialExamples':'all secrets in both official lists','invariants':'every probe minimax by independent partitions, exact history-consistent candidates, true secret retained, legal/nonrepeated calls'}
+result={'kind':'author computational self-check','result':'pass','cases':count,'exhaustive':'all 255 nonempty subsets of eight 6-letter words; every secret','seed':843,'maxCallsObserved':maxcalls,'boundary':'n=1, zero replies, n=100, unique words, actual terminal guess, unchanged input','budgetStress':'26 disjoint words: succeeds in 26 under budget 30; no universal ten-call guarantee','officialExamples':'all secrets in both official lists','invariants':'every probe minimax by independent partitions, exact history-consistent candidates, true secret retained, legal/nonrepeated calls'}
 (out/'solution-results.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

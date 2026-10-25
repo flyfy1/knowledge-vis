@@ -1,13 +1,15 @@
 # Author checks (not independent review)
 
-Run from the repository root. Every test that writes output supports OUTPUT_DIR;
+Run from the repository root. Tests support OUTPUT_DIR (test_budget.py uses explicit --output);
 set it to a new directory when reviewing a frozen candidate.
 
 ```sh
+python3 -B leetcode/843/tests/test_budget.py --output /tmp/843-review/green.json
 OUTPUT_DIR=/tmp/843-review python3 -B leetcode/843/tests/test_solution.py
 OUTPUT_DIR=/tmp/843-review node leetcode/843/tests/test_core.cjs
 OUTPUT_DIR=/tmp/843-review node leetcode/843/tests/browser.cjs
 OUTPUT_DIR=/tmp/843-review node leetcode/843/tests/focused.cjs
+OUTPUT_DIR=/tmp/843-review node leetcode/843/tests/budget_browser.cjs
 python3 -B scripts/register_leetcode_lesson.py 843 --validate-only
 ```
 
@@ -26,5 +28,18 @@ in official-verification.md. No paywall or credentials were used.
 Numerical tests independently enumerate reply groups and history consistency.
 The JS trace is not execution of Python. Python executes against a fake judge
 that implements the documented API and validates the original callable contract.
-Budget stress is an intentional failure-to-find case, confirming the stated
-limitation rather than asserting a universal ten-call bound.
+The 26-word disjoint stress succeeds under budget 30; it does not establish a
+universal ten-call bound. Paired families are all-secret budget regressions,
+including the actual singleton final call. The budget-10 22-word simulation is
+a deliberately infeasible negative control and must never display success.
+
+843-BUDGET-R1 history (all writes stay in this lesson):
+
+```sh
+python3 -B leetcode/843/tests/test_budget.py --source leetcode/843/tests/evidence/budget-r2/before.py --output leetcode/843/tests/evidence/budget-r2/red.json
+# Exit 1 expected: 20/22 and 20/24 found.
+python3 -B leetcode/843/tests/test_budget.py --source leetcode/843/tests/evidence/budget-r2/before.py --diagnostic-bound 11 --output leetcode/843/tests/evidence/budget-r2/diagnostic11.json
+# Exit 1 overall: 22/22 fixed, but only 22/24; diagnostic only.
+python3 -B leetcode/843/tests/test_budget.py --source leetcode/843/tests/evidence/budget-r2/before.py --diagnostic-bound 30 --output leetcode/843/tests/evidence/budget-r2/diagnostic30.json
+# Exit 0: all fixtures pass; diagnostic only, not the canonical repair.
+```

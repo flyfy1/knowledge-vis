@@ -104,12 +104,12 @@ window.COPY = {
     "C_new = {w ∈ C_old : match(guess, w) = reply}; choose = argmin max(|B₀|,…,|B₅|)"
   ],
   "limit": [
-    "这只优化下一次回复，不是整棵决策树的最优解，也不能证明所有列表都在 10 次内成功。例如 26 个各自由同一字母重复六次组成的词，任何错误提问都只返回 0，10 次可能不够。官方说明测试使用合理策略可解。下面的实现保守地最多调用 10 次。",
-    "This optimizes one reply, not the entire decision tree, and proves no universal ten-call guarantee. For example, with 26 words each repeating a different letter six times, every wrong guess returns 0, so ten calls may be insufficient. The official statement says generated tests admit a reasonable strategy. The implementation below conservatively makes at most ten calls."
+    "这里只优化下一次回复，不是整棵决策树的最优解。实现不读取预算，也不在第十次后提前返回；候选仍在就继续，收到 6 才成功。官方每例预算为 10–30，并说明测试可用合理策略解决。这不证明本启发式对每个这样的列表都在预算内；它可能超出某例预算。",
+    "This optimizes one reply, not the entire decision tree. The implementation cannot read the budget and does not return early after ten calls: it continues while candidates remain, succeeding only on reply 6. Official cases allow 10–30 calls and admit a reasonable strategy. This does not prove that this heuristic fits every such case’s budget; it can exceed a case’s allowance."
   ],
   "progress": [
-    "为什么会前进？若当前有 c 个候选，提问其中一个：回复 6 则成功；否则至少排除该词，最多留下 c−1 个。minimax 不会选出更大的最坏桶，所以每轮失败都会严格减少候选。但这种递减只证明最多 n 次可解，不证明十次足够。",
-    "Why does this progress? With c candidates, guessing one either succeeds with 6 or rules out at least that word, leaving at most c−1. Minimax cannot choose a larger worst bucket, so every unsuccessful round strictly reduces C. This establishes an n-call bound without the cap, not a ten-call guarantee."
+    "为什么会停止？若有 c 个候选，提问其中一个，失败时最多留下 c−1 个。minimax 的最坏桶不会更大，所以失败必严格减少候选。已问失败的词不在候选中；只剩一个词时，它的最坏桶为 0，平局优先候选，必实际提问它。因此真实回复下至多 n 次成功；这是终止证明，不是 10 次或 30 次预算证明。",
+    "Why does this stop? With c candidates, guessing one leaves at most c−1 on failure. Minimax’s worst bucket cannot be larger, so failure strictly shrinks C. Failed guesses are no longer candidates. A lone candidate has worst bucket 0 and wins the candidate tie preference, so it is actually guessed. Truthful replies therefore give success in at most n calls. This proves termination, not a ten- or thirty-call budget guarantee."
   ],
   "scrollHint": [
     "窄屏可横向滚动表格，查看回复 4–6、最坏桶和选择状态。",
@@ -144,8 +144,8 @@ window.COPY = {
     "Bucket ties · aabbbb"
   ],
   "sim": [
-    "教学模拟：JavaScript 用公开的固定秘密生成回复；不运行下方 Python。表格展示下一次提问前的候选词与各桶大小，账本保留已完成调用。",
-    "Teaching simulation: JavaScript generates replies from the disclosed fixed secret; it does not execute the Python below. The table shows candidates and bucket sizes before the next guess; the ledger retains completed calls."
+    "教学模拟：JavaScript 用公开的固定秘密生成回复，不运行下方 Python。成对列表场景的预算也公开给模拟器；提交函数无法读取它。其余五个场景均在 10 次内成功。表格展示下一次提问前的候选与桶大小，账本保留已完成调用；预算耗尽时停止模拟，不会假装成功。",
+    "Teaching simulation: JavaScript uses the disclosed fixed secret, not the Python below. Paired scenarios also disclose a budget to the simulator; the submission cannot read it. The other five scenarios all succeed within ten calls. The table shows candidates and buckets before the next guess; the ledger retains completed calls. The simulator stops on budget exhaustion without claiming success."
   ],
   "prev": [
     "撤回一轮",
@@ -276,12 +276,12 @@ window.COPY = {
     "buckets[score] += 1 counts current candidates. The maximum excludes successful reply 6. key compares worst size, whether the probe is outside C, then original index, implementing the stated tie rule. The used set records prior probes."
   ],
   "map3": [
-    "最后的列表推导式逐个检查 matches[probe][i] == reply，只保留满足不变式的下标。十轮上限对应官方最低预算；这不是对任意构造列表的成功证明。",
-    "The final list comprehension tests matches[probe][i] == reply and keeps exactly the indices satisfying the invariant. The ten-round cap respects the minimum official budget; it does not prove success for arbitrary constructed lists."
+    "列表推导式只保留 matches[probe][i] == reply 的下标。while candidates 不凭调用次数提前结束；一个候选仍要实际提问。真实回复下候选不会耗尽；若回复矛盾导致空集，函数返回也不代表成功。只有收到 6 才成功；接口没有预算参数或读取预算的方法。",
+    "The comprehension keeps only indices with matches[probe][i] == reply. while candidates does not stop early at an arbitrary call count; a singleton still needs its actual guess. Truthful replies cannot empty C. If inconsistent replies empty it, returning is not success. Only reply 6 succeeds; the interface supplies no budget argument or getter."
   ],
   "cost": [
-    "令 n 是词数，L=6 是长度，G≤10 是调用轮数。预计算 O(n²L) 时间、O(n²) 空间；每轮比较 n 个探针与至多 n 个候选，O(n²) 时间。总计 O(n²L + Gn²) 时间，O(n²) 额外空间。浏览器额外保存历史快照，不能算作提交空间。",
-    "Let n be the word count, L=6 the length, and G≤10 the number of calls. Precomputation takes O(n²L) time and O(n²) space. Each round compares n probes with at most n candidates in O(n²) time. Total: O(n²L + Gn²) time, O(n²) auxiliary space. Browser history snapshots are additional teaching storage, not submission space."
+    "令 n 是词数，L=6 是长度，G≤n 是实际调用轮数。预计算 O(n²L) 时间、O(n²) 空间；每轮比较 n 个探针与至多 n 个候选，O(n²) 时间。总计 O(n²L + Gn²) 时间，最坏 O(n³+n²L)，O(n²) 额外空间。G≤n 不意味着 G≤allowedGuesses。浏览器的历史快照不计入提交空间。",
+    "Let n be the word count, L=6 the length, and G≤n the actual calls. Precomputation takes O(n²L) time and O(n²) space. Each round compares n probes with at most n candidates in O(n²) time. Total: O(n²L + Gn²) time, worst case O(n³+n²L), and O(n²) auxiliary space. G≤n does not imply G≤allowedGuesses. Browser history snapshots are separate teaching storage."
   ],
   "boundaries": [
     "边界：一个词也要调用一次；回复 0 可合法排除大量词；回复 6 立即停止。列表非空、唯一、定长保证匹配 6 只对应自身。官方不允许猜列表外的词，本实现始终从原列表提问；若回复不真实，不变式的前提就不成立。",
@@ -306,6 +306,34 @@ window.COPY = {
   "manualCopy": [
     "自动复制不可用。下方已全选，请按 Ctrl+C（macOS 为 ⌘C）。",
     "Automatic copy unavailable. The full source is selected below; press Ctrl+C (⌘C on macOS)."
+  ],
+  "budgetExample": [
+    "预算实验：成对列表由前缀 a/b 加上五个相同后缀字母组成，后缀依次取 c…l（20 词）、c…m（22 词）、c…n（24 词）。22 词时，首次问 accccc 得到四桶：回复 0、1 各有 10 词，回复 5、6 各有 1 词。若秘密 bmmmmm，回复 0 留下 bddddd…bmmmmm。后续每次最多单独区分一个词；第 10 次后只剩 bmmmmm，但第 11 次实际提问才成功。可切到预算 10 的不可能对照：应显示“耗尽”，不能显示“找到”。全秘密回归的最大调用数为 20/22/24 词分别 10/11/12；这是有限证据，不是通用预算保证。",
+    "Budget experiment: paired words use prefix a/b followed by five copies of one suffix letter: c…l (20 words), c…m (22), or c…n (24). With 22 words, first probe accccc gives four buckets: replies 0 and 1 have 10 words each; replies 5 and 6 have 1 each. For secret bmmmmm, reply 0 leaves bddddd…bmmmmm. Each later probe can single out at most one word. After call 10 only bmmmmm remains, but call 11 must actually guess it. Switch to the infeasible budget-10 control: it must show exhausted, not found. All-secret regressions take at most 10/11/12 calls for 20/22/24 words respectively. This is finite evidence, not a universal budget guarantee."
+  ],
+  "known": [
+    "已推断唯一候选，但尚未实际猜中；还需一次调用。",
+    "One candidate is known, but has not been successfully guessed; one call is still needed."
+  ],
+  "exhausted": [
+    "模拟预算已耗尽，未成功。即使已知唯一候选，也不能算猜中。",
+    "Simulation budget exhausted; not successful. Knowing a lone candidate does not count as guessing it."
+  ],
+  "preset5": [
+    "20 词 · 预算 10 · blllll",
+    "20 words · budget 10 · blllll"
+  ],
+  "preset6": [
+    "22 词 · 预算 11 · bmmmmm",
+    "22 words · budget 11 · bmmmmm"
+  ],
+  "preset7": [
+    "24 词 · 预算 30 · bnnnnn",
+    "24 words · budget 30 · bnnnnn"
+  ],
+  "preset8": [
+    "22 词 · 不可行预算 10 对照",
+    "22 words · infeasible budget-10 control"
   ],
   "related1": [
     "二分查找：用观测排除不可能的区域 ↗",

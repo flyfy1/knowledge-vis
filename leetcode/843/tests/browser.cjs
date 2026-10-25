@@ -15,14 +15,15 @@ const source=fs.readFileSync(path.join(root,'solution.py'),'utf8');
   await lang(l);assert((await page.locator('h1').textContent()).includes('#843'));
   await page.locator('#handToggle').click();assert.equal(await page.locator('.letter.hit').count(),3);assert((await text('handRead')).includes(l==='en'?'2, 5, 6':'2、5、6'));await page.locator('#handToggle').click();assert(await page.locator('#letters').isHidden());
   for(let p=0;p<C.presets.length;p++){
-   await page.locator('#preset').selectOption(String(p));assert(await page.locator('#prev').isDisabled());const expected=C.trace(C.presets[p].words,C.presets[p].secret);let prior=null;
+   await page.locator('#preset').selectOption(String(p));assert(await page.locator('#prev').isDisabled());const expected=C.trace(C.presets[p].words,C.presets[p].secret,C.presets[p].budget);let prior=null;
    for(let i=0;i<expected.length;i++){
     if(i)await page.locator('#next').click();const f=expected[i];
     assert.equal(await page.locator('#candidates code').count(),f.candidates.length);assert.deepEqual(await page.locator('#candidates code').allTextContents(),f.candidates.map(j=>C.presets[p].words[j]));assert.equal(await page.locator('#ledger li').count(),i);
-    if(!f.done){const plan=C.plan(C.presets[p].words,f.candidates,f.used);const rows=await page.locator('#buckets tr').allTextContents();assert(rows[plan.probe].includes(l==='en'?'Chosen next':'下一次选择'));for(let r=0;r<rows.length;r++){const nums=await page.locator('#buckets tr').nth(r).locator('td').allTextContents();assert.deepEqual(nums.slice(0,8),[...plan.rows[r].buckets,plan.rows[r].worst].map(String));}}
+    if(!f.done&&!f.exhausted){const plan=C.plan(C.presets[p].words,f.candidates,f.used);const rows=await page.locator('#buckets tr').allTextContents();assert(rows[plan.probe].includes(l==='en'?'Chosen next':'下一次选择'));for(let r=0;r<rows.length;r++){const nums=await page.locator('#buckets tr').nth(r).locator('td').allTextContents();assert.deepEqual(nums.slice(0,8),[...plan.rows[r].buckets,plan.rows[r].worst].map(String));}}
     const current=await state();if(i){await page.locator('#prev').click();assert.deepEqual(await state(),prior);await page.locator('#next').click();assert.deepEqual(await state(),current);}prior=current;
    }
-   assert(await page.locator('#next').isDisabled());assert(await page.locator('#end').isDisabled());assert((await text('terminal')).includes('6'));
+   assert(await page.locator('#next').isDisabled());assert(await page.locator('#end').isDisabled());assert((await text('terminal')).includes(expected.at(-1).exhausted?(l==='en'?'exhausted':'耗尽'):'6'));
+   assert.equal(await page.locator('.table-wrap').isHidden(),true);
    records.push({locale:l,preset:p,terminal:await state()});await page.locator('#reset').click();assert(await page.locator('#prev').isDisabled());await page.locator('#end').click();assert.deepEqual(await state(),prior);
   }
   await page.locator('#predictionReset').click();assert(await page.locator('#reveal').isDisabled());
