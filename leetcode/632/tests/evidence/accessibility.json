@@ -1,0 +1,417 @@
+{
+  "platform": "linux",
+  "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "checks": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "select": {
+        "label": "Tiny three-row case",
+        "text": 146.1122589111328,
+        "width": 260
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "select": {
+        "label": "Official example 1",
+        "text": 134.11227416992188,
+        "width": 260
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "select": {
+        "label": "Duplicate values",
+        "text": 123.08824157714844,
+        "width": 260
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "select": {
+        "label": "Negatives and ties",
+        "text": 138.33627319335938,
+        "width": 260
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "select": {
+        "label": "One list",
+        "text": 57.26411437988281,
+        "width": 260
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "select": {
+        "label": "Singleton rows",
+        "text": 111.1842041015625,
+        "width": 260
+      }
+    },
+    {
+      "lang": "en",
+      "sizes": [
+        {
+          "name": "中",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "name": "EN",
+          "width": 49.0625,
+          "height": 48
+        },
+        {
+          "name": "01 By hand",
+          "width": 99.3125,
+          "height": 48
+        },
+        {
+          "name": "02 Safe discard",
+          "width": 125.171875,
+          "height": 48
+        },
+        {
+          "name": "03 Trace",
+          "width": 80.71875,
+          "height": 48
+        },
+        {
+          "name": "04 Predict",
+          "width": 91.53125,
+          "height": 48
+        },
+        {
+          "name": "05 Python",
+          "width": 92.09375,
+          "height": 48
+        },
+        {
+          "name": "Inspect [1,4]",
+          "width": 127,
+          "height": 48
+        },
+        {
+          "name": "Inspect [4,6]",
+          "width": 127,
+          "height": 48
+        },
+        {
+          "name": "Tiny three-row caseOfficial example 1Duplicate valuesNegatives and tiesOne listSingleton rows",
+          "width": 262,
+          "height": 48
+        },
+        {
+          "name": "Previous comparison",
+          "width": 262,
+          "height": 48
+        },
+        {
+          "name": "Advance and compare",
+          "width": 262,
+          "height": 48
+        },
+        {
+          "name": "Reset",
+          "width": 85.6875,
+          "height": 48
+        },
+        {
+          "name": "Last comparison",
+          "width": 168.3125,
+          "height": 48
+        },
+        {
+          "name": "Check and reveal",
+          "width": 170.03125,
+          "height": 48
+        },
+        {
+          "name": "Reset",
+          "width": 83.96875,
+          "height": 48
+        },
+        {
+          "name": "Copy Python",
+          "width": 126.71875,
+          "height": 48
+        },
+        {
+          "name": "Download solution.py",
+          "width": 195.09375,
+          "height": 48
+        },
+        {
+          "name": "View full submission source",
+          "width": 288,
+          "height": 48
+        }
+      ],
+      "pairs": [
+        {
+          "name": "traceNext",
+          "fg": "rgb(154, 167, 184)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 6.449407898769069
+        },
+        {
+          "name": "cell selected",
+          "fg": "rgb(110, 231, 255)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 10.910104011097095
+        },
+        {
+          "name": "cell selected",
+          "fg": "rgb(110, 231, 255)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 10.910104011097095
+        },
+        {
+          "name": "cell selected",
+          "fg": "rgb(110, 231, 255)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 10.910104011097095
+        },
+        {
+          "name": "candidateRead",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 13.397069143240783
+        },
+        {
+          "name": "bestRead",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 13.397069143240783
+        },
+        {
+          "name": "actionRead",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 13.397069143240783
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "select": {
+        "label": "手算三行",
+        "text": 64.0001220703125,
+        "width": 260
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "select": {
+        "label": "官方示例 1",
+        "text": 77.31214904785156,
+        "width": 260
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "select": {
+        "label": "重复值",
+        "text": 48.000091552734375,
+        "width": 260
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "select": {
+        "label": "负数与同宽",
+        "text": 80.00015258789062,
+        "width": 260
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "select": {
+        "label": "只有一行",
+        "text": 64.0001220703125,
+        "width": 260
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "select": {
+        "label": "全是单值行",
+        "text": 80.00015258789062,
+        "width": 260
+      }
+    },
+    {
+      "lang": "zh",
+      "sizes": [
+        {
+          "name": "中",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "name": "EN",
+          "width": 49.0625,
+          "height": 48
+        },
+        {
+          "name": "01 手算",
+          "width": 73.65625,
+          "height": 48
+        },
+        {
+          "name": "02 安全舍弃",
+          "width": 101.65625,
+          "height": 48
+        },
+        {
+          "name": "03 逐步实验",
+          "width": 101.65625,
+          "height": 48
+        },
+        {
+          "name": "04 先猜后看",
+          "width": 101.65625,
+          "height": 48
+        },
+        {
+          "name": "05 Python",
+          "width": 92.09375,
+          "height": 48
+        },
+        {
+          "name": "检查 [1,4]",
+          "width": 127,
+          "height": 48
+        },
+        {
+          "name": "检查 [4,6]",
+          "width": 127,
+          "height": 48
+        },
+        {
+          "name": "手算三行官方示例 1重复值负数与同宽只有一行全是单值行",
+          "width": 262,
+          "height": 48
+        },
+        {
+          "name": "退回上一轮",
+          "width": 127,
+          "height": 48
+        },
+        {
+          "name": "推进并比较",
+          "width": 127,
+          "height": 48
+        },
+        {
+          "name": "重置",
+          "width": 103,
+          "height": 48
+        },
+        {
+          "name": "到最后比较",
+          "width": 151,
+          "height": 48
+        },
+        {
+          "name": "核对并揭晓",
+          "width": 151,
+          "height": 48
+        },
+        {
+          "name": "重置",
+          "width": 103,
+          "height": 48
+        },
+        {
+          "name": "复制 Python",
+          "width": 121.234375,
+          "height": 48
+        },
+        {
+          "name": "下载 solution.py",
+          "width": 150.96875,
+          "height": 48
+        },
+        {
+          "name": "查看完整提交源码",
+          "width": 288,
+          "height": 48
+        }
+      ],
+      "pairs": [
+        {
+          "name": "traceNext",
+          "fg": "rgb(154, 167, 184)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 6.449407898769069
+        },
+        {
+          "name": "cell selected",
+          "fg": "rgb(110, 231, 255)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 10.910104011097095
+        },
+        {
+          "name": "cell selected",
+          "fg": "rgb(110, 231, 255)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 10.910104011097095
+        },
+        {
+          "name": "cell selected",
+          "fg": "rgb(110, 231, 255)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 10.910104011097095
+        },
+        {
+          "name": "candidateRead",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 13.397069143240783
+        },
+        {
+          "name": "bestRead",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 13.397069143240783
+        },
+        {
+          "name": "actionRead",
+          "fg": "rgb(232, 237, 244)",
+          "bg": "rgb(28, 35, 48)",
+          "opacity": "1",
+          "ratio": 13.397069143240783
+        }
+      ]
+    }
+  ],
+  "result": "passed"
+}

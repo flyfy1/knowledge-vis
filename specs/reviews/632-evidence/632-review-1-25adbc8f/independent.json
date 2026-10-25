@@ -1,0 +1,26 @@
+{
+  "assets": {
+    "index.html": "9ce6e9cf8cd8da5913213b036e7d7fa9d12d39003092c201d20034a659082fae",
+    "app.js": "0904c3c93805eb05f9698d7f1759d14e9d3b59b7d101be8cecc18490d9a66c5b",
+    "core.js": "8e666d468a668df2ba36633001f7d5c615ceaa159c28a723d6917bd28fa14aa6",
+    "copy.js": "6d6ccda7ff0eb24465abebe97330100c680d0aab748f5a7ceec3103b59cc9a78",
+    "solution.py": "202791263e07f33a17695ec93a2daa11777bb0ccf6a26e606fd1555a3e42977f",
+    "python-code.js": "1c1966751e2fc074d6950f03f6f0245ff5673c8781b6e4d8570d895a033a5bc1",
+    "style.css": "88732a3567a51d1dc13bcce41564357be4ea051fed0bdc5122ccc2b4d4021874"
+  },
+  "reveal": "Correct. Selections are (2,4,6) → (8,4,6) → (8,9,6) → (8,9,10). Candidates are [2,6], [4,8], [6,9], [8,10], with widths 4,4,3,2. Minimum 8 now exhausts A, so return [8,10]. [2,6] stops too early; [9,10] misses A.",
+  "changed": "Choose an answer; the derivation stays hidden until reveal.",
+  "wrong": "Check coverage of every row and whether a shorter range is possible. Selections are (2,4,6) → (8,4,6) → (8,9,6) → (8,9,10). Candidates are [2,6], [4,8], [6,9], [8,10], with widths 4,4,3,2. Minimum 8 now exhausts A, so return [8,10]. [2,6] stops too early; [9,10] misses A.",
+  "zh": {
+    "transition": "刚完成：清单 1 的 1 → 5，其余选值不变；再比较候选。",
+    "candidate": "当前候选 [2,5]；宽度 3",
+    "best": "best（已比较中的最佳）[1,4]；宽度 3",
+    "action": "下一步：最小值 2 来自清单 2，仅推进该行。"
+  },
+  "terminal": {
+    "candidate": "Current candidate [5,7]; width 2",
+    "best": "best (among evaluated) [4,6]; width 2",
+    "stop": "Ended: minimum 5 comes from list 1, which has no successor. This candidate has been evaluated. best is now the final answer."
+  },
+  "browser": "156.0.8078.4"
+}
