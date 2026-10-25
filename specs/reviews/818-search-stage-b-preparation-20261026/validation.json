@@ -1,0 +1,15 @@
+{
+  "status": "prepared_disabled_pending_actual_candidate_and_measurements",
+  "test_command": "python3 -B specs/reviews/818-search-stage-b-preparation-20261026/test_operate.py",
+  "tests_passed": 12,
+  "exit_code": 0,
+  "actual_candidate_measurement": false,
+  "runtime_mutation": false,
+  "dispatch_enabled": false,
+  "sha256": {
+    "operate.py": "20041ff880e5d9fb59088e41d2c5bb451867a516817bb8edc209b68baed5abc2",
+    "test_operate.py": "273c97f98542f35e628e3368419d7e0a0dceac0106d74600b44a685d031efad2",
+    "README.md": "707ae754f3614fd0382a5c340020c584aa2afc3fb1cd4b3954c8d267ec48d324",
+    "tests.log": "68856857753c9e3c7b1c9bc300a10c9dc1d472f8338e6d383ea3890cb27765d4"
+  }
+}
