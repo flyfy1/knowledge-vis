@@ -1,0 +1,467 @@
+{
+  "type": "author browser self-check",
+  "url": "http://127.0.0.1:18787/leetcode/940/",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "zoom": "Native Chromium tabs.setZoom(2), window 1280x1400; CDP fromSurface capture",
+  "zoomMetrics": {
+    "devicePixelRatio": 2,
+    "innerWidth": 640,
+    "outerWidth": 1280,
+    "innerHeight": 656
+  },
+  "colors": {
+    "--bg": [
+      13,
+      17,
+      23
+    ],
+    "--panel": [
+      22,
+      27,
+      34
+    ],
+    "--panel2": [
+      28,
+      35,
+      48
+    ],
+    "--text": [
+      232,
+      237,
+      244
+    ],
+    "--muted": [
+      154,
+      167,
+      184
+    ],
+    "--accent": [
+      110,
+      231,
+      255
+    ],
+    "--accent2": [
+      255,
+      180,
+      84
+    ],
+    "--good": [
+      126,
+      226,
+      168
+    ]
+  },
+  "contrasts": [
+    {
+      "fg": "--text",
+      "bg": "--bg",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--text",
+      "bg": "--panel",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--text",
+      "bg": "--panel2",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--muted",
+      "bg": "--bg",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel",
+      "ratio": 7.078851579017443,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel2",
+      "ratio": 6.449407898769069,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent",
+      "bg": "--bg",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel",
+      "ratio": 11.974898815275662,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel2",
+      "ratio": 10.910104011097095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--bg",
+      "ratio": 10.731637051347173,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel",
+      "ratio": 9.809435643476732,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel2",
+      "ratio": 8.937191437807625,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--good",
+      "bg": "--bg",
+      "ratio": 12.013623247863544,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--good",
+      "bg": "--panel",
+      "ratio": 10.981256963037128,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--good",
+      "bg": "--panel2",
+      "ratio": 10.004815697188947,
+      "threshold": 4.5
+    }
+  ],
+  "focus": {
+    "focused": true,
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "states": [
+    {
+      "language": "en",
+      "preset": 0,
+      "result": "Complete input aba: answer = 6."
+    },
+    {
+      "language": "en",
+      "preset": 1,
+      "result": "Complete input abc: answer = 7."
+    },
+    {
+      "language": "en",
+      "preset": 2,
+      "result": "Complete input aaa: answer = 3."
+    },
+    {
+      "language": "en",
+      "preset": 3,
+      "result": "Complete input a: answer = 1."
+    },
+    {
+      "language": "en",
+      "preset": 4,
+      "result": "Complete input abab: answer = 11."
+    },
+    {
+      "language": "en",
+      "preset": 5,
+      "result": "Complete input abca: answer = 14."
+    },
+    {
+      "language": "en",
+      "state": "aba terminal",
+      "formula": "new = total + 1; total′ = total − ending[c] + new; ending[c] = new",
+      "calculation": "Append a: old total = 3; old ending[a] = 1; new group = 3 + 1 = 4; new total = 3 − 1 + 4 = 6."
+    },
+    {
+      "language": "en",
+      "option": 0,
+      "feedback": "Recheck the group being replaced. The answer is 10: the new a group {a, aa, ba, aba, bba, abba} has 6 strings and replaces the old one-string a group. The b group keeps 4 strings. 5 − 1 + 6 = 10. Choosing 11 forgets to subtract the old a; choosing 9 subtracts it twice."
+    },
+    {
+      "language": "en",
+      "option": 1,
+      "feedback": "Correct. The answer is 10: the new a group {a, aa, ba, aba, bba, abba} has 6 strings and replaces the old one-string a group. The b group keeps 4 strings. 5 − 1 + 6 = 10. Choosing 11 forgets to subtract the old a; choosing 9 subtracts it twice."
+    },
+    {
+      "language": "en",
+      "option": 2,
+      "feedback": "Recheck the group being replaced. The answer is 10: the new a group {a, aa, ba, aba, bba, abba} has 6 strings and replaces the old one-string a group. The b group keeps 4 strings. 5 − 1 + 6 = 10. Choosing 11 forgets to subtract the old a; choosing 9 subtracts it twice."
+    },
+    {
+      "language": "en",
+      "clipboard": "native fallback",
+      "attempt": 0,
+      "host": "linux",
+      "sentinelVerified": true,
+      "exactSource": true
+    },
+    {
+      "language": "en",
+      "clipboard": "native fallback",
+      "attempt": 1,
+      "host": "linux",
+      "sentinelVerified": true,
+      "exactSource": true
+    },
+    {
+      "language": "zh",
+      "preset": 0,
+      "result": "完整输入 aba：答案 = 6。"
+    },
+    {
+      "language": "zh",
+      "preset": 1,
+      "result": "完整输入 abc：答案 = 7。"
+    },
+    {
+      "language": "zh",
+      "preset": 2,
+      "result": "完整输入 aaa：答案 = 3。"
+    },
+    {
+      "language": "zh",
+      "preset": 3,
+      "result": "完整输入 a：答案 = 1。"
+    },
+    {
+      "language": "zh",
+      "preset": 4,
+      "result": "完整输入 abab：答案 = 11。"
+    },
+    {
+      "language": "zh",
+      "preset": 5,
+      "result": "完整输入 abca：答案 = 14。"
+    },
+    {
+      "language": "zh",
+      "state": "aba terminal",
+      "formula": "new = total + 1; total′ = total − ending[c] + new; ending[c] = new",
+      "calculation": "添加 a：旧 total = 3；旧 ending[a] = 1；新组 = 3 + 1 = 4；新 total = 3 − 1 + 4 = 6。"
+    },
+    {
+      "language": "zh",
+      "option": 0,
+      "feedback": "再检查被替换的组。 答案为 10：新 a 组 {a, aa, ba, aba, bba, abba} 有 6 个，替换旧的 1 个 a；b 组保留 4 个。5 − 1 + 6 = 10。11 忘了减旧 a；9 则减多了一次。"
+    },
+    {
+      "language": "zh",
+      "option": 1,
+      "feedback": "正确。 答案为 10：新 a 组 {a, aa, ba, aba, bba, abba} 有 6 个，替换旧的 1 个 a；b 组保留 4 个。5 − 1 + 6 = 10。11 忘了减旧 a；9 则减多了一次。"
+    },
+    {
+      "language": "zh",
+      "option": 2,
+      "feedback": "再检查被替换的组。 答案为 10：新 a 组 {a, aa, ba, aba, bba, abba} 有 6 个，替换旧的 1 个 a；b 组保留 4 个。5 − 1 + 6 = 10。11 忘了减旧 a；9 则减多了一次。"
+    },
+    {
+      "language": "zh",
+      "clipboard": "native fallback",
+      "attempt": 0,
+      "host": "linux",
+      "sentinelVerified": true,
+      "exactSource": true
+    },
+    {
+      "language": "zh",
+      "clipboard": "native fallback",
+      "attempt": 1,
+      "host": "linux",
+      "sentinelVerified": true,
+      "exactSource": true
+    },
+    {
+      "language": "en",
+      "width": 320,
+      "optionBudget": {
+        "label": "abca → 14",
+        "text": 78.09613037109375,
+        "width": 256,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#940 · Distinct Subsequences II"
+    },
+    {
+      "language": "zh",
+      "width": 320,
+      "optionBudget": {
+        "label": "abca → 14",
+        "text": 78.09613037109375,
+        "width": 256,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#940 · 不同的子序列 II"
+    },
+    {
+      "language": "en",
+      "width": 390,
+      "optionBudget": {
+        "label": "abca → 14",
+        "text": 78.09613037109375,
+        "width": 326,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#940 · Distinct Subsequences II"
+    },
+    {
+      "language": "zh",
+      "width": 390,
+      "optionBudget": {
+        "label": "abca → 14",
+        "text": 78.09613037109375,
+        "width": 326,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#940 · 不同的子序列 II"
+    },
+    {
+      "language": "en",
+      "width": 736,
+      "optionBudget": {
+        "label": "abca → 14",
+        "text": 78.09613037109375,
+        "width": 644,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#940 · Distinct Subsequences II"
+    },
+    {
+      "language": "zh",
+      "width": 736,
+      "optionBudget": {
+        "label": "abca → 14",
+        "text": 78.09613037109375,
+        "width": 644,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#940 · 不同的子序列 II"
+    },
+    {
+      "language": "en",
+      "width": 1440,
+      "optionBudget": {
+        "label": "abca → 14",
+        "text": 78.09613037109375,
+        "width": 908,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#940 · Distinct Subsequences II"
+    },
+    {
+      "language": "zh",
+      "width": 1440,
+      "optionBudget": {
+        "label": "abca → 14",
+        "text": 78.09613037109375,
+        "width": 908,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#940 · 不同的子序列 II"
+    },
+    {
+      "language": "zh",
+      "relatedLabel": "#115 · 区分子序列的位置方案计数",
+      "target": "http://127.0.0.1:18787/leetcode/115/#step0",
+      "heading": "1 · 数的是位置选择",
+      "observedSection": "011 · 数的是位置选择这一步要回答：哪些选择算作不同的方案？给定字符串 s 和 t，求从 s 中删除若干位置后恰好得到 t 的方案数。子序列指删除后仍保持原先顺序的字符；不要求连续。不同的位置选择分别计数，即使得到的文字完全一样。官方范围：两个长度均为 1…1000，只含英文字母，大小写有别；最终答案保证在 32 位有符号整数内，无取模要求。官方示例：rabbbit → rabbit = 3；babgbag → bag = 5。手算：s = aaa，t = aa给三个 a 标上位置 0、1、2。选两个递增位置，只有 (0,1)、(0,2)、(1,2)。三组都拼成 aa，所以答案是 3。不能选 (1,0)：顺序变了；不能选 (0,0)：同一位置只能用一次。(0,1) → aa(0,2) → aa(1,2) → aa只取最早匹配的贪心方法会在 aaa → aa 只找到 (0,1)，漏掉另外两组。用集合去重字符串又会把三个 aa 合成一个。我们要数位置方案，而不是不同的输出文字。正确起点：逐组枚举这段基线 Python 枚举长度为 len(t) 的递增位置组，逐组拼出字符串比较。它很直接，却要检查 C(m,n)（从 m 个位置选 n 个的组合数）组，每组 O(n)，其中 m=len(s)、n=len(t)。构造位置池还需 O(m)，总时间 O(m+n·C(m,n))，额外空间 O(m+n)。当 n≈m/2 时组数呈指数增长；长度 1000 无法这样枚举。下面把相同前缀的计数合在一起。from itertools import combinations\n\ndef baseline(s, t):\n    return sum(\n        \"\".join(s[i] for i in indices) == t\n        for indices in combinations(range(len(s)), len(t))\n    )",
+      "targetSourceSHA256": "4186766b6176b06c6ea39181f904ec261dfd578c6a1de87238d5afdfdb73116d"
+    },
+    {
+      "language": "zh",
+      "relatedLabel": "#552 · 用有限状态汇总前缀计数",
+      "target": "http://127.0.0.1:18787/leetcode/552/#step2",
+      "heading": "03 · 看六个计数如何累积",
+      "observedSection": "0303 · 看六个计数如何累积这一步要回答：一天之后，每组的数量从哪里来？dp[a][l] 表示已处理天数中，恰有 a 个 A、末尾恰有 l 个连续 L 的合法前缀数量。从空记录开始，只有 dp[0][0]=1。第一天 P、L、A 分别落入 (0,0)、(0,1)、(1,0)，各为 1。第 1 天到第 2 天：(0,0) 从 P、L 两组各接一个 P，得 1+1+0=2（PP、LP）；(1,0) 从 AP、PA、LA 得 3；其余四组为 1、1、1、0。总数 8。注意 LL 仍合法；是再接一个 L 才违法。从每个旧组取 c=dp[a][l]：P → nxt[a][0] += c；若 a=0，A → nxt[1][0] += c；若 l<2，L → nxt[a][l+1] += c。P 和 A 都中断末尾的 L，所以 l 归零；A 同时把缺勤数从 0 改为 1。L 不改变 a，但把 l 加一。a=1 时不能接 A；l=2 时不能接 L。只从旧 dp 读取，写入全新的 nxt，防止一天被重复延长。为什么可以相加？每条合法新记录删掉最后一个字符，都唯一回到某个合法旧前缀；末字符 P、A、L 的三种情况互不重叠，上面的条件又恰好排除第二个 A 和第三个连续 L。因此每条记录被计入一次。这就导出不变式（每个已完成日都成立的陈述）：六组恰好、不重复地覆盖当前长度的全部合法记录。初始空记录满足它，每次转移保持它，最后把六组相加就是答案。此处是 JavaScript 数学模拟，不是运行 Python 提交。只展示 n≤10 的完整日序列，数值尚未达到模数。每帧表示当天全部转移完成；保留历史表用于比较，教学快照占 O(n) 空间，Python 只保留两张六格表。操作任务：保持 n=2，点“追加一天”两次。先看 (1,0) 的三项非零来源，再看历史表的总数 1→3→8。后退再前进应恢复完全相同的六个值；改为 n=3，检查 (0,2) 无法再接 L 的边界。切换预设会从第 0 天重新开始此实验，不影响独立预测题。目标天数（更改会重启）n = 1n = 2n = 3n = 4n = 6n = 10后退一天追加一天重置到空记录完成剩余天数已完成天数已完成 0/2 天 · 当前长度合格记录：1 · 尚非目标答案六组：上一天 → 当前天a=0 个 A，末尾 l=0 个 L旧值 0 → 新值 1初始：空记录贡献 1，其余为 0。a=0 个 A，末尾 l=1 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=0 个 A，末尾 l=2 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=1 个 A，末尾 l=0 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=1 个 A，末尾 l=1 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=1 个 A，末尾 l=2 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。保留的逐日计数保留的逐日计数已完成天数(0,0)(0,1)(0,2)(1,0)(1,1)(1,2)合格记录数01000001",
+      "targetSourceSHA256": "ba452d0aabfb9b734e57899bbd6597a3bad186ed53e3fb9d7306d4b75c2c4927"
+    },
+    {
+      "language": "en",
+      "relatedLabel": " #115 · Count subsequence position choices",
+      "target": "http://127.0.0.1:18787/leetcode/115/#step0",
+      "heading": "1 · Count choices of positions",
+      "observedSection": "011 · Count choices of positionsWhat counts as a different way? Given strings s and t, count the choices of positions in s that spell exactly t. A subsequence keeps the original order after deleting positions; it need not be contiguous. Different position choices count separately even when their text is identical.Official limits: both lengths are 1…1000, with English letters and case sensitivity. The final answer fits a signed 32-bit integer; no modulus is requested. Official examples: rabbbit → rabbit = 3; babgbag → bag = 5.By hand: s = aaa, t = aaLabel the three a’s with positions 0, 1, 2. The increasing pairs are (0,1), (0,2), and (1,2). All spell aa, so the count is 3. Pair (1,0) reverses the order; pair (0,0) reuses a position. Both are forbidden.(0,1) → aa(0,2) → aa(1,2) → aaA greedy earliest match finds only (0,1) for aaa → aa and misses two ways. Deduplicating output strings also merges all three into one aa. We count position choices, rather than unique output text.A correct baseline: enumerate position choicesThis baseline Python enumerates every increasing group of len(t) positions and compares its text with t. With m=len(s) and n=len(t), it checks C(m,n) groups (the number of ways to choose n of m positions) at O(n) cost each. Building the position pool also costs O(m), giving O(m+n·C(m,n)) time and O(m+n) auxiliary space. The number grows exponentially when n≈m/2, so it is impractical at length 1000. Next we combine counts that share the same prefixes.from itertools import combinations\n\ndef baseline(s, t):\n    return sum(\n        \"\".join(s[i] for i in indices) == t\n        for indices in combinations(range(len(s)), len(t))\n    )",
+      "targetSourceSHA256": "4186766b6176b06c6ea39181f904ec261dfd578c6a1de87238d5afdfdb73116d"
+    },
+    {
+      "language": "en",
+      "relatedLabel": "#552 · Aggregate prefix counts with finite states",
+      "target": "http://127.0.0.1:18787/leetcode/552/#step2",
+      "heading": "03 · Watch six counts accumulate",
+      "observedSection": "0303 · Watch six counts accumulateWhere does each group’s count come from after one more day? dp[a][l] counts valid prefixes of the processed length with exactly a A and exactly l trailing L. Initially only dp[0][0]=1, for the empty record. On day one, P, L, and A enter (0,0), (0,1), and (1,0), each with count 1.From day one to day two, (0,0) receives P from the P and L groups: 1+1+0=2, representing PP and LP. Group (1,0) contains AP, PA, LA, so has count 3. The other four groups have counts 1, 1, 1, 0. The total is 8. LL remains valid; adding another L is what would break the rule.For each old group take c=dp[a][l]: P → nxt[a][0] += c; if a=0, A → nxt[1][0] += c; if l<2, L → nxt[a][l+1] += c.P and A both end the trailing L run, so l resets to zero; A also changes the absence count from 0 to 1. L leaves a unchanged and increments l. At a=1, A is forbidden; at l=2, L is forbidden. Read only the old dp and write a fresh nxt so one day cannot be extended twice.Why add these counts? Removing the final character of any valid new record identifies exactly one valid old prefix. The P, A, and L cases do not overlap, and the guards exclude exactly a second A and a third consecutive L. Thus each record is counted once. This derives the invariant—a statement true after every completed day: the six groups cover all valid records of that length exactly once. It holds for the empty record, each transition preserves it, and summing the final six groups gives the answer.This is a JavaScript mathematical simulation, not execution of the Python submission. It shows every day for n≤10; these counts are below the modulus. Each frame is after all transitions for that day. Retained teaching snapshots use O(n) space; Python retains only two six-cell arrays.Try this: keep n=2 and append a day ",
+      "targetSourceSHA256": "ba452d0aabfb9b734e57899bbd6597a3bad186ed53e3fb9d7306d4b75c2c4927"
+    },
+    {
+      "language": "zh",
+      "relatedLabel": "#115 · 区分子序列的位置方案计数",
+      "target": "http://127.0.0.1:18787/leetcode/115/#step0",
+      "heading": "1 · 数的是位置选择",
+      "observedSection": "011 · 数的是位置选择这一步要回答：哪些选择算作不同的方案？给定字符串 s 和 t，求从 s 中删除若干位置后恰好得到 t 的方案数。子序列指删除后仍保持原先顺序的字符；不要求连续。不同的位置选择分别计数，即使得到的文字完全一样。官方范围：两个长度均为 1…1000，只含英文字母，大小写有别；最终答案保证在 32 位有符号整数内，无取模要求。官方示例：rabbbit → rabbit = 3；babgbag → bag = 5。手算：s = aaa，t = aa给三个 a 标上位置 0、1、2。选两个递增位置，只有 (0,1)、(0,2)、(1,2)。三组都拼成 aa，所以答案是 3。不能选 (1,0)：顺序变了；不能选 (0,0)：同一位置只能用一次。(0,1) → aa(0,2) → aa(1,2) → aa只取最早匹配的贪心方法会在 aaa → aa 只找到 (0,1)，漏掉另外两组。用集合去重字符串又会把三个 aa 合成一个。我们要数位置方案，而不是不同的输出文字。正确起点：逐组枚举这段基线 Python 枚举长度为 len(t) 的递增位置组，逐组拼出字符串比较。它很直接，却要检查 C(m,n)（从 m 个位置选 n 个的组合数）组，每组 O(n)，其中 m=len(s)、n=len(t)。构造位置池还需 O(m)，总时间 O(m+n·C(m,n))，额外空间 O(m+n)。当 n≈m/2 时组数呈指数增长；长度 1000 无法这样枚举。下面把相同前缀的计数合在一起。from itertools import combinations\n\ndef baseline(s, t):\n    return sum(\n        \"\".join(s[i] for i in indices) == t\n        for indices in combinations(range(len(s)), len(t))\n    )",
+      "targetSourceSHA256": "4186766b6176b06c6ea39181f904ec261dfd578c6a1de87238d5afdfdb73116d"
+    },
+    {
+      "language": "zh",
+      "relatedLabel": "#552 · 用有限状态汇总前缀计数",
+      "target": "http://127.0.0.1:18787/leetcode/552/#step2",
+      "heading": "03 · 看六个计数如何累积",
+      "observedSection": "0303 · 看六个计数如何累积这一步要回答：一天之后，每组的数量从哪里来？dp[a][l] 表示已处理天数中，恰有 a 个 A、末尾恰有 l 个连续 L 的合法前缀数量。从空记录开始，只有 dp[0][0]=1。第一天 P、L、A 分别落入 (0,0)、(0,1)、(1,0)，各为 1。第 1 天到第 2 天：(0,0) 从 P、L 两组各接一个 P，得 1+1+0=2（PP、LP）；(1,0) 从 AP、PA、LA 得 3；其余四组为 1、1、1、0。总数 8。注意 LL 仍合法；是再接一个 L 才违法。从每个旧组取 c=dp[a][l]：P → nxt[a][0] += c；若 a=0，A → nxt[1][0] += c；若 l<2，L → nxt[a][l+1] += c。P 和 A 都中断末尾的 L，所以 l 归零；A 同时把缺勤数从 0 改为 1。L 不改变 a，但把 l 加一。a=1 时不能接 A；l=2 时不能接 L。只从旧 dp 读取，写入全新的 nxt，防止一天被重复延长。为什么可以相加？每条合法新记录删掉最后一个字符，都唯一回到某个合法旧前缀；末字符 P、A、L 的三种情况互不重叠，上面的条件又恰好排除第二个 A 和第三个连续 L。因此每条记录被计入一次。这就导出不变式（每个已完成日都成立的陈述）：六组恰好、不重复地覆盖当前长度的全部合法记录。初始空记录满足它，每次转移保持它，最后把六组相加就是答案。此处是 JavaScript 数学模拟，不是运行 Python 提交。只展示 n≤10 的完整日序列，数值尚未达到模数。每帧表示当天全部转移完成；保留历史表用于比较，教学快照占 O(n) 空间，Python 只保留两张六格表。操作任务：保持 n=2，点“追加一天”两次。先看 (1,0) 的三项非零来源，再看历史表的总数 1→3→8。后退再前进应恢复完全相同的六个值；改为 n=3，检查 (0,2) 无法再接 L 的边界。切换预设会从第 0 天重新开始此实验，不影响独立预测题。目标天数（更改会重启）n = 1n = 2n = 3n = 4n = 6n = 10后退一天追加一天重置到空记录完成剩余天数已完成天数已完成 0/2 天 · 当前长度合格记录：1 · 尚非目标答案六组：上一天 → 当前天a=0 个 A，末尾 l=0 个 L旧值 0 → 新值 1初始：空记录贡献 1，其余为 0。a=0 个 A，末尾 l=1 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=0 个 A，末尾 l=2 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=1 个 A，末尾 l=0 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=1 个 A，末尾 l=1 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=1 个 A，末尾 l=2 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。保留的逐日计数保留的逐日计数已完成天数(0,0)(0,1)(0,2)(1,0)(1,1)(1,2)合格记录数01000001",
+      "targetSourceSHA256": "ba452d0aabfb9b734e57899bbd6597a3bad186ed53e3fb9d7306d4b75c2c4927"
+    }
+  ],
+  "screenshots": [
+    "preset-en-320.png",
+    "trace-en-320.png",
+    "table-en-320.png",
+    "preset-zh-320.png",
+    "trace-zh-320.png",
+    "table-zh-320.png",
+    "preset-en-390.png",
+    "trace-en-390.png",
+    "table-en-390.png",
+    "preset-zh-390.png",
+    "trace-zh-390.png",
+    "table-zh-390.png",
+    "preset-en-736.png",
+    "trace-en-736.png",
+    "table-en-736.png",
+    "preset-zh-736.png",
+    "trace-zh-736.png",
+    "table-zh-736.png",
+    "preset-en-1440.png",
+    "trace-en-1440.png",
+    "table-en-1440.png",
+    "preset-zh-1440.png",
+    "trace-zh-1440.png",
+    "table-zh-1440.png",
+    "prediction-en-390.png",
+    "lesson-en-desktop.png",
+    "prediction-zh-390.png",
+    "lesson-zh-desktop.png",
+    "zoom200-en.png",
+    "zoom200-zh.png"
+  ],
+  "errors": [],
+  "localAssetsOnly": true
+}

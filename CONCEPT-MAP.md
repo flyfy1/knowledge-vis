@@ -1566,3 +1566,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | XOR and parity game invariant | `leetcode/810/#step2` | Nonzero even positions have a safe move; odd nonzero positions lose. |
 
 <!-- /leetcode-810-campaign -->
+
+
+<!-- leetcode-940-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Ending-letter counting invariant | `leetcode/940/#step2` | Partition distinct subsequences by their final letter and replace one group. |
+
+<!-- /leetcode-940-campaign -->

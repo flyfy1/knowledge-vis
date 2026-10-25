@@ -3255,6 +3255,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(goal * n) time; O(n) auxiliary space"
   },
   {
+    "id": 940,
+    "title": {
+      "zh": "不同的子序列 II",
+      "en": "Distinct Subsequences II"
+    },
+    "desc": {
+      "zh": "按末尾字母分组，理解重复子序列为何必须替换。",
+      "en": "Group by final letter to replace repeated subsequences exactly once."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "计数",
+        "en": "Counting"
+      }
+    ],
+    "path": "940/",
+    "leetcodeUrl": "https://leetcode.com/problems/distinct-subsequences-ii/",
+    "language": "Python",
+    "complexity": "O(n) time; O(26) = O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
