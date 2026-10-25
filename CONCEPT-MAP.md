@@ -1792,3 +1792,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Monotonic deque | `leetcode/862/#step2` | Settle feasible starts and remove dominated prefixes |
 
 <!-- /leetcode-862-campaign -->
+
+
+<!-- leetcode-992-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Exactly-k via at-most subtraction | `leetcode/992/#step1` | Cancel intervals with fewer distinct values. |
+| Earliest valid start invariant | `leetcode/992/#step2` | Repair frequency windows and count valid starts. |
+
+<!-- /leetcode-992-campaign -->
