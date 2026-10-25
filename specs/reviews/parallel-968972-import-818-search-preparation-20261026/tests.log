@@ -1,0 +1,23 @@
+test_arm_only_new_recorded_running_818_fix (__main__.AuthorHandoff.test_arm_only_new_recorded_running_818_fix) ... ok
+test_author_ready_boundary_preserves_full_history_and_no_review (__main__.AuthorHandoff.test_author_ready_boundary_preserves_full_history_and_no_review) ... ok
+test_blocked_author_and_rewritten_history_are_not_handoffs (__main__.AuthorHandoff.test_blocked_author_and_rewritten_history_are_not_handoffs) ... ok
+test_missed_author_boundary_or_extra_review_is_rejected (__main__.AuthorHandoff.test_missed_author_boundary_or_extra_review_is_rejected) ... ok
+test_owned_handoff_stop_is_distinct_and_cannot_replace_foreign (__main__.AuthorHandoff.test_owned_handoff_stop_is_distinct_and_cannot_replace_foreign) ... ok
+test_digest_eligibility_includes_revised_released_ids (__main__.PureGuards.test_digest_eligibility_includes_revised_released_ids) ... ok
+test_exact_document_allowlist_and_no_overwrite (__main__.PureGuards.test_exact_document_allowlist_and_no_overwrite) ... ok
+test_fixed_source_hash_rejects_changed_document (__main__.PureGuards.test_fixed_source_hash_rejects_changed_document) ... ok
+test_incoming_and_register_are_deduplicated_threshold_guard (__main__.PureGuards.test_incoming_and_register_are_deduplicated_threshold_guard) ... ok
+test_pending_registration_incompatible_existing_registry_refuses (__main__.PureGuards.test_pending_registration_incompatible_existing_registry_refuses) ... ok
+test_pending_released_registration_same_digest_refuses_without_mutation (__main__.PureGuards.test_pending_released_registration_same_digest_refuses_without_mutation) ... ok
+test_reopen_rejects_exhausted_budget_or_nonaccepted (__main__.PureGuards.test_reopen_rejects_exhausted_budget_or_nonaccepted) ... ok
+test_same_digest_pointer_refresh_and_pending_release_refuse (__main__.PureGuards.test_same_digest_pointer_refresh_and_pending_release_refuse) ... ok
+test_stale_run_or_session_without_native_is_not_resume (__main__.PureGuards.test_stale_run_or_session_without_native_is_not_resume) ... ok
+test_transition_retains_history_budget_and_unrelated_entries (__main__.PureGuards.test_transition_retains_history_budget_and_unrelated_entries) ... ok
+test_armed_stop_keeps_real_runner_after_author_before_review (__main__.RealAuthorStop.test_armed_stop_keeps_real_runner_after_author_before_review) ... ok
+test_actual_registration_advances_head_and_predicts_next_agent (__main__.RealRegistration.test_actual_registration_advances_head_and_predicts_next_agent) ... ok
+test_unrelated_post_registration_commit_rejected (__main__.RealRegistration.test_unrelated_post_registration_commit_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 1.426s
+
+OK

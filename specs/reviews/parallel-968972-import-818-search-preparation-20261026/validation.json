@@ -1,0 +1,14 @@
+{
+  "status": "prepared-not-dispatched",
+  "validated_at": "2026-10-25T19:14:30.796337+00:00",
+  "tests_passed": 18,
+  "exit_code": 0,
+  "hashes": {
+    "operate.py": "f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698",
+    "test_operate.py": "b70975a6e2e148512b020374968e52fe3cb3eb1fad0fb41fdfb716a18bbf32eb",
+    "capture-pins.py": "35ba2accfdb7e2363a197da24fac3b06b7de6551258c41ced0a01100ab0fa41b",
+    "pins.json": "d56628ded5a693e10762ef8e99595eff5bcbf04832bea6094aa94622c1db1540"
+  },
+  "pi_mutations": false,
+  "next_required": "Independent exact-byte operator review, then explicit root dispatch"
+}
