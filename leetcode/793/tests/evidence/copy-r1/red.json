@@ -1,0 +1,8 @@
+{
+  "kind": "author focused self-check",
+  "finding": "793-COPY-R1",
+  "host": "linux",
+  "states": [],
+  "errors": [],
+  "failure": "AssertionError [ERR_ASSERTION]: workflow footer must be removed\n\n1 !== 0\n\n    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/793/tests/copy-r1.cjs:8:9"
+}

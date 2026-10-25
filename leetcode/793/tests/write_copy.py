@@ -61,7 +61,6 @@ rows = [
 ('bounds','边界：k=0 返回 5（x=0…4）；k=5 返回 0；k=3 返回 5。25、125 等处必须计入额外的 5。教学轨迹保存每次比较及历史，空间至多 O(log²(k+2))，不属于提交的 O(1) 辅助空间。源码不构造阶乘、不修改输入。','Boundaries: k=0 returns 5 (x=0…4), k=5 returns 0, and k=3 returns 5. Extra factors of 5 at 25, 125, and later powers must be counted. Teaching frames retain comparisons and copied history, using up to O(log²(k+2)) space; this is separate from the submission’s O(1) auxiliary space. The source never constructs a factorial or mutates the input.'),
 ('source','查看完整 Python 提交源码','View the complete Python submission source'),('copy','复制 Python','Copy Python'),('download','下载 solution.py','Download solution.py'),('copied','已复制完整源码。','Complete source copied.'),('copying','正在复制…','Copying…'),('fallback','自动复制不可用；完整源码已选中，请用系统复制快捷键。','Automatic copy is unavailable; the complete source is selected. Use your system copy shortcut.'),('manualCopy','手动复制完整 Python 源码','Manually copy the complete Python source'),
 ('related1','延伸 #4：用比较决定二分方向','Continue to #4: comparisons decide binary-search direction'),('related2','延伸 #668：寻找第一个足够的值','Continue to #668: find the first sufficient value'),
-('foot','作者自查候选；独立教学评审待进行。没有声称 LeetCode 已接受或真实学习者已掌握。','Author self-checked candidate; independent teaching review is pending. No LeetCode acceptance or observed learner outcomes are claimed.')
 ]
 assert len({r[0] for r in rows})==len(rows)
 p=Path(__file__).resolve().parents[1]

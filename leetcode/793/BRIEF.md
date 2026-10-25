@@ -85,3 +85,27 @@ P2: decoration (omitted). Highest-return 20%: visible 24→25 jump, two boundary
 values and reason for each discarded half. Deferred: autoplay and generalized
 plotting (no teaching need); real-device/novice study and independent acceptance
 (require separate people/hardware). Production publication outside author scope.
+
+## 2026-10-26 copy revision — 793-COPY-R1
+
+New candidate: `793-copy-r1-20261026`, frozen by `candidate-copy-r1.json`.
+The historical accepted base is `59d0c9b1f395064dc3af7be66dadd6c18d92944d`;
+its acceptance remains historical. This revision is fixed awaiting separate review.
+The seven runtime files matched that base before editing. The only consumer of
+`foot` was the footer element. Remove that element and its bilingual key; retain
+all other dictionary entries exactly. Update the local generators accordingly
+and bump only the changed copy asset query to `793-copy-r1`.
+
+Design verdict: cut workflow filler within the existing lesson. Reader, learning
+loop, approved tokens and layout stay as above. P0: preserve teaching, runtime,
+source/interface and neighboring controls. P1/highest-return slice: remove the
+bilingual footer with rendered proof and no residual gap. P2: none. Deferred:
+combined 320px + 200% CSS zoom overflow is pre-existing (361px document width on
+both base and repair); changing protected layout files exceeds this request.
+The requested 320px and desktop 200% checks pass separately. No new component or
+layout is introduced; the supplied copy-repair request is the review scope.
+
+Self-check mapping, exact diff, before/after hashes, browser evidence and limits
+are appended to SELF-CHECK.md and tests/evidence/copy-r1/. A fresh independent
+reviewer must close 793-COPY-R1 against this new candidate; no closure or release
+is asserted here.

@@ -61,3 +61,61 @@ or pending. The 200% check uses CSS zoom inside the real browser, with screensho
 inspected for reflow. No claim of measured learner outcomes or accepted submission.
 Reproduce checks with OUTPUT_DIR outside this folder to preserve candidate bytes;
 see tests/README.md. Candidate identity is in candidate.json.
+
+## 2026-10-26 — 793-COPY-R1 (fixed awaiting independent review)
+
+Candidate `793-copy-r1-20261026` is identified by `candidate-copy-r1.json`;
+original candidate.json and all historical evidence remain unchanged. This is
+an author self-check, ready for separate focused re-review.
+
+Finding/fix mapping: **793-COPY-R1** → removed the footer binding and unused
+`foot` pair; updated the two local authoring generators to prevent restoration;
+bumped the changed copy.js query. No replacement workflow/acceptance claim.
+All remaining copy entries, including `sim`, `s4e`, frame boundaries, full history
+and official callable explanation, compare exactly to the base in both locales.
+`tests/evidence/copy-r1/runtime.diff` is the exact bilingual runtime diff.
+`before.json` records base identity and pre-edit hashes; protected-hashes.json
+proves app.js, core.js, solution.py, python-code.js and style.css byte-identical
+before/after. Metadata remains unchanged, with one nonempty time/space string.
+
+Focused commands and results, from repository root:
+
+- `EXPECT_RED=1 node leetcode/793/tests/copy-r1.cjs` on the original runtime:
+  exit 1 at “workflow footer must be removed”; retained red.json.
+- `node leetcode/793/tests/copy-r1.cjs`: exit 0; browser.json and
+  browser-command.log. Chromium 156.0.8078.4/Linux. Actual zh→en→zh roundtrip
+  retained lab x=25, k=5 trace at comparison 1 (mid=15, f(mid)=3; range
+  [0,30]→[16,30]), history count 1, selected/revealed k=29 answer 0.
+  Formula operands and subtraction complete in both locales; rewind/replay
+  restored the frame; changing quiz input invalidated feedback.
+- Both locales: exact canonical/mirror/rendered/native clipboard/download bytes,
+  including final newline. Each manual fallback attempt seeded and read back a
+  fresh non-source sentinel, then focused/selected the entire source and used
+  Linux Control+C; native readback equaled solution.py. file:// display exact.
+- Keyboard Tab reached Copy → Download → source summary → both related links;
+  Enter toggled the summary. No missing-key, page, console or HTTP errors.
+- Page end screenshots at 320×1000 (100%) and 1440×1000 (200% CSS zoom), both
+  locales, visually inspected: controls and links readable, focus outline visible,
+  no footer/orphan gap, no page overflow. Evidence: *-end.png. This does not
+  establish physical-device or browser-chrome zoom behavior.
+- The first harness also combined 320px with 200% CSS zoom and failed its overflow
+  assertion. Its failure is retained in harness-320-plus-zoom-failure.json.
+  A read-only browser comparison serving historical HTML/copy by route interception
+  confirmed identical 361px document width on both base and repair in both locales
+  (combined-extreme-check.json). The final scoped harness uses the existing
+  separate 320px and desktop-200% verification targets. This records a pre-existing
+  limit; it does not claim the combined extreme passes.
+- Executed actual canonical Python for k=0,3,5,6,29,31 → 5,5,0,5,0,5.
+  Preserved official evidence contains the faithful Python3 stub; Python is the
+  preferred available interface, so no non-Python language contract is needed.
+  Exact source/mirror pair checked against scripts/register_leetcode_lesson.py.
+  No broad numerical suites rerun for this prose deletion.
+- Both authoring generators reproduce the repaired runtime bytes exactly; all
+  translation keys unique and all values valid bilingual string pairs.
+- `python3 -B scripts/register_leetcode_lesson.py 793 --validate-only`: exit 0,
+  empty stdout/stderr. Result and Python/interface checks in validation.json.
+  No registration or metadata changes performed.
+
+Next action: fresh separate reviewer checks the new hash-bound candidate and
+explicitly closes 793-COPY-R1 if warranted. Historical acceptance, review reports,
+registry, campaign state and services were not changed. No commit or publication.
