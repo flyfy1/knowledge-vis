@@ -1,0 +1,9 @@
+# #782 affected-host proof handoff for normal fix and review
+
+Read and preserve latest full independent report `specs/reviews/782-review-2-4f9587dd.md`. Its only required finding is 782-MAC-FIT-01: actual Mac regression evidence was unavailable when that review completed. The mathematical and Linux evidence remain unchanged.
+
+The dispatcher has now executed the exact repaired candidate `efa6a0356f63e851c594c346dd2ec07b644655e7` on Mac. Read `specs/reviews/782-review-mac-repaired-candidate-20261025.md` and the separately authored `specs/reviews/782-review-mac-repair-closure-20261025.md`. Immutable receipts, runner, manifest and screenshots are in `specs/reviews/782-evidence/mac-repaired-candidate-20261025/`. All 189 exported files match Git and stay unchanged after execution. Six checks pass, including unchanged original browser suite and targeted all-seven-preset EN→ZH→EN geometry. The original four tests were byte-identical to the earlier failing candidate. Both selected failure-label screenshots show the entire −1 result.
+
+Author action: incorporate this supplied, separately attributed Mac evidence into lesson-local SELF-CHECK/repair documentation. Do not claim to have personally run Mac checks. Preserve prior failed results, original review outcomes, runtime, canonical code and original assertions. No runtime change is requested by this handoff. Then return ready for a fresh independent review; this handoff does not itself grant acceptance. The next reviewer must verify current runtime/source bytes match the tested repaired candidate and explicitly adjudicate 782-MAC-FIT-01 using the new affected-host proof, alongside normal lesson review gates. Original optional syntax advisory remains optional.
+
+This round is being completed for an explicitly requested one-time publication of currently accepted lessons. Preserve all other queue entries, original run evidence and publication history.
