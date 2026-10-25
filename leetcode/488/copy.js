@@ -378,5 +378,21 @@ window.COPY = {
   "stepNavigation": [
     "课程步骤",
     "Lesson steps"
+  ],
+  "returnTitle": [
+    "跟着一次调用返回，再试相邻分支",
+    "Follow a call back, then try its sibling"
+  ],
+  "returnFailure": [
+    "用刚才的状态跟踪 solve(\"RBBR\", \"BR\")：父调用要返回最少还需几球，先设 best=6。这里 6 表示失败，不是花了六球，因为手牌最多只有五球。先取 B，rest=\"R\"；在空隙 0 插入后得到 BRBBR，没有消除。子调用 solve(\"BRBBR\", \"R\") 只剩一颗 R：所有 R 插法都凑不出连续三颗，棋盘又不空，所以各分支失败，子调用返回 6。回到父调用，best=min(6,1+6)=6；这个失败分支没有改善答案。",
+    "Trace the state from the exercise: solve(\"RBBR\", \"BR\") must return the fewest balls still needed. The parent starts with best=6. Here 6 means failure, not six balls spent, because the hand holds at most five. Take B, making rest=\"R\". Inserting at gap 0 makes BRBBR without removal. The child solve(\"BRBBR\", \"R\") has only one R: no R insertion forms a consecutive triple, and the board stays nonempty, so every branch fails and the child returns 6. Back in the parent, best=min(6,1+6)=6; this failed branch does not improve the answer."
+  ],
+  "returnSibling": [
+    "返回后，父调用仍持有 row=\"RBBR\"、remaining=\"BR\"。切片与拼接创建了新的字符串，子调用中的 row 和 remaining 是子调用自己的参数；它没有就地改掉父调用的字符串，因此不用撤销。父调用的 gap 循环接着试同一颗 B 的空隙 1：RBBBR 消除 BBB 后变成 RR，仍用 rest=\"R\"。子调用 solve(\"RR\", \"R\") 插 R 得到 RRR，消除后调用 solve(\"\", \"\")，空棋盘返回 0。因此这个子调用的 best=min(6,1+0)=1，并返回 1。",
+    "After the return, the parent still holds row=\"RBBR\" and remaining=\"BR\". Slicing and concatenation created new strings; the child has its own row and remaining arguments. It did not modify the parent strings in place, so no undo is needed. The parent gap loop next tries the same B at gap 1: RBBBR loses BBB and becomes RR, still with rest=\"R\". The child solve(\"RR\", \"R\") inserts R to make RRR, removes it, then calls solve(\"\", \"\"). The empty board returns 0. That child therefore sets best=min(6,1+0)=1 and returns 1."
+  ],
+  "returnMinimum": [
+    "现在回到原父调用，best=min(6,1+1)=2：外面的 1 是父调用插入的 B，子调用返回的 1 是以后插入的 R，消除都免费。父调用不能因为找到 2 就提前返回；代码只在非空棋盘找到 1 时提前返回。它还会检查其余未跳过的 B 空隙与 R 插法，最后返回最小值 2。一球 B 最多留下 RR，一球 R 消不掉 BB，所以没有分支能低于 2。这只手算了两个相邻分支，不是完整搜索树；缓存保存的是未来最少球数 2，不是走到这里已经用掉的球数。",
+    "Back in the original parent, best=min(6,1+1)=2: the outer 1 pays for its B insertion, and the returned 1 pays for the later R. All removals are free. Finding 2 does not end this parent call; the code returns early only on finding 1 for a nonempty board. It checks the other unskipped B gaps and R insertions, then returns the minimum, 2. A single B leaves at least RR; a single R cannot remove BB, so no branch can beat 2. We have hand-worked just two neighboring branches, not the whole search tree. The cache saves the future minimum 2, not the balls already spent reaching this state."
   ]
 };

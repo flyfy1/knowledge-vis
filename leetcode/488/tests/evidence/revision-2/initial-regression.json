@@ -1,0 +1,7 @@
+{
+  "finding": "488-R1",
+  "command": "python3 -B leetcode/488/tests/test_returns.py",
+  "beforeFix": "FAIL: AssertionError: (missing rendered return bridge, returnTitle)",
+  "afterFix": "PASS: actual recursive returns and parent updates verified",
+  "scope": "Missing teaching bridge; no algorithm defect identified"
+}
