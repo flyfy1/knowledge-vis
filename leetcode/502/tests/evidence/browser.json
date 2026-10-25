@@ -1,0 +1,425 @@
+{
+  "kind": "author self-check",
+  "result": "pass",
+  "records": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "frames": 6,
+      "readout": "Event 6/6 · current capital w=9 · completed 2/2 projects · sorted frontier j=3/3",
+      "operation": "Final capital 9. The choice limit was reached or no affordable project remains; select no further projects."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "frames": 6,
+      "readout": "Event 6/6 · current capital w=4 · completed 2/2 projects · sorted frontier j=3/3",
+      "operation": "Final capital 4. The choice limit was reached or no affordable project remains; select no further projects."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "frames": 7,
+      "readout": "Event 7/7 · current capital w=6 · completed 3/3 projects · sorted frontier j=3/3",
+      "operation": "Final capital 6. The choice limit was reached or no affordable project remains; select no further projects."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "frames": 2,
+      "readout": "Event 2/2 · current capital w=0 · completed 0/2 projects · sorted frontier j=0/2",
+      "operation": "Final capital 0. The choice limit was reached or no affordable project remains; select no further projects."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "frames": 6,
+      "readout": "Event 6/6 · current capital w=0 · completed 2/3 projects · sorted frontier j=2/3",
+      "operation": "Final capital 0. The choice limit was reached or no affordable project remains; select no further projects."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "frames": 7,
+      "readout": "Event 7/7 · current capital w=9 · completed 3/3 projects · sorted frontier j=3/3",
+      "operation": "Final capital 9. The choice limit was reached or no affordable project remains; select no further projects."
+    },
+    {
+      "lang": "en",
+      "choice": 7,
+      "feedback": "That is not the optimal legal result. Choose original project #1 for profit 3: 2+3=5. Now #2 is unlocked, so 5+8=13. Choosing #0 for profit 2 first reaches only 4, leaving #2 locked, and can reach at most 7 next. Adding 8 and 3 to the initial amount gives 13, but only the order 3 then 8 is legal; 15 incorrectly uses three projects."
+    },
+    {
+      "lang": "en",
+      "choice": 13,
+      "feedback": "Correct. Choose original project #1 for profit 3: 2+3=5. Now #2 is unlocked, so 5+8=13. Choosing #0 for profit 2 first reaches only 4, leaving #2 locked, and can reach at most 7 next. Adding 8 and 3 to the initial amount gives 13, but only the order 3 then 8 is legal; 15 incorrectly uses three projects."
+    },
+    {
+      "lang": "en",
+      "choice": 15,
+      "feedback": "That is not the optimal legal result. Choose original project #1 for profit 3: 2+3=5. Now #2 is unlocked, so 5+8=13. Choosing #0 for profit 2 first reaches only 4, leaving #2 locked, and can reach at most 7 next. Adding 8 and 3 to the initial amount gives 13, but only the order 3 then 8 is legal; 15 incorrectly uses three projects."
+    },
+    {
+      "lang": "en",
+      "clipboard": "success and denied fallback with actual keyboard copy",
+      "fallbackText": "Automatic copy unavailable. Full source is selected below for manual copying."
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "geometry": {
+        "scroll": 320,
+        "width": 320,
+        "top": 99.5,
+        "nav": 70
+      },
+      "heap": "Position 0: project #0, key (-3, 0), profit 3Position 1: project #2, key (-1, 2), profit 1Position 2: project #1, key (-3, 1), profit 3",
+      "operation": "Admit original project #1: threshold 2≤current capital 2. Insert key (-3, 1) into ready. Capital is unchanged; j has advanced."
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "geometry": {
+        "scroll": 390,
+        "width": 390,
+        "top": 100.25,
+        "nav": 70
+      },
+      "heap": "Position 0: project #0, key (-3, 0), profit 3Position 1: project #2, key (-1, 2), profit 1Position 2: project #1, key (-3, 1), profit 3",
+      "operation": "Admit original project #1: threshold 2≤current capital 2. Insert key (-3, 1) into ready. Capital is unchanged; j has advanced."
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "geometry": {
+        "scroll": 736,
+        "width": 736,
+        "top": 99.859375,
+        "nav": 70
+      },
+      "heap": "Position 0: project #0, key (-3, 0), profit 3Position 1: project #2, key (-1, 2), profit 1Position 2: project #1, key (-3, 1), profit 3",
+      "operation": "Admit original project #1: threshold 2≤current capital 2. Insert key (-3, 1) into ready. Capital is unchanged; j has advanced."
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "geometry": {
+        "scroll": 1440,
+        "width": 1440,
+        "top": 99.6875,
+        "nav": 70
+      },
+      "heap": "Position 0: project #0, key (-3, 0), profit 3Position 1: project #2, key (-1, 2), profit 1Position 2: project #1, key (-3, 1), profit 3",
+      "operation": "Admit original project #1: threshold 2≤current capital 2. Insert key (-3, 1) into ready. Capital is unchanged; j has advanced."
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "frames": 6,
+      "readout": "事件 6/6 · 当前资金 w=9 · 已完成 2/2 个项目 · 排序前沿 j=3/3",
+      "operation": "最终资金 9。达到选择上限或已无可做项目；剩余项目不再选择。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "frames": 6,
+      "readout": "事件 6/6 · 当前资金 w=4 · 已完成 2/2 个项目 · 排序前沿 j=3/3",
+      "operation": "最终资金 4。达到选择上限或已无可做项目；剩余项目不再选择。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "frames": 7,
+      "readout": "事件 7/7 · 当前资金 w=6 · 已完成 3/3 个项目 · 排序前沿 j=3/3",
+      "operation": "最终资金 6。达到选择上限或已无可做项目；剩余项目不再选择。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "frames": 2,
+      "readout": "事件 2/2 · 当前资金 w=0 · 已完成 0/2 个项目 · 排序前沿 j=0/2",
+      "operation": "最终资金 0。达到选择上限或已无可做项目；剩余项目不再选择。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "frames": 6,
+      "readout": "事件 6/6 · 当前资金 w=0 · 已完成 2/3 个项目 · 排序前沿 j=2/3",
+      "operation": "最终资金 0。达到选择上限或已无可做项目；剩余项目不再选择。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "frames": 7,
+      "readout": "事件 7/7 · 当前资金 w=9 · 已完成 3/3 个项目 · 排序前沿 j=3/3",
+      "operation": "最终资金 9。达到选择上限或已无可做项目；剩余项目不再选择。"
+    },
+    {
+      "lang": "zh",
+      "choice": 7,
+      "feedback": "这项不符合最优合法顺序。 先选原项目 #1 的利润 3：2+3=5；再选刚解锁的 #2，5+8=13。利润 2 的 #0 只会把资金变成 4，尚未解锁 #2，之后最多到 7。直接把 8 与 3 加到初始值能写出 13，但只有先 3 后 8 才是合法解释；15 则错误地用了三个项目。"
+    },
+    {
+      "lang": "zh",
+      "choice": 13,
+      "feedback": "正确。 先选原项目 #1 的利润 3：2+3=5；再选刚解锁的 #2，5+8=13。利润 2 的 #0 只会把资金变成 4，尚未解锁 #2，之后最多到 7。直接把 8 与 3 加到初始值能写出 13，但只有先 3 后 8 才是合法解释；15 则错误地用了三个项目。"
+    },
+    {
+      "lang": "zh",
+      "choice": 15,
+      "feedback": "这项不符合最优合法顺序。 先选原项目 #1 的利润 3：2+3=5；再选刚解锁的 #2，5+8=13。利润 2 的 #0 只会把资金变成 4，尚未解锁 #2，之后最多到 7。直接把 8 与 3 加到初始值能写出 13，但只有先 3 后 8 才是合法解释；15 则错误地用了三个项目。"
+    },
+    {
+      "lang": "zh",
+      "clipboard": "success and denied fallback with actual keyboard copy",
+      "fallbackText": "无法自动复制。下方完整源码已选中，请手动复制。"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "geometry": {
+        "scroll": 320,
+        "width": 320,
+        "top": 99.703125,
+        "nav": 70
+      },
+      "heap": "位置 0：项目 #0，键 (-3, 0)，利润 3位置 1：项目 #2，键 (-1, 2)，利润 1位置 2：项目 #1，键 (-3, 1)，利润 3",
+      "operation": "入场原项目 #1：门槛 2≤当前资金 2，把键 (-3, 1) 加入 ready。资金不变；j 已前移。"
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "geometry": {
+        "scroll": 390,
+        "width": 390,
+        "top": 100.40625,
+        "nav": 70
+      },
+      "heap": "位置 0：项目 #0，键 (-3, 0)，利润 3位置 1：项目 #2，键 (-1, 2)，利润 1位置 2：项目 #1，键 (-3, 1)，利润 3",
+      "operation": "入场原项目 #1：门槛 2≤当前资金 2，把键 (-3, 1) 加入 ready。资金不变；j 已前移。"
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "geometry": {
+        "scroll": 736,
+        "width": 736,
+        "top": 99.609375,
+        "nav": 70
+      },
+      "heap": "位置 0：项目 #0，键 (-3, 0)，利润 3位置 1：项目 #2，键 (-1, 2)，利润 1位置 2：项目 #1，键 (-3, 1)，利润 3",
+      "operation": "入场原项目 #1：门槛 2≤当前资金 2，把键 (-3, 1) 加入 ready。资金不变；j 已前移。"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "geometry": {
+        "scroll": 1440,
+        "width": 1440,
+        "top": 99.9375,
+        "nav": 70
+      },
+      "heap": "位置 0：项目 #0，键 (-3, 0)，利润 3位置 1：项目 #2，键 (-1, 2)，利润 1位置 2：项目 #1，键 (-3, 1)，利润 3",
+      "operation": "入场原项目 #1：门槛 2≤当前资金 2，把键 (-3, 1) 加入 ready。资金不变；j 已前移。"
+    }
+  ],
+  "focus": {
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "disabled": {
+    "disabled": true,
+    "opacity": "1",
+    "fg": "rgb(154, 167, 184)",
+    "bg": "rgb(28, 35, 48)"
+  },
+  "controlSizes": [
+    {
+      "tag": "BUTTON",
+      "id": "",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "",
+      "height": 48
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "chooseA",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "chooseB",
+      "height": 48
+    },
+    {
+      "tag": "SELECT",
+      "id": "preset",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "tracePrev",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "traceNext",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "traceReset",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "traceLast",
+      "height": 48
+    },
+    {
+      "tag": "LABEL",
+      "id": "",
+      "height": 48
+    },
+    {
+      "tag": "LABEL",
+      "id": "",
+      "height": 48
+    },
+    {
+      "tag": "LABEL",
+      "id": "",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "reveal",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "predictionReset",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "copyPython",
+      "height": 48
+    },
+    {
+      "tag": "SUMMARY",
+      "id": "",
+      "height": 48
+    }
+  ],
+  "contrast": [
+    {
+      "sel": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "sel": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "sel": ".heap-item",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "sel": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".btn.primary",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "#tracePrev",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgba(13, 17, 23, 0.96)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "sel": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "textarea",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#chooseB",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(60, 44, 22)",
+      "ratio": 11.413861737674878
+    },
+    {
+      "sel": "th",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "sel": "select",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    }
+  ],
+  "focusContrast": [
+    {
+      "bg": "0d1117",
+      "ratio": 10.731637051347173
+    },
+    {
+      "bg": "161b22",
+      "ratio": 9.809435643476732
+    },
+    {
+      "bg": "1c2330",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "errors": [],
+  "assets": [
+    "http://127.0.0.1:18770/leetcode/502/",
+    "http://127.0.0.1:18770/leetcode/502/style.css?v=502-1",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/502/core.js?v=502-1",
+    "http://127.0.0.1:18770/leetcode/502/python-code.js?v=502-1",
+    "http://127.0.0.1:18770/leetcode/502/copy.js?v=502-1",
+    "http://127.0.0.1:18770/leetcode/502/app.js?v=502-1"
+  ],
+  "cssBytes": 11170,
+  "limits": "Chromium desktop emulation and CSS zoom 2. No physical mobile, actual novice outcomes, LeetCode submission, deployment or independent review."
+}

@@ -1,0 +1,8 @@
+{
+  "kind": "author self-check",
+  "result": "pass",
+  "cases": 3006,
+  "frames": 18059,
+  "seed": 502,
+  "checks": "independent exhaustive-order oracle; each admission/pick, conservation, heap order, snapshots, ledger, AST duplicate keys; locale pair shapes/placeholders"
+}
