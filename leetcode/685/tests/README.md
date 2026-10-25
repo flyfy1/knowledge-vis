@@ -47,3 +47,16 @@ not independent review findings. `candidate-sha256.json` freezes the authored
 sources/tests and official capture, excluding rerunnable output artifacts.
 Independent lesson acceptance, LeetCode submission acceptance and production
 release remain pending/outside this author run.
+
+R1 focused regression (685-R1-001):
+
+```sh
+OUTPUT_DIR="$PWD/leetcode/685/tests/evidence/r1-fix/green" node leetcode/685/tests/selected-label.cjs
+```
+
+This checks the closed preset-3 label at 320/390 in EN→ZH→EN, records actual-font
+measurements and ordinary viewport screenshots, and preserves preset/frame state.
+The same test failed before the label repair: see `evidence/r1-fix/red-final/`.
+The measured 16px arrow allowance is specific to the recorded Chromium/Linux
+control; inspect screenshots as well. All results are author checks, pending
+independent re-review. See `evidence/r1-fix/self-check.md` for the fix mapping.
