@@ -1,0 +1,477 @@
+{
+  "observedAt": "2026-10-25T20:46:54.749888+00:00",
+  "state": {
+    "version": 1,
+    "repo": "/home/songyy/projects/leetcode-hard-lane-975-20261026",
+    "queue": [
+      "975"
+    ],
+    "expected_head": "d1e5c03e4f58203b7b08f4a5b858a563b245e375",
+    "started_at": "2026-10-25T20:29:10.925560+00:00",
+    "status": "completed",
+    "current": null,
+    "problems": {
+      "975": {
+        "status": "accepted_local",
+        "rounds": 1,
+        "new": true,
+        "phase": "done",
+        "reviews": [
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              3,
+              4,
+              4,
+              4,
+              3
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/975-review-1-d2ae4c19.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source audit.",
+              "Canonical Python passed 5,460 independently chosen oracle cases and maximum-length boundaries.",
+              "Exact displayed, copied, fallback-copied and downloaded source parity verified.",
+              "Both locales, keyboard, rewind/reset, narrow layouts and 200% CSS zoom exercised; screenshots inspected.",
+              "Non-mutating metadata preflight passed."
+            ],
+            "detail": "92.5/100; no required findings. Acceptance covers this candidate\u2019s local lesson review, separate from publication.",
+            "run_id": "975-review-b1b1100220da",
+            "candidate": "bc00150bef56379abd88333f62211cf7b16146c9",
+            "candidate_sha256": "392a64c4a03e3a65b7d6199e0a00bfbe9b3967405e66a24c73a6e26b9ba7152f",
+            "weighted_score": 92.5,
+            "round": 1,
+            "commit": "ce7077a06e7f89e1d7bcd7d3990f923c300a4afd"
+          }
+        ],
+        "author_runs": [
+          "975-author-357096f29cf1"
+        ],
+        "prior_report": "specs/reviews/975-review-1-d2ae4c19.md",
+        "candidate": "bc00150bef56379abd88333f62211cf7b16146c9",
+        "registration_commit": "d1e5c03e4f58203b7b08f4a5b858a563b245e375",
+        "accepted_at": "2026-10-25T20:45:31.346323+00:00"
+      }
+    },
+    "runs": [
+      {
+        "id": "975-author-357096f29cf1",
+        "problem_id": "975",
+        "role": "author",
+        "started_at": "2026-10-25T20:29:11.169156+00:00",
+        "status": "completed",
+        "candidate": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+        "directory": "/home/songyy/projects/leetcode-hard-lane-state-975-20261026/runs/975-author-357096f29cf1",
+        "session_ids": [
+          "01a174c0-c196-7702-8469-9d1ba3637168"
+        ],
+        "finished_at": "2026-10-25T20:40:35.943944+00:00",
+        "result": {
+          "outcome": "ready",
+          "detail": "Completed bilingual lesson #975 in leetcode/975/, frozen as candidate v4. Official Python interface verified; 3,783 oracle cases, 94,920 snapshots, real-browser checks and metadata preflight passed. Evidence and hashes recorded. Independent review remains pending; no acceptance or publication claimed."
+        }
+      },
+      {
+        "id": "975-review-b1b1100220da",
+        "problem_id": "975",
+        "role": "review",
+        "started_at": "2026-10-25T20:40:49.477295+00:00",
+        "status": "completed",
+        "candidate": "bc00150bef56379abd88333f62211cf7b16146c9",
+        "directory": "/home/songyy/projects/leetcode-hard-lane-state-975-20261026/runs/975-review-b1b1100220da",
+        "session_ids": [
+          "01a174cb-68c0-77a3-9af9-a8ab1fba5fe2"
+        ],
+        "finished_at": "2026-10-25T20:45:21.581723+00:00",
+        "result": {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            3
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/975-review-1-d2ae4c19.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Canonical Python passed 5,460 independently chosen oracle cases and maximum-length boundaries.",
+            "Exact displayed, copied, fallback-copied and downloaded source parity verified.",
+            "Both locales, keyboard, rewind/reset, narrow layouts and 200% CSS zoom exercised; screenshots inspected.",
+            "Non-mutating metadata preflight passed."
+          ],
+          "detail": "92.5/100; no required findings. Acceptance covers this candidate\u2019s local lesson review, separate from publication."
+        }
+      }
+    ],
+    "updated_at": "2026-10-25T20:45:31.360442+00:00"
+  },
+  "stateSha256": "5a796a158a57b8ac99aedab8ddf2f16e695be9ff74cc12a6a45f6a28adbd41a2",
+  "head": "d1e5c03e4f58203b7b08f4a5b858a563b245e375",
+  "dirty": "",
+  "lessonTree": "8baacdcfc788d25217abde1460c6f0a0208fe82b",
+  "entry": {
+    "id": 975,
+    "title": {
+      "zh": "\u5947\u5076\u8df3",
+      "en": "Odd Even Jump"
+    },
+    "desc": {
+      "zh": "\u4ece\u5f3a\u5236\u8df3\u8dc3\u63a8\u5bfc\u6392\u5e8f\u3001\u6808\u4e0e\u53cc\u72b6\u6001\u5012\u63a8\u3002",
+      "en": "Derive sorted targets and two-state reachability from forced jumps."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "\u5355\u8c03\u6808",
+        "en": "Monotonic stack"
+      },
+      {
+        "zh": "\u52a8\u6001\u89c4\u5212",
+        "en": "Dynamic programming"
+      }
+    ],
+    "path": "975/",
+    "leetcodeUrl": "https://leetcode.com/problems/odd-even-jump/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space",
+    "concepts": [
+      {
+        "name": "Monotonic stack",
+        "step": 1,
+        "description": "Resolve forced targets in value order."
+      },
+      {
+        "name": "Parity dynamic programming",
+        "step": 2,
+        "description": "Compute two reachability states backward."
+      }
+    ]
+  },
+  "entrySha256": "853fa832c5b3036dd4d5c45f9f73eefbd421df40dc625308bc09bf5827afa660",
+  "canonicalSha256": "90787ce70f745d0db62c28732886b435d6dc282babc9e1c30a74f77971a55d89",
+  "reportSha256": "6d3457bfe7f6a63206c1da5c0034bfd3487f1f982aae0ce9f33d5981f0256001",
+  "evidenceManifest": {
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/zh-zoom200-stage.png": {
+      "sha256": "7fcb61c33242c4e9c6ce38b042498268f00d082e0ac43bbfb2cfab6e3ef99e96",
+      "bytes": 135938
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/zh-390-trace.png": {
+      "sha256": "b18a4728cac1e94eb03af3cc7debaaddaff80e7f5bdbf18571ab1ab431ab38d2",
+      "bytes": 689490
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/own-en-320-middle.png": {
+      "sha256": "f6d754ca3ac61f8623dd6201f6ce1cadf48d897262650e480d8ccdda9af73de2",
+      "bytes": 50319
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/en-320-trace.png": {
+      "sha256": "dd72c28e292b3be7630f29736597767151186d44384ce00ff9e313c5c4e38941",
+      "bytes": 675661
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/own-zh-320-right.png": {
+      "sha256": "3c007fc684e4f3e8c782a69a4ebc32eb1db5c1ddf7f80e9172d4bbb8bcc4cebd",
+      "bytes": 46030
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/own-en-320-right.png": {
+      "sha256": "89f90a398e5816df557bdf1b4c6f7eeea056f47756792bf3029f560f7473c09c",
+      "bytes": 48909
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/own-zh-320-select.png": {
+      "sha256": "d88beca156bcf9d5ab65b8cfead9547b54dd1ab0e896ffafbd7620a5b30bb92c",
+      "bytes": 46841
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/cold-initial.png": {
+      "sha256": "1e1362e65641dbb1e003fa170eb1b9d3ffdf18e85c5d193c373d0183f146beec",
+      "bytes": 648613
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/en-390-trace.png": {
+      "sha256": "d80a4820e949fa71123a71e4ca073aa82b0bab692f9afcd7258548d820ce60cb",
+      "bytes": 711908
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/own-en-320-select.png": {
+      "sha256": "c9a3f96d0a5e74510a342c5b48d0689b8fa303b4fad1a70127fdf233af895c96",
+      "bytes": 47654
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/en-320-dp-right.png": {
+      "sha256": "a331d844384985a7baecb8c9d70bb38b86f696a707f954589ea75b5db68e6411",
+      "bytes": 54492
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/zh-320-stack.png": {
+      "sha256": "783b597e7deaf058ffc9047783b681d276f32a535abdf0b7791837bcd9ddbd61",
+      "bytes": 50298
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/en-320-stack.png": {
+      "sha256": "8b5f2a0ee06cf83fab7287459e30366d77223ebcac672530e6728a884ac0ded5",
+      "bytes": 59290
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/zh-1440-trace.png": {
+      "sha256": "ba4748049a3b19c4724b1590e72d79fed864c42b91a391be3efd247088b97b14",
+      "bytes": 788486
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/en-736-stage.png": {
+      "sha256": "258e8fda20d30e9e14ae86fcf5e69e5d6604fe561fc54acff795ebd633fc78be",
+      "bytes": 57326
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/numerical.json": {
+      "sha256": "85d2db73b20274b0212f8275369087744ca39b18e849c8c0f2cbe2374320311d",
+      "bytes": 244
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/own-zh-320-middle.png": {
+      "sha256": "67e8d055dd3ca54566c8f299496d1a6917aeb760d7317b52f6e9a32c583f12fe",
+      "bytes": 45881
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/en-zoom200-stage.png": {
+      "sha256": "06f0aa3d2c23d77c1023986bca7c3577328ac47fb1c9e004abc39238ddde1156",
+      "bytes": 141114
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/en-1440-stage.png": {
+      "sha256": "7260eee9f329ff86ac62177a61ac8409289fa874f60067c05f61c8cb99852a38",
+      "bytes": 56753
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/own-zh-320-heading.png": {
+      "sha256": "a492b55f7fec4782a8ec6cf2109459bd014d999113ea10ab5c9141c74b71efdc",
+      "bytes": 81251
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/zh-736-trace.png": {
+      "sha256": "1551a8d642bd65ce436f0b6ebcfa9c110fdb14ea120f228b7a4cb1d90b67d20f",
+      "bytes": 785090
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/zh-736-stage.png": {
+      "sha256": "2a6973f23385b5ebe3fea26f5c9e0ae93712f0453d2ac8eed7b3198254296062",
+      "bytes": 54248
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/zh-1440-stage.png": {
+      "sha256": "3bd097623f33c8b5f08abe558dce21053d8b3459d2889fffe7bc01e83e24b1ad",
+      "bytes": 55647
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/zh-zoom200.png": {
+      "sha256": "7751eca77ec6ae21fa363aa1fc2ae3491d520c3d53642f3d7c0911f5b1797342",
+      "bytes": 1666039
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/zh-320-dp-right.png": {
+      "sha256": "4eb0e993f3ab9ff71f747de5fccb0091e6ae00e2f9817ef6fe13ba472052c7f3",
+      "bytes": 46318
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/en-736-trace.png": {
+      "sha256": "5222182d0cea22e524efe28bb5982ce9187238465c1b882163af9200ea2c41b2",
+      "bytes": 757518
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/zh-320-trace.png": {
+      "sha256": "09e9c274cee6beb9a688237ed552975e4cab26ac352c1a60c2f2add71d9c6565",
+      "bytes": 666096
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/zh-320-stage.png": {
+      "sha256": "30cd2d85a67711c2868fc5ac1606580a2fc6e7c20795f842495b4e24f572d575",
+      "bytes": 46910
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/en-1440-trace.png": {
+      "sha256": "88d6d8d333db4eef210b49f179fdb3f1ded3f71795cd0c59f2df8d2f500fcaa1",
+      "bytes": 745734
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/browser.json": {
+      "sha256": "1e2a7a3137d3fa29bcb0e6d4c7be17ed58e8713dabbf53d5b42f601b11ed1ca3",
+      "bytes": 27130
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/cold-complete.png": {
+      "sha256": "875a8c6ce085a796ebad819c1de2934965d021fdedfbbf83bfe8e8935162d312",
+      "bytes": 649173
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/en-zoom200.png": {
+      "sha256": "a584bf7eae6a8f1e72d5ce4071b2d7d7c49c4646531cdbda72dff23ad10b2df8",
+      "bytes": 1691099
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/zh-390-stage.png": {
+      "sha256": "a0cc0ea2cc5aff6f1e90517d415b6b45afa186db00c816e414ff82803311afed",
+      "bytes": 49408
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/forced-colors-focus.png": {
+      "sha256": "c0fbc8ece84a08927de20080e7a82ae86c9e0677eab6c02616cd0f0a831525c1",
+      "bytes": 77952
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/en-390-stage.png": {
+      "sha256": "07ec2b52dde45439c180151565111f4f6aa5a3ac845138daf5be3b053969f81a",
+      "bytes": 52840
+    },
+    "specs/reviews/975-evidence/975-review-1-d2ae4c19/en-320-stage.png": {
+      "sha256": "e682d4f628fedda4c9202581ad17c997a47df3b71e7081a6e22a08adc33454a9",
+      "bytes": 53356
+    }
+  },
+  "runs": [
+    {
+      "record": {
+        "id": "975-author-357096f29cf1",
+        "problem_id": "975",
+        "role": "author",
+        "started_at": "2026-10-25T20:29:11.169156+00:00",
+        "status": "completed",
+        "candidate": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+        "directory": "/home/songyy/projects/leetcode-hard-lane-state-975-20261026/runs/975-author-357096f29cf1",
+        "session_ids": [
+          "01a174c0-c196-7702-8469-9d1ba3637168"
+        ],
+        "finished_at": "2026-10-25T20:40:35.943944+00:00",
+        "result": {
+          "outcome": "ready",
+          "detail": "Completed bilingual lesson #975 in leetcode/975/, frozen as candidate v4. Official Python interface verified; 3,783 oracle cases, 94,920 snapshots, real-browser checks and metadata preflight passed. Evidence and hashes recorded. Independent review remains pending; no acceptance or publication claimed."
+        }
+      },
+      "eventsSha256": "301a7054b35b13ffd4c3892ebe3e376642f87341de6301a5f9e92d36675327d4",
+      "final": {
+        "outcome": "ready",
+        "detail": "Completed bilingual lesson #975 in leetcode/975/, frozen as candidate v4. Official Python interface verified; 3,783 oracle cases, 94,920 snapshots, real-browser checks and metadata preflight passed. Evidence and hashes recorded. Independent review remains pending; no acceptance or publication claimed."
+      },
+      "finalSha256": "36467b5cd17dba7e420dc9ae3c00c4a6e2b916aba9029e3d5356910bc3c8ba1f",
+      "promptSha256": "f0c81e9de961b44da97d09d5eb6e1a62e9eed4544b9d1ed5ebd19e9894021f02",
+      "threadEvents": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a174c0-c196-7702-8469-9d1ba3637168"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 2712821,
+            "cached_input_tokens": 2629888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 25232,
+            "reasoning_output_tokens": 6431
+          }
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "975-review-b1b1100220da",
+        "problem_id": "975",
+        "role": "review",
+        "started_at": "2026-10-25T20:40:49.477295+00:00",
+        "status": "completed",
+        "candidate": "bc00150bef56379abd88333f62211cf7b16146c9",
+        "directory": "/home/songyy/projects/leetcode-hard-lane-state-975-20261026/runs/975-review-b1b1100220da",
+        "session_ids": [
+          "01a174cb-68c0-77a3-9af9-a8ab1fba5fe2"
+        ],
+        "finished_at": "2026-10-25T20:45:21.581723+00:00",
+        "result": {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            3
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/975-review-1-d2ae4c19.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Canonical Python passed 5,460 independently chosen oracle cases and maximum-length boundaries.",
+            "Exact displayed, copied, fallback-copied and downloaded source parity verified.",
+            "Both locales, keyboard, rewind/reset, narrow layouts and 200% CSS zoom exercised; screenshots inspected.",
+            "Non-mutating metadata preflight passed."
+          ],
+          "detail": "92.5/100; no required findings. Acceptance covers this candidate\u2019s local lesson review, separate from publication."
+        }
+      },
+      "eventsSha256": "fc37cea070833a09990dc27e0fe02f45d7e1d4f556f0a8b1a856df93b5784c0d",
+      "final": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          3,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/975-review-1-d2ae4c19.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Canonical Python passed 5,460 independently chosen oracle cases and maximum-length boundaries.",
+          "Exact displayed, copied, fallback-copied and downloaded source parity verified.",
+          "Both locales, keyboard, rewind/reset, narrow layouts and 200% CSS zoom exercised; screenshots inspected.",
+          "Non-mutating metadata preflight passed."
+        ],
+        "detail": "92.5/100; no required findings. Acceptance covers this candidate\u2019s local lesson review, separate from publication."
+      },
+      "finalSha256": "f8be214261b79e5e671efe2879860e066ad74428450b14eb031b1bae84c00fff",
+      "promptSha256": "f4da32bb0156dd891dd6066c8993f6f1b723c5953dc05084aef508ea8e45ead7",
+      "threadEvents": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a174cb-68c0-77a3-9af9-a8ab1fba5fe2"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 966441,
+            "cached_input_tokens": 884224,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9951,
+            "reasoning_output_tokens": 1223
+          }
+        }
+      ]
+    }
+  ],
+  "liveRunnerOrNative": [],
+  "reservation": {
+    "id": "975",
+    "base": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+    "repo": "/home/songyy/projects/leetcode-hard-lane-975-20261026",
+    "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-975-20261026",
+    "port": 18793,
+    "nice": 10,
+    "status": "started",
+    "started_at": "2026-10-25T20:28:48.642712+00:00",
+    "policy_sha256": "d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa",
+    "publication_enabled": false,
+    "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+    "runner_pid": 1613669,
+    "observed_current": {
+      "problem_id": "975",
+      "stage": "author",
+      "started_at": "2026-10-25T20:29:11.169156+00:00",
+      "run_id": "975-author-357096f29cf1"
+    }
+  },
+  "registryEntry": {
+    "id": 975,
+    "title": {
+      "zh": "\u5947\u5076\u8df3",
+      "en": "Odd Even Jump"
+    },
+    "desc": {
+      "zh": "\u4ece\u5f3a\u5236\u8df3\u8dc3\u63a8\u5bfc\u6392\u5e8f\u3001\u6808\u4e0e\u53cc\u72b6\u6001\u5012\u63a8\u3002",
+      "en": "Derive sorted targets and two-state reachability from forced jumps."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "\u5355\u8c03\u6808",
+        "en": "Monotonic stack"
+      },
+      {
+        "zh": "\u52a8\u6001\u89c4\u5212",
+        "en": "Dynamic programming"
+      }
+    ],
+    "path": "975/",
+    "leetcodeUrl": "https://leetcode.com/problems/odd-even-jump/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space"
+  },
+  "registrySha256": "36a77c6db0124edf5bd6ad975b001bf805645263273449f522f41040cc15979a"
+}

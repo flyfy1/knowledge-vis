@@ -1,0 +1,176 @@
+{
+  "host": "linux",
+  "rows": [
+    {
+      "lang": "en",
+      "k": 0,
+      "events": 13,
+      "last": {
+        "event": "Event 13/13 · Search complete; all marks restored",
+        "read": "Current path empty; unused squares remaining=4; valid walks found through this event=1."
+      }
+    },
+    {
+      "lang": "en",
+      "k": 1,
+      "events": 223,
+      "last": {
+        "event": "Event 223/223 · Search complete; all marks restored",
+        "read": "Current path empty; unused squares remaining=11; valid walks found through this event=2."
+      }
+    },
+    {
+      "lang": "en",
+      "k": 2,
+      "events": 455,
+      "last": {
+        "event": "Event 455/455 · Search complete; all marks restored",
+        "read": "Current path empty; unused squares remaining=12; valid walks found through this event=4."
+      }
+    },
+    {
+      "lang": "en",
+      "k": 3,
+      "events": 13,
+      "last": {
+        "event": "Event 13/13 · Search complete; all marks restored",
+        "read": "Current path empty; unused squares remaining=4; valid walks found through this event=0."
+      }
+    },
+    {
+      "lang": "en",
+      "k": 4,
+      "events": 6,
+      "last": {
+        "event": "Event 6/6 · Search complete; all marks restored",
+        "read": "Current path empty; unused squares remaining=2; valid walks found through this event=1."
+      }
+    },
+    {
+      "lang": "en",
+      "k": 5,
+      "events": 4,
+      "last": {
+        "event": "Event 4/4 · Search complete; all marks restored",
+        "read": "Current path empty; unused squares remaining=2; valid walks found through this event=0."
+      }
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "selected": {
+        "text": "Official example 1 · 2 walks",
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "textWidth": 201.92039489746094,
+        "available": 210
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "selected": {
+        "text": "Official example 1 · 2 walks",
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "textWidth": 201.92039489746094,
+        "available": 280
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "selected": {
+        "text": "Official example 1 · 2 walks",
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "textWidth": 201.92039489746094,
+        "available": 858
+      }
+    },
+    {
+      "lang": "zh",
+      "k": 0,
+      "events": 13,
+      "last": {
+        "event": "事件 13/13 · 搜索结束，所有标记已还原",
+        "read": "当前路线 空；未用格 remaining=4；截至本事件已找到的合格路线=1。"
+      }
+    },
+    {
+      "lang": "zh",
+      "k": 1,
+      "events": 223,
+      "last": {
+        "event": "事件 223/223 · 搜索结束，所有标记已还原",
+        "read": "当前路线 空；未用格 remaining=11；截至本事件已找到的合格路线=2。"
+      }
+    },
+    {
+      "lang": "zh",
+      "k": 2,
+      "events": 455,
+      "last": {
+        "event": "事件 455/455 · 搜索结束，所有标记已还原",
+        "read": "当前路线 空；未用格 remaining=12；截至本事件已找到的合格路线=4。"
+      }
+    },
+    {
+      "lang": "zh",
+      "k": 3,
+      "events": 13,
+      "last": {
+        "event": "事件 13/13 · 搜索结束，所有标记已还原",
+        "read": "当前路线 空；未用格 remaining=4；截至本事件已找到的合格路线=0。"
+      }
+    },
+    {
+      "lang": "zh",
+      "k": 4,
+      "events": 6,
+      "last": {
+        "event": "事件 6/6 · 搜索结束，所有标记已还原",
+        "read": "当前路线 空；未用格 remaining=2；截至本事件已找到的合格路线=1。"
+      }
+    },
+    {
+      "lang": "zh",
+      "k": 5,
+      "events": 4,
+      "last": {
+        "event": "事件 4/4 · 搜索结束，所有标记已还原",
+        "read": "当前路线 空；未用格 remaining=2；截至本事件已找到的合格路线=0。"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "selected": {
+        "text": "官方示例 1 · 2 条",
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "textWidth": 119.23222351074219,
+        "available": 210
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "selected": {
+        "text": "官方示例 1 · 2 条",
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "textWidth": 119.23222351074219,
+        "available": 280
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "selected": {
+        "text": "官方示例 1 · 2 条",
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "textWidth": 119.23222351074219,
+        "available": 858
+      }
+    }
+  ],
+  "errors": [],
+  "sourceTransfers": "exact DOM/automatic clipboard/fresh sentinel native Control+C fallback/download streams in both locales",
+  "frames": "all next button DOM click events, endpoint/reset via Playwright clicks"
+}

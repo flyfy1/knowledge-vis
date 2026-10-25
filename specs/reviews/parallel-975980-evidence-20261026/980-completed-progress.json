@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "repo": "/home/songyy/projects/leetcode-hard-lane-980-20261026",
+  "queue": [
+    "980"
+  ],
+  "expected_head": "d95031d1b9d90fa9e1cc578c000caef0c6756510",
+  "started_at": "2026-10-25T20:29:40.165388+00:00",
+  "status": "completed",
+  "current": null,
+  "problems": {
+    "980": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            3,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/980-review-1-43fed71e.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh canonical Python cases matched independent predictions and restored inputs.",
+            "Both locales, source parity, native copy fallback, layouts, keyboard and 200% scaling verified.",
+            "Non-mutating metadata preflight passed."
+          ],
+          "detail": "95/100; no required findings. Interrupted browser harness documented; separate independent browser checks passed. Acceptance covers the reviewed local candidate, not publication.",
+          "run_id": "980-review-fcc41ae9eadf",
+          "candidate": "a440fe53769a1831f8e2f8f4f4bbd0195ff0906c",
+          "candidate_sha256": "395efdff6fbade8c6d31e2eea24123519ac07d0b0c75cab87e3a48533f474d54",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "5b21967b134c73fbe7ba54ddd1168e35b1ff306a"
+        }
+      ],
+      "author_runs": [
+        "980-author-4e73af33ad61"
+      ],
+      "prior_report": "specs/reviews/980-review-1-43fed71e.md",
+      "candidate": "a440fe53769a1831f8e2f8f4f4bbd0195ff0906c",
+      "registration_commit": "d95031d1b9d90fa9e1cc578c000caef0c6756510",
+      "accepted_at": "2026-10-25T20:44:54.445443+00:00"
+    }
+  },
+  "runs": [
+    {
+      "id": "980-author-4e73af33ad61",
+      "problem_id": "980",
+      "role": "author",
+      "started_at": "2026-10-25T20:29:40.427530+00:00",
+      "status": "completed",
+      "candidate": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-980-20261026/runs/980-author-4e73af33ad61",
+      "session_ids": [
+        "01a174c1-3532-7970-89f4-1959f5540f0e"
+      ],
+      "finished_at": "2026-10-25T20:40:00.776552+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented and froze bilingual lesson #980 in leetcode/980/. Passed 1,329 oracle cases, 720 simulation-frame checks, both-locale browser tests, source-transfer parity, visual inspection, contrast checks, and metadata preflight. Evidence and hashes recorded. Independent review remains pending; nothing committed or deployed."
+      }
+    },
+    {
+      "id": "980-review-fcc41ae9eadf",
+      "problem_id": "980",
+      "role": "review",
+      "started_at": "2026-10-25T20:40:11.293008+00:00",
+      "status": "completed",
+      "candidate": "a440fe53769a1831f8e2f8f4f4bbd0195ff0906c",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-980-20261026/runs/980-review-fcc41ae9eadf",
+      "session_ids": [
+        "01a174ca-d479-7a73-8463-fbb093fcbd21"
+      ],
+      "finished_at": "2026-10-25T20:44:44.115610+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          3,
+          4,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/980-review-1-43fed71e.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Fresh canonical Python cases matched independent predictions and restored inputs.",
+          "Both locales, source parity, native copy fallback, layouts, keyboard and 200% scaling verified.",
+          "Non-mutating metadata preflight passed."
+        ],
+        "detail": "95/100; no required findings. Interrupted browser harness documented; separate independent browser checks passed. Acceptance covers the reviewed local candidate, not publication."
+      }
+    }
+  ],
+  "updated_at": "2026-10-25T20:44:54.460714+00:00"
+}

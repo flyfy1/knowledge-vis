@@ -1,0 +1,91 @@
+{
+  "observedAt": "2026-10-25T20:48:12.927Z",
+  "kind": "independent supplemental verification after completed review; not a rewrite of prior review",
+  "candidate": "a440fe53769a1831f8e2f8f4f4bbd0195ff0906c",
+  "registration": "d95031d1b9d90fa9e1cc578c000caef0c6756510",
+  "lessonTree": "0df616491870cbc77e1003ab898c40a0aa2afb77",
+  "canonicalSha256": "abe291bca8cc7c644450e598ab5128269691de7dbf2410e3ac9603ea9de9921f",
+  "assetHashes": {
+    "index.html": "6f5444d5b3d72bda0e200b94ea21e90bd6aa7430ffa6b0f151c3cb2f72eed01f",
+    "app.js": "2b169fe8e97e514f383b5827d3d54e8c066c5d1d76805d1067cdeecb2d37ba8b",
+    "copy.js": "c79f361b1588d475197e4f41378d1cef1e122ea1dbeca18f70a7613b735035ac",
+    "core.js": "77d48a03a718ecb782194fc4015606c9291ab08500a83a838e570cb442496c70",
+    "style.css": "5bd36c2eb3005858df028e9f0ddd57458acbb1f34653bdd75f8a0360b86930a6",
+    "solution.py": "abe291bca8cc7c644450e598ab5128269691de7dbf2410e3ac9603ea9de9921f",
+    "python-code.js": "ba4da97738dba62eb9486b60c189cb370bd542fda2f2ca46ccf1933d40ac0ab2"
+  },
+  "host": "linux",
+  "node": "v22.23.2",
+  "chromium": "156.0.8078.4",
+  "executable": "/home/songyy/.cache/ms-playwright/chromium-1248/chrome-linux-arm64/chrome",
+  "temporaryLoopbackOrigin": "http://127.0.0.1:40985",
+  "checks": [
+    {
+      "mode": "storage-unavailable-http",
+      "locales": [
+        {
+          "language": "zh",
+          "identity": "#980 · 不同路径 III",
+          "exactSource": true,
+          "nextResetWorked": true
+        },
+        {
+          "language": "en",
+          "identity": "#980 · Unique Paths III",
+          "exactSource": true,
+          "nextResetWorked": true
+        }
+      ],
+      "storageThrows": 4,
+      "requests": [
+        "http://127.0.0.1:40985/leetcode/980/",
+        "http://127.0.0.1:40985/leetcode/style.css?v=980-2",
+        "http://127.0.0.1:40985/leetcode/980/style.css?v=980-2",
+        "http://127.0.0.1:40985/leetcode/common.js?v=980-2",
+        "http://127.0.0.1:40985/leetcode/980/copy.js?v=980-2",
+        "http://127.0.0.1:40985/leetcode/980/core.js?v=980-2",
+        "http://127.0.0.1:40985/leetcode/980/python-code.js?v=980-2",
+        "http://127.0.0.1:40985/leetcode/980/app.js?v=980-2"
+      ],
+      "pageErrors": [],
+      "badResponses": [],
+      "failedRequests": [],
+      "externalAttempts": []
+    },
+    {
+      "mode": "file-source-offline",
+      "locales": [
+        {
+          "language": "zh",
+          "identity": "#980 · 不同路径 III",
+          "exactSource": true,
+          "nextResetWorked": true
+        },
+        {
+          "language": "en",
+          "identity": "#980 · Unique Paths III",
+          "exactSource": true,
+          "nextResetWorked": true
+        }
+      ],
+      "storageThrows": null,
+      "requests": [
+        "file:///home/songyy/projects/leetcode-hard-lane-980-20261026/leetcode/980/index.html",
+        "file:///home/songyy/projects/leetcode-hard-lane-980-20261026/leetcode/style.css?v=980-2",
+        "file:///home/songyy/projects/leetcode-hard-lane-980-20261026/leetcode/980/style.css?v=980-2",
+        "file:///home/songyy/projects/leetcode-hard-lane-980-20261026/leetcode/common.js?v=980-2",
+        "file:///home/songyy/projects/leetcode-hard-lane-980-20261026/leetcode/980/copy.js?v=980-2",
+        "file:///home/songyy/projects/leetcode-hard-lane-980-20261026/leetcode/980/core.js?v=980-2",
+        "file:///home/songyy/projects/leetcode-hard-lane-980-20261026/leetcode/980/python-code.js?v=980-2",
+        "file:///home/songyy/projects/leetcode-hard-lane-980-20261026/leetcode/980/app.js?v=980-2"
+      ],
+      "pageErrors": [],
+      "badResponses": [],
+      "failedRequests": [],
+      "externalAttempts": []
+    }
+  ],
+  "clipboardUsed": false,
+  "checkoutUnchanged": true,
+  "passed": true
+}

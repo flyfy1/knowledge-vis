@@ -1,0 +1,481 @@
+{
+  "observedAt": "2026-10-25T20:45:46.424890+00:00",
+  "state": {
+    "version": 1,
+    "repo": "/home/songyy/projects/leetcode-hard-lane-980-20261026",
+    "queue": [
+      "980"
+    ],
+    "expected_head": "d95031d1b9d90fa9e1cc578c000caef0c6756510",
+    "started_at": "2026-10-25T20:29:40.165388+00:00",
+    "status": "completed",
+    "current": null,
+    "problems": {
+      "980": {
+        "status": "accepted_local",
+        "rounds": 1,
+        "new": true,
+        "phase": "done",
+        "reviews": [
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              4,
+              4,
+              3,
+              4,
+              4
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/980-review-1-43fed71e.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source inspection.",
+              "Fresh canonical Python cases matched independent predictions and restored inputs.",
+              "Both locales, source parity, native copy fallback, layouts, keyboard and 200% scaling verified.",
+              "Non-mutating metadata preflight passed."
+            ],
+            "detail": "95/100; no required findings. Interrupted browser harness documented; separate independent browser checks passed. Acceptance covers the reviewed local candidate, not publication.",
+            "run_id": "980-review-fcc41ae9eadf",
+            "candidate": "a440fe53769a1831f8e2f8f4f4bbd0195ff0906c",
+            "candidate_sha256": "395efdff6fbade8c6d31e2eea24123519ac07d0b0c75cab87e3a48533f474d54",
+            "weighted_score": 95.0,
+            "round": 1,
+            "commit": "5b21967b134c73fbe7ba54ddd1168e35b1ff306a"
+          }
+        ],
+        "author_runs": [
+          "980-author-4e73af33ad61"
+        ],
+        "prior_report": "specs/reviews/980-review-1-43fed71e.md",
+        "candidate": "a440fe53769a1831f8e2f8f4f4bbd0195ff0906c",
+        "registration_commit": "d95031d1b9d90fa9e1cc578c000caef0c6756510",
+        "accepted_at": "2026-10-25T20:44:54.445443+00:00"
+      }
+    },
+    "runs": [
+      {
+        "id": "980-author-4e73af33ad61",
+        "problem_id": "980",
+        "role": "author",
+        "started_at": "2026-10-25T20:29:40.427530+00:00",
+        "status": "completed",
+        "candidate": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+        "directory": "/home/songyy/projects/leetcode-hard-lane-state-980-20261026/runs/980-author-4e73af33ad61",
+        "session_ids": [
+          "01a174c1-3532-7970-89f4-1959f5540f0e"
+        ],
+        "finished_at": "2026-10-25T20:40:00.776552+00:00",
+        "result": {
+          "outcome": "ready",
+          "detail": "Implemented and froze bilingual lesson #980 in leetcode/980/. Passed 1,329 oracle cases, 720 simulation-frame checks, both-locale browser tests, source-transfer parity, visual inspection, contrast checks, and metadata preflight. Evidence and hashes recorded. Independent review remains pending; nothing committed or deployed."
+        }
+      },
+      {
+        "id": "980-review-fcc41ae9eadf",
+        "problem_id": "980",
+        "role": "review",
+        "started_at": "2026-10-25T20:40:11.293008+00:00",
+        "status": "completed",
+        "candidate": "a440fe53769a1831f8e2f8f4f4bbd0195ff0906c",
+        "directory": "/home/songyy/projects/leetcode-hard-lane-state-980-20261026/runs/980-review-fcc41ae9eadf",
+        "session_ids": [
+          "01a174ca-d479-7a73-8463-fbb093fcbd21"
+        ],
+        "finished_at": "2026-10-25T20:44:44.115610+00:00",
+        "result": {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            3,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/980-review-1-43fed71e.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh canonical Python cases matched independent predictions and restored inputs.",
+            "Both locales, source parity, native copy fallback, layouts, keyboard and 200% scaling verified.",
+            "Non-mutating metadata preflight passed."
+          ],
+          "detail": "95/100; no required findings. Interrupted browser harness documented; separate independent browser checks passed. Acceptance covers the reviewed local candidate, not publication."
+        }
+      }
+    ],
+    "updated_at": "2026-10-25T20:44:54.460714+00:00"
+  },
+  "stateSha256": "882a57558ed912f1ec5b8d01886b3fdf01717a75cd8d95231e1f0fbdcca68fae",
+  "head": "d95031d1b9d90fa9e1cc578c000caef0c6756510",
+  "dirty": "",
+  "lessonTree": "0df616491870cbc77e1003ab898c40a0aa2afb77",
+  "entry": {
+    "id": 980,
+    "title": {
+      "zh": "\u4e0d\u540c\u8def\u5f84 III",
+      "en": "Unique Paths III"
+    },
+    "desc": {
+      "zh": "\u4ece\u63d0\u524d\u5230\u8fbe\u7ec8\u70b9\u7684\u5931\u8d25\uff0c\u63a8\u5bfc\u8986\u76d6\u6bcf\u4e2a\u683c\u5b50\u7684\u56de\u6eaf\u8ba1\u6570\u3002",
+      "en": "Derive complete-walk backtracking from an early arrival that fails."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "\u56de\u6eaf",
+        "en": "Backtracking"
+      },
+      {
+        "zh": "\u7f51\u683c\u641c\u7d22",
+        "en": "Grid search"
+      }
+    ],
+    "path": "980/",
+    "leetcodeUrl": "https://leetcode.com/problems/unique-paths-iii/",
+    "language": "Python",
+    "complexity": "O(mn + 3^V) time; O(V) auxiliary space, V non-obstacle cells",
+    "concepts": [
+      {
+        "name": "Backtracking",
+        "step": 1,
+        "description": "Visit, explore and restore each branch."
+      },
+      {
+        "name": "Complete-walk invariant",
+        "step": 2,
+        "description": "Remaining cells and the current route determine valid completion."
+      }
+    ]
+  },
+  "entrySha256": "1db0dff8a55239c603d00a0edc758ae333713c889c13521f84355ae367e90053",
+  "canonicalSha256": "abe291bca8cc7c644450e598ab5128269691de7dbf2410e3ac9603ea9de9921f",
+  "evidenceManifest": {
+    "specs/reviews/980-evidence/980-review-1-43fed71e/en-accept.png": {
+      "sha256": "ac248775d4ebd21d679f3609fdf97413fafae7eaf1a64cd0f95c7d213815d26e",
+      "bytes": 80812
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/cold-event-4.png": {
+      "sha256": "62cf0b22fb55a158313bb4fe1b960a16e428aaa5ec9cd02e5a063784e4b7529d",
+      "bytes": 698575
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/en-undo.png": {
+      "sha256": "e5a8b58a7792de913ec820f214f667c81b04729b40787fef8d5bf20d875b88d1",
+      "bytes": 76941
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/cold-event-3.png": {
+      "sha256": "6331a5145fe28c920eac380a4cfd97563e473dcec64e7c8ad73bbf98e2efe71d",
+      "bytes": 694272
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/independent-zh-1280.png": {
+      "sha256": "17ab19dc865901bf8899016e2b483780ac3078e5f103bf21619fc7705ed4466f",
+      "bytes": 134165
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/cold-initial.png": {
+      "sha256": "cd49300040307eb8ad09aba2da5a9fcc4e0970cd63f766f78e36fda23628da88",
+      "bytes": 677130
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/en-390.png": {
+      "sha256": "731a6751e814b62696c00ce371ae0dec92200d8e6a8a822e89b92ecd57371dfc",
+      "bytes": 67381
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/independent-zh-390.png": {
+      "sha256": "54dd0e3a8267761b5689220602ded6cdd321c5db8182b7236f65ccb820bbd457",
+      "bytes": 76056
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/zh-early.png": {
+      "sha256": "0c60e12fc86696dbbe3dd453a5e545bded034ab74f021dc998675c17fce19064",
+      "bytes": 101924
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/zh-accept.png": {
+      "sha256": "1da9a67ab51fd607e579a0fe3a8ce888164a4951dac4b6b76bad905c6fd4c6ac",
+      "bytes": 103118
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/en-early.png": {
+      "sha256": "e835d6f7843a2ddef571b3ca50d61b286322645677fedcdf4735bb93fd71a594",
+      "bytes": 78231
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/independent-320-zh-state.png": {
+      "sha256": "0c09964e9d5af9c0f89040366de9e02968e27ff3ffd420d854feabbca6636926",
+      "bytes": 61257
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/independent-en-320.png": {
+      "sha256": "0fea7f98c5b40fc285c4606aa4c13d8ac2ef0739d8ed0cad71b8c051a38af923",
+      "bytes": 55330
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/en-zoom-reflow.png": {
+      "sha256": "35007cc6b2909703f5043283bc1b6a2ea2336ce1dfec4166746a880a5fae12ba",
+      "bytes": 38342
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/contrast.json": {
+      "sha256": "8bef2de6b05d98362e05823cc373904794baf1230eef32b806fd82502391f5b3",
+      "bytes": 922
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/zh-csszoom200.png": {
+      "sha256": "8d893d8588a35639873e57e1c2dc04c8a1bf99dd352e0729b8b6d2c142768323",
+      "bytes": 112946
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/visual-states.json": {
+      "sha256": "5f43e409a16285d82a2eb9c8a071334507f2fb9f8cb9b0197465c8fa4be9f239",
+      "bytes": 1296
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/independent-en-390.png": {
+      "sha256": "87174c8af5d3e31aae3db7dbd303876aa9fc7fcc8f4f14a48819a7a6a317a249",
+      "bytes": 59609
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/numerical.json": {
+      "sha256": "502c93956b21663b9057907750d7ec1735c6e0c8fb2561271bafdac1adb19f7e",
+      "bytes": 2098
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/oracle-fixtures.json": {
+      "sha256": "987013d4d48049e0489c9e420534b68c94f75639fe182e22fe385474feba274b",
+      "bytes": 534
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/independent-zh-320.png": {
+      "sha256": "62e1a8367bec5ee94402649adf62f46b184b34a7d44f1190662f190ca5e072a8",
+      "bytes": 78660
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/en-736.png": {
+      "sha256": "7744a302ce9b4dd3b49e34f38f0b1ab5894f24bf34dfae3df1c4289bc3ae199c",
+      "bytes": 116277
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/en-csszoom200.png": {
+      "sha256": "a764b74330401ab572dd25cadd80c61e57256628b94436213894661527d4f34c",
+      "bytes": 103212
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/independent-en-1280.png": {
+      "sha256": "43e104909e805ea24628adc7c31fc91c387a59bafe50454cdb3a3d4f95b29add",
+      "bytes": 119049
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/download-en.py": {
+      "sha256": "abe291bca8cc7c644450e598ab5128269691de7dbf2410e3ac9603ea9de9921f",
+      "bytes": 995
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/zh-prediction.png": {
+      "sha256": "98e199d821002b9d05a23c538e84267e2e968b99abf95ac518e5a3956949db28",
+      "bytes": 91065
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/independent-zh-zoom.png": {
+      "sha256": "6a63cbfce8123fdcef7bf3a4b8f1982cbfd01a48e5ba302554ebfc606011ebd3",
+      "bytes": 88021
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/zh-undo.png": {
+      "sha256": "6f802dcf25b999100db57363abd959a61c6f243dc8bca3aed222ae40f3bc5716",
+      "bytes": 107912
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/en-1440.png": {
+      "sha256": "453cdb1360112974edd8a76598677d4fc4672f6d4a4d8eb506d57c4cb6f6c74c",
+      "bytes": 130142
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/independent-en-zoom.png": {
+      "sha256": "346412cda693408701976dee73126f9c8f8c10772699b9a93cfe33469c528826",
+      "bytes": 77576
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/en-320.png": {
+      "sha256": "ce17f39e3b0fee6543488eee3ea4be062e8ad75a65cd462059df1f78b421017e",
+      "bytes": 61038
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/independent-browser.json": {
+      "sha256": "fa721c3e0e239cf709b84a5170c0329a071495c9848dbc44fc3b3a8aa3c4019c",
+      "bytes": 5163
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/en-prediction.png": {
+      "sha256": "17f85d4d45b97299da7eb33d74c22d173be501fa5c1a0963afe336ab7490e18d",
+      "bytes": 71515
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/en-zoom200.png": {
+      "sha256": "01a977f6b991cd1b2f2249f263838d1ae09caa40f3587aaf1a617e3da46c33cc",
+      "bytes": 146338
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/zh-header.png": {
+      "sha256": "f6db4b75b5420d638f6cc0806ddc5db91e93833571c8501f70580a2fe167bca3",
+      "bytes": 91318
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/core.json": {
+      "sha256": "0f1985716667ff88e0180e0cfba257121d6c117e71cd8c3875833e7e17459f83",
+      "bytes": 108
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/en-header.png": {
+      "sha256": "9bc4d93633c6ca87c30eb5fc0c77a98b6645aaa7205912c9b607c13d75a0f0fe",
+      "bytes": 70838
+    },
+    "specs/reviews/980-evidence/980-review-1-43fed71e/cold-event-10.png": {
+      "sha256": "49eedf48c49a0fbbfce6bb296fdbdbbd7f06de216eddf72832615fab1c65d283",
+      "bytes": 717876
+    }
+  },
+  "runs": [
+    {
+      "record": {
+        "id": "980-author-4e73af33ad61",
+        "problem_id": "980",
+        "role": "author",
+        "started_at": "2026-10-25T20:29:40.427530+00:00",
+        "status": "completed",
+        "candidate": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+        "directory": "/home/songyy/projects/leetcode-hard-lane-state-980-20261026/runs/980-author-4e73af33ad61",
+        "session_ids": [
+          "01a174c1-3532-7970-89f4-1959f5540f0e"
+        ],
+        "finished_at": "2026-10-25T20:40:00.776552+00:00",
+        "result": {
+          "outcome": "ready",
+          "detail": "Implemented and froze bilingual lesson #980 in leetcode/980/. Passed 1,329 oracle cases, 720 simulation-frame checks, both-locale browser tests, source-transfer parity, visual inspection, contrast checks, and metadata preflight. Evidence and hashes recorded. Independent review remains pending; nothing committed or deployed."
+        }
+      },
+      "eventsSha256": "6577837302752d8075c38f36850341f05174a1f61070f435f30a979ad01d295f",
+      "final": {
+        "outcome": "ready",
+        "detail": "Implemented and froze bilingual lesson #980 in leetcode/980/. Passed 1,329 oracle cases, 720 simulation-frame checks, both-locale browser tests, source-transfer parity, visual inspection, contrast checks, and metadata preflight. Evidence and hashes recorded. Independent review remains pending; nothing committed or deployed."
+      },
+      "finalSha256": "05b15bfdd03a844d9c311149cb361d8261ecc2f2259006b0f8a3a1b070216c48",
+      "promptSha256": "ad857ac66958514a46511ff143313e3af68dab4a179688c2c122b0b032de9aa8",
+      "threadEvents": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a174c1-3532-7970-89f4-1959f5540f0e"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 2374386,
+            "cached_input_tokens": 2307200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 28967,
+            "reasoning_output_tokens": 6723
+          }
+        }
+      ]
+    },
+    {
+      "record": {
+        "id": "980-review-fcc41ae9eadf",
+        "problem_id": "980",
+        "role": "review",
+        "started_at": "2026-10-25T20:40:11.293008+00:00",
+        "status": "completed",
+        "candidate": "a440fe53769a1831f8e2f8f4f4bbd0195ff0906c",
+        "directory": "/home/songyy/projects/leetcode-hard-lane-state-980-20261026/runs/980-review-fcc41ae9eadf",
+        "session_ids": [
+          "01a174ca-d479-7a73-8463-fbb093fcbd21"
+        ],
+        "finished_at": "2026-10-25T20:44:44.115610+00:00",
+        "result": {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            3,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/980-review-1-43fed71e.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh canonical Python cases matched independent predictions and restored inputs.",
+            "Both locales, source parity, native copy fallback, layouts, keyboard and 200% scaling verified.",
+            "Non-mutating metadata preflight passed."
+          ],
+          "detail": "95/100; no required findings. Interrupted browser harness documented; separate independent browser checks passed. Acceptance covers the reviewed local candidate, not publication."
+        }
+      },
+      "eventsSha256": "dcc917e3a00249e121788b756cce5dafc7460c6836063874fd1e59f31890f52c",
+      "final": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          3,
+          4,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/980-review-1-43fed71e.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Fresh canonical Python cases matched independent predictions and restored inputs.",
+          "Both locales, source parity, native copy fallback, layouts, keyboard and 200% scaling verified.",
+          "Non-mutating metadata preflight passed."
+        ],
+        "detail": "95/100; no required findings. Interrupted browser harness documented; separate independent browser checks passed. Acceptance covers the reviewed local candidate, not publication."
+      },
+      "finalSha256": "40e7ab837289157bb3ba5f362b07561f7eae0fa2d750e66e80ec4a1244013142",
+      "promptSha256": "6ec321275d0c2e98371d478872365e84b20edc31691397b39809fb1612749d0c",
+      "threadEvents": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a174ca-d479-7a73-8463-fbb093fcbd21"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 1069403,
+            "cached_input_tokens": 1006336,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9746,
+            "reasoning_output_tokens": 686
+          }
+        }
+      ]
+    }
+  ],
+  "liveRunnerOrNative": [],
+  "reservation": {
+    "id": "980",
+    "base": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+    "repo": "/home/songyy/projects/leetcode-hard-lane-980-20261026",
+    "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-980-20261026",
+    "port": 18794,
+    "nice": 10,
+    "status": "started",
+    "started_at": "2026-10-25T20:29:13.081930+00:00",
+    "policy_sha256": "d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa",
+    "publication_enabled": false,
+    "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+    "runner_pid": 1614229,
+    "observed_current": {
+      "problem_id": "980",
+      "stage": "author",
+      "started_at": "2026-10-25T20:29:40.427530+00:00",
+      "run_id": "980-author-4e73af33ad61"
+    }
+  },
+  "registryEntry": {
+    "id": 980,
+    "title": {
+      "zh": "\u4e0d\u540c\u8def\u5f84 III",
+      "en": "Unique Paths III"
+    },
+    "desc": {
+      "zh": "\u4ece\u63d0\u524d\u5230\u8fbe\u7ec8\u70b9\u7684\u5931\u8d25\uff0c\u63a8\u5bfc\u8986\u76d6\u6bcf\u4e2a\u683c\u5b50\u7684\u56de\u6eaf\u8ba1\u6570\u3002",
+      "en": "Derive complete-walk backtracking from an early arrival that fails."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "\u56de\u6eaf",
+        "en": "Backtracking"
+      },
+      {
+        "zh": "\u7f51\u683c\u641c\u7d22",
+        "en": "Grid search"
+      }
+    ],
+    "path": "980/",
+    "leetcodeUrl": "https://leetcode.com/problems/unique-paths-iii/",
+    "language": "Python",
+    "complexity": "O(mn + 3^V) time; O(V) auxiliary space, V non-obstacle cells"
+  },
+  "registrySha256": "7b6b63f36b890fdf28c2eef13ae813f2af9382ebea1efe3c1a5c443f74812b55",
+  "reportSha256": "8cb266502c313f7ee2833d33c24ffbc5ef192b3445789bf80c5181726a2dc7f0"
+}

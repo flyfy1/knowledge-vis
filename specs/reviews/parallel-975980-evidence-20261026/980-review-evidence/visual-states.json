@@ -1,0 +1,39 @@
+{
+  "kind": "author self-check",
+  "rows": [
+    {
+      "lang": "en",
+      "state": "early",
+      "readout": "Current path (0,0) → (0,1); unused squares remaining=2; valid walks found through this event=0."
+    },
+    {
+      "lang": "en",
+      "state": "undo",
+      "readout": "Current path (0,0); unused squares remaining=3; valid walks found through this event=0."
+    },
+    {
+      "lang": "en",
+      "state": "accept",
+      "readout": "Current path (0,0) → (1,0) → (1,1) → (0,1); unused squares remaining=0; valid walks found through this event=1."
+    },
+    {
+      "lang": "zh",
+      "state": "early",
+      "readout": "当前路线 (0,0) → (0,1)；未用格 remaining=2；截至本事件已找到的合格路线=0。"
+    },
+    {
+      "lang": "zh",
+      "state": "undo",
+      "readout": "当前路线 (0,0)；未用格 remaining=3；截至本事件已找到的合格路线=0。"
+    },
+    {
+      "lang": "zh",
+      "state": "accept",
+      "readout": "当前路线 (0,0) → (1,0) → (1,1) → (0,1)；未用格 remaining=0；截至本事件已找到的合格路线=1。"
+    }
+  ],
+  "consoleErrors": [],
+  "forcedColorsFocus": true,
+  "reducedMotion": true,
+  "zoom": "CSS zoom=2 in real Chromium in addition to main harness CDP 2x and 720px reflow checks"
+}
