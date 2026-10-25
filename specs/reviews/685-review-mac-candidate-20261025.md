@@ -46,3 +46,33 @@ reviewer remains responsible for lesson acceptance.
 Evidence and original runner: `685-evidence/mac-candidate-cfba14b-20261025/`.
 Original JSON labels say author self-check; these are dispatcher reruns on the
 Mac against the frozen candidate, not a substitute for independent review.
+
+## Required native-selector finding after the broad suite
+
+Independent review `685-review-1-6f12f2a6.md` rejected this candidate at 88.75/100
+with required finding 685-R1-001. Its longest English preset hides the word
+“row” at 320px. This supersedes any inference of complete device readiness from
+the passing broad checks above; those checks did not inspect that closed value.
+
+A dispatcher probe against the unchanged frozen candidate reproduces the same
+failure on Mac Chromium: 20 preset × locale × width records, one necessary
+text-fit failure. English preset 3 at 320px measures 230.12794494628906px of text
+against 230px of content width even before reserving arrow space. The inspected
+ordinary element screenshot visibly reads “Answer precedes the last”; at 390px
+it reads the complete “Answer precedes the last row”. The probe exits 1; the
+wrapper's CalledProcessError represents this expected red assertion. The saved
+computed font stack is not a claim about the exact resolved font.
+
+Ranked predictions before further testing: (1) label width exceeds native space,
+so changing only its length should restore the complete selected value; (2)
+locale switching changes the actual label, which would produce different text
+before/after a roundtrip; (3) capture obstruction hides the end, which an isolated
+ordinary control capture would remove. The current 320/390 comparison and
+isolated captures support the first explanation. The independent review also
+reproduced the failure after EN→ZH→EN. Repair and unchanged regression rerun are
+pending; this record does not close the finding.
+
+Original probe, results and inspected screenshots:
+`685-evidence/mac-native-clipping-20261025/`. The zero-arrow width check only
+proves definite overflow for this single-line original. Passing this necessary
+check alone would not prove arrow clearance or support a wrapping repair.
