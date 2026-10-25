@@ -1,0 +1,6 @@
+Author regression before editing candidate copy, 2026-10-25.
+Command: node leetcode/312/tests/reopened-index-check.js
+Exit: 1
+AssertionError at checkQuestion: missing values=[1,2,1,2,1].
+Observed English legend: Fresh case: nums=[2,1,2]. For interval (0,4), if index 2 is last, what is the product term in the three-term sum?
+Hand-derived conflict: padded index 2 has value 1; original nums[2] has value 2 at padded index 3.
