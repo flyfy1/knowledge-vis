@@ -1,0 +1,14 @@
+{
+  "description": "Conservative minimum: shared rgba(13,17,23,.96) composited over white, darker backing only increases muted text contrast",
+  "compositedBackground": [
+    22.68,
+    26.520000000000003,
+    32.28
+  ],
+  "muted": [
+    154,
+    167,
+    184
+  ],
+  "minimumRatio": 7.1065771774304896
+}
