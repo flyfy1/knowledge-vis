@@ -1,0 +1,8 @@
+AssertionError [ERR_ASSERTION]: 'none' == 'solid'
+    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/798/tests/browser.cjs:69:121 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'none',
+  expected: 'solid',
+  operator: '=='
+}

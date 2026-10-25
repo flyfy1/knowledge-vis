@@ -1,0 +1,11 @@
+{
+  "accessedAt": "2026-10-25T16:01:21.322802+00:00",
+  "endpoint": "https://leetcode.com/graphql/",
+  "officialSource": "https://leetcode.com/problems/smallest-rotation-with-highest-score/",
+  "request": {
+    "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId title titleSlug difficulty isPaidOnly content exampleTestcases codeSnippets { lang langSlug code } } }",
+    "variables": {
+      "titleSlug": "smallest-rotation-with-highest-score"
+    }
+  }
+}
