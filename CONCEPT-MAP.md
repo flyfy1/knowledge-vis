@@ -1385,3 +1385,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Frozen-frontier simulation | `leetcode/749/#step2` | Compute all regions before quarantine and simultaneous one-layer spread. |
 
 <!-- /leetcode-749-campaign -->
+
+
+<!-- leetcode-753-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Password overlap graph | `leetcode/753/#step1` | Encode length-n passwords as edges between length-(n-1) suffixes. |
+| Iterative Euler circuit | `leetcode/753/#step2` | Consume each password edge once and reverse incoming digits at finishing time. |
+
+<!-- /leetcode-753-campaign -->

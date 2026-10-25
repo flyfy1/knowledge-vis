@@ -2775,6 +2775,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O((D+1)mn) time, D ≤ mn, hence O((mn)²) worst case; O(mn) auxiliary space"
   },
   {
+    "id": 753,
+    "title": {
+      "zh": "破解保险箱",
+      "en": "Cracking the Safe"
+    },
+    "desc": {
+      "zh": "让相邻密码重叠，用每条边一次构造最短开锁串。",
+      "en": "Overlap passwords and use each edge once to build a shortest unlocking string."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "欧拉回路",
+        "en": "Euler circuit"
+      },
+      {
+        "zh": "de Bruijn 序列",
+        "en": "de Bruijn sequence"
+      }
+    ],
+    "path": "753/",
+    "leetcodeUrl": "https://leetcode.com/problems/cracking-the-safe/",
+    "language": "Python",
+    "complexity": "O(k^n + n) time; O(k^n + n) space including output"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
