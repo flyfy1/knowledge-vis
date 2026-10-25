@@ -1,0 +1,56 @@
+[
+  {
+    "id": 782,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "782",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.037
+  },
+  {
+    "id": 782,
+    "name": "check.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/782/tests/check.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.079
+  },
+  {
+    "id": 782,
+    "name": "core.cjs",
+    "command": [
+      "node",
+      "leetcode/782/tests/core.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.052
+  },
+  {
+    "id": 782,
+    "name": "browser.cjs",
+    "command": [
+      "node",
+      "leetcode/782/tests/browser.cjs"
+    ],
+    "exit_code": 1,
+    "seconds": 7.375
+  },
+  {
+    "id": 782,
+    "name": "focused.cjs",
+    "command": [
+      "node",
+      "leetcode/782/tests/focused.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 1.115
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "cases": 704,
+  "exhaustive": "every binary 2\u00d72 and 3\u00d73 board vs legal-swap BFS and permutation baseline",
+  "seed": 782,
+  "canonical": "solution.py executed using official Solution.movesToChessboard interface",
+  "mutation": "unchanged",
+  "largest": "n=30 grouped = 14; constant = -1; alternating = 0"
+}
