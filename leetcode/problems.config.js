@@ -3177,6 +3177,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n · 2^ceil(n/2)) expected time; O(2^ceil(n/2)) space"
   },
   {
+    "id": 810,
+    "title": {
+      "zh": "黑板异或游戏",
+      "en": "Chalkboard XOR Game"
+    },
+    "desc": {
+      "zh": "从一次擦除看清输赢规则，用异或与奇偶性代替博弈搜索。",
+      "en": "Explore losing erasures, then replace game search with XOR and parity."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "博弈",
+        "en": "Game theory"
+      },
+      {
+        "zh": "位运算",
+        "en": "Bit manipulation"
+      }
+    ],
+    "path": "810/",
+    "leetcodeUrl": "https://leetcode.com/problems/chalkboard-xor-game/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
