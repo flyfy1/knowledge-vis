@@ -3281,6 +3281,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) time; O(n²) auxiliary space"
   },
   {
+    "id": 828,
+    "title": {
+      "zh": "统计所有子串中的唯一字符",
+      "en": "Count Unique Characters of All Substrings of a Given String"
+    },
+    "desc": {
+      "zh": "从 ABA 的六个子串，推导每个字符位置的贡献。",
+      "en": "Derive occurrence contributions from the six substrings of ABA."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贡献计数",
+        "en": "Contribution counting"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "828/",
+    "leetcodeUrl": "https://leetcode.com/problems/count-unique-characters-of-all-substrings-of-a-given-string/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
