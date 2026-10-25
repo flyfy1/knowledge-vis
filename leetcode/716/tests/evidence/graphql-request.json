@@ -1,0 +1,6 @@
+{
+  "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug isPaidOnly content exampleTestcases codeSnippets { lang langSlug code } metaData } }",
+  "variables": {
+    "titleSlug": "max-stack"
+  }
+}
