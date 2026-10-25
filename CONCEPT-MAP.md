@@ -1163,3 +1163,22 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Exact memoized insertion search | `leetcode/488/#step4` | Enumerate all legal successor states, including setup moves, and reuse identical subproblems. |
 
 <!-- /leetcode-488-campaign -->
+
+
+<!-- leetcode-552-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Attendance counting with six states | `leetcode/552/#step2` | Group valid prefixes by absences used and trailing late run. |
+| Counting invariant and rolling arrays | `leetcode/552/#step4` | Maintain disjoint counts with fresh next-day storage. |
+
+<!-- /leetcode-552-campaign -->
+
+
+<!-- leetcode-546-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Interval DP with a carried boundary | `leetcode/546/#step2` | Remember saved equal-color boxes while clearing the separating interval. |
+
+<!-- /leetcode-546-campaign -->

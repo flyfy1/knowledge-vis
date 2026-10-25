@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-25T01:23:18.354735+00:00",
+  "officialUrl": "https://leetcode.com/problems/the-maze-iii/",
+  "endpoint": "https://leetcode.com/graphql/",
+  "request": {
+    "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug isPaidOnly content exampleTestcases sampleTestCase codeSnippets { lang langSlug code } } }",
+    "variables": {
+      "titleSlug": "the-maze-iii"
+    }
+  },
+  "authentication": "None; public request only",
+  "status": 200,
+  "response": {
+    "data": {
+      "question": {
+        "questionId": "499",
+        "questionFrontendId": "499",
+        "title": "The Maze III",
+        "titleSlug": "the-maze-iii",
+        "isPaidOnly": true,
+        "content": null,
+        "exampleTestcases": "[[0,0,0,0,0],[1,1,0,0,1],[0,0,0,0,0],[0,1,0,0,1],[0,1,0,0,0]]\n[4,3]\n[0,1]\n[[0,0,0,0,0],[1,1,0,0,1],[0,0,0,0,0],[0,1,0,0,1],[0,1,0,0,0]]\n[4,3]\n[3,0]\n[[0,0,0,0,0,0,0],[0,0,1,0,0,1,0],[0,0,0,0,1,0,0],[0,0,0,0,0,0,1]]\n[0,4]\n[3,5]",
+        "sampleTestCase": "[[0,0,0,0,0],[1,1,0,0,1],[0,0,0,0,0],[0,1,0,0,1],[0,1,0,0,0]]\n[4,3]\n[0,1]",
+        "codeSnippets": null
+      }
+    }
+  },
+  "statementAvailable": false,
+  "interfacesAvailable": false,
+  "result": "blocked"
+}
