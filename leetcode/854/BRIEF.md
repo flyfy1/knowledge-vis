@@ -25,3 +25,44 @@ Validation plan: independent unrestricted swap oracle, exhaustive small anagrams
 ## Frozen author outcome
 
 Implementation and author self-check complete. Independent review pending. Numerical results: 4,926 oracle comparisons plus 8 fixtures; 7 preset and 180 seeded complete core traces. Real Chromium: both locales, all presets, 16 width/zoom layouts, source transfer, native fallback, local/offline/blocked storage, focus/keyboard and destination links passed. Shared+local CSS 11,817 bytes. `python3 -B scripts/register_leetcode_lesson.py 854 --validate-only` from repository root exited 0; see tests/evidence/preflight.json. See SELF-CHECK.md and candidate.json for bounded evidence and file identity. This author run neither registers nor publishes the lesson.
+
+## Approved proof bridge revision — 854-BRIDGE-R1
+
+This isolated candidate implements the dispatcher brief from
+`specs/reviews/854-tagged-cycle-revision-request-20261026.md` and separate
+`cycle_design_review` design review `854-tagged-cycle-design-review-20261026.md`
+(source documents in the root repository). All four P0 recommendations are adopted;
+no overrides. Existing accepted algorithm/core and canonical source are unchanged.
+The historical author outcome above remains a record of r1, not acceptance of this
+revision. A fresh independent lesson review remains required.
+
+Reuse verdict: one four-snapshot example between `proof` and `proof2` in section03
+(`#step2`). The high-return transition changes only two destination assignments,
+leaving letters and actual-swap count unchanged. Complete EN/ZH explanations
+contrast that zero-cost relabeling with two physical swaps. The original answer is
+2 throughout; the first assignment's3 is not its lower bound. The general proof
+and all-eligible-j requirement remain explicit. No second scored quiz is added.
+
+One `bridgeRow` index drives the fixed data, counters, explanation and endpoint
+controls. It is independent of hand swaps, BFS frames/preset, prediction and copy
+state. Locale rerender preserves it. Controls retain their DOM identities; only
+snapshot contents are replaced, with no animation or automatic transitions.
+A rhetorical prompt is derived from row0; row1 supplies its answer. There is no
+pending/network/error/reconnect state for this synchronous example.
+
+Exact palette/type/control tokens above are reused. Geometry uses the existing
+8/12/16px spacing values, 8px control radius, 1px boundaries and 3px double changed
+boundary. Tokens/counter numerals use26px, matching the shared `.metric b` scale;
+no new type scale is introduced. The existing560px breakpoint changes four token
+columns to two and stacks the counters. Four position cards have minmax(0,1fr)
+columns with wrapping; they never shrink text to make a single narrow row. 48px
+control targets and3px orange focus remain. Changed destinations/tokens have
+visible text labels as well as a double border; no meaning relies on color.
+
+P0: all four snapshots, complete bilingual causal text, separate counters and
+state preservation, keyboard/native disabled semantics, and narrow/magnified
+readability. P1/P2: none. Deferred arbitrary inputs, animation, all-row comparison
+mode and general permutation machinery have no demonstrated need for this small
+proof bridge. Validate the rendered mappings and transitions, old interaction
+state, clipboard/source parity and layout; do not rerun the unchanged solver's
+large numeric suite simply for this explanatory widget.
