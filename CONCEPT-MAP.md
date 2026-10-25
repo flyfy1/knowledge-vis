@@ -1416,3 +1416,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Prefix-free sibling exchange proof | `leetcode/761/#step3` | Minimal special blocks justify ordinary descending lexical sorting. |
 
 <!-- /leetcode-761-campaign -->
+
+
+<!-- leetcode-765-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Fixed prefix and position map | `leetcode/765/#step2` | Repair a seat block while preserving completed blocks and exact person positions. |
+| Cycle lower bound | `leetcode/765/#step3` | At most one component is added per swap; greedy reaches n components in n-c swaps. |
+
+<!-- /leetcode-765-campaign -->
