@@ -1,0 +1,115 @@
+[
+  {
+    "input": [
+      0,
+      4,
+      2
+    ],
+    "python": 2,
+    "independent_BFS": 2
+  },
+  {
+    "input": [
+      3,
+      0,
+      3,
+      2
+    ],
+    "python": 1,
+    "independent_BFS": 1
+  },
+  {
+    "input": [
+      0,
+      0,
+      0,
+      4
+    ],
+    "python": 3,
+    "independent_BFS": 3
+  },
+  {
+    "input": [
+      4,
+      0,
+      0,
+      0
+    ],
+    "python": 3,
+    "independent_BFS": 3
+  },
+  {
+    "input": [
+      1
+    ],
+    "python": 0,
+    "independent_BFS": 0
+  },
+  {
+    "input": [
+      0
+    ],
+    "python": 0,
+    "independent_BFS": 0
+  },
+  {
+    "input": [
+      0,
+      1
+    ],
+    "python": -1,
+    "independent_BFS": -1
+  },
+  {
+    "input": [
+      2,
+      2
+    ],
+    "python": 0,
+    "independent_BFS": 0
+  },
+  {
+    "input": [
+      0,
+      0,
+      0
+    ],
+    "python": 0,
+    "independent_BFS": 0
+  },
+  {
+    "asset": "index.html",
+    "sha256": "fc2d058d88b8104ecd289653d22e200f8aa043e7652cd8b20ff88eea04750911",
+    "servedExact": true
+  },
+  {
+    "asset": "style.css",
+    "sha256": "677791b43f3769e34d24e3520a18273226ee7f2b547a61530b6dc71dbd4bc966",
+    "servedExact": true
+  },
+  {
+    "asset": "copy.js",
+    "sha256": "5bdb7cba9896cba5334f8973d401f5052182c553679999363330aeadbe0c6b10",
+    "servedExact": true
+  },
+  {
+    "asset": "app.js",
+    "sha256": "406049aacc8e7139fa496433ee5f7b8b6215b4130cd0b33ad2557385746e6fc2",
+    "servedExact": true
+  },
+  {
+    "asset": "core.js",
+    "sha256": "431fe250cf3adeee823715838986517fb20d8d0e0a3cddd93c0560c51ec337a2",
+    "servedExact": true
+  },
+  {
+    "asset": "python-code.js",
+    "sha256": "d93b247a14fb9307a38cb07403de69e2ac7f3ee9840891a9797f9f184cee0835",
+    "servedExact": true
+  },
+  {
+    "asset": "solution.py",
+    "sha256": "5dd7b2ddb34d408197e95fb38a4ecfd4dff573001c336d29f992b65a811dd813",
+    "servedExact": true
+  }
+]

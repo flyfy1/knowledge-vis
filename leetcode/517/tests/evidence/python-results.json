@@ -1,0 +1,8 @@
+{
+  "oracleChecks": 415,
+  "largeAndOfficialChecks": 11,
+  "seed": 517,
+  "visibleBaselineChecks": 415,
+  "handScheduleTransitions": 3,
+  "method": "BFS over actual simultaneous legal moves; input immutability checked"
+}

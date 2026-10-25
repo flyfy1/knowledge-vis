@@ -1,0 +1,94 @@
+{
+  "report": [
+    {
+      "lang": "en",
+      "formula": "Minimum moves M = maxᵢ ( |bᵢ|, dᵢ ), where bᵢ = d₁+…+dᵢ, provided the total is divisible by n.",
+      "quiz": "Correct. d=[2,−2,−2,2], b=[2,0,−2,0]; both max |b| and max d are 2. Each endpoint sends one dress inward per move, yielding [2,2,2,2] after 2 moves. Choosing 4 adds parallel work; choosing 1 overlooks each endpoint’s two sends.",
+      "presets": 6
+    },
+    {
+      "lang": "zh",
+      "formula": "最少轮数 M = maxᵢ ( |bᵢ|, dᵢ )，其中 bᵢ = d₁+…+dᵢ，且总数可整除 n。",
+      "quiz": "正确。 d=[2,−2,−2,2]，b=[2,0,−2,0]，最大 |b| 与最大 d 都是 2。两端每轮各送一件，2 轮后得到 [2,2,2,2]。4 误把可并行的工作相加；1 忽略每个端点都要送两件。",
+      "presets": 6
+    }
+  ],
+  "contrast": [
+    {
+      "role": "body",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "role": "muted panel",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "role": "muted stage",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "role": "accent panel",
+      "foreground": "rgb(110, 231, 255)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 11.974898815275662
+    },
+    {
+      "role": "selected",
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "role": "focus stage",
+      "foreground": "rgb(255, 180, 84)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "role": "disabled text",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    }
+  ],
+  "focus": {
+    "tag": "BUTTON",
+    "outline": "3px"
+  },
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18775/leetcode/517/",
+    "http://127.0.0.1:18775/leetcode/style.css",
+    "http://127.0.0.1:18775/leetcode/517/style.css?v=517-1",
+    "http://127.0.0.1:18775/leetcode/common.js",
+    "http://127.0.0.1:18775/leetcode/517/copy.js?v=517-1",
+    "http://127.0.0.1:18775/leetcode/517/core.js?v=517-1",
+    "http://127.0.0.1:18775/leetcode/517/python-code.js?v=517-1",
+    "http://127.0.0.1:18775/leetcode/517/app.js?v=517-1",
+    "http://127.0.0.1:18775/leetcode/517/",
+    "http://127.0.0.1:18775/leetcode/style.css",
+    "http://127.0.0.1:18775/leetcode/517/style.css?v=517-1",
+    "http://127.0.0.1:18775/leetcode/common.js",
+    "http://127.0.0.1:18775/leetcode/517/copy.js?v=517-1",
+    "http://127.0.0.1:18775/leetcode/517/core.js?v=517-1",
+    "http://127.0.0.1:18775/leetcode/517/python-code.js?v=517-1",
+    "http://127.0.0.1:18775/leetcode/517/app.js?v=517-1"
+  ],
+  "checks": [
+    "Both locales and all presets",
+    "Schedule and scan rewind/reset/end",
+    "Every prediction option, change clears feedback, locale preserves reveal",
+    "Clipboard actual readback, denial selection, download bytes",
+    "Links and deep anchors",
+    "Keyboard and focus",
+    "320/390/736/1440 and 200% CSS layout zoom",
+    "Blocked storage, source available offline"
+  ],
+  "zoomMethod": "200% CSS layout zoom at 780px; no claim of real-device or OS zoom testing"
+}
