@@ -1,0 +1,25 @@
+{
+  "status": "prepared-not-dispatched",
+  "validated_at": "2026-10-25T18:20:12.399370+00:00",
+  "tests_passed": 12,
+  "test_exit_code": 0,
+  "hashes": {
+    "operate.py": "600583b0d1f8e53310e4342cd1292805ba2b130eba4f38a67c8db503d7594af0",
+    "test_operate.py": "977eeb3650a45cce04369cf68e85b3554c23190bb6eb1330f233de6f6b979bf6",
+    "capture-pins.py": "5bd673a517618f133ece3c13a45a75688dfb453fad9fc45e7cca0fb459f02ebb",
+    "pins.json": "41b1113194004167423e42f20ac9f2c4d2f8069709dc0187c5525c433e2f6d93"
+  },
+  "lane_outcomes": {
+    "960": {
+      "candidate": "a85f8ad95c969aae56e1c9f698c21c175c7464cb",
+      "score": 100.0,
+      "head": "ce87514b3d29d4c3e9b79fc4d560fa54ed8c23c4"
+    },
+    "964": {
+      "candidate": "b01fe1e86156906cbbbede74941146920dedfcd5",
+      "score": 92.5,
+      "head": "bb3440c2c9376ac2303d7ab7612ffbfdf3949f0c"
+    }
+  },
+  "pi_mutations": false
+}
