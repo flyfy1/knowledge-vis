@@ -1,0 +1,25 @@
+{
+  "kind": "author self-check; no registration or independent acceptance",
+  "command": "python3 -B scripts/register_leetcode_lesson.py 685 --validate-only",
+  "cwd": "/home/songyy/projects/leetcode-hard-lane-685-20261025",
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "",
+  "before": {
+    "leetcode/685/lesson-entry.json": "524191cd492072913c6e6974e839c2350128e4836c8fa553f22e6491bbff044c",
+    "leetcode/problems.config.js": "dcfe7e1ed58eb68cceef5f247d15e463e45029a2c5356720ab82fca0fc0a9652",
+    "CONCEPT-MAP.md": "ecae1525883eead8aad94ed37e5e314d2bf7aa39a5a72bbd9c268366af4aad49",
+    "leetcode/index.html": "9d8930ba7c4f089d6c689e9e05a7663ee5e8bb9a5025240fa950208fd166f992",
+    "pages.config.js": "51bce5252cb0f439357a58a2c2753c1b411dcb66639c7edfe135003993f63fbf"
+  },
+  "after": {
+    "leetcode/685/lesson-entry.json": "524191cd492072913c6e6974e839c2350128e4836c8fa553f22e6491bbff044c",
+    "leetcode/problems.config.js": "dcfe7e1ed58eb68cceef5f247d15e463e45029a2c5356720ab82fca0fc0a9652",
+    "CONCEPT-MAP.md": "ecae1525883eead8aad94ed37e5e314d2bf7aa39a5a72bbd9c268366af4aad49",
+    "leetcode/index.html": "9d8930ba7c4f089d6c689e9e05a7663ee5e8bb9a5025240fa950208fd166f992",
+    "pages.config.js": "51bce5252cb0f439357a58a2c2753c1b411dcb66639c7edfe135003993f63fbf"
+  },
+  "unchanged": true,
+  "complexity": "O(n \u03b1(n)) amortized time; O(n) auxiliary space",
+  "checkedAt": "2026-10-25T04:27:07.359674+00:00"
+}

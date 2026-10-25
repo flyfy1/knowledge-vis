@@ -2403,6 +2403,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(1) time and O(1) auxiliary space for exactly four bounded cards"
   },
   {
+    "id": 685,
+    "title": {
+      "zh": "冗余连接 II",
+      "en": "Redundant Connection II"
+    },
+    "desc": {
+      "zh": "区分双亲冲突与环，用过滤后的森林找出该删的有向边。",
+      "en": "Separate a two-parent conflict from a cycle and repair the filtered forest."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "图",
+        "en": "Graphs"
+      },
+      {
+        "zh": "并查集",
+        "en": "Disjoint-set union"
+      }
+    ],
+    "path": "685/",
+    "leetcodeUrl": "https://leetcode.com/problems/redundant-connection-ii/",
+    "language": "Python",
+    "complexity": "O(n α(n)) amortized time; O(n) auxiliary space"
+  },
+  {
     "id": 689,
     "title": {
       "zh": "三个无重叠子数组的最大和",
