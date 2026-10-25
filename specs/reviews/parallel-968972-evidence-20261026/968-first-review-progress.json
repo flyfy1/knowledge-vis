@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "repo": "/home/songyy/projects/leetcode-hard-lane-968-20261026",
+  "queue": [
+    "968"
+  ],
+  "expected_head": "679fd3c6183879e62f719374325c46bae8da59e4",
+  "started_at": "2026-10-25T18:34:06.569729+00:00",
+  "status": "running",
+  "current": {
+    "problem_id": "968",
+    "stage": "fix",
+    "started_at": "2026-10-25T18:58:28.711671+00:00",
+    "run_id": "968-fix-8320be058fe2"
+  },
+  "problems": {
+    "968": {
+      "status": "changes_required",
+      "rounds": 1,
+      "new": true,
+      "phase": "fix",
+      "reviews": [
+        {
+          "outcome": "changes_required",
+          "scores": [
+            4,
+            4,
+            4,
+            3,
+            4,
+            4
+          ],
+          "required_open": [
+            "968-R1"
+          ],
+          "report_path": "specs/reviews/968-review-1-1fe9cf12.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Canonical Python and independent examples passed; metadata preflight exited 0.",
+            "Both locales, narrow layouts, keyboard, zoom and exact source transfers checked.",
+            "Full-tree decision 6/7: older B camera and current C camera have identical cyan outlines, contradicting the promised orange current marker."
+          ],
+          "detail": "95/100. Required visual finding 968-R1 remains open despite passing algorithm and browser tests.",
+          "run_id": "968-review-d31caa3b2d37",
+          "candidate": "fe87684237ab7c00f0b6c08692b9187691be8d3c",
+          "candidate_sha256": "63caa2b70dc4ec1f593a7513576828ed5b5c1b2ea84583285a5b5bd42b9178af",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "679fd3c6183879e62f719374325c46bae8da59e4"
+        }
+      ],
+      "author_runs": [
+        "968-author-ada4a312abf5"
+      ],
+      "prior_report": "specs/reviews/968-review-1-1fe9cf12.md",
+      "candidate": "fe87684237ab7c00f0b6c08692b9187691be8d3c"
+    }
+  },
+  "runs": [
+    {
+      "id": "968-author-ada4a312abf5",
+      "problem_id": "968",
+      "role": "author",
+      "started_at": "2026-10-25T18:34:07.175431+00:00",
+      "status": "completed",
+      "candidate": "58cb97e51878f40e234b3e78a8bf9adb24f30c51",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-968-20261026/runs/968-author-ada4a312abf5",
+      "session_ids": [
+        "01a17457-68f2-7141-bebb-cebe22c0bb3e"
+      ],
+      "finished_at": "2026-10-25T18:48:30.432922+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented the complete bilingual #968 lesson in leetcode/968/. Official Python interface verified; oracle, invariant, browser, clipboard, source-parity, accessibility and metadata checks passed. Evidence and frozen hashes recorded. Ready for separate independent review; no acceptance or deployment claimed."
+      }
+    },
+    {
+      "id": "968-review-d31caa3b2d37",
+      "problem_id": "968",
+      "role": "review",
+      "started_at": "2026-10-25T18:48:42.005653+00:00",
+      "status": "completed",
+      "candidate": "fe87684237ab7c00f0b6c08692b9187691be8d3c",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-968-20261026/runs/968-review-d31caa3b2d37",
+      "session_ids": [
+        "01a17464-c2bc-72e0-9d18-ed36086e7468"
+      ],
+      "finished_at": "2026-10-25T18:58:19.718017+00:00",
+      "result": {
+        "outcome": "changes_required",
+        "scores": [
+          4,
+          4,
+          4,
+          3,
+          4,
+          4
+        ],
+        "required_open": [
+          "968-R1"
+        ],
+        "report_path": "specs/reviews/968-review-1-1fe9cf12.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Canonical Python and independent examples passed; metadata preflight exited 0.",
+          "Both locales, narrow layouts, keyboard, zoom and exact source transfers checked.",
+          "Full-tree decision 6/7: older B camera and current C camera have identical cyan outlines, contradicting the promised orange current marker."
+        ],
+        "detail": "95/100. Required visual finding 968-R1 remains open despite passing algorithm and browser tests."
+      }
+    },
+    {
+      "id": "968-fix-8320be058fe2",
+      "problem_id": "968",
+      "role": "fix",
+      "started_at": "2026-10-25T18:58:28.711671+00:00",
+      "status": "running",
+      "candidate": "679fd3c6183879e62f719374325c46bae8da59e4",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-968-20261026/runs/968-fix-8320be058fe2",
+      "session_ids": []
+    }
+  ],
+  "updated_at": "2026-10-25T18:58:28.711783+00:00"
+}
