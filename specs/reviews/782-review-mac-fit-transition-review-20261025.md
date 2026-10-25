@@ -82,3 +82,20 @@ its #782 fix phase after execution.
 
 Only this review report was written. No shared policy, implementation, state,
 Git history or production content was changed by this reviewer.
+
+## Dispatcher execution receipt
+
+The separately reviewed helper was executed only after the exact original review
+completed, central state was stopped, and both original runner/reviewer processes
+were absent. Source `8529e08052e4cc3b7cd8cfa3fc3290d3a387d89d` was imported from
+central review HEAD `b517b762f7e31a0d701f3ab5879bca14229c381f`, producing
+`cbd91d8e377c8d994e1f2e87044530115304d80c` at 2026-10-25T12:33:06Z.
+The [completed durable receipt](782-evidence/mac-fit-reopen-20261025/reopen-receipt.json)
+retains the original 96.25/100 accepted review, unchanged histories and queue.
+
+Observed actual resumed runner PID 1099190 and fix-author child PID 1099481;
+current run `782-fix-c54aaacb630f` started at 12:33:10.701760Z. The owned STOP is
+absent. Existing #803 and #805 runners remained live and reached independent
+review runs `803-review-627c02c2a810` and `805-review-094f101326af` respectively.
+This records executed handoff and live repair work, not completed repair, Mac
+closure, lane acceptance/import or public publication. Shared policy was unchanged.
