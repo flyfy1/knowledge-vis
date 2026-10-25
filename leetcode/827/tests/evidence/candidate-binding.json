@@ -1,0 +1,28 @@
+{
+  "kind": "author rendered identity/value self-check",
+  "result": "pass",
+  "records": [
+    {
+      "locale": "en",
+      "input": "[[1,1,0],[1,0,0],[0,0,0]]",
+      "currentCandidate": {
+        "r": 2,
+        "c": 2,
+        "area": 1
+      },
+      "bestSoFar": 4,
+      "visible": "Operation 7/8 · Tested zero (2,2), candidate area 1 · best (completed islands and tested candidates) = 4 cells"
+    },
+    {
+      "locale": "zh",
+      "input": "[[1,1,0],[1,0,0],[0,0,0]]",
+      "currentCandidate": {
+        "r": 2,
+        "c": 2,
+        "area": 1
+      },
+      "bestSoFar": 4,
+      "visible": "操作 7/8 · 已测试水格 (2,2)，候选面积 1 · best（已编号岛及已测候选最大值）= 4 格"
+    }
+  ]
+}

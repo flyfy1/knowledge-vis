@@ -1,0 +1,9 @@
+{
+  "kind": "author non-mutating preflight",
+  "command": "python3 -B scripts/register_leetcode_lesson.py 827 --validate-only",
+  "at": "2026-10-25T17:44:56.997110+00:00",
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "",
+  "result": "pass"
+}

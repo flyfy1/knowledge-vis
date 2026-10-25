@@ -1,0 +1,326 @@
+window.COPY = {
+  "docTitle": [
+    "#827 最大人工岛",
+    "#827 Making A Large Island"
+  ],
+  "back": [
+    "← LeetCode 知识索引",
+    "← LeetCode collection"
+  ],
+  "title": [
+    "#827 · 最大人工岛",
+    "#827 · Making A Large Island"
+  ],
+  "intro": [
+    "把一格水变成陆地，能把哪些岛连成一片？先数格子，再学会只数每座岛一次。",
+    "Turn one water cell into land. Which islands become connected? Count cells first, then learn to count each island only once."
+  ],
+  "official": [
+    "官方题目 ↗",
+    "Official problem ↗"
+  ],
+  "hard": [
+    "困难 · Python",
+    "Hard · Python"
+  ],
+  "nav0": [
+    "1 · 一次翻转",
+    "1 · One flip"
+  ],
+  "nav1": [
+    "2 · 重复的工作",
+    "2 · Repeated work"
+  ],
+  "nav2": [
+    "3 · 给岛编号",
+    "3 · Label islands"
+  ],
+  "nav3": [
+    "4 · 先预测",
+    "4 · Predict first"
+  ],
+  "nav4": [
+    "5 · 实现与边界",
+    "5 · Code & boundaries"
+  ],
+  "s0t": [
+    "一格水怎样连起两座岛？",
+    "How can one water cell join two islands?"
+  ],
+  "s0e": [
+    "左上与右下各有一格陆地。岛是通过上、下、左、右相连的一组 1；面积就是格子数。对角线不算连接，所以原来最大面积是 1。把右上水格变成 1，它同时接触两格陆地，面积变成 1+1+1=3。",
+    "The top-left and bottom-right cells each contain land. An island is a group of 1s connected up, down, left or right; its area is its number of cells. Diagonals do not connect, so the original largest area is 1. Flip the top-right water cell: it touches both land cells, making 1+1+1=3."
+  ],
+  "contract": [
+    "输入为 n×n 的 0/1 方阵，1≤n≤500。至多把一个 0 改成 1，返回操作后最大的岛的面积，不是所有陆地总数。可以不翻转；全是 1 时返回 n²。",
+    "Input is an n×n binary grid, 1≤n≤500. Change at most one 0 to 1 and return the largest island area afterward, rather than the total land count. A flip is optional; all-land input returns n²."
+  ],
+  "handTask": [
+    "点击任一水格，再点击它撤销。保持原陆地不变，看两座岛如何连接。坐标 (行,列) 从 0 开始；数字为输入值。",
+    "Click either water cell, then click it again to undo. Keep the original land fixed and watch the two islands connect. Coordinates (row,column) start at 0; cell numbers are input values."
+  ],
+  "reset": [
+    "重置",
+    "Reset"
+  ],
+  "handRead": [
+    "当前翻转：{cell}；最大岛面积：{area} 格。",
+    "Current flip: {cell}; largest island: {area} cells."
+  ],
+  "none": [
+    "无",
+    "none"
+  ],
+  "cell": [
+    "格 ({r},{c})，值 {v}；点击翻转或撤销",
+    "Cell ({r},{c}), value {v}; click to flip or undo"
+  ],
+  "s1t": [
+    "每次翻转都从头数，会重复什么？",
+    "What repeats if we recount after every flip?"
+  ],
+  "s1e": [
+    "一个正确的基线：先求原网格的最大岛，再依次复制网格、翻转每个 0，用洪水填充重新数岛。洪水填充就是从一格陆地出发，反复访问相邻且还没访问的陆地，直到整座岛都访问完。上例两个水格各试一次，都会得到 3。",
+    "A correct baseline first measures the original largest island. Then, for each zero, copy the grid, flip that cell and recount islands using flood fill. Flood fill starts from land and repeatedly visits adjacent unvisited land until it has reached the whole island. Both water cells in our example produce 3."
+  ],
+  "wrong": [
+    "但不能简单把四个邻格的岛面积相加。对 [[1,1],[1,0]] 翻转右下角：上邻格和左邻格都属于同一座面积为 3 的岛。1+3+3=7 是重复计数；正确值是 1+3=4。",
+    "But adding the island area for each neighboring cell fails. In [[1,1],[1,0]], flip the bottom-right zero: its upper and left neighbors belong to the same island of area 3. The sum 1+3+3=7 counts that island twice; the correct value is 1+3=4."
+  ],
+  "baselineCode": [
+    "查看可执行基线 Python",
+    "Inspect executable baseline Python"
+  ],
+  "baselineCost": [
+    "每次重新数岛要 O(n²)，最多 n² 个候选水格，总时间 O(n⁴)，空间 O(n²)。n=500 时，重复全网格扫描的数量级可达 500⁴。重复的是原有陆地之间的连接关系；翻一个水格不会改变它们。",
+    "Each recount takes O(n²), with up to n² candidate water cells: O(n⁴) total time and O(n²) space. At n=500, repeated full-grid scans can reach the scale of 500⁴ work. The repeated work is discovering connections among original land cells; flipping one water cell does not change those connections."
+  ],
+  "s2t": [
+    "能否先数好每座岛，再只查四个方向？",
+    "Can we count each island once, then inspect four neighbors?"
+  ],
+  "s2e": [
+    "给每座岛（一个完整连通分量）一个唯一编号 ID≥2，记录 area[ID] 为它的格子数。0 表示水；图中“?”表示尚未编号的原陆地。编号不改变原网格。上例得到 ID2 面积1、ID3 面积1；右上角邻接 {2,3}，得到 1+1+1=3。",
+    "Give each island (one whole connected component) a unique ID≥2. Store its cell count in area[ID]. Zero denotes water; “?” in the diagram denotes original land not labeled yet. Labels do not change the input. Our example gets ID2 of area 1 and ID3 of area 1; the top-right zero touches {2,3}, yielding 1+1+1=3."
+  ],
+  "derive": [
+    "对一个水格 z，seen 是它四个方向中不同的陆地编号集合。新岛面积 A(z)=1+Σ area[k]，k∈seen。集合会把重复编号合并。邻接同岛两次不会创造新陆地；不接触 z 的岛也无法经唯一的新陆格进入这个岛。",
+    "For a water cell z, seen is the set of distinct land IDs among its four neighbors. Its new island has area A(z)=1+Σ area[k], for k∈seen. The set merges repeated IDs. Touching one island twice adds no new land; an island not touching z cannot enter the new island through the single added cell."
+  ],
+  "invariant": [
+    "不变量：编号完成后，每个原陆格恰属一个编号，area 精确计数且此后不变。测试 k 个水格后，best 等于原最大岛与这 k 个候选面积的最大值。每次计算一个合法翻转的精确面积并取最大值；枚举完所有水格就覆盖所有操作。原最大岛覆盖不翻转的情况。",
+    "Invariant: after labeling, every original land cell has exactly one ID, and each area count is exact and fixed. After testing k water cells, best is the maximum of the original largest island and those k candidate areas. Each test computes one legal flip exactly and updates the maximum. Scanning all zeros covers every possible operation; the original largest island covers making no flip."
+  ],
+  "fillExplain": [
+    "填充细节：用 stack 保存待检查格子。上例从 (0,0) 开始，先标 ID2 再入栈；弹出后计数变 1，四邻没有新陆地，所以这座岛完成。接着从 (1,1) 标 ID3。一般相邻陆格在入栈前就标号，防止两条路径把同一格重复加入。",
+    "Fill detail: stack holds cells waiting to be checked. Start at (0,0) in our example, label it ID2 before pushing. Popping makes the count 1; none of its neighbors is new land, so this island is complete. Next label (1,1) as ID3. In general, mark a neighboring land cell before pushing it so two paths cannot enqueue the same cell twice."
+  ],
+  "presetLabel": [
+    "场景（切换会重置本轨迹）",
+    "Preset (changing restarts this trace)"
+  ],
+  "preset0": [
+    "对角双岛 · 官方例1",
+    "Diagonal islands · official 1"
+  ],
+  "preset1": [
+    "重复邻岛 · 官方例2",
+    "Repeated island · official 2"
+  ],
+  "preset2": [
+    "全陆地 · 官方例3",
+    "All land · official 3"
+  ],
+  "preset3": [
+    "全水域",
+    "All water"
+  ],
+  "preset4": [
+    "环形岛",
+    "Ring island"
+  ],
+  "preset5": [
+    "最优不在末尾",
+    "Best is not last"
+  ],
+  "preset6": [
+    "单格水",
+    "One water cell"
+  ],
+  "preset7": [
+    "单格陆地",
+    "One land cell"
+  ],
+  "sim": [
+    "教学模拟，不执行下面的 Python。每帧完成一座岛的填充或一个水格测试；省略填充内部入栈/出栈细步，不省略岛或候选。数字是 ID，不是原输入值。橙边只标当前候选，不表示永久翻转。保留的快照/历史不是提交所需空间。",
+    "Teaching simulation, not execution of the Python below. Each frame completes one island fill or one water-cell test. Internal push/pop steps are omitted; no islands or candidates are skipped. Numbers are IDs, not input values. The orange border marks the current candidate without permanently flipping it. Retained snapshots/history are extra teaching storage."
+  ],
+  "traceTask": [
+    "先前进完成编号，记住每个 ID 的面积；再逐个测试水格，比较“邻格 ID”与“去重 ID”，观察候选表累积。后退应恢复整张表和 best。",
+    "Advance through labeling and note each ID’s area. Then test zeros, comparing neighbor IDs with distinct IDs as the candidate ledger grows. Back restores the whole ledger and best."
+  ],
+  "prev": [
+    "上一步",
+    "Back"
+  ],
+  "next": [
+    "完成下一操作",
+    "Complete next operation"
+  ],
+  "end": [
+    "到结束",
+    "To end"
+  ],
+  "frame": [
+    "操作 {i}/{total} · {event} · best（已编号岛及已测候选最大值）= {best} 格",
+    "Operation {i}/{total} · {event} · best (completed islands and tested candidates) = {best} cells"
+  ],
+  "start": [
+    "尚未编号",
+    "No labels assigned"
+  ],
+  "labelEvent": [
+    "完成 ID{id}，面积 {size}",
+    "Completed ID{id}, area {size}"
+  ],
+  "testEvent": [
+    "已测试水格 ({r},{c})，候选面积 {value}",
+    "Tested zero ({r},{c}), candidate area {value}"
+  ],
+  "done": [
+    "全部测试完成；best 为最终答案",
+    "All tests complete; best is the final answer"
+  ],
+  "areas": [
+    "已完成岛面积：{values}",
+    "Completed island areas: {values}"
+  ],
+  "empty": [
+    "暂无",
+    "none yet"
+  ],
+  "gridLabel": [
+    "网格，格子附有行列坐标；窄屏可横向滚动",
+    "Grid with row and column coordinates; scroll horizontally when narrow"
+  ],
+  "row": [
+    "行 {r}：{values}",
+    "Row {r}: {values}"
+  ],
+  "ledgerTitle": [
+    "已测试候选（坐标 → 去重求和）",
+    "Tested candidates (coordinate → distinct-area sum)"
+  ],
+  "ledgerLine": [
+    "({r},{c}) 邻格 ID [{raw}] → 去重 [{ids}]：{sum} = {value} 格",
+    "({r},{c}) neighbor IDs [{raw}] → distinct [{ids}]: {sum} = {value} cells"
+  ],
+  "s3t": [
+    "换一个网格，你会去重吗？",
+    "Can you deduplicate in a new grid?"
+  ],
+  "s3e": [
+    "这是独立的新题。网格逐行为 [1,1,0]、[1,0,1]、[0,1,1]。只翻转中心 (1,1)，得到的中心岛面积是多少？只按四方向连接，把每座完整岛算一次。先选答案，再揭晓；此题不与上面的轨迹共用状态。",
+    "This is a separate new case: rows [1,1,0], [1,0,1], [0,1,1]. Flip only the center (1,1). What is the area of the island containing the center? Use four directions and count each whole island once. Choose before revealing; this exercise does not share trace state."
+  ],
+  "predictionLegend": [
+    "中心岛的面积（格）",
+    "Center island area (cells)"
+  ],
+  "option0": [
+    "5：中心加四个邻格",
+    "5: center plus four neighbors"
+  ],
+  "option1": [
+    "7：中心加两座不同岛",
+    "7: center plus two distinct islands"
+  ],
+  "option2": [
+    "13：中心加四次岛面积",
+    "13: center plus four island-area contributions"
+  ],
+  "reveal": [
+    "核对答案",
+    "Check prediction"
+  ],
+  "pending": [
+    "先选择，再核对；更改选择会隐藏解释。",
+    "Choose, then check; changing your choice hides the explanation."
+  ],
+  "correct": [
+    "正确。",
+    "Correct."
+  ],
+  "incorrect": [
+    "再看去重的对象。",
+    "Check what must be deduplicated."
+  ],
+  "answer": [
+    "答案为 7。上/左属于左上岛，面积3；下/右属于右下岛，面积3。不同 ID 只有两个，所以 1+3+3=7。5 漏算了两个非邻接但同岛的角格；13 把两座岛都算了两遍。",
+    "The answer is 7. Up/left belong to the upper-left island of area 3; down/right belong to the lower-right island of area 3. There are only two distinct IDs, so 1+3+3=7. The answer 5 misses the two corner cells connected through those neighbors; 13 counts both islands twice."
+  ],
+  "s4t": [
+    "怎样把图中的规则写成可提交的 Python？",
+    "How does the diagram become submittable Python?"
+  ],
+  "s4e": [
+    "官方接口为 Solution.largestIsland(self, grid) -> int。labels 保存岛编号；area 保存每个完整岛的面积；stack 是待处理格子列表；seen 是当前水格邻接的编号集合。图中一次编号帧对应整个 while stack，而不是一次 pop。",
+    "The official interface is Solution.largestIsland(self, grid) -> int. labels stores island IDs; area stores complete island sizes; stack lists pending cells; seen holds neighboring IDs for the current zero. One labeling frame corresponds to the entire while stack loop, rather than one pop."
+  ],
+  "map1": [
+    "先扫描原陆地：入栈前标号，弹出时 size += 1；每格只入栈一次，填充结束写 area[component]。",
+    "First scan original land: label before pushing, add 1 to size when popping. Each cell is pushed once; after the fill, write area[component]."
+  ],
+  "map2": [
+    "再扫描水格：seen.add(labels[nr][nc]) 去重；area[0]=0 使相邻水格不贡献面积。candidate = 1 + sum(...) 对应候选表的等式。",
+    "Then scan zeros: seen.add(labels[nr][nc]) deduplicates IDs; area[0]=0 makes neighboring water contribute nothing. candidate = 1 + sum(...) is the ledger’s equation."
+  ],
+  "map3": [
+    "best 从原岛最大面积开始，每个候选执行 max；全水时首次候选为1，全陆时第二遍不产生候选。return best 正好处理两种边界。",
+    "Initialize best from original island areas, then take max with every candidate. For all water, each candidate is 1. For all land, the second scan produces none. return best handles both boundaries."
+  ],
+  "cost": [
+    "两遍扫描都是 O(n²)；填充中每个陆格只处理一次，每个水格最多查4邻、集合最多4项。因此时间 O(n²)，辅助空间 O(n²)（编号矩阵与最坏情况栈）。保留原输入不修改；迭代栈避免 n=500 时长岛触发递归深度限制。",
+    "Both scans take O(n²). Flood fill processes each land cell once; each zero checks at most four neighbors and a set of at most four IDs. Time is O(n²), auxiliary space O(n²) for labels and the worst-case stack. Input is preserved. The iterative stack avoids recursion-depth failures on long islands at n=500."
+  ],
+  "boundaries": [
+    "单格0→1，单格1→1；全水→1；全陆→n²；重复邻岛只加一次；不相邻的岛不因对角接触而加入。基线可以对小网格枚举每次实际翻转来独立核对。",
+    "Single 0→1, single 1→1; all water→1; all land→n². Repeated neighboring IDs count once. Diagonal contact cannot add an island. For small grids, the baseline independently checks every actual flip."
+  ],
+  "copy": [
+    "复制 Python",
+    "Copy Python"
+  ],
+  "download": [
+    "下载 solution.py",
+    "Download solution.py"
+  ],
+  "source": [
+    "完整 Python 源码",
+    "Complete Python source"
+  ],
+  "copied": [
+    "已复制完整源码。",
+    "Complete source copied."
+  ],
+  "fallback": [
+    "自动复制不可用；源码已全选，请使用系统复制快捷键。",
+    "Automatic copy unavailable; source is selected. Use the system copy shortcut."
+  ],
+  "manualCopy": [
+    "手动复制完整源码",
+    "Copy the complete source manually"
+  ],
+  "related1": [
+    "连通遍历：查看青蛙跳河中的状态探索",
+    "State exploration: visit Frog Jump"
+  ],
+  "related2": [
+    "队列遍历：查看滑动谜题中的分层搜索",
+    "Queue traversal: visit Sliding Puzzle"
+  ],
+  "foot": [
+    "交互使用小网格模拟；源码可离线查看。",
+    "Interactions simulate small grids; source is available offline."
+  ]
+};

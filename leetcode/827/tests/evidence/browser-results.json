@@ -1,0 +1,1168 @@
+{
+  "kind": "author browser self-check",
+  "result": "pass",
+  "browser": "156.0.8078.4",
+  "records": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "result": 3,
+      "visible": {
+        "frameRead": "Operation 5/5 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 3 cells",
+        "traceGrid": "2(0,0)0(0,1)0(1,0)3(1,1)",
+        "gridText": "Row 0: 2, 0Row 1: 0, 3",
+        "areas": "Completed island areas: ID2=1; ID3=1",
+        "ledger": "(0,1) neighbor IDs [3,2] → distinct [2,3]: 1 + 1 + 1 = 3 cells(1,0) neighbor IDs [2,3] → distinct [2,3]: 1 + 1 + 1 = 3 cells"
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "result": 4,
+      "visible": {
+        "frameRead": "Operation 3/3 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 4 cells",
+        "traceGrid": "2(0,0)2(0,1)2(1,0)0(1,1)",
+        "gridText": "Row 0: 2, 2Row 1: 2, 0",
+        "areas": "Completed island areas: ID2=3",
+        "ledger": "(1,1) neighbor IDs [2,2] → distinct [2]: 1 + 3 = 4 cells"
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "result": 4,
+      "visible": {
+        "frameRead": "Operation 2/2 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 4 cells",
+        "traceGrid": "2(0,0)2(0,1)2(1,0)2(1,1)",
+        "gridText": "Row 0: 2, 2Row 1: 2, 2",
+        "areas": "Completed island areas: ID2=4",
+        "ledger": ""
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "result": 1,
+      "visible": {
+        "frameRead": "Operation 5/5 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 1 cells",
+        "traceGrid": "0(0,0)0(0,1)0(1,0)0(1,1)",
+        "gridText": "Row 0: 0, 0Row 1: 0, 0",
+        "areas": "Completed island areas: none yet",
+        "ledger": "(0,0) neighbor IDs [] → distinct []: 1 = 1 cells(0,1) neighbor IDs [] → distinct []: 1 = 1 cells(1,0) neighbor IDs [] → distinct []: 1 = 1 cells(1,1) neighbor IDs [] → distinct []: 1 = 1 cells"
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "result": 9,
+      "visible": {
+        "frameRead": "Operation 3/3 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 9 cells",
+        "traceGrid": "2(0,0)2(0,1)2(0,2)2(1,0)0(1,1)2(1,2)2(2,0)2(2,1)2(2,2)",
+        "gridText": "Row 0: 2, 2, 2Row 1: 2, 0, 2Row 2: 2, 2, 2",
+        "areas": "Completed island areas: ID2=8",
+        "ledger": "(1,1) neighbor IDs [2,2,2,2] → distinct [2]: 1 + 8 = 9 cells"
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "result": 4,
+      "visible": {
+        "frameRead": "Operation 8/8 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 4 cells",
+        "traceGrid": "2(0,0)2(0,1)0(0,2)2(1,0)0(1,1)0(1,2)0(2,0)0(2,1)0(2,2)",
+        "gridText": "Row 0: 2, 2, 0Row 1: 2, 0, 0Row 2: 0, 0, 0",
+        "areas": "Completed island areas: ID2=3",
+        "ledger": "(0,2) neighbor IDs [2] → distinct [2]: 1 + 3 = 4 cells(1,1) neighbor IDs [2,2] → distinct [2]: 1 + 3 = 4 cells(1,2) neighbor IDs [] → distinct []: 1 = 1 cells(2,0) neighbor IDs [2] → distinct [2]: 1 + 3 = 4 cells(2,1) neighbor IDs [] → distinct []: 1 = 1 cells(2,2) neighbor IDs [] → distinct []: 1 = 1 cells"
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 6,
+      "result": 1,
+      "visible": {
+        "frameRead": "Operation 2/2 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 1 cells",
+        "traceGrid": "0(0,0)",
+        "gridText": "Row 0: 0",
+        "areas": "Completed island areas: none yet",
+        "ledger": "(0,0) neighbor IDs [] → distinct []: 1 = 1 cells"
+      }
+    },
+    {
+      "locale": "en",
+      "preset": 7,
+      "result": 1,
+      "visible": {
+        "frameRead": "Operation 2/2 · All tests complete; best is the final answer · best (completed islands and tested candidates) = 1 cells",
+        "traceGrid": "2(0,0)",
+        "gridText": "Row 0: 2",
+        "areas": "Completed island areas: ID2=1",
+        "ledger": ""
+      }
+    },
+    {
+      "locale": "en",
+      "prediction": "0",
+      "feedback": "Check what must be deduplicated. The answer is 7. Up/left belong to the upper-left island of area 3; down/right belong to the lower-right island of area 3. There are only two distinct IDs, so 1+3+3=7. The answer 5 misses the two corner cells connected through those neighbors; 13 counts both islands twice."
+    },
+    {
+      "locale": "en",
+      "prediction": "1",
+      "feedback": "Correct. The answer is 7. Up/left belong to the upper-left island of area 3; down/right belong to the lower-right island of area 3. There are only two distinct IDs, so 1+3+3=7. The answer 5 misses the two corner cells connected through those neighbors; 13 counts both islands twice."
+    },
+    {
+      "locale": "en",
+      "prediction": "2",
+      "feedback": "Check what must be deduplicated. The answer is 7. Up/left belong to the upper-left island of area 3; down/right belong to the lower-right island of area 3. There are only two distinct IDs, so 1+3+3=7. The answer 5 misses the two corner cells connected through those neighbors; 13 counts both islands twice."
+    },
+    {
+      "locale": "en",
+      "binding": "deduplicate same island, not its cells",
+      "ledger": "(1,1) neighbor IDs [2,2] → distinct [2]: 1 + 3 = 4 cells"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "result": 3,
+      "visible": {
+        "frameRead": "操作 5/5 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 3 格",
+        "traceGrid": "2(0,0)0(0,1)0(1,0)3(1,1)",
+        "gridText": "行 0：2, 0行 1：0, 3",
+        "areas": "已完成岛面积：ID2=1; ID3=1",
+        "ledger": "(0,1) 邻格 ID [3,2] → 去重 [2,3]：1 + 1 + 1 = 3 格(1,0) 邻格 ID [2,3] → 去重 [2,3]：1 + 1 + 1 = 3 格"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "result": 4,
+      "visible": {
+        "frameRead": "操作 3/3 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 4 格",
+        "traceGrid": "2(0,0)2(0,1)2(1,0)0(1,1)",
+        "gridText": "行 0：2, 2行 1：2, 0",
+        "areas": "已完成岛面积：ID2=3",
+        "ledger": "(1,1) 邻格 ID [2,2] → 去重 [2]：1 + 3 = 4 格"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "result": 4,
+      "visible": {
+        "frameRead": "操作 2/2 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 4 格",
+        "traceGrid": "2(0,0)2(0,1)2(1,0)2(1,1)",
+        "gridText": "行 0：2, 2行 1：2, 2",
+        "areas": "已完成岛面积：ID2=4",
+        "ledger": ""
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "result": 1,
+      "visible": {
+        "frameRead": "操作 5/5 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 1 格",
+        "traceGrid": "0(0,0)0(0,1)0(1,0)0(1,1)",
+        "gridText": "行 0：0, 0行 1：0, 0",
+        "areas": "已完成岛面积：暂无",
+        "ledger": "(0,0) 邻格 ID [] → 去重 []：1 = 1 格(0,1) 邻格 ID [] → 去重 []：1 = 1 格(1,0) 邻格 ID [] → 去重 []：1 = 1 格(1,1) 邻格 ID [] → 去重 []：1 = 1 格"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "result": 9,
+      "visible": {
+        "frameRead": "操作 3/3 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 9 格",
+        "traceGrid": "2(0,0)2(0,1)2(0,2)2(1,0)0(1,1)2(1,2)2(2,0)2(2,1)2(2,2)",
+        "gridText": "行 0：2, 2, 2行 1：2, 0, 2行 2：2, 2, 2",
+        "areas": "已完成岛面积：ID2=8",
+        "ledger": "(1,1) 邻格 ID [2,2,2,2] → 去重 [2]：1 + 8 = 9 格"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "result": 4,
+      "visible": {
+        "frameRead": "操作 8/8 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 4 格",
+        "traceGrid": "2(0,0)2(0,1)0(0,2)2(1,0)0(1,1)0(1,2)0(2,0)0(2,1)0(2,2)",
+        "gridText": "行 0：2, 2, 0行 1：2, 0, 0行 2：0, 0, 0",
+        "areas": "已完成岛面积：ID2=3",
+        "ledger": "(0,2) 邻格 ID [2] → 去重 [2]：1 + 3 = 4 格(1,1) 邻格 ID [2,2] → 去重 [2]：1 + 3 = 4 格(1,2) 邻格 ID [] → 去重 []：1 = 1 格(2,0) 邻格 ID [2] → 去重 [2]：1 + 3 = 4 格(2,1) 邻格 ID [] → 去重 []：1 = 1 格(2,2) 邻格 ID [] → 去重 []：1 = 1 格"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 6,
+      "result": 1,
+      "visible": {
+        "frameRead": "操作 2/2 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 1 格",
+        "traceGrid": "0(0,0)",
+        "gridText": "行 0：0",
+        "areas": "已完成岛面积：暂无",
+        "ledger": "(0,0) 邻格 ID [] → 去重 []：1 = 1 格"
+      }
+    },
+    {
+      "locale": "zh",
+      "preset": 7,
+      "result": 1,
+      "visible": {
+        "frameRead": "操作 2/2 · 全部测试完成；best 为最终答案 · best（已编号岛及已测候选最大值）= 1 格",
+        "traceGrid": "2(0,0)",
+        "gridText": "行 0：2",
+        "areas": "已完成岛面积：ID2=1",
+        "ledger": ""
+      }
+    },
+    {
+      "locale": "zh",
+      "prediction": "0",
+      "feedback": "再看去重的对象。 答案为 7。上/左属于左上岛，面积3；下/右属于右下岛，面积3。不同 ID 只有两个，所以 1+3+3=7。5 漏算了两个非邻接但同岛的角格；13 把两座岛都算了两遍。"
+    },
+    {
+      "locale": "zh",
+      "prediction": "1",
+      "feedback": "正确。 答案为 7。上/左属于左上岛，面积3；下/右属于右下岛，面积3。不同 ID 只有两个，所以 1+3+3=7。5 漏算了两个非邻接但同岛的角格；13 把两座岛都算了两遍。"
+    },
+    {
+      "locale": "zh",
+      "prediction": "2",
+      "feedback": "再看去重的对象。 答案为 7。上/左属于左上岛，面积3；下/右属于右下岛，面积3。不同 ID 只有两个，所以 1+3+3=7。5 漏算了两个非邻接但同岛的角格；13 把两座岛都算了两遍。"
+    },
+    {
+      "locale": "zh",
+      "binding": "deduplicate same island, not its cells",
+      "ledger": "(1,1) 邻格 ID [2,2] → 去重 [2]：1 + 3 = 4 格"
+    },
+    {
+      "locale": "en",
+      "branch": "clipboard denial, manual transfer",
+      "visible": "Automatic copy unavailable; source is selected. Use the system copy shortcut."
+    },
+    {
+      "locale": "zh",
+      "branch": "clipboard denial, manual transfer",
+      "visible": "自动复制不可用；源码已全选，请使用系统复制快捷键。"
+    }
+  ],
+  "layouts": [
+    {
+      "locale": "en",
+      "doc": 320,
+      "width": 320,
+      "cells": [
+        {
+          "w": 87.328125,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "w": 87.328125,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "w": 87.34375,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "w": 87.328125,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "w": 87.328125,
+          "h": 60,
+          "client": 85,
+          "scroll": 85
+        },
+        {
+          "w": 87.34375,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "w": 87.328125,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "w": 87.328125,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "w": 87.34375,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        }
+      ],
+      "select": {
+        "width": 284,
+        "need": 136.5921630859375
+      }
+    },
+    {
+      "locale": "en",
+      "doc": 390,
+      "width": 390,
+      "cells": [
+        {
+          "w": 110.65625,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        },
+        {
+          "w": 110.671875,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        },
+        {
+          "w": 110.65625,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        },
+        {
+          "w": 110.65625,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        },
+        {
+          "w": 110.671875,
+          "h": 60,
+          "client": 109,
+          "scroll": 109
+        },
+        {
+          "w": 110.65625,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        },
+        {
+          "w": 110.65625,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        },
+        {
+          "w": 110.671875,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        },
+        {
+          "w": 110.65625,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        }
+      ],
+      "select": {
+        "width": 354,
+        "need": 136.5921630859375
+      }
+    },
+    {
+      "locale": "en",
+      "doc": 736,
+      "width": 736,
+      "cells": [
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 110,
+          "scroll": 110
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        }
+      ],
+      "select": {
+        "width": 644,
+        "need": 136.5921630859375
+      }
+    },
+    {
+      "locale": "en",
+      "doc": 1440,
+      "width": 1440,
+      "cells": [
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 110,
+          "scroll": 110
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        }
+      ],
+      "select": {
+        "width": 908,
+        "need": 136.5921630859375
+      }
+    },
+    {
+      "locale": "zh",
+      "doc": 320,
+      "width": 320,
+      "cells": [
+        {
+          "w": 87.328125,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "w": 87.328125,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "w": 87.34375,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "w": 87.328125,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "w": 87.328125,
+          "h": 60,
+          "client": 85,
+          "scroll": 85
+        },
+        {
+          "w": 87.34375,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "w": 87.328125,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "w": 87.328125,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "w": 87.34375,
+          "h": 60,
+          "client": 83,
+          "scroll": 83
+        }
+      ],
+      "select": {
+        "width": 284,
+        "need": 102.00009155273438
+      }
+    },
+    {
+      "locale": "zh",
+      "doc": 390,
+      "width": 390,
+      "cells": [
+        {
+          "w": 110.65625,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        },
+        {
+          "w": 110.671875,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        },
+        {
+          "w": 110.65625,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        },
+        {
+          "w": 110.65625,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        },
+        {
+          "w": 110.671875,
+          "h": 60,
+          "client": 109,
+          "scroll": 109
+        },
+        {
+          "w": 110.65625,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        },
+        {
+          "w": 110.65625,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        },
+        {
+          "w": 110.671875,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        },
+        {
+          "w": 110.65625,
+          "h": 60,
+          "client": 107,
+          "scroll": 107
+        }
+      ],
+      "select": {
+        "width": 354,
+        "need": 102.00009155273438
+      }
+    },
+    {
+      "locale": "zh",
+      "doc": 736,
+      "width": 736,
+      "cells": [
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 110,
+          "scroll": 110
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        }
+      ],
+      "select": {
+        "width": 644,
+        "need": 102.00009155273438
+      }
+    },
+    {
+      "locale": "zh",
+      "doc": 1440,
+      "width": 1440,
+      "cells": [
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 110,
+          "scroll": 110
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        },
+        {
+          "w": 112,
+          "h": 64,
+          "client": 108,
+          "scroll": 108
+        }
+      ],
+      "select": {
+        "width": 908,
+        "need": 102.00009155273438
+      }
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "w": 320,
+      "cells": [
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          46,
+          46
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ]
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "w": 390,
+      "cells": [
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          46,
+          46
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ]
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "w": 1440,
+      "cells": [
+        [
+          108,
+          108
+        ],
+        [
+          108,
+          108
+        ],
+        [
+          108,
+          108
+        ],
+        [
+          108,
+          108
+        ],
+        [
+          110,
+          110
+        ],
+        [
+          108,
+          108
+        ],
+        [
+          108,
+          108
+        ],
+        [
+          108,
+          108
+        ],
+        [
+          108,
+          108
+        ]
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "w": 320,
+      "cells": [
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          46,
+          46
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ]
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "w": 390,
+      "cells": [
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          46,
+          46
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          44,
+          44
+        ]
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "w": 1440,
+      "cells": [
+        [
+          108,
+          108
+        ],
+        [
+          108,
+          108
+        ],
+        [
+          108,
+          108
+        ],
+        [
+          108,
+          108
+        ],
+        [
+          110,
+          110
+        ],
+        [
+          108,
+          108
+        ],
+        [
+          108,
+          108
+        ],
+        [
+          108,
+          108
+        ],
+        [
+          108,
+          108
+        ]
+      ]
+    }
+  ],
+  "clipboard": [
+    {
+      "locale": "en",
+      "repeat": 0,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinel": true,
+      "exactReadback": true
+    },
+    {
+      "locale": "en",
+      "repeat": 1,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinel": true,
+      "exactReadback": true
+    },
+    {
+      "locale": "zh",
+      "repeat": 0,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinel": true,
+      "exactReadback": true
+    },
+    {
+      "locale": "zh",
+      "repeat": 1,
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinel": true,
+      "exactReadback": true
+    }
+  ],
+  "focus": {
+    "active": true,
+    "outline": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrasts": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#prev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#langToggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".tile.land",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "selector": ".tile small",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#feedback",
+      "fg": "rgb(126, 226, 168)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.004815697188947
+    },
+    {
+      "selector": "focus/panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "cell border/panel2",
+      "ratio": 6.449407898769069
+    }
+  ],
+  "links": [
+    "../",
+    "#step0",
+    "#step1",
+    "#step2",
+    "#step3",
+    "#step4",
+    "solution.py",
+    "../403/#step2",
+    "../773/#step2"
+  ],
+  "cssBytes": 12312,
+  "errors": [],
+  "localAssetsOnly": true,
+  "storageDenied": true,
+  "offline": true,
+  "sourceParity": "rendered / embedded / downloaded / successful copy / real native fallback exact",
+  "zoomMethod": "CSS zoom 2; browser chrome zoom and real devices unverified"
+}

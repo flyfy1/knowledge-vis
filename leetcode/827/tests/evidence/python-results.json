@@ -1,0 +1,15 @@
+{
+  "kind": "author computational self-check",
+  "result": "pass",
+  "smallCases": 880,
+  "exhaustive": "all binary grids n=1..3",
+  "randomSeed": 827,
+  "maxN": 500,
+  "boundaries": [
+    "all water",
+    "all land",
+    "checkerboard",
+    "long snake"
+  ],
+  "inputPreserved": true
+}
