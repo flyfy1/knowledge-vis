@@ -1,0 +1,7 @@
+Author self-check, initial candidate: browser selected-label width test failed at English 320px with body CSS zoom2. select width100px; padding30px + arrow reserve16px + 'Positional tie' text96.816px exceeded available width. Full labels likewise exceeded it. This is author-discovered, not an independent review finding. Repair: concise option labels with full adjacent bilingual explanations, narrower local select padding, wrapped header. Same predicate retained for rerun.
+
+Follow-up run exposed document scrollWidth334 at viewport320/zoom2. Diagnostic identified unwrapped h3 Accumulated records label, scrollWidth138 in a102px region. Added heading/label/link word wrapping; retained same document-overflow predicate.
+
+Visual inspection of screenshots found stale sticky-navigation highlight at header and grid, despite correct trace. Replaced IntersectionObserver heuristic with a viewport-position selection on scroll/resize, and added exact active-target browser assertions for all five deep links and header return. This is an author repair before candidate freeze.
+
+Final control-size audit found official link44px due to shared selector specificity overriding local minimum. Added lesson-local .site-head .official-link minimum48px; retained assertion for all interactive target heights.
