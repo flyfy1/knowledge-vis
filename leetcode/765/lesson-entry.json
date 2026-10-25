@@ -1,0 +1,42 @@
+{
+  "id": 765,
+  "title": {
+    "zh": "情侣牵手",
+    "en": "Couples Holding Hands"
+  },
+  "desc": {
+    "zh": "固定一个座位对，找回伴侣；用环证明交换次数最少。",
+    "en": "Repair one seat pair at a time, then prove the swap count with cycles."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "贪心",
+      "en": "Greedy"
+    },
+    {
+      "zh": "位置映射",
+      "en": "Position map"
+    },
+    {
+      "zh": "环",
+      "en": "Cycles"
+    }
+  ],
+  "path": "765/",
+  "leetcodeUrl": "https://leetcode.com/problems/couples-holding-hands/",
+  "language": "Python",
+  "complexity": "O(n) time; O(n) auxiliary space, where n is the number of couples",
+  "concepts": [
+    {
+      "name": "Fixed prefix and position map",
+      "step": 2,
+      "description": "Repair a seat block while preserving completed blocks and exact person positions."
+    },
+    {
+      "name": "Cycle lower bound",
+      "step": 3,
+      "description": "At most one component is added per swap; greedy reaches n components in n-c swaps."
+    }
+  ]
+}
