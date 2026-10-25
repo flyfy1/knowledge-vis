@@ -1,0 +1,12 @@
+AssertionError [ERR_ASSERTION]: 239-NAV-R1 zh label
++ actual - expected
+
++ '单调栈：同样的“支配就淘汰”思想 →'
+- '#84 · 单调栈：确定矩形边界'
+    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/239/tests/navigation-regression.js:40:16 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '单调栈：同样的“支配就淘汰”思想 →',
+  expected: '#84 · 单调栈：确定矩形边界',
+  operator: 'strictEqual'
+}

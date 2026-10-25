@@ -1,0 +1,164 @@
+{
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "hashes": {
+    "239/index.html": "b59b1fcda824c5f956078ee4921c9baf6389a2e6b5c429f91450581357a80770",
+    "239/core.js": "80e75a099b98c1c8f6fdd2c16def82544d623aeb2b745f321d21fbd74f63f4fd",
+    "239/app.js": "96830337cbcccb4dfd89cdd36dc5aa613ac461c0821bd2e3a095b2dfeb6d0e6c",
+    "239/copy.js": "163e37433451910b173920fb3ac64672420d3c460939a176269ed4ebe16a1ed8",
+    "239/python-code.js": "f0f79ef1d414e944365cae4f2bd7b33925bd9498e8f93c6ec58b81dbe3135a0e",
+    "239/solution.py": "6be17b3f7dae2dbe1627d4fc6fd17d1a7cc1ac55cc5adf7c4ca18d03af576f8d",
+    "style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b"
+  },
+  "snapshots": [
+    {
+      "width": 320,
+      "lang": "zh",
+      "heading": "#239 · 滑动窗口最大值",
+      "title": "#239 · 滑动窗口最大值",
+      "select": {
+        "width": 210,
+        "textWidth": 159.36036682128906,
+        "paddingLeft": "15px",
+        "paddingRight": "15px",
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "deque": "1:3  →  2:-1  →  3:-3",
+      "scope": "更新后：完整窗口 [1, 3]，值 [3, -1, -3]；左侧索引已过期，右侧元素尚未处理。输出保留所有已完成窗口的最大值。"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "heading": "#239 · Sliding Window Maximum",
+      "title": "#239 · Sliding Window Maximum",
+      "select": {
+        "width": 210,
+        "textWidth": 159.36036682128906,
+        "paddingLeft": "15px",
+        "paddingRight": "15px",
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "deque": "1:3  →  2:-1  →  3:-3",
+      "scope": "After update: full window [1, 3], values [3, -1, -3]; indices to the left have expired, elements to the right are unprocessed. Output retains maxima of all completed windows."
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "heading": "#239 · 滑动窗口最大值",
+      "title": "#239 · 滑动窗口最大值",
+      "select": {
+        "width": 210,
+        "textWidth": 159.36036682128906,
+        "paddingLeft": "15px",
+        "paddingRight": "15px",
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "deque": "1:3  →  2:-1  →  3:-3",
+      "scope": "更新后：完整窗口 [1, 3]，值 [3, -1, -3]；左侧索引已过期，右侧元素尚未处理。输出保留所有已完成窗口的最大值。"
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "heading": "#239 · Sliding Window Maximum",
+      "title": "#239 · Sliding Window Maximum",
+      "select": {
+        "width": 210,
+        "textWidth": 159.36036682128906,
+        "paddingLeft": "15px",
+        "paddingRight": "15px",
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "deque": "1:3  →  2:-1  →  3:-3",
+      "scope": "After update: full window [1, 3], values [3, -1, -3]; indices to the left have expired, elements to the right are unprocessed. Output retains maxima of all completed windows."
+    },
+    {
+      "width": 1280,
+      "lang": "zh",
+      "heading": "#239 · 滑动窗口最大值",
+      "title": "#239 · 滑动窗口最大值",
+      "select": {
+        "width": 210,
+        "textWidth": 159.36036682128906,
+        "paddingLeft": "15px",
+        "paddingRight": "15px",
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "deque": "1:3  →  2:-1  →  3:-3",
+      "scope": "更新后：完整窗口 [1, 3]，值 [3, -1, -3]；左侧索引已过期，右侧元素尚未处理。输出保留所有已完成窗口的最大值。"
+    },
+    {
+      "width": 1280,
+      "lang": "en",
+      "heading": "#239 · Sliding Window Maximum",
+      "title": "#239 · Sliding Window Maximum",
+      "select": {
+        "width": 210,
+        "textWidth": 159.36036682128906,
+        "paddingLeft": "15px",
+        "paddingRight": "15px",
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "deque": "1:3  →  2:-1  →  3:-3",
+      "scope": "After update: full window [1, 3], values [3, -1, -3]; indices to the left have expired, elements to the right are unprocessed. Output retains maxima of all completed windows."
+    }
+  ],
+  "tabs": [
+    {
+      "tag": "BUTTON",
+      "id": "copy",
+      "text": "Copy Python"
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "text": "Download solution.py"
+    },
+    {
+      "tag": "SUMMARY",
+      "id": "",
+      "text": "View complete Python source"
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "text": "#84 · Monotonic stack: settle rectangle boundaries"
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "text": "#327 · Prefix sums: subtract to obtain a range sum"
+    },
+    {
+      "tag": "BODY",
+      "id": "",
+      "text": "← Knowledge index中EN#239 · HARD · ARRAY / MONOTONIC DEQUE#239 · Sliding Window M"
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "text": "← Knowledge index"
+    },
+    {
+      "tag": "BUTTON",
+      "id": "",
+      "text": "中"
+    },
+    {
+      "tag": "BUTTON",
+      "id": "",
+      "text": "EN"
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "text": "Open official problem ↗"
+    }
+  ]
+}

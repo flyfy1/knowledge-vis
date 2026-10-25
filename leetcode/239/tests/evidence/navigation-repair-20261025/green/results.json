@@ -1,0 +1,184 @@
+{
+  "finding": "239-NAV-R1",
+  "base": "http://127.0.0.1:18770",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "width": 320,
+  "results": [
+    {
+      "lang": "zh",
+      "id": 84,
+      "label": "#84 · 单调栈：确定矩形边界",
+      "url": "http://127.0.0.1:18770/leetcode/84/#step1",
+      "concept": "需要先处理最近遇到的高柱，再处理更早的矮柱。因此用栈：只在列表末尾放入或取出下标，取出末项叫“弹出”。栈里“待定”的柱子是尚未遇到更矮右边界的柱子。若当前高度更小，反复弹出；否则放入当前下标。这样栈中下标递增，对应高度不下降（允许相等），这就是单调栈。",
+      "formula": "i−left−1",
+      "geometry": {
+        "left": 16,
+        "right": 217.25,
+        "top": 700.734375,
+        "bottom": 728.734375,
+        "text": [
+          {
+            "left": 16,
+            "right": 217.25,
+            "top": 703.734375,
+            "bottom": 725.734375
+          }
+        ],
+        "overflow": "visible",
+        "fontSize": "16px",
+        "outline": "solid",
+        "pageFits": true
+      },
+      "activation": "native Tab focus and Enter"
+    },
+    {
+      "lang": "zh",
+      "id": 327,
+      "label": "#327 · 前缀和：相减得到区间和",
+      "url": "http://127.0.0.1:18770/leetcode/327/#step1",
+      "concept": "这一步要回答：能不能不用重加一段元素？前缀 P[k] 是前 k 个元素的总和；P[0]=0 表示一个也没取。这里 j 是不包含的右边界，原题的闭区间 [i,j−1] 的和就是 P[j]−P[i]：减去前 i 个，剩下 i 到 j−1。",
+      "formula": "P[j]−P[i]",
+      "geometry": {
+        "left": 16,
+        "right": 242.40625,
+        "top": 740.734375,
+        "bottom": 768.734375,
+        "text": [
+          {
+            "left": 16,
+            "right": 242.40625,
+            "top": 743.734375,
+            "bottom": 765.734375
+          }
+        ],
+        "overflow": "visible",
+        "fontSize": "16px",
+        "outline": "solid",
+        "pageFits": true
+      },
+      "activation": "native Tab focus and Enter"
+    },
+    {
+      "lang": "en",
+      "id": 84,
+      "label": "#84 · Monotonic stack: settle rectangle boundaries",
+      "url": "http://127.0.0.1:18770/leetcode/84/#step1",
+      "concept": "We must settle the most recent tall bars before earlier shorter bars. Use a stack: a list whose last item is added or removed first; removing it is a pop. Its pending bars have not yet met a strictly shorter right boundary. Pop repeatedly while the current height is smaller, then append the current index. Stack indices increase and their heights never decrease (ties are allowed): a monotonic stack.",
+      "formula": "i−left−1",
+      "geometry": {
+        "left": 16,
+        "right": 304,
+        "top": 621.328125,
+        "bottom": 677.328125,
+        "text": [
+          {
+            "left": 16,
+            "right": 230.8125,
+            "top": 624.328125,
+            "bottom": 646.328125
+          },
+          {
+            "left": 16,
+            "right": 176.328125,
+            "top": 652.328125,
+            "bottom": 674.328125
+          }
+        ],
+        "overflow": "visible",
+        "fontSize": "16px",
+        "outline": "solid",
+        "pageFits": true
+      },
+      "activation": "native Tab focus and Enter"
+    },
+    {
+      "lang": "en",
+      "id": 327,
+      "label": "#327 · Prefix sums: subtract to obtain a range sum",
+      "url": "http://127.0.0.1:18770/leetcode/327/#step1",
+      "concept": "Can we get a range sum without adding its elements again? Prefix P[k] is the total of the first k elements; P[0]=0 means taking none. Here j is an exclusive end. The original inclusive interval [i,j−1] sums to P[j]−P[i]: subtract the first i elements, leaving i through j−1.",
+      "formula": "P[j]−P[i]",
+      "geometry": {
+        "left": 16,
+        "right": 304,
+        "top": 689.328125,
+        "bottom": 745.328125,
+        "text": [
+          {
+            "left": 16,
+            "right": 296.234375,
+            "top": 692.328125,
+            "bottom": 714.328125
+          },
+          {
+            "left": 16,
+            "right": 109.828125,
+            "top": 720.328125,
+            "bottom": 742.328125
+          }
+        ],
+        "overflow": "visible",
+        "fontSize": "16px",
+        "outline": "solid",
+        "pageFits": true
+      },
+      "activation": "native Tab focus and Enter"
+    },
+    {
+      "lang": "zh",
+      "id": 84,
+      "label": "#84 · 单调栈：确定矩形边界",
+      "url": "http://127.0.0.1:18770/leetcode/84/#step1",
+      "concept": "需要先处理最近遇到的高柱，再处理更早的矮柱。因此用栈：只在列表末尾放入或取出下标，取出末项叫“弹出”。栈里“待定”的柱子是尚未遇到更矮右边界的柱子。若当前高度更小，反复弹出；否则放入当前下标。这样栈中下标递增，对应高度不下降（允许相等），这就是单调栈。",
+      "formula": "i−left−1",
+      "geometry": {
+        "left": 16,
+        "right": 217.25,
+        "top": 700.734375,
+        "bottom": 728.734375,
+        "text": [
+          {
+            "left": 16,
+            "right": 217.25,
+            "top": 703.734375,
+            "bottom": 725.734375
+          }
+        ],
+        "overflow": "visible",
+        "fontSize": "16px",
+        "outline": "solid",
+        "pageFits": true
+      },
+      "activation": "native Tab focus and Enter"
+    },
+    {
+      "lang": "zh",
+      "id": 327,
+      "label": "#327 · 前缀和：相减得到区间和",
+      "url": "http://127.0.0.1:18770/leetcode/327/#step1",
+      "concept": "这一步要回答：能不能不用重加一段元素？前缀 P[k] 是前 k 个元素的总和；P[0]=0 表示一个也没取。这里 j 是不包含的右边界，原题的闭区间 [i,j−1] 的和就是 P[j]−P[i]：减去前 i 个，剩下 i 到 j−1。",
+      "formula": "P[j]−P[i]",
+      "geometry": {
+        "left": 16,
+        "right": 242.40625,
+        "top": 740.734375,
+        "bottom": 768.734375,
+        "text": [
+          {
+            "left": 16,
+            "right": 242.40625,
+            "top": 743.734375,
+            "bottom": 765.734375
+          }
+        ],
+        "overflow": "visible",
+        "fontSize": "16px",
+        "outline": "solid",
+        "pageFits": true
+      },
+      "activation": "native Tab focus and Enter"
+    }
+  ],
+  "errors": []
+}

@@ -30,4 +30,20 @@ This proves the exercised Mac paths for this candidate. Physical devices,
 screen-reader completeness and public delivery of the new links remain unverified.
 The separately inspected existing public target pages are usable destinations,
 but do not prove that the changed #239 links have been published. The independent
-review outcome and source integration must be recorded when available.
+review outcome and source integration are recorded below.
+
+## Independent acceptance and integration
+
+The separate [round-four review](239-review-4-bd768111.md) accepted this exact
+candidate at 90/100, scores `[4,3,4,3,4,4]`, with no required open findings.
+It closed `239-NAV-R1`, reconfirmed previous window/title fixes, performed its own
+cold walkthrough and 21,324 exhaustive small Python cases, and retained the
+limitations of grouped removals and compact derivation. The dispatcher did not
+replace that judgment with its own test results.
+
+Central registration commit `fd5760e3a18bdc79f365db1aa62bea9e38b2671f` contains the
+accepted source and report. Only `leetcode/239` and the new report/evidence were
+restored from it into main; shared runtime, other lessons and registration files
+were not overwritten. The frozen candidate and Mac verification therefore refer
+to the same lesson bytes. Its public delivery is pending the ordinary next batch;
+the previous release remains valid historical evidence for the previous candidate.
