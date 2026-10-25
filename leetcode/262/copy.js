@@ -1,8 +1,8 @@
 'use strict';
 const COPY={
   "docTitle": [
-    "Trips and Users",
-    "Trips and Users"
+    "#262 · 行程与用户",
+    "#262 · Trips and Users"
   ],
   "back": [
     "← 知识索引",
@@ -13,7 +13,7 @@ const COPY={
     "#262 · Hard · Database / Pandas"
   ],
   "title": [
-    "#262 · Trips and Users",
+    "#262 · 行程与用户",
     "#262 · Trips and Users"
   ],
   "tagline": [
