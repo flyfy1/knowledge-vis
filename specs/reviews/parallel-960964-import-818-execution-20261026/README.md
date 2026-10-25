@@ -1,0 +1,3 @@
+# Execution evidence
+
+See [execution report](../parallel-960964-import-818-execution-20261026.md). receipt.json is the completed operator receipt; completion.json is an independent read-only observation. before-reopen.json preserves full post-import campaign state before the two ordinary reopenings. Import receipts and reservation snapshots retain original lane provenance. transfer.jsonl and dispatch.json identify exact executed bytes and the single invocation; operator-output.log records execution. validation.json binds copied evidence and the preservation checks. No recovery is pending; owned STOP was removed after successful resume.
