@@ -1,0 +1,1235 @@
+{
+  "kind": "author browser self-check, not independent acceptance",
+  "checkedAt": "2026-10-25T22:22:30.279Z",
+  "browserVersion": "156.0.8078.4",
+  "hostPlatform": "linux",
+  "presets": [
+    {
+      "lang": "en",
+      "p": 0,
+      "description": "Hand case: 010, k=2 → 2 flips",
+      "expected": 2,
+      "terminal": "Checked 3/3 positions; chosen starts: 0, 1; flips so far: 2. Final return value: 2.",
+      "effective": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "description": "Official example 3: 00010110, k=3 → 3 flips",
+      "expected": 3,
+      "terminal": "Checked 8/8 positions; chosen starts: 0, 4, 5; flips so far: 3. Final return value: 3.",
+      "effective": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "description": "Official example 2: 110, k=2 → −1",
+      "expected": -1,
+      "terminal": "Checked 3/3 positions; chosen starts: none; flips so far: 0. Final return value: -1.",
+      "effective": [
+        "1",
+        "1",
+        "0"
+      ]
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "description": "Official example 1: 010, k=1 → 2 flips",
+      "expected": 2,
+      "terminal": "Checked 3/3 positions; chosen starts: 0, 2; flips so far: 2. Final return value: 2.",
+      "effective": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "description": "Whole array: 000, k=3 → 1 flip",
+      "expected": 1,
+      "terminal": "Checked 3/3 positions; chosen starts: 0; flips so far: 1. Final return value: 1.",
+      "effective": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "lang": "en",
+      "p": 5,
+      "description": "Already all 1s: 111, k=2 → 0 flips",
+      "expected": 0,
+      "terminal": "Checked 3/3 positions; chosen starts: none; flips so far: 0. Final return value: 0.",
+      "effective": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "lang": "en",
+      "p": 6,
+      "description": "Mixed whole array: 010, k=3 → −1",
+      "expected": -1,
+      "terminal": "Checked 2/3 positions; chosen starts: 0; flips so far: 1. Final return value: -1.",
+      "effective": [
+        "1",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "lang": "en",
+      "p": 7,
+      "description": "Single bit: 0, k=1 → 1 flip",
+      "expected": 1,
+      "terminal": "Checked 1/1 positions; chosen starts: 0; flips so far: 1. Final return value: 1.",
+      "effective": [
+        "1"
+      ]
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "description": "手算：010，k=2 → 2 次",
+      "expected": 2,
+      "terminal": "已检查 3/3 位；选定起点：0, 1；累计翻转 2 次。最终返回值：2。",
+      "effective": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "description": "官方例 3：00010110，k=3 → 3 次",
+      "expected": 3,
+      "terminal": "已检查 8/8 位；选定起点：0, 4, 5；累计翻转 3 次。最终返回值：3。",
+      "effective": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "description": "官方例 2：110，k=2 → −1",
+      "expected": -1,
+      "terminal": "已检查 3/3 位；选定起点：无；累计翻转 0 次。最终返回值：-1。",
+      "effective": [
+        "1",
+        "1",
+        "0"
+      ]
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "description": "官方例 1：010，k=1 → 2 次",
+      "expected": 2,
+      "terminal": "已检查 3/3 位；选定起点：0, 2；累计翻转 2 次。最终返回值：2。",
+      "effective": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "description": "全窗口：000，k=3 → 1 次",
+      "expected": 1,
+      "terminal": "已检查 3/3 位；选定起点：0；累计翻转 1 次。最终返回值：1。",
+      "effective": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "lang": "zh",
+      "p": 5,
+      "description": "已经全 1：111，k=2 → 0 次",
+      "expected": 0,
+      "terminal": "已检查 3/3 位；选定起点：无；累计翻转 0 次。最终返回值：0。",
+      "effective": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "lang": "zh",
+      "p": 6,
+      "description": "全窗口但混合：010，k=3 → −1",
+      "expected": -1,
+      "terminal": "已检查 2/3 位；选定起点：0；累计翻转 1 次。最终返回值：-1。",
+      "effective": [
+        "1",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "lang": "zh",
+      "p": 7,
+      "description": "单个位：0，k=1 → 1 次",
+      "expected": 1,
+      "terminal": "已检查 1/1 位；选定起点：0；累计翻转 1 次。最终返回值：1。",
+      "effective": [
+        "1"
+      ]
+    }
+  ],
+  "feedback": [
+    {
+      "lang": "en",
+      "option": 0,
+      "text": "Two flips are insufficient: after the first two forced flips, trailing 00 remains. Answer: 3. 0110 → (start 0) 1010 → (start 1) 1100 → (start 2) 1111. At i = 2, start 0 expires first, changing parity from 0 to 1. Original 1 ^ 1 = 0 forces the third flip. None of these three starts can be omitted."
+    },
+    {
+      "lang": "en",
+      "option": 1,
+      "text": "A solution exists: the last legal window starts at 2 and fixes the suffix. Answer: 3. 0110 → (start 0) 1010 → (start 1) 1100 → (start 2) 1111. At i = 2, start 0 expires first, changing parity from 0 to 1. Original 1 ^ 1 = 0 forces the third flip. None of these three starts can be omitted."
+    },
+    {
+      "lang": "en",
+      "option": 2,
+      "text": "Correct prediction. Answer: 3. 0110 → (start 0) 1010 → (start 1) 1100 → (start 2) 1111. At i = 2, start 0 expires first, changing parity from 0 to 1. Original 1 ^ 1 = 0 forces the third flip. None of these three starts can be omitted."
+    },
+    {
+      "lang": "zh",
+      "option": 0,
+      "text": "2 次还不够：两个原始 0 分处两端，前两次会留下末尾的 00。 答案 3：0110 →（起点 0）1010 →（起点 1）1100 →（起点 2）1111。i = 2 时，起点 0 的窗口先到期，parity 从 0 变 1，原值 1 ^ 1 = 0，因此第三次翻转被强迫。三个起点都不能省略。"
+    },
+    {
+      "lang": "zh",
+      "option": 1,
+      "text": "仍然有解：最后一个合法窗口从 2 开始，恰好能处理末尾。 答案 3：0110 →（起点 0）1010 →（起点 1）1100 →（起点 2）1111。i = 2 时，起点 0 的窗口先到期，parity 从 0 变 1，原值 1 ^ 1 = 0，因此第三次翻转被强迫。三个起点都不能省略。"
+    },
+    {
+      "lang": "zh",
+      "option": 2,
+      "text": "预测正确。 答案 3：0110 →（起点 0）1010 →（起点 1）1100 →（起点 2）1111。i = 2 时，起点 0 的窗口先到期，parity 从 0 变 1，原值 1 ^ 1 = 0，因此第三次翻转被强迫。三个起点都不能省略。"
+    }
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "state": "after second flip i=1, original1 ^ parity1 =0, current and fixed coexist",
+      "marker": "Index 1\n1\nOriginal 1\n✓ Fixed\nJust checked",
+      "event": "Just checked i = 1: entry parity 1, expiry toggle 0 → parity before test 1; original 1 ^ 1 = 0. Current 0 forces a flip from 1 through 2, expiring at 3. Parity after decision = 0.",
+      "ledger": "0\t0 → 0 → 1\t0 ^ 0 = 0\tFlip; expires at 2\n1\t1 → 1 → 0\t1 ^ 1 = 0\tFlip; expires at 3"
+    },
+    {
+      "lang": "en",
+      "state": "i=2 after first window expires: skip",
+      "event": "Just checked i = 2: entry parity 0, expiry toggle 1 → parity before test 1; original 0 ^ 1 = 1. Current 1: skip this start. Parity after decision = 1.",
+      "progress": "Checked 3/3 positions; chosen starts: 0, 1; flips so far: 2. Final return value: 2."
+    },
+    {
+      "lang": "en",
+      "state": "failure at trailing zero, count0 but final−1",
+      "event": "Just checked i = 2: entry parity 0, expiry toggle 0 → parity before test 0; original 0 ^ 0 = 0. Current 0, but 2 + 2 > 3: a full window cannot fit; return −1. Parity after decision = 0.",
+      "progress": "Checked 3/3 positions; chosen starts: none; flips so far: 0. Final return value: -1."
+    },
+    {
+      "lang": "zh",
+      "state": "after second flip i=1, original1 ^ parity1 =0, current and fixed coexist",
+      "marker": "位置 1\n1\n原值 1\n✓ 已定\n当前检查",
+      "event": "刚检查 i = 1：进入 parity 1，到期切换 0 → 检查前 parity 1；原值 1 ^ 1 = 0。当前 0，必须从 1 翻转至 2，在 3 到期。 决定后 parity = 0。",
+      "ledger": "0\t0 → 0 → 1\t0 ^ 0 = 0\t翻转；在 2 到期\n1\t1 → 1 → 0\t1 ^ 1 = 0\t翻转；在 3 到期"
+    },
+    {
+      "lang": "zh",
+      "state": "i=2 after first window expires: skip",
+      "event": "刚检查 i = 2：进入 parity 0，到期切换 1 → 检查前 parity 1；原值 0 ^ 1 = 1。当前 1，跳过该起点。 决定后 parity = 1。",
+      "progress": "已检查 3/3 位；选定起点：0, 1；累计翻转 2 次。最终返回值：2。"
+    },
+    {
+      "lang": "zh",
+      "state": "failure at trailing zero, count0 but final−1",
+      "event": "刚检查 i = 2：进入 parity 0，到期切换 0 → 检查前 parity 0；原值 0 ^ 0 = 0。当前 0，但 2 + 2 > 3，完整窗口放不下，返回 −1。 决定后 parity = 0。",
+      "progress": "已检查 3/3 位；选定起点：无；累计翻转 0 次。最终返回值：-1。"
+    }
+  ],
+  "geometry": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "pageWidth": 320,
+      "viewport": 320,
+      "tableWidth": 262,
+      "tableScroll": 580,
+      "cards": [
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "pageWidth": 320,
+      "viewport": 320,
+      "tableWidth": 102,
+      "tableScroll": 580,
+      "cards": [
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 292
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "pageWidth": 390,
+      "viewport": 390,
+      "tableWidth": 332,
+      "tableScroll": 580,
+      "cards": [
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "pageWidth": 390,
+      "viewport": 390,
+      "tableWidth": 137,
+      "tableScroll": 580,
+      "cards": [
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 292
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "pageWidth": 736,
+      "viewport": 736,
+      "tableWidth": 646,
+      "tableScroll": 646,
+      "cards": [
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "pageWidth": 736,
+      "viewport": 736,
+      "tableWidth": 278,
+      "tableScroll": 580,
+      "cards": [
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 292
+        },
+        {
+          "width": 200,
+          "height": 292
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "pageWidth": 1440,
+      "viewport": 1440,
+      "tableWidth": 910,
+      "tableScroll": 910,
+      "cards": [
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "pageWidth": 1440,
+      "viewport": 1440,
+      "tableWidth": 630,
+      "tableScroll": 630,
+      "cards": [
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 292
+        },
+        {
+          "width": 200,
+          "height": 292
+        },
+        {
+          "width": 200,
+          "height": 292
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "pageWidth": 320,
+      "viewport": 320,
+      "tableWidth": 262,
+      "tableScroll": 580,
+      "cards": [
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "pageWidth": 320,
+      "viewport": 320,
+      "tableWidth": 102,
+      "tableScroll": 580,
+      "cards": [
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 292
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "pageWidth": 390,
+      "viewport": 390,
+      "tableWidth": 332,
+      "tableScroll": 580,
+      "cards": [
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "pageWidth": 390,
+      "viewport": 390,
+      "tableWidth": 137,
+      "tableScroll": 580,
+      "cards": [
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 292
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "pageWidth": 736,
+      "viewport": 736,
+      "tableWidth": 646,
+      "tableScroll": 646,
+      "cards": [
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 125
+        },
+        {
+          "width": 100,
+          "height": 125
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "pageWidth": 736,
+      "viewport": 736,
+      "tableWidth": 278,
+      "tableScroll": 580,
+      "cards": [
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 292
+        },
+        {
+          "width": 200,
+          "height": 292
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "pageWidth": 1440,
+      "viewport": 1440,
+      "tableWidth": 910,
+      "tableScroll": 910,
+      "cards": [
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        },
+        {
+          "width": 100,
+          "height": 146
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "pageWidth": 1440,
+      "viewport": 1440,
+      "tableWidth": 630,
+      "tableScroll": 630,
+      "cards": [
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 250
+        },
+        {
+          "width": 200,
+          "height": 292
+        },
+        {
+          "width": 200,
+          "height": 292
+        },
+        {
+          "width": 200,
+          "height": 292
+        }
+      ]
+    }
+  ],
+  "contrast": [
+    {
+      "sel": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "sel": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "sel": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "sel": "#progress",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#event",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "sel": "#prev",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#next",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "#langToggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": ".step-nav a",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "#bits .bit b",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#bits .bit small",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "sel": "#bits .current-label",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "sel": "#code",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(9, 14, 22)",
+      "ratio": 16.437295258072666
+    },
+    {
+      "sel": "#fallbackSource",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#copyStatus",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "sel": "#reveal",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "#preset",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "#download",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "th",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "sel": "td",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    }
+  ],
+  "related": [
+    {
+      "href": "http://127.0.0.1:18798/leetcode/330/#step2",
+      "heading": "每次消费或补数后，边界如何改变？"
+    },
+    {
+      "href": "http://127.0.0.1:18798/leetcode/2916/#step3",
+      "heading": "只知道旧平方和，够不够？"
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "en",
+      "sentinelResetVerified": true,
+      "nativeCopy": true,
+      "fallbackActualShortcut": "Control+C",
+      "exactBytes": true
+    },
+    {
+      "lang": "zh",
+      "sentinelResetVerified": true,
+      "nativeCopy": true,
+      "fallbackActualShortcut": "Control+C",
+      "exactBytes": true
+    }
+  ],
+  "errors": [],
+  "badAssets": [],
+  "external": [],
+  "controlSizes": [
+    {
+      "label": "← LeetCode 知识索引",
+      "height": 48
+    },
+    {
+      "label": "中",
+      "height": 48
+    },
+    {
+      "label": "EN",
+      "height": 48
+    },
+    {
+      "label": "打开官方题目 ↗",
+      "height": 48
+    },
+    {
+      "label": "1 · 亲手翻转",
+      "height": 48
+    },
+    {
+      "label": "2 · 必须做的选择",
+      "height": 48
+    },
+    {
+      "label": "3 · 记住奇偶性",
+      "height": 48
+    },
+    {
+      "label": "4 · 先预测",
+      "height": 48
+    },
+    {
+      "label": "5 · 实现与边界",
+      "height": 48
+    },
+    {
+      "label": "撤销上一个演示步骤",
+      "height": 48
+    },
+    {
+      "label": "展示下一次翻转",
+      "height": 48
+    },
+    {
+      "label": "查看直接翻转的基线 Python",
+      "height": 48
+    },
+    {
+      "label": "ABCDEFGH",
+      "height": 48
+    },
+    {
+      "label": "上一个位置",
+      "height": 48
+    },
+    {
+      "label": "检查下一个位置",
+      "height": 48
+    },
+    {
+      "label": "重置此扫描",
+      "height": 48
+    },
+    {
+      "label": "走到结果",
+      "height": 48
+    },
+    {
+      "label": "2 次",
+      "height": 48
+    },
+    {
+      "label": "−1，不可能",
+      "height": 48
+    },
+    {
+      "label": "3 次",
+      "height": 48
+    },
+    {
+      "label": "揭晓并解释",
+      "height": 48
+    },
+    {
+      "label": "官方接口 Python3 提交源码",
+      "height": 48
+    },
+    {
+      "label": "复制 Python",
+      "height": 48
+    },
+    {
+      "label": "下载 solution.py",
+      "height": 48
+    },
+    {
+      "label": "回看：为什么起点被强迫",
+      "height": 48
+    },
+    {
+      "label": "#330：用前缀不变条件证明贪心",
+      "height": 48
+    },
+    {
+      "label": "#2916：连续区间的增量维护",
+      "height": 48
+    }
+  ],
+  "focusContrast": 8.937191437807625,
+  "keyboardTableScroll": true,
+  "forcedColorsAndReducedMotion": true,
+  "blockedStorageOffline": true,
+  "fileOpening": true,
+  "cssBytes": 11431
+}

@@ -1802,3 +1802,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Earliest valid start invariant | `leetcode/992/#step2` | Repair frequency windows and count valid starts. |
 
 <!-- /leetcode-992-campaign -->
+
+
+<!-- leetcode-995-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Forced leftmost flip | `leetcode/995/#step2` | Why each left-to-right decision is forced. |
+| Flip parity and expiry | `leetcode/995/#step3` | Replace interval writes with two boundary toggles. |
+
+<!-- /leetcode-995-campaign -->
