@@ -1,0 +1,618 @@
+{
+  "kind": "author real Chromium self-check",
+  "status": "PASS",
+  "coverage": [
+    {
+      "lang": "en",
+      "n": 3,
+      "k": 1,
+      "answer": 2,
+      "allCells": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 3,
+      "k": 3,
+      "answer": 1,
+      "allCells": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 4,
+      "k": 5,
+      "answer": 3,
+      "allCells": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 4,
+      "k": 0,
+      "answer": 1,
+      "allCells": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 3,
+      "k": 4,
+      "answer": 0,
+      "allCells": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 1,
+      "k": 0,
+      "answer": 1,
+      "allCells": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "n": 5,
+      "k": 6,
+      "answer": 20,
+      "allCells": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 3,
+      "k": 1,
+      "answer": 2,
+      "allCells": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 3,
+      "k": 3,
+      "answer": 1,
+      "allCells": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 4,
+      "k": 5,
+      "answer": 3,
+      "allCells": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 4,
+      "k": 0,
+      "answer": 1,
+      "allCells": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 3,
+      "k": 4,
+      "answer": 0,
+      "allCells": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 1,
+      "k": 0,
+      "answer": 1,
+      "allCells": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "zh",
+      "n": 5,
+      "k": 6,
+      "answer": 20,
+      "allCells": true,
+      "endpoints": true,
+      "replay": true,
+      "slider": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "controls": ">=48px",
+      "noPageOverflow": true,
+      "termGeometry": [
+        {
+          "w": 64,
+          "scroll": 64
+        },
+        {
+          "w": 64,
+          "scroll": 64
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        }
+      ],
+      "table": "contained horizontal scrolling"
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "controls": ">=48px",
+      "noPageOverflow": true,
+      "termGeometry": [
+        {
+          "w": 64,
+          "scroll": 64
+        },
+        {
+          "w": 64,
+          "scroll": 64
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        }
+      ],
+      "table": "contained horizontal scrolling"
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "controls": ">=48px",
+      "noPageOverflow": true,
+      "termGeometry": [
+        {
+          "w": 72,
+          "scroll": 72
+        },
+        {
+          "w": 72,
+          "scroll": 72
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        }
+      ],
+      "table": "contained horizontal scrolling"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "controls": ">=48px",
+      "noPageOverflow": true,
+      "termGeometry": [
+        {
+          "w": 72,
+          "scroll": 72
+        },
+        {
+          "w": 72,
+          "scroll": 72
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        }
+      ],
+      "table": "contained horizontal scrolling"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "controls": ">=48px",
+      "noPageOverflow": true,
+      "termGeometry": [
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        }
+      ],
+      "table": "contained horizontal scrolling"
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "controls": ">=48px",
+      "noPageOverflow": true,
+      "termGeometry": [
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        },
+        {
+          "w": 58,
+          "scroll": 58
+        }
+      ],
+      "table": "contained horizontal scrolling"
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "controls": ">=48px",
+      "noPageOverflow": true,
+      "termGeometry": [
+        {
+          "w": 63,
+          "scroll": 63
+        },
+        {
+          "w": 63,
+          "scroll": 63
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        }
+      ],
+      "table": "contained horizontal scrolling"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "controls": ">=48px",
+      "noPageOverflow": true,
+      "termGeometry": [
+        {
+          "w": 63,
+          "scroll": 63
+        },
+        {
+          "w": 63,
+          "scroll": 63
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        },
+        {
+          "w": 60,
+          "scroll": 60
+        }
+      ],
+      "table": "contained horizontal scrolling"
+    }
+  ],
+  "bindings": [
+    {
+      "lang": "en",
+      "key": "recurrence",
+      "visible": "D[i][j] = Σ D[i−1][j−x], 0 ≤ x ≤ min(i−1,j); D[0][0] = 1, D[0][j>0] = 0."
+    },
+    {
+      "lang": "en",
+      "key": "slideFormula",
+      "visible": "window ← (window + prev[j] − (prev[j−i] if j ≥ i, else 0)) mod M; cur[j] ← window."
+    },
+    {
+      "lang": "en",
+      "option": "0",
+      "feedback": "This choice counts the wrong cases. Only x=0,1,2 are possible: D[4][2]+D[4][1]+D[4][0]=5+3+1=9. x=3 or 4 would require a negative old count. Choosing 5 counts only appending 5; 15 also adds D[4][3]=6, which would require adding −1 pair. The unique removal of the largest value guarantees these nine cases do not overlap."
+    },
+    {
+      "lang": "en",
+      "option": "1",
+      "feedback": "Correct choice. Only x=0,1,2 are possible: D[4][2]+D[4][1]+D[4][0]=5+3+1=9. x=3 or 4 would require a negative old count. Choosing 5 counts only appending 5; 15 also adds D[4][3]=6, which would require adding −1 pair. The unique removal of the largest value guarantees these nine cases do not overlap."
+    },
+    {
+      "lang": "en",
+      "option": "2",
+      "feedback": "This choice counts the wrong cases. Only x=0,1,2 are possible: D[4][2]+D[4][1]+D[4][0]=5+3+1=9. x=3 or 4 would require a negative old count. Choosing 5 counts only appending 5; 15 also adds D[4][3]=6, which would require adding −1 pair. The unique removal of the largest value guarantees these nine cases do not overlap."
+    },
+    {
+      "lang": "zh",
+      "key": "recurrence",
+      "visible": "D[i][j] = Σ D[i−1][j−x], 0 ≤ x ≤ min(i−1,j)；D[0][0] = 1，D[0][j>0] = 0。"
+    },
+    {
+      "lang": "zh",
+      "key": "slideFormula",
+      "visible": "window ← (window + prev[j] − (prev[j−i] 若 j ≥ i，否则 0)) mod M；cur[j] ← window。"
+    },
+    {
+      "lang": "zh",
+      "option": "0",
+      "feedback": "这个选择计入的情况不对。 只可取 x=0,1,2，对应旧计数 D[4][2]+D[4][1]+D[4][0]=5+3+1=9。x=3 或 4 需要旧排列有负数对，不可能。5 只算把 5 放最后；15 多加了 D[4][3]=6，那需要新增 −1 对。唯一删除最大值的分组保证这 9 种互不重复。"
+    },
+    {
+      "lang": "zh",
+      "option": "1",
+      "feedback": "选择正确。 只可取 x=0,1,2，对应旧计数 D[4][2]+D[4][1]+D[4][0]=5+3+1=9。x=3 或 4 需要旧排列有负数对，不可能。5 只算把 5 放最后；15 多加了 D[4][3]=6，那需要新增 −1 对。唯一删除最大值的分组保证这 9 种互不重复。"
+    },
+    {
+      "lang": "zh",
+      "option": "2",
+      "feedback": "这个选择计入的情况不对。 只可取 x=0,1,2，对应旧计数 D[4][2]+D[4][1]+D[4][0]=5+3+1=9。x=3 或 4 需要旧排列有负数对，不可能。5 只算把 5 放最后；15 多加了 D[4][3]=6，那需要新增 −1 对。唯一删除最大值的分组保证这 9 种互不重复。"
+    },
+    {
+      "state": "subtraction frame + locale switch",
+      "event": "Just completed D[3][3]: old window 2 + entering prev[3]=0 − leaving prev[0]=1 = 1 (mod M)."
+    },
+    {
+      "lang": "en",
+      "state": "manual clipboard fallback",
+      "visible": "Automatic copy unavailable; the full source below is selected for manual copying."
+    },
+    {
+      "lang": "zh",
+      "state": "manual clipboard fallback",
+      "visible": "自动复制不可用；已选中下方完整源码，请手动复制。"
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "foreground": "rgb(201, 212, 226)",
+      "background": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".formula",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".term.used",
+      "foreground": "rgb(110, 231, 255)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 10.910104011097095
+    },
+    {
+      "selector": ".term:not(.used)",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".current-cell",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": "#next:disabled",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#langToggle button:not(.active)",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "#langToggle button.active",
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a:not(.active)",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgba(13, 17, 23, 0.96)",
+      "opacity": "1",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#copy",
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#feedback",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "focus accent2 / panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "field boundary muted / panel2",
+      "ratio": 6.449407898769069
+    }
+  ],
+  "cssBytes": 11708,
+  "errors": [],
+  "badResponses": [],
+  "externalRequests": [],
+  "sourceParity": "exact mirror, textContent, intercepted and native clipboard, actual manual selection plus Control+C, downloaded bytes",
+  "zoom": "200% CSS zoom at 640 and 1440 widths, both locales",
+  "keyboard": true,
+  "forcedColors": true,
+  "blockedStorageOffline": true
+}
