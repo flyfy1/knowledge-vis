@@ -1694,3 +1694,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Disjoint-set component invariant | `leetcode/839/#step2` | After each pair, sets equal the connected components of the processed edges. |
 
 <!-- /leetcode-839-campaign -->
+
+
+<!-- leetcode-843-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Candidate consistency | `leetcode/843/#step1` | Filter the words by exact agreement with every reply. |
+| Worst reply bucket | `leetcode/843/#step2` | Minimize the largest non-success reply group. |
+
+<!-- /leetcode-843-campaign -->

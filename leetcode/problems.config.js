@@ -3389,6 +3389,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²(L + log n)) time; O(n) auxiliary space, for n words of length L (conservative bound)"
   },
   {
+    "id": 843,
+    "title": {
+      "zh": "猜猜这个单词",
+      "en": "Guess the Word"
+    },
+    "desc": {
+      "zh": "用逐位匹配排除候选，再用最坏回复桶选择提问。",
+      "en": "Filter by positional matches and choose guesses by worst reply buckets."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "交互式搜索",
+        "en": "Interactive search"
+      },
+      {
+        "zh": "极小化最坏情况",
+        "en": "Minimax"
+      }
+    ],
+    "path": "843/",
+    "leetcodeUrl": "https://leetcode.com/problems/guess-the-word/",
+    "language": "Python",
+    "complexity": "O(n²L + Gn²) time; O(n²) auxiliary space, L=6 and G≤10"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
