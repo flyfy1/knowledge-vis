@@ -102,3 +102,21 @@ did not independently rerun those tests, inspect the full visual evidence, or
 execute the helper. The main evidence report is assembled separately. The live
 guards, interruption reconciliation and fresh-review obligations above still
 apply; no lesson acceptance or public-delivery claim follows from this approval.
+
+## Dispatcher execution
+
+Executed the exact approved helper at the stopped candidate boundary on
+2026-10-25. Source `9c5ad2c3a87c913ee806900381e64776d443f635` supplied only the
+named reports/evidence. The [completed receipt](765-evidence/mac-candidate-handoff-20261025/handoff-receipt.json)
+records central documentation commit `8d44249808b43d9d56ad26592d276443a9994649`,
+the preserved author platform limitation and the progress backup. The 219-file
+manifest and six exact successful commands passed the live helper guards before
+state was changed. No served-content backup was created.
+
+The dispatcher then confirmed PID 1063557 and its separate reviewer child 1063993
+were live. Saved run `765-review-c582106ff628` is reviewing the candidate with the
+Mac evidence attached; all 984 queue entries remain, #780 remains pending review,
+STOP is absent, the ledger still contains 103 released entries and no pending
+release. The central rendered-state contract is byte-identical to its pre-handoff
+revision: the separately prepared local spec clarification has not been adopted
+into this frozen review. Independent lesson acceptance remains pending.
