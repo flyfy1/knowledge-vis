@@ -15,3 +15,11 @@ The Python test executes the canonical official callable, preserves input, check
 The browser test covers both locales, every preset to completion, each transition, middle-state rewind/replay, endpoints, reset/jump, all three prediction choices and reveal/change/reset, language preservation, all turn settings, the tiny overlay, native clipboard success and denied-copy manual fallback including actual Control+C, byte-exact download/source parity, keyboard activation/focus, blocked storage, file:// offline display, local asset errors, related anchors, contrast and responsive states. Zoom evidence uses CSS zoom=2 at a 720x500 viewport as a 200% layout stress test; it is not a hardware-device or browser-toolbar zoom observation. Plots intentionally retain 500px intrinsic width with keyboard-focusable horizontal scrolling on phones. Focused left/right screenshots make both ends inspectable.
 
 Evidence is an author self-check, not independent review or an actual LeetCode submission. After test success, inspect the screenshots visually. SELF-CHECK.md records the author's observations. CANDIDATE.json identifies frozen sources; output evidence is separate so rerunning tests elsewhere does not change source identity.
+
+R1 preset-count regression (587-R1-F1):
+
+```sh
+EVIDENCE_DIR=leetcode/587/tests/evidence/r1-fix node leetcode/587/tests/preset-scope.cjs
+```
+
+This reads rendered selected options in both locales at 1365/320/390px, compares hand-calculated input/boundary counts, tests initial/event-4/final states and language-switch preservation, and checks selected text fits beside the native arrow. Screenshots cover Garden and Two pops. It uses a test-only instant-scroll style to avoid animation delays between the selector and locale buttons. The pre-fix red result is retained separately in `tests/evidence/r1-fix-before/`; later author results never close the independent finding.
