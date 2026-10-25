@@ -1,0 +1,130 @@
+{
+  "cases": [
+    {
+      "input": [
+        1,
+        2,
+        3,
+        0,
+        5,
+        4
+      ],
+      "prediction": 1,
+      "actual": 1,
+      "oracle": 1,
+      "after": [
+        1,
+        0,
+        3,
+        2,
+        5,
+        4
+      ]
+    },
+    {
+      "input": [
+        0,
+        3,
+        2,
+        5,
+        4,
+        7,
+        6,
+        1
+      ],
+      "prediction": 3,
+      "actual": 3,
+      "oracle": 3,
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "input": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "prediction": 0,
+      "actual": 0,
+      "oracle": 0,
+      "after": [
+        1,
+        0,
+        3,
+        2
+      ]
+    },
+    {
+      "input": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "prediction": 1,
+      "actual": 1,
+      "oracle": 1,
+      "after": [
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        7,
+        0,
+        5,
+        6,
+        3
+      ],
+      "prediction": 2,
+      "actual": 2,
+      "oracle": 2,
+      "after": [
+        4,
+        5,
+        2,
+        3,
+        0,
+        1,
+        6,
+        7
+      ]
+    },
+    {
+      "boundary_n": 30,
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "boundary_n": 30,
+      "expected": 29,
+      "actual": 29
+    }
+  ],
+  "served_exact_sha256": {
+    "765/index.html": "2482616e0ae78a7d793a588594d22fc7dabe9b96067bd403ca82d4e2a3081529",
+    "765/app.js": "0fc5549f2f851026cb4b27d0fa2d6a8ef0142bfee369a638b834360ba83f2b81",
+    "765/core.js": "4255509493625b564f1a41587db3b9773240d26cd5b9c4a30bc1668a09f10a45",
+    "765/copy.js": "a17699cca4918d03ee9573e0ee5135bb8228bd889b62c7a66409219819712015",
+    "765/style.css": "9e87196287b5c01697bd5497122f8ab4c723f0abb795a55fd0a7f755ee3c3326",
+    "765/solution.py": "c359058093535eb91b174ca647cc7f607564e11672dcd63951fc93654968ddb7",
+    "765/python-code.js": "0c77a1642e4b6bedd280193ecb002a336966ba1156e76d91eefd75b74eb85318",
+    "common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}

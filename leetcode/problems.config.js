@@ -2857,6 +2857,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n² log n) time; O(n²) auxiliary space (conservative bounds for slicing implementation)"
   },
   {
+    "id": 765,
+    "title": {
+      "zh": "情侣牵手",
+      "en": "Couples Holding Hands"
+    },
+    "desc": {
+      "zh": "固定一个座位对，找回伴侣；用环证明交换次数最少。",
+      "en": "Repair one seat pair at a time, then prove the swap count with cycles."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "位置映射",
+        "en": "Position map"
+      },
+      {
+        "zh": "环",
+        "en": "Cycles"
+      }
+    ],
+    "path": "765/",
+    "leetcodeUrl": "https://leetcode.com/problems/couples-holding-hands/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space, where n is the number of couples"
+  },
+  {
     "id": 768,
     "title": {
       "zh": "最多能完成排序的块 II",

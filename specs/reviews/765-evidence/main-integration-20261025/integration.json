@@ -1,0 +1,30 @@
+{
+  "source": "c214c6549b53618d96782b6f827a5018c4c7f6e4",
+  "lessons": {
+    "765": {
+      "files": 152,
+      "candidate": "8d44249808b43d9d56ad26592d276443a9994649",
+      "exact": true
+    }
+  },
+  "protected_before": {
+    "index.html": "5c2fd1c30fee38137595f1599465970696c30fdf58ea687894741be508a49053",
+    "pages.config.js": "81558d1965b5917615b02437ca98493388d1d0ede89e56c6f19ec2441b340985",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+    "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+  },
+  "protected_after": {
+    "index.html": "5c2fd1c30fee38137595f1599465970696c30fdf58ea687894741be508a49053",
+    "pages.config.js": "81558d1965b5917615b02437ca98493388d1d0ede89e56c6f19ec2441b340985",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+    "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+  },
+  "registry_sha256": "bc77e0693bf7793df58b6ad4041e1fab375d749293b2cfac9acf1a9497ff48b0",
+  "published": false,
+  "preexisting_concept_map_preserved": true,
+  "mac_verification": "specs/reviews/765-review-mac-repaired-candidate-20261025.md"
+}

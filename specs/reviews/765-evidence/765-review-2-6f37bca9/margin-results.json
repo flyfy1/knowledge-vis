@@ -1,0 +1,520 @@
+{
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "syntheticStress": false,
+  "stressFont": null,
+  "legacyLabelOverride": false,
+  "arrowReserve": 24,
+  "records": [
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 0,
+      "roundtrip": true,
+      "label": "Example 1 · 4 people",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 155.0563201904297,
+      "dom": 155.0625,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 1,
+      "roundtrip": true,
+      "label": "Example 2 · paired",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 138.3042755126953,
+      "dom": 138.3125,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 2,
+      "roundtrip": true,
+      "label": "6 people · one chain",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 150.76829528808594,
+      "dom": 150.78125,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 3,
+      "roundtrip": true,
+      "label": "8 people: counterexample",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 195.6164093017578,
+      "dom": 195.625,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 4,
+      "roundtrip": true,
+      "label": "8 people · two chains",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 157.872314453125,
+      "dom": 157.875,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 0,
+      "roundtrip": true,
+      "label": "官方例 1 · 4 人",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 103.23219299316406,
+      "dom": 103.234375,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 1,
+      "roundtrip": true,
+      "label": "官方例 2 · 已配好",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 121.92022705078125,
+      "dom": 121.921875,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 2,
+      "roundtrip": true,
+      "label": "6 人 · 一条长链",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 105.92019653320312,
+      "dom": 105.921875,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 3,
+      "roundtrip": true,
+      "label": "8 人 · 反例",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 73.92013549804688,
+      "dom": 73.921875,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 4,
+      "roundtrip": true,
+      "label": "8 人 · 两条链",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 89.920166015625,
+      "dom": 89.921875,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "preset": 0,
+      "roundtrip": true,
+      "label": "Example 1 · 4 people",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 330,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 155.0563201904297,
+      "dom": 155.0625,
+      "available": 276,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "preset": 1,
+      "roundtrip": true,
+      "label": "Example 2 · paired",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 330,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 138.3042755126953,
+      "dom": 138.3125,
+      "available": 276,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "preset": 2,
+      "roundtrip": true,
+      "label": "6 people · one chain",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 330,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 150.76829528808594,
+      "dom": 150.78125,
+      "available": 276,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "preset": 3,
+      "roundtrip": true,
+      "label": "8 people: counterexample",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 330,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 195.6164093017578,
+      "dom": 195.625,
+      "available": 276,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "preset": 4,
+      "roundtrip": true,
+      "label": "8 people · two chains",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 330,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 157.872314453125,
+      "dom": 157.875,
+      "available": 276,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "preset": 0,
+      "roundtrip": true,
+      "label": "官方例 1 · 4 人",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 330,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 103.23219299316406,
+      "dom": 103.234375,
+      "available": 276,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "preset": 1,
+      "roundtrip": true,
+      "label": "官方例 2 · 已配好",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 330,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 121.92022705078125,
+      "dom": 121.921875,
+      "available": 276,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "preset": 2,
+      "roundtrip": true,
+      "label": "6 人 · 一条长链",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 330,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 105.92019653320312,
+      "dom": 105.921875,
+      "available": 276,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "preset": 3,
+      "roundtrip": true,
+      "label": "8 人 · 反例",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 330,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 73.92013549804688,
+      "dom": 73.921875,
+      "available": 276,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "lang": "zh",
+      "preset": 4,
+      "roundtrip": true,
+      "label": "8 人 · 两条链",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 330,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 89.920166015625,
+      "dom": 89.921875,
+      "available": 276,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "preset": 0,
+      "roundtrip": true,
+      "label": "Example 1 · 4 people",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 908,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 155.0563201904297,
+      "dom": 155.0625,
+      "available": 854,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "preset": 1,
+      "roundtrip": true,
+      "label": "Example 2 · paired",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 908,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 138.3042755126953,
+      "dom": 138.3125,
+      "available": 854,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "preset": 2,
+      "roundtrip": true,
+      "label": "6 people · one chain",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 908,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 150.76829528808594,
+      "dom": 150.78125,
+      "available": 854,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "preset": 3,
+      "roundtrip": true,
+      "label": "8 people: counterexample",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 908,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 195.6164093017578,
+      "dom": 195.625,
+      "available": 854,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "preset": 4,
+      "roundtrip": true,
+      "label": "8 people · two chains",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 908,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 157.872314453125,
+      "dom": 157.875,
+      "available": 854,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "preset": 0,
+      "roundtrip": true,
+      "label": "官方例 1 · 4 人",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 908,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 103.23219299316406,
+      "dom": 103.234375,
+      "available": 854,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "preset": 1,
+      "roundtrip": true,
+      "label": "官方例 2 · 已配好",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 908,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 121.92022705078125,
+      "dom": 121.921875,
+      "available": 854,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "preset": 2,
+      "roundtrip": true,
+      "label": "6 人 · 一条长链",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 908,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 105.92019653320312,
+      "dom": 105.921875,
+      "available": 854,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "preset": 3,
+      "roundtrip": true,
+      "label": "8 人 · 反例",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 908,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 73.92013549804688,
+      "dom": 73.921875,
+      "available": 854,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "preset": 4,
+      "roundtrip": true,
+      "label": "8 人 · 两条链",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 908,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 89.920166015625,
+      "dom": 89.921875,
+      "available": 854,
+      "pass": true
+    }
+  ]
+}

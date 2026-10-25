@@ -1,0 +1,35 @@
+{
+  "macTestedRevision": "3193aec4bdbbb13e094664e0de79cac6039f538a",
+  "currentRevision": "8d44249808b43d9d56ad26592d276443a9994649",
+  "matchingCurrentFiles": [
+    "leetcode/style.css",
+    "leetcode/common.js",
+    "leetcode/765/index.html",
+    "leetcode/765/core.js",
+    "leetcode/765/copy.js",
+    "leetcode/765/solution.py",
+    "leetcode/765/python-code.js",
+    "leetcode/765/style.css",
+    "leetcode/765/lesson-entry.json",
+    "leetcode/765/BRIEF.md",
+    "leetcode/765/app.js",
+    "leetcode/765/tests/test_browser.cjs",
+    "leetcode/765/tests/test_solution.py",
+    "leetcode/765/tests/test_rendered_contract.cjs",
+    "leetcode/765/tests/SELF-CHECK.md",
+    "leetcode/765/tests/test_margin.cjs",
+    "leetcode/765/tests/README.md",
+    "leetcode/765/tests/test_core.cjs",
+    "leetcode/765/provenance/official.json",
+    "leetcode/765/tests/zoom-extension/worker.js",
+    "leetcode/765/tests/zoom-extension/manifest.json"
+  ],
+  "browserTestIdentity": {
+    "original_candidate": "7ec592bddf5642212cdcb3363510982354da780e",
+    "repaired_candidate": "3193aec4bdbbb13e094664e0de79cac6039f538a",
+    "test": "leetcode/765/tests/test_browser.cjs",
+    "identical": true,
+    "sha256": "addc2e5f5c8f97a2fd31bcdd854caaf425dbf745f4e014ca0af877c777fb0e48"
+  },
+  "allMacChecksExitZero": true
+}

@@ -1,0 +1,123 @@
+{
+  "zh": {
+    "heading": "#765 · 情侣牵手",
+    "title": "#765 · 情侣牵手",
+    "operation": "i=2：伴侣 2 在 j=7。交换座位 3↔7，把人 4 移到 7；pos[2]=3，pos[4]=7。本次 +1 次交换。",
+    "progress": "已处理 2/4 个座位对 · 累计交换 2 次",
+    "after": [
+      "座位 00",
+      "座位 11",
+      "座位 23",
+      "座位 32",
+      "座位 45",
+      "座位 56",
+      "座位 67",
+      "座位 74"
+    ],
+    "map": "0 → 01 → 12 → 33 → 24 → 75 → 46 → 57 → 6",
+    "groups": "当前模拟：情侣标签的连通组 {0} {1} {2,3}；c=3，剩余最少 n−c=1 次。这里只为证明计算分组，提交代码不用建图。"
+  },
+  "en": {
+    "heading": "#765 · Couples Holding Hands",
+    "title": "#765 · Couples Holding Hands",
+    "operation": "i=2: partner 2 is at j=7. Swap seats 3↔7, moving person 4 to 7; pos[2]=3, pos[4]=7. This decision adds 1 swap.",
+    "progress": "Processed 2/4 seat pairs · Cumulative swaps: 2",
+    "after": [
+      "Seat 00",
+      "Seat 11",
+      "Seat 23",
+      "Seat 32",
+      "Seat 45",
+      "Seat 56",
+      "Seat 67",
+      "Seat 74"
+    ],
+    "map": "0 → 01 → 12 → 33 → 24 → 75 → 46 → 57 → 6",
+    "groups": "Current simulation: connected groups of couple labels {0} {1} {2,3}; c=3, minimum remaining n−c=1 swaps. Groups are computed for the proof only; the submission builds no graph."
+  },
+  "320-zh": {
+    "selected": "8 人 · 反例",
+    "textWidth": 73.92013549804688,
+    "clientWidth": 260,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "pageWidth": 320,
+    "viewport": 320
+  },
+  "320-en": {
+    "selected": "8 people · counterexample",
+    "textWidth": 199.7764129638672,
+    "clientWidth": 260,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "pageWidth": 320,
+    "viewport": 320
+  },
+  "390-zh": {
+    "selected": "8 人 · 反例",
+    "textWidth": 73.92013549804688,
+    "clientWidth": 330,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "pageWidth": 390,
+    "viewport": 390
+  },
+  "390-en": {
+    "selected": "8 people · counterexample",
+    "textWidth": 199.7764129638672,
+    "clientWidth": 330,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "pageWidth": 390,
+    "viewport": 390
+  },
+  "1280-zh": {
+    "selected": "8 人 · 反例",
+    "textWidth": 73.92013549804688,
+    "clientWidth": 908,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "pageWidth": 1280,
+    "viewport": 1280
+  },
+  "1280-en": {
+    "selected": "8 people · counterexample",
+    "textWidth": 199.7764129638672,
+    "clientWidth": 908,
+    "padding": [
+      "15px",
+      "15px"
+    ],
+    "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "pageWidth": 1280,
+    "viewport": 1280
+  },
+  "endpoint": "Finished: all 4 pairs fixed; final minimum is 3 swaps.",
+  "skip": "At left seat i=0, the partner is 2, already on the right: skip without adding a swap.",
+  "keyboardDisclosure": true,
+  "related": {
+    "url": "http://127.0.0.1:18770/leetcode/41/#step2",
+    "content": "03\n\nWhat changes in one operation?\n\nOnce x reaches x−1 it stays there. Out-of-range values and extra copies fill no new valid destination; the remaining gaps identify the answer. The lower row shows expected values, the upper row current values.\n\nAdvance through swaps and watch correct slots accumulate. Switch to duplicates and see how “destination already has this value” stops a cycle.\n\nExperiment input (changing restarts)\nChained swaps\nDuplicate cycle trap\nAll out of range\nComplete 1…n\n[3,4,-1,1]\nRewind one operation\nExecute next operation\nRestart this experiment\nEvent position\nEvent 0 / 8\n\nInitial state; no operation has run.\n\nHighlight and underline mark positions involved in this operation; indices appear below values.\n\nnums: index i should contain i+1\n3\n0\n4\n1\n-1\n2\n1\n3\nExpected value at each position\n1\n0\n2\n1\n3\n2\n4\n3\nPrevious state\nDiagram operation markers\n\nop_i marks the placement-loop position described by this frame; swap_to marks the destination of a swap just completed in this frame. ∅ means no applicable marker, not Python index −1 or a saved variable. After the first swap, skipping −1 shows op_i=0 and swap_to=∅; Python’s saved target is still 2. The final frame summarizes the scan result with both markers ∅.\n\nop_i\n∅\nswap_to\n∅\nCorresponding Python operation (focused excerpt)\nRecent operations (up to 6 retained)"
+  }
+}

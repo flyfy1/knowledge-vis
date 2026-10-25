@@ -1,0 +1,76 @@
+{
+  "snapshot": "c214c6549b53618d96782b6f827a5018c4c7f6e4",
+  "captured_updated_at": "2026-10-25T11:55:15.399356+00:00",
+  "problems": {
+    "765": {
+      "status": "accepted_local",
+      "rounds": 2,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/765-review-1-c03e66cb.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh canonical Python cases matched independent BFS predictions: 1 and 3 swaps.",
+            "Bilingual traces, rewind/reset/endpoints, keyboard, 320/390/desktop layouts and native 200% zoom passed.",
+            "Exact source parity verified for display, mirror, clipboard, manual fallback and download.",
+            "Non-mutating metadata preflight exited 0; candidate files unchanged."
+          ],
+          "detail": "95/100. No required findings. One optional advisory addresses the dense graph-proof transition.",
+          "run_id": "765-review-c06da47311c3",
+          "candidate": "7ec592bddf5642212cdcb3363510982354da780e",
+          "candidate_sha256": "bb4c4390b4ab05620d1f4fc4e3b6881606057ddfbcbcd874801a6973679b30e7",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "3ec2d6bc48f27daf8f134addabb832ec47ea7122"
+        },
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/765-review-2-6f37bca9.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh canonical Python cases matched independent BFS; metadata preflight passed.",
+            "Bilingual rewind, prediction, keyboard, narrow layouts and native 200% zoom passed.",
+            "Exact source transfer and native clipboard fallback verified.",
+            "765-MAC-MARGIN-01 closed against saved Mac regression evidence and verified current-file parity."
+          ],
+          "detail": "95/100. No required findings remain open. Dense graph-proof presentation remains an optional teaching refinement. Acceptance is separate from publication.",
+          "run_id": "765-review-c582106ff628",
+          "candidate": "8d44249808b43d9d56ad26592d276443a9994649",
+          "candidate_sha256": "fc6d6c283f081e106b37665129c24663a1bcd5a01765925c47395f985835affa",
+          "weighted_score": 95.0,
+          "round": 2,
+          "commit": "c214c6549b53618d96782b6f827a5018c4c7f6e4"
+        }
+      ],
+      "author_runs": [
+        "765-author-c2902f5df7fb",
+        "765-fix-f62a2cf56e90"
+      ],
+      "prior_report": "specs/reviews/765-review-2-6f37bca9.md",
+      "candidate": "8d44249808b43d9d56ad26592d276443a9994649",
+      "registration_commit": "c214c6549b53618d96782b6f827a5018c4c7f6e4",
+      "accepted_at": "2026-10-25T11:55:05.115756+00:00"
+    }
+  }
+}

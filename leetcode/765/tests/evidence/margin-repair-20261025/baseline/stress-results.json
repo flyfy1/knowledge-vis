@@ -1,0 +1,178 @@
+{
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "syntheticStress": true,
+  "arrowReserve": 24,
+  "records": [
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 0,
+      "roundtrip": true,
+      "label": "Example 1 · 4 people",
+      "font": "17px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 164.74658203125,
+      "dom": 164.75,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 1,
+      "roundtrip": true,
+      "label": "Example 2 · paired",
+      "font": "17px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 146.94761657714844,
+      "dom": 146.953125,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 2,
+      "roundtrip": true,
+      "label": "6 people · one chain",
+      "font": "17px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 160.19061279296875,
+      "dom": 160.203125,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 3,
+      "roundtrip": true,
+      "label": "8 people · counterexample",
+      "font": "17px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 212.26148986816406,
+      "dom": 212.265625,
+      "available": 206,
+      "pass": false
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "preset": 4,
+      "roundtrip": true,
+      "label": "8 people · two chains",
+      "font": "17px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 167.7385711669922,
+      "dom": 167.75,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 0,
+      "roundtrip": true,
+      "label": "官方例 1 · 4 人",
+      "font": "17px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 109.68370056152344,
+      "dom": 109.6875,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 1,
+      "roundtrip": true,
+      "label": "官方例 2 · 已配好",
+      "font": "17px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 129.53964233398438,
+      "dom": 129.546875,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 2,
+      "roundtrip": true,
+      "label": "6 人 · 一条长链",
+      "font": "17px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 112.53968811035156,
+      "dom": 112.546875,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 3,
+      "roundtrip": true,
+      "label": "8 人 · 反例",
+      "font": "17px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 78.53977966308594,
+      "dom": 78.546875,
+      "available": 206,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "lang": "zh",
+      "preset": 4,
+      "roundtrip": true,
+      "label": "8 人 · 两条链",
+      "font": "17px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "clientWidth": 260,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "text": 95.53973388671875,
+      "dom": 95.546875,
+      "available": 206,
+      "pass": true
+    }
+  ]
+}
