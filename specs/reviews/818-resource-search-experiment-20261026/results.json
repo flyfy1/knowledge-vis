@@ -1,0 +1,81 @@
+[
+  {
+    "status": "passed",
+    "independent_raw_bfs_targets": 64,
+    "variants": 2,
+    "peak_rss_bytes": 20332544,
+    "platform": "darwin"
+  },
+  {
+    "target": 9809,
+    "directional": false,
+    "status": "capped",
+    "answer": null,
+    "expanded": 177779,
+    "states": 250000,
+    "peak_heap": 73069,
+    "elapsed_seconds": 0.19119420801871456,
+    "peak_rss_bytes": 74973184,
+    "platform": "darwin"
+  },
+  {
+    "target": 9809,
+    "directional": true,
+    "status": "capped",
+    "answer": null,
+    "expanded": 203883,
+    "states": 250001,
+    "peak_heap": 47280,
+    "elapsed_seconds": 0.2137894170009531,
+    "peak_rss_bytes": 71778304,
+    "platform": "darwin"
+  },
+  {
+    "target": 9879,
+    "directional": false,
+    "status": "capped",
+    "answer": null,
+    "expanded": 177775,
+    "states": 250000,
+    "peak_heap": 73065,
+    "elapsed_seconds": 0.1892567920149304,
+    "peak_rss_bytes": 75186176,
+    "platform": "darwin"
+  },
+  {
+    "target": 9879,
+    "directional": true,
+    "status": "capped",
+    "answer": null,
+    "expanded": 203835,
+    "states": 250001,
+    "peak_heap": 47334,
+    "elapsed_seconds": 0.2191978330083657,
+    "peak_rss_bytes": 71827456,
+    "platform": "darwin"
+  },
+  {
+    "target": 10000,
+    "directional": false,
+    "status": "capped",
+    "answer": null,
+    "expanded": 177751,
+    "states": 250000,
+    "peak_heap": 73091,
+    "elapsed_seconds": 0.20217974999104626,
+    "peak_rss_bytes": 75202560,
+    "platform": "darwin"
+  },
+  {
+    "target": 10000,
+    "directional": true,
+    "status": "found",
+    "answer": 45,
+    "expanded": 99193,
+    "states": 124516,
+    "peak_heap": 25910,
+    "elapsed_seconds": 0.09881004199269228,
+    "peak_rss_bytes": 45662208,
+    "platform": "darwin"
+  }
+]

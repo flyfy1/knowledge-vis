@@ -1,0 +1,28 @@
+[
+  {
+    "target": 9809,
+    "directional": true,
+    "cap": 1000000,
+    "status": "found",
+    "answer": 56,
+    "expanded": 551148,
+    "states": 669016,
+    "peak_heap": 121334,
+    "elapsed_seconds": 0.6717921250092331,
+    "peak_rss_bytes": 146178048,
+    "platform": "darwin"
+  },
+  {
+    "target": 9879,
+    "directional": true,
+    "cap": 1000000,
+    "status": "found",
+    "answer": 55,
+    "expanded": 478281,
+    "states": 581444,
+    "peak_heap": 106157,
+    "elapsed_seconds": 0.5998980420117732,
+    "peak_rss_bytes": 135020544,
+    "platform": "darwin"
+  }
+]
