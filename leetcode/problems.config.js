@@ -2641,6 +2641,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) time; O(n²) auxiliary space"
   },
   {
+    "id": 732,
+    "title": {
+      "zh": "我的日程安排表 III",
+      "en": "My Calendar III"
+    },
+    "desc": {
+      "zh": "从半开区间的手算推导端点变化与扫描，求最大同时预订数。",
+      "en": "Derive endpoint changes and a sorted sweep to count simultaneous bookings."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "扫描线",
+        "en": "Sweep line"
+      },
+      {
+        "zh": "前缀和",
+        "en": "Prefix sum"
+      }
+    ],
+    "path": "732/",
+    "leetcodeUrl": "https://leetcode.com/problems/my-calendar-iii/",
+    "language": "Python",
+    "complexity": "O(b log b) time per book; O(b) space; O(B² log B) time for B calls"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
