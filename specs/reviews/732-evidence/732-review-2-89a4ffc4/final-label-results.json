@@ -1,0 +1,12 @@
+[
+  {
+    "lang": "en",
+    "operation": "Process 7: active = 1 + (-1) = 0; best = max(2, 0) = 2. Scanned 5/5 endpoints; scan complete, best is the return value.",
+    "answer": "Full scan complete: book(5, 6) returns 2. active is back at 0; return the maximum over the sweep, not its final active count."
+  },
+  {
+    "lang": "zh",
+    "operation": "处理坐标 7：active = 1 + (-1) = 0；best = max(2, 0) = 2。已扫描 5/5 个端点；扫描已完成，best 为返回值。",
+    "answer": "本次完整扫描结束：book(5, 6) 返回 2。active 已回到 0；返回的是整次扫描的最大值，而不是最后的 active。"
+  }
+]

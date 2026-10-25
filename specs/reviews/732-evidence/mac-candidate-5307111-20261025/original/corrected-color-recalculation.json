@@ -1,0 +1,113 @@
+{
+  "scope": "Recalculation from original recorded computed colors; no claim of complete state coverage",
+  "reference": "https://www.w3.org/TR/WCAG22/#dfn-relative-luminance",
+  "text": [
+    {
+      "foreground": "rgb(110, 231, 255)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637,
+      "example": "A",
+      "originalIncorrectRatio": 13.322641692972569
+    },
+    {
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637,
+      "example": "copyPython",
+      "originalIncorrectRatio": 13.322641692972569
+    },
+    {
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443,
+      "example": "P",
+      "originalIncorrectRatio": 7.165084672517054
+    },
+    {
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448,
+      "example": "LABEL",
+      "originalIncorrectRatio": 16.318441369698235
+    },
+    {
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095,
+      "example": "P",
+      "originalIncorrectRatio": 7.849266732183951
+    },
+    {
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgba(13, 17, 23, 0.96)",
+      "ratio": 7.7443462241265095,
+      "example": "A",
+      "originalIncorrectRatio": 7.849266732183951
+    },
+    {
+      "foreground": "rgb(201, 212, 226)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385613,
+      "example": "P",
+      "originalIncorrectRatio": 12.795351695728009
+    },
+    {
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783,
+      "example": "download",
+      "originalIncorrectRatio": 13.55502908960639
+    },
+    {
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(10, 14, 20)",
+      "ratio": 16.440224808744848,
+      "example": "H2",
+      "originalIncorrectRatio": 16.6824637268293
+    },
+    {
+      "foreground": "rgb(201, 212, 226)",
+      "background": "rgb(10, 14, 20)",
+      "ratio": 12.892615378331868,
+      "example": "P",
+      "originalIncorrectRatio": 13.08078300494906
+    },
+    {
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618,
+      "example": "LABEL",
+      "originalIncorrectRatio": 14.8960429205418
+    },
+    {
+      "foreground": "rgb(126, 226, 168)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 10.004815697188947,
+      "example": "feedback",
+      "originalIncorrectRatio": 10.15532261816115
+    }
+  ],
+  "focus": [
+    {
+      "foreground": "rgb(255, 180, 84)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 10.731637051347173,
+      "originalIncorrectRatio": 10.852841238402977
+    },
+    {
+      "foreground": "rgb(255, 180, 84)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 9.809435643476732,
+      "originalIncorrectRatio": 9.906852329492196
+    },
+    {
+      "foreground": "rgb(255, 180, 84)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625,
+      "originalIncorrectRatio": 9.014989566626276
+    }
+  ],
+  "border": 6.449407898769069,
+  "minText": 7.078851579017443,
+  "pass": true
+}

@@ -1,0 +1,25 @@
+{
+  "candidate": "732-MAC-R1-20261025",
+  "scope": "Author repair candidate for separate independent re-review; not independently accepted",
+  "finding": "732-MAC-R1",
+  "baseHEAD": "8d2e1aded030f3528eeffb58a8d973d54017a161",
+  "files": {
+    "leetcode/732/BRIEF.md": "5a3dfd4ec97fa33b316672e1a50d073782c6dd25f0dc0101fc4bd5762f311889",
+    "leetcode/732/SELF-CHECK.md": "ef0cd0da5672066efa9badf2c8a8ab0aab39ccba2bcabb66ae0f1ee031f61ff2",
+    "leetcode/732/app.js": "52446d0bd297956bc18134bfeed6acf1100191253d9751ac97c656ab1a4f2ec4",
+    "leetcode/732/copy.js": "87c407f30b27c71828a9966f9aee6650108b36fe2a76f339c59b643a0c736fa1",
+    "leetcode/732/core.js": "f1341f0328082ee2a427fbb53c5fd54f6158d3b0d2d538c2e1153961632ef1c5",
+    "leetcode/732/index.html": "7b908042a7c69b97eef01bb4a7b4a06b0e64dada82b85bffc039d562e681a5bc",
+    "leetcode/732/lesson-entry.json": "c33040e24ab9014683ce3e6ec9c93732828b4b96238de0c922569d5c0aadad44",
+    "leetcode/732/provenance/official.json": "83dffecf65686b015ed40b71428c66e7e2e5724bf0b6640c1480e9838d1439a8",
+    "leetcode/732/python-code.js": "219ee53d5d7921b8c7c33ffa32a53a9a6e03f9a1b7ba9e749766c3614cf62d70",
+    "leetcode/732/solution.py": "39cc22bb510a97d7e8328e5a1178b2b4ae5c5c621c8c8559e486b9f12e058c8c",
+    "leetcode/732/style.css": "f19aca13fd1d299fb377a5c498a63adf0b34df4e007f38afb6a5711abcedc849",
+    "leetcode/732/tests/browser.cjs": "616568f4cdf16aa799a674107aefe79eb6614c8289c19337857c41263108be9c",
+    "leetcode/732/tests/capture.cjs": "27d2793ce512034da7f11ff2ba3604b3c01739691ba4a51aa6dab2b0e4212f86",
+    "leetcode/732/tests/test_contrast.cjs": "18cc53e261e989488f8c40a0af6c4f96071f15c121863a4dfe62561bb47db419",
+    "leetcode/732/tests/test_copy.py": "89508f6292b9c944223d8c5ee24de93f1f76d96e4432280a44faaebd88b9509c",
+    "leetcode/732/tests/test_core.cjs": "96204c3af3340d0fcacea5b11030aa4b40ad025361f1109dc7246d0c5050543e",
+    "leetcode/732/tests/test_solution.py": "250aa0baf185b5b7819bcdb356014637a76212f514c6e51e492ca222679f8862"
+  }
+}
