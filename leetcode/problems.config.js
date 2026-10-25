@@ -1039,6 +1039,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(log₁₀ num) time; O(log₁₀ num) space"
   },
   {
+    "id": 282,
+    "title": {
+      "zh": "表达式添加运算符",
+      "en": "Expression Add Operators"
+    },
+    "desc": {
+      "zh": "用回溯枚举切分，用 last 修正乘法优先级。",
+      "en": "Enumerate cuts with backtracking and preserve precedence with last."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "回溯",
+        "en": "Backtracking"
+      },
+      {
+        "zh": "表达式求值",
+        "en": "Expression evaluation"
+      }
+    ],
+    "path": "282/",
+    "leetcodeUrl": "https://leetcode.com/problems/expression-add-operators/",
+    "language": "Python",
+    "complexity": "O(n·4^n) time; O(n²) recursion auxiliary space for immutable expression prefixes, plus output space"
+  },
+  {
     "id": 295,
     "title": {
       "zh": "数据流的中位数",
@@ -1855,6 +1881,32 @@ window.LEETCODE_PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/freedom-trail/",
     "language": "Python",
     "complexity": "O(m n²) time; O(n) auxiliary space"
+  },
+  {
+    "id": 517,
+    "title": {
+      "zh": "超级洗衣机",
+      "en": "Super Washing Machines"
+    },
+    "desc": {
+      "zh": "从同时传衣服推导边界流量与单机发送瓶颈。",
+      "en": "Derive cut-flow and sender bottlenecks from simultaneous dress transfers."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "前缀和",
+        "en": "Prefix sum"
+      }
+    ],
+    "path": "517/",
+    "leetcodeUrl": "https://leetcode.com/problems/super-washing-machines/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
     "id": 2916,

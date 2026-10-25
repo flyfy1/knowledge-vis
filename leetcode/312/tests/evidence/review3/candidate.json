@@ -1,0 +1,29 @@
+{
+  "candidate": "312-review3-fix-20261025",
+  "baseCommit": "d66f246648902c4b8a6dd93443d31c164fff7246",
+  "state": "uncommitted frozen candidate; fixed awaiting independent review",
+  "previousReport": "specs/reviews/312-review-3-d7af6df0.md",
+  "findings": [
+    "R312-PRESET-001",
+    "R312-PROOF-001"
+  ],
+  "sha256": {
+    "index.html": "67c4e0c8be5e0d080a17958088cfc2ee45cab4fdae7692e7bacccae9550c299c",
+    "copy.js": "7b18ead4a1a0fc66c385451f40b570cdcdbb07924b3ea2140201070bcd650e3f",
+    "core.js": "fa50329a8c2c0e27347a01529597cf9f71cd993cd33929a10894df5c360fa085",
+    "app.js": "f6496e78a8aa83a19db0bad76979189564b677dfd14416d5e25bb549eb7f9cf3",
+    "style.css": "7f4054a4cdaa337d1c58d546b77c4a18c62da03d76581cd28eb512c73f3a7962",
+    "solution.py": "88ca4fde4d2a68279c8b41ef99e6e43229a98321885d4f5122c3d8d6fc5cfcf0",
+    "python-code.js": "464545dcfa5fb17fd4d7c4518b2a54dcef8496bb7dfc5e04f03756cad10a97ad",
+    "lesson-entry.json": "1db80ee40566cb15d92ee3274858af69df3c8eb34bead63ac0b0d6b61ce9086e",
+    "language-contract.json": "50c952951142dbcd99b06eef47dd2bb2d9921f3dfcf7cea8ed09eeafbceaf975",
+    "BRIEF.md": "6032bf48fee9eaeec1413400ba34cd816ea9bf48551dade39b7943e32e6b7422",
+    "SELF-CHECK.md": "49c410533526b09039cff535ef28cfe47d8b39052af4fb82c47b3e96830bd0af",
+    "tests/test_core.py": "79bea99db0bda4bcf2a89985087903f0568e9581d7a708b9f2ea752bd956505b",
+    "tests/test_trace.js": "77d19c675d4dbcd51d780b39967744b1a81719babad6af299dc4633d3ffad24e",
+    "tests/browser-check.js": "a4f224c9d1ac7090f7117b107bed0a0db92f363f41ded9d800c5a30fe8dc81e3",
+    "tests/review3-regression.js": "676b48c9ee4f35c09b0c8747f95fdd9a7d065e27d9a03e396018cb7370aa782c",
+    "tests/review3-browser.js": "c9e298d9e772adc02f4242c29133885d84309b4839880a6b92e631ada4501789",
+    "tests/evidence/official-contract.json": "7bee13612504692def167ff32e385cffaec1014734d9e4d803f50bd26abde6f6"
+  }
+}
