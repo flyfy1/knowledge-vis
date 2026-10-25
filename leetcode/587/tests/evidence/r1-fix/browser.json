@@ -1,0 +1,960 @@
+{
+  "selfCheck": true,
+  "origin": "http://127.0.0.1:18779",
+  "states": [
+    {
+      "lang": "en",
+      "state": "turn",
+      "y": -1,
+      "expected": 2,
+      "text": "(1−0)×(0−0) − (-1−0)×(2−0) = 2. Left turn: B is below AC, an outward point needed by the lower boundary."
+    },
+    {
+      "lang": "en",
+      "state": "turn",
+      "y": 0,
+      "expected": 0,
+      "text": "(1−0)×(0−0) − (0−0)×(2−0) = 0. Straight: B lies on AC; it touches the fence even though it is not a corner."
+    },
+    {
+      "lang": "en",
+      "state": "turn",
+      "y": 1,
+      "expected": -2,
+      "text": "(1−0)×(0−0) − (1−0)×(2−0) = -2. Right turn: B is above AC; the lower boundary can replace AB and BC with AC. B may still belong to the upper boundary."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "event": 4,
+      "kind": "pop",
+      "text": "A=(0,0), B=(0,2), C=(1,0): cross=-2<0. Remove B; C is still pending, so test the new end."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "event": 6,
+      "kind": "keep",
+      "text": "A=(0,0), B=(1,0), C=(1,1): cross=1≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "event": 8,
+      "kind": "pop",
+      "text": "A=(1,0), B=(1,1), C=(2,0): cross=-1<0. Remove B; C is still pending, so test the new end."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "event": 9,
+      "kind": "keep",
+      "text": "A=(0,0), B=(1,0), C=(2,0): cross=0≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "event": 11,
+      "kind": "keep",
+      "text": "A=(1,0), B=(2,0), C=(2,2): cross=2≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "event": 16,
+      "kind": "pop",
+      "text": "A=(2,2), B=(2,0), C=(1,1): cross=-2<0. Remove B; C is still pending, so test the new end."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "event": 18,
+      "kind": "keep",
+      "text": "A=(2,2), B=(1,1), C=(1,0): cross=1≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "event": 20,
+      "kind": "pop",
+      "text": "A=(1,1), B=(1,0), C=(0,2): cross=-1<0. Remove B; C is still pending, so test the new end."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "event": 21,
+      "kind": "pop",
+      "text": "A=(2,2), B=(1,1), C=(0,2): cross=-2<0. Remove B; C is still pending, so test the new end."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "event": 23,
+      "kind": "keep",
+      "text": "A=(2,2), B=(0,2), C=(0,0): cross=4≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "state": "completed",
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "text": "Final unique union (5 trees): (0,0), (0,2), (1,0), (2,0), (2,2). Shared endpoints and collinear trees appear only once."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "event": 4,
+      "kind": "keep",
+      "text": "A=(1,1), B=(2,0), C=(2,2): cross=2≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "event": 6,
+      "kind": "keep",
+      "text": "A=(2,0), B=(2,2), C=(2,4): cross=0≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "event": 8,
+      "kind": "pop",
+      "text": "A=(2,2), B=(2,4), C=(3,3): cross=-2<0. Remove B; C is still pending, so test the new end."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "event": 9,
+      "kind": "pop",
+      "text": "A=(2,0), B=(2,2), C=(3,3): cross=-2<0. Remove B; C is still pending, so test the new end."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "event": 10,
+      "kind": "keep",
+      "text": "A=(1,1), B=(2,0), C=(3,3): cross=4≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "event": 12,
+      "kind": "pop",
+      "text": "A=(2,0), B=(3,3), C=(4,2): cross=-4<0. Remove B; C is still pending, so test the new end."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "event": 13,
+      "kind": "keep",
+      "text": "A=(1,1), B=(2,0), C=(4,2): cross=4≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "event": 18,
+      "kind": "keep",
+      "text": "A=(4,2), B=(3,3), C=(2,4): cross=0≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "event": 20,
+      "kind": "keep",
+      "text": "A=(3,3), B=(2,4), C=(2,2): cross=2≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "event": 22,
+      "kind": "keep",
+      "text": "A=(2,4), B=(2,2), C=(2,0): cross=0≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "event": 24,
+      "kind": "pop",
+      "text": "A=(2,2), B=(2,0), C=(1,1): cross=-2<0. Remove B; C is still pending, so test the new end."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "event": 25,
+      "kind": "pop",
+      "text": "A=(2,4), B=(2,2), C=(1,1): cross=-2<0. Remove B; C is still pending, so test the new end."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "event": 26,
+      "kind": "keep",
+      "text": "A=(3,3), B=(2,4), C=(1,1): cross=4≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "state": "completed",
+      "expected": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "text": "Final unique union (5 trees): (1,1), (2,0), (2,4), (3,3), (4,2). Shared endpoints and collinear trees appear only once."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "event": 4,
+      "kind": "keep",
+      "text": "A=(1,2), B=(2,2), C=(4,2): cross=0≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "event": 9,
+      "kind": "keep",
+      "text": "A=(4,2), B=(2,2), C=(1,2): cross=0≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "state": "completed",
+      "expected": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "text": "Final unique union (3 trees): (1,2), (2,2), (4,2). Shared endpoints and collinear trees appear only once."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "state": "completed",
+      "expected": [
+        [
+          2,
+          3
+        ]
+      ],
+      "text": "Final unique union (1 trees): (2,3). Shared endpoints and collinear trees appear only once."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "event": 4,
+      "kind": "keep",
+      "text": "A=(1,0), B=(1,1), C=(1,2): cross=0≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "event": 6,
+      "kind": "keep",
+      "text": "A=(1,1), B=(1,2), C=(1,3): cross=0≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "event": 11,
+      "kind": "keep",
+      "text": "A=(1,3), B=(1,2), C=(1,1): cross=0≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "event": 13,
+      "kind": "keep",
+      "text": "A=(1,2), B=(1,1), C=(1,0): cross=0≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "state": "completed",
+      "expected": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "text": "Final unique union (4 trees): (1,0), (1,1), (1,2), (1,3). Shared endpoints and collinear trees appear only once."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "event": 4,
+      "kind": "keep",
+      "text": "A=(0,0), B=(1,2), C=(2,5): cross=1≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "event": 6,
+      "kind": "pop",
+      "text": "A=(1,2), B=(2,5), C=(3,0): cross=-8<0. Remove B; C is still pending, so test the new end."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "event": 7,
+      "kind": "pop",
+      "text": "A=(0,0), B=(1,2), C=(3,0): cross=-6<0. Remove B; C is still pending, so test the new end."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "event": 12,
+      "kind": "keep",
+      "text": "A=(3,0), B=(2,5), C=(1,2): cross=8≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "event": 14,
+      "kind": "pop",
+      "text": "A=(2,5), B=(1,2), C=(0,0): cross=-1<0. Remove B; C is still pending, so test the new end."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "event": 15,
+      "kind": "keep",
+      "text": "A=(3,0), B=(2,5), C=(0,0): cross=15≥0. Keep B and stop popping; the next operation appends C."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "state": "completed",
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "text": "Final unique union (3 trees): (0,0), (2,5), (3,0). Shared endpoints and collinear trees appear only once."
+    },
+    {
+      "lang": "en",
+      "state": "prediction",
+      "answer": 1,
+      "text": "Check the new end after the first removal. First test (1,1),(2,3),(3,0): 1×(−1)−2×2=−5, so remove (2,3). Then test (0,0),(1,1),(3,0): 1×0−1×3=−3, so remove (1,1). Only (0,0) remains, so no triple can be tested; append C. The answer is 2. One pop leaves a right turn; three would wrongly discard the left endpoint."
+    },
+    {
+      "lang": "en",
+      "state": "prediction",
+      "answer": 2,
+      "text": "Correct. First test (1,1),(2,3),(3,0): 1×(−1)−2×2=−5, so remove (2,3). Then test (0,0),(1,1),(3,0): 1×0−1×3=−3, so remove (1,1). Only (0,0) remains, so no triple can be tested; append C. The answer is 2. One pop leaves a right turn; three would wrongly discard the left endpoint."
+    },
+    {
+      "lang": "en",
+      "state": "prediction",
+      "answer": 3,
+      "text": "Check the new end after the first removal. First test (1,1),(2,3),(3,0): 1×(−1)−2×2=−5, so remove (2,3). Then test (0,0),(1,1),(3,0): 1×0−1×3=−3, so remove (1,1). Only (0,0) remains, so no triple can be tested; append C. The answer is 2. One pop leaves a right turn; three would wrongly discard the left endpoint."
+    },
+    {
+      "lang": "en",
+      "state": "copy-fallback",
+      "text": "Automatic copy unavailable; the full source below is selected for manual copying."
+    },
+    {
+      "lang": "zh",
+      "state": "turn",
+      "y": -1,
+      "expected": 2,
+      "text": "(1−0)×(0−0) − (-1−0)×(2−0) = 2。左转：B 在 AC 下方，是下边界需要保留的外凸点。"
+    },
+    {
+      "lang": "zh",
+      "state": "turn",
+      "y": 0,
+      "expected": 0,
+      "text": "(1−0)×(0−0) − (0−0)×(2−0) = 0。共线：B 在 AC 上；即使不是拐角，它仍碰到围栏。"
+    },
+    {
+      "lang": "zh",
+      "state": "turn",
+      "y": 1,
+      "expected": -2,
+      "text": "(1−0)×(0−0) − (1−0)×(2−0) = -2。右转：B 在 AC 上方，下边界可以用 AC 替代 AB、BC。B 仍可能属于上边界。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "event": 4,
+      "kind": "pop",
+      "text": "A=(0,0), B=(0,2), C=(1,0)：cross=-2<0。移除 B；C 仍待加入，继续检查新末尾。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "event": 6,
+      "kind": "keep",
+      "text": "A=(0,0), B=(1,0), C=(1,1)：cross=1≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "event": 8,
+      "kind": "pop",
+      "text": "A=(1,0), B=(1,1), C=(2,0)：cross=-1<0。移除 B；C 仍待加入，继续检查新末尾。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "event": 9,
+      "kind": "keep",
+      "text": "A=(0,0), B=(1,0), C=(2,0)：cross=0≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "event": 11,
+      "kind": "keep",
+      "text": "A=(1,0), B=(2,0), C=(2,2)：cross=2≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "event": 16,
+      "kind": "pop",
+      "text": "A=(2,2), B=(2,0), C=(1,1)：cross=-2<0。移除 B；C 仍待加入，继续检查新末尾。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "event": 18,
+      "kind": "keep",
+      "text": "A=(2,2), B=(1,1), C=(1,0)：cross=1≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "event": 20,
+      "kind": "pop",
+      "text": "A=(1,1), B=(1,0), C=(0,2)：cross=-1<0。移除 B；C 仍待加入，继续检查新末尾。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "event": 21,
+      "kind": "pop",
+      "text": "A=(2,2), B=(1,1), C=(0,2)：cross=-2<0。移除 B；C 仍待加入，继续检查新末尾。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "event": 23,
+      "kind": "keep",
+      "text": "A=(2,2), B=(0,2), C=(0,0)：cross=4≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "state": "completed",
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "text": "最终去重并集（5 棵）：(0,0), (0,2), (1,0), (2,0), (2,2)。两链共享的端点或共线树仅返回一次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "event": 4,
+      "kind": "keep",
+      "text": "A=(1,1), B=(2,0), C=(2,2)：cross=2≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "event": 6,
+      "kind": "keep",
+      "text": "A=(2,0), B=(2,2), C=(2,4)：cross=0≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "event": 8,
+      "kind": "pop",
+      "text": "A=(2,2), B=(2,4), C=(3,3)：cross=-2<0。移除 B；C 仍待加入，继续检查新末尾。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "event": 9,
+      "kind": "pop",
+      "text": "A=(2,0), B=(2,2), C=(3,3)：cross=-2<0。移除 B；C 仍待加入，继续检查新末尾。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "event": 10,
+      "kind": "keep",
+      "text": "A=(1,1), B=(2,0), C=(3,3)：cross=4≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "event": 12,
+      "kind": "pop",
+      "text": "A=(2,0), B=(3,3), C=(4,2)：cross=-4<0。移除 B；C 仍待加入，继续检查新末尾。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "event": 13,
+      "kind": "keep",
+      "text": "A=(1,1), B=(2,0), C=(4,2)：cross=4≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "event": 18,
+      "kind": "keep",
+      "text": "A=(4,2), B=(3,3), C=(2,4)：cross=0≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "event": 20,
+      "kind": "keep",
+      "text": "A=(3,3), B=(2,4), C=(2,2)：cross=2≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "event": 22,
+      "kind": "keep",
+      "text": "A=(2,4), B=(2,2), C=(2,0)：cross=0≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "event": 24,
+      "kind": "pop",
+      "text": "A=(2,2), B=(2,0), C=(1,1)：cross=-2<0。移除 B；C 仍待加入，继续检查新末尾。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "event": 25,
+      "kind": "pop",
+      "text": "A=(2,4), B=(2,2), C=(1,1)：cross=-2<0。移除 B；C 仍待加入，继续检查新末尾。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "event": 26,
+      "kind": "keep",
+      "text": "A=(3,3), B=(2,4), C=(1,1)：cross=4≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "state": "completed",
+      "expected": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "text": "最终去重并集（5 棵）：(1,1), (2,0), (2,4), (3,3), (4,2)。两链共享的端点或共线树仅返回一次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "event": 4,
+      "kind": "keep",
+      "text": "A=(1,2), B=(2,2), C=(4,2)：cross=0≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "event": 9,
+      "kind": "keep",
+      "text": "A=(4,2), B=(2,2), C=(1,2)：cross=0≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "state": "completed",
+      "expected": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "text": "最终去重并集（3 棵）：(1,2), (2,2), (4,2)。两链共享的端点或共线树仅返回一次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "state": "completed",
+      "expected": [
+        [
+          2,
+          3
+        ]
+      ],
+      "text": "最终去重并集（1 棵）：(2,3)。两链共享的端点或共线树仅返回一次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "event": 4,
+      "kind": "keep",
+      "text": "A=(1,0), B=(1,1), C=(1,2)：cross=0≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "event": 6,
+      "kind": "keep",
+      "text": "A=(1,1), B=(1,2), C=(1,3)：cross=0≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "event": 11,
+      "kind": "keep",
+      "text": "A=(1,3), B=(1,2), C=(1,1)：cross=0≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "event": 13,
+      "kind": "keep",
+      "text": "A=(1,2), B=(1,1), C=(1,0)：cross=0≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "state": "completed",
+      "expected": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "text": "最终去重并集（4 棵）：(1,0), (1,1), (1,2), (1,3)。两链共享的端点或共线树仅返回一次。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "event": 4,
+      "kind": "keep",
+      "text": "A=(0,0), B=(1,2), C=(2,5)：cross=1≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "event": 6,
+      "kind": "pop",
+      "text": "A=(1,2), B=(2,5), C=(3,0)：cross=-8<0。移除 B；C 仍待加入，继续检查新末尾。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "event": 7,
+      "kind": "pop",
+      "text": "A=(0,0), B=(1,2), C=(3,0)：cross=-6<0。移除 B；C 仍待加入，继续检查新末尾。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "event": 12,
+      "kind": "keep",
+      "text": "A=(3,0), B=(2,5), C=(1,2)：cross=8≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "event": 14,
+      "kind": "pop",
+      "text": "A=(2,5), B=(1,2), C=(0,0)：cross=-1<0。移除 B；C 仍待加入，继续检查新末尾。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "event": 15,
+      "kind": "keep",
+      "text": "A=(3,0), B=(2,5), C=(0,0)：cross=15≥0。保留 B，停止弹出；下一操作加入 C。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "state": "completed",
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "text": "最终去重并集（3 棵）：(0,0), (2,5), (3,0)。两链共享的端点或共线树仅返回一次。"
+    },
+    {
+      "lang": "zh",
+      "state": "prediction",
+      "answer": 1,
+      "text": "再检查一次末尾转向。 先测 (1,1),(2,3),(3,0)：1×(−1)−2×2=−5，移除 (2,3)。再测 (0,0),(1,1),(3,0)：1×0−1×3=−3，移除 (1,1)。只剩 (0,0)，没有三点可测，于是加入 C。答案为 2；只弹一次会留下右转，弹 3 次会错误丢掉左端点。"
+    },
+    {
+      "lang": "zh",
+      "state": "prediction",
+      "answer": 2,
+      "text": "正确。 先测 (1,1),(2,3),(3,0)：1×(−1)−2×2=−5，移除 (2,3)。再测 (0,0),(1,1),(3,0)：1×0−1×3=−3，移除 (1,1)。只剩 (0,0)，没有三点可测，于是加入 C。答案为 2；只弹一次会留下右转，弹 3 次会错误丢掉左端点。"
+    },
+    {
+      "lang": "zh",
+      "state": "prediction",
+      "answer": 3,
+      "text": "再检查一次末尾转向。 先测 (1,1),(2,3),(3,0)：1×(−1)−2×2=−5，移除 (2,3)。再测 (0,0),(1,1),(3,0)：1×0−1×3=−3，移除 (1,1)。只剩 (0,0)，没有三点可测，于是加入 C。答案为 2；只弹一次会留下右转，弹 3 次会错误丢掉左端点。"
+    },
+    {
+      "lang": "zh",
+      "state": "copy-fallback",
+      "text": "自动复制不可用；已选中下方完整源码，可手动复制。"
+    }
+  ],
+  "screenshots": [
+    "en-plot-320-left.png",
+    "en-plot-320-right.png",
+    "en-320.png",
+    "en-390.png",
+    "en-736.png",
+    "en-plot-1440-left.png",
+    "en-1440.png",
+    "en-zoom200.png",
+    "zh-plot-320-left.png",
+    "zh-plot-320-right.png",
+    "zh-320.png",
+    "zh-390.png",
+    "zh-736.png",
+    "zh-plot-1440-left.png",
+    "zh-1440.png",
+    "zh-zoom200.png"
+  ],
+  "errors": [],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".badge",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "#tracePrev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#traceNext",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#langToggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#operationRead",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#tinyToggle",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#feedback",
+      "fg": "rgb(126, 226, 168)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 10.004815697188947
+    }
+  ],
+  "focusContrast": 8.937191437807625,
+  "runtimeAssetRequests": [
+    "http://127.0.0.1:18779/leetcode/587/",
+    "http://127.0.0.1:18779/leetcode/style.css",
+    "http://127.0.0.1:18779/leetcode/587/local.css?v=587-1",
+    "http://127.0.0.1:18779/leetcode/common.js",
+    "http://127.0.0.1:18779/leetcode/587/copy.js?v=587-r1-f1",
+    "http://127.0.0.1:18779/leetcode/587/core.js?v=587-1",
+    "http://127.0.0.1:18779/leetcode/587/python-code.js?v=587-1",
+    "http://127.0.0.1:18779/leetcode/587/app.js?v=587-1"
+  ],
+  "storageDenied": true,
+  "offlineSource": true,
+  "cssBytes": 11683
+}
