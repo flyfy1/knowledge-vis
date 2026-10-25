@@ -1,0 +1,216 @@
+{
+  "kind": "author self-check",
+  "host": "linux",
+  "locales": [
+    {
+      "lang": "en",
+      "cost": "Costs: n is the entry count, k the distinct-value count. Preprocessing takes O(n+k²): Counter reads n entries in O(n), sorting k distinct values takes O(k log k), and the compatibility matrix takes O(k²). Since k≥1, O(k²) absorbs sorting. For [2], six 2s and twelve 2s, k stays 1 but counting still reads 1, 6 and 12 entries; a conservative search bound is O(n·n!) time, still factorial. Depth n, O(k) counts and an O(k²) compatibility matrix give O(n+k²) auxiliary space. The simulation additionally stores every snapshot and ledger; those are not submission memory."
+    },
+    {
+      "lang": "en",
+      "presets": 6,
+      "predictions": 3,
+      "sourceParity": true,
+      "keyboard": true,
+      "anchor": true
+    },
+    {
+      "lang": "zh",
+      "cost": "成本：n 是元素数，k 是不同值数。预处理 O(n+k²)：Counter 读取 n 个元素需 O(n)，排序 k 个不同值需 O(k log k)，兼容矩阵需 O(k²)；因 k≥1，排序成本包含在 O(k²) 内。例如 [2]、六个 2、十二个 2 都有 k=1，但仍需读取 1、6、12 个元素。搜索的保守上界是 O(n·n!) 时间，仍可能是阶乘级。递归深度 n，次数 O(k)，兼容矩阵 O(k²)，合计辅助空间 O(n+k²)。模拟还保存全部快照与账本，这些不计入提交空间。"
+    },
+    {
+      "lang": "zh",
+      "presets": 6,
+      "predictions": 3,
+      "sourceParity": true,
+      "keyboard": true,
+      "anchor": true
+    }
+  ],
+  "screenshots": [
+    "en-320-zoom1.png",
+    "en-320-zoom2.png",
+    "en-390-zoom1.png",
+    "en-390-zoom2.png",
+    "en-736-zoom1.png",
+    "en-736-zoom2.png",
+    "en-1440-zoom1.png",
+    "en-1440-zoom2.png",
+    "zh-320-zoom1.png",
+    "zh-320-zoom2.png",
+    "zh-390-zoom1.png",
+    "zh-390-zoom2.png",
+    "zh-736-zoom1.png",
+    "zh-736-zoom2.png",
+    "zh-1440-zoom1.png",
+    "zh-1440-zoom2.png"
+  ],
+  "layout": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 320,
+        "width": 320
+      }
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 320,
+        "width": 320
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 736,
+        "width": 736
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 736,
+        "width": 736
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 320,
+        "width": 320
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 320,
+        "width": 320
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 736,
+        "width": 736
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 736,
+        "width": 736
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "geometry": {
+        "scroll": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "geometry": {
+        "scroll": 1440,
+        "width": 1440
+      }
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "en",
+      "sentinelVerified": true,
+      "successfulCopy": true,
+      "nativeFallbackTransfer": true,
+      "shortcut": "Control+C"
+    },
+    {
+      "lang": "zh",
+      "sentinelVerified": true,
+      "successfulCopy": true,
+      "nativeFallbackTransfer": true,
+      "shortcut": "Control+C"
+    }
+  ],
+  "eventChecks": 202,
+  "errors": [],
+  "badAssets": [],
+  "remoteRequests": [],
+  "blockedStorage": true,
+  "offlineMirror": true
+}

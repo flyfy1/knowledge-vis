@@ -284,8 +284,8 @@ window.LESSON_COPY = {
     "Copy full source manually"
   ],
   "cost": [
-    "成本：n 是元素数，k 是不同值数。预处理 O(k²)；搜索的保守上界是 O(n·n!) 时间，仍可能是阶乘级。递归深度 n，次数 O(k)，兼容矩阵 O(k²)，合计辅助空间 O(n+k²)。模拟还保存全部快照与账本，这些不计入提交空间。",
-    "Costs: n is the entry count, k the distinct-value count. Preprocessing takes O(k²); a conservative search bound is O(n·n!) time, still factorial. Depth n, O(k) counts and an O(k²) compatibility matrix give O(n+k²) auxiliary space. The simulation additionally stores every snapshot and ledger; those are not submission memory."
+    "成本：n 是元素数，k 是不同值数。预处理 O(n+k²)：Counter 读取 n 个元素需 O(n)，排序 k 个不同值需 O(k log k)，兼容矩阵需 O(k²)；因 k≥1，排序成本包含在 O(k²) 内。例如 [2]、六个 2、十二个 2 都有 k=1，但仍需读取 1、6、12 个元素。搜索的保守上界是 O(n·n!) 时间，仍可能是阶乘级。递归深度 n，次数 O(k)，兼容矩阵 O(k²)，合计辅助空间 O(n+k²)。模拟还保存全部快照与账本，这些不计入提交空间。",
+    "Costs: n is the entry count, k the distinct-value count. Preprocessing takes O(n+k²): Counter reads n entries in O(n), sorting k distinct values takes O(k log k), and the compatibility matrix takes O(k²). Since k≥1, O(k²) absorbs sorting. For [2], six 2s and twelve 2s, k stays 1 but counting still reads 1, 6 and 12 entries; a conservative search bound is O(n·n!) time, still factorial. Depth n, O(k) counts and an O(k²) compatibility matrix give O(n+k²) auxiliary space. The simulation additionally stores every snapshot and ledger; those are not submission memory."
   ],
   "boundaries": [
     "边界：0+0=0 通过；单个大数仍有 1 种；重复值可多次接入但不能超过次数；所有对都失败时答案为 0。不改变 nums。用独立的排列去重基线核对小规模结果；不意味着已在线提交。",

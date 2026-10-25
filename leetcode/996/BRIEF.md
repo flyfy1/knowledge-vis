@@ -67,6 +67,9 @@ one then restore. Induction yields every valid sequence exactly once. Empty
 remaining counts accept once. Pruning cannot exclude a legal extension. Baseline
 set(permutations) has O(n*n!) time and space upper bound; final search O(n*n! + k²)
 time, O(n+k²) auxiliary space for k distinct values, recursion and compatibility.
+Preprocessing is O(n+k²): Counter reads n entries, sorting costs O(k log k),
+and matrix construction costs O(k²); k≥1 absorbs sorting into k². With k=1,
+[2], six 2s and twelve 2s still require 1, 6 and 12 input visits.
 No polynomial guarantee; all n! remains a conservative worst-case bound.
 
 ## Validation and remaining gates

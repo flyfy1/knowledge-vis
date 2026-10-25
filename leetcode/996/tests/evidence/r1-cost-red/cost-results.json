@@ -1,0 +1,28 @@
+{
+  "kind": "author self-check",
+  "finding": "996-R1-COST-01",
+  "fixedKBoundary": [
+    {
+      "n": 1,
+      "k": 1,
+      "inputVisits": 1,
+      "answer": 1
+    },
+    {
+      "n": 6,
+      "k": 1,
+      "inputVisits": 6,
+      "answer": 1
+    },
+    {
+      "n": 12,
+      "k": 1,
+      "inputVisits": 12,
+      "answer": 1
+    }
+  ],
+  "cost": [
+    "成本：n 是元素数，k 是不同值数。预处理 O(k²)；搜索的保守上界是 O(n·n!) 时间，仍可能是阶乘级。递归深度 n，次数 O(k)，兼容矩阵 O(k²)，合计辅助空间 O(n+k²)。模拟还保存全部快照与账本，这些不计入提交空间。",
+    "Costs: n is the entry count, k the distinct-value count. Preprocessing takes O(k²); a conservative search bound is O(n·n!) time, still factorial. Depth n, O(k) counts and an O(k²) compatibility matrix give O(n+k²) auxiliary space. The simulation additionally stores every snapshot and ledger; those are not submission memory."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "problemId": 996,
+  "candidate": "996-r1-cost-fix-20261026",
+  "baseHead": "03cdc24b4aadb90bbe616279aeccf093c0267c91",
+  "frozenAt": "2026-10-25T23:33:05.431385+00:00",
+  "kind": "author self-check",
+  "findingStatus": {
+    "996-R1-COST-01": "fixed awaiting independent review"
+  },
+  "independentReviewStatus": "pending",
+  "metadataPreflight": {
+    "command": "python3 -B scripts/register_leetcode_lesson.py 996 --validate-only",
+    "exitCode": 0,
+    "stdout": ""
+  },
+  "sha256": {
+    "BRIEF.md": "81efbfbeca0093dfcaaeb22cc74c31605cab64778556e339afb81f4fb3a06a92",
+    "SELF-CHECK.md": "a0a2a613c69253809d52e34fba2020e745c397d92ac3a7ddfa2e9c5048907d74",
+    "app.js": "a321da84add6f6ac9ded530b6887313d20eca0510c596c9a33afcdd7a0c9ca4d",
+    "copy.js": "9a34fdf5a066a0bc04e56d079e92309e46dcdad8379c9f40eb45b29f10bd5334",
+    "core.js": "dccadc6f0faa6067e1cd84f5f4ddd592c7af07170d7829cf1da7d8a0849dc132",
+    "index.html": "8638db8af993a84035df9e570d3a2d49bc47c0d65c62e76b5138469442ed2c85",
+    "lesson-entry.json": "726352e69a36fc3423d85fafd9cc4351efbac60f09bd5d8863ad80428a66226a",
+    "provenance/official.json": "eb53cc396f3eadc208d16edfdf821b73cb4de0ae7dd0d30bb8b4459b64136ba8",
+    "python-code.js": "a2223e3567312b138b77f57653628c65ae4f368b0a8692d41da1dc3f87d4b141",
+    "solution.py": "0075faaa73aef51ec54192dffbaa04987f05100aafe84a4f9f062d9411c4086f",
+    "style.css": "8e95c5a99ec9b536defd4d0ae92244b5b2b923f00c6be887be35c15aa08791fa",
+    "tests/README.md": "af51fcaaa655ccdf6cb9cb7af6ed9a1cf1948addd1ca6fdb7e3d67526121738c",
+    "tests/browser.cjs": "9d09e998939142108c34674635f714a910e7dbd0d4e554da8294bc79ca0f62bd",
+    "tests/build_copy.py": "9d497997987cf79850b52277852abacdbfde5db9a67e9d598788132fe33310d9",
+    "tests/build_html.py": "4feb75c8aede879be87b6c06ae1af7f84990c73a9097ce8dbdc48195a2f4f495",
+    "tests/check.py": "9ae4cbe3bc53d61bd34ca06883089cab6b697337fe0c7f937ea9b4e6fad3cc7f",
+    "tests/contact_sheet.py": "b51711a202d4b751c06155b8d489dcbc66c91777311965336e8b0386726c94db",
+    "tests/contrast.py": "98800537f968bbc30869bfe3b9d22805c2b4810077148f0ea08da676b267c318",
+    "tests/core.cjs": "d0d9776ec1fa1445acf3d362c2f218701566eb6bb3d71f14e957457b3e7012ea",
+    "tests/cost.py": "3bf6b869b710f2f04d10fd4abdaa572b5788a45f74b31b329a9e23d4b191a4f5",
+    "tests/supplement.cjs": "f2745fc8a21975e77837aeda0369ad701b3dc4e37ed5b2fbaa7aea3ae89bc977"
+  }
+}
