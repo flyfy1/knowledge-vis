@@ -1,0 +1,716 @@
+{
+  "kind": "author browser self-check",
+  "browser": "156.0.8078.4",
+  "base": "http://127.0.0.1:18770/leetcode/601/",
+  "checks": [
+    "en: all 8 presets, step/back replay, endpoints/reset/end, hand threshold, all predictions and changed answer, locale state, exact copy and fallback",
+    "zh: all 8 presets, step/back replay, endpoints/reset/end, hand threshold, all predictions and changed answer, locale state, exact copy and fallback",
+    "real Chromium clipboard write/read exact source",
+    "display/download exact source including final newline",
+    "keyboard Enter and range ArrowRight; 3px visible focus",
+    "deep navigation clears sticky header; related anchors exist",
+    "forced-colors focus and reduced-motion render",
+    "blocked storage and file:// offline source/trace"
+  ],
+  "shots": [
+    {
+      "filename": "trace-en-320.png",
+      "locale": "en",
+      "width": 320,
+      "geometry": {
+        "viewport": 320,
+        "scroll": 320,
+        "selects": [
+          {
+            "id": "hand",
+            "width": 134,
+            "textWidth": 83.15219116210938,
+            "padding": 30
+          },
+          {
+            "id": "preset",
+            "width": 172,
+            "textWidth": 120.80024719238281,
+            "padding": 30
+          }
+        ],
+        "heights": [
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "hand",
+            "h": 48
+          },
+          {
+            "id": "preset",
+            "h": 48
+          },
+          {
+            "id": "prev",
+            "h": 48
+          },
+          {
+            "id": "next",
+            "h": 48
+          },
+          {
+            "id": "reset",
+            "h": 48
+          },
+          {
+            "id": "end",
+            "h": 48
+          },
+          {
+            "id": "reveal",
+            "h": 48
+          },
+          {
+            "id": "copy",
+            "h": 48
+          }
+        ],
+        "rows": 460
+      },
+      "captureNote": "sticky nav hidden only for full element capture"
+    },
+    {
+      "filename": "ledger-right-en.png",
+      "locale": "en",
+      "width": 320,
+      "scroll": "right endpoint"
+    },
+    {
+      "filename": "header-en-320.png",
+      "locale": "en",
+      "width": 320,
+      "view": "real viewport header"
+    },
+    {
+      "filename": "trace-en-390.png",
+      "locale": "en",
+      "width": 390,
+      "geometry": {
+        "viewport": 390,
+        "scroll": 390,
+        "selects": [
+          {
+            "id": "hand",
+            "width": 134,
+            "textWidth": 83.15219116210938,
+            "padding": 30
+          },
+          {
+            "id": "preset",
+            "width": 172,
+            "textWidth": 120.80024719238281,
+            "padding": 30
+          }
+        ],
+        "heights": [
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "hand",
+            "h": 48
+          },
+          {
+            "id": "preset",
+            "h": 48
+          },
+          {
+            "id": "prev",
+            "h": 48
+          },
+          {
+            "id": "next",
+            "h": 48
+          },
+          {
+            "id": "reset",
+            "h": 48
+          },
+          {
+            "id": "end",
+            "h": 48
+          },
+          {
+            "id": "reveal",
+            "h": 48
+          },
+          {
+            "id": "copy",
+            "h": 48
+          }
+        ],
+        "rows": 460
+      },
+      "captureNote": "sticky nav hidden only for full element capture"
+    },
+    {
+      "filename": "trace-en-736.png",
+      "locale": "en",
+      "width": 736,
+      "geometry": {
+        "viewport": 736,
+        "scroll": 736,
+        "selects": [
+          {
+            "id": "hand",
+            "width": 134,
+            "textWidth": 83.15219116210938,
+            "padding": 30
+          },
+          {
+            "id": "preset",
+            "width": 172,
+            "textWidth": 120.80024719238281,
+            "padding": 30
+          }
+        ],
+        "heights": [
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "hand",
+            "h": 48
+          },
+          {
+            "id": "preset",
+            "h": 48
+          },
+          {
+            "id": "prev",
+            "h": 48
+          },
+          {
+            "id": "next",
+            "h": 48
+          },
+          {
+            "id": "reset",
+            "h": 48
+          },
+          {
+            "id": "end",
+            "h": 48
+          },
+          {
+            "id": "reveal",
+            "h": 48
+          },
+          {
+            "id": "copy",
+            "h": 48
+          }
+        ],
+        "rows": 646
+      },
+      "captureNote": "sticky nav hidden only for full element capture"
+    },
+    {
+      "filename": "trace-en-1440.png",
+      "locale": "en",
+      "width": 1440,
+      "geometry": {
+        "viewport": 1440,
+        "scroll": 1440,
+        "selects": [
+          {
+            "id": "hand",
+            "width": 134,
+            "textWidth": 83.15219116210938,
+            "padding": 30
+          },
+          {
+            "id": "preset",
+            "width": 172,
+            "textWidth": 120.80024719238281,
+            "padding": 30
+          }
+        ],
+        "heights": [
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "hand",
+            "h": 48
+          },
+          {
+            "id": "preset",
+            "h": 48
+          },
+          {
+            "id": "prev",
+            "h": 48
+          },
+          {
+            "id": "next",
+            "h": 48
+          },
+          {
+            "id": "reset",
+            "h": 48
+          },
+          {
+            "id": "end",
+            "h": 48
+          },
+          {
+            "id": "reveal",
+            "h": 48
+          },
+          {
+            "id": "copy",
+            "h": 48
+          }
+        ],
+        "rows": 910
+      },
+      "captureNote": "sticky nav hidden only for full element capture"
+    },
+    {
+      "filename": "trace-zh-320.png",
+      "locale": "zh",
+      "width": 320,
+      "geometry": {
+        "viewport": 320,
+        "scroll": 320,
+        "selects": [
+          {
+            "id": "hand",
+            "width": 98,
+            "textWidth": 47.61610412597656,
+            "padding": 30
+          },
+          {
+            "id": "preset",
+            "width": 115,
+            "textWidth": 64.0001220703125,
+            "padding": 30
+          }
+        ],
+        "heights": [
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "hand",
+            "h": 48
+          },
+          {
+            "id": "preset",
+            "h": 48
+          },
+          {
+            "id": "prev",
+            "h": 48
+          },
+          {
+            "id": "next",
+            "h": 48
+          },
+          {
+            "id": "reset",
+            "h": 48
+          },
+          {
+            "id": "end",
+            "h": 48
+          },
+          {
+            "id": "reveal",
+            "h": 48
+          },
+          {
+            "id": "copy",
+            "h": 48
+          }
+        ],
+        "rows": 460
+      },
+      "captureNote": "sticky nav hidden only for full element capture"
+    },
+    {
+      "filename": "ledger-right-zh.png",
+      "locale": "zh",
+      "width": 320,
+      "scroll": "right endpoint"
+    },
+    {
+      "filename": "header-zh-320.png",
+      "locale": "zh",
+      "width": 320,
+      "view": "real viewport header"
+    },
+    {
+      "filename": "trace-zh-390.png",
+      "locale": "zh",
+      "width": 390,
+      "geometry": {
+        "viewport": 390,
+        "scroll": 390,
+        "selects": [
+          {
+            "id": "hand",
+            "width": 98,
+            "textWidth": 47.61610412597656,
+            "padding": 30
+          },
+          {
+            "id": "preset",
+            "width": 115,
+            "textWidth": 64.0001220703125,
+            "padding": 30
+          }
+        ],
+        "heights": [
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "hand",
+            "h": 48
+          },
+          {
+            "id": "preset",
+            "h": 48
+          },
+          {
+            "id": "prev",
+            "h": 48
+          },
+          {
+            "id": "next",
+            "h": 48
+          },
+          {
+            "id": "reset",
+            "h": 48
+          },
+          {
+            "id": "end",
+            "h": 48
+          },
+          {
+            "id": "reveal",
+            "h": 48
+          },
+          {
+            "id": "copy",
+            "h": 48
+          }
+        ],
+        "rows": 460
+      },
+      "captureNote": "sticky nav hidden only for full element capture"
+    },
+    {
+      "filename": "trace-zh-736.png",
+      "locale": "zh",
+      "width": 736,
+      "geometry": {
+        "viewport": 736,
+        "scroll": 736,
+        "selects": [
+          {
+            "id": "hand",
+            "width": 98,
+            "textWidth": 47.61610412597656,
+            "padding": 30
+          },
+          {
+            "id": "preset",
+            "width": 115,
+            "textWidth": 64.0001220703125,
+            "padding": 30
+          }
+        ],
+        "heights": [
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "hand",
+            "h": 48
+          },
+          {
+            "id": "preset",
+            "h": 48
+          },
+          {
+            "id": "prev",
+            "h": 48
+          },
+          {
+            "id": "next",
+            "h": 48
+          },
+          {
+            "id": "reset",
+            "h": 48
+          },
+          {
+            "id": "end",
+            "h": 48
+          },
+          {
+            "id": "reveal",
+            "h": 48
+          },
+          {
+            "id": "copy",
+            "h": 48
+          }
+        ],
+        "rows": 646
+      },
+      "captureNote": "sticky nav hidden only for full element capture"
+    },
+    {
+      "filename": "trace-zh-1440.png",
+      "locale": "zh",
+      "width": 1440,
+      "geometry": {
+        "viewport": 1440,
+        "scroll": 1440,
+        "selects": [
+          {
+            "id": "hand",
+            "width": 98,
+            "textWidth": 47.61610412597656,
+            "padding": 30
+          },
+          {
+            "id": "preset",
+            "width": 115,
+            "textWidth": 64.0001220703125,
+            "padding": 30
+          }
+        ],
+        "heights": [
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "",
+            "h": 48
+          },
+          {
+            "id": "hand",
+            "h": 48
+          },
+          {
+            "id": "preset",
+            "h": 48
+          },
+          {
+            "id": "prev",
+            "h": 48
+          },
+          {
+            "id": "next",
+            "h": 48
+          },
+          {
+            "id": "reset",
+            "h": 48
+          },
+          {
+            "id": "end",
+            "h": 48
+          },
+          {
+            "id": "reveal",
+            "h": 48
+          },
+          {
+            "id": "copy",
+            "h": 48
+          }
+        ],
+        "rows": 910
+      },
+      "captureNote": "sticky nav hidden only for full element capture"
+    },
+    {
+      "filename": "zoom200-en.png",
+      "locale": "en",
+      "zoom": "200% CSS page zoom",
+      "viewport": 1280
+    },
+    {
+      "filename": "zoom200-zh.png",
+      "locale": "zh",
+      "zoom": "200% CSS page zoom",
+      "viewport": 1280
+    }
+  ],
+  "semantics": [
+    {
+      "locale": "en",
+      "state": "hit s=4",
+      "text": "Just tested s=4: 4, 5, 6 all belong to eligible. marked changes from [] to [4, 5, 6]; existing IDs are not duplicated."
+    },
+    {
+      "locale": "en",
+      "state": "miss s=7",
+      "text": "Just tested s=7: qualifying IDs [8, 9] are missing, so this triple proves nothing. marked remains [4, 5, 6, 7]; rows proved earlier stay marked."
+    },
+    {
+      "locale": "en",
+      "state": "copy success",
+      "text": "Source copied."
+    },
+    {
+      "locale": "en",
+      "state": "copy denied",
+      "text": "Automatic copy is unavailable; copy manually below."
+    },
+    {
+      "locale": "zh",
+      "state": "hit s=4",
+      "text": "刚测试 s=4：4、5、6 都在 eligible。marked 从 [] 变为 [4, 5, 6]；只加入新证据，不重复已有编号。"
+    },
+    {
+      "locale": "zh",
+      "state": "miss s=7",
+      "text": "刚测试 s=7：缺少达标编号 [8, 9]，所以不能证明这组三连。marked 仍为 [4, 5, 6, 7]，早先证明的行继续保留。"
+    },
+    {
+      "locale": "zh",
+      "state": "copy success",
+      "text": "源码已复制。"
+    },
+    {
+      "locale": "zh",
+      "state": "copy denied",
+      "text": "自动复制不可用，请在下方手动复制。"
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "contrast": {
+    "colors": {
+      "bg": "#0d1117",
+      "panel": "#161b22",
+      "panel2": "#1c2330",
+      "text": "#e8edf4",
+      "muted": "#9aa7b8",
+      "accent": "#6ee7ff",
+      "accent2": "#ffb454",
+      "good": "#7ee2a8",
+      "bad": "#ff7a93"
+    },
+    "pairs": [
+      {
+        "ink": "text",
+        "bg": "bg",
+        "ratio": 16.086987125379448
+      },
+      {
+        "ink": "muted",
+        "bg": "bg",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "ink": "accent",
+        "bg": "bg",
+        "ratio": 13.100679028115637
+      },
+      {
+        "ink": "accent2",
+        "bg": "bg",
+        "ratio": 10.731637051347173
+      },
+      {
+        "ink": "text",
+        "bg": "panel",
+        "ratio": 14.704584598678618
+      },
+      {
+        "ink": "muted",
+        "bg": "panel",
+        "ratio": 7.078851579017443
+      },
+      {
+        "ink": "accent",
+        "bg": "panel",
+        "ratio": 11.974898815275662
+      },
+      {
+        "ink": "accent2",
+        "bg": "panel",
+        "ratio": 9.809435643476732
+      },
+      {
+        "ink": "text",
+        "bg": "panel2",
+        "ratio": 13.397069143240783
+      },
+      {
+        "ink": "muted",
+        "bg": "panel2",
+        "ratio": 6.449407898769069
+      },
+      {
+        "ink": "accent",
+        "bg": "panel2",
+        "ratio": 10.910104011097095
+      },
+      {
+        "ink": "accent2",
+        "bg": "panel2",
+        "ratio": 8.937191437807625
+      }
+    ],
+    "focus": 8.937191437807625,
+    "primary": 13.100679028115637
+  },
+  "cssBytes": 11171,
+  "limitations": [
+    "CSS page zoom stress, not physical device or browser-toolbar zoom proof",
+    "Screenshots require separate visual inspection",
+    "No independent review, novice learner test, LeetCode submission or production deployment"
+  ]
+}
