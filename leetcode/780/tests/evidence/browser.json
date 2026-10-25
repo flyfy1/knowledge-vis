@@ -1,0 +1,1953 @@
+{
+  "host": "linux",
+  "url": "http://127.0.0.1:18770/leetcode/780/",
+  "checks": [
+    "en: hand history/cap/undo/reset; all nine presets + every frame reverse/replay; prediction all options/change; exact source/copy/download",
+    "zh: hand history/cap/undo/reset; all nine presets + every frame reverse/replay; prediction all options/change; exact source/copy/download",
+    "State preserved on locale roundtrip; native fallback clipboard exact in both locales; keyboard activation/focus; local concept anchors; reduced motion/forced colors; storage denied; file:// offline source; no local asset/console errors"
+  ],
+  "semantic": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "terminal": "x equals sx; only y may increase. Difference 1, increment sx=1; 1 % 1 = 0. Final result: reachable (true)."
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "terminal": "x equals sx; only y may increase. Difference 1, increment sx=1; 1 % 1 = 0. Final result: reachable (true)."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "terminal": "x equals sx; only y may increase. Difference 6, increment sx=3; 6 % 3 = 0. Final result: reachable (true)."
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "terminal": "x equals sx; only y may increase. Difference 5, increment sx=3; 5 % 3 = 2. Final result: unreachable (false)."
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "terminal": "Current (3, 1) has a coordinate below its start. Forward coordinates never decrease, so it is unreachable."
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "terminal": "Current (2, 0) has a coordinate below its start. Forward coordinates never decrease, so it is unreachable."
+    },
+    {
+      "locale": "en",
+      "preset": 6,
+      "terminal": "x equals sx; only y may increase. Difference 0, increment sx=1; 0 % 1 = 0. Final result: reachable (true)."
+    },
+    {
+      "locale": "en",
+      "preset": 7,
+      "terminal": "x equals sx; only y may increase. Difference 999999999, increment sx=1; 999999999 % 1 = 0. Final result: reachable (true)."
+    },
+    {
+      "locale": "en",
+      "preset": 8,
+      "terminal": "Current (4, 9) has a coordinate below its start. Forward coordinates never decrease, so it is unreachable."
+    },
+    {
+      "locale": "en",
+      "choice": 0,
+      "feedback": "That reason does not hold; the correct option is C. 17 % 5=2 reduces the target to (2,5), which is not below starting x=2. Stop modulo because x now equals sx. Difference 5−3=2 is divisible by sx=2, so the answer is true. Witness: (2,3)→(2,5)→(7,5)→(12,5)→(17,5). A mistakes the other coordinate 5 for a starting lower bound; B uses a necessary gcd condition as if it were sufficient."
+    },
+    {
+      "locale": "en",
+      "choice": 1,
+      "feedback": "That reason does not hold; the correct option is C. 17 % 5=2 reduces the target to (2,5), which is not below starting x=2. Stop modulo because x now equals sx. Difference 5−3=2 is divisible by sx=2, so the answer is true. Witness: (2,3)→(2,5)→(7,5)→(12,5)→(17,5). A mistakes the other coordinate 5 for a starting lower bound; B uses a necessary gcd condition as if it were sufficient."
+    },
+    {
+      "locale": "en",
+      "choice": 2,
+      "feedback": "Both verdict and reason are correct. 17 % 5=2 reduces the target to (2,5), which is not below starting x=2. Stop modulo because x now equals sx. Difference 5−3=2 is divisible by sx=2, so the answer is true. Witness: (2,3)→(2,5)→(7,5)→(12,5)→(17,5). A mistakes the other coordinate 5 for a starting lower bound; B uses a necessary gcd condition as if it were sufficient."
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "terminal": "x 已等于 sx；只可增加 y。差值 1，步长 sx=1；1 % 1 = 0。最终结果：可达（true）。"
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "terminal": "x 已等于 sx；只可增加 y。差值 1，步长 sx=1；1 % 1 = 0。最终结果：可达（true）。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "terminal": "x 已等于 sx；只可增加 y。差值 6，步长 sx=3；6 % 3 = 0。最终结果：可达（true）。"
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "terminal": "x 已等于 sx；只可增加 y。差值 5，步长 sx=3；5 % 3 = 2。最终结果：不可达（false）。"
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "terminal": "当前 (3, 1) 已有坐标低于起点。正向坐标从不减小，所以不可达。"
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "terminal": "当前 (2, 0) 已有坐标低于起点。正向坐标从不减小，所以不可达。"
+    },
+    {
+      "locale": "zh",
+      "preset": 6,
+      "terminal": "x 已等于 sx；只可增加 y。差值 0，步长 sx=1；0 % 1 = 0。最终结果：可达（true）。"
+    },
+    {
+      "locale": "zh",
+      "preset": 7,
+      "terminal": "x 已等于 sx；只可增加 y。差值 999999999，步长 sx=1；999999999 % 1 = 0。最终结果：可达（true）。"
+    },
+    {
+      "locale": "zh",
+      "preset": 8,
+      "terminal": "当前 (4, 9) 已有坐标低于起点。正向坐标从不减小，所以不可达。"
+    },
+    {
+      "locale": "zh",
+      "choice": 0,
+      "feedback": "这一项的理由不成立；正确选项是 C。 17 % 5=2，把目标变成 (2,5)，没有低于起点 x=2。不再取余，因为 x 已等于 sx。差 5−3=2，可被 sx=2 整除，所以为真。见证路径：(2,3)→(2,5)→(7,5)→(12,5)→(17,5)。A 把另一个坐标 5 误当作起点下界；B 的公约数只能排除部分失败例，不能证明可达。"
+    },
+    {
+      "locale": "zh",
+      "choice": 1,
+      "feedback": "这一项的理由不成立；正确选项是 C。 17 % 5=2，把目标变成 (2,5)，没有低于起点 x=2。不再取余，因为 x 已等于 sx。差 5−3=2，可被 sx=2 整除，所以为真。见证路径：(2,3)→(2,5)→(7,5)→(12,5)→(17,5)。A 把另一个坐标 5 误当作起点下界；B 的公约数只能排除部分失败例，不能证明可达。"
+    },
+    {
+      "locale": "zh",
+      "choice": 2,
+      "feedback": "结论与理由都正确。 17 % 5=2，把目标变成 (2,5)，没有低于起点 x=2。不再取余，因为 x 已等于 sx。差 5−3=2，可被 sx=2 整除，所以为真。见证路径：(2,3)→(2,5)→(7,5)→(12,5)→(17,5)。A 把另一个坐标 5 误当作起点下界；B 的公约数只能排除部分失败例，不能证明可达。"
+    },
+    {
+      "locale": "en",
+      "clipboardFallback": "Clipboard unavailable; the full source is selected for manual copying.",
+      "nativeCopyExact": true
+    },
+    {
+      "locale": "zh",
+      "clipboardFallback": "剪贴板不可用；已选中完整源码，请手动复制。",
+      "nativeCopyExact": true
+    },
+    {
+      "locale": "en",
+      "centralEquation": "tx = sx: ty ≥ sy and (ty − sy) % sx = 0; symmetric when ty = sy."
+    },
+    {
+      "locale": "zh",
+      "centralEquation": "tx = sx：ty ≥ sy 且 (ty − sy) % sx = 0；ty = sy 时对称。"
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "selectorMetrics": [
+        {
+          "text": "(1,1) → (3,5)",
+          "textWidth": 88.70413208007812,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (3,17)",
+          "textWidth": 97.85615539550781,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,8)",
+          "textWidth": 88.70413208007812,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,7)",
+          "textWidth": 88.70413208007812,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(2,3) → (3,4)",
+          "textWidth": 88.70413208007812,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (2,2)",
+          "textWidth": 88.70413208007812,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,1)",
+          "textWidth": 88.70413208007812,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,10⁹)",
+          "textWidth": 103.45616149902344,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(5,3) → (4,9)",
+          "textWidth": 88.70413208007812,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "selectorMetrics": [
+        {
+          "text": "(1,1) → (3,5)",
+          "textWidth": 88.70413208007812,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (3,17)",
+          "textWidth": 97.85615539550781,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,8)",
+          "textWidth": 88.70413208007812,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,7)",
+          "textWidth": 88.70413208007812,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(2,3) → (3,4)",
+          "textWidth": 88.70413208007812,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (2,2)",
+          "textWidth": 88.70413208007812,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,1)",
+          "textWidth": 88.70413208007812,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,10⁹)",
+          "textWidth": 103.45616149902344,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(5,3) → (4,9)",
+          "textWidth": 88.70413208007812,
+          "width": 256,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "selectorMetrics": [
+        {
+          "text": "(1,1) → (3,5)",
+          "textWidth": 88.70413208007812,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (3,17)",
+          "textWidth": 97.85615539550781,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,8)",
+          "textWidth": 88.70413208007812,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,7)",
+          "textWidth": 88.70413208007812,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(2,3) → (3,4)",
+          "textWidth": 88.70413208007812,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (2,2)",
+          "textWidth": 88.70413208007812,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,1)",
+          "textWidth": 88.70413208007812,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,10⁹)",
+          "textWidth": 103.45616149902344,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(5,3) → (4,9)",
+          "textWidth": 88.70413208007812,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "selectorMetrics": [
+        {
+          "text": "(1,1) → (3,5)",
+          "textWidth": 88.70413208007812,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (3,17)",
+          "textWidth": 97.85615539550781,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,8)",
+          "textWidth": 88.70413208007812,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,7)",
+          "textWidth": 88.70413208007812,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(2,3) → (3,4)",
+          "textWidth": 88.70413208007812,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (2,2)",
+          "textWidth": 88.70413208007812,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,1)",
+          "textWidth": 88.70413208007812,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,10⁹)",
+          "textWidth": 103.45616149902344,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(5,3) → (4,9)",
+          "textWidth": 88.70413208007812,
+          "width": 326,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "selectorMetrics": [
+        {
+          "text": "(1,1) → (3,5)",
+          "textWidth": 88.70413208007812,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (3,17)",
+          "textWidth": 97.85615539550781,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,8)",
+          "textWidth": 88.70413208007812,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,7)",
+          "textWidth": 88.70413208007812,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(2,3) → (3,4)",
+          "textWidth": 88.70413208007812,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (2,2)",
+          "textWidth": 88.70413208007812,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,1)",
+          "textWidth": 88.70413208007812,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,10⁹)",
+          "textWidth": 103.45616149902344,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(5,3) → (4,9)",
+          "textWidth": 88.70413208007812,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "selectorMetrics": [
+        {
+          "text": "(1,1) → (3,5)",
+          "textWidth": 88.70413208007812,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (3,17)",
+          "textWidth": 97.85615539550781,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,8)",
+          "textWidth": 88.70413208007812,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,7)",
+          "textWidth": 88.70413208007812,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(2,3) → (3,4)",
+          "textWidth": 88.70413208007812,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (2,2)",
+          "textWidth": 88.70413208007812,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,1)",
+          "textWidth": 88.70413208007812,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,10⁹)",
+          "textWidth": 103.45616149902344,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(5,3) → (4,9)",
+          "textWidth": 88.70413208007812,
+          "width": 644,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "selectorMetrics": [
+        {
+          "text": "(1,1) → (3,5)",
+          "textWidth": 88.70413208007812,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (3,17)",
+          "textWidth": 97.85615539550781,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,8)",
+          "textWidth": 88.70413208007812,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,7)",
+          "textWidth": 88.70413208007812,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(2,3) → (3,4)",
+          "textWidth": 88.70413208007812,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (2,2)",
+          "textWidth": 88.70413208007812,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,1)",
+          "textWidth": 88.70413208007812,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,10⁹)",
+          "textWidth": 103.45616149902344,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(5,3) → (4,9)",
+          "textWidth": 88.70413208007812,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "selectorMetrics": [
+        {
+          "text": "(1,1) → (3,5)",
+          "textWidth": 88.70413208007812,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (3,17)",
+          "textWidth": 97.85615539550781,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,8)",
+          "textWidth": 88.70413208007812,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(3,2) → (3,7)",
+          "textWidth": 88.70413208007812,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(2,3) → (3,4)",
+          "textWidth": 88.70413208007812,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (2,2)",
+          "textWidth": 88.70413208007812,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,1)",
+          "textWidth": 88.70413208007812,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(1,1) → (1,10⁹)",
+          "textWidth": 103.45616149902344,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "text": "(5,3) → (4,9)",
+          "textWidth": 88.70413208007812,
+          "width": 908,
+          "padding": 30,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    "trace-en-320.png",
+    "prediction-en-320.png",
+    "trace-zh-320.png",
+    "prediction-zh-320.png",
+    "trace-en-390.png",
+    "prediction-en-390.png",
+    "trace-zh-390.png",
+    "prediction-zh-390.png",
+    "trace-en-736.png",
+    "prediction-en-736.png",
+    "trace-zh-736.png",
+    "prediction-zh-736.png",
+    "trace-en-1440.png",
+    "prediction-en-1440.png",
+    "trace-zh-1440.png",
+    "prediction-zh-1440.png",
+    "zoom200-en.png",
+    "zoom200-zh.png",
+    "header-zh.png",
+    "header-en.png"
+  ],
+  "focus": {
+    "width": "3px",
+    "color": "rgb(110, 231, 255)",
+    "style": "none",
+    "contrastOnPanel": 9.809435643476732
+  },
+  "screenshotMethod": "Full stage captures suppress sticky navigation only during capture, avoiding screenshot overlay artifacts; viewport zoom captures retain navigation.",
+  "zoom": "200% CSS zoom in real Chromium at 1440px (effective 720px content); also 320/390 CSS pixel layouts",
+  "contrast": {
+    "formula": "sRGB 0.2126R + 0.7152G + 0.0722B, linearized; alpha-composited ancestor backgrounds",
+    "threshold": 4.5,
+    "min": 7.078851579017443,
+    "pairs": [
+      {
+        "tag": "A",
+        "id": "",
+        "text": "← LeetCode 专区",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "中",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          110,
+          231,
+          255
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "EN",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "H1",
+        "id": "",
+        "text": "#780 · 到达终点",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "把两个数字写在纸上：每次把一个改成两数之和。给定起点 (sx, sy) 和终点 (tx, ty)，能",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "官方范围：1 ≤ sx, sy, tx, ty ≤ 10⁹；可以不做任何操作。",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "官方题目 ↗",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "0 · 亲手相加",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "1 · 唯一的来路",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "2 · 取余与边界",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          110,
+          231,
+          255
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "3 · 预测新输入",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "4 · Python 与成本",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "01",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "H2",
+        "id": "",
+        "text": "从 (1,1) 到 (3,5)，每一步改了什么？",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "这一步要回答：什么才是合法的一步？点 (x,y) 的两个坐标是有顺序的数字。只能改一个：把 x 改成",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 12.615602281385614
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "依次点「加到 y、加到 x、加到 y」，看保留的路径。再撤销，确认原坐标和历史一起恢复。试错不代表无",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "手算模拟：固定起点 (1,1)，目标 (3,5)；仅为控制画面，两数之和超过 20 时停止添加。这不",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "BUTTON",
+        "id": "addX",
+        "text": "加到 x：x ← x+y",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "BUTTON",
+        "id": "addY",
+        "text": "加到 y：y ← x+y",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "BUTTON",
+        "id": "undo",
+        "text": "撤销上一步",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "BUTTON",
+        "id": "handReset",
+        "text": "重置本实验",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "id": "handRead",
+        "text": "当前 (1, 2)；已做 1 次加法。这条路径尚未到达 (3,5)。",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "本次尝试保留的全部点",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "LI",
+        "id": "",
+        "text": "(1, 1)",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "LI",
+        "id": "",
+        "text": "(1, 2)",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "02",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 13.388343428810314
+      },
+      {
+        "tag": "H2",
+        "id": "",
+        "text": "为什么倒着走不需要猜方向？",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 16.440224808744848
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "这一步要回答：终点前一步只能是什么？正数相加后，被改的坐标必然比另一个大。(3,5) 中 5 较大，",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 12.89261537833187
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "正确基线：从起点向前枚举两种加法，用队列按步数访问点（广度优先搜索），用集合避免重复。两坐标从不减小",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 12.89261537833187
+      },
+      {
+        "tag": "SUMMARY",
+        "id": "",
+        "text": "展开可运行的小输入基线",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 13.388343428810314
+      },
+      {
+        "tag": "CODE",
+        "id": "",
+        "text": "from collections import deque\n\n\ndef baseline(sx, s",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          9,
+          14,
+          22
+        ],
+        "ratio": 16.437295258072666
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "诱人的错误捷径：只检查最大公约数（能同时整除两个数的最大正整数）。加法和减法保持它不变，但相同不代表",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 12.89261537833187
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "若两个目标坐标相等，正数前驱不存在：相减会得到 0。只有它本身就是起点时才能成功。因此 (1,1)→",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 12.89261537833187
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "03",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "H2",
+        "id": "",
+        "text": "怎样跳过重复减法，又不跳过起点？",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "这一步要回答：重复减去同一个数，能压成什么操作？保持起点 (sx,sy) 不变，把当前倒推目标仍叫 ",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 12.615602281385614
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "不变量（每次更新后仍成立的判断）：在 tx>sx 且 ty>sy 时，起点可达旧目标，当且仅当可达取",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "一旦一坐标到达起点，就先停止取余！若 tx=sx，想从 (sx,sy) 到 (sx,ty)，x 不能",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 12.615602281385614
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "tx = sx：ty ≥ sy 且 (ty − sy) % sx = 0；ty = sy 时对称。",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "选择场景会重置本倒推实验。先试 (1,1)→(3,17)，比较批次算式和保留的历史，再试两种边界场景",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "LABEL",
+        "id": "",
+        "text": "倒推输入（更换即重置）",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "SELECT",
+        "id": "preset",
+        "text": "(1,1) → (3,5)(1,1) → (3,17)(3,2) → (3,8)(3,2) → (3",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "id": "scenario",
+        "text": "(1,1) → (3,17) · 批量减法",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "JavaScript 教学模拟，不是在浏览器执行 Python。每帧是一次完整取余之后，或一次不改坐",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "BUTTON",
+        "id": "prev",
+        "text": "退回上一帧",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "BUTTON",
+        "id": "next",
+        "text": "执行下一批次 / 检查",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          110,
+          231,
+          255
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "BUTTON",
+        "id": "traceReset",
+        "text": "重置本实验",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "BUTTON",
+        "id": "end",
+        "text": "跳到最终检查",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "id": "frameRead",
+        "text": "帧 1/3；固定起点 (1, 1)；当前倒推目标 (3, 2)。尚未给出最终判定。",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "id": "operation",
+        "text": "(3, 17) → (3, 2)：y 原值 17 = 5 × 3 + 2，因此 17 % 3 = 2",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "LI",
+        "id": "",
+        "text": "(3, 17) → (3, 2)：y 原值 17 = 5 × 3 + 2，因此 17 % 3 = 2",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 11.974898815275662
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "04",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 13.388343428810314
+      },
+      {
+        "tag": "H2",
+        "id": "",
+        "text": "新输入：能从 (2,3) 到 (17,5) 吗？",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 16.440224808744848
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "这一步要回答：你能把“不变的坐标仍高于起点”这一判断，用到没看过的输入吗？保持起点 (2,3) 不变",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 12.89261537833187
+      },
+      {
+        "tag": "LEGEND",
+        "id": "",
+        "text": "结论与理由是什么？",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "LABEL",
+        "id": "",
+        "text": "A · 不可达：17 % 5=2 小于 5，必须失败。",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "LABEL",
+        "id": "",
+        "text": "B · 可达：两对数的最大公约数相同就足够。",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "LABEL",
+        "id": "",
+        "text": "C · 可达：先得 (2,5)，再检查差值 5−3 能否被 2 整除。",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "BUTTON",
+        "id": "reveal",
+        "text": "揭晓并解释",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          110,
+          231,
+          255
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "BUTTON",
+        "id": "predictionReset",
+        "text": "重置本实验",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "id": "feedback",
+        "text": "结论与理由都正确。 17 % 5=2，把目标变成 (2,5)，没有低于起点 x=2。不再取余，因为 ",
+        "fg": [
+          126,
+          226,
+          168
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 10.004815697188947
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "05",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "H2",
+        "id": "",
+        "text": "把推导放回官方 Python 接口",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "这一步要回答：每个判断具体对应哪行代码？下面是符合官方 Python3 接口的可提交源码 Solut",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 12.615602281385614
+      },
+      {
+        "tag": "LI",
+        "id": "",
+        "text": "while tx > sx and ty > sy：只有两坐标都高于起点时才批量倒退。例如 (3,5",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "LI",
+        "id": "",
+        "text": "两个 if 返回式：固定已到达起点的坐标，另一坐标的非负差值必须是固定坐标的整倍数。差值 0 也成立",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "LI",
+        "id": "",
+        "text": "return False：目标落到起点以下且不满足上述任一边界。所有输入均为正数，取余的除数不会为零",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "时间 O(1 + log M)，M=max(初始 tx, 初始 ty)；每次取余至少把较大坐标换成较",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 12.615602281385614
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "边界清单：原点不在输入范围内；目标更小必假；相同起终点为真；相等目标只有零步可成功；共享一个起点坐标",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 12.615602281385614
+      },
+      {
+        "tag": "BUTTON",
+        "id": "copyPython",
+        "text": "复制 Python 源码",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          110,
+          231,
+          255
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "下载 solution.py",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "SUMMARY",
+        "id": "",
+        "text": "展开可提交 Python3 源码",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "CODE",
+        "id": "pythonCode",
+        "text": "class Solution:\n    def reachingPoints(self, sx: i",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          9,
+          14,
+          22
+        ],
+        "ratio": 16.437295258072666
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "回看：为何前驱方向唯一",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "回看：取余的不变量与边界",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      }
+    ]
+  },
+  "network": {
+    "errors": [],
+    "localOnly": true,
+    "requests": [
+      "http://127.0.0.1:18770/leetcode/780/",
+      "http://127.0.0.1:18770/leetcode/style.css",
+      "http://127.0.0.1:18770/leetcode/780/style.css?v=780-r4",
+      "http://127.0.0.1:18770/leetcode/common.js",
+      "http://127.0.0.1:18770/leetcode/780/copy.js?v=780-r4",
+      "http://127.0.0.1:18770/leetcode/780/core.js?v=780-r4",
+      "http://127.0.0.1:18770/leetcode/780/python-code.js?v=780-r4",
+      "http://127.0.0.1:18770/leetcode/780/app.js?v=780-r4"
+    ]
+  },
+  "shippedCssBytes": 11331
+}
