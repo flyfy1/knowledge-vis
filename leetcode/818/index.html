@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>818 Race Car</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="style.css?v=1"></head><body>
+<header class="site-head"><div class="head-top"><a class="back-link" href="../" data-i18n="back"></a><div class="lang-toggle" id="langToggle" aria-label="语言 / Language"><button data-lang="zh">中</button><button data-lang="en">EN</button></div></div><h1 data-i18n="title"></h1><p class="tagline" data-i18n="intro"></p><a class="official-link" href="https://leetcode.com/problems/race-car/" data-i18n="official"></a></header>
+<nav class="step-nav"><div class="step-nav-inner"><a href="#step0" data-i18n="nav0"></a><a href="#step1" data-i18n="nav1"></a><a href="#step2" data-i18n="nav2"></a><a href="#step3" data-i18n="nav3"></a><a href="#step4" data-i18n="nav4"></a></div></nav>
+<main>
+<section class="step" id="step0"><div class="step-inner"><h2 data-i18n="h0"></h2><p class="explain" data-i18n="p0"></p><div class="stage"><p data-i18n="handHint"></p><div class="controls" data-step="0"><button class="btn primary" id="a" data-i18n="a"></button><button class="btn" id="r" data-i18n="r"></button><button class="btn" id="undo" data-i18n="undo"></button><button class="btn" id="reset" data-i18n="reset"></button></div><p class="readout" id="handRead" aria-live="polite"></p><h3 data-i18n="history"></h3><ol id="handHistory" class="ledger"></ol></div></div></section>
+<section class="step" id="step1"><div class="step-inner"><h2 data-i18n="h1"></h2><p data-i18n="p1"></p><p class="question" data-i18n="baseline"></p><pre tabindex="0"><code>from itertools import product
+
+
+def enumerate_commands(target):
+    length = 0
+    while True:
+        for commands in product(&#x27;AR&#x27;, repeat=length):
+            position, speed = 0, 1
+            for command in commands:
+                if command == &#x27;A&#x27;:
+                    position += speed
+                    speed *= 2
+                else:
+                    speed = -1 if speed &gt; 0 else 1
+            if position == target:
+                return length
+        length += 1
+</code></pre></div></section>
+<section class="step" id="step2"><div class="step-inner"><h2 data-i18n="h2"></h2><p data-i18n="p2"></p><p class="question" data-i18n="proof"></p><div class="stage"><label for="preset" data-i18n="preset"></label><select id="preset" data-step="2"><option value="6">6</option><option value="3">3</option><option value="1">1</option><option value="4">4</option><option value="2">2</option></select><p class="hint" data-i18n="traceHint"></p><div class="controls" data-step="2"><button class="btn" id="prev" data-i18n="prev"></button><button class="btn primary" id="next" data-i18n="next"></button><button class="btn" id="end" data-i18n="end"></button><button class="btn" id="traceReset" data-i18n="traceReset"></button></div><p id="frameRead" class="readout" aria-live="polite"></p><div id="layers"></div><p class="hint" data-i18n="sim"></p></div></div></section>
+<section class="step" id="step3"><div class="step-inner"><h2 data-i18n="h3"></h2><p data-i18n="p3"></p><fieldset class="prediction-options" data-step="3"><legend data-i18n="legend"></legend><label><input type="radio" name="prediction" value="0"><span data-i18n="o0"></span></label><label><input type="radio" name="prediction" value="1"><span data-i18n="o1"></span></label><label><input type="radio" name="prediction" value="2"><span data-i18n="o2"></span></label></fieldset><button class="btn" id="reveal" data-i18n="reveal"></button><p id="feedback" class="readout" aria-live="polite"></p></div></section>
+<section class="step" id="step4"><div class="step-inner"><h2 data-i18n="h4"></h2><p data-i18n="p4"></p><p data-i18n="boundary"></p><p class="question" data-i18n="cost"></p><details id="sourceDetails"><summary data-i18n="source"></summary><pre tabindex="0"><code id="pythonCode"></code></pre></details><div class="solution-actions"><button class="btn" id="copy" data-i18n="copy"></button><a href="solution.py" download="solution.py" data-i18n="download"></a></div><p id="copyStatus" role="status"></p><div id="sourceFallback" hidden><label for="manualSource" data-i18n="manualLabel"></label><textarea id="manualSource" readonly rows="12"></textarea></div><h3 data-i18n="related"></h3><div class="related"><a href="../815/#step2" data-i18n="rel1"></a><a href="../773/#step2" data-i18n="rel2"></a></div></div></section>
+</main><noscript>请启用 JavaScript 使用实验。 / Enable JavaScript for the experiments. <a href="solution.py">Python</a></noscript><footer class="site-foot" data-i18n="foot"></footer><script src="../common.js"></script><script src="copy.js?v=1"></script><script src="core.js?v=1"></script><script src="python-code.js?v=1"></script><script src="app.js?v=1"></script></body></html>

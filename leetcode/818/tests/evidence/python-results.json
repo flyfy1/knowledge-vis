@@ -1,0 +1,282 @@
+{
+  "kind": "author self-check",
+  "records": [
+    {
+      "target": 1,
+      "answer": 1,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 2,
+      "answer": 4,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 3,
+      "answer": 2,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 4,
+      "answer": 5,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 5,
+      "answer": 7,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 6,
+      "answer": 5,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 7,
+      "answer": 3,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 8,
+      "answer": 6,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 9,
+      "answer": 8,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 10,
+      "answer": 7,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 11,
+      "answer": 10,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 12,
+      "answer": 7,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 13,
+      "answer": 9,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 14,
+      "answer": 6,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 15,
+      "answer": 4,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 16,
+      "answer": 7,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 17,
+      "answer": 9,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 18,
+      "answer": 8,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 19,
+      "answer": 11,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 20,
+      "answer": 12,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 21,
+      "answer": 10,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 22,
+      "answer": 9,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 23,
+      "answer": 12,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 24,
+      "answer": 9,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 25,
+      "answer": 11,
+      "oracle": "raw-string enumeration and independent distance DP"
+    },
+    {
+      "target": 1,
+      "answer": 1,
+      "seconds": 3.5370467230677605e-06,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 3,
+      "answer": 2,
+      "seconds": 4.185945726931095e-06,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 6,
+      "answer": 5,
+      "seconds": 1.9279075786471367e-05,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 43,
+      "answer": 13,
+      "seconds": 0.0005782130174338818,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 77,
+      "answer": 13,
+      "seconds": 0.0005449349991977215,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 328,
+      "answer": 25,
+      "seconds": 0.029741922044195235,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 403,
+      "answer": 29,
+      "seconds": 0.08813196793198586,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 446,
+      "answer": 21,
+      "seconds": 0.008965154993347824,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 478,
+      "answer": 20,
+      "seconds": 0.005531280068680644,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 482,
+      "answer": 20,
+      "seconds": 0.006351814023219049,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 497,
+      "answer": 16,
+      "seconds": 0.0014446910936385393,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 547,
+      "answer": 23,
+      "seconds": 0.012979447026737034,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 548,
+      "answer": 22,
+      "seconds": 0.00952518405392766,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 551,
+      "answer": 26,
+      "seconds": 0.03622018196620047,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 590,
+      "answer": 26,
+      "seconds": 0.040243546944111586,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 787,
+      "answer": 31,
+      "seconds": 0.12625755299814045,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 809,
+      "answer": 34,
+      "seconds": 0.23950277001131326,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 835,
+      "answer": 29,
+      "seconds": 0.07525152305606753,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 849,
+      "answer": 32,
+      "seconds": 0.15468063403386623,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 902,
+      "answer": 24,
+      "seconds": 0.019025309942662716,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 931,
+      "answer": 27,
+      "seconds": 0.044582973001524806,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 8191,
+      "answer": 13,
+      "seconds": 0.0006908080540597439,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 8192,
+      "answer": 16,
+      "seconds": 0.0016851590480655432,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 9999,
+      "answer": 43,
+      "seconds": 1.1768804379971698,
+      "oracle": "distance DP"
+    },
+    {
+      "target": 10000,
+      "answer": 45,
+      "seconds": 1.562049319036305,
+      "oracle": "distance DP"
+    }
+  ],
+  "mersenne_boundaries": 13,
+  "sourceParity": true
+}
