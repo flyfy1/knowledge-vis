@@ -1,0 +1,245 @@
+{
+  "url": "http://127.0.0.1:18782/leetcode/699/",
+  "host": "linux",
+  "checks": [
+    {
+      "locale": "en",
+      "handLeft": "2",
+      "readout": "Shared width = 1; second base = 2, top = 4; output = [2, 4]. Positive overlap makes the first top a support."
+    },
+    {
+      "locale": "en",
+      "handLeft": "3",
+      "readout": "Shared width = 0; second base = 0, top = 2; output = [2, 2]. Only edges touch: no support, so both start on the ground."
+    },
+    {
+      "locale": "en",
+      "handLeft": "4",
+      "readout": "Shared width = 0; second base = 0, top = 2; output = [2, 2]. Their footprints are separate; the second lands on the ground."
+    },
+    {
+      "locale": "en",
+      "preset": 0,
+      "events": 8,
+      "output": "Output through this frame = [2, 4, 4]; all complete",
+      "event": "All earlier squares tested for #3: bottom base=0, top=0+1=1. Global height: 4 → 4."
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "events": 8,
+      "output": "Output through this frame = [2, 5, 5]; all complete",
+      "event": "All earlier squares tested for #3: bottom base=0, top=0+1=1. Global height: 5 → 5."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "events": 4,
+      "output": "Output through this frame = [100, 100]; all complete",
+      "event": "All earlier squares tested for #2: bottom base=0, top=0+100=100. Global height: 100 → 100."
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "events": 13,
+      "output": "Output through this frame = [3, 3, 7, 8]; all complete",
+      "event": "All earlier squares tested for #4: bottom base=7, top=7+1=8. Global height: 7 → 8."
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "events": 8,
+      "output": "Output through this frame = [2, 4, 6]; all complete",
+      "event": "All earlier squares tested for #3: bottom base=4, top=4+2=6. Global height: 4 → 6."
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "events": 1,
+      "output": "Output through this frame = [1]; all complete",
+      "event": "All earlier squares tested for #1: bottom base=0, top=0+1=1. Global height: 0 → 1."
+    },
+    {
+      "locale": "en",
+      "choice": 0,
+      "feedback": "Recheck the support intervals: C is correct. The first footprint [1,4) has top 3; the second [6,8) has top 2. The third [3,7) overlaps both, so its base is max(3,2)=3 and top is 7. The fourth [7,8) only touches the third at x=7 but overlaps the second. Thus base=2, top=3, and the global height remains 7. A treats contact or the global maximum as support; B misses the second square."
+    },
+    {
+      "locale": "en",
+      "choice": 1,
+      "feedback": "Recheck the support intervals: C is correct. The first footprint [1,4) has top 3; the second [6,8) has top 2. The third [3,7) overlaps both, so its base is max(3,2)=3 and top is 7. The fourth [7,8) only touches the third at x=7 but overlaps the second. Thus base=2, top=3, and the global height remains 7. A treats contact or the global maximum as support; B misses the second square."
+    },
+    {
+      "locale": "en",
+      "choice": 2,
+      "feedback": "Correct: C. The first footprint [1,4) has top 3; the second [6,8) has top 2. The third [3,7) overlaps both, so its base is max(3,2)=3 and top is 7. The fourth [7,8) only touches the third at x=7 but overlaps the second. Thus base=2, top=3, and the global height remains 7. A treats contact or the global maximum as support; B misses the second square."
+    },
+    {
+      "locale": "en",
+      "copyStatus": "Full source copied.",
+      "nativeClipboard": true
+    },
+    {
+      "locale": "zh",
+      "handLeft": "2",
+      "readout": "共享宽度 = 1；第二块 base = 2，top = 4；输出 = [2, 4]。有正宽度重叠，所以落在第一块顶部。"
+    },
+    {
+      "locale": "zh",
+      "handLeft": "3",
+      "readout": "共享宽度 = 0；第二块 base = 0，top = 2；输出 = [2, 2]。只有边接触，不能支撑，两块都从地面开始。"
+    },
+    {
+      "locale": "zh",
+      "handLeft": "4",
+      "readout": "共享宽度 = 0；第二块 base = 0，top = 2；输出 = [2, 2]。横向分离，第二块落在地面。"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "events": 8,
+      "output": "截至本帧的输出 = [2, 4, 4]；全部完成",
+      "event": "方块 #3 的全部旧块已检查：底部 base=0，顶部 top=0+1=1。全局最高高度：4 → 4。"
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "events": 8,
+      "output": "截至本帧的输出 = [2, 5, 5]；全部完成",
+      "event": "方块 #3 的全部旧块已检查：底部 base=0，顶部 top=0+1=1。全局最高高度：5 → 5。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "events": 4,
+      "output": "截至本帧的输出 = [100, 100]；全部完成",
+      "event": "方块 #2 的全部旧块已检查：底部 base=0，顶部 top=0+100=100。全局最高高度：100 → 100。"
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "events": 13,
+      "output": "截至本帧的输出 = [3, 3, 7, 8]；全部完成",
+      "event": "方块 #4 的全部旧块已检查：底部 base=7，顶部 top=7+1=8。全局最高高度：7 → 8。"
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "events": 8,
+      "output": "截至本帧的输出 = [2, 4, 6]；全部完成",
+      "event": "方块 #3 的全部旧块已检查：底部 base=4，顶部 top=4+2=6。全局最高高度：4 → 6。"
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "events": 1,
+      "output": "截至本帧的输出 = [1]；全部完成",
+      "event": "方块 #1 的全部旧块已检查：底部 base=0，顶部 top=0+1=1。全局最高高度：0 → 1。"
+    },
+    {
+      "locale": "zh",
+      "choice": 0,
+      "feedback": "再看支撑范围：正确的是 C。 第一块 [1,4) 顶部 3，第二块 [6,8) 顶部 2。第三块 [3,7) 与两者都有正宽度重叠，底部 max(3,2)=3，顶部 7。第四块 [7,8) 只擦第三块在 x=7 的边，却与第二块重叠，所以 base=2、top=3，全局仍为 7。A 把擦边或全局最高处当成支撑；B 漏掉了第二块。"
+    },
+    {
+      "locale": "zh",
+      "choice": 1,
+      "feedback": "再看支撑范围：正确的是 C。 第一块 [1,4) 顶部 3，第二块 [6,8) 顶部 2。第三块 [3,7) 与两者都有正宽度重叠，底部 max(3,2)=3，顶部 7。第四块 [7,8) 只擦第三块在 x=7 的边，却与第二块重叠，所以 base=2、top=3，全局仍为 7。A 把擦边或全局最高处当成支撑；B 漏掉了第二块。"
+    },
+    {
+      "locale": "zh",
+      "choice": 2,
+      "feedback": "正确：C。 第一块 [1,4) 顶部 3，第二块 [6,8) 顶部 2。第三块 [3,7) 与两者都有正宽度重叠，底部 max(3,2)=3，顶部 7。第四块 [7,8) 只擦第三块在 x=7 的边，却与第二块重叠，所以 base=2、top=3，全局仍为 7。A 把擦边或全局最高处当成支撑；B 漏掉了第二块。"
+    },
+    {
+      "locale": "zh",
+      "copyStatus": "已复制完整源码。",
+      "nativeClipboard": true
+    },
+    {
+      "locale": "en",
+      "fallbackStatus": "Automatic copy unavailable. Full source is selected; use your system copy shortcut.",
+      "manualKeyboardCopy": true,
+      "host": "linux"
+    },
+    {
+      "locale": "zh",
+      "fallbackStatus": "自动复制不可用。完整源码已选中，请用系统复制快捷键。",
+      "manualKeyboardCopy": true,
+      "host": "linux"
+    }
+  ],
+  "snapshots": [
+    "plot-en-320.png",
+    "plot-en-390.png",
+    "plot-en-736.png",
+    "plot-en-1440.png",
+    "plot-zh-320.png",
+    "plot-zh-390.png",
+    "plot-zh-736.png",
+    "plot-zh-1440.png"
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".stage",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "th",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "button:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#langToggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".btn:not(:disabled)",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    }
+  ],
+  "errors": [],
+  "bad": [],
+  "external": [],
+  "viewports": [
+    320,
+    390,
+    736,
+    1440
+  ],
+  "zoom": "200% CSS zoom on 1440 desktop",
+  "keyboard": true,
+  "storageDenied": true,
+  "downloadExact": true
+}

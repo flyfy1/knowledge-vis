@@ -1,0 +1,10 @@
+{
+  "cases": 23226,
+  "exhaustive": "all lengths 1..4 over left=1..4, side=1..3",
+  "seed": 699,
+  "random": 600,
+  "maximum_n_cases": 3,
+  "official_examples": 2,
+  "no_mutation": true,
+  "canonical_sha256": "da21066513d1263582526d92b03f1267122842aa19f55e8b159a0d0c3f390a98"
+}
