@@ -1,0 +1,79 @@
+{
+  "platform": "linux",
+  "browser": "156.0.8078.4",
+  "keyboardScroll": 40,
+  "rows": [
+    {
+      "lang": "zh",
+      "w": 320,
+      "progress": "已完成操作 4/25。当前扫描：正向下链。",
+      "operation": "A=(0,0), B=(0,2), C=(1,0)：cross=-2<0。移除 B；C 仍待加入，继续检查新末尾。",
+      "lower": "(0,0)",
+      "upper": "空链",
+      "turn": "(1−0)×(0−0) − (1−0)×(2−0) = -2。右转：B 在 AC 上方，下边界可以用 AC 替代 AB、BC。B 仍可能属于上边界。",
+      "overlay": "true",
+      "choice": "2",
+      "feedback": "正确。 先测 (1,1),(2,3),(3,0)：1×(−1)−2×2=−5，移除 (2,3)。再测 (0,0),(1,1),(3,0)：1×0−1×3=−3，移除 (1,1)。只剩 (0,0)，没有三点可测，于是加入 C。答案为 2；只弹一次会留下右转，弹 3 次会错误丢掉左端点。"
+    },
+    {
+      "lang": "zh",
+      "w": 390,
+      "progress": "已完成操作 4/25。当前扫描：正向下链。",
+      "operation": "A=(0,0), B=(0,2), C=(1,0)：cross=-2<0。移除 B；C 仍待加入，继续检查新末尾。",
+      "lower": "(0,0)",
+      "upper": "空链",
+      "turn": "(1−0)×(0−0) − (1−0)×(2−0) = -2。右转：B 在 AC 上方，下边界可以用 AC 替代 AB、BC。B 仍可能属于上边界。",
+      "overlay": "true",
+      "choice": "2",
+      "feedback": "正确。 先测 (1,1),(2,3),(3,0)：1×(−1)−2×2=−5，移除 (2,3)。再测 (0,0),(1,1),(3,0)：1×0−1×3=−3，移除 (1,1)。只剩 (0,0)，没有三点可测，于是加入 C。答案为 2；只弹一次会留下右转，弹 3 次会错误丢掉左端点。"
+    },
+    {
+      "lang": "zh",
+      "w": 1280,
+      "progress": "已完成操作 4/25。当前扫描：正向下链。",
+      "operation": "A=(0,0), B=(0,2), C=(1,0)：cross=-2<0。移除 B；C 仍待加入，继续检查新末尾。",
+      "lower": "(0,0)",
+      "upper": "空链",
+      "turn": "(1−0)×(0−0) − (1−0)×(2−0) = -2。右转：B 在 AC 上方，下边界可以用 AC 替代 AB、BC。B 仍可能属于上边界。",
+      "overlay": "true",
+      "choice": "2",
+      "feedback": "正确。 先测 (1,1),(2,3),(3,0)：1×(−1)−2×2=−5，移除 (2,3)。再测 (0,0),(1,1),(3,0)：1×0−1×3=−3，移除 (1,1)。只剩 (0,0)，没有三点可测，于是加入 C。答案为 2；只弹一次会留下右转，弹 3 次会错误丢掉左端点。"
+    },
+    {
+      "lang": "en",
+      "w": 320,
+      "progress": "Operations completed: 4/25. Current scan: Forward lower chain.",
+      "operation": "A=(0,0), B=(0,2), C=(1,0): cross=-2<0. Remove B; C is still pending, so test the new end.",
+      "lower": "(0,0)",
+      "upper": "Empty chain",
+      "turn": "(1−0)×(0−0) − (1−0)×(2−0) = -2. Right turn: B is above AC; the lower boundary can replace AB and BC with AC. B may still belong to the upper boundary.",
+      "overlay": "true",
+      "choice": "2",
+      "feedback": "Correct. First test (1,1),(2,3),(3,0): 1×(−1)−2×2=−5, so remove (2,3). Then test (0,0),(1,1),(3,0): 1×0−1×3=−3, so remove (1,1). Only (0,0) remains, so no triple can be tested; append C. The answer is 2. One pop leaves a right turn; three would wrongly discard the left endpoint."
+    },
+    {
+      "lang": "en",
+      "w": 390,
+      "progress": "Operations completed: 4/25. Current scan: Forward lower chain.",
+      "operation": "A=(0,0), B=(0,2), C=(1,0): cross=-2<0. Remove B; C is still pending, so test the new end.",
+      "lower": "(0,0)",
+      "upper": "Empty chain",
+      "turn": "(1−0)×(0−0) − (1−0)×(2−0) = -2. Right turn: B is above AC; the lower boundary can replace AB and BC with AC. B may still belong to the upper boundary.",
+      "overlay": "true",
+      "choice": "2",
+      "feedback": "Correct. First test (1,1),(2,3),(3,0): 1×(−1)−2×2=−5, so remove (2,3). Then test (0,0),(1,1),(3,0): 1×0−1×3=−3, so remove (1,1). Only (0,0) remains, so no triple can be tested; append C. The answer is 2. One pop leaves a right turn; three would wrongly discard the left endpoint."
+    },
+    {
+      "lang": "en",
+      "w": 1280,
+      "progress": "Operations completed: 4/25. Current scan: Forward lower chain.",
+      "operation": "A=(0,0), B=(0,2), C=(1,0): cross=-2<0. Remove B; C is still pending, so test the new end.",
+      "lower": "(0,0)",
+      "upper": "Empty chain",
+      "turn": "(1−0)×(0−0) − (1−0)×(2−0) = -2. Right turn: B is above AC; the lower boundary can replace AB and BC with AC. B may still belong to the upper boundary.",
+      "overlay": "true",
+      "choice": "2",
+      "feedback": "Correct. First test (1,1),(2,3),(3,0): 1×(−1)−2×2=−5, so remove (2,3). Then test (0,0),(1,1),(3,0): 1×0−1×3=−3, so remove (1,1). Only (0,0) remains, so no triple can be tested; append C. The answer is 2. One pop leaves a right turn; three would wrongly discard the left endpoint."
+    }
+  ]
+}
