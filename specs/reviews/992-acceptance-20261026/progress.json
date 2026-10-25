@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "repo": "/home/songyy/projects/leetcode-hard-lane-992-20261026",
+  "queue": [
+    "992"
+  ],
+  "expected_head": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+  "started_at": "2026-10-25T22:15:17.309519+00:00",
+  "status": "completed",
+  "current": null,
+  "problems": {
+    "992": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/992-review-1-c3711b80.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Fresh input [2,1,2,3], k=2 returned predicted 4; input unchanged.",
+            "Canonical Python passed 16,739 independently enumerated cases.",
+            "Bilingual interactions, rewind/reset, keyboard, 320/390/desktop and 200% CSS zoom checked; screenshots inspected.",
+            "Exact source, display, copy, fallback and download parity passed.",
+            "Metadata validate-only preflight passed."
+          ],
+          "detail": "100/100; no required findings. Acceptance applies to the reviewed revision only. No human-comprehension, LeetCode-submission or publication claim.",
+          "run_id": "992-review-67f5902a3c90",
+          "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+          "candidate_sha256": "d5892acd35700b0e2fef2f2dd839a13e132754cb6672610239dca3088d86ccb1",
+          "weighted_score": 100.0,
+          "round": 1,
+          "commit": "3451d95894cf401b2462024ca4165565b259e6db"
+        }
+      ],
+      "author_runs": [
+        "992-author-bd39779c66e3"
+      ],
+      "prior_report": "specs/reviews/992-review-1-c3711b80.md",
+      "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+      "registration_commit": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+      "accepted_at": "2026-10-25T22:31:47.804748+00:00"
+    }
+  },
+  "runs": [
+    {
+      "id": "992-author-bd39779c66e3",
+      "problem_id": "992",
+      "role": "author",
+      "started_at": "2026-10-25T22:15:17.548313+00:00",
+      "status": "completed",
+      "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-992-20261026/runs/992-author-bd39779c66e3",
+      "session_ids": [
+        "01a17521-e645-7982-b1f5-d9a4fc139a46"
+      ],
+      "finished_at": "2026-10-25T22:27:31.711528+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented and froze candidate 992-author-v3 in leetcode/992/. Official Python interface verified; bilingual lesson, reversible simulation, prediction exercise, source controls and reproducible tests complete. Passed 6,503 numerical cases, 45,267 trace states, browser checks and metadata preflight. Evidence recorded; independent review remains pending. Existing related-page favicon warning documented."
+      }
+    },
+    {
+      "id": "992-review-67f5902a3c90",
+      "problem_id": "992",
+      "role": "review",
+      "started_at": "2026-10-25T22:27:42.257651+00:00",
+      "status": "completed",
+      "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-992-20261026/runs/992-review-67f5902a3c90",
+      "session_ids": [
+        "01a1752d-4275-7383-8f04-26a51cd96dfb"
+      ],
+      "finished_at": "2026-10-25T22:31:33.036558+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/992-review-1-c3711b80.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Fresh input [2,1,2,3], k=2 returned predicted 4; input unchanged.",
+          "Canonical Python passed 16,739 independently enumerated cases.",
+          "Bilingual interactions, rewind/reset, keyboard, 320/390/desktop and 200% CSS zoom checked; screenshots inspected.",
+          "Exact source, display, copy, fallback and download parity passed.",
+          "Metadata validate-only preflight passed."
+        ],
+        "detail": "100/100; no required findings. Acceptance applies to the reviewed revision only. No human-comprehension, LeetCode-submission or publication claim."
+      }
+    }
+  ],
+  "updated_at": "2026-10-25T22:31:47.932973+00:00"
+}

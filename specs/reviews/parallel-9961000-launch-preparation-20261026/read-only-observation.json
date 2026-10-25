@@ -1,0 +1,207 @@
+{
+  "observedAt": "2026-10-25T22:30:46.740867+00:00",
+  "readOnly": true,
+  "notLaunchEligibility": true,
+  "queueLength": 984,
+  "targets": [
+    {
+      "id": "996",
+      "port": 18799,
+      "queueIndex": 207,
+      "record": null,
+      "runIds": [],
+      "runDirectories": [],
+      "matchingReservations": [],
+      "lessonExists": false,
+      "repoExists": false,
+      "stateExists": false,
+      "branchExists": false,
+      "listeners": [],
+      "bindAvailable": true
+    },
+    {
+      "id": "1000",
+      "port": 18800,
+      "queueIndex": 208,
+      "record": null,
+      "runIds": [],
+      "runDirectories": [],
+      "matchingReservations": [],
+      "lessonExists": false,
+      "repoExists": false,
+      "stateExists": false,
+      "branchExists": false,
+      "listeners": [],
+      "bindAvailable": true
+    }
+  ],
+  "reservations": [
+    {
+      "id": "964",
+      "status": "imported"
+    },
+    {
+      "id": "689",
+      "status": "imported"
+    },
+    {
+      "id": "493",
+      "status": "imported"
+    },
+    {
+      "id": "675",
+      "status": "imported"
+    },
+    {
+      "id": "514",
+      "status": "imported"
+    },
+    {
+      "id": "940",
+      "status": "imported"
+    },
+    {
+      "id": "591",
+      "status": "imported"
+    },
+    {
+      "id": "691",
+      "status": "imported"
+    },
+    {
+      "id": "719",
+      "status": "imported"
+    },
+    {
+      "id": "730",
+      "status": "imported"
+    },
+    {
+      "id": "975",
+      "status": "imported"
+    },
+    {
+      "id": "920",
+      "status": "imported"
+    },
+    {
+      "id": "903",
+      "status": "imported"
+    },
+    {
+      "id": "732",
+      "status": "imported"
+    },
+    {
+      "id": "668",
+      "status": "imported"
+    },
+    {
+      "id": "685",
+      "status": "imported"
+    },
+    {
+      "id": "679",
+      "status": "imported"
+    },
+    {
+      "id": "630",
+      "status": "imported"
+    },
+    {
+      "id": "992",
+      "status": "started"
+    },
+    {
+      "id": "956",
+      "status": "imported"
+    },
+    {
+      "id": "587",
+      "status": "imported"
+    },
+    {
+      "id": "726",
+      "status": "imported"
+    },
+    {
+      "id": "715",
+      "status": "imported"
+    },
+    {
+      "id": "632",
+      "status": "imported"
+    },
+    {
+      "id": "995",
+      "status": "started"
+    },
+    {
+      "id": "987",
+      "status": "imported"
+    },
+    {
+      "id": "805",
+      "status": "imported"
+    },
+    {
+      "id": "600",
+      "status": "imported"
+    },
+    {
+      "id": "629",
+      "status": "imported"
+    },
+    {
+      "id": "639",
+      "status": "imported"
+    },
+    {
+      "id": "546",
+      "status": "imported"
+    },
+    {
+      "id": "972",
+      "status": "imported"
+    },
+    {
+      "id": "803",
+      "status": "imported"
+    },
+    {
+      "id": "664",
+      "status": "imported"
+    },
+    {
+      "id": "982",
+      "status": "imported"
+    },
+    {
+      "id": "968",
+      "status": "imported"
+    },
+    {
+      "id": "517",
+      "status": "imported"
+    },
+    {
+      "id": "699",
+      "status": "imported"
+    },
+    {
+      "id": "980",
+      "status": "imported"
+    },
+    {
+      "id": "552",
+      "status": "imported"
+    },
+    {
+      "id": "960",
+      "status": "imported"
+    }
+  ],
+  "futureReceiptExists": false,
+  "futureReceiptStatus": null,
+  "noRuntimeIdentityFrozen": true
+}

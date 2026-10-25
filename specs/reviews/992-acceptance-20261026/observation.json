@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-25T22:32:37.975996+00:00",
+  "status": "completed",
+  "current": null,
+  "runner_pid": 1781208,
+  "runner_exists": false,
+  "head": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+  "registration": "ed430afbbe348a302d6ddb0cd35f8142e2a0c04c",
+  "candidate": "d0c85b2b93a6f29e23cdf9c6b7f19963d266b9aa",
+  "candidate_fingerprint": "d5892acd35700b0e2fef2f2dd839a13e132754cb6672610239dca3088d86ccb1",
+  "source_sha256": "597643e0fa4dbc0f383302d78ff074426c811ecad597e2cd8da8841587cce5e3",
+  "lesson_tree": "8f0c8379da4165f9dc126d9189363bb0af6848bb",
+  "review_commit": "3451d95894cf401b2462024ca4165565b259e6db",
+  "review_run": "992-review-67f5902a3c90",
+  "reviewer_sessions": [
+    "01a1752d-4275-7383-8f04-26a51cd96dfb"
+  ],
+  "author_sessions": [
+    "01a17521-e645-7982-b1f5-d9a4fc139a46"
+  ],
+  "run_statuses": {
+    "992-author-bd39779c66e3": "completed",
+    "992-review-67f5902a3c90": "completed"
+  },
+  "report_sha256": "d8c8d92884ac9631356548600fe2ec22992fefef0be6b61c298f5c12e733a016",
+  "dirty": ""
+}

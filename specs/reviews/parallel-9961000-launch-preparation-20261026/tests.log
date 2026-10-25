@@ -1,0 +1,13 @@
+test_bounded_readonly_observation (__main__.Templates.test_bounded_readonly_observation) ... ok
+test_disabled_gate_precedes_imports_and_file_access (__main__.Templates.test_disabled_gate_precedes_imports_and_file_access) ... ok
+test_future_identities_unresolved (__main__.Templates.test_future_identities_unresolved) ... ok
+test_guard_weakening_refused_by_reversal (__main__.Templates.test_guard_weakening_refused_by_reversal) ... ok
+test_launcher_parameter_body_reversal_and_hash (__main__.Templates.test_launcher_parameter_body_reversal_and_hash) ... ok
+test_preflight_exact_declared_adaptation (__main__.Templates.test_preflight_exact_declared_adaptation) ... ok
+test_runtime_hashes_before_import_and_original_scope_guards (__main__.Templates.test_runtime_hashes_before_import_and_original_scope_guards) ... ok
+test_targets_policy_and_execution_body_unchanged (__main__.Templates.test_targets_policy_and_execution_body_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.012s
+
+OK

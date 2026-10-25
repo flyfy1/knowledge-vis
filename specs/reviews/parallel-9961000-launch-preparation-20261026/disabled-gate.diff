@@ -1,0 +1,8 @@
+--- parameter-adapted body
++++ disabled launch.pending.py
+@@ -1,4 +1,5 @@
+ """One-time operator launch; never publish or change central progress/source."""
++raise RuntimeError('Disabled preparation: await completed #992/#995 import, frozen identities and separate root review.')
+ import datetime,fcntl,hashlib,json,os,pathlib,socket,subprocess,sys,time
+ ROOT=pathlib.Path('/home/songyy/projects')
+ REPO=ROOT/'leetcode-hard-campaign-20261018'

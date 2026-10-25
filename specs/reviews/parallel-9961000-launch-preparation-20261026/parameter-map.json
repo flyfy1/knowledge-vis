@@ -1,0 +1,118 @@
+{
+  "status": "disabled-pending-992995-import-not-dispatchable",
+  "source": "specs/reviews/parallel-992995-launch-preparation-20261026/launch.pending.py",
+  "sourceSha256": "774fa491b7fff4af8b6ed2c8b5384542167e1d7e4c8208e46c550a4e25aba7c5",
+  "preflightSource": "specs/reviews/parallel-992995-evidence-20261026/preflight.py",
+  "preflightSourceSha256": "1614f6868e620d276026bd0b49484c3389ef7f649dd61dc6cab449f0aacc9d86",
+  "disableLine": "raise RuntimeError('Disabled preparation: await completed #992/#995 import, frozen identities and separate root review.')\n",
+  "operationalBodyParameterSubstitutions": [
+    {
+      "from": "__PENDING_IMPORT982987_BASE__",
+      "to": "__PENDING_IMPORT992995_BASE__"
+    },
+    {
+      "from": "__PENDING_IMPORT982987_CENTRAL_HEAD__",
+      "to": "__PENDING_IMPORT992995_CENTRAL_HEAD__"
+    },
+    {
+      "from": "__PENDING_IMPORT982987_CENTRAL_RUN__",
+      "to": "__PENDING_IMPORT992995_CENTRAL_RUN__"
+    },
+    {
+      "from": "__PENDING_IMPORT982987_PROBLEM__",
+      "to": "__PENDING_IMPORT992995_PROBLEM__"
+    },
+    {
+      "from": "__PENDING_IMPORT982987_STAGE__",
+      "to": "__PENDING_IMPORT992995_STAGE__"
+    },
+    {
+      "from": "__PENDING_IMPORT982987_SESSION__",
+      "to": "__PENDING_IMPORT992995_SESSION__"
+    },
+    {
+      "from": "['992','995']",
+      "to": "['996','1000']"
+    },
+    {
+      "from": "parallel-launch-992995.lock",
+      "to": "parallel-launch-9961000.lock"
+    },
+    {
+      "from": "[('992',18797),('995',18798)]",
+      "to": "[('996',18799),('1000',18800)]"
+    }
+  ],
+  "actualParameterSubstitutionCount": 9,
+  "preflightSubstitutions": [
+    {
+      "from": "import982987-only-20261026-891ce2d4.json",
+      "to": "import992995-only-20261026-888bb6ac.json"
+    },
+    {
+      "from": "base='1be3c657ef0c1ef3152f8abced78df2e278f09da'",
+      "to": "base='__PENDING_IMPORT992995_BASE__'"
+    },
+    {
+      "from": "pins_path=state_dir/'import982987-only-20261026-e0e53065/pins.json'",
+      "to": "pins_path=pathlib.Path('__PENDING_IMPORT992995_PINS_PATH__')"
+    },
+    {
+      "from": "0d9dec18554ed18154ac5b4137371b08382bd217c290149fd048a46987387a01",
+      "to": "__PENDING_IMPORT992995_PINS_SHA256__"
+    },
+    {
+      "from": "[('992',18797),('995',18798)]",
+      "to": "[('996',18799),('1000',18800)]"
+    },
+    {
+      "from": "d3d2aa8eb61c17081beffdca687f9f2d15555973",
+      "to": "6d2a1b0e7109954d45f32a1dc47606e06c1c6f99"
+    },
+    {
+      "from": "982987_import_receipt",
+      "to": "992995_import_receipt"
+    },
+    {
+      "from": "approved_982987_import_pins_sha256",
+      "to": "approved_992995_import_pins_sha256"
+    }
+  ],
+  "pendingLauncherSha256": "fbf19b825664c751d429a0eb54894c1559299a0ee207e3415ac90bc18431ad7b",
+  "pendingPreflightSha256": "951a0879a35501af0151ca6e7094fd1d6f75294517faa9c0f6d07c3e44630a23",
+  "policySha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+  "futureImportOwner": "import992995-only-20261026-888bb6ac",
+  "futureImportOperatorSha256": null,
+  "futureExternalPinsPath": null,
+  "futureExternalPinsSha256": null,
+  "futureReceiptSha256": null,
+  "finalRuntimePins": {
+    "base": null,
+    "centralHead": null,
+    "run": null,
+    "problem": null,
+    "stage": null,
+    "session": null,
+    "runnerPid": null,
+    "nativePid": null
+  },
+  "dispatcherOfficialPrepCommit": "6d2a1b0e7109954d45f32a1dc47606e06c1c6f99",
+  "authorContextInjection": false,
+  "targets": [
+    {
+      "id": "996",
+      "port": 18799,
+      "branch": "codex/lane-996-20261026",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-996-20261026",
+      "state": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026"
+    },
+    {
+      "id": "1000",
+      "port": 18800,
+      "branch": "codex/lane-1000-20261026",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-1000-20261026",
+      "state": "/home/songyy/projects/leetcode-hard-lane-state-1000-20261026"
+    }
+  ],
+  "observationSha256": "4f281af5da20d9c36ca96512bd20fad67d93e9c17462743eb50befd799e1be84"
+}
