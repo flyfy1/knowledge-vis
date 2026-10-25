@@ -1,0 +1,1725 @@
+{
+  "kind": "author self-check",
+  "records": [
+    {
+      "locale": "en",
+      "target": 6,
+      "read": "Target 6 · layer 5/5 · 39 pairs discovered so far · first arrival: minimum 5 commands"
+    },
+    {
+      "locale": "en",
+      "target": 3,
+      "read": "Target 3 · layer 2/2 · 6 pairs discovered so far · first arrival: minimum 2 commands"
+    },
+    {
+      "locale": "en",
+      "target": 1,
+      "read": "Target 1 · layer 1/1 · 3 pairs discovered so far · first arrival: minimum 1 commands"
+    },
+    {
+      "locale": "en",
+      "target": 4,
+      "read": "Target 4 · layer 5/5 · 39 pairs discovered so far · first arrival: minimum 5 commands"
+    },
+    {
+      "locale": "en",
+      "target": 2,
+      "read": "Target 2 · layer 4/4 · 22 pairs discovered so far · first arrival: minimum 4 commands"
+    },
+    {
+      "locale": "en",
+      "proof": "Invariant (a fact preserved at every layer): each pair in row d has minimum arrival length d. The start has length 0. One command from row d reaches a candidate in d+1 steps. If it were reachable sooner, an earlier row would already have discovered it, so it would not be added again. Identical pairs have identical future choices, regardless of their past; keeping only the first arrival cannot lose a shorter answer. The first row containing the target position gives the minimum command count; final speed is unrestricted.",
+      "feedback": "Check the pair transitions. AA ends at (3,4); AAR at (3,−1). Neither reaches 2. AARA gives (0,1)→(1,2)→(3,4)→(3,−1)→(2,−2). Positions of newly discovered pairs in layers 1–3 are {1,0}, {3,1,−1}, and {7,3,1,−1,0,−3}; none contains 2. Thus 4 commands is minimal. The stationary R must survive as a distinct state."
+    },
+    {
+      "locale": "zh",
+      "target": 6,
+      "read": "目标 6 · 当前层 5/5 · 累计发现 39 个数对 · 首次到达：最少 5 条指令"
+    },
+    {
+      "locale": "zh",
+      "target": 3,
+      "read": "目标 3 · 当前层 2/2 · 累计发现 6 个数对 · 首次到达：最少 2 条指令"
+    },
+    {
+      "locale": "zh",
+      "target": 1,
+      "read": "目标 1 · 当前层 1/1 · 累计发现 3 个数对 · 首次到达：最少 1 条指令"
+    },
+    {
+      "locale": "zh",
+      "target": 4,
+      "read": "目标 4 · 当前层 5/5 · 累计发现 39 个数对 · 首次到达：最少 5 条指令"
+    },
+    {
+      "locale": "zh",
+      "target": 2,
+      "read": "目标 2 · 当前层 4/4 · 累计发现 22 个数对 · 首次到达：最少 4 条指令"
+    },
+    {
+      "locale": "zh",
+      "proof": "不变式（每层都保持的事实）：第 d 行中的每个数对，其最短到达长度恰为 d。起点长度 0 成立。由第 d 行执行一条指令，候选最多用 d+1 条；若它能更早到达，前面某层早已发现它，所以不会再次加入。相同数对无论怎么到达，后续选择都相同，因此保留最早一次不会丢掉更短答案。目标位置第一次出现时，该行层号就是最小指令数；终点速度不限。",
+      "feedback": "再看数对的变化。 AA 到 (3,4)，AAR 到 (3,−1)，都没到 2。AARA 的数对为 (0,1)→(1,2)→(3,4)→(3,−1)→(2,−2)。前三层首次发现的位置分别为 {1,0}、{3,1,−1}、{7,3,1,−1,0,−3}，都没有 2，因此 4 条确为最短。R 的停留必须作为独立状态保留。"
+    }
+  ],
+  "layouts": [
+    {
+      "locale": "en",
+      "width": 320,
+      "geometry": [
+        {
+          "width": 186.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 93.859375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 213.875,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 161.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "geometry": [
+        {
+          "width": 186.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 93.859375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 213.875,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 161.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "geometry": [
+        {
+          "width": 186.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 93.859375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 213.875,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 161.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "geometry": [
+        {
+          "width": 186.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 93.859375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 213.875,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 161.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "geometry": [
+        {
+          "width": 113.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 93.859375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 191.296875,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 161.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "geometry": [
+        {
+          "width": 113.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 93.859375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 191.296875,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 161.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "geometry": [
+        {
+          "width": 113.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 93.859375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 191.296875,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 161.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "geometry": [
+        {
+          "width": 113.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 93.859375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 102.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 110.71875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 119.15625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 191.296875,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 38.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 161.296875,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 136.015625,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 127.578125,
+          "height": 36.5,
+          "overflow": false
+        },
+        {
+          "width": 144.4375,
+          "height": 36.5,
+          "overflow": false
+        }
+      ]
+    }
+  ],
+  "clips": [
+    {
+      "locale": "en",
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "nativeTransferExact": true
+    },
+    {
+      "locale": "zh",
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "nativeTransferExact": true
+    }
+  ],
+  "contrast": [
+    {
+      "fg": "#e8edf4",
+      "bg": "#161b22",
+      "ratio": 14.704584598678618
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#1c2330",
+      "ratio": 6.449407898769069
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#0d1117",
+      "ratio": 13.100679028115637
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#1c2330",
+      "ratio": 8.937191437807625
+    },
+    {
+      "fg": "#0d1117",
+      "bg": "#6ee7ff",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "errors": [],
+  "bad": [],
+  "cssBytes": 11117,
+  "sourceDisplayCopyDownloadExact": true,
+  "blockedStorageOffline": true,
+  "keyboard": true,
+  "forcedColors": true
+}

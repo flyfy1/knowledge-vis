@@ -1,0 +1,99 @@
+{
+  "observed_at": "2026-10-25T20:26:55.593216+00:00",
+  "revision": "96e82a2f927f7506f2dd97956f1b837e67c9df1e",
+  "entry": {
+    "status": "accepted_local",
+    "rounds": 1,
+    "new": true,
+    "phase": "done",
+    "reviews": [
+      {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/834-review-1-68508693.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Canonical Python matched fresh predictions and 200 independent BFS cases.",
+          "Bilingual controls, rewind/reset, keyboard, layouts and synthetic 200% zoom checked; screenshots inspected.",
+          "Exact displayed/copied/fallback/downloaded source parity passed.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "97.5/100; no required open findings. Coverage is Linux Chromium with synthetic zoom; no submission or human-comprehension claim.",
+        "run_id": "834-review-9b08bcf5feee",
+        "candidate": "3dcefbc04619ae11869ea34581ea71c38daee06c",
+        "candidate_sha256": "9d28efbc6425a86c73af4840a25899fd0043a62348d30d7cf1ef8e412524e5d9",
+        "weighted_score": 97.5,
+        "round": 1,
+        "commit": "9ee6aa39ef954fa210d8f0cf5162e64bdea4f65c"
+      }
+    ],
+    "author_runs": [
+      "834-author-57bbfcb6e22d"
+    ],
+    "prior_report": "specs/reviews/834-review-1-68508693.md",
+    "candidate": "3dcefbc04619ae11869ea34581ea71c38daee06c",
+    "registration_commit": "96e82a2f927f7506f2dd97956f1b837e67c9df1e",
+    "accepted_at": "2026-10-25T20:22:50.950073+00:00"
+  },
+  "runs": [
+    {
+      "id": "834-author-57bbfcb6e22d",
+      "problem_id": "834",
+      "role": "author",
+      "started_at": "2026-10-25T19:17:40.238618+00:00",
+      "status": "completed",
+      "candidate": "835700570acedda88ea8228286673bf7dca13881",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/834-author-57bbfcb6e22d",
+      "session_ids": [
+        "01a1747f-4877-7a60-8b78-250736de893d"
+      ],
+      "finished_at": "2026-10-25T19:28:45.100120+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented the complete bilingual #834 lesson in leetcode/834/. Official Python interface verified; oracle, invariant, browser, accessibility, source-parity and metadata checks pass. Candidate hashes and self-check evidence recorded. Independent review remains pending; no acceptance or deployment claimed."
+      }
+    },
+    {
+      "id": "834-review-9b08bcf5feee",
+      "problem_id": "834",
+      "role": "review",
+      "started_at": "2026-10-25T20:19:10.680730+00:00",
+      "status": "completed",
+      "candidate": "3dcefbc04619ae11869ea34581ea71c38daee06c",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/834-review-9b08bcf5feee",
+      "session_ids": [
+        "01a174b7-97c6-7e71-81a4-a286af62b0c5"
+      ],
+      "finished_at": "2026-10-25T20:22:39.704468+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/834-review-1-68508693.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Canonical Python matched fresh predictions and 200 independent BFS cases.",
+          "Bilingual controls, rewind/reset, keyboard, layouts and synthetic 200% zoom checked; screenshots inspected.",
+          "Exact displayed/copied/fallback/downloaded source parity passed.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "97.5/100; no required open findings. Coverage is Linux Chromium with synthetic zoom; no submission or human-comprehension claim."
+      }
+    }
+  ]
+}

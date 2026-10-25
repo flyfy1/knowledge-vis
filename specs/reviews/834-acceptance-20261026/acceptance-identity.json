@@ -1,0 +1,48 @@
+{
+  "candidate": "3dcefbc04619ae11869ea34581ea71c38daee06c",
+  "candidate_fingerprint": "9d28efbc6425a86c73af4840a25899fd0043a62348d30d7cf1ef8e412524e5d9",
+  "lesson_tree": "1ad225b37f7fbb7adea1956a4ad80e2141e495da",
+  "matches_observed_revision_tree": true,
+  "review_commit": "9ee6aa39ef954fa210d8f0cf5162e64bdea4f65c",
+  "registration_commit": "96e82a2f927f7506f2dd97956f1b837e67c9df1e",
+  "report_path": "specs/reviews/834-review-1-68508693.md",
+  "report_sha256": "37792ec920591ef762d8fc2d8260b540f8ca23da8f1a3a84608f0adf9e7cb76a",
+  "report_unchanged_since_review_commit": true,
+  "reviewer_run": {
+    "id": "834-review-9b08bcf5feee",
+    "problem_id": "834",
+    "role": "review",
+    "started_at": "2026-10-25T20:19:10.680730+00:00",
+    "status": "completed",
+    "candidate": "3dcefbc04619ae11869ea34581ea71c38daee06c",
+    "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/834-review-9b08bcf5feee",
+    "session_ids": [
+      "01a174b7-97c6-7e71-81a4-a286af62b0c5"
+    ],
+    "finished_at": "2026-10-25T20:22:39.704468+00:00",
+    "result": {
+      "outcome": "accepted",
+      "scores": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "required_open": [],
+      "report_path": "specs/reviews/834-review-1-68508693.md",
+      "evidence": [
+        "Cold browser walkthrough saved before source inspection.",
+        "Canonical Python matched fresh predictions and 200 independent BFS cases.",
+        "Bilingual controls, rewind/reset, keyboard, layouts and synthetic 200% zoom checked; screenshots inspected.",
+        "Exact displayed/copied/fallback/downloaded source parity passed.",
+        "Non-mutating metadata preflight exited 0."
+      ],
+      "detail": "97.5/100; no required open findings. Coverage is Linux Chromium with synthetic zoom; no submission or human-comprehension claim."
+    }
+  },
+  "independent_from_author_sessions": true,
+  "score": 97.5,
+  "required_open": []
+}

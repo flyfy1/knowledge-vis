@@ -1,0 +1,127 @@
+{
+  "status": "pass",
+  "browser": "156.0.8078.4",
+  "platform": "linux",
+  "results": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "fit": {
+        "label": "4-node path",
+        "needed": 145.37619018554688,
+        "available": 260,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "fit": {
+        "label": "Official 6-node tree",
+        "needed": 197.71229553222656,
+        "available": 260,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "fit": {
+        "label": "Single node",
+        "needed": 142.38417053222656,
+        "available": 260,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "fit": {
+        "label": "Reversed input edge",
+        "needed": 208.5123291015625,
+        "available": 260,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "fit": {
+        "label": "5-node star",
+        "needed": 139.92018127441406,
+        "available": 260,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "scroll": {
+        "scroll": 40,
+        "focus": "3px",
+        "containerLeft": 29,
+        "nodeLeft": 29
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "fit": {
+        "label": "四点路径",
+        "needed": 118.0001220703125,
+        "available": 260,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "fit": {
+        "label": "官方六点树",
+        "needed": 134.00015258789062,
+        "available": 260,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "fit": {
+        "label": "单节点",
+        "needed": 102.00009155273438,
+        "available": 260,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "fit": {
+        "label": "反向输入边",
+        "needed": 134.00015258789062,
+        "available": 260,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "fit": {
+        "label": "五点星形",
+        "needed": 118.0001220703125,
+        "available": 260,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "scroll": {
+        "scroll": 80,
+        "focus": "3px",
+        "containerLeft": 29,
+        "nodeLeft": 29
+      }
+    }
+  ],
+  "forcedColorsFocus": true,
+  "reducedMotion": true
+}
