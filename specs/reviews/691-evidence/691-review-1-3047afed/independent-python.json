@@ -1,0 +1,209 @@
+{
+  "freshAndBoundary": [
+    {
+      "stickers": [
+        "ab",
+        "bc"
+      ],
+      "target": "aabc",
+      "expected": 3,
+      "actual": 3,
+      "unchanged": true
+    },
+    {
+      "stickers": [
+        "ab",
+        "ac",
+        "bd"
+      ],
+      "target": "abcd",
+      "expected": 2,
+      "actual": 2,
+      "unchanged": true
+    },
+    {
+      "stickers": [
+        "x"
+      ],
+      "target": "x",
+      "expected": 1,
+      "actual": 1,
+      "unchanged": true
+    },
+    {
+      "stickers": [
+        "a"
+      ],
+      "target": "b",
+      "expected": -1,
+      "actual": -1,
+      "unchanged": true
+    },
+    {
+      "stickers": [
+        "a"
+      ],
+      "target": "aaaaaaaaaaaaaaa",
+      "expected": 15,
+      "actual": 15,
+      "unchanged": true
+    },
+    {
+      "stickers": [
+        "abcdefghij",
+        "klmno"
+      ],
+      "target": "abcdefghijklmno",
+      "expected": 2,
+      "actual": 2,
+      "unchanged": true
+    },
+    {
+      "stickers": [
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "target": "aaaaaaaaaaaaaaa",
+      "expected": 15,
+      "actual": 15,
+      "unchanged": true
+    },
+    {
+      "stickers": [
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij",
+        "abcdefghij"
+      ],
+      "target": "abcdefghijabcde",
+      "expected": 2,
+      "actual": 2,
+      "unchanged": true
+    },
+    {
+      "stickers": [
+        "zzza",
+        "zzzb"
+      ],
+      "target": "ab",
+      "expected": 2,
+      "actual": 2,
+      "unchanged": true
+    },
+    {
+      "stickers": [
+        "a",
+        "a",
+        "b"
+      ],
+      "target": "aab",
+      "expected": 3,
+      "actual": 3,
+      "unchanged": true
+    },
+    {
+      "stickers": [],
+      "target": "",
+      "expected": 0,
+      "actual": 0,
+      "unchanged": true
+    }
+  ],
+  "independentCombinationEnumerationCases": 150,
+  "seed": 3047,
+  "emptyInputOutsideContract": true
+}
