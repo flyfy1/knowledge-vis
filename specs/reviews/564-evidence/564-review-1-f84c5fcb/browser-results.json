@@ -1,0 +1,448 @@
+{
+  "kind": "author browser self-check",
+  "result": "PASS",
+  "coverage": [
+    {
+      "lang": "en",
+      "n": "123",
+      "total": 5,
+      "expected": "121",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "en",
+      "n": "129",
+      "total": 5,
+      "expected": "131",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "en",
+      "n": "121",
+      "total": 5,
+      "expected": "111",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "en",
+      "n": "1",
+      "total": 5,
+      "expected": "0",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "en",
+      "n": "10",
+      "total": 4,
+      "expected": "9",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "en",
+      "n": "99",
+      "total": 4,
+      "expected": "101",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "en",
+      "n": "100",
+      "total": 4,
+      "expected": "99",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "en",
+      "n": "1234",
+      "total": 5,
+      "expected": "1221",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "en",
+      "n": "999999999999999999",
+      "total": 4,
+      "expected": "1000000000000000001",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "en",
+      "choice": "0",
+      "feedback": "Recheck the boundary and tie. Prefix 10: 9 changes width and is skipped; 10→1001 and 11→1111. The boundaries are 999 and 10001. Both 999 and 1001 have distance 1, so choose 999. Mirroring alone misses the shorter boundary; 1000 is neither a palindrome nor an eligible self-result."
+    },
+    {
+      "lang": "en",
+      "choice": "1",
+      "feedback": "Correct. Prefix 10: 9 changes width and is skipped; 10→1001 and 11→1111. The boundaries are 999 and 10001. Both 999 and 1001 have distance 1, so choose 999. Mirroring alone misses the shorter boundary; 1000 is neither a palindrome nor an eligible self-result."
+    },
+    {
+      "lang": "en",
+      "choice": "2",
+      "feedback": "Recheck the boundary and tie. Prefix 10: 9 changes width and is skipped; 10→1001 and 11→1111. The boundaries are 999 and 10001. Both 999 and 1001 have distance 1, so choose 999. Mirroring alone misses the shorter boundary; 1000 is neither a palindrome nor an eligible self-result."
+    },
+    {
+      "lang": "zh",
+      "n": "123",
+      "total": 5,
+      "expected": "121",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "zh",
+      "n": "129",
+      "total": 5,
+      "expected": "131",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "zh",
+      "n": "121",
+      "total": 5,
+      "expected": "111",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "zh",
+      "n": "1",
+      "total": 5,
+      "expected": "0",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "zh",
+      "n": "10",
+      "total": 4,
+      "expected": "9",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "zh",
+      "n": "99",
+      "total": 4,
+      "expected": "101",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "zh",
+      "n": "100",
+      "total": 4,
+      "expected": "99",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "zh",
+      "n": "1234",
+      "total": 5,
+      "expected": "1221",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "zh",
+      "n": "999999999999999999",
+      "total": 4,
+      "expected": "1000000000000000001",
+      "allFrames": true,
+      "endpoints": true,
+      "rewindReplay": true
+    },
+    {
+      "lang": "zh",
+      "choice": "0",
+      "feedback": "再比较边界和平局。 前缀 10：9 的宽度变短，应跳过；10→1001，11→1111；两道边界为 999 与 10001。999 和 1001 都相距 1，因此选 999。只镜像会错过较短位数边界；1000 既不是回文，也不能选自身。"
+    },
+    {
+      "lang": "zh",
+      "choice": "1",
+      "feedback": "预测正确。 前缀 10：9 的宽度变短，应跳过；10→1001，11→1111；两道边界为 999 与 10001。999 和 1001 都相距 1，因此选 999。只镜像会错过较短位数边界；1000 既不是回文，也不能选自身。"
+    },
+    {
+      "lang": "zh",
+      "choice": "2",
+      "feedback": "再比较边界和平局。 前缀 10：9 的宽度变短，应跳过；10→1001，11→1111；两道边界为 999 与 10001。999 和 1001 都相距 1，因此选 999。只镜像会错过较短位数边界；1000 既不是回文，也不能选自身。"
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "geometry": [
+        {
+          "width": 255,
+          "scroll": 255
+        },
+        {
+          "width": 255,
+          "scroll": 255
+        },
+        {
+          "width": 255,
+          "scroll": 255
+        },
+        {
+          "width": 255,
+          "scroll": 255
+        }
+      ],
+      "controls": ">=48px"
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "geometry": [
+        {
+          "width": 325,
+          "scroll": 325
+        },
+        {
+          "width": 325,
+          "scroll": 325
+        },
+        {
+          "width": 325,
+          "scroll": 325
+        },
+        {
+          "width": 325,
+          "scroll": 325
+        }
+      ],
+      "controls": ">=48px"
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "geometry": [
+        {
+          "width": 643,
+          "scroll": 643
+        },
+        {
+          "width": 643,
+          "scroll": 643
+        },
+        {
+          "width": 643,
+          "scroll": 643
+        },
+        {
+          "width": 643,
+          "scroll": 643
+        }
+      ],
+      "controls": ">=48px"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "geometry": [
+        {
+          "width": 290,
+          "scroll": 290
+        },
+        {
+          "width": 290,
+          "scroll": 290
+        },
+        {
+          "width": 290,
+          "scroll": 290
+        },
+        {
+          "width": 290,
+          "scroll": 290
+        }
+      ],
+      "controls": ">=48px"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "geometry": [
+        {
+          "width": 255,
+          "scroll": 255
+        },
+        {
+          "width": 255,
+          "scroll": 255
+        },
+        {
+          "width": 255,
+          "scroll": 255
+        },
+        {
+          "width": 255,
+          "scroll": 255
+        }
+      ],
+      "controls": ">=48px"
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "geometry": [
+        {
+          "width": 325,
+          "scroll": 325
+        },
+        {
+          "width": 325,
+          "scroll": 325
+        },
+        {
+          "width": 325,
+          "scroll": 325
+        },
+        {
+          "width": 325,
+          "scroll": 325
+        }
+      ],
+      "controls": ">=48px"
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "geometry": [
+        {
+          "width": 643,
+          "scroll": 643
+        },
+        {
+          "width": 643,
+          "scroll": 643
+        },
+        {
+          "width": 643,
+          "scroll": 643
+        },
+        {
+          "width": 643,
+          "scroll": 643
+        }
+      ],
+      "controls": ">=48px"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "geometry": [
+        {
+          "width": 290,
+          "scroll": 290
+        },
+        {
+          "width": 290,
+          "scroll": 290
+        },
+        {
+          "width": 290,
+          "scroll": 290
+        },
+        {
+          "width": 290,
+          "scroll": 290
+        }
+      ],
+      "controls": ">=48px"
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".candidate h3",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".candidate p",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".candidate .status",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#next:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#langToggle button:not(.active)",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".step-nav a:not(.active)",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgba(13, 17, 23, 0.96)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "focus accent2 / panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "focus accent2 / accent selected",
+      "ratio": 10.731637051347173
+    }
+  ],
+  "errors": [],
+  "badResponses": [],
+  "externalRequests": [],
+  "sourceParity": "display, copy, manual selection, download all exact",
+  "zoom": "document CSS zoom=2 at 1440px, both locales (headless layout check)",
+  "offlineStorageDenied": true,
+  "keyboard": true,
+  "forcedColors": true
+}
