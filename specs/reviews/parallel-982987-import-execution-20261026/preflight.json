@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-25T21:58:35.631619+00:00",
+  "head": "7fd4aa457c318f053d7dc722fd63b3012bccb838",
+  "expected_head": "7fd4aa457c318f053d7dc722fd63b3012bccb838",
+  "current": {
+    "problem_id": "854",
+    "stage": "author",
+    "started_at": "2026-10-25T21:51:41.189020+00:00",
+    "run_id": "854-author-679ce856a357"
+  },
+  "status": "running",
+  "runner_pid": 1696215,
+  "runner_exists": true,
+  "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+  "pending": null,
+  "latest_release_id": "84dfd908f5c94592918eb4ecb72eb87e",
+  "stop_exists": false,
+  "matches": true
+}
