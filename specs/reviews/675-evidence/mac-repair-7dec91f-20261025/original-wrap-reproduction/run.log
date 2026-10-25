@@ -1,0 +1,15 @@
+{"running": ["node", "/tmp/leetcode-675-wrap-height-probe-20261025.cjs"], "candidate": "c2e54cf8211dc0ca8ccff212e4863ecee2a8dd04"}
+{"checks":24,"failures":15}
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+15 !== 0
+
+    at /private/tmp/leetcode-675-wrap-height-probe-20261025.cjs:15:451 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 15,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+Retain original failure; continue independent checks
