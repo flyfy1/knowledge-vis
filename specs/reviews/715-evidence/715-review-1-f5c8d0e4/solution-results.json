@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "oracleChecks": 41800,
+  "exhaustiveCoverageStates": 32,
+  "seed": 715,
+  "sequentialCalls": 10000,
+  "compressedHugeEndpointCalls": 3000,
+  "maxCallCountScenario": 10000,
+  "copyKeys": 97,
+  "sourceParity": "exact including final newline",
+  "scope": "author self-check, no LeetCode submission or independent review"
+}
