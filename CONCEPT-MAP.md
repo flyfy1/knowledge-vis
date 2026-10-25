@@ -1557,3 +1557,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Endpoint sufficiency proof | `leetcode/801/#step3` | Histories with identical endpoints have identical future choices. |
 
 <!-- /leetcode-801-campaign -->
+
+
+<!-- leetcode-810-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| XOR and parity game invariant | `leetcode/810/#step2` | Nonzero even positions have a safe move; odd nonzero positions lose. |
+
+<!-- /leetcode-810-campaign -->
