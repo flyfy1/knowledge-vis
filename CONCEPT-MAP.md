@@ -1684,3 +1684,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Subtree distance summaries | `leetcode/834/#step2` | Merge children before parents to obtain subtree sizes and distance sums. |
 
 <!-- /leetcode-834-campaign -->
+
+
+<!-- leetcode-839-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Similarity versus connectivity | `leetcode/839/#step1` | One-swap edges form paths; a group is a connected component, not a clique. |
+| Disjoint-set component invariant | `leetcode/839/#step2` | After each pair, sets equal the connected components of the processed edges. |
+
+<!-- /leetcode-839-campaign -->

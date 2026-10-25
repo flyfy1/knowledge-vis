@@ -3363,6 +3363,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) auxiliary space"
   },
   {
+    "id": 839,
+    "title": {
+      "zh": "相似字符串组",
+      "en": "Similar String Groups"
+    },
+    "desc": {
+      "zh": "从一次交换到连通分组，推导并查集的不变量。",
+      "en": "From one swap to connected groups: derive the disjoint-set invariant."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "并查集",
+        "en": "Disjoint sets"
+      },
+      {
+        "zh": "图连通性",
+        "en": "Graph connectivity"
+      }
+    ],
+    "path": "839/",
+    "leetcodeUrl": "https://leetcode.com/problems/similar-string-groups/",
+    "language": "Python",
+    "complexity": "O(n²(L + log n)) time; O(n) auxiliary space, for n words of length L (conservative bound)"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
