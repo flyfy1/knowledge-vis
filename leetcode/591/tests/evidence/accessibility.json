@@ -1,0 +1,44 @@
+{
+  "kind": "author self-check",
+  "phoneAndDesktopZoom": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "overflow": false
+    }
+  ],
+  "tableKeyboardScroll": true,
+  "visibleControlMinHeight": 48,
+  "zoomMethod": "Chromium CSS zoom; no real-device claim"
+}
