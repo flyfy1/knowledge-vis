@@ -1395,3 +1395,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Iterative Euler circuit | `leetcode/753/#step2` | Consume each password edge once and reverse incoming digits at finishing time. |
 
 <!-- /leetcode-753-campaign -->
+
+
+<!-- leetcode-757-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Rightmost two-point interval cover | `leetcode/757/#step2` | Sort by end and maintain the two largest chosen integers. |
+| Greedy exchange proof | `leetcode/757/#step2` | Move required points right while preserving a feasible optimal extension. |
+
+<!-- /leetcode-757-campaign -->
