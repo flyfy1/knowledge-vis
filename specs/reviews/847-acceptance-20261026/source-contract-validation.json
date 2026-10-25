@@ -1,0 +1,48 @@
+{
+  "kind": "local archive audit; no new lesson acceptance or browser run",
+  "canonical_sha256": "4d529eb2794cceaaa22169f3e84e05ed14f06358ddf1fa1cf3f679522292045e",
+  "official_python3_signature_matches": true,
+  "canonical_offline_mirror_exact_bytes": true,
+  "official_allows_repeated_nodes_and_edges": true,
+  "deduplication_key": [
+    "endpoint",
+    "visited_mask"
+  ],
+  "multi_source_starts": true,
+  "goal_checked_on_dequeue": true,
+  "local_bounded_checks": [
+    {
+      "name": "singleton",
+      "n": 1,
+      "expected": 0,
+      "actual": 0,
+      "input_unchanged": true
+    },
+    {
+      "name": "revisit-star",
+      "n": 4,
+      "expected": 4,
+      "actual": 4,
+      "input_unchanged": true
+    },
+    {
+      "name": "four-cycle",
+      "n": 4,
+      "expected": 3,
+      "actual": 3,
+      "input_unchanged": true
+    },
+    {
+      "name": "twelve-node-star",
+      "n": 12,
+      "expected": 20,
+      "actual": 20,
+      "input_unchanged": true
+    }
+  ],
+  "advisory847A1": {
+    "historical_author_receipt_policy": "d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa",
+    "actual_review_candidate_policy": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+    "confirmed_receipt_mismatch_only": true
+  }
+}

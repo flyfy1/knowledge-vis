@@ -1,0 +1,43 @@
+{
+  "status": "actual locally accepted847 archived read-only",
+  "score": 96.25,
+  "required_open": [],
+  "advisories": [
+    "847-A1: historical author receipt retains old policy hash; actual review applies current policy"
+  ],
+  "candidate": "4ba7fa4678b8ad916bfafa7a93edbebb1e2f2f10",
+  "registered_head": "c365653de76aafb9985ac9061843ec707d3c90e9",
+  "review_commit": "b1f6845efbecf230f6cce6108b35dbe50c69ec8a",
+  "candidate_and_registered_lesson_tree_identical": true,
+  "review_run_id": "847-review-ec4e9dc0015f",
+  "review_session_ids": [
+    "01a174e4-bb5b-7cf0-bb20-46f165dcbbf8"
+  ],
+  "original_review_final_matches_state": true,
+  "no_top_level_failure_events": true,
+  "local_archive_source_checks": 4,
+  "new_browser_or_full_suite_execution": false,
+  "runtime_mutation": false,
+  "publication_claim": false,
+  "files_sha256": {
+    "847-review-1-4efcd822.md": "3b5108e78cab4d0f5be9c56680acdb6904bbe10bf023e8f1b7dad4123745dc76",
+    "BRIEF.md": "e6c651558b29b7ed3bcb652dc1be504fa3f3e7ccea6427a63b59c42701eb4326",
+    "candidate-receipt.json": "9076ad80cba9cf2cbb1354cf8dd55d828a6ed693fd2629138955c73d415f0807",
+    "core.js": "5e6a64b969ec4ff3ef64e75a12403ebb3b6cc3551b7338c536c21a62bae14f38",
+    "lesson-entry.json": "f253a7c745c4898d4f08611d6c385f2bede84a4eadf285c2559218532be5d425",
+    "official-access.json": "515d2077e59c262316fd91b5a107b3e982e85fcfdf75dd4d2dab6ef09905fe34",
+    "official.json": "c94d4578b344d60114b648088483851e6181fe7207b10283f9976d5285c24d0a",
+    "policy-at-candidate.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+    "python-code.js": "ce1a72879cbbd059b37afc1f88bfb2675a8cbe9b8898287de2bc41a131f31e63",
+    "review-events.jsonl.gz": "69bed1f5bd891ded16dad8b09419d6949bb72cc075738c4a605dccd4edaf6d92",
+    "review-evidence/browser/browser.json": "bcdfad6406b1e596bfdbd07edddd12c281b11384a51fc044893ad5115a885b2d",
+    "review-evidence/numeric/numeric.json": "90f73e788afec6fe0eceb0c7dfb5fe452fdc5b58af653d745ecaa8a5fcb55640",
+    "review-evidence/numeric/oracle-cases.json": "77015723ae70ddeea9dbcf6827e799663e449824b30693ee38f4fa9cd358ad9e",
+    "review-final.json": "6eb449f2386903222b721e03073c13dc628fef812f70b64bae11b4c5f829c0cc",
+    "review-run.json": "bc25afa31d6bb217f6b1cdbfdd9139cd09b882ae0ecda571824826c469c0b59a",
+    "snapshot.json": "ada08699d0d307538564077e6b68bbd3030e5735fe99d349065f15081497436b",
+    "solution.py": "4d529eb2794cceaaa22169f3e84e05ed14f06358ddf1fa1cf3f679522292045e",
+    "source-contract-validation.json": "959bf0ace0e6c2c2247896cf9b8bdb7977215b2aa2b481a2bf0fd9e48f077474",
+    "../847-acceptance-20261026.md": "fd30ab98451d0c22ffc5dd86272a7bf9f3ce4cc95c7c84088b2a777ae1c4dab0"
+  }
+}

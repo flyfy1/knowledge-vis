@@ -1,0 +1,10 @@
+{
+  "url": "https://leetcode.com/problems/shortest-path-visiting-all-nodes/",
+  "endpoint": "https://leetcode.com/graphql/",
+  "verifiedAt": "2026-10-25T20:55:12.695294+00:00",
+  "query": "query { question(titleSlug: \"shortest-path-visiting-all-nodes\") { questionFrontendId questionId title titleSlug difficulty isPaidOnly content exampleTestcases codeSnippets { lang langSlug code } } }",
+  "selected": "Python3 / python3",
+  "interface": "class Solution:\n    def shortestPathLength(self, graph: list[list[int]]) -> int:",
+  "exceptions": "Start/end anywhere; repeat nodes/edges; n=1 -> 0; connected, no empty graph.",
+  "capture": "official.json"
+}
