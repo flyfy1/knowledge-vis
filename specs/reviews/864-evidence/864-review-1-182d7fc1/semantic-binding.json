@@ -1,0 +1,60 @@
+{
+  "authorSelfCheck": true,
+  "status": "pass",
+  "records": [
+    {
+      "locale": "zh",
+      "state": "@.aA at distance 2 before terminal detection",
+      "frame": "帧 2/3 · 当前层 d=2 · 本层 1 个状态 · 累计发现 3 个状态 · target=1 · 尚未判定最终答案",
+      "events": "(0,1,0) → (0,2,1)：拿到新钥匙，加入下一层(0,1,0) → (1,1,0)：越界，拒绝(0,1,0) → (0,0,0)：完整状态已发现，拒绝(0,1,0) → (-1,1,0)：越界，拒绝"
+    },
+    {
+      "locale": "zh",
+      "state": "@Aa exhausted",
+      "events": "(0,0,0) → (0,1,0)：尚无对应钥匙，拒绝(0,0,0) → (1,0,0)：越界，拒绝(0,0,0) → (0,-1,0)：越界，拒绝(0,0,0) → (-1,0,0)：越界，拒绝",
+      "frame": "帧 1/1 · 当前层 d=1 · 本层 0 个状态 · 累计发现 1 个状态 · target=1 · 无可扩展状态，最终答案 -1"
+    },
+    {
+      "locale": "zh",
+      "state": "wrong prediction",
+      "text": "再检查完整状态。 答案为 6：列 2→3→4 拿 a（2 步），再 4→3→2→1→0 拿 b（共 6 步）。回到起点时是 (0,2,1)，不同于初始 (0,2,0)，所以必须保留。a 距起点 2 步，a 到 b 距离 4；b 前的 A 强制先拿 a，因此 2+4 也是下界。-1 错在只按格子去重；11 错在要求开完锁：拿 b 后再走到列 5 的 B 还需 5 步，但目标只是收齐钥匙。"
+    },
+    {
+      "locale": "zh",
+      "state": "correct prediction",
+      "text": "正确。 答案为 6：列 2→3→4 拿 a（2 步），再 4→3→2→1→0 拿 b（共 6 步）。回到起点时是 (0,2,1)，不同于初始 (0,2,0)，所以必须保留。a 距起点 2 步，a 到 b 距离 4；b 前的 A 强制先拿 a，因此 2+4 也是下界。-1 错在只按格子去重；11 错在要求开完锁：拿 b 后再走到列 5 的 B 还需 5 步，但目标只是收齐钥匙。"
+    },
+    {
+      "locale": "zh",
+      "state": "clipboard fallback, distinct from algorithm feedback",
+      "text": "自动复制不可用；已选中下方全部源码，请使用系统复制快捷键。"
+    },
+    {
+      "locale": "en",
+      "state": "@.aA at distance 2 before terminal detection",
+      "frame": "Frame 2/3 · Current layer d=2 · 1 states in layer · 3 states discovered total · target=1 · Final answer not determined",
+      "events": "(0,1,0) → (0,2,1): New key; add to next layer(0,1,0) → (1,1,0): Outside map; reject(0,1,0) → (0,0,0): Full state already discovered; reject(0,1,0) → (-1,1,0): Outside map; reject"
+    },
+    {
+      "locale": "en",
+      "state": "@Aa exhausted",
+      "events": "(0,0,0) → (0,1,0): Missing matching key; reject(0,0,0) → (1,0,0): Outside map; reject(0,0,0) → (0,-1,0): Outside map; reject(0,0,0) → (-1,0,0): Outside map; reject",
+      "frame": "Frame 1/1 · Current layer d=1 · 0 states in layer · 1 states discovered total · target=1 · No states left; final answer: -1"
+    },
+    {
+      "locale": "en",
+      "state": "wrong prediction",
+      "text": "Check the full state again. The answer is 6: columns 2→3→4 collect a (2 moves), then 4→3→2→1→0 collect b (6 total). The return to the start is (0,2,1), different from initial (0,2,0), so keep it. a is 2 moves from the start and b is 4 from a; A before b forces a first, so 2+4 is also a lower bound. -1 deduplicates squares alone; 11 incorrectly requires opening locks: after b, reaching B at column 5 takes 5 extra moves, but only collecting keys is required."
+    },
+    {
+      "locale": "en",
+      "state": "correct prediction",
+      "text": "Correct. The answer is 6: columns 2→3→4 collect a (2 moves), then 4→3→2→1→0 collect b (6 total). The return to the start is (0,2,1), different from initial (0,2,0), so keep it. a is 2 moves from the start and b is 4 from a; A before b forces a first, so 2+4 is also a lower bound. -1 deduplicates squares alone; 11 incorrectly requires opening locks: after b, reaching B at column 5 takes 5 extra moves, but only collecting keys is required."
+    },
+    {
+      "locale": "en",
+      "state": "clipboard fallback, distinct from algorithm feedback",
+      "text": "Automatic copy unavailable. The full source below is selected; use your system copy shortcut."
+    }
+  ]
+}
