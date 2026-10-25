@@ -1409,3 +1409,13 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Nested formula counting | `leetcode/726/#step2` | Keep one atom-count map per open group; multiply only the completed child. |
 
 <!-- /leetcode-726-campaign -->
+
+
+<!-- leetcode-732-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Endpoint sweep | `leetcode/732/#step1` | Group changes at each time and accumulate overlap. |
+| Half-open interval | `leetcode/732/#step0` | Include the start and exclude the end. |
+
+<!-- /leetcode-732-campaign -->
