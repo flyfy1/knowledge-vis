@@ -1182,3 +1182,13 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Interval DP with a carried boundary | `leetcode/546/#step2` | Remember saved equal-color boxes while clearing the separating interval. |
 
 <!-- /leetcode-546-campaign -->
+
+
+<!-- leetcode-502-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Affordable profit dominance | `leetcode/502/#step1` | Exchange the first choice without losing any later feasible project. |
+| Sorted capital frontier and max heap | `leetcode/502/#step2` | Admit each project once; extract the largest affordable profit. |
+
+<!-- /leetcode-502-campaign -->

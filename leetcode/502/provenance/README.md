@@ -1,0 +1,1 @@
+Public unauthenticated GraphQL capture, 2026-10-25. Complete content and all observed codeSnippets retained. Python3 explicitly supports the canonical callable; Python is preferred. No paywall or credential use. Official examples 4 and 6; constraints and distinct-project semantics verified.
