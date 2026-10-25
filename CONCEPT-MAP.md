@@ -1448,3 +1448,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Sparse polynomial multiplication | `leetcode/770/#step2` | Distribute every pair and combine coefficients for matching canonical keys. |
 
 <!-- /leetcode-770-campaign -->
+
+
+<!-- leetcode-773-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Breadth-first search layers | `leetcode/773/#step2` | Discover each board once and prove shortest move counts by complete layers. |
+| State graph | `leetcode/773/#step1` | Encode complete boards and connect them with legal blank swaps. |
+
+<!-- /leetcode-773-campaign -->
