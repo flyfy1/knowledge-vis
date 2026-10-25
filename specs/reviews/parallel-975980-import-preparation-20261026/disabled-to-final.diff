@@ -1,0 +1,11 @@
+--- reviewed-disabled/operate.py
++++ final-review/operate.py
+@@ -14,7 +14,7 @@
+ 
+ OWNER='import975980-overlap-policy-20261026-5e38ab71'
+ DISPATCH='root-reviewed-import975980-overlap-policy-20261026'
+-PINS_SHA=None  # Actual completed acceptance identities and final independent review pending.
++PINS_SHA='f2efffc1e76e6729098db43dcb2e7c50458ea0bb87185c640d978c714f862139'  # Frozen for independent final review; separate root dispatch required.
+ HELPER_SHA='f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698'
+ SOURCE='1f3740bedb184cb9544a912ce2112e62a0fc72db'
+ PATCH_PATH='specs/reviews/overlapping-state-markers-prep-20261026/rendered-state-contract.patch'

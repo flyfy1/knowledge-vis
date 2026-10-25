@@ -1,0 +1,25 @@
+{
+  "status": "frozen_actual_accepted_pair_for_independent_final_review_no_dispatch",
+  "runtime_mutation": false,
+  "dispatch_enabled": "Exact pins bound; explicit root dispatch still required",
+  "tests_passed": 16,
+  "test_command": "python3 -B specs/reviews/parallel-975980-import-preparation-20261026/test_operate.py",
+  "previous_disabled_operator_sha256": "3e35d1eda9296a070886848e47bc355f70fd6a5fc3aedd205e6f9a7cd303eb77",
+  "confirmed_hypothesis": "Queue identity must be revalidated after fetch and natural-stop wait; initial check alone permits drift.",
+  "publication_bound_observed": 17,
+  "sha256": {
+    "operate.py": "eb6170ea50e323ed3cb6d8d0a74e0d684b73c5329c2138d5e6b8d8570f51f447",
+    "pending-pins.json": "32b431e3fe89c8393d5d1d88a15243593964a6643f9008e7940fc73ad7dc0590",
+    "pins.json": "f2efffc1e76e6729098db43dcb2e7c50458ea0bb87185c640d978c714f862139",
+    "test_operate.py": "89870848c43600077d69397db51a49f99829d4062a141600b12b5b045cd07dd7",
+    "tests.log": "0457fb3b7c44d4ecbfcce0e25f504792ba1c38ed145eddd9be810b7d70bf97e3",
+    "README.md": "fe9da117240c349dfb9b32dca5dad59cd6ee5c0febd894703708323d8e497b47",
+    "queue-drift-red.log": "b272e87769a5b4e52fd0c6c393adc3af741f9d4ad5d51f94d28543be6c32d6a4",
+    "queue-drift-green.log": "9cd60ab575596039129882d626c304dd0c2a16fe1b636c19359fa3b021155910",
+    "queue-drift-diagnosis.md": "711621e0e442dfa9b8052f1f169868cdd2f51dffafc8af12fb18951eb713ddfa",
+    "capture-readonly.py": "29c740b214e3a15fc6faadcef682131be7c915adf78ea47436be88aaf7f20742",
+    "accepted-pair-readonly-observation.json": "785c1006f8a7da23af2bb29bec480d14dd33e872f8ca2e3932a030b6e06bd70a",
+    "acceptance-evidence-binding.json": "3edfa801ecc26282b86fa0b8af1be5571a895ce8b20b3a5f3107a23425d7f8b6",
+    "disabled-to-final.diff": "88b3d0065cebb88d7c3b640130a3a9eb0cc2bda4a0a3cde53f3817d7dd716279"
+  }
+}

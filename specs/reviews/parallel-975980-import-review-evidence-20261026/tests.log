@@ -1,0 +1,19 @@
+test_actual_gated_runner_startup_and_natural_stop (__main__.Guards.test_actual_gated_runner_startup_and_natural_stop) ... ok
+test_changed_importer_is_refused_before_module_execution (__main__.Guards.test_changed_importer_is_refused_before_module_execution) ... ok
+test_default_refuses_before_file_or_runtime_access (__main__.Guards.test_default_refuses_before_file_or_runtime_access) ... ok
+test_existing_publication_bound_keeps_18_plus_2_refusal (__main__.Guards.test_existing_publication_bound_keeps_18_plus_2_refusal) ... ok
+test_new_wrong_agent_or_completed_run_refuses (__main__.Guards.test_new_wrong_agent_or_completed_run_refuses) ... ok
+test_pending_unaccepted_or_missing_runtime_pins_refuse (__main__.Guards.test_pending_unaccepted_or_missing_runtime_pins_refuse) ... ok
+test_reservation_preservation_and_active_other_lane (__main__.Guards.test_reservation_preservation_and_active_other_lane) ... ok
+test_restore_never_overwrites_foreign_stop (__main__.Guards.test_restore_never_overwrites_foreign_stop) ... ok
+test_stopped_startup_only_exact_snapshot_and_live_pid (__main__.Guards.test_stopped_startup_only_exact_snapshot_and_live_pid) ... ok
+test_second_import_failure_retains_first_receipt_and_reservation (__main__.PartialImport.test_second_import_failure_retains_first_receipt_and_reservation) ... ok
+test_active_reservation_refuses_before_patch (__main__.PolicyStep.test_active_reservation_refuses_before_patch) ... ok
+test_actual_patch_changes_only_policy_and_expected_head (__main__.PolicyStep.test_actual_patch_changes_only_policy_and_expected_head) ... ok
+test_changed_base_refuses_without_checkpoint (__main__.PolicyStep.test_changed_base_refuses_without_checkpoint) ... ok
+test_extra_commit_hook_path_preserves_failure_before_checkpoint (__main__.PolicyStep.test_extra_commit_hook_path_preserves_failure_before_checkpoint) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 2.019s
+
+OK

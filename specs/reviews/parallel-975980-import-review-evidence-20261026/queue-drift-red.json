@@ -1,0 +1,11 @@
+{
+  "fixture": "984 unique IDs with first two reordered after initial pin check",
+  "pinned_queue_sha256": "5b39fc38f3389d93d6b5f1b1ac28ddf66920491c1afb4e434a711d258961c971",
+  "boundary_queue_sha256": "d723ccf34f6fc7bffdb719e29e11114f83df94a73896c61f01a6abcb2908b9d5",
+  "validate_checkout_accepts_drift": true,
+  "resume_plan_accepts_drift": true,
+  "next_id_after_drift": "2",
+  "preservation_against_new_boundary_accepts": true,
+  "operator_executed": false,
+  "Pi_access": false
+}

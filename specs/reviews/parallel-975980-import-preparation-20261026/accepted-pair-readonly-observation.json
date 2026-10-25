@@ -1,0 +1,80 @@
+{
+  "observed_at": "2026-10-25T20:51:36.671786+00:00",
+  "read_only": true,
+  "head": "617cb7c7e49f533b46c66dc9a53e7c6cefd71cbf",
+  "central_status": "running",
+  "current": {
+    "problem_id": "843",
+    "stage": "review",
+    "started_at": "2026-10-25T20:47:11.707633+00:00",
+    "run_id": "843-review-3eddda02bfb3"
+  },
+  "queue_count": 984,
+  "central_progress_sha256": "a255b6956ce9f0b0fafabfd6e5e0fc5acc40a9f285e1bc8cac2455ee82aa105d",
+  "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b",
+  "resume_plan": {
+    "next_problem_id": "843",
+    "registration_ids": [],
+    "publication_bound": {
+      "eligible": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "818",
+        "827",
+        "828",
+        "829",
+        "834",
+        "839",
+        "960",
+        "968",
+        "972"
+      ],
+      "incoming": [
+        "975",
+        "980"
+      ],
+      "registration_ids": [],
+      "reopened_upper_bound_ids": [],
+      "upper_bound_ids": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "818",
+        "827",
+        "828",
+        "829",
+        "834",
+        "839",
+        "960",
+        "968",
+        "972",
+        "975",
+        "980"
+      ],
+      "upper_bound": 17
+    }
+  },
+  "central_runner_pid": 1600975,
+  "lane_processes_absent": true,
+  "accepted_lanes": {
+    "975": {
+      "head": "d1e5c03e4f58203b7b08f4a5b858a563b245e375",
+      "candidate": "bc00150bef56379abd88333f62211cf7b16146c9",
+      "score": 92.5,
+      "required_open": []
+    },
+    "980": {
+      "head": "d95031d1b9d90fa9e1cc578c000caef0c6756510",
+      "candidate": "a440fe53769a1831f8e2f8f4f4bbd0195ff0906c",
+      "score": 95.0,
+      "required_open": []
+    }
+  }
+}

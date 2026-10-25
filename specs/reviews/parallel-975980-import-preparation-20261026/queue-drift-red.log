@@ -1,0 +1,39 @@
+test_changed_order_after_fetch_refused_before_stop (__main__.QueueDriftDuringExecute.test_changed_order_after_fetch_refused_before_stop) ... FAIL
+test_changed_order_during_wait_refused_before_import (__main__.QueueDriftDuringExecute.test_changed_order_during_wait_refused_before_import) ... FAIL
+
+======================================================================
+FAIL: test_changed_order_after_fetch_refused_before_stop (__main__.QueueDriftDuringExecute.test_changed_order_after_fetch_refused_before_stop)
+----------------------------------------------------------------------
+RuntimeError: BUG: drift reached import step
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/parallel-975980-import-preparation-20261026/test_operate.py", line 150, in test_changed_order_after_fetch_refused_before_stop
+    def test_changed_order_after_fetch_refused_before_stop(self):self.exercise('after-fetch')
+                                                                 ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/parallel-975980-import-preparation-20261026/test_operate.py", line 145, in exercise
+    with self.assertRaisesRegex(RuntimeError,'Finite queue identity differs'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "Finite queue identity differs" does not match "BUG: drift reached import step"
+
+======================================================================
+FAIL: test_changed_order_during_wait_refused_before_import (__main__.QueueDriftDuringExecute.test_changed_order_during_wait_refused_before_import)
+----------------------------------------------------------------------
+RuntimeError: BUG: drift reached import step
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/parallel-975980-import-preparation-20261026/test_operate.py", line 151, in test_changed_order_during_wait_refused_before_import
+    def test_changed_order_during_wait_refused_before_import(self):self.exercise('during-wait')
+                                                                   ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/songyy/Documents/knowledge-vis/specs/reviews/parallel-975980-import-preparation-20261026/test_operate.py", line 145, in exercise
+    with self.assertRaisesRegex(RuntimeError,'Finite queue identity differs'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "Finite queue identity differs" does not match "BUG: drift reached import step"
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.039s
+
+FAILED (failures=2)
