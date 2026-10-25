@@ -1,0 +1,9 @@
+{
+  "kind": "author self-check, not independent review",
+  "cases": 2055,
+  "official_examples": 3,
+  "large_boundaries": 3,
+  "trace_frames": 10431,
+  "checks": "subset oracle, sampled all-order oracle, every prefix feasible and optimal, immutable input, snapshot accounting, exact source mirror",
+  "result": "pass"
+}

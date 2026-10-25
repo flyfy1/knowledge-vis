@@ -53,9 +53,10 @@ const reports=[],errors=[],requests=[];
  assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),source);
  await setLang('zh');assert.match(await page.locator('#copyStatus').textContent(),/已复制/);await setLang('en');
  const downloadPromise=page.waitForEvent('download');await page.locator('a[download]').click();const download=await downloadPromise;assert.equal(fs.readFileSync(await download.path(),'utf8'),source);
- await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw Error('intentional clipboard test');}}}));
+ await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{readText:navigator.clipboard.readText.bind(navigator.clipboard),writeText:async()=>{throw Error('intentional clipboard test');}}}));
  await page.locator('#copyPython').click();assert(await page.locator('#sourceFallback').isVisible());assert.equal(await page.locator('#manualSource').inputValue(),source);
  assert.deepEqual(await page.locator('#manualSource').evaluate(e=>[e.selectionStart,e.selectionEnd,document.activeElement===e]),[0,source.length,true]);
+ await page.keyboard.press('Control+C');assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),source);
  await setLang('zh');assert.match(await page.locator('#copyStatus').textContent(),/手动复制/);assert(await page.locator('#sourceDetails').evaluate(e=>e.open));await setLang('en');
  // A keyboard-only endpoint action and visible focus.
  await page.locator('#traceReset').focus();await page.keyboard.press('Enter');assert(await page.locator('#tracePrev').isDisabled());

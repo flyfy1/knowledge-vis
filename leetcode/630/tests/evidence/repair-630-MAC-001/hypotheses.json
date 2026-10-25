@@ -1,0 +1,101 @@
+{
+  "kind": "Linux DOM-only one-factor self-check",
+  "records": [
+    {
+      "mode": "baseline",
+      "index": 0,
+      "label": "Replacement: [[4,4],[2,5],[2,6]] → 2",
+      "textWidth": 258.656494140625,
+      "available": 214,
+      "fits": false
+    },
+    {
+      "mode": "baseline",
+      "index": 3,
+      "label": "All impossible [[3,2],[4,3]] → 0",
+      "textWidth": 222.38441467285156,
+      "available": 214,
+      "fits": false
+    },
+    {
+      "mode": "baseline",
+      "index": 4,
+      "label": "Tied deadlines and durations → 3",
+      "textWidth": 251.1844482421875,
+      "available": 214,
+      "fits": false
+    },
+    {
+      "mode": "shorter",
+      "index": 0,
+      "label": "Replacement: 2 courses",
+      "textWidth": 178.24038696289062,
+      "available": 214,
+      "fits": true
+    },
+    {
+      "mode": "shorter",
+      "index": 3,
+      "label": "Impossible: 0 courses",
+      "textWidth": 162.3203582763672,
+      "available": 214,
+      "fits": true
+    },
+    {
+      "mode": "shorter",
+      "index": 4,
+      "label": "Ties: 3 courses",
+      "textWidth": 109.68022155761719,
+      "available": 214,
+      "fits": true
+    },
+    {
+      "mode": "padding",
+      "index": 0,
+      "label": "Replacement: [[4,4],[2,5],[2,6]] → 2",
+      "textWidth": 258.656494140625,
+      "available": 244,
+      "fits": false
+    },
+    {
+      "mode": "padding",
+      "index": 3,
+      "label": "All impossible [[3,2],[4,3]] → 0",
+      "textWidth": 222.38441467285156,
+      "available": 244,
+      "fits": true
+    },
+    {
+      "mode": "padding",
+      "index": 4,
+      "label": "Tied deadlines and durations → 3",
+      "textWidth": 251.1844482421875,
+      "available": 244,
+      "fits": false
+    },
+    {
+      "mode": "font",
+      "index": 0,
+      "label": "Replacement: [[4,4],[2,5],[2,6]] → 2",
+      "textWidth": 248.1328125,
+      "available": 214,
+      "fits": false
+    },
+    {
+      "mode": "font",
+      "index": 3,
+      "label": "All impossible [[3,2],[4,3]] → 0",
+      "textWidth": 211.6484375,
+      "available": 214,
+      "fits": true
+    },
+    {
+      "mode": "font",
+      "index": 4,
+      "label": "Tied deadlines and durations → 3",
+      "textWidth": 238.671875,
+      "available": 214,
+      "fits": false
+    }
+  ]
+}
