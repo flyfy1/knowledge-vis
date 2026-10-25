@@ -2351,6 +2351,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(min(m,n) log(mn)) time; O(1) auxiliary space"
   },
   {
+    "id": 675,
+    "title": {
+      "zh": "为高尔夫比赛砍树",
+      "en": "Cut Off Trees for Golf Event"
+    },
+    "desc": {
+      "zh": "从穿过高树的小路，推导按高度排序与分层最短路。",
+      "en": "Derive sorted targets and shortest paths from a walk past a taller tree."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "最短路径",
+        "en": "Shortest paths"
+      }
+    ],
+    "path": "675/",
+    "leetcodeUrl": "https://leetcode.com/problems/cut-off-trees-for-golf-event/",
+    "language": "Python",
+    "complexity": "O(Tmn + T log T) time; O(mn + T) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
