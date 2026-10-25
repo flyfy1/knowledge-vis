@@ -2827,6 +2827,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n) time; O(n) auxiliary space for sorting"
   },
   {
+    "id": 761,
+    "title": {
+      "zh": "特殊的二进制序列",
+      "en": "Special Binary String"
+    },
+    "desc": {
+      "zh": "从前缀余额发现最小块，递归优化内部并证明兄弟块的降序排列。",
+      "en": "Discover minimal blocks through prefix balance, optimize their interiors, and prove descending sibling order."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "递归",
+        "en": "Recursion"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      },
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      }
+    ],
+    "path": "761/",
+    "leetcodeUrl": "https://leetcode.com/problems/special-binary-string/",
+    "language": "Python",
+    "complexity": "O(n² log n) time; O(n²) auxiliary space (conservative bounds for slicing implementation)"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
