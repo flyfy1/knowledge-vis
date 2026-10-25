@@ -1,0 +1,7 @@
+{
+  "kind": "author self-check findings, not independent review",
+  "firstBrowserRun": "failed",
+  "harnessFinding": "Related-link assertion expected frontier or BFS in #126 step2; actual section uses layer and parent. Actual destination was correct. Updated assertion to require both layer and parent; this is a harness correction.",
+  "visualFinding": "320px CSS zoom2 screenshot wrapped expanded and boarding mid-word because nested inherited padding squeezed route rows. Local narrow-screen padding reduced from step16/stage14/row16 to 8/8/8. Rerun and visual inspection required.",
+  "otherRefinements": "Use buses: N to avoid singular grammar; calibrate actual contrast helper, enforce exact bilingual headings, use solid shared background token for nav."
+}

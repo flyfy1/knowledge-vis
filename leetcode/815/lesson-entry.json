@@ -1,0 +1,38 @@
+{
+  "id": 815,
+  "title": {
+    "zh": "公交路线",
+    "en": "Bus Routes"
+  },
+  "desc": {
+    "zh": "从一次上车解锁整条线路，推导按乘车数分层的搜索与一次扫描不变量。",
+    "en": "Unlock an entire route per boarding and derive BFS layers with a scan-once invariant."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "广度优先搜索",
+      "en": "Breadth-first search"
+    },
+    {
+      "zh": "倒排索引",
+      "en": "Inverted index"
+    }
+  ],
+  "path": "815/",
+  "leetcodeUrl": "https://leetcode.com/problems/bus-routes/",
+  "language": "Python",
+  "complexity": "O(M + R) expected time; O(M + R) auxiliary space, M = total route entries, R = route count",
+  "concepts": [
+    {
+      "name": "Bus-count BFS layers",
+      "step": 2,
+      "description": "First discovery minimizes boardings; scan each route only once."
+    },
+    {
+      "name": "Stop-to-route inverted index",
+      "step": 2,
+      "description": "Look up incident routes without building all pairwise intersections."
+    }
+  ]
+}

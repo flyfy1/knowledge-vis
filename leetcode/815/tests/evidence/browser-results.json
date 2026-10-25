@@ -1,0 +1,1004 @@
+{
+  "kind": "author browser self-check",
+  "result": "pass",
+  "records": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "frames": 3,
+      "answer": 2,
+      "visible": "Frame 2/2; frontier layer 2; 5 stops discovered; 2 routes expanded. Proved minimum boardings: 2.",
+      "events": "Board R1 at stop 7; newly discover [3, 6].",
+      "ledger": "Layer 0→1: new routes: 1; route entries scanned: 3; new stops: 2.Layer 1→2: new routes: 1; route entries scanned: 3; new stops: 2."
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "frames": 3,
+      "answer": -1,
+      "visible": "Frame 2/2; frontier layer 2; 4 stops discovered; 2 routes expanded. Frontier empty; unreachable, answer -1.",
+      "events": "",
+      "ledger": "Layer 0→1: new routes: 2; route entries scanned: 5; new stops: 3.Layer 1→2: new routes: 0; route entries scanned: 0; new stops: 0."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "frames": 2,
+      "answer": 1,
+      "visible": "Frame 1/1; frontier layer 1; 5 stops discovered; 2 routes expanded. Proved minimum boardings: 1.",
+      "events": "Board R0 at stop 1; newly discover [2, 3, 6].Board R1 at stop 1; newly discover [9].",
+      "ledger": "Layer 0→1: new routes: 2; route entries scanned: 6; new stops: 4."
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "frames": 1,
+      "answer": 0,
+      "visible": "Frame 0/0; frontier layer 0; 1 stops discovered; 0 routes expanded. Proved minimum boardings: 0.",
+      "events": "",
+      "ledger": ""
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "frames": 2,
+      "answer": -1,
+      "visible": "Frame 1/1; frontier layer 1; 1 stops discovered; 0 routes expanded. Frontier empty; unreachable, answer -1.",
+      "events": "",
+      "ledger": "Layer 0→1: new routes: 0; route entries scanned: 0; new stops: 0."
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "frames": 4,
+      "answer": 3,
+      "visible": "Frame 3/3; frontier layer 3; 6 stops discovered; 4 routes expanded. Proved minimum boardings: 3.",
+      "events": "Board R3 at stop 5; newly discover [6].",
+      "ledger": "Layer 0→1: new routes: 1; route entries scanned: 3; new stops: 2.Layer 1→2: new routes: 2; route entries scanned: 6; new stops: 2.Layer 2→3: new routes: 1; route entries scanned: 2; new stops: 1."
+    },
+    {
+      "locale": "en",
+      "preset": 6,
+      "frames": 2,
+      "answer": -1,
+      "visible": "Frame 1/1; frontier layer 1; 1 stops discovered; 1 routes expanded. Frontier empty; unreachable, answer -1.",
+      "events": "Board R0 at stop 0; newly discover [].",
+      "ledger": "Layer 0→1: new routes: 1; route entries scanned: 1; new stops: 0."
+    },
+    {
+      "locale": "en",
+      "branch": "selected-revealed-correct and middle trace preserved over locale",
+      "feedback": "Correct. The answer is 1. Layer 0 is {2}. Boarding A once exposes 4, 9, and 11; boarding B exposes 8. Thus 11 is first discovered in layer 1. B→C has only two hops but needs two buses. Zero counts transfers, not boardings.",
+      "causalText": "Board R0 at stop 1; newly discover [2, 7]."
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "frames": 3,
+      "answer": 2,
+      "visible": "帧 2/2；当前前沿层 2；已发现 5 个站；已展开 2 条线路。已证实最少上车数：2。",
+      "events": "从站 7 上 R1；新发现 [3, 6]。",
+      "ledger": "层 0→1：展开 1 条新线路，扫描 3 个线路站点条目，新发现 2 个站。层 1→2：展开 1 条新线路，扫描 3 个线路站点条目，新发现 2 个站。"
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "frames": 3,
+      "answer": -1,
+      "visible": "帧 2/2；当前前沿层 2；已发现 4 个站；已展开 2 条线路。前沿为空；无路可达，答案 -1。",
+      "events": "",
+      "ledger": "层 0→1：展开 2 条新线路，扫描 5 个线路站点条目，新发现 3 个站。层 1→2：展开 0 条新线路，扫描 0 个线路站点条目，新发现 0 个站。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "frames": 2,
+      "answer": 1,
+      "visible": "帧 1/1；当前前沿层 1；已发现 5 个站；已展开 2 条线路。已证实最少上车数：1。",
+      "events": "从站 1 上 R0；新发现 [2, 3, 6]。从站 1 上 R1；新发现 [9]。",
+      "ledger": "层 0→1：展开 2 条新线路，扫描 6 个线路站点条目，新发现 4 个站。"
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "frames": 1,
+      "answer": 0,
+      "visible": "帧 0/0；当前前沿层 0；已发现 1 个站；已展开 0 条线路。已证实最少上车数：0。",
+      "events": "",
+      "ledger": ""
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "frames": 2,
+      "answer": -1,
+      "visible": "帧 1/1；当前前沿层 1；已发现 1 个站；已展开 0 条线路。前沿为空；无路可达，答案 -1。",
+      "events": "",
+      "ledger": "层 0→1：展开 0 条新线路，扫描 0 个线路站点条目，新发现 0 个站。"
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "frames": 4,
+      "answer": 3,
+      "visible": "帧 3/3；当前前沿层 3；已发现 6 个站；已展开 4 条线路。已证实最少上车数：3。",
+      "events": "从站 5 上 R3；新发现 [6]。",
+      "ledger": "层 0→1：展开 1 条新线路，扫描 3 个线路站点条目，新发现 2 个站。层 1→2：展开 2 条新线路，扫描 6 个线路站点条目，新发现 2 个站。层 2→3：展开 1 条新线路，扫描 2 个线路站点条目，新发现 1 个站。"
+    },
+    {
+      "locale": "zh",
+      "preset": 6,
+      "frames": 2,
+      "answer": -1,
+      "visible": "帧 1/1；当前前沿层 1；已发现 1 个站；已展开 1 条线路。前沿为空；无路可达，答案 -1。",
+      "events": "从站 0 上 R0；新发现 []。",
+      "ledger": "层 0→1：展开 1 条新线路，扫描 1 个线路站点条目，新发现 0 个站。"
+    },
+    {
+      "locale": "zh",
+      "branch": "selected-revealed-correct and middle trace preserved over locale",
+      "feedback": "判断正确。 答案是 1。第 0 层为 {2}；上 A 一次就暴露 4、9、11，上 B 暴露 8。因此首次发现 11 在第 1 层。B→C 虽然只有两跳，却需 2 辆车；0 是换乘次数而不是上车次数。",
+      "causalText": "从站 1 上 R0；新发现 [2, 7]。"
+    }
+  ],
+  "layouts": [
+    {
+      "locale": "en",
+      "width": 320,
+      "doc": 320,
+      "available": 320,
+      "chips": [
+        {
+          "client": 29,
+          "scroll": 29,
+          "w": 31.15625
+        },
+        {
+          "client": 142,
+          "scroll": 142,
+          "w": 143.6875
+        },
+        {
+          "client": 142,
+          "scroll": 142,
+          "w": 143.6875
+        },
+        {
+          "client": 142,
+          "scroll": 142,
+          "w": 143.6875
+        },
+        {
+          "client": 211,
+          "scroll": 211,
+          "w": 215.1875
+        },
+        {
+          "client": 211,
+          "scroll": 211,
+          "w": 215.1875
+        }
+      ],
+      "routes": [
+        {
+          "client": 283,
+          "scroll": 283
+        },
+        {
+          "client": 283,
+          "scroll": 283
+        },
+        {
+          "client": 283,
+          "scroll": 283
+        },
+        {
+          "client": 283,
+          "scroll": 283
+        }
+      ],
+      "select": {
+        "w": 286,
+        "text": 145.37631225585938,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "doc": 390,
+      "available": 390,
+      "chips": [
+        {
+          "client": 29,
+          "scroll": 29,
+          "w": 31.15625
+        },
+        {
+          "client": 142,
+          "scroll": 142,
+          "w": 143.6875
+        },
+        {
+          "client": 142,
+          "scroll": 142,
+          "w": 143.6875
+        },
+        {
+          "client": 142,
+          "scroll": 142,
+          "w": 143.6875
+        },
+        {
+          "client": 211,
+          "scroll": 211,
+          "w": 215.1875
+        },
+        {
+          "client": 211,
+          "scroll": 211,
+          "w": 215.1875
+        }
+      ],
+      "routes": [
+        {
+          "client": 353,
+          "scroll": 353
+        },
+        {
+          "client": 353,
+          "scroll": 353
+        },
+        {
+          "client": 353,
+          "scroll": 353
+        },
+        {
+          "client": 353,
+          "scroll": 353
+        }
+      ],
+      "select": {
+        "w": 356,
+        "text": 145.37631225585938,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "doc": 736,
+      "available": 736,
+      "chips": [
+        {
+          "client": 29,
+          "scroll": 29,
+          "w": 31.15625
+        },
+        {
+          "client": 142,
+          "scroll": 142,
+          "w": 143.6875
+        },
+        {
+          "client": 142,
+          "scroll": 142,
+          "w": 143.6875
+        },
+        {
+          "client": 142,
+          "scroll": 142,
+          "w": 143.6875
+        },
+        {
+          "client": 211,
+          "scroll": 211,
+          "w": 215.1875
+        },
+        {
+          "client": 211,
+          "scroll": 211,
+          "w": 215.1875
+        }
+      ],
+      "routes": [
+        {
+          "client": 643,
+          "scroll": 643
+        },
+        {
+          "client": 643,
+          "scroll": 643
+        },
+        {
+          "client": 643,
+          "scroll": 643
+        },
+        {
+          "client": 643,
+          "scroll": 643
+        }
+      ],
+      "select": {
+        "w": 646,
+        "text": 145.37631225585938,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "doc": 1440,
+      "available": 1440,
+      "chips": [
+        {
+          "client": 29,
+          "scroll": 29,
+          "w": 31.15625
+        },
+        {
+          "client": 142,
+          "scroll": 142,
+          "w": 143.6875
+        },
+        {
+          "client": 142,
+          "scroll": 142,
+          "w": 143.6875
+        },
+        {
+          "client": 142,
+          "scroll": 142,
+          "w": 143.6875
+        },
+        {
+          "client": 211,
+          "scroll": 211,
+          "w": 215.1875
+        },
+        {
+          "client": 211,
+          "scroll": 211,
+          "w": 215.1875
+        }
+      ],
+      "routes": [
+        {
+          "client": 907,
+          "scroll": 907
+        },
+        {
+          "client": 907,
+          "scroll": 907
+        },
+        {
+          "client": 907,
+          "scroll": 907
+        },
+        {
+          "client": 907,
+          "scroll": 907
+        }
+      ],
+      "select": {
+        "w": 910,
+        "text": 145.37631225585938,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "doc": 320,
+      "available": 320,
+      "chips": [
+        {
+          "client": 29,
+          "scroll": 29,
+          "w": 31.15625
+        },
+        {
+          "client": 91,
+          "scroll": 91,
+          "w": 93.234375
+        },
+        {
+          "client": 91,
+          "scroll": 91,
+          "w": 93.234375
+        },
+        {
+          "client": 91,
+          "scroll": 91,
+          "w": 93.234375
+        },
+        {
+          "client": 136,
+          "scroll": 136,
+          "w": 139.84375
+        },
+        {
+          "client": 136,
+          "scroll": 136,
+          "w": 139.84375
+        }
+      ],
+      "routes": [
+        {
+          "client": 283,
+          "scroll": 283
+        },
+        {
+          "client": 283,
+          "scroll": 283
+        },
+        {
+          "client": 283,
+          "scroll": 283
+        },
+        {
+          "client": 283,
+          "scroll": 283
+        }
+      ],
+      "select": {
+        "w": 286,
+        "text": 64.0001220703125,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "doc": 390,
+      "available": 390,
+      "chips": [
+        {
+          "client": 29,
+          "scroll": 29,
+          "w": 31.15625
+        },
+        {
+          "client": 91,
+          "scroll": 91,
+          "w": 93.234375
+        },
+        {
+          "client": 91,
+          "scroll": 91,
+          "w": 93.234375
+        },
+        {
+          "client": 91,
+          "scroll": 91,
+          "w": 93.234375
+        },
+        {
+          "client": 136,
+          "scroll": 136,
+          "w": 139.84375
+        },
+        {
+          "client": 136,
+          "scroll": 136,
+          "w": 139.84375
+        }
+      ],
+      "routes": [
+        {
+          "client": 353,
+          "scroll": 353
+        },
+        {
+          "client": 353,
+          "scroll": 353
+        },
+        {
+          "client": 353,
+          "scroll": 353
+        },
+        {
+          "client": 353,
+          "scroll": 353
+        }
+      ],
+      "select": {
+        "w": 356,
+        "text": 64.0001220703125,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "doc": 736,
+      "available": 736,
+      "chips": [
+        {
+          "client": 29,
+          "scroll": 29,
+          "w": 31.15625
+        },
+        {
+          "client": 91,
+          "scroll": 91,
+          "w": 93.234375
+        },
+        {
+          "client": 91,
+          "scroll": 91,
+          "w": 93.234375
+        },
+        {
+          "client": 91,
+          "scroll": 91,
+          "w": 93.234375
+        },
+        {
+          "client": 136,
+          "scroll": 136,
+          "w": 139.84375
+        },
+        {
+          "client": 136,
+          "scroll": 136,
+          "w": 139.84375
+        }
+      ],
+      "routes": [
+        {
+          "client": 643,
+          "scroll": 643
+        },
+        {
+          "client": 643,
+          "scroll": 643
+        },
+        {
+          "client": 643,
+          "scroll": 643
+        },
+        {
+          "client": 643,
+          "scroll": 643
+        }
+      ],
+      "select": {
+        "w": 646,
+        "text": 64.0001220703125,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "doc": 1440,
+      "available": 1440,
+      "chips": [
+        {
+          "client": 29,
+          "scroll": 29,
+          "w": 31.15625
+        },
+        {
+          "client": 91,
+          "scroll": 91,
+          "w": 93.234375
+        },
+        {
+          "client": 91,
+          "scroll": 91,
+          "w": 93.234375
+        },
+        {
+          "client": 91,
+          "scroll": 91,
+          "w": 93.234375
+        },
+        {
+          "client": 136,
+          "scroll": 136,
+          "w": 139.84375
+        },
+        {
+          "client": 136,
+          "scroll": 136,
+          "w": 139.84375
+        }
+      ],
+      "routes": [
+        {
+          "client": 907,
+          "scroll": 907
+        },
+        {
+          "client": 907,
+          "scroll": 907
+        },
+        {
+          "client": 907,
+          "scroll": 907
+        },
+        {
+          "client": 907,
+          "scroll": 907
+        }
+      ],
+      "select": {
+        "w": 910,
+        "text": 64.0001220703125,
+        "padding": 30,
+        "reserve": 24
+      }
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "available": 320,
+      "chips": [
+        {
+          "client": 29,
+          "scroll": 29
+        },
+        {
+          "client": 124,
+          "scroll": 124
+        },
+        {
+          "client": 124,
+          "scroll": 124
+        },
+        {
+          "client": 124,
+          "scroll": 124
+        },
+        {
+          "client": 122,
+          "scroll": 122
+        },
+        {
+          "client": 122,
+          "scroll": 122
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "available": 390,
+      "chips": [
+        {
+          "client": 29,
+          "scroll": 29
+        },
+        {
+          "client": 142,
+          "scroll": 142
+        },
+        {
+          "client": 142,
+          "scroll": 142
+        },
+        {
+          "client": 142,
+          "scroll": 142
+        },
+        {
+          "client": 157,
+          "scroll": 157
+        },
+        {
+          "client": 157,
+          "scroll": 157
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "available": 1440,
+      "chips": [
+        {
+          "client": 29,
+          "scroll": 29
+        },
+        {
+          "client": 142,
+          "scroll": 142
+        },
+        {
+          "client": 142,
+          "scroll": 142
+        },
+        {
+          "client": 142,
+          "scroll": 142
+        },
+        {
+          "client": 211,
+          "scroll": 211
+        },
+        {
+          "client": 211,
+          "scroll": 211
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "available": 320,
+      "chips": [
+        {
+          "client": 29,
+          "scroll": 29
+        },
+        {
+          "client": 91,
+          "scroll": 91
+        },
+        {
+          "client": 91,
+          "scroll": 91
+        },
+        {
+          "client": 91,
+          "scroll": 91
+        },
+        {
+          "client": 122,
+          "scroll": 122
+        },
+        {
+          "client": 122,
+          "scroll": 122
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "available": 390,
+      "chips": [
+        {
+          "client": 29,
+          "scroll": 29
+        },
+        {
+          "client": 91,
+          "scroll": 91
+        },
+        {
+          "client": 91,
+          "scroll": 91
+        },
+        {
+          "client": 91,
+          "scroll": 91
+        },
+        {
+          "client": 136,
+          "scroll": 136
+        },
+        {
+          "client": 136,
+          "scroll": 136
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "available": 1440,
+      "chips": [
+        {
+          "client": 29,
+          "scroll": 29
+        },
+        {
+          "client": 91,
+          "scroll": 91
+        },
+        {
+          "client": 91,
+          "scroll": 91
+        },
+        {
+          "client": 91,
+          "scroll": 91
+        },
+        {
+          "client": 136,
+          "scroll": 136
+        },
+        {
+          "client": 136,
+          "scroll": 136
+        }
+      ]
+    }
+  ],
+  "clipboard": [
+    {
+      "locale": "en",
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "nativeReadbackExact": true,
+      "finalNewline": true
+    },
+    {
+      "locale": "zh",
+      "host": "linux",
+      "shortcut": "Control+C",
+      "freshSentinelVerified": true,
+      "nativeReadbackExact": true,
+      "finalNewline": true
+    }
+  ],
+  "source": "exact rendered/embedded/download/success-copy/native-fallback including final newline",
+  "focus": {
+    "active": true,
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrasts": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".route-row",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".stop-chip",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#tracePrev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#traceNext",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#langToggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "focus on panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "stop border on panel2",
+      "ratio": 6.449407898769069
+    }
+  ],
+  "cssBytes": 11372,
+  "linkRecords": [
+    {
+      "href": "../",
+      "url": "http://127.0.0.1:18770/leetcode/",
+      "status": 200
+    },
+    {
+      "href": "#step0",
+      "url": "http://127.0.0.1:18770/leetcode/815/#step0",
+      "status": 200
+    },
+    {
+      "href": "#step1",
+      "url": "http://127.0.0.1:18770/leetcode/815/#step1",
+      "status": 200
+    },
+    {
+      "href": "#step2",
+      "url": "http://127.0.0.1:18770/leetcode/815/#step2",
+      "status": 200
+    },
+    {
+      "href": "#step3",
+      "url": "http://127.0.0.1:18770/leetcode/815/#step3",
+      "status": 200
+    },
+    {
+      "href": "#step4",
+      "url": "http://127.0.0.1:18770/leetcode/815/#step4",
+      "status": 200
+    },
+    {
+      "href": "../126/#step2",
+      "url": "http://127.0.0.1:18770/leetcode/126/#step2",
+      "status": 200
+    },
+    {
+      "href": "solution.py",
+      "url": "http://127.0.0.1:18770/leetcode/815/solution.py",
+      "status": 200
+    },
+    {
+      "href": "../773/#step2",
+      "url": "http://127.0.0.1:18770/leetcode/773/#step2",
+      "status": 200
+    },
+    {
+      "href": "../126/#step2",
+      "destinationText": "0303 · Expand and inspectWhich routes did this expansion add? Choose a preset (this resets this experiment), hold its dictionary fixed, and expand one word at a time. Read the new edges, then the matching parent list on each word card. Rewind and advance to check that both parents return unchanged. Distance counts replacements; each horizontal group is one layer, and each card lists words that can immediately precede it on a shortest route.The browser visualization simulates the algorithm; it does not execute the Python below. Each frame snapshots one fully expanded queue word, retaining all discovered words and parents. The final frame reconstructs answers. No expansion events are omitted. Teaching snapshots are additional storage, outside the submission’s space bound.Preset (changing resets the trace)Tiny: aa → bb, two routesOfficial example 1: hit → cogOfficial example 2: cog absentStart is in the dictionaryOne-letter words, direct routeEnd exists but is disconnectedDictionary: ab, ba, bb← Previous snapshotExpand next word →Jump to reconstructed answersReset experimentSnapshot positionSnapshot 0/4 · start aa · end bbInitial: only the start, at distance 0. No word has been expanded.Queue (first in, first out; not yet expanded): aaDistance 0aaStart; no parentsCompleted expansions (retained history)Reconstructed complete answersAnswers are reconstructed in the final frame.",
+      "keyboardActivated": true
+    },
+    {
+      "href": "../773/#step2",
+      "destinationText": "03Search by layersHow can the first encounter with the goal prove the fewest moves? Breadth-first search (BFS) explores one move count at a time. The frontier contains every newly discovered state at distance d; seen is the set of all discovered states. The start is layer 0 because no move has been made.Keep 123405: 0 occupies position 4 (zero-based, row-major), so it can swap only with positions 1, 3, 5. This gives 103425, 123045, 123450, each reachable in 1 move. The last is the goal and layer 0 was not, so the answer is 1. Later, when 103425 generates 123405, seen rejects it: that board was already found at layer 0, and returning cannot improve its distance.This yields the invariant: on entering layer d, the frontier is exactly the states whose shortest distance is d, and seen is exactly those within distance d. One edge from the frontier reaches a state within d+1 moves. An unseen state cannot be within d moves, or it would already have been discovered. Its distance is therefore exactly d+1. Mark it seen immediately to avoid duplicates within the new layer. Every (d+1)-move path has a penultimate state within d moves, so the next layer misses no state either. This proof relies on every edge costing one move.Word Ladder II: retain shortest paths by layer →Finish “One move”, then select “Five moves”. Advance layer by layer and inspect the retained layer ledger. Each frame sho",
+      "keyboardActivated": true
+    }
+  ],
+  "storageDenied": true,
+  "offline": true,
+  "errors": [],
+  "badAssets": [],
+  "external": [],
+  "zoomMethod": "CSS zoom:2 in real Chromium; browser-chrome zoom and real devices not tested",
+  "browser": "156.0.8078.4",
+  "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+  "contrastCalibration": {
+    "black": 0,
+    "white": 1,
+    "red": 0.2126,
+    "green": 0.7152,
+    "blue": 0.0722,
+    "blackWhite": 21,
+    "nearThreshold": 4.492948073111701
+  },
+  "contrastScope": "solid rendered backgrounds; local nav made solid; WCAG sRGB weights calibrated against black, white, primaries and unrounded near-4.5 failure"
+}
