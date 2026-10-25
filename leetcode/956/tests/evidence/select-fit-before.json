@@ -1,0 +1,5 @@
+{
+  "predicate": "86.8802px text + 30px padding + 24px conservative arrow reserve < 137px clientWidth",
+  "passed": false,
+  "classification": "Conservative width budget failed; this alone does not prove visible clipping. Increase control width for stable margin."
+}

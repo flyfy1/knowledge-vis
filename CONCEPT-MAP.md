@@ -1575,3 +1575,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Ending-letter counting invariant | `leetcode/940/#step2` | Partition distinct subsequences by their final letter and replace one group. |
 
 <!-- /leetcode-940-campaign -->
+
+
+<!-- leetcode-956-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Difference-state DP | `leetcode/956/#step2` | Keep the best shorter support per absolute height gap. |
+| Snapshot updates | `leetcode/956/#step4` | Read old prefix states to use each rod at most once. |
+
+<!-- /leetcode-956-campaign -->
