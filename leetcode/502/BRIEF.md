@@ -1,0 +1,23 @@
+# #502 IPO — author brief
+
+Product verdict: reuse the approved LeetCode lesson pattern (specs/reviews/leetcode-all-hard-design-review.md and dispatcher adjudication); category computing, stage university. Audience: array/loop readers. Job: explain why choosing the largest currently affordable profit is safe, then implement the sorted frontier plus heap. Existing shared navigation, locale and tokens are reused; no new product or framework.
+
+Official source: https://leetcode.com/problems/ipo/ and public GraphQL, accessed 2026-10-25. Complete response saved in provenance/official-graphql.json. Python3 selector gives Solution.findMaximizedCapital(k: int, w: int, profits: list[int], capital: list[int]) -> int. Python preferred and faithfully supported. Required capital is a threshold, not expenditure; projects distinct; at most k; profits nonnegative; answer signed 32-bit. k,n=1..100000; w,capital=0..10^9; profits=0..10000. Official examples return 4 and 6. No input mutation requirement. No empty official array or k=0 (defensive extensions only).
+
+Learning loop: hand-calculate two choices → compare repeated scan → derive dominance → admit sorted projects and pop heap → predict new case → map exact Python.
+
+|Step|Already known|Single question|Input → quantity|Action → observation|Conditions|
+|---|---|---|---|---|---|
+|0|addition, arrays|Which first project unlocks a better second one?|w=1,k=2,c=[1,1,4],p=[1,3,5] → final capital|choose A or B, see both intermediate capitals and available second choice|threshold not spent; each once|
+|1|legal choice|Why is largest affordable profit safe?|same case → proof and baseline|compare A→B=5 with B→C=9; inspect baseline|nonnegative profits, no deadlines/dependencies, at most k|
+|2|dominance rule|How do we avoid rescanning?|six bounded presets → admission/pop trace|forward/back/reset/end, change preset; see heap and cumulative ledger|complete deep snapshots; simulations distinct from canonical execution|
+|3|dominance, threshold|Can a currently locked large profit force waiting?|fresh w=2,k=2,c=[2,2,5],p=[2,3,8] → final capital|choose then reveal, change choice clears feedback|at most two distinct projects; independent of trace|
+|4|sorted frontier and heap|Which code enforces each rule?|canonical Python → integer|view/copy/download exact source|cost includes sort, heap, n cap; snapshot storage excluded|
+
+First use: capital=available amount; required capital=minimum threshold; profit=amount added. Step1 greedy=best immediate legal profit, invariant=property kept after each choice, exchange=replace/reorder first choice of an optimum. Step2 frontier j=first unadmitted sorted project; heap=parent has priority at least as high as children, with negative profit stored for Python min-heap; local array indices are heap storage positions, project IDs are original indices. Reintroduce definitions locally when jumping sections. Step4 n=array length, m=min(k,n).
+
+Trace instants: initial; one project admitted with unchanged w; one maximum-profit project completed with updated w and ledger; empty-heap stop; terminal. Heap ready set at an admission frame may be incomplete; only pick frames occur after all affordable projects admitted. IDs conserve distinctness. No skipped operations. No automatic motion. Presets restart only trace; locale preserves every state; predictions independent. Source loaded offline from exact mirror. Clipboard failure exposes selected manual textarea. Storage failure uses common.js fallback. No loading/network/reconnect states because runtime is local synchronous data.
+
+Exact token contract: shared --bg #0d1117, --panel #161b22, --panel2 #1c2330, --line #2b3547, --text #e8edf4, --muted #9aa7b8, --accent #6ee7ff, --accent2 #ffb454, --good #7ee2a8, --bad #ff7a93. Shared font stack, scales, 8/14px radii. Spacing 8/12/16/20/24px. Local controls ≥48px; disabled opacity 1 with muted text; field boundaries muted; focus 3px accent2, 4px offset. No extra colors, shadows or motion. CSS budget includes shared CSS.
+
+P0: complete bilingual causal learning loop, canonical execution/oracle and browser evidence, truthful trace, readable states, source parity. Highest-return 20%: show threshold crossing next to old/new capital and retained selection ledger. P1: related deep links. P2: decoration unnecessary. Deferred: free-form huge-input UI (bounded trace keeps all events visible), browser Python execution (separate offline tests execute canonical Python), automatic playback (no learning need), publication/independent acceptance (separate authorized run). No actual learner or LeetCode submission result claimed.
