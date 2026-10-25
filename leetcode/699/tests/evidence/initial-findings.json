@@ -1,0 +1,8 @@
+{
+  "scope": "Author self-check findings, not independent review",
+  "findings": [
+    {"id":"699-A01","kind":"test harness","initial":"Alias assertion mutated f[1] then compared it with the final frame even when a one-square input made these the same frame: -99 !== 5.","resolution":"Only compare distinct frames (length > 2); complete core check passed. Runtime code unchanged."},
+    {"id":"699-A02","kind":"test timing","initial":"Sticky target 0 was sampled 350ms into long-distance smooth scrolling: y=-2270.","resolution":"Exercise anchors with reduced motion and wait for settled target geometry. All five actual anchor clicks pass; runtime code unchanged."},
+    {"id":"699-A03","kind":"runtime CSS","initial":"Supplemental rendered hit test found #prev height=46px, below the required 48px.","resolution":"Candidate v2 adds local .btn and .site-head .official-link min-height:48px. Rerun records all controls at least 48px tall. Separate review pending."}
+  ]
+}
