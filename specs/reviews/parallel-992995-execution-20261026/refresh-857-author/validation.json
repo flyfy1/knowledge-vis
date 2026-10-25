@@ -1,0 +1,37 @@
+{
+  "status": "both-lanes-started",
+  "validated_at": "2026-10-25T22:17:10.171295+00:00",
+  "approved_source": "1537e483c2d313054f36e3efda8e51730e4f0682",
+  "launcher_sha256": "b04075f86c3ae1b7c210b26d468988595c8dc34d4ef6b912ffce0ebf0922e132",
+  "preflight_sha256": "1614f6868e620d276026bd0b49484c3389ef7f649dd61dc6cab449f0aacc9d86",
+  "dispatch_count": 1,
+  "prior_refusal_preserved": true,
+  "checks": {
+    "explicit_frozen_preflight_match": true,
+    "exclusive_transfer_exact_hash": true,
+    "three_live_runners": true,
+    "fresh_distinct_native_session_turn_output": true,
+    "cwd_output_ancestry_matches": true,
+    "ports_owned_by_correct_runners": true,
+    "nice10_max6_publication_disabled": true,
+    "ledger_receipt_unchanged": true,
+    "stop_absent": true
+  },
+  "artifact_sha256": {
+    "992-progress.json": "c38f517dcbf5dd0fd3c2c222c887a6eadd98c79a2c33d3b32022c45d5f36831b",
+    "992-reservation.json": "95a6c0ee1c1c6640ac977d68989f9efdd5aa18e19263a3cf8a55243f62c7b8ec",
+    "992-startup-events.jsonl.gz": "5c3f4c9da007b39e8f861f36d453b06d172fdc7aa2bb43f2711044b30b0068dc",
+    "995-progress.json": "a056c041369219857bac3d42d7952f8d131392cea0f3236c5af0e4db358393db",
+    "995-reservation.json": "5ef26a6eb19cabe66822cc7c7d2e75fe4cb29a5a307c3c014dde33e49575c826",
+    "995-startup-events.jsonl.gz": "404c1e97e8319033f13869aad179e3e68c4b02316390359099f1a693a77c5445",
+    "dispatch.json": "a749d1bdefaf6d6bd4117a5a4dd68f3dad2ea7d18df0d80cbdaeba47d3d5bf78",
+    "launcher-output.log": "43c4d58f9df27f06f6a474f0e965e61bc34850e28b735bdd10c4f9c4fbc3cdc7",
+    "live-launch.json": "7e9169b8182d5dd36a759939e6d78e9f8afad622a2b24bd38443fd91118ffc0e",
+    "observation.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preflight-comparison.json": "0a8e2fb6a05a93007816a66b31c89e22733448692e6fd16f21c0a7d2bcdab802",
+    "preflight.json": "85dd0d120b3b26fd389d7103fee88f236ae9cb4c2da729551f99236fa4697845",
+    "preflight.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preflight.stdout": "85dd0d120b3b26fd389d7103fee88f236ae9cb4c2da729551f99236fa4697845",
+    "transfer.json": "801e1d7eebbf6e6c9ad07cb3f9a9790dd400e88066b2369d4962f1ab3a7aae7e"
+  }
+}
