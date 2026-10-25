@@ -1,0 +1,195 @@
+{
+  "observed_at": "2026-10-25T15:47:47.590151+00:00",
+  "campaign_workers": [
+    {
+      "pid": 1241653,
+      "script": "/home/songyy/projects/leetcode-hard-campaign-20261018/scripts/leetcode_campaign.py",
+      "state_dir": "/home/songyy/projects/leetcode-hard-campaign-state-20261018",
+      "publication_enabled": true
+    },
+    {
+      "pid": 1252722,
+      "script": "/home/songyy/projects/leetcode-hard-lane-903-20261025/scripts/leetcode_campaign.py",
+      "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-903-20261025",
+      "publication_enabled": false
+    },
+    {
+      "pid": 1253012,
+      "script": "/home/songyy/projects/leetcode-hard-lane-920-20261025/scripts/leetcode_campaign.py",
+      "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-920-20261025",
+      "publication_enabled": false
+    }
+  ],
+  "lanes": [
+    {
+      "id": "903",
+      "reservation": {
+        "id": "903",
+        "base": "ed3657893efdf3c0372edd64e6eceae46fd27c6d",
+        "repo": "/home/songyy/projects/leetcode-hard-lane-903-20261025",
+        "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-903-20261025",
+        "port": 18785,
+        "nice": 10,
+        "status": "started",
+        "started_at": "2026-10-25T15:46:10.607999+00:00",
+        "policy_sha256": "d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa",
+        "publication_enabled": false,
+        "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+        "runner_pid": 1252722,
+        "observed_current": {
+          "problem_id": "903",
+          "stage": "author",
+          "started_at": "2026-10-25T15:46:35.958258+00:00",
+          "run_id": "903-author-d5f00646d74d"
+        }
+      },
+      "status": "running",
+      "current": {
+        "problem_id": "903",
+        "stage": "author",
+        "started_at": "2026-10-25T15:46:35.958258+00:00",
+        "run_id": "903-author-d5f00646d74d"
+      },
+      "runner_alive": true,
+      "runner_nice": 10,
+      "descendants": [
+        {
+          "pid": 1252765,
+          "ppid": 1252722,
+          "name": "node",
+          "nice": 10
+        },
+        {
+          "pid": 1252773,
+          "ppid": 1252765,
+          "name": "codex",
+          "nice": 10
+        },
+        {
+          "pid": 1252898,
+          "ppid": 1252773,
+          "name": "node",
+          "nice": 10
+        },
+        {
+          "pid": 1252960,
+          "ppid": 1252773,
+          "name": "codex-code-mode",
+          "nice": 10
+        }
+      ],
+      "events_path": "/home/songyy/projects/leetcode-hard-lane-state-903-20261025/runs/903-author-d5f00646d74d/events.jsonl",
+      "events_bytes": 730447,
+      "events_modified_at": "2026-10-25T15:47:16.370357+00:00",
+      "event_types": [
+        "item.completed",
+        "item.started",
+        "thread.started",
+        "turn.started"
+      ],
+      "item_types": [
+        "agent_message",
+        "command_execution",
+        "web_search"
+      ],
+      "session_ids": [
+        "01a173be-0d1b-7bf0-a405-83a415abba9c"
+      ]
+    },
+    {
+      "id": "920",
+      "reservation": {
+        "id": "920",
+        "base": "ed3657893efdf3c0372edd64e6eceae46fd27c6d",
+        "repo": "/home/songyy/projects/leetcode-hard-lane-920-20261025",
+        "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-920-20261025",
+        "port": 18786,
+        "nice": 10,
+        "status": "started",
+        "started_at": "2026-10-25T15:46:36.193488+00:00",
+        "policy_sha256": "d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa",
+        "publication_enabled": false,
+        "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+        "runner_pid": 1253012,
+        "observed_current": {
+          "problem_id": "920",
+          "stage": "author",
+          "started_at": "2026-10-25T15:46:54.586608+00:00",
+          "run_id": "920-author-9990eb728a2d"
+        }
+      },
+      "status": "running",
+      "current": {
+        "problem_id": "920",
+        "stage": "author",
+        "started_at": "2026-10-25T15:46:54.586608+00:00",
+        "run_id": "920-author-9990eb728a2d"
+      },
+      "runner_alive": true,
+      "runner_nice": 10,
+      "descendants": [
+        {
+          "pid": 1253055,
+          "ppid": 1253012,
+          "name": "node",
+          "nice": 10
+        },
+        {
+          "pid": 1253062,
+          "ppid": 1253055,
+          "name": "codex",
+          "nice": 10
+        },
+        {
+          "pid": 1253184,
+          "ppid": 1253062,
+          "name": "node",
+          "nice": 10
+        },
+        {
+          "pid": 1253319,
+          "ppid": 1253062,
+          "name": "codex-code-mode",
+          "nice": 10
+        }
+      ],
+      "events_path": "/home/songyy/projects/leetcode-hard-lane-state-920-20261025/runs/920-author-9990eb728a2d/events.jsonl",
+      "events_bytes": 299270,
+      "events_modified_at": "2026-10-25T15:47:47.362422+00:00",
+      "event_types": [
+        "item.completed",
+        "item.started",
+        "thread.started",
+        "turn.started"
+      ],
+      "item_types": [
+        "agent_message",
+        "command_execution",
+        "web_search"
+      ],
+      "session_ids": [
+        "01a173be-5351-7610-b2d1-2a783fba1497"
+      ]
+    }
+  ],
+  "central": {
+    "status": "running",
+    "current": {
+      "problem_id": "793",
+      "stage": "review",
+      "started_at": "2026-10-25T15:45:15.224638+00:00",
+      "run_id": "793-review-8fb4de99f7eb"
+    },
+    "expected_head": "59d0c9b1f395064dc3af7be66dadd6c18d92944d",
+    "stop_exists": false,
+    "reserved_ids_unstarted": true
+  },
+  "resources": {
+    "load": "2.39 1.45 0.96 5/1573 1253888",
+    "memory": {
+      "MemAvailable": "1383444 kB",
+      "SwapFree": "13803604 kB"
+    },
+    "memory_pressure": "some avg10=3.39 avg60=7.44 avg300=3.25 total=678748870\nfull avg10=3.10 avg60=7.00 avg300=3.05 total=607250441"
+  }
+}
