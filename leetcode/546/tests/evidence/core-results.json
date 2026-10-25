@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "cases": 3485,
+  "legal_move_checks": 11831,
+  "intermediate_states": 200,
+  "root_candidates": [
+    [
+      3,
+      5
+    ],
+    [
+      6,
+      10
+    ],
+    [
+      11,
+      17
+    ]
+  ],
+  "duplicate_copy_keys": 0
+}
