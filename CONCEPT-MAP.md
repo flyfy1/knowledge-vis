@@ -1110,3 +1110,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Interval DP with a carried boundary | `leetcode/546/#step2` | Remember saved equal-color boxes while clearing the separating interval. |
 
 <!-- /leetcode-546-campaign -->
+
+
+<!-- leetcode-587-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| convex hull boundary | `leetcode/587/#step0` | All perimeter trees, including collinear edge trees |
+| signed turn | `leetcode/587/#step1` | Integer cross product distinguishes left, straight and right |
+| monotone chain | `leetcode/587/#step2` | Repeated strict-right-turn removal in two sorted scans |
+
+<!-- /leetcode-587-campaign -->
