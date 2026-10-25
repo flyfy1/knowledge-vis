@@ -1,0 +1,29 @@
+[
+  {
+    "id": "878-author-004c6e7e9e78",
+    "problem_id": "878",
+    "role": "author",
+    "started_at": "2026-10-25T23:11:30.966203+00:00",
+    "status": "completed",
+    "candidate": "cf1a31fc75c66ca79e54513e050b7e0ba31b6e70",
+    "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/878-author-004c6e7e9e78",
+    "session_ids": [
+      "01a17555-5f63-7560-97fa-cc0c74925f3f"
+    ],
+    "finished_at": "2026-10-25T23:23:44.100138+00:00",
+    "result": {
+      "outcome": "ready",
+      "detail": "Implemented and froze the bilingual #878 lesson in leetcode/878/. Official Python interface verified; numerical, browser, source-parity, accessibility, and metadata-preflight checks passed. Evidence is in tests/evidence/. Independent review remains pending; no acceptance or deployment claimed."
+    }
+  },
+  {
+    "id": "878-fix-4f4526c6a7fa",
+    "problem_id": "878",
+    "role": "fix",
+    "started_at": "2026-10-25T23:28:19.511278+00:00",
+    "status": "running",
+    "candidate": "25ae6a90ae9d329bdcf0cfe98e64c78350aef879",
+    "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/878-fix-4f4526c6a7fa",
+    "session_ids": []
+  }
+]

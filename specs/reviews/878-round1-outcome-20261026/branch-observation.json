@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-10-25T23:29:20.182939+00:00",
+  "branch": "codex/all-hard-20261018",
+  "local_head": "25ae6a90ae9d329bdcf0cfe98e64c78350aef879",
+  "registered_head": null,
+  "remote_head": "cf1a31fc75c66ca79e54513e050b7e0ba31b6e70",
+  "worktree_status": "?? leetcode/878/tests/evidence/r1-mapping-red.log\n?? leetcode/878/tests/mapping.cjs\n",
+  "note": "Read-only ls-remote and immutable Git comparison; no fetch/push. Active author worktree status is preserved, not cleaned.",
+  "comparison_head": "25ae6a90ae9d329bdcf0cfe98e64c78350aef879",
+  "remote_is_ancestor_of_review": true,
+  "unpushed_commits_through_review": [
+    "6edbe661e03cd4d7a07f979a3f2269d54e5ac4a0",
+    "25ae6a90ae9d329bdcf0cfe98e64c78350aef879"
+  ]
+}

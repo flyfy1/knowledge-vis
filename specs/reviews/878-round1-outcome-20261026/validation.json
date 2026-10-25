@@ -1,0 +1,125 @@
+{
+  "validatedAt": "2026-10-25T23:30:17.841192+00:00",
+  "checks": {
+    "terminalOutcomeAgreement": true,
+    "requiredFindingPreserved": true,
+    "candidateReviewTreesEqual": true,
+    "originalEvidenceHashesVerified": true,
+    "registrationAbsent": true
+  },
+  "reportSha256": "1fb78d8c18c1ae63276bc271fb9bca8e4480dc093631215b3c165a146adbc436",
+  "files": {
+    "878-review-1-e7e2fb2d.md": {
+      "sha256": "e31c64dc10db97cce546c45649ccbc0448f2dd924762019e131cd3905384ba77",
+      "bytes": 18637
+    },
+    "author-runs.json": {
+      "sha256": "c07ecd540499c27c94269388fb8b065cd6961d8c18e5c10a58bd7dd220587605",
+      "bytes": 1191
+    },
+    "branch-observation.json": {
+      "sha256": "1efa044e83952987d4976cbf76731681be47efbfb6d0dfcda63e655bb7626b6f",
+      "bytes": 733
+    },
+    "candidate/BRIEF.md": {
+      "sha256": "157d53ef4bfe4f634d7c8306a5eac5f04994653feb3f48f80ae5173d4c4d7879",
+      "bytes": 7657
+    },
+    "candidate/app.js": {
+      "sha256": "cc8447b6476a9748665166a18431d063a901879c0422b81d51a27412e143c625",
+      "bytes": 3851
+    },
+    "candidate/copy.js": {
+      "sha256": "bc2b91e32cd7584ae27ae8e51cf1a3589e338d1e83d0b0cc00ce3a2c788dcdff",
+      "bytes": 17687
+    },
+    "candidate/core.js": {
+      "sha256": "9242c02baba7d9d0426a80a1bab0067f2a7095ef811744b2fbcb1a51470745ba",
+      "bytes": 865
+    },
+    "candidate/index.html": {
+      "sha256": "0250eaef438d21022509586ecbf888d61e312646e12fcb6ee75ab9cd5e1add0d",
+      "bytes": 6605
+    },
+    "candidate/lesson-entry.json": {
+      "sha256": "34f456fe0585122ac5789169cf55a94aa1d52205d3e6c7d5b9ad52e19886b51f",
+      "bytes": 1072
+    },
+    "candidate/python-code.js": {
+      "sha256": "744a183d3d01a2c9625e6d93ed982f280b687a517df0713d046c7ed8ee3d1ce3",
+      "bytes": 454
+    },
+    "candidate/solution.py": {
+      "sha256": "cb7ffefd45a9031b51a15eb7f36bf9ac94c0fe404a38cf418cb5328e60f2fd56",
+      "bytes": 412
+    },
+    "candidate/style.css": {
+      "sha256": "ea5f32e962a43da96e03f920b125b0219071c25ea7b72bec51237c937d225c26",
+      "bytes": 2540
+    },
+    "candidate/tests/access.cjs": {
+      "sha256": "1d11d4c77d978225b42c3bd5b91d4e7b6fd7e835acebc3c161185d327631b808",
+      "bytes": 3358
+    },
+    "candidate/tests/browser.cjs": {
+      "sha256": "a17fcf67069959a0104b7d385adc0e5ded90a85dd2275d1614646e964e5da9d1",
+      "bytes": 13985
+    },
+    "candidate/tests/test_core.cjs": {
+      "sha256": "2b911778f921dac24b46f2456df21a1a7d6560866be5ee246ddd85b14a5d56f8",
+      "bytes": 3614
+    },
+    "review-events.jsonl.gz": {
+      "sha256": "df839118a650f7f6b9c9ad394a3012d2de2b175b2ea6b4dd125a532889ef8619",
+      "bytes": 66211
+    },
+    "review-evidence/access-result.json": {
+      "sha256": "c941d636232f4f6aedf57cca1df858b84d1dc0b4a0b264a19ba4b14645a225c9",
+      "bytes": 5612
+    },
+    "review-evidence/asset-diagnostics.json": {
+      "sha256": "e4ff7c86cf12d9ae3ebe39b25c5e1f5805d80b601a9782e1c4d04677d4513fbe",
+      "bytes": 55
+    },
+    "review-evidence/browser-result.json": {
+      "sha256": "290910b3a1a21fa2bfead5a4bfc4c70dbc1b69afe2248489a341bc7bfdc9a278",
+      "bytes": 19080
+    },
+    "review-evidence/core-result.json": {
+      "sha256": "0bd8c82cfbd04af71448ce4711bc141e3381f2bf836224d219e3eaf53748756d",
+      "bytes": 19665
+    },
+    "review-evidence/fit-progress.json": {
+      "sha256": "9082b3f30efc841db09af33d34d194721d3e7d71ee50ee16a59d5b5ce3cfc69a",
+      "bytes": 1612
+    },
+    "review-evidence/independent-checks.json": {
+      "sha256": "15f95120e9afbd2b91ee220416410e50f35ab4a19ccc0be20780d8c8bbe446b0",
+      "bytes": 34386
+    },
+    "review-evidence/mapping-settled-en.png": {
+      "sha256": "bcf34da7b6006520eea3c67226b797eadcadc09f68e274357256151c50c5eb14",
+      "bytes": 156434
+    },
+    "review-evidence/mapping-settled-zh.png": {
+      "sha256": "e9540a5c52e03024f6aa1da4979f5ed2d2adac78ef97106929e04ddb4350a298",
+      "bytes": 178962
+    },
+    "review-evidence/python-result.json": {
+      "sha256": "8baeae659b16197b326e5294f728344ab8ed74b966092ffd3fd83cbcc58b9e88",
+      "bytes": 1281
+    },
+    "review-final.json": {
+      "sha256": "e685f1890bc6609e9029265ef6e1aa6d4f4c44650fd2708c3444ad8cf74bf3ec",
+      "bytes": 658
+    },
+    "review-run.json": {
+      "sha256": "0cdecdc8ff9ec0facfe65ceecec8c1bef47e7bf47815d63b032fb4ecc11f8c88",
+      "bytes": 1261
+    },
+    "snapshot.json": {
+      "sha256": "09545aa9abf02e3d22dd1034f7edd2674fa16982c00eccc60278ab72967a04cc",
+      "bytes": 12313
+    }
+  }
+}

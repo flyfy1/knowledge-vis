@@ -1,0 +1,37 @@
+{
+  "id": "878-review-908c6bc0f087",
+  "problem_id": "878",
+  "role": "review",
+  "started_at": "2026-10-25T23:23:57.352356+00:00",
+  "status": "completed",
+  "candidate": "6edbe661e03cd4d7a07f979a3f2269d54e5ac4a0",
+  "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/878-review-908c6bc0f087",
+  "session_ids": [
+    "01a17560-c322-7e10-9f01-94599fc286ee"
+  ],
+  "finished_at": "2026-10-25T23:28:03.351904+00:00",
+  "result": {
+    "outcome": "changes_required",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      2,
+      4
+    ],
+    "required_open": [
+      "878-R1"
+    ],
+    "report_path": "specs/reviews/878-review-1-e7e2fb2d.md",
+    "evidence": [
+      "Cold browser walkthrough saved before source audit.",
+      "Fresh canonical Python checks confirmed (8,4,7)=21 and (3,3,6)=9.",
+      "Bilingual source, clipboard, fallback and download parity passed.",
+      "320/390/desktop layout, keyboard and 200% CSS magnification checked.",
+      "Non-mutating metadata preflight passed.",
+      "Step 5 code-mapping bullets contain input labels instead of explanations."
+    ],
+    "detail": "92.5/100; acceptance withheld because Python-transfer teaching scores below 3 and required finding 878-R1 remains open."
+  }
+}
