@@ -1357,3 +1357,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Recursive descent | `leetcode/736/#step4` | Consume exactly one expression per recursive call. |
 
 <!-- /leetcode-736-campaign -->
+
+
+<!-- leetcode-741-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Synchronized grid path DP | `leetcode/741/#step2` | Reverse a return path, synchronize by row + column, and count shared cells once. |
+
+<!-- /leetcode-741-campaign -->
