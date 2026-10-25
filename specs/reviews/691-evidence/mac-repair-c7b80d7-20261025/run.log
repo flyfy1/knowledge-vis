@@ -1,0 +1,10 @@
+{"running": ["node", "leetcode/691/tests/browser.cjs"], "candidate": "c7b80d70cc4c8c4614eb1e3c5ef8d942a2cbe5fc"}
+Browser self-check passed; evidence: /tmp/leetcode-691-mac-c7b80d7-20261025/original
+{"running": ["node", "/tmp/leetcode-691-fallback-probe-20261025.cjs"], "candidate": "c7b80d70cc4c8c4614eb1e3c5ef8d942a2cbe5fc"}
+{"fallbackLocales":2,"result":"pass"}
+{"running": ["node", "/tmp/leetcode-691-preset-probe-20261025.cjs"], "candidate": "c7b80d70cc4c8c4614eb1e3c5ef8d942a2cbe5fc"}
+{"records":28,"failures":[]}
+{"running": ["node", "leetcode/691/tests/selected-label.cjs"], "candidate": "c7b80d70cc4c8c4614eb1e3c5ef8d942a2cbe5fc"}
+R691-01 selected-label regression passed (both locales, every preset, event 3, locale roundtrip, 200% CSS zoom).
+{"running": ["node", "leetcode/691/tests/rendered-state.cjs"], "candidate": "c7b80d70cc4c8c4614eb1e3c5ef8d942a2cbe5fc"}
+Rendered state: candidate/best, event accounting, formula and prediction scope passed in both locales.

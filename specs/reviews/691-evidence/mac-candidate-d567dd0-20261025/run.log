@@ -1,0 +1,13 @@
+{"running": ["python3", "-B", "leetcode/691/tests/check.py"], "candidate": "d567dd00bc05b3a4f86493dc28149d1fe3235660"}
+{"kind": "author self-check", "exhaustive": 2542, "seeded": 350, "boundary": 8, "traceCases": 52, "events": 1822, "memoChecks": 215, "sourceSha256": "88680076d70ab2a450ff60d16560c4536d86a6b1d35e764b3a8144865b976252", "sourceParity": true, "duplicateCopyKeys": false}
+{"running": ["node", "leetcode/691/tests/browser.cjs"], "candidate": "d567dd00bc05b3a4f86493dc28149d1fe3235660"}
+Browser self-check passed; evidence: /tmp/leetcode-691-mac-d567dd0-20261025/original
+{"running": ["node", "/tmp/leetcode-691-fallback-probe-20261025.cjs"], "candidate": "d567dd00bc05b3a4f86493dc28149d1fe3235660"}
+{"fallbackLocales":2,"result":"pass"}
+{"running": ["node", "/tmp/leetcode-691-preset-probe-20261025.cjs"], "candidate": "d567dd00bc05b3a4f86493dc28149d1fe3235660"}
+{"records":28,"failures":[{"viewportWidth":320,"lang":"en","index":6,"label":"Length-15 target, missing letters · −1","font":"16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif","width":260,"paddingLeft":15,"paddingRight":15,"arrowAllowance":0,"textWidth":291.44561767578125,"available":230,"fits":false}]}
+Traceback (most recent call last):
+  File "/tmp/leetcode-691-frozen-mac-check-20261025.py", line 18, in <module>
+    if r.returncode:raise RuntimeError('Check failed: '+str(cmd))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Check failed: ['node', '/tmp/leetcode-691-preset-probe-20261025.cjs']

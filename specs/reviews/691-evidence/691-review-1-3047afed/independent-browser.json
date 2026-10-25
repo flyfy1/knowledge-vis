@@ -1,0 +1,232 @@
+{
+  "host": "linux",
+  "hashes": {
+    "index.html": "6b1460a310d38b4a161373634f51c91248c4dc3119e0f9e2e58957ab52c11ee4",
+    "app.js": "5268512eaf769a466c4d60bfd21fd157ecc02a09073c99970f60752b194f87cc",
+    "core.js": "10df08088d37a2443c4c1f8400b30139c03f3a304066f924401487ca349b1838",
+    "copy.js": "e788a14cceb9f0850b8e46bbea74149ee26e7c9efaca97b84334f8661f332bad",
+    "python-code.js": "198c5628c05148f6246c4438d8d9dd7e9c385fe9c8e07fe976644a13a59c3934",
+    "style.css": "5d62e294bb86337196eb5bbb7c726092b9d7dc1cacc037c33e58a13198b57b21",
+    "solution.py": "88680076d70ab2a450ff60d16560c4536d86a6b1d35e764b3a8144865b976252",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "labels": [
+    {
+      "lang": "en",
+      "width": 320,
+      "label": "Tiny: ab/a → aab · 2",
+      "box": 262,
+      "text": 147.13623046875,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "label": "Official: basicbasic · −1",
+      "box": 262,
+      "text": 168.67208862304688,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "label": "Length-15 target, missing letters · −1",
+      "box": 262,
+      "text": 276.24029541015625,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "label": "Tiny: ab/a → aab · 2",
+      "box": 329,
+      "text": 147.13623046875,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "label": "Official: basicbasic · −1",
+      "box": 329,
+      "text": 168.67208862304688,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "label": "Length-15 target, missing letters · −1",
+      "box": 329,
+      "text": 276.24029541015625,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "label": "Tiny: ab/a → aab · 2",
+      "box": 329,
+      "text": 147.13623046875,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "label": "Official: basicbasic · −1",
+      "box": 329,
+      "text": 168.67208862304688,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "label": "Length-15 target, missing letters · −1",
+      "box": 329,
+      "text": 276.24029541015625,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "label": "微型：ab/a → aab · 2",
+      "box": 214,
+      "text": 155.6162567138672,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "label": "官方：basicbasic · −1",
+      "box": 214,
+      "text": 155.6800537109375,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "label": "最长目标，缺字母 · −1",
+      "box": 214,
+      "text": 159.10403442382812,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "label": "微型：ab/a → aab · 2",
+      "box": 214,
+      "text": 155.6162567138672,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "label": "官方：basicbasic · −1",
+      "box": 214,
+      "text": 155.6800537109375,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "label": "最长目标，缺字母 · −1",
+      "box": 214,
+      "text": 159.10403442382812,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "label": "微型：ab/a → aab · 2",
+      "box": 214,
+      "text": 155.6162567138672,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "label": "官方：basicbasic · −1",
+      "box": 214,
+      "text": 155.6800537109375,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "label": "最长目标，缺字母 · −1",
+      "box": 214,
+      "text": 159.10403442382812,
+      "padding": [
+        "15px",
+        "15px"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    }
+  ]
+}

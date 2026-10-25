@@ -1,0 +1,39 @@
+{
+  "kind": "author self-check",
+  "records": [
+    {
+      "lang": "en",
+      "event": 28,
+      "expected": {
+        "sticker": "a",
+        "child": "b",
+        "childValue": 1,
+        "candidate": 2,
+        "best": 1,
+        "historyEntries": 29
+      },
+      "observed": "Return to ab: sticker a, child b has value 1; candidate 2; best so far 1.",
+      "formula": "F(0)=0; child[j]=max(0,r[j]−sticker[j]); F(r)=min(1+F(child)), over sticker[p]>0 only; no feasible branch means ∞.",
+      "feedback": "That prediction does not hold. The answer is 3. Six letters are missing and each sticker supplies at most two, so at least three are needed; ab+ac+bc attains it. Only the first sticker must cover a. After ab, the remainder is abcc; ac and bc can follow. Skipping is local to a call, not a global ban. Two ignores multiplicity; four treats a local skip as permanent deletion.",
+      "rewindReplay": true,
+      "changedPredictionHidden": true
+    },
+    {
+      "lang": "zh",
+      "event": 28,
+      "expected": {
+        "sticker": "a",
+        "child": "b",
+        "childValue": 1,
+        "candidate": 2,
+        "best": 1,
+        "historyEntries": 29
+      },
+      "observed": "返回父 ab：贴纸 a 的子 b 值 1；候选 2；当前最小 1。",
+      "formula": "F(0)=0；child[j]=max(0,r[j]−sticker[j])；F(r)=min(1+F(child))，只枚举 sticker[p]>0；无可行分支为 ∞。",
+      "feedback": "这个预测不成立。 答案是 3。共缺 6 个字母，每张至多供 2 个，所以至少 3 张；ab+ac+bc 恰好满足。根调用只要求第一张含 a；先用 ab 后剩 abcc，之后可以用 ac 和 bc。跳过只是当前调用的筛选，不是全局禁用。2 忽略份数，4 把局部跳过误当成永久删除。",
+      "rewindReplay": true,
+      "changedPredictionHidden": true
+    }
+  ]
+}
