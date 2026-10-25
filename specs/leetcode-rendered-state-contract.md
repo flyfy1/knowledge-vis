@@ -48,6 +48,25 @@ example, in #312 with padded values `[1,3,1,5,8,1]`, interval `(0,3)` has candid
 `k=1` worth 30 and `k=2` worth 8. A completed frame cannot call `k=2` the candidate
 producing 30. Rewind and replay that frame in both locales and check the pair.
 
+Keep algorithmic state distinct from the current operation, inspected item,
+and keyboard focus. When applicable meanings overlap on one item, preserve a
+visible way to identify each; one state style must not erase another meaning
+promised by the legend or explanation. Use an appropriate text label, shape,
+or other distinguishable treatment consistent with existing accessibility
+rules. No particular color, ring, layered-outline technique, or new widget is
+required. Keyboard focus identifies the control receiving input; it must not
+silently redefine the algorithm's current item.
+
+Check an actual overlapping frame, comparing the current item with another
+item in the same algorithmic state when such a comparison exists. Inspect the
+rendered markers and their meaning after CSS and rendering, in both locales
+and through rewind/replay; check focus overlap only where applicable. The
+presence of a class or `data-current` attribute alone cannot prove that its
+marker remains visible. Use a targeted assertion for the rendered
+representation plus visual inspection, and retain the state/actions, expected
+distinction and observed result. Scope this to applicable overlaps; an
+exhaustive state matrix or new test framework is not required.
+
 ## 3. Give every count a unit and an accounting boundary
 
 Distinguish a position index, positions completed, work in the current step,
