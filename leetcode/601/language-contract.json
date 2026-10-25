@@ -1,0 +1,16 @@
+{
+  "problemId": 601,
+  "language": "Python",
+  "officialSource": "https://leetcode.com/problems/human-traffic-of-stadium/",
+  "supportedLanguages": [
+    "MySQL",
+    "MS SQL Server",
+    "PostgreSQL",
+    "Oracle",
+    "Python"
+  ],
+  "interface": "Pandas: import pandas as pd; def human_traffic(stadium: pd.DataFrame) -> pd.DataFrame. Input columns id:int, visit_date:date, people:int. Return matching original records ordered by visit_date ascending. SQL dialects offer query statements against Stadium.",
+  "rationale": "The official Pandas (pythondata) selector provides a faithful Python DataFrame callable, so the first preferred language is available. No TypeScript or JavaScript snippet was offered.",
+  "verifiedAt": "2026-10-25T02:37:03.231487+00:00",
+  "verificationEvidence": "provenance/official.json"
+}

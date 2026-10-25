@@ -1,0 +1,38 @@
+{
+  "id": 601,
+  "title": {
+    "zh": "体育馆的人流量",
+    "en": "Human Traffic of Stadium"
+  },
+  "desc": {
+    "zh": "用重叠的三连编号找出所有合格记录，分清编号与日期。",
+    "en": "Use overlapping ID triples to recover every qualifying visit, even across date gaps."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "Pandas 数据筛选",
+      "en": "Pandas filtering"
+    },
+    {
+      "zh": "集合与连续编号",
+      "en": "Sets and consecutive IDs"
+    }
+  ],
+  "path": "601/",
+  "leetcodeUrl": "https://leetcode.com/problems/human-traffic-of-stadium/",
+  "language": "Python",
+  "complexity": "O(n log n) time including output sorting (expected hash costs); O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "Consecutive-ID triple witnesses",
+      "step": 1,
+      "description": "Derive complete runs from overlapping valid triples."
+    },
+    {
+      "name": "Union invariant",
+      "step": 2,
+      "description": "Marked IDs equal the union of all complete triples tested so far."
+    }
+  ]
+}
