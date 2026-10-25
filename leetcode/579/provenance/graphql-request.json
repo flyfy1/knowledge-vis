@@ -1,0 +1,6 @@
+{
+  "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug isPaidOnly difficulty content translatedContent exampleTestcases sampleTestCase metaData codeSnippets { lang langSlug code } } }",
+  "variables": {
+    "titleSlug": "find-cumulative-salary-of-an-employee"
+  }
+}
