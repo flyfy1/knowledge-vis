@@ -1634,3 +1634,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Flood fill | `leetcode/827/#step2` | Use an iterative stack to visit each land cell once. |
 
 <!-- /leetcode-827-campaign -->
+
+
+<!-- leetcode-828-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Occurrence contributions | `leetcode/828/#step2` | Count independent left and right endpoint choices between equal characters. |
+| Unique character count | `leetcode/828/#step0` | Count characters occurring exactly once in each positional substring. |
+
+<!-- /leetcode-828-campaign -->
