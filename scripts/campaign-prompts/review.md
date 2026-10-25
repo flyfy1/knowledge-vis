@@ -18,7 +18,9 @@ label custom-input checks as code checks. No source-reading substitute for a col
 browser walk. No score inferred from screenshots or test counts alone.
 
 After saving the cold walkthrough, audit canonical source, constraints and test
-claims. Inspect tests before running: redirect generated results/screenshots to
+claims. Apply specs/leetcode-rendered-state-contract.md only after the cold walk;
+it clarifies existing checks and does not change the frozen rubric. Inspect tests
+before running: redirect generated results/screenshots to
 your evidence directory or temporary files; never regenerate tracked candidate
 assets or author evidence while reviewing. Check independently chosen examples and boundaries, visual-to-code
 mapping, before/after semantics and intermediate invariants. Exercise both
