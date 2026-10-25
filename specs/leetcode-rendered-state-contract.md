@@ -229,3 +229,71 @@ roundtrip. No exhaustive cross-product of fonts, browsers or controls is propose
 This adds no runtime dependency, universal renderer, new layout, scoring dimension
 or retroactive re-review campaign. Adoption applies to future candidates; concrete
 new defects in existing lessons retain the ordinary repair-and-review procedure.
+
+## 9. Check cost bounds at valid parameter boundaries
+
+Define each complexity parameter and its counting convention beside the claim.
+For a bound with several independent parameters, check whether one can be zero
+while input processing, output materialization, or base-level work remains large.
+Use the actual displayed baseline as well as the canonical implementation; a
+correct optimized solution does not make an incorrect baseline explanation valid.
+
+For example, let n be formula length, A the number of expanded atom entries, and
+d the maximum number of enclosing parentheses, so d=0 without parentheses. An
+expansion baseline still constructs and tallies A entries for `H1000`. For this
+expansion/tally stage before sorting, the bound
+`O(n + A*d)` loses that work at d=0. A suitable bound is `O(n + A*(d+1))`, with an
+explanation that the extra level includes the top-level expansion and tally. An
+alternative convention counting the base parsing level in d must explicitly say
+d>=1. Do not silently change the meaning of depth between prose and formula.
+
+Independently check one valid degenerate case and one nondegenerate case, such as
+`H1000` (d=0, A=1000) and `(H1000)2` (d=1, A=2000). Read the actual loops or copies
+that perform the claimed work and inspect both rendered locale explanations.
+Use safe small expansions; allocating the billion-entry teaching example is not
+necessary. A measured allocation or timing can support an observation, but is
+not by itself proof of an asymptotic bound. Numerical output equality also does
+not validate a time or space claim.
+
+This is a targeted mathematical check, not a rule to append `+1` mechanically to
+every expression or benchmark every lesson. Preserve the stated valid domain,
+the distinction between input size and expanded/output size, and the separate
+costs of the baseline, submission and teaching snapshots. A reproduced false
+cost claim follows the existing required-finding and repair/re-review gates.
+It adds no scoring dimension or retroactive acceptance change. The dispatcher
+adopts this section for subsequent candidates at a stopped campaign boundary;
+already frozen candidates retain their recorded shared-policy identity.
+
+## 10. Calibrate numerical accessibility checks before trusting their verdict
+
+When a lesson's custom test computes contrast, verify the actual measurement
+function against independent known values before relying on its pass/fail result.
+For sRGB, use the [WCAG relative-luminance definition](https://www.w3.org/TR/WCAG22/#dfn-relative-luminance):
+linearized channel weights are 0.2126, 0.7152 and 0.0722. Black has luminance 0,
+white 1, and their contrast ratio is 21. Include the primary colors and a case
+near the relevant threshold so a small coefficient error cannot silently pass.
+For example, #747474 on black is approximately 4.492948: it fails a 4.5 threshold
+without rounding up. An incorrect green weight of 0.7322 reports approximately
+4.552328 and incorrectly passes that same pair.
+
+Exercise the function used by the browser check, not an unused replacement with
+the correct constants. When repairing a reproduced defect, preserve a red result
+against the defective function and a passing result against its repair. Recompute the actual recorded colors or
+rerun the rendered-state measurement to distinguish a faulty test from a faulty
+palette. Do not claim a product contrast failure from the calculation bug alone,
+or silently replace the historical test result with corrected evidence.
+
+Continue applying the existing accessibility scope and applicable thresholds;
+this section does not redefine which text is large, which controls are exempt,
+or how to measure transparency, gradients and composited backgrounds. A check
+that only supports solid colors must identify that limit rather than pretend
+to establish contrast for unsupported effects. Record candidate, tested colors,
+formula/reference, threshold and unrounded ratio with the result. Browser and
+state coverage still need their own evidence.
+
+This is a bounded check of a correctness-critical measurement helper, not a new
+accessibility framework or exhaustive testing campaign. It adds no runtime
+library, rubric dimension or retroactive acceptance change. A reproduced test
+defect follows the ordinary repair and independent re-review procedure. Adopt
+this clarification for future candidates at a stopped boundary, retaining the
+shared-policy identity and historical results of already frozen candidates.
