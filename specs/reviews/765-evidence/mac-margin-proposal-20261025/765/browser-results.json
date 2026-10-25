@@ -1,0 +1,422 @@
+{
+  "browser": "151.0.7922.34",
+  "host": "darwin",
+  "url": "http://127.0.0.1:18770/leetcode/765/",
+  "states": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "text": "i=0: partner 1 is at j=2. Swap seats 1↔2, moving person 2 to 2; pos[1]=1, pos[2]=2. This decision adds 1 swap.",
+      "progress": "Processed 1/2 seat pairs · Cumulative swaps: 1",
+      "groups": "Current simulation: connected groups of couple labels {0} {1}; c=2, minimum remaining n−c=0 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "text": "At left seat i=2, the partner is 3, already on the right: skip without adding a swap.",
+      "progress": "Processed 2/2 seat pairs · Cumulative swaps: 1",
+      "groups": "Current simulation: connected groups of couple labels {0} {1}; c=2, minimum remaining n−c=0 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "text": "At left seat i=0, the partner is 2, already on the right: skip without adding a swap.",
+      "progress": "Processed 1/2 seat pairs · Cumulative swaps: 0",
+      "groups": "Current simulation: connected groups of couple labels {0} {1}; c=2, minimum remaining n−c=0 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "text": "At left seat i=2, the partner is 1, already on the right: skip without adding a swap.",
+      "progress": "Processed 2/2 seat pairs · Cumulative swaps: 0",
+      "groups": "Current simulation: connected groups of couple labels {0} {1}; c=2, minimum remaining n−c=0 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "text": "i=0: partner 1 is at j=5. Swap seats 1↔5, moving person 2 to 5; pos[1]=1, pos[2]=5. This decision adds 1 swap.",
+      "progress": "Processed 1/3 seat pairs · Cumulative swaps: 1",
+      "groups": "Current simulation: connected groups of couple labels {0} {1,2}; c=2, minimum remaining n−c=1 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "text": "i=2: partner 2 is at j=5. Swap seats 3↔5, moving person 4 to 5; pos[2]=3, pos[4]=5. This decision adds 1 swap.",
+      "progress": "Processed 2/3 seat pairs · Cumulative swaps: 2",
+      "groups": "Current simulation: connected groups of couple labels {0} {1} {2}; c=3, minimum remaining n−c=0 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "text": "At left seat i=4, the partner is 4, already on the right: skip without adding a swap.",
+      "progress": "Processed 3/3 seat pairs · Cumulative swaps: 2",
+      "groups": "Current simulation: connected groups of couple labels {0} {1} {2}; c=3, minimum remaining n−c=0 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "text": "i=0: partner 1 is at j=7. Swap seats 1↔7, moving person 2 to 7; pos[1]=1, pos[2]=7. This decision adds 1 swap.",
+      "progress": "Processed 1/4 seat pairs · Cumulative swaps: 1",
+      "groups": "Current simulation: connected groups of couple labels {0} {1,2,3}; c=2, minimum remaining n−c=2 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "text": "i=2: partner 2 is at j=7. Swap seats 3↔7, moving person 4 to 7; pos[2]=3, pos[4]=7. This decision adds 1 swap.",
+      "progress": "Processed 2/4 seat pairs · Cumulative swaps: 2",
+      "groups": "Current simulation: connected groups of couple labels {0} {1} {2,3}; c=3, minimum remaining n−c=1 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "text": "i=4: partner 4 is at j=7. Swap seats 5↔7, moving person 6 to 7; pos[4]=5, pos[6]=7. This decision adds 1 swap.",
+      "progress": "Processed 3/4 seat pairs · Cumulative swaps: 3",
+      "groups": "Current simulation: connected groups of couple labels {0} {1} {2} {3}; c=4, minimum remaining n−c=0 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "text": "At left seat i=6, the partner is 6, already on the right: skip without adding a swap.",
+      "progress": "Processed 4/4 seat pairs · Cumulative swaps: 3",
+      "groups": "Current simulation: connected groups of couple labels {0} {1} {2} {3}; c=4, minimum remaining n−c=0 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "text": "i=0: partner 1 is at j=2. Swap seats 1↔2, moving person 2 to 2; pos[1]=1, pos[2]=2. This decision adds 1 swap.",
+      "progress": "Processed 1/4 seat pairs · Cumulative swaps: 1",
+      "groups": "Current simulation: connected groups of couple labels {0} {1} {2,3}; c=3, minimum remaining n−c=1 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "text": "At left seat i=2, the partner is 3, already on the right: skip without adding a swap.",
+      "progress": "Processed 2/4 seat pairs · Cumulative swaps: 1",
+      "groups": "Current simulation: connected groups of couple labels {0} {1} {2,3}; c=3, minimum remaining n−c=1 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "text": "i=4: partner 5 is at j=6. Swap seats 5↔6, moving person 6 to 6; pos[5]=5, pos[6]=6. This decision adds 1 swap.",
+      "progress": "Processed 3/4 seat pairs · Cumulative swaps: 2",
+      "groups": "Current simulation: connected groups of couple labels {0} {1} {2} {3}; c=4, minimum remaining n−c=0 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "text": "At left seat i=6, the partner is 7, already on the right: skip without adding a swap.",
+      "progress": "Processed 4/4 seat pairs · Cumulative swaps: 2",
+      "groups": "Current simulation: connected groups of couple labels {0} {1} {2} {3}; c=4, minimum remaining n−c=0 swaps. Groups are computed for the proof only; the submission builds no graph."
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "text": "i=0：伴侣 1 在 j=2。交换座位 1↔2，把人 2 移到 2；pos[1]=1，pos[2]=2。本次 +1 次交换。",
+      "progress": "已处理 1/2 个座位对 · 累计交换 1 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1}；c=2，剩余最少 n−c=0 次。这里只为证明计算分组，提交代码不用建图。"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "text": "左座位 i=2 的伴侣是 3，右边已经是此人：跳过，不增加交换次数。",
+      "progress": "已处理 2/2 个座位对 · 累计交换 1 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1}；c=2，剩余最少 n−c=0 次。这里只为证明计算分组，提交代码不用建图。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "text": "左座位 i=0 的伴侣是 2，右边已经是此人：跳过，不增加交换次数。",
+      "progress": "已处理 1/2 个座位对 · 累计交换 0 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1}；c=2，剩余最少 n−c=0 次。这里只为证明计算分组，提交代码不用建图。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "text": "左座位 i=2 的伴侣是 1，右边已经是此人：跳过，不增加交换次数。",
+      "progress": "已处理 2/2 个座位对 · 累计交换 0 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1}；c=2，剩余最少 n−c=0 次。这里只为证明计算分组，提交代码不用建图。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "text": "i=0：伴侣 1 在 j=5。交换座位 1↔5，把人 2 移到 5；pos[1]=1，pos[2]=5。本次 +1 次交换。",
+      "progress": "已处理 1/3 个座位对 · 累计交换 1 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1,2}；c=2，剩余最少 n−c=1 次。这里只为证明计算分组，提交代码不用建图。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "text": "i=2：伴侣 2 在 j=5。交换座位 3↔5，把人 4 移到 5；pos[2]=3，pos[4]=5。本次 +1 次交换。",
+      "progress": "已处理 2/3 个座位对 · 累计交换 2 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1} {2}；c=3，剩余最少 n−c=0 次。这里只为证明计算分组，提交代码不用建图。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "text": "左座位 i=4 的伴侣是 4，右边已经是此人：跳过，不增加交换次数。",
+      "progress": "已处理 3/3 个座位对 · 累计交换 2 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1} {2}；c=3，剩余最少 n−c=0 次。这里只为证明计算分组，提交代码不用建图。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "text": "i=0：伴侣 1 在 j=7。交换座位 1↔7，把人 2 移到 7；pos[1]=1，pos[2]=7。本次 +1 次交换。",
+      "progress": "已处理 1/4 个座位对 · 累计交换 1 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1,2,3}；c=2，剩余最少 n−c=2 次。这里只为证明计算分组，提交代码不用建图。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "text": "i=2：伴侣 2 在 j=7。交换座位 3↔7，把人 4 移到 7；pos[2]=3，pos[4]=7。本次 +1 次交换。",
+      "progress": "已处理 2/4 个座位对 · 累计交换 2 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1} {2,3}；c=3，剩余最少 n−c=1 次。这里只为证明计算分组，提交代码不用建图。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "text": "i=4：伴侣 4 在 j=7。交换座位 5↔7，把人 6 移到 7；pos[4]=5，pos[6]=7。本次 +1 次交换。",
+      "progress": "已处理 3/4 个座位对 · 累计交换 3 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1} {2} {3}；c=4，剩余最少 n−c=0 次。这里只为证明计算分组，提交代码不用建图。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "text": "左座位 i=6 的伴侣是 6，右边已经是此人：跳过，不增加交换次数。",
+      "progress": "已处理 4/4 个座位对 · 累计交换 3 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1} {2} {3}；c=4，剩余最少 n−c=0 次。这里只为证明计算分组，提交代码不用建图。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "text": "i=0：伴侣 1 在 j=2。交换座位 1↔2，把人 2 移到 2；pos[1]=1，pos[2]=2。本次 +1 次交换。",
+      "progress": "已处理 1/4 个座位对 · 累计交换 1 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1} {2,3}；c=3，剩余最少 n−c=1 次。这里只为证明计算分组，提交代码不用建图。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "text": "左座位 i=2 的伴侣是 3，右边已经是此人：跳过，不增加交换次数。",
+      "progress": "已处理 2/4 个座位对 · 累计交换 1 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1} {2,3}；c=3，剩余最少 n−c=1 次。这里只为证明计算分组，提交代码不用建图。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "text": "i=4：伴侣 5 在 j=6。交换座位 5↔6，把人 6 移到 6；pos[5]=5，pos[6]=6。本次 +1 次交换。",
+      "progress": "已处理 3/4 个座位对 · 累计交换 2 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1} {2} {3}；c=4，剩余最少 n−c=0 次。这里只为证明计算分组，提交代码不用建图。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "text": "左座位 i=6 的伴侣是 7，右边已经是此人：跳过，不增加交换次数。",
+      "progress": "已处理 4/4 个座位对 · 累计交换 2 次",
+      "groups": "当前模拟：情侣标签的连通组 {0} {1} {2} {3}；c=4，剩余最少 n−c=0 次。这里只为证明计算分组，提交代码不用建图。"
+    }
+  ],
+  "errors": [],
+  "relatedDestinationWarnings": [
+    {
+      "message": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "location": {
+        "url": "http://127.0.0.1:18770/favicon.ico",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "page": "http://127.0.0.1:18770/leetcode/41/#step2"
+    }
+  ],
+  "localRequestsOnly": true,
+  "contrast": [
+    {
+      "fg": "#e8edf4",
+      "bg": "#0d1117",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#161b22",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#1c2330",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#0a0e14",
+      "ratio": 16.440224808744848,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#0d1117",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#161b22",
+      "ratio": 7.078851579017443,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#1c2330",
+      "ratio": 6.449407898769069,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#0a0e14",
+      "ratio": 7.914396395614137,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#0d1117",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#161b22",
+      "ratio": 11.974898815275662,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#1c2330",
+      "ratio": 10.910104011097095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#0a0e14",
+      "ratio": 13.388343428810314,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#0d1117",
+      "ratio": 10.731637051347173,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#161b22",
+      "ratio": 9.809435643476732,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#1c2330",
+      "ratio": 8.937191437807625,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#0a0e14",
+      "ratio": 10.967282084266706,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#7ee2a8",
+      "bg": "#0d1117",
+      "ratio": 12.013623247863544,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#7ee2a8",
+      "bg": "#161b22",
+      "ratio": 10.981256963037128,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#7ee2a8",
+      "bg": "#1c2330",
+      "ratio": 10.004815697188947,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#7ee2a8",
+      "bg": "#0a0e14",
+      "ratio": 12.277418103408936,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#0d1117",
+      "ratio": 12.615602281385614,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#161b22",
+      "ratio": 11.531506152401557,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#1c2330",
+      "ratio": 10.506137335107907,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#0a0e14",
+      "ratio": 12.89261537833187,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#0d1117",
+      "bg": "#6ee7ff",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#161b22",
+      "ratio": 9.809435643476732,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#0d1117",
+      "ratio": 10.731637051347173,
+      "threshold": 4.5
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#1c2330",
+      "ratio": 8.937191437807625,
+      "threshold": 4.5
+    }
+  ],
+  "rendered": {
+    "color": "rgb(13, 17, 23)",
+    "background": "rgb(110, 231, 255)",
+    "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+    "minHeight": "48px"
+  },
+  "disabled": {
+    "fg": "rgb(154, 167, 184)",
+    "bg": "rgb(28, 35, 48)",
+    "opacity": "1"
+  },
+  "zoom": {
+    "innerWidth": 720,
+    "devicePixelRatio": 2,
+    "nativeFactor": 2
+  },
+  "cssBytes": 11822,
+  "clipboard": "success and denied fallback actual host shortcut exact",
+  "source": "DOM, clipboard, fallback keyboard readback, downloaded bytes exact",
+  "screenshots": "generated; author inspection recorded separately"
+}
