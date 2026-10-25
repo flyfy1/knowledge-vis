@@ -1,0 +1,335 @@
+{
+  "kind": "author self-check",
+  "browser": "156.0.8078.4",
+  "hostPlatform": "linux",
+  "states": [
+    {
+      "lang": "en",
+      "preset": "bccb",
+      "k": 10,
+      "progress": "Completed 10/10 intervals. Just completed D[0][3] (bccb) = 6.",
+      "groups": [
+        "a: absent → 0",
+        "b: L=0, R=3; 2 + interior count 2 = 4",
+        "c: L=1, R=2; 2 + interior count 0 = 2",
+        "d: absent → 0"
+      ],
+      "actual": "Distinct strings in this interval: b, c, bb, cc, bcb, bccb"
+    },
+    {
+      "lang": "en",
+      "preset": "bccb",
+      "intervals": 10,
+      "expected": 6,
+      "forwardBackwardResetEnd": true
+    },
+    {
+      "lang": "en",
+      "preset": "bcb",
+      "intervals": 6,
+      "expected": 4,
+      "forwardBackwardResetEnd": true
+    },
+    {
+      "lang": "en",
+      "preset": "a",
+      "intervals": 1,
+      "expected": 1,
+      "forwardBackwardResetEnd": true
+    },
+    {
+      "lang": "en",
+      "preset": "abcd",
+      "intervals": 10,
+      "expected": 4,
+      "forwardBackwardResetEnd": true
+    },
+    {
+      "lang": "en",
+      "preset": "aaaa",
+      "intervals": 10,
+      "expected": 4,
+      "forwardBackwardResetEnd": true
+    },
+    {
+      "lang": "en",
+      "preset": "abccba",
+      "intervals": 21,
+      "expected": 14,
+      "forwardBackwardResetEnd": true
+    },
+    {
+      "lang": "en",
+      "choice": "0",
+      "feedback": "Compare the groups again. abaca → {a, b, c, aa, aaa, aba, aca}: 7 total. The a group uses L=0 and R=4; interior bac has palindromes b, a, c, contributing 2+3=5. The b and c groups contribute 1 each. Choosing 5 counts only the a group and misses the single letters b and c."
+    },
+    {
+      "lang": "en",
+      "choice": "1",
+      "feedback": "Correct. abaca → {a, b, c, aa, aaa, aba, aca}: 7 total. The a group uses L=0 and R=4; interior bac has palindromes b, a, c, contributing 2+3=5. The b and c groups contribute 1 each. The groups are disjoint, and wrapping distinct interior palindromes creates no duplicates."
+    },
+    {
+      "lang": "en",
+      "choice": "2",
+      "feedback": "Compare the groups again. abaca → {a, b, c, aa, aaa, aba, aca}: 7 total. The a group uses L=0 and R=4; interior bac has palindromes b, a, c, contributing 2+3=5. The b and c groups contribute 1 each. Choosing 6 can miss aaa: it comes from wrapping the middle single a with the two outer a letters."
+    },
+    {
+      "lang": "en",
+      "formula": "D[i][j] = Σ(c ∈ {a,b,c,d}) G(c)\nG(c) = 0 (absent) / 1 (L=R) / 2 + D[L+1][R−1] (L<R)\nL = earliest c in [i,j]; R = latest c; D of an empty interior = 0."
+    },
+    {
+      "lang": "en",
+      "clipboardFallback": "Automatic copying is unavailable. The complete source is selected below; use your system copy shortcut.",
+      "nativeShortcut": "Control+C",
+      "sentinelReplaced": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "geometry": {
+        "width": 138,
+        "text": 52.99212646484375,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "geometry": {
+        "width": 138,
+        "text": 52.99212646484375,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "geometry": {
+        "width": 138,
+        "text": 52.99212646484375,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "overflow": false
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "geometry": {
+        "width": 138,
+        "text": 52.99212646484375,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "preset": "bccb",
+      "k": 10,
+      "progress": "已完成 10/10 个区间。刚完成 D[0][3]（bccb）= 6。",
+      "groups": [
+        "a：未出现 → 0",
+        "b：L=0, R=3；2 + 内部数量 2 = 4",
+        "c：L=1, R=2；2 + 内部数量 0 = 2",
+        "d：未出现 → 0"
+      ],
+      "actual": "该区间的不同字符串：b, c, bb, cc, bcb, bccb"
+    },
+    {
+      "lang": "zh",
+      "preset": "bccb",
+      "intervals": 10,
+      "expected": 6,
+      "forwardBackwardResetEnd": true
+    },
+    {
+      "lang": "zh",
+      "preset": "bcb",
+      "intervals": 6,
+      "expected": 4,
+      "forwardBackwardResetEnd": true
+    },
+    {
+      "lang": "zh",
+      "preset": "a",
+      "intervals": 1,
+      "expected": 1,
+      "forwardBackwardResetEnd": true
+    },
+    {
+      "lang": "zh",
+      "preset": "abcd",
+      "intervals": 10,
+      "expected": 4,
+      "forwardBackwardResetEnd": true
+    },
+    {
+      "lang": "zh",
+      "preset": "aaaa",
+      "intervals": 10,
+      "expected": 4,
+      "forwardBackwardResetEnd": true
+    },
+    {
+      "lang": "zh",
+      "preset": "abccba",
+      "intervals": 21,
+      "expected": 14,
+      "forwardBackwardResetEnd": true
+    },
+    {
+      "lang": "zh",
+      "choice": "0",
+      "feedback": "再比较一下。 abaca → {a, b, c, aa, aaa, aba, aca}，共 7。a 组用 L=0、R=4，内部 bac 的回文是 b、a、c，因此贡献 2+3=5；b、c 各贡献 1。 选 5 只数了 a 组，还少了单字符 b 和 c。"
+    },
+    {
+      "lang": "zh",
+      "choice": "1",
+      "feedback": "正确。 abaca → {a, b, c, aa, aaa, aba, aca}，共 7。a 组用 L=0、R=4，内部 bac 的回文是 b、a、c，因此贡献 2+3=5；b、c 各贡献 1。 分组互不重叠，包裹内部回文也不会产生重复。"
+    },
+    {
+      "lang": "zh",
+      "choice": "2",
+      "feedback": "再比较一下。 abaca → {a, b, c, aa, aaa, aba, aca}，共 7。a 组用 L=0、R=4，内部 bac 的回文是 b、a、c，因此贡献 2+3=5；b、c 各贡献 1。 选 6 容易漏掉 aaa：它来自用两端 a 包裹中间的单字符 a。"
+    },
+    {
+      "lang": "zh",
+      "formula": "D[i][j] = Σ(c ∈ {a,b,c,d}) G(c)\nG(c) = 0（不存在） / 1（L=R） / 2 + D[L+1][R−1]（L<R）\nL = [i,j] 中最早的 c；R = 最晚的 c；空内部的 D = 0。"
+    },
+    {
+      "lang": "zh",
+      "clipboardFallback": "无法自动复制；下方已选中完整源码，请使用系统复制快捷键。",
+      "nativeShortcut": "Control+C",
+      "sentinelReplaced": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "geometry": {
+        "width": 138,
+        "text": 52.99212646484375,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "geometry": {
+        "width": 138,
+        "text": 52.99212646484375,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "geometry": {
+        "width": 138,
+        "text": 52.99212646484375,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "geometry": {
+        "width": 138,
+        "text": 52.99212646484375,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "overflow": false
+    }
+  ],
+  "contrast": [
+    {
+      "q": "body",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "q": ".explain",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "q": ".hint",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "q": ".step-nav a",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "q": "#prev",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "q": "#next",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "q": "#copy",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "q": "#langToggle button.active",
+      "foreground": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "q": "th",
+      "foreground": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "q": "#groups",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "q": "#feedback",
+      "foreground": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "q": "focus on panel",
+      "ratio": 9.809435643476732
+    }
+  ],
+  "cssBytes": 11656,
+  "errors": [],
+  "bad": [],
+  "external": [],
+  "storageDenied": true,
+  "offlineSource": true,
+  "sourceParity": true,
+  "zoom": "200% CSS zoom, desktop 1440px; physical device and browser-toolbar zoom unverified"
+}
