@@ -1,0 +1,37 @@
+{
+  "id": "996-review-67e31a100281",
+  "problem_id": "996",
+  "role": "review",
+  "started_at": "2026-10-25T23:25:11.093157+00:00",
+  "status": "completed",
+  "candidate": "f3eec8c23092990d0309b8f227d5e2a2cf233d1d",
+  "directory": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-review-67e31a100281",
+  "session_ids": [
+    "01a17561-e4d1-7a70-940f-ca3695122afc"
+  ],
+  "finished_at": "2026-10-25T23:30:43.468435+00:00",
+  "result": {
+    "outcome": "changes_required",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      3,
+      4
+    ],
+    "required_open": [
+      "996-R1-COST-01"
+    ],
+    "report_path": "specs/reviews/996-review-1-1d9a6502.md",
+    "evidence": [
+      "Cold browser walkthrough saved before source inspection.",
+      "Canonical Python passed fresh examples and boundary checks.",
+      "Both locales passed interaction, clipboard fallback, and exact source-parity checks.",
+      "320/390/desktop layouts and 200% CSS zoom inspected.",
+      "Metadata preflight exited 0.",
+      "Fixed-k checks exposed omitted O(n) preprocessing work."
+    ],
+    "detail": "96.25/100. Required correction: both languages should state O(n + k\u00b2) preprocessing, accounting for Counter(nums)."
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "repo": "/home/songyy/projects/leetcode-hard-lane-996-20261026",
+  "queue": [
+    "996"
+  ],
+  "expected_head": "03cdc24b4aadb90bbe616279aeccf093c0267c91",
+  "started_at": "2026-10-25T23:14:30.123449+00:00",
+  "status": "running",
+  "current": {
+    "problem_id": "996",
+    "stage": "fix",
+    "started_at": "2026-10-25T23:30:59.988121+00:00",
+    "run_id": "996-fix-c44013a158e2"
+  },
+  "problems": {
+    "996": {
+      "status": "changes_required",
+      "rounds": 1,
+      "new": true,
+      "phase": "fix",
+      "reviews": [
+        {
+          "outcome": "changes_required",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            3,
+            4
+          ],
+          "required_open": [
+            "996-R1-COST-01"
+          ],
+          "report_path": "specs/reviews/996-review-1-1d9a6502.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Canonical Python passed fresh examples and boundary checks.",
+            "Both locales passed interaction, clipboard fallback, and exact source-parity checks.",
+            "320/390/desktop layouts and 200% CSS zoom inspected.",
+            "Metadata preflight exited 0.",
+            "Fixed-k checks exposed omitted O(n) preprocessing work."
+          ],
+          "detail": "96.25/100. Required correction: both languages should state O(n + k²) preprocessing, accounting for Counter(nums).",
+          "run_id": "996-review-67e31a100281",
+          "candidate": "f3eec8c23092990d0309b8f227d5e2a2cf233d1d",
+          "candidate_sha256": "ac3efcd80cda6c9f907b5b9df2eae14c52f96fb7fa3b1ec7bc4c7da7b8de4519",
+          "weighted_score": 96.25,
+          "round": 1,
+          "commit": "03cdc24b4aadb90bbe616279aeccf093c0267c91"
+        }
+      ],
+      "author_runs": [
+        "996-author-9180dd0f5b54"
+      ],
+      "prior_report": "specs/reviews/996-review-1-1d9a6502.md",
+      "candidate": "f3eec8c23092990d0309b8f227d5e2a2cf233d1d"
+    }
+  },
+  "runs": [
+    {
+      "id": "996-author-9180dd0f5b54",
+      "problem_id": "996",
+      "role": "author",
+      "started_at": "2026-10-25T23:14:30.395999+00:00",
+      "status": "completed",
+      "candidate": "6c68b23cc306067de5a912195a3c7edeebc2a0be",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-author-9180dd0f5b54",
+      "session_ids": [
+        "01a17558-1c90-7cd0-976c-7f3beab58eed"
+      ],
+      "finished_at": "2026-10-25T23:24:58.464587+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented the complete bilingual #996 lesson in leetcode/996/. Official Python interface verified; oracle, trace invariants, real-browser interactions, source transfer, responsive layouts, contrast, and metadata preflight pass. Candidate hashes and author evidence are frozen. Independent review remains pending; no acceptance or deployment claimed."
+      }
+    },
+    {
+      "id": "996-review-67e31a100281",
+      "problem_id": "996",
+      "role": "review",
+      "started_at": "2026-10-25T23:25:11.093157+00:00",
+      "status": "completed",
+      "candidate": "f3eec8c23092990d0309b8f227d5e2a2cf233d1d",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-review-67e31a100281",
+      "session_ids": [
+        "01a17561-e4d1-7a70-940f-ca3695122afc"
+      ],
+      "finished_at": "2026-10-25T23:30:43.468435+00:00",
+      "result": {
+        "outcome": "changes_required",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          3,
+          4
+        ],
+        "required_open": [
+          "996-R1-COST-01"
+        ],
+        "report_path": "specs/reviews/996-review-1-1d9a6502.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Canonical Python passed fresh examples and boundary checks.",
+          "Both locales passed interaction, clipboard fallback, and exact source-parity checks.",
+          "320/390/desktop layouts and 200% CSS zoom inspected.",
+          "Metadata preflight exited 0.",
+          "Fixed-k checks exposed omitted O(n) preprocessing work."
+        ],
+        "detail": "96.25/100. Required correction: both languages should state O(n + k²) preprocessing, accounting for Counter(nums)."
+      }
+    },
+    {
+      "id": "996-fix-c44013a158e2",
+      "problem_id": "996",
+      "role": "fix",
+      "started_at": "2026-10-25T23:30:59.988121+00:00",
+      "status": "running",
+      "candidate": "03cdc24b4aadb90bbe616279aeccf093c0267c91",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-996-20261026/runs/996-fix-c44013a158e2",
+      "session_ids": []
+    }
+  ],
+  "updated_at": "2026-10-25T23:30:59.988441+00:00"
+}

@@ -1,0 +1,4 @@
+79:     "n 是元素数。生成 n! 个长度为 n 的元组需要 O(n·n!) 时间；集合最坏存 O(n·n!) 个元素位置。n=12 时有 479001600 个带副本身份的排列。可以在出现第一个坏相邻和时就停止该分支，并且从一开始只按不同的值选择。",
+80:     "With n entries, generating n! tuples of length n takes O(n·n!) time; the set uses O(n·n!) space in the worst case. At n=12 there are 479001600 permutations of labeled copies. We can stop a branch at its first bad sum and choose by distinct value from the start."
+287:     "成本：n 是元素数，k 是不同值数。预处理 O(k²)；搜索的保守上界是 O(n·n!) 时间，仍可能是阶乘级。递归深度 n，次数 O(k)，兼容矩阵 O(k²)，合计辅助空间 O(n+k²)。模拟还保存全部快照与账本，这些不计入提交空间。",
+288:     "Costs: n is the entry count, k the distinct-value count. Preprocessing takes O(k²); a conservative search bound is O(n·n!) time, still factorial. Depth n, O(k) counts and an O(k²) compatibility matrix give O(n+k²) auxiliary space. The simulation additionally stores every snapshot and ledger; those are not submission memory."
