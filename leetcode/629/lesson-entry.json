@@ -1,0 +1,38 @@
+{
+  "id": 629,
+  "title": {
+    "zh": "K 个逆序对数组",
+    "en": "K Inverse Pairs Array"
+  },
+  "desc": {
+    "zh": "插入最大值，数清新增逆序对，再让相邻计数和共享计算。",
+    "en": "Insert the largest value, count its new inversions, then reuse neighboring sums."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "动态规划",
+      "en": "Dynamic programming"
+    },
+    {
+      "zh": "滑动窗口计数",
+      "en": "Sliding window counting"
+    }
+  ],
+  "path": "629/",
+  "leetcodeUrl": "https://leetcode.com/problems/k-inverse-pairs-array/",
+  "language": "Python",
+  "complexity": "O(n(k+1)) time; O(k+1) auxiliary space",
+  "concepts": [
+    {
+      "name": "Insertion counting bijection",
+      "step": 1,
+      "description": "Insert the unique maximum to add exactly the number of smaller values to its right."
+    },
+    {
+      "name": "Sliding sum over a DP row",
+      "step": 2,
+      "description": "Add the entering count and remove the expired count while retaining separate previous and current rows."
+    }
+  ]
+}
