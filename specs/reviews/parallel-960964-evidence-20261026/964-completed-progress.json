@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "repo": "/home/songyy/projects/leetcode-hard-lane-964-20261026",
+  "queue": [
+    "964"
+  ],
+  "expected_head": "bb3440c2c9376ac2303d7ab7612ffbfdf3949f0c",
+  "started_at": "2026-10-25T17:51:33.491388+00:00",
+  "status": "completed",
+  "current": null,
+  "problems": {
+    "964": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            3
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/964-review-1-4bf26931.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Fresh canonical Python cases verified by exact rational enumeration.",
+            "Bilingual controls, rewind/reset, prediction changes and source parity passed.",
+            "320/390/desktop and synthetic 200% zoom screenshots inspected.",
+            "Native clipboard success and fallback transfers verified in both locales.",
+            "Non-mutating metadata preflight passed."
+          ],
+          "detail": "92.5/100; no required findings. Acceptance covers the reviewed candidate and local preview. Limitations and two minor advisories are documented.",
+          "run_id": "964-review-b5d4143bf2f7",
+          "candidate": "b01fe1e86156906cbbbede74941146920dedfcd5",
+          "candidate_sha256": "ac47482737d935e46a1ad0b8e65c6d83eb402f9ea2b8b39616267c85f981b748",
+          "weighted_score": 92.5,
+          "round": 1,
+          "commit": "9a073366c966b3866f1545c6404f8da049b588b6"
+        }
+      ],
+      "author_runs": [
+        "964-author-da971470b79b"
+      ],
+      "prior_report": "specs/reviews/964-review-1-4bf26931.md",
+      "candidate": "b01fe1e86156906cbbbede74941146920dedfcd5",
+      "registration_commit": "bb3440c2c9376ac2303d7ab7612ffbfdf3949f0c",
+      "accepted_at": "2026-10-25T18:11:40.888795+00:00"
+    }
+  },
+  "runs": [
+    {
+      "id": "964-author-da971470b79b",
+      "problem_id": "964",
+      "role": "author",
+      "started_at": "2026-10-25T17:51:33.761526+00:00",
+      "status": "completed",
+      "candidate": "8cedba5490bb862133f157a9d6af619cee323fb9",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-964-20261026/runs/964-author-da971470b79b",
+      "session_ids": [
+        "01a17430-728b-7bb2-94ac-5c58098a0b60"
+      ],
+      "finished_at": "2026-10-25T18:06:51.782189+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Completed bilingual interactive lesson #964 in leetcode/964/. Official Python interface verified; numerical, browser, source-parity, accessibility and metadata checks passed. Candidate hashes and evidence recorded. Independent review remains pending; no deployment or acceptance claimed."
+      }
+    },
+    {
+      "id": "964-review-b5d4143bf2f7",
+      "problem_id": "964",
+      "role": "review",
+      "started_at": "2026-10-25T18:07:00.370676+00:00",
+      "status": "completed",
+      "candidate": "b01fe1e86156906cbbbede74941146920dedfcd5",
+      "directory": "/home/songyy/projects/leetcode-hard-lane-state-964-20261026/runs/964-review-b5d4143bf2f7",
+      "session_ids": [
+        "01a1743e-953b-7482-9f6f-3aa86dca9338"
+      ],
+      "finished_at": "2026-10-25T18:11:30.917000+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          3,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/964-review-1-4bf26931.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Fresh canonical Python cases verified by exact rational enumeration.",
+          "Bilingual controls, rewind/reset, prediction changes and source parity passed.",
+          "320/390/desktop and synthetic 200% zoom screenshots inspected.",
+          "Native clipboard success and fallback transfers verified in both locales.",
+          "Non-mutating metadata preflight passed."
+        ],
+        "detail": "92.5/100; no required findings. Acceptance covers the reviewed candidate and local preview. Limitations and two minor advisories are documented."
+      }
+    }
+  ],
+  "updated_at": "2026-10-25T18:11:40.933017+00:00"
+}
