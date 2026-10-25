@@ -3359,6 +3359,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(nS) expected time; O(S) auxiliary space, S = sum(rods)"
   },
   {
+    "id": 964,
+    "title": {
+      "zh": "表示数字的最少运算符",
+      "en": "Least Operators to Express Number"
+    },
+    "desc": {
+      "zh": "从 3×3−3÷3 推导保留两种进位选择的数位动态规划。",
+      "en": "Derive a two-state digit DP from 3×3−3÷3 and compare direct and complement costs."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数位动态规划",
+        "en": "Digit DP"
+      },
+      {
+        "zh": "进位",
+        "en": "Carry"
+      }
+    ],
+    "path": "964/",
+    "leetcodeUrl": "https://leetcode.com/problems/least-operators-to-express-number/",
+    "language": "Python",
+    "complexity": "O(1 + log_x(target)) time; O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
