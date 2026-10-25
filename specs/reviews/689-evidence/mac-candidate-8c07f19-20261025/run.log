@@ -1,0 +1,92 @@
+{"running": ["python3", "-B", "leetcode/689/tests/test_solution.py"], "candidate": "8c07f191c65decdd2e58c7c8b5be9b35d8b8c5d2"}
+{'kind': 'author self-check', 'python_cases': 79058, 'source_parity': True, 'copy_pairs': 93, 'official_examples': True, 'max_constraint': True}
+{"running": ["node", "leetcode/689/tests/test_core.cjs"], "candidate": "8c07f191c65decdd2e58c7c8b5be9b35d8b8c5d2"}
+{
+  kind: 'author self-check',
+  cases: 2793,
+  framesChecked: 62132,
+  invariants: 'every filled L/R entry earliest maximum; fixed-middle optimum; all candidate identities, totals, best-so-far and final oracle'
+}
+{"running": ["node", "leetcode/689/tests/browser.cjs"], "candidate": "8c07f191c65decdd2e58c7c8b5be9b35d8b8c5d2"}
+trace checked en 0 14
+trace checked en 1 18
+trace checked en 2 21
+trace checked en 3 8
+trace checked en 4 12
+trace checked zh 0 14
+trace checked zh 1 18
+trace checked zh 2 21
+trace checked zh 3 8
+trace checked zh 4 12
+{
+  "result": "pass",
+  "records": 10,
+  "layouts": 14,
+  "cssBytes": 11803,
+  "contrasts": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".window",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#tracePrev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#traceNext",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#langToggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#copyStatus",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": "focus on panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "window border",
+      "ratio": 6.449407898769069
+    }
+  ]
+}
+{"running": ["node", "leetcode/689/tests/focused.cjs"], "candidate": "8c07f191c65decdd2e58c7c8b5be9b35d8b8c5d2"}
+focused: pass

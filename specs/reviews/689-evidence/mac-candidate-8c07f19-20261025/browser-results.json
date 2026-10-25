@@ -1,0 +1,861 @@
+{
+  "kind": "author browser self-check",
+  "result": "pass",
+  "records": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "frames": 14,
+      "final": "Final starts [0,2,4], total 9. Every legal middle start has been tested."
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "frames": 18,
+      "final": "Final starts [0,3,5], total 23. Every legal middle start has been tested."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "frames": 21,
+      "final": "Final starts [0,2,4], total 9. Every legal middle start has been tested."
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "frames": 8,
+      "final": "Final starts [0,1,2], total 15. Every legal middle start has been tested."
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "frames": 12,
+      "final": "Final starts [0,2,4], total 22. Every legal middle start has been tested."
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "frames": 14,
+      "final": "最终起点 [0,2,4]，总和 9。所有合法中间起点均已测试。"
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "frames": 18,
+      "final": "最终起点 [0,3,5]，总和 23。所有合法中间起点均已测试。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "frames": 21,
+      "final": "最终起点 [0,2,4]，总和 9。所有合法中间起点均已测试。"
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "frames": 8,
+      "final": "最终起点 [0,1,2]，总和 15。所有合法中间起点均已测试。"
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "frames": 12,
+      "final": "最终起点 [0,2,4]，总和 22。所有合法中间起点均已测试。"
+    }
+  ],
+  "bindings": [
+    {
+      "locale": "en",
+      "preset": 2,
+      "operation": 10,
+      "meaning": "equal suffix sums replace old with earlier i",
+      "visible": "Operations completed 10/20. Completed R[6]: compare new W[6]=3 with old best W[7]=3. The condition 3≥3 is true, so record start 6."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "operation": 11,
+      "meaning": "equal suffix sums replace old with earlier i",
+      "visible": "Operations completed 11/20. Completed R[5]: compare new W[5]=3 with old best W[6]=3. The condition 3≥3 is true, so record start 5."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "operation": 12,
+      "meaning": "equal suffix sums replace old with earlier i",
+      "visible": "Operations completed 12/20. Completed R[4]: compare new W[4]=3 with old best W[5]=3. The condition 3≥3 is true, so record start 4."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "operation": 13,
+      "meaning": "equal suffix sums replace old with earlier i",
+      "visible": "Operations completed 13/20. Completed R[3]: compare new W[3]=3 with old best W[4]=3. The condition 3≥3 is true, so record start 3."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "operation": 14,
+      "meaning": "equal suffix sums replace old with earlier i",
+      "visible": "Operations completed 14/20. Completed R[2]: compare new W[2]=3 with old best W[3]=3. The condition 3≥3 is true, so record start 2."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "operation": 15,
+      "meaning": "equal suffix sums replace old with earlier i",
+      "visible": "Operations completed 15/20. Completed R[1]: compare new W[1]=3 with old best W[2]=3. The condition 3≥3 is true, so record start 1."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "operation": 16,
+      "meaning": "equal suffix sums replace old with earlier i",
+      "visible": "Operations completed 16/20. Completed R[0]: compare new W[0]=3 with old best W[1]=3. The condition 3≥3 is true, so record start 0."
+    },
+    {
+      "locale": "en",
+      "choice": "0",
+      "meaning": "fixed j=2 picks earlier tied right start 4; start 1 is illegal overlap",
+      "visible": "Not quite. The answer is [0,2,4], totaling 3+4+4=11. The right scan sees start 6 (sum 4), then 5 (sum 3), then 4 (sum 4); ≥ replaces 6 with the earlier 4. [0,2,6] ties in sum but is lexicographically larger. [1,2,4] overlaps: the first window covers positions 1,2 and the middle covers 2,3."
+    },
+    {
+      "locale": "en",
+      "choice": "1",
+      "meaning": "fixed j=2 picks earlier tied right start 4; start 1 is illegal overlap",
+      "visible": "Not quite. The answer is [0,2,4], totaling 3+4+4=11. The right scan sees start 6 (sum 4), then 5 (sum 3), then 4 (sum 4); ≥ replaces 6 with the earlier 4. [0,2,6] ties in sum but is lexicographically larger. [1,2,4] overlaps: the first window covers positions 1,2 and the middle covers 2,3."
+    },
+    {
+      "locale": "en",
+      "choice": "2",
+      "meaning": "fixed j=2 picks earlier tied right start 4; start 1 is illegal overlap",
+      "visible": "Correct. The answer is [0,2,4], totaling 3+4+4=11. The right scan sees start 6 (sum 4), then 5 (sum 3), then 4 (sum 4); ≥ replaces 6 with the earlier 4. [0,2,6] ties in sum but is lexicographically larger. [1,2,4] overlaps: the first window covers positions 1,2 and the middle covers 2,3."
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "operation": 10,
+      "meaning": "equal suffix sums replace old with earlier i",
+      "visible": "已完成操作 10/20。完成 R[6]：比较新窗口 W[6]=3 与旧最佳 W[7]=3。条件 3≥3 为真，故记录起点 6。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "operation": 11,
+      "meaning": "equal suffix sums replace old with earlier i",
+      "visible": "已完成操作 11/20。完成 R[5]：比较新窗口 W[5]=3 与旧最佳 W[6]=3。条件 3≥3 为真，故记录起点 5。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "operation": 12,
+      "meaning": "equal suffix sums replace old with earlier i",
+      "visible": "已完成操作 12/20。完成 R[4]：比较新窗口 W[4]=3 与旧最佳 W[5]=3。条件 3≥3 为真，故记录起点 4。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "operation": 13,
+      "meaning": "equal suffix sums replace old with earlier i",
+      "visible": "已完成操作 13/20。完成 R[3]：比较新窗口 W[3]=3 与旧最佳 W[4]=3。条件 3≥3 为真，故记录起点 3。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "operation": 14,
+      "meaning": "equal suffix sums replace old with earlier i",
+      "visible": "已完成操作 14/20。完成 R[2]：比较新窗口 W[2]=3 与旧最佳 W[3]=3。条件 3≥3 为真，故记录起点 2。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "operation": 15,
+      "meaning": "equal suffix sums replace old with earlier i",
+      "visible": "已完成操作 15/20。完成 R[1]：比较新窗口 W[1]=3 与旧最佳 W[2]=3。条件 3≥3 为真，故记录起点 1。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "operation": 16,
+      "meaning": "equal suffix sums replace old with earlier i",
+      "visible": "已完成操作 16/20。完成 R[0]：比较新窗口 W[0]=3 与旧最佳 W[1]=3。条件 3≥3 为真，故记录起点 0。"
+    },
+    {
+      "locale": "zh",
+      "choice": "0",
+      "meaning": "fixed j=2 picks earlier tied right start 4; start 1 is illegal overlap",
+      "visible": "还不对。 答案 [0,2,4]，和 3+4+4=11。右扫描先遇到起点 6（和 4），经过 5（和 3），再到 4（和 4）；≥ 会让更早的 4 替换 6。[0,2,6] 和相同但字典序较大。[1,2,4] 的前两段重叠：起点 1 的窗口覆盖位置 1、2，中间窗口覆盖 2、3。"
+    },
+    {
+      "locale": "zh",
+      "choice": "1",
+      "meaning": "fixed j=2 picks earlier tied right start 4; start 1 is illegal overlap",
+      "visible": "还不对。 答案 [0,2,4]，和 3+4+4=11。右扫描先遇到起点 6（和 4），经过 5（和 3），再到 4（和 4）；≥ 会让更早的 4 替换 6。[0,2,6] 和相同但字典序较大。[1,2,4] 的前两段重叠：起点 1 的窗口覆盖位置 1、2，中间窗口覆盖 2、3。"
+    },
+    {
+      "locale": "zh",
+      "choice": "2",
+      "meaning": "fixed j=2 picks earlier tied right start 4; start 1 is illegal overlap",
+      "visible": "正确。 答案 [0,2,4]，和 3+4+4=11。右扫描先遇到起点 6（和 4），经过 5（和 3），再到 4（和 4）；≥ 会让更早的 4 替换 6。[0,2,6] 和相同但字典序较大。[1,2,4] 的前两段重叠：起点 1 的窗口覆盖位置 1、2，中间窗口覆盖 2、3。"
+    }
+  ],
+  "layouts": [
+    {
+      "locale": "en",
+      "width": 320,
+      "doc": 320,
+      "cards": [
+        {
+          "w": 127,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 127,
+          "scroll": 125,
+          "client": 125
+        },
+        {
+          "w": 127,
+          "scroll": 125,
+          "client": 125
+        },
+        {
+          "w": 127,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 127,
+          "scroll": 125,
+          "client": 125
+        },
+        {
+          "w": 127,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 127,
+          "scroll": 125,
+          "client": 125
+        }
+      ],
+      "frame": "Operations completed 16/17. Tested middle start j=3: left starts≤1, right starts≥5; candidate [0,3,5], sum 3+8+12=23.",
+      "best": "Best starts so far [0,3,5], total 23; some middle starts remain untested."
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "doc": 390,
+      "cards": [
+        {
+          "w": 105.328125,
+          "scroll": 99,
+          "client": 99
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.34375,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.328125,
+          "scroll": 99,
+          "client": 99
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.34375,
+          "scroll": 99,
+          "client": 99
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        }
+      ],
+      "frame": "Operations completed 16/17. Tested middle start j=3: left starts≤1, right starts≥5; candidate [0,3,5], sum 3+8+12=23.",
+      "best": "Best starts so far [0,3,5], total 23; some middle starts remain untested."
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "doc": 736,
+      "cards": [
+        {
+          "w": 122.796875,
+          "scroll": 117,
+          "client": 117
+        },
+        {
+          "w": 122.796875,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 122.796875,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 122.796875,
+          "scroll": 117,
+          "client": 117
+        },
+        {
+          "w": 122.8125,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 122.796875,
+          "scroll": 117,
+          "client": 117
+        },
+        {
+          "w": 122.796875,
+          "scroll": 121,
+          "client": 121
+        }
+      ],
+      "frame": "Operations completed 16/17. Tested middle start j=3: left starts≤1, right starts≥5; candidate [0,3,5], sum 3+8+12=23.",
+      "best": "Best starts so far [0,3,5], total 23; some middle starts remain untested."
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "doc": 1440,
+      "cards": [
+        {
+          "w": 123.140625,
+          "scroll": 117,
+          "client": 117
+        },
+        {
+          "w": 123.140625,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 123.140625,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 123.140625,
+          "scroll": 117,
+          "client": 117
+        },
+        {
+          "w": 123.140625,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 123.140625,
+          "scroll": 117,
+          "client": 117
+        },
+        {
+          "w": 123.15625,
+          "scroll": 121,
+          "client": 121
+        }
+      ],
+      "frame": "Operations completed 16/17. Tested middle start j=3: left starts≤1, right starts≥5; candidate [0,3,5], sum 3+8+12=23.",
+      "best": "Best starts so far [0,3,5], total 23; some middle starts remain untested."
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "doc": 320,
+      "cards": [
+        {
+          "w": 127,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 127,
+          "scroll": 125,
+          "client": 125
+        },
+        {
+          "w": 127,
+          "scroll": 125,
+          "client": 125
+        },
+        {
+          "w": 127,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 127,
+          "scroll": 125,
+          "client": 125
+        },
+        {
+          "w": 127,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 127,
+          "scroll": 125,
+          "client": 125
+        }
+      ],
+      "frame": "已完成操作 16/17。已测试中间起点 j=3：左起点≤1，右起点≥5；候选 [0,3,5]，和 3+8+12=23。",
+      "best": "目前最佳起点 [0,3,5]，总和 23；尚未测试所有中间起点。"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "doc": 390,
+      "cards": [
+        {
+          "w": 105.328125,
+          "scroll": 99,
+          "client": 99
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.34375,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.328125,
+          "scroll": 99,
+          "client": 99
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        },
+        {
+          "w": 105.34375,
+          "scroll": 99,
+          "client": 99
+        },
+        {
+          "w": 105.328125,
+          "scroll": 103,
+          "client": 103
+        }
+      ],
+      "frame": "已完成操作 16/17。已测试中间起点 j=3：左起点≤1，右起点≥5；候选 [0,3,5]，和 3+8+12=23。",
+      "best": "目前最佳起点 [0,3,5]，总和 23；尚未测试所有中间起点。"
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "doc": 736,
+      "cards": [
+        {
+          "w": 122.796875,
+          "scroll": 117,
+          "client": 117
+        },
+        {
+          "w": 122.796875,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 122.796875,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 122.796875,
+          "scroll": 117,
+          "client": 117
+        },
+        {
+          "w": 122.8125,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 122.796875,
+          "scroll": 117,
+          "client": 117
+        },
+        {
+          "w": 122.796875,
+          "scroll": 121,
+          "client": 121
+        }
+      ],
+      "frame": "已完成操作 16/17。已测试中间起点 j=3：左起点≤1，右起点≥5；候选 [0,3,5]，和 3+8+12=23。",
+      "best": "目前最佳起点 [0,3,5]，总和 23；尚未测试所有中间起点。"
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "doc": 1440,
+      "cards": [
+        {
+          "w": 123.140625,
+          "scroll": 117,
+          "client": 117
+        },
+        {
+          "w": 123.140625,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 123.140625,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 123.140625,
+          "scroll": 117,
+          "client": 117
+        },
+        {
+          "w": 123.140625,
+          "scroll": 121,
+          "client": 121
+        },
+        {
+          "w": 123.140625,
+          "scroll": 117,
+          "client": 117
+        },
+        {
+          "w": 123.15625,
+          "scroll": 121,
+          "client": 121
+        }
+      ],
+      "frame": "已完成操作 16/17。已测试中间起点 j=3：左起点≤1，右起点≥5；候选 [0,3,5]，和 3+8+12=23。",
+      "best": "目前最佳起点 [0,3,5]，总和 23；尚未测试所有中间起点。"
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "available": 320,
+      "cards": [
+        {
+          "scroll": 96,
+          "client": 96
+        },
+        {
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "scroll": 96,
+          "client": 96
+        },
+        {
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "scroll": 96,
+          "client": 96
+        },
+        {
+          "scroll": 100,
+          "client": 100
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "available": 390,
+      "cards": [
+        {
+          "scroll": 131,
+          "client": 131
+        },
+        {
+          "scroll": 135,
+          "client": 135
+        },
+        {
+          "scroll": 135,
+          "client": 135
+        },
+        {
+          "scroll": 131,
+          "client": 131
+        },
+        {
+          "scroll": 135,
+          "client": 135
+        },
+        {
+          "scroll": 131,
+          "client": 131
+        },
+        {
+          "scroll": 135,
+          "client": 135
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "available": 1440,
+      "cards": [
+        {
+          "scroll": 114,
+          "client": 114
+        },
+        {
+          "scroll": 118,
+          "client": 118
+        },
+        {
+          "scroll": 118,
+          "client": 118
+        },
+        {
+          "scroll": 114,
+          "client": 114
+        },
+        {
+          "scroll": 118,
+          "client": 118
+        },
+        {
+          "scroll": 114,
+          "client": 114
+        },
+        {
+          "scroll": 118,
+          "client": 118
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "available": 320,
+      "cards": [
+        {
+          "scroll": 96,
+          "client": 96
+        },
+        {
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "scroll": 96,
+          "client": 96
+        },
+        {
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "scroll": 96,
+          "client": 96
+        },
+        {
+          "scroll": 100,
+          "client": 100
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "available": 390,
+      "cards": [
+        {
+          "scroll": 131,
+          "client": 131
+        },
+        {
+          "scroll": 135,
+          "client": 135
+        },
+        {
+          "scroll": 135,
+          "client": 135
+        },
+        {
+          "scroll": 131,
+          "client": 131
+        },
+        {
+          "scroll": 135,
+          "client": 135
+        },
+        {
+          "scroll": 131,
+          "client": 131
+        },
+        {
+          "scroll": 135,
+          "client": 135
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "available": 1440,
+      "cards": [
+        {
+          "scroll": 114,
+          "client": 114
+        },
+        {
+          "scroll": 118,
+          "client": 118
+        },
+        {
+          "scroll": 118,
+          "client": 118
+        },
+        {
+          "scroll": 114,
+          "client": 114
+        },
+        {
+          "scroll": 118,
+          "client": 118
+        },
+        {
+          "scroll": 114,
+          "client": 114
+        },
+        {
+          "scroll": 118,
+          "client": 118
+        }
+      ]
+    }
+  ],
+  "source": "exact embedded/rendered/copied/downloaded/manual copy including final newline",
+  "clipboard": {
+    "host": "darwin",
+    "shortcut": "Meta+C",
+    "fullSelection": true,
+    "actualReadback": true
+  },
+  "keyboard": {
+    "active": true,
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrasts": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".window",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#tracePrev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#traceNext",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#langToggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#copyStatus",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": "focus on panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "window border",
+      "ratio": 6.449407898769069
+    }
+  ],
+  "cssBytes": 11803,
+  "storageDenied": true,
+  "offline": true,
+  "localErrors": [],
+  "badAssets": [],
+  "externalRequests": [],
+  "zoomMethod": "real Chromium CSS zoom:2; browser-chrome zoom and physical devices unverified"
+}
