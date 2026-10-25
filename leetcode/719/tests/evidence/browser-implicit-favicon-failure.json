@@ -1,0 +1,2041 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'Failed to load resource: the server responded with a status of 404 (File not found)',\n+   'Failed to load resource: the server responded with a status of 404 (File not found)'\n+ ]\n- []\n    at /home/songyy/projects/leetcode-hard-lane-719-20261025/leetcode/719/tests/browser.cjs:62:8",
+  "report": {
+    "kind": "author browser self-check",
+    "host": "linux",
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "Failed to load resource: the server responded with a status of 404 (File not found)"
+    ],
+    "requests": [
+      "http://127.0.0.1:18783/leetcode/719/",
+      "http://127.0.0.1:18783/leetcode/style.css",
+      "http://127.0.0.1:18783/leetcode/719/style.css?v=719-2",
+      "http://127.0.0.1:18783/leetcode/common.js",
+      "http://127.0.0.1:18783/leetcode/719/copy.js?v=719-2",
+      "http://127.0.0.1:18783/leetcode/719/core.js?v=719-2",
+      "http://127.0.0.1:18783/leetcode/719/python-code.js?v=719-2",
+      "http://127.0.0.1:18783/leetcode/719/app.js?v=719-2",
+      "http://127.0.0.1:18783/leetcode/719/",
+      "http://127.0.0.1:18783/leetcode/style.css",
+      "http://127.0.0.1:18783/leetcode/719/style.css?v=719-2",
+      "http://127.0.0.1:18783/leetcode/common.js",
+      "http://127.0.0.1:18783/leetcode/719/copy.js?v=719-2",
+      "http://127.0.0.1:18783/leetcode/719/core.js?v=719-2",
+      "http://127.0.0.1:18783/leetcode/719/python-code.js?v=719-2",
+      "http://127.0.0.1:18783/leetcode/719/app.js?v=719-2",
+      "file:///home/songyy/projects/leetcode-hard-lane-719-20261025/leetcode/719/index.html",
+      "file:///home/songyy/projects/leetcode-hard-lane-719-20261025/leetcode/style.css",
+      "file:///home/songyy/projects/leetcode-hard-lane-719-20261025/leetcode/719/style.css?v=719-2",
+      "file:///home/songyy/projects/leetcode-hard-lane-719-20261025/leetcode/common.js",
+      "file:///home/songyy/projects/leetcode-hard-lane-719-20261025/leetcode/719/copy.js?v=719-2",
+      "file:///home/songyy/projects/leetcode-hard-lane-719-20261025/leetcode/719/core.js?v=719-2",
+      "file:///home/songyy/projects/leetcode-hard-lane-719-20261025/leetcode/719/python-code.js?v=719-2",
+      "file:///home/songyy/projects/leetcode-hard-lane-719-20261025/leetcode/719/app.js?v=719-2",
+      "http://127.0.0.1:18783/leetcode/719/",
+      "http://127.0.0.1:18783/leetcode/style.css",
+      "http://127.0.0.1:18783/leetcode/719/style.css?v=719-2",
+      "http://127.0.0.1:18783/leetcode/common.js",
+      "http://127.0.0.1:18783/leetcode/719/copy.js?v=719-2",
+      "http://127.0.0.1:18783/leetcode/719/core.js?v=719-2",
+      "http://127.0.0.1:18783/leetcode/719/python-code.js?v=719-2",
+      "http://127.0.0.1:18783/leetcode/719/app.js?v=719-2"
+    ],
+    "states": [
+      {
+        "lang": "en",
+        "preset": 0,
+        "round": 0,
+        "interval": "[0, 2]",
+        "tested": "Not tested yet",
+        "progress": "Array [1, 3, 1], k=2; completed 0/1 rounds.",
+        "decision": "Initial bounds; no midpoint count yet.",
+        "terminal": "",
+        "history": "No rounds completed yet."
+      },
+      {
+        "lang": "en",
+        "preset": 0,
+        "round": 1,
+        "interval": "[2, 2]",
+        "tested": "1 → 1",
+        "progress": "Array [1, 3, 1], k=2; completed 1/1 rounds.",
+        "decision": "Tested d=1 in old bounds [0, 2]: C(d)=1; Too few; exclude mid, leaving [2,2].",
+        "terminal": "Converged: kth smallest distance = 2.",
+        "history": "1[0, 2]1 → 1[2, 2]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 1,
+        "round": 0,
+        "interval": "[0, 2]",
+        "tested": "Not tested yet",
+        "progress": "Array [1, 3, 1], k=1; completed 0/2 rounds.",
+        "decision": "Initial bounds; no midpoint count yet.",
+        "terminal": "Converged: kth smallest distance = 2.",
+        "history": "No rounds completed yet."
+      },
+      {
+        "lang": "en",
+        "preset": 1,
+        "round": 1,
+        "interval": "[0, 1]",
+        "tested": "1 → 1",
+        "progress": "Array [1, 3, 1], k=1; completed 1/2 rounds.",
+        "decision": "Tested d=1 in old bounds [0, 2]: C(d)=1; Enough; retain mid, leaving [0,1].",
+        "terminal": "Converged: kth smallest distance = 2.",
+        "history": "1[0, 2]1 → 1[0, 1]Enough; retain mid"
+      },
+      {
+        "lang": "en",
+        "preset": 1,
+        "round": 2,
+        "interval": "[0, 0]",
+        "tested": "0 → 1",
+        "progress": "Array [1, 3, 1], k=1; completed 2/2 rounds.",
+        "decision": "Tested d=0 in old bounds [0, 1]: C(d)=1; Enough; retain mid, leaving [0,0].",
+        "terminal": "Converged: kth smallest distance = 0.",
+        "history": "1[0, 2]1 → 1[0, 1]Enough; retain mid2[0, 1]0 → 1[0, 0]Enough; retain mid"
+      },
+      {
+        "lang": "en",
+        "preset": 2,
+        "round": 0,
+        "interval": "[0, 0]",
+        "tested": "Not tested yet",
+        "progress": "Array [1, 1, 1], k=2; completed 0/0 rounds.",
+        "decision": "Initial bounds; no midpoint count yet.",
+        "terminal": "Converged: kth smallest distance = 0.",
+        "history": "No rounds completed yet."
+      },
+      {
+        "lang": "en",
+        "preset": 3,
+        "round": 0,
+        "interval": "[0, 5]",
+        "tested": "Not tested yet",
+        "progress": "Array [1, 6, 1], k=3; completed 0/2 rounds.",
+        "decision": "Initial bounds; no midpoint count yet.",
+        "terminal": "Converged: kth smallest distance = 0.",
+        "history": "No rounds completed yet."
+      },
+      {
+        "lang": "en",
+        "preset": 3,
+        "round": 1,
+        "interval": "[3, 5]",
+        "tested": "2 → 1",
+        "progress": "Array [1, 6, 1], k=3; completed 1/2 rounds.",
+        "decision": "Tested d=2 in old bounds [0, 5]: C(d)=1; Too few; exclude mid, leaving [3,5].",
+        "terminal": "Converged: kth smallest distance = 0.",
+        "history": "1[0, 5]2 → 1[3, 5]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 3,
+        "round": 2,
+        "interval": "[5, 5]",
+        "tested": "4 → 1",
+        "progress": "Array [1, 6, 1], k=3; completed 2/2 rounds.",
+        "decision": "Tested d=4 in old bounds [3, 5]: C(d)=1; Too few; exclude mid, leaving [5,5].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 5]2 → 1[3, 5]Too few; exclude mid2[3, 5]4 → 1[5, 5]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 0,
+        "interval": "[0, 1000000]",
+        "tested": "Not tested yet",
+        "progress": "Array [0, 1000000], k=1; completed 0/19 rounds.",
+        "decision": "Initial bounds; no midpoint count yet.",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "No rounds completed yet."
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 1,
+        "interval": "[500001, 1000000]",
+        "tested": "500000 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 1/19 rounds.",
+        "decision": "Tested d=500000 in old bounds [0, 1000000]: C(d)=0; Too few; exclude mid, leaving [500001,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 2,
+        "interval": "[750001, 1000000]",
+        "tested": "750000 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 2/19 rounds.",
+        "decision": "Tested d=750000 in old bounds [500001, 1000000]: C(d)=0; Too few; exclude mid, leaving [750001,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 3,
+        "interval": "[875001, 1000000]",
+        "tested": "875000 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 3/19 rounds.",
+        "decision": "Tested d=875000 in old bounds [750001, 1000000]: C(d)=0; Too few; exclude mid, leaving [875001,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 4,
+        "interval": "[937501, 1000000]",
+        "tested": "937500 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 4/19 rounds.",
+        "decision": "Tested d=937500 in old bounds [875001, 1000000]: C(d)=0; Too few; exclude mid, leaving [937501,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 5,
+        "interval": "[968751, 1000000]",
+        "tested": "968750 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 5/19 rounds.",
+        "decision": "Tested d=968750 in old bounds [937501, 1000000]: C(d)=0; Too few; exclude mid, leaving [968751,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 6,
+        "interval": "[984376, 1000000]",
+        "tested": "984375 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 6/19 rounds.",
+        "decision": "Tested d=984375 in old bounds [968751, 1000000]: C(d)=0; Too few; exclude mid, leaving [984376,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid6[968751, 1000000]984375 → 0[984376, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 7,
+        "interval": "[992189, 1000000]",
+        "tested": "992188 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 7/19 rounds.",
+        "decision": "Tested d=992188 in old bounds [984376, 1000000]: C(d)=0; Too few; exclude mid, leaving [992189,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid6[968751, 1000000]984375 → 0[984376, 1000000]Too few; exclude mid7[984376, 1000000]992188 → 0[992189, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 8,
+        "interval": "[996095, 1000000]",
+        "tested": "996094 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 8/19 rounds.",
+        "decision": "Tested d=996094 in old bounds [992189, 1000000]: C(d)=0; Too few; exclude mid, leaving [996095,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid6[968751, 1000000]984375 → 0[984376, 1000000]Too few; exclude mid7[984376, 1000000]992188 → 0[992189, 1000000]Too few; exclude mid8[992189, 1000000]996094 → 0[996095, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 9,
+        "interval": "[998048, 1000000]",
+        "tested": "998047 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 9/19 rounds.",
+        "decision": "Tested d=998047 in old bounds [996095, 1000000]: C(d)=0; Too few; exclude mid, leaving [998048,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid6[968751, 1000000]984375 → 0[984376, 1000000]Too few; exclude mid7[984376, 1000000]992188 → 0[992189, 1000000]Too few; exclude mid8[992189, 1000000]996094 → 0[996095, 1000000]Too few; exclude mid9[996095, 1000000]998047 → 0[998048, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 10,
+        "interval": "[999025, 1000000]",
+        "tested": "999024 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 10/19 rounds.",
+        "decision": "Tested d=999024 in old bounds [998048, 1000000]: C(d)=0; Too few; exclude mid, leaving [999025,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid6[968751, 1000000]984375 → 0[984376, 1000000]Too few; exclude mid7[984376, 1000000]992188 → 0[992189, 1000000]Too few; exclude mid8[992189, 1000000]996094 → 0[996095, 1000000]Too few; exclude mid9[996095, 1000000]998047 → 0[998048, 1000000]Too few; exclude mid10[998048, 1000000]999024 → 0[999025, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 11,
+        "interval": "[999513, 1000000]",
+        "tested": "999512 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 11/19 rounds.",
+        "decision": "Tested d=999512 in old bounds [999025, 1000000]: C(d)=0; Too few; exclude mid, leaving [999513,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid6[968751, 1000000]984375 → 0[984376, 1000000]Too few; exclude mid7[984376, 1000000]992188 → 0[992189, 1000000]Too few; exclude mid8[992189, 1000000]996094 → 0[996095, 1000000]Too few; exclude mid9[996095, 1000000]998047 → 0[998048, 1000000]Too few; exclude mid10[998048, 1000000]999024 → 0[999025, 1000000]Too few; exclude mid11[999025, 1000000]999512 → 0[999513, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 12,
+        "interval": "[999757, 1000000]",
+        "tested": "999756 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 12/19 rounds.",
+        "decision": "Tested d=999756 in old bounds [999513, 1000000]: C(d)=0; Too few; exclude mid, leaving [999757,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid6[968751, 1000000]984375 → 0[984376, 1000000]Too few; exclude mid7[984376, 1000000]992188 → 0[992189, 1000000]Too few; exclude mid8[992189, 1000000]996094 → 0[996095, 1000000]Too few; exclude mid9[996095, 1000000]998047 → 0[998048, 1000000]Too few; exclude mid10[998048, 1000000]999024 → 0[999025, 1000000]Too few; exclude mid11[999025, 1000000]999512 → 0[999513, 1000000]Too few; exclude mid12[999513, 1000000]999756 → 0[999757, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 13,
+        "interval": "[999879, 1000000]",
+        "tested": "999878 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 13/19 rounds.",
+        "decision": "Tested d=999878 in old bounds [999757, 1000000]: C(d)=0; Too few; exclude mid, leaving [999879,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid6[968751, 1000000]984375 → 0[984376, 1000000]Too few; exclude mid7[984376, 1000000]992188 → 0[992189, 1000000]Too few; exclude mid8[992189, 1000000]996094 → 0[996095, 1000000]Too few; exclude mid9[996095, 1000000]998047 → 0[998048, 1000000]Too few; exclude mid10[998048, 1000000]999024 → 0[999025, 1000000]Too few; exclude mid11[999025, 1000000]999512 → 0[999513, 1000000]Too few; exclude mid12[999513, 1000000]999756 → 0[999757, 1000000]Too few; exclude mid13[999757, 1000000]999878 → 0[999879, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 14,
+        "interval": "[999940, 1000000]",
+        "tested": "999939 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 14/19 rounds.",
+        "decision": "Tested d=999939 in old bounds [999879, 1000000]: C(d)=0; Too few; exclude mid, leaving [999940,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid6[968751, 1000000]984375 → 0[984376, 1000000]Too few; exclude mid7[984376, 1000000]992188 → 0[992189, 1000000]Too few; exclude mid8[992189, 1000000]996094 → 0[996095, 1000000]Too few; exclude mid9[996095, 1000000]998047 → 0[998048, 1000000]Too few; exclude mid10[998048, 1000000]999024 → 0[999025, 1000000]Too few; exclude mid11[999025, 1000000]999512 → 0[999513, 1000000]Too few; exclude mid12[999513, 1000000]999756 → 0[999757, 1000000]Too few; exclude mid13[999757, 1000000]999878 → 0[999879, 1000000]Too few; exclude mid14[999879, 1000000]999939 → 0[999940, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 15,
+        "interval": "[999971, 1000000]",
+        "tested": "999970 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 15/19 rounds.",
+        "decision": "Tested d=999970 in old bounds [999940, 1000000]: C(d)=0; Too few; exclude mid, leaving [999971,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid6[968751, 1000000]984375 → 0[984376, 1000000]Too few; exclude mid7[984376, 1000000]992188 → 0[992189, 1000000]Too few; exclude mid8[992189, 1000000]996094 → 0[996095, 1000000]Too few; exclude mid9[996095, 1000000]998047 → 0[998048, 1000000]Too few; exclude mid10[998048, 1000000]999024 → 0[999025, 1000000]Too few; exclude mid11[999025, 1000000]999512 → 0[999513, 1000000]Too few; exclude mid12[999513, 1000000]999756 → 0[999757, 1000000]Too few; exclude mid13[999757, 1000000]999878 → 0[999879, 1000000]Too few; exclude mid14[999879, 1000000]999939 → 0[999940, 1000000]Too few; exclude mid15[999940, 1000000]999970 → 0[999971, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 16,
+        "interval": "[999986, 1000000]",
+        "tested": "999985 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 16/19 rounds.",
+        "decision": "Tested d=999985 in old bounds [999971, 1000000]: C(d)=0; Too few; exclude mid, leaving [999986,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid6[968751, 1000000]984375 → 0[984376, 1000000]Too few; exclude mid7[984376, 1000000]992188 → 0[992189, 1000000]Too few; exclude mid8[992189, 1000000]996094 → 0[996095, 1000000]Too few; exclude mid9[996095, 1000000]998047 → 0[998048, 1000000]Too few; exclude mid10[998048, 1000000]999024 → 0[999025, 1000000]Too few; exclude mid11[999025, 1000000]999512 → 0[999513, 1000000]Too few; exclude mid12[999513, 1000000]999756 → 0[999757, 1000000]Too few; exclude mid13[999757, 1000000]999878 → 0[999879, 1000000]Too few; exclude mid14[999879, 1000000]999939 → 0[999940, 1000000]Too few; exclude mid15[999940, 1000000]999970 → 0[999971, 1000000]Too few; exclude mid16[999971, 1000000]999985 → 0[999986, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 17,
+        "interval": "[999994, 1000000]",
+        "tested": "999993 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 17/19 rounds.",
+        "decision": "Tested d=999993 in old bounds [999986, 1000000]: C(d)=0; Too few; exclude mid, leaving [999994,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid6[968751, 1000000]984375 → 0[984376, 1000000]Too few; exclude mid7[984376, 1000000]992188 → 0[992189, 1000000]Too few; exclude mid8[992189, 1000000]996094 → 0[996095, 1000000]Too few; exclude mid9[996095, 1000000]998047 → 0[998048, 1000000]Too few; exclude mid10[998048, 1000000]999024 → 0[999025, 1000000]Too few; exclude mid11[999025, 1000000]999512 → 0[999513, 1000000]Too few; exclude mid12[999513, 1000000]999756 → 0[999757, 1000000]Too few; exclude mid13[999757, 1000000]999878 → 0[999879, 1000000]Too few; exclude mid14[999879, 1000000]999939 → 0[999940, 1000000]Too few; exclude mid15[999940, 1000000]999970 → 0[999971, 1000000]Too few; exclude mid16[999971, 1000000]999985 → 0[999986, 1000000]Too few; exclude mid17[999986, 1000000]999993 → 0[999994, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 18,
+        "interval": "[999998, 1000000]",
+        "tested": "999997 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 18/19 rounds.",
+        "decision": "Tested d=999997 in old bounds [999994, 1000000]: C(d)=0; Too few; exclude mid, leaving [999998,1000000].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid6[968751, 1000000]984375 → 0[984376, 1000000]Too few; exclude mid7[984376, 1000000]992188 → 0[992189, 1000000]Too few; exclude mid8[992189, 1000000]996094 → 0[996095, 1000000]Too few; exclude mid9[996095, 1000000]998047 → 0[998048, 1000000]Too few; exclude mid10[998048, 1000000]999024 → 0[999025, 1000000]Too few; exclude mid11[999025, 1000000]999512 → 0[999513, 1000000]Too few; exclude mid12[999513, 1000000]999756 → 0[999757, 1000000]Too few; exclude mid13[999757, 1000000]999878 → 0[999879, 1000000]Too few; exclude mid14[999879, 1000000]999939 → 0[999940, 1000000]Too few; exclude mid15[999940, 1000000]999970 → 0[999971, 1000000]Too few; exclude mid16[999971, 1000000]999985 → 0[999986, 1000000]Too few; exclude mid17[999986, 1000000]999993 → 0[999994, 1000000]Too few; exclude mid18[999994, 1000000]999997 → 0[999998, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 4,
+        "round": 19,
+        "interval": "[1000000, 1000000]",
+        "tested": "999999 → 0",
+        "progress": "Array [0, 1000000], k=1; completed 19/19 rounds.",
+        "decision": "Tested d=999999 in old bounds [999998, 1000000]: C(d)=0; Too few; exclude mid, leaving [1000000,1000000].",
+        "terminal": "Converged: kth smallest distance = 1000000.",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]Too few; exclude mid2[500001, 1000000]750000 → 0[750001, 1000000]Too few; exclude mid3[750001, 1000000]875000 → 0[875001, 1000000]Too few; exclude mid4[875001, 1000000]937500 → 0[937501, 1000000]Too few; exclude mid5[937501, 1000000]968750 → 0[968751, 1000000]Too few; exclude mid6[968751, 1000000]984375 → 0[984376, 1000000]Too few; exclude mid7[984376, 1000000]992188 → 0[992189, 1000000]Too few; exclude mid8[992189, 1000000]996094 → 0[996095, 1000000]Too few; exclude mid9[996095, 1000000]998047 → 0[998048, 1000000]Too few; exclude mid10[998048, 1000000]999024 → 0[999025, 1000000]Too few; exclude mid11[999025, 1000000]999512 → 0[999513, 1000000]Too few; exclude mid12[999513, 1000000]999756 → 0[999757, 1000000]Too few; exclude mid13[999757, 1000000]999878 → 0[999879, 1000000]Too few; exclude mid14[999879, 1000000]999939 → 0[999940, 1000000]Too few; exclude mid15[999940, 1000000]999970 → 0[999971, 1000000]Too few; exclude mid16[999971, 1000000]999985 → 0[999986, 1000000]Too few; exclude mid17[999986, 1000000]999993 → 0[999994, 1000000]Too few; exclude mid18[999994, 1000000]999997 → 0[999998, 1000000]Too few; exclude mid19[999998, 1000000]999999 → 0[1000000, 1000000]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 5,
+        "round": 0,
+        "interval": "[0, 3]",
+        "tested": "Not tested yet",
+        "progress": "Array [1, 2, 4], k=3; completed 0/2 rounds.",
+        "decision": "Initial bounds; no midpoint count yet.",
+        "terminal": "Converged: kth smallest distance = 1000000.",
+        "history": "No rounds completed yet."
+      },
+      {
+        "lang": "en",
+        "preset": 5,
+        "round": 1,
+        "interval": "[2, 3]",
+        "tested": "1 → 1",
+        "progress": "Array [1, 2, 4], k=3; completed 1/2 rounds.",
+        "decision": "Tested d=1 in old bounds [0, 3]: C(d)=1; Too few; exclude mid, leaving [2,3].",
+        "terminal": "Converged: kth smallest distance = 1000000.",
+        "history": "1[0, 3]1 → 1[2, 3]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 5,
+        "round": 2,
+        "interval": "[3, 3]",
+        "tested": "2 → 2",
+        "progress": "Array [1, 2, 4], k=3; completed 2/2 rounds.",
+        "decision": "Tested d=2 in old bounds [2, 3]: C(d)=2; Too few; exclude mid, leaving [3,3].",
+        "terminal": "Converged: kth smallest distance = 3.",
+        "history": "1[0, 3]1 → 1[2, 3]Too few; exclude mid2[2, 3]2 → 2[3, 3]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 6,
+        "round": 0,
+        "interval": "[0, 5]",
+        "tested": "Not tested yet",
+        "progress": "Array [1, 1, 3, 6], k=6; completed 0/2 rounds.",
+        "decision": "Initial bounds; no midpoint count yet.",
+        "terminal": "Converged: kth smallest distance = 3.",
+        "history": "No rounds completed yet."
+      },
+      {
+        "lang": "en",
+        "preset": 6,
+        "round": 1,
+        "interval": "[3, 5]",
+        "tested": "2 → 3",
+        "progress": "Array [1, 1, 3, 6], k=6; completed 1/2 rounds.",
+        "decision": "Tested d=2 in old bounds [0, 5]: C(d)=3; Too few; exclude mid, leaving [3,5].",
+        "terminal": "Converged: kth smallest distance = 3.",
+        "history": "1[0, 5]2 → 3[3, 5]Too few; exclude mid"
+      },
+      {
+        "lang": "en",
+        "preset": 6,
+        "round": 2,
+        "interval": "[5, 5]",
+        "tested": "4 → 4",
+        "progress": "Array [1, 1, 3, 6], k=6; completed 2/2 rounds.",
+        "decision": "Tested d=4 in old bounds [3, 5]: C(d)=4; Too few; exclude mid, leaving [5,5].",
+        "terminal": "Converged: kth smallest distance = 5.",
+        "history": "1[0, 5]2 → 3[3, 5]Too few; exclude mid2[3, 5]4 → 4[5, 5]Too few; exclude mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 0,
+        "round": 0,
+        "interval": "[0, 2]",
+        "tested": "尚未测试",
+        "progress": "数组 [1, 3, 1]，k=2；已完成 0/1 轮。",
+        "decision": "初始区间；尚未计算中点计数。",
+        "terminal": "已收敛：第 k 小距离 = 2。",
+        "history": "尚未完成任何轮次。"
+      },
+      {
+        "lang": "zh",
+        "preset": 0,
+        "round": 1,
+        "interval": "[2, 2]",
+        "tested": "1 → 1",
+        "progress": "数组 [1, 3, 1]，k=2；已完成 1/1 轮。",
+        "decision": "在旧区间 [0, 2] 测 d=1，C(d)=1；不足；排除 mid，得到 [2,2]。",
+        "terminal": "已收敛：第 k 小距离 = 2。",
+        "history": "1[0, 2]1 → 1[2, 2]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 1,
+        "round": 0,
+        "interval": "[0, 2]",
+        "tested": "尚未测试",
+        "progress": "数组 [1, 3, 1]，k=1；已完成 0/2 轮。",
+        "decision": "初始区间；尚未计算中点计数。",
+        "terminal": "已收敛：第 k 小距离 = 2。",
+        "history": "尚未完成任何轮次。"
+      },
+      {
+        "lang": "zh",
+        "preset": 1,
+        "round": 1,
+        "interval": "[0, 1]",
+        "tested": "1 → 1",
+        "progress": "数组 [1, 3, 1]，k=1；已完成 1/2 轮。",
+        "decision": "在旧区间 [0, 2] 测 d=1，C(d)=1；足够；保留 mid，得到 [0,1]。",
+        "terminal": "已收敛：第 k 小距离 = 2。",
+        "history": "1[0, 2]1 → 1[0, 1]足够；保留 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 1,
+        "round": 2,
+        "interval": "[0, 0]",
+        "tested": "0 → 1",
+        "progress": "数组 [1, 3, 1]，k=1；已完成 2/2 轮。",
+        "decision": "在旧区间 [0, 1] 测 d=0，C(d)=1；足够；保留 mid，得到 [0,0]。",
+        "terminal": "已收敛：第 k 小距离 = 0。",
+        "history": "1[0, 2]1 → 1[0, 1]足够；保留 mid2[0, 1]0 → 1[0, 0]足够；保留 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 2,
+        "round": 0,
+        "interval": "[0, 0]",
+        "tested": "尚未测试",
+        "progress": "数组 [1, 1, 1]，k=2；已完成 0/0 轮。",
+        "decision": "初始区间；尚未计算中点计数。",
+        "terminal": "已收敛：第 k 小距离 = 0。",
+        "history": "尚未完成任何轮次。"
+      },
+      {
+        "lang": "zh",
+        "preset": 3,
+        "round": 0,
+        "interval": "[0, 5]",
+        "tested": "尚未测试",
+        "progress": "数组 [1, 6, 1]，k=3；已完成 0/2 轮。",
+        "decision": "初始区间；尚未计算中点计数。",
+        "terminal": "已收敛：第 k 小距离 = 0。",
+        "history": "尚未完成任何轮次。"
+      },
+      {
+        "lang": "zh",
+        "preset": 3,
+        "round": 1,
+        "interval": "[3, 5]",
+        "tested": "2 → 1",
+        "progress": "数组 [1, 6, 1]，k=3；已完成 1/2 轮。",
+        "decision": "在旧区间 [0, 5] 测 d=2，C(d)=1；不足；排除 mid，得到 [3,5]。",
+        "terminal": "已收敛：第 k 小距离 = 0。",
+        "history": "1[0, 5]2 → 1[3, 5]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 3,
+        "round": 2,
+        "interval": "[5, 5]",
+        "tested": "4 → 1",
+        "progress": "数组 [1, 6, 1]，k=3；已完成 2/2 轮。",
+        "decision": "在旧区间 [3, 5] 测 d=4，C(d)=1；不足；排除 mid，得到 [5,5]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 5]2 → 1[3, 5]不足；排除 mid2[3, 5]4 → 1[5, 5]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 0,
+        "interval": "[0, 1000000]",
+        "tested": "尚未测试",
+        "progress": "数组 [0, 1000000]，k=1；已完成 0/19 轮。",
+        "decision": "初始区间；尚未计算中点计数。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "尚未完成任何轮次。"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 1,
+        "interval": "[500001, 1000000]",
+        "tested": "500000 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 1/19 轮。",
+        "decision": "在旧区间 [0, 1000000] 测 d=500000，C(d)=0；不足；排除 mid，得到 [500001,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 2,
+        "interval": "[750001, 1000000]",
+        "tested": "750000 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 2/19 轮。",
+        "decision": "在旧区间 [500001, 1000000] 测 d=750000，C(d)=0；不足；排除 mid，得到 [750001,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 3,
+        "interval": "[875001, 1000000]",
+        "tested": "875000 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 3/19 轮。",
+        "decision": "在旧区间 [750001, 1000000] 测 d=875000，C(d)=0；不足；排除 mid，得到 [875001,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 4,
+        "interval": "[937501, 1000000]",
+        "tested": "937500 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 4/19 轮。",
+        "decision": "在旧区间 [875001, 1000000] 测 d=937500，C(d)=0；不足；排除 mid，得到 [937501,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 5,
+        "interval": "[968751, 1000000]",
+        "tested": "968750 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 5/19 轮。",
+        "decision": "在旧区间 [937501, 1000000] 测 d=968750，C(d)=0；不足；排除 mid，得到 [968751,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 6,
+        "interval": "[984376, 1000000]",
+        "tested": "984375 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 6/19 轮。",
+        "decision": "在旧区间 [968751, 1000000] 测 d=984375，C(d)=0；不足；排除 mid，得到 [984376,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid6[968751, 1000000]984375 → 0[984376, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 7,
+        "interval": "[992189, 1000000]",
+        "tested": "992188 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 7/19 轮。",
+        "decision": "在旧区间 [984376, 1000000] 测 d=992188，C(d)=0；不足；排除 mid，得到 [992189,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid6[968751, 1000000]984375 → 0[984376, 1000000]不足；排除 mid7[984376, 1000000]992188 → 0[992189, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 8,
+        "interval": "[996095, 1000000]",
+        "tested": "996094 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 8/19 轮。",
+        "decision": "在旧区间 [992189, 1000000] 测 d=996094，C(d)=0；不足；排除 mid，得到 [996095,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid6[968751, 1000000]984375 → 0[984376, 1000000]不足；排除 mid7[984376, 1000000]992188 → 0[992189, 1000000]不足；排除 mid8[992189, 1000000]996094 → 0[996095, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 9,
+        "interval": "[998048, 1000000]",
+        "tested": "998047 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 9/19 轮。",
+        "decision": "在旧区间 [996095, 1000000] 测 d=998047，C(d)=0；不足；排除 mid，得到 [998048,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid6[968751, 1000000]984375 → 0[984376, 1000000]不足；排除 mid7[984376, 1000000]992188 → 0[992189, 1000000]不足；排除 mid8[992189, 1000000]996094 → 0[996095, 1000000]不足；排除 mid9[996095, 1000000]998047 → 0[998048, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 10,
+        "interval": "[999025, 1000000]",
+        "tested": "999024 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 10/19 轮。",
+        "decision": "在旧区间 [998048, 1000000] 测 d=999024，C(d)=0；不足；排除 mid，得到 [999025,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid6[968751, 1000000]984375 → 0[984376, 1000000]不足；排除 mid7[984376, 1000000]992188 → 0[992189, 1000000]不足；排除 mid8[992189, 1000000]996094 → 0[996095, 1000000]不足；排除 mid9[996095, 1000000]998047 → 0[998048, 1000000]不足；排除 mid10[998048, 1000000]999024 → 0[999025, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 11,
+        "interval": "[999513, 1000000]",
+        "tested": "999512 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 11/19 轮。",
+        "decision": "在旧区间 [999025, 1000000] 测 d=999512，C(d)=0；不足；排除 mid，得到 [999513,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid6[968751, 1000000]984375 → 0[984376, 1000000]不足；排除 mid7[984376, 1000000]992188 → 0[992189, 1000000]不足；排除 mid8[992189, 1000000]996094 → 0[996095, 1000000]不足；排除 mid9[996095, 1000000]998047 → 0[998048, 1000000]不足；排除 mid10[998048, 1000000]999024 → 0[999025, 1000000]不足；排除 mid11[999025, 1000000]999512 → 0[999513, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 12,
+        "interval": "[999757, 1000000]",
+        "tested": "999756 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 12/19 轮。",
+        "decision": "在旧区间 [999513, 1000000] 测 d=999756，C(d)=0；不足；排除 mid，得到 [999757,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid6[968751, 1000000]984375 → 0[984376, 1000000]不足；排除 mid7[984376, 1000000]992188 → 0[992189, 1000000]不足；排除 mid8[992189, 1000000]996094 → 0[996095, 1000000]不足；排除 mid9[996095, 1000000]998047 → 0[998048, 1000000]不足；排除 mid10[998048, 1000000]999024 → 0[999025, 1000000]不足；排除 mid11[999025, 1000000]999512 → 0[999513, 1000000]不足；排除 mid12[999513, 1000000]999756 → 0[999757, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 13,
+        "interval": "[999879, 1000000]",
+        "tested": "999878 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 13/19 轮。",
+        "decision": "在旧区间 [999757, 1000000] 测 d=999878，C(d)=0；不足；排除 mid，得到 [999879,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid6[968751, 1000000]984375 → 0[984376, 1000000]不足；排除 mid7[984376, 1000000]992188 → 0[992189, 1000000]不足；排除 mid8[992189, 1000000]996094 → 0[996095, 1000000]不足；排除 mid9[996095, 1000000]998047 → 0[998048, 1000000]不足；排除 mid10[998048, 1000000]999024 → 0[999025, 1000000]不足；排除 mid11[999025, 1000000]999512 → 0[999513, 1000000]不足；排除 mid12[999513, 1000000]999756 → 0[999757, 1000000]不足；排除 mid13[999757, 1000000]999878 → 0[999879, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 14,
+        "interval": "[999940, 1000000]",
+        "tested": "999939 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 14/19 轮。",
+        "decision": "在旧区间 [999879, 1000000] 测 d=999939，C(d)=0；不足；排除 mid，得到 [999940,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid6[968751, 1000000]984375 → 0[984376, 1000000]不足；排除 mid7[984376, 1000000]992188 → 0[992189, 1000000]不足；排除 mid8[992189, 1000000]996094 → 0[996095, 1000000]不足；排除 mid9[996095, 1000000]998047 → 0[998048, 1000000]不足；排除 mid10[998048, 1000000]999024 → 0[999025, 1000000]不足；排除 mid11[999025, 1000000]999512 → 0[999513, 1000000]不足；排除 mid12[999513, 1000000]999756 → 0[999757, 1000000]不足；排除 mid13[999757, 1000000]999878 → 0[999879, 1000000]不足；排除 mid14[999879, 1000000]999939 → 0[999940, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 15,
+        "interval": "[999971, 1000000]",
+        "tested": "999970 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 15/19 轮。",
+        "decision": "在旧区间 [999940, 1000000] 测 d=999970，C(d)=0；不足；排除 mid，得到 [999971,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid6[968751, 1000000]984375 → 0[984376, 1000000]不足；排除 mid7[984376, 1000000]992188 → 0[992189, 1000000]不足；排除 mid8[992189, 1000000]996094 → 0[996095, 1000000]不足；排除 mid9[996095, 1000000]998047 → 0[998048, 1000000]不足；排除 mid10[998048, 1000000]999024 → 0[999025, 1000000]不足；排除 mid11[999025, 1000000]999512 → 0[999513, 1000000]不足；排除 mid12[999513, 1000000]999756 → 0[999757, 1000000]不足；排除 mid13[999757, 1000000]999878 → 0[999879, 1000000]不足；排除 mid14[999879, 1000000]999939 → 0[999940, 1000000]不足；排除 mid15[999940, 1000000]999970 → 0[999971, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 16,
+        "interval": "[999986, 1000000]",
+        "tested": "999985 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 16/19 轮。",
+        "decision": "在旧区间 [999971, 1000000] 测 d=999985，C(d)=0；不足；排除 mid，得到 [999986,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid6[968751, 1000000]984375 → 0[984376, 1000000]不足；排除 mid7[984376, 1000000]992188 → 0[992189, 1000000]不足；排除 mid8[992189, 1000000]996094 → 0[996095, 1000000]不足；排除 mid9[996095, 1000000]998047 → 0[998048, 1000000]不足；排除 mid10[998048, 1000000]999024 → 0[999025, 1000000]不足；排除 mid11[999025, 1000000]999512 → 0[999513, 1000000]不足；排除 mid12[999513, 1000000]999756 → 0[999757, 1000000]不足；排除 mid13[999757, 1000000]999878 → 0[999879, 1000000]不足；排除 mid14[999879, 1000000]999939 → 0[999940, 1000000]不足；排除 mid15[999940, 1000000]999970 → 0[999971, 1000000]不足；排除 mid16[999971, 1000000]999985 → 0[999986, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 17,
+        "interval": "[999994, 1000000]",
+        "tested": "999993 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 17/19 轮。",
+        "decision": "在旧区间 [999986, 1000000] 测 d=999993，C(d)=0；不足；排除 mid，得到 [999994,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid6[968751, 1000000]984375 → 0[984376, 1000000]不足；排除 mid7[984376, 1000000]992188 → 0[992189, 1000000]不足；排除 mid8[992189, 1000000]996094 → 0[996095, 1000000]不足；排除 mid9[996095, 1000000]998047 → 0[998048, 1000000]不足；排除 mid10[998048, 1000000]999024 → 0[999025, 1000000]不足；排除 mid11[999025, 1000000]999512 → 0[999513, 1000000]不足；排除 mid12[999513, 1000000]999756 → 0[999757, 1000000]不足；排除 mid13[999757, 1000000]999878 → 0[999879, 1000000]不足；排除 mid14[999879, 1000000]999939 → 0[999940, 1000000]不足；排除 mid15[999940, 1000000]999970 → 0[999971, 1000000]不足；排除 mid16[999971, 1000000]999985 → 0[999986, 1000000]不足；排除 mid17[999986, 1000000]999993 → 0[999994, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 18,
+        "interval": "[999998, 1000000]",
+        "tested": "999997 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 18/19 轮。",
+        "decision": "在旧区间 [999994, 1000000] 测 d=999997，C(d)=0；不足；排除 mid，得到 [999998,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid6[968751, 1000000]984375 → 0[984376, 1000000]不足；排除 mid7[984376, 1000000]992188 → 0[992189, 1000000]不足；排除 mid8[992189, 1000000]996094 → 0[996095, 1000000]不足；排除 mid9[996095, 1000000]998047 → 0[998048, 1000000]不足；排除 mid10[998048, 1000000]999024 → 0[999025, 1000000]不足；排除 mid11[999025, 1000000]999512 → 0[999513, 1000000]不足；排除 mid12[999513, 1000000]999756 → 0[999757, 1000000]不足；排除 mid13[999757, 1000000]999878 → 0[999879, 1000000]不足；排除 mid14[999879, 1000000]999939 → 0[999940, 1000000]不足；排除 mid15[999940, 1000000]999970 → 0[999971, 1000000]不足；排除 mid16[999971, 1000000]999985 → 0[999986, 1000000]不足；排除 mid17[999986, 1000000]999993 → 0[999994, 1000000]不足；排除 mid18[999994, 1000000]999997 → 0[999998, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 4,
+        "round": 19,
+        "interval": "[1000000, 1000000]",
+        "tested": "999999 → 0",
+        "progress": "数组 [0, 1000000]，k=1；已完成 19/19 轮。",
+        "decision": "在旧区间 [999998, 1000000] 测 d=999999，C(d)=0；不足；排除 mid，得到 [1000000,1000000]。",
+        "terminal": "已收敛：第 k 小距离 = 1000000。",
+        "history": "1[0, 1000000]500000 → 0[500001, 1000000]不足；排除 mid2[500001, 1000000]750000 → 0[750001, 1000000]不足；排除 mid3[750001, 1000000]875000 → 0[875001, 1000000]不足；排除 mid4[875001, 1000000]937500 → 0[937501, 1000000]不足；排除 mid5[937501, 1000000]968750 → 0[968751, 1000000]不足；排除 mid6[968751, 1000000]984375 → 0[984376, 1000000]不足；排除 mid7[984376, 1000000]992188 → 0[992189, 1000000]不足；排除 mid8[992189, 1000000]996094 → 0[996095, 1000000]不足；排除 mid9[996095, 1000000]998047 → 0[998048, 1000000]不足；排除 mid10[998048, 1000000]999024 → 0[999025, 1000000]不足；排除 mid11[999025, 1000000]999512 → 0[999513, 1000000]不足；排除 mid12[999513, 1000000]999756 → 0[999757, 1000000]不足；排除 mid13[999757, 1000000]999878 → 0[999879, 1000000]不足；排除 mid14[999879, 1000000]999939 → 0[999940, 1000000]不足；排除 mid15[999940, 1000000]999970 → 0[999971, 1000000]不足；排除 mid16[999971, 1000000]999985 → 0[999986, 1000000]不足；排除 mid17[999986, 1000000]999993 → 0[999994, 1000000]不足；排除 mid18[999994, 1000000]999997 → 0[999998, 1000000]不足；排除 mid19[999998, 1000000]999999 → 0[1000000, 1000000]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 5,
+        "round": 0,
+        "interval": "[0, 3]",
+        "tested": "尚未测试",
+        "progress": "数组 [1, 2, 4]，k=3；已完成 0/2 轮。",
+        "decision": "初始区间；尚未计算中点计数。",
+        "terminal": "已收敛：第 k 小距离 = 1000000。",
+        "history": "尚未完成任何轮次。"
+      },
+      {
+        "lang": "zh",
+        "preset": 5,
+        "round": 1,
+        "interval": "[2, 3]",
+        "tested": "1 → 1",
+        "progress": "数组 [1, 2, 4]，k=3；已完成 1/2 轮。",
+        "decision": "在旧区间 [0, 3] 测 d=1，C(d)=1；不足；排除 mid，得到 [2,3]。",
+        "terminal": "已收敛：第 k 小距离 = 1000000。",
+        "history": "1[0, 3]1 → 1[2, 3]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 5,
+        "round": 2,
+        "interval": "[3, 3]",
+        "tested": "2 → 2",
+        "progress": "数组 [1, 2, 4]，k=3；已完成 2/2 轮。",
+        "decision": "在旧区间 [2, 3] 测 d=2，C(d)=2；不足；排除 mid，得到 [3,3]。",
+        "terminal": "已收敛：第 k 小距离 = 3。",
+        "history": "1[0, 3]1 → 1[2, 3]不足；排除 mid2[2, 3]2 → 2[3, 3]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 6,
+        "round": 0,
+        "interval": "[0, 5]",
+        "tested": "尚未测试",
+        "progress": "数组 [1, 1, 3, 6]，k=6；已完成 0/2 轮。",
+        "decision": "初始区间；尚未计算中点计数。",
+        "terminal": "已收敛：第 k 小距离 = 3。",
+        "history": "尚未完成任何轮次。"
+      },
+      {
+        "lang": "zh",
+        "preset": 6,
+        "round": 1,
+        "interval": "[3, 5]",
+        "tested": "2 → 3",
+        "progress": "数组 [1, 1, 3, 6]，k=6；已完成 1/2 轮。",
+        "decision": "在旧区间 [0, 5] 测 d=2，C(d)=3；不足；排除 mid，得到 [3,5]。",
+        "terminal": "已收敛：第 k 小距离 = 3。",
+        "history": "1[0, 5]2 → 3[3, 5]不足；排除 mid"
+      },
+      {
+        "lang": "zh",
+        "preset": 6,
+        "round": 2,
+        "interval": "[5, 5]",
+        "tested": "4 → 4",
+        "progress": "数组 [1, 1, 3, 6]，k=6；已完成 2/2 轮。",
+        "decision": "在旧区间 [3, 5] 测 d=4，C(d)=4；不足；排除 mid，得到 [5,5]。",
+        "terminal": "已收敛：第 k 小距离 = 5。",
+        "history": "1[0, 5]2 → 3[3, 5]不足；排除 mid2[3, 5]4 → 4[5, 5]不足；排除 mid"
+      }
+    ],
+    "layouts": [
+      {
+        "lang": "en",
+        "width": 320,
+        "zoom": 1,
+        "innerWidth": 320,
+        "outerWidth": 500,
+        "dpr": 1,
+        "scrollWidth": 320,
+        "selectWidth": 262,
+        "textWidth": 127.48829650878906,
+        "padding": 30,
+        "controls": [
+          {
+            "id": "zh",
+            "h": 48,
+            "w": 48
+          },
+          {
+            "id": "en",
+            "h": 48,
+            "w": 49.0625
+          },
+          {
+            "id": "prev",
+            "h": 48,
+            "w": 144.109375
+          },
+          {
+            "id": "next",
+            "h": 48,
+            "w": 228.125
+          },
+          {
+            "id": "reset",
+            "h": 48,
+            "w": 152.75
+          },
+          {
+            "id": "end",
+            "h": 48,
+            "w": 185.140625
+          },
+          {
+            "id": "reveal",
+            "h": 48,
+            "w": 166.375
+          },
+          {
+            "id": "copy",
+            "h": 48,
+            "w": 216.375
+          }
+        ],
+        "tableWidth": 262
+      },
+      {
+        "lang": "en",
+        "width": 390,
+        "zoom": 1,
+        "innerWidth": 390,
+        "outerWidth": 500,
+        "dpr": 1,
+        "scrollWidth": 390,
+        "selectWidth": 332,
+        "textWidth": 127.48829650878906,
+        "padding": 30,
+        "controls": [
+          {
+            "id": "zh",
+            "h": 48,
+            "w": 48
+          },
+          {
+            "id": "en",
+            "h": 48,
+            "w": 49.0625
+          },
+          {
+            "id": "prev",
+            "h": 48,
+            "w": 144.109375
+          },
+          {
+            "id": "next",
+            "h": 48,
+            "w": 228.125
+          },
+          {
+            "id": "reset",
+            "h": 48,
+            "w": 152.75
+          },
+          {
+            "id": "end",
+            "h": 48,
+            "w": 185.140625
+          },
+          {
+            "id": "reveal",
+            "h": 48,
+            "w": 166.375
+          },
+          {
+            "id": "copy",
+            "h": 48,
+            "w": 216.375
+          }
+        ],
+        "tableWidth": 332
+      },
+      {
+        "lang": "en",
+        "width": 736,
+        "zoom": 1,
+        "innerWidth": 736,
+        "outerWidth": 736,
+        "dpr": 1,
+        "scrollWidth": 736,
+        "selectWidth": 646,
+        "textWidth": 127.48829650878906,
+        "padding": 30,
+        "controls": [
+          {
+            "id": "zh",
+            "h": 48,
+            "w": 48
+          },
+          {
+            "id": "en",
+            "h": 48,
+            "w": 49.0625
+          },
+          {
+            "id": "prev",
+            "h": 48,
+            "w": 150.109375
+          },
+          {
+            "id": "next",
+            "h": 48,
+            "w": 234.125
+          },
+          {
+            "id": "reset",
+            "h": 48,
+            "w": 158.75
+          },
+          {
+            "id": "end",
+            "h": 48,
+            "w": 191.140625
+          },
+          {
+            "id": "reveal",
+            "h": 48,
+            "w": 166.375
+          },
+          {
+            "id": "copy",
+            "h": 48,
+            "w": 216.375
+          }
+        ],
+        "tableWidth": 646
+      },
+      {
+        "lang": "en",
+        "width": 1440,
+        "zoom": 1,
+        "innerWidth": 1440,
+        "outerWidth": 1440,
+        "dpr": 1,
+        "scrollWidth": 1440,
+        "selectWidth": 910,
+        "textWidth": 127.48829650878906,
+        "padding": 30,
+        "controls": [
+          {
+            "id": "zh",
+            "h": 48,
+            "w": 48
+          },
+          {
+            "id": "en",
+            "h": 48,
+            "w": 49.0625
+          },
+          {
+            "id": "prev",
+            "h": 48,
+            "w": 150.109375
+          },
+          {
+            "id": "next",
+            "h": 48,
+            "w": 234.125
+          },
+          {
+            "id": "reset",
+            "h": 48,
+            "w": 158.75
+          },
+          {
+            "id": "end",
+            "h": 48,
+            "w": 191.140625
+          },
+          {
+            "id": "reveal",
+            "h": 48,
+            "w": 166.375
+          },
+          {
+            "id": "copy",
+            "h": 48,
+            "w": 216.375
+          }
+        ],
+        "tableWidth": 910
+      },
+      {
+        "lang": "zh",
+        "width": 320,
+        "zoom": 1,
+        "innerWidth": 320,
+        "outerWidth": 500,
+        "dpr": 1,
+        "scrollWidth": 320,
+        "selectWidth": 262,
+        "textWidth": 127.48829650878906,
+        "padding": 30,
+        "controls": [
+          {
+            "id": "zh",
+            "h": 48,
+            "w": 48
+          },
+          {
+            "id": "en",
+            "h": 48,
+            "w": 49.0625
+          },
+          {
+            "id": "prev",
+            "h": 48,
+            "w": 90.015625
+          },
+          {
+            "id": "next",
+            "h": 48,
+            "w": 122.015625
+          },
+          {
+            "id": "reset",
+            "h": 48,
+            "w": 106.015625
+          },
+          {
+            "id": "end",
+            "h": 48,
+            "w": 90.015625
+          },
+          {
+            "id": "reveal",
+            "h": 48,
+            "w": 128.015625
+          },
+          {
+            "id": "copy",
+            "h": 48,
+            "w": 157.40625
+          }
+        ],
+        "tableWidth": 262
+      },
+      {
+        "lang": "zh",
+        "width": 390,
+        "zoom": 1,
+        "innerWidth": 390,
+        "outerWidth": 500,
+        "dpr": 1,
+        "scrollWidth": 390,
+        "selectWidth": 332,
+        "textWidth": 127.48829650878906,
+        "padding": 30,
+        "controls": [
+          {
+            "id": "zh",
+            "h": 48,
+            "w": 48
+          },
+          {
+            "id": "en",
+            "h": 48,
+            "w": 49.0625
+          },
+          {
+            "id": "prev",
+            "h": 48,
+            "w": 90.015625
+          },
+          {
+            "id": "next",
+            "h": 48,
+            "w": 122.015625
+          },
+          {
+            "id": "reset",
+            "h": 48,
+            "w": 106.015625
+          },
+          {
+            "id": "end",
+            "h": 48,
+            "w": 90.015625
+          },
+          {
+            "id": "reveal",
+            "h": 48,
+            "w": 128.015625
+          },
+          {
+            "id": "copy",
+            "h": 48,
+            "w": 157.40625
+          }
+        ],
+        "tableWidth": 332
+      },
+      {
+        "lang": "zh",
+        "width": 736,
+        "zoom": 1,
+        "innerWidth": 736,
+        "outerWidth": 736,
+        "dpr": 1,
+        "scrollWidth": 736,
+        "selectWidth": 646,
+        "textWidth": 127.48829650878906,
+        "padding": 30,
+        "controls": [
+          {
+            "id": "zh",
+            "h": 48,
+            "w": 48
+          },
+          {
+            "id": "en",
+            "h": 48,
+            "w": 49.0625
+          },
+          {
+            "id": "prev",
+            "h": 48,
+            "w": 96.015625
+          },
+          {
+            "id": "next",
+            "h": 48,
+            "w": 128.015625
+          },
+          {
+            "id": "reset",
+            "h": 48,
+            "w": 112.015625
+          },
+          {
+            "id": "end",
+            "h": 48,
+            "w": 96.015625
+          },
+          {
+            "id": "reveal",
+            "h": 48,
+            "w": 128.015625
+          },
+          {
+            "id": "copy",
+            "h": 48,
+            "w": 157.40625
+          }
+        ],
+        "tableWidth": 646
+      },
+      {
+        "lang": "zh",
+        "width": 1440,
+        "zoom": 1,
+        "innerWidth": 1440,
+        "outerWidth": 1440,
+        "dpr": 1,
+        "scrollWidth": 1440,
+        "selectWidth": 910,
+        "textWidth": 127.48829650878906,
+        "padding": 30,
+        "controls": [
+          {
+            "id": "zh",
+            "h": 48,
+            "w": 48
+          },
+          {
+            "id": "en",
+            "h": 48,
+            "w": 49.0625
+          },
+          {
+            "id": "prev",
+            "h": 48,
+            "w": 96.015625
+          },
+          {
+            "id": "next",
+            "h": 48,
+            "w": 128.015625
+          },
+          {
+            "id": "reset",
+            "h": 48,
+            "w": 112.015625
+          },
+          {
+            "id": "end",
+            "h": 48,
+            "w": 96.015625
+          },
+          {
+            "id": "reveal",
+            "h": 48,
+            "w": 128.015625
+          },
+          {
+            "id": "copy",
+            "h": 48,
+            "w": 157.40625
+          }
+        ],
+        "tableWidth": 910
+      },
+      {
+        "lang": "en",
+        "width": 1440,
+        "zoom": 2,
+        "innerWidth": 720,
+        "outerWidth": 1440,
+        "dpr": 2,
+        "scrollWidth": 720,
+        "selectWidth": 630,
+        "textWidth": 127.48829650878906,
+        "padding": 30,
+        "controls": [
+          {
+            "id": "zh",
+            "h": 48,
+            "w": 48
+          },
+          {
+            "id": "en",
+            "h": 48,
+            "w": 49.0625
+          },
+          {
+            "id": "prev",
+            "h": 48,
+            "w": 150.1015625
+          },
+          {
+            "id": "next",
+            "h": 48,
+            "w": 234.1171875
+          },
+          {
+            "id": "reset",
+            "h": 48,
+            "w": 158.7421875
+          },
+          {
+            "id": "end",
+            "h": 48,
+            "w": 191.140625
+          },
+          {
+            "id": "reveal",
+            "h": 48,
+            "w": 166.375
+          },
+          {
+            "id": "copy",
+            "h": 48,
+            "w": 216.375
+          }
+        ],
+        "tableWidth": 630
+      },
+      {
+        "lang": "zh",
+        "width": 1440,
+        "zoom": 2,
+        "innerWidth": 720,
+        "outerWidth": 1440,
+        "dpr": 2,
+        "scrollWidth": 720,
+        "selectWidth": 630,
+        "textWidth": 127.48829650878906,
+        "padding": 30,
+        "controls": [
+          {
+            "id": "zh",
+            "h": 48,
+            "w": 48
+          },
+          {
+            "id": "en",
+            "h": 48,
+            "w": 49.0625
+          },
+          {
+            "id": "prev",
+            "h": 48,
+            "w": 96.0078125
+          },
+          {
+            "id": "next",
+            "h": 48,
+            "w": 128.0078125
+          },
+          {
+            "id": "reset",
+            "h": 48,
+            "w": 112.0078125
+          },
+          {
+            "id": "end",
+            "h": 48,
+            "w": 96.0078125
+          },
+          {
+            "id": "reveal",
+            "h": 48,
+            "w": 128.0078125
+          },
+          {
+            "id": "copy",
+            "h": 48,
+            "w": 157.3984375
+          }
+        ],
+        "tableWidth": 630
+      }
+    ],
+    "checks": [
+      {
+        "lang": "en",
+        "d": 0,
+        "scanned": 0,
+        "total": 0,
+        "text": "d=0; completed 0/4 right endpoints, counting 0 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 0,
+        "scanned": 1,
+        "total": 0,
+        "text": "d=0; completed 1/4 right endpoints, counting 0 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 0,
+        "scanned": 2,
+        "total": 1,
+        "text": "d=0; completed 2/4 right endpoints, counting 1 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 0,
+        "scanned": 3,
+        "total": 1,
+        "text": "d=0; completed 3/4 right endpoints, counting 1 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 0,
+        "scanned": 4,
+        "total": 1,
+        "text": "d=0; completed 4/4 right endpoints, counting 1 pairs. This is the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 1,
+        "scanned": 0,
+        "total": 0,
+        "text": "d=1; completed 0/4 right endpoints, counting 0 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 1,
+        "scanned": 1,
+        "total": 0,
+        "text": "d=1; completed 1/4 right endpoints, counting 0 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 1,
+        "scanned": 2,
+        "total": 1,
+        "text": "d=1; completed 2/4 right endpoints, counting 1 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 1,
+        "scanned": 3,
+        "total": 1,
+        "text": "d=1; completed 3/4 right endpoints, counting 1 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 1,
+        "scanned": 4,
+        "total": 1,
+        "text": "d=1; completed 4/4 right endpoints, counting 1 pairs. This is the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 2,
+        "scanned": 0,
+        "total": 0,
+        "text": "d=2; completed 0/4 right endpoints, counting 0 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 2,
+        "scanned": 1,
+        "total": 0,
+        "text": "d=2; completed 1/4 right endpoints, counting 0 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 2,
+        "scanned": 2,
+        "total": 1,
+        "text": "d=2; completed 2/4 right endpoints, counting 1 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 2,
+        "scanned": 3,
+        "total": 3,
+        "text": "d=2; completed 3/4 right endpoints, counting 3 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 2,
+        "scanned": 4,
+        "total": 3,
+        "text": "d=2; completed 4/4 right endpoints, counting 3 pairs. This is the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 3,
+        "scanned": 0,
+        "total": 0,
+        "text": "d=3; completed 0/4 right endpoints, counting 0 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 3,
+        "scanned": 1,
+        "total": 0,
+        "text": "d=3; completed 1/4 right endpoints, counting 0 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 3,
+        "scanned": 2,
+        "total": 1,
+        "text": "d=3; completed 2/4 right endpoints, counting 1 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 3,
+        "scanned": 3,
+        "total": 3,
+        "text": "d=3; completed 3/4 right endpoints, counting 3 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 3,
+        "scanned": 4,
+        "total": 4,
+        "text": "d=3; completed 4/4 right endpoints, counting 4 pairs. This is the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 4,
+        "scanned": 0,
+        "total": 0,
+        "text": "d=4; completed 0/4 right endpoints, counting 0 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 4,
+        "scanned": 1,
+        "total": 0,
+        "text": "d=4; completed 1/4 right endpoints, counting 0 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 4,
+        "scanned": 2,
+        "total": 1,
+        "text": "d=4; completed 2/4 right endpoints, counting 1 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 4,
+        "scanned": 3,
+        "total": 3,
+        "text": "d=4; completed 3/4 right endpoints, counting 3 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 4,
+        "scanned": 4,
+        "total": 4,
+        "text": "d=4; completed 4/4 right endpoints, counting 4 pairs. This is the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 5,
+        "scanned": 0,
+        "total": 0,
+        "text": "d=5; completed 0/4 right endpoints, counting 0 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 5,
+        "scanned": 1,
+        "total": 0,
+        "text": "d=5; completed 1/4 right endpoints, counting 0 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 5,
+        "scanned": 2,
+        "total": 1,
+        "text": "d=5; completed 2/4 right endpoints, counting 1 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 5,
+        "scanned": 3,
+        "total": 3,
+        "text": "d=5; completed 3/4 right endpoints, counting 3 pairs. This is not yet the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "d": 5,
+        "scanned": 4,
+        "total": 6,
+        "text": "d=5; completed 4/4 right endpoints, counting 6 pairs. This is the complete C(d)."
+      },
+      {
+        "lang": "en",
+        "option": 0,
+        "feedback": "Correct choice. The six distances are 2,2,7,0,5,5; three are ≤3. Thus hi=3, retaining a possible answer. Even equality does not justify returning: C(2) is also 3, and the third smallest distance is actually 2. B stops too early; C misses one of the two pairs formed by 0 and the two separate positions holding 2."
+      },
+      {
+        "lang": "en",
+        "option": 1,
+        "feedback": "Revisit the invariant. The six distances are 2,2,7,0,5,5; three are ≤3. Thus hi=3, retaining a possible answer. Even equality does not justify returning: C(2) is also 3, and the third smallest distance is actually 2. B stops too early; C misses one of the two pairs formed by 0 and the two separate positions holding 2."
+      },
+      {
+        "lang": "en",
+        "option": 2,
+        "feedback": "Revisit the invariant. The six distances are 2,2,7,0,5,5; three are ≤3. Thus hi=3, retaining a possible answer. Even equality does not justify returning: C(2) is also 3, and the third smallest distance is actually 2. B stops too early; C misses one of the two pairs formed by 0 and the two separate positions holding 2."
+      },
+      {
+        "lang": "en",
+        "clipboard": "success + denied write + real host-key copy replaced sentinel",
+        "characters": 514
+      },
+      {
+        "lang": "zh",
+        "d": 0,
+        "scanned": 0,
+        "total": 0,
+        "text": "d=0；已完成 0/4 个右端，累计 0 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 0,
+        "scanned": 1,
+        "total": 0,
+        "text": "d=0；已完成 1/4 个右端，累计 0 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 0,
+        "scanned": 2,
+        "total": 1,
+        "text": "d=0；已完成 2/4 个右端，累计 1 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 0,
+        "scanned": 3,
+        "total": 1,
+        "text": "d=0；已完成 3/4 个右端，累计 1 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 0,
+        "scanned": 4,
+        "total": 1,
+        "text": "d=0；已完成 4/4 个右端，累计 1 个数对。这就是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 1,
+        "scanned": 0,
+        "total": 0,
+        "text": "d=1；已完成 0/4 个右端，累计 0 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 1,
+        "scanned": 1,
+        "total": 0,
+        "text": "d=1；已完成 1/4 个右端，累计 0 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 1,
+        "scanned": 2,
+        "total": 1,
+        "text": "d=1；已完成 2/4 个右端，累计 1 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 1,
+        "scanned": 3,
+        "total": 1,
+        "text": "d=1；已完成 3/4 个右端，累计 1 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 1,
+        "scanned": 4,
+        "total": 1,
+        "text": "d=1；已完成 4/4 个右端，累计 1 个数对。这就是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 2,
+        "scanned": 0,
+        "total": 0,
+        "text": "d=2；已完成 0/4 个右端，累计 0 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 2,
+        "scanned": 1,
+        "total": 0,
+        "text": "d=2；已完成 1/4 个右端，累计 0 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 2,
+        "scanned": 2,
+        "total": 1,
+        "text": "d=2；已完成 2/4 个右端，累计 1 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 2,
+        "scanned": 3,
+        "total": 3,
+        "text": "d=2；已完成 3/4 个右端，累计 3 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 2,
+        "scanned": 4,
+        "total": 3,
+        "text": "d=2；已完成 4/4 个右端，累计 3 个数对。这就是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 3,
+        "scanned": 0,
+        "total": 0,
+        "text": "d=3；已完成 0/4 个右端，累计 0 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 3,
+        "scanned": 1,
+        "total": 0,
+        "text": "d=3；已完成 1/4 个右端，累计 0 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 3,
+        "scanned": 2,
+        "total": 1,
+        "text": "d=3；已完成 2/4 个右端，累计 1 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 3,
+        "scanned": 3,
+        "total": 3,
+        "text": "d=3；已完成 3/4 个右端，累计 3 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 3,
+        "scanned": 4,
+        "total": 4,
+        "text": "d=3；已完成 4/4 个右端，累计 4 个数对。这就是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 4,
+        "scanned": 0,
+        "total": 0,
+        "text": "d=4；已完成 0/4 个右端，累计 0 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 4,
+        "scanned": 1,
+        "total": 0,
+        "text": "d=4；已完成 1/4 个右端，累计 0 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 4,
+        "scanned": 2,
+        "total": 1,
+        "text": "d=4；已完成 2/4 个右端，累计 1 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 4,
+        "scanned": 3,
+        "total": 3,
+        "text": "d=4；已完成 3/4 个右端，累计 3 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 4,
+        "scanned": 4,
+        "total": 4,
+        "text": "d=4；已完成 4/4 个右端，累计 4 个数对。这就是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 5,
+        "scanned": 0,
+        "total": 0,
+        "text": "d=5；已完成 0/4 个右端，累计 0 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 5,
+        "scanned": 1,
+        "total": 0,
+        "text": "d=5；已完成 1/4 个右端，累计 0 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 5,
+        "scanned": 2,
+        "total": 1,
+        "text": "d=5；已完成 2/4 个右端，累计 1 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 5,
+        "scanned": 3,
+        "total": 3,
+        "text": "d=5；已完成 3/4 个右端，累计 3 个数对。尚不是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "d": 5,
+        "scanned": 4,
+        "total": 6,
+        "text": "d=5；已完成 4/4 个右端，累计 6 个数对。这就是完整 C(d)。"
+      },
+      {
+        "lang": "zh",
+        "option": 0,
+        "feedback": "选择正确。 六个距离为 2、2、7、0、5、5，≤3 的有 3 个。因此 hi=3，保留可能的答案。相等也不能直接返回：C(2) 也是 3，而第 3 小距离实际为 2。选 B 过早停止；选 C 漏算了两个不同位置的 2 与 0 形成的两个数对之一。"
+      },
+      {
+        "lang": "zh",
+        "option": 1,
+        "feedback": "再看不变量。 六个距离为 2、2、7、0、5、5，≤3 的有 3 个。因此 hi=3，保留可能的答案。相等也不能直接返回：C(2) 也是 3，而第 3 小距离实际为 2。选 B 过早停止；选 C 漏算了两个不同位置的 2 与 0 形成的两个数对之一。"
+      },
+      {
+        "lang": "zh",
+        "option": 2,
+        "feedback": "再看不变量。 六个距离为 2、2、7、0、5、5，≤3 的有 3 个。因此 hi=3，保留可能的答案。相等也不能直接返回：C(2) 也是 3，而第 3 小距离实际为 2。选 B 过早停止；选 C 漏算了两个不同位置的 2 与 0 形成的两个数对之一。"
+      },
+      {
+        "lang": "zh",
+        "clipboard": "success + denied write + real host-key copy replaced sentinel",
+        "characters": 514
+      }
+    ],
+    "screenshots": [
+      "en-manual-copy.png",
+      "en-320-count.png",
+      "en-320-search.png",
+      "en-320-ledger.png",
+      "en-320-decision.png",
+      "en-320-header.png",
+      "en-320-prediction.png",
+      "en-390-count.png",
+      "en-390-search.png",
+      "en-390-ledger.png",
+      "en-390-decision.png",
+      "en-736-count.png",
+      "en-736-search.png",
+      "en-736-ledger.png",
+      "en-736-decision.png",
+      "en-1440-count.png",
+      "en-1440-search.png",
+      "en-1440-ledger.png",
+      "en-1440-decision.png",
+      "zh-manual-copy.png",
+      "zh-320-count.png",
+      "zh-320-search.png",
+      "zh-320-ledger.png",
+      "zh-320-decision.png",
+      "zh-320-header.png",
+      "zh-320-prediction.png",
+      "zh-390-count.png",
+      "zh-390-search.png",
+      "zh-390-ledger.png",
+      "zh-390-decision.png",
+      "zh-736-count.png",
+      "zh-736-search.png",
+      "zh-736-ledger.png",
+      "zh-736-decision.png",
+      "zh-1440-count.png",
+      "zh-1440-search.png",
+      "zh-1440-ledger.png",
+      "zh-1440-decision.png",
+      "forced-colors-focus.png",
+      "en-zoom200-count.png",
+      "en-zoom200-search.png",
+      "zh-zoom200-count.png",
+      "zh-zoom200-search.png"
+    ],
+    "browser": "156.0.8078.4",
+    "contrast": [
+      {
+        "selector": ".explain",
+        "front": [
+          201,
+          212,
+          226
+        ],
+        "back": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 12.615602281385614
+      },
+      {
+        "selector": ".hint",
+        "front": [
+          154,
+          167,
+          184
+        ],
+        "back": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "selector": ".formula",
+        "front": [
+          232,
+          237,
+          244
+        ],
+        "back": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "selector": "#next",
+        "front": [
+          13,
+          17,
+          23
+        ],
+        "back": [
+          110,
+          231,
+          255
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "selector": "#prev:disabled",
+        "front": [
+          154,
+          167,
+          184
+        ],
+        "back": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 6.449407898769069
+      },
+      {
+        "selector": "#langToggle .active",
+        "front": [
+          13,
+          17,
+          23
+        ],
+        "back": [
+          110,
+          231,
+          255
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "selector": "#pairs .included",
+        "front": [
+          110,
+          231,
+          255
+        ],
+        "back": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 10.910104011097095
+      },
+      {
+        "selector": "#step1 th",
+        "front": [
+          154,
+          167,
+          184
+        ],
+        "back": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "selector": "#feedback",
+        "front": [
+          232,
+          237,
+          244
+        ],
+        "back": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "selector": "#copy",
+        "front": [
+          13,
+          17,
+          23
+        ],
+        "back": [
+          110,
+          231,
+          255
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "selector": "select",
+        "front": [
+          232,
+          237,
+          244
+        ],
+        "back": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "selector": "#next focus",
+        "ratio": 9.809435643476732
+      },
+      {
+        "selector": ".table-wrap focus",
+        "ratio": 9.809435643476732
+      }
+    ]
+  }
+}
