@@ -2507,6 +2507,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) time; O(n) auxiliary space and O(n) output"
   },
   {
+    "id": 730,
+    "title": {
+      "zh": "统计不同回文子序列",
+      "en": "Count Different Palindromic Subsequences"
+    },
+    "desc": {
+      "zh": "从 bccb 的重复选择出发，按最外层字符推导无重复的区间计数。",
+      "en": "From duplicate choices in bccb to counting intervals by their outer letter."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "区间动态规划",
+        "en": "Interval dynamic programming"
+      },
+      {
+        "zh": "去重计数",
+        "en": "Distinct counting"
+      }
+    ],
+    "path": "730/",
+    "leetcodeUrl": "https://leetcode.com/problems/count-different-palindromic-subsequences/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(n²) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

@@ -1288,3 +1288,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Pivot-letter branch filtering | `leetcode/691/#step2` | Reorder any solution to begin with a sticker covering a chosen missing letter. |
 
 <!-- /leetcode-691-campaign -->
+
+
+<!-- leetcode-730-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Counting distinct palindromes by outer character | `leetcode/730/#step2` | Use the earliest and latest occurrence to partition distinct palindrome strings without duplicates. |
+
+<!-- /leetcode-730-campaign -->
