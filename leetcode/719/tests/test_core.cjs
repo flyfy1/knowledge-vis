@@ -1,0 +1,9 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),C=require('../core.js');
+const out=path.resolve(process.env.OUTPUT_DIR||path.join(__dirname,'evidence'));fs.mkdirSync(out,{recursive:true});let scans=0,traces=0;
+function distances(a){const d=[];for(let i=0;i<a.length;i++)for(let j=i+1;j<a.length;j++)d.push(Math.abs(a[i]-a[j]));return d.sort((a,b)=>a-b);}
+function check(a){const d=distances(a),W=Math.max(...a)-Math.min(...a),count=x=>d.filter(v=>v<=x).length;
+for(let x=0;x<=W;x++){const s=C.scan(a,x);assert.equal(s.total,count(x));let prev=0,total=0;for(const r of s.rows){assert.ok(r.l>=prev);assert.ok(r.l<=r.r);assert.equal(r.add,r.r-r.l);assert.equal(r.add,s.a.slice(0,r.r).filter(v=>s.a[r.r]-v<=x).length);if(r.l)assert.ok(s.a[r.r]-s.a[r.l-1]>x);assert.ok(s.a[r.r]-s.a[r.l]<=x);total+=r.add;assert.equal(r.total,total);prev=r.l;}scans++;}
+for(let k=1;k<=d.length;k++){const frames=C.trace(a,k);for(let i=0;i<frames.length;i++){const f=frames[i];assert.ok(count(f.lo-1)<k&&count(f.hi)>=k);assert.ok(f.lo<=d[k-1]&&d[k-1]<=f.hi);if(i){const old=frames[i-1],q=f.test;assert.deepEqual(q.before,[old.lo,old.hi]);assert.equal(q.mid,Math.floor((old.lo+old.hi)/2));assert.equal(q.count,count(q.mid));assert.ok(f.hi-f.lo<old.hi-old.lo);assert.equal(q.enough,q.count>=k);}}assert.equal(frames.at(-1).lo,d[k-1]);assert.equal(frames.at(-1).hi,d[k-1]);assert.deepEqual(frames,C.trace(a,k));traces++;}}
+for(let n=2;n<=6;n++){const a=Array(n).fill(0);function rec(i){if(i===n){check(a);return;}for(let v=0;v<4;v++){a[i]=v;rec(i+1);}}rec(0);}
+for(const p of C.presets){const d=distances(p.a),f=C.trace(p.a,p.k);assert.equal(f.at(-1).lo,d[p.k-1]);}
+const result={kind:'author JS simulation invariant self-check',scans,traces,presets:C.presets.length};fs.writeFileSync(path.join(out,'core-results.json'),JSON.stringify(result,null,2)+'\n');console.log(result);
