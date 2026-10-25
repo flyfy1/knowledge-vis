@@ -1,0 +1,106 @@
+{
+  "observed_at": "2026-10-25T16:39:17.653939+00:00",
+  "campaign_pids": [
+    1321967,
+    1328209,
+    1328927
+  ],
+  "lanes": [
+    {
+      "id": "940",
+      "runner_pid": 1328209,
+      "native_codex": [
+        {
+          "pid": 1328258,
+          "ppid": 1328251,
+          "executable": "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex"
+        }
+      ],
+      "current": {
+        "problem_id": "940",
+        "stage": "author",
+        "started_at": "2026-10-25T16:38:38.208081+00:00",
+        "run_id": "940-author-cc4876758b6c"
+      },
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a173ed-ae8d-73b0-b2a2-7c6a85aaaa16"
+        },
+        {
+          "type": "turn.started"
+        }
+      ],
+      "events_bytes": 347490,
+      "events_mtime": 1792946354.5871978,
+      "argv": [
+        "/usr/bin/python3",
+        "/home/songyy/projects/leetcode-hard-lane-940-20261026/scripts/leetcode_campaign.py",
+        "--repo",
+        "/home/songyy/projects/leetcode-hard-lane-940-20261026",
+        "--state-dir",
+        "/home/songyy/projects/leetcode-hard-lane-state-940-20261026",
+        "--ids",
+        "940",
+        "--port",
+        "18787",
+        "--max-rounds",
+        "6"
+      ],
+      "nice": 10
+    },
+    {
+      "id": "956",
+      "runner_pid": 1328927,
+      "native_codex": [
+        {
+          "pid": 1328985,
+          "ppid": 1328978,
+          "executable": "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex"
+        }
+      ],
+      "current": {
+        "problem_id": "956",
+        "stage": "author",
+        "started_at": "2026-10-25T16:39:07.770331+00:00",
+        "run_id": "956-author-fb7c12e20c39"
+      },
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a173ee-2369-7e33-af76-9aec1880bd5e"
+        },
+        {
+          "type": "turn.started"
+        }
+      ],
+      "events_bytes": 572610,
+      "events_mtime": 1792946355.0782056,
+      "argv": [
+        "/usr/bin/python3",
+        "/home/songyy/projects/leetcode-hard-lane-956-20261026/scripts/leetcode_campaign.py",
+        "--repo",
+        "/home/songyy/projects/leetcode-hard-lane-956-20261026",
+        "--state-dir",
+        "/home/songyy/projects/leetcode-hard-lane-state-956-20261026",
+        "--ids",
+        "956",
+        "--port",
+        "18788",
+        "--max-rounds",
+        "6"
+      ],
+      "nice": 10
+    }
+  ],
+  "central_current": {
+    "problem_id": "801",
+    "stage": "review",
+    "started_at": "2026-10-25T16:32:51.934709+00:00",
+    "run_id": "801-review-afcbad55df80"
+  },
+  "central_head": "154c1becf178b798dfbd80acbb79fabdd262ae68",
+  "STOP_exists": false,
+  "loadavg": "2.51 2.01 1.78 1/1266 1329281",
+  "mem_available": "MemAvailable:    1982696 kB"
+}

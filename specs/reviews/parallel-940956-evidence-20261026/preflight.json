@@ -1,0 +1,38 @@
+{
+  "observed_at": "2026-10-25T16:38:05.133889+00:00",
+  "central_head": "154c1becf178b798dfbd80acbb79fabdd262ae68",
+  "central_pid": 1321967,
+  "central_run": "801-review-afcbad55df80",
+  "central_session": "01a173e8-6462-7b32-9d24-dd05e9563690",
+  "campaign_process_count": 1,
+  "mem_available_kib": 1889668,
+  "loadavg": [
+    0.59,
+    1.76,
+    1.69
+  ],
+  "prior_reservations_all_imported": true,
+  "STOP_exists": false,
+  "central_existing_review_artifacts": [
+    "specs/reviews/801-evidence/",
+    "specs/reviews/801-review-1-3074702f.md"
+  ],
+  "plan": [
+    {
+      "id": "940",
+      "queue_distance": 35,
+      "paidOnly": false,
+      "unstarted": true,
+      "unreserved": true,
+      "port": 18787
+    },
+    {
+      "id": "956",
+      "queue_distance": 38,
+      "paidOnly": false,
+      "unstarted": true,
+      "unreserved": true,
+      "port": 18788
+    }
+  ]
+}
