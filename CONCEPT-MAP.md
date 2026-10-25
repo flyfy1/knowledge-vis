@@ -1734,3 +1734,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Multi-source shortest path | `leetcode/847/#step2` | Initialize every allowed starting node at distance zero. |
 
 <!-- /leetcode-847-campaign -->
+
+
+<!-- leetcode-987-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Vertical coordinates | `leetcode/987/#step1` | Assign rows and columns from root paths. |
+| Lexicographic ordering | `leetcode/987/#step3` | Sort column, then row, then value; group contiguous columns. |
+
+<!-- /leetcode-987-campaign -->
