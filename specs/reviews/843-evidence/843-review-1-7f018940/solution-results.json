@@ -1,0 +1,12 @@
+{
+  "kind": "author computational self-check",
+  "result": "pass",
+  "cases": 1211,
+  "exhaustive": "all 255 nonempty subsets of eight 6-letter words; every secret",
+  "seed": 843,
+  "maxCallsObserved": 10,
+  "boundary": "n=1, zero replies, n=100, unique words, actual terminal guess, unchanged input",
+  "budgetStress": "26 disjoint words: ten-call heuristic intentionally cannot find final word; documented limitation",
+  "officialExamples": "all secrets in both official lists",
+  "invariants": "every probe minimax by independent partitions, exact history-consistent candidates, true secret retained, legal/nonrepeated calls"
+}
