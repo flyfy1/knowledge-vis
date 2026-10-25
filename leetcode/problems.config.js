@@ -1835,6 +1835,28 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n) time; O(n) auxiliary space plus O(n-k+1) output"
   },
   {
+    "id": 514,
+    "title": {
+      "zh": "自由之路",
+      "en": "Freedom Trail"
+    },
+    "desc": {
+      "zh": "从转盘的两条路，到按终点保留最小代价。",
+      "en": "From two arcs on a dial to minimum costs at each endpoint."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      }
+    ],
+    "path": "514/",
+    "leetcodeUrl": "https://leetcode.com/problems/freedom-trail/",
+    "language": "Python",
+    "complexity": "O(m n²) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
