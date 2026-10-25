@@ -1,0 +1,27 @@
+{
+  "status": "disabled-await-post-import-pins-and-independent-review",
+  "dispatch_enabled": false,
+  "source_revision": null,
+  "documents": {
+    "specs/reviews/995-teaching-copy-repair-request-20261026.md": {
+      "observed_local_sha256": "e68c8e47386c982e7545212213fcdc3905a4270a6f885ff474484d8a0290270b",
+      "committed_adoption_sha256": null
+    }
+  },
+  "target_ids": [
+    "995"
+  ],
+  "request_id": "995-COPY-R1",
+  "previous_completed_import_receipt": null,
+  "previous_receipt_sha256": null,
+  "imported995_accepted_entry": null,
+  "imported995_run_history_sha256": null,
+  "central_head_current_runner": null,
+  "queue_sha256": null,
+  "ledger_sha256": null,
+  "actual_publication_bound": null,
+  "future_9961000_base_after_request_adoption": null,
+  "campaign_helper_sha256": "f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698",
+  "reopen_helper_sha256": "a268466fe6101841437c730e0e7448961be4637ee60d9fe4a760c0ea6fca3424",
+  "resume_strategy": "Preserve queue order; ordinary actual-next agent, with995 queued and publication-ineligible until its later fix/review"
+}

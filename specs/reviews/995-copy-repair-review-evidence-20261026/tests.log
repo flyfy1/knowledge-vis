@@ -1,0 +1,16 @@
+test_actual_git_adoption_preserves_lesson_tree_and_reopens_only995 (__main__.Adoption.test_actual_git_adoption_preserves_lesson_tree_and_reopens_only995) ... ok
+test_hook_runtime_mutation_does_not_checkpoint_or_reopen (__main__.Adoption.test_hook_runtime_mutation_does_not_checkpoint_or_reopen) ... ok
+test_actual_next_plan_keeps_pending_registration_prefix (__main__.Guards.test_actual_next_plan_keeps_pending_registration_prefix) ... ok
+test_disabled_before_input_or_runtime_access (__main__.Guards.test_disabled_before_input_or_runtime_access) ... ok
+test_narrow_payload_rejects_escape_wrong_hash_and_unrelated_policy (__main__.Guards.test_narrow_payload_rejects_escape_wrong_hash_and_unrelated_policy) ... ok
+test_not_accepted_or_exhausted_budget_cannot_reopen (__main__.Guards.test_not_accepted_or_exhausted_budget_cannot_reopen) ... ok
+test_only995_reopens_and_all_prior_history_and_budget_remain (__main__.Guards.test_only995_reopens_and_all_prior_history_and_budget_remain) ... ok
+test_pending_release_or20_rejects_even_before_reopen (__main__.Guards.test_pending_release_or20_rejects_even_before_reopen) ... ok
+test_queued_repair_remains_publication_ineligible_without_queue_priority (__main__.Guards.test_queued_repair_remains_publication_ineligible_without_queue_priority) ... ok
+test_startup_waits_only_live_exact_snapshot_then_actual_next (__main__.Guards.test_startup_waits_only_live_exact_snapshot_then_actual_next) ... ok
+test_wrong_previous_import_receipt_refuses (__main__.Guards.test_wrong_previous_import_receipt_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.477s
+
+OK

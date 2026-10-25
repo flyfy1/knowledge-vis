@@ -1,0 +1,25 @@
+{
+  "status": "disabled-preparation-not-dispatched",
+  "at": "2026-10-25T22:45:22.657685+00:00",
+  "PINS_SHA": null,
+  "tests_passed": 11,
+  "historical_ordering_fixture_passed": true,
+  "exact_source_operator_sha256": "149c7da2b4e811161977c23dbfe391020ba36c7c59934d70d0254e025b44c8dc",
+  "artifacts_sha256": {
+    "README.md": "aa3c7edee370534f4a8d05216f6207bb2f3afd817aa95f82024dab6f9c5d3e9e",
+    "check-queue-order.py": "b87f5dbe785818524864eb2258f0b8f6c80ee016e434d85fa12bf9c26c9c5685",
+    "operate.py": "f5c220bfe5508bb50a3eb7c5095dd16a70be1bb6d59494a9706ccdc3d12d93c2",
+    "operator-adaptation.diff": "fff8f325d81ea50809656a3d466fd8337b75cc6a05caba547597085572004ee9",
+    "pending-pins.json": "f7f39c87be82ffd416e1f4a2d3d307159dfa4e3c59224c70bf01f3966e9b406c",
+    "queue-order-evidence.json": "ab236b05bc557d30808290374fbc6f8d516e205554e5dea112aa3ec37d5658cd",
+    "test_operate.py": "3af069bfe75afe977d1556b14d35c01986cf0cc3524bb9f009a15ad5d5077d2f",
+    "tests.log": "d2bd4b661d9b4ee3c55e21cf90732dbe9a8a1b9480c788b895248962187f3900"
+  },
+  "remaining": [
+    "completed992995 import receipt and imported995 pins",
+    "final committed request source/hash",
+    "fresh central/ledger/queue/publication-bound capture",
+    "independent exact enabled review",
+    "explicit root dispatch"
+  ]
+}
