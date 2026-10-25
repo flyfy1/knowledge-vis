@@ -1,0 +1,15 @@
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ '#262 · Trips and Users'
+- '#262 · 行程与用户'
+          ^
+    at identity (/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/262/tests/test_browser.cjs:19:12)
+    at async language (/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/262/tests/test_browser.cjs:27:5)
+    at async /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/262/tests/test_browser.cjs:42:5 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '#262 · Trips and Users',
+  expected: '#262 · 行程与用户',
+  operator: 'strictEqual'
+}
