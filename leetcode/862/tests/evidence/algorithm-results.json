@@ -1,0 +1,9 @@
+{
+  "result": "pass",
+  "kind": "author self-check",
+  "smallCases": 5574,
+  "traceCases": 1700,
+  "largeBoundaryCases": 4,
+  "oracle": "enumerate slices and sum independently",
+  "seed": 862
+}

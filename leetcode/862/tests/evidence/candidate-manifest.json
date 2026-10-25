@@ -1,0 +1,22 @@
+{
+  "candidate": "862-r1",
+  "status": "author self-check complete; independent review pending",
+  "frozenAt": "2026-10-25T22:31:24.351994+00:00",
+  "sha256": {
+    "BRIEF.md": "bbaceb76ba2e07fabe416b65645e2873a77f7360b06a5de0a9ac82fe69227852",
+    "app.js": "fe6cea98bdcef83e51a5fd12afbd3ff500b2cf5b24e44199ec9a4edbbb24f4ea",
+    "copy.js": "7134f8909a1f1dedc94d90e03349ad8b67321fe7fc742fb593ec438f8534a432",
+    "core.js": "32cc35ce48d2857e46333ce99d88032da381bd1771f01bba17a82bca19912f4d",
+    "index.html": "5552beb0fdc7cf11dc4e0b82cc3f22b55e6a66e14b867fbc589523fad152493e",
+    "lesson-entry.json": "ea9dd84d2ff1e565eee86b0c801aeea6d22a496872beaa93e16982996188b36f",
+    "python-code.js": "4ddcdb6f59099d456d767ba5f9397aec2309456bc0661fc9f46497815ee993e6",
+    "solution.py": "45ca24b284d6e3e836a9374f494c8401523c63f667c6cf166c72671bbddf3e95",
+    "style.css": "969187e3f048805f0e64220e1d99122b3cea760f0a3bd433eeb27088fd4fc06f",
+    "tests/README.md": "7625dad686947a08f4166f551e4ee8c060fd9c3bd28178f2ee0b91d0e4264ffc",
+    "tests/baseline.py": "2350426076077f7cef2c718a9c31d9b9ebda6f3650ca838d7f7ebdf2f06936a5",
+    "tests/browser.cjs": "c4e94a1948c4610a01a248ae1ce984c17980cd0c84a305bbbf81532f97c4be56",
+    "tests/check.py": "1cd627e81348c53d4f3fddf36f9f93f50ec442e582bcc6aef07c723a5483422d",
+    "tests/copy.cjs": "aa0e29488bf1e69bbc7812bd2230efca86db30676c2b20d86e27be4c9596cb3c",
+    "tests/trace.cjs": "b2d9e0621829fd7adbc209118adc9b2b4d891fd502bfed8e89bcae82884b6958"
+  }
+}
