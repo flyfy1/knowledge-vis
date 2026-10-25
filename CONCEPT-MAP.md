@@ -1724,3 +1724,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Complete-walk invariant | `leetcode/980/#step2` | Remaining cells and the current route determine valid completion. |
 
 <!-- /leetcode-980-campaign -->
+
+
+<!-- leetcode-847-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| BFS with visited-set state | `leetcode/847/#step2` | Merge histories only when both endpoint and visited set agree. |
+| Multi-source shortest path | `leetcode/847/#step2` | Initialize every allowed starting node at distance zero. |
+
+<!-- /leetcode-847-campaign -->
