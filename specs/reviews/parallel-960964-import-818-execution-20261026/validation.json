@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "checks": [
+    "completed-resumed and exact remote head",
+    "both importer receipts preserve lane candidates",
+    "two reopened entries differ only in approved ordinary fields",
+    "historical acceptance archived in maintenance and full backup",
+    "960 acceptance unchanged",
+    "request payload hashes exact",
+    "runtime and original policy unchanged",
+    "984 queue and unchanged ledger/no pending release",
+    "fresh run/thread/turn/native and single runner verified by receipt/live observation"
+  ],
+  "sha256": {
+    "import-960-receipt.json": "124c4da3ab6784b96028d6fa6bbddaa2ef1a991872ca363d4b5222c73fe3836b",
+    "dispatch.json": "4ca198908b12ffcac509cf7d2859e0c357e3d94fa9c5ce8cf07b87af369234d4",
+    "lane-960-reservation.json": "177a719d6c687d7da3cadceabaeb97095136c547db8068b778d7cf16f548011e",
+    "before-reopen.json": "5191c941533ce920e1e472e0244952cfc853080509b55422af8523fde4884375",
+    "lane-964-reservation.json": "1391726fbffbaed6867556691ab3562eb7671d34e29ae4a25f6a686782c77e7b",
+    "import-964-receipt.json": "315c3f703e60ad9484c8fbc5c93aae025eb7e534c03720b04d24b30b69b8f51a",
+    "observe-completion.py": "980d3fd0df04376fc201ffb46b71a6325d9371ac94f013ca02cae62f66dcc2f0",
+    "operator-output.log": "42c6ff7bc5240f2adcfd58c351f7c5db01f5a7d3ef9dc6a701d7d2c8f15f4660",
+    "completion.json": "b0f740d76b0c8dfab8ae9ea5c203414f8556ec9d2a1ed64b8cb509e0fe9deacf",
+    "receipt.json": "f97e1927982e80c46ae77e22753b6528a8053eadb80d21a809c1789522cbc343",
+    "transfer.jsonl": "3b6b9c1e10b37347d208636191bc599f1b79517ce91faa7af7611e96300aed64"
+  }
+}
