@@ -1,0 +1,38 @@
+{
+  "candidate": "e63637783c92d6368918b15ecd9edd2b054e7770",
+  "platform": "darwin",
+  "browser": "151.0.7922.34",
+  "sourceLength": 424,
+  "records": [
+    {
+      "mode": "stale-source-no-action",
+      "selection": {
+        "focused": true,
+        "start": 0,
+        "end": 424
+      },
+      "equalsSource": true,
+      "unchangedFromSeed": true
+    },
+    {
+      "mode": "sentinel-Control+C",
+      "selection": {
+        "focused": true,
+        "start": 0,
+        "end": 424
+      },
+      "equalsSource": false,
+      "unchangedFromSeed": true
+    },
+    {
+      "mode": "sentinel-Meta+C",
+      "selection": {
+        "focused": true,
+        "start": 0,
+        "end": 424
+      },
+      "equalsSource": true,
+      "unchangedFromSeed": false
+    }
+  ]
+}
