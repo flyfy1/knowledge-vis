@@ -1,0 +1,90 @@
+{
+  "owner": "import975980-overlap-policy-20261026-5e38ab71",
+  "status": "waiting-for-natural-boundary",
+  "created_at": "2026-10-25T20:55:55.815260+00:00",
+  "imports": [],
+  "lanes": [
+    {
+      "id": "975",
+      "lane_head": "d1e5c03e4f58203b7b08f4a5b858a563b245e375",
+      "candidate": "bc00150bef56379abd88333f62211cf7b16146c9",
+      "score": 92.5,
+      "required_open": [],
+      "run_ids": [
+        "975-author-357096f29cf1",
+        "975-review-b1b1100220da"
+      ]
+    },
+    {
+      "id": "980",
+      "lane_head": "d95031d1b9d90fa9e1cc578c000caef0c6756510",
+      "candidate": "a440fe53769a1831f8e2f8f4f4bbd0195ff0906c",
+      "score": 95.0,
+      "required_open": [],
+      "run_ids": [
+        "980-author-4e73af33ad61",
+        "980-review-fcc41ae9eadf"
+      ]
+    }
+  ],
+  "pre_stop_plan": {
+    "next_problem_id": "847",
+    "registration_ids": [],
+    "publication_bound": {
+      "eligible": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "818",
+        "827",
+        "828",
+        "829",
+        "834",
+        "839",
+        "843",
+        "960",
+        "968",
+        "972"
+      ],
+      "incoming": [
+        "975",
+        "980"
+      ],
+      "registration_ids": [],
+      "reopened_upper_bound_ids": [],
+      "upper_bound_ids": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "810",
+        "815",
+        "818",
+        "827",
+        "828",
+        "829",
+        "834",
+        "839",
+        "843",
+        "960",
+        "968",
+        "972",
+        "975",
+        "980"
+      ],
+      "upper_bound": 18
+    }
+  },
+  "stop": {
+    "owner": "import975980-overlap-policy-20261026-5e38ab71",
+    "created_at": "2026-10-25T20:56:02.759257+00:00",
+    "reason": "Finish current stage; import independently accepted975/980 under original policy, then adopt reviewed overlap clarification at idle lane boundary.",
+    "lane_ids": [
+      "975",
+      "980"
+    ]
+  }
+}

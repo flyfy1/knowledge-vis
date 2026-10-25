@@ -1,0 +1,22 @@
+{
+  "status": "completed-resumed",
+  "report_sha256": "362e721c091a5c0bf028e74b6eddc7fcb75a4fb7b2d69b3b4b160d9a24b959ed",
+  "files": {
+    "975-import-receipt.json": "3c6f3f02cdf0ac9dcea8b987ea5c61cab5d953a5cbb586eab3e03cbeada8468e",
+    "975-reservation-imported.json": "5f1d4b55b4f872626f2ee855e61a7d1b989b1d8fb863818a18b7f213fd573dfe",
+    "980-import-receipt.json": "4267ce0ed86e494966db52ea61f1c22bd507a94023858e9e6fb14a39c142ad42",
+    "980-reservation-imported.json": "8950c15acc28f73cc68cc461235c85b251b62f1cafa3ac2c8767bb4adf71b6ba",
+    "STOP-owned.json": "9d14a8df18aef70f10b038353eca949b88f12715da611e974b46ee6d12d1c2ca",
+    "boundary-progress.json": "d08c8312cff3e1f8990ed3fc46ede44d728734d334d470bc4f5a431343ab9a59",
+    "boundary-receipt.json": "8efc70952b62d2d69557b0c02140fa3c757c7eae02a09dfdab0404d5b64132cd",
+    "dispatch.json": "3f8d0a90095a1d6486a6262e638357583e0720854e5c60fa97c14fe249bc3d70",
+    "final-observation.json": "f48825ff202e5a3844e8c302678b06782cbaeebe0c8b756a187de292b83bb750",
+    "operator-output.log": "325598ac75d4deb8d47081c75570a58e41e452d466d11a8e8d66a1c2c389ad94",
+    "preservation-proof.json": "92e7c705d41253a5ffbd9e5abcb304a9fce7bf0dce5aa234fd45db8bfa0cf686",
+    "progress-resumed.json": "9124aa0ee00567880696ffab4ce4e1dbcad891dcc5e4f171a56ddb498621354e",
+    "receipt.json": "dc58971f40c669883d6845e709c99ee50d269ad77f23dbe3d997dc0815b7215d",
+    "release-ledger.json": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b",
+    "transfer.json": "28bde1daabe02ee4f9edd510fc586b5a7af1cc3da8bface74c7f226f65d0df30",
+    "waiting-receipt.json": "005b75ea1d10da9620d22af60256b241f95401daa4ab05654cb73bc1990388a1"
+  }
+}

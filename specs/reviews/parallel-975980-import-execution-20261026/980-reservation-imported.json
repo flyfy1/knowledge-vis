@@ -1,0 +1,22 @@
+{
+  "id": "980",
+  "base": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+  "repo": "/home/songyy/projects/leetcode-hard-lane-980-20261026",
+  "state_dir": "/home/songyy/projects/leetcode-hard-lane-state-980-20261026",
+  "port": 18794,
+  "nice": 10,
+  "status": "imported",
+  "started_at": "2026-10-25T20:29:13.081930+00:00",
+  "policy_sha256": "d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa",
+  "publication_enabled": false,
+  "rule": "Import only after independent acceptance at a stopped central boundary and while this ID remains unstarted. Monitor central before it reaches either reserved ID; do not count or publish lane acceptance independently.",
+  "runner_pid": 1614229,
+  "observed_current": {
+    "problem_id": "980",
+    "stage": "author",
+    "started_at": "2026-10-25T20:29:40.427530+00:00",
+    "run_id": "980-author-4e73af33ad61"
+  },
+  "imported_head": "f4651c69a26d826ee1acaafac4beef92e38d7853",
+  "import_receipt": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/lane-imports/980-e730d17a73cc4d03b991b365d9e23940.json"
+}
