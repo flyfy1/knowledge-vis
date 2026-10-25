@@ -1,0 +1,25 @@
+{
+  "validatedAt": "2026-10-25T21:18:29.815973+00:00",
+  "status": "pending-843-handoff-completion-not-launch-ready",
+  "sourceLauncherSha256": "17709040ee542e912e697aedca65e0800a5e6c5b77535fafb3aa3597b1cd25a8",
+  "pendingLauncherSha256": "465a733c667547199d648d6093998f9c6da2a56f783be1900a7f488684fbfa2f",
+  "pendingPreflightSha256": "5e9a328679acb553a2ce1645138eb24482822489bfb681fa51794e3e52b4c9b9",
+  "nonIdentityParameterSubstitutions": 10,
+  "byteAndAstReverseIdentical": true,
+  "pendingPins": 6,
+  "staticTestsPassed": 8,
+  "noTemplateExecuted": true,
+  "noRemoteFileOrStateWrites": true,
+  "officialDispatcherPrepCommittedHashesVerified": true,
+  "filesSha256": {
+    "README.md": "bf04f6041722e12c7b07348642fb75fa7e5f445a74a68ca3edf363b5fd3ecdcb",
+    "launch.pending.py": "465a733c667547199d648d6093998f9c6da2a56f783be1900a7f488684fbfa2f",
+    "parameter-map.json": "278ab3b09a5e3bd17400a00b1703cb3237dfe6eb56c45785230ff6580e3acbee",
+    "parameter-only.diff": "3cfb2f9296a41496a6c816bdacf3c6db6b86c95d0c1c80b79602225f3ebed46f",
+    "preflight-adaptation.diff": "db4b2d9158705bd3e6f81c0ae92b36f85e22df8c665b7d7b864cef9f6261c858",
+    "preflight.pending.py": "5e9a328679acb553a2ce1645138eb24482822489bfb681fa51794e3e52b4c9b9",
+    "read-only-observation.json": "4286ffabe969af5b3fda130c8d48546ffa9d2d25b70886cce5fa866b089b2c2c",
+    "test_templates.py": "cf24ca951dc3a57d0d5b26f2f6053d88429c7849fc3363c9246b833608da2e07",
+    "tests.log": "322e9bec5d6bbde47d6476008f309469c1e42048ed96320a3bae52af8811e27a"
+  }
+}
