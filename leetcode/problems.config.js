@@ -3705,6 +3705,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(mn + 3^V) time; O(V) auxiliary space, V non-obstacle cells"
   },
   {
+    "id": 987,
+    "title": {
+      "zh": "二叉树的垂序遍历",
+      "en": "Vertical Order Traversal of a Binary Tree"
+    },
+    "desc": {
+      "zh": "用坐标与三层排序规则解决同位置节点的冲突。",
+      "en": "Use coordinates and three ordering keys to resolve nodes sharing a position."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二叉树",
+        "en": "Binary tree"
+      },
+      {
+        "zh": "排序",
+        "en": "Sorting"
+      }
+    ],
+    "path": "987/",
+    "leetcodeUrl": "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space and O(n) output space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
