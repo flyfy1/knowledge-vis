@@ -1,0 +1,109 @@
+{
+  "fresh_cases": [
+    [
+      [
+        5,
+        1,
+        2
+      ],
+      2
+    ],
+    [
+      [
+        -2,
+        -1
+      ],
+      0
+    ],
+    [
+      [
+        -1,
+        -1
+      ],
+      1
+    ],
+    [
+      [
+        7,
+        3,
+        1,
+        0
+      ],
+      6
+    ],
+    [
+      [
+        -2147483648,
+        -2147483648
+      ],
+      1
+    ],
+    [
+      [
+        2147483647,
+        -2147483648
+      ],
+      1
+    ],
+    [
+      [
+        0
+      ],
+      0
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      0
+    ]
+  ],
+  "canonical_returns": [
+    {
+      "lo": 0,
+      "hi": 1,
+      "sorted": [
+        5
+      ],
+      "count": 0
+    },
+    {
+      "lo": 1,
+      "hi": 2,
+      "sorted": [
+        1
+      ],
+      "count": 0
+    },
+    {
+      "lo": 2,
+      "hi": 3,
+      "sorted": [
+        2
+      ],
+      "count": 0
+    },
+    {
+      "lo": 1,
+      "hi": 3,
+      "sorted": [
+        1,
+        2
+      ],
+      "count": 0
+    },
+    {
+      "lo": 0,
+      "hi": 3,
+      "sorted": [
+        1,
+        2,
+        5
+      ],
+      "count": 2
+    }
+  ],
+  "source_sha256": "d1af2500b2a7d3c53add7bf5910a7afbac4be92f862d0a39d2a7d1d2eba6de2e",
+  "reviewer_correction": "Initial expectation for [7,3,1,0] was 5; hand enumeration confirms all six pairs qualify. This was an oracle arithmetic error, not a candidate defect."
+}

@@ -1,0 +1,345 @@
+{
+  "hashes": [
+    {
+      "file": "index.html",
+      "sha256": "bae3d061ca4fd70d4e269eb27ed60100a001dd752131cdd4d0bc1748fb7c1494"
+    },
+    {
+      "file": "local.css",
+      "sha256": "82ca4f075142a36aa9ac978e7139766ae1dfdea2f82daa355fb0fe518f29638b"
+    },
+    {
+      "file": "copy.js",
+      "sha256": "192edd7d4ed790e8d6ec0afe9e520080b6c661272fe035973a8df38a8d0f0d89"
+    },
+    {
+      "file": "core.js",
+      "sha256": "6c48bd94118e698133f30c5ad39eab58d855e4b8e71d741c6682882d1e3bf79b"
+    },
+    {
+      "file": "python-code.js",
+      "sha256": "41c245a3381ea2677e3b9597d179b1767b39a3fadd23625411e04c8fc3dd021c"
+    },
+    {
+      "file": "app.js",
+      "sha256": "f0b82273804ce4d47c837bcf3ad6f4d23c0f5a7f2747183bd16353d088300a8b"
+    },
+    {
+      "file": "solution.py",
+      "sha256": "d1af2500b2a7d3c53add7bf5910a7afbac4be92f862d0a39d2a7d1d2eba6de2e"
+    },
+    {
+      "file": "../common.js",
+      "sha256": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b"
+    },
+    {
+      "file": "../style.css",
+      "sha256": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+    }
+  ],
+  "records": [
+    {
+      "lang": "en",
+      "read": "Original block [1,3), split 2. Finished scanning x=-2147483648; q moved from 0 to 0, cross contribution +0. Right prefix [0,q) satisfies x>2y; position q fails if it exists.",
+      "progress": "Operation progress 1/5; cumulative counted pairs = 0 (final only at completion).",
+      "cells": "R[0]=0; -2147483648>0: Exclude"
+    },
+    {
+      "lang": "en",
+      "read": "Merged original block [1,3) → [-2147483648, 0]; adds 0 pairs.",
+      "progress": "Operation progress 2/5; cumulative counted pairs = 0 (final only at completion).",
+      "cells": "0"
+    },
+    {
+      "lang": "en",
+      "read": "Original block [0,3), split 1. Finished scanning x=2147483647; q moved from 0 to 2, cross contribution +2. Right prefix [0,q) satisfies x>2y; position q fails if it exists.",
+      "progress": "Operation progress 3/5; cumulative counted pairs = 2 (final only at completion).",
+      "cells": "R[0]=-2147483648; 2147483647>-4294967296: CountR[1]=0; 2147483647>0: Count"
+    },
+    {
+      "lang": "en",
+      "read": "Merged original block [0,3) → [-2147483648, 0, 2147483647]; adds 0 pairs.",
+      "progress": "Operation progress 4/5; cumulative counted pairs = 2 (final only at completion).",
+      "cells": "-21474836480"
+    },
+    {
+      "lang": "en",
+      "read": "Complete. Sorted copy=[-2147483648, 0, 2147483647]; the cumulative count is now the final answer.",
+      "progress": "Operation progress 5/5; cumulative counted pairs = 2 (final only at completion).",
+      "cells": "-21474836480"
+    },
+    {
+      "lang": "en",
+      "geometry": [
+        {
+          "text": "L · Sorted left values",
+          "box": {
+            "x": 29,
+            "y": 320.09375,
+            "width": 262,
+            "height": 33.25,
+            "top": 320.09375,
+            "right": 291,
+            "bottom": 353.34375,
+            "left": 29
+          },
+          "textBox": {
+            "x": 29,
+            "y": 323.09375,
+            "width": 192.140625,
+            "height": 26,
+            "top": 323.09375,
+            "right": 221.140625,
+            "bottom": 349.09375,
+            "left": 29
+          }
+        },
+        {
+          "text": "L[0]=2147483647",
+          "box": {
+            "x": 29,
+            "y": 369.34375,
+            "width": 150.75,
+            "height": 50,
+            "top": 369.34375,
+            "right": 179.75,
+            "bottom": 419.34375,
+            "left": 29
+          },
+          "textBox": {
+            "x": 40,
+            "y": 383.34375,
+            "width": 128.75,
+            "height": 22,
+            "top": 383.34375,
+            "right": 168.75,
+            "bottom": 405.34375,
+            "left": 40
+          }
+        },
+        {
+          "text": "R · Sorted right values",
+          "box": {
+            "x": 29,
+            "y": 471.34375,
+            "width": 262,
+            "height": 33.25,
+            "top": 471.34375,
+            "right": 291,
+            "bottom": 504.59375,
+            "left": 29
+          },
+          "textBox": {
+            "x": 29,
+            "y": 474.34375,
+            "width": 208.5,
+            "height": 26,
+            "top": 474.34375,
+            "right": 237.5,
+            "bottom": 500.34375,
+            "left": 29
+          }
+        },
+        {
+          "text": "R[0]=-2147483648; 2147483647>-4294967296: Count",
+          "box": {
+            "x": 29,
+            "y": 520.59375,
+            "width": 262,
+            "height": 106,
+            "top": 520.59375,
+            "right": 291,
+            "bottom": 626.59375,
+            "left": 29
+          },
+          "textBox": {
+            "x": 40,
+            "y": 534.59375,
+            "width": 201.640625,
+            "height": 78,
+            "top": 534.59375,
+            "right": 241.640625,
+            "bottom": 612.59375,
+            "left": 40
+          }
+        },
+        {
+          "text": "R[1]=0; 2147483647>0: Count",
+          "box": {
+            "x": 29,
+            "y": 634.59375,
+            "width": 242.015625,
+            "height": 50,
+            "top": 634.59375,
+            "right": 271.015625,
+            "bottom": 684.59375,
+            "left": 29
+          },
+          "textBox": {
+            "x": 40,
+            "y": 648.59375,
+            "width": 220.015625,
+            "height": 22,
+            "top": 648.59375,
+            "right": 260.015625,
+            "bottom": 670.59375,
+            "left": 40
+          }
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "read": "原块 [1,3)，切点 2。x=-2147483648 扫描完毕；q 从 0 到 0，本次 +0 对。右前缀 [0,q) 全满足 x>2y；q 处若存在则失败。",
+      "progress": "操作进度 1/5；已累计计入 0 对（仅完成时才是最终答案）。",
+      "cells": "R[0]=0；-2147483648>0：排除"
+    },
+    {
+      "lang": "zh",
+      "read": "原块 [1,3) 归并完成 → [-2147483648, 0]；本次 +0 对。",
+      "progress": "操作进度 2/5；已累计计入 0 对（仅完成时才是最终答案）。",
+      "cells": "0"
+    },
+    {
+      "lang": "zh",
+      "read": "原块 [0,3)，切点 1。x=2147483647 扫描完毕；q 从 0 到 2，本次 +2 对。右前缀 [0,q) 全满足 x>2y；q 处若存在则失败。",
+      "progress": "操作进度 3/5；已累计计入 2 对（仅完成时才是最终答案）。",
+      "cells": "R[0]=-2147483648；2147483647>-4294967296：计入R[1]=0；2147483647>0：计入"
+    },
+    {
+      "lang": "zh",
+      "read": "原块 [0,3) 归并完成 → [-2147483648, 0, 2147483647]；本次 +0 对。",
+      "progress": "操作进度 4/5；已累计计入 2 对（仅完成时才是最终答案）。",
+      "cells": "-21474836480"
+    },
+    {
+      "lang": "zh",
+      "read": "全部完成，排序副本=[-2147483648, 0, 2147483647]；累计数量就是最终答案。",
+      "progress": "操作进度 5/5；已累计计入 2 对（仅完成时才是最终答案）。",
+      "cells": "-21474836480"
+    },
+    {
+      "lang": "zh",
+      "geometry": [
+        {
+          "text": "L · 已排序左半值",
+          "box": {
+            "x": 29,
+            "y": 619,
+            "width": 262,
+            "height": 33.25,
+            "top": 619,
+            "right": 291,
+            "bottom": 652.25,
+            "left": 29
+          },
+          "textBox": {
+            "x": 29,
+            "y": 622,
+            "width": 140.03125,
+            "height": 26,
+            "top": 622,
+            "right": 169.03125,
+            "bottom": 648,
+            "left": 29
+          }
+        },
+        {
+          "text": "L[0]=2147483647",
+          "box": {
+            "x": 29,
+            "y": 668.25,
+            "width": 150.75,
+            "height": 50,
+            "top": 668.25,
+            "right": 179.75,
+            "bottom": 718.25,
+            "left": 29
+          },
+          "textBox": {
+            "x": 40,
+            "y": 682.25,
+            "width": 128.75,
+            "height": 22,
+            "top": 682.25,
+            "right": 168.75,
+            "bottom": 704.25,
+            "left": 40
+          }
+        },
+        {
+          "text": "R · 已排序右半值",
+          "box": {
+            "x": 29,
+            "y": 770.25,
+            "width": 262,
+            "height": 33.25,
+            "top": 770.25,
+            "right": 291,
+            "bottom": 803.5,
+            "left": 29
+          },
+          "textBox": {
+            "x": 29,
+            "y": 773.25,
+            "width": 141.84375,
+            "height": 26,
+            "top": 773.25,
+            "right": 170.84375,
+            "bottom": 799.25,
+            "left": 29
+          }
+        },
+        {
+          "text": "R[0]=-2147483648；2147483647>-4294967296：计入",
+          "box": {
+            "x": 29,
+            "y": 819.5,
+            "width": 262,
+            "height": 106,
+            "top": 819.5,
+            "right": 291,
+            "bottom": 925.5,
+            "left": 29
+          },
+          "textBox": {
+            "x": 40,
+            "y": 833.5,
+            "width": 229.359375,
+            "height": 78,
+            "top": 833.5,
+            "right": 269.359375,
+            "bottom": 911.5,
+            "left": 40
+          }
+        },
+        {
+          "text": "R[1]=0；2147483647>0：计入",
+          "box": {
+            "x": 29,
+            "y": 933.5,
+            "width": 243.765625,
+            "height": 50,
+            "top": 933.5,
+            "right": 272.765625,
+            "bottom": 983.5,
+            "left": 29
+          },
+          "textBox": {
+            "x": 40,
+            "y": 947.5,
+            "width": 221.765625,
+            "height": 22,
+            "top": 947.5,
+            "right": 261.765625,
+            "bottom": 969.5,
+            "left": 40
+          }
+        }
+      ]
+    },
+    {
+      "keyboard": "native select changed to preset 1; Space/ArrowRight selected 4; Enter revealed correct feedback"
+    }
+  ]
+}
