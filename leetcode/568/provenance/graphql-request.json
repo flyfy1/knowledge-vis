@@ -1,0 +1,1 @@
+{"query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug isPaidOnly content exampleTestcases sampleTestCase metaData codeSnippets { lang langSlug code } } }", "variables": {"titleSlug": "maximum-vacation-days"}}
