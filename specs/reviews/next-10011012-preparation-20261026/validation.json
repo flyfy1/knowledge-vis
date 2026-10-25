@@ -1,0 +1,61 @@
+{
+  "validatedAt": "2026-10-25T23:05:01.571349+00:00",
+  "commands": [
+    {
+      "command": "python3 -B check-examples.py",
+      "exitCode": 0
+    },
+    {
+      "command": "node -e 'const n=1e9,r=n-1; console.log(JSON.stringify({n,row:r,col1:n-2,col2:n-1,key1:r*n+n-2,key2:r*n+n-1,collision:r*n+n-2===r*n+n-1,safe:Number.isSafeInteger(r*n+n-1)}))'",
+      "exitCode": 0
+    }
+  ],
+  "sourceBindingsVerified": true,
+  "remoteMutation": false,
+  "files": {
+    "1001-official-access.json": {
+      "sha256": "b15ec49a40c223d66a63e2bf85a147860cd1f53608328243d8bac04594a14ac5",
+      "bytes": 11219
+    },
+    "1001-official-response.json": {
+      "sha256": "a83cd08a8532ef589a3f862c233e753c19ea3cb34ef9de784b1a5c32192bcdba",
+      "bytes": 8107
+    },
+    "1001.md": {
+      "sha256": "8f8ab4fb0b7899c719330a58453730c516446d71dcf3c9b6bbe04e54220c431b",
+      "bytes": 4370
+    },
+    "1012-official-access.json": {
+      "sha256": "5c736ade459f99cb92b8d45ce08b37bf5a507fe87375d480f9484fb63c692af6",
+      "bytes": 7296
+    },
+    "1012-official-response.json": {
+      "sha256": "6080d76124e9280577f9f5c7275f9d7fe8ed08c9d1cf10097502a23da7061b63",
+      "bytes": 4118
+    },
+    "1012.md": {
+      "sha256": "9a32a8660e56529074697cd29adc192897c16b39e91876881a2255dfafdf2a18",
+      "bytes": 4120
+    },
+    "README.md": {
+      "sha256": "aba57b58796d1619a546d437673f0f04ae78abf26b7f8c955387854d41589f50",
+      "bytes": 2931
+    },
+    "check-examples.py": {
+      "sha256": "f32c2db7a53cccbc285fef8903e685d5b53403ef5d09f479451c08bdfd07187f",
+      "bytes": 3318
+    },
+    "example-checks.json": {
+      "sha256": "a58cbc128519bb9c7f8326d0af38e1e06e2bcf8d29f04ca378ee31154ad4db61",
+      "bytes": 18969
+    },
+    "target-detail.json": {
+      "sha256": "a7d75c5cf85340f1d8a6e6a7c4045ef8ec141c25fd911408a3d9c491faea7d54",
+      "bytes": 1211
+    },
+    "typescript-key-check.json": {
+      "sha256": "846e43b5b5d6af9ec606045806be311947eb2a2b99dd09a6a78b487778479ad3",
+      "bytes": 151
+    }
+  }
+}

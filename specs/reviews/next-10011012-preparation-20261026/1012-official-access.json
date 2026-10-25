@@ -1,0 +1,154 @@
+{
+  "observedAt": "2026-10-25T23:03:09.405364+00:00",
+  "source": "https://leetcode.com/graphql/",
+  "officialUrl": "https://leetcode.com/problems/numbers-with-repeated-digits/",
+  "httpStatus": 200,
+  "access": "ordinary public unauthenticated GraphQL GET; no bypass",
+  "requestCount": 1,
+  "request": {
+    "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug content difficulty isPaidOnly exampleTestcases sampleTestCase metaData codeSnippets { lang langSlug code } topicTags { name slug } } }",
+    "variables": {
+      "titleSlug": "numbers-with-repeated-digits"
+    },
+    "operationName": "questionData"
+  },
+  "requestMethod": "GET",
+  "requestUrl": "https://leetcode.com/graphql/?query=query+questionData%28%24titleSlug%3A+String%21%29+%7B+question%28titleSlug%3A+%24titleSlug%29+%7B+questionId+questionFrontendId+title+titleSlug+content+difficulty+isPaidOnly+exampleTestcases+sampleTestCase+metaData+codeSnippets+%7B+lang+langSlug+code+%7D+topicTags+%7B+name+slug+%7D+%7D+%7D&variables=%7B%22titleSlug%22%3A%22numbers-with-repeated-digits%22%7D&operationName=questionData",
+  "responseFile": "1012-official-response.json",
+  "responseSha256": "6080d76124e9280577f9f5c7275f9d7fe8ed08c9d1cf10097502a23da7061b63",
+  "responseBytes": 4118,
+  "frozenCatalogSnapshotAt": "2026-10-18T08:59:47.124517+00:00",
+  "frozenCatalogRecord": {
+    "id": 1012,
+    "slug": "numbers-with-repeated-digits",
+    "title": "Numbers With Repeated Digits",
+    "paidOnly": false,
+    "officialUrl": "https://leetcode.com/problems/numbers-with-repeated-digits/",
+    "categories": [
+      "algorithms"
+    ]
+  },
+  "response": {
+    "data": {
+      "question": {
+        "questionId": "1057",
+        "questionFrontendId": "1012",
+        "title": "Numbers With Repeated Digits",
+        "titleSlug": "numbers-with-repeated-digits",
+        "content": "<p>Given an integer <code>n</code>, return <em>the number of positive integers in the range </em><code>[1, n]</code><em> that have <strong>at least one</strong> repeated digit</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 20\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> The only positive number (&lt;= 20) with at least 1 repeated digit is 11.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 100\n<strong>Output:</strong> 10\n<strong>Explanation:</strong> The positive numbers (&lt;= 100) with atleast 1 repeated digit are 11, 22, 33, 44, 55, 66, 77, 88, 99, and 100.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 1000\n<strong>Output:</strong> 262\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 10<sup>9</sup></code></li>\n</ul>\n",
+        "difficulty": "Hard",
+        "isPaidOnly": false,
+        "exampleTestcases": "20\n100\n1000",
+        "sampleTestCase": "20",
+        "metaData": "{\n  \"name\": \"numDupDigitsAtMostN\",\n  \"params\": [\n    {\n      \"name\": \"n\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  }\n}",
+        "codeSnippets": [
+          {
+            "lang": "C++",
+            "langSlug": "cpp",
+            "code": "class Solution {\npublic:\n    int numDupDigitsAtMostN(int n) {\n        \n    }\n};"
+          },
+          {
+            "lang": "Java",
+            "langSlug": "java",
+            "code": "class Solution {\n    public int numDupDigitsAtMostN(int n) {\n        \n    }\n}"
+          },
+          {
+            "lang": "Python3",
+            "langSlug": "python3",
+            "code": "class Solution:\n    def numDupDigitsAtMostN(self, n: int) -> int:\n        "
+          },
+          {
+            "lang": "Python",
+            "langSlug": "python",
+            "code": "class Solution(object):\n    def numDupDigitsAtMostN(self, n):\n        \"\"\"\n        :type n: int\n        :rtype: int\n        \"\"\"\n        "
+          },
+          {
+            "lang": "JavaScript",
+            "langSlug": "javascript",
+            "code": "/**\n * @param {number} n\n * @return {number}\n */\nvar numDupDigitsAtMostN = function(n) {\n    \n};"
+          },
+          {
+            "lang": "TypeScript",
+            "langSlug": "typescript",
+            "code": "function numDupDigitsAtMostN(n: number): number {\n    \n};"
+          },
+          {
+            "lang": "C#",
+            "langSlug": "csharp",
+            "code": "public class Solution {\n    public int NumDupDigitsAtMostN(int n) {\n        \n    }\n}"
+          },
+          {
+            "lang": "C",
+            "langSlug": "c",
+            "code": "int numDupDigitsAtMostN(int n) {\n    \n}"
+          },
+          {
+            "lang": "Go",
+            "langSlug": "golang",
+            "code": "func numDupDigitsAtMostN(n int) int {\n    \n}"
+          },
+          {
+            "lang": "Kotlin",
+            "langSlug": "kotlin",
+            "code": "class Solution {\n    fun numDupDigitsAtMostN(n: Int): Int {\n        \n    }\n}"
+          },
+          {
+            "lang": "Swift",
+            "langSlug": "swift",
+            "code": "class Solution {\n    func numDupDigitsAtMostN(_ n: Int) -> Int {\n        \n    }\n}"
+          },
+          {
+            "lang": "Rust",
+            "langSlug": "rust",
+            "code": "impl Solution {\n    pub fn num_dup_digits_at_most_n(n: i32) -> i32 {\n        \n    }\n}"
+          },
+          {
+            "lang": "Ruby",
+            "langSlug": "ruby",
+            "code": "# @param {Integer} n\n# @return {Integer}\ndef num_dup_digits_at_most_n(n)\n    \nend"
+          },
+          {
+            "lang": "PHP",
+            "langSlug": "php",
+            "code": "class Solution {\n\n    /**\n     * @param Integer $n\n     * @return Integer\n     */\n    function numDupDigitsAtMostN($n) {\n        \n    }\n}"
+          },
+          {
+            "lang": "Dart",
+            "langSlug": "dart",
+            "code": "class Solution {\n  int numDupDigitsAtMostN(int n) {\n    \n  }\n}"
+          },
+          {
+            "lang": "Scala",
+            "langSlug": "scala",
+            "code": "object Solution {\n    def numDupDigitsAtMostN(n: Int): Int = {\n        \n    }\n}"
+          },
+          {
+            "lang": "Elixir",
+            "langSlug": "elixir",
+            "code": "defmodule Solution do\n  @spec num_dup_digits_at_most_n(n :: integer) :: integer\n  def num_dup_digits_at_most_n(n) do\n    \n  end\nend"
+          },
+          {
+            "lang": "Erlang",
+            "langSlug": "erlang",
+            "code": "-spec num_dup_digits_at_most_n(N :: integer()) -> integer().\nnum_dup_digits_at_most_n(N) ->\n  ."
+          },
+          {
+            "lang": "Racket",
+            "langSlug": "racket",
+            "code": "(define/contract (num-dup-digits-at-most-n n)\n  (-> exact-integer? exact-integer?)\n  )"
+          }
+        ],
+        "topicTags": [
+          {
+            "name": "Math",
+            "slug": "math"
+          },
+          {
+            "name": "Dynamic Programming",
+            "slug": "dynamic-programming"
+          }
+        ]
+      }
+    }
+  }
+}

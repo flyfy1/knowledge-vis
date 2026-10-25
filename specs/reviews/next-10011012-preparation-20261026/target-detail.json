@@ -1,0 +1,49 @@
+{
+  "observedAt": "2026-10-25T23:02:46.955948+00:00",
+  "readOnly": true,
+  "centralHead": "a3a3d5ef724394fb4ab04c9073daece67744f289",
+  "expectedHead": "a3a3d5ef724394fb4ab04c9073daece67744f289",
+  "current": {
+    "problem_id": "871",
+    "stage": "author",
+    "started_at": "2026-10-25T22:55:31.562794+00:00",
+    "run_id": "871-author-3c117e1396eb"
+  },
+  "progressSha256": "f0a79bec640a01b036db367e45eee07c3589530924777b4fcfbe987d4a69f1f8",
+  "queueLength": 984,
+  "queueSha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+  "following1000": [
+    "1001",
+    "1012",
+    "1028",
+    "1032",
+    "1036",
+    "1044"
+  ],
+  "targets": [
+    {
+      "id": "1001",
+      "queueIndex": 209,
+      "problemRecord": null,
+      "runIds": [],
+      "runDirectories": [],
+      "reservations": [],
+      "lessonExists": false,
+      "trackedLessonPaths": [],
+      "lanePaths": [],
+      "laneBranches": []
+    },
+    {
+      "id": "1012",
+      "queueIndex": 210,
+      "problemRecord": null,
+      "runIds": [],
+      "runDirectories": [],
+      "reservations": [],
+      "lessonExists": false,
+      "trackedLessonPaths": [],
+      "lanePaths": [],
+      "laneBranches": []
+    }
+  ]
+}

@@ -1,0 +1,1261 @@
+{
+  "scope": "tiny direct oracles only; no candidate or full-constraint performance proof",
+  "gridCases": [
+    {
+      "label": "official1",
+      "n": 5,
+      "lamps": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "queries": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "answers": [
+        1,
+        0
+      ],
+      "frames": [
+        {
+          "query": [
+            1,
+            1
+          ],
+          "answer": 1,
+          "illuminatingLampsBeforeShutdown": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "removed": [
+            [
+              0,
+              0
+            ]
+          ],
+          "activeBefore": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "activeAfter": [
+            [
+              4,
+              4
+            ]
+          ]
+        },
+        {
+          "query": [
+            1,
+            0
+          ],
+          "answer": 0,
+          "illuminatingLampsBeforeShutdown": [],
+          "removed": [],
+          "activeBefore": [
+            [
+              4,
+              4
+            ]
+          ],
+          "activeAfter": [
+            [
+              4,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "official2",
+      "n": 5,
+      "lamps": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "queries": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "answers": [
+        1,
+        1
+      ],
+      "frames": [
+        {
+          "query": [
+            1,
+            1
+          ],
+          "answer": 1,
+          "illuminatingLampsBeforeShutdown": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "removed": [
+            [
+              0,
+              0
+            ]
+          ],
+          "activeBefore": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "activeAfter": [
+            [
+              4,
+              4
+            ]
+          ]
+        },
+        {
+          "query": [
+            1,
+            1
+          ],
+          "answer": 1,
+          "illuminatingLampsBeforeShutdown": [
+            [
+              4,
+              4
+            ]
+          ],
+          "removed": [],
+          "activeBefore": [
+            [
+              4,
+              4
+            ]
+          ],
+          "activeAfter": [
+            [
+              4,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "official3",
+      "n": 5,
+      "lamps": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "queries": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "answers": [
+        1,
+        1,
+        0
+      ],
+      "frames": [
+        {
+          "query": [
+            0,
+            4
+          ],
+          "answer": 1,
+          "illuminatingLampsBeforeShutdown": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              4
+            ]
+          ],
+          "removed": [
+            [
+              0,
+              4
+            ]
+          ],
+          "activeBefore": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              4
+            ]
+          ],
+          "activeAfter": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "query": [
+            0,
+            1
+          ],
+          "answer": 1,
+          "illuminatingLampsBeforeShutdown": [
+            [
+              0,
+              0
+            ]
+          ],
+          "removed": [
+            [
+              0,
+              0
+            ]
+          ],
+          "activeBefore": [
+            [
+              0,
+              0
+            ]
+          ],
+          "activeAfter": []
+        },
+        {
+          "query": [
+            1,
+            4
+          ],
+          "answer": 0,
+          "illuminatingLampsBeforeShutdown": [],
+          "removed": [],
+          "activeBefore": [],
+          "activeAfter": []
+        }
+      ]
+    },
+    {
+      "label": "duplicate-single-cell",
+      "n": 1,
+      "lamps": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "queries": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "answers": [
+        1,
+        0
+      ],
+      "frames": [
+        {
+          "query": [
+            0,
+            0
+          ],
+          "answer": 1,
+          "illuminatingLampsBeforeShutdown": [
+            [
+              0,
+              0
+            ]
+          ],
+          "removed": [
+            [
+              0,
+              0
+            ]
+          ],
+          "activeBefore": [
+            [
+              0,
+              0
+            ]
+          ],
+          "activeAfter": []
+        },
+        {
+          "query": [
+            0,
+            0
+          ],
+          "answer": 0,
+          "illuminatingLampsBeforeShutdown": [],
+          "removed": [],
+          "activeBefore": [],
+          "activeAfter": []
+        }
+      ]
+    },
+    {
+      "label": "no-lamps",
+      "n": 3,
+      "lamps": [],
+      "queries": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "answers": [
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "query": [
+            0,
+            0
+          ],
+          "answer": 0,
+          "illuminatingLampsBeforeShutdown": [],
+          "removed": [],
+          "activeBefore": [],
+          "activeAfter": []
+        },
+        {
+          "query": [
+            1,
+            1
+          ],
+          "answer": 0,
+          "illuminatingLampsBeforeShutdown": [],
+          "removed": [],
+          "activeBefore": [],
+          "activeAfter": []
+        }
+      ]
+    },
+    {
+      "label": "no-queries",
+      "n": 3,
+      "lamps": [
+        [
+          1,
+          1
+        ]
+      ],
+      "queries": [],
+      "answers": [],
+      "frames": []
+    },
+    {
+      "label": "shared-row-survives",
+      "n": 5,
+      "lamps": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "queries": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "answers": [
+        1,
+        1
+      ],
+      "frames": [
+        {
+          "query": [
+            0,
+            0
+          ],
+          "answer": 1,
+          "illuminatingLampsBeforeShutdown": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              4
+            ]
+          ],
+          "removed": [
+            [
+              0,
+              0
+            ]
+          ],
+          "activeBefore": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              4
+            ]
+          ],
+          "activeAfter": [
+            [
+              0,
+              4
+            ]
+          ]
+        },
+        {
+          "query": [
+            0,
+            2
+          ],
+          "answer": 1,
+          "illuminatingLampsBeforeShutdown": [
+            [
+              0,
+              4
+            ]
+          ],
+          "removed": [],
+          "activeBefore": [
+            [
+              0,
+              4
+            ]
+          ],
+          "activeAfter": [
+            [
+              0,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "diagonal-neighbor-removed",
+      "n": 3,
+      "lamps": [
+        [
+          0,
+          0
+        ]
+      ],
+      "queries": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "answers": [
+        1,
+        0
+      ],
+      "frames": [
+        {
+          "query": [
+            1,
+            1
+          ],
+          "answer": 1,
+          "illuminatingLampsBeforeShutdown": [
+            [
+              0,
+              0
+            ]
+          ],
+          "removed": [
+            [
+              0,
+              0
+            ]
+          ],
+          "activeBefore": [
+            [
+              0,
+              0
+            ]
+          ],
+          "activeAfter": []
+        },
+        {
+          "query": [
+            2,
+            2
+          ],
+          "answer": 0,
+          "illuminatingLampsBeforeShutdown": [],
+          "removed": [],
+          "activeBefore": [],
+          "activeAfter": []
+        }
+      ]
+    },
+    {
+      "label": "negative-difference-diagonal",
+      "n": 6,
+      "lamps": [
+        [
+          0,
+          3
+        ]
+      ],
+      "queries": [
+        [
+          2,
+          5
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "answers": [
+        1,
+        1,
+        0
+      ],
+      "frames": [
+        {
+          "query": [
+            2,
+            5
+          ],
+          "answer": 1,
+          "illuminatingLampsBeforeShutdown": [
+            [
+              0,
+              3
+            ]
+          ],
+          "removed": [],
+          "activeBefore": [
+            [
+              0,
+              3
+            ]
+          ],
+          "activeAfter": [
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "query": [
+            0,
+            3
+          ],
+          "answer": 1,
+          "illuminatingLampsBeforeShutdown": [
+            [
+              0,
+              3
+            ]
+          ],
+          "removed": [
+            [
+              0,
+              3
+            ]
+          ],
+          "activeBefore": [
+            [
+              0,
+              3
+            ]
+          ],
+          "activeAfter": []
+        },
+        {
+          "query": [
+            2,
+            5
+          ],
+          "answer": 0,
+          "illuminatingLampsBeforeShutdown": [],
+          "removed": [],
+          "activeBefore": [],
+          "activeAfter": []
+        }
+      ]
+    },
+    {
+      "label": "anti-diagonal",
+      "n": 5,
+      "lamps": [
+        [
+          0,
+          4
+        ]
+      ],
+      "queries": [
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "answers": [
+        1,
+        1
+      ],
+      "frames": [
+        {
+          "query": [
+            2,
+            2
+          ],
+          "answer": 1,
+          "illuminatingLampsBeforeShutdown": [
+            [
+              0,
+              4
+            ]
+          ],
+          "removed": [],
+          "activeBefore": [
+            [
+              0,
+              4
+            ]
+          ],
+          "activeAfter": [
+            [
+              0,
+              4
+            ]
+          ]
+        },
+        {
+          "query": [
+            4,
+            0
+          ],
+          "answer": 1,
+          "illuminatingLampsBeforeShutdown": [
+            [
+              0,
+              4
+            ]
+          ],
+          "removed": [],
+          "activeBefore": [
+            [
+              0,
+              4
+            ]
+          ],
+          "activeAfter": [
+            [
+              0,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "large-sparse",
+      "n": 1000000000,
+      "lamps": [
+        [
+          999999999,
+          999999998
+        ],
+        [
+          999999999,
+          999999999
+        ]
+      ],
+      "queries": [
+        [
+          999999999,
+          999999998
+        ],
+        [
+          999999999,
+          999999998
+        ]
+      ],
+      "answers": [
+        1,
+        0
+      ],
+      "frames": [
+        {
+          "query": [
+            999999999,
+            999999998
+          ],
+          "answer": 1,
+          "illuminatingLampsBeforeShutdown": [
+            [
+              999999999,
+              999999998
+            ],
+            [
+              999999999,
+              999999999
+            ]
+          ],
+          "removed": [
+            [
+              999999999,
+              999999998
+            ],
+            [
+              999999999,
+              999999999
+            ]
+          ],
+          "activeBefore": [
+            [
+              999999999,
+              999999998
+            ],
+            [
+              999999999,
+              999999999
+            ]
+          ],
+          "activeAfter": []
+        },
+        {
+          "query": [
+            999999999,
+            999999998
+          ],
+          "answer": 0,
+          "illuminatingLampsBeforeShutdown": [],
+          "removed": [],
+          "activeBefore": [],
+          "activeAfter": []
+        }
+      ]
+    }
+  ],
+  "digitCases": [
+    {
+      "n": 1,
+      "count": 0,
+      "values": []
+    },
+    {
+      "n": 9,
+      "count": 0,
+      "values": []
+    },
+    {
+      "n": 10,
+      "count": 0,
+      "values": []
+    },
+    {
+      "n": 11,
+      "count": 1,
+      "values": [
+        11
+      ]
+    },
+    {
+      "n": 20,
+      "count": 1,
+      "values": [
+        11
+      ]
+    },
+    {
+      "n": 98,
+      "count": 8,
+      "values": [
+        11,
+        22,
+        33,
+        44,
+        55,
+        66,
+        77,
+        88
+      ]
+    },
+    {
+      "n": 99,
+      "count": 9,
+      "values": [
+        11,
+        22,
+        33,
+        44,
+        55,
+        66,
+        77,
+        88,
+        99
+      ]
+    },
+    {
+      "n": 100,
+      "count": 10,
+      "values": [
+        11,
+        22,
+        33,
+        44,
+        55,
+        66,
+        77,
+        88,
+        99,
+        100
+      ]
+    },
+    {
+      "n": 101,
+      "count": 11,
+      "values": [
+        11,
+        22,
+        33,
+        44,
+        55,
+        66,
+        77,
+        88,
+        99,
+        100,
+        101
+      ]
+    },
+    {
+      "n": 110,
+      "count": 12,
+      "values": [
+        11,
+        22,
+        33,
+        44,
+        55,
+        66,
+        77,
+        88,
+        99,
+        100,
+        101,
+        110
+      ]
+    },
+    {
+      "n": 111,
+      "count": 13,
+      "values": [
+        11,
+        22,
+        33,
+        44,
+        55,
+        66,
+        77,
+        88,
+        99,
+        100,
+        101,
+        110,
+        111
+      ]
+    },
+    {
+      "n": 112,
+      "count": 14,
+      "values": [
+        11,
+        22,
+        33,
+        44,
+        55,
+        66,
+        77,
+        88,
+        99,
+        100,
+        101,
+        110,
+        111,
+        112
+      ]
+    },
+    {
+      "n": 1000,
+      "count": 262,
+      "values": [
+        11,
+        22,
+        33,
+        44,
+        55,
+        66,
+        77,
+        88,
+        99,
+        100,
+        101,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        121,
+        122,
+        131,
+        133,
+        141,
+        144,
+        151,
+        155,
+        161,
+        166,
+        171,
+        177,
+        181,
+        188,
+        191,
+        199,
+        200,
+        202,
+        211,
+        212,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        232,
+        233,
+        242,
+        244,
+        252,
+        255,
+        262,
+        266,
+        272,
+        277,
+        282,
+        288,
+        292,
+        299,
+        300,
+        303,
+        311,
+        313,
+        322,
+        323,
+        330,
+        331,
+        332,
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        343,
+        344,
+        353,
+        355,
+        363,
+        366,
+        373,
+        377,
+        383,
+        388,
+        393,
+        399,
+        400,
+        404,
+        411,
+        414,
+        422,
+        424,
+        433,
+        434,
+        440,
+        441,
+        442,
+        443,
+        444,
+        445,
+        446,
+        447,
+        448,
+        449,
+        454,
+        455,
+        464,
+        466,
+        474,
+        477,
+        484,
+        488,
+        494,
+        499,
+        500,
+        505,
+        511,
+        515,
+        522,
+        525,
+        533,
+        535,
+        544,
+        545,
+        550,
+        551,
+        552,
+        553,
+        554,
+        555,
+        556,
+        557,
+        558,
+        559,
+        565,
+        566,
+        575,
+        577,
+        585,
+        588,
+        595,
+        599,
+        600,
+        606,
+        611,
+        616,
+        622,
+        626,
+        633,
+        636,
+        644,
+        646,
+        655,
+        656,
+        660,
+        661,
+        662,
+        663,
+        664,
+        665,
+        666,
+        667,
+        668,
+        669,
+        676,
+        677,
+        686,
+        688,
+        696,
+        699,
+        700,
+        707,
+        711,
+        717,
+        722,
+        727,
+        733,
+        737,
+        744,
+        747,
+        755,
+        757,
+        766,
+        767,
+        770,
+        771,
+        772,
+        773,
+        774,
+        775,
+        776,
+        777,
+        778,
+        779,
+        787,
+        788,
+        797,
+        799,
+        800,
+        808,
+        811,
+        818,
+        822,
+        828,
+        833,
+        838,
+        844,
+        848,
+        855,
+        858,
+        866,
+        868,
+        877,
+        878,
+        880,
+        881,
+        882,
+        883,
+        884,
+        885,
+        886,
+        887,
+        888,
+        889,
+        898,
+        899,
+        900,
+        909,
+        911,
+        919,
+        922,
+        929,
+        933,
+        939,
+        944,
+        949,
+        955,
+        959,
+        966,
+        969,
+        977,
+        979,
+        988,
+        989,
+        990,
+        991,
+        992,
+        993,
+        994,
+        995,
+        996,
+        997,
+        998,
+        999,
+        1000
+      ]
+    }
+  ],
+  "digitMembership": {
+    "10": false,
+    "100": true,
+    "101": true,
+    "102": false,
+    "110": true,
+    "111": true,
+    "1000": true
+  },
+  "inclusiveDeltaChecks": 999
+}
