@@ -3705,6 +3705,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(mn + 3^V) time; O(V) auxiliary space, V non-obstacle cells"
   },
   {
+    "id": 982,
+    "title": {
+      "zh": "按位与为零的三元组",
+      "en": "Triples with Bitwise AND Equal To Zero"
+    },
+    "desc": {
+      "zh": "保留有序数对的次数，再用子集求和统计兼容的第三个数。",
+      "en": "Preserve ordered-pair multiplicities, then sum compatible masks for each third value."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "位运算",
+        "en": "Bit manipulation"
+      },
+      {
+        "zh": "子集求和",
+        "en": "Subset sums"
+      }
+    ],
+    "path": "982/",
+    "leetcodeUrl": "https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/",
+    "language": "Python",
+    "complexity": "O(n² + B·2^B) time; O(2^B) auxiliary space, B = max(1, bit_length(max(nums))) ≤ 16"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
