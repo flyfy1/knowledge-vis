@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-10-25T22:02:25.103868+00:00",
+  "status": "pending-import-completion-no-execution",
+  "passed": true,
+  "staticTests": 8,
+  "launcherControlFlowUnchanged": true,
+  "parameterSubstitutions": 9,
+  "runtimePinsPending": 6,
+  "noRemoteMutation": true,
+  "files": {
+    "README.md": "97acc17c072fc7a0fa97c9df42bdf91a7e19535e9df5e9b87b2f96dce840ae4b",
+    "launch.pending.py": "774fa491b7fff4af8b6ed2c8b5384542167e1d7e4c8208e46c550a4e25aba7c5",
+    "parameter-map.json": "01ef7bc0f85612841094f94cae26a2521342d520467379cd39b132ecefb03e1b",
+    "parameter-only.diff": "435abe7fcf8728063d26a0ea4c2f1a301bbaf6adb92bfca7b9681214f1de8d43",
+    "preflight-adaptation.diff": "5a93d0f3d114e209f7336013dcf0b92a789a2c5d5c3b5a3f786aa9c3eec82232",
+    "preflight.pending.py": "3e4c86cc817899ea31b76be9f2bd8222a709995ca21b84eb23fdcb8edb3a19d7",
+    "read-only-observation.json": "1a1493726dbc09b30a178a35cd219b15a81240536202faca4cf72ca977106cd9",
+    "static-source-correction.json": "da09a4c5b8c900854094a4052f67abb059311e9cfbe98a2b33115fe1cd1ad2d3",
+    "test_templates.py": "31728a81eb42fa93a705db5e4572f14a3f9ba77ed2c669d560df1cbebd61465d",
+    "tests.log": "637ad693971420b70a01476cd5d51065ecc3c7af270c41cfe91899ec8c2db4bd"
+  },
+  "staticDependencyCorrection": "Use approved hash-pinned lane_base ancestry; operator source object is absent in central, no fetch performed."
+}

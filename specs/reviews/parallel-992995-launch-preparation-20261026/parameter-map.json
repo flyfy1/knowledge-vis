@@ -1,0 +1,86 @@
+{
+  "status": "pending-982987-import-completion-not-launch-ready",
+  "source": "specs/reviews/parallel-982987-evidence-20261026/launch.py",
+  "sourceSha256": "042e95a37d31100524e862db7e354e664310df535eccd7736aa2415c16196463",
+  "preflightSource": "specs/reviews/parallel-982987-evidence-20261026/preflight.py",
+  "preflightSourceSha256": "ec01c22261e9150cc5c45a01754ac3179e7a69ac84c900cff2c3d36e33ec70e2",
+  "actualParameterSubstitutionCount": 9,
+  "substitutions": [
+    {
+      "from": "BASE='854d1bdc83efc13ae49716190ba8db858e4dd0fc'",
+      "to": "BASE='__PENDING_IMPORT982987_BASE__'"
+    },
+    {
+      "from": "CENTRAL_HEAD='854d1bdc83efc13ae49716190ba8db858e4dd0fc'",
+      "to": "CENTRAL_HEAD='__PENDING_IMPORT982987_CENTRAL_HEAD__'"
+    },
+    {
+      "from": "CENTRAL_RUN='843-fix-d56cf6178cb9'",
+      "to": "CENTRAL_RUN='__PENDING_IMPORT982987_CENTRAL_RUN__'"
+    },
+    {
+      "from": "s['current']['problem_id']=='843'",
+      "to": "s['current']['problem_id']=='__PENDING_IMPORT982987_PROBLEM__'"
+    },
+    {
+      "from": "s['current']['stage']=='fix'",
+      "to": "s['current']['stage']=='__PENDING_IMPORT982987_STAGE__'"
+    },
+    {
+      "from": "e.get('thread_id')=='01a174f4-bc5c-7992-be3a-69f166e491b8'",
+      "to": "e.get('thread_id')=='__PENDING_IMPORT982987_SESSION__'"
+    },
+    {
+      "from": "['982','987']",
+      "to": "['992','995']"
+    },
+    {
+      "from": "parallel-launch-982987.lock",
+      "to": "parallel-launch-992995.lock"
+    },
+    {
+      "from": "[('982',18795),('987',18796)]",
+      "to": "[('992',18797),('995',18798)]"
+    }
+  ],
+  "dispatcherOfficialPrepCommit": "d3d2aa8eb61c17081beffdca687f9f2d15555973",
+  "dispatcherOfficialPrepFilesSha256": {
+    "specs/reviews/next-992995-preparation-20261026/992-official-access.json": "0f7f8e1b891e5bb774c1d1e6dc61282378d58555b26d42103be8f96a9a3ed119",
+    "specs/reviews/next-992995-preparation-20261026/992-official-response.json": "98c1b39412f508a24de0950520b2891ab7563136462e9b2d93633280fd3b5211",
+    "specs/reviews/next-992995-preparation-20261026/992.md": "54e6fe65279ccf9df563c48c4248f6c85873d7c9208e85f78acabcbd2a2501dd",
+    "specs/reviews/next-992995-preparation-20261026/995-official-access.json": "a42383ecaab3949605202177839fdb717c1d191e61ecb9fdc32d9f8ed3a9c138",
+    "specs/reviews/next-992995-preparation-20261026/995-official-response.json": "abdd14719d886acea40b47d391c11e9080e27acc4532211079abce31820f51e5",
+    "specs/reviews/next-992995-preparation-20261026/995.md": "3260f9b61e8788526cd6a1ca4e7ca43f333312685fbfd369a72afc14369924af",
+    "specs/reviews/next-992995-preparation-20261026/README.md": "df69485cf53c55996aacb5463b9499685f9ab9f577494c357338364a3c13e133",
+    "specs/reviews/next-992995-preparation-20261026/check-examples.py": "6fbcf802c8955539cedbb1e3431ec3d3ec5a7a9f93ff21a5e6b75771727be079",
+    "specs/reviews/next-992995-preparation-20261026/example-checks.json": "ad7f4f4fc2b6e2cd3504dda0ac047a58756167e9823d8dbdafadea3a9876284f",
+    "specs/reviews/next-992995-preparation-20261026/preflight.json": "9f0c193cdc02aea1afe329e74dad9207579e6485a5e210fb862fb41abc725f7c",
+    "specs/reviews/next-992995-preparation-20261026/validation.json": "5eb5a530b2932b2d0fad1e148905476bf28ce45139539a0be77563f00c4284ff"
+  },
+  "authorContextInjection": false,
+  "policySha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+  "approvedImportOperatorSource": "8f7d005b91072d953251ecb7f3188388b873351a",
+  "approvedImportPinsPath": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import982987-only-20261026-e0e53065/pins.json",
+  "approvedImportPinsSha256": "0d9dec18554ed18154ac5b4137371b08382bd217c290149fd048a46987387a01",
+  "targets": [
+    {
+      "id": "992",
+      "port": 18797,
+      "branch": "codex/lane-992-20261026",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-992-20261026",
+      "state": "/home/songyy/projects/leetcode-hard-lane-state-992-20261026"
+    },
+    {
+      "id": "995",
+      "port": 18798,
+      "branch": "codex/lane-995-20261026",
+      "repo": "/home/songyy/projects/leetcode-hard-lane-995-20261026",
+      "state": "/home/songyy/projects/leetcode-hard-lane-state-995-20261026"
+    }
+  ],
+  "pendingLauncherSha256": "774fa491b7fff4af8b6ed2c8b5384542167e1d7e4c8208e46c550a4e25aba7c5",
+  "pendingPreflightSha256": "3e4c86cc817899ea31b76be9f2bd8222a709995ca21b84eb23fdcb8edb3a19d7",
+  "observationSha256": "1a1493726dbc09b30a178a35cd219b15a81240536202faca4cf72ca977106cd9",
+  "staticDependencySourceField": "approved_pins[lane_base]",
+  "staticDependencySourceRevision": "854d1bdc83efc13ae49716190ba8db858e4dd0fc"
+}

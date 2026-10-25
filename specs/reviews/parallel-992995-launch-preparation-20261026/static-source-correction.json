@@ -1,0 +1,21 @@
+{
+  "observedAt": "2026-10-25T22:02:00.512798+00:00",
+  "readOnly": true,
+  "pinsPath": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import982987-only-20261026-e0e53065/pins.json",
+  "pinsSha256": "0d9dec18554ed18154ac5b4137371b08382bd217c290149fd048a46987387a01",
+  "knownFailure": {
+    "revision": "8f7d005b91072d953251ecb7f3188388b873351a",
+    "command": "git -C central cat-file -e 8f7d005b91072d953251ecb7f3188388b873351a^{commit}",
+    "exit": 128,
+    "stderr": "fatal: Not a valid object name 8f7d005b91072d953251ecb7f3188388b873351a^{commit}\n"
+  },
+  "staticSourceRevision": "854d1bdc83efc13ae49716190ba8db858e4dd0fc",
+  "staticSourceField": "approved_pins[lane_base]",
+  "commitExistsExit": 0,
+  "blobReadExit": 0,
+  "staticPath": "scripts/leetcode_static_versions.py",
+  "blobSha256": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e",
+  "currentSha256": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e",
+  "expectedSha256": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e",
+  "noFetchOrRemoteWrite": true
+}

@@ -1,0 +1,212 @@
+{
+  "observedAt": "2026-10-25T21:59:40.472473+00:00",
+  "readOnly": true,
+  "notLaunchEligibility": true,
+  "centralHead": "7fd4aa457c318f053d7dc722fd63b3012bccb838",
+  "centralExpectedHead": "7fd4aa457c318f053d7dc722fd63b3012bccb838",
+  "centralCurrent": {
+    "problem_id": "854",
+    "stage": "author",
+    "started_at": "2026-10-25T21:51:41.189020+00:00",
+    "run_id": "854-author-679ce856a357"
+  },
+  "STOPexists": true,
+  "queueLength": 984,
+  "reservations": [
+    {
+      "id": "964",
+      "status": "imported"
+    },
+    {
+      "id": "689",
+      "status": "imported"
+    },
+    {
+      "id": "493",
+      "status": "imported"
+    },
+    {
+      "id": "675",
+      "status": "imported"
+    },
+    {
+      "id": "514",
+      "status": "imported"
+    },
+    {
+      "id": "940",
+      "status": "imported"
+    },
+    {
+      "id": "591",
+      "status": "imported"
+    },
+    {
+      "id": "691",
+      "status": "imported"
+    },
+    {
+      "id": "719",
+      "status": "imported"
+    },
+    {
+      "id": "730",
+      "status": "imported"
+    },
+    {
+      "id": "975",
+      "status": "imported"
+    },
+    {
+      "id": "920",
+      "status": "imported"
+    },
+    {
+      "id": "903",
+      "status": "imported"
+    },
+    {
+      "id": "732",
+      "status": "imported"
+    },
+    {
+      "id": "668",
+      "status": "imported"
+    },
+    {
+      "id": "685",
+      "status": "imported"
+    },
+    {
+      "id": "679",
+      "status": "imported"
+    },
+    {
+      "id": "630",
+      "status": "imported"
+    },
+    {
+      "id": "956",
+      "status": "imported"
+    },
+    {
+      "id": "587",
+      "status": "imported"
+    },
+    {
+      "id": "726",
+      "status": "imported"
+    },
+    {
+      "id": "715",
+      "status": "imported"
+    },
+    {
+      "id": "632",
+      "status": "imported"
+    },
+    {
+      "id": "987",
+      "status": "started"
+    },
+    {
+      "id": "805",
+      "status": "imported"
+    },
+    {
+      "id": "600",
+      "status": "imported"
+    },
+    {
+      "id": "629",
+      "status": "imported"
+    },
+    {
+      "id": "639",
+      "status": "imported"
+    },
+    {
+      "id": "546",
+      "status": "imported"
+    },
+    {
+      "id": "972",
+      "status": "imported"
+    },
+    {
+      "id": "803",
+      "status": "imported"
+    },
+    {
+      "id": "664",
+      "status": "imported"
+    },
+    {
+      "id": "982",
+      "status": "started"
+    },
+    {
+      "id": "968",
+      "status": "imported"
+    },
+    {
+      "id": "517",
+      "status": "imported"
+    },
+    {
+      "id": "699",
+      "status": "imported"
+    },
+    {
+      "id": "980",
+      "status": "imported"
+    },
+    {
+      "id": "552",
+      "status": "imported"
+    },
+    {
+      "id": "960",
+      "status": "imported"
+    }
+  ],
+  "allPriorReservationsImported": false,
+  "targets": [
+    {
+      "id": "992",
+      "port": 18797,
+      "queueIndex": 205,
+      "problemRecord": null,
+      "runIds": [],
+      "runDirectories": [],
+      "matchingReservations": [],
+      "lessonExists": false,
+      "repoExists": false,
+      "stateExists": false,
+      "branchExists": false,
+      "portListeners": [],
+      "bindAvailable": true
+    },
+    {
+      "id": "995",
+      "port": 18798,
+      "queueIndex": 206,
+      "problemRecord": null,
+      "runIds": [],
+      "runDirectories": [],
+      "matchingReservations": [],
+      "lessonExists": false,
+      "repoExists": false,
+      "stateExists": false,
+      "branchExists": false,
+      "portListeners": [],
+      "bindAvailable": true
+    }
+  ],
+  "memAvailableKiB": 1907400,
+  "policySha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+  "importReceiptStatus": "waiting-for-natural-boundary",
+  "importReceiptPath": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import982987-only-20261026-891ce2d4.json",
+  "approvedPinsPath": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import982987-only-20261026-e0e53065/pins.json",
+  "approvedPinsSha256": "0d9dec18554ed18154ac5b4137371b08382bd217c290149fd048a46987387a01"
+}

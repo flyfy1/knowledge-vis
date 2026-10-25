@@ -1,0 +1,49 @@
+--- specs/reviews/parallel-982987-evidence-20261026/launch.py
++++ launch.pending.py
+@@ -3,9 +3,9 @@
+ ROOT=pathlib.Path('/home/songyy/projects')
+ REPO=ROOT/'leetcode-hard-campaign-20261018'
+ STATE=ROOT/'leetcode-hard-campaign-state-20261018'
+-BASE='854d1bdc83efc13ae49716190ba8db858e4dd0fc'
+-CENTRAL_HEAD='854d1bdc83efc13ae49716190ba8db858e4dd0fc'
+-CENTRAL_RUN='843-fix-d56cf6178cb9'
++BASE='__PENDING_IMPORT982987_BASE__'
++CENTRAL_HEAD='__PENDING_IMPORT982987_CENTRAL_HEAD__'
++CENTRAL_RUN='__PENDING_IMPORT982987_CENTRAL_RUN__'
+ POLICY='816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c'
+ 
+ def read(p): return json.loads(p.read_text())
+@@ -62,13 +62,13 @@
+     s=read(STATE/'progress.json')
+     assert s['status']=='running' and not (STATE/'STOP').exists()
+     assert s['expected_head']==CENTRAL_HEAD and git('rev-parse','HEAD')==CENTRAL_HEAD
+-    assert s['current']['problem_id']=='843'
+-    assert s['current']['stage']=='fix' and s['current']['run_id']==CENTRAL_RUN
++    assert s['current']['problem_id']=='__PENDING_IMPORT982987_PROBLEM__'
++    assert s['current']['stage']=='__PENDING_IMPORT982987_STAGE__' and s['current']['run_id']==CENTRAL_RUN
+     run=next(r for r in s['runs'] if r['id']==CENTRAL_RUN)
+     events=[json.loads(line) for line in (pathlib.Path(run['directory'])/'events.jsonl').read_text().splitlines() if line.startswith('{')]
+-    assert any(e.get('type')=='thread.started' and e.get('thread_id')=='01a174f4-bc5c-7992-be3a-69f166e491b8' for e in events)
++    assert any(e.get('type')=='thread.started' and e.get('thread_id')=='__PENDING_IMPORT982987_SESSION__' for e in events)
+     assert len(s['queue'])==984
+-    for pid in ['982','987']:
++    for pid in ['992','995']:
+         assert pid in s['queue'] and pid not in s['problems']
+         assert not any(r.get('problem_id')==pid for r in s['runs'])
+     current=workers();assert len(current)==expected_workers,current
+@@ -79,13 +79,13 @@
+     assert hashlib.sha256((REPO/'specs/leetcode-rendered-state-contract.md').read_bytes()).hexdigest()==POLICY
+     return s
+ 
+-with (STATE/'parallel-launch-982987.lock').open('a') as lock:
++with (STATE/'parallel-launch-992995.lock').open('a') as lock:
+     fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+     validate(1)
+     for p in STATE.glob('lane-*-reservation.json'): assert read(p).get('status')=='imported',p
+     mem=dict(line.split(':',1) for line in pathlib.Path('/proc/meminfo').read_text().splitlines())
+     assert int(mem['MemAvailable'].split()[0])>1024*1024
+-    plan=[('982',18795),('987',18796)]
++    plan=[('992',18797),('995',18798)]
+     for pid,port in plan:
+         assert not (ROOT/f'leetcode-hard-lane-{pid}-20261026').exists()
+         assert not (ROOT/f'leetcode-hard-lane-state-{pid}-20261026').exists()
