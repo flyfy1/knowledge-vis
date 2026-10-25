@@ -1,0 +1,19 @@
+const {chromium}=require('playwright'),fs=require('fs'),path=require('path'),assert=require('assert');
+const root=path.resolve(__dirname,'..'),out=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(out,{recursive:true});
+(async()=>{const b=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});const c=await b.newContext({permissions:['clipboard-read','clipboard-write']});const p=await c.newPage();await p.goto('http://127.0.0.1:18774/leetcode/514/');await p.click('#copy');assert.equal(await p.evaluate(()=>navigator.clipboard.readText()),fs.readFileSync(path.join(root,'solution.py'),'utf8'));
+await p.check('[name=prediction][value="2"]');await p.click('#reveal');await p.selectOption('#preset','0');assert(await p.locator('#feedback').isVisible());assert(await p.locator('[name=prediction][value="2"]').isChecked());await p.click('#sourceDetails summary');await p.click('[data-lang=zh]');assert(await p.locator('#sourceDetails').evaluate(e=>e.open));await p.click('#sourceDetails summary');
+let measures=[];
+for(const lang of ['en','zh'])for(const width of [320,390,1440]){
+ await p.setViewportSize({width,height:1000});await p.click(`[data-lang=${lang}]`);await p.selectOption('#preset','1');await p.click('#end');
+ await p.locator('#ring').screenshot({path:path.join(out,`${lang}-${width}-ring.png`)});
+ await p.locator('#candidates').screenshot({path:path.join(out,`${lang}-${width}-candidates.png`)});
+ await p.focus('#ledger');for(let k=0;k<8;k++)await p.keyboard.press('ArrowRight');await p.waitForTimeout(200);const pos=await p.locator('#ledger').evaluate(e=>({scroll:e.scrollLeft,max:e.scrollWidth-e.clientWidth}));if(width<500)assert(pos.scroll>0);measures.push({lang,width,tableScroll:pos});
+ await p.focus('#prev');assert((await p.locator('#prev').evaluate(e=>getComputedStyle(e).outlineWidth))==='3px');
+ await p.emulateMedia({forcedColors:'active',reducedMotion:'reduce'});assert((await p.locator('#prev').evaluate(e=>getComputedStyle(e).outlineWidth))==='3px');await p.emulateMedia({forcedColors:'none',reducedMotion:'no-preference'});
+}
+const heights=await p.locator('button,summary,input[type=range],.solution-actions a,.related a').evaluateAll(es=>es.map(e=>({tag:e.tagName,id:e.id,height:e.getBoundingClientRect().height})));assert(heights.every(x=>x.height>=48));
+await p.locator('a[href="#step2"]').click();await p.waitForFunction(()=>{const a=document.querySelector('#step2').getBoundingClientRect().top,n=document.querySelector('.step-nav').getBoundingClientRect().bottom;return a>=n-1&&a<n+50;});const anchor=await p.evaluate(()=>({target:document.querySelector('#step2').getBoundingClientRect().top,nav:document.querySelector('.step-nav').getBoundingClientRect().bottom}));assert(anchor.target>=anchor.nav-1);
+const colors=await p.evaluate(()=>{const l=a=>a.map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4}).reduce((s,x,i)=>s+x*[.2126,.7152,.0722][i],0),a=l([255,180,84]);return ['#161b22','#0d1117','#1c2330'].map(s=>{const z=l(s.slice(1).match(/../g).map(x=>parseInt(x,16)));return {surface:s,focusRatio:(a+.05)/(z+.05)}})});assert(colors.every(x=>x.focusRatio>=3));
+// Actual 200% browser zoom has half the CSS viewport: 1440 physical ->720 CSS.
+await p.setViewportSize({width:720,height:500});await p.selectOption('#preset','1');await p.click('#end');for(const lang of ['en','zh']){await p.click(`[data-lang=${lang}]`);await p.locator('#ring').screenshot({path:path.join(out,`${lang}-desktop-200-ring.png`)});}
+fs.writeFileSync(path.join(out,'accessibility.json'),JSON.stringify({controlHeights:heights,deepLink:anchor,realClipboard:'exact canonical source read back',tableKeyboard:measures,focusContrast:colors,forcedColors:'3px outline retained',reducedMotion:'no lesson animation'},null,2)+'\n');await b.close();})().catch(e=>{console.error(e);process.exit(1)});

@@ -1103,3 +1103,12 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Count tree rank selection | `leetcode/480/#step2` | Use left subtree counts to preserve the desired occurrence rank. |
 
 <!-- /leetcode-480-campaign -->
+
+
+<!-- leetcode-514-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Endpoint dynamic programming | `leetcode/514/#step2` | Keep the cheapest spelling cost for every possible dial endpoint. |
+
+<!-- /leetcode-514-campaign -->

@@ -1,0 +1,51 @@
+{
+  "served": {
+    "index.html": "ca3648ac1d7f5cdae96334905709a496e435d93d7f6c416def796d35362820ba",
+    "core.js": "6b45793bacfa3c8120ebe0665507ba9656bfc675d14337ad2894c4d93d50781f",
+    "app.js": "d180469d3beaa3665bb1fd24f19be1999f654366f80db7c957169fc6cf3ddd01",
+    "copy.js": "8c42f2214368b4ace19dea21ce9f41b01a165d25341de281f98ed1375cb98b0a",
+    "style.css": "4ffa3057801817ec875f562b440f4702d23eb1ccba17634ed0b3c2d45366261d",
+    "solution.py": "b2ec69b256ba18e8dcabb0a2569a5bb7ae21b87af420225386fcceb543a30993",
+    "python-code.js": "f179eb4b91962c07b7aa5965a5c8e91c0f6ffcf1e132252eddd1377ffe044182"
+  },
+  "states": [
+    {
+      "lang": "en",
+      "case": "godding / gd",
+      "rows": [
+        "Source pTarget qOld costRotationsPressCandidate totalComparison",
+        "g (0)d (2)1214Minimum for this target (ties allowed)",
+        "g (6)d (2)2316A cheaper route reaches this target",
+        "g (0)d (3)1315Minimum for this target (ties allowed)",
+        "g (6)d (3)2316A cheaper route reaches this target"
+      ],
+      "formula": "current[q] = min over p (previous[p] + min(|q−p|, n−|q−p|) + 1)"
+    },
+    {
+      "lang": "en",
+      "candidateScroll": {
+        "left": 415,
+        "max": 415
+      }
+    },
+    {
+      "lang": "zh",
+      "case": "godding / gd",
+      "rows": [
+        "来源 p终点 q旧成本转动格数按钮候选总成本比较结果",
+        "g (0)d (2)1214达到该终点最小值（可并列）",
+        "g (6)d (2)2316同终点有更便宜路线",
+        "g (0)d (3)1315达到该终点最小值（可并列）",
+        "g (6)d (3)2316同终点有更便宜路线"
+      ],
+      "formula": "current[q] = min over p (previous[p] + min(|q−p|, n−|q−p|) + 1)"
+    },
+    {
+      "lang": "zh",
+      "candidateScroll": {
+        "left": 285,
+        "max": 285
+      }
+    }
+  ]
+}

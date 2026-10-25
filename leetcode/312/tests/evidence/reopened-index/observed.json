@@ -1,0 +1,197 @@
+{
+  "kind": "author self-check",
+  "observed": [
+    {
+      "finding": "R312-INDEX-001",
+      "width": 320,
+      "lang": "en",
+      "option": 0,
+      "question": "Fresh case: nums=[2,1,2], padded as values=[1,2,1,2,1]. For interval (0,4), if zero-based padded index 3 (original nums[2]) is last, what is the product term in the three-term sum?",
+      "feedback": "Not yet. The boundaries of (0,4) are values[0]=1 and values[4]=1; the chosen balloon is values[3]=2 (original nums[2]). Only this balloon remains at the last step, so the product is values[0]×values[3]×values[4]=1×2×1=2, not the maximum coins for the whole interval. 2×2×1=4 wrongly keeps a burst left-side balloon 2 as a neighbor; 1×1×1=1 uses values[2]=1, choosing the wrong balloon."
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 320,
+      "lang": "en",
+      "option": 1,
+      "question": "Fresh case: nums=[2,1,2], padded as values=[1,2,1,2,1]. For interval (0,4), if zero-based padded index 3 (original nums[2]) is last, what is the product term in the three-term sum?",
+      "feedback": "Correct. The boundaries of (0,4) are values[0]=1 and values[4]=1; the chosen balloon is values[3]=2 (original nums[2]). Only this balloon remains at the last step, so the product is values[0]×values[3]×values[4]=1×2×1=2, not the maximum coins for the whole interval. 2×2×1=4 wrongly keeps a burst left-side balloon 2 as a neighbor; 1×1×1=1 uses values[2]=1, choosing the wrong balloon."
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 320,
+      "lang": "en",
+      "option": 2,
+      "question": "Fresh case: nums=[2,1,2], padded as values=[1,2,1,2,1]. For interval (0,4), if zero-based padded index 3 (original nums[2]) is last, what is the product term in the three-term sum?",
+      "feedback": "Not yet. The boundaries of (0,4) are values[0]=1 and values[4]=1; the chosen balloon is values[3]=2 (original nums[2]). Only this balloon remains at the last step, so the product is values[0]×values[3]×values[4]=1×2×1=2, not the maximum coins for the whole interval. 2×2×1=4 wrongly keeps a burst left-side balloon 2 as a neighbor; 1×1×1=1 uses values[2]=1, choosing the wrong balloon."
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 320,
+      "lang": "zh",
+      "option": 0,
+      "question": "新情形：nums=[2,1,2]，补齐后 values=[1,2,1,2,1]。区间 (0,4) 的最后一个气球若选补齐数组的从 0 开始的索引 3（即 nums[2]），三项相加式中的乘积项是多少？",
+      "feedback": "还不对。 区间 (0,4) 的边界是 values[0]=1 和 values[4]=1；选定的是 values[3]=2（即 nums[2]）。最后一步只剩这个气球，因此乘积是 values[0]×values[3]×values[4]=1×2×1=2，而不是整个区间的最大金币。2×2×1=4 错把已戳破的左侧气球 2 留作邻居；1×1×1=1 用的是 values[2]=1，选错了气球。"
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 320,
+      "lang": "zh",
+      "option": 1,
+      "question": "新情形：nums=[2,1,2]，补齐后 values=[1,2,1,2,1]。区间 (0,4) 的最后一个气球若选补齐数组的从 0 开始的索引 3（即 nums[2]），三项相加式中的乘积项是多少？",
+      "feedback": "正确。 区间 (0,4) 的边界是 values[0]=1 和 values[4]=1；选定的是 values[3]=2（即 nums[2]）。最后一步只剩这个气球，因此乘积是 values[0]×values[3]×values[4]=1×2×1=2，而不是整个区间的最大金币。2×2×1=4 错把已戳破的左侧气球 2 留作邻居；1×1×1=1 用的是 values[2]=1，选错了气球。"
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 320,
+      "lang": "zh",
+      "option": 2,
+      "question": "新情形：nums=[2,1,2]，补齐后 values=[1,2,1,2,1]。区间 (0,4) 的最后一个气球若选补齐数组的从 0 开始的索引 3（即 nums[2]），三项相加式中的乘积项是多少？",
+      "feedback": "还不对。 区间 (0,4) 的边界是 values[0]=1 和 values[4]=1；选定的是 values[3]=2（即 nums[2]）。最后一步只剩这个气球，因此乘积是 values[0]×values[3]×values[4]=1×2×1=2，而不是整个区间的最大金币。2×2×1=4 错把已戳破的左侧气球 2 留作邻居；1×1×1=1 用的是 values[2]=1，选错了气球。"
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 390,
+      "lang": "en",
+      "option": 0,
+      "question": "Fresh case: nums=[2,1,2], padded as values=[1,2,1,2,1]. For interval (0,4), if zero-based padded index 3 (original nums[2]) is last, what is the product term in the three-term sum?",
+      "feedback": "Not yet. The boundaries of (0,4) are values[0]=1 and values[4]=1; the chosen balloon is values[3]=2 (original nums[2]). Only this balloon remains at the last step, so the product is values[0]×values[3]×values[4]=1×2×1=2, not the maximum coins for the whole interval. 2×2×1=4 wrongly keeps a burst left-side balloon 2 as a neighbor; 1×1×1=1 uses values[2]=1, choosing the wrong balloon."
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 390,
+      "lang": "en",
+      "option": 1,
+      "question": "Fresh case: nums=[2,1,2], padded as values=[1,2,1,2,1]. For interval (0,4), if zero-based padded index 3 (original nums[2]) is last, what is the product term in the three-term sum?",
+      "feedback": "Correct. The boundaries of (0,4) are values[0]=1 and values[4]=1; the chosen balloon is values[3]=2 (original nums[2]). Only this balloon remains at the last step, so the product is values[0]×values[3]×values[4]=1×2×1=2, not the maximum coins for the whole interval. 2×2×1=4 wrongly keeps a burst left-side balloon 2 as a neighbor; 1×1×1=1 uses values[2]=1, choosing the wrong balloon."
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 390,
+      "lang": "en",
+      "option": 2,
+      "question": "Fresh case: nums=[2,1,2], padded as values=[1,2,1,2,1]. For interval (0,4), if zero-based padded index 3 (original nums[2]) is last, what is the product term in the three-term sum?",
+      "feedback": "Not yet. The boundaries of (0,4) are values[0]=1 and values[4]=1; the chosen balloon is values[3]=2 (original nums[2]). Only this balloon remains at the last step, so the product is values[0]×values[3]×values[4]=1×2×1=2, not the maximum coins for the whole interval. 2×2×1=4 wrongly keeps a burst left-side balloon 2 as a neighbor; 1×1×1=1 uses values[2]=1, choosing the wrong balloon."
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 390,
+      "lang": "zh",
+      "option": 0,
+      "question": "新情形：nums=[2,1,2]，补齐后 values=[1,2,1,2,1]。区间 (0,4) 的最后一个气球若选补齐数组的从 0 开始的索引 3（即 nums[2]），三项相加式中的乘积项是多少？",
+      "feedback": "还不对。 区间 (0,4) 的边界是 values[0]=1 和 values[4]=1；选定的是 values[3]=2（即 nums[2]）。最后一步只剩这个气球，因此乘积是 values[0]×values[3]×values[4]=1×2×1=2，而不是整个区间的最大金币。2×2×1=4 错把已戳破的左侧气球 2 留作邻居；1×1×1=1 用的是 values[2]=1，选错了气球。"
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 390,
+      "lang": "zh",
+      "option": 1,
+      "question": "新情形：nums=[2,1,2]，补齐后 values=[1,2,1,2,1]。区间 (0,4) 的最后一个气球若选补齐数组的从 0 开始的索引 3（即 nums[2]），三项相加式中的乘积项是多少？",
+      "feedback": "正确。 区间 (0,4) 的边界是 values[0]=1 和 values[4]=1；选定的是 values[3]=2（即 nums[2]）。最后一步只剩这个气球，因此乘积是 values[0]×values[3]×values[4]=1×2×1=2，而不是整个区间的最大金币。2×2×1=4 错把已戳破的左侧气球 2 留作邻居；1×1×1=1 用的是 values[2]=1，选错了气球。"
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 390,
+      "lang": "zh",
+      "option": 2,
+      "question": "新情形：nums=[2,1,2]，补齐后 values=[1,2,1,2,1]。区间 (0,4) 的最后一个气球若选补齐数组的从 0 开始的索引 3（即 nums[2]），三项相加式中的乘积项是多少？",
+      "feedback": "还不对。 区间 (0,4) 的边界是 values[0]=1 和 values[4]=1；选定的是 values[3]=2（即 nums[2]）。最后一步只剩这个气球，因此乘积是 values[0]×values[3]×values[4]=1×2×1=2，而不是整个区间的最大金币。2×2×1=4 错把已戳破的左侧气球 2 留作邻居；1×1×1=1 用的是 values[2]=1，选错了气球。"
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 736,
+      "lang": "en",
+      "option": 0,
+      "question": "Fresh case: nums=[2,1,2], padded as values=[1,2,1,2,1]. For interval (0,4), if zero-based padded index 3 (original nums[2]) is last, what is the product term in the three-term sum?",
+      "feedback": "Not yet. The boundaries of (0,4) are values[0]=1 and values[4]=1; the chosen balloon is values[3]=2 (original nums[2]). Only this balloon remains at the last step, so the product is values[0]×values[3]×values[4]=1×2×1=2, not the maximum coins for the whole interval. 2×2×1=4 wrongly keeps a burst left-side balloon 2 as a neighbor; 1×1×1=1 uses values[2]=1, choosing the wrong balloon."
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 736,
+      "lang": "en",
+      "option": 1,
+      "question": "Fresh case: nums=[2,1,2], padded as values=[1,2,1,2,1]. For interval (0,4), if zero-based padded index 3 (original nums[2]) is last, what is the product term in the three-term sum?",
+      "feedback": "Correct. The boundaries of (0,4) are values[0]=1 and values[4]=1; the chosen balloon is values[3]=2 (original nums[2]). Only this balloon remains at the last step, so the product is values[0]×values[3]×values[4]=1×2×1=2, not the maximum coins for the whole interval. 2×2×1=4 wrongly keeps a burst left-side balloon 2 as a neighbor; 1×1×1=1 uses values[2]=1, choosing the wrong balloon."
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 736,
+      "lang": "en",
+      "option": 2,
+      "question": "Fresh case: nums=[2,1,2], padded as values=[1,2,1,2,1]. For interval (0,4), if zero-based padded index 3 (original nums[2]) is last, what is the product term in the three-term sum?",
+      "feedback": "Not yet. The boundaries of (0,4) are values[0]=1 and values[4]=1; the chosen balloon is values[3]=2 (original nums[2]). Only this balloon remains at the last step, so the product is values[0]×values[3]×values[4]=1×2×1=2, not the maximum coins for the whole interval. 2×2×1=4 wrongly keeps a burst left-side balloon 2 as a neighbor; 1×1×1=1 uses values[2]=1, choosing the wrong balloon."
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 736,
+      "lang": "zh",
+      "option": 0,
+      "question": "新情形：nums=[2,1,2]，补齐后 values=[1,2,1,2,1]。区间 (0,4) 的最后一个气球若选补齐数组的从 0 开始的索引 3（即 nums[2]），三项相加式中的乘积项是多少？",
+      "feedback": "还不对。 区间 (0,4) 的边界是 values[0]=1 和 values[4]=1；选定的是 values[3]=2（即 nums[2]）。最后一步只剩这个气球，因此乘积是 values[0]×values[3]×values[4]=1×2×1=2，而不是整个区间的最大金币。2×2×1=4 错把已戳破的左侧气球 2 留作邻居；1×1×1=1 用的是 values[2]=1，选错了气球。"
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 736,
+      "lang": "zh",
+      "option": 1,
+      "question": "新情形：nums=[2,1,2]，补齐后 values=[1,2,1,2,1]。区间 (0,4) 的最后一个气球若选补齐数组的从 0 开始的索引 3（即 nums[2]），三项相加式中的乘积项是多少？",
+      "feedback": "正确。 区间 (0,4) 的边界是 values[0]=1 和 values[4]=1；选定的是 values[3]=2（即 nums[2]）。最后一步只剩这个气球，因此乘积是 values[0]×values[3]×values[4]=1×2×1=2，而不是整个区间的最大金币。2×2×1=4 错把已戳破的左侧气球 2 留作邻居；1×1×1=1 用的是 values[2]=1，选错了气球。"
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 736,
+      "lang": "zh",
+      "option": 2,
+      "question": "新情形：nums=[2,1,2]，补齐后 values=[1,2,1,2,1]。区间 (0,4) 的最后一个气球若选补齐数组的从 0 开始的索引 3（即 nums[2]），三项相加式中的乘积项是多少？",
+      "feedback": "还不对。 区间 (0,4) 的边界是 values[0]=1 和 values[4]=1；选定的是 values[3]=2（即 nums[2]）。最后一步只剩这个气球，因此乘积是 values[0]×values[3]×values[4]=1×2×1=2，而不是整个区间的最大金币。2×2×1=4 错把已戳破的左侧气球 2 留作邻居；1×1×1=1 用的是 values[2]=1，选错了气球。"
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 1440,
+      "lang": "en",
+      "option": 0,
+      "question": "Fresh case: nums=[2,1,2], padded as values=[1,2,1,2,1]. For interval (0,4), if zero-based padded index 3 (original nums[2]) is last, what is the product term in the three-term sum?",
+      "feedback": "Not yet. The boundaries of (0,4) are values[0]=1 and values[4]=1; the chosen balloon is values[3]=2 (original nums[2]). Only this balloon remains at the last step, so the product is values[0]×values[3]×values[4]=1×2×1=2, not the maximum coins for the whole interval. 2×2×1=4 wrongly keeps a burst left-side balloon 2 as a neighbor; 1×1×1=1 uses values[2]=1, choosing the wrong balloon."
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 1440,
+      "lang": "en",
+      "option": 1,
+      "question": "Fresh case: nums=[2,1,2], padded as values=[1,2,1,2,1]. For interval (0,4), if zero-based padded index 3 (original nums[2]) is last, what is the product term in the three-term sum?",
+      "feedback": "Correct. The boundaries of (0,4) are values[0]=1 and values[4]=1; the chosen balloon is values[3]=2 (original nums[2]). Only this balloon remains at the last step, so the product is values[0]×values[3]×values[4]=1×2×1=2, not the maximum coins for the whole interval. 2×2×1=4 wrongly keeps a burst left-side balloon 2 as a neighbor; 1×1×1=1 uses values[2]=1, choosing the wrong balloon."
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 1440,
+      "lang": "en",
+      "option": 2,
+      "question": "Fresh case: nums=[2,1,2], padded as values=[1,2,1,2,1]. For interval (0,4), if zero-based padded index 3 (original nums[2]) is last, what is the product term in the three-term sum?",
+      "feedback": "Not yet. The boundaries of (0,4) are values[0]=1 and values[4]=1; the chosen balloon is values[3]=2 (original nums[2]). Only this balloon remains at the last step, so the product is values[0]×values[3]×values[4]=1×2×1=2, not the maximum coins for the whole interval. 2×2×1=4 wrongly keeps a burst left-side balloon 2 as a neighbor; 1×1×1=1 uses values[2]=1, choosing the wrong balloon."
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 1440,
+      "lang": "zh",
+      "option": 0,
+      "question": "新情形：nums=[2,1,2]，补齐后 values=[1,2,1,2,1]。区间 (0,4) 的最后一个气球若选补齐数组的从 0 开始的索引 3（即 nums[2]），三项相加式中的乘积项是多少？",
+      "feedback": "还不对。 区间 (0,4) 的边界是 values[0]=1 和 values[4]=1；选定的是 values[3]=2（即 nums[2]）。最后一步只剩这个气球，因此乘积是 values[0]×values[3]×values[4]=1×2×1=2，而不是整个区间的最大金币。2×2×1=4 错把已戳破的左侧气球 2 留作邻居；1×1×1=1 用的是 values[2]=1，选错了气球。"
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 1440,
+      "lang": "zh",
+      "option": 1,
+      "question": "新情形：nums=[2,1,2]，补齐后 values=[1,2,1,2,1]。区间 (0,4) 的最后一个气球若选补齐数组的从 0 开始的索引 3（即 nums[2]），三项相加式中的乘积项是多少？",
+      "feedback": "正确。 区间 (0,4) 的边界是 values[0]=1 和 values[4]=1；选定的是 values[3]=2（即 nums[2]）。最后一步只剩这个气球，因此乘积是 values[0]×values[3]×values[4]=1×2×1=2，而不是整个区间的最大金币。2×2×1=4 错把已戳破的左侧气球 2 留作邻居；1×1×1=1 用的是 values[2]=1，选错了气球。"
+    },
+    {
+      "finding": "R312-INDEX-001",
+      "width": 1440,
+      "lang": "zh",
+      "option": 2,
+      "question": "新情形：nums=[2,1,2]，补齐后 values=[1,2,1,2,1]。区间 (0,4) 的最后一个气球若选补齐数组的从 0 开始的索引 3（即 nums[2]），三项相加式中的乘积项是多少？",
+      "feedback": "还不对。 区间 (0,4) 的边界是 values[0]=1 和 values[4]=1；选定的是 values[3]=2（即 nums[2]）。最后一步只剩这个气球，因此乘积是 values[0]×values[3]×values[4]=1×2×1=2，而不是整个区间的最大金币。2×2×1=4 错把已戳破的左侧气球 2 留作邻居；1×1×1=1 用的是 values[2]=1，选错了气球。"
+    }
+  ]
+}

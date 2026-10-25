@@ -1,0 +1,140 @@
+{
+  "controlHeights": [
+    {
+      "tag": "BUTTON",
+      "id": "",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "prev",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "next",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "reset",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "end",
+      "height": 48
+    },
+    {
+      "tag": "INPUT",
+      "id": "position",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "reveal",
+      "height": 48
+    },
+    {
+      "tag": "BUTTON",
+      "id": "copy",
+      "height": 48
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "height": 48
+    },
+    {
+      "tag": "SUMMARY",
+      "id": "",
+      "height": 48
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "height": 48
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "height": 48
+    }
+  ],
+  "deepLink": {
+    "target": 70.5,
+    "nav": 70
+  },
+  "realClipboard": "exact canonical source read back",
+  "tableKeyboard": [
+    {
+      "lang": "en",
+      "width": 320,
+      "tableScroll": {
+        "scroll": 204,
+        "max": 204
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "tableScroll": {
+        "scroll": 134,
+        "max": 134
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "tableScroll": {
+        "scroll": 0,
+        "max": 0
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "tableScroll": {
+        "scroll": 204,
+        "max": 204
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "tableScroll": {
+        "scroll": 134,
+        "max": 134
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "tableScroll": {
+        "scroll": 0,
+        "max": 0
+      }
+    }
+  ],
+  "focusContrast": [
+    {
+      "surface": "#161b22",
+      "focusRatio": 9.809435643476732
+    },
+    {
+      "surface": "#0d1117",
+      "focusRatio": 10.731637051347173
+    },
+    {
+      "surface": "#1c2330",
+      "focusRatio": 8.937191437807625
+    }
+  ],
+  "forcedColors": "3px outline retained",
+  "reducedMotion": "no lesson animation"
+}

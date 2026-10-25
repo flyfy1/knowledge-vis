@@ -1,0 +1,21 @@
+{
+  "status": "author self-checked; fixed awaiting separate independent review",
+  "baseCommit": "463bb166caa1c2ab9ba13c898ab9e70bb200c3e7",
+  "sha256": {
+    "BRIEF.md": "a2811a46e2e387632794862df41dc7943c32118e146fcea526b54fbe950f6181",
+    "app.js": "f6496e78a8aa83a19db0bad76979189564b677dfd14416d5e25bb549eb7f9cf3",
+    "copy.js": "4306da3b208f6c4f61988391edf5b5049e370878cbecc113d4c42891c3ddaa2e",
+    "core.js": "fa50329a8c2c0e27347a01529597cf9f71cd993cd33929a10894df5c360fa085",
+    "index.html": "74ccb0c75aae4894803826d7b24fd45aa03900667b1ccde6f6df8de7da1ff48d",
+    "language-contract.json": "50c952951142dbcd99b06eef47dd2bb2d9921f3dfcf7cea8ed09eeafbceaf975",
+    "lesson-entry.json": "1db80ee40566cb15d92ee3274858af69df3c8eb34bead63ac0b0d6b61ce9086e",
+    "python-code.js": "464545dcfa5fb17fd4d7c4518b2a54dcef8496bb7dfc5e04f03756cad10a97ad",
+    "solution.py": "88ca4fde4d2a68279c8b41ef99e6e43229a98321885d4f5122c3d8d6fc5cfcf0",
+    "style.css": "7f4054a4cdaa337d1c58d546b77c4a18c62da03d76581cd28eb512c73f3a7962",
+    "tests/browser-check.js": "a4f224c9d1ac7090f7117b107bed0a0db92f363f41ded9d800c5a30fe8dc81e3",
+    "tests/evidence/official-contract.json": "7bee13612504692def167ff32e385cffaec1014734d9e4d803f50bd26abde6f6",
+    "tests/reopened-index-check.js": "dde00ff62539da9d537b52f2647171d956ac8484c4e2e9771a79433dee49c638",
+    "tests/test_core.py": "d92b0ae3138f388d7c09f6a79b158bed74152b4debfb3711e67511e783e50789",
+    "tests/test_trace.js": "77d19c675d4dbcd51d780b39967744b1a81719babad6af299dc4633d3ffad24e"
+  }
+}
