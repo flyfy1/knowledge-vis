@@ -1,0 +1,16 @@
+const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const out=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(out,{recursive:true});
+(async()=>{const b=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});const p=await b.newPage({viewport:{width:390,height:1000},reducedMotion:'reduce'});await p.goto((process.env.PREVIEW_URL||'http://127.0.0.1:18770')+'/leetcode/857/');await p.waitForFunction(()=>document.getElementById('frameRead').textContent.length);const records=[];
+for(const locale of ['en','zh'])for(const width of [320,390,1440]){
+ await p.setViewportSize({width,height:1000});await p.locator('[data-lang='+locale+']').click();
+ for(let preset=0;preset<8;preset++){
+  await p.locator('#preset').selectOption(String(preset));await p.locator('#traceLast').click();
+  const geometry=await p.evaluate(()=>({pageFits:document.documentElement.scrollWidth<=innerWidth,parts:[...document.querySelectorAll('#frameRead,.worker,#ledger li')].map(e=>({text:e.textContent,client:e.clientWidth,scroll:e.scrollWidth}))}));assert(geometry.pageFits);for(const x of geometry.parts)assert(x.scroll<=x.client+1);records.push({locale,width,preset,...geometry});
+  if(preset===2||preset===3){await p.locator('#members').scrollIntoViewIfNeeded();await p.screenshot({path:path.join(out,`${locale}-${width}-preset${preset}-dense.png`)});}
+ }
+ await p.locator('#predictionReset').click();await p.locator('[name=prediction][value="1"]').check();await p.locator('#reveal').click();await p.locator('#predictionFeedback').scrollIntoViewIfNeeded();await p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
+ const options=await p.locator('.prediction-options label').evaluateAll(es=>es.map(e=>({text:e.textContent,label:e.getBoundingClientRect().toJSON(),input:e.querySelector('input').getBoundingClientRect().toJSON(),span:e.querySelector('span').getBoundingClientRect().toJSON()})));for(const x of options){assert(x.input.right<=x.span.left);assert(x.span.left>=x.label.left);assert(x.span.right<=x.label.right+.1);}await p.screenshot({path:path.join(out,`${locale}-${width}-exercise-focused.png`)});
+}
+await p.setViewportSize({width:320,height:1000});await p.locator('[data-lang=zh]').click();await p.locator('#traceNext').focus();await p.locator('[data-lang=en]').focus();await p.keyboard.press('Enter');assert.equal(await p.evaluate(()=>document.activeElement.dataset.lang),'en');
+const old=await p.locator('#frameRead').textContent();await p.locator('#frameRead').evaluate(e=>e.textContent='W'.repeat(120)+'字符串'.repeat(40));assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await p.locator('#frameRead').evaluate((e,s)=>e.textContent=s,old);
+fs.writeFileSync(path.join(out,'supplement-results.json'),JSON.stringify({result:'pass',authorSelfCheck:true,presetLayoutStates:records.length,records,optionGeometry:true,longStringWrapping:true,localeKeyboardFocus:true},null,2));console.log('PASS supplement: 48 preset-layout states and prediction label geometry');await b.close();})().catch(e=>{console.error(e);process.exit(1);});

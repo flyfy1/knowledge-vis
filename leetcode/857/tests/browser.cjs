@@ -1,0 +1,76 @@
+'use strict';
+const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),os=require('node:os'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'..'),out=process.env.OUTPUT_DIR||path.join(__dirname,'evidence'),base=process.env.PREVIEW_URL||'http://127.0.0.1:18770',C=require('../core.js');
+fs.mkdirSync(out,{recursive:true});const source=fs.readFileSync(path.join(root,'solution.py'),'utf8');
+(async()=>{
+ const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});
+ const ctx=await browser.newContext({viewport:{width:1440,height:1000},permissions:['clipboard-read','clipboard-write'],acceptDownloads:true,reducedMotion:'reduce'}),page=await ctx.newPage();
+ const errors=[],bad=[],external=[],records=[],layouts=[],clipboard=[],links=[];
+ page.on('pageerror',e=>errors.push(e.message));page.on('console',e=>{if(e.type()==='error')errors.push(e.text());});page.on('response',r=>{if(r.status()>=400)bad.push([r.url(),r.status()]);});page.on('request',r=>{if(r.url().startsWith('http')&&!r.url().startsWith(base))external.push(r.url());});
+ const visit=async()=>{await page.goto(base+'/leetcode/857/');await page.waitForFunction(()=>document.getElementById('frameRead').textContent.length);};await visit();
+ const text=id=>page.locator('#'+id).textContent();
+ async function lang(l){await page.locator('[data-lang='+l+']').click();assert.equal(await page.locator('html').getAttribute('lang'),l==='zh'?'zh-CN':'en');const expected=l==='en'?'#857 · Minimum Cost to Hire K Workers':'#857 · 雇佣 K 名工人的最低成本';assert.equal(await page.locator('h1').textContent(),expected);assert.equal(await page.title(),expected);}
+ const state=()=>page.evaluate(()=>Object.fromEntries(['frameRead','members','ledger'].map(id=>[id,document.getElementById(id).textContent])));
+ for(const l of ['en','zh']){
+  await lang(l);await page.screenshot({path:path.join(out,l+'-top.png')});
+  for(const [pair,total] of [['AB',15],['AC',12],['BC',16]]){await page.locator('#pair'+pair).click();assert.equal(await page.locator('#pair'+pair).getAttribute('aria-pressed'),'true');assert((await text('handRead')).includes(String(total)));}
+  for(let pi=0;pi<C.presets.length;pi++){
+   await page.locator('#preset').selectOption(String(pi));assert((await text('presetDescription')).includes(String([12,105,30.66667,6,6,5,15,10000][pi])));assert(await page.locator('#tracePrev').isDisabled());const {frames}=C.trace(C.presets[pi]);let prev=await state();
+   for(let i=1;i<frames.length;i++){
+    await page.locator('#traceNext').click();const f=frames[i],s=await state();assert(s.frameRead.includes(`${i}/${C.presets[pi].q.length}`));assert(s.frameRead.includes('#'+f.x.id));assert(s.frameRead.includes(f.x.rate.toFixed(5)));assert(s.frameRead.includes(f.sum.toString()));
+    if(f.cost!==null){assert(s.frameRead.includes(f.cost.toFixed(5)));assert(s.frameRead.includes(f.best.toFixed(5)));assert(s.frameRead.includes('['+f.bestIds.join(', ')+']'));}
+    assert.equal(await page.locator('#ledger li').count(),i);assert.equal(await page.locator('.worker').count(),f.kept.length);
+    const members=await page.locator('.worker').allTextContents();f.kept.forEach((a,j)=>assert(members[j].startsWith('#'+a.id+':')||members[j].startsWith('#'+a.id+'：')));
+    assert.equal(await page.locator('.worker.current').count(),f.kept.some(a=>a.id===f.x.id)?1:0);
+    if(f.kept.some(a=>a.id===f.x.id))assert((await page.locator('.worker.current').textContent()).includes(l==='en'?'inserted this round and retained':'本轮加入且保留'));
+    await page.locator('#tracePrev').click();assert.deepEqual(await state(),prev);await page.locator('#traceNext').click();assert.deepEqual(await state(),s);prev=s;
+   }
+   assert(await page.locator('#traceNext').isDisabled());assert(await page.locator('#traceLast').isDisabled());records.push({locale:l,preset:pi,state:await state()});await page.locator('#traceReset').click();assert(await page.locator('#tracePrev').isDisabled());await page.locator('#traceLast').click();assert.deepEqual(await state(),prev);
+  }
+  await page.locator('#predictionReset').click();assert(await page.locator('#reveal').isDisabled());
+  for(const v of ['0','1','2']){
+   await page.locator(`[name=prediction][value="${v}"]`).check();assert(!(await text('predictionFeedback')).includes(l==='en'?'The answer is':'答案 18'));await page.locator('#reveal').click();assert((await text('predictionFeedback')).includes(l==='en'?'The answer is 18':'答案 18'));assert.equal(await page.locator('#predictionFeedback').evaluate(e=>e.classList.contains('correct')),v==='1');await lang(l==='en'?'zh':'en');assert(await page.locator(`[name=prediction][value="${v}"]`).isChecked());await lang(l);
+  }
+  await page.locator('#preset').selectOption('3');await page.locator('#traceLast').click();const before=await state();await lang(l==='en'?'zh':'en');await lang(l);assert.deepEqual(await state(),before);assert((await text('predictionFeedback')).includes(l==='en'?'The answer is 18':'答案 18'));
+  const formula=await page.locator('[data-i18n=formula]').textContent();for(const operand of ['max(w[i]/q[i], i∈S)','× sum(q[i], i∈S)'])assert(formula.includes(operand));records.push({locale:l,formula,wrong:await page.locator('[data-i18n=wrong]').textContent(),capNote:await page.locator('[data-i18n=capNote]').textContent(),feedback:await text('predictionFeedback')});
+ }
+ await page.locator('#sourceDetails').evaluate(e=>e.open=true);assert.equal(await text('pythonCode'),source);assert.equal(await page.evaluate(()=>window.PYTHON_SOURCE),source);assert.equal(await page.locator('#step1 pre code').textContent(),fs.readFileSync(path.join(root,'tests/baseline.py'),'utf8'));
+ const promise=page.waitForEvent('download');await page.locator('a[download]').click();assert.equal(fs.readFileSync(await (await promise).path(),'utf8'),source);
+ await page.evaluate(()=>{window.realClipboard={readText:navigator.clipboard.readText.bind(navigator.clipboard),writeText:navigator.clipboard.writeText.bind(navigator.clipboard)};});
+ for(const l of ['en','zh']){
+  await lang(l);await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:window.realClipboard}));await page.locator('#copyPython').click();assert.equal(await page.evaluate(()=>window.realClipboard.readText()),source);
+  for(let attempt=0;attempt<2;attempt++){
+   const sentinel=`857-${l}-${attempt}-${Date.now()}-not-source`;await page.evaluate(s=>window.realClipboard.writeText(s),sentinel);assert.equal(await page.evaluate(()=>window.realClipboard.readText()),sentinel);
+   await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw Error('test denial');}}}));await page.locator('#copyPython').click();assert(await page.locator('#manualSource').isVisible());
+   assert.deepEqual(await page.locator('#manualSource').evaluate(e=>({focus:document.activeElement===e,start:e.selectionStart,end:e.selectionEnd,value:e.value})),{focus:true,start:0,end:source.length,value:source});assert.equal(await page.evaluate(()=>window.realClipboard.readText()),sentinel);
+   const shortcut=os.platform()==='darwin'?'Meta+C':'Control+C';await page.keyboard.press(shortcut);assert.equal(await page.evaluate(()=>window.realClipboard.readText()),source);clipboard.push({locale:l,attempt,host:os.platform(),shortcut,freshSentinel:true,exactReadback:true});
+  }
+ }
+ for(const l of ['en','zh'])for(const width of [320,390,736,1440])for(const zoom of [1,2]){
+  await page.setViewportSize({width,height:1000});await lang(l);await page.evaluate(z=>document.documentElement.style.zoom=z===2?'2':'',zoom);await page.locator('#preset').selectOption('0');await page.locator('#traceLast').click();await page.locator('#members').scrollIntoViewIfNeeded();
+  const g=await page.evaluate(()=>({doc:document.documentElement.scrollWidth,available:document.documentElement.clientWidth,parts:[...document.querySelectorAll('.worker,#frameRead,#ledger li')].map(e=>({client:e.clientWidth,scroll:e.scrollWidth})),select:(()=>{const e=document.getElementById('preset'),s=getComputedStyle(e),c=document.createElement('canvas').getContext('2d');c.font=s.font;return {width:e.clientWidth,text:Math.max(...[...e.options].map(o=>c.measureText(o.textContent).width)),padding:parseFloat(s.paddingLeft)+parseFloat(s.paddingRight),reserve:24};})()}));
+  assert(g.doc<=g.available+1,JSON.stringify(g));g.parts.forEach(p=>assert(p.scroll<=p.client+1,JSON.stringify(p)));assert(g.select.text+g.select.padding+g.select.reserve<=g.select.width,JSON.stringify(g.select));layouts.push({locale:l,width,zoom,...g});await page.screenshot({path:path.join(out,`${l}-${width}-zoom${zoom}-trace.png`)});await page.locator('#preset').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,`${l}-${width}-zoom${zoom}-controls.png`)});await page.evaluate(()=>document.documentElement.style.zoom='');
+ }
+ await page.setViewportSize({width:390,height:1000});await lang('en');await page.locator('#preset').selectOption('0');await page.locator('#traceNext').focus();await page.keyboard.press('Enter');assert((await text('frameRead')).includes('1/3'));
+ const focus=await page.locator('#traceNext').evaluate(e=>({active:document.activeElement===e,width:getComputedStyle(e).outlineWidth,color:getComputedStyle(e).outlineColor}));assert(focus.active&&focus.width==='3px');await page.keyboard.press('Tab');assert.equal(await page.evaluate(()=>document.activeElement.id),'traceReset');await page.emulateMedia({forcedColors:'active'});await page.locator('#traceNext').focus();assert.equal(await page.locator('#traceNext').evaluate(e=>getComputedStyle(e).outlineWidth),'3px');await page.emulateMedia({forcedColors:'none'});
+ for(let i=0;i<5;i++){await page.locator(`.step-nav a[href="#step${i}"]`).click();const g=await page.evaluate(i=>({top:document.getElementById('step'+i).getBoundingClientRect().top,nav:document.querySelector('.step-nav').getBoundingClientRect().bottom}),i);assert(g.top>=g.nav-1,JSON.stringify(g));}
+ const targets=await page.locator('button,.btn,summary,.prediction-options label,.related a').evaluateAll(es=>es.filter(e=>e.getClientRects().length).map(e=>({text:e.textContent,w:e.getBoundingClientRect().width,h:e.getBoundingClientRect().height})));for(const x of targets)assert(x.w>=48&&x.h>=48,JSON.stringify(x));
+ await page.locator('#preset').selectOption('0');await page.locator('#traceLast').click();
+ const contrast=await page.evaluate(()=>{
+  const lum=s=>s.match(/[\d.]+/g).slice(0,3).map(Number).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;}).reduce((a,v,i)=>a+v*[.2126,.7152,.0722][i],0),ratio=(a,b)=>(Math.max(lum(a),lum(b))+.05)/(Math.min(lum(a),lum(b))+.05);
+  const calibration={black:lum('rgb(0,0,0)'),white:lum('rgb(255,255,255)'),red:lum('rgb(255,0,0)'),green:lum('rgb(0,255,0)'),blue:lum('rgb(0,0,255)'),blackWhite:ratio('rgb(0,0,0)','rgb(255,255,255)'),nearThreshold:ratio('rgb(116,116,116)','rgb(0,0,0)')};
+  for(const [k,v] of Object.entries({black:0,white:1,red:.2126,green:.7152,blue:.0722,blackWhite:21,nearThreshold:4.492948073}))if(Math.abs(calibration[k]-v)>1e-8)throw Error('calibration '+k);
+  const pairs=['body','.hint','.explain','.worker','.worker.current','#traceNext','#tracePrev','#langToggle .active','.step-nav a','.readout'].map(selector=>{const e=document.querySelector(selector),s=getComputedStyle(e);let n=e,bg;while(n){const b=getComputedStyle(n).backgroundColor;if(!['transparent','rgba(0, 0, 0, 0)'].includes(b)){bg=b;break;}n=n.parentElement;}return {selector,fg:s.color,bg,ratio:ratio(s.color,bg)};});pairs.push({selector:'focus on panel2',ratio:ratio('rgb(255,180,84)','rgb(28,35,48)')});return {calibration,pairs};
+ });for(const p of contrast.pairs)assert(p.ratio>=(p.selector.startsWith('focus')?3:4.5),JSON.stringify(p));assert(contrast.calibration.nearThreshold<4.5);
+ for(const l of ['en','zh']){await lang(l);await page.locator('#predictionReset').click();await page.locator('[name=prediction][value="1"]').check();await page.locator('#reveal').click();await page.locator('#predictionFeedback').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,l+'-exercise.png')});}
+ for(const href of [...new Set(await page.locator('a[href]').evaluateAll(es=>es.map(e=>e.getAttribute('href'))))]){
+  if(href.startsWith('https:'))continue;const u=new URL(href,page.url()),r=await ctx.request.get(u.href);assert(r.ok(),href);if(u.hash)assert((await r.text()).includes(`id="${u.hash.slice(1)}"`),href);links.push({href,status:r.status()});
+ }
+ for(const l of ['en','zh'])for(const href of ['../630/#step2','../295/#step2']){
+  await lang(l);await page.setViewportSize({width:320,height:1000});const a=page.locator(`.related a[href="${href}"]`),label=await a.textContent();await a.focus();await page.keyboard.press('Enter');await page.waitForLoadState('load');const destination=await page.locator('#step2').textContent();assert(destination.includes(l==='en'?'heap':'堆'));links.push({locale:l,label,href,destination:destination.slice(0,3500),sha256:crypto.createHash('sha256').update(await (await ctx.request.get(page.url())).body()).digest('hex'),keyboard:true});await visit();
+ }
+ const denied=await browser.newContext();await denied.addInitScript(()=>Object.defineProperty(window,'localStorage',{get(){throw Error('denied');}}));const dp=await denied.newPage();dp.on('pageerror',e=>errors.push(e.message));await dp.goto(base+'/leetcode/857/');await dp.waitForFunction(()=>document.getElementById('frameRead').textContent.length);await dp.locator('[data-lang=zh]').click();assert.equal(await dp.locator('html').getAttribute('lang'),'zh-CN');await denied.close();
+ const offline=await ctx.newPage();offline.on('pageerror',e=>errors.push(e.message));await offline.goto('file://'+path.join(root,'index.html'));await offline.waitForFunction(()=>document.getElementById('frameRead').textContent.length);assert.equal(await offline.locator('#pythonCode').textContent(),source);await offline.close();
+ const cssBytes=fs.statSync(path.join(root,'style.css')).size+fs.statSync(path.join(root,'../style.css')).size;assert(cssBytes<25000);assert.deepEqual(errors,[]);assert.deepEqual(bad,[]);assert.deepEqual(external,[]);
+ fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify({type:'author self-check',result:'pass',records,layouts,clipboard,links,focus,contrast,cssBytes,errors,bad,external,browser:await browser.version(),zoom:'CSS zoom 2 in real Chromium; real devices and browser chrome zoom not tested',sourceParity:'exact embedded/rendered/copied/downloaded and repeated native manual fallback',offline:true,storageDenied:true},null,2));console.log('PASS browser',layouts.length,'layout states,',records.length,'trace/copy records');await browser.close();
+})().catch(e=>{console.error(e);process.exit(1);});
