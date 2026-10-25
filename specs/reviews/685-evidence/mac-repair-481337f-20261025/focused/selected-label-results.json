@@ -1,0 +1,246 @@
+{
+  "kind": "author self-check; independent re-review pending",
+  "finding": "685-R1-001",
+  "platform": "darwin",
+  "browser": "151.0.7922.34",
+  "nativeArrowReserve": 16,
+  "note": "16px reserve is diagnostic for this Chromium/Linux control; screenshots require visual inspection.",
+  "cases": [
+    {
+      "viewportWidth": 320,
+      "locale": "en",
+      "state": "preset3; frame0/8; closed menu; EN→ZH→EN",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "controlWidth": 262,
+      "clientWidth": 260,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "selected": {
+        "label": "Answer before last row",
+        "textWidth": 179.64796447753906
+      },
+      "options": [
+        {
+          "label": "Official 1 · Two parents only",
+          "textWidth": 221.48794555664062
+        },
+        {
+          "label": "Official 2 · Cycle only",
+          "textWidth": 171.23194885253906
+        },
+        {
+          "label": "Two parents plus cycle",
+          "textWidth": 178.5919647216797
+        },
+        {
+          "label": "Answer before last row",
+          "textWidth": 179.64796447753906
+        },
+        {
+          "label": "Two opposite arrows",
+          "textWidth": 162.70399475097656
+        }
+      ],
+      "available": 214,
+      "screenshot": "selected-320-en-0.png"
+    },
+    {
+      "viewportWidth": 320,
+      "locale": "zh",
+      "state": "preset3; frame0/8; closed menu; EN→ZH→EN",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "controlWidth": 183,
+      "clientWidth": 181,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "selected": {
+        "label": "答案不是最后一行",
+        "textWidth": 130.56005859375
+      },
+      "options": [
+        {
+          "label": "官方 1 · 仅双亲",
+          "textWidth": 113.5040283203125
+        },
+        {
+          "label": "官方 2 · 仅环",
+          "textWidth": 100.35202026367188
+        },
+        {
+          "label": "双亲与环并存",
+          "textWidth": 97.9200439453125
+        },
+        {
+          "label": "答案不是最后一行",
+          "textWidth": 130.56005859375
+        },
+        {
+          "label": "两个节点互相指向",
+          "textWidth": 130.56005859375
+        }
+      ],
+      "available": 135,
+      "screenshot": "selected-320-zh-1.png"
+    },
+    {
+      "viewportWidth": 320,
+      "locale": "en",
+      "state": "preset3; frame0/8; closed menu; EN→ZH→EN",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "controlWidth": 262,
+      "clientWidth": 260,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "selected": {
+        "label": "Answer before last row",
+        "textWidth": 179.64796447753906
+      },
+      "options": [
+        {
+          "label": "Official 1 · Two parents only",
+          "textWidth": 221.48794555664062
+        },
+        {
+          "label": "Official 2 · Cycle only",
+          "textWidth": 171.23194885253906
+        },
+        {
+          "label": "Two parents plus cycle",
+          "textWidth": 178.5919647216797
+        },
+        {
+          "label": "Answer before last row",
+          "textWidth": 179.64796447753906
+        },
+        {
+          "label": "Two opposite arrows",
+          "textWidth": 162.70399475097656
+        }
+      ],
+      "available": 214,
+      "screenshot": "selected-320-en-2.png"
+    },
+    {
+      "viewportWidth": 390,
+      "locale": "en",
+      "state": "preset3; frame0/8; closed menu; EN→ZH→EN",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "controlWidth": 274,
+      "clientWidth": 272,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "selected": {
+        "label": "Answer before last row",
+        "textWidth": 179.64796447753906
+      },
+      "options": [
+        {
+          "label": "Official 1 · Two parents only",
+          "textWidth": 221.48794555664062
+        },
+        {
+          "label": "Official 2 · Cycle only",
+          "textWidth": 171.23194885253906
+        },
+        {
+          "label": "Two parents plus cycle",
+          "textWidth": 178.5919647216797
+        },
+        {
+          "label": "Answer before last row",
+          "textWidth": 179.64796447753906
+        },
+        {
+          "label": "Two opposite arrows",
+          "textWidth": 162.70399475097656
+        }
+      ],
+      "available": 226,
+      "screenshot": "selected-390-en-3.png"
+    },
+    {
+      "viewportWidth": 390,
+      "locale": "zh",
+      "state": "preset3; frame0/8; closed menu; EN→ZH→EN",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "controlWidth": 183,
+      "clientWidth": 181,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "selected": {
+        "label": "答案不是最后一行",
+        "textWidth": 130.56005859375
+      },
+      "options": [
+        {
+          "label": "官方 1 · 仅双亲",
+          "textWidth": 113.5040283203125
+        },
+        {
+          "label": "官方 2 · 仅环",
+          "textWidth": 100.35202026367188
+        },
+        {
+          "label": "双亲与环并存",
+          "textWidth": 97.9200439453125
+        },
+        {
+          "label": "答案不是最后一行",
+          "textWidth": 130.56005859375
+        },
+        {
+          "label": "两个节点互相指向",
+          "textWidth": 130.56005859375
+        }
+      ],
+      "available": 135,
+      "screenshot": "selected-390-zh-4.png"
+    },
+    {
+      "viewportWidth": 390,
+      "locale": "en",
+      "state": "preset3; frame0/8; closed menu; EN→ZH→EN",
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "fontFamily": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "controlWidth": 274,
+      "clientWidth": 272,
+      "paddingLeft": 15,
+      "paddingRight": 15,
+      "selected": {
+        "label": "Answer before last row",
+        "textWidth": 179.64796447753906
+      },
+      "options": [
+        {
+          "label": "Official 1 · Two parents only",
+          "textWidth": 221.48794555664062
+        },
+        {
+          "label": "Official 2 · Cycle only",
+          "textWidth": 171.23194885253906
+        },
+        {
+          "label": "Two parents plus cycle",
+          "textWidth": 178.5919647216797
+        },
+        {
+          "label": "Answer before last row",
+          "textWidth": 179.64796447753906
+        },
+        {
+          "label": "Two opposite arrows",
+          "textWidth": 162.70399475097656
+        }
+      ],
+      "available": 226,
+      "screenshot": "selected-390-en-5.png"
+    }
+  ],
+  "failures": [],
+  "result": "PASS"
+}

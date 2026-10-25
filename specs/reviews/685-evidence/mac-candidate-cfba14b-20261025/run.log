@@ -1,0 +1,21 @@
+{"running": ["python3", "-B", "leetcode/685/tests/test_solution.py"], "candidate": "cfba14ba99348ea5d37d88f770b9ae595e3b7c4c"}
+{"kind": "author self-check; not independent review", "seed": 685, "counts": {"exhaustive_n3": 120, "exhaustive_n4": 7920, "seeded_prufer": 1000, "maximum_n1000": 3, "named_cases": 6}, "total": 9049, "mutation": "unchanged", "copyKeys": 100, "sourceMirror": "exact including final newline", "result": "pass"}
+{"running": ["node", "leetcode/685/tests/test_core.cjs"], "candidate": "cfba14ba99348ea5d37d88f770b9ae595e3b7c4c"}
+{
+  kind: 'author self-check',
+  fixtures: 9046,
+  frames: 127788,
+  result: 'pass',
+  checks: [
+    'independent BFS partitions',
+    'forest edge count',
+    'snapshot before/after',
+    'incoming prefix indices',
+    'DSU roots and sizes',
+    'merge and rejection preconditions',
+    'no mutation',
+    'independent final oracle'
+  ]
+}
+{"running": ["node", "leetcode/685/tests/browser.cjs"], "candidate": "cfba14ba99348ea5d37d88f770b9ae595e3b7c4c"}
+{"result":"pass","layouts":10,"semanticChecks":26,"screenshots":["graph-en-desktop.png","graph-zh-desktop.png","trace-en-320.png","trace-zh-320.png","trace-en-390.png","trace-zh-390.png","trace-en-1440.png","trace-zh-1440.png","zoom200-en.png","zoom200-zh.png"],"contrastMinimum":7.078851579017443,"cssBytes":11778}
