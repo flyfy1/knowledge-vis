@@ -1507,3 +1507,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Alternating sequence swap cost | `leetcode/782/#step2` | Balanced counts and paired mismatches prove the minimum. |
 
 <!-- /leetcode-782-campaign -->
+
+
+<!-- leetcode-793-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Factorial trailing-zero blocks | `leetcode/793/#step1` | Count factors of five and derive why each attained output has five inputs. |
+| Preimage via lower boundaries | `leetcode/793/#step2` | Subtract first-at-least boundaries while preserving a monotone-search invariant. |
+
+<!-- /leetcode-793-campaign -->
