@@ -1624,3 +1624,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Two-state digit DP | `leetcode/964/#step3` | Keep the processed residue and its complement. |
 
 <!-- /leetcode-964-campaign -->
+
+
+<!-- leetcode-972-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Repeating decimal cancellation | `leetcode/972/#step1` | Shift a repeating tail by its block length and subtract. |
+| Exact rational invariant | `leetcode/972/#step2` | Each parsed part contributes its exact place-value fraction. |
+
+<!-- /leetcode-972-campaign -->
