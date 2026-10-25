@@ -1,0 +1,20 @@
+[
+  {
+    "accessedAt": "2026-10-25T02:08:02.198305+00:00",
+    "url": "https://leetcode.com/problems/find-cumulative-salary-of-an-employee/",
+    "method": "GET",
+    "authenticated": false,
+    "status": 403,
+    "contentType": "text/html; charset=UTF-8",
+    "responseFile": "official-page-response.txt"
+  },
+  {
+    "accessedAt": "2026-10-25T02:08:02.283158+00:00",
+    "url": "https://leetcode.com/graphql/",
+    "method": "POST",
+    "authenticated": false,
+    "status": 200,
+    "contentType": "application/json",
+    "responseFile": "official-graphql-response.txt"
+  }
+]
