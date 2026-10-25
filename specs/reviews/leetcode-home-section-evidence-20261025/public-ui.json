@@ -1,0 +1,32 @@
+{
+  "status": "pass",
+  "observed_at": "2026-10-25T09:41:40.932498+00:00",
+  "surface": "in-app browser, ordinary public URL",
+  "checks": [
+    {
+      "url": "https://visual.integ.life/",
+      "action": "Reload then select LeetCode category",
+      "observed": "104 / 104 available lessons; numbered cards directly rendered; stages hidden"
+    },
+    {
+      "query": "#51",
+      "locale": "zh-CN",
+      "count": "1 / 104",
+      "heading": "#51 · N 皇后",
+      "lesson": "https://visual.integ.life/leetcode/51/",
+      "official": "https://leetcode.com/problems/n-queens/"
+    },
+    {
+      "query": "#239",
+      "locale": "en",
+      "count": "1 of 104",
+      "heading": "#239 · Sliding Window Maximum",
+      "lesson": "https://visual.integ.life/leetcode/239/",
+      "official": "https://leetcode.com/problems/sliding-window-maximum/"
+    }
+  ],
+  "final_url": "https://visual.integ.life/?category=leetcode",
+  "final_locale": "zh-CN",
+  "final_count": "104 / 104",
+  "screenshot": "public-zh-search.png"
+}

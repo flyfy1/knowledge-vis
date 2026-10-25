@@ -46,3 +46,21 @@ Real phone hardware, virtual keyboard, native screen-reader behavior and browser
 menu zoom are not verified. Viewport/CSS zoom checks establish responsive layout,
 not those hardware/assistive-technology claims. Public delivery requires the separate
 root-only deployment receipt and ordinary public UI/hash checks recorded below.
+
+## Public delivery
+
+Source commit24e4119 was pushed, then only index.html was atomically replaced on
+the established Pi site at2026-10-25T09:40:00Z. The
+[deployment receipt](leetcode-home-section-evidence-20261025/deployment.json) records
+identical pre/post hashes for pages.config.js, the production lesson registry and
+collection JS/CSS. Unreleased #736 remained absent. No old served-content backup
+was created and no campaign ledger was mutated.
+
+The ordinary public homepage returned HTTP200 and the exact candidate SHA, with
+Cloudflare DYNAMIC status: [HTTP receipt](leetcode-home-section-evidence-20261025/public-http.json).
+The in-app browser independently reloaded that ordinary homepage, selected LeetCode
+and immediately displayed104/104 cards. Chinese #51 and English #239 searches each
+returned1/104 with correct numbered heading, lesson and official destination.
+[UI observation record](leetcode-home-section-evidence-20261025/public-ui.json) and
+[public screenshot](leetcode-home-section-evidence-20261025/public-zh-search.png).
+The browser is left on the full Chinese inline category.
