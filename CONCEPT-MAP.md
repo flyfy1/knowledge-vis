@@ -1654,3 +1654,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Length enumeration and divisibility invariant | `leetcode/829/#step2` | Use the positive minimum sum and unique starting value to count each representation once. |
 
 <!-- /leetcode-829-campaign -->
+
+
+<!-- leetcode-968-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Coverage obligations | `leetcode/968/#step2` | Summarize what a subtree needs from its parent. |
+| Postorder greedy | `leetcode/968/#step3` | Cover a child demand at its parent and repair the root. |
+
+<!-- /leetcode-968-campaign -->
