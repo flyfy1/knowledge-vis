@@ -1,0 +1,54 @@
+{
+  "links": [
+    {
+      "lang": "zh",
+      "label": "回看后缀最小值与切口操作数",
+      "url": "http://127.0.0.1:18770/leetcode/768/#step2",
+      "observedConcept": "suffix minima and full-side cut operands",
+      "sectionExcerpt": "03把重复扫描变成两趟遍历这一步要回答：怎样让每个切口只比较两个已知数？后缀是从某位置到末尾的一段；suffix_min[i] 保存 arr[i..n−1] 的最小值。先从右向左：末项直接取自身；再把 arr[i] 与已知的 suffix_min[i+1] 比较。然后从左向右，left_max 保存前缀 arr[0..i] 的最大值。每次先纳入 arr[i]，再检测位置 i 后的切口。索引从 0 开始。suffix_min[i] = min(arr[i], suffix_min[i+1])；安全切口：left_max ≤ suffix_min[i+1]先逐步建立后缀最小值，再看每个切口的左右操作数与累计记录。回退应恢复整张图。切换预设会重启本实验，不影响第 4 节答题；预设输入固定，只有处理进度改变。选择数组（会重启轨迹）微型例官方例 1官方例 2全部相等单个零固定输入：[2, 1, 3]这是 JavaScript 状态模拟，不是执行 Python 提交。完整展示每次赋值或切口检测，没有省略事件。卡片中的“—”表示尚未计算；橙框表示刚完成操作的位置，不表示数值大小。回退一次操作完成下一次操作重置本轨迹完成全部操作已完成操作 0/5；已检测切口 0/2；已找到安全切口 0 个。尚未处理"
+    },
+    {
+      "lang": "zh",
+      "label": "回看安全切口的必要与充分条件",
+      "url": "http://127.0.0.1:18770/leetcode/768/#step3",
+      "observedConcept": "safe cut necessity and sufficiency",
+      "sectionExcerpt": "04为什么把所有安全切口都留下？这一步要回答：为什么局部检测能得到最大块数？安全切口指左侧最大值不超过右侧最小值。必要性：若某切口左边有 x、右边有 y 且 x > y，两者无法跨块换位，任何保留此切口的分块都不可能整体有序。充分性：在每个安全切口，左侧的任何数都 ≤ 右侧的任何数；各块内部排好序后，跨块也不会降序。因此所有安全切口可以同时保留。扫描不变式（每次检测后都成立的陈述）：left_max 恰是 arr[0..i] 的最大值，suffix_min[i+1] 恰是整个右侧的最小值，已记录的安全切口正好是位置 0..i 中所有可保留的切口。取全部安全切口，既不会漏掉可增加的一块，也不会加入非法切口。非空数组总有基础的 1 块，所以答案是安全切口数加 1。相等不产生逆序，必须用 ≤ 而不是 <。迁移题（独立输入，不在预设里）：[1,3,2,2,4] 最多能分几块？先检查所有跨切口的最大值/最小值，再选择。答案和切口在揭晓前隐藏。预测最大块数4 块3 块2 块揭晓并解释清除本题选择先选一个答案。"
+    },
+    {
+      "lang": "zh",
+      "label": "#239：学习如何复用滑动窗口最大值",
+      "url": "http://127.0.0.1:18770/leetcode/239/#step2",
+      "observedConcept": "monotonic deque eliminates expired/dominated candidates to reuse sliding-window maxima",
+      "sectionExcerpt": "03发现单调队列这一步要回答：新值到来时，哪些旧索引仍值得保留？双端队列（deque）是两端都能进出的队列。我们让它保存索引，并保持对应值从前到后递减。预设[1,3,-1,-3,5,3,6,7], k=3[9,1,2,3], k=2[4,4,2,4,1], k=3[-5,-2,-7], k=2上一步下一步重置走到结束格子上方是从 0 开始的索引，下方是值。队列记法 索引:值，例如 1:3 表示 nums[1]=3。切换预设会重置此轨迹。01132-13-345536677初始状态：尚未处理任何元素；无高亮区间，队列与累计输出均为空。处理到索引 —；输出 空队列（前 → 后）空先删过期，再删被新值支配，最后入队。只有窗口形成后才输出队首值。不变量：每次更新后，队列索引递增、对应值严格递减；非空时，队首是已处理区间的最大值。前 k−1 个元素只形成不足 k 个元素的区间，还不输出。"
+    },
+    {
+      "lang": "en",
+      "label": "Revisit suffix minima and cut operands",
+      "url": "http://127.0.0.1:18770/leetcode/768/#step2",
+      "observedConcept": "suffix minima and full-side cut operands",
+      "sectionExcerpt": "03Replace repeated scans with two passesHow can each cut compare just two known numbers? A suffix runs from one position to the end; suffix_min[i] stores the minimum of arr[i..n−1]. Build it right to left: the last value supplies its own minimum, then compare arr[i] with the known suffix_min[i+1]. Scan left to right next, maintaining left_max, the maximum of the prefix arr[0..i]. Include arr[i] before testing the cut after i. Indices start at 0.suffix_min[i] = min(arr[i], suffix_min[i+1]); safe cut: left_max ≤ suffix_min[i+1]First build the suf"
+    },
+    {
+      "lang": "en",
+      "label": "Revisit why the cut test is necessary and sufficient",
+      "url": "http://127.0.0.1:18770/leetcode/768/#step3",
+      "observedConcept": "safe cut necessity and sufficiency",
+      "sectionExcerpt": "04Why keep every safe cut?Why do individual cut tests give the maximum chunk count? A safe cut has left maximum ≤ right minimum. Necessity: if a cut has a left value x and a right value y with x > y, they cannot swap across chunks, so no partition keeping that cut can be globally sorted. Sufficiency: at every safe cut, every left value is ≤ every right value. Once each chunk is sorted internally, no decrease can occur between chunks either. Thus all safe cuts can coexist.Scan invariant, a statement true after every test: left_max is exactly the"
+    },
+    {
+      "lang": "en",
+      "label": " #239: learn to reuse sliding-window maxima",
+      "url": "http://127.0.0.1:18770/leetcode/239/#step2",
+      "observedConcept": "monotonic deque eliminates expired/dominated candidates to reuse sliding-window maxima",
+      "sectionExcerpt": "03Discover the monotonic dequeQuestion: when a new value arrives, which old indices are still worth keeping? A deque is a queue with operations at both ends. Store indices and keep their values decreasing from front to back.Preset[1,3,-1,-3,5,3,6,7], k=3[9,1,2,3], k=2[4,4,2,4,1], k=3[-5,-2,-7], k=2PreviousNext stepResetComplete traceCells show zero-based indices above values. Deque notation is index:value; for example, 1:3 means nums[1]=3. Changing preset restarts this trace.01132-13-345536677Initial state: no elements processed; no highlighted"
+    }
+  ],
+  "relatedTargetCopySha256": "163e37433451910b173920fb3ac64672420d3c460939a176269ed4ebe16a1ed8",
+  "relatedTarget": "existing registered /leetcode/239/, observed via provided preview only; production delivery not claimed",
+  "zoom": {
+    "innerWidth": 320,
+    "devicePixelRatio": 2
+  },
+  "suffixDOM": "actual initial/final values matched hand expectations",
+  "regression": "related link boxes within 320px in both locales"
+}
