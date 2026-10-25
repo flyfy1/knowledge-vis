@@ -1,0 +1,36 @@
+{
+  "observedAt": "2026-10-25T22:17:33.209877+00:00",
+  "passed": true,
+  "scope": "Read-only dispatcher preparation; no optimized lesson implementation, author injection, runtime write, launch or acceptance.",
+  "officialSourceChecks": [
+    {
+      "id": 996,
+      "rawSha256": "5b62cbe0115a92e75b4c31a09d843cfe2c7c0f31b18feec11fa61e8966adca58",
+      "responseBytes": 4466,
+      "httpStatus": 200,
+      "metadataAndPreferredTemplatesVerified": true
+    },
+    {
+      "id": 1000,
+      "rawSha256": "9e8bd3520e178ccfaafcc6ff511abcf7d799e7c2c6d7e2bc1ad9e3250532d696",
+      "responseBytes": 5485,
+      "httpStatus": 200,
+      "metadataAndPreferredTemplatesVerified": true
+    }
+  ],
+  "datedTargetAbsenceVerified": true,
+  "tinyExampleChecks": 18,
+  "files": {
+    "1000-official-access.json": "4f28b31fd14fd3257c84ced250bad6e6f19098f12fa27559eb36551a4d128c95",
+    "1000-official-response.json": "9e8bd3520e178ccfaafcc6ff511abcf7d799e7c2c6d7e2bc1ad9e3250532d696",
+    "1000.md": "d7efdfa843e55a793a0f500e6717d5c8dee2b3293ea9b92918a52c096bd39bbb",
+    "996-official-access.json": "07984715d8d855a2a2a6e2bce9f613353f897c5a6b936c0f27a0ac745fb74af4",
+    "996-official-response.json": "5b62cbe0115a92e75b4c31a09d843cfe2c7c0f31b18feec11fa61e8966adca58",
+    "996.md": "e3d1948ea57805c74970b58700ff3b52569b06900df5b3fa2d741a0529a5d868",
+    "README.md": "3b1d1b61ceb161d11d41803e9ef203a37fab2349eadd7e62368aa8e5dfa763df",
+    "check-examples.py": "dd9f61bf6e42902da515a5e98a32515795a33b5a5093e73ce920180aefbda811",
+    "example-checks.json": "ba1d02155189515efce99dc4769ca3657521861802b0753c499da0c4871ad69d",
+    "preflight.json": "deb5e15e7d9da1f39d928d73f502fa3206c0477a48dced6ea4493f2b7107b622",
+    "target-detail.json": "9f44dda19eb9b577209355352d973667ded5989665ce28d01adbf25d4aa42d0b"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "observedAt": "2026-10-25T22:13:58.502017+00:00",
+  "queueLength": 984,
+  "current": {
+    "problem_id": "857",
+    "stage": "author",
+    "started_at": "2026-10-25T22:09:22.950135+00:00",
+    "run_id": "857-author-6ff773b703f3"
+  },
+  "candidates": [
+    {
+      "id": "996",
+      "index": 207,
+      "record": null,
+      "runs": [],
+      "reservations": [],
+      "lessonExists": false,
+      "laneRepoExists": false,
+      "laneStateExists": false
+    },
+    {
+      "id": "1000",
+      "index": 208,
+      "record": null,
+      "runs": [],
+      "reservations": [],
+      "lessonExists": false,
+      "laneRepoExists": false,
+      "laneStateExists": false
+    },
+    {
+      "id": "1001",
+      "index": 209,
+      "record": null,
+      "runs": [],
+      "reservations": [],
+      "lessonExists": false,
+      "laneRepoExists": false,
+      "laneStateExists": false
+    },
+    {
+      "id": "1012",
+      "index": 210,
+      "record": null,
+      "runs": [],
+      "reservations": [],
+      "lessonExists": false,
+      "laneRepoExists": false,
+      "laneStateExists": false
+    },
+    {
+      "id": "1028",
+      "index": 211,
+      "record": null,
+      "runs": [],
+      "reservations": [],
+      "lessonExists": false,
+      "laneRepoExists": false,
+      "laneStateExists": false
+    },
+    {
+      "id": "1032",
+      "index": 212,
+      "record": null,
+      "runs": [],
+      "reservations": [],
+      "lessonExists": false,
+      "laneRepoExists": false,
+      "laneStateExists": false
+    }
+  ]
+}

@@ -1,0 +1,459 @@
+{
+  "observedAt": "2026-10-25T22:15:40.302261+00:00",
+  "scope": "Tiny direct enumeration only; no canonical algorithm, performance, lesson or review acceptance claim.",
+  "cases996": [
+    {
+      "nums": [
+        1,
+        17,
+        8
+      ],
+      "expected": 2,
+      "actual": 2,
+      "distinctValuePermutations": [
+        [
+          1,
+          8,
+          17
+        ],
+        [
+          17,
+          8,
+          1
+        ]
+      ],
+      "origin": "official"
+    },
+    {
+      "nums": [
+        2,
+        2,
+        2
+      ],
+      "expected": 1,
+      "actual": 1,
+      "distinctValuePermutations": [
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "origin": "official"
+    },
+    {
+      "nums": [
+        1,
+        1,
+        8
+      ],
+      "expected": 1,
+      "actual": 1,
+      "distinctValuePermutations": [
+        [
+          1,
+          8,
+          1
+        ]
+      ],
+      "origin": "original"
+    },
+    {
+      "nums": [
+        2,
+        2,
+        7
+      ],
+      "expected": 3,
+      "actual": 3,
+      "distinctValuePermutations": [
+        [
+          2,
+          2,
+          7
+        ],
+        [
+          2,
+          7,
+          2
+        ],
+        [
+          7,
+          2,
+          2
+        ]
+      ],
+      "origin": "original"
+    },
+    {
+      "nums": [
+        0,
+        0,
+        1
+      ],
+      "expected": 3,
+      "actual": 3,
+      "distinctValuePermutations": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "origin": "original"
+    },
+    {
+      "nums": [
+        1
+      ],
+      "expected": 1,
+      "actual": 1,
+      "distinctValuePermutations": [
+        [
+          1
+        ]
+      ],
+      "origin": "original"
+    },
+    {
+      "nums": [
+        0
+      ],
+      "expected": 1,
+      "actual": 1,
+      "distinctValuePermutations": [
+        [
+          0
+        ]
+      ],
+      "origin": "original"
+    },
+    {
+      "nums": [
+        1,
+        1
+      ],
+      "expected": 0,
+      "actual": 0,
+      "distinctValuePermutations": [],
+      "origin": "original"
+    },
+    {
+      "nums": [
+        1000000000,
+        999967841
+      ],
+      "expected": 2,
+      "actual": 2,
+      "distinctValuePermutations": [
+        [
+          999967841,
+          1000000000
+        ],
+        [
+          1000000000,
+          999967841
+        ]
+      ],
+      "origin": "original"
+    },
+    {
+      "nums": [
+        1000000000,
+        999967842
+      ],
+      "expected": 0,
+      "actual": 0,
+      "distinctValuePermutations": [],
+      "origin": "original"
+    }
+  ],
+  "cases1000": [
+    {
+      "stones": [
+        3,
+        2,
+        4,
+        1
+      ],
+      "k": 2,
+      "expected": 20,
+      "actual": 20,
+      "oneMinimumHistory": [
+        {
+          "before": [
+            3,
+            2,
+            4,
+            1
+          ],
+          "start": 0,
+          "k": 2,
+          "cost": 5,
+          "after": [
+            5,
+            4,
+            1
+          ]
+        },
+        {
+          "before": [
+            5,
+            4,
+            1
+          ],
+          "start": 1,
+          "k": 2,
+          "cost": 5,
+          "after": [
+            5,
+            5
+          ]
+        },
+        {
+          "before": [
+            5,
+            5
+          ],
+          "start": 0,
+          "k": 2,
+          "cost": 10,
+          "after": [
+            10
+          ]
+        }
+      ],
+      "origin": "official"
+    },
+    {
+      "stones": [
+        3,
+        2,
+        4,
+        1
+      ],
+      "k": 3,
+      "expected": -1,
+      "actual": -1,
+      "oneMinimumHistory": [],
+      "origin": "official"
+    },
+    {
+      "stones": [
+        3,
+        5,
+        1,
+        2,
+        6
+      ],
+      "k": 3,
+      "expected": 25,
+      "actual": 25,
+      "oneMinimumHistory": [
+        {
+          "before": [
+            3,
+            5,
+            1,
+            2,
+            6
+          ],
+          "start": 1,
+          "k": 3,
+          "cost": 8,
+          "after": [
+            3,
+            8,
+            6
+          ]
+        },
+        {
+          "before": [
+            3,
+            8,
+            6
+          ],
+          "start": 0,
+          "k": 3,
+          "cost": 17,
+          "after": [
+            17
+          ]
+        }
+      ],
+      "origin": "official"
+    },
+    {
+      "stones": [
+        6,
+        4,
+        4,
+        6
+      ],
+      "k": 2,
+      "expected": 40,
+      "actual": 40,
+      "oneMinimumHistory": [
+        {
+          "before": [
+            6,
+            4,
+            4,
+            6
+          ],
+          "start": 0,
+          "k": 2,
+          "cost": 10,
+          "after": [
+            10,
+            4,
+            6
+          ]
+        },
+        {
+          "before": [
+            10,
+            4,
+            6
+          ],
+          "start": 1,
+          "k": 2,
+          "cost": 10,
+          "after": [
+            10,
+            10
+          ]
+        },
+        {
+          "before": [
+            10,
+            10
+          ],
+          "start": 0,
+          "k": 2,
+          "cost": 20,
+          "after": [
+            20
+          ]
+        }
+      ],
+      "origin": "original"
+    },
+    {
+      "stones": [
+        1,
+        100,
+        1
+      ],
+      "k": 2,
+      "expected": 203,
+      "actual": 203,
+      "oneMinimumHistory": [
+        {
+          "before": [
+            1,
+            100,
+            1
+          ],
+          "start": 0,
+          "k": 2,
+          "cost": 101,
+          "after": [
+            101,
+            1
+          ]
+        },
+        {
+          "before": [
+            101,
+            1
+          ],
+          "start": 0,
+          "k": 2,
+          "cost": 102,
+          "after": [
+            102
+          ]
+        }
+      ],
+      "origin": "original"
+    },
+    {
+      "stones": [
+        7
+      ],
+      "k": 30,
+      "expected": 0,
+      "actual": 0,
+      "oneMinimumHistory": [],
+      "origin": "original"
+    },
+    {
+      "stones": [
+        1,
+        2
+      ],
+      "k": 30,
+      "expected": -1,
+      "actual": -1,
+      "oneMinimumHistory": [],
+      "origin": "original"
+    },
+    {
+      "stones": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "k": 3,
+      "expected": 8,
+      "actual": 8,
+      "oneMinimumHistory": [
+        {
+          "before": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "start": 0,
+          "k": 3,
+          "cost": 3,
+          "after": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "before": [
+            3,
+            1,
+            1
+          ],
+          "start": 0,
+          "k": 3,
+          "cost": 5,
+          "after": [
+            5
+          ]
+        }
+      ],
+      "origin": "original"
+    }
+  ],
+  "passed": true
+}
