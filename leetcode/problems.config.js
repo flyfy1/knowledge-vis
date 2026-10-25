@@ -1861,6 +1861,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n) time; O(n) auxiliary space plus O(n-k+1) output"
   },
   {
+    "id": 483,
+    "title": {
+      "zh": "最小好进制",
+      "en": "Smallest Good Base"
+    },
+    "desc": {
+      "zh": "从全 1 位值推导按长度枚举与精确整数二分。",
+      "en": "Derive a descending-length search and exact integer binary search from all-ones place values."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数学",
+        "en": "Math"
+      },
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      }
+    ],
+    "path": "483/",
+    "leetcodeUrl": "https://leetcode.com/problems/smallest-good-base/",
+    "language": "Python",
+    "complexity": "O((log n)^2) integer operations; O(1) integer cells (O(log n) bits) extra space"
+  },
+  {
     "id": 514,
     "title": {
       "zh": "自由之路",
