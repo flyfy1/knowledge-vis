@@ -1604,3 +1604,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Race Car state-space BFS | `leetcode/818/#step2` | Full position and signed speed pairs preserve future actions; unit-cost layers prove shortest arrival. |
 
 <!-- /leetcode-818-campaign -->
+
+
+<!-- leetcode-960-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Column compatibility | `leetcode/960/#step2` | Test every row before linking columns. |
+| Ending-column dynamic programming | `leetcode/960/#step2` | Longest valid chain ending at each column. |
+
+<!-- /leetcode-960-campaign -->
