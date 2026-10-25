@@ -1,0 +1,12 @@
+{
+  "kind": "author self-check",
+  "result": "PASS",
+  "cases": 21555,
+  "smallOutward": 20000,
+  "seed": 564,
+  "largeOracle": "binary search of all palindrome lengths 1..19",
+  "officialExamples": {
+    "123": "121",
+    "1": "0"
+  }
+}
