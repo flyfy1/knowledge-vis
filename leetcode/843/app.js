@@ -5,6 +5,7 @@ function render(){
  $('handRead').textContent=t(hand?'handResult':'handHidden');$('letters').hidden=!hand;
  $('letters').innerHTML=Array.from('acckzz').map((c,i)=>`<div class="letter ${c==='ccbazz'[i]?'hit':''}"><small>${i+1}</small><br>${c}<br>${'ccbazz'[i]}<br>${c==='ccbazz'[i]?'✓':'×'}</div>`).join('');
  const data=C.presets[preset],f=frames[at];
+ $('presetSelection').textContent=t('preset'+preset);
  $('frameRead').textContent=t('frame',{k:at,n:f.candidates.length,secret:data.secret});
  $('terminal').textContent=f.done?t('found'):f.exhausted?t('exhausted'):f.candidates.length===1?t('known'):'';
  $('prev').disabled=at===0;$('next').disabled=at===frames.length-1;$('end').disabled=at===frames.length-1;

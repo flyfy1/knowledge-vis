@@ -112,3 +112,24 @@ The original r1 self-check below/elsewhere remains historical. New checks and
 red/diagnostic/green evidence are in tests/evidence/budget-r2/; SELF-CHECK.md
 appends the finding mapping. candidate.json freezes this new candidate, not a
 change to the historical acceptance or report.
+
+
+## 843-R2-SELECT01 repair boundary (2026-10-26)
+
+Build verdict: reuse the reviewed scenario selector and existing hint typography.
+The independent report `specs/reviews/843-review-2-4d2abc1d.md` explicitly permits
+an adjacent wrapping selection readout. This is a bounded readability repair,
+not a new experiment or layout. P0/highest-return: expose the complete selected
+word count, budget and control purpose in both locales at 320/390px. P1: retain
+locale/round state, source transfer and budget regression checks. P2: none.
+Deferred: historical non-required advisory 843-R1-A01 (extreme-zoom fragmentation
+in other readouts), physical-device and browser-chrome zoom verification.
+
+`presetSelection` repeats the exact localized selected-option text immediately
+after the native select. `aria-describedby` associates it with the control;
+normal whitespace and overflow wrapping allow its height to grow. It derives
+from the same preset index on every render and locale change. Existing `.hint`
+font/color/spacing tokens apply; no new colors or type sizes. The native selected
+text can remain clipped, but the full adjacent value remains available, as the
+review requested. No option semantics or algorithm state changed. Tests and the
+new frozen candidate are author evidence; independent closure remains pending.
