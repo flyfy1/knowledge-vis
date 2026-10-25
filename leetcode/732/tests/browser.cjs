@@ -6,6 +6,8 @@ const source=fs.readFileSync(path.join(__dirname,'../solution.py'),'utf8');
 
 const C=require('../core.js'),report={scope:'author self-check',platform:os.platform(),screenshots:[],stateChecks:0,semanticBindings:[],requests:[],errors:[],widths:[],source:{}};
 (async()=>{
+report.contrastCalibration=require('./test_contrast.cjs')();
+assert.equal(report.contrastCalibration.status,'pass',JSON.stringify(report.contrastCalibration));
 const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined});
 const context=await browser.newContext({permissions:['clipboard-read','clipboard-write'],acceptDownloads:true,reducedMotion:'reduce'}),page=await context.newPage();
 page.on('pageerror',e=>report.errors.push(e.message));page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());});page.on('response',r=>{if(r.status()>=400)report.errors.push(r.url()+': '+r.status());});page.on('request',r=>report.requests.push(r.url()));
@@ -37,13 +39,18 @@ await page.locator('#langToggle [data-lang=en]').focus();await page.keyboard.pre
 await page.locator('.step-nav a[href="#step2"]').click();await page.waitForTimeout(150);const geometry=await page.evaluate(()=>({top:document.querySelector('#step2').getBoundingClientRect().top,nav:document.querySelector('.step-nav').getBoundingClientRect().bottom}));assert(geometry.top>=geometry.nav);report.deepLink=geometry;
 // 200% CSS zoom reflow (explicitly not physical-device/browser chrome proof).
 await page.setViewportSize({width:1280,height:1000});await page.evaluate(()=>document.documentElement.style.zoom='2');for(const lang of ['en','zh']){await language(lang);await fit();await page.locator('#operation').scrollIntoViewIfNeeded();await shot(lang+'-zoom200');}await page.evaluate(()=>document.documentElement.style.zoom='1');report.zoom='200% CSS zoom at 1280px, reflow/overflow checked';
-// Measure effective solid rendered text/background pairs, borders and focus.
+// Measure rendered text/background pairs, borders and focus in both locales.
+report.contrastByLocale={};
+for(const lang of ['en','zh']){
+await language(lang);
 report.contrast=await page.evaluate(()=>{
- function rgb(s){return (s.match(/[\d.]+/g)||[]).slice(0,3).map(Number);}function lum(c){return c.map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4;}).reduce((s,v,i)=>s+v*[.2126,.7322,.0722][i],0);}function ratio(a,b){const x=lum(rgb(a)),y=lum(rgb(b));return (Math.max(x,y)+.05)/(Math.min(x,y)+.05);}
+ function rgb(s){return (s.match(/[\d.]+/g)||[]).slice(0,3).map(Number);}function lum(c){return c.map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4;}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);}function ratio(a,b){const x=lum(rgb(a)),y=lum(rgb(b));return (Math.max(x,y)+.05)/(Math.min(x,y)+.05);}
  function bg(el){while(el){const s=getComputedStyle(el).backgroundColor;if(!s.endsWith(', 0)')&&s!=='transparent')return s;el=el.parentElement;}return 'rgb(13, 17, 23)';}
  const pairs=new Map();for(const el of document.querySelectorAll('h1,h2,h3,p,li,label,button,select,a,summary,td')){if(!el.getClientRects().length)continue;const s=getComputedStyle(el),back=bg(el),key=s.color+'/'+back;pairs.set(key,{foreground:s.color,background:back,ratio:ratio(s.color,back),example:el.id||el.tagName});}
  const focus='rgb(255, 180, 84)',surfaces=['rgb(13, 17, 23)','rgb(22, 27, 34)','rgb(28, 35, 48)'];return {text:[...pairs.values()],focus:surfaces.map(background=>({foreground:focus,background,ratio:ratio(focus,background)})),border:ratio('rgb(154, 167, 184)','rgb(28, 35, 48)')};
 });assert(report.contrast.text.every(x=>x.ratio>=4.5),JSON.stringify(report.contrast));assert(report.contrast.focus.every(x=>x.ratio>=3));assert(report.contrast.border>=3);
+report.contrastByLocale[lang]=report.contrast;
+}
 // Focus styles and forced colors remain meaningful.
 await page.locator('#traceNext').focus();assert.equal(await page.locator('#traceNext').evaluate(e=>getComputedStyle(e).outlineWidth),'3px');
 await page.emulateMedia({forcedColors:'active'});await page.keyboard.press('Tab');await page.locator('#traceNext').focus();await page.keyboard.press('Tab');await page.keyboard.press('Shift+Tab');await page.waitForFunction(()=>document.querySelector('#traceNext').matches(':focus-visible'));assert.equal(await page.locator('#traceNext').evaluate(e=>getComputedStyle(e).outlineStyle),'solid');report.forcedColorFocus=await page.locator('#traceNext').evaluate(e=>({active:document.activeElement.id,style:getComputedStyle(e).outlineStyle,width:getComputedStyle(e).outlineWidth}));await page.emulateMedia({forcedColors:'none'});
