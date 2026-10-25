@@ -103,3 +103,20 @@ Candidate hashes: tests/evidence/candidate-sha256.json. Independent reviewer/run
 pending, no independent score assigned. Deployment/public verification: not done.
 Next action belongs to the dispatcher: a separate cold review of this exact
 candidate under the frozen six-dimension rubric; fixes become a new candidate.
+
+## Review repair candidate — 878-r1-fix-v2
+
+The historical review specs/reviews/878-review-1-e7e2fb2d.md requires 878-R1:
+step 5's three code-transfer bullets were incorrectly bound to input labels in
+both locales. Restore the existing mappings within the approved layout: derive
+lcm and [1,8], map the failing mid4/count3 to lo=5, then map the sufficient
+mid6/count4 to hi=6, preserving mid and explaining termination and final modulo.
+This is a P0 teaching correction; reuse the existing tokens and layout. No new
+feature, layout, canonical source, algorithm or language choice. P1/P2: none.
+Deferred: existing arbitrary-input editor and autoplay decisions remain as above.
+
+878-R1 is **fixed awaiting independent review**, not independently closed.
+Focused regression rejects the old rendered preset labels and passes the restored
+EN/zh explanations and hand-calculated transitions. New self-check evidence and
+candidate hashes live in tests/evidence/r1-fix/. The original author evidence and
+review result remain historical. No registration, publication or acceptance claim.
