@@ -1,0 +1,57 @@
+[
+  {
+    "id": 780,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "780",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.044
+  },
+  {
+    "id": 780,
+    "name": "test_solution.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/780/tests/test_solution.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.47
+  },
+  {
+    "id": 780,
+    "name": "test_copy.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/780/tests/test_copy.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.024
+  },
+  {
+    "id": 780,
+    "name": "browser.cjs",
+    "command": [
+      "node",
+      "leetcode/780/tests/browser.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 7.347
+  },
+  {
+    "id": 780,
+    "name": "boundary-browser.cjs",
+    "command": [
+      "node",
+      "leetcode/780/tests/boundary-browser.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 1.699
+  }
+]

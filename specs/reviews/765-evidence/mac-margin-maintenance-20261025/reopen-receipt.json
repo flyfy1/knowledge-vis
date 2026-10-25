@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-25T11:33:38.297511+00:00",
+  "kind": "reopen-mac-text-margin",
+  "before": "38db1038f63c3334adb3c36ae671569694228114",
+  "source": "add5045aec55cc12f5d1fcb72a5793faa61c7cc0",
+  "problem_id": "765",
+  "finding": "765-MAC-MARGIN-01",
+  "paths": [
+    "specs/reviews/765-mac-fit-diagnosis-20261025.md",
+    "specs/reviews/765-review-mac-margin-repair-request-20261025.md",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/baseline-dom.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/baseline-probe.cjs",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/baseline.json",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/candidate-receipt.json",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/concise-label-only.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/differential-probe.cjs",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/en-0-baseline.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/en-1-baseline.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/en-2-baseline.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/en-3-baseline.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/en-4-baseline.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/hypotheses.md",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/locale-roundtrip.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/long-label-positive-control.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/original-browser-failure.log",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/padding12-only.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/probes.json",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/short-label-only.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/width390-only.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/zh-0-baseline.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/zh-1-baseline.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/zh-2-baseline.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/zh-3-baseline.png",
+    "specs/reviews/765-mac-fit-diagnosis-20261025/zh-4-baseline.png"
+  ],
+  "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-765-margin-reopen-20261025.json",
+  "previous_current": {
+    "problem_id": "780",
+    "stage": "author",
+    "started_at": "2026-10-25T11:14:45.112800+00:00",
+    "run_id": "780-author-c004498974c8"
+  },
+  "scope": "Reopen conservative native-select margin failure for label-only repair and fresh independent review. Preserve old runs, reviews, released receipts and full queue. Resume 780 at its saved review phase after the earlier 765 repair.",
+  "prior_acceptance": {
+    "accepted_at": "2026-10-25T09:57:27.168282+00:00",
+    "registration_commit": "e315aa34a6a10e2fdd00ba400fe76849ca496d23"
+  },
+  "after": "5c9382133b5023c51de46b457a2e5f8f8f3dfda9",
+  "status": "completed",
+  "updated_at": "2026-10-25T11:33:38.533449+00:00"
+}

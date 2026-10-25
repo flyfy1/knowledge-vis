@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "en: hand history/cap/undo/reset; all nine presets + every frame reverse/replay; prediction all options/change; exact source/copy/download",
+    "zh: hand history/cap/undo/reset; all nine presets + every frame reverse/replay; prediction all options/change; exact source/copy/download",
+    "State preserved on locale roundtrip; native fallback clipboard exact in both locales; keyboard activation/focus; local concept anchors; reduced motion/forced colors; storage denied; file:// offline source; no local asset/console errors"
+  ],
+  "contrastMinimum": 7.078851579017443,
+  "css": 11331,
+  "screenshots": 20
+}
