@@ -99,7 +99,13 @@ all problem statuses, candidate revisions, run identities, and review evidence.
 Remove STOP and resume the same queue only after checking these invariants.
 This maintenance procedure cannot create acceptance or close review findings.
 
-## Owner update: detailed lessons and batches of 100 — 2026-10-18
+## Owner update: detailed lessons and batches of 20 — 2026-10-25
+
+The active goal continues until every snapshot problem has a detailed explanation,
+interactive visualization and independent per-problem acceptance. The owner's
+2026-10-25 instruction replaces the previous 100-problem publication threshold
+with 20. It does not reopen accepted lessons, change their language choices, or
+rewrite prior review evidence and verified release receipts.
 
 The active objective covers all 984 snapshot problems, with no reduction to the
 first batch. Each lesson must show a concrete worked example from input through
@@ -110,12 +116,13 @@ the original quantities and conditions; avoid template filler or decorative
 animation with no causal explanation. Reviewers must reconstruct the reasoning
 from the page before reading the author's explanation.
 
-After each 100 additional independently accepted, not-yet-released problems,
-publish that accepted batch and verify its actual public URLs. The baseline is
-#51 and #52, already released and verified; the other 11 historical public pages
-remain in the independent-review queue and count when their campaign review
-finishes. Public availability alone is not a completion or acceptance signal.
-At full completion, publish the final remainder even when it is smaller than 100.
+After each 20 additional independently accepted, not-yet-released problems,
+publish that accepted batch and verify its actual public URLs. Keep all previously
+verified releases, including the original #51/#52 baseline, in the release ledger;
+the new threshold counts only accepted work not yet released. Historical public
+pages still need their own campaign review before counting toward new releases.
+Public availability alone is not a completion or acceptance signal.
+At full completion, publish the final remainder even when it is smaller than 20.
 An exhausted queue with blocked or unresolved lessons cannot trigger a claim of
 completion. Repair passes must retain prior findings and acquire new evidence.
 
@@ -138,7 +145,8 @@ perform unrelated cleanup. The development/review ledger and locks remain intact
 ### Configuring the release interface
 
 The production worker supplies `--publish-root /home/songyy/projects/visual-site`,
-`--public-base https://visual.integ.life`, and `--publish-every 100`. Without both
+`--public-base https://visual.integ.life`, and `--publish-every 20` (also the runner
+default). Without both
 explicit target fields, the queue does not publish. The production directory must
 be separate from the development checkout. The runner calls the publisher at
 startup for pending-release recovery and after a completed problem, while it
@@ -151,6 +159,27 @@ modify the campaign's acceptance ledger. Successful release removes staged
 payload bytes and retains small receipts. The reviewed test interfaces cover
 thresholds, incomplete work, failures, resumption and preservation of unrelated
 content; a passing fixture is not itself a real production release.
+
+### Adopting the 20-problem policy and resuming
+
+Resume the active all-Hard goal after the static Codex route migration is publicly
+verified and the central checkout is safe to adopt the reviewed policy. Keep the
+current STOP file in place until that dispatch. At the clean stage boundary, verify
+that no author/reviewer is still writing, acquire the established checkout/state
+locks, and compare the actual HEAD with the saved expected HEAD. Adopt the reviewed
+policy commit using the maintenance procedure above; preserve every problem's
+status, candidate, findings, language contract, run identity and review evidence,
+and preserve the separate release ledger.
+
+The external production launcher can override the repository default. Inspect its
+actual command and replace its explicit `--publish-every 100` with
+`--publish-every 20` before resuming via the established `launch.py --continuous`
+entry point. Do not edit archived launch evidence or old release manifests. Confirm
+the launch uses the original catalog queue and state directory, and the public
+target verified during route migration. Only then remove STOP and start one
+central worker. Verify its real process and active state, and retain the independent
+per-item review gate. Publication checks pending accepted work at startup; existing
+verified releases must neither be replayed nor counted a second time.
 
 ## Isolated parallel preparation
 
@@ -177,7 +206,7 @@ registry or concept map over newer central entries. A failed import remains
 inspectable and cannot manufacture an accepted status.
 
 Only imported, independently accepted work participates in the central count and
-its every-100 release gate. A lane's local acceptance is not public delivery and
+its every-20 release gate. A lane's local acceptance is not public delivery and
 its completed process is not whole-campaign completion. Keep lane logs until their
 provenance is preserved; no old production content is copied by this workflow.
 

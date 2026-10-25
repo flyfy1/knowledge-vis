@@ -14,7 +14,7 @@ const checks=[];
  const context=await browser.newContext({viewport:{width:1280,height:900},locale:'en-US'});
  const page=await context.newPage(); const errors=[];page.on('pageerror',e=>errors.push(e.message));
  let response=source,mode='ok',requests=[],release;
- await page.route('**/leetcode/problems.config.js*',async route=>{
+ await page.route(url=>/\/leetcode\/problems(?:\.codex)?\.config\.js$/.test(url.pathname),async route=>{
   requests.push(route.request().url());
   if(mode==='delay')await new Promise(resolve=>release=resolve);
   if(mode==='error')return route.fulfill({status:503,body:'Unavailable'});
@@ -80,8 +80,16 @@ const checks=[];
  await cat('all').click();await page.locator('[data-lang="en"]').click();release();await page.waitForTimeout(100);assert.equal(await cards().count(),0);
  mode='ok';await cat('leetcode').click();await ready();assert.deepEqual(await ids(),[51]);assert.match(await page.locator('#resultCount').textContent(),/1 of/);
  checks.push('Error/retry, query retention, delay/category/locale race, stable focus');
+ // The generated public registry changes only each explicit ready destination.
+ response=registry(data.map(p=>({...p,path:p.id+'-codex/'})));
+ await page.goto(base+'?category=leetcode');await ready();assert.equal(await cards().count(),data.length);
+ for(const p of data){const card=page.locator(`.lesson-card[data-problem-id="${p.id}"]`);const expected=new URL('leetcode/'+p.id+'-codex/',base).href;assert.equal(await card.locator('.lesson-link').getAttribute('href'),expected);assert.equal(await card.locator('.lesson-actions a').first().getAttribute('href'),expected);assert.equal(await card.locator('.official-link').getAttribute('href'),p.leetcodeUrl);}
+ await input.fill('#51');await page.locator('[data-lang="zh"]').click();assert.deepEqual(await ids(),[51]);assert.match(await cards().locator('.lesson-link').getAttribute('href'),/\/51-codex\/$/);
+ await page.route('**/leetcode/51-codex/',route=>route.fulfill({contentType:'text/html',body:'<!doctype html><h1>Generated-route navigation fixture #51</h1>'}));
+ await cards().locator('.lesson-link').click();assert.equal(page.url(),new URL('leetcode/51-codex/',base).href);await page.goBack();await ready();assert.deepEqual(await ids(),[51]);await page.locator('[data-lang="en"]').click();
+ checks.push('Generated Codex registry: one card per ID, title/open routes, official URL, search/locale and navigation fixture');
  // Invalid registries fail as a whole; a valid empty catalog is distinguishable.
- for(const bad of ['not JSON',registry([data[0],data[0]]),registry([{...data[0],title:{zh:' ',en:''}}]),registry([{...data[0],language:' '}]),registry([{...data[0],path:'../evil/'}]),registry([{...data[0],leetcodeUrl:'https://evil.example/'}])]){
+ for(const bad of ['not JSON',registry([data[0],data[0]]),registry([{...data[0],title:{zh:' ',en:''}}]),registry([{...data[0],language:' '}]),...['../evil/', '999999-codex/', data[0].id+'-claude/', data[0].id+'-codex/index.html', 'arbitrary/', '/'+data[0].id+'-codex/', data[0].id+'-codex/?x=1'].map(path=>registry([{...data[0],path}])),registry([{...data[0],leetcodeUrl:'https://evil.example/'}])]){
   response=bad;await page.goto(base+'?category=leetcode');await page.locator('#retryLessons').waitFor({state:'visible'});assert.equal(await cards().count(),0);
  }
  response=registry([]);await page.reload();await ready();assert.match(await page.locator('#emptyLessons').textContent(),/no lessons/);
@@ -97,7 +105,9 @@ const checks=[];
  // Refuse storage: language change still works in memory.
  const noStorage=await browser.newContext();await noStorage.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new Error('Denied');}})});
  const np=await noStorage.newPage();await np.goto(base+'?category=leetcode&q=%2351');await np.locator('.lesson-card:visible').waitFor();await np.locator('[data-lang="zh"]').click();assert.equal(await np.locator('html').getAttribute('lang'),'zh-CN');await noStorage.close();
- // Offline folder opening uses the local registry script, not HTTP fetch.
+ // Canonical source folder opening stays numeric even when HOME_TEST_REGISTRY
+ // points to a generated registry for the separate HTTP deployment under test.
+ // This new page has no intercepted registry: it reads the real local source files.
  const fp=await context.newPage();await fp.goto('file://'+path.resolve(__dirname,'../index.html')+'?category=leetcode&q=%2351');await fp.locator('.lesson-card:visible').waitFor();assert.equal(await fp.locator('.lesson-card:visible').count(),1);assert.match(await fp.locator('.lesson-card:visible .lesson-link').getAttribute('href'),/\/leetcode\/51\/index\.html$/);await fp.locator('.lesson-card:visible .lesson-link').click();await fp.locator('h1').waitFor();assert.match(await fp.locator('h1').textContent(),/51/);await fp.close();
  checks.push('Denied storage and file-protocol catalog fallback');
  assert.deepEqual(errors,[]);
