@@ -1,0 +1,70 @@
+{
+  "measuredExactOpaquePairs": [
+    {
+      "foreground": "text",
+      "background": "bg",
+      "ratio": 16.087
+    },
+    {
+      "foreground": "text",
+      "background": "panel",
+      "ratio": 14.705
+    },
+    {
+      "foreground": "text",
+      "background": "panel2",
+      "ratio": 13.397
+    },
+    {
+      "foreground": "muted",
+      "background": "bg",
+      "ratio": 7.744
+    },
+    {
+      "foreground": "muted",
+      "background": "panel",
+      "ratio": 7.079
+    },
+    {
+      "foreground": "muted",
+      "background": "panel2",
+      "ratio": 6.449
+    },
+    {
+      "foreground": "accent",
+      "background": "bg",
+      "ratio": 13.101
+    },
+    {
+      "foreground": "accent",
+      "background": "panel",
+      "ratio": 11.975
+    },
+    {
+      "foreground": "accent",
+      "background": "panel2",
+      "ratio": 10.91
+    },
+    {
+      "foreground": "accent2",
+      "background": "bg",
+      "ratio": 10.732
+    },
+    {
+      "foreground": "accent2",
+      "background": "panel",
+      "ratio": 9.809
+    },
+    {
+      "foreground": "accent2",
+      "background": "panel2",
+      "ratio": 8.937
+    }
+  ],
+  "focus": "3px accent2 + 4px offset against bg/panel/panel2",
+  "disabled": "opacity 1, muted on panel",
+  "shippedCSSBytes": {
+    "style.css": 9425,
+    "996/style.css": 1379
+  }
+}
