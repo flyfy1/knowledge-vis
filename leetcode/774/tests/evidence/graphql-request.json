@@ -1,0 +1,7 @@
+{
+  "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId questionFrontendId title titleSlug isPaidOnly\n    content translatedContent exampleTestcases sampleTestCase metaData\n    codeSnippets { lang langSlug code }\n  }\n}",
+  "variables": {
+    "titleSlug": "minimize-max-distance-to-gas-station"
+  },
+  "operationName": "questionData"
+}
