@@ -1,0 +1,48 @@
+{
+  "candidate": "c55fd55af1e63d663440acf4c56bf4d233c6304d",
+  "candidate_fingerprint": "6260f06d521410cf4146324976fac2d383b3739f86bbf76f80182865ed22164c",
+  "lesson_tree": "9c4f0c108d98f1e95d55d4e4f3b2e251411547cc",
+  "matches_observed_revision_tree": true,
+  "review_commit": "3f9008ca1e85bacd8dcec9c765e6b8054fdd4d64",
+  "registration_commit": "7b841718e8034cf9b325e74bc40941bd7aac7972",
+  "report_path": "specs/reviews/839-review-1-38f3fa43.md",
+  "report_sha256": "cfa616b7354054b2ce54f2625cf696c398a0fc1ec3bfe4f43849241c893ddac7",
+  "report_unchanged_since_review_commit": true,
+  "reviewer_run": {
+    "id": "839-review-84afcd8bdf4e",
+    "problem_id": "839",
+    "role": "review",
+    "started_at": "2026-10-25T20:33:35.568451+00:00",
+    "status": "completed",
+    "candidate": "c55fd55af1e63d663440acf4c56bf4d233c6304d",
+    "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/839-review-84afcd8bdf4e",
+    "session_ids": [
+      "01a174c4-cb2d-7d21-85da-f87c62aec248"
+    ],
+    "finished_at": "2026-10-25T20:37:23.880089+00:00",
+    "result": {
+      "outcome": "accepted",
+      "scores": [
+        4,
+        4,
+        4,
+        4,
+        3,
+        4
+      ],
+      "required_open": [],
+      "report_path": "specs/reviews/839-review-1-38f3fa43.md",
+      "evidence": [
+        "Cold browser walkthrough saved before source audit.",
+        "Fresh predictions verified against canonical Python and independent swap oracle; 250 additional cases passed.",
+        "Both locales, rewind/reset/endpoints, prediction changes, keyboard, narrow layouts and synthetic 200% zoom checked.",
+        "Exact displayed, mirrored, copied, fallback-copied and downloaded source parity passed.",
+        "Non-mutating metadata preflight exited 0."
+      ],
+      "detail": "96.25/100; no required fixes. Minor advisory: add a concrete multi-level path-shortening example. Acceptance applies to the reviewed local candidate, separately from publication."
+    }
+  },
+  "independent_from_author_sessions": true,
+  "score": 96.25,
+  "required_open": []
+}

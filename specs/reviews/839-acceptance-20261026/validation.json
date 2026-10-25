@@ -1,0 +1,15 @@
+{
+  "report_sha256": "70ee58948cca470c53b4ece8a153c30ff3f45e8ae03c9c48a82e9a6bb6796adb",
+  "files": {
+    "acceptance-and-release-snapshot.json": "6ca7ae26df3c389e1095628669437450814ddfc751518ad8c5bc245633d1d520",
+    "acceptance-identity.json": "3fca1277e5aa0c361c1f13549a6316fe711c2aa77f41229d069b580dd9b6aba5",
+    "browser.json": "1c1e6bd337df9be481fe7be03f1595d162dd89666cd9c6c9dadab147c35f2b52",
+    "core.json": "6129ef31fbfc74f087c556b506c8ce644b0d71db5fc141d5f68b3af5fe3165b0",
+    "evidence-git-manifest.txt": "4813c600fe130560b4afb2f6a11c0b840b7e69f9953e592a76c7adfb0cd3e538",
+    "report.md": "cfa616b7354054b2ce54f2625cf696c398a0fc1ec3bfe4f43849241c893ddac7",
+    "reviewer-final.json": "fa8e9d0aaea12bbcbb20023abeaf4b238a1d16905fb2591b1383a29b0c770246",
+    "snapshot-command.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "runtime_mutations": false,
+  "commit_or_push": false
+}

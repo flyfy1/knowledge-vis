@@ -1,0 +1,192 @@
+{
+  "observed_at": "2026-10-25T20:38:46.881288+00:00",
+  "revision": "7b841718e8034cf9b325e74bc40941bd7aac7972",
+  "state_sha256": "02b53dc060960cc4a132796ef2f4fc9d43f89dbb0dba59877f0b2ad6ebb3f7bc",
+  "ledger_sha256": "1b05df6e7c7249e29adfb20b0b712865ff6fea54aeef042d04bf33857738b89b",
+  "snapshot_still_current": true,
+  "status": "running",
+  "current": {
+    "problem_id": "843",
+    "stage": "author",
+    "started_at": "2026-10-25T20:37:50.490098+00:00",
+    "run_id": "843-author-5ecd89a97e60"
+  },
+  "stop_present": false,
+  "accepted_local": 133,
+  "released": 119,
+  "pending_release": null,
+  "digest_eligible_count": 15,
+  "digest_eligible": {
+    "780": {
+      "candidate": "8063cd1919c3816eb74f2096c0afe51e05bf75b6",
+      "digest": "90e960f45400195f70094979ad5dc36554fc3abac3725a97b5e89f51981ad31e",
+      "review": "specs/reviews/780-review-2-8e1e7b4e.md"
+    },
+    "793": {
+      "candidate": "37a0404f4a9e796d8df3c2cfa9a188957fe835fe",
+      "digest": "cccafc8d6769edcd6c792c6d824bea9c97c6bbfa1f867a4b70c6e8b9cac204aa",
+      "review": "specs/reviews/793-review-2-6ee3ec7c.md"
+    },
+    "798": {
+      "candidate": "f1f2ef5f4dea85495b1f343e529e87e69b00685a",
+      "digest": "8e3cd68ca0a3a69e59fd7d84f62263c4a5adb2e21dbecbf06701d97040e57cd9",
+      "review": "specs/reviews/798-review-2-9bfc817e.md"
+    },
+    "801": {
+      "candidate": "84fc897f098887350f64045e36cc45cf7cdb5e88",
+      "digest": "e99962f2ea226a5803a9f5afc9aaf07d0bbe6409d60b1c07ffd561a0ed624a69",
+      "review": "specs/reviews/801-review-2-91de8989.md"
+    },
+    "810": {
+      "candidate": "489ed9a1950386a0514b43411e5f60901d28ede7",
+      "digest": "d41903f2965b28124cd79445f6deeb54da6703bedd19a537cb2cd4cc4b7e5044",
+      "review": "specs/reviews/810-review-1-30cf767f.md"
+    },
+    "815": {
+      "candidate": "705954022f0c2766672d44d7897958deb8b2a3fa",
+      "digest": "18eebbf75933c3c2958910c93608fa77a56a2322eec7c6e46929b45f0ab98616",
+      "review": "specs/reviews/815-review-2-d71a5634.md"
+    },
+    "818": {
+      "candidate": "2b1cd8cfe14432d1e8d78433f080b1bdaeaf32ba",
+      "digest": "b91a8254ee14329c58d5c4cd43ee52a84dafaa38ed972c6f84667307761c8ef0",
+      "review": "specs/reviews/818-review-2-7f650b93.md"
+    },
+    "827": {
+      "candidate": "33686548c3c385cdb14b5b7262e4ca58a3b8d2f4",
+      "digest": "da960e6a7e0848d15b0e8c2f8672e5e0c8d0dfffba50a76b709c6ea0266d4170",
+      "review": "specs/reviews/827-review-1-6b930f83.md"
+    },
+    "960": {
+      "candidate": "a85f8ad95c969aae56e1c9f698c21c175c7464cb",
+      "digest": "438377031403bbdaa4a542052d22e563eadc0b82f3addd35f77984f66ba80c10",
+      "review": "specs/reviews/960-review-1-63cccd65.md"
+    },
+    "828": {
+      "candidate": "263ebb65069e827fb935cd2dc7130803d14ce3ee",
+      "digest": "73556356ebf327f004d3f7e7a860969f9a7080aa51a2f1b1db0c32a5ddcd577b",
+      "review": "specs/reviews/828-review-1-19f7b706.md"
+    },
+    "829": {
+      "candidate": "0609ad2ae0e4c53c393225e5873152023724b3e3",
+      "digest": "be017438e1b65ff202269acfb0122becdfc1e4ca61be0a025125a8a0b55c2b16",
+      "review": "specs/reviews/829-review-1-e16dc71f.md"
+    },
+    "834": {
+      "candidate": "3dcefbc04619ae11869ea34581ea71c38daee06c",
+      "digest": "c66f1152e235118eb23e83c09c8ed04b6ae9fbef3daeabeb7c6435cf571df700",
+      "review": "specs/reviews/834-review-1-68508693.md"
+    },
+    "968": {
+      "candidate": "611b194292b72d89d4e64b984256efce09f5ab4e",
+      "digest": "868f7c561b09cc49a15753227d666694416a8b1119f56d94fbb6cbfe096c0642",
+      "review": "specs/reviews/968-review-2-9fca39e7.md"
+    },
+    "972": {
+      "candidate": "574ed7161620353c1ae02ac2d1a118877ec68961",
+      "digest": "697cc04356682080e92cf20b509a5778c01a4f3bc7493df410831542d47357de",
+      "review": "specs/reviews/972-review-1-bb491d1d.md"
+    },
+    "839": {
+      "candidate": "c55fd55af1e63d663440acf4c56bf4d233c6304d",
+      "digest": "b3fa48f00ebbfd232e5740dc22e925803b1fa8963d1033dd2cc700e56c0fd9d6",
+      "review": "specs/reviews/839-review-1-38f3fa43.md"
+    }
+  },
+  "same_digest_refresh_ids": [],
+  "entry": {
+    "status": "accepted_local",
+    "rounds": 1,
+    "new": true,
+    "phase": "done",
+    "reviews": [
+      {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          3,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/839-review-1-38f3fa43.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Fresh predictions verified against canonical Python and independent swap oracle; 250 additional cases passed.",
+          "Both locales, rewind/reset/endpoints, prediction changes, keyboard, narrow layouts and synthetic 200% zoom checked.",
+          "Exact displayed, mirrored, copied, fallback-copied and downloaded source parity passed.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "96.25/100; no required fixes. Minor advisory: add a concrete multi-level path-shortening example. Acceptance applies to the reviewed local candidate, separately from publication.",
+        "run_id": "839-review-84afcd8bdf4e",
+        "candidate": "c55fd55af1e63d663440acf4c56bf4d233c6304d",
+        "candidate_sha256": "6260f06d521410cf4146324976fac2d383b3739f86bbf76f80182865ed22164c",
+        "weighted_score": 96.25,
+        "round": 1,
+        "commit": "3f9008ca1e85bacd8dcec9c765e6b8054fdd4d64"
+      }
+    ],
+    "author_runs": [
+      "839-author-ed3a2c092deb"
+    ],
+    "prior_report": "specs/reviews/839-review-1-38f3fa43.md",
+    "candidate": "c55fd55af1e63d663440acf4c56bf4d233c6304d",
+    "registration_commit": "7b841718e8034cf9b325e74bc40941bd7aac7972",
+    "accepted_at": "2026-10-25T20:37:42.254419+00:00"
+  },
+  "runs": [
+    {
+      "id": "839-author-ed3a2c092deb",
+      "problem_id": "839",
+      "role": "author",
+      "started_at": "2026-10-25T20:22:55.936997+00:00",
+      "status": "completed",
+      "candidate": "96e82a2f927f7506f2dd97956f1b837e67c9df1e",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/839-author-ed3a2c092deb",
+      "session_ids": [
+        "01a174bb-07c4-7881-855c-30619660e8d7"
+      ],
+      "finished_at": "2026-10-25T20:33:23.156329+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented bilingual lesson #839 in leetcode/839/. Verified official Python interface; passed 2,184 solution cases, 3,296 intermediate-frame checks, bilingual browser tests, source parity, and metadata preflight. Evidence and candidate hashes saved. Independent review remains pending."
+      }
+    },
+    {
+      "id": "839-review-84afcd8bdf4e",
+      "problem_id": "839",
+      "role": "review",
+      "started_at": "2026-10-25T20:33:35.568451+00:00",
+      "status": "completed",
+      "candidate": "c55fd55af1e63d663440acf4c56bf4d233c6304d",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/839-review-84afcd8bdf4e",
+      "session_ids": [
+        "01a174c4-cb2d-7d21-85da-f87c62aec248"
+      ],
+      "finished_at": "2026-10-25T20:37:23.880089+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          3,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/839-review-1-38f3fa43.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Fresh predictions verified against canonical Python and independent swap oracle; 250 additional cases passed.",
+          "Both locales, rewind/reset/endpoints, prediction changes, keyboard, narrow layouts and synthetic 200% zoom checked.",
+          "Exact displayed, mirrored, copied, fallback-copied and downloaded source parity passed.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "96.25/100; no required fixes. Minor advisory: add a concrete multi-level path-shortening example. Acceptance applies to the reviewed local candidate, separately from publication."
+      }
+    }
+  ]
+}
