@@ -31,3 +31,87 @@ From repository root: `python3 -B scripts/register_leetcode_lesson.py 780 --vali
 The final metadata/source/assets are frozen together as a new author candidate r4 for independent review. Related links remain within this lesson: #step1 explains the forced predecessor, #step2 explains the modulo invariant and boundary, in both languages. No external continuation is advertised. Registration, campaign state and historical review results are untouched.
 
 Limitations: author checks are not a separate reviewer, novice teach-back, LeetCode submission result, production verification, physical-device audit, or cross-platform browser/font certification. Next action is a separate run's cold walkthrough and source audit of this frozen candidate.
+
+
+## 2026-10-26 — new candidate 780-copy-r1-20261026
+
+Stable finding **780-COPY-R1: fixed awaiting separate independent review**.
+The preceding r4 results are historical author evidence. Checkout base for this
+revision: `8cedba5490bb862133f157a9d6af619cee323fb9`. Historical independently
+accepted runtime base: `c214c6549b53618d96782b6f827a5018c4c7f6e4`.
+Read the repair request, historical independent report, BRIEF, teaching/review/trace
+specifications, rendered-state/source contract, exact registration language pairs,
+and website-design skill. The explicit owner request authorizes this narrow revision;
+no new layout, service, algorithm, or teaching refinement is needed.
+
+Fix mapping: remove `<footer class="site-foot" data-i18n="foot"></footer>` and its
+unused `foot` localization key. Removed Chinese:
+“作者自查候选 · 尚待独立评审。未声称 LeetCode 提交通过或实际学习效果。”
+Removed English:
+“Author self-checked candidate · Independent review pending. No claim of LeetCode acceptance or observed learner outcomes.”
+No replacement learner prose. Change `copy.js?v=780-r4` to
+`copy.js?v=780-copy-r1` for the changed asset. Exact runtime diff is
+`tests/evidence/copy-r1/runtime.diff`. No app reference to `foot` existed; no HTML
+binding or dictionary key remains. All remaining 96 dictionary entries equal the
+accepted base exactly. Before/after SHA-256 receipts are in `identity-before.json`
+and `identity-after.json`; app.js, core.js, solution.py, python-code.js, style.css,
+and lesson-entry.json are byte-identical to that base.
+
+Focused failing feedback: `node leetcode/780/tests/copy-r1-browser.cjs` rejected
+the original candidate because one workflow footer existed (expected zero).
+`before-browser.log` retains the failure. During harness authoring, a frame assertion
+assumed spaces in `1 / 3`, while the unchanged template renders `1/3`; and immediate
+visibility sampling raced the asynchronous clipboard-success update. These harness
+failures are retained in `harness-frame-spacing.log` and `harness-async-copy.log`.
+The test now uses the exact existing frame label and waits for the acknowledged
+hidden fallback. No runtime changes resulted from these harness corrections.
+
+Final command `node leetcode/780/tests/copy-r1-browser.cjs` exited 0:
+`after-browser.log` and `browser.json`. Real Chromium on Linux (version in JSON),
+using NODE_PATH and PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH. Actual served bytes for
+all seven runtime files equal this checkout. zh→en→zh preserves the (3,17) batch at
+(3,2), frame 1/3, one retained history entry, hand point (1,2), quiz choice C and
+revealed reasoning. The complete equation `17 = 5 × 3 + 2` and boundary formula
+with `ty ≥ sy` remain rendered; rewind/replay restores the batch and changed quiz
+choice clears feedback. `handLimit`, `sim`, and `s4e` retain exact source text,
+including sum-20 teaching bounds, simulation versus Python, full modulo/final-check
+frames, and zero-remainder meaning. All static localized bindings are nonempty;
+old workflow strings and the footer element/key are absent. No replacement
+acceptance claim was added. No console/page/HTTP errors were observed.
+
+Exact source checks in each locale compare all 384 UTF-8 bytes, final newline
+included: canonical Python, decoded mirror, rendered textContent, successful
+clipboard copy, native manual fallback clipboard readback, and download bytes.
+Each fallback attempt resets and reads back its own distinct locale sentinel before
+denial, confirms textarea focus/full selection, uses Linux Control+C, and reads
+back the source without normalization. No mirror regeneration was necessary.
+Python is already the preferred faithful official interface, verified in the
+retained official-graphql.json Python3 snippet. No non-Python language contract or
+supportedLanguages omission applies. Registration policy pair remains
+solution.py / python-code.js / PYTHON_SOURCE.
+
+Focused Python execution (7 hand-expected official/transfer/boundary examples)
+passed, recorded in `python-smoke.json`; no broad numerical suite was rerun for
+this prose deletion. `python3 -B leetcode/780/tests/test_copy.py` exited 0 with
+96 unique, nonempty bilingual pairs, using duplicate-aware parsing;
+`copy-validation.log` retains output.
+
+Page-end layout checked in both locales at 320, 390, 1280 CSS pixels and 200% CSS
+zoom at 320 and 1280 pixels (10 captures). Related links retain Tab order and Enter
+activation. Page has no horizontal overflow and main/body bottom geometry matches,
+with no orphan footer gap. Visually opened both 320px/100% captures and all four
+320px/1280px 200% captures: source controls, disclosures and final links wrap with
+readable text; ordinary existing section padding remains. Sticky navigation is
+retained in captures. This is Chromium CSS zoom evidence, not physical-device or
+browser-toolbar zoom certification. All 10 screenshots and geometry are in browser.json.
+
+Required safe metadata command from repository root:
+`python3 -B scripts/register_leetcode_lesson.py 780 --validate-only`
+**Exit 0; empty stdout/stderr**, receipt `metadata-preflight.json`.
+Complexity is still the single string
+`O(1 + log(max(tx, ty))) time; O(1) auxiliary space`.
+No registration, campaign/history/report edit, shared file edit, commit, push,
+deploy, service change, or child agent. New candidate hashes are frozen in
+candidate.json; the previous author manifest is retained under this evidence
+folder. Next action: a separate reviewer checks and closes 780-COPY-R1 against
+this candidate. No independent closure, acceptance or production delivery is claimed.

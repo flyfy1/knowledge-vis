@@ -29,3 +29,22 @@ P0/highest-return: concrete arithmetic, honest retained trace, boundary proof, b
 Hand experiment and reverse trace are independent. Preset change resets reverse trace only and says so. Frames are after a whole modulo or final decision; start frame does no work. Ledger contains every update (no omitted batches); each batch states how many subtractions it represents. A terminal boundary check does not mutate coordinates. History costs O(k²) retained entries for k frames in the teaching simulation, distinct from O(1) submission space. Both locales cover initial, middle, terminal true/false, disabled endpoints, all predictions before/revealed/changed/reset, successful copy and manual recovery. Locale preserves all state and focus. Static page has no loading/network/reconnect state. Missing JS covered by bilingual noscript; storage failure falls back to shared in-memory locale. Related links are local step anchors to actual causal explanations, avoiding unverified external continuation.
 
 Validation: BFS forward oracle independently checks Python and JS simulation on exhaustive small inputs; seeded random and constructed large legal paths; frame arithmetic, decreasing sums, invariant and rewind snapshots. Real Chromium both locales, every preset/control, copy and OS-native fallback clipboard, exact source/download, 320/390/736/1440 and 200% zoom, focus, errors, contrast, screenshots inspected. Tests accept OUTPUT_DIR. Metadata validate-only from repo root. No claimed accepted submission, learner result, deployment, or independent acceptance.
+
+
+## 2026-10-26 — 780-COPY-R1 narrow revision
+
+Owner-dispatched repair: `specs/reviews/workflow-copy-repair-requests-20261026/780.md`.
+Build/reuse verdict: cut the existing workflow footer; reuse the approved design and tokens.
+No new feature or layout is introduced. P0: preserve the accepted algorithm, trace,
+official Python interface, and meaningful teaching limitations. P1/highest-return:
+remove the bilingual footer and unused `foot` key; bump only the changed copy asset query.
+P2: none. Deferred: other prose/design/algorithm changes, with no separate finding to justify them.
+
+Candidate `780-copy-r1-20261026` is a new author revision for separate focused review
+of stable finding `780-COPY-R1`, fixed awaiting review. All seven runtime files and
+metadata were first verified byte-identical to historical accepted base
+`c214c6549b53618d96782b6f827a5018c4c7f6e4`. The protected app/core/Python/mirror/CSS
+and metadata remain identical afterward. `handLimit`, `sim`, and `s4e` retain their
+original bilingual values and actual DOM bindings. Evidence and exact diff:
+`tests/evidence/copy-r1/`. Historical acceptance remains scoped to its original candidate;
+this author run provides no independent closure or publication authority.

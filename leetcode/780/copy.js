@@ -348,10 +348,6 @@ window.LESSON_COPY = {
     "回看：取余的不变量与边界",
     "Revisit: the modulo invariant and boundary"
   ],
-  "foot": [
-    "作者自查候选 · 尚待独立评审。未声称 LeetCode 提交通过或实际学习效果。",
-    "Author self-checked candidate · Independent review pending. No claim of LeetCode acceptance or observed learner outcomes."
-  ],
   "scenario0": [
     "(1,1) → (3,5) · 手算原例",
     "(1,1) → (3,5) · hand example"

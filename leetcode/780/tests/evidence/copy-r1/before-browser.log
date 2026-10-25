@@ -1,0 +1,8 @@
+AssertionError [ERR_ASSERTION]: 780-COPY-R1: remove workflow footer
+    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/780/tests/copy-r1-browser.cjs:23:12 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: '=='
+}
