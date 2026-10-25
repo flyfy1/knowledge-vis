@@ -1,0 +1,718 @@
+{
+  "kind": "author self-check",
+  "result": "pass",
+  "errors": [],
+  "observations": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "ledger": "s = 0.1(6)Parsed: I=0, A=1, m=1, B=6, k=1; k=0 means no repeat.Integer + finite part: 0 + 1/10^1 = 1/10Repeating tail: 6/[10^1 × (10^1 − 1)]; complete value = 1/6t = 0.16(6)Parsed: I=0, A=16, m=2, B=6, k=1; k=0 means no repeat.Integer + finite part: 0 + 16/10^2 = 4/25Repeating tail: 6/[10^2 × (10^1 − 1)]; complete value = 1/6",
+      "result": "Cross products: 6 = 6 → equal (true)"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "ledger": "s = 0.(52)Parsed: I=0, A=0, m=0, B=52, k=2; k=0 means no repeat.Integer + finite part: 0 + 0/10^0 = 0/1Repeating tail: 52/[10^0 × (10^2 − 1)]; complete value = 52/99t = 0.5(25)Parsed: I=0, A=5, m=1, B=25, k=2; k=0 means no repeat.Integer + finite part: 0 + 5/10^1 = 1/2Repeating tail: 25/[10^1 × (10^2 − 1)]; complete value = 52/99",
+      "result": "Cross products: 5148 = 5148 → equal (true)"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "ledger": "s = 0.1666(6)Parsed: I=0, A=1666, m=4, B=6, k=1; k=0 means no repeat.Integer + finite part: 0 + 1666/10^4 = 833/5000Repeating tail: 6/[10^4 × (10^1 − 1)]; complete value = 1/6t = 0.166(66)Parsed: I=0, A=166, m=3, B=66, k=2; k=0 means no repeat.Integer + finite part: 0 + 166/10^3 = 83/500Repeating tail: 66/[10^3 × (10^2 − 1)]; complete value = 1/6",
+      "result": "Cross products: 6 = 6 → equal (true)"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "ledger": "s = 0.9(9)Parsed: I=0, A=9, m=1, B=9, k=1; k=0 means no repeat.Integer + finite part: 0 + 9/10^1 = 9/10Repeating tail: 9/[10^1 × (10^1 − 1)]; complete value = 1/1t = 1.Parsed: I=1, A=0, m=0, B=0, k=0; k=0 means no repeat.Integer + finite part: 1 + 0/10^0 = 1/1Repeating tail: 0 (no repeat); complete value = 1/1",
+      "result": "Cross products: 1 = 1 → equal (true)"
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "ledger": "s = 0.(0)Parsed: I=0, A=0, m=0, B=0, k=1; k=0 means no repeat.Integer + finite part: 0 + 0/10^0 = 0/1Repeating tail: 0/[10^0 × (10^1 − 1)]; complete value = 0/1t = 0Parsed: I=0, A=0, m=0, B=0, k=0; k=0 means no repeat.Integer + finite part: 0 + 0/10^0 = 0/1Repeating tail: 0 (no repeat); complete value = 0/1",
+      "result": "Cross products: 0 = 0 → equal (true)"
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "ledger": "s = 9999.9999(9999)Parsed: I=9999, A=9999, m=4, B=9999, k=4; k=0 means no repeat.Integer + finite part: 9999 + 9999/10^4 = 99999999/10000Repeating tail: 9999/[10^4 × (10^4 − 1)]; complete value = 10000/1t = 9999.9999Parsed: I=9999, A=9999, m=4, B=0, k=0; k=0 means no repeat.Integer + finite part: 9999 + 9999/10^4 = 99999999/10000Repeating tail: 0 (no repeat); complete value = 99999999/10000",
+      "result": "Cross products: 100000000 ≠ 99999999 → unequal (false)"
+    },
+    {
+      "lang": "en",
+      "clipboard": "success and denied-write manual transfer exact",
+      "host": "linux",
+      "sentinelVerified": true,
+      "feedback": "Correct prediction. 0.12(9) = 12/100 + 9/[100×9] = 13/100 = 0.13. Comparing 12 with 13 omits the repeating tail. Infinite expansion is unnecessary because subtraction already accounts for the entire tail exactly.",
+      "fallback": "Automatic copy unavailable. Full source is selected; use your system copy shortcut."
+    },
+    {
+      "lang": "en",
+      "selectFit": [
+        {
+          "label": "Hand case",
+          "textWidth": 78.06414794921875,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Official example 1",
+          "textWidth": 134.11227416992188,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Official example 2",
+          "textWidth": 134.11227416992188,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Official example 3",
+          "textWidth": 134.11227416992188,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Zero repeat",
+          "textWidth": 87.232177734375,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "Maximum lengths",
+          "textWidth": 136.2562713623047,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ],
+      "arrowReserve": 32,
+      "platform": "linux"
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "ledger": "s = 0.1(6)解析：I=0，A=1，m=1，B=6，k=1；k=0 表示无循环节。整数 + 有限小数：0 + 1/10^1 = 1/10循环尾项：6/[10^1 × (10^1 − 1)]；完整值 = 1/6t = 0.16(6)解析：I=0，A=16，m=2，B=6，k=1；k=0 表示无循环节。整数 + 有限小数：0 + 16/10^2 = 4/25循环尾项：6/[10^2 × (10^1 − 1)]；完整值 = 1/6",
+      "result": "交叉乘积：6 = 6 → 相等（true）"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "ledger": "s = 0.(52)解析：I=0，A=0，m=0，B=52，k=2；k=0 表示无循环节。整数 + 有限小数：0 + 0/10^0 = 0/1循环尾项：52/[10^0 × (10^2 − 1)]；完整值 = 52/99t = 0.5(25)解析：I=0，A=5，m=1，B=25，k=2；k=0 表示无循环节。整数 + 有限小数：0 + 5/10^1 = 1/2循环尾项：25/[10^1 × (10^2 − 1)]；完整值 = 52/99",
+      "result": "交叉乘积：5148 = 5148 → 相等（true）"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "ledger": "s = 0.1666(6)解析：I=0，A=1666，m=4，B=6，k=1；k=0 表示无循环节。整数 + 有限小数：0 + 1666/10^4 = 833/5000循环尾项：6/[10^4 × (10^1 − 1)]；完整值 = 1/6t = 0.166(66)解析：I=0，A=166，m=3，B=66，k=2；k=0 表示无循环节。整数 + 有限小数：0 + 166/10^3 = 83/500循环尾项：66/[10^3 × (10^2 − 1)]；完整值 = 1/6",
+      "result": "交叉乘积：6 = 6 → 相等（true）"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "ledger": "s = 0.9(9)解析：I=0，A=9，m=1，B=9，k=1；k=0 表示无循环节。整数 + 有限小数：0 + 9/10^1 = 9/10循环尾项：9/[10^1 × (10^1 − 1)]；完整值 = 1/1t = 1.解析：I=1，A=0，m=0，B=0，k=0；k=0 表示无循环节。整数 + 有限小数：1 + 0/10^0 = 1/1循环尾项：0（没有循环节）；完整值 = 1/1",
+      "result": "交叉乘积：1 = 1 → 相等（true）"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "ledger": "s = 0.(0)解析：I=0，A=0，m=0，B=0，k=1；k=0 表示无循环节。整数 + 有限小数：0 + 0/10^0 = 0/1循环尾项：0/[10^0 × (10^1 − 1)]；完整值 = 0/1t = 0解析：I=0，A=0，m=0，B=0，k=0；k=0 表示无循环节。整数 + 有限小数：0 + 0/10^0 = 0/1循环尾项：0（没有循环节）；完整值 = 0/1",
+      "result": "交叉乘积：0 = 0 → 相等（true）"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "ledger": "s = 9999.9999(9999)解析：I=9999，A=9999，m=4，B=9999，k=4；k=0 表示无循环节。整数 + 有限小数：9999 + 9999/10^4 = 99999999/10000循环尾项：9999/[10^4 × (10^4 − 1)]；完整值 = 10000/1t = 9999.9999解析：I=9999，A=9999，m=4，B=0，k=0；k=0 表示无循环节。整数 + 有限小数：9999 + 9999/10^4 = 99999999/10000循环尾项：0（没有循环节）；完整值 = 99999999/10000",
+      "result": "交叉乘积：100000000 ≠ 99999999 → 不相等（false）"
+    },
+    {
+      "lang": "zh",
+      "clipboard": "success and denied-write manual transfer exact",
+      "host": "linux",
+      "sentinelVerified": true,
+      "feedback": "预测正确。 0.12(9) = 12/100 + 9/[100×9] = 13/100 = 0.13。只比较 12 与 13 漏掉循环尾项；逐位无限展开也不是必需的，因为相减已经精确包含了整个尾巴。",
+      "fallback": "自动复制不可用。完整源码已选中，请用系统复制快捷键。"
+    },
+    {
+      "lang": "zh",
+      "selectFit": [
+        {
+          "label": "手算例子",
+          "textWidth": 64.0001220703125,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "官方示例 1",
+          "textWidth": 77.31214904785156,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "官方示例 2",
+          "textWidth": 77.31214904785156,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "官方示例 3",
+          "textWidth": 77.31214904785156,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "零循环节",
+          "textWidth": 64.0001220703125,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        {
+          "label": "最大位数",
+          "textWidth": 64.0001220703125,
+          "available": 194,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      ],
+      "arrowReserve": 32,
+      "platform": "linux"
+    },
+    {
+      "lang": "en",
+      "related": "#65: recognize number strings using grammar",
+      "url": "http://127.0.0.1:18792/leetcode/65/#step1",
+      "targetText": "02Turn the grammar into facts we can maintainWhich facts about the consumed characters determine what can follow? A prefix is the left part already read. After 4. we may append e; after 4.e we may not append a dot because the exponent must be an integer. At e, the old 4 cannot satisfy the new exponent’s digit requirement: we must wait for another digit.Use three Boolean flags (values true or false): digit means the current part has a digit; the part is the mantissa before e/E and the exponent afterward. dot records a legally accepted dot; exp records a legally accepted e/E. The demonstration adds dead for a fatal violation that no suffix can repair; Python returns false immediately instead.Digit: set digit=true. Sign: allowed only at the beginning or immediately after e/E. Dot: allowed only when dot=false and exp=false; leave digit unchanged. e/E: allowed only when exp=false and digit=true; then set exp=true and digit=false. Any other letter fails immediately.Invariant (a fact preserved after every legal character): the prefix has obeyed the grammar’s position rules; dot and exp exactly record punctuation seen; digit exactly records whether the current part has a digit. Thus a non-dead prefix can end when digit=true. With digit=false it still needs a digit, but later digits may complete it.Why is this sufficient? Start with an empty prefix and all three flags false. Each legal transition extends exactly an allowed integer, decimal, or exponent spelling, preserving the invariant. Each rejection is an irreparable grammar violation. At the end, a digit in the current part comp"
+    },
+    {
+      "lang": "en",
+      "related": "#483: describe consecutive powers with a geometric sum",
+      "url": "http://127.0.0.1:18792/leetcode/483/#step2",
+      "targetText": "033 · Derive what can be discardedFor a fixed m, how can one comparison reject many bases? Here m is the highest exponent and Sₘ(k) is the value of m + 1 ones. With n = 13 and m = 2: S₂(2) = 7, S₂(3) = 13, S₂(4) = 21. Increasing k increases every nonconstant term, so the sum is strictly increasing.Start with lower bound lo = 2. Since kᵐ ≤ n < 2ᴸ, a safe upper bound is hi = 2^ceil(L/m), where ceil rounds upward. For 13, L = 4 and m = 2, giving [2,4]. Try midpoint k = 3: start total at 1, then compute 1×3+1 = 4 and 4×3+1 = 13. It matches.The invariant—a guarantee before every comparison—is that every still-possible base for this m lies in the inclusive interval [lo,hi]. If the sum is too small, reject every base ≤ k and set lo = k + 1. If too large, reject every base ≥ k and set hi = k − 1. Return only on equality. When lo > hi, this m has no solution; try m − 1.A rounded floating-point mth root is not an answer: it approximates kᵐ and ignores the other positive terms. For n = 16, m = 2, floor(√16) = 4, but 1 + 4 + 16 = 21 ≠ 16. Even an estimated candidate needs exact verification. Here all arithmetic is integer arithmetic. Stop once total exceeds n, since multiplying by k and adding one can only increase it.Explore #410: binary search discards an interval using feasibility →"
+    },
+    {
+      "lang": "zh",
+      "related": "#65：用语法规则辨认数字字符串",
+      "url": "http://127.0.0.1:18792/leetcode/65/#step1",
+      "targetText": "02把语法变成可维护的事实要回答：读过的字符中，哪些事实决定后面还能接什么？前缀就是已经读过的左半段。在 4. 后还能接 e；在 4.e 后不能再接点，因为指数必须是整数。读到 e 时，旧的 4 不能满足新指数的数字要求：必须重新等待数字。用三个布尔标记（只有 true/false 的值）：digit 表示当前部分已有数字；当前部分在 e/E 前是尾数，之后是指数。dot 表示合法接受过点，exp 表示合法接受过 e/E。额外的 dead 只在演示中表示已经违规、任何后缀都无法修复；Python 会直接返回 false。数字：把 digit 设为 true。符号：只能位于整串开头或紧挨 e/E 后。点：仅在 dot=false 且 exp=false 时允许，不改变 digit。e/E：仅在 exp=false 且 digit=true 时允许，然后 exp=true、digit=false。其他字母立即失败。不变量（每次合法读入后仍成立的事实）：前缀没有违反语法的位置规则；dot 和 exp 准确记录已见标点；digit 准确记录当前部分是否已有数字。因此非 dead 的前缀在 digit=true 时可以结束；digit=false 时仍缺数字，但可能被后续数字补全。为什么足够？从空前缀开始，三个标记全为 false。上述每种合法转移恰好扩展整数、小数或指数的一种允许写法，因此保持不变量；每种拒绝都对应不可修复的语法违规。到末尾，若当前部分有数字，尾数与可选指数都完整；否则缺少规则要求的数字。这样既不会误收，也不会漏收。诱人的错误规则：“整串只要出现过数字就够了”。反例 1e+：1 是尾数数字，e 开始的新部分还没有数字。另一个反例 99e2.5：指数不允许点。float() 也不是本题判定器，例如它接受 nan、inf；本题语法不接受。"
+    },
+    {
+      "lang": "zh",
+      "related": "#483：用等比和描述连续幂次",
+      "url": "http://127.0.0.1:18792/leetcode/483/#step2",
+      "targetText": "033 · 推导可以丢弃的范围这一步要回答：固定 m 后，怎样一次排除许多进制？m 是最高指数，Sₘ(k) 是 m + 1 个 1 的值。以 n = 13、m = 2 为例：S₂(2) = 7，S₂(3) = 13，S₂(4) = 21。k 变大时，每个非恒定项都变大，所以和值严格递增。初始下界 lo = 2。因为 kᵐ ≤ n < 2ᴸ，可安全取上界 hi = 2^ceil(L/m)，其中 ceil 表示向上取整。对 13，L = 4、m = 2，得到 [2,4]。试中点 k = 3，先从 total = 1 开始，再做 1×3+1 = 4、4×3+1 = 13，恰好命中。维护的不变量（每次比较前都成立的保证）是：固定 m 下，尚未排除的所有可行进制都在闭区间 [lo,hi] 中。和值太小，就排除所有 ≤ k 的进制，令 lo = k + 1；和值太大，就排除所有 ≥ k 的进制，令 hi = k − 1。相等才返回。lo > hi 表示这个 m 无解，改试 m − 1。不能只把浮点 m 次方根取整当答案：它只近似 kᵐ，遗漏其余正项。例如 n = 16、m = 2，floor(√16) = 4，但 1 + 4 + 16 = 21 ≠ 16。即使找到近似候选也必须精确验证。这里完全使用整数；total 一旦超过 n 就停，因为继续乘 k 再加 1 只会更大。在 #410 学习另一种二分查找：由可行性排除半个区间 →"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "scroll": 320,
+      "selectWidth": 256,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "Maximum lengths",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "scroll": 390,
+      "selectWidth": 326,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "Maximum lengths",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "scroll": 736,
+      "selectWidth": 644,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "Maximum lengths",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "scroll": 1440,
+      "selectWidth": 908,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "Maximum lengths",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "scroll": 320,
+      "selectWidth": 256,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "最大位数",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "scroll": 390,
+      "selectWidth": 326,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "最大位数",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "scroll": 736,
+      "selectWidth": 644,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "最大位数",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "scroll": 1440,
+      "selectWidth": 908,
+      "selectFont": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selected": "最大位数",
+      "controls": [
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "",
+          "height": 48
+        },
+        {
+          "id": "undo",
+          "height": 48
+        },
+        {
+          "id": "add",
+          "height": 48
+        },
+        {
+          "id": "handReset",
+          "height": 48
+        },
+        {
+          "id": "preset",
+          "height": 48
+        },
+        {
+          "id": "prev",
+          "height": 48
+        },
+        {
+          "id": "next",
+          "height": 48
+        },
+        {
+          "id": "reset",
+          "height": 48
+        },
+        {
+          "id": "reveal",
+          "height": 48
+        },
+        {
+          "id": "copy",
+          "height": 48
+        }
+      ]
+    }
+  ],
+  "contrast": [
+    {
+      "selector": ".stage",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": ".hint",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".btn:disabled",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".btn.primary",
+      "color": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#langToggle button.active",
+      "color": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".readout",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "a",
+      "color": "rgb(110, 231, 255)",
+      "background": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "focus": {
+    "outline": "solid",
+    "width": "3px"
+  },
+  "zoom": "CSS root zoom 2 at 1440px; real Chromium rendering",
+  "requests": [
+    "http://127.0.0.1:18792/leetcode/972/",
+    "http://127.0.0.1:18792/leetcode/style.css?v=972-1",
+    "http://127.0.0.1:18792/leetcode/972/style.css?v=972-1",
+    "http://127.0.0.1:18792/leetcode/common.js?v=972-1",
+    "http://127.0.0.1:18792/leetcode/972/copy.js?v=972-1",
+    "http://127.0.0.1:18792/leetcode/972/core.js?v=972-1",
+    "http://127.0.0.1:18792/leetcode/972/python-code.js?v=972-1",
+    "http://127.0.0.1:18792/leetcode/972/app.js?v=972-1",
+    "http://127.0.0.1:18792/leetcode/65/",
+    "http://127.0.0.1:18792/leetcode/style.css?v=lc-ids1",
+    "http://127.0.0.1:18792/leetcode/65/style.css?v=65-1",
+    "http://127.0.0.1:18792/leetcode/common.js?v=lc2916-astra2",
+    "http://127.0.0.1:18792/leetcode/65/copy.js?v=65-1",
+    "http://127.0.0.1:18792/leetcode/65/core.js?v=65-1",
+    "http://127.0.0.1:18792/leetcode/65/python-code.js?v=65-1",
+    "http://127.0.0.1:18792/leetcode/65/app.js?v=65-1",
+    "http://127.0.0.1:18792/leetcode/483/",
+    "http://127.0.0.1:18792/leetcode/style.css",
+    "http://127.0.0.1:18792/leetcode/483/style.css?v=483-1",
+    "http://127.0.0.1:18792/leetcode/common.js",
+    "http://127.0.0.1:18792/leetcode/483/copy.js?v=483-1",
+    "http://127.0.0.1:18792/leetcode/483/core.js?v=483-1",
+    "http://127.0.0.1:18792/leetcode/483/python-code.js?v=483-1",
+    "http://127.0.0.1:18792/leetcode/483/app.js?v=483-1"
+  ],
+  "limits": [
+    "No physical mobile device or public deployment tested",
+    "No independent review or learner study"
+  ]
+}

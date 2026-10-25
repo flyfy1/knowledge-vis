@@ -1,0 +1,57 @@
+{
+  "freshCanonicalChecks": [
+    [
+      "0.(27)",
+      "0.2(72)",
+      true,
+      true
+    ],
+    [
+      "0.1234(1)",
+      "0.1234",
+      false,
+      false
+    ],
+    [
+      "0.(0001)",
+      "0.000(1000)",
+      true,
+      true
+    ],
+    [
+      "0.",
+      "0.(0)",
+      true,
+      true
+    ],
+    [
+      "9999.9999(9999)",
+      "9999.9999",
+      false,
+      false
+    ],
+    [
+      "0.(06)",
+      "0.0(60)",
+      true,
+      true
+    ]
+  ],
+  "manualValues": {
+    "0.(27)": "3/11",
+    "0.2(72)": "3/11",
+    "counterexampleDifference": "1/90000"
+  },
+  "servedAssetSha256": {
+    "index.html": "3a3e550a8ba2a68a5c2170146fc1ffc56231b9891cc4705a7b2da8827c621d50",
+    "app.js": "3636528f548e48a2be6a50370d9c1e54d821c7d935fba0007b19d7b513a473db",
+    "copy.js": "12bff2f91c4ce921fdee9ba7eb5c302ebf20f1be1320a23145380e8f89aee37b",
+    "core.js": "14eb7b071981e1a846041e6cf509510e1fdfe7339e82ca53b5aac8114a204cec",
+    "python-code.js": "25bfea23bae1651660275bb17ee96de06573f989a9b8645da832224fb97f2d0c",
+    "solution.py": "5a12b666978e34d384e92f744e63f0b2733356b1c9cc9de8f184bf8a5263e075",
+    "style.css": "3ab962cf72632788999faff5b03f8e8f4b6ef4ecb069331f84197c15ac6930c9",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "mutation": "Arguments are immutable strings; helper-local Fraction values; repeated calls retain no state."
+}

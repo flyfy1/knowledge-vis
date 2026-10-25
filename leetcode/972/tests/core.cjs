@@ -1,0 +1,8 @@
+const fs=require('fs'),path=require('path'),assert=require('assert'),vm=require('vm');
+const root=path.resolve(__dirname,'..'),out=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');
+const C=require('../core.js'),data=JSON.parse(fs.readFileSync(path.join(out,'fixtures.json')));
+for(const {s,exact} of data){const p=C.parse(s),v=C.stages(s);assert.equal(C.format(v[2]),exact);assert.equal(C.format(v[0]),`${p.I}/1`);assert(C.equal(v[1],C.frac(p.I*C.pow(p.m)+p.A,C.pow(p.m))));assert(v[1].n*v[2].d<=v[2].n*v[1].d);}
+const expected=[true,true,true,true,true,false];C.presets.forEach(([a,b],i)=>assert.equal(C.equal(C.stages(a)[2],C.stages(b)[2]),expected[i]));
+const context={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'python-code.js'),'utf8'),context);assert.equal(context.window.PYTHON_SOURCE,fs.readFileSync(path.join(root,'solution.py'),'utf8'));
+const copy=fs.readFileSync(path.join(root,'copy.js'),'utf8');const ast=require('acorn').parse(copy,{ecmaVersion:'latest'});const object=ast.body.find(n=>n.type==='ExpressionStatement'&&n.expression.type==='AssignmentExpression').expression.right;const keys=object.properties.map(p=>p.key.name||p.key.value);assert.equal(keys.length,new Set(keys).size);vm.runInNewContext(copy,context);for(const [k,v]of Object.entries(context.window.LESSON_COPY))assert(Array.isArray(v)&&v.length===2&&v.every(x=>typeof x==='string'&&x.length),k);
+fs.writeFileSync(path.join(out,'core.json'),JSON.stringify({result:'pass',fixtures:data.length,presets:6,sourceParity:true,uniqueCopyKeys:keys.length},null,2));console.log('Core, fixtures, presets, source mirror, copy shape/duplicates: pass');

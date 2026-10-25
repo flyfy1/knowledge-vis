@@ -1,0 +1,86 @@
+[
+  {
+    "lang": "en",
+    "width": 320,
+    "control": {
+      "top": 129.28125,
+      "navBottom": 70,
+      "text": "Maximum lengths"
+    },
+    "hand": "Appended 2/4 sixes; partial sum = 83/500; gap to 1/6 = 1/1500."
+  },
+  {
+    "lang": "en",
+    "width": 390,
+    "control": {
+      "top": 128.890625,
+      "navBottom": 70,
+      "text": "Maximum lengths"
+    },
+    "hand": "Appended 2/4 sixes; partial sum = 83/500; gap to 1/6 = 1/1500."
+  },
+  {
+    "lang": "en",
+    "width": 1440,
+    "control": {
+      "top": 134.8125,
+      "navBottom": 70,
+      "text": "Maximum lengths"
+    },
+    "hand": "Appended 2/4 sixes; partial sum = 83/500; gap to 1/6 = 1/1500."
+  },
+  {
+    "lang": "zh",
+    "width": 320,
+    "control": {
+      "top": 128.640625,
+      "navBottom": 70,
+      "text": "最大位数"
+    },
+    "hand": "已补 2/4 个 6；有限部分和 = 83/500；距离 1/6 还差 1/1500。"
+  },
+  {
+    "lang": "zh",
+    "width": 390,
+    "control": {
+      "top": 128.890625,
+      "navBottom": 70,
+      "text": "最大位数"
+    },
+    "hand": "已补 2/4 个 6；有限部分和 = 83/500；距离 1/6 还差 1/1500。"
+  },
+  {
+    "lang": "zh",
+    "width": 1440,
+    "control": {
+      "top": 135.0625,
+      "navBottom": 70,
+      "text": "最大位数"
+    },
+    "hand": "已补 2/4 个 6；有限部分和 = 83/500；距离 1/6 还差 1/1500。"
+  },
+  {
+    "pairs": [
+      {
+        "selector": ".trace-pair li.current",
+        "foreground": "rgb(255, 180, 84)",
+        "background": "rgb(22, 27, 34)",
+        "ratio": 9.809435643476732
+      },
+      {
+        "selector": ".hint",
+        "foreground": "rgb(154, 167, 184)",
+        "background": "rgb(13, 17, 23)",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "selector": ".step-nav a.active",
+        "foreground": "rgb(13, 17, 23)",
+        "background": "rgb(110, 231, 255)",
+        "ratio": 13.100679028115637
+      }
+    ],
+    "focusColor": "#ffb454",
+    "focusAgainstPanelRatio": 9.809435643476732
+  }
+]
