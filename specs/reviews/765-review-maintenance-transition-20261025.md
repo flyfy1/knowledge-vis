@@ -73,3 +73,27 @@ The final launch result alone does not prove a live resumed worker. The dispatch
 must verify its actual process and saved phase after execution. This review did
 not inspect the Pi process, confirm its STOP boundary, alter policy/state/runtime,
 run browser checks, commit, or deploy. Only this review report was written.
+
+## Dispatcher execution and resumed handle
+
+Executed at 2026-10-25 11:33:38 UTC after the original runner and #780 author
+had exited normally. Saved #780 candidate
+`38db1038f63c3334adb3c36ae671569694228114` remains `review_pending`/`review`.
+The imported source was `add5045aec55cc12f5d1fcb72a5793faa61c7cc0`; the transferred
+helper hash matched the review above. The [completed receipt](765-evidence/mac-margin-maintenance-20261025/reopen-receipt.json)
+records central commit `5c9382133b5023c51de46b457a2e5f8f8f3dfda9`, retained prior
+acceptance, and the durable progress backup. No served-content backup was made.
+
+The dispatcher reread the actual launcher: continuous mode retains all 984 IDs,
+the existing production root and `--publish-every 100`. After execution, PID
+1053758 and its child 1054004 were confirmed live. The saved current run is
+`765-fix-f62a2cf56e90`; STOP is absent, receipt is completed, #780 remains awaiting
+review, the release ledger still has 103 entries and no pending release.
+
+The isolated Mac proposal's [receipt](765-evidence/mac-margin-proposal-20261025/proposal.json)
+and [checks](765-evidence/mac-margin-proposal-20261025/checks.json) show that changing
+only the English label made the unchanged original full suite pass, including
+the native 200% zoom and later checks. All 869 proposal/dependency files remained
+unchanged during testing. These are feasibility results, not acceptance of the
+forthcoming formal candidate. That candidate still needs its separate normal
+review and exact-candidate Mac verification before integration/publication.
