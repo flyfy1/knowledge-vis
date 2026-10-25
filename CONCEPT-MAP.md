@@ -1426,3 +1426,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Cycle lower bound | `leetcode/765/#step3` | At most one component is added per swap; greedy reaches n components in n-c swaps. |
 
 <!-- /leetcode-765-campaign -->
+
+
+<!-- leetcode-768-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| safe partition boundaries | `leetcode/768/#step1` | A cut is safe exactly when the entire left maximum does not exceed the entire right minimum. |
+| prefix maximum and suffix minimum | `leetcode/768/#step2` | Reuse extrema in two linear passes instead of rescanning every side. |
+| maximality of all safe cuts | `leetcode/768/#step3` | All safe boundaries coexist; every legal partition uses only safe boundaries. |
+
+<!-- /leetcode-768-campaign -->
