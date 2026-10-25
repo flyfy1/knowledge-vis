@@ -291,6 +291,20 @@ conditions. A vivid scenario is useful only when its rules match the problem;
 keep the original formal contract and distinguish teaching adaptations. Review
 missing causal bridges as required findings regardless of algorithm correctness.
 
+Apply the declared reader prerequisites to baseline code as well as the final
+solution. When an unfamiliar helper API or compact expression obscures what a
+line does, give a short local explanation or a tiny equivalent example in both
+languages. For a basic-Python reader, consider enumeration helpers, set updates
+and bit tests/counts; explain the operations actually used, rather than adding a
+general syntax tutorial. Familiar loops need no repeated introduction.
+
+When replacing repeated sums or scans with an accumulator, prefer a short numeric
+trace from the lesson's existing example: show the accumulator before the update,
+the term added or removed, the value afterward, and when the destination is
+written. Explain direction or boundary exclusions where they affect the result.
+Adjacent prose or a small table is sufficient; reuse existing evidence when it
+already makes this bridge clear.
+
 ## Non-mutating metadata preflight
 
 `lesson-entry.json` complexity is exactly one nonempty string covering time and
