@@ -1,0 +1,480 @@
+{
+  "captured_at": "2026-10-25T21:38:13.243963+00:00",
+  "state_status": "running",
+  "current": {
+    "problem_id": "843",
+    "stage": "fix",
+    "started_at": "2026-10-25T21:37:19.188693+00:00",
+    "run_id": "843-fix-081c2d94c98e"
+  },
+  "expected_head": "c71cac9683d6569fd3d2c593ce8e271b5a229d0e",
+  "entry843": {
+    "status": "changes_required",
+    "rounds": 2,
+    "new": true,
+    "phase": "fix",
+    "reviews": [
+      {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/843-review-1-7f018940.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Independent Python prediction and all 13 preset rounds verified.",
+          "Exact source, download, clipboard and native fallback parity passed.",
+          "Bilingual controls, rewind, reset, keyboard and device layouts checked; screenshots inspected.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "97.5/100. No required findings. Extreme CSS zoom causes minor reading friction; browser-chrome zoom and physical devices remain unverified. Acceptance is separate from publication.",
+        "run_id": "843-review-3eddda02bfb3",
+        "candidate": "617cb7c7e49f533b46c66dc9a53e7c6cefd71cbf",
+        "candidate_sha256": "1d250a986544479a34a24ca1c0f7cbacd48fb80f699dd0a6d5e9822ef59b04c7",
+        "weighted_score": 97.5,
+        "round": 1,
+        "commit": "3cf37ae3fabd1e6c1cc8da54015b3569d085df75"
+      },
+      {
+        "outcome": "changes_required",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [
+          "843-R2-SELECT01"
+        ],
+        "report_path": "specs/reviews/843-review-2-4d2abc1d.md",
+        "evidence": [
+          "Cold browser walkthrough saved before repository source audit.",
+          "Canonical Python, fresh example, budget regressions and metadata preflight passed.",
+          "Exact source parity and native clipboard fallback passed in both locales.",
+          "English selected scenario labels visibly clip at 320/390 px; screenshots retained.",
+          "843-BUDGET-R1 closed against this candidate."
+        ],
+        "detail": "97.5/100; acceptance prevented by required scenario-label readability fix. No implementation changed.",
+        "run_id": "843-review-9015ddd39953",
+        "candidate": "f6e2500dc87fe0a50a3258af80bf46d761ca1be8",
+        "candidate_sha256": "710772e292d529e0f6a042c21385b8423c4e74e480ee5ca9e61826e6e07619dd",
+        "weighted_score": 97.5,
+        "round": 2,
+        "commit": "c71cac9683d6569fd3d2c593ce8e271b5a229d0e"
+      }
+    ],
+    "author_runs": [
+      "843-author-5ecd89a97e60",
+      "843-fix-d56cf6178cb9"
+    ],
+    "prior_report": "specs/reviews/843-review-2-4d2abc1d.md",
+    "candidate": "f6e2500dc87fe0a50a3258af80bf46d761ca1be8"
+  },
+  "target_review": {
+    "outcome": "changes_required",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      3
+    ],
+    "required_open": [
+      "843-R2-SELECT01"
+    ],
+    "report_path": "specs/reviews/843-review-2-4d2abc1d.md",
+    "evidence": [
+      "Cold browser walkthrough saved before repository source audit.",
+      "Canonical Python, fresh example, budget regressions and metadata preflight passed.",
+      "Exact source parity and native clipboard fallback passed in both locales.",
+      "English selected scenario labels visibly clip at 320/390 px; screenshots retained.",
+      "843-BUDGET-R1 closed against this candidate."
+    ],
+    "detail": "97.5/100; acceptance prevented by required scenario-label readability fix. No implementation changed.",
+    "run_id": "843-review-9015ddd39953",
+    "candidate": "f6e2500dc87fe0a50a3258af80bf46d761ca1be8",
+    "candidate_sha256": "710772e292d529e0f6a042c21385b8423c4e74e480ee5ca9e61826e6e07619dd",
+    "weighted_score": 97.5,
+    "round": 2,
+    "commit": "c71cac9683d6569fd3d2c593ce8e271b5a229d0e"
+  },
+  "candidate": "f6e2500dc87fe0a50a3258af80bf46d761ca1be8",
+  "review_commit": "c71cac9683d6569fd3d2c593ce8e271b5a229d0e",
+  "candidate_lesson_tree": "0d3aec9369df854cd6304ddd73fa78bb42417a24",
+  "review_lesson_tree": "0d3aec9369df854cd6304ddd73fa78bb42417a24",
+  "review_changed_paths": [
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/browser-results.json",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/budget-browser-results.json",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/cold-round.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/cold-start.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/core-results.json",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-1280-preset6-settled.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-1280-preset8-settled.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-1440-exhausted10.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-1440-found11.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-1440-known10.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-1440-trace.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-1440-zoom200.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-dense-table-left.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-dense-table-right.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-exhausted10.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-found11.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-known10.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-long-select.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-preset6-settled.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-preset8-settled.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-table-left-settled.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-table-right-settled.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-trace.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-zoom200.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-390-preset6-settled.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-390-preset8-settled.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-390-top.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-390-trace.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-390-zoom200.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-736-trace.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-hand.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-prediction.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-table-right.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-terminal.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/focused-results.json",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/green.json",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/solution-results.json",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-1440-exhausted10.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-1440-found11.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-1440-known10.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-1440-trace.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-1440-zoom200.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-dense-table-left.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-dense-table-right.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-exhausted10.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-found11.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-known10.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-long-select.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-table-left-settled.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-table-right-settled.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-trace.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-zoom200.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-390-top.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-390-trace.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-390-zoom200.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-736-trace.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-hand.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-prediction.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-table-right.png",
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-terminal.png",
+    "specs/reviews/843-review-2-4d2abc1d.md"
+  ],
+  "review_evidence_inventory": {
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/browser-results.json": {
+      "sha256": "13d2f3432cb60ec7e748763277e28d168f55549f1da7e6df872ca74f71e1d9d9",
+      "bytes": 24723,
+      "archived": true
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/budget-browser-results.json": {
+      "sha256": "21449e86ade7b5c5803dce9f127c03877511d31548674a2056d21e6a4327825a",
+      "bytes": 17172,
+      "archived": true
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/cold-round.png": {
+      "sha256": "7c9fc33bf8aaca7482d11cb0dc4125a0f93282c358f7c30ea97a61877bf5d2fd",
+      "bytes": 736047,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/cold-start.png": {
+      "sha256": "cb2ec368204a21f12f80e912475f9931df97fa3d8d98875d590e9630d0aaa983",
+      "bytes": 743515,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/core-results.json": {
+      "sha256": "1bb2eae262fa394f1e08b8758ee77e4617c49c224c378213b7a27d54160a96af",
+      "bytes": 214,
+      "archived": true
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-1280-preset6-settled.png": {
+      "sha256": "3e6a6de9bf8f72719881c670a397b1a07ca853be4ef5944fa40d742f1b253a01",
+      "bytes": 178284,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-1280-preset8-settled.png": {
+      "sha256": "166271b3af9f62900c48713678471d1dc52d51fa3cada503ee55e004b82bbd02",
+      "bytes": 179471,
+      "archived": true
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-1440-exhausted10.png": {
+      "sha256": "da78c28a672c075d60c2e636eac2218ce77a2e8c39e7904655705970be8f15b2",
+      "bytes": 171267,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-1440-found11.png": {
+      "sha256": "91efa8b0ebefc36cd9d88dbff2ea972f21ca66172f0702d7b401ac22bbbd093b",
+      "bytes": 167147,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-1440-known10.png": {
+      "sha256": "dccbc1aad8569d269066fd6cbebc613e3955996fbd723caeb01cb37b0f9f0c85",
+      "bytes": 132805,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-1440-trace.png": {
+      "sha256": "e8339fb82a77f450ff810371def43cdd50e72cd2f4709463f8c7215ed8b2eccc",
+      "bytes": 84695,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-1440-zoom200.png": {
+      "sha256": "94d678c2f77366aa9e8fa90ef810d9b0293bcbec3bc4ab72b64c4c7fde7959cd",
+      "bytes": 104622,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-dense-table-left.png": {
+      "sha256": "1f9263b36185b048667b39ab3cf37c51223f37a7aedff755cc436c19b20c2955",
+      "bytes": 67689,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-dense-table-right.png": {
+      "sha256": "159844357ea15858a93855d7cdfb6061e95dbc57dd13b6e4ae3af3049a89625e",
+      "bytes": 69799,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-exhausted10.png": {
+      "sha256": "2021fc9c8275c7fae403e7729db6d4c299c460564370311f3a8efdea439ea129",
+      "bytes": 65604,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-found11.png": {
+      "sha256": "188cc7bf1b846fdf01176dd8886e053670231eaeebfc588d83612f2b5e1c855a",
+      "bytes": 66582,
+      "archived": true
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-known10.png": {
+      "sha256": "f844c9e97297c673710d9aa1eb0a9b9ae4d9b1736de77f515dca8827a288e224",
+      "bytes": 65113,
+      "archived": true
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-long-select.png": {
+      "sha256": "d06d20ddb4a3c354da6fa53ecd1fe977291d1752634c44ef003d9d722b2e8ceb",
+      "bytes": 88275,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-preset6-settled.png": {
+      "sha256": "a2dc143ff9dccbe39281fcbc8e20fea7ee6c31aa18b05b9ee8deb1eaee1c42ae",
+      "bytes": 87913,
+      "archived": true
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-preset8-settled.png": {
+      "sha256": "cf33c463585235421d41228426ed7ea4d1192a160c7ad9b6b3e7c1227fe55f80",
+      "bytes": 88143,
+      "archived": true
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-table-left-settled.png": {
+      "sha256": "1d5237c0117e37337adcfdfe208a8d73041afab8a7af95216fe377fe24a3d91d",
+      "bytes": 43686,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-table-right-settled.png": {
+      "sha256": "735dc1232a0d06fab9add14e7b3ae9ca90fd77f0900b056ba30390636f7c7b75",
+      "bytes": 34758,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-trace.png": {
+      "sha256": "dd3d65cf630c1a94371b32b76c6357848e3e065d7d5b173c93795cf4ac934163",
+      "bytes": 54514,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-320-zoom200.png": {
+      "sha256": "c22151b9e805112ec3c3d8f3b5bb724655de9b25ee2646733dbea0b9980b9cc6",
+      "bytes": 27577,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-390-preset6-settled.png": {
+      "sha256": "b3fd0ffb79552dece7ed43976f957eeb1d951f0ffda65604c7c23dea3a9d2b92",
+      "bytes": 103017,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-390-preset8-settled.png": {
+      "sha256": "f317324ea78b4acc23b5efbf3f6448d15962a881a2a3cbe570e93f0eef4ca2e6",
+      "bytes": 103946,
+      "archived": true
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-390-top.png": {
+      "sha256": "0e098c039fda520bf88950f55df290fd0072990fada6c744f8c480c6ce7b7401",
+      "bytes": 96244,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-390-trace.png": {
+      "sha256": "b08dea830f2685e214157846c2a1f994ed7c4df65bca33fa819723c9d087eeb9",
+      "bytes": 58366,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-390-zoom200.png": {
+      "sha256": "fcd0988c97a700cc215b3fc16f77307e6b8b0d8c1f92f20a659af93758e6690c",
+      "bytes": 32457,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-736-trace.png": {
+      "sha256": "61bd74440026c50aa5d4f3d0062d4810ad0d12c9588356ba10a6102228aed116",
+      "bytes": 80516,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-hand.png": {
+      "sha256": "e7af0c66a8aa6a7e11e65500628b89c2c8240d6b632560104852e601c8fdb993",
+      "bytes": 78365,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-prediction.png": {
+      "sha256": "5ba8dd1613a63a2df9e62ab40a6e0aea80b66e23a4caa4b09b232f09b171c3df",
+      "bytes": 69792,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-table-right.png": {
+      "sha256": "7b0b301032fd1b36a2f955b947fb45ab901238a3065eab8d6f474aaea5c280df",
+      "bytes": 83837,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/en-terminal.png": {
+      "sha256": "39c7507a7ca592120bc128aa7c688813584f8e02ae1d3b61604c1f0821f1c737",
+      "bytes": 83834,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/focused-results.json": {
+      "sha256": "b2d8043014082c1824141c6e6b048a04f6bf0d360bc86290423179bada8d8954",
+      "bytes": 3634,
+      "archived": true
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/green.json": {
+      "sha256": "25d39c3d1724d5abb01b761c561b1acae61312ad235cb7fa916603076d8baa2c",
+      "bytes": 248646,
+      "archived": true
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/solution-results.json": {
+      "sha256": "869f0d57e4a304e636950a0a99171bac8d2610d052072c41b4cf45f1c9997a04",
+      "bytes": 617,
+      "archived": true
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-1440-exhausted10.png": {
+      "sha256": "2bce68e61abd39aca79f9a4783fd8f8f35c0b81289ed4118199fcf1edc6310a2",
+      "bytes": 195711,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-1440-found11.png": {
+      "sha256": "887d64aa66faeccccd5800dec52f080da7b9a72c3e4c4b20daaff767322dde3d",
+      "bytes": 190226,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-1440-known10.png": {
+      "sha256": "6145aa71d274d73329cdb85a4a190ca39b6cd45c3e86b8b82a583f406940b23b",
+      "bytes": 154950,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-1440-trace.png": {
+      "sha256": "5b4ec016faa4049c84bcee04301d33835e39d453fb66fad0c096c03a7da63288",
+      "bytes": 81874,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-1440-zoom200.png": {
+      "sha256": "c6253f56c2e0fb4041278302497da60148970a622c35f40d23dd9a0eada2bceb",
+      "bytes": 170245,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-dense-table-left.png": {
+      "sha256": "80edfcf49d6c51a9667d0af23c95a1b500c6a2373ad5cdcf4b1b16a2ac865014",
+      "bytes": 88532,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-dense-table-right.png": {
+      "sha256": "7e00a2f30c8ee38141ab4cb5ea9e585a2e7c236a84b50371092eb9eae123e2a8",
+      "bytes": 97439,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-exhausted10.png": {
+      "sha256": "255c6a6dc3ef86b9334c1da55b713eb29d30b71556405de7552f14bca4b41fef",
+      "bytes": 100622,
+      "archived": true
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-found11.png": {
+      "sha256": "f98c48cfe881bc6efa8944774bd69f2bf9673a868e399276011654ef3a70ae88",
+      "bytes": 98254,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-known10.png": {
+      "sha256": "36ddf023ed6fa2b89d97dc10adc4fb89d39d7c7c576ee278ade3a5257b836a1b",
+      "bytes": 93127,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-long-select.png": {
+      "sha256": "fe53ade1e2a9c6b61109cf6091163d0042c51c7ac61d5b45a3141342b794a642",
+      "bytes": 117036,
+      "archived": true
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-table-left-settled.png": {
+      "sha256": "555ac2b6de9bf31203535b7d7aad56f9c91bdf5ae3a99f1cc959cacc21b08cd5",
+      "bytes": 45264,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-table-right-settled.png": {
+      "sha256": "3a5cea6516c843271f9e0e1be33782b649a2b19f1028a3a8f934ecfcd65198eb",
+      "bytes": 33675,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-trace.png": {
+      "sha256": "d1f65e0c7a119c7ea2843e9fd201ad2b547f2747c2d8408b6349e2b85ffae04d",
+      "bytes": 59437,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-320-zoom200.png": {
+      "sha256": "60378a42d94edc922d32c79daf2248e7b59c5b849799318dc2d94472504079c0",
+      "bytes": 38226,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-390-top.png": {
+      "sha256": "c604a11a2aef2b03c53da3be2474bf6bfae1a8ce57c9654fc5cd203760f79770",
+      "bytes": 112123,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-390-trace.png": {
+      "sha256": "bda5c3843bc268733548a007f0ce6ac8d19758d42172ea824ba9a8c4c28dd636",
+      "bytes": 63619,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-390-zoom200.png": {
+      "sha256": "ece3a872de394e019bb050ccf2041b53880a02ebfed6bd8678e6e766a55eeed3",
+      "bytes": 46285,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-736-trace.png": {
+      "sha256": "018f93e0afaa595ef9e5c5ad647f29173ab02a229b196b6d78cfc6c3304d0f3f",
+      "bytes": 76883,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-hand.png": {
+      "sha256": "24014bce6b133f4524ad405bb9a7e22a55443ddd08400b23e53ce7b537f711e3",
+      "bytes": 112477,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-prediction.png": {
+      "sha256": "50e9510a22614df93b6e0d642c8052d875e0bf7eb9c93959d44fd27d2eb364da",
+      "bytes": 80256,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-table-right.png": {
+      "sha256": "da50e63813cd11fa85e6119be12a25fc771fc54ce23189b4247ae23e934b3077",
+      "bytes": 111315,
+      "archived": false
+    },
+    "specs/reviews/843-evidence/843-review-2-4d2abc1d/zh-terminal.png": {
+      "sha256": "1b5c4ace75f1cb831d93cab1013aa992cb368034310302be53f81e6c139b348a",
+      "bytes": 108466,
+      "archived": false
+    }
+  },
+  "stop_present": false
+}

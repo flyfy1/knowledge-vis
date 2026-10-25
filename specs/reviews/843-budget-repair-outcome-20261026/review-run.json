@@ -1,0 +1,36 @@
+{
+  "id": "843-review-9015ddd39953",
+  "problem_id": "843",
+  "role": "review",
+  "started_at": "2026-10-25T21:32:14.948682+00:00",
+  "status": "completed",
+  "candidate": "f6e2500dc87fe0a50a3258af80bf46d761ca1be8",
+  "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/843-review-9015ddd39953",
+  "session_ids": [
+    "01a174fa-7e25-7373-9809-3ca749b33d82"
+  ],
+  "finished_at": "2026-10-25T21:37:07.002579+00:00",
+  "result": {
+    "outcome": "changes_required",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      3
+    ],
+    "required_open": [
+      "843-R2-SELECT01"
+    ],
+    "report_path": "specs/reviews/843-review-2-4d2abc1d.md",
+    "evidence": [
+      "Cold browser walkthrough saved before repository source audit.",
+      "Canonical Python, fresh example, budget regressions and metadata preflight passed.",
+      "Exact source parity and native clipboard fallback passed in both locales.",
+      "English selected scenario labels visibly clip at 320/390 px; screenshots retained.",
+      "843-BUDGET-R1 closed against this candidate."
+    ],
+    "detail": "97.5/100; acceptance prevented by required scenario-label readability fix. No implementation changed."
+  }
+}
