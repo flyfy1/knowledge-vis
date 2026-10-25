@@ -1,0 +1,6 @@
+{"running": ["node", "/tmp/leetcode-679-preset-probe-20261025.cjs"], "candidate": "bc79795d3b2b0b151533594f9f3b95af2d64f526"}
+Traceback (most recent call last):
+  File "/tmp/leetcode-679-repair-native-runner-20261025.py", line 16, in <module>
+    env['OUTPUT_DIR']=str(out/Path(cmd[-1]).stem);pathlib.Path(env['OUTPUT_DIR']).mkdir(exist_ok=True)
+                              ^^^^
+NameError: name 'Path' is not defined
