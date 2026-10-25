@@ -1,0 +1,12 @@
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok(fit.text<=fit.available)
+
+    at /private/tmp/leetcode-765-778-candidate-20261025/leetcode/765/tests/test_browser.cjs:63:301 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

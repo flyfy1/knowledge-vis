@@ -1,0 +1,8 @@
+AssertionError [ERR_ASSERTION]: [{"width":320,"lang":"en","preset":3,"roundtrip":true,"label":"8 people · counterexample","font":"16.7px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif","clientWidth":260,"padding":["15px","15px"],"text":208.35833740234375,"dom":208.359375,"available":206,"pass":false}]
+    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/765/tests/test_margin.cjs:39:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '=='
+}
