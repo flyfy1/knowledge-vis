@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "fixtures": 704,
+  "frames": 3291,
+  "checks": [
+    "simulation vs independent Python fixtures",
+    "every intermediate swap, check, target and count",
+    "snapshot isolation",
+    "preset promises",
+    "exact offline mirror",
+    "AST duplicate key detection and bilingual pair shape"
+  ]
+}

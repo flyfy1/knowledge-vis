@@ -1,0 +1,2964 @@
+{
+  "host": "darwin",
+  "url": "http://127.0.0.1:18770/leetcode/782/",
+  "checks": [
+    "en: hand moves/undo/reset; all seven presets + every frame reverse/replay; prediction all options/change; exact source/copy/download",
+    "zh: hand moves/undo/reset; all seven presets + every frame reverse/replay; prediction all options/change; exact source/copy/download",
+    "Locale preserves all experiment/reveal states; native fallback clipboard exact in both locales with distinct verified sentinels; keyboard/focus; local/related anchors; reduced motion/forced colors; blocked storage; file:// offline; no asset/console errors"
+  ],
+  "semantic": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "terminal": "All adjacent cells differ. Minimum: 2 swaps; the current board witnesses the lower bound.",
+      "read": "Frame 10/10 · Swaps performed: 2 · Final result: 2"
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "terminal": "All adjacent cells differ. Minimum: 1 swaps; the current board witnesses the lower bound.",
+      "read": "Frame 8/8 · Swaps performed: 1 · Final result: 1"
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "terminal": "All adjacent cells differ. Minimum: 0 swaps; the current board witnesses the lower bound.",
+      "read": "Frame 6/6 · Swaps performed: 0 · Final result: 0"
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "terminal": "Unbalanced row types: their label sequence has 2 ones for n=2; no alternating target is possible. Return −1.",
+      "read": "Frame 3/3 · Swaps performed: 0 · Final result: -1"
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "terminal": "Failed at (r=1, c=1): 0 ^ 0 ^ 1 ^ 0 = 1. Reordering cannot repair this; return −1.",
+      "read": "Frame 2/2 · Swaps performed: 0 · Final result: -1"
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "terminal": "Unbalanced column types: their label sequence has 1 ones for n=4; no alternating target is possible. Return −1.",
+      "read": "Frame 5/5 · Swaps performed: 0 · Final result: -1"
+    },
+    {
+      "locale": "en",
+      "preset": 6,
+      "terminal": "All adjacent cells differ. Minimum: 0 swaps; the current board witnesses the lower bound.",
+      "read": "Frame 7/7 · Swaps performed: 0 · Final result: 0"
+    },
+    {
+      "locale": "en",
+      "choice": 0,
+      "feedback": "Reconsider. Row labels 101 already alternate, costing 0. First row 110 has two ones, so odd n=3 forces target 101 rather than 010. Positions 1 and 2 mismatch; swapping those columns gives 101 / 010 / 101. Total: 1. Having two row types does not mean columns are ordered, and odd size restricts the start rather than making the board impossible."
+    },
+    {
+      "locale": "en",
+      "choice": 1,
+      "feedback": "Reconsider. Row labels 101 already alternate, costing 0. First row 110 has two ones, so odd n=3 forces target 101 rather than 010. Positions 1 and 2 mismatch; swapping those columns gives 101 / 010 / 101. Total: 1. Having two row types does not mean columns are ordered, and odd size restricts the start rather than making the board impossible."
+    },
+    {
+      "locale": "en",
+      "choice": 2,
+      "feedback": "Correct. Row labels 101 already alternate, costing 0. First row 110 has two ones, so odd n=3 forces target 101 rather than 010. Positions 1 and 2 mismatch; swapping those columns gives 101 / 010 / 101. Total: 1. Having two row types does not mean columns are ordered, and odd size restricts the start rather than making the board impossible."
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "terminal": "全部相邻格均不同；最少 2 次，当前图就是达到下界的方案。",
+      "read": "帧 10/10 · 已执行交换 2 次 · 最终结果：2"
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "terminal": "全部相邻格均不同；最少 1 次，当前图就是达到下界的方案。",
+      "read": "帧 8/8 · 已执行交换 1 次 · 最终结果：1"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "terminal": "全部相邻格均不同；最少 0 次，当前图就是达到下界的方案。",
+      "read": "帧 6/6 · 已执行交换 0 次 · 最终结果：0"
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "terminal": "行类型失衡：类型标签序列有 2 个 1，n=2；无法成为交替序列，返回 −1。",
+      "read": "帧 3/3 · 已执行交换 0 次 · 最终结果：-1"
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "terminal": "在 (r=1, c=1) 失败：0 ^ 0 ^ 1 ^ 0 = 1。排列不能修复，返回 −1。",
+      "read": "帧 2/2 · 已执行交换 0 次 · 最终结果：-1"
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "terminal": "列类型失衡：类型标签序列有 1 个 1，n=4；无法成为交替序列，返回 −1。",
+      "read": "帧 5/5 · 已执行交换 0 次 · 最终结果：-1"
+    },
+    {
+      "locale": "zh",
+      "preset": 6,
+      "terminal": "全部相邻格均不同；最少 0 次，当前图就是达到下界的方案。",
+      "read": "帧 7/7 · 已执行交换 0 次 · 最终结果：0"
+    },
+    {
+      "locale": "zh",
+      "choice": 0,
+      "feedback": "再想一想。 行标签 101 已交替，行成本 0。首行 110 有两个 1，奇数 n=3 强制目标 101，而不是 010；位置 1、2 错位，交换这两列得到 101 / 010 / 101。总成本 1。只有两种行不代表列已排好；奇数大小只限制起点，并不自动无解。"
+    },
+    {
+      "locale": "zh",
+      "choice": 1,
+      "feedback": "再想一想。 行标签 101 已交替，行成本 0。首行 110 有两个 1，奇数 n=3 强制目标 101，而不是 010；位置 1、2 错位，交换这两列得到 101 / 010 / 101。总成本 1。只有两种行不代表列已排好；奇数大小只限制起点，并不自动无解。"
+    },
+    {
+      "locale": "zh",
+      "choice": 2,
+      "feedback": "正确。 行标签 101 已交替，行成本 0。首行 110 有两个 1，奇数 n=3 强制目标 101，而不是 010；位置 1、2 错位，交换这两列得到 101 / 010 / 101。总成本 1。只有两种行不代表列已排好；奇数大小只限制起点，并不自动无解。"
+    },
+    {
+      "locale": "en",
+      "clipboardFallback": "Automatic copy unavailable. The full source is selected; use your system copy shortcut.",
+      "sentinelVerified": true,
+      "nativeCopyExact": true
+    },
+    {
+      "locale": "zh",
+      "clipboardFallback": "自动复制不可用；完整源码已选中，请按系统复制快捷键。",
+      "sentinelVerified": true,
+      "nativeCopyExact": true
+    },
+    {
+      "locale": "en",
+      "centralEquation": "board[0][0] ^ board[i][0] ^ board[0][j] ^ board[i][j] = 0 (every i,j)"
+    },
+    {
+      "locale": "zh",
+      "centralEquation": "board[0][0] ^ board[i][0] ^ board[0][j] ^ board[i][j] = 0（所有 i,j）"
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "preset": 0,
+      "select": {
+        "text": "Official 1 · 4×4, answer 2",
+        "textWidth": 198.29356384277344,
+        "width": 260,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "preset": 1,
+      "select": {
+        "text": "Hand · 3×3, answer 1",
+        "textWidth": 166.2615966796875,
+        "width": 260,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "preset": 2,
+      "select": {
+        "text": "Official 2 · 2×2, answer 0",
+        "textWidth": 201.30157470703125,
+        "width": 260,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "preset": 3,
+      "select": {
+        "text": "Official 3 · 2×2, answer −1",
+        "textWidth": 207.9471893310547,
+        "width": 260,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "preset": 4,
+      "select": {
+        "text": "Four-corner failure: −1",
+        "textWidth": 175.34959411621094,
+        "width": 260,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "preset": 5,
+      "select": {
+        "text": "Unbalanced columns · −1",
+        "textWidth": 196.22959899902344,
+        "width": 260,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "preset": 6,
+      "select": {
+        "text": "Odd size, starts with 1 · 0",
+        "textWidth": 201.67996215820312,
+        "width": 260,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "preset": 0,
+      "select": {
+        "text": "官方例 1 · 4×4，答案 2",
+        "textWidth": 174.72564697265625,
+        "width": 260,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "preset": 1,
+      "select": {
+        "text": "手算例 · 3×3，答案 1",
+        "textWidth": 159.10964965820312,
+        "width": 260,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "preset": 2,
+      "select": {
+        "text": "官方例 2 · 已完成，答案 0",
+        "textWidth": 197.3120574951172,
+        "width": 260,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "preset": 3,
+      "select": {
+        "text": "官方例 3 · 缺一种行，−1",
+        "textWidth": 181.9896697998047,
+        "width": 260,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "preset": 4,
+      "select": {
+        "text": "四角检查失败 · −1",
+        "textWidth": 133.94166564941406,
+        "width": 260,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "preset": 5,
+      "select": {
+        "text": "列类型失衡 · −1",
+        "textWidth": 117.62165832519531,
+        "width": 260,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "preset": 6,
+      "select": {
+        "text": "奇数且以 1 开头 · 0",
+        "textWidth": 145.1840362548828,
+        "width": 260,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "preset": 0,
+      "select": {
+        "text": "Official 1 · 4×4, answer 2",
+        "textWidth": 198.29356384277344,
+        "width": 330,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "preset": 1,
+      "select": {
+        "text": "Hand · 3×3, answer 1",
+        "textWidth": 166.2615966796875,
+        "width": 330,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "preset": 2,
+      "select": {
+        "text": "Official 2 · 2×2, answer 0",
+        "textWidth": 201.30157470703125,
+        "width": 330,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "preset": 3,
+      "select": {
+        "text": "Official 3 · 2×2, answer −1",
+        "textWidth": 207.9471893310547,
+        "width": 330,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "preset": 4,
+      "select": {
+        "text": "Four-corner failure: −1",
+        "textWidth": 175.34959411621094,
+        "width": 330,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "preset": 5,
+      "select": {
+        "text": "Unbalanced columns · −1",
+        "textWidth": 196.22959899902344,
+        "width": 330,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "preset": 6,
+      "select": {
+        "text": "Odd size, starts with 1 · 0",
+        "textWidth": 201.67996215820312,
+        "width": 330,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "preset": 0,
+      "select": {
+        "text": "官方例 1 · 4×4，答案 2",
+        "textWidth": 174.72564697265625,
+        "width": 330,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "preset": 1,
+      "select": {
+        "text": "手算例 · 3×3，答案 1",
+        "textWidth": 159.10964965820312,
+        "width": 330,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "preset": 2,
+      "select": {
+        "text": "官方例 2 · 已完成，答案 0",
+        "textWidth": 197.3120574951172,
+        "width": 330,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "preset": 3,
+      "select": {
+        "text": "官方例 3 · 缺一种行，−1",
+        "textWidth": 181.9896697998047,
+        "width": 330,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "preset": 4,
+      "select": {
+        "text": "四角检查失败 · −1",
+        "textWidth": 133.94166564941406,
+        "width": 330,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "preset": 5,
+      "select": {
+        "text": "列类型失衡 · −1",
+        "textWidth": 117.62165832519531,
+        "width": 330,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "preset": 6,
+      "select": {
+        "text": "奇数且以 1 开头 · 0",
+        "textWidth": 145.1840362548828,
+        "width": 330,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "preset": 0,
+      "select": {
+        "text": "Official 1 · 4×4, answer 2",
+        "textWidth": 198.29356384277344,
+        "width": 644,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "preset": 1,
+      "select": {
+        "text": "Hand · 3×3, answer 1",
+        "textWidth": 166.2615966796875,
+        "width": 644,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "preset": 2,
+      "select": {
+        "text": "Official 2 · 2×2, answer 0",
+        "textWidth": 201.30157470703125,
+        "width": 644,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "preset": 3,
+      "select": {
+        "text": "Official 3 · 2×2, answer −1",
+        "textWidth": 207.9471893310547,
+        "width": 644,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "preset": 4,
+      "select": {
+        "text": "Four-corner failure: −1",
+        "textWidth": 175.34959411621094,
+        "width": 644,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "preset": 5,
+      "select": {
+        "text": "Unbalanced columns · −1",
+        "textWidth": 196.22959899902344,
+        "width": 644,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "preset": 6,
+      "select": {
+        "text": "Odd size, starts with 1 · 0",
+        "textWidth": 201.67996215820312,
+        "width": 644,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "preset": 0,
+      "select": {
+        "text": "官方例 1 · 4×4，答案 2",
+        "textWidth": 174.72564697265625,
+        "width": 644,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "preset": 1,
+      "select": {
+        "text": "手算例 · 3×3，答案 1",
+        "textWidth": 159.10964965820312,
+        "width": 644,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "preset": 2,
+      "select": {
+        "text": "官方例 2 · 已完成，答案 0",
+        "textWidth": 197.3120574951172,
+        "width": 644,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "preset": 3,
+      "select": {
+        "text": "官方例 3 · 缺一种行，−1",
+        "textWidth": 181.9896697998047,
+        "width": 644,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "preset": 4,
+      "select": {
+        "text": "四角检查失败 · −1",
+        "textWidth": 133.94166564941406,
+        "width": 644,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "preset": 5,
+      "select": {
+        "text": "列类型失衡 · −1",
+        "textWidth": 117.62165832519531,
+        "width": 644,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "preset": 6,
+      "select": {
+        "text": "奇数且以 1 开头 · 0",
+        "textWidth": 145.1840362548828,
+        "width": 644,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "preset": 0,
+      "select": {
+        "text": "Official 1 · 4×4, answer 2",
+        "textWidth": 198.29356384277344,
+        "width": 908,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "preset": 1,
+      "select": {
+        "text": "Hand · 3×3, answer 1",
+        "textWidth": 166.2615966796875,
+        "width": 908,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "preset": 2,
+      "select": {
+        "text": "Official 2 · 2×2, answer 0",
+        "textWidth": 201.30157470703125,
+        "width": 908,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "preset": 3,
+      "select": {
+        "text": "Official 3 · 2×2, answer −1",
+        "textWidth": 207.9471893310547,
+        "width": 908,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "preset": 4,
+      "select": {
+        "text": "Four-corner failure: −1",
+        "textWidth": 175.34959411621094,
+        "width": 908,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "preset": 5,
+      "select": {
+        "text": "Unbalanced columns · −1",
+        "textWidth": 196.22959899902344,
+        "width": 908,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "preset": 6,
+      "select": {
+        "text": "Odd size, starts with 1 · 0",
+        "textWidth": 201.67996215820312,
+        "width": 908,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "preset": 0,
+      "select": {
+        "text": "官方例 1 · 4×4，答案 2",
+        "textWidth": 174.72564697265625,
+        "width": 908,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "preset": 1,
+      "select": {
+        "text": "手算例 · 3×3，答案 1",
+        "textWidth": 159.10964965820312,
+        "width": 908,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "preset": 2,
+      "select": {
+        "text": "官方例 2 · 已完成，答案 0",
+        "textWidth": 197.3120574951172,
+        "width": 908,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "preset": 3,
+      "select": {
+        "text": "官方例 3 · 缺一种行，−1",
+        "textWidth": 181.9896697998047,
+        "width": 908,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "preset": 4,
+      "select": {
+        "text": "四角检查失败 · −1",
+        "textWidth": 133.94166564941406,
+        "width": 908,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "preset": 5,
+      "select": {
+        "text": "列类型失衡 · −1",
+        "textWidth": 117.62165832519531,
+        "width": 908,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "preset": 6,
+      "select": {
+        "text": "奇数且以 1 开头 · 0",
+        "textWidth": 145.1840362548828,
+        "width": 908,
+        "padding": 30,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    }
+  ],
+  "screenshots": [
+    "trace-en-320-p0.png",
+    "trace-en-320-p4.png",
+    "trace-en-320-p5.png",
+    "prediction-en-320.png",
+    "trace-zh-320-p0.png",
+    "trace-zh-320-p4.png",
+    "trace-zh-320-p5.png",
+    "prediction-zh-320.png",
+    "trace-en-390-p0.png",
+    "trace-en-390-p4.png",
+    "trace-en-390-p5.png",
+    "prediction-en-390.png",
+    "trace-zh-390-p0.png",
+    "trace-zh-390-p4.png",
+    "trace-zh-390-p5.png",
+    "prediction-zh-390.png",
+    "trace-en-736-p0.png",
+    "trace-en-736-p4.png",
+    "trace-en-736-p5.png",
+    "prediction-en-736.png",
+    "trace-zh-736-p0.png",
+    "trace-zh-736-p4.png",
+    "trace-zh-736-p5.png",
+    "prediction-zh-736.png",
+    "trace-en-1440-p0.png",
+    "trace-en-1440-p4.png",
+    "trace-en-1440-p5.png",
+    "prediction-en-1440.png",
+    "trace-zh-1440-p0.png",
+    "trace-zh-1440-p4.png",
+    "trace-zh-1440-p5.png",
+    "prediction-zh-1440.png",
+    "zoom200-en.png",
+    "zoom200-zh.png",
+    "header-zh.png",
+    "header-en.png"
+  ],
+  "focus": {
+    "width": "3px",
+    "color": "rgb(255, 180, 84)",
+    "style": "solid",
+    "contrastOnPanel": 9.809435643476732
+  },
+  "zoom": "200% CSS zoom in Chromium at 1440px; also 320/390/736/1440 CSS pixel widths",
+  "contrast": {
+    "formula": "sRGB .2126R+.7152G+.0722B after linearization; composited backgrounds",
+    "threshold": 4.5,
+    "min": 7.078851579017443,
+    "pairs": [
+      {
+        "tag": "A",
+        "id": "",
+        "text": "← LeetCode collection",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "中",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "EN",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          110,
+          231,
+          255
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "H1",
+        "id": "",
+        "text": "#782 · Transform to Chessboard",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "Lay out three rows: 001 / 110 / 001. Swap the last",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "Input: an n×n binary grid, 2 ≤ n ≤ 30. Output: the",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "Official LeetCode problem ↗",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "1 · One whole swap",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "2 · What survives",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "3 · Count the moves",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "4 · Predict first",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          110,
+          231,
+          255
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "5 · Map to Python",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "01",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "H2",
+        "id": "",
+        "text": "What does one move change?",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "Which cells move in one legal operation? A chessbo",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 12.615602281385614
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "Keep rows fixed and swap columns 1 ↔ 2. Compare or",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "CAPTION",
+        "id": "",
+        "text": "r = row, c = column; digits = cell values",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "c0",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "c1",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "c2",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "r0",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "1",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          232,
+          237,
+          244
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "r1",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "1",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          232,
+          237,
+          244
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "1",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          232,
+          237,
+          244
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "r2",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "1",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          232,
+          237,
+          244
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "CAPTION",
+        "id": "",
+        "text": "r = row, c = column; digits = cell values",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "c0",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "c1",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "c2",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "r0",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "1",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          232,
+          237,
+          244
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "r1",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "1",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          232,
+          237,
+          244
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "1",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          232,
+          237,
+          244
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "r2",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "1",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          232,
+          237,
+          244
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "BUTTON",
+        "id": "swapHand",
+        "text": "Swap columns 1 ↔ 2",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          110,
+          231,
+          255
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "BUTTON",
+        "id": "undo",
+        "text": "Undo one move",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "BUTTON",
+        "id": "handReset",
+        "text": "Reset",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "id": "handRead",
+        "text": "Completed swaps: 1 · Chessboard reached",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "LI",
+        "id": "",
+        "text": "0: 001 / 110 / 001",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "LI",
+        "id": "",
+        "text": "1: 010 / 101 / 010",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "02",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 13.388343428810314
+      },
+      {
+        "tag": "H2",
+        "id": "",
+        "text": "Why are some boards impossible?",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 16.440224808744848
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "What relationship can no swap repair? In 001 / 110",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 12.89261537833187
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "How do we check this cell by cell? XOR (written ^)",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 12.89261537833187
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "board[0][0] ^ board[i][0] ^ board[0][j] ^ board[i]",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "This is the invariant: the XOR of the four corners",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 12.89261537833187
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "Tempting wrong rule: “Balanced counts in every row",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 16.440224808744848
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "A correct slow baseline enumerates every row permu",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 12.89261537833187
+      },
+      {
+        "tag": "SUMMARY",
+        "id": "",
+        "text": "Inspect the executable exhaustive baseline (small ",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 13.388343428810314
+      },
+      {
+        "tag": "CODE",
+        "id": "",
+        "text": "from itertools import permutations\n\n\ndef swap_cost",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          9,
+          14,
+          22
+        ],
+        "ratio": 16.437295258072666
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "03",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "H2",
+        "id": "",
+        "text": "Why divide mismatches by two?",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "Once the structure is compatible, how many swaps a",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 12.615602281385614
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "A mismatch is a position whose current bit differs",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 12.615602281385614
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "Why add the two costs? Row swaps preserve equality",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 12.615602281385614
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "Minimum moves = min(row-type mismatches / 2) + min",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "Choose a preset, then advance through checks. Watc",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 7.7443462241265095
+      },
+      {
+        "tag": "LABEL",
+        "id": "",
+        "text": "Preset (changing it restarts only this trace)",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "SELECT",
+        "id": "preset",
+        "text": "Official 1 · 4×4, answer 2Hand · 3×3, answer 1Offi",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "Teaching simulation, not execution of the Python s",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "BUTTON",
+        "id": "prev",
+        "text": "← Previous frame",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "BUTTON",
+        "id": "next",
+        "text": "Next check / swap →",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "BUTTON",
+        "id": "traceReset",
+        "text": "Reset",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "BUTTON",
+        "id": "end",
+        "text": "Go to result",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "P",
+        "id": "frameRead",
+        "text": "Frame 2/2 · Swaps performed: 0 · Final result: -1",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "CAPTION",
+        "id": "",
+        "text": "r = row, c = column; digits = cell values",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "c0",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "c1",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "r0",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "1",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          232,
+          237,
+          244
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "r1",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "CAPTION",
+        "id": "",
+        "text": "r = row, c = column; digits = cell values",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "c0",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "c1",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "r0",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "1",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          232,
+          237,
+          244
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "text": "r1",
+        "fg": [
+          154,
+          167,
+          184
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 7.078851579017443
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "text": "0",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "id": "operation",
+        "text": "Failed at (r=1, c=1): 0 ^ 0 ^ 1 ^ 0 = 1. Reorderin",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "LI",
+        "id": "",
+        "text": "Initial board; no checks or swaps yet.",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "LI",
+        "id": "",
+        "text": "Row 0 checked: equal to row 0; all anchored four-c",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "LI",
+        "id": "",
+        "text": "Failed at (r=1, c=1): 0 ^ 0 ^ 1 ^ 0 = 1. Reorderin",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 11.974898815275662
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "04",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 13.388343428810314
+      },
+      {
+        "tag": "H2",
+        "id": "",
+        "text": "Which start survives at odd size?",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 16.440224808744848
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "What is the minimum for the fresh board 110 / 001 ",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          10,
+          14,
+          20
+        ],
+        "ratio": 12.89261537833187
+      },
+      {
+        "tag": "LEGEND",
+        "id": "",
+        "text": "Predict the minimum swaps",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "LABEL",
+        "id": "",
+        "text": "0: the two row types already alternate",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "LABEL",
+        "id": "",
+        "text": "−1: odd-sized boards are impossible",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "LABEL",
+        "id": "",
+        "text": "1: only the column order needs repair",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          22,
+          27,
+          34
+        ],
+        "ratio": 14.704584598678618
+      },
+      {
+        "tag": "BUTTON",
+        "id": "reveal",
+        "text": "Reveal and explain",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          110,
+          231,
+          255
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "BUTTON",
+        "id": "predictionReset",
+        "text": "Reset",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "P",
+        "id": "feedback",
+        "text": "Correct. Row labels 101 already alternate, costing",
+        "fg": [
+          126,
+          226,
+          168
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 10.004815697188947
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "05",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "H2",
+        "id": "",
+        "text": "Turn the checks and lower bound into Python",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "Which observation becomes each part of the code? B",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 12.615602281385614
+      },
+      {
+        "tag": "LI",
+        "id": "",
+        "text": "Nested loops check every anchored four-corner XOR ",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "LI",
+        "id": "",
+        "text": "axis_cost(get_bit) reads a type sequence through a",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "LI",
+        "id": "",
+        "text": "The first column gives rows, the first row gives c",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.086987125379448
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "Time O(n²): at most n² corner checks plus O(n) sca",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 12.615602281385614
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "text": "Boundaries: n=2 still needs structure and count ch",
+        "fg": [
+          201,
+          212,
+          226
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 12.615602281385614
+      },
+      {
+        "tag": "BUTTON",
+        "id": "copyPython",
+        "text": "Copy Python",
+        "fg": [
+          13,
+          17,
+          23
+        ],
+        "bg": [
+          110,
+          231,
+          255
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "Download solution.py",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          28,
+          35,
+          48
+        ],
+        "ratio": 13.397069143240783
+      },
+      {
+        "tag": "SUMMARY",
+        "id": "",
+        "text": "Open complete Python source",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "CODE",
+        "id": "pythonCode",
+        "text": "class Solution:\n    def movesToChessboard(self, bo",
+        "fg": [
+          232,
+          237,
+          244
+        ],
+        "bg": [
+          9,
+          14,
+          22
+        ],
+        "ratio": 16.437295258072666
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "Revisit the four-corner invariant →",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "Revisit mismatch pairing and its lower bound →",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "text": "Related: swaps and permutations in Couples Holding",
+        "fg": [
+          110,
+          231,
+          255
+        ],
+        "bg": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.100679028115637
+      }
+    ]
+  },
+  "network": {
+    "errors": [],
+    "localOnly": true,
+    "requests": [
+      "http://127.0.0.1:18770/leetcode/782/",
+      "http://127.0.0.1:18770/leetcode/style.css",
+      "http://127.0.0.1:18770/leetcode/782/style.css?v=782-r1",
+      "http://127.0.0.1:18770/leetcode/common.js",
+      "http://127.0.0.1:18770/leetcode/782/copy.js?v=782-r2",
+      "http://127.0.0.1:18770/leetcode/782/core.js?v=782-r1",
+      "http://127.0.0.1:18770/leetcode/782/python-code.js?v=782-r1",
+      "http://127.0.0.1:18770/leetcode/782/app.js?v=782-r1"
+    ]
+  },
+  "shippedCssBytes": 11316
+}

@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "en: hand moves/undo/reset; all seven presets + every frame reverse/replay; prediction all options/change; exact source/copy/download",
+    "zh: hand moves/undo/reset; all seven presets + every frame reverse/replay; prediction all options/change; exact source/copy/download",
+    "Locale preserves all experiment/reveal states; native fallback clipboard exact in both locales with distinct verified sentinels; keyboard/focus; local/related anchors; reduced motion/forced colors; blocked storage; file:// offline; no asset/console errors"
+  ],
+  "contrastMinimum": 7.078851579017443,
+  "css": 11316,
+  "screenshots": 36
+}
