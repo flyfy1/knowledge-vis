@@ -2507,6 +2507,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) time; O(n) auxiliary space and O(n) output"
   },
   {
+    "id": 710,
+    "title": {
+      "zh": "黑名单中的随机数",
+      "en": "Random Pick with Blacklist"
+    },
+    "desc": {
+      "zh": "将低区间的禁用票号映射到高区间的可用值，推导等概率抽取。",
+      "en": "Repair blocked tickets with unused high values and derive uniform picking."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "随机化",
+        "en": "Randomization"
+      },
+      {
+        "zh": "哈希映射",
+        "en": "Hash mapping"
+      },
+      {
+        "zh": "一一对应",
+        "en": "Bijection"
+      }
+    ],
+    "path": "710/",
+    "leetcodeUrl": "https://leetcode.com/problems/random-pick-with-blacklist/",
+    "language": "Python",
+    "complexity": "Expected O(b + 1) initialization time and space; expected O(1) time per pick, one random API call"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

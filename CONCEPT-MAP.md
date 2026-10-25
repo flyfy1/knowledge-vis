@@ -1288,3 +1288,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Pivot-letter branch filtering | `leetcode/691/#step2` | Reorder any solution to begin with a sticker covering a chosen missing letter. |
 
 <!-- /leetcode-691-campaign -->
+
+
+<!-- leetcode-710-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Uniform blacklist remapping | `leetcode/710/#step2` | Pair blocked low tickets with distinct legal high values to preserve equal probability. |
+| Random API calls and rejection sampling | `leetcode/710/#step1` | Compare materialization, unbiased retries and one-call remapping. |
+
+<!-- /leetcode-710-campaign -->
