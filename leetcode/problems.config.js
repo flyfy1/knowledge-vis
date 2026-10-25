@@ -2403,6 +2403,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(1) time and O(1) auxiliary space for exactly four bounded cards"
   },
   {
+    "id": 689,
+    "title": {
+      "zh": "三个无重叠子数组的最大和",
+      "en": "Maximum Sum of 3 Non-Overlapping Subarrays"
+    },
+    "desc": {
+      "zh": "固定中间窗口，用左右最优摘要消除重复搜索，并正确处理同和下的最早起点。",
+      "en": "Fix the middle window, reuse the best choices on both sides, and preserve the earliest triple on ties."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "滑动窗口",
+        "en": "Sliding window"
+      },
+      {
+        "zh": "前后缀最优",
+        "en": "Prefix and suffix maxima"
+      }
+    ],
+    "path": "689/",
+    "leetcodeUrl": "https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
