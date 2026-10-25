@@ -1,0 +1,12 @@
+{
+  "id": 773,
+  "title": {"zh": "滑动谜题", "en": "Sliding Puzzle"},
+  "desc": {"zh": "从一次空位交换推导广度优先搜索，用完整层证明最少移动次数。", "en": "Derive breadth-first search from a blank swap and prove minimum moves with complete layers."},
+  "difficulty": "hard",
+  "topics": [{"zh": "广度优先搜索", "en": "Breadth-first search"}, {"zh": "状态空间", "en": "State space"}],
+  "path": "773/",
+  "leetcodeUrl": "https://leetcode.com/problems/sliding-puzzle/",
+  "language": "Python",
+  "complexity": "O(V+E) time; O(V) auxiliary space for fixed six-cell states, V ≤ 720 and E ≤ 3V",
+  "concepts": [{"name": "Breadth-first search layers", "step": 2, "description": "Discover each board once and prove shortest move counts by complete layers."}, {"name": "State graph", "step": 1, "description": "Encode complete boards and connect them with legal blank swaps."}]
+}

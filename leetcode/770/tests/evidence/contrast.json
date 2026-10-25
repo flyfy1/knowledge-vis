@@ -1,0 +1,1391 @@
+{
+  "calibration": {
+    "black": 0,
+    "white": 1,
+    "blackWhite": 21,
+    "nearThreshold": 4.492948073111701
+  },
+  "minimum": 6.449407898769069,
+  "pairs": [
+    {
+      "tag": "A",
+      "text": "← LeetCode Knowledge Index",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "BUTTON",
+      "text": "中",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "BUTTON",
+      "text": "EN",
+      "fg": [
+        13,
+        17,
+        23
+      ],
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "P",
+      "text": "HARD · ALGORITHMS · SYMBOLIC ARITHMETIC",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "H1",
+      "text": "#770 · Basic Calculator IV",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "Numbers evaluate away. Unknown letters remain. Kee",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "A",
+      "text": "Official problem ↗",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "A",
+      "text": "01 · Four products by hand",
+      "fg": [
+        13,
+        17,
+        23
+      ],
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "A",
+      "text": "02 · Recognizing equal terms",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "A",
+      "text": "03 · Parse and maintain coefficients",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "A",
+      "text": "04 · Predict before revealing",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "A",
+      "text": "05 · Python and boundaries",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "H2",
+      "text": "01 · Four products by hand",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "What remains after replacing only known variables?",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 12.615602281385614
+    },
+    {
+      "tag": "P",
+      "text": "Leave a unknown. In (a + 2) * (a - 1), multiply ea",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 12.615602281385614
+    },
+    {
+      "tag": "P",
+      "text": "a*a − a + 2*a − 2 = a*a + a − 2 → [\"1*a*a\", \"1*a\",",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "P",
+      "text": "Degree counts variable occurrences, including repe",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 12.615602281385614
+    },
+    {
+      "tag": "P",
+      "text": "Official bounds: expression length 1–250; 0–100 su",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "H2",
+      "text": "02 · Recognizing equal terms",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "P",
+      "text": "Why not keep every contribution until the end? A c",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 12.89261537833187
+    },
+    {
+      "tag": "SUMMARY",
+      "text": "Inspect the complete small-input Python baseline",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 13.388343428810314
+    },
+    {
+      "tag": "CODE",
+      "text": "\"\"\"Independent small-input oracle: keep every raw ",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        9,
+        14,
+        22
+      ],
+      "ratio": 16.437295258072666
+    },
+    {
+      "tag": "P",
+      "text": "For (a - a) * (b + c), the baseline still generate",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 12.89261537833187
+    },
+    {
+      "tag": "P",
+      "text": "Tempting mistakes: key terms by input order, or tu",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "H2",
+      "text": "03 · Parse and maintain coefficients",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "What must a parsing function return so its caller ",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 12.615602281385614
+    },
+    {
+      "tag": "P",
+      "text": "Recursive descent means calling functions in gramm",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 12.615602281385614
+    },
+    {
+      "tag": "P",
+      "text": "This yields the invariant: whenever atom, term, or",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 12.615602281385614
+    },
+    {
+      "tag": "P",
+      "text": "Keep the default input and advance to multiplicati",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 12.615602281385614
+    },
+    {
+      "tag": "P",
+      "text": "This visualization is a separate JavaScript simula",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    },
+    {
+      "tag": "LABEL",
+      "text": "Experiment preset (changing restarts)",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "BUTTON",
+      "text": "← Previous event",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Next event →",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Reset trace",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Go to final result",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 6.449407898769069
+    },
+    {
+      "tag": "P",
+      "text": "Completed events 10/10 · current interval [0,11)",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "P",
+      "text": "Expression: (a + 2) * (a - 1); substitutions: None",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "P",
+      "text": "Tokens: 0:( · 1:a · 2:+ · 3:2 · 4:) · 5:* · 6:( · ",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "P",
+      "text": "The whole expression is complete; now sort by the ",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "H3",
+      "text": "Left operand (before operation)",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "DIV",
+      "text": "No binary operands in this frame.",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "H3",
+      "text": "Right operand (before operation)",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "DIV",
+      "text": "No binary operands in this frame.",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "H3",
+      "text": "Pair contributions (multiplication frames, before ",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "LI",
+      "text": "No multiplication pairs in this frame. A multiplic",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "H3",
+      "text": "Map of the current completed subexpression",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "TH",
+      "text": "Variable tuple (key)",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "TH",
+      "text": "Coefficient",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "TD",
+      "text": "(a, a)",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "TD",
+      "text": "1",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "TD",
+      "text": "(a)",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "TD",
+      "text": "1",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "TD",
+      "text": "() · constant",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "TD",
+      "text": "-2",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "H3",
+      "text": "Call stack when this event completes",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "OL",
+      "text": "None",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "P",
+      "text": "Final output: [\"1*a*a\",\"1*a\",\"-2\"]",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "H3",
+      "text": "Completed event history",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 14.704584598678618
+    },
+    {
+      "tag": "LI",
+      "text": "Atom [1,2) completed: a, producing the result map ",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "LI",
+      "text": "Atom [3,4) completed: 2, producing the result map ",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "LI",
+      "text": "Operation [1,4) completed: a + 2; operator +.",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "LI",
+      "text": "Group [0,5) returned: ( a + 2 ); consume the closi",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "LI",
+      "text": "Atom [7,8) completed: a, producing the result map ",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "LI",
+      "text": "Atom [9,10) completed: 1, producing the result map",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "LI",
+      "text": "Operation [7,10) completed: a - 1; operator -.",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "LI",
+      "text": "Group [6,11) returned: ( a - 1 ); consume the clos",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "LI",
+      "text": "Operation [0,11) completed: ( a + 2 ) * ( a - 1 );",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "LI",
+      "text": "The whole expression is complete; now sort by the ",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 7.078851579017443
+    },
+    {
+      "tag": "H2",
+      "text": "04 · Predict before revealing",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "P",
+      "text": "Will canonical keys preserve or cancel the mixed t",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 12.89261537833187
+    },
+    {
+      "tag": "LEGEND",
+      "text": "What is the output of (x + y) * (x - y) + y * x?",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "SPAN",
+      "text": "A · [\"1*x*x\", \"-1*y*y\"]",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "SPAN",
+      "text": "B · [\"1*x*x\", \"1*x*y\", \"-1*y*y\"]",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "SPAN",
+      "text": "C · [\"1*x*x\", \"1*y*x\", \"-1*y*y\"]",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        10,
+        14,
+        20
+      ],
+      "ratio": 16.440224808744848
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Reveal and explain",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "P",
+      "text": "Correct. B: the first product expands to x*x - x*y",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "H2",
+      "text": "05 · Python and boundaries",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "P",
+      "text": "How do the maps and grammar rules become an offici",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 12.615602281385614
+    },
+    {
+      "tag": "P",
+      "text": "atom maps to number/name/group events; term comple",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 12.615602281385614
+    },
+    {
+      "tag": "P",
+      "text": "Boundaries: an empty expression is outside the con",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 12.615602281385614
+    },
+    {
+      "tag": "P",
+      "text": "Cost grows with intermediate term count. Let n be ",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 12.615602281385614
+    },
+    {
+      "tag": "P",
+      "text": "Offline author checks cover official examples, exh",
+      "fg": [
+        201,
+        212,
+        226
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 12.615602281385614
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Copy Python",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 13.397069143240783
+    },
+    {
+      "tag": "A",
+      "text": "Download solution.py",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "SPAN",
+      "text": "Automatic copy unavailable; the full source is sel",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "LABEL",
+      "text": "Manually copy the complete Python source",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "SUMMARY",
+      "text": "Inspect Python for the official interface",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "CODE",
+      "text": "import re\n\n\nclass Solution:\n    def basicCalculato",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        9,
+        14,
+        22
+      ],
+      "ratio": 16.437295258072666
+    },
+    {
+      "tag": "H3",
+      "text": "Related derivations",
+      "fg": [
+        232,
+        237,
+        244
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 16.086987125379448
+    },
+    {
+      "tag": "A",
+      "text": " #224 · Parsing parentheses and addition",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "A",
+      "text": "#726 · Combining counts by name",
+      "fg": [
+        110,
+        231,
+        255
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 13.100679028115637
+    },
+    {
+      "tag": "FOOTER",
+      "text": "Author candidate · independent review pending · al",
+      "fg": [
+        154,
+        167,
+        184
+      ],
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 7.7443462241265095
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "result": "pass",
+  "kind": "author focused semantic and keyboard self-check",
+  "records": [
+    {
+      "locale": "en",
+      "frame": "Frame 2/5 · Entering layer 2 · Frontier: 4 states · Discovered so far: 8 states. No final answer yet.",
+      "candidateMeaning": "Swap tile 4 → 042513: new state; add to seen and the next layerSwap tile 2 → 420513: new state; add to seen and the next layerSwap tile 1 → 412503: already discovered; skip",
+      "prediction": "Correct. The answer is 3. Layers 0, 1, 2 ruled out every shorter route, and layer 3 supplies a 3-move route. We have both a lower bound and a reachable construction. The goal is a state, not an extra move. Unreachable permutations and deeper layers need not be explored.",
+      "copySuccessAndFallback": true,
+      "manualKeyboard": true,
+      "zoomKeyboardScrolling": true
+    },
+    {
+      "locale": "zh",
+      "frame": "帧 2/5 · 进入第 2 层 · 前沿 4 个状态 · 累计发现 8 个状态。尚未给出最终答案。",
+      "candidateMeaning": "交换数字 4 → 042513：新状态，加入 seen 与下一层交换数字 2 → 420513：新状态，加入 seen 与下一层交换数字 1 → 412503：已经发现，跳过",
+      "prediction": "正确。 答案是 3。第 0、1、2 层已排除了所有更短路径；第 3 层给出一条 3 步路径，所以既有下界也有可达证明。目标是一个状态，不是额外的一次移动。不必遍历无法到达的排列，也不必继续搜索更深层。",
+      "copySuccessAndFallback": true,
+      "manualKeyboard": true,
+      "zoomKeyboardScrolling": true
+    }
+  ]
+}

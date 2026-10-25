@@ -1,0 +1,9 @@
+{
+  "url": "https://leetcode.com/graphql/",
+  "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug isPaidOnly content exampleTestcases metaData codeSnippets { lang langSlug code } } }",
+  "variables": {
+    "titleSlug": "basic-calculator-iv"
+  },
+  "accessedAt": "2026-10-25T10:15:55.664537+00:00",
+  "status": 200
+}

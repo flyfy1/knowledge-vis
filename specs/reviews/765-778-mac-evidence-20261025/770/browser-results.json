@@ -1,0 +1,64 @@
+{
+  "kind": "author self-check",
+  "result": "pass",
+  "host": "darwin",
+  "browser": "151.0.7922.34",
+  "url": "http://127.0.0.1:18770/leetcode/770/",
+  "logs": [
+    {
+      "lang": "en",
+      "presets": 8,
+      "predictions": 3,
+      "source": "display/embedded/copied/downloaded exact bytes",
+      "fallback": "distinct sentinel, full selected source, native host copy shortcut and actual clipboard readback",
+      "widths": [
+        320,
+        390,
+        736,
+        1440
+      ],
+      "zoom": "200% CSS zoom, 780px viewport, 390px effective content width",
+      "focus": {
+        "color": "rgb(255, 180, 84)",
+        "width": "3px"
+      }
+    },
+    {
+      "lang": "zh",
+      "presets": 8,
+      "predictions": 3,
+      "source": "display/embedded/copied/downloaded exact bytes",
+      "fallback": "distinct sentinel, full selected source, native host copy shortcut and actual clipboard readback",
+      "widths": [
+        320,
+        390,
+        736,
+        1440
+      ],
+      "zoom": "200% CSS zoom, 780px viewport, 390px effective content width",
+      "focus": {
+        "color": "rgb(255, 180, 84)",
+        "width": "3px"
+      }
+    }
+  ],
+  "errors": [],
+  "requestUrls": [
+    "http://127.0.0.1:18770/leetcode/770/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/770/style.css?v=770-2",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/770/copy.js?v=770-2",
+    "http://127.0.0.1:18770/leetcode/770/core.js?v=770-2",
+    "http://127.0.0.1:18770/leetcode/770/python-code.js?v=770-2",
+    "http://127.0.0.1:18770/leetcode/770/baseline-code.js?v=770-2",
+    "http://127.0.0.1:18770/leetcode/770/app.js?v=770-2"
+  ],
+  "oracleCases": 1569,
+  "cssBytes": 10870,
+  "copyShortcut": "Meta+C",
+  "limitations": [
+    "headless Chromium/Linux only; CSS zoom used for 200% reflow",
+    "no actual learner outcomes, independent acceptance, LeetCode submission or public deployment"
+  ]
+}

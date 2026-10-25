@@ -1,0 +1,47 @@
+{
+  "source": "81bee47c5d50bf5ec2c916a3e38b7b98a176cf53",
+  "lessons": {
+    "768": {
+      "files": 57,
+      "candidate": "0b25921b05d72cc6549aa4064fc5b82a42cd50e7",
+      "exact": true
+    },
+    "770": {
+      "files": 66,
+      "candidate": "b042f446318bd53113f6d784d8d5fde41110aa30",
+      "exact": true
+    },
+    "773": {
+      "files": 55,
+      "candidate": "de0f38a8b5a87a0240d7822821aca38aa6f406d1",
+      "exact": true
+    },
+    "778": {
+      "files": 45,
+      "candidate": "41ea45d5f0735ccffaa05f10679a1aa25784c602",
+      "exact": true
+    }
+  },
+  "protected_before": {
+    "index.html": "5c2fd1c30fee38137595f1599465970696c30fdf58ea687894741be508a49053",
+    "pages.config.js": "b75957b10f86d26c112447ca45327f3b3ff30aecbdeb12518b178cf81e81e0eb",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+    "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+  },
+  "protected_after": {
+    "index.html": "5c2fd1c30fee38137595f1599465970696c30fdf58ea687894741be508a49053",
+    "pages.config.js": "b75957b10f86d26c112447ca45327f3b3ff30aecbdeb12518b178cf81e81e0eb",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+    "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+  },
+  "registry_sha256": "8cb1ad4cc77950b5ed012157a20e0e7a143bf7780b879eb6f5bc2268c727449f",
+  "published": false,
+  "held_back": {
+    "765": "Original Mac browser test failed native select fit assertion; diagnosis pending"
+  },
+  "registry_existing_entries_preserved": true
+}

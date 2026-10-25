@@ -1,0 +1,252 @@
+[
+  {
+    "id": 765,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "765",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.044
+  },
+  {
+    "id": 765,
+    "name": "test_solution.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/765/tests/test_solution.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.218
+  },
+  {
+    "id": 765,
+    "name": "test_core.cjs",
+    "command": [
+      "node",
+      "leetcode/765/tests/test_core.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.11
+  },
+  {
+    "id": 765,
+    "name": "test_browser.cjs",
+    "command": [
+      "node",
+      "leetcode/765/tests/test_browser.cjs"
+    ],
+    "exit_code": 1,
+    "seconds": 5.135
+  },
+  {
+    "id": 768,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "768",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.042
+  },
+  {
+    "id": 768,
+    "name": "test_solution.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/768/tests/test_solution.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.314
+  },
+  {
+    "id": 768,
+    "name": "test_core.cjs",
+    "command": [
+      "node",
+      "leetcode/768/tests/test_core.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.111
+  },
+  {
+    "id": 768,
+    "name": "test_browser.cjs",
+    "command": [
+      "node",
+      "leetcode/768/tests/test_browser.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 8.767
+  },
+  {
+    "id": 768,
+    "name": "test_access.cjs",
+    "command": [
+      "node",
+      "leetcode/768/tests/test_access.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 3.044
+  },
+  {
+    "id": 770,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "770",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.045
+  },
+  {
+    "id": 770,
+    "name": "check.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/770/tests/check.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.382
+  },
+  {
+    "id": 770,
+    "name": "browser.cjs",
+    "command": [
+      "node",
+      "leetcode/770/tests/browser.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 5.874
+  },
+  {
+    "id": 770,
+    "name": "inspect.cjs",
+    "command": [
+      "node",
+      "leetcode/770/tests/inspect.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 1.461
+  },
+  {
+    "id": 773,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "773",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.038
+  },
+  {
+    "id": 773,
+    "name": "test_solution.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/773/tests/test_solution.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.104
+  },
+  {
+    "id": 773,
+    "name": "test_core.cjs",
+    "command": [
+      "node",
+      "leetcode/773/tests/test_core.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.479
+  },
+  {
+    "id": 773,
+    "name": "browser.cjs",
+    "command": [
+      "node",
+      "leetcode/773/tests/browser.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 7.498
+  },
+  {
+    "id": 773,
+    "name": "focused.cjs",
+    "command": [
+      "node",
+      "leetcode/773/tests/focused.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 1.303
+  },
+  {
+    "id": 778,
+    "name": "preflight",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/register_leetcode_lesson.py",
+      "778",
+      "--validate-only"
+    ],
+    "exit_code": 0,
+    "seconds": 0.039
+  },
+  {
+    "id": 778,
+    "name": "test_solution.py",
+    "command": [
+      "python3",
+      "-B",
+      "leetcode/778/tests/test_solution.py"
+    ],
+    "exit_code": 0,
+    "seconds": 1.029
+  },
+  {
+    "id": 778,
+    "name": "test_core.cjs",
+    "command": [
+      "node",
+      "leetcode/778/tests/test_core.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.054
+  },
+  {
+    "id": 778,
+    "name": "browser.cjs",
+    "command": [
+      "node",
+      "leetcode/778/tests/browser.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 7.336
+  },
+  {
+    "id": 778,
+    "name": "supplement.cjs",
+    "command": [
+      "node",
+      "leetcode/778/tests/supplement.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 1.106
+  }
+]

@@ -1488,3 +1488,44 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Prefix-free sibling exchange proof | `leetcode/761/#step3` | Minimal special blocks justify ordinary descending lexical sorting. |
 
 <!-- /leetcode-761-campaign -->
+
+
+<!-- leetcode-768-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| safe partition boundaries | `leetcode/768/#step1` | A cut is safe exactly when the entire left maximum does not exceed the entire right minimum. |
+| prefix maximum and suffix minimum | `leetcode/768/#step2` | Reuse extrema in two linear passes instead of rescanning every side. |
+| maximality of all safe cuts | `leetcode/768/#step3` | All safe boundaries coexist; every legal partition uses only safe boundaries. |
+
+<!-- /leetcode-768-campaign -->
+
+
+<!-- leetcode-770-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Canonical polynomial keys | `leetcode/770/#step1` | Sorted variable tuples preserve multiplicity and identify equal terms. |
+| Polynomial parser invariant | `leetcode/770/#step2` | Each returned coefficient map denotes exactly its consumed subexpression after substitution. |
+| Sparse polynomial multiplication | `leetcode/770/#step2` | Distribute every pair and combine coefficients for matching canonical keys. |
+
+<!-- /leetcode-770-campaign -->
+
+
+<!-- leetcode-773-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Breadth-first search layers | `leetcode/773/#step2` | Discover each board once and prove shortest move counts by complete layers. |
+| State graph | `leetcode/773/#step1` | Encode complete boards and connect them with legal blank swaps. |
+
+<!-- /leetcode-773-campaign -->
+
+
+<!-- leetcode-778-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Minimum bottleneck path | `leetcode/778/#step2` | Extend a path by max, then settle the smallest discovered bottleneck. |
+
+<!-- /leetcode-778-campaign -->

@@ -1,0 +1,188 @@
+{
+  "exhaustiveAndSeeded": 3779,
+  "maxN": 2000,
+  "largeExpected": 1,
+  "specialCases": 10,
+  "canonicalIntermediateStates": [
+    {
+      "a": [
+        2,
+        1,
+        3
+      ],
+      "i": 0,
+      "left_max": 2,
+      "suffix_min": [
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        3
+      ],
+      "i": 1,
+      "left_max": 2,
+      "suffix_min": [
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        3,
+        4,
+        4
+      ],
+      "i": 0,
+      "left_max": 2,
+      "suffix_min": [
+        1,
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        3,
+        4,
+        4
+      ],
+      "i": 1,
+      "left_max": 2,
+      "suffix_min": [
+        1,
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        3,
+        4,
+        4
+      ],
+      "i": 2,
+      "left_max": 3,
+      "suffix_min": [
+        1,
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "a": [
+        2,
+        1,
+        3,
+        4,
+        4
+      ],
+      "i": 3,
+      "left_max": 4,
+      "suffix_min": [
+        1,
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "a": [
+        4,
+        4,
+        4
+      ],
+      "i": 0,
+      "left_max": 4,
+      "suffix_min": [
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "a": [
+        4,
+        4,
+        4
+      ],
+      "i": 1,
+      "left_max": 4,
+      "suffix_min": [
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "a": [
+        2,
+        3,
+        1,
+        4
+      ],
+      "i": 0,
+      "left_max": 2,
+      "suffix_min": [
+        1,
+        1,
+        1,
+        4
+      ]
+    },
+    {
+      "a": [
+        2,
+        3,
+        1,
+        4
+      ],
+      "i": 1,
+      "left_max": 3,
+      "suffix_min": [
+        1,
+        1,
+        1,
+        4
+      ]
+    },
+    {
+      "a": [
+        2,
+        3,
+        1,
+        4
+      ],
+      "i": 2,
+      "left_max": 3,
+      "suffix_min": [
+        1,
+        1,
+        1,
+        4
+      ]
+    }
+  ],
+  "baseline": "actual displayed Python executed",
+  "oracle": "enumerate every partition, sort chunks, compare whole sorted target",
+  "sourceMirrorExact": true,
+  "copyKeysUnique": 87
+}

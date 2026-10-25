@@ -1,0 +1,1612 @@
+{
+  "errors": [],
+  "assetErrors": [],
+  "external": [],
+  "bindings": [
+    {
+      "lang": "en",
+      "state": "trap, after two removals",
+      "progress": "Removed 2/9 cells; searching. Current (0,1) settled at level 1.",
+      "history": "Initialize: only the start has D=0; all others are ∞.Remove (0,0) with cost=0; settle permanently.Neighbor (0,1): max(0,1)=1; old D=∞ → new D=1 (update and push).Neighbor (1,0): max(0,2)=2; old D=∞ → new D=2 (update and push).Remove (0,1) with cost=1; settle permanently.Neighbor (0,0): max(1,0)=1; old D=0 → new D=0 (not smaller; keep).Neighbor (0,2): max(1,8)=8; old D=∞ → new D=8 (update and push).Neighbor (1,1): max(1,7)=7; old D=∞ → new D=7 (update and push)."
+    },
+    {
+      "lang": "zh",
+      "state": "trap, after two removals",
+      "progress": "已取出 2/9 格；搜索中。本次 (0,1) 定案水位 1。",
+      "history": "初始化：只有起点 D=0，其余为 ∞。取出 (0,0)，cost=0，永久定案。邻格 (0,1)：max(0,1)=1；旧 D=∞ → 新 D=1（更新并入堆）。邻格 (1,0)：max(0,2)=2；旧 D=∞ → 新 D=2（更新并入堆）。取出 (0,1)，cost=1，永久定案。邻格 (0,0)：max(1,0)=1；旧 D=0 → 新 D=0（不更小，保留）。邻格 (0,2)：max(1,8)=8；旧 D=∞ → 新 D=8（更新并入堆）。邻格 (1,1)：max(1,7)=7；旧 D=∞ → 新 D=7（更新并入堆）。"
+    },
+    {
+      "lang": "en",
+      "copyStatus": "Automatic copy is unavailable. Full source selected; use your system copy shortcut.",
+      "feedback": "That is not the earliest reachable level. The answer is 4: route 0→1→2→4→3 has maximum 4. At level 3, the start can reach only 0,1,2; heights 4 and 6 block progress toward the finish, so arrival cannot be earlier. Choice 3 ignores an intermediate barrier; 8 discards the downward route too soon. Settling the smallest candidate preserves that route instead of committing to the 8 on the right."
+    },
+    {
+      "lang": "zh",
+      "copyStatus": "自动复制不可用。已选中完整源码，请使用系统复制快捷键。",
+      "feedback": "这个水位不是最早可达值。 答案是 4：0→1→2→4→3 的最高点是 4。水位 3 时起点只能到达 0、1、2，往终点方向被高度 4 和 6 阻断；所以不能更早。3 漏掉了中间障碍，8 则过早丢弃了向下的路线。最小候选定案规则会保留向下路线，不会锁死在向右的 8。"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 72.15625,
+          "h": 106.5,
+          "text": "H 0D 0settled",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 106.5,
+          "text": "H 1D 1settled",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 106.5,
+          "text": "H 2D 2current · settled",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 106.5,
+          "text": "H 3D 3pending",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 106.5,
+          "text": "H 4D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 24D 24pending",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 23D 23pending",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 22D 22pending",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 21D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85.5,
+          "text": "H 5D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 12D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 13D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 14D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 15D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85,
+          "text": "H 16D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 11D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 17D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 18D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 19D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85,
+          "text": "H 20D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 10D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 9D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 8D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 7D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85,
+          "text": "H 6D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 72.15625,
+          "h": 106.5,
+          "text": "H 0D 0settled",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 106.5,
+          "text": "H 1D 1settled",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 106.5,
+          "text": "H 2D 2current · settled",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 106.5,
+          "text": "H 3D 3pending",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 106.5,
+          "text": "H 4D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 24D 24pending",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 23D 23pending",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 22D 22pending",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 21D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85.5,
+          "text": "H 5D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 12D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 13D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 14D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 15D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85,
+          "text": "H 16D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 11D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 17D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 18D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 19D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85,
+          "text": "H 20D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 10D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 9D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 8D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 7D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85,
+          "text": "H 6D ∞unknown",
+          "scroll": 70,
+          "client": 70
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 0D 0settled",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 1D 1settled",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 2D 2current · settled",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 3D 3pending",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 4D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 24D 24pending",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 23D 23pending",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 22D 22pending",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 21D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 5D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 12D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 13D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 14D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 15D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 16D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 11D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 17D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 18D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 19D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 20D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 10D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 9D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 8D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 7D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 6D ∞unknown",
+          "scroll": 106,
+          "client": 106
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 0D 0settled",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 1D 1settled",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 2D 2current · settled",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 3D 3pending",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 4D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 24D 24pending",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 23D 23pending",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 22D 22pending",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 21D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 5D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 12D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 13D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 14D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 15D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 16D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 11D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 17D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 18D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 19D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 20D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 10D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 9D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 8D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 7D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 6D ∞unknown",
+          "scroll": 150,
+          "client": 150
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 0D 0定案",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 1D 1定案",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 2D 2本次·定案",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 3D 3待选",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85.5,
+          "text": "H 4D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 24D 24待选",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 23D 23待选",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 22D 22待选",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 21D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85.5,
+          "text": "H 5D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 12D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 13D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 14D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 15D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85,
+          "text": "H 16D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 11D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 17D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 18D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 19D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85,
+          "text": "H 20D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 10D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 9D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 8D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 7D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85,
+          "text": "H 6D ∞未知",
+          "scroll": 70,
+          "client": 70
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 0D 0定案",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 1D 1定案",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 2D 2本次·定案",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 3D 3待选",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85.5,
+          "text": "H 4D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 24D 24待选",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 23D 23待选",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 22D 22待选",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85.5,
+          "text": "H 21D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85.5,
+          "text": "H 5D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 12D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 13D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 14D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 15D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85,
+          "text": "H 16D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 11D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 17D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 18D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 19D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85,
+          "text": "H 20D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 10D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 9D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 8D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.15625,
+          "h": 85,
+          "text": "H 7D ∞未知",
+          "scroll": 70,
+          "client": 70
+        },
+        {
+          "w": 72.21875,
+          "h": 85,
+          "text": "H 6D ∞未知",
+          "scroll": 70,
+          "client": 70
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 0D 0定案",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 1D 1定案",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 2D 2本次·定案",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 3D 3待选",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 4D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 24D 24待选",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 23D 23待选",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 22D 22待选",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 21D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92.5,
+          "text": "H 5D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 12D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 13D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 14D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 15D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 16D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 11D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 17D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 18D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 19D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 20D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 10D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 9D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 8D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 7D ∞未知",
+          "scroll": 106,
+          "client": 106
+        },
+        {
+          "w": 107.5,
+          "h": 92,
+          "text": "H 6D ∞未知",
+          "scroll": 106,
+          "client": 106
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "geo": [
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 0D 0定案",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 1D 1定案",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 2D 2本次·定案",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 3D 3待选",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 4D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 24D 24待选",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 23D 23待选",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 22D 22待选",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 21D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92.5,
+          "text": "H 5D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 12D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 13D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 14D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 15D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 16D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 11D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 17D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 18D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 19D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 20D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 10D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 9D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 8D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 7D ∞未知",
+          "scroll": 150,
+          "client": 150
+        },
+        {
+          "w": 151.5,
+          "h": 92,
+          "text": "H 6D ∞未知",
+          "scroll": 150,
+          "client": 150
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2
+    }
+  ],
+  "states": 74,
+  "host": "linux",
+  "fallbackNativeClipboard": true,
+  "contrastCalibration": {
+    "black": 0,
+    "white": 1,
+    "blackWhite": 21,
+    "nearThreshold": 4.492948073111701
+  },
+  "contrast": [
+    {
+      "a": "text",
+      "b": "panel2",
+      "ratio": 13.397069143240783
+    },
+    {
+      "a": "muted",
+      "b": "panel2",
+      "ratio": 6.449407898769069
+    },
+    {
+      "a": "muted",
+      "b": "panel",
+      "ratio": 7.078851579017443
+    },
+    {
+      "a": "muted",
+      "b": "bg",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "a": "accent",
+      "b": "panel",
+      "ratio": 11.974898815275662
+    },
+    {
+      "a": "accent2",
+      "b": "panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "a": "good",
+      "b": "panel2",
+      "ratio": 10.004815697188947
+    },
+    {
+      "a": "bg",
+      "b": "accent",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "focus": {
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+  "cssBytes": 11629,
+  "controls": [
+    {
+      "id": "",
+      "h": 48
+    },
+    {
+      "id": "",
+      "h": 48
+    },
+    {
+      "id": "handReveal",
+      "h": 48
+    },
+    {
+      "id": "preset",
+      "h": 48
+    },
+    {
+      "id": "prev",
+      "h": 48
+    },
+    {
+      "id": "next",
+      "h": 48
+    },
+    {
+      "id": "reset",
+      "h": 48
+    },
+    {
+      "id": "end",
+      "h": 48
+    },
+    {
+      "id": "reveal",
+      "h": 48
+    },
+    {
+      "id": "copy",
+      "h": 48
+    }
+  ],
+  "storageBlocked": true,
+  "offline": true,
+  "result": "PASS",
+  "zoom": "CSS layout zoom 200%, not native browser zoom",
+  "browser": "156.0.8078.4"
+}

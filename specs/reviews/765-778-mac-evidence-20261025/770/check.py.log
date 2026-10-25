@@ -1,0 +1,1 @@
+{"kind": "author self-check", "pythonCases": 1569, "numericAssignments": 3138, "javascriptTraceCases": 1569, "intermediateInvariantFrames": 13708, "seed": 770, "oracle": "independent Python AST raw list expansion, plus direct numeric eval", "officialExamples": 3, "sourceMirrorParity": "exact", "maximumExpressionLength": 250, "result": "pass"}

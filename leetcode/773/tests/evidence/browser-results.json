@@ -1,0 +1,2210 @@
+{
+  "kind": "author browser self-check",
+  "result": "pass",
+  "records": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "frames": 2,
+      "answer": 1,
+      "visible": "Frame 1/1 · Entering layer 1 · Frontier: 3 states · Discovered so far: 4 states. The goal first appears in this layer. Answer = 1 moves.",
+      "candidates": "Swap tile 2 → 103425: new state; add to seen and the next layerSwap tile 4 → 123045: new state; add to seen and the next layerSwap tile 5 → 123450: new state; add to seen and the next layer"
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "frames": 6,
+      "answer": 5,
+      "visible": "Frame 5/5 · Entering layer 5 · Frontier: 10 states · Discovered so far: 28 states. The goal first appears in this layer. Answer = 5 moves.",
+      "candidates": "Swap tile 4 → 502143: new state; add to seen and the next layerSwap tile 1 → 542013: already discovered; skipSwap tile 3 → 542130: new state; add to seen and the next layer"
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "frames": 23,
+      "answer": -1,
+      "visible": "Frame 22/22 · Entering layer 22 · Frontier: 0 states · Discovered so far: 360 states. The frontier is empty; every reachable state has been searched. Answer = -1.",
+      "candidates": "Swap tile 4 → 504123: already discovered; skipSwap tile 3 → 543120: already discovered; skip"
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "frames": 1,
+      "answer": 0,
+      "visible": "Frame 0/0 · Entering layer 0 · Frontier: 1 states · Discovered so far: 1 states. The goal first appears in this layer. Answer = 0 moves.",
+      "candidates": ""
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "frames": 4,
+      "answer": 3,
+      "visible": "Frame 3/3 · Entering layer 3 · Frontier: 5 states · Discovered so far: 11 states. The goal first appears in this layer. Answer = 3 moves.",
+      "candidates": "Swap tile 2 → 102453: already discovered; skipSwap tile 3 → 123450: new state; add to seen and the next layer"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "frames": 2,
+      "answer": 1,
+      "visible": "帧 1/1 · 进入第 1 层 · 前沿 3 个状态 · 累计发现 4 个状态。目标首次出现在此层，答案 = 1 次移动。",
+      "candidates": "交换数字 2 → 103425：新状态，加入 seen 与下一层交换数字 4 → 123045：新状态，加入 seen 与下一层交换数字 5 → 123450：新状态，加入 seen 与下一层"
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "frames": 6,
+      "answer": 5,
+      "visible": "帧 5/5 · 进入第 5 层 · 前沿 10 个状态 · 累计发现 28 个状态。目标首次出现在此层，答案 = 5 次移动。",
+      "candidates": "交换数字 4 → 502143：新状态，加入 seen 与下一层交换数字 1 → 542013：已经发现，跳过交换数字 3 → 542130：新状态，加入 seen 与下一层"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "frames": 23,
+      "answer": -1,
+      "visible": "帧 22/22 · 进入第 22 层 · 前沿 0 个状态 · 累计发现 360 个状态。前沿为空，可达状态已全部搜索，答案 = -1。",
+      "candidates": "交换数字 4 → 504123：已经发现，跳过交换数字 3 → 543120：已经发现，跳过"
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "frames": 1,
+      "answer": 0,
+      "visible": "帧 0/0 · 进入第 0 层 · 前沿 1 个状态 · 累计发现 1 个状态。目标首次出现在此层，答案 = 0 次移动。",
+      "candidates": ""
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "frames": 4,
+      "answer": 3,
+      "visible": "帧 3/3 · 进入第 3 层 · 前沿 5 个状态 · 累计发现 11 个状态。目标首次出现在此层，答案 = 3 次移动。",
+      "candidates": "交换数字 2 → 102453：已经发现，跳过交换数字 3 → 123450：新状态，加入 seen 与下一层"
+    }
+  ],
+  "layouts": [
+    {
+      "locale": "en",
+      "width": 320,
+      "doc": 320,
+      "cells": [
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.671875,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 75,
+          "client": 75
+        },
+        {
+          "w": 78.671875,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.671875,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.671875,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 75,
+          "client": 75
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.671875,
+          "scroll": 75,
+          "client": 75
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.671875,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.671875,
+          "scroll": 75,
+          "client": 75
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.671875,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        }
+      ],
+      "visible": "Frame 3/5 · Entering layer 3 · Frontier: 4 states · Discovered so far: 12 states. No final answer yet."
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "doc": 390,
+      "cells": [
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 98,
+          "client": 98
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 98,
+          "client": 98
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 98,
+          "client": 98
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 98,
+          "client": 98
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        }
+      ],
+      "visible": "Frame 3/5 · Entering layer 3 · Frontier: 4 states · Discovered so far: 12 states. No final answer yet."
+    },
+    {
+      "locale": "en",
+      "width": 736,
+      "doc": 736,
+      "cells": [
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 60.875,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.875,
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.875,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.875,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        }
+      ],
+      "visible": "Frame 3/5 · Entering layer 3 · Frontier: 4 states · Discovered so far: 12 states. No final answer yet."
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "doc": 1440,
+      "cells": [
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 61,
+          "client": 61
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 61,
+          "client": 61
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 61,
+          "client": 61
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 61,
+          "client": 61
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        }
+      ],
+      "visible": "Frame 3/5 · Entering layer 3 · Frontier: 4 states · Discovered so far: 12 states. No final answer yet."
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "doc": 320,
+      "cells": [
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.671875,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 75,
+          "client": 75
+        },
+        {
+          "w": 78.671875,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.671875,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.671875,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 75,
+          "client": 75
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.671875,
+          "scroll": 75,
+          "client": 75
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.671875,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.671875,
+          "scroll": 75,
+          "client": 75
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.671875,
+          "scroll": 77,
+          "client": 77
+        },
+        {
+          "w": 78.65625,
+          "scroll": 77,
+          "client": 77
+        }
+      ],
+      "visible": "帧 3/5 · 进入第 3 层 · 前沿 4 个状态 · 累计发现 12 个状态。尚未给出最终答案。"
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "doc": 390,
+      "cells": [
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 98,
+          "client": 98
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 98,
+          "client": 98
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 98,
+          "client": 98
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 98,
+          "client": 98
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        },
+        {
+          "w": 102,
+          "scroll": 100,
+          "client": 100
+        }
+      ],
+      "visible": "帧 3/5 · 进入第 3 层 · 前沿 4 个状态 · 累计发现 12 个状态。尚未给出最终答案。"
+    },
+    {
+      "locale": "zh",
+      "width": 736,
+      "doc": 736,
+      "cells": [
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 60.875,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.875,
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.875,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.875,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        },
+        {
+          "w": 60.890625,
+          "scroll": 59,
+          "client": 59
+        }
+      ],
+      "visible": "帧 3/5 · 进入第 3 层 · 前沿 4 个状态 · 累计发现 12 个状态。尚未给出最终答案。"
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "doc": 1440,
+      "cells": [
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.671875,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 74.65625,
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 61,
+          "client": 61
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 61,
+          "client": 61
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 61,
+          "client": 61
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 61,
+          "client": 61
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        },
+        {
+          "w": 64.5,
+          "scroll": 63,
+          "client": 63
+        }
+      ],
+      "visible": "帧 3/5 · 进入第 3 层 · 前沿 4 个状态 · 累计发现 12 个状态。尚未给出最终答案。"
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "available": 320,
+      "cells": [
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "available": 390,
+      "cells": [
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "available": 1440,
+      "cells": [
+        {
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 55,
+          "client": 55
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 55,
+          "client": 55
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 55,
+          "client": 55
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 55,
+          "client": 55
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 2,
+      "doc": 320,
+      "available": 320,
+      "cells": [
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 2,
+      "doc": 390,
+      "available": 390,
+      "cells": [
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 44,
+          "client": 44
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        },
+        {
+          "scroll": 46,
+          "client": 46
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "doc": 1440,
+      "available": 1440,
+      "cells": [
+        {
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "scroll": 73,
+          "client": 73
+        },
+        {
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "scroll": 71,
+          "client": 71
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 55,
+          "client": 55
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 55,
+          "client": 55
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 55,
+          "client": 55
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 55,
+          "client": 55
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        },
+        {
+          "scroll": 57,
+          "client": 57
+        }
+      ]
+    }
+  ],
+  "source": "exact rendered, embedded, clipboard, download and sentinel-seeded native manual-copy parity",
+  "clipboard": {
+    "host": "linux",
+    "shortcut": "Control+C",
+    "fullSelection": true,
+    "actualReadback": true
+  },
+  "keyboard": {
+    "active": true,
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "contrasts": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".tile",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#tracePrev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#traceNext",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#langToggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgba(13, 17, 23, 0.96)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#copyStatus",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": "focus on panel2",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "cell border",
+      "ratio": 6.449407898769069
+    }
+  ],
+  "cssBytes": 11530,
+  "storageDenied": true,
+  "offline": true,
+  "localErrors": [],
+  "badAssets": [],
+  "externalRequests": [],
+  "zoomMethod": "CSS zoom:2 in real Chromium; browser-chrome zoom and real devices unverified"
+}

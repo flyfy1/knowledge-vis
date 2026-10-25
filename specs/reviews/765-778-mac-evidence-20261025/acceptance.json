@@ -1,0 +1,216 @@
+{
+  "snapshot": "81bee47c5d50bf5ec2c916a3e38b7b98a176cf53",
+  "captured_updated_at": "2026-10-25T11:14:45.112844+00:00",
+  "problems": {
+    "765": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/765-review-1-c03e66cb.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh canonical Python cases matched independent BFS predictions: 1 and 3 swaps.",
+            "Bilingual traces, rewind/reset/endpoints, keyboard, 320/390/desktop layouts and native 200% zoom passed.",
+            "Exact source parity verified for display, mirror, clipboard, manual fallback and download.",
+            "Non-mutating metadata preflight exited 0; candidate files unchanged."
+          ],
+          "detail": "95/100. No required findings. One optional advisory addresses the dense graph-proof transition.",
+          "run_id": "765-review-c06da47311c3",
+          "candidate": "7ec592bddf5642212cdcb3363510982354da780e",
+          "candidate_sha256": "bb4c4390b4ab05620d1f4fc4e3b6881606057ddfbcbcd874801a6973679b30e7",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "3ec2d6bc48f27daf8f134addabb832ec47ea7122"
+        }
+      ],
+      "author_runs": [
+        "765-author-c2902f5df7fb"
+      ],
+      "prior_report": "specs/reviews/765-review-1-c03e66cb.md",
+      "candidate": "7ec592bddf5642212cdcb3363510982354da780e",
+      "registration_commit": "e315aa34a6a10e2fdd00ba400fe76849ca496d23",
+      "accepted_at": "2026-10-25T09:57:27.168282+00:00"
+    },
+    "768": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/768-review-1-cdfb9cf9.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source audit.",
+            "Fresh canonical Python checks matched independent partition oracle; input remained unchanged.",
+            "Both locales, rewind/reset, quiz changes, keyboard, 320/390/desktop and native 200% zoom verified.",
+            "Exact displayed, mirrored, copied, fallback-copied and downloaded source parity passed.",
+            "Inspected tests and non-mutating metadata preflight exited 0; screenshots inspected."
+          ],
+          "detail": "100/100. Accepted for revision 0b25921b05d72cc6549aa4064fc5b82a42cd50e7. No publication or LeetCode submission claim.",
+          "run_id": "768-review-6fbc6330f5d5",
+          "candidate": "0b25921b05d72cc6549aa4064fc5b82a42cd50e7",
+          "candidate_sha256": "c440e13f2c4a00f91998aebfc266181c55c7c1277ecea2fc20382b18d62c7265",
+          "weighted_score": 100.0,
+          "round": 1,
+          "commit": "cead1d8f59a7d7bf80446132554d24c9dcb2581f"
+        }
+      ],
+      "author_runs": [
+        "768-author-eb4c5ad17d94"
+      ],
+      "prior_report": "specs/reviews/768-review-1-cdfb9cf9.md",
+      "candidate": "0b25921b05d72cc6549aa4064fc5b82a42cd50e7",
+      "registration_commit": "05e42e442af0357297eba6b1f97fdd20df5ad0f2",
+      "accepted_at": "2026-10-25T10:14:58.959014+00:00"
+    },
+    "770": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            4,
+            4,
+            4,
+            3,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/770-review-1-6f9bbf1f.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh Python example and multiplicity counterexample matched predictions; inputs remained unchanged.",
+            "Both locales, rewind/reset, predictions, keyboard, narrow layouts and 200% CSS zoom checked.",
+            "Exact displayed/copied/downloaded source parity and native clipboard fallback passed.",
+            "Metadata validate-only preflight exited 0; screenshots captured and inspected in the exclusive evidence directory."
+          ],
+          "detail": "96.25/100. No required open findings. Acceptance covers this candidate\u2019s preview review, not publication or measured learner comprehension.",
+          "run_id": "770-review-2a3e58b7f2c9",
+          "candidate": "b042f446318bd53113f6d784d8d5fde41110aa30",
+          "candidate_sha256": "d8676325a1254465c9050c7085e85b7ce379d295b1c76059fb3c89ad187915a0",
+          "weighted_score": 96.25,
+          "round": 1,
+          "commit": "5c36c5ee78eb258eb6805f0f3e2313cfc9a54d44"
+        }
+      ],
+      "author_runs": [
+        "770-author-8e60c64bb55e"
+      ],
+      "prior_report": "specs/reviews/770-review-1-6f9bbf1f.md",
+      "candidate": "b042f446318bd53113f6d784d8d5fde41110aa30",
+      "registration_commit": "f9b6a79cd6b7a3fe62fdc9efec0ada3f8e74219b",
+      "accepted_at": "2026-10-25T10:35:20.400004+00:00"
+    },
+    "773": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            3
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/773-review-1-aa279396.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Canonical Python passed all 720 valid boards; fresh cases independently checked.",
+            "Both locales, rewind/reset/endpoints, keyboard, narrow layouts and 200% CSS zoom checked.",
+            "Exact displayed, copied, downloaded and manual-fallback source parity passed.",
+            "Non-mutating metadata preflight exited 0."
+          ],
+          "detail": "92.5/100. No required findings; one minor teaching-density advisory. Evidence stored in the exclusive review directory.",
+          "run_id": "773-review-68eb410a6a92",
+          "candidate": "de0f38a8b5a87a0240d7822821aca38aa6f406d1",
+          "candidate_sha256": "c3149fc20d29ac9f80516a572007227de240a1782db3e8ff4a721469af4ee032",
+          "weighted_score": 92.5,
+          "round": 1,
+          "commit": "97b286cc849f38ccf23fdfdccee8bf2c4f6ef8d7"
+        }
+      ],
+      "author_runs": [
+        "773-author-7d7d945d653b"
+      ],
+      "prior_report": "specs/reviews/773-review-1-aa279396.md",
+      "candidate": "de0f38a8b5a87a0240d7822821aca38aa6f406d1",
+      "registration_commit": "88b9a4529d603f6af25290bad7c4546c39d6cd1e",
+      "accepted_at": "2026-10-25T10:52:50.014399+00:00"
+    },
+    "778": {
+      "status": "accepted_local",
+      "rounds": 1,
+      "new": true,
+      "phase": "done",
+      "reviews": [
+        {
+          "outcome": "accepted",
+          "scores": [
+            4,
+            3,
+            4,
+            4,
+            4,
+            4
+          ],
+          "required_open": [],
+          "report_path": "specs/reviews/778-review-1-14539111.md",
+          "evidence": [
+            "Cold browser walkthrough saved before source inspection.",
+            "Fresh predictions verified against canonical Python and an independent threshold oracle.",
+            "Bilingual controls, rewind/reset, prediction changes, keyboard access and narrow/zoomed screenshots checked.",
+            "Exact source display/copy/fallback/download parity passed.",
+            "Non-mutating metadata preflight exited 0."
+          ],
+          "detail": "95/100; no required findings. One optional advisory concerns proof density. Zoom evidence uses 200% CSS layout zoom. Acceptance is separate from publication.",
+          "run_id": "778-review-3f03b7f0e177",
+          "candidate": "41ea45d5f0735ccffaa05f10679a1aa25784c602",
+          "candidate_sha256": "9c93daff64811dde7d5921fa6e103b80e1510ea3e8b1e27d9fb54d9152fc90f3",
+          "weighted_score": 95.0,
+          "round": 1,
+          "commit": "e806eadd7d89a3d57edb47c96a723e32e83c4a05"
+        }
+      ],
+      "author_runs": [
+        "778-author-740bbb1fc8b8"
+      ],
+      "prior_report": "specs/reviews/778-review-1-14539111.md",
+      "candidate": "41ea45d5f0735ccffaa05f10679a1aa25784c602",
+      "registration_commit": "81bee47c5d50bf5ec2c916a3e38b7b98a176cf53",
+      "accepted_at": "2026-10-25T11:14:41.820576+00:00"
+    }
+  }
+}

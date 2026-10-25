@@ -1,0 +1,26 @@
+[
+  {
+    "lang": "en",
+    "label": " #23: why a heap selects the smallest candidate →",
+    "url": "http://127.0.0.1:18770/leetcode/23/#step1",
+    "excerpt": "02Why can we skip work?A min-heap is a complete binary tree stored in an array; parents are no greater than children, so the root is the minimum. Array position h has children 2h+1 and 2h+2. Store only the first remaining node of each list.After removing the root, move the last candidate to the root and swap downward with the smaller child until heap order returns. A new successor sifts upward from the end. Each operation follows at most O(log k) levels. Siblings need not be ordered; the heap array is not sorted.For heap values [1,3,2,7], pop 1 and move the last value 7 to the root: [7,3,2]. The smaller child is 2; swap to get [2,3,7]. Insert 4: [2,3,7,4]. Since 4 ≥ its parent 3, stop. Repair follows one parent–child path instead of scanning every head.Before each pop, each nonempty remaining list contributes exactly one head. The global remaining minimum is among those heads; the output prefix is sorted. source:index is permanent node identity; h in the heap is a storage position.Observe node identity and pointer rewiring"
+  },
+  {
+    "lang": "en",
+    "label": "#407: deriving water levels from the boundary →",
+    "url": "http://127.0.0.1:18770/leetcode/407/#step2",
+    "excerpt": "2 · Why expand the lowest escape level first?How can we fix each minimum escape level L—the least possible highest ground on a path to the boundary—once? The frontier contains cells whose L is already fixed but which have not yet expanded to neighbors. Initially, insert every boundary cell exactly once, with L equal to its ground H.In the tiny bowl, the first removed cell (0,0) has level 3 and no unknown neighbors. Next, (0,1) reaches the center (1,1) with bottleneck max(3,1)=3. Fix its L=3 and add depth 3−1=2. Insert the center into the frontier at level 3. Using its raw ground 1 would incorrectly lower the barrier for later expansions.Invariant—a fact preserved after every operation: each discovered cell already has its minimum escape level L. For the expansion, remove the smallest frontier level a and reach a neighbor of ground b. This gives a path of level max(a,b). Any lower alternative route must cross some frontier cell on its way from the unknown region to the boundary. That frontier level is at least a, and the route must also pass ground b, so it cannot beat max(a,b). This is why seen can be set on first discovery.Use a min-heap for the frontier: a queue that removes the "
+  },
+  {
+    "lang": "zh",
+    "label": "#23：为什么堆能选出最小候选 →",
+    "url": "http://127.0.0.1:18770/leetcode/23/#step1",
+    "excerpt": "02为什么能省去工作？最小堆是一棵以数组保存的完全二叉树，父节点值不大于孩子；根就是所有候选中最小的。数组下标 h 的孩子是 2h+1、2h+2。只保存每条尚未耗尽链表的第一个节点。取出根后，用末尾候选填补根，再与较小孩子交换，直到堆序恢复。新后继从末尾向上交换。两种操作最多沿树高 O(log k) 移动。堆不要求兄弟之间有序，所以不要把它误读成排好序的数组。例如堆数组 [1,3,2,7]：弹出 1，用末尾 7 补根，暂成 [7,3,2]；较小孩子是 2，交换后为 [2,3,7]。再插入 4 得 [2,3,7,4]，4 ≥ 父节点 3，不再上移。只沿一条父子路径修复，不扫描每个头。每次弹出前，每条非空剩余链表恰好贡献一个头；全局最小剩余值必在这些头中。输出前缀有序。图中 source:index 是永久节点身份，堆括号中的 h 是存储位置。观察节点身份与指针重连"
+  },
+  {
+    "lang": "zh",
+    "label": "#407：从边界推导水位 →",
+    "url": "http://127.0.0.1:18770/leetcode/407/#step2",
+    "excerpt": "2 · 为什么先扩展最低的水位？这一步要回答：如何一次确定每格的最低逃逸水位 L（通往边缘的路径中，最高地面的最小值）？“前沿”是已经确定 L、但还没向邻居扩展的格子。初始前沿包含所有边缘格，每格只放一次，L 就是地面 H。在小盆地，最先取出的 (0,0) 水位为 3，它没有未知邻居。接着取出 (0,1)，通过它到中心 (1,1) 的路线最高为 max(3,1)=3，于是中心固定 L=3，新增水深 3−1=2。把中心以水位 3 放回前沿；不能用原地面 1，否则后续扩展会错误地降低挡水高度。不变量（每次操作后仍成立的事实）：每个已发现格子的 L 已经是最小逃逸水位。证明扩展：取前沿最小水位 a，邻居地面 b，则有一条水位 max(a,b) 的路线。若还存在更低的路线，它从未知区通向边缘时一定穿过某个前沿；该前沿水位至少为 a，且路线还必须经过地面 b，因此不可能低于 max(a,b)。这也解释了为什么可以在首次发现时就标记 seen。用最小堆保存前沿：这是一种每次取出最小水位的队列。一次取出或放入需要 O(log(mn)) 时间，因为只需沿堆的树形层级交换。每格只发现、入堆、出堆一次；四个方向都检查后，本轮结束。相同水位按行、列排序只为演示可复现，不影响答案。#23：最小堆如何选择下一项这是浏览器模拟，不是执行下方 Python。先用小盆地前进两次，看中心从未知变为 L=3、W=2；再切换拐弯走廊，观察出口水位 2 如何沿弯路传播。图保留所有已确定值，历史保留每次新增水量。前进一轮 = 取出一个格子并发现它的所有未知邻居；没有省略轮次。换预设或出口高度会重新开始本实验。地形预设（切换会重开）小盆地 · 体积 2拐弯走廊 · 可调出口官方示例 1 · 体积 4官方示例 2 · 体积 10单行 · 无内部格全零 · 无水深边缘 (2,4) 的地面高度：2只改变出口地面，其余格子保持不变。先预测：从 2 降到 0 会怎样？拖动后到终点，比较四个低地的 W；再升回 2 验证可逆。← 撤回一轮扩展最低格 →回到初始前沿完成所有扩展已完成 0/9 次取出 · 已固定 8/9 格 · 当前累计水量 0 · 初始边缘已入堆每格显示真实地面 H、已确定水位 L、水深 W=L−H；? 表示尚未知晓。B=边缘，D=已发现，P=刚取出。橙框只标本轮取出的格子，不代表额外水量。行列从 0 开始。宽表可横向滚动。地形 H / 逃逸水位 L / 水深 W行/列0120H 3L 3W 0B · 边缘H 3L 3W 0B · 边缘H 3L 3W 0B · 边缘1H 3L 3W 0B · 边缘H 1L ?W ?未知H 3L 3W 0B · 边缘2H 3L 3W 0B · 边缘H 3L 3W 0B · 边缘H 3L 3W 0B · 边缘待扩展前沿条目为 L@(行,列)。为了阅读，按水位排序展示；这"
+  }
+]

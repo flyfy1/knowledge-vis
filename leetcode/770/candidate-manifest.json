@@ -1,0 +1,39 @@
+{
+  "candidate": "770-author-20261025-v1",
+  "status": "self-checked; independent review pending",
+  "frozenAt": "2026-10-25T10:27:58.445622+00:00",
+  "files": {
+    "BRIEF.md": "dc9a2a7abee297d86ecdbe48abb9c96e3b351da835fe0298f41d4bca045347e8",
+    "app.js": "6d63c1849d50d5d8d670e60f69501af3014d52f56d22ea01bf28487a8acdb3b1",
+    "baseline-code.js": "7e279ac491c6a94372f3d09447c25081e4bf97c9f59bf03345e347a1610cd3ba",
+    "baseline.py": "b676dc1ed6ffe995b5d635cbe646d2109a118da5a404889d19acb772afc7fbb6",
+    "copy.js": "904005d2d16b437f23f16a07f721f8b6dbd385c13fa96cbda689a033e5dd0c49",
+    "core.js": "34901091c2baeaaf8a671fc9e3f79f5c5c3de0967deb7c39d626d3e7a590d20c",
+    "index.html": "234dfc8b2d212c236b525fec77255fef47035c281537ab82918c17ddcc09f707",
+    "lesson-entry.json": "7dd6a66bcc4c086289598813cf47e7c4df052a149c3793a9ad4ee626b5bafcb5",
+    "provenance/README.md": "3200323e33ce1a00dd6e55326d3bc024be2614ecae8779b5e959be83af0a8bf0",
+    "provenance/access.json": "d3012df86c54e1a2010ca9eeb8b10d9f9294708bb1ddb91657bd1cd322079f9b",
+    "provenance/graphql-response.json": "d4d99e6d2797937c9aab6492934363c655f52952d3f0d0837b5be06a6524ffe9",
+    "provenance/official-page.html": "7bfd0337e1abcccb2d407d47850712a159bc35b550586867e17b45805baa75dc",
+    "python-code.js": "8ff67a023b9c67c9b74a7daa44961812d6a94ede5dfc6c2967392f4e0f7f806d",
+    "solution.py": "2ad2f65964e748413ff9533765df74d7cef8cf1dae23b3cd74174acf5102ff86",
+    "style.css": "b2b856f36c9e1fccdb5ff995c139b11d9cc722392f9a849d8de8561570ec4756",
+    "tests/README.md": "3763e5b013bb416281e846af75e6e900d9119dc4f0134cca43a6aa2d56ce4331",
+    "tests/SELF-CHECK.md": "3bcc9c11ea50db000aa23eff4a83c8a65be2b1a2bcb78a35f928845b3743bd71",
+    "tests/browser.cjs": "afcc1a1eb1c91512f3967906b833cc0b710440ab38bd45cd8b5b759927d397c7",
+    "tests/check.py": "cd0bc8cec7a89ecfbd8c51bae75b5df1dce325d19a71de33bd253aa9a1b889cc",
+    "tests/inspect.cjs": "7b114db777dba9ba4b34f209c435f2a825d2f4cd55697e4dbe7e6d5e94dae9ce"
+  },
+  "sharedDependencies": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "evidence": [
+    "tests/evidence/algorithm-results.json",
+    "tests/evidence/browser-results.json",
+    "tests/evidence/additional-browser-results.json",
+    "tests/evidence/metadata-preflight.json",
+    "tests/evidence/contrast.json",
+    "tests/SELF-CHECK.md"
+  ]
+}

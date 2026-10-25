@@ -1,0 +1,12036 @@
+[
+  {
+    "expression": "e + 8 - a + 5",
+    "values": {
+      "e": 1
+    },
+    "expected": [
+      "-1*a",
+      "14"
+    ]
+  },
+  {
+    "expression": "e - 8 + temperature - pressure",
+    "values": {
+      "e": 1,
+      "temperature": 12
+    },
+    "expected": [
+      "-1*pressure",
+      "5"
+    ]
+  },
+  {
+    "expression": "(e + 8) * (e - 8)",
+    "values": {},
+    "expected": [
+      "1*e*e",
+      "-64"
+    ]
+  },
+  {
+    "expression": "0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a - a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b * a + a * b - a * a * b",
+    "values": {},
+    "expected": [
+      "-1*a*a*b",
+      "2*a*b"
+    ]
+  },
+  {
+    "expression": "1 + 2 * 3",
+    "values": {},
+    "expected": [
+      "7"
+    ]
+  },
+  {
+    "expression": "8 - 3 - 2",
+    "values": {},
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "a - b * c",
+    "values": {},
+    "expected": [
+      "-1*b*c",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a * a + b * b + a * b",
+    "values": {
+      "a": -100
+    },
+    "expected": [
+      "1*b*b",
+      "-100*b",
+      "10000"
+    ]
+  },
+  {
+    "expression": "(a - a) * (b + c)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(x + y) * (x - y) + y * x",
+    "values": {},
+    "expected": [
+      "1*x*x",
+      "1*x*y",
+      "-1*y*y"
+    ]
+  },
+  {
+    "expression": "a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a + a",
+    "values": {},
+    "expected": [
+      "63*a"
+    ]
+  },
+  {
+    "expression": "((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((ab))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))",
+    "values": {},
+    "expected": [
+      "1*ab"
+    ]
+  },
+  {
+    "expression": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "values": {},
+    "expected": [
+      "1*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    ]
+  },
+  {
+    "expression": "a + b",
+    "values": {
+      "a": 100,
+      "b": -100
+    },
+    "expected": []
+  },
+  {
+    "expression": "(0 + 0) + 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 + (0 + 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + 0) - 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 + (0 - 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + 0) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 + (0 * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 - 0) + 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 - (0 + 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 - 0) - 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 - (0 - 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 - 0) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 - (0 * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 0) + 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (0 + 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 0) - 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (0 - 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 0) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (0 * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + 0) + 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "0 + (0 + 1)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(0 + 0) - 1",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 + (0 - 1)",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(0 + 0) * 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 + (0 * 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 - 0) + 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "0 - (0 + 1)",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(0 - 0) - 1",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 - (0 - 1)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(0 - 0) * 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 - (0 * 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 0) + 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "0 * (0 + 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 0) - 1",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 * (0 - 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 0) * 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (0 * 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + 0) + a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "0 + (0 + a)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(0 + 0) - a",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "0 + (0 - a)",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(0 + 0) * a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 + (0 * a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 - 0) + a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "0 - (0 + a)",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(0 - 0) - a",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "0 - (0 - a)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(0 - 0) * a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 - (0 * a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 0) + a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "0 * (0 + a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 0) - a",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "0 * (0 - a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 0) * a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (0 * a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + 0) + b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "0 + (0 + b)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(0 + 0) - b",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "0 + (0 - b)",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(0 + 0) * b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 + (0 * b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 - 0) + b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "0 - (0 + b)",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(0 - 0) - b",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "0 - (0 - b)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(0 - 0) * b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 - (0 * b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 0) + b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "0 * (0 + b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 0) - b",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "0 * (0 - b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 0) * b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (0 * b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + 1) + 0",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "0 + (1 + 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(0 + 1) - 0",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "0 + (1 - 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(0 + 1) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 + (1 * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 - 1) + 0",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 - (1 + 0)",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(0 - 1) - 0",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 - (1 - 0)",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(0 - 1) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 - (1 * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 1) + 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (1 + 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 1) - 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (1 - 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 1) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (1 * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + 1) + 1",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "0 + (1 + 1)",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(0 + 1) - 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 + (1 - 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + 1) * 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "0 + (1 * 1)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(0 - 1) + 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 - (1 + 1)",
+    "values": {},
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "(0 - 1) - 1",
+    "values": {},
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "0 - (1 - 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 - 1) * 1",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 - (1 * 1)",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(0 * 1) + 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "0 * (1 + 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 1) - 1",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 * (1 - 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 1) * 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (1 * 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + 1) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "0 + (1 + a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(0 + 1) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "0 + (1 - a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(0 + 1) * a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "0 + (1 * a)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(0 - 1) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 - (1 + a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(0 - 1) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 - (1 - a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(0 - 1) * a",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "0 - (1 * a)",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(0 * 1) + a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "0 * (1 + a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 1) - a",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "0 * (1 - a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 1) * a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (1 * a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + 1) + b",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "0 + (1 + b)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(0 + 1) - b",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "0 + (1 - b)",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(0 + 1) * b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "0 + (1 * b)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(0 - 1) + b",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 - (1 + b)",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(0 - 1) - b",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 - (1 - b)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(0 - 1) * b",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "0 - (1 * b)",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(0 * 1) + b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "0 * (1 + b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 1) - b",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "0 * (1 - b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * 1) * b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (1 * b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + a) + 0",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "0 + (a + 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(0 + a) - 0",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "0 + (a - 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(0 + a) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 + (a * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 - a) + 0",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "0 - (a + 0)",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(0 - a) - 0",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "0 - (a - 0)",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(0 - a) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 - (a * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * a) + 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (a + 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * a) - 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (a - 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * a) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (a * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + a) + 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "0 + (a + 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(0 + a) - 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 + (a - 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(0 + a) * 1",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "0 + (a * 1)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(0 - a) + 1",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "0 - (a + 1)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(0 - a) - 1",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 - (a - 1)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(0 - a) * 1",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "0 - (a * 1)",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(0 * a) + 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "0 * (a + 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * a) - 1",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 * (a - 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * a) * 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (a * 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + a) + a",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "0 + (a + a)",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "(0 + a) - a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 + (a - a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + a) * a",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "0 + (a * a)",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "(0 - a) + a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 - (a + a)",
+    "values": {},
+    "expected": [
+      "-2*a"
+    ]
+  },
+  {
+    "expression": "(0 - a) - a",
+    "values": {},
+    "expected": [
+      "-2*a"
+    ]
+  },
+  {
+    "expression": "0 - (a - a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 - a) * a",
+    "values": {},
+    "expected": [
+      "-1*a*a"
+    ]
+  },
+  {
+    "expression": "0 - (a * a)",
+    "values": {},
+    "expected": [
+      "-1*a*a"
+    ]
+  },
+  {
+    "expression": "(0 * a) + a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "0 * (a + a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * a) - a",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "0 * (a - a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * a) * a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (a * a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + a) + b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "0 + (a + b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(0 + a) - b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "0 + (a - b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(0 + a) * b",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "0 + (a * b)",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(0 - a) + b",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "0 - (a + b)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(0 - a) - b",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "0 - (a - b)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(0 - a) * b",
+    "values": {},
+    "expected": [
+      "-1*a*b"
+    ]
+  },
+  {
+    "expression": "0 - (a * b)",
+    "values": {},
+    "expected": [
+      "-1*a*b"
+    ]
+  },
+  {
+    "expression": "(0 * a) + b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "0 * (a + b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * a) - b",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "0 * (a - b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * a) * b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (a * b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + b) + 0",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "0 + (b + 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(0 + b) - 0",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "0 + (b - 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(0 + b) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 + (b * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 - b) + 0",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "0 - (b + 0)",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(0 - b) - 0",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "0 - (b - 0)",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(0 - b) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 - (b * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * b) + 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (b + 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * b) - 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (b - 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * b) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (b * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + b) + 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "0 + (b + 1)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(0 + b) - 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 + (b - 1)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(0 + b) * 1",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "0 + (b * 1)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(0 - b) + 1",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "0 - (b + 1)",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(0 - b) - 1",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 - (b - 1)",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(0 - b) * 1",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "0 - (b * 1)",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(0 * b) + 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "0 * (b + 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * b) - 1",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "0 * (b - 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * b) * 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (b * 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + b) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "0 + (b + a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(0 + b) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "0 + (b - a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(0 + b) * a",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "0 + (b * a)",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(0 - b) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "0 - (b + a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(0 - b) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "0 - (b - a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(0 - b) * a",
+    "values": {},
+    "expected": [
+      "-1*a*b"
+    ]
+  },
+  {
+    "expression": "0 - (b * a)",
+    "values": {},
+    "expected": [
+      "-1*a*b"
+    ]
+  },
+  {
+    "expression": "(0 * b) + a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "0 * (b + a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * b) - a",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "0 * (b - a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * b) * a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (b * a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + b) + b",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "0 + (b + b)",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(0 + b) - b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 + (b - b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 + b) * b",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "0 + (b * b)",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "(0 - b) + b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 - (b + b)",
+    "values": {},
+    "expected": [
+      "-2*b"
+    ]
+  },
+  {
+    "expression": "(0 - b) - b",
+    "values": {},
+    "expected": [
+      "-2*b"
+    ]
+  },
+  {
+    "expression": "0 - (b - b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 - b) * b",
+    "values": {},
+    "expected": [
+      "-1*b*b"
+    ]
+  },
+  {
+    "expression": "0 - (b * b)",
+    "values": {},
+    "expected": [
+      "-1*b*b"
+    ]
+  },
+  {
+    "expression": "(0 * b) + b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "0 * (b + b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * b) - b",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "0 * (b - b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(0 * b) * b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "0 * (b * b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 + 0) + 0",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (0 + 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + 0) - 0",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (0 - 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + 0) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 + (0 * 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - 0) + 0",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (0 + 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - 0) - 0",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (0 - 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - 0) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 - (0 * 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * 0) + 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 * (0 + 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 * 0) - 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 * (0 - 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 * 0) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 * (0 * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 + 0) + 1",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "1 + (0 + 1)",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(1 + 0) - 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 + (0 - 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 + 0) * 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (0 * 1)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - 0) + 1",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "1 - (0 + 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 - 0) - 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 - (0 - 1)",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(1 - 0) * 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (0 * 1)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * 0) + 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 * (0 + 1)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * 0) - 1",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "1 * (0 - 1)",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(1 * 0) * 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 * (0 * 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 + 0) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (0 + a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + 0) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (0 - a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + 0) * a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1 + (0 * a)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - 0) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (0 + a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - 0) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (0 - a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - 0) * a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1 - (0 * a)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * 0) + a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1 * (0 + a)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(1 * 0) - a",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "1 * (0 - a)",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(1 * 0) * a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 * (0 * a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 + 0) + b",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (0 + b)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + 0) - b",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (0 - b)",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + 0) * b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 + (0 * b)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - 0) + b",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (0 + b)",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - 0) - b",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (0 - b)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - 0) * b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 - (0 * b)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * 0) + b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 * (0 + b)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(1 * 0) - b",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "1 * (0 - b)",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(1 * 0) * b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 * (0 * b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 + 1) + 0",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "1 + (1 + 0)",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(1 + 1) - 0",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "1 + (1 - 0)",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(1 + 1) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 + (1 * 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - 1) + 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 - (1 + 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 - 1) - 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 - (1 - 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 - 1) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 - (1 * 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * 1) + 0",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 * (1 + 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * 1) - 0",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 * (1 - 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * 1) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 * (1 * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 + 1) + 1",
+    "values": {},
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "1 + (1 + 1)",
+    "values": {},
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "(1 + 1) - 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (1 - 1)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + 1) * 1",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "1 + (1 * 1)",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(1 - 1) + 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (1 + 1)",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(1 - 1) - 1",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "1 - (1 - 1)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - 1) * 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 - (1 * 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 * 1) + 1",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "1 * (1 + 1)",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(1 * 1) - 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 * (1 - 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 * 1) * 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 * (1 * 1)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + 1) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "1 + (1 + a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "(1 + 1) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "1 + (1 - a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "(1 + 1) * a",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "1 + (1 * a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - 1) + a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1 - (1 + a)",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(1 - 1) - a",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "1 - (1 - a)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(1 - 1) * a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 - (1 * a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * 1) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 * (1 + a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * 1) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 * (1 - a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * 1) * a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1 * (1 * a)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(1 + 1) + b",
+    "values": {},
+    "expected": [
+      "1*b",
+      "2"
+    ]
+  },
+  {
+    "expression": "1 + (1 + b)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "2"
+    ]
+  },
+  {
+    "expression": "(1 + 1) - b",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "2"
+    ]
+  },
+  {
+    "expression": "1 + (1 - b)",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "2"
+    ]
+  },
+  {
+    "expression": "(1 + 1) * b",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "1 + (1 * b)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - 1) + b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 - (1 + b)",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(1 - 1) - b",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "1 - (1 - b)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(1 - 1) * b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 - (1 * b)",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * 1) + b",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 * (1 + b)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * 1) - b",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 * (1 - b)",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * 1) * b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 * (1 * b)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(1 + a) + 0",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (a + 0)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + a) - 0",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (a - 0)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + a) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 + (a * 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - a) + 0",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (a + 0)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - a) - 0",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (a - 0)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - a) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 - (a * 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * a) + 0",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1 * (a + 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(1 * a) - 0",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1 * (a - 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(1 * a) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 * (a * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 + a) + 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "1 + (a + 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "(1 + a) - 1",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1 + (a - 1)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(1 + a) * 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (a * 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - a) + 1",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "1 - (a + 1)",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(1 - a) - 1",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "1 - (a - 1)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "(1 - a) * 1",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (a * 1)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * a) + 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 * (a + 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * a) - 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "1 * (a - 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(1 * a) * 1",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1 * (a * 1)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(1 + a) + a",
+    "values": {},
+    "expected": [
+      "2*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (a + a)",
+    "values": {},
+    "expected": [
+      "2*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + a) - a",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (a - a)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + a) * a",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1 + (a * a)",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - a) + a",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (a + a)",
+    "values": {},
+    "expected": [
+      "-2*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - a) - a",
+    "values": {},
+    "expected": [
+      "-2*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (a - a)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - a) * a",
+    "values": {},
+    "expected": [
+      "-1*a*a",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1 - (a * a)",
+    "values": {},
+    "expected": [
+      "-1*a*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * a) + a",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "1 * (a + a)",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "(1 * a) - a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 * (a - a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 * a) * a",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "1 * (a * a)",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "(1 + a) + b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (a + b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + a) - b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (a - b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + a) * b",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 + (a * b)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - a) + b",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (a + b)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - a) - b",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (a - b)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - a) * b",
+    "values": {},
+    "expected": [
+      "-1*a*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 - (a * b)",
+    "values": {},
+    "expected": [
+      "-1*a*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * a) + b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 * (a + b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(1 * a) - b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "1 * (a - b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(1 * a) * b",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "1 * (a * b)",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(1 + b) + 0",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (b + 0)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + b) - 0",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (b - 0)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + b) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 + (b * 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - b) + 0",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (b + 0)",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - b) - 0",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (b - 0)",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - b) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 - (b * 0)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * b) + 0",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 * (b + 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(1 * b) - 0",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 * (b - 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(1 * b) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 * (b * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 + b) + 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "2"
+    ]
+  },
+  {
+    "expression": "1 + (b + 1)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "2"
+    ]
+  },
+  {
+    "expression": "(1 + b) - 1",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 + (b - 1)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(1 + b) * 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (b * 1)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - b) + 1",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "2"
+    ]
+  },
+  {
+    "expression": "1 - (b + 1)",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(1 - b) - 1",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "1 - (b - 1)",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "2"
+    ]
+  },
+  {
+    "expression": "(1 - b) * 1",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (b * 1)",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * b) + 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 * (b + 1)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * b) - 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "1 * (b - 1)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(1 * b) * 1",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 * (b * 1)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(1 + b) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (b + a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + b) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (b - a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + b) * a",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1 + (b * a)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - b) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (b + a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - b) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (b - a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - b) * a",
+    "values": {},
+    "expected": [
+      "-1*a*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1 - (b * a)",
+    "values": {},
+    "expected": [
+      "-1*a*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * b) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 * (b + a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(1 * b) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 * (b - a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(1 * b) * a",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "1 * (b * a)",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(1 + b) + b",
+    "values": {},
+    "expected": [
+      "2*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (b + b)",
+    "values": {},
+    "expected": [
+      "2*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + b) - b",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 + (b - b)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 + b) * b",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 + (b * b)",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - b) + b",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (b + b)",
+    "values": {},
+    "expected": [
+      "-2*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - b) - b",
+    "values": {},
+    "expected": [
+      "-2*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "1 - (b - b)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 - b) * b",
+    "values": {},
+    "expected": [
+      "-1*b*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "1 - (b * b)",
+    "values": {},
+    "expected": [
+      "-1*b*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(1 * b) + b",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "1 * (b + b)",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(1 * b) - b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "1 * (b - b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(1 * b) * b",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "1 * (b * b)",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "(a + 0) + 0",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a + (0 + 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a + 0) - 0",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a + (0 - 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a + 0) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a + (0 * 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - 0) + 0",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a - (0 + 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - 0) - 0",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a - (0 - 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - 0) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a - (0 * 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * 0) + 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a * (0 + 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a * 0) - 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a * (0 - 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a * 0) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a * (0 * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a + 0) + 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "a + (0 + 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(a + 0) - 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "a + (0 - 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(a + 0) * 1",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a + (0 * 1)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - 0) + 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "a - (0 + 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(a - 0) - 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "a - (0 - 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(a - 0) * 1",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a - (0 * 1)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * 0) + 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "a * (0 + 1)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * 0) - 1",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "a * (0 - 1)",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(a * 0) * 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a * (0 * 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a + 0) + a",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "a + (0 + a)",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "(a + 0) - a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a + (0 - a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a + 0) * a",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "a + (0 * a)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - 0) + a",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "a - (0 + a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a - 0) - a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a - (0 - a)",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "(a - 0) * a",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "a - (0 * a)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * 0) + a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a * (0 + a)",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "(a * 0) - a",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "a * (0 - a)",
+    "values": {},
+    "expected": [
+      "-1*a*a"
+    ]
+  },
+  {
+    "expression": "(a * 0) * a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a * (0 * a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a + 0) + b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "a + (0 + b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(a + 0) - b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "a + (0 - b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(a + 0) * b",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "a + (0 * b)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - 0) + b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "a - (0 + b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(a - 0) - b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "a - (0 - b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(a - 0) * b",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "a - (0 * b)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * 0) + b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "a * (0 + b)",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(a * 0) - b",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "a * (0 - b)",
+    "values": {},
+    "expected": [
+      "-1*a*b"
+    ]
+  },
+  {
+    "expression": "(a * 0) * b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a * (0 * b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a + 1) + 0",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "a + (1 + 0)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(a + 1) - 0",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "a + (1 - 0)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(a + 1) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a + (1 * 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - 1) + 0",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "a - (1 + 0)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(a - 1) - 0",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "a - (1 - 0)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(a - 1) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a - (1 * 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * 1) + 0",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a * (1 + 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * 1) - 0",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a * (1 - 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * 1) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a * (1 * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a + 1) + 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "a + (1 + 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "(a + 1) - 1",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a + (1 - 1)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a + 1) * 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "a + (1 * 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(a - 1) + 1",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a - (1 + 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-2"
+    ]
+  },
+  {
+    "expression": "(a - 1) - 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-2"
+    ]
+  },
+  {
+    "expression": "a - (1 - 1)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - 1) * 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "a - (1 * 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(a * 1) + 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "a * (1 + 1)",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "(a * 1) - 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "a * (1 - 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a * 1) * 1",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a * (1 * 1)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a + 1) + a",
+    "values": {},
+    "expected": [
+      "2*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "a + (1 + a)",
+    "values": {},
+    "expected": [
+      "2*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(a + 1) - a",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "a + (1 - a)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(a + 1) * a",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a + (1 * a)",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "(a - 1) + a",
+    "values": {},
+    "expected": [
+      "2*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "a - (1 + a)",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(a - 1) - a",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "a - (1 - a)",
+    "values": {},
+    "expected": [
+      "2*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(a - 1) * a",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "a - (1 * a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a * 1) + a",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "a * (1 + a)",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * 1) - a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a * (1 - a)",
+    "values": {},
+    "expected": [
+      "-1*a*a",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * 1) * a",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "a * (1 * a)",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "(a + 1) + b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "a + (1 + b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(a + 1) - b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "a + (1 - b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(a + 1) * b",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "a + (1 * b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(a - 1) + b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "a - (1 + b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(a - 1) - b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "a - (1 - b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(a - 1) * b",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "a - (1 * b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(a * 1) + b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "a * (1 + b)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * 1) - b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "a * (1 - b)",
+    "values": {},
+    "expected": [
+      "-1*a*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * 1) * b",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "a * (1 * b)",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(a + a) + 0",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "a + (a + 0)",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "(a + a) - 0",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "a + (a - 0)",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "(a + a) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a + (a * 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - a) + 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a - (a + 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a - a) - 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a - (a - 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a - a) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a - (a * 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * a) + 0",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "a * (a + 0)",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "(a * a) - 0",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "a * (a - 0)",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "(a * a) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a * (a * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a + a) + 1",
+    "values": {},
+    "expected": [
+      "2*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "a + (a + 1)",
+    "values": {},
+    "expected": [
+      "2*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(a + a) - 1",
+    "values": {},
+    "expected": [
+      "2*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "a + (a - 1)",
+    "values": {},
+    "expected": [
+      "2*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(a + a) * 1",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "a + (a * 1)",
+    "values": {},
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "(a - a) + 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "a - (a + 1)",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(a - a) - 1",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "a - (a - 1)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(a - a) * 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a - (a * 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a * a) + 1",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "a * (a + 1)",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * a) - 1",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "a * (a - 1)",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(a * a) * 1",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "a * (a * 1)",
+    "values": {},
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "(a + a) + a",
+    "values": {},
+    "expected": [
+      "3*a"
+    ]
+  },
+  {
+    "expression": "a + (a + a)",
+    "values": {},
+    "expected": [
+      "3*a"
+    ]
+  },
+  {
+    "expression": "(a + a) - a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a + (a - a)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a + a) * a",
+    "values": {},
+    "expected": [
+      "2*a*a"
+    ]
+  },
+  {
+    "expression": "a + (a * a)",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - a) + a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a - (a + a)",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(a - a) - a",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "a - (a - a)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - a) * a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a - (a * a)",
+    "values": {},
+    "expected": [
+      "-1*a*a",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * a) + a",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a * (a + a)",
+    "values": {},
+    "expected": [
+      "2*a*a"
+    ]
+  },
+  {
+    "expression": "(a * a) - a",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "a * (a - a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a * a) * a",
+    "values": {},
+    "expected": [
+      "1*a*a*a"
+    ]
+  },
+  {
+    "expression": "a * (a * a)",
+    "values": {},
+    "expected": [
+      "1*a*a*a"
+    ]
+  },
+  {
+    "expression": "(a + a) + b",
+    "values": {},
+    "expected": [
+      "2*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "a + (a + b)",
+    "values": {},
+    "expected": [
+      "2*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(a + a) - b",
+    "values": {},
+    "expected": [
+      "2*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "a + (a - b)",
+    "values": {},
+    "expected": [
+      "2*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(a + a) * b",
+    "values": {},
+    "expected": [
+      "2*a*b"
+    ]
+  },
+  {
+    "expression": "a + (a * b)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - a) + b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "a - (a + b)",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(a - a) - b",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "a - (a - b)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(a - a) * b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a - (a * b)",
+    "values": {},
+    "expected": [
+      "-1*a*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * a) + b",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "a * (a + b)",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(a * a) - b",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "a * (a - b)",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "-1*a*b"
+    ]
+  },
+  {
+    "expression": "(a * a) * b",
+    "values": {},
+    "expected": [
+      "1*a*a*b"
+    ]
+  },
+  {
+    "expression": "a * (a * b)",
+    "values": {},
+    "expected": [
+      "1*a*a*b"
+    ]
+  },
+  {
+    "expression": "(a + b) + 0",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "a + (b + 0)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(a + b) - 0",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "a + (b - 0)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(a + b) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a + (b * 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - b) + 0",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "a - (b + 0)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(a - b) - 0",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "a - (b - 0)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(a - b) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a - (b * 0)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * b) + 0",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "a * (b + 0)",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(a * b) - 0",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "a * (b - 0)",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(a * b) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "a * (b * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a + b) + 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "a + (b + 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(a + b) - 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "a + (b - 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(a + b) * 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "a + (b * 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(a - b) + 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "a - (b + 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(a - b) - 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "a - (b - 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(a - b) * 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "a - (b * 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(a * b) + 1",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "a * (b + 1)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * b) - 1",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "a * (b - 1)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(a * b) * 1",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "a * (b * 1)",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(a + b) + a",
+    "values": {},
+    "expected": [
+      "2*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "a + (b + a)",
+    "values": {},
+    "expected": [
+      "2*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(a + b) - a",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "a + (b - a)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(a + b) * a",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "a + (b * a)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - b) + a",
+    "values": {},
+    "expected": [
+      "2*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "a - (b + a)",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(a - b) - a",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "a - (b - a)",
+    "values": {},
+    "expected": [
+      "2*a",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(a - b) * a",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "-1*a*b"
+    ]
+  },
+  {
+    "expression": "a - (b * a)",
+    "values": {},
+    "expected": [
+      "-1*a*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * b) + a",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a * (b + a)",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(a * b) - a",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "a * (b - a)",
+    "values": {},
+    "expected": [
+      "-1*a*a",
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(a * b) * a",
+    "values": {},
+    "expected": [
+      "1*a*a*b"
+    ]
+  },
+  {
+    "expression": "a * (b * a)",
+    "values": {},
+    "expected": [
+      "1*a*a*b"
+    ]
+  },
+  {
+    "expression": "(a + b) + b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "2*b"
+    ]
+  },
+  {
+    "expression": "a + (b + b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(a + b) - b",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a + (b - b)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a + b) * b",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "a + (b * b)",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - b) + b",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a - (b + b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-2*b"
+    ]
+  },
+  {
+    "expression": "(a - b) - b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-2*b"
+    ]
+  },
+  {
+    "expression": "a - (b - b)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a - b) * b",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "-1*b*b"
+    ]
+  },
+  {
+    "expression": "a - (b * b)",
+    "values": {},
+    "expected": [
+      "-1*b*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(a * b) + b",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "a * (b + b)",
+    "values": {},
+    "expected": [
+      "2*a*b"
+    ]
+  },
+  {
+    "expression": "(a * b) - b",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "a * (b - b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(a * b) * b",
+    "values": {},
+    "expected": [
+      "1*a*b*b"
+    ]
+  },
+  {
+    "expression": "a * (b * b)",
+    "values": {},
+    "expected": [
+      "1*a*b*b"
+    ]
+  },
+  {
+    "expression": "(b + 0) + 0",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b + (0 + 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b + 0) - 0",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b + (0 - 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b + 0) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b + (0 * 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - 0) + 0",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b - (0 + 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - 0) - 0",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b - (0 - 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - 0) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b - (0 * 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * 0) + 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b * (0 + 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b * 0) - 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b * (0 - 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b * 0) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b * (0 * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b + 0) + 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "b + (0 + 1)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(b + 0) - 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "b + (0 - 1)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(b + 0) * 1",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b + (0 * 1)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - 0) + 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "b - (0 + 1)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(b - 0) - 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "b - (0 - 1)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(b - 0) * 1",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b - (0 * 1)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * 0) + 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "b * (0 + 1)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * 0) - 1",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "b * (0 - 1)",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(b * 0) * 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b * (0 * 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b + 0) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b + (0 + a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b + 0) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b + (0 - a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b + 0) * a",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "b + (0 * a)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - 0) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b - (0 + a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - 0) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b - (0 - a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - 0) * a",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "b - (0 * a)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * 0) + a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "b * (0 + a)",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(b * 0) - a",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "b * (0 - a)",
+    "values": {},
+    "expected": [
+      "-1*a*b"
+    ]
+  },
+  {
+    "expression": "(b * 0) * a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b * (0 * a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b + 0) + b",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "b + (0 + b)",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(b + 0) - b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b + (0 - b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b + 0) * b",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "b + (0 * b)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - 0) + b",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "b - (0 + b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b - 0) - b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b - (0 - b)",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(b - 0) * b",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "b - (0 * b)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * 0) + b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b * (0 + b)",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "(b * 0) - b",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "b * (0 - b)",
+    "values": {},
+    "expected": [
+      "-1*b*b"
+    ]
+  },
+  {
+    "expression": "(b * 0) * b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b * (0 * b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b + 1) + 0",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "b + (1 + 0)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(b + 1) - 0",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "b + (1 - 0)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(b + 1) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b + (1 * 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - 1) + 0",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "b - (1 + 0)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(b - 1) - 0",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "b - (1 - 0)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(b - 1) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b - (1 * 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * 1) + 0",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b * (1 + 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * 1) - 0",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b * (1 - 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * 1) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b * (1 * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b + 1) + 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "2"
+    ]
+  },
+  {
+    "expression": "b + (1 + 1)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "2"
+    ]
+  },
+  {
+    "expression": "(b + 1) - 1",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b + (1 - 1)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b + 1) * 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "b + (1 * 1)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(b - 1) + 1",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b - (1 + 1)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-2"
+    ]
+  },
+  {
+    "expression": "(b - 1) - 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-2"
+    ]
+  },
+  {
+    "expression": "b - (1 - 1)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - 1) * 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "b - (1 * 1)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(b * 1) + 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "b * (1 + 1)",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(b * 1) - 1",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "b * (1 - 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b * 1) * 1",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b * (1 * 1)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b + 1) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "b + (1 + a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(b + 1) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "b + (1 - a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(b + 1) * a",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "b + (1 * a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - 1) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "b - (1 + a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(b - 1) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "b - (1 - a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(b - 1) * a",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "b - (1 * a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * 1) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b * (1 + a)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * 1) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b * (1 - a)",
+    "values": {},
+    "expected": [
+      "-1*a*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * 1) * a",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "b * (1 * a)",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(b + 1) + b",
+    "values": {},
+    "expected": [
+      "2*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "b + (1 + b)",
+    "values": {},
+    "expected": [
+      "2*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(b + 1) - b",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "b + (1 - b)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(b + 1) * b",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b + (1 * b)",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(b - 1) + b",
+    "values": {},
+    "expected": [
+      "2*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "b - (1 + b)",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(b - 1) - b",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "b - (1 - b)",
+    "values": {},
+    "expected": [
+      "2*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(b - 1) * b",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "b - (1 * b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b * 1) + b",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "b * (1 + b)",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * 1) - b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b * (1 - b)",
+    "values": {},
+    "expected": [
+      "-1*b*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * 1) * b",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "b * (1 * b)",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "(b + a) + 0",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b + (a + 0)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b + a) - 0",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b + (a - 0)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b + a) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b + (a * 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - a) + 0",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b - (a + 0)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - a) - 0",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b - (a - 0)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - a) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b - (a * 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * a) + 0",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "b * (a + 0)",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(b * a) - 0",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "b * (a - 0)",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(b * a) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b * (a * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b + a) + 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "b + (a + 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(b + a) - 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "b + (a - 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(b + a) * 1",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b + (a * 1)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - a) + 1",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "b - (a + 1)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(b - a) - 1",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "b - (a - 1)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(b - a) * 1",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b - (a * 1)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * a) + 1",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "b * (a + 1)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * a) - 1",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "b * (a - 1)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(b * a) * 1",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "b * (a * 1)",
+    "values": {},
+    "expected": [
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "(b + a) + a",
+    "values": {},
+    "expected": [
+      "2*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b + (a + a)",
+    "values": {},
+    "expected": [
+      "2*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b + a) - a",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b + (a - a)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b + a) * a",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "b + (a * a)",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - a) + a",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b - (a + a)",
+    "values": {},
+    "expected": [
+      "-2*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - a) - a",
+    "values": {},
+    "expected": [
+      "-2*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b - (a - a)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - a) * a",
+    "values": {},
+    "expected": [
+      "-1*a*a",
+      "1*a*b"
+    ]
+  },
+  {
+    "expression": "b - (a * a)",
+    "values": {},
+    "expected": [
+      "-1*a*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * a) + a",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "b * (a + a)",
+    "values": {},
+    "expected": [
+      "2*a*b"
+    ]
+  },
+  {
+    "expression": "(b * a) - a",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "b * (a - a)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b * a) * a",
+    "values": {},
+    "expected": [
+      "1*a*a*b"
+    ]
+  },
+  {
+    "expression": "b * (a * a)",
+    "values": {},
+    "expected": [
+      "1*a*a*b"
+    ]
+  },
+  {
+    "expression": "(b + a) + b",
+    "values": {},
+    "expected": [
+      "1*a",
+      "2*b"
+    ]
+  },
+  {
+    "expression": "b + (a + b)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(b + a) - b",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "b + (a - b)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(b + a) * b",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "b + (a * b)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - a) + b",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "2*b"
+    ]
+  },
+  {
+    "expression": "b - (a + b)",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(b - a) - b",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "b - (a - b)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(b - a) * b",
+    "values": {},
+    "expected": [
+      "-1*a*b",
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "b - (a * b)",
+    "values": {},
+    "expected": [
+      "-1*a*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * a) + b",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b * (a + b)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "(b * a) - b",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "b * (a - b)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "-1*b*b"
+    ]
+  },
+  {
+    "expression": "(b * a) * b",
+    "values": {},
+    "expected": [
+      "1*a*b*b"
+    ]
+  },
+  {
+    "expression": "b * (a * b)",
+    "values": {},
+    "expected": [
+      "1*a*b*b"
+    ]
+  },
+  {
+    "expression": "(b + b) + 0",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "b + (b + 0)",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(b + b) - 0",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "b + (b - 0)",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(b + b) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b + (b * 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - b) + 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b - (b + 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b - b) - 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b - (b - 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b - b) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b - (b * 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * b) + 0",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "b * (b + 0)",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "(b * b) - 0",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "b * (b - 0)",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "(b * b) * 0",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b * (b * 0)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b + b) + 1",
+    "values": {},
+    "expected": [
+      "2*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "b + (b + 1)",
+    "values": {},
+    "expected": [
+      "2*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(b + b) - 1",
+    "values": {},
+    "expected": [
+      "2*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "b + (b - 1)",
+    "values": {},
+    "expected": [
+      "2*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(b + b) * 1",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "b + (b * 1)",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(b - b) + 1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "b - (b + 1)",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(b - b) - 1",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "b - (b - 1)",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(b - b) * 1",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b - (b * 1)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b * b) + 1",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "b * (b + 1)",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * b) - 1",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "b * (b - 1)",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(b * b) * 1",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "b * (b * 1)",
+    "values": {},
+    "expected": [
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "(b + b) + a",
+    "values": {},
+    "expected": [
+      "1*a",
+      "2*b"
+    ]
+  },
+  {
+    "expression": "b + (b + a)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(b + b) - a",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "2*b"
+    ]
+  },
+  {
+    "expression": "b + (b - a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(b + b) * a",
+    "values": {},
+    "expected": [
+      "2*a*b"
+    ]
+  },
+  {
+    "expression": "b + (b * a)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - b) + a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "b - (b + a)",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(b - b) - a",
+    "values": {},
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "b - (b - a)",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(b - b) * a",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b - (b * a)",
+    "values": {},
+    "expected": [
+      "-1*a*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * b) + a",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "1*a"
+    ]
+  },
+  {
+    "expression": "b * (b + a)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "(b * b) - a",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "b * (b - a)",
+    "values": {},
+    "expected": [
+      "-1*a*b",
+      "1*b*b"
+    ]
+  },
+  {
+    "expression": "(b * b) * a",
+    "values": {},
+    "expected": [
+      "1*a*b*b"
+    ]
+  },
+  {
+    "expression": "b * (b * a)",
+    "values": {},
+    "expected": [
+      "1*a*b*b"
+    ]
+  },
+  {
+    "expression": "(b + b) + b",
+    "values": {},
+    "expected": [
+      "3*b"
+    ]
+  },
+  {
+    "expression": "b + (b + b)",
+    "values": {},
+    "expected": [
+      "3*b"
+    ]
+  },
+  {
+    "expression": "(b + b) - b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b + (b - b)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b + b) * b",
+    "values": {},
+    "expected": [
+      "2*b*b"
+    ]
+  },
+  {
+    "expression": "b + (b * b)",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - b) + b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b - (b + b)",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "(b - b) - b",
+    "values": {},
+    "expected": [
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "b - (b - b)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b - b) * b",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b - (b * b)",
+    "values": {},
+    "expected": [
+      "-1*b*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(b * b) + b",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "b * (b + b)",
+    "values": {},
+    "expected": [
+      "2*b*b"
+    ]
+  },
+  {
+    "expression": "(b * b) - b",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "-1*b"
+    ]
+  },
+  {
+    "expression": "b * (b - b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(b * b) * b",
+    "values": {},
+    "expected": [
+      "1*b*b*b"
+    ]
+  },
+  {
+    "expression": "b * (b * b)",
+    "values": {},
+    "expected": [
+      "1*b*b*b"
+    ]
+  },
+  {
+    "expression": "(((temperature + b) + (0 * a)) * ((temperature + 3) - (a - 3)))",
+    "values": {
+      "temperature": 2,
+      "a": -2
+    },
+    "expected": [
+      "10*b",
+      "20"
+    ]
+  },
+  {
+    "expression": "(((1 * 3) - (b * 2)) + ((0 + temperature) * (b - 1)))",
+    "values": {
+      "temperature": 0,
+      "b": -2
+    },
+    "expected": [
+      "7"
+    ]
+  },
+  {
+    "expression": "((2 - (2 - 0)) - ((3 + temperature) * temperature))",
+    "values": {
+      "temperature": -1
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(((2 - a) + b) - (a - (temperature + b)))",
+    "values": {
+      "b": -2
+    },
+    "expected": [
+      "-2*a",
+      "1*temperature",
+      "-2"
+    ]
+  },
+  {
+    "expression": "(((1 + 1) * (2 + b)) * ((temperature * 0) + (2 - 0)))",
+    "values": {
+      "a": 1
+    },
+    "expected": [
+      "4*b",
+      "8"
+    ]
+  },
+  {
+    "expression": "(((temperature + 3) + temperature) - (0 - (b - 3)))",
+    "values": {
+      "a": 2
+    },
+    "expected": [
+      "1*b",
+      "2*temperature"
+    ]
+  },
+  {
+    "expression": "(((temperature - 0) + (2 * 3)) - ((3 - b) + (b - 3)))",
+    "values": {
+      "b": 2
+    },
+    "expected": [
+      "1*temperature",
+      "6"
+    ]
+  },
+  {
+    "expression": "(((0 - b) + (0 - a)) + 2)",
+    "values": {
+      "b": -2,
+      "a": -2,
+      "temperature": 0
+    },
+    "expected": [
+      "6"
+    ]
+  },
+  {
+    "expression": "(((temperature + 3) * (b - 0)) * a)",
+    "values": {
+      "b": -2,
+      "temperature": 0,
+      "a": 1
+    },
+    "expected": [
+      "-6"
+    ]
+  },
+  {
+    "expression": "3",
+    "values": {},
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "(1 * 2)",
+    "values": {
+      "temperature": 2,
+      "a": 0
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((a + 2) - (3 - 2)) * ((0 * 3) * 0))",
+    "values": {
+      "temperature": 2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((b - 1) * (1 * b)) - ((1 + temperature) + temperature))",
+    "values": {
+      "b": 0,
+      "temperature": 2
+    },
+    "expected": [
+      "-5"
+    ]
+  },
+  {
+    "expression": "(((2 * 3) + a) + 3)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "9"
+    ]
+  },
+  {
+    "expression": "(((1 - a) - 0) * ((0 * 2) - (b - 2)))",
+    "values": {
+      "temperature": 2,
+      "a": -1,
+      "b": 1
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((1 * 3) + (temperature + b)) + a)",
+    "values": {
+      "b": -1
+    },
+    "expected": [
+      "1*a",
+      "1*temperature",
+      "2"
+    ]
+  },
+  {
+    "expression": "temperature",
+    "values": {
+      "b": 0,
+      "temperature": 0,
+      "a": -1
+    },
+    "expected": []
+  },
+  {
+    "expression": "((2 + (2 * a)) * 1)",
+    "values": {
+      "temperature": -2
+    },
+    "expected": [
+      "2*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "(((0 + 1) + 2) + 3)",
+    "values": {
+      "b": 0
+    },
+    "expected": [
+      "6"
+    ]
+  },
+  {
+    "expression": "(((b - 2) + 0) + temperature)",
+    "values": {
+      "temperature": 1
+    },
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(((3 - temperature) * 3) + 1)",
+    "values": {},
+    "expected": [
+      "-3*temperature",
+      "10"
+    ]
+  },
+  {
+    "expression": "(((b + temperature) - (2 + a)) - ((temperature - temperature) + (0 * 3)))",
+    "values": {
+      "b": 1,
+      "a": 1,
+      "temperature": -2
+    },
+    "expected": [
+      "-4"
+    ]
+  },
+  {
+    "expression": "(((3 + 0) * (1 + 2)) + ((temperature * a) - (3 + 3)))",
+    "values": {
+      "temperature": 1
+    },
+    "expected": [
+      "1*a",
+      "3"
+    ]
+  },
+  {
+    "expression": "(((1 + temperature) * (1 + b)) + ((0 + 1) - (b * 0)))",
+    "values": {
+      "temperature": -1,
+      "a": 2,
+      "b": 2
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((1 * temperature) - (temperature + 2)) + (temperature * (0 * temperature)))",
+    "values": {
+      "temperature": -1,
+      "a": 1,
+      "b": 0
+    },
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "((0 - (a - 3)) + ((3 + 0) - (2 + a)))",
+    "values": {
+      "a": -1,
+      "temperature": -1
+    },
+    "expected": [
+      "6"
+    ]
+  },
+  {
+    "expression": "temperature",
+    "values": {
+      "temperature": -2,
+      "a": 2,
+      "b": -2
+    },
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "(((a + a) - (3 * temperature)) + ((temperature + 0) * (1 - a)))",
+    "values": {
+      "temperature": -2,
+      "a": 1,
+      "b": -2
+    },
+    "expected": [
+      "8"
+    ]
+  },
+  {
+    "expression": "((a - (a + 0)) - 1)",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {
+      "b": -2,
+      "temperature": 0
+    },
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "((b - 3) - (0 + (3 + 3)))",
+    "values": {
+      "temperature": -1,
+      "a": 0,
+      "b": 0
+    },
+    "expected": [
+      "-9"
+    ]
+  },
+  {
+    "expression": "(((2 + temperature) + (b * b)) + ((1 - b) * (b + 0)))",
+    "values": {
+      "temperature": -2,
+      "a": -2,
+      "b": -1
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(2 - ((3 * 0) + (3 * temperature)))",
+    "values": {
+      "a": -1
+    },
+    "expected": [
+      "-3*temperature",
+      "2"
+    ]
+  },
+  {
+    "expression": "(3 * ((b - b) * temperature))",
+    "values": {
+      "b": 0
+    },
+    "expected": []
+  },
+  {
+    "expression": "1",
+    "values": {
+      "b": 2
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((b + a) * 1) - ((3 - b) - 3))",
+    "values": {
+      "a": -1,
+      "temperature": 2
+    },
+    "expected": [
+      "2*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(((1 + 3) * (a + 2)) + ((0 * 3) - (a + b)))",
+    "values": {},
+    "expected": [
+      "3*a",
+      "-1*b",
+      "8"
+    ]
+  },
+  {
+    "expression": "(b * ((a + 2) + (temperature + b)))",
+    "values": {
+      "temperature": 1,
+      "b": 0,
+      "a": -2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(0 + 1)",
+    "values": {
+      "temperature": 2
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(b + ((2 - temperature) + (temperature + b)))",
+    "values": {
+      "temperature": -1,
+      "a": 1,
+      "b": -1
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((3 * a) - 2) + ((1 + 1) - (1 - b)))",
+    "values": {},
+    "expected": [
+      "3*a",
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "0",
+    "values": {
+      "temperature": 0
+    },
+    "expected": []
+  },
+  {
+    "expression": "((3 - 2) * (3 - (a - 2)))",
+    "values": {
+      "a": 1,
+      "temperature": 1
+    },
+    "expected": [
+      "4"
+    ]
+  },
+  {
+    "expression": "(((3 * 2) + temperature) * (0 * (2 - a)))",
+    "values": {
+      "b": -1,
+      "a": -2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(temperature - temperature)",
+    "values": {
+      "b": -1,
+      "temperature": 0,
+      "a": -2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(a * (3 + b))",
+    "values": {
+      "temperature": 1,
+      "a": -1,
+      "b": -1
+    },
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {
+      "temperature": 0
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(a + ((2 + 1) + (1 + 1)))",
+    "values": {
+      "a": -2,
+      "b": 2,
+      "temperature": 1
+    },
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "(((1 * 1) * (a + b)) + ((1 + b) + (b * b)))",
+    "values": {
+      "b": 2,
+      "temperature": 2,
+      "a": 2
+    },
+    "expected": [
+      "11"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(a + ((b * 1) - (temperature - temperature)))",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(1 - (2 - (0 + 3)))",
+    "values": {
+      "a": 0
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((temperature + 1) + 3) * ((a - 0) + temperature))",
+    "values": {
+      "b": 1,
+      "temperature": 1,
+      "a": -2
+    },
+    "expected": [
+      "-5"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {
+      "b": 1
+    },
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(2 * ((temperature + b) + (1 * a)))",
+    "values": {
+      "temperature": -2
+    },
+    "expected": [
+      "2*a",
+      "2*b",
+      "-4"
+    ]
+  },
+  {
+    "expression": "((0 * (a - 1)) * ((a - 2) + (0 - 1)))",
+    "values": {
+      "a": -2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((a * 1) + (0 * a)) * ((3 + 0) + (1 + temperature)))",
+    "values": {
+      "a": 0,
+      "b": 2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(2 * ((3 * 3) + (2 - a)))",
+    "values": {
+      "b": -1,
+      "a": -1
+    },
+    "expected": [
+      "24"
+    ]
+  },
+  {
+    "expression": "(2 * 0)",
+    "values": {
+      "temperature": -2
+    },
+    "expected": []
+  },
+  {
+    "expression": "((1 + (b * 2)) * ((3 + 2) * (a * 3)))",
+    "values": {
+      "b": -2,
+      "temperature": -2,
+      "a": 2
+    },
+    "expected": [
+      "-90"
+    ]
+  },
+  {
+    "expression": "(((temperature + 3) + temperature) - ((1 - b) + (3 - 0)))",
+    "values": {},
+    "expected": [
+      "1*b",
+      "2*temperature",
+      "-1"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {
+      "a": -2
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "2",
+    "values": {
+      "b": -2,
+      "temperature": -2
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "0",
+    "values": {
+      "a": 1
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((3 * b) - (b - 1)) - ((0 - 0) - (0 + 3)))",
+    "values": {
+      "a": 2
+    },
+    "expected": [
+      "2*b",
+      "4"
+    ]
+  },
+  {
+    "expression": "(((3 * 3) - (a * b)) + ((0 * 3) * 2))",
+    "values": {},
+    "expected": [
+      "-1*a*b",
+      "9"
+    ]
+  },
+  {
+    "expression": "(((0 * b) - (0 + a)) - (1 * (a * 1)))",
+    "values": {
+      "b": -2,
+      "a": 0,
+      "temperature": -2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((temperature * a) - (3 - temperature)) - (0 - (1 * 3)))",
+    "values": {
+      "b": -2
+    },
+    "expected": [
+      "1*a*temperature",
+      "1*temperature"
+    ]
+  },
+  {
+    "expression": "(1 - (a + (3 * 2)))",
+    "values": {
+      "a": 2,
+      "b": -1
+    },
+    "expected": [
+      "-7"
+    ]
+  },
+  {
+    "expression": "(((0 + 1) - (1 + 0)) * (3 - (a - 2)))",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "((b + 1) * ((0 + b) + (b + 0)))",
+    "values": {
+      "b": 0,
+      "a": 1
+    },
+    "expected": []
+  },
+  {
+    "expression": "(b + (1 - (b - temperature)))",
+    "values": {
+      "a": -2
+    },
+    "expected": [
+      "1*temperature",
+      "1"
+    ]
+  },
+  {
+    "expression": "(((3 + 0) - 0) + ((a - temperature) - (a - 1)))",
+    "values": {
+      "a": 0,
+      "temperature": 0
+    },
+    "expected": [
+      "4"
+    ]
+  },
+  {
+    "expression": "(((0 * 0) * (2 - 1)) * 3)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "((0 - (1 - temperature)) - ((2 - b) * temperature))",
+    "values": {},
+    "expected": [
+      "1*b*temperature",
+      "-1*temperature",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(((temperature - 3) * (3 + 2)) + ((1 * 2) + (3 + 1)))",
+    "values": {
+      "b": 2
+    },
+    "expected": [
+      "5*temperature",
+      "-9"
+    ]
+  },
+  {
+    "expression": "((1 - (2 + b)) + ((3 - 1) + a))",
+    "values": {
+      "b": 2
+    },
+    "expected": [
+      "1*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(((0 * b) - (2 - 3)) + 3)",
+    "values": {
+      "temperature": 0
+    },
+    "expected": [
+      "4"
+    ]
+  },
+  {
+    "expression": "((0 + (3 + b)) * (1 - (a + 2)))",
+    "values": {
+      "temperature": 0,
+      "b": 2
+    },
+    "expected": [
+      "-5*a",
+      "-5"
+    ]
+  },
+  {
+    "expression": "(b - 0)",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(((0 * a) + 2) * ((3 * 0) - a))",
+    "values": {
+      "a": 2
+    },
+    "expected": [
+      "-4"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {
+      "a": -1,
+      "temperature": 1,
+      "b": 2
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(((1 * 2) * (b - 0)) - ((b * temperature) + (temperature * a)))",
+    "values": {},
+    "expected": [
+      "-1*a*temperature",
+      "-1*b*temperature",
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(3 + ((3 * 2) + (2 - 2)))",
+    "values": {
+      "temperature": 0
+    },
+    "expected": [
+      "9"
+    ]
+  },
+  {
+    "expression": "temperature",
+    "values": {
+      "a": -2,
+      "b": -1
+    },
+    "expected": [
+      "1*temperature"
+    ]
+  },
+  {
+    "expression": "(temperature + ((1 + temperature) - (a - 2)))",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "2*temperature",
+      "3"
+    ]
+  },
+  {
+    "expression": "b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(((0 + 0) + (0 * 1)) + ((b - 2) * 1))",
+    "values": {
+      "b": 0,
+      "a": 0,
+      "temperature": 2
+    },
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "(((temperature - 3) + (2 - b)) * ((1 - a) + (3 + 2)))",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "-1*a*temperature",
+      "1*a",
+      "-6*b",
+      "6*temperature",
+      "-6"
+    ]
+  },
+  {
+    "expression": "(((3 + b) + 3) - ((a - 0) * (temperature * a)))",
+    "values": {
+      "a": -1
+    },
+    "expected": [
+      "1*b",
+      "-1*temperature",
+      "6"
+    ]
+  },
+  {
+    "expression": "(((3 * a) + a) + ((1 - b) + 0))",
+    "values": {
+      "temperature": 1
+    },
+    "expected": [
+      "4*a",
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "(((temperature - 1) - a) * ((b + 0) + (0 - temperature)))",
+    "values": {},
+    "expected": [
+      "-1*a*b",
+      "1*a*temperature",
+      "1*b*temperature",
+      "-1*temperature*temperature",
+      "-1*b",
+      "1*temperature"
+    ]
+  },
+  {
+    "expression": "((temperature * a) - 3)",
+    "values": {},
+    "expected": [
+      "1*a*temperature",
+      "-3"
+    ]
+  },
+  {
+    "expression": "(((2 - 0) - a) * ((a + b) + (temperature * 2)))",
+    "values": {},
+    "expected": [
+      "-1*a*a",
+      "-1*a*b",
+      "-2*a*temperature",
+      "2*a",
+      "2*b",
+      "4*temperature"
+    ]
+  },
+  {
+    "expression": "0",
+    "values": {
+      "b": 2
+    },
+    "expected": []
+  },
+  {
+    "expression": "0",
+    "values": {
+      "a": -2,
+      "temperature": 1,
+      "b": 0
+    },
+    "expected": []
+  },
+  {
+    "expression": "((0 + b) - a)",
+    "values": {
+      "a": 2,
+      "b": -2,
+      "temperature": 2
+    },
+    "expected": [
+      "-4"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {
+      "a": 1
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((2 + a) + (1 - b)) * (temperature * (2 * 1)))",
+    "values": {
+      "temperature": 0,
+      "b": 1,
+      "a": 2
+    },
+    "expected": []
+  },
+  {
+    "expression": "2",
+    "values": {
+      "b": 2,
+      "a": -1,
+      "temperature": -1
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(0 * (1 - (3 - 1)))",
+    "values": {
+      "a": -2,
+      "b": -2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((0 + 2) + (2 + 1)) + ((0 - b) * (1 - a)))",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "-1*b",
+      "5"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {
+      "temperature": 2,
+      "a": 1
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((temperature + temperature) - (temperature + 1)) - ((b - temperature) * (0 - b)))",
+    "values": {},
+    "expected": [
+      "1*b*b",
+      "-1*b*temperature",
+      "1*temperature",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(((a + a) - 2) + 1)",
+    "values": {},
+    "expected": [
+      "2*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "0",
+    "values": {
+      "temperature": 1,
+      "b": -2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((b * 2) * (1 - 1)) * (a + (2 - 2)))",
+    "values": {
+      "a": 0,
+      "b": 1
+    },
+    "expected": []
+  },
+  {
+    "expression": "(2 - ((a + 2) * temperature))",
+    "values": {},
+    "expected": [
+      "-1*a*temperature",
+      "-2*temperature",
+      "2"
+    ]
+  },
+  {
+    "expression": "(((2 + 3) + (3 * temperature)) * ((1 - 3) - (a - 3)))",
+    "values": {
+      "b": 2,
+      "temperature": 1
+    },
+    "expected": [
+      "-8*a",
+      "8"
+    ]
+  },
+  {
+    "expression": "(((3 * a) * (b * 1)) * ((2 + 2) - (2 + 3)))",
+    "values": {
+      "a": 0,
+      "b": 1
+    },
+    "expected": []
+  },
+  {
+    "expression": "temperature",
+    "values": {},
+    "expected": [
+      "1*temperature"
+    ]
+  },
+  {
+    "expression": "(((1 + a) + (1 - b)) - ((1 - 0) * (a * a)))",
+    "values": {
+      "a": 0,
+      "temperature": -2
+    },
+    "expected": [
+      "-1*b",
+      "2"
+    ]
+  },
+  {
+    "expression": "2",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((2 + temperature) * (2 * temperature)) + 0)",
+    "values": {
+      "b": 2
+    },
+    "expected": [
+      "2*temperature*temperature",
+      "4*temperature"
+    ]
+  },
+  {
+    "expression": "(((3 * a) * (3 + a)) - (1 * (3 - b)))",
+    "values": {
+      "temperature": -1,
+      "b": 1
+    },
+    "expected": [
+      "3*a*a",
+      "9*a",
+      "-2"
+    ]
+  },
+  {
+    "expression": "(((3 - temperature) * (b - a)) * ((2 + 3) + 3))",
+    "values": {
+      "b": 0,
+      "temperature": -2,
+      "a": 2
+    },
+    "expected": [
+      "-80"
+    ]
+  },
+  {
+    "expression": "(((0 - 0) - (0 - 1)) - ((1 - a) + (3 - 1)))",
+    "values": {},
+    "expected": [
+      "1*a",
+      "-2"
+    ]
+  },
+  {
+    "expression": "(((b + 1) - (0 * 2)) - ((b + 2) - (3 - a)))",
+    "values": {
+      "a": -1
+    },
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "((b - (3 + 2)) + ((a - 2) * (temperature + 3)))",
+    "values": {
+      "temperature": 2,
+      "b": -1
+    },
+    "expected": [
+      "5*a",
+      "-16"
+    ]
+  },
+  {
+    "expression": "3",
+    "values": {
+      "temperature": 0,
+      "a": 2
+    },
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "(((1 * temperature) + (b - temperature)) + (2 + (1 * temperature)))",
+    "values": {
+      "a": 2
+    },
+    "expected": [
+      "1*b",
+      "1*temperature",
+      "2"
+    ]
+  },
+  {
+    "expression": "(((3 + a) + (2 + b)) - 1)",
+    "values": {
+      "a": -2,
+      "b": 1
+    },
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "(((1 * 3) + (0 - a)) + 3)",
+    "values": {
+      "b": 2,
+      "temperature": -1
+    },
+    "expected": [
+      "-1*a",
+      "6"
+    ]
+  },
+  {
+    "expression": "(3 + (2 * (2 * 0)))",
+    "values": {
+      "a": 0,
+      "b": -1
+    },
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "((1 + 3) - ((2 - 1) * b))",
+    "values": {
+      "a": -1,
+      "temperature": 1
+    },
+    "expected": [
+      "-1*b",
+      "4"
+    ]
+  },
+  {
+    "expression": "(((3 - 1) + (2 - b)) - 1)",
+    "values": {
+      "a": 0,
+      "b": -1,
+      "temperature": -1
+    },
+    "expected": [
+      "4"
+    ]
+  },
+  {
+    "expression": "((1 * (a * temperature)) + (b + 0))",
+    "values": {
+      "a": -1,
+      "b": 1,
+      "temperature": -2
+    },
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "(b - (0 * (temperature - a)))",
+    "values": {
+      "a": 2,
+      "temperature": 2,
+      "b": -1
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {
+      "a": 0,
+      "temperature": 0
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((2 + 1) * (3 - b)) + ((1 * 1) * (b + b)))",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "9"
+    ]
+  },
+  {
+    "expression": "2",
+    "values": {
+      "temperature": -1,
+      "b": -2
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((temperature * 3) - (1 - a)) + ((2 - 3) - (2 + 2)))",
+    "values": {
+      "b": -2
+    },
+    "expected": [
+      "1*a",
+      "3*temperature",
+      "-6"
+    ]
+  },
+  {
+    "expression": "((3 - (b + temperature)) * (temperature * (a - 2)))",
+    "values": {
+      "temperature": 1
+    },
+    "expected": [
+      "-1*a*b",
+      "2*a",
+      "2*b",
+      "-4"
+    ]
+  },
+  {
+    "expression": "(a - (b + (3 - b)))",
+    "values": {
+      "temperature": 2
+    },
+    "expected": [
+      "1*a",
+      "-3"
+    ]
+  },
+  {
+    "expression": "(((3 + b) - a) * 2)",
+    "values": {
+      "a": 1,
+      "temperature": 1,
+      "b": -1
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((0 * 1) - (3 - 1)) * ((0 * 1) - (a - 3)))",
+    "values": {
+      "temperature": 0,
+      "b": -2,
+      "a": 1
+    },
+    "expected": [
+      "-4"
+    ]
+  },
+  {
+    "expression": "(temperature - ((2 - temperature) * 2))",
+    "values": {
+      "a": -1,
+      "b": 0
+    },
+    "expected": [
+      "3*temperature",
+      "-4"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {
+      "a": 1,
+      "b": 2
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((b * b) + (b - a)) * ((3 * 3) - (3 - b)))",
+    "values": {
+      "a": 0,
+      "temperature": 2,
+      "b": 2
+    },
+    "expected": [
+      "48"
+    ]
+  },
+  {
+    "expression": "(((0 + 3) + (1 + 2)) + ((temperature + a) * (temperature * 3)))",
+    "values": {
+      "b": 1,
+      "temperature": -2,
+      "a": 0
+    },
+    "expected": [
+      "18"
+    ]
+  },
+  {
+    "expression": "((2 - a) + 3)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "5"
+    ]
+  },
+  {
+    "expression": "(3 * ((1 * b) + temperature))",
+    "values": {
+      "temperature": 0
+    },
+    "expected": [
+      "3*b"
+    ]
+  },
+  {
+    "expression": "((2 - (0 * 1)) * (a + 2))",
+    "values": {
+      "b": 2,
+      "a": 0,
+      "temperature": 2
+    },
+    "expected": [
+      "4"
+    ]
+  },
+  {
+    "expression": "((temperature * (temperature - a)) * (a - (2 * 0)))",
+    "values": {
+      "b": 0
+    },
+    "expected": [
+      "-1*a*a*temperature",
+      "1*a*temperature*temperature"
+    ]
+  },
+  {
+    "expression": "(temperature + ((temperature * temperature) - (1 + temperature)))",
+    "values": {},
+    "expected": [
+      "1*temperature*temperature",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(((temperature + temperature) - (a + temperature)) + ((temperature + 2) + (temperature - 2)))",
+    "values": {
+      "b": 2,
+      "a": -1,
+      "temperature": -1
+    },
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {
+      "temperature": -1
+    },
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(0 - (a * (3 - a)))",
+    "values": {
+      "b": -2
+    },
+    "expected": [
+      "1*a*a",
+      "-3*a"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {
+      "a": 1,
+      "temperature": 0,
+      "b": 0
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "b",
+    "values": {
+      "a": -1
+    },
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(temperature * ((temperature - 3) * (b * b)))",
+    "values": {
+      "temperature": -1,
+      "b": -1
+    },
+    "expected": [
+      "4"
+    ]
+  },
+  {
+    "expression": "3",
+    "values": {
+      "b": -2,
+      "a": 2
+    },
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {
+      "a": -2
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(temperature + (1 * (b + 0)))",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1*temperature"
+    ]
+  },
+  {
+    "expression": "(temperature * ((2 - 2) * (b * a)))",
+    "values": {
+      "a": -2,
+      "b": 1
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((b + a) + (b * 1)) + (temperature - (b - 1)))",
+    "values": {
+      "b": 1
+    },
+    "expected": [
+      "1*a",
+      "1*temperature",
+      "2"
+    ]
+  },
+  {
+    "expression": "(((0 - 2) * (3 - 0)) - (temperature + (2 + 2)))",
+    "values": {
+      "a": -2,
+      "temperature": 0
+    },
+    "expected": [
+      "-10"
+    ]
+  },
+  {
+    "expression": "(0 - temperature)",
+    "values": {},
+    "expected": [
+      "-1*temperature"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {
+      "temperature": -1,
+      "a": 0,
+      "b": -1
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "0",
+    "values": {
+      "a": 1,
+      "temperature": 2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(3 - ((temperature - 3) + a))",
+    "values": {
+      "temperature": 1
+    },
+    "expected": [
+      "-1*a",
+      "5"
+    ]
+  },
+  {
+    "expression": "((3 + 0) * 2)",
+    "values": {
+      "temperature": 2,
+      "a": 1,
+      "b": -1
+    },
+    "expected": [
+      "6"
+    ]
+  },
+  {
+    "expression": "(((b * temperature) + (b - 0)) - b)",
+    "values": {
+      "temperature": -2
+    },
+    "expected": [
+      "-2*b"
+    ]
+  },
+  {
+    "expression": "((0 * (3 - 1)) - ((0 - 2) + (3 * 1)))",
+    "values": {},
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "temperature",
+    "values": {
+      "temperature": -2,
+      "b": -2,
+      "a": 0
+    },
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "(((0 + 2) + (0 - 3)) - ((0 * 1) - temperature))",
+    "values": {
+      "temperature": -1,
+      "b": 1
+    },
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "((b - (b - temperature)) * ((3 - b) * (1 * 2)))",
+    "values": {
+      "b": 2,
+      "temperature": -1,
+      "a": -1
+    },
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "(temperature * (3 - 2))",
+    "values": {
+      "a": 1,
+      "temperature": 1,
+      "b": -2
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((0 + b) - a) + ((a - b) - (2 - temperature)))",
+    "values": {},
+    "expected": [
+      "1*temperature",
+      "-2"
+    ]
+  },
+  {
+    "expression": "(((3 - 1) + (b - temperature)) + ((temperature - 3) + (1 * a)))",
+    "values": {
+      "temperature": -2,
+      "a": 0,
+      "b": 0
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(((temperature * temperature) * 2) + ((a + b) + (temperature * temperature)))",
+    "values": {
+      "a": -1,
+      "b": -1
+    },
+    "expected": [
+      "3*temperature*temperature",
+      "-2"
+    ]
+  },
+  {
+    "expression": "(2 + ((temperature + b) - (b * 3)))",
+    "values": {},
+    "expected": [
+      "-2*b",
+      "1*temperature",
+      "2"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(b * ((0 - a) * 0))",
+    "values": {
+      "temperature": 0
+    },
+    "expected": []
+  },
+  {
+    "expression": "(3 + 2)",
+    "values": {
+      "b": -1
+    },
+    "expected": [
+      "5"
+    ]
+  },
+  {
+    "expression": "(((b - 1) + (b - a)) * (3 + 1))",
+    "values": {},
+    "expected": [
+      "-4*a",
+      "8*b",
+      "-4"
+    ]
+  },
+  {
+    "expression": "(((2 - a) + (3 + 2)) - temperature)",
+    "values": {
+      "b": 1
+    },
+    "expected": [
+      "-1*a",
+      "-1*temperature",
+      "7"
+    ]
+  },
+  {
+    "expression": "(1 * a)",
+    "values": {
+      "temperature": -1,
+      "a": 1,
+      "b": 2
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((1 * 1) + (b + 3)) - ((1 + temperature) + (temperature - 1)))",
+    "values": {
+      "a": -2,
+      "temperature": 0,
+      "b": -1
+    },
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "(((2 - 1) + (1 * 0)) - ((2 + a) - (3 - temperature)))",
+    "values": {
+      "a": 2,
+      "temperature": 0,
+      "b": -1
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((2 + 0) + (a - 0)) * ((a - 2) + (2 - b)))",
+    "values": {
+      "temperature": -2,
+      "b": -1
+    },
+    "expected": [
+      "1*a*a",
+      "3*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "(((a - 3) - (0 + a)) + ((a - b) * (a - 1)))",
+    "values": {
+      "a": -2,
+      "b": 2
+    },
+    "expected": [
+      "9"
+    ]
+  },
+  {
+    "expression": "(2 * ((a * b) * (b - b)))",
+    "values": {
+      "temperature": 2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((2 - 2) + (3 - 0)) * 3)",
+    "values": {
+      "a": -1
+    },
+    "expected": [
+      "9"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(((0 * temperature) - 0) + 2)",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((b - 1) - (b - temperature)) - (a + (b + 3)))",
+    "values": {
+      "b": -1
+    },
+    "expected": [
+      "-1*a",
+      "1*temperature",
+      "-3"
+    ]
+  },
+  {
+    "expression": "(((a * 0) + (0 * b)) + ((3 - 3) + (b * 0)))",
+    "values": {
+      "a": 0,
+      "b": 1
+    },
+    "expected": []
+  },
+  {
+    "expression": "a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {
+      "a": -1,
+      "temperature": -1,
+      "b": 2
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(((0 * 3) - (2 * 0)) + ((0 * 3) - (b + a)))",
+    "values": {
+      "temperature": 2,
+      "a": 2,
+      "b": 1
+    },
+    "expected": [
+      "-3"
+    ]
+  },
+  {
+    "expression": "(((1 + 2) * (1 - a)) * ((2 - 2) * (b * b)))",
+    "values": {
+      "temperature": 2,
+      "a": 2,
+      "b": 2
+    },
+    "expected": []
+  },
+  {
+    "expression": "a",
+    "values": {
+      "temperature": -2,
+      "b": 1,
+      "a": 1
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((2 * temperature) * 0) + (b * (2 + 1)))",
+    "values": {
+      "a": -1,
+      "b": 0,
+      "temperature": -1
+    },
+    "expected": []
+  },
+  {
+    "expression": "(b + a)",
+    "values": {
+      "a": 1,
+      "b": 0,
+      "temperature": -2
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(2 * ((a + temperature) - (3 - 1)))",
+    "values": {
+      "temperature": 2
+    },
+    "expected": [
+      "2*a"
+    ]
+  },
+  {
+    "expression": "(3 * b)",
+    "values": {
+      "b": -2,
+      "a": 0,
+      "temperature": 0
+    },
+    "expected": [
+      "-6"
+    ]
+  },
+  {
+    "expression": "((b + (3 + 2)) - b)",
+    "values": {
+      "a": -1,
+      "b": 0,
+      "temperature": 0
+    },
+    "expected": [
+      "5"
+    ]
+  },
+  {
+    "expression": "(2 * 1)",
+    "values": {
+      "temperature": 2,
+      "b": 1
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((a * 0) * (0 - 1)) + (2 * (2 * temperature)))",
+    "values": {
+      "temperature": 0
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((a * 1) + 2) - ((b - 1) - (b * 3)))",
+    "values": {
+      "temperature": 0
+    },
+    "expected": [
+      "1*a",
+      "2*b",
+      "3"
+    ]
+  },
+  {
+    "expression": "(3 + 0)",
+    "values": {
+      "b": -2
+    },
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "((3 + (temperature + 0)) + ((1 + 0) - (1 + temperature)))",
+    "values": {
+      "a": -2
+    },
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "(2 - (a * (a + temperature)))",
+    "values": {},
+    "expected": [
+      "-1*a*a",
+      "-1*a*temperature",
+      "2"
+    ]
+  },
+  {
+    "expression": "(3 + ((1 * temperature) * (a - 1)))",
+    "values": {
+      "b": -2
+    },
+    "expected": [
+      "1*a*temperature",
+      "-1*temperature",
+      "3"
+    ]
+  },
+  {
+    "expression": "2",
+    "values": {
+      "b": 1,
+      "a": 2
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((b + a) - 1) - (1 + (1 * 3)))",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*b",
+      "-5"
+    ]
+  },
+  {
+    "expression": "(((1 * 2) - b) - ((a - b) - (1 + 0)))",
+    "values": {
+      "temperature": 0
+    },
+    "expected": [
+      "-1*a",
+      "3"
+    ]
+  },
+  {
+    "expression": "((temperature - a) * ((a - 2) * (0 - 3)))",
+    "values": {
+      "b": 0
+    },
+    "expected": [
+      "3*a*a",
+      "-3*a*temperature",
+      "-6*a",
+      "6*temperature"
+    ]
+  },
+  {
+    "expression": "(((0 - 2) - (3 + 1)) + (2 + (temperature + 2)))",
+    "values": {
+      "b": -2,
+      "temperature": 2,
+      "a": 2
+    },
+    "expected": []
+  },
+  {
+    "expression": "((1 * (2 - temperature)) * (2 - (2 * 0)))",
+    "values": {
+      "b": 1
+    },
+    "expected": [
+      "-2*temperature",
+      "4"
+    ]
+  },
+  {
+    "expression": "0",
+    "values": {
+      "a": 2,
+      "b": -1,
+      "temperature": 0
+    },
+    "expected": []
+  },
+  {
+    "expression": "(3 - 3)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(((temperature * 3) - (temperature * a)) - b)",
+    "values": {
+      "a": 2,
+      "temperature": -1
+    },
+    "expected": [
+      "-1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(((3 + b) - (2 + 1)) + ((b - 0) + (a + a)))",
+    "values": {
+      "b": -1
+    },
+    "expected": [
+      "2*a",
+      "-2"
+    ]
+  },
+  {
+    "expression": "(((b * b) * (1 + 2)) + ((2 - 1) + (temperature * a)))",
+    "values": {
+      "a": 2,
+      "b": 2
+    },
+    "expected": [
+      "2*temperature",
+      "13"
+    ]
+  },
+  {
+    "expression": "(((3 + 0) + temperature) + temperature)",
+    "values": {
+      "temperature": 1
+    },
+    "expected": [
+      "5"
+    ]
+  },
+  {
+    "expression": "(((1 * temperature) - (b * temperature)) - ((2 + 1) * (2 * a)))",
+    "values": {},
+    "expected": [
+      "-1*b*temperature",
+      "-6*a",
+      "1*temperature"
+    ]
+  },
+  {
+    "expression": "2",
+    "values": {
+      "a": 0,
+      "temperature": -1,
+      "b": 2
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((temperature - 3) + 2) - 1)",
+    "values": {
+      "b": 1,
+      "a": 0,
+      "temperature": 0
+    },
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "b",
+    "values": {
+      "b": -1,
+      "temperature": 0,
+      "a": -2
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(2 * ((3 * temperature) + (temperature - 3)))",
+    "values": {},
+    "expected": [
+      "8*temperature",
+      "-6"
+    ]
+  },
+  {
+    "expression": "(b * ((0 + 3) - 1))",
+    "values": {
+      "temperature": -2,
+      "a": -1,
+      "b": 1
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(b * ((1 + a) * (b - 2)))",
+    "values": {
+      "b": -2,
+      "a": 2,
+      "temperature": -2
+    },
+    "expected": [
+      "24"
+    ]
+  },
+  {
+    "expression": "(((temperature - 2) * (3 - 2)) * 1)",
+    "values": {
+      "temperature": -2
+    },
+    "expected": [
+      "-4"
+    ]
+  },
+  {
+    "expression": "(((0 + b) + (2 - 2)) + (a - (1 + a)))",
+    "values": {
+      "b": 1
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((b * 0) + b) - a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "((b + (1 + b)) + ((3 - a) * 3))",
+    "values": {
+      "temperature": 0,
+      "b": -2,
+      "a": 0
+    },
+    "expected": [
+      "6"
+    ]
+  },
+  {
+    "expression": "((0 * (b - 0)) + (2 * (3 + 3)))",
+    "values": {
+      "b": 2,
+      "temperature": -2,
+      "a": 2
+    },
+    "expected": [
+      "12"
+    ]
+  },
+  {
+    "expression": "((temperature + a) * b)",
+    "values": {},
+    "expected": [
+      "1*a*b",
+      "1*b*temperature"
+    ]
+  },
+  {
+    "expression": "(((a - b) - (b + 1)) + ((b - 0) - (2 + 2)))",
+    "values": {
+      "a": 0,
+      "temperature": 2,
+      "b": 1
+    },
+    "expected": [
+      "-6"
+    ]
+  },
+  {
+    "expression": "(a * ((b - 3) * 1))",
+    "values": {
+      "a": 1
+    },
+    "expected": [
+      "1*b",
+      "-3"
+    ]
+  },
+  {
+    "expression": "(2 * (1 * b))",
+    "values": {},
+    "expected": [
+      "2*b"
+    ]
+  },
+  {
+    "expression": "(((3 - b) + (temperature + 0)) + ((a - 1) * (temperature + 2)))",
+    "values": {},
+    "expected": [
+      "1*a*temperature",
+      "2*a",
+      "-1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "3",
+    "values": {},
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "(((a * a) - (1 - temperature)) - (3 + (2 + a)))",
+    "values": {
+      "a": 2
+    },
+    "expected": [
+      "1*temperature",
+      "-4"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {
+      "a": 0,
+      "temperature": 1
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "temperature",
+    "values": {
+      "b": -2,
+      "temperature": 0,
+      "a": 1
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((a * 2) * (a - b)) + ((b - 1) - 1))",
+    "values": {
+      "a": 2,
+      "temperature": -2,
+      "b": 2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((b * 1) + (b * a)) * ((temperature * temperature) * (temperature * 3)))",
+    "values": {
+      "temperature": 0,
+      "a": 0
+    },
+    "expected": []
+  },
+  {
+    "expression": "(3 + 3)",
+    "values": {
+      "b": -2,
+      "a": 2,
+      "temperature": -2
+    },
+    "expected": [
+      "6"
+    ]
+  },
+  {
+    "expression": "(((temperature - 0) + (0 - temperature)) + ((b - 3) + (2 + 0)))",
+    "values": {
+      "a": -2,
+      "temperature": 2
+    },
+    "expected": [
+      "1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "0",
+    "values": {
+      "b": -1,
+      "a": 2
+    },
+    "expected": []
+  },
+  {
+    "expression": "1",
+    "values": {
+      "temperature": -2
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((3 * 2) * (2 * 3)) + ((2 * 3) * (a + 3)))",
+    "values": {
+      "b": 1,
+      "temperature": 2,
+      "a": 1
+    },
+    "expected": [
+      "60"
+    ]
+  },
+  {
+    "expression": "(((1 + a) - temperature) - ((1 - 2) - (1 + 2)))",
+    "values": {
+      "a": -1,
+      "b": -1,
+      "temperature": 1
+    },
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "((3 - (2 * 1)) - 2)",
+    "values": {
+      "b": 1
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "((2 - (a + b)) + (3 - (temperature + a)))",
+    "values": {
+      "a": 0,
+      "temperature": 1,
+      "b": 0
+    },
+    "expected": [
+      "4"
+    ]
+  },
+  {
+    "expression": "(((1 - 2) - (a - 2)) + 1)",
+    "values": {
+      "temperature": -2,
+      "b": 1
+    },
+    "expected": [
+      "-1*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "(((3 - a) * (1 - a)) - (1 + 3))",
+    "values": {
+      "temperature": 2
+    },
+    "expected": [
+      "1*a*a",
+      "-4*a",
+      "-1"
+    ]
+  },
+  {
+    "expression": "(((0 + 2) - 2) - ((a + temperature) - (temperature * b)))",
+    "values": {},
+    "expected": [
+      "1*b*temperature",
+      "-1*a",
+      "-1*temperature"
+    ]
+  },
+  {
+    "expression": "(((2 * 1) - (temperature - 0)) - ((2 + 3) * (temperature - 3)))",
+    "values": {},
+    "expected": [
+      "-6*temperature",
+      "17"
+    ]
+  },
+  {
+    "expression": "(((1 - 0) * (1 - 3)) - ((temperature + 1) * (b * 2)))",
+    "values": {
+      "temperature": -1,
+      "b": 2
+    },
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "((2 - (0 + temperature)) - b)",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "-1*temperature",
+      "2"
+    ]
+  },
+  {
+    "expression": "2",
+    "values": {
+      "a": -1,
+      "b": -1,
+      "temperature": -2
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((2 + temperature) + (a + 1)) + ((1 - a) - (0 + temperature)))",
+    "values": {},
+    "expected": [
+      "4"
+    ]
+  },
+  {
+    "expression": "(((1 - 3) + (1 + b)) + ((2 + 1) - (temperature + b)))",
+    "values": {
+      "b": -1,
+      "a": -2
+    },
+    "expected": [
+      "-1*temperature",
+      "2"
+    ]
+  },
+  {
+    "expression": "(((2 - b) * b) - b)",
+    "values": {},
+    "expected": [
+      "-1*b*b",
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(((0 - 1) * (3 * 0)) * ((3 + b) * (3 + temperature)))",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "temperature",
+    "values": {
+      "b": 1
+    },
+    "expected": [
+      "1*temperature"
+    ]
+  },
+  {
+    "expression": "((3 - (2 * 0)) - b)",
+    "values": {
+      "temperature": 1
+    },
+    "expected": [
+      "-1*b",
+      "3"
+    ]
+  },
+  {
+    "expression": "(((2 * 0) * (a - a)) - ((0 + b) * (b * 1)))",
+    "values": {},
+    "expected": [
+      "-1*b*b"
+    ]
+  },
+  {
+    "expression": "(((2 + 1) * a) * ((1 - 1) * a))",
+    "values": {
+      "temperature": -2,
+      "b": 1,
+      "a": 2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((temperature * 1) - (1 - 3)) * temperature)",
+    "values": {
+      "b": 1
+    },
+    "expected": [
+      "1*temperature*temperature",
+      "2*temperature"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {
+      "temperature": 1,
+      "a": 0
+    },
+    "expected": []
+  },
+  {
+    "expression": "(0 - ((2 * temperature) * 1))",
+    "values": {
+      "a": 0,
+      "b": 1
+    },
+    "expected": [
+      "-2*temperature"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "((temperature * (b - 1)) * ((a - 1) * (temperature - temperature)))",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "((a - (b - 2)) + (2 + b))",
+    "values": {
+      "b": 0,
+      "temperature": 0,
+      "a": 2
+    },
+    "expected": [
+      "6"
+    ]
+  },
+  {
+    "expression": "(((0 + 3) * (temperature + a)) - (3 + 0))",
+    "values": {
+      "b": 2,
+      "a": -1
+    },
+    "expected": [
+      "3*temperature",
+      "-6"
+    ]
+  },
+  {
+    "expression": "(3 + (b - 2))",
+    "values": {
+      "temperature": 2,
+      "a": -1,
+      "b": -2
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(((0 - b) - (a - 1)) + b)",
+    "values": {
+      "temperature": 0,
+      "a": 2
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(temperature + ((1 - 0) - (1 + 0)))",
+    "values": {
+      "temperature": 0
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((0 - temperature) - (2 + 1)) + b)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "-1*temperature",
+      "-3"
+    ]
+  },
+  {
+    "expression": "(((a + b) - (0 + temperature)) * ((2 - temperature) * temperature))",
+    "values": {
+      "temperature": 2
+    },
+    "expected": []
+  },
+  {
+    "expression": "((3 + (a * 2)) * ((a * a) * temperature))",
+    "values": {
+      "b": -2,
+      "temperature": -2
+    },
+    "expected": [
+      "-4*a*a*a",
+      "-6*a*a"
+    ]
+  },
+  {
+    "expression": "(((temperature * 0) + (2 + temperature)) - ((3 + 1) + (a - 1)))",
+    "values": {
+      "temperature": -1,
+      "a": 0
+    },
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "(((a + 1) * (2 + 1)) + (a * 3))",
+    "values": {},
+    "expected": [
+      "6*a",
+      "3"
+    ]
+  },
+  {
+    "expression": "((a - (a - 3)) - a)",
+    "values": {
+      "temperature": -2,
+      "a": -2,
+      "b": 1
+    },
+    "expected": [
+      "5"
+    ]
+  },
+  {
+    "expression": "b",
+    "values": {},
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(((temperature - 2) - (a - 2)) - ((a * 2) + (0 + b)))",
+    "values": {
+      "a": 1,
+      "temperature": 2
+    },
+    "expected": [
+      "-1*b",
+      "-1"
+    ]
+  },
+  {
+    "expression": "2",
+    "values": {},
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((1 + 0) - 1) * ((a * temperature) * (1 * 3)))",
+    "values": {
+      "a": -1,
+      "b": 1,
+      "temperature": 2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((3 + 0) * (b + 3)) - (b - (1 - 2)))",
+    "values": {},
+    "expected": [
+      "2*b",
+      "8"
+    ]
+  },
+  {
+    "expression": "(((1 * 2) - (0 - temperature)) * ((2 - 3) + (a + 1)))",
+    "values": {
+      "temperature": 1
+    },
+    "expected": [
+      "3*a"
+    ]
+  },
+  {
+    "expression": "(((b + 2) * (3 * a)) + 3)",
+    "values": {
+      "b": 0
+    },
+    "expected": [
+      "6*a",
+      "3"
+    ]
+  },
+  {
+    "expression": "((a + (0 + 2)) * ((3 - b) * (a - temperature)))",
+    "values": {
+      "a": 2,
+      "b": -2,
+      "temperature": -1
+    },
+    "expected": [
+      "60"
+    ]
+  },
+  {
+    "expression": "(((2 * 0) * (temperature * a)) * ((0 - 3) + (1 + 2)))",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "temperature",
+    "values": {},
+    "expected": [
+      "1*temperature"
+    ]
+  },
+  {
+    "expression": "(((b - 2) * (b - 3)) * b)",
+    "values": {},
+    "expected": [
+      "1*b*b*b",
+      "-5*b*b",
+      "6*b"
+    ]
+  },
+  {
+    "expression": "(a + temperature)",
+    "values": {},
+    "expected": [
+      "1*a",
+      "1*temperature"
+    ]
+  },
+  {
+    "expression": "(((2 * 0) * 3) * ((0 - temperature) * a))",
+    "values": {
+      "temperature": -1
+    },
+    "expected": []
+  },
+  {
+    "expression": "a",
+    "values": {
+      "temperature": -2,
+      "a": 0
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((b - a) + (0 - 2)) + ((2 - a) - (temperature * 2)))",
+    "values": {},
+    "expected": [
+      "-2*a",
+      "1*b",
+      "-2*temperature"
+    ]
+  },
+  {
+    "expression": "(((0 - 0) + (3 * 3)) + (a + (3 * a)))",
+    "values": {
+      "a": 1
+    },
+    "expected": [
+      "13"
+    ]
+  },
+  {
+    "expression": "(temperature * ((1 * 0) - (2 + 3)))",
+    "values": {
+      "temperature": 1,
+      "a": -1,
+      "b": 1
+    },
+    "expected": [
+      "-5"
+    ]
+  },
+  {
+    "expression": "2",
+    "values": {
+      "a": 1,
+      "b": -1,
+      "temperature": -2
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((3 - 3) - (3 * 0)) - ((0 + 3) + (1 + temperature)))",
+    "values": {
+      "temperature": 0,
+      "a": 0
+    },
+    "expected": [
+      "-4"
+    ]
+  },
+  {
+    "expression": "(((0 * b) + (temperature + a)) + ((0 + temperature) + (1 - a)))",
+    "values": {
+      "temperature": -1,
+      "a": 1
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(3 + (a + (a - temperature)))",
+    "values": {
+      "temperature": 2,
+      "a": 0,
+      "b": 1
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((temperature + 0) - (b + 2)) + 0)",
+    "values": {
+      "temperature": 1,
+      "a": -2,
+      "b": -1
+    },
+    "expected": []
+  },
+  {
+    "expression": "b",
+    "values": {
+      "a": -1,
+      "temperature": 1,
+      "b": 0
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((0 + temperature) * 2) * ((0 * a) * 2))",
+    "values": {
+      "b": 0
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((0 * a) - (1 + 0)) * (3 * temperature))",
+    "values": {
+      "temperature": 0,
+      "a": -2,
+      "b": 1
+    },
+    "expected": []
+  },
+  {
+    "expression": "((b * (3 * temperature)) - temperature)",
+    "values": {
+      "a": 1,
+      "temperature": 1,
+      "b": 2
+    },
+    "expected": [
+      "5"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {},
+    "expected": [
+      "1*a"
+    ]
+  },
+  {
+    "expression": "(((temperature + b) - (2 - b)) + temperature)",
+    "values": {
+      "a": 2,
+      "b": 1
+    },
+    "expected": [
+      "2*temperature"
+    ]
+  },
+  {
+    "expression": "((3 + (a + 1)) - ((2 * a) - (0 - 3)))",
+    "values": {
+      "b": -1,
+      "a": 2
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(a - ((b + temperature) * (temperature * 1)))",
+    "values": {
+      "temperature": -1,
+      "a": -2,
+      "b": -2
+    },
+    "expected": [
+      "-5"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((b - b) * (1 * a)) - ((1 * temperature) + (temperature - temperature)))",
+    "values": {
+      "a": 0,
+      "b": 2
+    },
+    "expected": [
+      "-1*temperature"
+    ]
+  },
+  {
+    "expression": "(3 - a)",
+    "values": {},
+    "expected": [
+      "-1*a",
+      "3"
+    ]
+  },
+  {
+    "expression": "2",
+    "values": {
+      "temperature": 0,
+      "b": 1,
+      "a": 0
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((2 * a) + temperature) * ((1 + 2) - 3))",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(((a + 3) - (temperature + 3)) * ((0 - 3) * (b * 3)))",
+    "values": {
+      "a": 0,
+      "b": -2
+    },
+    "expected": [
+      "-18*temperature"
+    ]
+  },
+  {
+    "expression": "(((temperature - b) * temperature) + ((b * 1) + (1 + 2)))",
+    "values": {},
+    "expected": [
+      "-1*b*temperature",
+      "1*temperature*temperature",
+      "1*b",
+      "3"
+    ]
+  },
+  {
+    "expression": "(((b - 3) * (temperature - 0)) * ((b - a) + (0 * a)))",
+    "values": {},
+    "expected": [
+      "-1*a*b*temperature",
+      "1*b*b*temperature",
+      "3*a*temperature",
+      "-3*b*temperature"
+    ]
+  },
+  {
+    "expression": "(((a - 3) * (2 * a)) - 3)",
+    "values": {
+      "a": 2,
+      "b": -2,
+      "temperature": -1
+    },
+    "expected": [
+      "-7"
+    ]
+  },
+  {
+    "expression": "b",
+    "values": {
+      "b": -2,
+      "a": -2
+    },
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "(((b + 2) * 3) * ((b + 2) - (a + temperature)))",
+    "values": {
+      "temperature": 1,
+      "b": -1,
+      "a": 2
+    },
+    "expected": [
+      "-6"
+    ]
+  },
+  {
+    "expression": "((2 - 2) + ((b + b) + (b - 2)))",
+    "values": {
+      "b": -2
+    },
+    "expected": [
+      "-8"
+    ]
+  },
+  {
+    "expression": "((3 * (a * 3)) - ((a - b) + (0 - b)))",
+    "values": {
+      "b": 1
+    },
+    "expected": [
+      "8*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "((2 + (a * a)) - 2)",
+    "values": {
+      "temperature": 0
+    },
+    "expected": [
+      "1*a*a"
+    ]
+  },
+  {
+    "expression": "(((a - 2) - 1) * (2 - (0 * 2)))",
+    "values": {
+      "temperature": 0,
+      "a": 1,
+      "b": 0
+    },
+    "expected": [
+      "-4"
+    ]
+  },
+  {
+    "expression": "(1 - ((1 + 1) * a))",
+    "values": {
+      "b": 2,
+      "a": 1,
+      "temperature": 1
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(((2 - 2) * (0 - a)) * ((temperature - b) - (b - a)))",
+    "values": {
+      "a": 1,
+      "b": -2
+    },
+    "expected": []
+  },
+  {
+    "expression": "a",
+    "values": {
+      "a": 1,
+      "temperature": -1,
+      "b": -1
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((a - a) + (2 * a)) - (0 - (3 + 3)))",
+    "values": {
+      "a": 0,
+      "temperature": 1,
+      "b": 0
+    },
+    "expected": [
+      "6"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {
+      "temperature": 1,
+      "a": 2
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "((a - (temperature * 3)) - ((a - a) * (3 * temperature)))",
+    "values": {
+      "temperature": 1,
+      "a": -2,
+      "b": 2
+    },
+    "expected": [
+      "-5"
+    ]
+  },
+  {
+    "expression": "(((temperature + temperature) + 2) - (b - 2))",
+    "values": {},
+    "expected": [
+      "-1*b",
+      "2*temperature",
+      "4"
+    ]
+  },
+  {
+    "expression": "((0 + b) - a)",
+    "values": {
+      "b": 1
+    },
+    "expected": [
+      "-1*a",
+      "1"
+    ]
+  },
+  {
+    "expression": "(b + ((2 - 2) - (0 - 3)))",
+    "values": {},
+    "expected": [
+      "1*b",
+      "3"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {
+      "a": -2
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "3",
+    "values": {},
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "(((0 - 1) * (2 + 0)) * ((0 * 2) + (temperature - b)))",
+    "values": {
+      "a": 1
+    },
+    "expected": [
+      "2*b",
+      "-2*temperature"
+    ]
+  },
+  {
+    "expression": "(0 + (3 - (1 * 3)))",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(temperature * ((0 - a) + 1))",
+    "values": {},
+    "expected": [
+      "-1*a*temperature",
+      "1*temperature"
+    ]
+  },
+  {
+    "expression": "((b + (a + 0)) * (temperature * (2 - 3)))",
+    "values": {
+      "a": -2,
+      "b": -1,
+      "temperature": -1
+    },
+    "expected": [
+      "-3"
+    ]
+  },
+  {
+    "expression": "((temperature * (b + 1)) - ((b + a) * (3 - a)))",
+    "values": {
+      "temperature": -1,
+      "b": 2
+    },
+    "expected": [
+      "1*a*a",
+      "-1*a",
+      "-9"
+    ]
+  },
+  {
+    "expression": "((a * (0 - 0)) * b)",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "(((a + b) + (3 * 2)) - ((0 * 2) * (a - 2)))",
+    "values": {
+      "a": -2,
+      "temperature": 0,
+      "b": -1
+    },
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "temperature",
+    "values": {
+      "temperature": 1
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((a - a) * (3 + b)) + a)",
+    "values": {
+      "a": 2,
+      "b": -1,
+      "temperature": -2
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((a * 0) - (3 - 3)) + a)",
+    "values": {
+      "temperature": -2,
+      "a": -1,
+      "b": 1
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((b + 1) - (a - 0)) - temperature)",
+    "values": {
+      "a": 1,
+      "temperature": 0,
+      "b": -1
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "((3 + (0 * a)) + ((b * 3) + (temperature * 3)))",
+    "values": {
+      "a": 1,
+      "temperature": 1
+    },
+    "expected": [
+      "3*b",
+      "6"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {
+      "temperature": 1,
+      "b": -1,
+      "a": -2
+    },
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "(3 - (2 - (temperature + a)))",
+    "values": {
+      "a": -1,
+      "b": 0,
+      "temperature": 1
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((3 - 0) + (3 * 3)) * ((temperature + a) + (1 + 1)))",
+    "values": {
+      "b": 0
+    },
+    "expected": [
+      "12*a",
+      "12*temperature",
+      "24"
+    ]
+  },
+  {
+    "expression": "temperature",
+    "values": {},
+    "expected": [
+      "1*temperature"
+    ]
+  },
+  {
+    "expression": "(b + ((2 - 1) + (b + 2)))",
+    "values": {},
+    "expected": [
+      "2*b",
+      "3"
+    ]
+  },
+  {
+    "expression": "(((0 + b) + b) - temperature)",
+    "values": {},
+    "expected": [
+      "2*b",
+      "-1*temperature"
+    ]
+  },
+  {
+    "expression": "(((b - 0) - (b * a)) - ((b + 2) + (temperature - temperature)))",
+    "values": {
+      "a": 0
+    },
+    "expected": [
+      "-2"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {
+      "b": 2,
+      "a": -2
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {
+      "temperature": -1,
+      "b": -2
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(a - a)",
+    "values": {
+      "temperature": 2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(0 - temperature)",
+    "values": {
+      "b": -2,
+      "temperature": -1
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "((0 + (1 - 2)) - ((b - b) * (0 + a)))",
+    "values": {
+      "b": -1,
+      "temperature": 2
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "((2 + temperature) - (temperature + (b + 3)))",
+    "values": {
+      "temperature": -2,
+      "b": 0,
+      "a": 0
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "((0 - (b + 2)) * ((3 + b) * (1 - 1)))",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b",
+    "values": {
+      "a": 2,
+      "b": 1
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((2 + temperature) + (temperature * b)) * 2)",
+    "values": {
+      "b": -1,
+      "a": 2
+    },
+    "expected": [
+      "4"
+    ]
+  },
+  {
+    "expression": "2",
+    "values": {
+      "a": 2
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((1 + 0) - (0 - 0)) + b)",
+    "values": {},
+    "expected": [
+      "1*b",
+      "1"
+    ]
+  },
+  {
+    "expression": "2",
+    "values": {
+      "temperature": -1
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "a",
+    "values": {
+      "b": 2,
+      "temperature": 1,
+      "a": 2
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "(((1 * 3) * (b * b)) - 3)",
+    "values": {
+      "temperature": 0,
+      "b": 2,
+      "a": -1
+    },
+    "expected": [
+      "9"
+    ]
+  },
+  {
+    "expression": "(((temperature * 2) * (1 * 1)) * temperature)",
+    "values": {
+      "b": -1,
+      "a": 2
+    },
+    "expected": [
+      "2*temperature*temperature"
+    ]
+  },
+  {
+    "expression": "(((3 + 1) * (1 + 3)) - ((b - a) + (1 + a)))",
+    "values": {
+      "a": 1,
+      "temperature": 0
+    },
+    "expected": [
+      "-1*b",
+      "15"
+    ]
+  },
+  {
+    "expression": "(((a + b) - 2) - ((0 + b) + (a + 3)))",
+    "values": {},
+    "expected": [
+      "-5"
+    ]
+  },
+  {
+    "expression": "(((2 - temperature) + (0 - a)) + (temperature - a))",
+    "values": {},
+    "expected": [
+      "-2*a",
+      "2"
+    ]
+  },
+  {
+    "expression": "(((1 * 2) + (3 * 0)) + ((2 - b) + 2))",
+    "values": {
+      "a": -2,
+      "b": 1,
+      "temperature": -2
+    },
+    "expected": [
+      "5"
+    ]
+  },
+  {
+    "expression": "(temperature * a)",
+    "values": {
+      "temperature": -1,
+      "b": 2
+    },
+    "expected": [
+      "-1*a"
+    ]
+  },
+  {
+    "expression": "(((a + b) - (1 + 2)) * ((a + 0) + (b + 0)))",
+    "values": {},
+    "expected": [
+      "1*a*a",
+      "2*a*b",
+      "1*b*b",
+      "-3*a",
+      "-3*b"
+    ]
+  },
+  {
+    "expression": "3",
+    "values": {
+      "b": 1,
+      "a": 1,
+      "temperature": 0
+    },
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "expression": "((a * (b * temperature)) - ((1 * temperature) * 3))",
+    "values": {},
+    "expected": [
+      "1*a*b*temperature",
+      "-3*temperature"
+    ]
+  },
+  {
+    "expression": "(((b * 1) * a) * temperature)",
+    "values": {
+      "a": -1,
+      "b": 0
+    },
+    "expected": []
+  },
+  {
+    "expression": "(((0 * 1) * (0 - 3)) * ((temperature - temperature) * 1))",
+    "values": {},
+    "expected": []
+  },
+  {
+    "expression": "b",
+    "values": {
+      "temperature": 1
+    },
+    "expected": [
+      "1*b"
+    ]
+  },
+  {
+    "expression": "(((a - temperature) + (0 * 0)) - ((b - a) * (1 + temperature)))",
+    "values": {},
+    "expected": [
+      "1*a*temperature",
+      "-1*b*temperature",
+      "2*a",
+      "-1*b",
+      "-1*temperature"
+    ]
+  },
+  {
+    "expression": "(0 * ((1 - 0) - temperature))",
+    "values": {
+      "b": -2
+    },
+    "expected": []
+  },
+  {
+    "expression": "(temperature - 0)",
+    "values": {},
+    "expected": [
+      "1*temperature"
+    ]
+  },
+  {
+    "expression": "(((b - temperature) - b) * (1 * 0))",
+    "values": {
+      "a": 0,
+      "b": -1,
+      "temperature": -2
+    },
+    "expected": []
+  },
+  {
+    "expression": "((b * (b * 1)) + (temperature * (1 + 2)))",
+    "values": {
+      "temperature": 1,
+      "b": 1
+    },
+    "expected": [
+      "4"
+    ]
+  },
+  {
+    "expression": "(0 - ((a - temperature) * (1 + 3)))",
+    "values": {
+      "temperature": 1
+    },
+    "expected": [
+      "-4*a",
+      "4"
+    ]
+  },
+  {
+    "expression": "(((3 - a) * (3 * 2)) - (2 - b))",
+    "values": {
+      "a": 1
+    },
+    "expected": [
+      "1*b",
+      "10"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {
+      "a": 2,
+      "b": 2
+    },
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "(((0 - 1) - (a - b)) - (b - (0 - 2)))",
+    "values": {
+      "a": 2,
+      "b": -1
+    },
+    "expected": [
+      "-5"
+    ]
+  },
+  {
+    "expression": "(((2 - 1) * (a - temperature)) - 2)",
+    "values": {
+      "a": 0,
+      "b": -1,
+      "temperature": -1
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "(1 + ((b * 3) - (0 + temperature)))",
+    "values": {
+      "a": -1
+    },
+    "expected": [
+      "3*b",
+      "-1*temperature",
+      "1"
+    ]
+  },
+  {
+    "expression": "2",
+    "values": {
+      "temperature": -1
+    },
+    "expected": [
+      "2"
+    ]
+  },
+  {
+    "expression": "1",
+    "values": {},
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "expression": "((3 - temperature) + ((a - 0) + (0 - 0)))",
+    "values": {
+      "temperature": 2,
+      "b": 1,
+      "a": -2
+    },
+    "expected": [
+      "-1"
+    ]
+  },
+  {
+    "expression": "vaa + vdv",
+    "values": {
+      "vaa": -50,
+      "vab": -49,
+      "vac": -48,
+      "vad": -47,
+      "vae": -46,
+      "vaf": -45,
+      "vag": -44,
+      "vah": -43,
+      "vai": -42,
+      "vaj": -41,
+      "vak": -40,
+      "val": -39,
+      "vam": -38,
+      "van": -37,
+      "vao": -36,
+      "vap": -35,
+      "vaq": -34,
+      "var": -33,
+      "vas": -32,
+      "vat": -31,
+      "vau": -30,
+      "vav": -29,
+      "vaw": -28,
+      "vax": -27,
+      "vay": -26,
+      "vaz": -25,
+      "vba": -24,
+      "vbb": -23,
+      "vbc": -22,
+      "vbd": -21,
+      "vbe": -20,
+      "vbf": -19,
+      "vbg": -18,
+      "vbh": -17,
+      "vbi": -16,
+      "vbj": -15,
+      "vbk": -14,
+      "vbl": -13,
+      "vbm": -12,
+      "vbn": -11,
+      "vbo": -10,
+      "vbp": -9,
+      "vbq": -8,
+      "vbr": -7,
+      "vbs": -6,
+      "vbt": -5,
+      "vbu": -4,
+      "vbv": -3,
+      "vbw": -2,
+      "vbx": -1,
+      "vby": 0,
+      "vbz": 1,
+      "vca": 2,
+      "vcb": 3,
+      "vcc": 4,
+      "vcd": 5,
+      "vce": 6,
+      "vcf": 7,
+      "vcg": 8,
+      "vch": 9,
+      "vci": 10,
+      "vcj": 11,
+      "vck": 12,
+      "vcl": 13,
+      "vcm": 14,
+      "vcn": 15,
+      "vco": 16,
+      "vcp": 17,
+      "vcq": 18,
+      "vcr": 19,
+      "vcs": 20,
+      "vct": 21,
+      "vcu": 22,
+      "vcv": 23,
+      "vcw": 24,
+      "vcx": 25,
+      "vcy": 26,
+      "vcz": 27,
+      "vda": 28,
+      "vdb": 29,
+      "vdc": 30,
+      "vdd": 31,
+      "vde": 32,
+      "vdf": 33,
+      "vdg": 34,
+      "vdh": 35,
+      "vdi": 36,
+      "vdj": 37,
+      "vdk": 38,
+      "vdl": 39,
+      "vdm": 40,
+      "vdn": 41,
+      "vdo": 42,
+      "vdp": 43,
+      "vdq": 44,
+      "vdr": 45,
+      "vds": 46,
+      "vdt": 47,
+      "vdu": 48,
+      "vdv": 49
+    },
+    "expected": [
+      "-1"
+    ]
+  }
+]
