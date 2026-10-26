@@ -4805,6 +4805,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) construction time and space; O(log n) time and O(1) extra space per query"
   },
   {
+    "id": 1163,
+    "title": {
+      "zh": "字典序最大的子串",
+      "en": "Last Substring in Lexicographical Order"
+    },
+    "desc": {
+      "zh": "从相同前缀与淘汰证明推导线性双指针扫描。",
+      "en": "Derive a linear two-pointer scan from shared prefixes and a discard proof."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      },
+      {
+        "zh": "双指针",
+        "en": "Two pointers"
+      }
+    ],
+    "path": "1163/",
+    "leetcodeUrl": "https://leetcode.com/problems/last-substring-in-lexicographical-order/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
