@@ -3935,6 +3935,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) time; O(n) auxiliary space"
   },
   {
+    "id": 927,
+    "title": {
+      "zh": "三等分",
+      "en": "Three Equal Parts"
+    },
+    "desc": {
+      "zh": "从二进制数值出发，推导三个首位与被末尾固定的比较长度。",
+      "en": "Derive three first-one positions and the matching length forced by the final suffix."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数组",
+        "en": "Arrays"
+      },
+      {
+        "zh": "二进制",
+        "en": "Binary representation"
+      }
+    ],
+    "path": "927/",
+    "leetcodeUrl": "https://leetcode.com/problems/three-equal-parts/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
     "id": 940,
     "title": {
       "zh": "不同的子序列 II",

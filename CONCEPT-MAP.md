@@ -1960,3 +1960,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Graph traversal | `leetcode/924/#step0` | Infection reaches every node reachable from a remaining seed. |
 
 <!-- /leetcode-924-campaign -->
+
+
+<!-- leetcode-927-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Equal binary values and legal cuts | `leetcode/927/#step0` | Leading zeros preserve value; cut indices define nonempty parts. |
+| Forced significant suffix | `leetcode/927/#step2` | Equal one counts fix starts; the final suffix fixes length and gap requirements. |
+| Aligned prefix invariant | `leetcode/927/#step2` | Every checked aligned column must match across all three starts. |
+
+<!-- /leetcode-927-campaign -->
