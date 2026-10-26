@@ -4,6 +4,8 @@ Start with [WORKFLOW](../WORKFLOW.md), [UI/bilingual policy](../UI-I18N-SPEC.md)
 
 ## Current state
 
+- **Reading one representation relationship:** existing sine→harmonic-motion relation now offers novice meaning, optional starting lesson and the existing free-projection experiment, preserving original graph/conditions/sources. [Contract](../specs/atlas-relation-reading.md). Separate candidate from the frozen39905de2 pending package.
+
 - **Galaxy to signal tasks:** related concept cards keep their direct lessons and offer the matching existing signal-route station, with Galaxy/Atlas locale and Back context. [Connector contract](../specs/galaxy-signal-connector.md); local candidate, publication separately coordinated.
 
 - **Current iteration (38concepts/48relations/11routes):** one signal-fingerprint route connects existing LTI, impulse, convolution and discrete frequency-response experiments with per-station tasks and a sourced representation relation. [Spec](../specs/atlas-signal-path.md). This candidate is not yet a production release; use `/visual-release.json` for actual published status.

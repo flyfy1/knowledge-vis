@@ -5,3 +5,7 @@
 .route-link{display:flex;align-items:center;min-height:48px;line-height:1.6;overflow-wrap:anywhere;font-size:14px;font-weight:650}
 .route-note{color:var(--muted);font-size:12px;line-height:1.7;margin:12px 0 0;overflow-wrap:anywhere}
 @media(forced-colors:active){.route-entry{border-color:CanvasText}}
+.relation-reading{border-inline-start:2px solid var(--accent);padding-inline-start:12px;margin:12px 0;font-size:14px;line-height:1.65}
+.relation-reading h4{margin:0;font-size:14px;line-height:1.5}.relation-reading p{font-size:14px;line-height:1.65}.reading-link{display:flex;align-items:center;min-height:48px;padding:8px 0;line-height:1.6;overflow-wrap:anywhere}
+.relation .relation-reading a.reading-link{display:flex;min-height:48px;font-size:14px;padding:8px 0}
+.relation .relation-reading p{font-size:14px!important;line-height:1.65}

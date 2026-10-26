@@ -32,4 +32,10 @@ test(d=>d.trails.find(r=>r.id==='signal').stationTasks.push(d.trails.find(r=>r.i
 test(d=>d.trails.find(r=>r.id==='signal').nodes=null,false);
 test(d=>d.trails.find(r=>r.id==='signal').nodes={},false);
 test(d=>d.trails.find(r=>r.id==='signal').stationTasks[0]=[],false);
+test(d=>d.edges.find(e=>e.reading).reading=null,false);
+test(d=>delete d.edges.find(e=>e.reading).reading.meaning.en,false);
+test(d=>d.edges.find(e=>e.reading).reading.startNode='probability',false);
+test(d=>d.edges.find(e=>e.reading).reading.trail='missing',false);
+test(d=>d.edges.find(e=>e.reading).reading.source='',false);
+test(d=>d.edges.find(e=>e.reading).reading.trail='response',false);
 console.log(JSON.stringify({checks,result:'pass',semantics:'General cycles allowed; only explicitly declared prerequisite cycles request review. No prerequisite inferred from foundation.'}));

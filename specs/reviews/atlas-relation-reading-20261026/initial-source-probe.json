@@ -1,0 +1,47 @@
+{
+  "counts": [
+    38,
+    48,
+    11
+  ],
+  "onlyAdditiveReadingToExistingData": true,
+  "oldEdgeReasonSourceAndAllOtherDataUnchanged": true,
+  "canonicalStarterAndTargetExist": true,
+  "negatives": {
+    "nullReading": {
+      "errors": [
+        "edge sine:oscillation: reading must be an object"
+      ]
+    },
+    "arrayReading": {
+      "errors": [
+        "edge sine:oscillation: reading must be an object"
+      ]
+    },
+    "missingLanguage": {
+      "errors": [
+        "atlas.edges.21.reading.bounds: bilingual text missing",
+        "edge sine:oscillation reading bounds: bilingual text missing"
+      ]
+    },
+    "foreignStarter": {
+      "errors": [
+        "edge sine:oscillation: reading starter is not an endpoint"
+      ]
+    },
+    "missingTrail": {
+      "errors": [
+        "edge sine:oscillation: reading experiment is not a real trail/endpoint"
+      ]
+    },
+    "incompatibleRealTrail": {
+      "errors": []
+    },
+    "badSource": {
+      "errors": [
+        "atlas.edges.21.reading.source: unsupported protocol"
+      ]
+    }
+  },
+  "method": "Independent actual data/baseline/schema/target CLI; no browser style computation/focus/hearing/learning test"
+}

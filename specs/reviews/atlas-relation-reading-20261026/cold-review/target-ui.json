@@ -1,0 +1,51 @@
+[
+  {
+    "before": "表示方式\n正弦与余弦 →\n\n正弦与余弦 → 简谐振动: 描述理想运动\n\n为什么相连？"
+  },
+  {
+    "url": "http://127.0.0.1:18927/atlas/galaxy.html?node=oscillation&low=1&lang=zh",
+    "card": "表示方式\n正弦与余弦 →\n\n正弦与余弦 → 简谐振动: 描述理想运动\n\n为什么相连？\n\n无阻尼、无持续外力驱动（回复力仍存在）的理想弹簧振子满足 x″ + (k/m)x = 0，其解为正弦和余弦的组合。\n\n查看解释依据 ↗\n这是一种表示方式，不是必修箭头\n\n正弦／余弦函数描述理想弹簧的位移怎样变化，并不产生运动。圆周投影是看懂这个函数的辅助图像；弹簧块实际沿直线往返，不沿圆周运动。\n\n如果振幅、频率或相位还陌生，可先看正弦与余弦；已经熟悉就直接试投影实验，不必按箭头重新学一遍。\n\n可先看：正弦与余弦 →\n用已有的投影实验核对 →\n\n这里限定 m、k 为正的理想线性弹簧，无阻尼、无持续驱动，回复力仍然存在。圆点匀速转动，不代表它的投影匀速往返；其他往返运动不一定符合这套模型。\n\nOpenStax大学物理15.3 · 圆周投影与简谐振动 ↗",
+    "links": [
+      {
+        "text": "查看解释依据 ↗",
+        "href": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion"
+      },
+      {
+        "text": "可先看：正弦与余弦 →",
+        "href": "../trig/#step3"
+      },
+      {
+        "text": "用已有的投影实验核对 →",
+        "href": "./?trail=motion&node=oscillation&view=list&lang=zh#motion-title"
+      },
+      {
+        "text": "OpenStax大学物理15.3 · 圆周投影与简谐振动 ↗",
+        "href": "https://openstax.org/books/university-physics-volume-1/pages/15-3-comparing-simple-harmonic-motion-and-circular-motion"
+      }
+    ]
+  },
+  {
+    "openExperiment": "可先看：正弦与余弦 →",
+    "href": "../trig/#step3"
+  },
+  {
+    "target": "http://127.0.0.1:18927/trig/#step3",
+    "headings": [
+      "Trig Functions · The Unit Circle",
+      "A wave machine that only spins",
+      "Cosine is where it stands, sine is how high",
+      "Unroll the height and you get the sine wave",
+      "Look from the other side: position makes a wave too",
+      "Tangent is slope, standing on the wall x = 1",
+      "The world keeps translating between circles and waves",
+      "The console: one circle, three projections"
+    ]
+  },
+  {
+    "Back": "http://127.0.0.1:18927/atlas/galaxy.html?node=oscillation&low=1&lang=zh",
+    "currentText": "当前概念\n重置视角\n缓慢旋转\n\n先点“进入 3D 操作”，再单指旋转、双指缩放或平移；点“完成”恢复页面滚动。\n\n数学基础\n运动与波动\n系统与响应\n测量与不确定性\n电路与能量\n— 有依据的关系\n┄ 最短路径（追踪时）\n\n距离近似表达较少的图上连接，并轻度按主题聚集。这是概念相似性的示意，不是精确、通用的科学度量。星球实际大小相同，不代表重要性或物理量。\n\n怎样读懂这片空间\n\n当前概念\n\n运动与波动\n\n简谐振动\n\n理想弹簧振子的回复力与位移成正比、方向相反。在无阻尼、无持续外力驱动时，位移随时间呈正弦变化；回复力仍然存在。\n\n阅读外部教材 ↗\n从此处追踪联系\n直接联系"
+  },
+  {
+    "browser": "CLOSED"
+  }
+]

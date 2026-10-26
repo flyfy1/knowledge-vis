@@ -6,6 +6,8 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Reading a representation relationship](atlas-relation-reading.md): one existing sine→harmonic-motion edge, optional starting lesson/experiment, source and model boundaries without inventing prerequisite order.
+
 - [Galaxy to signal-route connector](galaxy-signal-connector.md): data-derived station links, retained direct lessons, validated locale hints and camera/reading-context Back behavior.
 
 - [Signal-fingerprint learning route](atlas-signal-path.md): sourced convolution/frequency relation, current-station experiment tasks, truthful cross-course examples and existing Atlas context recovery.

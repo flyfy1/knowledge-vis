@@ -1,0 +1,28 @@
+{
+  "decision": "bounded_pass",
+  "remainingMustFix": 0,
+  "method": "source/science and independent baseline/schema/local-target probes; no Chrome",
+  "checks": {
+    "originalDataUnchangedExceptReading": true,
+    "counts": [
+      38,
+      48,
+      11
+    ],
+    "oneReadingEdge": "sine:oscillation",
+    "unsupportedRealRouteRejected": true,
+    "sevenNegativeReadingCasesReject": true,
+    "developerCoreExecutedByReviewer": 34,
+    "CSSCascadeReviewedOnly": true
+  },
+  "sha256": {
+    "atlas/data.js": "3c36f56c5fd7a2b2317e6422ec030c884815491ae6cac9f8e246c1519de817fd",
+    "atlas/app.js": "a923d45f61aacd31569d865a1b2b6a9cced54387891535216b8934f23df60798",
+    "atlas/galaxy/app.mjs": "93866874fb24bf8258d7b4b87a9d8e1d65037d4970d1c163bec2567925c13bf9",
+    "atlas/style.css": "eccffda7f0bf941f897e26828957ad1a62876131d9a66d0053feea0420b667ff",
+    "atlas/galaxy/style.css": "3f98192627105e281d07a6300c66309ad8816633c7d9fd095fe3d69faba78b11",
+    "atlas/tests/data-quality.cjs": "e6e1a3a8a1a7277ceba46b97431da9d663573724b0347491a39e02f1b61efc5d",
+    "atlas/tests/data-quality-core.cjs": "599db02b9bcc2f9832e492c9e3156a97f362c85db1060a8900127d58d7a81d28",
+    "specs/atlas-relation-reading.md": "b40e04c73548577854d7a591a42bb0c0d41e5cb54cb140682a5771d7b8d9b445"
+  }
+}

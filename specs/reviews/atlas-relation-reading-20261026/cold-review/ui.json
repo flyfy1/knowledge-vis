@@ -1,0 +1,1756 @@
+[
+  {
+    "stage": "initial",
+    "url": "http://127.0.0.1:18927/atlas/galaxy.html?node=oscillation&low=1&lang=zh",
+    "text": "跳到概念列表\n← 数学与物理知识地图\n中\nEN\n\nVISUAL / KNOWLEDGE GALAXY 01\n\n知识成星，\n联系成图。\n\n沿着一条联系，发现新的视角。在立体空间中探索数学与物理的真实概念网络。\n\nCodex 开发 · 改进版本\n相互连接的知识宇宙\n\n38 个概念 · 48 条关系 · 5 个主题\n\n相互连接的知识宇宙\n省电模式 · 完整概念列表\n✧\n联系依然在这里。\n\n3D 当前不可用或已关闭。下方列表仍可探索全部概念、关系与课程。\n\n浏览概念 ↓\n＋ 放大\n− 缩小\n聚焦当前概念\n重置视角\n缓慢旋转\n\n先点“进入 3D 操作”，再单指旋转、双指缩放或平移；点“完成”恢复页面滚动。\n\n数学基础\n运动与波动\n系统与响应\n测量与不确定性\n电路与能量\n— 有依据的关系\n┄ 最短路径（追踪时）\n\n距离近似表达较少的图上连接，并轻度按主题聚集。这是概念相似性的示意，不是精确、通用的科学度量。星球实际大小相同，不代表重要性或物理量。\n\n怎样读懂这片空间\n\n当前概念\n\n运动与波动\n\n简谐振动\n\n理想弹簧振子的回复力与位移成正比、方向相反。在无阻尼、无持续外力驱动时，位移随时间呈正弦变化；回复力仍然存在。\n\n阅读外部教材 ↗\n从此处追踪联系\n直接联系 · 5\n应用\n定积分与有符号累加 →\n\n定积分与有符号累加 → 简谐振动: 累加往返的位移\n\n为什么相连？\n表示方式\n导数与瞬时变化率 →\n\n导数与瞬时变化率 → 简谐振动: 描述运动的变化率\n\n为什么相连？\n应用\n净力与牛顿第二定律 →\n\n简谐振动 → 净力与牛顿第二定律: 用净力决定加速度\n\n为什么相连？\n表示方式\n正弦与余弦 →\n\n正弦与余弦 → 简谐振动: 描述理想运动\n\n为什么相连？\n应用\n共振 →\n\n简谐振动 → 共振: 受周期驱动时可能共振\n\n为什么相连？\n\n寻找下一条联系\n\n下一站，探索什么？\n开启 3D 视图\n打开二维知识地图 ↗\n寻找一个概念\n主题区域\n全部主题\n数学基础\n运动与波动\n系统与响应\n测量与不确定性\n电路与能量\n\n38 个匹配概念\n\n贝叶斯更新\n测量与不确定性\nBoost 升压电路\n电路与能量\nBuck 降压电路\n电路与能量\n电容与电场储能\n电路与能量\n复数与旋转\n数学基础\n卷积\n系统与响应\n导数与瞬时变化率\n数学基础\n特征向量\n数学基础\n反馈控制\n系统与响应\n傅里叶分析\n运动与波动\n频率响应\n系统与响应\n正态分布与中心极限定理\n测量与不确定性\n冲激响应\n系统与响应\n电感与磁场储能\n电路与能量\n定积分与有符号累加\n数学基础\n卡尔曼滤波\n测量与不确定性\n拉普拉斯变换\n数学基础\n线性时不变系统\n系统与响应\n蒙特卡洛估计\n测量与不确定性\n净力与牛顿第二定律\n运动与波动\n简谐振动\n运动与波动\n相似三角形与小孔倒像\n运动与波动\n极点与稳定性\n系统与响应\n电压、电流与功率\n电路与能量\n概率模型\n测量与不确定性\n脉宽调制 PWM\n电路与能量\n共振\n运动与波动\n采样与混叠\n运动与波动\n正弦与余弦\n数学基础\n直线斜率\n数学基础\nSnell关系与全反射\n运动与波动\n频谱\n运动与波动\n波的叠加\n运动与波动\n开关与二极管\n电路与能量\n单位圆\n数学基础\n方差\n测量与不确定性\n向量与线性变换\n数学基础\n功与能量变化\n运动与波动\n\n这是一张持续扩充的人工知识地图，尚未覆盖全部知识。概念解释与依据均来自已有地图。\n\n浏览全部学习页面 →",
+    "controls": [
+      {
+        "tag": "A",
+        "text": "跳到概念列表",
+        "aria": null,
+        "href": "#explorer"
+      },
+      {
+        "tag": "A",
+        "text": "← 数学与物理知识地图",
+        "aria": null,
+        "href": "./?node=oscillation"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "中",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "EN",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "Codex 开发 · 改进版本",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://github.com/flyfy1/knowledge-vis/commit/af4141a8d81f76e21c38ac9f5d9cc58e37ed9a78"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://github.com/flyfy1/knowledge-vis/commit/c3445f66a3e666acd557a04a7194c9568a383c35"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://github.com/flyfy1/knowledge-vis/commit/d8b1b2d7ded7f04990e992b232372bacc9495dad"
+      },
+      {
+        "tag": "A",
+        "text": "浏览概念 ↓",
+        "aria": null,
+        "href": "#explorer"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "＋ 放大",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "− 缩小",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "聚焦当前概念",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "重置视角",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "缓慢旋转",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "怎样读懂这片空间",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "阅读外部教材 ↗",
+        "aria": null,
+        "href": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "从此处追踪联系",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "定积分与有符号累加 →",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "为什么相连？",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://openstax.org/books/calculus-volume-1/pages/5-2-the-definite-integral"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "导数与瞬时变化率 →",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "为什么相连？",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "../derivative/#step0"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "净力与牛顿第二定律 →",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "为什么相连？",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "正弦与余弦 →",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "为什么相连？",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "../trig/#step3"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "./?trail=motion&node=oscillation&view=list&lang=zh#motion-title"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://openstax.org/books/university-physics-volume-1/pages/15-3-comparing-simple-harmonic-motion-and-circular-motion"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "共振 →",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "为什么相连？",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://openstax.org/books/university-physics-volume-1/pages/15-6-forced-oscillations"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "开启 3D 视图",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "打开二维知识地图 ↗",
+        "aria": null,
+        "href": "./?view=graph&node=oscillation"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "贝叶斯更新\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Boost 升压电路\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Buck 降压电路\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "电容与电场储能\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "复数与旋转\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "卷积\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "导数与瞬时变化率\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "特征向量\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "反馈控制\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "傅里叶分析\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "频率响应\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "正态分布与中心极限定理\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "冲激响应\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "电感与磁场储能\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "定积分与有符号累加\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "卡尔曼滤波\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "拉普拉斯变换\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "线性时不变系统\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "蒙特卡洛估计\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "净力与牛顿第二定律\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "简谐振动\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "相似三角形与小孔倒像\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "极点与稳定性\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "电压、电流与功率\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "概率模型\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "脉宽调制 PWM\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "共振\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "采样与混叠\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "正弦与余弦\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "直线斜率\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Snell关系与全反射\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "频谱\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "波的叠加\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "开关与二极管\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "单位圆\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "方差\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "向量与线性变换\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "功与能量变化\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "浏览全部学习页面 →",
+        "aria": null,
+        "href": "../"
+      }
+    ]
+  },
+  {
+    "chosen": "正弦与余弦 →",
+    "aria": null
+  },
+  {
+    "stage": "selected relation",
+    "url": "http://127.0.0.1:18927/atlas/galaxy.html?lang=zh&node=sine&low=1",
+    "text": "跳到概念列表\n← 数学与物理知识地图\n中\nEN\n\nVISUAL / KNOWLEDGE GALAXY 01\n\n知识成星，\n联系成图。\n\n沿着一条联系，发现新的视角。在立体空间中探索数学与物理的真实概念网络。\n\nCodex 开发 · 改进版本\n相互连接的知识宇宙\n\n38 个概念 · 48 条关系 · 5 个主题\n\n相互连接的知识宇宙\n省电模式 · 完整概念列表\n✧\n联系依然在这里。\n\n3D 当前不可用或已关闭。下方列表仍可探索全部概念、关系与课程。\n\n浏览概念 ↓\n＋ 放大\n− 缩小\n聚焦当前概念\n重置视角\n缓慢旋转\n\n先点“进入 3D 操作”，再单指旋转、双指缩放或平移；点“完成”恢复页面滚动。\n\n数学基础\n运动与波动\n系统与响应\n测量与不确定性\n电路与能量\n— 有依据的关系\n┄ 最短路径（追踪时）\n\n距离近似表达较少的图上连接，并轻度按主题聚集。这是概念相似性的示意，不是精确、通用的科学度量。星球实际大小相同，不代表重要性或物理量。\n\n怎样读懂这片空间\n\n当前概念\n\n数学基础\n\n正弦与余弦\n\n匀速绕圆运动的坐标随时间周期变化。振幅、频率和相位分别决定大小、快慢和起点。\n\n打开交互课程 →\n从此处追踪联系\n直接联系 · 3\n理解工具\n单位圆 →\n\n单位圆 → 正弦与余弦: 定义\n\n为什么相连？\n表示方式\n简谐振动 →\n\n正弦与余弦 → 简谐振动: 描述理想运动\n\n为什么相连？\n理解工具\n傅里叶分析 →\n\n正弦与余弦 → 傅里叶分析: 提供频率分量\n\n为什么相连？\n\n寻找下一条联系\n\n下一站，探索什么？\n开启 3D 视图\n打开二维知识地图 ↗\n寻找一个概念\n主题区域\n全部主题\n数学基础\n运动与波动\n系统与响应\n测量与不确定性\n电路与能量\n\n38 个匹配概念\n\n贝叶斯更新\n测量与不确定性\nBoost 升压电路\n电路与能量\nBuck 降压电路\n电路与能量\n电容与电场储能\n电路与能量\n复数与旋转\n数学基础\n卷积\n系统与响应\n导数与瞬时变化率\n数学基础\n特征向量\n数学基础\n反馈控制\n系统与响应\n傅里叶分析\n运动与波动\n频率响应\n系统与响应\n正态分布与中心极限定理\n测量与不确定性\n冲激响应\n系统与响应\n电感与磁场储能\n电路与能量\n定积分与有符号累加\n数学基础\n卡尔曼滤波\n测量与不确定性\n拉普拉斯变换\n数学基础\n线性时不变系统\n系统与响应\n蒙特卡洛估计\n测量与不确定性\n净力与牛顿第二定律\n运动与波动\n简谐振动\n运动与波动\n相似三角形与小孔倒像\n运动与波动\n极点与稳定性\n系统与响应\n电压、电流与功率\n电路与能量\n概率模型\n测量与不确定性\n脉宽调制 PWM\n电路与能量\n共振\n运动与波动\n采样与混叠\n运动与波动\n正弦与余弦\n数学基础\n直线斜率\n数学基础\nSnell关系与全反射\n运动与波动\n频谱\n运动与波动\n波的叠加\n运动与波动\n开关与二极管\n电路与能量\n单位圆\n数学基础\n方差\n测量与不确定性\n向量与线性变换\n数学基础\n功与能量变化\n运动与波动\n\n这是一张持续扩充的人工知识地图，尚未覆盖全部知识。概念解释与依据均来自已有地图。\n\n浏览全部学习页面 →",
+    "controls": [
+      {
+        "tag": "A",
+        "text": "跳到概念列表",
+        "aria": null,
+        "href": "#explorer"
+      },
+      {
+        "tag": "A",
+        "text": "← 数学与物理知识地图",
+        "aria": null,
+        "href": "./?node=sine"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "中",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "EN",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "Codex 开发 · 改进版本",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://github.com/flyfy1/knowledge-vis/commit/af4141a8d81f76e21c38ac9f5d9cc58e37ed9a78"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://github.com/flyfy1/knowledge-vis/commit/c3445f66a3e666acd557a04a7194c9568a383c35"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://github.com/flyfy1/knowledge-vis/commit/d8b1b2d7ded7f04990e992b232372bacc9495dad"
+      },
+      {
+        "tag": "A",
+        "text": "浏览概念 ↓",
+        "aria": null,
+        "href": "#explorer"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "＋ 放大",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "− 缩小",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "聚焦当前概念",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "重置视角",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "缓慢旋转",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "怎样读懂这片空间",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "打开交互课程 →",
+        "aria": null,
+        "href": "../trig/#step3"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "从此处追踪联系",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "单位圆 →",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "为什么相连？",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "../trig/#step3"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "简谐振动 →",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "为什么相连？",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "../trig/#step3"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "./?trail=motion&node=oscillation&view=list&lang=zh#motion-title"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://openstax.org/books/university-physics-volume-1/pages/15-3-comparing-simple-harmonic-motion-and-circular-motion"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "傅里叶分析 →",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "为什么相连？",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "../fourier/#step1"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "开启 3D 视图",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "打开二维知识地图 ↗",
+        "aria": null,
+        "href": "./?view=graph&node=sine"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "贝叶斯更新\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Boost 升压电路\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Buck 降压电路\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "电容与电场储能\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "复数与旋转\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "卷积\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "导数与瞬时变化率\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "特征向量\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "反馈控制\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "傅里叶分析\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "频率响应\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "正态分布与中心极限定理\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "冲激响应\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "电感与磁场储能\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "定积分与有符号累加\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "卡尔曼滤波\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "拉普拉斯变换\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "线性时不变系统\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "蒙特卡洛估计\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "净力与牛顿第二定律\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "简谐振动\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "相似三角形与小孔倒像\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "极点与稳定性\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "电压、电流与功率\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "概率模型\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "脉宽调制 PWM\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "共振\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "采样与混叠\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "正弦与余弦\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "直线斜率\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Snell关系与全反射\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "频谱\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "波的叠加\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "开关与二极管\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "单位圆\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "方差\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "向量与线性变换\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "功与能量变化\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "浏览全部学习页面 →",
+        "aria": null,
+        "href": "../"
+      }
+    ]
+  },
+  {
+    "stage": "reading",
+    "url": "http://127.0.0.1:18927/atlas/galaxy.html?lang=zh&node=sine&low=1",
+    "text": "跳到概念列表\n← 数学与物理知识地图\n中\nEN\n\nVISUAL / KNOWLEDGE GALAXY 01\n\n知识成星，\n联系成图。\n\n沿着一条联系，发现新的视角。在立体空间中探索数学与物理的真实概念网络。\n\nCodex 开发 · 改进版本\n相互连接的知识宇宙\n\n38 个概念 · 48 条关系 · 5 个主题\n\n相互连接的知识宇宙\n省电模式 · 完整概念列表\n✧\n联系依然在这里。\n\n3D 当前不可用或已关闭。下方列表仍可探索全部概念、关系与课程。\n\n浏览概念 ↓\n＋ 放大\n− 缩小\n聚焦当前概念\n重置视角\n缓慢旋转\n\n先点“进入 3D 操作”，再单指旋转、双指缩放或平移；点“完成”恢复页面滚动。\n\n数学基础\n运动与波动\n系统与响应\n测量与不确定性\n电路与能量\n— 有依据的关系\n┄ 最短路径（追踪时）\n\n距离近似表达较少的图上连接，并轻度按主题聚集。这是概念相似性的示意，不是精确、通用的科学度量。星球实际大小相同，不代表重要性或物理量。\n\n怎样读懂这片空间\n\n当前概念\n\n数学基础\n\n正弦与余弦\n\n匀速绕圆运动的坐标随时间周期变化。振幅、频率和相位分别决定大小、快慢和起点。\n\n打开交互课程 →\n从此处追踪联系\n直接联系 · 3\n理解工具\n单位圆 →\n\n单位圆 → 正弦与余弦: 定义\n\n为什么相连？\n\n圆上点的纵、横坐标定义正弦、余弦；匀速转动使这些坐标成为时间函数。\n\n查看解释依据 ↗\n表示方式\n简谐振动 →\n\n正弦与余弦 → 简谐振动: 描述理想运动\n\n为什么相连？\n理解工具\n傅里叶分析 →\n\n正弦与余弦 → 傅里叶分析: 提供频率分量\n\n为什么相连？\n\n寻找下一条联系\n\n下一站，探索什么？\n开启 3D 视图\n打开二维知识地图 ↗\n寻找一个概念\n主题区域\n全部主题\n数学基础\n运动与波动\n系统与响应\n测量与不确定性\n电路与能量\n\n38 个匹配概念\n\n贝叶斯更新\n测量与不确定性\nBoost 升压电路\n电路与能量\nBuck 降压电路\n电路与能量\n电容与电场储能\n电路与能量\n复数与旋转\n数学基础\n卷积\n系统与响应\n导数与瞬时变化率\n数学基础\n特征向量\n数学基础\n反馈控制\n系统与响应\n傅里叶分析\n运动与波动\n频率响应\n系统与响应\n正态分布与中心极限定理\n测量与不确定性\n冲激响应\n系统与响应\n电感与磁场储能\n电路与能量\n定积分与有符号累加\n数学基础\n卡尔曼滤波\n测量与不确定性\n拉普拉斯变换\n数学基础\n线性时不变系统\n系统与响应\n蒙特卡洛估计\n测量与不确定性\n净力与牛顿第二定律\n运动与波动\n简谐振动\n运动与波动\n相似三角形与小孔倒像\n运动与波动\n极点与稳定性\n系统与响应\n电压、电流与功率\n电路与能量\n概率模型\n测量与不确定性\n脉宽调制 PWM\n电路与能量\n共振\n运动与波动\n采样与混叠\n运动与波动\n正弦与余弦\n数学基础\n直线斜率\n数学基础\nSnell关系与全反射\n运动与波动\n频谱\n运动与波动\n波的叠加\n运动与波动\n开关与二极管\n电路与能量\n单位圆\n数学基础\n方差\n测量与不确定性\n向量与线性变换\n数学基础\n功与能量变化\n运动与波动\n\n这是一张持续扩充的人工知识地图，尚未覆盖全部知识。概念解释与依据均来自已有地图。\n\n浏览全部学习页面 →",
+    "controls": [
+      {
+        "tag": "A",
+        "text": "跳到概念列表",
+        "aria": null,
+        "href": "#explorer"
+      },
+      {
+        "tag": "A",
+        "text": "← 数学与物理知识地图",
+        "aria": null,
+        "href": "./?node=sine"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "中",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "EN",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "Codex 开发 · 改进版本",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://github.com/flyfy1/knowledge-vis/commit/af4141a8d81f76e21c38ac9f5d9cc58e37ed9a78"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://github.com/flyfy1/knowledge-vis/commit/c3445f66a3e666acd557a04a7194c9568a383c35"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://github.com/flyfy1/knowledge-vis/commit/d8b1b2d7ded7f04990e992b232372bacc9495dad"
+      },
+      {
+        "tag": "A",
+        "text": "浏览概念 ↓",
+        "aria": null,
+        "href": "#explorer"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "＋ 放大",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "− 缩小",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "聚焦当前概念",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "重置视角",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "缓慢旋转",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "怎样读懂这片空间",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "打开交互课程 →",
+        "aria": null,
+        "href": "../trig/#step3"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "从此处追踪联系",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "单位圆 →",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "为什么相连？",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "查看解释依据 ↗",
+        "aria": null,
+        "href": "../trig/#step3"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "简谐振动 →",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "为什么相连？",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "../trig/#step3"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "./?trail=motion&node=oscillation&view=list&lang=zh#motion-title"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://openstax.org/books/university-physics-volume-1/pages/15-3-comparing-simple-harmonic-motion-and-circular-motion"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "傅里叶分析 →",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "为什么相连？",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "../fourier/#step1"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "开启 3D 视图",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "打开二维知识地图 ↗",
+        "aria": null,
+        "href": "./?view=graph&node=sine"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "贝叶斯更新\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Boost 升压电路\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Buck 降压电路\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "电容与电场储能\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "复数与旋转\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "卷积\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "导数与瞬时变化率\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "特征向量\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "反馈控制\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "傅里叶分析\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "频率响应\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "正态分布与中心极限定理\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "冲激响应\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "电感与磁场储能\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "定积分与有符号累加\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "卡尔曼滤波\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "拉普拉斯变换\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "线性时不变系统\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "蒙特卡洛估计\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "净力与牛顿第二定律\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "简谐振动\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "相似三角形与小孔倒像\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "极点与稳定性\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "电压、电流与功率\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "概率模型\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "脉宽调制 PWM\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "共振\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "采样与混叠\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "正弦与余弦\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "直线斜率\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Snell关系与全反射\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "频谱\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "波的叠加\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "开关与二极管\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "单位圆\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "方差\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "向量与线性变换\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "功与能量变化\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "浏览全部学习页面 →",
+        "aria": null,
+        "href": "../"
+      }
+    ]
+  },
+  {
+    "stage": "note",
+    "url": "http://127.0.0.1:18927/atlas/galaxy.html?lang=zh&node=sine&low=1",
+    "text": "跳到概念列表\n← 数学与物理知识地图\n中\nEN\n\nVISUAL / KNOWLEDGE GALAXY 01\n\n知识成星，\n联系成图。\n\n沿着一条联系，发现新的视角。在立体空间中探索数学与物理的真实概念网络。\n\nCodex 开发 · 改进版本\n相互连接的知识宇宙\n\n38 个概念 · 48 条关系 · 5 个主题\n\n相互连接的知识宇宙\n省电模式 · 完整概念列表\n✧\n联系依然在这里。\n\n3D 当前不可用或已关闭。下方列表仍可探索全部概念、关系与课程。\n\n浏览概念 ↓\n＋ 放大\n− 缩小\n聚焦当前概念\n重置视角\n缓慢旋转\n\n先点“进入 3D 操作”，再单指旋转、双指缩放或平移；点“完成”恢复页面滚动。\n\n数学基础\n运动与波动\n系统与响应\n测量与不确定性\n电路与能量\n— 有依据的关系\n┄ 最短路径（追踪时）\n\n距离近似表达较少的图上连接，并轻度按主题聚集。这是概念相似性的示意，不是精确、通用的科学度量。星球实际大小相同，不代表重要性或物理量。\n\n怎样读懂这片空间\n\n当前概念\n\n数学基础\n\n正弦与余弦\n\n匀速绕圆运动的坐标随时间周期变化。振幅、频率和相位分别决定大小、快慢和起点。\n\n打开交互课程 →\n从此处追踪联系\n直接联系 · 3\n理解工具\n单位圆 →\n\n单位圆 → 正弦与余弦: 定义\n\n为什么相连？\n\n圆上点的纵、横坐标定义正弦、余弦；匀速转动使这些坐标成为时间函数。\n\n查看解释依据 ↗\n表示方式\n简谐振动 →\n\n正弦与余弦 → 简谐振动: 描述理想运动\n\n为什么相连？\n理解工具\n傅里叶分析 →\n\n正弦与余弦 → 傅里叶分析: 提供频率分量\n\n为什么相连？\n\n寻找下一条联系\n\n下一站，探索什么？\n开启 3D 视图\n打开二维知识地图 ↗\n寻找一个概念\n主题区域\n全部主题\n数学基础\n运动与波动\n系统与响应\n测量与不确定性\n电路与能量\n\n38 个匹配概念\n\n贝叶斯更新\n测量与不确定性\nBoost 升压电路\n电路与能量\nBuck 降压电路\n电路与能量\n电容与电场储能\n电路与能量\n复数与旋转\n数学基础\n卷积\n系统与响应\n导数与瞬时变化率\n数学基础\n特征向量\n数学基础\n反馈控制\n系统与响应\n傅里叶分析\n运动与波动\n频率响应\n系统与响应\n正态分布与中心极限定理\n测量与不确定性\n冲激响应\n系统与响应\n电感与磁场储能\n电路与能量\n定积分与有符号累加\n数学基础\n卡尔曼滤波\n测量与不确定性\n拉普拉斯变换\n数学基础\n线性时不变系统\n系统与响应\n蒙特卡洛估计\n测量与不确定性\n净力与牛顿第二定律\n运动与波动\n简谐振动\n运动与波动\n相似三角形与小孔倒像\n运动与波动\n极点与稳定性\n系统与响应\n电压、电流与功率\n电路与能量\n概率模型\n测量与不确定性\n脉宽调制 PWM\n电路与能量\n共振\n运动与波动\n采样与混叠\n运动与波动\n正弦与余弦\n数学基础\n直线斜率\n数学基础\nSnell关系与全反射\n运动与波动\n频谱\n运动与波动\n波的叠加\n运动与波动\n开关与二极管\n电路与能量\n单位圆\n数学基础\n方差\n测量与不确定性\n向量与线性变换\n数学基础\n功与能量变化\n运动与波动\n\n这是一张持续扩充的人工知识地图，尚未覆盖全部知识。概念解释与依据均来自已有地图。\n\n浏览全部学习页面 →",
+    "controls": [
+      {
+        "tag": "A",
+        "text": "跳到概念列表",
+        "aria": null,
+        "href": "#explorer"
+      },
+      {
+        "tag": "A",
+        "text": "← 数学与物理知识地图",
+        "aria": null,
+        "href": "./?node=sine"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "中",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "EN",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "Codex 开发 · 改进版本",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://github.com/flyfy1/knowledge-vis/commit/af4141a8d81f76e21c38ac9f5d9cc58e37ed9a78"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://github.com/flyfy1/knowledge-vis/commit/c3445f66a3e666acd557a04a7194c9568a383c35"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://github.com/flyfy1/knowledge-vis/commit/d8b1b2d7ded7f04990e992b232372bacc9495dad"
+      },
+      {
+        "tag": "A",
+        "text": "浏览概念 ↓",
+        "aria": null,
+        "href": "#explorer"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "＋ 放大",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "− 缩小",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "聚焦当前概念",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "重置视角",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "缓慢旋转",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "怎样读懂这片空间",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "打开交互课程 →",
+        "aria": null,
+        "href": "../trig/#step3"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "从此处追踪联系",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "单位圆 →",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "为什么相连？",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "查看解释依据 ↗",
+        "aria": null,
+        "href": "../trig/#step3"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "简谐振动 →",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "为什么相连？",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "../trig/#step3"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "./?trail=motion&node=oscillation&view=list&lang=zh#motion-title"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "https://openstax.org/books/university-physics-volume-1/pages/15-3-comparing-simple-harmonic-motion-and-circular-motion"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "傅里叶分析 →",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "为什么相连？",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "aria": null,
+        "href": "../fourier/#step1"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "开启 3D 视图",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "打开二维知识地图 ↗",
+        "aria": null,
+        "href": "./?view=graph&node=sine"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "贝叶斯更新\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Boost 升压电路\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Buck 降压电路\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "电容与电场储能\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "复数与旋转\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "卷积\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "导数与瞬时变化率\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "特征向量\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "反馈控制\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "傅里叶分析\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "频率响应\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "正态分布与中心极限定理\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "冲激响应\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "电感与磁场储能\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "定积分与有符号累加\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "卡尔曼滤波\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "拉普拉斯变换\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "线性时不变系统\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "蒙特卡洛估计\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "净力与牛顿第二定律\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "简谐振动\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "相似三角形与小孔倒像\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "极点与稳定性\n系统与响应",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "电压、电流与功率\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "概率模型\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "脉宽调制 PWM\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "共振\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "采样与混叠\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "正弦与余弦\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "直线斜率\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Snell关系与全反射\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "频谱\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "波的叠加\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "开关与二极管\n电路与能量",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "单位圆\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "方差\n测量与不确定性",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "向量与线性变换\n数学基础",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "功与能量变化\n运动与波动",
+        "aria": null,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "text": "浏览全部学习页面 →",
+        "aria": null,
+        "href": "../"
+      }
+    ]
+  },
+  {
+    "experimentNotOpened": "No unambiguous visible projection-experiment link matched; no other course opened."
+  },
+  {
+    "browser": "CLOSED"
+  }
+]

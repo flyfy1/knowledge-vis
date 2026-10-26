@@ -1,0 +1,25 @@
+# One relation reading — independent code/science review
+
+Initial checkpoint: **science/content PASS; two narrow implementation findings pending recheck.** No Chrome or product edits. Scope: the optional sine:oscillation reading record, two existing disclosure renderers, canonical starter/experiment links, supported hash focus and data-quality validation.
+
+1. Galaxy's existing `.relation a` selector overrides the less-specific new `.reading-link` for min-height/font-size/padding:44px remains in force rather than48px. Existing `.relation p{font-size:12px!important}` also overrides the new14px reading paragraph declaration. Correct only the new reading context with sufficient specificity; developer browser evidence must measure the resulting targets/text rather than infer them from the new rule.
+2. The renderer always targets `#motion-title`, while the validator currently accepts reading.trail='response' with tryNode='oscillation'. Independent validate call returns no errors for this unsupported combination. Restrict the bounded reading experiment to the supported motion route (and test response as a negative), rather than adding a generic route-host engine. A real route containing an endpoint is insufficient to validate this particular model/anchor.
+
+## Science/source already checked
+
+Only the existing sine:oscillation representation receives metadata. Original reason/15.1 source remain; the new canonical starter is sine's real trig#step3 link, and the intended experiment is the existing motion projection with oscillation selected. Text correctly distinguishes representation from causal force, circular block trajectory or required learning order. Positive m/k, linear Hooke, no damping/sustained drive and the remaining restoring force bound the claim. It also avoids asserting constant projection velocity from constant-speed auxiliary rotation.
+
+The named comparison source is the actual OpenStax15.3 identified independently at the design gate, not Pendulums15.4. The mathematics is shared with the existing model rather than a new simulation. No graph entity, type, store or clock was added. Native source links/details and textContent preserve the original reason/evidence system; no dynamic HTML/eval handler was introduced.
+
+The existing data-quality-core suite was executed by this reviewer:33checks PASS before the two findings were fixed. That result does not cover the unsupported real route fixture above. Root browser/cold UI/listening outcomes remain separate and are not represented as this reviewer's execution.
+
+## Final narrow recheck
+
+1. **Cascade fixed in source.** Galaxy now scopes anchor size/font/padding as `.relation .relation-reading a.reading-link` (48px/14px), outranking the old `.relation a`. The new reading paragraph rule has both greater specificity and !important, so its14px wins over the old12px important rule. This is deterministic CSS-cascade review, not this reviewer's computed-style/browser measurement. Root's actual target/text-size browser assertions are separate evidence. No old relationship rule was rewritten.
+2. **Supported experiment restricted.** The validator now requires reading.trail==='motion' as well as real trail-node/edge-endpoint membership, matching the current fixed #motion-title adapter. The independently reproduced response-route acceptance now returns a structured error. Seven optional-metadata negative cases reject without throwing.
+3. **Invariants independently checked.** `independent-source-probe.cjs`, `initial-source-probe.json` and `final-source-probe.json` preserve the red/green validator difference. Compared actual serialized data with base39905de2 after removing only reading: all original nodes/edges/types/groups/trails and original reason/source are identical. Counts remain38/48/11. Exactly one edge has reading, its starter resolves to actual trig#step3, and the experiment target exists in actual Atlas HTML.
+4. The developer data-quality-core suite was executed again by this reviewer after the fix: **34checks PASS**. `git diff --check` also passes. The earlier33check result remains an earlier scope, not overwritten as a test of the later fixture.
+
+The explicit #motion-title+trail=motion arrival uses the existing focusExperiment/MotionBridge focus seam; it does not add a clock, reset simulation parameters or autoplay. Galaxy's experiment click uses the existing native snapshot/save path without intercepting navigation. Other lesson URLs remain canonical. Native disclosure behavior is inherited; no new read/completion state was added.
+
+This final acceptance is source/science plus limited CLI. I did not launch Chrome, certify rendered hit targets/focus at200%, re-execute root's browser suite, or measure beginner understanding. Root's active final UI run and independent learner review must retain their actual execution/status in the main verification record. No publishing authority or public endpoint retry follows from this report. Final reviewed hashes are in code-review-source.json.
