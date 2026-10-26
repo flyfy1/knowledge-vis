@@ -29,3 +29,12 @@ On the checked Mac, the existing module was found at `/Users/songyy/Documents/in
 `model.js` contains prescribed teaching curves, not a thermal/flow solver. Time is in diagram units. Undercooling recomputes a hypothetical same-time comparison, preserving seeds and time; it does not integrate a cooling history. Step 1 and 2 have independent experiments; the environment comparison shares one clock between its scenes. Reset clears and stops the affected experiment. Language and step navigation preserve state. Reload begins fresh. New seeds are disabled at the final time; seek backward or reset first, so every seed can have a growth interval.
 
 See `BRIEF.md` for source, assumptions and term definitions; `../specs/reviews/frozen-bubble-design.md` for independent design adjudication; and `../specs/reviews/frozen-bubble-verification.md` for verification and limitations.
+
+Teaching-continuity regression (same Playwright setup):
+
+```sh
+NODE_PATH=/path/to/node_modules LESSON_BASE_URL=http://127.0.0.1:18775 \
+  LESSON_SCREENSHOTS=/tmp/frozen-teaching node frozen-bubble/tests/teaching.cjs
+```
+
+The 2026-10-26 Codex revision preserves the model and adds just-in-time explanations, a named research card before the comparison, paused story moments, time-preserving A/B mobile switching, and visible page-local authorship. Current acceptance and before/after evidence: `../specs/reviews/frozen-bubble-learning-20261026.md`.
