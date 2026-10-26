@@ -29,3 +29,34 @@ Author implementation and self-check complete; independent reviewer/run/report p
 Frozen six-dimension interpretation: (15) reconstruct legal expression and operator units; (20) explain exhaustive baseline versus reuse and overshoot counterexample; (20) justify restricted-power p/n invariant, all four candidates, first digit and final join; (20) preserve ledger causes and reverse/predict state; (15) map divmod/simultaneous update/final carry to canonical Python and boundary-safe costs; (10) bilingual equivalence and tested device/focus/source states. Standard threshold85, every dimension≥3 and no required findings; no score assigned by author.
 
 Author checks passed: 12,005 oracle cases,199 exhaustive expression optima,3,636 intermediate costs; real browser both locales/all presets/16 geometry combinations; source/clipboard/download parity; minimum measured text contrast7.744:1, total CSS11,196 bytes. Root preflight `python3 -B scripts/register_leetcode_lesson.py 964 --validate-only` passed exit0. Fresh independent review is the next stage, with no acceptance implied. Metadata cost includes constant work at target1. No post-review status change was made to runtime copy.
+
+## 2026-10-26 prospective normalization candidate
+
+The focused request `specs/reviews/964-review-normalization-request-20261026.md`
+adopts `964-R1-A1` as **964-NORMALIZE-R1**. The original candidate
+`b01fe1e86156906cbbbede74941146920dedfcd5` and independent acceptance at 92.5/100
+remain historical evidence. This append supersedes earlier pending-review wording
+only for describing that original history; the new revision awaits separate review.
+
+Reuse verdict: keep the existing step3 proof binding, typography and tokens.
+Reader/job: help the basic-Python reader reconstruct one fractional carry and its
+charged cost. P0/highest-return slice: define `3^-1 = 1/3`, express it legally as
+`3/3/3`, combine three such terms into `3/3`, and explain charged 9→2 in both
+locales. P1: short causal sentences inside that binding. P2: none. The example
+supports cost reduction and retains the existing general cancellation/carry,
+processed-power invariant, four transitions and finalization argument. The
+artificial leading join is removed once from the complete expression. No legal
+expression example introduces parentheses or unary minus.
+
+Deferred: `964-R1-A2` high-zoom ledger layout, as explicitly excluded by the
+request; no closure claimed. No new design/layout/control is introduced, so the
+adopted independent request check and existing design contract apply. Static text
+adds no loading/network/auth/reconnect state. Algorithm and source bytes remain
+unchanged. Only the proof pair and HTML copy-cache query change in runtime files.
+
+Author checks and the frozen follow-up manifest are in
+`tests/evidence/normalization-r1/`; the appended self-check maps the stable IDs.
+The metadata string already satisfies the gate; root validate-only returned exit0.
+No metadata repair, registration, acceptance update, commit or publication occurs.
+A fresh separate reviewer must cold-read the proof, verify its cost conventions,
+and close 964-NORMALIZE-R1 / selected 964-R1-A1 against the new manifest.

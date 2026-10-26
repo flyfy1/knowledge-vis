@@ -1,0 +1,1677 @@
+{
+  "kind": "author rendered proof self-check",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "zoom": "document.body.style.zoom=2 (synthetic CSS page zoom, not native browser zoom)",
+  "proofs": [
+    {
+      "lang": "en",
+      "text": "Why are two states enough? Every legal expression without parentheses is a signed sum of multiplication/division terms, each an integer power of x. A negative exponent denotes a fraction: 3^-1 = 1/3, written legally as 3/3/3. Add three such terms: 3/3/3 + 3/3/3 + 3/3/3 = 1. Replace them with 3/3: this is one fractional carry. In charged accounting, each old term has two division symbols plus one joining sign, so three terms cost 3 * 3 = 9. The replacement has one division plus one joining sign, costing 2. We charge every term a join here; remove the artificial leading join only once from the complete expression at the end. This example shows a cost reduction; the general argument is still needed. Cancel opposite terms of equal power. For an integer target, remaining negative-exponent terms must combine in groups of x and carry upward; otherwise a denominator remains. Replacing such a group by a higher power never costs more. Likewise, x same-sign units at any digit can be combined upward without increasing cost. Only two boundaries remain for the low digits: no borrowed higher unit, or one borrowed unit, represented by S and next power minus S. The four identities cover both boundaries, and every candidate constructs legal terms, so the minimum neither misses a solution nor undercounts. The first digit establishes this invariant (a statement true after every step); each update preserves it. After D digits compare p with n+D for adding x^D, then subtract 1."
+    },
+    {
+      "lang": "zh",
+      "text": "为什么两种状态足够？无括号的合法表达式是若干带符号的乘除项；每项都等于 x 的整数次幂。负指数表示分数：例如 3^-1 = 1/3，合法写法是 3/3/3。三个这样的项相加：3/3/3 + 3/3/3 + 3/3/3 = 1，可以换成 3/3。这就是一次分数进位。按带连接符费用，每个旧项有两个除号和一个连接符，三项共 3 * 3 = 9；新项有一个除号和一个连接符，费用为 2。这里先给每项都记一个连接符；虚记的首项连接符只在完整表达式末尾去掉一次。这个例子说明费用下降，下面仍需一般论证。正负相同幂先抵消。对整数目标，剩余负指数的项必须凑成 x 个才能逐级进位，否则总值仍有分母；用更高的幂替换不会增加费用。任一位同号的 x 个单位也能合并到高位，费用不会增加。因此处理低位时，只需区分不向高位借一个单位和借一个单位，即 S 与下一幂减 S。上面四个恒等式涵盖了这两种边界情况，且每个候选都可用合法项构造；取最小既不漏解也不低估。初始最低位成立，逐位更新保持这个不变量（每步始终为真的陈述）。读完 D 位后，再比较直接 p 和补上 x^D 的 n+D，最后减 1。"
+    }
+  ],
+  "geometry": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "rect": {
+        "left": 8,
+        "right": 312,
+        "top": -60.265625,
+        "bottom": 1059.734375
+      },
+      "lines": [
+        {
+          "left": 8,
+          "right": 305.15625,
+          "top": -57.265625,
+          "bottom": -35.265625
+        },
+        {
+          "left": 8,
+          "right": 277.53125,
+          "top": -29.265625,
+          "bottom": -7.265625
+        },
+        {
+          "left": 8,
+          "right": 285.203125,
+          "top": -1.265625,
+          "bottom": 20.734375
+        },
+        {
+          "left": 8,
+          "right": 279.734375,
+          "top": 26.734375,
+          "bottom": 48.734375
+        },
+        {
+          "left": 8,
+          "right": 292.78125,
+          "top": 54.734375,
+          "bottom": 76.734375
+        },
+        {
+          "left": 8,
+          "right": 299.78125,
+          "top": 82.734375,
+          "bottom": 104.734375
+        },
+        {
+          "left": 8,
+          "right": 310.265625,
+          "top": 110.734375,
+          "bottom": 132.734375
+        },
+        {
+          "left": 8,
+          "right": 277.59375,
+          "top": 138.734375,
+          "bottom": 160.734375
+        },
+        {
+          "left": 8,
+          "right": 302.078125,
+          "top": 166.734375,
+          "bottom": 188.734375
+        },
+        {
+          "left": 8,
+          "right": 302.796875,
+          "top": 194.734375,
+          "bottom": 216.734375
+        },
+        {
+          "left": 8,
+          "right": 281.9375,
+          "top": 222.734375,
+          "bottom": 244.734375
+        },
+        {
+          "left": 8,
+          "right": 303.5,
+          "top": 250.734375,
+          "bottom": 272.734375
+        },
+        {
+          "left": 8,
+          "right": 306.25,
+          "top": 278.734375,
+          "bottom": 300.734375
+        },
+        {
+          "left": 8,
+          "right": 260.71875,
+          "top": 306.734375,
+          "bottom": 328.734375
+        },
+        {
+          "left": 8,
+          "right": 285.8125,
+          "top": 334.734375,
+          "bottom": 356.734375
+        },
+        {
+          "left": 8,
+          "right": 292.40625,
+          "top": 362.734375,
+          "bottom": 384.734375
+        },
+        {
+          "left": 8,
+          "right": 272.296875,
+          "top": 390.734375,
+          "bottom": 412.734375
+        },
+        {
+          "left": 8,
+          "right": 299.5625,
+          "top": 418.734375,
+          "bottom": 440.734375
+        },
+        {
+          "left": 8,
+          "right": 306.25,
+          "top": 446.734375,
+          "bottom": 468.734375
+        },
+        {
+          "left": 8,
+          "right": 302.9375,
+          "top": 474.734375,
+          "bottom": 496.734375
+        },
+        {
+          "left": 8,
+          "right": 309.203125,
+          "top": 502.734375,
+          "bottom": 524.734375
+        },
+        {
+          "left": 8,
+          "right": 251.9375,
+          "top": 530.734375,
+          "bottom": 552.734375
+        },
+        {
+          "left": 8,
+          "right": 267.5,
+          "top": 558.734375,
+          "bottom": 580.734375
+        },
+        {
+          "left": 8,
+          "right": 272.09375,
+          "top": 586.734375,
+          "bottom": 608.734375
+        },
+        {
+          "left": 8,
+          "right": 277.171875,
+          "top": 614.734375,
+          "bottom": 636.734375
+        },
+        {
+          "left": 8,
+          "right": 268.5,
+          "top": 642.734375,
+          "bottom": 664.734375
+        },
+        {
+          "left": 8,
+          "right": 287.828125,
+          "top": 670.734375,
+          "bottom": 692.734375
+        },
+        {
+          "left": 8,
+          "right": 287.1875,
+          "top": 698.734375,
+          "bottom": 720.734375
+        },
+        {
+          "left": 8,
+          "right": 305.515625,
+          "top": 726.734375,
+          "bottom": 748.734375
+        },
+        {
+          "left": 8,
+          "right": 303.171875,
+          "top": 754.734375,
+          "bottom": 776.734375
+        },
+        {
+          "left": 8,
+          "right": 261,
+          "top": 782.734375,
+          "bottom": 804.734375
+        },
+        {
+          "left": 8,
+          "right": 288.53125,
+          "top": 810.734375,
+          "bottom": 832.734375
+        },
+        {
+          "left": 8,
+          "right": 302.125,
+          "top": 838.734375,
+          "bottom": 860.734375
+        },
+        {
+          "left": 8,
+          "right": 258.171875,
+          "top": 866.734375,
+          "bottom": 888.734375
+        },
+        {
+          "left": 8,
+          "right": 306.8125,
+          "top": 894.734375,
+          "bottom": 916.734375
+        },
+        {
+          "left": 8,
+          "right": 293.015625,
+          "top": 922.734375,
+          "bottom": 944.734375
+        },
+        {
+          "left": 8,
+          "right": 266.921875,
+          "top": 950.734375,
+          "bottom": 972.734375
+        },
+        {
+          "left": 8,
+          "right": 286.90625,
+          "top": 978.734375,
+          "bottom": 1000.734375
+        },
+        {
+          "left": 8,
+          "right": 299.765625,
+          "top": 1006.734375,
+          "bottom": 1028.734375
+        },
+        {
+          "left": 8,
+          "right": 21.453125,
+          "top": 1034.734375,
+          "bottom": 1056.734375
+        }
+      ],
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": "visible"
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "rect": {
+        "left": 16,
+        "right": 304,
+        "top": -2076.375,
+        "bottom": 3075.625
+      },
+      "lines": [
+        {
+          "left": 16,
+          "right": 301.21875,
+          "top": -2070.375,
+          "bottom": -2027.375
+        },
+        {
+          "left": 16,
+          "right": 236.265625,
+          "top": -2014.375,
+          "bottom": -1971.375
+        },
+        {
+          "left": 16,
+          "right": 259.203125,
+          "top": -1958.375,
+          "bottom": -1915.375
+        },
+        {
+          "left": 16,
+          "right": 131.4375,
+          "top": -1902.375,
+          "bottom": -1859.375
+        },
+        {
+          "left": 16,
+          "right": 260.296875,
+          "top": -1846.375,
+          "bottom": -1803.375
+        },
+        {
+          "left": 16,
+          "right": 228.8125,
+          "top": -1790.375,
+          "bottom": -1747.375
+        },
+        {
+          "left": 16,
+          "right": 301.890625,
+          "top": -1734.375,
+          "bottom": -1691.375
+        },
+        {
+          "left": 16,
+          "right": 293.859375,
+          "top": -1678.375,
+          "bottom": -1635.375
+        },
+        {
+          "left": 16,
+          "right": 300.234375,
+          "top": -1622.375,
+          "bottom": -1579.375
+        },
+        {
+          "left": 16,
+          "right": 174.34375,
+          "top": -1566.375,
+          "bottom": -1523.375
+        },
+        {
+          "left": 16,
+          "right": 288.640625,
+          "top": -1510.375,
+          "bottom": -1467.375
+        },
+        {
+          "left": 16,
+          "right": 266.859375,
+          "top": -1454.375,
+          "bottom": -1411.375
+        },
+        {
+          "left": 16,
+          "right": 294.0625,
+          "top": -1398.375,
+          "bottom": -1355.375
+        },
+        {
+          "left": 16,
+          "right": 301.359375,
+          "top": -1342.375,
+          "bottom": -1299.375
+        },
+        {
+          "left": 16,
+          "right": 278.25,
+          "top": -1286.375,
+          "bottom": -1243.375
+        },
+        {
+          "left": 16,
+          "right": 296.84375,
+          "top": -1230.375,
+          "bottom": -1187.375
+        },
+        {
+          "left": 16,
+          "right": 293.921875,
+          "top": -1174.375,
+          "bottom": -1131.375
+        },
+        {
+          "left": 16,
+          "right": 233.734375,
+          "top": -1118.375,
+          "bottom": -1075.375
+        },
+        {
+          "left": 16,
+          "right": 288.6875,
+          "top": -1062.375,
+          "bottom": -1019.375
+        },
+        {
+          "left": 16,
+          "right": 139.40625,
+          "top": -1006.375,
+          "bottom": -963.375
+        },
+        {
+          "left": 16,
+          "right": 270.890625,
+          "top": -950.375,
+          "bottom": -907.375
+        },
+        {
+          "left": 16,
+          "right": 270.125,
+          "top": -894.375,
+          "bottom": -851.375
+        },
+        {
+          "left": 16,
+          "right": 263.6875,
+          "top": -838.375,
+          "bottom": -795.375
+        },
+        {
+          "left": 16,
+          "right": 256.234375,
+          "top": -782.375,
+          "bottom": -739.375
+        },
+        {
+          "left": 16,
+          "right": 218.953125,
+          "top": -726.375,
+          "bottom": -683.375
+        },
+        {
+          "left": 16,
+          "right": 279.8125,
+          "top": -670.375,
+          "bottom": -627.375
+        },
+        {
+          "left": 16,
+          "right": 106.828125,
+          "top": -614.375,
+          "bottom": -571.375
+        },
+        {
+          "left": 16,
+          "right": 266.59375,
+          "top": -558.375,
+          "bottom": -515.375
+        },
+        {
+          "left": 16,
+          "right": 268.046875,
+          "top": -502.375,
+          "bottom": -459.375
+        },
+        {
+          "left": 16,
+          "right": 264.8125,
+          "top": -446.375,
+          "bottom": -403.375
+        },
+        {
+          "left": 16,
+          "right": 216.015625,
+          "top": -390.375,
+          "bottom": -347.375
+        },
+        {
+          "left": 16,
+          "right": 290.34375,
+          "top": -334.375,
+          "bottom": -291.375
+        },
+        {
+          "left": 16,
+          "right": 183.265625,
+          "top": -278.375,
+          "bottom": -235.375
+        },
+        {
+          "left": 16,
+          "right": 187.265625,
+          "top": -222.375,
+          "bottom": -179.375
+        },
+        {
+          "left": 16,
+          "right": 256.046875,
+          "top": -166.375,
+          "bottom": -123.375
+        },
+        {
+          "left": 16,
+          "right": 224.546875,
+          "top": -110.375,
+          "bottom": -67.375
+        },
+        {
+          "left": 16,
+          "right": 295.109375,
+          "top": -54.375,
+          "bottom": -11.375
+        },
+        {
+          "left": 16,
+          "right": 274.21875,
+          "top": 1.625,
+          "bottom": 44.625
+        },
+        {
+          "left": 16,
+          "right": 288.078125,
+          "top": 57.625,
+          "bottom": 100.625
+        },
+        {
+          "left": 16,
+          "right": 206.5,
+          "top": 113.625,
+          "bottom": 156.625
+        },
+        {
+          "left": 16,
+          "right": 226.671875,
+          "top": 169.625,
+          "bottom": 212.625
+        },
+        {
+          "left": 16,
+          "right": 288.265625,
+          "top": 225.625,
+          "bottom": 268.625
+        },
+        {
+          "left": 16,
+          "right": 229.734375,
+          "top": 281.625,
+          "bottom": 324.625
+        },
+        {
+          "left": 16,
+          "right": 255.203125,
+          "top": 337.625,
+          "bottom": 380.625
+        },
+        {
+          "left": 16,
+          "right": 234.796875,
+          "top": 393.625,
+          "bottom": 436.625
+        },
+        {
+          "left": 16,
+          "right": 217.828125,
+          "top": 449.625,
+          "bottom": 492.625
+        },
+        {
+          "left": 16,
+          "right": 233.15625,
+          "top": 505.625,
+          "bottom": 548.625
+        },
+        {
+          "left": 16,
+          "right": 170.25,
+          "top": 561.625,
+          "bottom": 604.625
+        },
+        {
+          "left": 16,
+          "right": 298.40625,
+          "top": 617.625,
+          "bottom": 660.625
+        },
+        {
+          "left": 16,
+          "right": 188.96875,
+          "top": 673.625,
+          "bottom": 716.625
+        },
+        {
+          "left": 16,
+          "right": 297.484375,
+          "top": 729.625,
+          "bottom": 772.625
+        },
+        {
+          "left": 16,
+          "right": 221.734375,
+          "top": 785.625,
+          "bottom": 828.625
+        },
+        {
+          "left": 16,
+          "right": 295.8125,
+          "top": 841.625,
+          "bottom": 884.625
+        },
+        {
+          "left": 16,
+          "right": 239.171875,
+          "top": 897.625,
+          "bottom": 940.625
+        },
+        {
+          "left": 16,
+          "right": 301.671875,
+          "top": 953.625,
+          "bottom": 996.625
+        },
+        {
+          "left": 16,
+          "right": 281.859375,
+          "top": 1009.625,
+          "bottom": 1052.625
+        },
+        {
+          "left": 16,
+          "right": 217.890625,
+          "top": 1065.625,
+          "bottom": 1108.625
+        },
+        {
+          "left": 16,
+          "right": 282.765625,
+          "top": 1121.625,
+          "bottom": 1164.625
+        },
+        {
+          "left": 16,
+          "right": 276.015625,
+          "top": 1177.625,
+          "bottom": 1220.625
+        },
+        {
+          "left": 16,
+          "right": 262.25,
+          "top": 1233.625,
+          "bottom": 1276.625
+        },
+        {
+          "left": 16,
+          "right": 190.890625,
+          "top": 1289.625,
+          "bottom": 1332.625
+        },
+        {
+          "left": 16,
+          "right": 288.578125,
+          "top": 1345.625,
+          "bottom": 1388.625
+        },
+        {
+          "left": 16,
+          "right": 294.765625,
+          "top": 1401.625,
+          "bottom": 1444.625
+        },
+        {
+          "left": 16,
+          "right": 228.234375,
+          "top": 1457.625,
+          "bottom": 1500.625
+        },
+        {
+          "left": 16,
+          "right": 301.921875,
+          "top": 1513.625,
+          "bottom": 1556.625
+        },
+        {
+          "left": 16,
+          "right": 277.390625,
+          "top": 1569.625,
+          "bottom": 1612.625
+        },
+        {
+          "left": 16,
+          "right": 209.890625,
+          "top": 1625.625,
+          "bottom": 1668.625
+        },
+        {
+          "left": 16,
+          "right": 297.421875,
+          "top": 1681.625,
+          "bottom": 1724.625
+        },
+        {
+          "left": 16,
+          "right": 238.703125,
+          "top": 1737.625,
+          "bottom": 1780.625
+        },
+        {
+          "left": 16,
+          "right": 268.9375,
+          "top": 1793.625,
+          "bottom": 1836.625
+        },
+        {
+          "left": 16,
+          "right": 250.53125,
+          "top": 1849.625,
+          "bottom": 1892.625
+        },
+        {
+          "left": 16,
+          "right": 279.140625,
+          "top": 1905.625,
+          "bottom": 1948.625
+        },
+        {
+          "left": 16,
+          "right": 244.6875,
+          "top": 1961.625,
+          "bottom": 2004.625
+        },
+        {
+          "left": 16,
+          "right": 274.34375,
+          "top": 2017.625,
+          "bottom": 2060.625
+        },
+        {
+          "left": 16,
+          "right": 162.984375,
+          "top": 2073.625,
+          "bottom": 2116.625
+        },
+        {
+          "left": 16,
+          "right": 164.265625,
+          "top": 2129.625,
+          "bottom": 2172.625
+        },
+        {
+          "left": 16,
+          "right": 253.125,
+          "top": 2185.625,
+          "bottom": 2228.625
+        },
+        {
+          "left": 16,
+          "right": 213.359375,
+          "top": 2241.625,
+          "bottom": 2284.625
+        },
+        {
+          "left": 16,
+          "right": 278.828125,
+          "top": 2297.625,
+          "bottom": 2340.625
+        },
+        {
+          "left": 16,
+          "right": 274.46875,
+          "top": 2353.625,
+          "bottom": 2396.625
+        },
+        {
+          "left": 16,
+          "right": 276.265625,
+          "top": 2409.625,
+          "bottom": 2452.625
+        },
+        {
+          "left": 16,
+          "right": 215.046875,
+          "top": 2465.625,
+          "bottom": 2508.625
+        },
+        {
+          "left": 16,
+          "right": 246.796875,
+          "top": 2521.625,
+          "bottom": 2564.625
+        },
+        {
+          "left": 16,
+          "right": 184.875,
+          "top": 2577.625,
+          "bottom": 2620.625
+        },
+        {
+          "left": 16,
+          "right": 240.640625,
+          "top": 2633.625,
+          "bottom": 2676.625
+        },
+        {
+          "left": 16,
+          "right": 268.453125,
+          "top": 2689.625,
+          "bottom": 2732.625
+        },
+        {
+          "left": 16,
+          "right": 202.15625,
+          "top": 2745.625,
+          "bottom": 2788.625
+        },
+        {
+          "left": 16,
+          "right": 281.828125,
+          "top": 2801.625,
+          "bottom": 2844.625
+        },
+        {
+          "left": 16,
+          "right": 299.65625,
+          "top": 2857.625,
+          "bottom": 2900.625
+        },
+        {
+          "left": 16,
+          "right": 202.40625,
+          "top": 2913.625,
+          "bottom": 2956.625
+        },
+        {
+          "left": 16,
+          "right": 272.71875,
+          "top": 2969.625,
+          "bottom": 3012.625
+        },
+        {
+          "left": 16,
+          "right": 174.984375,
+          "top": 3025.625,
+          "bottom": 3068.625
+        }
+      ],
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": "visible"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "rect": {
+        "left": 244,
+        "right": 1196,
+        "top": 332.3125,
+        "bottom": 668.3125
+      },
+      "lines": [
+        {
+          "left": 244,
+          "right": 1188.40625,
+          "top": 335.3125,
+          "bottom": 357.3125
+        },
+        {
+          "left": 244,
+          "right": 1187.828125,
+          "top": 363.3125,
+          "bottom": 385.3125
+        },
+        {
+          "left": 244,
+          "right": 1171.484375,
+          "top": 391.3125,
+          "bottom": 413.3125
+        },
+        {
+          "left": 244,
+          "right": 1186.25,
+          "top": 419.3125,
+          "bottom": 441.3125
+        },
+        {
+          "left": 244,
+          "right": 1168.03125,
+          "top": 447.3125,
+          "bottom": 469.3125
+        },
+        {
+          "left": 244,
+          "right": 1169.140625,
+          "top": 475.3125,
+          "bottom": 497.3125
+        },
+        {
+          "left": 244,
+          "right": 1192.515625,
+          "top": 503.3125,
+          "bottom": 525.3125
+        },
+        {
+          "left": 244,
+          "right": 1186.515625,
+          "top": 531.3125,
+          "bottom": 553.3125
+        },
+        {
+          "left": 244,
+          "right": 1137.09375,
+          "top": 559.3125,
+          "bottom": 581.3125
+        },
+        {
+          "left": 244,
+          "right": 1158.109375,
+          "top": 587.3125,
+          "bottom": 609.3125
+        },
+        {
+          "left": 244,
+          "right": 1174.234375,
+          "top": 615.3125,
+          "bottom": 637.3125
+        },
+        {
+          "left": 244,
+          "right": 1064.046875,
+          "top": 643.3125,
+          "bottom": 665.3125
+        }
+      ],
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": "visible"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "rect": {
+        "left": 48,
+        "right": 1392,
+        "top": -3.9375,
+        "bottom": 1004.0625
+      },
+      "lines": [
+        {
+          "left": 48,
+          "right": 1372.109375,
+          "top": 2.0625,
+          "bottom": 45.0625
+        },
+        {
+          "left": 48,
+          "right": 1390.609375,
+          "top": 58.0625,
+          "bottom": 101.0625
+        },
+        {
+          "left": 48,
+          "right": 1376.78125,
+          "top": 114.0625,
+          "bottom": 157.0625
+        },
+        {
+          "left": 48,
+          "right": 1345.328125,
+          "top": 170.0625,
+          "bottom": 213.0625
+        },
+        {
+          "left": 48,
+          "right": 1333.578125,
+          "top": 226.0625,
+          "bottom": 269.0625
+        },
+        {
+          "left": 48,
+          "right": 1333.328125,
+          "top": 282.0625,
+          "bottom": 325.0625
+        },
+        {
+          "left": 48,
+          "right": 1387.75,
+          "top": 338.0625,
+          "bottom": 381.0625
+        },
+        {
+          "left": 48,
+          "right": 1348.421875,
+          "top": 394.0625,
+          "bottom": 437.0625
+        },
+        {
+          "left": 48,
+          "right": 1391.65625,
+          "top": 450.0625,
+          "bottom": 493.0625
+        },
+        {
+          "left": 48,
+          "right": 1286.796875,
+          "top": 506.0625,
+          "bottom": 549.0625
+        },
+        {
+          "left": 48,
+          "right": 1368.75,
+          "top": 562.0625,
+          "bottom": 605.0625
+        },
+        {
+          "left": 48,
+          "right": 1290.984375,
+          "top": 618.0625,
+          "bottom": 661.0625
+        },
+        {
+          "left": 48,
+          "right": 1382.53125,
+          "top": 674.0625,
+          "bottom": 717.0625
+        },
+        {
+          "left": 48,
+          "right": 1238.828125,
+          "top": 730.0625,
+          "bottom": 773.0625
+        },
+        {
+          "left": 48,
+          "right": 1245.96875,
+          "top": 786.0625,
+          "bottom": 829.0625
+        },
+        {
+          "left": 48,
+          "right": 1364.96875,
+          "top": 842.0625,
+          "bottom": 885.0625
+        },
+        {
+          "left": 48,
+          "right": 1260.015625,
+          "top": 898.0625,
+          "bottom": 941.0625
+        },
+        {
+          "left": 48,
+          "right": 206.984375,
+          "top": 954.0625,
+          "bottom": 997.0625
+        }
+      ],
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": "visible"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "rect": {
+        "left": 8,
+        "right": 312,
+        "top": 163.9375,
+        "bottom": 835.9375
+      },
+      "lines": [
+        {
+          "left": 8,
+          "right": 312.015625,
+          "top": 166.9375,
+          "bottom": 188.9375
+        },
+        {
+          "left": 8,
+          "right": 296.796875,
+          "top": 194.9375,
+          "bottom": 216.9375
+        },
+        {
+          "left": 8,
+          "right": 298.09375,
+          "top": 222.9375,
+          "bottom": 244.9375
+        },
+        {
+          "left": 8,
+          "right": 299.78125,
+          "top": 250.9375,
+          "bottom": 272.9375
+        },
+        {
+          "left": 8,
+          "right": 299.65625,
+          "top": 278.9375,
+          "bottom": 300.9375
+        },
+        {
+          "left": 8,
+          "right": 304.265625,
+          "top": 306.9375,
+          "bottom": 328.9375
+        },
+        {
+          "left": 8,
+          "right": 312.015625,
+          "top": 334.9375,
+          "bottom": 356.9375
+        },
+        {
+          "left": 8,
+          "right": 298.234375,
+          "top": 362.9375,
+          "bottom": 384.9375
+        },
+        {
+          "left": 8,
+          "right": 309.328125,
+          "top": 390.9375,
+          "bottom": 412.9375
+        },
+        {
+          "left": 8,
+          "right": 312.015625,
+          "top": 418.9375,
+          "bottom": 440.9375
+        },
+        {
+          "left": 8,
+          "right": 312.015625,
+          "top": 446.9375,
+          "bottom": 468.9375
+        },
+        {
+          "left": 8,
+          "right": 312.015625,
+          "top": 474.9375,
+          "bottom": 496.9375
+        },
+        {
+          "left": 8,
+          "right": 296.796875,
+          "top": 502.9375,
+          "bottom": 524.9375
+        },
+        {
+          "left": 8,
+          "right": 312.015625,
+          "top": 530.9375,
+          "bottom": 552.9375
+        },
+        {
+          "left": 8,
+          "right": 296.796875,
+          "top": 558.9375,
+          "bottom": 580.9375
+        },
+        {
+          "left": 8,
+          "right": 312.015625,
+          "top": 586.9375,
+          "bottom": 608.9375
+        },
+        {
+          "left": 8,
+          "right": 312.015625,
+          "top": 614.9375,
+          "bottom": 636.9375
+        },
+        {
+          "left": 8,
+          "right": 310.0625,
+          "top": 642.9375,
+          "bottom": 664.9375
+        },
+        {
+          "left": 8,
+          "right": 312.015625,
+          "top": 670.9375,
+          "bottom": 692.9375
+        },
+        {
+          "left": 8,
+          "right": 312.015625,
+          "top": 698.9375,
+          "bottom": 720.9375
+        },
+        {
+          "left": 8,
+          "right": 312.015625,
+          "top": 726.9375,
+          "bottom": 748.9375
+        },
+        {
+          "left": 8,
+          "right": 292.015625,
+          "top": 754.9375,
+          "bottom": 776.9375
+        },
+        {
+          "left": 8,
+          "right": 306.671875,
+          "top": 782.9375,
+          "bottom": 804.9375
+        },
+        {
+          "left": 8,
+          "right": 69.3125,
+          "top": 810.9375,
+          "bottom": 832.9375
+        }
+      ],
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": "visible"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "rect": {
+        "left": 16,
+        "right": 304,
+        "top": -900.34375,
+        "bottom": 1899.65625
+      },
+      "lines": [
+        {
+          "left": 16,
+          "right": 272.015625,
+          "top": -894.34375,
+          "bottom": -851.34375
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": -838.34375,
+          "bottom": -795.34375
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": -782.34375,
+          "bottom": -739.34375
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": -726.34375,
+          "bottom": -683.34375
+        },
+        {
+          "left": 16,
+          "right": 297.25,
+          "top": -670.34375,
+          "bottom": -627.34375
+        },
+        {
+          "left": 16,
+          "right": 272.015625,
+          "top": -614.34375,
+          "bottom": -571.34375
+        },
+        {
+          "left": 16,
+          "right": 292.6875,
+          "top": -558.34375,
+          "bottom": -515.34375
+        },
+        {
+          "left": 16,
+          "right": 295.046875,
+          "top": -502.34375,
+          "bottom": -459.34375
+        },
+        {
+          "left": 16,
+          "right": 286.734375,
+          "top": -446.34375,
+          "bottom": -403.34375
+        },
+        {
+          "left": 16,
+          "right": 261.640625,
+          "top": -390.34375,
+          "bottom": -347.34375
+        },
+        {
+          "left": 16,
+          "right": 283.140625,
+          "top": -334.34375,
+          "bottom": -291.34375
+        },
+        {
+          "left": 16,
+          "right": 272.015625,
+          "top": -278.34375,
+          "bottom": -235.34375
+        },
+        {
+          "left": 16,
+          "right": 272.015625,
+          "top": -222.34375,
+          "bottom": -179.34375
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": -166.34375,
+          "bottom": -123.34375
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": -110.34375,
+          "bottom": -67.34375
+        },
+        {
+          "left": 16,
+          "right": 276.453125,
+          "top": -54.34375,
+          "bottom": -11.34375
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 1.65625,
+          "bottom": 44.65625
+        },
+        {
+          "left": 16,
+          "right": 272.015625,
+          "top": 57.65625,
+          "bottom": 100.65625
+        },
+        {
+          "left": 16,
+          "right": 290.3125,
+          "top": 113.65625,
+          "bottom": 156.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 169.65625,
+          "bottom": 212.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 225.65625,
+          "bottom": 268.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 281.65625,
+          "bottom": 324.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 337.65625,
+          "bottom": 380.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 393.65625,
+          "bottom": 436.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 449.65625,
+          "bottom": 492.65625
+        },
+        {
+          "left": 16,
+          "right": 272.015625,
+          "top": 505.65625,
+          "bottom": 548.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 561.65625,
+          "bottom": 604.65625
+        },
+        {
+          "left": 16,
+          "right": 273.578125,
+          "top": 617.65625,
+          "bottom": 660.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 673.65625,
+          "bottom": 716.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 729.65625,
+          "bottom": 772.65625
+        },
+        {
+          "left": 16,
+          "right": 272.015625,
+          "top": 785.65625,
+          "bottom": 828.65625
+        },
+        {
+          "left": 16,
+          "right": 297.25,
+          "top": 841.65625,
+          "bottom": 884.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 897.65625,
+          "bottom": 940.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 953.65625,
+          "bottom": 996.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 1009.65625,
+          "bottom": 1052.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 1065.65625,
+          "bottom": 1108.65625
+        },
+        {
+          "left": 16,
+          "right": 272.015625,
+          "top": 1121.65625,
+          "bottom": 1164.65625
+        },
+        {
+          "left": 16,
+          "right": 274.21875,
+          "top": 1177.65625,
+          "bottom": 1220.65625
+        },
+        {
+          "left": 16,
+          "right": 297.890625,
+          "top": 1233.65625,
+          "bottom": 1276.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 1289.65625,
+          "bottom": 1332.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 1345.65625,
+          "bottom": 1388.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 1401.65625,
+          "bottom": 1444.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 1457.65625,
+          "bottom": 1500.65625
+        },
+        {
+          "left": 16,
+          "right": 272.015625,
+          "top": 1513.65625,
+          "bottom": 1556.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 1569.65625,
+          "bottom": 1612.65625
+        },
+        {
+          "left": 16,
+          "right": 304.015625,
+          "top": 1625.65625,
+          "bottom": 1668.65625
+        },
+        {
+          "left": 16,
+          "right": 288.015625,
+          "top": 1681.65625,
+          "bottom": 1724.65625
+        },
+        {
+          "left": 16,
+          "right": 303.6875,
+          "top": 1737.65625,
+          "bottom": 1780.65625
+        },
+        {
+          "left": 16,
+          "right": 247.234375,
+          "top": 1793.65625,
+          "bottom": 1836.65625
+        },
+        {
+          "left": 16,
+          "right": 264.078125,
+          "top": 1849.65625,
+          "bottom": 1892.65625
+        }
+      ],
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": "visible"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "rect": {
+        "left": 244,
+        "right": 1196,
+        "top": 387.5625,
+        "bottom": 611.5625
+      },
+      "lines": [
+        {
+          "left": 244,
+          "right": 1187.296875,
+          "top": 390.5625,
+          "bottom": 412.5625
+        },
+        {
+          "left": 244,
+          "right": 1183.59375,
+          "top": 418.5625,
+          "bottom": 440.5625
+        },
+        {
+          "left": 244,
+          "right": 1187.546875,
+          "top": 446.5625,
+          "bottom": 468.5625
+        },
+        {
+          "left": 244,
+          "right": 1188.015625,
+          "top": 474.5625,
+          "bottom": 496.5625
+        },
+        {
+          "left": 244,
+          "right": 1189.578125,
+          "top": 502.5625,
+          "bottom": 524.5625
+        },
+        {
+          "left": 244,
+          "right": 1186.0625,
+          "top": 530.5625,
+          "bottom": 552.5625
+        },
+        {
+          "left": 244,
+          "right": 1184.015625,
+          "top": 558.5625,
+          "bottom": 580.5625
+        },
+        {
+          "left": 244,
+          "right": 571.96875,
+          "top": 586.5625,
+          "bottom": 608.5625
+        }
+      ],
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": "visible"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "rect": {
+        "left": 48,
+        "right": 1392,
+        "top": 192.171875,
+        "bottom": 808.171875
+      },
+      "lines": [
+        {
+          "left": 48,
+          "right": 1329.578125,
+          "top": 198.171875,
+          "bottom": 241.171875
+        },
+        {
+          "left": 48,
+          "right": 1380.421875,
+          "top": 254.171875,
+          "bottom": 297.171875
+        },
+        {
+          "left": 48,
+          "right": 1383.4375,
+          "top": 310.171875,
+          "bottom": 353.171875
+        },
+        {
+          "left": 48,
+          "right": 1391.078125,
+          "top": 366.171875,
+          "bottom": 409.171875
+        },
+        {
+          "left": 48,
+          "right": 1392.015625,
+          "top": 422.171875,
+          "bottom": 465.171875
+        },
+        {
+          "left": 48,
+          "right": 1361.578125,
+          "top": 478.171875,
+          "bottom": 521.171875
+        },
+        {
+          "left": 48,
+          "right": 1361.578125,
+          "top": 534.171875,
+          "bottom": 577.171875
+        },
+        {
+          "left": 48,
+          "right": 1388.109375,
+          "top": 590.171875,
+          "bottom": 633.171875
+        },
+        {
+          "left": 48,
+          "right": 1392.015625,
+          "top": 646.171875,
+          "bottom": 689.171875
+        },
+        {
+          "left": 48,
+          "right": 1384.015625,
+          "top": 702.171875,
+          "bottom": 745.171875
+        },
+        {
+          "left": 48,
+          "right": 607.9375,
+          "top": 758.171875,
+          "bottom": 801.171875
+        }
+      ],
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": "visible"
+    }
+  ],
+  "errors": []
+}

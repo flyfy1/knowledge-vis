@@ -1,0 +1,8 @@
+{
+  "kind": "author regression self-check",
+  "command": "EVIDENCE_DIR=\"$PWD/leetcode/964/tests/evidence/normalization-r1/regression\" node - <<'JS'\nconst fs=require('fs'),path=require('path'),Module=require('module');\nconst filename=path.resolve('leetcode/964/tests/browser.cjs');\nconst src=fs.readFileSync(filename,'utf8').replaceAll('http://127.0.0.1:18790','http://127.0.0.1:18770');\nconst m=new Module(filename,module);m.filename=filename;m.paths=Module._nodeModulePaths(path.dirname(filename));m._compile(src,filename);\nJS",
+  "exitCode": 0,
+  "stdout": "{\"matrices\":16,\"presets\":12,\"contrast\":10,\"cssBytes\":11196,\"errors\":[]}",
+  "reproduction": "node leetcode/964/tests/evidence/normalization-r1/regression.cjs",
+  "adapter": "preview origin only; all existing assertions unchanged"
+}

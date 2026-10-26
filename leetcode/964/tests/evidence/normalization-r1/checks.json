@@ -1,0 +1,26 @@
+{
+  "kind": "author focused self-check",
+  "restrictedDiff": "proof pair and copy cache query only in runtime files",
+  "preserved": {
+    "app.js": "44d8cf100009d3eebdd9a8e894cf180ec5a18493f6679b001121d041eb82c586",
+    "core.js": "f6d2fb9fe60aca08e245b9ac7c559548a9fcffa02fec080b5da39db3eb6ffd8d",
+    "solution.py": "93ea2b82ff8fb223e9f837d8fb26d24e1c941fd680d1a8d1035f0a46edcd3132",
+    "python-code.js": "f696ba6b7a0c611dd29a1a761f74f9e8dd64eba2d8a3531f903095311a2a420b",
+    "baseline.py": "104072d5c727770112e9747cfdb5eede88d87a876c9f46095be042a2f1508c72",
+    "style.css": "ac47dee0f8d1f01a6a09b7d1023f04251de6df8c2b5cad739647f5e334922df8",
+    "lesson-entry.json": "ccb32c0b3f30f96dd86f138d6b324a55a884d20072242bcce7b4533eab48d037"
+  },
+  "value": "three thirds = 1",
+  "chargedCosts": [
+    9,
+    2
+  ],
+  "standaloneOperatorCounts": [
+    8,
+    1
+  ],
+  "exactMirror": true,
+  "canonicalExecution": "six Python interface cases passed",
+  "language": "faithful official Python3 snippet preserved; nondefault language contract inapplicable",
+  "copyShapeAndUniqueKeys": "passed"
+}

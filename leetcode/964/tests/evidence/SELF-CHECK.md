@@ -28,3 +28,76 @@ Related destination reading: #956 step2 explicitly retains largest shorter heigh
 6. Clarified that p/n are minima **restricted to processed powers**, and included the target1 constant work in complexity. Added numerical 8 derivation before symbolic transitions. Final checks cover the updated candidate.
 
 No open author-detected defect remains. These are author fixes awaiting independent review; a separate reviewer must perform the cold walkthrough and six-dimension assessment. Real devices, physical browser zoom, public delivery, actual novices and LeetCode submission acceptance remain unverified.
+
+## 2026-10-26 — normalization follow-up (author self-check)
+
+New candidate: `normalization-r1/candidate.json`. **Fixed awaiting independent
+review**, not independently accepted. Original candidate/review history remains
+unchanged. Only `copy.js`'s `proof` pair and the `index.html` copy-cache query change
+in the runtime. BRIEF and new lesson-local evidence document the revision; the
+original candidate manifest and original test results are retained.
+
+Finding mapping:
+
+- **964-NORMALIZE-R1 / selected 964-R1-A1**: both locales now define a negative
+  exponent (`3^-1 = 1/3`) before the legal `3/3/3` representation, show
+  `3/3/3 + 3/3/3 + 3/3/3 = 1` replaced by `3/3`, and calculate charged cost
+  `3 * 3 = 9` versus `2`. Each term includes one join; the artificial leading
+  join is removed once from the full expression. The example is explicitly
+  distinguished from the general argument. Cancellation/carry, restricted powers,
+  p/n meanings, four transitions and finalization remain present. Short sentences
+  explain the new terms within the existing binding, with no layout addition.
+- **964-R1-A2**: deferred by the dispatcher; no repair or closure claimed.
+
+Executed from repository root:
+
+- `python3 -B leetcode/964/tests/evidence/normalization-r1/check.py`: exit0.
+  Proves the dictionary outside the proof pair is byte-identical to HEAD; HTML
+  differs only by its cache query. app/core/baseline/solution/mirror/style/metadata
+  hashes are unchanged (`checks.json`). Exact rational thirds sum to 1. Charged
+  costs are 9/2; separately counted standalone operator totals are 8/1 (these
+  latter totals are not added to the learner copy). AST duplicate-key and pair
+  checks pass. Python executes six official-interface cases, including all
+  official examples; original extensive oracle evidence covers unchanged code.
+  Exact canonical/offline mirror equality includes the terminal newline. Existing
+  official Python3 snippet evidence was read; Python is already preferred, and
+  no nondefault `language-contract.json` or supportedLanguages omission applies.
+- `node leetcode/964/tests/evidence/normalization-r1/browser.cjs`: exit0.
+  Supplied preview `http://127.0.0.1:18770/leetcode/964/`; actual proof text read
+  in EN and zh, including locale changes after one processed digit and a revealed
+  correct prediction. The visible values `p=2×2=4`, 1/2 completed digits and
+  `min(6,2+2)−1=3` retain their meanings. Back/replay and final `min(5,4)−1=3`
+  remain correct. Proof screenshots and per-line text geometry cover both locales
+  at 320/1440px and zoom1/2; no horizontal overflow or clipped text inside the
+  proof block. Zoom method: `document.body.style.zoom=2`, synthetic CSS page zoom,
+  not native physical-browser zoom. `proof-browser.json` records complete rendered
+  translations and geometry.
+- Existing `tests/browser.cjs` executed with an in-memory replacement of preview
+  origin 18790→18770; all assertions unchanged, exit0. Exact executed stdin
+  command and output: `normalization-r1/regression-run.json`. Reproducible adapter:
+  `node leetcode/964/tests/evidence/normalization-r1/regression.cjs`.
+  Result: 16 locale/width/zoom combinations, 12 preset endpoints, prediction
+  reveal/change/locale preservation, reset/back/replay, keyboard and blocked
+  storage checks passed. No console errors, failed assets or external runtime
+  requests. `normalization-r1/regression/browser.json` retains detailed results.
+  Source `textContent`, offline mirror, automatic-copy instrument, each locale's
+  fresh verified clipboard sentinel, Linux Control+C manual fallback and actual
+  blob downloads all match canonical Python exactly, including final newline.
+- `python3 -B scripts/register_leetcode_lesson.py 964 --validate-only`: exit0,
+  empty stdout/stderr, from repository root. Non-mutating receipt:
+  `normalization-r1/metadata-preflight.json`. Complexity remains one nonempty
+  time-and-space string. No registration or campaign state change.
+
+Visual read-through: inspected EN/zh desktop proof captures and the complete
+ordinary-scroll 320px zoom2 viewport sequences (en tiles0–6, zh tiles0–3).
+Definitions, fractional equality, 9→2 accounting, leading-join rule and final
+argument are readable by scrolling. Tall element screenshots can place the sticky
+nav over a section during capture; the overlapping viewport sequences preserve
+all proof text below the sticky bar and distinguish this capture artifact from
+clipping. Narrow high-zoom reading is tall, as expected under the unchanged layout;
+this does not close the separately deferred high-zoom ledger advisory.
+
+These remain author checks. Separate cold review, actual novice comprehension,
+real devices/native browser zoom, online submission and public delivery are not
+established. The fresh reviewer must explicitly close the selected finding IDs;
+no author score or acceptance is assigned.
