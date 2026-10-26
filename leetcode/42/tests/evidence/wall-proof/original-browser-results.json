@@ -1,0 +1,237 @@
+{
+  "results": [
+    {
+      "lang": "en",
+      "width": 320,
+      "handGeometry": [
+        {
+          "left": 16,
+          "right": 304,
+          "client": 288,
+          "scroll": 288
+        },
+        {
+          "left": 16,
+          "right": 304,
+          "client": 288,
+          "scroll": 288
+        },
+        {
+          "left": 16,
+          "right": 304,
+          "client": 288,
+          "scroll": 288
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "handGeometry": [
+        {
+          "left": 16,
+          "right": 374,
+          "client": 358,
+          "scroll": 358
+        },
+        {
+          "left": 16,
+          "right": 374,
+          "client": 358,
+          "scroll": 358
+        },
+        {
+          "left": 16,
+          "right": 374,
+          "client": 358,
+          "scroll": 358
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "handGeometry": [
+        {
+          "left": 24,
+          "right": 712,
+          "client": 688,
+          "scroll": 688
+        },
+        {
+          "left": 24,
+          "right": 712,
+          "client": 688,
+          "scroll": 688
+        },
+        {
+          "left": 24,
+          "right": 712,
+          "client": 688,
+          "scroll": 688
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "handGeometry": [
+        {
+          "left": 244,
+          "right": 1104,
+          "client": 860,
+          "scroll": 860
+        },
+        {
+          "left": 244,
+          "right": 1104,
+          "client": 860,
+          "scroll": 860
+        },
+        {
+          "left": 244,
+          "right": 1104,
+          "client": 860,
+          "scroll": 860
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "presets": [
+        7,
+        6,
+        0,
+        0
+      ],
+      "replay": true,
+      "quizOptions": 3,
+      "localePreservesState": true,
+      "keyboard": true,
+      "copyDownloadFallback": "exact",
+      "links": "passed"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "handGeometry": [
+        {
+          "left": 16,
+          "right": 304,
+          "client": 288,
+          "scroll": 288
+        },
+        {
+          "left": 16,
+          "right": 304,
+          "client": 288,
+          "scroll": 288
+        },
+        {
+          "left": 16,
+          "right": 304,
+          "client": 288,
+          "scroll": 288
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "handGeometry": [
+        {
+          "left": 16,
+          "right": 374,
+          "client": 358,
+          "scroll": 358
+        },
+        {
+          "left": 16,
+          "right": 374,
+          "client": 358,
+          "scroll": 358
+        },
+        {
+          "left": 16,
+          "right": 374,
+          "client": 358,
+          "scroll": 358
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "handGeometry": [
+        {
+          "left": 24,
+          "right": 712,
+          "client": 688,
+          "scroll": 688
+        },
+        {
+          "left": 24,
+          "right": 712,
+          "client": 688,
+          "scroll": 688
+        },
+        {
+          "left": 24,
+          "right": 712,
+          "client": 688,
+          "scroll": 688
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "handGeometry": [
+        {
+          "left": 244,
+          "right": 1104,
+          "client": 860,
+          "scroll": 860
+        },
+        {
+          "left": 244,
+          "right": 1104,
+          "client": 860,
+          "scroll": 860
+        },
+        {
+          "left": 244,
+          "right": 1104,
+          "client": 860,
+          "scroll": 860
+        }
+      ]
+    },
+    {
+      "lang": "zh",
+      "presets": [
+        7,
+        6,
+        0,
+        0
+      ],
+      "replay": true,
+      "quizOptions": 3,
+      "localePreservesState": true,
+      "keyboard": true,
+      "copyDownloadFallback": "exact",
+      "links": "passed"
+    },
+    {
+      "offline": true,
+      "blockedStorage": true
+    }
+  ],
+  "errors": [],
+  "externalPreviewIssues": [
+    {
+      "message": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "url": "http://127.0.0.1:18842/favicon.ico"
+    }
+  ]
+}
