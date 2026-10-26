@@ -1,0 +1,18 @@
+{
+  "kind": "author self-check",
+  "cases": 30623,
+  "queries": 280521,
+  "seed": 1032,
+  "passed": true,
+  "checks": [
+    "direct character suffix oracle",
+    "every buffer state",
+    "all trie prefixes and terminals",
+    "official example",
+    "max words/length/queries",
+    "input immutability",
+    "separate instances",
+    "source mirror exact",
+    "duplicate localization keys and pair shape"
+  ]
+}

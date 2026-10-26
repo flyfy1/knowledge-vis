@@ -1,0 +1,881 @@
+{
+  "kind": "author self-check; independent review pending",
+  "host": "linux",
+  "browser": "156.0.8078.4",
+  "presets": [
+    {
+      "lang": "en",
+      "p": 0,
+      "operations": 12,
+      "branches": [
+        "append",
+        "missing",
+        "edge",
+        "terminal"
+      ],
+      "history": "Query 1 · a → false; no listed word matches the endingQuery 2 · ab → true; ending matches abQuery 3 · abx → false; no listed word matches the endingQuery 4 · abxc → false; no listed word matches the endingQuery 5 · abxcb → true; ending matches cb"
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "operations": 26,
+      "branches": [
+        "append",
+        "missing",
+        "edge",
+        "terminal"
+      ],
+      "history": "Query 1 · a → false; no listed word matches the endingQuery 2 · ab → false; no listed word matches the endingQuery 3 · abc → false; no listed word matches the endingQuery 4 · abcd → true; ending matches cdQuery 5 · abcde → false; no listed word matches the endingQuery 6 · abcdef → true; ending matches fQuery 7 · abcdefg → false; no listed word matches the endingQuery 8 · abcdefgh → false; no listed word matches the endingQuery 9 · abcdefghi → false; no listed word matches the endingQuery 10 · abcdefghij → false; no listed word matches the endingQuery 11 · abcdefghijk → false; no listed word matches the endingQuery 12 · abcdefghijkl → true; ending matches kl"
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "operations": 2,
+      "branches": [
+        "append",
+        "exhausted"
+      ],
+      "history": "Query 1 · b → false; no listed word matches the ending"
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "operations": 4,
+      "branches": [
+        "append",
+        "missing",
+        "terminal"
+      ],
+      "history": "Query 1 · b → false; no listed word matches the endingQuery 2 · ba → true; ending matches a"
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "operations": 11,
+      "branches": [
+        "append",
+        "exhausted",
+        "edge",
+        "terminal"
+      ],
+      "history": "Query 1 · a → false; no listed word matches the endingQuery 2 · aa → true; ending matches aaQuery 3 · aaa → true; ending matches aaQuery 4 · aaaa → true; ending matches aa"
+    },
+    {
+      "lang": "en",
+      "p": 5,
+      "operations": 14,
+      "branches": [
+        "append",
+        "missing",
+        "edge",
+        "terminal"
+      ],
+      "history": "Query 1 · z → false; no listed word matches the endingQuery 2 · zz → false; no listed word matches the endingQuery 3 · zza → false; no listed word matches the endingQuery 4 · zzab → false; no listed word matches the endingQuery 5 · zzabc → true; ending matches abcQuery 6 · zzabcx → false; no listed word matches the ending"
+    },
+    {
+      "lang": "en",
+      "p": 6,
+      "operations": 10,
+      "branches": [
+        "append",
+        "missing",
+        "edge",
+        "terminal"
+      ],
+      "history": "Query 1 · a → false; no listed word matches the endingQuery 2 · ab → true; ending matches abQuery 3 · aba → false; no listed word matches the endingQuery 4 · abab → true; ending matches ab"
+    },
+    {
+      "lang": "en",
+      "p": 7,
+      "operations": 8,
+      "branches": [
+        "append",
+        "missing",
+        "edge",
+        "terminal"
+      ],
+      "history": "Query 1 · c → false; no listed word matches the endingQuery 2 · ca → false; no listed word matches the endingQuery 3 · cab → true; ending matches cab"
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "operations": 12,
+      "branches": [
+        "append",
+        "missing",
+        "edge",
+        "terminal"
+      ],
+      "history": "第 1 次 · a → false；结尾无词匹配第 2 次 · ab → true；结尾匹配 ab第 3 次 · abx → false；结尾无词匹配第 4 次 · abxc → false；结尾无词匹配第 5 次 · abxcb → true；结尾匹配 cb"
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "operations": 26,
+      "branches": [
+        "append",
+        "missing",
+        "edge",
+        "terminal"
+      ],
+      "history": "第 1 次 · a → false；结尾无词匹配第 2 次 · ab → false；结尾无词匹配第 3 次 · abc → false；结尾无词匹配第 4 次 · abcd → true；结尾匹配 cd第 5 次 · abcde → false；结尾无词匹配第 6 次 · abcdef → true；结尾匹配 f第 7 次 · abcdefg → false；结尾无词匹配第 8 次 · abcdefgh → false；结尾无词匹配第 9 次 · abcdefghi → false；结尾无词匹配第 10 次 · abcdefghij → false；结尾无词匹配第 11 次 · abcdefghijk → false；结尾无词匹配第 12 次 · abcdefghijkl → true；结尾匹配 kl"
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "operations": 2,
+      "branches": [
+        "append",
+        "exhausted"
+      ],
+      "history": "第 1 次 · b → false；结尾无词匹配"
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "operations": 4,
+      "branches": [
+        "append",
+        "missing",
+        "terminal"
+      ],
+      "history": "第 1 次 · b → false；结尾无词匹配第 2 次 · ba → true；结尾匹配 a"
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "operations": 11,
+      "branches": [
+        "append",
+        "exhausted",
+        "edge",
+        "terminal"
+      ],
+      "history": "第 1 次 · a → false；结尾无词匹配第 2 次 · aa → true；结尾匹配 aa第 3 次 · aaa → true；结尾匹配 aa第 4 次 · aaaa → true；结尾匹配 aa"
+    },
+    {
+      "lang": "zh",
+      "p": 5,
+      "operations": 14,
+      "branches": [
+        "append",
+        "missing",
+        "edge",
+        "terminal"
+      ],
+      "history": "第 1 次 · z → false；结尾无词匹配第 2 次 · zz → false；结尾无词匹配第 3 次 · zza → false；结尾无词匹配第 4 次 · zzab → false；结尾无词匹配第 5 次 · zzabc → true；结尾匹配 abc第 6 次 · zzabcx → false；结尾无词匹配"
+    },
+    {
+      "lang": "zh",
+      "p": 6,
+      "operations": 10,
+      "branches": [
+        "append",
+        "missing",
+        "edge",
+        "terminal"
+      ],
+      "history": "第 1 次 · a → false；结尾无词匹配第 2 次 · ab → true；结尾匹配 ab第 3 次 · aba → false；结尾无词匹配第 4 次 · abab → true；结尾匹配 ab"
+    },
+    {
+      "lang": "zh",
+      "p": 7,
+      "operations": 8,
+      "branches": [
+        "append",
+        "missing",
+        "edge",
+        "terminal"
+      ],
+      "history": "第 1 次 · c → false；结尾无词匹配第 2 次 · ca → false；结尾无词匹配第 3 次 · cab → true；结尾匹配 cab"
+    }
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "p": 2,
+      "text": "Read b: path b exists but is not a complete word. The buffer is exhausted, so this query returns false."
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "text": "Read a: path a reaches complete word a; this query returns true. No need to continue even if longer words exist."
+    },
+    {
+      "lang": "en",
+      "p": 5,
+      "text": "Tried path x: no x edge exists. This query returns false; every longer candidate suffix would also require this missing edge."
+    },
+    {
+      "lang": "en",
+      "opt": 0,
+      "text": "Revise that prediction. Path c is not a complete word, so read b. Path cb reverses bc and is terminal: return true. Although cb has an a edge leading to abc, the problem only asks for one suffix. Option 1 adds an unnecessary requirement; option 3 scans in the wrong direction."
+    },
+    {
+      "lang": "en",
+      "opt": 1,
+      "text": "Correct prediction. Path c is not a complete word, so read b. Path cb reverses bc and is terminal: return true. Although cb has an a edge leading to abc, the problem only asks for one suffix. Option 1 adds an unnecessary requirement; option 3 scans in the wrong direction."
+    },
+    {
+      "lang": "en",
+      "opt": 2,
+      "text": "Revise that prediction. Path c is not a complete word, so read b. Path cb reverses bc and is terminal: return true. Although cb has an a edge leading to abc, the problem only asks for one suffix. Option 1 adds an unnecessary requirement; option 3 scans in the wrong direction."
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "text": "已读 b，路径 b 存在但不是完整词；缓冲区已经读完，本次返回 false。"
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "text": "已读 a：路径 a 到达完整词 a，本次返回 true。即使还有更长的词也不必继续。"
+    },
+    {
+      "lang": "zh",
+      "p": 5,
+      "text": "尝试路径 x：没有字符 x 的边。本次返回 false；所有更长的候选后缀也都需要这条缺失的边。"
+    },
+    {
+      "lang": "zh",
+      "opt": 0,
+      "text": "需要修正预测。 路径 c 不是完整词，继续读 b；路径 cb 是 bc 的反转，已到终点，返回 true。虽然 cb 还有 a 边通向 abc，但题目只要求存在一个后缀。选项 1 多做了非必要检查；选项 3 把后缀检查方向弄反了。"
+    },
+    {
+      "lang": "zh",
+      "opt": 1,
+      "text": "预测正确。 路径 c 不是完整词，继续读 b；路径 cb 是 bc 的反转，已到终点，返回 true。虽然 cb 还有 a 边通向 abc，但题目只要求存在一个后缀。选项 1 多做了非必要检查；选项 3 把后缀检查方向弄反了。"
+    },
+    {
+      "lang": "zh",
+      "opt": 2,
+      "text": "需要修正预测。 路径 c 不是完整词，继续读 b；路径 cb 是 bc 的反转，已到终点，返回 true。虽然 cb 还有 a 边通向 abc，但题目只要求存在一个后缀。选项 1 多做了非必要检查；选项 3 把后缀检查方向弄反了。"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "geometry": {
+        "width": 320,
+        "document": 320,
+        "cards": [
+          {
+            "client": 284,
+            "scroll": 284,
+            "text": "Path: root (empty path)Not a complete wordNext edges: aOn path"
+          },
+          {
+            "client": 280,
+            "scroll": 280,
+            "text": "Path: aComplete word: aNext edges: bOn pathCurrent node"
+          },
+          {
+            "client": 284,
+            "scroll": 284,
+            "text": "Path: abComplete word: baNext edges: none"
+          }
+        ],
+        "select": {
+          "client": 284,
+          "scroll": 284
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "geometry": {
+        "width": 320,
+        "document": 320,
+        "cards": [
+          {
+            "client": 124,
+            "scroll": 124,
+            "text": "Path: root (empty path)Not a complete wordNext edges: aOn path"
+          },
+          {
+            "client": 120,
+            "scroll": 120,
+            "text": "Path: aComplete word: aNext edges: bOn pathCurrent node"
+          },
+          {
+            "client": 124,
+            "scroll": 124,
+            "text": "Path: abComplete word: baNext edges: none"
+          }
+        ],
+        "select": {
+          "client": 124,
+          "scroll": 124
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "geometry": {
+        "width": 390,
+        "document": 390,
+        "cards": [
+          {
+            "client": 354,
+            "scroll": 354,
+            "text": "Path: root (empty path)Not a complete wordNext edges: aOn path"
+          },
+          {
+            "client": 350,
+            "scroll": 350,
+            "text": "Path: aComplete word: aNext edges: bOn pathCurrent node"
+          },
+          {
+            "client": 354,
+            "scroll": 354,
+            "text": "Path: abComplete word: baNext edges: none"
+          }
+        ],
+        "select": {
+          "client": 354,
+          "scroll": 354
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "geometry": {
+        "width": 390,
+        "document": 390,
+        "cards": [
+          {
+            "client": 159,
+            "scroll": 159,
+            "text": "Path: root (empty path)Not a complete wordNext edges: aOn path"
+          },
+          {
+            "client": 155,
+            "scroll": 155,
+            "text": "Path: aComplete word: aNext edges: bOn pathCurrent node"
+          },
+          {
+            "client": 159,
+            "scroll": 159,
+            "text": "Path: abComplete word: baNext edges: none"
+          }
+        ],
+        "select": {
+          "client": 159,
+          "scroll": 159
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "geometry": {
+        "width": 736,
+        "document": 736,
+        "cards": [
+          {
+            "client": 205,
+            "scroll": 205,
+            "text": "Path: root (empty path)Not a complete wordNext edges: aOn path"
+          },
+          {
+            "client": 201,
+            "scroll": 201,
+            "text": "Path: aComplete word: aNext edges: bOn pathCurrent node"
+          },
+          {
+            "client": 205,
+            "scroll": 205,
+            "text": "Path: abComplete word: baNext edges: none"
+          }
+        ],
+        "select": {
+          "client": 644,
+          "scroll": 644
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "geometry": {
+        "width": 736,
+        "document": 736,
+        "cards": [
+          {
+            "client": 276,
+            "scroll": 276,
+            "text": "Path: root (empty path)Not a complete wordNext edges: aOn path"
+          },
+          {
+            "client": 272,
+            "scroll": 272,
+            "text": "Path: aComplete word: aNext edges: bOn pathCurrent node"
+          },
+          {
+            "client": 276,
+            "scroll": 276,
+            "text": "Path: abComplete word: baNext edges: none"
+          }
+        ],
+        "select": {
+          "client": 276,
+          "scroll": 276
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "geometry": {
+        "width": 1440,
+        "document": 1440,
+        "cards": [
+          {
+            "client": 293,
+            "scroll": 293,
+            "text": "Path: root (empty path)Not a complete wordNext edges: aOn path"
+          },
+          {
+            "client": 289,
+            "scroll": 289,
+            "text": "Path: aComplete word: aNext edges: bOn pathCurrent node"
+          },
+          {
+            "client": 293,
+            "scroll": 293,
+            "text": "Path: abComplete word: baNext edges: none"
+          }
+        ],
+        "select": {
+          "client": 908,
+          "scroll": 908
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "geometry": {
+        "width": 1440,
+        "document": 1440,
+        "cards": [
+          {
+            "client": 200,
+            "scroll": 200,
+            "text": "Path: root (empty path)Not a complete wordNext edges: aOn path"
+          },
+          {
+            "client": 196,
+            "scroll": 196,
+            "text": "Path: aComplete word: aNext edges: bOn pathCurrent node"
+          },
+          {
+            "client": 200,
+            "scroll": 200,
+            "text": "Path: abComplete word: baNext edges: none"
+          }
+        ],
+        "select": {
+          "client": 628,
+          "scroll": 628
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "geometry": {
+        "width": 320,
+        "document": 320,
+        "cards": [
+          {
+            "client": 284,
+            "scroll": 284,
+            "text": "路径：根（空路径）不是完整词下一条边：a已走路径"
+          },
+          {
+            "client": 280,
+            "scroll": 280,
+            "text": "路径：a完整词：a下一条边：b已走路径当前节点"
+          },
+          {
+            "client": 284,
+            "scroll": 284,
+            "text": "路径：ab完整词：ba下一条边：无"
+          }
+        ],
+        "select": {
+          "client": 284,
+          "scroll": 284
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "geometry": {
+        "width": 320,
+        "document": 320,
+        "cards": [
+          {
+            "client": 124,
+            "scroll": 124,
+            "text": "路径：根（空路径）不是完整词下一条边：a已走路径"
+          },
+          {
+            "client": 120,
+            "scroll": 120,
+            "text": "路径：a完整词：a下一条边：b已走路径当前节点"
+          },
+          {
+            "client": 124,
+            "scroll": 124,
+            "text": "路径：ab完整词：ba下一条边：无"
+          }
+        ],
+        "select": {
+          "client": 124,
+          "scroll": 124
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "geometry": {
+        "width": 390,
+        "document": 390,
+        "cards": [
+          {
+            "client": 354,
+            "scroll": 354,
+            "text": "路径：根（空路径）不是完整词下一条边：a已走路径"
+          },
+          {
+            "client": 350,
+            "scroll": 350,
+            "text": "路径：a完整词：a下一条边：b已走路径当前节点"
+          },
+          {
+            "client": 354,
+            "scroll": 354,
+            "text": "路径：ab完整词：ba下一条边：无"
+          }
+        ],
+        "select": {
+          "client": 354,
+          "scroll": 354
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "geometry": {
+        "width": 390,
+        "document": 390,
+        "cards": [
+          {
+            "client": 159,
+            "scroll": 159,
+            "text": "路径：根（空路径）不是完整词下一条边：a已走路径"
+          },
+          {
+            "client": 155,
+            "scroll": 155,
+            "text": "路径：a完整词：a下一条边：b已走路径当前节点"
+          },
+          {
+            "client": 159,
+            "scroll": 159,
+            "text": "路径：ab完整词：ba下一条边：无"
+          }
+        ],
+        "select": {
+          "client": 159,
+          "scroll": 159
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "geometry": {
+        "width": 736,
+        "document": 736,
+        "cards": [
+          {
+            "client": 205,
+            "scroll": 205,
+            "text": "路径：根（空路径）不是完整词下一条边：a已走路径"
+          },
+          {
+            "client": 201,
+            "scroll": 201,
+            "text": "路径：a完整词：a下一条边：b已走路径当前节点"
+          },
+          {
+            "client": 205,
+            "scroll": 205,
+            "text": "路径：ab完整词：ba下一条边：无"
+          }
+        ],
+        "select": {
+          "client": 644,
+          "scroll": 644
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "geometry": {
+        "width": 736,
+        "document": 736,
+        "cards": [
+          {
+            "client": 276,
+            "scroll": 276,
+            "text": "路径：根（空路径）不是完整词下一条边：a已走路径"
+          },
+          {
+            "client": 272,
+            "scroll": 272,
+            "text": "路径：a完整词：a下一条边：b已走路径当前节点"
+          },
+          {
+            "client": 276,
+            "scroll": 276,
+            "text": "路径：ab完整词：ba下一条边：无"
+          }
+        ],
+        "select": {
+          "client": 276,
+          "scroll": 276
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "geometry": {
+        "width": 1440,
+        "document": 1440,
+        "cards": [
+          {
+            "client": 293,
+            "scroll": 293,
+            "text": "路径：根（空路径）不是完整词下一条边：a已走路径"
+          },
+          {
+            "client": 289,
+            "scroll": 289,
+            "text": "路径：a完整词：a下一条边：b已走路径当前节点"
+          },
+          {
+            "client": 293,
+            "scroll": 293,
+            "text": "路径：ab完整词：ba下一条边：无"
+          }
+        ],
+        "select": {
+          "client": 908,
+          "scroll": 908
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "geometry": {
+        "width": 1440,
+        "document": 1440,
+        "cards": [
+          {
+            "client": 200,
+            "scroll": 200,
+            "text": "路径：根（空路径）不是完整词下一条边：a已走路径"
+          },
+          {
+            "client": 196,
+            "scroll": 196,
+            "text": "路径：a完整词：a下一条边：b已走路径当前节点"
+          },
+          {
+            "client": 200,
+            "scroll": 200,
+            "text": "路径：ab完整词：ba下一条边：无"
+          }
+        ],
+        "select": {
+          "client": 628,
+          "scroll": 628
+        }
+      }
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "en",
+      "attempt": 0,
+      "sentinelVerified": true,
+      "nativeManualTransfer": true,
+      "shortcut": "Control+C"
+    },
+    {
+      "lang": "en",
+      "attempt": 1,
+      "sentinelVerified": true,
+      "nativeManualTransfer": true,
+      "shortcut": "Control+C"
+    },
+    {
+      "lang": "zh",
+      "attempt": 0,
+      "sentinelVerified": true,
+      "nativeManualTransfer": true,
+      "shortcut": "Control+C"
+    },
+    {
+      "lang": "zh",
+      "attempt": 1,
+      "sentinelVerified": true,
+      "nativeManualTransfer": true,
+      "shortcut": "Control+C"
+    }
+  ],
+  "links": [
+    {
+      "lang": "en",
+      "label": "Revisit the backward-path invariant",
+      "url": "http://127.0.0.1:18770/leetcode/1032/#step3",
+      "heading": "3 · What does one edge rule out?",
+      "excerpt": "3 · What does one edge rule out?This step asks: when can the backward scan stop? A trie shares the beginnings of reversed words through character edges. The root means no letters read; a terminal marks an entire word. Each query adds the new letter to the buffer (the newest at most L letters), then starts again at the root and scans backward. Do not resume from the previous query’s node. Step through a query with its word list fixed before changing presets.After k successful edges: path = reverse of the current stream’s length-k suffix.Experime"
+    },
+    {
+      "lang": "en",
+      "label": "#212: follow trie paths to find grid words",
+      "url": "http://127.0.0.1:18770/leetcode/212/#step2",
+      "heading": "03 · Inspect a reversible search",
+      "excerpt": "03 · Inspect a reversible searchAfter one operation, how do path, trie prefix and answers change together? Choose a preset, then step forward. Keep its word list fixed and inspect the dashed tested cell, numbered used cells, and trie prefixes. Stepping back should restore the path, terminal markers and found words together.Cells retain their original letters. (row,column) are input coordinates; ①②… indicate path order, not new data. A solid outline marks used cells; a dashed outline marks the cell just tested and may overlap a used cell. The tr"
+    },
+    {
+      "lang": "en",
+      "label": "#336: use reversal to find palindrome pairs",
+      "url": "http://127.0.0.1:18770/leetcode/336/#step1",
+      "heading": "02 · Match outside, test inside",
+      "excerpt": "0202 · Match outside, test insideWhat remains after matching the outside of two unequal-length words? A prefix starts at the beginning; a suffix ends at the end. Either may be empty. In s+lls, the left s matches the final s on the right, leaving ll, which must be a palindrome. If the right word is shorter, as in lls+ll, it must reverse the start of the left word. Here ll matches, and the leftover s is a palindrome too, so llsll works.s | ll | sll | s | llHow can matches share work? Insert each candidate right word j backward into a trie: a tree"
+    },
+    {
+      "lang": "zh",
+      "label": "重看反向路径的不变量",
+      "url": "http://127.0.0.1:18770/leetcode/1032/#step3",
+      "heading": "3 · 一条边能排除哪些词？",
+      "excerpt": "3 · 一条边能排除哪些词？这一步要回答：反向扫描何时可以停？字典树用字符边共享反转词的开头；根表示还没读字母，“完整词”标记表示走到这里恰好读完一个词。每次查询把新字母放入缓冲区（最近至多 L 个字母），然后从根重新向前回看。不要沿用上次查询停下的节点。先保留词表，逐步观察同一查询中的路径，再换预设。成功走过 k 条边后：路径 = 当前字符流长度为 k 的后缀的反转。实验预设（更换会重置本实验）ABCDEFGH共享 b：ab / cb词表 = [ab, cb]；待输入 = abxcb；L = 2。每帧完成一次加入或一次字符边检查。按“完成下一步”，先看缓冲区，再看路径和停止原因。底部保留所有已完成查询；退回会恢复整个状态。预设不影响上方手算或下方预测。缓冲区 · 左旧右新空缓冲区已到达 0 个字母；已完成 0 次查询；当前查询 = —。本次已走路径 = 根（空路径）；k = 0。固定的反向字典树每块写出从根开始的完整反向路径；“下一条边”列出可读字符。文字“已走路径”表示路径上的节点，“当前节点”单独标出当前位置，颜色只作辅助。“完整词”表示终点，不等于叶子。路径：根（空路径）不是完整词下一条边：b已走路径当前节点路径：b不是完整词下一条边：a, c路径：ba完整词：ab下一条边："
+    },
+    {
+      "lang": "zh",
+      "label": "#212：在网格里沿字典树搜索单词",
+      "url": "http://127.0.0.1:18770/leetcode/212/#step2",
+      "heading": "03 · 看一次搜索如何进退",
+      "excerpt": "03 · 看一次搜索如何进退一个操作后，路径、树前缀和答案如何一起变化？先选场景，再逐步前进；保持词表不变，看虚线检查格、带序号的已用格和树前缀。退回一步应同时恢复路径、结束标记和已找到的词。图中格子保留原字母；(行,列) 是输入坐标，①②… 是本路径次序，不是新数据。实线框表示已用；虚线框表示本次检查的格子，可与已用重合。树表逐项列出非空前缀、后继字母和结束标记；“已输出”不代表分支被删除。这是 JavaScript 搜索模拟，不是执行 Python。帧是所述操作刚完成后的深快照，全部事件保留，无跳步；边界外的坐标不调用搜索。浏览器为回退额外存历史，提交代码不存这些帧。场景（切换会重置本实验）手算：共享 ab官方例 1官方例 2：不能复用单格与长词多条路径，同一词无匹配起点← 撤销一个操作执行下个操作 →重置搜索跳到搜索结束搜索操作位置已完成 0/20 个操作词表：ab, abd, ac, aba, ad搜索尚未开始；所有结束标记仍在。a(0,0)·b(0,1)·c(1,0)·d(1,1)·当前路径：空；前缀：空累计已找到（0）：∅字典树前缀表a后继：b, c, d非单词终点ab后继：d, a单词终点：未输出abd后继：∅单词终点：未输出ac后继：∅单词终点：未输出aba后继：∅单"
+    },
+    {
+      "lang": "zh",
+      "label": "#336：用反转关系寻找回文对",
+      "url": "http://127.0.0.1:18770/leetcode/336/#step1",
+      "heading": "02 · 消去外侧，保留中间",
+      "excerpt": "0202 · 消去外侧，保留中间这一步要回答：两个长度不等的单词，匹配外侧后究竟剩什么？前缀是从开头取的一段，后缀是到结尾的一段；两者都可以为空。回到 s+lls：左边 s 与右边最后一个 s 抵消，剩下 ll，必须是回文。若右边单词比较短，例如 lls+ll，则必须先检查它是否等于左边开头的反转；这里 ll 匹配，但剩余 s 也是回文，所以 llsll 成立。s | ll | sll | s | ll怎样共享这些匹配？把每个候选右词 j 反向插入字典树：一棵用字符标记边、相同开头共用路径的树。根的路径为空。沿路径 s→l→l 存储 lls 的反转；某节点的 end 是恰好在此结束的右词下标，无词则为 −1。pal 列表存放：走到此处后，原右词尚未匹配的前缀是回文的下标。插入 lls 时，根剩 lls 不合格；路径 s 剩 ll 合格；路径 sl 剩 l 合格；路径 sll 剩空串也合格。由此得到不变式（每次前进后都成立的事实）：查询左词 w，读了 k 个字符时，当前路径等于 w[:k]，也等于每个可达右词最后 k 个字符的反转。因此已匹配的两侧不用再检查。① 若节点 end 存在，右词已用完，仅当左词剩余后缀 w[k:] 为回文时输出。② 若左词用完，只输出该节点 pal 中的右词"
+    }
+  ],
+  "errors": [],
+  "assetErrors": [],
+  "external": [],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".trie-node",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".node-flags",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "selector": ".btn:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".btn.primary:not(:disabled)",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "calibration": {
+    "blackWhite": 21,
+    "red": 0.2126,
+    "green": 0.7152,
+    "blue": 0.0722,
+    "nearThreshold": 4.492948073111701,
+    "threshold": 4.5,
+    "nearThresholdPass": false,
+    "scope": "opaque solid backgrounds only"
+  },
+  "passed": true
+}
