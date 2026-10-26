@@ -1930,3 +1930,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Equal-prefix invariant | `leetcode/902/#step2` | Only the prefix equal to the bound needs further comparisons. |
 
 <!-- /leetcode-902-campaign -->
+
+
+<!-- leetcode-906-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Palindromic root generation | `leetcode/906/#step1` | Odd/even mirroring gives every positive palindromic root exactly once. |
+| Super-palindrome filtering | `leetcode/906/#step2` | Inclusive bounds and the second palindrome test. |
+
+<!-- /leetcode-906-campaign -->
