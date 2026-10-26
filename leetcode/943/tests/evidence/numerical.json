@@ -1,0 +1,35 @@
+{
+  "kind": "author numerical self-check",
+  "cases": 334,
+  "seconds": 1.2681687630247325,
+  "oracles": [
+    "output-string enumeration by increasing length",
+    "permutations with direct full-string merging"
+  ],
+  "officialExamples": [
+    [
+      [
+        "alex",
+        "loves",
+        "leetcode"
+      ],
+      17
+    ],
+    [
+      [
+        "catg",
+        "ctaagt",
+        "gcta",
+        "ttca",
+        "atgcatc"
+      ],
+      16
+    ]
+  ],
+  "maxConstraint": {
+    "noOverlap": 240,
+    "chain": 31
+  },
+  "sourceParity": true,
+  "noInputMutation": true
+}
