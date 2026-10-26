@@ -1,0 +1,38 @@
+{
+  "id": 913,
+  "title": {
+    "zh": "猫和老鼠",
+    "en": "Cat and Mouse"
+  },
+  "desc": {
+    "zh": "从一个安全出口推导逆向胜负传播，区分尚未证明与平局。",
+    "en": "Derive backward win propagation from a safe exit, and distinguish unknown from draw."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "图上博弈",
+      "en": "Graph games"
+    },
+    {
+      "zh": "逆向推理",
+      "en": "Retrograde analysis"
+    }
+  ],
+  "path": "913/",
+  "leetcodeUrl": "https://leetcode.com/problems/cat-and-mouse/",
+  "language": "Python",
+  "complexity": "O(nE) time; O(n²) auxiliary space, E = undirected edges",
+  "concepts": [
+    {
+      "name": "Retrograde game solving",
+      "step": 2,
+      "description": "Propagate one winning exit or exhaust all losing exits."
+    },
+    {
+      "name": "Residual draw states",
+      "step": 4,
+      "description": "Prove draws after the forcing-win queue is exhausted."
+    }
+  ]
+}
