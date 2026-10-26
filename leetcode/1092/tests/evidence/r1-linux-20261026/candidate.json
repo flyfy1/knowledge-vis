@@ -1,0 +1,43 @@
+{
+  "candidate": "1092-r1-linux-067b2f3ed88a",
+  "sha256": "067b2f3ed88a6520ae8890027b5f824b75084c3e19ff9f7d2f6dba71bc454513",
+  "frozenAt": "2026-10-26T15:16:00.490379+00:00",
+  "baseRevision": "b1c876fa0209e93f4bae8c0253b2928d825f419f",
+  "status": "author self-checked; ready for separate review; 1092-R1 fixed awaiting review",
+  "files": {
+    "BRIEF.md": "10db8eef1d3b35b1beef03d0bbf4e53c55695a43a093a7cb59add0f134209cbd",
+    "HEADER-FIT-SELF-CHECK.md": "7dd1e99f1d3ddab2dc90a1b976dafc31f73efdfd3444467a11c338317fee91c6",
+    "app.js": "067e357ed17eb55001960717d20b6621b322c785ad94a293b8c5e8dc3f386480",
+    "copy.js": "43b38ae5777ab28be4341f41bdb58ba9f52bb165b6f224e357bb10eb8d59991d",
+    "core.js": "bbfd33be48ffd79f8a30ee6b42d2a0ce872ebed5bf3b958886caad189baae77a",
+    "index.html": "d9774b34029c4e62a054271b9f4cdef7f82a4972bf875518b0b148aa4e8683ec",
+    "lesson-entry.json": "82e10251ceec655d785b6828589d4bb99578353389ea6a6ec0ef84fb5a885dce",
+    "provenance/official-graphql.json": "2c8ff2f5725aa31ad32ac0a33a5fc3cd746dadf239bc6820102a2e894b84bb3b",
+    "provenance/official-metadata.json": "b947428dd7c81dc6d5b107abd599f8514da9b79c961ae8075b52ff4ffcf70c88",
+    "provenance/official-verification.md": "1726031f2b165fecc3c36b3a7846fe126d084f12046a9a053cdecb65725f6bc1",
+    "python-code.js": "13ce84ab13ee4e51bf7cc0b9bc888433b924f0cc13fc0bde3d39a6e908d0f4c9",
+    "solution.py": "14d22228824f7a8e8268b546be296e51753fc2745ad53354123a58ab5e1b9868",
+    "style.css": "fec64b91dd2130f7ebc56dd7a52a67dfbdd89d75682baa1d50ddd1d57cb87ffb",
+    "tests/README.md": "8e95c4675e61434d7dcb97241b9faad318f1383e809fa9c944fb32697efd7b90",
+    "tests/browser.cjs": "47a62923cfa69091281de461cb985e8f126e67c4ab4a04df1951a3b2444741d7",
+    "tests/contact_sheet.py": "9ae374bfeee24563d4ed9ca585536da354acfa4aa0c79fd46ad30b81c7f466eb",
+    "tests/header-fit-matrix.cjs": "e0d039b4ad38415a5b24a8e1303ca3c57e9264a388fddf0726fd9386bdbb20ba",
+    "tests/header-fit-regression.cjs": "fd78192cb0d29648fe36788bfcb4e11753fba1a087cca68491c0110ab973476b",
+    "tests/test_core.cjs": "cbf3446bb7b8fb18c2715bdd3c51ae5e349895a9727ffb2ba52950f37dbb7963",
+    "tests/test_logic.py": "ffc589c2c460caf131678234f63704afc5a66b8423bf0ca9b1da66e2fa6fce10"
+  },
+  "sharedPolicyAndAssets": {
+    "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+    "specs/leetcode-hard-traces.md": "5cb2edb1f223cde061d67e8cfe255f220876667c1d4c091bdbac49f67c6f2c35",
+    "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+    "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+    "specs/reviews/1092-header-fit-design-review-20261026.md": "c0d63fd0facade0ddbc6e994266fce9c596b0cb7c4ed5d9533a5e61ee6a18e25",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "preflight": {
+    "command": "python3 -B scripts/register_leetcode_lesson.py 1092 --validate-only",
+    "exitCode": 0,
+    "output": ""
+  }
+}
