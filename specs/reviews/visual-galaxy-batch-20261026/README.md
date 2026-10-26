@@ -35,3 +35,5 @@ A final LC test used the pre-integration credit selector and failed without clos
 Weekly quota guard was checked through the supported current-Mac account API:7-day used2%, remaining98%, reset2026-11-02T06:08:19Z. It did not trigger the user's≤20% stop line. WORKFLOW now carries that requirement for later development; unknown visibility also pauses. No credits/reset/account/model switch was used.
 
 Generated42-codex overlay verification passed: numeric route retains query/hash,8 runtime files match canonical bytes, visible source label, Back/reload recovery. Fresh target measurements at320/390/768/1440 are48px. [Export proof](export-route-results.json), [recovery](export-recovery.json), [targets](export-targets.json). Before main publication, supported weekly reading is used3% / remaining97%; stop threshold is not reached.
+
+Latest quota clarification supersedes the earlier unknown-visibility checkpoint rule: unknown quota alone does not block authorized work; stop on reliable remaining≤20% or user pause. User may check periodically. No further quota exploration is part of this release.
