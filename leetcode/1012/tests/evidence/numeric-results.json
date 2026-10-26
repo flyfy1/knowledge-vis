@@ -1,0 +1,21 @@
+{
+  "kind": "author computational self-check",
+  "canonicalCases": 5216,
+  "canonicalIntermediateInvariants": 20,
+  "seed": 1012,
+  "core": {
+    "cases": 351,
+    "frameInvariants": 8681,
+    "enumeratedGroupChecks": 1926,
+    "presets": [
+      20,
+      100,
+      133,
+      321,
+      1,
+      1000000000
+    ],
+    "sourceMirrorExact": true,
+    "uniqueBilingualKeys": 86
+  }
+}

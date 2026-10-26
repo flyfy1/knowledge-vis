@@ -1,0 +1,2791 @@
+{
+  "kind": "author browser self-check; independent review pending",
+  "host": "linux",
+  "browser": "156.0.8078.4",
+  "presets": [
+    {
+      "lang": "en",
+      "p": 0,
+      "operations": 6,
+      "answer": 1,
+      "event": "All groups are counted. Final: 20 − 19 = 1."
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "operations": 5,
+      "answer": 10,
+      "event": "Digit 0 at position 2 was already used. Stop the equal path without adding n. Final: 100 − 90 = 10."
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "operations": 9,
+      "answer": 25,
+      "event": "Digit 3 at position 2 was already used. Stop the equal path without adding n. Final: 133 − 108 = 25."
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "operations": 12,
+      "answer": 69,
+      "event": "All groups are counted. Final: 321 − 252 = 69."
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "operations": 3,
+      "answer": 0,
+      "event": "All groups are counted. Final: 1 − 1 = 0."
+    },
+    {
+      "lang": "en",
+      "p": 5,
+      "operations": 12,
+      "answer": 994388230,
+      "event": "Digit 0 at position 2 was already used. Stop the equal path without adding n. Final: 1000000000 − 5611770 = 994388230."
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "operations": 6,
+      "answer": 1,
+      "event": "所有组已计完。最终 20 − 19 = 1。"
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "operations": 5,
+      "answer": 10,
+      "event": "第 2 位的 0 已用过；相等路径停止，不能再加 n。最终 100 − 90 = 10。"
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "operations": 9,
+      "answer": 25,
+      "event": "第 2 位的 3 已用过；相等路径停止，不能再加 n。最终 133 − 108 = 25。"
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "operations": 12,
+      "answer": 69,
+      "event": "所有组已计完。最终 321 − 252 = 69。"
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "operations": 3,
+      "answer": 0,
+      "event": "所有组已计完。最终 1 − 1 = 0。"
+    },
+    {
+      "lang": "zh",
+      "p": 5,
+      "operations": 12,
+      "answer": 994388230,
+      "event": "第 2 位的 0 已用过；相等路径停止，不能再加 n。最终 1000000000 − 5611770 = 994388230。"
+    }
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "phase": "smaller digit block",
+      "event": "Completed block with prefix 1: P(9,1) = 9. Digit 1 is below the corresponding bound digit; the suffix may use any remaining digits.",
+      "formula": "Shorter length s: 9 × P(9,s−1); choose a smaller digit at zero-based position i: P(9−i,D−i−1).",
+      "ledger": "Completed length 1: 9 × P(9,0) = 9. There are 9 first-digit choices, then fewer choices at each position.This group +9; cumulative after addition: 9 numbersCompleted block with prefix 1: P(9,1) = 9. Digit 1 is below the corresponding bound digit; the suffix may use any remaining digits.This group +9; cumulative after addition: 18 numbers← Just-completed addition"
+    },
+    {
+      "lang": "en",
+      "opt": 0,
+      "feedback": "21 counts 9 numbers under prefix 10, incorrectly including 101; digit 1 was already used. Unique-digit count: shorter lengths give 9+81=90. Prefix 10 contributes 8 (100…109 excluding 100 and 101); prefix 11 is invalid. After prefix 12, only unused 0 is below the final 1, adding 120. The equal final 1 is already used, so stop. unique=90+8+1=99; repeated count=121−99=22."
+    },
+    {
+      "lang": "en",
+      "opt": 1,
+      "feedback": "Correct. Unique-digit count: shorter lengths give 9+81=90. Prefix 10 contributes 8 (100…109 excluding 100 and 101); prefix 11 is invalid. After prefix 12, only unused 0 is below the final 1, adding 120. The equal final 1 is already used, so stop. unique=90+8+1=99; repeated count=121−99=22."
+    },
+    {
+      "lang": "en",
+      "opt": 2,
+      "feedback": "23 misses the all-different number 120; its 0 is unused and below 1. Unique-digit count: shorter lengths give 9+81=90. Prefix 10 contributes 8 (100…109 excluding 100 and 101); prefix 11 is invalid. After prefix 12, only unused 0 is below the final 1, adding 120. The equal final 1 is already used, so stop. unique=90+8+1=99; repeated count=121−99=22."
+    },
+    {
+      "lang": "zh",
+      "phase": "smaller digit block",
+      "event": "完成前缀 1 的组：P(9,1) = 9。本位 1 小于 n 对应位；后缀可自由选未用数字。",
+      "formula": "短长度 s：9 × P(9,s−1)；在从 0 开始的第 i 位选小数字：P(9−i,D−i−1)。",
+      "ledger": "完成长度 1 的组：9 × P(9,0) = 9。首位有 9 种，后面依次减少。本组 +9；计入后累计 9 个完成前缀 1 的组：P(9,1) = 9。本位 1 小于 n 对应位；后缀可自由选未用数字。本组 +9；计入后累计 18 个← 刚完成的新增组"
+    },
+    {
+      "lang": "zh",
+      "opt": 0,
+      "feedback": "21 把前缀 10 的组计成 9 个，误收了 101；数字 1 已用过。 互异数：短长度 9+81=90；前缀 10 的组有 8 个（100…109 中排除 100 和 101）；前缀 11 不合法；前缀 12 后小于末位 1 的数字只有 0，得到 120。最后的相等 1 已用过，停止。unique=90+8+1=99，重复个数=121−99=22。"
+    },
+    {
+      "lang": "zh",
+      "opt": 1,
+      "feedback": "正确。 互异数：短长度 9+81=90；前缀 10 的组有 8 个（100…109 中排除 100 和 101）；前缀 11 不合法；前缀 12 后小于末位 1 的数字只有 0，得到 120。最后的相等 1 已用过，停止。unique=90+8+1=99，重复个数=121−99=22。"
+    },
+    {
+      "lang": "zh",
+      "opt": 2,
+      "feedback": "23 漏掉了互异数 120；末位 0 没用过且小于 1。 互异数：短长度 9+81=90；前缀 10 的组有 8 个（100…109 中排除 100 和 101）；前缀 11 不合法；前缀 12 后小于末位 1 的数字只有 0，得到 120。最后的相等 1 已用过，停止。unique=90+8+1=99，重复个数=121−99=22。"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "page": 320,
+      "view": 320,
+      "state": [
+        {
+          "w": 286,
+          "s": 286
+        },
+        {
+          "w": 286,
+          "s": 286
+        },
+        {
+          "w": 286,
+          "s": 286
+        },
+        {
+          "w": 286,
+          "s": 286
+        },
+        {
+          "w": 283,
+          "s": 283
+        },
+        {
+          "w": 283,
+          "s": 283
+        },
+        {
+          "w": 283,
+          "s": 283
+        },
+        {
+          "w": 283,
+          "s": 283
+        },
+        {
+          "w": 283,
+          "s": 283
+        },
+        {
+          "w": 283,
+          "s": 283
+        },
+        {
+          "w": 283,
+          "s": 283
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode collection",
+          "h": 48,
+          "w": 135.671875
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 48,
+          "w": 48
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 48,
+          "w": 49.0625
+        },
+        {
+          "id": "",
+          "text": "Official problem ↗",
+          "h": 48,
+          "w": 134.515625
+        },
+        {
+          "id": "handReveal",
+          "text": "Reveal the 1…20 classification",
+          "h": 48,
+          "w": 254.203125
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 48,
+          "w": 286
+        },
+        {
+          "id": "prev",
+          "text": "← Previous operation",
+          "h": 48,
+          "w": 286
+        },
+        {
+          "id": "next",
+          "text": "Apply next operation →",
+          "h": 48,
+          "w": 286
+        },
+        {
+          "id": "reset",
+          "text": "Reset experiment",
+          "h": 48,
+          "w": 286
+        },
+        {
+          "id": "end",
+          "text": "Go to count endpoint",
+          "h": 48,
+          "w": 286
+        },
+        {
+          "id": "reveal",
+          "text": "Check prediction",
+          "h": 48,
+          "w": 157.6875
+        },
+        {
+          "id": "copy",
+          "text": "Copy Python",
+          "h": 48,
+          "w": 126.71875
+        },
+        {
+          "id": "download",
+          "text": "Download solution.py",
+          "h": 48,
+          "w": 195.09375
+        },
+        {
+          "id": "",
+          "text": "Revisit this lesson’s prefix invariant",
+          "h": 48,
+          "w": 260.203125
+        },
+        {
+          "id": "",
+          "text": "Problem 60: equal-size permutation blocks",
+          "h": 56,
+          "w": 304
+        },
+        {
+          "id": "",
+          "text": "Problem 902: counting digits under a bound",
+          "h": 56,
+          "w": 304
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 284,
+      "selectBudget": {
+        "width": 284,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "page": 320,
+      "view": 320,
+      "state": [
+        {
+          "w": 126,
+          "s": 126
+        },
+        {
+          "w": 126,
+          "s": 126
+        },
+        {
+          "w": 126,
+          "s": 126
+        },
+        {
+          "w": 126,
+          "s": 126
+        },
+        {
+          "w": 123,
+          "s": 123
+        },
+        {
+          "w": 123,
+          "s": 123
+        },
+        {
+          "w": 123,
+          "s": 123
+        },
+        {
+          "w": 123,
+          "s": 123
+        },
+        {
+          "w": 123,
+          "s": 123
+        },
+        {
+          "w": 123,
+          "s": 123
+        },
+        {
+          "w": 123,
+          "s": 123
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode collection",
+          "h": 96,
+          "w": 187.1875
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 96,
+          "w": 96
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 96,
+          "w": 98.125
+        },
+        {
+          "id": "",
+          "text": "Official problem ↗",
+          "h": 96,
+          "w": 269.03125
+        },
+        {
+          "id": "handReveal",
+          "text": "Reveal the 1…20 classification",
+          "h": 204,
+          "w": 288
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 96,
+          "w": 252
+        },
+        {
+          "id": "prev",
+          "text": "← Previous operation",
+          "h": 148,
+          "w": 252
+        },
+        {
+          "id": "next",
+          "text": "Apply next operation →",
+          "h": 148,
+          "w": 252
+        },
+        {
+          "id": "reset",
+          "text": "Reset experiment",
+          "h": 148,
+          "w": 252
+        },
+        {
+          "id": "end",
+          "text": "Go to count endpoint",
+          "h": 148,
+          "w": 252
+        },
+        {
+          "id": "reveal",
+          "text": "Check prediction",
+          "h": 148,
+          "w": 288
+        },
+        {
+          "id": "copy",
+          "text": "Copy Python",
+          "h": 96,
+          "w": 253.421875
+        },
+        {
+          "id": "download",
+          "text": "Download solution.py",
+          "h": 148,
+          "w": 288
+        },
+        {
+          "id": "",
+          "text": "Revisit this lesson’s prefix invariant",
+          "h": 112,
+          "w": 288
+        },
+        {
+          "id": "",
+          "text": "Problem 60: equal-size permutation blocks",
+          "h": 168,
+          "w": 288
+        },
+        {
+          "id": "",
+          "text": "Problem 902: counting digits under a bound",
+          "h": 168,
+          "w": 288
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 124,
+      "selectBudget": {
+        "width": 124,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "page": 390,
+      "view": 390,
+      "state": [
+        {
+          "w": 328,
+          "s": 328
+        },
+        {
+          "w": 328,
+          "s": 328
+        },
+        {
+          "w": 328,
+          "s": 328
+        },
+        {
+          "w": 328,
+          "s": 328
+        },
+        {
+          "w": 325,
+          "s": 325
+        },
+        {
+          "w": 325,
+          "s": 325
+        },
+        {
+          "w": 325,
+          "s": 325
+        },
+        {
+          "w": 325,
+          "s": 325
+        },
+        {
+          "w": 325,
+          "s": 325
+        },
+        {
+          "w": 325,
+          "s": 325
+        },
+        {
+          "w": 325,
+          "s": 325
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode collection",
+          "h": 48,
+          "w": 135.671875
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 48,
+          "w": 48
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 48,
+          "w": 49.0625
+        },
+        {
+          "id": "",
+          "text": "Official problem ↗",
+          "h": 48,
+          "w": 134.515625
+        },
+        {
+          "id": "handReveal",
+          "text": "Reveal the 1…20 classification",
+          "h": 48,
+          "w": 254.203125
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 48,
+          "w": 328
+        },
+        {
+          "id": "prev",
+          "text": "← Previous operation",
+          "h": 48,
+          "w": 328
+        },
+        {
+          "id": "next",
+          "text": "Apply next operation →",
+          "h": 48,
+          "w": 328
+        },
+        {
+          "id": "reset",
+          "text": "Reset experiment",
+          "h": 48,
+          "w": 328
+        },
+        {
+          "id": "end",
+          "text": "Go to count endpoint",
+          "h": 48,
+          "w": 328
+        },
+        {
+          "id": "reveal",
+          "text": "Check prediction",
+          "h": 48,
+          "w": 157.6875
+        },
+        {
+          "id": "copy",
+          "text": "Copy Python",
+          "h": 48,
+          "w": 126.71875
+        },
+        {
+          "id": "download",
+          "text": "Download solution.py",
+          "h": 48,
+          "w": 195.09375
+        },
+        {
+          "id": "",
+          "text": "Revisit this lesson’s prefix invariant",
+          "h": 48,
+          "w": 260.203125
+        },
+        {
+          "id": "",
+          "text": "Problem 60: equal-size permutation blocks",
+          "h": 48,
+          "w": 320.265625
+        },
+        {
+          "id": "",
+          "text": "Problem 902: counting digits under a bound",
+          "h": 48,
+          "w": 331.8125
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 326,
+      "selectBudget": {
+        "width": 326,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "page": 390,
+      "view": 390,
+      "state": [
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 130,
+          "s": 130
+        },
+        {
+          "w": 130,
+          "s": 130
+        },
+        {
+          "w": 130,
+          "s": 130
+        },
+        {
+          "w": 130,
+          "s": 130
+        },
+        {
+          "w": 130,
+          "s": 130
+        },
+        {
+          "w": 130,
+          "s": 130
+        },
+        {
+          "w": 130,
+          "s": 130
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode collection",
+          "h": 96,
+          "w": 211.890625
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 96,
+          "w": 96
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 96,
+          "w": 98.125
+        },
+        {
+          "id": "",
+          "text": "Official problem ↗",
+          "h": 96,
+          "w": 269.03125
+        },
+        {
+          "id": "handReveal",
+          "text": "Reveal the 1…20 classification",
+          "h": 148,
+          "w": 326
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 96,
+          "w": 266
+        },
+        {
+          "id": "prev",
+          "text": "← Previous operation",
+          "h": 148,
+          "w": 266
+        },
+        {
+          "id": "next",
+          "text": "Apply next operation →",
+          "h": 148,
+          "w": 266
+        },
+        {
+          "id": "reset",
+          "text": "Reset experiment",
+          "h": 148,
+          "w": 266
+        },
+        {
+          "id": "end",
+          "text": "Go to count endpoint",
+          "h": 148,
+          "w": 266
+        },
+        {
+          "id": "reveal",
+          "text": "Check prediction",
+          "h": 96,
+          "w": 315.375
+        },
+        {
+          "id": "copy",
+          "text": "Copy Python",
+          "h": 96,
+          "w": 253.421875
+        },
+        {
+          "id": "download",
+          "text": "Download solution.py",
+          "h": 148,
+          "w": 326
+        },
+        {
+          "id": "",
+          "text": "Revisit this lesson’s prefix invariant",
+          "h": 112,
+          "w": 326
+        },
+        {
+          "id": "",
+          "text": "Problem 60: equal-size permutation blocks",
+          "h": 168,
+          "w": 326
+        },
+        {
+          "id": "",
+          "text": "Problem 902: counting digits under a bound",
+          "h": 168,
+          "w": 326
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 131,
+      "selectBudget": {
+        "width": 131,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "page": 736,
+      "view": 736,
+      "state": [
+        {
+          "w": 317,
+          "s": 317
+        },
+        {
+          "w": 317,
+          "s": 317
+        },
+        {
+          "w": 317,
+          "s": 317
+        },
+        {
+          "w": 317,
+          "s": 317
+        },
+        {
+          "w": 643,
+          "s": 643
+        },
+        {
+          "w": 643,
+          "s": 643
+        },
+        {
+          "w": 643,
+          "s": 643
+        },
+        {
+          "w": 643,
+          "s": 643
+        },
+        {
+          "w": 643,
+          "s": 643
+        },
+        {
+          "w": 643,
+          "s": 643
+        },
+        {
+          "w": 643,
+          "s": 643
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode collection",
+          "h": 48,
+          "w": 146.109375
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 48,
+          "w": 48
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 48,
+          "w": 49.0625
+        },
+        {
+          "id": "",
+          "text": "Official problem ↗",
+          "h": 48,
+          "w": 134.515625
+        },
+        {
+          "id": "handReveal",
+          "text": "Reveal the 1…20 classification",
+          "h": 48,
+          "w": 254.203125
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 48,
+          "w": 646
+        },
+        {
+          "id": "prev",
+          "text": "← Previous operation",
+          "h": 48,
+          "w": 193.765625
+        },
+        {
+          "id": "next",
+          "text": "Apply next operation →",
+          "h": 48,
+          "w": 208.796875
+        },
+        {
+          "id": "reset",
+          "text": "Reset experiment",
+          "h": 48,
+          "w": 164.03125
+        },
+        {
+          "id": "end",
+          "text": "Go to count endpoint",
+          "h": 48,
+          "w": 192.25
+        },
+        {
+          "id": "reveal",
+          "text": "Check prediction",
+          "h": 48,
+          "w": 157.6875
+        },
+        {
+          "id": "copy",
+          "text": "Copy Python",
+          "h": 48,
+          "w": 126.71875
+        },
+        {
+          "id": "download",
+          "text": "Download solution.py",
+          "h": 48,
+          "w": 195.09375
+        },
+        {
+          "id": "",
+          "text": "Revisit this lesson’s prefix invariant",
+          "h": 48,
+          "w": 260.203125
+        },
+        {
+          "id": "",
+          "text": "Problem 60: equal-size permutation blocks",
+          "h": 48,
+          "w": 320.265625
+        },
+        {
+          "id": "",
+          "text": "Problem 902: counting digits under a bound",
+          "h": 48,
+          "w": 331.8125
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 644,
+      "selectBudget": {
+        "width": 644,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "page": 736,
+      "view": 736,
+      "state": [
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 275,
+          "s": 275
+        },
+        {
+          "w": 275,
+          "s": 275
+        },
+        {
+          "w": 275,
+          "s": 275
+        },
+        {
+          "w": 275,
+          "s": 275
+        },
+        {
+          "w": 275,
+          "s": 275
+        },
+        {
+          "w": 275,
+          "s": 275
+        },
+        {
+          "w": 275,
+          "s": 275
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode collection",
+          "h": 96,
+          "w": 292.21875
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 96,
+          "w": 96
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 96,
+          "w": 98.125
+        },
+        {
+          "id": "",
+          "text": "Official problem ↗",
+          "h": 96,
+          "w": 269.03125
+        },
+        {
+          "id": "handReveal",
+          "text": "Reveal the 1…20 classification",
+          "h": 96,
+          "w": 508.390625
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 96,
+          "w": 556
+        },
+        {
+          "id": "prev",
+          "text": "← Previous operation",
+          "h": 96,
+          "w": 387.53125
+        },
+        {
+          "id": "next",
+          "text": "Apply next operation →",
+          "h": 96,
+          "w": 417.578125
+        },
+        {
+          "id": "reset",
+          "text": "Reset experiment",
+          "h": 96,
+          "w": 328.046875
+        },
+        {
+          "id": "end",
+          "text": "Go to count endpoint",
+          "h": 96,
+          "w": 384.484375
+        },
+        {
+          "id": "reveal",
+          "text": "Check prediction",
+          "h": 96,
+          "w": 315.375
+        },
+        {
+          "id": "copy",
+          "text": "Copy Python",
+          "h": 96,
+          "w": 253.421875
+        },
+        {
+          "id": "download",
+          "text": "Download solution.py",
+          "h": 96,
+          "w": 390.1875
+        },
+        {
+          "id": "",
+          "text": "Revisit this lesson’s prefix invariant",
+          "h": 96,
+          "w": 520.390625
+        },
+        {
+          "id": "",
+          "text": "Problem 60: equal-size permutation blocks",
+          "h": 112,
+          "w": 640
+        },
+        {
+          "id": "",
+          "text": "Problem 902: counting digits under a bound",
+          "h": 112,
+          "w": 640
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 276,
+      "selectBudget": {
+        "width": 276,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "page": 1440,
+      "view": 1440,
+      "state": [
+        {
+          "w": 449,
+          "s": 449
+        },
+        {
+          "w": 449,
+          "s": 449
+        },
+        {
+          "w": 449,
+          "s": 449
+        },
+        {
+          "w": 449,
+          "s": 449
+        },
+        {
+          "w": 907,
+          "s": 907
+        },
+        {
+          "w": 907,
+          "s": 907
+        },
+        {
+          "w": 907,
+          "s": 907
+        },
+        {
+          "w": 907,
+          "s": 907
+        },
+        {
+          "w": 907,
+          "s": 907
+        },
+        {
+          "w": 907,
+          "s": 907
+        },
+        {
+          "w": 907,
+          "s": 907
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode collection",
+          "h": 48,
+          "w": 146.109375
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 48,
+          "w": 48
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 48,
+          "w": 49.0625
+        },
+        {
+          "id": "",
+          "text": "Official problem ↗",
+          "h": 48,
+          "w": 134.515625
+        },
+        {
+          "id": "handReveal",
+          "text": "Reveal the 1…20 classification",
+          "h": 48,
+          "w": 254.203125
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 48,
+          "w": 910
+        },
+        {
+          "id": "prev",
+          "text": "← Previous operation",
+          "h": 48,
+          "w": 193.765625
+        },
+        {
+          "id": "next",
+          "text": "Apply next operation →",
+          "h": 48,
+          "w": 208.796875
+        },
+        {
+          "id": "reset",
+          "text": "Reset experiment",
+          "h": 48,
+          "w": 164.03125
+        },
+        {
+          "id": "end",
+          "text": "Go to count endpoint",
+          "h": 48,
+          "w": 192.25
+        },
+        {
+          "id": "reveal",
+          "text": "Check prediction",
+          "h": 48,
+          "w": 157.6875
+        },
+        {
+          "id": "copy",
+          "text": "Copy Python",
+          "h": 48,
+          "w": 126.71875
+        },
+        {
+          "id": "download",
+          "text": "Download solution.py",
+          "h": 48,
+          "w": 195.09375
+        },
+        {
+          "id": "",
+          "text": "Revisit this lesson’s prefix invariant",
+          "h": 48,
+          "w": 260.203125
+        },
+        {
+          "id": "",
+          "text": "Problem 60: equal-size permutation blocks",
+          "h": 48,
+          "w": 320.265625
+        },
+        {
+          "id": "",
+          "text": "Problem 902: counting digits under a bound",
+          "h": 48,
+          "w": 331.8125
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 908,
+      "selectBudget": {
+        "width": 908,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "page": 1440,
+      "view": 1440,
+      "state": [
+        {
+          "w": 309,
+          "s": 309
+        },
+        {
+          "w": 309,
+          "s": 309
+        },
+        {
+          "w": 309,
+          "s": 309
+        },
+        {
+          "w": 309,
+          "s": 309
+        },
+        {
+          "w": 627,
+          "s": 627
+        },
+        {
+          "w": 627,
+          "s": 627
+        },
+        {
+          "w": 627,
+          "s": 627
+        },
+        {
+          "w": 627,
+          "s": 627
+        },
+        {
+          "w": 627,
+          "s": 627
+        },
+        {
+          "w": 627,
+          "s": 627
+        },
+        {
+          "w": 627,
+          "s": 627
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode collection",
+          "h": 96,
+          "w": 292.21875
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 96,
+          "w": 96
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 96,
+          "w": 98.125
+        },
+        {
+          "id": "",
+          "text": "Official problem ↗",
+          "h": 96,
+          "w": 269.03125
+        },
+        {
+          "id": "handReveal",
+          "text": "Reveal the 1…20 classification",
+          "h": 96,
+          "w": 508.390625
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 96,
+          "w": 1260
+        },
+        {
+          "id": "prev",
+          "text": "← Previous operation",
+          "h": 96,
+          "w": 387.53125
+        },
+        {
+          "id": "next",
+          "text": "Apply next operation →",
+          "h": 96,
+          "w": 417.578125
+        },
+        {
+          "id": "reset",
+          "text": "Reset experiment",
+          "h": 96,
+          "w": 328.046875
+        },
+        {
+          "id": "end",
+          "text": "Go to count endpoint",
+          "h": 96,
+          "w": 384.484375
+        },
+        {
+          "id": "reveal",
+          "text": "Check prediction",
+          "h": 96,
+          "w": 315.375
+        },
+        {
+          "id": "copy",
+          "text": "Copy Python",
+          "h": 96,
+          "w": 253.421875
+        },
+        {
+          "id": "download",
+          "text": "Download solution.py",
+          "h": 96,
+          "w": 390.1875
+        },
+        {
+          "id": "",
+          "text": "Revisit this lesson’s prefix invariant",
+          "h": 96,
+          "w": 520.390625
+        },
+        {
+          "id": "",
+          "text": "Problem 60: equal-size permutation blocks",
+          "h": 96,
+          "w": 640.515625
+        },
+        {
+          "id": "",
+          "text": "Problem 902: counting digits under a bound",
+          "h": 96,
+          "w": 663.625
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 628,
+      "selectBudget": {
+        "width": 628,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "page": 320,
+      "view": 320,
+      "state": [
+        {
+          "w": 286,
+          "s": 286
+        },
+        {
+          "w": 286,
+          "s": 286
+        },
+        {
+          "w": 286,
+          "s": 286
+        },
+        {
+          "w": 286,
+          "s": 286
+        },
+        {
+          "w": 283,
+          "s": 283
+        },
+        {
+          "w": 283,
+          "s": 283
+        },
+        {
+          "w": 283,
+          "s": 283
+        },
+        {
+          "w": 283,
+          "s": 283
+        },
+        {
+          "w": 283,
+          "s": 283
+        },
+        {
+          "w": 283,
+          "s": 283
+        },
+        {
+          "w": 283,
+          "s": 283
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode 知识索引",
+          "h": 48,
+          "w": 129.34375
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 48,
+          "w": 48
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 48,
+          "w": 49.0625
+        },
+        {
+          "id": "",
+          "text": "官方题目 ↗",
+          "h": 48,
+          "w": 84.171875
+        },
+        {
+          "id": "handReveal",
+          "text": "揭晓 1…20 的分类",
+          "h": 48,
+          "w": 160.4375
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 48,
+          "w": 286
+        },
+        {
+          "id": "prev",
+          "text": "← 返回一步",
+          "h": 48,
+          "w": 286
+        },
+        {
+          "id": "next",
+          "text": "执行下一操作 →",
+          "h": 48,
+          "w": 286
+        },
+        {
+          "id": "reset",
+          "text": "重置实验",
+          "h": 48,
+          "w": 286
+        },
+        {
+          "id": "end",
+          "text": "到计数终点",
+          "h": 48,
+          "w": 286
+        },
+        {
+          "id": "reveal",
+          "text": "验证预测",
+          "h": 48,
+          "w": 96.015625
+        },
+        {
+          "id": "copy",
+          "text": "复制 Python",
+          "h": 48,
+          "w": 121.234375
+        },
+        {
+          "id": "download",
+          "text": "下载 solution.py",
+          "h": 48,
+          "w": 150.96875
+        },
+        {
+          "id": "",
+          "text": "回看本页的前缀不变式",
+          "h": 48,
+          "w": 160.015625
+        },
+        {
+          "id": "",
+          "text": "第 60 题：排列的等大分组",
+          "h": 48,
+          "w": 186.625
+        },
+        {
+          "id": "",
+          "text": "第 902 题：上界内的数位计数",
+          "h": 48,
+          "w": 211.78125
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 284,
+      "selectBudget": {
+        "width": 284,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "page": 320,
+      "view": 320,
+      "state": [
+        {
+          "w": 126,
+          "s": 126
+        },
+        {
+          "w": 126,
+          "s": 126
+        },
+        {
+          "w": 126,
+          "s": 126
+        },
+        {
+          "w": 126,
+          "s": 126
+        },
+        {
+          "w": 123,
+          "s": 123
+        },
+        {
+          "w": 123,
+          "s": 123
+        },
+        {
+          "w": 123,
+          "s": 123
+        },
+        {
+          "w": 123,
+          "s": 123
+        },
+        {
+          "w": 123,
+          "s": 123
+        },
+        {
+          "w": 123,
+          "s": 123
+        },
+        {
+          "w": 123,
+          "s": 123
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode 知识索引",
+          "h": 96,
+          "w": 187.1875
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 96,
+          "w": 96
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 96,
+          "w": 98.125
+        },
+        {
+          "id": "",
+          "text": "官方题目 ↗",
+          "h": 96,
+          "w": 168.328125
+        },
+        {
+          "id": "handReveal",
+          "text": "揭晓 1…20 的分类",
+          "h": 148,
+          "w": 288
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 96,
+          "w": 252
+        },
+        {
+          "id": "prev",
+          "text": "← 返回一步",
+          "h": 96,
+          "w": 252
+        },
+        {
+          "id": "next",
+          "text": "执行下一操作 →",
+          "h": 148,
+          "w": 252
+        },
+        {
+          "id": "reset",
+          "text": "重置实验",
+          "h": 96,
+          "w": 252
+        },
+        {
+          "id": "end",
+          "text": "到计数终点",
+          "h": 96,
+          "w": 252
+        },
+        {
+          "id": "reveal",
+          "text": "验证预测",
+          "h": 96,
+          "w": 192.015625
+        },
+        {
+          "id": "copy",
+          "text": "复制 Python",
+          "h": 96,
+          "w": 242.46875
+        },
+        {
+          "id": "download",
+          "text": "下载 solution.py",
+          "h": 148,
+          "w": 288
+        },
+        {
+          "id": "",
+          "text": "回看本页的前缀不变式",
+          "h": 112,
+          "w": 288
+        },
+        {
+          "id": "",
+          "text": "第 60 题：排列的等大分组",
+          "h": 112,
+          "w": 288
+        },
+        {
+          "id": "",
+          "text": "第 902 题：上界内的数位计数",
+          "h": 112,
+          "w": 288
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 124,
+      "selectBudget": {
+        "width": 124,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "page": 390,
+      "view": 390,
+      "state": [
+        {
+          "w": 328,
+          "s": 328
+        },
+        {
+          "w": 328,
+          "s": 328
+        },
+        {
+          "w": 328,
+          "s": 328
+        },
+        {
+          "w": 328,
+          "s": 328
+        },
+        {
+          "w": 325,
+          "s": 325
+        },
+        {
+          "w": 325,
+          "s": 325
+        },
+        {
+          "w": 325,
+          "s": 325
+        },
+        {
+          "w": 325,
+          "s": 325
+        },
+        {
+          "w": 325,
+          "s": 325
+        },
+        {
+          "w": 325,
+          "s": 325
+        },
+        {
+          "w": 325,
+          "s": 325
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode 知识索引",
+          "h": 48,
+          "w": 129.34375
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 48,
+          "w": 48
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 48,
+          "w": 49.0625
+        },
+        {
+          "id": "",
+          "text": "官方题目 ↗",
+          "h": 48,
+          "w": 84.171875
+        },
+        {
+          "id": "handReveal",
+          "text": "揭晓 1…20 的分类",
+          "h": 48,
+          "w": 160.4375
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 48,
+          "w": 328
+        },
+        {
+          "id": "prev",
+          "text": "← 返回一步",
+          "h": 48,
+          "w": 328
+        },
+        {
+          "id": "next",
+          "text": "执行下一操作 →",
+          "h": 48,
+          "w": 328
+        },
+        {
+          "id": "reset",
+          "text": "重置实验",
+          "h": 48,
+          "w": 328
+        },
+        {
+          "id": "end",
+          "text": "到计数终点",
+          "h": 48,
+          "w": 328
+        },
+        {
+          "id": "reveal",
+          "text": "验证预测",
+          "h": 48,
+          "w": 96.015625
+        },
+        {
+          "id": "copy",
+          "text": "复制 Python",
+          "h": 48,
+          "w": 121.234375
+        },
+        {
+          "id": "download",
+          "text": "下载 solution.py",
+          "h": 48,
+          "w": 150.96875
+        },
+        {
+          "id": "",
+          "text": "回看本页的前缀不变式",
+          "h": 48,
+          "w": 160.015625
+        },
+        {
+          "id": "",
+          "text": "第 60 题：排列的等大分组",
+          "h": 48,
+          "w": 186.625
+        },
+        {
+          "id": "",
+          "text": "第 902 题：上界内的数位计数",
+          "h": 48,
+          "w": 211.78125
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 326,
+      "selectBudget": {
+        "width": 326,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "page": 390,
+      "view": 390,
+      "state": [
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 130,
+          "s": 130
+        },
+        {
+          "w": 130,
+          "s": 130
+        },
+        {
+          "w": 130,
+          "s": 130
+        },
+        {
+          "w": 130,
+          "s": 130
+        },
+        {
+          "w": 130,
+          "s": 130
+        },
+        {
+          "w": 130,
+          "s": 130
+        },
+        {
+          "w": 130,
+          "s": 130
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode 知识索引",
+          "h": 96,
+          "w": 211.890625
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 96,
+          "w": 96
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 96,
+          "w": 98.125
+        },
+        {
+          "id": "",
+          "text": "官方题目 ↗",
+          "h": 96,
+          "w": 168.328125
+        },
+        {
+          "id": "handReveal",
+          "text": "揭晓 1…20 的分类",
+          "h": 96,
+          "w": 320.875
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 96,
+          "w": 266
+        },
+        {
+          "id": "prev",
+          "text": "← 返回一步",
+          "h": 96,
+          "w": 266
+        },
+        {
+          "id": "next",
+          "text": "执行下一操作 →",
+          "h": 148,
+          "w": 266
+        },
+        {
+          "id": "reset",
+          "text": "重置实验",
+          "h": 96,
+          "w": 266
+        },
+        {
+          "id": "end",
+          "text": "到计数终点",
+          "h": 96,
+          "w": 266
+        },
+        {
+          "id": "reveal",
+          "text": "验证预测",
+          "h": 96,
+          "w": 192.015625
+        },
+        {
+          "id": "copy",
+          "text": "复制 Python",
+          "h": 96,
+          "w": 242.46875
+        },
+        {
+          "id": "download",
+          "text": "下载 solution.py",
+          "h": 96,
+          "w": 301.921875
+        },
+        {
+          "id": "",
+          "text": "回看本页的前缀不变式",
+          "h": 96,
+          "w": 320.015625
+        },
+        {
+          "id": "",
+          "text": "第 60 题：排列的等大分组",
+          "h": 112,
+          "w": 326
+        },
+        {
+          "id": "",
+          "text": "第 902 题：上界内的数位计数",
+          "h": 112,
+          "w": 326
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 131,
+      "selectBudget": {
+        "width": 131,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "page": 736,
+      "view": 736,
+      "state": [
+        {
+          "w": 317,
+          "s": 317
+        },
+        {
+          "w": 317,
+          "s": 317
+        },
+        {
+          "w": 317,
+          "s": 317
+        },
+        {
+          "w": 317,
+          "s": 317
+        },
+        {
+          "w": 643,
+          "s": 643
+        },
+        {
+          "w": 643,
+          "s": 643
+        },
+        {
+          "w": 643,
+          "s": 643
+        },
+        {
+          "w": 643,
+          "s": 643
+        },
+        {
+          "w": 643,
+          "s": 643
+        },
+        {
+          "w": 643,
+          "s": 643
+        },
+        {
+          "w": 643,
+          "s": 643
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode 知识索引",
+          "h": 48,
+          "w": 139.296875
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 48,
+          "w": 48
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 48,
+          "w": 49.0625
+        },
+        {
+          "id": "",
+          "text": "官方题目 ↗",
+          "h": 48,
+          "w": 84.171875
+        },
+        {
+          "id": "handReveal",
+          "text": "揭晓 1…20 的分类",
+          "h": 48,
+          "w": 160.4375
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 48,
+          "w": 646
+        },
+        {
+          "id": "prev",
+          "text": "← 返回一步",
+          "h": 48,
+          "w": 116.171875
+        },
+        {
+          "id": "next",
+          "text": "执行下一操作 →",
+          "h": 48,
+          "w": 148.171875
+        },
+        {
+          "id": "reset",
+          "text": "重置实验",
+          "h": 48,
+          "w": 96.015625
+        },
+        {
+          "id": "end",
+          "text": "到计数终点",
+          "h": 48,
+          "w": 112.015625
+        },
+        {
+          "id": "reveal",
+          "text": "验证预测",
+          "h": 48,
+          "w": 96.015625
+        },
+        {
+          "id": "copy",
+          "text": "复制 Python",
+          "h": 48,
+          "w": 121.234375
+        },
+        {
+          "id": "download",
+          "text": "下载 solution.py",
+          "h": 48,
+          "w": 150.96875
+        },
+        {
+          "id": "",
+          "text": "回看本页的前缀不变式",
+          "h": 48,
+          "w": 160.015625
+        },
+        {
+          "id": "",
+          "text": "第 60 题：排列的等大分组",
+          "h": 48,
+          "w": 186.625
+        },
+        {
+          "id": "",
+          "text": "第 902 题：上界内的数位计数",
+          "h": 48,
+          "w": 211.78125
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 644,
+      "selectBudget": {
+        "width": 644,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "page": 736,
+      "view": 736,
+      "state": [
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 133,
+          "s": 133
+        },
+        {
+          "w": 275,
+          "s": 275
+        },
+        {
+          "w": 275,
+          "s": 275
+        },
+        {
+          "w": 275,
+          "s": 275
+        },
+        {
+          "w": 275,
+          "s": 275
+        },
+        {
+          "w": 275,
+          "s": 275
+        },
+        {
+          "w": 275,
+          "s": 275
+        },
+        {
+          "w": 275,
+          "s": 275
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode 知识索引",
+          "h": 96,
+          "w": 278.578125
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 96,
+          "w": 96
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 96,
+          "w": 98.125
+        },
+        {
+          "id": "",
+          "text": "官方题目 ↗",
+          "h": 96,
+          "w": 168.328125
+        },
+        {
+          "id": "handReveal",
+          "text": "揭晓 1…20 的分类",
+          "h": 96,
+          "w": 320.875
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 96,
+          "w": 556
+        },
+        {
+          "id": "prev",
+          "text": "← 返回一步",
+          "h": 96,
+          "w": 232.328125
+        },
+        {
+          "id": "next",
+          "text": "执行下一操作 →",
+          "h": 96,
+          "w": 296.328125
+        },
+        {
+          "id": "reset",
+          "text": "重置实验",
+          "h": 96,
+          "w": 192.015625
+        },
+        {
+          "id": "end",
+          "text": "到计数终点",
+          "h": 96,
+          "w": 224.015625
+        },
+        {
+          "id": "reveal",
+          "text": "验证预测",
+          "h": 96,
+          "w": 192.015625
+        },
+        {
+          "id": "copy",
+          "text": "复制 Python",
+          "h": 96,
+          "w": 242.46875
+        },
+        {
+          "id": "download",
+          "text": "下载 solution.py",
+          "h": 96,
+          "w": 301.921875
+        },
+        {
+          "id": "",
+          "text": "回看本页的前缀不变式",
+          "h": 96,
+          "w": 320.015625
+        },
+        {
+          "id": "",
+          "text": "第 60 题：排列的等大分组",
+          "h": 96,
+          "w": 373.25
+        },
+        {
+          "id": "",
+          "text": "第 902 题：上界内的数位计数",
+          "h": 96,
+          "w": 423.5625
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 276,
+      "selectBudget": {
+        "width": 276,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "page": 1440,
+      "view": 1440,
+      "state": [
+        {
+          "w": 449,
+          "s": 449
+        },
+        {
+          "w": 449,
+          "s": 449
+        },
+        {
+          "w": 449,
+          "s": 449
+        },
+        {
+          "w": 449,
+          "s": 449
+        },
+        {
+          "w": 907,
+          "s": 907
+        },
+        {
+          "w": 907,
+          "s": 907
+        },
+        {
+          "w": 907,
+          "s": 907
+        },
+        {
+          "w": 907,
+          "s": 907
+        },
+        {
+          "w": 907,
+          "s": 907
+        },
+        {
+          "w": 907,
+          "s": 907
+        },
+        {
+          "w": 907,
+          "s": 907
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode 知识索引",
+          "h": 48,
+          "w": 139.296875
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 48,
+          "w": 48
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 48,
+          "w": 49.0625
+        },
+        {
+          "id": "",
+          "text": "官方题目 ↗",
+          "h": 48,
+          "w": 84.171875
+        },
+        {
+          "id": "handReveal",
+          "text": "揭晓 1…20 的分类",
+          "h": 48,
+          "w": 160.4375
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 48,
+          "w": 910
+        },
+        {
+          "id": "prev",
+          "text": "← 返回一步",
+          "h": 48,
+          "w": 116.171875
+        },
+        {
+          "id": "next",
+          "text": "执行下一操作 →",
+          "h": 48,
+          "w": 148.171875
+        },
+        {
+          "id": "reset",
+          "text": "重置实验",
+          "h": 48,
+          "w": 96.015625
+        },
+        {
+          "id": "end",
+          "text": "到计数终点",
+          "h": 48,
+          "w": 112.015625
+        },
+        {
+          "id": "reveal",
+          "text": "验证预测",
+          "h": 48,
+          "w": 96.015625
+        },
+        {
+          "id": "copy",
+          "text": "复制 Python",
+          "h": 48,
+          "w": 121.234375
+        },
+        {
+          "id": "download",
+          "text": "下载 solution.py",
+          "h": 48,
+          "w": 150.96875
+        },
+        {
+          "id": "",
+          "text": "回看本页的前缀不变式",
+          "h": 48,
+          "w": 160.015625
+        },
+        {
+          "id": "",
+          "text": "第 60 题：排列的等大分组",
+          "h": 48,
+          "w": 186.625
+        },
+        {
+          "id": "",
+          "text": "第 902 题：上界内的数位计数",
+          "h": 48,
+          "w": 211.78125
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 908,
+      "selectBudget": {
+        "width": 908,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "page": 1440,
+      "view": 1440,
+      "state": [
+        {
+          "w": 309,
+          "s": 309
+        },
+        {
+          "w": 309,
+          "s": 309
+        },
+        {
+          "w": 309,
+          "s": 309
+        },
+        {
+          "w": 309,
+          "s": 309
+        },
+        {
+          "w": 627,
+          "s": 627
+        },
+        {
+          "w": 627,
+          "s": 627
+        },
+        {
+          "w": 627,
+          "s": 627
+        },
+        {
+          "w": 627,
+          "s": 627
+        },
+        {
+          "w": 627,
+          "s": 627
+        },
+        {
+          "w": 627,
+          "s": 627
+        },
+        {
+          "w": 627,
+          "s": 627
+        }
+      ],
+      "controls": [
+        {
+          "id": "",
+          "text": "← LeetCode 知识索引",
+          "h": 96,
+          "w": 278.578125
+        },
+        {
+          "id": "",
+          "text": "中",
+          "h": 96,
+          "w": 96
+        },
+        {
+          "id": "",
+          "text": "EN",
+          "h": 96,
+          "w": 98.125
+        },
+        {
+          "id": "",
+          "text": "官方题目 ↗",
+          "h": 96,
+          "w": 168.328125
+        },
+        {
+          "id": "handReveal",
+          "text": "揭晓 1…20 的分类",
+          "h": 96,
+          "w": 320.875
+        },
+        {
+          "id": "preset",
+          "text": "20100133321110⁹",
+          "h": 96,
+          "w": 1260
+        },
+        {
+          "id": "prev",
+          "text": "← 返回一步",
+          "h": 96,
+          "w": 232.328125
+        },
+        {
+          "id": "next",
+          "text": "执行下一操作 →",
+          "h": 96,
+          "w": 296.328125
+        },
+        {
+          "id": "reset",
+          "text": "重置实验",
+          "h": 96,
+          "w": 192.015625
+        },
+        {
+          "id": "end",
+          "text": "到计数终点",
+          "h": 96,
+          "w": 224.015625
+        },
+        {
+          "id": "reveal",
+          "text": "验证预测",
+          "h": 96,
+          "w": 192.015625
+        },
+        {
+          "id": "copy",
+          "text": "复制 Python",
+          "h": 96,
+          "w": 242.46875
+        },
+        {
+          "id": "download",
+          "text": "下载 solution.py",
+          "h": 96,
+          "w": 301.921875
+        },
+        {
+          "id": "",
+          "text": "回看本页的前缀不变式",
+          "h": 96,
+          "w": 320.015625
+        },
+        {
+          "id": "",
+          "text": "第 60 题：排列的等大分组",
+          "h": 96,
+          "w": 373.25
+        },
+        {
+          "id": "",
+          "text": "第 902 题：上界内的数位计数",
+          "h": 96,
+          "w": 423.5625
+        }
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "selectW": 628,
+      "selectBudget": {
+        "width": 628,
+        "needed": 81.45606994628906,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "en",
+      "sentinelResetVerified": true,
+      "nativeCopy": true,
+      "fallbackShortcut": "Control+C",
+      "exactSource": true
+    },
+    {
+      "lang": "zh",
+      "sentinelResetVerified": true,
+      "nativeCopy": true,
+      "fallbackShortcut": "Control+C",
+      "exactSource": true
+    }
+  ],
+  "links": [
+    "#step1",
+    "#step2",
+    "#step3",
+    "#step4",
+    "#step5",
+    "../902/#step1",
+    "../60/#step1",
+    "#step3",
+    "../60/#step1",
+    "../902/#step1",
+    {
+      "lang": "en",
+      "label": "Problem 60: equal-size permutation blocks",
+      "href": "../60/#step1",
+      "observed": "021 · Count whole blocksWhy can one division choose the next digit? A prefix is the string already chosen. Let m unused digits remain, stored in sorted order. Fixing the next digit leaves (m−1)! arrangements of the rest: the block size. Every item in a smaller-digit block precedes every item in a larger-digit block, with no gaps or overlaps.Convert k once to the zero-based offset r=k−1. Then q=r//block counts complete blocks skipped and is the index in the unused list; the new r=r%block is the offset inside that block. Earlier blocks are too early and later blocks too late. Define 0!=1, so the last digit follows the same rule.By hand for (n=4,k=9): r=8. 8=1×6+2 → choose index 1, digit 2; unused [1,3,4]. 2=1×2+0 → choose 3; unused [1,4]. 0=0×1+0 → choose 1. Finally choose 4, yielding 2314. After each choice, r describes only the remaining suffix.Boundary counterexample: with n=4, k=6 gives r=5 and q=0, still in the block beginning with 1. At k=7, r=6 and q=1 starts the block beginning with 2. Using k//6 directly would move to the next block too soon at k=6."
+    },
+    {
+      "lang": "en",
+      "label": "Problem 902: counting digits under a bound",
+      "href": "../902/#step1",
+      "observed": "02Find the first differenceWhich numbers can we certify without generating each one?A baseline scans integers from 1 through n, converts each to a string, and checks whether every digit belongs to D. It is correct: it visits each candidate once and accepts exactly those using allowed digits.def baseline(digits, n):\n    allowed = set(digits)\n    count = 0\n    for value in range(1, n + 1):\n        valid = True\n        for digit in str(value):\n            if digit not in allowed:\n                valid = False\n                break\n        if valid:\n            count += 1\n    return countLet L be the decimal length of n and m the number of allowed digits. With set membership, the baseline takes O(nL) worst-case time and O(L+m) temporary space. n can be a billion: constructing and checking every integer repeats too much work. Multiplication can replace enumeration.Group by length first. Every shorter number is smaller than n. For length k, each position has m independent choices, giving mᵏ numbers. For {1,3},31, the only shorter length is one: 2¹=2.Now consider equal lengths. A prefix is the fixed beginning; a suffix is the remaining digits. Write the two-digit numbers as 1_ or 3_. Since 1<3, both 11 and 13 are below 31, regardless of the last digit. Starting with 3 ties the bound, so the last digit matters: 1=1 continues, while 3>1 is excluded.In general, keep the earlier prefix equal to the bound. One smaller digit here permits mʳ suffixes, where r positions remain and m digits are available. With c smaller choices, add c×mʳ. An equal digit adds nothing yet: continue to the next position. A greater digit permits no valid suffix. When r=0, m⁰=1 counts the one empty suffix.Why is the count complete and disjoint? Any valid number is shorter or has the same length as n. For an equal-length number, its first differing digit must be smaller, and that position is unique. After each step, the counted blocks are shorter numbers and numbers whose first smaller position has been processed. Only the path matching the bound prefix remains undecided. If the current bound digit is absent from D, that path ends: return immediately. If all positions match, add 1 once for n itself.Two tempting shortcuts fail: adding all mᴸ words includes 33>31. Requiring every digit to be ≤ the corresponding bound digit rejects 13≤31 because 3>1 in the last position. Only the first difference decides!"
+    },
+    {
+      "lang": "zh",
+      "label": "第 60 题：排列的等大分组",
+      "href": "../60/#step1",
+      "observed": "021 · 用整块计数这一步要回答：为什么一次除法就能选下一位？前缀是已选的数字。设还有 m 个未用数字，按升序保存。固定下一位后，剩余 m−1 位可以有 (m−1)! 种排列；这就是一个块的大小 block。首位较小的块全部排在较大的块之前，块内不遗漏也不重复。把 k 转为从 0 开始的偏移 r=k−1，只转换这一次。q=r//block 是跳过的整块数，也是未用列表的下标；新的 r=r%block 是所选块内的偏移。q 之前的块都太早，q 之后的块都太晚。约定 0!=1，因此最后一位也可以这样选。手算 (n=4,k=9)：r=8。8=1×6+2 → 选下标 1 的数字 2；未用 [1,3,4]。2=1×2+0 → 选 3；未用 [1,4]。0=0×1+0 → 选 1。最后选 4，得到 2314。每次选择后，r 都只描述剩余后缀。反例：n=4，k=6 时 r=5，q=0，仍在首位 1 的块；k=7 时 r=6，q=1，才进入首位 2 的块。如果直接用 k//6，k=6 就会错误地提前一块。"
+    },
+    {
+      "lang": "zh",
+      "label": "第 902 题：上界内的数位计数",
+      "href": "../902/#step1",
+      "observed": "02找到首个不同位这一步要回答：哪些整数可以不逐个生成，就确定全部合法？基线方法：从 1 检查到 n，把每个整数转成字符串，逐位检查是否属于 D。它正确，因为每个候选数恰好检查一次，且只接受所有数位都合法的数。def baseline(digits, n):\n    allowed = set(digits)\n    count = 0\n    for value in range(1, n + 1):\n        valid = True\n        for digit in str(value):\n            if digit not in allowed:\n                valid = False\n                break\n        if valid:\n            count += 1\n    return count设 L 是 n 的十进制位数。用集合查询，基线最坏需要 O(nL) 时间、O(L+m) 临时空间，其中 m 是可用数字个数。n 可到十亿；重复构造和检查每个整数太昂贵。下面用乘法代替枚举。先按长度分组。比 n 短的数全部更小。长度为 k 时，每个位置都有 m 个独立选择，因此有 mᵏ 个数。对于 {1,3},31，较短的只有一位：2¹=2。再看同长度数。前缀就是开头已经固定的数位，后缀是剩下的数位。把两位数写成 1_ 或 3_：1<3，所以 11、13 都比 31 小，个位无需再比较。若第一位是 3，它和上界相等，才需要比较个位：1=1 可以继续，3>1 必须排除。一般地，已匹配的前缀固定后，当前位选一个比上界小的数字，剩余 r 位每位都有 m 个选择，因此增加 mʳ。若有 c 个较小数字，则增加 c×mʳ。当前位相等时不立即加数，只继续比较下一位；当前位更大时没有合法后缀。r=0 时 m⁰=1，代表一种空后缀。为什么不会重复或漏算？任何合法数要么更短，要么与 n 等长。在等长数中，找到首个不同位：它必须更小，而且这一个位置唯一。于是每一步之后，已计数的是较短数以及首个更小位置已处理的数；尚未决定的只剩与上界前缀完全相等的一条路径。若当前上界数字不在 D 中，这条路径消失，立即返回。若所有位置都相等，最后单独加 1，计入 n。两个诱惑：直接加 mᴸ 会把 33>31 也算进去；要求每一位都 ≤ 上界对应位则会漏掉 13≤31，因为个位 3>1。必须只看首个不同位！"
+    }
+  ],
+  "contrast": [
+    {
+      "sel": ".explain",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "sel": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "sel": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": ".block.current",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "sel": ".step-nav a",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": "button:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "role": "focus",
+      "fg": "rgb(255,180,84)",
+      "bg": "rgb(13,17,23)",
+      "ratio": 10.731637051347173
+    },
+    {
+      "role": "focus",
+      "fg": "rgb(255,180,84)",
+      "bg": "rgb(22,27,34)",
+      "ratio": 9.809435643476732
+    },
+    {
+      "role": "focus",
+      "fg": "rgb(255,180,84)",
+      "bg": "rgb(28,35,48)",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "errors": [],
+  "assets": [],
+  "external": [],
+  "contrastCalibration": {
+    "black": 0,
+    "white": 1,
+    "blackWhite": 21,
+    "nearThreshold": 4.492948073111701
+  },
+  "cssBytes": 11589
+}
