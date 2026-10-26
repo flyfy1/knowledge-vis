@@ -1,0 +1,309 @@
+{
+  "status": "pass",
+  "logs": [
+    {
+      "lang": "en",
+      "p": 0,
+      "end": "Remaining list (top at right): []Surviving counts freq: emptyHighest nonempty level maxfreq = 0Frequency levels: earlier → later in each row; remove from rightempty"
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "end": "Remaining list (top at right): [5, 7]Surviving counts freq: 5: 1; 7: 1Highest nonempty level maxfreq = 1Frequency levels: earlier → later in each row; remove from rightgroup[1]: [5, 7]"
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "end": "Remaining list (top at right): []Surviving counts freq: emptyHighest nonempty level maxfreq = 0Frequency levels: earlier → later in each row; remove from rightempty"
+    },
+    {
+      "lang": "en",
+      "source": "display/download/automatic/native-fallback exact parity",
+      "host": "linux"
+    },
+    {
+      "lang": "en",
+      "link": "http://127.0.0.1:18770/leetcode/32/#step1",
+      "label": "Longest valid parentheses: a stack of unmatched indices →",
+      "destination": "02Why can we skip work?How can we avoid pairing again from every start? In \")()())\", the close at index 0 cannot match; any later valid fragment must start to its right. Save these uncrossable boundary indices and the indices of still-unmatched openings. Use a Python list as a stack: add or remove only at its end. “Push” means append; “pop” removes and returns the last item; “top” means that last item. Start with −1 at the bottom, a virtual boundary before the string, and store unmatched opening indices above it. On (, append(i). On ), pop first; if the list becomes empty, use the current i as the new boundary.A suffix is a contiguous fragment ending at the current index i. If top t remains after the pop, every parenthesis after t through i is paired, giving length i−t. t is either an unmatched opening or the last invalid close; including it would break validity, so we cannot cross it. In the default example, just before i=4 the stack is [0,3]. This close matches index 3; popping leaves [0], so indices 1…4 have length 4−0=4. One calculation joins the two pairs without rescanning indices 1…2.best is the maximum over all processed endpoints; length is only the current valid suffix. The bottom boundary differs from the unmatched openings above it; −1 is not an input character.Sliding windows also preserve contiguity"
+    },
+    {
+      "lang": "en",
+      "link": "http://127.0.0.1:18770/leetcode/84/#step1",
+      "label": "Histogram: a shorter bar settles taller stack entries →",
+      "destination": "02Wait for a shorter barWhen can a height no longer extend to the right? Keep [2,1,2]. At index 0, height 2 has an unknown right boundary, so retain it. At index 1, height 1 cannot belong to a height-2 rectangle. That rectangle ends at 0; there is no bar to its left, so width 1 gives area 2.Retain height 1; retain the new height 2 at index 2 as well. At the end, settle index 2 first: height 1 on its left limits its width to 1. Then settle index 1: all three bars are at least height 1, so width 3 gives area 3. An artificial height −1 at the end settles every nonnegative height. It is not an input bar.We must settle the most recent tall bars before earlier shorter bars. Use a stack: a list whose last item is added or removed first; removing it is a pop. Its pending bars have not yet met a strictly shorter right boundary. Pop repeatedly while the current height is smaller, then append the current index. Stack indices increase and their heights never decrease (ties are allowed): a monotonic stack.After popping index j, let left be the new top index, or −1 when the stack is empty: an excluded position before the input. Scan position i is the excluded right position. All bars between them are at least heights[j], so width is i−left−1 and the covered interval is [left+1,i−1]. Neither boundary is counted. The left position −1 and the final artificial height −1 describe different quantities.What about equal heights? Pop only for a strictly shorter height. For [2,2], the final marker first gives the right bar width 1, then the left bar width 2. An earlier equal bar may limit one candidate, but the oldest equal bar eventually covers the full span, so no answer is lost.A tempting mistake is to choose only the tallest bar. In [2,1,2], its area 2 loses to height 1 across width 3. Multiplying the tallest height by the entire width gives 6, which crosses above the middle bar and does not fit. Height and consecutive width must be valid together."
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "end": "剩余列表（右端为栈顶）：[]剩余份数 freq：空最高非空层 maxfreq = 0频率层：每行从早到晚，右端先取出空"
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "end": "剩余列表（右端为栈顶）：[5, 7]剩余份数 freq：5: 1; 7: 1最高非空层 maxfreq = 1频率层：每行从早到晚，右端先取出group[1]：[5, 7]"
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "end": "剩余列表（右端为栈顶）：[]剩余份数 freq：空最高非空层 maxfreq = 0频率层：每行从早到晚，右端先取出空"
+    },
+    {
+      "lang": "zh",
+      "source": "display/download/automatic/native-fallback exact parity",
+      "host": "linux"
+    },
+    {
+      "lang": "zh",
+      "link": "http://127.0.0.1:18770/leetcode/32/#step1",
+      "label": "最长有效括号：用栈保存未匹配下标 →",
+      "destination": "02为什么能省去工作？如何避免从每个起点重新配对？仍看 \")()())\"：下标 0 的右括号无法配对，之后的合法片段必须从它右边开始。我们保存这种不能跨过的边界下标，以及尚未配对的左括号下标。用一个 Python 列表作为栈：只在列表末尾添加或删除；入栈 push 就是 append，出栈 pop 就是删除并取出最后一项，栈顶就是最后一项。底部先放 −1，表示字符串开始之前的虚拟边界；其上存未配对左括号的下标。遇 ( 就 append(i)；遇 ) 先 pop()，若列表空了，就用当前 i 作为新边界。后缀是以当前下标 i 结尾的连续片段。若弹出后仍有栈顶 t，则 t 后到 i 的每个括号都已成对，长度为 i−t。t 要么是未配对左括号，要么是最近无效右括号；把它包括进来都会破坏合法性，所以不能跨过。比如默认例子在 i=4 之前栈是 [0,3]；右括号配对下标 3，弹出后剩 [0]，片段下标 1…4 长度是 4−0=4。这样一次计算便连起两对，无需重扫下标 1…2。best 是所有已处理右端点的最长长度；length 只是当前右端点的有效后缀。栈底边界和其余未配对左括号的角色不同，不能把 −1 当输入字符。滑动窗口也必须保留连续性"
+    },
+    {
+      "lang": "zh",
+      "link": "http://127.0.0.1:18770/leetcode/84/#step1",
+      "label": "柱状图：用更矮的柱子结算栈顶 →",
+      "destination": "02等到更矮的柱子这一步要回答：一根柱子何时不能再向右延伸？仍看 [2,1,2]。读到下标 0 的高度 2 时，右边还未知，先保留它。读到下标 1 的高度 1 时，2 高的矩形不能包含这根矮柱，所以它的右端只能到 0；左边没有柱子，宽度 1，面积 2。高度 1 继续保留；读到下标 2 的高度 2，也先保留。到数组末尾，先结算下标 2：左边的高度 1 挡住它，宽度 1。再结算下标 1：三个柱子都至少高 1，宽度 3，面积 3。末尾使用一个虚拟高度 −1，保证所有非负高度都被结算；它不是输入中的柱子。需要先处理最近遇到的高柱，再处理更早的矮柱。因此用栈：只在列表末尾放入或取出下标，取出末项叫“弹出”。栈里“待定”的柱子是尚未遇到更矮右边界的柱子。若当前高度更小，反复弹出；否则放入当前下标。这样栈中下标递增，对应高度不下降（允许相等），这就是单调栈。弹出下标 j 后，令 left 为新栈顶下标；空栈时 left=−1，表示输入左侧的排除位置。扫描位置 i 是右侧排除位置。两者之间的柱子都至少高 heights[j]，所以宽度是 i−left−1，覆盖 [left+1,i−1]。left 和 i 都不计入。这个 −1 是左侧位置；末尾的虚拟高度 −1 是另一种量。相等高度怎么办？我们只在“严格更矮”时弹出。对于 [2,2]，末尾先算右柱宽 1，再算左柱宽 2。前一个相等高度会暂时限制一次计算，但最早的同高柱最终会覆盖完整宽度，因此不丢答案。诱人的错误：只选最高柱。[2,1,2] 中最高柱单独的面积是 2，却输给高度 1、宽度 3 的面积 3。反过来，直接用最高高度乘总宽度得到 6，也跨过了中间矮柱，根本放不下。高度与连续宽度必须同时成立。"
+    }
+  ],
+  "errors": [],
+  "relatedErrors": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "location": {
+        "url": "http://127.0.0.1:18770/favicon.ico",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "page": "http://127.0.0.1:18770/leetcode/32/#step1"
+    }
+  ],
+  "fit": [
+    {
+      "lang": "en",
+      "width": 260,
+      "zoom": 1,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 100,
+      "zoom": 2,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 330,
+      "zoom": 1,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 135,
+      "zoom": 2,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 61,
+      "zoom": 1,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 61,
+      "zoom": 2,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 61,
+      "zoom": 1,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "width": 61,
+      "zoom": 2,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 260,
+      "zoom": 1,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 100,
+      "zoom": 2,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 330,
+      "zoom": 1,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 135,
+      "zoom": 2,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 61,
+      "zoom": 1,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 61,
+      "zoom": 2,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 61,
+      "zoom": 1,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "width": 61,
+      "zoom": 2,
+      "label": "B",
+      "text": 10.4000244140625,
+      "padding": 30,
+      "arrowReserve": 16,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    }
+  ],
+  "contrast": [
+    {
+      "fg": "text",
+      "bg": "bg",
+      "ratio": 16.086987125379448
+    },
+    {
+      "fg": "text",
+      "bg": "panel",
+      "ratio": 14.704584598678618
+    },
+    {
+      "fg": "text",
+      "bg": "panel2",
+      "ratio": 13.397069143240783
+    },
+    {
+      "fg": "muted",
+      "bg": "bg",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "fg": "muted",
+      "bg": "panel",
+      "ratio": 7.078851579017443
+    },
+    {
+      "fg": "muted",
+      "bg": "panel2",
+      "ratio": 6.449407898769069
+    },
+    {
+      "fg": "accent",
+      "bg": "bg",
+      "ratio": 13.100679028115637
+    },
+    {
+      "fg": "accent",
+      "bg": "panel",
+      "ratio": 11.974898815275662
+    },
+    {
+      "fg": "accent",
+      "bg": "panel2",
+      "ratio": 10.910104011097095
+    },
+    {
+      "fg": "accent2",
+      "bg": "bg",
+      "ratio": 10.731637051347173
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel",
+      "ratio": 9.809435643476732
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel2",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "cssBytes": 12056,
+  "zoom": "CSS zoom 2 and viewport coverage; physical devices not tested"
+}
