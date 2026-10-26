@@ -28,7 +28,7 @@ text/disabled/focus contrasts, forced colors, reduced motion, long-string wrappi
 and exact source render/download/automatic and native manual clipboard transfer.
 
 ```sh
-PREVIEW_URL=http://127.0.0.1:19854 EVIDENCE_DIR=/tmp/854-bridge-review \
+PREVIEW_URL=http://127.0.0.1:18770 EVIDENCE_DIR=/tmp/854-bridge-review \
   NODE_PATH="$NODE_PATH" node leetcode/854/tests/test_bridge_browser.cjs
 ```
 
@@ -39,3 +39,26 @@ explanatory widget. `bridge-evidence/` records author checks, not independent
 acceptance or production. Initial focus-modality, absent-marker and screenshot
 clip test errors are preserved as diagnostic logs; they were corrected in the
 capture/test code, not concealed as successful runs.
+
+## Re-review candidate 854-bridge-r2-20261026
+
+The checkout already contained the approved bridge implementation at
+`048d217b1313ec068fbf41fe3703f5f3e83dcc90`. This follow-up refreshes the frozen
+candidate and validation; it does not claim a new runtime repair or acceptance.
+Focused checks additionally assert complete action, target, current-string and
+counter labels at every observed snapshot in both languages. Run in order:
+
+```sh
+PREVIEW_URL=http://127.0.0.1:18770 EVIDENCE_DIR=leetcode/854/tests/revision-evidence node leetcode/854/tests/test_bridge_browser.cjs
+python3 -B leetcode/854/tests/test_revision.py
+PREVIEW_URL=http://127.0.0.1:18770 EVIDENCE_DIR=leetcode/854/tests/revision-evidence/regression node leetcode/854/tests/browser.cjs
+python3 -B scripts/register_leetcode_lesson.py 854 --validate-only
+```
+
+`test_revision.py` uses the focused browser receipt, independently recomputes
+assignment costs and target-letter compatibility, executes eight actual Python
+submission/oracle fixtures, checks unchanged source/core/metadata against the
+accepted anchor, detects duplicate localization keys and validates pair shapes.
+It runs the page generator in a temporary subdirectory of the evidence directory
+and compares outputs byte-for-byte without rewriting the candidate. It is a
+focused revision check, not a repeat of the original large solver sweep.

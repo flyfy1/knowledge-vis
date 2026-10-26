@@ -1,0 +1,5933 @@
+{
+  "status": "passed",
+  "scope": "author focused bridge UI and existing-state regression; not independent acceptance",
+  "browser": "156.0.8078.4",
+  "states": [
+    {
+      "row": 0,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "This assignment puts all four positions in one cycle, so following it needs 4−1=3 swaps. Predict first: both destinations need a. If we only exchange the two a destinations, will any letters move? How many actual swaps will that cost? Choose Next snapshot to see."
+    },
+    {
+      "row": 0,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "这份分配把四个位置连成一个环，所以按它还需 4−1=3 次交换。先想一想：两个目的地都需要 a，若只互换两个 a 的目的地，有字母移动吗？实际要花几次交换？按“下一状态”查看。"
+    },
+    {
+      "row": 0,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "This assignment puts all four positions in one cycle, so following it needs 4−1=3 swaps. Predict first: both destinations need a. If we only exchange the two a destinations, will any letters move? How many actual swaps will that cost? Choose Next snapshot to see."
+    },
+    {
+      "row": 1,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "No letters move, so this costs 0 actual swaps. Only 0→3 and 1→0 change to 0→0 and 1→3; the string is still aabc. Position 0 becomes its own cycle, and this assignment needs 4−2=2 swaps. The original answer did not fall from 3 to 2: 3 was the cost of the worse assignment, not a lower bound for the original problem."
+    },
+    {
+      "row": 1,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "没有字母移动，实际花费 0 次交换。只把 0→3、1→0 改成 0→0、1→3；字符串仍是 aabc。位置 0 单独成环，按新分配还需 4−2=2 次。原题答案并没有从 3 变成 2：原先的 3 只是较差分配的代价，不是原题的下界。"
+    },
+    {
+      "row": 1,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "No letters move, so this costs 0 actual swaps. Only 0→3 and 1→0 change to 0→0 and 1→3; the string is still aabc. Position 0 becomes its own cycle, and this assignment needs 4−2=2 swaps. The original answer did not fall from 3 to 2: 3 was the cost of the worse assignment, not a lower bound for the original problem."
+    },
+    {
+      "row": 0,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "This assignment puts all four positions in one cycle, so following it needs 4−1=3 swaps. Predict first: both destinations need a. If we only exchange the two a destinations, will any letters move? How many actual swaps will that cost? Choose Next snapshot to see."
+    },
+    {
+      "row": 1,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "No letters move, so this costs 0 actual swaps. Only 0→3 and 1→0 change to 0→0 and 1→3; the string is still aabc. Position 0 becomes its own cycle, and this assignment needs 4−2=2 swaps. The original answer did not fall from 3 to 2: 3 was the cost of the worse assignment, not a lower bound for the original problem."
+    },
+    {
+      "row": 2,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "This time we really swap a₁ and b at positions 1 and 2: aabc → abac. Each token moves with its assigned destination. We have spent 1 actual swap; position 1 is now correct too. Only the two-position cycle 2,3 remains, requiring 1 more swap for this assignment."
+    },
+    {
+      "row": 2,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "这次真的交换了位置 1、2 的 a₁ 和 b，aabc → abac。两个字母各自带着其分配的目的地移动。实际已花 1 次；位置 1 也正确了，只剩位置 2、3 的二元环，按当前分配还需 1 次。"
+    },
+    {
+      "row": 2,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "This time we really swap a₁ and b at positions 1 and 2: aabc → abac. Each token moves with its assigned destination. We have spent 1 actual swap; position 1 is now correct too. Only the two-position cycle 2,3 remains, requiring 1 more swap for this assignment."
+    },
+    {
+      "row": 1,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "No letters move, so this costs 0 actual swaps. Only 0→3 and 1→0 change to 0→0 and 1→3; the string is still aabc. Position 0 becomes its own cycle, and this assignment needs 4−2=2 swaps. The original answer did not fall from 3 to 2: 3 was the cost of the worse assignment, not a lower bound for the original problem."
+    },
+    {
+      "row": 2,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "This time we really swap a₁ and b at positions 1 and 2: aabc → abac. Each token moves with its assigned destination. We have spent 1 actual swap; position 1 is now correct too. Only the two-position cycle 2,3 remains, requiring 1 more swap for this assignment."
+    },
+    {
+      "row": 3,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "Swap a₁ and c at positions 2 and 3: abac → abca. We spent 2 actual swaps; all four positions are singletons, with 0 swaps left. Initially three positions were wrong and one swap changes at most two positions, so 1 cannot suffice. These two swaps therefore attain the original optimum of 2."
+    },
+    {
+      "row": 3,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "再交换位置 2、3 的 a₁ 和 c，abac → abca。实际共花 2 次；四个位置各自成环，还需 0 次。初始串有三个位置不对，一次交换至多改变两个位置，所以 1 次不够；这两次交换确实达到了原题最优值 2。"
+    },
+    {
+      "row": 3,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "Swap a₁ and c at positions 2 and 3: abac → abca. We spent 2 actual swaps; all four positions are singletons, with 0 swaps left. Initially three positions were wrong and one swap changes at most two positions, so 1 cannot suffice. These two swaps therefore attain the original optimum of 2."
+    },
+    {
+      "row": 2,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "This time we really swap a₁ and b at positions 1 and 2: aabc → abac. Each token moves with its assigned destination. We have spent 1 actual swap; position 1 is now correct too. Only the two-position cycle 2,3 remains, requiring 1 more swap for this assignment."
+    },
+    {
+      "row": 3,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "Swap a₁ and c at positions 2 and 3: abac → abca. We spent 2 actual swaps; all four positions are singletons, with 0 swaps left. Initially three positions were wrong and one swap changes at most two positions, so 1 cannot suffice. These two swaps therefore attain the original optimum of 2."
+    },
+    {
+      "row": 0,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "This assignment puts all four positions in one cycle, so following it needs 4−1=3 swaps. Predict first: both destinations need a. If we only exchange the two a destinations, will any letters move? How many actual swaps will that cost? Choose Next snapshot to see."
+    },
+    {
+      "row": 0,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "这份分配把四个位置连成一个环，所以按它还需 4−1=3 次交换。先想一想：两个目的地都需要 a，若只互换两个 a 的目的地，有字母移动吗？实际要花几次交换？按“下一状态”查看。"
+    },
+    {
+      "row": 0,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "This assignment puts all four positions in one cycle, so following it needs 4−1=3 swaps. Predict first: both destinations need a. If we only exchange the two a destinations, will any letters move? How many actual swaps will that cost? Choose Next snapshot to see."
+    },
+    {
+      "row": 0,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "这份分配把四个位置连成一个环，所以按它还需 4−1=3 次交换。先想一想：两个目的地都需要 a，若只互换两个 a 的目的地，有字母移动吗？实际要花几次交换？按“下一状态”查看。"
+    },
+    {
+      "row": 1,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "没有字母移动，实际花费 0 次交换。只把 0→3、1→0 改成 0→0、1→3；字符串仍是 aabc。位置 0 单独成环，按新分配还需 4−2=2 次。原题答案并没有从 3 变成 2：原先的 3 只是较差分配的代价，不是原题的下界。"
+    },
+    {
+      "row": 1,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "No letters move, so this costs 0 actual swaps. Only 0→3 and 1→0 change to 0→0 and 1→3; the string is still aabc. Position 0 becomes its own cycle, and this assignment needs 4−2=2 swaps. The original answer did not fall from 3 to 2: 3 was the cost of the worse assignment, not a lower bound for the original problem."
+    },
+    {
+      "row": 1,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "没有字母移动，实际花费 0 次交换。只把 0→3、1→0 改成 0→0、1→3；字符串仍是 aabc。位置 0 单独成环，按新分配还需 4−2=2 次。原题答案并没有从 3 变成 2：原先的 3 只是较差分配的代价，不是原题的下界。"
+    },
+    {
+      "row": 0,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "这份分配把四个位置连成一个环，所以按它还需 4−1=3 次交换。先想一想：两个目的地都需要 a，若只互换两个 a 的目的地，有字母移动吗？实际要花几次交换？按“下一状态”查看。"
+    },
+    {
+      "row": 1,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "没有字母移动，实际花费 0 次交换。只把 0→3、1→0 改成 0→0、1→3；字符串仍是 aabc。位置 0 单独成环，按新分配还需 4−2=2 次。原题答案并没有从 3 变成 2：原先的 3 只是较差分配的代价，不是原题的下界。"
+    },
+    {
+      "row": 2,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "这次真的交换了位置 1、2 的 a₁ 和 b，aabc → abac。两个字母各自带着其分配的目的地移动。实际已花 1 次；位置 1 也正确了，只剩位置 2、3 的二元环，按当前分配还需 1 次。"
+    },
+    {
+      "row": 2,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "This time we really swap a₁ and b at positions 1 and 2: aabc → abac. Each token moves with its assigned destination. We have spent 1 actual swap; position 1 is now correct too. Only the two-position cycle 2,3 remains, requiring 1 more swap for this assignment."
+    },
+    {
+      "row": 2,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "这次真的交换了位置 1、2 的 a₁ 和 b，aabc → abac。两个字母各自带着其分配的目的地移动。实际已花 1 次；位置 1 也正确了，只剩位置 2、3 的二元环，按当前分配还需 1 次。"
+    },
+    {
+      "row": 1,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "没有字母移动，实际花费 0 次交换。只把 0→3、1→0 改成 0→0、1→3；字符串仍是 aabc。位置 0 单独成环，按新分配还需 4−2=2 次。原题答案并没有从 3 变成 2：原先的 3 只是较差分配的代价，不是原题的下界。"
+    },
+    {
+      "row": 2,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "这次真的交换了位置 1、2 的 a₁ 和 b，aabc → abac。两个字母各自带着其分配的目的地移动。实际已花 1 次；位置 1 也正确了，只剩位置 2、3 的二元环，按当前分配还需 1 次。"
+    },
+    {
+      "row": 3,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "再交换位置 2、3 的 a₁ 和 c，abac → abca。实际共花 2 次；四个位置各自成环，还需 0 次。初始串有三个位置不对，一次交换至多改变两个位置，所以 1 次不够；这两次交换确实达到了原题最优值 2。"
+    },
+    {
+      "row": 3,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "Swap a₁ and c at positions 2 and 3: abac → abca. We spent 2 actual swaps; all four positions are singletons, with 0 swaps left. Initially three positions were wrong and one swap changes at most two positions, so 1 cannot suffice. These two swaps therefore attain the original optimum of 2."
+    },
+    {
+      "row": 3,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "再交换位置 2、3 的 a₁ 和 c，abac → abca。实际共花 2 次；四个位置各自成环，还需 0 次。初始串有三个位置不对，一次交换至多改变两个位置，所以 1 次不够；这两次交换确实达到了原题最优值 2。"
+    },
+    {
+      "row": 2,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "这次真的交换了位置 1、2 的 a₁ 和 b，aabc → abac。两个字母各自带着其分配的目的地移动。实际已花 1 次；位置 1 也正确了，只剩位置 2、3 的二元环，按当前分配还需 1 次。"
+    },
+    {
+      "row": 3,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "再交换位置 2、3 的 a₁ 和 c，abac → abca。实际共花 2 次；四个位置各自成环，还需 0 次。初始串有三个位置不对，一次交换至多改变两个位置，所以 1 次不够；这两次交换确实达到了原题最优值 2。"
+    },
+    {
+      "row": 0,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "这份分配把四个位置连成一个环，所以按它还需 4−1=3 次交换。先想一想：两个目的地都需要 a，若只互换两个 a 的目的地，有字母移动吗？实际要花几次交换？按“下一状态”查看。"
+    },
+    {
+      "row": 0,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "This assignment puts all four positions in one cycle, so following it needs 4−1=3 swaps. Predict first: both destinations need a. If we only exchange the two a destinations, will any letters move? How many actual swaps will that cost? Choose Next snapshot to see."
+    },
+    {
+      "row": 1,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "No letters move, so this costs 0 actual swaps. Only 0→3 and 1→0 change to 0→0 and 1→3; the string is still aabc. Position 0 becomes its own cycle, and this assignment needs 4−2=2 swaps. The original answer did not fall from 3 to 2: 3 was the cost of the worse assignment, not a lower bound for the original problem."
+    },
+    {
+      "row": 2,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "This time we really swap a₁ and b at positions 1 and 2: aabc → abac. Each token moves with its assigned destination. We have spent 1 actual swap; position 1 is now correct too. Only the two-position cycle 2,3 remains, requiring 1 more swap for this assignment."
+    },
+    {
+      "row": 3,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "Swap a₁ and c at positions 2 and 3: abac → abca. We spent 2 actual swaps; all four positions are singletons, with 0 swaps left. Initially three positions were wrong and one swap changes at most two positions, so 1 cannot suffice. These two swaps therefore attain the original optimum of 2."
+    },
+    {
+      "row": 0,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "This assignment puts all four positions in one cycle, so following it needs 4−1=3 swaps. Predict first: both destinations need a. If we only exchange the two a destinations, will any letters move? How many actual swaps will that cost? Choose Next snapshot to see."
+    },
+    {
+      "row": 1,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "No letters move, so this costs 0 actual swaps. Only 0→3 and 1→0 change to 0→0 and 1→3; the string is still aabc. Position 0 becomes its own cycle, and this assignment needs 4−2=2 swaps. The original answer did not fall from 3 to 2: 3 was the cost of the worse assignment, not a lower bound for the original problem."
+    },
+    {
+      "row": 2,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "This time we really swap a₁ and b at positions 1 and 2: aabc → abac. Each token moves with its assigned destination. We have spent 1 actual swap; position 1 is now correct too. Only the two-position cycle 2,3 remains, requiring 1 more swap for this assignment."
+    },
+    {
+      "row": 3,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "Swap a₁ and c at positions 2 and 3: abac → abca. We spent 2 actual swaps; all four positions are singletons, with 0 swaps left. Initially three positions were wrong and one swap changes at most two positions, so 1 cannot suffice. These two swaps therefore attain the original optimum of 2."
+    },
+    {
+      "row": 0,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "This assignment puts all four positions in one cycle, so following it needs 4−1=3 swaps. Predict first: both destinations need a. If we only exchange the two a destinations, will any letters move? How many actual swaps will that cost? Choose Next snapshot to see."
+    },
+    {
+      "row": 1,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "No letters move, so this costs 0 actual swaps. Only 0→3 and 1→0 change to 0→0 and 1→3; the string is still aabc. Position 0 becomes its own cycle, and this assignment needs 4−2=2 swaps. The original answer did not fall from 3 to 2: 3 was the cost of the worse assignment, not a lower bound for the original problem."
+    },
+    {
+      "row": 2,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "This time we really swap a₁ and b at positions 1 and 2: aabc → abac. Each token moves with its assigned destination. We have spent 1 actual swap; position 1 is now correct too. Only the two-position cycle 2,3 remains, requiring 1 more swap for this assignment."
+    },
+    {
+      "row": 3,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "Swap a₁ and c at positions 2 and 3: abac → abca. We spent 2 actual swaps; all four positions are singletons, with 0 swaps left. Initially three positions were wrong and one swap changes at most two positions, so 1 cannot suffice. These two swaps therefore attain the original optimum of 2."
+    },
+    {
+      "row": 0,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "This assignment puts all four positions in one cycle, so following it needs 4−1=3 swaps. Predict first: both destinations need a. If we only exchange the two a destinations, will any letters move? How many actual swaps will that cost? Choose Next snapshot to see."
+    },
+    {
+      "row": 1,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "No letters move, so this costs 0 actual swaps. Only 0→3 and 1→0 change to 0→0 and 1→3; the string is still aabc. Position 0 becomes its own cycle, and this assignment needs 4−2=2 swaps. The original answer did not fall from 3 to 2: 3 was the cost of the worse assignment, not a lower bound for the original problem."
+    },
+    {
+      "row": 2,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "This time we really swap a₁ and b at positions 1 and 2: aabc → abac. Each token moves with its assigned destination. We have spent 1 actual swap; position 1 is now correct too. Only the two-position cycle 2,3 remains, requiring 1 more swap for this assignment."
+    },
+    {
+      "row": 3,
+      "locale": "en",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "Swap a₁ and c at positions 2 and 3: abac → abca. We spent 2 actual swaps; all four positions are singletons, with 0 swaps left. Initially three positions were wrong and one swap changes at most two positions, so 1 cannot suffice. These two swaps therefore attain the original optimum of 2."
+    },
+    {
+      "row": 0,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "这份分配把四个位置连成一个环，所以按它还需 4−1=3 次交换。先想一想：两个目的地都需要 a，若只互换两个 a 的目的地，有字母移动吗？实际要花几次交换？按“下一状态”查看。"
+    },
+    {
+      "row": 1,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "没有字母移动，实际花费 0 次交换。只把 0→3、1→0 改成 0→0、1→3；字符串仍是 aabc。位置 0 单独成环，按新分配还需 4−2=2 次。原题答案并没有从 3 变成 2：原先的 3 只是较差分配的代价，不是原题的下界。"
+    },
+    {
+      "row": 2,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "这次真的交换了位置 1、2 的 a₁ 和 b，aabc → abac。两个字母各自带着其分配的目的地移动。实际已花 1 次；位置 1 也正确了，只剩位置 2、3 的二元环，按当前分配还需 1 次。"
+    },
+    {
+      "row": 3,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "再交换位置 2、3 的 a₁ 和 c，abac → abca。实际共花 2 次；四个位置各自成环，还需 0 次。初始串有三个位置不对，一次交换至多改变两个位置，所以 1 次不够；这两次交换确实达到了原题最优值 2。"
+    },
+    {
+      "row": 0,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "这份分配把四个位置连成一个环，所以按它还需 4−1=3 次交换。先想一想：两个目的地都需要 a，若只互换两个 a 的目的地，有字母移动吗？实际要花几次交换？按“下一状态”查看。"
+    },
+    {
+      "row": 1,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "没有字母移动，实际花费 0 次交换。只把 0→3、1→0 改成 0→0、1→3；字符串仍是 aabc。位置 0 单独成环，按新分配还需 4−2=2 次。原题答案并没有从 3 变成 2：原先的 3 只是较差分配的代价，不是原题的下界。"
+    },
+    {
+      "row": 2,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "这次真的交换了位置 1、2 的 a₁ 和 b，aabc → abac。两个字母各自带着其分配的目的地移动。实际已花 1 次；位置 1 也正确了，只剩位置 2、3 的二元环，按当前分配还需 1 次。"
+    },
+    {
+      "row": 3,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "再交换位置 2、3 的 a₁ 和 c，abac → abca。实际共花 2 次；四个位置各自成环，还需 0 次。初始串有三个位置不对，一次交换至多改变两个位置，所以 1 次不够；这两次交换确实达到了原题最优值 2。"
+    },
+    {
+      "row": 0,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "这份分配把四个位置连成一个环，所以按它还需 4−1=3 次交换。先想一想：两个目的地都需要 a，若只互换两个 a 的目的地，有字母移动吗？实际要花几次交换？按“下一状态”查看。"
+    },
+    {
+      "row": 1,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "没有字母移动，实际花费 0 次交换。只把 0→3、1→0 改成 0→0、1→3；字符串仍是 aabc。位置 0 单独成环，按新分配还需 4−2=2 次。原题答案并没有从 3 变成 2：原先的 3 只是较差分配的代价，不是原题的下界。"
+    },
+    {
+      "row": 2,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "这次真的交换了位置 1、2 的 a₁ 和 b，aabc → abac。两个字母各自带着其分配的目的地移动。实际已花 1 次；位置 1 也正确了，只剩位置 2、3 的二元环，按当前分配还需 1 次。"
+    },
+    {
+      "row": 3,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "再交换位置 2、3 的 a₁ 和 c，abac → abca。实际共花 2 次；四个位置各自成环，还需 0 次。初始串有三个位置不对，一次交换至多改变两个位置，所以 1 次不够；这两次交换确实达到了原题最优值 2。"
+    },
+    {
+      "row": 0,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "cost": "3",
+      "spent": "0",
+      "explanation": "这份分配把四个位置连成一个环，所以按它还需 4−1=3 次交换。先想一想：两个目的地都需要 a，若只互换两个 a 的目的地，有字母移动吗？实际要花几次交换？按“下一状态”查看。"
+    },
+    {
+      "row": 1,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "没有字母移动，实际花费 0 次交换。只把 0→3、1→0 改成 0→0、1→3；字符串仍是 aabc。位置 0 单独成环，按新分配还需 4−2=2 次。原题答案并没有从 3 变成 2：原先的 3 只是较差分配的代价，不是原题的下界。"
+    },
+    {
+      "row": 2,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "a₁",
+        "c"
+      ],
+      "to": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "cost": "1",
+      "spent": "1",
+      "explanation": "这次真的交换了位置 1、2 的 a₁ 和 b，aabc → abac。两个字母各自带着其分配的目的地移动。实际已花 1 次；位置 1 也正确了，只剩位置 2、3 的二元环，按当前分配还需 1 次。"
+    },
+    {
+      "row": 3,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "b",
+        "c",
+        "a₁"
+      ],
+      "to": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cost": "0",
+      "spent": "2",
+      "explanation": "再交换位置 2、3 的 a₁ 和 c，abac → abca。实际共花 2 次；四个位置各自成环，还需 0 次。初始串有三个位置不对，一次交换至多改变两个位置，所以 1 次不够；这两次交换确实达到了原题最优值 2。"
+    },
+    {
+      "row": 1,
+      "locale": "zh",
+      "tokens": [
+        "a₀",
+        "a₁",
+        "b",
+        "c"
+      ],
+      "to": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "cost": "2",
+      "spent": "0",
+      "explanation": "没有字母移动，实际花费 0 次交换。只把 0→3、1→0 改成 0→0、1→3；字符串仍是 aabc。位置 0 单独成环，按新分配还需 4−2=2 次。原题答案并没有从 3 变成 2：原先的 3 只是较差分配的代价，不是原题的下界。"
+    }
+  ],
+  "layouts": [
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 1,
+      "row": 0,
+      "doc": 320,
+      "viewport": 320,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 302,
+          "scroll": 302
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 162,
+          "scroll": 162
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 226,
+          "scroll": 226
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 163.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 134.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 227.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 1,
+      "row": 1,
+      "doc": 320,
+      "viewport": 320,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 302,
+          "scroll": 302
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 162,
+          "scroll": 162
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 226,
+          "scroll": 226
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 163.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 134.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 227.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 1,
+      "row": 2,
+      "doc": 320,
+      "viewport": 320,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 302,
+          "scroll": 302
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 162,
+          "scroll": 162
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 226,
+          "scroll": 226
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 163.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 134.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 227.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 320,
+      "zoom": 1,
+      "row": 3,
+      "doc": 320,
+      "viewport": 320,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 302,
+          "scroll": 302
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 162,
+          "scroll": 162
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 226,
+          "scroll": 226
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 163.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 134.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 227.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 1,
+      "row": 0,
+      "doc": 390,
+      "viewport": 390,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 372,
+          "scroll": 372
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 162,
+          "scroll": 162
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 226,
+          "scroll": 226
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 163.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 134.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 227.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 1,
+      "row": 1,
+      "doc": 390,
+      "viewport": 390,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 372,
+          "scroll": 372
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 162,
+          "scroll": 162
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 226,
+          "scroll": 226
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 163.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 134.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 227.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 1,
+      "row": 2,
+      "doc": 390,
+      "viewport": 390,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 372,
+          "scroll": 372
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 162,
+          "scroll": 162
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 226,
+          "scroll": 226
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 163.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 134.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 227.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "zoom": 1,
+      "row": 3,
+      "doc": 390,
+      "viewport": 390,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 372,
+          "scroll": 372
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 162,
+          "scroll": 162
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 226,
+          "scroll": 226
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 163.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 134.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 227.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 1,
+      "row": 0,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 950,
+          "scroll": 950
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 139,
+          "scroll": 139
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 232,
+          "scroll": 232
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 169.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 140.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 233.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 1,
+      "row": 1,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 950,
+          "scroll": 950
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 139,
+          "scroll": 139
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 232,
+          "scroll": 232
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 216,
+          "scroll": 216
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 216,
+          "scroll": 216
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 169.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 140.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 233.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 1,
+      "row": 2,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 950,
+          "scroll": 950
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 139,
+          "scroll": 139
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 232,
+          "scroll": 232
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 216,
+          "scroll": 216
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 216,
+          "scroll": 216
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 169.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 140.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 233.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 1,
+      "row": 3,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 950,
+          "scroll": 950
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 139,
+          "scroll": 139
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 232,
+          "scroll": 232
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 216,
+          "scroll": 216
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 216,
+          "scroll": 216
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 169.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 140.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 233.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "row": 0,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 670,
+          "scroll": 670
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 139,
+          "scroll": 139
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 232,
+          "scroll": 232
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 169.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 140.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 233.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "row": 1,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 670,
+          "scroll": 670
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 139,
+          "scroll": 139
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 232,
+          "scroll": 232
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 146,
+          "scroll": 146
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 146,
+          "scroll": 146
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 169.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 140.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 233.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "row": 2,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 670,
+          "scroll": 670
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 139,
+          "scroll": 139
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 232,
+          "scroll": 232
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 146,
+          "scroll": 146
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 146,
+          "scroll": 146
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 169.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 140.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 233.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "zoom": 2,
+      "row": 3,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 670,
+          "scroll": 670
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 139,
+          "scroll": 139
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 232,
+          "scroll": 232
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 146,
+          "scroll": 146
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 146,
+          "scroll": 146
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 169.703125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 140.640625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 233.671875,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 1,
+      "row": 0,
+      "doc": 320,
+      "viewport": 320,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 302,
+          "scroll": 302
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 120,
+          "scroll": 120
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 122.015625,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 1,
+      "row": 1,
+      "doc": 320,
+      "viewport": 320,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 302,
+          "scroll": 302
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 120,
+          "scroll": 120
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 122.015625,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 1,
+      "row": 2,
+      "doc": 320,
+      "viewport": 320,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 302,
+          "scroll": 302
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 120,
+          "scroll": 120
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 122.015625,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 320,
+      "zoom": 1,
+      "row": 3,
+      "doc": 320,
+      "viewport": 320,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 302,
+          "scroll": 302
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 120,
+          "scroll": 120
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 137,
+          "scroll": 137
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 133,
+          "scroll": 133
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 259,
+          "scroll": 259
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 286,
+          "scroll": 286
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 122.015625,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 1,
+      "row": 0,
+      "doc": 390,
+      "viewport": 390,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 372,
+          "scroll": 372
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 120,
+          "scroll": 120
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 122.015625,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 1,
+      "row": 1,
+      "doc": 390,
+      "viewport": 390,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 372,
+          "scroll": 372
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 120,
+          "scroll": 120
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 122.015625,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 1,
+      "row": 2,
+      "doc": 390,
+      "viewport": 390,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 372,
+          "scroll": 372
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 120,
+          "scroll": 120
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 122.015625,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "zoom": 1,
+      "row": 3,
+      "doc": 390,
+      "viewport": 390,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 372,
+          "scroll": 372
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 120,
+          "scroll": 120
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 172,
+          "scroll": 172
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 168,
+          "scroll": 168
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 329,
+          "scroll": 329
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 356,
+          "scroll": 356
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 90.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 122.015625,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "row": 0,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 950,
+          "scroll": 950
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 126,
+          "scroll": 126
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 96.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 96.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 128.015625,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "row": 1,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 950,
+          "scroll": 950
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 126,
+          "scroll": 126
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 216,
+          "scroll": 216
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 216,
+          "scroll": 216
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 96.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 96.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 128.015625,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "row": 2,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 950,
+          "scroll": 950
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 126,
+          "scroll": 126
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 216,
+          "scroll": 216
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 216,
+          "scroll": 216
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 96.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 96.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 128.015625,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "row": 3,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 950,
+          "scroll": 950
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 126,
+          "scroll": 126
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 220,
+          "scroll": 220
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 216,
+          "scroll": 216
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 216,
+          "scroll": 216
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 422,
+          "scroll": 422
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 910,
+          "scroll": 910
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 96.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 96.015625,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 128.015625,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "row": 0,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 670,
+          "scroll": 670
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 126,
+          "scroll": 126
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 96.0078125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 96.0078125,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 128.0078125,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "row": 1,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 670,
+          "scroll": 670
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 126,
+          "scroll": 126
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 146,
+          "scroll": 146
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 146,
+          "scroll": 146
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 96.0078125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 96.0078125,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 128.0078125,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "row": 2,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 670,
+          "scroll": 670
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 126,
+          "scroll": 126
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 146,
+          "scroll": 146
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 146,
+          "scroll": 146
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 96.0078125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 96.0078125,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 128.0078125,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "row": 3,
+      "doc": 1440,
+      "viewport": 1440,
+      "parts": [
+        {
+          "id": "proofBridge",
+          "tag": "DIV",
+          "client": 670,
+          "scroll": 670
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgePrev",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeNext",
+          "tag": "BUTTON",
+          "client": 94,
+          "scroll": 94
+        },
+        {
+          "id": "bridgeReset",
+          "tag": "BUTTON",
+          "client": 126,
+          "scroll": 126
+        },
+        {
+          "id": "bridgeFrame",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "bridgeCurrent",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 150,
+          "scroll": 150
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 146,
+          "scroll": 146
+        },
+        {
+          "id": "",
+          "tag": "LI",
+          "client": 146,
+          "scroll": 146
+        },
+        {
+          "id": "bridgeCycles",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeCost",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "",
+          "tag": "DT",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeSpent",
+          "tag": "DD",
+          "client": 282,
+          "scroll": 282
+        },
+        {
+          "id": "bridgeExplain",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        },
+        {
+          "id": "",
+          "tag": "P",
+          "client": 630,
+          "scroll": 630
+        }
+      ],
+      "controls": [
+        {
+          "id": "bridgePrev",
+          "w": 96.0078125,
+          "h": 48
+        },
+        {
+          "id": "bridgeNext",
+          "w": 96.0078125,
+          "h": 48
+        },
+        {
+          "id": "bridgeReset",
+          "w": 128.0078125,
+          "h": 48
+        }
+      ]
+    }
+  ],
+  "focus": {
+    "width": "3px",
+    "style": "solid",
+    "color": "rgb(255, 180, 84)"
+  },
+  "focusRatio": 9.809435643476732,
+  "disabled": {
+    "disabled": true,
+    "color": "rgb(154, 167, 184)",
+    "bg": "rgb(28, 35, 48)",
+    "ratio": 6.449407898769069
+  },
+  "contrasts": [
+    {
+      "selector": "#bridgeExplain",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": "#bridgeTokens b",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".bridge-marker",
+      "color": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "#bridgeCost",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#bridgePrev",
+      "color": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    }
+  ],
+  "sourceHashes": {
+    "solution.py": "7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068",
+    "python-code.js": "36b61694050f9499e8d02a2078002bba5e295769447d44afdfcc1c48de845238",
+    "core.js": "d33efab4b0e02bc1c47d060cc27c59ba054767da502c4f2955ce9dff2ce47dc0"
+  },
+  "sourceParity": "rendered/mirror/download/automatic clipboard/native fallback exact",
+  "cssBytes": 12963,
+  "forcedColors": true,
+  "reducedMotion": true,
+  "errors": [],
+  "badAssets": [],
+  "external": [],
+  "zoomMethod": "CSS zoom=2, not browser-chrome zoom",
+  "limits": [
+    "physical devices",
+    "screen reader",
+    "public delivery",
+    "human comprehension"
+  ]
+}

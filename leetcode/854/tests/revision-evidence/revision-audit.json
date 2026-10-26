@@ -1,0 +1,72 @@
+{
+  "status": "pass",
+  "scope": "author self-check; independent review pending",
+  "acceptedSourceAnchor": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+  "unchangedHashes": {
+    "solution.py": "7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068",
+    "python-code.js": "36b61694050f9499e8d02a2078002bba5e295769447d44afdfcc1c48de845238",
+    "core.js": "d33efab4b0e02bc1c47d060cc27c59ba054767da502c4f2955ce9dff2ce47dc0",
+    "lesson-entry.json": "7ba6fb81eabb97640a8664d7c97e50ccfde754bfabcf1b7272813c8c968a91bc"
+  },
+  "sourceMirrorExact": true,
+  "generatorParity": true,
+  "localizationPairs": 109,
+  "duplicateKeys": false,
+  "officialPythonInterface": {
+    "lang": "Python3",
+    "langSlug": "python3",
+    "code": "class Solution:\n    def kSimilarity(self, s1: str, s2: str) -> int:\n        "
+  },
+  "executedLanguage": "Python",
+  "pythonFixtures": [
+    {
+      "s1": "aabc",
+      "s2": "abca",
+      "expected": 2,
+      "actual": 2
+    },
+    {
+      "s1": "abac",
+      "s2": "abca",
+      "expected": 1,
+      "actual": 1
+    },
+    {
+      "s1": "abca",
+      "s2": "abca",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "s1": "ab",
+      "s2": "ba",
+      "expected": 1,
+      "actual": 1
+    },
+    {
+      "s1": "abc",
+      "s2": "bca",
+      "expected": 2,
+      "actual": 2
+    },
+    {
+      "s1": "abcb",
+      "s2": "bbca",
+      "expected": 1,
+      "actual": 1
+    },
+    {
+      "s1": "abac",
+      "s2": "caba",
+      "expected": 2,
+      "actual": 2
+    },
+    {
+      "s1": "abccba",
+      "s2": "bcabac",
+      "expected": 3,
+      "actual": 3
+    }
+  ],
+  "renderedAssignmentChecks": 71
+}

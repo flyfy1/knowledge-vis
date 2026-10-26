@@ -1,6 +1,6 @@
 'use strict';
 const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),os=require('node:os');
-const root=path.resolve(__dirname,'..'),out=process.env.EVIDENCE_DIR||path.join(__dirname,'bridge-evidence'),base=process.env.PREVIEW_URL||'http://127.0.0.1:19854';fs.mkdirSync(out,{recursive:true});
+const root=path.resolve(__dirname,'..'),out=process.env.EVIDENCE_DIR||path.join(__dirname,'bridge-evidence'),base=process.env.PREVIEW_URL||'http://127.0.0.1:18770';fs.mkdirSync(out,{recursive:true});
 const source=fs.readFileSync(path.join(root,'solution.py'),'utf8');
 const expected=[{tokens:['a₀','a₁','b','c'],to:[3,0,1,2],cost:'3',spent:'0',cycles:'(0 3 2 1)'},{tokens:['a₀','a₁','b','c'],to:[0,3,1,2],cost:'2',spent:'0',cycles:'(0)(1 3 2)'},{tokens:['a₀','b','a₁','c'],to:[0,1,3,2],cost:'1',spent:'1',cycles:'(0)(1)(2 3)'},{tokens:['a₀','b','c','a₁'],to:[0,1,2,3],cost:'0',spent:'2',cycles:'(0)(1)(2)(3)'}];
 (async()=>{
@@ -22,6 +22,11 @@ const expected=[{tokens:['a₀','a₁','b','c'],to:[3,0,1,2],cost:'3',spent:'0',
  async function unrelated(){return page.evaluate(()=>({hand, preset,at,selected,revealed,copyState,manual:[...document.querySelectorAll('#manualHistory li')].map(e=>e.textContent),source:document.querySelector('#pythonCode').textContent,sourceOpen:document.querySelector('#sourceDetails').open}));}
  async function snap(row,l){
   const e=expected[row];assert.deepEqual(await page.locator('#bridgeTokens b').allTextContents(),e.tokens);assert.equal(await text('bridgeCost'),e.cost);assert.equal(await text('bridgeSpent'),e.spent);assert((await text('bridgeCycles')).includes(e.cycles));assert((await text('bridgeFrame')).includes(`${row+1}/4`));
+  const actions=l==='en'?['Start with an arbitrary assignment','Reassign only the two a destinations','Swap positions 1 and 2','Swap positions 2 and 3']:['从一份任意分配开始','只改两个 a 的目的地','交换位置 1、2','交换位置 2、3'];
+  assert.equal(await text('bridgeFrame'),`${l==='en'?'Snapshot':'状态'} ${row+1}/4 · ${actions[row]}`);
+  assert.equal(await page.locator('[data-i18n=bridgeTarget]').textContent(),l==='en'?'Fixed target: abca':'固定目标：abca');
+  assert.equal(await text('bridgeCurrent'),(l==='en'?'Current string: ':'当前字符串：')+e.tokens.map(x=>x[0]).join(''));
+  assert.deepEqual(await page.locator('.bridge-counters dt').allTextContents(),l==='en'?['Swaps needed for this assignment','Actual swaps so far']:['按当前分配还需交换','已做实际交换']);
   assert.deepEqual(await page.locator('#bridgeTokens li>span:nth-child(3)').allTextContents(),e.to.map((j,i)=>`${l==='en'?'Destination':'目的地'} ${i} → ${j}`));
   assert.equal(await page.locator('#bridgePrev').isDisabled(),row===0);assert.equal(await page.locator('#bridgeNext').isDisabled(),row===3);
   assert.equal(await page.locator('.bridge-marker').count(),row===0?0:2);

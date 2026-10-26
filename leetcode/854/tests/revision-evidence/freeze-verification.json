@@ -1,0 +1,6 @@
+{
+  "status": "pass",
+  "candidate": "854-bridge-r2-20261026",
+  "filesVerified": 127,
+  "initialCheck": "An initial check was started before the asynchronous freeze command completed and read the historical r1 manifest; it failed on BRIEF.md as expected for that stale manifest. Repeated after freeze completed; all current hashes match. No runtime defect."
+}
