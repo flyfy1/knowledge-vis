@@ -31,8 +31,10 @@ capacitor charging/discharging is signed current, not an invented voltage/ripple
 
 ## Integrated edition provenance
 
-Use one shared static header disclosure per `../specs/visual-page-provenance.md`, with source24a3d727246b05697d6b2cb65125cd9fc771a0a0, the flow revision scope and retained original contributors. Do not also stamp the eyebrow. The original quantitative model remains unchanged; future Claude comparison must retain independent source/routes and the same bounded model.
+Use one shared static header disclosure per `../specs/visual-page-provenance.md`, with original flow source24a3d727246b05697d6b2cb65125cd9fc771a0a0 retained, the flow revision scope and retained original contributors. Do not also stamp the eyebrow. The original quantitative model remains unchanged; future Claude comparison must retain independent source/routes and the same bounded model.
 
 ## Capacitor rate bridge — 2026-10-26
 
 Current incremental contract: [atlas-capacitor-rate](../specs/atlas-capacitor-rate.md). The prior flow revision's unchanged pulse/model statement is historical: this increment adds only a view over the latest capacitor interval and the graph connection. model.js, pulse recurrence, shared plot(), inductor and Buck/Boost remain unchanged. Relative Δv vs absoluteV, fixed0.5ms/±0.12V axes, signed200V/s and discontinuity conditions are mandatory; reset has no interval. Preserve all native buttons/limits/locale, do not introduce storage or claim reload retains pulse sequence. Update visible source revision while retaining24a3d727 as original flow contribution.
+
+Current capacitor-rate implementation source:4791138bb6bf0e89dbb665c9268784e63b702216. The static current edition links this accepted increment and keeps the original flow source.
