@@ -1,0 +1,15 @@
+# #1092 ordinary native recovery after reviewed adoption
+
+One separately authorized invocation of the unchanged launcher returned **runner2481309**. Fresh #1092 **fix** run `1092-fix-ed3a9cb6052d` started at **2026-10-26 15:10:59.031888 UTC**, on adopted/pushed candidate `b1c876fa0209e93f4bae8c0253b2928d825f419f`. It has new session `01a178c3-c9aa-78e1-9362-5cce0fcc0bb8`; native **2481710** is a child of node2481703, itself a child of runner2481309. Native cwd and output path bind this checkout and exact new run.
+
+At15:10:46 UTC, preflight held state/checkout/release locks and verified the completed adoption receipt, clean exact HEAD/expected_head, exact pushed campaign branch, frozen post-adoption state/ledger, no worker/active lane/STOP/preview listener, unchanged policy/launcher, full984 queue and **19 actual digest-qualified eligible lessons**, pendingnull. It durably saved before-state, ledger, adoption receipt, HEAD,535 existing runs and policy identities in exclusive external directory `/home/songyy/projects/leetcode-hard-campaign-state-20261018/1092-adopted-native-recovery-20261026/`.
+
+Locks were released before exactly one `python3 STATE/launch.py --continuous --max-rounds 6`. Its configured gpt-6.1-sol/medium, full984 queue, preview18770 and publication every20 remain unchanged. No manual phase/state/acceptance edit, prompt/model change, reset, extra lane or publication bypass occurred.
+
+Separate verification at15:12:11 UTC passed13 checks. All535 old runs remain an exact prefix; every problem/history entry and queue remain equal; only ordinary runner fields changed (status/current/error/updated_at/runs). Ledger bytes remain unchanged. Fresh thread/turn and20 real events include tool activity beyond lifecycle startup. R1 is still open pending ordinary fix and independent review. No STOP exists.
+
+This is runtime/process/session proof, not acceptance, lasting provider capacity, original Linux156 rendering success or publication. The external Mac97.5 review remains supporting evidence only. A later native independent reviewer alone can close R1 and permit registration; eventual normal twentieth-item publication retains its configured gates. No public403 workaround, extra public probe, alternate client or security change was attempted. No new production write, push or local commit was performed by this operator.
+
+Current handles for continued observation: runner2481309, native2481710, run `1092-fix-ed3a9cb6052d`, state `STATE/progress.json`, run events `STATE/runs/1092-fix-ed3a9cb6052d/events.jsonl`. Observe these same handles; do not relaunch on a timeout or stale snapshot. A new terminal failure must retain its actual logs/partials and stop for assessment without automatic retry.
+
+The companion directory contains the bounded dispatch/verification sources, exact external receipt and launcher stdout/stderr, compressed before/after progress and ledger, new event snapshot, verification evidence and checksum manifest. Remote copied-file hashes were rechecked locally. The adoption archive remains separate and unchanged.
