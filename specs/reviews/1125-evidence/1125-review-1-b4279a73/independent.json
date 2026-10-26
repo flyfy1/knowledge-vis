@@ -1,0 +1,43 @@
+{
+  "freshInput": {
+    "req": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "people": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "a",
+        "c"
+      ],
+      [
+        "b",
+        "d"
+      ],
+      [
+        "c"
+      ]
+    ]
+  },
+  "prediction": [
+    1,
+    2
+  ],
+  "oracleMinimumTeams": [
+    [
+      1,
+      2
+    ]
+  ],
+  "canonicalResult": [
+    1,
+    2
+  ],
+  "noMutation": true,
+  "canonicalSha256": "7a2969e4a224a412888915821df9d0b0f56a50aead6a7929cb3a45f563bbe6e0"
+}
