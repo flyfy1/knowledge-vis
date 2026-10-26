@@ -1,0 +1,23 @@
+{
+  "status": "frozen-refresh-awaiting-independent-review",
+  "operator_sha256": "22236e0fb21250ad29b5a33c4784ff347aecf9de277f8dac924c389e2e45cf42",
+  "pins_sha256": "2b6a396c630e912348d480ad295674745f73e672ca1c7007e1f79a78fbad041d",
+  "testsPassed": 6,
+  "pi_mutation": false,
+  "object_fetch_performed": false,
+  "dispatch_performed": false,
+  "files": {
+    "README.md": "51dd855216bbdb4d13279da63bc64999b651ddef8670c53fbe9a695e7a14e507",
+    "capture-synced.json": "167bf24632e55ffe9831d28be7385267c4e0c5eaa48366bf0ea3d956d2cb3878",
+    "capture-synced.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "capture.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "capture.stderr": "a7ed4ca496c34d32ce24e0d6908da89f247f6d3d6a8791fc021d2b9cb8ce4317",
+    "operate.py": "22236e0fb21250ad29b5a33c4784ff347aecf9de277f8dac924c389e2e45cf42",
+    "payload-manifest.json": "35cb72e2f7e5003a9c33865d57ec678a190f61392c36f2ebd95962e64e53535d",
+    "pins-central-only.diff": "482ba378a0db78bb2d25b30d27e48e659c1e456da1a426605ff8dd1ea005e3d4",
+    "pins-only.diff": "d898371c64a09edeba45a5cb794050facf5213c76e20f519bcab02a5ace36008",
+    "pins.json": "2b6a396c630e912348d480ad295674745f73e672ca1c7007e1f79a78fbad041d",
+    "test_refresh.py": "9d3f4f3b5ffb42a1707a8e36cf09968e85c3674060657d44d649037ea978bb75",
+    "tests.log": "0efe324c6f1db99843d2f17e654733562d14c8985b2471ba33a2eba2b9556929"
+  }
+}

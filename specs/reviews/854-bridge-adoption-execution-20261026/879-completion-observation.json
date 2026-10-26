@@ -1,0 +1,111 @@
+{
+  "at": "2026-10-25T23:59:43.276323+00:00",
+  "entry": {
+    "status": "accepted_local",
+    "rounds": 1,
+    "new": true,
+    "phase": "done",
+    "reviews": [
+      {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          3,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/879-review-1-1363ac59.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Fresh canonical Python case returned predicted 5; reuse counterexample returned 0.",
+          "Bilingual controls, rewind, prediction, keyboard, source parity and clipboard fallback passed.",
+          "320/390/desktop and 200% CSS zoom screenshots inspected.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "92.5/100. No required findings. Native browser-chrome zoom and physical devices remain unverified; publication and LeetCode submission were not performed.",
+        "run_id": "879-review-f819a846b820",
+        "candidate": "453476e12d04ae75d14b149fa26e3446cdb088ca",
+        "candidate_sha256": "f081055eac5eecdd80086af6fa7825ad9cc6e7829f5cda5f4a128f36bb45a739",
+        "weighted_score": 92.5,
+        "round": 1,
+        "commit": "9a59f5dd278135143671c0aa1d87535d5da3d917"
+      }
+    ],
+    "author_runs": [
+      "879-author-ce034589b597"
+    ],
+    "prior_report": "specs/reviews/879-review-1-1363ac59.md",
+    "candidate": "453476e12d04ae75d14b149fa26e3446cdb088ca",
+    "registration_commit": "7d87ea225d4409c386bf72f105e01819811a607f",
+    "accepted_at": "2026-10-25T23:56:24.011809+00:00"
+  },
+  "runs": [
+    {
+      "id": "879-author-ce034589b597",
+      "problem_id": "879",
+      "role": "author",
+      "started_at": "2026-10-25T23:37:31.121338+00:00",
+      "status": "completed",
+      "candidate": "3f86d6a43303d4dedcc1f9e2aafe1449e8fd43af",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/879-author-ce034589b597",
+      "session_ids": [
+        "01a1756d-2f73-7060-8df8-f3bacfc08a6b"
+      ],
+      "finished_at": "2026-10-25T23:46:08.219133+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Completed bilingual interactive lesson in leetcode/879/. Official Python interface verified; 10,235 Python cases, 38,141 trace frames, browser checks, source parity, and metadata preflight passed. Candidate hashes and self-check evidence saved under tests/. Independent review remains pending; no registration or deployment performed."
+      }
+    },
+    {
+      "id": "879-review-f819a846b820",
+      "problem_id": "879",
+      "role": "review",
+      "started_at": "2026-10-25T23:51:55.033227+00:00",
+      "status": "completed",
+      "candidate": "453476e12d04ae75d14b149fa26e3446cdb088ca",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/879-review-f819a846b820",
+      "session_ids": [
+        "01a1757a-5dad-7a63-ab9f-51fad99ac40f"
+      ],
+      "finished_at": "2026-10-25T23:56:11.982126+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          3,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/879-review-1-1363ac59.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Fresh canonical Python case returned predicted 5; reuse counterexample returned 0.",
+          "Bilingual controls, rewind, prediction, keyboard, source parity and clipboard fallback passed.",
+          "320/390/desktop and 200% CSS zoom screenshots inspected.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "92.5/100. No required findings. Native browser-chrome zoom and physical devices remain unverified; publication and LeetCode submission were not performed."
+      }
+    }
+  ],
+  "current": {
+    "problem_id": "882",
+    "stage": "author",
+    "started_at": "2026-10-25T23:56:28.012210+00:00",
+    "run_id": "882-author-ca9a8c1069d9"
+  },
+  "head": "7d87ea225d4409c386bf72f105e01819811a607f",
+  "candidate_lesson_tree": "94508458e01d376637b90ca76e11d72448ba9a98",
+  "head_lesson_tree": "94508458e01d376637b90ca76e11d72448ba9a98",
+  "canonical_sha256": "aad5ddb06d214dd9b30704144d20121025a0ee528e6e37c9181fd6631df78686",
+  "report_sha256": "dacbe45e72ed3eec4c0c2b218ea9cdb47786c8e40dde7286f5f9ba5a33e97ebb",
+  "commits_since_frozen": "7d87ea225d4409c386bf72f105e01819811a607f Register independently reviewed LeetCode 879 locally\n9a59f5dd278135143671c0aa1d87535d5da3d917 Record independent review of LeetCode 879 round 1\n",
+  "changed_paths_since_frozen": "M\tCONCEPT-MAP.md\nM\tleetcode/index.html\nM\tleetcode/problems.config.js\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/asset-diagnostics.json\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/browser-result.json\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/cold-desktop.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/cold-revealed.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/controls-1440-en.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/controls-1440-zh.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/controls-320-en.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/controls-320-zh.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/controls-390-en.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/controls-390-zh.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/controls-736-en.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/controls-736-zh.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/core-results.json\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/formula-320-en.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/formula-320-zh.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/heading-390-en.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/heading-390-zh.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/long-select-320-en.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/long-select-320-zh.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/python-results.json\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/quiz-390-en.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/quiz-390-zh.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/rendered-styles.json\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/state-1440-en.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/state-1440-zh.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/state-320-en.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/state-320-zh.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/state-390-en.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/state-390-zh.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/state-736-en.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/state-736-zh.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/zoom-200-en.png\nA\tspecs/reviews/879-evidence/879-review-1-1363ac59/zoom-200-zh.png\nA\tspecs/reviews/879-review-1-1363ac59.md\n"
+}

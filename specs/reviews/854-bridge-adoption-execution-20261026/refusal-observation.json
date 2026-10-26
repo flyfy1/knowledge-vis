@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-25T23:59:10.004349+00:00",
+  "head": "7d87ea225d4409c386bf72f105e01819811a607f",
+  "expected_head": "7d87ea225d4409c386bf72f105e01819811a607f",
+  "remote_head": "453476e12d04ae75d14b149fa26e3446cdb088ca\trefs/heads/codex/all-hard-20261018",
+  "current": {
+    "problem_id": "882",
+    "stage": "author",
+    "started_at": "2026-10-25T23:56:28.012210+00:00",
+    "run_id": "882-author-ca9a8c1069d9"
+  },
+  "runner": 1965599,
+  "native": {
+    "1972260": {
+      "args": [
+        "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex",
+        "exec",
+        "-m",
+        "gpt-6.1-sol",
+        "-c",
+        "model_reasoning_effort=\"medium\"",
+        "-c",
+        "approval_policy=\"never\"",
+        "--sandbox",
+        "danger-full-access",
+        "--json",
+        "-o",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/882-author-ca9a8c1069d9/final.json",
+        "--output-schema",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/882-author-ca9a8c1069d9/schema.json",
+        "-C",
+        "/home/songyy/projects/leetcode-hard-campaign-20261018",
+        "-"
+      ],
+      "ppid": 1972253,
+      "cwd": "/home/songyy/projects/leetcode-hard-campaign-20261018"
+    }
+  },
+  "thread_events": [
+    {
+      "type": "thread.started",
+      "thread_id": "01a1757e-8740-7cc1-905a-795be6b769f3"
+    }
+  ],
+  "turn_started": true,
+  "stop_exists": false,
+  "operator_receipt_exists": false,
+  "dispatch_directory_exists": false,
+  "854_entry": {
+    "status": "accepted_local",
+    "rounds": 1,
+    "new": true,
+    "phase": "done",
+    "reviews": [
+      {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          3,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/854-review-1-9601268b.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Canonical Python verified against independent examples and 4,653 oracle comparisons.",
+          "Bilingual interactions, layouts, keyboard, contrast and exact source transfer passed.",
+          "Non-mutating metadata preflight passed."
+        ],
+        "detail": "92.5/100. No required fixes. Limitations and optional teaching advisory recorded; publication and LeetCode submission not claimed.",
+        "run_id": "854-review-0add7000fba0",
+        "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+        "candidate_sha256": "71998716fbdb4babb1e84235c7555fdd31b611f0c2c10878976176e4fce79a14",
+        "weighted_score": 92.5,
+        "round": 1,
+        "commit": "440d49b6e7e0ff916278062e20f63860e65a170c"
+      }
+    ],
+    "author_runs": [
+      "854-author-679ce856a357"
+    ],
+    "prior_report": "specs/reviews/854-review-1-9601268b.md",
+    "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+    "registration_commit": "5d9cf8fc351f19c9e747b8c5e424858b2cee6e3b",
+    "accepted_at": "2026-10-25T22:09:21.819991+00:00"
+  }
+}

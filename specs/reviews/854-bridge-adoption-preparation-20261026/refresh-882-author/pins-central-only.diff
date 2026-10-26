@@ -1,0 +1,26 @@
+--- final-ready/pins.json
++++ refresh-882-author/pins.json
+@@ -45,16 +45,16 @@
+   "previous_owner": "import9961000-only-20261026-641c280f",
+   "previous_receipt_sha256": "483b6b7723bd84fa174afe8f7e58051653ebe56b2e793ad1694f5f4a4f7e9cbe",
+   "central": {
+-    "head": "453476e12d04ae75d14b149fa26e3446cdb088ca",
++    "head": "7d87ea225d4409c386bf72f105e01819811a607f",
+     "current": {
+-      "problem_id": "879",
+-      "stage": "review",
+-      "started_at": "2026-10-25T23:51:55.033227+00:00",
+-      "run_id": "879-review-f819a846b820"
++      "problem_id": "882",
++      "stage": "author",
++      "started_at": "2026-10-25T23:56:28.012210+00:00",
++      "run_id": "882-author-ca9a8c1069d9"
+     },
+     "runner_pid": 1965599,
+-    "native_pid": 1965929,
+-    "session_id": "01a1757a-5dad-7a63-ab9f-51fad99ac40f"
++    "native_pid": 1972260,
++    "session_id": "01a1757e-8740-7cc1-905a-795be6b769f3"
+   },
+   "release": {
+     "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",

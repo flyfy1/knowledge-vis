@@ -1,0 +1,11 @@
+--- final-ready/operate.py
++++ refresh-882-author/operate.py
+@@ -15,7 +15,7 @@
+ 
+ OWNER='854-bridge-adoption-20261026-185d4ba0'
+ DISPATCH='root-reviewed-854-bridge-adoption-20261026'
+-PINS_SHA='94098e2f6d632acbd189d59fb3b522968ce80a914285c213ce478a59bc2a05ff'  # Frozen proposal: independent final review and separate root dispatch required.
++PINS_SHA='2b6a396c630e912348d480ad295674745f73e672ca1c7007e1f79a78fbad041d'  # Frozen proposal: independent final review and separate root dispatch required.
+ CAMPAIGN_HELPER_SHA='f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698'
+ REOPEN_HELPER_SHA='a268466fe6101841437c730e0e7448961be4637ee60d9fe4a760c0ea6fca3424'
+ PREVIOUS_OWNER='import9961000-only-20261026-641c280f'  # Actual completed import; raw receipt hash is pinned.
