@@ -1,0 +1,14 @@
+{
+  "source": "https://leetcode.com/graphql/",
+  "query": "query { question(titleSlug: \"shortest-common-supersequence\") { questionFrontendId difficulty isPaidOnly } }",
+  "verifiedAt": "2026-10-26T08:27:05.424440+00:00",
+  "response": {
+    "data": {
+      "question": {
+        "questionFrontendId": "1092",
+        "difficulty": "Hard",
+        "isPaidOnly": false
+      }
+    }
+  }
+}
