@@ -4671,6 +4671,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(log n) time and get calls; O(1) auxiliary space"
   },
   {
+    "id": 1096,
+    "title": {
+      "zh": "花括号展开 II",
+      "en": "Brace Expansion II"
+    },
+    "desc": {
+      "zh": "从手算配对到嵌套解析，分清并集与拼接，保留每层自己的状态。",
+      "en": "Derive scoped parsing from hand pairings; separate union from concatenation."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "递归解析",
+        "en": "Recursive parsing"
+      },
+      {
+        "zh": "集合",
+        "en": "Sets"
+      }
+    ],
+    "path": "1096/",
+    "leetcodeUrl": "https://leetcode.com/problems/brace-expansion-ii/",
+    "language": "Python",
+    "complexity": "O(n²W² + nK log K) expected time; O(n²W) space including output, W≥1 maximum intermediate set size, K final word count"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

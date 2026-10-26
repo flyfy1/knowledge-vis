@@ -2101,3 +2101,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Directional binary search | `leetcode/1095/#step3` | Search increasing then decreasing sides to return the smallest index. |
 
 <!-- /leetcode-1095-campaign -->
+
+
+<!-- leetcode-1096-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Scoped union and concatenation | `leetcode/1096/#step2` | Keep completed alternatives separate from the current product. |
+| Recursive set parser | `leetcode/1096/#step3` | Return each brace group as an atom while preserving parent state. |
+
+<!-- /leetcode-1096-campaign -->
