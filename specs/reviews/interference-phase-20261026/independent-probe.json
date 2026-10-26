@@ -1,0 +1,29 @@
+{
+  "verdict": "scientific and ordinary callback checks pass",
+  "cases": 126,
+  "maxAmplitudeOracleError": 9.325873406851315e-15,
+  "nearCancellation": {
+    "delta": -3.204424506661589,
+    "wrapped": 0.49,
+    "amp": 0.06282151815625656,
+    "cls": "mid"
+  },
+  "checks": [
+    "signed mirror at pi/2",
+    "nonzero just outside classification tolerance",
+    "invalid inputs",
+    "165-sample endpoint-inclusive two-period prediction",
+    "phase/P edits preserve t and pause",
+    "snapshot only px/py/phi/t, foreign field retained",
+    "invalid snapshot and denied history fallback",
+    "yAt/ySum source unchanged",
+    "300 actual phase-input previews: zero history writes, change commits latest",
+    "300 actual canvas-pointer previews: zero history writes, pointerup commits latest",
+    "native preset commits latest"
+  ],
+  "notTested": [
+    "native history rate limiting",
+    "browser/pixel/keyboard/lifecycle event delivery"
+  ],
+  "sourceSHA256": "c3434e26a806c11625bf2d627dff485cb05741234d3dd40a20aafcbbbe136d47"
+}

@@ -271,3 +271,7 @@ Finite floating point is a model-display boundary: adjacent tiny spans pass inde
 ## Same-phase potential/force/energy connection — 2026-10-26
 
 [Contract](../specs/atlas-spring-potential.md), [bounded verification](../specs/reviews/atlas-spring-potential-20261026/verification.md). Reuses original work view/model/clock; U–x point, negative slope/force and instantaneous energy gap share b. Adds existing oscillation concept to work trail, no graph growth. See linked evidence for publication and real-device limits.
+
+## Phase difference and interference — 2026-10-26
+
+[Contract](../specs/interference-phase.md), [verification](../specs/reviews/interference-phase-20261026/verification.md). Existing interference course gains a same-point paused phase comparison and strict cancellation correction; one canonical concept/application link, no new simulator or route.39/51/14 is the new bounded graph snapshot; previous snapshots remain historical. Publication and public-access limits are recorded separately.

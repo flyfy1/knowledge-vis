@@ -1,0 +1,83 @@
+{
+  "url": "http://127.0.0.1:18941/interference/#step3",
+  "text": "Step 3\n\nKeep the same point and time; change only relative phase\n\nPhase marks progress through a cycle. The source phase difference φ is measured in radians (one turn is 2π). Editing φ pauses and keeps the current P and time t; all traces are immediately recalculated. Arrival phase also includes propagation: δ=φ−2π(r₂−r₁)/λ. Here d=r₂−r₁ is signed. The absolute path difference used for the earlier in-phase cases cannot replace it at general φ.\n\nP's x position (arrow keys work)\nP's y position (arrow keys work)\nSource phase φ/π (0–2; editing pauses)\n0π rad\n\nPredict: keep P equidistant and compare φ=0, 0.5π, π, 2π. The cycle amplitudes are 2A, √2A, 0, 2A. Then move P to either side and compare the signed propagation distance. Editing φ does not move P or advance the clock.\n\nPhase difference φ:\nφ = 0 (in-phase start)\nφ = π (opposite start)\nReset Step3 & pause\n▶ Play\n\nSame P=(0, 2.50), same time t≈0s: y₁≈0.29A, y₂≈0.29A, y₁+y₂≈0.59A. Instantaneous displacement is not cycle amplitude.\n\nTraces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.\n\nDirected path difference d=0 (0λ); source phase φ=0π rad, arrival phase δ≈0π rad. Cycle amplitude B=2A|cos(δ/2)|≈2A.\n\nReinforcement: the two waves arrive at P in step, rising and falling together; the combined amplitude is twice a single wave's.\n\nModel: linear sinusoidal waves of the same frequency, equal received amplitudes and fixed phase difference (coherence). A=1 is normalized displacement and T=4s is a teaching setting. Spreading, attenuation, reflection and dispersion are omitted. Rings illustrate crest positions, not a fluid solution. Still points use only floating-point-scale tolerance; near cancellation remains nonzero and tiny amplitudes are not rounded to an exact zero.\n\nAmplitude is not intensity\nBack to the atlas: superposition & interference →\nOpenStax16.5 · add waves at the same point ↗",
+  "controls": [
+    {
+      "tag": "INPUT",
+      "text": "",
+      "value": "0",
+      "aria": null,
+      "min": "-7.5",
+      "max": "7.5",
+      "step": "0.1",
+      "disabled": false,
+      "labels": [
+        "P's x position (arrow keys work)"
+      ]
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "value": "2.5",
+      "aria": null,
+      "min": "-4.5",
+      "max": "4.5",
+      "step": "0.1",
+      "disabled": false,
+      "labels": [
+        "P's y position (arrow keys work)"
+      ]
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "value": "0",
+      "aria": null,
+      "min": "0",
+      "max": "2",
+      "step": "0.005",
+      "disabled": false,
+      "labels": [
+        "Source phase φ/π (0–2; editing pauses)"
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "φ = 0 (in-phase start)",
+      "value": "",
+      "aria": null,
+      "disabled": false,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "φ = π (opposite start)",
+      "value": "",
+      "aria": null,
+      "disabled": false,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Reset Step3 & pause",
+      "value": "",
+      "aria": null,
+      "disabled": false,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "▶ Play",
+      "value": "",
+      "aria": null,
+      "disabled": false,
+      "labels": []
+    },
+    {
+      "tag": "SUMMARY",
+      "text": "Amplitude is not intensity",
+      "aria": null,
+      "labels": []
+    }
+  ]
+}

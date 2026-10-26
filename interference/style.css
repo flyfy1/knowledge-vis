@@ -192,3 +192,16 @@ canvas.dragc:active{cursor:grabbing}
   .cards3{grid-template-columns:1fr}
 }
 @media(max-width:640px){.site-head h1{font-size:34px}.btn.big{padding:12px 15px}.stage{padding:6px}.step{scroll-margin-top:68px}}
+
+/* Scoped same-state phase comparison; original course tokens and controls. */
+.phase-control { display:grid; gap:8px; margin:16px 0; }
+.phase-control output { color:var(--accent); font-variant-numeric:tabular-nums; }
+#step3 input, #step3 button, #phase-energy summary, .phase-links a { min-height:48px; }
+#step3 input { width:100%; }
+#step3 { overflow-wrap:anywhere; }
+#step3 :focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+#phase-energy { margin:16px 0; padding:16px; border:1px solid var(--line); border-radius:12px; }
+#phase-energy summary { cursor:pointer; }
+.phase-links { display:flex; flex-wrap:wrap; gap:12px; }
+.phase-links a, #phase-energy a { color:var(--accent); display:inline-flex; align-items:center; min-height:48px; }
+@media(max-width:500px){.site-head{flex-wrap:wrap}.head-main{min-width:0;max-width:100%}}

@@ -1,0 +1,433 @@
+[
+  {
+    "stage": "EN phase 0pi",
+    "text": "Step 3\n\nKeep the same point and time; change only relative phase\n\nPhase marks progress through a cycle. The source phase difference φ is measured in radians (one turn is 2π). Editing φ pauses and keeps the current P and time t; all traces are immediately recalculated. Arrival phase also includes propagation: δ=φ−2π(r₂−r₁)/λ. Here d=r₂−r₁ is signed. The absolute path difference used for the earlier in-phase cases cannot replace it at general φ.\n\nP's x position (arrow keys work)\nP's y position (arrow keys work)\nSource phase φ/π (0–2; editing pauses)\n0π rad\n\nPredict: keep P equidistant and compare φ=0, 0.5π, π, 2π. The cycle amplitudes are 2A, √2A, 0, 2A. Then move P to either side and compare the signed propagation distance. Editing φ does not move P or advance the clock.\n\nPhase difference φ:\nφ = 0 (in-phase start)\nφ = π (opposite start)\nReset Step3 & pause\n▶ Play\n\nSame P=(0, 2.50), same time t≈0.35s: y₁≈0.75A, y₂≈0.75A, y₁+y₂≈1.50A. Instantaneous displacement is not cycle amplitude.\n\nTraces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.\n\nDirected path difference d=0 (0λ); source phase φ=0π rad, arrival phase δ≈0π rad. Cycle amplitude B=2A|cos(δ/2)|≈2A.\n\nReinforcement: the two waves arrive at P in step, rising and falling together; the combined amplitude is twice a single wave's.\n\nModel: linear sinusoidal waves of the same frequency, equal received amplitudes and fixed phase difference (coherence). A=1 is normalized displacement and T=4s is a teaching setting. Spreading, attenuation, reflection and dispersion are omitted. Rings illustrate crest positions, not a fluid solution. Still points use only floating-point-scale tolerance; near cancellation remains nonzero and tiny amplitudes are not rounded to an exact zero.\n\nAmplitude is not intensity\nBack to the atlas: superposition & interference →\nOpenStax16.5 · add waves at the same point ↗",
+    "readouts": [
+      "Same P=(0, 2.50), same time t≈0.35s: y₁≈0.75A, y₂≈0.75A, y₁+y₂≈1.50A. Instantaneous displacement is not cycle amplitude.",
+      "Traces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.",
+      "Directed path difference d=0 (0λ); source phase φ=0π rad, arrival phase δ≈0π rad. Cycle amplitude B=2A|cos(δ/2)|≈2A."
+    ],
+    "inputs": [
+      {
+        "value": "0",
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "2.5",
+        "label": [
+          "P's y position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "0",
+        "label": [
+          "Source phase φ/π (0–2; editing pauses)"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN phase 0.5pi",
+    "text": "Step 3\n\nKeep the same point and time; change only relative phase\n\nPhase marks progress through a cycle. The source phase difference φ is measured in radians (one turn is 2π). Editing φ pauses and keeps the current P and time t; all traces are immediately recalculated. Arrival phase also includes propagation: δ=φ−2π(r₂−r₁)/λ. Here d=r₂−r₁ is signed. The absolute path difference used for the earlier in-phase cases cannot replace it at general φ.\n\nP's x position (arrow keys work)\nP's y position (arrow keys work)\nSource phase φ/π (0–2; editing pauses)\n0.50π rad\n\nPredict: keep P equidistant and compare φ=0, 0.5π, π, 2π. The cycle amplitudes are 2A, √2A, 0, 2A. Then move P to either side and compare the signed propagation distance. Editing φ does not move P or advance the clock.\n\nPhase difference φ:\nφ = 0 (in-phase start)\nφ = π (opposite start)\nReset Step3 & pause\n▶ Play\n\nSame P=(0, 2.50), same time t≈0.35s: y₁≈0.75A, y₂≈0.66A, y₁+y₂≈1.41A. Instantaneous displacement is not cycle amplitude.\n\nTraces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.\n\nDirected path difference d=0 (0λ); source phase φ=0.50π rad, arrival phase δ≈0.50π rad. Cycle amplitude B=2A|cos(δ/2)|≈1.41A.\n\nNeither full reinforcement nor full cancellation: amplitude is between 0 and 2A. Small motion is not an always-still point.\n\nModel: linear sinusoidal waves of the same frequency, equal received amplitudes and fixed phase difference (coherence). A=1 is normalized displacement and T=4s is a teaching setting. Spreading, attenuation, reflection and dispersion are omitted. Rings illustrate crest positions, not a fluid solution. Still points use only floating-point-scale tolerance; near cancellation remains nonzero and tiny amplitudes are not rounded to an exact zero.\n\nAmplitude is not intensity\nBack to the atlas: superposition & interference →\nOpenStax16.5 · add waves at the same point ↗",
+    "readouts": [
+      "Same P=(0, 2.50), same time t≈0.35s: y₁≈0.75A, y₂≈0.66A, y₁+y₂≈1.41A. Instantaneous displacement is not cycle amplitude.",
+      "Traces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.",
+      "Directed path difference d=0 (0λ); source phase φ=0.50π rad, arrival phase δ≈0.50π rad. Cycle amplitude B=2A|cos(δ/2)|≈1.41A."
+    ],
+    "inputs": [
+      {
+        "value": "0",
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "2.5",
+        "label": [
+          "P's y position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "0.5",
+        "label": [
+          "Source phase φ/π (0–2; editing pauses)"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN phase 1pi",
+    "text": "Step 3\n\nKeep the same point and time; change only relative phase\n\nPhase marks progress through a cycle. The source phase difference φ is measured in radians (one turn is 2π). Editing φ pauses and keeps the current P and time t; all traces are immediately recalculated. Arrival phase also includes propagation: δ=φ−2π(r₂−r₁)/λ. Here d=r₂−r₁ is signed. The absolute path difference used for the earlier in-phase cases cannot replace it at general φ.\n\nP's x position (arrow keys work)\nP's y position (arrow keys work)\nSource phase φ/π (0–2; editing pauses)\n1π rad\n\nPredict: keep P equidistant and compare φ=0, 0.5π, π, 2π. The cycle amplitudes are 2A, √2A, 0, 2A. Then move P to either side and compare the signed propagation distance. Editing φ does not move P or advance the clock.\n\nPhase difference φ:\nφ = 0 (in-phase start)\nφ = π (opposite start)\nReset Step3 & pause\n▶ Play\n\nSame P=(0, 2.50), same time t≈0.35s: y₁≈0.75A, y₂≈−0.75A, y₁+y₂≈0A. Instantaneous displacement is not cycle amplitude.\n\nTraces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.\n\nDirected path difference d=0 (0λ); source phase φ=1π rad, arrival phase δ≈1π rad. Cycle amplitude B=2A|cos(δ/2)|≈0A.\n\nCancellation: the two waves arrive at P exactly out of step; at every instant their displacements are exact opposites and sum to 0 — P is a still point and never moves.\n\nModel: linear sinusoidal waves of the same frequency, equal received amplitudes and fixed phase difference (coherence). A=1 is normalized displacement and T=4s is a teaching setting. Spreading, attenuation, reflection and dispersion are omitted. Rings illustrate crest positions, not a fluid solution. Still points use only floating-point-scale tolerance; near cancellation remains nonzero and tiny amplitudes are not rounded to an exact zero.\n\nAmplitude is not intensity\nBack to the atlas: superposition & interference →\nOpenStax16.5 · add waves at the same point ↗",
+    "readouts": [
+      "Same P=(0, 2.50), same time t≈0.35s: y₁≈0.75A, y₂≈−0.75A, y₁+y₂≈0A. Instantaneous displacement is not cycle amplitude.",
+      "Traces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.",
+      "Directed path difference d=0 (0λ); source phase φ=1π rad, arrival phase δ≈1π rad. Cycle amplitude B=2A|cos(δ/2)|≈0A."
+    ],
+    "inputs": [
+      {
+        "value": "0",
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "2.5",
+        "label": [
+          "P's y position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "1",
+        "label": [
+          "Source phase φ/π (0–2; editing pauses)"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN phase 2pi",
+    "text": "Step 3\n\nKeep the same point and time; change only relative phase\n\nPhase marks progress through a cycle. The source phase difference φ is measured in radians (one turn is 2π). Editing φ pauses and keeps the current P and time t; all traces are immediately recalculated. Arrival phase also includes propagation: δ=φ−2π(r₂−r₁)/λ. Here d=r₂−r₁ is signed. The absolute path difference used for the earlier in-phase cases cannot replace it at general φ.\n\nP's x position (arrow keys work)\nP's y position (arrow keys work)\nSource phase φ/π (0–2; editing pauses)\n2π rad\n\nPredict: keep P equidistant and compare φ=0, 0.5π, π, 2π. The cycle amplitudes are 2A, √2A, 0, 2A. Then move P to either side and compare the signed propagation distance. Editing φ does not move P or advance the clock.\n\nPhase difference φ:\nφ = 0 (in-phase start)\nφ = π (opposite start)\nReset Step3 & pause\n▶ Play\n\nSame P=(0, 2.50), same time t≈0.35s: y₁≈0.75A, y₂≈0.75A, y₁+y₂≈1.50A. Instantaneous displacement is not cycle amplitude.\n\nTraces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.\n\nDirected path difference d=0 (0λ); source phase φ=2π rad, arrival phase δ≈2π rad. Cycle amplitude B=2A|cos(δ/2)|≈2A.\n\nReinforcement: the two waves arrive at P in step, rising and falling together; the combined amplitude is twice a single wave's.\n\nModel: linear sinusoidal waves of the same frequency, equal received amplitudes and fixed phase difference (coherence). A=1 is normalized displacement and T=4s is a teaching setting. Spreading, attenuation, reflection and dispersion are omitted. Rings illustrate crest positions, not a fluid solution. Still points use only floating-point-scale tolerance; near cancellation remains nonzero and tiny amplitudes are not rounded to an exact zero.\n\nAmplitude is not intensity\nBack to the atlas: superposition & interference →\nOpenStax16.5 · add waves at the same point ↗",
+    "readouts": [
+      "Same P=(0, 2.50), same time t≈0.35s: y₁≈0.75A, y₂≈0.75A, y₁+y₂≈1.50A. Instantaneous displacement is not cycle amplitude.",
+      "Traces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.",
+      "Directed path difference d=0 (0λ); source phase φ=2π rad, arrival phase δ≈2π rad. Cycle amplitude B=2A|cos(δ/2)|≈2A."
+    ],
+    "inputs": [
+      {
+        "value": "0",
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "2.5",
+        "label": [
+          "P's y position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "2",
+        "label": [
+          "Source phase φ/π (0–2; editing pauses)"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN near pi .995",
+    "text": "Step 3\n\nKeep the same point and time; change only relative phase\n\nPhase marks progress through a cycle. The source phase difference φ is measured in radians (one turn is 2π). Editing φ pauses and keeps the current P and time t; all traces are immediately recalculated. Arrival phase also includes propagation: δ=φ−2π(r₂−r₁)/λ. Here d=r₂−r₁ is signed. The absolute path difference used for the earlier in-phase cases cannot replace it at general φ.\n\nP's x position (arrow keys work)\nP's y position (arrow keys work)\nSource phase φ/π (0–2; editing pauses)\n1π rad\n\nPredict: keep P equidistant and compare φ=0, 0.5π, π, 2π. The cycle amplitudes are 2A, √2A, 0, 2A. Then move P to either side and compare the signed propagation distance. Editing φ does not move P or advance the clock.\n\nPhase difference φ:\nφ = 0 (in-phase start)\nφ = π (opposite start)\nReset Step3 & pause\n▶ Play\n\nSame P=(0, 2.50), same time t≈0.35s: y₁≈0.75A, y₂≈−0.74A, y₁+y₂≈0.01A. Instantaneous displacement is not cycle amplitude.\n\nTraces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.\n\nDirected path difference d=0 (0λ); source phase φ=1π rad, arrival phase δ≈1π rad. Cycle amplitude B=2A|cos(δ/2)|≈0.02A.\n\nNeither full reinforcement nor full cancellation: amplitude is between 0 and 2A. Small motion is not an always-still point.\n\nModel: linear sinusoidal waves of the same frequency, equal received amplitudes and fixed phase difference (coherence). A=1 is normalized displacement and T=4s is a teaching setting. Spreading, attenuation, reflection and dispersion are omitted. Rings illustrate crest positions, not a fluid solution. Still points use only floating-point-scale tolerance; near cancellation remains nonzero and tiny amplitudes are not rounded to an exact zero.\n\nAmplitude is not intensity\nBack to the atlas: superposition & interference →\nOpenStax16.5 · add waves at the same point ↗",
+    "readouts": [
+      "Same P=(0, 2.50), same time t≈0.35s: y₁≈0.75A, y₂≈−0.74A, y₁+y₂≈0.01A. Instantaneous displacement is not cycle amplitude.",
+      "Traces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.",
+      "Directed path difference d=0 (0λ); source phase φ=1π rad, arrival phase δ≈1π rad. Cycle amplitude B=2A|cos(δ/2)|≈0.02A."
+    ],
+    "inputs": [
+      {
+        "value": "0",
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "2.5",
+        "label": [
+          "P's y position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "0.995",
+        "label": [
+          "Source phase φ/π (0–2; editing pauses)"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN intensity disclosure",
+    "text": "Step 3\n\nKeep the same point and time; change only relative phase\n\nPhase marks progress through a cycle. The source phase difference φ is measured in radians (one turn is 2π). Editing φ pauses and keeps the current P and time t; all traces are immediately recalculated. Arrival phase also includes propagation: δ=φ−2π(r₂−r₁)/λ. Here d=r₂−r₁ is signed. The absolute path difference used for the earlier in-phase cases cannot replace it at general φ.\n\nP's x position (arrow keys work)\nP's y position (arrow keys work)\nSource phase φ/π (0–2; editing pauses)\n1π rad\n\nPredict: keep P equidistant and compare φ=0, 0.5π, π, 2π. The cycle amplitudes are 2A, √2A, 0, 2A. Then move P to either side and compare the signed propagation distance. Editing φ does not move P or advance the clock.\n\nPhase difference φ:\nφ = 0 (in-phase start)\nφ = π (opposite start)\nReset Step3 & pause\n▶ Play\n\nSame P=(0, 2.50), same time t≈0.35s: y₁≈0.75A, y₂≈−0.74A, y₁+y₂≈0.01A. Instantaneous displacement is not cycle amplitude.\n\nTraces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.\n\nDirected path difference d=0 (0λ); source phase φ=1π rad, arrival phase δ≈1π rad. Cycle amplitude B=2A|cos(δ/2)|≈0.02A.\n\nNeither full reinforcement nor full cancellation: amplitude is between 0 and 2A. Small motion is not an always-still point.\n\nModel: linear sinusoidal waves of the same frequency, equal received amplitudes and fixed phase difference (coherence). A=1 is normalized displacement and T=4s is a teaching setting. Spreading, attenuation, reflection and dispersion are omitted. Rings illustrate crest positions, not a fluid solution. Still points use only floating-point-scale tolerance; near cancellation remains nonzero and tiny amplitudes are not rounded to an exact zero.\n\nAmplitude is not intensity\n\nAmplitude is maximum displacement; intensity is average energy flow per area. Only under the appropriate same-medium, same-frequency traveling-wave assumptions does average intensity scale with amplitude squared. Do not call 2A “twice the intensity”. This page calculates neither energy flux in the 2D field nor source power, and cancellation at one point does not mean energy is destroyed.\n\nOpenStax16.4 · wave energy and power ↗\nBack to the atlas: superposition & interference →\nOpenStax16.5 · add waves at the same point ↗",
+    "readouts": [
+      "Same P=(0, 2.50), same time t≈0.35s: y₁≈0.75A, y₂≈−0.74A, y₁+y₂≈0.01A. Instantaneous displacement is not cycle amplitude.",
+      "Traces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.",
+      "Directed path difference d=0 (0λ); source phase φ=1π rad, arrival phase δ≈1π rad. Cycle amplitude B=2A|cos(δ/2)|≈0.02A."
+    ],
+    "inputs": [
+      {
+        "value": "0",
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "2.5",
+        "label": [
+          "P's y position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "0.995",
+        "label": [
+          "Source phase φ/π (0–2; editing pauses)"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN HTML200%",
+    "pageScrollWidth": 451
+  },
+  {
+    "stage": "EN reset after200%",
+    "text": "Step 3\n\nKeep the same point and time; change only relative phase\n\nPhase marks progress through a cycle. The source phase difference φ is measured in radians (one turn is 2π). Editing φ pauses and keeps the current P and time t; all traces are immediately recalculated. Arrival phase also includes propagation: δ=φ−2π(r₂−r₁)/λ. Here d=r₂−r₁ is signed. The absolute path difference used for the earlier in-phase cases cannot replace it at general φ.\n\nP's x position (arrow keys work)\nP's y position (arrow keys work)\nSource phase φ/π (0–2; editing pauses)\n0π rad\n\nPredict: keep P equidistant and compare φ=0, 0.5π, π, 2π. The cycle amplitudes are 2A, √2A, 0, 2A. Then move P to either side and compare the signed propagation distance. Editing φ does not move P or advance the clock.\n\nPhase difference φ:\nφ = 0 (in-phase start)\nφ = π (opposite start)\nReset Step3 & pause\n▶ Play\n\nSame P=(0, 2.50), same time t≈0s: y₁≈0.29A, y₂≈0.29A, y₁+y₂≈0.59A. Instantaneous displacement is not cycle amplitude.\n\nTraces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.\n\nDirected path difference d=0 (0λ); source phase φ=0π rad, arrival phase δ≈0π rad. Cycle amplitude B=2A|cos(δ/2)|≈2A.\n\nReinforcement: the two waves arrive at P in step, rising and falling together; the combined amplitude is twice a single wave's.\n\nModel: linear sinusoidal waves of the same frequency, equal received amplitudes and fixed phase difference (coherence). A=1 is normalized displacement and T=4s is a teaching setting. Spreading, attenuation, reflection and dispersion are omitted. Rings illustrate crest positions, not a fluid solution. Still points use only floating-point-scale tolerance; near cancellation remains nonzero and tiny amplitudes are not rounded to an exact zero.\n\nAmplitude is not intensity\n\nAmplitude is maximum displacement; intensity is average energy flow per area. Only under the appropriate same-medium, same-frequency traveling-wave assumptions does average intensity scale with amplitude squared. Do not call 2A “twice the intensity”. This page calculates neither energy flux in the 2D field nor source power, and cancellation at one point does not mean energy is destroyed.\n\nOpenStax16.4 · wave energy and power ↗\nBack to the atlas: superposition & interference →\nOpenStax16.5 · add waves at the same point ↗",
+    "readouts": [
+      "Same P=(0, 2.50), same time t≈0s: y₁≈0.29A, y₂≈0.29A, y₁+y₂≈0.59A. Instantaneous displacement is not cycle amplitude.",
+      "Traces are the previous two cycles of the CURRENT-parameter analytic prediction, not recorded measurements; edits redraw the whole prediction. Right-end dots show this instant. Cycle amplitude is the largest excursion, so a zero sum now does not imply zero amplitude.",
+      "Directed path difference d=0 (0λ); source phase φ=0π rad, arrival phase δ≈0π rad. Cycle amplitude B=2A|cos(δ/2)|≈2A."
+    ],
+    "inputs": [
+      {
+        "value": "0",
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "2.5",
+        "label": [
+          "P's y position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "0",
+        "label": [
+          "Source phase φ/π (0–2; editing pauses)"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "ZH near pi locale",
+    "text": "第 3 步\n\n保持同一点、同一时刻，只改变相位差\n\n相位表示振动走到一周期的哪里，相位差 φ 是两源的起步步调之差，以弧度计（一周为 2π）。拖动 φ 会暂停并保留当前 P 和时刻 t；三条曲线立即按新参数重算。两列波在 P 的到达相位差 δ，还要扣除传播路程的贡献：δ=φ−2π(r₂−r₁)/λ。这里 d=r₂−r₁ 带正负，不能把前两步同相源用的 |d| 直接搬过来。\n\nP 的横位置 x（键盘可调）\nP 的纵位置 y（键盘可调）\n源相位差 φ/π（0–2；拖动会暂停）\n1π rad\n\n先预测：P 保持在等距离处，只把 φ 从 0 拖到 0.5π、π、2π，合振幅依次是 2A、√2A、0、2A。再把 P 移到左右两侧，比较带符号的传播路程。改 φ 不会换地点或推进时钟。\n\n相位差 φ：\nφ = 0（同相起步）\nφ = π（反相起步）\n重置第3步并暂停\n▶ 播放\n\n同一 P=(0, 2.50)，同一时刻 t≈0s：y₁≈0.29A，y₂≈−0.28A，y₁+y₂≈0.02A。瞬时位移不是周期振幅。\n\n曲线是“当前 P 与参数”的前两个周期解析预测，不是过去的实测记录；改参会整段重画。右端圆点是此刻值。合振幅描述一整周期的最大偏离，某一时刻的和为零并不等于振幅为零。\n\n带符号路程差 d=0（0λ）；源相位 φ=1π rad，到达相位 δ≈1π rad。周期合振幅 B=2A|cos(δ/2)|≈0.02A。\n\n未达完全加强或完全抵消：合振幅在 0 与 2A 之间，不能把小振幅叫作始终不动。\n\n模型：同频、到达 P 的振幅相同、相位差固定（相干）的线性简谐波。A=1 是归一化位移，T=4s 是演示设定；忽略传播衰减、反射与色散。圆纹只示意波峰位置，不是真实水面求解。静点只用浮点计算误差级容差识别；接近抵消仍会动，小振幅不会四舍五入成“严格零”。\n\n振幅和强度不是同一个量\n回到知识地图：叠加与干涉 →\nOpenStax16.5 · 同一点的波形相加 ↗",
+    "readouts": [
+      "先预测：P 保持在等距离处，只把 φ 从 0 拖到 0.5π、π、2π，合振幅依次是 2A、√2A、0、2A。再把 P 移到左右两侧，比较带符号的传播路程。改 φ 不会换地点或推进时钟。",
+      "曲线是“当前 P 与参数”的前两个周期解析预测，不是过去的实测记录；改参会整段重画。右端圆点是此刻值。合振幅描述一整周期的最大偏离，某一时刻的和为零并不等于振幅为零。",
+      "带符号路程差 d=0（0λ）；源相位 φ=1π rad，到达相位 δ≈1π rad。周期合振幅 B=2A|cos(δ/2)|≈0.02A。",
+      "未达完全加强或完全抵消：合振幅在 0 与 2A 之间，不能把小振幅叫作始终不动。",
+      "模型：同频、到达 P 的振幅相同、相位差固定（相干）的线性简谐波。A=1 是归一化位移，T=4s 是演示设定；忽略传播衰减、反射与色散。圆纹只示意波峰位置，不是真实水面求解。静点只用浮点计算误差级容差识别；接近抵消仍会动，小振幅不会四舍五入成“严格零”。"
+    ],
+    "inputs": [
+      {
+        "value": "0",
+        "label": [
+          "P 的横位置 x（键盘可调）"
+        ]
+      },
+      {
+        "value": "2.5",
+        "label": [
+          "P 的纵位置 y（键盘可调）"
+        ]
+      },
+      {
+        "value": "0.995",
+        "label": [
+          "源相位差 φ/π（0–2；拖动会暂停）"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "ZH phase 0pi",
+    "text": "第 3 步\n\n保持同一点、同一时刻，只改变相位差\n\n相位表示振动走到一周期的哪里，相位差 φ 是两源的起步步调之差，以弧度计（一周为 2π）。拖动 φ 会暂停并保留当前 P 和时刻 t；三条曲线立即按新参数重算。两列波在 P 的到达相位差 δ，还要扣除传播路程的贡献：δ=φ−2π(r₂−r₁)/λ。这里 d=r₂−r₁ 带正负，不能把前两步同相源用的 |d| 直接搬过来。\n\nP 的横位置 x（键盘可调）\nP 的纵位置 y（键盘可调）\n源相位差 φ/π（0–2；拖动会暂停）\n0π rad\n\n先预测：P 保持在等距离处，只把 φ 从 0 拖到 0.5π、π、2π，合振幅依次是 2A、√2A、0、2A。再把 P 移到左右两侧，比较带符号的传播路程。改 φ 不会换地点或推进时钟。\n\n相位差 φ：\nφ = 0（同相起步）\nφ = π（反相起步）\n重置第3步并暂停\n▶ 播放\n\n同一 P=(0, 2.50)，同一时刻 t≈0s：y₁≈0.29A，y₂≈0.29A，y₁+y₂≈0.59A。瞬时位移不是周期振幅。\n\n曲线是“当前 P 与参数”的前两个周期解析预测，不是过去的实测记录；改参会整段重画。右端圆点是此刻值。合振幅描述一整周期的最大偏离，某一时刻的和为零并不等于振幅为零。\n\n带符号路程差 d=0（0λ）；源相位 φ=0π rad，到达相位 δ≈0π rad。周期合振幅 B=2A|cos(δ/2)|≈2A。\n\n加强：两列波到达 P 时步调一致，同涨同落，合振幅是单列的 2 倍。\n\n模型：同频、到达 P 的振幅相同、相位差固定（相干）的线性简谐波。A=1 是归一化位移，T=4s 是演示设定；忽略传播衰减、反射与色散。圆纹只示意波峰位置，不是真实水面求解。静点只用浮点计算误差级容差识别；接近抵消仍会动，小振幅不会四舍五入成“严格零”。\n\n振幅和强度不是同一个量\n回到知识地图：叠加与干涉 →\nOpenStax16.5 · 同一点的波形相加 ↗",
+    "readouts": [
+      "先预测：P 保持在等距离处，只把 φ 从 0 拖到 0.5π、π、2π，合振幅依次是 2A、√2A、0、2A。再把 P 移到左右两侧，比较带符号的传播路程。改 φ 不会换地点或推进时钟。",
+      "曲线是“当前 P 与参数”的前两个周期解析预测，不是过去的实测记录；改参会整段重画。右端圆点是此刻值。合振幅描述一整周期的最大偏离，某一时刻的和为零并不等于振幅为零。",
+      "带符号路程差 d=0（0λ）；源相位 φ=0π rad，到达相位 δ≈0π rad。周期合振幅 B=2A|cos(δ/2)|≈2A。",
+      "加强：两列波到达 P 时步调一致，同涨同落，合振幅是单列的 2 倍。",
+      "模型：同频、到达 P 的振幅相同、相位差固定（相干）的线性简谐波。A=1 是归一化位移，T=4s 是演示设定；忽略传播衰减、反射与色散。圆纹只示意波峰位置，不是真实水面求解。静点只用浮点计算误差级容差识别；接近抵消仍会动，小振幅不会四舍五入成“严格零”。"
+    ],
+    "inputs": [
+      {
+        "value": "0",
+        "label": [
+          "P 的横位置 x（键盘可调）"
+        ]
+      },
+      {
+        "value": "2.5",
+        "label": [
+          "P 的纵位置 y（键盘可调）"
+        ]
+      },
+      {
+        "value": "0",
+        "label": [
+          "源相位差 φ/π（0–2；拖动会暂停）"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "ZH phase 0.5pi",
+    "text": "第 3 步\n\n保持同一点、同一时刻，只改变相位差\n\n相位表示振动走到一周期的哪里，相位差 φ 是两源的起步步调之差，以弧度计（一周为 2π）。拖动 φ 会暂停并保留当前 P 和时刻 t；三条曲线立即按新参数重算。两列波在 P 的到达相位差 δ，还要扣除传播路程的贡献：δ=φ−2π(r₂−r₁)/λ。这里 d=r₂−r₁ 带正负，不能把前两步同相源用的 |d| 直接搬过来。\n\nP 的横位置 x（键盘可调）\nP 的纵位置 y（键盘可调）\n源相位差 φ/π（0–2；拖动会暂停）\n0.50π rad\n\n先预测：P 保持在等距离处，只把 φ 从 0 拖到 0.5π、π、2π，合振幅依次是 2A、√2A、0、2A。再把 P 移到左右两侧，比较带符号的传播路程。改 φ 不会换地点或推进时钟。\n\n相位差 φ：\nφ = 0（同相起步）\nφ = π（反相起步）\n重置第3步并暂停\n▶ 播放\n\n同一 P=(0, 2.50)，同一时刻 t≈0s：y₁≈0.29A，y₂≈0.96A，y₁+y₂≈1.25A。瞬时位移不是周期振幅。\n\n曲线是“当前 P 与参数”的前两个周期解析预测，不是过去的实测记录；改参会整段重画。右端圆点是此刻值。合振幅描述一整周期的最大偏离，某一时刻的和为零并不等于振幅为零。\n\n带符号路程差 d=0（0λ）；源相位 φ=0.50π rad，到达相位 δ≈0.50π rad。周期合振幅 B=2A|cos(δ/2)|≈1.41A。\n\n未达完全加强或完全抵消：合振幅在 0 与 2A 之间，不能把小振幅叫作始终不动。\n\n模型：同频、到达 P 的振幅相同、相位差固定（相干）的线性简谐波。A=1 是归一化位移，T=4s 是演示设定；忽略传播衰减、反射与色散。圆纹只示意波峰位置，不是真实水面求解。静点只用浮点计算误差级容差识别；接近抵消仍会动，小振幅不会四舍五入成“严格零”。\n\n振幅和强度不是同一个量\n回到知识地图：叠加与干涉 →\nOpenStax16.5 · 同一点的波形相加 ↗",
+    "readouts": [
+      "先预测：P 保持在等距离处，只把 φ 从 0 拖到 0.5π、π、2π，合振幅依次是 2A、√2A、0、2A。再把 P 移到左右两侧，比较带符号的传播路程。改 φ 不会换地点或推进时钟。",
+      "曲线是“当前 P 与参数”的前两个周期解析预测，不是过去的实测记录；改参会整段重画。右端圆点是此刻值。合振幅描述一整周期的最大偏离，某一时刻的和为零并不等于振幅为零。",
+      "带符号路程差 d=0（0λ）；源相位 φ=0.50π rad，到达相位 δ≈0.50π rad。周期合振幅 B=2A|cos(δ/2)|≈1.41A。",
+      "未达完全加强或完全抵消：合振幅在 0 与 2A 之间，不能把小振幅叫作始终不动。",
+      "模型：同频、到达 P 的振幅相同、相位差固定（相干）的线性简谐波。A=1 是归一化位移，T=4s 是演示设定；忽略传播衰减、反射与色散。圆纹只示意波峰位置，不是真实水面求解。静点只用浮点计算误差级容差识别；接近抵消仍会动，小振幅不会四舍五入成“严格零”。"
+    ],
+    "inputs": [
+      {
+        "value": "0",
+        "label": [
+          "P 的横位置 x（键盘可调）"
+        ]
+      },
+      {
+        "value": "2.5",
+        "label": [
+          "P 的纵位置 y（键盘可调）"
+        ]
+      },
+      {
+        "value": "0.5",
+        "label": [
+          "源相位差 φ/π（0–2；拖动会暂停）"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "ZH phase 1pi",
+    "text": "第 3 步\n\n保持同一点、同一时刻，只改变相位差\n\n相位表示振动走到一周期的哪里，相位差 φ 是两源的起步步调之差，以弧度计（一周为 2π）。拖动 φ 会暂停并保留当前 P 和时刻 t；三条曲线立即按新参数重算。两列波在 P 的到达相位差 δ，还要扣除传播路程的贡献：δ=φ−2π(r₂−r₁)/λ。这里 d=r₂−r₁ 带正负，不能把前两步同相源用的 |d| 直接搬过来。\n\nP 的横位置 x（键盘可调）\nP 的纵位置 y（键盘可调）\n源相位差 φ/π（0–2；拖动会暂停）\n1π rad\n\n先预测：P 保持在等距离处，只把 φ 从 0 拖到 0.5π、π、2π，合振幅依次是 2A、√2A、0、2A。再把 P 移到左右两侧，比较带符号的传播路程。改 φ 不会换地点或推进时钟。\n\n相位差 φ：\nφ = 0（同相起步）\nφ = π（反相起步）\n重置第3步并暂停\n▶ 播放\n\n同一 P=(0, 2.50)，同一时刻 t≈0s：y₁≈0.29A，y₂≈−0.29A，y₁+y₂≈0A。瞬时位移不是周期振幅。\n\n曲线是“当前 P 与参数”的前两个周期解析预测，不是过去的实测记录；改参会整段重画。右端圆点是此刻值。合振幅描述一整周期的最大偏离，某一时刻的和为零并不等于振幅为零。\n\n带符号路程差 d=0（0λ）；源相位 φ=1π rad，到达相位 δ≈1π rad。周期合振幅 B=2A|cos(δ/2)|≈0A。\n\n抵消：两列波到达 P 时步调恰好相反，每一刻位移都互为相反数，相加恒为 0——P 是静点，始终不动。\n\n模型：同频、到达 P 的振幅相同、相位差固定（相干）的线性简谐波。A=1 是归一化位移，T=4s 是演示设定；忽略传播衰减、反射与色散。圆纹只示意波峰位置，不是真实水面求解。静点只用浮点计算误差级容差识别；接近抵消仍会动，小振幅不会四舍五入成“严格零”。\n\n振幅和强度不是同一个量\n回到知识地图：叠加与干涉 →\nOpenStax16.5 · 同一点的波形相加 ↗",
+    "readouts": [
+      "先预测：P 保持在等距离处，只把 φ 从 0 拖到 0.5π、π、2π，合振幅依次是 2A、√2A、0、2A。再把 P 移到左右两侧，比较带符号的传播路程。改 φ 不会换地点或推进时钟。",
+      "曲线是“当前 P 与参数”的前两个周期解析预测，不是过去的实测记录；改参会整段重画。右端圆点是此刻值。合振幅描述一整周期的最大偏离，某一时刻的和为零并不等于振幅为零。",
+      "带符号路程差 d=0（0λ）；源相位 φ=1π rad，到达相位 δ≈1π rad。周期合振幅 B=2A|cos(δ/2)|≈0A。",
+      "抵消：两列波到达 P 时步调恰好相反，每一刻位移都互为相反数，相加恒为 0——P 是静点，始终不动。",
+      "模型：同频、到达 P 的振幅相同、相位差固定（相干）的线性简谐波。A=1 是归一化位移，T=4s 是演示设定；忽略传播衰减、反射与色散。圆纹只示意波峰位置，不是真实水面求解。静点只用浮点计算误差级容差识别；接近抵消仍会动，小振幅不会四舍五入成“严格零”。"
+    ],
+    "inputs": [
+      {
+        "value": "0",
+        "label": [
+          "P 的横位置 x（键盘可调）"
+        ]
+      },
+      {
+        "value": "2.5",
+        "label": [
+          "P 的纵位置 y（键盘可调）"
+        ]
+      },
+      {
+        "value": "1",
+        "label": [
+          "源相位差 φ/π（0–2；拖动会暂停）"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "ZH phase 2pi",
+    "text": "第 3 步\n\n保持同一点、同一时刻，只改变相位差\n\n相位表示振动走到一周期的哪里，相位差 φ 是两源的起步步调之差，以弧度计（一周为 2π）。拖动 φ 会暂停并保留当前 P 和时刻 t；三条曲线立即按新参数重算。两列波在 P 的到达相位差 δ，还要扣除传播路程的贡献：δ=φ−2π(r₂−r₁)/λ。这里 d=r₂−r₁ 带正负，不能把前两步同相源用的 |d| 直接搬过来。\n\nP 的横位置 x（键盘可调）\nP 的纵位置 y（键盘可调）\n源相位差 φ/π（0–2；拖动会暂停）\n2π rad\n\n先预测：P 保持在等距离处，只把 φ 从 0 拖到 0.5π、π、2π，合振幅依次是 2A、√2A、0、2A。再把 P 移到左右两侧，比较带符号的传播路程。改 φ 不会换地点或推进时钟。\n\n相位差 φ：\nφ = 0（同相起步）\nφ = π（反相起步）\n重置第3步并暂停\n▶ 播放\n\n同一 P=(0, 2.50)，同一时刻 t≈0s：y₁≈0.29A，y₂≈0.29A，y₁+y₂≈0.59A。瞬时位移不是周期振幅。\n\n曲线是“当前 P 与参数”的前两个周期解析预测，不是过去的实测记录；改参会整段重画。右端圆点是此刻值。合振幅描述一整周期的最大偏离，某一时刻的和为零并不等于振幅为零。\n\n带符号路程差 d=0（0λ）；源相位 φ=2π rad，到达相位 δ≈2π rad。周期合振幅 B=2A|cos(δ/2)|≈2A。\n\n加强：两列波到达 P 时步调一致，同涨同落，合振幅是单列的 2 倍。\n\n模型：同频、到达 P 的振幅相同、相位差固定（相干）的线性简谐波。A=1 是归一化位移，T=4s 是演示设定；忽略传播衰减、反射与色散。圆纹只示意波峰位置，不是真实水面求解。静点只用浮点计算误差级容差识别；接近抵消仍会动，小振幅不会四舍五入成“严格零”。\n\n振幅和强度不是同一个量\n回到知识地图：叠加与干涉 →\nOpenStax16.5 · 同一点的波形相加 ↗",
+    "readouts": [
+      "先预测：P 保持在等距离处，只把 φ 从 0 拖到 0.5π、π、2π，合振幅依次是 2A、√2A、0、2A。再把 P 移到左右两侧，比较带符号的传播路程。改 φ 不会换地点或推进时钟。",
+      "曲线是“当前 P 与参数”的前两个周期解析预测，不是过去的实测记录；改参会整段重画。右端圆点是此刻值。合振幅描述一整周期的最大偏离，某一时刻的和为零并不等于振幅为零。",
+      "带符号路程差 d=0（0λ）；源相位 φ=2π rad，到达相位 δ≈2π rad。周期合振幅 B=2A|cos(δ/2)|≈2A。",
+      "加强：两列波到达 P 时步调一致，同涨同落，合振幅是单列的 2 倍。",
+      "模型：同频、到达 P 的振幅相同、相位差固定（相干）的线性简谐波。A=1 是归一化位移，T=4s 是演示设定；忽略传播衰减、反射与色散。圆纹只示意波峰位置，不是真实水面求解。静点只用浮点计算误差级容差识别；接近抵消仍会动，小振幅不会四舍五入成“严格零”。"
+    ],
+    "inputs": [
+      {
+        "value": "0",
+        "label": [
+          "P 的横位置 x（键盘可调）"
+        ]
+      },
+      {
+        "value": "2.5",
+        "label": [
+          "P 的纵位置 y（键盘可调）"
+        ]
+      },
+      {
+        "value": "2",
+        "label": [
+          "源相位差 φ/π（0–2；拖动会暂停）"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "ZH nearpi",
+    "text": "第 3 步\n\n保持同一点、同一时刻，只改变相位差\n\n相位表示振动走到一周期的哪里，相位差 φ 是两源的起步步调之差，以弧度计（一周为 2π）。拖动 φ 会暂停并保留当前 P 和时刻 t；三条曲线立即按新参数重算。两列波在 P 的到达相位差 δ，还要扣除传播路程的贡献：δ=φ−2π(r₂−r₁)/λ。这里 d=r₂−r₁ 带正负，不能把前两步同相源用的 |d| 直接搬过来。\n\nP 的横位置 x（键盘可调）\nP 的纵位置 y（键盘可调）\n源相位差 φ/π（0–2；拖动会暂停）\n1π rad\n\n先预测：P 保持在等距离处，只把 φ 从 0 拖到 0.5π、π、2π，合振幅依次是 2A、√2A、0、2A。再把 P 移到左右两侧，比较带符号的传播路程。改 φ 不会换地点或推进时钟。\n\n相位差 φ：\nφ = 0（同相起步）\nφ = π（反相起步）\n重置第3步并暂停\n▶ 播放\n\n同一 P=(0, 2.50)，同一时刻 t≈0s：y₁≈0.29A，y₂≈−0.28A，y₁+y₂≈0.02A。瞬时位移不是周期振幅。\n\n曲线是“当前 P 与参数”的前两个周期解析预测，不是过去的实测记录；改参会整段重画。右端圆点是此刻值。合振幅描述一整周期的最大偏离，某一时刻的和为零并不等于振幅为零。\n\n带符号路程差 d=0（0λ）；源相位 φ=1π rad，到达相位 δ≈1π rad。周期合振幅 B=2A|cos(δ/2)|≈0.02A。\n\n未达完全加强或完全抵消：合振幅在 0 与 2A 之间，不能把小振幅叫作始终不动。\n\n模型：同频、到达 P 的振幅相同、相位差固定（相干）的线性简谐波。A=1 是归一化位移，T=4s 是演示设定；忽略传播衰减、反射与色散。圆纹只示意波峰位置，不是真实水面求解。静点只用浮点计算误差级容差识别；接近抵消仍会动，小振幅不会四舍五入成“严格零”。\n\n振幅和强度不是同一个量\n回到知识地图：叠加与干涉 →\nOpenStax16.5 · 同一点的波形相加 ↗",
+    "readouts": [
+      "先预测：P 保持在等距离处，只把 φ 从 0 拖到 0.5π、π、2π，合振幅依次是 2A、√2A、0、2A。再把 P 移到左右两侧，比较带符号的传播路程。改 φ 不会换地点或推进时钟。",
+      "曲线是“当前 P 与参数”的前两个周期解析预测，不是过去的实测记录；改参会整段重画。右端圆点是此刻值。合振幅描述一整周期的最大偏离，某一时刻的和为零并不等于振幅为零。",
+      "带符号路程差 d=0（0λ）；源相位 φ=1π rad，到达相位 δ≈1π rad。周期合振幅 B=2A|cos(δ/2)|≈0.02A。",
+      "未达完全加强或完全抵消：合振幅在 0 与 2A 之间，不能把小振幅叫作始终不动。",
+      "模型：同频、到达 P 的振幅相同、相位差固定（相干）的线性简谐波。A=1 是归一化位移，T=4s 是演示设定；忽略传播衰减、反射与色散。圆纹只示意波峰位置，不是真实水面求解。静点只用浮点计算误差级容差识别；接近抵消仍会动，小振幅不会四舍五入成“严格零”。"
+    ],
+    "inputs": [
+      {
+        "value": "0",
+        "label": [
+          "P 的横位置 x（键盘可调）"
+        ]
+      },
+      {
+        "value": "2.5",
+        "label": [
+          "P 的纵位置 y（键盘可调）"
+        ]
+      },
+      {
+        "value": "0.995",
+        "label": [
+          "源相位差 φ/π（0–2；拖动会暂停）"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "ZH HTML200%",
+    "pageScrollWidth": 390
+  },
+  {
+    "stage": "ZH reset Space",
+    "text": "第 3 步\n\n保持同一点、同一时刻，只改变相位差\n\n相位表示振动走到一周期的哪里，相位差 φ 是两源的起步步调之差，以弧度计（一周为 2π）。拖动 φ 会暂停并保留当前 P 和时刻 t；三条曲线立即按新参数重算。两列波在 P 的到达相位差 δ，还要扣除传播路程的贡献：δ=φ−2π(r₂−r₁)/λ。这里 d=r₂−r₁ 带正负，不能把前两步同相源用的 |d| 直接搬过来。\n\nP 的横位置 x（键盘可调）\nP 的纵位置 y（键盘可调）\n源相位差 φ/π（0–2；拖动会暂停）\n0π rad\n\n先预测：P 保持在等距离处，只把 φ 从 0 拖到 0.5π、π、2π，合振幅依次是 2A、√2A、0、2A。再把 P 移到左右两侧，比较带符号的传播路程。改 φ 不会换地点或推进时钟。\n\n相位差 φ：\nφ = 0（同相起步）\nφ = π（反相起步）\n重置第3步并暂停\n▶ 播放\n\n同一 P=(0, 2.50)，同一时刻 t≈0s：y₁≈0.29A，y₂≈0.29A，y₁+y₂≈0.59A。瞬时位移不是周期振幅。\n\n曲线是“当前 P 与参数”的前两个周期解析预测，不是过去的实测记录；改参会整段重画。右端圆点是此刻值。合振幅描述一整周期的最大偏离，某一时刻的和为零并不等于振幅为零。\n\n带符号路程差 d=0（0λ）；源相位 φ=0π rad，到达相位 δ≈0π rad。周期合振幅 B=2A|cos(δ/2)|≈2A。\n\n加强：两列波到达 P 时步调一致，同涨同落，合振幅是单列的 2 倍。\n\n模型：同频、到达 P 的振幅相同、相位差固定（相干）的线性简谐波。A=1 是归一化位移，T=4s 是演示设定；忽略传播衰减、反射与色散。圆纹只示意波峰位置，不是真实水面求解。静点只用浮点计算误差级容差识别；接近抵消仍会动，小振幅不会四舍五入成“严格零”。\n\n振幅和强度不是同一个量\n回到知识地图：叠加与干涉 →\nOpenStax16.5 · 同一点的波形相加 ↗",
+    "readouts": [
+      "先预测：P 保持在等距离处，只把 φ 从 0 拖到 0.5π、π、2π，合振幅依次是 2A、√2A、0、2A。再把 P 移到左右两侧，比较带符号的传播路程。改 φ 不会换地点或推进时钟。",
+      "曲线是“当前 P 与参数”的前两个周期解析预测，不是过去的实测记录；改参会整段重画。右端圆点是此刻值。合振幅描述一整周期的最大偏离，某一时刻的和为零并不等于振幅为零。",
+      "带符号路程差 d=0（0λ）；源相位 φ=0π rad，到达相位 δ≈0π rad。周期合振幅 B=2A|cos(δ/2)|≈2A。",
+      "加强：两列波到达 P 时步调一致，同涨同落，合振幅是单列的 2 倍。",
+      "模型：同频、到达 P 的振幅相同、相位差固定（相干）的线性简谐波。A=1 是归一化位移，T=4s 是演示设定；忽略传播衰减、反射与色散。圆纹只示意波峰位置，不是真实水面求解。静点只用浮点计算误差级容差识别；接近抵消仍会动，小振幅不会四舍五入成“严格零”。"
+    ],
+    "inputs": [
+      {
+        "value": "0",
+        "label": [
+          "P 的横位置 x（键盘可调）"
+        ]
+      },
+      {
+        "value": "2.5",
+        "label": [
+          "P 的纵位置 y（键盘可调）"
+        ]
+      },
+      {
+        "value": "0",
+        "label": [
+          "源相位差 φ/π（0–2；拖动会暂停）"
+        ]
+      }
+    ]
+  },
+  {
+    "browser": "CLOSED"
+  }
+]

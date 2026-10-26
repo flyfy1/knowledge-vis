@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('node:assert/strict'),{load,validate}=require('./data-quality.cjs');
 const root=path.resolve(__dirname,'../..'),d=load(),route=d.trails.find(r=>r.id==='signal');
-assert.deepEqual(route.nodes,['lti','impulse','convolution','freqresp']);assert.equal(d.nodes.length,38);assert.equal(d.edges.length,50);assert.deepEqual(validate(d).errors,[]);
+assert.deepEqual(route.nodes,['lti','impulse','convolution','freqresp']);assert.equal(d.nodes.length,39);assert.equal(d.edges.length,51);assert.deepEqual(validate(d).errors,[]);
 assert.deepEqual(route.stationTasks.map(t=>t.href),['../lti/#step3','../lti/#step2','../convolution/#step2','../freqresp/#step3']);
 const source=fs.readFileSync(path.join(root,'lti/app.js'),'utf8'),box={};vm.runInNewContext(source.split('/* ================================================================\n   画布适配')[0]+';this.core={run:runSystem,impulse:impulseOf};',box);
 assert.deepEqual(Array.from(box.core.impulse('ma3',8)),[1/3,1/3,1/3,0,0,0,0,0]);

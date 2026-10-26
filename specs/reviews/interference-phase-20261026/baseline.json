@@ -1,0 +1,8 @@
+{
+  "base": "2fdb47b2b9027d2a9874f1210918a1355a9a340d",
+  "originalLessonSource": "844643ca8e16939c93826f8ddcd550cb9ebd1a4c",
+  "existing": ["two-source field illustration", "same-point displacement functions", "S3 phi0/pi presets", "step-owned clocks and traces"],
+  "confirmedDefect": {"directedDifference": 1.02, "wavelength": 2, "oldClassification": "min", "nonzeroAmplitude": 0.06282151815625656},
+  "additionalGap": "Phase change erased traces while paused; no graph concept/application from sine",
+  "scope": "reuse current course and original yAt/ySum; strict classification, signed phase, same-P/t prediction, one justified node/edge; no new simulator or route"
+}
