@@ -1,0 +1,16 @@
+{
+  "kind": "author self-check",
+  "cases": 17196,
+  "exhaustive": "all 16383 nonempty subsets of 1..14",
+  "randomSeed": 952,
+  "randomCases": 800,
+  "maximumN": 20000,
+  "maximumValue": 100000,
+  "maximumEvenCaseSeconds": 0.09994143503718078,
+  "inputMutation": false,
+  "officialExamples": [
+    4,
+    2,
+    8
+  ]
+}
