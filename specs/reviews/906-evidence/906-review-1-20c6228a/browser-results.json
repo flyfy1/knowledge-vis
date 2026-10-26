@@ -1,0 +1,1650 @@
+{
+  "kind": "author self-check, independent review pending",
+  "host": "linux",
+  "browser": "156.0.8078.4",
+  "zoomMethod": "CSS layout zoom 2; native browser UI zoom not automated",
+  "sourceParity": "display, mirror, native copy, fallback native copy twice per locale, downloaded files exact including final newline",
+  "contrast": {
+    "colors": {
+      "bg": "#0d1117",
+      "panel": "#161b22",
+      "panel2": "#1c2330",
+      "text": "#e8edf4",
+      "muted": "#9aa7b8",
+      "accent": "#6ee7ff",
+      "accent2": "#ffb454"
+    },
+    "pairs": [
+      {
+        "fg": "text",
+        "bg": "bg",
+        "ratio": 16.086987125379448
+      },
+      {
+        "fg": "muted",
+        "bg": "bg",
+        "ratio": 7.7443462241265095
+      },
+      {
+        "fg": "accent",
+        "bg": "bg",
+        "ratio": 13.100679028115637
+      },
+      {
+        "fg": "accent2",
+        "bg": "bg",
+        "ratio": 10.731637051347173
+      },
+      {
+        "fg": "text",
+        "bg": "panel",
+        "ratio": 14.704584598678618
+      },
+      {
+        "fg": "muted",
+        "bg": "panel",
+        "ratio": 7.078851579017443
+      },
+      {
+        "fg": "accent",
+        "bg": "panel",
+        "ratio": 11.974898815275662
+      },
+      {
+        "fg": "accent2",
+        "bg": "panel",
+        "ratio": 9.809435643476732
+      },
+      {
+        "fg": "text",
+        "bg": "panel2",
+        "ratio": 13.397069143240783
+      },
+      {
+        "fg": "muted",
+        "bg": "panel2",
+        "ratio": 6.449407898769069
+      },
+      {
+        "fg": "accent",
+        "bg": "panel2",
+        "ratio": 10.910104011097095
+      },
+      {
+        "fg": "accent2",
+        "bg": "panel2",
+        "ratio": 8.937191437807625
+      }
+    ]
+  },
+  "cssBytes": 10970,
+  "errors": [],
+  "network": [],
+  "offlineStorageDenied": true,
+  "records": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "frames": 11,
+      "answer": 4,
+      "finalText": "All tests complete · final answer = 4 super-palindromes.",
+      "lastOperation": "Just completed: root 22 → square 484. Added 1; cumulative 3 → 4."
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "frames": 1,
+      "answer": 1,
+      "finalText": "All tests complete · final answer = 1 super-palindromes.",
+      "lastOperation": "Just completed: root 1 → square 1. Added 1; cumulative 0 → 1."
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "frames": 11,
+      "answer": 0,
+      "finalText": "All tests complete · final answer = 0 super-palindromes.",
+      "lastOperation": "Just completed: root 22 → square 484. Added 0; cumulative 0 → 0."
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "frames": 10,
+      "answer": 1,
+      "finalText": "All tests complete · final answer = 1 super-palindromes.",
+      "lastOperation": "Just completed: root 11 → square 121. Added 1; cumulative 0 → 1."
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "frames": 21,
+      "answer": 3,
+      "finalText": "All tests complete · final answer = 3 super-palindromes.",
+      "lastOperation": "Just completed: root 121 → square 14641. Added 1; cumulative 2 → 3."
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "frames": 9,
+      "answer": 0,
+      "finalText": "All tests complete · final answer = 0 super-palindromes.",
+      "lastOperation": "Just completed: root 9 → square 81. Added 0; cumulative 0 → 0."
+    },
+    {
+      "lang": "en",
+      "state": "root4 square16 rejection",
+      "operation": "Just completed: root 4 → square 16. Added 0; cumulative 2 → 2.",
+      "card": "Current (just completed)Seed 4 · Odd-length root (middle used once) · append reversed part “empty string”4² = 16Square in range: yes; square palindrome: no.Rejected · cumulative 2",
+      "formula": "Define a seed as the first half of a root, including the middle digit for odd lengths. For seed 12, the odd-length construction keeps the final 2 as the middle and reverses only the preceding 1: 12 + 1 = 121, where + means concatenation. The even construction reverses all of 12: 12 + 21 = 1221. Seed 1 yields 1 and 11. Both parities are necessary or we miss 11² = 121."
+    },
+    {
+      "lang": "en",
+      "prediction": 0,
+      "feedback": "Check both conditions again. The answer is 2. Since 200² = 40000 and 224² = 50176, possible integer roots are 200…223. Only 202, 212, and 222 are palindromes. 202² = 40804 and 212² = 44944 are palindromes; 222² = 49284 is not. No even-length roots fit here. Counting only 202² misses 212²; counting all three roots wrongly includes 222."
+    },
+    {
+      "lang": "en",
+      "prediction": 1,
+      "feedback": "Check both conditions again. The answer is 2. Since 200² = 40000 and 224² = 50176, possible integer roots are 200…223. Only 202, 212, and 222 are palindromes. 202² = 40804 and 212² = 44944 are palindromes; 222² = 49284 is not. No even-length roots fit here. Counting only 202² misses 212²; counting all three roots wrongly includes 222."
+    },
+    {
+      "lang": "en",
+      "prediction": 2,
+      "feedback": "Correct prediction. The answer is 2. Since 200² = 40000 and 224² = 50176, possible integer roots are 200…223. Only 202, 212, and 222 are palindromes. 202² = 40804 and 212² = 44944 are palindromes; 222² = 49284 is not. No even-length roots fit here. Counting only 202² misses 212²; counting all three roots wrongly includes 222."
+    },
+    {
+      "lang": "en",
+      "manualAttempt": 0,
+      "sentinelVerified": true,
+      "nativeShortcut": "Control+C",
+      "exact": true,
+      "feedback": "Automatic copying is unavailable. Full source selected; press Ctrl+C (⌘C on macOS)."
+    },
+    {
+      "lang": "en",
+      "manualAttempt": 1,
+      "sentinelVerified": true,
+      "nativeShortcut": "Control+C",
+      "exact": true,
+      "feedback": "Automatic copying is unavailable. Full source selected; press Ctrl+C (⌘C on macOS)."
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "frames": 11,
+      "answer": 4,
+      "finalText": "全部完成 · 最终答案 = 4 个超级回文数。",
+      "lastOperation": "刚完成：根 22 → 平方 484。本次增加 1；累计 3 → 4。"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "frames": 1,
+      "answer": 1,
+      "finalText": "全部完成 · 最终答案 = 1 个超级回文数。",
+      "lastOperation": "刚完成：根 1 → 平方 1。本次增加 1；累计 0 → 1。"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "frames": 11,
+      "answer": 0,
+      "finalText": "全部完成 · 最终答案 = 0 个超级回文数。",
+      "lastOperation": "刚完成：根 22 → 平方 484。本次增加 0；累计 0 → 0。"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "frames": 10,
+      "answer": 1,
+      "finalText": "全部完成 · 最终答案 = 1 个超级回文数。",
+      "lastOperation": "刚完成：根 11 → 平方 121。本次增加 1；累计 0 → 1。"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "frames": 21,
+      "answer": 3,
+      "finalText": "全部完成 · 最终答案 = 3 个超级回文数。",
+      "lastOperation": "刚完成：根 121 → 平方 14641。本次增加 1；累计 2 → 3。"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "frames": 9,
+      "answer": 0,
+      "finalText": "全部完成 · 最终答案 = 0 个超级回文数。",
+      "lastOperation": "刚完成：根 9 → 平方 81。本次增加 0；累计 0 → 0。"
+    },
+    {
+      "lang": "zh",
+      "state": "root4 square16 rejection",
+      "operation": "刚完成：根 4 → 平方 16。本次增加 0；累计 2 → 2。",
+      "card": "当前（刚完成）种子 4 · 奇数位根（中间位只用一次） · 追加反转部分「空串」4² = 16平方在区间内：是；平方回文：否。拒绝 · 累计 2",
+      "formula": "把“种子”定义为根的前半段（奇数位时含中间一位）。种子 12：奇数位根把最后一位 2 留作中间，只倒转前面的 1，得到 12 + 1 = 121（这里 + 表示拼接）；偶数位根倒转整个 12，得到 12 + 21 = 1221。种子 1 对应 1 和 11。因此两种长度都要生成，否则会漏掉 11² = 121。"
+    },
+    {
+      "lang": "zh",
+      "prediction": 0,
+      "feedback": "再核对两项条件。 答案是 2。200² = 40000，224² = 50176，所以可能的整数根是 200…223；其中回文根只有 202、212、222。202² = 40804，212² = 44944 都回文；222² = 49284 不回文。偶数位根在这里没有候选。只算 202² 会漏掉 212²；把三个根全算入则多算 222。"
+    },
+    {
+      "lang": "zh",
+      "prediction": 1,
+      "feedback": "再核对两项条件。 答案是 2。200² = 40000，224² = 50176，所以可能的整数根是 200…223；其中回文根只有 202、212、222。202² = 40804，212² = 44944 都回文；222² = 49284 不回文。偶数位根在这里没有候选。只算 202² 会漏掉 212²；把三个根全算入则多算 222。"
+    },
+    {
+      "lang": "zh",
+      "prediction": 2,
+      "feedback": "预测正确。 答案是 2。200² = 40000，224² = 50176，所以可能的整数根是 200…223；其中回文根只有 202、212、222。202² = 40804，212² = 44944 都回文；222² = 49284 不回文。偶数位根在这里没有候选。只算 202² 会漏掉 212²；把三个根全算入则多算 222。"
+    },
+    {
+      "lang": "zh",
+      "manualAttempt": 0,
+      "sentinelVerified": true,
+      "nativeShortcut": "Control+C",
+      "exact": true,
+      "feedback": "自动复制不可用。完整源码已选中，请按 Ctrl+C（macOS 用 ⌘C）。"
+    },
+    {
+      "lang": "zh",
+      "manualAttempt": 1,
+      "sentinelVerified": true,
+      "nativeShortcut": "Control+C",
+      "exact": true,
+      "feedback": "自动复制不可用。完整源码已选中，请按 Ctrl+C（macOS 用 ⌘C）。"
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "noOverflow": true,
+      "geometry": [
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 258,
+          "clientWidth": 258
+        }
+      ],
+      "finalCard": "Current (just completed)Seed 12 · Odd-length root (middle used once) · append reversed part “1”121² = 14641Square in range: yes; square palindrome: yes.Accepted · cumulative 3"
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "noOverflow": true,
+      "geometry": [
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 328,
+          "clientWidth": 328
+        }
+      ],
+      "finalCard": "Current (just completed)Seed 12 · Odd-length root (middle used once) · append reversed part “1”121² = 14641Square in range: yes; square palindrome: yes.Accepted · cumulative 3"
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "noOverflow": true,
+      "geometry": [
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 313,
+          "clientWidth": 313
+        }
+      ],
+      "finalCard": "Current (just completed)Seed 12 · Odd-length root (middle used once) · append reversed part “1”121² = 14641Square in range: yes; square palindrome: yes.Accepted · cumulative 3"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "noOverflow": true,
+      "geometry": [
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 215,
+          "clientWidth": 215
+        }
+      ],
+      "finalCard": "Current (just completed)Seed 12 · Odd-length root (middle used once) · append reversed part “1”121² = 14641Square in range: yes; square palindrome: yes.Accepted · cumulative 3"
+    },
+    {
+      "lang": "en",
+      "width": 780,
+      "zoom": 2,
+      "noOverflow": true,
+      "geometry": [
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 296,
+          "clientWidth": 296
+        }
+      ],
+      "finalCard": "Current (just completed)Seed 12 · Odd-length root (middle used once) · append reversed part “1”121² = 14641Square in range: yes; square palindrome: yes.Accepted · cumulative 3"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "noOverflow": true,
+      "geometry": [
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 305,
+          "clientWidth": 305
+        }
+      ],
+      "finalCard": "Current (just completed)Seed 12 · Odd-length root (middle used once) · append reversed part “1”121² = 14641Square in range: yes; square palindrome: yes.Accepted · cumulative 3"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "noOverflow": true,
+      "geometry": [
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 260,
+          "clientWidth": 260
+        },
+        {
+          "width": 262,
+          "scrollWidth": 258,
+          "clientWidth": 258
+        }
+      ],
+      "finalCard": "当前（刚完成）种子 12 · 奇数位根（中间位只用一次） · 追加反转部分「1」121² = 14641平方在区间内：是；平方回文：是。通过 · 累计 3"
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "noOverflow": true,
+      "geometry": [
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 330,
+          "clientWidth": 330
+        },
+        {
+          "width": 332,
+          "scrollWidth": 328,
+          "clientWidth": 328
+        }
+      ],
+      "finalCard": "当前（刚完成）种子 12 · 奇数位根（中间位只用一次） · 追加反转部分「1」121² = 14641平方在区间内：是；平方回文：是。通过 · 累计 3"
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "noOverflow": true,
+      "geometry": [
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 315,
+          "clientWidth": 315
+        },
+        {
+          "width": 317,
+          "scrollWidth": 313,
+          "clientWidth": 313
+        }
+      ],
+      "finalCard": "当前（刚完成）种子 12 · 奇数位根（中间位只用一次） · 追加反转部分「1」121² = 14641平方在区间内：是；平方回文：是。通过 · 累计 3"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "noOverflow": true,
+      "geometry": [
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 217,
+          "clientWidth": 217
+        },
+        {
+          "width": 218.5,
+          "scrollWidth": 215,
+          "clientWidth": 215
+        }
+      ],
+      "finalCard": "当前（刚完成）种子 12 · 奇数位根（中间位只用一次） · 追加反转部分「1」121² = 14641平方在区间内：是；平方回文：是。通过 · 累计 3"
+    },
+    {
+      "lang": "zh",
+      "width": 780,
+      "zoom": 2,
+      "noOverflow": true,
+      "geometry": [
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 298,
+          "clientWidth": 298
+        },
+        {
+          "width": 600,
+          "scrollWidth": 296,
+          "clientWidth": 296
+        }
+      ],
+      "finalCard": "当前（刚完成）种子 12 · 奇数位根（中间位只用一次） · 追加反转部分「1」121² = 14641平方在区间内：是；平方回文：是。通过 · 累计 3"
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "noOverflow": true,
+      "geometry": [
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 307,
+          "clientWidth": 307
+        },
+        {
+          "width": 618,
+          "scrollWidth": 305,
+          "clientWidth": 305
+        }
+      ],
+      "finalCard": "当前（刚完成）种子 12 · 奇数位根（中间位只用一次） · 追加反转部分「1」121² = 14641平方在区间内：是；平方回文：是。通过 · 累计 3"
+    },
+    {
+      "lang": "en",
+      "relatedLabel": "#132: test palindromes from endpoints and interior",
+      "target": "http://127.0.0.1:18770/leetcode/132/#step1",
+      "targetText": "02What to save, and whyHow can we avoid repeated work without missing a better partition? Dynamic programming stores answers to smaller questions for reuse. We save two kinds: P[l][r] tells whether the substring from zero-based index l through r, inclusive, is a palindrome. dp[k] is the fewest palindrome pieces covering the first k characters; those first characters form a prefix.Prefix states: see #115 for what each prefix-table cell means ↗First inspect the endpoints: aa has matching ends and an empty interior, so it is a palindrome. ab has different ends, so it is not. aab also has different ends. For a longer example, abba needs matching a endpoints AND a palindrome interior bb. abca has matching endpoints but a non-palindrome interior bc, so it fails. Lengths 1 and 2 need no inner cell; longer substrings reuse P[l+1][r−1].Now compare final pieces. The empty prefix has nothing to cover, so dp[0]=0 pieces. For a, final piece a gives dp[0]+1=1. For aa, final piece aa gives 1, while final piece a gives dp[1]+1=2; keep 1. For aab, aab and ab fail, leaving only final piece b: dp[2]+1=2. Thus dp=[0,1,1,2], and the final cut count is 2−1=1.To find the fewest pieces for the first r+1 characters, try each final-piece start l. Only a palindrome can extend the completed dp[l], adding one piece. Scan r from left to right: the interior is in an earlier column, and dp[l] is already complete. There is no circular dependency. Initialize the current minimum to n+1, above the maximum possible n pieces, then reduce it candidate by candidate.P[l][r] = (s[l] = s[r]) ∧ (r−l < 2 ∨ P[l+1][r−1])dp[0] = 0dp[r+1] = min { dp[l]+1 : 0 ≤ l ≤ r, P[l][r] = T }cuts = dp[n]−1"
+    },
+    {
+      "lang": "en",
+      "relatedLabel": "#60: count candidates by their prefixes",
+      "target": "http://127.0.0.1:18770/leetcode/60/#step2",
+      "targetText": "032 · Choose digits step by stepWhat must change together after choosing a digit? Pick a boundary preset, keep n and k fixed, then choose the next digit. Inspect the equal blocks and cumulative ledger: the interval containing old r determines the digit. That digit moves from the unused list into the prefix, and r becomes the within-block remainder. Back restores all these quantities.In this experiment, m is the number of unused digits. The value r is the zero-based offset among all completions of the current prefix, always satisfying 0 ≤ r < m!. In every completed frame, prefix and unused together contain each digit from 1 to n exactly once.This is a JavaScript state simulation, not Python execution. Each frame completes one digit choice; the start has no choices and the end has n choices. No steps are omitted.Preset (changing restarts this experiment)Worked · n=4, k=9Block end · n=4, k=6Next block · n=4, k=7First item · n=3, k=1Last item · n=4, k=24Only item · n=1, k=1Custom inputOr choose valid inputs; applying restartsn k Apply n and kUndo last digitChoose next digitReset to startNumber of completed digit choicesInput n=4, k=9 · 0/4 digits chosenCurrent state: prefix (empty) · unused [1, 2, 3, 4] · r=8No digit chosen yet; r=k−1=8. The blocks below preview the first choice.Diagram: each box is a block of block=(m−1)! permutations. Intervals are inclusive zero-based offsets before the choice. q is an index in the unused list, not the digit itself. A ✓ marks the chosen block; the start does not mark an answer.Before this choice: m=4, 6 items per block, old r=8Digit 1 · index 0[0, 5]Digit 2 · index 1[6, 11]Digit 3 · index 2[12, 17]Digit 4 · index 3[18, 23]Cumulative choice ledger (completed operations)On narrow screens, scroll the ledger sideways. With a keyboard, focus the ledger and use left/right arrows to inspect the remaining columns.No completed choices yet.PositionBeforeDivisionAfterPython for this framer = k - 1"
+    },
+    {
+      "lang": "zh",
+      "relatedLabel": "#132：用两端与内部判断回文",
+      "target": "http://127.0.0.1:18770/leetcode/132/#step1",
+      "targetText": "02保存什么，为什么这一步要回答：怎样省去重复检查，又不漏掉更好的剪法？动态规划就是保存小问题的答案，供大问题复用。我们保存两类答案：P[l][r] 表示从下标 l 到 r（两端包含）的子串是否回文；下标从 0 开始。dp[k] 表示前 k 个字符最少分成几段回文，前缀就是字符串开头的这一段。前缀状态入门：到 #115 看每格为何代表一段前缀 ↗先只看两端：aa 的两端相同，中间为空，所以是回文。ab 的两端不同，所以不是。aab 的两端 a、b 不同，也不是。长一点的 abba 需要 a=a 且内部 bb 是回文；abca 虽然 a=a，内部 bc 不是，所以仍然无效。长度为 1 或 2 时不需要内部格；更长时复用 P[l+1][r−1]。再比较最后一段。空前缀没有字符要覆盖，所以 dp[0]=0 段。对 a：最后一段 a → dp[0]+1=1。对 aa：最后一段 aa → 1，或最后一段 a → dp[1]+1=2，取 1。对 aab：aab、ab 都无效，只有最后一段 b → dp[2]+1=2。因此 dp=[0,1,1,2]，最终刀数 2−1=1。这回答了“前 r+1 个字符最少分几段”：枚举最后一段起点 l，仅当它是回文时，用已完成的 dp[l] 加 1。r 从左往右走，内部回文位于更早的列，dp[l] 也已完成；没有循环依赖。先把当前最少段数设为 n+1（大于最多 n 段的上界），再逐个取较小值。P[l][r] = (s[l] = s[r]) ∧ (r−l < 2 ∨ P[l+1][r−1])dp[0] = 0dp[r+1] = min { dp[l]+1 : 0 ≤ l ≤ r, P[l][r] = T }cuts = dp[n]−1"
+    },
+    {
+      "lang": "zh",
+      "relatedLabel": "#60：按前缀组织候选的计数",
+      "target": "http://127.0.0.1:18770/leetcode/60/#step2",
+      "targetText": "032 · 逐位选择实验这一步要回答：选完一位后，哪些状态必须一起改变？先选边界预设，保持 n、k 不变，点击“选择下一位”。看下方等大块和累计账本：旧 r 落在哪个区间，就取哪个数字；该数字从未用列表移入前缀，r 变成块内余数。后退应完整恢复这些量。本实验中的 m 是未用数字数；r 是当前前缀所有补全中的从零偏移，始终满足 0 ≤ r < m!。每个已完成帧的前缀与未用列表合起来恰好含数字 1 到 n 各一次。这是 JavaScript 状态模拟，不是执行 Python。每帧完成一次数字选择；起点尚未选择，终点已选 n 位。完整展示，未省略步骤。预设（切换会重启此实验）手算 · n=4, k=9块尾 · n=4, k=6下一块 · n=4, k=7第一项 · n=3, k=1最后一项 · n=4, k=24唯一一项 · n=1, k=1自选输入或自选官方范围内的输入；应用后重启n k 应用 n、k撤回上一位选择下一位重置到起点已完成的数字选择数输入 n=4, k=9 · 已选 0/4 位当前状态：前缀 （空） · 未用 [1, 2, 3, 4] · r=8尚未选择；r=k−1=8。下图预览第一次选择的块。图示：每个框是一块，含 block=(m−1)! 个排列；区间是选择前从 0 开始的偏移，闭区间两端都包含。q 是未用列表的下标，不是数字本身。带 ✓ 的框是已选块；起点不标答案。本次选择前：m=4，每块 6 项，旧 r=8数字 1 · 下标 0[0, 5]数字 2 · 下标 1[6, 11]数字 3 · 下标 2[12, 17]数字 4 · 下标 3[18, 23]累计选择账本（每行均已完成）窄屏可横向滚动账本；用键盘聚焦账本后，按左右方向键查看其余列。尚无已完成选择。位选择前除法选择后本帧对应的 Pythonr = k - 1"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "lang": "en",
+    "text": "from math import isqrt\n\n\nclass Solution:\n    def superpalindromesInRange(self, left: str, right: str) -> int:\n        low, high = int(left), int(right)\n        limit = isqrt(high)\n        count = 0\n        for odd in (True, False):\n            seed = 1\n            while True:\n                s = str(seed)\n                tail = s[:-1] if odd else s\n                root = int(s + tail[::-1])\n                if root > limit:\n                    break\n                square = root * root\n                digits = str(square)\n                if low <= square <= high and digits == digits[::-1]:\n                    count += 1\n                seed += 1\n        return count\n",
+    "color": "rgb(232, 237, 244)",
+    "visibility": "visible",
+    "rect": {
+      "x": 17,
+      "y": 267.609375,
+      "width": 532.21875,
+      "height": 465.1875,
+      "top": 267.609375,
+      "right": 549.21875,
+      "bottom": 732.796875,
+      "left": 17
+    },
+    "pre": {
+      "x": 16,
+      "y": 249.609375,
+      "width": 288,
+      "height": 501.625,
+      "top": 249.609375,
+      "right": 304,
+      "bottom": 751.234375,
+      "left": 16
+    },
+    "keyboardHorizontalScroll": true
+  },
+  {
+    "lang": "zh",
+    "text": "from math import isqrt\n\n\nclass Solution:\n    def superpalindromesInRange(self, left: str, right: str) -> int:\n        low, high = int(left), int(right)\n        limit = isqrt(high)\n        count = 0\n        for odd in (True, False):\n            seed = 1\n            while True:\n                s = str(seed)\n                tail = s[:-1] if odd else s\n                root = int(s + tail[::-1])\n                if root > limit:\n                    break\n                square = root * root\n                digits = str(square)\n                if low <= square <= high and digits == digits[::-1]:\n                    count += 1\n                seed += 1\n        return count\n",
+    "color": "rgb(232, 237, 244)",
+    "visibility": "visible",
+    "rect": {
+      "x": 17,
+      "y": 267.671875,
+      "width": 532.21875,
+      "height": 465.1875,
+      "top": 267.671875,
+      "right": 549.21875,
+      "bottom": 732.859375,
+      "left": 17
+    },
+    "pre": {
+      "x": 16,
+      "y": 249.671875,
+      "width": 288,
+      "height": 501.625,
+      "top": 249.671875,
+      "right": 304,
+      "bottom": 751.296875,
+      "left": 16
+    },
+    "keyboardHorizontalScroll": true
+  }
+]
