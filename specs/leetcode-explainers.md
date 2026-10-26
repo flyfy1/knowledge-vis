@@ -305,6 +305,17 @@ conditions. A vivid scenario is useful only when its rules match the problem;
 keep the original formal contract and distinguish teaching adaptations. Review
 missing causal bridges as required findings regardless of algorithm correctness.
 
+For a non-obvious overlap or refinement implication, prefer a concrete witness
+with letters and positions showing which equal parts force the conclusion,
+alongside the general proof. If the witness deliberately uses a nonminimal border
+to illustrate a contradiction, label it as such rather than a valid greedy state.
+Nearby prose or a small static diagram is sufficient; no animation or additional
+exhaustive testing is required. This refinement is motivated by optional
+[1147-A1](https://github.com/flyfy1/knowledge-vis/blob/9af7cb8d75af0e03b3b0e2aca7355aa4e9574a67/specs/reviews/1147-review-1-5827b0ae.md)
+on an accepted candidate: its proof was reconstructable, with minor symbolic
+density. This guidance neither reclassifies that advisory as a required failure
+nor claims its closure or live-policy adoption.
+
 Apply the declared reader prerequisites to baseline code as well as the final
 solution. When an unfamiliar helper API or compact expression obscures what a
 line does, give a short local explanation or a tiny equivalent example in both
