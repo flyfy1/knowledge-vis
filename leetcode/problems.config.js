@@ -3831,6 +3831,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) time; O(n) auxiliary space"
   },
   {
+    "id": 906,
+    "title": {
+      "zh": "超级回文数",
+      "en": "Super Palindromes"
+    },
+    "desc": {
+      "zh": "镜像构造回文平方根，完整检查超级回文数。",
+      "en": "Mirror square roots and prove a complete super-palindrome search."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数学",
+        "en": "Math"
+      },
+      {
+        "zh": "枚举",
+        "en": "Enumeration"
+      }
+    ],
+    "path": "906/",
+    "leetcodeUrl": "https://leetcode.com/problems/super-palindromes/",
+    "language": "Python",
+    "complexity": "O(R^(1/4) log R) time; O(log R) auxiliary space, R = int(right)"
+  },
+  {
     "id": 920,
     "title": {
       "zh": "播放列表的数量",
