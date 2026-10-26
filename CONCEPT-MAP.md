@@ -2000,3 +2000,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Subset and endpoint DP | `leetcode/943/#step2` | Keep the minimum chain length for each selected subset and last word; reconstruct with predecessor pointers. |
 
 <!-- /leetcode-943-campaign -->
+
+
+<!-- leetcode-952-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Prime-factor connectivity | `leetcode/952/#step2` | One representative per prime preserves every graph connection. |
+| Union-find | `leetcode/952/#step2` | Merge input-index components without counting factor nodes. |
+
+<!-- /leetcode-952-campaign -->
