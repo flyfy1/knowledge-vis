@@ -2040,3 +2040,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | ancestor path stack | `leetcode/1028/#step3` | Pop closed subtrees to expose the unique parent at depth minus one. |
 
 <!-- /leetcode-1028-campaign -->
+
+
+<!-- leetcode-1032-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Reversed trie and suffix invariant | `leetcode/1032/#step3` | Share backward word paths and stop at terminal or missing edges. |
+| Stateful bounded stream | `leetcode/1032/#step5` | Keep only the longest-word window across queries. |
+
+<!-- /leetcode-1032-campaign -->
