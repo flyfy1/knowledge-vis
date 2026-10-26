@@ -1,0 +1,26 @@
+--- ../launch.py
++++ launch.py
+@@ -4,8 +4,8 @@
+ REPO=ROOT/'leetcode-hard-campaign-20261018'
+ STATE=ROOT/'leetcode-hard-campaign-state-20261018'
+ BASE='048d217b1313ec068fbf41fe3703f5f3e83dcc90'
+-CENTRAL_HEAD='048d217b1313ec068fbf41fe3703f5f3e83dcc90'
+-CENTRAL_RUN='854-fix-4964d1606702'
++CENTRAL_HEAD='b3336f7dc7243e7d15f336ab490eb6c3a0824304'
++CENTRAL_RUN='854-review-dcc68f3629c0'
+ POLICY='816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c'
+ 
+ def read(p): return json.loads(p.read_text())
+@@ -63,10 +63,10 @@
+     assert s['status']=='running' and not (STATE/'STOP').exists()
+     assert s['expected_head']==CENTRAL_HEAD and git('rev-parse','HEAD')==CENTRAL_HEAD
+     assert s['current']['problem_id']=='854'
+-    assert s['current']['stage']=='fix' and s['current']['run_id']==CENTRAL_RUN
++    assert s['current']['stage']=='review' and s['current']['run_id']==CENTRAL_RUN
+     run=next(r for r in s['runs'] if r['id']==CENTRAL_RUN)
+     events=[json.loads(line) for line in (pathlib.Path(run['directory'])/'events.jsonl').read_text().splitlines() if line.startswith('{')]
+-    assert any(e.get('type')=='thread.started' and e.get('thread_id')=='01a17588-eeec-7b71-91f6-8bdbffe0305e' for e in events)
++    assert any(e.get('type')=='thread.started' and e.get('thread_id')=='01a1758c-7fc0-7b21-9f8d-9c75db7c79b1' for e in events)
+     assert len(s['queue'])==984
+     for pid in ['1001','1012']:
+         assert pid in s['queue'] and pid not in s['problems']
