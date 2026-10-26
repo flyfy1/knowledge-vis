@@ -1,0 +1,33 @@
+{
+  "finding": "1125-R1",
+  "status": "pass",
+  "rows": [
+    {
+      "lang": "zh",
+      "paragraph": "combinations(range(n), k) 依次给出恰好 k 个不同下标的组合；covered.update 把一个人的技能加入集合。集合相等表示恰好覆盖要求。n 是人数、m 是技能数。最坏有 2ⁿ 个组合，每个要合并至多 n·m 项技能：O(2ⁿ·n·m) 时间，O(n+m) 辅助空间（不保存所有组合）。n=60 时不能逐队尝试。官方上限是 m≤16、n≤60，并不保证每个输入都有 m<n。例如，接下来的贪心陷阱有 6 项技能、3 个人；也允许 1 个人拥有全部 16 项技能。选择按覆盖保存状态，是因为技能数的上限较小：覆盖至多有 2ᵐ≤2¹⁶=65,536 种，而人员子集至多有 2⁶⁰ 个。",
+      "input": "所需技能（从右到左的位顺序）：a, b, c, d, e, f",
+      "output": "目前全覆盖的最小团队：[1,2]（2 人）。所有人已处理：这是最终最小团队。"
+    },
+    {
+      "lang": "en",
+      "paragraph": "combinations(range(n), k) yields each choice of k distinct indices; covered.update adds one person’s skills to a set. Set equality means all requirements are covered. With n people and m skills, there can be 2ⁿ teams, each merging up to n·m skill entries: O(2ⁿ·n·m) time and O(n+m) auxiliary space without storing all teams. Trying every team is impractical at n=60. The official bounds are m≤16 and n≤60; this does not guarantee m<n for each input. For example, the greedy trap below has 6 skills and 3 people; one person with all 16 skills is also valid. We store states by coverage because the skill-count bound is smaller: at most 2ᵐ≤2¹⁶=65,536 coverages, versus up to 2⁶⁰ person subsets.",
+      "input": "Required skills (bits from right to left): a, b, c, d, e, f",
+      "output": "Smallest full-coverage team so far: [1,2] (2 people). All people processed: this is a final minimum team."
+    }
+  ],
+  "trap": {
+    "m": 6,
+    "n": 3,
+    "team": [
+      1,
+      2
+    ]
+  },
+  "boundary": {
+    "m": 16,
+    "n": 1,
+    "team": [
+      0
+    ]
+  }
+}

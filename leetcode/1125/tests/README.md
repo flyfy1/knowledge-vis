@@ -16,3 +16,15 @@ The Python test executes the canonical class method and the baseline extracted f
 Browser checks exercise both locales, every preset and endpoint, all forward/back round trips, hand operations, every quiz choice/reveal/change, language-state preservation, source display/copy/download bytes, denied-storage and offline source, all presets at 320/390/736/1440 widths with CSS zoom 1 and 2, selected native-option width budgets (24px conservative arrow allowance), page overflow, focus and actual keyboard actions, local asset responses and related section meanings. Screenshots are viewport captures; CSS zoom is a reproducible headless layout check and does not claim physical-device or native browser-menu zoom testing. Read the author's visual-inspection record for screenshot observations. Contrast uses rendered computed colors and a luminance helper checked against known 21:1 and 1:1 pairs. Native select fit budgets apply to this Chromium/Linux font environment, not every OS.
 
 Passing scripts establishes author self-checks only. Independent cold review, physical-device verification, novice comprehension, LeetCode submission acceptance and public deployment are not claimed.
+
+
+1125-R1 focused regression (both rendered locales, narrow wrapping, greedy trap,
+and actual Python execution for m=16,n=1):
+
+```sh
+OUTPUT_DIR="$PWD/leetcode/1125/tests/evidence/review-r1/after" node leetcode/1125/tests/review_r1.cjs
+```
+
+The preserved before/ subdirectory records its failure against the reviewed wording;
+after/ contains the repaired candidate checks. The repair manifest is separate from
+the original author manifest. These are self-checks; independent closure is pending.

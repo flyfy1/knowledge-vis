@@ -47,3 +47,14 @@ State branches: initial empty team; intermediate processed prefixes; terminal fi
 Self-check complete; independent reviewer/run, score and acceptance remain pending. Python passed 4,296 independent-oracle cases, 2 maximum cases, and execution of the displayed baseline. Core passed 4,304 cases, 21,617 prefix frames and 44,834 transition comparisons. Final real Chromium run passed 42 recorded coverage rows with 32 screenshots, plus the narrow zh→en→zh header roundtrip supplement at zoom 1 and 2. All eight presets were checked at 320/390/736/1440 widths in both locales at both zooms. Total shipped CSS including shared stylesheet is 11,423 bytes. Native clipboard success and manual fallback both transferred exact source with a separately verified sentinel per locale. See tests/evidence/*.json and SELF-CHECK.md.
 
 Required non-mutating preflight, from repository root: `python3 -B scripts/register_leetcode_lesson.py 1125 --validate-only` → exit 0, no stdout/stderr; actual receipt in tests/evidence/preflight.json. No registration was run. Metadata is frozen with the final candidate manifest for fresh independent review. No prior acceptance or campaign record was changed.
+
+
+## 1125-R1 repair candidate (2026-10-27 local)
+
+Previous independent report: specs/reviews/1125-review-1-b4279a73.md, reviewed revision 07cc0f1656abea6764b0716165a7cdd501299a3a. Its changes-required outcome remains historical evidence. Required finding 1125-R1 is fixed awaiting separate review, not independently closed.
+
+The step-2 baseline-cost paragraph now compares official maximum bounds m≤16 and n≤60, explicitly says an input need not have m<n, and gives the existing six-skill/three-person greedy trap and the legal sixteen-skill/one-person boundary. At most 2^16=65,536 coverage states explains the bounded state space. The baseline and DP costs, algorithm, canonical Python, interaction, design tokens and layout are unchanged. copy.js has a new local asset query version.
+
+Website-design skill applied as a correction to the existing approved design; no new feature or layout. P0/highest-return slice: correct the causal premise in both languages and preserve a regression rejecting the reviewed wording. P1/P2: none. Deferred: optional design work and arbitrary-input UI have no need for this finding. A separate reviewer must re-read both paragraphs and the two counterexamples before closure.
+
+Focused red/green browser evidence, full preserved-behavior reruns, preflight receipt and the new frozen file-hash manifest are in tests/evidence/review-r1/. Original evidence and manifest remain intact. See the appended SELF-CHECK entry for exact commands and validation limits. The selected faithful Python interface is still backed by provenance/official.json; there is no non-Python language contract or supportedLanguages omission to repair. The unchanged solution.py/python-code.js/PYTHON_SOURCE pair is the exact Python pair in scripts/register_leetcode_lesson.py.

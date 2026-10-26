@@ -33,3 +33,63 @@ Measured rendered contrast (browser-results.json): main text 16.09:1, explanator
 ## Limits and next action
 
 No physical phone, native browser-menu zoom, other OS/font environment, screen-reader session, novice learner test, LeetCode judge submission or production deployment was performed. CSS zoom 2 is the recorded headless layout test, not a claim of physical-device testing. All traces are labeled JavaScript simulations of small inputs, not executions of the Python submission. Trace snapshots and candidate ledgers have extra memory costs, disclosed beside the trace. The next required action is a separate reviewer run with fresh context and the frozen candidate; keep the BRIEF/source/self-check hidden until its cold learner walkthrough is recorded. No independent score or acceptance is implied.
+
+
+## 1125-R1 follow-up self-check — 2026-10-27 local
+
+Finding mapping: **1125-R1 → fixed awaiting independent review**. The original
+review specs/reviews/1125-review-1-b4279a73.md remains unchanged and its historical
+changes-required decision is not superseded by these author checks. The repair
+changes only step 2's baseCost translations and the local copy.js query version.
+Both paragraphs distinguish the official bounds m≤16 and n≤60 from actual input
+counts, quantify 2^16=65,536 coverage states, and explicitly include the m=6,n=3
+and m=16,n=1 counterexamples. No numerical or interaction defect was found that
+required an algorithm change. Canonical Python and its mirror remain unchanged;
+regeneration was unnecessary. Official saved snippets include faithful Python3
+and TypeScript, and the preferred Python interface is selected.
+
+All commands below ran from the repository root. For repaired test runs,
+`OUTPUT_DIR="$PWD/leetcode/1125/tests/evidence/review-r1/after"` was set; the
+initial failing run used the corresponding `before` directory.
+
+| Command | Observed result |
+|---|---|
+| `node leetcode/1125/tests/review_r1.cjs` before correction | Exit 1: “1125-R1: explain the distinct official bounds”; before/r1-results.json preserves the old rendered Chinese sentence and assertion failure; before/zh-bounds.png preserves the screenshot |
+| `node leetcode/1125/tests/review_r1.cjs` after correction | Exit 0; exact rendered paragraph read in zh/en, 1280px and 320px CSS zoom 1/2; trap m=6,n=3 finishes [1,2]; actual solution.py execution and JS trace at m=16,n=1 return [0] |
+| `python3 -B leetcode/1125/tests/test_solution.py` | Exit 0; 4,296 feasible oracle cases, 2 maximum cases, displayed baseline executed |
+| `node leetcode/1125/tests/test_core.cjs` | Exit 0; 4,304 cases, 21,617 prefix frames, 44,834 candidate events; duplicate-key and exact mirror checks pass |
+| `node leetcode/1125/tests/browser.cjs` | Exit 0; 42 check groups and 32 screenshots, both locales/all presets, replay, prediction, source transfer, keyboard, layout, related links, offline and storage-denied paths |
+| `node leetcode/1125/tests/header.cjs` | Exit 0; narrow bilingual title/state roundtrips |
+| `python3 -B scripts/register_leetcode_lesson.py 1125 --validate-only` | Exit 0, empty stdout/stderr; after/preflight.json records cwd/time and the frozen metadata hash. Complexity is exactly one nonempty time-and-space string; no metadata repair or registration occurred |
+| `git diff --check` | Exit 0 |
+
+Rendered-state contract coverage: existing core oracles independently check every
+prefix and candidate/incumbent pair; browser checks cover the tiny final round's
+accepted [0,2] and rejected [0,1,2], before/after full-team replacement in Later,
+formula operands, all round endpoints and rewind/replay. No cumulative-work total
+is advertised; processed-person progress describes completed rounds. Prediction
+is the fixed independent four-skill exercise; choice changes invalidate feedback
+and locale changes preserve its selected meaning. Exact source parity includes
+decoded mirror, textContent, clipboard success, each native Linux fallback using
+a fresh verified sentinel, and downloaded bytes, including final newline.
+
+Visual self-check: directly inspected after/zh-bounds.png, en-bounds.png,
+zh-320-zoom2-bounds.png and en-320-zoom2-bounds.png. The corrected sentences and
+numbers wrap and remain readable in both languages, with no page-wide overflow.
+Tall element captures include a sticky-nav overlay over part of the earlier
+baseline prose; the changed bound/counterexample text is below it and readable.
+This capture artifact is not treated as evidence of collision. Also inspected
+fresh en-390-dense.png (coverage heading and before/after teams stay paired) and
+zh-320-zoom2-prediction.png (selected wrong choice and corrective feedback remain
+distinct). CSS and contrast colors were unchanged; the full browser suite
+rechecks rendered pairs. CSS zoom is a synthetic layout test, not native device
+zoom evidence. Physical devices, other platforms, screen readers, actual novice
+comprehension, LeetCode judge acceptance and public delivery remain unverified.
+
+New candidate: review-r1/manifest.json hashes the current runtime, BRIEF, metadata,
+provenance, tests and appended self-check. The original manifest and old receipts
+are retained. No shared assets, registry, campaign state, services, Git config,
+review report or rubric were changed; no child agents, commit, push, deploy,
+schedules or credentials were used. Next action: a separate reviewer reads the
+changed bilingual causal paragraph with both counterexamples against this frozen
+candidate and decides whether to close 1125-R1. No independent acceptance claimed.
