@@ -3727,6 +3727,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n) time; O(n) space"
   },
   {
+    "id": 895,
+    "title": {
+      "zh": "最大频率栈",
+      "en": "Maximum Frequency Stack"
+    },
+    "desc": {
+      "zh": "用频率层的历史同时保存出现次数与最近顺序。",
+      "en": "Preserve frequency and recency with a stack for each frequency level."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "栈",
+        "en": "Stack"
+      },
+      {
+        "zh": "哈希表",
+        "en": "Hash table"
+      }
+    ],
+    "path": "895/",
+    "leetcodeUrl": "https://leetcode.com/problems/maximum-frequency-stack/",
+    "language": "Python",
+    "complexity": "O(1) expected amortized time per push/pop; O(q) space for q calls"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
