@@ -17,4 +17,12 @@ Candidate working tree after fixes for `1163-R1-BASELINE-01` and `1163-R1-DEVICE
 - Logic/source regressions: `python3 leetcode/1163/tests/test_core.py`, `python3 leetcode/1163/tests/oracle_check.py`, `node leetcode/1163/tests/browser-check.js`, and `node leetcode/1163/tests/browser-deep.js` passed. The canonical `solution.py` and generated `python-code.js` mirror were not changed.
 - Metadata gate: `python3 -B scripts/register_leetcode_lesson.py 1163 --validate-only` => `EXIT:0`.
 
+## Required finding repair evidence (new candidate)
+
+- `1163-R1-DEVICE-01`: updated lesson-local CSS reflows the header and step navigation, wraps displayed source code, and suppresses page-level horizontal overflow while preserving the native preset control. `node leetcode/1163/tests/repair-regression.js` was run against the live preview for EN and zh at 320, 390, and 1280 CSS-pixel viewports with 200% page zoom. It reported `scroll=client` and `maxRight<=client` in all six cases; the selected labels remained `cababa · transfer` / `cababa · 转移` and the adjacent input description remained visible.
+- The same run asserted the baseline code contained real line breaks and that the select stayed within its local stage and viewport. This preserves `1163-R1-BASELINE-01` behavior while adding a regression for the required device finding.
+- Full regression commands passed after the repair: `python3 leetcode/1163/tests/test_core.py`, `python3 leetcode/1163/tests/oracle_check.py`, `node leetcode/1163/tests/browser-check.js`, `node leetcode/1163/tests/browser-deep.js`, and `python3 -B scripts/register_leetcode_lesson.py 1163 --validate-only` (exit 0).
+
+These are author-run checks for a new candidate and do not independently accept either historical finding; a fresh separate review remains required.
+
 The two repaired findings remain required items for a fresh independent review; this evidence does not self-accept them.
