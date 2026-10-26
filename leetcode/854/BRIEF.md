@@ -66,3 +66,22 @@ mode and general permutation machinery have no demonstrated need for this small
 proof bridge. Validate the rendered mappings and transitions, old interaction
 state, clipboard/source parity and layout; do not rerun the unchanged solver's
 large numeric suite simply for this explanatory widget.
+
+## Re-review freeze — 854-bridge-r2-20261026
+
+The starting checkout `048d217b1313ec068fbf41fe3703f5f3e83dcc90` already includes
+the adopted proof bridge. This revision preserves its runtime bytes and replaces
+the stale r1 candidate manifest with a current hash-bound review candidate.
+Historical candidate metadata is retained in
+`tests/revision-evidence/prior-candidate.json`. No metadata shape repair is needed:
+complexity is already one string covering time and space. Canonical Python is
+the preferred faithful interface in the saved official snippets; no non-Python
+exception or supportedLanguages list is used or needed.
+
+The focused test now checks complete bilingual actions, target/current labels
+and both counter labels as well as mappings and numbers. The new revision audit
+independently checks assignment costs and source/generator parity and executes
+eight Python/oracle fixtures. Current Chromium evidence and stable-finding
+mapping are appended to BRIDGE-SELF-CHECK.md. This is self-check evidence only;
+`854-BRIDGE-R1` / `854-A01` await a separate reviewer, with the frozen rubric and
+historical review/acceptance preserved.
