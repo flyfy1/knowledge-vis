@@ -4,6 +4,9 @@ Start with [WORKFLOW](../WORKFLOW.md), [UI/bilingual policy](../UI-I18N-SPEC.md)
 
 ## Current state
 
+- **Integral → inductor → Buck:** a signed voltage-area experiment links the existing steady current to positive/negative voltseconds through one new sourced relation. Current counts38/50/13. [Contract](../specs/atlas-volt-second.md), [evidence](../specs/reviews/atlas-volt-second-20261026/verification.md). Source/production status stays separate. Prior capacitor-rate releaseede2ef1d is origin-installed; public403/1010 remains unverified.
+
+
 - **Derivative → capacitor rate:** one sourced application relation and a two-station `charge` route; the original capacitor pulse model drives an explicit latest-interval rise/run view. Counts38/49/12. [Contract](../specs/atlas-capacitor-rate.md), [evidence](../specs/reviews/atlas-capacitor-rate-20261026/verification.md). Publication is separate; consult visual-release.json. Previous signal/connector/reading package227f37b6 was installed at origin; public verification hit Cloudflare403/1010.
 
 

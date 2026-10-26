@@ -4,3 +4,6 @@
 
 /* Last capacitor interval: existing endpoints, fixed local scales, no animation. */
 #capacitor-rate .rate-rise-run{fill:none;stroke:var(--amber);stroke-width:2;stroke-dasharray:6 4}#capacitor-rate a{display:inline-block;min-height:48px}#capacitor-rate .formula{overflow-wrap:anywhere}@media(forced-colors:active){#capacitor-rate .rate-rise-run{stroke:CanvasText}}
+
+/* Buck area shares the existing seek/play time; only elapsed segments fill. */
+#buck-area .area-reference{fill:none;stroke:var(--muted);stroke-width:2}#buck-area .area-fill{fill-opacity:.22;stroke-width:2}#buck-area .area-positive{fill:var(--green);stroke:var(--green)}#buck-area .area-negative{fill:var(--amber);stroke:var(--amber);stroke-dasharray:5 3}#buck-area .area-cursor{fill:none;stroke:var(--ink);stroke-width:2}#buck-area a{display:inline-block;min-height:48px}#buck-area-formula{white-space:pre-line;overflow-wrap:anywhere}@media(forced-colors:active){#buck-area .area-fill{fill:none;stroke:Highlight}#buck-area .area-reference,#buck-area .area-cursor{stroke:CanvasText}}

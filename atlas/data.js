@@ -57,6 +57,7 @@
     edges: [
       edge('unit-circle','snell','application','正弦范围判断折射解','sine range tests refraction solutions','单位圆给出sin的值域；Snell关系要求sinθ₂=(n₁/n₂)sinθ₁，右侧超过1时没有传播折射光线。光学角从法线起，而不是单位圆默认的水平轴。','The unit circle supplies sine’s range. Snell requires sinθ₂=(n₁/n₂)sinθ₁; above1, no propagating refracted ray exists. Optical angles start at the normal, rather than the unit circle’s usual horizontal axis.','../reflection-refraction/#critical-proof'),
       edge('slope','pinhole-ratio','application','用同一直线得到相似比','uses one straight line to obtain the ratio','以孔心为原点，同一条非竖直光线保持斜率；孔两侧三角形相似，坐标反号给出带符号放大率M=−v/u。光线斜率与放大率不是同一个量，这个关系不是透镜焦距公式。','With the hole as origin, a nonvertical ray keeps one slope. Similar triangles on opposite sides reverse the coordinate sign, giving signed magnification M=−v/u. Ray slope and magnification are different quantities; this is not a lens focal-length formula.','../pinhole-camera/#geometry-bridge'),
+      edge('integral','inductor','application','把电压面积换成电流改变量','maps voltage area to current change','恒定理想L、被动端口符号下，∫vL dt=L[iL(b)−iL(a)]。有符号伏秒决定电流改变量，不是能量；重复周期净面积为零时电流回到起值，不必为零。暂态区间不要求平衡。','For constant ideal L with passive terminal signs, ∫vL dt=L[iL(b)−iL(a)]. Signed voltseconds determine current change, not energy. Zero net area over a repeating period returns current to its initial value, not necessarily zero. Transient intervals need not balance.','https://wiki.analog.com/university/courses/electronics/buck_converter_basics'),
       edge('integral','work-energy','application','对位移累加力的作用','integrates force over displacement','一维功沿路径积 F dx，单位 N·m=J；a、b 可选时间端点，但积分变量 x 是位移，不是时间。弹簧往返时各段可做正功或负功。','One-dimensional work integrates F dx along the path, in N·m=J. Time bounds a,b choose endpoint positions, but the integration variable x is displacement, not time. Spring work can be positive or negative along different legs.','https://openstax.org/books/university-physics-volume-1/pages/7-1-work'),
       edge('net-force','work-energy','application','把净功联系到动能变化','connects net work with kinetic change','本例重力与支持力都不做功，弹簧力做功即物块净功。换系统或添加阻尼/驱动后，不能把单个力的功直接等同净功，也不能照搬本例机械能守恒。','Here weight and support do zero work, so spring work is the block’s net work. In another system or with damping/driving, one force’s work is not generally net work, and this mechanical-energy conservation statement does not transfer automatically.','https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem'),
 
@@ -128,6 +129,102 @@
       edge('convolution','gaussian','connection','描述独立变量相加的分布','describes distributions of independent sums','独立随机变量之和的分布由卷积给出；反复相加后的正态近似需满足中心极限定理的条件。','Convolution gives the distribution of a sum of independent random variables; a normal approximation after repeated sums requires central-limit conditions.','../clt/#step5')
     ],
     trails: [
+{
+  "id": "volt-second",
+  "background": [
+    "integral",
+    "inductor"
+  ],
+  "title": {
+    "zh": "平均电压为零，为何电流不停？",
+    "en": "Zero average voltage: why does current continue?"
+  },
+  "nodes": [
+    "integral",
+    "inductor",
+    "buck"
+  ],
+  "stationTasks": [
+    {
+      "node": "integral",
+      "question": {
+        "zh": "有符号累加，究竟累加什么？",
+        "en": "What does a signed integral accumulate?"
+      },
+      "action": {
+        "zh": "打开积分第2步，增加切条数并比较左端／中点／右端取高。这里的v是速度，不是电压。",
+        "en": "Open integral step2. Increase strip count and compare left/mid/right samples. Here v is velocity, not voltage."
+      },
+      "observe": {
+        "zh": "速度×时间累加成位移；本例v=t≥0，精确位移2m。换成电压vL时，面积单位变为V·s，不是m或J。",
+        "en": "Velocity times time accumulates displacement; here v=t≥0 gives exact displacement2m. Switching to voltage vL changes area units toV·s, not metres or joules."
+      },
+      "bridge": {
+        "zh": "下一站换理想电感：积电压，再除以电感量，得到电流的改变量，不是绝对电流。",
+        "en": "Next change to an ideal inductor: integrate voltage and divide by inductance to obtain a current change, not absolute current."
+      },
+      "href": "../integral/#step2",
+      "evidenceEdge": "integral:inductor",
+      "source": "https://wiki.analog.com/university/courses/electronics/buck_converter_basics",
+      "evidenceLabel": {
+        "zh": "Analog Devices · 电感斜率与伏秒平衡 ↗",
+        "en": "Analog Devices · current ramps and volt-second balance ↗"
+      }
+    },
+    {
+      "node": "inductor",
+      "question": {
+        "zh": "零电压，会把已有电流清零吗？",
+        "en": "Does zero voltage erase an existing current?"
+      },
+      "action": {
+        "zh": "重置电感，依次按+2V两次、0V一次、−2V一次，看电流曲线。每次0.5ms，L=10mH。",
+        "en": "Reset the inductor. Apply+2V twice,0V once,then−2V once. Each interval is0.5ms with L=10mH."
+      },
+      "observe": {
+        "zh": "电流0→0.1→0.2→0.2→0.1A。每个正／负矩形面积±0.001V·s，除以0.01H得到±0.1A；零电压保持0.2A。",
+        "en": "Current goes0→0.1→0.2→0.2→0.1A. Each signed rectangle is±0.001V·s; dividing by0.01H gives±0.1A. Zero voltage keeps0.2A."
+      },
+      "bridge": {
+        "zh": "下一站是不同参数的Buck：L=1mH，周期50µs，初态已取稳态谷值；不会传递这里的电流或脉冲。",
+        "en": "Next is a different Buck case: L=1mH,period50µs, starting at a steady-state valley. No current or pulse parameters transfer."
+      },
+      "href": "../power-converters/#step1",
+      "evidenceEdge": "integral:inductor",
+      "source": "https://wiki.analog.com/university/courses/electronics/buck_converter_basics",
+      "evidenceLabel": {
+        "zh": "Analog Devices · 电感斜率与伏秒平衡 ↗",
+        "en": "Analog Devices · current ramps and volt-second balance ↗"
+      }
+    },
+    {
+      "node": "buck",
+      "question": {
+        "zh": "正负电压面积抵消，电流也为零吗？",
+        "en": "If voltage areas cancel, must current be zero?"
+      },
+      "action": {
+        "zh": "设置Vin=12V、D=50%，展开“从刚才的斜率推导输出电压”，按“查看ON结束”与“查看一周期”。保持一周期时刻，再把D改75%，比较填色面积。",
+        "en": "Set Vin=12V,D=50%. Expand “Derive output voltage from those slopes”; use Inspect ON end,then Inspect one period. Keep the one-period time and change D to75%; compare the filled areas."
+      },
+      "observe": {
+        "zh": "默认ON结束：+150Vµs，Δi=+0.15A；一周期+150与−150抵消，电流回到0.925A，不是零。D=75%时矩形高宽都变，净面积仍为零。",
+        "en": "At default ON end:+150Vµs,Δi=+0.15A. At one period,+150 and−150 cancel; current returns to0.925A,not zero. D=75% changes rectangle heights/widths while net area remains zero."
+      },
+      "bridge": {
+        "zh": "这是已建立的理想周期稳态；调参比较另一个稳态，不模拟启动或控制器。任意暂态区间仍满足积分关系，但未必伏秒平衡。",
+        "en": "This is an established ideal periodic steady state. Parameter edits compare another steady case,not startup or a controller. The integral relation still holds during a transient,but its voltage area need not balance."
+      },
+      "href": "../power-converters/#step4",
+      "evidenceEdge": "inductor:buck",
+      "source": "https://wiki.analog.com/university/courses/electronics/buck_converter_basics",
+      "evidenceLabel": {
+        "zh": "Analog Devices · 电感斜率与伏秒平衡 ↗",
+        "en": "Analog Devices · current ramps and volt-second balance ↗"
+      }
+    }
+  ]
+},
 {
   "id": "charge",
   "background": [
