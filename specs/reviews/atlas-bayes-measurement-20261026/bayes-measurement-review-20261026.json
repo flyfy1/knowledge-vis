@@ -1,0 +1,43 @@
+{
+  "pass": true,
+  "mustFix": 0,
+  "sliderCases": 1001,
+  "maxWidthSumError": 1.4210854715202004e-14,
+  "maxPosteriorError": 0,
+  "golden": [
+    {
+      "prior": 0.01,
+      "slider": 371,
+      "a": 0.009000000000000001,
+      "b": 0.0891,
+      "pool": 0.09809999999999999,
+      "posterior": 0.09174311926605506,
+      "yesWidth": "9.174311926605506%"
+    },
+    {
+      "prior": 0.1,
+      "slider": 741,
+      "a": 0.09000000000000001,
+      "b": 0.081,
+      "pool": 0.171,
+      "posterior": 0.5263157894736842,
+      "yesWidth": "52.63157894736842%"
+    }
+  ],
+  "allCorePrefixS1DrawAndS2toS6SuffixByteIdentical": true,
+  "onlyTwoGraphSourceChanges": true,
+  "counts": [
+    38,
+    50,
+    14
+  ],
+  "method": "Own actual-event/readout VM, independent joint-table normalization over every slider position; no Chrome/visual/hearing/medical audit",
+  "sha256": {
+    "bayes/app.js": "453a659a460f81f138d2f61c9ed9893111b12ef655c3c06d190a614c594e2874",
+    "bayes/i18n.js": "79d69d061296acd04d8f41b6dc43344acc71d3aa7bbdbc3b2d1b37b3baf688ab",
+    "bayes/index.html": "e43c882ae3fec4827d0da00c1fba80d7591fb8abc24c61595d6b4f54b9cbd9a7",
+    "bayes/style.css": "c6da09bbe8cd4b08cdb8993f68296aeb518bbe46b7d8fac07406b72c278275ec",
+    "atlas/data.js": "81c477f732ca839eaa468ed99841d139bca3e86be831c6e2c35b29fa33529cd8",
+    "specs/atlas-bayes-measurement.md": "c93055654af02b74fba0a48d0ce2014d9b2496b7737abbe9663f81c7519c8498"
+  }
+}

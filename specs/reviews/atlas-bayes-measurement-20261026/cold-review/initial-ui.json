@@ -1,0 +1,51 @@
+[
+  {
+    "stage": "selected atlas node",
+    "url": "http://127.0.0.1:18935/atlas/?node=bayes&view=list&lang=zh",
+    "links": [
+      {
+        "text": "打开交互讲解 →",
+        "href": "../bayes/#step1"
+      }
+    ]
+  },
+  {
+    "stage": "toy initial",
+    "url": "http://127.0.0.1:18935/bayes/#step1",
+    "text": "Step1 · Measurement direction and posterior\n\nAmong cards that light the lamp, how many have a star?\n\nThis section applies the same update to a hypothetical card reader. H means “the card has a star”; E means “the lamp lights”. Draw one card randomly from a batch. Its marked fraction p, before this reading, is the prior P(H). Assume P(E|H)=90% and P(E|not H)=9%. After seeing the lamp, the question is the reverse P(H|E), not the original 90%.\n\nMarked fraction before the reading: p=P(H) (original log slider) 1.00%\nPrior 1% (default)\nPrior 10%\n\nPrior P(H)≈1.00% + lamp E → Posterior P(H|E)≈9.17%. LR=10 stays fixed; posterior probability is not simply ten times the prior.\n\nRestrict to lamp results: where do they come from?\n\nThe whole strip is all lamp results E, normalized to 100%. A is “star and lamp”; B is “no star but lamp”. Their shares within this pool follow the same prior slider above.\n\nWithin lamp results: A with a star≈9.17%; B without a star≈90.83%. The denominator is lamp results, not all cards.\n\nWhy add both sources of lamp results in the denominator?\n\nReturn to Bayesian updating on the knowledge map →\n\nThe 90% and 9% are two assumed conditional probabilities, not the reader’s overall accuracy. Only the prior changes here; reader parameters stay fixed. Other sections retain the original test example and do not synchronize this slider.",
+    "controls": [
+      {
+        "tag": "INPUT",
+        "text": "",
+        "value": "371",
+        "aria": null,
+        "labels": [
+          "Marked fraction before the reading: p=P(H) (original log slider) 1.00%"
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Prior 1% (default)",
+        "value": "",
+        "aria": null,
+        "labels": []
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Prior 10%",
+        "value": "",
+        "aria": null,
+        "labels": []
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "Why add both sources of lamp results in the denominator?",
+        "aria": null,
+        "labels": []
+      }
+    ]
+  },
+  {
+    "browser": "CLOSED"
+  }
+]

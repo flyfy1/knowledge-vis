@@ -64,3 +64,7 @@ One sourced integral→inductor application relation joins the existing inductor
 ## Monte Carlo uncertainty route
 
 Existingvariance→montecarlo relation is reused by a two-stop uncertainty route,38/50/14. No newedge/node or distancealgorithm. See[contract](../../specs/atlas-estimation-error.md).
+
+## Bayes definition-first source
+
+Bayesnode/source nowopensitsS1measurementlikelihood/posteriorintroduction; oldS2oddsremainscoursenavigation. No graphcount/layout/camera changes. See[contract](../../specs/atlas-bayes-measurement.md).

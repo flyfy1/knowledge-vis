@@ -64,17 +64,19 @@
 <section class="step" id="step1" data-step="1">
   <div class="step-inner">
     <p class="step-kicker" data-i18n="s1k">第 1 步 · 先验是起点</p>
-    <h2 data-i18n="s1t">同一份证据，落在不同的底子上</h2>
+    <h2 data-i18n="s1t">亮灯的卡片里，有多少真的带星标？</h2>
     <p class="explain" data-i18n-html="s1e"></p>
     <div class="stage">
       <canvas id="s1-canvas" height="300" style="height:300px"></canvas>
     </div>
     <div class="controls">
-      <label><span><span data-i18n="s1priorLab">先验患病率（对数刻度）</span> <span class="val" id="s1-prior-val"></span></span>
+      <label><span><span data-i18n="s1priorLab">星标比例p=P(H)（对数刻度）</span> <span class="val" id="s1-prior-val"></span></span>
         <input type="range" id="s1-prior" min="0" max="1000" step="1" value="371">
       </label>
     </div>
+    <div class="btn-row" id="s1-presets"><button type="button" class="btn" data-measurement-prior="0.01" data-i18n="s1p1"></button><button type="button" class="btn" data-measurement-prior="0.1" data-i18n="s1p10"></button></div>
     <p class="readout" id="s1-readout"></p>
+    <section id="s1-measurement" aria-labelledby="s1-pool-title"><h3 id="s1-pool-title" data-i18n="s1poolTitle"></h3><p data-i18n="s1poolIntro"></p><div id="s1-mixture" role="img"><span id="s1-mixture-yes" aria-hidden="true"></span><span id="s1-mixture-no" aria-hidden="true"></span></div><p id="s1-pool-caption" class="readout" aria-live="polite"></p><details id="s1-measurement-proof"><summary data-i18n="s1proof"></summary><dl><dt data-i18n="s1jointA"></dt><dd id="s1-joint-a"></dd><dt data-i18n="s1jointB"></dt><dd id="s1-joint-b"></dd><dt data-i18n="s1evidence"></dt><dd id="s1-evidence"></dd></dl><p id="s1-normalization" class="formula"></p><p data-i18n="s1direction"></p><p><a href="https://openstax.org/books/introductory-statistics-2e/pages/3-4-contingency-tables" data-i18n="s1source"></a></p></details><p><a href="../atlas/?node=bayes&amp;view=list" data-i18n="s1map"></a></p></section>
     <p class="hint" data-i18n-html="s1hint"></p>
   </div>
 </section>

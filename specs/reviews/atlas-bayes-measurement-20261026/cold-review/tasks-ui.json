@@ -1,0 +1,142 @@
+[
+  {
+    "stage": "EN1percent Space proofopen",
+    "url": "http://127.0.0.1:18935/bayes/#step1",
+    "text": "Step1 · Measurement direction and posterior\n\nAmong cards that light the lamp, how many have a star?\n\nThis section applies the same update to a hypothetical card reader. H means “the card has a star”; E means “the lamp lights”. Draw one card randomly from a batch. Its marked fraction p, before this reading, is the prior P(H). Assume P(E|H)=90% and P(E|not H)=9%. After seeing the lamp, the question is the reverse P(H|E), not the original 90%.\n\nMarked fraction before the reading: p=P(H) (original log slider) 1.00%\nPrior 1% (default)\nPrior 10%\n\nPrior P(H)≈1.00% + lamp E → Posterior P(H|E)≈9.17%. LR=10 stays fixed; posterior probability is not simply ten times the prior.\n\nRestrict to lamp results: where do they come from?\n\nThe whole strip is all lamp results E, normalized to 100%. A is “star and lamp”; B is “no star but lamp”. Their shares within this pool follow the same prior slider above.\n\nWithin lamp results: A with a star≈9.17%; B without a star≈90.83%. The denominator is lamp results, not all cards.\n\nWhy add both sources of lamp results in the denominator?\nAmong all cards: A=P(H∩E)=0.90p\n≈ 0.900%\nAmong all cards: B=P(not H∩E)=0.09(1−p)\n≈ 8.910%\nProbability that a random card lights the lamp: P(E)=A+B\n≈ 9.810%\n\nP(H|E)=A/(A+B)≈9.17%. Sum and normalize unrounded A and B before displaying approximate values.\n\nP(E|H) first restricts to marked cards, then asks about the lamp. P(H|E) first restricts to lamp results, then asks about the star. Their denominators differ. The 90% and 9% concern opposite hypotheses, not complementary events; they need not sum to 100%. These are model probabilities, not actual card counts or measured device performance.\n\nConditional probabilities and denominators · textbook\n\nReturn to Bayesian updating on the knowledge map →\n\nThe 90% and 9% are two assumed conditional probabilities, not the reader’s overall accuracy. Only the prior changes here; reader parameters stay fixed. Other sections retain the original test example and do not synchronize this slider.",
+    "slider": "371",
+    "buttons": [
+      {
+        "text": "Prior 1% (default)",
+        "pressed": "true",
+        "focused": true
+      },
+      {
+        "text": "Prior 10%",
+        "pressed": "false",
+        "focused": false
+      }
+    ],
+    "proofOpen": true
+  },
+  {
+    "stage": "EN10percent Enter",
+    "url": "http://127.0.0.1:18935/bayes/#step1",
+    "text": "Step1 · Measurement direction and posterior\n\nAmong cards that light the lamp, how many have a star?\n\nThis section applies the same update to a hypothetical card reader. H means “the card has a star”; E means “the lamp lights”. Draw one card randomly from a batch. Its marked fraction p, before this reading, is the prior P(H). Assume P(E|H)=90% and P(E|not H)=9%. After seeing the lamp, the question is the reverse P(H|E), not the original 90%.\n\nMarked fraction before the reading: p=P(H) (original log slider) 10.00%\nPrior 1% (default)\nPrior 10%\n\nPrior P(H)≈10.00% + lamp E → Posterior P(H|E)≈52.6%. LR=10 stays fixed; posterior probability is not simply ten times the prior.\n\nRestrict to lamp results: where do they come from?\n\nThe whole strip is all lamp results E, normalized to 100%. A is “star and lamp”; B is “no star but lamp”. Their shares within this pool follow the same prior slider above.\n\nWithin lamp results: A with a star≈52.63%; B without a star≈47.37%. The denominator is lamp results, not all cards.\n\nWhy add both sources of lamp results in the denominator?\nAmong all cards: A=P(H∩E)=0.90p\n≈ 9.000%\nAmong all cards: B=P(not H∩E)=0.09(1−p)\n≈ 8.100%\nProbability that a random card lights the lamp: P(E)=A+B\n≈ 17.100%\n\nP(H|E)=A/(A+B)≈52.63%. Sum and normalize unrounded A and B before displaying approximate values.\n\nP(E|H) first restricts to marked cards, then asks about the lamp. P(H|E) first restricts to lamp results, then asks about the star. Their denominators differ. The 90% and 9% concern opposite hypotheses, not complementary events; they need not sum to 100%. These are model probabilities, not actual card counts or measured device performance.\n\nConditional probabilities and denominators · textbook\n\nReturn to Bayesian updating on the knowledge map →\n\nThe 90% and 9% are two assumed conditional probabilities, not the reader’s overall accuracy. Only the prior changes here; reader parameters stay fixed. Other sections retain the original test example and do not synchronize this slider.",
+    "slider": "741",
+    "buttons": [
+      {
+        "text": "Prior 1% (default)",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "Prior 10%",
+        "pressed": "true",
+        "focused": true
+      }
+    ],
+    "proofOpen": true
+  },
+  {
+    "stage": "arbitrary slider 23left",
+    "url": "http://127.0.0.1:18935/bayes/#step1",
+    "text": "Step1 · Measurement direction and posterior\n\nAmong cards that light the lamp, how many have a star?\n\nThis section applies the same update to a hypothetical card reader. H means “the card has a star”; E means “the lamp lights”. Draw one card randomly from a batch. Its marked fraction p, before this reading, is the prior P(H). Assume P(E|H)=90% and P(E|not H)=9%. After seeing the lamp, the question is the reverse P(H|E), not the original 90%.\n\nMarked fraction before the reading: p=P(H) (original log slider) 8.67%\nPrior 1% (default)\nPrior 10%\n\nPrior P(H)≈8.67% + lamp E → Posterior P(H|E)≈48.7%. LR=10 stays fixed; posterior probability is not simply ten times the prior.\n\nRestrict to lamp results: where do they come from?\n\nThe whole strip is all lamp results E, normalized to 100%. A is “star and lamp”; B is “no star but lamp”. Their shares within this pool follow the same prior slider above.\n\nWithin lamp results: A with a star≈48.69%; B without a star≈51.31%. The denominator is lamp results, not all cards.\n\nWhy add both sources of lamp results in the denominator?\nAmong all cards: A=P(H∩E)=0.90p\n≈ 7.800%\nAmong all cards: B=P(not H∩E)=0.09(1−p)\n≈ 8.220%\nProbability that a random card lights the lamp: P(E)=A+B\n≈ 16.020%\n\nP(H|E)=A/(A+B)≈48.69%. Sum and normalize unrounded A and B before displaying approximate values.\n\nP(E|H) first restricts to marked cards, then asks about the lamp. P(H|E) first restricts to lamp results, then asks about the star. Their denominators differ. The 90% and 9% concern opposite hypotheses, not complementary events; they need not sum to 100%. These are model probabilities, not actual card counts or measured device performance.\n\nConditional probabilities and denominators · textbook\n\nReturn to Bayesian updating on the knowledge map →\n\nThe 90% and 9% are two assumed conditional probabilities, not the reader’s overall accuracy. Only the prior changes here; reader parameters stay fixed. Other sections retain the original test example and do not synchronize this slider.",
+    "slider": "718",
+    "buttons": [
+      {
+        "text": "Prior 1% (default)",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "Prior 10%",
+        "pressed": "false",
+        "focused": false
+      }
+    ],
+    "proofOpen": true
+  },
+  {
+    "stage": "restore default",
+    "url": "http://127.0.0.1:18935/bayes/#step1",
+    "text": "Step1 · Measurement direction and posterior\n\nAmong cards that light the lamp, how many have a star?\n\nThis section applies the same update to a hypothetical card reader. H means “the card has a star”; E means “the lamp lights”. Draw one card randomly from a batch. Its marked fraction p, before this reading, is the prior P(H). Assume P(E|H)=90% and P(E|not H)=9%. After seeing the lamp, the question is the reverse P(H|E), not the original 90%.\n\nMarked fraction before the reading: p=P(H) (original log slider) 1.00%\nPrior 1% (default)\nPrior 10%\n\nPrior P(H)≈1.00% + lamp E → Posterior P(H|E)≈9.17%. LR=10 stays fixed; posterior probability is not simply ten times the prior.\n\nRestrict to lamp results: where do they come from?\n\nThe whole strip is all lamp results E, normalized to 100%. A is “star and lamp”; B is “no star but lamp”. Their shares within this pool follow the same prior slider above.\n\nWithin lamp results: A with a star≈9.17%; B without a star≈90.83%. The denominator is lamp results, not all cards.\n\nWhy add both sources of lamp results in the denominator?\nAmong all cards: A=P(H∩E)=0.90p\n≈ 0.900%\nAmong all cards: B=P(not H∩E)=0.09(1−p)\n≈ 8.910%\nProbability that a random card lights the lamp: P(E)=A+B\n≈ 9.810%\n\nP(H|E)=A/(A+B)≈9.17%. Sum and normalize unrounded A and B before displaying approximate values.\n\nP(E|H) first restricts to marked cards, then asks about the lamp. P(H|E) first restricts to lamp results, then asks about the star. Their denominators differ. The 90% and 9% concern opposite hypotheses, not complementary events; they need not sum to 100%. These are model probabilities, not actual card counts or measured device performance.\n\nConditional probabilities and denominators · textbook\n\nReturn to Bayesian updating on the knowledge map →\n\nThe 90% and 9% are two assumed conditional probabilities, not the reader’s overall accuracy. Only the prior changes here; reader parameters stay fixed. Other sections retain the original test example and do not synchronize this slider.",
+    "slider": "371",
+    "buttons": [
+      {
+        "text": "Prior 1% (default)",
+        "pressed": "true",
+        "focused": true
+      },
+      {
+        "text": "Prior 10%",
+        "pressed": "false",
+        "focused": false
+      }
+    ],
+    "proofOpen": true
+  },
+  {
+    "stage": "proof folded",
+    "url": "http://127.0.0.1:18935/bayes/#step1",
+    "text": "Step1 · Measurement direction and posterior\n\nAmong cards that light the lamp, how many have a star?\n\nThis section applies the same update to a hypothetical card reader. H means “the card has a star”; E means “the lamp lights”. Draw one card randomly from a batch. Its marked fraction p, before this reading, is the prior P(H). Assume P(E|H)=90% and P(E|not H)=9%. After seeing the lamp, the question is the reverse P(H|E), not the original 90%.\n\nMarked fraction before the reading: p=P(H) (original log slider) 1.00%\nPrior 1% (default)\nPrior 10%\n\nPrior P(H)≈1.00% + lamp E → Posterior P(H|E)≈9.17%. LR=10 stays fixed; posterior probability is not simply ten times the prior.\n\nRestrict to lamp results: where do they come from?\n\nThe whole strip is all lamp results E, normalized to 100%. A is “star and lamp”; B is “no star but lamp”. Their shares within this pool follow the same prior slider above.\n\nWithin lamp results: A with a star≈9.17%; B without a star≈90.83%. The denominator is lamp results, not all cards.\n\nWhy add both sources of lamp results in the denominator?\n\nReturn to Bayesian updating on the knowledge map →\n\nThe 90% and 9% are two assumed conditional probabilities, not the reader’s overall accuracy. Only the prior changes here; reader parameters stay fixed. Other sections retain the original test example and do not synchronize this slider.",
+    "slider": "371",
+    "buttons": [
+      {
+        "text": "Prior 1% (default)",
+        "pressed": "true",
+        "focused": false
+      },
+      {
+        "text": "Prior 10%",
+        "pressed": "false",
+        "focused": false
+      }
+    ],
+    "proofOpen": false
+  },
+  {
+    "stage": "ZH default locale",
+    "url": "http://127.0.0.1:18935/bayes/#step1",
+    "text": "第1步 · 从测量方向到后验\n\n亮灯的卡片里，有多少真的带星标？\n\n这一节把同一概率更新换成假想读卡器：H表示“卡片有星标”，E表示“读卡器亮灯”。随机从一批卡片抽一张，抽取前星标比例p就是先验P(H)。设有星标时亮灯P(E|H)=90%，无星标时也会亮灯P(E|¬H)=9%。现在只知道它亮灯了，问的是反向的P(H|E)，并不是刚才的90%。\n\n抽卡前的星标比例 p=P(H)（原对数滑轨） 1.00%\n先验1%（默认）\n先验10%\n\n先验P(H)≈1.00% ＋ 亮灯E → 后验P(H|E)≈9.17%。本例似然比LR=10固定，后验概率不是简单把先验乘10。\n\n只看亮灯结果：它们来自哪两组？\n\n整条表示所有亮灯结果E，归一化为100%。A是“有星标且亮灯”，B是“无星标却亮灯”；两类的池内比例随上方同一先验滑轨改变。\n\n在亮灯结果中：A有星标≈9.17%；B无星标≈90.83%。这条带的分母是亮灯结果，不是全部卡片。\n\n为什么要把两类亮灯结果加作分母？\n\n回到知识地图中的贝叶斯更新 →\n\n90%和9%是本假想模型的两条条件概率，不是读卡器的“总准确率”。这一节只改先验，识别器参数不变；其他章节仍沿用原检测示例，不自动同步本步滑轨。",
+    "slider": "371",
+    "buttons": [
+      {
+        "text": "先验1%（默认）",
+        "pressed": "true",
+        "focused": false
+      },
+      {
+        "text": "先验10%",
+        "pressed": "false",
+        "focused": false
+      }
+    ],
+    "proofOpen": false
+  },
+  {
+    "stage": "ZH10percent proof",
+    "url": "http://127.0.0.1:18935/bayes/#step1",
+    "text": "第1步 · 从测量方向到后验\n\n亮灯的卡片里，有多少真的带星标？\n\n这一节把同一概率更新换成假想读卡器：H表示“卡片有星标”，E表示“读卡器亮灯”。随机从一批卡片抽一张，抽取前星标比例p就是先验P(H)。设有星标时亮灯P(E|H)=90%，无星标时也会亮灯P(E|¬H)=9%。现在只知道它亮灯了，问的是反向的P(H|E)，并不是刚才的90%。\n\n抽卡前的星标比例 p=P(H)（原对数滑轨） 10.00%\n先验1%（默认）\n先验10%\n\n先验P(H)≈10.00% ＋ 亮灯E → 后验P(H|E)≈52.6%。本例似然比LR=10固定，后验概率不是简单把先验乘10。\n\n只看亮灯结果：它们来自哪两组？\n\n整条表示所有亮灯结果E，归一化为100%。A是“有星标且亮灯”，B是“无星标却亮灯”；两类的池内比例随上方同一先验滑轨改变。\n\n在亮灯结果中：A有星标≈52.63%；B无星标≈47.37%。这条带的分母是亮灯结果，不是全部卡片。\n\n为什么要把两类亮灯结果加作分母？\n在全部卡片中，A=P(H∩E)=0.90p\n≈ 9.000%\n在全部卡片中，B=P(¬H∩E)=0.09(1−p)\n≈ 8.100%\n任一卡片亮灯的概率 P(E)=A+B\n≈ 17.100%\n\nP(H|E)=A/(A+B)≈52.63%。A、B先用未舍入值求和与归一化，再显示近似读数。\n\nP(E|H)先限定“有星标”再问亮灯；P(H|E)先限定“亮灯”再问星标，分母不同。90%与9%分别来自两种假设，不是互补概率，不要求加成100%。这里展示模型概率，不是实际抽到的卡片数，也不是设备实测。\n\n条件概率与分母 · 教材依据\n\n回到知识地图中的贝叶斯更新 →\n\n90%和9%是本假想模型的两条条件概率，不是读卡器的“总准确率”。这一节只改先验，识别器参数不变；其他章节仍沿用原检测示例，不自动同步本步滑轨。",
+    "slider": "741",
+    "buttons": [
+      {
+        "text": "先验1%（默认）",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "先验10%",
+        "pressed": "true",
+        "focused": false
+      }
+    ],
+    "proofOpen": true
+  },
+  {
+    "stage": "actual Back",
+    "url": "http://127.0.0.1:18935/atlas/?node=bayes&view=list&lang=zh"
+  },
+  {
+    "browser": "CLOSED"
+  }
+]
