@@ -26,7 +26,7 @@ const out=process.env.LESSON_SCREENSHOTS||path.join(__dirname,'evidence');fs.mkd
    await p.locator('#growth-play').click();await p.waitForTimeout(200);await p.locator('#growth-play').click();assert.ok(await time('growth')>paused);
    await seek('growth',12);
    await p.locator('#undercooling').evaluate(el=>{el.value=18;el.dispatchEvent(new Event('input',{bubbles:true}));});assert.equal(await time('growth'),12);
-   await p.locator('a[href="#step1"]').click();assert.equal(await time('growth'),12);
+   await p.locator('.nav-step[href="#step1"]').click();assert.equal(await time('growth'),12);
    await p.locator('#compare-play').click();await p.waitForTimeout(250);await p.locator('#compare-play').click();assert.ok(await time('compare')>.1);
    await seek('compare',15);await p.locator('#trails').uncheck();assert.equal(await time('compare'),15);await p.locator('#trails').check();
    for(let i=0;i<3;i++){await p.locator('#compare-reset').click();assert.equal(await time('compare'),0);await p.waitForTimeout(70);assert.equal(await time('compare'),0);}
@@ -35,7 +35,7 @@ const out=process.env.LESSON_SCREENSHOTS||path.join(__dirname,'evidence');fs.mkd
    for(const width of [320,390,640,1280]) {
     await p.setViewportSize({width,height:900});
     assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${lang}/${width}: no horizontal overflow`);
-    const tiny=await p.locator('button,input[type=range],.nav-step,.backline a').evaluateAll(es=>es.filter(el=>el.getBoundingClientRect().height<47.9).map(el=>el.id||el.className));assert.deepEqual(tiny,[]);
+    const tiny=await p.locator('button,input[type=range],.nav-step,.backline a').evaluateAll(es=>es.filter(el=>el.getClientRects().length && el.getBoundingClientRect().height<47.9).map(el=>el.id||el.className));assert.deepEqual(tiny,[]);
     await p.locator('#step1').scrollIntoViewIfNeeded();
     if(width===390||width===1280)await p.screenshot({path:path.join(out,`${lang}-${width}-compare.png`),fullPage:true});
    }
