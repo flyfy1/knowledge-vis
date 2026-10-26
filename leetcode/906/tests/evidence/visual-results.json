@@ -1,0 +1,160 @@
+{
+  "status": "pass",
+  "assets": [
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/906/style.css?v=906-2",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/906/copy.js?v=906-2",
+    "http://127.0.0.1:18770/leetcode/906/core.js?v=906-2",
+    "http://127.0.0.1:18770/leetcode/906/python-code.js?v=906-2",
+    "http://127.0.0.1:18770/leetcode/906/app.js?v=906-2"
+  ],
+  "records": [
+    {
+      "lang": "en",
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "SELECT",
+          "id": "preset",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "prev",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "next",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "reset",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "end",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "INPUT",
+          "id": "position",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "reveal",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "copy",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "SUMMARY",
+          "id": "",
+          "height": 72,
+          "outline": "3px"
+        }
+      ],
+      "bodyOverflow": false,
+      "feedback": "Correct prediction. The answer is 2. Since 200² = 40000 and 224² = 50176, possible integer roots are 200…223. Only 202, 212, and 222 are palindromes. 202² = 40804 and 212² = 44944 are palindromes; 222² = 49284 is not. No even-length roots fit here. Counting only 202² misses 212²; counting all three roots wrongly includes 222."
+    },
+    {
+      "lang": "zh",
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "SELECT",
+          "id": "preset",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "prev",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "next",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "reset",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "end",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "INPUT",
+          "id": "position",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "reveal",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "copy",
+          "height": 48,
+          "outline": "3px"
+        },
+        {
+          "tag": "SUMMARY",
+          "id": "",
+          "height": 48,
+          "outline": "3px"
+        }
+      ],
+      "bodyOverflow": false,
+      "feedback": "预测正确。 答案是 2。200² = 40000，224² = 50176，所以可能的整数根是 200…223；其中回文根只有 202、212、222。202² = 40804，212² = 44944 都回文；222² = 49284 不回文。偶数位根在这里没有候选。只算 202² 会漏掉 212²；把三个根全算入则多算 222。"
+    }
+  ]
+}
