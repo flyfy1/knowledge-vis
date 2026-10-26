@@ -1,0 +1,22 @@
+{
+  "targets": [
+    {
+      "width": 320,
+      "minHeight": 48
+    },
+    {
+      "width": 390,
+      "minHeight": 48
+    },
+    {
+      "width": 768,
+      "minHeight": 48
+    },
+    {
+      "width": 1440,
+      "minHeight": 48
+    }
+  ],
+  "redirect": "http://127.0.0.1:18918/leetcode/42-codex/?proof=1#wall-lab",
+  "provenance": true
+}

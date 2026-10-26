@@ -1,0 +1,74 @@
+{
+  "before": {
+    "state": {
+      "phase": 3,
+      "height": [
+        3,
+        0,
+        2,
+        0,
+        6
+      ],
+      "index": 3,
+      "left": 3,
+      "right": 6,
+      "leftIndex": 0,
+      "rightIndex": 4,
+      "level": 3,
+      "depth": 3
+    },
+    "index": "3",
+    "last": "6",
+    "foreign": "keep",
+    "nav": "navigate"
+  },
+  "afterBack": {
+    "state": {
+      "phase": 3,
+      "height": [
+        3,
+        0,
+        2,
+        0,
+        6
+      ],
+      "index": 3,
+      "left": 3,
+      "right": 6,
+      "leftIndex": 0,
+      "rightIndex": 4,
+      "level": 3,
+      "depth": 3
+    },
+    "index": "3",
+    "last": "6",
+    "foreign": "keep",
+    "nav": "back_forward"
+  },
+  "afterReload": {
+    "state": {
+      "phase": 3,
+      "height": [
+        3,
+        0,
+        2,
+        0,
+        6
+      ],
+      "index": 3,
+      "left": 3,
+      "right": 6,
+      "leftIndex": 0,
+      "rightIndex": 4,
+      "level": 3,
+      "depth": 3
+    },
+    "index": "3",
+    "last": "6",
+    "foreign": "keep",
+    "nav": "reload"
+  },
+  "invalidHistory": "valid fallback",
+  "blockedHistory": "consistent controls/model",
+  "pass": true
+}
