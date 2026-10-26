@@ -16,3 +16,26 @@ Python tests compare the official callable against unrestricted pair-swap BFS: a
 Browser tests cover all presets/endpoints, back/forward equality, both locales, independent prediction state and clearing, locale preservation, exact source display/embedding/download, automatic copy and native manual fallback with distinct verified sentinel each locale, blocked storage, offline file loading, controls, keyboard and focus, forced colors, sticky anchors, 120-character wrapping, widths 320/390/736/1440 and CSS 200% zoom, native-select fit budget, calibrated WCAG contrast, local asset errors, and keyboard activation of both related lessons in both locales. CSS zoom tests layout at 200%; OS/browser-chrome zoom, touch hardware and real learner teach-back remain untested. Tests do not claim independent review, public deployment or an accepted LeetCode submission.
 
 Official capture: tests/evidence/official.json contains the exact public GraphQL response, including complete codeSnippets, content, frontend ID and free-access flag. Captured at 2026-10-25T21:52Z = 2026-10-26T05:52+08:00. Python3 interface observed: `class Solution: def kSimilarity(self, s1: str, s2: str) -> int`. Canonical Python needs no exception language contract. No statement text is fetched at runtime.
+
+## Focused proof-bridge revision check
+
+`test_bridge_browser.cjs` exercises the four rendered assignment snapshots and
+literal user-observable mappings/counters, preserves preexisting hand/BFS/quiz/copy
+state through bridge operations and both locale roundtrips, and checks the old
+controls still work independently. It covers320/390/1440 widths and1440 at CSS
+zoom2, actual keyboard focus, 48px controls, native disabled states, calibrated
+text/disabled/focus contrasts, forced colors, reduced motion, long-string wrapping,
+and exact source render/download/automatic and native manual clipboard transfer.
+
+```sh
+PREVIEW_URL=http://127.0.0.1:19854 EVIDENCE_DIR=/tmp/854-bridge-review \
+  NODE_PATH="$NODE_PATH" node leetcode/854/tests/test_bridge_browser.cjs
+```
+
+The source-preserving page generator was updated with the same approved copy and
+markup; `build_page.py` remains author-only. Regeneration equality was checked.
+The unchanged solver/core numeric suites were not repeated for this isolated
+explanatory widget. `bridge-evidence/` records author checks, not independent
+acceptance or production. Initial focus-modality, absent-marker and screenshot
+clip test errors are preserved as diagnostic logs; they were corrected in the
+capture/test code, not concealed as successful runs.
