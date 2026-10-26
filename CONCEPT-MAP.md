@@ -1940,3 +1940,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Super-palindrome filtering | `leetcode/906/#step2` | Inclusive bounds and the second palindrome test. |
 
 <!-- /leetcode-906-campaign -->
+
+
+<!-- leetcode-913-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Retrograde game solving | `leetcode/913/#step2` | Propagate one winning exit or exhaust all losing exits. |
+| Residual draw states | `leetcode/913/#step4` | Prove draws after the forcing-win queue is exhausted. |
+
+<!-- /leetcode-913-campaign -->
