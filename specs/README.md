@@ -6,6 +6,8 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Bayes evidence identity](atlas-bayes-evidence-identity.md): copied records versus new conditionally independent measurements; corrected bound claim and same-ledger comparison.
+
 - [Bayes measurement direction](atlas-bayes-measurement.md): neutral S1 reader, same-state evidence-pool normalization and definition-first graph entry.
 
 - [Variance → Monte Carlo error scale](atlas-estimation-error.md): existing repeated-run experiment, truthful known-reference band, fixed-N prefix comparisons and distinct variance/SE meanings.
