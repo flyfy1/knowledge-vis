@@ -1,0 +1,455 @@
+{
+  "kind": "author measured contrast",
+  "rows": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)"
+      ],
+      "font": "16px / 28px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "border": "rgb(232, 237, 244)",
+      "outline": "rgb(232, 237, 244)",
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "contrast": 16.086987125379448
+    },
+    {
+      "selector": "h1",
+      "fg": "rgb(232, 237, 244)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "font": "700 46px / 57.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "border": "rgb(232, 237, 244)",
+      "outline": "rgb(232, 237, 244)",
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "contrast": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(22, 27, 34)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "border": "rgb(154, 167, 184)",
+      "outline": "rgb(154, 167, 184)",
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "contrast": 7.078851579017443
+    },
+    {
+      "selector": "#handPrev",
+      "fg": "rgb(154, 167, 184)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(22, 27, 34)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(22, 27, 34)"
+      ],
+      "font": "16px / 28px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "border": "rgb(154, 167, 184)",
+      "outline": "rgb(154, 167, 184)",
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "contrast": 7.078851579017443
+    },
+    {
+      "selector": "#handNext",
+      "fg": "rgb(13, 17, 23)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(22, 27, 34)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(110, 231, 255)"
+      ],
+      "font": "16px / 28px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "border": "rgb(110, 231, 255)",
+      "outline": "rgb(13, 17, 23)",
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "contrast": 13.100679028115637
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(13, 17, 23)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(22, 27, 34)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(110, 231, 255)"
+      ],
+      "font": "16px / 28px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "border": "rgb(110, 231, 255)",
+      "outline": "rgb(13, 17, 23)",
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "contrast": 13.100679028115637
+    },
+    {
+      "selector": "#preset",
+      "fg": "rgb(232, 237, 244)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(22, 27, 34)",
+        "rgb(28, 35, 48)"
+      ],
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "border": "rgb(154, 167, 184)",
+      "outline": "rgb(232, 237, 244)",
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "contrast": 13.397069143240783
+    },
+    {
+      "selector": "#langToggle [data-lang=en]",
+      "fg": "rgb(13, 17, 23)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(110, 231, 255)"
+      ],
+      "font": "16px / 28px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "border": "rgb(13, 17, 23)",
+      "outline": "rgb(13, 17, 23)",
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "contrast": 13.100679028115637
+    },
+    {
+      "selector": "#langToggle [data-lang=zh]",
+      "fg": "rgb(154, 167, 184)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(22, 27, 34)"
+      ],
+      "font": "16px / 28px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "border": "rgb(154, 167, 184)",
+      "outline": "rgb(154, 167, 184)",
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "contrast": 7.078851579017443
+    },
+    {
+      "selector": "#board .erased",
+      "fg": "rgb(110, 231, 255)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(22, 27, 34)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(28, 35, 48)"
+      ],
+      "font": "22px / 38.5px ui-monospace, monospace",
+      "border": "rgb(255, 180, 84)",
+      "outline": "rgb(110, 231, 255)",
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "contrast": 10.910104011097095
+    },
+    {
+      "selector": "#board .current",
+      "fg": "rgb(110, 231, 255)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(22, 27, 34)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(28, 35, 48)"
+      ],
+      "font": "22px / 38.5px ui-monospace, monospace",
+      "border": "rgb(255, 180, 84)",
+      "outline": "rgb(110, 231, 255)",
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "contrast": 10.910104011097095
+    },
+    {
+      "selector": "#blockers b",
+      "fg": "rgb(232, 237, 244)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(22, 27, 34)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(28, 35, 48)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "font": "700 20px / 35px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "border": "rgb(232, 237, 244)",
+      "outline": "rgb(232, 237, 244)",
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "contrast": 13.397069143240783
+    },
+    {
+      "selector": ".step-nav a.active",
+      "fg": "rgb(13, 17, 23)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(13, 17, 23, 0.96)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(110, 231, 255)"
+      ],
+      "font": "14px / 24.5px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "border": "rgb(110, 231, 255)",
+      "outline": "rgb(13, 17, 23)",
+      "bg": [
+        110,
+        231,
+        255
+      ],
+      "contrast": 13.100679028115637
+    },
+    {
+      "selector": "#progress",
+      "fg": "rgb(232, 237, 244)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(22, 27, 34)",
+        "rgb(28, 35, 48)"
+      ],
+      "font": "",
+      "border": "rgb(232, 237, 244)",
+      "outline": "rgb(232, 237, 244)",
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "contrast": 13.397069143240783
+    },
+    {
+      "selector": "pre",
+      "fg": "rgb(232, 237, 244)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(10, 14, 20)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(9, 14, 22)"
+      ],
+      "font": "13px / 21.45px monospace",
+      "border": "rgb(43, 53, 71)",
+      "outline": "rgb(232, 237, 244)",
+      "bg": [
+        9,
+        14,
+        22
+      ],
+      "contrast": 16.437295258072666
+    },
+    {
+      "selector": "textarea",
+      "fg": "rgb(232, 237, 244)",
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(13, 17, 23)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(28, 35, 48)"
+      ],
+      "font": "14px / 24.5px ui-monospace, monospace",
+      "border": "rgb(154, 167, 184)",
+      "outline": "rgb(232, 237, 244)",
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "contrast": 13.397069143240783
+    }
+  ],
+  "focus": [
+    {
+      "fg": "#ffb454",
+      "bg": "#0d1117",
+      "contrast": 10.731637051347173
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#161b22",
+      "contrast": 9.809435643476732
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#1c2330",
+      "contrast": 8.937191437807625
+    }
+  ],
+  "boundaries": [
+    {
+      "fg": "#9aa7b8",
+      "bg": "#161b22",
+      "contrast": 7.078851579017443
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#1c2330",
+      "contrast": 6.449407898769069
+    }
+  ],
+  "sizes": [
+    {
+      "id": "中",
+      "w": 48,
+      "h": 48
+    },
+    {
+      "id": "EN",
+      "w": 49.0625,
+      "h": 48
+    },
+    {
+      "id": "handPrev",
+      "w": 157.234375,
+      "h": 48
+    },
+    {
+      "id": "handNext",
+      "w": 162.5625,
+      "h": 48
+    },
+    {
+      "id": "handReset",
+      "w": 148.6875,
+      "h": 48
+    },
+    {
+      "id": "labState",
+      "w": 207,
+      "h": 48
+    },
+    {
+      "id": "labWindow",
+      "w": 62,
+      "h": 48
+    },
+    {
+      "id": "preset",
+      "w": 910,
+      "h": 48
+    },
+    {
+      "id": "prev",
+      "w": 169.703125,
+      "h": 48
+    },
+    {
+      "id": "next",
+      "w": 172.359375,
+      "h": 48
+    },
+    {
+      "id": "reset",
+      "w": 115.359375,
+      "h": 48
+    },
+    {
+      "id": "end",
+      "w": 137.609375,
+      "h": 48
+    },
+    {
+      "id": "reveal",
+      "w": 172.078125,
+      "h": 48
+    },
+    {
+      "id": "copy",
+      "w": 126.71875,
+      "h": 48
+    }
+  ],
+  "cssBytes": 11712
+}

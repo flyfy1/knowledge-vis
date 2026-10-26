@@ -1,0 +1,796 @@
+{
+  "kind": "author self-check",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "records": [
+    {
+      "locale": "en",
+      "state": 0,
+      "start": 0,
+      "lab": "Window 0: 1 conflicts; 2 unerased letters. Conflict remains; cannot erase."
+    },
+    {
+      "locale": "en",
+      "state": 0,
+      "start": 1,
+      "lab": "Window 1: 0 conflicts; 2 unerased letters. Useful erase allowed."
+    },
+    {
+      "locale": "en",
+      "state": 1,
+      "start": 0,
+      "lab": "Window 0: 0 conflicts; 1 unerased letters. Useful erase allowed."
+    },
+    {
+      "locale": "en",
+      "state": 1,
+      "start": 1,
+      "lab": "Window 1: 0 conflicts; 0 unerased letters. No new letters; skip."
+    },
+    {
+      "locale": "en",
+      "state": 2,
+      "start": 0,
+      "lab": "Window 0: 0 conflicts; 0 unerased letters. No new letters; skip."
+    },
+    {
+      "locale": "en",
+      "state": 2,
+      "start": 1,
+      "lab": "Window 1: 0 conflicts; 0 unerased letters. No new letters; skip."
+    },
+    {
+      "locale": "en",
+      "preset": 0,
+      "terminal": "Event 3/3; erased positions 3/3. All erased; productive erasures [1,0], reversed answer [0,1]."
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "terminal": "Event 4/4; erased positions 5/5. All erased; productive erasures [2,0], reversed answer [0,2]."
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "terminal": "Event 5/5; erased positions 7/7. All erased; productive erasures [1,0,3], reversed answer [3,0,1]."
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "terminal": "Event 2/2; erased positions 2/3. Queue empty with letters remaining; impossible, return []."
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "terminal": "Event 4/4; erased positions 3/3. All erased; productive erasures [0,1,2], reversed answer [2,1,0]."
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "terminal": "Event 2/2; erased positions 2/2. All erased; productive erasures [0], reversed answer [0]."
+    },
+    {
+      "locale": "en",
+      "preset": 6,
+      "terminal": "Event 4/4; erased positions 4/4. All erased; productive erasures [0,2], reversed answer [2,0]."
+    },
+    {
+      "locale": "en",
+      "preset": 7,
+      "terminal": "Event 1/1; erased positions 0/2. Queue empty with letters remaining; impossible, return []."
+    },
+    {
+      "locale": "zh",
+      "state": 0,
+      "start": 0,
+      "lab": "窗口 0：冲突 1 个；尚未擦除 2 个字母。仍有冲突，不能擦除。"
+    },
+    {
+      "locale": "zh",
+      "state": 0,
+      "start": 1,
+      "lab": "窗口 1：冲突 0 个；尚未擦除 2 个字母。可以有效擦除。"
+    },
+    {
+      "locale": "zh",
+      "state": 1,
+      "start": 0,
+      "lab": "窗口 0：冲突 0 个；尚未擦除 1 个字母。可以有效擦除。"
+    },
+    {
+      "locale": "zh",
+      "state": 1,
+      "start": 1,
+      "lab": "窗口 1：冲突 0 个；尚未擦除 0 个字母。没有新字母，跳过。"
+    },
+    {
+      "locale": "zh",
+      "state": 2,
+      "start": 0,
+      "lab": "窗口 0：冲突 0 个；尚未擦除 0 个字母。没有新字母，跳过。"
+    },
+    {
+      "locale": "zh",
+      "state": 2,
+      "start": 1,
+      "lab": "窗口 1：冲突 0 个；尚未擦除 0 个字母。没有新字母，跳过。"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "terminal": "事件 3/3；已擦 3/3 个位置。已全部擦除；有效擦除 [1,0]，倒序答案 [0,1]。"
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "terminal": "事件 4/4；已擦 5/5 个位置。已全部擦除；有效擦除 [2,0]，倒序答案 [0,2]。"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "terminal": "事件 5/5；已擦 7/7 个位置。已全部擦除；有效擦除 [1,0,3]，倒序答案 [3,0,1]。"
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "terminal": "事件 2/2；已擦 2/3 个位置。队列已空，仍有字母；无解，返回 []。"
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "terminal": "事件 4/4；已擦 3/3 个位置。已全部擦除；有效擦除 [0,1,2]，倒序答案 [2,1,0]。"
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "terminal": "事件 2/2；已擦 2/2 个位置。已全部擦除；有效擦除 [0]，倒序答案 [0]。"
+    },
+    {
+      "locale": "zh",
+      "preset": 6,
+      "terminal": "事件 4/4；已擦 4/4 个位置。已全部擦除；有效擦除 [0,2]，倒序答案 [2,0]。"
+    },
+    {
+      "locale": "zh",
+      "preset": 7,
+      "terminal": "事件 1/1；已擦 0/2 个位置。队列已空，仍有字母；无解，返回 []。"
+    },
+    {
+      "locale": "en",
+      "choice": "0",
+      "feedback": "Check both conditions: no conflict and some progress. Start 0 matches a and b to the first two letters of aba; its third cell is unconstrained. It erases two new letters. Start 1 conflicts at position 1: b versus a. Start 2 has no conflicts but only question marks, so it makes no progress. todo=0 alone does not guarantee a move worth recording."
+    },
+    {
+      "locale": "en",
+      "choice": "1",
+      "feedback": "Correct prediction. Start 0 matches a and b to the first two letters of aba; its third cell is unconstrained. It erases two new letters. Start 1 conflicts at position 1: b versus a. Start 2 has no conflicts but only question marks, so it makes no progress. todo=0 alone does not guarantee a move worth recording."
+    },
+    {
+      "locale": "en",
+      "choice": "2",
+      "feedback": "Check both conditions: no conflict and some progress. Start 0 matches a and b to the first two letters of aba; its third cell is unconstrained. It erases two new letters. Start 1 conflicts at position 1: b versus a. Start 2 has no conflicts but only question marks, so it makes no progress. todo=0 alone does not guarantee a move worth recording."
+    },
+    {
+      "locale": "zh",
+      "choice": "0",
+      "feedback": "再检查无冲突和有进展这两个条件。 起点 0 的 a、b 分别吻合 aba 的 a、b，第三格 ? 无约束，所以擦掉两个新字母。起点 1 在位置 1 的 b 对不上 a；起点 2 没有冲突却全是 ?，不带来进展。不能把 todo=0 当成一定能记一次操作。"
+    },
+    {
+      "locale": "zh",
+      "choice": "1",
+      "feedback": "预测正确。 起点 0 的 a、b 分别吻合 aba 的 a、b，第三格 ? 无约束，所以擦掉两个新字母。起点 1 在位置 1 的 b 对不上 a；起点 2 没有冲突却全是 ?，不带来进展。不能把 todo=0 当成一定能记一次操作。"
+    },
+    {
+      "locale": "zh",
+      "choice": "2",
+      "feedback": "再检查无冲突和有进展这两个条件。 起点 0 的 a、b 分别吻合 aba 的 a、b，第三格 ? 无约束，所以擦掉两个新字母。起点 1 在位置 1 的 b 对不上 a；起点 2 没有冲突却全是 ?，不带来进展。不能把 todo=0 当成一定能记一次操作。"
+    },
+    {
+      "locale": "en",
+      "clipboard": "automatic and native fallback exact",
+      "host": "linux",
+      "resetSentinel": "936-fallback-en-1792987788957"
+    },
+    {
+      "locale": "zh",
+      "clipboard": "automatic and native fallback exact",
+      "host": "linux",
+      "resetSentinel": "936-fallback-zh-1792987789176"
+    }
+  ],
+  "related": [
+    {
+      "locale": "en",
+      "href": "#step1",
+      "targetExcerpt": "01Which stamp could have been last?Every visible letter left by the last stamp must match it. In aab, aa at start 0 conflicts with ab, while ab at start 1 matches. Remove that stamp backwards: ? means"
+    },
+    {
+      "locale": "en",
+      "href": "#step2",
+      "targetExcerpt": "02Which windows does one erased position unlock?Window i covers m cells from start i, where m is stamp length. A blocker is an unerased position whose original letter disagrees with the stamp in that "
+    },
+    {
+      "locale": "en",
+      "href": "../815/#step2",
+      "targetExcerpt": "03Why can a route be scanned just once?How do we look up only buses we can board? Build by_stop, mapping each stop to the route IDs serving it: an inverted index. A frontier contains newly discovered "
+    },
+    {
+      "locale": "zh",
+      "href": "#step1",
+      "targetExcerpt": "01怎样识别可以撤掉的最后一戳？最后一戳留下的可见字母必须全与印章吻合。在 aab 中，起点 0 的 aa 对不上 ab；起点 1 的 ab 完全吻合。倒着撤掉它，用 ? 表示已擦除、没有约束的位置，得到 a??。此时起点 0 的 a? 与 ab 不冲突，也能擦掉。擦除顺序 [1,0] 反过来就是盖章顺序 [0,1]。选择同一例子的反向状态，再选窗口起点。逐格比较可见字母；? 允许任何印章字母。有"
+    },
+    {
+      "locale": "zh",
+      "href": "#step2",
+      "targetExcerpt": "02擦掉一个位置，能解锁哪些窗口？窗口 i 是起点为 i 的 m 个格子，m 为印章长度。阻塞位置：某窗口中与印章不符、而且还没擦掉的位置。todo[i] 数窗口 i 的剩余阻塞位置；waiting[p] 列出最初被位置 p 阻塞的窗口。aab 配 ab 时，窗口 0 只有位置 1 阻塞，todo=[1,0]、waiting[1]=[0]。窗口 1 先擦位置 1、2，位置 1 让 todo[0] "
+    },
+    {
+      "locale": "zh",
+      "href": "../815/#step2",
+      "targetExcerpt": "03一层增加一次上车，为什么线路只扫一次？这一步要回答：怎样只查真正能上的车？先建 by_stop：站点→经过它的线路编号，这叫倒排索引（由站点反查线路）。前沿 frontier 是刚发现、最少上车数相同的站点。初始前沿 [1] 距离为 0。示例 1 中，站 1 查到线路 R0=[1,2,7]，第一次上车新到 2、7；再从 7 查到 R1=[3,6,7]，第二次上车新到 3、6。为什么第二层不再扫"
+    }
+  ],
+  "focus": {
+    "outline": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "layouts": [
+    {
+      "width": 320,
+      "locale": "en",
+      "cellWidth": 44
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "cellWidth": 44
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "cellWidth": 44
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "cellWidth": 44
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "cellWidth": 48
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "cellWidth": 48
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "cellWidth": 48
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "cellWidth": 48
+    }
+  ],
+  "selectedLabelBudgets": [
+    {
+      "width": 320,
+      "locale": "en",
+      "preset": 0,
+      "label": "ab / aab · tiny case",
+      "needed": 138.9442596435547,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "preset": 1,
+      "label": "abc / ababc · official 1",
+      "needed": 161.72833251953125,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "preset": 2,
+      "label": "abca / aabcaca · official 2",
+      "needed": 186.49636840820312,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "preset": 3,
+      "label": "ab / aba · impossible",
+      "needed": 154.5443115234375,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "preset": 4,
+      "label": "a / aaa · one letter",
+      "needed": 135.8722381591797,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "preset": 5,
+      "label": "ab / ab · equal lengths",
+      "needed": 166.73631286621094,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "preset": 6,
+      "label": "ab / abab · overlap and skip",
+      "needed": 206.5924072265625,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "preset": 7,
+      "label": "ab / aa · no ready window",
+      "needed": 192.1923370361328,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "preset": 0,
+      "label": "ab / aab · 小例子",
+      "needed": 121.48822021484375,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "preset": 1,
+      "label": "abc / ababc · 官方 1",
+      "needed": 144.0002899169922,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "preset": 2,
+      "label": "abca / aabcaca · 官方 2",
+      "needed": 168.76832580566406,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "preset": 3,
+      "label": "ab / aba · 无解",
+      "needed": 105.48818969726562,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "preset": 4,
+      "label": "a / aaa · 单字母",
+      "needed": 110.7841796875,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "preset": 5,
+      "label": "ab / ab · 等长",
+      "needed": 96.51217651367188,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "preset": 6,
+      "label": "ab / abab · 重叠空操作",
+      "needed": 163.32830810546875,
+      "available": 210
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "preset": 7,
+      "label": "ab / aa · 无就绪窗口",
+      "needed": 143.64825439453125,
+      "available": 210
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "preset": 0,
+      "label": "ab / aab · tiny case",
+      "needed": 138.9442596435547,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "preset": 1,
+      "label": "abc / ababc · official 1",
+      "needed": 161.72833251953125,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "preset": 2,
+      "label": "abca / aabcaca · official 2",
+      "needed": 186.49636840820312,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "preset": 3,
+      "label": "ab / aba · impossible",
+      "needed": 154.5443115234375,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "preset": 4,
+      "label": "a / aaa · one letter",
+      "needed": 135.8722381591797,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "preset": 5,
+      "label": "ab / ab · equal lengths",
+      "needed": 166.73631286621094,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "preset": 6,
+      "label": "ab / abab · overlap and skip",
+      "needed": 206.5924072265625,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "preset": 7,
+      "label": "ab / aa · no ready window",
+      "needed": 192.1923370361328,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "preset": 0,
+      "label": "ab / aab · 小例子",
+      "needed": 121.48822021484375,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "preset": 1,
+      "label": "abc / ababc · 官方 1",
+      "needed": 144.0002899169922,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "preset": 2,
+      "label": "abca / aabcaca · 官方 2",
+      "needed": 168.76832580566406,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "preset": 3,
+      "label": "ab / aba · 无解",
+      "needed": 105.48818969726562,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "preset": 4,
+      "label": "a / aaa · 单字母",
+      "needed": 110.7841796875,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "preset": 5,
+      "label": "ab / ab · 等长",
+      "needed": 96.51217651367188,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "preset": 6,
+      "label": "ab / abab · 重叠空操作",
+      "needed": 163.32830810546875,
+      "available": 280
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "preset": 7,
+      "label": "ab / aa · 无就绪窗口",
+      "needed": 143.64825439453125,
+      "available": 280
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "preset": 0,
+      "label": "ab / aab · tiny case",
+      "needed": 138.9442596435547,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "preset": 1,
+      "label": "abc / ababc · official 1",
+      "needed": 161.72833251953125,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "preset": 2,
+      "label": "abca / aabcaca · official 2",
+      "needed": 186.49636840820312,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "preset": 3,
+      "label": "ab / aba · impossible",
+      "needed": 154.5443115234375,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "preset": 4,
+      "label": "a / aaa · one letter",
+      "needed": 135.8722381591797,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "preset": 5,
+      "label": "ab / ab · equal lengths",
+      "needed": 166.73631286621094,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "preset": 6,
+      "label": "ab / abab · overlap and skip",
+      "needed": 206.5924072265625,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "preset": 7,
+      "label": "ab / aa · no ready window",
+      "needed": 192.1923370361328,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "preset": 0,
+      "label": "ab / aab · 小例子",
+      "needed": 121.48822021484375,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "preset": 1,
+      "label": "abc / ababc · 官方 1",
+      "needed": 144.0002899169922,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "preset": 2,
+      "label": "abca / aabcaca · 官方 2",
+      "needed": 168.76832580566406,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "preset": 3,
+      "label": "ab / aba · 无解",
+      "needed": 105.48818969726562,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "preset": 4,
+      "label": "a / aaa · 单字母",
+      "needed": 110.7841796875,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "preset": 5,
+      "label": "ab / ab · 等长",
+      "needed": 96.51217651367188,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "preset": 6,
+      "label": "ab / abab · 重叠空操作",
+      "needed": 163.32830810546875,
+      "available": 594
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "preset": 7,
+      "label": "ab / aa · 无就绪窗口",
+      "needed": 143.64825439453125,
+      "available": 594
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "preset": 0,
+      "label": "ab / aab · tiny case",
+      "needed": 138.9442596435547,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "preset": 1,
+      "label": "abc / ababc · official 1",
+      "needed": 161.72833251953125,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "preset": 2,
+      "label": "abca / aabcaca · official 2",
+      "needed": 186.49636840820312,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "preset": 3,
+      "label": "ab / aba · impossible",
+      "needed": 154.5443115234375,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "preset": 4,
+      "label": "a / aaa · one letter",
+      "needed": 135.8722381591797,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "preset": 5,
+      "label": "ab / ab · equal lengths",
+      "needed": 166.73631286621094,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "preset": 6,
+      "label": "ab / abab · overlap and skip",
+      "needed": 206.5924072265625,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "preset": 7,
+      "label": "ab / aa · no ready window",
+      "needed": 192.1923370361328,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "preset": 0,
+      "label": "ab / aab · 小例子",
+      "needed": 121.48822021484375,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "preset": 1,
+      "label": "abc / ababc · 官方 1",
+      "needed": 144.0002899169922,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "preset": 2,
+      "label": "abca / aabcaca · 官方 2",
+      "needed": 168.76832580566406,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "preset": 3,
+      "label": "ab / aba · 无解",
+      "needed": 105.48818969726562,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "preset": 4,
+      "label": "a / aaa · 单字母",
+      "needed": 110.7841796875,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "preset": 5,
+      "label": "ab / ab · 等长",
+      "needed": 96.51217651367188,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "preset": 6,
+      "label": "ab / abab · 重叠空操作",
+      "needed": 163.32830810546875,
+      "available": 858
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "preset": 7,
+      "label": "ab / aa · 无就绪窗口",
+      "needed": 143.64825439453125,
+      "available": 858
+    }
+  ],
+  "consoleErrors": [],
+  "assetErrors": [],
+  "limits": "Headless Chromium; CSS zoom=2 and narrow viewports, no physical mobile or novice teach-back."
+}
