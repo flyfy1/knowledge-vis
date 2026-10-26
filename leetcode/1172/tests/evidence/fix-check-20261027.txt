@@ -31,3 +31,19 @@ Additional closure evidence for candidate after 1172-R1-F4, 1172-R2-F1, and 1172
 - 1172-R2-F2: after three Change question actions, the fresh transfer sequence `push(7), push(8), push(9), popAtStack(0), push(10), popAtStack(1)` rendered in both locales. Prediction choices included `9`; Reveal returned localized causal feedback explaining `[8,10]` and `[9]`. Run check returned `Match: all return values agree over 11 operations.` / `一致：11 次操作的返回值全部相同。`.
 - Bilingual identity: H1 rendered `#1172 · Dinner Plate Stacks` in EN and `#1172 · 餐盘栈` in zh. The exact official URL and Python source/download controls remained present.
 - Browser regression matrix at 320, 390, and 1280 CSS px in both locales: hand advance and Run check completed without page errors; `scrollWidth <= clientWidth` in every case.
+
+Independent self-check for 1172-R1-F4 repair (2026-10-27). This is author evidence for separate re-review, not acceptance.
+
+Diagnosing-bugs loop:
+- Red reproduction command: `node /tmp/zoom1172assert.js` against the preview, with Chromium viewport 320 and document zoom 2, reported EN `366/320` and zh `389/320`, then exited 1.
+- Ranked hypotheses tested: (1) the Step 4 official-interface paragraph had an unbreakable min-content token (measured paragraph scrollWidth 172 vs clientWidth 138); (2) Step 1 grid/card min-content overflow amplified the body width; (3) the horizontally scrolling step navigation leaked its internal width. The first two were falsifiable by wrapping/containment; the nav already had `overflow-x:auto` and was not the body-width source.
+- Fix: lesson-local `index.html` now applies `overflow-wrap:anywhere` to step paragraphs/cards and `min-width:0` to the grid; scrollable code and stack regions retain their existing overflow behavior. No shared files were changed.
+- Green reproduction command: the same `node /tmp/zoom1172assert.js` reported EN `320/320` and zh `320/320`, exit 0.
+
+Browser regression command: `node /tmp/1172-regression.js` (Chromium, preview) exercised EN and zh at 320px/200% zoom, 390px, and 1280px. Every case reported `scrollWidth === clientWidth`, a hand-trace `push(1)` readout, no page errors, exact displayed `PYTHON_SOURCE` parity, and computed Run check success (`Match: all return values agree over 11 operations.` / `一致：11 次操作的返回值全部相同。`).
+
+Regression checks:
+- `python3 -B leetcode/1172/tests/test_solution.py` -> `30 seeded traces passed`.
+- `node --check leetcode/1172/app.js`, `node --check leetcode/1172/copy.js`, `node --check leetcode/1172/python-code.js` -> passed.
+- `cmp -s leetcode/1172/solution.py leetcode/1172/provenance/official-source.py` -> passed.
+- Required metadata preflight from repository root: `python3 -B scripts/register_leetcode_lesson.py 1172 --validate-only` -> exit 0, no output.
