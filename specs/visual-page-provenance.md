@@ -43,3 +43,7 @@ Design and acceptance: [attribution review](reviews/visual-attribution-20261026/
 All three worker handovers are now integrated locally. Inventory17 has14 earlier Codex revisions plus the three exact worker source revisions. Initial preparation reports remain historical; final batch/release evidence is recorded separately.
 
 Eigen direction revision adds the18th evidenced edition, source5cd64dc2193d8e3b26cc433ecd4d597887f0ed13. Atlas shared header is reserved for the concurrent galaxy worker: its combined source metadata must be refreshed together after handover, before publishing either new atlas change. Do not overwrite that worker index to update it early.
+
+## Mixed static page forms and current integration
+
+Records may explicitly provide a safe repository-relative HTML `path` (Galaxy is atlas/galaxy.html;42 source is leetcode/42/index.html). `publicPath` records generated destinations without rewriting canonical source. Preview/validation follows the explicit file rather than assuming every concept has an index directory. No runtime data fetch or route framework is introduced. Current inventory20 adds Eigen, Galaxy and42. Galaxy keeps its original implementation revision and adds a distinct integration-fix revision; Atlas/42 point to the integrated code while retaining worker provenance in the worktree map. Immutable original sources are pushed to scoped source refs so GitHub commit links are reachable even when main uses equivalent cherry-picks.

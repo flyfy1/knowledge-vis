@@ -42,3 +42,5 @@ ordinary scrolling, reset while rotating, offscreen loop suspension, repeated mo
 language, reduced-motion/forced-colors, mobile touch gestures and DPR, context-loss, blocked
 WebGL, low-power, storage denial, empty and isolated graphs, and JS-disabled links.
 Screenshots must be inspected. No physical-phone/Safari/screen-reader speech or learning-gain claim.
+
+Integration note: the entry patch is applied once in the current integrated source. Do not reapply it to an already-wired index. `tests/integration.cjs` now verifies the existing entries read-only; it does not patch or restore product files. The primary implementation provenance remains d8b1b2d7 and the shared inventory records the additional integration-fix revision.

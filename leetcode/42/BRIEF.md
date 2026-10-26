@@ -117,3 +117,5 @@ Independent cold review found native controls restored by Back while the new wal
 New wall-lab buttons, selects and slider have at least48px touch height, following the shared UI contract; existing unrelated legacy controls are not restyled.
 
 Cached-page compatibility: mounting the optional wall lab must check both its global and host; old cached numeric/Codex HTML has neither new module nor host and must retain the existing optimized lesson without a ReferenceError.
+
+Browser test lifecycle: provenance assertions target the shared semantic disclosure after integration. Every assertion-failure path must close owned Chrome in finally; use bounded waits. A failed assertion must exit, not leave an unresolved browser keeping the test process alive.

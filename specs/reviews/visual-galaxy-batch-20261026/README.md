@@ -23,3 +23,13 @@ Eigen source/model and real EN/ZH320/390/1280 control/state/Back checks passed; 
 Canonical source stays numeric; deployment must use `codex_runtime` for42 so existing numeric URLs replace to the physical42-codex directory while preserving query/hash. Deploy only42's changed allowlisted runtime files, not a full stale registry export or unrelated campaign state. Existing common dependencies must hash-match production or block for inspection.
 
 Main is freshly fetched/merged in the isolated checkout, pushed normally, and exact source revision checked against remote. Preserve original source refs so per-page immutable provenance links resolve. Build an exact changed-runtime manifest, check production/dependency drift, back up outside served root, install assets before HTML/version marker, and verify live release SHA, generated routes/headers and real interactions. This is not permission for DNS/security/credential changes or automatic rollback of others' releases.
+
+## Final gate completion
+
+The original LC cold-reader must-fix was independently rechecked UI-only: last6/i3/phase4 survives collection→Back→reload, with exactly3 cyan water cells; reset steps and restore default both correct. Zero remaining required findings. [Narrow recheck](lc42-recheck.md).
+
+All20 static provenance records passed the actual bilingual/keyboard/narrow/shared-state suite. Custom HTML paths use explicit inventory metadata, not an assumed directory/index. Galaxy retains its original feature revision plus the exact integration-fix revision. LC42 links to the integrated compatible source; original worker identity is retained. Original sources are reachable via scoped remote provenance refs.
+
+A final LC test used the pre-integration credit selector and failed without closing Chrome, leaving its owned process alive. Root stopped only that owned execution session with SIGINT, changed assertions to the shared semantic disclosure and added bounded waits/finally cleanup, then reran the wall/recovery checks successfully. The old report hardcoded44px despite checking actual48px after integration; the source report now records the measured minimum. Prior reports remain historical; final target inspection records measured targets separately.
+
+Weekly quota guard was checked through the supported current-Mac account API:7-day used2%, remaining98%, reset2026-11-02T06:08:19Z. It did not trigger the user's≤20% stop line. WORKFLOW now carries that requirement for later development; unknown visibility also pauses. No credits/reset/account/model switch was used.
