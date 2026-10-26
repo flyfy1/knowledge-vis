@@ -1,0 +1,126 @@
+--- a/specs/leetcode-explainers.md
++++ b/specs/leetcode-explainers.md
+@@ -305,6 +305,17 @@
+ keep the original formal contract and distinguish teaching adaptations. Review
+ missing causal bridges as required findings regardless of algorithm correctness.
+ 
++For a non-obvious overlap or refinement implication, prefer a concrete witness
++with letters and positions showing which equal parts force the conclusion,
++alongside the general proof. If the witness deliberately uses a nonminimal border
++to illustrate a contradiction, label it as such rather than a valid greedy state.
++Nearby prose or a small static diagram is sufficient; no animation or additional
++exhaustive testing is required. This refinement is motivated by optional
++[1147-A1](https://github.com/flyfy1/knowledge-vis/blob/9af7cb8d75af0e03b3b0e2aca7355aa4e9574a67/specs/reviews/1147-review-1-5827b0ae.md)
++on an accepted candidate: its proof was reconstructable, with minor symbolic
++density. This guidance neither reclassifies that advisory as a required failure
++nor claims its closure or live-policy adoption.
++
+ Apply the declared reader prerequisites to baseline code as well as the final
+ solution. When an unfamiliar helper API or compact expression obscures what a
+ line does, give a short local explanation or a tiny equivalent example in both
+--- a/specs/leetcode-rendered-state-contract.md
++++ b/specs/leetcode-rendered-state-contract.md
+@@ -67,6 +67,27 @@
+ distinction and observed result. Scope this to applicable overlaps; an
+ exhaustive state matrix or new test framework is not required.
+ 
++For horizontally scrolling tables with opaque sticky row/corner headers, each
++complete column identity must be exposable at a reachable scroll position beside
++the sticky area, with its values and row association intact. Inspect actual text
++line rectangles and settled screenshots at left/middle/right offsets, especially
++the terminal column; cell boxes, DOM text and no page overflow do not prove glyph
++visibility. Temporary clipping during scrolling is acceptable if the full label
++can be exposed. Let complete labels wrap and height grow; do not erase an index,
++shrink type or remove essential sticky association merely to pass the check.
++The [1092 failure](reviews/1092-round1-required-20261026/1092-review-1-206ef9e2.md)
++and [repair contract](reviews/1092-header-fit-design-review-20261026.md) establish
++the missing `8 ·` case; the [independent Linux closure][1092-closure] reproduces
++the original red case and checks the repaired text lines. Retain section 8's
++affected-platform requirement; CSS zoom is layout stress, not native-device proof.
++
++Check the actual disabled appearance at initial and terminal controls, including
++primary buttons. A native `disabled` property alone does not prove that the CSS
++cascade removed the enabled primary treatment. Inspect computed colors/opacity
++and the screenshot: unavailable actions must be visibly distinguishable while
++their labels remain legible. The #1095 evidence below records this specificity
++defect as an author correction before its candidate freeze, not a reviewer finding.
++
+ ## 3. Give every count a unit and an accounting boundary
+ 
+ Distinguish a position index, positions completed, work in the current step,
+@@ -104,6 +125,15 @@
+ enough. Keep any platform clipboard newline conversion explicit in the evidence
+ rather than silently claiming byte equality. Downloaded bytes and the embedded
+ string still have to match the canonical source exactly.
++
++When testing fallback-to-success recovery, restore the real clipboard capability
++and invoke the real Copy control. Await that attempt's observed asynchronous
++success (for example, the localized success status replacing fallback feedback),
++then check source readback and that the handler hides the fallback with consistent
++status. Do not hide/remove fallback DOM or clear its status in the test to create
++a passing cleanup state. Injecting clipboard failure is a controlled test setup;
++manufacturing the asserted recovery is not. The #1095 author notes below preserve
++both this capture artifact and the premature assertion before clipboard completion.
+ 
+ For manual fallback copying, use the operating system hosting the browser's
+ actual shortcut: Meta+C on macOS, Control+C on Linux/Windows. Locale, mobile
+@@ -227,6 +257,15 @@
+ the count and its scope visible together; shortening a label must not reintroduce
+ an input-versus-output ambiguity.
+ 
++Preserve enough responsive width for the label itself: reflow a tile/grid before
++forcing its text into an unreadable column, and inspect local label bounds rather
++than only document overflow. For a compact numeric scenario selector, keep a
++complete localized description immediately adjacent, associate it accessibly
++(for example with `aria-describedby`), and update it with selection and locale.
++The number and opened option menu alone cannot supply the scenario's meaning.
++Verify the closed value, native arrow and adjacent description at the constrained
++width/zoom; retain legible type and the existing conservative width check.
++
+ Measure actual rendered text, padding and control width, allowing room for the
+ native arrow, then inspect the screenshot. Any numerical arrow allowance belongs
+ to that recorded control/browser; the incident's 16px is not a universal constant.
+@@ -265,6 +304,13 @@
+ or retroactive re-review campaign. Adoption applies to future candidates; concrete
+ new defects in existing lessons retain the ordinary repair-and-review procedure.
+ 
++Evidence for the #1095 responsive, disabled-style and copy-recovery clarifications:
++[pre-freeze author development checks][1095-author] distinguish product repairs
++from harness/capture corrections; the [independently accepted report][1095-review]
++checks the resulting candidate's readable labels, disabled controls and real
++fallback-to-success behavior. These were not reviewer-raised required findings,
++and adding this guidance does not change either historical review or live policy.
++
+ ## 9. Check cost bounds at valid parameter boundaries
+ 
+ Define each complexity parameter and its counting convention beside the claim.
+@@ -272,6 +318,21 @@
+ while input processing, output materialization, or base-level work remains large.
+ Use the actual displayed baseline as well as the canonical implementation; a
+ correct optimized solution does not make an incorrect baseline explanation valid.
++
++Distinguish per-input relations from unequal parameter caps. In #1125, skill count
++`m <= 16` and people count `n <= 60` do not imply `m < n`: `m=6,n=3`, `m=n=3`
++and `m=16,n=1` are legal. Justify choosing coverage states using the official
++limits (at most `2^16` skill subsets versus potentially `2^60` person subsets),
++not a claim that skills are fewer for every input or that the optimized approach
++is always cheaper per instance. Check both rendered translations against legal
++cases with equal and reversed parameter order. The frozen
++[1125-R1 report](https://github.com/flyfy1/knowledge-vis/blob/a0fd59a2cb63c065402e9acb75569bddff23483b/specs/reviews/1125-review-1-b4279a73.md)
++records this required finding as open; this clarification does not close it or
++establish live-policy adoption.
++The subsequent [independent re-review](https://github.com/flyfy1/knowledge-vis/blob/b496426596a607483b0d3c002a2e140730116e12/specs/reviews/1125-review-2-d62c8fef.md)
++closes it for candidate `14f1dbf6c8b859e9ed92604d82b5b9fc0e47987b` after
++checking both rendered translations and the reversed-count examples. The original
++finding remains preserved; this candidate closure does not adopt live policy.
+ 
+ For example, let n be formula length, A the number of expanded atom entries, and
+ d the maximum number of enclosing parentheses, so d=0 without parentheses. An
+@@ -415,3 +476,7 @@
+ [dispatcher adoption status](reviews/repeat-copy-and-fit-spec-adoption-20261025.md).
+ These local changes do not alter already frozen central candidates; operational
+ adoption must be recorded separately before new campaign work uses them.
++
++[1092-closure]: https://github.com/flyfy1/knowledge-vis/blob/1ece9d85ac55b3bd5a6855176141aab899c73f73/specs/reviews/1092-review-2-de6dcb3c.md
++[1095-author]: https://github.com/flyfy1/knowledge-vis/blob/eaddb1bcea4ead30c8b703d2e4d6c8010e245d93/leetcode/1095/tests/evidence/development-notes.md
++[1095-review]: https://github.com/flyfy1/knowledge-vis/blob/c9a04e2181d16fa8752221cea443e2cecafef014/specs/reviews/1095-review-1-8193a17b.md
