@@ -1901,3 +1901,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Position multiplicity | `leetcode/891/#step0` | Equal values at different positions still define separate subsequences. |
 
 <!-- /leetcode-891-campaign -->
+
+
+<!-- leetcode-895-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Frequency-level stacks | `leetcode/895/#step2` | Preserve surviving occurrence ranks in chronological order to resolve frequency and recency. |
+
+<!-- /leetcode-895-campaign -->
