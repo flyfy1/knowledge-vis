@@ -71,3 +71,41 @@ shared visual refinements remain outside this lesson's ownership and required fi
 The canonical Python interface and shared trace are unchanged. New metadata is a
 new candidate, not a repair of the historical review result. Both required IDs
 remain fixed awaiting independent review; see `SELF-CHECK.md` for evidence.
+
+## 2026-10-26 — local wall-height derivation addition
+
+Scope: `leetcode/42/` only, plus `specs/reviews/leetcode42-wall-proof-20261026.md`.
+Source remains numeric; the existing static publisher emits `42-codex/`. This
+revision visibly identifies Codex in both locales; a future `42-claude/` sibling
+remains independent. No registry, homepage, shared renderer, or Claude edit.
+
+The missing teaching interaction was a manipulable counterexample to “a higher
+right wall always adds water.” Insert a baseline experiment at the beginning of
+step 1, before the optimized invariant:
+
+| Known | One question | Inputs → output | Action → observation | Conditions |
+| --- | --- | --- | --- | --- |
+| Unit-width bars and per-column depth from step 0 | Does a taller far-right bar always increase water at i? | Bounded nonnegative integer array, selected i → depth at i | Adjust far-right height 0–6; reveal left maximum, right maximum, min height, subtraction; compare 1/4/6 at i=2 | Ranges include i; this is one column, not total water; no physical timing or fluid-flow simulation |
+
+First-use local terms: index i is a zero-based position; left/right maxima are
+the tallest bars in the full ranges including i; surface height is measured from
+the ground; depth subtracts the selected bar's height. Full-range maxima in this
+baseline lab must not be mislabeled as the optimized trace's running maxima.
+The bridge explains the distinction and the safe-side condition after refreshing
+both endpoint maxima. The existing Python and optimized trace stay canonical.
+
+State contract: phase 0 exposes only the left maximum; phase 1 adds the right;
+phase 2 adds the lower surface height; phase 3 alone reveals depth and water.
+Back restores exactly the earlier phase, including removing later water and
+readouts. Reset steps retains edited inputs; restore default restores
+[3,0,2,0,4], i=2. Changing preset, focus, or height returns to phase 0. Locale
+changes preserve both simulations and keyboard focus; neither simulation changes
+the other. Preset labels describe starting arrays; the separate current-array
+readout always shows edits. All equal-maximum ties use the first valid witness.
+
+Required regression acceptance is in the corresponding spec. Run
+`node leetcode/42/tests/wall-model.cjs`, the existing `model.cjs` and
+`regression.py`, and the new `wall-browser.cjs` plus original `browser.cjs`.
+New browser tests accept `LESSON_PREVIEW`, `LESSON_ROUTE`,
+`LESSON_TEST_OUTPUT_DIR`, and `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`.
+This addition is self-checked; independent review is pending.
