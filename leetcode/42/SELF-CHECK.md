@@ -66,3 +66,30 @@ no registration, shared assets, registry, report, campaign status, service,
 Git configuration, commit, push, deployment, credentials, schedules or child
 agents were used. Next action is separate independent re-review of this frozen
 candidate and closure (or further findings) by that reviewer.
+
+## Wall-height experiment — 2026-10-26
+
+This later bounded revision adds `wall-model.js`, `wall-lab.js`, `wall-lab.css`
+and mounts the lab inside step 1. Earlier receipts above describe the earlier
+candidate; this revision's evidence is `tests/evidence/wall-proof/`.
+
+- Independent unit-cell oracle: 19,530 arrays, 112,305 columns passed.
+- Canonical Python: 22,355 inputs passed; optimized JS: 3,284 inputs,
+  27,914 frames passed. Python mirror remains exact.
+- Both locales: 119 input combinations each, four viewport widths, 200% CSS
+  zoom, exact rewind, separate reset/restore, keyboard, storage denial,
+  language/state preservation and existing-trace isolation passed.
+- Original browser regression passed (presets, quiz, copy/download/fallback,
+  anchors and offline behavior). Missing favicon is an existing preview-only
+  404; no runtime page errors were observed.
+- Actual generated `42-codex/` route passed the full new browser suite. Numeric
+  redirect preserves `?wall=proof#wall-lab`; eight runtime assets match source
+  bytes. Header displays `Codex 开发` in Chinese and `Developed by Codex` in English.
+- Viewed final `en-320-state.png`, `zh-390-controls.png` and
+  `zh-1440-state.png`: unit-grid water, numeric depth and active code agree;
+  controls and labels are readable, no horizontal page overflow.
+
+Author self-check only; independent review remains pending. No public deploy,
+physical-device test, native zoom, LeetCode submission or learner study.
+The local commit is handed to the existing integration owner for merging into
+main and publication; no separate push is authorized in this workstream.
