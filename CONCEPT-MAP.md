@@ -2050,3 +2050,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Stateful bounded stream | `leetcode/1032/#step5` | Keep only the longest-word window across queries. |
 
 <!-- /leetcode-1032-campaign -->
+
+
+<!-- leetcode-1036-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Bounded reachability search | `leetcode/1036/#step3` | Explore more than b² cells to certify membership in the common clear-line component. |
+| Two-endpoint connectivity | `leetcode/1036/#step4` | Check both endpoints or directly reach the other endpoint. |
+
+<!-- /leetcode-1036-campaign -->
