@@ -4511,6 +4511,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(L) time; O(h) auxiliary space plus O(n) returned tree, where L is traversal length and h is path height in nodes"
   },
   {
+    "id": 1032,
+    "title": {
+      "zh": "字符流",
+      "en": "Stream of Characters"
+    },
+    "desc": {
+      "zh": "从末尾逐字检查，推导反向字典树的停止条件。",
+      "en": "Scan from the newest letter and derive a reversed trie’s stopping rules."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字典树",
+        "en": "Trie"
+      },
+      {
+        "zh": "数据流",
+        "en": "Data stream"
+      }
+    ],
+    "path": "1032/",
+    "leetcodeUrl": "https://leetcode.com/problems/stream-of-characters/",
+    "language": "Python",
+    "complexity": "O(S) build; O(min(t,L)) worst time per query; O(S+L) space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
