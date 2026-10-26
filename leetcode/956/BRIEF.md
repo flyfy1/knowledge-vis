@@ -83,3 +83,23 @@ Related links target existing #805 subset-sum and #920 counting-state explanatio
 verify their actual section meaning before finalizing labels.
 Author checks only. Separate reviewer, real learner outcomes, official submission,
 real-device behavior and public deployment remain unverified/out of this run.
+
+## 2026-10-26 · 956-COPY-R1 revision candidate
+
+Owner-selected narrow repair; reuse the approved lesson and tokens. The seven
+runtime files matched historical accepted base
+`61c1660d36c3e2b77aa2249c0daeeb60133cb0ae` before editing. Only the zh/en
+`foot` values change: remove transient author/review prefixes and retain exactly
+`本地模拟，无上传、无在线提交。` / `Local simulation, no upload or online submission.`
+The footer element and binding remain. P0: preserve algorithm, interface, source
+and teaching state byte-for-byte; P1/highest-return slice: this exact bilingual
+correction with rendered proof. P2: none. Deferred: unrelated teaching/copy/layout
+work, because this request explicitly freezes those semantics and assets.
+
+New candidate `956-copy-r1-20261026` is identified by
+`tests/evidence/copy-r1/candidate.json`, with before/after hashes and focused
+checks in `tests/SELF-CHECK.md`. No metadata fix was needed: complexity already
+is one time-and-space string, and the required non-mutating preflight passed.
+Finding **956-COPY-R1: fixed awaiting separate review**. Historical acceptance
+and reports are unchanged; this candidate has no independent acceptance or
+publication claim. No new feature/layout or independent design gate is opened.

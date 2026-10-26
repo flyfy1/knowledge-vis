@@ -34,3 +34,17 @@ motion, calibrated solid-color contrast, disabled legibility, selector width
 budget, local asset errors, denied storage, and file:// source/trace behavior.
 Read SELF-CHECK.md for visual inspection and limitations; automated checks do not
 establish independent review or learner comprehension.
+
+Focused 2026-10-26 footer revision (956-COPY-R1):
+
+```bash
+node leetcode/956/tests/copy-r1.cjs
+python3 -B scripts/register_leetcode_lesson.py 956 --validate-only
+```
+
+This test defaults to the supplied preview at 127.0.0.1:18770 and writes new
+evidence to tests/evidence/copy-r1 without replacing historical test records.
+It rejects the old footer in a real browser, then checks exact bilingual copy,
+preserved nearby limitations/state, source transfers and page-end fit/keyboard
+access at 320px and 200% CSS zoom. It also verifies unchanged runtime bytes
+against the report's accepted base. See the appended SELF-CHECK for boundaries.
