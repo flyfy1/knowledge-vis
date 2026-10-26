@@ -1980,3 +1980,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Clean components and sole-source ownership | `leetcode/928/#step2` | Exclude original sources, then credit groups with one distinct infected boundary neighbor. |
 
 <!-- /leetcode-928-campaign -->
+
+
+<!-- leetcode-936-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Reverse stamping legality | `leetcode/936/#step1` | Only visible matches may be erased; each useful erase removes a new letter. |
+| Blocker dependency queue | `leetcode/936/#step2` | Erasing a position decrements exactly the windows originally blocked by it. |
+| Monotone erasure invariant | `leetcode/936/#step2` | Removing constraints cannot disable a legal window; reverse the productive erasures. |
+
+<!-- /leetcode-936-campaign -->
