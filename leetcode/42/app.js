@@ -1,3 +1,3 @@
 'use strict';
 HardLesson.mount(42);
-RainWallLab.mount();
+if (window.RainWallLab && document.getElementById('wall-lab')) RainWallLab.mount();
