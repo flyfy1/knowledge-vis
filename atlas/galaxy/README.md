@@ -56,3 +56,7 @@ the integrated Atlas. Current production status comes from visual-release.json.
 ## Capacitor-rate graph increment
 
 The canonical graph now includes one derivative→capacitor application relation and a two-stop charge route (38/49/12). Galaxy uses the same graph, not inferred prerequisite order. Its renderer/layout/camera remain unchanged. See [contract](../../specs/atlas-capacitor-rate.md); current provenance records point to the actual accepted source revision.
+
+## Integral / inductor graph increment
+
+One sourced integral→inductor application relation joins the existing inductor→Buck edge in a three-station volt-second route. Counts38/50/13. See[contract](../../specs/atlas-volt-second.md). Graph distance remains relation-hop layout, not semantic precision; no renderer/camera changes.

@@ -1,0 +1,213 @@
+[
+  {
+    "stage": "disclosure",
+    "url": "http://127.0.0.1:18931/power-converters/#step4",
+    "balance": "Derive output voltage from those slopes\nMatch signed voltage area to current change\n\nUse the same inspect time above. The outline is a full two-period reference; fills accumulate only from0 to the current time. Green+area raises current,orange−area lowers it. This is not an energy area.\n\nInspect ON end\nInspect one period\n\nFixed axes: time0..100µs,inductor voltage vL−12..+12V. vL is left terminal minus right;iL flows left to right. Here vL is voltage,not velocity.\n\nPositive voltseconds +\n0.00 Vµs\nNegative voltseconds −\n0.00 Vµs\nNet voltseconds ≈\n0.00 Vµs\nInitial current iL(0)\n0.925 A\nChange Δi ≈\n0.000 A\nCurrent iL ≈\n0.925 A\n\n∫₀ᵗ vL dτ ≈ (0.00 + 0.00) Vµs\nΔi = ∫vL dτ / L ≈ 0.00 × 10⁻⁶ V·s / 0.001 H ≈ 0.000 A\niL(t) = iL(0) + Δi ≈ 0.925 A\n\nArea gives only current change; absolute current also needs an initial value. This case starts at a nonzero steady valley. Repeating current over a full period makes signed voltseconds cancel: zero average voltage does not mean zero current. Transients need not balance. This is not startup; D/Vin edits recompute another steady case at the same time.\n\nReturn to integral and inductor route → · Analog Devices · volt-second source\n\nSteady state returns to the same current every cycle. Since Δi = vL Δt / L, positive and negative inductor-voltage areas must cancel (volt-second balance). Adding voltage rises and drops around each loop gives:\n\nON: vL = Vin − Vout\nOFF: vL = −Vout\n(Vin − Vout)DT − Vout(1−D)T = 0\nVout = D · Vin\n\nOutput is input voltage times the ON fraction. The excess voltage is not burned in a resistor. Capacitor current is iC = iL − Iout: it charges above load current and discharges below it; charging is not simply tied to switch ON/OFF.",
+    "inputs": [
+      {
+        "value": "12",
+        "labels": [
+          "Input voltage 12 V"
+        ]
+      },
+      {
+        "value": "50",
+        "labels": [
+          "Duty D 50%"
+        ]
+      },
+      {
+        "value": "0",
+        "labels": [
+          "Inspect time 0.00 µs"
+        ]
+      }
+    ],
+    "buttons": [
+      "Inspect ON end",
+      "Inspect one period"
+    ]
+  },
+  {
+    "stage": "ON end Space",
+    "url": "http://127.0.0.1:18931/power-converters/#step4",
+    "balance": "Derive output voltage from those slopes\nMatch signed voltage area to current change\n\nUse the same inspect time above. The outline is a full two-period reference; fills accumulate only from0 to the current time. Green+area raises current,orange−area lowers it. This is not an energy area.\n\nInspect ON end\nInspect one period\n\nFixed axes: time0..100µs,inductor voltage vL−12..+12V. vL is left terminal minus right;iL flows left to right. Here vL is voltage,not velocity.\n\nPositive voltseconds +\n150.00 Vµs\nNegative voltseconds −\n0.00 Vµs\nNet voltseconds ≈\n150.00 Vµs\nInitial current iL(0)\n0.925 A\nChange Δi ≈\n0.150 A\nCurrent iL ≈\n1.075 A\n\n∫₀ᵗ vL dτ ≈ (150.00 + 0.00) Vµs\nΔi = ∫vL dτ / L ≈ 150.00 × 10⁻⁶ V·s / 0.001 H ≈ 0.150 A\niL(t) = iL(0) + Δi ≈ 1.075 A\n\nArea gives only current change; absolute current also needs an initial value. This case starts at a nonzero steady valley. Repeating current over a full period makes signed voltseconds cancel: zero average voltage does not mean zero current. Transients need not balance. This is not startup; D/Vin edits recompute another steady case at the same time.\n\nReturn to integral and inductor route → · Analog Devices · volt-second source\n\nSteady state returns to the same current every cycle. Since Δi = vL Δt / L, positive and negative inductor-voltage areas must cancel (volt-second balance). Adding voltage rises and drops around each loop gives:\n\nON: vL = Vin − Vout\nOFF: vL = −Vout\n(Vin − Vout)DT − Vout(1−D)T = 0\nVout = D · Vin\n\nOutput is input voltage times the ON fraction. The excess voltage is not burned in a resistor. Capacitor current is iC = iL − Iout: it charges above load current and discharges below it; charging is not simply tied to switch ON/OFF.",
+    "inputs": [
+      {
+        "value": "12",
+        "labels": [
+          "Input voltage 12 V"
+        ]
+      },
+      {
+        "value": "50",
+        "labels": [
+          "Duty D 50%"
+        ]
+      },
+      {
+        "value": "25",
+        "labels": [
+          "Inspect time 25.00 µs"
+        ]
+      }
+    ],
+    "buttons": [
+      "Inspect ON end",
+      "Inspect one period"
+    ]
+  },
+  {
+    "stage": "one period Enter",
+    "url": "http://127.0.0.1:18931/power-converters/#step4",
+    "balance": "Derive output voltage from those slopes\nMatch signed voltage area to current change\n\nUse the same inspect time above. The outline is a full two-period reference; fills accumulate only from0 to the current time. Green+area raises current,orange−area lowers it. This is not an energy area.\n\nInspect ON end\nInspect one period\n\nFixed axes: time0..100µs,inductor voltage vL−12..+12V. vL is left terminal minus right;iL flows left to right. Here vL is voltage,not velocity.\n\nPositive voltseconds +\n150.00 Vµs\nNegative voltseconds −\n-150.00 Vµs\nNet voltseconds ≈\n0.00 Vµs\nInitial current iL(0)\n0.925 A\nChange Δi ≈\n0.000 A\nCurrent iL ≈\n0.925 A\n\n∫₀ᵗ vL dτ ≈ (150.00 + -150.00) Vµs\nΔi = ∫vL dτ / L ≈ 0.00 × 10⁻⁶ V·s / 0.001 H ≈ 0.000 A\niL(t) = iL(0) + Δi ≈ 0.925 A\n\nArea gives only current change; absolute current also needs an initial value. This case starts at a nonzero steady valley. Repeating current over a full period makes signed voltseconds cancel: zero average voltage does not mean zero current. Transients need not balance. This is not startup; D/Vin edits recompute another steady case at the same time.\n\nReturn to integral and inductor route → · Analog Devices · volt-second source\n\nSteady state returns to the same current every cycle. Since Δi = vL Δt / L, positive and negative inductor-voltage areas must cancel (volt-second balance). Adding voltage rises and drops around each loop gives:\n\nON: vL = Vin − Vout\nOFF: vL = −Vout\n(Vin − Vout)DT − Vout(1−D)T = 0\nVout = D · Vin\n\nOutput is input voltage times the ON fraction. The excess voltage is not burned in a resistor. Capacitor current is iC = iL − Iout: it charges above load current and discharges below it; charging is not simply tied to switch ON/OFF.",
+    "inputs": [
+      {
+        "value": "12",
+        "labels": [
+          "Input voltage 12 V"
+        ]
+      },
+      {
+        "value": "50",
+        "labels": [
+          "Duty D 50%"
+        ]
+      },
+      {
+        "value": "50",
+        "labels": [
+          "Inspect time 50.00 µs"
+        ]
+      }
+    ],
+    "buttons": [
+      "Inspect ON end",
+      "Inspect one period"
+    ]
+  },
+  {
+    "stage": "D75 same period",
+    "url": "http://127.0.0.1:18931/power-converters/#step4",
+    "balance": "Derive output voltage from those slopes\nMatch signed voltage area to current change\n\nUse the same inspect time above. The outline is a full two-period reference; fills accumulate only from0 to the current time. Green+area raises current,orange−area lowers it. This is not an energy area.\n\nInspect ON end\nInspect one period\n\nFixed axes: time0..100µs,inductor voltage vL−12..+12V. vL is left terminal minus right;iL flows left to right. Here vL is voltage,not velocity.\n\nPositive voltseconds +\n112.50 Vµs\nNegative voltseconds −\n-112.50 Vµs\nNet voltseconds ≈\n0.00 Vµs\nInitial current iL(0)\n0.944 A\nChange Δi ≈\n0.000 A\nCurrent iL ≈\n0.944 A\n\n∫₀ᵗ vL dτ ≈ (112.50 + -112.50) Vµs\nΔi = ∫vL dτ / L ≈ 0.00 × 10⁻⁶ V·s / 0.001 H ≈ 0.000 A\niL(t) = iL(0) + Δi ≈ 0.944 A\n\nArea gives only current change; absolute current also needs an initial value. This case starts at a nonzero steady valley. Repeating current over a full period makes signed voltseconds cancel: zero average voltage does not mean zero current. Transients need not balance. This is not startup; D/Vin edits recompute another steady case at the same time.\n\nReturn to integral and inductor route → · Analog Devices · volt-second source\n\nSteady state returns to the same current every cycle. Since Δi = vL Δt / L, positive and negative inductor-voltage areas must cancel (volt-second balance). Adding voltage rises and drops around each loop gives:\n\nON: vL = Vin − Vout\nOFF: vL = −Vout\n(Vin − Vout)DT − Vout(1−D)T = 0\nVout = D · Vin\n\nOutput is input voltage times the ON fraction. The excess voltage is not burned in a resistor. Capacitor current is iC = iL − Iout: it charges above load current and discharges below it; charging is not simply tied to switch ON/OFF.",
+    "inputs": [
+      {
+        "value": "12",
+        "labels": [
+          "Input voltage 12 V"
+        ]
+      },
+      {
+        "value": "75",
+        "labels": [
+          "Duty D 75%"
+        ]
+      },
+      {
+        "value": "50",
+        "labels": [
+          "Inspect time 50.00 µs"
+        ]
+      }
+    ],
+    "buttons": [
+      "Inspect ON end",
+      "Inspect one period"
+    ]
+  },
+  {
+    "stage": "actual reset",
+    "url": "http://127.0.0.1:18931/power-converters/#step4",
+    "balance": "Derive output voltage from those slopes\nMatch signed voltage area to current change\n\nUse the same inspect time above. The outline is a full two-period reference; fills accumulate only from0 to the current time. Green+area raises current,orange−area lowers it. This is not an energy area.\n\nInspect ON end\nInspect one period\n\nFixed axes: time0..100µs,inductor voltage vL−12..+12V. vL is left terminal minus right;iL flows left to right. Here vL is voltage,not velocity.\n\nPositive voltseconds +\n0.00 Vµs\nNegative voltseconds −\n0.00 Vµs\nNet voltseconds ≈\n0.00 Vµs\nInitial current iL(0)\n0.944 A\nChange Δi ≈\n0.000 A\nCurrent iL ≈\n0.944 A\n\n∫₀ᵗ vL dτ ≈ (0.00 + 0.00) Vµs\nΔi = ∫vL dτ / L ≈ 0.00 × 10⁻⁶ V·s / 0.001 H ≈ 0.000 A\niL(t) = iL(0) + Δi ≈ 0.944 A\n\nArea gives only current change; absolute current also needs an initial value. This case starts at a nonzero steady valley. Repeating current over a full period makes signed voltseconds cancel: zero average voltage does not mean zero current. Transients need not balance. This is not startup; D/Vin edits recompute another steady case at the same time.\n\nReturn to integral and inductor route → · Analog Devices · volt-second source\n\nSteady state returns to the same current every cycle. Since Δi = vL Δt / L, positive and negative inductor-voltage areas must cancel (volt-second balance). Adding voltage rises and drops around each loop gives:\n\nON: vL = Vin − Vout\nOFF: vL = −Vout\n(Vin − Vout)DT − Vout(1−D)T = 0\nVout = D · Vin\n\nOutput is input voltage times the ON fraction. The excess voltage is not burned in a resistor. Capacitor current is iC = iL − Iout: it charges above load current and discharges below it; charging is not simply tied to switch ON/OFF.",
+    "inputs": [
+      {
+        "value": "12",
+        "labels": [
+          "Input voltage 12 V"
+        ]
+      },
+      {
+        "value": "75",
+        "labels": [
+          "Duty D 75%"
+        ]
+      },
+      {
+        "value": "0",
+        "labels": [
+          "Inspect time 0.00 µs"
+        ]
+      }
+    ],
+    "buttons": [
+      "Inspect ON end",
+      "Inspect one period"
+    ]
+  },
+  {
+    "stage": "ZH reset",
+    "url": "http://127.0.0.1:18931/power-converters/#step4",
+    "balance": "从刚才的斜率推导输出电压\n把电压的正负面积，与电流改变量对上\n\n用上方同一个查看时刻。细线给完整两周期参照；填色只累加0到当前时刻。绿色+面积抬高电流，橙色−面积降低电流；这不是能量面积。\n\n查看 ON 结束\n查看一周期\n\n固定坐标：时间0..100µs，电感电压vL−12..+12V。vL取电感左端减右端，电流iL从左到右；这里的vL不是速度。\n\n正伏秒 +\n0.00 Vµs\n负伏秒 −\n0.00 Vµs\n净伏秒 ≈\n0.00 Vµs\n起始电流 iL(0)\n0.944 A\n改变量 Δi ≈\n0.000 A\n当前 iL ≈\n0.944 A\n\n∫₀ᵗ vL dτ ≈ (0.00 + 0.00) Vµs\nΔi = ∫vL dτ / L ≈ 0.00 × 10⁻⁶ V·s / 0.001 H ≈ 0.000 A\niL(t) = iL(0) + Δi ≈ 0.944 A\n\n面积只给电流改变量，绝对值还需初态。本例从非零稳态谷值开始；完整周期电流重复，所以正负伏秒抵消，平均电压为零，电流却不是零。暂态一般不满足周期平衡。本图不模拟启动；调D或Vin重算同一时刻的另一稳态。\n\n回到积分与电感路线 → · Analog Devices · 伏秒平衡来源\n\n稳态每一周期都回到同一个电流。由于 Δi = vL Δt / L，电感电压的正、负面积必须抵消（伏秒平衡）。沿回路把电压升降相加为零，就得到：\n\nON: vL = Vin − Vout\nOFF: vL = −Vout\n(Vin − Vout)DT − Vout(1−D)T = 0\nVout = D · Vin\n\n所以输出是输入电压乘以导通时间占比。不是靠电阻把多余的电压烧掉。电容电流 iC = iL − Iout：电感电流高于负载时充电，低于负载时放电，不能简单等同于开关的 ON / OFF。",
+    "inputs": [
+      {
+        "value": "12",
+        "labels": [
+          "输入电压 12 V"
+        ]
+      },
+      {
+        "value": "75",
+        "labels": [
+          "占空比 D 75%"
+        ]
+      },
+      {
+        "value": "0",
+        "labels": [
+          "查看时刻 0.00 µs"
+        ]
+      }
+    ],
+    "buttons": [
+      "查看 ON 结束",
+      "查看一周期"
+    ]
+  },
+  {
+    "stage": "ZH one period",
+    "url": "http://127.0.0.1:18931/power-converters/#step4",
+    "balance": "从刚才的斜率推导输出电压\n把电压的正负面积，与电流改变量对上\n\n用上方同一个查看时刻。细线给完整两周期参照；填色只累加0到当前时刻。绿色+面积抬高电流，橙色−面积降低电流；这不是能量面积。\n\n查看 ON 结束\n查看一周期\n\n固定坐标：时间0..100µs，电感电压vL−12..+12V。vL取电感左端减右端，电流iL从左到右；这里的vL不是速度。\n\n正伏秒 +\n112.50 Vµs\n负伏秒 −\n-112.50 Vµs\n净伏秒 ≈\n0.00 Vµs\n起始电流 iL(0)\n0.944 A\n改变量 Δi ≈\n0.000 A\n当前 iL ≈\n0.944 A\n\n∫₀ᵗ vL dτ ≈ (112.50 + -112.50) Vµs\nΔi = ∫vL dτ / L ≈ 0.00 × 10⁻⁶ V·s / 0.001 H ≈ 0.000 A\niL(t) = iL(0) + Δi ≈ 0.944 A\n\n面积只给电流改变量，绝对值还需初态。本例从非零稳态谷值开始；完整周期电流重复，所以正负伏秒抵消，平均电压为零，电流却不是零。暂态一般不满足周期平衡。本图不模拟启动；调D或Vin重算同一时刻的另一稳态。\n\n回到积分与电感路线 → · Analog Devices · 伏秒平衡来源\n\n稳态每一周期都回到同一个电流。由于 Δi = vL Δt / L，电感电压的正、负面积必须抵消（伏秒平衡）。沿回路把电压升降相加为零，就得到：\n\nON: vL = Vin − Vout\nOFF: vL = −Vout\n(Vin − Vout)DT − Vout(1−D)T = 0\nVout = D · Vin\n\n所以输出是输入电压乘以导通时间占比。不是靠电阻把多余的电压烧掉。电容电流 iC = iL − Iout：电感电流高于负载时充电，低于负载时放电，不能简单等同于开关的 ON / OFF。",
+    "inputs": [
+      {
+        "value": "12",
+        "labels": [
+          "输入电压 12 V"
+        ]
+      },
+      {
+        "value": "75",
+        "labels": [
+          "占空比 D 75%"
+        ]
+      },
+      {
+        "value": "50",
+        "labels": [
+          "查看时刻 50.00 µs"
+        ]
+      }
+    ],
+    "buttons": [
+      "查看 ON 结束",
+      "查看一周期"
+    ]
+  },
+  {
+    "stage": "actual Back",
+    "url": "http://127.0.0.1:18931/atlas/?lang=zh&node=buck&view=list&trail=volt-second",
+    "task": "本站实验任务 · 不记录掌握状态\n\n正负电压面积抵消，电流也为零吗？\n\n设置Vin=12V、D=50%，展开“从刚才的斜率推导输出电压”，按“查看ON结束”与“查看一周期”。保持一周期时刻，再把D改75%，比较填色面积。\n\n打开本站对应实验 →\n核对预测 · 该看什么，为什么\n← 上一个概念\n下一个概念 →\n起步提示"
+  },
+  {
+    "browser": "CLOSED"
+  }
+]

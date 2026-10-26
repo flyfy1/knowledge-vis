@@ -1,0 +1,105 @@
+[
+  {
+    "stage": "route0",
+    "url": "http://127.0.0.1:18931/atlas/?trail=volt-second&node=integral&view=list&lang=zh",
+    "text": "建议路线 · 这是建议的探索顺序，不是必修先后关系。\n\n1. 定积分与有符号累加\n2. 电感与磁场储能\n3. Buck 降压电路\n\n本站实验任务 · 不记录掌握状态\n\n有符号累加，究竟累加什么？\n\n打开积分第2步，增加切条数并比较左端／中点／右端取高。这里的v是速度，不是电压。\n\n打开本站对应实验 →\n核对预测 · 该看什么，为什么\n\n速度×时间累加成位移；本例v=t≥0，精确位移2m。换成电压vL时，面积单位变为V·s，不是m或J。\n\n下一站换理想电感：积电压，再除以电感量，得到电流的改变量，不是绝对电流。\n\nAnalog Devices · 电感斜率与伏秒平衡 ↗\n← 上一个概念\n下一个概念 →\n"
+  },
+  {
+    "stage": "route1",
+    "url": "http://127.0.0.1:18931/atlas/?lang=zh&node=inductor&view=list&trail=volt-second",
+    "text": "建议路线 · 这是建议的探索顺序，不是必修先后关系。\n\n1. 定积分与有符号累加\n2. 电感与磁场储能\n3. Buck 降压电路\n\n本站实验任务 · 不记录掌握状态\n\n零电压，会把已有电流清零吗？\n\n重置电感，依次按+2V两次、0V一次、−2V一次，看电流曲线。每次0.5ms，L=10mH。\n\n打开本站对应实验 →\n核对预测 · 该看什么，为什么\n\n电流0→0.1→0.2→0.2→0.1A。每个正／负矩形面积±0.001V·s，除以0.01H得到±0.1A；零电压保持0.2A。\n\n下一站是不同参数的Buck：L=1mH，周期50µs，初态已取稳态谷值；不会传递这里的电流或脉冲。\n\nAnalog Devices · 电感斜率与伏秒平衡 ↗\n← 上一个概念\n下一个概念 →\n"
+  },
+  {
+    "stage": "route2",
+    "url": "http://127.0.0.1:18931/atlas/?lang=zh&node=buck&view=list&trail=volt-second",
+    "text": "建议路线 · 这是建议的探索顺序，不是必修先后关系。\n\n1. 定积分与有符号累加\n2. 电感与磁场储能\n3. Buck 降压电路\n\n本站实验任务 · 不记录掌握状态\n\n正负电压面积抵消，电流也为零吗？\n\n设置Vin=12V、D=50%，展开“从刚才的斜率推导输出电压”，按“查看ON结束”与“查看一周期”。保持一周期时刻，再把D改75%，比较填色面积。\n\n打开本站对应实验 →\n核对预测 · 该看什么，为什么\n\n默认ON结束：+150Vµs，Δi=+0.15A；一周期+150与−150抵消，电流回到0.925A，不是零。D=75%时矩形高宽都变，净面积仍为零。\n\n这是已建立的理想周期稳态；调参比较另一个稳态，不模拟启动或控制器。任意暂态区间仍满足积分关系，但未必伏秒平衡。\n\nAnalog Devices · 电感斜率与伏秒平衡 ↗\n← 上一个概念\n下一个概念 →\n"
+  },
+  {
+    "stage": "Buckinitial",
+    "url": "http://127.0.0.1:18931/power-converters/#step4",
+    "text": "STEP 4 / 6 · Buck\n\nBuck: current still has a path when the source disconnects\n\nWhy can buck current continue when the switch opens?\n\nConnect the source intermittently. The inductor maintains current; the output capacitor absorbs or supplies the instantaneous difference.\n\nPlay to follow the closed loops and magnetic energy. Pause, then adjust D: at the same time, the conducting route may switch. Change voltage to compare current width and stored energy.\n\nInput voltage 12 V\nDuty D 50%\nPlay two cycles\nAdvance half a switch phase →\nReset two-cycle record\n\n0/8 · t = 0.00 µs · S ON\n\n+\n−\nVin\nVout +\nL\nS\nK\nA\nC\n+\n−\n1 A\n0 V\nL: magnetic energy increases\n\nStored 0.428 mJ · fixed full scale 0.65 mJ; E = ½Li².\n\nC: supplies missing load current (discharging)\n\nCyan interval = ON; marker = time within cycle\n\nInspect time 0.00 µs\n\nBright lines and arrows show conventional current; thicker lines mean more current. Moving dashes illustrate direction, not electron speed or energy packets. One displayed cycle takes about 4 seconds and represents 50 µs; pause freezes the view. Reduced motion retains static arrows only.\n\nSource + → closed switch → inductor → output node → load → return → source −. Diode is reverse-blocked. Capacitor branch: capacitor + → output node → load → return → capacitor −; discharging.\n\nAverage Vout\n6.00 V\nAverage input current\n0.50 A\nInstantaneous iL\n0.925 A\nInstantaneous vL\n6.00 V\nInstantaneous iC\n-0.075 A\nMagnetic energy\n0.428 mJ\nInductor current iL (A)\n1.10\n0.91\n0\n100 time (µs)\nInductor voltage vL (V)\n7.44\n-7.44\n0\n100 time (µs)\n\nTraces show the current steady-case analytic trajectory up to the inspected time; parameter edits recompute it, without an adjustment transient. Each cycle has two ON halves and two OFF halves; their durations differ when duty is not 50%. Boundary readings use the new switch state; current remains continuous.\n\nModel & symbols (ideal steady state, no startup)\nDerive output voltage from those slopes",
+    "controls": [
+      {
+        "tag": "INPUT",
+        "text": "",
+        "value": "12",
+        "aria": null,
+        "labels": [
+          "Input voltage 12 V"
+        ]
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "value": "50",
+        "aria": null,
+        "labels": [
+          "Duty D 50%"
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Play two cycles",
+        "value": "",
+        "aria": null,
+        "labels": []
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Advance half a switch phase →",
+        "value": "",
+        "aria": null,
+        "labels": []
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reset two-cycle record",
+        "value": "",
+        "aria": null,
+        "labels": []
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "value": "0",
+        "aria": null,
+        "labels": [
+          "Inspect time 0.00 µs"
+        ]
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "Model & symbols (ideal steady state, no startup)",
+        "aria": null,
+        "labels": []
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "Derive output voltage from those slopes",
+        "aria": null,
+        "labels": []
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "value": "",
+        "aria": null,
+        "labels": []
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "value": "",
+        "aria": null,
+        "labels": []
+      }
+    ],
+    "summaries": [
+      "Model & symbols (ideal steady state, no startup)",
+      "Derive output voltage from those slopes"
+    ]
+  },
+  {
+    "browser": "CLOSED"
+  }
+]

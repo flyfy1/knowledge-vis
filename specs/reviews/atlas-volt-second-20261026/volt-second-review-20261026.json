@@ -1,0 +1,34 @@
+{
+  "pass": true,
+  "mustFix": 0,
+  "currentDifferenceCases": 1152,
+  "maxCurrentError": 4.801298247869568e-13,
+  "independentUniformMidpointCases": 16,
+  "maxQuadratureError": 2.7463305931400318e-08,
+  "default": {
+    "positiveON_Vus": 150,
+    "deltaI_ON_A": 0.15000000000000002,
+    "initial_A": 0.925,
+    "ONend_A": 1.0750000000000002,
+    "netOne_Vs": 0,
+    "netTwo_Vs": 0
+  },
+  "modelFlowSharedPlotUnchanged": true,
+  "originalGraphUnchangedApartFromOneEdgeOneRoute": true,
+  "counts": [
+    38,
+    50,
+    13
+  ],
+  "method": "Independent actual-model current-difference and uniform midpoint quadrature, source review only; no Chrome",
+  "sha256": {
+    "power-converters/voltage-area.js": "20c3210c56b756b481246c218a8b752c5d621415f6d80d4ddc2f2aaeec5d9b46",
+    "power-converters/app.js": "b11901888b48dd5ec2b8b0df0e5b03f5f361d6e3de67543a76926a3c5069f655",
+    "power-converters/model.js": "244b4d11a4f557fd1a8e974a07db85a066c02ecdfcefbb92380f293538914dd5",
+    "power-converters/flow.js": "3e8faef0b8e7b270540d15f03ffa55b79631ed030720ae543cad02b2864d9364",
+    "power-converters/style.css": "74047838bbdb6e3581bd01a62b31555b3b9c70b0d5adddefe798eb525f64f92f",
+    "atlas/data.js": "fa08d4f5b1fdc30e13a1ddd94bf2d63cb21368c1a9149cc039cc64c3544aa542"
+  },
+  "initialProbeAppSHA256": "b11901888b48dd5ec2b8b0df0e5b03f5f361d6e3de67543a76926a3c5069f655",
+  "finalDisplayCheckpoint": "Source-read fallback to visible buck-traces width while disclosure is closed, display-only near-zero formatting and inspect-time readout; no re-run or change of numerical probe."
+}

@@ -6,6 +6,8 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Integral → inductor voltage-area balance](atlas-volt-second.md): one sourced bridge, existing Buck seek/play and signed voltage area versus nonzero current.
+
 - [Derivative → capacitor rate](atlas-capacitor-rate.md): one sourced calculus/circuit route, same-state latest-interval slope and zero-current memory experiment.
 
 - [Reading a representation relationship](atlas-relation-reading.md): one existing sine→harmonic-motion edge, optional starting lesson/experiment, source and model boundaries without inventing prerequisite order.

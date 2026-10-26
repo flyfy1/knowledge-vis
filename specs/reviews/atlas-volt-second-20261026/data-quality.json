@@ -1,0 +1,479 @@
+{
+  "errors": [],
+  "cycles": [],
+  "prerequisiteEdges": 0,
+  "references": [
+    {
+      "at": "atlas.nodes.0.source",
+      "href": "../reflection-refraction/#snell-bridge"
+    },
+    {
+      "at": "atlas.nodes.0.help.sources.0.href",
+      "href": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction"
+    },
+    {
+      "at": "atlas.nodes.0.help.sources.1.href",
+      "href": "https://openstax.org/books/university-physics-volume-3/pages/1-4-total-internal-reflection"
+    },
+    {
+      "at": "atlas.nodes.1.source",
+      "href": "../linear-functions/#step2"
+    },
+    {
+      "at": "atlas.nodes.2.source",
+      "href": "../pinhole-camera/#geometry-bridge"
+    },
+    {
+      "at": "atlas.nodes.2.help.sources.0.href",
+      "href": "https://openstax.org/books/elementary-algebra-2e/pages/8-7-solve-proportion-and-similar-figure-applications"
+    },
+    {
+      "at": "atlas.nodes.2.help.sources.1.href",
+      "href": "https://openstax.org/books/college-physics-2e/pages/25-1-the-ray-aspect-of-light"
+    },
+    {
+      "at": "atlas.nodes.2.help.sources.2.href",
+      "href": "https://openstax.org/books/college-physics-2e/pages/27-6-limits-of-resolution-the-rayleigh-criterion"
+    },
+    {
+      "at": "atlas.nodes.3.source",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem"
+    },
+    {
+      "at": "atlas.nodes.3.help.sources.0.href",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/8-1-potential-energy-of-a-system"
+    },
+    {
+      "at": "atlas.nodes.4.source",
+      "href": "../integral/#step2"
+    },
+    {
+      "at": "atlas.nodes.5.source",
+      "href": "../derivative/#step2"
+    },
+    {
+      "at": "atlas.nodes.6.source",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law"
+    },
+    {
+      "at": "atlas.nodes.7.source",
+      "href": "../power-converters/#step0"
+    },
+    {
+      "at": "atlas.nodes.8.source",
+      "href": "../power-converters/#step1"
+    },
+    {
+      "at": "atlas.nodes.9.source",
+      "href": "../power-converters/#step2"
+    },
+    {
+      "at": "atlas.nodes.10.source",
+      "href": "../power-converters/#step3"
+    },
+    {
+      "at": "atlas.nodes.11.source",
+      "href": "../power-converters/#step3"
+    },
+    {
+      "at": "atlas.nodes.12.source",
+      "href": "../power-converters/#step4"
+    },
+    {
+      "at": "atlas.nodes.13.source",
+      "href": "../power-converters/#step5"
+    },
+    {
+      "at": "atlas.nodes.14.source",
+      "href": "../trig/#step1"
+    },
+    {
+      "at": "atlas.nodes.15.source",
+      "href": "../trig/#step3"
+    },
+    {
+      "at": "atlas.nodes.15.help.sources.0.href",
+      "href": "https://openstax.org/books/algebra-and-trigonometry-2e/pages/7-1-angles"
+    },
+    {
+      "at": "atlas.nodes.15.help.sources.1.href",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion"
+    },
+    {
+      "at": "atlas.nodes.16.source",
+      "href": "../complex-numbers/#step4"
+    },
+    {
+      "at": "atlas.nodes.17.source",
+      "href": "../eigen/#step1"
+    },
+    {
+      "at": "atlas.nodes.18.source",
+      "href": "../eigen/#step1"
+    },
+    {
+      "at": "atlas.nodes.19.source",
+      "href": "../laplace/#step1"
+    },
+    {
+      "at": "atlas.nodes.20.source",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion"
+    },
+    {
+      "at": "atlas.nodes.20.help.sources.0.href",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/3-3-average-and-instantaneous-acceleration"
+    },
+    {
+      "at": "atlas.nodes.21.source",
+      "href": "../fourier/#step2"
+    },
+    {
+      "at": "atlas.nodes.22.source",
+      "href": "../fourier/#step5"
+    },
+    {
+      "at": "atlas.nodes.23.source",
+      "href": "../fourier/#step5"
+    },
+    {
+      "at": "atlas.nodes.24.source",
+      "href": "../freqresp/#step5"
+    },
+    {
+      "at": "atlas.nodes.25.source",
+      "href": "../sampling/#step3"
+    },
+    {
+      "at": "atlas.nodes.26.source",
+      "href": "../lti/#step3"
+    },
+    {
+      "at": "atlas.nodes.27.source",
+      "href": "../lti/#step2"
+    },
+    {
+      "at": "atlas.nodes.28.source",
+      "href": "../convolution/#step2"
+    },
+    {
+      "at": "atlas.nodes.29.source",
+      "href": "../freqresp/#step0"
+    },
+    {
+      "at": "atlas.nodes.30.source",
+      "href": "../laplace/#step4"
+    },
+    {
+      "at": "atlas.nodes.31.source",
+      "href": "../control/#step2"
+    },
+    {
+      "at": "atlas.nodes.32.source",
+      "href": "../bayes/#step0"
+    },
+    {
+      "at": "atlas.nodes.33.source",
+      "href": "../bayes/#step2"
+    },
+    {
+      "at": "atlas.nodes.34.source",
+      "href": "../clt/#step3"
+    },
+    {
+      "at": "atlas.nodes.35.source",
+      "href": "../clt/#step3"
+    },
+    {
+      "at": "atlas.nodes.36.source",
+      "href": "../montecarlo/#step3"
+    },
+    {
+      "at": "atlas.nodes.37.source",
+      "href": "../kalman/#step2"
+    },
+    {
+      "at": "atlas.edges.0.source",
+      "href": "../reflection-refraction/#critical-proof"
+    },
+    {
+      "at": "atlas.edges.1.source",
+      "href": "../pinhole-camera/#geometry-bridge"
+    },
+    {
+      "at": "atlas.edges.2.source",
+      "href": "https://wiki.analog.com/university/courses/electronics/buck_converter_basics"
+    },
+    {
+      "at": "atlas.edges.3.source",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/7-1-work"
+    },
+    {
+      "at": "atlas.edges.4.source",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem"
+    },
+    {
+      "at": "atlas.edges.5.source",
+      "href": "https://openstax.org/books/calculus-volume-1/pages/5-2-the-definite-integral"
+    },
+    {
+      "at": "atlas.edges.6.source",
+      "href": "https://openstax.org/books/university-physics-volume-2/pages/9-1-electrical-current"
+    },
+    {
+      "at": "atlas.edges.7.source",
+      "href": "../derivative/#step0"
+    },
+    {
+      "at": "atlas.edges.8.source",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law"
+    },
+    {
+      "at": "atlas.edges.9.source",
+      "href": "../power-converters/#step1"
+    },
+    {
+      "at": "atlas.edges.10.source",
+      "href": "../power-converters/#step2"
+    },
+    {
+      "at": "atlas.edges.11.source",
+      "href": "../power-converters/#step2"
+    },
+    {
+      "at": "atlas.edges.12.source",
+      "href": "../power-converters/#step4"
+    },
+    {
+      "at": "atlas.edges.13.source",
+      "href": "../power-converters/#step5"
+    },
+    {
+      "at": "atlas.edges.14.source",
+      "href": "../power-converters/#step4"
+    },
+    {
+      "at": "atlas.edges.15.source",
+      "href": "../power-converters/#step5"
+    },
+    {
+      "at": "atlas.edges.16.source",
+      "href": "../power-converters/#step4"
+    },
+    {
+      "at": "atlas.edges.17.source",
+      "href": "../power-converters/#step5"
+    },
+    {
+      "at": "atlas.edges.18.source",
+      "href": "../power-converters/#step4"
+    },
+    {
+      "at": "atlas.edges.19.source",
+      "href": "../power-converters/#step5"
+    },
+    {
+      "at": "atlas.edges.20.source",
+      "href": "../power-converters/#step6"
+    },
+    {
+      "at": "atlas.edges.21.source",
+      "href": "../trig/#step3"
+    },
+    {
+      "at": "atlas.edges.22.source",
+      "href": "https://openstax.org/books/algebra-and-trigonometry-2e/pages/10-5-polar-form-of-complex-numbers"
+    },
+    {
+      "at": "atlas.edges.23.source",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion"
+    },
+    {
+      "at": "atlas.edges.23.reading.source",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/15-3-comparing-simple-harmonic-motion-and-circular-motion"
+    },
+    {
+      "at": "atlas.edges.24.source",
+      "href": "../fourier/#step1"
+    },
+    {
+      "at": "atlas.edges.25.source",
+      "href": "https://www.dspguide.com/CH31.PDF#page=3"
+    },
+    {
+      "at": "atlas.edges.26.source",
+      "href": "../fourier/#step4"
+    },
+    {
+      "at": "atlas.edges.27.source",
+      "href": "../fourier/#step5"
+    },
+    {
+      "at": "atlas.edges.28.source",
+      "href": "../convolution/#step6"
+    },
+    {
+      "at": "atlas.edges.29.source",
+      "href": "../sampling/#step4"
+    },
+    {
+      "at": "atlas.edges.30.source",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/15-6-forced-oscillations"
+    },
+    {
+      "at": "atlas.edges.31.source",
+      "href": "../freqresp/#step5"
+    },
+    {
+      "at": "atlas.edges.32.source",
+      "href": "../lti/#step2"
+    },
+    {
+      "at": "atlas.edges.33.source",
+      "href": "../lti/#step2"
+    },
+    {
+      "at": "atlas.edges.34.source",
+      "href": "https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/9434f9bde960fd3b2b81de3ad442f902_MITRES_6_007S11_lec11.pdf#page=5"
+    },
+    {
+      "at": "atlas.edges.35.source",
+      "href": "https://dspguide.com/ch9/2.htm"
+    },
+    {
+      "at": "atlas.edges.36.source",
+      "href": "../lti/#step3"
+    },
+    {
+      "at": "atlas.edges.37.source",
+      "href": "../laplace/#step2"
+    },
+    {
+      "at": "atlas.edges.38.source",
+      "href": "../laplace/#step4"
+    },
+    {
+      "at": "atlas.edges.39.source",
+      "href": "https://www.dspguide.com/CH32.PDF#page=18"
+    },
+    {
+      "at": "atlas.edges.40.source",
+      "href": "../eigen/#step1"
+    },
+    {
+      "at": "atlas.edges.41.source",
+      "href": "../eigen/#step5"
+    },
+    {
+      "at": "atlas.edges.42.source",
+      "href": "../bayes/#step2"
+    },
+    {
+      "at": "atlas.edges.43.source",
+      "href": "../kalman/#step6"
+    },
+    {
+      "at": "atlas.edges.44.source",
+      "href": "../kalman/#step2"
+    },
+    {
+      "at": "atlas.edges.45.source",
+      "href": "../kalman/#step6"
+    },
+    {
+      "at": "atlas.edges.46.source",
+      "href": "../clt/#step3"
+    },
+    {
+      "at": "atlas.edges.47.source",
+      "href": "../montecarlo/#step3"
+    },
+    {
+      "at": "atlas.edges.48.source",
+      "href": "../montecarlo/#step2"
+    },
+    {
+      "at": "atlas.edges.49.source",
+      "href": "../clt/#step5"
+    },
+    {
+      "at": "atlas.trails.0.stationTasks.0.href",
+      "href": "../integral/#step2"
+    },
+    {
+      "at": "atlas.trails.0.stationTasks.0.source",
+      "href": "https://wiki.analog.com/university/courses/electronics/buck_converter_basics"
+    },
+    {
+      "at": "atlas.trails.0.stationTasks.1.href",
+      "href": "../power-converters/#step1"
+    },
+    {
+      "at": "atlas.trails.0.stationTasks.1.source",
+      "href": "https://wiki.analog.com/university/courses/electronics/buck_converter_basics"
+    },
+    {
+      "at": "atlas.trails.0.stationTasks.2.href",
+      "href": "../power-converters/#step4"
+    },
+    {
+      "at": "atlas.trails.0.stationTasks.2.source",
+      "href": "https://wiki.analog.com/university/courses/electronics/buck_converter_basics"
+    },
+    {
+      "at": "atlas.trails.1.stationTasks.0.href",
+      "href": "../derivative/#step2"
+    },
+    {
+      "at": "atlas.trails.1.stationTasks.0.source",
+      "href": "https://openstax.org/books/university-physics-volume-2/pages/9-1-electrical-current"
+    },
+    {
+      "at": "atlas.trails.1.stationTasks.1.href",
+      "href": "../power-converters/#step2"
+    },
+    {
+      "at": "atlas.trails.1.stationTasks.1.source",
+      "href": "https://openstax.org/books/university-physics-volume-2/pages/8-1-capacitors-and-capacitance"
+    },
+    {
+      "at": "atlas.trails.2.stationTasks.0.href",
+      "href": "../lti/#step3"
+    },
+    {
+      "at": "atlas.trails.2.stationTasks.0.source",
+      "href": "../lti/#step3"
+    },
+    {
+      "at": "atlas.trails.2.stationTasks.1.href",
+      "href": "../lti/#step2"
+    },
+    {
+      "at": "atlas.trails.2.stationTasks.1.source",
+      "href": "../lti/#step2"
+    },
+    {
+      "at": "atlas.trails.2.stationTasks.2.href",
+      "href": "../convolution/#step2"
+    },
+    {
+      "at": "atlas.trails.2.stationTasks.2.source",
+      "href": "https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/9434f9bde960fd3b2b81de3ad442f902_MITRES_6_007S11_lec11.pdf#page=5"
+    },
+    {
+      "at": "atlas.trails.2.stationTasks.3.href",
+      "href": "../freqresp/#step3"
+    },
+    {
+      "at": "atlas.trails.2.stationTasks.3.source",
+      "href": "https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/9434f9bde960fd3b2b81de3ad442f902_MITRES_6_007S11_lec11.pdf#page=5"
+    },
+    {
+      "at": "atlas.trails.11.backgroundSource",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/15-6-forced-oscillations"
+    }
+  ],
+  "groups": 5,
+  "nodes": 38,
+  "edges": 50,
+  "trails": 13
+}
