@@ -11,3 +11,5 @@ New terms at repaired steps: t seconds vs n integer index; fHz vs physical angul
 ## Codex S2 sample-pair verification — 2026-10-26
 
 [Scoped contract](../specs/sampling-pair.md), following independent gate. Existing model/figure and fs/f controls already showaliases; add only selectedintegern and pairedreadout/markers atsample n/fs versus nonsample(n+.25)/fs. Show signedg=f−kfs in[−fs/2,fs/2], then |g|; correct oldsignedintervalnote. Samepoint values sharealiasSigned and originalsin. Sample equality follows2πkn, not interpolation; nonsample mayalsocoincide, neverunique-reconstructionclaim. Knownbandlimit/fullsequence/equalitylimits from acceptedS3 retained. PassivecommitonlyS2f/fs/n history and reset, no newclock/audio/controller/graph. P0/P1/token/source/prevention details inlinkedcontract.
+
+Accepted sampling-pair implementation source 752217ab5f3090fb306f9c7d06de4d978896728e; priorCodex1d90150 andMuse/Alberto0cdb1700/27eb5c4b contributionsretained. Publicationisaseparateverificationboundary.
