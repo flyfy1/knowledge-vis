@@ -1871,3 +1871,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Skip/take partition | `leetcode/879/#step1` | Merge equivalent futures without merging distinct choices. |
 
 <!-- /leetcode-879-campaign -->
+
+
+<!-- leetcode-882-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Weighted shortest paths | `leetcode/882/#step2` | Finalize minimum distances before counting edge coverage. |
+| Capped edge coverage | `leetcode/882/#step2` | Count the union of two endpoint prefixes without overlap. |
+
+<!-- /leetcode-882-campaign -->
