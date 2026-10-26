@@ -3779,6 +3779,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "k = 1: O(n²) time; k ≥ 2: O(n log n) time; O(n) auxiliary space in both cases"
   },
   {
+    "id": 902,
+    "title": {
+      "zh": "最大为 N 的数字组合",
+      "en": "Numbers At Most N Given Digit Set"
+    },
+    "desc": {
+      "zh": "通过首个不同数位，把逐个检查变成互不重叠的计数块。",
+      "en": "Count disjoint blocks by the first digit that differs from the bound."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "组合计数",
+        "en": "Combinatorial counting"
+      },
+      {
+        "zh": "数位前缀",
+        "en": "Digit prefixes"
+      }
+    ],
+    "path": "902/",
+    "leetcodeUrl": "https://leetcode.com/problems/numbers-at-most-n-given-digit-set/",
+    "language": "Python",
+    "complexity": "O(Lm) time; O(L) auxiliary space, where L = len(str(n)) and m = len(digits)"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
