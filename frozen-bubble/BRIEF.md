@@ -45,3 +45,5 @@ Acceptance criteria for future Codex/Claude comparison:
 Source check: Original paper text retrieved through its author-uploaded ResearchGate record on 2026-10-26. Nature fetch redirected to an inaccessible identity host; PMC returned a bot-check page. Experimental setup/Figs. 2–4 support the two regimes; Methods gives approximately 79% water / 20% glycerol / 1% dish soap by volume. The cited −6.5°C is a formulation-specific reference adopted in the paper (its Methods neglect soap's effect when using the water/glycerol literature value), not our measurement. The page's time, six-branch geometry, transport and stop height remain deliberately prescribed, not reconstructed data. No newly invented quantitative physics was added.
 
 See `../specs/reviews/frozen-bubble-learning-20261026.md` for the current verification and before/after evidence. The earlier verification report describes the baseline, not this revision.
+
+Integration cold-reader correction: English storyboard directions must use the exact visible button label “Grow”, not “Growing”; include instruction-to-control label agreement in teaching acceptance.

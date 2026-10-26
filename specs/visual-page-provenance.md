@@ -34,8 +34,10 @@ Initial evidence is1d90150cf9c1db194769dff92dc4178ce7779fb0 (`Built-By: Codex`, 
 
 - photosynthesis: integrated worker source3e1c2f43, revised-edition header and explicit mixed Codex/Alberto/Claude history. [Page spec](../photosynthesis/SCROLL-SPEC.md). The initial14-page preparation remains historical; inventory now includes this accepted handover.
 - frozen-bubble: sourcee4b8772c teaching handover integrated with a single shared revised-edition disclosure. Its [teaching contract](../frozen-bubble/BRIEF.md#teaching-continuity-revision--2026-10-26-codex) and original quantitative-model limits remain authoritative.
-- power-converters: current worker owns visual changes; earlier origin not established here. Await its evidence and preserve inherited contributors.
+- power-converters: source24a3d727 flow handover integrated; revised-edition disclosure preserves earlier contributors and the unchanged quantitative model. Original generator is not asserted.
 - Other Visual pages/homepage: origin not verified by this batch. Do not stamp them. Future Codex modifications must adopt the contract with their exact evidence.
 - LeetCode: separate concurrent owner and existing shipped `-codex/` URL policy; no files changed here.
 
 Design and acceptance: [attribution review](reviews/visual-attribution-20261026/design.md), [verification](reviews/visual-attribution-20261026/verification.md).
+
+All three worker handovers are now integrated locally. Inventory17 has14 earlier Codex revisions plus the three exact worker source revisions. Initial preparation reports remain historical; final batch/release evidence is recorded separately.

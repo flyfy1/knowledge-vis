@@ -177,10 +177,20 @@
       },
       "originalAuthorship": "Codex implementation in1d90150c retained; this source records the teaching revision",
       "provenanceEvidence": "specs/reviews/frozen-bubble-learning-20261026.md"
+    },
+    "power-converters": {
+      "developer": "Codex",
+      "edition": "codex-flow-20261026",
+      "kind": "revised",
+      "sourceRevision": "24a3d727246b05697d6b2cb65125cd9fc771a0a0",
+      "scope": {
+        "zh": "导通回路、带符号电流与储能的联动可视化",
+        "en": "Linked conducting loops, signed currents and stored-energy visualization"
+      },
+      "originalAuthorship": "Original lesson and quantitative model retained; original generator not asserted"
     }
   },
   "exceptions": {
-    "power-converters": "Active visual worker handover pending; original developer not established",
     "leetcode/*": "Concurrent owner; existing -codex URL markers preserved; no page files edited",
     "*": "Unverified pages are not automatically labelled"
   }
