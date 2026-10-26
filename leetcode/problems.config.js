@@ -4697,6 +4697,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²W² + nK log K) expected time; O(n²W) space including output, W≥1 maximum intermediate set size, K final word count"
   },
   {
+    "id": 1106,
+    "title": {
+      "zh": "解析布尔表达式",
+      "en": "Parsing A Boolean Expression"
+    },
+    "desc": {
+      "zh": "把完成的括号组压成一个真假值，逐步推导栈解析。",
+      "en": "Derive stack parsing by reducing each completed group to one truth value."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "栈",
+        "en": "Stack"
+      },
+      {
+        "zh": "字符串解析",
+        "en": "Parsing"
+      }
+    ],
+    "path": "1106/",
+    "leetcodeUrl": "https://leetcode.com/problems/parsing-a-boolean-expression/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

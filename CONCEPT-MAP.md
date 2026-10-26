@@ -2111,3 +2111,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Recursive set parser | `leetcode/1096/#step3` | Return each brace group as an atom while preserving parent state. |
 
 <!-- /leetcode-1096-campaign -->
+
+
+<!-- leetcode-1106-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Boolean group reduction | `leetcode/1106/#step2` | Replace innermost completed groups by truth literals while preserving unresolved outer context. |
+| Iterative Boolean parser | `leetcode/1106/#step3` | Use stack snapshots and operator-specific truth flags to parse each character once. |
+
+<!-- /leetcode-1106-campaign -->
