@@ -1,0 +1,89 @@
+{
+  "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nDiscrete convolution reverses the kernel to g[−k], then shifts it by output index n, giving g[n−k] in column k. Multiply overlapping pairs and sum to obtain y[n]. Here f stores k=0…4 and g stores j=0…2; values outside are zero. Edit any value or select output n to inspect an edge. The original Step button still walks alignment, multiplication and summation.\n\nInput sequence f\nKernel g\nInspect output index n (arrows ±1)\n\nCurrent n = 0\n\nSelecting n pauses, clears accumulated playback time and reveals this computed output. Earlier filled cells are recomputed from the current arrays, not a record of completed learning steps. n, k and j are discrete indices, not seconds.\n\nStep →\n▶ Play\nReset\n\nPress “Step” to begin: first the kernel flips, then it slides and settles accounts position by position.\n\nFor y[0]: valid k runs from 0 to 0, 1 pairs; j=0−k. Full linear-convolution length N+M−1=7.\n\nk=0 → j=0: align f[0]≈1 with g[0]≈1.\n\nZero extension: f[k] is stored at0…4 and g[j] at0…2; all other indices mean0. Requiring0≤k≤4 and0≤n−k≤2 gives k∈[max(0,n−2),min(4,n)]. This is INDEX overlap, not a guarantee of nonzero products or sum: n=3 can cancel. Potentially nonzero outputs span0…6; outside, no pairs overlap and y[n]=0. No circular wrap or same/valid crop is used.\n\nActual inputs are bounded to−99…99; empty/nonfinite inputs mean0, and a committed field mirrors its stored value. Diagram boxes retain overview rounding (about2 decimals; tiny values may display0). Equations and the index list show up to9 significant digits, scientific notation for tiny values and floating-point roundoff. Use the list for readable small-screen or decimal detail.\n\nWith the default arrays inspect n=0,2,3,6. Why does an edge have1 pair and the middle3? How can n=3 overlap yet give0? Edit one value to a decimal and check the pairs. Reset restores the default arrays and pauses.\n\nConvolution, correlation and boundaries\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+  "aria": "- paragraph: Step 2 · Taking it apart\n- heading \"Flip, slide, multiply, add\" [level=2]\n- paragraph:\n  - text: Discrete convolution\n  - strong: reverses\n  - text: the kernel to g[−k], then\n  - strong: shifts\n  - text: it by output index n, giving g[n−k] in column k.\n  - strong: Multiply overlapping pairs and sum\n  - text: to obtain y[n]. Here f stores k=0…4 and g stores j=0…2; values outside are zero. Edit any value or select output n to inspect an edge. The original Step button still walks alignment, multiplication and summation.\n- text: Input sequence f\n- spinbutton \"Value of f[0] (−99 to99)\": \"1\"\n- spinbutton \"Value of f[1] (−99 to99)\": \"2\"\n- spinbutton \"Value of f[2] (−99 to99)\": \"3\"\n- spinbutton \"Value of f[3] (−99 to99)\": \"2\"\n- spinbutton \"Value of f[4] (−99 to99)\": \"1\"\n- text: Kernel g\n- spinbutton \"Value of g[0] (−99 to99)\": \"1\"\n- spinbutton \"Value of g[1] (−99 to99)\": \"0\"\n- spinbutton \"Value of g[2] (−99 to99)\": \"-1\"\n- img \"Flip, slide, multiply, add\"\n- text: Inspect output index n (arrows ±1)\n- slider \"Inspect output index n (arrows ±1)\": \"0\"\n- paragraph: Current n = 0\n- paragraph: Selecting n pauses, clears accumulated playback time and reveals this computed output. Earlier filled cells are recomputed from the current arrays, not a record of completed learning steps. n, k and j are discrete indices, not seconds.\n- button \"Step →\"\n- button \"▶ Play\"\n- button \"Reset\"\n- paragraph: \"Press “Step” to begin: first the kernel flips, then it slides and settles accounts position by position.\"\n- paragraph: \"For y[0]: valid k runs from 0 to 0, 1 pairs; j=0−k. Full linear-convolution length N+M−1=7.\"\n- list:\n  - listitem: \"k=0 → j=0: align f[0]≈1 with g[0]≈1.\"\n- paragraph: \"Zero extension: f[k] is stored at0…4 and g[j] at0…2; all other indices mean0. Requiring0≤k≤4 and0≤n−k≤2 gives k∈[max(0,n−2),min(4,n)]. This is INDEX overlap, not a guarantee of nonzero products or sum: n=3 can cancel. Potentially nonzero outputs span0…6; outside, no pairs overlap and y[n]=0. No circular wrap or same/valid crop is used.\"\n- paragraph: Actual inputs are bounded to−99…99; empty/nonfinite inputs mean0, and a committed field mirrors its stored value. Diagram boxes retain overview rounding (about2 decimals; tiny values may display0). Equations and the index list show up to9 significant digits, scientific notation for tiny values and floating-point roundoff. Use the list for readable small-screen or decimal detail.\n- paragraph: With the default arrays inspect n=0,2,3,6. Why does an edge have1 pair and the middle3? How can n=3 overlap yet give0? Edit one value to a decimal and check the pairs. Reset restores the default arrays and pauses.\n- group: Convolution, correlation and boundaries\n- paragraph:\n  - text: (f * g)[n] = Σ\n  - subscript: k\n  - text: f[k] · g[n − k]\n- paragraph:\n  - text: In the formula (f * g)[n] = Σ\n  - subscript: k\n  - text: \"f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.\"",
+  "inputs": [
+    {
+      "id": "",
+      "type": "number",
+      "value": "1",
+      "min": "-99",
+      "max": "99",
+      "step": "any",
+      "labels": []
+    },
+    {
+      "id": "",
+      "type": "number",
+      "value": "2",
+      "min": "-99",
+      "max": "99",
+      "step": "any",
+      "labels": []
+    },
+    {
+      "id": "",
+      "type": "number",
+      "value": "3",
+      "min": "-99",
+      "max": "99",
+      "step": "any",
+      "labels": []
+    },
+    {
+      "id": "",
+      "type": "number",
+      "value": "2",
+      "min": "-99",
+      "max": "99",
+      "step": "any",
+      "labels": []
+    },
+    {
+      "id": "",
+      "type": "number",
+      "value": "1",
+      "min": "-99",
+      "max": "99",
+      "step": "any",
+      "labels": []
+    },
+    {
+      "id": "",
+      "type": "number",
+      "value": "1",
+      "min": "-99",
+      "max": "99",
+      "step": "any",
+      "labels": []
+    },
+    {
+      "id": "",
+      "type": "number",
+      "value": "0",
+      "min": "-99",
+      "max": "99",
+      "step": "any",
+      "labels": []
+    },
+    {
+      "id": "",
+      "type": "number",
+      "value": "-1",
+      "min": "-99",
+      "max": "99",
+      "step": "any",
+      "labels": []
+    },
+    {
+      "id": "s2-n",
+      "type": "range",
+      "value": "0",
+      "min": "0",
+      "max": "6",
+      "step": "1",
+      "labels": [
+        "Inspect output index n (arrows ±1)"
+      ]
+    }
+  ]
+}

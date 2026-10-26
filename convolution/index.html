@@ -83,7 +83,7 @@
 <section class="step" id="step2" data-step="2">
   <div class="step-inner">
     <p class="step-kicker" data-i18n="s2k">第 2 步 · 拆开算账</p>
-    <h2 data-i18n="s2t">翻转、滑动、相乘、求和</h2>
+    <h2 id="s2-title" data-i18n="s2t">翻转、滑动、相乘、求和</h2>
     <p class="explain" data-i18n-html="s2e"></p>
     <div class="seq-edit">
       <div class="seq-group">
@@ -96,14 +96,21 @@
       </div>
     </div>
     <div class="stage">
-      <canvas id="s2-canvas" height="330" style="height:330px"></canvas>
+      <canvas id="s2-canvas" height="330" style="height:330px" role="img" aria-labelledby="s2-title" aria-describedby="s2-support"></canvas>
     </div>
+    <div class="controls"><label for="s2-n"><span data-i18n="convSelect"></span><input type="range" id="s2-n" min="0" max="6" step="1" value="0"></label></div>
+    <p class="readout"><span data-i18n="convSelected"></span> <span id="s2-n-value">0</span></p>
+    <p class="hint" data-i18n="convSeekNote"></p>
     <div class="btn-row">
       <button class="btn primary" id="s2-step" data-i18n="s2step">单步 →</button>
       <button class="btn" id="s2-play">▶ 播放</button>
       <button class="btn" id="s2-reset" data-i18n="s2reset">重置</button>
     </div>
     <p class="readout" id="s2-readout"></p>
+    <p class="readout" id="s2-support"></p><ul class="conv-terms" id="s2-terms"></ul>
+    <p class="hint" data-i18n="convBounds"></p><p class="hint" data-i18n="convPrecision"></p>
+    <p class="hint" data-i18n="convQuestion"></p>
+    <details class="conv-source"><summary data-i18n="convSourceTitle"></summary><p data-i18n="convCorrelation"></p><a href="https://numpy.org/doc/stable/reference/generated/numpy.convolve.html" target="_blank" rel="noopener">NumPy · convolve</a><a href="https://numpy.org/doc/stable/reference/generated/numpy.correlate.html" target="_blank" rel="noopener">NumPy · correlate</a></details>
     <div class="formula-box">
       <p class="formula big">(f * g)[n] = Σ<sub>k</sub> f[k] · g[n − k]</p>
       <p class="explain small" data-i18n-html="s2formulaNote"></p>

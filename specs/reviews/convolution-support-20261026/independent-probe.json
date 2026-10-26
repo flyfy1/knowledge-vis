@@ -1,0 +1,27 @@
+{
+  "verdict": "PASS",
+  "remainingMustFix": 0,
+  "scatterOracleCases": 132,
+  "maxScatterError": 0,
+  "defaultCancellation": {
+    "overlap": 3,
+    "value": 0
+  },
+  "checks": [
+    "full/edge/outside zero-extension bounds and pair indices",
+    "dense-array helper and snapshot validation",
+    "original conv1d/FFT/S0S1/S3-end byte guards",
+    "actual seek pauses and clears prior timer acc",
+    "phase2 seek→Step and last-output done transitions",
+    "raw decimal commit/locale/restore precision",
+    "commit preserves foreign fields",
+    "paused/acc0 restore and denied history"
+  ],
+  "sourceSHA256": "a0004b2cca326dc0993ff74a9a47ad83ca29f659f97a2a94a1e297eb93114d28",
+  "notTested": [
+    "Chrome/native input validity or focus",
+    "viewport/200%/canvas glyph overlap",
+    "Back/reload browser lifecycle",
+    "real users/learning effects"
+  ]
+}

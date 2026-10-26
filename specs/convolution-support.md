@@ -1,0 +1,29 @@
+# Convolution S2: selected output, overlap and zero extension
+
+Read WORKFLOW, convolution/BRIEF.md and visual-page-provenance.md. [Independent gate](reviews/convolution-support-20261026/design-review.md) accepted this bounded reuse; all constraints adopted.
+
+## Actual gap / accepted brief
+
+Base594aa1ed. OriginalS2 computes g[n−k] correctly but labels everyshift g[−k]; no visible k/j overlaprange or zeroextension rule and no random-accessoutputindex. Existingnumberchange usesfmtNum onblur, roundingtheinput to2decimals while retainingunroundedowner:1.2345 becomesvisible1.23 butstillcalculates1.2345. Originalscene/state/terms/conv1d are sufficient; no newlesson/simulator/clock.
+
+Known: finite real sequences f[k],g[j] storedfromindex0, existingflip/slide/multiply/sum. Uniquequestion: whichpairs contribute to THIS outputindexn, especially atedges? InputfixedlengthsN5/M3, originalnumbervalues−99..99, n0..6. Actionseekn viaone nativeintegerrange (pauses/clearsacc/revealsphase2) or originalsingle-step/play; editarrays andcompare n0/2/3/6. Quantityj=n−k, integeroverlap[max(0,n−M+1),min(N−1,n)], productsandsum. Conclusiononlyvalidpairscontributeunderzeroextension; fulloutputN+M−1 coverspotentiallynonzeroindices0..N+M−2, internalcancellationcanstillzero. n/k/j are dimensionlessdiscreteindices, not seconds; no Δt isgiven. Outsidepotentialrange output0; indexsliderstaysinsideexistingcanvas domain, algebra/coretestscoveroutside, no clipping/fakeoutside animation.
+
+P0/highreturn20%: dynamicg[n−k] label andinputcolumnindices, sameowner outputseek andwrappedDOMindex/pair list + support/readout; precise inputcommit andexplicitroundeddisplay. Preserveoriginalconv1d/FFT/S3..endbytes, extractsoriginalS2loopintoonepureconvPoint adapter ratherthannewsolver; validateindependently againstoldconv1d. P1: localizeduniquenumberinputlabels, commitonlywhitelistpausedrestore, sources/Codexidentity. P2:none. Deferredcontinuousintegrationbias/image/audio/CNN/FFTfullaudit,newgraphnodes/routes/correlationrenderer or framework.
+
+## Same model, representation and lifecycle
+
+convPoint reuses originaltermloop and returnsbounds,terms,sum,length. S2terms/yVal adaptthisresult; originalconv1d staysunchanged. Defaulty=[1,2,2,0,−2,−2,−1]. Defaultn3 has3overlapterms butsum0, notabsenceofoverlap. OriginalS2 phasesretained; DOMlistshowsalignedpairs atphase0, productsatphase1, sumatphase2. Seekingdirectlyinspectsphase2andpauses, not fabricatedexecution/masteryhistory. Previouslyfilledoutputcells are valuesrecomputedfromcurrentarrays, not learnerprogress. Edits/reset/seek clearacc; originalautomaticadvanceusesexistingdt/.95scheduler. Visibility/pagehidepauseS2, no newloop.
+
+Numberowner retainsfinitevaluesclamped±99; committedinput mirrors actualString(owner), neverfmtNum. Clear/nonfinite usesold0rule, disclosed. Canvasretainsoriginaloverview2decimalrounding(explicitlydisclosed,tinyvaluesmayround0); detailedDOM/formulasmayroundto9significantdigits andsayapproximate, tinynonzeroscientificnotationpreservedthere. Rawarraysarewhatgetstored/recovered. Nooutputinsideinputlabel. Numberlabelidentifiesf[k]vsg[j], nativebounds−99..99,48pxcontrol/minwidthwrapping and3pxfocus. Originalcanvasisoverview, wrappedDOMlist/readoutsprovidefullnumeric/indexalternative, includinghighvalues/200%text.
+
+Snapshot convolutionPoint holdsONLY f5/g3/n/phase/done, validatedfinitebounds/integer/boolean; done requireslastn/phase2. Restorepaused/acc0; retainforeignfields. Writesoncommittedchange/step/play/reset/pagehide, neverinput/frame/automaticadvance. Historydeniedstillworks; noquiz/userprofile/audiofields. Nativeintegerseek/HomeEnd; languagekeepsrawvalues/n/phases. No loading/network state because synchronouslylocal.
+
+Exactexisting tokens bg#0d1117,panel#161b22,panel2#1c2330,text#e8edf4,muted#9aa7b8,line#2b3547,accent#6ee7ff,accent2#ffb454,accent3#ff7a93,good#7ee2a8; existing13.5/16pxcanvasoverview,systembody17px/lineheight1.7,920pxcontent,radius14/8pxboxes retained. NewDOMlist usesexistingbodytypeandwrap; no ambientanimation/shadow/colorpalette. S2inputwidth5.5em/min48pxandflexwrapprotectmobile/200%. No newassets/thirdpartyruntime.
+
+## Sources → claims → lesson
+
+[NumPy convolve official](https://numpy.org/doc/stable/reference/generated/numpy.convolve.html), checked2026-10-26, definesdiscretelinearconvolution andfullN+M−1/partialedgeoverlap. [NumPy correlate official](https://numpy.org/doc/stable/reference/generated/numpy.correlate.html) giveslagconventions. Ourrealcomparisonr[ell]=Σ_k f[k]g[k−ell] isitsreindexedconvention; differsfromg[n−k], but specialinputscanaccidentallyagreeresults. Do not claimuniversalcorrelationlagorcovercomplexconjugationinthe realUI. No secondexperiment needed. Ownzeroextensionalgebra derivesmax/min bounds; no circularwrapping/cropping/edge-renormalization. NewreadableS2identitydeepensexisting convolution#step2 graphsource without addingnodes.
+
+## Acceptance / prevention
+
+Reproduceoldrowg[-k]atn2andraw1.2345display1.23 mismatch. Independentoldconv1doracle/fullnestedindex oracle vsconvPoint overzero/signed/impulse/asymmetrical/decimal/boundedarrays andn−1..N+M−1; bounds andsum, outputlength/commutativity/linearity/shift, correlationcounterexample, internalzero≠emptyoverlap, FFTregression. Illegalhelper/snapshot inputs handled. Actualphase/seek/pausedt/acc/edits/playend/reset, originalphasewalk, bilingualinputnames/nativevalues, decimalcommit, keyboard/touchmobile390/320DOM2x/focus/contrast/reducedmotion, commitonly/Back/refresh/foreign/malicious/deniedhistory. Independent science/code and UI-firstcoldwalkmustfix0, screenshotscausalbeforeafter. OriginalS3mode/shift andS6FFTsmoke only, not wholecoursecertification. Physicalphones/Safari/audiohardware/canvastextdoubling/learningeffects/publicbrowseracceptance remainunknownunlessseparateevidence. Do not repeat historicalurllib403orchangeaccessrules.

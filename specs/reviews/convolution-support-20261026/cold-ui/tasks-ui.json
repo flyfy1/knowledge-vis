@@ -1,0 +1,211 @@
+[
+  {
+    "prediction": "Default f=[1,2,3,2,1],g=[1,0,-1]. y0=1; y2=3−1=2 with k0..2; y3=2−2=0 despite 3 valid pairs; y6=−1 only k4. Decimal f0=1.2345 gives y2=1.7655. n is output index, j=n−k shrinks across k."
+  },
+  {
+    "name": "original-Step-1",
+    "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nDiscrete convolution reverses the kernel to g[−k], then shifts it by output index n, giving g[n−k] in column k. Multiply overlapping pairs and sum to obtain y[n]. Here f stores k=0…4 and g stores j=0…2; values outside are zero. Edit any value or select output n to inspect an edge. The original Step button still walks alignment, multiplication and summation.\n\nInput sequence f\nKernel g\nInspect output index n (arrows ±1)\n\nCurrent n = 0\n\nSelecting n pauses, clears accumulated playback time and reveals this computed output. Earlier filled cells are recomputed from the current arrays, not a record of completed learning steps. n, k and j are discrete indices, not seconds.\n\nStep →\n▶ Play\nReset\n\nMultiply the overlapping pairs (grey = no overlap, does not count): f[0]·g[0]\n\nFor y[0]: valid k runs from 0 to 0, 1 pairs; j=0−k. Full linear-convolution length N+M−1=7.\n\nk=0 → j=0: f[0]≈1 × g[0]≈1, product≈1.\n\nZero extension: f[k] is stored at0…4 and g[j] at0…2; all other indices mean0. Requiring0≤k≤4 and0≤n−k≤2 gives k∈[max(0,n−2),min(4,n)]. This is INDEX overlap, not a guarantee of nonzero products or sum: n=3 can cancel. Potentially nonzero outputs span0…6; outside, no pairs overlap and y[n]=0. No circular wrap or same/valid crop is used.\n\nActual inputs are bounded to−99…99; empty/nonfinite inputs mean0, and a committed field mirrors its stored value. Diagram boxes retain overview rounding (about2 decimals; tiny values may display0). Equations and the index list show up to9 significant digits, scientific notation for tiny values and floating-point roundoff. Use the list for readable small-screen or decimal detail.\n\nWith the default arrays inspect n=0,2,3,6. Why does an edge have1 pair and the middle3? How can n=3 overlap yet give0? Edit one value to a decimal and check the pairs. Reset restores the default arrays and pauses.\n\nConvolution, correlation and boundaries\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+    "inputs": [
+      "1",
+      "2",
+      "3",
+      "2",
+      "1",
+      "1",
+      "0",
+      "-1",
+      "0"
+    ]
+  },
+  {
+    "name": "original-Step-2",
+    "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nDiscrete convolution reverses the kernel to g[−k], then shifts it by output index n, giving g[n−k] in column k. Multiply overlapping pairs and sum to obtain y[n]. Here f stores k=0…4 and g stores j=0…2; values outside are zero. Edit any value or select output n to inspect an edge. The original Step button still walks alignment, multiplication and summation.\n\nInput sequence f\nKernel g\nInspect output index n (arrows ±1)\n\nCurrent n = 0\n\nSelecting n pauses, clears accumulated playback time and reveals this computed output. Earlier filled cells are recomputed from the current arrays, not a record of completed learning steps. n, k and j are discrete indices, not seconds.\n\nStep →\n▶ Play\nReset\n\ny[0] = 1×1 = 1\n\nFor y[0]: valid k runs from 0 to 0, 1 pairs; j=0−k. Full linear-convolution length N+M−1=7.\n\nk=0 → j=0: f[0]≈1 × g[0]≈1, product≈1.\n\nZero extension: f[k] is stored at0…4 and g[j] at0…2; all other indices mean0. Requiring0≤k≤4 and0≤n−k≤2 gives k∈[max(0,n−2),min(4,n)]. This is INDEX overlap, not a guarantee of nonzero products or sum: n=3 can cancel. Potentially nonzero outputs span0…6; outside, no pairs overlap and y[n]=0. No circular wrap or same/valid crop is used.\n\nActual inputs are bounded to−99…99; empty/nonfinite inputs mean0, and a committed field mirrors its stored value. Diagram boxes retain overview rounding (about2 decimals; tiny values may display0). Equations and the index list show up to9 significant digits, scientific notation for tiny values and floating-point roundoff. Use the list for readable small-screen or decimal detail.\n\nWith the default arrays inspect n=0,2,3,6. Why does an edge have1 pair and the middle3? How can n=3 overlap yet give0? Edit one value to a decimal and check the pairs. Reset restores the default arrays and pauses.\n\nConvolution, correlation and boundaries\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+    "inputs": [
+      "1",
+      "2",
+      "3",
+      "2",
+      "1",
+      "1",
+      "0",
+      "-1",
+      "0"
+    ]
+  },
+  {
+    "name": "original-Step-3",
+    "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nDiscrete convolution reverses the kernel to g[−k], then shifts it by output index n, giving g[n−k] in column k. Multiply overlapping pairs and sum to obtain y[n]. Here f stores k=0…4 and g stores j=0…2; values outside are zero. Edit any value or select output n to inspect an edge. The original Step button still walks alignment, multiplication and summation.\n\nInput sequence f\nKernel g\nInspect output index n (arrows ±1)\n\nCurrent n = 1\n\nSelecting n pauses, clears accumulated playback time and reveals this computed output. Earlier filled cells are recomputed from the current arrays, not a record of completed learning steps. n, k and j are discrete indices, not seconds.\n\nStep →\n▶ Play\nReset\n\nOutput #1: kernel flipped and aligned at position 1.\n\nFor y[1]: valid k runs from 0 to 1, 2 pairs; j=1−k. Full linear-convolution length N+M−1=7.\n\nk=0 → j=1: align f[0]≈1 with g[1]≈0.\nk=1 → j=0: align f[1]≈2 with g[0]≈1.\n\nZero extension: f[k] is stored at0…4 and g[j] at0…2; all other indices mean0. Requiring0≤k≤4 and0≤n−k≤2 gives k∈[max(0,n−2),min(4,n)]. This is INDEX overlap, not a guarantee of nonzero products or sum: n=3 can cancel. Potentially nonzero outputs span0…6; outside, no pairs overlap and y[n]=0. No circular wrap or same/valid crop is used.\n\nActual inputs are bounded to−99…99; empty/nonfinite inputs mean0, and a committed field mirrors its stored value. Diagram boxes retain overview rounding (about2 decimals; tiny values may display0). Equations and the index list show up to9 significant digits, scientific notation for tiny values and floating-point roundoff. Use the list for readable small-screen or decimal detail.\n\nWith the default arrays inspect n=0,2,3,6. Why does an edge have1 pair and the middle3? How can n=3 overlap yet give0? Edit one value to a decimal and check the pairs. Reset restores the default arrays and pauses.\n\nConvolution, correlation and boundaries\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+    "inputs": [
+      "1",
+      "2",
+      "3",
+      "2",
+      "1",
+      "1",
+      "0",
+      "-1",
+      "1"
+    ]
+  },
+  {
+    "name": "n0",
+    "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nDiscrete convolution reverses the kernel to g[−k], then shifts it by output index n, giving g[n−k] in column k. Multiply overlapping pairs and sum to obtain y[n]. Here f stores k=0…4 and g stores j=0…2; values outside are zero. Edit any value or select output n to inspect an edge. The original Step button still walks alignment, multiplication and summation.\n\nInput sequence f\nKernel g\nInspect output index n (arrows ±1)\n\nCurrent n = 0\n\nSelecting n pauses, clears accumulated playback time and reveals this computed output. Earlier filled cells are recomputed from the current arrays, not a record of completed learning steps. n, k and j are discrete indices, not seconds.\n\nStep →\n▶ Play\nReset\n\ny[0] = 1×1 = 1\n\nFor y[0]: valid k runs from 0 to 0, 1 pairs; j=0−k. Full linear-convolution length N+M−1=7.\n\nk=0 → j=0: f[0]≈1 × g[0]≈1, product≈1.\n\nZero extension: f[k] is stored at0…4 and g[j] at0…2; all other indices mean0. Requiring0≤k≤4 and0≤n−k≤2 gives k∈[max(0,n−2),min(4,n)]. This is INDEX overlap, not a guarantee of nonzero products or sum: n=3 can cancel. Potentially nonzero outputs span0…6; outside, no pairs overlap and y[n]=0. No circular wrap or same/valid crop is used.\n\nActual inputs are bounded to−99…99; empty/nonfinite inputs mean0, and a committed field mirrors its stored value. Diagram boxes retain overview rounding (about2 decimals; tiny values may display0). Equations and the index list show up to9 significant digits, scientific notation for tiny values and floating-point roundoff. Use the list for readable small-screen or decimal detail.\n\nWith the default arrays inspect n=0,2,3,6. Why does an edge have1 pair and the middle3? How can n=3 overlap yet give0? Edit one value to a decimal and check the pairs. Reset restores the default arrays and pauses.\n\nConvolution, correlation and boundaries\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+    "inputs": [
+      "1",
+      "2",
+      "3",
+      "2",
+      "1",
+      "1",
+      "0",
+      "-1",
+      "0"
+    ]
+  },
+  {
+    "name": "n2",
+    "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nDiscrete convolution reverses the kernel to g[−k], then shifts it by output index n, giving g[n−k] in column k. Multiply overlapping pairs and sum to obtain y[n]. Here f stores k=0…4 and g stores j=0…2; values outside are zero. Edit any value or select output n to inspect an edge. The original Step button still walks alignment, multiplication and summation.\n\nInput sequence f\nKernel g\nInspect output index n (arrows ±1)\n\nCurrent n = 2\n\nSelecting n pauses, clears accumulated playback time and reveals this computed output. Earlier filled cells are recomputed from the current arrays, not a record of completed learning steps. n, k and j are discrete indices, not seconds.\n\nStep →\n▶ Play\nReset\n\ny[2] = 1×-1 + 2×0 + 3×1 = 2\n\nFor y[2]: valid k runs from 0 to 2, 3 pairs; j=2−k. Full linear-convolution length N+M−1=7.\n\nk=0 → j=2: f[0]≈1 × g[2]≈-1, product≈-1.\nk=1 → j=1: f[1]≈2 × g[1]≈0, product≈0.\nk=2 → j=0: f[2]≈3 × g[0]≈1, product≈3.\n\nZero extension: f[k] is stored at0…4 and g[j] at0…2; all other indices mean0. Requiring0≤k≤4 and0≤n−k≤2 gives k∈[max(0,n−2),min(4,n)]. This is INDEX overlap, not a guarantee of nonzero products or sum: n=3 can cancel. Potentially nonzero outputs span0…6; outside, no pairs overlap and y[n]=0. No circular wrap or same/valid crop is used.\n\nActual inputs are bounded to−99…99; empty/nonfinite inputs mean0, and a committed field mirrors its stored value. Diagram boxes retain overview rounding (about2 decimals; tiny values may display0). Equations and the index list show up to9 significant digits, scientific notation for tiny values and floating-point roundoff. Use the list for readable small-screen or decimal detail.\n\nWith the default arrays inspect n=0,2,3,6. Why does an edge have1 pair and the middle3? How can n=3 overlap yet give0? Edit one value to a decimal and check the pairs. Reset restores the default arrays and pauses.\n\nConvolution, correlation and boundaries\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+    "inputs": [
+      "1",
+      "2",
+      "3",
+      "2",
+      "1",
+      "1",
+      "0",
+      "-1",
+      "2"
+    ]
+  },
+  {
+    "name": "n3",
+    "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nDiscrete convolution reverses the kernel to g[−k], then shifts it by output index n, giving g[n−k] in column k. Multiply overlapping pairs and sum to obtain y[n]. Here f stores k=0…4 and g stores j=0…2; values outside are zero. Edit any value or select output n to inspect an edge. The original Step button still walks alignment, multiplication and summation.\n\nInput sequence f\nKernel g\nInspect output index n (arrows ±1)\n\nCurrent n = 3\n\nSelecting n pauses, clears accumulated playback time and reveals this computed output. Earlier filled cells are recomputed from the current arrays, not a record of completed learning steps. n, k and j are discrete indices, not seconds.\n\nStep →\n▶ Play\nReset\n\ny[3] = 2×-1 + 3×0 + 2×1 = 0\n\nFor y[3]: valid k runs from 1 to 3, 3 pairs; j=3−k. Full linear-convolution length N+M−1=7.\n\nk=1 → j=2: f[1]≈2 × g[2]≈-1, product≈-2.\nk=2 → j=1: f[2]≈3 × g[1]≈0, product≈0.\nk=3 → j=0: f[3]≈2 × g[0]≈1, product≈2.\n\nZero extension: f[k] is stored at0…4 and g[j] at0…2; all other indices mean0. Requiring0≤k≤4 and0≤n−k≤2 gives k∈[max(0,n−2),min(4,n)]. This is INDEX overlap, not a guarantee of nonzero products or sum: n=3 can cancel. Potentially nonzero outputs span0…6; outside, no pairs overlap and y[n]=0. No circular wrap or same/valid crop is used.\n\nActual inputs are bounded to−99…99; empty/nonfinite inputs mean0, and a committed field mirrors its stored value. Diagram boxes retain overview rounding (about2 decimals; tiny values may display0). Equations and the index list show up to9 significant digits, scientific notation for tiny values and floating-point roundoff. Use the list for readable small-screen or decimal detail.\n\nWith the default arrays inspect n=0,2,3,6. Why does an edge have1 pair and the middle3? How can n=3 overlap yet give0? Edit one value to a decimal and check the pairs. Reset restores the default arrays and pauses.\n\nConvolution, correlation and boundaries\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+    "inputs": [
+      "1",
+      "2",
+      "3",
+      "2",
+      "1",
+      "1",
+      "0",
+      "-1",
+      "3"
+    ]
+  },
+  {
+    "name": "n6",
+    "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nDiscrete convolution reverses the kernel to g[−k], then shifts it by output index n, giving g[n−k] in column k. Multiply overlapping pairs and sum to obtain y[n]. Here f stores k=0…4 and g stores j=0…2; values outside are zero. Edit any value or select output n to inspect an edge. The original Step button still walks alignment, multiplication and summation.\n\nInput sequence f\nKernel g\nInspect output index n (arrows ±1)\n\nCurrent n = 6\n\nSelecting n pauses, clears accumulated playback time and reveals this computed output. Earlier filled cells are recomputed from the current arrays, not a record of completed learning steps. n, k and j are discrete indices, not seconds.\n\nStep →\n▶ Play\nReset\n\ny[6] = 1×-1 = -1\n\nFor y[6]: valid k runs from 4 to 4, 1 pairs; j=6−k. Full linear-convolution length N+M−1=7.\n\nk=4 → j=2: f[4]≈1 × g[2]≈-1, product≈-1.\n\nZero extension: f[k] is stored at0…4 and g[j] at0…2; all other indices mean0. Requiring0≤k≤4 and0≤n−k≤2 gives k∈[max(0,n−2),min(4,n)]. This is INDEX overlap, not a guarantee of nonzero products or sum: n=3 can cancel. Potentially nonzero outputs span0…6; outside, no pairs overlap and y[n]=0. No circular wrap or same/valid crop is used.\n\nActual inputs are bounded to−99…99; empty/nonfinite inputs mean0, and a committed field mirrors its stored value. Diagram boxes retain overview rounding (about2 decimals; tiny values may display0). Equations and the index list show up to9 significant digits, scientific notation for tiny values and floating-point roundoff. Use the list for readable small-screen or decimal detail.\n\nWith the default arrays inspect n=0,2,3,6. Why does an edge have1 pair and the middle3? How can n=3 overlap yet give0? Edit one value to a decimal and check the pairs. Reset restores the default arrays and pauses.\n\nConvolution, correlation and boundaries\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+    "inputs": [
+      "1",
+      "2",
+      "3",
+      "2",
+      "1",
+      "1",
+      "0",
+      "-1",
+      "6"
+    ]
+  },
+  {
+    "name": "decimal-blur",
+    "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nDiscrete convolution reverses the kernel to g[−k], then shifts it by output index n, giving g[n−k] in column k. Multiply overlapping pairs and sum to obtain y[n]. Here f stores k=0…4 and g stores j=0…2; values outside are zero. Edit any value or select output n to inspect an edge. The original Step button still walks alignment, multiplication and summation.\n\nInput sequence f\nKernel g\nInspect output index n (arrows ±1)\n\nCurrent n = 0\n\nSelecting n pauses, clears accumulated playback time and reveals this computed output. Earlier filled cells are recomputed from the current arrays, not a record of completed learning steps. n, k and j are discrete indices, not seconds.\n\nStep →\n▶ Play\nReset\n\nPress “Step” to begin: first the kernel flips, then it slides and settles accounts position by position.\n\nFor y[0]: valid k runs from 0 to 0, 1 pairs; j=0−k. Full linear-convolution length N+M−1=7.\n\nk=0 → j=0: align f[0]≈1.2345 with g[0]≈1.\n\nZero extension: f[k] is stored at0…4 and g[j] at0…2; all other indices mean0. Requiring0≤k≤4 and0≤n−k≤2 gives k∈[max(0,n−2),min(4,n)]. This is INDEX overlap, not a guarantee of nonzero products or sum: n=3 can cancel. Potentially nonzero outputs span0…6; outside, no pairs overlap and y[n]=0. No circular wrap or same/valid crop is used.\n\nActual inputs are bounded to−99…99; empty/nonfinite inputs mean0, and a committed field mirrors its stored value. Diagram boxes retain overview rounding (about2 decimals; tiny values may display0). Equations and the index list show up to9 significant digits, scientific notation for tiny values and floating-point roundoff. Use the list for readable small-screen or decimal detail.\n\nWith the default arrays inspect n=0,2,3,6. Why does an edge have1 pair and the middle3? How can n=3 overlap yet give0? Edit one value to a decimal and check the pairs. Reset restores the default arrays and pauses.\n\nConvolution, correlation and boundaries\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+    "inputs": [
+      "1.2345",
+      "2",
+      "3",
+      "2",
+      "1",
+      "1",
+      "0",
+      "-1",
+      "0"
+    ]
+  },
+  {
+    "name": "before-Back",
+    "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nDiscrete convolution reverses the kernel to g[−k], then shifts it by output index n, giving g[n−k] in column k. Multiply overlapping pairs and sum to obtain y[n]. Here f stores k=0…4 and g stores j=0…2; values outside are zero. Edit any value or select output n to inspect an edge. The original Step button still walks alignment, multiplication and summation.\n\nInput sequence f\nKernel g\nInspect output index n (arrows ±1)\n\nCurrent n = 0\n\nSelecting n pauses, clears accumulated playback time and reveals this computed output. Earlier filled cells are recomputed from the current arrays, not a record of completed learning steps. n, k and j are discrete indices, not seconds.\n\nStep →\n▶ Play\nReset\n\nPress “Step” to begin: first the kernel flips, then it slides and settles accounts position by position.\n\nFor y[0]: valid k runs from 0 to 0, 1 pairs; j=0−k. Full linear-convolution length N+M−1=7.\n\nk=0 → j=0: align f[0]≈1.2345 with g[0]≈1.\n\nZero extension: f[k] is stored at0…4 and g[j] at0…2; all other indices mean0. Requiring0≤k≤4 and0≤n−k≤2 gives k∈[max(0,n−2),min(4,n)]. This is INDEX overlap, not a guarantee of nonzero products or sum: n=3 can cancel. Potentially nonzero outputs span0…6; outside, no pairs overlap and y[n]=0. No circular wrap or same/valid crop is used.\n\nActual inputs are bounded to−99…99; empty/nonfinite inputs mean0, and a committed field mirrors its stored value. Diagram boxes retain overview rounding (about2 decimals; tiny values may display0). Equations and the index list show up to9 significant digits, scientific notation for tiny values and floating-point roundoff. Use the list for readable small-screen or decimal detail.\n\nWith the default arrays inspect n=0,2,3,6. Why does an edge have1 pair and the middle3? How can n=3 overlap yet give0? Edit one value to a decimal and check the pairs. Reset restores the default arrays and pauses.\n\nConvolution, correlation and boundaries\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+    "inputs": [
+      "1.2345",
+      "2",
+      "3",
+      "2",
+      "1",
+      "1",
+      "0",
+      "-1",
+      "0"
+    ]
+  },
+  {
+    "name": "after-Back",
+    "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nDiscrete convolution reverses the kernel to g[−k], then shifts it by output index n, giving g[n−k] in column k. Multiply overlapping pairs and sum to obtain y[n]. Here f stores k=0…4 and g stores j=0…2; values outside are zero. Edit any value or select output n to inspect an edge. The original Step button still walks alignment, multiplication and summation.\n\nInput sequence f\nKernel g\nInspect output index n (arrows ±1)\n\nCurrent n = 0\n\nSelecting n pauses, clears accumulated playback time and reveals this computed output. Earlier filled cells are recomputed from the current arrays, not a record of completed learning steps. n, k and j are discrete indices, not seconds.\n\nStep →\n▶ Play\nReset\n\nPress “Step” to begin: first the kernel flips, then it slides and settles accounts position by position.\n\nFor y[0]: valid k runs from 0 to 0, 1 pairs; j=0−k. Full linear-convolution length N+M−1=7.\n\nk=0 → j=0: align f[0]≈1.2345 with g[0]≈1.\n\nZero extension: f[k] is stored at0…4 and g[j] at0…2; all other indices mean0. Requiring0≤k≤4 and0≤n−k≤2 gives k∈[max(0,n−2),min(4,n)]. This is INDEX overlap, not a guarantee of nonzero products or sum: n=3 can cancel. Potentially nonzero outputs span0…6; outside, no pairs overlap and y[n]=0. No circular wrap or same/valid crop is used.\n\nActual inputs are bounded to−99…99; empty/nonfinite inputs mean0, and a committed field mirrors its stored value. Diagram boxes retain overview rounding (about2 decimals; tiny values may display0). Equations and the index list show up to9 significant digits, scientific notation for tiny values and floating-point roundoff. Use the list for readable small-screen or decimal detail.\n\nWith the default arrays inspect n=0,2,3,6. Why does an edge have1 pair and the middle3? How can n=3 overlap yet give0? Edit one value to a decimal and check the pairs. Reset restores the default arrays and pauses.\n\nConvolution, correlation and boundaries\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+    "inputs": [
+      "1.2345",
+      "2",
+      "3",
+      "2",
+      "1",
+      "1",
+      "0",
+      "-1",
+      "0"
+    ]
+  },
+  {
+    "name": "after-reload",
+    "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nDiscrete convolution reverses the kernel to g[−k], then shifts it by output index n, giving g[n−k] in column k. Multiply overlapping pairs and sum to obtain y[n]. Here f stores k=0…4 and g stores j=0…2; values outside are zero. Edit any value or select output n to inspect an edge. The original Step button still walks alignment, multiplication and summation.\n\nInput sequence f\nKernel g\nInspect output index n (arrows ±1)\n\nCurrent n = 0\n\nSelecting n pauses, clears accumulated playback time and reveals this computed output. Earlier filled cells are recomputed from the current arrays, not a record of completed learning steps. n, k and j are discrete indices, not seconds.\n\nStep →\n▶ Play\nReset\n\nPress “Step” to begin: first the kernel flips, then it slides and settles accounts position by position.\n\nFor y[0]: valid k runs from 0 to 0, 1 pairs; j=0−k. Full linear-convolution length N+M−1=7.\n\nk=0 → j=0: align f[0]≈1.2345 with g[0]≈1.\n\nZero extension: f[k] is stored at0…4 and g[j] at0…2; all other indices mean0. Requiring0≤k≤4 and0≤n−k≤2 gives k∈[max(0,n−2),min(4,n)]. This is INDEX overlap, not a guarantee of nonzero products or sum: n=3 can cancel. Potentially nonzero outputs span0…6; outside, no pairs overlap and y[n]=0. No circular wrap or same/valid crop is used.\n\nActual inputs are bounded to−99…99; empty/nonfinite inputs mean0, and a committed field mirrors its stored value. Diagram boxes retain overview rounding (about2 decimals; tiny values may display0). Equations and the index list show up to9 significant digits, scientific notation for tiny values and floating-point roundoff. Use the list for readable small-screen or decimal detail.\n\nWith the default arrays inspect n=0,2,3,6. Why does an edge have1 pair and the middle3? How can n=3 overlap yet give0? Edit one value to a decimal and check the pairs. Reset restores the default arrays and pauses.\n\nConvolution, correlation and boundaries\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+    "inputs": [
+      "1.2345",
+      "2",
+      "3",
+      "2",
+      "1",
+      "1",
+      "0",
+      "-1",
+      "0"
+    ]
+  },
+  {
+    "backTextSame": true,
+    "backInputsSame": true,
+    "reloadTextSame": true,
+    "reloadInputsSame": true
+  },
+  {
+    "name": "reset",
+    "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nDiscrete convolution reverses the kernel to g[−k], then shifts it by output index n, giving g[n−k] in column k. Multiply overlapping pairs and sum to obtain y[n]. Here f stores k=0…4 and g stores j=0…2; values outside are zero. Edit any value or select output n to inspect an edge. The original Step button still walks alignment, multiplication and summation.\n\nInput sequence f\nKernel g\nInspect output index n (arrows ±1)\n\nCurrent n = 0\n\nSelecting n pauses, clears accumulated playback time and reveals this computed output. Earlier filled cells are recomputed from the current arrays, not a record of completed learning steps. n, k and j are discrete indices, not seconds.\n\nStep →\n▶ Play\nReset\n\nPress “Step” to begin: first the kernel flips, then it slides and settles accounts position by position.\n\nFor y[0]: valid k runs from 0 to 0, 1 pairs; j=0−k. Full linear-convolution length N+M−1=7.\n\nk=0 → j=0: align f[0]≈1 with g[0]≈1.\n\nZero extension: f[k] is stored at0…4 and g[j] at0…2; all other indices mean0. Requiring0≤k≤4 and0≤n−k≤2 gives k∈[max(0,n−2),min(4,n)]. This is INDEX overlap, not a guarantee of nonzero products or sum: n=3 can cancel. Potentially nonzero outputs span0…6; outside, no pairs overlap and y[n]=0. No circular wrap or same/valid crop is used.\n\nActual inputs are bounded to−99…99; empty/nonfinite inputs mean0, and a committed field mirrors its stored value. Diagram boxes retain overview rounding (about2 decimals; tiny values may display0). Equations and the index list show up to9 significant digits, scientific notation for tiny values and floating-point roundoff. Use the list for readable small-screen or decimal detail.\n\nWith the default arrays inspect n=0,2,3,6. Why does an edge have1 pair and the middle3? How can n=3 overlap yet give0? Edit one value to a decimal and check the pairs. Reset restores the default arrays and pauses.\n\nConvolution, correlation and boundaries\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+    "inputs": [
+      "1",
+      "2",
+      "3",
+      "2",
+      "1",
+      "1",
+      "0",
+      "-1",
+      "0"
+    ]
+  },
+  {
+    "name": "EN2x",
+    "width": {
+      "viewport": 390,
+      "scroll": 390
+    }
+  },
+  {
+    "name": "ZH-n6",
+    "text": "第 2 步 · 拆开算账\n\n翻转、滑动、相乘、求和\n\n离散卷积把核翻转成 g[−k]，再按输出索引 n 平移，列 k 上就成了 g[n−k]。只把重叠处逐项相乘并求和，得到 y[n]。这里 f 从 k=0 到4，g 从 j=0 到2，范围外都补0。改任意数字，或直接选择输出 n 检查边缘；也可用原来的「单步」看对齐、乘积、求和三阶段。\n\n输入序列 f\n核 g\n检查输出索引 n（方向键 ±1）\n\n当前 n = 6\n\n直接选 n 会暂停、清除播放计时积累并显示本项的计算结果。图中先前已填的输出格按当前数组重算，不代表做过哪些学习步骤。n、k、j 都是离散索引，不是秒。\n\n单步 →\n▶ 播放\n重置\n\ny[6] = 1×-1 = -1\n\n当前 y[6]：有效 k 从 4 到 4，共 1 对；对应 j=6−k。完整线性卷积长度 N+M−1=7。\n\nk=4 → j=2：f[4]≈1 × g[2]≈-1，乘积≈-1。\n\n零延拓：f[k] 只在 0…4、g[j] 只在 0…2 存储值，其他索引视为0。要求 0≤k≤4 且 0≤n−k≤2，得到 k∈[max(0,n−2),min(4,n)]。这是索引重叠，不保证乘积或和非零；n=3 就可能正负抵消。输出可能非零的范围为0…6，外面没有重叠，y[n]=0；这里不循环绕回，也不裁成 same/valid。\n\n输入实际值限定在−99…99；清空或非有限输入按0计算，提交时显示实际存储值。图格沿用概览舍入（约至两位小数，极小值可能显示0）；算式与索引列表最多9位有效数字，极小值用科学记数，含浮点舍入误差。请用下方列表核对小屏或小数细节。\n\n用默认数组检查 n=0、2、3、6：边缘为什么只有1对，中段有3对？n=3 明明重叠却为何输出0？把一项改成小数，再逐项对账；重置会恢复默认数组并暂停。\n\n卷积、相关与边界依据\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\n公式 (f * g)[n] = Σk f[k] · g[n − k] 里 g[n − k] 的减号，就是「翻转」的来源：n 固定时，k 增大、n−k 减小，核是倒着和 f 对齐的。动画里核的左右顺序与输入框相反，正是这一翻。"
+  },
+  {
+    "name": "ZH2xHC",
+    "text": "第 2 步 · 拆开算账\n\n翻转、滑动、相乘、求和\n\n离散卷积把核翻转成 g[−k]，再按输出索引 n 平移，列 k 上就成了 g[n−k]。只把重叠处逐项相乘并求和，得到 y[n]。这里 f 从 k=0 到4，g 从 j=0 到2，范围外都补0。改任意数字，或直接选择输出 n 检查边缘；也可用原来的「单步」看对齐、乘积、求和三阶段。\n\n输入序列 f\n核 g\n检查输出索引 n（方向键 ±1）\n\n当前 n = 3\n\n直接选 n 会暂停、清除播放计时积累并显示本项的计算结果。图中先前已填的输出格按当前数组重算，不代表做过哪些学习步骤。n、k、j 都是离散索引，不是秒。\n\n单步 →\n▶ 播放\n重置\n\ny[3] = 2×-1 + 3×0 + 2×1 = 0\n\n当前 y[3]：有效 k 从 1 到 3，共 3 对；对应 j=3−k。完整线性卷积长度 N+M−1=7。\n\nk=1 → j=2：f[1]≈2 × g[2]≈-1，乘积≈-2。\nk=2 → j=1：f[2]≈3 × g[1]≈0，乘积≈0。\nk=3 → j=0：f[3]≈2 × g[0]≈1，乘积≈2。\n\n零延拓：f[k] 只在 0…4、g[j] 只在 0…2 存储值，其他索引视为0。要求 0≤k≤4 且 0≤n−k≤2，得到 k∈[max(0,n−2),min(4,n)]。这是索引重叠，不保证乘积或和非零；n=3 就可能正负抵消。输出可能非零的范围为0…6，外面没有重叠，y[n]=0；这里不循环绕回，也不裁成 same/valid。\n\n输入实际值限定在−99…99；清空或非有限输入按0计算，提交时显示实际存储值。图格沿用概览舍入（约至两位小数，极小值可能显示0）；算式与索引列表最多9位有效数字，极小值用科学记数，含浮点舍入误差。请用下方列表核对小屏或小数细节。\n\n用默认数组检查 n=0、2、3、6：边缘为什么只有1对，中段有3对？n=3 明明重叠却为何输出0？把一项改成小数，再逐项对账；重置会恢复默认数组并暂停。\n\n卷积、相关与边界依据\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\n公式 (f * g)[n] = Σk f[k] · g[n − k] 里 g[n − k] 的减号，就是「翻转」的来源：n 固定时，k 增大、n−k 减小，核是倒着和 f 对齐的。动画里核的左右顺序与输入框相反，正是这一翻。",
+    "width": {
+      "viewport": 320,
+      "scroll": 320
+    },
+    "aria": "- paragraph: 第 2 步 · 拆开算账\n- heading \"翻转、滑动、相乘、求和\" [level=2]\n- paragraph:\n  - text: 离散卷积把核\n  - strong: 翻转\n  - text: 成 g[−k]，再按输出索引 n\n  - strong: 平移\n  - text: ，列 k 上就成了 g[n−k]。只把重叠处\n  - strong: 逐项相乘并求和\n  - text: ，得到 y[n]。这里 f 从 k=0 到4，g 从 j=0 到2，范围外都补0。改任意数字，或直接选择输出 n 检查边缘；也可用原来的「单步」看对齐、乘积、求和三阶段。\n- text: 输入序列 f\n- spinbutton \"f[0] 的数值（−99 到99）\": \"1\"\n- spinbutton \"f[1] 的数值（−99 到99）\": \"2\"\n- spinbutton \"f[2] 的数值（−99 到99）\": \"3\"\n- spinbutton \"f[3] 的数值（−99 到99）\": \"2\"\n- spinbutton \"f[4] 的数值（−99 到99）\": \"1\"\n- text: 核 g\n- spinbutton \"g[0] 的数值（−99 到99）\": \"1\"\n- spinbutton \"g[1] 的数值（−99 到99）\": \"0\"\n- spinbutton \"g[2] 的数值（−99 到99）\": \"-1\"\n- img \"翻转、滑动、相乘、求和\"\n- text: 检查输出索引 n（方向键 ±1）\n- slider \"检查输出索引 n（方向键 ±1）\": \"3\"\n- paragraph: 当前 n = 3\n- paragraph: 直接选 n 会暂停、清除播放计时积累并显示本项的计算结果。图中先前已填的输出格按当前数组重算，不代表做过哪些学习步骤。n、k、j 都是离散索引，不是秒。\n- button \"单步 →\"\n- button \"▶ 播放\"\n- button \"重置\"\n- paragraph: y[3] = 2×-1 + 3×0 + 2×1 = 0\n- paragraph: 当前 y[3]：有效 k 从 1 到 3，共 3 对；对应 j=3−k。完整线性卷积长度 N+M−1=7。\n- list:\n  - listitem: k=1 → j=2：f[1]≈2 × g[2]≈-1，乘积≈-2。\n  - listitem: k=2 → j=1：f[2]≈3 × g[1]≈0，乘积≈0。\n  - listitem: k=3 → j=0：f[3]≈2 × g[0]≈1，乘积≈2。\n- paragraph: 零延拓：f[k] 只在 0…4、g[j] 只在 0…2 存储值，其他索引视为0。要求 0≤k≤4 且 0≤n−k≤2，得到 k∈[max(0,n−2),min(4,n)]。这是索引重叠，不保证乘积或和非零；n=3 就可能正负抵消。输出可能非零的范围为0…6，外面没有重叠，y[n]=0；这里不循环绕回，也不裁成 same/valid。\n- paragraph: 输入实际值限定在−99…99；清空或非有限输入按0计算，提交时显示实际存储值。图格沿用概览舍入（约至两位小数，极小值可能显示0）；算式与索引列表最多9位有效数字，极小值用科学记数，含浮点舍入误差。请用下方列表核对小屏或小数细节。\n- paragraph: 用默认数组检查 n=0、2、3、6：边缘为什么只有1对，中段有3对？n=3 明明重叠却为何输出0？把一项改成小数，再逐项对账；重置会恢复默认数组并暂停。\n- group: 卷积、相关与边界依据\n- paragraph:\n  - text: (f * g)[n] = Σ\n  - subscript: k\n  - text: f[k] · g[n − k]\n- paragraph:\n  - text: 公式 (f * g)[n] = Σ\n  - subscript: k\n  - text: f[k] · g[n − k] 里 g[n − k] 的减号，就是「翻转」的来源：n 固定时，k 增大、n−k 减小，核是倒着和 f 对齐的。动画里核的左右顺序与输入框相反，正是这一翻。"
+  }
+]

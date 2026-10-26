@@ -287,3 +287,7 @@ Finite floating point is a model-display boundary: adjacent tiny spans pass inde
 ## Sampling pair identity — 2026-10-26
 
 [Contract](../specs/sampling-pair.md), [verification](../specs/reviews/sampling-pair-20261026/verification.md). Deepens existing S2 with one integer probe in the original scene; signedg versus magnitude, sample-spacing/whole-turn identity and explicit nonsample comparison. No graph growth or new route; original Nyquist/audio/other models retained. Source install and public browser acceptance remain separate.
+
+## Convolution index alignment and support — 2026-10-26
+
+[Contract](../specs/convolution-support.md), [verification](../specs/reviews/convolution-support-20261026/verification.md). Reuses existing S2 model/figure/phase clock to inspect a selected output and its k/j pairs. Explains partial-edge overlap, internal cancellation and zero extension; retains original continuous/image/audio/FFT code. No new graph node/route. Publication and public-browser acceptance are separate evidence.

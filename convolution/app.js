@@ -82,6 +82,15 @@ function conv1d(f, g) { // 全卷积（full convolution），定义与第 2 步�
     }
   return out;
 }
+// Extracted S2 term loop: same zero-extended linear convolution, with index metadata.
+function convPoint(f,g,n){
+  if(!Array.isArray(f)||!Array.isArray(g)||!f.length||!g.length||!Array.from(f).every(Number.isFinite)||!Array.from(g).every(Number.isFinite)||!Number.isInteger(n))throw new RangeError('Invalid convolution point');
+  const terms=[];
+  for(let k=0;k<f.length;k++){const j=n-k;if(j>=0&&j<g.length)terms.push([k,f[k],g[j],f[k]*g[j]]);}
+  return{lower:Math.max(0,n-g.length+1),upper:Math.min(f.length-1,n),terms,value:terms.reduce((a,q)=>a+q[3],0),length:f.length+g.length-1};
+}
+function fmtConv(v){return v===0?'0':Math.abs(v)<1e-6?v.toExponential(3):Number(v.toPrecision(9)).toString();}
+window.CONVOLUTION={conv1d,convPoint,convViaFFT};
 /* 基-2 迭代 FFT（复数用两个 Float64Array 存实/虚部） */
 function fft(re, im, invert) {
   const n = re.length;
@@ -419,12 +428,16 @@ function convolveImage(img, kernel, div, off) { // 3×3 真卷积：与第 2 步
   let st = { n: 0, phase: 0, done: false };
   let playing = false, acc = 0;
 
+  try{const q=history.state?.convolutionPoint,valid=a=>Array.isArray(a)&&Array.from(a).every(v=>Number.isFinite(v)&&Math.abs(v)<=99);if(q&&valid(q.f)&&q.f.length===5&&valid(q.g)&&q.g.length===3&&Number.isInteger(q.n)&&q.n>=0&&q.n<=6&&Number.isInteger(q.phase)&&q.phase>=0&&q.phase<=2&&typeof q.done==='boolean'&&(!q.done||(q.n===6&&q.phase===2))){f=q.f.slice();g=q.g.slice();st={n:q.n,phase:q.phase,done:q.done};}}catch(_){}
+  Object.defineProperty(window.CONVOLUTION,'state',{get:()=>({f:f.slice(),g:g.slice(),...st,playing,acc})});
+  function saveReading(){try{const h=history.state;history.replaceState({...((h&&typeof h==='object')?h:{}),convolutionPoint:{f:f.slice(),g:g.slice(),n:st.n,phase:st.phase,done:st.done}},'',location.href);}catch(_){}}
+  function inputLabels(){for(const[name,box]of [['f',$('s2-f-inputs')],['g',$('s2-g-inputs')]])box.querySelectorAll('input').forEach((inp,i)=>inp.setAttribute('aria-label',t('convInput',{name,index:i})));}
   function buildInputs() {
     const mk = (box, arr, cb) => {
       box.innerHTML = '';
       arr.forEach((v, i) => {
         const inp = document.createElement('input');
-        inp.type = 'number'; inp.value = v; inp.step = 'any';
+        inp.type = 'number'; inp.value = v; inp.step = 'any';inp.min=-99;inp.max=99;
         inp.setAttribute('aria-label', 'seq-' + i);
         inp.addEventListener('input', () => {
           const nv = parseFloat(inp.value);
@@ -432,23 +445,16 @@ function convolveImage(img, kernel, div, off) { // 3×3 真卷积：与第 2 步
           cb();
         });
         /* 失焦/回车时把实际取值回填进框：清空 = 按 0 计算，框里也显示 0，不再「显示与取值脱节」（R2 建议3） */
-        inp.addEventListener('change', () => { inp.value = fmtNum(arr[i]); });
+        inp.addEventListener('change', () => { inp.value = String(arr[i]);saveReading(); });
         box.appendChild(inp);
       });
     };
     mk($('s2-f-inputs'), f, reset);
-    mk($('s2-g-inputs'), g, reset);
+    mk($('s2-g-inputs'), g, reset);inputLabels();
   }
   function outLen() { return f.length + g.length - 1; }
-  function terms(n) { // 返回 [k, f[k], g[n-k], product]（仅重叠项）
-    const list = [];
-    for (let k = 0; k < f.length; k++) {
-      const j = n - k;
-      if (j >= 0 && j < g.length) list.push([k, f[k], g[j], f[k] * g[j]]);
-    }
-    return list;
-  }
-  function yVal(n) { return terms(n).reduce((s, x) => s + x[3], 0); }
+  function terms(n) { return convPoint(f,g,n).terms; }
+  function yVal(n) { return convPoint(f,g,n).value; }
 
   function box(x, y, s, val, opts) {
     const { border, fill, color, bold } = opts;
@@ -482,9 +488,9 @@ function convolveImage(img, kernel, div, off) { // 3×3 真卷积：与第 2 步
     };
     // f 行
     label(t('s2f'), yF);
-    f.forEach((v, k) => box(colX(k), yF, s - 6, v, { border: '#6ee7ff', fill: '#1c2330', color: '#e8edf4' }));
+    f.forEach((v,k)=>{box(colX(k),yF,s-6,v,{border:'#6ee7ff',fill:'#1c2330',color:'#e8edf4'});ctx.fillStyle='#9aa7b8';ctx.font='11px sans-serif';ctx.fillText('k='+k,colX(k),yF+s/2+10);});
     // 翻转核行（列 k 上的系数 g[n−k]）
-    label(t('s2flip'), yK, '#ffb454');
+    label(t('s2flip',{n:st.n}), yK, '#ffb454');
     const n = st.n;
     for (let k = n - g.length + 1; k <= n; k++) {
       const j = n - k;
@@ -534,10 +540,14 @@ function convolveImage(img, kernel, div, off) { // 3×3 真卷积：与第 2 步
     }
   }
   function readout() {
+    $('s2-n').value=st.n;$('s2-n-value').textContent=st.n;
+    const q=convPoint(f,g,st.n);
+    $('s2-support').textContent=t('convSupport',{n:st.n,lo:q.lower,hi:q.upper,count:q.terms.length,length:q.length});
+    $('s2-terms').replaceChildren(...q.terms.map(([k,fv,gv,product])=>{const li=document.createElement('li');li.textContent=t(st.phase>=1||st.done?'convTermProduct':'convTermPair',{k,j:st.n-k,f:fmtConv(fv),g:fmtConv(gv),p:fmtConv(product)});return li;}));
     const el = $('s2-readout');
     if (st.done) {
       const vals = [];
-      for (let i = 0; i < outLen(); i++) vals.push(fmtNum(yVal(i)));
+      for (let i = 0; i < outLen(); i++) vals.push(fmtConv(yVal(i)));
       el.textContent = t('s2done', { vals: vals.join(', ') });
       return;
     }
@@ -547,8 +557,8 @@ function convolveImage(img, kernel, div, off) { // 3×3 真卷积：与第 2 步
       el.textContent = t('s2prods') + ' ' + ts.join(' , ');
     } else {
       const ts = terms(st.n);
-      const termStr = ts.map(([, fv, gv]) => fmtNum(fv) + '×' + fmtNum(gv)).join(' + ');
-      el.textContent = t('s2sum', { n: st.n, terms: termStr || '0', sum: fmtNum(yVal(st.n)) });
+      const termStr = ts.map(([, fv, gv]) => fmtConv(fv) + '×' + fmtConv(gv)).join(' + ');
+      el.textContent = t('s2sum', { n: st.n, terms: termStr || '0', sum: fmtConv(yVal(st.n)) });
     }
   }
   function advance() {
@@ -560,37 +570,41 @@ function convolveImage(img, kernel, div, off) { // 3×3 真卷积：与第 2 步
   }
   function reset() {
     st = { n: 0, phase: 0, done: false };
-    playing = false; $('s2-play').textContent = t('s2play');
+    playing = false;acc=0; $('s2-play').textContent = t('s2play');
     draw(); readout();
     $('s2-readout').textContent = t('s2idle');
   }
   buildInputs();
-  $('s2-step').addEventListener('click', advance);
+  $('s2-n').addEventListener('input',e=>{st={n:Number(e.target.value),phase:2,done:false};playing=false;acc=0;$('s2-play').textContent=t('s2play');draw();readout();});
+  $('s2-n').addEventListener('change',saveReading);
+  $('s2-step').addEventListener('click',()=>{advance();saveReading();});
   $('s2-play').addEventListener('click', () => {
     if (st.done) reset();
     playing = !playing;
-    $('s2-play').textContent = playing ? t('s1pause') : t('s2play');
+    $('s2-play').textContent = playing ? t('s1pause') : t('s2play');saveReading();
   });
   $('s2-reset').addEventListener('click', () => {
     /* 「重置」同时把被改过的数字恢复默认序列（R2 建议3）：原地改回默认值，再重建输入框并归零算账状态 */
     f.splice(0, f.length, 1, 2, 3, 2, 1);
     g.splice(0, g.length, 1, 0, -1);
     buildInputs();
-    reset();
+    reset();saveReading();
   });
   animate($('step2'), dt => {
     if (!playing) return;
     acc += dt;
     if (acc > 0.95) { acc = 0; advance(); }
   });
+  const pauseReading=()=>{playing=false;$('s2-play').textContent=t('s2play');saveReading();};
+  window.addEventListener('pagehide',pauseReading);document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseReading();});
   onLangRefresh(() => {
-    $('s2-play').textContent = playing ? t('s1pause') : t('s2play');
+    inputLabels();$('s2-play').textContent = playing ? t('s1pause') : t('s2play');
     draw(); readout();
     if (st.n === 0 && st.phase === 0 && !st.done) $('s2-readout').textContent = t('s2idle');
   });
   onRefit(draw);
-  draw();
-  $('s2-readout').textContent = t('s2idle');
+  draw();readout();
+  if(st.n===0&&st.phase===0&&!st.done)$('s2-readout').textContent = t('s2idle');
 })();
 
 /* ================================================================

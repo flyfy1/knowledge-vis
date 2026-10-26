@@ -208,3 +208,6 @@ canvas#s5-photo,canvas#s5-data,canvas#s5-ir{width:100%}
   .kernel-grid{grid-template-columns:repeat(3,52px)}
   .kernel-grid input{width:52px}
 }
+
+/* S2 index inspection uses existing tokens; the DOM list carries detailed values. */
+#step2{overflow-wrap:anywhere}#step2 button,#step2 input{min-height:48px}#step2 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}#step2 .seq-group,#step2 .seq-inputs{flex-wrap:wrap}#step2 .seq-inputs input{width:5.5em;min-width:48px}.conv-terms{padding-left:24px;margin:12px 0}.conv-terms li{margin:8px 0}.conv-source summary,.conv-source a{display:flex;align-items:center;min-height:48px}.conv-source a{color:var(--accent)}
