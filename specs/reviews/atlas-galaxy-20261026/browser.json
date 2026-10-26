@@ -1,0 +1,33 @@
+{
+  "desktop": {
+    "frames": 3,
+    "raf": 0,
+    "disposed": false,
+    "rotating": false,
+    "visible": true,
+    "geometries": 51,
+    "textures": 1,
+    "drawCalls": 125,
+    "dpr": 1
+  },
+  "checks": 77,
+  "errors": [],
+  "base": "http://127.0.0.1:18783",
+  "nodes": 38,
+  "edges": 47,
+  "limits": [
+    "Chrome desktop and emulated touch only; no physical phone, Safari or screen-reader speech test",
+    "Independent reviewer and publication remain parent-owned"
+  ],
+  "screenshots": [
+    "desktop-overview.png",
+    "desktop-path.png",
+    "desktop-scene.png",
+    "desktop-zh-reduced.png",
+    "mobile-overview.png",
+    "mobile-rotated.png",
+    "mobile-scene.png",
+    "path-scene.png",
+    "webgl-fallback.png"
+  ]
+}
