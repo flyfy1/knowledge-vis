@@ -1,0 +1,231 @@
+{
+  "kind": "author self-check",
+  "status": "pass",
+  "records": [
+    {
+      "lang": "en",
+      "preset": "0",
+      "event": "Verify: candidate 1 occurs at indices [0, 1, 4, 5]; low=0, high=4, true count=4, threshold=4; return 1.",
+      "progress": "Merged 2/2 blocks; current candidate = 1; current balance = 2 surviving votes. Verified.",
+      "screenshot": "verified-en-preset0-390.png"
+    },
+    {
+      "lang": "en",
+      "preset": "1",
+      "event": "No candidate: a strict majority could not have been entirely deleted, so return -1 without searching a position list.",
+      "progress": "Merged 1/1 blocks; current candidate = none; current balance = 0 surviving votes. Verified.",
+      "screenshot": "verified-en-preset1-390.png"
+    },
+    {
+      "lang": "en",
+      "preset": "3",
+      "event": "Verify: candidate 3 occurs at indices [2]; low=0, high=1, true count=1, threshold=2; return -1.",
+      "progress": "Merged 2/2 blocks; current candidate = 3; current balance = 1 surviving votes. Verified.",
+      "screenshot": "verified-en-preset3-390.png"
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "rect": {
+        "top": 151.65625,
+        "bottom": 707.65625,
+        "left": 62,
+        "right": 258,
+        "nav": 132
+      },
+      "screenshot": "settled-en-320-zoom2-block.png",
+      "reason": "Align first block below sticky navigation; prior whole-block screenshots showed scroll/capture cropping, not text overlap."
+    },
+    {
+      "lang": "en",
+      "preset": 0,
+      "fontStress": "120% synthetic",
+      "fit": {
+        "text": "A full",
+        "font": "19.2px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "needed": 83.60858154296875,
+        "available": 256
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "fontStress": "120% synthetic",
+      "fit": {
+        "text": "B tie",
+        "font": "19.2px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "needed": 78.15933227539062,
+        "available": 256
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "fontStress": "120% synthetic",
+      "fit": {
+        "text": "C pair",
+        "font": "19.2px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "needed": 90.55442810058594,
+        "available": 256
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "fontStress": "120% synthetic",
+      "fit": {
+        "text": "D false",
+        "font": "19.2px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "needed": 99.32308959960938,
+        "available": 256
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "fontStress": "120% synthetic",
+      "fit": {
+        "text": "E equal",
+        "font": "19.2px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "needed": 103.85133361816406,
+        "available": 256
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "fontStress": "120% synthetic",
+      "fit": {
+        "text": "F one",
+        "font": "19.2px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "needed": 87.23500061035156,
+        "available": 256
+      }
+    },
+    {
+      "lang": "en",
+      "preset": 6,
+      "fontStress": "120% synthetic",
+      "fit": {
+        "text": "G short",
+        "font": "19.2px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "needed": 104.46534729003906,
+        "available": 256
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": "0",
+      "event": "核实：候选 1 的出现下标为 [0, 1, 4, 5]；low=0，high=4，真实次数=4，threshold=4；返回 1。",
+      "progress": "已合并 2/2 个块；当前候选 = 1；当前余票 = 2 张。已核实。",
+      "screenshot": "verified-zh-preset0-390.png"
+    },
+    {
+      "lang": "zh",
+      "preset": "1",
+      "event": "摘要无候选：若有严格多数就不可能被删光，所以返回 -1，无需查位置表。",
+      "progress": "已合并 1/1 个块；当前候选 = 无；当前余票 = 0 张。已核实。",
+      "screenshot": "verified-zh-preset1-390.png"
+    },
+    {
+      "lang": "zh",
+      "preset": "3",
+      "event": "核实：候选 3 的出现下标为 [2]；low=0，high=1，真实次数=1，threshold=2；返回 -1。",
+      "progress": "已合并 2/2 个块；当前候选 = 3；当前余票 = 1 张。已核实。",
+      "screenshot": "verified-zh-preset3-390.png"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "rect": {
+        "top": 152.28125,
+        "bottom": 596.28125,
+        "left": 62,
+        "right": 258,
+        "nav": 132
+      },
+      "screenshot": "settled-zh-320-zoom2-block.png",
+      "reason": "Align first block below sticky navigation; prior whole-block screenshots showed scroll/capture cropping, not text overlap."
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "fontStress": "120% synthetic",
+      "fit": {
+        "text": "A 全段",
+        "font": "19.2px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "needed": 93.62443542480469,
+        "available": 256
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "fontStress": "120% synthetic",
+      "fit": {
+        "text": "B 平票",
+        "font": "19.2px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "needed": 93.83549499511719,
+        "available": 256
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "fontStress": "120% synthetic",
+      "fit": {
+        "text": "C 短段",
+        "font": "19.2px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "needed": 93.4901123046875,
+        "available": 256
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "fontStress": "120% synthetic",
+      "fit": {
+        "text": "D 候选",
+        "font": "19.2px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "needed": 95.3704833984375,
+        "available": 256
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "fontStress": "120% synthetic",
+      "fit": {
+        "text": "E 同值",
+        "font": "19.2px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "needed": 92.03187561035156,
+        "available": 256
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "fontStress": "120% synthetic",
+      "fit": {
+        "text": "F 单值",
+        "font": "19.2px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "needed": 91.32192993164062,
+        "available": 256
+      }
+    },
+    {
+      "lang": "zh",
+      "preset": 6,
+      "fontStress": "120% synthetic",
+      "fit": {
+        "text": "G 不足",
+        "font": "19.2px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "needed": 95.33210754394531,
+        "available": 256
+      }
+    }
+  ],
+  "errors": []
+}

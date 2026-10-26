@@ -1,0 +1,13 @@
+{
+  "kind": "author self-check",
+  "status": "pass",
+  "arrays": 3630,
+  "queries": 178755,
+  "witnessed_tree_nodes": 124124,
+  "exhaustive": "all ternary arrays length 1..7; all legal queries and thresholds",
+  "seeded": "350 arrays, seed 1157, 80 queries each",
+  "max_n": 20000,
+  "max_calls": 10000,
+  "seconds": 1.562,
+  "source_sha256": "2fa6103181e447e7d2b6b552f9d7432df1edf550a5834bd213637ad53513ecdc"
+}

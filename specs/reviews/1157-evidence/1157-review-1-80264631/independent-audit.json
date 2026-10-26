@@ -1,0 +1,185 @@
+{
+  "freshCodeChecks": [
+    {
+      "arr": [
+        19999,
+        5,
+        8,
+        8,
+        5,
+        8,
+        6
+      ],
+      "query": [
+        1,
+        5,
+        3
+      ],
+      "expected": 8,
+      "actual": 8
+    },
+    {
+      "arr": [
+        19999,
+        5,
+        8,
+        8,
+        5,
+        8,
+        6
+      ],
+      "query": [
+        0,
+        6,
+        4
+      ],
+      "expected": 8,
+      "actual": 8
+    },
+    {
+      "arr": [
+        19999,
+        5,
+        8,
+        8,
+        5,
+        8,
+        6
+      ],
+      "query": [
+        2,
+        4,
+        2
+      ],
+      "expected": 8,
+      "actual": 8
+    },
+    {
+      "arr": [
+        19999,
+        5,
+        8,
+        8,
+        5,
+        8,
+        6
+      ],
+      "query": [
+        4,
+        6,
+        2
+      ],
+      "expected": -1,
+      "actual": -1
+    },
+    {
+      "arr": [
+        19999,
+        8,
+        9,
+        9
+      ],
+      "query": [
+        0,
+        3,
+        3
+      ],
+      "expected": -1,
+      "actual": -1
+    },
+    {
+      "arr": [
+        19999,
+        8,
+        9,
+        9
+      ],
+      "query": [
+        2,
+        3,
+        2
+      ],
+      "expected": 9,
+      "actual": 9
+    },
+    {
+      "arr": [
+        19999
+      ],
+      "query": [
+        0,
+        0,
+        1
+      ],
+      "expected": 20000,
+      "actual": 20000
+    },
+    {
+      "arr": [
+        19999,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "query": [
+        0,
+        8,
+        9
+      ],
+      "expected": 3,
+      "actual": 3
+    },
+    {
+      "arr": [
+        19999,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "query": [
+        1,
+        7,
+        7
+      ],
+      "expected": 3,
+      "actual": 3
+    },
+    {
+      "arr": [
+        19999,
+        2,
+        1,
+        2
+      ],
+      "query": [
+        0,
+        3,
+        3
+      ],
+      "expected": -1,
+      "actual": -1
+    }
+  ],
+  "mutation": "constructor leaves caller unchanged; queries preserve tree/positions; later caller mutation leaves saved state unchanged",
+  "servedExactHashes": {
+    "index.html": "583a32e80183ac2e3a19ad57a7ec905929d793986594835c45e45d25e7bb7eea",
+    "solution.py": "2fa6103181e447e7d2b6b552f9d7432df1edf550a5834bd213637ad53513ecdc",
+    "python-code.js": "dcd4069117fd3de0993852c2eef53f224cc4a6cdf7753209279da1ebcb042e4a",
+    "core.js": "55a55cb992ee5bd46c930b396457a20a4f69f426fb388964c03635c43a057a6d",
+    "app.js": "628be6778bf71d7147fc9f1545dbafb52e8c15ce1b18f91703e944fa66abb3c5",
+    "copy.js": "d3a151f493c7702fe949471c746647aa46b2b6b4988282f8e996820f3e321082",
+    "style.css": "8943280a199b273aeb7032e0150b6cef05f1bd1d070b566d6aeda24be34b87a6",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "note": "Corrected logging only: first audit retained mutable input references in serialized records. This rerun snapshots inputs before caller mutation. Both executions passed.",
+  "freshCodeChecks": [
+    {
+      "arr": [
+        8,
+        5,
+        8,
+        8,
+        5,
+        8,
+        6
+      ],
+      "query": [
+        1,
+        5,
+        3
+      ],
+      "expected": 8,
+      "actual": 8
+    },
+    {
+      "arr": [
+        8,
+        5,
+        8,
+        8,
+        5,
+        8,
+        6
+      ],
+      "query": [
+        0,
+        6,
+        4
+      ],
+      "expected": 8,
+      "actual": 8
+    },
+    {
+      "arr": [
+        8,
+        5,
+        8,
+        8,
+        5,
+        8,
+        6
+      ],
+      "query": [
+        2,
+        4,
+        2
+      ],
+      "expected": 8,
+      "actual": 8
+    },
+    {
+      "arr": [
+        8,
+        5,
+        8,
+        8,
+        5,
+        8,
+        6
+      ],
+      "query": [
+        4,
+        6,
+        2
+      ],
+      "expected": -1,
+      "actual": -1
+    },
+    {
+      "arr": [
+        7,
+        8,
+        9,
+        9
+      ],
+      "query": [
+        0,
+        3,
+        3
+      ],
+      "expected": -1,
+      "actual": -1
+    },
+    {
+      "arr": [
+        7,
+        8,
+        9,
+        9
+      ],
+      "query": [
+        2,
+        3,
+        2
+      ],
+      "expected": 9,
+      "actual": 9
+    },
+    {
+      "arr": [
+        20000
+      ],
+      "query": [
+        0,
+        0,
+        1
+      ],
+      "expected": 20000,
+      "actual": 20000
+    },
+    {
+      "arr": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "query": [
+        0,
+        8,
+        9
+      ],
+      "expected": 3,
+      "actual": 3
+    },
+    {
+      "arr": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "query": [
+        1,
+        7,
+        7
+      ],
+      "expected": 3,
+      "actual": 3
+    },
+    {
+      "arr": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "query": [
+        0,
+        3,
+        3
+      ],
+      "expected": -1,
+      "actual": -1
+    }
+  ],
+  "mutation": "constructor/query do not mutate input or retained state; external input mutation does not alter saved state"
+}

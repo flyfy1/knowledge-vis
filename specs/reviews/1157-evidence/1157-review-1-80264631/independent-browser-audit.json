@@ -1,0 +1,50 @@
+{
+  "calibration": {
+    "black": 0,
+    "white": 1,
+    "red": 0.2126,
+    "green": 0.7152,
+    "blue": 0.0722,
+    "blackWhite": 21,
+    "near": 4.492948073111701
+  },
+  "roundtrip": [
+    {
+      "lang": "zh",
+      "title": "1157 · 子数组中占绝大多数的元素",
+      "h1": "#1157 · 子数组中占绝大多数的元素",
+      "selection": "6",
+      "formula": "(x,p) ⊕ (x,q) = (x,p+q)；x≠y 时：(x,p) ⊕ (y,q) = (x,p−q) 若 p>q；(y,q−p) 若 q>p；(0,0) 若 p=q。",
+      "hand": "已处理 1/6 张；候选 = 1；余票 balance = 1 张。",
+      "event": "取节点 12：此前 (0,0)，块 (2,1)，合并后 (2,1)。空摘要不提供票，保留另一侧。",
+      "feedback": "正确。 4 有 3 票、9 有 2 票，删去两对 (4,9) 后留下一个 4。候选必须是 4，但余票 1 不是它原有的 3 票。位置表 [0,1,2] 给出真实次数 3，达到 threshold，所以返回 4。选 -1 混淆余票与次数；选 9 忽略了严格多数的幸存性质。若仅把 threshold 改成 4，仍留下 4，但次数 3 不够，应返回 -1。",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "en",
+      "title": "1157 · Online Majority Element In Subarray",
+      "h1": "#1157 · Online Majority Element In Subarray",
+      "selection": "6",
+      "formula": "(x,p) ⊕ (x,q) = (x,p+q); when x≠y: (x,p) ⊕ (y,q) = (x,p−q) if p>q; (y,q−p) if q>p; (0,0) if p=q.",
+      "hand": "Processed 1/6 votes; candidate = 1; balance = 1 surviving votes.",
+      "event": "Take node 12: before (0,0), block (2,1), after (2,1). An empty summary contributes no votes; keep the other side.",
+      "feedback": "Correct. Value 4 has three votes and 9 has two. Deleting two (4,9) pairs leaves one 4. The candidate must be 4, but balance 1 is not its original count of 3. Its position list [0,1,2] confirms three occurrences, reaching threshold, so return 4. Choosing -1 confuses balance with frequency; choosing 9 ignores majority survival. If only threshold changes to 4, candidate 4 still survives but its count of 3 fails, so return -1.",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "lang": "zh",
+      "title": "1157 · 子数组中占绝大多数的元素",
+      "h1": "#1157 · 子数组中占绝大多数的元素",
+      "selection": "6",
+      "formula": "(x,p) ⊕ (x,q) = (x,p+q)；x≠y 时：(x,p) ⊕ (y,q) = (x,p−q) 若 p>q；(y,q−p) 若 q>p；(0,0) 若 p=q。",
+      "hand": "已处理 1/6 张；候选 = 1；余票 balance = 1 张。",
+      "event": "取节点 12：此前 (0,0)，块 (2,1)，合并后 (2,1)。空摘要不提供票，保留另一侧。",
+      "feedback": "正确。 4 有 3 票、9 有 2 票，删去两对 (4,9) 后留下一个 4。候选必须是 4，但余票 1 不是它原有的 3 票。位置表 [0,1,2] 给出真实次数 3，达到 threshold，所以返回 4。选 -1 混淆余票与次数；选 9 忽略了严格多数的幸存性质。若仅把 threshold 改成 4，仍留下 4，但次数 3 不够，应返回 -1。",
+      "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    }
+  ],
+  "related": {
+    "url": "http://127.0.0.1:18770/leetcode/327/#step2",
+    "step2": "03\n\n怎样保留先后顺序，又利用有序值？\n\n这一步要回答：为什么不能直接把所有前缀排序？nums=[1,−1]、目标 [−1,−1] 时，P=[0,1,0] 中先出现的 1 到后出现的 0 产生 −1。全排序为 [0,0,1] 后，向前的差没有负数，答案 1 就丢了。排序值不能替代原下标顺序。\n\n先按原前缀下标把一个块 [lo,hi) 切成 [lo,mid) 和 [mid,hi)，右端 hi 不包含。每对 i<j 只能是左内、右内、跨两半这三类之一。递归先数完两半内部，再把两半各自按值排序。这样任何左值 x 与右值 y 配对时，原下标仍满足 i<j。图中的 L、R 是这些块排序后的值，不是新的时间顺序。\n\n在原例最上层，L=[−2,0]、R=[2,3]，目标 [−2,2]。x=−2 时差为 4、5，都太大；x=0 时差为 2、3，仅 2 合格。因此跨半增加 1；两半内部各有 1，总数是 3。对固定 x，合格 y 正好在 [x+lower,x+upper] 之间。\n\n令 k 是 R 中第一个使 y−x ≥ lower 的位置，l 是第一个使 y−x > upper 的位置；不存在就取 R 的长度。于是 [k,l) 的 l−k 个位置全部合格，重复值也逐个计数。x 按不减顺序变化时两个阈值都不减，所以 k、l 只能向右走。注意：k 跳过 < lower，l 跳过 ≤ upper，等于上界必须保留。\n\n不变量（每次返回仍成立的条件）：count(lo,hi) 返回这个原下标块内所有合法对的数量，并把这个块的前缀值排好序。一个值时无对可数；两半返回后，跨半扫描只数第三类；最后归并两个有序列表供上层使用：比较两边尚未取走的最小值，反复取较小者；一边取尽后接上另一边的剩余值。每个值只取一次。三类互不重叠且覆盖所有对，所以根块返回完整答案。\n\n换预设会重启本实验。每步是一整次边界扫描完成，或一次归并完成；逐个指针自增与递归入口不单独播放。计数历史保留所有贡献。高亮仅标明当前操作，不改变数值。\n\n预设（切换即重置）\n原例\n单个零\n三个零\n负差反例\n32 位极值\n\n教学模拟；不执行 Python。小预设的全部计数与归并操作均保留。\n\nnums=[-2, 5, -1]；lower=-2，upper=2；原前缀 P=[0, -2, 3, 2]。\n\n← 撤回一步\n完成下一操作 →\n重置实验\n跳到完成\n\n已完成操作 0/8；全程已计入的对数 0。\n\n尚未计数。先递归处理小块；下一帧显示最先返回的两半。\n\n已完成的跨半贡献（原块 / x / [k,l) / 增量）\n\n尚无贡献。"
+  }
+}

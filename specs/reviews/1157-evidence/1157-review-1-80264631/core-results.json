@@ -1,0 +1,10 @@
+{
+  "kind": "author self-check",
+  "status": "pass",
+  "cases": 32411,
+  "frames": 123490,
+  "sourceMirror": "exact",
+  "copyKeys": 104,
+  "duplicateKeys": "AST checked",
+  "coverage": "ternary arrays n<=6 all legal ranges/thresholds; 1000 seeded cases; actual position/pair witnesses; disjoint cover; intermediate majority preservation"
+}
