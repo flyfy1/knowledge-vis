@@ -1,0 +1,7 @@
+# Independent design gate — Monte Carlo error scale
+
+Separate Codex reviewer /root/design_review,2026-10-26; implement,zero mustfix gate blockers. Dispatcher adopts all recommendations. Existing20trajectory experiment must be reused,not duplicated.
+
+P0: repair actual Step2 promise/CI confusion,paused exact prefix checkpoints,optional variance/SE definitions,existing graph2-stop route and sourcedCodexrevised label. P1: independent math/UI and focusedregression. P2/deferred: newCI solver,additionalstatistics lessons,CLTmodel fixes,sampler changes,backend/storage/clock. No need for those to close thisloop.
+
+Knownp=π/4 reference band is a truth-known teaching benchmark,not sample-derivedconfidenceinterval or simultaneouscoverage guarantee. N×4 gives theoreticalSE÷2 only; retain actualseed7 errorcounterexample. N0estimate/SEundefined,N<2samplevarianceundefined. Observed0/1samplevariance0atallhits doesnotimply trueuncertainty0. Bernoulli samplevar=n/(n−1)pHat(1−pHat); estimatorvar=16p(1−p)/N;20estimate sampleSD divides19,notSEofmeanof20 andnotunbiasedSD. Olddiv20descriptiveSD wasnot inherently a scientificbug; newdenominator is explicit. Checkpoints pause/replay samecurrentmode andseedprefix,record exactNendpoint; not freshindependent data acrossN. N is perestimate,20 is numberofreplications. Variance firststation usesactualfiniteuniformCLTexampleonly. NoCLTcode edits. Unknownoriginalpage authorship retained; mark onlynewCodexrevisededition at exactsourceSHA.

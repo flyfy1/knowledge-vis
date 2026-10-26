@@ -1,0 +1,9 @@
+# Monte Carlo — Codex error-scale revision
+
+This is the incrementalStep2contract,not a retrospective acceptanceofalloriginalsteps. Read [specificspec](../specs/atlas-estimation-error.md), WORKFLOW andprovenance policy beforeanyrepair. Original authors/contributions remain; newedition isCodexrevised.
+
+Known: eachpoint givesinside0/1; estimateπHat=4inside/N. Question: howmuchcan repeatedestimatesvary,andwhatdoesNbuy? Inputs: originalseed/mode/play/reset pluspausedN100/400/1600prefixreplay. Outputs: sameexistingtrajectorybundle,exactcurrentNreadouts,20estimate sampleSD versus knownmodelSE andoptionalrawsamplevariance/estimatorvariance. PredictbeforeN400:whether everyerrorhalves; compareempiricalvariation andtheoreticalSEhalf. Conditions: idealiiduniformfinitevariance; pseudorandomillustration,normalapproximationnotguaranteedCI.
+
+First-use terms: estimator=therulegivingoneπHatfromNpoints; variance=squaredspread; SE=standarddeviationofthatestimatoracrosshypotheticalrepeatedsamples; samplevariance=observedfinite-data statistic. DistinguishNperestimatefrom20replications. Knownπbandisabenchmark,notsampleconfidenceinterval. N0/N1empty/undefinedstatesnamed. Newcheckpointsdonotgeneratefreshseeds,changeexamplesorstartanimation. Nativefold/locale/focuspreserved; newdocumentresetsexistingstate,AtlasBackretainsreadingstation.
+
+Specdefinesfailurecauses,source/claimbindings,control/plotcontractsandrecurrencecases. AllotherlegacyMCstepsarenotnewlycertified.

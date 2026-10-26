@@ -1,0 +1,92 @@
+[
+  {
+    "stage": "route0",
+    "url": "http://127.0.0.1:18933/atlas/?trail=uncertainty&node=variance&view=list&lang=zh",
+    "text": "建议路线 · 这是建议的探索顺序，不是必修先后关系。\n\n1. 方差\n2. 蒙特卡洛估计\n\n本站实验任务 · 不记录掌握状态\n\n原始数据的分散，和平均值的分散一样吗？\n\n打开CLT第3步，保留均匀U(0,1)，按“一次跑完”。比较样本量n与4n的均值标准差。\n\n打开本站对应实验 →\n核对预测 · 该看什么，为什么\n\n理论上单个观测方差为σ²，n个独立观测的均值方差为σ²/n，标准误差为σ/√n。实测拟合和标准差比有波动，不必恰等−0.5或0.5。\n\n下一站换成圆内0/1命中和πHat=4×命中率。N是每次估计的点数，20是重复次数；不传递这页的分布或参数。\n\nOpenStax7.1 · 平均值的方差与SE ↗\n← 上一个概念\n下一个概念 →\n"
+  },
+  {
+    "stage": "route1",
+    "url": "http://127.0.0.1:18933/atlas/?lang=zh&node=montecarlo&view=list&trail=uncertainty",
+    "text": "建议路线 · 这是建议的探索顺序，不是必修先后关系。\n\n1. 方差\n2. 蒙特卡洛估计\n\n本站实验任务 · 不记录掌握状态\n\n同样N，为什么20次估计并不相同？\n\n选择“20颗种子同跑”，依次按“每次N=100／400／1600”。这些键暂停并重放同一种子的前缀。比较轨迹束、20次估计的样本标准差和理论SE；可换种子再看。\n\n打开本站对应实验 →\n核对预测 · 该看什么，为什么\n\nN四倍使理论SE减半；一次误差和20次的样本标准差可能不减半，甚至变大。浅带用已知π作教学参照，不是未知π的置信区间或整条轨迹的保证。\n\n展开“这些方差各指什么”：0/1数据的样本方差、π估计的理论方差及其平方根SE有不同对象。20次估计的样本SD也不是20次均值的SE。\n\nOpenStax7.1 · N不是重复次数 ↗\n← 上一个概念\n下一个概念 →\n"
+  },
+  {
+    "stage": "MC initial",
+    "url": "http://127.0.0.1:18933/montecarlo/#step2",
+    "text": "Step2 · Repeated-estimate variability\n\nFour times the samples: does every error halve?\n\nAt the same point countN,a different set of points gives another π̂. Choose20 seeds at once,then use the paused N100/400/1600 comparisons: their endpoints differ. Four times N halvestheoretical standard error (SE); neither one actual error nor the sampleSD of20 estimates must halve. The pale band uses knownπ and modelSE as a teaching reference,not a confidence interval.\n\nStart the long run\nNew seed\nReset\nMode\nOne seed\n20 seeds at once\n\nLegend: cyan/multicolor lines=estimate trajectories; orange dashed line=knownπ; pale band=knownπ±2SE reference. N uses a logarithmic axis.\n\nPaused comparison: points in each estimate\nN=100 per estimate\nN=400 per estimate\nN=1600 per estimate\n\nKeep the current mode and seeds,pause,and replay their firstN points.100→400 uses nested prefixes,not two fresh independent batches. Use the original New seed button to change seeds.\n\nN=0 · π̂=— · known-model2SE=— · seed42\n\nMilestone |π̂ − π|:N=10² · pendingN=10³ · pendingN=10⁴ · pendingN=10⁵ · pendingN=10⁶ · pending\n\nThe knownπ±2SE band compares error scales; the point estimate still uses actual hits. It is not a sample-derived interval for unknownπ,nor a guarantee for20 paths or an entire trajectory. Large-N normal approximation can discuss probability at a fixedN,but no exact95% coverage is promised here. The fixed plot window2.62..3.66 clips the drawing,not the readouts.\n\nWhich variance is which? (expand)",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "text": "Start the long run",
+        "value": "",
+        "aria": null,
+        "disabled": false,
+        "labels": []
+      },
+      {
+        "tag": "BUTTON",
+        "text": "New seed",
+        "value": "",
+        "aria": null,
+        "disabled": false,
+        "labels": []
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reset",
+        "value": "",
+        "aria": null,
+        "disabled": false,
+        "labels": []
+      },
+      {
+        "tag": "BUTTON",
+        "text": "One seed",
+        "value": "",
+        "aria": null,
+        "disabled": false,
+        "labels": []
+      },
+      {
+        "tag": "BUTTON",
+        "text": "20 seeds at once",
+        "value": "",
+        "aria": null,
+        "disabled": false,
+        "labels": []
+      },
+      {
+        "tag": "BUTTON",
+        "text": "N=100 per estimate",
+        "value": "",
+        "aria": null,
+        "disabled": false,
+        "labels": []
+      },
+      {
+        "tag": "BUTTON",
+        "text": "N=400 per estimate",
+        "value": "",
+        "aria": null,
+        "disabled": false,
+        "labels": []
+      },
+      {
+        "tag": "BUTTON",
+        "text": "N=1600 per estimate",
+        "value": "",
+        "aria": null,
+        "disabled": false,
+        "labels": []
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "Which variance is which? (expand)",
+        "aria": null,
+        "labels": []
+      }
+    ]
+  },
+  {
+    "browser": "CLOSED"
+  }
+]

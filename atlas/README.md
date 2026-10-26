@@ -4,6 +4,9 @@ Start with [WORKFLOW](../WORKFLOW.md), [UI/bilingual policy](../UI-I18N-SPEC.md)
 
 ## Current state
 
+- **Variance → Monte Carlo error:** existing relation/repeated-run model reused; one two-station uncertainty route and paused fixed-N comparisons repair deterministic/CI claims. Currentcounts38/50/14. [Contract](../specs/atlas-estimation-error.md), [evidence](../specs/reviews/atlas-estimation-error-20261026/verification.md). Publication is separately recorded; previousvolt-second3c576204 isinstalledat origin,notpubliclyverified.
+
+
 - **Integral → inductor → Buck:** a signed voltage-area experiment links the existing steady current to positive/negative voltseconds through one new sourced relation. Current counts38/50/13. [Contract](../specs/atlas-volt-second.md), [evidence](../specs/reviews/atlas-volt-second-20261026/verification.md). Source/production status stays separate. Prior capacitor-rate releaseede2ef1d is origin-installed; public403/1010 remains unverified.
 
 

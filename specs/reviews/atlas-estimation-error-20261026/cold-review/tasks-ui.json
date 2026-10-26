@@ -1,0 +1,343 @@
+[
+  {
+    "stage": "20 runs N100 Space",
+    "url": "http://127.0.0.1:18933/montecarlo/#step2",
+    "text": "Step2 · Repeated-estimate variability\n\nFour times the samples: does every error halve?\n\nAt the same point count N, a different set of points gives another π̂. Choose 20 seeds at once, then use the paused N=100, 400 and 1600 comparisons: their endpoints differ. Four times N halves the theoretical standard error (SE). Neither one actual error nor the sample standard deviation of 20 estimates must halve. The pale band uses known π and model SE as a teaching reference, not a confidence interval.\n\nResume the long run\nNew seed\nReset\nMode\nOne seed\n20 seeds at once\n\nLegend: cyan or multicolor lines = estimate trajectories; orange dashed line = known π; pale band = known π ± 2SE reference. N uses a logarithmic axis.\n\nPaused comparison: points in each estimate\nN=100 per estimate\nN=400 per estimate\nN=1600 per estimate\n\nKeep the current mode and seeds, pause, and replay their first N points. The 100→400 comparison uses nested prefixes, not two fresh independent batches. Use the original New seed button to change seeds.\n\nN per estimate = 100 · Sample SD of 20 π̂ values = 0.1685 (denominator 19) · Theoretical SE of one estimate = 0.1642 · 20 seeds starting at 42\n\nThe known π ± 2SE band compares error scales; the point estimate still uses actual hits. This is not a sample-derived interval for unknown π, nor a guarantee for 20 paths or an entire trajectory. A large-N normal approximation can discuss probability at a fixed N, but no exact 95% coverage is promised here. The fixed plot window 2.62..3.66 clips the drawing, not the readouts.\n\nWhich variance is which? (expand)\n\nWrite an inside hit as X=1, otherwise 0; π̂ = 4 × mean(X). This teaching example knows p=π/4 for checking theory. Seeded pseudorandom streams make the display reproducible; they do not prove independence.\n\nPopulation variance of one 0/1 observation: p(1−p)\n0.168548\nSample variance sX² inside the first current run\n0.135758\nTheoretical variance of repeated same-N π estimates: Var(π̂)\n0.026968\nStandard error of that estimator: SE(π̂)\n0.164218\n\nsX² = N/(N−1)·p̂(1−p̂) for N≥2; Var(π̂) = 16p(1−p)/N; SE = √Var(π̂). N counts points in one estimate, not 20 replications. The sample SD of 20 estimates approximates the SE scale of one estimate. Do not divide it again by √20: that would target the SE of their average.\n\nAt N=0 there is no estimate or SE; sample variance needs N≥2. All hits or all misses may produce observed sample variance 0 without proving zero uncertainty in an unknown model. Here SE uses known p; inference for an unknown p needs a separately constructed interval.\n\nSource: variance and standard error of a mean · Interval inference and small-sample limits\n\nReturn to variance and estimation route →",
+    "buttons": [
+      {
+        "text": "Resume the long run",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "New seed",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "Reset",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "One seed",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "20 seeds at once",
+        "pressed": "true",
+        "focused": false
+      },
+      {
+        "text": "N=100 per estimate",
+        "pressed": "true",
+        "focused": true
+      },
+      {
+        "text": "N=400 per estimate",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "N=1600 per estimate",
+        "pressed": "false",
+        "focused": false
+      }
+    ]
+  },
+  {
+    "stage": "20 runs N400 Enter",
+    "url": "http://127.0.0.1:18933/montecarlo/#step2",
+    "text": "Step2 · Repeated-estimate variability\n\nFour times the samples: does every error halve?\n\nAt the same point count N, a different set of points gives another π̂. Choose 20 seeds at once, then use the paused N=100, 400 and 1600 comparisons: their endpoints differ. Four times N halves the theoretical standard error (SE). Neither one actual error nor the sample standard deviation of 20 estimates must halve. The pale band uses known π and model SE as a teaching reference, not a confidence interval.\n\nResume the long run\nNew seed\nReset\nMode\nOne seed\n20 seeds at once\n\nLegend: cyan or multicolor lines = estimate trajectories; orange dashed line = known π; pale band = known π ± 2SE reference. N uses a logarithmic axis.\n\nPaused comparison: points in each estimate\nN=100 per estimate\nN=400 per estimate\nN=1600 per estimate\n\nKeep the current mode and seeds, pause, and replay their first N points. The 100→400 comparison uses nested prefixes, not two fresh independent batches. Use the original New seed button to change seeds.\n\nN per estimate = 400 · Sample SD of 20 π̂ values = 0.0929 (denominator 19) · Theoretical SE of one estimate = 0.0821 · 20 seeds starting at 42\n\nThe known π ± 2SE band compares error scales; the point estimate still uses actual hits. This is not a sample-derived interval for unknown π, nor a guarantee for 20 paths or an entire trajectory. A large-N normal approximation can discuss probability at a fixed N, but no exact 95% coverage is promised here. The fixed plot window 2.62..3.66 clips the drawing, not the readouts.\n\nWhich variance is which? (expand)\n\nWrite an inside hit as X=1, otherwise 0; π̂ = 4 × mean(X). This teaching example knows p=π/4 for checking theory. Seeded pseudorandom streams make the display reproducible; they do not prove independence.\n\nPopulation variance of one 0/1 observation: p(1−p)\n0.168548\nSample variance sX² inside the first current run\n0.164856\nTheoretical variance of repeated same-N π estimates: Var(π̂)\n0.006742\nStandard error of that estimator: SE(π̂)\n0.082109\n\nsX² = N/(N−1)·p̂(1−p̂) for N≥2; Var(π̂) = 16p(1−p)/N; SE = √Var(π̂). N counts points in one estimate, not 20 replications. The sample SD of 20 estimates approximates the SE scale of one estimate. Do not divide it again by √20: that would target the SE of their average.\n\nAt N=0 there is no estimate or SE; sample variance needs N≥2. All hits or all misses may produce observed sample variance 0 without proving zero uncertainty in an unknown model. Here SE uses known p; inference for an unknown p needs a separately constructed interval.\n\nSource: variance and standard error of a mean · Interval inference and small-sample limits\n\nReturn to variance and estimation route →",
+    "buttons": [
+      {
+        "text": "Resume the long run",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "New seed",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "Reset",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "One seed",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "20 seeds at once",
+        "pressed": "true",
+        "focused": false
+      },
+      {
+        "text": "N=100 per estimate",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "N=400 per estimate",
+        "pressed": "true",
+        "focused": true
+      },
+      {
+        "text": "N=1600 per estimate",
+        "pressed": "false",
+        "focused": false
+      }
+    ]
+  },
+  {
+    "stage": "20 runs N1600",
+    "url": "http://127.0.0.1:18933/montecarlo/#step2",
+    "text": "Step2 · Repeated-estimate variability\n\nFour times the samples: does every error halve?\n\nAt the same point count N, a different set of points gives another π̂. Choose 20 seeds at once, then use the paused N=100, 400 and 1600 comparisons: their endpoints differ. Four times N halves the theoretical standard error (SE). Neither one actual error nor the sample standard deviation of 20 estimates must halve. The pale band uses known π and model SE as a teaching reference, not a confidence interval.\n\nResume the long run\nNew seed\nReset\nMode\nOne seed\n20 seeds at once\n\nLegend: cyan or multicolor lines = estimate trajectories; orange dashed line = known π; pale band = known π ± 2SE reference. N uses a logarithmic axis.\n\nPaused comparison: points in each estimate\nN=100 per estimate\nN=400 per estimate\nN=1600 per estimate\n\nKeep the current mode and seeds, pause, and replay their first N points. The 100→400 comparison uses nested prefixes, not two fresh independent batches. Use the original New seed button to change seeds.\n\nN per estimate = 1,600 · Sample SD of 20 π̂ values = 0.0491 (denominator 19) · Theoretical SE of one estimate = 0.0411 · 20 seeds starting at 42\n\nThe known π ± 2SE band compares error scales; the point estimate still uses actual hits. This is not a sample-derived interval for unknown π, nor a guarantee for 20 paths or an entire trajectory. A large-N normal approximation can discuss probability at a fixed N, but no exact 95% coverage is promised here. The fixed plot window 2.62..3.66 clips the drawing, not the readouts.\n\nWhich variance is which? (expand)\n\nWrite an inside hit as X=1, otherwise 0; π̂ = 4 × mean(X). This teaching example knows p=π/4 for checking theory. Seeded pseudorandom streams make the display reproducible; they do not prove independence.\n\nPopulation variance of one 0/1 observation: p(1−p)\n0.168548\nSample variance sX² inside the first current run\n0.169946\nTheoretical variance of repeated same-N π estimates: Var(π̂)\n0.001685\nStandard error of that estimator: SE(π̂)\n0.041055\n\nsX² = N/(N−1)·p̂(1−p̂) for N≥2; Var(π̂) = 16p(1−p)/N; SE = √Var(π̂). N counts points in one estimate, not 20 replications. The sample SD of 20 estimates approximates the SE scale of one estimate. Do not divide it again by √20: that would target the SE of their average.\n\nAt N=0 there is no estimate or SE; sample variance needs N≥2. All hits or all misses may produce observed sample variance 0 without proving zero uncertainty in an unknown model. Here SE uses known p; inference for an unknown p needs a separately constructed interval.\n\nSource: variance and standard error of a mean · Interval inference and small-sample limits\n\nReturn to variance and estimation route →",
+    "buttons": [
+      {
+        "text": "Resume the long run",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "New seed",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "Reset",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "One seed",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "20 seeds at once",
+        "pressed": "true",
+        "focused": false
+      },
+      {
+        "text": "N=100 per estimate",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "N=400 per estimate",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "N=1600 per estimate",
+        "pressed": "true",
+        "focused": true
+      }
+    ]
+  },
+  {
+    "stage": "20 runs N100 replay",
+    "url": "http://127.0.0.1:18933/montecarlo/#step2",
+    "text": "Step2 · Repeated-estimate variability\n\nFour times the samples: does every error halve?\n\nAt the same point count N, a different set of points gives another π̂. Choose 20 seeds at once, then use the paused N=100, 400 and 1600 comparisons: their endpoints differ. Four times N halves the theoretical standard error (SE). Neither one actual error nor the sample standard deviation of 20 estimates must halve. The pale band uses known π and model SE as a teaching reference, not a confidence interval.\n\nResume the long run\nNew seed\nReset\nMode\nOne seed\n20 seeds at once\n\nLegend: cyan or multicolor lines = estimate trajectories; orange dashed line = known π; pale band = known π ± 2SE reference. N uses a logarithmic axis.\n\nPaused comparison: points in each estimate\nN=100 per estimate\nN=400 per estimate\nN=1600 per estimate\n\nKeep the current mode and seeds, pause, and replay their first N points. The 100→400 comparison uses nested prefixes, not two fresh independent batches. Use the original New seed button to change seeds.\n\nN per estimate = 100 · Sample SD of 20 π̂ values = 0.1685 (denominator 19) · Theoretical SE of one estimate = 0.1642 · 20 seeds starting at 42\n\nThe known π ± 2SE band compares error scales; the point estimate still uses actual hits. This is not a sample-derived interval for unknown π, nor a guarantee for 20 paths or an entire trajectory. A large-N normal approximation can discuss probability at a fixed N, but no exact 95% coverage is promised here. The fixed plot window 2.62..3.66 clips the drawing, not the readouts.\n\nWhich variance is which? (expand)\n\nWrite an inside hit as X=1, otherwise 0; π̂ = 4 × mean(X). This teaching example knows p=π/4 for checking theory. Seeded pseudorandom streams make the display reproducible; they do not prove independence.\n\nPopulation variance of one 0/1 observation: p(1−p)\n0.168548\nSample variance sX² inside the first current run\n0.135758\nTheoretical variance of repeated same-N π estimates: Var(π̂)\n0.026968\nStandard error of that estimator: SE(π̂)\n0.164218\n\nsX² = N/(N−1)·p̂(1−p̂) for N≥2; Var(π̂) = 16p(1−p)/N; SE = √Var(π̂). N counts points in one estimate, not 20 replications. The sample SD of 20 estimates approximates the SE scale of one estimate. Do not divide it again by √20: that would target the SE of their average.\n\nAt N=0 there is no estimate or SE; sample variance needs N≥2. All hits or all misses may produce observed sample variance 0 without proving zero uncertainty in an unknown model. Here SE uses known p; inference for an unknown p needs a separately constructed interval.\n\nSource: variance and standard error of a mean · Interval inference and small-sample limits\n\nReturn to variance and estimation route →",
+    "buttons": [
+      {
+        "text": "Resume the long run",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "New seed",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "Reset",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "One seed",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "20 seeds at once",
+        "pressed": "true",
+        "focused": false
+      },
+      {
+        "text": "N=100 per estimate",
+        "pressed": "true",
+        "focused": true
+      },
+      {
+        "text": "N=400 per estimate",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "N=1600 per estimate",
+        "pressed": "false",
+        "focused": false
+      }
+    ]
+  },
+  {
+    "stage": "replay readout text equality",
+    "equal": true
+  },
+  {
+    "stage": "Reset",
+    "url": "http://127.0.0.1:18933/montecarlo/#step2",
+    "text": "Step2 · Repeated-estimate variability\n\nFour times the samples: does every error halve?\n\nAt the same point count N, a different set of points gives another π̂. Choose 20 seeds at once, then use the paused N=100, 400 and 1600 comparisons: their endpoints differ. Four times N halves the theoretical standard error (SE). Neither one actual error nor the sample standard deviation of 20 estimates must halve. The pale band uses known π and model SE as a teaching reference, not a confidence interval.\n\nStart the long run\nNew seed\nReset\nMode\nOne seed\n20 seeds at once\n\nLegend: cyan or multicolor lines = estimate trajectories; orange dashed line = known π; pale band = known π ± 2SE reference. N uses a logarithmic axis.\n\nPaused comparison: points in each estimate\nN=100 per estimate\nN=400 per estimate\nN=1600 per estimate\n\nKeep the current mode and seeds, pause, and replay their first N points. The 100→400 comparison uses nested prefixes, not two fresh independent batches. Use the original New seed button to change seeds.\n\nN per estimate = 0 · Sample SD of 20 π̂ values = — (denominator 19) · Theoretical SE of one estimate = — · 20 seeds starting at 42\n\nThe known π ± 2SE band compares error scales; the point estimate still uses actual hits. This is not a sample-derived interval for unknown π, nor a guarantee for 20 paths or an entire trajectory. A large-N normal approximation can discuss probability at a fixed N, but no exact 95% coverage is promised here. The fixed plot window 2.62..3.66 clips the drawing, not the readouts.\n\nWhich variance is which? (expand)\n\nWrite an inside hit as X=1, otherwise 0; π̂ = 4 × mean(X). This teaching example knows p=π/4 for checking theory. Seeded pseudorandom streams make the display reproducible; they do not prove independence.\n\nPopulation variance of one 0/1 observation: p(1−p)\n0.168548\nSample variance sX² inside the first current run\n—\nTheoretical variance of repeated same-N π estimates: Var(π̂)\n—\nStandard error of that estimator: SE(π̂)\n—\n\nsX² = N/(N−1)·p̂(1−p̂) for N≥2; Var(π̂) = 16p(1−p)/N; SE = √Var(π̂). N counts points in one estimate, not 20 replications. The sample SD of 20 estimates approximates the SE scale of one estimate. Do not divide it again by √20: that would target the SE of their average.\n\nAt N=0 there is no estimate or SE; sample variance needs N≥2. All hits or all misses may produce observed sample variance 0 without proving zero uncertainty in an unknown model. Here SE uses known p; inference for an unknown p needs a separately constructed interval.\n\nSource: variance and standard error of a mean · Interval inference and small-sample limits\n\nReturn to variance and estimation route →",
+    "buttons": [
+      {
+        "text": "Start the long run",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "New seed",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "Reset",
+        "pressed": null,
+        "focused": true
+      },
+      {
+        "text": "One seed",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "20 seeds at once",
+        "pressed": "true",
+        "focused": false
+      },
+      {
+        "text": "N=100 per estimate",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "N=400 per estimate",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "N=1600 per estimate",
+        "pressed": "false",
+        "focused": false
+      }
+    ]
+  },
+  {
+    "stage": "one run N400",
+    "url": "http://127.0.0.1:18933/montecarlo/#step2",
+    "text": "Step2 · Repeated-estimate variability\n\nFour times the samples: does every error halve?\n\nAt the same point count N, a different set of points gives another π̂. Choose 20 seeds at once, then use the paused N=100, 400 and 1600 comparisons: their endpoints differ. Four times N halves the theoretical standard error (SE). Neither one actual error nor the sample standard deviation of 20 estimates must halve. The pale band uses known π and model SE as a teaching reference, not a confidence interval.\n\nResume the long run\nNew seed\nReset\nMode\nOne seed\n20 seeds at once\n\nLegend: cyan or multicolor lines = estimate trajectories; orange dashed line = known π; pale band = known π ± 2SE reference. N uses a logarithmic axis.\n\nPaused comparison: points in each estimate\nN=100 per estimate\nN=400 per estimate\nN=1600 per estimate\n\nKeep the current mode and seeds, pause, and replay their first N points. The 100→400 comparison uses nested prefixes, not two fresh independent batches. Use the original New seed button to change seeds.\n\nN = 400 · π̂ = 3.17000 · Known-model 2SE = 0.1642 · Seed 42\n\nMilestone |π̂ − π|:N=10² · 0.2184N=10³ · pendingN=10⁴ · pendingN=10⁵ · pendingN=10⁶ · pending\n\nThe known π ± 2SE band compares error scales; the point estimate still uses actual hits. This is not a sample-derived interval for unknown π, nor a guarantee for 20 paths or an entire trajectory. A large-N normal approximation can discuss probability at a fixed N, but no exact 95% coverage is promised here. The fixed plot window 2.62..3.66 clips the drawing, not the readouts.\n\nWhich variance is which? (expand)\n\nWrite an inside hit as X=1, otherwise 0; π̂ = 4 × mean(X). This teaching example knows p=π/4 for checking theory. Seeded pseudorandom streams make the display reproducible; they do not prove independence.\n\nPopulation variance of one 0/1 observation: p(1−p)\n0.168548\nSample variance sX² inside the first current run\n0.164856\nTheoretical variance of repeated same-N π estimates: Var(π̂)\n0.006742\nStandard error of that estimator: SE(π̂)\n0.082109\n\nsX² = N/(N−1)·p̂(1−p̂) for N≥2; Var(π̂) = 16p(1−p)/N; SE = √Var(π̂). N counts points in one estimate, not 20 replications. The sample SD of 20 estimates approximates the SE scale of one estimate. Do not divide it again by √20: that would target the SE of their average.\n\nAt N=0 there is no estimate or SE; sample variance needs N≥2. All hits or all misses may produce observed sample variance 0 without proving zero uncertainty in an unknown model. Here SE uses known p; inference for an unknown p needs a separately constructed interval.\n\nSource: variance and standard error of a mean · Interval inference and small-sample limits\n\nReturn to variance and estimation route →",
+    "buttons": [
+      {
+        "text": "Resume the long run",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "New seed",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "Reset",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "One seed",
+        "pressed": "true",
+        "focused": false
+      },
+      {
+        "text": "20 seeds at once",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "N=100 per estimate",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "N=400 per estimate",
+        "pressed": "true",
+        "focused": true
+      },
+      {
+        "text": "N=1600 per estimate",
+        "pressed": "false",
+        "focused": false
+      }
+    ]
+  },
+  {
+    "stage": "ZH locale",
+    "url": "http://127.0.0.1:18933/montecarlo/#step2",
+    "text": "第2步 · 重复估计的波动\n\n样本四倍，每次误差都减半吗？\n\n同样的点数N，换一组点就会得到另一个π̂。先选20颗种子同跑，用下方N=100、400、1600暂停对照：20条轨迹的末端并不重合。N四倍时，理论标准误差SE减半；一次实际误差、20次估计的样本标准差都不保证精确减半。图中的浅带用已知π和理想模型SE作教学参照，不是置信区间。\n\n继续长跑\n换一颗种子\n重置\n模式\n单颗种子\n20 颗种子同跑\n\n图例：青色／多色线=估计轨迹；橙虚线=已知π；浅色带=已知π±2SE参照。横轴N为对数刻度。\n\n暂停对照：每次估计用多少点？\n每次N=100\n每次N=400\n每次N=1600\n\n保留当前模式和种子，暂停并重放前N个点；100→400是嵌套前缀，不是两批全新独立试验。换种子需按原“换一颗种子”。\n\nN=400 · π̂=3.17000 · 已知模型2SE=0.1642 · 种子42\n\n里程碑 |π̂ − π|：N=10² · 0.2184N=10³ · 未到N=10⁴ · 未到N=10⁵ · 未到N=10⁶ · 未到\n\n参考带是已知π±2SE，帮助比较误差尺度；π仍由实际命中数估计。它不是从样本构造的未知π区间，也不保证20条或整段轨迹都在带内。充分大N时可用正态近似讨论固定N的概率，但这里不承诺精确95%覆盖。图窗固定2.62..3.66，越界仅裁切画面，数值读数不裁切。\n\n这些方差各指什么？（可展开）\n\n把一次点是否落在圆内写成X=1或0，π̂=4×X的平均。本教学例知道p=π/4，可核对理论；伪随机种子用于可重复展示，不证明点列独立。\n\n单个0/1观测的总体方差 p(1−p)\n0.168548\n当前第1条轨迹内的样本方差 sX²\n0.164856\n同样N重复估π的理论方差 Var(π̂)\n0.006742\n上述估计量的标准误差 SE(π̂)\n0.082109\n\nsX²=N/(N−1)·p̂(1−p̂)（N≥2）；Var(π̂)=16p(1−p)/N；SE=√Var(π̂)。N是每次估计内的点数，不是20次重复。20个估计值的样本标准差近似反映单次估计的SE尺度，不要再除以√20；后者会换成20次均值的SE。\n\nN=0时尚无估计或SE；N<2不能计算样本方差。全中／全未中可使观察到的样本方差为0，却不能据此断言未知模型没有不确定性。本例使用已知p的理论SE；一般未知p的推断区间需要另行构造。\n\n读依据：平均值方差与标准误差 · 区间推断与小样本边界\n\n回到方差与估计路线 →",
+    "buttons": [
+      {
+        "text": "继续长跑",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "换一颗种子",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "重置",
+        "pressed": null,
+        "focused": false
+      },
+      {
+        "text": "单颗种子",
+        "pressed": "true",
+        "focused": false
+      },
+      {
+        "text": "20 颗种子同跑",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "每次N=100",
+        "pressed": "false",
+        "focused": false
+      },
+      {
+        "text": "每次N=400",
+        "pressed": "true",
+        "focused": false
+      },
+      {
+        "text": "每次N=1600",
+        "pressed": "false",
+        "focused": false
+      }
+    ]
+  },
+  {
+    "stage": "actual Back",
+    "url": "http://127.0.0.1:18933/atlas/?lang=zh&node=montecarlo&view=list&trail=uncertainty",
+    "text": "本站实验任务 · 不记录掌握状态\n\n同样N，为什么20次估计并不相同？\n\n选择“20颗种子同跑”，依次按“每次N=100／400／1600”。这些键暂停并重放同一种子的前缀。比较轨迹束、20次估计的样本标准差和理论SE；可换种子再看。\n\n打开本站对应实验 →\n核对预测 · 该看什么，为什么\n← 上一个概念\n下一个概念 →\n起步提示"
+  },
+  {
+    "browser": "CLOSED"
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "pass": true,
+  "mustFix": 0,
+  "bernoulliCases": 496,
+  "invalidCountCases": 7,
+  "seedParityCases": 20,
+  "checkpoints": [
+    {
+      "mode": "single",
+      "n": 100,
+      "runs": 1
+    },
+    {
+      "mode": "single",
+      "n": 400,
+      "runs": 1
+    },
+    {
+      "mode": "single",
+      "n": 1600,
+      "runs": 1
+    },
+    {
+      "mode": "single",
+      "n": 100,
+      "runs": 1
+    },
+    {
+      "mode": "multi",
+      "n": 100,
+      "runs": 20
+    },
+    {
+      "mode": "multi",
+      "n": 400,
+      "runs": 20
+    },
+    {
+      "mode": "multi",
+      "n": 1600,
+      "runs": 20
+    },
+    {
+      "mode": "multi",
+      "n": 100,
+      "runs": 20
+    }
+  ],
+  "seed7Errors": [
+    0.018407346410207026,
+    0.02159265358979301
+  ],
+  "empiricalVsTheory": [
+    {
+      "n": 100,
+      "empiricalSD": 0.16851050256195962,
+      "theorySE": 0.1642183367736324
+    },
+    {
+      "n": 400,
+      "empiricalSD": 0.09292186870812776,
+      "theorySE": 0.0821091683868162
+    },
+    {
+      "n": 1600,
+      "empiricalSD": 0.049127251521993986,
+      "theorySE": 0.0410545841934081
+    }
+  ],
+  "samplersByteIdentical": true,
+  "method": "Independent direct Bernoulli sums and pairwise variance identity; actual state/checkpoint VM and original sampler parity; no Chrome",
+  "sha256": {
+    "montecarlo/app.js": "a338adc93a7810e2043e495bd4bacf735819af39808b804c000d366c82c21bbb",
+    "montecarlo/i18n.js": "fe8c652549aacf0d818963ef1ab92020eb071e95dff51c02167e07db29535d4a",
+    "montecarlo/index.html": "bb790d986c8c39f9911133bdd130f9bb12890713a8498a53d3f9739656da08fd",
+    "atlas/data.js": "2c3341bfa48fa7c298668b1dda1d509974fa3f7ca0f1bdda9e28c3f004cf725d",
+    "specs/atlas-estimation-error.md": "fee004bc48b7f37f0efbcbe4cebd8c8c554e659b0e5089416dec96e47e7f41ed"
+  }
+}

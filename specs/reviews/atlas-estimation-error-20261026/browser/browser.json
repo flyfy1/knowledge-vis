@@ -1,0 +1,9 @@
+{
+  "checks": [
+    "Actual finiteuniform CLT→Back→MonteCarlo route;20 original sampler outputs match exactN;100→400→1600→100 same-prefix replay/visualchange; selectedstationreload",
+    "EN/ZH390 actualcanvas screenshots;modepreservation,seed/reset/play→checkpointpause,locale/fold/data,refresh;320true200%text/48px/3pxkeyboard/forcedcolors/reduced"
+  ],
+  "errors": [],
+  "physicalDevice": false,
+  "pass": true
+}

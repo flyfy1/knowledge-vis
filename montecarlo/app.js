@@ -6,7 +6,7 @@
    1. 随机数一律走带种子 mulberry32；同种子点列逐点重现。种子显示在读数里。
    2. π̂ 口径全页唯一：π̂ = 4 · 圆内 / 总数（[0,1]² 内切圆，或第 1 步的外接正方形构型，
       比值同为 π/4）。读数 π̂ 恒由真实计数现算。
-   3. 误差带：π ± 2σ，σ = 4√(p̂(1−p̂)/N)，p̂ 为轨迹该点处的圆内率。
+   3. 参照带：已知π ± 2SE，SE=4√(p(1−p)/N)，p=π/4；非样本置信区间。
    4. 投针：角度 [0,π) 均匀、中心均匀，相交判定 dist ≤ (L/2)|sinθ|，π̂ = 2L·N/(d·相交数)。
    5. 高维真值：π^(d/2)·(0.5)^d / Γ(d/2+1)；估值由真实 d 维点计数。
    6. 计数全量真实；画布显示点数有上限（各步 cap），超出只计数不画点，读数注明抽稀。
@@ -445,6 +445,17 @@ function s2NewMulti() {
 function s2ResetAll() { s2NewSingle(); s2NewMulti(); s2.running = false; }
 s2ResetAll();
 function sigPi(phat, n) { return 4 * Math.sqrt(Math.max(0, phat * (1 - phat)) / n); }
+function piErrorStats(inside,n) {
+  if(!Number.isSafeInteger(n)||!Number.isSafeInteger(inside)||n<0||inside<0||inside>n)throw new RangeError('Expected integer hit counts0..N');
+  const p=Math.PI/4,populationVariance=p*(1-p),phat=n?inside/n:NaN,estimatorVariance=n?16*populationVariance/n:NaN;
+  return{n,inside,phat,populationVariance,sampleVariance:n>1?n/(n-1)*phat*(1-phat):NaN,estimatorVariance,standardError:Math.sqrt(estimatorVariance)};
+}
+function mcSampleVariance(values) {
+  if(!Array.isArray(values)||values.some(v=>!Number.isFinite(v)))throw new RangeError('Expected finite values');
+  if(values.length<2)return NaN;
+  const mean=values.reduce((a,b)=>a+b,0)/values.length;return values.reduce((a,b)=>a+(b-mean)**2,0)/(values.length-1);
+}
+function piTheorySE(n){return piErrorStats(0,n).standardError;}
 function s2StepSingle(k) {
   const s = s2.single;
   const kk = Math.min(k, s2.targetSingle - s.n); /* 精确截断：到 10⁶ 整停，与 multi 口径一致 */
@@ -485,10 +496,10 @@ function s2Draw() {
   const pw = w - padL - padR, ph = h - padT - padB;
   const yLo = 2.62, yHi = 3.66;
   const X = n => padL + (Math.log10(Math.max(1, n)) / 6) * pw;
-  const Y = v => padT + (1 - (clamp(v, yLo, yHi) - yLo) / (yHi - yLo)) * ph;
+  const Y = v => padT + (1 - (v - yLo) / (yHi - yLo)) * ph;
   /* 图例 */
   drawLegend(ctx, [
-    [t('cTrajLab'), '#6ee7ff'], [t('cPiLab'), '#ffb454'], [t('cBandLab'), '#3d5a74']
+    ['π̂', '#6ee7ff'], ['π', '#ffb454'], ['±2SE', '#3d5a74']
   ], padL, 14);
   /* 网格：横线（π̂ 值） */
   ctx.font = '11.5px system-ui, sans-serif'; ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
@@ -512,22 +523,12 @@ function s2Draw() {
   }
   ctx.fillText(t('cAxisN'), padL + pw / 2, padT + ph + 26);
   ctx.strokeStyle = '#2b3547'; ctx.strokeRect(padL, padT, pw, ph);
+  ctx.save();ctx.beginPath();ctx.rect(padL,padT,pw,ph);ctx.clip();
+  const reference=s2.mode==='single'?s2.traj:s2.seeds[0].traj;
+  if(reference.length>1){ctx.beginPath();reference.forEach((p,i)=>{const yy=Y(Math.PI+2*piTheorySE(p.n));i?ctx.lineTo(X(p.n),yy):ctx.moveTo(X(p.n),yy);});for(let i=reference.length-1;i>=0;i--){const p=reference[i];ctx.lineTo(X(p.n),Y(Math.PI-2*piTheorySE(p.n)));}ctx.closePath();ctx.fillStyle='rgba(110,231,255,0.13)';ctx.fill();}
   if (s2.mode === 'single') {
     const tr = s2.traj;
     if (tr.length > 1) {
-      /* ±2σ 带（π 为中心，σ 由轨迹各点 p̂ 算出，见红线 3） */
-      ctx.beginPath();
-      tr.forEach((p, i) => {
-        const yy = Y(Math.PI + 2 * sigPi(p.phat, p.n));
-        i ? ctx.lineTo(X(p.n), yy) : ctx.moveTo(X(p.n), yy);
-      });
-      for (let i = tr.length - 1; i >= 0; i--) {
-        const p = tr[i];
-        ctx.lineTo(X(p.n), Y(Math.PI - 2 * sigPi(p.phat, p.n)));
-      }
-      ctx.closePath();
-      ctx.fillStyle = 'rgba(110,231,255,0.13)';
-      ctx.fill();
       /* 轨迹 */
       ctx.strokeStyle = '#6ee7ff'; ctx.lineWidth = 1.8;
       ctx.beginPath();
@@ -557,7 +558,7 @@ function s2Draw() {
   /* π 真值线 */
   ctx.strokeStyle = '#ffb454'; ctx.lineWidth = 1.4; ctx.setLineDash([7, 5]);
   ctx.beginPath(); ctx.moveTo(padL, Y(Math.PI)); ctx.lineTo(padL + pw, Y(Math.PI)); ctx.stroke();
-  ctx.setLineDash([]);
+  ctx.setLineDash([]);ctx.restore();
 }
 function s2Readout() {
   const el = $('s2-readout'), mel = $('s2-miles');
@@ -566,7 +567,7 @@ function s2Readout() {
     if (!s.n) {
       el.innerHTML = t('s2roS', { n: 0, pi: '—', band: '—', seed: s2.baseSeed });
     } else {
-      const band = fmt(2 * sigPi(s.phat, s.n), 4);
+      const band = fmt(2 * piTheorySE(s.n), 4);
       el.innerHTML = t(s2.done ? 's2roSdone' : 's2roS', { n: fmtInt(s.n), pi: fmt(s.pi, 5), band, seed: s2.baseSeed });
     }
     let chips = '<span style="color:var(--muted)">' + t('s2miles') + '</span>';
@@ -582,19 +583,22 @@ function s2Readout() {
       el.innerHTML = t('s2roM', { n: 0, emp: '—', theo: '—', seed: s2.baseSeed });
     } else {
       const pis = s2.seeds.map(sd => sd.sampler.pi).filter(v => isFinite(v));
-      const mean = pis.reduce((a, b) => a + b, 0) / pis.length;
-      const emp = Math.sqrt(pis.reduce((a, b) => a + (b - mean) * (b - mean), 0) / pis.length);
-      const theo = 4 * Math.sqrt((Math.PI / 4) * (1 - Math.PI / 4) / n0);
+      const emp = Math.sqrt(mcSampleVariance(pis));
+      const theo = piTheorySE(n0);
       el.innerHTML = t('s2roM', { n: fmtInt(n0), emp: fmt(emp, 4), theo: fmt(theo, 4), seed: s2.baseSeed });
     }
     mel.innerHTML = '';
   }
+  const first=s2.mode==='single'?s2.single:s2.seeds[0].sampler,stats=piErrorStats(first.inside,first.n);
+  for(const[id,value]of [['s2-popvar',stats.populationVariance],['s2-rawvar',stats.sampleVariance],['s2-estvar',stats.estimatorVariance],['s2-se',stats.standardError]])$(id).textContent=Number.isFinite(value)?fmt(value,6):'—';
 }
 function s2SyncBtn() {
   const b = $('s2-play');
   const curN = s2.mode === 'single' ? s2.single.n : (s2.seeds.length ? s2.seeds[0].sampler.n : 0);
   b.textContent = s2.done ? t('runDone') : (s2.running ? t('pause') : (curN ? t('resumeLong') : t('runLong')));
   b.disabled = s2.done;
+  document.querySelectorAll('#step2 .mbtn').forEach(x=>{const active=x.dataset.mode===s2.mode;x.classList.toggle('active',active);x.setAttribute('aria-pressed',String(active));});
+  document.querySelectorAll('.s2-checkpoint').forEach(x=>{const active=!s2.running&&curN===Number(x.dataset.checkpoint);x.classList.toggle('active',active);x.setAttribute('aria-pressed',String(active));});
 }
 animate($('step2'), () => {
   if (s2.running) {
@@ -603,6 +607,14 @@ animate($('step2'), () => {
   }
   s2Draw(); s2Readout(); s2SyncBtn();
 });
+function s2Checkpoint(n){
+  if(![100,400,1600].includes(n))throw new RangeError('Unsupported checkpoint');
+  s2.running=false;
+  if(s2.mode==='single'){s2NewSingle();s2StepSingle(n);if(s2.traj.at(-1)?.n!==n)s2.traj.push({n,pi:s2.single.pi,phat:s2.single.phat});}
+  else{s2NewMulti();s2StepMulti(n);for(const sd of s2.seeds)if(sd.traj.at(-1)?.n!==n)sd.traj.push({n,pi:sd.sampler.pi,phat:sd.sampler.phat});}
+  s2Draw();s2Readout();s2SyncBtn();
+}
+document.querySelectorAll('.s2-checkpoint').forEach(b=>b.addEventListener('click',()=>s2Checkpoint(Number(b.dataset.checkpoint))));
 $('s2-play').addEventListener('click', () => { if (!s2.done) { s2.running = !s2.running; s2SyncBtn(); } });
 $('s2-seed').addEventListener('click', () => { s2.baseSeed = freshSeed(); s2ResetAll(); s2Draw(); s2Readout(); s2SyncBtn(); });
 $('s2-reset').addEventListener('click', () => { s2ResetAll(); s2Draw(); s2Readout(); s2SyncBtn(); });
@@ -1080,6 +1092,7 @@ s6ChReadout();
    ================================================================ */
 window.MC = {
   mulberry32, gamma: gammaFn, sphereRatioTrue,
+  errorStats:piErrorStats,sampleVariance:mcSampleVariance,
   makePiSampler, makeRadiusSampler, makeNeedleSampler, makeSphereSampler, makeShapeSampler,
   firstPoints,
   piEstimate(seed, N) { const s = makePiSampler(seed); s.batch(N); return { n: s.n, inside: s.inside, pi: s.pi }; },
@@ -1093,7 +1106,7 @@ window.MC = {
       s0: { seed: s0.seed, n: s0.sampler.n, inside: s0.sampler.inside, pi: s0.sampler.pi, running: s0.running, rate: s0.rate, shown: s0.disp.length, cap: s0.cap },
       s1: { seed: s1.seed, r: s1.r, n: s1.sampler.n, inside: s1.sampler.inside, pi: s1.sampler.pi },
       s2: {
-        mode: s2.mode, baseSeed: s2.baseSeed,
+        mode: s2.mode, baseSeed: s2.baseSeed,running:s2.running,done:s2.done,
         single: { n: s2.single.n, inside: s2.single.inside, pi: s2.single.pi, miles: Object.assign({}, s2.miles), trajPts: s2.traj.length },
         multiN: s2.seeds.length ? s2.seeds[0].sampler.n : 0,
         multiPis: s2.seeds.map(sd => sd.sampler.pi)

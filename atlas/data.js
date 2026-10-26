@@ -123,12 +123,81 @@
       edge('bayes','kalman','application','在线性高斯条件下形成状态更新','gives state updates under linear Gaussian assumptions','在线性动态与观测模型、适当高斯先验和独立高斯噪声条件下，卡尔曼更新可用均值与协方差表示贝叶斯更新。','With linear dynamics and measurements, an appropriate Gaussian prior and independent Gaussian noises, Kalman updates express Bayesian updating using means and covariances.','../kalman/#step6'),
       edge('variance','kalman','application','参与测量权重计算','helps determine measurement weights','预测不确定性与测量噪声共同决定增益；模型给出的不确定性必须与真实估计误差区分。','Predicted uncertainty and measurement noise jointly determine the gain; model uncertainty must be distinguished from actual estimation error.','../kalman/#step2'),
       edge('kalman','feedback','application','提供用于控制的状态估计','supplies state estimates for control','无法直接观测的状态可先估计，再交给控制器；估计质量和模型误差会影响控制效果。','Estimate states that cannot be measured directly, then pass them to a controller; estimation quality and model mismatch affect control.','../kalman/#step6'),
-      edge('variance','gaussian','foundation','决定均值的标准误差','sets the standard error of a mean','独立同分布样本方差为 σ² 时，n 个样本的均值方差为 σ²/n；正态近似还需要适用的极限定理条件。','For iid samples of variance σ², the mean of n samples has variance σ²/n; a normal approximation additionally needs appropriate limit-theorem conditions.','../clt/#step3'),
+      edge('variance','gaussian','foundation','决定均值的标准误差','sets the standard error of a mean','独立同分布的单个观测总体方差为 σ² 时，n 个样本的均值方差为 σ²/n；正态近似还需要适用的极限定理条件。','For iid observations each having population variance σ², the mean of n samples has variance σ²/n; a normal approximation additionally needs appropriate limit-theorem conditions.','../clt/#step3'),
       edge('probability','montecarlo','application','用随机采样估计期望','estimates expectations by random sampling','按指定概率模型采样，用样本平均估计期望；积分也可改写成相应的期望。','Sample from a specified probability model and average to estimate an expectation; integrals can also be written as expectations.','../montecarlo/#step3'),
       edge('variance','montecarlo','connection','决定估计误差尺度','sets the estimation error scale','独立同分布且方差有限时，样本平均的标准误差按 1/√n 缩小；这是误差尺度，不是每次运行的保证。','For iid samples with finite variance, the sample mean’s standard error scales as 1/√n; this is an error scale, not a guarantee for each run.','../montecarlo/#step2'),
       edge('convolution','gaussian','connection','描述独立变量相加的分布','describes distributions of independent sums','独立随机变量之和的分布由卷积给出；反复相加后的正态近似需满足中心极限定理的条件。','Convolution gives the distribution of a sum of independent random variables; a normal approximation after repeated sums requires central-limit conditions.','../clt/#step5')
     ],
     trails: [
+{
+  "id": "uncertainty",
+  "background": [
+    "variance",
+    "montecarlo"
+  ],
+  "title": {
+    "zh": "样本四倍，每次误差都减半吗？",
+    "en": "Four times the samples: does every error halve?"
+  },
+  "nodes": [
+    "variance",
+    "montecarlo"
+  ],
+  "stationTasks": [
+    {
+      "node": "variance",
+      "question": {
+        "zh": "原始数据的分散，和平均值的分散一样吗？",
+        "en": "Is data spread the same as the spread of its mean?"
+      },
+      "action": {
+        "zh": "打开CLT第3步，保留均匀U(0,1)，按“一次跑完”。比较样本量n与4n的均值标准差。",
+        "en": "Open CLT step3,keep uniformU(0,1),then Run all. Compare the standard deviation of means at n and4n."
+      },
+      "observe": {
+        "zh": "理论上单个观测方差为σ²，n个独立观测的均值方差为σ²/n，标准误差为σ/√n。实测拟合和标准差比有波动，不必恰等−0.5或0.5。",
+        "en": "One observation has population varianceσ²; the mean of n independent observations has varianceσ²/n and SEσ/√n. Empirical fitted slopes/SD ratios fluctuate; they need not be exactly−0.5 or0.5."
+      },
+      "bridge": {
+        "zh": "下一站换成圆内0/1命中和πHat=4×命中率。N是每次估计的点数，20是重复次数；不传递这页的分布或参数。",
+        "en": "Next switch to inside/outside0/1 hits and πHat=4×hit rate. N is points per estimate;20 is replications. This page’s distribution/parameters are not transferred."
+      },
+      "href": "../clt/#step3",
+      "evidenceEdge": "variance:montecarlo",
+      "source": "https://openstax.org/books/introductory-statistics-2e/pages/7-1-the-central-limit-theorem-for-sample-means-averages",
+      "evidenceLabel": {
+        "zh": "OpenStax7.1 · 平均值的方差与SE ↗",
+        "en": "OpenStax7.1 · variance/SE of a mean ↗"
+      }
+    },
+    {
+      "node": "montecarlo",
+      "question": {
+        "zh": "同样N，为什么20次估计并不相同？",
+        "en": "Why do20 estimates differ at the same N?"
+      },
+      "action": {
+        "zh": "选择“20颗种子同跑”，依次按“每次N=100／400／1600”。这些键暂停并重放同一种子的前缀。比较轨迹束、20次估计的样本标准差和理论SE；可换种子再看。",
+        "en": "Choose20 seeds at once,then N100/400/1600. These buttons pause and replay prefixes of the same seeds. Compare the bundle,20-estimate sampleSD and theoreticalSE; optionally change seed and repeat."
+      },
+      "observe": {
+        "zh": "N四倍使理论SE减半；一次误差和20次的样本标准差可能不减半，甚至变大。浅带用已知π作教学参照，不是未知π的置信区间或整条轨迹的保证。",
+        "en": "Four times N halves theoreticalSE. One error or the sampleSD of20 runs need not halve,and can increase. The pale band uses knownπ as a teaching reference,not a confidence interval for unknownπ or a whole-trajectory guarantee."
+      },
+      "bridge": {
+        "zh": "展开“这些方差各指什么”：0/1数据的样本方差、π估计的理论方差及其平方根SE有不同对象。20次估计的样本SD也不是20次均值的SE。",
+        "en": "Expand “Which variance is which?”: samplevariance of0/1data,theoreticalvariance of π estimates and its square-rootSE describe different objects. The20-estimate sampleSD is not the SE of their average."
+      },
+      "href": "../montecarlo/#step2",
+      "evidenceEdge": "variance:montecarlo",
+      "source": "https://openstax.org/books/introductory-statistics-2e/pages/7-1-the-central-limit-theorem-for-sample-means-averages",
+      "evidenceLabel": {
+        "zh": "OpenStax7.1 · N不是重复次数 ↗",
+        "en": "OpenStax7.1 · N is not replications ↗"
+      }
+    }
+  ]
+},
 {
   "id": "volt-second",
   "background": [
