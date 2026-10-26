@@ -1,0 +1,6 @@
+{
+  "endpoint": "https://leetcode.com/graphql",
+  "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId title titleSlug content translatedContent isPaidOnly difficulty codeSnippets { lang langSlug code } exampleTestcases hints sampleTestCase } }",
+  "variables": {"titleSlug": "maximum-number-of-ones"},
+  "accessDate": "2026-10-27T00:00:00+08:00"
+}
