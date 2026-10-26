@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Knowledge Galaxy · Visual</title>
+<meta name="description" content="Explore the actual mathematics and physics knowledge graph in three dimensions, with sourced connections and learning paths.">
+<link rel="icon" href="data:,"><link rel="stylesheet" href="../page-provenance.css"><link rel="stylesheet" href="galaxy/style.css?v=1">
+<script type="importmap">{"imports":{"three":"../day-night-rotation/vendor/three/three.module.js"}}</script>
+<script defer src="data.js?v=normal-1"></script>
+<script type="module" src="galaxy/app.mjs?v=1"></script>
+</head>
+<body>
+<a class="skip" href="#explorer" data-t="skip">Skip to concept list</a>
+<div class="shell">
+<header>
+ <div class="topline"><a id="atlas-link" href="./" data-t="back">← Mathematics & Physics atlas</a><div id="langToggle" aria-label="Language"><button data-lang="zh">中</button><button data-lang="en">EN</button></div></div>
+ <div class="intro"><div><p class="eyebrow">VISUAL / KNOWLEDGE GALAXY <span>01</span></p><h1 data-t="title">Ideas become stars.<br>Connections become constellations.</h1></div><p class="lede" data-t="intro">Follow a connection. Find a new perspective. A spatial view of our curated mathematics and physics atlas.</p></div>
+ <details class="page-provenance" data-edition="codex-galaxy-20261026-v1"><summary><span class="provenance-zh" lang="zh-CN">Codex 开发 · 改进版本</span><span class="provenance-en" lang="en">Developed with Codex · Revised edition</span></summary><p><span class="provenance-zh">3D 知识星图由 Codex 开发，保留原知识地图的内容与作者贡献。</span><span class="provenance-en">3D galaxy developed with Codex; the original atlas content and its contributors are retained.</span></p><p>codex-galaxy-20261026-v1 · <a id="source-revision" href="galaxy/provenance.json"><span class="provenance-zh">源码修订记录</span><span class="provenance-en">Source revision record</span></a></p></details>
+</header>
+<main>
+ <div class="map-heading"><h2 data-t="mapTitle">The connected universe</h2><p id="counts"></p></div>
+ <div class="workspace">
+  <section class="map-panel" aria-labelledby="scene-title">
+   <h3 id="scene-title" class="sr-only" data-t="mapTitle">The connected universe</h3>
+   <div class="scene" id="scene"><div id="labels" aria-hidden="true"></div><div class="scene-corner"><span class="live-dot"></span><span id="render-status" role="status"></span></div><div id="fallback" hidden><span class="fallback-symbol">✧</span><h3 data-t="fallbackTitle">The connections are still here.</h3><p data-t="fallbackBody">3D is unavailable or switched off. Explore every concept and its relationships in the list below.</p><a href="#explorer" data-t="browse">Browse concepts ↓</a></div><button id="touch-toggle" hidden></button></div>
+   <div class="toolbar" role="group" aria-label="Camera"><button id="zoom-in" data-t="zoomIn">＋ Zoom in</button><button id="zoom-out" data-t="zoomOut">− Zoom out</button><button id="focus" data-t="focus">Focus selected</button><button id="reset" data-t="reset">Reset view</button><button id="drift" aria-pressed="false" data-t="drift">Slow rotation</button></div>
+   <p class="interaction" data-t="help">Drag to rotate · right-drag to pan · Ctrl + scroll to zoom. Keyboard: arrows rotate, +/− zoom, 0 resets. Page scrolling stays free.</p>
+   <div class="legend" id="legend"></div>
+   <p class="semantics" data-t="semantics">Nearness approximates fewer graph connections, with a gentle topic grouping. This is conceptual similarity, not an exact universal metric. Equal planet sizes carry no importance or physical meaning.</p>
+   <details class="layout-notes"><summary data-t="layoutTitle">How to read this space</summary><p data-t="layoutBody">Each planet is a real atlas concept. Colors identify editorial topic groups. Lines are documented relationships; bright lines touch your selection, dashed amber lines trace a shortest connection path. Layout uses undirected shortest paths, treating all relationship types equally, then fits them approximately in 3D. Disconnected components are spaced apart. This is neither orbital physics nor a prerequisite sequence. Camera perspective changes apparent distance and size; use the hop count for an exact graph measure.</p></details>
+  </section>
+  <aside id="detail" aria-labelledby="detail-title"><p class="eyebrow" data-t="selected">SELECTED CONCEPT</p><div id="detail-content"></div></aside>
+ </div>
+ <section id="explorer" aria-labelledby="explore-title"><div class="explore-head"><div><p class="eyebrow" data-t="catalogue">YOUR NEXT CONNECTION</p><h2 id="explore-title" data-t="explore">Find your next idea</h2></div><button id="mode" aria-pressed="false" data-t="lowPower">Use low-power list</button><a id="map2d" href="./?view=graph" data-t="map2d">Open 2D atlas ↗</a></div><div class="filters"><label><span data-t="search">Find a concept</span><input id="search" type="search" autocomplete="off"></label><label><span data-t="group">Topic</span><select id="group"></select></label><p id="results-status" role="status"></p></div><div id="node-list"></div><p id="empty" hidden data-t="empty">No concepts match. Clear your search or choose all topics.</p></section>
+</main>
+<footer><p data-t="scope">A growing editorial atlas, not the whole of knowledge. All explanations and sources come from the existing atlas.</p><a href="../" data-t="index">Browse all learning pages →</a></footer>
+<noscript><p>JavaScript is required for the galaxy. / 星图需要 JavaScript。</p><a href="./?view=list">Open the existing atlas / 打开知识地图</a> · <a href="../fourier/#step1">Fourier lesson / 傅里叶课程</a></noscript>
+</div></body></html>
