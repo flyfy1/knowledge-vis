@@ -3649,6 +3649,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(m*n*(minProfit+1)) time; O(n*(minProfit+1)) auxiliary space"
   },
   {
+    "id": 882,
+    "title": {
+      "zh": "细分图中的可到达节点",
+      "en": "Reachable Nodes In Subdivided Graph"
+    },
+    "desc": {
+      "zh": "用最短距离与两端覆盖计数，避开巨大细分图。",
+      "en": "Count coverage from both ends using shortest distances, without expanding the graph."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "最短路径",
+        "en": "Shortest paths"
+      },
+      {
+        "zh": "图",
+        "en": "Graphs"
+      }
+    ],
+    "path": "882/",
+    "leetcodeUrl": "https://leetcode.com/problems/reachable-nodes-in-subdivided-graph/",
+    "language": "Python",
+    "complexity": "O(n + m log(n + 1)) time; O(n + m) space"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
