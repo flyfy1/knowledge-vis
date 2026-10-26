@@ -2161,3 +2161,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Discard invariant | `leetcode/1163/#step2` | A losing candidate and its certified prefix cannot return. |
 
 <!-- /leetcode-1163-campaign -->
+
+
+<!-- leetcode-1172-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Leftmost available stack | `leetcode/1172/#step1` | A min-heap selects the smallest non-full index. |
+| Rightmost non-empty stack | `leetcode/1172/#step1` | The list tail and cleanup expose the rightmost non-empty stack. |
+
+<!-- /leetcode-1172-campaign -->
