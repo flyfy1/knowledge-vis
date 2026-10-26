@@ -3,15 +3,15 @@
   "pages": {
     "atlas": {
       "developer": "Codex",
-      "edition": "codex-atlas-capacitor-rate-20261026",
+      "edition": "codex-atlas-volt-second-20261026",
       "kind": "revised",
-      "sourceRevision": "4791138bb6bf0e89dbb665c9268784e63b702216",
+      "sourceRevision": "4f1992891a6996c1aaffedb78053ad2b538ebc7d",
       "scope": {
-        "zh": "知识地图、实验路线与导数到电容变化率的学习连接",
-        "en": "Knowledge atlas, experiment routes and derivative-to-capacitor rate learning bridge"
+        "zh": "知识地图、实验路线与积分到电感伏秒平衡的学习连接",
+        "en": "Knowledge atlas, experiment routes and integral-to-inductor volt-second bridge"
       },
       "originalAuthorship": "not asserted; prior contributions retained",
-      "previousSourceRevision": "b653f3e7d8b6c8a0fd3f368b5e820e5c41396a6b"
+      "previousSourceRevision": "4791138bb6bf0e89dbb665c9268784e63b702216"
     },
     "complex-numbers": {
       "developer": "Codex",
@@ -181,15 +181,15 @@
     },
     "power-converters": {
       "developer": "Codex",
-      "edition": "codex-power-converters-capacitor-rate-20261026",
+      "edition": "codex-power-converters-volt-second-20261026",
       "kind": "revised",
-      "sourceRevision": "4791138bb6bf0e89dbb665c9268784e63b702216",
+      "sourceRevision": "4f1992891a6996c1aaffedb78053ad2b538ebc7d",
       "scope": {
-        "zh": "导通回路与储能可视化，以及同一电容轨迹的变化率实验",
-        "en": "Conducting-loop and energy visualization plus a same-trajectory capacitor-rate experiment"
+        "zh": "导通回路与电容变化率，以及同一Buck时刻的有符号伏秒实验",
+        "en": "Conducting loops and capacitor rates plus signed voltseconds at the same Buck inspect time"
       },
       "originalAuthorship": "Original lesson and quantitative model retained; original generator not asserted",
-      "previousSourceRevision": "24a3d727246b05697d6b2cb65125cd9fc771a0a0"
+      "previousSourceRevision": "4791138bb6bf0e89dbb665c9268784e63b702216"
     },
     "eigen": {
       "developer": "Codex",
@@ -204,17 +204,17 @@
     },
     "atlas/galaxy": {
       "developer": "Codex",
-      "edition": "codex-atlas-galaxy-capacitor-rate-20261026",
+      "edition": "codex-atlas-galaxy-volt-second-20261026",
       "kind": "revised",
-      "sourceRevision": "4791138bb6bf0e89dbb665c9268784e63b702216",
+      "sourceRevision": "4f1992891a6996c1aaffedb78053ad2b538ebc7d",
       "scope": {
-        "zh": "三维知识星图、任务入口与导数到电容的有据关系",
-        "en": "3D knowledge galaxy, task entries and sourced derivative-to-capacitor relation"
+        "zh": "三维知识星图、任务入口与积分到电感的有据关系",
+        "en": "3D knowledge galaxy, task entries and sourced integral-to-inductor relation"
       },
       "originalAuthorship": "existing atlas contributions retained; galaxy presentation developed with Codex",
       "path": "atlas/galaxy.html",
       "integrationRevision": "c3445f66a3e666acd557a04a7194c9568a383c35",
-      "previousSourceRevision": "b653f3e7d8b6c8a0fd3f368b5e820e5c41396a6b"
+      "previousSourceRevision": "4791138bb6bf0e89dbb665c9268784e63b702216"
     },
     "leetcode/42": {
       "developer": "Codex",
