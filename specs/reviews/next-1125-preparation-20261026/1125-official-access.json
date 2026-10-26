@@ -1,0 +1,76 @@
+{
+  "observedAt": "2026-10-26T15:34:35.035159+00:00",
+  "officialUrl": "https://leetcode.com/problems/smallest-sufficient-team/",
+  "requestMethod": "GET",
+  "requestUrl": "https://leetcode.com/graphql/?query=query+questionData%28%24titleSlug%3A+String%21%29+%7B+question%28titleSlug%3A+%24titleSlug%29+%7B+questionId+questionFrontendId+title+titleSlug+content+difficulty+isPaidOnly+exampleTestcases+sampleTestCase+metaData+codeSnippets+%7B+lang+langSlug+code+%7D+topicTags+%7B+name+slug+%7D+%7D+%7D&variables=%7B%22titleSlug%22%3A%22smallest-sufficient-team%22%7D&operationName=questionData",
+  "requestCount": 1,
+  "access": "ordinary public unauthenticated GraphQL; no bypass",
+  "httpStatus": 200,
+  "responseFile": "1125-official-response.json",
+  "responseSha256": "0c4775b86fc6609f755b109a004edc3dfaa97d3f9e72ccc4e52bd75af6fa7fab",
+  "responseBytes": 7234,
+  "frozenCatalogSnapshotAt": "2026-10-18T08:59:47.124517+00:00",
+  "catalogSegment": [
+    {
+      "id": 1095,
+      "slug": "find-in-mountain-array",
+      "title": "Find in Mountain Array",
+      "paidOnly": false,
+      "officialUrl": "https://leetcode.com/problems/find-in-mountain-array/",
+      "categories": [
+        "algorithms"
+      ]
+    },
+    {
+      "id": 1096,
+      "slug": "brace-expansion-ii",
+      "title": "Brace Expansion II",
+      "paidOnly": false,
+      "officialUrl": "https://leetcode.com/problems/brace-expansion-ii/",
+      "categories": [
+        "algorithms"
+      ]
+    },
+    {
+      "id": 1097,
+      "slug": "game-play-analysis-v",
+      "title": "Game Play Analysis V",
+      "paidOnly": true,
+      "officialUrl": "https://leetcode.com/problems/game-play-analysis-v/",
+      "categories": [
+        "database",
+        "pandas"
+      ]
+    },
+    {
+      "id": 1106,
+      "slug": "parsing-a-boolean-expression",
+      "title": "Parsing A Boolean Expression",
+      "paidOnly": false,
+      "officialUrl": "https://leetcode.com/problems/parsing-a-boolean-expression/",
+      "categories": [
+        "algorithms"
+      ]
+    },
+    {
+      "id": 1121,
+      "slug": "divide-array-into-increasing-sequences",
+      "title": "Divide Array Into Increasing Sequences",
+      "paidOnly": true,
+      "officialUrl": "https://leetcode.com/problems/divide-array-into-increasing-sequences/",
+      "categories": [
+        "algorithms"
+      ]
+    },
+    {
+      "id": 1125,
+      "slug": "smallest-sufficient-team",
+      "title": "Smallest Sufficient Team",
+      "paidOnly": false,
+      "officialUrl": "https://leetcode.com/problems/smallest-sufficient-team/",
+      "categories": [
+        "algorithms"
+      ]
+    }
+  ]
+}
