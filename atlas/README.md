@@ -4,11 +4,14 @@ Start with [WORKFLOW](../WORKFLOW.md), [UI/bilingual policy](../UI-I18N-SPEC.md)
 
 ## Current state
 
-- **Reading one representation relationship:** existing sine→harmonic-motion relation now offers novice meaning, optional starting lesson and the existing free-projection experiment, preserving original graph/conditions/sources. [Contract](../specs/atlas-relation-reading.md). Separate candidate from the frozen39905de2 pending package.
+- **Derivative → capacitor rate:** one sourced application relation and a two-station `charge` route; the original capacitor pulse model drives an explicit latest-interval rise/run view. Counts38/49/12. [Contract](../specs/atlas-capacitor-rate.md), [evidence](../specs/reviews/atlas-capacitor-rate-20261026/verification.md). Publication is separate; consult visual-release.json. Previous signal/connector/reading package227f37b6 was installed at origin; public verification hit Cloudflare403/1010.
 
-- **Galaxy to signal tasks:** related concept cards keep their direct lessons and offer the matching existing signal-route station, with Galaxy/Atlas locale and Back context. [Connector contract](../specs/galaxy-signal-connector.md); local candidate, publication separately coordinated.
 
-- **Current iteration (38concepts/48relations/11routes):** one signal-fingerprint route connects existing LTI, impulse, convolution and discrete frequency-response experiments with per-station tasks and a sourced representation relation. [Spec](../specs/atlas-signal-path.md). This candidate is not yet a production release; use `/visual-release.json` for actual published status.
+- **Reading one representation relationship:** existing sine→harmonic-motion relation now offers novice meaning, optional starting lesson and the existing free-projection experiment, preserving original graph/conditions/sources. [Contract](../specs/atlas-relation-reading.md). Included in installed origin release227f37b6; public verification remains blocked by Cloudflare403/1010.
+
+- **Galaxy to signal tasks:** related concept cards keep their direct lessons and offer the matching existing signal-route station, with Galaxy/Atlas locale and Back context. [Connector contract](../specs/galaxy-signal-connector.md); Included in installed origin release227f37b6; public verification remains separate.
+
+- **Current iteration (38concepts/48relations/11routes):** one signal-fingerprint route connects existing LTI, impulse, convolution and discrete frequency-response experiments with per-station tasks and a sourced representation relation. [Spec](../specs/atlas-signal-path.md). Included in origin release227f37b6; public manifest access from the verifier remains403/1010. Use `/visual-release.json` where accessible for actual published status.
 
 - **Historical first production release:**accepted mathematics/physics and signal resources were published to https://visual.integ.life under `visual-20261026T000401Z-c960509c493a`. [Release record](../specs/reviews/visual-release-20261026.md). That historical release excluded unfinished power work; later accepted power/galaxy/LTI releases supersede it. This bullet is not the current production version.
 

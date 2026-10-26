@@ -1,0 +1,15 @@
+# Capacitor rate — independent bounded science/code review
+
+**PASS; remaining must-fix:0.** Reviewed `/tmp/knowledge-vis-atlas-capacitor-rate-20261026` against227f37b6, limited to the new edge/charge tasks, capacitor-only host/update hook, `updateCapacitorRate`, scoped CSS and spec. No browser or product edits. Actual visual/keyboard/cold-walk results belong to their operators, not this review.
+
+The calculation uses the last two existing voltage endpoints: Δv/0.0005s, then i=100e−6F×slope. The ±0.1V changes give ±200V/s and ±20mA. The local plot starts at relative Δv=0, uses fixed time/Δv scales, and maps positive rise upward/negative rise downward. Zero rise omits the vertical dashed segment; its flat voltage may be nonzero. Initial/reset state has no invented interval or derivative reading. Crossing zero retains signed voltage/current, and the note correctly avoids equating negative current with energy release in every state.
+
+The piecewise-constant-current model makes the finite interval slope equal to the interior voltage derivative; general finite secants are average rates. Constant positive ideal capacitance and the passive current convention bound i=C dv/dt. The text separates x² from v(t), keeps the finite-difference example approximate, disclaims parameter transfer/forced-reload sequence preservation, and does not turn an application arrow into a prerequisite.
+
+Own evidence (`capacitor-rate-review-probe-20261026.cjs` / `.json`):9,841 pulse-sequence prefixes through length8 independently agree with accumulated signed charge Q/C and current/C slopes. Six actual-renderer VM cases cover initial, positive, zero at nonzero voltage, negative, cross-zero and negative-voltage intervals; reset removes the old diagram and rendering does not mutate endpoints. These are numerical/string/geometry checks, not browser pixels or learning outcomes. An initial syntax typo in the reviewer's one-off probe was corrected before this passing execution; it was not a product failure.
+
+Independently confirmed model.js, shared plot(), converterPanel and the entire app suffix starting at updateSwitch (including Buck/Boost and existing lifecycle handlers) byte-identical to227f37b6. The hook runs only for capacitor; existing render/locale/resize paths redraw it from the same array, pulse/reset/16-limit ownership remains unchanged, and no new store/timer/clock/API was added. Graph counts are38nodes/49edges/12routes, with exactly the intended application edge and two-stop charge route.
+
+Sources8.1/9.1 are linked for Q=CV/current=dQ/dt; this review derives their combination but does not claim a fresh full-text source audit. Optional copy precision: explicitly say “voltage has no two-sided derivative at a genuine current jump”, so the grammatical subject cannot be mistaken for current's own derivative. Current context is scientifically coherent; this is not a blocker.
+
+No expansion or new implementation is requested. JSON records the final probed source hashes; browser layout/focus, actual route Back and native pulse interactions remain the separate UI acceptance scope.

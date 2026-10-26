@@ -61,6 +61,7 @@
       edge('net-force','work-energy','application','把净功联系到动能变化','connects net work with kinetic change','本例重力与支持力都不做功，弹簧力做功即物块净功。换系统或添加阻尼/驱动后，不能把单个力的功直接等同净功，也不能照搬本例机械能守恒。','Here weight and support do zero work, so spring work is the block’s net work. In another system or with damping/driving, one force’s work is not generally net work, and this mechanical-energy conservation statement does not transfer automatically.','https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem'),
 
       edge('integral','oscillation','application','累加往返的位移','accumulates signed travel','本振子往返一周回到同一位置，正负速度贡献抵消，位移为零；路程为4A。交换积分限使有向积分变号，按时间先后的路程仍非负。','One oscillator cycle returns to the same position: opposite velocity contributions cancel, giving zero displacement but distance4A. Reversing limits changes an oriented integral’s sign; chronological path length remains nonnegative.','https://openstax.org/books/calculus-volume-1/pages/5-2-the-definite-integral'),
+      edge('derivative','capacitor','application','把电流读成电压变化率','reads current as voltage rate','对恒定理想电容，q=Cv且i=dq/dt，所以i=C·dv/dt；电流流入电压标正的端子。零电流保持已有电压；这不是漏电或电阻充电模型，也不是必修顺序。','For constant ideal capacitance, q=Cv and i=dq/dt give i=C·dv/dt, with current entering the voltage-positive terminal. Zero current preserves existing voltage; this is not leakage or resistive charging, nor a mandatory learning order.','https://openstax.org/books/university-physics-volume-2/pages/9-1-electrical-current'),
       edge('derivative','oscillation','representation','描述运动的变化率','describes motion rates','本振子的可微位置 x(t) 给出 v=dx/dt、a=dv/dt；有方向的速度可以为负，速率是 |v|。微分描述运动，不是产生运动的物理原因。','For this oscillator, v=dx/dt and a=dv/dt. Signed velocity can be negative; speed is |v|. Differentiation describes motion rather than causing it.','../derivative/#step0'),
       edge('oscillation','net-force','application','用净力决定加速度','links net force to acceleration','本水平无摩擦弹簧模型中，竖直重力与支持力抵消，水平合外力为 −kx=ma。不能把单个弹簧力在其他系统中也当作净力。','In this horizontal frictionless spring model, weight and support cancel vertically; horizontal net force is −kx=ma. A single spring force is not generally the net force in other systems.','https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law'),
       edge("power","inductor","foundation","解释储能","explains storage","电压与电流的乘积是流入电感的功率，积分得到磁场储能变化。","Voltage times current is power entering the inductor; integration gives the magnetic-energy change.","../power-converters/#step1"),
@@ -127,6 +128,75 @@
       edge('convolution','gaussian','connection','描述独立变量相加的分布','describes distributions of independent sums','独立随机变量之和的分布由卷积给出；反复相加后的正态近似需满足中心极限定理的条件。','Convolution gives the distribution of a sum of independent random variables; a normal approximation after repeated sums requires central-limit conditions.','../clt/#step5')
     ],
     trails: [
+{
+  "id": "charge",
+  "background": [
+    "derivative",
+    "capacitor"
+  ],
+  "title": {
+    "zh": "电流为零，电压为何还在？",
+    "en": "Zero current: why does voltage remain?"
+  },
+  "nodes": [
+    "derivative",
+    "capacitor"
+  ],
+  "stationTasks": [
+    {
+      "node": "derivative",
+      "question": {
+        "zh": "曲线的高度，等于它的变化率吗？",
+        "en": "Is a curve’s height the same as its rate of change?"
+      },
+      "action": {
+        "zh": "打开导数第2步，把P点横坐标x设为−1、0、1，对比y=x²的切线与导数图。",
+        "en": "Open derivative step2. Set probe x to−1,0,1 and compare the tangent to y=x² with its derivative plot."
+      },
+      "observe": {
+        "zh": "y分别为1、0、1，解析斜率分别是−2、0、2；同样高度也可以一边下降、一边上升。数值差商是近似值，不冒充解析等式。",
+        "en": "Heights are1,0,1, while analytic slopes are−2,0,2. Equal height can accompany falling or rising. The numeric finite-difference readout is approximate, not an exact analytic equality."
+      },
+      "bridge": {
+        "zh": "下一站换成电压v对时间t的曲线，不传递x²参数。斜率单位变为V/s，理想电容电流等于电容量乘这个变化率。",
+        "en": "Next change examples to voltage v versus time t; x² parameters are not transferred. Slope has unitsV/s, and ideal capacitor current equals capacitance times this rate."
+      },
+      "href": "../derivative/#step2",
+      "evidenceEdge": "derivative:capacitor",
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/9-1-electrical-current",
+      "evidenceLabel": {
+        "zh": "OpenStax9.1 · 电流是电荷变化率 ↗",
+        "en": "OpenStax9.1 · current is charge rate ↗"
+      }
+    },
+    {
+      "node": "capacitor",
+      "question": {
+        "zh": "不再流入电荷，电压会消失吗？",
+        "en": "If charge stops arriving, does voltage disappear?"
+      },
+      "action": {
+        "zh": "先重置电容，再依次按两次+20mA、一次0mA、一次−20mA。对比完整电压曲线与“最后一个区间”的横向时间、纵向Δv。",
+        "en": "Reset the capacitor, then press+20mA twice,0mA once and−20mA once. Compare the full voltage trace with the last interval’s horizontal time and vertical Δv."
+      },
+      "observe": {
+        "zh": "C=100µF、每段0.5ms：电压0→0.1→0.2→0.2→0.1V。三种电流对应段内斜率+200、0、−200V/s。零电流留下0.2V；负电流可继续使带符号电压穿过零点。",
+        "en": "At C=100µF and0.5ms per interval: voltage goes0→0.1→0.2→0.2→0.1V. The three currents give within-segment slopes+200,0,−200V/s. Zero current leaves0.2V; negative current can take signed voltage throughzero."
+      },
+      "bridge": {
+        "zh": "由q=Cv与i=dq/dt得到i=C·dv/dt。本模型每段恒流，所以区间斜率恰等段内导数；电流真正跳变处电压没有双侧导数。新文档重载会重置脉冲；返回地图保留站点。",
+        "en": "q=Cv and i=dq/dt give i=C·dv/dt. Each segment has constant current, so its interval slope equals the interior derivative; at a true current jump voltage has no two-sided derivative. New-document reload resets pulses; Back retains the Atlas station."
+      },
+      "href": "../power-converters/#step2",
+      "evidenceEdge": "derivative:capacitor",
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/8-1-capacitors-and-capacitance",
+      "evidenceLabel": {
+        "zh": "OpenStax8.1 · 电荷q=Cv ↗",
+        "en": "OpenStax8.1 · charge q=Cv ↗"
+      }
+    }
+  ]
+},
       {
         "id": "signal",
         "background": [

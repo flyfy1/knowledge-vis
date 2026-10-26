@@ -52,3 +52,7 @@ trail, retaining direct lessons. Read [connector contract](../../specs/galaxy-si
 before changing links/locale/Back behavior. No new graph or renderer is introduced.
 The old integration.patch is historical handover material; do not reapply it over
 the integrated Atlas. Current production status comes from visual-release.json.
+
+## Capacitor-rate graph increment
+
+The canonical graph now includes one derivative→capacitor application relation and a two-stop charge route (38/49/12). Galaxy uses the same graph, not inferred prerequisite order. Its renderer/layout/camera remain unchanged. See [contract](../../specs/atlas-capacitor-rate.md); current provenance records point to the actual accepted source revision.
