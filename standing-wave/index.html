@@ -159,28 +159,35 @@
 <canvas id="s2-canvas" height="300" data-i18n-aria="canvasLabel" role="img">
 </canvas>
 </div>
+<p class="hint" data-i18n="boundaryLegend"></p>
 <div class="controls">
 <label>
 <span data-i18n="lenLab">
 </span>
 <input id="s2-len" type="range" min="3" max="8" step="0.1" value="6">
 </label>
-<label>
+<label for="s2-lam">
 <span data-i18n="lamLab">
 </span>
-<input id="s2-lam" type="range" min="2" max="14" step="0.05" value="4">
+<input id="s2-lam" type="range" min="2" max="14" step="any" value="4">
 </label>
 </div>
+<output id="s2-lam-value" for="s2-lam" aria-live="off"></output>
 <div class="btn-row">
+<button type="button" class="btn big" id="s2-near" data-i18n="boundaryNear"></button>
+<button type="button" class="btn big" id="s2-reset" data-i18n="boundaryReset"></button>
 <button type="button" class="btn big" id="s2-snap" data-i18n="btnSnap">
 </button>
 <button type="button" class="btn big" id="s2-play" data-i18n="pause">
 </button>
 </div>
-<p class="readout" id="s2-readout" aria-live="polite">
+<p class="hint" data-i18n="boundaryTask"></p>
+<p class="readout" id="s2-endpoint"></p>
+<p class="readout" id="s2-readout">
 </p>
-<p class="readout" id="s2-state" aria-live="polite">
+<p class="readout" id="s2-state">
 </p>
+<p class="hint" data-i18n="boundaryScope"></p><div class="boundary-links"><a href="https://openstax.org/books/university-physics-volume-1/pages/16-6-standing-waves-and-resonance" data-i18n="boundarySource"></a><a href="../interference/#step3" data-i18n="boundaryPhase"></a></div>
 </div>
 </section>
 <section class="step" id="step3" data-step="3">

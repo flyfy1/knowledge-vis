@@ -6,6 +6,8 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Strict fixed-end standing-wave modes](standing-boundary.md): incompatible near-mode trials, whole-cycle endpoint envelope, exact snap/control agreement and original S2 model.
+
 - [Same-point interference phase comparison](interference-phase.md): signed arrival phase, strict nonzero/cancellation distinction, existing-curve comparison and sourced graph entry.
 
 - [Spring potential, force and phase](atlas-spring-potential.md): same-clock U–x slope, restoring-force direction and instantaneous K/U in the existing work experiment.
