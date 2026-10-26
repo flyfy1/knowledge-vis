@@ -53,3 +53,5 @@ LTI S2 audio adds the21st evidenced revised edition, source78c9aaab96d0cee3efde3
 Atlas signal-route revision refreshes the existing Atlas record to97c65af4a90e0dd86914f50750ec3bd44f8f40ba, retaining earlier atlas/3D/eigen contributions. The inventory stays21; no unrelated page is relabelled. [Route spec](atlas-signal-path.md) and its evidence identify this bounded revision.
 
 The Galaxy→signal connector refreshes Atlas and Galaxy toaf4141a8d81f76e21c38ac9f5d9cc58e37ed9a78 with matching scoped editions. Original3D and integration links are retained; inventory remains21. Feature metadata directs publication checks to visual-release.json instead of retaining a stale worker deployment assertion. See [connector spec](galaxy-signal-connector.md).
+
+The existing sine→harmonic-motion reading revision refreshes Atlas/Galaxy tob653f3e7d8b6c8a0fd3f368b5e820e5c41396a6b. Inventory remains21; previous count/status paragraphs are historical, while JSON/static headers and visual-release.json respectively govern current source/publication. [Reading contract](atlas-relation-reading.md). The frozen39905de2 release package is not modified or implicitly expanded by this revision.
