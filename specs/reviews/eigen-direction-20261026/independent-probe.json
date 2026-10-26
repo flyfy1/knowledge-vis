@@ -1,0 +1,110 @@
+{
+  "pass": true,
+  "cases": 1323,
+  "maxRelativeDistanceError": 2.979040983896728e-16,
+  "maxRelativeOrthogonalityError": 4.525683768087154e-16,
+  "golden": {
+    "positive": {
+      "Av": [
+        3,
+        3
+      ],
+      "ang": 0,
+      "signed": 2.9999999999999996,
+      "scale": 3,
+      "projection": [
+        2.9999999999999996,
+        2.9999999999999996
+      ],
+      "residual": [
+        4.440892098500626e-16,
+        4.440892098500626e-16
+      ],
+      "residualNorm": 6.280369834735101e-16,
+      "tolerance": 6.355287432313019e-14,
+      "numericallyAligned": true
+    },
+    "negative": {
+      "Av": [
+        1,
+        -1
+      ],
+      "ang": 0,
+      "signed": -0.9999999999999999,
+      "scale": 1,
+      "projection": [
+        0.9999999999999999,
+        -0.9999999999999999
+      ],
+      "residual": [
+        1.1102230246251565e-16,
+        -1.1102230246251565e-16
+      ],
+      "residualNorm": 1.5700924586837752e-16,
+      "tolerance": 4.4938668397781776e-14,
+      "numericallyAligned": true
+    },
+    "near": {
+      "Av": [
+        2.115068977753883,
+        2.1274101626082143
+      ],
+      "ang": 0.3333295725289738,
+      "signed": 2.999847695156391,
+      "scale": 2.999898461719257,
+      "projection": [
+        2.1026210410236694,
+        2.1396427159644325
+      ],
+      "residual": [
+        0.012447936730213716,
+        -0.012232553356218201
+      ],
+      "residualNorm": 0.017452406437283338,
+      "tolerance": 4.4938668397781776e-14,
+      "numericallyAligned": false
+    },
+    "zero": {
+      "Av": [
+        0,
+        0
+      ],
+      "ang": null,
+      "signed": 0,
+      "scale": 0,
+      "projection": [
+        0,
+        0
+      ],
+      "residual": [
+        0,
+        0
+      ],
+      "residualNorm": 0,
+      "tolerance": 1.4210854715202004e-14,
+      "numericallyAligned": true
+    },
+    "perpendicular": {
+      "Av": [
+        0,
+        1
+      ],
+      "ang": 90,
+      "signed": 0,
+      "scale": 1,
+      "projection": [
+        0,
+        0
+      ],
+      "residual": [
+        0,
+        1
+      ],
+      "residualNorm": 1,
+      "tolerance": 2.0097183471152322e-14,
+      "numericallyAligned": false
+    }
+  },
+  "sourceSHA256": "c9b8618432ece2eea6913ada14dff2f727f635e4061c84434a4b6847147d850c",
+  "method": "Independent actual directionProbe versus 2D determinant distance, golden algebra and scale-aware orthogonality; no Chrome/full-site test."
+}

@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "checks": [
+    "zh/320: visual remainder, signed eigenvalues, near feedback, off-grid, keyboard/touch, locale/refit/reset",
+    "en/320: visual remainder, signed eigenvalues, near feedback, off-grid, keyboard/touch, locale/refit/reset",
+    "zh/390: visual remainder, signed eigenvalues, near feedback, off-grid, keyboard/touch, locale/refit/reset",
+    "en/390: visual remainder, signed eigenvalues, near feedback, off-grid, keyboard/touch, locale/refit/reset",
+    "zh/1280: visual remainder, signed eigenvalues, near feedback, off-grid, keyboard/touch, locale/refit/reset",
+    "en/1280: visual remainder, signed eigenvalues, near feedback, off-grid, keyboard/touch, locale/refit/reset"
+  ],
+  "graphSourceAndBack": true,
+  "keyboard200Percent": true,
+  "errors": [],
+  "failures": [],
+  "physicalDevice": false
+}

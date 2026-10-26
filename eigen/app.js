@@ -28,11 +28,12 @@ const $ = id => document.getElementById(id);
    ================================================================ */
 function fitCanvas(cv) {
   const dpr = Math.min(window.devicePixelRatio || 1, 3);
-  if (cv.dataset.cssH === undefined) {
+  const responsiveHeight = cv.hasAttribute('data-responsive-height');
+  if (!responsiveHeight && cv.dataset.cssH === undefined) {
     const hAttr = parseInt(cv.getAttribute('height'), 10);
     cv.dataset.cssH = hAttr ? String(hAttr) : '';
   }
-  if (cv.dataset.cssH) cv.style.height = cv.dataset.cssH + 'px';
+  if (!responsiveHeight && cv.dataset.cssH) cv.style.height = cv.dataset.cssH + 'px';
   const w = cv.clientWidth;
   const h = cv.clientHeight || parseInt(cv.dataset.cssH || '0', 10);
   const bw = Math.max(2, Math.round(w * dpr));
@@ -136,6 +137,22 @@ function dirAngleDeg(a, b) {
   const d = dot(unit(a), unit(b));
   return Math.acos(clamp(d, -1, 1)) * 180 / Math.PI;
 }
+/* DIRECTION-PROBE-BEGIN: same vector primitives as the existing course. */
+function directionProbe(A, v) {
+  if (!Array.isArray(A) || A.length !== 2 || A.some(row => !Array.isArray(row) || row.length !== 2 || row.some(x => !Number.isFinite(x))) || !Array.isArray(v) || v.length !== 2 || v.some(x => !Number.isFinite(x))) throw new TypeError('Finite 2x2 matrix and vector required');
+  const length = norm(v);
+  if (!(length > 0) || !Number.isFinite(length)) throw new RangeError('A finite nonzero input vector is required');
+  const Av = matVec(A, v), imageLength = norm(Av), u = [v[0] / length, v[1] / length];
+  const signed = dot(u, Av) / length;
+  const projection = [signed * v[0], signed * v[1]];
+  const residual = [Av[0] - projection[0], Av[1] - projection[1]], residualNorm = norm(residual);
+  const matrixBound = Math.hypot(...A[0], ...A[1]) * length;
+  if (![...Av, imageLength, signed, ...projection, ...residual, residualNorm, matrixBound].every(Number.isFinite)) throw new RangeError('Derived values exceed the supported finite range');
+  const tolerance = 64 * Number.EPSILON * matrixBound;
+  const ang = imageLength === 0 ? null : Math.atan2(Math.abs(u[0] * Av[1] - u[1] * Av[0]), Math.abs(dot(u, Av))) * 180 / Math.PI;
+  return { Av, ang, signed, scale: imageLength / length, projection, residual, residualNorm, tolerance, numericallyAligned: residualNorm <= tolerance };
+}
+/* DIRECTION-PROBE-END */
 const DELTA_TOL = 1e-9;
 function eig(A) {
   const a = A[0][0], b = A[0][1], c = A[1][0], d = A[1][1];
@@ -410,18 +427,26 @@ const S1 = (() => {
     [[0.5, 1.5], [1.5, 0.5]]
   ];
   let A = PRESETS[0], E = eig(A);
-  let v = unit([1, 0.35]);
+  let angleDeg = 20;
+  let v = [Math.cos(angleDeg * Math.PI / 180), Math.sin(angleDeg * Math.PI / 180)];
   const cv = $('s1-canvas'), ctx = ctxOf('s1-canvas');
   const plot = makePlot(cv, 3.4);
   const cvc = $('s1-curve'), ctxc = ctxOf('s1-curve');
 
-  function metrics() {
-    const Av = matVec(A, v);
-    const ang = lineAngleDeg(v, Av);
-    const signed = dot(v, Av) / dot(v, v);
-    const scale = norm(Av) / norm(v);
-    const thDeg = Math.atan2(v[1], v[0]) * 180 / Math.PI;
-    return { Av, ang, signed, scale, thDeg };
+  function metrics() { return { ...directionProbe(A, v), thDeg: angleDeg, curveDeg: ((angleDeg % 180) + 180) % 180 }; }
+  function setAngle(degrees) {
+    if (!Number.isFinite(degrees)) return;
+    angleDeg = clamp(degrees, 0, 360);
+    const rad = angleDeg * Math.PI / 180;
+    v = [Math.cos(rad), Math.sin(rad)];
+    draw();
+  }
+  function directionKey(e) {
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    const step = e.shiftKey ? 1 : .1;
+    const next = e.key === 'ArrowLeft' || e.key === 'ArrowDown' ? angleDeg - step : e.key === 'ArrowRight' || e.key === 'ArrowUp' ? angleDeg + step : e.key === 'Home' ? 0 : e.key === 'End' ? 360 : null;
+    if (next === null) return;
+    e.preventDefault(); setAngle(Math.max(0, Math.min(360, next)));
   }
   function draw() {
     const m = metrics();
@@ -429,9 +454,12 @@ const S1 = (() => {
     /* 单位圆参照 */
     ctx.strokeStyle = 'rgba(154,167,184,0.35)'; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.arc(plot.X(0), plot.Y(0), (plot.X(1) - plot.X(0)), 0, Math.PI * 2); ctx.stroke();
-    /* 特征方向线 */
-    if (E.v1) plot.lineDir(ctx, E.v1, 'rgba(255,180,84,0.5)', 1.5, [6, 5]);
-    if (E.v2) plot.lineDir(ctx, E.v2, 'rgba(255,122,147,0.5)', 1.5, [6, 5]);
+    /* Input line and the transverse remainder, not a second origin-based vector. */
+    plot.lineDir(ctx, v, C_FAINT, 1.5, [4, 5]);
+    if (!m.numericallyAligned) {
+      plot.line(ctx, m.projection, m.Av, C_PINK, 3);
+      plot.dot(ctx, m.projection, 3, C_PINK);
+    }
     plot.arrow(ctx, [0, 0], m.Av, C_ORANGE, 3);
     plot.arrow(ctx, [0, 0], v, C_CYAN, 3);
     plot.dot(ctx, v, 5, C_CYAN);
@@ -443,24 +471,20 @@ const S1 = (() => {
     ctx.textAlign = avx > cv._w - 60 ? 'right' : 'left';
     ctx.fillText(t('cv1av'), avx + (avx > cv._w - 60 ? -10 : 10), avy - 10);
     drawCurve(m);
-    /* 读数 */
+    /* The same state owns native input, drawing and rounded descriptive readouts. */
+    $('s1-angle').value = String(angleDeg);
+    $('s1-angle-value').textContent = 'θ ≈ ' + fmt(angleDeg, 1) + '°';
+    $('s1-angle').setAttribute('aria-valuetext', t('s1angleValue', { th: fmt(angleDeg, 1) }));
+    cv.setAttribute('aria-label', t('s1canvas'));
+    const residualText = m.residualNorm === 0 ? '0' : m.residualNorm.toExponential(3);
     $('s1-readout').innerHTML = t('s1ro', {
-      th: fmtS(m.thDeg, 1), ang: fmtS(m.ang, 2), sc: fmtS(m.scale, 3), lam: fmtS(m.signed, 3)
+      th: fmtS(m.thDeg, 1), ang: m.ang === null ? '—' : fmtS(m.ang, 3), sc: fmtS(m.scale, 3), lam: fmtS(m.signed, 5), res: residualText
     });
     const found = $('s1-found');
-    if (m.ang < 1) {
-      found.style.display = '';
-      found.innerHTML = t('s1found', {
-        lam: fmtS(m.signed, 3),
-        flip: m.signed < 0 ? t('s1flip') : ''
-      });
-      found.classList.remove('found-flash'); void found.offsetWidth; found.classList.add('found-flash');
-    } else if (m.ang < 4) {
-      found.style.display = '';
-      found.innerHTML = t('s1near');
-    } else {
-      found.style.display = 'none';
-    }
+    found.style.display = '';
+    found.dataset.classification = m.numericallyAligned ? 'numerical' : m.ang !== null && m.ang < 1 ? 'near' : 'off-line';
+    found.textContent = t(m.numericallyAligned ? 's1exact' : m.ang !== null && m.ang < 1 ? 's1found' : 's1near', { lam: fmt(m.signed, 5) });
+    document.querySelectorAll('#s1-presets .btn').forEach((button, i) => button.setAttribute('aria-pressed', String(A === PRESETS[i])));
   }
   function drawCurve(m) {
     const w = cvc._w, h = cvc._h;
@@ -476,12 +500,15 @@ const S1 = (() => {
     /* 曲线 */
     ctxc.strokeStyle = C_CYAN; ctxc.lineWidth = 1.8;
     ctxc.beginPath();
+    let pen = false;
     for (let i = 0; i <= 180; i++) {
       const th = i * Math.PI / 180;
       const u = [Math.cos(th), Math.sin(th)];
-      const a = lineAngleDeg(u, matVec(A, u));
+      const a = directionProbe(A, u).ang;
+      if (a === null) { pen = false; continue; }
       const px = X(i), py = Y(a);
-      if (i === 0) ctxc.moveTo(px, py); else ctxc.lineTo(px, py);
+      if (!pen) ctxc.moveTo(px, py); else ctxc.lineTo(px, py);
+      pen = true;
     }
     ctxc.stroke();
     /* 零点标记（特征方向，折到 [0,180)） */
@@ -495,25 +522,23 @@ const S1 = (() => {
     ctxc.font = '11.5px system-ui, sans-serif'; ctxc.fillStyle = C_ORANGE; ctxc.textAlign = 'right';
     ctxc.fillText(t('cv1zero'), w - padR, 12);
     /* 当前 θ 亮点 */
-    let th = m.thDeg; if (th < 0) th += 180; if (th >= 180) th -= 180;
+    const th = m.curveDeg;
     ctxc.fillStyle = '#fff';
-    ctxc.beginPath(); ctxc.arc(X(th), Y(m.ang), 4.5, 0, Math.PI * 2); ctxc.fill();
+    if (m.ang !== null) { ctxc.beginPath(); ctxc.arc(X(th), Y(m.ang), 4.5, 0, Math.PI * 2); ctxc.fill(); }
   }
   pointerDrag(cv, ([px, py]) => {
     const dx = plot.invX(px), dy = plot.invY(py);
     if (Math.hypot(dx, dy) < 0.15) return;
-    v = unit([dx, dy]);
-    draw();
+    const deg = Math.atan2(dy, dx) * 180 / Math.PI;
+    setAngle(deg < 0 ? deg + 360 : deg);
   });
-  cv.addEventListener('keydown', e => {
-    const step = e.shiftKey ? 0.02 : 0.08;
-    let th = Math.atan2(v[1], v[0]);
-    if (e.key === 'ArrowLeft') th += step;
-    else if (e.key === 'ArrowRight') th -= step;
-    else return;
-    e.preventDefault();
-    v = [Math.cos(th), Math.sin(th)];
-    draw();
+  cv.addEventListener('keydown', directionKey);
+  $('s1-angle').addEventListener('input', e => setAngle(Number(e.target.value)));
+  $('s1-angle').addEventListener('keydown', directionKey);
+  $('s1-reset').addEventListener('click', () => {
+    A = PRESETS[0]; E = eig(A);
+    document.querySelectorAll('#s1-presets .btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+    setAngle(20);
   });
   document.querySelectorAll('#s1-presets .btn').forEach(b => {
     b.addEventListener('click', () => {
@@ -1240,7 +1265,7 @@ const S6 = (() => {
    window.EIGEN — 评审对账接口（全部走与页面相同的实现）
    ================================================================ */
 window.EIGEN = {
-  eig, matVec, matMul, transpose, dot, norm, unit, lineAngleDeg, dirAngleDeg,
+  eig, matVec, matMul, transpose, dot, norm, unit, lineAngleDeg, dirAngleDeg, directionProbe,
   powerIter,
   mulberry32, polarGauss,
   s0: S0, s1: S1, s2: S2, s3: S3, s4: S4, s5: S5, s6: S6,

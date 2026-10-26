@@ -1,0 +1,26 @@
+{
+  "baseline": "93346e21e375bda4f27ef545dd788586bf8ae58f",
+  "files": {
+    "eigen/app.js": "564d2b1d0320404d59d55f553292854e213b3aa33b8817e36a2310cedb23d9a8",
+    "eigen/i18n.js": "38f04ec91293f0574814cac2e74dc032f80e11e3bd0764c66a9e9bbd99821cc9",
+    "eigen/index.html": "0da9ed27a1c0cf583b947c0eeedfbd0589877cd8b98ca9c6a7510f39bfb9fff2",
+    "eigen/style.css": "88e72e4a3ad5ebda5d32660236606ce3134c575fa36950a61c091c7b3d6615ba",
+    "atlas/data.js": "d0385c0f8e61449903f9e3ae84d6c714a52e42df9d66b743fbe507d2a3b01679"
+  },
+  "independentDefault45_5": {
+    "v": [
+      0.7009092642998509,
+      0.7132504491541816
+    ],
+    "Av": [
+      2.115068977753883,
+      2.1274101626082143
+    ],
+    "projection": 2.999847695156391,
+    "residualNorm": 0.017452406437283338,
+    "lineAngleDegrees": 0.33332957252897677,
+    "oldFoundCriterion": true,
+    "actuallyCollinear": false
+  },
+  "method": "Read-only baseline and independent direct2x2 arithmetic; no Chrome."
+}
