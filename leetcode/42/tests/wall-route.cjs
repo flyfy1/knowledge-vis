@@ -20,7 +20,7 @@ const output=process.env.LESSON_TEST_OUTPUT_DIR || path.join(__dirname,'evidence
   }
   await page.evaluate(()=>scrollTo(0,0));
   await page.screenshot({path:path.join(output,'zh-1440-header.png')});
-  assert.equal(await page.locator('[data-i18n="wallCredit"]').innerText(),'Codex 开发');
+  assert.match(await page.locator('.page-provenance summary').innerText(),/Codex 开发/);
   await browser.close();
   const result={route:'/leetcode/42-codex/?wall=proof#wall-lab',redirectQueryHash:'passed',runtimeByteParity:files,visibleCodex:'passed'};
   fs.writeFileSync(path.join(output,'route-results.json'),JSON.stringify(result,null,2)+'\n');

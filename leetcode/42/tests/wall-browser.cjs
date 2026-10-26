@@ -10,14 +10,15 @@ const route = process.env.LESSON_ROUTE || '/leetcode/42/';
 (async () => {
   const browser = await chromium.launch({headless:true, executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});
   const errors = [], results = [];
+  try {
   for (const lang of ['zh','en']) {
     const context = await browser.newContext({viewport:{width:1440,height:1000}, reducedMotion:'reduce'});
     await context.addInitScript(l => localStorage.setItem('knowledge-lang',l),lang);
-    const page = await context.newPage();
+    const page = await context.newPage();page.setDefaultTimeout(15000);
     page.on('pageerror',e => errors.push(String(e)));
     page.on('response',r => {if(r.status() >= 400 && !r.url().endsWith('favicon.ico')) errors.push(r.url());});
     await page.goto(base+route); await page.waitForFunction(() => window.wallSnapshot);
-    assert.match(await page.locator('[data-i18n="wallCredit"]').innerText(),lang==='zh'?/Codex 开发/:/Developed by Codex/);
+    assert.match(await page.locator('.page-provenance summary').innerText(),lang==='zh'?/Codex 开发/:/Developed with Codex/);
     assert.equal((await page.evaluate(() => wallSnapshot())).phase,0);
     const states = [];
     for(let phase=0;phase<4;phase++) {
@@ -49,7 +50,7 @@ const route = process.env.LESSON_ROUTE || '/leetcode/42/';
       await page.screenshot({path:path.join(output,`${lang}-${width}-controls.png`)});
       await page.locator('#wall-chart').evaluate(el => window.scrollTo(0, el.getBoundingClientRect().top + scrollY - 100));
       await page.screenshot({path:path.join(output,`${lang}-${width}-state.png`)});
-      results.push({lang,width,overflow:false,controlMinHeight:44});
+      results.push({lang,width,overflow:false,controlMinHeight:Math.min(...geometry.map(r=>r.height))});
     }
     await page.setViewportSize({width:1440,height:1000});
     await page.evaluate(() => document.body.style.zoom='2');
@@ -101,9 +102,10 @@ const route = process.env.LESSON_ROUTE || '/leetcode/42/';
   await page.goto(base+route);await page.click('[data-lang="zh"]');await page.click('#wall-next');
   assert.equal((await page.evaluate(()=>wallSnapshot())).phase,1);
   assert.match(await page.locator('#wall-message').innerText(),/右侧/);
-  await context.close(); await browser.close();
+  await context.close();
   assert.deepEqual(errors,[]);
   const report={route,results,storageDenied:'passed',errors};
   fs.writeFileSync(path.join(output,'results.json'),JSON.stringify(report,null,2)+'\n');
   console.log(JSON.stringify(report));
+  } finally { await browser.close(); }
 })().catch(e=>{console.error(e);process.exitCode=1;});

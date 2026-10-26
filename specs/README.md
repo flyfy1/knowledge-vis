@@ -62,3 +62,5 @@ that existing pages have completed that process.
 - [Atlas development handoff and iteration index](../atlas/README.md): current locally verified milestone, audit findings, tests, limits and prioritized next work. Reuses existing review/evidence records; does not change LeetCode ownership or gates.
 
 - [Current Visual batch integration and worktree reconciliation](reviews/visual-batch-integration-20261026/README.md): bounded acceptance, cold reading, exact original-to-integrated SHAs and production verification contract.
+
+- [Eigen / LC42 / 3D galaxy integration](reviews/visual-galaxy-batch-20261026/README.md): exact worktree mapping, cold review, recovered-input red/green and bounded publication contract.
