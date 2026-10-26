@@ -1,0 +1,26 @@
+{
+  "frozenAt": "2026-10-26T00:11:09.067192+00:00",
+  "status": "final-proposal-awaiting-independent-review-separate-dispatch",
+  "testsPassed": 8,
+  "readOnlyPreflightExitCode": 0,
+  "launchExecuted": false,
+  "piPersistentMutation": false,
+  "files": {
+    "README.md": "bd34d19e2527ae5b37c222a97d7f03a1eb62d748301caf16132bb9522702c4b3",
+    "capture-handoff-readonly.py": "389ee6fa33f89bf1920737f74e33eeff6e46b3db55e1d6bd2d333129e2ce6f1e",
+    "handoff-capture.json": "e828abbc12193bbda3bf44a2b5a43aa0335342168ecf9a3dbef16632f1a80def",
+    "handoff-capture.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "handoff-dispatch.json": "c867b097bb21fe2ad51d9191cc40e678f41924faaca62aba3b1ffeb571398c02",
+    "handoff-receipt.json.gz": "a4ad508c742ebd2f4d8d92966f95806a534bfbd481d56d91a46b559688e01e89",
+    "launch.diff": "bc0644a4bbf7a4b9e820ec4b9357e67ac557becfe4251a188c5c7bb1db17998b",
+    "launch.py": "b67d0a53fb067e21aa7a1f506f77d11343af8abe3ba1e7a9f6acc0073b987a46",
+    "parameter-map.json": "e326dbd3baa893730a03afcb8c05c213eb3c265afef995a6251b4ad64e81ff9b",
+    "preflight-summary.json": "97ac4b21dd57a72370d61d327827fdaf1d6edae0b6902f1ad1a685bd4fe8e1fe",
+    "preflight.diff": "24e0e99436645e0d9c26ffa71bd3907f491f2e4d2eca24b659e1a922db542ecf",
+    "preflight.json.gz": "329028156187245b9d9cb24c7750daecf24080f2d45364351ab6dec1c0dc91fe",
+    "preflight.py": "63295fc43653f73801b9ef39fb4b96fe107ba1ab1c9bcae399081fd370ce2d97",
+    "preflight.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_final.py": "1c5e2b558707d2bef2f94ca6005e804fe0a8e9e92052ca96b2aa937748e5ed7e",
+    "tests.log": "d5612f8e66d8685a736aeb25954e5d1f8d30be6fcd3ac83663e435a19a886da8"
+  }
+}

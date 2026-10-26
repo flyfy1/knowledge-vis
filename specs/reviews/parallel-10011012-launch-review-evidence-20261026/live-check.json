@@ -1,0 +1,94 @@
+{
+  "observed_at": "2026-10-26T00:10:40.118898+00:00",
+  "base": "048d217b1313ec068fbf41fe3703f5f3e83dcc90",
+  "central_head": "048d217b1313ec068fbf41fe3703f5f3e83dcc90",
+  "central_current": {
+    "problem_id": "854",
+    "stage": "fix",
+    "started_at": "2026-10-26T00:07:50.180789+00:00",
+    "run_id": "854-fix-4964d1606702"
+  },
+  "central_runner_pid": 1984564,
+  "central_session": "01a17588-eeec-7b71-91f6-8bdbffe0305e",
+  "central_native": {
+    "pid": 1984809,
+    "ppid": 1984802,
+    "args": [
+      "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex",
+      "exec",
+      "-m",
+      "gpt-6.1-sol",
+      "-c",
+      "model_reasoning_effort=\"medium\"",
+      "-c",
+      "approval_policy=\"never\"",
+      "--sandbox",
+      "danger-full-access",
+      "--json",
+      "-o",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/854-fix-4964d1606702/final.json",
+      "--output-schema",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/854-fix-4964d1606702/schema.json",
+      "-C",
+      "/home/songyy/projects/leetcode-hard-campaign-20261018",
+      "-"
+    ]
+  },
+  "mem_available_kib": 1769244,
+  "loadavg": [
+    1.53466796875,
+    1.0634765625,
+    1.1806640625
+  ],
+  "stop_exists": false,
+  "queue_length": 984,
+  "targets": [
+    {
+      "id": "1001",
+      "port": 18801,
+      "in_queue": true,
+      "problem_record": null,
+      "runs": [],
+      "reservation_exists": false,
+      "repo_exists": false,
+      "state_exists": false,
+      "branch_exists": false,
+      "port_listeners": [],
+      "bind_available": true
+    },
+    {
+      "id": "1012",
+      "port": 18802,
+      "in_queue": true,
+      "problem_record": null,
+      "runs": [],
+      "reservation_exists": false,
+      "repo_exists": false,
+      "state_exists": false,
+      "branch_exists": false,
+      "port_listeners": [],
+      "bind_available": true
+    }
+  ],
+  "shared_tree_matches_base": true,
+  "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+  "allowed_dirty_scope": {
+    "stage": "fix",
+    "prefix": "leetcode/854/",
+    "source": "Exact fix prompt ownership instruction plus current problem metadata",
+    "trackedChangesAllowedWithinPrefix": true
+  },
+  "854_bridge_handoff_receipt_sha256": "b806def3f37922cfda0d48e1f23afe52f7b450bed84d1a7abab0e71a7eef83b0",
+  "approved_854_bridge_handoff_pins_sha256": "2b6a396c630e912348d480ad295674745f73e672ca1c7007e1f79a78fbad041d",
+  "checkedAt": "2026-10-26T00:10:43.028035+00:00",
+  "queueHashVerified": true,
+  "centralMax6Every20FullQueueVerified": true,
+  "queued995EntryAndHistoryPreserved": true,
+  "ledgerMatchesPre854": true,
+  "all32AdoptedBlobsVerified": true,
+  "protectedFourVerified": true,
+  "noLaneProcesses": true,
+  "existingImportedReservations": 43,
+  "currentDirtyPathCount": 52,
+  "noPersistentRemoteMutation": true
+}
