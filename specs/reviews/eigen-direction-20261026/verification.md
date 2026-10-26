@@ -28,3 +28,9 @@ The per-page [BRIEF/spec](../../../eigen/BRIEF.md) carries root causes, sequence
 Before publishing, add the shared Codex revised-edition header using this feature commit's exact SHA, update atlas provenance, and run the attribution contract. Integrate parent-provided LeetCode/galaxy results in isolated history, then latest main under parent coordination; do not independently deploy. Galaxy may own atlas/index.html, so its integration/release must version the changed data.js without competing index edits here.
 
 Limits: Chrome emulation, not physical mobile/Safari/screen-reader certification; no full-course S2–S6 science or all-site regression claim. Reload retains the course's existing reset policy for S1; no new storage. LeetCode ownership lookup stopped after the bounded repository evidence; no native runner or denied session directory was inspected/controlled.
+
+## Exact-SHA attribution stage
+
+Functional source committed as5cd64dc2193d8e3b26cc433ecd4d597887f0ed13. The subsequent metadata commit adds the shared18th edition header/inventory and updates bounded checks. Atlas/index.html remains reserved and untouched: after galaxy handover, integration must refresh atlas combined source metadata before any publish. Main push/deploy await parent coordination.
+
+Attribution acceptance completed locally: inventory18 source/core and actual EN/ZH desktop/320 browser contract passed; Eigen has one visible revised-edition label linking5cd64dc2. Shared atlas header remains the explicit galaxy integration condition above.
