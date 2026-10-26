@@ -1,0 +1,26 @@
+[
+  {
+    "lang": "zh",
+    "proof": "为什么不会错过另一种更好的顺序？窗口翻转的先后不影响结果，同一起点翻两次会抵消，所以最优解每个起点最多使用一次。从左到右归纳：所有可行解在更早起点上都必须与我们一致，而 i 处的值又唯一决定是否选 i。若必须翻却已放不下完整窗口，任何解都不可能成功；否则扫描完成后全为 1，且不存在更少的起点选择。",
+    "heading": "每次消费或补数后，边界如何改变？",
+    "url": "http://127.0.0.1:18770/leetcode/330/#step2",
+    "after1": "[0, 1]",
+    "after2": "[0, 3]"
+  },
+  {
+    "lang": "en",
+    "proof": "Could another order use fewer flips? Changing the order of these window flips does not change the result. Using one start twice cancels, so a minimum solution uses each start at most once. Inductively, every feasible solution must match our earlier start choices. The bit at i then uniquely decides whether start i is used. If a required window no longer fits, no solution exists. Otherwise the completed scan is all 1s, with no alternative that uses fewer starts.",
+    "heading": "What changes after each consume or patch?",
+    "url": "http://127.0.0.1:18770/leetcode/330/#step2",
+    "after1": "[0, 1]",
+    "after2": "[0, 3]"
+  },
+  {
+    "lang": "zh",
+    "proof": "为什么不会错过另一种更好的顺序？窗口翻转的先后不影响结果，同一起点翻两次会抵消，所以最优解每个起点最多使用一次。从左到右归纳：所有可行解在更早起点上都必须与我们一致，而 i 处的值又唯一决定是否选 i。若必须翻却已放不下完整窗口，任何解都不可能成功；否则扫描完成后全为 1，且不存在更少的起点选择。",
+    "heading": "每次消费或补数后，边界如何改变？",
+    "url": "http://127.0.0.1:18770/leetcode/330/#step2",
+    "after1": "[0, 1]",
+    "after2": "[0, 3]"
+  }
+]
