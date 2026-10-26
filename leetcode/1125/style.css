@@ -1,0 +1,14 @@
+/* Exact shared palette; local overrides restore accessible control states. */
+.btn:disabled,button:disabled{opacity:1;color:var(--muted);background:var(--panel2);border-color:var(--line)}
+button,select,.btn,.prediction-options label,summary{min-height:48px}a.btn{display:inline-flex;align-items:center}button{min-width:48px}
+.explain{color:var(--text)}.stage{min-width:0}select{display:block;width:100%;margin:12px 0;white-space:normal}
+.coverage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px;margin:24px 0}.coverage-card{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:12px;min-width:0;overflow-wrap:anywhere}.coverage-card.changed{border-color:var(--accent)}.coverage-card h3{font-size:16px;margin:0 0 8px;color:var(--accent)}.coverage-card p{margin:0;font-variant-numeric:tabular-nums}
+#people,.attempts,#handHistory{padding-left:24px;overflow-wrap:anywhere}.attempts li{margin-bottom:12px}#people .current{color:var(--accent2);font-weight:700}textarea{display:block;width:100%;background:var(--panel2);color:var(--text);border:1px solid var(--muted);font:14px/1.6 ui-monospace,monospace;padding:12px}input[type=radio]{width:20px;height:20px;flex-shrink:0}.prediction-options label{gap:12px;padding-block:8px}.readout,.question,p,li{overflow-wrap:anywhere}pre{max-width:100%}pre:focus-visible,textarea:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}.step-nav a{display:flex;align-items:center;min-height:48px}.step{scroll-margin-top:96px}
+@media(forced-colors:active){.coverage-card.changed{border-width:3px}*:focus-visible{outline:3px solid Highlight}}
+
+.head-top{flex-wrap:wrap}.lang-toggle{margin-left:auto}select{padding-inline:8px}
+
+/* Preserve readable label/value pairs even at a 160 CSS-pixel usable width. */
+@media(max-width:560px){.step{padding-inline:8px}.stage{padding:8px}.coverage-card{padding:8px}}
+
+.btn,select{border-color:var(--muted)}.btn:disabled{border-color:var(--muted)}

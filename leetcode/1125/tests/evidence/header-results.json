@@ -1,0 +1,41 @@
+{
+  "status": "pass",
+  "rows": [
+    {
+      "lang": "zh",
+      "zoom": 1,
+      "expected": "#1125 · 最小的必要团队",
+      "statePreserved": true
+    },
+    {
+      "lang": "en",
+      "zoom": 1,
+      "expected": "#1125 · Smallest Sufficient Team",
+      "statePreserved": true
+    },
+    {
+      "lang": "zh",
+      "zoom": 1,
+      "expected": "#1125 · 最小的必要团队",
+      "statePreserved": true
+    },
+    {
+      "lang": "zh",
+      "zoom": 2,
+      "expected": "#1125 · 最小的必要团队",
+      "statePreserved": true
+    },
+    {
+      "lang": "en",
+      "zoom": 2,
+      "expected": "#1125 · Smallest Sufficient Team",
+      "statePreserved": true
+    },
+    {
+      "lang": "zh",
+      "zoom": 2,
+      "expected": "#1125 · 最小的必要团队",
+      "statePreserved": true
+    }
+  ]
+}

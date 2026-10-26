@@ -1,0 +1,498 @@
+{
+  "status": "pass",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "url": "http://127.0.0.1:18770/leetcode/1125/",
+  "coverage": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "expectedMinimum": 2,
+      "observed": "Smallest full-coverage team so far: [0,2] (2 people). All people processed: this is a final minimum team.",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "expectedMinimum": 2,
+      "observed": "Smallest full-coverage team so far: [0,2] (2 people). All people processed: this is a final minimum team.",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "expectedMinimum": 2,
+      "observed": "Smallest full-coverage team so far: [1,3] (2 people). All people processed: this is a final minimum team.",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "expectedMinimum": 1,
+      "observed": "Smallest full-coverage team so far: [0] (1 people). All people processed: this is a final minimum team.",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "expectedMinimum": 2,
+      "observed": "Smallest full-coverage team so far: [1,2] (2 people). All people processed: this is a final minimum team.",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "expectedMinimum": 2,
+      "observed": "Smallest full-coverage team so far: [1,2] (2 people). All people processed: this is a final minimum team.",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "en",
+      "preset": 6,
+      "expectedMinimum": 1,
+      "observed": "Smallest full-coverage team so far: [1] (1 people). All people processed: this is a final minimum team.",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "en",
+      "preset": 7,
+      "expectedMinimum": 1,
+      "observed": "Smallest full-coverage team so far: [2] (1 people). All people processed: this is a final minimum team.",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "en",
+      "clipboard": "success and denied-write native fallback passed",
+      "host": "linux",
+      "sentinelVerified": true
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "expectedMinimum": 2,
+      "observed": "目前全覆盖的最小团队：[0,2]（2 人）。所有人已处理：这是最终最小团队。",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "expectedMinimum": 2,
+      "observed": "目前全覆盖的最小团队：[0,2]（2 人）。所有人已处理：这是最终最小团队。",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "expectedMinimum": 2,
+      "observed": "目前全覆盖的最小团队：[1,3]（2 人）。所有人已处理：这是最终最小团队。",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "expectedMinimum": 1,
+      "observed": "目前全覆盖的最小团队：[0]（1 人）。所有人已处理：这是最终最小团队。",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "expectedMinimum": 2,
+      "observed": "目前全覆盖的最小团队：[1,2]（2 人）。所有人已处理：这是最终最小团队。",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "expectedMinimum": 2,
+      "observed": "目前全覆盖的最小团队：[1,2]（2 人）。所有人已处理：这是最终最小团队。",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 6,
+      "expectedMinimum": 1,
+      "observed": "目前全覆盖的最小团队：[1]（1 人）。所有人已处理：这是最终最小团队。",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 7,
+      "expectedMinimum": 1,
+      "observed": "目前全覆盖的最小团队：[2]（1 人）。所有人已处理：这是最终最小团队。",
+      "rewindReplay": "pass"
+    },
+    {
+      "lang": "zh",
+      "clipboard": "success and denied-write native fallback passed",
+      "host": "linux",
+      "sentinelVerified": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "overflow": false,
+      "selectFit": {
+        "text": 32.00006103515625,
+        "width": 286,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "overflow": false,
+      "selectFit": {
+        "text": 32.00006103515625,
+        "width": 126,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "overflow": false,
+      "selectFit": {
+        "text": 32.00006103515625,
+        "width": 356,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "overflow": false,
+      "selectFit": {
+        "text": 32.00006103515625,
+        "width": 161,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "overflow": false,
+      "selectFit": {
+        "text": 32.00006103515625,
+        "width": 646,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "overflow": false,
+      "selectFit": {
+        "text": 32.00006103515625,
+        "width": 278,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "overflow": false,
+      "selectFit": {
+        "text": 32.00006103515625,
+        "width": 910,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "overflow": false,
+      "selectFit": {
+        "text": 32.00006103515625,
+        "width": 630,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "overflow": false,
+      "selectFit": {
+        "text": 40.56007385253906,
+        "width": 286,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "overflow": false,
+      "selectFit": {
+        "text": 40.56007385253906,
+        "width": 126,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "overflow": false,
+      "selectFit": {
+        "text": 40.56007385253906,
+        "width": 356,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "overflow": false,
+      "selectFit": {
+        "text": 40.56007385253906,
+        "width": 161,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "overflow": false,
+      "selectFit": {
+        "text": 40.56007385253906,
+        "width": 646,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "overflow": false,
+      "selectFit": {
+        "text": 40.56007385253906,
+        "width": 278,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "overflow": false,
+      "selectFit": {
+        "text": 40.56007385253906,
+        "width": 910,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "overflow": false,
+      "selectFit": {
+        "text": 40.56007385253906,
+        "width": 630,
+        "padding": 16,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "relatedLabel": "重看：相同覆盖为什么能合并",
+      "target": "#step3",
+      "meaning": "exact coverage equivalence and DP proof"
+    },
+    {
+      "lang": "zh",
+      "relatedLabel": "重看：不同覆盖不能只按人数合并",
+      "target": "#step4",
+      "meaning": "fresh equal-size different-coverage exercise"
+    },
+    {
+      "lang": "en",
+      "relatedLabel": "#1125: why equal coverage can share a state",
+      "target": "#step3",
+      "meaning": "exact coverage equivalence and DP proof"
+    },
+    {
+      "lang": "en",
+      "relatedLabel": "#1125: why size alone cannot merge coverages",
+      "target": "#step4",
+      "meaning": "fresh equal-size different-coverage exercise"
+    },
+    {
+      "lang": "zh",
+      "relatedLabel": "#691：用剩余字母数量复用子问题（贴纸可重复）",
+      "target": "http://127.0.0.1:18770/leetcode/691/#step2",
+      "observedExcerpt": "03只记还缺什么这一步要回答：哪些状态可以复用，哪些分支可以省略？状态 r 是按字母排序的“还缺几份”元组。例如 aab 是 (2,1)，字母顺序 (a,b)；用 ab 的 (1,1) 后变成 (1,0)。数量不能变成负数，多余的字母丢弃。顺序不影响能剪出的字母，因此同一 r 的未来代价相同。定义 F(r) 为完成剩余 r 所需的最少额外贴纸数；记忆化就是把已完成的 F(r) 存起来。枢轴 p 指 r 中第一个仍缺的字母位置。任何可行方案必有一张含该字母的贴纸。剪贴顺序无关，可把它移到最前面：于是只需枚举含枢轴的类型，但仍须枚举其中每一种，不能贪心只选一张。F(0)=0；child[j]=max(0,r[j]−sticker[j])；F(r)=min(1+F(child))，只枚举 sticker[p]>0；无可行分支为 ∞。为什么是最优值？任何方案都能先放一张含枢轴的贴纸，余下方案完成相应 child，它的张数至少是 F(child)，故总张数至少是候选 1+F(child)，进而至少是所有候选的最小值。反过来，选一张贴纸并接上 child 的最优方案，就能达到该最小值。每次枢轴计数",
+      "meaning": "memoization by exact missing counts, repeatable stickers",
+      "sourceSha256": "6519058faa6ad2e0fa3b1eccefb008b9e87a688ecdf28f77391900bb43297599"
+    },
+    {
+      "lang": "zh",
+      "relatedLabel": "#1092：用长度表重建最短公共超序列",
+      "target": "http://127.0.0.1:18770/leetcode/1092/#step3",
+      "observedExcerpt": "3 · 每个格子都给出一个承诺这一步要回答：怎样保证写出的每个字符仍通向最短结果？这里 i、j 既是已消耗字符数，也是下一个字符的零基位置；m、n 是输入长度。后缀是从当前位置到结尾的部分。格子 dp[i][j] 表示两条后缀所需的最短长度，单位是字符。行沿 str1、列沿 str2；末行/末列表示一边为空，因此直接等于另一边剩余长度。先从右下向左上填未知格子，再从 (0,0) 沿着最优选择写出答案。首字母相同：任何合法结果都包含该字母；可让两边都从它第一次出现处开始匹配，之前的字符无用，所以一次写出即可同时推进。首字母不同：最短结果的首字母必须来自其中一边，否则能删掉它。按首字母分成两种情况，每种剩余结果至少需要对应后缀的最短长度；反过来，首字母加上最优剩余结果确实合法。因此取两种代价的最小值，既是下界又能达到。dp[m][j] = n − j；dp[i][n] = m − i\n相等：dp[i][j] = 1 + dp[i+1][j+1]\n不同：dp[i][j] = 1 + min(dp[i+1][j], dp[i][j+1])输入预设（切换会重启本实验）ab/acabac/caba",
+      "meaning": "suffix-length DP and reconstruction",
+      "sourceSha256": "43b38ae5777ab28be4341f41bdb58ba9f52bb165b6f224e357bb10eb8d59991d"
+    },
+    {
+      "lang": "en",
+      "relatedLabel": "#691: reuse missing-letter counts (stickers can repeat)",
+      "target": "http://127.0.0.1:18770/leetcode/691/#step2",
+      "observedExcerpt": "03Remember what is missingWhich states can be reused, and which branches can be omitted? State r is an alphabetically ordered tuple of missing counts. For letters (a,b), aab is (2,1); subtracting ab’s (1,1) gives (1,0). Counts stop at zero because excess letters are discarded. Order does not affect available letters, so equal r means equal future cost.Let F(r) be the fewest additional stickers needed for r. Memoization stores a completed F(r) for reuse. Pivot p is the first position in r with a ",
+      "meaning": "memoization by exact missing counts, repeatable stickers",
+      "sourceSha256": "6519058faa6ad2e0fa3b1eccefb008b9e87a688ecdf28f77391900bb43297599"
+    },
+    {
+      "lang": "en",
+      "relatedLabel": "#1092: reconstruct a shortest common supersequence from a length table",
+      "target": "http://127.0.0.1:18770/leetcode/1092/#step3",
+      "observedExcerpt": "3 · Every cell is a promiseHow can every emitted letter still lead to a shortest result? Here i and j count consumed letters and are also the zero-based next positions; m and n are the input lengths. A suffix is the portion from the current position to the end. A cell dp[i][j] is the minimum number of letters needed for the two suffixes. Rows follow str1; columns follow str2. The last row/column means one suffix is empty, so its value is the other suffix’s length. Fill unknown cells from bottom ",
+      "meaning": "suffix-length DP and reconstruction",
+      "sourceSha256": "43b38ae5777ab28be4341f41bdb58ba9f52bb165b6f224e357bb10eb8d59991d"
+    }
+  ],
+  "screenshots": [
+    "zh-320-zoom1-heading.png",
+    "zh-320-zoom1-coverage.png",
+    "zh-320-zoom1-prediction.png",
+    "zh-320-zoom2-heading.png",
+    "zh-320-zoom2-coverage.png",
+    "zh-320-zoom2-prediction.png",
+    "zh-390-zoom1-coverage.png",
+    "zh-390-zoom2-coverage.png",
+    "zh-736-zoom1-coverage.png",
+    "zh-736-zoom2-coverage.png",
+    "zh-1440-zoom1-coverage.png",
+    "zh-1440-zoom1-prediction.png",
+    "zh-1440-zoom2-coverage.png",
+    "zh-1440-zoom2-prediction.png",
+    "en-320-zoom1-heading.png",
+    "en-320-zoom1-coverage.png",
+    "en-320-zoom1-prediction.png",
+    "en-320-zoom2-heading.png",
+    "en-320-zoom2-coverage.png",
+    "en-320-zoom2-prediction.png",
+    "en-390-zoom1-coverage.png",
+    "en-390-zoom2-coverage.png",
+    "en-736-zoom1-coverage.png",
+    "en-736-zoom2-coverage.png",
+    "en-1440-zoom1-coverage.png",
+    "en-1440-zoom1-prediction.png",
+    "en-1440-zoom2-coverage.png",
+    "en-1440-zoom2-prediction.png",
+    "zh-390-dense.png",
+    "zh-390-endpoint.png",
+    "en-390-dense.png",
+    "en-390-endpoint.png"
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".coverage-card h3",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "selector": ".coverage-card p",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#preset",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#fallbackSource",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#reveal",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".lang-toggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "a.official-link",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "focus outline on panel2",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "errors": [],
+  "localAssetsOnly": true,
+  "storageDenied": true,
+  "offlineSource": true,
+  "sourceSha256": "7a2969e4a224a412888915821df9d0b0f56a50aead6a7929cb3a45f563bbe6e0",
+  "zoomMethod": "CSS zoom 1 and 2; physical browser/device zoom unverified"
+}
