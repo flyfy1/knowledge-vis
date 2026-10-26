@@ -1,0 +1,38 @@
+{
+  "id": 1036,
+  "title": {
+    "zh": "逃离大迷宫",
+    "en": "Escape a Large Maze"
+  },
+  "desc": {
+    "zh": "用无障碍行列证明搜索上界，再从两端检查连通性。",
+    "en": "Prove a search budget with clear rows and columns, then test both endpoints."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "广度优先搜索",
+      "en": "Breadth-first search"
+    },
+    {
+      "zh": "连通性",
+      "en": "Connectivity"
+    }
+  ],
+  "path": "1036/",
+  "leetcodeUrl": "https://leetcode.com/problems/escape-a-large-maze/",
+  "language": "Python",
+  "complexity": "O(n + (b+1)²) expected time; O((b+1)²) space, n = blocker entries, b = distinct blockers",
+  "concepts": [
+    {
+      "name": "Bounded reachability search",
+      "step": 3,
+      "description": "Explore more than b² cells to certify membership in the common clear-line component."
+    },
+    {
+      "name": "Two-endpoint connectivity",
+      "step": 4,
+      "description": "Check both endpoints or directly reach the other endpoint."
+    }
+  ]
+}
