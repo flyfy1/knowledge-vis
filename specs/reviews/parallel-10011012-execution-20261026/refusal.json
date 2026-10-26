@@ -1,0 +1,58 @@
+{
+  "status": "refused-before-transfer",
+  "observed_at": "2026-10-26T00:14:19.622688+00:00",
+  "reason": "General read-only preflight passed, but frozen current HEAD/run/stage/session/native comparison failed. Natural fix-to-review advancement requires separately reviewed refresh.",
+  "matches": {
+    "base": true,
+    "head": false,
+    "run": false,
+    "stage": false,
+    "session": false,
+    "runner": true,
+    "native": false,
+    "receipt": true
+  },
+  "actual_head": "b3336f7dc7243e7d15f336ab490eb6c3a0824304",
+  "actual_current": {
+    "problem_id": "854",
+    "stage": "review",
+    "started_at": "2026-10-26T00:11:43.941515+00:00",
+    "run_id": "854-review-dcc68f3629c0"
+  },
+  "actual_session": "01a1758c-7fc0-7b21-9f8d-9c75db7c79b1",
+  "actual_runner": 1984564,
+  "actual_native": 1988405,
+  "target_absence": [
+    {
+      "id": "1001",
+      "port": 18801,
+      "in_queue": true,
+      "problem_record": null,
+      "runs": [],
+      "reservation_exists": false,
+      "repo_exists": false,
+      "state_exists": false,
+      "branch_exists": false,
+      "port_listeners": [],
+      "bind_available": true
+    },
+    {
+      "id": "1012",
+      "port": 18802,
+      "in_queue": true,
+      "problem_record": null,
+      "runs": [],
+      "reservation_exists": false,
+      "repo_exists": false,
+      "state_exists": false,
+      "branch_exists": false,
+      "port_listeners": [],
+      "bind_available": true
+    }
+  ],
+  "transfer_executed": false,
+  "launcher_executed": false,
+  "reservations_written": false,
+  "pi_persistent_mutation": false,
+  "retry_count": 0
+}

@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "base": true,
+    "head": false,
+    "run": false,
+    "stage": false,
+    "session": false,
+    "runner": true,
+    "native": false,
+    "receipt": true
+  },
+  "matches": false,
+  "source_hashes": {
+    "launch.py": "b67d0a53fb067e21aa7a1f506f77d11343af8abe3ba1e7a9f6acc0073b987a46",
+    "preflight.py": "63295fc43653f73801b9ef39fb4b96fe107ba1ab1c9bcae399081fd370ce2d97",
+    "parameter-map.json": "e326dbd3baa893730a03afcb8c05c213eb3c265afef995a6251b4ad64e81ff9b"
+  }
+}
