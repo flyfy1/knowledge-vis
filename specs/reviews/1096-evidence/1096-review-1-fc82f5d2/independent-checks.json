@@ -1,0 +1,86 @@
+{
+  "freshAndBoundaryChecks": [
+    {
+      "input": "p{q,r}s",
+      "length": 7,
+      "answer": [
+        "pqs",
+        "prs"
+      ],
+      "passed": true
+    },
+    {
+      "input": "{a,a}b",
+      "length": 6,
+      "answer": [
+        "ab"
+      ],
+      "passed": true
+    },
+    {
+      "input": "{a,b}{a,b}",
+      "length": 10,
+      "answer": [
+        "aa",
+        "ab",
+        "ba",
+        "bb"
+      ],
+      "passed": true
+    },
+    {
+      "input": "{ab,a{b,c}}",
+      "length": 11,
+      "answer": [
+        "ab",
+        "ac"
+      ],
+      "passed": true
+    },
+    {
+      "input": "z",
+      "length": 1,
+      "answer": [
+        "z"
+      ],
+      "passed": true
+    },
+    {
+      "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "length": 60,
+      "answer": [
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      "passed": true
+    },
+    {
+      "input": "{a,b}{a,b}{a,b}{a,b}{a,b}{a,b}{a,b}{a,b}{a,b}{a,b}{a,b}{a,b}",
+      "length": 60,
+      "answer": {
+        "count": 4096,
+        "first": "aaaaaaaaaaaa",
+        "last": "bbbbbbbbbbbb"
+      },
+      "passed": true
+    },
+    {
+      "input": "zzz{a,{a,{a,{a,{a,{a,{a,{a,{a,{a,{a,{a,{a,{a,a}}}}}}}}}}}}}}",
+      "length": 60,
+      "answer": [
+        "zzza"
+      ],
+      "passed": true
+    }
+  ],
+  "servedAssetsExact": {
+    "index.html": "c6d679e858f29a35d546026a58501c50e0788861c5fb6de9f07fe4ef27177a14",
+    "app.js": "6d78c8a228862057ae6c9db800aaf7a0f64926f14420d8098d1c7390c84ffdfe",
+    "core.js": "15df0f5a48db85f69cef13af7ac2f5ac575206c1e85b325839bce922b8de2400",
+    "copy.js": "d69f76748724f56c5678bbb923517cb9987124efe88851e4738bfa466a1023c5",
+    "python-code.js": "d1751c6de330bf0cfa7f61b632636487059707a3e396cf9437fe782339819ba0",
+    "solution.py": "b1e5e02ff561b4701210fa45e2fd65d54bdda48ee37a036ef433f68c7c9799a0",
+    "lesson.css": "fe1f8f487523cbe8c861fc7484e73e19eeb683720a51910e3dbf6999ba2faf69",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}

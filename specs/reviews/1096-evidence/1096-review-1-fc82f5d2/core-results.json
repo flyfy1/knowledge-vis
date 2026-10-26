@@ -1,0 +1,15 @@
+{
+  "scope": "author self-check",
+  "passed": true,
+  "cases": 2058,
+  "framesChecked": 26391,
+  "events": [
+    "enter",
+    "product",
+    "return",
+    "done",
+    "descend",
+    "comma"
+  ],
+  "invariant": "Each live call U/T independently evaluated from its completed own-level input prefix; pending child excluded."
+}
