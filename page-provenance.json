@@ -3,15 +3,15 @@
   "pages": {
     "atlas": {
       "developer": "Codex",
-      "edition": "codex-atlas-estimation-error-20261026",
+      "edition": "codex-atlas-bayes-measurement-20261026",
       "kind": "revised",
-      "sourceRevision": "c2b8d43a9099bf331e5c65697752ac54afd79ab9",
+      "sourceRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f",
       "scope": {
-        "zh": "知识地图、实验路线与方差到蒙特卡洛误差尺度的学习连接",
-        "en": "Knowledge atlas, experiment routes and variance-to-Monte-Carlo error-scale bridge"
+        "zh": "知识地图、实验路线与贝叶斯测量的定义优先入口",
+        "en": "Knowledge atlas, experiment routes and definition-first Bayes measurement entry"
       },
       "originalAuthorship": "not asserted; prior contributions retained",
-      "previousSourceRevision": "4f1992891a6996c1aaffedb78053ad2b538ebc7d"
+      "previousSourceRevision": "c2b8d43a9099bf331e5c65697752ac54afd79ab9"
     },
     "complex-numbers": {
       "developer": "Codex",
@@ -204,17 +204,17 @@
     },
     "atlas/galaxy": {
       "developer": "Codex",
-      "edition": "codex-atlas-galaxy-estimation-error-20261026",
+      "edition": "codex-atlas-galaxy-bayes-measurement-20261026",
       "kind": "revised",
-      "sourceRevision": "c2b8d43a9099bf331e5c65697752ac54afd79ab9",
+      "sourceRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f",
       "scope": {
-        "zh": "三维知识星图、任务入口与方差到估计误差的有据关系",
-        "en": "3D knowledge galaxy, task entries and sourced variance-to-estimation-error relation"
+        "zh": "三维知识星图与贝叶斯测量入门来源连接",
+        "en": "3D knowledge galaxy and introductory Bayes measurement source connection"
       },
       "originalAuthorship": "existing atlas contributions retained; galaxy presentation developed with Codex",
       "path": "atlas/galaxy.html",
       "integrationRevision": "c3445f66a3e666acd557a04a7194c9568a383c35",
-      "previousSourceRevision": "4f1992891a6996c1aaffedb78053ad2b538ebc7d"
+      "previousSourceRevision": "c2b8d43a9099bf331e5c65697752ac54afd79ab9"
     },
     "leetcode/42": {
       "developer": "Codex",
@@ -252,6 +252,18 @@
         "en": "Step2 repeated estimates, variance/standard-error meanings, paused comparisons and learning-route connection."
       },
       "retainedContributions": "Original lesson, samplers and authors retained; original tool identity is not reclassified"
+    },
+    "bayes": {
+      "developer": "Codex",
+      "edition": "codex-bayes-measurement-20261026",
+      "kind": "revised",
+      "sourceRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f",
+      "originalSourceRevision": "e9774b0ae7e253005b0469f559f2e30138e1b50b",
+      "scope": {
+        "zh": "第1步的假想读卡器、似然与后验方向、同一先验的亮灯池组成及图谱入口。",
+        "en": "Step1 hypothetical reader, likelihood/posterior direction, same-prior lamp-pool composition and graph entry."
+      },
+      "retainedContributions": "Original course, probability functions and other chapters retained; original tool identity not reclassified"
     }
   },
   "exceptions": {
