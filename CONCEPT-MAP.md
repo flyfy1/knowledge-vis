@@ -2121,3 +2121,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Iterative Boolean parser | `leetcode/1106/#step3` | Use stack snapshots and operator-specific truth flags to parse each character once. |
 
 <!-- /leetcode-1106-campaign -->
+
+
+<!-- leetcode-1125-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Minimum team by exact skill coverage | `leetcode/1125/#step3` | Derive shortest-team DP using frozen before-round coverage states. |
+| Coverage dominance counterexample | `leetcode/1125/#step2` | Explain why largest-skill greedy and equal-size coverage pruning fail. |
+
+<!-- /leetcode-1125-campaign -->
