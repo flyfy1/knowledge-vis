@@ -280,15 +280,16 @@
     },
     "standing-wave": {
       "developer": "Codex",
-      "edition": "codex-standing-boundary-20261026",
+      "edition": "codex-standing-phase-20261026",
       "kind": "revised",
-      "sourceRevision": "19873a1aa6d006f6b74e94bc8ceefb27fbda5f3a",
+      "sourceRevision": "b3ed3863bb03d41a20078418eb047da8d36e44ad",
       "originalSourceRevision": "794f6825ffe3904a6f4c26ea7f0b9c298c100690",
       "scope": {
-        "zh": "仅第2步严格固定端模式与近似试探形状、完整端点包络、吸附控件同步与暂停阅读恢复",
-        "en": "Step2 strict fixed-end modes versus approximate trials, whole-cycle endpoint envelope, snap/control synchronization and paused reading recovery"
+        "zh": "第1步同钟双点相位、精确波节与解析预测；保留已验收第2步严格边界及暂停恢复",
+        "en": "Step1 shared-clock spatial phase, exact nodes and analytic predictions; accepted Step2 strict boundaries and paused recovery retained"
       },
-      "retainedContributions": "Original794f6825 Muse/Alberto course, wave functions and unrelated chapters retained; no original Codex authorship asserted"
+      "retainedContributions": "Original794f6825 Muse/Alberto course, wave functions and unrelated chapters retained; no original Codex authorship asserted",
+      "previousRevision": "19873a1aa6d006f6b74e94bc8ceefb27fbda5f3a"
     }
   },
   "exceptions": {

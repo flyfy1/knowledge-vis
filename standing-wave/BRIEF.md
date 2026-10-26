@@ -46,3 +46,5 @@ Accepted Codex S2 implementation source: 19873a1aa6d006f6b74e94bc8ceefb27fbda5f3
 ## Codex S1 phase correction — 2026-10-26
 
 [S1 contract](../specs/standing-phase.md) supersedes only the old S1 'all non-node points in phase', 'measured trace' wording and .05 point quantization. Reuse both original figures/clock. Q0 and variable P compare signed spatial coefficients under shared t/scale: same interval0, across one nodeπ, two nodes0, zero-amplitude node phase undefined. Exact λ2.1 node.525 must survive controls/preset/recovery. S1 curve is current-parameter analytic prediction over last2T, never real measurement; edits pause/holdt, passive commits restorepaused. Existing S2 strict-boundary contract and all other models remain. P0/P1 acceptance and sources are in linked spec and independent gate; no new graph model/route.
+
+Accepted Codex S1 implementation source: b3ed3863bb03d41a20078418eb047da8d36e44ad. Edition provenance retains acceptedS2 19873a1aa6d006f6b74e94bc8ceefb27fbda5f3a and original794f6825 Muse/Alberto contributions.
