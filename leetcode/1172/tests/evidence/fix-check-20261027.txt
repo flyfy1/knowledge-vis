@@ -21,3 +21,13 @@ Fix mapping:
 - 1172-R1-F3: index.html adds a hidden-until-needed full-source textarea; app.js fills, focuses, and selects it on clipboard failure; forced rejection check passed.
 - 1172-R1-F4: index.html constrains select, grid tracks, cards, and fallback textarea; 200% zoom check passed at 390px.
 - Playwright Chromium regression at 320/390/1280 CSS px in both locales: hand advance remained visible, source-bound check passed, and no document overflow was observed.
+
+Additional closure evidence for candidate after 1172-R1-F4, 1172-R2-F1, and 1172-R2-F2 (2026-10-27). This is author self-check evidence, not independent acceptance.
+
+- Required preflight: `python3 -B scripts/register_leetcode_lesson.py 1172 --validate-only` -> exit 0 with no output.
+- Regression: `python3 leetcode/1172/tests/test_solution.py` -> `30 seeded traces passed`; `node --check leetcode/1172/app.js` -> passed; `cmp -s solution.py provenance/official-source.py` -> passed. `python-code.js` decoded `window.PYTHON_SOURCE` matched `solution.py` byte-for-byte (1376 bytes).
+- 1172-R1-F4: the unchanged 390 CSS px browser reproduction measured 426/390 (scrollWidth/clientWidth) at body zoom 2 before the repair. The repaired candidate measured 390/390 in both EN and zh at the same viewport and zoom; no horizontal overflow remained.
+- 1172-R2-F1: rendered EN and zh Step 1/Step 5 now hand-count the scan baseline for push(6) after `[1,2] [3,4] [5]` (three index checks) and explain that the free min-heap returns index 2 while list-tail cleanup avoids repeated right-side scans.
+- 1172-R2-F2: after three Change question actions, the fresh transfer sequence `push(7), push(8), push(9), popAtStack(0), push(10), popAtStack(1)` rendered in both locales. Prediction choices included `9`; Reveal returned localized causal feedback explaining `[8,10]` and `[9]`. Run check returned `Match: all return values agree over 11 operations.` / `一致：11 次操作的返回值全部相同。`.
+- Bilingual identity: H1 rendered `#1172 · Dinner Plate Stacks` in EN and `#1172 · 餐盘栈` in zh. The exact official URL and Python source/download controls remained present.
+- Browser regression matrix at 320, 390, and 1280 CSS px in both locales: hand advance and Run check completed without page errors; `scrollWidth <= clientWidth` in every case.

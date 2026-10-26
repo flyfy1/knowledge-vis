@@ -10,7 +10,7 @@
 1. Hand trace capacity 2 and five pushes; learner predicts before reveal.
 2. Derive two invariants: a min-heap tracks the smallest non-full index, while list-tail cleanup exposes the largest non-empty index.
 3. Counterexample to a single pointer after `popAtStack(0)` creates a hole.
-4. Reversible bilingual simulation with prediction/reveal/change.
+4. Reversible bilingual simulation with prediction/reveal/change, including a fresh transfer sequence (`7,8,9, popAtStack(0), 10, popAtStack(1)`).
 5. Map each invariant to the exact Python submission, then run an independent scan oracle against a faithful optimized model.
 
 ## Step contract
@@ -20,9 +20,9 @@
 | 0 | stack push/pop | where do plates land? | capacity, values → stacks | advance five operations; stacks visibly change | capacity positive |
 | 1 | stack ordering | what must always be true? | candidate index sets | change operation; the free heap and list-tail summary change | stale free-heap entries are cleaned; empty tails are trimmed |
 | 2 | leftmost rule | why one pointer fails? | hole then push | compare wrong/new stack and correct stack 0 | `popAtStack` can create holes |
-| 3 | operation semantics | can you predict return? | fixed scenario → value | choose, reveal, change question | prediction precedes reveal |
+| 3 | operation semantics | can you predict return? | scenarios → value | choose, reveal, change question | prediction precedes reveal; one fresh transfer sequence |
 | 4 | invariants | how does code implement them? | official callable methods | copy/download exact source | Python is canonical submission |
-| 5 | expected behavior | does optimization preserve outputs? | seeded operation traces | compare against scan oracle | includes boundary cases |
+| 5 | expected behavior | does optimization preserve outputs? | seeded operation traces | compare against scan oracle | includes boundary cases and explains scan work avoided by maintained state |
 
 ## New terms
 
