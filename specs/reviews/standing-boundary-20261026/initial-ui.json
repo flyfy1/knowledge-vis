@@ -1,0 +1,56 @@
+{
+  "url": "http://127.0.0.1:18943/standing-wave/#step2",
+  "text": "Step 2\n\nDoes almost matching satisfy fixed ends?\n\nFixed ends require y(0,t)=y(L,t)=0 at every time, not merely a zero crossing now. The original trial y=A sin(ωt−kx)−A sin(ωt+kx)=−2A cos(ωt)sin(kx) automatically fixes only x=0. The right end additionally needs sin(kL)=0, or q=2L/λ=n, n=1,2,…. Only then is this single free-vibration shape a normal mode, with λₙ=2L/n. An incompatible trial can be drawn for inspection, but is not actual motion of a fixed-end string.\n\nWhite pins/walls: required zero displacement. Cyan dashed line: incompatible trial shape; red ring: its demanded endpoint now; red dashed marker: its nonzero full-cycle endpoint envelope. Only a boundary match receives a green solid curve and nodes. Numerical tolerance handles floating-point error, not a “within2% counts” rule.\n\nString length L (length units)\nWavelength λ (length units)\n≈ 4\nTry near mode: L=6, λ=6.05\nReset Step2 & pause\nSnap: nearest reachable wavelength mode\n▶ Play\n\nPredict: select “Try near mode”. Does q≈1.98347 count as mode2? Inspect the endpoint envelope, then Snap: λ becomes6 and q becomes2; only then does the endpoint stay zero. Dragging λ is continuous. Arrow keys change it by0.05, PageUp/Down by0.5, Home/End go to bounds. Snap keeps the full2L/n value, without0.05-grid quantization.\n\nDemonstration time t≈0s: trial right-end displacement≈0A; its whole-cycle endpoint amplitude≈0A. A zero now does not mean always zero.\n\nL=6, λ≈4; q=2L/λ≈3. Nearest reachable candidate by wavelength distance: n=3, λₙ≈4; its |q−n|≈0.\n\nMode n=3: fixed-end conditions hold within floating-point precision. λₙ=2L/n≈4; the endpoint envelope vanishes for the whole cycle. Rounded display does not replace the exact ratio.\n\nThe fixed demonstration T=4s shows candidate spatial shapes. Changing λ also changes the illustrative λ/T speed; this is not a frequency sweep of one unchanged physical string. Step3 specifies wave speed before calculating frequency. Failure rules out this single free-mode trial, not every possible forced motion; no forced or off-resonance response is solved here. Edits pause at the same time for a hypothetical comparison.\n\nOpenStax16.6 · fixed ends select allowed modes ↗\nRevisit same-point phase and superposition →",
+  "controls": [
+    {
+      "tag": "INPUT",
+      "text": "",
+      "value": "6",
+      "aria": null,
+      "min": "3",
+      "max": "8",
+      "step": "0.1",
+      "labels": [
+        "String length L (length units)"
+      ]
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "value": "4",
+      "aria": null,
+      "min": "2",
+      "max": "14",
+      "step": "any",
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Try near mode: L=6, λ=6.05",
+      "value": "",
+      "aria": null,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Reset Step2 & pause",
+      "value": "",
+      "aria": null,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Snap: nearest reachable wavelength mode",
+      "value": "",
+      "aria": null,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "▶ Play",
+      "value": "",
+      "aria": null,
+      "labels": []
+    }
+  ]
+}

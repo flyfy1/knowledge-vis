@@ -192,3 +192,11 @@ canvas.dragc:active{cursor:grabbing}
   .cards3{grid-template-columns:1fr}
 }
 @media(max-width:640px){.site-head h1{font-size:34px}.btn.big{padding:12px 15px}.stage{padding:6px}.step{scroll-margin-top:68px}}
+
+#step2 { overflow-wrap:anywhere; }
+#step2 button, #step2 input { min-height:48px; }
+#step2 :focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+#s2-lam-value { display:block; color:var(--accent); font-variant-numeric:tabular-nums; }
+.boundary-links { display:flex; flex-wrap:wrap; gap:12px; }
+.boundary-links a { color:var(--accent); display:inline-flex; align-items:center; min-height:48px; }
+@media(max-width:500px){.site-head{flex-wrap:wrap}.head-main{min-width:0;max-width:100%}}

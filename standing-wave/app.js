@@ -31,12 +31,26 @@ function yInc(tt, x, lam) { return AMP * Math.sin(omega() * tt - waveK(lam) * x)
 function yRefl(tt, x, lam) { return -AMP * Math.sin(omega() * tt + waveK(lam) * x); }
 function yStr(tt, x, lam) { return yInc(tt, x, lam) + yRefl(tt, x, lam); }
 function ampStr(x, lam) { return 2 * AMP * Math.abs(Math.sin(waveK(lam) * x)); }
-/* 模式判定：q = L/(λ/2)；|q − round(q)| ≤ 0.02 且 round(q) ≥ 1 → 成立 */
+/* Strict boundary compatibility; no physical near-mode acceptance band.
+   Optional candidate range is UI reachability, not the mode condition. */
 function modeQ(L, lam) { return L / (lam / 2); }
-function modeN(L, lam) {
-  const q = modeQ(L, lam), n = Math.round(q);
-  return (n >= 1 && Math.abs(q - n) <= 0.02) ? n : 0;
+function modeInfo(L,lam,lo=2,hi=14){
+  if(![L,lam,lo,hi].every(Number.isFinite)||L<=0||lam<=0||lo<=0||hi<lo)throw new RangeError('Invalid boundary candidate');
+  const q=modeQ(L,lam),integer=Math.round(q),tolerance=32*Number.EPSILON*Math.max(1,Math.abs(q));
+  const mode=integer>=1&&Math.abs(q-integer)<=tolerance?integer:0;
+  const first=Math.max(1,Math.ceil(2*L/hi-tolerance)),last=Math.floor(2*L/lo+tolerance);
+  let candidate=null;
+  if(last>=first){
+    const clampN=n=>Math.max(first,Math.min(last,n));
+    const ns=[...new Set([first,last,clampN(Math.floor(q)),clampN(Math.ceil(q))])].sort((a,b)=>a-b);
+    for(const n of ns){const wavelength=2*L/n,distance=Math.abs(wavelength-lam);
+      if(!candidate||distance<candidate.distance-32*Number.EPSILON*Math.max(1,L,lam))candidate={n,wavelength,distance,deviation:Math.abs(q-n)};
+    }
+  }
+  return{q,mode,tolerance,candidate,endpointAmplitude:mode?0:ampStr(L,lam)};
 }
+function modeN(L, lam) { return modeInfo(L,lam).mode; }
+function fmtBoundary(v){return v===0?'0':Math.abs(v)<1e-5?v.toExponential(3):Number(v.toPrecision(9)).toString().replace('-', '−');}
 function lamN(L, n) { return 2 * L / n; }
 function fN(v, L, n) { return v / lamN(L, n); }
 function f1(v, L) { return v / (2 * L); }
@@ -81,11 +95,13 @@ function fmtHz(v) {
 const S = {
   s0: { lam: 2, px: 1, view: 'sum', t: 0, playing: true, visible: false, hist: [] },
   s1: { lam: 2, px: 1, env: true, t: 0, playing: true, visible: false, hist: [] },
-  s2: { L: 6, lam: 4, t: 0, playing: true, visible: false },
+  s2: { L: 6, lam: 4, t: 0, playing: false, visible: false },
   s3: { n: 1, cmp: false, t: 0, playing: true, visible: false },
   s4: { f: 0.25, t: 0, playing: true, visible: false },
   s5: { picked: { q1: null, q2: null, q3: null, q4: null }, locked: { q1: false, q2: false, q3: false, q4: false } }
 };
+try{const q=history.state?.standingBoundary;if(q&&[q.L,q.lam,q.t].every(Number.isFinite)&&q.L>=3&&q.L<=8&&Math.abs(q.L*10-Math.round(q.L*10))<1e-9&&q.lam>=2&&q.lam<=14&&q.t>=0&&q.t<1e9)Object.assign(S.s2,{L:q.L,lam:q.lam,t:q.t,playing:false});}catch(_){}
+function saveBoundaryReading(){try{const h=history.state;history.replaceState({...((h&&typeof h==='object')?h:{}),standingBoundary:{L:S.s2.L,lam:S.s2.lam,t:S.s2.t}},'',location.href);}catch(_){}}
 /* 自测正确选项：一律借 PURE 实算判定，不写死 */
 const QUIZ = (() => {
   const kinds = ['node', 'anti', 'mid'];
@@ -266,52 +282,33 @@ function drawWalls(ctx, L, cy, halfH) {
 }
 
 /* ---------- 第 2 步 ---------- */
+function currentBoundary(){const e=$('s2-lam');return modeInfo(S.s2.L,S.s2.lam,Number(e.min),Number(e.max));}
 function render2() {
-  const st = S.s2, cy = 160, Y = y => cy - y * 48;
-  const ctx = scene('s2-canvas', 640, 300);
-  const n = modeN(st.L, st.lam), ok = n >= 1;
-  line(ctx, [SX(0), Y(0)], [SX(st.L), Y(0)], lineCol, 1);
-  ctx.save(); ctx.setLineDash([6, 5]); // 包络 ±2A·|sin(kx)|
-  plotFn(ctx, x => ampStr(x, st.lam), 0, st.L, 0.03, SX, Y, 'rgba(126,226,168,0.7)', 1.5);
-  plotFn(ctx, x => -ampStr(x, st.lam), 0, st.L, 0.03, SX, Y, 'rgba(126,226,168,0.7)', 1.5);
-  ctx.restore();
-  plotFn(ctx, x => yStr(st.t, x, st.lam), 0, st.L, 0.03, SX, Y, ok ? green : cyan, 2.8);
-  // 内部波节标记（成立时）
-  if (ok) for (let m = 1; m < n; m++) dot(ctx, SX(m * st.L / n), Y(0), green, 4);
-  // 右端：包络要求的位移如实画出（离台阶时非零，标红）
-  const endEnv = ampStr(st.L, st.lam), endY = yStr(st.t, st.L, st.lam);
-  if (!ok) {
-    ctx.save(); ctx.setLineDash([4, 4]);
-    line(ctx, [SX(st.L), Y(0)], [SX(st.L), Y(endEnv)], pink, 1.6);
-    line(ctx, [SX(st.L), Y(0)], [SX(st.L), Y(-endEnv)], pink, 1.6);
-    ctx.restore();
-    dot(ctx, SX(st.L), Y(endY), pink, 6);
-    textC(ctx, fmtNum(endEnv), SX(st.L) + 4, Y(endEnv) - 16, pink, 12.5);
-  } else {
-    dot(ctx, SX(st.L), Y(0), green, 5);
-  }
-  dot(ctx, SX(0), Y(0), white, 5);
-  drawWalls(ctx, st.L, cy, 105);
-  textC(ctx, '0', SX(0), 288, muted, 12);
-  textC(ctx, 'L', SX(st.L), 288, muted, 12);
-  ctx.restore();
+  const st=S.s2,info=currentBoundary(),cy=160,Y=y=>cy-y*48,ctx=scene('s2-canvas',640,300),ok=info.mode>0;
+  line(ctx,[SX(0),Y(0)],[SX(st.L),Y(0)],lineCol,1);
+  drawWalls(ctx,st.L,cy,105);
+  ctx.save();ctx.setLineDash([6,5]);
+  plotFn(ctx,x=>ampStr(x,st.lam),0,st.L,.03,SX,Y,'rgba(126,226,168,0.7)',1.5);
+  plotFn(ctx,x=>-ampStr(x,st.lam),0,st.L,.03,SX,Y,'rgba(126,226,168,0.7)',1.5);ctx.restore();
+  ctx.save();ctx.setLineDash(ok?[]:[4,4]);plotFn(ctx,x=>yStr(st.t,x,st.lam),0,st.L,.03,SX,Y,ok?green:cyan,2.8);ctx.restore();
+  if(ok)for(let m=1;m<info.mode;m++)dot(ctx,SX(m*st.L/info.mode),Y(0),green,4);
+  dot(ctx,SX(0),Y(0),white,5);dot(ctx,SX(st.L),Y(0),white,5);
+  if(!ok){const end=info.endpointAmplitude,instant=yStr(st.t,st.L,st.lam);
+    ctx.save();ctx.setLineDash([4,4]);line(ctx,[SX(st.L),Y(-end)],[SX(st.L),Y(end)],pink,2);ctx.restore();
+    ctx.beginPath();ctx.arc(SX(st.L),Y(instant),7,0,2*Math.PI);ctx.strokeStyle=pink;ctx.lineWidth=2;ctx.stroke();
+    textC(ctx,'±'+fmtBoundary(end)+'A',Math.min(580,SX(st.L)+8),Y(end)-18,pink,12.5);
+  }else dot(ctx,SX(st.L),Y(0),green,5);
+  textC(ctx,'0',SX(0),288,muted,12);textC(ctx,'L',SX(st.L),288,muted,12);ctx.restore();
 }
-function readout2() {
-  /* n 与 dev 必须同源：先把 n 钳到 ≥1（q<0.5 时最近的有效台阶是 n=1），dev 再对这个显示出来的 n 算，
-     否则 q<0.5 时会出现「n = 1，偏差 |q − n| = |q − 0|」的同屏自相矛盾（评审 M1）。
-     命中与否仍只由 modeN 判定（round(q)=0 拒绝），读数不另立口径。 */
-  const st = S.s2, q = modeQ(st.L, st.lam), n = Math.max(1, Math.round(q)), ok = modeN(st.L, st.lam) >= 1;
-  ro('s2-readout', t('s2ro', {
-    L: fmtNum(st.L), lam: fmtNum(st.lam), q: fmtNum(q), n, dev: fmtNum(Math.abs(q - n))
-  }));
-  if (ok) {
-    ro('s2-state', t('modeOk', { n: modeN(st.L, st.lam), lamn: fmtNum(lamN(st.L, modeN(st.L, st.lam))) }));
-    $('s2-state').style.color = green;
-  } else {
-    ro('s2-state', t('modeNo', { end: fmtNum(ampStr(st.L, st.lam)) }));
-    $('s2-state').style.color = pink;
-  }
+function readout2(){
+  const st=S.s2,info=currentBoundary(),c=info.candidate;
+  ro('s2-readout',t('s2ro',{L:fmtBoundary(st.L),lam:fmtBoundary(st.lam),q:fmtBoundary(info.q),n:c.n,lamn:fmtBoundary(c.wavelength),dev:fmtBoundary(c.deviation)}));
+  ro('s2-state',t(info.mode?'modeOk':'modeNo',{n:info.mode,lamn:fmtBoundary(info.mode?lamN(st.L,info.mode):c.wavelength),end:fmtBoundary(info.endpointAmplitude)}));
+  ro('s2-endpoint',t('boundaryEndpoint',{time:fmtBoundary(st.t),instant:fmtBoundary(info.mode?0:yStr(st.t,st.L,st.lam)),end:fmtBoundary(info.endpointAmplitude)}));
+  $('s2-state').style.color=info.mode?green:pink;$('s2-play').setAttribute('aria-pressed',String(st.playing));
+  const label='λ ≈ '+fmtBoundary(st.lam);if($('s2-lam-value').textContent!==label)$('s2-lam-value').textContent=label;
 }
+function boundaryEdit(){S.s2.playing=false;render2();readout2();playLabels();}
 
 /* ---------- 第 3 步 ---------- */
 function render3() {
@@ -449,25 +446,23 @@ function bind() {
   $('s1-env').onchange = e => { S.s1.env = e.target.checked; render1(); };
   $('s1-node').onclick = () => setP('s1', S.s1.lam / 4);
   $('s1-anti').onclick = () => setP('s1', 0);
-  $('s2-len').oninput = e => { S.s2.L = Number(e.target.value); render2(); readout2(); };
-  $('s2-lam').oninput = e => { S.s2.lam = Number(e.target.value); render2(); readout2(); };
-  $('s2-snap').onclick = () => {
-    /* 吸附只许落在 λ 滑杆量程内的台阶：逐 n 枚举台阶 λ=2L/n，量程外的跳过
-       （如 L=8 时 n=1 的 λ=16 超过滑杆 max=14，旧写法会把状态推到滑杆够不着的值、滑杆与状态脱钩——评审 S1），
-       取量程内离当前 λ 最近的可达台阶。λ 随 n 单调减小，越过量程下限即停。 */
-    const lamEl = $('s2-lam'), lo = Number(lamEl.min), hi = Number(lamEl.max);
-    let best = null, bestD = Infinity;
-    for (let n = 1; ; n++) {
-      const lam = lamN(S.s2.L, n);
-      if (lam < lo - 1e-9) break;
-      if (lam > hi + 1e-9) continue;
-      const d = Math.abs(lam - S.s2.lam);
-      if (d < bestD - 1e-12) { bestD = d; best = lam; }
-    }
-    if (best !== null) { S.s2.lam = best; lamEl.value = best; }
-    render2(); readout2();
-  };
-  $('s2-play').onclick = () => { S.s2.playing = !S.s2.playing; playLabels(); };
+  $('s2-len').value=S.s2.L;$('s2-lam').value=S.s2.lam;
+  $('s2-len').oninput=e=>{S.s2.L=Number(e.target.value);boundaryEdit();};
+  $('s2-lam').oninput=e=>{S.s2.lam=Number(e.target.value);boundaryEdit();};
+  $('s2-lam').addEventListener('keydown',e=>{
+    if(e.altKey||e.ctrlKey||e.metaKey)return;
+    const offsets={ArrowRight:.05,ArrowUp:.05,ArrowLeft:-.05,ArrowDown:-.05,PageUp:.5,PageDown:-.5};
+    if(!(e.key in offsets)&&!['Home','End'].includes(e.key))return;
+    e.preventDefault();const el=e.currentTarget;
+    el.value=e.key==='Home'?el.min:e.key==='End'?el.max:clamp(Number(el.value)+offsets[e.key],Number(el.min),Number(el.max));
+    el.dispatchEvent(new Event('input',{bubbles:true}));
+  });
+  $('s2-lam').addEventListener('keyup',e=>{if(['ArrowRight','ArrowUp','ArrowLeft','ArrowDown','PageUp','PageDown','Home','End'].includes(e.key))saveBoundaryReading();});
+  for(const id of ['s2-len','s2-lam'])$(id).addEventListener('change',saveBoundaryReading);
+  $('s2-snap').onclick=()=>{const c=currentBoundary().candidate;S.s2.lam=c.wavelength;$('s2-lam').value=S.s2.lam;boundaryEdit();saveBoundaryReading();};
+  $('s2-near').onclick=()=>{Object.assign(S.s2,{L:6,lam:6.05});$('s2-len').value=6;$('s2-lam').value=6.05;boundaryEdit();saveBoundaryReading();};
+  $('s2-reset').onclick=()=>{Object.assign(S.s2,{L:6,lam:4,t:0});$('s2-len').value=6;$('s2-lam').value=4;boundaryEdit();saveBoundaryReading();};
+  $('s2-play').onclick=()=>{S.s2.playing=!S.s2.playing;readout2();playLabels();saveBoundaryReading();};
   document.querySelectorAll('[data-n]').forEach(b => b.onclick = () => { S.s3.n = Number(b.dataset.n); render3(); readout3(); });
   $('s3-cmp').onchange = e => { S.s3.cmp = e.target.checked; render3(); };
   $('s3-play').onclick = () => { S.s3.playing = !S.s3.playing; playLabels(); };
@@ -523,6 +518,8 @@ function tick(ts) {
   }
   requestAnimationFrame(tick);
 }
+function pauseBoundary(){S.s2.playing=false;playLabels();saveBoundaryReading();}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseBoundary();});window.addEventListener('pagehide',pauseBoundary);
 onLangRefresh(renderAll); bind(); applyLang(getLang());
 prefillHist('s0'); prefillHist('s1');
 requestAnimationFrame(tick);
@@ -530,5 +527,5 @@ requestAnimationFrame(tick);
 window.STANDING = {
   get state() { return JSON.parse(JSON.stringify(S)); },
   yRight, yLeft, ySumRope, yAnalytic, ampRope, classifyPt,
-  yInc, yRefl, yStr, ampStr, modeQ, modeN, lamN, fN, f1, modeShape, respAmp, fmtNum
+  yInc, yRefl, yStr, ampStr, modeQ, modeN, modeInfo, fmtBoundary, lamN, fN, f1, modeShape, respAmp, fmtNum
 };

@@ -36,3 +36,7 @@
 ## 交付
 - 自查：node --check、键集比对、上述判定口径断言组、无头浏览器实测（含组合路径与 390、学习者试走复述）。
 - 报告 ~/workspace/standing-wave-lab/build-report.md；报告中另附 CONCEPT-MAP 拟登记概念行两条供注册方采用：①驻波包络：每点振幅 = 2A·|cos(kx)|，波节波腹由位置定死 → standing-wave#step1；②弦模式：两端固定只放行 λ_n=2L/n、f_n=n·f₁ → standing-wave#step2。
+
+## Codex S2 boundary correction — 2026-10-26
+
+The original ±.02 mode-acceptance band and S2-only worker file boundary are superseded by [strict-boundary spec](../specs/standing-boundary.md), after independent gate. Reuse current yInc/yRefl/yStr/ampStr and S.s2 clock/canvas; classify a candidate as a fixed-end mode only within floating-point precision, not 'near enough'. Leftx0 is automatically fixed; rightxL adds sin(kL)=0. Compare native L6/λ6.05 (invalid, nonzero endpoint envelope) with explicit snapλ6/mode2, not current y(L,t)=0 alone. Step-anyλ plus explicit keyboard.05 preserves exact rational snaps; one wavelength-distance candidate drives readout/Snap. T4s is a spatial-shape demonstration, not real fixed-wave-speed frequency sweep. Invaliddashedshape is not actual fixed-string/off-resonance response. Inputs pause/holdt; committed history snapshots restorepaused without quiztracking. Original other steps and Muse/Alberto source794f6825 retained. Per-fix contract and acceptance are maintained here/spec, not just posthoc log.

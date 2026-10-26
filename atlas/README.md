@@ -275,3 +275,7 @@ Finite floating point is a model-display boundary: adjacent tiny spans pass inde
 ## Phase difference and interference — 2026-10-26
 
 [Contract](../specs/interference-phase.md), [verification](../specs/reviews/interference-phase-20261026/verification.md). Existing interference course gains a same-point paused phase comparison and strict cancellation correction; one canonical concept/application link, no new simulator or route.39/51/14 is the new bounded graph snapshot; previous snapshots remain historical. Publication and public-access limits are recorded separately.
+
+## Standing-wave boundary correction — 2026-10-26
+
+[Contract](../specs/standing-boundary.md), [verification](../specs/reviews/standing-boundary-20261026/verification.md). Repairs existing S2 strict-mode/near-trial distinction and off-grid snap synchronization without adding graph nodes/routes/models;39/51/14 unchanged. Publication and public-access evidence remain separate.

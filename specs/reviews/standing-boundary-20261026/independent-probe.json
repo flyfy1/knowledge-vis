@@ -1,0 +1,32 @@
+{
+  "verdict": "PASS",
+  "remainingMustFix": 0,
+  "candidateCases": 3111,
+  "maxAmplitudeError": 0,
+  "nearCase": {
+    "q": 1.9834710743801653,
+    "mode": 0,
+    "envelope": 0.10380763626379926,
+    "instantAtT1": 0
+  },
+  "offGridExact": 4.066666666666666,
+  "checks": [
+    "brute nearest-wavelength oracle over complete reachable n",
+    "same model harmonic endpoint envelope",
+    "strict near/exact/outside-tolerance",
+    "low-q and bounds",
+    "wave and response functions source-identical",
+    "restore exact ratio paused",
+    "300 input previews: zero history writes; change commits",
+    "same-t near/snap/off-grid native value",
+    "actual keyboard increment and commit",
+    "reset and denied history fallback"
+  ],
+  "sourceSHA256": "ed3c956e94a4ede5b9d7b7caa535cf3686a422d93aabd3ffd2f87c4ca8e28798",
+  "notTested": [
+    "Chrome/native event delivery",
+    "viewport/pixel/focus",
+    "browser immediate reload/Back",
+    "real hardware/learning effects"
+  ]
+}
