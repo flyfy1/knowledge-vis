@@ -1,0 +1,57 @@
+{
+  "result": "pass",
+  "checkedAt": "2026-10-26T00:44:22.716807+00:00",
+  "canonicalCases": 3638,
+  "exhaustive": "n=1..7 over values 1..3",
+  "random": "350 cases, seed 891, n<=11",
+  "largeGapOracle": [
+    {
+      "length": 100000,
+      "first": 100000,
+      "last": 100000,
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "length": 100000,
+      "first": 1,
+      "last": 100000,
+      "expected": 528504053,
+      "actual": 528504053
+    },
+    {
+      "length": 100000,
+      "first": 1,
+      "last": 100000,
+      "expected": 690107415,
+      "actual": 690107415
+    },
+    {
+      "length": 100000,
+      "first": 100000,
+      "last": 1,
+      "expected": 528504053,
+      "actual": 528504053
+    }
+  ],
+  "sourceParity": true,
+  "copyUniqueKeys": 83,
+  "officialExamples": [
+    [
+      [
+        2,
+        1,
+        3
+      ],
+      6
+    ],
+    [
+      [
+        2
+      ],
+      0
+    ]
+  ],
+  "oracle": "enumerated position combinations; large cases count subsets crossing each adjacent sorted gap",
+  "baselineExecuted": true
+}

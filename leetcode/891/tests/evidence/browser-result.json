@@ -1,0 +1,786 @@
+{
+  "result": "pass",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "semantics": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "frame": 1,
+      "term": "i=0, a[i]=1: 1 × (1 − 4) = -3Before 0 + this term (-3) = after -3",
+      "roles": "Maximum owner: 1 choices; earlier positions optional, later excludedPositions {0} → values [1]Minimum owner: 4 choices; later positions optional, earlier excludedPositions {0} → values [1]Positions {0,1} → values [1,2]Positions {0,2} → values [1,3]Positions {0,1,2} → values [1,2,3]",
+      "total": "Current cumulative net contribution = -3 (not the answer yet)"
+    },
+    {
+      "locale": "en",
+      "preset": 0,
+      "frame": 2,
+      "term": "i=1, a[i]=2: 2 × (2 − 2) = 0Before -3 + this term (0) = after -3",
+      "roles": "Maximum owner: 2 choices; earlier positions optional, later excludedPositions {1} → values [2]Positions {0,1} → values [1,2]Minimum owner: 2 choices; later positions optional, earlier excludedPositions {1} → values [2]Positions {1,2} → values [2,3]",
+      "total": "Current cumulative net contribution = -3 (not the answer yet)"
+    },
+    {
+      "locale": "en",
+      "preset": 0,
+      "frame": 3,
+      "term": "i=2, a[i]=3: 3 × (4 − 1) = 9Before -3 + this term (9) = after 6",
+      "roles": "Maximum owner: 4 choices; earlier positions optional, later excludedPositions {2} → values [3]Positions {0,2} → values [1,3]Positions {1,2} → values [2,3]Positions {0,1,2} → values [1,2,3]Minimum owner: 1 choices; later positions optional, earlier excludedPositions {2} → values [3]",
+      "total": "Final total width = 6; modulo 1000000007 = 6"
+    },
+    {
+      "locale": "en",
+      "preset": 0,
+      "input": [
+        2,
+        1,
+        3
+      ],
+      "expected": 6,
+      "endpoint": "Final total width = 6; modulo 1000000007 = 6"
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "input": [
+        1,
+        1,
+        3
+      ],
+      "expected": 6,
+      "endpoint": "Final total width = 6; modulo 1000000007 = 6"
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "input": [
+        2
+      ],
+      "expected": 0,
+      "endpoint": "Final total width = 0; modulo 1000000007 = 0"
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "input": [
+        4,
+        4,
+        4
+      ],
+      "expected": 0,
+      "endpoint": "Final total width = 0; modulo 1000000007 = 0"
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "input": [
+        3,
+        2,
+        1
+      ],
+      "expected": 6,
+      "endpoint": "Final total width = 6; modulo 1000000007 = 6"
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "input": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "expected": 32,
+      "endpoint": "Final total width = 32; modulo 1000000007 = 32"
+    },
+    {
+      "locale": "en",
+      "choice": 0,
+      "feedback": "A middle position need not cancel: the two sides have different numbers of optional positions. One earlier position gives 2¹=2 maximum roles; two later positions give 2²=4 minimum roles. Thus 2×(2−4)=−4. The other 2 remains a separate position. Rightmost-maximum and leftmost-minimum ownership resolves the tie."
+    },
+    {
+      "locale": "en",
+      "choice": 1,
+      "feedback": "Correct prediction. One earlier position gives 2¹=2 maximum roles; two later positions give 2²=4 minimum roles. Thus 2×(2−4)=−4. The other 2 remains a separate position. Rightmost-maximum and leftmost-minimum ownership resolves the tie."
+    },
+    {
+      "locale": "en",
+      "choice": 2,
+      "feedback": "The sign is reversed: more choices on the right increase the minimum roles being subtracted. One earlier position gives 2¹=2 maximum roles; two later positions give 2²=4 minimum roles. Thus 2×(2−4)=−4. The other 2 remains a separate position. Rightmost-maximum and leftmost-minimum ownership resolves the tie."
+    },
+    {
+      "locale": "en",
+      "copy": "source rendered/copied/downloaded/native fallback exact including final newline",
+      "sentinel": "891-fallback-en-1792975696984",
+      "platform": "linux",
+      "fallback": "Automatic copy is unavailable. Full source selected; press Ctrl+C (⌘C on Mac)."
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "frame": 1,
+      "term": "i=0，a[i]=1：1 × (1 − 4) = -3累计前 0 + 本项 (-3) = 累计后 -3",
+      "roles": "最大值负责人：1 种；左侧可选，右侧排除位置 {0} → 数值 [1]最小值负责人：4 种；右侧可选，左侧排除位置 {0} → 数值 [1]位置 {0,1} → 数值 [1,2]位置 {0,2} → 数值 [1,3]位置 {0,1,2} → 数值 [1,2,3]",
+      "total": "当前累计净贡献 = -3（尚非答案）"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "frame": 2,
+      "term": "i=1，a[i]=2：2 × (2 − 2) = 0累计前 -3 + 本项 (0) = 累计后 -3",
+      "roles": "最大值负责人：2 种；左侧可选，右侧排除位置 {1} → 数值 [2]位置 {0,1} → 数值 [1,2]最小值负责人：2 种；右侧可选，左侧排除位置 {1} → 数值 [2]位置 {1,2} → 数值 [2,3]",
+      "total": "当前累计净贡献 = -3（尚非答案）"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "frame": 3,
+      "term": "i=2，a[i]=3：3 × (4 − 1) = 9累计前 -3 + 本项 (9) = 累计后 6",
+      "roles": "最大值负责人：4 种；左侧可选，右侧排除位置 {2} → 数值 [3]位置 {0,2} → 数值 [1,3]位置 {1,2} → 数值 [2,3]位置 {0,1,2} → 数值 [1,2,3]最小值负责人：1 种；右侧可选，左侧排除位置 {2} → 数值 [3]",
+      "total": "最终宽度和 = 6；对 1000000007 取模 = 6"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "input": [
+        2,
+        1,
+        3
+      ],
+      "expected": 6,
+      "endpoint": "最终宽度和 = 6；对 1000000007 取模 = 6"
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "input": [
+        1,
+        1,
+        3
+      ],
+      "expected": 6,
+      "endpoint": "最终宽度和 = 6；对 1000000007 取模 = 6"
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "input": [
+        2
+      ],
+      "expected": 0,
+      "endpoint": "最终宽度和 = 0；对 1000000007 取模 = 0"
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "input": [
+        4,
+        4,
+        4
+      ],
+      "expected": 0,
+      "endpoint": "最终宽度和 = 0；对 1000000007 取模 = 0"
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "input": [
+        3,
+        2,
+        1
+      ],
+      "expected": 6,
+      "endpoint": "最终宽度和 = 6；对 1000000007 取模 = 6"
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "input": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "expected": 32,
+      "endpoint": "最终宽度和 = 32；对 1000000007 取模 = 32"
+    },
+    {
+      "locale": "zh",
+      "choice": 0,
+      "feedback": "中间不保证抵消：左右可选位置数不同。 左侧 1 个位置，最大值角色 2¹=2 种；右侧 2 个位置，最小值角色 2²=4 种。所以 2×(2−4)=−4。相邻另一个 2 仍是独立位置；用最右最大值、最左最小值的负责人规则处理相等值。"
+    },
+    {
+      "locale": "zh",
+      "choice": 1,
+      "feedback": "预测正确。 左侧 1 个位置，最大值角色 2¹=2 种；右侧 2 个位置，最小值角色 2²=4 种。所以 2×(2−4)=−4。相邻另一个 2 仍是独立位置；用最右最大值、最左最小值的负责人规则处理相等值。"
+    },
+    {
+      "locale": "zh",
+      "choice": 2,
+      "feedback": "符号颠倒了：右侧选择多，增加的是被减去的最小值角色。 左侧 1 个位置，最大值角色 2¹=2 种；右侧 2 个位置，最小值角色 2²=4 种。所以 2×(2−4)=−4。相邻另一个 2 仍是独立位置；用最右最大值、最左最小值的负责人规则处理相等值。"
+    },
+    {
+      "locale": "zh",
+      "copy": "source rendered/copied/downloaded/native fallback exact including final newline",
+      "sentinel": "891-fallback-zh-1792975702323",
+      "platform": "linux",
+      "fallback": "自动复制不可用。已选中完整源码，请按 Ctrl+C（Mac 用 ⌘C）。"
+    }
+  ],
+  "fits": [
+    {
+      "locale": "en",
+      "width": 256,
+      "preset": 0,
+      "label": "[2,1,3]",
+      "text": 46.56010437011719,
+      "available": 206
+    },
+    {
+      "locale": "en",
+      "width": 256,
+      "preset": 1,
+      "label": "[1,1,3]",
+      "text": 46.56010437011719,
+      "available": 206
+    },
+    {
+      "locale": "en",
+      "width": 256,
+      "preset": 2,
+      "label": "[2]",
+      "text": 19.680038452148438,
+      "available": 206
+    },
+    {
+      "locale": "en",
+      "width": 256,
+      "preset": 3,
+      "label": "[4,4,4]",
+      "text": 46.56010437011719,
+      "available": 206
+    },
+    {
+      "locale": "en",
+      "width": 256,
+      "preset": 4,
+      "label": "[3,2,1]",
+      "text": 46.56010437011719,
+      "available": 206
+    },
+    {
+      "locale": "en",
+      "width": 256,
+      "preset": 5,
+      "label": "[1,2,4,5]",
+      "text": 60.00013732910156,
+      "available": 206
+    },
+    {
+      "locale": "zh",
+      "width": 256,
+      "preset": 0,
+      "label": "[2,1,3]",
+      "text": 46.56010437011719,
+      "available": 206
+    },
+    {
+      "locale": "zh",
+      "width": 256,
+      "preset": 1,
+      "label": "[1,1,3]",
+      "text": 46.56010437011719,
+      "available": 206
+    },
+    {
+      "locale": "zh",
+      "width": 256,
+      "preset": 2,
+      "label": "[2]",
+      "text": 19.680038452148438,
+      "available": 206
+    },
+    {
+      "locale": "zh",
+      "width": 256,
+      "preset": 3,
+      "label": "[4,4,4]",
+      "text": 46.56010437011719,
+      "available": 206
+    },
+    {
+      "locale": "zh",
+      "width": 256,
+      "preset": 4,
+      "label": "[3,2,1]",
+      "text": 46.56010437011719,
+      "available": 206
+    },
+    {
+      "locale": "zh",
+      "width": 256,
+      "preset": 5,
+      "label": "[1,2,4,5]",
+      "text": 60.00013732910156,
+      "available": 206
+    },
+    {
+      "locale": "en",
+      "width": 326,
+      "preset": 0,
+      "label": "[2,1,3]",
+      "text": 46.56010437011719,
+      "available": 276
+    },
+    {
+      "locale": "en",
+      "width": 326,
+      "preset": 1,
+      "label": "[1,1,3]",
+      "text": 46.56010437011719,
+      "available": 276
+    },
+    {
+      "locale": "en",
+      "width": 326,
+      "preset": 2,
+      "label": "[2]",
+      "text": 19.680038452148438,
+      "available": 276
+    },
+    {
+      "locale": "en",
+      "width": 326,
+      "preset": 3,
+      "label": "[4,4,4]",
+      "text": 46.56010437011719,
+      "available": 276
+    },
+    {
+      "locale": "en",
+      "width": 326,
+      "preset": 4,
+      "label": "[3,2,1]",
+      "text": 46.56010437011719,
+      "available": 276
+    },
+    {
+      "locale": "en",
+      "width": 326,
+      "preset": 5,
+      "label": "[1,2,4,5]",
+      "text": 60.00013732910156,
+      "available": 276
+    },
+    {
+      "locale": "zh",
+      "width": 326,
+      "preset": 0,
+      "label": "[2,1,3]",
+      "text": 46.56010437011719,
+      "available": 276
+    },
+    {
+      "locale": "zh",
+      "width": 326,
+      "preset": 1,
+      "label": "[1,1,3]",
+      "text": 46.56010437011719,
+      "available": 276
+    },
+    {
+      "locale": "zh",
+      "width": 326,
+      "preset": 2,
+      "label": "[2]",
+      "text": 19.680038452148438,
+      "available": 276
+    },
+    {
+      "locale": "zh",
+      "width": 326,
+      "preset": 3,
+      "label": "[4,4,4]",
+      "text": 46.56010437011719,
+      "available": 276
+    },
+    {
+      "locale": "zh",
+      "width": 326,
+      "preset": 4,
+      "label": "[3,2,1]",
+      "text": 46.56010437011719,
+      "available": 276
+    },
+    {
+      "locale": "zh",
+      "width": 326,
+      "preset": 5,
+      "label": "[1,2,4,5]",
+      "text": 60.00013732910156,
+      "available": 276
+    },
+    {
+      "locale": "en",
+      "width": 644,
+      "preset": 0,
+      "label": "[2,1,3]",
+      "text": 46.56010437011719,
+      "available": 594
+    },
+    {
+      "locale": "en",
+      "width": 644,
+      "preset": 1,
+      "label": "[1,1,3]",
+      "text": 46.56010437011719,
+      "available": 594
+    },
+    {
+      "locale": "en",
+      "width": 644,
+      "preset": 2,
+      "label": "[2]",
+      "text": 19.680038452148438,
+      "available": 594
+    },
+    {
+      "locale": "en",
+      "width": 644,
+      "preset": 3,
+      "label": "[4,4,4]",
+      "text": 46.56010437011719,
+      "available": 594
+    },
+    {
+      "locale": "en",
+      "width": 644,
+      "preset": 4,
+      "label": "[3,2,1]",
+      "text": 46.56010437011719,
+      "available": 594
+    },
+    {
+      "locale": "en",
+      "width": 644,
+      "preset": 5,
+      "label": "[1,2,4,5]",
+      "text": 60.00013732910156,
+      "available": 594
+    },
+    {
+      "locale": "zh",
+      "width": 644,
+      "preset": 0,
+      "label": "[2,1,3]",
+      "text": 46.56010437011719,
+      "available": 594
+    },
+    {
+      "locale": "zh",
+      "width": 644,
+      "preset": 1,
+      "label": "[1,1,3]",
+      "text": 46.56010437011719,
+      "available": 594
+    },
+    {
+      "locale": "zh",
+      "width": 644,
+      "preset": 2,
+      "label": "[2]",
+      "text": 19.680038452148438,
+      "available": 594
+    },
+    {
+      "locale": "zh",
+      "width": 644,
+      "preset": 3,
+      "label": "[4,4,4]",
+      "text": 46.56010437011719,
+      "available": 594
+    },
+    {
+      "locale": "zh",
+      "width": 644,
+      "preset": 4,
+      "label": "[3,2,1]",
+      "text": 46.56010437011719,
+      "available": 594
+    },
+    {
+      "locale": "zh",
+      "width": 644,
+      "preset": 5,
+      "label": "[1,2,4,5]",
+      "text": 60.00013732910156,
+      "available": 594
+    },
+    {
+      "locale": "en",
+      "width": 908,
+      "preset": 0,
+      "label": "[2,1,3]",
+      "text": 46.56010437011719,
+      "available": 858
+    },
+    {
+      "locale": "en",
+      "width": 908,
+      "preset": 1,
+      "label": "[1,1,3]",
+      "text": 46.56010437011719,
+      "available": 858
+    },
+    {
+      "locale": "en",
+      "width": 908,
+      "preset": 2,
+      "label": "[2]",
+      "text": 19.680038452148438,
+      "available": 858
+    },
+    {
+      "locale": "en",
+      "width": 908,
+      "preset": 3,
+      "label": "[4,4,4]",
+      "text": 46.56010437011719,
+      "available": 858
+    },
+    {
+      "locale": "en",
+      "width": 908,
+      "preset": 4,
+      "label": "[3,2,1]",
+      "text": 46.56010437011719,
+      "available": 858
+    },
+    {
+      "locale": "en",
+      "width": 908,
+      "preset": 5,
+      "label": "[1,2,4,5]",
+      "text": 60.00013732910156,
+      "available": 858
+    },
+    {
+      "locale": "zh",
+      "width": 908,
+      "preset": 0,
+      "label": "[2,1,3]",
+      "text": 46.56010437011719,
+      "available": 858
+    },
+    {
+      "locale": "zh",
+      "width": 908,
+      "preset": 1,
+      "label": "[1,1,3]",
+      "text": 46.56010437011719,
+      "available": 858
+    },
+    {
+      "locale": "zh",
+      "width": 908,
+      "preset": 2,
+      "label": "[2]",
+      "text": 19.680038452148438,
+      "available": 858
+    },
+    {
+      "locale": "zh",
+      "width": 908,
+      "preset": 3,
+      "label": "[4,4,4]",
+      "text": 46.56010437011719,
+      "available": 858
+    },
+    {
+      "locale": "zh",
+      "width": 908,
+      "preset": 4,
+      "label": "[3,2,1]",
+      "text": 46.56010437011719,
+      "available": 858
+    },
+    {
+      "locale": "zh",
+      "width": 908,
+      "preset": 5,
+      "label": "[1,2,4,5]",
+      "text": 60.00013732910156,
+      "available": 858
+    }
+  ],
+  "focus": [
+    {
+      "locale": "en",
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    },
+    {
+      "locale": "zh",
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    },
+    {
+      "locale": "en",
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    },
+    {
+      "locale": "zh",
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    },
+    {
+      "locale": "en",
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    },
+    {
+      "locale": "zh",
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    },
+    {
+      "locale": "en",
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    },
+    {
+      "locale": "zh",
+      "width": "3px",
+      "color": "rgb(255, 180, 84)",
+      "height": 48
+    }
+  ],
+  "links": [
+    {
+      "locale": "en",
+      "label": "#828: contributions by character position",
+      "resolved": "http://127.0.0.1:18770/leetcode/828/#step2",
+      "excerpt": "03Which pieces contain one occurrence exactly once?How often does B at i=1 contribute in ABA? Indices start at 0. An occurrence is a letter at one specific position. To include B, l can be 0 or 1 and r can be 1 or 2: AB, ABA, B, BA give 2×2=4 contributions. A at index 0 cannot extend to index 2, which would include another A; it counts only in A and AB. A at index 2 counts in BA and A. Total: 2+4+2=8.Let p and q be the nearest equal-letter positions before and after i. For the letter at i to occur exactly once, we need p < l ≤ i ≤ r < q. Including p or q introduces a second occurrence, so both boundaries are excluded. There is no equal letter between these neighbors, so every remaining combination is valid. Use p=-1 or q=n when a neighbor is missing; these are boundary markers, not characters.Contribution of position i = (i − p) × (q − i)Why multiply, then sum? Every left endpoint pairs with every right endpoint, giving (i-p)(q-i) pairs. Each unique letter in a substring corresponds to exactly one position; conversely, each valid position–substring pair earns one point. After k positions, the running total is exactly those positions’ contributions across all substrings. No such pair is missing or counted twice. After n positions, this is the requested sum.Changing the preset restarts the trace. Keep the string fixed and settle one position at a time: inspect p and q, then the legal endpoint pairs, then the accumulated ledger. Back restores the whole state.String preset (change restarts)ABAABCLEETCODEAAAAAABABABCATeaching simulation: equal-letter neighbors are computed first, then contributions are shown by position. This does not execute the Python below. No steps are omitted. Snapshots and substring lists for these short presets use additional teaching storage, separate from the submission’s O(n) auxiliary space.Back one positionSettle next positionResetSettle all positionsSettled 0/3 positions; cumulative contribution 0Index 0: APendingIndex 1: BPendingIndex 2: AP"
+    },
+    {
+      "locale": "en",
+      "label": "#940: distinct strings versus choices of positions",
+      "resolved": "http://127.0.0.1:18770/leetcode/940/#step0",
+      "excerpt": "01 · Two a’s: how many strings?Given s = \"aa\", which nonempty strings can remain? A subsequence is formed by deleting any positions while keeping the order of the remaining letters. Distinct means equal resulting strings count once. List them on paper before revealing.a₁a₂Show / hide hand calculationPositions start at 1: keep {1} → a; keep {2} → a; keep {1,2} → aa. Merge the two a results: the answer is 2, {a, aa}. Deleting everything gives the empty string, which is excluded.Official bounds: 1 ≤ s.length ≤ 2000, lowercase English letters only. Return the number of nonempty subsequences modulo 1,000,000,007 (the remainder after division). Empty input is outside the contract."
+    },
+    {
+      "locale": "zh",
+      "label": "#828：按字符位置计算贡献",
+      "resolved": "http://127.0.0.1:18770/leetcode/828/#step2",
+      "excerpt": "03固定一个字母位置，哪些片段只包含它一次？这一步要回答：ABA 中位置 i=1 的 B 能贡献几次？位置从 0 开始。一次出现指一个具体位置上的字母。要包含 B，左端 l 可为 0 或 1，右端 r 可为 1 或 2；组合成 AB、ABA、B、BA，共 2×2=4 次。位置 0 的 A 则不能把右端伸到 2，否则包含两个 A；它只有 A、AB 两次。位置 2 的 A 同理有 BA、A 两次。合计 2+4+2=8。若同字母之前最近的位置为 p、之后最近的位置为 q，要让位置 i 的字母恰好出现一次，必须 p < l ≤ i ≤ r < q。l=p 或 r=q 会引入第二次出现，必须排除；更近的位置之间没有同字母，因此其余组合全都合法。无前一个时用 p=-1，无后一个时用 q=n；它们是边界标记，不是实际字符。位置 i 的贡献 = (i − p) × (q − i)为什么相乘再相加？每个左端都能配每个右端，所以有 (i-p)(q-i) 对。一个子串中每个唯一字母对应且仅对应一个位置；反过来，每个合法的位置与子串配对都应得 1 分。故处理前 k 个位置后，累计值恰好是这些位置在所有子串中的贡献，不会漏计或重复计算同一项。处理完 n 个位置便得到所求总和。选择预设会从头开始。保持字符串不变，逐次结算一个位置；先看 p、q，再看合法端点对，最后看历史累计。后退会完整还原。字符串预设（切换重启）ABAABCLEETCODEAAAAAABABABCA教学模拟：提前求出全部相邻同字母边界，再按位置展示贡献，并不执行下方 Python。所有步骤均展示，无省略；短预设的快照与子串列表占用额外教学空间，不属于提交代码的 O(n) 辅助空间。后退一个位置结算下一个位置重置结算全部位置已结算 0/3 个位置；累计贡献 0位置 0：A待结算位置 1：B待结算位置 2：A待结算尚未结算任何位置。点“结算下一个位置”查看位置 0 的贡献。合法端点对 [l,r] 与对应子串（只数当前字母位置）累计贡献记录（按原串位置）"
+    },
+    {
+      "locale": "zh",
+      "label": "#940：不同字符串与位置选择的区别",
+      "resolved": "http://127.0.0.1:18770/leetcode/940/#step0",
+      "excerpt": "01 · 两个 a，算几种？给定 s = \"aa\"，能留下哪些非空字符串？子序列指删去任意位置、但不改变剩余字母顺序的字符串；不同（distinct）指相同结果只算一次。先在纸上列出，再揭晓。a₁a₂显示 / 隐藏手算位置从 1 开始：留 {1} → a；留 {2} → a；留 {1,2} → aa。合并两个 a，答案是 2：{a, aa}。全删得到空串，不计入答案。官方范围：1 ≤ s.length ≤ 2000，仅小写英文字母。返回非空子序列的种数对 1,000,000,007 取模（除以这个数的余数）。空输入不在题目范围内。"
+    }
+  ],
+  "contrasts": [
+    {
+      "selector": "body",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "color": "rgb(201, 212, 226)",
+      "background": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".position span",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#prev",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#next",
+      "color": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".group-box",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#total",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "pre",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(9, 14, 22)",
+      "opacity": "1",
+      "ratio": 16.437295258072666
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "color": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "role": "focus",
+      "color": "rgb(255, 180, 84)",
+      "background": "rgb(13,17,23)",
+      "ratio": 10.731637051347173
+    },
+    {
+      "role": "focus",
+      "color": "rgb(255, 180, 84)",
+      "background": "rgb(22,27,34)",
+      "ratio": 9.809435643476732
+    },
+    {
+      "role": "focus",
+      "color": "rgb(255, 180, 84)",
+      "background": "rgb(28,35,48)",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "cssBytes": 11720,
+  "errors": [],
+  "assets": [],
+  "external": [],
+  "zoom": "CSS zoom=2 at 1440; independent 320/390/736 widths. Physical devices/native browser chrome zoom not measured."
+}
