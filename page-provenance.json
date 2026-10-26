@@ -3,15 +3,15 @@
   "pages": {
     "atlas": {
       "developer": "Codex",
-      "edition": "codex-atlas-bayes-measurement-20261026",
+      "edition": "codex-atlas-spring-potential-20261026",
       "kind": "revised",
-      "sourceRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f",
+      "sourceRevision": "d7b487392f85d8828aad1bd9da10a699bf9eca36",
       "scope": {
-        "zh": "知识地图、实验路线与贝叶斯测量的定义优先入口",
-        "en": "Knowledge atlas, experiment routes and definition-first Bayes measurement entry"
+        "zh": "保留既有知识地图与实验路线；原功—能视图新增同相位势能曲线、回复力及动能间隙，路线纳入已有简谐振动概念",
+        "en": "Retains the atlas and routes; adds same-phase potential/force/kinetic-gap view to the existing work experiment, with the existing oscillation concept in its route"
       },
       "originalAuthorship": "not asserted; prior contributions retained",
-      "previousSourceRevision": "c2b8d43a9099bf331e5c65697752ac54afd79ab9"
+      "previousSourceRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f"
     },
     "complex-numbers": {
       "developer": "Codex",
@@ -204,17 +204,17 @@
     },
     "atlas/galaxy": {
       "developer": "Codex",
-      "edition": "codex-atlas-galaxy-bayes-measurement-20261026",
+      "edition": "codex-atlas-galaxy-spring-potential-20261026",
       "kind": "revised",
-      "sourceRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f",
+      "sourceRevision": "d7b487392f85d8828aad1bd9da10a699bf9eca36",
       "scope": {
-        "zh": "三维知识星图与贝叶斯测量入门来源连接",
-        "en": "3D knowledge galaxy and introductory Bayes measurement source connection"
+        "zh": "保留既有三维知识星图；共享功—能路线纳入已有简谐振动概念",
+        "en": "Retains the 3D galaxy; its shared work-energy route now includes the existing oscillation concept"
       },
       "originalAuthorship": "existing atlas contributions retained; galaxy presentation developed with Codex",
       "path": "atlas/galaxy.html",
       "integrationRevision": "c3445f66a3e666acd557a04a7194c9568a383c35",
-      "previousSourceRevision": "c2b8d43a9099bf331e5c65697752ac54afd79ab9"
+      "previousSourceRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f"
     },
     "leetcode/42": {
       "developer": "Codex",
