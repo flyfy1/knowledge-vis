@@ -1,0 +1,29 @@
+{
+  "kind": "author self-check",
+  "cases": 2205,
+  "intermediate": {
+    "rank_rounds": 4170,
+    "exact_lcps": 22031
+  },
+  "large": [
+    {
+      "n": 30000,
+      "answerLength": 29999,
+      "seconds": 0.4246396250091493
+    },
+    {
+      "n": 30000,
+      "answerLength": 29998,
+      "seconds": 0.4361972260521725
+    },
+    {
+      "n": 30000,
+      "answerLength": 14999,
+      "seconds": 0.3888572850264609
+    }
+  ],
+  "seconds": 13.26045116095338,
+  "baseline": "all start pairs, direct characters",
+  "oracle": "enumerated windows grouped by length",
+  "sourceMirrorExact": true
+}

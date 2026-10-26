@@ -1,0 +1,42 @@
+{
+  "kind": "author visual self-check",
+  "at": "2026-10-26T07:41:04.106337+00:00",
+  "files": [
+    "desktop-full-en.png",
+    "forced-colors.png",
+    "header-zh-390.png",
+    "overflow-before.png",
+    "rank-en-1440-z1.png",
+    "rank-en-320-z1.png",
+    "rank-en-390-z2.png",
+    "rank-zh-1440-z1.png",
+    "rank-zh-320-z1.png",
+    "rank-zh-390-z2.png",
+    "scan-en-1440-z1.png",
+    "scan-en-320-z1.png",
+    "scan-en-390-z2.png",
+    "scan-values-en-1440-z1.png",
+    "scan-values-en-320-z1.png",
+    "scan-values-en-390-z2.png",
+    "scan-values-zh-1440-z1.png",
+    "scan-values-zh-320-z1.png",
+    "scan-values-zh-390-z2.png",
+    "scan-zh-1440-z1.png",
+    "scan-zh-320-z1.png",
+    "scan-zh-390-z2.png"
+  ],
+  "observations": [
+    "Desktop composition has six distinct causal sections with code and independent prediction.",
+    "Both locales retain original starts beside suffix text and numeric LCP values.",
+    "320px tables scroll horizontally; 390px at200% shows a sticky start identifier and a readable selected LCP column.",
+    "Positive prefixes are underlined; zero LCP and no-predecessor are distinct.",
+    "Chinese390px H1 includes1044 and localized title; controls and hand windows remain readable.",
+    "Forced-colors rendering preserves categorical top/bottom borders.",
+    "overflow-before.png is a pre-freeze failed layout retained as historical repair evidence."
+  ],
+  "limitations": [
+    "CSS magnification in Chromium/Linux, not physical-device or browser-toolbar zoom verification.",
+    "Horizontally scrolled captures may show partial neighboring columns; each column can be aligned beside the sticky start.",
+    "No observed novice or independent reviewer outcome."
+  ]
+}
