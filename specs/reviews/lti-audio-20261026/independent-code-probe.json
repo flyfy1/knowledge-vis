@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "adapterCases": 198,
+  "invalidCases": 5,
+  "maxRawPeak": 3.875200950367902,
+  "twoVoiceDigitalBound": 0.23251205702207411,
+  "maxVoicesObserved": 2,
+  "sameOffsetMock": true,
+  "staleResumeCannotReplaceNewSession": true,
+  "visibilityCleansAllContexts": true,
+  "method": "Own VM adapter checks + independent mocked WebAudio callback ordering (no Chrome, PCM rendering or listening)."
+}

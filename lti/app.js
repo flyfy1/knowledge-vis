@@ -552,6 +552,16 @@ function drawS2() {
   $('s2-a').disabled = s2.sys !== 'acc';
   $('s2-readout').innerHTML = t('s2ro', { sys: t('s2sys' + (s2.sys === 'ma3' ? 'Ma' : s2.sys === 'acc' ? 'Acc' : 'Diff')), N: SIG2.length, err: fmtSmart(err) });
   document.querySelectorAll('#s2-sys .btn').forEach(b => b.classList.toggle('active', b.dataset.sys === s2.sys));
+  const audition=window.LtiSound?.update(SIG2,s2,runSystem);
+  if(audition){
+    const soundCtx=ctxOf('s2-audio-wave');
+    stemPlot(soundCtx,{x:0,y:0,w:$('s2-audio-wave')._w,h:$('s2-audio-wave')._h},{
+      n0:0,n1:55,yLo:-2.2,yHi:4.3,
+      legend:[[t('soundX'),'#6ee7ff'],[t('soundY'),'#ffb454']],
+      series:[{data:audition.x.slice(0,56),color:'#6ee7ff',width:1.5},{data:audition.y.slice(0,56),color:'#ffb454',width:2,hollow:true}]
+    });
+    $('s2-audio-wave').setAttribute('aria-label',t('soundWave'));
+  }
 }
 document.querySelectorAll('#s2-sys .btn').forEach(b => b.addEventListener('click', () => { s2.sys = b.dataset.sys; drawS2(); }));
 $('s2-a').addEventListener('input', e => { s2.a = parseFloat(e.target.value); drawS2(); });

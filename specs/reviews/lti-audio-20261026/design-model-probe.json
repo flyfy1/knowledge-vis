@@ -1,0 +1,23 @@
+{
+  "method": "Independent VM using actual existing runSystem and SIG2; no WebAudio/listening or implementation acceptance",
+  "sourceSHA": "3c92f6c5d73188ff05bc897c10f9841af4d10a568be1d4cc58bf86d6dcd29e6e",
+  "repeat": 515,
+  "inputLength": 14420,
+  "length": 14932,
+  "bufferSampleRate": 8000,
+  "seconds": 1.8665,
+  "aValues": 66,
+  "max": {
+    "a": 0.95,
+    "peak": 3.875200950367902
+  },
+  "peaks": {
+    "input": 1,
+    "ma3": 0.5333333333333333,
+    "diff": 2
+  },
+  "gain": 0.03,
+  "singleMax": 0.11625602851103706,
+  "twoTriangleBound": 0.23251205702207411,
+  "first28Agreement": true
+}

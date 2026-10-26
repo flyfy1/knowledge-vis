@@ -1,0 +1,180 @@
+{
+  "checks": [
+    "no context/autoplay before gesture; actual native context running, audio-clock progress and Stop/dispose",
+    "same-timeline output updates;66 rapid a edits coalesced <=2 voices; latest selection and bilingual status agree",
+    "volume0/max, repeated start/stop, finite natural end closes contexts and sources",
+    "step navigation, Back and refresh never resume audio",
+    "background visibility disposes audio",
+    "OfflineAudioContext native8000→8000/44100/48000 rendering; different nonzero PCM, bounded peaks and fades; WAV evidence, not human hearing",
+    "unsupported/denied/late-resume Stop/interrupted context yield truthful silent recovery",
+    "390/DPR3 touch unlock/Stop EN/ZH;48px controls,320/200% text, keyboard,3px focus and forced/reduced modes"
+  ],
+  "errors": [],
+  "heardByHuman": false,
+  "physicalDevice": false,
+  "rendered": [
+    {
+      "rate": 8000,
+      "sys": "ma3",
+      "x": {
+        "length": 14932,
+        "peak": 0.029999999329447746,
+        "rms": 0.015465448769475209,
+        "first": 0,
+        "last": 0
+      },
+      "y": {
+        "length": 14932,
+        "peak": 0.01600000075995922,
+        "rms": 0.007042950637486164,
+        "first": 0,
+        "last": 0
+      }
+    },
+    {
+      "rate": 8000,
+      "sys": "diff",
+      "x": {
+        "length": 14932,
+        "peak": 0.029999999329447746,
+        "rms": 0.015465448769475209,
+        "first": 0,
+        "last": 0
+      },
+      "y": {
+        "length": 14932,
+        "peak": 0.05999999865889549,
+        "rms": 0.023914024612480666,
+        "first": 0,
+        "last": 0
+      }
+    },
+    {
+      "rate": 8000,
+      "sys": "acc",
+      "x": {
+        "length": 14932,
+        "peak": 0.029999999329447746,
+        "rms": 0.015465448769475209,
+        "first": 0,
+        "last": 0
+      },
+      "y": {
+        "length": 14932,
+        "peak": 0.11625602841377258,
+        "rms": 0.08306927940658339,
+        "first": 0,
+        "last": 3.6825032667588565e-15
+      }
+    },
+    {
+      "rate": 44100,
+      "sys": "ma3",
+      "x": {
+        "length": 82313,
+        "peak": 0.029931971803307533,
+        "rms": 0.011994541797050508,
+        "first": 0,
+        "last": 0
+      },
+      "y": {
+        "length": 82313,
+        "peak": 0.01598186045885086,
+        "rms": 0.006397457555890353,
+        "first": 0,
+        "last": 0
+      }
+    },
+    {
+      "rate": 44100,
+      "sys": "diff",
+      "x": {
+        "length": 82313,
+        "peak": 0.029931971803307533,
+        "rms": 0.011994541797050508,
+        "first": 0,
+        "last": 0
+      },
+      "y": {
+        "length": 82313,
+        "peak": 0.05976870656013489,
+        "rms": 0.016863633683544058,
+        "first": 0,
+        "last": 0
+      }
+    },
+    {
+      "rate": 44100,
+      "sys": "acc",
+      "x": {
+        "length": 82313,
+        "peak": 0.029931971803307533,
+        "rms": 0.011994541797050508,
+        "first": 0,
+        "last": 0
+      },
+      "y": {
+        "length": 82313,
+        "peak": 0.11616919934749603,
+        "rms": 0.08283439583818894,
+        "first": 0,
+        "last": 4.1405985369686834e-16
+      }
+    },
+    {
+      "rate": 48000,
+      "sys": "ma3",
+      "x": {
+        "length": 89592,
+        "peak": 0.029999999329447746,
+        "rms": 0.012104435821649233,
+        "first": 0,
+        "last": 0
+      },
+      "y": {
+        "length": 89592,
+        "peak": 0.01600000075995922,
+        "rms": 0.0064162866484533485,
+        "first": 0,
+        "last": 0
+      }
+    },
+    {
+      "rate": 48000,
+      "sys": "diff",
+      "x": {
+        "length": 89592,
+        "peak": 0.029999999329447746,
+        "rms": 0.012104435821649233,
+        "first": 0,
+        "last": 0
+      },
+      "y": {
+        "length": 89592,
+        "peak": 0.05999999865889549,
+        "rms": 0.017098745040664855,
+        "first": 0,
+        "last": 0
+      }
+    },
+    {
+      "rate": 48000,
+      "sys": "acc",
+      "x": {
+        "length": 89592,
+        "peak": 0.029999999329447746,
+        "rms": 0.012104435821649233,
+        "first": 0,
+        "last": 0
+      },
+      "y": {
+        "length": 89592,
+        "peak": 0.11625602841377258,
+        "rms": 0.08284110276955782,
+        "first": 0,
+        "last": 5.868317315169493e-16
+      }
+    }
+  ],
+  "pass": true
+}

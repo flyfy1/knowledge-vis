@@ -6,6 +6,8 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [LTI step2 audible comparison](../lti/BRIEF.md): same-model input/output audition, honest discrete-time mapping, fixed gain, lifecycle and accessible silent fallback.
+
 - [Atlas 3D galaxy](atlas-galaxy.md): graph-distance layout, sourced connections, camera/touch controls, accessible list and lifecycle/fallback acceptance.
 - [LC42 two-wall learning contract](../leetcode/42/BRIEF.md): causal per-column water derivation, distinction from optimized trace, reset and validated Back/reload recovery.
 

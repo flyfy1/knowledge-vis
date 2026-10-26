@@ -48,6 +48,24 @@ body{
 }
 .lang-toggle button.active{background:var(--accent);color:#08131a;font-weight:700}
 
+/* S2 sound: existing tokens, static comparison and essential audio-clock progress. */
+.sound-lab{margin:24px 0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-wrap:anywhere}
+.sound-lab h3{font-size:1.2rem;margin-bottom:12px}
+.sound-lab p,.sound-lab details{margin:12px 0}
+.sound-lab .btn-row{gap:12px;flex-wrap:wrap}
+.sound-lab button,.sound-lab summary,.sound-lab input{min-height:48px}
+.sound-lab button{min-width:48px;white-space:normal}
+.sound-lab button[aria-pressed=true]{border-color:var(--accent);color:var(--text)}
+.sound-lab button:disabled{color:var(--muted);opacity:1;cursor:default}
+.sound-lab :is(button,input,summary,a):focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.sound-volume{display:block;margin:12px 0;color:var(--text)}
+.sound-volume input{display:block;width:100%;accent-color:var(--accent)}
+.sound-lab progress{display:block;width:100%;height:12px;accent-color:var(--accent)}
+.sound-lab details summary{cursor:pointer;color:var(--accent);padding:10px 0}
+.sound-lab .stage{margin:12px 0}
+.sound-lab canvas{width:100%;display:block}
+@media(forced-colors:active){.sound-lab :is(button,input,summary,a):focus-visible{outline-color:Highlight}.sound-lab button[aria-pressed=true]{border:3px solid Highlight}}
+
 .step-nav{
   position:sticky;top:0;z-index:50;
   display:flex;gap:6px;justify-content:flex-start;
