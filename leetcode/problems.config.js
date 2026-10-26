@@ -4429,6 +4429,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n³k) time; O(n²k) auxiliary space"
   },
   {
+    "id": 1001,
+    "title": {
+      "zh": "网格照明",
+      "en": "Grid Illumination"
+    },
+    "desc": {
+      "zh": "先读光，再关灯：用四组计数维护稀疏网格。",
+      "en": "Read the light before switching lamps off: maintain four sparse line counts."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "哈希表",
+        "en": "Hash tables"
+      },
+      {
+        "zh": "计数不变量",
+        "en": "Counting invariant"
+      }
+    ],
+    "path": "1001/",
+    "leetcodeUrl": "https://leetcode.com/problems/grid-illumination/",
+    "language": "Python",
+    "complexity": "O(L + Q) expected time; O(U) auxiliary space plus O(Q) output, U distinct lamps"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

@@ -2010,3 +2010,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Union-find | `leetcode/952/#step2` | Merge input-index components without counting factor nodes. |
 
 <!-- /leetcode-952-campaign -->
+
+
+<!-- leetcode-1001-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Sparse line counts | `leetcode/1001/#step3` | Maintain exact row, column and diagonal counts for active lamps. |
+| Read before mutation | `leetcode/1001/#step1` | Answer each query before removing adjacent lamps. |
+
+<!-- /leetcode-1001-campaign -->
