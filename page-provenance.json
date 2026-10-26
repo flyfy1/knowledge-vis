@@ -3,15 +3,15 @@
   "pages": {
     "atlas": {
       "developer": "Codex",
-      "edition": "codex-atlas-spring-potential-20261026",
+      "edition": "codex-atlas-interference-phase-20261026",
       "kind": "revised",
-      "sourceRevision": "d7b487392f85d8828aad1bd9da10a699bf9eca36",
+      "sourceRevision": "595ee8e6dc5b07855ce1cba8799eead33b1dd760",
       "scope": {
-        "zh": "保留既有知识地图与实验路线；原功—能视图新增同相位势能曲线、回复力及动能间隙，路线纳入已有简谐振动概念",
-        "en": "Retains the atlas and routes; adds same-phase potential/force/kinetic-gap view to the existing work experiment, with the existing oscillation concept in its route"
+        "zh": "保留既有知识地图和实验；新增已有干涉课程的概念及正弦相位应用连接",
+        "en": "Retains the atlas and experiments; adds the existing interference lesson concept and sine-phase application connection"
       },
       "originalAuthorship": "not asserted; prior contributions retained",
-      "previousSourceRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f"
+      "previousSourceRevision": "d7b487392f85d8828aad1bd9da10a699bf9eca36"
     },
     "complex-numbers": {
       "developer": "Codex",
@@ -204,17 +204,17 @@
     },
     "atlas/galaxy": {
       "developer": "Codex",
-      "edition": "codex-atlas-galaxy-spring-potential-20261026",
+      "edition": "codex-atlas-galaxy-interference-phase-20261026",
       "kind": "revised",
-      "sourceRevision": "d7b487392f85d8828aad1bd9da10a699bf9eca36",
+      "sourceRevision": "595ee8e6dc5b07855ce1cba8799eead33b1dd760",
       "scope": {
-        "zh": "保留既有三维知识星图；共享功—能路线纳入已有简谐振动概念",
-        "en": "Retains the 3D galaxy; its shared work-energy route now includes the existing oscillation concept"
+        "zh": "保留既有三维知识星图；共享图谱纳入已有干涉课程及相位应用边",
+        "en": "Retains the 3D galaxy; its shared graph includes the existing interference course and phase application edge"
       },
       "originalAuthorship": "existing atlas contributions retained; galaxy presentation developed with Codex",
       "path": "atlas/galaxy.html",
       "integrationRevision": "c3445f66a3e666acd557a04a7194c9568a383c35",
-      "previousSourceRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f"
+      "previousSourceRevision": "d7b487392f85d8828aad1bd9da10a699bf9eca36"
     },
     "leetcode/42": {
       "developer": "Codex",
@@ -265,6 +265,18 @@
       },
       "retainedContributions": "Original course, probability functions and unrelated chapters retained; original tool identity not reclassified",
       "previousRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f"
+    },
+    "interference": {
+      "developer": "Codex",
+      "edition": "codex-interference-phase-20261026",
+      "kind": "revised",
+      "sourceRevision": "595ee8e6dc5b07855ce1cba8799eead33b1dd760",
+      "originalSourceRevision": "844643ca8e16939c93826f8ddcd550cb9ebd1a4c",
+      "scope": {
+        "zh": "第3步同点连续相位对照、带符号到达相位、严格近抵消判定、暂停恢复和图谱入口",
+        "en": "Step3 same-point continuous phase comparison, signed arrival phase, strict near-cancellation classification, paused reading recovery and graph entry"
+      },
+      "retainedContributions": "Original844643ca commit credits Alberto/Muse; original course, yAt/ySum and other contributors retained; no original Codex authorship asserted"
     }
   },
   "exceptions": {
