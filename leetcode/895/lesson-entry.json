@@ -1,0 +1,33 @@
+{
+  "id": 895,
+  "title": {
+    "zh": "最大频率栈",
+    "en": "Maximum Frequency Stack"
+  },
+  "desc": {
+    "zh": "用频率层的历史同时保存出现次数与最近顺序。",
+    "en": "Preserve frequency and recency with a stack for each frequency level."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "栈",
+      "en": "Stack"
+    },
+    {
+      "zh": "哈希表",
+      "en": "Hash table"
+    }
+  ],
+  "path": "895/",
+  "leetcodeUrl": "https://leetcode.com/problems/maximum-frequency-stack/",
+  "language": "Python",
+  "complexity": "O(1) expected amortized time per push/pop; O(q) space for q calls",
+  "concepts": [
+    {
+      "name": "Frequency-level stacks",
+      "step": 2,
+      "description": "Preserve surviving occurrence ranks in chronological order to resolve frequency and recency."
+    }
+  ]
+}
