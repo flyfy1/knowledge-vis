@@ -1,0 +1,133 @@
+{
+  "finding": "940-COPY-R1",
+  "type": "author self-check",
+  "url": "http://127.0.0.1:18770/leetcode/940/",
+  "hashes": {
+    "index.html": "5e7264aa5c2d9464797587c04c8069899ae6bc43d4bd1d5526d0e88a0ae67f78",
+    "copy.js": "01289f0dbf58facd3dadfb2200657ab3817fd4343b33c4790032029595242b12",
+    "app.js": "30273f051166f24883089dd119777161ba912f830213e08bf377351ec69d203b",
+    "core.js": "3cea959f00aff9baab4c395265f507d404e69d29c10063fb3fe7136c2d703267",
+    "solution.py": "55fce8a63ac723d74be619500fdbfcb23c2eaa712d24c118974bd7f88ff53db4",
+    "python-code.js": "9b0898ed1836be9769b19e11b5300553ca678ad8753217b30d4c47858864e9b5",
+    "style.css": "55daf13738d41170dafbbc7eea44ee1293c92c42c53047729c1efe985609d670",
+    "lesson-entry.json": "925de91bc2de7db4ce86447e713bdfe7c89b82292d50886c29fca95de3a51f53"
+  },
+  "host": "linux",
+  "states": [
+    {
+      "phase": "footer regression",
+      "locale": "zh",
+      "footerCount": 0,
+      "workflow": false
+    },
+    {
+      "phase": "footer regression",
+      "locale": "en",
+      "footerCount": 0,
+      "workflow": false
+    },
+    {
+      "phase": "footer regression",
+      "locale": "zh",
+      "footerCount": 0,
+      "workflow": false
+    },
+    {
+      "locale": "zh",
+      "phase": "retained trace and quiz",
+      "calculation": "添加 a：旧 total = 3；旧 ending[a] = 1；新组 = 3 + 1 = 4；新 total = 3 − 1 + 4 = 6。",
+      "feedback": "正确。 答案为 10：新 a 组 {a, aa, ba, aba, bba, abba} 有 6 个，替换旧的 1 个 a；b 组保留 4 个。5 − 1 + 6 = 10。11 忘了减旧 a；9 则减多了一次。",
+      "sim": "这是 JavaScript 教学模拟，不是执行 Python 提交。每帧完成一个字母；完整保留历史，无跳步。集合仅帮助看清原因，提交只保存 26 个计数；实验最多 4 个字母，不演示取模溢出。",
+      "boundaries": "边界核对：单字母 → 1；n 个相同字母只得到长度 1…n 的 n 个串；字母全不同时有 2ⁿ−1 个非空串（最多 26 个不同字母）。官方 abc → 7、aba → 6、aaa → 3。最长 2000 个字母需要取模；最终 total 已排除了空串，无需再减 1。"
+    },
+    {
+      "locale": "en",
+      "phase": "retained trace and quiz",
+      "calculation": "Append a: old total = 3; old ending[a] = 1; new group = 3 + 1 = 4; new total = 3 − 1 + 4 = 6.",
+      "feedback": "Correct. The answer is 10: the new a group {a, aa, ba, aba, bba, abba} has 6 strings and replaces the old one-string a group. The b group keeps 4 strings. 5 − 1 + 6 = 10. Choosing 11 forgets to subtract the old a; choosing 9 subtracts it twice.",
+      "sim": "This is a JavaScript teaching simulation, not execution of the Python submission. Each frame completes one letter; the full history is retained without skipped steps. Sets expose the reasoning; the submission stores only 26 counts. Presets have at most 4 letters and do not demonstrate modular wraparound.",
+      "boundaries": "Boundary checks: one letter → 1; n equal letters give n strings, of lengths 1…n. With all letters different, there are 2ⁿ−1 nonempty strings (at most 26 different letters). Official examples: abc → 7, aba → 6, aaa → 3. Length 2000 requires the modulus. total already excludes the empty string; do not subtract 1 at the end."
+    },
+    {
+      "locale": "zh",
+      "phase": "retained trace and quiz",
+      "calculation": "添加 a：旧 total = 3；旧 ending[a] = 1；新组 = 3 + 1 = 4；新 total = 3 − 1 + 4 = 6。",
+      "feedback": "正确。 答案为 10：新 a 组 {a, aa, ba, aba, bba, abba} 有 6 个，替换旧的 1 个 a；b 组保留 4 个。5 − 1 + 6 = 10。11 忘了减旧 a；9 则减多了一次。",
+      "sim": "这是 JavaScript 教学模拟，不是执行 Python 提交。每帧完成一个字母；完整保留历史，无跳步。集合仅帮助看清原因，提交只保存 26 个计数；实验最多 4 个字母，不演示取模溢出。",
+      "boundaries": "边界核对：单字母 → 1；n 个相同字母只得到长度 1…n 的 n 个串；字母全不同时有 2ⁿ−1 个非空串（最多 26 个不同字母）。官方 abc → 7、aba → 6、aaa → 3。最长 2000 个字母需要取模；最终 total 已排除了空串，无需再减 1。"
+    },
+    {
+      "locale": "zh",
+      "phase": "page end, keyboard and exact native source transfer",
+      "layout": {
+        "bodyEnd": 899.703125,
+        "mainEnd": 899.703125,
+        "lastLink": {
+          "x": 16,
+          "y": 826.703125,
+          "width": 226.40625,
+          "height": 28,
+          "top": 826.703125,
+          "right": 242.40625,
+          "bottom": 854.703125,
+          "left": 16
+        },
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "sentinelVerified": true,
+      "sourceExact": true
+    },
+    {
+      "locale": "en",
+      "phase": "page end, keyboard and exact native source transfer",
+      "layout": {
+        "bodyEnd": 899.84375,
+        "mainEnd": 899.84375,
+        "lastLink": {
+          "x": 16,
+          "y": 798.84375,
+          "width": 288,
+          "height": 56,
+          "top": 798.84375,
+          "right": 304,
+          "bottom": 854.84375,
+          "left": 16
+        },
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "sentinelVerified": true,
+      "sourceExact": true
+    },
+    {
+      "locale": "zh",
+      "phase": "native 200% page end",
+      "metrics": {
+        "dpr": 2,
+        "innerWidth": 640,
+        "outerWidth": 1280
+      }
+    },
+    {
+      "locale": "en",
+      "phase": "native 200% page end",
+      "metrics": {
+        "dpr": 2,
+        "innerWidth": 640,
+        "outerWidth": 1280
+      }
+    },
+    {
+      "locale": "zh",
+      "phase": "native 200% page end",
+      "metrics": {
+        "dpr": 2,
+        "innerWidth": 640,
+        "outerWidth": 1280
+      }
+    }
+  ],
+  "errors": [],
+  "violations": [],
+  "browser": "156.0.8078.4",
+  "result": "pass"
+}

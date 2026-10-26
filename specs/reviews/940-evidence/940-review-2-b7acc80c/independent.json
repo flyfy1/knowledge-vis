@@ -1,0 +1,24 @@
+{
+  "exhaustiveCases": 3279,
+  "fresh": {
+    "bcb": 6,
+    "cc": 2,
+    "z": 1,
+    "abcdefghijklmnopqrstuvwxyz": 67108863,
+    "a*2000": 2000,
+    "ab*1000": 694708213
+  },
+  "servedSourceExact": true,
+  "hashes": {
+    "index.html": "5e7264aa5c2d9464797587c04c8069899ae6bc43d4bd1d5526d0e88a0ae67f78",
+    "copy.js": "01289f0dbf58facd3dadfb2200657ab3817fd4343b33c4790032029595242b12",
+    "app.js": "30273f051166f24883089dd119777161ba912f830213e08bf377351ec69d203b",
+    "core.js": "3cea959f00aff9baab4c395265f507d404e69d29c10063fb3fe7136c2d703267",
+    "solution.py": "55fce8a63ac723d74be619500fdbfcb23c2eaa712d24c118974bd7f88ff53db4",
+    "python-code.js": "9b0898ed1836be9769b19e11b5300553ca678ad8753217b30d4c47858864e9b5",
+    "style.css": "55daf13738d41170dafbbc7eea44ee1293c92c42c53047729c1efe985609d670",
+    "lesson-entry.json": "925de91bc2de7db4ce86447e713bdfe7c89b82292d50886c29fca95de3a51f53",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}

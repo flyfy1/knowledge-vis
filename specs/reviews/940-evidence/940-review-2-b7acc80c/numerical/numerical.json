@@ -1,0 +1,9 @@
+{
+  "type": "author self-check",
+  "canonical": "Solution.distinctSubseqII(s: str) -> int",
+  "checks": 10083,
+  "oracles": "position combinations and last-occurrence prefix recurrence",
+  "seed": 940,
+  "maxLength": 2000,
+  "result": "pass"
+}
