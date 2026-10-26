@@ -49,7 +49,7 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 5 | 频谱 / 频域视角 / Spectrum & the frequency domain | fourier#step5 | 傅里叶变换本体：任意波形拆成各频率成分的强弱 |
 | 6 | 圆圈套圆圈拼波形（傅里叶级数）/ Epicycles build a waveform | fourier#step4 | 圆首尾相连拼方波；吉布斯尖角为何不消失 |
 | 7 | DFT 拆任意图形 / DFT of a hand-drawn shape | fourier#step6 | 亲手画的图形被拆成横/竖两串圆再重画 |
-| 8 | 卷积四件事（翻转滑动乘加）/ Convolution: flip, slide, multiply, add | convolution#step2 | 离散卷积的完整手艺，输出逐个落账 |
+| 8 | 卷积四件事（翻转滑动乘加）/ Convolution: flip, slide, multiply, add | convolution#step2 | 离散实数 full 卷积：列 k 的核为 g[n−k]；选择 n 查看索引重叠与乘积，范围外零延拓。边缘部分重叠，内部仍可相消为0；不同于相关的滞后索引。 |
 | 9 | 连续卷积 = 重叠面积 / Continuous convolution is overlap area | convolution#step3 | 矩形×矩形卷出三角形，输出值 = 重叠面积 |
 | 10 | 图像卷积核 / Image kernels | convolution#step4 | 每个像素都在做 3×3 加权和；模糊/边缘都是换核 |
 | 11 | 卷积定理 / Convolution theorem | convolution#step6 | 卷积 = 频域里逐点相乘 |

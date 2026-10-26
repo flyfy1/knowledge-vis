@@ -92,3 +92,5 @@ that existing pages have completed that process.
 - [Standing-wave S1 spatial-phase comparison](standing-phase.md): exact node/preset, signed coefficient versus amplitude, shared-clock two-point prediction and scoped regression contract.
 
 - [Sampling S2 signed alias/sample-pair contract](sampling-pair.md): original versus folded sine at shared sample and nonsample times; bandlimit and finite-record limits retained.
+
+- [Convolution S2 index/support contract](convolution-support.md): shared selected output, reversed/shifted indices, zero extension, decimal fidelity and passive reading recovery.

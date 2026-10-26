@@ -1,0 +1,12 @@
+# Independent bounded S2 science/code review
+
+**Final bounded verdict: PASS — 0 remaining must-fix findings.** Source-first review against `594aa1ed`, no product edits or Chrome.
+
+The extracted term loop and bounds agree with zero-extended full linear convolution. The dynamic g[n−k] title, decreasing j=n−k indices, retained zero products, output length and potential-support/cancellation distinction are scientifically consistent. The real-valued correlation comparison states a lag convention rather than claiming one universal convention. Direct seek reuses st, pauses, clears acc and reveals phase2; no new clock or solver. Decimal commit uses the stored raw value rather than display rounding, with localized distinct input names and range bounds. The snapshot explicitly copies f/g/n/phase/done, restores paused/acc0 and validates the last-output condition for done.
+
+Finding closed: Array.every skips holes. Both convPoint's finite-array predicate and the snapshot valid predicate initially accepted sparse arrays of the expected lengths, allowing undefined factors/NaN and renderer errors. Final source uses dense Array.from(...).every validation in both paths. Independent sparse-array helper calls now reject, and a sparse valid-length history array falls back to the normal defaults. No convolution formula or ordinary UI array was changed by this fix.
+
+Scope limits: this is independent code/algebra/callback review, not a new NumPy/source audit, browser/pixel/native event/Back validation or learning-effect evidence. The parent's cold/UI runs and whole-course regression logs remain attributable to their operators; FFT/S3 content is protected rather than newly certified.
+
+
+Independent executable evidence: [probe](independent-probe.cjs), [results/final app hash](independent-probe.json). An alternative scatter-add oracle checked 132 full/edge/outside output cases, with zero discrepancy; default n3 retains three valid pairs while summing to zero. Original conv1d/FFT and S0/S1 plus S3-through-end source guards pass. The actual complete S2 IIFE was executed in a minimal DOM/canvas VM: seek clears a prior0.8s timer accumulation and pauses; phase2→Step and final done transitions remain correct; raw1.23456789012345 survives commit/locale/paused restore; commit merges foreign fields; malformed and denied history are handled. `git diff --check` passed. Native input validation, canvas text overlap, actual doubled-text layout/focus and browser Back/reload remain parent/cold UI scope, not claims from this VM.
