@@ -1,0 +1,117 @@
+{
+  "verdict": "PASS",
+  "remainingSourceMustFix": 0,
+  "pages": [
+    {
+      "page": "atlas",
+      "oneComponent": true,
+      "onlyComponentAndCSSAdded": true,
+      "revision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "htmlSHA256": "245079e693d45664f2c4f34022371ac2c5e3a19f46f5ef2625cb43e5fd2d9730"
+    },
+    {
+      "page": "complex-numbers",
+      "oneComponent": true,
+      "onlyComponentAndCSSAdded": true,
+      "revision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "htmlSHA256": "582fce230196dd4d8fc6dfb2e3b47afc2110aece6737ac48e71020f736f9f0c3"
+    },
+    {
+      "page": "derivative",
+      "oneComponent": true,
+      "onlyComponentAndCSSAdded": true,
+      "revision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "htmlSHA256": "032469193a03375f2f5366b366a8605a6a9609ae4b61a5f1fa69a4c7c8204190"
+    },
+    {
+      "page": "freqresp",
+      "oneComponent": true,
+      "onlyComponentAndCSSAdded": true,
+      "revision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "htmlSHA256": "2ada971392376b08d18ce17937a43e3913e0af3c4bbfe71ba2cce4bf6f484021"
+    },
+    {
+      "page": "integral",
+      "oneComponent": true,
+      "onlyComponentAndCSSAdded": true,
+      "revision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "htmlSHA256": "056f6ab447c52cac3c8b27e4f3959f8cd246fc01760e51ca426fb2419a42724d"
+    },
+    {
+      "page": "laplace",
+      "oneComponent": true,
+      "onlyComponentAndCSSAdded": true,
+      "revision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "htmlSHA256": "afb8430a548691518e4afebd9f7742143cd73d2e1c528454deb9998a50d95095"
+    },
+    {
+      "page": "lens",
+      "oneComponent": true,
+      "onlyComponentAndCSSAdded": true,
+      "revision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "htmlSHA256": "5763650da5735358758f714870bfe40c123f5a3a225a5438a3c63908d1be95cd"
+    },
+    {
+      "page": "linear-functions",
+      "oneComponent": true,
+      "onlyComponentAndCSSAdded": true,
+      "revision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "htmlSHA256": "8844720e86349e5d8dbd9441bfcd1fa4bd5916885b54631732392e701bd6aadc"
+    },
+    {
+      "page": "pinhole-camera",
+      "oneComponent": true,
+      "onlyComponentAndCSSAdded": true,
+      "revision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "htmlSHA256": "3954fc3f04da0c9963e313a9b34549437381546349f8c076aba08daf3cdd1741"
+    },
+    {
+      "page": "reflection-refraction",
+      "oneComponent": true,
+      "onlyComponentAndCSSAdded": true,
+      "revision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "htmlSHA256": "8cf648b72e569e58fa73d5d28f5c14a74e7fdde06b12a38d21679e2b63e2b58d"
+    },
+    {
+      "page": "sampling",
+      "oneComponent": true,
+      "onlyComponentAndCSSAdded": true,
+      "revision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "htmlSHA256": "cef80cf2079bc34e505abf1e4cce14e974bd29a8e738615bbf261158ab285740"
+    },
+    {
+      "page": "trig",
+      "oneComponent": true,
+      "onlyComponentAndCSSAdded": true,
+      "revision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "htmlSHA256": "e5a6a5e8cc0844da6e54a7a673636137a322091ee7e402e2d72fddb834bcf016"
+    },
+    {
+      "page": "velocity-vt",
+      "oneComponent": true,
+      "onlyComponentAndCSSAdded": true,
+      "revision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "htmlSHA256": "95906f9e2023db46eaa802afef64dd7640b5903eb7e2f975f177d5826fa6ff5c"
+    },
+    {
+      "page": "ztransform",
+      "oneComponent": true,
+      "onlyComponentAndCSSAdded": true,
+      "revision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "htmlSHA256": "1ad31df5979f9ef4ff049ae2688dc07a2dd0a1cfa6bc06d73afca30621603594"
+    }
+  ],
+  "workerAndLeetCodeTrackedFilesUnchanged": true,
+  "sourceLinkInlineBlock": true,
+  "method": "Independent static HTML subtraction versus baseline, manifest/header checks, and supplied core run. No Chrome or real-repo edits.",
+  "independentCoreCommand": "node release-git/tests/page-provenance-core.cjs",
+  "independentCorePass": true,
+  "gitDiffCheckPass": true,
+  "nearbyDocLinksExist": true,
+  "suppliedImagesViewed": [
+    "verification/trig-desktop.png",
+    "verification/atlas-zh-320-2x.png"
+  ],
+  "browserMethod": "Parent-operated evidence read only; no Chrome by this reviewer.",
+  "noDeploymentOrWorkerAcceptance": true
+}

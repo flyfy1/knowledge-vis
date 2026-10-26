@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "atlas": {
+      "developer": "Codex",
+      "edition": "codex-20261026",
+      "kind": "revised",
+      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "scope": {
+        "zh": "概念关系、学习路线与数学物理交互实验",
+        "en": "Concept connections, learning routes and mathematics/physics experiments"
+      },
+      "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "complex-numbers": {
+      "developer": "Codex",
+      "edition": "codex-20261026",
+      "kind": "revised",
+      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "scope": {
+        "zh": "复数操作的键盘输入与边界处理",
+        "en": "Keyboard operation and complex-number input boundaries"
+      },
+      "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "derivative": {
+      "developer": "Codex",
+      "edition": "codex-20261026",
+      "kind": "revised",
+      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "scope": {
+        "zh": "变化率、有向速度与速率的说明",
+        "en": "Explanations of rates of change, signed velocity and speed"
+      },
+      "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "freqresp": {
+      "developer": "Codex",
+      "edition": "codex-20261026",
+      "kind": "revised",
+      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "scope": {
+        "zh": "共振、频率响应与稳态边界说明",
+        "en": "Resonance, frequency response and steady-state boundaries"
+      },
+      "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "integral": {
+      "developer": "Codex",
+      "edition": "codex-20261026",
+      "kind": "revised",
+      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "scope": {
+        "zh": "有向面积、位移与路程的区别",
+        "en": "Signed area, displacement and distance"
+      },
+      "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "laplace": {
+      "developer": "Codex",
+      "edition": "codex-20261026",
+      "kind": "revised",
+      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "scope": {
+        "zh": "极点边界和系统响应说明",
+        "en": "Pole boundaries and system-response explanations"
+      },
+      "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "lens": {
+      "developer": "Codex",
+      "edition": "codex-20261026",
+      "kind": "revised",
+      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "scope": {
+        "zh": "薄透镜近焦边界、虚实像与交互",
+        "en": "Thin-lens focus boundaries, real/virtual images and interaction"
+      },
+      "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "linear-functions": {
+      "developer": "Codex",
+      "edition": "codex-20261026",
+      "kind": "revised",
+      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "scope": {
+        "zh": "斜率与小孔成像的学习连接",
+        "en": "Learning connections between slope and pinhole geometry"
+      },
+      "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "pinhole-camera": {
+      "developer": "Codex",
+      "edition": "codex-20261026",
+      "kind": "revised",
+      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "scope": {
+        "zh": "相似三角形、带符号放大率与图形联动",
+        "en": "Similar triangles, signed magnification and linked diagrams"
+      },
+      "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "reflection-refraction": {
+      "developer": "Codex",
+      "edition": "codex-20261026",
+      "kind": "revised",
+      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "scope": {
+        "zh": "法线角度、折射和全反射边界",
+        "en": "Angles to the normal, refraction and total-reflection boundaries"
+      },
+      "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "sampling": {
+      "developer": "Codex",
+      "edition": "codex-20261026",
+      "kind": "revised",
+      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "scope": {
+        "zh": "采样、已知频带与显示插值的区别",
+        "en": "Sampling, known bandlimits and display interpolation"
+      },
+      "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "trig": {
+      "developer": "Codex",
+      "edition": "codex-20261026",
+      "kind": "revised",
+      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "scope": {
+        "zh": "正切定义域、渐近线与键盘操作",
+        "en": "Tangent domain, asymptotes and keyboard operation"
+      },
+      "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "velocity-vt": {
+      "developer": "Codex",
+      "edition": "codex-20261026",
+      "kind": "revised",
+      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "scope": {
+        "zh": "有向速度、速率与图形读法",
+        "en": "Signed velocity, speed and interpreting the graph"
+      },
+      "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "ztransform": {
+      "developer": "Codex",
+      "edition": "codex-20261026",
+      "kind": "revised",
+      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "scope": {
+        "zh": "离散序列与连续信号记号边界",
+        "en": "Discrete-sequence and continuous-signal notation boundaries"
+      },
+      "originalAuthorship": "not asserted; prior contributions retained"
+    }
+  },
+  "exceptions": {
+    "photosynthesis": "Mixed Codex/Alberto/Claude history; worker handover pending",
+    "frozen-bubble": "Codex source known; active narrative worker handover pending",
+    "power-converters": "Active visual worker handover pending; original developer not established",
+    "leetcode/*": "Concurrent owner; existing -codex URL markers preserved; no page files edited",
+    "*": "Unverified pages are not automatically labelled"
+  }
+}
