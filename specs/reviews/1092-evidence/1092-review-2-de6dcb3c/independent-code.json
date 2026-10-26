@@ -1,0 +1,94 @@
+{
+  "fresh_cases": [
+    {
+      "a": "ba",
+      "b": "ab",
+      "out": "bab",
+      "length": 3
+    },
+    {
+      "a": "ab",
+      "b": "b",
+      "out": "ab",
+      "length": 2
+    },
+    {
+      "a": "aba",
+      "b": "bab",
+      "out": "abab",
+      "length": 4
+    },
+    {
+      "a": "aa",
+      "b": "a",
+      "out": "aa",
+      "length": 2
+    },
+    {
+      "a": "ab",
+      "b": "cd",
+      "out": "abcd",
+      "length": 4
+    },
+    {
+      "a": "a",
+      "b": "a",
+      "out": "a",
+      "length": 1
+    },
+    {
+      "a": "a",
+      "b": "b",
+      "out": "ab",
+      "length": 2
+    },
+    {
+      "a": "",
+      "b": "ab",
+      "out": "ab",
+      "length": 2
+    },
+    {
+      "a": "",
+      "b": "",
+      "out": "",
+      "length": 0
+    }
+  ],
+  "canonical_loop_states": [
+    {
+      "i": 0,
+      "j": 0,
+      "out": "",
+      "left": 3
+    },
+    {
+      "i": 1,
+      "j": 0,
+      "out": "b",
+      "left": 2
+    },
+    {
+      "i": 2,
+      "j": 1,
+      "out": "ba",
+      "left": 1
+    },
+    {
+      "i": 2,
+      "j": 2,
+      "out": "bab",
+      "left": 0
+    }
+  ],
+  "maximum_boundaries": "passed; lengths 1000,2000,1001",
+  "counterexample_correction": {
+    "ab/b": "greedy ab is optimal; initial prediction was wrong",
+    "a/ba": {
+      "greedy": "aba",
+      "optimal": "ba",
+      "lower_bound": 2
+    }
+  },
+  "source_sha256": "14d22228824f7a8e8268b546be296e51753fc2745ad53354123a58ab5e1b9868"
+}
