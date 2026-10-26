@@ -25,4 +25,11 @@ test(d=>{d.edges[0].prerequisite='true';},false);
 // Reversed traversal is editorially valid; route reading order is not an arrow.
 test(d=>d.trails.find(t=>t.id==='work').nodes.reverse(),true);
 test(d=>d.nodes[0].source='javascript:alert(1)',false);
+test(d=>d.trails.find(r=>r.id==='signal').stationTasks.pop(),false);
+test(d=>delete d.trails.find(r=>r.id==='signal').stationTasks[0].action.en,false);
+test(d=>d.trails.find(r=>r.id==='signal').stationTasks[0].evidenceEdge='probability:bayes',false);
+test(d=>d.trails.find(r=>r.id==='signal').stationTasks.push(d.trails.find(r=>r.id==='signal').stationTasks[0]),false);
+test(d=>d.trails.find(r=>r.id==='signal').nodes=null,false);
+test(d=>d.trails.find(r=>r.id==='signal').nodes={},false);
+test(d=>d.trails.find(r=>r.id==='signal').stationTasks[0]=[],false);
 console.log(JSON.stringify({checks,result:'pass',semantics:'General cycles allowed; only explicitly declared prerequisite cycles request review. No prerequisite inferred from foundation.'}));

@@ -88,6 +88,7 @@
       edge('resonance','freqresp','representation','表现为响应峰值','appears as a response peak','在线性系统的频率响应幅度图上，共振表现为某段频率附近的峰；并非所有系统都有明显峰值。','In a linear system’s frequency-response magnitude, resonance appears as a peak; not every system has a pronounced one.','../freqresp/#step5'),
       edge('lti','impulse','connection','可由冲激响应刻画','is characterized by its impulse response','对初始静止的 LTI 系统，把输入分解为加权、平移的单位脉冲，就能由 h 重建输出。','For an initially resting LTI system, decompose the input into weighted shifted impulses and reconstruct the output from h.','../lti/#step2'),
       edge('impulse','convolution','application','与输入卷积得到输出','convolves with input to produce output','输出是各个平移冲激响应的加权和，这正是离散卷积 y[n] = Σ x[k]h[n−k]。','The output sums weighted shifted impulse responses: precisely the discrete convolution y[n] = Σ x[k]h[n−k].','../lti/#step2'),
+      edge('convolution','freqresp','representation','时域卷积成为频域相乘','time convolution becomes frequency multiplication','对零初态离散LTI系统，y=x*h；当相应变换存在时，Y(e^{iΩ})=X(e^{iΩ})H(e^{iΩ})。h绝对可和可保证稳定频率响应。Ω单位为rad/样本，不能直接当成Hz。','For an initially resting discrete LTI system, y=x*h. When the transforms exist, Y(e^{iΩ})=X(e^{iΩ})H(e^{iΩ}); absolute summability of h ensures a stable frequency response. Ω is rad/sample, not directly Hz.',"https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/9434f9bde960fd3b2b81de3ad442f902_MITRES_6_007S11_lec11.pdf#page=5"),
       edge('impulse','freqresp','representation','傅里叶变换给出频率响应','Fourier-transforms into frequency response','离散 h[n] 的离散时间傅里叶变换是 H(e^{iΩ})，Ω 单位 rad/样本；连续 h(t) 的傅里叶积分是 H(iω)，ω 单位 rad/s。变换需存在；稳定系统的绝对可和/可积是相应充分条件。不能把 δ[n] 与连续冲激直接混用。','The DTFT of discrete h[n] is H(e^{iΩ}), with Ω in rad/sample; the Fourier integral of continuous h(t) is H(iω), with ω in rad/s. The transform must exist; absolute summability/integrability supplies the respective stable-system condition. A discrete unit impulse is not a continuous Dirac impulse.','https://dspguide.com/ch9/2.htm'),
       edge('lti','superposition','connection','满足叠加性','obeys superposition','线性保证输入的加权组合产生相同权重的输出组合；时不变是另一项独立条件。','Linearity preserves weighted combinations of input-output pairs; time invariance is a separate condition.','../lti/#step3'),
       edge('laplace','fourier','connection','在收敛条件下限制到虚轴','restricts to the imaginary axis when convergent','当拉普拉斯变换的收敛域包含虚轴时，在 s = iω 处取值可得到傅里叶变换。','If the Laplace region of convergence contains the imaginary axis, evaluating at s = iω gives the Fourier transform.','../laplace/#step2'),
@@ -105,6 +106,129 @@
       edge('convolution','gaussian','connection','描述独立变量相加的分布','describes distributions of independent sums','独立随机变量之和的分布由卷积给出；反复相加后的正态近似需满足中心极限定理的条件。','Convolution gives the distribution of a sum of independent random variables; a normal approximation after repeated sums requires central-limit conditions.','../clt/#step5')
     ],
     trails: [
+      {
+        "id": "signal",
+        "background": [
+          "lti",
+          "sine"
+        ],
+        "title": {
+          "zh": "移动平均为什么能消掉一个频率？",
+          "en": "Why can a moving average cancel one frequency?"
+        },
+        "nodes": [
+          "lti",
+          "impulse",
+          "convolution",
+          "freqresp"
+        ],
+        "stationTasks": [
+          {
+            "node": "lti",
+            "evidenceLabel": {
+              "zh": "LTI课程 · 叠加与延迟检验 ↗",
+              "en": "LTI lesson · superposition and delay tests ↗"
+            },
+            "question": {
+              "zh": "什么时候，一份h才足够？",
+              "en": "When is one h enough?"
+            },
+            "action": {
+              "zh": "打开公理检验台：比较累加器与平方器的叠加性偏差。再看时变增益的延迟检验。",
+              "en": "Open the axiom bench. Compare the accumulator and squarer under superposition, then inspect the time-varying gain under a delay."
+            },
+            "observe": {
+              "zh": "平方器的反例否定线性；时变增益可以线性却不时不变。几组输入通过检验不等于对任意输入的证明。",
+              "en": "The squarer supplies a counterexample to linearity; time-varying gain can be linear without time invariance. Passing a few inputs is not a proof for all inputs."
+            },
+            "bridge": {
+              "zh": "接下来固定使用零初态的3点平均器，看看它的h怎样决定输出。",
+              "en": "Next, fix a zero-initial 3-point moving average and inspect how its h determines output."
+            },
+            "href": "../lti/#step3",
+            "evidenceEdge": "lti:superposition",
+            "source": "../lti/#step3"
+          },
+          {
+            "node": "impulse",
+            "evidenceLabel": {
+              "zh": "LTI课程 · h的加权叠加 ↗",
+              "en": "LTI lesson · weighted copies of h ↗"
+            },
+            "question": {
+              "zh": "三根等高的h，怎样改变输入？",
+              "en": "What do three equal taps do to the input?"
+            },
+            "action": {
+              "zh": "选“3点滑动平均”，比较输入与输出图；可点击“播放输入／播放处理后”。查看每份平移h的叠加。",
+              "en": "Choose “3-point moving average”. Compare the input/output plots; optionally play input and processed sound. Inspect the shifted copies of h."
+            },
+            "observe": {
+              "zh": "h[0]=h[1]=h[2]=1/3，其他项为0。输出取最近3点的平均；相邻项可能相加，也可能抵消。试听是明确时间映射的合成模式，不是实录。",
+              "en": "h[0]=h[1]=h[2]=1/3, zero elsewhere. Each output averages the latest 3 samples; terms can reinforce or cancel. Audition uses an explicitly mapped synthetic pattern, not a recording."
+            },
+            "bridge": {
+              "zh": "下一站换一组便于手算的f、g，把同一种卷积运算拆成每项乘积；不会自动同步这页的数值。",
+              "en": "The next lesson changes to small hand-calculation arrays f and g to unpack the same convolution operation. It does not transfer this page’s parameters."
+            },
+            "href": "../lti/#step2",
+            "evidenceEdge": "impulse:convolution",
+            "source": "../lti/#step2"
+          },
+          {
+            "node": "convolution",
+            "evidenceLabel": {
+              "zh": "MIT/Oppenheim · 讲义11，卷积性质（11-5页）↗",
+              "en": "MIT/Oppenheim · lecture11, convolution property (11-5) ↗"
+            },
+            "question": {
+              "zh": "一个输出点，到底把哪些项加起来？",
+              "en": "Which terms make one output sample?"
+            },
+            "action": {
+              "zh": "先保留默认f=[1,2,3,2,1]、g=[1,0,−1]。按“单步”观察核翻转、对齐、相乘、求和；改一个核值后直接单步重算；“重置”会恢复默认数值。",
+              "en": "Keep default f=[1,2,3,2,1] and g=[1,0,−1]. Use Step to inspect flip, alignment, products and sum. After editing a kernel value, step again to recompute; Reset restores the defaults."
+            },
+            "observe": {
+              "zh": "每列乘积是f[k]g[n−k]，把重叠列相加才得到该n的输出。这组g不是上一站的平均核；运算相同，数值例子不同。",
+              "en": "Each column contributes f[k]g[n−k]; summing overlapping columns gives output at n. This g is not the previous averaging kernel: same operation, different example."
+            },
+            "bridge": {
+              "zh": "回到3点平均器，用正弦作输入：在频域，这份卷积可以用一个复数倍率H表达。",
+              "en": "Return to the 3-point average with a sinusoidal input. In frequency, this convolution is represented by a complex multiplier H."
+            },
+            "href": "../convolution/#step2",
+            "evidenceEdge": "convolution:freqresp",
+            "source": "https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/9434f9bde960fd3b2b81de3ad442f902_MITRES_6_007S11_lec11.pdf#page=5"
+          },
+          {
+            "node": "freqresp",
+            "evidenceLabel": {
+              "zh": "MIT/Oppenheim · 讲义11，卷积性质（11-5页）↗",
+              "en": "MIT/Oppenheim · lecture11, convolution property (11-5) ↗"
+            },
+            "question": {
+              "zh": "平均3点，为什么能让一个正弦消失？",
+              "en": "Why can a 3-point average cancel a sinusoid?"
+            },
+            "action": {
+              "zh": "将平均长度M设为3，再点“送零点频率2π/M”。先预测：保持频率不动，改M=2，还会完全抵消吗？观察下方输出波形。",
+              "en": "Set average length M=3, then use the exact first-zero 2π/M preset. Predict: keep frequency unchanged and set M=2. Will cancellation remain complete? Inspect the output waveform."
+            },
+            "observe": {
+              "zh": "Ω=2π/3 rad/样本时，3个相隔该相位的贡献相加为0；M=2时幅值比为1/2。零点指正弦建立后的响应，不保证启动的前两点为0，也不代表上一站多频试听全静音。不要手输四舍五入的2.094来冒充精确零点。",
+              "en": "At Ω=2π/3 rad/sample, the 3 phase-shifted contributions sum to zero; M=2 gives magnitude 1/2. This describes the established sinusoidal response, not necessarily the first 2 startup samples, nor silence of the earlier multi-frequency clip. Use the exact preset, not rounded 2.094."
+            },
+            "bridge": {
+              "zh": "把h的逐项乘加与H的幅相联系起来：这是同一固定LTI系统的两种表示，不是新的滤波器。",
+              "en": "Connect the multiply-and-sum view of h to the magnitude/phase of H: two representations of one fixed LTI system, not a new filter."
+            },
+            "href": "../freqresp/#step3",
+            "evidenceEdge": "convolution:freqresp",
+            "source": "https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/9434f9bde960fd3b2b81de3ad442f902_MITRES_6_007S11_lec11.pdf#page=5"
+          }
+        ]
+      },
       {id:'optics',background:['unit-circle','snell'],title:b('角从哪里量，何时没有折射角？','Where does the angle start, and when is refraction impossible?'),nodes:['unit-circle','snell']},
       {id:'geometry',background:['slope','pinhole-ratio'],title:b('一条直线，怎样得到小孔倒像？','How does one straight line produce an inverted image?'),nodes:['slope','pinhole-ratio']},
       {id:'work',background:['work-energy','net-force'],title:b('往返净功为零，途中能量去哪了？','Zero return work: where did the energy go?'),nodes:['integral','work-energy','net-force']},
