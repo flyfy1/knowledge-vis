@@ -46,21 +46,36 @@ const S = {
 };
 
 /* ---------------- Canvas 基础 ---------------- */
+// CSS owns layout; never read dimensions back from the mutable bitmap attributes.
 function fit(cv){
-  const w=cv.clientWidth||cv.parentElement.clientWidth||640;
-  if(!cv.dataset.cssH) cv.dataset.cssH=String(parseInt(cv.getAttribute('height'),10)||300);
-  const h=parseInt(cv.dataset.cssH,10);
-  const dpr=window.devicePixelRatio||1;
-  cv.style.height=h+'px';
+  const rect=cv.getBoundingClientRect(), w=Math.max(1,rect.width), h=Math.max(1,rect.height);
+  const dpr=Math.min(3,Math.max(1,window.devicePixelRatio||1));
+  let ctx;
+  try { ctx=cv.getContext('2d'); } catch(_e) { ctx=null; }
+  cv.parentElement.classList.toggle('canvas-ready',!!ctx);
+  if(!ctx) return null;
   if(cv.width!==Math.round(w*dpr)) cv.width=Math.round(w*dpr);
   if(cv.height!==Math.round(h*dpr)) cv.height=Math.round(h*dpr);
-  const ctx=cv.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
   return {ctx,W:w,H:h};
 }
+let bubbleFrame=0;
+const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+function queueBubbles(){
+  if(bubbleFrame) cancelAnimationFrame(bubbleFrame);
+  bubbleFrame=requestAnimationFrame(now=>{ bubbleFrame=0; drawS0(now); });
+}
+function pauseBubbles(){
+  S.s0.playing=false;
+  if(bubbleFrame) cancelAnimationFrame(bubbleFrame);
+  bubbleFrame=0;
+  $('s0-play').textContent=t('play');
+}
 function drawCurve(cv, fn, cur, yMax, curLabel){
-  const f=fit(cv), ctx=f.ctx, W=f.W, H=f.H;
+  const f=fit(cv); if(!f) return;
+  const ctx=f.ctx, W=f.W, H=f.H;
   ctx.clearRect(0,0,W,H);
-  const L=46,R=10,T=14,B=22, iw=W-L-R, ih=H-T-B;
+  const L=46,R=22,T=14,B=22, iw=W-L-R, ih=H-T-B;
   const X=v=>L+(v/100)*iw, Y=v=>T+ih-(v/yMax)*ih;
   ctx.strokeStyle='#2b3547'; ctx.fillStyle='#9aa7b8'; ctx.lineWidth=1; ctx.font='11px system-ui,sans-serif';
   for(let i=0;i<=4;i++){ const yv=yMax*i/4, yy=Y(yv); ctx.beginPath(); ctx.moveTo(L,yy); ctx.lineTo(W-R,yy); ctx.stroke(); ctx.fillText(fmt1(yv),8,yy+4); }
@@ -76,7 +91,8 @@ function drawCurve(cv, fn, cur, yMax, curLabel){
 /* ---------------- Step 0 ---------------- */
 function drawS0(now){
   const cv=$('s0-canvas'); if(!cv) return;
-  const f=fit(cv), ctx=f.ctx, W=f.W, H=f.H;
+  const f=fit(cv); if(!f){ pauseBubbles(); renderS0Readout(); return; }
+  const ctx=f.ctx, W=f.W, H=f.H;
   ctx.clearRect(0,0,W,H);
   /* 水与光 */
   ctx.fillStyle='#0e2233'; ctx.fillRect(0,0,W,H);
@@ -93,7 +109,7 @@ function drawS0(now){
   });
   ctx.lineWidth=1;
   /* 气泡 */
-  const st=S.s0;
+  const st=S.s0, previousCount=st.released;
   const dt=Math.min(0.1, Math.max(0, (now-(st.last||now))/1000));
   if(st.playing){
     const rate=photoRate(MODEL.S0_LIGHT,MODEL.S0_CO2), perSec=bubblesPerMin(rate)/60;
@@ -105,20 +121,25 @@ function drawS0(now){
   st.bubbles=st.bubbles.filter(b=>b.y>-8);
   st.bubbles.forEach(b=>{ if(st.playing) b.y-=b.vy*dt;
     ctx.strokeStyle='rgba(160,220,255,0.9)'; ctx.beginPath(); ctx.arc(b.x,b.y,b.r,0,7); ctx.stroke(); });
-  renderS0Readout();
-  if(st.playing) requestAnimationFrame(drawS0);
+  if(st.released!==previousCount) renderS0Readout();
+  if(st.playing) queueBubbles();
 }
 
 function renderS0Readout(){
   const st=S.s0;
   const box=$('s0-bet');
-  if(box){
+  if(box && !box.children.length){
     box.innerHTML=BET.options.map(function(opt){
       const cls=st.bet===opt?(opt===BET.answer?' correct':' wrong'):'';
       return '<button type="button" class="btn bet-opt'+cls+'" data-bet="'+opt+'">'+t('bet_'+opt)+'</button>';
     }).join('');
     box.querySelectorAll('[data-bet]').forEach(b=>b.onclick=()=>{ st.bet=b.dataset.bet; renderS0Readout(); });
   }
+  box.querySelectorAll('[data-bet]').forEach(b=>{
+    b.textContent=t('bet_'+b.dataset.bet);
+    b.classList.toggle('correct',st.bet===b.dataset.bet && st.bet===BET.answer);
+    b.classList.toggle('wrong',st.bet===b.dataset.bet && st.bet!==BET.answer);
+  });
   const base=t('s0ro',{n:st.released, rate:bubblesPerMin(photoRate(MODEL.S0_LIGHT,MODEL.S0_CO2))});
   const tail=st.bet? t(st.bet===BET.answer?'s0betOk':'s0betNo',{bet:t('bet_'+st.bet)}) : t('s0betAsk');
   $('s0-ro').innerHTML=base+' '+tail;
@@ -178,17 +199,25 @@ function renderQuiz(){
 }
 
 /* ---------------- 汇总 ---------------- */
-function renderAll(){ render1(); render2(); render3(); renderQuiz(); const st=S.s0; st.playing=false; $('s0-play').textContent=t('play'); requestAnimationFrame(drawS0); }
+function renderAll(){ pauseBubbles(); render1(); render2(); render3(); renderQuiz(); renderS0Readout(); queueBubbles(); }
 function bind(){
-  $('s0-play').onclick=()=>{ const st=S.s0; st.playing=!st.playing; $('s0-play').textContent=t(st.playing?'pause':'play'); st.last=performance.now(); if(st.playing) requestAnimationFrame(drawS0); };
-  $('s0-reset').onclick=()=>{ S.s0.bubbles=[]; S.s0.released=0; S.s0.spawnAcc=0; S.s0.bet=null; if(!S.s0.playing) requestAnimationFrame(drawS0); };
+  $('s0-play').onclick=()=>{ const st=S.s0; if(st.playing){ pauseBubbles(); return; } st.playing=true; $('s0-play').textContent=t('pause'); st.last=performance.now(); queueBubbles(); };
+  $('s0-reset').onclick=()=>{ pauseBubbles(); S.s0.bubbles=[]; S.s0.released=0; S.s0.spawnAcc=0; S.s0.bet=null; renderS0Readout(); queueBubbles(); };
   $('lightRange').addEventListener('input',e=>{ S.s2.light=parseInt(e.target.value,10); render2(); });
   $('co2Range').addEventListener('input',e=>{ S.s3.co2=parseInt(e.target.value,10); render3(); });
   $('quizReset').onclick=()=>{ S.s4.q1=null; S.s4.q2=null; renderQuiz(); };
+  if('IntersectionObserver' in window){
   const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting) document.querySelectorAll('.nav-step').forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+en.target.id)); }),{rootMargin:'-25% 0px -50% 0px'});
   document.querySelectorAll('.step').forEach(el=>io.observe(el));
+  const visibility=new IntersectionObserver(es=>{ if(!es[0].isIntersecting) pauseBubbles(); });
+  visibility.observe($('step0'));
+  }
+  document.addEventListener('visibilitychange',()=>{ if(document.hidden) pauseBubbles(); });
+  window.addEventListener('pagehide',pauseBubbles);
+  // Reduced motion never autoplays; a learner may explicitly start or pause the experiment.
+  if(reducedMotion.addEventListener) reducedMotion.addEventListener('change',pauseBubbles);
   let queued=false;
-  window.addEventListener('resize',()=>{ if(!queued){ queued=true; requestAnimationFrame(()=>{ queued=false; render2(); render3(); if(!S.s0.playing) requestAnimationFrame(drawS0); }); } });
+  window.addEventListener('resize',()=>{ if(!queued){ queued=true; requestAnimationFrame(()=>{ queued=false; render2(); render3(); if(!S.s0.playing) queueBubbles(); }); } });
 }
 onLangRefresh(renderAll);
 bind();
