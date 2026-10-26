@@ -1,0 +1,104 @@
+{
+  "kind": "author self-check",
+  "formula": "WCAG sRGB linearization and (L1+.05)/(L2+.05)",
+  "referencePairs": [
+    "black/white=21",
+    "same colors=1",
+    "red/white=3.9984767707539985"
+  ],
+  "measurements": [
+    {
+      "fg": "#6ee7ff",
+      "bg": "#0d1117",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#161b22",
+      "ratio": 7.078851579017443,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "fg": "#0d1117",
+      "bg": "#6ee7ff",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#0d1117",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#0d1117",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#161b22",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#1c2330",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#0a0e14",
+      "ratio": 16.440224808744848,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#0a0e14",
+      "ratio": 7.914396395614137,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#0a0e14",
+      "ratio": 13.388343428810314,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#090e16",
+      "ratio": 16.437295258072666,
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#1c2330",
+      "ratio": 6.449407898769069,
+      "threshold": 4.5,
+      "pass": true
+    }
+  ],
+  "focus": {
+    "active": true,
+    "visible": true,
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "focusRatio": 8.937191437807625,
+  "cssBytes": 11448,
+  "scope": "Rendered opaque text/background pairs, both locales and success/gap/mismatch/zero endpoints; solid colors only."
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "author self-check",
+  "exhaustiveArrays": 8184,
+  "lengths": "3..12",
+  "seed": 927,
+  "seededArrays": 800,
+  "officialAndFresh": 4,
+  "maxBoundaries": [
+    {
+      "n": 30000,
+      "answer": [
+        0,
+        2
+      ]
+    },
+    {
+      "n": 30000,
+      "answer": [
+        9999,
+        20000
+      ]
+    },
+    {
+      "n": 30000,
+      "answer": [
+        9999,
+        20000
+      ]
+    },
+    {
+      "n": 30000,
+      "answer": [
+        -1,
+        -1
+      ]
+    }
+  ],
+  "displayedBaselineCases": 100,
+  "sourceParity": true,
+  "copyKeys": 93
+}
