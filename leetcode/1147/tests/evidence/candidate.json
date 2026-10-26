@@ -1,0 +1,41 @@
+{
+  "candidate": "1147-author-v4",
+  "status": "author-self-checked; independent review pending",
+  "frozenAt": "2026-10-26T17:35:46.194038+00:00",
+  "baseCommit": "ed8f70a2d6c45441fbb13b7c509a2b065ee7c1d7",
+  "files": {
+    "BRIEF.md": "3fcf7c8a7ba56e176b42af1d509aa9f8281a916efb2ceeaac3cb01a5960852ab",
+    "app.js": "140400663271182b1eb6a3571103522ad38c7c5f67a571dbb8f376d9d3a45741",
+    "copy.js": "3ca6a84b9cfd31628acbf1e5cfee3abfb38f92d1ffc46da587dbc7d381f1df05",
+    "core.js": "bbae370245c7369ad6b8eb335a51aea0859ea49bef582bd47a894a98eeb1b49c",
+    "index.html": "6981f8de4d76caa7e28e1aa72fe822e4f3222756a797415799e21c710322729b",
+    "lesson-entry.json": "3e35c89f47c573d3551f1ea637ae6aa298d453d81a335421726590f0c2835edf",
+    "provenance/README.md": "f4dbce6cc4f53c4c2d6aa0eae51b99a5f004620b8e175ac1a84c8de1dc2e2c03",
+    "provenance/official.json": "b0f7227a2ad65eb698b13e9638a45b0fbbe6e6fb430c9996b2aecfda5da7ef7f",
+    "python-code.js": "ec6878fad4adacea03473c819741f21f76f34476fad4ce7662a5b693dfdc8da0",
+    "solution.py": "ac5258ac02ee1a1f2b0717ed1a953fc3c40bce367d16fff4b307dfbda20e4c0d",
+    "style.css": "81415b6d3c15c6ac189a24484280501cf6d65f8016caffd92067d4894064c212",
+    "tests/README.md": "5b8749af7697a3e19aba2411b09088ef57318f0a443dce333d0e1c320b6d2133",
+    "tests/browser.cjs": "9f637fbab10196b01923668b64478de566e251a0855cca9fa8a7a2c9c04ac603",
+    "tests/contact_sheets.py": "59fb889f0bb48e39282650d58a17be5ea6859307a836afd122e9e881e068973b",
+    "tests/core.cjs": "9e23c84375b0106c64ca5ff41e5a86f8c1e40f89b31f7e649b3dad7980e149d8",
+    "tests/numerical.py": "7c7ef5b2813a02eb77cc33458d400a35e977891f36e68f2874956b5a8f02555d",
+    "tests/supplemental.cjs": "24ab169b2f83c5101cfeffa9e24de760184db008f3e3265bf6a2fdec6a4ac614"
+  },
+  "evidence": {
+    "numerical.json": "05ef054f4f2ff7adb8269031281675a8952ba77e98402805a41277d7a83dc336",
+    "core.json": "62cdb101a11551b8dd23bde4553ce712023b6a6d47b17c41271f7e8722a9cb5e",
+    "browser-results.json": "c179dbf10a724756cc3875fc3d39f19f82c7c4da9586495191844ba16337dcd4",
+    "supplemental.json": "83073de8189660854fcaca67f8dc7c824717d3ae416c03f65459dc8e95978693",
+    "preflight.json": "02b9d50bd410ce825e8451a4c94989e0c67fdb27e735101eb6360e12bd9ec042",
+    "served-parity.json": "91c167d9d11d495547937f5e4846cd93c9d26e940273f7588d32489e01e8a953",
+    "SELF-CHECK.md": "323cfc8e721fae7c803fa82b8ae360d02a04598836802307b898df48358633f7",
+    "validation-history.md": "9d7dab11fe6875bfa7e4c374856e1765391b24a9d00e310019d1cbc87cb648a2"
+  },
+  "sharedAssets": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "reviewer": null,
+  "reviewOutcome": "pending"
+}

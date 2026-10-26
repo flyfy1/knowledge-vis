@@ -1,0 +1,38 @@
+{
+  "id": 1147,
+  "title": {
+    "zh": "段式回文",
+    "en": "Longest Chunked Palindrome Decomposition"
+  },
+  "desc": {
+    "zh": "从 volvo 的手算切块推导最短相等两端的贪心证明。",
+    "en": "Derive why the shortest equal ends maximize the number of chunks."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "贪心",
+      "en": "Greedy"
+    },
+    {
+      "zh": "字符串",
+      "en": "Strings"
+    }
+  ],
+  "path": "1147/",
+  "leetcodeUrl": "https://leetcode.com/problems/longest-chunked-palindrome-decomposition/",
+  "language": "Python",
+  "complexity": "O(n²) time; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "Shortest matching ends",
+      "step": 3,
+      "description": "Refine longer outer chunks to justify the greedy choice."
+    },
+    {
+      "name": "Chunk-count invariant",
+      "step": 3,
+      "description": "Fixed chunks plus the optimal unresolved middle."
+    }
+  ]
+}

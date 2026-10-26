@@ -1,0 +1,537 @@
+{
+  "kind": "author self-check",
+  "status": "pass",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "url": "http://127.0.0.1:18770/leetcode/1147/",
+  "coverage": [
+    {
+      "lang": "en",
+      "preset": 0,
+      "input": "volvo",
+      "expected": 3,
+      "observed": "Completed operations 3/3; counted 3 chunks; final maximum count",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "en",
+      "preset": 1,
+      "input": "aaaa",
+      "expected": 4,
+      "observed": "Completed operations 2/2; counted 4 chunks; final maximum count",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "en",
+      "preset": 2,
+      "input": "merchant",
+      "expected": 1,
+      "observed": "Completed operations 5/5; counted 1 chunks; final maximum count",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "en",
+      "preset": 3,
+      "input": "ghiabcdefhelloadamhelloabcdefghi",
+      "expected": 7,
+      "observed": "Completed operations 17/17; counted 7 chunks; final maximum count",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "en",
+      "preset": 4,
+      "input": "antaprezatepzapreanta",
+      "expected": 11,
+      "observed": "Completed operations 11/11; counted 11 chunks; final maximum count",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "en",
+      "preset": 5,
+      "input": "a",
+      "expected": 1,
+      "observed": "Completed operations 1/1; counted 1 chunks; final maximum count",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "en",
+      "preset": 6,
+      "input": "aa",
+      "expected": 2,
+      "observed": "Completed operations 1/1; counted 2 chunks; final maximum count",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "en",
+      "preset": 7,
+      "input": "abcab",
+      "expected": 3,
+      "observed": "Completed operations 3/3; counted 3 chunks; final maximum count",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "en",
+      "binding": {
+        "mismatch": "Tested OLD interval [0,5): length 1, v ≠ o. No cut; try a longer length next.",
+        "matched": "Tested OLD interval [0,5): length 2, vo = vo. Commit two chunks, move inward, and restart at length 1.",
+        "formula": "OPT(original) = fixed + OPT(text[left:right]); OPT(empty) = 0",
+        "afterBounds": "AFTER operation: remaining [2,3), content l; next candidate length 1.",
+        "afterChunks": "Committed left: [vo]Unresolved middle: [l]Committed right: [vo]"
+      }
+    },
+    {
+      "lang": "en",
+      "clipboard": "automatic + denied-write native fallback passed",
+      "host": "linux",
+      "sentinelVerified": true,
+      "newlineConversion": "none; exact string equality",
+      "fallback": "Automatic copy is unavailable. The full source below is selected; use your system copy shortcut."
+    },
+    {
+      "lang": "zh",
+      "preset": 0,
+      "input": "volvo",
+      "expected": 3,
+      "observed": "已完成操作 3/3；已计入 3 块；最终最大块数",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 1,
+      "input": "aaaa",
+      "expected": 4,
+      "observed": "已完成操作 2/2；已计入 4 块；最终最大块数",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 2,
+      "input": "merchant",
+      "expected": 1,
+      "observed": "已完成操作 5/5；已计入 1 块；最终最大块数",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 3,
+      "input": "ghiabcdefhelloadamhelloabcdefghi",
+      "expected": 7,
+      "observed": "已完成操作 17/17；已计入 7 块；最终最大块数",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 4,
+      "input": "antaprezatepzapreanta",
+      "expected": 11,
+      "observed": "已完成操作 11/11；已计入 11 块；最终最大块数",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 5,
+      "input": "a",
+      "expected": 1,
+      "observed": "已完成操作 1/1；已计入 1 块；最终最大块数",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 6,
+      "input": "aa",
+      "expected": 2,
+      "observed": "已完成操作 1/1；已计入 2 块；最终最大块数",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "zh",
+      "preset": 7,
+      "input": "abcab",
+      "expected": 3,
+      "observed": "已完成操作 3/3；已计入 3 块；最终最大块数",
+      "rewindReplay": "all frames pass"
+    },
+    {
+      "lang": "zh",
+      "binding": {
+        "mismatch": "刚比较旧区间 [0,5)：长度 1，v ≠ o。不切块，下次增长长度。",
+        "matched": "刚比较旧区间 [0,5)：长度 2，vo = vo。固定两块，向内收缩，下次从长度 1 重试。",
+        "formula": "OPT(原串) = fixed + OPT(text[left:right])；OPT(空串) = 0",
+        "afterBounds": "操作后剩余区间 [2,3)，内容 l；下一候选长度 1。",
+        "afterChunks": "左侧已固定：[vo]待处理中间：[l]右侧已固定：[vo]"
+      }
+    },
+    {
+      "lang": "zh",
+      "clipboard": "automatic + denied-write native fallback passed",
+      "host": "linux",
+      "sentinelVerified": true,
+      "newlineConversion": "none; exact string equality",
+      "fallback": "自动复制不可用。下方已全选完整源码，请按系统复制快捷键。"
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "allPresetsNoOverflow": true,
+      "chunkRowsNoOverlap": true
+    },
+    {
+      "lang": "zh",
+      "deepLink": "#step3",
+      "top": 96.34375,
+      "nav": 70
+    },
+    {
+      "lang": "zh",
+      "deepLink": "#step4",
+      "top": 96.390625,
+      "nav": 70
+    },
+    {
+      "lang": "zh",
+      "relatedTarget": "http://127.0.0.1:18770/leetcode/214/#step1",
+      "excerpt": "02把回文变成两端相等这一步要回答：怎样用“两段相等”找最长回文前缀？令 t = s + # + reverse(s)，# 是输入中不会出现的分隔符。一个串的 border（相同两端）是既为前缀又为后缀、且比整个串短的字符串；我们记录它的长度。abac#cabaaba = aba → ℓ = 3沿用 abac：t = abac#caba。开头 aba 与结尾 aba 相等，长度 ℓ=3；长度 4 时，abac ≠ caba。长度 k≤n 的末尾一段正是 reverse(s[:k])，所以两端相等当且仅当前缀 s[:k] 为回文。为什么需要 #？若一个真 border 长度大于 n，它的前缀和后缀中都含唯一的 #。要逐位相等，两个 # 的位置必须重合；这只可能是长度等于整个 t，不是真 border。因此合法 border 不会跨过分隔符。没有 # 时，aaaa 会给出长度 3，甚至超过原串"
+    },
+    {
+      "lang": "en",
+      "deepLink": "#step3",
+      "top": 95.640625,
+      "nav": 70
+    },
+    {
+      "lang": "en",
+      "deepLink": "#step4",
+      "top": 96.1875,
+      "nav": 70
+    },
+    {
+      "lang": "en",
+      "relatedTarget": "http://127.0.0.1:18770/leetcode/214/#step1",
+      "excerpt": "02Turn a palindrome into equal endsHow can equal pieces identify the longest palindromic prefix? Let t = s + # + reverse(s), where # is a separator absent from the input. A border is a prefix that is also a suffix and is shorter than the whole string. We record its length.abac#cabaaba = aba → ℓ = 3Keep abac: t = abac#caba. Its first aba equals its last aba, so ℓ=3; length 4 fails because abac ≠ ca"
+    }
+  ],
+  "screenshots": [
+    "zh-320-zoom1-trace.png",
+    "zh-320-zoom1-prediction.png",
+    "zh-320-zoom1-heading.png",
+    "zh-320-zoom2-trace.png",
+    "zh-320-zoom2-prediction.png",
+    "zh-320-zoom2-heading.png",
+    "zh-390-zoom1-trace.png",
+    "zh-390-zoom2-trace.png",
+    "zh-736-zoom1-trace.png",
+    "zh-736-zoom2-trace.png",
+    "zh-1440-zoom1-trace.png",
+    "zh-1440-zoom1-prediction.png",
+    "zh-1440-zoom2-trace.png",
+    "zh-1440-zoom2-prediction.png",
+    "en-320-zoom1-trace.png",
+    "en-320-zoom1-prediction.png",
+    "en-320-zoom1-heading.png",
+    "en-320-zoom2-trace.png",
+    "en-320-zoom2-prediction.png",
+    "en-320-zoom2-heading.png",
+    "en-390-zoom1-trace.png",
+    "en-390-zoom2-trace.png",
+    "en-736-zoom1-trace.png",
+    "en-736-zoom2-trace.png",
+    "en-1440-zoom1-trace.png",
+    "en-1440-zoom1-prediction.png",
+    "en-1440-zoom2-trace.png",
+    "en-1440-zoom2-prediction.png"
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "#chunks p",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#preset",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#fallbackSource",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": "#reveal",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".lang-toggle .active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "a.official-link",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "focus outline",
+      "bg": [
+        13,
+        17,
+        23
+      ],
+      "ratio": 10.731637051347173
+    },
+    {
+      "selector": "focus outline",
+      "bg": [
+        28,
+        35,
+        48
+      ],
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": "focus outline",
+      "bg": [
+        22,
+        27,
+        34
+      ],
+      "ratio": 9.809435643476732
+    }
+  ],
+  "controlSizes": [
+    {
+      "id": "",
+      "text": "中",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "id": "",
+      "text": "EN",
+      "width": 49.0625,
+      "height": 48
+    },
+    {
+      "id": "handPrev",
+      "text": "← Previous calculation",
+      "width": 195.421875,
+      "height": 48
+    },
+    {
+      "id": "handNext",
+      "text": "Next calculation →",
+      "width": 166.359375,
+      "height": 48
+    },
+    {
+      "id": "preset",
+      "text": "volvoaaaamerchantOfficial 1Official 3aaaabcab",
+      "width": 356,
+      "height": 48
+    },
+    {
+      "id": "prev",
+      "text": "← Back one frame",
+      "width": 163.4375,
+      "height": 48
+    },
+    {
+      "id": "next",
+      "text": "Complete next operation →",
+      "width": 233.140625,
+      "height": 48
+    },
+    {
+      "id": "reset",
+      "text": "Reset trace",
+      "width": 109.359375,
+      "height": 48
+    },
+    {
+      "id": "end",
+      "text": "Go to end",
+      "width": 99.859375,
+      "height": 48
+    },
+    {
+      "id": "",
+      "text": "4 chunks",
+      "width": 374,
+      "height": 48
+    },
+    {
+      "id": "",
+      "text": "1 chunk",
+      "width": 374,
+      "height": 48
+    },
+    {
+      "id": "",
+      "text": "3 chunks",
+      "width": 374,
+      "height": 48
+    },
+    {
+      "id": "reveal",
+      "text": "Check and explain",
+      "width": 168.40625,
+      "height": 48
+    },
+    {
+      "id": "copy",
+      "text": "Copy Python",
+      "width": 126.71875,
+      "height": 48
+    }
+  ],
+  "errors": [],
+  "localAssetsOnly": true,
+  "storageDenied": true,
+  "offlineSource": true,
+  "cssBytes": 11067,
+  "sourceSha256": "ac5258ac02ee1a1f2b0717ed1a953fc3c40bce367d16fff4b307dfbda20e4c0d",
+  "zoomMethod": "CSS zoom 1 and 2; physical browser/device zoom unverified"
+}
