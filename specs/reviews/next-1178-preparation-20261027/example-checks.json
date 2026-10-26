@@ -1,0 +1,628 @@
+{
+  "scope": "Official-source and bounded semantic preparation; no optimized implementation or lesson acceptance.",
+  "handFixtures": [
+    {
+      "name": "official_one",
+      "words": [
+        "aaaa",
+        "asas",
+        "able",
+        "ability",
+        "actt",
+        "actor",
+        "access"
+      ],
+      "queries": [
+        {
+          "puzzle": "aboveyz",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [
+            0
+          ],
+          "answer": 1
+        },
+        {
+          "puzzle": "abrodyz",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [
+            0
+          ],
+          "answer": 1
+        },
+        {
+          "puzzle": "abslute",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [
+            0,
+            1,
+            2
+          ],
+          "answer": 3
+        },
+        {
+          "puzzle": "absoryz",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [
+            0,
+            1
+          ],
+          "answer": 2
+        },
+        {
+          "puzzle": "actresz",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [
+            0,
+            1,
+            4,
+            6
+          ],
+          "answer": 4
+        },
+        {
+          "puzzle": "gaswxyz",
+          "requiredFirstLetter": "g",
+          "validWordIndices": [],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "official_two",
+      "words": [
+        "apple",
+        "pleas",
+        "please"
+      ],
+      "queries": [
+        {
+          "puzzle": "aelwxyz",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [],
+          "answer": 0
+        },
+        {
+          "puzzle": "aelpxyz",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [
+            0
+          ],
+          "answer": 1
+        },
+        {
+          "puzzle": "aelpsxy",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [
+            0,
+            1,
+            2
+          ],
+          "answer": 3
+        },
+        {
+          "puzzle": "saelpxy",
+          "requiredFirstLetter": "s",
+          "validWordIndices": [
+            1,
+            2
+          ],
+          "answer": 2
+        },
+        {
+          "puzzle": "xaelpsy",
+          "requiredFirstLetter": "x",
+          "validWordIndices": [],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "duplicate_words_and_equal_letter_sets",
+      "words": [
+        "aaaa",
+        "aaaa",
+        "aaab",
+        "abba",
+        "baab",
+        "bbbb"
+      ],
+      "queries": [
+        {
+          "puzzle": "abcdefg",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "answer": 5
+        },
+        {
+          "puzzle": "bacdefg",
+          "requiredFirstLetter": "b",
+          "validWordIndices": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "answer": 4
+        }
+      ]
+    },
+    {
+      "name": "same_set_different_first_letter",
+      "words": [
+        "aaaa",
+        "aaab"
+      ],
+      "queries": [
+        {
+          "puzzle": "abcdefg",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [
+            0,
+            1
+          ],
+          "answer": 2
+        },
+        {
+          "puzzle": "agfedcb",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [
+            0,
+            1
+          ],
+          "answer": 2
+        },
+        {
+          "puzzle": "bacdefg",
+          "requiredFirstLetter": "b",
+          "validWordIndices": [
+            1
+          ],
+          "answer": 1
+        },
+        {
+          "puzzle": "abcdefg",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [
+            0,
+            1
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "name": "word_length_not_distinct_letter_count",
+      "words": [
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "abcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefg",
+        "abcdefgh",
+        "zzzz"
+      ],
+      "queries": [
+        {
+          "puzzle": "abcdefg",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [
+            0,
+            1
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "name": "required_letter_can_appear_anywhere",
+      "words": [
+        "baaa",
+        "bbbb",
+        "cbbb",
+        "cccc"
+      ],
+      "queries": [
+        {
+          "puzzle": "abcdefg",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [
+            0
+          ],
+          "answer": 1
+        },
+        {
+          "puzzle": "bacdefg",
+          "requiredFirstLetter": "b",
+          "validWordIndices": [
+            0,
+            1,
+            2
+          ],
+          "answer": 3
+        },
+        {
+          "puzzle": "cabdefg",
+          "requiredFirstLetter": "c",
+          "validWordIndices": [
+            2,
+            3
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "name": "unused_puzzle_letters_allowed",
+      "words": [
+        "aaaa",
+        "aabb"
+      ],
+      "queries": [
+        {
+          "puzzle": "abcdefg",
+          "requiredFirstLetter": "a",
+          "validWordIndices": [
+            0,
+            1
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ],
+  "handFixtureCount": 7,
+  "handQueryCount": 22,
+  "subsetBijectionCheck": {
+    "mandatoryLetter": "a",
+    "optionalLetters": "bcdefg",
+    "distinctSets": 64,
+    "wordEntries": [
+      "aaaa",
+      "aaaa",
+      "abaa",
+      "baaa",
+      "acaa",
+      "caaa",
+      "adaa",
+      "daaa",
+      "aeaa",
+      "eaaa",
+      "afaa",
+      "faaa",
+      "agaa",
+      "gaaa",
+      "abca",
+      "cbaa",
+      "abda",
+      "dbaa",
+      "abea",
+      "ebaa",
+      "abfa",
+      "fbaa",
+      "abga",
+      "gbaa",
+      "acda",
+      "dcaa",
+      "acea",
+      "ecaa",
+      "acfa",
+      "fcaa",
+      "acga",
+      "gcaa",
+      "adea",
+      "edaa",
+      "adfa",
+      "fdaa",
+      "adga",
+      "gdaa",
+      "aefa",
+      "feaa",
+      "aega",
+      "geaa",
+      "afga",
+      "gfaa",
+      "abcd",
+      "dcba",
+      "abce",
+      "ecba",
+      "abcf",
+      "fcba",
+      "abcg",
+      "gcba",
+      "abde",
+      "edba",
+      "abdf",
+      "fdba",
+      "abdg",
+      "gdba",
+      "abef",
+      "feba",
+      "abeg",
+      "geba",
+      "abfg",
+      "gfba",
+      "acde",
+      "edca",
+      "acdf",
+      "fdca",
+      "acdg",
+      "gdca",
+      "acef",
+      "feca",
+      "aceg",
+      "geca",
+      "acfg",
+      "gfca",
+      "adef",
+      "feda",
+      "adeg",
+      "geda",
+      "adfg",
+      "gfda",
+      "aefg",
+      "gfea",
+      "abcde",
+      "edcba",
+      "abcdf",
+      "fdcba",
+      "abcdg",
+      "gdcba",
+      "abcef",
+      "fecba",
+      "abceg",
+      "gecba",
+      "abcfg",
+      "gfcba",
+      "abdef",
+      "fedba",
+      "abdeg",
+      "gedba",
+      "abdfg",
+      "gfdba",
+      "abefg",
+      "gfeba",
+      "acdef",
+      "fedca",
+      "acdeg",
+      "gedca",
+      "acdfg",
+      "gfdca",
+      "acefg",
+      "gfeca",
+      "adefg",
+      "gfeda",
+      "abcdef",
+      "fedcba",
+      "abcdeg",
+      "gedcba",
+      "abcdfg",
+      "gfdcba",
+      "abcefg",
+      "gfecba",
+      "abdefg",
+      "gfedba",
+      "acdefg",
+      "gfedca",
+      "abcdefg",
+      "gfedcba",
+      "abcdefgh"
+    ],
+    "queries": [
+      {
+        "puzzle": "abcdefg",
+        "requiredFirstLetter": "a",
+        "validWordIndices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127
+        ],
+        "answer": 128
+      },
+      {
+        "puzzle": "bacdefg",
+        "requiredFirstLetter": "b",
+        "validWordIndices": [
+          2,
+          3,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          126,
+          127
+        ],
+        "answer": 64
+      },
+      {
+        "puzzle": "hbcdefg",
+        "requiredFirstLetter": "h",
+        "validWordIndices": [],
+        "answer": 0
+      }
+    ]
+  }
+}

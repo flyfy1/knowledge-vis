@@ -1,0 +1,55 @@
+{
+  "observedAt": "2026-10-26T17:36:04.099715+00:00",
+  "officialUrl": "https://leetcode.com/problems/number-of-valid-words-for-each-puzzle/",
+  "requestMethod": "GET",
+  "requestUrl": "https://leetcode.com/graphql/?query=query+questionData%28%24titleSlug%3A+String%21%29+%7B+question%28titleSlug%3A+%24titleSlug%29+%7B+questionId+questionFrontendId+title+titleSlug+content+difficulty+isPaidOnly+exampleTestcases+sampleTestCase+metaData+codeSnippets+%7B+lang+langSlug+code+%7D+topicTags+%7B+name+slug+%7D+%7D+%7D&variables=%7B%22titleSlug%22%3A%22number-of-valid-words-for-each-puzzle%22%7D&operationName=questionData",
+  "requestCount": 1,
+  "access": "ordinary public unauthenticated GraphQL; no bypass",
+  "httpStatus": 200,
+  "responseFile": "1178-official-response.json",
+  "responseSha256": "7639a68eee70c74bc453cf7e7e8c5e1bfe29fa70e3ca3f402f3632a9faf219e0",
+  "responseBytes": 7417,
+  "frozenCatalogSnapshotAt": "2026-10-18T08:59:47.124517+00:00",
+  "catalogSegment": [
+    {
+      "id": 1163,
+      "slug": "last-substring-in-lexicographical-order",
+      "title": "Last Substring in Lexicographical Order",
+      "paidOnly": false,
+      "officialUrl": "https://leetcode.com/problems/last-substring-in-lexicographical-order/",
+      "categories": [
+        "algorithms"
+      ]
+    },
+    {
+      "id": 1168,
+      "slug": "optimize-water-distribution-in-a-village",
+      "title": "Optimize Water Distribution in a Village",
+      "paidOnly": true,
+      "officialUrl": "https://leetcode.com/problems/optimize-water-distribution-in-a-village/",
+      "categories": [
+        "algorithms"
+      ]
+    },
+    {
+      "id": 1172,
+      "slug": "dinner-plate-stacks",
+      "title": "Dinner Plate Stacks",
+      "paidOnly": false,
+      "officialUrl": "https://leetcode.com/problems/dinner-plate-stacks/",
+      "categories": [
+        "algorithms"
+      ]
+    },
+    {
+      "id": 1178,
+      "slug": "number-of-valid-words-for-each-puzzle",
+      "title": "Number of Valid Words for Each Puzzle",
+      "paidOnly": false,
+      "officialUrl": "https://leetcode.com/problems/number-of-valid-words-for-each-puzzle/",
+      "categories": [
+        "algorithms"
+      ]
+    }
+  ]
+}
