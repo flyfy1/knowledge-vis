@@ -1,0 +1,861 @@
+{
+  "scope": "author self-check; independent review pending",
+  "host": "linux",
+  "browser": "156.0.8078.4",
+  "presets": [
+    {
+      "lang": "en",
+      "p": 0,
+      "expression": "&(t,!(f))",
+      "characters": 9,
+      "expected": true,
+      "output": "All input processed: stack [t], return Boolean true."
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "expression": "&(|(f))",
+      "characters": 7,
+      "expected": false,
+      "output": "All input processed: stack [f], return Boolean false."
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "expression": "|(f,f,f,t)",
+      "characters": 10,
+      "expected": true,
+      "output": "All input processed: stack [t], return Boolean true."
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "expression": "!(&(f,t))",
+      "characters": 9,
+      "expected": true,
+      "output": "All input processed: stack [t], return Boolean true."
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "expression": "t",
+      "characters": 1,
+      "expected": true,
+      "output": "All input processed: stack [t], return Boolean true."
+    },
+    {
+      "lang": "en",
+      "p": 5,
+      "expression": "f",
+      "characters": 1,
+      "expected": false,
+      "output": "All input processed: stack [f], return Boolean false."
+    },
+    {
+      "lang": "en",
+      "p": 6,
+      "expression": "!(!(!(t)))",
+      "characters": 10,
+      "expected": false,
+      "output": "All input processed: stack [f], return Boolean false."
+    },
+    {
+      "lang": "en",
+      "p": 7,
+      "expression": "&(t,t,t)",
+      "characters": 8,
+      "expected": true,
+      "output": "All input processed: stack [t], return Boolean true."
+    },
+    {
+      "lang": "en",
+      "p": 8,
+      "expression": "|(f,&(t,!(f)),f)",
+      "characters": 16,
+      "expected": true,
+      "output": "All input processed: stack [t], return Boolean true."
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "expression": "&(t,!(f))",
+      "characters": 9,
+      "expected": true,
+      "output": "已读完：栈 [t]，返回布尔值 true。"
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "expression": "&(|(f))",
+      "characters": 7,
+      "expected": false,
+      "output": "已读完：栈 [f]，返回布尔值 false。"
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "expression": "|(f,f,f,t)",
+      "characters": 10,
+      "expected": true,
+      "output": "已读完：栈 [t]，返回布尔值 true。"
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "expression": "!(&(f,t))",
+      "characters": 9,
+      "expected": true,
+      "output": "已读完：栈 [t]，返回布尔值 true。"
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "expression": "t",
+      "characters": 1,
+      "expected": true,
+      "output": "已读完：栈 [t]，返回布尔值 true。"
+    },
+    {
+      "lang": "zh",
+      "p": 5,
+      "expression": "f",
+      "characters": 1,
+      "expected": false,
+      "output": "已读完：栈 [f]，返回布尔值 false。"
+    },
+    {
+      "lang": "zh",
+      "p": 6,
+      "expression": "!(!(!(t)))",
+      "characters": 10,
+      "expected": false,
+      "output": "已读完：栈 [f]，返回布尔值 false。"
+    },
+    {
+      "lang": "zh",
+      "p": 7,
+      "expression": "&(t,t,t)",
+      "characters": 8,
+      "expected": true,
+      "output": "已读完：栈 [t]，返回布尔值 true。"
+    },
+    {
+      "lang": "zh",
+      "p": 8,
+      "expression": "|(f,&(t,!(f)),f)",
+      "characters": 16,
+      "expected": true,
+      "output": "已读完：栈 [t]，返回布尔值 true。"
+    }
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "kind": "initial",
+      "event": "No character read yet. Both stacks are empty.",
+      "before": "Read rows left→right, then top→bottom. Last item is newest.Empty stack",
+      "after": "Read rows left→right, then top→bottom. Last item is newest.Empty stack"
+    },
+    {
+      "lang": "en",
+      "kind": "push",
+      "event": "Read &: append it at the right end, keeping it until its group is complete.",
+      "before": "Read rows left→right, then top→bottom. Last item is newest.Empty stack",
+      "after": "Read rows left→right, then top→bottom. Last item is newest.&"
+    },
+    {
+      "lang": "en",
+      "kind": "comma",
+      "event": "Read a comma: it only separates children, so the stack is unchanged.",
+      "before": "Read rows left→right, then top→bottom. Last item is newest.&(t",
+      "after": "Read rows left→right, then top→bottom. Last item is newest.&(t"
+    },
+    {
+      "lang": "en",
+      "kind": "reduce",
+      "event": "Read a close: !(f) → t. Pop these children, the opening parenthesis and the operator, then push t.",
+      "before": "Read rows left→right, then top→bottom. Last item is newest.&(t!(f",
+      "after": "Read rows left→right, then top→bottom. Last item is newest.&(tt"
+    },
+    {
+      "lang": "en",
+      "opt": 0,
+      "feedback": "Check which group the close belongs to. The first close ends only &(t,f), which must become a single f, leaving [ | ( f ]. The outer | ( is still open and !(t) is unread. Later !(t)=f and |(f,f)=f, returning false. A leaves the AND children as separate values; C removes the outer context too early."
+    },
+    {
+      "lang": "en",
+      "opt": 1,
+      "feedback": "Correct. The first close ends only &(t,f), which must become a single f, leaving [ | ( f ]. The outer | ( is still open and !(t) is unread. Later !(t)=f and |(f,f)=f, returning false. A leaves the AND children as separate values; C removes the outer context too early."
+    },
+    {
+      "lang": "en",
+      "opt": 2,
+      "feedback": "Check which group the close belongs to. The first close ends only &(t,f), which must become a single f, leaving [ | ( f ]. The outer | ( is still open and !(t) is unread. Later !(t)=f and |(f,f)=f, returning false. A leaves the AND children as separate values; C removes the outer context too early."
+    },
+    {
+      "lang": "zh",
+      "kind": "initial",
+      "event": "尚未读取字符。两个栈都为空。",
+      "before": "按行阅读：先左→右，再上→下；最后一项最新。空栈",
+      "after": "按行阅读：先左→右，再上→下；最后一项最新。空栈"
+    },
+    {
+      "lang": "zh",
+      "kind": "push",
+      "event": "读 &：把它追加到栈的右端，等待这一组完成。",
+      "before": "按行阅读：先左→右，再上→下；最后一项最新。空栈",
+      "after": "按行阅读：先左→右，再上→下；最后一项最新。&"
+    },
+    {
+      "lang": "zh",
+      "kind": "comma",
+      "event": "读逗号：它只分隔输入，所以栈不变。",
+      "before": "按行阅读：先左→右，再上→下；最后一项最新。&(t",
+      "after": "按行阅读：先左→右，再上→下；最后一项最新。&(t"
+    },
+    {
+      "lang": "zh",
+      "kind": "reduce",
+      "event": "读右括号：!(f) → t。弹出这些输入、左括号及运算符，再放回 t。",
+      "before": "按行阅读：先左→右，再上→下；最后一项最新。&(t!(f",
+      "after": "按行阅读：先左→右，再上→下；最后一项最新。&(tt"
+    },
+    {
+      "lang": "zh",
+      "opt": 0,
+      "feedback": "再检查括号的作用域。 第一个右括号只关闭 &(t,f)，它必须整体变成 f，所以栈为 [ | ( f ]。外层 | ( 还没关闭，!(t) 还未读取。随后 !(t)=f，|(f,f)=f，返回 false。A 把与的两个输入留成独立值；C 过早删除了外层。"
+    },
+    {
+      "lang": "zh",
+      "opt": 1,
+      "feedback": "判断正确。 第一个右括号只关闭 &(t,f)，它必须整体变成 f，所以栈为 [ | ( f ]。外层 | ( 还没关闭，!(t) 还未读取。随后 !(t)=f，|(f,f)=f，返回 false。A 把与的两个输入留成独立值；C 过早删除了外层。"
+    },
+    {
+      "lang": "zh",
+      "opt": 2,
+      "feedback": "再检查括号的作用域。 第一个右括号只关闭 &(t,f)，它必须整体变成 f，所以栈为 [ | ( f ]。外层 | ( 还没关闭，!(t) 还未读取。随后 !(t)=f，|(f,f)=f，返回 false。A 把与的两个输入留成独立值；C 过早删除了外层。"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 320,
+        "width": 320,
+        "boxes": [
+          {
+            "width": 274,
+            "scroll": 272,
+            "client": 272
+          },
+          {
+            "width": 274,
+            "scroll": 272,
+            "client": 272
+          }
+        ],
+        "select": {
+          "text": "Case 9",
+          "textWidth": 49.08808898925781,
+          "available": 222,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 48
+      }
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 320,
+        "width": 320,
+        "boxes": [
+          {
+            "width": 228,
+            "scroll": 112,
+            "client": 112
+          },
+          {
+            "width": 228,
+            "scroll": 112,
+            "client": 112
+          }
+        ],
+        "select": {
+          "text": "Case 9",
+          "textWidth": 49.08808898925781,
+          "available": 62,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 96
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 390,
+        "width": 390,
+        "boxes": [
+          {
+            "width": 328,
+            "scroll": 326,
+            "client": 326
+          },
+          {
+            "width": 328,
+            "scroll": 326,
+            "client": 326
+          }
+        ],
+        "select": {
+          "text": "Case 9",
+          "textWidth": 49.08808898925781,
+          "available": 276,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 48
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 390,
+        "width": 390,
+        "boxes": [
+          {
+            "width": 266,
+            "scroll": 131,
+            "client": 131
+          },
+          {
+            "width": 266,
+            "scroll": 131,
+            "client": 131
+          }
+        ],
+        "select": {
+          "text": "Case 9",
+          "textWidth": 49.08808898925781,
+          "available": 81,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 96
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 736,
+        "width": 736,
+        "boxes": [
+          {
+            "width": 315,
+            "scroll": 313,
+            "client": 313
+          },
+          {
+            "width": 315,
+            "scroll": 313,
+            "client": 313
+          }
+        ],
+        "select": {
+          "text": "Case 9",
+          "textWidth": 49.08808898925781,
+          "available": 594,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 48
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 736,
+        "width": 736,
+        "boxes": [
+          {
+            "width": 262,
+            "scroll": 129,
+            "client": 129
+          },
+          {
+            "width": 262,
+            "scroll": 129,
+            "client": 129
+          }
+        ],
+        "select": {
+          "text": "Case 9",
+          "textWidth": 49.08808898925781,
+          "available": 226,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 96
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 1440,
+        "width": 1440,
+        "boxes": [
+          {
+            "width": 447,
+            "scroll": 445,
+            "client": 445
+          },
+          {
+            "width": 447,
+            "scroll": 445,
+            "client": 445
+          }
+        ],
+        "select": {
+          "text": "Case 9",
+          "textWidth": 49.08808898925781,
+          "available": 858,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 48
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 1440,
+        "width": 1440,
+        "boxes": [
+          {
+            "width": 614,
+            "scroll": 305,
+            "client": 305
+          },
+          {
+            "width": 614,
+            "scroll": 305,
+            "client": 305
+          }
+        ],
+        "select": {
+          "text": "Case 9",
+          "textWidth": 49.08808898925781,
+          "available": 578,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 96
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 320,
+        "width": 320,
+        "boxes": [
+          {
+            "width": 274,
+            "scroll": 272,
+            "client": 272
+          },
+          {
+            "width": 274,
+            "scroll": 272,
+            "client": 272
+          }
+        ],
+        "select": {
+          "text": "例 9",
+          "textWidth": 29.312057495117188,
+          "available": 222,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 48
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 320,
+        "width": 320,
+        "boxes": [
+          {
+            "width": 228,
+            "scroll": 112,
+            "client": 112
+          },
+          {
+            "width": 228,
+            "scroll": 112,
+            "client": 112
+          }
+        ],
+        "select": {
+          "text": "例 9",
+          "textWidth": 29.312057495117188,
+          "available": 62,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 96
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 390,
+        "width": 390,
+        "boxes": [
+          {
+            "width": 328,
+            "scroll": 326,
+            "client": 326
+          },
+          {
+            "width": 328,
+            "scroll": 326,
+            "client": 326
+          }
+        ],
+        "select": {
+          "text": "例 9",
+          "textWidth": 29.312057495117188,
+          "available": 276,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 48
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 390,
+        "width": 390,
+        "boxes": [
+          {
+            "width": 266,
+            "scroll": 131,
+            "client": 131
+          },
+          {
+            "width": 266,
+            "scroll": 131,
+            "client": 131
+          }
+        ],
+        "select": {
+          "text": "例 9",
+          "textWidth": 29.312057495117188,
+          "available": 81,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 96
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 736,
+        "width": 736,
+        "boxes": [
+          {
+            "width": 315,
+            "scroll": 313,
+            "client": 313
+          },
+          {
+            "width": 315,
+            "scroll": 313,
+            "client": 313
+          }
+        ],
+        "select": {
+          "text": "例 9",
+          "textWidth": 29.312057495117188,
+          "available": 594,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 48
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 736,
+        "width": 736,
+        "boxes": [
+          {
+            "width": 262,
+            "scroll": 129,
+            "client": 129
+          },
+          {
+            "width": 262,
+            "scroll": 129,
+            "client": 129
+          }
+        ],
+        "select": {
+          "text": "例 9",
+          "textWidth": 29.312057495117188,
+          "available": 226,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 96
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 1440,
+        "width": 1440,
+        "boxes": [
+          {
+            "width": 447,
+            "scroll": 445,
+            "client": 445
+          },
+          {
+            "width": 447,
+            "scroll": 445,
+            "client": 445
+          }
+        ],
+        "select": {
+          "text": "例 9",
+          "textWidth": 29.312057495117188,
+          "available": 858,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 48
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "method": "CSS zoom layout stress",
+      "geometry": {
+        "document": 1440,
+        "width": 1440,
+        "boxes": [
+          {
+            "width": 614,
+            "scroll": 305,
+            "client": 305
+          },
+          {
+            "width": 614,
+            "scroll": 305,
+            "client": 305
+          }
+        ],
+        "select": {
+          "text": "例 9",
+          "textWidth": 29.312057495117188,
+          "available": 578,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        },
+        "controlMin": 96
+      }
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "en",
+      "attempt": 0,
+      "sentinelVerified": true,
+      "nativeTransfer": true,
+      "shortcut": "Control+C"
+    },
+    {
+      "lang": "en",
+      "attempt": 1,
+      "sentinelVerified": true,
+      "nativeTransfer": true,
+      "shortcut": "Control+C"
+    },
+    {
+      "lang": "zh",
+      "attempt": 0,
+      "sentinelVerified": true,
+      "nativeTransfer": true,
+      "shortcut": "Control+C"
+    },
+    {
+      "lang": "zh",
+      "attempt": 1,
+      "sentinelVerified": true,
+      "nativeTransfer": true,
+      "shortcut": "Control+C"
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".stack-tokens code",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".token.current small",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": ".token.read",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "selector": ".btn:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".btn.primary:not(:disabled)",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "select",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".trace-log li",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": "textarea",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    }
+  ],
+  "links": [
+    {
+      "lang": "en",
+      "label": "Basic Calculator: preserve outer totals and signs",
+      "href": "../224/#step2",
+      "resolved": "http://127.0.0.1:18770/leetcode/224/#step2",
+      "keyboard": "Enter",
+      "width": 320,
+      "heading": "03 · Watch save and restore",
+      "destinationText": "0303 · Watch save and restoreQuestion: what changes after consuming one number or symbol? Choosing a preset restarts this experiment. Keep the expression fixed, advance one item, and compare the marked characters, before/after totals and saved pairs. Rewind to check restoration.Invariant (a fact preserved at each step): total equals the sum of consumed terms at the current parenthesis level. Each saved (outer total, outer sign) pair records a group still awaiting its merge. When a number or group begins, sign is its multiplier, not the sign of the final answer. After a closing parenthesis it is temporarily unused until another operator resets it.This is a simulation of algorithm states, not execution of the Python below. Frames follow complete operations: digit runs are read together, spaces are skipped, and no other operations are omitted. Teaching snapshots are separate from submission memory.Expression preset (change restarts)8-(3-1)-(2+3)12 - (4 + 5)(1+(4+5+2)-3)+(6+8)1-(-2)0 2-1 + 2 1 + 1← Undo last itemConsume next item →Reset to startCompleted operations (scrub to revisit)Operation 0/7; character offsets start at 0Input characters: ␠ denotes a space; a thick solid border marks the item just consumed; dotted borders mark pending characters.80-1(233-415)6Current-level total = 0; stored sign = 1; saved levels = 0Start: total=0, sign=+1, stack empty.Saved contexts (oldest above, stack top below)No saved contextsCumulative operation ledgerEach row records a completed operation. Before and after states surround that row’s operation; future results are hidden.Offset / itemBefore total / signAfter total / signSaved levels",
+      "destinationSha256": "fec079c55b40f9b0595b5e5c432d16f3fc295baf9163882681001ad8d4a05f77"
+    },
+    {
+      "lang": "en",
+      "label": "Number of Atoms: merge inner counts into the parent",
+      "href": "../726/#step2",
+      "resolved": "http://127.0.0.1:18770/leetcode/726/#step2",
+      "keyboard": "Enter",
+      "width": 320,
+      "heading": "03 · Keep counts at each level",
+      "destinationText": "03 · Keep counts at each levelHow do we separate inside from outside? A dictionary is a name-to-count table. A stack keeps these tables in order; the last table belongs to the innermost group. In Mg(OH)2, reading Mg gives {Mg:1}. At (, keep it and open an empty table. After OH, the outer table is {Mg:1} and the inner table is {O:1,H:1}.At )2, remove the inner table. Compute O: 0 + 1×2 = 2 and H: 0 + 1×2 = 2, then add them to the parent; Mg:1 stays unchanged. With more nesting, this merged table becomes part of its enclosing group. In K4(ON(SO3)2)2, the inner group contributes O:6,S:2. Add the existing O:1,N:1, then multiply by 2: O:14,S:4,N:2. K remains 4.These operations give an invariant, a fact preserved after each complete operation: each table counts exactly the completed units at its own level. It excludes unfinished child groups and any multiplier outside that level. Atoms add only to the last table; opening leaves the parent untouched; closing multiplies each child entry once before merging. Thus the parent prefix is never multiplied accidentally. Valid input ends with one base table containing all atoms. Sorting changes only output order.Try this: keep the formula fixed and advance one operation. Compare the before and after columns. At a close, inspect which counts multiply and which stay unchanged. Back restores the complete state. Choosing another example restarts this trace; the prediction is independent.Teaching simulation, not Python execution in the browser. Each frame completes an atom with its count, an opening parenthesis, or a closing parenthesis with its multiplier. All operations are retained. Tables run from outermost to innermost; the consumed prefix is not the final output.Formula (changing restarts)Mg(OH)2H2OK4(ON(SO3)2)2He(H2O)2(OH)3Be12H2((H)2O)3H← Previous operationNext operation →Reset traceGo to final resultOperation 0/6 · consumed characters 0/7Consumed: (none)Nothing consumed; the base table is empty.Before · outer → innerLevel 0Empty tableAfter · outer → innerLevel 0Empty tableFinal output: not emitted yetCompleted operation history",
+      "destinationSha256": "7701953c73ae0f2b6e3574a4ecbc50a0041b182e75d18a7f585f5851621ccd01"
+    },
+    {
+      "lang": "zh",
+      "label": "基本计算器：保留外层总和与符号",
+      "href": "../224/#step2",
+      "resolved": "http://127.0.0.1:18770/leetcode/224/#step2",
+      "keyboard": "Enter",
+      "width": 320,
+      "heading": "03 · 看见保存与恢复",
+      "destinationText": "0303 · 看见保存与恢复问题：每次读完一个数或符号，哪些量变了？选择预设会从起点重启本实验。保持表达式不变，按“处理下一项”，看字符边框、前后总和以及保存数对如何同时变化；用后退验证恢复。不变量（每步都保持的事实）：total 精确表示当前括号层已处理完的项之和；栈里每对 (外层总和, 外层符号) 记录尚未合并的括号。在开始读取一个数或括号组时，sign 是该项的乘数，不是最终答案的正负；闭括号后它暂时无用途，直到下个运算符重设。这里是算法状态模拟，并非执行下方 Python。每帧在完整操作之后；数字整段读取，空格跳过，其余操作不省略。历史快照用于教学，不计入提交的空间。表达式预设（切换会重启）8-(3-1)-(2+3)12 - (4 + 5)(1+(4+5+2)-3)+(6+8)1-(-2)0 2-1 + 2 1 + 1← 撤回上一项处理下一项 →重置到起点已完成操作数（拖动可回看）操作 0/7；字符偏移从 0 开始输入字符：␠ 表示空格；实线粗边框表示刚处理的项，点线表示待处理字符。80-1(233-415)6当前层 total = 0；存储的 sign = 1；保存层数 = 0起点：total=0，sign=+1，栈为空。保存的上下文（上方最早，下方为栈顶）没有保存的上下文累积操作账本每行记录已经完成的操作；前后状态对应同一行操作，不展示未来答案。字符偏移 / 项操作前 total / sign操作后 total / sign保存层数",
+      "destinationSha256": "fec079c55b40f9b0595b5e5c432d16f3fc295baf9163882681001ad8d4a05f77"
+    },
+    {
+      "lang": "zh",
+      "label": "原子的数量：内层计数合并回外层",
+      "href": "../726/#step2",
+      "resolved": "http://127.0.0.1:18770/leetcode/726/#step2",
+      "keyboard": "Enter",
+      "width": 320,
+      "heading": "03 · 保留每层的计数",
+      "destinationText": "03 · 保留每层的计数怎样隔开“组内”与“组外”？用字典（名称 → 数量的表）压缩计数，用栈保存这些表：栈是按顺序放置的表，最后一张就是当前最内层分组。Mg(OH)2 读到 Mg 后是 {Mg:1}；遇到 ( 时保留它，另开空表。读完 OH 后是外层 {Mg:1}、内层 {O:1,H:1}。遇到 )2，把内层表取出。分别算 O: 0 + 1×2 = 2、H: 0 + 1×2 = 2，加入外层；Mg:1 保持不变。若还有外层括号，新合成的表继续作为它的一部分；例如 K4(ON(SO3)2)2，内组贡献 O:6、S:2，再加组内原有 O:1 和 N:1，外乘 2 得 O:14、S:4、N:2，K 仍为 4。由这些操作得到不变量（每次完整操作后都保持的事实）：每张表恰好计数本层已完成的部分，不含尚未闭合的子组，也尚未乘本层外面的乘数。新元素只加到最后一张表；开组不改变父表；闭组把子表每项乘一次再合并。因此父层前缀不会被误乘。合法输入读完后只剩底表，包含全部原子；排序仅改变输出顺序。操作：保持所选化学式不变，先前进一步，比较操作前后两列；在闭组时看哪些数量相乘、哪些保持不变。后退会恢复完整状态。改选示例会从头开始，预测题独立保留。教学模拟，未在浏览器执行 Python。每帧完成一个元素（含数字）、一个左括号或一个右括号及其乘数；保留全部操作，无跳步。表从外层到内层排列；已读前缀不等于最终输出。化学式（改选会重启）Mg(OH)2H2OK4(ON(SO3)2)2He(H2O)2(OH)3Be12H2((H)2O)3H← 后退一步前进一步 →回到起点到最终结果操作 0/6 · 已读字符 0/7已读：（无）尚未读取；底表为空。操作前 · 外层 → 内层第 0 层空表操作后 · 外层 → 内层第 0 层空表最终输出：尚未排序输出已完成操作记录",
+      "destinationSha256": "7701953c73ae0f2b6e3574a4ecbc50a0041b182e75d18a7f585f5851621ccd01"
+    }
+  ],
+  "errors": [],
+  "assets": [],
+  "external": [],
+  "focusContrast": 9.809435643476732,
+  "passed": true,
+  "shippedCssBytes": 11791
+}
