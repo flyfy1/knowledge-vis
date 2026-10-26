@@ -2071,3 +2071,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Kasai LCP reuse | `leetcode/1044/#step4` | Carry a certified h−1 prefix into the next start. |
 
 <!-- /leetcode-1044-campaign -->
+
+
+<!-- leetcode-1074-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Row-band compression | `leetcode/1074/#step2` | Fix two row boundaries to reduce rectangles to column intervals. |
+| Prefix-frequency counting | `leetcode/1074/#step3` | Count earlier prefix sums before inserting the current prefix. |
+
+<!-- /leetcode-1074-campaign -->

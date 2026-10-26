@@ -4589,6 +4589,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log² n) time; O(n) auxiliary space"
   },
   {
+    "id": 1074,
+    "title": {
+      "zh": "元素和为目标值的子矩阵数量",
+      "en": "Number of Submatrices That Sum to Target"
+    },
+    "desc": {
+      "zh": "固定两行，把矩形化为列区间，再用前缀和的出现次数找回每个左边界。",
+      "en": "Fix two row boundaries, compress columns, and count earlier prefix boundaries for every rectangle."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "前缀和",
+        "en": "Prefix sums"
+      },
+      {
+        "zh": "哈希表",
+        "en": "Hash table"
+      },
+      {
+        "zh": "矩阵",
+        "en": "Matrix"
+      }
+    ],
+    "path": "1074/",
+    "leetcodeUrl": "https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/",
+    "language": "Python",
+    "complexity": "O(m²n) expected time; O(n) auxiliary space, for m rows and n columns"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
