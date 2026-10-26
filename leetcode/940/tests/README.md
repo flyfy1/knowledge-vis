@@ -42,3 +42,18 @@ These are author development checks, not independent findings or acceptance.
 
 Evidence is author self-check only. No LeetCode submission, real learner study,
 independent teaching acceptance, production deployment or physical-device claim.
+
+## Focused workflow-copy follow-up (940-COPY-R1)
+
+Use the currently supplied preview and a new output directory:
+
+```sh
+PREVIEW_ROOT=http://127.0.0.1:18770 OUTPUT_DIR=/absolute/new/output node leetcode/940/tests/copy-r1.cjs
+python3 -B scripts/register_leetcode_lesson.py 940 --validate-only
+```
+
+This checks the removed footer in zh→en→zh, changed page end at 320px/native 200%
+zoom, relevant keyboard/state behavior, and exact Python transfers. Red and green
+results are preserved under `evidence/copy-r1/`; the new frozen hash receipt is
+`evidence/copy-r1/candidate.json`. Broad historical suites and their evidence are
+unchanged; this narrow follow-up does not establish independent acceptance.
