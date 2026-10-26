@@ -68,6 +68,7 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 24 | X(z) 是部分和轨迹 / X(z) as a partial-sum trail | ztransform#step2 | 逐项真加，\|q\|<1 螺旋收进极限 |
 | 25 | 极点贴圆则频响峰尖 / Poles near the circle sharpen the response | ztransform#step4 | 极点图、h 图、频响图是同一件事的三个侧面 |
 | 26 | 单位圆 = 数字世界的虚轴 / The unit circle is the digital jω axis | ztransform#step6 | 在单位圆上求值就是数字频响 |
+| 26a | 均匀样点为何不可区分别名 / Why uniform samples share aliases | sampling#step2 | g=f−kfs；在 t=n/fs 相位相差整圈2πkn，样点相同。非采样处可以不同；有限点不证明唯一重建。 |
 | 27 | 奈奎斯特线 / The Nyquist line | sampling#step3 | 采样率两倍，差一线都不行 |
 | 28 | 混叠的频域面孔（频谱复制）/ Aliasing in the frequency domain | sampling#step4 | 整张频谱以 fs 为周期无限复制 |
 | 29 | 抗混叠：先抹掉再采 / Anti-aliasing: blur first, then sample | sampling#step6 | 先决定放弃什么，再采 |

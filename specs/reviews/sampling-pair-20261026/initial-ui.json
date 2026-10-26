@@ -1,0 +1,124 @@
+{
+  "url": "http://127.0.0.1:18947/sampling/#step2",
+  "text": "Step 2 · A fake is born\n\nSame samples, different continuous waves\n\nRecord one point every Δt=1/fₛ seconds. Different continuous waves can produce exactly the same samples: aliasing. Initially f=9 Hz and fₛ=10 Hz; the pink curve uses signed frequency g=−1 Hz and still passes through every gold sample. The sign means sin(2πgt)=−sin(2π|g|t), not a negative frequency magnitude. Select sample n, then change f or fₛ. The circled sample time and diamond-marked non-sample time are checked against the SAME curves below. Aliasing generally begins above fₛ/2; fₛ need not fall below f.\n\nSignal frequency f (Hz) 9\nSample rate f_s (Hz) 10\n\nGold circle: actual sample n. Cyan dashed line and open diamonds: t=(n+¼)/fₛ BETWEEN samples, a comparison only, not an extra sample. Original is grey; folded is pink. Diamonds can coincide.\n\nSelect integer sample n (arrows ±1)\n\nCurrent n = 1\n\nReset this step\nClassic slow wave: f=9, f_s=10\nPinned to one phase: f=f_s=10\nFolded: f=14, f_s=20\nNo aliasing: f=3, f_s=25\n\ng = f − k·fs; falias = |g|\n\nThis page uses k=round(f/fₛ), placing signed g=f−k·fₛ in [−fₛ/2,fₛ/2], then takes the frequency magnitude |g|. Endpoints have representation ambiguity: see Step 3. Draw with g, not |g| in an unchanged-phase sine. Other steps retain the same folding function.\n\nf = 9.0 Hz · fₛ = 10.0 Hz · k = 1 · g = −1 Hz · f_alias = |g| = 1.0 Hz — that is the fake wave\n\nSpacing Δt≈0.1 s; n=1, tₙ≈0.1 s: original≈−0.5877853, folded≈−0.5877853, difference≈-2.22e-16. Equal in theory; displayed arithmetic includes floating-point roundoff.\n\nNON-sample comparison t≈0.125 s: original≈0.7071068, folded≈−0.7071068, difference≈1.414214. Values use unit amplitude. They may differ here, or happen to agree.\n\nWhy equal samples? At tₙ=n/fₛ the phase difference is 2π(f−g)n/fₛ=2πkn: an integer number of turns. Sine returns to the same value after every whole turn. Thus sin(2πftₙ)=sin(2πgtₙ) for every integer n. Away from sample times, that whole-turn condition is no longer guaranteed.\n\nThis compares two ideal zero-initial-phase, unit-amplitude sine candidates. A few coincident points do not identify an arbitrary continuous signal. Even when these curves coincide, higher aliases remain possible. Unique reconstruction needs a known bandlimit, the complete ideal uniform sample sequence and the corresponding reconstruction conditions; neither straight joins nor this finite plot prove it.\n\nWith default9/10, predict equal values at the circle and possibly different values at the diamonds, then move n to check. Why do both displayed curves coincide at3/25? k=0 and g=f; higher candidates such as28 Hz still share the samples.\n\nThe nastiest preset is “pinned to one phase”: when f is an exact multiple of fs, every peek lands on exactly the same phase, all dots collapse to a single value — no matter how fast the wave, it looks frozen. That is the truth behind the “stopped” wheel in step 0.\n\nNext: how does a known bandlimit rule out aliases? → Step 3\nSource and model limits",
+  "controls": [
+    {
+      "tag": "INPUT",
+      "text": "",
+      "type": "range",
+      "value": "9",
+      "aria": null,
+      "disabled": false,
+      "min": "1",
+      "max": "20",
+      "step": "0.5",
+      "href": null,
+      "labels": [
+        "Signal frequency f (Hz) 9"
+      ]
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "type": "range",
+      "value": "10",
+      "aria": null,
+      "disabled": false,
+      "min": "2",
+      "max": "30",
+      "step": "0.5",
+      "href": null,
+      "labels": [
+        "Sample rate f_s (Hz) 10"
+      ]
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "type": "range",
+      "value": "1",
+      "aria": null,
+      "disabled": false,
+      "min": "0",
+      "max": "19",
+      "step": "1",
+      "href": null,
+      "labels": [
+        "Select integer sample n (arrows ±1)"
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Reset this step",
+      "type": "submit",
+      "value": "",
+      "aria": null,
+      "disabled": false,
+      "href": null,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Classic slow wave: f=9, f_s=10",
+      "type": "submit",
+      "value": "",
+      "aria": null,
+      "disabled": false,
+      "href": null,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Pinned to one phase: f=f_s=10",
+      "type": "submit",
+      "value": "",
+      "aria": null,
+      "disabled": false,
+      "href": null,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Folded: f=14, f_s=20",
+      "type": "submit",
+      "value": "",
+      "aria": null,
+      "disabled": false,
+      "href": null,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "No aliasing: f=3, f_s=25",
+      "type": "submit",
+      "value": "",
+      "aria": null,
+      "disabled": false,
+      "href": null,
+      "labels": []
+    },
+    {
+      "tag": "A",
+      "text": "Next: how does a known bandlimit rule out aliases? → Step 3",
+      "type": "",
+      "aria": null,
+      "href": "#step3",
+      "labels": []
+    },
+    {
+      "tag": "SUMMARY",
+      "text": "Source and model limits",
+      "aria": null,
+      "href": null,
+      "labels": []
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "type": "",
+      "aria": null,
+      "href": "https://www.ti.com/lit/pdf/snaa079",
+      "labels": []
+    }
+  ]
+}

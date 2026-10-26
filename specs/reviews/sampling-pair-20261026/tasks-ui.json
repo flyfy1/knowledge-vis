@@ -1,0 +1,348 @@
+[
+  {
+    "stage": "EN classic9/10 Space",
+    "url": "http://127.0.0.1:18947/sampling/#step2",
+    "text": "Step 2 · A fake is born\n\nSame samples, different continuous waves\n\nRecord one point every Δt=1/fₛ seconds. Different continuous waves can produce exactly the same samples: aliasing. Initially f=9 Hz and fₛ=10 Hz; the pink curve uses signed frequency g=−1 Hz and still passes through every gold sample. The sign means sin(2πgt)=−sin(2π|g|t), not a negative frequency magnitude. Select sample n, then change f or fₛ. The circled sample time and diamond-marked non-sample time are checked against the SAME curves below. Aliasing generally begins above fₛ/2; fₛ need not fall below f.\n\nSignal frequency f (Hz) 9\nSample rate f_s (Hz) 10\n\nGold circle: actual sample n. Cyan dashed line and open diamonds: t=(n+¼)/fₛ BETWEEN samples, a comparison only, not an extra sample. Original is grey; folded is pink. Diamonds can coincide.\n\nSelect integer sample n (arrows ±1)\n\nCurrent n = 1\n\nReset this step\nClassic slow wave: f=9, f_s=10\nPinned to one phase: f=f_s=10\nFolded: f=14, f_s=20\nNo aliasing: f=3, f_s=25\n\ng = f − k·fs; falias = |g|\n\nThis page uses k=round(f/fₛ), placing signed g=f−k·fₛ in [−fₛ/2,fₛ/2], then takes the frequency magnitude |g|. Endpoints have representation ambiguity: see Step 3. Draw with g, not |g| in an unchanged-phase sine. Other steps retain the same folding function.\n\nf = 9.0 Hz · fₛ = 10.0 Hz · k = 1 · g = −1 Hz · f_alias = |g| = 1.0 Hz — that is the fake wave\n\nSpacing Δt≈0.1 s; n=1, tₙ≈0.1 s: original≈−0.5877853, folded≈−0.5877853, difference≈-2.22e-16. Equal in theory; displayed arithmetic includes floating-point roundoff.\n\nNON-sample comparison t≈0.125 s: original≈0.7071068, folded≈−0.7071068, difference≈1.414214. Values use unit amplitude. They may differ here, or happen to agree.\n\nWhy equal samples? At tₙ=n/fₛ the phase difference is 2π(f−g)n/fₛ=2πkn: an integer number of turns. Sine returns to the same value after every whole turn. Thus sin(2πftₙ)=sin(2πgtₙ) for every integer n. Away from sample times, that whole-turn condition is no longer guaranteed.\n\nThis compares two ideal zero-initial-phase, unit-amplitude sine candidates. A few coincident points do not identify an arbitrary continuous signal. Even when these curves coincide, higher aliases remain possible. Unique reconstruction needs a known bandlimit, the complete ideal uniform sample sequence and the corresponding reconstruction conditions; neither straight joins nor this finite plot prove it.\n\nWith default9/10, predict equal values at the circle and possibly different values at the diamonds, then move n to check. Why do both displayed curves coincide at3/25? k=0 and g=f; higher candidates such as28 Hz still share the samples.\n\nThe nastiest preset is “pinned to one phase”: when f is an exact multiple of fs, every peek lands on exactly the same phase, all dots collapse to a single value — no matter how fast the wave, it looks frozen. That is the truth behind the “stopped” wheel in step 0.\n\nNext: how does a known bandlimit rule out aliases? → Step 3\nSource and model limits",
+    "readouts": [
+      "f = 9.0 Hz · fₛ = 10.0 Hz · k = 1 · g = −1 Hz · f_alias = |g| = 1.0 Hz — that is the fake wave",
+      "Spacing Δt≈0.1 s; n=1, tₙ≈0.1 s: original≈−0.5877853, folded≈−0.5877853, difference≈-2.22e-16. Equal in theory; displayed arithmetic includes floating-point roundoff.",
+      "NON-sample comparison t≈0.125 s: original≈0.7071068, folded≈−0.7071068, difference≈1.414214. Values use unit amplitude. They may differ here, or happen to agree."
+    ],
+    "inputs": [
+      {
+        "value": "9",
+        "max": "20",
+        "label": [
+          "Signal frequency f (Hz) 9"
+        ]
+      },
+      {
+        "value": "10",
+        "max": "30",
+        "label": [
+          "Sample rate f_s (Hz) 10"
+        ]
+      },
+      {
+        "value": "1",
+        "max": "19",
+        "label": [
+          "Select integer sample n (arrows ±1)"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN selected n3 keyboard",
+    "url": "http://127.0.0.1:18947/sampling/#step2",
+    "text": "Step 2 · A fake is born\n\nSame samples, different continuous waves\n\nRecord one point every Δt=1/fₛ seconds. Different continuous waves can produce exactly the same samples: aliasing. Initially f=9 Hz and fₛ=10 Hz; the pink curve uses signed frequency g=−1 Hz and still passes through every gold sample. The sign means sin(2πgt)=−sin(2π|g|t), not a negative frequency magnitude. Select sample n, then change f or fₛ. The circled sample time and diamond-marked non-sample time are checked against the SAME curves below. Aliasing generally begins above fₛ/2; fₛ need not fall below f.\n\nSignal frequency f (Hz) 9\nSample rate f_s (Hz) 10\n\nGold circle: actual sample n. Cyan dashed line and open diamonds: t=(n+¼)/fₛ BETWEEN samples, a comparison only, not an extra sample. Original is grey; folded is pink. Diamonds can coincide.\n\nSelect integer sample n (arrows ±1)\n\nCurrent n = 3\n\nReset this step\nClassic slow wave: f=9, f_s=10\nPinned to one phase: f=f_s=10\nFolded: f=14, f_s=20\nNo aliasing: f=3, f_s=25\n\ng = f − k·fs; falias = |g|\n\nThis page uses k=round(f/fₛ), placing signed g=f−k·fₛ in [−fₛ/2,fₛ/2], then takes the frequency magnitude |g|. Endpoints have representation ambiguity: see Step 3. Draw with g, not |g| in an unchanged-phase sine. Other steps retain the same folding function.\n\nf = 9.0 Hz · fₛ = 10.0 Hz · k = 1 · g = −1 Hz · f_alias = |g| = 1.0 Hz — that is the fake wave\n\nSpacing Δt≈0.1 s; n=3, tₙ≈0.3 s: original≈−0.9510565, folded≈−0.9510565, difference≈2.22e-16. Equal in theory; displayed arithmetic includes floating-point roundoff.\n\nNON-sample comparison t≈0.325 s: original≈−0.4539905, folded≈−0.8910065, difference≈0.437016. Values use unit amplitude. They may differ here, or happen to agree.\n\nWhy equal samples? At tₙ=n/fₛ the phase difference is 2π(f−g)n/fₛ=2πkn: an integer number of turns. Sine returns to the same value after every whole turn. Thus sin(2πftₙ)=sin(2πgtₙ) for every integer n. Away from sample times, that whole-turn condition is no longer guaranteed.\n\nThis compares two ideal zero-initial-phase, unit-amplitude sine candidates. A few coincident points do not identify an arbitrary continuous signal. Even when these curves coincide, higher aliases remain possible. Unique reconstruction needs a known bandlimit, the complete ideal uniform sample sequence and the corresponding reconstruction conditions; neither straight joins nor this finite plot prove it.\n\nWith default9/10, predict equal values at the circle and possibly different values at the diamonds, then move n to check. Why do both displayed curves coincide at3/25? k=0 and g=f; higher candidates such as28 Hz still share the samples.\n\nThe nastiest preset is “pinned to one phase”: when f is an exact multiple of fs, every peek lands on exactly the same phase, all dots collapse to a single value — no matter how fast the wave, it looks frozen. That is the truth behind the “stopped” wheel in step 0.\n\nNext: how does a known bandlimit rule out aliases? → Step 3\nSource and model limits",
+    "readouts": [
+      "f = 9.0 Hz · fₛ = 10.0 Hz · k = 1 · g = −1 Hz · f_alias = |g| = 1.0 Hz — that is the fake wave",
+      "Spacing Δt≈0.1 s; n=3, tₙ≈0.3 s: original≈−0.9510565, folded≈−0.9510565, difference≈2.22e-16. Equal in theory; displayed arithmetic includes floating-point roundoff.",
+      "NON-sample comparison t≈0.325 s: original≈−0.4539905, folded≈−0.8910065, difference≈0.437016. Values use unit amplitude. They may differ here, or happen to agree."
+    ],
+    "inputs": [
+      {
+        "value": "9",
+        "max": "20",
+        "label": [
+          "Signal frequency f (Hz) 9"
+        ]
+      },
+      {
+        "value": "10",
+        "max": "30",
+        "label": [
+          "Sample rate f_s (Hz) 10"
+        ]
+      },
+      {
+        "value": "3",
+        "max": "19",
+        "label": [
+          "Select integer sample n (arrows ±1)"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN fs14.5 n3 beforeBack",
+    "url": "http://127.0.0.1:18947/sampling/#step2",
+    "text": "Step 2 · A fake is born\n\nSame samples, different continuous waves\n\nRecord one point every Δt=1/fₛ seconds. Different continuous waves can produce exactly the same samples: aliasing. Initially f=9 Hz and fₛ=10 Hz; the pink curve uses signed frequency g=−1 Hz and still passes through every gold sample. The sign means sin(2πgt)=−sin(2π|g|t), not a negative frequency magnitude. Select sample n, then change f or fₛ. The circled sample time and diamond-marked non-sample time are checked against the SAME curves below. Aliasing generally begins above fₛ/2; fₛ need not fall below f.\n\nSignal frequency f (Hz) 9\nSample rate f_s (Hz) 14.5\n\nGold circle: actual sample n. Cyan dashed line and open diamonds: t=(n+¼)/fₛ BETWEEN samples, a comparison only, not an extra sample. Original is grey; folded is pink. Diamonds can coincide.\n\nSelect integer sample n (arrows ±1)\n\nCurrent n = 3\n\nReset this step\nClassic slow wave: f=9, f_s=10\nPinned to one phase: f=f_s=10\nFolded: f=14, f_s=20\nNo aliasing: f=3, f_s=25\n\ng = f − k·fs; falias = |g|\n\nThis page uses k=round(f/fₛ), placing signed g=f−k·fₛ in [−fₛ/2,fₛ/2], then takes the frequency magnitude |g|. Endpoints have representation ambiguity: see Step 3. Draw with g, not |g| in an unchanged-phase sine. Other steps retain the same folding function.\n\nf = 9.0 Hz · fₛ = 14.5 Hz · k = 1 · g = −5.5 Hz · f_alias = |g| = 5.5 Hz — that is the fake wave\n\nSpacing Δt≈0.06896552 s; n=3, tₙ≈0.2068966 s: original≈−0.7621621, folded≈−0.7621621, difference≈-1.11e-15. Equal in theory; displayed arithmetic includes floating-point roundoff.\n\nNON-sample comparison t≈0.2241379 s: original≈0.108119, folded≈−0.994138, difference≈1.102257. Values use unit amplitude. They may differ here, or happen to agree.\n\nWhy equal samples? At tₙ=n/fₛ the phase difference is 2π(f−g)n/fₛ=2πkn: an integer number of turns. Sine returns to the same value after every whole turn. Thus sin(2πftₙ)=sin(2πgtₙ) for every integer n. Away from sample times, that whole-turn condition is no longer guaranteed.\n\nThis compares two ideal zero-initial-phase, unit-amplitude sine candidates. A few coincident points do not identify an arbitrary continuous signal. Even when these curves coincide, higher aliases remain possible. Unique reconstruction needs a known bandlimit, the complete ideal uniform sample sequence and the corresponding reconstruction conditions; neither straight joins nor this finite plot prove it.\n\nWith default9/10, predict equal values at the circle and possibly different values at the diamonds, then move n to check. Why do both displayed curves coincide at3/25? k=0 and g=f; higher candidates such as28 Hz still share the samples.\n\nThe nastiest preset is “pinned to one phase”: when f is an exact multiple of fs, every peek lands on exactly the same phase, all dots collapse to a single value — no matter how fast the wave, it looks frozen. That is the truth behind the “stopped” wheel in step 0.\n\nNext: how does a known bandlimit rule out aliases? → Step 3\nSource and model limits",
+    "readouts": [
+      "f = 9.0 Hz · fₛ = 14.5 Hz · k = 1 · g = −5.5 Hz · f_alias = |g| = 5.5 Hz — that is the fake wave",
+      "Spacing Δt≈0.06896552 s; n=3, tₙ≈0.2068966 s: original≈−0.7621621, folded≈−0.7621621, difference≈-1.11e-15. Equal in theory; displayed arithmetic includes floating-point roundoff.",
+      "NON-sample comparison t≈0.2241379 s: original≈0.108119, folded≈−0.994138, difference≈1.102257. Values use unit amplitude. They may differ here, or happen to agree."
+    ],
+    "inputs": [
+      {
+        "value": "9",
+        "max": "20",
+        "label": [
+          "Signal frequency f (Hz) 9"
+        ]
+      },
+      {
+        "value": "14.5",
+        "max": "30",
+        "label": [
+          "Sample rate f_s (Hz) 14.5"
+        ]
+      },
+      {
+        "value": "3",
+        "max": "28",
+        "label": [
+          "Select integer sample n (arrows ±1)"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN actual Back",
+    "url": "http://127.0.0.1:18947/sampling/#step2",
+    "text": "Step 2 · A fake is born\n\nSame samples, different continuous waves\n\nRecord one point every Δt=1/fₛ seconds. Different continuous waves can produce exactly the same samples: aliasing. Initially f=9 Hz and fₛ=10 Hz; the pink curve uses signed frequency g=−1 Hz and still passes through every gold sample. The sign means sin(2πgt)=−sin(2π|g|t), not a negative frequency magnitude. Select sample n, then change f or fₛ. The circled sample time and diamond-marked non-sample time are checked against the SAME curves below. Aliasing generally begins above fₛ/2; fₛ need not fall below f.\n\nSignal frequency f (Hz) 9\nSample rate f_s (Hz) 14.5\n\nGold circle: actual sample n. Cyan dashed line and open diamonds: t=(n+¼)/fₛ BETWEEN samples, a comparison only, not an extra sample. Original is grey; folded is pink. Diamonds can coincide.\n\nSelect integer sample n (arrows ±1)\n\nCurrent n = 3\n\nReset this step\nClassic slow wave: f=9, f_s=10\nPinned to one phase: f=f_s=10\nFolded: f=14, f_s=20\nNo aliasing: f=3, f_s=25\n\ng = f − k·fs; falias = |g|\n\nThis page uses k=round(f/fₛ), placing signed g=f−k·fₛ in [−fₛ/2,fₛ/2], then takes the frequency magnitude |g|. Endpoints have representation ambiguity: see Step 3. Draw with g, not |g| in an unchanged-phase sine. Other steps retain the same folding function.\n\nf = 9.0 Hz · fₛ = 14.5 Hz · k = 1 · g = −5.5 Hz · f_alias = |g| = 5.5 Hz — that is the fake wave\n\nSpacing Δt≈0.06896552 s; n=3, tₙ≈0.2068966 s: original≈−0.7621621, folded≈−0.7621621, difference≈-1.11e-15. Equal in theory; displayed arithmetic includes floating-point roundoff.\n\nNON-sample comparison t≈0.2241379 s: original≈0.108119, folded≈−0.994138, difference≈1.102257. Values use unit amplitude. They may differ here, or happen to agree.\n\nWhy equal samples? At tₙ=n/fₛ the phase difference is 2π(f−g)n/fₛ=2πkn: an integer number of turns. Sine returns to the same value after every whole turn. Thus sin(2πftₙ)=sin(2πgtₙ) for every integer n. Away from sample times, that whole-turn condition is no longer guaranteed.\n\nThis compares two ideal zero-initial-phase, unit-amplitude sine candidates. A few coincident points do not identify an arbitrary continuous signal. Even when these curves coincide, higher aliases remain possible. Unique reconstruction needs a known bandlimit, the complete ideal uniform sample sequence and the corresponding reconstruction conditions; neither straight joins nor this finite plot prove it.\n\nWith default9/10, predict equal values at the circle and possibly different values at the diamonds, then move n to check. Why do both displayed curves coincide at3/25? k=0 and g=f; higher candidates such as28 Hz still share the samples.\n\nThe nastiest preset is “pinned to one phase”: when f is an exact multiple of fs, every peek lands on exactly the same phase, all dots collapse to a single value — no matter how fast the wave, it looks frozen. That is the truth behind the “stopped” wheel in step 0.\n\nNext: how does a known bandlimit rule out aliases? → Step 3\nSource and model limits",
+    "readouts": [
+      "f = 9.0 Hz · fₛ = 14.5 Hz · k = 1 · g = −5.5 Hz · f_alias = |g| = 5.5 Hz — that is the fake wave",
+      "Spacing Δt≈0.06896552 s; n=3, tₙ≈0.2068966 s: original≈−0.7621621, folded≈−0.7621621, difference≈-1.11e-15. Equal in theory; displayed arithmetic includes floating-point roundoff.",
+      "NON-sample comparison t≈0.2241379 s: original≈0.108119, folded≈−0.994138, difference≈1.102257. Values use unit amplitude. They may differ here, or happen to agree."
+    ],
+    "inputs": [
+      {
+        "value": "9",
+        "max": "20",
+        "label": [
+          "Signal frequency f (Hz) 9"
+        ]
+      },
+      {
+        "value": "14.5",
+        "max": "30",
+        "label": [
+          "Sample rate f_s (Hz) 14.5"
+        ]
+      },
+      {
+        "value": "3",
+        "max": "28",
+        "label": [
+          "Select integer sample n (arrows ±1)"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN explicit refresh",
+    "url": "http://127.0.0.1:18947/sampling/#step2",
+    "text": "Step 2 · A fake is born\n\nSame samples, different continuous waves\n\nRecord one point every Δt=1/fₛ seconds. Different continuous waves can produce exactly the same samples: aliasing. Initially f=9 Hz and fₛ=10 Hz; the pink curve uses signed frequency g=−1 Hz and still passes through every gold sample. The sign means sin(2πgt)=−sin(2π|g|t), not a negative frequency magnitude. Select sample n, then change f or fₛ. The circled sample time and diamond-marked non-sample time are checked against the SAME curves below. Aliasing generally begins above fₛ/2; fₛ need not fall below f.\n\nSignal frequency f (Hz) 9\nSample rate f_s (Hz) 14.5\n\nGold circle: actual sample n. Cyan dashed line and open diamonds: t=(n+¼)/fₛ BETWEEN samples, a comparison only, not an extra sample. Original is grey; folded is pink. Diamonds can coincide.\n\nSelect integer sample n (arrows ±1)\n\nCurrent n = 3\n\nReset this step\nClassic slow wave: f=9, f_s=10\nPinned to one phase: f=f_s=10\nFolded: f=14, f_s=20\nNo aliasing: f=3, f_s=25\n\ng = f − k·fs; falias = |g|\n\nThis page uses k=round(f/fₛ), placing signed g=f−k·fₛ in [−fₛ/2,fₛ/2], then takes the frequency magnitude |g|. Endpoints have representation ambiguity: see Step 3. Draw with g, not |g| in an unchanged-phase sine. Other steps retain the same folding function.\n\nf = 9.0 Hz · fₛ = 14.5 Hz · k = 1 · g = −5.5 Hz · f_alias = |g| = 5.5 Hz — that is the fake wave\n\nSpacing Δt≈0.06896552 s; n=3, tₙ≈0.2068966 s: original≈−0.7621621, folded≈−0.7621621, difference≈-1.11e-15. Equal in theory; displayed arithmetic includes floating-point roundoff.\n\nNON-sample comparison t≈0.2241379 s: original≈0.108119, folded≈−0.994138, difference≈1.102257. Values use unit amplitude. They may differ here, or happen to agree.\n\nWhy equal samples? At tₙ=n/fₛ the phase difference is 2π(f−g)n/fₛ=2πkn: an integer number of turns. Sine returns to the same value after every whole turn. Thus sin(2πftₙ)=sin(2πgtₙ) for every integer n. Away from sample times, that whole-turn condition is no longer guaranteed.\n\nThis compares two ideal zero-initial-phase, unit-amplitude sine candidates. A few coincident points do not identify an arbitrary continuous signal. Even when these curves coincide, higher aliases remain possible. Unique reconstruction needs a known bandlimit, the complete ideal uniform sample sequence and the corresponding reconstruction conditions; neither straight joins nor this finite plot prove it.\n\nWith default9/10, predict equal values at the circle and possibly different values at the diamonds, then move n to check. Why do both displayed curves coincide at3/25? k=0 and g=f; higher candidates such as28 Hz still share the samples.\n\nThe nastiest preset is “pinned to one phase”: when f is an exact multiple of fs, every peek lands on exactly the same phase, all dots collapse to a single value — no matter how fast the wave, it looks frozen. That is the truth behind the “stopped” wheel in step 0.\n\nNext: how does a known bandlimit rule out aliases? → Step 3\nSource and model limits",
+    "readouts": [
+      "f = 9.0 Hz · fₛ = 14.5 Hz · k = 1 · g = −5.5 Hz · f_alias = |g| = 5.5 Hz — that is the fake wave",
+      "Spacing Δt≈0.06896552 s; n=3, tₙ≈0.2068966 s: original≈−0.7621621, folded≈−0.7621621, difference≈-1.11e-15. Equal in theory; displayed arithmetic includes floating-point roundoff.",
+      "NON-sample comparison t≈0.2241379 s: original≈0.108119, folded≈−0.994138, difference≈1.102257. Values use unit amplitude. They may differ here, or happen to agree."
+    ],
+    "inputs": [
+      {
+        "value": "9",
+        "max": "20",
+        "label": [
+          "Signal frequency f (Hz) 9"
+        ]
+      },
+      {
+        "value": "14.5",
+        "max": "30",
+        "label": [
+          "Sample rate f_s (Hz) 14.5"
+        ]
+      },
+      {
+        "value": "3",
+        "max": "28",
+        "label": [
+          "Select integer sample n (arrows ±1)"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "restoration equality",
+    "BackSame": true,
+    "RefreshSame": true
+  },
+  {
+    "stage": "EN clean3/25 Enter",
+    "url": "http://127.0.0.1:18947/sampling/#step2",
+    "text": "Step 2 · A fake is born\n\nSame samples, different continuous waves\n\nRecord one point every Δt=1/fₛ seconds. Different continuous waves can produce exactly the same samples: aliasing. Initially f=9 Hz and fₛ=10 Hz; the pink curve uses signed frequency g=−1 Hz and still passes through every gold sample. The sign means sin(2πgt)=−sin(2π|g|t), not a negative frequency magnitude. Select sample n, then change f or fₛ. The circled sample time and diamond-marked non-sample time are checked against the SAME curves below. Aliasing generally begins above fₛ/2; fₛ need not fall below f.\n\nSignal frequency f (Hz) 3\nSample rate f_s (Hz) 25\n\nGold circle: actual sample n. Cyan dashed line and open diamonds: t=(n+¼)/fₛ BETWEEN samples, a comparison only, not an extra sample. Original is grey; folded is pink. Diamonds can coincide.\n\nSelect integer sample n (arrows ±1)\n\nCurrent n = 3\n\nReset this step\nClassic slow wave: f=9, f_s=10\nPinned to one phase: f=f_s=10\nFolded: f=14, f_s=20\nNo aliasing: f=3, f_s=25\n\ng = f − k·fs; falias = |g|\n\nThis page uses k=round(f/fₛ), placing signed g=f−k·fₛ in [−fₛ/2,fₛ/2], then takes the frequency magnitude |g|. Endpoints have representation ambiguity: see Step 3. Draw with g, not |g| in an unchanged-phase sine. Other steps retain the same folding function.\n\nf = 3.0 Hz · fₛ = 25.0 Hz · k = 0 · g = 3 Hz · f_alias = |g| = 3.0 Hz — these two curves coincide; other, higher-frequency candidates are not ruled out.\n\nSpacing Δt≈0.04 s; n=3, tₙ≈0.12 s: original≈0.7705132, folded≈0.7705132, difference≈0. Equal in theory; displayed arithmetic includes floating-point roundoff.\n\nNON-sample comparison t≈0.13 s: original≈0.637424, folded≈0.637424, difference≈0. Values use unit amplitude. They may differ here, or happen to agree.\n\nWhy equal samples? At tₙ=n/fₛ the phase difference is 2π(f−g)n/fₛ=2πkn: an integer number of turns. Sine returns to the same value after every whole turn. Thus sin(2πftₙ)=sin(2πgtₙ) for every integer n. Away from sample times, that whole-turn condition is no longer guaranteed.\n\nThis compares two ideal zero-initial-phase, unit-amplitude sine candidates. A few coincident points do not identify an arbitrary continuous signal. Even when these curves coincide, higher aliases remain possible. Unique reconstruction needs a known bandlimit, the complete ideal uniform sample sequence and the corresponding reconstruction conditions; neither straight joins nor this finite plot prove it.\n\nWith default9/10, predict equal values at the circle and possibly different values at the diamonds, then move n to check. Why do both displayed curves coincide at3/25? k=0 and g=f; higher candidates such as28 Hz still share the samples.\n\nThe nastiest preset is “pinned to one phase”: when f is an exact multiple of fs, every peek lands on exactly the same phase, all dots collapse to a single value — no matter how fast the wave, it looks frozen. That is the truth behind the “stopped” wheel in step 0.\n\nNext: how does a known bandlimit rule out aliases? → Step 3\nSource and model limits",
+    "readouts": [
+      "f = 3.0 Hz · fₛ = 25.0 Hz · k = 0 · g = 3 Hz · f_alias = |g| = 3.0 Hz — these two curves coincide; other, higher-frequency candidates are not ruled out.",
+      "Spacing Δt≈0.04 s; n=3, tₙ≈0.12 s: original≈0.7705132, folded≈0.7705132, difference≈0. Equal in theory; displayed arithmetic includes floating-point roundoff.",
+      "NON-sample comparison t≈0.13 s: original≈0.637424, folded≈0.637424, difference≈0. Values use unit amplitude. They may differ here, or happen to agree."
+    ],
+    "inputs": [
+      {
+        "value": "3",
+        "max": "20",
+        "label": [
+          "Signal frequency f (Hz) 3"
+        ]
+      },
+      {
+        "value": "25",
+        "max": "30",
+        "label": [
+          "Sample rate f_s (Hz) 25"
+        ]
+      },
+      {
+        "value": "3",
+        "max": "49",
+        "label": [
+          "Select integer sample n (arrows ±1)"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN390 DOM2x",
+    "width": 390
+  },
+  {
+    "stage": "EN reset at2x",
+    "url": "http://127.0.0.1:18947/sampling/#step2",
+    "text": "Step 2 · A fake is born\n\nSame samples, different continuous waves\n\nRecord one point every Δt=1/fₛ seconds. Different continuous waves can produce exactly the same samples: aliasing. Initially f=9 Hz and fₛ=10 Hz; the pink curve uses signed frequency g=−1 Hz and still passes through every gold sample. The sign means sin(2πgt)=−sin(2π|g|t), not a negative frequency magnitude. Select sample n, then change f or fₛ. The circled sample time and diamond-marked non-sample time are checked against the SAME curves below. Aliasing generally begins above fₛ/2; fₛ need not fall below f.\n\nSignal frequency f (Hz) 9\nSample rate f_s (Hz) 10\n\nGold circle: actual sample n. Cyan dashed line and open diamonds: t=(n+¼)/fₛ BETWEEN samples, a comparison only, not an extra sample. Original is grey; folded is pink. Diamonds can coincide.\n\nSelect integer sample n (arrows ±1)\n\nCurrent n = 1\n\nReset this step\nClassic slow wave: f=9, f_s=10\nPinned to one phase: f=f_s=10\nFolded: f=14, f_s=20\nNo aliasing: f=3, f_s=25\n\ng = f − k·fs; falias = |g|\n\nThis page uses k=round(f/fₛ), placing signed g=f−k·fₛ in [−fₛ/2,fₛ/2], then takes the frequency magnitude |g|. Endpoints have representation ambiguity: see Step 3. Draw with g, not |g| in an unchanged-phase sine. Other steps retain the same folding function.\n\nf = 9.0 Hz · fₛ = 10.0 Hz · k = 1 · g = −1 Hz · f_alias = |g| = 1.0 Hz — that is the fake wave\n\nSpacing Δt≈0.1 s; n=1, tₙ≈0.1 s: original≈−0.5877853, folded≈−0.5877853, difference≈-2.22e-16. Equal in theory; displayed arithmetic includes floating-point roundoff.\n\nNON-sample comparison t≈0.125 s: original≈0.7071068, folded≈−0.7071068, difference≈1.414214. Values use unit amplitude. They may differ here, or happen to agree.\n\nWhy equal samples? At tₙ=n/fₛ the phase difference is 2π(f−g)n/fₛ=2πkn: an integer number of turns. Sine returns to the same value after every whole turn. Thus sin(2πftₙ)=sin(2πgtₙ) for every integer n. Away from sample times, that whole-turn condition is no longer guaranteed.\n\nThis compares two ideal zero-initial-phase, unit-amplitude sine candidates. A few coincident points do not identify an arbitrary continuous signal. Even when these curves coincide, higher aliases remain possible. Unique reconstruction needs a known bandlimit, the complete ideal uniform sample sequence and the corresponding reconstruction conditions; neither straight joins nor this finite plot prove it.\n\nWith default9/10, predict equal values at the circle and possibly different values at the diamonds, then move n to check. Why do both displayed curves coincide at3/25? k=0 and g=f; higher candidates such as28 Hz still share the samples.\n\nThe nastiest preset is “pinned to one phase”: when f is an exact multiple of fs, every peek lands on exactly the same phase, all dots collapse to a single value — no matter how fast the wave, it looks frozen. That is the truth behind the “stopped” wheel in step 0.\n\nNext: how does a known bandlimit rule out aliases? → Step 3\nSource and model limits",
+    "readouts": [
+      "f = 9.0 Hz · fₛ = 10.0 Hz · k = 1 · g = −1 Hz · f_alias = |g| = 1.0 Hz — that is the fake wave",
+      "Spacing Δt≈0.1 s; n=1, tₙ≈0.1 s: original≈−0.5877853, folded≈−0.5877853, difference≈-2.22e-16. Equal in theory; displayed arithmetic includes floating-point roundoff.",
+      "NON-sample comparison t≈0.125 s: original≈0.7071068, folded≈−0.7071068, difference≈1.414214. Values use unit amplitude. They may differ here, or happen to agree."
+    ],
+    "inputs": [
+      {
+        "value": "9",
+        "max": "20",
+        "label": [
+          "Signal frequency f (Hz) 9"
+        ]
+      },
+      {
+        "value": "10",
+        "max": "30",
+        "label": [
+          "Sample rate f_s (Hz) 10"
+        ]
+      },
+      {
+        "value": "1",
+        "max": "19",
+        "label": [
+          "Select integer sample n (arrows ±1)"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "ZH320 Nyquist5/10",
+    "url": "http://127.0.0.1:18947/sampling/#step2",
+    "text": "第 2 步 · 混叠诞生\n\n相同采样点，也能属于另一条波\n\n在原波上每隔 Δt=1/fₛ 秒取一个点，不同连续波可能给出完全相同的点，这叫混叠。默认原波 f=9 Hz、采样率 fₛ=10 Hz，粉红曲线采用带符号频率 g=−1 Hz，仍逐点穿过金色样点。负号表示 sin(2πgt)=−sin(2π|g|t)，不是负的频率大小。选一个样点 n，再改 f 或 fₛ：圈出的采样时刻与菱形标出的非采样时刻，都用下面同一模型对账。别名通常在 f 超过 fₛ/2 时发生，不必等到 fₛ 小于 f。\n\n信号频率 f（Hz） 5\n采样率 f_s（Hz） 10\n\n金色圆圈：第 n 个真实样点。青色虚线与空心菱形：两次采样之间的 t=(n+¼)/fₛ，仅作比较，不是额外样本。原波灰色，折叠波粉红；菱形可能重合。\n\n选择整数样点 n（方向键 ±1）\n\n当前 n = 1\n\n重置本步\n经典慢波：f=9, f_s=10\n全钉同一点：f=f_s=10\n折叠：f=14, f_s=20\n无混叠：f=3, f_s=25\n\ng = f − k·fs; falias = |g|\n\n本页取 k=round(f/fₛ)，先使带符号的 g=f−k·fₛ 落入 [−fₛ/2,fₛ/2]，再取频率大小 |g|。端点处代表方式可有歧义，见第3步。图必须用 g，而不能把 |g| 直接代入同相正弦。其他步骤也沿用这一折叠函数。\n\nf = 5.0 Hz · fₛ = 10.0 Hz · k = 1 · g = −5 Hz · f_alias = |g| = 5.0 Hz —— 这就是那条假波\n\n采样间隔 Δt≈0.1 s；n=1，tₙ≈0.1 s：原波≈1.22e-16，折叠波≈-1.22e-16，差≈2.45e-16。理论上相同；显示数值含浮点舍入误差。\n\n非采样比较 t≈0.125 s：原波≈−0.7071068，折叠波≈0.7071068，差≈−1.414214。纵值以单位振幅计；此处可以不同，也可能恰好相同。\n\n为什么样点相同？在 tₙ=n/fₛ，两条波的相位差是 2π(f−g)n/fₛ=2πkn，恰好整数圈；正弦每转整圈回到同一值。因此对所有整数 n 都有 sin(2πftₙ)=sin(2πgtₙ)。离开采样时刻，这个整数圈条件不再保证成立。\n\n这只验证理想零初相位、单位振幅的两个正弦候选。有限几个重合点不能确定任意连续信号；即使此处两条曲线相同，也还有更高频别名。唯一重建需要事先已知带限、完整理想均匀样本和相应重建条件，不能靠折线或这幅有限图证明。\n\n先用默认9/10：预测圈内两值相同、菱形处可能不同，再移动 n 核对。选3/25时两条显示曲线为何完全相同？因为 k=0，g=f；这并不排除28 Hz等更高频候选。\n\n「全钉同一点」是最阴险的预设：f 恰为 fs 的整数倍时，采样每次都撞在完全相同的相位上，所有点钉成一个值——再快的波，看起来都静止。这正是第 0 步轮子\"停住\"的真相。\n\n接着问：已知频带怎样排除别名？→ 第3步\n依据与适用条件",
+    "readouts": [
+      "当前 n = 1",
+      "f = 5.0 Hz · fₛ = 10.0 Hz · k = 1 · g = −5 Hz · f_alias = |g| = 5.0 Hz —— 这就是那条假波",
+      "非采样比较 t≈0.125 s：原波≈−0.7071068，折叠波≈0.7071068，差≈−1.414214。纵值以单位振幅计；此处可以不同，也可能恰好相同。"
+    ],
+    "inputs": [
+      {
+        "value": "5",
+        "max": "20",
+        "label": [
+          "信号频率 f（Hz） 5"
+        ]
+      },
+      {
+        "value": "10",
+        "max": "30",
+        "label": [
+          "采样率 f_s（Hz） 10"
+        ]
+      },
+      {
+        "value": "1",
+        "max": "19",
+        "label": [
+          "选择整数样点 n（方向键 ±1）"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "ZH n keyboard",
+    "url": "http://127.0.0.1:18947/sampling/#step2",
+    "text": "第 2 步 · 混叠诞生\n\n相同采样点，也能属于另一条波\n\n在原波上每隔 Δt=1/fₛ 秒取一个点，不同连续波可能给出完全相同的点，这叫混叠。默认原波 f=9 Hz、采样率 fₛ=10 Hz，粉红曲线采用带符号频率 g=−1 Hz，仍逐点穿过金色样点。负号表示 sin(2πgt)=−sin(2π|g|t)，不是负的频率大小。选一个样点 n，再改 f 或 fₛ：圈出的采样时刻与菱形标出的非采样时刻，都用下面同一模型对账。别名通常在 f 超过 fₛ/2 时发生，不必等到 fₛ 小于 f。\n\n信号频率 f（Hz） 5\n采样率 f_s（Hz） 10\n\n金色圆圈：第 n 个真实样点。青色虚线与空心菱形：两次采样之间的 t=(n+¼)/fₛ，仅作比较，不是额外样本。原波灰色，折叠波粉红；菱形可能重合。\n\n选择整数样点 n（方向键 ±1）\n\n当前 n = 2\n\n重置本步\n经典慢波：f=9, f_s=10\n全钉同一点：f=f_s=10\n折叠：f=14, f_s=20\n无混叠：f=3, f_s=25\n\ng = f − k·fs; falias = |g|\n\n本页取 k=round(f/fₛ)，先使带符号的 g=f−k·fₛ 落入 [−fₛ/2,fₛ/2]，再取频率大小 |g|。端点处代表方式可有歧义，见第3步。图必须用 g，而不能把 |g| 直接代入同相正弦。其他步骤也沿用这一折叠函数。\n\nf = 5.0 Hz · fₛ = 10.0 Hz · k = 1 · g = −5 Hz · f_alias = |g| = 5.0 Hz —— 这就是那条假波\n\n采样间隔 Δt≈0.1 s；n=2，tₙ≈0.2 s：原波≈-2.45e-16，折叠波≈2.45e-16，差≈-4.90e-16。理论上相同；显示数值含浮点舍入误差。\n\n非采样比较 t≈0.225 s：原波≈0.7071068，折叠波≈−0.7071068，差≈1.414214。纵值以单位振幅计；此处可以不同，也可能恰好相同。\n\n为什么样点相同？在 tₙ=n/fₛ，两条波的相位差是 2π(f−g)n/fₛ=2πkn，恰好整数圈；正弦每转整圈回到同一值。因此对所有整数 n 都有 sin(2πftₙ)=sin(2πgtₙ)。离开采样时刻，这个整数圈条件不再保证成立。\n\n这只验证理想零初相位、单位振幅的两个正弦候选。有限几个重合点不能确定任意连续信号；即使此处两条曲线相同，也还有更高频别名。唯一重建需要事先已知带限、完整理想均匀样本和相应重建条件，不能靠折线或这幅有限图证明。\n\n先用默认9/10：预测圈内两值相同、菱形处可能不同，再移动 n 核对。选3/25时两条显示曲线为何完全相同？因为 k=0，g=f；这并不排除28 Hz等更高频候选。\n\n「全钉同一点」是最阴险的预设：f 恰为 fs 的整数倍时，采样每次都撞在完全相同的相位上，所有点钉成一个值——再快的波，看起来都静止。这正是第 0 步轮子\"停住\"的真相。\n\n接着问：已知频带怎样排除别名？→ 第3步\n依据与适用条件",
+    "readouts": [
+      "当前 n = 2",
+      "f = 5.0 Hz · fₛ = 10.0 Hz · k = 1 · g = −5 Hz · f_alias = |g| = 5.0 Hz —— 这就是那条假波",
+      "非采样比较 t≈0.225 s：原波≈0.7071068，折叠波≈−0.7071068，差≈1.414214。纵值以单位振幅计；此处可以不同，也可能恰好相同。"
+    ],
+    "inputs": [
+      {
+        "value": "5",
+        "max": "20",
+        "label": [
+          "信号频率 f（Hz） 5"
+        ]
+      },
+      {
+        "value": "10",
+        "max": "30",
+        "label": [
+          "采样率 f_s（Hz） 10"
+        ]
+      },
+      {
+        "value": "2",
+        "max": "19",
+        "label": [
+          "选择整数样点 n（方向键 ±1）"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "ZH320 DOM2x HC reduced",
+    "width": 320
+  },
+  {
+    "stage": "ZH reset Space at2x",
+    "url": "http://127.0.0.1:18947/sampling/#step2",
+    "text": "第 2 步 · 混叠诞生\n\n相同采样点，也能属于另一条波\n\n在原波上每隔 Δt=1/fₛ 秒取一个点，不同连续波可能给出完全相同的点，这叫混叠。默认原波 f=9 Hz、采样率 fₛ=10 Hz，粉红曲线采用带符号频率 g=−1 Hz，仍逐点穿过金色样点。负号表示 sin(2πgt)=−sin(2π|g|t)，不是负的频率大小。选一个样点 n，再改 f 或 fₛ：圈出的采样时刻与菱形标出的非采样时刻，都用下面同一模型对账。别名通常在 f 超过 fₛ/2 时发生，不必等到 fₛ 小于 f。\n\n信号频率 f（Hz） 9\n采样率 f_s（Hz） 10\n\n金色圆圈：第 n 个真实样点。青色虚线与空心菱形：两次采样之间的 t=(n+¼)/fₛ，仅作比较，不是额外样本。原波灰色，折叠波粉红；菱形可能重合。\n\n选择整数样点 n（方向键 ±1）\n\n当前 n = 1\n\n重置本步\n经典慢波：f=9, f_s=10\n全钉同一点：f=f_s=10\n折叠：f=14, f_s=20\n无混叠：f=3, f_s=25\n\ng = f − k·fs; falias = |g|\n\n本页取 k=round(f/fₛ)，先使带符号的 g=f−k·fₛ 落入 [−fₛ/2,fₛ/2]，再取频率大小 |g|。端点处代表方式可有歧义，见第3步。图必须用 g，而不能把 |g| 直接代入同相正弦。其他步骤也沿用这一折叠函数。\n\nf = 9.0 Hz · fₛ = 10.0 Hz · k = 1 · g = −1 Hz · f_alias = |g| = 1.0 Hz —— 这就是那条假波\n\n采样间隔 Δt≈0.1 s；n=1，tₙ≈0.1 s：原波≈−0.5877853，折叠波≈−0.5877853，差≈-2.22e-16。理论上相同；显示数值含浮点舍入误差。\n\n非采样比较 t≈0.125 s：原波≈0.7071068，折叠波≈−0.7071068，差≈1.414214。纵值以单位振幅计；此处可以不同，也可能恰好相同。\n\n为什么样点相同？在 tₙ=n/fₛ，两条波的相位差是 2π(f−g)n/fₛ=2πkn，恰好整数圈；正弦每转整圈回到同一值。因此对所有整数 n 都有 sin(2πftₙ)=sin(2πgtₙ)。离开采样时刻，这个整数圈条件不再保证成立。\n\n这只验证理想零初相位、单位振幅的两个正弦候选。有限几个重合点不能确定任意连续信号；即使此处两条曲线相同，也还有更高频别名。唯一重建需要事先已知带限、完整理想均匀样本和相应重建条件，不能靠折线或这幅有限图证明。\n\n先用默认9/10：预测圈内两值相同、菱形处可能不同，再移动 n 核对。选3/25时两条显示曲线为何完全相同？因为 k=0，g=f；这并不排除28 Hz等更高频候选。\n\n「全钉同一点」是最阴险的预设：f 恰为 fs 的整数倍时，采样每次都撞在完全相同的相位上，所有点钉成一个值——再快的波，看起来都静止。这正是第 0 步轮子\"停住\"的真相。\n\n接着问：已知频带怎样排除别名？→ 第3步\n依据与适用条件",
+    "readouts": [
+      "当前 n = 1",
+      "f = 9.0 Hz · fₛ = 10.0 Hz · k = 1 · g = −1 Hz · f_alias = |g| = 1.0 Hz —— 这就是那条假波",
+      "非采样比较 t≈0.125 s：原波≈0.7071068，折叠波≈−0.7071068，差≈1.414214。纵值以单位振幅计；此处可以不同，也可能恰好相同。"
+    ],
+    "inputs": [
+      {
+        "value": "9",
+        "max": "20",
+        "label": [
+          "信号频率 f（Hz） 9"
+        ]
+      },
+      {
+        "value": "10",
+        "max": "30",
+        "label": [
+          "采样率 f_s（Hz） 10"
+        ]
+      },
+      {
+        "value": "1",
+        "max": "19",
+        "label": [
+          "选择整数样点 n（方向键 ±1）"
+        ]
+      }
+    ]
+  },
+  {
+    "browser": "CLOSED"
+  }
+]

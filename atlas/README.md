@@ -283,3 +283,7 @@ Finite floating point is a model-display boundary: adjacent tiny spans pass inde
 ## Standing-wave spatial phase — 2026-10-26
 
 [Contract](../specs/standing-phase.md), [verification](../specs/reviews/standing-phase-20261026/verification.md). Existing S1 compares fixed Q0 and P in the original figures/clock. Corrects same-interval/across-node phase and exact offgrid node selection; no graph changes. Final publication and real-device/public-access limits are separate from local acceptance.
+
+## Sampling pair identity — 2026-10-26
+
+[Contract](../specs/sampling-pair.md), [verification](../specs/reviews/sampling-pair-20261026/verification.md). Deepens existing S2 with one integer probe in the original scene; signedg versus magnitude, sample-spacing/whole-turn identity and explicit nonsample comparison. No graph growth or new route; original Nyquist/audio/other models retained. Source install and public browser acceptance remain separate.

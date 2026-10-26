@@ -1,0 +1,27 @@
+{
+  "verdict": "PASS",
+  "remainingMustFix": 0,
+  "sampleCases": 278,
+  "maxSampleResidual": 3.527725558308283e-14,
+  "maxQuarterIdentityError": 2.842170943040401e-14,
+  "nyquist": {
+    "g": -5,
+    "nonsampleDifference": -1.414213562373095
+  },
+  "checks": [
+    "same-time signed sample identity",
+    "quarter k4 incidental equality",
+    "Nyquist opposite curves not called coincident",
+    "clamp selected integer on fs decrease",
+    "whitelist rejects unknown/grid/range/noninteger snapshot values",
+    "300 preview inputs no history writes; change commits",
+    "preserve foreign fields; reset/preset/denied fallback",
+    "alias functions and S3-through-end source identical"
+  ],
+  "sourceSHA256": "047c517a1fb1fc444bcaa3424cfba855a515b21ad4ae03a6e3df7bc22a483bb3",
+  "notTested": [
+    "Chrome/native events",
+    "layout/focus/Back/reload",
+    "physical devices/hearing/learning effects"
+  ]
+}

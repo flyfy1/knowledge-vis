@@ -92,10 +92,10 @@
 <section class="step" id="step2" data-step="2">
   <div class="step-inner">
     <p class="step-kicker" data-i18n="s2k">第 2 步 · 混叠诞生</p>
-    <h2 data-i18n="s2t">点没撒谎，是你连错了</h2>
+    <h2 id="s2-title" data-i18n="s2t">点没撒谎，是你连错了</h2>
     <p class="explain" data-i18n-html="s2e"></p>
     <div class="stage">
-      <canvas id="s2-canvas" height="320" style="height:320px"></canvas>
+      <canvas id="s2-canvas" height="320" style="height:320px" role="img" aria-labelledby="s2-title" aria-describedby="s2-pair-legend"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="labF">信号频率 f（Hz）</span> <span class="val" id="s2-f-val">9</span></span>
@@ -105,18 +105,28 @@
         <input type="range" id="s2-fs" min="2" max="30" step="0.5" value="10">
       </label>
     </div>
+    <p class="hint" id="s2-pair-legend" data-i18n="pairLegend"></p>
+    <div class="controls"><label for="s2-n"><span data-i18n="pairIndex"></span><input type="range" id="s2-n" min="0" max="19" step="1" value="1"></label></div>
+    <p class="readout"><span data-i18n="pairSelected"></span> <span id="s2-n-val">1</span></p>
     <div class="btn-row">
+      <button class="btn" id="s2-reset" data-i18n="pairReset"></button>
       <button class="btn" id="s2-p-slow" data-i18n="s2pSlow">经典慢波：f=9, f_s=10</button>
       <button class="btn" id="s2-p-dc" data-i18n="s2pDC">全钉同一点：f=f_s=10</button>
       <button class="btn" id="s2-p-fold" data-i18n="s2pFold">折叠：f=14, f_s=20</button>
       <button class="btn" id="s2-p-clean" data-i18n="s2pClean">无混叠：f=3, f_s=25</button>
     </div>
     <div class="formula-box">
-      <p class="formula big">f<sub>alias</sub> = |f − k·f<sub>s</sub>|</p>
+      <p class="formula big">g = f − k·f<sub>s</sub>; f<sub>alias</sub> = |g|</p>
       <p class="explain small" data-i18n-html="s2formulaNote"></p>
     </div>
     <p class="readout" id="s2-readout"></p>
+    <p class="readout" id="s2-pair-sample"></p><p class="readout" id="s2-pair-between"></p>
+    <p class="explain small" data-i18n="pairWhy"></p>
+    <p class="hint" data-i18n="pairLimits"></p>
+    <p class="hint" data-i18n="pairQuestion"></p>
     <p class="hint" data-i18n-html="s2hint"></p>
+    <a class="pair-next" href="#step3" data-i18n="pairNext"></a>
+    <details class="pair-source"><summary data-i18n="pairSourceTitle"></summary><p data-i18n="pairSource"></p><a href="https://www.ti.com/lit/pdf/snaa079" target="_blank" rel="noopener">TI · AN236 · Sampling theorem</a></details>
   </div>
 </section>
 

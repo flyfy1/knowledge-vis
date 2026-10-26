@@ -1,0 +1,23 @@
+# Sampling S2: same samples, different continuous curves
+
+Read WORKFLOW, sampling/BRIEF.md, signal-domain design/verification and visual-page-provenance spec. [Independent gate](reviews/sampling-pair-20261026/design-review.md) accepted this bounded reuse. All gate constraints adopted.
+
+## Root cause and smallest learning loop
+
+Existing S1/S3 already distinguish display interpolation, known ideal bandlimit, strict Nyquist inequality and complete sequence from arbitrary recovery. Preserve them. S2 draws signed g but shows only |g|; its k note incorrectly says the signed result lies in [0,fs/2] (f9/fs10 gives g−1, an actual counterexample). The graph alone does not let a beginner verify a chosen integer sample and the intervening continuous values.
+
+Known: x[n]=x(n/fs), n integer. Question: why can visibly different sine curves agree at every uniform sample? Inputs original S2 f1..20 step.5/fs2..30 step.5 and ONE integer sampleindex n0..floor(2fs)−1. Operation select n, alter existing f/fs or presets; compare circle sample t=n/fs and diamond nonsample t=(n+.25)/fs on existing canvas, using exact same curves. Quantities Δt1/fs, signedg, |g|, two values/difference at eachtime. Conclusion f−g=kfs→sample phase difference2πkn→same sine for allintegern; nonsample maydiffer. Limits zero-phaseunitamplitude ideal sines, not arbitrary waveform recovery, interpolation or noise/quantization measurement. A finite drawn record cannot prove uniqueness. Known |f|≤B and fs>2B with fullidealuniformsequence/reconstruction required, as existingS3 states.
+
+P0/highreturn20%: signed frequency explanation, sharedmodel selectedsample/non-sample overlay and real parameterfeedback, bilingual/numericagreement/accessibility. P1: commitonly validated S2reading restoration, source/attribution, focusedregression. P2:none. Deferred new simulator/clock/audio/backend/graphnodes/sinc reconstruction/wholecourseaudit. Exactexisting tokens: bg#0d1117,panel#161b22,panel2#1c2330,text#e8edf4,muted#9aa7b8,line#2b3547,accent#6ee7ff,accent2#ffb454,accent3#ff7a93. Reuse current17px explain/1.7lineheight/systemfont,920pxcontent,stagepadding12/16px,radius14px; scopedcontrols48px/3pxfocus3pxoffset. No new shadows/ambientanimation, original originalcurve#8494ab/alias#ff7a93/sample#ffd166 retained. Symbol/letter/DOMlegend supplements color. Canvas glyphs remain existing12.5px, DOM alternative supplies values.
+
+## Model/state contract
+
+aliasSigned/aliasFreq remain byteidentical and unique fold source, including half-frequency tie behavior. A readonly samplePair adapter calls it and evaluates originalsin and signedgsin at SAMEtime, neverabs(g) with unchangedphase. Non-sample quartertime is not a new sample. If k0 curvesidentical sayso; evenk can agree atquarter despitebeingdifferent (f8/fs2,k4), neverforcegap ordeclareunique fromtestpoints. Δtseconds, f/fs/gHz,nunitlessinteger, yunitamplitude; ≈ forfloating arithmetic, exactalgebra labelled separately. Residuals≈1e−15 are roundoff, not evidenceagainstequality. Othersteps' phase/audio/filter/state unchanged.
+
+S2owner f/fs/n; redraw has no timer. Changing fs clampsn onlyifoutside0..floor(2fs)−1. Committedchange/preset/reset/pagehide snapshots samplingPair(f/fs/n), explicitwhitelistvalidgrid/range/int; preserveforeignhistory, no perinputwrites/audio/profiling. Restorepassive; deniedhistory worksinmemory. No pending/loading/networkstate because allcomputationslocaland synchronous. Nativekeyboardintegerarrows/HomeEnd, ENZHsamekeys, languagekeepsvalues. No outputinsideimplicitlabel.
+
+## Sources and prevention checks
+
+[TI AN236 SNAA079C](https://www.ti.com/lit/pdf/snaa079), checked2026-10-26: alias sample sets and reconstruction within bandlimit. Ownalgebra derives equality using2πkn; negativeg is a phase-reversed positivefrequency sine under thiszero-phaseconvention. ExistingNyquistboundary/equalitylimits retained, not re-auditedglobally. Originalcontributors and priorCodex1d90150 source retained.
+
+Reproduce9/10signed−1vsoldinterval. Numericoracle overallnativef/fsgrids/integern, quartermaydifferorcoincide, k0,positive/negative/zero/halfalias, Δt andnclamp, illegalinputs, allunrelatedpurehelpersbyteguard. ActualUI selectedsample/quarterplots differcausallyasfs/f/nchange, bilingual320/390/DOM2x/focus/keyboard/contrast/reducedmotion, reset/presets/Back/reload/deniedhistory/malicioussnapshot/zero previewwrites, noexternalassets. Existing signal-domain-core regression and S3boundary/otherstep smoke only. Independent science/code and UI-first coldwalk mustfix0. Physicalphones/Safari/audiohardware/actuallearning and publicaccess unverified unlessseparateevidence. Scopeguard: no newroutes/graph, no runtimeoutside sampling4/provenance/version atpublish.

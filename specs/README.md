@@ -90,3 +90,5 @@ that existing pages have completed that process.
 - [Eigen / LC42 / 3D galaxy integration](reviews/visual-galaxy-batch-20261026/README.md): exact worktree mapping, cold review, recovered-input red/green and bounded publication contract.
 
 - [Standing-wave S1 spatial-phase comparison](standing-phase.md): exact node/preset, signed coefficient versus amplitude, shared-clock two-point prediction and scoped regression contract.
+
+- [Sampling S2 signed alias/sample-pair contract](sampling-pair.md): original versus folded sine at shared sample and nonsample times; bandlimit and finite-record limits retained.
