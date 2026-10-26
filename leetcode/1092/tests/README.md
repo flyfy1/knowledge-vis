@@ -30,10 +30,10 @@ Neither option changes source or starts a service. Example local preview command
 
 ```sh
 OUTPUT_DIR=/tmp/1092-red BASELINE_REVISION=093440bf6df89b6a5dbc7a958ae3aef588b9acff \
-  PREVIEW_URL=http://127.0.0.1:19892/leetcode/1092/ node leetcode/1092/tests/header-fit-regression.cjs
-OUTPUT_DIR=/tmp/1092-green PREVIEW_URL=http://127.0.0.1:19892/leetcode/1092/ \
+  PREVIEW_URL=http://127.0.0.1:18770/leetcode/1092/ node leetcode/1092/tests/header-fit-regression.cjs
+OUTPUT_DIR=/tmp/1092-green PREVIEW_URL=http://127.0.0.1:18770/leetcode/1092/ \
   node leetcode/1092/tests/header-fit-regression.cjs
-OUTPUT_DIR=/tmp/1092-matrix PREVIEW_URL=http://127.0.0.1:19892/leetcode/1092/ \
+OUTPUT_DIR=/tmp/1092-matrix PREVIEW_URL=http://127.0.0.1:18770/leetcode/1092/ \
   node leetcode/1092/tests/header-fit-matrix.cjs
 ```
 

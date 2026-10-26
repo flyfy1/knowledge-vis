@@ -95,3 +95,67 @@ No debug instrumentation remains in runtime source. Diagnostic probes exist only
 in test artifacts; `PROBE_CSS` is an explicit ephemeral browser-only test hook.
 No Pi files, campaign state, publication or historical review were changed. This
 is author evidence, not closure of1092-R1 or a new acceptance.
+
+## Linux follow-up — 2026-10-26, current task self-check
+
+**1092-R1: fixed awaiting separate review.** The starting checkout already contains
+adopted repair `b1c876fa`; this run retained its header-only CSS and cache token.
+Against historical reviewed candidate `5cf73ee858d9a8938b55206c867233a8397d60f6`,
+the runtime delta remains bounded wrapping at 52px / 48px, with automatic height
+and sticky row/corner labels. No algorithm, teaching, canonical source or metadata
+repair was necessary. This run strengthens the focused regression to assert every
+actual text line and header placement below navigation, and corrects both focused
+tests' default preview to the supplied port 18770. No prior report is modified.
+
+Applied website-design and diagnosing-bugs skills; reused the archived independent
+design contract. Before probing, reproduced the original exact clipping and ranked
+three predictions: bounded wrapping restores fit; nonsticky corner confirms the
+overlay; trailing scroll space alone cannot fix a strip narrower than the text.
+All probes use browser-only CSS and the old stylesheet, without changing files or
+services. Wrapping passed; removing corner stickiness passed diagnostically but
+was rejected as a repair because row/corner association must remain; adding 60px
+trailing margin failed. Probe geometry/screenshots are preserved in the new run.
+
+Evidence root: `tests/evidence/r1-linux-20261026/`. All commands below ran from the
+repository root with `OUTPUT_DIR="$PWD/leetcode/1092/tests/evidence/r1-linux-20261026/<subdir>"`.
+Browser tests resolve packages via NODE_PATH and honor the configured Chromium
+executable. Preview was `http://127.0.0.1:18770/leetcode/1092/`.
+
+| Command / subdirectory | Observed result |
+| --- | --- |
+| `BASELINE_REVISION=5cf73ee858d9a8938b55206c867233a8397d60f6 node leetcode/1092/tests/header-fit-regression.cjs` / `red-lines` | Expected exit 1: actual text line begins at x161.84 behind corner right188.84. Screenshot reproduces missing `8 ·`. |
+| `LOCALE=en node leetcode/1092/tests/header-fit-regression.cjs` / `green-en` | Exit 0: full `8 · empty`, three actual text lines x204.30..263.70 overall, corner right132, wrapper34..286, header top165.75 > nav bottom140. |
+| `LOCALE=zh node leetcode/1092/tests/header-fit-regression.cjs` / `green-zh` | Exit 0: full `8 · 空`, text x205.67..262.31, corner right132; header below navigation. |
+| `node leetcode/1092/tests/header-fit-matrix.cjs` / `matrix` | Exit 0: 1,296 column text-line checks; both locales, 320/390/1440, CSS zoom1/2, every preset, initial/fill/ready/end; real controls, keyboard/focus and forced colors pass. |
+| `python3 -B leetcode/1092/tests/test_logic.py` / `checks` | Exit 0: actual canonical Python, 900 exhaustive pairs +168 official/seeded/boundary cases; baseline executed; source mirror exact. |
+| `node leetcode/1092/tests/test_core.cjs` / `checks` | Exit 0:129 cases /3,096 frames, all branches and invariants; deep snapshots and translation keys. |
+| `node leetcode/1092/tests/browser.cjs` / `browser` | Exit 0:14 bilingual preset runs;16 layouts across320/390/736/1440 and body CSS zoom1/2; formulas/frame/readout meaning, prediction selection/reveal/change and locale retention, rewind/reset/end, keyboard, contrast, links, clipboard/offline/download checks pass. |
+| `python3 -B scripts/register_leetcode_lesson.py 1092 --validate-only` | Exit 0, no output. Non-mutating metadata preflight; complexity remains exactly one nonempty time/space string. No registration run. |
+| `git diff --check` | Exit 0. |
+
+Visually inspected `red-lines/header-settled.png`, `green-en/header-settled.png`
+and `green-zh/header-settled.png` on actual Linux Chromium156.0.8078.4. The red
+screenshot loses the coordinate; repaired English exposes all characters as
+`8 ·` / `empt` / `y` with natural wrapping, Chinese exposes `8 · 空`. Row labels
+remain readable and aligned with values. The matrix checks each reachable column
+position with0.5px tolerance, including first/middle/terminal columns. Its dense
+state coverage sets existing frame indices; separate real-button tests verify
+interaction semantics. Browser source transfers compare exact untrimmed text and
+bytes, including final newline; four manual clipboard attempts each reset/read a
+fresh sentinel then perform actual Control+C. Seven served lesson assets match
+checkout byte-for-byte (`served-hashes.json`).
+
+Python remains the faithful preferred official interface; inspected the saved
+Python3 and TypeScript snippets. There is no non-Python language contract or
+supportedLanguages list to omit Python/TypeScript. Read exact registration mapping:
+Python `solution.py` / `python-code.js` / `PYTHON_SOURCE`. No regeneration needed.
+The formula, frame timing, cumulative output/remaining invariant and independent
+aba/bab prediction scope checks from the rendered-state contract pass unchanged.
+
+New candidate identity is recorded in this run's `candidate.json` with exact file
+hashes and shared-policy hashes. Original evidence/candidate records are retained.
+Limits: Linux headless Chromium and CSS zoom layout stress; native browser-menu
+zoom and physical phones untested. No independent closure, acceptance, successful
+LeetCode submission, commit, deployment or production verification is claimed.
+Next action: separate reviewer inspects this frozen candidate and closes or keeps
+open1092-R1 against the preserved original report.

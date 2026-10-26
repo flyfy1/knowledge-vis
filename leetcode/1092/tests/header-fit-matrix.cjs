@@ -1,7 +1,7 @@
 'use strict';
 const {chromium}=require('playwright'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const OUT=process.env.OUTPUT_DIR||path.join(__dirname,'header-fit-evidence','green');fs.mkdirSync(OUT,{recursive:true});
-const URL=process.env.PREVIEW_URL||'http://127.0.0.1:19892/leetcode/1092/';
+const URL=process.env.PREVIEW_URL||'http://127.0.0.1:18770/leetcode/1092/';
 (async()=>{const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});try{
  const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'}),errors=[],records=[],screenshots=[];page.on('pageerror',e=>errors.push(String(e)));await page.goto(URL);
  const snap=()=>page.evaluate(()=>({preset,index,hand,choice,revealed,copyState,frame:model.frames[index],headers:[...document.querySelectorAll('#table th')].map(e=>e.textContent)}));
