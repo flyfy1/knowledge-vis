@@ -1,0 +1,686 @@
+{
+  "host": "linux",
+  "browser": "156.0.8078.4",
+  "presets": [
+    {
+      "lang": "en",
+      "p": 0,
+      "removed": 0,
+      "final": [
+        3,
+        4
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "en",
+      "p": 0,
+      "removed": 3,
+      "final": [
+        0,
+        1,
+        2
+      ],
+      "frames": 3
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "removed": 0,
+      "final": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "frames": 4
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "removed": 3,
+      "final": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "frames": 4
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "removed": 4,
+      "final": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "removed": 0,
+      "final": [
+        0,
+        1
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "removed": 1,
+      "final": [
+        0,
+        1
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "removed": 0,
+      "final": [
+        2
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "removed": 2,
+      "final": [
+        0
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "removed": 1,
+      "final": [
+        0,
+        1,
+        2
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "removed": 2,
+      "final": [
+        0,
+        1,
+        2
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "en",
+      "p": 5,
+      "removed": 1,
+      "final": [],
+      "frames": 1
+    },
+    {
+      "lang": "en",
+      "p": 6,
+      "removed": 3,
+      "final": [
+        0,
+        1
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "en",
+      "p": 6,
+      "removed": 0,
+      "final": [
+        2,
+        3
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "removed": 0,
+      "final": [
+        3,
+        4
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "removed": 3,
+      "final": [
+        0,
+        1,
+        2
+      ],
+      "frames": 3
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "removed": 0,
+      "final": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "frames": 4
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "removed": 3,
+      "final": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "frames": 4
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "removed": 4,
+      "final": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "removed": 0,
+      "final": [
+        0,
+        1
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "removed": 1,
+      "final": [
+        0,
+        1
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "removed": 0,
+      "final": [
+        2
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "removed": 2,
+      "final": [
+        0
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "removed": 1,
+      "final": [
+        0,
+        1,
+        2
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "removed": 2,
+      "final": [
+        0,
+        1,
+        2
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "zh",
+      "p": 5,
+      "removed": 1,
+      "final": [],
+      "frames": 1
+    },
+    {
+      "lang": "zh",
+      "p": 6,
+      "removed": 3,
+      "final": [
+        0,
+        1
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "zh",
+      "p": 6,
+      "removed": 0,
+      "final": [
+        2,
+        3
+      ],
+      "frames": 2
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "noPageOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "noPageOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "noPageOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "noPageOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "noPageOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "noPageOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "noPageOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "noPageOverflow": true,
+      "controls48": true
+    }
+  ],
+  "selectFit": [
+    {
+      "lang": "en",
+      "label": "Two chains",
+      "width": 260,
+      "textWidth": 83.21614074707031,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "Two-seed trap",
+      "width": 260,
+      "textWidth": 106.57620239257812,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "Official 1",
+      "width": 260,
+      "textWidth": 65.85614013671875,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "Official 2",
+      "width": 260,
+      "textWidth": 65.85614013671875,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "Official 3",
+      "width": 260,
+      "textWidth": 65.85614013671875,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "One seed",
+      "width": 260,
+      "textWidth": 71.12014770507812,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "Tied, reversed input",
+      "width": 260,
+      "textWidth": 149.29629516601562,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "两条链",
+      "width": 260,
+      "textWidth": 48.000091552734375,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "双源陷阱",
+      "width": 260,
+      "textWidth": 64.0001220703125,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "官方例 1",
+      "width": 260,
+      "textWidth": 61.31211853027344,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "官方例 2",
+      "width": 260,
+      "textWidth": 61.31211853027344,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "官方例 3",
+      "width": 260,
+      "textWidth": 61.31211853027344,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "唯一感染源",
+      "width": 260,
+      "textWidth": 80.00015258789062,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "同收益，倒序输入",
+      "width": 260,
+      "textWidth": 128.000244140625,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "en",
+      "attempt": 0,
+      "sentinelVerified": true,
+      "automatic": true,
+      "nativeFallback": true,
+      "shortcut": "Control+C",
+      "newlineConversion": "none observed: exact equality"
+    },
+    {
+      "lang": "en",
+      "attempt": 1,
+      "sentinelVerified": true,
+      "automatic": true,
+      "nativeFallback": true,
+      "shortcut": "Control+C",
+      "newlineConversion": "none observed: exact equality"
+    },
+    {
+      "lang": "zh",
+      "attempt": 0,
+      "sentinelVerified": true,
+      "automatic": true,
+      "nativeFallback": true,
+      "shortcut": "Control+C",
+      "newlineConversion": "none observed: exact equality"
+    },
+    {
+      "lang": "zh",
+      "attempt": 1,
+      "sentinelVerified": true,
+      "automatic": true,
+      "nativeFallback": true,
+      "shortcut": "Control+C",
+      "newlineConversion": "none observed: exact equality"
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#prev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".current",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 11.974898815275662
+    },
+    {
+      "selector": "td.pending",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "a",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "val": "0",
+      "text": "Recheck the seed counts. The answer is 3. A has two seeds, 0 and 4; clearing either saves 0 nodes. B has only seed 3, saving 2 nodes. C has only seed 5, saving 1. Originally T=7; clearing 3 gives M=5, clearing 5 gives M=6, and clearing 0 or 4 gives M=7. Index 0 being smallest is insufficient: compare indices only after savings tie."
+    },
+    {
+      "lang": "en",
+      "val": "5",
+      "text": "Recheck the seed counts. The answer is 3. A has two seeds, 0 and 4; clearing either saves 0 nodes. B has only seed 3, saving 2 nodes. C has only seed 5, saving 1. Originally T=7; clearing 3 gives M=5, clearing 5 gives M=6, and clearing 0 or 4 gives M=7. Index 0 being smallest is insufficient: compare indices only after savings tie."
+    },
+    {
+      "lang": "en",
+      "val": "3",
+      "text": "Correct. The answer is 3. A has two seeds, 0 and 4; clearing either saves 0 nodes. B has only seed 3, saving 2 nodes. C has only seed 5, saving 1. Originally T=7; clearing 3 gives M=5, clearing 5 gives M=6, and clearing 0 or 4 gives M=7. Index 0 being smallest is insufficient: compare indices only after savings tie."
+    },
+    {
+      "lang": "en",
+      "state": "Two-seed trap, cleared 0, terminal",
+      "round": "Round 3/3; currently 7 infected: [0,1,2,3,4,5,6]. Spreading has stopped; this is final M.",
+      "best": "Checked 2/3 candidates; before removal T=7. Best index so far 0, saving 0 nodes, leaving 7 infected. Scan is incomplete.",
+      "rule": "saved(r) = size[component[r]] if count[component[r]]=1; otherwise 0. M(r) = T − saved(r). T is the final infected count before removing any seed."
+    },
+    {
+      "lang": "zh",
+      "val": "0",
+      "text": "再检查组内感染源数。 答案为 3。A 有两个感染源 0、4，清除任意一个都挽救 0 台；B 只有 3，能挽救 2 台；C 只有 5，能挽救 1 台。原来 T=7，清除 3 后 M=5，清除 5 后 M=6，清除 0 或 4 后 M=7。不能因为 0 编号最小就先选它；只有收益相同时才比较编号。"
+    },
+    {
+      "lang": "zh",
+      "val": "5",
+      "text": "再检查组内感染源数。 答案为 3。A 有两个感染源 0、4，清除任意一个都挽救 0 台；B 只有 3，能挽救 2 台；C 只有 5，能挽救 1 台。原来 T=7，清除 3 后 M=5，清除 5 后 M=6，清除 0 或 4 后 M=7。不能因为 0 编号最小就先选它；只有收益相同时才比较编号。"
+    },
+    {
+      "lang": "zh",
+      "val": "3",
+      "text": "正确。 答案为 3。A 有两个感染源 0、4，清除任意一个都挽救 0 台；B 只有 3，能挽救 2 台；C 只有 5，能挽救 1 台。原来 T=7，清除 3 后 M=5，清除 5 后 M=6，清除 0 或 4 后 M=7。不能因为 0 编号最小就先选它；只有收益相同时才比较编号。"
+    },
+    {
+      "lang": "zh",
+      "state": "Two-seed trap, cleared 0, terminal",
+      "round": "第 3/3 轮；当前感染 7 台：[0,1,2,3,4,5,6]。传播已停止；这是最终 M。",
+      "best": "已检查 2/3 个候选；未清除时 T=7。目前最佳编号 0，挽救 0 台，最终感染 7 台。尚未扫描完。",
+      "rule": "saved(r) = size[component[r]]，当 count[component[r]]=1；否则为 0。M(r) = T − saved(r)。T 是未清除任何感染源时最终感染的总台数。"
+    }
+  ],
+  "related": [
+    {
+      "lang": "en",
+      "id": 803,
+      "label": "#803: restore bricks and track roof connectivity",
+      "url": "http://127.0.0.1:18770/leetcode/803/#step2",
+      "destinationText": "2 · Restore one brick: what reconnects?How does one restoration give the fall count for the corresponding hit? A component is a group of bricks joined by paths through four-neighbor bricks. Add a virtual roof node connected to every top-row brick. R is the size of its component, including the virtual node.Keep example 1. Remove only the hit (1,0), retaining the two bricks on its right as records. Only (0,0) reaches the roof, so R_before=2. Restore (1,0) and connect its neighbors: all four bricks now reach the roof, so R_after=5. Three bricks joined, including the restored brick itself. The other two are the original fallen bricks.result[i] = max(0, R_after − R_before − 1)Invariant: before undoing hit i, the bookkeeping wall contains the original bricks except those at hits[0…i]. The roof group contains exactly its roof-reachable bricks. Restoring hits[i] can only add paths. If it reaches the roof, the growth includes itself and every old group it connects: subtract one. If it stays disconnected, R is unchanged and max turns −1 into 0. An originally empty cell is skipped with answer 0. The wall then excludes only hits[0…i−1], preserving the invariant. At termination all answers are stored at their original indices.Why retain bricks that physically fell? They are the groups that reconnect when their support is restored. If a later hit targets a brick that fell earlier, reverse processing restores it first; it stays disconnected, R does not grow, and the answer is correctly 0. Initially disconnected groups never contribute growth: even with all original bricks restored they cannot reach the roof. Bricks that fell earlier remain unreachable as forward deletions cannot add paths; retaining them cannot change the reachable set. The bookkeeping wall is not the physical forward wall.How do we maintain these groups cheaply? A disjoint-set union structure (DSU) gives each group a representative: find follows parent pointers to it; union merges two different groups. Only the representative stores the group’s size. Attach the smaller group to the larger and shorten paths during find to avoid recounting whole groups. The simulation below uses searches to generate connectivity snapshots; it shows neither DSU pointer operations nor Python execution.#685: see union-find merge groups →Keep one preset fixed. Select “Restore next hit,” compare before and after, then inspect R and the history ledger. Each frame completes one restoration and its neighbor connections; no restorations are omitted. Changing preset restarts this experiment; the prediction exercise is independent.Preset (changing restarts)ABCDEA · One supportOfficial example 1; forward hits=[[1,0]]Back one restoreRestore next hitReset bookkeepingRestore allReverse hits processed: 0/1 · Initial: all hits removed; none restoredAfter initialization R=2. Both views show the initial bookkeeping wall.Cells: S=brick connected to roof (solid underline); U=brick disconnected from roof (dashed underline); ·=empty. A cyan inner outline marks the restored location only. Headers are zero-based row/column coordinates. R includes the virtual roof, so even an empty wall has R=1.Bookkeeping before · R=2row / col01230S···1·UU·Bookkeeping after · R=2row / col01230S···1·UU·result in original hit order (? not yet computed)[?]Retained reverse-order ledgerInitialization: remove all hit positions, R=2."
+    },
+    {
+      "lang": "en",
+      "id": 778,
+      "label": "#778: minimize a path’s bottleneck",
+      "url": "http://127.0.0.1:18770/leetcode/778/#step2",
+      "destinationText": "03 · Which candidate can become permanent?How can one search determine the earliest level? Let D[r,c] be the smallest discovered bottleneck (largest path height) from the start to (r,c). ∞ means no path has been discovered. Settled means this value is proven minimal; pending means a path exists but optimality is not yet proven.From a settled cell u, the route needs level cost. Extending to a neighboring cell v at height H[v] must satisfy both requirements, so its candidate is max(cost, H[v]). Replace D[v] only if this is smaller; this update is called relaxation. In the 2×2 grid, the first step gives max(0,1)=1 for (1,0), and max(0,2)=2 for (0,1). Inspect 1 next.candidate = max(cost, H[v]); D[v] = min(D[v], candidate)Why can the smallest pending value become permanent? Maintain this invariant: every settled D is the smallest possible bottleneck. Suppose a route could improve the current smallest pending value d. On that better route, take its first unsettled cell v. Its predecessor is settled, so processing that predecessor would have put v into the frontier with a candidate below d: extending a path never decreases its maximum. This contradicts d being the smallest pending value. The start value D=H[0,0] is correct, so the argument repeats; when the finish is removed, its value is the answer.The pending set is also called the frontier. A min-heap is a data structure that removes the smallest value efficiently; Python uses it to avoid scanning the entire frontier each round. Below, the frontier is shown sorted by (level,row,column) for reading, not in heap memory order. #23: why a heap selects the smallest candidate →Teaching simulation, not Python execution. Each frame completes one minimum removal and all neighbor checks; removing the finish ends immediately. Settled cells and the full history remain visible. Internal heap sifts and skipped stale entries are not animated. Keep the map fixed, remove candidates in order, and watch settled levels never decrease. Rewinding restores the same values.Map (changing restarts this simulation)123451 · Four-cell hand example← Undo one removalRemove smallest →Reset simulationSettle the finishRemoved 0/4 cells; initial state. Start D=0; no removal yet.H is original height; D is the best discovered bottleneck. An underline and “settled” mark proven optima; an outline and “current” mark the cell just removed. Start at top left, finish at bottom right. Wide maps scroll horizontally.Simulation map · Row r / column c, starting at 0r / c010H 0D 0pendingH 2D ∞unknown1H 1D ∞unknownH 3D ∞unknownCurrent frontier: level @ (row,column)0 @ (0,0)Completed operations (including every neighbor calculation)Initialize: only the start has D=0; all others are ∞."
+    },
+    {
+      "lang": "zh",
+      "id": 803,
+      "label": "#803：倒序恢复与屋顶连通块",
+      "url": "http://127.0.0.1:18770/leetcode/803/#step2",
+      "destinationText": "2 · 补回一块，哪些砖重新连接？这一步要回答：一次补砖怎样给出原来那次敲击的掉落数？“连通块”是能沿四邻砖互相走到的一组砖；加一个虚拟屋顶节点，把它连到所有第 0 行砖。R 表示屋顶所在连通块的大小，包含这个虚拟节点。仍用例 1：先只移除敲中的 (1,0)，保留右侧两块作记录。此时只有 (0,0) 连着屋顶，所以 R前=2。补回 (1,0) 并连接四邻后，4 块砖都接屋顶，R后=5。新接入 3 块，其中 1 块是补回的砖；其余 2 块才是原先掉落的砖。result[i] = max(0, R后 − R前 − 1)不变量：倒序处理 i 之前，记录墙保留原始砖，但移除了 hits[0…i]；屋顶组恰好包含这面记录墙上所有能到屋顶的砖。补回 hits[i] 只会增加路径：若补砖接到屋顶，增量含它和所有刚被接通的旧组，减 1 得掉落数；若它仍悬空，R 不变，max 把 −1 变成 0。原来就是空位时不补，直接记 0。补完后记录墙只移除了 hits[0…i−1]，因此不变量延续；倒序结束时所有答案按原下标写好。为什么不按正序把“已掉落的砖”也从记录墙里删掉？它们就是日后补回支撑时要接通的整组。若后来又敲到一块早已掉落的砖，倒序时先补它，它仍悬空，R 不增加，正确得到 0。初始悬空的组也不会贡献增量：即使所有原始砖恢复，它们仍到不了屋顶。正序已掉落的砖此后仍不可达，因为继续删除不能增加路径；保留它们不会改变可达集合。记录墙不是正序物理墙。如何快速维护这些组？并查集（DSU）给每组一个代表：find 沿 parent 指针找到代表；union 把两个不同组接在一起。size 只在代表处记录组大小。小组接到大组，并在 find 时把路径缩短，可避免每次重新数整组。下面用搜索生成可视化快照，展示等价的连通关系，不展示 DSU 指针操作，也不运行 Python。#685：看并查集如何合组 →固定预设，点“补回下一处”，对比左/上方的补前与右/下方的补后，再看 R 与历史账本。每帧是一整次恢复并连接邻居后的状态；无省略步骤。换预设会重置此实验，练习答案不受影响。预设（切换会重置）ABCDEA · 单支撑官方例 1；原序 hits=[[1,0]]退回上一步补回下一处重置记录墙补回全部已完成 0/1 次逆序处理 · 初始：只移除全部 hits，尚未恢复初始化后 R=2。两个视图均为初始记录墙。格子：S=有砖且接屋顶（实线）；U=有砖但未接屋顶（虚线）；·=空。青色内框仅标出本次补回位置。表头是从 0 开始的行列坐标。R 包含虚拟屋顶，所以全空也为 1。补前记录墙 · R=2行 / 列01230S···1·UU·补后记录墙 · R=2行 / 列01230S···1·UU·按原敲击顺序的 result（? 尚未求出）[?]保留的逆序账本初始化：全部敲击位置移除，R=2。"
+    },
+    {
+      "lang": "zh",
+      "id": 778,
+      "label": "#778：路径瓶颈的最小化",
+      "url": "http://127.0.0.1:18770/leetcode/778/#step2",
+      "destinationText": "03 · 哪个候选可以永久定案？这一步要回答：怎样一次搜索就确定最早水位？令 D[r,c] 表示目前发现的起点到 (r,c) 的最小瓶颈（路径的最大高度）。∞ 表示还没有发现路径。定案表示已经证明这个值不能再降低；待选表示有路径但尚未证明最优。从已定案格子 u 出发，原路线需要水位 cost。走到高度 H[v] 的相邻格 v 后，要同时满足两者，所以新候选是 max(cost, H[v])。若比旧 D[v] 小就替换，这叫松弛。2×2 的第一步从高度 0 出发：到 (1,0) 得 max(0,1)=1；到 (0,1) 得 max(0,2)=2。下一次应先检查 1。candidate = max(cost, H[v]); D[v] = min(D[v], candidate)为什么最小待选值可以定案？保持不变的事实（不变量）是：所有已定案格子的 D 都是最小可能瓶颈。假设当前最小待选值 d 仍能被某条路线改善。在这条更好的路上，取第一个未定案格子 v；它的前驱已经定案，处理前驱时就会把 v 放入待选集合，且候选小于 d，因为路径延伸不会降低最大值。这与 d 为最小待选矛盾。起点 D=H[0,0] 正确，故可以反复使用这个推理；终点被取出时，其值就是答案。待选集合也叫前沿。最小堆是一种能快速取出最小值的数据结构；Python 用它避免每轮扫描全部待选格。下方把前沿按 (水位,行,列) 排序显示，方便阅读，不是堆的内存布局。#23：为什么堆能选出最小候选 →教学模拟，不是执行 Python。每帧完成一次最小候选取出及其全部邻格检查；终点取出后立即结束。保留全部定案格和操作历史；不动画展示堆内部调整与过期条目的跳过。保持地图不变，逐步取出候选，观察定案水位从不下降；后退应恢复相同数值。地图（切换将重启此模拟）123451 · 四格手算← 撤回一次取出取出最小候选 →重置模拟到终点定案已取出 0/4 格；初始状态。起点 D=0，尚未取出。H 为原始高度，D 为最好已知瓶颈。下划线与“定案”文字表示已证明最优；边框与“本次”表示刚取出的格子。起点左上，终点右下。宽地图可横向滚动。模拟地图 · 行 r / 列 c，从 0 开始行/列010H 0D 0待选H 2D ∞未知1H 1D ∞未知H 3D ∞未知当前前沿：水位 @ (行,列)0 @ (0,0)已完成操作（含每个邻格的计算）初始化：只有起点 D=0，其余为 ∞。"
+    }
+  ],
+  "focus": {
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "errors": [],
+  "localRequestsOnly": true,
+  "blockedStorage": true,
+  "offlineSource": true,
+  "contrastCalibration": {
+    "blackWhite": 21,
+    "red": 0.2126,
+    "green": 0.7152,
+    "blue": 0.0722,
+    "nearThreshold": 4.492948073111701
+  },
+  "cssBytes": 11357
+}

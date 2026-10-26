@@ -1,0 +1,6 @@
+Author development check, before candidate freeze.
+Command: node leetcode/924/tests/browser.cjs
+Observed: page.click('#end') timed out after 30000 ms. The locator resolved to a native disabled Finish spreading button.
+Case: a removal with an already-terminal initial frame (e.g. one seed removed, leaving no seeds). The harness reset the trace and then tried to click End unconditionally.
+Diagnosis: a test-harness error. A zero-round terminal case legitimately disables End and Next immediately, as the hard-traces specification requires.
+Correction: click End after reset only if frames.length > 1; otherwise assert the terminal disabled state. Later full browser runs pass. No runtime behavior was changed for this failure. This is not a lesson-review finding or independent acceptance.
