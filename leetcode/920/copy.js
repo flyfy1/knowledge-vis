@@ -283,10 +283,6 @@ window.COPY = {
     "#552 · 按有限状态统计合法序列",
     "#552 · Count sequences with finite states"
   ],
-  "foot": [
-    "作者自检候选 · 独立评审待进行 · 未提交 LeetCode，不代表实际学习者成效。",
-    "Author self-checked candidate · Independent review pending · No LeetCode submission or learner-outcome claim."
-  ],
   "dpLink": [
     "延伸：用有限状态统计序列（#552）",
     "More: count sequences with finite states (#552)"

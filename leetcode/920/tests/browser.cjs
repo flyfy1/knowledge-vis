@@ -116,6 +116,13 @@ for(const language of ['en','zh']){
  const name='zoom200-'+language+'.png',capture=await zoomClient.send('Page.captureScreenshot',{format:'png',fromSurface:true});
  const png=Buffer.from(capture.data,'base64');assert(png.length>5000,'Native zoom screenshot must contain rendered content');fs.writeFileSync(path.join(out,name),png);screenshots.push(name);
  await zp.locator('#calculation').scrollIntoViewIfNeeded();assert(await zp.locator('#calculation').evaluate(e=>e.scrollWidth<=e.clientWidth));
+ // 920-COPY-R1: inspect the changed page end at native 200% zoom too.
+ assert.equal(await zp.locator('footer,[data-i18n="foot"]').count(),0);
+ await zp.evaluate(()=>scrollTo(0,document.documentElement.scrollHeight));
+ assert(await zp.evaluate(()=>Math.abs(document.querySelector('main').getBoundingClientRect().bottom-document.body.getBoundingClientRect().bottom)<=1));
+ const endName='page-end-zoom200-'+language+'.png';
+ const endCapture=await zoomClient.send('Page.captureScreenshot',{format:'png',fromSurface:true});
+ fs.writeFileSync(path.join(out,endName),Buffer.from(endCapture.data,'base64'));screenshots.push(endName);
 }
 await zoomContext.close();fs.rmSync(zoomRuntime,{recursive:true,force:true});
 // Measure actual solid text/background roles; helper calibrated above.

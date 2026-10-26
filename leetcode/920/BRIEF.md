@@ -88,3 +88,25 @@ Canonical costs O(goal*n) modular arithmetic operations, O(n) cells; baseline
 O(goal*n^goal) time, O(goal+n) auxiliary space with streamed candidates.
 Tests independently enumerate small strings, check prefix buckets and boundary
 closed forms/inclusion-exclusion; browser matrix and evidence recorded locally.
+
+## 2026-10-26 bounded revision — 920-COPY-R1
+
+Owner request: prepare one new candidate for separate re-review. Reconfirmed the
+seven runtime files against source snapshot
+`6568fbe9ebb0ab01bcf2736a8f9331c34b9c8c33`: no pre-edit differences;
+HTML/copy hashes match the repair request. Historical acceptance is unchanged.
+
+Reuse verdict: remove the generic workflow footer and unused `foot` pair, without
+replacement. Reuse existing layout/tokens; no new feature or layout. P0: preserve
+all instructional and algorithm/interface semantics. P1/highest-return slice:
+remove this bilingual disclaimer and demonstrate preserved state, keyboard flow
+and page end. P2: none. Deferred: other teaching/copy edits, since this finding
+does not justify broadening the approved narrow revision.
+
+Only runtime changes: footer binding removed, unused localization pair removed,
+`copy.js` cache query advanced to v2. `app.js`, `core.js`, `solution.py`,
+`python-code.js`, `style.css` and metadata remain byte-identical. `sim`, `p4`,
+`boundaries` and every other retained localization pair are unchanged.
+See appended SELF-CHECK and `tests/evidence/copy-r1/` for red/green regression,
+exact diff, before/after hashes, rendered checks and frozen candidate manifest.
+Status: fixed awaiting independent review; this author does not close the finding.
