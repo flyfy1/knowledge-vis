@@ -1,0 +1,71 @@
+[
+  {
+    "width": 320,
+    "initial": "Checked 1/127 submasks; current answer 0",
+    "next": "Checked 2/127 submasks; current answer 0",
+    "end": "Checked 127/127 submasks; current answer 1",
+    "reset": "Checked 1/127 submasks; current answer 0",
+    "preset": "words = [\"aax\",\"abx\",\"bxx\",\"ay\"]; puzzle = abxyqrs",
+    "feedback": "Revisit the invariant. Correct answer is 3. Reason: only submasks containing the first letter contribute.",
+    "afterChange": true,
+    "zhTrap": true,
+    "zhWorked": true,
+    "zhFeedback": "Revisit the invariant. Correct answer is 3. Reason: only submasks containing the first letter contribute.",
+    "enTrap": true,
+    "enWorked": true,
+    "enFeedback": "Revisit the invariant. Correct answer is 3. Reason: only submasks containing the first letter contribute.",
+    "copied": "",
+    "parity": true,
+    "overflow": {
+      "scrollWidth": 320,
+      "clientWidth": 320
+    },
+    "err": []
+  },
+  {
+    "width": 390,
+    "initial": "Checked 1/127 submasks; current answer 0",
+    "next": "Checked 2/127 submasks; current answer 0",
+    "end": "Checked 127/127 submasks; current answer 1",
+    "reset": "Checked 1/127 submasks; current answer 0",
+    "preset": "words = [\"aax\",\"abx\",\"bxx\",\"ay\"]; puzzle = abxyqrs",
+    "feedback": "Revisit the invariant. Correct answer is 3. Reason: only submasks containing the first letter contribute.",
+    "afterChange": true,
+    "zhTrap": true,
+    "zhWorked": true,
+    "zhFeedback": "Revisit the invariant. Correct answer is 3. Reason: only submasks containing the first letter contribute.",
+    "enTrap": true,
+    "enWorked": true,
+    "enFeedback": "Revisit the invariant. Correct answer is 3. Reason: only submasks containing the first letter contribute.",
+    "copied": "",
+    "parity": true,
+    "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390
+    },
+    "err": []
+  },
+  {
+    "width": 1280,
+    "initial": "Checked 1/127 submasks; current answer 0",
+    "next": "Checked 2/127 submasks; current answer 0",
+    "end": "Checked 127/127 submasks; current answer 1",
+    "reset": "Checked 1/127 submasks; current answer 0",
+    "preset": "words = [\"aax\",\"abx\",\"bxx\",\"ay\"]; puzzle = abxyqrs",
+    "feedback": "Revisit the invariant. Correct answer is 3. Reason: only submasks containing the first letter contribute.",
+    "afterChange": true,
+    "zhTrap": true,
+    "zhWorked": true,
+    "zhFeedback": "Revisit the invariant. Correct answer is 3. Reason: only submasks containing the first letter contribute.",
+    "enTrap": true,
+    "enWorked": true,
+    "enFeedback": "Revisit the invariant. Correct answer is 3. Reason: only submasks containing the first letter contribute.",
+    "copied": "",
+    "parity": true,
+    "overflow": {
+      "scrollWidth": 1280,
+      "clientWidth": 1280
+    },
+    "err": []
+  }
+]
