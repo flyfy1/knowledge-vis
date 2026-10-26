@@ -1,0 +1,31 @@
+{
+  "kind": "author self-check",
+  "rows": [
+    {
+      "lang": "en",
+      "keyboardPan": {
+        "left": 146,
+        "client": 102,
+        "total": 248
+      },
+      "keyboardReturnToStart": true,
+      "focusOutline": "3px",
+      "disclosureAndQuizPreserved": true,
+      "traceResetDoesNotResetQuiz": true,
+      "allPresetDescriptions": true
+    },
+    {
+      "lang": "zh",
+      "keyboardPan": {
+        "left": 146,
+        "client": 102,
+        "total": 248
+      },
+      "keyboardReturnToStart": true,
+      "focusOutline": "3px",
+      "disclosureAndQuizPreserved": true,
+      "traceResetDoesNotResetQuiz": true,
+      "allPresetDescriptions": true
+    }
+  ]
+}

@@ -1,0 +1,398 @@
+window.COPY = {
+  "docTitle": [
+    "1028 · 从先序遍历还原二叉树",
+    "1028 · Recover a Tree From Preorder Traversal"
+  ],
+  "title": [
+    "#1028 · 从先序遍历还原二叉树",
+    "#1028 · Recover a Tree From Preorder Traversal"
+  ],
+  "back": [
+    "← LeetCode 知识课",
+    "← LeetCode lessons"
+  ],
+  "intro": [
+    "一串短横线怎样确定父子关系？从 8-3--6-5 亲手搭出一棵树，再让祖先路径解释每次返回。",
+    "How can dashes determine parent links? Build a tree from 8-3--6-5, then use its ancestor path to explain every return."
+  ],
+  "official": [
+    "官方题目 ↗",
+    "Official problem ↗"
+  ],
+  "language": [
+    "语言",
+    "Language"
+  ],
+  "nav1": [
+    "1 · 读懂四个节点",
+    "1 · Read four nodes"
+  ],
+  "h1": [
+    "1 · 读懂四个节点",
+    "1 · Read four nodes"
+  ],
+  "nav2": [
+    "2 · 先切分子树",
+    "2 · Split subtrees first"
+  ],
+  "h2": [
+    "2 · 先切分子树",
+    "2 · Split subtrees first"
+  ],
+  "nav3": [
+    "3 · 保留祖先路径",
+    "3 · Keep the ancestor path"
+  ],
+  "h3": [
+    "3 · 保留祖先路径",
+    "3 · Keep the ancestor path"
+  ],
+  "nav4": [
+    "4 · 先预测再揭晓",
+    "4 · Predict, then reveal"
+  ],
+  "h4": [
+    "4 · 先预测再揭晓",
+    "4 · Predict, then reveal"
+  ],
+  "nav5": [
+    "5 · 落实到 Python",
+    "5 · Implement in Python"
+  ],
+  "h5": [
+    "5 · 落实到 Python",
+    "5 · Implement in Python"
+  ],
+  "p1": [
+    "这一步要回答：8-3--6-5 中，5 的父节点是谁？二叉树的每个节点最多有两个有次序的孩子，称为左、右孩子。根是没有父节点的节点；深度是从根走到节点的边数，所以根深度为 0。先序遍历按“节点本身、完整左子树、完整右子树”访问；子树包括该节点和它的所有后代。",
+    "Who is the parent of 5 in 8-3--6-5? A binary tree gives each node at most two ordered children, left and right. The root has no parent. Depth counts edges from the root, so the root has depth 0. Preorder visits a node, its entire left subtree, then its entire right subtree. A subtree contains a node and all its descendants."
+  ],
+  "handHint": [
+    "把一组连续短横线和紧随的完整整数称为一个词元。先读每个词元的深度，再按“接入一个节点”观察新增边；返回可撤回。L / R 表示左 / 右边，缩进表示深度，不表示数值大小。# 是从 0 开始的词元编号。窄屏可聚焦树并水平滚动。",
+    "A token is a run of dashes followed by one complete integer. Read each token’s depth, then use “Attach one node” to inspect the new edge; Back undoes it. L / R mark left / right edges. Indentation means depth, not numerical order. # is a zero-based token ID. On narrow screens, focus the tree to scroll horizontally."
+  ],
+  "tokens": [
+    "手算词元：(0,8), (1,3), (2,6), (1,5)。括号内依次为深度、值。",
+    "Hand tokens: (0,8), (1,3), (2,6), (1,5). Each pair is (depth, value)."
+  ],
+  "hand0": [
+    "还未接入节点。先找没有短横线的 8。",
+    "No nodes attached. Start with 8, which has no dashes."
+  ],
+  "hand1": [
+    "8 深度 0，成为根。",
+    "8 has depth 0 and becomes the root."
+  ],
+  "hand2": [
+    "3 深度 1，只能接到深度 0 的 8。先序先走左边，所以是 8 的左孩子。",
+    "3 has depth 1, so its parent is depth-0 node 8. Preorder visits left first, so attach it on the left."
+  ],
+  "hand3": [
+    "6 深度 2，比 3 深一层，所以接为 3 的左孩子。",
+    "6 has depth 2, one level below 3, so it becomes the left child of 3."
+  ],
+  "hand4": [
+    "5 深度 1，需要深度 0 的父节点 8。6 和 3 的子树都已结束；8 左边已有 3，因此 5 接到右边。",
+    "5 has depth 1 and needs depth-0 parent 8. The subtrees of 6 and 3 have ended. Since 8 already has left child 3, attach 5 on the right."
+  ],
+  "handPrev": [
+    "撤回一个节点",
+    "Undo one node"
+  ],
+  "handNext": [
+    "接入一个节点",
+    "Attach one node"
+  ],
+  "limits": [
+    "官方保证：只有一个孩子时，这个孩子一定在左边。输入来自一棵有效的原树；1–1000 个节点，节点值 1–10⁹，可以重复。没有空树输入。返回根节点对象，示例中的数组只是树的层序表示，不是返回类型。",
+    "Official guarantees: an only child is always the left child. The input encodes a valid original tree with 1–1000 nodes, values 1–10⁹, and possible repeated values. There is no empty-tree input. Return the root object; example arrays describe trees in level order and are not the return type."
+  ],
+  "p2": [
+    "这一步要回答：能否不维护路径，也找到左右子树？把词元切成子树即可。对根 8，后面的 3 深度为 1，开始左子树；6 深度为 2，仍属于 3；下一个深度回到 1 的 5，开始右子树。于是切成 [3,6] 和 [5]。再切 [3,6] 得到根 3 和左子树 [6]；处理完返回后，8 再处理 [5]。",
+    "Can we find the two subtrees without maintaining a path? Split the tokens. After root 8, depth-1 token 3 begins the left subtree. Depth-2 token 6 stays inside it. The next depth-1 token, 5, begins the right subtree. Split into [3,6] and [5]. Splitting [3,6] gives root 3 with left subtree [6]; after that returns, 8 processes [5]."
+  ],
+  "baseline": [
+    "下面是可独立核对的基线。ts 是已解析的 (深度,值) 列表；返回 (值,左树,右树) 三元组，None 表示没有孩子，便于比较结构，并非官方返回对象。空列表终止递归；每次调用都扫描剩余词元寻找右子树起点，并复制子列表。在 n 个节点的单链上，反复扫描 n−1、n−2、… 个词元，扫描与复制均为 O(n²)；先解析还要 O(L)，L 为全部字符数。保留的递归子列表最坏占 O(n²) 空间。",
+    "This independently checkable baseline takes parsed (depth,value) tokens ts. It returns nested (value,left,right) triples, with None for no child, to compare structure; this is not the official return object. Empty lists end recursion. Each call scans the remaining tokens for the right-subtree boundary and copies sublists. A chain of n nodes repeatedly scans n−1, n−2, … tokens, giving O(n²) scanning and copying plus O(L) initial parsing, where L counts all characters. Retained recursive sublists can also occupy O(n²) space."
+  ],
+  "baseSource": [
+    "查看切分基线 Python",
+    "Inspect the splitting baseline in Python"
+  ],
+  "wrongRule": [
+    "为什么不能“接到前一个节点”？在 8-3--6-5 中，5 的前一个节点是 6，但 6 深度 2，不能作深度 1 的 5 的父节点。为什么不能只凭深度随便选左右？若删去“独子在左”保证，8-3 既可能是左孩子，也可能是右孩子，信息不足。",
+    "Why not attach to the previous node? In 8-3--6-5, the previous node is 6 at depth 2, which cannot parent depth-1 node 5. Why not choose either side from depth alone? Without the only-child-is-left guarantee, 8-3 could mean a left child or a right child: the encoding would be ambiguous."
+  ],
+  "bridge": [
+    "重复扫描其实都在问“哪些子树已经结束”。走到 5 时，我们只需把路径 [8,3,6] 尾部的 6、3 移除，剩下 8 就是父节点。已经接好的边仍保留；移除的是候选祖先，不是删除树节点。",
+    "The repeated scans ask which subtrees have ended. At 5, remove 6 and then 3 from the end of path [8,3,6]; the remaining 8 is its parent. Existing edges remain: we remove candidate ancestors, not tree nodes."
+  ],
+  "p3": [
+    "这一步要回答：下一个节点的父节点藏在哪里？栈是只从末尾取出元素的列表。每次接入后，path 栈保存根到最近接入节点的祖先路径，槽位 0、1、2 就是深度。读到深度 depth 后，弹出末尾元素，直到 len(path) = depth；此时栈顶在 depth−1 层，是新节点的父节点。先接空的左边，否则接右边，再把新节点压入路径。",
+    "Where is the next node’s parent? A stack is a list whose elements are removed from its end. After each attachment, path stores the ancestor path from the root to the most recently attached node; slots 0, 1, 2 are depths. After reading depth, pop from the end until len(path) = depth. The top is now at depth−1 and is the new node’s parent. Fill its empty left side, otherwise its right side, then push the new node."
+  ],
+  "formula": [
+    "接入前：len(path) = depth；接入后：len(path) = depth + 1，path[depth] = 新节点。",
+    "Before attachment: len(path) = depth; after attachment: len(path) = depth + 1, path[depth] = new node."
+  ],
+  "preset": [
+    "选择输入（会重启轨迹）",
+    "Input preset (restarts the trace)"
+  ],
+  "sel0": [
+    "手算",
+    "Hand case"
+  ],
+  "sel1": [
+    "官方 1",
+    "Official 1"
+  ],
+  "sel2": [
+    "官方 2",
+    "Official 2"
+  ],
+  "sel3": [
+    "官方 3",
+    "Official 3"
+  ],
+  "sel4": [
+    "单节点",
+    "One node"
+  ],
+  "sel5": [
+    "重复值链",
+    "Equal-value chain"
+  ],
+  "sel6": [
+    "返回三层",
+    "Return three levels"
+  ],
+  "sel7": [
+    "重复值分叉",
+    "Equal-value branches"
+  ],
+  "presetsHelp": [
+    "先用默认输入反复前进、返回，保持输入不变；观察读到 5 后两次弹出，再接到 8。更换输入只重启本轨迹，不清除下方预测。每帧是一项操作完成后的快照，无跳步。",
+    "Keep the default input fixed and step forward/back. Watch the two pops after reading 5, then its attachment to 8. Changing presets restarts only this trace, leaving the prediction below intact. Each frame is after one completed operation, with no skipped operations."
+  ],
+  "input": [
+    "输入 traversal = {s}",
+    "Input traversal = {s}"
+  ],
+  "legend": [
+    "#编号是从 0 开始的词元位置，不是值。当前 = 最近解析的词元；路径内 = 仍在栈中。已接入节点即使被弹出也留在树中。每行标出父节点编号与 L / R；根没有入边。窄屏可聚焦树并水平滚动。",
+    "IDs #0, #1, … are token positions, not values. Current = most recently parsed token; On path = still in the stack. Attached nodes remain in the tree after popping. Each row names its parent ID and L / R edge; the root has no incoming edge. On narrow screens, focus the tree to scroll horizontally."
+  ],
+  "treeTitle": [
+    "已接入的树",
+    "Constructed tree"
+  ],
+  "pathTitle": [
+    "path：根 → 栈顶（括号为深度）",
+    "path: root → top (depth in parentheses)"
+  ],
+  "empty": [
+    "尚无节点",
+    "No nodes yet"
+  ],
+  "emptyPath": [
+    "空路径",
+    "Empty path"
+  ],
+  "current": [
+    "当前",
+    "Current"
+  ],
+  "onPath": [
+    "路径内",
+    "On path"
+  ],
+  "root": [
+    "根",
+    "Root"
+  ],
+  "left": [
+    "左 L",
+    "Left L"
+  ],
+  "right": [
+    "右 R",
+    "Right R"
+  ],
+  "node": [
+    "#{id} · 值 {v} · 深度 {d}",
+    "#{id} · value {v} · depth {d}"
+  ],
+  "parent": [
+    "父 #{p} · {side}",
+    "Parent #{p} · {side}"
+  ],
+  "initial": [
+    "初始：尚未读取任何字符或接入节点。",
+    "Initial: no characters read and no nodes attached."
+  ],
+  "parse": [
+    "解析 #{id}：读出深度 {d}、完整值 {v}。字符游标 i 从 {a} 移到 {b}，尚未改动树或路径。",
+    "Parse #{id}: read depth {d} and complete value {v}. Character cursor i moves from {a} to {b}; tree and path are unchanged."
+  ],
+  "pop": [
+    "弹出 #{p}：它的深度 ≥ 当前深度 {d}，不可能作父节点。只缩短 path，保留已建的边。",
+    "Pop #{p}: its depth is ≥ current depth {d}, so it cannot be the parent. Shorten path while preserving every constructed edge."
+  ],
+  "attach": [
+    "接入 #{id}（值 {v}）：{where}。随后压入 path，长度变为 {n}。",
+    "Attach #{id} (value {v}): {where}. Then push it onto path, whose length becomes {n}."
+  ],
+  "atParent": [
+    "父节点 #{p} 的{side}",
+    "{side} child of parent #{p}"
+  ],
+  "progress": [
+    "操作 {i}/{total} · 已读字符 {c}/{L} · 已接入 {n}/{N} 个节点{end}",
+    "Operation {i}/{total} · characters read {c}/{L} · nodes attached {n}/{N}{end}"
+  ],
+  "terminal": [
+    " · 已完成，可返回根 #0",
+    " · complete; return root #0"
+  ],
+  "backStep": [
+    "撤回一项操作",
+    "Undo one operation"
+  ],
+  "next": [
+    "执行下一项操作",
+    "Perform next operation"
+  ],
+  "reset": [
+    "重置轨迹",
+    "Reset trace"
+  ],
+  "end": [
+    "跳到完整树",
+    "Go to complete tree"
+  ],
+  "ledgerTitle": [
+    "已完成操作记录",
+    "Completed operation history"
+  ],
+  "logParse": [
+    "解析 #{id}：深度 {d}，值 {v}",
+    "Parse #{id}: depth {d}, value {v}"
+  ],
+  "logPop": [
+    "从 path 弹出 #{id}（边保留）",
+    "Pop #{id} from path (keep edges)"
+  ],
+  "logAttach": [
+    "接入 #{id}：{where}",
+    "Attach #{id}: {where}"
+  ],
+  "noHistory": [
+    "尚无操作",
+    "No operations yet"
+  ],
+  "simulation": [
+    "这是 JavaScript 教学模拟，不执行下方 Python 提交。预设最多 7 个节点，完整保留所有操作；每帧深复制树、路径和记录，因此快照总空间为 O(n²)，不同于提交的辅助空间。",
+    "This JavaScript teaching simulation does not execute the Python submission below. Presets contain at most 7 nodes and retain every operation. Deep copies of tree, path and history use O(n²) total snapshot space, distinct from submission auxiliary space."
+  ],
+  "invariant": [
+    "为什么规则成立？不变量是每次接入后，path 恰好为从根到新节点的路径，槽位等于深度。起初空路径接入深度 0 的根，成立。假设上一次成立：新节点若更深，只可能比上一次深 1 层，栈顶就是父节点；若同深或更浅，先序已离开被弹出节点的子树，它们都不再是祖先。弹到长度 depth 后，恰好留下父节点及其祖先。左子树先出现，故空左边时必须接左；否则在有效输入下接右。压入新节点恢复不变量。全部词元处理完时，所有节点及其唯一父边已接好，path[0] 仍是根。",
+    "Why does the rule work? The invariant is that after every attachment, path is exactly the root-to-new-node path, with slot equal to depth. An empty path receives the depth-0 root, establishing it. Assume it held previously. A deeper next node can be only one level deeper, so the old top is its parent. At the same or a shallower depth, preorder has left the popped nodes’ subtrees; they are no longer ancestors. Popping to length depth leaves exactly the parent and its ancestors. The left subtree appears first, so an empty left side must be filled first; otherwise a valid input requires the right side. Pushing the new node restores the invariant. At the end all nodes and their unique parent edges have been built, and path[0] is still the root."
+  ],
+  "p4": [
+    "这一步要回答：在新输入 7-4--2---1--9 中，解析 9 后怎样接入？此前 path 的值为 [7,4,2,1]（槽位即深度，栈顶在右边）。path 是根到最近接入节点的路径；9 的两个短横线表示深度 2。保持这组输入，选出弹出的值及接入位置，再揭晓。",
+    "For the fresh input 7-4--2---1--9, how should we attach 9 after parsing it? Before that token, path values are [7,4,2,1] (slots are depths; the top is on the right). path is the root-to-last-attached-node path. The two dashes before 9 mean depth 2. Keep this input fixed, choose the popped values and attachment, then reveal."
+  ],
+  "choose": [
+    "选择下一步操作",
+    "Choose the next operations"
+  ],
+  "opt0": [
+    "A · 只弹出 1；9 接为 2 的右孩子",
+    "A · Pop only 1; attach 9 as the right child of 2"
+  ],
+  "opt1": [
+    "B · 依次弹出 1、2；9 接为 4 的右孩子",
+    "B · Pop 1, then 2; attach 9 as the right child of 4"
+  ],
+  "opt2": [
+    "C · 弹出 1、2、4；9 接为 7 的右孩子",
+    "C · Pop 1, 2, 4; attach 9 as the right child of 7"
+  ],
+  "reveal": [
+    "揭晓并解释",
+    "Reveal and explain"
+  ],
+  "correct": [
+    "正确。",
+    "Correct."
+  ],
+  "wrong0": [
+    "A 少弹出一层：2 的深度是 2，它的孩子应在深度 3。",
+    "A pops one level too few: 2 is at depth 2, so its child would be at depth 3."
+  ],
+  "wrong2": [
+    "C 多弹出一层：7 在深度 0，它的孩子应在深度 1。",
+    "C pops one level too many: 7 is at depth 0, so its child would be at depth 1."
+  ],
+  "answer": [
+    "9 深度 2，所以接入前路径长度必须为 2。弹出 1、2 后剩 [7,4]，4 的左孩子已是 2，所以 9 在右边；接入后 path = [7,4,9]。从路径弹出 2 不会删除 4→2 或 2→1 的边。",
+    "9 has depth 2, so path must have length 2 before attachment. Pop 1 and 2 to leave [7,4]. Node 4 already has left child 2, so 9 goes on its right; afterward path = [7,4,9]. Popping 2 does not delete edges 4→2 or 2→1."
+  ],
+  "p5": [
+    "这一步要回答：怎样把路径规则写成官方 Python 提交？TreeNode 由评测环境提供，含 val、left、right；返回它的根对象。path 是节点对象列表，path[-1] 取末尾；pop() 移除末尾，append(node) 追加新节点。输入字符串不变，创建的新节点逐个连成树。",
+    "How does the path rule become an official Python submission? The judge supplies TreeNode with val, left and right fields; return its root object. path is a list of node objects; path[-1] reads the last element, pop() removes it, and append(node) adds the new node. The input string remains unchanged while newly created nodes are linked into a tree."
+  ],
+  "mapping": [
+    "代码映射：i 是从 0 开始的字符游标。第一个内层循环数短横线得到 depth；第二个读取整个十进制整数，value = value*10 + digit，例如 4→40→401。弹出循环对应模拟中的每个“弹出”帧，后面的 left/right 赋值及 append 对应“接入”帧。解析 5 时路径 [8,3,6] 长度 3 > 1，连续 pop 两次后把它接到 8.right。",
+    "Code mapping: i is a zero-based character cursor. The first inner loop counts dashes into depth; the second reads the whole decimal integer using value = value*10 + digit, for example 4→40→401. The pop loop corresponds to the simulation’s pop frames; the left/right assignment and append correspond to an attach frame. On parsing 5, path [8,3,6] has length 3 > 1, so two pops leave 8, then assign 8.right."
+  ],
+  "costs": [
+    "令 L 为输入字符数（包括每一条短横线），n 为节点数，h 为最长根到节点路径的节点数。字符只扫描一次；每节点压入一次、最多弹出一次，故时间 O(L+n)=O(L)，辅助空间 O(h)，另有 O(n) 返回树。不要写 O(n) 时间：1000 节点的单链会含 0+1+…+999 条短横线。数值最多 10⁹，整数运算在本题范围内视为常数。",
+    "Let L count input characters including every dash, n count nodes, and h count nodes on the longest root-to-node path. Scan characters once; each node is pushed once and popped at most once. Time is O(L+n)=O(L), auxiliary space O(h), plus O(n) for the returned tree. Calling this O(n) time loses the dashes: a 1000-node chain contains 0+1+…+999 dashes. Values are at most 10⁹, so integer operations are treated as constant cost here."
+  ],
+  "boundaries": [
+    "边界：单节点时路径保留根，直接返回；连续变深时不弹出；同深时先弹出旧兄弟；一次回退多层需 while 而不是 if。多位数必须完整读完；重复值用不同对象，不可按值合并。有效输入不会跳过深度或出现第三个孩子。本提交只处理官方有效输入，无额外的畸形输入修复。",
+    "Boundaries: a single node stays as the root; descending adds without popping; equal depth first pops the previous sibling; returning several levels needs while, not if. Read every digit of multi-digit values. Equal values are distinct objects and must not be merged. Valid inputs never skip a depth or give a third child. This submission handles the official valid-input contract, without repairing malformed encodings."
+  ],
+  "source": [
+    "查看完整 Python 提交",
+    "Inspect the full Python submission"
+  ],
+  "copy": [
+    "复制 Python",
+    "Copy Python"
+  ],
+  "download": [
+    "下载 solution.py",
+    "Download solution.py"
+  ],
+  "copied": [
+    "已复制完整 Python 源码。",
+    "Full Python source copied."
+  ],
+  "manual": [
+    "自动复制不可用。源码已选中，请按系统复制快捷键。",
+    "Automatic copying is unavailable. The source is selected; use your system copy shortcut."
+  ],
+  "manualLabel": [
+    "完整源码（只读，可手动复制）",
+    "Full source (read-only; copy manually)"
+  ],
+  "related": [
+    "继续学习",
+    "Continue learning"
+  ],
+  "link1": [
+    "本课：重看返回时为何保留树边",
+    "This lesson: why popping preserves tree edges"
+  ],
+  "link2": [
+    "树的序列化：用空标记记录结构",
+    "Tree serialization: encode structure with null markers"
+  ],
+  "link3": [
+    "竖直遍历：用坐标描述树中位置",
+    "Vertical traversal: describe tree positions with coordinates"
+  ]
+};

@@ -1,0 +1,1615 @@
+{
+  "kind": "author self-check; independent review pending",
+  "host": "linux",
+  "version": "156.0.8078.4",
+  "presets": [
+    {
+      "lang": "en",
+      "p": 0,
+      "operations": 10,
+      "nodes": [
+        "#0 · value 8 · depth 0RootOn path",
+        "#1 · value 3 · depth 1Parent #0 · Left L",
+        "#2 · value 6 · depth 2Parent #1 · Left L",
+        "#3 · value 5 · depth 1Parent #0 · Right ROn pathCurrent"
+      ],
+      "final": "Operation 10/10 · characters read 8/8 · nodes attached 4/4 · complete; return root #0"
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "operations": 18,
+      "nodes": [
+        "#0 · value 1 · depth 0RootOn path",
+        "#1 · value 2 · depth 1Parent #0 · Left L",
+        "#2 · value 3 · depth 2Parent #1 · Left L",
+        "#3 · value 4 · depth 2Parent #1 · Right R",
+        "#4 · value 5 · depth 1Parent #0 · Right ROn path",
+        "#5 · value 6 · depth 2Parent #4 · Left L",
+        "#6 · value 7 · depth 2Parent #4 · Right ROn pathCurrent"
+      ],
+      "final": "Operation 18/18 · characters read 17/17 · nodes attached 7/7 · complete; return root #0"
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "operations": 17,
+      "nodes": [
+        "#0 · value 1 · depth 0RootOn path",
+        "#1 · value 2 · depth 1Parent #0 · Left L",
+        "#2 · value 3 · depth 2Parent #1 · Left L",
+        "#3 · value 4 · depth 3Parent #2 · Left L",
+        "#4 · value 5 · depth 1Parent #0 · Right ROn path",
+        "#5 · value 6 · depth 2Parent #4 · Left LOn path",
+        "#6 · value 7 · depth 3Parent #5 · Left LOn pathCurrent"
+      ],
+      "final": "Operation 17/17 · characters read 19/19 · nodes attached 7/7 · complete; return root #0"
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "operations": 12,
+      "nodes": [
+        "#0 · value 1 · depth 0RootOn path",
+        "#1 · value 401 · depth 1Parent #0 · Left LOn path",
+        "#2 · value 349 · depth 2Parent #1 · Left L",
+        "#3 · value 90 · depth 3Parent #2 · Left L",
+        "#4 · value 88 · depth 2Parent #1 · Right ROn pathCurrent"
+      ],
+      "final": "Operation 12/12 · characters read 19/19 · nodes attached 5/5 · complete; return root #0"
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "operations": 2,
+      "nodes": [
+        "#0 · value 1000000000 · depth 0RootOn pathCurrent"
+      ],
+      "final": "Operation 2/2 · characters read 10/10 · nodes attached 1/1 · complete; return root #0"
+    },
+    {
+      "lang": "en",
+      "p": 5,
+      "operations": 8,
+      "nodes": [
+        "#0 · value 2 · depth 0RootOn path",
+        "#1 · value 2 · depth 1Parent #0 · Left LOn path",
+        "#2 · value 2 · depth 2Parent #1 · Left LOn path",
+        "#3 · value 2 · depth 3Parent #2 · Left LOn pathCurrent"
+      ],
+      "final": "Operation 8/8 · characters read 10/10 · nodes attached 4/4 · complete; return root #0"
+    },
+    {
+      "lang": "en",
+      "p": 6,
+      "operations": 13,
+      "nodes": [
+        "#0 · value 8 · depth 0RootOn path",
+        "#1 · value 3 · depth 1Parent #0 · Left L",
+        "#2 · value 6 · depth 2Parent #1 · Left L",
+        "#3 · value 2 · depth 3Parent #2 · Left L",
+        "#4 · value 5 · depth 1Parent #0 · Right ROn pathCurrent"
+      ],
+      "final": "Operation 13/13 · characters read 12/12 · nodes attached 5/5 · complete; return root #0"
+    },
+    {
+      "lang": "en",
+      "p": 7,
+      "operations": 13,
+      "nodes": [
+        "#0 · value 9 · depth 0RootOn path",
+        "#1 · value 4 · depth 1Parent #0 · Left L",
+        "#2 · value 1 · depth 2Parent #1 · Left L",
+        "#3 · value 4 · depth 2Parent #1 · Right R",
+        "#4 · value 4 · depth 1Parent #0 · Right ROn pathCurrent"
+      ],
+      "final": "Operation 13/13 · characters read 11/11 · nodes attached 5/5 · complete; return root #0"
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "operations": 10,
+      "nodes": [
+        "#0 · 值 8 · 深度 0根路径内",
+        "#1 · 值 3 · 深度 1父 #0 · 左 L",
+        "#2 · 值 6 · 深度 2父 #1 · 左 L",
+        "#3 · 值 5 · 深度 1父 #0 · 右 R路径内当前"
+      ],
+      "final": "操作 10/10 · 已读字符 8/8 · 已接入 4/4 个节点 · 已完成，可返回根 #0"
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "operations": 18,
+      "nodes": [
+        "#0 · 值 1 · 深度 0根路径内",
+        "#1 · 值 2 · 深度 1父 #0 · 左 L",
+        "#2 · 值 3 · 深度 2父 #1 · 左 L",
+        "#3 · 值 4 · 深度 2父 #1 · 右 R",
+        "#4 · 值 5 · 深度 1父 #0 · 右 R路径内",
+        "#5 · 值 6 · 深度 2父 #4 · 左 L",
+        "#6 · 值 7 · 深度 2父 #4 · 右 R路径内当前"
+      ],
+      "final": "操作 18/18 · 已读字符 17/17 · 已接入 7/7 个节点 · 已完成，可返回根 #0"
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "operations": 17,
+      "nodes": [
+        "#0 · 值 1 · 深度 0根路径内",
+        "#1 · 值 2 · 深度 1父 #0 · 左 L",
+        "#2 · 值 3 · 深度 2父 #1 · 左 L",
+        "#3 · 值 4 · 深度 3父 #2 · 左 L",
+        "#4 · 值 5 · 深度 1父 #0 · 右 R路径内",
+        "#5 · 值 6 · 深度 2父 #4 · 左 L路径内",
+        "#6 · 值 7 · 深度 3父 #5 · 左 L路径内当前"
+      ],
+      "final": "操作 17/17 · 已读字符 19/19 · 已接入 7/7 个节点 · 已完成，可返回根 #0"
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "operations": 12,
+      "nodes": [
+        "#0 · 值 1 · 深度 0根路径内",
+        "#1 · 值 401 · 深度 1父 #0 · 左 L路径内",
+        "#2 · 值 349 · 深度 2父 #1 · 左 L",
+        "#3 · 值 90 · 深度 3父 #2 · 左 L",
+        "#4 · 值 88 · 深度 2父 #1 · 右 R路径内当前"
+      ],
+      "final": "操作 12/12 · 已读字符 19/19 · 已接入 5/5 个节点 · 已完成，可返回根 #0"
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "operations": 2,
+      "nodes": [
+        "#0 · 值 1000000000 · 深度 0根路径内当前"
+      ],
+      "final": "操作 2/2 · 已读字符 10/10 · 已接入 1/1 个节点 · 已完成，可返回根 #0"
+    },
+    {
+      "lang": "zh",
+      "p": 5,
+      "operations": 8,
+      "nodes": [
+        "#0 · 值 2 · 深度 0根路径内",
+        "#1 · 值 2 · 深度 1父 #0 · 左 L路径内",
+        "#2 · 值 2 · 深度 2父 #1 · 左 L路径内",
+        "#3 · 值 2 · 深度 3父 #2 · 左 L路径内当前"
+      ],
+      "final": "操作 8/8 · 已读字符 10/10 · 已接入 4/4 个节点 · 已完成，可返回根 #0"
+    },
+    {
+      "lang": "zh",
+      "p": 6,
+      "operations": 13,
+      "nodes": [
+        "#0 · 值 8 · 深度 0根路径内",
+        "#1 · 值 3 · 深度 1父 #0 · 左 L",
+        "#2 · 值 6 · 深度 2父 #1 · 左 L",
+        "#3 · 值 2 · 深度 3父 #2 · 左 L",
+        "#4 · 值 5 · 深度 1父 #0 · 右 R路径内当前"
+      ],
+      "final": "操作 13/13 · 已读字符 12/12 · 已接入 5/5 个节点 · 已完成，可返回根 #0"
+    },
+    {
+      "lang": "zh",
+      "p": 7,
+      "operations": 13,
+      "nodes": [
+        "#0 · 值 9 · 深度 0根路径内",
+        "#1 · 值 4 · 深度 1父 #0 · 左 L",
+        "#2 · 值 1 · 深度 2父 #1 · 左 L",
+        "#3 · 值 4 · 深度 2父 #1 · 右 R",
+        "#4 · 值 4 · 深度 1父 #0 · 右 R路径内当前"
+      ],
+      "final": "操作 13/13 · 已读字符 11/11 · 已接入 5/5 个节点 · 已完成，可返回根 #0"
+    }
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "finalTiny": "#0 · value 8 · depth 0RootOn path#1 · value 3 · depth 1Parent #0 · Left L#2 · value 6 · depth 2Parent #1 · Left L#3 · value 5 · depth 1Parent #0 · Right ROn pathCurrent",
+      "formula": "Before attachment: len(path) = depth; after attachment: len(path) = depth + 1, path[depth] = new node."
+    },
+    {
+      "lang": "en",
+      "opt": 0,
+      "feedback": "A pops one level too few: 2 is at depth 2, so its child would be at depth 3. 9 has depth 2, so path must have length 2 before attachment. Pop 1 and 2 to leave [7,4]. Node 4 already has left child 2, so 9 goes on its right; afterward path = [7,4,9]. Popping 2 does not delete edges 4→2 or 2→1."
+    },
+    {
+      "lang": "en",
+      "opt": 1,
+      "feedback": "Correct. 9 has depth 2, so path must have length 2 before attachment. Pop 1 and 2 to leave [7,4]. Node 4 already has left child 2, so 9 goes on its right; afterward path = [7,4,9]. Popping 2 does not delete edges 4→2 or 2→1."
+    },
+    {
+      "lang": "en",
+      "opt": 2,
+      "feedback": "C pops one level too many: 7 is at depth 0, so its child would be at depth 1. 9 has depth 2, so path must have length 2 before attachment. Pop 1 and 2 to leave [7,4]. Node 4 already has left child 2, so 9 goes on its right; afterward path = [7,4,9]. Popping 2 does not delete edges 4→2 or 2→1."
+    },
+    {
+      "lang": "zh",
+      "finalTiny": "#0 · 值 8 · 深度 0根路径内#1 · 值 3 · 深度 1父 #0 · 左 L#2 · 值 6 · 深度 2父 #1 · 左 L#3 · 值 5 · 深度 1父 #0 · 右 R路径内当前",
+      "formula": "接入前：len(path) = depth；接入后：len(path) = depth + 1，path[depth] = 新节点。"
+    },
+    {
+      "lang": "zh",
+      "opt": 0,
+      "feedback": "A 少弹出一层：2 的深度是 2，它的孩子应在深度 3。 9 深度 2，所以接入前路径长度必须为 2。弹出 1、2 后剩 [7,4]，4 的左孩子已是 2，所以 9 在右边；接入后 path = [7,4,9]。从路径弹出 2 不会删除 4→2 或 2→1 的边。"
+    },
+    {
+      "lang": "zh",
+      "opt": 1,
+      "feedback": "正确。 9 深度 2，所以接入前路径长度必须为 2。弹出 1、2 后剩 [7,4]，4 的左孩子已是 2，所以 9 在右边；接入后 path = [7,4,9]。从路径弹出 2 不会删除 4→2 或 2→1 的边。"
+    },
+    {
+      "lang": "zh",
+      "opt": 2,
+      "feedback": "C 多弹出一层：7 在深度 0，它的孩子应在深度 1。 9 深度 2，所以接入前路径长度必须为 2。弹出 1、2 后剩 [7,4]，4 的左孩子已是 2，所以 9 在右边；接入后 path = [7,4,9]。从路径弹出 2 不会删除 4→2 或 2→1 的边。"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 320,
+      "view": 320,
+      "cards": [
+        {
+          "w": 236,
+          "sw": 236
+        },
+        {
+          "w": 219,
+          "sw": 219
+        },
+        {
+          "w": 202,
+          "sw": 202
+        },
+        {
+          "w": 185,
+          "sw": 185
+        },
+        {
+          "w": 200,
+          "sw": 200
+        }
+      ],
+      "controls": [
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 262,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 320,
+      "view": 320,
+      "cards": [
+        {
+          "w": 222,
+          "sw": 222
+        },
+        {
+          "w": 205,
+          "sw": 205
+        },
+        {
+          "w": 188,
+          "sw": 188
+        },
+        {
+          "w": 171,
+          "sw": 171
+        },
+        {
+          "w": 186,
+          "sw": 186
+        }
+      ],
+      "controls": [
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 204
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 204
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 148
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 102,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 390,
+      "view": 390,
+      "cards": [
+        {
+          "w": 306,
+          "sw": 306
+        },
+        {
+          "w": 289,
+          "sw": 289
+        },
+        {
+          "w": 272,
+          "sw": 272
+        },
+        {
+          "w": 255,
+          "sw": 255
+        },
+        {
+          "w": 270,
+          "sw": 270
+        }
+      ],
+      "controls": [
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 332,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 390,
+      "view": 390,
+      "cards": [
+        {
+          "w": 222,
+          "sw": 222
+        },
+        {
+          "w": 205,
+          "sw": 205
+        },
+        {
+          "w": 188,
+          "sw": 188
+        },
+        {
+          "w": 171,
+          "sw": 171
+        },
+        {
+          "w": 186,
+          "sw": 186
+        }
+      ],
+      "controls": [
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 148
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 137,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 736,
+      "view": 736,
+      "cards": [
+        {
+          "w": 636,
+          "sw": 636
+        },
+        {
+          "w": 619,
+          "sw": 619
+        },
+        {
+          "w": 602,
+          "sw": 602
+        },
+        {
+          "w": 585,
+          "sw": 585
+        },
+        {
+          "w": 600,
+          "sw": 600
+        }
+      ],
+      "controls": [
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 360,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 736,
+      "view": 736,
+      "cards": [
+        {
+          "w": 268,
+          "sw": 268
+        },
+        {
+          "w": 251,
+          "sw": 251
+        },
+        {
+          "w": 234,
+          "sw": 234
+        },
+        {
+          "w": 217,
+          "sw": 217
+        },
+        {
+          "w": 232,
+          "sw": 232
+        }
+      ],
+      "controls": [
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 278,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 1440,
+      "view": 1440,
+      "cards": [
+        {
+          "w": 900,
+          "sw": 900
+        },
+        {
+          "w": 883,
+          "sw": 883
+        },
+        {
+          "w": 866,
+          "sw": 866
+        },
+        {
+          "w": 849,
+          "sw": 849
+        },
+        {
+          "w": 864,
+          "sw": 864
+        }
+      ],
+      "controls": [
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 360,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 1440,
+      "view": 1440,
+      "cards": [
+        {
+          "w": 620,
+          "sw": 620
+        },
+        {
+          "w": 603,
+          "sw": 603
+        },
+        {
+          "w": 586,
+          "sw": 586
+        },
+        {
+          "w": 569,
+          "sw": 569
+        },
+        {
+          "w": 584,
+          "sw": 584
+        }
+      ],
+      "controls": [
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 360,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 320,
+      "view": 320,
+      "cards": [
+        {
+          "w": 236,
+          "sw": 236
+        },
+        {
+          "w": 219,
+          "sw": 219
+        },
+        {
+          "w": 202,
+          "sw": 202
+        },
+        {
+          "w": 185,
+          "sw": 185
+        },
+        {
+          "w": 200,
+          "sw": 200
+        }
+      ],
+      "controls": [
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 262,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 320,
+      "view": 320,
+      "cards": [
+        {
+          "w": 222,
+          "sw": 222
+        },
+        {
+          "w": 205,
+          "sw": 205
+        },
+        {
+          "w": 188,
+          "sw": 188
+        },
+        {
+          "w": 171,
+          "sw": 171
+        },
+        {
+          "w": 186,
+          "sw": 186
+        }
+      ],
+      "controls": [
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 148
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 102,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 390,
+      "view": 390,
+      "cards": [
+        {
+          "w": 306,
+          "sw": 306
+        },
+        {
+          "w": 289,
+          "sw": 289
+        },
+        {
+          "w": 272,
+          "sw": 272
+        },
+        {
+          "w": 255,
+          "sw": 255
+        },
+        {
+          "w": 270,
+          "sw": 270
+        }
+      ],
+      "controls": [
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 332,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 390,
+      "view": 390,
+      "cards": [
+        {
+          "w": 222,
+          "sw": 222
+        },
+        {
+          "w": 205,
+          "sw": 205
+        },
+        {
+          "w": 188,
+          "sw": 188
+        },
+        {
+          "w": 171,
+          "sw": 171
+        },
+        {
+          "w": 186,
+          "sw": 186
+        }
+      ],
+      "controls": [
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 148
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 137,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 736,
+      "view": 736,
+      "cards": [
+        {
+          "w": 636,
+          "sw": 636
+        },
+        {
+          "w": 619,
+          "sw": 619
+        },
+        {
+          "w": 602,
+          "sw": 602
+        },
+        {
+          "w": 585,
+          "sw": 585
+        },
+        {
+          "w": 600,
+          "sw": 600
+        }
+      ],
+      "controls": [
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 360,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 736,
+      "view": 736,
+      "cards": [
+        {
+          "w": 268,
+          "sw": 268
+        },
+        {
+          "w": 251,
+          "sw": 251
+        },
+        {
+          "w": 234,
+          "sw": 234
+        },
+        {
+          "w": 217,
+          "sw": 217
+        },
+        {
+          "w": 232,
+          "sw": 232
+        }
+      ],
+      "controls": [
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 278,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 1440,
+      "view": 1440,
+      "cards": [
+        {
+          "w": 900,
+          "sw": 900
+        },
+        {
+          "w": 883,
+          "sw": 883
+        },
+        {
+          "w": 866,
+          "sw": 866
+        },
+        {
+          "w": 849,
+          "sw": 849
+        },
+        {
+          "w": 864,
+          "sw": 864
+        }
+      ],
+      "controls": [
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        },
+        {
+          "h": 48
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 360,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "zoomMethod": "CSS content zoom (reflow)",
+      "page": 1440,
+      "view": 1440,
+      "cards": [
+        {
+          "w": 620,
+          "sw": 620
+        },
+        {
+          "w": 603,
+          "sw": 603
+        },
+        {
+          "w": 586,
+          "sw": 586
+        },
+        {
+          "w": 569,
+          "sw": 569
+        },
+        {
+          "w": 584,
+          "sw": 584
+        }
+      ],
+      "controls": [
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        },
+        {
+          "h": 96
+        }
+      ],
+      "select": {
+        "label": "D",
+        "width": 360,
+        "text": 11.680023193359375,
+        "padding": 30,
+        "arrowReserve": 24,
+        "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+        "fontStack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "en",
+      "sentinelResetVerified": true,
+      "nativeCopy": true,
+      "fallbackShortcut": "Control+C",
+      "exactSource": true
+    },
+    {
+      "lang": "zh",
+      "sentinelResetVerified": true,
+      "nativeCopy": true,
+      "fallbackShortcut": "Control+C",
+      "exactSource": true
+    }
+  ],
+  "contrast": [
+    {
+      "sel": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "sel": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "sel": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": "button:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "sel": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "sel": ".tree-card .identity",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "sel": ".tree-card .membership",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 10.910104011097095
+    },
+    {
+      "sel": ".step-nav a",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "sel": ".token.current small",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "role": "focus",
+      "fg": "rgb(255,180,84)",
+      "bg": "rgb(13,17,23)",
+      "ratio": 10.731637051347173
+    },
+    {
+      "role": "focus",
+      "fg": "rgb(255,180,84)",
+      "bg": "rgb(22,27,34)",
+      "ratio": 9.809435643476732
+    },
+    {
+      "role": "focus",
+      "fg": "rgb(255,180,84)",
+      "bg": "rgb(28,35,48)",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "links": [
+    "#step1",
+    "#step2",
+    "#step3",
+    "#step4",
+    "#step5",
+    "#step3",
+    "../297/#step1",
+    "../987/#step1",
+    {
+      "lang": "zh",
+      "label": "树的序列化：用空标记记录结构",
+      "href": "../297/#step1",
+      "observed": "0202 逐 token 解码解码从串的左端开始。读到数字就创建节点；读到 # 就返回空子树。创建数字后，必须先完整读完左子树，再读右子树。cursor 是下一个未读 token 的下标。每一步只消费一个 token，账本显示“读前 → 读后”。示例树[1,2,3,null,null,4,5]只有根 [8]空树 []左链 [1,2,null,null]负值 [-1,0,2]自定义串应用 token 串上一步下一 token重置已消费 0/11 个 token按“下一 token”观察每个 token 如何落到树上。Token 串12##34##5##当前递归结果∅递归账本"
+    },
+    {
+      "lang": "zh",
+      "label": "竖直遍历：用坐标描述树中位置",
+      "href": "../987/#step1",
+      "observed": "1 · 三个节点落在哪一列？给定二叉树（每个节点最多有左、右两个孩子），求按列排列的节点值列表。以根节点 8 为起点：行 row 是向下走的边数，列 col 是向右一步加 1、向左一步减 1 的总和。根是 (0,0)，左孩子 4 是 (1,−1)，右孩子 6 是 (1,1)。    8 (0,0)\n   / \\\n  4   6\n(1,−1) (1,1)列 −1 → [4]；列 0 → [8]；列 1 → [6]。从最左列读起，得到 [[4],[8],[6]]。列里存的是值，不是坐标，也不补空位。官方范围：1–1000 个节点，节点值 0–1000。每列先按行从小到大；只有同一行、同一列的节点才按值从小到大。重复值必须保留。"
+    },
+    {
+      "lang": "en",
+      "label": "Tree serialization: encode structure with null markers",
+      "href": "../297/#step1",
+      "observed": "0202 Decode one tokenDecoding starts at the left edge. A number creates a node; # returns an empty subtree. After a number, consume the complete left subtree before the right subtree.The cursor is the index of the next unread token. Each step consumes one token; the ledger shows before → after.Tree preset[1,2,3,null,null,4,5]Root only [8]Empty []Left chain [1,2,null,null]Negative values [-1,0,2]Custom stringApply tokensPreviousNext tokenResetConsumed 0/11 tokensPress “Next token” to see where each token lands.Token string12##34##5##Current recursive result∅Recursive ledger"
+    },
+    {
+      "lang": "en",
+      "label": "Vertical traversal: describe tree positions with coordinates",
+      "href": "../987/#step1",
+      "observed": "1 · Which column holds each of three nodes?Given a binary tree (each node has at most a left and a right child), return lists of node values grouped by column. Start at root 8: row counts edges downward; col adds 1 for each right edge and subtracts 1 for each left edge. The root is (0,0), its left child 4 is (1,−1), and its right child 6 is (1,1).    8 (0,0)\n   / \\\n  4   6\n(1,−1) (1,1)Column −1 → [4]; column 0 → [8]; column 1 → [6]. Read from the leftmost column: [[4],[8],[6]]. Lists contain values, not coordinates, and contain no empty placeholders.Official bounds: 1–1000 nodes, values 0–1000. Within each column, rows increase first; only nodes sharing both row and column are ordered by value. Keep repeated values."
+    }
+  ],
+  "errors": [],
+  "assets": [],
+  "external": [],
+  "cssBytes": 11953
+}
