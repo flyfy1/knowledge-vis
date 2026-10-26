@@ -4065,6 +4065,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²L² + n²2ⁿ) time; O(n2ⁿ + n² + nL) auxiliary space, where L is maximum word length"
   },
   {
+    "id": 952,
+    "title": {
+      "zh": "按公因数计算最大组件大小",
+      "en": "Largest Component Size by Common Factor"
+    },
+    "desc": {
+      "zh": "从公因数链推导质因数代表与并查集。",
+      "en": "Derive prime representatives and union-find from a chain of common factors."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "并查集",
+        "en": "Union-find"
+      },
+      {
+        "zh": "质因数分解",
+        "en": "Prime factorization"
+      }
+    ],
+    "path": "952/",
+    "leetcodeUrl": "https://leetcode.com/problems/largest-component-size-by-common-factor/",
+    "language": "Python",
+    "complexity": "O(n sqrt(M) + n log(M) α(n)) time; O(n + M) space"
+  },
+  {
     "id": 956,
     "title": {
       "zh": "最高的广告牌",
