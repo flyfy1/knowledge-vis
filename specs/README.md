@@ -6,6 +6,8 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Galaxy to signal-route connector](galaxy-signal-connector.md): data-derived station links, retained direct lessons, validated locale hints and camera/reading-context Back behavior.
+
 - [Signal-fingerprint learning route](atlas-signal-path.md): sourced convolution/frequency relation, current-station experiment tasks, truthful cross-course examples and existing Atlas context recovery.
 
 - [LTI step2 audible comparison](../lti/BRIEF.md): same-model input/output audition, honest discrete-time mapping, fixed gain, lifecycle and accessible silent fallback.

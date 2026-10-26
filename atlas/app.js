@@ -29,12 +29,13 @@
   let invalid = false, state;
   function readState() {
     const p = new URLSearchParams(location.search), id=p.get('node') || 'fourier';
+    if(['zh','en'].includes(p.get('lang')))lang=p.get('lang');
     invalid = !byId.has(id);
     return {node:byId.has(id)?id:'fourier',q:(p.get('q')||'').slice(0,160),group:D.groups.some(g=>g.id===p.get('group'))?p.get('group'):'all',trail:D.trails.some(r=>r.id===p.get('trail'))?p.get('trail'):'',view:['graph','list'].includes(p.get('view'))?p.get('view'):(matchMedia('(max-width:700px)').matches?'list':'graph')};
   }
   state=readState();
   function save(push=false) {
-    const u=new URL(location.href);u.search='';u.searchParams.set('node',state.node);u.searchParams.set('view',state.view);
+    const u=new URL(location.href),keepLang=['zh','en'].includes(u.searchParams.get('lang'));u.search='';if(keepLang)u.searchParams.set('lang',lang);u.searchParams.set('node',state.node);u.searchParams.set('view',state.view);
     for(const key of ['q','trail'])if(state[key])u.searchParams.set(key,state[key]);
     if(state.group!=='all')u.searchParams.set('group',state.group);
     try {history[push?'pushState':'replaceState']({...historyFields(),atlasStartingIdeas:helpSnapshot()},'',u);}catch(_){}
@@ -222,7 +223,7 @@
       const g=svg('g',{class:'edge-number',transform:`translate(${mx},${my})`});g.append(svg('circle',{r:10}));const label=svg('text',{});label.textContent=i+1;g.append(label);root.append(g);
     });
   }
-  document.querySelectorAll('[data-lang]').forEach(e=>e.addEventListener('click',()=>{lang=e.dataset.lang;try{localStorage.setItem('knowledge-lang',lang);}catch(_){}render();}));
+  document.querySelectorAll('[data-lang]').forEach(e=>e.addEventListener('click',()=>{lang=e.dataset.lang;try{localStorage.setItem('knowledge-lang',lang);}catch(_){}if(['zh','en'].includes(new URLSearchParams(location.search).get('lang')))save();render();}));
   document.querySelectorAll('[data-view]').forEach(e=>e.addEventListener('click',()=>{state.view=e.dataset.view;save();render();}));
   $('search').addEventListener('input',()=>{state.q=$('search').value;state.view='list';save();render();});
   $('group').addEventListener('change',()=>{state.group=$('group').value;state.view='list';save();render();});
@@ -231,4 +232,5 @@
   addEventListener('resize',()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(drawEdges);});
   if(typeof ResizeObserver!=='undefined')new ResizeObserver(()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(drawEdges);}).observe($('map'));
   restoreStartingIdeas();render();
+  if(location.hash==='#route-task-title'&&$('route-task-title'))focusExperiment();
 })();

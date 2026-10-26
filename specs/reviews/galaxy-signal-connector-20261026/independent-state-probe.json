@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "checks": 20,
+  "method": "Independent VM of actual read/save helper bodies; no Chrome/storage/browser focus/camera rendering",
+  "fourDataDerivedMembers": [
+    "lti",
+    "impulse",
+    "convolution",
+    "freqresp"
+  ],
+  "foreignHistoryPreserved": true,
+  "explicitHintInitialAndPopstate": true,
+  "noHintSaveRemainsLegacy": true,
+  "invalidHintIgnoredAndDropped": true,
+  "galaxyIncludeLangSnapshotsCurrentCameraWithoutPush": true
+}

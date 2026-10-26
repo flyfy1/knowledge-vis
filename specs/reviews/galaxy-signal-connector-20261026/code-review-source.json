@@ -1,0 +1,11 @@
+{
+  "decision": "bounded_pass",
+  "remainingMustFix": 0,
+  "method": "source-first plus20actual helper VM checks; no Chrome",
+  "sha256": {
+    "atlas/galaxy/app.mjs": "56854c7a963736851d768d07253341cc2ae026e4a9014c1b06dd58126f53638b",
+    "atlas/app.js": "f11e46008857bc79a815758b51d36aa6f188426e6f9a6045cce32fc46c642478",
+    "atlas/galaxy/style.css": "bf38f5e06428b44d3f9f90d514f24e6025efb7561f7cc2ae56963b7c7853f09b",
+    "specs/galaxy-signal-connector.md": "ea408e14c0be0505c0099a5e211c9335cd7e7520d4026355f68e0bdf52df55ce"
+  }
+}

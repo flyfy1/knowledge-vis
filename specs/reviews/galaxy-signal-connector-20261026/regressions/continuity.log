@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "checks": [
+    "en: four equal route entries; current-view return preserves URL/node/filter/history/paused state; actual course Back then return; close/Back; off-trail visible/bilingual context without reselect; travel→spring return; running return; ordinary route unchanged;320/390/768/1280 and200%/48px",
+    "zh: four equal route entries; current-view return preserves URL/node/filter/history/paused state; actual course Back then return; close/Back; off-trail visible/bilingual context without reselect; travel→spring return; running return; ordinary route unchanged;320/390/768/1280 and200%/48px",
+    "Both locales320px/200%: keyboard route,return and original contextual opener all focus visible current-view H2, with unchanged URL/history/paused state",
+    "Keyboard Enter route/return, forced-colors focus, denied storage, reduced motion no autoplay"
+  ],
+  "errors": [],
+  "externalRuntimeRequests": [],
+  "scope": "Navigation/teaching continuity; no new mastery/profile/model/clock",
+  "limits": [
+    "No physical-device or screenreader speech",
+    "Agent cold walk is not a learner outcome study"
+  ]
+}
