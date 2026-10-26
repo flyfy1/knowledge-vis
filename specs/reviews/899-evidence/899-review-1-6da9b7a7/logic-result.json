@@ -1,0 +1,166 @@
+{
+  "kind": "author self-check; not independent review",
+  "result": "pass",
+  "exhaustiveInputs": 6015,
+  "seed": 899,
+  "randomCases": 160,
+  "constructiveAdjacentSwapCases": 21,
+  "tracePresets": [
+    {
+      "input": {
+        "s": "cba",
+        "k": 1
+      },
+      "frames": [
+        {
+          "s": "cba",
+          "j": null,
+          "before": null
+        },
+        {
+          "s": "bac",
+          "j": 0,
+          "before": "cba"
+        },
+        {
+          "s": "acb",
+          "j": 0,
+          "before": "bac"
+        },
+        {
+          "s": "cba",
+          "j": 0,
+          "before": "acb"
+        }
+      ]
+    },
+    {
+      "input": {
+        "s": "cba",
+        "k": 2
+      },
+      "frames": [
+        {
+          "s": "cba",
+          "j": null,
+          "before": null
+        },
+        {
+          "s": "cab",
+          "j": 1,
+          "before": "cba"
+        },
+        {
+          "s": "abc",
+          "j": 0,
+          "before": "cab"
+        }
+      ]
+    },
+    {
+      "input": {
+        "s": "baaca",
+        "k": 3
+      },
+      "frames": [
+        {
+          "s": "baaca",
+          "j": null,
+          "before": null
+        },
+        {
+          "s": "aacab",
+          "j": 0,
+          "before": "baaca"
+        },
+        {
+          "s": "aaabc",
+          "j": 2,
+          "before": "aacab"
+        }
+      ]
+    },
+    {
+      "input": {
+        "s": "bca",
+        "k": 1
+      },
+      "frames": [
+        {
+          "s": "bca",
+          "j": null,
+          "before": null
+        },
+        {
+          "s": "cab",
+          "j": 0,
+          "before": "bca"
+        },
+        {
+          "s": "abc",
+          "j": 0,
+          "before": "cab"
+        },
+        {
+          "s": "bca",
+          "j": 0,
+          "before": "abc"
+        }
+      ]
+    },
+    {
+      "input": {
+        "s": "aaaa",
+        "k": 1
+      },
+      "frames": [
+        {
+          "s": "aaaa",
+          "j": null,
+          "before": null
+        },
+        {
+          "s": "aaaa",
+          "j": 0,
+          "before": "aaaa"
+        },
+        {
+          "s": "aaaa",
+          "j": 0,
+          "before": "aaaa"
+        },
+        {
+          "s": "aaaa",
+          "j": 0,
+          "before": "aaaa"
+        },
+        {
+          "s": "aaaa",
+          "j": 0,
+          "before": "aaaa"
+        }
+      ]
+    },
+    {
+      "input": {
+        "s": "z",
+        "k": 1
+      },
+      "frames": [
+        {
+          "s": "z",
+          "j": null,
+          "before": null
+        },
+        {
+          "s": "z",
+          "j": 0,
+          "before": "z"
+        }
+      ]
+    }
+  ],
+  "cssBytes": 11234,
+  "officialSource": "provenance/official.json",
+  "canonicalSha256": "7f450d6ea014e42f3a8bcde7e396d36353344a08eef3ba9bb43c1391902833f4"
+}
