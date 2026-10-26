@@ -1,0 +1,18 @@
+{
+  "kind": "author self-check",
+  "command": "python3 -B scripts/register_leetcode_lesson.py 1157 --validate-only",
+  "cwd": "/home/songyy/projects/leetcode-hard-campaign-20261018",
+  "verifiedAt": "2026-10-26T18:01:39.987020+00:00",
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "",
+  "watchedFilesUnchanged": true,
+  "watchedHashes": {
+    "leetcode/1157/lesson-entry.json": "a92fd028a849f0bf9f2f4f6196b340879e60110dd7c95f5b3dfae518092ecdd0",
+    "leetcode/problems.config.js": "3ded79869c0da76804f6f3aac7fcd9a46e6a60066c0fdb1311b0a2497db3a2bf",
+    "CONCEPT-MAP.md": "a9a7ddb2fd726ff50797e5ce91570f99dc3d578f9ebca6b030560e9ff38d327a",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "scripts/register_leetcode_lesson.py": "7ba274cd733a36528d98c85fe87b46d5535bc34898567b0c14f36fda37f81310"
+  }
+}

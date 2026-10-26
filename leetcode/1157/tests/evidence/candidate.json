@@ -1,0 +1,47 @@
+{
+  "problemId": 1157,
+  "frozenAt": "2026-10-26T18:01:39.987611+00:00",
+  "authorStatus": "self-checked",
+  "independentReviewStatus": "pending",
+  "acceptedRevision": null,
+  "deployedRevision": null,
+  "candidateDefinition": "SHA-256 of lesson runtime, metadata, BRIEF and reproducible test files; no Git commit created",
+  "files": {
+    "BRIEF.md": "ac0d726ea9014f123fd06a0eac0e024fa6e21c6186499d40125d2b5339329e3d",
+    "app.js": "628be6778bf71d7147fc9f1545dbafb52e8c15ce1b18f91703e944fa66abb3c5",
+    "copy.js": "d3a151f493c7702fe949471c746647aa46b2b6b4988282f8e996820f3e321082",
+    "core.js": "55a55cb992ee5bd46c930b396457a20a4f69f426fb388964c03635c43a057a6d",
+    "index.html": "583a32e80183ac2e3a19ad57a7ec905929d793986594835c45e45d25e7bb7eea",
+    "lesson-entry.json": "a92fd028a849f0bf9f2f4f6196b340879e60110dd7c95f5b3dfae518092ecdd0",
+    "python-code.js": "dcd4069117fd3de0993852c2eef53f224cc4a6cdf7753209279da1ebcb042e4a",
+    "solution.py": "2fa6103181e447e7d2b6b552f9d7432df1edf550a5834bd213637ad53513ecdc",
+    "style.css": "8943280a199b273aeb7032e0150b6cef05f1bd1d070b566d6aeda24be34b87a6",
+    "tests/README.md": "9d8d07a0d66d66a992e904ed3251ae25a609dc23f71ce092c035eddffaa19f0b",
+    "tests/browser.cjs": "27f04eed7a5f0599f275239cd34c626fe8ebd037267b2672db859f39591cedc5",
+    "tests/contact_sheets.py": "ad6cd16e1ede1b7c2898aa7cfaf3d05766915fd96e1ae8d484bd6ddd611ed5ce",
+    "tests/core.cjs": "3510a09b20593f7a32aca688e8f1c80d97380d7626513b41a1d796eaa67779df",
+    "tests/numerical.py": "4b8dc7ec725ddccdcfaea97b8f5c6824c9d7396d8d52ebcf78639b0860327d30",
+    "tests/supplemental.cjs": "63453690be95971ed3b6fe51bc751dd7f3f69d9bf67918cc3ed02d41b21bee0a"
+  },
+  "sharedReadOnlyDependencies": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "policyFiles": {
+    "WORKFLOW.md": "6a1f5a72f96d98a720be0aee0af40d75d837d281761842151e00fa7015c240a6",
+    "UI-I18N-SPEC.md": "16ca9aebcaf6cc4863428d3abbfb675599c31b37d1d717783323697884e62b81",
+    "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+    "specs/leetcode-hard-traces.md": "5cb2edb1f223cde061d67e8cfe255f220876667c1d4c091bdbac49f67c6f2c35",
+    "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+    "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+    "specs/reviews/leetcode-all-hard-design-review.md": "a1d9d6bc23d15e7369eb04252ff00d0302d5b1786641f5c7f7587ecf64d31086"
+  },
+  "checks": {
+    "numerical-results.json": "pass",
+    "core-results.json": "pass",
+    "browser-results.json": "pass",
+    "supplemental-results.json": "pass",
+    "preflight.json": "exit 0"
+  },
+  "evidenceLimits": "Author self-check only; separate cold independent review required. No real learner study, LeetCode submission, physical-device or public-production verification."
+}
