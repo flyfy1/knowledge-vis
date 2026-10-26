@@ -1,5 +1,7 @@
 # Galaxy v1 — local verification and integration handoff
 
+Implementation source: `d8b1b2d7ded7f04990e992b232372bacc9495dad`; following commit records exact provenance only.
+
 Date: 2026-10-26. Base: `93346e21`. Worktree:
 `/tmp/knowledge-vis-galaxy-20261026`, branch `codex/atlas-galaxy-20261026`.
 Status: implementation and self-check complete; independent integration review and publication pending.
