@@ -2151,3 +2151,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Range majority verification | `leetcode/1157/#step3` | Merge segment summaries and count occurrences using sorted position lists |
 
 <!-- /leetcode-1157-campaign -->
+
+
+<!-- leetcode-1163-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Lexicographic suffix comparison | `leetcode/1163/#step0` | Compare substrings at their first differing character. |
+| Discard invariant | `leetcode/1163/#step2` | A losing candidate and its certified prefix cannot return. |
+
+<!-- /leetcode-1163-campaign -->
