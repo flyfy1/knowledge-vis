@@ -67,6 +67,27 @@ representation plus visual inspection, and retain the state/actions, expected
 distinction and observed result. Scope this to applicable overlaps; an
 exhaustive state matrix or new test framework is not required.
 
+For horizontally scrolling tables with opaque sticky row/corner headers, each
+complete column identity must be exposable at a reachable scroll position beside
+the sticky area, with its values and row association intact. Inspect actual text
+line rectangles and settled screenshots at left/middle/right offsets, especially
+the terminal column; cell boxes, DOM text and no page overflow do not prove glyph
+visibility. Temporary clipping during scrolling is acceptable if the full label
+can be exposed. Let complete labels wrap and height grow; do not erase an index,
+shrink type or remove essential sticky association merely to pass the check.
+The [1092 failure](reviews/1092-round1-required-20261026/1092-review-1-206ef9e2.md)
+and [repair contract](reviews/1092-header-fit-design-review-20261026.md) establish
+the missing `8 ·` case; the [independent Linux closure][1092-closure] reproduces
+the original red case and checks the repaired text lines. Retain section 8's
+affected-platform requirement; CSS zoom is layout stress, not native-device proof.
+
+Check the actual disabled appearance at initial and terminal controls, including
+primary buttons. A native `disabled` property alone does not prove that the CSS
+cascade removed the enabled primary treatment. Inspect computed colors/opacity
+and the screenshot: unavailable actions must be visibly distinguishable while
+their labels remain legible. The #1095 evidence below records this specificity
+defect as an author correction before its candidate freeze, not a reviewer finding.
+
 ## 3. Give every count a unit and an accounting boundary
 
 Distinguish a position index, positions completed, work in the current step,
@@ -104,6 +125,15 @@ the full source and can be selected/copied; merely showing its textarea is not
 enough. Keep any platform clipboard newline conversion explicit in the evidence
 rather than silently claiming byte equality. Downloaded bytes and the embedded
 string still have to match the canonical source exactly.
+
+When testing fallback-to-success recovery, restore the real clipboard capability
+and invoke the real Copy control. Await that attempt's observed asynchronous
+success (for example, the localized success status replacing fallback feedback),
+then check source readback and that the handler hides the fallback with consistent
+status. Do not hide/remove fallback DOM or clear its status in the test to create
+a passing cleanup state. Injecting clipboard failure is a controlled test setup;
+manufacturing the asserted recovery is not. The #1095 author notes below preserve
+both this capture artifact and the premature assertion before clipboard completion.
 
 For manual fallback copying, use the operating system hosting the browser's
 actual shortcut: Meta+C on macOS, Control+C on Linux/Windows. Locale, mobile
@@ -227,6 +257,15 @@ in the opened menu does not establish that its selected label is complete. Keep
 the count and its scope visible together; shortening a label must not reintroduce
 an input-versus-output ambiguity.
 
+Preserve enough responsive width for the label itself: reflow a tile/grid before
+forcing its text into an unreadable column, and inspect local label bounds rather
+than only document overflow. For a compact numeric scenario selector, keep a
+complete localized description immediately adjacent, associate it accessibly
+(for example with `aria-describedby`), and update it with selection and locale.
+The number and opened option menu alone cannot supply the scenario's meaning.
+Verify the closed value, native arrow and adjacent description at the constrained
+width/zoom; retain legible type and the existing conservative width check.
+
 Measure actual rendered text, padding and control width, allowing room for the
 native arrow, then inspect the screenshot. Any numerical arrow allowance belongs
 to that recorded control/browser; the incident's 16px is not a universal constant.
@@ -264,6 +303,13 @@ roundtrip. No exhaustive cross-product of fonts, browsers or controls is propose
 This adds no runtime dependency, universal renderer, new layout, scoring dimension
 or retroactive re-review campaign. Adoption applies to future candidates; concrete
 new defects in existing lessons retain the ordinary repair-and-review procedure.
+
+Evidence for the #1095 responsive, disabled-style and copy-recovery clarifications:
+[pre-freeze author development checks][1095-author] distinguish product repairs
+from harness/capture corrections; the [independently accepted report][1095-review]
+checks the resulting candidate's readable labels, disabled controls and real
+fallback-to-success behavior. These were not reviewer-raised required findings,
+and adding this guidance does not change either historical review or live policy.
 
 ## 9. Check cost bounds at valid parameter boundaries
 
@@ -415,3 +461,7 @@ See the [proposal](proposals/leetcode-repeat-copy-and-fit-evidence-20261025.md) 
 [dispatcher adoption status](reviews/repeat-copy-and-fit-spec-adoption-20261025.md).
 These local changes do not alter already frozen central candidates; operational
 adoption must be recorded separately before new campaign work uses them.
+
+[1092-closure]: https://github.com/flyfy1/knowledge-vis/blob/1ece9d85ac55b3bd5a6855176141aab899c73f73/specs/reviews/1092-review-2-de6dcb3c.md
+[1095-author]: https://github.com/flyfy1/knowledge-vis/blob/eaddb1bcea4ead30c8b703d2e4d6c8010e245d93/leetcode/1095/tests/evidence/development-notes.md
+[1095-review]: https://github.com/flyfy1/knowledge-vis/blob/c9a04e2181d16fa8752221cea443e2cecafef014/specs/reviews/1095-review-1-8193a17b.md
