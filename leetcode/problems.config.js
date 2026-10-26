@@ -3701,6 +3701,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(kM) time; O(k) auxiliary space, where M is the minimum move count and M <= n"
   },
   {
+    "id": 891,
+    "title": {
+      "zh": "子序列宽度之和",
+      "en": "Sum of Subsequence Widths"
+    },
+    "desc": {
+      "zh": "从逐个子序列的宽度，推导每个排序位置的最大值与最小值贡献。",
+      "en": "Count how often each sorted position contributes a maximum or minimum."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "排序",
+        "en": "Sorting"
+      },
+      {
+        "zh": "组合计数",
+        "en": "Combinatorics"
+      }
+    ],
+    "path": "891/",
+    "leetcodeUrl": "https://leetcode.com/problems/sum-of-subsequence-widths/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) space"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",

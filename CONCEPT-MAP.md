@@ -1891,3 +1891,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Descending rolling DP | `leetcode/887/#step4` | Preserve previous-move operands in one array. |
 
 <!-- /leetcode-887-campaign -->
+
+
+<!-- leetcode-891-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Extremum contribution counting | `leetcode/891/#step2` | Count position subsets by their unique largest and smallest sorted indices. |
+| Position multiplicity | `leetcode/891/#step0` | Equal values at different positions still define separate subsequences. |
+
+<!-- /leetcode-891-campaign -->
