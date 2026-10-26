@@ -1,0 +1,36 @@
+{
+  "problemId": 1121,
+  "authorStatus": "blocked_official_contract",
+  "reviewStatus": "not_performed",
+  "independentAcceptance": false,
+  "officialEvidence": "official-access.json",
+  "observations": {
+    "pageGetStatus": 403,
+    "graphqlStatus": 200,
+    "questionFrontendId": "1121",
+    "isPaidOnly": true,
+    "content": null,
+    "codeSnippets": null
+  },
+  "preflight": {
+    "command": "python3 -B scripts/register_leetcode_lesson.py 1121 --validate-only",
+    "exitCode": 2,
+    "evidence": "preflight.txt"
+  },
+  "notPerformed": [
+    "implementation",
+    "canonical execution",
+    "oracle and invariant tests",
+    "browser lesson checks",
+    "source parity",
+    "independent review",
+    "publication"
+  ],
+  "nextInput": "Authorized official statement, constraints, complete examples and language-selector/starter-interface capture with source URL and access date.",
+  "accessReproduction": {
+    "command": "OUTPUT_DIR=leetcode/1121/tests/evidence/access-rerun python3 -B leetcode/1121/tests/check_access.py",
+    "exitCode": 0,
+    "result": "Same blocker reproduced; HTTP 403 page, HTTP 200 GraphQL with null content and codeSnippets.",
+    "evidence": "access-rerun/official-access.json"
+  }
+}

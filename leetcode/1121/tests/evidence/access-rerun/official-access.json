@@ -1,0 +1,28 @@
+[
+  {
+    "accessedAt": "2026-10-26T16:48:10.081333+00:00",
+    "url": "https://leetcode.com/problems/divide-array-into-increasing-sequences/",
+    "method": "GET",
+    "authenticated": false,
+    "status": 403,
+    "finalUrl": "https://leetcode.com/problems/divide-array-into-increasing-sequences/",
+    "responseFile": "official-page.response.txt",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "accessedAt": "2026-10-26T16:48:10.152320+00:00",
+    "url": "https://leetcode.com/graphql/",
+    "method": "POST",
+    "authenticated": false,
+    "request": {
+      "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug isPaidOnly content exampleTestcases codeSnippets { lang langSlug code } } }",
+      "variables": {
+        "titleSlug": "divide-array-into-increasing-sequences"
+      }
+    },
+    "status": 200,
+    "finalUrl": "https://leetcode.com/graphql/",
+    "responseFile": "official-graphql.response.txt",
+    "contentType": "application/json"
+  }
+]
