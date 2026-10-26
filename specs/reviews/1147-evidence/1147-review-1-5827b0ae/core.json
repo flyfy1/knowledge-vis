@@ -1,0 +1,15 @@
+{
+  "kind": "author self-check",
+  "cases": 2191,
+  "frames": 13493,
+  "checks": [
+    "all-length independent recurrence agrees with all-cut-mask oracle",
+    "conservation",
+    "optimal remainder invariant",
+    "event old bounds vs post bounds",
+    "shortest match",
+    "terminal and partial counts",
+    "unique bilingual keys and pair shapes",
+    "exact mirror"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "freshCodeChecks": [
+    {
+      "input": "acxyac",
+      "prediction": 3,
+      "oracle": 3,
+      "actual": 3,
+      "unchanged": "acxyac"
+    },
+    {
+      "input": "abca",
+      "prediction": 3,
+      "oracle": 3,
+      "actual": 3,
+      "unchanged": "abca"
+    },
+    {
+      "input": "abcb",
+      "prediction": 1,
+      "oracle": 1,
+      "actual": 1,
+      "unchanged": "abcb"
+    },
+    {
+      "input": "abcabc",
+      "prediction": 2,
+      "oracle": 2,
+      "actual": 2,
+      "unchanged": "abcabc"
+    },
+    {
+      "input": "abababa",
+      "prediction": 7,
+      "oracle": 7,
+      "actual": 7,
+      "unchanged": "abababa"
+    },
+    {
+      "input": "abccab",
+      "prediction": 4,
+      "oracle": 4,
+      "actual": 4,
+      "unchanged": "abccab"
+    }
+  ],
+  "servedSha256": {
+    "index.html": "6981f8de4d76caa7e28e1aa72fe822e4f3222756a797415799e21c710322729b",
+    "solution.py": "ac5258ac02ee1a1f2b0717ed1a953fc3c40bce367d16fff4b307dfbda20e4c0d",
+    "python-code.js": "ec6878fad4adacea03473c819741f21f76f34476fad4ce7662a5b693dfdc8da0",
+    "copy.js": "3ca6a84b9cfd31628acbf1e5cfee3abfb38f92d1ffc46da587dbc7d381f1df05",
+    "core.js": "bbae370245c7369ad6b8eb335a51aea0859ea49bef582bd47a894a98eeb1b49c",
+    "app.js": "140400663271182b1eb6a3571103522ad38c7c5f67a571dbb8f376d9d3a45741",
+    "style.css": "81415b6d3c15c6ac189a24484280501cf6d65f8016caffd92067d4894064c212",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b"
+  }
+}
