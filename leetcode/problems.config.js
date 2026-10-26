@@ -4723,6 +4723,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(n) auxiliary space"
   },
   {
+    "id": 1125,
+    "title": {
+      "zh": "最小的必要团队",
+      "en": "Smallest Sufficient Team"
+    },
+    "desc": {
+      "zh": "从三项技能的组队实验，推导按技能覆盖保存最小团队的动态规划。",
+      "en": "Build a tiny team, then derive dynamic programming over skill coverage."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "状态压缩",
+        "en": "Bitmasks"
+      },
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      }
+    ],
+    "path": "1125/",
+    "leetcodeUrl": "https://leetcode.com/problems/smallest-sufficient-team/",
+    "language": "Python",
+    "complexity": "O(L + n m 2^m) time; O(m 2^m + m) auxiliary space, with m skills, n people, L input skill entries"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
