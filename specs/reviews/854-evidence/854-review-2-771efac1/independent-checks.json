@@ -1,0 +1,48 @@
+{
+  "independentTernaryPairs": 4653,
+  "customCodeFixtures": [
+    [
+      "abac",
+      "baca",
+      2
+    ],
+    [
+      "abcd",
+      "bcda",
+      3
+    ],
+    [
+      "a",
+      "a",
+      0
+    ],
+    [
+      "abcdef",
+      "fbcdea",
+      1
+    ],
+    [
+      "aaaaaaaaaaaaaaaaaaaa",
+      "aaaaaaaaaaaaaaaaaaaa",
+      0
+    ],
+    [
+      "aaaaaaaaaabbbbbbbbbb",
+      "bbbbbbbbbbaaaaaaaaaa",
+      10
+    ]
+  ],
+  "duplicateKeys": false,
+  "bilingualKeys": 109,
+  "servedLocalExact": {
+    "index.html": "0441b7ffb565f14c50226b0f7dec5649dd96a53f309e190186ea347e33802010",
+    "solution.py": "7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068",
+    "python-code.js": "36b61694050f9499e8d02a2078002bba5e295769447d44afdfcc1c48de845238",
+    "core.js": "d33efab4b0e02bc1c47d060cc27c59ba054767da502c4f2955ce9dff2ce47dc0",
+    "copy.js": "c670f28f5990932a7b02ae20b3dee9e73ac693d4a3c1759feccb32cfc3e139f3",
+    "app.js": "092d5296027fcc349572608ea70d7efcc33eca116210999cec37e779a2094f44",
+    "style.css": "663ba1e76209dd9d74a0d7652f1e05432c344f2c4acdf68843662377a7296b12",
+    "../common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "../style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}
