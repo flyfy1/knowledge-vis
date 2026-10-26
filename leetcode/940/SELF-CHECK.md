@@ -66,3 +66,73 @@ teach-back was observed. Independent review must reconstruct the proof and fresh
 case before consulting this brief/self-check, using the repository six-dimension
 rubric. Candidate hashes are in tests/evidence/candidate.json; do not mutate this
 candidate to satisfy a later review without creating a new candidate record.
+
+## 2026-10-26 · 940-COPY-R1 new candidate self-check
+
+Status: **fixed awaiting separate independent review**. This append supersedes
+neither the historical acceptance nor the original candidate/evidence above.
+New receipt: `tests/evidence/copy-r1/candidate.json` (content hashes, no commit).
+Stable finding mapping: **940-COPY-R1** → remove the `site-foot` element and its
+sole `foot` dictionary pair; bump `copy.js?v=1` to `v=2`. No acceptance claim
+replaces it. Exact bilingual deletion is retained in
+`tests/evidence/copy-r1/runtime.diff`. All other copy entries are unchanged.
+
+Reconfirmed the request's copy/HTML and all five protected runtime hashes before
+editing: each matches the inspected historical base. Before/after hashes are in
+`before.json` and `preservation.json` within that evidence directory. app.js,
+core.js, solution.py, python-code.js, style.css and lesson-entry.json remain
+byte-identical. Only the footer consumed `foot`; no remaining runtime consumer
+or orphan element exists. No shared files, registry, reports, acceptance state,
+services, Git settings or prior evidence were edited.
+
+Commands from repository root and observed results:
+
+- `OUTPUT_DIR="$PWD/leetcode/940/tests/evidence/copy-r1/red" node leetcode/940/tests/copy-r1.cjs`
+  — exit 1 before repair: actual footerCount=1 and old workflow wording present
+  in zh→en→zh. Red result and bilingual page-end screenshots are preserved.
+- `OUTPUT_DIR="$PWD/leetcode/940/tests/evidence/copy-r1/green" node leetcode/940/tests/copy-r1.cjs`
+  — exit 0 after repair: 11 observations, zero page/console errors. The same
+  footer regression now finds zero elements and no workflow wording throughout
+  zh→en→zh. Served bytes equal checkout bytes. Checks include native 200% zoom
+  and 320px page end, retained `sim`/`p4`/`boundaries`, heading/title, canonical
+  formula, completed-prefix totals 0→1→3→6, rewind/replay, ab→aba calculation
+  3−1+4=6, locale-retained revealed abba prediction 5−1+6=10, independent
+  prediction retained after preset reset, and feedback cleared on choice change.
+- Exact source checks in that browser command passed for decoded PYTHON_SOURCE,
+  rendered textContent, successful copy, native manual transfer and downloads in
+  both locales, with the final newline intact; offline file display also passed.
+  Every manual attempt had its own distinct written/read-back sentinel before
+  automatic-write denial, full focus/selection check, Linux Control+C, and exact
+  clipboard readback. No whitespace/newline normalization was used.
+- Focused inline `python3 -B` / `runpy.run_path` executed the actual canonical
+  `Solution.distinctSubseqII`: aa→2, aba→6, abba→10, fresh baa→5, all passed.
+  Interface evidence in provenance/official.json includes faithful Python3;
+  preferred Python remains selected, no non-Python contract or omitted
+  supportedLanguages issue exists. Read the registration table's exact Python
+  pair: solution.py / python-code.js / PYTHON_SOURCE. No regeneration needed.
+- `python3 -B scripts/register_leetcode_lesson.py 940 --validate-only` — exit 0,
+  empty stdout/stderr. Recorded in `tests/evidence/copy-r1/preflight.json`.
+  complexity remains the single string
+  `O(n) time; O(26) = O(1) auxiliary space`. No registration was run.
+- `node --check leetcode/940/copy.js`,
+  `node --check leetcode/940/tests/copy-r1.cjs`, and `git diff --check` passed.
+  Exact allowed runtime delta was also asserted against HEAD. Broad numerical
+  suites were not rerun for this prose deletion, as requested by 940-COPY-R1.
+
+Author visually inspected all four green captures: `end-zh-320.png`,
+`end-en-320.png`, `end-zh-zoom200.png`, `end-en-zoom200.png`. Both page ends retain
+readable cost/boundary text and related links, with normal existing section
+padding and no empty footer gap or replacement status. English related labels
+wrap at 320px; the final link has a visible keyboard focus outline. Tab from
+Copy reaches Download, then each related link in both locales. Native Chromium
+156.0.8078.4 on Linux zoom via tabs.setZoom(2) reports outerWidth=1280,
+innerWidth=640 and DPR=2. Narrow source code retains its existing horizontal
+scroll area; viewport screenshots naturally start partway through the section.
+No CSS, font or contrast token changed; this check does not claim a new palette
+audit, physical-device test, public delivery or novice teach-back.
+
+Next action: a separate reviewer inspects the frozen receipt, exact runtime diff,
+red/green evidence, bilingual page end and preserved behavior, then determines
+closure of **940-COPY-R1** under the existing narrow revision rules. No author
+self-check marks it independently closed. Historical optional **940-ADV-01**
+remains deferred and unchanged.

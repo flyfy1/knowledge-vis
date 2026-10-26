@@ -71,3 +71,23 @@ native clipboard and per-attempt sentinel manual copy, download, all presets/loc
 endpoints/replay/prediction, storage denial/offline, native 200% zoom, 320/390/736/1440,
 contrast, keyboard focus and related targets. Output paths via OUTPUT_DIR.
 No real learner, independent review, LeetCode acceptance or public delivery claimed.
+
+## 2026-10-26 · 940-COPY-R1 repair brief
+
+Selected repair: reuse the approved design and remove the transient workflow footer
+and its sole `foot` localization key in both languages. The current learner needs
+the counting lesson and its local simulation boundaries. The follow-up request
+`specs/reviews/workflow-copy-repair-requests-20261026/940.md` supplies the narrow
+reviewed scope; no new feature or layout is introduced. Preserve `sim`, `p4` and
+`boundaries` exactly, along with all algorithm/trace/quiz/source behavior.
+
+Reconfirmed the seven runtime hashes against that request and its historical
+independent report: all match. Only index.html and copy.js may change at runtime;
+bump the changed copy asset query. app.js, core.js, solution.py, python-code.js,
+and style.css stay byte-identical. P0: retained behavior and specific boundaries;
+P1: remove workflow copy and unused binding, verify zh→en→zh, page end at 320px
+and native 200% zoom, keyboard, state retention and source parity. P2: none.
+Defer the historical optional baseline syntax advisory 940-ADV-01; the selected
+request explicitly defers unrelated teaching refinements. A new hash-bound
+candidate and author evidence will be prepared for separate review of 940-COPY-R1;
+no historical acceptance or report will be changed.

@@ -1,0 +1,52 @@
+{
+  "finding": "940-COPY-R1",
+  "before": {
+    "app.js": "30273f051166f24883089dd119777161ba912f830213e08bf377351ec69d203b",
+    "core.js": "3cea959f00aff9baab4c395265f507d404e69d29c10063fb3fe7136c2d703267",
+    "solution.py": "55fce8a63ac723d74be619500fdbfcb23c2eaa712d24c118974bd7f88ff53db4",
+    "python-code.js": "9b0898ed1836be9769b19e11b5300553ca678ad8753217b30d4c47858864e9b5",
+    "style.css": "55daf13738d41170dafbbc7eea44ee1293c92c42c53047729c1efe985609d670",
+    "copy.js": "db79c8f2ba6489ef7bf4af67e232f9d0c3e80ed3a442ad8a8f2f6f6b1e1c3e93",
+    "index.html": "f8efd06fa5d97dda71c3f8f58f64d7ebf8061dab81f951d1479bf2e1c2d8ffe8",
+    "lesson-entry.json": "925de91bc2de7db4ce86447e713bdfe7c89b82292d50886c29fca95de3a51f53"
+  },
+  "after": {
+    "app.js": "30273f051166f24883089dd119777161ba912f830213e08bf377351ec69d203b",
+    "core.js": "3cea959f00aff9baab4c395265f507d404e69d29c10063fb3fe7136c2d703267",
+    "solution.py": "55fce8a63ac723d74be619500fdbfcb23c2eaa712d24c118974bd7f88ff53db4",
+    "python-code.js": "9b0898ed1836be9769b19e11b5300553ca678ad8753217b30d4c47858864e9b5",
+    "style.css": "55daf13738d41170dafbbc7eea44ee1293c92c42c53047729c1efe985609d670",
+    "copy.js": "01289f0dbf58facd3dadfb2200657ab3817fd4343b33c4790032029595242b12",
+    "index.html": "5e7264aa5c2d9464797587c04c8069899ae6bc43d4bd1d5526d0e88a0ae67f78",
+    "lesson-entry.json": "925de91bc2de7db4ce86447e713bdfe7c89b82292d50886c29fca95de3a51f53"
+  },
+  "protectedByteIdentical": [
+    "app.js",
+    "core.js",
+    "solution.py",
+    "python-code.js",
+    "style.css",
+    "lesson-entry.json"
+  ],
+  "language": "Python",
+  "faithfulOfficialInterface": {
+    "lang": "Python3",
+    "langSlug": "python3",
+    "code": "class Solution:\n    def distinctSubseqII(self, s: str) -> int:\n        "
+  },
+  "languageContract": "Not needed: preferred faithful Python; no supportedLanguages field omits it.",
+  "canonicalExecution": {
+    "command": "python3 -B inline runpy executes Solution.distinctSubseqII",
+    "checks": {
+      "aa": 2,
+      "aba": 6,
+      "abba": 10,
+      "baa": 5
+    }
+  },
+  "sourceMirrorPair": [
+    "solution.py",
+    "python-code.js",
+    "PYTHON_SOURCE"
+  ]
+}
