@@ -1,0 +1,30 @@
+{
+  "scope": "author self-check, not independent review",
+  "passed": true,
+  "exhaustiveMaxLength": 10,
+  "exhaustiveCases": 208,
+  "seed": 1106,
+  "seededAttempts": 1500,
+  "distinctSmallCases": 1045,
+  "maximumCases": [
+    {
+      "length": 19999,
+      "expected": true
+    },
+    {
+      "length": 20000,
+      "expected": true
+    },
+    {
+      "length": 20000,
+      "expected": true
+    },
+    {
+      "length": 20000,
+      "expected": false
+    }
+  ],
+  "copyKeys": 83,
+  "baselineSource": true,
+  "exactMirror": true
+}

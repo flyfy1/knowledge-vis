@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "scope": "author self-check",
+  "cases": 1044,
+  "frames": 67241,
+  "reductions": 12975,
+  "invariant": "Each processed prefix independently reduced by textual substitution; before/after and history checked; nested snapshots mutation checked."
+}

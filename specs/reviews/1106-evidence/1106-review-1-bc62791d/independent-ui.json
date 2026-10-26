@@ -1,0 +1,174 @@
+[
+  {
+    "lang": "zh",
+    "h": "#1106 · 解析布尔表达式",
+    "title": "#1106 · 解析布尔表达式",
+    "progress": "已处理字符 8/9；当前字符下标 7（从 0 开始）。"
+  },
+  {
+    "lang": "en",
+    "h": "#1106 · Parsing A Boolean Expression",
+    "title": "#1106 · Parsing A Boolean Expression",
+    "progress": "Characters processed 8/9; current character index 7 (zero-based)."
+  },
+  {
+    "lang": "zh",
+    "h": "#1106 · 解析布尔表达式",
+    "title": "#1106 · 解析布尔表达式",
+    "progress": "已处理字符 8/9；当前字符下标 7（从 0 开始）。"
+  },
+  {
+    "lang": "en",
+    "markers": [
+      {
+        "text": "&\n0",
+        "read": true,
+        "current": false,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      },
+      {
+        "text": "(\n1",
+        "read": true,
+        "current": false,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      },
+      {
+        "text": "t\n2",
+        "read": true,
+        "current": false,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      },
+      {
+        "text": ",\n3",
+        "read": true,
+        "current": false,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      },
+      {
+        "text": "!\n4",
+        "read": true,
+        "current": false,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      },
+      {
+        "text": "(\n5",
+        "read": true,
+        "current": false,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      },
+      {
+        "text": "f\n6",
+        "read": true,
+        "current": false,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      },
+      {
+        "text": ")\n7",
+        "read": true,
+        "current": true,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(255, 180, 84)",
+        "indexColor": "rgb(255, 180, 84)"
+      },
+      {
+        "text": ")\n8",
+        "read": false,
+        "current": false,
+        "color": "rgb(232, 237, 244)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      }
+    ]
+  },
+  {
+    "lang": "zh",
+    "markers": [
+      {
+        "text": "&\n0",
+        "read": true,
+        "current": false,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      },
+      {
+        "text": "(\n1",
+        "read": true,
+        "current": false,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      },
+      {
+        "text": "t\n2",
+        "read": true,
+        "current": false,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      },
+      {
+        "text": ",\n3",
+        "read": true,
+        "current": false,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      },
+      {
+        "text": "!\n4",
+        "read": true,
+        "current": false,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      },
+      {
+        "text": "(\n5",
+        "read": true,
+        "current": false,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      },
+      {
+        "text": "f\n6",
+        "read": true,
+        "current": false,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      },
+      {
+        "text": ")\n7",
+        "read": true,
+        "current": true,
+        "color": "rgb(110, 231, 255)",
+        "border": "rgb(255, 180, 84)",
+        "indexColor": "rgb(255, 180, 84)"
+      },
+      {
+        "text": ")\n8",
+        "read": false,
+        "current": false,
+        "color": "rgb(232, 237, 244)",
+        "border": "rgb(43, 53, 71)",
+        "indexColor": "rgb(154, 167, 184)"
+      }
+    ]
+  }
+]

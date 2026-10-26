@@ -1,0 +1,61 @@
+{
+  "checks": [
+    {
+      "expression": "&(f,|(t,f))",
+      "length": 11,
+      "expected": false,
+      "actual": false
+    },
+    {
+      "expression": "!(t)",
+      "length": 4,
+      "expected": false,
+      "actual": false
+    },
+    {
+      "expression": "t",
+      "length": 1,
+      "expected": true,
+      "actual": true
+    },
+    {
+      "expression": "f",
+      "length": 1,
+      "expected": false,
+      "actual": false
+    },
+    {
+      "expression": "&(t)",
+      "length": 4,
+      "expected": true,
+      "actual": true
+    },
+    {
+      "expression": "|(f)",
+      "length": 4,
+      "expected": false,
+      "actual": false
+    },
+    {
+      "expression": null,
+      "length": 19996,
+      "expected": true,
+      "actual": true
+    },
+    {
+      "expression": null,
+      "length": 20000,
+      "expected": false,
+      "actual": false
+    }
+  ],
+  "servedEqualsCanonicalSha256": {
+    "index.html": "fc8730d181149fa446fba2db8ba2ea98257e2b4f62cbfb4b2c25ac171892ba0b",
+    "solution.py": "6c5996e0a37fb99e53b16611b8e4c453e829c6cd53055e6592097bbee3766cfe",
+    "app.js": "9612b7be5aaff26034921a7d83bd3d7ee3d2a96ef185bd60b5167b926c23a504",
+    "core.js": "acc55151b45e638cb5eae443130a3972c0b52f4a50c82850634b864b6f8fd6fa",
+    "copy.js": "c79742c5af1a912a44c5d80bc53685764df9baa010188acb05530bcb9f546257",
+    "lesson.css": "c21460794987ae9ef8ff4f5d0014af308e562ddf8f2864261a46003599494569",
+    "python-code.js": "d160dda8f6a25d53017a16339e7a2423d0c227654fb7f3996e80705164d3ba91"
+  }
+}
