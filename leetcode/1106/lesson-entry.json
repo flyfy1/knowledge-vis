@@ -1,0 +1,38 @@
+{
+  "id": 1106,
+  "title": {
+    "zh": "解析布尔表达式",
+    "en": "Parsing A Boolean Expression"
+  },
+  "desc": {
+    "zh": "把完成的括号组压成一个真假值，逐步推导栈解析。",
+    "en": "Derive stack parsing by reducing each completed group to one truth value."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "栈",
+      "en": "Stack"
+    },
+    {
+      "zh": "字符串解析",
+      "en": "Parsing"
+    }
+  ],
+  "path": "1106/",
+  "leetcodeUrl": "https://leetcode.com/problems/parsing-a-boolean-expression/",
+  "language": "Python",
+  "complexity": "O(n) time; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "Boolean group reduction",
+      "step": 2,
+      "description": "Replace innermost completed groups by truth literals while preserving unresolved outer context."
+    },
+    {
+      "name": "Iterative Boolean parser",
+      "step": 3,
+      "description": "Use stack snapshots and operator-specific truth flags to parse each character once."
+    }
+  ]
+}
