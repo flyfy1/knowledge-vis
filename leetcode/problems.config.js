@@ -3909,6 +3909,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(goal * n) time; O(n) auxiliary space"
   },
   {
+    "id": 924,
+    "title": {
+      "zh": "尽量减少恶意软件的传播",
+      "en": "Minimize Malware Spread"
+    },
+    "desc": {
+      "zh": "从删除感染源后的再次感染，推导连通分量的唯一感染源规则。",
+      "en": "Derive the sole-seed component rule by watching infection return after a seed is removed."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "图遍历",
+        "en": "Graph traversal"
+      },
+      {
+        "zh": "连通分量",
+        "en": "Connected components"
+      }
+    ],
+    "path": "924/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimize-malware-spread/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(n) auxiliary space"
+  },
+  {
     "id": 940,
     "title": {
       "zh": "不同的子序列 II",

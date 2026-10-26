@@ -1950,3 +1950,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Residual draw states | `leetcode/913/#step4` | Prove draws after the forcing-win queue is exhausted. |
 
 <!-- /leetcode-913-campaign -->
+
+
+<!-- leetcode-924-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Connected components | `leetcode/924/#step2` | A component is saved exactly when its only initial seed is removed. |
+| Graph traversal | `leetcode/924/#step0` | Infection reaches every node reachable from a remaining seed. |
+
+<!-- /leetcode-924-campaign -->
