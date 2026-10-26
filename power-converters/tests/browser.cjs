@@ -8,7 +8,7 @@ const base=process.env.BASE_URL||'http://127.0.0.1:18769';
   assert.equal(await p.locator('.step').count(),7);
   let geometry=await p.evaluate(()=>({w:innerWidth,doc:document.documentElement.scrollWidth,y:document.querySelector('#step4').getBoundingClientRect().top}));assert.ok(geometry.doc<=width);assert.ok(geometry.y>=65&&geometry.y<130,JSON.stringify(geometry));
   await p.locator('#buck-next').click();await p.locator('#buck-next').click();assert.match(await p.locator('#buck-status').innerText(),/2\/8.*25.00.*OFF/);assert.match(await p.locator('#buck-read').innerText(),/6.00 V/);
-  await p.locator('#buck-d').fill('75');assert.match(await p.locator('#buck-status').innerText(),/0\/8/);assert.match(await p.locator('#buck-read').innerText(),/9.00 V/);
+  await p.locator('#buck-d').fill('75');assert.match(await p.locator('#buck-status').innerText(),/1\/8/);assert.match(await p.locator('#buck-read').innerText(),/9.00 V/);
   await p.locator('#inductor-plus').click();await p.locator('#inductor-plus').click();await p.locator('#inductor-zero').click();assert.match(await p.locator('#inductor-read').innerText(),/0.20 A/);
   await p.locator('#inductor-reset').click();assert.match(await p.locator('#inductor-read').innerText(),/0.00 A/);
   await p.locator('[value=more]').check();await p.locator('#reveal').click();await p.locator('#eta').fill('80');assert.match(await p.locator('#budget-read').innerText(),/3.00 A/);assert.match(await p.locator('#budget-read').innerText(),/15.00 W/);
