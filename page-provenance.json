@@ -3,15 +3,15 @@
   "pages": {
     "atlas": {
       "developer": "Codex",
-      "edition": "codex-atlas-volt-second-20261026",
+      "edition": "codex-atlas-estimation-error-20261026",
       "kind": "revised",
-      "sourceRevision": "4f1992891a6996c1aaffedb78053ad2b538ebc7d",
+      "sourceRevision": "c2b8d43a9099bf331e5c65697752ac54afd79ab9",
       "scope": {
-        "zh": "知识地图、实验路线与积分到电感伏秒平衡的学习连接",
-        "en": "Knowledge atlas, experiment routes and integral-to-inductor volt-second bridge"
+        "zh": "知识地图、实验路线与方差到蒙特卡洛误差尺度的学习连接",
+        "en": "Knowledge atlas, experiment routes and variance-to-Monte-Carlo error-scale bridge"
       },
       "originalAuthorship": "not asserted; prior contributions retained",
-      "previousSourceRevision": "4791138bb6bf0e89dbb665c9268784e63b702216"
+      "previousSourceRevision": "4f1992891a6996c1aaffedb78053ad2b538ebc7d"
     },
     "complex-numbers": {
       "developer": "Codex",
@@ -204,17 +204,17 @@
     },
     "atlas/galaxy": {
       "developer": "Codex",
-      "edition": "codex-atlas-galaxy-volt-second-20261026",
+      "edition": "codex-atlas-galaxy-estimation-error-20261026",
       "kind": "revised",
-      "sourceRevision": "4f1992891a6996c1aaffedb78053ad2b538ebc7d",
+      "sourceRevision": "c2b8d43a9099bf331e5c65697752ac54afd79ab9",
       "scope": {
-        "zh": "三维知识星图、任务入口与积分到电感的有据关系",
-        "en": "3D knowledge galaxy, task entries and sourced integral-to-inductor relation"
+        "zh": "三维知识星图、任务入口与方差到估计误差的有据关系",
+        "en": "3D knowledge galaxy, task entries and sourced variance-to-estimation-error relation"
       },
       "originalAuthorship": "existing atlas contributions retained; galaxy presentation developed with Codex",
       "path": "atlas/galaxy.html",
       "integrationRevision": "c3445f66a3e666acd557a04a7194c9568a383c35",
-      "previousSourceRevision": "4791138bb6bf0e89dbb665c9268784e63b702216"
+      "previousSourceRevision": "4f1992891a6996c1aaffedb78053ad2b538ebc7d"
     },
     "leetcode/42": {
       "developer": "Codex",
@@ -240,6 +240,18 @@
         "en": "Step2 same-model input/output audition, volume and audio lifecycle"
       },
       "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "montecarlo": {
+      "developer": "Codex",
+      "edition": "codex-montecarlo-error-scale-20261026",
+      "kind": "revised",
+      "sourceRevision": "c2b8d43a9099bf331e5c65697752ac54afd79ab9",
+      "originalSourceRevision": "18f7d224ce58d5c8ff3c8989281259bacd51e6c8",
+      "scope": {
+        "zh": "第2步的重复估计、方差与标准误差口径、暂停对照及学习路线。",
+        "en": "Step2 repeated estimates, variance/standard-error meanings, paused comparisons and learning-route connection."
+      },
+      "retainedContributions": "Original lesson, samplers and authors retained; original tool identity is not reclassified"
     }
   },
   "exceptions": {

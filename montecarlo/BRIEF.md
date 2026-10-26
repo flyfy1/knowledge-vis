@@ -7,3 +7,5 @@ Known: eachpoint givesinside0/1; estimateπHat=4inside/N. Question: howmuchcan r
 First-use terms: estimator=therulegivingoneπHatfromNpoints; variance=squaredspread; SE=standarddeviationofthatestimatoracrosshypotheticalrepeatedsamples; samplevariance=observedfinite-data statistic. DistinguishNperestimatefrom20replications. Knownπbandisabenchmark,notsampleconfidenceinterval. N0/N1empty/undefinedstatesnamed. Newcheckpointsdonotgeneratefreshseeds,changeexamplesorstartanimation. Nativefold/locale/focuspreserved; newdocumentresetsexistingstate,AtlasBackretainsreadingstation.
 
 Specdefinesfailurecauses,source/claimbindings,control/plotcontractsandrecurrencecases. AllotherlegacyMCstepsarenotnewlycertified.
+
+Current accepted implementation source:c2b8d43a9099bf331e5c65697752ac54afd79ab9. One staticCodexrevisedheader/inventoryrecord; original18f7d224course/samplercontributionsretained. No claimalloriginalsteps newlyaudited.
