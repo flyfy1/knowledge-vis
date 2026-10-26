@@ -1,0 +1,29 @@
+{
+  "observedAt": "2026-10-26T15:34:34.724930+00:00",
+  "readOnly": true,
+  "centralHead": "288b576f5ad7ea505a99247a7ab66161e57bc6c7",
+  "current": {
+    "problem_id": "1095",
+    "stage": "author",
+    "started_at": "2026-10-26T15:25:36.467007+00:00",
+    "run_id": "1095-author-8913ea6796bf"
+  },
+  "queueLength": 984,
+  "queueSha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+  "queueIndex": 225,
+  "queueSegment": [
+    "1095",
+    "1096",
+    "1097",
+    "1106",
+    "1121",
+    "1125"
+  ],
+  "problemRecord": null,
+  "runs": [],
+  "reservations": [],
+  "lessonExists": false,
+  "trackedLessonPaths": [],
+  "laneBranches": [],
+  "lanePaths": []
+}

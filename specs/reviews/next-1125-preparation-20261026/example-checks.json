@@ -1,0 +1,288 @@
+{
+  "scope": "Source/semantic preparation; not a candidate solver, lesson review or acceptance.",
+  "fixtures": [
+    {
+      "name": "official_one",
+      "reqSkills": [
+        "java",
+        "nodejs",
+        "reactjs"
+      ],
+      "people": [
+        [
+          "java"
+        ],
+        [
+          "nodejs"
+        ],
+        [
+          "nodejs",
+          "reactjs"
+        ]
+      ],
+      "allMinimumTeams": [
+        [
+          0,
+          2
+        ]
+      ],
+      "minimumSize": 2
+    },
+    {
+      "name": "official_two",
+      "reqSkills": [
+        "algorithms",
+        "math",
+        "java",
+        "reactjs",
+        "csharp",
+        "aws"
+      ],
+      "people": [
+        [
+          "algorithms",
+          "math",
+          "java"
+        ],
+        [
+          "algorithms",
+          "math",
+          "reactjs"
+        ],
+        [
+          "java",
+          "csharp",
+          "aws"
+        ],
+        [
+          "reactjs",
+          "csharp"
+        ],
+        [
+          "csharp",
+          "math"
+        ],
+        [
+          "aws",
+          "java"
+        ]
+      ],
+      "allMinimumTeams": [
+        [
+          1,
+          2
+        ]
+      ],
+      "minimumSize": 2
+    },
+    {
+      "name": "empty_people_keep_original_indices",
+      "reqSkills": [
+        "a",
+        "b"
+      ],
+      "people": [
+        [],
+        [
+          "a"
+        ],
+        [],
+        [
+          "b"
+        ]
+      ],
+      "allMinimumTeams": [
+        [
+          1,
+          3
+        ]
+      ],
+      "minimumSize": 2
+    },
+    {
+      "name": "multiple_single_person_optima",
+      "reqSkills": [
+        "a",
+        "b"
+      ],
+      "people": [
+        [
+          "a",
+          "b"
+        ],
+        [
+          "a"
+        ],
+        [
+          "a",
+          "b"
+        ],
+        []
+      ],
+      "allMinimumTeams": [
+        [
+          0
+        ],
+        [
+          2
+        ]
+      ],
+      "minimumSize": 1
+    },
+    {
+      "name": "multiple_two_person_optima",
+      "reqSkills": [
+        "a",
+        "b"
+      ],
+      "people": [
+        [
+          "a"
+        ],
+        [
+          "b"
+        ],
+        [
+          "a"
+        ],
+        [
+          "b"
+        ]
+      ],
+      "allMinimumTeams": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "minimumSize": 2
+    },
+    {
+      "name": "overlap_must_not_cancel",
+      "reqSkills": [
+        "a",
+        "b",
+        "c"
+      ],
+      "people": [
+        [
+          "a",
+          "b"
+        ],
+        [
+          "b",
+          "c"
+        ]
+      ],
+      "allMinimumTeams": [
+        [
+          0,
+          1
+        ]
+      ],
+      "minimumSize": 2
+    },
+    {
+      "name": "later_single_person_beats_earlier_pair",
+      "reqSkills": [
+        "a",
+        "b"
+      ],
+      "people": [
+        [
+          "a"
+        ],
+        [
+          "b"
+        ],
+        [
+          "a",
+          "b"
+        ]
+      ],
+      "allMinimumTeams": [
+        [
+          2
+        ]
+      ],
+      "minimumSize": 1
+    },
+    {
+      "name": "one_skill_with_empty_and_duplicate_people",
+      "reqSkills": [
+        "a"
+      ],
+      "people": [
+        [],
+        [
+          "a"
+        ],
+        [
+          "a"
+        ]
+      ],
+      "allMinimumTeams": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "minimumSize": 1
+    }
+  ],
+  "diagnosticProbes": [
+    {
+      "name": "xor_loses_overlap",
+      "inputMasks": [
+        3,
+        6
+      ],
+      "correctUnion": 7,
+      "incorrectXor": 5
+    },
+    {
+      "name": "mutable_predecessor_alias",
+      "incorrectStatesAfterAppend": {
+        "0": [
+          0
+        ],
+        "1": [
+          0
+        ]
+      },
+      "expectedPriorEmptyTeam": []
+    },
+    {
+      "name": "compacted_indices",
+      "incorrectOriginalIndices": [
+        0,
+        1
+      ],
+      "correctOriginalIndices": [
+        1,
+        3
+      ]
+    }
+  ],
+  "semanticChecks": {
+    "reversedAnswersAccepted": true,
+    "nonLexicographicOptimumAccepted": true,
+    "duplicatePersonRejected": true,
+    "largerSufficientTeamRejected": true,
+    "samePersonCoverageIsIdempotent": true
+  }
+}
