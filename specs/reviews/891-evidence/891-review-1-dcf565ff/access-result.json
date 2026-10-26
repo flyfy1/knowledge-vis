@@ -1,0 +1,76 @@
+{
+  "result": "pass",
+  "browser": "156.0.8078.4",
+  "platform": "linux",
+  "records": [
+    {
+      "width": 320,
+      "locale": "en",
+      "term": "i=2, a[i]=4: 4 × (4 − 2) = 8Before -11 + this term (8) = after -3",
+      "feedback": "A middle position need not cancel: the two sides have different numbers of optional positions. One earlier position gives 2¹=2 maximum roles; two later positions give 2²=4 minimum roles. Thus 2×(2−4)=−4. The other 2 remains a separate position. Rightmost-maximum and leftmost-minimum ownership resolves the tie."
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "disabled": {
+        "color": "rgb(13, 17, 23)",
+        "bg": "rgb(110, 231, 255)",
+        "border": "rgb(110, 231, 255)",
+        "opacity": "1"
+      },
+      "ratio": 13.100679028115637
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "term": "i=2，a[i]=4：4 × (4 − 2) = 8累计前 -11 + 本项 (8) = 累计后 -3",
+      "feedback": "中间不保证抵消：左右可选位置数不同。 左侧 1 个位置，最大值角色 2¹=2 种；右侧 2 个位置，最小值角色 2²=4 种。所以 2×(2−4)=−4。相邻另一个 2 仍是独立位置；用最右最大值、最左最小值的负责人规则处理相等值。"
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "disabled": {
+        "color": "rgb(13, 17, 23)",
+        "bg": "rgb(110, 231, 255)",
+        "border": "rgb(110, 231, 255)",
+        "opacity": "1"
+      },
+      "ratio": 13.100679028115637
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "term": "i=2, a[i]=4: 4 × (4 − 2) = 8Before -11 + this term (8) = after -3",
+      "feedback": "A middle position need not cancel: the two sides have different numbers of optional positions. One earlier position gives 2¹=2 maximum roles; two later positions give 2²=4 minimum roles. Thus 2×(2−4)=−4. The other 2 remains a separate position. Rightmost-maximum and leftmost-minimum ownership resolves the tie."
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "disabled": {
+        "color": "rgb(13, 17, 23)",
+        "bg": "rgb(110, 231, 255)",
+        "border": "rgb(110, 231, 255)",
+        "opacity": "1"
+      },
+      "ratio": 13.100679028115637
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "term": "i=2，a[i]=4：4 × (4 − 2) = 8累计前 -11 + 本项 (8) = 累计后 -3",
+      "feedback": "中间不保证抵消：左右可选位置数不同。 左侧 1 个位置，最大值角色 2¹=2 种；右侧 2 个位置，最小值角色 2²=4 种。所以 2×(2−4)=−4。相邻另一个 2 仍是独立位置；用最右最大值、最左最小值的负责人规则处理相等值。"
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "disabled": {
+        "color": "rgb(13, 17, 23)",
+        "bg": "rgb(110, 231, 255)",
+        "border": "rgb(110, 231, 255)",
+        "opacity": "1"
+      },
+      "ratio": 13.100679028115637
+    }
+  ],
+  "zoomNavigation": "step2 active at trace"
+}
