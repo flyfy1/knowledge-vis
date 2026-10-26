@@ -1,0 +1,6 @@
+{
+  "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId questionFrontendId title titleSlug difficulty isPaidOnly\n    content exampleTestcases metaData codeSnippets { lang langSlug code }\n  }\n}",
+  "variables": {
+    "titleSlug": "number-of-valid-subarrays"
+  }
+}
