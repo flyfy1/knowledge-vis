@@ -3753,6 +3753,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(1) expected amortized time per push/pop; O(q) space for q calls"
   },
   {
+    "id": 899,
+    "title": {
+      "zh": "有序队列",
+      "en": "Orderly Queue"
+    },
+    "desc": {
+      "zh": "从三个字母出发，证明旋转与排序之间的分界。",
+      "en": "Start with three letters and prove the boundary between rotation and sorting."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      },
+      {
+        "zh": "可达性",
+        "en": "Reachability"
+      }
+    ],
+    "path": "899/",
+    "leetcodeUrl": "https://leetcode.com/problems/orderly-queue/",
+    "language": "Python",
+    "complexity": "k = 1: O(n²) time; k ≥ 2: O(n log n) time; O(n) auxiliary space in both cases"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",
