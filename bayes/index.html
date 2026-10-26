@@ -79,7 +79,7 @@
     </div>
     <div class="btn-row" id="s1-presets"><button type="button" class="btn" data-measurement-prior="0.01" data-i18n="s1p1"></button><button type="button" class="btn" data-measurement-prior="0.1" data-i18n="s1p10"></button></div>
     <p class="readout" id="s1-readout"></p>
-    <section id="s1-measurement" aria-labelledby="s1-pool-title"><h3 id="s1-pool-title" data-i18n="s1poolTitle"></h3><p data-i18n="s1poolIntro"></p><div id="s1-mixture" role="img"><span id="s1-mixture-yes" aria-hidden="true"></span><span id="s1-mixture-no" aria-hidden="true"></span></div><p id="s1-pool-caption" class="readout" aria-live="polite"></p><details id="s1-measurement-proof"><summary data-i18n="s1proof"></summary><dl><dt data-i18n="s1jointA"></dt><dd id="s1-joint-a"></dd><dt data-i18n="s1jointB"></dt><dd id="s1-joint-b"></dd><dt data-i18n="s1evidence"></dt><dd id="s1-evidence"></dd></dl><p id="s1-normalization" class="formula"></p><p data-i18n="s1direction"></p><p><a href="https://openstax.org/books/introductory-statistics-2e/pages/3-4-contingency-tables" data-i18n="s1source"></a></p></details><p><a href="../atlas/?node=bayes&amp;view=list" data-i18n="s1map"></a></p></section>
+    <section id="s1-measurement" aria-labelledby="s1-pool-title"><h3 id="s1-pool-title" data-i18n="s1poolTitle"></h3><p data-i18n="s1poolIntro"></p><div id="s1-mixture" role="img"><span id="s1-mixture-yes" aria-hidden="true"></span><span id="s1-mixture-no" aria-hidden="true"></span></div><p id="s1-pool-caption" class="readout" aria-live="polite"></p><details id="s1-measurement-proof"><summary data-i18n="s1proof"></summary><dl><dt data-i18n="s1jointA"></dt><dd id="s1-joint-a"></dd><dt data-i18n="s1jointB"></dt><dd id="s1-joint-b"></dd><dt data-i18n="s1evidence"></dt><dd id="s1-evidence"></dd></dl><p id="s1-normalization" class="formula"></p><p data-i18n="s1direction"></p><p><a href="https://openstax.org/books/introductory-statistics-2e/pages/3-4-contingency-tables" data-i18n="s1source"></a></p></details><p><a href="#step3" data-i18n="s1chain"></a></p><p><a href="../atlas/?node=bayes&amp;view=list" data-i18n="s1map"></a></p></section>
     <p class="hint" data-i18n-html="s1hint"></p>
   </div>
 </section>
@@ -113,22 +113,30 @@
 <!-- ============ 步骤 3：证据连乘 ============ -->
 <section class="step" id="step3" data-step="3">
   <div class="step-inner">
-    <p class="step-kicker" data-i18n="s3k">第 3 步 · 证据连乘</p>
-    <h2 data-i18n="s3t">昨天的后验，是今天的先验</h2>
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 新测量，还是旧记录？</p>
+    <h2 data-i18n="s3t">同一条读数，不能算两次新证据</h2>
     <p class="explain" data-i18n-html="s3e"></p>
     <div class="stage">
       <canvas id="s3-canvas" height="300" style="height:300px"></canvas>
     </div>
-    <div class="chip-flow" id="s3-chips"></div>
+    <p class="hint" data-i18n="s3task"></p><div class="chip-flow" id="s3-chips" aria-live="polite"></div>
     <div class="btn-row">
-      <button class="btn primary" id="s3-addpos" data-i18n="addPos">＋ 阳性（×10）</button>
-      <button class="btn primary" id="s3-addneg" data-i18n="addNeg">＋ 阴性（×0.11）</button>
+      <button class="btn primary" id="s3-addpos" data-i18n="addPos">＋ 新测量：亮灯（×10）</button>
+      <button class="btn primary" id="s3-addneg" data-i18n="addNeg">＋ 新测量：不亮（×0.11）</button>
+      <button class="btn" id="s3-copy" data-i18n="s3copy"></button>
       <button class="btn" id="s3-undo" data-i18n="undo">撤销上一条</button>
       <button class="btn" id="s3-clear" data-i18n="clear">清空重来</button>
     </div>
-    <p class="readout" id="s3-readout"></p>
-    <div class="warn-box" data-i18n-html="s3warn">⚠ 记账的前提：假设各条证据条件独立。</div>
+    <p class="readout" id="s3-readout" aria-live="polite"></p>
+    <div class="warn-box" data-i18n-html="s3warn">复制同一条已知读数不增加信息；新增测量须明确条件模型。</div>
     <p class="hint" data-i18n-html="s3hint"></p>
+    <details id="s3-dependence-proof"><summary data-i18n="s3proof"></summary>
+      <p data-i18n="s3proofIntro"></p>
+      <div class="s3-joint-table" tabindex="0" role="region" aria-labelledby="s3-table-caption"><table><caption id="s3-table-caption" data-i18n="s3jointCaption"></caption><thead><tr><th data-i18n="s3pair"></th><th>H</th><th>¬H</th></tr></thead><tbody><tr><th>++</th><td>0.89</td><td>0.0082</td></tr><tr><th>+−</th><td>0.01</td><td>0.0818</td></tr><tr><th>−+</th><td>0.01</td><td>0.0818</td></tr><tr><th>−−</th><td>0.09</td><td>0.8282</td></tr></tbody></table></div>
+      <p data-i18n="s3proofMargins"></p><dl><dt data-i18n="s3independent"></dt><dd id="s3-counter-independent"></dd><dt data-i18n="s3dependent"></dt><dd id="s3-counter-dependent"></dd></dl>
+      <p data-i18n="s3proofConclusion"></p><p class="formula">LR₂ = P(E₂ | E₁, H) / P(E₂ | E₁, ¬H)</p>
+      <p><a href="https://www.probabilitycourse.com/chapter1/1_4_4_conditional_independence.php" data-i18n="s3source"></a></p>
+    </details>
   </div>
 </section>
 

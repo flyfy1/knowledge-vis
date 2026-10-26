@@ -556,10 +556,27 @@ s2Draw(); s2Readout();
 /* ================================================================
    第 3 步 · 证据连乘（贯穿案例：先验 1%，阳性 ×10 / 阴性 ×0.11）
    ================================================================ */
-const s3 = { lrs: [] }; /* 元素 'pos' | 'neg' */
+const s3 = { lrs: [], recordIds: [] }; /* 元素 'pos' | 'neg' */
 const S3_MAX = 14;
 function s3LR(kind) { return kind === 'pos' ? LR_PLUS : LR_MINUS; }
-function s3Posts() { return applyEvidence(CASE.prev, s3.lrs.map(s3LR)); }
+/* Record identity is teaching provenance, not proof of independence. New records
+   explicitly choose the conditional-independence model; a known record adds LR1. */
+function recordEvidenceLRs(kinds, ids) {
+  if (!Array.isArray(kinds) || !Array.isArray(ids) || kinds.length !== ids.length) throw new TypeError('Mismatched evidence records');
+  const seen = new Map();
+  return kinds.map((kind, i) => {
+    const id = ids[i];
+    if (!['pos', 'neg'].includes(kind) || !Number.isSafeInteger(id) || id < 1) throw new TypeError('Invalid evidence record');
+    if (seen.has(id)) {
+      if (seen.get(id) !== kind) throw new TypeError('Conflicting result for the same record');
+      return 1;
+    }
+    seen.set(id, kind);
+    return s3LR(kind);
+  });
+}
+function s3EffectiveLRs() { return recordEvidenceLRs(s3.lrs, s3.recordIds); }
+function s3Posts() { return applyEvidence(CASE.prev, s3EffectiveLRs()); }
 function s3Draw() {
   const ctx = ctxOf('s3-canvas');
   const W = ctx.canvas._w, H = ctx.canvas._h;
@@ -571,6 +588,7 @@ function s3Draw() {
   ctx.font = '12.5px system-ui, sans-serif';
   ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
   ctx.fillStyle = '#9aa7b8';
+  fitFontPx(ctx, t('cTrajLab'), W - x0 - 4, 12.5);
   ctx.fillText(t('cTrajLab'), x0, 22);
   ctx.font = '12px system-ui, sans-serif';
   ctx.textAlign = 'center';
@@ -594,37 +612,50 @@ function s3Draw() {
   ctx.fillText(t('cStartPt') + ' ' + pctTxt(posts[0]), X(0), Y(posts[0]) - 14);
   const last = posts[posts.length - 1];
   ctx.fillStyle = '#6ee7ff'; ctx.textAlign = 'right';
-  ctx.fillText(pctTxt(last), X(posts.length - 1) + 8, Y(last) - 12);
+  if (posts.length > 1) ctx.fillText(pctTxt(last), X(posts.length - 1) + 8, Y(last) - 12);
   /* x 轴步数 */
   ctx.fillStyle = '#5b6b82'; ctx.textAlign = 'center'; ctx.font = '12px system-ui, sans-serif';
   for (let i = 0; i <= S3_MAX; i += 2) ctx.fillText(String(i), X(i), y1 + 20);
 }
 function s3Chips() {
-  const box = $('s3-chips');
-  if (!s3.lrs.length) { box.innerHTML = '<span class="empty">' + t('chipPos') + ' ×0 · ' + t('chipNeg') + ' ×0</span>'; return; }
-  box.innerHTML = s3.lrs.map(k =>
-    '<span class="chip ' + k + '">' + t(k === 'pos' ? 'chipPos' : 'chipNeg') + ' ×' + fmtLR(s3LR(k)) + '</span>'
-  ).join('');
+  const box = $('s3-chips'), effective = s3EffectiveLRs();
+  if (!s3.lrs.length) { box.textContent = t('s3empty'); return; }
+  box.innerHTML = s3.lrs.map((k, i) => {
+    const duplicate = effective[i] === 1;
+    return '<span class="chip ' + k + (duplicate ? ' duplicate' : '') + '">R' + s3.recordIds[i] + ' · ' +
+      t(k === 'pos' ? 'chipPos' : 'chipNeg') + (duplicate ? ' · ' + t('s3copied') : '') + ' ×' + fmtLR(effective[i]) + '</span>';
+  }).join('');
 }
 function s3Readout() {
-  const posts = s3Posts();
-  const n = s3.lrs.length;
+  const posts = s3Posts(), effective = s3EffectiveLRs(), n = s3.lrs.length;
   $('s3-addpos').disabled = n >= S3_MAX;
   $('s3-addneg').disabled = n >= S3_MAX;
+  $('s3-copy').disabled = n === 0 || n >= S3_MAX;
   $('s3-undo').disabled = n === 0;
+  $('s3-counter-independent').textContent = fmt(100 * postProb(CASE.prev, .81, .0081), 2) + '%';
+  $('s3-counter-dependent').textContent = fmt(100 * postProb(CASE.prev, .89, .0082), 2) + '%';
   if (!n) { $('s3-readout').innerHTML = t('s3ro0'); return; }
-  let odds = probToOdds(CASE.prev);
-  let chain = fmtOdds(odds);
-  for (const k of s3.lrs) { chain += ' ×' + fmtLR(s3LR(k)); odds *= s3LR(k); }
-  let html = t('s3ro', { chain, odds: fmtOdds(odds), post: pctTxt(posts[n]), n });
+  let odds = probToOdds(CASE.prev), chain = fmtOdds(odds);
+  for (const lr of effective) { chain += ' ×' + fmtLR(lr); odds *= lr; }
+  let html = t('s3ro', { chain, odds: fmtOdds(odds), post: fmt(100 * posts[n], 2) + '%', n, unique: new Set(s3.recordIds).size });
   if (n >= S3_MAX) html += '<br>' + t('s3cap', { max: S3_MAX });
   $('s3-readout').innerHTML = html;
 }
 function s3Refresh() { s3Draw(); s3Chips(); s3Readout(); }
-$('s3-addpos').addEventListener('click', () => { if (s3.lrs.length < S3_MAX) { s3.lrs.push('pos'); s3Refresh(); } });
-$('s3-addneg').addEventListener('click', () => { if (s3.lrs.length < S3_MAX) { s3.lrs.push('neg'); s3Refresh(); } });
-$('s3-undo').addEventListener('click', () => { s3.lrs.pop(); s3Refresh(); });
-$('s3-clear').addEventListener('click', () => { s3.lrs = []; s3Refresh(); });
+function s3Add(kind) {
+  if (s3.lrs.length >= S3_MAX) return;
+  s3.recordIds.push(Math.max(0, ...s3.recordIds) + 1);
+  s3.lrs.push(kind); s3Refresh();
+}
+$('s3-addpos').addEventListener('click', () => s3Add('pos'));
+$('s3-addneg').addEventListener('click', () => s3Add('neg'));
+$('s3-copy').addEventListener('click', () => {
+  if (!s3.lrs.length || s3.lrs.length >= S3_MAX) return;
+  s3.recordIds.push(s3.recordIds[s3.recordIds.length - 1]);
+  s3.lrs.push(s3.lrs[s3.lrs.length - 1]); s3Refresh();
+});
+$('s3-undo').addEventListener('click', () => { s3.lrs.pop(); s3.recordIds.pop(); s3Refresh(); });
+$('s3-clear').addEventListener('click', () => { s3.lrs = []; s3.recordIds = []; s3Refresh(); });
 onLangRefresh(s3Refresh);
 onRefit(() => s3Draw());
 s3Refresh();
@@ -974,7 +1005,7 @@ window.BAYES = {
   CASE: { prev: CASE.prev, sens: CASE.sens, fpr: CASE.fpr },
   LR_PLUS, LR_MINUS, COIN_THETA,
   postProb, probToOdds, oddsToProb, lrPlus, lrMinus,
-  applyEvidence, freqCounts,
+  applyEvidence, freqCounts, recordEvidenceLRs,
   lnGamma, betaPdf, betaMean, betaMode, posteriorAfterFlips,
   mulberry32, coinSequence,
   getState() {
@@ -987,7 +1018,7 @@ window.BAYES = {
       s0: { bet: s0.bet, revealed: s0.revealed, counts: c0, ppv: c0.ppv },
       s1: { prior: s1.prior, post: s1Post() },
       s2: { prior: s2.prior, lr: s2.lr, postOdds: s2PostOdds(), post: oddsToProb(s2PostOdds()) },
-      s3: { lrs: s3.lrs.slice(), posts: s3Posts() },
+      s3: { lrs: s3.lrs.slice(), recordIds: s3.recordIds.slice(), effectiveLRs: s3EffectiveLRs(), posts: s3Posts() },
       s4: {
         priKey: s4.priKey, seed: s4.seed,
         randH: s4.randH, randT: s4.randT, manH: s4.manH, manT: s4.manT,

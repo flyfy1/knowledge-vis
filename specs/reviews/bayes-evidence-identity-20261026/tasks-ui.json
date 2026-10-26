@@ -1,0 +1,405 @@
+[
+  {
+    "stage": "EN new R1",
+    "text": "Step 3 · New measurement or old record?\n\nDo not count the same reading twice\n\nUse Step1’s hypothetical card reader: H means a starred card, E a lit lamp. This ledger fixes the prior at 1% (it does not inherit the Step1 slider); P(E|H)=90% and P(E|¬H)=9%. New measurement selects a model assumption: readings are conditionally independent both given H and given ¬H. Within either case, knowing previous readings leaves the next lamp probability unchanged. A record number labels its source; it does not prove independence.\n\nPredict, then try: Clear → new lit reading R1 → copy R1. Will the probability rise again? Undo the copy, then add a new lit reading R2. Compare the same curve: about 9.17% → 9.17%, versus 9.17% → 50.25%.\n\nR1 · lit ×10\n+ New measurement: lit (×10)\n+ New measurement: unlit (×0.11)\nCopy last record (×1)\nUndo last\nClear\n\nOdds 1 : 99 ×10 → posterior odds 1 : 9.9 → starred-card probability 9.17%. 1 entries, 1 distinct records.\n\nA copy is the same known reading, not another measurement. It adds no information: multiply odds by 1 and the curve stays flat. A genuinely new, dependent measurement can still add information, but needs probabilities conditional on previous results and H / ¬H; do not reuse ×10 automatically. Conditional independence also differs from independence in the mixed population. The independent product is not a general upper or lower bound.\n\nA lit lamp has likelihood ratio 0.90 / 0.09 = 10; an unlit lamp has 0.10 / 0.91 ≈ 0.11. Multiply odds, not probability, by this ratio. The horizontal axis counts display entries, including copies.\n\nMore: why is the independent product not an upper bound?",
+    "buttons": [
+      {
+        "text": "+ New measurement: lit (×10)",
+        "disabled": false,
+        "focused": true
+      },
+      {
+        "text": "+ New measurement: unlit (×0.11)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Copy last record (×1)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Undo last",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Clear",
+        "disabled": false,
+        "focused": false
+      }
+    ],
+    "proofOpen": false
+  },
+  {
+    "stage": "EN copy R1",
+    "text": "Step 3 · New measurement or old record?\n\nDo not count the same reading twice\n\nUse Step1’s hypothetical card reader: H means a starred card, E a lit lamp. This ledger fixes the prior at 1% (it does not inherit the Step1 slider); P(E|H)=90% and P(E|¬H)=9%. New measurement selects a model assumption: readings are conditionally independent both given H and given ¬H. Within either case, knowing previous readings leaves the next lamp probability unchanged. A record number labels its source; it does not prove independence.\n\nPredict, then try: Clear → new lit reading R1 → copy R1. Will the probability rise again? Undo the copy, then add a new lit reading R2. Compare the same curve: about 9.17% → 9.17%, versus 9.17% → 50.25%.\n\nR1 · lit ×10\nR1 · lit · copy of same reading ×1\n+ New measurement: lit (×10)\n+ New measurement: unlit (×0.11)\nCopy last record (×1)\nUndo last\nClear\n\nOdds 1 : 99 ×10 ×1 → posterior odds 1 : 9.9 → starred-card probability 9.17%. 2 entries, 1 distinct records.\n\nA copy is the same known reading, not another measurement. It adds no information: multiply odds by 1 and the curve stays flat. A genuinely new, dependent measurement can still add information, but needs probabilities conditional on previous results and H / ¬H; do not reuse ×10 automatically. Conditional independence also differs from independence in the mixed population. The independent product is not a general upper or lower bound.\n\nA lit lamp has likelihood ratio 0.90 / 0.09 = 10; an unlit lamp has 0.10 / 0.91 ≈ 0.11. Multiply odds, not probability, by this ratio. The horizontal axis counts display entries, including copies.\n\nMore: why is the independent product not an upper bound?",
+    "buttons": [
+      {
+        "text": "+ New measurement: lit (×10)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "+ New measurement: unlit (×0.11)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Copy last record (×1)",
+        "disabled": false,
+        "focused": true
+      },
+      {
+        "text": "Undo last",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Clear",
+        "disabled": false,
+        "focused": false
+      }
+    ],
+    "proofOpen": false
+  },
+  {
+    "stage": "EN undo copy",
+    "text": "Step 3 · New measurement or old record?\n\nDo not count the same reading twice\n\nUse Step1’s hypothetical card reader: H means a starred card, E a lit lamp. This ledger fixes the prior at 1% (it does not inherit the Step1 slider); P(E|H)=90% and P(E|¬H)=9%. New measurement selects a model assumption: readings are conditionally independent both given H and given ¬H. Within either case, knowing previous readings leaves the next lamp probability unchanged. A record number labels its source; it does not prove independence.\n\nPredict, then try: Clear → new lit reading R1 → copy R1. Will the probability rise again? Undo the copy, then add a new lit reading R2. Compare the same curve: about 9.17% → 9.17%, versus 9.17% → 50.25%.\n\nR1 · lit ×10\n+ New measurement: lit (×10)\n+ New measurement: unlit (×0.11)\nCopy last record (×1)\nUndo last\nClear\n\nOdds 1 : 99 ×10 → posterior odds 1 : 9.9 → starred-card probability 9.17%. 1 entries, 1 distinct records.\n\nA copy is the same known reading, not another measurement. It adds no information: multiply odds by 1 and the curve stays flat. A genuinely new, dependent measurement can still add information, but needs probabilities conditional on previous results and H / ¬H; do not reuse ×10 automatically. Conditional independence also differs from independence in the mixed population. The independent product is not a general upper or lower bound.\n\nA lit lamp has likelihood ratio 0.90 / 0.09 = 10; an unlit lamp has 0.10 / 0.91 ≈ 0.11. Multiply odds, not probability, by this ratio. The horizontal axis counts display entries, including copies.\n\nMore: why is the independent product not an upper bound?",
+    "buttons": [
+      {
+        "text": "+ New measurement: lit (×10)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "+ New measurement: unlit (×0.11)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Copy last record (×1)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Undo last",
+        "disabled": false,
+        "focused": true
+      },
+      {
+        "text": "Clear",
+        "disabled": false,
+        "focused": false
+      }
+    ],
+    "proofOpen": false
+  },
+  {
+    "stage": "EN new R2",
+    "text": "Step 3 · New measurement or old record?\n\nDo not count the same reading twice\n\nUse Step1’s hypothetical card reader: H means a starred card, E a lit lamp. This ledger fixes the prior at 1% (it does not inherit the Step1 slider); P(E|H)=90% and P(E|¬H)=9%. New measurement selects a model assumption: readings are conditionally independent both given H and given ¬H. Within either case, knowing previous readings leaves the next lamp probability unchanged. A record number labels its source; it does not prove independence.\n\nPredict, then try: Clear → new lit reading R1 → copy R1. Will the probability rise again? Undo the copy, then add a new lit reading R2. Compare the same curve: about 9.17% → 9.17%, versus 9.17% → 50.25%.\n\nR1 · lit ×10\nR2 · lit ×10\n+ New measurement: lit (×10)\n+ New measurement: unlit (×0.11)\nCopy last record (×1)\nUndo last\nClear\n\nOdds 1 : 99 ×10 ×10 → posterior odds 1.01 : 1 → starred-card probability 50.3%. 2 entries, 2 distinct records.\n\nA copy is the same known reading, not another measurement. It adds no information: multiply odds by 1 and the curve stays flat. A genuinely new, dependent measurement can still add information, but needs probabilities conditional on previous results and H / ¬H; do not reuse ×10 automatically. Conditional independence also differs from independence in the mixed population. The independent product is not a general upper or lower bound.\n\nA lit lamp has likelihood ratio 0.90 / 0.09 = 10; an unlit lamp has 0.10 / 0.91 ≈ 0.11. Multiply odds, not probability, by this ratio. The horizontal axis counts display entries, including copies.\n\nMore: why is the independent product not an upper bound?",
+    "buttons": [
+      {
+        "text": "+ New measurement: lit (×10)",
+        "disabled": false,
+        "focused": true
+      },
+      {
+        "text": "+ New measurement: unlit (×0.11)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Copy last record (×1)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Undo last",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Clear",
+        "disabled": false,
+        "focused": false
+      }
+    ],
+    "proofOpen": false
+  },
+  {
+    "stage": "EN proof open",
+    "text": "Step 3 · New measurement or old record?\n\nDo not count the same reading twice\n\nUse Step1’s hypothetical card reader: H means a starred card, E a lit lamp. This ledger fixes the prior at 1% (it does not inherit the Step1 slider); P(E|H)=90% and P(E|¬H)=9%. New measurement selects a model assumption: readings are conditionally independent both given H and given ¬H. Within either case, knowing previous readings leaves the next lamp probability unchanged. A record number labels its source; it does not prove independence.\n\nPredict, then try: Clear → new lit reading R1 → copy R1. Will the probability rise again? Undo the copy, then add a new lit reading R2. Compare the same curve: about 9.17% → 9.17%, versus 9.17% → 50.25%.\n\nR1 · lit ×10\nR2 · lit ×10\n+ New measurement: lit (×10)\n+ New measurement: unlit (×0.11)\nCopy last record (×1)\nUndo last\nClear\n\nOdds 1 : 99 ×10 ×10 → posterior odds 1.01 : 1 → starred-card probability 50.3%. 2 entries, 2 distinct records.\n\nA copy is the same known reading, not another measurement. It adds no information: multiply odds by 1 and the curve stays flat. A genuinely new, dependent measurement can still add information, but needs probabilities conditional on previous results and H / ¬H; do not reuse ×10 automatically. Conditional independence also differs from independence in the mixed population. The independent product is not a general upper or lower bound.\n\nA lit lamp has likelihood ratio 0.90 / 0.09 = 10; an unlit lamp has 0.10 / 0.91 ≈ 0.11. Multiply odds, not probability, by this ratio. The horizontal axis counts display entries, including copies.\n\nMore: why is the independent product not an upper bound?\n\nThis is a constructed, valid two-reading probability model, not measured reader performance. + means lit and − unlit; +− means lit first, unlit second. Each column sums to 1 under its hypothesis.\n\nJoint probabilities of two readings, given H or ¬H\nResults\tH\t¬H\n++\t0.89\t0.0082\n+−\t0.01\t0.0818\n−+\t0.01\t0.0818\n−−\t0.09\t0.8282\n\nEach reading still has lamp probability 0.90 given H and 0.09 given ¬H, but the readings are not conditionally independent. Even positive correlation under both hypotheses does not guarantee an upper bound.\n\nConditionally independent: two lit readings, joint probabilities 0.81 / 0.0081 → posterior\n50.3%\nDependent table above: two lit readings, joint probabilities 0.89 / 0.0082 → posterior\n52.3%\n\nWith the same 1% prior, the dependent model gives a higher result. This is a counterexample, not a rule for all dependence. Generally use the conditional likelihood ratio below; for a copy of the same known reading, numerator and denominator are both 1.\n\nLR₂ = P(E₂ | E₁, H) / P(E₂ | E₁, ¬H)\n\nMath source: ProbabilityCourse §1.4.4, conditional versus marginal independence",
+    "buttons": [
+      {
+        "text": "+ New measurement: lit (×10)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "+ New measurement: unlit (×0.11)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Copy last record (×1)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Undo last",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Clear",
+        "disabled": false,
+        "focused": false
+      }
+    ],
+    "proofOpen": true
+  },
+  {
+    "stage": "EN proof folded",
+    "text": "Step 3 · New measurement or old record?\n\nDo not count the same reading twice\n\nUse Step1’s hypothetical card reader: H means a starred card, E a lit lamp. This ledger fixes the prior at 1% (it does not inherit the Step1 slider); P(E|H)=90% and P(E|¬H)=9%. New measurement selects a model assumption: readings are conditionally independent both given H and given ¬H. Within either case, knowing previous readings leaves the next lamp probability unchanged. A record number labels its source; it does not prove independence.\n\nPredict, then try: Clear → new lit reading R1 → copy R1. Will the probability rise again? Undo the copy, then add a new lit reading R2. Compare the same curve: about 9.17% → 9.17%, versus 9.17% → 50.25%.\n\nR1 · lit ×10\nR2 · lit ×10\n+ New measurement: lit (×10)\n+ New measurement: unlit (×0.11)\nCopy last record (×1)\nUndo last\nClear\n\nOdds 1 : 99 ×10 ×10 → posterior odds 1.01 : 1 → starred-card probability 50.3%. 2 entries, 2 distinct records.\n\nA copy is the same known reading, not another measurement. It adds no information: multiply odds by 1 and the curve stays flat. A genuinely new, dependent measurement can still add information, but needs probabilities conditional on previous results and H / ¬H; do not reuse ×10 automatically. Conditional independence also differs from independence in the mixed population. The independent product is not a general upper or lower bound.\n\nA lit lamp has likelihood ratio 0.90 / 0.09 = 10; an unlit lamp has 0.10 / 0.91 ≈ 0.11. Multiply odds, not probability, by this ratio. The horizontal axis counts display entries, including copies.\n\nMore: why is the independent product not an upper bound?",
+    "buttons": [
+      {
+        "text": "+ New measurement: lit (×10)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "+ New measurement: unlit (×0.11)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Copy last record (×1)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Undo last",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Clear",
+        "disabled": false,
+        "focused": false
+      }
+    ],
+    "proofOpen": false
+  },
+  {
+    "stage": "HTML text 200%",
+    "viewport": {
+      "width": 390,
+      "height": 1000
+    },
+    "pageScrollWidth": 390
+  },
+  {
+    "stage": "EN clear",
+    "text": "Step 3 · New measurement or old record?\n\nDo not count the same reading twice\n\nUse Step1’s hypothetical card reader: H means a starred card, E a lit lamp. This ledger fixes the prior at 1% (it does not inherit the Step1 slider); P(E|H)=90% and P(E|¬H)=9%. New measurement selects a model assumption: readings are conditionally independent both given H and given ¬H. Within either case, knowing previous readings leaves the next lamp probability unchanged. A record number labels its source; it does not prove independence.\n\nPredict, then try: Clear → new lit reading R1 → copy R1. Will the probability rise again? Undo the copy, then add a new lit reading R2. Compare the same curve: about 9.17% → 9.17%, versus 9.17% → 50.25%.\n\nNo records yet\n+ New measurement: lit (×10)\n+ New measurement: unlit (×0.11)\nCopy last record (×1)\nUndo last\nClear\n\nEmpty ledger. Posterior = prior = 1.00%. Add one lit-lamp measurement first.\n\nA copy is the same known reading, not another measurement. It adds no information: multiply odds by 1 and the curve stays flat. A genuinely new, dependent measurement can still add information, but needs probabilities conditional on previous results and H / ¬H; do not reuse ×10 automatically. Conditional independence also differs from independence in the mixed population. The independent product is not a general upper or lower bound.\n\nA lit lamp has likelihood ratio 0.90 / 0.09 = 10; an unlit lamp has 0.10 / 0.91 ≈ 0.11. Multiply odds, not probability, by this ratio. The horizontal axis counts display entries, including copies.\n\nMore: why is the independent product not an upper bound?",
+    "buttons": [
+      {
+        "text": "+ New measurement: lit (×10)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "+ New measurement: unlit (×0.11)",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "Copy last record (×1)",
+        "disabled": true,
+        "focused": false
+      },
+      {
+        "text": "Undo last",
+        "disabled": true,
+        "focused": false
+      },
+      {
+        "text": "Clear",
+        "disabled": false,
+        "focused": true
+      }
+    ],
+    "proofOpen": false
+  },
+  {
+    "stage": "ZH initial",
+    "text": "第 3 步 · 新测量，还是旧记录？\n\n同一条读数，不能算两次新证据\n\n沿用第1步的假想读卡器：H 表示卡片有星标，E 表示亮灯。这里固定先验为 1%（不继承第1步滑轨）；有星标时亮灯概率为 90%，无星标时为 9%。新增测量按钮选择一个模型假设：在有星标、无星标两种情况下，各次读数都条件独立，即知道之前的读数不会改变下一次的亮灯概率。记录编号只是演示来源，不是独立性的证明。\n\n先预测再试：清空 → 新增亮灯 R1 → 复制 R1。概率会再升吗？撤销复制件，再新增亮灯 R2，比较同一曲线：约 9.17% → 9.17%，与 9.17% → 50.25%。\n\n尚无记录\n＋ 新测量：亮灯（×10）\n＋ 新测量：不亮（×0.11）\n复制最后一条记录（×1）\n撤销上一条\n清空重来\n\n账本为空。后验 = 先验 = 1.00%。先新增一次亮灯测量。\n\n复制的是同一条已知读数，不是再次测量。它没有新增信息，赔率只乘 1，曲线出现平段。真正的新测量即使有关联，也可能提供新信息，但需知道给定此前结果及 H／¬H 后的条件概率；不能照搬固定的 ×10。条件独立也不等于不区分 H 的总体独立。独立连乘不是一般的上限或下限。\n\n亮灯的似然比为 0.90 / 0.09 = 10；不亮为 0.10 / 0.91 ≈ 0.11。赔率乘似然比，不是概率直接乘它。图横轴计显示条目，复制件也占一格。\n\n补充：为什么独立连乘不是普遍上限？",
+    "buttons": [
+      {
+        "text": "＋ 新测量：亮灯（×10）",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "＋ 新测量：不亮（×0.11）",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "复制最后一条记录（×1）",
+        "disabled": true,
+        "focused": false
+      },
+      {
+        "text": "撤销上一条",
+        "disabled": true,
+        "focused": false
+      },
+      {
+        "text": "清空重来",
+        "disabled": false,
+        "focused": false
+      }
+    ],
+    "proofOpen": false
+  },
+  {
+    "stage": "ZH copy",
+    "text": "第 3 步 · 新测量，还是旧记录？\n\n同一条读数，不能算两次新证据\n\n沿用第1步的假想读卡器：H 表示卡片有星标，E 表示亮灯。这里固定先验为 1%（不继承第1步滑轨）；有星标时亮灯概率为 90%，无星标时为 9%。新增测量按钮选择一个模型假设：在有星标、无星标两种情况下，各次读数都条件独立，即知道之前的读数不会改变下一次的亮灯概率。记录编号只是演示来源，不是独立性的证明。\n\n先预测再试：清空 → 新增亮灯 R1 → 复制 R1。概率会再升吗？撤销复制件，再新增亮灯 R2，比较同一曲线：约 9.17% → 9.17%，与 9.17% → 50.25%。\n\nR1 · 亮灯 ×10\nR1 · 亮灯 · 同一读数的复制件 ×1\n＋ 新测量：亮灯（×10）\n＋ 新测量：不亮（×0.11）\n复制最后一条记录（×1）\n撤销上一条\n清空重来\n\n赔率链 1 : 99 ×10 ×1 → 后验赔率 1 : 9.9 → 有星标概率 9.17%。2 个条目，1 条不同记录。\n\n复制的是同一条已知读数，不是再次测量。它没有新增信息，赔率只乘 1，曲线出现平段。真正的新测量即使有关联，也可能提供新信息，但需知道给定此前结果及 H／¬H 后的条件概率；不能照搬固定的 ×10。条件独立也不等于不区分 H 的总体独立。独立连乘不是一般的上限或下限。\n\n亮灯的似然比为 0.90 / 0.09 = 10；不亮为 0.10 / 0.91 ≈ 0.11。赔率乘似然比，不是概率直接乘它。图横轴计显示条目，复制件也占一格。\n\n补充：为什么独立连乘不是普遍上限？",
+    "buttons": [
+      {
+        "text": "＋ 新测量：亮灯（×10）",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "＋ 新测量：不亮（×0.11）",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "复制最后一条记录（×1）",
+        "disabled": false,
+        "focused": true
+      },
+      {
+        "text": "撤销上一条",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "清空重来",
+        "disabled": false,
+        "focused": false
+      }
+    ],
+    "proofOpen": false
+  },
+  {
+    "stage": "ZH new R2",
+    "text": "第 3 步 · 新测量，还是旧记录？\n\n同一条读数，不能算两次新证据\n\n沿用第1步的假想读卡器：H 表示卡片有星标，E 表示亮灯。这里固定先验为 1%（不继承第1步滑轨）；有星标时亮灯概率为 90%，无星标时为 9%。新增测量按钮选择一个模型假设：在有星标、无星标两种情况下，各次读数都条件独立，即知道之前的读数不会改变下一次的亮灯概率。记录编号只是演示来源，不是独立性的证明。\n\n先预测再试：清空 → 新增亮灯 R1 → 复制 R1。概率会再升吗？撤销复制件，再新增亮灯 R2，比较同一曲线：约 9.17% → 9.17%，与 9.17% → 50.25%。\n\nR1 · 亮灯 ×10\nR2 · 亮灯 ×10\n＋ 新测量：亮灯（×10）\n＋ 新测量：不亮（×0.11）\n复制最后一条记录（×1）\n撤销上一条\n清空重来\n\n赔率链 1 : 99 ×10 ×10 → 后验赔率 1.01 : 1 → 有星标概率 50.3%。2 个条目，2 条不同记录。\n\n复制的是同一条已知读数，不是再次测量。它没有新增信息，赔率只乘 1，曲线出现平段。真正的新测量即使有关联，也可能提供新信息，但需知道给定此前结果及 H／¬H 后的条件概率；不能照搬固定的 ×10。条件独立也不等于不区分 H 的总体独立。独立连乘不是一般的上限或下限。\n\n亮灯的似然比为 0.90 / 0.09 = 10；不亮为 0.10 / 0.91 ≈ 0.11。赔率乘似然比，不是概率直接乘它。图横轴计显示条目，复制件也占一格。\n\n补充：为什么独立连乘不是普遍上限？",
+    "buttons": [
+      {
+        "text": "＋ 新测量：亮灯（×10）",
+        "disabled": false,
+        "focused": true
+      },
+      {
+        "text": "＋ 新测量：不亮（×0.11）",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "复制最后一条记录（×1）",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "撤销上一条",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "清空重来",
+        "disabled": false,
+        "focused": false
+      }
+    ],
+    "proofOpen": false
+  },
+  {
+    "stage": "ZH proof open",
+    "text": "第 3 步 · 新测量，还是旧记录？\n\n同一条读数，不能算两次新证据\n\n沿用第1步的假想读卡器：H 表示卡片有星标，E 表示亮灯。这里固定先验为 1%（不继承第1步滑轨）；有星标时亮灯概率为 90%，无星标时为 9%。新增测量按钮选择一个模型假设：在有星标、无星标两种情况下，各次读数都条件独立，即知道之前的读数不会改变下一次的亮灯概率。记录编号只是演示来源，不是独立性的证明。\n\n先预测再试：清空 → 新增亮灯 R1 → 复制 R1。概率会再升吗？撤销复制件，再新增亮灯 R2，比较同一曲线：约 9.17% → 9.17%，与 9.17% → 50.25%。\n\nR1 · 亮灯 ×10\nR2 · 亮灯 ×10\n＋ 新测量：亮灯（×10）\n＋ 新测量：不亮（×0.11）\n复制最后一条记录（×1）\n撤销上一条\n清空重来\n\n赔率链 1 : 99 ×10 ×10 → 后验赔率 1.01 : 1 → 有星标概率 50.3%。2 个条目，2 条不同记录。\n\n复制的是同一条已知读数，不是再次测量。它没有新增信息，赔率只乘 1，曲线出现平段。真正的新测量即使有关联，也可能提供新信息，但需知道给定此前结果及 H／¬H 后的条件概率；不能照搬固定的 ×10。条件独立也不等于不区分 H 的总体独立。独立连乘不是一般的上限或下限。\n\n亮灯的似然比为 0.90 / 0.09 = 10；不亮为 0.10 / 0.91 ≈ 0.11。赔率乘似然比，不是概率直接乘它。图横轴计显示条目，复制件也占一格。\n\n补充：为什么独立连乘不是普遍上限？\n\n下面是人为构造、但合法的两次测量概率模型，不是读卡器实测。+ 表示亮灯，− 表示不亮；例如 +− 表示第一次亮、第二次不亮。每列都在对应假设下合计为 1。\n\n给定 H 或 ¬H 时，两次结果的联合概率\n两次结果\tH\t¬H\n++\t0.89\t0.0082\n+−\t0.01\t0.0818\n−+\t0.01\t0.0818\n−−\t0.09\t0.8282\n\n两次各自的亮灯概率仍分别为：给定 H 时 0.90，给定 ¬H 时 0.09；但两次不条件独立。即使两种假设下都呈正相关，连乘也不保证是上限。\n\n条件独立模型：两次亮灯，联合概率 0.81 / 0.0081 → 后验\n50.3%\n上表依赖模型：两次亮灯，联合概率 0.89 / 0.0082 → 后验\n52.3%\n\n同为 1% 先验，依赖模型反而更高。上表只是反例，不描述所有关联。一般需用下面的条件似然比更新；同一条已知读数的复制件，其分子、分母均为 1。\n\nLR₂ = P(E₂ | E₁, H) / P(E₂ | E₁, ¬H)\n\n数学依据：ProbabilityCourse §1.4.4 条件独立定义与总体独立的区别",
+    "buttons": [
+      {
+        "text": "＋ 新测量：亮灯（×10）",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "＋ 新测量：不亮（×0.11）",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "复制最后一条记录（×1）",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "撤销上一条",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "清空重来",
+        "disabled": false,
+        "focused": false
+      }
+    ],
+    "proofOpen": true
+  },
+  {
+    "stage": "HTML text 200%",
+    "viewport": {
+      "width": 390,
+      "height": 1000
+    },
+    "pageScrollWidth": 390
+  },
+  {
+    "stage": "ZH clear",
+    "text": "第 3 步 · 新测量，还是旧记录？\n\n同一条读数，不能算两次新证据\n\n沿用第1步的假想读卡器：H 表示卡片有星标，E 表示亮灯。这里固定先验为 1%（不继承第1步滑轨）；有星标时亮灯概率为 90%，无星标时为 9%。新增测量按钮选择一个模型假设：在有星标、无星标两种情况下，各次读数都条件独立，即知道之前的读数不会改变下一次的亮灯概率。记录编号只是演示来源，不是独立性的证明。\n\n先预测再试：清空 → 新增亮灯 R1 → 复制 R1。概率会再升吗？撤销复制件，再新增亮灯 R2，比较同一曲线：约 9.17% → 9.17%，与 9.17% → 50.25%。\n\n尚无记录\n＋ 新测量：亮灯（×10）\n＋ 新测量：不亮（×0.11）\n复制最后一条记录（×1）\n撤销上一条\n清空重来\n\n账本为空。后验 = 先验 = 1.00%。先新增一次亮灯测量。\n\n复制的是同一条已知读数，不是再次测量。它没有新增信息，赔率只乘 1，曲线出现平段。真正的新测量即使有关联，也可能提供新信息，但需知道给定此前结果及 H／¬H 后的条件概率；不能照搬固定的 ×10。条件独立也不等于不区分 H 的总体独立。独立连乘不是一般的上限或下限。\n\n亮灯的似然比为 0.90 / 0.09 = 10；不亮为 0.10 / 0.91 ≈ 0.11。赔率乘似然比，不是概率直接乘它。图横轴计显示条目，复制件也占一格。\n\n补充：为什么独立连乘不是普遍上限？\n\n下面是人为构造、但合法的两次测量概率模型，不是读卡器实测。+ 表示亮灯，− 表示不亮；例如 +− 表示第一次亮、第二次不亮。每列都在对应假设下合计为 1。\n\n给定 H 或 ¬H 时，两次结果的联合概率\n两次结果\tH\t¬H\n++\t0.89\t0.0082\n+−\t0.01\t0.0818\n−+\t0.01\t0.0818\n−−\t0.09\t0.8282\n\n两次各自的亮灯概率仍分别为：给定 H 时 0.90，给定 ¬H 时 0.09；但两次不条件独立。即使两种假设下都呈正相关，连乘也不保证是上限。\n\n条件独立模型：两次亮灯，联合概率 0.81 / 0.0081 → 后验\n50.3%\n上表依赖模型：两次亮灯，联合概率 0.89 / 0.0082 → 后验\n52.3%\n\n同为 1% 先验，依赖模型反而更高。上表只是反例，不描述所有关联。一般需用下面的条件似然比更新；同一条已知读数的复制件，其分子、分母均为 1。\n\nLR₂ = P(E₂ | E₁, H) / P(E₂ | E₁, ¬H)\n\n数学依据：ProbabilityCourse §1.4.4 条件独立定义与总体独立的区别",
+    "buttons": [
+      {
+        "text": "＋ 新测量：亮灯（×10）",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "＋ 新测量：不亮（×0.11）",
+        "disabled": false,
+        "focused": false
+      },
+      {
+        "text": "复制最后一条记录（×1）",
+        "disabled": true,
+        "focused": false
+      },
+      {
+        "text": "撤销上一条",
+        "disabled": true,
+        "focused": false
+      },
+      {
+        "text": "清空重来",
+        "disabled": false,
+        "focused": true
+      }
+    ],
+    "proofOpen": true
+  },
+  {
+    "browser": "CLOSED"
+  }
+]

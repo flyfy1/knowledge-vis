@@ -278,3 +278,18 @@ canvas.pix{image-rendering:pixelated}
 
 /* S1 hypothetical reader: same prior/core; strip denominator is the E pool. */
 #s1-measurement{margin:20px 0;padding:16px;border:1px solid var(--line);border-radius:12px}#s1-measurement p,#s1-measurement dl{margin:12px 0}#s1-mixture{height:48px;display:flex;border:1px solid var(--muted);margin:16px 0}#s1-mixture span{display:block;min-width:0}#s1-mixture-yes{background:var(--accent)}#s1-mixture-no{background:var(--accent2);border:2px dashed var(--text)}#s1-measurement dt{color:var(--muted)}#s1-measurement dd{font-variant-numeric:tabular-nums;margin-bottom:12px}#s1-measurement summary,#s1-measurement a,#s1-presets button,#s1-prior{min-height:48px}#s1-measurement a{display:inline-block}#s1-measurement summary{cursor:pointer}#s1-measurement p,#s1-measurement dt{overflow-wrap:anywhere}#s1-prior:focus-visible,#s1-presets button:focus-visible,#s1-measurement summary:focus-visible,#s1-measurement a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}#s1-presets .btn:not(.active){border-color:var(--muted)}@media(forced-colors:active){#s1-mixture-yes{background:Highlight}#s1-mixture-no{background:Canvas;border-color:CanvasText}#s1-prior:focus-visible,#s1-presets button:focus-visible,#s1-measurement summary:focus-visible,#s1-measurement a:focus-visible{outline-color:Highlight}}
+
+/* S3 evidence identity: copies remain readable without color. */
+#step3 .btn { min-height:48px; white-space:normal; }
+#step3 .duplicate { border-style:dashed; }
+#s3-readout { overflow-wrap:anywhere; }
+#s3-dependence-proof { margin-top:1rem; padding:1rem; border:1px solid var(--line); border-radius:12px; }
+#s3-dependence-proof summary { cursor:pointer; min-height:48px; }
+#s3-dependence-proof table { width:100%; border-collapse:collapse; margin:1rem 0; }
+#s3-dependence-proof th, #s3-dependence-proof td { padding:.5rem; border:1px solid var(--line); text-align:left; }
+#s3-dependence-proof caption { text-align:left; margin-bottom:.5rem; }
+#s3-dependence-proof dd { margin:0 0 1rem; color:var(--accent); }
+#step3 button:focus-visible, #s3-dependence-proof summary:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+
+#step3 .s3-joint-table { max-width:100%; overflow-x:auto; }
+#step3 .s3-joint-table:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }

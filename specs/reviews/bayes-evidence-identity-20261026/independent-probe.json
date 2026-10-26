@@ -1,0 +1,64 @@
+{
+  "pass": true,
+  "mustFix": 0,
+  "oracleChains": 255,
+  "maxDirectJointVsOddsError": 1.249000902703301e-16,
+  "invalidRecordCases": 8,
+  "actualHandlers": {
+    "copyPositivePlateau": true,
+    "copyNegativePlateau": true,
+    "undoClearBothArrays": true,
+    "maxDerivedIDNotEntryIndex": true,
+    "cap14IncludesCopies": true,
+    "localeRefitKeepState": true
+  },
+  "proof": {
+    "rows": [
+      {
+        "label": "++",
+        "h": 0.89,
+        "nh": 0.0082
+      },
+      {
+        "label": "+\u2212",
+        "h": 0.01,
+        "nh": 0.0818
+      },
+      {
+        "label": "\u2212+",
+        "h": 0.01,
+        "nh": 0.0818
+      },
+      {
+        "label": "\u2212\u2212",
+        "h": 0.09,
+        "nh": 0.8282
+      }
+    ],
+    "covH": 0.07999999999999996,
+    "covNH": 0.00010000000000000113,
+    "independentPosterior": 0.5025125628140704,
+    "dependentPosterior": 0.5229756728170173
+  },
+  "coreFunctionsUnchanged": true,
+  "method": "Own actual S3 handler/helper VM and direct joint-likelihood oracle; HTML proof-table recomputation; no Chrome",
+  "sha256": {
+    "bayes/app.js": "ddc8e85584bfb204a7511fb9648b9feaa5b43b4766eadecc4fed4b01a4040159",
+    "bayes/i18n.js": "527d79ae0af6125a57e9082252e573a24694bebc4d8b9ae70edd8b6d10a06638",
+    "bayes/index.html": "e07f9c56b7c94f3503dc8c31fc226a4d9c9cf2990260e42e151660c95b6b7b38",
+    "bayes/style.css": "40e37f06fecf6ab5345a3a93600389175733b33156a141985d3f7f5adb385dd3"
+  },
+  "probeSourceSHA256": {
+    "bayes/app.js": "ddc8e85584bfb204a7511fb9648b9feaa5b43b4766eadecc4fed4b01a4040159",
+    "bayes/i18n.js": "527d79ae0af6125a57e9082252e573a24694bebc4d8b9ae70edd8b6d10a06638",
+    "bayes/index.html": "e07f9c56b7c94f3503dc8c31fc226a4d9c9cf2990260e42e151660c95b6b7b38",
+    "bayes/style.css": "40e37f06fecf6ab5345a3a93600389175733b33156a141985d3f7f5adb385dd3"
+  },
+  "finalSourceReadSHA256": {
+    "bayes/app.js": "ddc8e85584bfb204a7511fb9648b9feaa5b43b4766eadecc4fed4b01a4040159",
+    "bayes/i18n.js": "b13f730ec6d5ad23e21b160423cedc01dade041881bd4c69780ae37f1f24cfde",
+    "bayes/index.html": "e6c22668974c649ae97554e19a288ec787bd2aa44991e653dc8fdc6afc4eaf3c",
+    "bayes/style.css": "faf999edf4f158ffe4a0dc6d4e6da896c1dbac9e006974c93bcaf28476e098e9"
+  },
+  "finalDisplayCheckpoint": "Source-only named/tabbable table region plus fixed2-decimal proof readouts; numerical table/helper unchanged; no browser/rerun."
+}

@@ -1,0 +1,13 @@
+{
+  "base": "9173da78",
+  "alreadyHasConditionalWarning": true,
+  "incorrectUpperBound": true,
+  "recordIdentityPresent": false,
+  "independentTwoPositive": 0.5025125628140704,
+  "duplicatedObservation": 0.09174311926605506,
+  "validDependentCounterexample": 0.5229756728170173,
+  "conditionalCovariances": [
+    0.07999999999999996,
+    0.00010000000000000113
+  ]
+}

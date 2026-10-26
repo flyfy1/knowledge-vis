@@ -263,3 +263,7 @@ Self-check appears only for motion/kinematics and states A>0,m/k>0,no damping/dr
 F–x highlights only the last a→b leg with displacement direction and Fdx-sign color; the work-versus-seconds graph shows the already-calculated work over the same clock,not Fdt area. Chronological ledger and reverse/equal notes separate orientation from physical time. Scope names block vs block+spring and preserves the general net-work theorem while limiting spring-alone/energy-conservation claims. Canonical work-node help owns K/U/J definitions for both inline view and starting ideas. Response remains a separate damped/driven static model.
 
 Finite floating point is a model-display boundary: adjacent tiny spans pass independent precision checks,while near-symmetric long spans below~1e-16J may round to zero. No general solver/physical measurement claim. Before a fifth free-motion view,inspect all route-adapter lists and shared controls together; preserve the sole app URL owner and one physics clock rather than introducing parallel state.
+
+## Bayes S3 evidence identity — 2026-10-26
+
+[Contract](../specs/atlas-bayes-evidence-identity.md), [review/evidence](../specs/reviews/bayes-evidence-identity-20261026/README.md). Reuses S3 ledger/curve to distinguish same-record copies from new measurements; corrects the false general upper-bound claim. No graph changes. Current scoped results and publication boundaries belong to the linked record, not historical S1 evidence.

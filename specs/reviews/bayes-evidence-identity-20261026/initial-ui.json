@@ -1,0 +1,52 @@
+{
+  "url": "http://127.0.0.1:18937/bayes/#step3",
+  "text": "Step 3 · New measurement or old record?\n\nDo not count the same reading twice\n\nUse Step1’s hypothetical card reader: H means a starred card, E a lit lamp. This ledger fixes the prior at 1% (it does not inherit the Step1 slider); P(E|H)=90% and P(E|¬H)=9%. New measurement selects a model assumption: readings are conditionally independent both given H and given ¬H. Within either case, knowing previous readings leaves the next lamp probability unchanged. A record number labels its source; it does not prove independence.\n\nPredict, then try: Clear → new lit reading R1 → copy R1. Will the probability rise again? Undo the copy, then add a new lit reading R2. Compare the same curve: about 9.17% → 9.17%, versus 9.17% → 50.25%.\n\nNo records yet\n+ New measurement: lit (×10)\n+ New measurement: unlit (×0.11)\nCopy last record (×1)\nUndo last\nClear\n\nEmpty ledger. Posterior = prior = 1.00%. Add one lit-lamp measurement first.\n\nA copy is the same known reading, not another measurement. It adds no information: multiply odds by 1 and the curve stays flat. A genuinely new, dependent measurement can still add information, but needs probabilities conditional on previous results and H / ¬H; do not reuse ×10 automatically. Conditional independence also differs from independence in the mixed population. The independent product is not a general upper or lower bound.\n\nA lit lamp has likelihood ratio 0.90 / 0.09 = 10; an unlit lamp has 0.10 / 0.91 ≈ 0.11. Multiply odds, not probability, by this ratio. The horizontal axis counts display entries, including copies.\n\nMore: why is the independent product not an upper bound?",
+  "controls": [
+    {
+      "tag": "BUTTON",
+      "text": "+ New measurement: lit (×10)",
+      "value": "",
+      "aria": null,
+      "labels": [],
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "+ New measurement: unlit (×0.11)",
+      "value": "",
+      "aria": null,
+      "labels": [],
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Copy last record (×1)",
+      "value": "",
+      "aria": null,
+      "labels": [],
+      "disabled": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Undo last",
+      "value": "",
+      "aria": null,
+      "labels": [],
+      "disabled": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Clear",
+      "value": "",
+      "aria": null,
+      "labels": [],
+      "disabled": false
+    },
+    {
+      "tag": "SUMMARY",
+      "text": "More: why is the independent product not an upper bound?",
+      "aria": null,
+      "labels": []
+    }
+  ]
+}
