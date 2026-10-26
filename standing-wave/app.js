@@ -19,13 +19,19 @@ function yRight(tt, x, lam) { return AMP * Math.sin(omega() * tt - waveK(lam) * 
 function yLeft(tt, x, lam) { return AMP * Math.sin(omega() * tt + waveK(lam) * x); }
 function ySumRope(tt, x, lam) { return yRight(tt, x, lam) + yLeft(tt, x, lam); }
 function yAnalytic(tt, x, lam) { return 2 * AMP * Math.cos(waveK(lam) * x) * Math.sin(omega() * tt); }
-function ampRope(x, lam) { return 2 * AMP * Math.abs(Math.cos(waveK(lam) * x)); }
-function classifyPt(x, lam) {
-  const a = ampRope(x, lam);
-  if (a < 1e-9) return 'node';
-  if (Math.abs(a - 2 * AMP) < 1e-9) return 'anti';
-  return 'mid';
+// Spatial sign and amplitude share one floating-point-scale classification.
+function spatialInfo(x,lam){
+  if(![x,lam].every(Number.isFinite)||lam<=0)throw new RangeError('Invalid spatial point');
+  const u=2*x/lam,h=Math.round(2*u),tol=32*Number.EPSILON*Math.max(1,Math.abs(2*u));
+  let coefficient=2*AMP*Math.cos(Math.PI*u),kind='mid';
+  if(Math.abs(2*u-h)<=tol){
+    if(Math.abs(h%2)===1){coefficient=0;kind='node';}
+    else{coefficient=(Math.abs((h/2)%2)===1?-2:2)*AMP;kind='anti';}
+  }
+  return{coefficient,amplitude:Math.abs(coefficient),kind,phase:kind==='node'?null:coefficient<0?Math.PI:0};
 }
+function ampRope(x, lam) { return spatialInfo(x,lam).amplitude; }
+function classifyPt(x, lam) { return spatialInfo(x,lam).kind; }
 /* 弦：入射 + 固定端反射（相位翻转 π → 取负） */
 function yInc(tt, x, lam) { return AMP * Math.sin(omega() * tt - waveK(lam) * x); }
 function yRefl(tt, x, lam) { return -AMP * Math.sin(omega() * tt + waveK(lam) * x); }
@@ -94,7 +100,7 @@ function fmtHz(v) {
 
 const S = {
   s0: { lam: 2, px: 1, view: 'sum', t: 0, playing: true, visible: false, hist: [] },
-  s1: { lam: 2, px: 1, env: true, t: 0, playing: true, visible: false, hist: [] },
+  s1: { lam: 2, px: 1, env: true, t: 0, playing: false, visible: false, hist: [] },
   s2: { L: 6, lam: 4, t: 0, playing: false, visible: false },
   s3: { n: 1, cmp: false, t: 0, playing: true, visible: false },
   s4: { f: 0.25, t: 0, playing: true, visible: false },
@@ -102,6 +108,9 @@ const S = {
 };
 try{const q=history.state?.standingBoundary;if(q&&[q.L,q.lam,q.t].every(Number.isFinite)&&q.L>=3&&q.L<=8&&Math.abs(q.L*10-Math.round(q.L*10))<1e-9&&q.lam>=2&&q.lam<=14&&q.t>=0&&q.t<1e9)Object.assign(S.s2,{L:q.L,lam:q.lam,t:q.t,playing:false});}catch(_){}
 function saveBoundaryReading(){try{const h=history.state;history.replaceState({...((h&&typeof h==='object')?h:{}),standingBoundary:{L:S.s2.L,lam:S.s2.lam,t:S.s2.t}},'',location.href);}catch(_){}}
+try{const q=history.state?.standingPhase;if(q&&[q.lam,q.px,q.t].every(Number.isFinite)&&q.lam>=1.2&&q.lam<=3&&Math.abs(q.lam*10-Math.round(q.lam*10))<1e-9&&q.px>=-4&&q.px<=4&&typeof q.env==='boolean'&&q.t>=0&&q.t<1e9)Object.assign(S.s1,{lam:q.lam,px:q.px,env:q.env,t:q.t,playing:false});}catch(_){}
+function savePhaseReading(){try{const h=history.state;const{lam,px,env,t}=S.s1;history.replaceState({...((h&&typeof h==='object')?h:{}),standingPhase:{lam,px,env,t}},'',location.href);}catch(_){}}
+function phaseEdit(){S.s1.playing=false;playLabels();render1();readout1();}
 /* 自测正确选项：一律借 PURE 实算判定，不写死 */
 const QUIZ = (() => {
   const kinds = ['node', 'anti', 'mid'];
@@ -200,7 +209,13 @@ function drawRope(cvId, st, opts) {
   ctx.save(); ctx.setLineDash([4, 4]); line(ctx, [RX(st.px), 30], [RX(st.px), 282], 'rgba(255,180,84,0.5)', 1.1); ctx.restore();
   dot(ctx, RX(st.px), RY(yP), orange, 6.5);
   textC(ctx, 'P', RX(st.px) + 15, RY(yP) + 14, orange, 14);
-  textC(ctx, 'x', RX(st.px), 292, muted, 12);
+  if(!opts.reference)textC(ctx, 'x', RX(st.px), 292, muted, 12);
+  if(opts.reference){
+    const yQ=ySumRope(st.t,0,st.lam);
+    ctx.save();ctx.setLineDash([7,5]);line(ctx,[RX(0),55],[RX(0),282],cyan,1.3);ctx.restore();
+    ctx.beginPath();ctx.arc(RX(0),RY(yQ),8,0,2*Math.PI);ctx.strokeStyle=cyan;ctx.lineWidth=2;ctx.stroke();
+    textC(ctx,'Q',RX(0)-16,RY(yQ)-15,cyan,14);
+  }
   ctx.restore();
 }
 /* P 的位移—时间小图（历史实算采样，窗口 8.2 秒） */
@@ -220,9 +235,24 @@ function drawTrace(cvId, st) {
   dot(ctx, 618, 95 - yNow * 40, orange, 4.5);
   ctx.restore();
 }
+// Same axes and same clock; prediction for CURRENT parameters, not recorded data.
+function drawPhaseTrace(st){
+  const ctx=scene('s1-trace',640,220),X=tt=>40+(tt-(st.t-2*PERIOD))/(2*PERIOD)*578,Y=y=>115-y*37.5;
+  textL(ctx,t('phaseTrace'),40,14,muted,12.5);
+  for(const v of [-2,0,2]){line(ctx,[40,Y(v)],[618,Y(v)],lineCol,1);textL(ctx,v+'A',4,Y(v),muted,11);}
+  ctx.save();ctx.beginPath();ctx.rect(40,36,580,157);ctx.clip();
+  for(const ref of [true,false]){
+    ctx.setLineDash(ref?[7,5]:[]);ctx.beginPath();
+    st.hist.forEach((q,i)=>{const yy=ref?ySumRope(q.t,0,st.lam):q.y;i?ctx.lineTo(X(q.t),Y(yy)):ctx.moveTo(X(q.t),Y(yy));});
+    ctx.strokeStyle=ref?cyan:orange;ctx.lineWidth=ref?2:2.5;ctx.stroke();
+  }ctx.restore();
+  ctx.beginPath();ctx.arc(618,Y(ySumRope(st.t,0,st.lam)),6,0,2*Math.PI);ctx.strokeStyle=cyan;ctx.lineWidth=2;ctx.stroke();dot(ctx,618,Y(ySumRope(st.t,st.px,st.lam)),orange,3);
+  textL(ctx,t('phasePast'),40,207,muted,11);textC(ctx,t('phaseNow'),600,207,muted,11);ctx.restore();
+}
 function prefillHist(key) {
   const st = S[key];
   st.hist = [];
+  if(key==='s1'){for(let i=0;i<=160;i++){const tt=st.t-2*PERIOD+i*(2*PERIOD/160);st.hist.push({t:tt,y:ySumRope(tt,st.px,st.lam)});}return;}
   for (let tt = -8.2; tt < -1e-9; tt += 0.05) st.hist.push({ t: tt, y: ySumRope(tt, st.px, st.lam) });
 }
 function measuredAmp(key) {
@@ -254,17 +284,16 @@ function readout0() {
 /* ---------- 第 1 步 ---------- */
 function render1() {
   const st = S.s1;
-  drawRope('s1-canvas', st, { view: 'sum', marker: false, env: st.env, marks: true });
-  drawTrace('s1-trace', st);
+  drawRope('s1-canvas', st, { view: 'sum', marker: false, env: st.env, marks: true, reference:true });
+  drawPhaseTrace(st);
 }
 function readout1() {
-  const st = S.s1, cls = classifyPt(st.px, st.lam);
-  ro('s1-readout', t('s1ro', {
-    x: fmtNum(st.px), xr: fmtNum(st.px / st.lam),
-    amp: fmtNum(ampRope(st.px, st.lam)), meas: fmtNum(measuredAmp('s1'))
-  }));
-  ro('s1-cls', t(cls === 'node' ? 'clsNode' : cls === 'anti' ? 'clsAnti' : 'clsGen', { amp: fmtNum(ampRope(st.px, st.lam)) }));
-  $('s1-cls').style.color = cls === 'node' ? pink : cls === 'anti' ? green : muted;
+  const st=S.s1,info=spatialInfo(st.px,st.lam),cls=info.kind;
+  ro('s1-readout',t('s1ro',{x:fmtBoundary(st.px),xr:fmtBoundary(st.px/st.lam),amp:fmtBoundary(info.amplitude),meas:fmtBoundary(measuredAmp('s1'))}));
+  ro('s1-cls',t(cls==='node'?'clsNode':cls==='anti'?'clsAnti':'clsGen',{amp:fmtBoundary(info.amplitude)}));
+  $('s1-cls').style.color=cls==='node'?pink:cls==='anti'?green:muted;
+  ro('s1-phase',t(info.phase===null?'phaseNode':info.phase===0?'phaseSame':'phaseOpposite',{c:fmtBoundary(info.coefficient)}));
+  ro('s1-now',t('phaseValues',{time:fmtBoundary(st.t),p:fmtBoundary(ySumRope(st.t,st.px,st.lam)),q:fmtBoundary(ySumRope(st.t,0,st.lam))}));
 }
 
 /* ---------- 弦图（第 2/3/4 步共用框）：世界 x∈[0,8] → 640 ---------- */
@@ -419,10 +448,10 @@ function renderAll() {
 }
 function setP(key, x) {
   const st = S[key];
-  const nx = clamp(Math.round(x * 20) / 20, -4, 4);
+  const nx = clamp(key==='s1'?x:Math.round(x * 20) / 20, -4, 4);
   if (nx !== st.px) { st.px = nx; prefillHist(key); }
   $(key + '-px').value = st.px;
-  renderStep(key);
+  if(key==='s1')phaseEdit();else renderStep(key);
 }
 function drag(id, key) {
   const cv = $(id); cv.classList.add('dragc'); let pointer = null;
@@ -433,19 +462,28 @@ function drag(id, key) {
   }
   cv.addEventListener('pointerdown', e => { pointer = e.pointerId; cv.setPointerCapture(pointer); move(e); });
   cv.addEventListener('pointermove', move);
-  for (const type of ['pointerup', 'pointercancel', 'lostpointercapture']) cv.addEventListener(type, () => pointer = null);
+  for (const type of ['pointerup', 'pointercancel', 'lostpointercapture']) cv.addEventListener(type, () => {if(pointer!==null&&key==='s1')savePhaseReading();pointer=null;});
 }
 function bind() {
   for (const key of ['s0', 's1']) {
-    $(key + '-lam').oninput = e => { S[key].lam = Number(e.target.value); prefillHist(key); renderStep(key); };
+    $(key + '-lam').oninput = e => { S[key].lam = Number(e.target.value); prefillHist(key); if(key==='s1')phaseEdit();else renderStep(key); };
     $(key + '-px').oninput = e => setP(key, Number(e.target.value));
-    $(key + '-play').onclick = () => { S[key].playing = !S[key].playing; playLabels(); };
+    $(key + '-play').onclick = () => { S[key].playing = !S[key].playing; playLabels();if(key==='s1'){readout1();savePhaseReading();} };
     drag(key + '-canvas', key);
   }
   for (const v of ['sum', 'right', 'left']) $('s0-v' + v).onclick = () => { S.s0.view = v; render0(); };
-  $('s1-env').onchange = e => { S.s1.env = e.target.checked; render1(); };
-  $('s1-node').onclick = () => setP('s1', S.s1.lam / 4);
-  $('s1-anti').onclick = () => setP('s1', 0);
+  $('s1-lam').value=S.s1.lam;$('s1-px').value=S.s1.px;$('s1-env').checked=S.s1.env;
+  $('s1-env').onchange=e=>{S.s1.env=e.target.checked;phaseEdit();savePhaseReading();};
+  for(const[id,ratio]of [['node',.25],['anti',0],['same',.125],['opposite',.5]])$('s1-'+id).onclick=()=>{setP('s1',S.s1.lam*ratio);savePhaseReading();};
+  $('s1-reset').onclick=()=>{Object.assign(S.s1,{lam:2,px:1,env:true,t:0,playing:false});$('s1-lam').value=2;$('s1-px').value=1;$('s1-env').checked=true;prefillHist('s1');phaseEdit();savePhaseReading();};
+  $('s1-px').addEventListener('keydown',e=>{
+    if(e.altKey||e.ctrlKey||e.metaKey)return;
+    const offsets={ArrowRight:.05,ArrowUp:.05,ArrowLeft:-.05,ArrowDown:-.05,PageUp:.5,PageDown:-.5};
+    if(!(e.key in offsets)&&!['Home','End'].includes(e.key))return;
+    e.preventDefault();setP('s1',e.key==='Home'?-4:e.key==='End'?4:S.s1.px+offsets[e.key]);
+  });
+  $('s1-px').addEventListener('keyup',e=>{if(['ArrowRight','ArrowUp','ArrowLeft','ArrowDown','PageUp','PageDown','Home','End'].includes(e.key))savePhaseReading();});
+  for(const id of ['s1-px','s1-lam'])$(id).addEventListener('change',savePhaseReading);
   $('s2-len').value=S.s2.L;$('s2-lam').value=S.s2.lam;
   $('s2-len').oninput=e=>{S.s2.L=Number(e.target.value);boundaryEdit();};
   $('s2-lam').oninput=e=>{S.s2.lam=Number(e.target.value);boundaryEdit();};
@@ -504,7 +542,7 @@ function tick(ts) {
       st.t += dt;
       if (key === 's0' || key === 's1') {
         st.hist.push({ t: st.t, y: ySumRope(st.t, st.px, st.lam) });
-        while (st.hist.length && st.t - st.hist[0].t > 8.2) st.hist.shift();
+        while (st.hist.length && st.t - st.hist[0].t > (key==='s1'?2*PERIOD:8.2)) st.hist.shift();
       }
     }
     if (st.visible) renderStep(key);
@@ -518,6 +556,8 @@ function tick(ts) {
   }
   requestAnimationFrame(tick);
 }
+function pausePhase(){S.s1.playing=false;playLabels();savePhaseReading();}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pausePhase();});window.addEventListener('pagehide',pausePhase);
 function pauseBoundary(){S.s2.playing=false;playLabels();saveBoundaryReading();}
 document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseBoundary();});window.addEventListener('pagehide',pauseBoundary);
 onLangRefresh(renderAll); bind(); applyLang(getLang());
@@ -526,6 +566,6 @@ requestAnimationFrame(tick);
 // Read-only inspection surface for numerical review; UI remains the mutation path.
 window.STANDING = {
   get state() { return JSON.parse(JSON.stringify(S)); },
-  yRight, yLeft, ySumRope, yAnalytic, ampRope, classifyPt,
+  yRight, yLeft, ySumRope, yAnalytic, ampRope, classifyPt, spatialInfo,
   yInc, yRefl, yStr, ampStr, modeQ, modeN, modeInfo, fmtBoundary, lamN, fN, f1, modeShape, respAmp, fmtNum
 };

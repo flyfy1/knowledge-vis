@@ -88,3 +88,5 @@ that existing pages have completed that process.
 - [Current Visual batch integration and worktree reconciliation](reviews/visual-batch-integration-20261026/README.md): bounded acceptance, cold reading, exact original-to-integrated SHAs and production verification contract.
 
 - [Eigen / LC42 / 3D galaxy integration](reviews/visual-galaxy-batch-20261026/README.md): exact worktree mapping, cold review, recovered-input red/green and bounded publication contract.
+
+- [Standing-wave S1 spatial-phase comparison](standing-phase.md): exact node/preset, signed coefficient versus amplitude, shared-clock two-point prediction and scoped regression contract.
