@@ -23,3 +23,25 @@ Ahmadi et al., How soap bubbles freeze, Nature Communications 10,2531 (2019), DO
 Reset clears nuclei/time/trails/readouts and stops the respective clock; retains explicit undercooling setting. No autoplay. Manual time seek pauses. Moving the undercooling input preserves time/nuclei and redraws the hypothetical same-time growth comparison; this is not a live cooling history. Language and step navigation never reset. UI controls and fallback text work without color alone.
 
 Endpoint recovery: new seeding is disabled at diagram time 24 through both button and canvas. Localized status instructs seeking backward or resetting. Existing birth times and seed positions are never rewritten.
+
+## Teaching continuity revision — 2026-10-26 (Codex)
+
+This revision supersedes the original presentation order above without changing `model.js` or its prescribed curves. Baseline is delivered commit `1d90150cf9c1db194769dff92dc4178ce7779fb0`; the shared checkout is not the source for this change. Implementation and test ownership stays inside this page plus page-specific review records. Shared attribution, integration and deployment belong to the integration task. No push/deployment is part of this delivery.
+
+Before: “nucleation/anisotropy/undercooling” preceded the learner's first observation; the undercooling slider came before seeding/play; “under the paper's conditions” appeared before any paper was identified; heat/flow vocabulary preceded the comparison; mobile comparisons stacked two tall scenes with the controls below them.
+
+After: visible patterns on a clear bubble → distinguish liquid shell from contained air → place a small piece of ice and watch growth → compare a colder film at the same time → name nucleation/directional growth → ask why ice moves → identify Ahmadi et al. and the actual experiment → inspect matched diagram moments → explain freezing releases heat, uneven temperature changes surface tension, and liquid carries ice → explain why a warm-air front can stall → retain the optical extension and model boundaries.
+
+Acceptance criteria for future Codex/Claude comparison:
+
+- Visible page-local Codex credit in both languages; keep the 3-section structure and existing URLs so variants remain comparable.
+- No anonymous “paper conditions” claim. Before A/B, show title, authors, year, journal, DOI, recipe, temperatures, and original sections/figure references. Distinguish the selected −20°C example from the paper's broader base-temperature range.
+- Plain observations must precede technical names. Explain that freezing releases energy without implying a temperature above 0°C; define surface tension before naming Marangoni flow. Orange arrow means liquid motion, not heat flow.
+- A control has an observable outcome: seed makes a dot, playback/seek grows branches, undercooling changes branch length at a fixed time, and story moments pause both A/B at the same chosen time. Dynamic captions explain visible changes and limitations without claiming measured values.
+- Phones can switch A/B while preserving the same clock. At 320/390×844, story controls and the active canvas are visible together; the growth canvas stays visible when adjusting undercooling. Short landscape screens do not use sticky experiment controls.
+- Keep independent experiment state, language state, reset semantics, seed endpoint recovery, accessibility, reduced-motion initial pause and zero external runtime assets. Tests must use actual browser input and compare rendered canvas changes, not only text presence.
+- Evidence must identify CSS viewport/touch emulation vs physical hardware. Do not label screenshot inspection as an independent learner study.
+
+Source check: Original paper text retrieved through its author-uploaded ResearchGate record on 2026-10-26. Nature fetch redirected to an inaccessible identity host; PMC returned a bot-check page. Experimental setup/Figs. 2–4 support the two regimes; Methods gives approximately 79% water / 20% glycerol / 1% dish soap by volume. The cited −6.5°C is a formulation-specific reference adopted in the paper (its Methods neglect soap's effect when using the water/glycerol literature value), not our measurement. The page's time, six-branch geometry, transport and stop height remain deliberately prescribed, not reconstructed data. No newly invented quantitative physics was added.
+
+See `../specs/reviews/frozen-bubble-learning-20261026.md` for the current verification and before/after evidence. The earlier verification report describes the baseline, not this revision.
