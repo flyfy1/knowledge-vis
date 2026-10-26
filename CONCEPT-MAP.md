@@ -1920,3 +1920,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Adjacent swaps and reachability | `leetcode/899/#step2` | Positions one and two suffice to construct any adjacent swap. |
 
 <!-- /leetcode-899-campaign -->
+
+
+<!-- leetcode-902-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| First differing digit | `leetcode/902/#step1` | Partition same-length numbers at their first smaller digit. |
+| Equal-prefix invariant | `leetcode/902/#step2` | Only the prefix equal to the bound needs further comparisons. |
+
+<!-- /leetcode-902-campaign -->
