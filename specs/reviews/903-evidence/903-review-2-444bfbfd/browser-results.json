@@ -1,0 +1,282 @@
+{
+  "host": "linux",
+  "browser": "156.0.8078.4",
+  "presets": [
+    {
+      "lang": "zh",
+      "s": "DI",
+      "count": 5,
+      "sum": 2
+    },
+    {
+      "lang": "zh",
+      "s": "DID",
+      "count": 9,
+      "sum": 5
+    },
+    {
+      "lang": "zh",
+      "s": "I",
+      "count": 2,
+      "sum": 1
+    },
+    {
+      "lang": "zh",
+      "s": "D",
+      "count": 2,
+      "sum": 1
+    },
+    {
+      "lang": "zh",
+      "s": "IIII",
+      "count": 14,
+      "sum": 1
+    },
+    {
+      "lang": "zh",
+      "s": "DDDD",
+      "count": 14,
+      "sum": 1
+    },
+    {
+      "lang": "zh",
+      "s": "IDID",
+      "count": 14,
+      "sum": 16
+    },
+    {
+      "lang": "en",
+      "s": "DI",
+      "count": 5,
+      "sum": 2
+    },
+    {
+      "lang": "en",
+      "s": "DID",
+      "count": 9,
+      "sum": 5
+    },
+    {
+      "lang": "en",
+      "s": "I",
+      "count": 2,
+      "sum": 1
+    },
+    {
+      "lang": "en",
+      "s": "D",
+      "count": 2,
+      "sum": 1
+    },
+    {
+      "lang": "en",
+      "s": "IIII",
+      "count": 14,
+      "sum": 1
+    },
+    {
+      "lang": "en",
+      "s": "DDDD",
+      "count": 14,
+      "sum": 1
+    },
+    {
+      "lang": "en",
+      "s": "IDID",
+      "count": 14,
+      "sum": 16
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "zh",
+      "width": 320,
+      "overflow": false,
+      "select": {
+        "width": 118,
+        "text": 46.7200927734375,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "overflow": false,
+      "select": {
+        "width": 118,
+        "text": 46.7200927734375,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "overflow": false,
+      "select": {
+        "width": 118,
+        "text": 46.7200927734375,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "overflow": false,
+      "select": {
+        "width": 118,
+        "text": 46.7200927734375,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "overflow": false,
+      "select": {
+        "width": 118,
+        "text": 46.7200927734375,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "overflow": false,
+      "select": {
+        "width": 118,
+        "text": 46.7200927734375,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "overflow": false,
+      "select": {
+        "width": 118,
+        "text": 46.7200927734375,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "overflow": false,
+      "select": {
+        "width": 118,
+        "text": 46.7200927734375,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      }
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "zh",
+      "success": true,
+      "fallbackActualTransfer": true,
+      "sentinelVerified": true
+    },
+    {
+      "lang": "en",
+      "success": true,
+      "fallbackActualTransfer": true,
+      "sentinelVerified": true
+    }
+  ],
+  "links": [
+    {
+      "lang": "zh",
+      "label": "#115：按前缀计数与不重叠的选择",
+      "url": "http://127.0.0.1:18770/leetcode/115/#step1",
+      "destinationText": "022 · 最后一个字符用不用？这一步要回答：aaa → aa 的最后一个 a 带来了哪两组新方案？前缀就是字符串开头的一段。令 D(i,j) 表示从 s 的前 i 个字符选位置，拼出 t 的前 j 个字符的方案数。表的行是 i，列是 j；空前缀用 ∅ 表示。不使用位置 2：剩下 (0,1)，共 D(2,2)=1 种。使用位置 2：它匹配 t 的最后一个 a，前面只需拼出一个 a，有 (0)、(1)，共 D(2,1)=2 种；分别加上位置 2，得到 (0,2)、(1,2)。两组互不重叠，又覆盖所有方案，因此 3=1+2。若最后两个字符不同，例如 ab → aa 的 b 与 a，就不能使用这个 b 作为目标末尾。只能跳过它，计数仍为 0。若相同，则每个短目标方案都能唯一地加上当前源位置。D(i,j) = D(i−1,j) + (s[i−1] = t[j−1] ? D(i−1,j−1) : 0)为什么边界是这些数？空目标只需全部跳过，恰好 1 种，所以 D(i,0)=1。空源无法拼出非空目标，所以 D(0,j)=0（j>0）。在 aaa → aa 中，各行依次为 [1,0,0]、[1,1,0]、[1,2,1]、[1,3,3]。aaa → aai : s[:i] / j : t[:j]0 : ∅1 : a2 : aa0 : ∅1001 : a1102 : aa1213 : aaa133 = 1 + 2"
+    },
+    {
+      "lang": "zh",
+      "label": "#327：用前缀和相减求区间和",
+      "url": "http://127.0.0.1:18770/leetcode/327/#step1",
+      "destinationText": "02一段的和为什么是两个总数之差？这一步要回答：能不能不用重加一段元素？前缀 P[k] 是前 k 个元素的总和；P[0]=0 表示一个也没取。这里 j 是不包含的右边界，原题的闭区间 [i,j−1] 的和就是 P[j]−P[i]：减去前 i 个，剩下 i 到 j−1。保持数组不变，选择一对 i<j；比较两个 P 值与下方留下的元素。所有公式中的 j 都是前缀下标。选择前缀下标 (i,j)i=0, j=1i=0, j=2i=0, j=3i=1, j=2i=1, j=3i=2, j=3前缀下标 k 与总和 P[k]P[0]=0P[1]=-2P[2]=3P[3]=2P[1] − P[0] = -2 − (0) = -2；原区间 [0,0] = [-2]：计入。因此目标变成：数出 i<j 且 lower ≤ P[j]−P[i] ≤ upper 的前缀下标对。P[0] 让从下标 0 开始的区间也能用同一式子。前缀差只把每次求和降到 O(1)，枚举所有下标对仍是 O(n²)。"
+    },
+    {
+      "lang": "en",
+      "label": " #115: count by prefixes and disjoint choices",
+      "url": "http://127.0.0.1:18770/leetcode/115/#step1",
+      "destinationText": "022 · Use the last character or skip it?Which two new ways does the last a add to aaa → aa? A prefix is the beginning of a string. Let D(i,j) count position choices from the first i source characters spelling the first j target characters. Table rows are i and columns are j; ∅ denotes an empty prefix.Skip position 2: only (0,1) remains, giving D(2,2)=1. Use position 2: it matches the final target a, so we need a single a before it. Choices (0) and (1) give D(2,1)=2 ways; appending position 2 yields (0,2) and (1,2). The two groups are disjoint and cover every way, so 3=1+2.If the last characters differ, as b and a do in ab → aa, we cannot use that b as the target’s last letter. Only skipping is allowed, so the count stays 0. If they match, each shorter-target choice extends uniquely by the current source position.D(i,j) = D(i−1,j) + (s[i−1] = t[j−1] ? D(i−1,j−1) : 0)Why these boundaries? There is exactly one way to form an empty target: skip everything. Thus D(i,0)=1. An empty source cannot spell a nonempty target, so D(0,j)=0 for j>0. For aaa → aa the rows are [1,0,0], [1,1,0], [1,2,1], and [1,3,3].aaa → aai : s[:i] / j : t[:j]0 : ∅1 : a2 : aa0 : ∅1001 : a1102 : aa1213 : aaa133 = 1 + 2"
+    },
+    {
+      "lang": "en",
+      "label": "#327: subtract prefix sums for interval sums",
+      "url": "http://127.0.0.1:18770/leetcode/327/#step1",
+      "destinationText": "02Why is a range sum a difference of two totals?Can we get a range sum without adding its elements again? Prefix P[k] is the total of the first k elements; P[0]=0 means taking none. Here j is an exclusive end. The original inclusive interval [i,j−1] sums to P[j]−P[i]: subtract the first i elements, leaving i through j−1.Keep the array fixed and select i<j. Compare the two P values with the remaining elements below. In these formulas, j is always a prefix index.Select prefix indices (i,j)i=0, j=1i=0, j=2i=0, j=3i=1, j=2i=1, j=3i=2, j=3Prefix index k and total P[k]P[0]=0P[1]=-2P[2]=3P[3]=2P[1] − P[0] = -2 − (0) = -2; original interval [0,0] = [-2]: Count.We now count prefix-index pairs with i<j and lower ≤ P[j]−P[i] ≤ upper. P[0] lets ranges starting at index 0 use the same formula. Prefix differences make one sum O(1), but enumerating all index pairs is still O(n²)."
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#prev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "td.current",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 9.809435643476732
+    }
+  ],
+  "keyboard": {
+    "focus": {
+      "outline": "rgb(255, 180, 84)",
+      "width": "3px",
+      "style": "solid"
+    },
+    "activation": true
+  },
+  "errors": [],
+  "localRequestsOnly": true,
+  "cssBytes": 10741
+}

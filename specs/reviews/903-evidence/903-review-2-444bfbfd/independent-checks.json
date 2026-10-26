@@ -1,0 +1,268 @@
+{
+  "cases": [
+    {
+      "s": "IID",
+      "actual": 3,
+      "rows": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "oracleRows": [
+        [
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "s": "ID",
+      "actual": 2,
+      "rows": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "oracleRows": [
+        [
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "s": "DII",
+      "actual": 3,
+      "rows": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ]
+      ],
+      "oracleRows": [
+        [
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "s": "DDI",
+      "actual": 3,
+      "rows": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "oracleRows": [
+        [
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "s": "DIID",
+      "actual": 11,
+      "rows": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          3,
+          2,
+          0
+        ]
+      ],
+      "oracleRows": [
+        [
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          3,
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "s": "D",
+      "actual": 1,
+      "rows": [
+        [
+          1,
+          0
+        ]
+      ],
+      "oracleRows": [
+        [
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "s": "I",
+      "actual": 1,
+      "rows": [
+        [
+          0,
+          1
+        ]
+      ],
+      "oracleRows": [
+        [
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "s": "I*200",
+      "actual": 1
+    },
+    {
+      "s": "D*200",
+      "actual": 1
+    }
+  ],
+  "assets": {
+    "leetcode/903/index.html": "965d8e829ec86618b0b1d4b31c86a73221b8ce249fa42d01c10354b06ec72ef4",
+    "leetcode/903/copy.js": "bf70ce2bad8679962aa8916175555746699e74a46d27a24bf5362513b0370b13",
+    "leetcode/903/core.js": "d632004e38903551246cd24ad438cbf36622b7b786a7d036b921a42030fca1bb",
+    "leetcode/903/app.js": "0cb1d9ab8e64766d5ccd94bacb19d14d90f64c7452e83ba5884545222f85981c",
+    "leetcode/903/style.css": "c3bac92abc60bcaa9cee2c60d779b49ca0fc0f927403fba8d3e63936c5cb9256",
+    "leetcode/903/python-code.js": "6b364e5659745b7cac15abc78cc9abcfa9ea494ff534ed2f013c5475fcbf8115",
+    "leetcode/903/solution.py": "d0a7da26fefd31cabcb363f84e308c431f535a3af0b6cbd86208b9aeb82febdb",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  }
+}
