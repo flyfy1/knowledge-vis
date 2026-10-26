@@ -132,7 +132,8 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 85 | 全反射与临界角 / Total internal reflection and the critical angle | reflection-refraction#step3 | 光从水射向空气，入射角超过临界角 asin(1/1.33)≈48.8° 时折射线消失、光全部反射回水里 |
 | 86 | 导数：割线逼近切线 / Derivative: the secant closes into the tangent | derivative#step1 | 割线两点无限靠拢，斜率从正负两侧收敛到同一个数——那个数就是导数，割线的极限位置就是切线 |
 | 87 | 凸透镜：一倍分虚实、二倍分大小 / Convex lens: 1f splits real from virtual, 2f splits size | lens#step2 | 蜡烛越过焦点 F，像由实变虚、跳到透镜同侧；越过 2F，像由放大变缩小——两个点管住全部成像规律 |
-| 88 | 干涉：路程差定加强与抵消 / Interference: path difference decides reinforcement | interference#step1 | Δr=kλ 加强、Δr=(k+½)λ 抵消；干涉图样是双曲线族，由路程差的几何定死、不随时间漂移 |
+| 88 | 干涉：同点叠加与路程差 / Interference: same-point addition and path difference | interference#step1 | 线性、同频、等到达振幅且同相源时，Δr=kλ 完全加强、Δr=(k+½)λ 完全抵消；稳定相对相位下才有稳定图样，不把近抵消判成恒零静点。 |
+| 88a | 到达相位决定合振幅 / Arrival phase sets resultant amplitude | interference#step3 | 带符号 d=r₂−r₁，δ=φ−2πd/λ；同频等振幅相干模型中 B=2A abs(cos(δ/2))。区分同一点此刻位移与周期振幅；不从单点零位移推断能量消失。 |
 | 89 | 对数是逆问句 / The logarithm is the reverse question | exp-log#step2 | log₂8=3 就是「2 的几次方等于 8」的答案；对数把指数方程的未知数从指数的位置上取下来，成为可以直接算的数 |
 | 90 | ROC 含单位圆 ⟺ 稳定 / Stability: the ROC contains the unit circle | ztransform#step3 | Z 变换的收敛域是圆环；单位圆整个落在环内系统才稳定，极点位置与 ROC 形状共同决定稳定性 |
 | 91 | 圆周角定理：同弧圆周角 = 圆心角一半 / Inscribed angle theorem | circle-angles#step1 | 角度由坐标向量点积实算；P 在优弧上任意拖动，圆周角恒为圆心角的一半，与位置无关 |

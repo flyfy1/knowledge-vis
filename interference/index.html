@@ -199,6 +199,7 @@
 <canvas id="s3-trace" height="190" data-i18n-aria="canvasLabel" role="img">
 </canvas>
 </div>
+<p class="hint" data-i18n="phaseTrace"></p>
 <div class="controls">
 <label>
 <span data-i18n="pxLab">
@@ -211,6 +212,8 @@
 <input id="s3-py" type="range" min="-4.5" max="4.5" step="0.1" value="2.5">
 </label>
 </div>
+<div class="phase-control"><label for="s3-phase" data-i18n="phaseSlider"></label><output id="s3-phase-value" for="s3-phase"></output><input type="range" id="s3-phase" min="0" max="2" step="0.005" value="0"></div>
+<p class="hint" data-i18n="phaseTask"></p>
 <div class="btn-row">
 <span class="row-label" data-i18n="phiLab">
 </span>
@@ -218,13 +221,17 @@
 </button>
 <button type="button" class="btn big" id="s3-phipi" data-i18n="phiPi">
 </button>
+<button type="button" class="btn big" id="s3-reset" data-i18n="phaseReset"></button>
 <button type="button" class="btn big" id="s3-play" data-i18n="pause">
 </button>
 </div>
-<p class="readout" id="s3-readout" aria-live="polite">
+<p class="readout" id="s3-instant"></p><p class="readout" id="s3-readout">
 </p>
-<p class="readout" id="s3-cls" aria-live="polite">
+<p class="readout" id="s3-cls">
 </p>
+<p class="hint" data-i18n="phaseScope"></p>
+<details id="phase-energy"><summary data-i18n="phaseEnergyTitle"></summary><p data-i18n="phaseEnergy"></p><a href="https://openstax.org/books/university-physics-volume-1/pages/16-4-energy-and-power-of-a-wave" data-i18n="phaseEnergySource"></a></details>
+<div class="phase-links"><a href="../atlas/?node=interference&amp;view=list" data-i18n="phaseMap"></a><a href="https://openstax.org/books/university-physics-volume-1/pages/16-5-interference-of-waves" data-i18n="phaseSource"></a></div>
 </div>
 </section>
 <section class="step" id="step4" data-step="4">

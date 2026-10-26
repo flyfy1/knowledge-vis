@@ -26,3 +26,7 @@
 ## 交付
 - 自查：node --check、键集比对、上述断言组、无头浏览器实测（含组合路径与 390）。
 - 报告 ~/workspace/interference-lab/build-report.md。
+
+## Codex phase-comparison correction — 2026-10-26
+
+The earlier two-preset/absolute-path and broad-classification contract is superseded only by [relative-phase spec](../specs/interference-phase.md), after independent design gate. Existing yAt/ySum/source geometry and other course flow retained. Confirmed defect: near-half-cycle0.03window labelled nonzero motion as strictly still. Canonical strict phase/B helper repairs it, signed d=r2−r1 for continuousφ. S3keeps one P/t/φ and oldclock; changingφ pauses and immediately rebuilds CURRENT-parameter analytic2T traces, not recorded history, with instantaneous y(t) versus B separated. Coherent equal-received-amplitude linear/normalized model, no spreading or energy-flow inference. θ/δ/φ first-use units and source/energy boundaries beside controls. Samepointφ0/π/2/π/2π prediction, reset/oldpresets/nativecoordinates, historyentry paused recovery, ENZHmobilekeyboard acceptance. One existing-course graph node/application link, no new route/model. User-authorized shared graph/provenance/spec edits override the original worker-only file boundary. Original Alberto/Muse contributions are retained and not reattributed as Codex original authorship.

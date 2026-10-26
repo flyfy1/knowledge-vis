@@ -16,17 +16,21 @@ function dist(ax, ay, bx, by) { return Math.hypot(ax - bx, ay - by); }
 function yAt(tt, r, lam, phi) { return AMP * Math.sin(omega() * tt - waveK(lam) * r + (phi || 0)); }
 /* 两列波在 P（到两源距离 r1、r2）的合成位移；源 2 带相位差 phi */
 function ySum(tt, r1, r2, lam, phi) { return yAt(tt, r1, lam, 0) + yAt(tt, r2, lam, phi || 0); }
-/* 合振幅：2A·|cos((k·Δr − φ)/2)|，Δr = r2 − r1 的绝对值口径由调用方给非负值 */
-function ampOf(dr, lam, phi) { return 2 * AMP * Math.abs(Math.cos((waveK(lam) * dr - (phi || 0)) / 2)); }
-/* 分类：等效步调差 n = Δr/λ − φ/2π（周期数）；近整数 → max，近半整数 → min */
-function classify(dr, lam, phi) {
-  const n = dr / lam - (phi || 0) / (2 * Math.PI);
-  const frac = n - Math.floor(n);
-  const dMax = Math.min(frac, 1 - frac), dMin = Math.abs(frac - 0.5);
-  if (dMax < 0.03) return 'max';
-  if (dMin < 0.03) return 'min';
-  return 'mid';
+/* Directed d=r2-r1; one canonical phase result drives amplitude and classification.
+   Snapping is machine-scale only, not a physical near-still tolerance. */
+function phaseState(dr, lam, phi=0) {
+  if (![dr,lam,phi].every(Number.isFinite) || lam <= 0) throw new RangeError('Invalid phase state');
+  const n=dr/lam-phi/(2*Math.PI), twice=Math.round(2*n);
+  const snapped=Math.abs(2*n-twice)<1e-12;
+  const cls=snapped?(twice%2===0?'max':'min'):'mid';
+  const amp=cls==='min'?0:cls==='max'?2*AMP:2*AMP*Math.abs(Math.cos(Math.PI*n));
+  const wrapped=cls==='max'?0:cls==='min'?.5:((-n%1)+1)%1;
+  return {delta:phi-waveK(lam)*dr,wrapped,amp,cls};
 }
+function ampOf(dr, lam, phi=0) { return phaseState(dr,lam,phi).amp; }
+function classify(dr, lam, phi=0) { return phaseState(dr,lam,phi).cls; }
+function fmtPhase(v) { return v.toFixed(3); }
+function fmtAmp(v) { return v>0&&v<.005?v.toExponential(2):fmtNum(v); }
 /* 包络线对应的 Δr（= r2 − r1）取值集合：加强线 kλ + φλ/2π，静线再偏半个 λ */
 function envelopeLevels(lam, phi, maxDr) {
   const maxs = [], mins = [], f = (phi || 0) / (2 * Math.PI);
@@ -49,9 +53,16 @@ const S = {
   s0: { lam: 2, px: 5, py: 0, t: 0, playing: true, visible: false, hist: [] },
   s1: { lam: 2, px: 0, py: 2.5, t: 0, playing: true, visible: false, hist: [] },
   s2: { lam: 2, px: 1.5, py: 1.5, env: true, t: 0, playing: true, visible: false },
-  s3: { lam: 2, px: 0, py: 2.5, phi: 0, t: 0, playing: true, visible: false, hist: [] },
+  s3: { lam: 2, px: 0, py: 2.5, phi: 0, t: 0, playing: false, visible: false, hist: [] },
   s4: { lam: 2, picked: { q1: null, q2: null, q3: null }, locked: { q1: false, q2: false, q3: false } }
 };
+try {
+  const q=history.state?.interferencePhase;
+  if(q && [q.px,q.py,q.phi,q.t].every(Number.isFinite) && Math.abs(q.px)<=7.5 && Math.abs(q.py)<=4.5 && q.phi>=0 && q.phi<=2*Math.PI && q.t>=0 && q.t<1e9) {
+    Object.assign(S.s3,{px:q.px,py:q.py,phi:q.phi,t:q.t,playing:false});
+  }
+}catch(_){}
+function savePhaseReading(){try{const previous=history.state;history.replaceState({...((previous&&typeof previous==='object')?previous:{}),interferencePhase:{px:S.s3.px,py:S.s3.py,phi:S.s3.phi,t:S.s3.t}},'',location.href);}catch(_){}}
 const QUIZ = { q1: 1, q2: 1, q3: 1 }; // 正确选项下标
 function ro(id, text) { $(id).textContent = text; }
 function fitCanvas(cv) {
@@ -153,8 +164,8 @@ function drawTop(cvId, o) {
 function pGeom(st, phi) {
   const r1 = dist(st.px, st.py, SRC1[0], SRC1[1]);
   const r2 = dist(st.px, st.py, SRC2[0], SRC2[1]);
-  const dr = Math.abs(r2 - r1);
-  return { r1, r2, dr, n: dr / st.lam, amp: ampOf(dr, st.lam, phi || 0), cls: classify(dr, st.lam, phi || 0) };
+  const signedDr=r2-r1,dr=Math.abs(signedDr),phase=phaseState(signedDr,st.lam,phi||0);
+  return { r1,r2,dr,n:dr/st.lam,signedDr,signedN:signedDr/st.lam,...phase };
 }
 function clsSentence(cls) { return t(cls === 'max' ? 'clsMax' : cls === 'min' ? 'clsMin' : 'clsMid'); }
 function clsWord(cls) { return t(cls === 'max' ? 'clsWordMax' : cls === 'min' ? 'clsWordMin' : 'clsWordMid'); }
@@ -228,6 +239,7 @@ function drawTraces(cvId, st) {
         i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
       });
       ctx.strokeStyle = row.color; ctx.lineWidth = 1.8; ctx.stroke();
+      if(cvId==='s3-trace'){const current=st.hist[st.hist.length-1];dot(ctx,630,row.cy-current[row.key]*(row.key==='s'?11:22),row.color,4);}
     }
   }
   ctx.restore();
@@ -235,7 +247,8 @@ function drawTraces(cvId, st) {
 function sampleHist(st, phi) {
   const g = pGeom(st, phi);
   st.hist.push({ t: st.t, a: yAt(st.t, g.r1, st.lam, 0), b: yAt(st.t, g.r2, st.lam, phi || 0), s: ySum(st.t, g.r1, g.r2, st.lam, phi || 0) });
-  while (st.hist.length && st.t - st.hist[0].t > 8.2) st.hist.shift();
+  const span=st===S.s3?2*PERIOD:8.2;
+  while (st.hist.length && st.t - st.hist[0].t > span) st.hist.shift();
 }
 /* 初载预填：按初始 P 的解析值把过去 8.2 秒的样本先算好，
    轨迹一打开就是完整的，不从空白慢慢长（样本与 tick 采样同源同式） */
@@ -250,6 +263,12 @@ function prefillHist() {
     }
   }
 }
+/* Analytic prediction for the current parameters, not stored measurements. */
+function refill3(){
+  const st=S.s3,g=pGeom(st,st.phi);st.hist=[];
+  for(let i=164;i>=0;i--){const tt=st.t-2*PERIOD*i/164;st.hist.push({t:tt,a:yAt(tt,g.r1,st.lam,0),b:yAt(tt,g.r2,st.lam,st.phi),s:ySum(tt,g.r1,g.r2,st.lam,st.phi)});}
+}
+function phaseEdit(phi){S.s3.phi=phi;S.s3.playing=false;refill3();render3();readout3();playLabels();}
 function render1() {
   const st = S.s1, g = pGeom(st, 0);
   drawTop('s1-canvas', {
@@ -263,7 +282,7 @@ function render1() {
 }
 function readout1() {
   const st = S.s1, g = pGeom(st, 0);
-  ro('s1-readout', t('s1ro', { r1: fmtNum(g.r1), r2: fmtNum(g.r2), dr: fmtNum(g.dr), n: fmtNum(g.n), amp: fmtNum(g.amp) }));
+  ro('s1-readout', t('s1ro', { r1: fmtNum(g.r1), r2: fmtNum(g.r2), dr: fmtNum(g.dr), n: fmtNum(g.n), amp: fmtAmp(g.amp) }));
   ro('s1-cls', clsSentence(g.cls));
   $('s1-cls').style.color = g.cls === 'max' ? green : g.cls === 'min' ? pink : muted;
 }
@@ -282,7 +301,7 @@ function render2() {
 }
 function readout2() {
   const st = S.s2, g = pGeom(st, 0);
-  ro('s2-readout', t('s2ro', { dr: fmtNum(g.dr), n: fmtNum(g.n), lam: fmtNum(st.lam), amp: fmtNum(g.amp) }));
+  ro('s2-readout', t('s2ro', { dr: fmtNum(g.dr), n: fmtNum(g.n), lam: fmtNum(st.lam), amp: fmtAmp(g.amp) }));
   ro('s2-cls', clsSentence(g.cls));
   $('s2-cls').style.color = g.cls === 'max' ? green : g.cls === 'min' ? pink : muted;
 }
@@ -301,22 +320,13 @@ function render3() {
   drawTraces('s3-trace', st);
 }
 function readout3() {
-  const st = S.s3, g = pGeom(st, st.phi);
-  const pf = st.phi / (2 * Math.PI);
-  /* 等效步调差只呈现 [0,1) 的零头：整圈不改变步调，−0.50 与 +0.50 是同一回事，
-     统一折算为 0.50（判定仍走 classify 的原口径，此处仅呈现层折算） */
-  let eff = ((g.n - pf) % 1 + 1) % 1;
-  if (Math.round(eff * 100) / 100 >= 1) eff = 0;
-  ro('s3-readout', t('s3ro', {
-    phi: st.phi === 0 ? '0' : 'π', dr: fmtNum(g.dr), n: fmtNum(g.n),
-    eff: fmtNum(eff), pf: fmtNum(pf), amp: fmtNum(g.amp)
-  }));
-  ro('s3-cls', clsSentence(g.cls));
-  $('s3-cls').style.color = g.cls === 'max' ? green : g.cls === 'min' ? pink : muted;
-  $('s3-phi0').setAttribute('aria-pressed', String(st.phi === 0));
-  $('s3-phipi').setAttribute('aria-pressed', String(st.phi !== 0));
-  $('s3-phi0').classList.toggle('active', st.phi === 0);
-  $('s3-phipi').classList.toggle('active', st.phi !== 0);
+  const st=S.s3,g=pGeom(st,st.phi);
+  ro('s3-readout',t('s3ro',{phi:fmtPhase(st.phi/Math.PI),d:fmtNum(g.signedDr),n:fmtNum(g.signedN),delta:fmtPhase(g.delta/Math.PI),amp:fmtAmp(g.amp)}));
+  ro('s3-instant',t('s3instant',{time:fmtNum(st.t),x:fmtNum(st.px),y:fmtNum(st.py),a:fmtNum(yAt(st.t,g.r1,st.lam,0)),b:fmtNum(yAt(st.t,g.r2,st.lam,st.phi)),sum:fmtNum(ySum(st.t,g.r1,g.r2,st.lam,st.phi))}));
+  ro('s3-cls',clsSentence(g.cls));$('s3-cls').style.color=g.cls==='max'?green:g.cls==='min'?pink:muted;
+  $('s3-phase').value=st.phi/Math.PI;ro('s3-phase-value',fmtPhase(st.phi/Math.PI)+'π rad');
+  for(const[id,v]of [['s3-phi0',0],['s3-phipi',Math.PI]]){const active=Math.abs(st.phi-v)<1e-12;$(id).setAttribute('aria-pressed',String(active));$(id).classList.toggle('active',active);}
+  $('s3-play').setAttribute('aria-pressed',String(st.playing));
 }
 
 /* ---------- 第 4 步：自测 ---------- */
@@ -395,6 +405,7 @@ function setP(key, x, y) {
   if ((nx !== st.px || ny !== st.py) && st.hist) st.hist = [];
   st.px = nx; st.py = ny;
   $(key + '-px').value = st.px; $(key + '-py').value = st.py;
+  if(key==='s3'){st.playing=false;refill3();readout3();playLabels();}
   renderStep(key);
 }
 function drag(id, fn) {
@@ -406,7 +417,7 @@ function drag(id, fn) {
   }
   cv.addEventListener('pointerdown', e => { pointer = e.pointerId; cv.setPointerCapture(pointer); move(e); });
   cv.addEventListener('pointermove', move);
-  for (const type of ['pointerup', 'pointercancel', 'lostpointercapture']) cv.addEventListener(type, () => pointer = null);
+  for (const type of ['pointerup', 'pointercancel', 'lostpointercapture']) cv.addEventListener(type, () => { pointer=null;if(id==='s3-canvas')savePhaseReading(); });
 }
 function bind() {
   $('s0-lam').oninput = e => { S.s0.lam = Number(e.target.value); S.s0.hist = []; render0(); readout0(); };
@@ -414,14 +425,18 @@ function bind() {
   for (const key of ['s0', 's1', 's2', 's3']) {
     $(key + '-px').oninput = e => setP(key, Number(e.target.value), S[key].py);
     $(key + '-py').oninput = e => setP(key, S[key].px, Number(e.target.value));
-    $(key + '-play').onclick = () => { S[key].playing = !S[key].playing; playLabels(); };
+    $(key + '-play').onclick = () => { S[key].playing = !S[key].playing; playLabels(); if(key==='s3'){readout3();savePhaseReading();} };
     drag(key + '-canvas', (lx, ly) => setP(key, lx / 40 - 8, 4.5 - ly / 40));
   }
   $('s1-max').onclick = () => setP('s1', 0, 2.5);
   $('s1-min').onclick = () => setP('s1', -0.5, 0);
   $('s2-env').onchange = e => { S.s2.env = e.target.checked; render2(); };
-  $('s3-phi0').onclick = () => { S.s3.phi = 0; S.s3.hist = []; render3(); readout3(); };
-  $('s3-phipi').onclick = () => { S.s3.phi = Math.PI; S.s3.hist = []; render3(); readout3(); };
+  $('s3-phi0').onclick=()=>{phaseEdit(0);savePhaseReading();};
+  $('s3-phipi').onclick=()=>{phaseEdit(Math.PI);savePhaseReading();};
+  $('s3-phase').oninput=e=>phaseEdit(Number(e.target.value)*Math.PI);
+  $('s3-reset').onclick=()=>{Object.assign(S.s3,{lam:2,px:0,py:2.5,phi:0,t:0,playing:false});$('s3-px').value=0;$('s3-py').value=2.5;phaseEdit(0);savePhaseReading();};
+  for(const id of ['s3-phase','s3-px','s3-py'])$(id).addEventListener('change',savePhaseReading);
+  $('s3-px').value=S.s3.px;$('s3-py').value=S.s3.py;
   document.querySelectorAll('[data-q]').forEach(b => b.onclick = () => {
     const q = b.dataset.q;
     if (S.s4.locked[q]) return;
@@ -474,11 +489,13 @@ function tick(ts) {
   }
   requestAnimationFrame(tick);
 }
+function pausePhaseReading(){S.s3.playing=false;playLabels();savePhaseReading();}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pausePhaseReading();});window.addEventListener('pagehide',pausePhaseReading);
 onLangRefresh(renderAll); bind(); applyLang(getLang());
-prefillHist();
+prefillHist();refill3();render3();readout3();
 requestAnimationFrame(tick);
 // Read-only inspection surface for numerical review; UI remains the mutation path.
 window.INTERFERENCE = {
   get state() { return JSON.parse(JSON.stringify(S)); },
-  yAt, ySum, ampOf, classify, envelopeLevels, pGeom, fmtNum
+  yAt, ySum, ampOf, classify, phaseState, envelopeLevels, pGeom, fmtNum, fmtAmp
 };

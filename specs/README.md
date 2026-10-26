@@ -6,6 +6,8 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Same-point interference phase comparison](interference-phase.md): signed arrival phase, strict nonzero/cancellation distinction, existing-curve comparison and sourced graph entry.
+
 - [Spring potential, force and phase](atlas-spring-potential.md): same-clock U–x slope, restoring-force direction and instantaneous K/U in the existing work experiment.
 
 - [Bayes evidence identity](atlas-bayes-evidence-identity.md): copied records versus new conditionally independent measurements; corrected bound claim and same-ledger comparison.
