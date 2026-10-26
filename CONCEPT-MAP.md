@@ -2171,3 +2171,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Rightmost non-empty stack | `leetcode/1172/#step1` | The list tail and cleanup expose the rightmost non-empty stack. |
 
 <!-- /leetcode-1172-campaign -->
+
+
+<!-- leetcode-1178-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| bitmask | `leetcode/1178/#step2` | Encode the set of letters as bits. |
+| subset enumeration | `leetcode/1178/#step2` | Visit every submask with (sub - 1) & mask. |
+
+<!-- /leetcode-1178-campaign -->

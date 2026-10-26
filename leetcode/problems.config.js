@@ -4857,6 +4857,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "Amortized O(log n) time per operation; O(n) space"
   },
   {
+    "id": 1178,
+    "title": {
+      "zh": "每个谜题的有效单词数",
+      "en": "Number of Valid Words for Each Puzzle"
+    },
+    "desc": {
+      "zh": "用位掩码和子集枚举统计每个七字母谜题的有效单词。",
+      "en": "Count valid words for each seven-letter puzzle with masks and submasks."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "位掩码",
+        "en": "Bitmask"
+      },
+      {
+        "zh": "子集枚举",
+        "en": "Subset enumeration"
+      }
+    ],
+    "path": "1178/",
+    "leetcodeUrl": "https://leetcode.com/problems/number-of-valid-words-for-each-puzzle/",
+    "language": "Python",
+    "complexity": "O(W·L + P·2^7) time; O(W) space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
