@@ -1,0 +1,6 @@
+{
+  "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId questionFrontendId title titleSlug isPaidOnly difficulty\n    content exampleTestcases sampleTestCase metaData\n    codeSnippets { lang langSlug code }\n  }\n}",
+  "variables": {
+    "titleSlug": "string-transforms-into-another-string"
+  }
+}
