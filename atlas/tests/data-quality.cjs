@@ -22,6 +22,15 @@ function validate(d,{checkFiles=true}={}){
  for(const n of d.nodes||[]){if(!groups.has(n.group))fail('node '+n.id+': invalid group');bilingual(n.title,'node '+n.id+' title');bilingual(n.description,'node '+n.id+' description');if(!nonempty(n.formula)||!nonempty(n.source))fail('node '+n.id+': formula/source missing');if(n.help){bilingual(n.help.title,'node '+n.id+' help title');bilingual(n.help.body,'node '+n.id+' help body');if(!Array.isArray(n.help.sources)||!n.help.sources.length)fail('node '+n.id+': help evidence missing');else for(const s of n.help.sources){bilingual(s.label,'node '+n.id+' help source label');if(!nonempty(s.href))fail('node '+n.id+': help source missing');}}}
  for(const e of d.edges||[]){if(!nodes.has(e.from)||!nodes.has(e.to))fail('edge '+e.id+': invalid endpoint');if(!Object.hasOwn(d.types||{},e.type))fail('edge '+e.id+': invalid type');bilingual(e.label,'edge '+e.id+' label');bilingual(e.reason,'edge '+e.id+' reason');if(!nonempty(e.source))fail('edge '+e.id+': source missing');if(e.prerequisite!==undefined&&typeof e.prerequisite!=='boolean')fail('edge '+e.id+': prerequisite must be explicit boolean');}
  for(const t of d.trails||[]){bilingual(t.title,'trail '+t.id+' title');if(t.backgroundNote){bilingual(t.backgroundNote,'trail '+t.id+' background note');if(!nonempty(t.backgroundSource))fail('trail '+t.id+': background source missing');}if(!Array.isArray(t.nodes)||t.nodes.length<2){fail('trail '+t.id+': stops missing');continue;}for(const id of [...t.nodes,...(t.background||[])])if(!nodes.has(id))fail('trail '+t.id+': invalid node '+id);for(let i=1;i<t.nodes.length;i++){const a=t.nodes[i-1],b=t.nodes[i];if(!(d.edges||[]).some(e=>(e.from===a&&e.to===b)||(e.from===b&&e.to===a)))fail('trail '+t.id+': disconnected stops '+a+'/'+b);}}
+ for(const e of d.edges)if(e.reading!==undefined){
+  const r=e.reading;
+  if(!r||typeof r!=='object'||Array.isArray(r)){fail('edge '+e.id+': reading must be an object');continue;}
+  for(const field of ['title','meaning','startHint','bounds'])bilingual(r[field],'edge '+e.id+' reading '+field);
+  if(!nodes.has(r.startNode)||![e.from,e.to].includes(r.startNode))fail('edge '+e.id+': reading starter is not an endpoint');
+  const trail=d.trails.find(t=>t.id===r.trail);
+  if(r.trail!=='motion'||!nodes.has(r.tryNode)||![e.from,e.to].includes(r.tryNode)||!trail||!Array.isArray(trail.nodes)||!trail.nodes.includes(r.tryNode))fail('edge '+e.id+': reading experiment is not a supported free-projection trail/endpoint');
+  if(!nonempty(r.source))fail('edge '+e.id+': reading source missing');
+ }
  // Optional station tasks are editorial claims over the same graph, not learner state.
  for(const t of d.trails||[])if(t.stationTasks!==undefined){
   if(!Array.isArray(t.stationTasks)){fail('trail '+t.id+': stationTasks must be an array');continue;}

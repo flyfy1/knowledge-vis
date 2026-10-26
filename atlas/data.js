@@ -3,7 +3,7 @@
   'use strict';
   const b = (zh, en) => ({zh, en});
   const node = (id, group, zh, en, dz, de, formula, source, help) => ({id, group, title:b(zh,en), description:b(dz,de), formula, source,...(help?{help}: {})});
-  const edge = (from,to,type,zh,en,rz,re,source) => ({id:`${from}:${to}`,from,to,type,label:b(zh,en),reason:b(rz,re),source});
+  const edge = (from,to,type,zh,en,rz,re,source,reading) => ({id:`${from}:${to}`,from,to,type,label:b(zh,en),reason:b(rz,re),source,...(reading?{reading}: {})});
   window.ATLAS = {
     groups: [
       {id:'math', label:b('数学基础','Mathematical tools'), mark:'01'},
@@ -77,7 +77,28 @@
       edge("boost","feedback","application","用测量调节占空比","uses measurements to adjust duty","实际稳压器可测量输出并调节占空比；本课只解释此接口，不模拟控制器。","A real regulator can measure output and adjust duty; this lesson explains the connection without simulating a controller.","../power-converters/#step6"),
       edge('unit-circle','sine','foundation','定义','defines','圆上点的纵、横坐标定义正弦、余弦；匀速转动使这些坐标成为时间函数。','Vertical and horizontal coordinates define sine and cosine; uniform rotation makes them functions of time.','../trig/#step3'),
       edge('unit-circle','complex','representation','用复数表示旋转','represents rotation with complex numbers','单位圆上的点可以写成 cos θ + i sin θ，角度变化对应平面旋转。','A point on the unit circle is cos θ + i sin θ; changing its angle rotates it in the plane.','https://openstax.org/books/algebra-and-trigonometry-2e/pages/10-5-polar-form-of-complex-numbers'),
-      edge('sine','oscillation','representation','描述理想运动','describes ideal motion','无阻尼、无持续外力驱动（回复力仍存在）的理想弹簧振子满足 x″ + (k/m)x = 0，其解为正弦和余弦的组合。','An ideal spring without damping or sustained driving, with its restoring force still present, obeys x″ + (k/m)x = 0, whose solutions combine sine and cosine.','https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion'),
+      edge('sine','oscillation','representation','描述理想运动','describes ideal motion','无阻尼、无持续外力驱动（回复力仍存在）的理想弹簧振子满足 x″ + (k/m)x = 0，其解为正弦和余弦的组合。','An ideal spring without damping or sustained driving, with its restoring force still present, obeys x″ + (k/m)x = 0, whose solutions combine sine and cosine.','https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion',{
+  "title": {
+    "zh": "这是一种表示方式，不是必修箭头",
+    "en": "A representation, not a mandatory learning order"
+  },
+  "meaning": {
+    "zh": "正弦／余弦函数描述理想弹簧的位移怎样变化，并不产生运动。圆周投影是看懂这个函数的辅助图像；弹簧块实际沿直线往返，不沿圆周运动。",
+    "en": "Sine and cosine describe how an ideal spring’s position changes; they do not cause the motion. Circular projection helps visualize that function. The spring mass travels along a line, not around the circle."
+  },
+  "startNode": "sine",
+  "startHint": {
+    "zh": "如果振幅、频率或相位还陌生，可先看正弦与余弦；已经熟悉就直接试投影实验，不必按箭头重新学一遍。",
+    "en": "If amplitude, frequency or phase are unfamiliar, revisit sine and cosine first. If familiar, try the projection experiment directly; the arrow does not require repeating a course."
+  },
+  "trail": "motion",
+  "tryNode": "oscillation",
+  "bounds": {
+    "zh": "这里限定 m、k 为正的理想线性弹簧，无阻尼、无持续驱动，回复力仍然存在。圆点匀速转动，不代表它的投影匀速往返；其他往返运动不一定符合这套模型。",
+    "en": "This comparison uses a positive-mass, positive-stiffness ideal linear spring without damping or sustained driving; its restoring force remains. Constant-speed rotation does not make the projection’s velocity constant. Other oscillations need not fit this model."
+  },
+  "source": "https://openstax.org/books/university-physics-volume-1/pages/15-3-comparing-simple-harmonic-motion-and-circular-motion"
+}),
       edge('sine','fourier','foundation','提供频率分量','provides frequency components','傅里叶分析以不同频率的正弦、余弦或复指数为分量；每个分量有自己的幅度和相位。','Fourier analysis uses sine, cosine or complex-exponential components at different frequencies, with their own amplitudes and phases.','../fourier/#step1'),
       edge('complex','fourier','representation','表示旋转分量','represents rotating components','欧拉公式把正弦和余弦写成复指数的组合，复数傅里叶变换由此统一表示正、负频率分量。','Euler’s formula expresses sine and cosine as combinations of complex exponentials, allowing the complex Fourier transform to represent positive and negative frequencies together.','https://www.dspguide.com/CH31.PDF#page=3'),
       edge('superposition','fourier','foundation','把分量合成信号','combines components into signals','傅里叶级数通过叠加谐波近似周期波形；有限项近似在跳变附近可能出现吉布斯现象。','A Fourier series combines harmonics to approximate a periodic waveform; finite sums may show Gibbs overshoot near jumps.','../fourier/#step4'),
