@@ -42,3 +42,5 @@ Current capacitor-rate implementation source:4791138bb6bf0e89dbb665c9268784e63b7
 ## Buck signed-voltage area — 2026-10-26
 
 [Current incremental contract](../specs/atlas-volt-second.md) supersedes earlier unchanged-inductor-display statements only for this explicitBuckview. Preserve original model.js,flow.js,sharedplot(),Boost and capacitor view. One pure area companion reads existingBuckparameters, yields clippedconstantsegments/signedVs andΔi, not newcurrentstate. Existingseek/play owns time; optionallocalpresets dispatchsamehandler andkeepfocus. Periodnet0 meanscurrentreturnsinitialnonzero valley, notzero. Definevoltagepassivepolarity,Vµs→Vs conversion andvoltagearea≠energy. Existingsteadyassumption nottransientsimulation. Use sameCodexsourceeditioncontract and scopedtests.
+
+Current Buck voltage-area implementation source:4f1992891a6996c1aaffedb78053ad2b538ebc7d. Static revised-edition source links this accepted increment; prior capacitor source4791138b and original flow source24a3d727 remain historical contributions.
