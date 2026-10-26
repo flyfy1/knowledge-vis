@@ -2081,3 +2081,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Prefix-frequency counting | `leetcode/1074/#step3` | Count earlier prefix sums before inserting the current prefix. |
 
 <!-- /leetcode-1074-campaign -->
+
+
+<!-- leetcode-1092-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Shortest common supersequence suffix DP | `leetcode/1092/#step3` | Derive and reconstruct an optimal common supersequence. |
+| Supersequence hand calculation | `leetcode/1092/#step1` | Share characters while preserving both input orders. |
+
+<!-- /leetcode-1092-campaign -->

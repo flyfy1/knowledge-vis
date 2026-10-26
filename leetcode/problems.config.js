@@ -4619,6 +4619,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(m²n) expected time; O(n) auxiliary space, for m rows and n columns"
   },
   {
+    "id": 1092,
+    "title": {
+      "zh": "最短公共超序列",
+      "en": "Shortest Common Supersequence"
+    },
+    "desc": {
+      "zh": "从共享一个字符开始，推导后缀长度表并重建最短字符串。",
+      "en": "Share one letter, derive a suffix-length table, and reconstruct a shortest string."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "字符串重建",
+        "en": "String reconstruction"
+      }
+    ],
+    "path": "1092/",
+    "leetcodeUrl": "https://leetcode.com/problems/shortest-common-supersequence/",
+    "language": "Python",
+    "complexity": "O(mn + m + n) time; O(mn + m + n) space, including output"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
