@@ -24,3 +24,6 @@
 .wall-code .active { border-left: 3px solid var(--accent2); color: var(--accent2); background: var(--panel2); }
 #wall-message { min-height: 5em; }
 @media(max-width:560px) { .wall-lab .wall-inputs { grid-template-columns: 1fr; } .wall-stat { padding: 8px; } .wall-stat b { font-size: 18px; } }
+
+/* New experiment follows the shared48px touch target contract. */
+#wall-lab button,#wall-lab select,#wall-lab input{min-height:48px}

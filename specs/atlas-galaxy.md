@@ -125,3 +125,9 @@ Commands: see `atlas/galaxy/README.md`. Automated evidence and screenshot inspec
 `specs/reviews/atlas-galaxy-20261026/verification.md`. Code self-check is not independent acceptance.
 Parent owns independent review, integration, main merge, publication and production verification.
 No worker push/deploy. Original dirty checkout remains untouched.
+
+## Integrated test safety
+
+Apply the supplied integration patch deliberately in an isolated integration checkout. Browser acceptance tests must only inspect the already-integrated runtime; they must not apply/revert patches or rewrite shared atlas/index/spec files. Preserve concurrent Eigen source corrections and spec-index additions when wiring entries.
+
+Integration keyboard guard: Alt/Ctrl/Meta keyboard combinations retain browser shortcuts; only unmodified camera keys are handled. The explicitly documented Ctrl/Meta+wheel gesture remains a camera zoom action.

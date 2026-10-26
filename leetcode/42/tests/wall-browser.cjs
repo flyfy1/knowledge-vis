@@ -44,7 +44,7 @@ const route = process.env.LESSON_ROUTE || '/leetcode/42/';
       const geometry = await page.locator('#wall-lab button, #wall-lab select, #wall-lab input').evaluateAll(ns => ns.map(n => {
         const r=n.getBoundingClientRect(); return {left:r.left,right:r.right,height:r.height};
       }));
-      geometry.forEach(r => {assert.ok(r.left>=0 && r.right<=width+1); assert.ok(r.height>=44);});
+      geometry.forEach(r => {assert.ok(r.left>=0 && r.right<=width+1); assert.ok(r.height>=48);});
       await page.locator('#wall-lab').evaluate(el => window.scrollTo(0, el.getBoundingClientRect().top + scrollY - 80));
       await page.screenshot({path:path.join(output,`${lang}-${width}-controls.png`)});
       await page.locator('#wall-chart').evaluate(el => window.scrollTo(0, el.getBoundingClientRect().top + scrollY - 100));

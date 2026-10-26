@@ -1,0 +1,18 @@
+{
+  "base": "93346e21e375bda4f27ef545dd788586bf8ae58f",
+  "eigen": {
+    "implementation": "5cd64dc2193d8e3b26cc433ecd4d597887f0ed13",
+    "provenance": "3365920a3401e94c18177c71c93c4775ad42fb34"
+  },
+  "lc42": {
+    "original": "cb99f4d7c411b0fbea61d35d9115b3cc7de2e9dd",
+    "integrated": "5d5b73cd9d49f533a8e435ea67578ee626d636f4"
+  },
+  "galaxy": {
+    "implementationOriginal": "d8b1b2d7ded7f04990e992b232372bacc9495dad",
+    "implementationIntegrated": "63081500c36b4ff49255e04b8f1e595ff787a41b",
+    "provenanceOriginal": "774f1a69783239b119c6bf4e40d519cf99dc37f7",
+    "provenanceIntegrated": "3841861f67e86403aabc669b3ef82e12ae1ae79e"
+  },
+  "policy": "Exact original commits remain in scoped remote source refs for immutable GitHub links; equivalent scoped commits plus integration fixes land in main. No worktree deleted."
+}

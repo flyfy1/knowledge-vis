@@ -1,0 +1,48 @@
+{
+  "before": {
+    "state": {
+      "phase": 3,
+      "height": [
+        3,
+        0,
+        2,
+        0,
+        6
+      ],
+      "index": 3,
+      "left": 3,
+      "right": 6,
+      "leftIndex": 0,
+      "rightIndex": 4,
+      "level": 3,
+      "depth": 3
+    },
+    "index": "3",
+    "last": "6",
+    "foreign": "keep",
+    "nav": "navigate"
+  },
+  "afterBack": {
+    "state": {
+      "phase": 0,
+      "height": [
+        3,
+        0,
+        2,
+        0,
+        4
+      ],
+      "index": 2,
+      "left": 3,
+      "right": 4,
+      "leftIndex": 0,
+      "rightIndex": 4,
+      "level": 3,
+      "depth": 1
+    },
+    "index": "3",
+    "last": "6",
+    "foreign": "keep",
+    "nav": "back_forward"
+  }
+}

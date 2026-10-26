@@ -109,3 +109,9 @@ Required regression acceptance is in the corresponding spec. Run
 New browser tests accept `LESSON_PREVIEW`, `LESSON_ROUTE`,
 `LESSON_TEST_OUTPUT_DIR`, and `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`.
 This addition is self-checked; independent review is pending.
+
+## Integration recovery contract — 2026-10-26
+
+Independent cold review found native controls restored by Back while the new wall model reinitialized defaults. Preserve preset/current small array/index/phase in validated current-entry `history.state.visualLc42Wall`, merge foreign history fields, and reconcile controls/model on pageshow/popstate. No global reading history, new persistent storage or timer. Normal Back/reload restores edits and phase; restricted history degrades to a consistent in-memory/default view. Include malformed-state, foreign-field, reset-step versus restore-default and real collection→Back/reload regression. The two-pointer engine remains independent and unchanged.
+
+New wall-lab buttons, selects and slider have at least48px touch height, following the shared UI contract; existing unrelated legacy controls are not restyled.
