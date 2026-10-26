@@ -1,0 +1,277 @@
+{
+  "source": "/Users/songyy/Documents/knowledge-vis/reflection-refraction/app.js",
+  "criticalExact": 48.753466631327235,
+  "criticalDisplay": "48.8°",
+  "airWater": [
+    {
+      "direction": "air-water",
+      "angle": 0,
+      "expected": 0,
+      "actual": 0,
+      "zeroDeviation": true
+    },
+    {
+      "direction": "air-water",
+      "angle": 0,
+      "expected": 0,
+      "actual": 0,
+      "zeroDeviation": true
+    },
+    {
+      "direction": "air-water",
+      "angle": -30,
+      "expected": 22.082413194472252,
+      "actual": 22.082413194472245,
+      "zeroDeviation": false
+    },
+    {
+      "direction": "air-water",
+      "angle": 30,
+      "expected": 22.082413194472252,
+      "actual": 22.082413194472245,
+      "zeroDeviation": false
+    },
+    {
+      "direction": "air-water",
+      "angle": -50,
+      "expected": 35.16781910065805,
+      "actual": 35.16781910065804,
+      "zeroDeviation": false
+    },
+    {
+      "direction": "air-water",
+      "angle": 50,
+      "expected": 35.16781910065805,
+      "actual": 35.16781910065805,
+      "zeroDeviation": false
+    },
+    {
+      "direction": "air-water",
+      "angle": -80,
+      "expected": 47.77035586616183,
+      "actual": 47.770355866161836,
+      "zeroDeviation": false
+    },
+    {
+      "direction": "air-water",
+      "angle": 80,
+      "expected": 47.77035586616183,
+      "actual": 47.770355866161836,
+      "zeroDeviation": false
+    }
+  ],
+  "nearCritical": [
+    {
+      "angle": -48.753466531327234,
+      "delta": -1e-7,
+      "expected": "refract",
+      "traceMode": "refract",
+      "traceAngle": 89.99683011298043,
+      "scalarTir": false,
+      "scalarTheta": -89.99683011309664,
+      "q": 0.9999999984695742
+    },
+    {
+      "angle": 48.753466531327234,
+      "delta": -1e-7,
+      "expected": "refract",
+      "traceMode": "refract",
+      "traceAngle": 89.99683011298043,
+      "scalarTir": false,
+      "scalarTheta": 89.99683011309664,
+      "q": 0.9999999984695742
+    },
+    {
+      "angle": -48.753466629327235,
+      "delta": -2e-9,
+      "expected": "refract",
+      "traceMode": "refract",
+      "traceAngle": 89.99955171070157,
+      "scalarTir": false,
+      "scalarTheta": -89.99955171029507,
+      "q": 0.9999999999693915
+    },
+    {
+      "angle": 48.753466629327235,
+      "delta": -2e-9,
+      "expected": "refract",
+      "traceMode": "refract",
+      "traceAngle": 89.99955171070157,
+      "scalarTir": false,
+      "scalarTheta": 89.99955171029507,
+      "q": 0.9999999999693915
+    },
+    {
+      "angle": -48.75346663082723,
+      "delta": -5e-10,
+      "expected": "refract",
+      "traceMode": "critical",
+      "traceAngle": 90,
+      "scalarTir": false,
+      "scalarTheta": -89.99977585392801,
+      "q": 0.999999999992348
+    },
+    {
+      "angle": 48.75346663082723,
+      "delta": -5e-10,
+      "expected": "refract",
+      "traceMode": "critical",
+      "traceAngle": 90,
+      "scalarTir": false,
+      "scalarTheta": 89.99977585392801,
+      "q": 0.999999999992348
+    },
+    {
+      "angle": -48.753466631327235,
+      "delta": 0,
+      "expected": "critical",
+      "traceMode": "critical",
+      "traceAngle": 90,
+      "scalarTir": false,
+      "scalarTheta": -90,
+      "q": 1
+    },
+    {
+      "angle": 48.753466631327235,
+      "delta": 0,
+      "expected": "critical",
+      "traceMode": "critical",
+      "traceAngle": 90,
+      "scalarTir": false,
+      "scalarTheta": 90,
+      "q": 1
+    },
+    {
+      "angle": -48.75346663182724,
+      "delta": 5e-10,
+      "expected": "tir",
+      "traceMode": "critical",
+      "traceAngle": 90,
+      "scalarTir": false,
+      "scalarTheta": "NaN",
+      "q": 1.000000000007652
+    },
+    {
+      "angle": 48.75346663182724,
+      "delta": 5e-10,
+      "expected": "tir",
+      "traceMode": "critical",
+      "traceAngle": 90,
+      "scalarTir": true,
+      "scalarTheta": "null",
+      "q": 1.000000000007652
+    },
+    {
+      "angle": -48.753466633327236,
+      "delta": 2e-9,
+      "expected": "tir",
+      "traceMode": "tir",
+      "traceAngle": null,
+      "scalarTir": false,
+      "scalarTheta": "NaN",
+      "q": 1.0000000000306086
+    },
+    {
+      "angle": 48.753466633327236,
+      "delta": 2e-9,
+      "expected": "tir",
+      "traceMode": "tir",
+      "traceAngle": null,
+      "scalarTir": true,
+      "scalarTheta": "null",
+      "q": 1.0000000000306086
+    },
+    {
+      "angle": -48.75346673132724,
+      "delta": 1e-7,
+      "expected": "tir",
+      "traceMode": "tir",
+      "traceAngle": null,
+      "scalarTir": false,
+      "scalarTheta": "NaN",
+      "q": 1.000000001530426
+    },
+    {
+      "angle": 48.75346673132724,
+      "delta": 1e-7,
+      "expected": "tir",
+      "traceMode": "tir",
+      "traceAngle": null,
+      "scalarTir": true,
+      "scalarTheta": "null",
+      "q": 1.000000001530426
+    }
+  ],
+  "negativeScalar60": {
+    "tir": false,
+    "theta": "NaN"
+  },
+  "waterAirGrid": {
+    "samples": 16001,
+    "maxAngleError": 1.5208076117878555e-11
+  },
+  "reflectionMaxAngleDifference": 3.0375701953744283e-13,
+  "fish": [
+    {
+      "eyeX": 80,
+      "A": [
+        170,
+        224.1297897917106
+      ],
+      "realDepth": 3.5,
+      "appDepth": 2.4782447447927654,
+      "residual": 3.552713678800501e-15
+    },
+    {
+      "eyeX": 169,
+      "A": [
+        170,
+        230.26238694283273
+      ],
+      "realDepth": 3.5,
+      "appDepth": 2.6315596735708184,
+      "residual": 3.319566843629218e-14
+    },
+    {
+      "eyeX": 170,
+      "A": [
+        170,
+        230.26315789473682
+      ],
+      "realDepth": 3.5,
+      "appDepth": 2.6315789473684204,
+      "residual": 0
+    },
+    {
+      "eyeX": 171,
+      "A": [
+        170,
+        230.26238694283273
+      ],
+      "realDepth": 3.5,
+      "appDepth": 2.6315596735708184,
+      "residual": 3.319566843629218e-14
+    },
+    {
+      "eyeX": 300,
+      "A": [
+        170,
+        217.75717639446407
+      ],
+      "realDepth": 3.5,
+      "appDepth": 2.318929409861602,
+      "residual": 2.1316282072803006e-14
+    },
+    {
+      "eyeX": 400,
+      "A": [
+        170,
+        195.7896404782693
+      ],
+      "realDepth": 3.5,
+      "appDepth": 1.7697410119567323,
+      "residual": 0
+    }
+  ],
+  "scope": "Actual PURE evaluated in VM; no Chrome/UI/real energy or complete virtual-image solver validation."
+}

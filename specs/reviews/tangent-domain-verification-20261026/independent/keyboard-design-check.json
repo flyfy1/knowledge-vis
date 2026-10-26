@@ -1,0 +1,31 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "step": 0.1,
+      "count": 900,
+      "exactTarget": true,
+      "result": 1.5707963267948966
+    },
+    {
+      "step": 1,
+      "count": 90,
+      "exactTarget": true,
+      "result": 1.5707963267948966
+    },
+    {
+      "step": 10,
+      "count": 9,
+      "exactTarget": true,
+      "result": 1.5707963267948966
+    },
+    {
+      "step": -0.1,
+      "count": 900,
+      "exactTarget": true,
+      "result": 4.71238898038469
+    }
+  ],
+  "offGridCases": 16,
+  "method": "Pure design prototype only,not an executed app or prescribed replacement implementation; strict recognition avoids a proximity snap."
+}

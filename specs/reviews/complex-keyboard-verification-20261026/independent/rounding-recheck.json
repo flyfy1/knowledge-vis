@@ -1,0 +1,96 @@
+[
+  {
+    "test": "negative real exact formula and approximate display en",
+    "text": "z ≈ −4: real part a ≈ −4, imaginary part b ≈ 0; modulus |z| = √(a² + b²) ≈ 4 (computed by Pythagoras); argument θ ≈ 180° (counter-clockwise from the positive real axis). Displayed numbers are rounded after calculation from unrounded coordinates."
+  },
+  {
+    "test": "precise unit preset preserved en",
+    "state": [
+      0.6427876096865394,
+      0.766044443118978
+    ],
+    "text": "z ≈ 0.64 + 0.77i: real part a ≈ 0.64, imaginary part b ≈ 0.77; modulus |z| = √(a² + b²) ≈ 1 (computed by Pythagoras); argument θ ≈ 50° (counter-clockwise from the positive real axis). Displayed numbers are rounded after calculation from unrounded coordinates."
+  },
+  {
+    "test": "two1+i corrected rounded display en",
+    "displays": {
+      "mod": "Modulus identity: |z₁z₂| = |z₁| × |z₂|. Displayed factor moduli: |z₁| ≈ 1.41, |z₂| ≈ 1.41. Multiplying unrounded values gives |z₁|·|z₂| ≈ 2; computing the product’s modulus directly gives |z₁z₂| ≈ 2.",
+      "arg": "Angle check: displayed θ₁ ≈ 45°, θ₂ ≈ 45°. Adding unrounded angles and normalising to the principal interval gives ≈ 90°; the product’s argument calculated directly is ≈ 90°.",
+      "alg": "Algebraic identity: (a₁a₂ − b₁b₂, a₁b₂ + b₁a₂). Displayed coordinates: a₁ ≈ 1, b₁ ≈ 1, a₂ ≈ 1, b₂ ≈ 1. Calculating from unrounded coordinates gives the product ≈ 2i; the plot uses that same result."
+    }
+  },
+  {
+    "test": "projected arbitrary coordinates rounded display en",
+    "state": {
+      "z1": [
+        2.466576574931336,
+        0.8221921916437787
+      ],
+      "z2": [
+        1,
+        1
+      ]
+    },
+    "displays": {
+      "mod": "Modulus identity: |z₁z₂| = |z₁| × |z₂|. Displayed factor moduli: |z₁| ≈ 2.6, |z₂| ≈ 1.41. Multiplying unrounded values gives |z₁|·|z₂| ≈ 3.68; computing the product’s modulus directly gives |z₁z₂| ≈ 3.68.",
+      "arg": "Angle check: displayed θ₁ ≈ 18.4°, θ₂ ≈ 45°. Adding unrounded angles and normalising to the principal interval gives ≈ 63.4°; the product’s argument calculated directly is ≈ 63.4°.",
+      "alg": "Algebraic identity: (a₁a₂ − b₁b₂, a₁b₂ + b₁a₂). Displayed coordinates: a₁ ≈ 2.47, b₁ ≈ 0.82, a₂ ≈ 1, b₂ ≈ 1. Calculating from unrounded coordinates gives the product ≈ 1.64 + 3.29i; the plot uses that same result."
+    }
+  },
+  {
+    "test": "negative real exact formula and approximate display zh",
+    "text": "z ≈ −4：实部 a ≈ −4，虚部 b ≈ 0；模 |z| = √(a² + b²) ≈ 4（斜边由勾股实算）；辐角 θ ≈ 180°（从实轴正半轴逆时针量）。数字由未舍入坐标计算后显示为近似值。"
+  },
+  {
+    "test": "precise unit preset preserved zh",
+    "state": [
+      0.6427876096865394,
+      0.766044443118978
+    ],
+    "text": "z ≈ 0.64 + 0.77i：实部 a ≈ 0.64，虚部 b ≈ 0.77；模 |z| = √(a² + b²) ≈ 1（斜边由勾股实算）；辐角 θ ≈ 50°（从实轴正半轴逆时针量）。数字由未舍入坐标计算后显示为近似值。"
+  },
+  {
+    "test": "two1+i corrected rounded display zh",
+    "displays": {
+      "mod": "模恒等式：|z₁z₂| = |z₁| × |z₂|。显示两因子模：|z₁| ≈ 1.41，|z₂| ≈ 1.41；用未舍入值相乘后显示 |z₁|·|z₂| ≈ 2，直接求乘积模得 |z₁z₂| ≈ 2。",
+      "arg": "角对账：显示 θ₁ ≈ 45°，θ₂ ≈ 45°；未舍入角相加并归到主值区间后 ≈ 90°，直接算乘积辐角 ≈ 90°。",
+      "alg": "代数恒等式：(a₁a₂ − b₁b₂, a₁b₂ + b₁a₂)。显示坐标：a₁ ≈ 1，b₁ ≈ 1，a₂ ≈ 1，b₂ ≈ 1；用未舍入坐标算乘积 ≈ 2i，图也使用同一结果。"
+    }
+  },
+  {
+    "test": "projected arbitrary coordinates rounded display zh",
+    "state": {
+      "z1": [
+        2.466576574931336,
+        0.8221921916437787
+      ],
+      "z2": [
+        1,
+        1
+      ]
+    },
+    "displays": {
+      "mod": "模恒等式：|z₁z₂| = |z₁| × |z₂|。显示两因子模：|z₁| ≈ 2.6，|z₂| ≈ 1.41；用未舍入值相乘后显示 |z₁|·|z₂| ≈ 3.68，直接求乘积模得 |z₁z₂| ≈ 3.68。",
+      "arg": "角对账：显示 θ₁ ≈ 18.4°，θ₂ ≈ 45°；未舍入角相加并归到主值区间后 ≈ 63.4°，直接算乘积辐角 ≈ 63.4°。",
+      "alg": "代数恒等式：(a₁a₂ − b₁b₂, a₁b₂ + b₁a₂)。显示坐标：a₁ ≈ 2.47，b₁ ≈ 0.82，a₂ ≈ 1，b₂ ≈ 1；用未舍入坐标算乘积 ≈ 1.64 + 3.29i，图也使用同一结果。"
+    }
+  },
+  {
+    "test": "pageerrors",
+    "errors": []
+  },
+  {
+    "test": "browser touch after keyboard addition",
+    "touch": {
+      "state": [
+        -1.7,
+        2.2
+      ],
+      "fields": [
+        "-1.7",
+        "2.2"
+      ]
+    },
+    "limits": "Emulated touch, not physical-device evidence"
+  }
+]

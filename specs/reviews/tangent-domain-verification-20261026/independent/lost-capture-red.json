@@ -1,0 +1,22 @@
+{
+  "pass": false,
+  "trials": [
+    {
+      "id": "s1-canvas",
+      "committed": 0,
+      "afterMove": 1.5707963267948966,
+      "dragging": true,
+      "pass": false
+    },
+    {
+      "id": "s4-canvas",
+      "committed": 0,
+      "afterMove": 1.5707963267948966,
+      "dragging": true,
+      "pass": false
+    }
+  ],
+  "source": "/Users/songyy/Documents/knowledge-vis/trig/app.js",
+  "sha256": "2860b1e566d1d64d31f174835ddb1add70d3267b097c5106e7cb957304667102",
+  "method": "Actual initS1/initS4 lost-capture and move callbacks in isolated VM with geometry/DOM/drawing adapters; not Chrome."
+}

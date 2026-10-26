@@ -1,0 +1,184 @@
+{
+  "localLinks": [
+    {
+      "source": "README.md",
+      "target": "atlas/README.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "specs/leetcode-explainers.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "specs/leetcode-hard-traces.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "specs/reviews/leetcode-first-ten-review.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../WORKFLOW.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../UI-I18N-SPEC.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../CONCEPT-MAP.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../specs/reviews/atlas-motion-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../specs/reviews/atlas-response-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../specs/reviews/frozen-bubble-verification.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../specs/reviews/atlas-travel-design-20261025.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../specs/reviews/atlas-travel-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../specs/reviews/atlas-rates-design-20261025.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../specs/reviews/atlas-rates-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../specs/reviews/atlas-response-design-20261025.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../specs/reviews/atlas-response-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../specs/reviews/atlas-motion-design-20261025.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../specs/reviews/atlas-motion-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../specs/reviews/math-physics-atlas-design-review.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/README.md",
+      "target": "../specs/reviews/math-physics-atlas-verification.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/BRIEF.md",
+      "target": "README.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/BRIEF.md",
+      "target": "../specs/reviews/atlas-motion-design-20261025.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/BRIEF.md",
+      "target": "../specs/reviews/atlas-response-design-20261025.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/BRIEF.md",
+      "target": "../specs/reviews/atlas-rates-design-20261025.md",
+      "exists": true
+    },
+    {
+      "source": "atlas/BRIEF.md",
+      "target": "../specs/reviews/atlas-travel-design-20261025.md",
+      "exists": true
+    }
+  ],
+  "allExist": true,
+  "testFiles": [
+    {
+      "file": "atlas/tests/travel-core.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/travel-browser.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/legacy-signed-area.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/motion-core.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/rates-core.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/response-core.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/motion-browser.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/rates-browser.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/response-browser.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/browser.cjs",
+      "exists": true
+    },
+    {
+      "file": "laplace/tests/pole-boundaries.cjs",
+      "exists": true
+    }
+  ],
+  "architecture": {
+    "oneSharedMotionModelAndBridge": true,
+    "oneAuthoritativeMotionClock": true,
+    "threeViewsOwnedByAtlasUrl": true,
+    "sameMotionStorageWithOptionalStartCycles": true,
+    "responseRemainsSeparateStaticModel": true
+  },
+  "limits": "No full-site scientific certification; independent tests separated from implementer suites; physical-device/hardware/learning outcomes not tested"
+}

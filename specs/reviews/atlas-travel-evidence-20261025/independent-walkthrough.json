@@ -1,0 +1,228 @@
+[
+  {
+    "test": "Outward half-cycle",
+    "data": {
+      "a": "0",
+      "b": "0.5",
+      "I": "-1.200",
+      "D": "1.200",
+      "P": "0.000",
+      "N": "-1.200",
+      "positions": "x(a) = 0.600 m; x(b) = -0.600 m. Chronological displacement = -1.200 m; oriented ∫aᵇ |v| dt = 1.200 m.",
+      "note": "a ≤ b: displacement x(b)−x(a) = P+N; distance = P−N. Opposite directions cancel only in displacement.",
+      "time": "a = 0.000 s; b = 1.571 s. These are time limits; cycle fractions are converted using the shared period.",
+      "play": "false"
+    }
+  },
+  {
+    "test": "Whole return",
+    "data": {
+      "a": "0",
+      "b": "1",
+      "I": "0.000",
+      "D": "2.400",
+      "P": "1.200",
+      "N": "-1.200",
+      "positions": "x(a) = 0.600 m; x(b) = 0.600 m. Chronological displacement = 0.000 m; oriented ∫aᵇ |v| dt = 2.400 m.",
+      "note": "a ≤ b: displacement x(b)−x(a) = P+N; distance = P−N. Opposite directions cancel only in displacement.",
+      "time": "a = 0.000 s; b = 3.142 s. These are time limits; cycle fractions are converted using the shared period.",
+      "play": "false"
+    }
+  },
+  {
+    "test": "Equal bounds",
+    "data": {
+      "a": "0.5",
+      "b": "0.5",
+      "I": "0.000",
+      "D": "0.000",
+      "P": "0.000",
+      "N": "0.000",
+      "positions": "x(a) = -0.600 m; x(b) = -0.600 m. Chronological displacement = 0.000 m; oriented ∫aᵇ |v| dt = 0.000 m.",
+      "note": "a = b: no time interval, so both integrals and distance are zero. The common position need not be zero.",
+      "time": "a = 1.571 s; b = 1.571 s. These are time limits; cycle fractions are converted using the shared period.",
+      "play": "false"
+    }
+  },
+  {
+    "test": "Swap the half-cycle bounds",
+    "data": {
+      "a": "0.5",
+      "b": "0",
+      "I": "1.200",
+      "D": "1.200",
+      "P": "0.000",
+      "N": "-1.200",
+      "positions": "x(a) = -0.600 m; x(b) = 0.600 m. Chronological displacement = -1.200 m; oriented ∫aᵇ |v| dt = -1.200 m.",
+      "note": "a > b: the oriented integral x(b)−x(a) is the negative of chronological displacement. ∫aᵇ |v| dt is also negative; physical distance over [min(a,b),max(a,b)] stays nonnegative. Swapping limits is not motion backward in time.",
+      "time": "a = 1.571 s; b = 0.000 s. These are time limits; cycle fractions are converted using the shared period.",
+      "play": "false"
+    }
+  },
+  {
+    "test": "partial return",
+    "data": {
+      "a": "0.5",
+      "b": "1",
+      "I": "1.200",
+      "D": "1.200",
+      "P": "1.200",
+      "N": "0.000",
+      "positions": "x(a) = -0.600 m; x(b) = 0.600 m. Chronological displacement = 1.200 m; oriented ∫aᵇ |v| dt = 1.200 m.",
+      "note": "a ≤ b: displacement x(b)−x(a) = P+N; distance = P−N. Opposite directions cancel only in displacement.",
+      "time": "a = 1.571 s; b = 3.142 s. These are time limits; cycle fractions are converted using the shared period.",
+      "play": "false"
+    }
+  },
+  {
+    "test": "b<a forward playback shrinks selection",
+    "data": {
+      "before": {
+        "a": "0.5",
+        "b": "0",
+        "I": "1.200",
+        "D": "1.200",
+        "P": "0.000",
+        "N": "-1.200",
+        "positions": "x(a) = -0.600 m; x(b) = 0.600 m. Chronological displacement = -1.200 m; oriented ∫aᵇ |v| dt = -1.200 m.",
+        "note": "a > b: the oriented integral x(b)−x(a) is the negative of chronological displacement. ∫aᵇ |v| dt is also negative; physical distance over [min(a,b),max(a,b)] stays nonnegative. Swapping limits is not motion backward in time.",
+        "time": "a = 1.571 s; b = 0.000 s. These are time limits; cycle fractions are converted using the shared period.",
+        "play": "false"
+      },
+      "after": {
+        "a": "0.5",
+        "b": "0.115",
+        "I": "1.046",
+        "D": "1.046",
+        "P": "0.000",
+        "N": "-1.046",
+        "positions": "x(a) = -0.600 m; x(b) = 0.446 m. Chronological displacement = -1.046 m; oriented ∫aᵇ |v| dt = -1.046 m.",
+        "note": "a > b: the oriented integral x(b)−x(a) is the negative of chronological displacement. ∫aᵇ |v| dt is also negative; physical distance over [min(a,b),max(a,b)] stays nonnegative. Swapping limits is not motion backward in time.",
+        "time": "a = 1.571 s; b = 0.367 s. These are time limits; cycle fractions are converted using the shared period.",
+        "play": "false"
+      }
+    }
+  },
+  {
+    "test": "m/k invariant, A scales",
+    "data": {
+      "a": "0",
+      "b": "1",
+      "I": "0.000",
+      "D": "4.000",
+      "P": "2.000",
+      "N": "-2.000",
+      "positions": "x(a) = 1.000 m; x(b) = 1.000 m. Chronological displacement = 0.000 m; oriented ∫aᵇ |v| dt = 4.000 m.",
+      "note": "a ≤ b: displacement x(b)−x(a) = P+N; distance = P−N. Opposite directions cancel only in displacement.",
+      "time": "a = 0.000 s; b = 12.566 s. These are time limits; cycle fractions are converted using the shared period.",
+      "play": "false"
+    }
+  },
+  {
+    "test": "three shared views retain bounds",
+    "data": true
+  },
+  {
+    "test": "view/locale while playing",
+    "data": {
+      "a": "0",
+      "b": "1.025",
+      "I": "-0.014",
+      "D": "4.014",
+      "P": "2.000",
+      "N": "-2.014",
+      "positions": "x(a) = 1.000 m；x(b) = 0.986 m。按时间先后的位移 = -0.014 m；有向 ∫aᵇ |v| dt = 4.014 m。",
+      "note": "a ≤ b：位移 x(b)−x(a) = P+N；路程 = P−N。方向相反的行程只在位移里抵消。",
+      "time": "a = 0.000 s；b = 12.900 s。这是时间积分限；周期比例通过共享周期换算成秒。",
+      "play": "false"
+    }
+  },
+  {
+    "test": "Chinese copy",
+    "data": "完整往返后，留下什么？\n\n选择“完整往返”：物块从 +A 出发又回到 +A，回的是出发位置，不是坐标零点。比较有符号积分中的抵消和路程，再改变任一积分限。\n\n定积分\n简谐振动\n单程半周期\n完整往返\n两限相同\n交换半周期的两限\n积分限 a（0–2 周期；修改即暂停）\n0.000\n\na = 0.000 s；b = 12.900 s。这是时间积分限；周期比例通过共享周期换算成秒。\n\n带方向的速度 · 所选区间\n横轴 t（秒），纵轴 v（m/s）。着色覆盖 a、b 之间按时间先后的区间：青色 +，橙色 −。速度刻度只随参数改变。虚线是区间外的预测。面积单位为 (m/s) × s = m。\n有向积分 ∫aᵇ v dt（m）\n-0.014\n路程 D（m）\n4.014\n正贡献 P ≥ 0（m）\n2.000\n负贡献 N ≤ 0（m）\n-2.014\n\nx(a) = 1.000 m；x(b) = 0.986 m。按时间先后的位移 = -0.014 m；有向 ∫aᵇ |v| dt = 4.014 m。\n\na ≤ b：位移 x(b)−x(a) = P+N；路程 = P−N。方向相反的行程只在位移里抵消。\n\n读数按解析式计算：在每个 v=0 的转向点分段，用 x=A cos(ωt) 精确计算各段位置差并累加。着色只是采样示意，不参与计算。固定周期比例两限时，改 m 或 k 会同时改变速度和秒数，位移与路程不变；改 A 则同时缩放两者。\n\n播放只向前移动 b，a 保持不变。读数表示当前所选区间，不是播放过程累计走过的路程。b<a 时，向前移动 b 会缩短区间，区间路程可以减少。\n\n已有积分课：切条与累加 →\nOpenStax 微积分5.2 · 有符号面积与积分限 ↗\nOpenStax 物理3.6 · 从速度求位置 ↗"
+  },
+  {
+    "test": "response route and Back",
+    "data": {
+      "a": "0",
+      "b": "1.025",
+      "I": "-0.014",
+      "D": "4.014",
+      "P": "2.000",
+      "N": "-2.014",
+      "positions": "x(a) = 1.000 m；x(b) = 0.986 m。按时间先后的位移 = -0.014 m；有向 ∫aᵇ |v| dt = 4.014 m。",
+      "note": "a ≤ b：位移 x(b)−x(a) = P+N；路程 = P−N。方向相反的行程只在位移里抵消。",
+      "time": "a = 0.000 s；b = 12.900 s。这是时间积分限；周期比例通过共享周期换算成秒。",
+      "play": "false"
+    }
+  },
+  {
+    "test": "legacy integral source",
+    "data": "http://127.0.0.1:18775/integral/#step2"
+  },
+  {
+    "test": "source Back and reset all",
+    "data": {
+      "a": "0",
+      "b": "0",
+      "I": "0.000",
+      "D": "0.000",
+      "P": "0.000",
+      "N": "0.000",
+      "positions": "x(a) = 0.600 m; x(b) = 0.600 m. Chronological displacement = 0.000 m; oriented ∫aᵇ |v| dt = 0.000 m.",
+      "note": "a = b: no time interval, so both integrals and distance are zero. The common position need not be zero.",
+      "time": "a = 0.000 s; b = 0.000 s. These are time limits; cycle fractions are converted using the shared period.",
+      "play": "false"
+    }
+  },
+  {
+    "test": "phone en320",
+    "data": true
+  },
+  {
+    "test": "phone en390",
+    "data": true
+  },
+  {
+    "test": "phone zh320",
+    "data": true
+  },
+  {
+    "test": "phone zh390",
+    "data": true
+  },
+  {
+    "test": "200percent en",
+    "data": {
+      "w": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "test": "200percent zh",
+    "data": {
+      "w": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "test": "keyboard forced-color focus",
+    "data": true
+  },
+  {
+    "test": "session old",
+    "data": true
+  },
+  {
+    "test": "session denied",
+    "data": true
+  },
+  {
+    "test": "console",
+    "data": []
+  },
+  {
+    "test": "counts",
+    "data": "34 个概念 · 43 条关系 5 个主题区域 · 人工编排并附来源"
+  }
+]

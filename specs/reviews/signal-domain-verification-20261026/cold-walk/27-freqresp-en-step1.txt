@@ -1,0 +1,20 @@
+Step 1 · What a Frequency Response Is
+
+Sine in, sine out: only two things change
+
+Open the box: a resistor R and a capacitor C, output taken across the capacitor — the classic first-order RC low-pass. Feed it cos(ωt) and, once the transient dies out, the output is still a sine of the same frequency, with only two changes: its amplitude is multiplied by |H(ω)|, and its phase is pushed back by φ(ω). The two cards below record the answer at the current frequency side by side: one computed from the formula (the analytic card), one measured off the simulated waveform with an oscilloscope mindset (the measured card: the page really integrates the circuit equation with RK4, then projects the steady-state waveform to extract amplitude and phase). If the two cards disagree, neither can be trusted. Drag ω through the range; every frequency you visit lights a point on the |H| curve below.
+
+H(jω) = 1 / (1 + jωRC), τ = RC = 1 s, ωc = 1/τ = 1 rad/s
+
+Input angular frequency ω 10.00 rad/s
+Analytic card · from the formula
+
+|H| = 0.0995 · φ = −84.3°
+
+Measured card · from the waveform
+
+|H| = 0.0995 · φ = −84.3°
+
+ω = 10.00 rad/s · gap between the two routes: |Δ|H|| = 7.60e−7, |Δφ| = 0.00° · 2 frequency points lit so far
+
+Look closely at ω = ωc = 1: |H| is exactly 1/√2 ≈ 0.707 and φ is exactly −45°. This frequency is the cutoff, and the next step’s whole Bode plot revolves around it. One definition, stated plainly: “measured” means steady state — the brief switch-on transient does not count. The simulation lets the circuit run for 6τ plus several periods before measuring, and the reviewers use the same convention (the method is printed under the measured card).

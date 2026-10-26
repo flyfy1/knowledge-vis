@@ -1,0 +1,31 @@
+{
+  "pass": true,
+  "checks": [
+    "en/motion:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px",
+    "en/kinematics:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px",
+    "en/travel:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px",
+    "en/response:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px",
+    "en/waves:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px",
+    "en/power:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px",
+    "en/estimate:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px",
+    "zh/motion:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px",
+    "zh/kinematics:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px",
+    "zh/travel:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px",
+    "zh/response:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px",
+    "zh/waves:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px",
+    "zh/power:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px",
+    "zh/estimate:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px"
+  ],
+  "extra": [
+    "explicit check verification without auto-seek",
+    "inapplicable question clearing and matching Back",
+    "bad history schema/otherOwner preservation",
+    "denied storage/history memory fallback,keyboard/forced-colors/reduced motion"
+  ],
+  "errors": [],
+  "externalRuntimeRequests": [],
+  "limits": [
+    "Agent predictions/tests do not measure learner understanding",
+    "No physical device or screenreader speech"
+  ]
+}

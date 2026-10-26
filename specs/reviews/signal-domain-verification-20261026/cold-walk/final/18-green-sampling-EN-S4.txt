@@ -1,0 +1,12 @@
+Step 4 · The frequency view
+
+Aliasing in the frequency domain: the spectrum clones itself
+
+A real sine has positive and negative frequency components. This diagram shows only positive-frequency peak positions, not a complete magnitude/phase spectrum. Ideal uniform sampling repeats the two-sided spectrum every fₛ Hz. With known B<fₛ/2, ideal reconstruction selects the two-sided baseband. The displayed [0,fₛ/2] is only its positive half; peak locations alone do not recover a waveform. Drag fₛ to see copies fold into this region. Compare the Fourier spectrum → Convert on the Z page: spacing fₛ Hz or 2π/T rad/s →
+
+Signal frequency f (Hz) 13
+Sample rate f_s (Hz) 10
+
+Copy spacing = f_s = 10 Hz · the peak inside the baseband [0, 5.0 Hz] sits at 3.0 Hz — the same number as the time-domain fake wave in step 2.
+
+Notice what aliasing really is: not “the signal got a bit dirty”, but high-frequency information moved bodily into the low frequencies, impersonating them. Once sampling is done, the true peak and the alias peak look identical — no filter afterwards can separate them. Prevention has to happen before sampling.

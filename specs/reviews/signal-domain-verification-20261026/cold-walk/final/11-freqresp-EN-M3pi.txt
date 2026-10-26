@@ -1,0 +1,17 @@
+Step 3 · Digital Filters
+
+Moving-average zeros: executing one named frequency
+
+Now discrete time: n is an integer sample index. Here ω is digital angular frequency (rad/sample, often written Ω), not the earlier RC model’s rad/s. Given a sample rate Fₛ, ω=2πf/Fₛ; without Fₛ no physical Hz value is assigned. A moving average averages the latest M samples. At ω=2πk/M, provided k is not divisible by M, those M contributions cancel. At 0 and integer multiples of 2π, |H|=1 instead. Predict the first zero, then compare the preset and actual output samples.
+
+|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|); zeros: ω = 2πk/M, integer k not divisible by M; at ω=2πq, |H|=1.
+
+Averaging length M 3
+Input digital frequency ω (rad/sample) 3.142
+Feed the zero 2π/M
+Feed the first sidelobe peak
+Feed a passband tone, 0.20
+
+M = 3 · ω = 3.142 rad/sample · analytic |H| = 0.3333 · simulated steady-state amplitude = 0.3333 · first sidelobe peak |H| = 0.3333 (−9.5 dB) · linear-phase group delay on nonzero bands = 1.0 samples (phase/local group delay undefined at zeros)
+
+Range: 0.05 to π rad/sample. Slider arrows step 0.005; Shift+arrow steps 0.05; Home selects 0.05 and End exact π. Presets keep exact frequencies rather than rounding to displayed decimals. With M=2 the first zero isπ; then change M to 3, predict amplitude 1/3 and compare analytic and measured values. A zero output cannot measure phase or delay. Sidelobes are not zeros: a moving average smooths but is no ideal stopband filter. Basis: Smith · moving-average response →

@@ -1,0 +1,24 @@
+{
+  "browserSuites": 14,
+  "allBrowserSuitesPass": true,
+  "refractionChecks": 148,
+  "atlasChecks": 347,
+  "qualityChecks": 124,
+  "qualityDocuments": 20,
+  "qualityUniqueAnchors": 44,
+  "coreCommands": 17,
+  "allCoreCommandsPass": true,
+  "concepts": 38,
+  "relations": 47,
+  "routes": 10,
+  "remainingScopedMustFix": 0,
+  "scienceReview": "independent/final-acceptance.md",
+  "uiFirstReview": "cold-ui/postfix-ui-review.md",
+  "noPushOrDeployment": true,
+  "limits": [
+    "No physical-phone or screen-reader speech test",
+    "No measured human learning outcome or whole-site science certification",
+    "OnlyS2/S3refraction reading angles preserved across rebuild; no quiz/profile",
+    "Ideal direction geometry,not Fresnel power,evanescent field,physical propagation time or full virtual-image solver"
+  ]
+}

@@ -75,6 +75,7 @@ function verdict4(st) {
   const { sigP } = params4(st);
   if (sigP < -1e-9) return 'stable';
   if (sigP > 1e-9) return 'unstable';
+  if (st.mode === 'osc' && st.pr === 0 && st.wd === 0) return 'unstable'; /* double-zero h(t)=t */
   if (st.mode === 'real' && st.p1 === 0 && st.p2 === 0) return 'unstable'; /* h(t)=t 无界 */
   return 'marginal';
 }

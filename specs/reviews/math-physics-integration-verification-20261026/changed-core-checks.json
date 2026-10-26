@@ -1,0 +1,14 @@
+[
+  {
+    "command": "node --check frozen-bubble/i18n.js",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": "node frozen-bubble/tests/core.cjs",
+    "exit": 0,
+    "stdout": "PASS: advancing/stalling front, undercooling comparison, transported paths, bilingual key parity\n",
+    "stderr": ""
+  }
+]

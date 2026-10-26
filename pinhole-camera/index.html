@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>小孔成像</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=geometry-2">
 <script src="../pages.config.js">
 </script>
-<script src="i18n.js">
+<script src="i18n.js?v=geometry-2">
 </script>
 </head>
 <body>
@@ -113,7 +113,7 @@
 <p class="explain" data-i18n-html="s2e">
 </p>
 <div class="stage">
-<canvas id="s2-canvas" height="330" data-i18n-aria="canvasLabel" role="img">
+<canvas id="s2-canvas" height="330" data-i18n-aria="geoCanvas" role="img">
 </canvas>
 </div>
 <div class="controls">
@@ -150,6 +150,25 @@
 </p>
 <p class="hint" data-i18n-html="s2hint">
 </p>
+<details class="geometry-bridge" id="geometry-bridge">
+<summary id="geometry-summary" data-i18n="geoSummary"></summary>
+<h3 data-i18n="geoQuestion"></h3>
+<p data-i18n="geoCoordinates"></p>
+<p data-i18n="geoProof"></p>
+<p class="readout" id="geo-ray" aria-live="polite"></p>
+<p class="readout" id="geo-image" aria-live="polite"></p>
+<p data-i18n="geoScope"></p>
+<p data-i18n="geoPrediction"></p>
+<div class="btn-row">
+<button type="button" class="btn big" id="geo-case-a" data-i18n="geoCaseA"></button>
+<button type="button" class="btn big" id="geo-case-b" data-i18n="geoCaseB"></button>
+</div>
+<details class="geometry-answer"><summary data-i18n="geoReveal"></summary><p data-i18n="geoAnswer"></p></details>
+<p><a class="geometry-link" href="#step2" data-i18n="geoPlotLink"></a></p>
+<p><a class="geometry-link" href="../linear-functions/#step2" id="geo-math-link" data-i18n="geoMathLink"></a></p>
+<p class="hint" data-i18n="geoReturn"></p>
+<p class="geometry-sources"><a href="https://openstax.org/books/elementary-algebra-2e/pages/8-7-solve-proportion-and-similar-figure-applications" data-i18n="geoSourceMath"></a> · <a href="https://openstax.org/books/college-physics-2e/pages/25-1-the-ray-aspect-of-light" data-i18n="geoSourceRays"></a> · <a href="https://openstax.org/books/college-physics-2e/pages/27-6-limits-of-resolution-the-rayleigh-criterion" data-i18n="geoSourceWave"></a></p>
+</details>
 </div>
 </section>
 <section class="step" id="step3" data-step="3">
@@ -291,7 +310,7 @@
 </main>
 <footer class="site-foot" data-i18n="foot">
 </footer>
-<script src="app.js">
+<script src="app.js?v=geometry-2">
 </script>
 </body>
 </html>

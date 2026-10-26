@@ -1,0 +1,17 @@
+Step 3 · Digital Filters
+
+Moving-average zeros: executing one named frequency
+
+Now the digital world. An old friend from the LTI page, the moving average (average the latest M samples), is also a filter, and its frequency response has a closed form: the numerator is sin(Mω/2), so whenever Mω/2 = kπ — that is, ω = 2πk/M — the response is exactly zero. A sine at that frequency completes whole cycles inside the M-sample window, its positive and negative halves cancel, and the output dies. Below, feed a sine exactly onto the first zero and let the output-amplitude readout speak for itself — whether the zero is real or cosmetic is a question for numbers, not for how the plot looks.
+
+|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|), zeros at ω = 2πk/M
+
+Averaging length M 2
+Input digital frequency ω (rad/sample) 3.142
+Feed the zero 2π/M
+Feed the first sidelobe peak
+Feed a passband tone, 0.20
+
+M = 2 · ω = 3.142 · analytic |H| = 6.12e−17 · simulated steady-state amplitude = 0 · first sidelobe peak: none (at M = 2 the zero already sits at π — no sidelobe inside [0, π]) · group delay (linear phase) = 0.5 samples
+
+Zeros are executions by name; sidelobes are the ones that got away. Feed the first sidelobe peak and the output only drops to the sidelobe’s height (about −13 dB for large M; the readout shows the exact value for the current M) — it does not die. Raising M narrows the main lobe (a tighter aim) but the row of sidelobes stays — which is why serious filter design suppresses sidelobes with windowing, and the moving average is just the plainest gun on the rack.

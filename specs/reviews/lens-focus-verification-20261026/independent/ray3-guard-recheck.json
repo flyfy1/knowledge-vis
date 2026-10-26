@@ -1,0 +1,27 @@
+{
+  "pass": true,
+  "results": [
+    {
+      "u": 60,
+      "segmentCount": 0,
+      "selectionRemainsTrue": true
+    },
+    {
+      "u": 59.8,
+      "segmentCount": 0,
+      "selectionRemainsTrue": true
+    },
+    {
+      "u": 120,
+      "segmentCount": 3,
+      "selectionRemainsTrue": true
+    },
+    {
+      "u": 30,
+      "segmentCount": 4,
+      "selectionRemainsTrue": true
+    }
+  ],
+  "method": "Actual renderer in isolated VM with drawing spy; no Chrome or pixel claim",
+  "reviewerCorrection": "Earlier suggestion misread the pre-drawing R.r3 visibility guard. It already omits the entire out-of-view special ray; ray3Outside copy is accurate. No implementation change was needed."
+}

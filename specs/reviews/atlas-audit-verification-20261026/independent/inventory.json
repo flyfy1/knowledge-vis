@@ -1,0 +1,3051 @@
+{
+  "scope": "registry categories math/physics/signal/probability; LeetCode excluded before filesystem traversal",
+  "registryNonLeetCode": 55,
+  "relevant": [
+    {
+      "slug": "frozen-bubble",
+      "title": {
+        "zh": "冰冻肥皂泡 · 水膜里的结晶",
+        "en": "Frozen Soap Bubbles · Ice in a Thin Film"
+      },
+      "category": "physics",
+      "stage": "junior",
+      "status": "live",
+      "path": "frozen-bubble/",
+      "href": "frozen-bubble/",
+      "file": "frozen-bubble/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 4,
+        "labelledCanvases": 4
+      }
+    },
+    {
+      "slug": "power-converters",
+      "title": {
+        "zh": "升压与降压 · 能量去哪了？",
+        "en": "Buck & Boost · Follow the Energy"
+      },
+      "category": "physics",
+      "stage": "university",
+      "status": "live",
+      "path": "power-converters/",
+      "href": "power-converters/",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "power",
+        "inductor",
+        "capacitor",
+        "switch-diode",
+        "pwm",
+        "buck",
+        "boost"
+      ],
+      "sectionIds": [],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 0,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "atlas",
+      "title": {
+        "zh": "数学与物理 · 知识地图",
+        "en": "Mathematics & Physics · Knowledge Atlas"
+      },
+      "category": "math",
+      "stage": "university",
+      "status": "live",
+      "path": "atlas/",
+      "href": "atlas/",
+      "file": "atlas/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "foundations-check-wrap",
+        "motion-lab",
+        "response-lab"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 11,
+        "labelledCanvases": 11
+      }
+    },
+    {
+      "slug": "fourier",
+      "title": {
+        "zh": "傅里叶变换 · 一步一交互",
+        "en": "The Fourier Transform · One Interaction at a Time"
+      },
+      "category": "signal",
+      "stage": "university",
+      "status": "live",
+      "path": "fourier/",
+      "href": "fourier/",
+      "file": "fourier/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "superposition",
+        "fourier",
+        "spectrum"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 11,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "convolution",
+      "title": {
+        "zh": "卷积 · 一步一交互",
+        "en": "Convolution · One Interaction at a Time"
+      },
+      "category": "signal",
+      "stage": "university",
+      "status": "live",
+      "path": "convolution/",
+      "href": "convolution/",
+      "file": "convolution/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "convolution"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 11,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "mandelbrot",
+      "title": {
+        "zh": "Mandelbrot 分形 · 无限放大",
+        "en": "The Mandelbrot Set · Zoom Without End"
+      },
+      "category": "math",
+      "stage": "university",
+      "status": "live",
+      "path": "mandelbrot/",
+      "href": "mandelbrot/",
+      "file": "mandelbrot/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 10,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "control",
+      "title": {
+        "zh": "反馈与控制 · 双轮车为什么倒不下去",
+        "en": "Feedback & Control · Why the Two-Wheeled Bot Never Falls"
+      },
+      "category": "signal",
+      "stage": "university",
+      "status": "live",
+      "path": "control/",
+      "href": "control/",
+      "file": "control/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "feedback"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 14,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "sampling",
+      "title": {
+        "zh": "采样与混叠 · 偷看得太懒，就会看错",
+        "en": "Sampling & Aliasing · Peek Too Lazily and You'll See It Wrong"
+      },
+      "category": "signal",
+      "stage": "university",
+      "status": "live",
+      "path": "sampling/",
+      "href": "sampling/",
+      "file": "sampling/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "sampling"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 12,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "trig",
+      "title": {
+        "zh": "三角函数 · 单位圆",
+        "en": "Trigonometric Functions · The Unit Circle"
+      },
+      "category": "math",
+      "stage": "university",
+      "status": "live",
+      "path": "trig/",
+      "href": "trig/",
+      "file": "trig/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "unit-circle",
+        "sine"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 9,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "montecarlo",
+      "title": {
+        "zh": "蒙特卡洛 · 撒豆子算 π",
+        "en": "Monte Carlo · Counting π with Scattered Beans"
+      },
+      "category": "probability",
+      "stage": "university",
+      "status": "live",
+      "path": "montecarlo/",
+      "href": "montecarlo/",
+      "file": "montecarlo/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "montecarlo"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 7,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "laplace",
+      "title": {
+        "zh": "拉普拉斯与 ROC · 给频率配一个寿命",
+        "en": "Laplace Transform & ROC · Giving Frequencies a Lifespan"
+      },
+      "category": "signal",
+      "stage": "university",
+      "status": "live",
+      "path": "laplace/",
+      "href": "laplace/",
+      "file": "laplace/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "laplace",
+        "poles"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 11,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "bayes",
+      "title": {
+        "zh": "贝叶斯 · 先查底子，再看证据",
+        "en": "Bayes · Check the Base Rate Before the Evidence"
+      },
+      "category": "probability",
+      "stage": "university",
+      "status": "live",
+      "path": "bayes/",
+      "href": "bayes/",
+      "file": "bayes/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "probability",
+        "bayes"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 7,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "clt",
+      "title": {
+        "zh": "中心极限定理 · 平均值总会变成钟形",
+        "en": "Central Limit Theorem · Averages Always Turn Bell-Shaped"
+      },
+      "category": "probability",
+      "stage": "university",
+      "status": "live",
+      "path": "clt/",
+      "href": "clt/",
+      "file": "clt/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "variance",
+        "gaussian"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 8,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "ztransform",
+      "title": {
+        "zh": "Z 变换 · 把 s 平面卷成单位圆",
+        "en": "The Z-Transform · Rolling the s-Plane into the Unit Circle"
+      },
+      "category": "signal",
+      "stage": "university",
+      "status": "live",
+      "path": "ztransform/",
+      "href": "ztransform/",
+      "file": "ztransform/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 15,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "eigen",
+      "title": {
+        "zh": "特征值与特征向量 · 矩阵不转的那些方向",
+        "en": "Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn"
+      },
+      "category": "math",
+      "stage": "university",
+      "status": "live",
+      "path": "eigen/",
+      "href": "eigen/",
+      "file": "eigen/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "vectors",
+        "eigen"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 10,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "entropy",
+      "title": {
+        "zh": "熵 · 惊讶的平均值",
+        "en": "Entropy · The Average of Surprise"
+      },
+      "category": "probability",
+      "stage": "university",
+      "status": "live",
+      "path": "entropy/",
+      "href": "entropy/",
+      "file": "entropy/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 9,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "lti",
+      "title": {
+        "zh": "冲激与 LTI · 给系统一巴掌",
+        "en": "Impulse & LTI · Slap the System"
+      },
+      "category": "signal",
+      "stage": "university",
+      "status": "live",
+      "path": "lti/",
+      "href": "lti/",
+      "file": "lti/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "lti",
+        "impulse"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 17,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "freqresp",
+      "title": {
+        "zh": "频率响应与滤波 · 按频率挑食的盒子",
+        "en": "Frequency Response & Filters · A Box That Eats by Frequency"
+      },
+      "category": "signal",
+      "stage": "university",
+      "status": "live",
+      "path": "freqresp/",
+      "href": "freqresp/",
+      "file": "freqresp/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "resonance",
+        "freqresp"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 15,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "modulation",
+      "title": {
+        "zh": "调制与频移 · 把信号搬上高频运走",
+        "en": "Modulation · Shipping Signals on a Carrier"
+      },
+      "category": "signal",
+      "stage": "university",
+      "status": "live",
+      "path": "modulation/",
+      "href": "modulation/",
+      "file": "modulation/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 13,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "kalman",
+      "title": {
+        "zh": "卡尔曼滤波 · 在预测与测量之间称重",
+        "en": "Kalman Filter · Weighing Prediction Against Measurement"
+      },
+      "category": "signal",
+      "stage": "university",
+      "status": "live",
+      "path": "kalman/",
+      "href": "kalman/",
+      "file": "kalman/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "kalman"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 12,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "fractions",
+      "title": {
+        "zh": "分数 · 把整体切开来数",
+        "en": "Fractions · Cutting the Whole to Count"
+      },
+      "category": "math",
+      "stage": "primary",
+      "status": "live",
+      "path": "fractions/",
+      "href": "fractions/",
+      "file": "fractions/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 8,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "pythagoras",
+      "title": {
+        "zh": "勾股定理 · 一步一交互",
+        "en": "The Pythagorean Theorem · One Interaction at a Time"
+      },
+      "category": "math",
+      "stage": "junior",
+      "status": "live",
+      "path": "pythagoras/",
+      "href": "pythagoras/",
+      "file": "pythagoras/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 7,
+        "labelledCanvases": 7
+      }
+    },
+    {
+      "slug": "area-model",
+      "title": {
+        "zh": "乘法是面积 · 点阵铺成一块地",
+        "en": "Multiplication Is Area · Arrays Become a Tiled Floor"
+      },
+      "category": "math",
+      "stage": "primary",
+      "status": "live",
+      "path": "area-model/",
+      "href": "area-model/",
+      "file": "area-model/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 6,
+        "labelledCanvases": 6
+      }
+    },
+    {
+      "slug": "perimeter-area",
+      "title": {
+        "zh": "周长 vs 面积 · 一根绳子两种账",
+        "en": "Perimeter vs Area · One Rope, Two Ledgers"
+      },
+      "category": "math",
+      "stage": "primary",
+      "status": "live",
+      "path": "perimeter-area/",
+      "href": "perimeter-area/",
+      "file": "perimeter-area/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 5,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "division-remainder",
+      "title": {
+        "zh": "除法与余数 · 分不完的那一点",
+        "en": "Division & Remainders · What Is Left Over"
+      },
+      "category": "math",
+      "stage": "primary",
+      "status": "live",
+      "path": "division-remainder/",
+      "href": "division-remainder/",
+      "file": "division-remainder/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 5,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "linear-functions",
+      "title": {
+        "zh": "一次函数 · 斜率是陡缓，截距是起点",
+        "en": "Linear Functions · Slope Is Steepness, Intercept Is the Start"
+      },
+      "category": "math",
+      "stage": "junior",
+      "status": "live",
+      "path": "linear-functions/",
+      "href": "linear-functions/",
+      "file": "linear-functions/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 7,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "symmetry-rotation",
+      "title": {
+        "zh": "对称与旋转 · 对折与转圈",
+        "en": "Symmetry & Rotation · Folding and Turning"
+      },
+      "category": "math",
+      "stage": "primary",
+      "status": "live",
+      "path": "symmetry-rotation/",
+      "href": "symmetry-rotation/",
+      "file": "symmetry-rotation/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 4,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "parabola",
+      "title": {
+        "zh": "抛物线 · 投篮的弧线",
+        "en": "Parabolas · The Arc of a Shot"
+      },
+      "category": "math",
+      "stage": "junior",
+      "status": "live",
+      "path": "parabola/",
+      "href": "parabola/",
+      "file": "parabola/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 7,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "velocity-vt",
+      "title": {
+        "zh": "速度与 v-t 图 · 面积就是路",
+        "en": "Speed and the v–t Graph · Area Is Distance"
+      },
+      "category": "physics",
+      "stage": "junior",
+      "status": "live",
+      "path": "velocity-vt/",
+      "href": "velocity-vt/",
+      "file": "velocity-vt/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 8,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "integral",
+      "title": {
+        "zh": "定积分 · 把小条加回整体",
+        "en": "The Definite Integral · Adding the Strips Back Up"
+      },
+      "category": "math",
+      "stage": "senior",
+      "status": "live",
+      "path": "integral/",
+      "href": "integral/",
+      "file": "integral/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "integral"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 6,
+        "labelledCanvases": 6
+      }
+    },
+    {
+      "slug": "reflection-refraction",
+      "title": {
+        "zh": "光的反射与折射 · 拐弯的规矩",
+        "en": "Reflection & Refraction · How Light Bends"
+      },
+      "category": "physics",
+      "stage": "junior",
+      "status": "live",
+      "path": "reflection-refraction/",
+      "href": "reflection-refraction/",
+      "file": "reflection-refraction/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 5,
+        "labelledCanvases": 5
+      }
+    },
+    {
+      "slug": "derivative",
+      "title": {
+        "zh": "导数 · 把平均压成此刻",
+        "en": "The Derivative · Squeezing the Average into the Instant"
+      },
+      "category": "math",
+      "stage": "senior",
+      "status": "live",
+      "path": "derivative/",
+      "href": "derivative/",
+      "file": "derivative/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [
+        "derivative"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 6,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "lens",
+      "title": {
+        "zh": "凸透镜成像 · 远近变像",
+        "en": "The Convex Lens · Near or Far, the Image Transforms"
+      },
+      "category": "physics",
+      "stage": "junior",
+      "status": "live",
+      "path": "lens/",
+      "href": "lens/",
+      "file": "lens/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 5,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "interference",
+      "title": {
+        "zh": "波的干涉 · 闹与静的图样",
+        "en": "Interference · A Pattern of Loud and Still"
+      },
+      "category": "physics",
+      "stage": "senior",
+      "status": "live",
+      "path": "interference/",
+      "href": "interference/",
+      "file": "interference/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 8,
+        "labelledCanvases": 8
+      }
+    },
+    {
+      "slug": "exp-log",
+      "title": {
+        "zh": "指数与对数 · 翻倍与逆问",
+        "en": "Exponentials & Logarithms · Doubling and the Reverse Question"
+      },
+      "category": "math",
+      "stage": "senior",
+      "status": "live",
+      "path": "exp-log/",
+      "href": "exp-log/",
+      "file": "exp-log/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 4,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "circle-angles",
+      "title": {
+        "zh": "圆周角 · 为什么恰好是一半",
+        "en": "Inscribed Angles · Why Exactly Half"
+      },
+      "category": "math",
+      "stage": "junior",
+      "status": "live",
+      "path": "circle-angles/",
+      "href": "circle-angles/",
+      "file": "circle-angles/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 6,
+        "labelledCanvases": 6
+      }
+    },
+    {
+      "slug": "complex-numbers",
+      "title": {
+        "zh": "复数 · 平面上的旋转",
+        "en": "Complex Numbers · Rotation on the Plane"
+      },
+      "category": "math",
+      "stage": "senior",
+      "status": "live",
+      "path": "complex-numbers/",
+      "href": "complex-numbers/",
+      "file": "complex-numbers/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 5,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "standing-wave",
+      "title": {
+        "zh": "驻波 · 原地起伏的波",
+        "en": "Standing Waves · The Wave That Stays in Place"
+      },
+      "category": "physics",
+      "stage": "senior",
+      "status": "live",
+      "path": "standing-wave/",
+      "href": "standing-wave/",
+      "file": "standing-wave/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 8,
+        "labelledCanvases": 8
+      }
+    },
+    {
+      "slug": "negative-numbers",
+      "title": {
+        "zh": "负数 · 0 以下的世界",
+        "en": "Negative Numbers · The World Below Zero"
+      },
+      "category": "math",
+      "stage": "primary",
+      "status": "live",
+      "path": "negative-numbers/",
+      "href": "negative-numbers/",
+      "file": "negative-numbers/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 7,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "pinhole-camera",
+      "title": {
+        "zh": "小孔成像 · 一个孔的相机",
+        "en": "Pinhole Camera · A Camera With One Tiny Hole"
+      },
+      "category": "physics",
+      "stage": "primary",
+      "status": "live",
+      "path": "pinhole-camera/",
+      "href": "pinhole-camera/",
+      "file": "pinhole-camera/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 4,
+        "labelledCanvases": 4
+      }
+    },
+    {
+      "slug": "space-diagonal",
+      "title": {
+        "zh": "空间对角线 · 3D 里的两次勾股",
+        "en": "The Space Diagonal · Pythagoras Twice, in 3D"
+      },
+      "category": "math",
+      "stage": "junior",
+      "status": "live",
+      "path": "space-diagonal/",
+      "href": "space-diagonal/",
+      "file": "space-diagonal/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 2,
+        "labelledCanvases": 2
+      }
+    },
+    {
+      "slug": "coordinate-plane",
+      "title": {
+        "zh": "坐标系 · 点的地址",
+        "en": "The Coordinate Plane · Addresses for Points"
+      },
+      "category": "math",
+      "stage": "junior",
+      "status": "live",
+      "path": "coordinate-plane/",
+      "href": "coordinate-plane/",
+      "file": "coordinate-plane/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 8,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "lever-pulley",
+      "title": {
+        "zh": "杠杆与滑轮 · 支点挪一挪，省力见分晓",
+        "en": "Levers & Pulleys · Move the Fulcrum, Feel the Trade"
+      },
+      "category": "physics",
+      "stage": "junior",
+      "status": "live",
+      "path": "lever-pulley/",
+      "href": "lever-pulley/",
+      "file": "lever-pulley/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 5,
+        "labelledCanvases": 5
+      }
+    },
+    {
+      "slug": "equations-balance",
+      "title": {
+        "zh": "方程天平 · 两边同做一件事",
+        "en": "Equations on a Balance · Do the Same to Both Sides"
+      },
+      "category": "math",
+      "stage": "primary",
+      "status": "live",
+      "path": "equations-balance/",
+      "href": "equations-balance/",
+      "file": "equations-balance/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 7,
+        "labelledCanvases": 0
+      }
+    },
+    {
+      "slug": "population-growth",
+      "title": {
+        "zh": "种群增长 · S 形曲线从哪来",
+        "en": "Population Growth · Where the S-Curve Comes From"
+      },
+      "category": "math",
+      "stage": "senior",
+      "status": "live",
+      "path": "population-growth/",
+      "href": "population-growth/",
+      "file": "population-growth/index.html",
+      "exists": true,
+      "anchor": "",
+      "anchorExists": true,
+      "atlasNodeSources": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ],
+      "baseline": {
+        "lang": true,
+        "viewport": true,
+        "h1": true,
+        "languageControls": true,
+        "canvases": 5,
+        "labelledCanvases": 0
+      }
+    }
+  ],
+  "sources": [
+    {
+      "kind": "node",
+      "id": "work-energy",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem",
+      "external": true
+    },
+    {
+      "kind": "help",
+      "id": "work-energy",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/8-1-potential-energy-of-a-system",
+      "external": true
+    },
+    {
+      "kind": "node",
+      "id": "integral",
+      "href": "../integral/#step2",
+      "file": "integral/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "derivative",
+      "href": "../derivative/#step2",
+      "file": "derivative/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "net-force",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law",
+      "external": true
+    },
+    {
+      "kind": "node",
+      "id": "power",
+      "href": "../power-converters/#step0",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step0",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "node",
+      "id": "inductor",
+      "href": "../power-converters/#step1",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step1",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "node",
+      "id": "capacitor",
+      "href": "../power-converters/#step2",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "node",
+      "id": "switch-diode",
+      "href": "../power-converters/#step3",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step3",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "node",
+      "id": "pwm",
+      "href": "../power-converters/#step3",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step3",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "node",
+      "id": "buck",
+      "href": "../power-converters/#step4",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step4",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "node",
+      "id": "boost",
+      "href": "../power-converters/#step5",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step5",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "node",
+      "id": "unit-circle",
+      "href": "../trig/#step1",
+      "file": "trig/index.html",
+      "exists": true,
+      "anchor": "step1",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "sine",
+      "href": "../trig/#step3",
+      "file": "trig/index.html",
+      "exists": true,
+      "anchor": "step3",
+      "anchorExists": true
+    },
+    {
+      "kind": "help",
+      "id": "sine",
+      "href": "https://openstax.org/books/algebra-and-trigonometry-2e/pages/7-1-angles",
+      "external": true
+    },
+    {
+      "kind": "help",
+      "id": "sine",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion",
+      "external": true
+    },
+    {
+      "kind": "node",
+      "id": "complex",
+      "href": "https://openstax.org/books/algebra-and-trigonometry-2e/pages/10-5-polar-form-of-complex-numbers",
+      "external": true
+    },
+    {
+      "kind": "node",
+      "id": "vectors",
+      "href": "../eigen/#step1",
+      "file": "eigen/index.html",
+      "exists": true,
+      "anchor": "step1",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "eigen",
+      "href": "../eigen/#step4",
+      "file": "eigen/index.html",
+      "exists": true,
+      "anchor": "step4",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "laplace",
+      "href": "../laplace/#step1",
+      "file": "laplace/index.html",
+      "exists": true,
+      "anchor": "step1",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "oscillation",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion",
+      "external": true
+    },
+    {
+      "kind": "help",
+      "id": "oscillation",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/3-3-average-and-instantaneous-acceleration",
+      "external": true
+    },
+    {
+      "kind": "node",
+      "id": "superposition",
+      "href": "../fourier/#step2",
+      "file": "fourier/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "fourier",
+      "href": "../fourier/#step5",
+      "file": "fourier/index.html",
+      "exists": true,
+      "anchor": "step5",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "spectrum",
+      "href": "../fourier/#step5",
+      "file": "fourier/index.html",
+      "exists": true,
+      "anchor": "step5",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "resonance",
+      "href": "../freqresp/#step5",
+      "file": "freqresp/index.html",
+      "exists": true,
+      "anchor": "step5",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "sampling",
+      "href": "../sampling/#step3",
+      "file": "sampling/index.html",
+      "exists": true,
+      "anchor": "step3",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "lti",
+      "href": "../lti/#step3",
+      "file": "lti/index.html",
+      "exists": true,
+      "anchor": "step3",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "impulse",
+      "href": "../lti/#step2",
+      "file": "lti/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "convolution",
+      "href": "../convolution/#step2",
+      "file": "convolution/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "freqresp",
+      "href": "../freqresp/#step0",
+      "file": "freqresp/index.html",
+      "exists": true,
+      "anchor": "step0",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "poles",
+      "href": "../laplace/#step4",
+      "file": "laplace/index.html",
+      "exists": true,
+      "anchor": "step4",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "feedback",
+      "href": "../control/#step2",
+      "file": "control/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "probability",
+      "href": "../bayes/#step0",
+      "file": "bayes/index.html",
+      "exists": true,
+      "anchor": "step0",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "bayes",
+      "href": "../bayes/#step2",
+      "file": "bayes/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "variance",
+      "href": "../clt/#step3",
+      "file": "clt/index.html",
+      "exists": true,
+      "anchor": "step3",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "gaussian",
+      "href": "../clt/#step3",
+      "file": "clt/index.html",
+      "exists": true,
+      "anchor": "step3",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "montecarlo",
+      "href": "../montecarlo/#step3",
+      "file": "montecarlo/index.html",
+      "exists": true,
+      "anchor": "step3",
+      "anchorExists": true
+    },
+    {
+      "kind": "node",
+      "id": "kalman",
+      "href": "../kalman/#step2",
+      "file": "kalman/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "integral→work-energy",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/7-1-work",
+      "external": true
+    },
+    {
+      "kind": "edge",
+      "id": "net-force→work-energy",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem",
+      "external": true
+    },
+    {
+      "kind": "edge",
+      "id": "integral→oscillation",
+      "href": "https://openstax.org/books/calculus-volume-1/pages/5-2-the-definite-integral",
+      "external": true
+    },
+    {
+      "kind": "edge",
+      "id": "derivative→oscillation",
+      "href": "../derivative/#step0",
+      "file": "derivative/index.html",
+      "exists": true,
+      "anchor": "step0",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "oscillation→net-force",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law",
+      "external": true
+    },
+    {
+      "kind": "edge",
+      "id": "power→inductor",
+      "href": "../power-converters/#step1",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step1",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "edge",
+      "id": "power→capacitor",
+      "href": "../power-converters/#step2",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "edge",
+      "id": "inductor→capacitor",
+      "href": "../power-converters/#step2",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "edge",
+      "id": "inductor→buck",
+      "href": "../power-converters/#step4",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step4",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "edge",
+      "id": "inductor→boost",
+      "href": "../power-converters/#step5",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step5",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "edge",
+      "id": "capacitor→buck",
+      "href": "../power-converters/#step4",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step4",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "edge",
+      "id": "capacitor→boost",
+      "href": "../power-converters/#step5",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step5",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "edge",
+      "id": "switch-diode→buck",
+      "href": "../power-converters/#step4",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step4",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "edge",
+      "id": "switch-diode→boost",
+      "href": "../power-converters/#step5",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step5",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "edge",
+      "id": "pwm→buck",
+      "href": "../power-converters/#step4",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step4",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "edge",
+      "id": "pwm→boost",
+      "href": "../power-converters/#step5",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step5",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "edge",
+      "id": "boost→feedback",
+      "href": "../power-converters/#step6",
+      "file": "power-converters/index.html",
+      "exists": true,
+      "anchor": "step6",
+      "anchorExists": true,
+      "anchorEvidence": "generated by verified section(n) calls in power-converters/app.js"
+    },
+    {
+      "kind": "edge",
+      "id": "unit-circle→sine",
+      "href": "../trig/#step3",
+      "file": "trig/index.html",
+      "exists": true,
+      "anchor": "step3",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "unit-circle→complex",
+      "href": "https://openstax.org/books/algebra-and-trigonometry-2e/pages/10-5-polar-form-of-complex-numbers",
+      "external": true
+    },
+    {
+      "kind": "edge",
+      "id": "sine→oscillation",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion",
+      "external": true
+    },
+    {
+      "kind": "edge",
+      "id": "sine→fourier",
+      "href": "../fourier/#step1",
+      "file": "fourier/index.html",
+      "exists": true,
+      "anchor": "step1",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "complex→fourier",
+      "href": "https://www.dspguide.com/CH31.PDF#page=3",
+      "external": true
+    },
+    {
+      "kind": "edge",
+      "id": "superposition→fourier",
+      "href": "../fourier/#step4",
+      "file": "fourier/index.html",
+      "exists": true,
+      "anchor": "step4",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "fourier→spectrum",
+      "href": "../fourier/#step5",
+      "file": "fourier/index.html",
+      "exists": true,
+      "anchor": "step5",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "fourier→convolution",
+      "href": "../convolution/#step6",
+      "file": "convolution/index.html",
+      "exists": true,
+      "anchor": "step6",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "spectrum→sampling",
+      "href": "../sampling/#step4",
+      "file": "sampling/index.html",
+      "exists": true,
+      "anchor": "step4",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "oscillation→resonance",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/15-6-forced-oscillations",
+      "external": true
+    },
+    {
+      "kind": "edge",
+      "id": "resonance→freqresp",
+      "href": "../freqresp/#step5",
+      "file": "freqresp/index.html",
+      "exists": true,
+      "anchor": "step5",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "lti→impulse",
+      "href": "../lti/#step2",
+      "file": "lti/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "impulse→convolution",
+      "href": "../lti/#step2",
+      "file": "lti/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "impulse→freqresp",
+      "href": "https://dspguide.com/ch9/2.htm",
+      "external": true
+    },
+    {
+      "kind": "edge",
+      "id": "lti→superposition",
+      "href": "../lti/#step3",
+      "file": "lti/index.html",
+      "exists": true,
+      "anchor": "step3",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "laplace→fourier",
+      "href": "../laplace/#step2",
+      "file": "laplace/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "laplace→poles",
+      "href": "../laplace/#step4",
+      "file": "laplace/index.html",
+      "exists": true,
+      "anchor": "step4",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "poles→freqresp",
+      "href": "https://www.dspguide.com/CH32.PDF#page=18",
+      "external": true
+    },
+    {
+      "kind": "edge",
+      "id": "vectors→eigen",
+      "href": "../eigen/#step1",
+      "file": "eigen/index.html",
+      "exists": true,
+      "anchor": "step1",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "eigen→variance",
+      "href": "../eigen/#step5",
+      "file": "eigen/index.html",
+      "exists": true,
+      "anchor": "step5",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "probability→bayes",
+      "href": "../bayes/#step2",
+      "file": "bayes/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "bayes→kalman",
+      "href": "../kalman/#step6",
+      "file": "kalman/index.html",
+      "exists": true,
+      "anchor": "step6",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "variance→kalman",
+      "href": "../kalman/#step2",
+      "file": "kalman/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "kalman→feedback",
+      "href": "../kalman/#step6",
+      "file": "kalman/index.html",
+      "exists": true,
+      "anchor": "step6",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "variance→gaussian",
+      "href": "../clt/#step3",
+      "file": "clt/index.html",
+      "exists": true,
+      "anchor": "step3",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "probability→montecarlo",
+      "href": "../montecarlo/#step3",
+      "file": "montecarlo/index.html",
+      "exists": true,
+      "anchor": "step3",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "variance→montecarlo",
+      "href": "../montecarlo/#step2",
+      "file": "montecarlo/index.html",
+      "exists": true,
+      "anchor": "step2",
+      "anchorExists": true
+    },
+    {
+      "kind": "edge",
+      "id": "convolution→gaussian",
+      "href": "../clt/#step5",
+      "file": "clt/index.html",
+      "exists": true,
+      "anchor": "step5",
+      "anchorExists": true
+    },
+    {
+      "kind": "route",
+      "id": "response",
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/15-6-forced-oscillations",
+      "external": true
+    }
+  ],
+  "graph": {
+    "groups": 5,
+    "nodes": 35,
+    "edges": 45,
+    "trails": 8,
+    "invalidEdges": [],
+    "invalidStops": [],
+    "trailAdjacentMissing": [],
+    "trailDefinitions": [
+      {
+        "id": "work",
+        "background": [
+          "work-energy",
+          "net-force"
+        ],
+        "title": {
+          "zh": "往返净功为零，途中能量去哪了？",
+          "en": "Zero return work: where did the energy go?"
+        },
+        "nodes": [
+          "integral",
+          "work-energy",
+          "net-force"
+        ]
+      },
+      {
+        "id": "travel",
+        "background": [
+          "integral"
+        ],
+        "title": {
+          "zh": "回到起点，为什么还走了路？",
+          "en": "Back at the start: where did the distance go?"
+        },
+        "nodes": [
+          "integral",
+          "oscillation"
+        ]
+      },
+      {
+        "id": "kinematics",
+        "background": [
+          "derivative",
+          "net-force"
+        ],
+        "check": "free-crossing-v1",
+        "title": {
+          "zh": "从斜率到净力",
+          "en": "From slopes to net force"
+        },
+        "nodes": [
+          "derivative",
+          "oscillation",
+          "net-force"
+        ]
+      },
+      {
+        "id": "motion",
+        "background": [
+          "sine",
+          "oscillation"
+        ],
+        "check": "free-crossing-v1",
+        "title": {
+          "zh": "圆的投影，为什么像弹簧？",
+          "en": "Why does a circle’s projection match a spring?"
+        },
+        "nodes": [
+          "unit-circle",
+          "sine",
+          "oscillation"
+        ]
+      },
+      {
+        "id": "power",
+        "background": [
+          "pwm",
+          "buck"
+        ],
+        "title": {
+          "zh": "电压变了，能量去哪了？",
+          "en": "Where does the energy go?"
+        },
+        "nodes": [
+          "power",
+          "capacitor",
+          "inductor",
+          "buck",
+          "pwm",
+          "boost"
+        ]
+      },
+      {
+        "id": "waves",
+        "background": [
+          "sine",
+          "superposition"
+        ],
+        "title": {
+          "zh": "从圆到波形",
+          "en": "From circles to waveforms"
+        },
+        "nodes": [
+          "unit-circle",
+          "sine",
+          "fourier",
+          "convolution"
+        ]
+      },
+      {
+        "id": "response",
+        "background": [
+          "sine",
+          "oscillation"
+        ],
+        "backgroundNote": {
+          "zh": "本实验有阻尼与持续驱动；下面的自由振子方程只用于回看符号。暂态是初始状态带来的额外运动，在本页正阻尼模型中会衰减。稳态是随后保留的持续周期运动，不是静止；黏性阻尼通过反向于速度的力耗能。响应图中的 φ 是位移相对驱动力的相位差。",
+          "en": "This lab has damping and sustained driving; the free-spring equation below is background for its symbols. A transient is extra motion associated with the initial state; it decays in this positive-damping model. Steady state is the sustained periodic motion left afterward, not rest. Viscous damping removes energy through a force opposing velocity. Here φ is displacement’s phase difference relative to the driving force."
+        },
+        "backgroundSource": "https://openstax.org/books/university-physics-volume-1/pages/15-6-forced-oscillations",
+        "title": {
+          "zh": "为什么会共振？",
+          "en": "Why does resonance happen?"
+        },
+        "nodes": [
+          "oscillation",
+          "resonance",
+          "freqresp",
+          "poles"
+        ]
+      },
+      {
+        "id": "estimate",
+        "background": [
+          "probability",
+          "bayes"
+        ],
+        "title": {
+          "zh": "从测量到控制",
+          "en": "From measurements to control"
+        },
+        "nodes": [
+          "probability",
+          "bayes",
+          "kalman",
+          "feedback"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "from": "integral",
+        "to": "work-energy",
+        "type": "application",
+        "label": {
+          "zh": "对位移累加力的作用",
+          "en": "integrates force over displacement"
+        },
+        "reason": {
+          "zh": "一维功沿路径积 F dx，单位 N·m=J；a、b 可选时间端点，但积分变量 x 是位移，不是时间。弹簧往返时各段可做正功或负功。",
+          "en": "One-dimensional work integrates F dx along the path, in N·m=J. Time bounds a,b choose endpoint positions, but the integration variable x is displacement, not time. Spring work can be positive or negative along different legs."
+        },
+        "source": "https://openstax.org/books/university-physics-volume-1/pages/7-1-work"
+      },
+      {
+        "from": "net-force",
+        "to": "work-energy",
+        "type": "application",
+        "label": {
+          "zh": "把净功联系到动能变化",
+          "en": "connects net work with kinetic change"
+        },
+        "reason": {
+          "zh": "本例重力与支持力都不做功，弹簧力做功即物块净功。换系统或添加阻尼/驱动后，不能把单个力的功直接等同净功，也不能照搬本例机械能守恒。",
+          "en": "Here weight and support do zero work, so spring work is the block’s net work. In another system or with damping/driving, one force’s work is not generally net work, and this mechanical-energy conservation statement does not transfer automatically."
+        },
+        "source": "https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem"
+      },
+      {
+        "from": "integral",
+        "to": "oscillation",
+        "type": "application",
+        "label": {
+          "zh": "累加往返的位移",
+          "en": "accumulates signed travel"
+        },
+        "reason": {
+          "zh": "本振子往返一周回到同一位置，正负速度贡献抵消，位移为零；路程为4A。交换积分限使有向积分变号，按时间先后的路程仍非负。",
+          "en": "One oscillator cycle returns to the same position: opposite velocity contributions cancel, giving zero displacement but distance4A. Reversing limits changes an oriented integral’s sign; chronological path length remains nonnegative."
+        },
+        "source": "https://openstax.org/books/calculus-volume-1/pages/5-2-the-definite-integral"
+      },
+      {
+        "from": "derivative",
+        "to": "oscillation",
+        "type": "representation",
+        "label": {
+          "zh": "描述运动的变化率",
+          "en": "describes motion rates"
+        },
+        "reason": {
+          "zh": "本振子的可微位置 x(t) 给出 v=dx/dt、a=dv/dt；有方向的速度可以为负，速率是 |v|。微分描述运动，不是产生运动的物理原因。",
+          "en": "For this oscillator, v=dx/dt and a=dv/dt. Signed velocity can be negative; speed is |v|. Differentiation describes motion rather than causing it."
+        },
+        "source": "../derivative/#step0"
+      },
+      {
+        "from": "oscillation",
+        "to": "net-force",
+        "type": "application",
+        "label": {
+          "zh": "用净力决定加速度",
+          "en": "links net force to acceleration"
+        },
+        "reason": {
+          "zh": "本水平无摩擦弹簧模型中，竖直重力与支持力抵消，水平合外力为 −kx=ma。不能把单个弹簧力在其他系统中也当作净力。",
+          "en": "In this horizontal frictionless spring model, weight and support cancel vertically; horizontal net force is −kx=ma. A single spring force is not generally the net force in other systems."
+        },
+        "source": "https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law"
+      },
+      {
+        "from": "power",
+        "to": "inductor",
+        "type": "foundation",
+        "label": {
+          "zh": "解释储能",
+          "en": "explains storage"
+        },
+        "reason": {
+          "zh": "电压与电流的乘积是流入电感的功率，积分得到磁场储能变化。",
+          "en": "Voltage times current is power entering the inductor; integration gives the magnetic-energy change."
+        },
+        "source": "../power-converters/#step1"
+      },
+      {
+        "from": "power",
+        "to": "capacitor",
+        "type": "foundation",
+        "label": {
+          "zh": "解释储能",
+          "en": "explains storage"
+        },
+        "reason": {
+          "zh": "电容吸收或释放的功率等于其电压与电流的乘积。",
+          "en": "Power absorbed or released by a capacitor equals its voltage times current."
+        },
+        "source": "../power-converters/#step2"
+      },
+      {
+        "from": "inductor",
+        "to": "capacitor",
+        "type": "connection",
+        "label": {
+          "zh": "互补地记住状态",
+          "en": "store complementary states"
+        },
+        "reason": {
+          "zh": "电感记住电流，电容记住电压；两者在电路中交换储能，但元件定律不同。",
+          "en": "Inductors retain current and capacitors retain voltage. Both exchange stored energy, under different component laws."
+        },
+        "source": "../power-converters/#step2"
+      },
+      {
+        "from": "inductor",
+        "to": "buck",
+        "type": "application",
+        "label": {
+          "zh": "保持连续电流",
+          "en": "maintains current"
+        },
+        "reason": {
+          "zh": "开关断开后，电感通过续流二极管继续向输出送电。",
+          "en": "When the switch opens, the inductor continues delivering current through the freewheel diode."
+        },
+        "source": "../power-converters/#step4"
+      },
+      {
+        "from": "inductor",
+        "to": "boost",
+        "type": "application",
+        "label": {
+          "zh": "向更高电压供能",
+          "en": "feeds a higher voltage"
+        },
+        "reason": {
+          "zh": "关断时电感电流下降，电感右端电势升高，电源与电感共同供能。",
+          "en": "During OFF, current falls and the right inductor terminal rises; source and inductor deliver energy together."
+        },
+        "source": "../power-converters/#step5"
+      },
+      {
+        "from": "capacitor",
+        "to": "buck",
+        "type": "application",
+        "label": {
+          "zh": "补偿电流差",
+          "en": "balances current difference"
+        },
+        "reason": {
+          "zh": "电感电流与负载电流的差流入或流出输出电容。",
+          "en": "The difference between inductor and load current charges or discharges the output capacitor."
+        },
+        "source": "../power-converters/#step4"
+      },
+      {
+        "from": "capacitor",
+        "to": "boost",
+        "type": "application",
+        "label": {
+          "zh": "在开关闭合时供电",
+          "en": "supplies load during ON"
+        },
+        "reason": {
+          "zh": "开关闭合时二极管截止，负载由输出电容供电。",
+          "en": "During ON the diode blocks, and the output capacitor supplies the load."
+        },
+        "source": "../power-converters/#step5"
+      },
+      {
+        "from": "switch-diode",
+        "to": "buck",
+        "type": "application",
+        "label": {
+          "zh": "建立两条电流路径",
+          "en": "establishes two current paths"
+        },
+        "reason": {
+          "zh": "开关闭合连接输入；开关断开时续流二极管提供回路。",
+          "en": "The closed switch connects the input; the freewheel diode provides the OFF loop."
+        },
+        "source": "../power-converters/#step4"
+      },
+      {
+        "from": "switch-diode",
+        "to": "boost",
+        "type": "application",
+        "label": {
+          "zh": "交替储能与放能",
+          "en": "alternates storage and release"
+        },
+        "reason": {
+          "zh": "开关闭合给电感储能，断开时电流经二极管流向输出。",
+          "en": "ON stores energy in the inductor; OFF routes current through the diode to the output."
+        },
+        "source": "../power-converters/#step5"
+      },
+      {
+        "from": "pwm",
+        "to": "buck",
+        "type": "application",
+        "label": {
+          "zh": "设定理想电压比例",
+          "en": "sets ideal voltage ratio"
+        },
+        "reason": {
+          "zh": "在连续导通理想稳态，伏秒平衡给出 ⟨Vout⟩ = D Vin。",
+          "en": "Ideal steady-state CCM volt-second balance gives ⟨Vout⟩ = D Vin."
+        },
+        "source": "../power-converters/#step4"
+      },
+      {
+        "from": "pwm",
+        "to": "boost",
+        "type": "application",
+        "label": {
+          "zh": "设定理想升压比例",
+          "en": "sets ideal boost ratio"
+        },
+        "reason": {
+          "zh": "在恒定直流输入、理想 CCM 的小纹波周期稳态近似下，平均电压 ⟨Vout⟩ ≈ Vin/(1−D)，0<D<1。",
+          "en": "With constant DC input, ideal CCM and the small-ripple periodic steady-state approximation, ⟨Vout⟩ ≈ Vin/(1−D), with0<D<1."
+        },
+        "source": "../power-converters/#step5"
+      },
+      {
+        "from": "boost",
+        "to": "feedback",
+        "type": "application",
+        "label": {
+          "zh": "用测量调节占空比",
+          "en": "uses measurements to adjust duty"
+        },
+        "reason": {
+          "zh": "实际稳压器可测量输出并调节占空比；本课只解释此接口，不模拟控制器。",
+          "en": "A real regulator can measure output and adjust duty; this lesson explains the connection without simulating a controller."
+        },
+        "source": "../power-converters/#step6"
+      },
+      {
+        "from": "unit-circle",
+        "to": "sine",
+        "type": "foundation",
+        "label": {
+          "zh": "定义",
+          "en": "defines"
+        },
+        "reason": {
+          "zh": "圆上点的纵、横坐标定义正弦、余弦；匀速转动使这些坐标成为时间函数。",
+          "en": "Vertical and horizontal coordinates define sine and cosine; uniform rotation makes them functions of time."
+        },
+        "source": "../trig/#step3"
+      },
+      {
+        "from": "unit-circle",
+        "to": "complex",
+        "type": "representation",
+        "label": {
+          "zh": "用复数表示旋转",
+          "en": "represents rotation with complex numbers"
+        },
+        "reason": {
+          "zh": "单位圆上的点可以写成 cos θ + i sin θ，角度变化对应平面旋转。",
+          "en": "A point on the unit circle is cos θ + i sin θ; changing its angle rotates it in the plane."
+        },
+        "source": "https://openstax.org/books/algebra-and-trigonometry-2e/pages/10-5-polar-form-of-complex-numbers"
+      },
+      {
+        "from": "sine",
+        "to": "oscillation",
+        "type": "representation",
+        "label": {
+          "zh": "描述理想运动",
+          "en": "describes ideal motion"
+        },
+        "reason": {
+          "zh": "无阻尼、无外力的理想弹簧振子满足 x″ + (k/m)x = 0，其解为正弦和余弦的组合。",
+          "en": "An undamped, unforced ideal spring obeys x″ + (k/m)x = 0, whose solutions combine sine and cosine."
+        },
+        "source": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion"
+      },
+      {
+        "from": "sine",
+        "to": "fourier",
+        "type": "foundation",
+        "label": {
+          "zh": "提供频率分量",
+          "en": "provides frequency components"
+        },
+        "reason": {
+          "zh": "傅里叶分析以不同频率的正弦、余弦或复指数为分量；每个分量有自己的幅度和相位。",
+          "en": "Fourier analysis uses sine, cosine or complex-exponential components at different frequencies, with their own amplitudes and phases."
+        },
+        "source": "../fourier/#step1"
+      },
+      {
+        "from": "complex",
+        "to": "fourier",
+        "type": "representation",
+        "label": {
+          "zh": "表示旋转分量",
+          "en": "represents rotating components"
+        },
+        "reason": {
+          "zh": "欧拉公式把正弦和余弦写成复指数的组合，复数傅里叶变换由此统一表示正、负频率分量。",
+          "en": "Euler’s formula expresses sine and cosine as combinations of complex exponentials, allowing the complex Fourier transform to represent positive and negative frequencies together."
+        },
+        "source": "https://www.dspguide.com/CH31.PDF#page=3"
+      },
+      {
+        "from": "superposition",
+        "to": "fourier",
+        "type": "foundation",
+        "label": {
+          "zh": "把分量合成信号",
+          "en": "combines components into signals"
+        },
+        "reason": {
+          "zh": "傅里叶级数通过叠加谐波近似周期波形；有限项近似在跳变附近可能出现吉布斯现象。",
+          "en": "A Fourier series combines harmonics to approximate a periodic waveform; finite sums may show Gibbs overshoot near jumps."
+        },
+        "source": "../fourier/#step4"
+      },
+      {
+        "from": "fourier",
+        "to": "spectrum",
+        "type": "representation",
+        "label": {
+          "zh": "给出频率表示",
+          "en": "produces a frequency representation"
+        },
+        "reason": {
+          "zh": "变换结果包含各频率分量的信息；查看幅度与相位，才能保留一般信号的完整表示。",
+          "en": "The transform records frequency components; both amplitude and phase are needed for a complete representation of a general signal."
+        },
+        "source": "../fourier/#step5"
+      },
+      {
+        "from": "fourier",
+        "to": "convolution",
+        "type": "connection",
+        "label": {
+          "zh": "把卷积变为乘法",
+          "en": "turns convolution into multiplication"
+        },
+        "reason": {
+          "zh": "当相应变换存在时，时域卷积对应频域乘法。本课用有限序列比较直接卷积与频域计算的结果。",
+          "en": "When the transforms exist, time-domain convolution corresponds to frequency-domain multiplication. This lesson compares direct convolution with frequency-domain computation on finite sequences."
+        },
+        "source": "../convolution/#step6"
+      },
+      {
+        "from": "spectrum",
+        "to": "sampling",
+        "type": "foundation",
+        "label": {
+          "zh": "解释频谱重叠",
+          "en": "explains spectral overlap"
+        },
+        "reason": {
+          "zh": "均匀采样使频谱按采样率周期重复；重复的谱相互重叠时产生混叠。",
+          "en": "Uniform sampling repeats the spectrum at multiples of the sampling rate; overlap between copies produces aliasing."
+        },
+        "source": "../sampling/#step4"
+      },
+      {
+        "from": "oscillation",
+        "to": "resonance",
+        "type": "application",
+        "label": {
+          "zh": "受周期驱动时可能共振",
+          "en": "may resonate under periodic driving"
+        },
+        "reason": {
+          "zh": "给振子施加周期外力，其稳态响应随驱动频率变化；阻尼决定峰值的强弱与位置。",
+          "en": "A periodic force produces a frequency-dependent steady-state response; damping affects the peak strength and location."
+        },
+        "source": "https://openstax.org/books/university-physics-volume-1/pages/15-6-forced-oscillations"
+      },
+      {
+        "from": "resonance",
+        "to": "freqresp",
+        "type": "representation",
+        "label": {
+          "zh": "表现为响应峰值",
+          "en": "appears as a response peak"
+        },
+        "reason": {
+          "zh": "在线性系统的频率响应幅度图上，共振表现为某段频率附近的峰；并非所有系统都有明显峰值。",
+          "en": "In a linear system’s frequency-response magnitude, resonance appears as a peak; not every system has a pronounced one."
+        },
+        "source": "../freqresp/#step5"
+      },
+      {
+        "from": "lti",
+        "to": "impulse",
+        "type": "connection",
+        "label": {
+          "zh": "可由冲激响应刻画",
+          "en": "is characterized by its impulse response"
+        },
+        "reason": {
+          "zh": "对初始静止的 LTI 系统，把输入分解为加权、平移的单位脉冲，就能由 h 重建输出。",
+          "en": "For an initially resting LTI system, decompose the input into weighted shifted impulses and reconstruct the output from h."
+        },
+        "source": "../lti/#step2"
+      },
+      {
+        "from": "impulse",
+        "to": "convolution",
+        "type": "application",
+        "label": {
+          "zh": "与输入卷积得到输出",
+          "en": "convolves with input to produce output"
+        },
+        "reason": {
+          "zh": "输出是各个平移冲激响应的加权和，这正是离散卷积 y[n] = Σ x[k]h[n−k]。",
+          "en": "The output sums weighted shifted impulse responses: precisely the discrete convolution y[n] = Σ x[k]h[n−k]."
+        },
+        "source": "../lti/#step2"
+      },
+      {
+        "from": "impulse",
+        "to": "freqresp",
+        "type": "representation",
+        "label": {
+          "zh": "傅里叶变换给出频率响应",
+          "en": "Fourier-transforms into frequency response"
+        },
+        "reason": {
+          "zh": "当冲激响应的傅里叶变换存在时，H 是 h 的频域表示；稳定 LTI 系统满足常用的绝对可积或可和条件。",
+          "en": "When its Fourier transform exists, h becomes the frequency response H. Stable LTI systems satisfy the usual absolute-integrability or summability condition."
+        },
+        "source": "https://dspguide.com/ch9/2.htm"
+      },
+      {
+        "from": "lti",
+        "to": "superposition",
+        "type": "connection",
+        "label": {
+          "zh": "满足叠加性",
+          "en": "obeys superposition"
+        },
+        "reason": {
+          "zh": "线性保证输入的加权组合产生相同权重的输出组合；时不变是另一项独立条件。",
+          "en": "Linearity preserves weighted combinations of input-output pairs; time invariance is a separate condition."
+        },
+        "source": "../lti/#step3"
+      },
+      {
+        "from": "laplace",
+        "to": "fourier",
+        "type": "connection",
+        "label": {
+          "zh": "在收敛条件下限制到虚轴",
+          "en": "restricts to the imaginary axis when convergent"
+        },
+        "reason": {
+          "zh": "当拉普拉斯变换的收敛域包含虚轴时，在 s = iω 处取值可得到傅里叶变换。",
+          "en": "If the Laplace region of convergence contains the imaginary axis, evaluating at s = iω gives the Fourier transform."
+        },
+        "source": "../laplace/#step2"
+      },
+      {
+        "from": "laplace",
+        "to": "poles",
+        "type": "representation",
+        "label": {
+          "zh": "揭示指数模式",
+          "en": "reveals exponential modes"
+        },
+        "reason": {
+          "zh": "对本课中的有理变换，极点的实部关联增长或衰减，虚部关联振荡；还要结合因果性和收敛域判断稳定性。",
+          "en": "For the rational transforms in this lesson, pole real parts describe growth or decay and imaginary parts describe oscillation; stability also depends on causality and convergence."
+        },
+        "source": "../laplace/#step4"
+      },
+      {
+        "from": "poles",
+        "to": "freqresp",
+        "type": "connection",
+        "label": {
+          "zh": "影响频率响应形状",
+          "en": "shapes the frequency response"
+        },
+        "reason": {
+          "zh": "当冲激响应的拉普拉斯收敛域包含虚轴时，H(iω) 给出频率响应。极点靠近虚轴可能形成尖峰，零点也会影响结果。",
+          "en": "When the Laplace region of convergence of the impulse response contains the imaginary axis, H(iω) gives frequency response. Nearby poles may produce sharp peaks; zeros also matter."
+        },
+        "source": "https://www.dspguide.com/CH32.PDF#page=18"
+      },
+      {
+        "from": "vectors",
+        "to": "eigen",
+        "type": "foundation",
+        "label": {
+          "zh": "定义特征方向",
+          "en": "defines eigen-directions"
+        },
+        "reason": {
+          "zh": "在矩阵变换下寻找只被缩放的非零向量，就得到 Av = λv 的特征向量问题。",
+          "en": "Finding nonzero vectors that are only scaled by a matrix leads to the eigenvector equation Av = λv."
+        },
+        "source": "../eigen/#step1"
+      },
+      {
+        "from": "eigen",
+        "to": "variance",
+        "type": "application",
+        "label": {
+          "zh": "找出协方差主方向",
+          "en": "finds principal covariance directions"
+        },
+        "reason": {
+          "zh": "对协方差矩阵，特征向量给出互相正交的主方向，特征值给出沿这些方向的方差。",
+          "en": "For a covariance matrix, an orthonormal eigenbasis gives principal directions, and eigenvalues give variances along them."
+        },
+        "source": "../eigen/#step5"
+      },
+      {
+        "from": "probability",
+        "to": "bayes",
+        "type": "foundation",
+        "label": {
+          "zh": "为证据更新提供模型",
+          "en": "provides a model for evidence updates"
+        },
+        "reason": {
+          "zh": "先验和似然都来自概率模型；贝叶斯公式将它们结合成给定观测后的条件概率。",
+          "en": "The prior and likelihood come from a probability model; Bayes’ rule combines them into a probability conditional on observations."
+        },
+        "source": "../bayes/#step2"
+      },
+      {
+        "from": "bayes",
+        "to": "kalman",
+        "type": "application",
+        "label": {
+          "zh": "在线性高斯条件下形成状态更新",
+          "en": "gives state updates under linear Gaussian assumptions"
+        },
+        "reason": {
+          "zh": "在线性动态与观测模型、适当高斯先验和独立高斯噪声条件下，卡尔曼更新可用均值与协方差表示贝叶斯更新。",
+          "en": "With linear dynamics and measurements, an appropriate Gaussian prior and independent Gaussian noises, Kalman updates express Bayesian updating using means and covariances."
+        },
+        "source": "../kalman/#step6"
+      },
+      {
+        "from": "variance",
+        "to": "kalman",
+        "type": "application",
+        "label": {
+          "zh": "参与测量权重计算",
+          "en": "helps determine measurement weights"
+        },
+        "reason": {
+          "zh": "预测不确定性与测量噪声共同决定增益；模型给出的不确定性必须与真实估计误差区分。",
+          "en": "Predicted uncertainty and measurement noise jointly determine the gain; model uncertainty must be distinguished from actual estimation error."
+        },
+        "source": "../kalman/#step2"
+      },
+      {
+        "from": "kalman",
+        "to": "feedback",
+        "type": "application",
+        "label": {
+          "zh": "提供用于控制的状态估计",
+          "en": "supplies state estimates for control"
+        },
+        "reason": {
+          "zh": "无法直接观测的状态可先估计，再交给控制器；估计质量和模型误差会影响控制效果。",
+          "en": "Estimate states that cannot be measured directly, then pass them to a controller; estimation quality and model mismatch affect control."
+        },
+        "source": "../kalman/#step6"
+      },
+      {
+        "from": "variance",
+        "to": "gaussian",
+        "type": "foundation",
+        "label": {
+          "zh": "决定均值的标准误差",
+          "en": "sets the standard error of a mean"
+        },
+        "reason": {
+          "zh": "独立同分布样本方差为 σ² 时，n 个样本的均值方差为 σ²/n；正态近似还需要适用的极限定理条件。",
+          "en": "For iid samples of variance σ², the mean of n samples has variance σ²/n; a normal approximation additionally needs appropriate limit-theorem conditions."
+        },
+        "source": "../clt/#step3"
+      },
+      {
+        "from": "probability",
+        "to": "montecarlo",
+        "type": "application",
+        "label": {
+          "zh": "用随机采样估计期望",
+          "en": "estimates expectations by random sampling"
+        },
+        "reason": {
+          "zh": "按指定概率模型采样，用样本平均估计期望；积分也可改写成相应的期望。",
+          "en": "Sample from a specified probability model and average to estimate an expectation; integrals can also be written as expectations."
+        },
+        "source": "../montecarlo/#step3"
+      },
+      {
+        "from": "variance",
+        "to": "montecarlo",
+        "type": "connection",
+        "label": {
+          "zh": "决定估计误差尺度",
+          "en": "sets the estimation error scale"
+        },
+        "reason": {
+          "zh": "独立同分布且方差有限时，样本平均的标准误差按 1/√n 缩小；这是误差尺度，不是每次运行的保证。",
+          "en": "For iid samples with finite variance, the sample mean’s standard error scales as 1/√n; this is an error scale, not a guarantee for each run."
+        },
+        "source": "../montecarlo/#step2"
+      },
+      {
+        "from": "convolution",
+        "to": "gaussian",
+        "type": "connection",
+        "label": {
+          "zh": "描述独立变量相加的分布",
+          "en": "describes distributions of independent sums"
+        },
+        "reason": {
+          "zh": "独立随机变量之和的分布由卷积给出；反复相加后的正态近似需满足中心极限定理的条件。",
+          "en": "Convolution gives the distribution of a sum of independent random variables; a normal approximation after repeated sums requires central-limit conditions."
+        },
+        "source": "../clt/#step5"
+      }
+    ]
+  }
+}

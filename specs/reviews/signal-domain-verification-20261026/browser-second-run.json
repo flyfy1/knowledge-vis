@@ -1,0 +1,18 @@
+{
+  "pass": false,
+  "scenarios": [],
+  "errors": [],
+  "failed": [],
+  "optional": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "location": {
+        "url": "http://127.0.0.1:18775/favicon.ico",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ]
+}

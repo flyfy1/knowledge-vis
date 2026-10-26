@@ -1,0 +1,12 @@
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok(await p.locator('#s2-snell').isVisible())
+
+    at /Users/songyy/Documents/Codex/2026-10-25/task-5/integration-audit/integration-browser.cjs:36:328 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

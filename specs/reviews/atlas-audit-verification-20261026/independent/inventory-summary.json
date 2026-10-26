@@ -1,0 +1,332 @@
+{
+  "registered": 55,
+  "relevant": 45,
+  "localLive": 45,
+  "graph": {
+    "groups": 5,
+    "nodes": 35,
+    "edges": 45,
+    "trails": 8
+  },
+  "broken": [],
+  "missingAdjacency": [],
+  "courseList": [
+    {
+      "slug": "frozen-bubble",
+      "status": "live",
+      "stage": "junior",
+      "nodes": []
+    },
+    {
+      "slug": "power-converters",
+      "status": "live",
+      "stage": "university",
+      "nodes": [
+        "power",
+        "inductor",
+        "capacitor",
+        "switch-diode",
+        "pwm",
+        "buck",
+        "boost"
+      ]
+    },
+    {
+      "slug": "atlas",
+      "status": "live",
+      "stage": "university",
+      "nodes": []
+    },
+    {
+      "slug": "fourier",
+      "status": "live",
+      "stage": "university",
+      "nodes": [
+        "superposition",
+        "fourier",
+        "spectrum"
+      ]
+    },
+    {
+      "slug": "convolution",
+      "status": "live",
+      "stage": "university",
+      "nodes": [
+        "convolution"
+      ]
+    },
+    {
+      "slug": "mandelbrot",
+      "status": "live",
+      "stage": "university",
+      "nodes": []
+    },
+    {
+      "slug": "control",
+      "status": "live",
+      "stage": "university",
+      "nodes": [
+        "feedback"
+      ]
+    },
+    {
+      "slug": "sampling",
+      "status": "live",
+      "stage": "university",
+      "nodes": [
+        "sampling"
+      ]
+    },
+    {
+      "slug": "trig",
+      "status": "live",
+      "stage": "university",
+      "nodes": [
+        "unit-circle",
+        "sine"
+      ]
+    },
+    {
+      "slug": "montecarlo",
+      "status": "live",
+      "stage": "university",
+      "nodes": [
+        "montecarlo"
+      ]
+    },
+    {
+      "slug": "laplace",
+      "status": "live",
+      "stage": "university",
+      "nodes": [
+        "laplace",
+        "poles"
+      ]
+    },
+    {
+      "slug": "bayes",
+      "status": "live",
+      "stage": "university",
+      "nodes": [
+        "probability",
+        "bayes"
+      ]
+    },
+    {
+      "slug": "clt",
+      "status": "live",
+      "stage": "university",
+      "nodes": [
+        "variance",
+        "gaussian"
+      ]
+    },
+    {
+      "slug": "ztransform",
+      "status": "live",
+      "stage": "university",
+      "nodes": []
+    },
+    {
+      "slug": "eigen",
+      "status": "live",
+      "stage": "university",
+      "nodes": [
+        "vectors",
+        "eigen"
+      ]
+    },
+    {
+      "slug": "entropy",
+      "status": "live",
+      "stage": "university",
+      "nodes": []
+    },
+    {
+      "slug": "lti",
+      "status": "live",
+      "stage": "university",
+      "nodes": [
+        "lti",
+        "impulse"
+      ]
+    },
+    {
+      "slug": "freqresp",
+      "status": "live",
+      "stage": "university",
+      "nodes": [
+        "resonance",
+        "freqresp"
+      ]
+    },
+    {
+      "slug": "modulation",
+      "status": "live",
+      "stage": "university",
+      "nodes": []
+    },
+    {
+      "slug": "kalman",
+      "status": "live",
+      "stage": "university",
+      "nodes": [
+        "kalman"
+      ]
+    },
+    {
+      "slug": "fractions",
+      "status": "live",
+      "stage": "primary",
+      "nodes": []
+    },
+    {
+      "slug": "pythagoras",
+      "status": "live",
+      "stage": "junior",
+      "nodes": []
+    },
+    {
+      "slug": "area-model",
+      "status": "live",
+      "stage": "primary",
+      "nodes": []
+    },
+    {
+      "slug": "perimeter-area",
+      "status": "live",
+      "stage": "primary",
+      "nodes": []
+    },
+    {
+      "slug": "division-remainder",
+      "status": "live",
+      "stage": "primary",
+      "nodes": []
+    },
+    {
+      "slug": "linear-functions",
+      "status": "live",
+      "stage": "junior",
+      "nodes": []
+    },
+    {
+      "slug": "symmetry-rotation",
+      "status": "live",
+      "stage": "primary",
+      "nodes": []
+    },
+    {
+      "slug": "parabola",
+      "status": "live",
+      "stage": "junior",
+      "nodes": []
+    },
+    {
+      "slug": "velocity-vt",
+      "status": "live",
+      "stage": "junior",
+      "nodes": []
+    },
+    {
+      "slug": "integral",
+      "status": "live",
+      "stage": "senior",
+      "nodes": [
+        "integral"
+      ]
+    },
+    {
+      "slug": "reflection-refraction",
+      "status": "live",
+      "stage": "junior",
+      "nodes": []
+    },
+    {
+      "slug": "derivative",
+      "status": "live",
+      "stage": "senior",
+      "nodes": [
+        "derivative"
+      ]
+    },
+    {
+      "slug": "lens",
+      "status": "live",
+      "stage": "junior",
+      "nodes": []
+    },
+    {
+      "slug": "interference",
+      "status": "live",
+      "stage": "senior",
+      "nodes": []
+    },
+    {
+      "slug": "exp-log",
+      "status": "live",
+      "stage": "senior",
+      "nodes": []
+    },
+    {
+      "slug": "circle-angles",
+      "status": "live",
+      "stage": "junior",
+      "nodes": []
+    },
+    {
+      "slug": "complex-numbers",
+      "status": "live",
+      "stage": "senior",
+      "nodes": []
+    },
+    {
+      "slug": "standing-wave",
+      "status": "live",
+      "stage": "senior",
+      "nodes": []
+    },
+    {
+      "slug": "negative-numbers",
+      "status": "live",
+      "stage": "primary",
+      "nodes": []
+    },
+    {
+      "slug": "pinhole-camera",
+      "status": "live",
+      "stage": "primary",
+      "nodes": []
+    },
+    {
+      "slug": "space-diagonal",
+      "status": "live",
+      "stage": "junior",
+      "nodes": []
+    },
+    {
+      "slug": "coordinate-plane",
+      "status": "live",
+      "stage": "junior",
+      "nodes": []
+    },
+    {
+      "slug": "lever-pulley",
+      "status": "live",
+      "stage": "junior",
+      "nodes": []
+    },
+    {
+      "slug": "equations-balance",
+      "status": "live",
+      "stage": "primary",
+      "nodes": []
+    },
+    {
+      "slug": "population-growth",
+      "status": "live",
+      "stage": "senior",
+      "nodes": []
+    }
+  ]
+}

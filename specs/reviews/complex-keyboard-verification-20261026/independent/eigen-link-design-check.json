@@ -1,0 +1,30 @@
+{
+  "matrix": [
+    [
+      0.55,
+      -0.953
+    ],
+    [
+      0.953,
+      0.55
+    ]
+  ],
+  "discriminant": -3.6328359999999997,
+  "eigenvalues": "0.55 \u00b1 0.953 i",
+  "scale": 1.1003222255321392,
+  "angleDegrees": 60.009686812106914,
+  "pure180Counterexample": {
+    "matrix": [
+      [
+        -1,
+        0
+      ],
+      [
+        0,
+        -1
+      ]
+    ],
+    "eigenvalue": -1,
+    "realDirections": "all nonzero real vectors"
+  }
+}

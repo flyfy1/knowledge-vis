@@ -1,0 +1,71 @@
+{
+  "files": [
+    {
+      "path": "lens/app.js",
+      "stageMatchesActual": true,
+      "actualSHA256": "4caee872df0e6ccf942f068f6e434900028ec118f2f6baaf70bea05cc198607c"
+    },
+    {
+      "path": "lens/i18n.js",
+      "stageMatchesActual": true,
+      "actualSHA256": "1973f6b548d15174676df73f94862e3af165bd7884b32959dd0f64cba59b6374"
+    },
+    {
+      "path": "lens/index.html",
+      "stageMatchesActual": true,
+      "actualSHA256": "f7313882a256dfd6b25a25b85861712b7340d7bc165d0e48a9bad9ad7ef4ef43"
+    },
+    {
+      "path": "lens/style.css",
+      "stageMatchesActual": true,
+      "actualSHA256": "9df3fae0c6210fa7aab68d2b0fec49eac329eb28d8d1622ad84a130c8e9c4f34"
+    },
+    {
+      "path": "lens/BRIEF.md",
+      "stageMatchesActual": true,
+      "actualSHA256": "402cd99f140dc64c4cf085a04ee703fdc1d257e644d7c166353bde6c59735bf6"
+    },
+    {
+      "path": "reflection-refraction/i18n.js",
+      "stageMatchesActual": true,
+      "actualSHA256": "ce963ac66b755b516023586527117f80f0037c1709a03890ef9e4db95686313c"
+    },
+    {
+      "path": "reflection-refraction/index.html",
+      "stageMatchesActual": true,
+      "actualSHA256": "5bee87a42320dca5ae2ce8ed1ff6a0e91836113ce4b6d6ca066f16c9ea9118b9"
+    },
+    {
+      "path": "reflection-refraction/style.css",
+      "stageMatchesActual": true,
+      "actualSHA256": "a59bf06e963cf1886c2d5fb8d6141ad52a10854afc8bb8e480255f6b4a81ad0f"
+    }
+  ],
+  "allMatch": true,
+  "reviewedImages": [
+    "../browser/en-320-2x-focus.png",
+    "../browser/en-320-2x-forced.png",
+    "../browser/zh-320-2x-focus.png",
+    "../browser/zh-320-2x-forced.png"
+  ],
+  "imageMethod": "Owner-supplied viewport captures inspected with view_image; this reviewer did not operate Chrome.",
+  "sourceScientificMustFix": 0,
+  "handoffDocumentFinding": "Closed: current format and conditioned/visible intersection contract corrected; record (v,MH).",
+  "finalThreeCopyStatus": "Actual/stage match after approved axial-bundle, first-use signs and learner-facing focal-R3 text application.",
+  "independentUISuppliedViewportImages": [
+    "../cold-ui/17-postfix-en-320-2x-forced-focus.png",
+    "../cold-ui/18-postfix-en-320-2x-forced-readout.png",
+    "../cold-ui/19-postfix-zh-320-2x-forced-focus.png",
+    "../cold-ui/20-postfix-zh-320-2x-forced-readout.png"
+  ],
+  "independentUISuppliedViewportVerdict": "PASS pictured focus,legible full labels,near-focus signed values and finite/off-view explanation. Captured by UI-only operator,not this reviewer.",
+  "reviewMustFix": 0,
+  "cumulativeRegressionStatus": "Read parent completed logs:15 final serial and15 initial serial suites all exit0; only focused lens167/refraction148 post-hitbox reruns both0;20core commands all0. Not executed by this reviewer.",
+  "atlasDataMatchesRound11Hash": true,
+  "footerTargetPatch": {
+    "scope": "Local Rr lens-next link hitbox;8th file Rrstyle. No model change.",
+    "staticStatus": "PASS class/CSS/version/actual-stage matching",
+    "newBrowserResult": "PASS owner focused rerun lens167 includes bilingual height>=48 target assertion; refraction148 rerun passed. Cold UI scope remains prior functionality."
+  },
+  "completedOwnerLogs": "final-log-recheck.json"
+}

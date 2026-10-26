@@ -1,0 +1,20 @@
+Step 2 · A fake is born
+
+The dots never lied — you connected them wrong
+
+First, the official name for what is about to happen: aliasing — when the peeks are too sparse, a fast wave gets read as a slow one. Push fs below f and look again: the samples still all sit on the original wave, but by themselves they line up into a different, slower wave. The rose-pink “fake wave” passes through every single sample exactly — from the dots alone there is no way to tell it apart from the original. Its frequency is decided by one formula: fold f by fs, over and over, into the half-room [0, fs/2]. The fold has a direction, too: when the signed folded frequency g is negative (9 Hz sampled at 10 Hz, or 14 Hz at 20 Hz), the fake wave comes out mirrored, its phase flipped — the same event as the wheel turning backwards in step 0, except here it is the waveform that flips.
+
+Signal frequency f (Hz) 9
+Sample rate f_s (Hz) 10
+Classic slow wave: f=9, f_s=10
+Pinned to one phase: f=f_s=10
+Folded: f=14, f_s=20
+No aliasing: f=3, f_s=25
+
+falias = |f − k·fs|
+
+k is the integer that lands the result in [0, fs/2]. Every readout, spectrum position and audio pitch on this page is computed with this one formula — steps 4 and 5 settle the accounts one by one.
+
+f = 9.0 Hz · f_s = 10.0 Hz · k = 1 · f_alias = |9.0 − 1×10.0| = 1.0 Hz — that is the fake wave
+
+The nastiest preset is “pinned to one phase”: when f is an exact multiple of fs, every peek lands on exactly the same phase, all dots collapse to a single value — no matter how fast the wave, it looks frozen. That is the truth behind the “stopped” wheel in step 0.

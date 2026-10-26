@@ -1,0 +1,34 @@
+{
+  "pass": true,
+  "source": "/Users/songyy/Documents/knowledge-vis/trig/app.js",
+  "sha256": "fecd39c036af1d7f39ede64445ee52dd1b03f42c5263a14d835cbf2460ee989c",
+  "trials": [
+    {
+      "end": "pointerup",
+      "current": 1.5707963267948966,
+      "saved": 1.5707963267948966,
+      "restored": 1.5707963267948966,
+      "paused": true
+    },
+    {
+      "end": "pointercancel",
+      "current": 1.5707963267948966,
+      "saved": 1.5707963267948966,
+      "restored": 1.5707963267948966,
+      "paused": true
+    },
+    {
+      "end": "lostpointercapture",
+      "current": 1.5707963267948966,
+      "saved": 1.5707963267948966,
+      "restored": 1.5707963267948966,
+      "paused": true
+    }
+  ],
+  "unit": {
+    "model": "rad",
+    "export": "rad",
+    "drawOnClick": true
+  },
+  "method": "Actual initS6/initS1 event callbacks, manual/apply/history functions in isolated VM with fake trailing timers and drawing/DOM adapters. Not Chrome, real-time debounce or native pointer capture."
+}

@@ -1,0 +1,38 @@
+{
+  "pass": true,
+  "immediateCommit": true,
+  "foreignPreserved": true,
+  "noQuizOrPlaybackSerialized": true,
+  "deniedSafe": true,
+  "source": "/Users/songyy/Documents/knowledge-vis/trig/app.js",
+  "sha256": "636609c7532a9e33d5be2ad33fbed057ca5d93e19e110074d723ec78cbcd9613",
+  "trials": [
+    {
+      "end": "pointerup",
+      "current": 1.5707963267948966,
+      "saved": 1.5707963267948966,
+      "restored": 1.5707963267948966,
+      "paused": true
+    },
+    {
+      "end": "pointercancel",
+      "current": 1.5707963267948966,
+      "saved": 1.5707963267948966,
+      "restored": 1.5707963267948966,
+      "paused": true
+    },
+    {
+      "end": "lostpointercapture",
+      "current": 1.5707963267948966,
+      "saved": 1.5707963267948966,
+      "restored": 1.5707963267948966,
+      "paused": true
+    }
+  ],
+  "unit": {
+    "model": "deg",
+    "export": "deg",
+    "drawOnClick": true
+  },
+  "method": "Actual initS6/initS1 event callbacks plus actual post-init global commit listener block, manual/apply/history functions in isolated VM. Saves inspected before flushing timers; slider/preset commit listeners tested after model preview updates. Drawing/DOM/timer adapters; not Chrome or native input/capture."
+}

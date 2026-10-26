@@ -1,0 +1,13 @@
+{
+  "checks": [
+    "en: four presets+two nonpreset quadrants, signed speed/acceleration/force, fixed-phase mass comparison, stable v-axis per parameters, projection/rates single-clock play and locale continuity, graph/close/Back/source/response recovery,320/390/768/1280,3 resets, legacy rate/area caveats",
+    "zh: four presets+two nonpreset quadrants, signed speed/acceleration/force, fixed-phase mass comparison, stable v-axis per parameters, projection/rates single-clock play and locale continuity, graph/close/Back/source/response recovery,320/390/768/1280,3 resets, legacy rate/area caveats",
+    "DPR1/2/3 repeated resize; both locales320px200%; denied storage; keyboard seek/play; forced-colors focus; reduced-motion paused default"
+  ],
+  "errors": [],
+  "externalRuntimeRequests": [],
+  "limits": [
+    "No physical phone or screen-reader speech",
+    "Analytic model assumptions, not measured forces or learning outcomes"
+  ]
+}

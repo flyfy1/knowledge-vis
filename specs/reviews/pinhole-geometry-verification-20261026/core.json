@@ -1,0 +1,110 @@
+[
+  {
+    "command": "node --check pinhole-camera/app.js",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": "node --check pinhole-camera/i18n.js",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": "node --check linear-functions/app.js",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": "node --check linear-functions/i18n.js",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": "node --check atlas/app.js",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": "node --check atlas/data.js",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": "node --check pages.config.js",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": "node pinhole-camera/tests/geometry-core.cjs",
+    "exit": 0,
+    "stdout": "{\"result\":\"pass\",\"integerCases\":893101,\"maxEndpointErrorCm\":5.684341886080802e-14,\"maxImageCanvasY\":342,\"checks\":7144986,\"scope\":\"Same geometry/sign/slope/magnification,full slider/view bounds,history schemas and no profile,bilingual parity; not physical measurement or learning outcomes.\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": "node atlas/tests/data-quality.cjs",
+    "exit": 0,
+    "stdout": "{\n  \"errors\": [],\n  \"cycles\": [],\n  \"prerequisiteEdges\": 0,\n  \"references\": [\n    {\n      \"at\": \"atlas.nodes.0.source\",\n      \"href\": \"../linear-functions/#step2\"\n    },\n    {\n      \"at\": \"atlas.nodes.1.source\",\n      \"href\": \"../pinhole-camera/#geometry-bridge\"\n    },\n    {\n      \"at\": \"atlas.nodes.1.help.sources.0.href\",\n      \"href\": \"https://openstax.org/books/elementary-algebra-2e/pages/8-7-solve-proportion-and-similar-figure-applications\"\n    },\n    {\n      \"at\": \"atlas.nodes.1.help.sources.1.href\",\n      \"href\": \"https://openstax.org/books/college-physics-2e/pages/25-1-the-ray-aspect-of-light\"\n    },\n    {\n      \"at\": \"atlas.nodes.1.help.sources.2.href\",\n      \"href\": \"https://openstax.org/books/college-physics-2e/pages/27-6-limits-of-resolution-the-rayleigh-criterion\"\n    },\n    {\n      \"at\": \"atlas.nodes.2.source\",\n      \"href\": \"https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem\"\n    },\n    {\n      \"at\": \"atlas.nodes.2.help.sources.0.href\",\n      \"href\": \"https://openstax.org/books/university-physics-volume-1/pages/8-1-potential-energy-of-a-system\"\n    },\n    {\n      \"at\": \"atlas.nodes.3.source\",\n      \"href\": \"../integral/#step2\"\n    },\n    {\n      \"at\": \"atlas.nodes.4.source\",\n      \"href\": \"../derivative/#step2\"\n    },\n    {\n      \"at\": \"atlas.nodes.5.source\",\n      \"href\": \"https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law\"\n    },\n    {\n      \"at\": \"atlas.nodes.6.source\",\n      \"href\": \"../power-converters/#step0\"\n    },\n    {\n      \"at\": \"atlas.nodes.7.source\",\n      \"href\": \"../power-converters/#step1\"\n    },\n    {\n      \"at\": \"atlas.nodes.8.source\",\n      \"href\": \"../power-converters/#step2\"\n    },\n    {\n      \"at\": \"atlas.nodes.9.source\",\n      \"href\": \"../power-converters/#step3\"\n    },\n    {\n      \"at\": \"atlas.nodes.10.source\",\n      \"href\": \"../power-converters/#step3\"\n    },\n    {\n      \"at\": \"atlas.nodes.11.source\",\n      \"href\": \"../power-converters/#step4\"\n    },\n    {\n      \"at\": \"atlas.nodes.12.source\",\n      \"href\": \"../power-converters/#step5\"\n    },\n    {\n      \"at\": \"atlas.nodes.13.source\",\n      \"href\": \"../trig/#step1\"\n    },\n    {\n      \"at\": \"atlas.nodes.14.source\",\n      \"href\": \"../trig/#step3\"\n    },\n    {\n      \"at\": \"atlas.nodes.14.help.sources.0.href\",\n      \"href\": \"https://openstax.org/books/algebra-and-trigonometry-2e/pages/7-1-angles\"\n    },\n    {\n      \"at\": \"atlas.nodes.14.help.sources.1.href\",\n      \"href\": \"https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion\"\n    },\n    {\n      \"at\": \"atlas.nodes.15.source\",\n      \"href\": \"../complex-numbers/#step4\"\n    },\n    {\n      \"at\": \"atlas.nodes.16.source\",\n      \"href\": \"../eigen/#step1\"\n    },\n    {\n      \"at\": \"atlas.nodes.17.source\",\n      \"href\": \"../eigen/#step4\"\n    },\n    {\n      \"at\": \"atlas.nodes.18.source\",\n      \"href\": \"../laplace/#step1\"\n    },\n    {\n      \"at\": \"atlas.nodes.19.source\",\n      \"href\": \"https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion\"\n    },\n    {\n      \"at\": \"atlas.nodes.19.help.sources.0.href\",\n      \"href\": \"https://openstax.org/books/university-physics-volume-1/pages/3-3-average-and-instantaneous-acceleration\"\n    },\n    {\n      \"at\": \"atlas.nodes.20.source\",\n      \"href\": \"../fourier/#step2\"\n    },\n    {\n      \"at\": \"atlas.nodes.21.source\",\n      \"href\": \"../fourier/#step5\"\n    },\n    {\n      \"at\": \"atlas.nodes.22.source\",\n      \"href\": \"../fourier/#step5\"\n    },\n    {\n      \"at\": \"atlas.nodes.23.source\",\n      \"href\": \"../freqresp/#step5\"\n    },\n    {\n      \"at\": \"atlas.nodes.24.source\",\n      \"href\": \"../sampling/#step3\"\n    },\n    {\n      \"at\": \"atlas.nodes.25.source\",\n      \"href\": \"../lti/#step3\"\n    },\n    {\n      \"at\": \"atlas.nodes.26.source\",\n      \"href\": \"../lti/#step2\"\n    },\n    {\n      \"at\": \"atlas.nodes.27.source\",\n      \"href\": \"../convolution/#step2\"\n    },\n    {\n      \"at\": \"atlas.nodes.28.source\",\n      \"href\": \"../freqresp/#step0\"\n    },\n    {\n      \"at\": \"atlas.nodes.29.source\",\n      \"href\": \"../laplace/#step4\"\n    },\n    {\n      \"at\": \"atlas.nodes.30.source\",\n      \"href\": \"../control/#step2\"\n    },\n    {\n      \"at\": \"atlas.nodes.31.source\",\n      \"href\": \"../bayes/#step0\"\n    },\n    {\n      \"at\": \"atlas.nodes.32.source\",\n      \"href\": \"../bayes/#step2\"\n    },\n    {\n      \"at\": \"atlas.nodes.33.source\",\n      \"href\": \"../clt/#step3\"\n    },\n    {\n      \"at\": \"atlas.nodes.34.source\",\n      \"href\": \"../clt/#step3\"\n    },\n    {\n      \"at\": \"atlas.nodes.35.source\",\n      \"href\": \"../montecarlo/#step3\"\n    },\n    {\n      \"at\": \"atlas.nodes.36.source\",\n      \"href\": \"../kalman/#step2\"\n    },\n    {\n      \"at\": \"atlas.edges.0.source\",\n      \"href\": \"../pinhole-camera/#geometry-bridge\"\n    },\n    {\n      \"at\": \"atlas.edges.1.source\",\n      \"href\": \"https://openstax.org/books/university-physics-volume-1/pages/7-1-work\"\n    },\n    {\n      \"at\": \"atlas.edges.2.source\",\n      \"href\": \"https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem\"\n    },\n    {\n      \"at\": \"atlas.edges.3.source\",\n      \"href\": \"https://openstax.org/books/calculus-volume-1/pages/5-2-the-definite-integral\"\n    },\n    {\n      \"at\": \"atlas.edges.4.source\",\n      \"href\": \"../derivative/#step0\"\n    },\n    {\n      \"at\": \"atlas.edges.5.source\",\n      \"href\": \"https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law\"\n    },\n    {\n      \"at\": \"atlas.edges.6.source\",\n      \"href\": \"../power-converters/#step1\"\n    },\n    {\n      \"at\": \"atlas.edges.7.source\",\n      \"href\": \"../power-converters/#step2\"\n    },\n    {\n      \"at\": \"atlas.edges.8.source\",\n      \"href\": \"../power-converters/#step2\"\n    },\n    {\n      \"at\": \"atlas.edges.9.source\",\n      \"href\": \"../power-converters/#step4\"\n    },\n    {\n      \"at\": \"atlas.edges.10.source\",\n      \"href\": \"../power-converters/#step5\"\n    },\n    {\n      \"at\": \"atlas.edges.11.source\",\n      \"href\": \"../power-converters/#step4\"\n    },\n    {\n      \"at\": \"atlas.edges.12.source\",\n      \"href\": \"../power-converters/#step5\"\n    },\n    {\n      \"at\": \"atlas.edges.13.source\",\n      \"href\": \"../power-converters/#step4\"\n    },\n    {\n      \"at\": \"atlas.edges.14.source\",\n      \"href\": \"../power-converters/#step5\"\n    },\n    {\n      \"at\": \"atlas.edges.15.source\",\n      \"href\": \"../power-converters/#step4\"\n    },\n    {\n      \"at\": \"atlas.edges.16.source\",\n      \"href\": \"../power-converters/#step5\"\n    },\n    {\n      \"at\": \"atlas.edges.17.source\",\n      \"href\": \"../power-converters/#step6\"\n    },\n    {\n      \"at\": \"atlas.edges.18.source\",\n      \"href\": \"../trig/#step3\"\n    },\n    {\n      \"at\": \"atlas.edges.19.source\",\n      \"href\": \"https://openstax.org/books/algebra-and-trigonometry-2e/pages/10-5-polar-form-of-complex-numbers\"\n    },\n    {\n      \"at\": \"atlas.edges.20.source\",\n      \"href\": \"https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion\"\n    },\n    {\n      \"at\": \"atlas.edges.21.source\",\n      \"href\": \"../fourier/#step1\"\n    },\n    {\n      \"at\": \"atlas.edges.22.source\",\n      \"href\": \"https://www.dspguide.com/CH31.PDF#page=3\"\n    },\n    {\n      \"at\": \"atlas.edges.23.source\",\n      \"href\": \"../fourier/#step4\"\n    },\n    {\n      \"at\": \"atlas.edges.24.source\",\n      \"href\": \"../fourier/#step5\"\n    },\n    {\n      \"at\": \"atlas.edges.25.source\",\n      \"href\": \"../convolution/#step6\"\n    },\n    {\n      \"at\": \"atlas.edges.26.source\",\n      \"href\": \"../sampling/#step4\"\n    },\n    {\n      \"at\": \"atlas.edges.27.source\",\n      \"href\": \"https://openstax.org/books/university-physics-volume-1/pages/15-6-forced-oscillations\"\n    },\n    {\n      \"at\": \"atlas.edges.28.source\",\n      \"href\": \"../freqresp/#step5\"\n    },\n    {\n      \"at\": \"atlas.edges.29.source\",\n      \"href\": \"../lti/#step2\"\n    },\n    {\n      \"at\": \"atlas.edges.30.source\",\n      \"href\": \"../lti/#step2\"\n    },\n    {\n      \"at\": \"atlas.edges.31.source\",\n      \"href\": \"https://dspguide.com/ch9/2.htm\"\n    },\n    {\n      \"at\": \"atlas.edges.32.source\",\n      \"href\": \"../lti/#step3\"\n    },\n    {\n      \"at\": \"atlas.edges.33.source\",\n      \"href\": \"../laplace/#step2\"\n    },\n    {\n      \"at\": \"atlas.edges.34.source\",\n      \"href\": \"../laplace/#step4\"\n    },\n    {\n      \"at\": \"atlas.edges.35.source\",\n      \"href\": \"https://www.dspguide.com/CH32.PDF#page=18\"\n    },\n    {\n      \"at\": \"atlas.edges.36.source\",\n      \"href\": \"../eigen/#step1\"\n    },\n    {\n      \"at\": \"atlas.edges.37.source\",\n      \"href\": \"../eigen/#step5\"\n    },\n    {\n      \"at\": \"atlas.edges.38.source\",\n      \"href\": \"../bayes/#step2\"\n    },\n    {\n      \"at\": \"atlas.edges.39.source\",\n      \"href\": \"../kalman/#step6\"\n    },\n    {\n      \"at\": \"atlas.edges.40.source\",\n      \"href\": \"../kalman/#step2\"\n    },\n    {\n      \"at\": \"atlas.edges.41.source\",\n      \"href\": \"../kalman/#step6\"\n    },\n    {\n      \"at\": \"atlas.edges.42.source\",\n      \"href\": \"../clt/#step3\"\n    },\n    {\n      \"at\": \"atlas.edges.43.source\",\n      \"href\": \"../montecarlo/#step3\"\n    },\n    {\n      \"at\": \"atlas.edges.44.source\",\n      \"href\": \"../montecarlo/#step2\"\n    },\n    {\n      \"at\": \"atlas.edges.45.source\",\n      \"href\": \"../clt/#step5\"\n    },\n    {\n      \"at\": \"atlas.trails.7.backgroundSource\",\n      \"href\": \"https://openstax.org/books/university-physics-volume-1/pages/15-6-forced-oscillations\"\n    }\n  ],\n  \"groups\": 5,\n  \"nodes\": 37,\n  \"edges\": 46,\n  \"trails\": 9\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": "node atlas/tests/data-quality-core.cjs",
+    "exit": 0,
+    "stdout": "{\"checks\":21,\"result\":\"pass\",\"semantics\":\"General cycles allowed; only explicitly declared prerequisite cycles request review. No prerequisite inferred from foundation.\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": "node atlas/tests/foundations-core.cjs",
+    "exit": 0,
+    "stdout": "{\"pass\":true,\"routes\":9,\"concepts\":37,\"checkFixtures\":54,\"scope\":\"canonical references and the bounded free-spring prediction; no learner outcome inferred\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": "node atlas/tests/motion-core.cjs",
+    "exit": 0,
+    "stdout": "PASS: quarter cycles, initial condition, period ratios, force/Newton, conserved energy, parameter boundaries\n",
+    "stderr": ""
+  },
+  {
+    "command": "node atlas/tests/response-core.cjs",
+    "exit": 0,
+    "stdout": "PASS: transfer identity, ODE substitution, peak threshold/below-slider peak, phase, pole sums/products/stability, critical/overdamped bounds\n",
+    "stderr": ""
+  },
+  {
+    "command": "node atlas/tests/rates-core.cjs",
+    "exit": 0,
+    "stdout": "PASS: signed velocity/speed, four motion cases, cardinal zeros, independent first/second derivatives, net-force law and parameter boundaries\n",
+    "stderr": ""
+  },
+  {
+    "command": "node atlas/tests/travel-core.cjs",
+    "exit": 0,
+    "stdout": "{\n  \"pass\": true,\n  \"checks\": 6107,\n  \"maxQuadratureErrorMetres\": 6.560856036230689e-8,\n  \"method\": \"exact turning-point segments; independent physical-time trapezoid convergence\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": "node atlas/tests/work-core.cjs",
+    "exit": 0,
+    "stdout": "{\n  \"pass\": true,\n  \"checks\": 6174,\n  \"maxFdxError\": 1.2559397966072083e-15,\n  \"maxPhysicalTimeQuadratureError\": 3.4437430684874926e-10,\n  \"method\": \"stable analytic work; separate sampled Fdx and Fvdt references\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": "node atlas/tests/legacy-signed-area.cjs",
+    "exit": 0,
+    "stdout": "PASS integral signed-area caveats in bilingual lesson\n",
+    "stderr": ""
+  },
+  {
+    "command": "node laplace/tests/pole-boundaries.cjs",
+    "exit": 0,
+    "stdout": "PASS: simple zero constant limit, double zero unbounded response, conditional stability copy\n",
+    "stderr": ""
+  }
+]

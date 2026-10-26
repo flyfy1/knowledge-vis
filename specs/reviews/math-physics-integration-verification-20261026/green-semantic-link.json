@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "checks": {
+    "frozen-bubble/index.html": {
+      "wrongStep1References": 0
+    },
+    "frozen-bubble/i18n.js": {
+      "wrongStep1References": 0
+    }
+  },
+  "actualKeyboardNavigationEvidence": "browser/integration-browser.json"
+}

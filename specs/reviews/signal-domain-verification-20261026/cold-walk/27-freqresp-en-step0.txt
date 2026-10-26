@@ -1,0 +1,17 @@
+Step 0 · The Hook
+
+A box that is picky by frequency
+
+Start with a box of unknown principle. The top trace is a slow, clean sine wave buried under a layer of fast, fine noise. Feed it through the box and look at the output — most of the noise is gone, the slow wave is almost untouched. The box has never seen this waveform. How does it know what to keep and what to throw away? Who splits a signal into these frequencies: the spectrum step on the Fourier page →
+
+The answer: it judges by frequency alone. Below, feed it pure sine waves one notch at a time: the higher the frequency, the shorter the output. Measure each frequency once, record “output amplitude ÷ input amplitude” as a point — sweep through them all and the box’s menu appears.
+
+Probe sine frequency f 10.0 Hz
+
+f = 10.0 Hz · measured pass rate |H| = 0.157 (steady-state amplitude ratio from a time-domain simulation) · 2 frequency points measured so far
+
+A convention, stated where it belongs: the output waveform above is drawn by analytic steady-state superposition (each component scaled by the closed-form |H| and shifted by the closed-form φ), while the pass-rate readouts below are measured by an ODE time-domain simulation — two different engines on one screen; step 1 sets them side by side as two cards and audits them against each other.
+
+This box is in fact the hero of the whole page: a first-order RC low-pass. Its pass rates across frequencies form the curve called the frequency response |H(ω)|; how much it delays each frequency is a second curve, φ(ω). This page measures both curves, teaches you to read them, and then turns them around to design filters.
+
+Start exploring ↓

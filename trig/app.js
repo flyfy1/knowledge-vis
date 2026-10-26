@@ -7,7 +7,7 @@
       在点的真实相位 φ 处取 sin/cos，波头点画的正是此刻 θ 的投影值。
       页面状态挂 window.TRIG.steps（并提供 TRIG.set(step, θ) 供对账）。
    2. 内部一律弧度；角度/弧度只是读数显示之别。
-   3. tan 在 |cos|≈0 处标「无定义」、|tan|>50 显示趋向 ±∞，不冒充精确大数。
+   3. tan 只在规范90°/270°状态无定义；有限大值与绘图越界分开，三处共用tangentAt。
    4. 转速自洽：点转一圈 == 波一个周期；第 5 步声频 = 转速 × 220（读数明示）。 */
 const TAU = Math.PI * 2;
 const $ = id => document.getElementById(id);
@@ -85,6 +85,26 @@ function afmt(v) {
   return fmt(v, 3);
 }
 function norm(th) { th %= TAU; return th < 0 ? th + TAU : th; }
+/* TANGENT-BEGIN: bounded lesson model, radians internally. */
+function tangentAt(input){
+  if(!Number.isFinite(input))return {mode:'invalid',theta:null,sin:null,cos:null,tan:null,cardinal:false};
+  const theta=norm(input),cardinal=[0,Math.PI/2,Math.PI,3*Math.PI/2].includes(theta);
+  let sin=Math.sin(theta),cos=Math.cos(theta);
+  if(theta===0){sin=0;cos=1;}else if(theta===Math.PI/2){sin=1;cos=0;}else if(theta===Math.PI){sin=0;cos=-1;}else if(theta===3*Math.PI/2){sin=-1;cos=0;}
+  return {theta,sin,cos,tan:cos===0?null:sin/cos,mode:cos===0?'undef':'num',cardinal};
+}
+function tangentNumber(value,exact=false){
+  if(!Number.isFinite(value))return '—';
+  const shown=Object.is(value,-0)?0:Number(value.toPrecision(6));
+  return ((exact?'':'≈')+shown).replace(/-/g,'−');
+}
+function tangentStep(theta,degrees){
+  if(!Number.isFinite(theta)||!Number.isFinite(degrees))return null;
+  const tick=Math.round(theta*180/Math.PI*10);
+  if(theta===(tick/10)*Math.PI/180){const next=((tick+Math.round(degrees*10))%3600+3600)%3600;return(next/10)*Math.PI/180;}
+  return norm(theta+degrees*Math.PI/180);
+}
+/* TANGENT-END */
 function degOf(th) { return th * 180 / Math.PI; }
 function setRO(id, str) { const el = $(id); if (el && el._v !== str) { el._v = str; el.innerHTML = str; } }
 
@@ -281,6 +301,7 @@ const EXACT = {
   330: ['−1/2', '√3/2', '−√3/3']
 };
 const SPECIALS = Object.keys(EXACT).map(Number);
+function tangentAngle(theta,unit='deg'){if(unit==='rad')return tangentNumber(theta,theta===0);const d=degOf(theta),exact=SPECIALS.find(sd=>theta===sd*Math.PI/180);return tangentNumber(exact===undefined?d:exact,exact!==undefined);}
 const S1 = { theta: 50 * Math.PI / 180, unit: 'deg', dragging: false };
 function s1Geom(cv) {
   const w = cv._w, h = cv._h;
@@ -301,7 +322,7 @@ function s1Draw() {
   const { w, h, cx, cy, R } = s1Geom(cv);
   if (w < 10) return;
   ctx.clearRect(0, 0, w, h);
-  const th = S1.theta, c = Math.cos(th), s = Math.sin(th);
+  const th=S1.theta, info=tangentAt(th), c=info.cos, s=info.sin;
   const px = cx + c * R, py = cy - s * R;
   /* 坐标轴 */
   ctx.strokeStyle = '#2b3547'; ctx.lineWidth = 1;
@@ -374,36 +395,36 @@ function s1Draw() {
   ctx.beginPath(); ctx.arc(px, py, 6.5, 0, TAU);
   ctx.fillStyle = '#ffd166'; ctx.fill();
   ctx.lineWidth = 1.4; ctx.strokeStyle = '#0d1117'; ctx.stroke();
-  TRIG.steps.s1 = { theta: th, sin: s, cos: c, tan: Math.tan(th), unit: S1.unit };
+  TRIG.steps.s1 = { theta: th, sin: s, cos: c, tan: info.tan, tanMode:info.mode, unit: S1.unit };
 }
 function signSpan(v) {
-  if (Math.abs(v) < 1e-12) return '<span class="zero">0</span>';
+  if (v===0) return '<span class="zero">0</span>';
   return v > 0 ? '<span class="pos">+</span>' : '<span class="neg">−</span>';
 }
 function s1Readouts() {
-  const th = S1.theta, c = Math.cos(th), s = Math.sin(th);
+  const th=S1.theta, info=tangentAt(th), c=info.cos, s=info.sin;
   const deg = degOf(th);
-  const ang = S1.unit === 'deg' ? fmt(deg, 1) + '°' : fmt(th, 3) + ' rad';
-  const tanStr = Math.abs(c) < 1e-12 ? t('undef') : afmt(s / c);
-  setRO('s1-readout', t('s1ro', { ang, cos: fmt(c, 3), sin: fmt(s, 3), tan: tanStr }));
+  const ang=tangentAngle(th,S1.unit)+(S1.unit==='deg'?'°':' rad');
+  const tanStr=info.mode==='undef'?t('undef'):tangentNumber(info.tan,info.cardinal);
+  setRO('s1-readout', t('s1ro', { ang, cos:tangentNumber(c,info.cardinal),sin:tangentNumber(s,info.cardinal), tan: tanStr }));
   /* 象限行：边界角时点落在坐标轴上，不归入任何象限；
      且 90°/270° 处 tan 须显示「无定义」，与主读数一致（不能印 0） */
-  if (Math.abs(c) < 1e-12) {
+  if (info.mode==='undef') {
     setRO('s1-quad', t('s1axisY', { ss: signSpan(s), cs: signSpan(c), ts: t('undef') }));
-  } else if (Math.abs(s) < 1e-12) {
+  } else if(s===0) {
     setRO('s1-quad', t('s1axisX', { ss: signSpan(s), cs: signSpan(c), ts: signSpan(0) }));
   } else {
-    const q = Math.floor(((deg % 360) + 360) % 360 / 90) + 1;
+    const q=c>0?(s>0?1:4):(s>0?2:3);
     setRO('s1-quad', t('s1quad', {
       q, ss: signSpan(s), cs: signSpan(c), ts: signSpan(s / c)
     }));
   }
-  setRO('s1-pyth', t('s1pyth', { c2: fmt(c * c, 3), s2: fmt(s * s, 3), sum: fmt(c * c + s * s, 6) }));
+  setRO('s1-pyth', t('s1pyth', { c2:tangentNumber(c*c,info.cardinal),s2:tangentNumber(s*s,info.cardinal),sum:tangentNumber(c*c+s*s,false) }));
   /* 特殊角精确值卡片 */
   const body = $('s1-card-body');
   if (body) {
     const near = Math.round(deg);
-    if (Math.abs(deg - near) < 0.05 && EXACT[near]) {
+    if (EXACT[near] && th===near*Math.PI/180) {
       const [es, ec, et] = EXACT[near];
       const html =
         '<span class="exact-line">sin θ = <b>' + es + '</b></span>' +
@@ -416,14 +437,15 @@ function s1Readouts() {
     }
   }
 }
-function s1Set(th) { S1.theta = norm(th); s1Draw(); s1Readouts(); }
+function s1Set(th){if(!Number.isFinite(th))return false;S1.theta=norm(th);s1Draw();s1Readouts();queueTangentReading();return true;}
 function initS1() {
   const cv = regCanvas('s1-canvas');
   const unitBtn = u => {
     S1.unit = u;
     $('s1-unit-deg').classList.toggle('active', u === 'deg');
     $('s1-unit-rad').classList.toggle('active', u === 'rad');
-    s1Readouts();
+    for(const unit of ['deg','rad'])$('s1-unit-'+unit).setAttribute('aria-pressed',String(unit===u));
+    s1Draw();s1Readouts();
   };
   $('s1-unit-deg').addEventListener('click', () => unitBtn('deg'));
   $('s1-unit-rad').addEventListener('click', () => unitBtn('rad'));
@@ -454,11 +476,8 @@ function initS1() {
   const endDrag = () => { S1.dragging = false; };
   cv.addEventListener('pointerup', endDrag);
   cv.addEventListener('pointercancel', endDrag);
-  cv.addEventListener('keydown', e => {
-    const step = (e.shiftKey ? 10 : 1) * Math.PI / 180;
-    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { s1Set(S1.theta + step); e.preventDefault(); }
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { s1Set(S1.theta - step); e.preventDefault(); }
-  });
+  cv.addEventListener('lostpointercapture',endDrag);
+  cv.addEventListener('keydown',e=>tangentKeys(e,S1.theta,e.shiftKey?10:1,s1Set));
   onLangRefresh(() => { s1Draw(); s1Readouts(); });
   onRefit(() => { s1Draw(); });
   s1Draw(); s1Readouts();
@@ -650,17 +669,12 @@ function initS3() {
    第 4 步：tan —— 过原点直线交 x=1 竖线的高度（诚实发散）
    ============================================================ */
 const S4 = { theta: 35 * Math.PI / 180, dragging: false };
-const S4_YRANGE = 3.3, S4_TAN_INF = 50;
+const S4_YRANGE=3.3;
 function s4Geom(cv) {
   const w = cv._w, h = cv._h;
   return { w, h, ox: w * 0.40, oy: h / 2 + 8, scale: (h - 110) / 2 / S4_YRANGE };
 }
-function s4Mode() {
-  const c = Math.cos(S4.theta), tv = Math.tan(S4.theta);
-  if (Math.abs(c) < 1e-12) return 'undef';
-  if (Math.abs(tv) > S4_TAN_INF) return 'inf';
-  return 'num';
-}
+function s4Mode(){return tangentAt(S4.theta).mode;}
 function s4Draw() {
   const cv = $('s4-canvas'); if (!cv) return;
   const ctx = fitCanvas(cv);
@@ -668,7 +682,7 @@ function s4Draw() {
   if (w < 10) return;
   ctx.clearRect(0, 0, w, h);
   const X = v => ox + v * scale, Y = v => oy - v * scale;
-  const th = S4.theta, c = Math.cos(th), s = Math.sin(th), tv = Math.tan(th);
+  const th=S4.theta, info=tangentAt(th), c=info.cos, s=info.sin, tv=info.tan;
   const mode = s4Mode();
   /* 网格 */
   ctx.strokeStyle = '#1a2230'; ctx.lineWidth = 1;
@@ -729,7 +743,7 @@ function s4Draw() {
       ctx.lineTo(X(1) + 6, ay - dir * 8);
       ctx.closePath(); ctx.fill();
       ctx.font = '13px system-ui, sans-serif';
-      ctx.fillText(tv > 0 ? '+∞' : '−∞', X(1) + 9, ay + 4);
+      ctx.fillText(t('cTanOutside'), X(1) + 9, ay + 4);
     }
   }
   /* 半径与点 */
@@ -740,35 +754,22 @@ function s4Draw() {
   ctx.lineWidth = 1.4; ctx.strokeStyle = '#0d1117'; ctx.stroke();
   TRIG.steps.s4 = { theta: th, sin: s, cos: c, tan: tv, tanMode: mode, wallY: tv };
 }
-function s4Readout() {
-  const th = S4.theta, c = Math.cos(th), s = Math.sin(th), tv = Math.tan(th);
-  const mode = s4Mode();
-  const deg = fmt(degOf(th), 1);
-  if (mode === 'undef') {
-    setRO('s4-readout', t('s4roUndef', { deg, sin: fmt(s, 3) }));
-  } else if (mode === 'inf') {
-    setRO('s4-readout', t('s4roInf', { deg, sign: tv > 0 ? '+' : '−', cos: fmt(c, 4) }));
-  } else {
-    let str = t('s4ro', { deg, tan: afmt(tv), sin: fmt(s, 3), cos: fmt(c, 3), ratio: afmt(s / c) });
-    if (Math.abs(tv) > S4_YRANGE) str += ' ' + t('s4roOff');
-    setRO('s4-readout', str);
+function s4Readout(){
+  const info=tangentAt(S4.theta),deg=tangentAngle(info.theta);
+  if(info.mode==='undef')setRO('s4-readout',t('s4roUndef',{deg,sin:tangentNumber(info.sin,true)}));
+  else{
+    let str=t('s4ro',{deg,tan:tangentNumber(info.tan,info.cardinal),sin:tangentNumber(info.sin,info.cardinal),cos:tangentNumber(info.cos,info.cardinal),ratio:tangentNumber(info.tan,info.cardinal)});
+    if(Math.abs(info.tan)>S4_YRANGE)str+=' '+t('s4roOff');setRO('s4-readout',str);
   }
+  const pole=info.theta<Math.PI?Math.PI/2:3*Math.PI/2;
+  $('s4-domain').textContent=t('s4domain',{delta:tangentNumber(info.theta-pole,info.theta===pole)});
 }
-function s4SyncSlider() {
-  const deg = degOf(S4.theta) % 180;
-  const sl = $('s4-th');
-  if (sl) sl.value = String(deg);
-  const val = $('s4-th-val');
-  if (val) val.textContent = fmt(degOf(S4.theta), 1);
-}
-function s4Set(th) { S4.theta = norm(th); s4Draw(); s4Readout(); s4SyncSlider(); }
+function s4SyncSlider(){const sl=$('s4-th');if(sl)sl.value=String(degOf(S4.theta));const val=$('s4-th-val');if(val)val.textContent=tangentAngle(S4.theta);}
+function s4Set(th){if(!Number.isFinite(th))return false;S4.theta=norm(th);s4Draw();s4Readout();s4SyncSlider();queueTangentReading();return true;}
 function initS4() {
   const cv = regCanvas('s4-canvas');
-  $('s4-th').addEventListener('input', e => {
-    S4.theta = +e.target.value * Math.PI / 180;
-    $('s4-th-val').textContent = fmt(+e.target.value, 1);
-    s4Draw(); s4Readout();
-  });
+  $('s4-th').addEventListener('input',e=>s4Set(Number(e.target.value)*Math.PI/180));
+  $('s4-th').addEventListener('keydown',e=>tangentKeys(e,S4.theta,e.shiftKey?1:.1,s4Set));
   document.querySelectorAll('[data-tandeg]').forEach(b => {
     b.addEventListener('click', () => s4Set(+b.dataset.tandeg * Math.PI / 180));
   });
@@ -791,11 +792,8 @@ function initS4() {
   const endDrag = () => { S4.dragging = false; };
   cv.addEventListener('pointerup', endDrag);
   cv.addEventListener('pointercancel', endDrag);
-  cv.addEventListener('keydown', e => {
-    const step = (e.shiftKey ? 1 : 0.1) * Math.PI / 180;
-    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { s4Set(S4.theta + step); e.preventDefault(); }
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { s4Set(S4.theta - step); e.preventDefault(); }
-  });
+  cv.addEventListener('lostpointercapture',endDrag);
+  cv.addEventListener('keydown',e=>tangentKeys(e,S4.theta,e.shiftKey?1:0.1,s4Set));
   onLangRefresh(() => { s4Draw(); s4Readout(); });
   onRefit(() => { s4Draw(); });
   s4Draw(); s4Readout(); s4SyncSlider();
@@ -1038,10 +1036,8 @@ function s6ResetBuckets() {
 function s6Bucket(a) {
   const th = norm(a);
   const idx = Math.floor(th / TAU * S6.N) % S6.N;
-  S6.bSin[idx] = Math.sin(th);
-  S6.bCos[idx] = Math.cos(th);
-  const tv = Math.tan(th);
-  S6.bTan[idx] = Math.abs(tv) <= 3.4 ? tv : NaN;
+  const info=tangentAt(th);S6.bSin[idx]=info.sin;S6.bCos[idx]=info.cos;
+  S6.bTan[idx]=info.mode==='num'&&Math.abs(info.tan)<=3.4?info.tan:NaN;
 }
 function s6Paint(nt) {
   if (S6.lastTheta === null) { s6Bucket(nt); S6.lastTheta = nt; return; }
@@ -1088,6 +1084,7 @@ function s6Strip(ctx, x, y, wdt, hgt, label, color, buckets, range, curVal) {
   const cyv = midY - clamp(curVal, -range, range) * ppu;
   ctx.strokeStyle = 'rgba(232,237,244,.25)'; ctx.lineWidth = 1;
   ctx.beginPath(); ctx.moveTo(cxp, y + 3); ctx.lineTo(cxp, y + hgt - 3); ctx.stroke();
+  if(curVal===null||!Number.isFinite(curVal))return;
   if (over) {
     const dir = curVal > 0 ? -1 : 1;
     ctx.fillStyle = color;
@@ -1109,7 +1106,7 @@ function s6Draw() {
   if (w < 10) return;
   ctx.clearRect(0, 0, w, h);
   const g = s6Geom(cv);
-  const th = S6.theta, c = Math.cos(th), s = Math.sin(th);
+  const th=S6.theta, info=tangentAt(th), c=info.cos, s=info.sin;
   /* --- 圆区 --- */
   const ccx = g.czx + g.czw / 2, ccy = g.czh / 2, R = Math.min(g.czw, g.czh) * 0.40;
   ctx.strokeStyle = '#2b3547'; ctx.lineWidth = 1;
@@ -1154,7 +1151,7 @@ function s6Draw() {
   const fns = [
     ['sin θ', '#6ee7ff', S6.bSin, 1.2, s],
     ['cos θ', '#ffb454', S6.bCos, 1.2, c],
-    ['tan θ', '#ff7a93', S6.bTan, 3.4, Math.tan(th)]
+    ['tan θ', '#ff7a93', S6.bTan, 3.4, info.tan]
   ];
   if (!g.stack) {
     const sh = (h - 24 - 16) / 3;
@@ -1163,20 +1160,11 @@ function s6Draw() {
     const zoneY = g.czh + 8, sh = (h - zoneY - 16) / 3;
     fns.forEach((f, i) => s6Strip(ctx, g.sx, zoneY + i * (sh + 6), g.sw, sh, f[0], f[1], f[2], f[3], f[4]));
   }
-  TRIG.steps.s6 = { theta: th, sin: s, cos: c, tan: Math.tan(th), chain: S6.chain };
+  TRIG.steps.s6 = { theta: th, sin: s, cos: c, tan: info.tan, tanMode:info.mode, chain: S6.chain };
 }
-function s6TanStr() {
-  const c = Math.cos(S6.theta), tv = Math.tan(S6.theta);
-  if (Math.abs(c) < 1e-12) return t('undef');
-  if (Math.abs(tv) > 50) return tv > 0 ? '+∞' : '−∞';
-  return afmt(tv);
-}
-function s6Readout() {
-  setRO('s6-readout', t('s6ro', {
-    deg: fmt(degOf(S6.theta), 1), rad: fmt(S6.theta, 2),
-    sin: fmt(Math.sin(S6.theta), 3), cos: fmt(Math.cos(S6.theta), 3), tan: s6TanStr()
-  }));
-}
+function s6TanStr(){const info=tangentAt(S6.theta);return info.mode==='undef'?t('undef'):tangentNumber(info.tan,info.cardinal);}
+function s6Readout(){const info=tangentAt(S6.theta);setRO('s6-readout',t('s6ro',{deg:tangentAngle(S6.theta),rad:tangentAngle(S6.theta,'rad'),sin:tangentNumber(info.sin,info.cardinal),cos:tangentNumber(info.cos,info.cardinal),tan:s6TanStr()}));}
+function s6Manual(nt){if(!Number.isFinite(nt))return false;S6.playing=false;s6Labels();s6Apply(nt);queueTangentReading();return true;}
 function s6Apply(nt) {
   s6Paint(nt);
   S6.theta = norm(nt);
@@ -1194,6 +1182,8 @@ function s6Apply(nt) {
   s6Draw(); s6Readout();
 }
 function s6Labels() {
+  if($('s6-toggle')){$('s6-toggle').setAttribute('aria-pressed',String(S6.playing));$('s6-toggle').classList.toggle('active',S6.playing);}
+  if($('s6-chain'))$('s6-chain').setAttribute('aria-pressed',String(S6.chain));
   const tb = $('s6-toggle'); if (tb) tb.textContent = S6.playing ? t('s6pause') : t('s6play');
   const cb = $('s6-chain'); if (cb) cb.textContent = S6.chain ? t('s6chainOff') : t('s6chain');
 }
@@ -1213,19 +1203,16 @@ function initS6() {
     if (a.dist <= a.R + 48) {
       dragging = true;
       cv.setPointerCapture(e.pointerId);
-      s6Apply(a.th);
+      s6Manual(a.th);
       e.preventDefault();
     }
   });
-  cv.addEventListener('pointermove', e => { if (dragging) s6Apply(angleFromEvent(e).th); });
-  const endDrag = () => { dragging = false; };
+  cv.addEventListener('pointermove', e => { if (dragging) s6Manual(angleFromEvent(e).th); });
+  const endDrag=()=>{dragging=false;queueTangentReading();};
   cv.addEventListener('pointerup', endDrag);
   cv.addEventListener('pointercancel', endDrag);
-  cv.addEventListener('keydown', e => {
-    const step = (e.shiftKey ? 10 : 1) * Math.PI / 180;
-    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { s6Apply(S6.theta + step); e.preventDefault(); }
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { s6Apply(S6.theta - step); e.preventDefault(); }
-  });
+  cv.addEventListener('lostpointercapture',endDrag);
+  cv.addEventListener('keydown',e=>tangentKeys(e,S6.theta,e.shiftKey?10:1,s6Manual));
   $('s6-toggle').addEventListener('click', () => {
     S6.playing = !S6.playing;
     $('s6-toggle').classList.toggle('active', S6.playing);
@@ -1235,7 +1222,7 @@ function initS6() {
     S6.chain = !S6.chain;
     if (!S6.chain) S6.trail = [];
     $('s6-chain').classList.toggle('active', S6.chain);
-    s6Labels(); s6Draw();
+    s6Labels(); s6Draw();queueTangentReading();
   });
   $('s6-clear').addEventListener('click', () => {
     s6ResetBuckets();
@@ -1256,6 +1243,7 @@ function initS6() {
 
 /* ---------- 对账入口：TRIG.set(stepKey, θ弧度) ---------- */
 TRIG.set = function (key, thetaRad) {
+  if(!Number.isFinite(thetaRad)||!['s0','s1','s2','s3','s4','s5','s6'].includes(key))return false;
   const th = norm(thetaRad);
   if (key === 's0') {
     S0.phi = th; S0.theta = th;
@@ -1275,11 +1263,29 @@ TRIG.set = function (key, thetaRad) {
     traceReset(S5.trace); traceAdvance(S5.trace, th);
     s5DrawAll(); s5Readouts();
   } else if (key === 's6') {
-    s6Apply(th);
+    s6Manual(th);
   }
+  return true;
 };
 
+/* Reading context only: no trace/quiz/profile or autoplay restoration. */
+let tangentReadingTimer=null;
+function queueTangentReading(){clearTimeout(tangentReadingTimer);tangentReadingTimer=setTimeout(saveTangentReading,180);}
+function validTangentReading(v){return !!v&&typeof v==='object'&&!Array.isArray(v)&&v.version===1&&v.lesson==='trig'&&[v.s1,v.s4,v.s6].every(x=>x&&typeof x==='object'&&!Array.isArray(x)&&Number.isFinite(x.theta)&&x.theta>=0&&x.theta<TAU)&&['deg','rad'].includes(v.s1.unit)&&typeof v.s6.chain==='boolean';}
+function restoreTangentReading(){try{const v=history.state&&history.state.knowledgeGeometryReading;if(validTangentReading(v)){S1.theta=v.s1.theta;S1.unit=v.s1.unit;S4.theta=v.s4.theta;S6.theta=v.s6.theta;S6.chain=v.s6.chain;S6.playing=false;}}catch(_){}}
+function saveTangentReading(){clearTimeout(tangentReadingTimer);tangentReadingTimer=null;try{const prior=history.state;history.replaceState({...((prior&&typeof prior==='object'&&!Array.isArray(prior))?prior:{}),knowledgeGeometryReading:{version:1,lesson:'trig',s1:{theta:S1.theta,unit:S1.unit},s4:{theta:S4.theta},s6:{theta:S6.theta,chain:S6.chain}}},'');}catch(_){}}
+function syncTangentControls(){s4SyncSlider();for(const unit of ['deg','rad']){const b=$('s1-unit-'+unit);b.classList.toggle('active',S1.unit===unit);b.setAttribute('aria-pressed',String(S1.unit===unit));}S6.playing=false;s6Labels();$('s6-toggle').classList.remove('active');$('s6-chain').classList.toggle('active',S6.chain);}
+function tangentKeys(e,theta,degrees,apply){const d={ArrowUp:1,ArrowRight:1,ArrowDown:-1,ArrowLeft:-1}[e.key];if(d){e.preventDefault();apply(tangentStep(theta,d*degrees));}else if(e.key==='Home'||e.key==='End'){e.preventDefault();apply(0);}}
+TRIG.tangentAt=tangentAt;TRIG.tangentStep=tangentStep;
 /* ---------- 启动（i18n 的 applyLang 已先行运行） ---------- */
 document.addEventListener('DOMContentLoaded', () => {
-  initS0(); initS1(); initS2(); initS3(); initS4(); initS5(); initS6();
+  restoreTangentReading();initS0(); initS1(); initS2(); initS3(); initS4(); initS5(); initS6();syncTangentControls();
+  // Persist completed native edits before a possible immediate reload; previews stay debounced.
+  for(const id of ['s1-canvas','s4-canvas','s6-canvas'])for(const event of ['pointerup','pointercancel','lostpointercapture'])$(id).addEventListener(event,saveTangentReading);
+  for(const id of ['s1-canvas','s4-canvas','s6-canvas','s4-th'])$(id).addEventListener('keyup',e=>{if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Home','End'].includes(e.key))saveTangentReading();});
+  $('s4-th').addEventListener('change',saveTangentReading);
+  document.querySelectorAll('[data-snap],[data-tandeg],#s1-unit-deg,#s1-unit-rad,#s6-chain,#s6-toggle').forEach(el=>el.addEventListener('click',saveTangentReading));
+  document.querySelectorAll('a[href]').forEach(a=>a.addEventListener('click',()=>{if(!a.getAttribute('href').startsWith('#'))saveTangentReading();}));
+  window.addEventListener('pagehide',()=>{S6.playing=false;saveTangentReading();});
+  window.addEventListener('pageshow',()=>requestAnimationFrame(()=>{syncTangentControls();s1Draw();s1Readouts();s4Draw();s4Readout();s6Draw();s6Readout();}));
 });

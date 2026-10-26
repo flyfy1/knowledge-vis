@@ -1,0 +1,981 @@
+{
+  "scope": "File/directory link targets only, not dynamic headings or external sources",
+  "checks": [
+    {
+      "from": "atlas/README.md",
+      "target": "../WORKFLOW.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../UI-I18N-SPEC.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../CONCEPT-MAP.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/math-physics-integration-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/tangent-domain-design-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/tangent-domain-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/nightly-math-physics-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/lens-focus-design-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/lens-focus-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/refraction-normal-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/pinhole-geometry-design-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/pinhole-geometry-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/complex-keyboard-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/nightly-math-physics-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-audit-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-motion-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-response-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/frozen-bubble-verification.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/math-physics-integration-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/tangent-domain-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/lens-focus-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/refraction-normal-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/pinhole-geometry-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/complex-keyboard-design-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/complex-keyboard-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-audit-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/nightly-math-physics-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-work-design-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-work-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-foundations-design-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-foundations-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-continuity-design-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-continuity-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-travel-design-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-travel-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-rates-design-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-rates-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-response-design-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-response-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-motion-design-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-motion-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/math-physics-atlas-design-review.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/math-physics-atlas-verification.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/BRIEF.md",
+      "target": "../specs/reviews/atlas-work-design-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/BRIEF.md",
+      "target": "../specs/reviews/atlas-foundations-design-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/BRIEF.md",
+      "target": "../specs/reviews/atlas-continuity-design-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/BRIEF.md",
+      "target": "README.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/BRIEF.md",
+      "target": "../specs/reviews/atlas-motion-design-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/BRIEF.md",
+      "target": "../specs/reviews/atlas-response-design-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/BRIEF.md",
+      "target": "../specs/reviews/atlas-rates-design-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/BRIEF.md",
+      "target": "../specs/reviews/atlas-travel-design-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "CONCEPT-MAP.md",
+      "target": "atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "CONCEPT-MAP.md",
+      "target": "specs/reviews/refraction-normal-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-continuity-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-continuity-verification-20261026.md",
+      "target": "atlas-foundations-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-continuity-verification-20261026.md",
+      "target": "atlas-work-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-continuity-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-foundations-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-foundations-verification-20261026.md",
+      "target": "atlas-work-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-foundations-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "target": "nightly-math-physics-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "target": "atlas-audit-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "target": "pinhole-geometry-verification-20261026/acceptance-summary.json",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "target": "pinhole-geometry-verification-20261026/independent/actual-final-review.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "target": "pinhole-geometry-verification-20261026/cold-ui/postfix-ui-review.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "target": "refraction-normal-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "target": "lens-focus-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "tangent-domain-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "lens-focus-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "refraction-normal-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "pinhole-geometry-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "complex-keyboard-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "nightly-math-physics-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../frozen-bubble/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../power-converters/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../atlas/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../fourier/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../convolution/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../mandelbrot/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../control/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../sampling/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../trig/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../montecarlo/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../laplace/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../bayes/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../clt/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../ztransform/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../eigen/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../entropy/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../lti/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../freqresp/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../modulation/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../kalman/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../fractions/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../pythagoras/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../area-model/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../perimeter-area/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../division-remainder/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../linear-functions/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../symmetry-rotation/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../parabola/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../velocity-vt/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../integral/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../reflection-refraction/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../derivative/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../lens/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../interference/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../exp-log/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../circle-angles/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../complex-numbers/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../standing-wave/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../negative-numbers/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../pinhole-camera/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../space-diagonal/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../coordinate-plane/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../lever-pulley/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../equations-balance/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../population-growth/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../gradient-descent/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../particles-states/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../day-night-rotation/",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "pinhole-geometry-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "refraction-normal-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "lens-focus-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "atlas-audit-verification-20261026/coverage.json",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "atlas-audit-verification-20261026/final-results.json",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-audit-verification-20261026.md",
+      "target": "atlas-audit-verification-20261026/independent/final-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/complex-keyboard-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/complex-keyboard-verification-20261026.md",
+      "target": "nightly-math-physics-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/complex-keyboard-verification-20261026.md",
+      "target": "atlas-audit-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/complex-keyboard-verification-20261026.md",
+      "target": "complex-keyboard-design-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/complex-keyboard-verification-20261026.md",
+      "target": "pinhole-geometry-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/complex-keyboard-verification-20261026.md",
+      "target": "refraction-normal-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/complex-keyboard-verification-20261026.md",
+      "target": "lens-focus-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/complex-keyboard-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/complex-keyboard-verification-20261026.md",
+      "target": "complex-keyboard-verification-20261026/acceptance-summary.json",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/complex-keyboard-verification-20261026.md",
+      "target": "complex-keyboard-verification-20261026/independent/acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/complex-keyboard-verification-20261026.md",
+      "target": "complex-keyboard-verification-20261026/pure-preserved.json",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/refraction-normal-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/refraction-normal-verification-20261026.md",
+      "target": "nightly-math-physics-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/refraction-normal-verification-20261026.md",
+      "target": "refraction-normal-design-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/refraction-normal-verification-20261026.md",
+      "target": "refraction-normal-verification-20261026/acceptance-summary.json",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/refraction-normal-verification-20261026.md",
+      "target": "refraction-normal-verification-20261026/independent/final-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/refraction-normal-verification-20261026.md",
+      "target": "refraction-normal-verification-20261026/cold-ui/postfix-ui-review.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/refraction-normal-verification-20261026.md",
+      "target": "refraction-normal-verification-20261026/serial-regressions.json",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/refraction-normal-verification-20261026.md",
+      "target": "lens-focus-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/refraction-normal-verification-20261026.md",
+      "target": "tangent-domain-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/refraction-normal-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-motion-verification-20261025.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-motion-verification-20261025.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-motion-verification-20261025.md",
+      "target": "atlas-response-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-motion-verification-20261025.md",
+      "target": "atlas-rates-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-motion-verification-20261025.md",
+      "target": "atlas-travel-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-motion-verification-20261025.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/nightly-math-physics-20261026.md",
+      "target": "tangent-domain-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/nightly-math-physics-20261026.md",
+      "target": "atlas-work-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/nightly-math-physics-20261026.md",
+      "target": "tangent-domain-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/nightly-math-physics-20261026.md",
+      "target": "lens-focus-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/nightly-math-physics-20261026.md",
+      "target": "pinhole-geometry-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/nightly-math-physics-20261026.md",
+      "target": "refraction-normal-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/nightly-math-physics-20261026.md",
+      "target": "complex-keyboard-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/nightly-math-physics-20261026.md",
+      "target": "atlas-continuity-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/nightly-math-physics-20261026.md",
+      "target": "frozen-bubble-verification.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/nightly-math-physics-20261026.md",
+      "target": "math-physics-integration-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/nightly-math-physics-20261026.md",
+      "target": "tangent-domain-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/nightly-math-physics-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/nightly-math-physics-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/nightly-math-physics-20261026.md",
+      "target": "atlas-audit-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-response-verification-20261025.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-response-verification-20261025.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-response-verification-20261025.md",
+      "target": "atlas-rates-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-response-verification-20261025.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-travel-verification-20261025.md",
+      "target": "atlas-continuity-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-travel-verification-20261025.md",
+      "target": "atlas-work-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-travel-verification-20261025.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/lens-focus-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/lens-focus-verification-20261026.md",
+      "target": "nightly-math-physics-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/lens-focus-verification-20261026.md",
+      "target": "lens-focus-design-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/lens-focus-verification-20261026.md",
+      "target": "lens-focus-verification-20261026/acceptance-summary.json",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/lens-focus-verification-20261026.md",
+      "target": "lens-focus-verification-20261026/independent/final-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/lens-focus-verification-20261026.md",
+      "target": "lens-focus-verification-20261026/cold-ui/postfix-ui-review.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/lens-focus-verification-20261026.md",
+      "target": "lens-focus-verification-20261026/serial-regressions.json",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/lens-focus-verification-20261026.md",
+      "target": "tangent-domain-verification-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/lens-focus-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-rates-verification-20261025.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-rates-verification-20261025.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-rates-verification-20261025.md",
+      "target": "atlas-travel-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-rates-verification-20261025.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/math-physics-integration-verification-20261026.md",
+      "target": "nightly-math-physics-20261026.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/math-physics-integration-verification-20261026.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/math-physics-integration-verification-20261026.md",
+      "target": "math-physics-integration-verification-20261026/cumulative-files.json",
+      "exists": true
+    }
+  ],
+  "missing": []
+}

@@ -1,0 +1,35 @@
+{
+  "results": [
+    {
+      "lang": "EN",
+      "desktopText": "Step 4 · The frequency view\n\nAliasing in the frequency domain: the spectrum clones itself\n\nA real sine has positive and negative frequency components. This diagram shows only positive-frequency peak positions, not a complete magnitude/phase spectrum. Ideal uniform sampling repeats the two-sided spectrum every fₛ Hz. With known B<fₛ/2, ideal reconstruction selects the two-sided baseband. The displayed [0,fₛ/2] is only its positive half; peak locations alone do not recover a waveform. Drag fₛ to see copies fold into this region. Compare the Fourier spectrum → Convert on the Z page: spacing fₛ Hz or 2π/T rad/s →\n\nSignal frequency f (Hz) 13\nSample rate f_s (Hz) 10\n\nCopy spacing = f_s = 10 Hz · the peak inside the baseband [0, 5.0 Hz] sits at 3.0 Hz — the same number as the time-domain fake wave in step 2.\n\nNotice what aliasing really is: not “the signal got a bit dirty”, but high-frequency information moved bodily into the low frequencies, impersonating them. Once sampling is done, the true peak and the alias peak look identical — no filter afterwards can separate them. Prevention has to happen before sampling."
+    },
+    {
+      "lang": "EN",
+      "mobileWidth": 320,
+      "documentWidth": 320,
+      "paragraph": "A real sine has positive and negative frequency components. This diagram shows only positive-frequency peak positions, not a complete magnitude/phase spectrum. Ideal uniform sampling repeats the two-sided spectrum every fₛ Hz. With known B<fₛ/2, ideal reconstruction selects the two-sided baseband. The displayed [0,fₛ/2] is only its positive half; peak locations alone do not recover a waveform. Drag fₛ to see copies fold into this region. Compare the Fourier spectrum → Convert on the Z page: spacing fₛ Hz or 2π/T rad/s →",
+      "paragraphFont": "32px"
+    },
+    {
+      "lang": "中",
+      "desktopText": "第 4 步 · 换个视角\n\n频域看混叠：频谱在自我复制\n\n一个实正弦有正、负频率分量；此图仅画正频率峰的位置，不是完整幅相谱。理想均匀采样使双边频谱以 fₛ Hz 为间隔复制；已知带限 B<fₛ/2 时，选取双边基带并作理想重建。这里显示的 [0,fₛ/2] 只是正频率那一半，不能单靠峰位置还原波形。拖 fₛ 看复制峰怎样折入此区。到傅里叶页比较频谱 → 到Z页换算：复制间距：fₛ Hz，或对应的 2π/T rad/s →\n\n信号频率 f（Hz） 13\n采样率 f_s（Hz） 10\n\n副本间距 = f_s = 10 Hz · 基带 [0, 5.0 Hz] 内的峰在 3.0 Hz —— 与第 2 步时域假波同数。\n\n注意混叠的本质：它不是\"信号被弄脏了一点\"，而是高频的信息被原样搬进低频、还冒充低频。采样一旦完成，原峰和混叠峰长得一模一样，事后没有任何滤波器能把它们分开——只能在采样之前防。"
+    },
+    {
+      "lang": "中",
+      "mobileWidth": 320,
+      "documentWidth": 320,
+      "paragraph": "一个实正弦有正、负频率分量；此图仅画正频率峰的位置，不是完整幅相谱。理想均匀采样使双边频谱以 fₛ Hz 为间隔复制；已知带限 B<fₛ/2 时，选取双边基带并作理想重建。这里显示的 [0,fₛ/2] 只是正频率那一半，不能单靠峰位置还原波形。拖 fₛ 看复制峰怎样折入此区。到傅里叶页比较频谱 → 到Z页换算：复制间距：fₛ Hz，或对应的 2π/T rad/s →",
+      "paragraphFont": "32px"
+    },
+    {
+      "lang": "EN",
+      "z5": "Step 5 · Facing Laplace\n\nT sets the tightness of the roll; the strips decide what is lost\n\nDrag a pole s=σ+jω with σ<0 and inspect the sampled exponential mode z=e^{sT}: |z|=e^{σT}, angleΩ=ωT. Here T is in seconds, σ in s⁻¹ and ω in rad/s; Ω is the angle increment per sample. The principal strip −π/T<ω≤π/T spans 2π/T along the imaginary-frequency direction and gives one nonrepeating turn. This drawing restricts σ<0, so its images lie inside the unit circle; it does not depict the whole z-plane. Turn on twins to see equal mappings for ω separated by ±2π/T. Samples alone cannot distinguish these frequencies.\n\nT · sampling period (s) 0.50\nShow the twin from the next strip\n\npole s = −0.80 − j·3.00 (σ:s⁻¹, ω:rad/s) · T = 0.50 s · image z = esT = 0.047 − j·0.669 · |z| = eσT = 0.670 · angle increment Ω = ωT = −1.50 rad/sample\n\nUnits: fₛ=1/T. The sampling page’s copy spacing is fₛ Hz, or 2π/T rad/s after conversion; these are the same spacing in different units. Continuous f Hz gives ω=2πf rad/s and sampled digital Ω=ωT=2πf/fₛ rad/sample (mod 2π). Baseband uniqueness needs a known ideal bandlimit with |ω|<π/T. This pole-mode map is not a general discretized transfer function for an entire analog system.\n\nOn the sampling page, aliasing was “fake waves”: sample too lazily and high frequencies sneak in disguised as low ones. From this page it is clearer: there is no disguise — when the plane rolls up they genuinely land on the same point, and the z-plane cannot tell them apart, just as a clock cannot tell 3 o’clock from 15 o’clock →\n\nSampling & aliasing →"
+    },
+    {
+      "lang": "中",
+      "z5": "第 5 步 · 对表\n\nT 决定卷得多紧，条带决定丢了谁\n\n左边拖动一个σ<0的极点 s=σ+jω，右边显示指数模态的采样映射 z=e^{sT}：|z|=e^{σT}、角度Ω=ωT。此步约定 T 以秒计，σ单位s⁻¹，ω单位rad/s；Ω是每个样本的相角增量。主条带 −π/T<ω≤π/T 沿虚部ω方向宽2π/T，对应一周不重复角度；本图限定σ<0，所以像在单位圆内，不代表画出了整个z平面。打开孪生点，看ω相差±2π/T时映射重合；仅靠样本不能识别这类频率。\n\nT · 采样周期（s） 0.50\n显示隔壁条带的孪生点\n\n极点 s = −0.80 − j·3.00（σ:s⁻¹，ω:rad/s）· T = 0.50 s · 像 z = esT = 0.047 − j·0.669 · |z| = eσT = 0.670 · 角度增量 Ω = ωT = −1.50 rad/样本\n\n单位对照：fₛ=1/T，采样页的复制间距是 fₛ Hz；换成角频率就是2π/T rad/s，不是两个不同结果。连续 f Hz 对应 ω=2πf rad/s，采样后数字 Ω=ωT=2πf/fₛ rad/样本（模2π）。已知理想带限且 |ω|<π/T 时才有基带唯一性；本图的极点模态映射不是整台模拟系统的通用离散化传递函数。\n\n采样页里混叠是「假波」：频率太高、采样太懒，高频装成低频混进来。在这页看得更清楚：它根本不是「装」，是卷的时候真的落到了同一个点上——z 平面分不清它们，就像钟表分不清 3 点和 15 点 →\n\n采样与混叠 →"
+    }
+  ],
+  "errors": []
+}

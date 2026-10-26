@@ -1,0 +1,5 @@
+page.waitForFunction: Timeout 30000ms exceeded.
+    at /Users/songyy/Documents/knowledge-vis/atlas/tests/signal-domain-browser.cjs:27:509 {
+  log: [],
+  name: 'TimeoutError'
+}

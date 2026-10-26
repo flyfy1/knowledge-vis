@@ -1,0 +1,28 @@
+{
+  "pass": true,
+  "checks": 148,
+  "errors": [],
+  "requests": [],
+  "optionalBrowserRequests": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "location": {
+        "url": "http://127.0.0.1:18775/favicon.ico",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "scope": [
+    "Snell ray/formula sharing and actual absent/present ray strokes",
+    "critical exact preset versus rounded input,normal and repeated branch transitions",
+    "native keyboard and pointer,schema/foreign history,Back and explicit reload,denied browser storage",
+    "atlas/trig source Back,bilingual320/390/1280,actual2x and forcedcolors"
+  ],
+  "limits": [
+    "No physical phone/screen-reader speech/human learning-effect test",
+    "No optical power,evanescent field,physical propagation time or full virtual-image solver"
+  ]
+}

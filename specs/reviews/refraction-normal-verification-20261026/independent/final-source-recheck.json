@@ -1,0 +1,59 @@
+{
+  "runtimeFiles": [
+    {
+      "file": "reflection-refraction/app.js",
+      "actualSHA": "ad2ab6ec02525a199ecfae2f26110a1cf353f85bfb02c3cb1ae2f918b7f094da",
+      "stageMatch": true
+    },
+    {
+      "file": "reflection-refraction/index.html",
+      "actualSHA": "bd631a52ca68c78cc596c028598a6fbd49305e3f37e53aa351ba45b06f7de40e",
+      "stageMatch": true
+    },
+    {
+      "file": "reflection-refraction/i18n.js",
+      "actualSHA": "39833eaf73713dcd791cca8349890c43d17e30731b4ab258e87dd7353d9172cb",
+      "stageMatch": true
+    },
+    {
+      "file": "reflection-refraction/style.css",
+      "actualSHA": "1ce3fc91a25446e69a6fe3af424ca82aabe21aa63d895743be9eef2cee3ff8fa",
+      "stageMatch": true
+    },
+    {
+      "file": "atlas/data.js",
+      "actualSHA": "33d62154835a734bbfc8612d0d73ba911afce1df6844046f289f94a225e8f9c0",
+      "stageMatch": true
+    },
+    {
+      "file": "trig/index.html",
+      "actualSHA": "bb679425b3593d53d61d217be5e7b4a54877ad36e36545b41c93bf4f18b3a364",
+      "stageMatch": true
+    },
+    {
+      "file": "trig/i18n.js",
+      "actualSHA": "1940a81cfc1be00f271d8c8b035443e0324038b7ea83ce97ef4fce48146e3715",
+      "stageMatch": true
+    },
+    {
+      "file": "trig/style.css",
+      "actualSHA": "404a1994880f3576af5a93e959614a8d4ad4633b5c6f3a38b2f6959d4514b54c",
+      "stageMatch": true
+    }
+  ],
+  "allStageMatch": true,
+  "sourceAndNumericalMustFix": 0,
+  "images": {
+    "reviewed": [
+      "../cold-ui/09-postfix-en-320-2x-forced-focus.png",
+      "../cold-ui/10-postfix-en-320-2x-forced-readout.png",
+      "../cold-ui/11-postfix-zh-320-2x-forced-focus.png",
+      "../cold-ui/12-postfix-zh-320-2x-forced-readout.png"
+    ],
+    "result": "PASS visible text/focus/critical-rounding explanation in supplied 320px actual2x forced-color viewport captures",
+    "provenance": "Captured by separate independent UI-only operator; inspected using view_image by this source-first reviewer. No Chrome operation by this reviewer.",
+    "fullpageLimitation": "Earlier owner full-page images were only overview evidence; resized images were not used to certify enlarged-text detail."
+  },
+  "method": "source/BRIEF first, isolated VM calculations, parent-browser JSON review; separate cold UI-only reviewer",
+  "reviewConclusion": "PASS within source/numerical/schema/parity/supplied-image and method-review scope; zero remaining must-fix. Separate UI-only report and owner browser/regression evidence remain separately attributed."
+}

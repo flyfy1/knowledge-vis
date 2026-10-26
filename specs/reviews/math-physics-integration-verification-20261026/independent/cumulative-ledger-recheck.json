@@ -1,0 +1,127 @@
+{
+  "pass": true,
+  "cumulativeTargets": 120,
+  "previousReconstructedTargets": 112,
+  "addedTargets": [
+    {
+      "file": "atlas/tests/travel-browser.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/archive-applied.json",
+          "recordedSHA256": "c45c1926e3cfce5976caa5581389d525db1b982d2c285e4fb3f77ddfddd51946"
+        }
+      ],
+      "latestReceipt": "atlas-travel",
+      "latestRecordedSHA256": "c45c1926e3cfce5976caa5581389d525db1b982d2c285e4fb3f77ddfddd51946",
+      "exists": true,
+      "currentSHA256": "c45c1926e3cfce5976caa5581389d525db1b982d2c285e4fb3f77ddfddd51946",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "specs/reviews/atlas-continuity-design-20261026.md",
+      "receipts": [
+        {
+          "iteration": "atlas-continuity",
+          "receipt": "atlas-continuity/archive-applied.json",
+          "recordedSHA256": "c9fd5c039efdd595759b8c9c6987dd58dbfdfcf2ee7ebdb5ddc19a84f459d363"
+        }
+      ],
+      "latestReceipt": "atlas-continuity",
+      "latestRecordedSHA256": "c9fd5c039efdd595759b8c9c6987dd58dbfdfcf2ee7ebdb5ddc19a84f459d363",
+      "exists": true,
+      "currentSHA256": "c9fd5c039efdd595759b8c9c6987dd58dbfdfcf2ee7ebdb5ddc19a84f459d363",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-foundations-design-20261026.md",
+      "receipts": [
+        {
+          "iteration": "atlas-foundations",
+          "receipt": "atlas-foundations/archive-applied.json",
+          "recordedSHA256": "a551c22736d5d8cc3934f512358d8e6dd3b5a026210273cbb1bcd6f215a1b422"
+        }
+      ],
+      "latestReceipt": "atlas-foundations",
+      "latestRecordedSHA256": "a551c22736d5d8cc3934f512358d8e6dd3b5a026210273cbb1bcd6f215a1b422",
+      "exists": true,
+      "currentSHA256": "a551c22736d5d8cc3934f512358d8e6dd3b5a026210273cbb1bcd6f215a1b422",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-travel-design-20261025.md",
+      "receipts": [
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/archive-applied.json",
+          "recordedSHA256": "7f577b9eafaf0239d5cf334a3b2be9b63aba7ab3ed9093dcd1997e7c14c3fc30"
+        }
+      ],
+      "latestReceipt": "atlas-travel",
+      "latestRecordedSHA256": "7f577b9eafaf0239d5cf334a3b2be9b63aba7ab3ed9093dcd1997e7c14c3fc30",
+      "exists": true,
+      "currentSHA256": "7f577b9eafaf0239d5cf334a3b2be9b63aba7ab3ed9093dcd1997e7c14c3fc30",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-work-design-20261026.md",
+      "receipts": [
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/archive-applied.json",
+          "recordedSHA256": "1d99edf3696a7bd6d7bc84a9f446c225a2f36f18abd4d0e9bce225ef19f1ac6a"
+        }
+      ],
+      "latestReceipt": "atlas-work",
+      "latestRecordedSHA256": "1d99edf3696a7bd6d7bc84a9f446c225a2f36f18abd4d0e9bce225ef19f1ac6a",
+      "exists": true,
+      "currentSHA256": "1d99edf3696a7bd6d7bc84a9f446c225a2f36f18abd4d0e9bce225ef19f1ac6a",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-work-verification-20261026.md",
+      "receipts": [
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/archive-applied.json",
+          "recordedSHA256": "efd8874b777ea98905344f72c9878aaaf97a35474b8d675aa4db7da196c50396"
+        }
+      ],
+      "latestReceipt": "atlas-work",
+      "latestRecordedSHA256": "efd8874b777ea98905344f72c9878aaaf97a35474b8d675aa4db7da196c50396",
+      "exists": true,
+      "currentSHA256": "efd8874b777ea98905344f72c9878aaaf97a35474b8d675aa4db7da196c50396",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/frozen-bubble-design.md",
+      "receipts": [],
+      "provenance": "Initial frozen lesson design/verification authored in this task before receipt chain; original apply hash not recorded, no fabricated historic hash",
+      "exists": true,
+      "currentSHA256": "0ddc2ea9477e3264d9e0d9e0549d601a94525773e433d52e7ab6342203e502dd",
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/frozen-bubble-verification.md",
+      "receipts": [],
+      "provenance": "Initial frozen lesson design/verification authored in this task before receipt chain; original apply hash not recorded, no fabricated historic hash",
+      "exists": true,
+      "currentSHA256": "5af44d10e287fc6e96c4bd8dd3c406bc08a88f58dd07bcb72de17d0461d631d2",
+      "kind": "principal-review"
+    }
+  ],
+  "allCurrentHashesMatch": true,
+  "allRecordedLatestReceiptHashesMatch": true,
+  "limits": "Eight added ledger targets, not eight new product files: five early principal design/verification documents and one existing travel browser test retain real archive receipts; two original bubble principal reports assert current existence/hash only, without fabricated original apply hashes. Distinct from54 current integration guarded/archive targets.",
+  "addedKindCounts": {
+    "receiptBackedPrincipalDocuments": 5,
+    "receiptBackedExistingTest": 1,
+    "originalBubblePrincipalDocumentsWithoutOriginalReceipt": 2
+  }
+}

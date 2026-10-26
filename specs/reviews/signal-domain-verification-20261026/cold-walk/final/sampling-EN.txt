@@ -1,0 +1,141 @@
+← Knowledge Index
+
+Sampling & Aliasing
+
+Why can a wheel turn backwards on video? How do equally spaced samples differ from the continuous world between them? Compare sine, wheel and image examples, then test reconstruction under a known bandlimit.
+
+中
+EN
+0 Hook
+1 Sampling = peeking
+2 A fake wave is born
+3 The Nyquist line
+4 Aliasing in frequency
+5 Aliasing everywhere
+6 Squint first
+
+Step 0 · Get fooled first
+
+Which way is this wheel actually turning?
+
+The wheel below turns at a steady 2.5 revolutions per second and never changes. The only thing you may touch is the camera’s frame rate: drag the slider and watch it slow down, freeze, and then spin backwards. The wheel never changed — the sampling did. Every camera, and every eye, only peeks at the world once in a while.
+
+Camera frame rate f_s (fps) 14
+
+True speed 2.5 rev/s (constant) · spoke-passing frequency 15 Hz · frame rate 14 fps → apparent speed 0.17 rev/s · forward, same direction
+
+The orange dot on the rim marks the wheel’s true position — it keeps turning honestly, never pausing. The apparent speed is not a guess: fold the spoke-passing frequency with falias = |f − k·fs| and divide by the spoke count, and you get exactly the speed your eyes report. Step 5 checks this formula on the spot.
+
+Start exploring ↓
+
+Step 1 · What sampling is
+
+Can a row of dots remember a wave?
+
+This step uses an ideal continuous sine. Sampling records x[n] = x(tₙ) at tₙ = n/fₛ seconds: n is an integer index, f is cycles per second (Hz), and fₛ counts samples per second. The dots lie on the source. Straight joins or a hold are display interpolations, usually different from the continuous source. More samples can improve these approximations; exact ideal reconstruction also needs a known bandlimit and a suitable reconstruction filter.
+
+Signal frequency f (Hz) 3
+Sample rate f_s (Hz) 11
+Connect with lines
+Hold (steps)
+
+f = 3.0 Hz · f_s = 11 Hz · samples per period = 3.7
+
+Lower fₛ and compare straight joins with a hold: the same source samples give different display curves. These are approximations. Removing the joins does not remove ambiguity: different continuous waves can share every sample. Next, compare two such sines directly.
+
+Step 2 · A fake is born
+
+Same samples, different continuous waves
+
+First, the official name for what is about to happen: aliasing — when the peeks are too sparse, a fast wave gets read as a slow one. Push fs below f and look again: the samples still all sit on the original wave, but by themselves they line up into a different, slower wave. The rose-pink “fake wave” passes through every single sample exactly — from the dots alone there is no way to tell it apart from the original. Its frequency is decided by one formula: fold f by fs, over and over, into the half-room [0, fs/2]. The fold has a direction, too: when the signed folded frequency g is negative (9 Hz sampled at 10 Hz, or 14 Hz at 20 Hz), the fake wave comes out mirrored, its phase flipped — the same event as the wheel turning backwards in step 0, except here it is the waveform that flips.
+
+Signal frequency f (Hz) 9
+Sample rate f_s (Hz) 10
+Classic slow wave: f=9, f_s=10
+Pinned to one phase: f=f_s=10
+Folded: f=14, f_s=20
+No aliasing: f=3, f_s=25
+
+falias = |f − k·fs|
+
+k is the integer that lands the result in [0, fs/2]. Every readout, spectrum position and audio pitch on this page is computed with this one formula — steps 4 and 5 settle the accounts one by one.
+
+f = 9.0 Hz · f_s = 10.0 Hz · k = 1 · f_alias = |9.0 − 1×10.0| = 1.0 Hz — that is the fake wave
+
+The nastiest preset is “pinned to one phase”: when f is an exact multiple of fs, every peek lands on exactly the same phase, all dots collapse to a single value — no matter how fast the wave, it looks frozen. That is the truth behind the “stopped” wheel in step 0.
+
+Step 3 · The line
+
+The Nyquist line: twice, and not a hair less
+
+This step compares ideal single tones. The Nyquist condition assumes a known bandlimit: if all components satisfy |f| ≤ B and fₛ > 2B, the complete uniform sample sequence determines the signal within that band. Here B=f: sweep fₛ across 2f. Without restricting candidate frequencies, higher aliases can still share every sample. Straight joins are display interpolation; their varying height does not decide exact reconstruction. Pin fₛ=2f and change phase to inspect the boundary ambiguity.
+
+Signal frequency f (Hz) 4
+Sample rate f_s (Hz) 10
+Sampling phase φ (°) 90
+Pin to exactly 2f
+
+f_s = 10.0 Hz > 2f = 8.0 Hz: this tone is inside baseband; uniqueness still assumes a known bandlimit.
+
+At the boundary x[n] = A(−1)ⁿ sinφ. With φ=90° the dots alternate at full amplitude; with φ=0° they vanish. Even nonzero dots determine only A sinφ, not A and φ separately: A=1, φ=30° and A=0.5, φ=90° give identical samples. Nonzero dots are no guarantee of recovery. This page uses strict fₛ>2B with ideal uniform, complete sampling; quantization, noise and finite-record errors are omitted. Basis: TI · sampling and reconstruction →
+
+Step 4 · The frequency view
+
+Aliasing in the frequency domain: the spectrum clones itself
+
+A real sine has positive and negative frequency components. This diagram shows only positive-frequency peak positions, not a complete magnitude/phase spectrum. Ideal uniform sampling repeats the two-sided spectrum every fₛ Hz. With known BCompare the Fourier spectrum → Convert on the Z page: spacing fₛ Hz or 2π/T rad/s →
+
+Signal frequency f (Hz) 13
+Sample rate f_s (Hz) 10
+
+Copy spacing = f_s = 10 Hz · the peak inside the baseband [0, 5.0 Hz] sits at 3.0 Hz — the same number as the time-domain fake wave in step 2.
+
+Notice what aliasing really is: not “the signal got a bit dirty”, but high-frequency information moved bodily into the low frequencies, impersonating them. Once sampling is done, the true peak and the alias peak look identical — no filter afterwards can separate them. Prevention has to happen before sampling.
+
+Step 5 · Aliasing everywhere
+
+It is everywhere in daily life
+
+Three exhibits, one formula. ①Sound: sample a high tone at a low rate, point by point and for real, then play it back — what you hear is not the original, it is the fake wave. ②Images: decimate a fine striped picture pixel by pixel and a moiré grows by itself. ③The wheel: back to step 0, checking the apparent-speed formula on the spot.
+
+① Audio
+② Image moiré
+③ Checking the wheel
+Source frequency f (Hz) 6000
+Nominal sample rate f_s
+44.1 kHz
+16 kHz
+8 kHz
+6 kHz
+4 kHz
+▶ Play the sampled result
+▶ Play the original frequency
+
+Source f = 6000 Hz · sample rate f_s = 8000 Hz · k = 1 · formula alias f_alias = 2000 Hz · measured zero-crossings of the buffer ≈ 2000 Hz
+
+Full disclosure: the plot above shows the first 240 sample points of the playback buffer, each computed as the sine value at its true sampling instant t = n/fs — not a low-frequency wave faking it. The pitch you hear is the zero-crossing rate of those very points (the “measured zero-crossings” in the readout is exactly the check a reviewer would run). Silent by default, click to play, volume kept low. Above 10 kHz some people cannot hear the original at all — but its alias falls back into the audible range, where everyone can hear it. Special case: when f is an exact multiple of fs (f = fs, 2fs, …), every sample lands on the same phase (a zero crossing of the sine), so the buffer is all zeros and playback is silence — also true.
+
+Step 6 · Finale
+
+Before you sample, learn to squint
+
+Anti-aliasing suppresses high frequencies before decimation. Both sides use the same source and decimator; the right side first applies a finite box convolution twice. Compare how much moiré weakens and how much detail is lost. A box filter has sidelobes and cannot guarantee zero aliasing; results depend on the pattern and stride. This image example is not an ideal brick-wall low-pass.
+
+Direct decimation
+
+Blur first, then decimate
+
+Decimation stride (take one pixel every …) 6
+Scene + fine stripes
+Vertical stripes
+
+Stride 6 px · both sides keep 74×47 samples · the right side applies a box blur (radius 3 px, two passes) before decimating
+
+Audio also needs anti-alias filtering before analog-to-digital conversion. For a 20 kHz passband and 44.1 kHz sample rate, the Nyquist frequency is 22.05 kHz, leaving a 2.05 kHz transition region for a practical filter to attenuate; it does not cut abruptly at 20 kHz. This illustrates a bandwidth budget, not the historical derivation of 44.1 kHz. Stopband attenuation, hearing limits and hardware performance need separate specifications.
+
+The sampling theorem does not really say “sample as fast as you can”. It says “decide what to give up first, then sample”: you surrender the high-frequency detail precisely so it cannot dress up as low frequency and lie to you. Two threads from this page — why spectra clone themselves, and why blur can save the day — are the home turf of the Fourier and convolution pages; feel free to go back and compare notes.
+
+← Back to Fourier: why spectra clone themselves
+On to convolution: what the blur kernel is doing →
+
+visual.integ.life · Sampling & Aliasing — one interaction at a time

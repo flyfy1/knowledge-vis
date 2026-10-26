@@ -1,0 +1,29 @@
+{
+  "records": [
+    {
+      "field": "groups",
+      "errors": [
+        "groups: object record required"
+      ]
+    },
+    {
+      "field": "nodes",
+      "errors": [
+        "nodes: object record required"
+      ]
+    },
+    {
+      "field": "edges",
+      "errors": [
+        "edges: object record required"
+      ]
+    },
+    {
+      "field": "trails",
+      "errors": [
+        "trails: object record required"
+      ]
+    }
+  ],
+  "actualErrors": []
+}

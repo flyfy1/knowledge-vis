@@ -9,7 +9,7 @@
       线 3 出射平行），三线交点与公式像点在数据坐标里恒重合（自查断言），
       线性映射到像素后偏差 ≤2px（浏览器实测断言）。
    3. 数值显示口径全页统一：fmtNum——两小数内精确则原样（整数优先），
-      否则 ≈ + 一位小数；负号一律 U+2212。
+      否则 ≈ + 六位有效数字；负号一律 U+2212。
    对账入口：window.LENS（imageOf / zoneOf / rayLines / intersect / geom / state）。 */
 const $ = id => document.getElementById(id);
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
@@ -19,24 +19,24 @@ const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
    约定：v>0 实像在透镜另一侧；v<0 虚像与物同侧（|v| 处）；
    像高 imgH = −(v/u)·h（实像为负=倒立，虚像为正=正立）。 */
 function imageOf(f, u, h) {
-  h = (h === undefined) ? 1 : h;
-  if (Math.abs(u - f) <= 0.5) return { type: 'inf', v: Infinity, m: Infinity, mAbs: Infinity, imgH: NaN };
-  const v = f * u / (u - f);
-  const m = v / u;
-  return { type: v > 0 ? 'real' : 'virtual', v: v, m: m, mAbs: Math.abs(m), imgH: -(v / u) * h };
+  h = h === undefined ? 1 : h;
+  const invalid={type:'invalid',v:null,m:null,mAbs:null,magnification:null,imgH:null};
+  if (![f,u,h].every(Number.isFinite)||f<=0||u<=0) return invalid;
+  if (u===f) return {type:'inf',v:Infinity,m:Infinity,mAbs:Infinity,magnification:null,imgH:null};
+  const v=(f/(u-f))*u, m=v/u, magnification=-m, imgH=magnification*h;
+  if (![v,m,imgH].every(Number.isFinite)) return invalid;
+  return {type:v>0?'real':'virtual',v,m,mAbs:Math.abs(m),magnification,imgH};
 }
-/* u 所在区间（边界用 0.5 容差，滑杆步长 1、预设按钮保证恰达边界） */
-function zoneOf(f, u) {
-  if (Math.abs(u - f) <= 0.5) return 'eqf';
-  if (u < f) return 'ltf';
-  if (Math.abs(u - 2 * f) <= 0.5) return 'eq2f';
-  if (u > 2 * f) return 'gt2f';
-  return 'mid';
+/* Boundary labels use unrounded distances,not an angular/distance tolerance band. */
+function zoneOf(f,u){
+  if(!Number.isFinite(f)||!Number.isFinite(u)||f<=0||u<=0)return 'invalid';
+  if(u===f)return 'eqf';if(u<f)return 'ltf';if(u===2*f)return 'eq2f';return u>2*f?'gt2f':'mid';
 }
 /* 三条特殊光线在透镜平面（x=0）右侧的折射线：{p:[x,y], d:[dx,dy]}（数据坐标，x 向右、y 向上，单位同 f/u/h）
    r1：从 (0,h) 出发、穿过远侧焦点 (f,0)；r2：从 (0,0) 出发、沿物点→光心方向直行；
    r3：从 (0,h3) 水平出射，h3 = h·f/(f−u)（u=f 时不存在，返回 null）。 */
 function rayLines(f, u, h) {
+  if (![f,u,h].every(Number.isFinite)||f<=0||u<=0)return {r1:null,r2:null,r3:null};
   return {
     r1: { p: [0, h], d: [f, -h] },
     r2: { p: [0, 0], d: [u, -h] },
@@ -52,14 +52,13 @@ function lineIntersect(L1, L2) {
   return [L1.p[0] + L1.d[0] * s, L1.p[1] + L1.d[1] * s];
 }
 /* 数值显示：两小数内精确 → 原样（整数优先、0.5/1.25 这类精确小数不带 ≈）；
-   否则 ≈ + 一位小数。负号统一 U+2212。 */
-function fmtNum(x) {
-  if (!isFinite(x)) return '∞';
-  const r2 = Math.round(x * 100) / 100;
-  let s;
-  if (Math.abs(x - r2) < 1e-9) s = String(r2);
-  else s = '≈' + (Math.round(x * 10) / 10);
-  return s.replace(/-/g, '−');
+   否则 ≈ + 六位有效数字。负号统一 U+2212。 */
+function fmtNum(x){
+  if(x===Infinity)return '∞';if(x===-Infinity)return '−∞';if(!Number.isFinite(x))return '—';
+  const exact=Math.round(x*100)/100;
+  if(x===exact)return String(Object.is(x,-0)?0:x).replace(/-/g,'−');
+  const rounded=Number(x.toPrecision(6));
+  return ('≈'+rounded).replace(/-/g,'−');
 }
 /* ================= PURE-END ================= */
 
@@ -110,6 +109,7 @@ function makeView(cv, lensXFrac, div) {
     lensX: Math.round(w * lensXFrac),
     axisY: Math.round(h * 0.54)
   };
+  if(['s1-canvas','s2-canvas'].includes(cv.id))vw.ppu=Math.min(vw.ppu,(vw.lensX-12)/215);
   vw.X = d => vw.lensX + d * vw.ppu;
   vw.Y = g => vw.axisY - g * vw.ppu;
   vw.xMax = (w - 6 - vw.lensX) / vw.ppu;
@@ -220,8 +220,11 @@ function atX(L, xEnd) {
    opts: {rays:{r1,r2,r3}, rayColor, showImageCandle, objH(蜡烛物高,单位), tagFar} */
 function drawOptics(ctx, vw, f, u, h, opts) {
   const img = imageOf(f, u, h);
+  if(img.type==='invalid')return img;
   const rl = rayLines(f, u, h);
-  const R = opts.rays || { r1: true, r2: true, r3: true };
+  const R = {...(opts.rays||{r1:true,r2:true,r3:true})};
+  R.r3=!!R.r3&&!!rl.r3&&vw.Y(rl.r3.p[1])>=6&&vw.Y(rl.r3.p[1])<=vw.h-6;
+
   const rayCol = opts.rayColor || cyan;
   const P = [-u, h];
   ctx.save();
@@ -237,7 +240,7 @@ function drawOptics(ctx, vw, f, u, h, opts) {
     const dirL = { p: [0, 0], d: [u, -h] };
     if (R.r2) seg(ctx, vw, P, atX(dirL, vw.xMax), rayCol, 1.8);
     if (R.r1) { const L1 = { p: [0, h], d: [u, -h] }; seg(ctx, vw, [0, h], atX(L1, vw.xMax), rayCol, 1.8); }
-    if (R.r3) { const L3 = { p: [0, 2 * h], d: [u, -h] }; seg(ctx, vw, P, [0, 2 * h], rayCol, 1.8); seg(ctx, vw, [0, 2 * h], atX(L3, vw.xMax), rayCol, 1.8); }
+    // At u=f the third special ray has no finite lens-plane intercept; omit it.
   } else {
     const xEnd = img.type === 'real' ? Math.min(vw.xMax, img.v + 30) : vw.xMax;
     if (R.r1) seg(ctx, vw, rl.r1.p, atX(rl.r1, xEnd), rayCol, 1.8);
@@ -245,28 +248,32 @@ function drawOptics(ctx, vw, f, u, h, opts) {
     if (R.r3 && rl.r3) seg(ctx, vw, rl.r3.p, [xEnd, rl.r3.p[1]], rayCol, 1.8);
     if (img.type === 'virtual') {
       /* 反向延长线（虚线）交于虚像点 */
-      const IP = [img.v, img.imgH];
-      if (R.r1) seg(ctx, vw, rl.r1.p, IP, 'rgba(126,226,168,.65)', 1.3, [5, 4]);
-      if (R.r2) seg(ctx, vw, rl.r2.p, IP, 'rgba(126,226,168,.65)', 1.3, [5, 4]);
-      if (R.r3 && rl.r3) seg(ctx, vw, rl.r3.p, IP, 'rgba(126,226,168,.65)', 1.3, [5, 4]);
+      const backX=Math.max(img.v,vw.xMin);
+      if (R.r1) seg(ctx, vw, rl.r1.p, atX(rl.r1,backX), 'rgba(126,226,168,.65)', 1.3, [5, 4]);
+      if (R.r2) seg(ctx, vw, rl.r2.p, atX(rl.r2,backX), 'rgba(126,226,168,.65)', 1.3, [5, 4]);
+      if (R.r3 && rl.r3) seg(ctx, vw, rl.r3.p, atX(rl.r3,backX), 'rgba(126,226,168,.65)', 1.3, [5, 4]);
     }
   }
   ctx.restore();
-  /* 像（蜡烛） */
-  if (opts.showImageCandle && img.type !== 'inf') {
-    if (img.type === 'real') {
-      if (img.v <= vw.xMax) drawCandle(ctx, vw.X(img.v), vw.axisY, img.imgH * vw.ppu, pink, false);
-      else if (opts.tagFar) txt(ctx, opts.tagFar, vw.w - 8, vw.axisY - 34, orange, 'right', 12.5);
-    } else {
-      if (img.v >= vw.xMin) drawCandle(ctx, vw.X(img.v), vw.axisY, img.imgH * vw.ppu, green, true);
-    }
-    if (Math.abs(img.v) <= Math.max(vw.xMax, -vw.xMin)) dot(ctx, vw.X(img.v), vw.Y(img.imgH), img.type === 'real' ? pink : green, 3.4);
+  /* A clipped finite image is still an image; the adjacent text reports its side and values. */
+  if(opts.showImageCandle&&img.type!=='inf'){
+    if(imageInView(img,vw)){
+      drawCandle(ctx,vw.X(img.v),vw.axisY,img.imgH*vw.ppu,img.type==='real'?pink:green,img.type==='virtual');
+      dot(ctx,vw.X(img.v),vw.Y(img.imgH),img.type==='real'?pink:green,3.4);
+    }else txt(ctx,t('cOutside'),vw.w-8,22,orange,'right',12);
   }
   /* 物点 */
   dot(ctx, vw.X(P[0]), vw.Y(P[1]), orange, 3.6);
   return img;
 }
 
+function imageInView(img,vw){
+  if(!['real','virtual'].includes(img.type))return false;
+  const height=img.imgH*vw.ppu,x=vw.X(img.v),y=vw.Y(img.imgH),half=Math.max(4,Math.abs(height)*.48*.36/2);
+  return x-half>=6&&x+half<=vw.w-6&&Math.min(vw.axisY,y)>=6&&Math.max(vw.axisY,y)<=vw.h-6;
+}
+function imageViewNote(img,vw){return img.type==='inf'?t('viewInfinity'):imageInView(img,vw)?t('viewInside'):t('viewOutside');}
+function ray3Note(f,u,h,vw){const r=rayLines(f,u,h).r3;return !r?t('ray3Focus'):vw.Y(r.p[1])<6||vw.Y(r.p[1])>vw.h-6?t('ray3Outside'):'';}
 /* ---------- 状态 ---------- */
 const S = {
   s0: { f: 60 },
@@ -317,8 +324,8 @@ function render1() {
   drawCandle(ctx, vw.X(-st.u), vw.axisY, st.h * vw.ppu, orange, false);
   txt(ctx, t('cObjTip'), vw.X(-st.u), vw.Y(st.h) - 14, orange, 'center', 11.5);
   const img = drawOptics(ctx, vw, f, st.u, st.h, { rays: st.rays, showImageCandle: anyRay });
-  $('s1-u-val').textContent = Math.round(st.u);
-  $('s1-h-val').textContent = Math.round(st.h);
+  $('s1-u-val').textContent = fmtNum(st.u);
+  $('s1-h-val').textContent = fmtNum(st.h);
   ['r1', 'r2', 'r3'].forEach(r => {
     const b = $('s1-' + r);
     b.classList.toggle('active', st.rays[r]);
@@ -327,11 +334,13 @@ function render1() {
   const rules = [];
   if (st.rays.r1) rules.push(t('s1rule1'));
   if (st.rays.r2) rules.push(t('s1rule2'));
-  if (st.rays.r3) rules.push(t('s1rule3'));
-  $('s1-rule').innerHTML = rules.length ? rules.join('<br>') : t('s1roIdle');
+  if (st.rays.r3) rules.push(t(st.u===f?'ray3Focus':st.u<f?'s1rule3Virtual':'s1rule3'));
+  if(st.rays.r3&&st.u!==f&&ray3Note(f,st.u,st.h,vw))rules.push(ray3Note(f,st.u,st.h,vw));
+  $('s1-rule').textContent = rules.length ? rules.join('\n') : t('s1roIdle');
   const ro = $('s1-readout');
+  $('s1-view').textContent=anyRay?imageViewNote(img,vw):t('viewRaysOff');
   if (!anyRay) { ro.innerHTML = ''; return; }
-  if (img.type === 'inf') ro.innerHTML = t('s1roInf', { u: fmtNum(Math.round(st.u)) });
+  if (img.type === 'inf') ro.innerHTML = t('s1roInf', { u: fmtNum(st.u) });
   else if (img.type === 'real') ro.innerHTML = t('s1ro', {
     u: fmtNum(st.u), v: fmtNum(img.v), ih: fmtNum(Math.abs(img.imgH)), oh: fmtNum(st.h), m: fmtNum(img.mAbs)
   });
@@ -364,14 +373,16 @@ function render2() {
   drawLens(ctx, vw);
   drawCandle(ctx, vw.X(-u), vw.axisY, H * vw.ppu, orange, false);
   const img = drawOptics(ctx, vw, f, u, H, { rays: { r1: true, r2: true, r3: true }, showImageCandle: true, tagFar: t('cFarTag') });
-  $('s2-u-val').textContent = Math.round(u);
+  $('s2-u-val').textContent = fmtNum(u);
   const ro = $('s2-readout');
   const base = { u: fmtNum(u), v: fmtNum(Math.abs(img.v)), m: fmtNum(img.mAbs) };
   if (zone === 'gt2f') ro.innerHTML = t('s2roGt', base);
-  else if (zone === 'eq2f') ro.innerHTML = t('s2roEq2', { u: fmtNum(Math.round(u)), v: base.v, m: base.m });
+  else if (zone === 'eq2f') ro.innerHTML = t('s2roEq2', { u: fmtNum(u), v: base.v, m: base.m });
   else if (zone === 'mid') ro.innerHTML = t('s2roMid', base);
-  else if (zone === 'eqf') ro.innerHTML = t('s2roEqF', { u: fmtNum(Math.round(u)) });
+  else if (zone === 'eqf') ro.innerHTML = t('s2roEqF', { u: fmtNum(u) });
   else ro.innerHTML = t('s2roLt', base);
+  $('s2-view').textContent=imageViewNote(img,vw)+' '+ray3Note(f,u,H,vw);
+  $('s2-formula').textContent=img.type==='inf'?t('formulaFocus'):t('formulaFinite',{delta:fmtNum(u-f),v:fmtNum(img.v),M:fmtNum(img.magnification),h:fmtNum(img.imgH)});
 }
 
 /* ================= 第 3 步：光屏与眼睛 ================= */
@@ -398,7 +409,7 @@ function render3() {
   drawLens(ctx, vw);
   $('s3-m-real').classList.toggle('active', st.mode === 'real');
   $('s3-m-virt').classList.toggle('active', st.mode === 'virt');
-  $('s3-p-val').textContent = Math.round(st.p);
+  $('s3-p-val').textContent = fmtNum(st.p);
   const ro = $('s3-readout');
   if (st.mode === 'real') {
     const { u, h } = S3REAL;
@@ -438,7 +449,7 @@ function render3() {
     ctx.restore();
     txt(ctx, t('cOnScreen'), sx, vw.axisY + 118, pink, 'center', 11.5);
     const d = Math.abs(st.p - img.v);
-    if (d <= 2) ro.innerHTML = t('s3roSharp', { p: fmtNum(st.p), v: fmtNum(img.v) });
+    if (st.p === img.v) ro.innerHTML = t('s3roSharp', { p: fmtNum(st.p), v: fmtNum(img.v) });
     else ro.innerHTML = t('s3roBlur', { p: fmtNum(st.p), v: fmtNum(img.v), d: fmtNum(d) });
   } else {
     const { u, h } = S3VIRT;
@@ -529,6 +540,13 @@ function badges() {
   } catch (e) { /* 配置缺失时徽标留空，不报错 */ }
 }
 
+let lensReadingTimer=null;
+function queueLensReading(){clearTimeout(lensReadingTimer);lensReadingTimer=setTimeout(saveLensReading,180);}
+function validLensReading(v){return !!v&&typeof v==='object'&&!Array.isArray(v)&&v.version===1&&v.lesson==='lens'&&v.s0&&v.s1&&v.s2&&v.s3&&[v.s0,v.s1,v.s2,v.s3,v.s1.rays].every(x=>x&&typeof x==='object'&&!Array.isArray(x))&&Number.isFinite(v.s0.f)&&v.s0.f>=40&&v.s0.f<=90&&v.s0.f%5===0&&Number.isFinite(v.s1.u)&&v.s1.u>=28&&v.s1.u<=215&&Number.isFinite(v.s1.h)&&v.s1.h>=10&&v.s1.h<=46&&v.s1.rays&&['r1','r2','r3'].every(k=>typeof v.s1.rays[k]==='boolean')&&Number.isFinite(v.s2.u)&&v.s2.u>=25&&v.s2.u<=200&&['real','virt'].includes(v.s3.mode)&&Number.isFinite(v.s3.p)&&v.s3.p>=35&&v.s3.p<=230;}
+function saveLensReading(){clearTimeout(lensReadingTimer);lensReadingTimer=null;try{const prior=history.state;history.replaceState({...((prior&&typeof prior==='object'&&!Array.isArray(prior))?prior:{}),knowledgeGeometryReading:{version:1,lesson:'lens',s0:{...S.s0},s1:{u:S.s1.u,h:S.s1.h,rays:{...S.s1.rays}},s2:{...S.s2},s3:{...S.s3}}},'');}catch(_){}}
+function restoreLensReading(){try{const v=history.state&&history.state.knowledgeGeometryReading;if(validLensReading(v)){S.s0.f=v.s0.f;S.s1.u=v.s1.u;S.s1.h=v.s1.h;for(const k of ['r1','r2','r3'])S.s1.rays[k]=v.s1.rays[k];S.s2.u=v.s2.u;S.s3.mode=v.s3.mode;S.s3.p=v.s3.p;}}catch(_){}}
+function syncLensControls(){for(const[id,v]of [['s0-f',S.s0.f],['s1-u',S.s1.u],['s1-h',S.s1.h],['s2-u',S.s2.u],['s3-p',S.s3.p]])$(id).value=v;}
+function continuousKeys(id,step,min,max){$(id).addEventListener('keydown',e=>{const d={ArrowUp:1,ArrowRight:1,ArrowDown:-1,ArrowLeft:-1}[e.key];if(d){e.preventDefault();$(id).value=clamp(Number($(id).value)+d*step,min,max);$(id).dispatchEvent(new Event('input',{bubbles:true}));}});}
 /* ---------- 拖拽 ---------- */
 function bindDrag(cv, fn) {
   cv.classList.add('dragc');
@@ -537,6 +555,7 @@ function bindDrag(cv, fn) {
     if (e.pointerId !== pointer) return;
     const r = cv.getBoundingClientRect();
     fn(e.clientX - r.left, e.clientY - r.top);
+    queueLensReading();
   }
   cv.addEventListener('pointerdown', e => { pointer = e.pointerId; try { cv.setPointerCapture(pointer); } catch (err) {} move(e); });
   cv.addEventListener('pointermove', move);
@@ -544,6 +563,7 @@ function bindDrag(cv, fn) {
 }
 
 function init() {
+  restoreLensReading();
   ['s0-canvas', 's1-canvas', 's2-canvas', 's3-canvas', 's4-canvas'].forEach(regCanvas);
   /* 第 0 步 */
   $('s0-f').addEventListener('input', e => { S.s0.f = Number(e.target.value); render0(); });
@@ -556,8 +576,8 @@ function init() {
     const vw = VIEWS['s1-canvas']; if (!vw) return;
     S.s1.u = clamp((vw.lensX - x) / vw.ppu, 28, 215);
     S.s1.h = clamp((vw.axisY - y) / vw.ppu, 10, 46);
-    $('s1-u').value = Math.round(S.s1.u);
-    $('s1-h').value = Math.round(S.s1.h);
+    $('s1-u').value = S.s1.u;
+    $('s1-h').value = S.s1.h;
     render1();
   });
   /* 第 2 步 */
@@ -567,7 +587,7 @@ function init() {
   bindDrag($('s2-canvas'), x => {
     const vw = VIEWS['s2-canvas']; if (!vw) return;
     S.s2.u = clamp((vw.lensX - x) / vw.ppu, 25, 200);
-    $('s2-u').value = Math.round(S.s2.u);
+    $('s2-u').value = S.s2.u;
     render2();
   });
   /* 第 3 步 */
@@ -577,7 +597,7 @@ function init() {
   bindDrag($('s3-canvas'), x => {
     const vw = VIEWS['s3-canvas']; if (!vw) return;
     S.s3.p = clamp((x - vw.lensX) / vw.ppu, 35, 230);
-    $('s3-p').value = Math.round(S.s3.p);
+    $('s3-p').value = S.s3.p;
     render3();
   });
   /* 第 4 步 */
@@ -594,7 +614,12 @@ function init() {
   }), { rootMargin: '-25% 0px -50% 0px' });
   document.querySelectorAll('.step').forEach(el => observer.observe(el));
 
-  renderAll();
+  continuousKeys('s1-u',1,28,215);continuousKeys('s1-h',1,10,46);continuousKeys('s2-u',.1,25,200);continuousKeys('s3-p',1,35,230);
+  document.querySelectorAll('input').forEach(e=>e.addEventListener('input',queueLensReading));
+  document.querySelectorAll('button:not([data-q]):not([data-lang])').forEach(e=>e.addEventListener('click',queueLensReading));
+  document.querySelectorAll('a[href]').forEach(e=>e.addEventListener('click',()=>{if(!e.getAttribute('href').startsWith('#'))saveLensReading();}));
+  window.addEventListener('pagehide',saveLensReading);window.addEventListener('pageshow',()=>requestAnimationFrame(()=>{syncLensControls();renderAll();}));
+  syncLensControls();renderAll();
   onLangRefresh(renderAll);
   onRefit(renderAll);
 }

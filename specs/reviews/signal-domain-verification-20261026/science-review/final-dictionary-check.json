@@ -1,0 +1,176 @@
+{
+  "pass": true,
+  "courses": [
+    {
+      "course": "sampling",
+      "changed": {
+        "en": [
+          "tagline",
+          "s1e",
+          "s1hint",
+          "cRecon",
+          "s2t",
+          "s3e",
+          "s3roAbove",
+          "s3hint",
+          "s4e",
+          "s4roZero",
+          "s5iHint",
+          "s6e",
+          "s6audio"
+        ],
+        "zh": [
+          "tagline",
+          "s1e",
+          "s1hint",
+          "cRecon",
+          "s2t",
+          "s3e",
+          "s3roAbove",
+          "s3hint",
+          "s4e",
+          "s4roZero",
+          "s5iHint",
+          "s6e",
+          "s6audio"
+        ]
+      },
+      "originalHashVerified": true,
+      "onlyRepairKeysChanged": true,
+      "englishWordCounts": [
+        {
+          "key": "tagline",
+          "words": 33
+        },
+        {
+          "key": "s1e",
+          "words": 74
+        },
+        {
+          "key": "s1hint",
+          "words": 41
+        },
+        {
+          "key": "cRecon",
+          "words": 2
+        },
+        {
+          "key": "s2t",
+          "words": 5
+        },
+        {
+          "key": "s3e",
+          "words": 75
+        },
+        {
+          "key": "s3roAbove",
+          "words": 20
+        },
+        {
+          "key": "s3hint",
+          "words": 70
+        },
+        {
+          "key": "s4e",
+          "words": 83
+        },
+        {
+          "key": "s4roZero",
+          "words": 36
+        },
+        {
+          "key": "s5iHint",
+          "words": 62
+        },
+        {
+          "key": "s6e",
+          "words": 62
+        },
+        {
+          "key": "s6audio",
+          "words": 66
+        }
+      ]
+    },
+    {
+      "course": "freqresp",
+      "changed": {
+        "en": [
+          "s3e",
+          "s3formula",
+          "s3ro",
+          "s3hint"
+        ],
+        "zh": [
+          "s3e",
+          "s3formula",
+          "s3ro",
+          "s3hint"
+        ]
+      },
+      "originalHashVerified": true,
+      "onlyRepairKeysChanged": true,
+      "englishWordCounts": [
+        {
+          "key": "s3e",
+          "words": 81
+        },
+        {
+          "key": "s3formula",
+          "words": 18
+        },
+        {
+          "key": "s3ro",
+          "words": 36
+        },
+        {
+          "key": "s3hint",
+          "words": 77
+        }
+      ]
+    },
+    {
+      "course": "ztransform",
+      "changed": {
+        "en": [
+          "s5e",
+          "s5tLab",
+          "s5ro",
+          "s5hint",
+          "cvStrip"
+        ],
+        "zh": [
+          "s5e",
+          "s5tLab",
+          "s5ro",
+          "s5hint",
+          "cvStrip"
+        ]
+      },
+      "originalHashVerified": true,
+      "onlyRepairKeysChanged": true,
+      "englishWordCounts": [
+        {
+          "key": "s5e",
+          "words": 86
+        },
+        {
+          "key": "s5tLab",
+          "words": 5
+        },
+        {
+          "key": "s5ro",
+          "words": 41
+        },
+        {
+          "key": "s5hint",
+          "words": 60
+        },
+        {
+          "key": "cvStrip",
+          "words": 3
+        }
+      ]
+    }
+  ]
+}

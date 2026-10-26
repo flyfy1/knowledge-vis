@@ -1,0 +1,23 @@
+{
+  "stageActualEqual": true,
+  "changes": [
+    {
+      "operation": "replace",
+      "baselineLines": [
+        9,
+        9
+      ],
+      "currentLines": [
+        9,
+        9
+      ],
+      "old": [
+        " const atlasURL=base+'/atlas/?trail=geometry&node=slope&view=list';await p.goto(atlasURL);await p.locator('[data-lang='+lang+']').click();const graph=await p.evaluate(()=>({n:ATLAS.nodes.length,e:ATLAS.edges.length,t:ATLAS.trails.length}));assert.deepEqual(graph,{n:37,e:46,t:9});checks++;ok(await p.locator('[data-trail=geometry]').count()===1,'real editorial route');await p.locator('.primary-link').click();ok(p.url().endsWith('/linear-functions/#step2'),'slope source chapter');"
+      ],
+      "new": [
+        " const atlasURL=base+'/atlas/?trail=geometry&node=slope&view=list';await p.goto(atlasURL);await p.locator('[data-lang='+lang+']').click();const graph=await p.evaluate(()=>({nodes:ATLAS.trails.find(r=>r.id==='geometry')?.nodes,concepts:['slope','pinhole-ratio'].every(id=>ATLAS.nodes.some(n=>n.id===id)),edge:ATLAS.edges.some(e=>e.from==='slope'&&e.to==='pinhole-ratio')}));assert.deepEqual(graph,{nodes:['slope','pinhole-ratio'],concepts:true,edge:true});checks++;ok(await p.locator('[data-trail=geometry]').count()===1,'real editorial route');await p.locator('.primary-link').click();ok(p.url().endsWith('/linear-functions/#step2'),'slope source chapter');"
+      ]
+    }
+  ],
+  "conclusion": "Accept bounded route contract; central atlas retains global38/47 checks. Does not imply pending rerun passed."
+}

@@ -1,0 +1,164 @@
+[
+  {
+    "command": [
+      "node",
+      "--check",
+      "atlas/app.js"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "atlas/data.js"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "atlas/motion-model.js"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "atlas/motion-bridge.js"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "atlas/response-model.js"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "atlas/response-bridge.js"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "atlas/tests/work-core.cjs"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "atlas/tests/work-browser.cjs"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "atlas/tests/work-core.cjs"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"pass\": true,\n  \"checks\": 6174,\n  \"maxFdxError\": 1.2559397966072083e-15,\n  \"maxPhysicalTimeQuadratureError\": 3.4437430684874926e-10,\n  \"method\": \"stable analytic work; separate sampled Fdx and Fvdt references\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "atlas/tests/foundations-core.cjs"
+    ],
+    "exit": 0,
+    "stdout": "{\"pass\":true,\"routes\":8,\"concepts\":35,\"checkFixtures\":54,\"scope\":\"canonical references and the bounded free-spring prediction; no learner outcome inferred\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "atlas/tests/motion-core.cjs"
+    ],
+    "exit": 0,
+    "stdout": "PASS: quarter cycles, initial condition, period ratios, force/Newton, conserved energy, parameter boundaries\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "atlas/tests/rates-core.cjs"
+    ],
+    "exit": 0,
+    "stdout": "PASS: signed velocity/speed, four motion cases, cardinal zeros, independent first/second derivatives, net-force law and parameter boundaries\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "atlas/tests/response-core.cjs"
+    ],
+    "exit": 0,
+    "stdout": "PASS: transfer identity, ODE substitution, peak threshold/below-slider peak, phase, pole sums/products/stability, critical/overdamped bounds\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "atlas/tests/travel-core.cjs"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"pass\": true,\n  \"checks\": 6107,\n  \"maxQuadratureErrorMetres\": 6.560856036230689e-8,\n  \"method\": \"exact turning-point segments; independent physical-time trapezoid convergence\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "atlas/tests/legacy-signed-area.cjs"
+    ],
+    "exit": 0,
+    "stdout": "PASS integral signed-area caveats in bilingual lesson\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "laplace/tests/pole-boundaries.cjs"
+    ],
+    "exit": 0,
+    "stdout": "PASS: simple zero constant limit, double zero unbounded response, conditional stability copy\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

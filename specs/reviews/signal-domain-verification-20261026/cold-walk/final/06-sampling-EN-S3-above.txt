@@ -1,0 +1,14 @@
+Step 3 · The line
+
+The Nyquist line: twice, and not a hair less
+
+This step compares ideal single tones. The Nyquist condition assumes a known bandlimit: if all components satisfy |f| ≤ B and fₛ > 2B, the complete uniform sample sequence determines the signal within that band. Here B=f: sweep fₛ across 2f. Without restricting candidate frequencies, higher aliases can still share every sample. Straight joins are display interpolation; their varying height does not decide exact reconstruction. Pin fₛ=2f and change phase to inspect the boundary ambiguity.
+
+Signal frequency f (Hz) 4
+Sample rate f_s (Hz) 9.0
+Sampling phase φ (°) 0
+Pin to exactly 2f
+
+f_s = 9.0 Hz > 2f = 8.0 Hz: this tone is inside baseband; uniqueness still assumes a known bandlimit.
+
+At the boundary x[n] = A(−1)ⁿ sinφ. With φ=90° the dots alternate at full amplitude; with φ=0° they vanish. Even nonzero dots determine only A sinφ, not A and φ separately: A=1, φ=30° and A=0.5, φ=90° give identical samples. Nonzero dots are no guarantee of recovery. This page uses strict fₛ>2B with ideal uniform, complete sampling; quantization, noise and finite-record errors are omitted. Basis: TI · sampling and reconstruction →

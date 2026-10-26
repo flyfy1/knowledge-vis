@@ -1,0 +1,124 @@
+[
+  {
+    "suite": "lens",
+    "script": "lens/tests/focus-browser.cjs",
+    "exit": 0,
+    "seconds": 5.54,
+    "stdout": "{\"pass\":true,\"checks\":167,\"errors\":[],\"failed\":[],\"optionalBrowserRequests\":[{\"text\":\"Failed to load resource: the server responded with a status of 404 (File not found)\",\"location\":{\"url\":\"http://127.0.0.1:18775/favicon.ico\",\"line\":0,\"column\":0,\"lineNumber\":0,\"columnNumber\":0}}],\"scope\":[\"strict focus/2f,finite offscreen vs infinity,signedM and actual principalray parallel branch\",\"nativefractionalkeyboard/pointer,screenexactness,quizisolation\",\"readingBack+reload/foreign/bad/deniedhistory,noquizprofile\",\"two languages320/390/1280,full objectbounds,actual2x/48px/3px/forcedcolors\"],\"limits\":[\"No physical phone/screen-reader speech or human learning effectiveness\",\"Paraxial ideal thin lens,no aperture/waveblur/irradiance/eye interior solver\"]}\n",
+    "stderr": "",
+    "rerunReason": "New next-lesson48px target and explicitsize assertion; model/state unchanged."
+  },
+  {
+    "suite": "refraction",
+    "script": "reflection-refraction/tests/snell-browser.cjs",
+    "exit": 0,
+    "seconds": 8.0,
+    "stdout": "{\"pass\":true,\"checks\":148,\"errors\":[],\"requests\":[],\"optionalBrowserRequests\":[{\"text\":\"Failed to load resource: the server responded with a status of 404 (File not found)\",\"location\":{\"url\":\"http://127.0.0.1:18775/favicon.ico\",\"line\":0,\"column\":0,\"lineNumber\":0,\"columnNumber\":0}}],\"scope\":[\"Snell ray/formula sharing and actual absent/present ray strokes\",\"critical exact preset versus rounded input,normal and repeated branch transitions\",\"native keyboard and pointer,schema/foreign history,Back and explicit reload,denied browser storage\",\"atlas/trig source Back,bilingual320/390/1280,actual2x and forcedcolors\"],\"limits\":[\"No physical phone/screen-reader speech/human learning-effect test\",\"No optical power,evanescent field,physical propagation time or full virtual-image solver\"]}\n",
+    "stderr": "",
+    "rerunReason": "New next-lesson48px target and explicitsize assertion; model/state unchanged."
+  },
+  {
+    "suite": "geometry",
+    "script": "pinhole-camera/tests/geometry-browser.cjs",
+    "exit": 0,
+    "seconds": 10.38,
+    "stdout": "{\"result\":\"pass\",\"checks\":294,\"errors\":[],\"failed\":[],\"optionalBrowserRequests\":[{\"text\":\"Failed to load resource: the server responded with a status of 404 (File not found)\",\"location\":{\"url\":\"http://127.0.0.1:18775/favicon.ico\",\"line\":0,\"column\":0,\"lineNumber\":0,\"columnNumber\":0}}],\"scope\":[\"Original geometry and fixed-scale full-domain view\",\"Signed coordinates/size/magnification vs slope;predict A/B and exact state ownership\",\"Native keyboard/pointer,Back and forced rebuild,validated history with foreign owner\",\"en/zh320/390/1280,actual2x,48px/3px/forcedcolors,denied storage/history\"],\"limits\":[\"No real-phone or screen-reader speech test\",\"Only S2 reading geometry is restored across document rebuilds; other lesson/quiz initialization follows existing behavior\",\"No learner effectiveness/measurement/physical optimum aperture claim\"]}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "keyboard",
+    "script": "complex-numbers/tests/keyboard-browser.cjs",
+    "exit": 0,
+    "seconds": 43.83,
+    "stdout": "{\"checks\":321,\"result\":\"pass\",\"errors\":[],\"failed\":[],\"scope\":[\"All five arbitrary operands via native keyboard forms; no pointer required\",\"Original pointer raw constraints, exact presets, origin/principal angle and same-state readouts\",\"Draft/error/target/locale/resize/quiz/rotation isolation; atlas Back\",\"Both languages320/390/1280,actual double DOM text,keyboard and forced colors; browser touch tap\"],\"limits\":[\"No physical-device or screen-reader speech test\",\"No learner outcome claim\",\"Course reload retains existing reset behavior; no new persistence/profile\"]}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "quality",
+    "script": "atlas/tests/data-quality-browser.cjs",
+    "exit": 0,
+    "seconds": 66.27,
+    "stdout": "{\"checks\":124,\"documents\":20,\"anchors\":44,\"errors\":[],\"failed\":[],\"limits\":[\"DOM links are local and actual generated anchors; external source availability not checked.\",\"Keyboard preset has a numeric text alternative; arbitrary complex-canvas dragging is not certified keyboard accessible.\",\"No physical-device/screen-reader speech/learning-effect evidence.\"]}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "courses",
+    "script": "atlas/tests/course-audit-browser.cjs",
+    "exit": 0,
+    "seconds": 6.13,
+    "stdout": "{\"slug\":\"frozen-bubble\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":2} null 0\n{\"slug\":\"power-converters\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":6} null 0\n{\"slug\":\"atlas\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":10} null 0\n{\"slug\":\"fourier\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"convolution\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"mandelbrot\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"control\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"sampling\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"trig\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"montecarlo\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"laplace\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"bayes\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"clt\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"ztransform\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"gradient-descent\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"eigen\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"entropy\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"lti\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"freqresp\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"modulation\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"kalman\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"fractions\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"pythagoras\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"area-model\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"perimeter-area\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"division-remainder\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"linear-functions\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"symmetry-rotation\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"parabola\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"velocity-vt\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"integral\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"reflection-refraction\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":4} null 0\n{\"slug\":\"derivative\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"lens\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":1} null 0\n{\"slug\":\"interference\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"exp-log\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"circle-angles\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"complex-numbers\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"standing-wave\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"negative-numbers\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"pinhole-camera\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":3} null 0\n{\"slug\":\"space-diagonal\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"coordinate-plane\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"particles-states\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"lever-pulley\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"equations-balance\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"day-night-rotation\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"slug\":\"population-growth\",\"http\":200,\"errors\":0,\"overflow\":false,\"unnamed\":0,\"externalLinks\":0} null 0\n{\"total\":48,\"core\":45,\"adjacent\":3,\"baselineGate\":true,\"failures\":[],\"limits\":[\"Canvas naming, raw target sizes and boundary/source keyword signals are observations, not accessibility/science pass gates.\"]}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "atlas",
+    "script": "atlas/tests/browser.cjs",
+    "exit": 0,
+    "seconds": 6.12,
+    "stdout": "{\"checks\":347,\"concepts\":38,\"relations\":47,\"locales\":[\"en\",\"zh\"],\"widths\":[320,390,768,1512],\"errors\":[],\"externalRuntimeRequests\":[],\"limits\":[\"No physical-device or screen-reader speech test\",\"No learning-effect claim\"],\"base\":\"http://127.0.0.1:18775\"}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "motion",
+    "script": "atlas/tests/motion-browser.cjs",
+    "exit": 0,
+    "seconds": 9.93,
+    "stdout": "{\n  \"checks\": [\n    \"en: existing-node entry, quarter phases/force signs, period ratios, visible amplitude, same-phase parameter comparison, pause/resume, locale/node/history/route retention, lesson Back, end/replay, 3 resets, widths320/390/768/1280\",\n    \"zh: existing-node entry, quarter phases/force signs, period ratios, visible amplitude, same-phase parameter comparison, pause/resume, locale/node/history/route retention, lesson Back, end/replay, 3 resets, widths320/390/768/1280\",\n    \"DPR1/2/3 repeat resize; reduced-motion paused; forced-colors focus; 200% text at320; denied local/session storage; keyboard seek/play\"\n  ],\n  \"errors\": [],\n  \"externalRuntimeRequests\": [],\n  \"limits\": [\n    \"No physical-phone or screen-reader speech test\",\n    \"No real-hardware or learning-gain evidence\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "rates",
+    "script": "atlas/tests/rates-browser.cjs",
+    "exit": 0,
+    "seconds": 9.4,
+    "stdout": "{\n  \"checks\": [\n    \"en: four presets+two nonpreset quadrants, signed speed/acceleration/force, fixed-phase mass comparison, stable v-axis per parameters, projection/rates single-clock play and locale continuity, graph/close/Back/source/response recovery,320/390/768/1280,3 resets, legacy rate/area caveats\",\n    \"zh: four presets+two nonpreset quadrants, signed speed/acceleration/force, fixed-phase mass comparison, stable v-axis per parameters, projection/rates single-clock play and locale continuity, graph/close/Back/source/response recovery,320/390/768/1280,3 resets, legacy rate/area caveats\",\n    \"DPR1/2/3 repeated resize; both locales320px200%; denied storage; keyboard seek/play; forced-colors focus; reduced-motion paused default\"\n  ],\n  \"errors\": [],\n  \"externalRuntimeRequests\": [],\n  \"limits\": [\n    \"No physical phone or screen-reader speech\",\n    \"Analytic model assumptions, not measured forces or learning outcomes\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "response",
+    "script": "atlas/tests/response-browser.cjs",
+    "exit": 0,
+    "seconds": 10.26,
+    "stdout": "{\n  \"checks\": [\n    \"en: contextual entry, \u03b6=.8 complex/no-peak counterexample, threshold sides/critical/overdamped, phase and poles invariance, locale/node/route/Back, old motion preservation, bandpass distinction and lesson Back,320/390/768/1280,3 resets, legacy marginal preset and double-zero fixtures\",\n    \"zh: contextual entry, \u03b6=.8 complex/no-peak counterexample, threshold sides/critical/overdamped, phase and poles invariance, locale/node/route/Back, old motion preservation, bandpass distinction and lesson Back,320/390/768/1280,3 resets, legacy marginal preset and double-zero fixtures\",\n    \"DPR1/2/3 repeat resize, reduced motion static charts, forced-colors focus,200% text at320, denied local/sessionStorage and keyboard controls\"\n  ],\n  \"errors\": [],\n  \"externalRuntimeRequests\": [],\n  \"limits\": [\n    \"No real phone or screen-reader speech\",\n    \"Analytic fixed-parameter steady model, no startup/real-hardware claim\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "travel",
+    "script": "atlas/tests/travel-browser.cjs",
+    "exit": 0,
+    "seconds": 8.69,
+    "stdout": "{\n  \"checks\": [\n    \"en: five interval identities, endpoints\u2260displacement, fixed-phase parameter scaling, single-clock three-view/language retention, b crosses a, source/Back/reload/close/response recovery,320/390/768/1280,48px,3 resets,end/replay,legacy lesson round trip\",\n    \"zh: five interval identities, endpoints\u2260displacement, fixed-phase parameter scaling, single-clock three-view/language retention, b crosses a, source/Back/reload/close/response recovery,320/390/768/1280,48px,3 resets,end/replay,legacy lesson round trip\",\n    \"both languages320px200%;DPR1/2/3 repeated resize;old session fallback;denied storage;keyboard a/b/play;forced-colors focus;reduced-motion paused\"\n  ],\n  \"errors\": [],\n  \"externalRuntimeRequests\": [],\n  \"limits\": [\n    \"No physical phone/screenreader speech/learner study\",\n    \"Exact ideal oscillator; sampled illustration only\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "continuity",
+    "script": "atlas/tests/continuity-browser.cjs",
+    "exit": 0,
+    "seconds": 7.23,
+    "stdout": "{\n  \"pass\": true,\n  \"checks\": [\n    \"en: four equal route entries; current-view return preserves URL/node/filter/history/paused state; actual course Back then return; close/Back; off-trail visible/bilingual context without reselect; travel\u2192spring return; running return; ordinary route unchanged;320/390/768/1280 and200%/48px\",\n    \"zh: four equal route entries; current-view return preserves URL/node/filter/history/paused state; actual course Back then return; close/Back; off-trail visible/bilingual context without reselect; travel\u2192spring return; running return; ordinary route unchanged;320/390/768/1280 and200%/48px\",\n    \"Both locales320px/200%: keyboard route,return and original contextual opener all focus visible current-view H2, with unchanged URL/history/paused state\",\n    \"Keyboard Enter route/return, forced-colors focus, denied storage, reduced motion no autoplay\"\n  ],\n  \"errors\": [],\n  \"externalRuntimeRequests\": [],\n  \"scope\": \"Navigation/teaching continuity; no new mastery/profile/model/clock\",\n  \"limits\": [\n    \"No physical-device or screenreader speech\",\n    \"Agent cold walk is not a learner outcome study\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "foundations",
+    "script": "atlas/tests/foundations-browser.cjs",
+    "exit": 0,
+    "seconds": 5.7,
+    "stdout": "{\n  \"pass\": true,\n  \"checks\": [\n    \"en/motion:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px\",\n    \"en/kinematics:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px\",\n    \"en/travel:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px\",\n    \"en/response:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px\",\n    \"en/waves:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px\",\n    \"en/power:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px\",\n    \"en/estimate:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px\",\n    \"zh/motion:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px\",\n    \"zh/kinematics:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px\",\n    \"zh/travel:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px\",\n    \"zh/response:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px\",\n    \"zh/waves:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px\",\n    \"zh/power:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px\",\n    \"zh/estimate:canonical content,optional placement,open/reveal no physical changes,stable DOM/focus,real language intent,course Back/open/answer/otherOwner restore,inspect+return,320/390/768/1280 and200%/48px\"\n  ],\n  \"extra\": [\n    \"explicit check verification without auto-seek\",\n    \"inapplicable question clearing and matching Back\",\n    \"bad history schema/otherOwner preservation\",\n    \"denied storage/history memory fallback,keyboard/forced-colors/reduced motion\"\n  ],\n  \"errors\": [],\n  \"externalRuntimeRequests\": [],\n  \"limits\": [\n    \"Agent predictions/tests do not measure learner understanding\",\n    \"No physical device or screenreader speech\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "work",
+    "script": "atlas/tests/work-browser.cjs",
+    "exit": 0,
+    "seconds": 6.02,
+    "stdout": "{\n  \"pass\": true,\n  \"checks\": [\n    \"en:work/node/route entry,quarter signs and rendered Fdx colors,full-return intermediate curve peak and P/N,equal/reversed bounds,parameter scaling,one a/b,4-view play/locale continuity,sourceBack/reload/return/response/help recovery,3 resets,end/replay,320/390/768/1280/48px,keyboard200%visible focus\",\n    \"zh:work/node/route entry,quarter signs and rendered Fdx colors,full-return intermediate curve peak and P/N,equal/reversed bounds,parameter scaling,one a/b,4-view play/locale continuity,sourceBack/reload/return/response/help recovery,3 resets,end/replay,320/390/768/1280/48px,keyboard200%visible focus\"\n  ],\n  \"extra\": [\n    \"DPR1/2/3 repeatedresize\",\n    \"denied storage,keyboard,forcedcolors,reducedmotion\"\n  ],\n  \"errors\": [],\n  \"externalRuntimeRequests\": [],\n  \"limits\": [\n    \"No physical device or screenreader speech\",\n    \"Analytic ideal free spring,not damping/driving or measured work\",\n    \"No learning-effect claim\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "home",
+    "script": "tests/leetcode-home-section.cjs",
+    "exit": 0,
+    "seconds": 18.45,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"catalog\": 120,\n  \"checks\": [\n    \"Direct category, lazy source, all links, stage hiding, unrelated URL state\",\n    \"Exact ID/NFKC, bilingual token AND, no-match, clear focus, locale and IME\",\n    \"Category/history/query/reload/lesson Back, other cards unchanged, All entry inline\",\n    \"Both locales 320/390/640/1280, equivalent layout zoom, 48px targets, forced colors/focus\",\n    \"Error/retry, query retention, delay/category/locale race, stable focus\",\n    \"Generated Codex registry: one card per ID, title/open routes, official URL, search/locale and navigation fixture\",\n    \"Bilingual empty catalog and real 15-second timeout with late response/retry\",\n    \"Malformed/duplicate/unsafe links, empty, 984 long-title fixture (116ms including navigation/filter)\",\n    \"Denied storage and file-protocol catalog fallback\"\n  ]\n}\n",
+    "stderr": ""
+  }
+]

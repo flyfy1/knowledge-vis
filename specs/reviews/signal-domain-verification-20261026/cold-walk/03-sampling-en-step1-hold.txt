@@ -1,0 +1,14 @@
+Step 1 · What sampling is
+
+Can a row of dots remember a wave?
+
+Here is a sine wave in the continuous world. Sampling means peeking once every 1/fs seconds and writing down one number. Watch the dots land — every single one sits exactly on the original wave; sampling never lies. Then we connect the dots (straight lines) or hold each value until the next peek (steps): the dots are fact, the connection is our imagination. Raise fs and the dots crowd together until imagination barely matters.
+
+Signal frequency f (Hz) 3
+Sample rate f_s (Hz) 11
+Connect with lines
+Hold (steps)
+
+f = 3.0 Hz · f_s = 11 Hz · samples per period = 3.7
+
+Lower fs and watch: the connected line is already crooked, yet every dot still sits honestly on the original wave. Remember this scene — the error is never in the dots, it is in the connection. Next step, the connection conjures up an entire wave that does not exist.

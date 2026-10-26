@@ -1,0 +1,129 @@
+{
+  "pass": true,
+  "source": "tangent-audit/staged/trig/app.js",
+  "sha256": "e38c4289b1a3c82fa557cc65768b6b9179595d6eade6ae0c3910add05ad81e83",
+  "failures": [],
+  "boundaries": [
+    {
+      "x": 1.5707963267948963,
+      "mode": "num",
+      "tan": 3530114321217157.5
+    },
+    {
+      "x": 1.5707963267948966,
+      "mode": "undef",
+      "tan": null
+    },
+    {
+      "x": 1.5707963267948968,
+      "mode": "num",
+      "tan": -6218431163823738
+    },
+    {
+      "x": 1.5707963267947966,
+      "mode": "num",
+      "tan": 10001869893962.828
+    },
+    {
+      "x": 1.5707963267949965,
+      "mode": "num",
+      "tan": -10014135966717.432
+    },
+    {
+      "x": 4.712388980384689,
+      "mode": "num",
+      "tan": 932944223816796.5
+    },
+    {
+      "x": 4.71238898038469,
+      "mode": "undef",
+      "tan": null
+    },
+    {
+      "x": 4.712388980384691,
+      "mode": "num",
+      "tan": -1419483893036948.5
+    },
+    {
+      "x": 4.712388980384589,
+      "mode": "num",
+      "tan": 9945512668847.088
+    },
+    {
+      "x": 4.71238898038479,
+      "mode": "num",
+      "tan": -9981986068111.02
+    }
+  ],
+  "samples": 5143,
+  "maxIdentityResidual": 1.1102230246251565e-16,
+  "maxPeriodRelativeError": 2.1929502915936605e-13,
+  "keys": [
+    {
+      "step": 0.1,
+      "count": 900,
+      "exact": true
+    },
+    {
+      "step": 1,
+      "count": 90,
+      "exact": true
+    },
+    {
+      "step": 10,
+      "count": 9,
+      "exact": true
+    },
+    {
+      "step": -0.1,
+      "count": 900,
+      "exact": true
+    }
+  ],
+  "quadrants": [
+    {
+      "th": 1.5707963267948963,
+      "expected": 1,
+      "actual": 1,
+      "angleLabel": "≈90°"
+    },
+    {
+      "th": 1.5707963267948968,
+      "expected": 2,
+      "actual": 2,
+      "angleLabel": "≈90°"
+    },
+    {
+      "th": 3.1415926535897927,
+      "expected": 2,
+      "actual": 2,
+      "angleLabel": "≈180°"
+    },
+    {
+      "th": 6.283185307179585,
+      "expected": 4,
+      "actual": 4,
+      "angleLabel": "≈360°"
+    },
+    {
+      "th": 1.5702727280192983,
+      "expected": 1,
+      "actual": 1,
+      "angleLabel": "≈89.97°"
+    }
+  ],
+  "s6": {
+    "noBranchBridge": true,
+    "noFalsePoleMarker": true,
+    "oneCurrentPoint": true
+  },
+  "bilingualKeys": 114,
+  "history": {
+    "paused": true,
+    "noTraces": true,
+    "foreignMerge": true,
+    "invalidRejected": true,
+    "deniedSafe": true
+  },
+  "method": "Isolated current-source VM/render spy,not Chrome or native input/Back operation"
+}

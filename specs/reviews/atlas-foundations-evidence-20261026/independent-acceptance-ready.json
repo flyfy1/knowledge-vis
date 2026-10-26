@@ -1,0 +1,58 @@
+[
+  {
+    "test": "response plain scope en",
+    "text": "This lab has damping and sustained driving; the free-spring equation below is background for its symbols. A transient is extra motion associated with the initial state; it decays in this positive-damping model. Steady state is the sustained periodic motion left afterward, not rest. Viscous damping removes energy through a force opposing velocity. Here φ is displacement’s phase difference relative to the driving force.\n\nRead the supporting source ↗",
+    "firstChildNote": true
+  },
+  {
+    "test": "response plain scope zh",
+    "text": "本实验有阻尼与持续驱动；下面的自由振子方程只用于回看符号。暂态是初始状态带来的额外运动，在本页正阻尼模型中会衰减。稳态是随后保留的持续周期运动，不是静止；黏性阻尼通过反向于速度的力耗能。响应图中的 φ 是位移相对驱动力的相位差。\n\n查看解释依据 ↗",
+    "firstChildNote": true
+  },
+  {
+    "test": "real source Back retains other-owner fields",
+    "back": {
+      "url": "http://127.0.0.1:18775/atlas/?trail=motion&node=unit-circle",
+      "len": 4,
+      "phase": "0",
+      "open": true,
+      "reveal": true,
+      "state": {
+        "otherOwner": {
+          "keep": true
+        },
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": true,
+          "question": "free-crossing-v1"
+        }
+      }
+    }
+  },
+  {
+    "test": "real keyboard visible focus 320200",
+    "focus": {
+      "active": true,
+      "rect": {
+        "x": 46,
+        "y": 387.578125,
+        "width": 228,
+        "height": 68.78125,
+        "top": 387.578125,
+        "right": 274,
+        "bottom": 456.359375,
+        "left": 46
+      },
+      "outline": "3px",
+      "scroll": 320
+    }
+  },
+  {
+    "test": "malformed presentation safely closed other owner retained",
+    "pass": true
+  },
+  {
+    "test": "pageerrors",
+    "errors": []
+  }
+]

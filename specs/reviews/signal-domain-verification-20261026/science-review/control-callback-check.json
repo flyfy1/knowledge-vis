@@ -1,0 +1,59 @@
+{
+  "pass": true,
+  "modifierCases": [
+    {
+      "modifier": "altKey",
+      "notPrevented": true,
+      "noAppMutation": true
+    },
+    {
+      "modifier": "ctrlKey",
+      "notPrevented": true,
+      "noAppMutation": true
+    },
+    {
+      "modifier": "metaKey",
+      "notPrevented": true,
+      "noAppMutation": true
+    }
+  ],
+  "states": [
+    {
+      "path": "M2→first zero→M3",
+      "w": 3.141592653589793,
+      "measured": 0.3333333333333331
+    },
+    {
+      "key": "Home",
+      "shiftKey": false,
+      "w": 0.05
+    },
+    {
+      "key": "ArrowRight",
+      "shiftKey": false,
+      "w": 0.055
+    },
+    {
+      "key": "ArrowRight",
+      "shiftKey": true,
+      "w": 0.10500000000000001
+    },
+    {
+      "key": "End",
+      "shiftKey": false,
+      "w": 3.141592653589793
+    },
+    {
+      "key": "ArrowRight",
+      "shiftKey": false,
+      "w": 3.141592653589793
+    },
+    {
+      "key": "ArrowLeft",
+      "shiftKey": false,
+      "w": 3.1365926535897932
+    }
+  ],
+  "exactPresetRetained": 0.8975979010256552,
+  "method": "Actual affected S3 listener block and updateS3 run in isolated VM with DOM/drawing adapters; verifies callback/model assignments, not native range clamping, keyboard focus or browser locale/Back."
+}

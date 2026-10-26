@@ -1,0 +1,170 @@
+{
+  "source": "/Users/songyy/Documents/knowledge-vis/trig/app.js",
+  "cases": [
+    {
+      "degrees": 0,
+      "rawTan": 0,
+      "originalS4Mode": "num",
+      "originalS6Display": "0.000",
+      "originalS1Display": "s1ro{\"ang\":\"0.0°\",\"cos\":\"1.000\",\"sin\":\"0.000\",\"tan\":\"0.000\"}",
+      "finiteMathematical": true
+    },
+    {
+      "degrees": 45,
+      "rawTan": 0.9999999999999999,
+      "originalS4Mode": "num",
+      "originalS6Display": "1.000",
+      "originalS1Display": "s1ro{\"ang\":\"45.0°\",\"cos\":\"0.707\",\"sin\":\"0.707\",\"tan\":\"1.000\"}",
+      "finiteMathematical": true
+    },
+    {
+      "degrees": 80,
+      "rawTan": 5.671281819617707,
+      "originalS4Mode": "num",
+      "originalS6Display": "5.671",
+      "originalS1Display": "s1ro{\"ang\":\"80.0°\",\"cos\":\"0.174\",\"sin\":\"0.985\",\"tan\":\"5.671\"}",
+      "finiteMathematical": true
+    },
+    {
+      "degrees": 89,
+      "rawTan": 57.289961630759876,
+      "originalS4Mode": "inf",
+      "originalS6Display": "+∞",
+      "originalS1Display": "s1ro{\"ang\":\"89.0°\",\"cos\":\"0.017\",\"sin\":\"1.000\",\"tan\":\"57.29\"}",
+      "finiteMathematical": true
+    },
+    {
+      "degrees": 89.9,
+      "rawTan": 572.9572133543032,
+      "originalS4Mode": "inf",
+      "originalS6Display": "+∞",
+      "originalS1Display": "s1ro{\"ang\":\"89.9°\",\"cos\":\"0.002\",\"sin\":\"1.000\",\"tan\":\"573.0\"}",
+      "finiteMathematical": true
+    },
+    {
+      "degrees": 90,
+      "rawTan": 16331239353195370,
+      "originalS4Mode": "undef",
+      "originalS6Display": "undef",
+      "originalS1Display": "s1ro{\"ang\":\"90.0°\",\"cos\":\"0.000\",\"sin\":\"1.000\",\"tan\":\"undef\"}",
+      "finiteMathematical": false
+    },
+    {
+      "degrees": 90.1,
+      "rawTan": -572.9572133543435,
+      "originalS4Mode": "inf",
+      "originalS6Display": "−∞",
+      "originalS1Display": "s1ro{\"ang\":\"90.1°\",\"cos\":\"-0.002\",\"sin\":\"1.000\",\"tan\":\"-573.0\"}",
+      "finiteMathematical": true
+    },
+    {
+      "degrees": 135,
+      "rawTan": -1.0000000000000002,
+      "originalS4Mode": "num",
+      "originalS6Display": "-1.000",
+      "originalS1Display": "s1ro{\"ang\":\"135.0°\",\"cos\":\"-0.707\",\"sin\":\"0.707\",\"tan\":\"-1.000\"}",
+      "finiteMathematical": true
+    },
+    {
+      "degrees": 180,
+      "rawTan": -1.2246467991473532e-16,
+      "originalS4Mode": "num",
+      "originalS6Display": "0.000",
+      "originalS1Display": "s1ro{\"ang\":\"180.0°\",\"cos\":\"-1.000\",\"sin\":\"0.000\",\"tan\":\"0.000\"}",
+      "finiteMathematical": true
+    },
+    {
+      "degrees": 225,
+      "rawTan": 0.9999999999999997,
+      "originalS4Mode": "num",
+      "originalS6Display": "1.000",
+      "originalS1Display": "s1ro{\"ang\":\"225.0°\",\"cos\":\"-0.707\",\"sin\":\"-0.707\",\"tan\":\"1.000\"}",
+      "finiteMathematical": true
+    },
+    {
+      "degrees": 269.9,
+      "rawTan": 572.9572133542631,
+      "originalS4Mode": "inf",
+      "originalS6Display": "+∞",
+      "originalS1Display": "s1ro{\"ang\":\"269.9°\",\"cos\":\"-0.002\",\"sin\":\"-1.000\",\"tan\":\"573.0\"}",
+      "finiteMathematical": true
+    },
+    {
+      "degrees": 270,
+      "rawTan": 5443746451065123,
+      "originalS4Mode": "undef",
+      "originalS6Display": "undef",
+      "originalS1Display": "s1ro{\"ang\":\"270.0°\",\"cos\":\"0.000\",\"sin\":\"-1.000\",\"tan\":\"undef\"}",
+      "finiteMathematical": false
+    },
+    {
+      "degrees": 270.1,
+      "rawTan": -572.9572133540921,
+      "originalS4Mode": "inf",
+      "originalS6Display": "−∞",
+      "originalS1Display": "s1ro{\"ang\":\"270.1°\",\"cos\":\"0.002\",\"sin\":\"-1.000\",\"tan\":\"-573.0\"}",
+      "finiteMathematical": true
+    },
+    {
+      "degrees": 315,
+      "rawTan": -1.0000000000000004,
+      "originalS4Mode": "num",
+      "originalS6Display": "-1.000",
+      "originalS1Display": "s1ro{\"ang\":\"315.0°\",\"cos\":\"0.707\",\"sin\":\"-0.707\",\"tan\":\"-1.000\"}",
+      "finiteMathematical": true
+    }
+  ],
+  "nearPole": [
+    {
+      "offsetRadians": -1e-13,
+      "originalMode": "undef",
+      "originalS6Display": "undef",
+      "rawTan": 10001869893962.828,
+      "cos": 9.998130455622146e-14
+    },
+    {
+      "offsetRadians": 0,
+      "originalMode": "undef",
+      "originalS6Display": "undef",
+      "rawTan": 16331239353195370,
+      "cos": 6.123233995736766e-17
+    },
+    {
+      "offsetRadians": 1e-13,
+      "originalMode": "undef",
+      "originalS6Display": "undef",
+      "rawTan": -10014135966717.432,
+      "cos": -9.985883987630672e-14
+    }
+  ],
+  "exactCard": {
+    "keyboardRoute": "off-grid79.97deg (not snapped) then Shift+Right10deg",
+    "actualDegrees": 89.97,
+    "finiteTan": 1909.8591425697111,
+    "cardHtml": "<span class=\"exact-line\">sin θ = <b>1</b></span><span class=\"exact-line\">cos θ = <b>0</b></span><span class=\"exact-line\">tan θ = <b>undef</b></span>",
+    "readout": "s1ro{\"ang\":\"90.0°\",\"cos\":\"0.001\",\"sin\":\"1.000\",\"tan\":\"1909.9\"}"
+  },
+  "slider": {
+    "stateDegrees": 270,
+    "assignedSliderValue": "90",
+    "label": "270.0",
+    "nextInputSemantics": "Original handler assigns theta=value*pi/180, replacing270.x with90.x."
+  },
+  "gaps": {
+    "existingNoPoleBridge": true,
+    "finiteOutOfRangeExample": {
+      "degree": 80,
+      "tan": 5.671281819617707,
+      "storedAsNaN": true
+    },
+    "note": "Current buckets already break lines; blanks also represent finite values beyond plot range, not just undefined points."
+  },
+  "wallFiniteInfinityLabel": {
+    "degrees": 80,
+    "tan": 5.671281819617707,
+    "wallArrowLabel": "+∞ because |tan|>S4_YRANGE3.3 although finite"
+  },
+  "history": "No history/pagehide/pageshow restoration found in actual controller; no new-document restoration guarantee.",
+  "briefExists": false,
+  "method": "Actual functions in isolated VM and source-derived handler semantics; no Chrome/native input operation."
+}

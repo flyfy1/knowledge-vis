@@ -1,0 +1,26 @@
+{
+  "browserSuites": 15,
+  "allBrowserSuitesPass": true,
+  "focusedFinalReruns": [
+    "lens",
+    "refraction"
+  ],
+  "lensChecks": 167,
+  "coreCommands": 20,
+  "allCoreCommandsPass": true,
+  "graphUnchanged": {
+    "concepts": 38,
+    "relations": 47,
+    "routes": 10
+  },
+  "remainingScopedMustFix": 0,
+  "scienceReview": "independent/final-acceptance.md",
+  "uiFirstReview": "cold-ui/postfix-ui-review.md",
+  "noPushOrDeployment": true,
+  "limits": [
+    "No physical-phone or screen-reader speech test",
+    "No human learning-outcome or whole-site certification",
+    "Readingknobs/toggles only; noquiz/profile persistence",
+    "Ideal paraxial lens; no finiteaperture/waveblur/irradiance/eyeinterior calculation"
+  ]
+}

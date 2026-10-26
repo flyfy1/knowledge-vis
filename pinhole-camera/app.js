@@ -339,14 +339,24 @@ function s2geo() {
   const A = [CX2, GROUND2 - st.H], B = [CX2, GROUND2];
   const O = [CX2 + st.u, GROUND2 - st.H / 2];
   const scrX = CX2 + st.u + st.v;
-  return { A: A, B: B, O: O, scrX: scrX, ends: imageEnds(A, B, O, scrX) };
+  const ends = imageEnds(A, B, O, scrX);
+  const signedHeight = ends.fromB - ends.fromA;
+  const base = Math.max(GROUND2, ends.bot);
+  return { A, B, O, scrX, ends,
+    // Hole-centered physical coordinates: canvas Y increases downward.
+    math: { xA:-st.u, yA:O[1]-A[1], xI:st.v, yI:O[1]-ends.fromA,
+      slope:(O[1]-A[1])/(A[0]-O[0]), signedHeight, magnification:signedHeight/st.H },
+    view: { screenTop:36, screenBottom:354, uY:base+30, vY:base+52, height:420 /* max supported image342 + labels78; fixed scale also keeps dragging stable */ }
+  };
 }
 function render2() {
-  const st = S.s2, g = s2geo(), ctx = scene('s2-canvas', 480, 330);
+  const st = S.s2, g = s2geo(), ctx = scene('s2-canvas', 480, g.view.height);
   // 地面
-  line(ctx, [16, GROUND2], [464, GROUND2], '#2b3547', 2);
+  line(ctx, [CX2-26, GROUND2], [CX2+22, GROUND2], '#2b3547', 2);
+  line(ctx, [CX2-10,g.O[1]], [g.scrX+36,g.O[1]], muted,1,[4,5]);
+  text(ctx,'O · Y=0',g.O[0]+24,g.O[1]+16,muted,11);
   // 屏
-  line(ctx, [g.scrX, 36], [g.scrX, GROUND2], '#c9d4e2', 3);
+  line(ctx, [g.scrX,g.view.screenTop], [g.scrX,g.view.screenBottom], '#c9d4e2', 3);
   text(ctx, t('cScreen'), g.scrX, 24, muted, 12.5);
   // 挡板与孔
   drawBoard(ctx, g.O[0], 36, GROUND2, g.O[1], 5, 9);
@@ -363,6 +373,8 @@ function render2() {
   ray(ctx, g.B, g.O, cyan, 2.4);
   line(ctx, g.O, [g.scrX, g.ends.fromB], cyan, 2.4);
   dot(ctx, g.A, orange, 4); dot(ctx, g.B, cyan, 4);
+  text(ctx,'A',g.A[0]-14,g.A[1],orange,12);text(ctx,'B',g.B[0]-14,g.B[1],cyan,12);
+  text(ctx,'A′',g.scrX+18,g.ends.fromA,orange,12);text(ctx,'B′',g.scrX+18,g.ends.fromB,cyan,12);
   // 像
   drawImageGlyph(ctx, g.scrX, g.ends.top, g.ends.bot, 0.95);
   dot(ctx, [g.scrX, g.ends.fromA], orange, 4);
@@ -372,30 +384,50 @@ function render2() {
   line(ctx, [26, GROUND2 - st.H], [34, GROUND2 - st.H], muted, 1.3);
   line(ctx, [26, GROUND2], [34, GROUND2], muted, 1.3);
   text(ctx, 'H', 18, GROUND2 - st.H / 2, muted, 12.5);
-  line(ctx, [CX2, 282], [g.O[0], 282], muted, 1.3);
-  line(ctx, [CX2, 278], [CX2, 286], muted, 1.3);
-  line(ctx, [g.O[0], 278], [g.O[0], 286], muted, 1.3);
-  text(ctx, 'u = ' + st.u, (CX2 + g.O[0]) / 2, 282, muted, 12.5);
-  line(ctx, [g.O[0], 304], [g.scrX, 304], muted, 1.3);
-  line(ctx, [g.O[0], 300], [g.O[0], 308], muted, 1.3);
-  line(ctx, [g.scrX, 300], [g.scrX, 308], muted, 1.3);
-  text(ctx, 'v = ' + st.v, (g.O[0] + g.scrX) / 2, 304, muted, 12.5);
+  line(ctx, [CX2, g.view.uY], [g.O[0], g.view.uY], muted, 1.3);
+  line(ctx, [CX2, g.view.uY-4], [CX2, g.view.uY+4], muted, 1.3);
+  line(ctx, [g.O[0], g.view.uY-4], [g.O[0], g.view.uY+4], muted, 1.3);
+  text(ctx, 'u = ' + st.u, (CX2 + g.O[0]) / 2, g.view.uY, muted, 12.5);
+  line(ctx, [g.O[0], g.view.vY], [g.scrX, g.view.vY], muted, 1.3);
+  line(ctx, [g.O[0], g.view.vY-4], [g.O[0], g.view.vY+4], muted, 1.3);
+  line(ctx, [g.scrX, g.view.vY-4], [g.scrX, g.view.vY+4], muted, 1.3);
+  text(ctx, 'v = ' + st.v, (g.O[0] + g.scrX) / 2, g.view.vY, muted, 12.5);
   ctx.restore();
   $('s2-h-val').textContent = st.H + ' cm';
   $('s2-u-val').textContent = st.u + ' cm';
   $('s2-v-val').textContent = st.v + ' cm';
   const h = imgH(st.H, st.u, st.v);
-  const eq = Math.abs(st.H * (Math.round(st.v / st.u * 100) / 100) - h) < 0.051 ? '=' : '≈';
-  ro('s2-ro', t('s2ro', { h: fmt1(h), H: st.H, ratio: fmt2(st.v / st.u), eq: eq }));
+  $('s2-h').value=st.H;$('s2-u').value=st.u;$('s2-v').value=st.v;
+  ro('s2-ro', t('s2ro', { h: fmt1(h), H: st.H, u:st.u, v:st.v, ratio:fmt2(st.v/st.u) }));
+  const signed = (value,places) => value.toFixed(places).replace('-', '−');
+  ro('geo-ray', t('geoRay',{xA:signed(g.math.xA,0),yA:signed(g.math.yA,1),xI:signed(g.math.xI,0),yI:signed(g.math.yI,1),k:signed(g.math.slope,3)}));
+  ro('geo-image', t('geoImage',{hs:signed(g.math.signedHeight,1),M:signed(g.math.magnification,2),h:fmt1(g.ends.h)}));
 }
 function set2(patch) {
   const st = S.s2;
-  if (patch.H !== undefined) st.H = clamp(Math.round(patch.H), 30, 90);
-  if (patch.u !== undefined) st.u = clamp(Math.round(patch.u), 60, 180);
-  if (patch.v !== undefined) st.v = clamp(Math.round(patch.v), 60, 180);
+  if (Number.isFinite(patch.H)) st.H = clamp(Math.round(patch.H), 30, 90);
+  if (Number.isFinite(patch.u)) st.u = clamp(Math.round(patch.u), 60, 180);
+  if (Number.isFinite(patch.v)) st.v = clamp(Math.round(patch.v), 60, 180);
   $('s2-h').value = st.H; $('s2-u').value = st.u; $('s2-v').value = st.v;
   render2();
+  queueGeometryReading();
 }
+
+let geometryReadingTimer=null;
+function queueGeometryReading(){clearTimeout(geometryReadingTimer);geometryReadingTimer=setTimeout(saveGeometryReading,180);}
+function validGeometryReading(value){
+  if(!value||typeof value!=='object'||Array.isArray(value))return false;
+  return value.version===1 && value.lesson==='pinhole-camera' &&
+    ['H','u','v'].every(k=>Number.isInteger(value[k])) && value.H>=30 && value.H<=90 && value.u>=60 && value.u<=180 && value.v>=60 && value.v<=180;
+}
+function saveGeometryReading(){
+  clearTimeout(geometryReadingTimer);geometryReadingTimer=null;
+  try { const prior=history.state;history.replaceState({...((prior&&typeof prior==='object'&&!Array.isArray(prior))?prior:{}),knowledgeGeometryReading:{version:1,lesson:'pinhole-camera',...S.s2}},''); } catch (_) { /* existing in-memory interaction remains available */ }
+}
+function restoreGeometryReading(){
+  try { const value=history.state && history.state.knowledgeGeometryReading;if(validGeometryReading(value))Object.assign(S.s2,{H:value.H,u:value.u,v:value.v}); } catch (_) {}
+}
+function revealGeometryTarget(){if(location.hash==='#geometry-bridge')$('geometry-bridge').open=true;}
 
 /* ---------- 第 3 步：孔变大会怎样 ---------- */
 const A3 = [64, 180], B3 = [64, 252], U3 = 140, V3 = 170;
@@ -459,7 +491,7 @@ function render3() {
   const w = spotWidth(d, U3, V3);
   const sep = Math.abs(spots[0].mid - spots[1].mid);
   const overlap = !(spots[0].hi < spots[1].lo || spots[1].hi < spots[0].lo);
-  ro('s3-ro', t('s3ro', { w: fmt1(w), sep: fmt1(sep), u: fmt0(U3), v: fmt0(V3), d: d, overlap: t(overlap ? 's3roOverlap' : 's3roNoOverlap') }));
+  ro('s3-ro', t('s3ro', { w: fmt1(w), sep: fmt1(sep), H:fmt0(Math.abs(B3[1]-A3[1])), u: fmt0(U3), v: fmt0(V3), d: d, overlap: t(overlap ? 's3roOverlap' : 's3roNoOverlap') }));
   ro('s3-ro2', t('s3ro2', { k: fmt1((d / 4) * (d / 4)) }));
 }
 function set3(d) {
@@ -604,6 +636,9 @@ function bind() {
   $('s2-pu2').onclick = () => set2({ u: 160, v: 80 });
   $('s2-pv2').onclick = () => set2({ u: 80, v: 160 });
   $('s2-reset').onclick = () => set2({ H: 60, u: 120, v: 120 });
+  $('geo-math-link').addEventListener('click',saveGeometryReading);
+  $('geo-case-a').onclick=()=>set2({H:60,u:120,v:90});
+  $('geo-case-b').onclick=()=>set2({H:60,u:120,v:180});
   dragS2();
   $('s3-d').addEventListener('input', e => set3(Number(e.target.value)));
   ['q1', 'q2', 'q3', 'q4'].forEach(q => {
@@ -635,8 +670,13 @@ onLangRefresh(renderAll);
 onLangRefresh(clearAllDrags);
 window.addEventListener('blur', clearAllDrags);
 document.querySelectorAll('.nav-step').forEach(a => a.addEventListener('click', clearAllDrags));
+restoreGeometryReading();
 bind();
 applyLang(getLang());
+revealGeometryTarget();
+window.addEventListener('hashchange',revealGeometryTarget);
+window.addEventListener('pagehide',saveGeometryReading);
+window.addEventListener('pageshow',()=>requestAnimationFrame(()=>{$('s0-disc').value=S.s0.discX;$('s3-d').value=S.s3.d;render2();}));
 // 只读检查面：供数值自查/评审复算，界面仍是唯一改状态路径。
 window.PINHOLE = {
   get state() { return JSON.parse(JSON.stringify(S)); },

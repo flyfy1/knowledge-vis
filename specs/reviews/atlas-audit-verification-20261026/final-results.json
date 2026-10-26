@@ -1,0 +1,33 @@
+{
+  "timeUTC": "2026-10-25T18:42:29.423642+00:00",
+  "allAccepted": true,
+  "suiteSources": {
+    "quality": "final/data-quality-browser.json",
+    "courses": "courses-final/course-summary.json",
+    "atlas": "serial-regressions.json",
+    "motion": "serial-regressions.json",
+    "rates": "serial-regressions.json",
+    "response": "serial-regressions.json",
+    "travel": "serial-regressions.json",
+    "continuity": "serial-regressions.json",
+    "foundations": "serial-regressions.json",
+    "work": "serial-regressions.json",
+    "home": "serial-regressions.json"
+  },
+  "qualityChecks": 117,
+  "notes": [
+    "Original serial quality attempt failed a test that read collapsed details innerText before expanding. Final corrected test passed independently. Original serial log retained unchanged.",
+    "Earlier attempts exposed EN320 header overflow (fixed), and new-test navigation/font-transition timing assumptions (fixed in test). See focus-diagnosis.md.",
+    "No changed model/controller; prior model/core acceptance remains in core.json; final validator/core acceptance in core-final.json."
+  ],
+  "courseBaseline": {
+    "total": 48,
+    "core": 45,
+    "adjacent": 3,
+    "baselineGate": true,
+    "failures": [],
+    "limits": [
+      "Canvas naming, raw target sizes and boundary/source keyword signals are observations, not accessibility/science pass gates."
+    ]
+  }
+}

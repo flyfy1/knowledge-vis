@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "scenarios": [
+    {
+      "lang": "en",
+      "pass": true,
+      "scope": "LiveM2π→M3,exact native/pointer/key step,all presets,locale,RC/design,Nyquist copy/phase,real Z link/units,atlas Back filter,three lessons320px/2x/forcedcolor"
+    },
+    {
+      "lang": "zh",
+      "pass": true,
+      "scope": "LiveM2π→M3,exact native/pointer/key step,all presets,locale,RC/design,Nyquist copy/phase,real Z link/units,atlas Back filter,three lessons320px/2x/forcedcolor"
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "optional": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "location": {
+        "url": "http://127.0.0.1:18775/favicon.ico",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ]
+}

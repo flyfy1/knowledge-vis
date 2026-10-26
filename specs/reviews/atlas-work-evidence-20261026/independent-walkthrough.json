@@ -1,0 +1,514 @@
+[
+  {
+    "test": "first learner entry",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=integral&view=list&trail=work",
+      "text": "力为负，能做正功吗？\n\n先预测，再选“释放 → 平衡”：力和位移都向左，F dx 为正。再比较下一个四分之一周期；最后选完整往返：净功为零，但曲线与正负功读数会保留途中交换的证据。\n\nK=½mv² 是动能，U=½kx² 是弹簧弹性势能（平衡处取 U=0），E=K+U。1J=1N·m。本实验限于无阻尼、无持续驱动的理想水平弹簧；回复力仍存在。\n\n定积分\n功与能量\n净力与牛顿定律\n\nWspring = ∫path (−kx) dx = ½k[x(a)² − x(b)²] = ΔK = −ΔU\n\n释放 → 平衡\n平衡 → 转向\n完整往返\n交换首段积分限\nF–x · 所选路径的最后一段功\n横轴 x（m），固定 ±1m；纵轴弹簧力 F（N），刻度随 k 改变。青色为正 F dx，橙色为负 F dx。这里只突出朝 b 的最后一段，因返程会在同一直线上重叠；不是整个区间的净面积。\n同一时钟 · 净功 W(a → τ)\n横轴 τ（秒）；纵轴是已经由位移积分求出的净功（J），不是力–时间面积。实线为所选区间，虚线为完整预测；标尺随 k、A 改变。\n\n两限相同：没有所选路径段，功和能量变化都为零；端点能量本身不一定为零。\n\n弹簧功 a → b（J）\n0.000\nK(b) − K(a)（J）\n0.000\nU(b) − U(a)（J）\n0.000\n守恒的 E=K+U（J）\n0.720\n\nx(a)=0.600 m，x(b)=0.600 m；K(a)=0.000 J，K(b)=0.000 J；U(a)=0.720 J，U(b)=0.720 J。\n\n按时间先后分段：正功 +0.000 J；负功 0.000 J；净功 0.000 J。正负只在净值里抵消，途中交换仍存在。\n\n两限相同：没有所选路径段，功和能量变化都为零；端点能量本身不一定为零。\n\n边界一·物块：弹簧力是物块的外力，也是唯一做非零功的力；重力与支持力不做水平功，所以 Wnet=Wspring=ΔK。边界二·物块＋弹簧：弹性势能属于内部，无驱动或摩擦功输入，K+U 守恒。添加其他力后这些关系可能改变；不能把这份自由模型账本照搬到受迫有阻尼实验。\n\n读数为解析结果：在 Fv 变号的四分之一周期处分段，累加每段精确有符号功；稳定三角差式避免两个几乎相等的平方相减。曲线采样只是示意。改参仍是假想对照，不是实际做功的过程。\n\n播放只向前移动 b，a 固定；读数表示当前所选区间，不是外界输入能量的计数器。交换积分限是数学比较；区间缩短时，正负贡献也可缩小。\n\n对照已有积分课 →\nOpenStax7.1 · 对位移积分求功 ↗\nOpenStax8.1 · 弹簧势能 ↗",
+      "intro": "a、b 是同一自由弹簧运动的时间端点；功的积分变量却是位移 x：Wspring=∫路径(−kx) dx。力–时间面积 ∫F dt 的单位为冲量 N·s，不是功的 N·m=J。"
+    }
+  },
+  {
+    "test": "learner preset zh 0,0.25",
+    "data": {
+      "state": {
+        "cycles": "0.25",
+        "position": "0",
+        "period": "3.141592653589793",
+        "force": "0",
+        "playing": "false",
+        "velocity": "-1.2",
+        "speed": "1.2",
+        "acceleration": "0",
+        "motionCase": "crossing",
+        "rates": "false",
+        "view": "work",
+        "startCycles": "0",
+        "workIntegral": "0.72",
+        "deltaK": "0.72",
+        "deltaU": "-0.72",
+        "workPositive": "0.72",
+        "workNegative": "0",
+        "workChronological": "0.72",
+        "energy": "0.72",
+        "workLast": "0.72"
+      },
+      "leg": "所选 a → b 路径末段：x=0.600 → 0.000 m；F=-2.400 → 0.000 N；该段功 0.720 J。箭头给出位移方向，不能只凭力的正负判断功。",
+      "ledger": "按时间先后分段：正功 +0.720 J；负功 0.000 J；净功 0.720 J。正负只在净值里抵消，途中交换仍存在。",
+      "insight": "a≤b：Wspring=ΔK=−ΔU。正功使动能增加，负功把能量还给弹簧。完整往返净功为零，不代表途中没有正功和负功。",
+      "endpoints": "x(a)=0.600 m，x(b)=0.000 m；K(a)=0.000 J，K(b)=0.720 J；U(a)=0.720 J，U(b)=0.000 J。"
+    }
+  },
+  {
+    "test": "learner preset zh 0.25,0.5",
+    "data": {
+      "state": {
+        "cycles": "0.5",
+        "position": "-0.6",
+        "period": "3.141592653589793",
+        "force": "2.4",
+        "playing": "false",
+        "velocity": "0",
+        "speed": "0",
+        "acceleration": "2.4",
+        "motionCase": "turning",
+        "rates": "false",
+        "view": "work",
+        "startCycles": "0.25",
+        "workIntegral": "-0.72",
+        "deltaK": "-0.72",
+        "deltaU": "0.72",
+        "workPositive": "0",
+        "workNegative": "-0.72",
+        "workChronological": "-0.72",
+        "energy": "0.72",
+        "workLast": "-0.72"
+      },
+      "leg": "所选 a → b 路径末段：x=0.000 → -0.600 m；F=0.000 → 2.400 N；该段功 -0.720 J。箭头给出位移方向，不能只凭力的正负判断功。",
+      "ledger": "按时间先后分段：正功 +0.000 J；负功 -0.720 J；净功 -0.720 J。正负只在净值里抵消，途中交换仍存在。",
+      "insight": "a≤b：Wspring=ΔK=−ΔU。正功使动能增加，负功把能量还给弹簧。完整往返净功为零，不代表途中没有正功和负功。",
+      "endpoints": "x(a)=0.000 m，x(b)=-0.600 m；K(a)=0.720 J，K(b)=0.000 J；U(a)=0.000 J，U(b)=0.720 J。"
+    }
+  },
+  {
+    "test": "learner preset zh 0,1",
+    "data": {
+      "state": {
+        "cycles": "1",
+        "position": "0.6",
+        "period": "3.141592653589793",
+        "force": "-2.4",
+        "playing": "false",
+        "velocity": "0",
+        "speed": "0",
+        "acceleration": "-2.4",
+        "motionCase": "turning",
+        "rates": "false",
+        "view": "work",
+        "startCycles": "0",
+        "workIntegral": "0",
+        "deltaK": "0",
+        "deltaU": "0",
+        "workPositive": "1.44",
+        "workNegative": "-1.44",
+        "workChronological": "0",
+        "energy": "0.72",
+        "workLast": "-0.72"
+      },
+      "leg": "所选 a → b 路径末段：x=0.000 → 0.600 m；F=0.000 → -2.400 N；该段功 -0.720 J。箭头给出位移方向，不能只凭力的正负判断功。",
+      "ledger": "按时间先后分段：正功 +1.440 J；负功 -1.440 J；净功 0.000 J。正负只在净值里抵消，途中交换仍存在。",
+      "insight": "a≤b：Wspring=ΔK=−ΔU。正功使动能增加，负功把能量还给弹簧。完整往返净功为零，不代表途中没有正功和负功。",
+      "endpoints": "x(a)=0.600 m，x(b)=0.600 m；K(a)=0.000 J，K(b)=0.000 J；U(a)=0.720 J，U(b)=0.720 J。"
+    }
+  },
+  {
+    "test": "learner preset zh 0.25,0",
+    "data": {
+      "state": {
+        "cycles": "0",
+        "position": "0.6",
+        "period": "3.141592653589793",
+        "force": "-2.4",
+        "playing": "false",
+        "velocity": "0",
+        "speed": "0",
+        "acceleration": "-2.4",
+        "motionCase": "turning",
+        "rates": "false",
+        "view": "work",
+        "startCycles": "0.25",
+        "workIntegral": "-0.72",
+        "deltaK": "-0.72",
+        "deltaU": "0.72",
+        "workPositive": "0.72",
+        "workNegative": "0",
+        "workChronological": "0.72",
+        "energy": "0.72",
+        "workLast": "-0.72"
+      },
+      "leg": "所选 a → b 路径末段：x=0.000 → 0.600 m；F=0.000 → -2.400 N；该段功 -0.720 J。箭头给出位移方向，不能只凭力的正负判断功。",
+      "ledger": "按时间先后分段：正功 +0.720 J；负功 0.000 J；净功 0.720 J。正负只在净值里抵消，途中交换仍存在。",
+      "insight": "a>b：有向功和端点能量差变号；正负功账本仍按 [min(a,b),max(a,b)] 的时间先后记录。所选箭头表示数学 a→b 方向，不代表时间倒流。",
+      "endpoints": "x(a)=0.000 m，x(b)=0.600 m；K(a)=0.720 J，K(b)=0.000 J；U(a)=0.000 J，U(b)=0.720 J。"
+    }
+  },
+  {
+    "test": "learner preset en 0,0.25",
+    "data": {
+      "state": {
+        "cycles": "0.25",
+        "position": "0",
+        "period": "3.141592653589793",
+        "force": "0",
+        "playing": "false",
+        "velocity": "-1.2",
+        "speed": "1.2",
+        "acceleration": "0",
+        "motionCase": "crossing",
+        "rates": "false",
+        "view": "work",
+        "startCycles": "0",
+        "workIntegral": "0.72",
+        "deltaK": "0.72",
+        "deltaU": "-0.72",
+        "workPositive": "0.72",
+        "workNegative": "0",
+        "workChronological": "0.72",
+        "energy": "0.72",
+        "workLast": "0.72"
+      },
+      "leg": "Last a → b leg: x=0.600 → 0.000 m; F=-2.400 → 0.000 N; leg work 0.720 J. The arrow gives displacement direction; force sign alone cannot determine work sign.",
+      "ledger": "Chronological contributions: positive +0.720 J; negative 0.000 J; net 0.720 J. Opposite contributions cancel in the net, not in the exchanges.",
+      "insight": "a≤b: Wspring=ΔK=−ΔU. Positive work increases K; negative work returns energy to the spring. A whole return has zero net work even though positive and negative work occurred.",
+      "endpoints": "x(a)=0.600 m, x(b)=0.000 m; K(a)=0.000 J, K(b)=0.720 J; U(a)=0.720 J, U(b)=0.000 J."
+    }
+  },
+  {
+    "test": "learner preset en 0.25,0.5",
+    "data": {
+      "state": {
+        "cycles": "0.5",
+        "position": "-0.6",
+        "period": "3.141592653589793",
+        "force": "2.4",
+        "playing": "false",
+        "velocity": "0",
+        "speed": "0",
+        "acceleration": "2.4",
+        "motionCase": "turning",
+        "rates": "false",
+        "view": "work",
+        "startCycles": "0.25",
+        "workIntegral": "-0.72",
+        "deltaK": "-0.72",
+        "deltaU": "0.72",
+        "workPositive": "0",
+        "workNegative": "-0.72",
+        "workChronological": "-0.72",
+        "energy": "0.72",
+        "workLast": "-0.72"
+      },
+      "leg": "Last a → b leg: x=0.000 → -0.600 m; F=0.000 → 2.400 N; leg work -0.720 J. The arrow gives displacement direction; force sign alone cannot determine work sign.",
+      "ledger": "Chronological contributions: positive +0.000 J; negative -0.720 J; net -0.720 J. Opposite contributions cancel in the net, not in the exchanges.",
+      "insight": "a≤b: Wspring=ΔK=−ΔU. Positive work increases K; negative work returns energy to the spring. A whole return has zero net work even though positive and negative work occurred.",
+      "endpoints": "x(a)=0.000 m, x(b)=-0.600 m; K(a)=0.720 J, K(b)=0.000 J; U(a)=0.000 J, U(b)=0.720 J."
+    }
+  },
+  {
+    "test": "learner preset en 0,1",
+    "data": {
+      "state": {
+        "cycles": "1",
+        "position": "0.6",
+        "period": "3.141592653589793",
+        "force": "-2.4",
+        "playing": "false",
+        "velocity": "0",
+        "speed": "0",
+        "acceleration": "-2.4",
+        "motionCase": "turning",
+        "rates": "false",
+        "view": "work",
+        "startCycles": "0",
+        "workIntegral": "0",
+        "deltaK": "0",
+        "deltaU": "0",
+        "workPositive": "1.44",
+        "workNegative": "-1.44",
+        "workChronological": "0",
+        "energy": "0.72",
+        "workLast": "-0.72"
+      },
+      "leg": "Last a → b leg: x=0.000 → 0.600 m; F=0.000 → -2.400 N; leg work -0.720 J. The arrow gives displacement direction; force sign alone cannot determine work sign.",
+      "ledger": "Chronological contributions: positive +1.440 J; negative -1.440 J; net 0.000 J. Opposite contributions cancel in the net, not in the exchanges.",
+      "insight": "a≤b: Wspring=ΔK=−ΔU. Positive work increases K; negative work returns energy to the spring. A whole return has zero net work even though positive and negative work occurred.",
+      "endpoints": "x(a)=0.600 m, x(b)=0.600 m; K(a)=0.000 J, K(b)=0.000 J; U(a)=0.720 J, U(b)=0.720 J."
+    }
+  },
+  {
+    "test": "learner preset en 0.25,0",
+    "data": {
+      "state": {
+        "cycles": "0",
+        "position": "0.6",
+        "period": "3.141592653589793",
+        "force": "-2.4",
+        "playing": "false",
+        "velocity": "0",
+        "speed": "0",
+        "acceleration": "-2.4",
+        "motionCase": "turning",
+        "rates": "false",
+        "view": "work",
+        "startCycles": "0.25",
+        "workIntegral": "-0.72",
+        "deltaK": "-0.72",
+        "deltaU": "0.72",
+        "workPositive": "0.72",
+        "workNegative": "0",
+        "workChronological": "0.72",
+        "energy": "0.72",
+        "workLast": "-0.72"
+      },
+      "leg": "Last a → b leg: x=0.000 → 0.600 m; F=0.000 → -2.400 N; leg work -0.720 J. The arrow gives displacement direction; force sign alone cannot determine work sign.",
+      "ledger": "Chronological contributions: positive +0.720 J; negative 0.000 J; net 0.720 J. Opposite contributions cancel in the net, not in the exchanges.",
+      "insight": "a>b: the oriented work and endpoint energy differences reverse sign. The positive/negative ledger still follows chronological [min(a,b),max(a,b)]. The selected arrow is mathematical a→b orientation, not time running backward.",
+      "endpoints": "x(a)=0.000 m, x(b)=0.600 m; K(a)=0.720 J, K(b)=0.000 J; U(a)=0.000 J, U(b)=0.720 J."
+    }
+  },
+  {
+    "test": "arbitrary interval",
+    "data": {
+      "cycles": "1.865",
+      "position": "0.3967871191941907",
+      "period": "3.141592653589793",
+      "force": "-1.5871484767767627",
+      "playing": "false",
+      "velocity": "0.9001332835565521",
+      "speed": "0.9001332835565521",
+      "acceleration": "-1.5871484767767627",
+      "motionCase": "slowing",
+      "rates": "false",
+      "view": "work",
+      "startCycles": "0.135",
+      "workIntegral": "0",
+      "deltaK": "0",
+      "deltaU": "0",
+      "workPositive": "2.4748800359168506",
+      "workNegative": "-2.4748800359168506",
+      "workChronological": "0",
+      "energy": "0.72",
+      "workLast": "-0.31488003591685043"
+    }
+  },
+  {
+    "test": "equal nonzero endpoint energy",
+    "data": {
+      "state": {
+        "cycles": "0.375",
+        "position": "-0.42426406871192845",
+        "period": "3.141592653589793",
+        "force": "1.6970562748477138",
+        "playing": "false",
+        "velocity": "-0.848528137423857",
+        "speed": "0.848528137423857",
+        "acceleration": "1.6970562748477138",
+        "motionCase": "slowing",
+        "rates": "false",
+        "view": "work",
+        "startCycles": "0.375",
+        "workIntegral": "0",
+        "deltaK": "0",
+        "deltaU": "0",
+        "workPositive": "0",
+        "workNegative": "0",
+        "workChronological": "0",
+        "energy": "0.72",
+        "workLast": "0"
+      },
+      "text": "x(a)=-0.424 m, x(b)=-0.424 m; K(a)=0.360 J, K(b)=0.360 J; U(a)=0.360 J, U(b)=0.360 J."
+    }
+  },
+  {
+    "test": "parameter hypotheses",
+    "data": {
+      "cycles": "0.25",
+      "position": "0",
+      "period": "3.141592653589793",
+      "force": "0",
+      "playing": "false",
+      "velocity": "-2",
+      "speed": "2",
+      "acceleration": "0",
+      "motionCase": "crossing",
+      "rates": "false",
+      "view": "work",
+      "startCycles": "0",
+      "workIntegral": "8",
+      "deltaK": "8",
+      "deltaU": "-8",
+      "workPositive": "8",
+      "workNegative": "0",
+      "workChronological": "8",
+      "energy": "8",
+      "workLast": "8"
+    }
+  },
+  {
+    "test": "four views retain shared interval",
+    "data": {
+      "state": {
+        "cycles": "0.625",
+        "position": "-0.7071067811865477",
+        "period": "3.141592653589793",
+        "force": "11.313708498984763",
+        "playing": "false",
+        "velocity": "1.414213562373095",
+        "speed": "1.414213562373095",
+        "acceleration": "2.8284271247461907",
+        "motionCase": "speeding",
+        "rates": "false",
+        "view": "work",
+        "startCycles": "0.125",
+        "workIntegral": "0",
+        "deltaK": "0",
+        "deltaU": "0",
+        "workPositive": "7.999999999999998",
+        "workNegative": "-8",
+        "workChronological": "0",
+        "energy": "8",
+        "workLast": "3.999999999999999",
+        "integral": "-1.4142135623730951",
+        "distance": "2",
+        "positive": "0.2928932188134525",
+        "negative": "-1.7071067811865475",
+        "chronologicalDisplacement": "-1.414213562373095",
+        "speedIntegral": "2",
+        "velocityRange": "2.5"
+      }
+    }
+  },
+  {
+    "test": "source Back and pure return",
+    "data": {
+      "state": {
+        "cycles": "0.625",
+        "position": "-0.7071067811865477",
+        "period": "3.141592653589793",
+        "force": "11.313708498984763",
+        "playing": "false",
+        "velocity": "1.414213562373095",
+        "speed": "1.414213562373095",
+        "acceleration": "2.8284271247461907",
+        "motionCase": "speeding",
+        "rates": "false",
+        "view": "work",
+        "startCycles": "0.125",
+        "workIntegral": "0",
+        "deltaK": "0",
+        "deltaU": "0",
+        "workPositive": "7.999999999999998",
+        "workNegative": "-8",
+        "workChronological": "0",
+        "energy": "8",
+        "workLast": "3.999999999999999"
+      }
+    }
+  },
+  {
+    "test": "leaving response pauses restored work",
+    "data": {
+      "state": {
+        "cycles": "0.6992935274352965",
+        "position": "-0.3132355790139042",
+        "period": "3.141592653589793",
+        "force": "5.011769264222467",
+        "playing": "false",
+        "velocity": "1.8993509123274974",
+        "speed": "1.8993509123274974",
+        "acceleration": "1.2529423160556168",
+        "motionCase": "speeding",
+        "rates": "false",
+        "view": "work",
+        "startCycles": "0.125",
+        "workIntegral": "3.2150677763185938",
+        "deltaK": "3.2150677763185938",
+        "deltaU": "-3.2150677763185938",
+        "workPositive": "11.215067776318593",
+        "workNegative": "-8",
+        "workChronological": "3.2150677763185938",
+        "energy": "8",
+        "workLast": "7.215067776318594",
+        "integral": "-1.08303490536754",
+        "distance": "2.3311786570055553",
+        "positive": "0.6240718758190076",
+        "negative": "-1.7071067811865475",
+        "chronologicalDisplacement": "-1.0830349053675399",
+        "speedIntegral": "2.3311786570055553",
+        "velocityRange": "2.5"
+      }
+    }
+  },
+  {
+    "test": "repeated reset",
+    "data": {
+      "state": {
+        "cycles": "0",
+        "position": "0.6",
+        "period": "3.141592653589793",
+        "force": "-2.4",
+        "playing": "false",
+        "velocity": "0",
+        "speed": "0",
+        "acceleration": "-2.4",
+        "motionCase": "turning",
+        "rates": "false",
+        "view": "work",
+        "startCycles": "0",
+        "workIntegral": "0",
+        "deltaK": "0",
+        "deltaU": "0",
+        "workPositive": "0",
+        "workNegative": "0",
+        "workChronological": "0",
+        "energy": "0.72",
+        "workLast": "0",
+        "integral": "-1.08303490536754",
+        "distance": "2.3311786570055553",
+        "positive": "0.6240718758190076",
+        "negative": "-1.7071067811865475",
+        "chronologicalDisplacement": "-1.0830349053675399",
+        "speedIntegral": "2.3311786570055553",
+        "velocityRange": "2.5"
+      }
+    }
+  },
+  {
+    "test": "320200 keyboard en",
+    "data": {
+      "root": "32px",
+      "width": 320,
+      "scroll": 320,
+      "active": "0,0.25",
+      "bbox": {
+        "x": 33,
+        "y": 360.21875,
+        "width": 254,
+        "height": 123.59375,
+        "top": 360.21875,
+        "right": 287,
+        "bottom": 483.8125,
+        "left": 33
+      }
+    }
+  },
+  {
+    "test": "320200 keyboard zh",
+    "data": {
+      "root": "32px",
+      "width": 320,
+      "scroll": 320,
+      "active": "0,0.25",
+      "bbox": {
+        "x": 33,
+        "y": 386.625,
+        "width": 206.484375,
+        "height": 70.796875,
+        "top": 386.625,
+        "right": 239.484375,
+        "bottom": 457.421875,
+        "left": 33
+      }
+    }
+  },
+  {
+    "test": "forced-colors focus",
+    "data": {
+      "active": "motion-reset",
+      "outline": "3px"
+    }
+  },
+  {
+    "test": "pageerrors",
+    "data": []
+  }
+]

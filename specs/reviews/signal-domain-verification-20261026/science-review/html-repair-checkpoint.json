@@ -1,0 +1,54 @@
+{
+  "pass": true,
+  "rows": [
+    {
+      "course": "sampling",
+      "lang": "en",
+      "key": "s4e",
+      "decodedText": "A real sine has positive and negative frequency components. This diagram shows only positive-frequency peak positions, not a complete magnitude/phase spectrum. Ideal uniform sampling repeats the two-sided spectrum every fₛ Hz. With known B<fₛ/2, ideal reconstruction selects the two-sided baseband. The displayed [0,fₛ/2] is only its positive half; peak locations alone do not recover a waveform. Drag fₛ to see copies fold into this region. Compare the Fourier spectrum → Convert on the Z page: spacing fₛ Hz or 2π/T rad/s →"
+    },
+    {
+      "course": "sampling",
+      "lang": "zh",
+      "key": "s4e",
+      "decodedText": "一个实正弦有正、负频率分量；此图仅画正频率峰的位置，不是完整幅相谱。理想均匀采样使双边频谱以 fₛ Hz 为间隔复制；已知带限 B<fₛ/2 时，选取双边基带并作理想重建。这里显示的 [0,fₛ/2] 只是正频率那一半，不能单靠峰位置还原波形。拖 fₛ 看复制峰怎样折入此区。到傅里叶页比较频谱 → 到Z页换算：复制间距：fₛ Hz，或对应的 2π/T rad/s →"
+    },
+    {
+      "course": "ztransform",
+      "lang": "en",
+      "key": "s5e",
+      "decodedText": "Drag a pole s=σ+jω with σ<0 and inspect the sampled exponential mode z=e^{sT}: |z|=e^{σT}, angleΩ=ωT. Here T is in seconds, σ in s⁻¹ and ω in rad/s; Ω is the angle increment per sample. The principal strip −π/T<ω≤π/T spans 2π/T along the imaginary-frequency direction and gives one nonrepeating turn. This drawing restricts σ<0, so its images lie inside the unit circle; it does not depict the whole z-plane. Turn on twins to see equal mappings for ω separated by ±2π/T. Samples alone cannot distinguish these frequencies."
+    },
+    {
+      "course": "ztransform",
+      "lang": "en",
+      "key": "s5hint",
+      "decodedText": "Units: fₛ=1/T. The sampling page’s copy spacing is fₛ Hz, or 2π/T rad/s after conversion; these are the same spacing in different units. Continuous f Hz gives ω=2πf rad/s and sampled digital Ω=ωT=2πf/fₛ rad/sample (mod 2π). Baseband uniqueness needs a known ideal bandlimit with |ω|<π/T. This pole-mode map is not a general discretized transfer function for an entire analog system."
+    },
+    {
+      "course": "ztransform",
+      "lang": "en",
+      "key": "cvStrip",
+      "decodedText": "principal strip −π/T<ω≤π/T"
+    },
+    {
+      "course": "ztransform",
+      "lang": "zh",
+      "key": "s5e",
+      "decodedText": "左边拖动一个σ<0的极点 s=σ+jω，右边显示指数模态的采样映射 z=e^{sT}：|z|=e^{σT}、角度Ω=ωT。此步约定 T 以秒计，σ单位s⁻¹，ω单位rad/s；Ω是每个样本的相角增量。主条带 −π/T<ω≤π/T 沿虚部ω方向宽2π/T，对应一周不重复角度；本图限定σ<0，所以像在单位圆内，不代表画出了整个z平面。打开孪生点，看ω相差±2π/T时映射重合；仅靠样本不能识别这类频率。"
+    },
+    {
+      "course": "ztransform",
+      "lang": "zh",
+      "key": "s5hint",
+      "decodedText": "单位对照：fₛ=1/T，采样页的复制间距是 fₛ Hz；换成角频率就是2π/T rad/s，不是两个不同结果。连续 f Hz 对应 ω=2πf rad/s，采样后数字 Ω=ωT=2πf/fₛ rad/样本（模2π）。已知理想带限且 |ω|<π/T 时才有基带唯一性；本图的极点模态映射不是整台模拟系统的通用离散化传递函数。"
+    },
+    {
+      "course": "ztransform",
+      "lang": "zh",
+      "key": "cvStrip",
+      "decodedText": "主条带 −π/T<ω≤π/T"
+    }
+  ],
+  "method": "Dictionary source and HTML-tokenizer text check; not actual browser visible-text verification."
+}

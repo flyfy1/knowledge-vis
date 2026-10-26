@@ -1,0 +1,85 @@
+[
+  {
+    "step": "projection to rates",
+    "url": "http://127.0.0.1:18775/atlas/?node=unit-circle&view=list&trail=kinematics",
+    "detail": "单位圆",
+    "routeStops": [
+      {
+        "text": "1. 导数与瞬时变化率",
+        "pressed": "false"
+      },
+      {
+        "text": "2. 简谐振动",
+        "pressed": "false"
+      },
+      {
+        "text": "3. 净力与牛顿第二定律",
+        "pressed": "false"
+      }
+    ],
+    "labNodes": [
+      {
+        "text": "导数与变化率",
+        "pressed": "false"
+      },
+      {
+        "text": "简谐振动",
+        "pressed": "false"
+      },
+      {
+        "text": "净力与牛顿定律",
+        "pressed": "false"
+      }
+    ],
+    "phase": "0.375"
+  },
+  {
+    "step": "rates to travel",
+    "url": "http://127.0.0.1:18775/atlas/?node=unit-circle&view=list&trail=travel",
+    "detail": "单位圆",
+    "routeStops": [
+      {
+        "text": "1. 定积分与有符号累加",
+        "pressed": "false"
+      },
+      {
+        "text": "2. 简谐振动",
+        "pressed": "false"
+      }
+    ],
+    "labNodes": [
+      {
+        "text": "定积分",
+        "pressed": "false"
+      },
+      {
+        "text": "简谐振动",
+        "pressed": "false"
+      }
+    ],
+    "phase": "0.375"
+  },
+  {
+    "step": "inspect derivative node",
+    "scrollY": 9012,
+    "titleTop": 52.390625,
+    "labTop": -7918.046875,
+    "detail": "数学基础\n\n导数与瞬时变化率\n\n可微函数的导数是瞬时变化率，也是切线斜率。位置对时间的导数是带方向的速度，速度对时间的导数是加速度。\n\nf′(t) = lim Δf/Δt\n\n斜率与净力：比较带方向的变化率 →\n打开交互讲解 →\n\n直接进入已有知识页的相关章节。\n\n这些概念为什么相连 · 1\n1 / 表示方式\n导数与瞬时变化率 → 描述运动的变化率 → 简谐振动\n\n本振子的可微位置 x(t) 给出 v=dx/dt、a=dv/dt；有方向的速度可以为负，速率是 |v|。微分描述运动，不是产生运动的物理原因。\n\n探索 简谐振动 →\n查看解释依据 →"
+  },
+  {
+    "step": "course reached",
+    "url": "http://127.0.0.1:18775/derivative/#step2",
+    "heading": "每个点都有自己的导数：把斜率收集成新函数"
+  },
+  {
+    "step": "Back from course",
+    "url": "http://127.0.0.1:18775/atlas/?node=derivative&view=list&trail=kinematics",
+    "scrollY": 9012,
+    "detailTop": 52.390625,
+    "labTop": -7918.046875,
+    "phase": "0.375",
+    "availableReturn": [
+      "斜率与净力：比较带方向的变化率 →"
+    ]
+  }
+]

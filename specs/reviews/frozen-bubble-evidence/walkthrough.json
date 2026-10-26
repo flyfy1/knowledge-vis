@@ -1,0 +1,139 @@
+[
+  {
+    "test": "play disabled without seed",
+    "result": true
+  },
+  {
+    "test": "growth pause freezes clock",
+    "result": {
+      "before": "0.9",
+      "after": "0.9"
+    }
+  },
+  {
+    "test": "same-time growth comparison",
+    "result": "01 / 03\n\nWhat actually freezes?\n\nThis step asks: how does ice begin in the film? A bubble is a thin water-containing shell around air. Water in that shell freezes; the enclosed air does not turn into ice. Nucleation creates the first stable patch of ice. Anisotropic growth means different directions grow at different rates, allowing branching patterns.\n\nAdd an ice seed, then play. Pause and increase the undercooling to compare branch lengths at the same diagram time. This step isolates growth; it leaves transport out.\n\nThe disk is a front projection of a spherical shell. Ice lies on the film, not inside the bubble. Click the film to seed it, or use the button.\n\nUndercooling ΔT (relative to this solution’s melting point)\n18.0°C\n\nΔT = melting point Tm − film temperature Tfilm. Compare 2–18°C of undercooling. Changing it keeps seeds and time, redrawing a hypothetical same-time comparison; this is not a cooling history.\n\nAdd an ice seed\nPlay\nReset & stop\nDiagram time (arbitrary units; seeking pauses playback)\n\n10.0 / 24 diagram units · Seeds: 1\n\nPaused. Drag the time control to inspect a moment.\n\nSeeding is a manual intervention, not a model of natural nucleation probability. Six-direction branches illustrate anisotropy; they predict neither crystal habit, real speed nor freezing time. Collisions and solute enrichment are omitted."
+  },
+  {
+    "test": "compare pause freezes clock",
+    "result": {
+      "before": "0.8",
+      "after": "0.8"
+    }
+  },
+  {
+    "test": "compare time 6",
+    "result": "02 / 03\n\nHow can heat released by freezing move ice?\n\nThis step asks: why can crystals travel, while another bubble freezes only near its base? Latent heat is energy released as water becomes ice. Its local release changes the film temperature. Surface tension makes a liquid interface tend to contract. Under the paper’s conditions, warmer film has lower tension. A temperature difference along the film can create a tension gradient (different pulls at different positions), driving liquid along the interface: Marangoni flow.\n\nNew ice forms → latent heat is released, locally warming the freezing front.\nUnequal surface tension drives liquid motion; early flow can rise from a warmer base toward colder film.\nIn suitable uniformly cold conditions, flow can detach and carry small crystals. They keep growing, creating multiple freezing fronts.\n\nThis experiment is independent of Step 1. Both scenes share one diagram clock and start on an icy base. Play, inspect trails and crystals in A, then watch the orange front in B slow down. Step navigation preserves both experiments.\n\nA · Uniformly cold\n\nAir ≈ −18°C; icy base ≈ −18°C\n\nCyan lines: paths of carried ice crystals. Many crystals grow at once; these are not snowflakes inside the air.\nB · Warm air + cold base\n\nAir ≈ +25°C; icy base ≈ −20°C\n\nOrange line: freezing front. Heat from warm air competes with conduction along the thin frozen shell to the base; the front may stall.\nPlay\nReset & stop\nShow crystal trails (display only)\nDiagram time (arbitrary units; seeking pauses playback)\n\n6.0 / 24 diagram units · Illustrated crystals released onto film: 7 · B front height (fraction of diagram diameter): 0.36\n\nPaused. Drag the time control to inspect a moment.\n\nHorizontal: 0–24 diagram time. Vertical: B front height above base ÷ bubble diameter (0–1). Only elapsed history is shown. The prescribed orange curve levels off; its limit is neither measured nor universal.\n\nA and B illustrate two paper-inspired conditions, not temperature predictions. B can have brief flow; this diagram isolates its long-term front trend and does not claim all flow is absent. Paths, counts, speeds and the front curve are prescribed qualitative illustrations, not measurements. No flow or heat-transfer equations are solved."
+  },
+  {
+    "test": "compare time 24",
+    "result": "02 / 03\n\nHow can heat released by freezing move ice?\n\nThis step asks: why can crystals travel, while another bubble freezes only near its base? Latent heat is energy released as water becomes ice. Its local release changes the film temperature. Surface tension makes a liquid interface tend to contract. Under the paper’s conditions, warmer film has lower tension. A temperature difference along the film can create a tension gradient (different pulls at different positions), driving liquid along the interface: Marangoni flow.\n\nNew ice forms → latent heat is released, locally warming the freezing front.\nUnequal surface tension drives liquid motion; early flow can rise from a warmer base toward colder film.\nIn suitable uniformly cold conditions, flow can detach and carry small crystals. They keep growing, creating multiple freezing fronts.\n\nThis experiment is independent of Step 1. Both scenes share one diagram clock and start on an icy base. Play, inspect trails and crystals in A, then watch the orange front in B slow down. Step navigation preserves both experiments.\n\nA · Uniformly cold\n\nAir ≈ −18°C; icy base ≈ −18°C\n\nCyan lines: paths of carried ice crystals. Many crystals grow at once; these are not snowflakes inside the air.\nB · Warm air + cold base\n\nAir ≈ +25°C; icy base ≈ −20°C\n\nOrange line: freezing front. Heat from warm air competes with conduction along the thin frozen shell to the base; the front may stall.\nPlay from start\nReset & stop\nShow crystal trails (display only)\nDiagram time (arbitrary units; seeking pauses playback)\n\n24.0 / 24 diagram units · Illustrated crystals released onto film: 22 · B front height (fraction of diagram diameter): 0.46\n\nFinished. Seek backward or play from the start.\n\nHorizontal: 0–24 diagram time. Vertical: B front height above base ÷ bubble diameter (0–1). Only elapsed history is shown. The prescribed orange curve levels off; its limit is neither measured nor universal.\n\nA and B illustrate two paper-inspired conditions, not temperature predictions. B can have brief flow; this diagram isolates its long-term front trend and does not claim all flow is absent. Paths, counts, speeds and the front curve are prescribed qualitative illustrations, not measurements. No flow or heat-transfer equations are solved."
+  },
+  {
+    "test": "trails display only",
+    "result": "24"
+  },
+  {
+    "test": "optics",
+    "result": "03 / 03\n\nColor does not mean the ice itself is colored\n\nThis step asks: where could the colors in the video come from? Several optical effects can share one image. Distinguish these three sources; do not use the image as a thermometer.\n\n01 · Remaining liquid film\nLight reflected from the two film surfaces combines. Different wavelengths reinforce or cancel, producing thin-film interference colors. Thickness and viewing angle affect the result. Explore how path difference controls reinforcement and cancellation →\n02 · Ice crystals\nCrystal faces reflect, refract and scatter light. Branches change which light reaches your eye; thin-film interference does not explain every colored feature. Explore how light changes direction at an interface →\n03 · Lighting, background & recording\nSunset, sky and background contribute colored light. Exposure, white balance and editing also affect a recording. These principles cannot determine whether the source video was color graded. This lesson’s colors distinguish film, ice and trails only.\nWhat can this model explain?\n\nIt separates seeding, growth, latent-heat release and transport, and compares two freezing regimes. It is not precise CFD (computational fluid dynamics). It predicts no real film temperature, crystal habit, frozen area or freezing duration. Drainage, evaporation, rupture and full optics are omitted. A film on a human-shaped frame can also crystallize, but its boundaries differ from a spherical shell; no quantitative extrapolation is made.\n\nMelting point depends on the recipe. The paper’s glycerol–water–soap mixture melted near −6.5°C. That is not a universal soap-solution value, and pure water’s 0°C is not a universal substitute.\n\nEvidence & inspiration\n\nAhmadi et al. · How soap bubbles freeze (2019)\n\nResearch basis: the 2019 paper’s uniformly cold and warm-air/cold-base experiments. This lesson’s curves and paths are not a reproduction of its data.\n\nKK.Dai · “又快到玩冰冻泡泡的季节” ↗\n\nInspired by the source video. No footage, soundtrack or images are copied.\n\nKeep exploring\nPhase changes: how particle arrangement changes →\nInterference: how path difference reinforces or cancels →\nReflection & refraction: light at an interface →\n← Physics & Circuits · Knowledge Index"
+  },
+  {
+    "test": "step state retained",
+    "result": {
+      "growth": "10",
+      "undercooling": "18",
+      "compare": "24"
+    }
+  },
+  {
+    "test": "Chinese rendered",
+    "result": "← 物理与电路 · 知识索引\n\n一层水膜，一场结晶\n\n冰冻肥皂泡\n\n从第一粒冰，到整片晶纹：把美丽的现象拆成看得见的因果。\n\n中\nEN\n01 成核与生长\n02 热与流动\n03 颜色与边界\n\n01 / 03\n\n冻住的，究竟是什么？\n\n这一步要回答：水膜怎样开始结冰？肥皂泡是包着空气的含水薄膜；这里冻结的是膜里的水，内部空气没有变成冰。成核，是先形成一小块稳定的冰；各向异性生长，是冰沿不同方向长得快慢不同，所以能形成枝状纹路。\n\n先「放入一个冰核」，再播放。暂停后调大过冷度，在同一示意时刻比较枝条长度。此步只隔离展示生长，暂不展示流动。\n\n圆面表示球壳的正面投影；晶体在薄膜上，不在球内。可点击膜面放核，也可用旁边按钮。\n\n过冷度 ΔT（相对本溶液熔点）\n18.0°C\n\nΔT = 熔点 Tm − 膜温 Tfilm。这里只比较 2–18°C 的过冷程度；调节保留冰核与时间，重画同一时刻的假想对照，不模拟真实降温历史。\n\n放入一个冰核\n播放\n重置并停止\n示意时间（无物理时间单位；拖动即暂停）\n\n10.0 / 24 示意单位 · 冰核: 1\n\n已暂停，可以拖动时间查看。\n\n这是人为放入初始冰核，不是自然成核概率模型。六向枝条是各向异性的绘图示意，不预测具体晶形、真实速率或冻结时长；未模拟晶体碰撞和溶质富集。\n\n02 / 03\n\n结冰放出的热，为什么会让冰移动？\n\n这一步要回答：为什么有时冰晶在膜上游动，有时只有底部冻结？潜热，是水变成冰时释放的能量。局部释放热量会改变附近膜温；表面张力，是液面趋于收缩的作用。在论文条件下，较暖处张力较低，沿膜的温度差可产生张力梯度（不同位置拉力不同），驱动液体沿界面流动，这叫马兰戈尼流。\n\n新冰形成 → 释放潜热，冻结前沿附近局部升温。\n张力沿膜有差别 → 液体受驱动；早期流动可从较暖的底部指向较冷上部。\n在合适的整体寒冷条件下，流动能剥离并携带小冰晶；它们继续生长，形成多个冻结前沿。\n\n这是独立于第 1 步的实验：两幅图共用同一个示意时钟，从结冰底座启动。播放后看左边轨迹和新晶体，再看右边橙线如何越来越慢。换步骤不会清空实验。\n\nA · 整体寒冷\n\n空气 ≈ −18°C；冰底座 ≈ −18°C\n\n青线：携带冰晶的移动轨迹。多处晶体同时生长；不是空气中的雪。\nB · 暖空气 + 冷底座\n\n空气 ≈ +25°C；冰底座 ≈ −20°C\n\n橙线：冻结前沿。来自暖空气的热量与沿薄壳向底座散热相竞争，前沿可能停滞。\n从头播放\n重置并停止\n显示冰晶轨迹（只改显示）\n示意时间（无物理时间单位；拖动即暂停）\n\n24.0 / 24 示意单位 · 已进入膜面的示意冰晶: 22 · B 前沿高度（图中直径占比）: 0.46\n\n演示结束；可以回拖时间或从头播放。\n\n横轴：0–24 示意时间；纵轴：B 前沿离底座高度 ÷ 球直径（0–1）。显示已走过的历史。橙线按预设曲线趋平，终点高度不是实测或普适值。\n\nA、B 是论文启发的两种条件示例，不是温度可反演的计算。B 可能有短暂流动，本图只展示长期前沿趋势，并非断言完全没有流动。轨迹、晶体数、速度和前沿曲线均为预设定性图示，不代表真实测量；没有求解流体或传热方程。\n\n03 / 03\n\n彩色不等于「冰本来就是彩色的」\n\n这一步要回答：视频里的颜色从哪里来？同一画面可能叠加多种光学效应；下面区分三种来源，不把画面颜色当作温度计。\n\n01 · 还没冻住的薄膜\n膜的前后表面反射光相互叠加，不同波长可加强或抵消，形成薄膜干涉色。厚度与观察角度改变，颜色也会变。去干涉页看「光程差如何决定加强与抵消」→\n02 · 已形成的冰晶\n晶面会反射、折射和散射光；枝状结构改变进入眼睛的光路，不是每条彩纹都来自薄膜干涉。去光学页看「光在界面如何转向」→\n03 · 光源、背景与成像\n夕阳、天空与背景给光提供颜色，相机曝光、白平衡及后期也会影响记录。这里不能据原理断言原视频有无调色；本页配色只是用于分辨膜、冰和轨迹。\n这个模型能说明什么？\n\n它帮助区分成核、生长、释放潜热与流动携带，也对照两种环境的冻结趋势。它不是精确 CFD（流体数值计算），不预测真实膜温、晶形、冰覆盖率或结冰时间；没有模拟排液、蒸发、破裂和完整的光学过程。人形框上的水膜也能结晶，但其边界与球壳不同，本页不作定量外推。\n\n熔点取决于配方。论文使用的甘油—水—肥皂溶液约在 −6.5°C 熔化，不是所有肥皂水都在这个温度，也不能一概套用纯水的 0°C。\n\n依据与灵感\n\nAhmadi et al. · How soap bubbles freeze (2019)\n\n研究依据：2019 年原论文的整体寒冷环境与暖空气冷底座两组实验。本页的曲线与轨迹不是论文数据复现。\n\nKK.Dai ·《又快到玩冰冻泡泡的季节》↗\n\n创作灵感来自原视频；没有复制视频、配乐或图像。\n\n接着探索\n物态变化：粒子队形怎样改变 →\n干涉：光程差决定加强与抵消 →\n反射与折射：光在界面如何转向 →\n← 物理与电路 · 知识索引\nvisual.integ.life · 定性教学模型 · 本地绘制，零外部素材请求"
+  },
+  {
+    "test": "language state retained",
+    "result": {
+      "growth": "10",
+      "compare": "24",
+      "lang": "zh-CN"
+    }
+  },
+  {
+    "test": "repeated reset stops and clears",
+    "result": {
+      "growth": "0",
+      "compare": "0",
+      "s0": "01 / 03\n\n冻住的，究竟是什么？\n\n这一步要回答：水膜怎样开始结冰？肥皂泡是包着空气的含水薄膜；这里冻结的是膜里的水，内部空气没有变成冰。成核，是先形成一小块稳定的冰；各向异性生长，是冰沿不同方向长得快慢不同，所以能形成枝状纹路。\n\n先「放入一个冰核」，再播放。暂停后调大过冷度，在同一示意时刻比较枝条长度。此步只隔离展示生长，暂不展示流动。\n\n圆面表示球壳的正面投影；晶体在薄膜上，不在球内。可点击膜面放核，也可用旁边按钮。\n\n过冷度 ΔT（相对本溶液熔点）\n18.0°C\n\nΔT = 熔点 Tm − 膜温 Tfilm。这里只比较 2–18°C 的过冷程度；调节保留冰核与时间，重画同一时刻的假想对照，不模拟真实降温历史。\n\n放入一个冰核\n播放\n重置并停止\n示意时间（无物理时间单位；拖动即暂停）\n\n0.0 / 24 示意单位 · 冰核: 0\n\n先放入冰核，再播放。\n\n这是人为放入初始冰核，不是自然成核概率模型。六向枝条是各向异性的绘图示意，不预测具体晶形、真实速率或冻结时长；未模拟晶体碰撞和溶质富集。",
+      "s1": "02 / 03\n\n结冰放出的热，为什么会让冰移动？\n\n这一步要回答：为什么有时冰晶在膜上游动，有时只有底部冻结？潜热，是水变成冰时释放的能量。局部释放热量会改变附近膜温；表面张力，是液面趋于收缩的作用。在论文条件下，较暖处张力较低，沿膜的温度差可产生张力梯度（不同位置拉力不同），驱动液体沿界面流动，这叫马兰戈尼流。\n\n新冰形成 → 释放潜热，冻结前沿附近局部升温。\n张力沿膜有差别 → 液体受驱动；早期流动可从较暖的底部指向较冷上部。\n在合适的整体寒冷条件下，流动能剥离并携带小冰晶；它们继续生长，形成多个冻结前沿。\n\n这是独立于第 1 步的实验：两幅图共用同一个示意时钟，从结冰底座启动。播放后看左边轨迹和新晶体，再看右边橙线如何越来越慢。换步骤不会清空实验。\n\nA · 整体寒冷\n\n空气 ≈ −18°C；冰底座 ≈ −18°C\n\n青线：携带冰晶的移动轨迹。多处晶体同时生长；不是空气中的雪。\nB · 暖空气 + 冷底座\n\n空气 ≈ +25°C；冰底座 ≈ −20°C\n\n橙线：冻结前沿。来自暖空气的热量与沿薄壳向底座散热相竞争，前沿可能停滞。\n播放\n重置并停止\n显示冰晶轨迹（只改显示）\n示意时间（无物理时间单位；拖动即暂停）\n\n0.0 / 24 示意单位 · 已进入膜面的示意冰晶: 0 · B 前沿高度（图中直径占比）: 0.00\n\n已暂停，可以拖动时间查看。\n\n横轴：0–24 示意时间；纵轴：B 前沿离底座高度 ÷ 球直径（0–1）。显示已走过的历史。橙线按预设曲线趋平，终点高度不是实测或普适值。\n\nA、B 是论文启发的两种条件示例，不是温度可反演的计算。B 可能有短暂流动，本图只展示长期前沿趋势，并非断言完全没有流动。轨迹、晶体数、速度和前沿曲线均为预设定性图示，不代表真实测量；没有求解流体或传热方程。"
+    }
+  },
+  {
+    "test": "play after reset",
+    "result": "0.3"
+  },
+  {
+    "test": "overflow 390",
+    "result": {
+      "scroll": 390,
+      "width": 390,
+      "canvases": [
+        {
+          "w": 648,
+          "h": 648,
+          "css": 324
+        },
+        {
+          "w": 648,
+          "h": 563,
+          "css": 324
+        },
+        {
+          "w": 648,
+          "h": 563,
+          "css": 324
+        },
+        {
+          "w": 648,
+          "h": 324,
+          "css": 324
+        }
+      ]
+    }
+  },
+  {
+    "test": "overflow 320",
+    "result": {
+      "scroll": 320,
+      "width": 320,
+      "canvases": [
+        {
+          "w": 508,
+          "h": 508,
+          "css": 254
+        },
+        {
+          "w": 508,
+          "h": 442,
+          "css": 254
+        },
+        {
+          "w": 508,
+          "h": 442,
+          "css": 254
+        },
+        {
+          "w": 508,
+          "h": 254,
+          "css": 254
+        }
+      ]
+    }
+  },
+  {
+    "test": "index return",
+    "result": "http://127.0.0.1:18775/?category=physics"
+  },
+  {
+    "test": "console errors",
+    "result": []
+  }
+]

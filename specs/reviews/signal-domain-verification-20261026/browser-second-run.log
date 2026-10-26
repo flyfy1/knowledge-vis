@@ -1,0 +1,10 @@
+AssertionError [ERR_ASSERTION]: no overflow en http://127.0.0.1:18775/ztransform/#step5
+    at overflow (/Users/songyy/Documents/knowledge-vis/atlas/tests/signal-domain-browser.cjs:8:85)
+    at async /Users/songyy/Documents/knowledge-vis/atlas/tests/signal-domain-browser.cjs:27:348 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

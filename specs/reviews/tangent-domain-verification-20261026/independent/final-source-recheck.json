@@ -1,0 +1,31 @@
+{
+  "pass": true,
+  "files": [
+    {
+      "file": "trig/app.js",
+      "stageMatchesActual": true,
+      "sha256": "636609c7532a9e33d5be2ad33fbed057ca5d93e19e110074d723ec78cbcd9613"
+    },
+    {
+      "file": "trig/index.html",
+      "stageMatchesActual": true,
+      "sha256": "b99b4d49bbdd8622527589b2f90abee07fe3eac7964d3cec2c2c685b01ecc413"
+    },
+    {
+      "file": "trig/i18n.js",
+      "stageMatchesActual": true,
+      "sha256": "9cb61c1929056a1e7e1c4cbaaaff8c3979072cd97186fa7c2327e177fb0d871b"
+    },
+    {
+      "file": "trig/style.css",
+      "stageMatchesActual": true,
+      "sha256": "0580508fc91e0fe0395ca892ee70f0318b5955ab565cf80876af7c534fc60638"
+    },
+    {
+      "file": "trig/BRIEF.md",
+      "stageMatchesActual": true,
+      "sha256": "1a89142433e477654346487afc0f1c13a7942dfc8b275b38c532251196b444e8"
+    }
+  ],
+  "method": "Final read-only source comparison including documentation-only BRIEF update."
+}

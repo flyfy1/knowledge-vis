@@ -1,0 +1,1097 @@
+{
+  "refs": [
+    {
+      "from": "frozen-bubble/index.html",
+      "ref": "style.css",
+      "target": "frozen-bubble/style.css",
+      "exists": true
+    },
+    {
+      "from": "frozen-bubble/index.html",
+      "ref": "../lesson-shell.css",
+      "target": "lesson-shell.css",
+      "exists": true
+    },
+    {
+      "from": "frozen-bubble/index.html",
+      "ref": "i18n.js",
+      "target": "frozen-bubble/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "frozen-bubble/index.html",
+      "ref": "model.js",
+      "target": "frozen-bubble/model.js",
+      "exists": true
+    },
+    {
+      "from": "frozen-bubble/index.html",
+      "ref": "app.js",
+      "target": "frozen-bubble/app.js",
+      "exists": true
+    },
+    {
+      "from": "frozen-bubble/index.html",
+      "ref": "../lesson-shell.js",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "power-converters/index.html",
+      "ref": "style.css",
+      "target": "power-converters/style.css",
+      "exists": true
+    },
+    {
+      "from": "power-converters/index.html",
+      "ref": "model.js",
+      "target": "power-converters/model.js",
+      "exists": true
+    },
+    {
+      "from": "power-converters/index.html",
+      "ref": "app.js",
+      "target": "power-converters/app.js",
+      "exists": true
+    },
+    {
+      "from": "power-converters/index.html",
+      "ref": "../lesson-shell.js",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "atlas/index.html",
+      "ref": "style.css?v=foundations-1",
+      "target": "atlas/style.css",
+      "exists": true
+    },
+    {
+      "from": "atlas/index.html",
+      "ref": "data.js?v=work-1",
+      "target": "atlas/data.js",
+      "exists": true
+    },
+    {
+      "from": "atlas/index.html",
+      "ref": "motion-bridge.css?v=work-1",
+      "target": "atlas/motion-bridge.css",
+      "exists": true
+    },
+    {
+      "from": "atlas/index.html",
+      "ref": "motion-model.js?v=work-1",
+      "target": "atlas/motion-model.js",
+      "exists": true
+    },
+    {
+      "from": "atlas/index.html",
+      "ref": "motion-bridge.js?v=work-1",
+      "target": "atlas/motion-bridge.js",
+      "exists": true
+    },
+    {
+      "from": "atlas/index.html",
+      "ref": "response-bridge.css?v=response-1",
+      "target": "atlas/response-bridge.css",
+      "exists": true
+    },
+    {
+      "from": "atlas/index.html",
+      "ref": "response-model.js?v=response-1",
+      "target": "atlas/response-model.js",
+      "exists": true
+    },
+    {
+      "from": "atlas/index.html",
+      "ref": "response-bridge.js?v=response-1",
+      "target": "atlas/response-bridge.js",
+      "exists": true
+    },
+    {
+      "from": "atlas/index.html",
+      "ref": "app.js?v=work-1",
+      "target": "atlas/app.js",
+      "exists": true
+    },
+    {
+      "from": "fourier/index.html",
+      "ref": "style.css?v=w3a",
+      "target": "fourier/style.css",
+      "exists": true
+    },
+    {
+      "from": "fourier/index.html",
+      "ref": "../lesson-shell.css?v=20261018",
+      "target": "lesson-shell.css",
+      "exists": true
+    },
+    {
+      "from": "fourier/index.html",
+      "ref": "i18n.js?v=w3a",
+      "target": "fourier/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "fourier/index.html",
+      "ref": "app.js?v=w3a",
+      "target": "fourier/app.js",
+      "exists": true
+    },
+    {
+      "from": "fourier/index.html",
+      "ref": "../lesson-shell.js?v=20261018",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "convolution/index.html",
+      "ref": "style.css?v=w2a",
+      "target": "convolution/style.css",
+      "exists": true
+    },
+    {
+      "from": "convolution/index.html",
+      "ref": "i18n.js?v=w2a",
+      "target": "convolution/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "convolution/index.html",
+      "ref": "../lesson-shell.css?v=20261018",
+      "target": "lesson-shell.css",
+      "exists": true
+    },
+    {
+      "from": "convolution/index.html",
+      "ref": "app.js?v=w2a",
+      "target": "convolution/app.js",
+      "exists": true
+    },
+    {
+      "from": "convolution/index.html",
+      "ref": "../lesson-shell.js?v=20261018",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "mandelbrot/index.html",
+      "ref": "style.css?v=w3a",
+      "target": "mandelbrot/style.css",
+      "exists": true
+    },
+    {
+      "from": "mandelbrot/index.html",
+      "ref": "i18n.js?v=w3a",
+      "target": "mandelbrot/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "mandelbrot/index.html",
+      "ref": "app.js?v=w3a",
+      "target": "mandelbrot/app.js",
+      "exists": true
+    },
+    {
+      "from": "control/index.html",
+      "ref": "style.css?v=w2a",
+      "target": "control/style.css",
+      "exists": true
+    },
+    {
+      "from": "control/index.html",
+      "ref": "sim-core.js?v=w2a",
+      "target": "control/sim-core.js",
+      "exists": true
+    },
+    {
+      "from": "control/index.html",
+      "ref": "i18n.js?v=w2a",
+      "target": "control/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "control/index.html",
+      "ref": "../lesson-shell.css?v=20261018",
+      "target": "lesson-shell.css",
+      "exists": true
+    },
+    {
+      "from": "control/index.html",
+      "ref": "app.js?v=w2a",
+      "target": "control/app.js",
+      "exists": true
+    },
+    {
+      "from": "control/index.html",
+      "ref": "../lesson-shell.js?v=20261018",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "sampling/index.html",
+      "ref": "style.css?v=w2a",
+      "target": "sampling/style.css",
+      "exists": true
+    },
+    {
+      "from": "sampling/index.html",
+      "ref": "i18n.js?v=w2a",
+      "target": "sampling/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "sampling/index.html",
+      "ref": "../lesson-shell.css?v=20261018",
+      "target": "lesson-shell.css",
+      "exists": true
+    },
+    {
+      "from": "sampling/index.html",
+      "ref": "app.js?v=w2a",
+      "target": "sampling/app.js",
+      "exists": true
+    },
+    {
+      "from": "sampling/index.html",
+      "ref": "../lesson-shell.js?v=20261018",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "trig/index.html",
+      "ref": "style.css?v=w3a",
+      "target": "trig/style.css",
+      "exists": true
+    },
+    {
+      "from": "trig/index.html",
+      "ref": "i18n.js?v=w3a",
+      "target": "trig/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "trig/index.html",
+      "ref": "../lesson-shell.css?v=20261018",
+      "target": "lesson-shell.css",
+      "exists": true
+    },
+    {
+      "from": "trig/index.html",
+      "ref": "app.js?v=w3a",
+      "target": "trig/app.js",
+      "exists": true
+    },
+    {
+      "from": "trig/index.html",
+      "ref": "../lesson-shell.js?v=20261018",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "montecarlo/index.html",
+      "ref": "style.css?v=w2a",
+      "target": "montecarlo/style.css",
+      "exists": true
+    },
+    {
+      "from": "montecarlo/index.html",
+      "ref": "i18n.js?v=w2a",
+      "target": "montecarlo/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "montecarlo/index.html",
+      "ref": "../lesson-shell.css?v=20261018",
+      "target": "lesson-shell.css",
+      "exists": true
+    },
+    {
+      "from": "montecarlo/index.html",
+      "ref": "app.js?v=w2a",
+      "target": "montecarlo/app.js",
+      "exists": true
+    },
+    {
+      "from": "montecarlo/index.html",
+      "ref": "../lesson-shell.js?v=20261018",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "laplace/index.html",
+      "ref": "style.css?v=w3a",
+      "target": "laplace/style.css",
+      "exists": true
+    },
+    {
+      "from": "laplace/index.html",
+      "ref": "i18n.js?v=w3a",
+      "target": "laplace/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "laplace/index.html",
+      "ref": "../lesson-shell.css?v=20261018",
+      "target": "lesson-shell.css",
+      "exists": true
+    },
+    {
+      "from": "laplace/index.html",
+      "ref": "app.js?v=w3a",
+      "target": "laplace/app.js",
+      "exists": true
+    },
+    {
+      "from": "laplace/index.html",
+      "ref": "../lesson-shell.js?v=20261018",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "bayes/index.html",
+      "ref": "style.css?v=w2a",
+      "target": "bayes/style.css",
+      "exists": true
+    },
+    {
+      "from": "bayes/index.html",
+      "ref": "i18n.js?v=w2a",
+      "target": "bayes/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "bayes/index.html",
+      "ref": "../lesson-shell.css?v=20261018",
+      "target": "lesson-shell.css",
+      "exists": true
+    },
+    {
+      "from": "bayes/index.html",
+      "ref": "app.js?v=w2a",
+      "target": "bayes/app.js",
+      "exists": true
+    },
+    {
+      "from": "bayes/index.html",
+      "ref": "../lesson-shell.js?v=20261018",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "clt/index.html",
+      "ref": "style.css?v=w2a",
+      "target": "clt/style.css",
+      "exists": true
+    },
+    {
+      "from": "clt/index.html",
+      "ref": "i18n.js?v=w2a",
+      "target": "clt/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "clt/index.html",
+      "ref": "../lesson-shell.css?v=20261018",
+      "target": "lesson-shell.css",
+      "exists": true
+    },
+    {
+      "from": "clt/index.html",
+      "ref": "app.js?v=w2a",
+      "target": "clt/app.js",
+      "exists": true
+    },
+    {
+      "from": "clt/index.html",
+      "ref": "../lesson-shell.js?v=20261018",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "ztransform/index.html",
+      "ref": "style.css?v=w2a",
+      "target": "ztransform/style.css",
+      "exists": true
+    },
+    {
+      "from": "ztransform/index.html",
+      "ref": "i18n.js?v=w2a",
+      "target": "ztransform/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "ztransform/index.html",
+      "ref": "app.js?v=w2a",
+      "target": "ztransform/app.js",
+      "exists": true
+    },
+    {
+      "from": "eigen/index.html",
+      "ref": "style.css?v=w2a",
+      "target": "eigen/style.css",
+      "exists": true
+    },
+    {
+      "from": "eigen/index.html",
+      "ref": "i18n.js?v=w3a",
+      "target": "eigen/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "eigen/index.html",
+      "ref": "../lesson-shell.css?v=20261018",
+      "target": "lesson-shell.css",
+      "exists": true
+    },
+    {
+      "from": "eigen/index.html",
+      "ref": "app.js?v=w2a",
+      "target": "eigen/app.js",
+      "exists": true
+    },
+    {
+      "from": "eigen/index.html",
+      "ref": "../lesson-shell.js?v=20261018",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "entropy/index.html",
+      "ref": "style.css?v=w2a",
+      "target": "entropy/style.css",
+      "exists": true
+    },
+    {
+      "from": "entropy/index.html",
+      "ref": "i18n.js?v=w2a",
+      "target": "entropy/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "entropy/index.html",
+      "ref": "app.js?v=w2a",
+      "target": "entropy/app.js",
+      "exists": true
+    },
+    {
+      "from": "lti/index.html",
+      "ref": "style.css?v=w2a",
+      "target": "lti/style.css",
+      "exists": true
+    },
+    {
+      "from": "lti/index.html",
+      "ref": "i18n.js?v=w2a",
+      "target": "lti/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "lti/index.html",
+      "ref": "../lesson-shell.css?v=20261018",
+      "target": "lesson-shell.css",
+      "exists": true
+    },
+    {
+      "from": "lti/index.html",
+      "ref": "app.js?v=w2a",
+      "target": "lti/app.js",
+      "exists": true
+    },
+    {
+      "from": "lti/index.html",
+      "ref": "../lesson-shell.js?v=20261018",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "freqresp/index.html",
+      "ref": "style.css?v=w2a",
+      "target": "freqresp/style.css",
+      "exists": true
+    },
+    {
+      "from": "freqresp/index.html",
+      "ref": "i18n.js?v=w2a",
+      "target": "freqresp/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "freqresp/index.html",
+      "ref": "../lesson-shell.css?v=20261018",
+      "target": "lesson-shell.css",
+      "exists": true
+    },
+    {
+      "from": "freqresp/index.html",
+      "ref": "app.js?v=w2a",
+      "target": "freqresp/app.js",
+      "exists": true
+    },
+    {
+      "from": "freqresp/index.html",
+      "ref": "../lesson-shell.js?v=20261018",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "modulation/index.html",
+      "ref": "style.css?v=w2a",
+      "target": "modulation/style.css",
+      "exists": true
+    },
+    {
+      "from": "modulation/index.html",
+      "ref": "i18n.js?v=w2a",
+      "target": "modulation/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "modulation/index.html",
+      "ref": "app.js?v=w2a",
+      "target": "modulation/app.js",
+      "exists": true
+    },
+    {
+      "from": "kalman/index.html",
+      "ref": "style.css?v=w2a",
+      "target": "kalman/style.css",
+      "exists": true
+    },
+    {
+      "from": "kalman/index.html",
+      "ref": "i18n.js?v=w2a",
+      "target": "kalman/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "kalman/index.html",
+      "ref": "../lesson-shell.css?v=20261018",
+      "target": "lesson-shell.css",
+      "exists": true
+    },
+    {
+      "from": "kalman/index.html",
+      "ref": "app.js?v=w2a",
+      "target": "kalman/app.js",
+      "exists": true
+    },
+    {
+      "from": "kalman/index.html",
+      "ref": "../lesson-shell.js?v=20261018",
+      "target": "lesson-shell.js",
+      "exists": true
+    },
+    {
+      "from": "fractions/index.html",
+      "ref": "style.css?v=w2a",
+      "target": "fractions/style.css",
+      "exists": true
+    },
+    {
+      "from": "fractions/index.html",
+      "ref": "i18n.js?v=w2a",
+      "target": "fractions/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "fractions/index.html",
+      "ref": "app.js?v=w2a",
+      "target": "fractions/app.js",
+      "exists": true
+    },
+    {
+      "from": "pythagoras/index.html",
+      "ref": "style.css",
+      "target": "pythagoras/style.css",
+      "exists": true
+    },
+    {
+      "from": "pythagoras/index.html",
+      "ref": "../pages.config.js",
+      "target": "pages.config.js",
+      "exists": true
+    },
+    {
+      "from": "pythagoras/index.html",
+      "ref": "i18n.js",
+      "target": "pythagoras/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "pythagoras/index.html",
+      "ref": "app.js",
+      "target": "pythagoras/app.js",
+      "exists": true
+    },
+    {
+      "from": "area-model/index.html",
+      "ref": "style.css",
+      "target": "area-model/style.css",
+      "exists": true
+    },
+    {
+      "from": "area-model/index.html",
+      "ref": "../pages.config.js",
+      "target": "pages.config.js",
+      "exists": true
+    },
+    {
+      "from": "area-model/index.html",
+      "ref": "i18n.js",
+      "target": "area-model/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "area-model/index.html",
+      "ref": "app.js",
+      "target": "area-model/app.js",
+      "exists": true
+    },
+    {
+      "from": "perimeter-area/index.html",
+      "ref": "style.css?v=pa1",
+      "target": "perimeter-area/style.css",
+      "exists": true
+    },
+    {
+      "from": "perimeter-area/index.html",
+      "ref": "i18n.js?v=pa1",
+      "target": "perimeter-area/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "perimeter-area/index.html",
+      "ref": "app.js?v=pa1",
+      "target": "perimeter-area/app.js",
+      "exists": true
+    },
+    {
+      "from": "division-remainder/index.html",
+      "ref": "style.css?v=r1",
+      "target": "division-remainder/style.css",
+      "exists": true
+    },
+    {
+      "from": "division-remainder/index.html",
+      "ref": "i18n.js?v=r1",
+      "target": "division-remainder/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "division-remainder/index.html",
+      "ref": "app.js?v=r1",
+      "target": "division-remainder/app.js",
+      "exists": true
+    },
+    {
+      "from": "linear-functions/index.html",
+      "ref": "style.css?v=lf1",
+      "target": "linear-functions/style.css",
+      "exists": true
+    },
+    {
+      "from": "linear-functions/index.html",
+      "ref": "i18n.js?v=lf1",
+      "target": "linear-functions/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "linear-functions/index.html",
+      "ref": "app.js?v=lf1",
+      "target": "linear-functions/app.js",
+      "exists": true
+    },
+    {
+      "from": "symmetry-rotation/index.html",
+      "ref": "style.css?v=sr1",
+      "target": "symmetry-rotation/style.css",
+      "exists": true
+    },
+    {
+      "from": "symmetry-rotation/index.html",
+      "ref": "i18n.js?v=sr1",
+      "target": "symmetry-rotation/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "symmetry-rotation/index.html",
+      "ref": "app.js?v=sr1",
+      "target": "symmetry-rotation/app.js",
+      "exists": true
+    },
+    {
+      "from": "parabola/index.html",
+      "ref": "style.css?v=par1",
+      "target": "parabola/style.css",
+      "exists": true
+    },
+    {
+      "from": "parabola/index.html",
+      "ref": "i18n.js?v=par1",
+      "target": "parabola/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "parabola/index.html",
+      "ref": "app.js?v=par1",
+      "target": "parabola/app.js",
+      "exists": true
+    },
+    {
+      "from": "velocity-vt/index.html",
+      "ref": "style.css?v=vt1",
+      "target": "velocity-vt/style.css",
+      "exists": true
+    },
+    {
+      "from": "velocity-vt/index.html",
+      "ref": "i18n.js?v=vt1",
+      "target": "velocity-vt/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "velocity-vt/index.html",
+      "ref": "app.js?v=vt1",
+      "target": "velocity-vt/app.js",
+      "exists": true
+    },
+    {
+      "from": "integral/index.html",
+      "ref": "style.css",
+      "target": "integral/style.css",
+      "exists": true
+    },
+    {
+      "from": "integral/index.html",
+      "ref": "../pages.config.js",
+      "target": "pages.config.js",
+      "exists": true
+    },
+    {
+      "from": "integral/index.html",
+      "ref": "i18n.js",
+      "target": "integral/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "integral/index.html",
+      "ref": "app.js",
+      "target": "integral/app.js",
+      "exists": true
+    },
+    {
+      "from": "reflection-refraction/index.html",
+      "ref": "style.css",
+      "target": "reflection-refraction/style.css",
+      "exists": true
+    },
+    {
+      "from": "reflection-refraction/index.html",
+      "ref": "../pages.config.js",
+      "target": "pages.config.js",
+      "exists": true
+    },
+    {
+      "from": "reflection-refraction/index.html",
+      "ref": "i18n.js",
+      "target": "reflection-refraction/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "reflection-refraction/index.html",
+      "ref": "app.js",
+      "target": "reflection-refraction/app.js",
+      "exists": true
+    },
+    {
+      "from": "derivative/index.html",
+      "ref": "style.css?v=der1",
+      "target": "derivative/style.css",
+      "exists": true
+    },
+    {
+      "from": "derivative/index.html",
+      "ref": "i18n.js?v=der1",
+      "target": "derivative/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "derivative/index.html",
+      "ref": "app.js?v=der1",
+      "target": "derivative/app.js",
+      "exists": true
+    },
+    {
+      "from": "lens/index.html",
+      "ref": "style.css?v=l1",
+      "target": "lens/style.css",
+      "exists": true
+    },
+    {
+      "from": "lens/index.html",
+      "ref": "../pages.config.js",
+      "target": "pages.config.js",
+      "exists": true
+    },
+    {
+      "from": "lens/index.html",
+      "ref": "i18n.js?v=l1",
+      "target": "lens/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "lens/index.html",
+      "ref": "app.js?v=l1",
+      "target": "lens/app.js",
+      "exists": true
+    },
+    {
+      "from": "interference/index.html",
+      "ref": "style.css",
+      "target": "interference/style.css",
+      "exists": true
+    },
+    {
+      "from": "interference/index.html",
+      "ref": "../pages.config.js",
+      "target": "pages.config.js",
+      "exists": true
+    },
+    {
+      "from": "interference/index.html",
+      "ref": "i18n.js",
+      "target": "interference/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "interference/index.html",
+      "ref": "app.js",
+      "target": "interference/app.js",
+      "exists": true
+    },
+    {
+      "from": "exp-log/index.html",
+      "ref": "style.css?v=exp1",
+      "target": "exp-log/style.css",
+      "exists": true
+    },
+    {
+      "from": "exp-log/index.html",
+      "ref": "i18n.js?v=exp1",
+      "target": "exp-log/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "exp-log/index.html",
+      "ref": "app.js?v=exp1",
+      "target": "exp-log/app.js",
+      "exists": true
+    },
+    {
+      "from": "circle-angles/index.html",
+      "ref": "style.css",
+      "target": "circle-angles/style.css",
+      "exists": true
+    },
+    {
+      "from": "circle-angles/index.html",
+      "ref": "../pages.config.js",
+      "target": "pages.config.js",
+      "exists": true
+    },
+    {
+      "from": "circle-angles/index.html",
+      "ref": "i18n.js",
+      "target": "circle-angles/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "circle-angles/index.html",
+      "ref": "app.js",
+      "target": "circle-angles/app.js",
+      "exists": true
+    },
+    {
+      "from": "complex-numbers/index.html",
+      "ref": "style.css?v=cx1",
+      "target": "complex-numbers/style.css",
+      "exists": true
+    },
+    {
+      "from": "complex-numbers/index.html",
+      "ref": "i18n.js?v=cx1",
+      "target": "complex-numbers/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "complex-numbers/index.html",
+      "ref": "app.js?v=cx1",
+      "target": "complex-numbers/app.js",
+      "exists": true
+    },
+    {
+      "from": "standing-wave/index.html",
+      "ref": "style.css",
+      "target": "standing-wave/style.css",
+      "exists": true
+    },
+    {
+      "from": "standing-wave/index.html",
+      "ref": "../pages.config.js",
+      "target": "pages.config.js",
+      "exists": true
+    },
+    {
+      "from": "standing-wave/index.html",
+      "ref": "i18n.js",
+      "target": "standing-wave/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "standing-wave/index.html",
+      "ref": "app.js",
+      "target": "standing-wave/app.js",
+      "exists": true
+    },
+    {
+      "from": "negative-numbers/index.html",
+      "ref": "style.css?v=n1",
+      "target": "negative-numbers/style.css",
+      "exists": true
+    },
+    {
+      "from": "negative-numbers/index.html",
+      "ref": "i18n.js?v=n1",
+      "target": "negative-numbers/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "negative-numbers/index.html",
+      "ref": "app.js?v=n1",
+      "target": "negative-numbers/app.js",
+      "exists": true
+    },
+    {
+      "from": "pinhole-camera/index.html",
+      "ref": "style.css",
+      "target": "pinhole-camera/style.css",
+      "exists": true
+    },
+    {
+      "from": "pinhole-camera/index.html",
+      "ref": "../pages.config.js",
+      "target": "pages.config.js",
+      "exists": true
+    },
+    {
+      "from": "pinhole-camera/index.html",
+      "ref": "i18n.js",
+      "target": "pinhole-camera/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "pinhole-camera/index.html",
+      "ref": "app.js",
+      "target": "pinhole-camera/app.js",
+      "exists": true
+    },
+    {
+      "from": "space-diagonal/index.html",
+      "ref": "style.css",
+      "target": "space-diagonal/style.css",
+      "exists": true
+    },
+    {
+      "from": "space-diagonal/index.html",
+      "ref": "i18n.js",
+      "target": "space-diagonal/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "space-diagonal/index.html",
+      "ref": "app.js",
+      "target": "space-diagonal/app.js",
+      "exists": true
+    },
+    {
+      "from": "coordinate-plane/index.html",
+      "ref": "style.css?v=cp1",
+      "target": "coordinate-plane/style.css",
+      "exists": true
+    },
+    {
+      "from": "coordinate-plane/index.html",
+      "ref": "i18n.js?v=cp1",
+      "target": "coordinate-plane/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "coordinate-plane/index.html",
+      "ref": "app.js?v=cp1",
+      "target": "coordinate-plane/app.js",
+      "exists": true
+    },
+    {
+      "from": "lever-pulley/index.html",
+      "ref": "style.css?v=lp3d1",
+      "target": "lever-pulley/style.css",
+      "exists": true
+    },
+    {
+      "from": "lever-pulley/index.html",
+      "ref": "../pages.config.js",
+      "target": "pages.config.js",
+      "exists": true
+    },
+    {
+      "from": "lever-pulley/index.html",
+      "ref": "i18n.js?v=lp3d1",
+      "target": "lever-pulley/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "lever-pulley/index.html",
+      "ref": "app3d.js?v=lp3d1",
+      "target": "lever-pulley/app3d.js",
+      "exists": true
+    },
+    {
+      "from": "equations-balance/index.html",
+      "ref": "style.css?v=e1",
+      "target": "equations-balance/style.css",
+      "exists": true
+    },
+    {
+      "from": "equations-balance/index.html",
+      "ref": "i18n.js?v=e1",
+      "target": "equations-balance/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "equations-balance/index.html",
+      "ref": "app.js?v=e1",
+      "target": "equations-balance/app.js",
+      "exists": true
+    },
+    {
+      "from": "population-growth/index.html",
+      "ref": "style.css?v=pop2",
+      "target": "population-growth/style.css",
+      "exists": true
+    },
+    {
+      "from": "population-growth/index.html",
+      "ref": "i18n.js?v=pop2",
+      "target": "population-growth/i18n.js",
+      "exists": true
+    },
+    {
+      "from": "population-growth/index.html",
+      "ref": "app.js?v=pop2",
+      "target": "population-growth/app.js",
+      "exists": true
+    }
+  ],
+  "missing": []
+}

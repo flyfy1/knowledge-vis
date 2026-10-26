@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "sampling",
+    "active": "s3-phase",
+    "value": "0",
+    "position": {
+      "x": 12,
+      "y": 314.125,
+      "width": 296,
+      "height": 48
+    },
+    "bodyWidth": 320
+  },
+  {
+    "slug": "freqresp",
+    "active": "s3-w",
+    "value": "0.79",
+    "position": {
+      "x": 12,
+      "y": 384.15625,
+      "width": 296,
+      "height": 48
+    },
+    "bodyWidth": 320
+  },
+  {
+    "url": "http://127.0.0.1:18775/ztransform/#step5",
+    "anchorPosition": {
+      "x": 0,
+      "y": 76.1875,
+      "width": 1440,
+      "height": 1199.84375
+    }
+  }
+]

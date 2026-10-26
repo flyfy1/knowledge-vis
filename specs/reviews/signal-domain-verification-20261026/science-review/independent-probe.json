@@ -1,0 +1,227 @@
+{
+  "method": "Independent current-source pure functions in isolated VM plus separately derived finite FIR sum and analytic sampling identities. No Chrome/native range operation.",
+  "hashes": {
+    "freqresp": "0dc76c66cd64f0f46f3bdffb29c2903c89481fcb9d44b99dc0309db3ba099aec",
+    "sampling": "81930f017aa0da89b6704909243965925693a56101063273844eaba3192a2bc1"
+  },
+  "ma": [
+    {
+      "M": 2,
+      "w": 0,
+      "analytic": 1,
+      "direct": 1,
+      "measured": 2,
+      "steadyPeak": 1,
+      "absoluteFitError": 1,
+      "reachableEndpoint": false
+    },
+    {
+      "M": 2,
+      "w": 0.2,
+      "analytic": 0.9950041652780257,
+      "direct": 0.9950041652780258,
+      "measured": 0.995004165278026,
+      "steadyPeak": 0.9950006333116064,
+      "absoluteFitError": 2.220446049250313e-16,
+      "reachableEndpoint": false
+    },
+    {
+      "M": 2,
+      "w": 3.141592653589793,
+      "analytic": 6.123233995736766e-17,
+      "direct": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyPeak": 0,
+      "absoluteFitError": 6.123233995736766e-17,
+      "reachableEndpoint": true
+    },
+    {
+      "M": 2,
+      "w": 3.141592653589793,
+      "analytic": 6.123233995736766e-17,
+      "direct": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyPeak": 0,
+      "absoluteFitError": 6.123233995736766e-17,
+      "reachableEndpoint": true
+    },
+    {
+      "M": 3,
+      "w": 0,
+      "analytic": 1,
+      "direct": 1,
+      "measured": 2,
+      "steadyPeak": 1,
+      "absoluteFitError": 1,
+      "reachableEndpoint": false
+    },
+    {
+      "M": 3,
+      "w": 0.2,
+      "analytic": 0.9867110518941612,
+      "direct": 0.9867110518941612,
+      "measured": 0.9867110518941615,
+      "steadyPeak": 0.9867094952143796,
+      "absoluteFitError": 3.3306690738754696e-16,
+      "reachableEndpoint": false
+    },
+    {
+      "M": 3,
+      "w": 2.0943951023931953,
+      "analytic": 4.7136677276662527e-17,
+      "direct": 1.5700924586837752e-16,
+      "measured": 4.7350729192735456e-17,
+      "steadyPeak": 4.5852210917018965e-14,
+      "absoluteFitError": 1.0965851667564207e-16,
+      "reachableEndpoint": false
+    },
+    {
+      "M": 3,
+      "w": 3.141592653589793,
+      "analytic": 0.3333333333333333,
+      "direct": 0.3333333333333333,
+      "measured": 0.6666666666666662,
+      "steadyPeak": 0.3333333333333333,
+      "absoluteFitError": 0.33333333333333287,
+      "reachableEndpoint": true
+    },
+    {
+      "M": 5,
+      "w": 0,
+      "analytic": 1,
+      "direct": 1,
+      "measured": 2,
+      "steadyPeak": 1,
+      "absoluteFitError": 1,
+      "reachableEndpoint": false
+    },
+    {
+      "M": 5,
+      "w": 0.2,
+      "analytic": 0.9604510287376506,
+      "direct": 0.9604510287376509,
+      "measured": 0.9604510287376509,
+      "steadyPeak": 0.960449513486864,
+      "absoluteFitError": 0,
+      "reachableEndpoint": false
+    },
+    {
+      "M": 5,
+      "w": 1.2566370614359172,
+      "analytic": 4.166987158561737e-17,
+      "direct": 2.8609792490763984e-17,
+      "measured": 8.65675402855479e-17,
+      "steadyPeak": 1.5454304502782178e-14,
+      "absoluteFitError": 5.79577477947839e-17,
+      "reachableEndpoint": false
+    },
+    {
+      "M": 5,
+      "w": 3.141592653589793,
+      "analytic": 0.2,
+      "direct": 0.2,
+      "measured": 0.4000000000000012,
+      "steadyPeak": 0.2,
+      "absoluteFitError": 0.20000000000000118,
+      "reachableEndpoint": true
+    },
+    {
+      "M": 8,
+      "w": 0,
+      "analytic": 1,
+      "direct": 1,
+      "measured": 2,
+      "steadyPeak": 1,
+      "absoluteFitError": 1,
+      "reachableEndpoint": false
+    },
+    {
+      "M": 8,
+      "w": 0.2,
+      "analytic": 0.8981913508946232,
+      "direct": 0.8981913508946231,
+      "measured": 0.8981913508946232,
+      "steadyPeak": 0.8981881625846624,
+      "absoluteFitError": 1.1102230246251565e-16,
+      "reachableEndpoint": false
+    },
+    {
+      "M": 8,
+      "w": 0.7853981633974483,
+      "analytic": 4.0001953820508255e-17,
+      "direct": 7.473417450352272e-17,
+      "measured": 7.888798405294053e-17,
+      "steadyPeak": 6.800116025829084e-15,
+      "absoluteFitError": 4.153809549417807e-18,
+      "reachableEndpoint": false
+    },
+    {
+      "M": 8,
+      "w": 3.141592653589793,
+      "analytic": 6.123233995736766e-17,
+      "direct": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyPeak": 0,
+      "absoluteFitError": 6.123233995736766e-17,
+      "reachableEndpoint": true
+    },
+    {
+      "M": 32,
+      "w": 0,
+      "analytic": 1,
+      "direct": 1,
+      "measured": 2,
+      "steadyPeak": 1,
+      "absoluteFitError": 1,
+      "reachableEndpoint": false
+    },
+    {
+      "M": 32,
+      "w": 0.2,
+      "analytic": 0.0182723585286594,
+      "direct": 0.018272358528659403,
+      "measured": 0.018272358528659403,
+      "steadyPeak": 0.018272293667265807,
+      "absoluteFitError": 0,
+      "reachableEndpoint": false
+    },
+    {
+      "M": 32,
+      "w": 0.19634954084936207,
+      "analytic": 3.904440829907892e-17,
+      "direct": 1.0121409095622079e-16,
+      "measured": 3.0855660698646343e-17,
+      "steadyPeak": 3.400058012914542e-16,
+      "absoluteFitError": 7.035843025757445e-17,
+      "reachableEndpoint": false
+    },
+    {
+      "M": 32,
+      "w": 3.141592653589793,
+      "analytic": 6.123233995736766e-17,
+      "direct": 4.978996250514803e-17,
+      "measured": 0,
+      "steadyPeak": 0,
+      "absoluteFitError": 4.978996250514803e-17,
+      "reachableEndpoint": true
+    }
+  ],
+  "ma2Zeros": [],
+  "highRateAliasError": 6.908988685228155e-14,
+  "equalityPhaseError": 7.72715225139109e-14,
+  "boxBlur": {
+    "actualTwoPassRadius": 2,
+    "stride": 3,
+    "filteredSampleSpan": 8.399993896484375,
+    "nonzeroAliasResidual": true
+  },
+  "bridge": {
+    "fHz": 12,
+    "fsHz": 100,
+    "TSeconds": 0.01,
+    "omegaRadPerSecond": 75.39822368615503,
+    "OmegaRadPerSample": 0.7539822368615504,
+    "aliasCopyHz": 100,
+    "aliasCopyRadPerSecond": 628.3185307179587
+  }
+}

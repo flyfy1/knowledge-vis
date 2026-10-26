@@ -1,0 +1,182 @@
+{
+  "result": "PASS source/numerical/schema/parity; no Chrome",
+  "source": "lens-audit/staged/lens/app.js",
+  "sha256": "4caee872df0e6ccf942f068f6e434900028ec118f2f6baaf70bea05cc198607c",
+  "boundary": [
+    {
+      "u": 59.99999999999999,
+      "type": "virtual",
+      "zone": "ltf",
+      "v": -506654958079180740,
+      "M": 8444249301319680,
+      "delta": "≈−7.10543e−15"
+    },
+    {
+      "u": 59.5,
+      "type": "virtual",
+      "zone": "ltf",
+      "v": -7140,
+      "M": 120,
+      "delta": "−0.5"
+    },
+    {
+      "u": 59.8,
+      "type": "virtual",
+      "zone": "ltf",
+      "v": -17939.999999999745,
+      "M": 299.99999999999574,
+      "delta": "≈−0.2"
+    },
+    {
+      "u": 60,
+      "type": "inf",
+      "zone": "eqf",
+      "v": "Infinity",
+      "M": null,
+      "delta": "0"
+    },
+    {
+      "u": 60.2,
+      "type": "real",
+      "zone": "mid",
+      "v": 18059.999999999745,
+      "M": -299.99999999999574,
+      "delta": "≈0.2"
+    },
+    {
+      "u": 60.5,
+      "type": "real",
+      "zone": "mid",
+      "v": 7260,
+      "M": -120,
+      "delta": "0.5"
+    },
+    {
+      "u": 60.00000000000001,
+      "type": "real",
+      "zone": "mid",
+      "v": 506654958079180860,
+      "M": -8444249301319680,
+      "delta": "≈7.10543e−15"
+    },
+    {
+      "u": 119.99999999999999,
+      "type": "real",
+      "zone": "mid",
+      "v": 120.00000000000001,
+      "M": -1.0000000000000002,
+      "delta": "≈60"
+    },
+    {
+      "u": 119.8,
+      "type": "real",
+      "zone": "mid",
+      "v": 120.20066889632106,
+      "M": -1.0033444816053512,
+      "delta": "59.8"
+    },
+    {
+      "u": 120,
+      "type": "real",
+      "zone": "eq2f",
+      "v": 120,
+      "M": -1,
+      "delta": "60"
+    },
+    {
+      "u": 120.2,
+      "type": "real",
+      "zone": "gt2f",
+      "v": 119.80066445182725,
+      "M": -0.9966777408637874,
+      "delta": "60.2"
+    },
+    {
+      "u": 120.00000000000001,
+      "type": "real",
+      "zone": "gt2f",
+      "v": 119.99999999999999,
+      "M": -0.9999999999999998,
+      "delta": "≈60"
+    }
+  ],
+  "samples": 5848,
+  "maxThinLensResidual": 6.938893903907228e-18,
+  "maxWellConditionedRayIntersectionError": 1.5006662579253316e-11,
+  "viewCases": [
+    {
+      "id": "s1-canvas",
+      "width": 282,
+      "ppu": 0.4930232558139535,
+      "objectAt215": 12,
+      "virtual30": true,
+      "finiteNearFocus": false
+    },
+    {
+      "id": "s2-canvas",
+      "width": 282,
+      "ppu": 0.5488372093023256,
+      "objectAt215": 12,
+      "virtual30": true,
+      "finiteNearFocus": false
+    },
+    {
+      "id": "s1-canvas",
+      "width": 352,
+      "ppu": 0.6,
+      "objectAt215": 19,
+      "virtual30": true,
+      "finiteNearFocus": false
+    },
+    {
+      "id": "s2-canvas",
+      "width": 352,
+      "ppu": 0.6,
+      "objectAt215": 33,
+      "virtual30": true,
+      "finiteNearFocus": false
+    },
+    {
+      "id": "s1-canvas",
+      "width": 700,
+      "ppu": 1.0294117647058822,
+      "objectAt215": 72.6764705882353,
+      "virtual30": true,
+      "finiteNearFocus": false
+    },
+    {
+      "id": "s2-canvas",
+      "width": 700,
+      "ppu": 1,
+      "objectAt215": 107,
+      "virtual30": true,
+      "finiteNearFocus": false
+    },
+    {
+      "id": "s1-canvas",
+      "width": 920,
+      "ppu": 1.3529411764705883,
+      "objectAt215": 95.11764705882354,
+      "virtual30": true,
+      "finiteNearFocus": false
+    },
+    {
+      "id": "s2-canvas",
+      "width": 920,
+      "ppu": 1.3142857142857143,
+      "objectAt215": 140.42857142857144,
+      "virtual30": true,
+      "finiteNearFocus": false
+    }
+  ],
+  "verticalOnlyOverflowRejected": true,
+  "history": {
+    "validRestore": true,
+    "unknownOwnerKept": true,
+    "noQuizSave": true,
+    "rejectBadSchemas": true,
+    "deniedHistorySafe": true
+  },
+  "bilingualKeys": 123,
+  "scope": "Isolated VM; no native ranges,Back,actual canvas paint or keyboard focus operated. Adjacent-focus image tests do not use ill-conditioned line intersections."
+}

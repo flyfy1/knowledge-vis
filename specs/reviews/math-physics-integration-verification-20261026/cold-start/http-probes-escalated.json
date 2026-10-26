@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-25T22:47:14.128025+00:00",
+  "discovered_in": "specs/reviews/nightly-math-physics-20261026.md",
+  "checks": [
+    {
+      "url": "http://127.0.0.1:18775/atlas/",
+      "status": 200,
+      "bytes": 21772,
+      "sha256": "a022e9f4b1d0d32546bf005f2f5e5745b42c45dcf83401d015240fb9916a89aa",
+      "same_as_local": true,
+      "note": "HTTP resource only; query selection and fragment activation require a browser."
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=kinematics&node=derivative",
+      "status": 200,
+      "bytes": 21772,
+      "sha256": "a022e9f4b1d0d32546bf005f2f5e5745b42c45dcf83401d015240fb9916a89aa",
+      "same_as_local": true,
+      "note": "HTTP resource only; query selection and fragment activation require a browser."
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=travel&node=integral",
+      "status": 200,
+      "bytes": 21772,
+      "sha256": "a022e9f4b1d0d32546bf005f2f5e5745b42c45dcf83401d015240fb9916a89aa",
+      "same_as_local": true,
+      "note": "HTTP resource only; query selection and fragment activation require a browser."
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=work&node=work-energy",
+      "status": 200,
+      "bytes": 21772,
+      "sha256": "a022e9f4b1d0d32546bf005f2f5e5745b42c45dcf83401d015240fb9916a89aa",
+      "same_as_local": true,
+      "note": "HTTP resource only; query selection and fragment activation require a browser."
+    },
+    {
+      "url": "http://127.0.0.1:18775/trig/#step4",
+      "status": 200,
+      "bytes": 11716,
+      "sha256": "b99b4d49bbdd8622527589b2f90abee07fe3eac7964d3cec2c2c685b01ecc413",
+      "same_as_local": true,
+      "note": "HTTP resource only; query selection and fragment activation require a browser."
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=geometry&node=pinhole-ratio&view=list",
+      "status": 200,
+      "bytes": 21772,
+      "sha256": "a022e9f4b1d0d32546bf005f2f5e5745b42c45dcf83401d015240fb9916a89aa",
+      "same_as_local": true,
+      "note": "HTTP resource only; query selection and fragment activation require a browser."
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=optics&node=snell&view=list",
+      "status": 200,
+      "bytes": 21772,
+      "sha256": "a022e9f4b1d0d32546bf005f2f5e5745b42c45dcf83401d015240fb9916a89aa",
+      "same_as_local": true,
+      "note": "HTTP resource only; query selection and fragment activation require a browser."
+    },
+    {
+      "url": "http://127.0.0.1:18775/lens/#step2",
+      "status": 200,
+      "bytes": 11468,
+      "sha256": "f7313882a256dfd6b25a25b85861712b7340d7bc165d0e48a9bad9ad7ef4ef43",
+      "same_as_local": true,
+      "note": "HTTP resource only; query selection and fragment activation require a browser."
+    },
+    {
+      "url": "http://127.0.0.1:18775/frozen-bubble/",
+      "status": 200,
+      "bytes": 5191,
+      "sha256": "647ec349486852be7aa8075e78661e099ade71b924663e8b02f6de60c697e8e8",
+      "same_as_local": true,
+      "note": "HTTP resource only; query selection and fragment activation require a browser."
+    }
+  ]
+}

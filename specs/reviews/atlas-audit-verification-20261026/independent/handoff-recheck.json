@@ -1,0 +1,25 @@
+{
+  "links": 82,
+  "missing": [],
+  "pendingMarkers": {
+    "atlas/README.md": [],
+    "specs/reviews/atlas-audit-verification-20261026.md": [],
+    "specs/reviews/nightly-math-physics-20261026.md": []
+  },
+  "auditIndependentLines": [
+    "- **独立审阅**：最终静态/科学/教学试走通过，零必须修复项。独立8组环/schema试验、四类null记录诊断；三预设×中英文原生Enter/Space与独立复乘/显示舍入核对；Back恢复、实际展开回复力原因、ZH320逐节点字号×2、原生Tab/ShiftTab无遮挡、3px普通/系统高对比焦点。独立试走发现的1px焦点已红→绿修复；此前舍入/过渡/滚动测试假设失败保留。未据此认证任意拖拽、实机或学习效果。"
+  ],
+  "archivedIndependent": [
+    {
+      "path": "/Users/songyy/Documents/knowledge-vis/specs/reviews/atlas-audit-verification-20261026/independent/final-acceptance.md",
+      "exists": true,
+      "pass": true,
+      "zeroMustfix": true,
+      "sameAsReviewer": true
+    }
+  ],
+  "nightIndexLocalOnly": true,
+  "scopeLimitPresent": true,
+  "directIndependentLinkInAudit": true,
+  "lookupNote": "Archive directory is the report stem, not a directory with evidence in its name; initial reviewer glob was corrected."
+}

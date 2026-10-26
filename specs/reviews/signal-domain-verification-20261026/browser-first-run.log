@@ -1,0 +1,10 @@
+AssertionError [ERR_ASSERTION]: no overflow en http://127.0.0.1:18775/freqresp/#step3
+    at overflow (/Users/songyy/Documents/Codex/2026-10-25/task-5/signal-audit/staged/atlas/tests/signal-domain-browser.cjs:8:85)
+    at async /Users/songyy/Documents/Codex/2026-10-25/task-5/signal-audit/staged/atlas/tests/signal-domain-browser.cjs:27:348 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

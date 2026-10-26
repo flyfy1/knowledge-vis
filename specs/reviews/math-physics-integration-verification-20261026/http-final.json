@@ -1,0 +1,60 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=kinematics&node=derivative",
+      "status": 200,
+      "localFile": "atlas/index.html",
+      "bytesMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=travel&node=integral",
+      "status": 200,
+      "localFile": "atlas/index.html",
+      "bytesMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=work&node=work-energy",
+      "status": 200,
+      "localFile": "atlas/index.html",
+      "bytesMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:18775/trig/#step4",
+      "status": 200,
+      "localFile": "trig/index.html",
+      "bytesMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=geometry&node=pinhole-ratio&view=list",
+      "status": 200,
+      "localFile": "atlas/index.html",
+      "bytesMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=optics&node=snell&view=list",
+      "status": 200,
+      "localFile": "atlas/index.html",
+      "bytesMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:18775/lens/#step2",
+      "status": 200,
+      "localFile": "lens/index.html",
+      "bytesMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:18775/frozen-bubble/",
+      "status": 200,
+      "localFile": "frozen-bubble/index.html",
+      "bytesMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:18775/frozen-bubble/i18n.js?v=20261026-interface",
+      "status": 200,
+      "localFile": "frozen-bubble/i18n.js",
+      "bytesMatch": true
+    }
+  ],
+  "scope": "Local HTTP byte reachability, not dynamic query/anchor semantics; those are independently tested by browser"
+}

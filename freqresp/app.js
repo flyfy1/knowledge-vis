@@ -134,8 +134,10 @@ function maSim(M, w) {
   if (Math.abs(det) > 1e-9) {
     a = (Syc * Sss - Sys * Scs) / det;
     b = (Sys * Scc - Syc * Scs) / det;
-  } else { // 退化回简单投影
-    a = 2 / L * Syc; b = 2 / L * Sys;
+  } else { // At DC/Nyquist the sine/cosine design is rank one, not an orthogonal pair.
+    // Normalize by the surviving basis energy;2/L would double the measured amplitude.
+    if (Scc >= Sss) { a = Scc ? Syc / Scc : 0; b = 0; }
+    else { a = 0; b = Sss ? Sys / Sss : 0; }
   }
   return { x, y, amp: Math.hypot(a, b), phase: Math.atan2(-b, a), N, L };
 }
@@ -1058,6 +1060,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('s3-m').addEventListener('input', e => { s3.M = parseInt(e.target.value, 10); updateS3(); });
   $('s3-w').addEventListener('input', e => { s3.w = parseFloat(e.target.value); updateS3(); });
+  $('s3-w').addEventListener('keydown', e => {
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    if (!['ArrowLeft','ArrowRight','ArrowDown','ArrowUp','Home','End'].includes(e.key)) return;
+    e.preventDefault();
+    const delta = e.shiftKey ? 0.05 : 0.005;
+    s3.w = e.key === 'Home' ? 0.05 : e.key === 'End' ? Math.PI
+      : clamp(s3.w + (['ArrowRight','ArrowUp'].includes(e.key) ? delta : -delta), 0.05, Math.PI);
+    updateS3();
+  });
   $('s3-p-zero').addEventListener('click', () => { s3.w = 2 * Math.PI / s3.M; updateS3(); });
   $('s3-p-side').addEventListener('click', () => { if (s3.M >= 3) { s3.w = maSidelobe(s3.M).w; updateS3(); } });
   $('s3-p-pass').addEventListener('click', () => { s3.w = 0.2; updateS3(); });

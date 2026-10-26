@@ -1,0 +1,28 @@
+{
+  "pass": true,
+  "courses": [
+    {
+      "name": "sampling",
+      "keys": 113,
+      "placeholderIssues": []
+    },
+    {
+      "name": "freqresp",
+      "keys": 151,
+      "placeholderIssues": []
+    },
+    {
+      "name": "ztransform",
+      "keys": 160,
+      "placeholderIssues": []
+    }
+  ],
+  "graph": {
+    "nodes": 38,
+    "edges": 47,
+    "trails": 10
+  },
+  "impulseNode": "δ[n] → h[n]",
+  "frequencyNode": "CT: H(iω); DT: H(e^{iΩ})",
+  "method": "Read-only actual dictionaries and graph data; no browser."
+}

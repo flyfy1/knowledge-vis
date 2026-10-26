@@ -1,0 +1,38 @@
+Step 6 · Finale
+
+Design bench: build a filter to spec
+
+The last step is an exam. The job: in one signal, 50 Hz is the wanted signal and 500 Hz is interference. The toolbox holds three tools; the parameters are yours; press “Verify” and the page computes the attenuation at both frequencies from the chosen filter’s |H| formula, live — how much margin, how many dB short, reported on the spot, no pre-baked verdicts. One spoiler: a first-order RC cannot pass at any setting (its rolloff is too gentle) — a direct consequence of step 2’s −20 dB/dec. The second-order cascade and the moving average each have a way through — and the moving average’s way hides in its zeros: at Fs = 4000 Hz the zeros sit at k·(4000/M) Hz. What M puts 500 Hz exactly on a zero?
+
+Keep the 50 Hz signal: attenuation ≤ 1 dB
+Kill the 500 Hz interference: attenuation ≥ 20 dB
+First-order RC low-pass
+Second-order RC cascade (ideal)
+Moving average (Fs = 4000 Hz)
+Averaging length M 8
+
+Current: Moving average (Fs = 4000 Hz), M = 8 (zeros at k·500.0 Hz) · attenuation at 50 Hz = 0.14 dB (needs ≤ 1 dB) · at 500 Hz = >120 dB (numerical zero) (needs ≥ 20 dB)
+
+Verify →
+
+验收通过 两项指标都达标：50 Hz 衰减 0.14 dB ≤ 1 dB，500 Hz 衰减 ＞120 dB（数值零） ≥ 20 dB。这台滤波器按公式真算，达标。
+
+Two conventions, stated plainly. First, the second-order option is an ideal cascade: the two RC stages are assumed isolated by a buffer amplifier, so |H| is the square of the first-order one; a real passive cascade suffers loading — the second stage drags on the first and the curve changes shape (in hardware you either add the buffer or re-derive the network as a whole). Second, the moving average’s attenuation is computed from the Dirichlet formula with the digital frequency ω = 2πf/Fs at Fs = 4000 Hz; when 500 Hz lands exactly on a zero the attenuation is a numerical zero, displayed capped as “>120 dB”.
+
+The equalizer
+
+The bass / mid / treble knobs on a stereo are a row of band-passes (step 5) with staggered peak frequencies wired in parallel: each governs one slice of the spectrum — a whole equalizer is a frequency-response curve cut into strips.
+
+Image blur
+
+In a photo, high frequencies are edges and detail, low frequencies are broad color fields. A two-dimensional low-pass over the image (average each pixel with its neighbors) is the naive form of Gaussian blur — the same act as step 3’s moving average, with a sheet of pixels instead of a row of samples.
+
+Radio tuning
+
+The air carries hundreds of stations and channels at once; a receiver uses a band-pass to pick out the target frequency and block the rest — step 5’s Q decides how clean the pick is. This bench’s “keep 50, kill 500” is what every receiver does every day.
+
+To wrap up: from medical report to blueprint it is one and the same curve — in step 1 you measured it one frequency at a time, in step 2 you learned the engineer’s way of reading it, steps 3 and 4 showed you the tempers of zeros and of phase, step 5 re-wired the same parts into high-pass and band-pass, and here you have used a spec to build with it. Anyone who can read a frequency response greets every black box with the same first sentence: show me the pass rate and the lateness at every frequency.
+
+Laplace: reading resonance from poles → · Z-transform: response on the unit circle → · Impulse & LTI: the h fingerprint →
+
+← Knowledge Index

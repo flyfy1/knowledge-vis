@@ -1,0 +1,29 @@
+{
+  "result": "pass",
+  "checks": 294,
+  "errors": [],
+  "failed": [],
+  "optionalBrowserRequests": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "location": {
+        "url": "http://127.0.0.1:18775/favicon.ico",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "scope": [
+    "Original geometry and fixed-scale full-domain view",
+    "Signed coordinates/size/magnification vs slope;predict A/B and exact state ownership",
+    "Native keyboard/pointer,Back and forced rebuild,validated history with foreign owner",
+    "en/zh320/390/1280,actual2x,48px/3px/forcedcolors,denied storage/history"
+  ],
+  "limits": [
+    "No real-phone or screen-reader speech test",
+    "Only S2 reading geometry is restored across document rebuilds; other lesson/quiz initialization follows existing behavior",
+    "No learner effectiveness/measurement/physical optimum aperture claim"
+  ]
+}

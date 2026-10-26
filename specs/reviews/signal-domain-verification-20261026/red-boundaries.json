@@ -1,0 +1,54 @@
+{
+  "checks": [
+    {
+      "M": 2,
+      "w": 3.141592653589793,
+      "analytic": 6.123233995736766e-17,
+      "projectionAmplitude": 0,
+      "lastAbsOutput": 0
+    },
+    {
+      "M": 3,
+      "w": 3.141592653589793,
+      "analytic": 0.3333333333333333,
+      "projectionAmplitude": 0.6666666666666662,
+      "lastAbsOutput": 0.3333333333333333
+    },
+    {
+      "M": 8,
+      "w": 0,
+      "analytic": 1,
+      "projectionAmplitude": 2,
+      "lastAbsOutput": 1
+    },
+    {
+      "M": 3,
+      "w": 0.2,
+      "analytic": 0.9867110518941612,
+      "projectionAmplitude": 0.9867110518941615,
+      "lastAbsOutput": 0.963040819644006
+    },
+    {
+      "M": 8,
+      "w": 0.7853981633974483,
+      "analytic": 4.0001953820508255e-17,
+      "projectionAmplitude": 7.888798405294053e-17,
+      "lastAbsOutput": 1.8041124150158794e-15
+    }
+  ],
+  "failures": [
+    {
+      "M": 3,
+      "w": 3.141592653589793,
+      "analytic": 0.3333333333333333,
+      "measured": 0.6666666666666662
+    },
+    {
+      "M": 8,
+      "w": 0,
+      "analytic": 1,
+      "measured": 2
+    }
+  ],
+  "nativeDomain": ".05..3.13; zero preset M2 reaches π outside native domain; DC is not user reachable and not itself a live failure"
+}

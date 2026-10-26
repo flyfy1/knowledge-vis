@@ -1,0 +1,6 @@
+{
+  "command": "keyboard-core with180\u00b0 counterexample and scoped-link policy before repair",
+  "exit": 1,
+  "stdout": "",
+  "stderr": "node:internal/assert/utils:146\n  throw error;\n  ^\n\nAssertionError [ERR_ASSERTION]: link is scoped to actual rotation-scaling preset\n    at ok (/Users/songyy/Documents/Codex/2026-10-25/task-5/complex-keyboard/staged/complex-numbers/tests/keyboard-core.cjs:3:296)\n    at Object.<anonymous> (/Users/songyy/Documents/Codex/2026-10-25/task-5/complex-keyboard/staged/complex-numbers/tests/keyboard-core.cjs:25:1)\n    at Module._compile (node:internal/modules/cjs/loader:1934:14)\n    at Object..js (node:internal/modules/cjs/loader:2074:10)\n    at Module.load (node:internal/modules/cjs/loader:1656:32)\n    at Module._load (node:internal/modules/cjs/loader:1448:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v26.7.0\n"
+}

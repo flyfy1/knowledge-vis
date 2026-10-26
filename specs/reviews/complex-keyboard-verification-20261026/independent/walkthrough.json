@@ -1,0 +1,257 @@
+[
+  {
+    "test": "first learner prediction",
+    "data": {
+      "task": "Try setting both numbers to1+i using coordinates. Predict the product’s modulus and angle, then apply and compare the plot with the readouts.",
+      "prediction": {
+        "product": "2i",
+        "modulus": 2,
+        "argumentDegrees": 90
+      }
+    }
+  },
+  {
+    "test": "first task observed",
+    "data": {
+      "state": {
+        "z1": [
+          1,
+          1
+        ],
+        "z2": [
+          1,
+          1
+        ]
+      },
+      "product": "z₁ = 1 + i, z₂ = 1 + i ⟹ z₁·z₂ = 2i",
+      "mod": "Modulus check: |z₁| × |z₂| = 1.41 × 1.41 = 2; and |z₁z₂| = 2 ✓ equal",
+      "arg": "Angle check: θ₁ + θ₂ = 45° + 45°, normalised to the principal value = 90°; the product’s argument = 90° ✓ equal"
+    }
+  },
+  {
+    "test": "learner instructions en",
+    "data": {
+      "help": "Enter finite coordinates. Tab moves between controls; ↑/↓ changes only the draft by0.1. Enter or Apply updates the plot. As with dragging, coordinates snap to a0.1 grid before the drawing limit below is applied. The readouts show the actual applied values.",
+      "range": "Drawing range: each input number has modulus at most2.6. After snapping, a point outside the disk is scaled toward the origin to the boundary without changing its angle; the resulting components need not remain on the0.1 grid. This is a drawing limit only.",
+      "task": "Try setting both numbers to1+i using coordinates. Predict the product’s modulus and angle, then apply and compare the plot with the readouts."
+    }
+  },
+  {
+    "test": "learner instructions zh",
+    "data": {
+      "help": "输入有限坐标；Tab 切换控件，↑/↓ 只把当前草稿增减 0.1，Enter 或应用才更新图。与拖动相同：先吸附到 0.1 网格，再按下面的绘图范围限制。下方读数给出实际应用值。",
+      "range": "绘图范围：每个输入复数的模最多 2.6。吸附后超出圆盘时，按比例缩到圆周且不改方向；最终分量可能不在 0.1 网格上。此范围只为绘图。",
+      "task": "试着用坐标把两数都设为 1+i：先预测乘积的模与辐角，再应用，对照图与下方读数。"
+    }
+  },
+  {
+    "test": "S1 origin and negative-real principal argument",
+    "data": {
+      "state": {
+        "z": [
+          -4,
+          0
+        ]
+      },
+      "text": "z = −4: real part a = −4, imaginary part b = 0; modulus |z| = √(−4² + 0²) = 4 (hypotenuse, computed by Pythagoras); argument θ = 180° (counter-clockwise from the positive real axis)."
+    }
+  },
+  {
+    "test": "S2 arbitrary operands",
+    "data": {
+      "state": {
+        "z1": [
+          -2.3,
+          4
+        ],
+        "z2": [
+          1.2,
+          -3.1
+        ]
+      },
+      "sum": [
+        -1.0999999999999999,
+        0.8999999999999999
+      ],
+      "readout": "z₁ = −2.3 + 4i, z₂ = 1.2 − 3.1i, z₁ + z₂ = −1.1 + 0.9i"
+    }
+  },
+  {
+    "test": "prediction task both1+i",
+    "data": {
+      "state": {
+        "z1": [
+          1,
+          1
+        ],
+        "z2": [
+          1,
+          1
+        ]
+      },
+      "product": "z₁ = 1 + i, z₂ = 1 + i ⟹ z₁·z₂ = 2i",
+      "modulus": "Modulus check: |z₁| × |z₂| = 1.41 × 1.41 = 2; and |z₁z₂| = 2 ✓ equal",
+      "argument": "Angle check: θ₁ + θ₂ = 45° + 45°, normalised to the principal value = 90°; the product’s argument = 90° ✓ equal"
+    }
+  },
+  {
+    "test": "exact preset no-op Apply",
+    "data": {
+      "exact": [
+        0.5000000000000001,
+        0.8660254037844386
+      ],
+      "status": "z₂ is unchanged; its current exact coordinates are preserved."
+    }
+  },
+  {
+    "test": "same target locale and resize preserve unsubmitted draft",
+    "data": {
+      "real": "-.7",
+      "imag": "1.3"
+    }
+  },
+  {
+    "test": "partial draft rejection and first-bad focus",
+    "data": {
+      "partial": {
+        "value": "",
+        "badInput": true
+      },
+      "partialAfter": {
+        "value": "",
+        "badInput": true
+      },
+      "status": "Enter a finite number in both fields. Empty or incomplete numbers do not change the plot."
+    }
+  },
+  {
+    "test": "uncomputable raw and huge Arrow rejected",
+    "data": {
+      "status": "A0.1 step cannot reliably adjust this value. Enter smaller coordinates, or apply finite coordinates directly.",
+      "raw": "1e308"
+    }
+  },
+  {
+    "test": "raw snap then radial projection",
+    "data": {
+      "state": [
+        2.466576574931336,
+        0.8221921916437787
+      ],
+      "rawAngle": 0.3296244074207427,
+      "snappedAngle": 0.3217505543966422,
+      "appliedAngle": 0.3217505543966422,
+      "status": "Applied snapping and drawing limits: z₂ = 2.47 + 0.82i. The fields now show the actual coordinates."
+    }
+  },
+  {
+    "test": "pointer after keyboard and quiz/rotation isolation",
+    "data": {
+      "state": {
+        "z1": [
+          -1.7,
+          0.6
+        ],
+        "z2": [
+          2.466576574931336,
+          0.8221921916437787
+        ]
+      },
+      "protected": true
+    }
+  },
+  {
+    "test": "doubled focus geometry diagnostic en",
+    "data": {
+      "font": "32px",
+      "outline": "3px",
+      "active": true,
+      "rect": {
+        "x": 27,
+        "y": 516.921875,
+        "width": 266,
+        "height": 66.796875,
+        "top": 516.921875,
+        "right": 293,
+        "bottom": 583.71875,
+        "left": 27
+      },
+      "nav": 80.59375,
+      "scroll": 320
+    }
+  },
+  {
+    "test": "320 doubled text keyboard focus en",
+    "data": {
+      "font": "32px",
+      "outline": "3px",
+      "active": true,
+      "rect": {
+        "x": 27,
+        "y": 516.921875,
+        "width": 266,
+        "height": 66.796875,
+        "top": 516.921875,
+        "right": 293,
+        "bottom": 583.71875,
+        "left": 27
+      },
+      "nav": 80.59375,
+      "scroll": 320
+    }
+  },
+  {
+    "test": "doubled focus geometry diagnostic zh",
+    "data": {
+      "font": "32px",
+      "outline": "3px",
+      "active": true,
+      "rect": {
+        "x": 27,
+        "y": 516.53125,
+        "width": 266,
+        "height": 66.796875,
+        "top": 516.53125,
+        "right": 293,
+        "bottom": 583.328125,
+        "left": 27
+      },
+      "nav": 80.59375,
+      "scroll": 320
+    }
+  },
+  {
+    "test": "320 doubled text keyboard focus zh",
+    "data": {
+      "font": "32px",
+      "outline": "3px",
+      "active": true,
+      "rect": {
+        "x": 27,
+        "y": 516.53125,
+        "width": 266,
+        "height": 66.796875,
+        "top": 516.53125,
+        "right": 293,
+        "bottom": 583.328125,
+        "left": 27
+      },
+      "nav": 80.59375,
+      "scroll": 320
+    }
+  },
+  {
+    "test": "atlas source Back",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=complex&trail=waves&q=complex&group=math&view=list"
+    }
+  },
+  {
+    "test": "pageerrors/requestfailed",
+    "data": {
+      "errors": [],
+      "failed": []
+    }
+  }
+]

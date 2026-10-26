@@ -1,0 +1,582 @@
+[
+  {
+    "test": "content en motion",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=unit-circle&view=list&trail=motion",
+      "body": "Starting ideas · expand when useful\n\nRevisit a definition or decode a symbol, then return to the same question.\n\nSine & cosine\n\nCoordinates of uniform circular motion vary periodically. Amplitude, frequency and phase set the size, rate and starting point.\n\nA sin(2πft + φ)\n\nPhase, radians and cycles per second\n\nθ marks progress through a cycle. A radian angle is arc length divided by radius; one turn is2π rad. f counts cycles per second (Hz), T is seconds per cycle, and ω=2πf measures radians per second; T=1/f. In the sine formula, φ sets the starting phase.\n\nOpenStax · radian definition ↗\nOpenStax · period & angular frequency ↗\nInspect this concept →\nOpen its lesson or textbook →\nHarmonic motion\n\nAn ideal spring has a restoring force proportional and opposite to displacement. Without damping or driving, its motion is sinusoidal.\n\nm x″ + kx = 0\n\nWhat do x′ and x″ mean?\n\nx is position relative to equilibrium (m). x′=dx/dt is signed velocity (m/s); differentiating once more gives x″=d²x/dt², acceleration (m/s²). Two primes mean two time derivatives, not x squared.\n\nOpenStax · acceleration as a rate ↗\nInspect this concept →\nOpen its lesson or textbook →\nPredict first · ideal free spring\n\nAssume A>0, m>0, k>0: an ideal horizontal spring, no damping and no sustained driving.\n\nAs the block crosses equilibrium x=0, must its velocity also be zero? Predict before opening the explanation.\n\nReveal the explanation & a way to check",
+      "nodes": [
+        "sine",
+        "oscillation"
+      ],
+      "check": true,
+      "same": true,
+      "historyState": {
+        "unrelated": "retained",
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": false,
+          "question": "free-crossing-v1"
+        }
+      }
+    }
+  },
+  {
+    "test": "content en kinematics",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=derivative&view=list&trail=kinematics",
+      "body": "Starting ideas · expand when useful\n\nRevisit a definition or decode a symbol, then return to the same question.\n\nDerivatives & instantaneous rates\n\nA derivative is an instantaneous rate and tangent slope. For position versus time it gives signed velocity; differentiating velocity gives acceleration.\n\nf′(t) = lim Δf/Δt\n\nInspect this concept →\nOpen its lesson or textbook →\nNet force & Newton’s second law\n\nIn an inertial frame with constant mass, the sum of external forces equals mass times acceleration. It determines how velocity changes, not the current velocity.\n\nΣF = m a\n\nInspect this concept →\nOpen its lesson or textbook →\nPredict first · ideal free spring\n\nAssume A>0, m>0, k>0: an ideal horizontal spring, no damping and no sustained driving.\n\nAs the block crosses equilibrium x=0, must its velocity also be zero? Predict before opening the explanation.\n\nReveal the explanation & a way to check",
+      "nodes": [
+        "derivative",
+        "net-force"
+      ],
+      "check": true,
+      "same": true,
+      "historyState": {
+        "unrelated": "retained",
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": false,
+          "question": "free-crossing-v1"
+        }
+      }
+    }
+  },
+  {
+    "test": "content en travel",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=integral&view=list&trail=travel",
+      "body": "Starting ideas · expand when useful\n\nRevisit a definition or decode a symbol, then return to the same question.\n\nDefinite integral & signed accumulation\n\nA definite integral accumulates signed contributions. Over forward time, integrating velocity gives displacement; integrating speed gives distance. Position difference is distinct from a position coordinate.\n\n∫aᵇ v dt = x(b) − x(a)\n\nInspect this concept →\nOpen its lesson or textbook →",
+      "nodes": [
+        "integral"
+      ],
+      "check": false,
+      "same": true,
+      "historyState": {
+        "unrelated": "retained",
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": false,
+          "question": null
+        }
+      }
+    }
+  },
+  {
+    "test": "content en power",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=power&view=list&trail=power",
+      "body": "Starting ideas · expand when useful\n\nRevisit a definition or decode a symbol, then return to the same question.\n\nPulse-width modulation\n\nVary switch ON time within a fixed period. Duty is the fraction of the period spent ON.\n\nD = ton / T\n\nInspect this concept →\nOpen its lesson or textbook →\nBuck converter\n\nCCM means inductor current never reaches zero during a cycle, not that it stays constant. With ideal components, periodic steady state and constant DC input, average output voltage is D times input; instantaneous voltage can ripple.\n\n⟨Vout⟩ = D Vin\n\nInspect this concept →\nOpen its lesson or textbook →",
+      "nodes": [
+        "pwm",
+        "buck"
+      ],
+      "check": false,
+      "same": true,
+      "historyState": {
+        "unrelated": "retained",
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": false,
+          "question": null
+        }
+      }
+    }
+  },
+  {
+    "test": "content en waves",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=unit-circle&view=list&trail=waves",
+      "body": "Starting ideas · expand when useful\n\nRevisit a definition or decode a symbol, then return to the same question.\n\nSine & cosine\n\nCoordinates of uniform circular motion vary periodically. Amplitude, frequency and phase set the size, rate and starting point.\n\nA sin(2πft + φ)\n\nPhase, radians and cycles per second\n\nθ marks progress through a cycle. A radian angle is arc length divided by radius; one turn is2π rad. f counts cycles per second (Hz), T is seconds per cycle, and ω=2πf measures radians per second; T=1/f. In the sine formula, φ sets the starting phase.\n\nOpenStax · radian definition ↗\nOpenStax · period & angular frequency ↗\nInspect this concept →\nOpen its lesson or textbook →\nSuperposition\n\nAdd signals at the same instant to form a combined signal. Applying this to a physical system requires linear behavior.\n\ny(t) = x₁(t) + x₂(t)\n\nInspect this concept →\nOpen its lesson or textbook →",
+      "nodes": [
+        "sine",
+        "superposition"
+      ],
+      "check": false,
+      "same": true,
+      "historyState": {
+        "unrelated": "retained",
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": false,
+          "question": null
+        }
+      }
+    }
+  },
+  {
+    "test": "content en response",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=oscillation&view=list&trail=response",
+      "body": "Starting ideas · expand when useful\n\nRevisit a definition or decode a symbol, then return to the same question.\n\nSine & cosine\n\nCoordinates of uniform circular motion vary periodically. Amplitude, frequency and phase set the size, rate and starting point.\n\nA sin(2πft + φ)\n\nPhase, radians and cycles per second\n\nθ marks progress through a cycle. A radian angle is arc length divided by radius; one turn is2π rad. f counts cycles per second (Hz), T is seconds per cycle, and ω=2πf measures radians per second; T=1/f. In the sine formula, φ sets the starting phase.\n\nOpenStax · radian definition ↗\nOpenStax · period & angular frequency ↗\nInspect this concept →\nOpen its lesson or textbook →\nHarmonic motion\n\nAn ideal spring has a restoring force proportional and opposite to displacement. Without damping or driving, its motion is sinusoidal.\n\nm x″ + kx = 0\n\nWhat do x′ and x″ mean?\n\nx is position relative to equilibrium (m). x′=dx/dt is signed velocity (m/s); differentiating once more gives x″=d²x/dt², acceleration (m/s²). Two primes mean two time derivatives, not x squared.\n\nOpenStax · acceleration as a rate ↗\nInspect this concept →\nOpen its lesson or textbook →\n\nA transient is extra motion associated with the initial state; it decays in this positive-damping model. Steady state is the sustained periodic motion left afterward, not rest. Viscous damping removes energy through a force opposing velocity. Here φ is displacement’s phase difference relative to the driving force.\n\nRead the supporting source ↗",
+      "nodes": [
+        "sine",
+        "oscillation"
+      ],
+      "check": false,
+      "same": true,
+      "historyState": {
+        "unrelated": "retained",
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": false,
+          "question": null
+        }
+      }
+    }
+  },
+  {
+    "test": "content en estimate",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=probability&view=list&trail=estimate",
+      "body": "Starting ideas · expand when useful\n\nRevisit a definition or decode a symbol, then return to the same question.\n\nProbability models\n\nUse probabilities to describe possible outcomes and uncertainty. Model probabilities are distinct from observed evidence.\n\n0 ≤ P(A) ≤ 1\n\nInspect this concept →\nOpen its lesson or textbook →\nBayesian updating\n\nA prior is a probability before evidence; a posterior is its update afterward. Likelihood describes evidence under a hypothesis—in this lesson’s discrete examples it is an observation probability. Combine it with the prior and normalize; the result depends on the observation model.\n\nposterior ∝ likelihood × prior\n\nInspect this concept →\nOpen its lesson or textbook →",
+      "nodes": [
+        "probability",
+        "bayes"
+      ],
+      "check": false,
+      "same": true,
+      "historyState": {
+        "unrelated": "retained",
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": false,
+          "question": null
+        }
+      }
+    }
+  },
+  {
+    "test": "content zh motion",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=unit-circle&view=list&trail=motion",
+      "body": "起步提示 · 按需展开\n\n回看一个定义或读懂一个符号，再回到同一个问题。\n\n正弦与余弦\n\n匀速绕圆运动的坐标随时间周期变化。振幅、频率和相位分别决定大小、快慢和起点。\n\nA sin(2πft + φ)\n\n相位、弧度与每秒周期数\n\nθ 表示一周期内的进度。弧度是弧长除以半径，一周为 2π rad。f 是每秒周期数（Hz），T 是一周期的秒数，ω=2πf 是每秒变化的弧度数（rad/s），T=1/f。正弦式中的 φ 设定起始相位。\n\nOpenStax · 弧度定义 ↗\nOpenStax · 周期与角频率 ↗\n查看这个概念 →\n打开对应课程或教材 →\n简谐振动\n\n理想弹簧振子的回复力与位移成正比、方向相反。在无阻尼、无持续外力驱动时，位移随时间呈正弦变化；回复力仍然存在。\n\nm x″ + kx = 0\n\nx′ 和 x″ 分别读什么？\n\nx 是相对平衡位置的坐标（m）。x′=dx/dt 是带方向的速度（m/s）；再对时间求一次导数，x″=d²x/dt² 就是加速度（m/s²）。两个撇号表示求两次导数，不是把 x 平方。\n\nOpenStax · 加速度与变化率 ↗\n查看这个概念 →\n打开对应课程或教材 →\n先预测 · 理想自由弹簧\n\n条件：A>0、m>0、k>0；理想水平弹簧，无阻尼、无持续驱动。\n\n物块经过平衡位置 x=0 时，速度也一定为零吗？先预测，再展开解释。\n\n展开解释与核对方法",
+      "nodes": [
+        "sine",
+        "oscillation"
+      ],
+      "check": true,
+      "same": true,
+      "historyState": {
+        "unrelated": "retained",
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": false,
+          "question": "free-crossing-v1"
+        }
+      }
+    }
+  },
+  {
+    "test": "content zh kinematics",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=derivative&view=list&trail=kinematics",
+      "body": "起步提示 · 按需展开\n\n回看一个定义或读懂一个符号，再回到同一个问题。\n\n导数与瞬时变化率\n\n可微函数的导数是瞬时变化率，也是切线斜率。位置对时间的导数是带方向的速度，速度对时间的导数是加速度。\n\nf′(t) = lim Δf/Δt\n\n查看这个概念 →\n打开对应课程或教材 →\n净力与牛顿第二定律\n\n在惯性参考系、质量恒定时，合外力等于质量乘加速度。它决定速度如何改变，而不是此刻速度有多大。\n\nΣF = m a\n\n查看这个概念 →\n打开对应课程或教材 →\n先预测 · 理想自由弹簧\n\n条件：A>0、m>0、k>0；理想水平弹簧，无阻尼、无持续驱动。\n\n物块经过平衡位置 x=0 时，速度也一定为零吗？先预测，再展开解释。\n\n展开解释与核对方法",
+      "nodes": [
+        "derivative",
+        "net-force"
+      ],
+      "check": true,
+      "same": true,
+      "historyState": {
+        "unrelated": "retained",
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": false,
+          "question": "free-crossing-v1"
+        }
+      }
+    }
+  },
+  {
+    "test": "content zh travel",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=integral&view=list&trail=travel",
+      "body": "起步提示 · 按需展开\n\n回看一个定义或读懂一个符号，再回到同一个问题。\n\n定积分与有符号累加\n\n定积分累加带符号的贡献。在正向时间区间，速度积分是位移，速率积分才是路程；位置差与位置坐标不同。\n\n∫aᵇ v dt = x(b) − x(a)\n\n查看这个概念 →\n打开对应课程或教材 →",
+      "nodes": [
+        "integral"
+      ],
+      "check": false,
+      "same": true,
+      "historyState": {
+        "unrelated": "retained",
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": false,
+          "question": null
+        }
+      }
+    }
+  },
+  {
+    "test": "content zh power",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=power&view=list&trail=power",
+      "body": "起步提示 · 按需展开\n\n回看一个定义或读懂一个符号，再回到同一个问题。\n\n脉宽调制 PWM\n\n在固定周期内改变开关导通时间。占空比是导通时间占周期的比例。\n\nD = ton / T\n\n查看这个概念 →\n打开对应课程或教材 →\nBuck 降压电路\n\n电源间歇接入。连续导通 CCM 指电感电流全周期不归零，不是恒定电流。理想周期稳态、直流输入恒定时，平均输出电压为 D 倍输入；瞬时值可有纹波。\n\n⟨Vout⟩ = D Vin\n\n查看这个概念 →\n打开对应课程或教材 →",
+      "nodes": [
+        "pwm",
+        "buck"
+      ],
+      "check": false,
+      "same": true,
+      "historyState": {
+        "unrelated": "retained",
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": false,
+          "question": null
+        }
+      }
+    }
+  },
+  {
+    "test": "content zh waves",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=unit-circle&view=list&trail=waves",
+      "body": "起步提示 · 按需展开\n\n回看一个定义或读懂一个符号，再回到同一个问题。\n\n正弦与余弦\n\n匀速绕圆运动的坐标随时间周期变化。振幅、频率和相位分别决定大小、快慢和起点。\n\nA sin(2πft + φ)\n\n相位、弧度与每秒周期数\n\nθ 表示一周期内的进度。弧度是弧长除以半径，一周为 2π rad。f 是每秒周期数（Hz），T 是一周期的秒数，ω=2πf 是每秒变化的弧度数（rad/s），T=1/f。正弦式中的 φ 设定起始相位。\n\nOpenStax · 弧度定义 ↗\nOpenStax · 周期与角频率 ↗\n查看这个概念 →\n打开对应课程或教材 →\n波的叠加\n\n把多个信号在同一时刻的值相加，得到合成信号；物理系统是否允许这样叠加取决于其线性。\n\ny(t) = x₁(t) + x₂(t)\n\n查看这个概念 →\n打开对应课程或教材 →",
+      "nodes": [
+        "sine",
+        "superposition"
+      ],
+      "check": false,
+      "same": true,
+      "historyState": {
+        "unrelated": "retained",
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": false,
+          "question": null
+        }
+      }
+    }
+  },
+  {
+    "test": "content zh response",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=oscillation&view=list&trail=response",
+      "body": "起步提示 · 按需展开\n\n回看一个定义或读懂一个符号，再回到同一个问题。\n\n正弦与余弦\n\n匀速绕圆运动的坐标随时间周期变化。振幅、频率和相位分别决定大小、快慢和起点。\n\nA sin(2πft + φ)\n\n相位、弧度与每秒周期数\n\nθ 表示一周期内的进度。弧度是弧长除以半径，一周为 2π rad。f 是每秒周期数（Hz），T 是一周期的秒数，ω=2πf 是每秒变化的弧度数（rad/s），T=1/f。正弦式中的 φ 设定起始相位。\n\nOpenStax · 弧度定义 ↗\nOpenStax · 周期与角频率 ↗\n查看这个概念 →\n打开对应课程或教材 →\n简谐振动\n\n理想弹簧振子的回复力与位移成正比、方向相反。在无阻尼、无持续外力驱动时，位移随时间呈正弦变化；回复力仍然存在。\n\nm x″ + kx = 0\n\nx′ 和 x″ 分别读什么？\n\nx 是相对平衡位置的坐标（m）。x′=dx/dt 是带方向的速度（m/s）；再对时间求一次导数，x″=d²x/dt² 就是加速度（m/s²）。两个撇号表示求两次导数，不是把 x 平方。\n\nOpenStax · 加速度与变化率 ↗\n查看这个概念 →\n打开对应课程或教材 →\n\n暂态是初始状态带来的额外运动，在本页正阻尼模型中会衰减。稳态是随后保留的持续周期运动，不是静止；黏性阻尼通过反向于速度的力耗能。响应图中的 φ 是位移相对驱动力的相位差。\n\n查看解释依据 ↗",
+      "nodes": [
+        "sine",
+        "oscillation"
+      ],
+      "check": false,
+      "same": true,
+      "historyState": {
+        "unrelated": "retained",
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": false,
+          "question": null
+        }
+      }
+    }
+  },
+  {
+    "test": "content zh estimate",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=probability&view=list&trail=estimate",
+      "body": "起步提示 · 按需展开\n\n回看一个定义或读懂一个符号，再回到同一个问题。\n\n概率模型\n\n用概率描述可能结果及其不确定性；模型中的概率需要与观察证据区分。\n\n0 ≤ P(A) ≤ 1\n\n查看这个概念 →\n打开对应课程或教材 →\n贝叶斯更新\n\n先验是观测前的概率，后验是观测后的更新。似然描述给定假设下观测如何出现；本页离散例子中是观测概率。把它与先验结合并归一化，得到依赖观测模型的后验。\n\n后验 ∝ 似然 × 先验\n\n查看这个概念 →\n打开对应课程或教材 →",
+      "nodes": [
+        "probability",
+        "bayes"
+      ],
+      "check": false,
+      "same": true,
+      "historyState": {
+        "unrelated": "retained",
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": false,
+          "question": null
+        }
+      }
+    }
+  },
+  {
+    "test": "toggle preserves model URL history",
+    "data": {
+      "before": {
+        "url": "http://127.0.0.1:18775/atlas/?trail=motion&node=unit-circle",
+        "history": 18,
+        "m": {
+          "cycles": "0.375",
+          "position": "-0.42426406871192845",
+          "period": "3.141592653589793",
+          "force": "1.6970562748477138",
+          "playing": "false",
+          "velocity": "-0.848528137423857",
+          "speed": "0.848528137423857",
+          "acceleration": "1.6970562748477138",
+          "motionCase": "slowing",
+          "rates": "false",
+          "view": "projection"
+        },
+        "r": {},
+        "storage": [
+          "atlas-motion-state-v1",
+          "atlas-response-state-v1"
+        ]
+      },
+      "ui": {
+        "open": true,
+        "reveal": true,
+        "question": "free-crossing-v1"
+      }
+    }
+  },
+  {
+    "test": "focused summary across locale rerender",
+    "data": [
+      {
+        "lang": "zh-CN",
+        "active": "",
+        "open": true,
+        "reveal": true,
+        "top": -1107
+      },
+      {
+        "lang": "en",
+        "active": "",
+        "open": true,
+        "reveal": true,
+        "top": -1233
+      }
+    ]
+  },
+  {
+    "test": "source document Back",
+    "data": {
+      "prior": {
+        "url": "http://127.0.0.1:18775/atlas/?trail=motion&node=unit-circle",
+        "history": 18,
+        "m": {
+          "cycles": "0.375",
+          "position": "-0.42426406871192845",
+          "period": "3.141592653589793",
+          "force": "1.6970562748477138",
+          "playing": "false",
+          "velocity": "-0.848528137423857",
+          "speed": "0.848528137423857",
+          "acceleration": "1.6970562748477138",
+          "motionCase": "slowing",
+          "rates": "false",
+          "view": "projection"
+        },
+        "r": {},
+        "storage": [
+          "atlas-motion-state-v1",
+          "atlas-response-state-v1"
+        ]
+      },
+      "returned": {
+        "url": "http://127.0.0.1:18775/atlas/?trail=motion&node=unit-circle",
+        "history": 19,
+        "m": {
+          "cycles": "0.375",
+          "position": "-0.42426406871192845",
+          "period": "3.141592653589793",
+          "force": "1.6970562748477138",
+          "playing": "false",
+          "velocity": "-0.848528137423857",
+          "speed": "0.848528137423857",
+          "acceleration": "1.6970562748477138",
+          "motionCase": "slowing",
+          "rates": "false",
+          "view": "projection"
+        },
+        "r": {},
+        "storage": [
+          "atlas-motion-state-v1",
+          "atlas-response-state-v1"
+        ]
+      },
+      "backUi": {
+        "open": true,
+        "reveal": true,
+        "state": {
+          "atlasStartingIdeas": {
+            "open": true,
+            "reveal": true,
+            "question": "free-crossing-v1"
+          }
+        }
+      }
+    }
+  },
+  {
+    "test": "verify mode transition",
+    "data": {
+      "phase": "0.375",
+      "active": "motion-title"
+    }
+  },
+  {
+    "test": "back from inapplicable route",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=unit-circle&view=list&trail=kinematics",
+      "open": true,
+      "reveal": true,
+      "state": {
+        "atlasStartingIdeas": {
+          "open": true,
+          "reveal": true,
+          "question": "free-crossing-v1"
+        }
+      }
+    }
+  },
+  {
+    "test": "320200 en motion",
+    "data": {
+      "width": 320,
+      "scroll": 320,
+      "active": "foundations-summary",
+      "rect": {
+        "x": 46,
+        "y": 334.4375,
+        "width": 228,
+        "height": 174.390625,
+        "top": 334.4375,
+        "right": 274,
+        "bottom": 508.828125,
+        "left": 46
+      }
+    }
+  },
+  {
+    "test": "320200 en power",
+    "data": {
+      "width": 320,
+      "scroll": 320,
+      "active": "foundations-summary",
+      "rect": {
+        "x": 29,
+        "y": 334.765625,
+        "width": 262,
+        "height": 174.390625,
+        "top": 334.765625,
+        "right": 291,
+        "bottom": 509.15625,
+        "left": 29
+      }
+    }
+  },
+  {
+    "test": "320200 en response",
+    "data": {
+      "width": 320,
+      "scroll": 320,
+      "active": "foundations-summary",
+      "rect": {
+        "x": 46,
+        "y": 335.203125,
+        "width": 228,
+        "height": 174.390625,
+        "top": 335.203125,
+        "right": 274,
+        "bottom": 509.59375,
+        "left": 46
+      }
+    }
+  },
+  {
+    "test": "320200 en estimate",
+    "data": {
+      "width": 320,
+      "scroll": 320,
+      "active": "foundations-summary",
+      "rect": {
+        "x": 29,
+        "y": 334.375,
+        "width": 262,
+        "height": 174.390625,
+        "top": 334.375,
+        "right": 291,
+        "bottom": 508.765625,
+        "left": 29
+      }
+    }
+  },
+  {
+    "test": "320200 zh motion",
+    "data": {
+      "width": 320,
+      "scroll": 320,
+      "active": "foundations-summary",
+      "rect": {
+        "x": 46,
+        "y": 361.453125,
+        "width": 228,
+        "height": 121.59375,
+        "top": 361.453125,
+        "right": 274,
+        "bottom": 483.046875,
+        "left": 46
+      }
+    }
+  },
+  {
+    "test": "320200 zh power",
+    "data": {
+      "width": 320,
+      "scroll": 320,
+      "active": "foundations-summary",
+      "rect": {
+        "x": 29,
+        "y": 360.921875,
+        "width": 262,
+        "height": 121.59375,
+        "top": 360.921875,
+        "right": 291,
+        "bottom": 482.515625,
+        "left": 29
+      }
+    }
+  },
+  {
+    "test": "320200 zh response",
+    "data": {
+      "width": 320,
+      "scroll": 320,
+      "active": "foundations-summary",
+      "rect": {
+        "x": 46,
+        "y": 361.640625,
+        "width": 228,
+        "height": 121.59375,
+        "top": 361.640625,
+        "right": 274,
+        "bottom": 483.234375,
+        "left": 46
+      }
+    }
+  },
+  {
+    "test": "320200 zh estimate",
+    "data": {
+      "width": 320,
+      "scroll": 320,
+      "active": "foundations-summary",
+      "rect": {
+        "x": 29,
+        "y": 360.9375,
+        "width": 262,
+        "height": 121.59375,
+        "top": 360.9375,
+        "right": 291,
+        "bottom": 482.53125,
+        "left": 29
+      }
+    }
+  },
+  {
+    "test": "forced-colors",
+    "data": {
+      "outline": "none",
+      "outlineWidth": "3px"
+    }
+  },
+  {
+    "test": "pageerrors",
+    "data": []
+  }
+]

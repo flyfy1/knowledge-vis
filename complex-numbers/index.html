@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>复数 · 乘 i 就是转 90° —— 一步一交互</title>
-<link rel="stylesheet" href="style.css?v=cx1">
-<script src="i18n.js?v=cx1"></script>
+<link rel="stylesheet" href="style.css?v=keyboard-3">
+<script src="i18n.js?v=keyboard-3"></script>
 </head>
 <body>
 
@@ -66,6 +66,23 @@
     <div class="stage">
       <canvas id="s1-canvas" class="dragc" height="430"></canvas>
     </div>
+    <form class="coordinate-editor" id="s1-editor" novalidate aria-labelledby="s1-editor-title">
+      <fieldset>
+        <legend id="s1-editor-title" data-i18n="editTitle">坐标输入 · 键盘或数值</legend>
+        <p class="hint" id="s1-edit-help" data-i18n="editHelp"></p>
+        <p class="hint" id="s1-edit-range" data-i18n="editRange1"></p>
+      <div class="coordinate-fields">
+        <label><span><b data-edit-target-name>z</b> · <span data-i18n="editReal">实部 Re</span></span>
+          <input id="s1-real" type="number" step="any" inputmode="decimal" aria-describedby="s1-edit-help s1-edit-range s1-edit-status">
+        </label>
+        <label><span><b data-edit-target-name>z</b> · <span data-i18n="editImag">虚部 Im（不含 i）</span></span>
+          <input id="s1-imag" type="number" step="any" inputmode="decimal" aria-describedby="s1-edit-help s1-edit-range s1-edit-status">
+        </label>
+      </div>
+      <button type="submit" class="btn big" id="s1-apply" data-i18n="editApply">应用坐标</button>
+      <p class="hint coordinate-status" id="s1-edit-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      </fieldset>
+    </form>
     <div class="btn-row">
       <span class="row-label" data-i18n="s1preLab">预设点巡演：</span>
       <button class="btn big mode s1pre" type="button" data-pre="0" data-i18n="s1pA">3 + 4i</button>
@@ -88,6 +105,28 @@
     <div class="stage">
       <canvas id="s2-canvas" class="dragc" height="430"></canvas>
     </div>
+    <form class="coordinate-editor" id="s2-editor" data-coordinate-target="z1" novalidate aria-labelledby="s2-editor-title">
+      <fieldset>
+        <legend id="s2-editor-title" data-i18n="editTitle">坐标输入 · 键盘或数值</legend>
+        <p class="hint" id="s2-edit-help" data-i18n="editHelp"></p>
+        <p class="hint" id="s2-edit-range" data-i18n="editRange2"></p>
+      <p id="s2-target-label" data-i18n="editTarget">目标复数</p>
+      <div class="btn-row" role="group" aria-labelledby="s2-target-label">
+        <button class="btn big mode" id="s2-target-z1" type="button" data-coordinate-key="z1" data-i18n="editFirst" aria-pressed="true">z₁</button>
+        <button class="btn big mode" id="s2-target-z2" type="button" data-coordinate-key="z2" data-i18n="editSecond" aria-pressed="false">z₂</button>
+      </div>
+      <div class="coordinate-fields">
+        <label><span><b data-edit-target-name>z</b> · <span data-i18n="editReal">实部 Re</span></span>
+          <input id="s2-real" type="number" step="any" inputmode="decimal" aria-describedby="s2-edit-help s2-edit-range s2-edit-status">
+        </label>
+        <label><span><b data-edit-target-name>z</b> · <span data-i18n="editImag">虚部 Im（不含 i）</span></span>
+          <input id="s2-imag" type="number" step="any" inputmode="decimal" aria-describedby="s2-edit-help s2-edit-range s2-edit-status">
+        </label>
+      </div>
+      <button type="submit" class="btn big" id="s2-apply" data-i18n="editApply">应用坐标</button>
+      <p class="hint coordinate-status" id="s2-edit-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      </fieldset>
+    </form>
     <p class="readout" id="s2-ro-sum"></p>
     <p class="readout" id="s2-ro-re"></p>
     <p class="readout" id="s2-ro-im"></p>
@@ -132,12 +171,36 @@
     <div class="stage">
       <canvas id="s4-canvas" class="dragc" height="430"></canvas>
     </div>
+    <form class="coordinate-editor" id="s4-editor" data-coordinate-target="z2" novalidate aria-labelledby="s4-editor-title">
+      <fieldset>
+        <legend id="s4-editor-title" data-i18n="editTitle">坐标输入 · 键盘或数值</legend>
+        <p class="hint" id="s4-edit-help" data-i18n="editHelp"></p>
+        <p class="hint" id="s4-edit-range" data-i18n="editRange4"></p>
+        <p class="hint" data-i18n="editTask4"></p>
+      <p id="s4-target-label" data-i18n="editTarget">目标复数</p>
+      <div class="btn-row" role="group" aria-labelledby="s4-target-label">
+        <button class="btn big mode" id="s4-target-z1" type="button" data-coordinate-key="z1" data-i18n="editFirst" aria-pressed="false">z₁</button>
+        <button class="btn big mode" id="s4-target-z2" type="button" data-coordinate-key="z2" data-i18n="editSecond" aria-pressed="true">z₂</button>
+      </div>
+      <div class="coordinate-fields">
+        <label><span><b data-edit-target-name>z</b> · <span data-i18n="editReal">实部 Re</span></span>
+          <input id="s4-real" type="number" step="any" inputmode="decimal" aria-describedby="s4-edit-help s4-edit-range s4-edit-status">
+        </label>
+        <label><span><b data-edit-target-name>z</b> · <span data-i18n="editImag">虚部 Im（不含 i）</span></span>
+          <input id="s4-imag" type="number" step="any" inputmode="decimal" aria-describedby="s4-edit-help s4-edit-range s4-edit-status">
+        </label>
+      </div>
+      <button type="submit" class="btn big" id="s4-apply" data-i18n="editApply">应用坐标</button>
+      <p class="hint coordinate-status" id="s4-edit-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      </fieldset>
+    </form>
     <div class="btn-row">
       <span class="row-label" data-i18n="s4z2Lab">把乘数 z₂ 换成预设：</span>
       <button class="btn big mode s4pre" type="button" data-pre="0" data-i18n="s4pA">2（纯实数 · 只伸缩）</button>
       <button class="btn big mode s4pre" type="button" data-pre="1" data-i18n="s4pB">模 1 · 60°（只旋转）</button>
       <button class="btn big mode s4pre" type="button" data-pre="2" data-i18n="s4pC">1 + i（转 45° 又放大 √2 倍）</button>
     </div>
+    <p class="hint" data-i18n="s4rounding"></p>
     <p class="readout" id="s4-ro-prod"></p>
     <p class="readout" id="s4-ro-mod"></p>
     <p class="readout" id="s4-ro-arg"></p>
@@ -223,6 +286,6 @@
 
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 复数 Complex Numbers —— 一步一交互系列</footer>
 
-<script src="app.js?v=cx1"></script>
+<script src="app.js?v=keyboard-3"></script>
 </body>
 </html>

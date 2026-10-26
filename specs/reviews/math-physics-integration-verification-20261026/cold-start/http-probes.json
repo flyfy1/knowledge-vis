@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-25T22:46:54.544751+00:00",
+  "discovered_in": "specs/reviews/nightly-math-physics-20261026.md",
+  "checks": [
+    {
+      "url": "http://127.0.0.1:18775/atlas/",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=kinematics&node=derivative",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=travel&node=integral",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=work&node=work-energy",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "url": "http://127.0.0.1:18775/trig/#step4",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=geometry&node=pinhole-ratio&view=list",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=optics&node=snell&view=list",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "url": "http://127.0.0.1:18775/lens/#step2",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "url": "http://127.0.0.1:18775/frozen-bubble/",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    }
+  ]
+}

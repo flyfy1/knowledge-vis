@@ -1,0 +1,18 @@
+{
+  "status": "PASS stage formula/view/history CLI; UI not run",
+  "checked": 893101,
+  "maxErr": 5.684341886080802e-14,
+  "pureUnchanged": true,
+  "history": {
+    "bothLessonGeometryRestored": true,
+    "unrelatedFieldsKept": true,
+    "invalidSchemasRejected": true,
+    "blockedReplaceStateNoThrow": true
+  },
+  "atlas": {
+    "nodes": 37,
+    "edges": 46,
+    "trails": 9
+  },
+  "method": "Actual staged functions evaluated in isolated VM. DOM/browser/Back/paint/focus not exercised."
+}

@@ -1,0 +1,174 @@
+{
+  "checks": 117,
+  "documents": 17,
+  "anchors": 40,
+  "destinations": [
+    {
+      "url": "http://127.0.0.1:18775/integral/#step2",
+      "heading": "Same machine, a v–t story: an integral accumulates"
+    },
+    {
+      "url": "http://127.0.0.1:18775/derivative/#step2",
+      "heading": "Every point has its own derivative: collecting slopes into a new function"
+    },
+    {
+      "url": "http://127.0.0.1:18775/derivative/#step0",
+      "heading": "Average velocity is not enough: it answers for an interval, not for an instant"
+    },
+    {
+      "url": "http://127.0.0.1:18775/power-converters/#step0",
+      "heading": "Twice the voltage does not mean twice the energy"
+    },
+    {
+      "url": "http://127.0.0.1:18775/power-converters/#step1",
+      "heading": "Inductor: current cannot jump without cause"
+    },
+    {
+      "url": "http://127.0.0.1:18775/power-converters/#step2",
+      "heading": "Capacitor: give voltage a memory"
+    },
+    {
+      "url": "http://127.0.0.1:18775/power-converters/#step3",
+      "heading": "Switches choose the path; timing sets the ratio"
+    },
+    {
+      "url": "http://127.0.0.1:18775/power-converters/#step4",
+      "heading": "Buck: current still has a path when the source disconnects"
+    },
+    {
+      "url": "http://127.0.0.1:18775/power-converters/#step5",
+      "heading": "Boost: source and inductor push together"
+    },
+    {
+      "url": "http://127.0.0.1:18775/power-converters/#step6",
+      "heading": "The price of boosting: more input current"
+    },
+    {
+      "url": "http://127.0.0.1:18775/trig/#step1",
+      "heading": "Cosine is where it stands, sine is how high"
+    },
+    {
+      "url": "http://127.0.0.1:18775/trig/#step3",
+      "heading": "Look from the other side: position makes a wave too"
+    },
+    {
+      "url": "http://127.0.0.1:18775/complex-numbers/#step4",
+      "heading": "General Multiplication = Moduli Multiply, Arguments Add: the Checking Bench"
+    },
+    {
+      "url": "http://127.0.0.1:18775/eigen/#step1",
+      "heading": "Drag an arrow until it stops turning"
+    },
+    {
+      "url": "http://127.0.0.1:18775/eigen/#step4",
+      "heading": "Principal axes, orthogonality, diagonalization — the canyon’s true form"
+    },
+    {
+      "url": "http://127.0.0.1:18775/eigen/#step5",
+      "heading": "The direction of maximum variance is the top eigenvector"
+    },
+    {
+      "url": "http://127.0.0.1:18775/laplace/#step1",
+      "heading": "A landscape: every frequency gets a lifetime coordinate"
+    },
+    {
+      "url": "http://127.0.0.1:18775/laplace/#step4",
+      "heading": "A system’s character is written in its pole positions"
+    },
+    {
+      "url": "http://127.0.0.1:18775/laplace/#step2",
+      "heading": "Fourier is the cut at σ = 0"
+    },
+    {
+      "url": "http://127.0.0.1:18775/fourier/#step2",
+      "heading": "Complex Waveform = Simple Waves Added Together"
+    },
+    {
+      "url": "http://127.0.0.1:18775/fourier/#step5",
+      "heading": "A Change of Viewpoint: From Waveform to Spectrum"
+    },
+    {
+      "url": "http://127.0.0.1:18775/fourier/#step1",
+      "heading": "A Sine Wave Has Just Three Knobs"
+    },
+    {
+      "url": "http://127.0.0.1:18775/fourier/#step4",
+      "heading": "A Relay of Circles Draws a Square Wave"
+    },
+    {
+      "url": "http://127.0.0.1:18775/freqresp/#step5",
+      "heading": "High-pass, band-pass, resonance: one mathematics, three appetites"
+    },
+    {
+      "url": "http://127.0.0.1:18775/freqresp/#step0",
+      "heading": "A box that is picky by frequency"
+    },
+    {
+      "url": "http://127.0.0.1:18775/sampling/#step3",
+      "heading": "The Nyquist line: twice, and not a hair less"
+    },
+    {
+      "url": "http://127.0.0.1:18775/sampling/#step4",
+      "heading": "Aliasing in the frequency domain: the spectrum clones itself"
+    },
+    {
+      "url": "http://127.0.0.1:18775/lti/#step3",
+      "heading": "Two axioms, falsifiable on the spot"
+    },
+    {
+      "url": "http://127.0.0.1:18775/lti/#step2",
+      "heading": "h[n]: know it, and you know the answer to every input"
+    },
+    {
+      "url": "http://127.0.0.1:18775/convolution/#step2",
+      "heading": "Flip, slide, multiply, add"
+    },
+    {
+      "url": "http://127.0.0.1:18775/convolution/#step6",
+      "heading": "Meeting Fourier: convolution becomes pointwise multiplication"
+    },
+    {
+      "url": "http://127.0.0.1:18775/control/#step2",
+      "heading": "Sensor → controller → motor → back to sensor"
+    },
+    {
+      "url": "http://127.0.0.1:18775/bayes/#step0",
+      "heading": "The test says positive — hold on, place a bet first"
+    },
+    {
+      "url": "http://127.0.0.1:18775/bayes/#step2",
+      "heading": "Put on odds glasses: posterior = prior × likelihood ratio"
+    },
+    {
+      "url": "http://127.0.0.1:18775/clt/#step3",
+      "heading": "σ/√n Is an Iron Law"
+    },
+    {
+      "url": "http://127.0.0.1:18775/clt/#step5",
+      "heading": "Why the Bell: Ground Out by Repeated Addition"
+    },
+    {
+      "url": "http://127.0.0.1:18775/montecarlo/#step3",
+      "heading": "No formula? Just throw beans."
+    },
+    {
+      "url": "http://127.0.0.1:18775/montecarlo/#step2",
+      "heading": "Slow — but the price is printed on the tag"
+    },
+    {
+      "url": "http://127.0.0.1:18775/kalman/#step2",
+      "heading": "How much should a new reading change the prediction?"
+    },
+    {
+      "url": "http://127.0.0.1:18775/kalman/#step6",
+      "heading": "Why does this update work, and where is it useful?"
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "limits": [
+    "DOM links are local and actual generated anchors; external source availability not checked.",
+    "Keyboard preset has a numeric text alternative; arbitrary complex-canvas dragging is not certified keyboard accessible.",
+    "No physical-device/screen-reader speech/learning-effect evidence."
+  ]
+}

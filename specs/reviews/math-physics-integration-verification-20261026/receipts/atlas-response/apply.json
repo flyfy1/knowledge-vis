@@ -1,0 +1,28 @@
+{
+  "headBefore": "314b5e3528ec62e8cb6b343c8608aa7ec70fe6a2",
+  "headAtApply": "314b5e3528ec62e8cb6b343c8608aa7ec70fe6a2",
+  "files": {
+    "atlas/index.html": "e729d45343d259664e700ef3162e4b8102a2d8a1bb88d9b5bc42f67ac91dd693",
+    "atlas/app.js": "5b5be28bbf314c0b4904ee9048bce99eedf440350ea909070011c0a0e6441a99",
+    "atlas/BRIEF.md": "c7fa428c43a66193c75b8ef5d4dafd679b40c19accd60c5903e11dabf0e68e4a",
+    "laplace/app.js": "7db85b77d9489ed8b263b6d497d27ad58695cb806b9757311c1791b8083bac15",
+    "laplace/i18n.js": "592cfa110e86db0ad297f19b4f424d6ce80302be8caa5e32d9699db8b995db89",
+    "freqresp/i18n.js": "491b78cd428a76bf32f02385a0b7c028bd4bdfbfdfa20ef4e1365ee80bd5a578",
+    "atlas/response-model.js": "1d82a3efc2a9cc743b1357469017caf3150e3a0b5135e8dd1b7fca3f06d30a34",
+    "atlas/response-bridge.js": "72d17ebfc2d2bbac9dbf944232ee211b9a0979b33aa5a9dd0385e2b8553cb153",
+    "atlas/response-bridge.css": "5a2d53fa2028f58c7631a579e49df378c048e0fda9cca3096bf0a0b3ccea65c9",
+    "atlas/tests/response-core.cjs": "be50922862ba2ec9d411af6141b458efec6e4a0aedce956427e45007f251d449",
+    "laplace/tests/pole-boundaries.cjs": "798457661375f10f64b667fe44624a46d94028d0f32dcd998301710e540e3538",
+    "specs/reviews/atlas-response-design-20261025.md": "cef3dff6b669da608ab3fa06cee448a5c4c6781dca3e086739f66171fbb4668c",
+    "atlas/style.css": "773a7af15f13bb15bf0e0f250e0af04b196c3e47cb7245a5adaacdfdc2541827"
+  },
+  "excluded": {
+    "index.html": "c3849c37493a2d919e03b500c46f2a5404d3528189af52eb46a51a005dfc72ac",
+    "pages.config.js": "81558d1965b5917615b02437ca98493388d1d0ede89e56c6f19ec2441b340985",
+    "CONCEPT-MAP.md": "f9efe4dab4c7eafebf0b7951f2da25ebbe82a7e87da30c794cf94a96f286a289",
+    "atlas/data.js": "0816e1e40ad95f2930cfd81d519b0378284377df4c81d4ee1657281453dea700",
+    "freqresp/app.js": "0dc76c66cd64f0f46f3bdffb29c2903c89481fcb9d44b99dc0309db3ba099aec",
+    "atlas/motion-model.js": "ccfac35f52c677405df64193cbdd6e8f378c36531605c4ef1d380cdbc490cf36",
+    "atlas/motion-bridge.js": "01b11963b09164b68d9fc030a015c7ed94d7031fe9971cc12c52ce701eac9b38"
+  }
+}

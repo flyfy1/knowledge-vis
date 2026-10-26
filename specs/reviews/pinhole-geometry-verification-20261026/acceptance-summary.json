@@ -1,0 +1,18 @@
+{
+  "browserSuites": 13,
+  "allBrowserSuitesPass": true,
+  "geometryChecks": 294,
+  "concepts": 37,
+  "relations": 46,
+  "routes": 9,
+  "opticalPureUnchanged": true,
+  "sourceIndependent": "independent/actual-final-review.md",
+  "uiFirstIndependent": "cold-ui/postfix-ui-review.md",
+  "remainingMustFix": 0,
+  "noPushOrDeployment": true,
+  "limits": [
+    "No real-phone or screen-reader speech test",
+    "Only S2 reading geometry is restored across document rebuilds; other lesson/quiz initialization follows existing behavior",
+    "No learner effectiveness/measurement/physical optimum aperture claim"
+  ]
+}

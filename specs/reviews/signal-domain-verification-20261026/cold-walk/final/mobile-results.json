@@ -1,0 +1,469 @@
+{
+  "results": [
+    {
+      "slug": "sampling",
+      "lang": "EN",
+      "fonts": {
+        "body": "32px",
+        "h2": "48px"
+      }
+    },
+    {
+      "name": "15-sampling-EN-320-2x-Tab",
+      "info": {
+        "focusId": "s3-snap",
+        "focusText": "Pin to exactly 2f",
+        "bbox": {
+          "x": 12,
+          "y": 604.328125,
+          "width": 272.453125,
+          "height": 62
+        },
+        "outline": "rgb(110, 231, 255) solid 3px",
+        "viewport": {
+          "width": 320,
+          "height": 800
+        },
+        "bodyWidth": 320,
+        "docWidth": 320,
+        "sticky": [
+          {
+            "tag": "HEADER",
+            "position": "static",
+            "bottom": -16202.4375
+          },
+          {
+            "tag": "NAV",
+            "position": "sticky",
+            "bottom": 80.59375
+          }
+        ]
+      }
+    },
+    {
+      "name": "16-sampling-EN-320-2x-ShiftTab",
+      "info": {
+        "focusId": "s3-fs",
+        "focusText": "",
+        "bbox": {
+          "x": 12,
+          "y": 375.734375,
+          "width": 296,
+          "height": 48
+        },
+        "outline": "rgb(110, 231, 255) solid 3px",
+        "viewport": {
+          "width": 320,
+          "height": 800
+        },
+        "bodyWidth": 320,
+        "docWidth": 320,
+        "sticky": [
+          {
+            "tag": "HEADER",
+            "position": "static",
+            "bottom": -16202.4375
+          },
+          {
+            "tag": "NAV",
+            "position": "sticky",
+            "bottom": 80.59375
+          }
+        ]
+      }
+    },
+    {
+      "slug": "sampling",
+      "lang": "中",
+      "fonts": {
+        "body": "32px",
+        "h2": "48px"
+      }
+    },
+    {
+      "name": "15-sampling-中-320-2x-Tab",
+      "info": {
+        "focusId": "s3-snap",
+        "focusText": "钉在恰好 2f",
+        "bbox": {
+          "x": 12,
+          "y": 555.515625,
+          "width": 199.28125,
+          "height": 62
+        },
+        "outline": "rgb(110, 231, 255) solid 3px",
+        "viewport": {
+          "width": 320,
+          "height": 800
+        },
+        "bodyWidth": 320,
+        "docWidth": 320,
+        "sticky": [
+          {
+            "tag": "HEADER",
+            "position": "static",
+            "bottom": -10905.625
+          },
+          {
+            "tag": "NAV",
+            "position": "sticky",
+            "bottom": 80.59375
+          }
+        ]
+      }
+    },
+    {
+      "name": "16-sampling-中-320-2x-ShiftTab",
+      "info": {
+        "focusId": "s3-fs",
+        "focusText": "",
+        "bbox": {
+          "x": 12,
+          "y": 376.21875,
+          "width": 296,
+          "height": 48
+        },
+        "outline": "rgb(110, 231, 255) solid 3px",
+        "viewport": {
+          "width": 320,
+          "height": 800
+        },
+        "bodyWidth": 320,
+        "docWidth": 320,
+        "sticky": [
+          {
+            "tag": "HEADER",
+            "position": "static",
+            "bottom": -10905.625
+          },
+          {
+            "tag": "NAV",
+            "position": "sticky",
+            "bottom": 80.59375
+          }
+        ]
+      }
+    },
+    {
+      "slug": "freqresp",
+      "lang": "EN",
+      "fonts": {
+        "body": "32px",
+        "h2": "48px"
+      }
+    },
+    {
+      "name": "15-freqresp-EN-320-2x-Tab",
+      "info": {
+        "focusId": "s3-w",
+        "focusText": "",
+        "bbox": {
+          "x": 12,
+          "y": 592.375,
+          "width": 296,
+          "height": 48
+        },
+        "outline": "rgb(110, 231, 255) solid 3px",
+        "viewport": {
+          "width": 320,
+          "height": 800
+        },
+        "bodyWidth": 320,
+        "docWidth": 320,
+        "sticky": [
+          {
+            "tag": "HEADER",
+            "position": "static",
+            "bottom": -21187.5
+          },
+          {
+            "tag": "NAV",
+            "position": "sticky",
+            "bottom": 80.59375
+          }
+        ]
+      }
+    },
+    {
+      "name": "16-freqresp-EN-320-2x-ShiftTab",
+      "info": {
+        "focusId": "s3-m",
+        "focusText": "",
+        "bbox": {
+          "x": 12,
+          "y": 376.484375,
+          "width": 296,
+          "height": 48
+        },
+        "outline": "rgb(110, 231, 255) solid 3px",
+        "viewport": {
+          "width": 320,
+          "height": 800
+        },
+        "bodyWidth": 320,
+        "docWidth": 320,
+        "sticky": [
+          {
+            "tag": "HEADER",
+            "position": "static",
+            "bottom": -21187.5
+          },
+          {
+            "tag": "NAV",
+            "position": "sticky",
+            "bottom": 80.59375
+          }
+        ]
+      }
+    },
+    {
+      "slug": "freqresp",
+      "lang": "中",
+      "fonts": {
+        "body": "32px",
+        "h2": "48px"
+      }
+    },
+    {
+      "name": "15-freqresp-中-320-2x-Tab",
+      "info": {
+        "focusId": "s3-w",
+        "focusText": "",
+        "bbox": {
+          "x": 12,
+          "y": 542.453125,
+          "width": 296,
+          "height": 48
+        },
+        "outline": "rgb(110, 231, 255) solid 3px",
+        "viewport": {
+          "width": 320,
+          "height": 800
+        },
+        "bodyWidth": 320,
+        "docWidth": 320,
+        "sticky": [
+          {
+            "tag": "HEADER",
+            "position": "static",
+            "bottom": -14206.25
+          },
+          {
+            "tag": "NAV",
+            "position": "sticky",
+            "bottom": 80.59375
+          }
+        ]
+      }
+    },
+    {
+      "name": "16-freqresp-中-320-2x-ShiftTab",
+      "info": {
+        "focusId": "s3-m",
+        "focusText": "",
+        "bbox": {
+          "x": 12,
+          "y": 375.859375,
+          "width": 296,
+          "height": 48
+        },
+        "outline": "rgb(110, 231, 255) solid 3px",
+        "viewport": {
+          "width": 320,
+          "height": 800
+        },
+        "bodyWidth": 320,
+        "docWidth": 320,
+        "sticky": [
+          {
+            "tag": "HEADER",
+            "position": "static",
+            "bottom": -14206.25
+          },
+          {
+            "tag": "NAV",
+            "position": "sticky",
+            "bottom": 80.59375
+          }
+        ]
+      }
+    },
+    {
+      "slug": "ztransform",
+      "lang": "EN",
+      "fonts": {
+        "body": "32px",
+        "h2": "48px"
+      }
+    },
+    {
+      "name": "15-ztransform-EN-320-2x-Tab",
+      "info": {
+        "focusId": "s5-twin",
+        "focusText": "Show the twin from the next strip",
+        "bbox": {
+          "x": 12,
+          "y": 590,
+          "width": 296,
+          "height": 146
+        },
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "viewport": {
+          "width": 320,
+          "height": 800
+        },
+        "bodyWidth": 320,
+        "docWidth": 320,
+        "sticky": [
+          {
+            "tag": "HEADER",
+            "position": "static",
+            "bottom": -36535.1875
+          },
+          {
+            "tag": "NAV",
+            "position": "sticky",
+            "bottom": 80.59375
+          }
+        ]
+      }
+    },
+    {
+      "name": "16-ztransform-EN-320-2x-ShiftTab",
+      "info": {
+        "focusId": "s5-T",
+        "focusText": "",
+        "bbox": {
+          "x": 12,
+          "y": 528,
+          "width": 296,
+          "height": 48
+        },
+        "outline": "rgb(110, 231, 255) solid 3px",
+        "viewport": {
+          "width": 320,
+          "height": 800
+        },
+        "bodyWidth": 320,
+        "docWidth": 320,
+        "sticky": [
+          {
+            "tag": "HEADER",
+            "position": "static",
+            "bottom": -36535.1875
+          },
+          {
+            "tag": "NAV",
+            "position": "sticky",
+            "bottom": 80.59375
+          }
+        ]
+      }
+    },
+    {
+      "slug": "ztransform",
+      "lang": "中",
+      "fonts": {
+        "body": "32px",
+        "h2": "48px"
+      }
+    },
+    {
+      "name": "15-ztransform-中-320-2x-Tab",
+      "info": {
+        "focusId": "s5-twin",
+        "focusText": "显示隔壁条带的孪生点",
+        "bbox": {
+          "x": 12,
+          "y": 658.5,
+          "width": 296,
+          "height": 104
+        },
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "viewport": {
+          "width": 320,
+          "height": 800
+        },
+        "bodyWidth": 320,
+        "docWidth": 320,
+        "sticky": [
+          {
+            "tag": "HEADER",
+            "position": "static",
+            "bottom": -25425.9375
+          },
+          {
+            "tag": "NAV",
+            "position": "sticky",
+            "bottom": 80.59375
+          }
+        ]
+      }
+    },
+    {
+      "name": "16-ztransform-中-320-2x-ShiftTab",
+      "info": {
+        "focusId": "s5-T",
+        "focusText": "",
+        "bbox": {
+          "x": 12,
+          "y": 596.5,
+          "width": 296,
+          "height": 48
+        },
+        "outline": "rgb(110, 231, 255) solid 3px",
+        "viewport": {
+          "width": 320,
+          "height": 800
+        },
+        "bodyWidth": 320,
+        "docWidth": 320,
+        "sticky": [
+          {
+            "tag": "HEADER",
+            "position": "static",
+            "bottom": -25425.9375
+          },
+          {
+            "tag": "NAV",
+            "position": "sticky",
+            "bottom": 80.59375
+          }
+        ]
+      }
+    },
+    {
+      "name": "17-freqresp-320-2x-forcedcolors",
+      "info": {
+        "focusId": "s3-w",
+        "focusText": "",
+        "bbox": {
+          "x": 12,
+          "y": 376.375,
+          "width": 296,
+          "height": 48
+        },
+        "outline": "rgba(5, 0, 73, 0.8) solid 3px",
+        "viewport": {
+          "width": 320,
+          "height": 800
+        },
+        "bodyWidth": 320,
+        "docWidth": 320,
+        "sticky": [
+          {
+            "tag": "HEADER",
+            "position": "static",
+            "bottom": -21403.5
+          },
+          {
+            "tag": "NAV",
+            "position": "sticky",
+            "bottom": 80.59375
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

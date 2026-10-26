@@ -1,0 +1,16 @@
+Step 5 · Facing Laplace
+
+T sets the tightness of the roll; the strips decide what is lost
+
+Drag a pole s=σ+jω with σ<0 and inspect the sampled exponential mode z=e^{sT}: |z|=e^{σT}, angleΩ=ωT. Here T is in seconds, σ in s⁻¹ and ω in rad/s; Ω is the angle increment per sample. The principal strip −π/T<ω≤π/T spans 2π/T along the imaginary-frequency direction and gives one nonrepeating turn. This drawing restricts σ<0, so its images lie inside the unit circle; it does not depict the whole z-plane. Turn on twins to see equal mappings for ω separated by ±2π/T. Samples alone cannot distinguish these frequencies.
+
+T · sampling period (s) 0.50
+Show the twin from the next strip
+
+pole s = −0.80 − j·3.00 (σ:s⁻¹, ω:rad/s) · T = 0.50 s · image z = esT = 0.047 − j·0.669 · |z| = eσT = 0.670 · angle increment Ω = ωT = −1.50 rad/sample
+
+Units: fₛ=1/T. The sampling page’s copy spacing is fₛ Hz, or 2π/T rad/s after conversion; these are the same spacing in different units. Continuous f Hz gives ω=2πf rad/s and sampled digital Ω=ωT=2πf/fₛ rad/sample (mod 2π). Baseband uniqueness needs a known ideal bandlimit with |ω|<π/T. This pole-mode map is not a general discretized transfer function for an entire analog system.
+
+On the sampling page, aliasing was “fake waves”: sample too lazily and high frequencies sneak in disguised as low ones. From this page it is clearer: there is no disguise — when the plane rolls up they genuinely land on the same point, and the z-plane cannot tell them apart, just as a clock cannot tell 3 o’clock from 15 o’clock →
+
+Sampling & aliasing →

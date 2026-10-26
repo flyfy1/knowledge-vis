@@ -1,0 +1,7 @@
+{
+  "command": "NODE_PATH=<existing Playwright> DRAG_EVIDENCE=<workspace>/rapid-green.json node rapid-recovery.cjs",
+  "observedExit": 0,
+  "observedOutput": "nativecommit-immediate-reload PASS",
+  "scope": "No wait afterpointerup; preset/handledkeyup/change/unit click thenimmediatereload; sourcepath preserved in script.",
+  "basis": "Recorded from the actual completed tool execution,not a prediction."
+}

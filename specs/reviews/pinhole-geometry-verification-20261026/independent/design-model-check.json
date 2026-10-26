@@ -1,0 +1,176 @@
+{
+  "status": "PASS geometric formulas; existing rendering boundary finding",
+  "source": "/Users/songyy/Documents/knowledge-vis/pinhole-camera/app.js",
+  "checked": 893101,
+  "maxAbsoluteHeightError": 5.684341886080802e-14,
+  "screenOverflows": 442860,
+  "canvasOverflows": 300,
+  "examples": [
+    {
+      "H": 60,
+      "u": 80,
+      "v": 160,
+      "h": 120,
+      "ends": {
+        "top": 162,
+        "bottom": 282
+      },
+      "holeOrigin": {
+        "A": [
+          -80,
+          30
+        ],
+        "B": [
+          -80,
+          -30
+        ],
+        "imageA": [
+          160,
+          -60
+        ],
+        "imageB": [
+          160,
+          60
+        ]
+      },
+      "topRaySlope": -0.375,
+      "signedMagnification": -2,
+      "signedHeight": -120,
+      "canvasClipped": false,
+      "offScreen": true
+    },
+    {
+      "H": 60,
+      "u": 120,
+      "v": 90,
+      "h": 45,
+      "ends": {
+        "top": 199.5,
+        "bottom": 244.5
+      },
+      "holeOrigin": {
+        "A": [
+          -120,
+          30
+        ],
+        "B": [
+          -120,
+          -30
+        ],
+        "imageA": [
+          90,
+          -22.5
+        ],
+        "imageB": [
+          90,
+          22.5
+        ]
+      },
+      "topRaySlope": -0.25,
+      "signedMagnification": -0.75,
+      "signedHeight": -45,
+      "canvasClipped": false,
+      "offScreen": false
+    },
+    {
+      "H": 60,
+      "u": 120,
+      "v": 120,
+      "h": 60,
+      "ends": {
+        "top": 192,
+        "bottom": 252
+      },
+      "holeOrigin": {
+        "A": [
+          -120,
+          30
+        ],
+        "B": [
+          -120,
+          -30
+        ],
+        "imageA": [
+          120,
+          -30
+        ],
+        "imageB": [
+          120,
+          30
+        ]
+      },
+      "topRaySlope": -0.25,
+      "signedMagnification": -1,
+      "signedHeight": -60,
+      "canvasClipped": false,
+      "offScreen": false
+    },
+    {
+      "H": 60,
+      "u": 160,
+      "v": 80,
+      "h": 30,
+      "ends": {
+        "top": 207,
+        "bottom": 237
+      },
+      "holeOrigin": {
+        "A": [
+          -160,
+          30
+        ],
+        "B": [
+          -160,
+          -30
+        ],
+        "imageA": [
+          80,
+          -15
+        ],
+        "imageB": [
+          80,
+          15
+        ]
+      },
+      "topRaySlope": -0.1875,
+      "signedMagnification": -0.5,
+      "signedHeight": -30,
+      "canvasClipped": false,
+      "offScreen": false
+    },
+    {
+      "H": 90,
+      "u": 60,
+      "v": 180,
+      "h": 270,
+      "ends": {
+        "top": 72,
+        "bottom": 342
+      },
+      "holeOrigin": {
+        "A": [
+          -60,
+          45
+        ],
+        "B": [
+          -60,
+          -45
+        ],
+        "imageA": [
+          180,
+          -135
+        ],
+        "imageB": [
+          180,
+          135
+        ]
+      },
+      "topRaySlope": -0.75,
+      "signedMagnification": -3,
+      "signedHeight": -270,
+      "canvasClipped": true,
+      "offScreen": true
+    }
+  ],
+  "browserRun": false
+}

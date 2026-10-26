@@ -1,0 +1,7 @@
+{
+  "checks": 128,
+  "error": "AssertionError [ERR_ASSERTION]: 59.999994627213475 vs 60",
+  "stack": "AssertionError [ERR_ASSERTION]: 59.999994627213475 vs 60\n    at ok (/Users/songyy/Documents/knowledge-vis/reflection-refraction/tests/snell-browser.cjs:4:38)\n    at near (/Users/songyy/Documents/knowledge-vis/reflection-refraction/tests/snell-browser.cjs:4:75)\n    at /Users/songyy/Documents/knowledge-vis/reflection-refraction/tests/snell-browser.cjs:29:569",
+  "errors": [],
+  "requests": []
+}

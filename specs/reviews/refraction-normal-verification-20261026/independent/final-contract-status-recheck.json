@@ -1,0 +1,45 @@
+{
+  "mapChanges": [
+    {
+      "kind": "replace",
+      "actualLines": [
+        128,
+        128
+      ],
+      "stageLines": [
+        128,
+        128
+      ],
+      "old": [
+        "| 83 | v-t 图面积就是路程 / Area under a v–t graph is distance | velocity-vt#step2 | 速度—时间图像下方的面积就是走过的路；加速段切成窄条数台阶和，条越细、台阶和越贴近真路程 |"
+      ],
+      "new": [
+        "| 83 | v-t 图有符号面积是位移 / Signed area under a v–t graph gives displacement | velocity-vt#step2 | 正向时间区间内，速度的有符号积分是位移；路程须积速率，即速度绝对值。仅速度全程非负时两者相同。此处与既有课的返回行程口径一致。 |"
+      ]
+    }
+  ],
+  "serialFinalSuites": 14,
+  "serialFinalFailures": [],
+  "firstFailuresPreserved": [
+    "geometry",
+    "atlas"
+  ],
+  "retests": [
+    {
+      "suite": "geometry",
+      "exit": 0,
+      "rerunReason": "Old global inventory fixture corrected; runtime unchanged."
+    },
+    {
+      "suite": "atlas",
+      "exit": 0,
+      "rerunReason": "Old global inventory fixture corrected; runtime unchanged."
+    }
+  ],
+  "method": "Read owner logs, not executed by independent reviewer; final row83 scope and count test contract static review.",
+  "coreCommands": 17,
+  "coreFailures": 0,
+  "mathDocConclusion": "Correct forward-time displacement/distance distinction, only staged row83 changed and original chapter link retained.",
+  "atlasResetConclusion": "Accept data.nodes.length expected results after reset; explicit38/47 and38unique baseline checks remain.",
+  "remainingMustFixInReviewScope": 0
+}

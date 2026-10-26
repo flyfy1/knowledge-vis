@@ -1,0 +1,18 @@
+[
+  {
+    "lang": "en",
+    "a": "State endpoint a (0–2 cycles; editing pauses)",
+    "b": "State endpoint b · shared phase (0–2 cycles; seeking pauses)",
+    "bounds": "Selected time endpoints: a=0.000 s identifies x(a); b=0.000 s identifies x(b). Work integrates displacement x, not these time limits.",
+    "ledger": "Chronological contributions: positive +0.000 J; negative 0.000 J; net 0.000 J (their sum).",
+    "insight": "Equal limits: no selected leg and no work or energy change. The endpoint energies themselves need not be zero."
+  },
+  {
+    "lang": "zh",
+    "a": "状态端点 a（按0–2周期选时刻；修改暂停）",
+    "b": "状态端点 b · 共享相位（0–2周期；拖动暂停）",
+    "bounds": "选取状态的时间端点：a=0.000 s 对应 x(a)，b=0.000 s 对应 x(b)。功沿位移 x 积分，不是对这两个时间积分。",
+    "ledger": "按时间先后分段：正功 +0.000 J；负功 0.000 J；净功 0.000 J（两者相加）。",
+    "insight": "两限相同：没有所选路径段，功和能量变化都为零；端点能量本身不一定为零。"
+  }
+]

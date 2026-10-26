@@ -1,0 +1,102 @@
+[
+  {
+    "method": "UI-only AI recheck; no source, BRIEF, tests, app model or internal history inspected. Native mouse and browser touch input, 12 moves at 220ms intervals. Not human learning research.",
+    "prediction": "A drag ending at displayed 90° should be undefined; a separate near-42.6° touch endpoint should be finite positive. After release and 1000ms, reload should preserve actual displayed angle and function values, with S6 paused."
+  },
+  {
+    "stage": "visible geometry and reset",
+    "box": {
+      "x": 271,
+      "y": 339.8125,
+      "width": 898,
+      "height": 420
+    },
+    "state": {
+      "url": "http://127.0.0.1:18775/trig/#step6",
+      "readout": "θ: 0° (0 rad) · sinθ: 0 · cosθ: 1 · tanθ: 0",
+      "buttons": [
+        "▶ Spin it",
+        "Add a second circle",
+        "Clear traces"
+      ]
+    }
+  },
+  {
+    "stage": "long mouse released + 1s",
+    "state": {
+      "url": "http://127.0.0.1:18775/trig/#step6",
+      "readout": "θ: 90° (≈1.5708 rad) · sinθ: 1 · cosθ: 0 · tanθ: undefined",
+      "buttons": [
+        "▶ Spin it",
+        "Add a second circle",
+        "Clear traces"
+      ]
+    }
+  },
+  {
+    "stage": "long mouse reload",
+    "state": {
+      "url": "http://127.0.0.1:18775/trig/#step6",
+      "readout": "θ: 90° (≈1.5708 rad) · sinθ: 1 · cosθ: 0 · tanθ: undefined",
+      "buttons": [
+        "▶ Spin it",
+        "Add a second circle",
+        "Clear traces"
+      ]
+    },
+    "equalReadoutAndPaused": true
+  },
+  {
+    "stage": "visible geometry and reset",
+    "box": {
+      "x": 271,
+      "y": 339.8125,
+      "width": 898,
+      "height": 420
+    },
+    "state": {
+      "url": "http://127.0.0.1:18775/trig/#step6",
+      "readout": "θ: 0° (0 rad) · sinθ: 0 · cosθ: 1 · tanθ: 0",
+      "buttons": [
+        "▶ Spin it",
+        "Add a second circle",
+        "Clear traces"
+      ]
+    }
+  },
+  {
+    "stage": "long touch released + 1s",
+    "target": {
+      "x": 584.8033397649181,
+      "y": 442.86609679013964
+    },
+    "state": {
+      "url": "http://127.0.0.1:18775/trig/#step6",
+      "readout": "θ: ≈42.6° (≈0.74351 rad) · sinθ: ≈0.676876 · cosθ: ≈0.736097 · tanθ: ≈0.919547",
+      "buttons": [
+        "▶ Spin it",
+        "Add a second circle",
+        "Clear traces"
+      ]
+    }
+  },
+  {
+    "stage": "long touch reload",
+    "state": {
+      "url": "http://127.0.0.1:18775/trig/#step6",
+      "readout": "θ: ≈42.6° (≈0.74351 rad) · sinθ: ≈0.676876 · cosθ: ≈0.736097 · tanθ: ≈0.919547",
+      "buttons": [
+        "▶ Spin it",
+        "Add a second circle",
+        "Clear traces"
+      ]
+    },
+    "equalReadoutAndPaused": true
+  },
+  {
+    "result": "Both long pointer paths preserve visible angle/tan and pause state after explicit reload."
+  },
+  {
+    "browser": "CLOSED"
+  }
+]

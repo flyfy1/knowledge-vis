@@ -42,6 +42,13 @@ window.KNOWLEDGE_STAGES = [
 
 window.KNOWLEDGE_PAGES = [
   {
+    slug: "frozen-bubble",
+    title: { zh: "冰冻肥皂泡 · 水膜里的结晶", en: "Frozen Soap Bubbles · Ice in a Thin Film" },
+    desc: { zh: "亲手放入冰核，对比枝状生长、潜热驱动的流动与两种环境的冻结趋势，分清薄膜和冰晶的颜色。", en: "Seed a crystal, compare branching growth and heat-driven transport in two environments, and separate film color from ice optics." },
+    tags: [{ zh: "相变", en: "Phase Change" }, { zh: "表面张力", en: "Surface Tension" }],
+    category: "physics", stage: "junior", status: "live", path: "frozen-bubble/"
+  },
+  {
     slug: "power-converters",
     title: { zh: "升压与降压 · 能量去哪了？", en: "Buck & Boost · Follow the Energy" },
     desc: { zh: "从电感、电容与开关出发，走完 Buck / Boost 的电流回路，推导电压比例并核对功率账本。", en: "Explore inductors, capacitors and switches; trace buck and boost current paths, derive voltage ratios and balance power." },
@@ -52,8 +59,8 @@ window.KNOWLEDGE_PAGES = [
     slug: "atlas",
     title: { zh: "数学与物理 · 知识地图", en: "Mathematics & Physics · Knowledge Atlas" },
     desc: {
-      zh: "从波动、电路、系统与测量开始。探索 31 个概念之间的联系，查看每条关系的解释依据，再进入对应的交互讲解。",
-      en: "Start with waves, circuits, systems and measurement. Explore connections between 31 concepts, read why they connect, and open the supporting interactive lessons."
+      zh: "从几何、运动、光、波动、电路与测量开始。探索概念之间的联系，查看每条关系的解释依据，再进入对应的交互讲解。",
+      en: "Start with geometry, motion, light, waves, circuits and measurement. Explore connections between concepts, read why they connect, and open the supporting interactive lessons."
     },
     tags: [{ zh: "概念关系", en: "Concept Connections" }, { zh: "探索路线", en: "Exploration Routes" }],
     category: "math",

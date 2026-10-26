@@ -1,0 +1,72 @@
+{
+  "verdict": "PASS",
+  "remainingMustFix": 0,
+  "method": "Independent read-only current source/document/receipt review and parent-log inspection; no Chrome or suite execution by this reviewer.",
+  "contentAllGreen": true,
+  "receiptCount": 54,
+  "allReceiptHashesMatch": true,
+  "linkedDocumentCount": 17,
+  "nearbyLinks": 219,
+  "missingNearbyLinks": [],
+  "parentExecutedBrowser": {
+    "pass": true,
+    "contexts": [
+      [
+        "en",
+        1280
+      ],
+      [
+        "en",
+        320
+      ],
+      [
+        "zh",
+        1280
+      ],
+      [
+        "zh",
+        320
+      ]
+    ],
+    "allFourHavePaths": true,
+    "pageErrors": [],
+    "failedRequests": [],
+    "optionalBrowserRequests": [
+      {
+        "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "location": {
+          "url": "http://127.0.0.1:18775/favicon.ico",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      }
+    ]
+  },
+  "parentExecutedChangedCore": {
+    "commands": 2,
+    "allExit0": true
+  },
+  "historicalFailuresRetained": true,
+  "limits": [
+    "Prior16suite regression is historical; this integration risk selection does not repeat all suites/48pages.",
+    "No real device/screen-reader speech/human learning or deployment result.",
+    "No fresh all-external-source availability/content certification; sources and model boundaries audited from current code and existing primary-source records."
+  ],
+  "cumulativeLedger": {
+    "pass": true,
+    "targets": 120,
+    "previousReconstructedSnapshot": 112,
+    "addedTargets": 8,
+    "addedKindCounts": {
+      "receiptBackedPrincipalDocuments": 5,
+      "receiptBackedExistingTest": 1,
+      "originalBubblePrincipalDocumentsWithoutOriginalReceipt": 2
+    },
+    "allActualCurrentSHA256Match": true,
+    "allRecordedLatestReceiptHashesMatch": true,
+    "originalBubbleNoHistoricalApplyHashFabricated": true,
+    "distinctFromIntegrationReceiptCount": 54
+  }
+}

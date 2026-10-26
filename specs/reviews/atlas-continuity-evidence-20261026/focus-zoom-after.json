@@ -1,0 +1,34 @@
+[
+  {
+    "route": "motion",
+    "id": "motion-title",
+    "top": 225.734375,
+    "bottom": 537.6875,
+    "viewport": 844,
+    "visible": true
+  },
+  {
+    "route": "kinematics",
+    "id": "motion-title",
+    "top": 225.921875,
+    "bottom": 475.484375,
+    "viewport": 844,
+    "visible": true
+  },
+  {
+    "route": "travel",
+    "id": "motion-title",
+    "top": 225.53125,
+    "bottom": 599.875,
+    "viewport": 844,
+    "visible": true
+  },
+  {
+    "route": "response",
+    "id": "response-title",
+    "top": 225.328125,
+    "bottom": 662.0625,
+    "viewport": 844,
+    "visible": true
+  }
+]

@@ -356,6 +356,7 @@ function renderS1(){
   } else {
     setRO('s1-ro', t('s1ro', { z: fmtZ(z), a: fmtC(a), b: fmtC(b), m: fmtC(m), ang: fmtAng(ang) }));
   }
+  syncCoordinateEditor('s1');
 }
 
 /* ================= 第 2 步：加法 = 平移 ================= */
@@ -381,6 +382,7 @@ function renderS2(){
   setRO('s2-ro-sum', t('s2roSum', { z1: fmtZ(z1), z2: fmtZ(z2), sum: fmtZ(sum) }));
   setRO('s2-ro-re', t('s2roRe', { a1: fmtC(z1[0]), a2: fmtC(z2[0]), s: fmtC(sum[0]) }));
   setRO('s2-ro-im', t('s2roIm', { b1: fmtC(z1[1]), b2: fmtC(z2[1]), s: fmtC(sum[1]) }));
+  syncCoordinateEditor('s2');
 }
 
 /* ================= 第 3 步：乘 i：转 90° ================= */
@@ -468,6 +470,7 @@ function renderS4(){
     a1: fmtFac(z1[0]), b1: fmtFac(z1[1]), a2: fmtFac(z2[0]), b2: fmtFac(z2[1]),
     alg: fmtZ(prod)
   }));
+  syncCoordinateEditor('s4');
 }
 
 /* ================= 第 5 步：自测 ================= */
@@ -575,7 +578,90 @@ function clampDisc(v, rMax){
   return z;
 }
 
+/* Coordinate entry adapts the existing point states and drag constraints. */
+function prepareCoordinate(v, current, limit, disk){
+  var bad = [0,1].filter(function(i){ return !Number.isFinite(v[i]); });
+  if (bad.length) return {ok:false, key:'editFinite', bad:bad};
+  bad = [0,1].filter(function(i){ return !Number.isFinite(v[i] * 10); });
+  if (bad.length || !Number.isFinite(Math.hypot(v[0],v[1])))
+    return {ok:false, key:'editRange', bad:bad.length ? bad : [0,1]};
+  // Exact presets and existing projected points must survive a no-op Apply.
+  if (v[0] === current[0] && v[1] === current[1])
+    return {ok:true, value:current.slice(), key:'editUnchanged'};
+  var z = disk ? clampDisc(v,limit) : clampBox(v,limit);
+  return {ok:true, value:z, key:(z[0] !== v[0] || z[1] !== v[1]) ? 'editAdjusted' : 'editApplied'};
+}
+var coordinateEditors = {
+  s1:{state:S1,limit:5,disk:false,render:renderS1},
+  s2:{state:S2,limit:4.2,disk:false,render:renderS2},
+  s4:{state:S4,limit:2.6,disk:true,render:renderS4}
+};
+// Transient validation copy only; drafts stay in existing DOM, never storage.
+var coordinateFeedback = {s1:null,s2:null,s4:null};
+function coordinateKey(stage){ return $(stage+'-editor').dataset.coordinateTarget || 'z'; }
+function coordinateName(key){ return key==='z1' ? 'z₁' : key==='z2' ? 'z₂' : 'z'; }
+function coordinateStatus(stage){
+  var box=$(stage+'-edit-status'), feedback=coordinateFeedback[stage];
+  if(box) box.textContent=feedback ? t(feedback.key,feedback.params) : '';
+}
+function resetCoordinateEditor(stage,target){
+  var form=$(stage+'-editor'); if(!form)return;
+  if(target)form.dataset.coordinateTarget=target;
+  delete form.dataset.dirty;
+  coordinateFeedback[stage]=null;
+  [stage+'-real',stage+'-imag'].forEach(function(id){ $(id).removeAttribute('aria-invalid'); });
+}
+function syncCoordinateEditor(stage){
+  var form=$(stage+'-editor');if(!form)return;
+  var key=coordinateKey(stage),point=coordinateEditors[stage].state[key];
+  form.querySelectorAll('[data-coordinate-key]').forEach(function(button){var active=button.dataset.coordinateKey===key;button.setAttribute('aria-pressed',String(active));button.classList.toggle('active',active);});
+  form.querySelectorAll('[data-edit-target-name]').forEach(function(el){el.textContent=coordinateName(key);});
+  if(!form.dataset.dirty){$(stage+'-real').value=String(point[0]);$(stage+'-imag').value=String(point[1]);}
+  coordinateStatus(stage);
+}
+function initCoordinateEditors(){
+  Object.keys(coordinateEditors).forEach(function(stage){
+    var form=$(stage+'-editor'), fields=[$(stage+'-real'),$(stage+'-imag')];
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var config=coordinateEditors[stage],key=coordinateKey(stage);
+      var result=prepareCoordinate(fields.map(function(input){return input.valueAsNumber;}),config.state[key],config.limit,config.disk);
+      if(!result.ok){
+        fields.forEach(function(input,i){input.setAttribute('aria-invalid',result.bad.indexOf(i)>=0 ? 'true' : 'false');});
+        coordinateFeedback[stage]={key:result.key};coordinateStatus(stage);fields[result.bad[0]].focus();return;
+      }
+      resetCoordinateEditor(stage);
+      config.state[key]=result.value;
+      coordinateFeedback[stage]={key:result.key,params:{target:coordinateName(key),z:fmtZ(result.value)}};
+      config.render();
+    });
+    fields.forEach(function(input){
+      function edited(){
+        form.dataset.dirty='true';
+        fields.forEach(function(field){field.removeAttribute('aria-invalid');});
+        coordinateFeedback[stage]=null;coordinateStatus(stage);
+      }
+      input.addEventListener('input',edited);
+      input.addEventListener('keydown',function(e){
+        if(e.key!=='ArrowUp' && e.key!=='ArrowDown')return;
+        e.preventDefault();
+        var n=input.valueAsNumber, next=n+(e.key==='ArrowUp' ? 0.1 : -0.1);
+        var rounded=Number.isFinite(next) ? Number(next.toPrecision(15)) : NaN;
+        var key=!Number.isFinite(n) ? 'editFinite' : (!Number.isFinite(rounded)||Math.abs((rounded-n)-(e.key==='ArrowUp' ? 0.1 : -0.1))>1e-9) ? 'editStepRange' : null;
+        if(key){
+          input.setAttribute('aria-invalid','true');coordinateFeedback[stage]={key:key};coordinateStatus(stage);return;
+        }
+        input.value=String(rounded);edited();
+      });
+    });
+    form.querySelectorAll('[data-coordinate-key]').forEach(function(button){
+      button.addEventListener('click',function(){if(coordinateKey(stage)===button.dataset.coordinateKey)return;resetCoordinateEditor(stage,button.dataset.coordinateKey);syncCoordinateEditor(stage);});
+    });
+  });
+}
+
 function init(){
+  initCoordinateEditors();
   /* 第 0 步 */
   $('s0-x').addEventListener('input', function(e){ S0.xi = +e.target.value; renderS0(); });
   $('s0-open').addEventListener('click', s0ToggleOpen);
@@ -586,11 +672,13 @@ function init(){
   document.querySelectorAll('.s1pre').forEach(function(btn){
     btn.addEventListener('click', function(){
       var p = S1_PRESETS[+btn.getAttribute('data-pre')];
+      resetCoordinateEditor('s1');
       S1.z = [p[0], p[1]];
       renderS1();
     });
   });
   dragXY('s1-canvas', 's1', function(v){
+    resetCoordinateEditor('s1');
     S1.z = clampBox(v, 5);
     renderS1();
   });
@@ -598,6 +686,7 @@ function init(){
   dragTwo('s2-canvas', 's2',
     function(){ return S2.z1; }, function(){ return S2.z2; },
     function(which, v){
+      resetCoordinateEditor('s2',which==='a' ? 'z1' : 'z2');
       var z = clampBox(v, 4.2);
       if (which === 'a') S2.z1 = z; else S2.z2 = z;
       renderS2();
@@ -623,6 +712,7 @@ function init(){
   document.querySelectorAll('.s4pre').forEach(function(btn){
     btn.addEventListener('click', function(){
       var p = S4_PRESETS[+btn.getAttribute('data-pre')];
+      resetCoordinateEditor('s4','z2');
       S4.z2 = [p[0], p[1]];
       renderS4();
     });
@@ -630,6 +720,7 @@ function init(){
   dragTwo('s4-canvas', 's4',
     function(){ return S4.z1; }, function(){ return S4.z2; },
     function(which, v){
+      resetCoordinateEditor('s4',which==='a' ? 'z1' : 'z2');
       var z = clampDisc(v, 2.6);
       if (which === 'a') S4.z1 = z; else S4.z2 = z;
       renderS4();

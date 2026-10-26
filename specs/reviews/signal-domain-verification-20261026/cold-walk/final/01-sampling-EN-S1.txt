@@ -1,0 +1,14 @@
+Step 1 · What sampling is
+
+Can a row of dots remember a wave?
+
+This step uses an ideal continuous sine. Sampling records x[n] = x(tₙ) at tₙ = n/fₛ seconds: n is an integer index, f is cycles per second (Hz), and fₛ counts samples per second. The dots lie on the source. Straight joins or a hold are display interpolations, usually different from the continuous source. More samples can improve these approximations; exact ideal reconstruction also needs a known bandlimit and a suitable reconstruction filter.
+
+Signal frequency f (Hz) 3
+Sample rate f_s (Hz) 11
+Connect with lines
+Hold (steps)
+
+f = 3.0 Hz · f_s = 11 Hz · samples per period = 3.7
+
+Lower fₛ and compare straight joins with a hold: the same source samples give different display curves. These are approximations. Removing the joins does not remove ambiguity: different continuous waves can share every sample. Next, compare two such sines directly.

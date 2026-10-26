@@ -1,0 +1,300 @@
+{
+  "scope": "Read-only final handoff recheck; no test reruns, browser or network. Root HTTP/browser results read as root evidence only.",
+  "threePathUrlsIdentical": true,
+  "pathUrlCount": 7,
+  "pathUrls": [
+    "http://127.0.0.1:18775/atlas/?trail=kinematics&node=derivative",
+    "http://127.0.0.1:18775/atlas/?trail=travel&node=integral",
+    "http://127.0.0.1:18775/atlas/?trail=work&node=work-energy",
+    "http://127.0.0.1:18775/trig/#step4",
+    "http://127.0.0.1:18775/atlas/?trail=geometry&node=pinhole-ratio&view=list",
+    "http://127.0.0.1:18775/atlas/?trail=optics&node=snell&view=list",
+    "http://127.0.0.1:18775/lens/#step2"
+  ],
+  "nineteenCommandsDiscoverable": true,
+  "commands": [
+    {
+      "command": "node --check atlas/app.js",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node --check atlas/data.js",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node --check atlas/motion-model.js",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node --check atlas/motion-bridge.js",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node atlas/tests/data-quality.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node atlas/tests/data-quality-core.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node atlas/tests/work-core.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node atlas/tests/foundations-core.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node atlas/tests/motion-core.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node atlas/tests/response-core.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node atlas/tests/rates-core.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node atlas/tests/travel-core.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node atlas/tests/legacy-signed-area.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node laplace/tests/pole-boundaries.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node complex-numbers/tests/keyboard-core.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node pinhole-camera/tests/geometry-core.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node reflection-refraction/tests/snell-core.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node lens/tests/focus-core.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    },
+    {
+      "command": "node trig/tests/tangent-core.cjs",
+      "literalInAtlasREADME": true,
+      "targetExists": true,
+      "archivedRecordExists": true
+    }
+  ],
+  "entryLocalLinksChecked": 64,
+  "brokenLocalLinks": [],
+  "archiveRequiredFiles": [
+    {
+      "path": "specs/reviews/math-physics-integration-verification-20261026/integration-browser.cjs",
+      "exists": true,
+      "bytes": 10150,
+      "equalsWorkingEvidence": true
+    },
+    {
+      "path": "specs/reviews/math-physics-integration-verification-20261026/browser/integration-browser.json",
+      "exists": true,
+      "bytes": 3396,
+      "equalsWorkingEvidence": true
+    },
+    {
+      "path": "specs/reviews/math-physics-integration-verification-20261026/cold-start/cli-checks.json",
+      "exists": true,
+      "bytes": 19682,
+      "equalsWorkingEvidence": true
+    },
+    {
+      "path": "specs/reviews/math-physics-integration-verification-20261026/cold-start/cold-start-review.md",
+      "exists": true,
+      "bytes": 9027,
+      "equalsWorkingEvidence": true
+    },
+    {
+      "path": "specs/reviews/math-physics-integration-verification-20261026/cumulative-files.json",
+      "exists": true,
+      "bytes": 74846,
+      "equalsWorkingEvidence": true
+    },
+    {
+      "path": "specs/reviews/math-physics-integration-verification-20261026/independent/findings.md",
+      "exists": true,
+      "bytes": 8283,
+      "equalsWorkingEvidence": true
+    },
+    {
+      "path": "specs/reviews/math-physics-integration-verification-20261026/red-semantic-link.json",
+      "exists": true,
+      "bytes": 696,
+      "equalsWorkingEvidence": true
+    },
+    {
+      "path": "specs/reviews/math-physics-integration-verification-20261026/green-semantic-link.json",
+      "exists": true,
+      "bytes": 253,
+      "equalsWorkingEvidence": true
+    },
+    {
+      "path": "specs/reviews/math-physics-integration-verification-20261026/changed-core-checks.json",
+      "exists": true,
+      "bytes": 323,
+      "equalsWorkingEvidence": true
+    }
+  ],
+  "manifestMissingFiles": [],
+  "manifestCurrentHashMismatches": [],
+  "manifestRecordedLatestReceiptMismatches": [],
+  "rootHttpEvidence": {
+    "file": "/Users/songyy/Documents/Codex/2026-10-25/task-5/integration-audit/http-final.json",
+    "pass": true,
+    "checks": 9,
+    "all200BytesMatch": true,
+    "allThreePathUrlsCovered": true,
+    "attribution": "root run; not this reviewer network execution"
+  },
+  "rootBrowserEvidence": {
+    "file": "/Users/songyy/Documents/Codex/2026-10-25/task-5/integration-audit/browser/integration-browser.json",
+    "pass": true,
+    "contexts": [
+      {
+        "lang": "en",
+        "width": 1280,
+        "paths": 4
+      },
+      {
+        "lang": "en",
+        "width": 320,
+        "paths": 4
+      },
+      {
+        "lang": "zh",
+        "width": 1280,
+        "paths": 4
+      },
+      {
+        "lang": "zh",
+        "width": 320,
+        "paths": 4
+      }
+    ],
+    "errors": [],
+    "failedRequests": [],
+    "optionalBrowserRequests": [
+      {
+        "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "location": {
+          "url": "http://127.0.0.1:18775/favicon.ico",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      }
+    ],
+    "attribution": "root serial Chrome run; not this reviewer UI execution"
+  },
+  "oldDocumentationClarifications": {
+    "conceptMapCountRemoved": true,
+    "round8HistoricalPriorityBanner": true,
+    "round10SuccessorBanner": true,
+    "round11SuccessorBanner": true,
+    "otherOldNextSuccessorsRead": [
+      "motion→response/rates/travel",
+      "response→rates",
+      "rates→travel",
+      "travel→continuity/work",
+      "continuity→foundations/work",
+      "foundations→work",
+      "complex→pinhole/Snell/lens",
+      "lens→tangent"
+    ]
+  },
+  "mustFix": [],
+  "remainingBlockers": null,
+  "date": "2026-10-25T23:05:24.116478+00:00",
+  "nonblockingObservation": "Resolved:120-target manifest/http-final/acceptance archived, and final concurrency-final/local-links-final byte-identical after explained final-guard snapshot sync. No remaining archive blocker.",
+  "firstArchiveSnapshotManifestFileCount": 112,
+  "manifestFileCount": 120,
+  "manifestSource": "workspace integration-audit/cumulative-files.json final 120 update",
+  "archiveStatusAtLastRead": {
+    "manifestFileCount": 120,
+    "manifestEqualsWorkspace": true,
+    "httpFinalPresent": true,
+    "httpFinalEqualsWorkspace": true,
+    "concurrencyFile": "concurrency-final.json",
+    "concurrencyPresent": true,
+    "concurrencyEqualsWorkspace": true,
+    "concurrencyArchiveBytes": 9102,
+    "concurrencyWorkspaceBytes": 9102,
+    "independentAcceptancePresent": true,
+    "independentAcceptanceEqualsWorkspace": true
+  },
+  "finalArchiveIncrementComposition": {
+    "total": 8,
+    "documents": 7,
+    "tests": 1,
+    "detail": "5 early principal documents +2 frozen-bubble reports +1 existing travel-browser.cjs"
+  },
+  "priorConcurrencySnapshotObservation": {
+    "archiveBytes": 8030,
+    "workspaceBytes": 9102,
+    "resolution": "Parent explained that final-guard.py refreshed workspace after archive; guarded final sync completed. No product drift."
+  },
+  "finalSnapshotByteChecks": {
+    "concurrency-final.json": {
+      "archivePresent": true,
+      "equalsWorkspace": true,
+      "bytes": 9102
+    },
+    "local-links-final.json": {
+      "archivePresent": true,
+      "equalsWorkspace": true,
+      "bytes": 29234
+    }
+  }
+}

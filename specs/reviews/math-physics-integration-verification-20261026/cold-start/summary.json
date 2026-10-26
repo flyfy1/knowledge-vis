@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-25T22:49:09.208617+00:00",
+  "review": "cold start from project README and atlas index",
+  "mustFix": 0,
+  "nonblockingDocumentationRisks": 3,
+  "cliCommands": 19,
+  "cliAllPass": true,
+  "httpUrls": 9,
+  "httpAll200AndSameAsLocal": true,
+  "localLinkTargets": 86,
+  "brokenLocalTargets": 0,
+  "ownUIReview": false,
+  "wholeSiteCertification": false,
+  "repositoryMutations": false,
+  "remainingBlockers": null,
+  "report": "cold-start-review.md"
+}

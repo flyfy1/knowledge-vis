@@ -1,0 +1,6 @@
+{
+  "capture": "Actual source and browser diagnostic before local repair",
+  "symptom": "#s3-ro empty in both languages; UI test fixed aperture H failed",
+  "rootCause": "An overbroad ground-line replacement inserted S2 g references into independent render3; renderAll failure was caught/logged by locale refresh,so pageerror alone did not expose it.",
+  "classification": "Introduced by this round; fix must restore original S3 ground drawing and capture console errors."
+}

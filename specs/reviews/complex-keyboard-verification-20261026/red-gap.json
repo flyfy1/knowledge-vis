@@ -1,0 +1,45 @@
+{
+  "before": {
+    "s1": [
+      3,
+      4
+    ],
+    "s2": {
+      "z1": [
+        2,
+        1
+      ],
+      "z2": [
+        1,
+        2
+      ]
+    },
+    "s4": {
+      "z1": [
+        2,
+        1
+      ],
+      "z2": [
+        1,
+        1
+      ]
+    },
+    "editors": 0,
+    "canvasTabindex": [
+      {
+        "id": "s1-canvas",
+        "tabindex": null
+      },
+      {
+        "id": "s2-canvas",
+        "tabindex": null
+      },
+      {
+        "id": "s4-canvas",
+        "tabindex": null
+      }
+    ]
+  },
+  "keyboardCanOnlyUsePresets": true,
+  "conclusion": "No arbitrary coordinate controls or focusable keyboard canvas path; arrow keys after native preset cannot move either arbitrary operand."
+}

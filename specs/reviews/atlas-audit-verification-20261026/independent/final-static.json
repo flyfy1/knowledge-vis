@@ -1,0 +1,46 @@
+{
+  "errors": [],
+  "cycles": [],
+  "prerequisiteEdges": 0,
+  "references": 85,
+  "counts": {
+    "groups": 5,
+    "nodes": 35,
+    "edges": 45,
+    "trails": 8
+  },
+  "complex": {
+    "id": "complex",
+    "group": "math",
+    "title": {
+      "zh": "复数与旋转",
+      "en": "Complex rotation"
+    },
+    "description": {
+      "zh": "把平面点写成复数后，乘以单位模复数可以表示旋转；实部和虚部给出两个坐标。",
+      "en": "Represent a plane point as a complex number. Multiplication by a unit-magnitude complex number rotates it; real and imaginary parts are coordinates."
+    },
+    "formula": "z = cos θ + i sin θ",
+    "source": "../complex-numbers/#step4"
+  },
+  "forceRelation": {
+    "id": "sine:oscillation",
+    "from": "sine",
+    "to": "oscillation",
+    "type": "representation",
+    "label": {
+      "zh": "描述理想运动",
+      "en": "describes ideal motion"
+    },
+    "reason": {
+      "zh": "无阻尼、无持续外力驱动（回复力仍存在）的理想弹簧振子满足 x″ + (k/m)x = 0，其解为正弦和余弦的组合。",
+      "en": "An ideal spring without damping or sustained driving, with its restoring force still present, obeys x″ + (k/m)x = 0, whose solutions combine sine and cosine."
+    },
+    "source": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion"
+  },
+  "hashes": {
+    "atlas/data.js": "6c54ec1c8a159d6b525eb905eb8941c05d974409c55ee3210a9fd00d5c3f4d3b",
+    "atlas/tests/data-quality.cjs": "485f0537c6c37f110ea6edc57068cf5fcfec09c663b045bb1b8205b6012e35c1",
+    "complex-numbers/style.css": "9f76b99653f9db9cafe9c8eca4b2c91c657ea7866fb5e8c0fe083e085a098139"
+  }
+}

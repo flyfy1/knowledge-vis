@@ -1,0 +1,14 @@
+Step 4 · Phase
+
+Phase is character too: lateness wrecks waveforms
+
+The first three steps stared at |H|. Now the other half of the character: phase. Two boxes compete: a pure delay (|H| identically 1 — it cuts no frequency at all — with phase −ωτd growing linearly with frequency) and the RC low-pass (|H| cuts the highs, and its phase −atan(ωτ) is bent). Feed both the same pulse train: the delay’s output is merely late, its shape identical; the RC output has rounded edges and a tail — because its frequency components are delayed by different amounts, the formation they marched in with falls apart. Below are the two phase curves and the RC’s group delay τg(ω) = −dφ/dω, computed by numerically differentiating the phase formula: it varies with frequency, and that variation is exactly why the formation breaks up.
+
+Test signal
+Pulse train
+Square wave
+Delay τd / RC τ (one shared slider) 0.60 s
+
+τ = 0.60 s · pure delay: |H| ≡ 1 (0 dB), φ(ω) = −ωτ, group delay constantly τ · RC: group delay falls from 0.600 s at ω=0 to 0.246 s at ω=2 — unequal lateness, so the waveform must deform
+
+Judging by |H| alone breeds two illusions: that a delay “changes nothing” (it changes time itself), and that the RC “only turns the volume down” (it scrambles the waveform). In audio, phase distortion muffles the sound; in images, the equivalent effect blurs edges. Magnitude decides whether each frequency is still present; phase decides whether they still recognize each other when they come back. One more convention: the RC waveform above is the 0–8 s steady segment obtained by pre-integrating the circuit from rest for 8 s, after the transient has essentially died out — not the full switch-on transient from zero. The comparison is about steady-state shape-keeping versus deformation, so the switch-on moment is deliberately excluded.

@@ -1,0 +1,41 @@
+{
+  "status": "pass",
+  "catalog": 120,
+  "checks": [
+    "Direct category, lazy source, all links, stage hiding, unrelated URL state",
+    "Exact ID/NFKC, bilingual token AND, no-match, clear focus, locale and IME",
+    "Category/history/query/reload/lesson Back, other cards unchanged, All entry inline",
+    "Both locales 320/390/640/1280, equivalent layout zoom, 48px targets, forced colors/focus",
+    "Error/retry, query retention, delay/category/locale race, stable focus",
+    "Generated Codex registry: one card per ID, title/open routes, official URL, search/locale and navigation fixture",
+    "Bilingual empty catalog and real 15-second timeout with late response/retry",
+    "Malformed/duplicate/unsafe links, empty, 984 long-title fixture (122ms including navigation/filter)",
+    "Denied storage and file-protocol catalog fallback"
+  ],
+  "requests": [
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945168089-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945168387-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945168479-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169123-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169188-2",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169388-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169692-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169751-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169768-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169783-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169802-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169820-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169839-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169855-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169872-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169888-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169903-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169918-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169935-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945169950-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945170035-1",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945185473-2",
+    "http://127.0.0.1:18775/leetcode/problems.config.js?v=1792945185540-1"
+  ],
+  "errors": []
+}

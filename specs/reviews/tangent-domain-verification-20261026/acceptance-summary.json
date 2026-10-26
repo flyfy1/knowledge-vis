@@ -1,0 +1,23 @@
+{
+  "browserSuites": 16,
+  "allBrowserSuitesPass": true,
+  "finalFocusedRerun": "tangent",
+  "tangentChecks": 1457,
+  "note": "Includes per-drawn-segment invariants; not1457independent learner tasks.",
+  "coreCommands": 22,
+  "allCoreCommandsPass": true,
+  "graphUnchanged": {
+    "concepts": 38,
+    "relations": 47,
+    "routes": 10
+  },
+  "remainingScopedMustFix": 0,
+  "scienceReview": "independent/final-acceptance.md",
+  "uiFirstReview": "cold-ui/postfix-ui-review.md",
+  "noPushOrDeployment": true,
+  "limits": [
+    "No physicaldevice/screenreader speech/humanlearningeffect",
+    "OnlyS1/S4/S6reading saved; no trace/autoplay/profile persistence",
+    "Nearpole floatingpoint conditioning is not exactreal arithmetic"
+  ]
+}

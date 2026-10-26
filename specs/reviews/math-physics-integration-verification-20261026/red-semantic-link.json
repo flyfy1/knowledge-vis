@@ -1,0 +1,22 @@
+{
+  "pass": false,
+  "reason": "Refraction action points to mirror/diffuse reflection step1, while interface/Snell refraction is step2",
+  "checks": {
+    "frozen-bubble/index.html": {
+      "expectedRefractionTarget": "reflection-refraction/#step2",
+      "wrongStep1References": 1
+    },
+    "frozen-bubble/i18n.js": {
+      "expectedRefractionTarget": "reflection-refraction/#step2",
+      "wrongStep1References": 2
+    },
+    "frozen-bubble/BRIEF.md": {
+      "expectedRefractionTarget": "reflection-refraction/#step2",
+      "wrongStep1References": 0
+    },
+    "CONCEPT-MAP.md": {
+      "expectedRefractionTarget": "reflection-refraction/#step2",
+      "wrongStep1References": 1
+    }
+  }
+}

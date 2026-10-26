@@ -1,0 +1,238 @@
+{
+  "result": "PASS independent staged numerical/history/parity review; Chrome not run",
+  "source": "refraction-audit/staged/reflection-refraction/app.js",
+  "sha256": "ad2ab6ec02525a199ecfae2f26110a1cf353f85bfb02c3cb1ae2f918b7f094da",
+  "critical": 48.753466631327235,
+  "display": "48.8°",
+  "boundary": [
+    {
+      "angle": -48.75346663132723,
+      "expected": "refract",
+      "mode": "refract",
+      "s": 1,
+      "scalarAngle": -90,
+      "traceAngle": 90
+    },
+    {
+      "angle": 48.75346663132723,
+      "expected": "refract",
+      "mode": "refract",
+      "s": 1,
+      "scalarAngle": 90,
+      "traceAngle": 90
+    },
+    {
+      "angle": -48.753466631327235,
+      "expected": "critical",
+      "mode": "critical",
+      "s": 1,
+      "scalarAngle": -90,
+      "traceAngle": 90
+    },
+    {
+      "angle": 48.753466631327235,
+      "expected": "critical",
+      "mode": "critical",
+      "s": 1,
+      "scalarAngle": 90,
+      "traceAngle": 90
+    },
+    {
+      "angle": -48.75346663132724,
+      "expected": "tir",
+      "mode": "tir",
+      "s": 1.0000000000000002,
+      "scalarAngle": null,
+      "traceAngle": null
+    },
+    {
+      "angle": 48.75346663132724,
+      "expected": "tir",
+      "mode": "tir",
+      "s": 1.0000000000000002,
+      "scalarAngle": null,
+      "traceAngle": null
+    },
+    {
+      "angle": -48.75346663132623,
+      "expected": "refract",
+      "mode": "refract",
+      "s": 0.9999999999999847,
+      "scalarAngle": -89.9999899704306,
+      "traceAngle": 89.9999899704306
+    },
+    {
+      "angle": 48.75346663132623,
+      "expected": "refract",
+      "mode": "refract",
+      "s": 0.9999999999999847,
+      "scalarAngle": 89.9999899704306,
+      "traceAngle": 89.9999899704306
+    },
+    {
+      "angle": -48.75346663132824,
+      "expected": "tir",
+      "mode": "tir",
+      "s": 1.0000000000000153,
+      "scalarAngle": null,
+      "traceAngle": null
+    },
+    {
+      "angle": 48.75346663132824,
+      "expected": "tir",
+      "mode": "tir",
+      "s": 1.0000000000000153,
+      "scalarAngle": null,
+      "traceAngle": null
+    },
+    {
+      "angle": -48.753466631227234,
+      "expected": "refract",
+      "mode": "refract",
+      "s": 0.9999999999984697,
+      "scalarAngle": -89.99989976246518,
+      "traceAngle": 89.99989976246518
+    },
+    {
+      "angle": 48.753466631227234,
+      "expected": "refract",
+      "mode": "refract",
+      "s": 0.9999999999984697,
+      "scalarAngle": 89.99989976246518,
+      "traceAngle": 89.99989976246518
+    },
+    {
+      "angle": -48.75346663142724,
+      "expected": "tir",
+      "mode": "tir",
+      "s": 1.0000000000015306,
+      "scalarAngle": null,
+      "traceAngle": null
+    },
+    {
+      "angle": 48.75346663142724,
+      "expected": "tir",
+      "mode": "tir",
+      "s": 1.0000000000015306,
+      "scalarAngle": null,
+      "traceAngle": null
+    },
+    {
+      "angle": -48.753466531327234,
+      "expected": "refract",
+      "mode": "refract",
+      "s": 0.9999999984695742,
+      "scalarAngle": -89.99683011309664,
+      "traceAngle": 89.99683011309664
+    },
+    {
+      "angle": 48.753466531327234,
+      "expected": "refract",
+      "mode": "refract",
+      "s": 0.9999999984695742,
+      "scalarAngle": 89.99683011309664,
+      "traceAngle": 89.99683011309664
+    },
+    {
+      "angle": -48.75346673132724,
+      "expected": "tir",
+      "mode": "tir",
+      "s": 1.000000001530426,
+      "scalarAngle": null,
+      "traceAngle": null
+    },
+    {
+      "angle": 48.75346673132724,
+      "expected": "tir",
+      "mode": "tir",
+      "s": 1.000000001530426,
+      "scalarAngle": null,
+      "traceAngle": null
+    },
+    {
+      "angle": 0,
+      "expected": "refract",
+      "mode": "refract",
+      "s": 0,
+      "scalarAngle": 0,
+      "traceAngle": 0
+    },
+    {
+      "angle": 0,
+      "expected": "refract",
+      "mode": "refract",
+      "s": 0,
+      "scalarAngle": 0,
+      "traceAngle": 0
+    },
+    {
+      "angle": -30,
+      "expected": "refract",
+      "mode": "refract",
+      "s": 0.6649999999999999,
+      "scalarAngle": -41.682325393339504,
+      "traceAngle": 41.682325393339504
+    },
+    {
+      "angle": 30,
+      "expected": "refract",
+      "mode": "refract",
+      "s": 0.6649999999999999,
+      "scalarAngle": 41.682325393339504,
+      "traceAngle": 41.682325393339504
+    },
+    {
+      "angle": -60,
+      "expected": "tir",
+      "mode": "tir",
+      "s": 1.1518137870333034,
+      "scalarAngle": null,
+      "traceAngle": null
+    },
+    {
+      "angle": 60,
+      "expected": "tir",
+      "mode": "tir",
+      "s": 1.1518137870333034,
+      "scalarAngle": null,
+      "traceAngle": null
+    },
+    {
+      "angle": -80,
+      "expected": "tir",
+      "mode": "tir",
+      "s": 1.3097943115062367,
+      "scalarAngle": null,
+      "traceAngle": null
+    },
+    {
+      "angle": 80,
+      "expected": "tir",
+      "mode": "tir",
+      "s": 1.3097943115062367,
+      "scalarAngle": null,
+      "traceAngle": null
+    }
+  ],
+  "rays": 32002,
+  "maxSnellResidual": 4.440892098500626e-16,
+  "maxDrawnAngleError": 1.4210854715202004e-14,
+  "fish321": {
+    "fixedX": true,
+    "maxResidual": 1.3500311979441904e-13,
+    "scope": "vertical-reference depth, not complete virtual imaging"
+  },
+  "history": {
+    "validRestore": true,
+    "foreignFields": true,
+    "noQuizSave": true,
+    "schemaReject": true,
+    "deniedReadWriteSafe": true
+  },
+  "bilingualKeys": 114,
+  "atlas": {
+    "nodes": 38,
+    "edges": 47,
+    "trails": 10
+  }
+}

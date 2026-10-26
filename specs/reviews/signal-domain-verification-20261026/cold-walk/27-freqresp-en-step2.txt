@@ -1,0 +1,25 @@
+Step 2 · The Bode Plot
+
+The Bode plot: how engineers read it
+
+Put the two curves from step 1 on a logarithmic frequency axis, with amplitude in decibels (dB = 20·log₁₀|H|), and you get the Bode plot engineers stare at all day. Drag R and C and the cutoff ωc = 1/(RC) moves with them: the −3 dB point (where |H| = 1/√2) is marked on the magnitude plot, the high-frequency asymptote hugs the curve at −20 dB/dec (every 10× in frequency costs 20 dB), and φ(ωc) = −45° is marked on the phase plot — all three annotations are computed live from the current R and C.
+
+Resistor R 5.01
+Capacitor C 1.00
+
+τ = RC = 5.01 s · ωc = 0.20 rad/s · at ωc: |H| = 0.7071 (−3.01 dB), φ = −45.0° · high-frequency slope (numerical difference between 10ωc and 100ωc) = −20.0 dB/dec
+
+Reading drill: don’t compute — read
+
+Read the phase plot above: at ω = 3 rad/s, roughly what is φ in degrees?
+
+−56°
+−90°
+−86°
+−71°
+
+A new question has been generated. Read the plots for the current R/C values before answering.
+
+Next question
+
+The Bode trick: the curve is flat at 0 dB at low frequency, then past ωc it hugs the −20 dB/dec ramp — so if you know where ωc sits, you can sketch the whole curve freehand to within a dB or two. Two such stages ideally cascaded give a −40 dB/dec ramp (step 6 uses this; “ideal” because a real passive cascade loads its predecessor — stages need a buffer between them).

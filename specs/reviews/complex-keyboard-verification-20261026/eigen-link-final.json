@@ -1,0 +1,14 @@
+[
+  {
+    "command": "node --check complex-numbers/i18n.js",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": "node complex-numbers/tests/keyboard-core.cjs",
+    "exit": 0,
+    "stdout": "{\"checks\":22305,\"result\":\"pass\",\"scope\":\"Independent complex identities, original box/disk constraints, raw normalization, no-op exact presets, invalid/overflow rejection, bilingual key/placeholder/DOM parity; no learning-effect claim.\"}\n",
+    "stderr": ""
+  }
+]

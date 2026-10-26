@@ -1,0 +1,14 @@
+Step 3 · The line
+
+The Nyquist line: twice, and not a hair less
+
+This twice-line has a name: the Nyquist line — which side of it you stand on decides whether the original wave survives. Sweep fs across the 2f line: above twice, the samples can only belong to the original wave and no fake exists; approaching twice, the fake wave hugs the original frequency while its phase drifts on, so the connected reconstruction swells and fades dramatically; below twice, the fake takes over. Exactly at 2f is the subtlest case — only two peeks per period, and the outcome depends entirely on phase luck. Press the button to pin fs at 2f, then drag the phase slider.
+
+Signal frequency f (Hz) 4
+Sample rate f_s (Hz) 8.0
+Sampling phase φ (°) 90
+Pin to exactly 2f
+
+f_s = 2f = 8.0 Hz: all down to phase — max |sample| = 1.00 (1 = full amplitude, 0 = wiped out).
+
+At φ=90° every peek lands near a peak and the dots swing at full amplitude — looks perfectly fine. Drag to φ=0°: every peek lands exactly on a zero crossing, every dot is 0 and the connection is a flat line — the wave is right there, yet the samples swear there is nothing. That is why the criterion is written fs > 2f: equality only works when you are lucky.

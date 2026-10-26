@@ -1,0 +1,32 @@
+[
+  {
+    "command": "node --check sampling/i18n.js",
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "command": "node --check freqresp/i18n.js",
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "command": "node --check ztransform/i18n.js",
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "command": "node --check freqresp/app.js",
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "command": "node --check atlas/data.js",
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "command": "node --check atlas/tests/signal-domain-browser.cjs",
+    "exit": 0,
+    "stderr": ""
+  }
+]

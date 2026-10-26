@@ -1,0 +1,97 @@
+{
+  "pass": true,
+  "files": [
+    {
+      "file": "atlas/tests/signal-domain-core.cjs",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "748a78a63df0c8b67fdbf06d1ac9f5bbe6a7745c2450c13d4ea1a514aa9c6442"
+    },
+    {
+      "file": "specs/reviews/signal-domain-design-20261026.md",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "60346c5c4ac7daa1c2d92fe8125ef2b1eb83f7e31323c5ddb955f4918bcab722"
+    },
+    {
+      "file": "sampling/index.html",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "f9d7fd038f2c9981bab48d7b492c8be53dd7ccc50992a318d31a678b0e3d7d8f"
+    },
+    {
+      "file": "sampling/BRIEF.md",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "0bcddf5c9908e6cc6a436844506a90b2409434f03f2b790038ebd0e1a393d898"
+    },
+    {
+      "file": "sampling/i18n.js",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "2420ab1d5061fd2a1c30df7fc8eb8d61e26b80cb17f7acda78dceaa77168ce7a"
+    },
+    {
+      "file": "ztransform/index.html",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "d3b5b19fda743113c0a068b2d97bbed929a7094ffd381e85b0c68a1d4c7eb774"
+    },
+    {
+      "file": "ztransform/i18n.js",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "80dd7066eb45619dfa2911822211be1eb95cab12f6e6f3cbfba689c623449c63"
+    },
+    {
+      "file": "freqresp/index.html",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "206a53dc6ea6acf37e91b6a9fc15db4e52b6ae9e17cf9d2f06843841f416c610"
+    },
+    {
+      "file": "freqresp/BRIEF.md",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "db9cd053732baa186d0f3e646bd8507d2e2020919cca807fc5b4037bfe3e71a8"
+    },
+    {
+      "file": "freqresp/i18n.js",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "b20361c2c697d924caaf0e5f1442c5dad430cb5ae85477aec8b80d0d9841b5b7"
+    },
+    {
+      "file": "freqresp/app.js",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "6d99e0ecbd1fae383b5a9de2602b40d3e5aeeb19706aa7c356f054611610be20"
+    },
+    {
+      "file": "atlas/data.js",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "d0385c0f8e61449903f9e3ae84d6c714a52e42df9d66b743fbe507d2a3b01679"
+    },
+    {
+      "file": "freqresp/style.css",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "6da95baff068d6e6697598d22ae760ac0bc4ca9716cf3a83832394bfbf1139d2"
+    },
+    {
+      "file": "atlas/tests/signal-domain-browser.cjs",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "b0b9163eb0b125493208d47e689d1ad78e7ff411613904e0682f9aeaa6320620"
+    },
+    {
+      "file": "ztransform/style.css",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "6a92e625d85450df02039228b1d7187d41e9924d428f7309337bac661b230055"
+    }
+  ],
+  "count": 15,
+  "method": "Read-only final source/style/modifier-key byte and receipt comparison; no Chrome or numeric-suite rerun."
+}

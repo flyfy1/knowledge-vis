@@ -13,8 +13,9 @@
 ## 一、主表：概念 → 专讲页/步
 
 The mathematics and physics navigation atlas is at `atlas/?node=fourier`.
-It reuses the lesson anchors below; `atlas/data.js` owns its 24 editorial concepts,
-directed relationship statements, source links, and suggested routes. Atlas region
+It reuses the lesson anchors below; `atlas/data.js` owns its editorial concepts,
+directed relationship statements, source links, and suggested routes. Current verified
+counts and implementation scope are indexed in [atlas/README](atlas/README.md). Atlas region
 positions are not similarity scores or prerequisite claims.
 
 LeetCode collection additions (2026-10-17):
@@ -125,7 +126,7 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 80 | 一次函数：斜率与截距 / Slope and intercept | linear-functions#step2 | y=kx+b 实时拼装——k 是每走一步抬高多少，b 是 x=0 时站在多高，直线上每个点代入都验算得上 |
 | 81 | 对称轴与旋转对称 / Symmetry axes and rotational symmetry | symmetry-rotation#step2 | 风车转过 360°÷n 就与自己重合；平行四边形没有对称轴、却有 180° 旋转对称——翻和转是两回事 |
 | 82 | 抛物线：顶点式与交点 / Parabola: vertex form and intercepts | parabola#step2 | y=a(x−h)²+k 把顶点 (h, k) 写在脸上，对称轴 x=h 跟着顶点一起搬家 |
-| 83 | v-t 图面积就是路程 / Area under a v–t graph is distance | velocity-vt#step2 | 速度—时间图像下方的面积就是走过的路；加速段切成窄条数台阶和，条越细、台阶和越贴近真路程 |
+| 83 | v-t 图有符号面积是位移 / Signed area under a v–t graph gives displacement | velocity-vt#step2 | 正向时间区间内，速度的有符号积分是位移；路程须积速率，即速度绝对值。仅速度全程非负时两者相同。此处与既有课的返回行程口径一致。 |
 | 84 | 定积分：黎曼和夹逼 / Definite integral: Riemann sums squeeze the value | integral#step1 | 曲线下面积切成细条，左和与右和从两侧夹住真值、缝宽恰为 1/n；条无限细时收敛到的数就是定积分 |
 | 85 | 全反射与临界角 / Total internal reflection and the critical angle | reflection-refraction#step3 | 光从水射向空气，入射角超过临界角 asin(1/1.33)≈48.8° 时折射线消失、光全部反射回水里 |
 | 86 | 导数：割线逼近切线 / Derivative: the secant closes into the tangent | derivative#step1 | 割线两点无限靠拢，斜率从正负两侧收敛到同一个数——那个数就是导数，割线的极限位置就是切线 |
@@ -1531,6 +1532,17 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 <!-- /leetcode-778-campaign -->
 
 
+## Frozen soap bubbles (2026-10-25)
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Freezing of a liquid shell; seeding and anisotropic growth / 水膜成核与各向异性生长 | `frozen-bubble/#step0` | The water-containing film freezes, not the enclosed air; branch shape/rate are qualitative |
+| Latent heat and Marangoni transport / 潜热与马兰戈尼流 | `frozen-bubble/#step1` | Local heat release can drive surface-tension gradients and transport crystals; contrasting warm-air/cold-base freezing can stall |
+| Optical origins and model limits / 颜色来源与模型边界 | `frozen-bubble/#step2` | Distinguish liquid-film interference, crystal optics and illumination; no inferred grading or temperature |
+
+Outgoing first-use links: `interference/#step1` (path difference), `reflection-refraction/#step2` (basic interface refraction, not a full crystal-optics model); finale also links `particles-states/#step2` (melting). Existing anchors checked.
+
+
 <!-- leetcode-765-campaign -->
 
 | Concept | Deep link | What the step teaches |
@@ -1579,3 +1591,14 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 | Equal-average integer condition | `leetcode/805/#step1` | Derive n*s = k*S and restrict the smaller nonempty group. |
 
 <!-- /leetcode-805-campaign -->
+
+
+### Round11 · 法线角、Snell关系与全反射（2026-10-26）
+
+| 概念 | 既有课程入口 | 口径 |
+| --- | --- | --- |
+| sin的坐标定义 | trig#step1 | 数学角从正X轴起；用于理解正弦值域，不直接传送光线方向。新增互链到下项。 |
+| Snell与法线角 | reflection-refraction#snell-bridge | n₁sinθ₁=n₂sinθ₂；两角从界面法线起，n=c/v无量纲。与本课S2同一状态。 |
+| 临界/无实折射解 | reflection-refraction#critical-proof | 仅n₁>n₂有θc=arcsin(n₂/n₁)；相等为沿界面极限，严格超过才进入无传播折射线分支。原S3控制与读数同源。 |
+
+Atlas ordinary route `optics` connects existing unit-circle to one canonical `snell` node; it is not a prerequisite certification. [Scope/evidence](specs/reviews/refraction-normal-verification-20261026.md).

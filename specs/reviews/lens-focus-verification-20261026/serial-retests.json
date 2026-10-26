@@ -1,0 +1,20 @@
+[
+  {
+    "suite": "lens",
+    "script": "lens/tests/focus-browser.cjs",
+    "exit": 0,
+    "seconds": 5.54,
+    "stdout": "{\"pass\":true,\"checks\":167,\"errors\":[],\"failed\":[],\"optionalBrowserRequests\":[{\"text\":\"Failed to load resource: the server responded with a status of 404 (File not found)\",\"location\":{\"url\":\"http://127.0.0.1:18775/favicon.ico\",\"line\":0,\"column\":0,\"lineNumber\":0,\"columnNumber\":0}}],\"scope\":[\"strict focus/2f,finite offscreen vs infinity,signedM and actual principalray parallel branch\",\"nativefractionalkeyboard/pointer,screenexactness,quizisolation\",\"readingBack+reload/foreign/bad/deniedhistory,noquizprofile\",\"two languages320/390/1280,full objectbounds,actual2x/48px/3px/forcedcolors\"],\"limits\":[\"No physical phone/screen-reader speech or human learning effectiveness\",\"Paraxial ideal thin lens,no aperture/waveblur/irradiance/eye interior solver\"]}\n",
+    "stderr": "",
+    "rerunReason": "New next-lesson48px target and explicitsize assertion; model/state unchanged."
+  },
+  {
+    "suite": "refraction",
+    "script": "reflection-refraction/tests/snell-browser.cjs",
+    "exit": 0,
+    "seconds": 8.0,
+    "stdout": "{\"pass\":true,\"checks\":148,\"errors\":[],\"requests\":[],\"optionalBrowserRequests\":[{\"text\":\"Failed to load resource: the server responded with a status of 404 (File not found)\",\"location\":{\"url\":\"http://127.0.0.1:18775/favicon.ico\",\"line\":0,\"column\":0,\"lineNumber\":0,\"columnNumber\":0}}],\"scope\":[\"Snell ray/formula sharing and actual absent/present ray strokes\",\"critical exact preset versus rounded input,normal and repeated branch transitions\",\"native keyboard and pointer,schema/foreign history,Back and explicit reload,denied browser storage\",\"atlas/trig source Back,bilingual320/390/1280,actual2x and forcedcolors\"],\"limits\":[\"No physical phone/screen-reader speech/human learning-effect test\",\"No optical power,evanescent field,physical propagation time or full virtual-image solver\"]}\n",
+    "stderr": "",
+    "rerunReason": "New next-lesson48px target and explicitsize assertion; model/state unchanged."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "route": "motion",
+    "top": 1219.3125,
+    "focused": false,
+    "active": ""
+  },
+  {
+    "route": "response",
+    "top": 814.3125,
+    "focused": false,
+    "active": ""
+  },
+  {
+    "route": "kinematics",
+    "top": 16.3125,
+    "focused": true,
+    "active": "motion-rates-title"
+  },
+  {
+    "route": "travel",
+    "top": 16.3125,
+    "focused": true,
+    "active": "motion-travel-title"
+  }
+]

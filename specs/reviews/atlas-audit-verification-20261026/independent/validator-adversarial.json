@@ -1,0 +1,84 @@
+[
+  {
+    "name": "emptyNodeTitle",
+    "passed": false,
+    "errors": [
+      "node work-energy title: bilingual text missing"
+    ],
+    "cycles": []
+  },
+  {
+    "name": "emptyHelpTitle",
+    "passed": false,
+    "errors": [
+      "node work-energy help title: bilingual text missing"
+    ],
+    "cycles": []
+  },
+  {
+    "name": "emptyHelpBody",
+    "passed": false,
+    "errors": [
+      "node work-energy help body: bilingual text missing"
+    ],
+    "cycles": []
+  },
+  {
+    "name": "emptyHelpSourceLabel",
+    "passed": false,
+    "errors": [
+      "node work-energy help source label: bilingual text missing"
+    ],
+    "cycles": []
+  },
+  {
+    "name": "emptyBackgroundNote",
+    "passed": false,
+    "errors": [
+      "trail response background note: bilingual text missing"
+    ],
+    "cycles": []
+  },
+  {
+    "name": "emptyHelpHref",
+    "passed": false,
+    "errors": [
+      "node work-energy: help source missing"
+    ],
+    "cycles": []
+  },
+  {
+    "name": "nonStringHelpHref",
+    "passed": false,
+    "errors": [
+      "node work-energy: help source missing"
+    ],
+    "cycles": []
+  },
+  {
+    "name": "emptyRouteSource",
+    "passed": false,
+    "errors": [
+      "trail response: background source missing"
+    ],
+    "cycles": []
+  },
+  {
+    "name": "nullNode",
+    "throws": "Cannot read properties of null (reading 'id')"
+  },
+  {
+    "name": "selfPrerequisite",
+    "passed": false,
+    "errors": [
+      "trail work: disconnected stops integral/work-energy",
+      "declared prerequisite cycle needs editorial review: integral -> integral"
+    ],
+    "cycles": [
+      [
+        "integral",
+        "integral"
+      ]
+    ]
+  }
+]

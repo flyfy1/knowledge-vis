@@ -1,0 +1,26 @@
+[
+  {
+    "command": "node atlas/tests/browser.cjs",
+    "evidenceVariable": "ATLAS_EVIDENCE",
+    "evidenceDirectory": "regressions/atlas",
+    "exit": 0,
+    "seconds": 6.12,
+    "stdoutLog": "regression-atlas.log"
+  },
+  {
+    "command": "node atlas/tests/response-browser.cjs",
+    "evidenceVariable": "ATLAS_RESPONSE_EVIDENCE",
+    "evidenceDirectory": "regressions/response",
+    "exit": 0,
+    "seconds": 10.25,
+    "stdoutLog": "regression-response.log"
+  },
+  {
+    "command": "node atlas/tests/data-quality-browser.cjs",
+    "evidenceVariable": "ATLAS_AUDIT_EVIDENCE",
+    "evidenceDirectory": "regressions/quality",
+    "exit": 0,
+    "seconds": 66.22,
+    "stdoutLog": "regression-quality.log"
+  }
+]

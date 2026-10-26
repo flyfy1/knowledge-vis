@@ -1,0 +1,22 @@
+{
+  "checks": 338,
+  "concepts": 37,
+  "relations": 46,
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "widths": [
+    320,
+    390,
+    768,
+    1512
+  ],
+  "errors": [],
+  "externalRuntimeRequests": [],
+  "limits": [
+    "No physical-device or screen-reader speech test",
+    "No learning-effect claim"
+  ],
+  "base": "http://127.0.0.1:18775"
+}

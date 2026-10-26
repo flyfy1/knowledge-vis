@@ -1,0 +1,18 @@
+Step 5 · Different Wiring
+
+High-pass, band-pass, resonance: one mathematics, three appetites
+
+Same R and C — just take the output across the resistor instead, and the low-pass becomes a high-pass on the spot: |H(jω)| = ωτ/√(1+(ωτ)²). Low frequencies are blocked, highs pass, and the −3 dB point sits at the same ωc = 1/τ. Drag τ and watch the cutoff run; compare with step 2’s low-pass Bode plot — the two are mirror images.
+
+RC high-pass τ (ωc = 1/τ) 1.00 s（ωc = 1.00）
+
+τ = 1.00 s · ωc = 1.00 rad/s · at ωc, |H| = 0.7071 and φ = +45.0° (the high-pass leads where the low-pass lags — same magnitude, opposite sign) · at ω = 0.1ωc, |H| = 0.0995 (lows cut to about a tenth)
+
+One more step: put a low-pass and a high-pass back to back so only a middle band of frequencies passes — a band-pass. The standard second-order band-pass H(jω) = 1 / (1 + jQ(ω/ω₀ − ω₀/ω)) peaks at ω₀ with height 1, and the quality factor Q sets how fat the peak is — larger Q, sharper peak. One readout below is a live audit: the half-power bandwidth Δω measured off the curve (the distance between the two points where |H| falls to 1/√2 of the peak) must satisfy Q = ω₀/Δω — whether the measured number matches the slider is for the digits to say. This is a normalized band-pass output. A spring’s displacement/force response has a different numerator, so its peak location and height cannot be copied from this curve. Compare damping, displacement peaks and poles in the atlas →
+
+Band-pass peak f₀ 100 Hz
+Quality factor Q 19.95
+
+f₀ = 100 Hz · Q set = 19.95 · measured half-power points f₁ = 97.5 Hz, f₂ = 102.5 Hz, Δf = 5.0 Hz · Q recovered from the measurement, f₀/Δf = 19.95 (audited against the setting)
+
+Tuning a radio is band-pass work: the peak aims at the station, and Q decides whether the neighboring station bleeds in. Too small a Q and two stations mush together; too large and the peak is so sharp it shaves the station’s own high frequencies. Even pickiness has to be portioned right.

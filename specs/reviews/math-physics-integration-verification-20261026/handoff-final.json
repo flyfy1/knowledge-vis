@@ -1,0 +1,70 @@
+{
+  "pass": true,
+  "guardedTargetsBeforeThisLeaf": 82,
+  "allOwnHashesMatch": true,
+  "allWorkspaceReviewAndBrowserEvidenceSameBytes": true,
+  "cumulativeAttributedTargets": 120,
+  "cumulativeAllCurrentHashesMatch": true,
+  "allProvenanceReceiptSnapshotsPresent": true,
+  "independentRemainingMustFix": 0,
+  "freshBrowserContexts": [
+    {
+      "lang": "en",
+      "width": 1280
+    },
+    {
+      "lang": "en",
+      "width": 320
+    },
+    {
+      "lang": "zh",
+      "width": 1280
+    },
+    {
+      "lang": "zh",
+      "width": 320
+    }
+  ],
+  "previewFinalURLReads": 9,
+  "previewAll200AndCurrentBytes": true,
+  "HEADAtClose": "a994b31fca21b54005080a17ba536cd0237feef2",
+  "limits": [
+    "No push/deploy",
+    "No actual device/screen-reader speech/human learning result",
+    "Only risk-selected final-state browser paths this round, not a new full-site run"
+  ],
+  "concurrencySnapshot": "concurrency-final.json",
+  "copiedEvidence": [
+    "cold-start/summary.json",
+    "cold-start/http-probes-escalated.json",
+    "cold-start/cold-start-review.md",
+    "cold-start/local-links.json",
+    "cold-start/cli-checks.json",
+    "cold-start/final-recheck.md",
+    "cold-start/http-probes.json",
+    "cold-start/final-recheck.json",
+    "independent/graph-source-entry-audit.json",
+    "independent/content-recheck.json",
+    "independent/applied-recheck.json",
+    "independent/acceptance.json",
+    "independent/cumulative-ledger-recheck.json",
+    "independent/link-and-applied-audit.json",
+    "independent/final-local-links.json",
+    "independent/cumulative-runtime-fingerprints.json",
+    "independent/findings.md",
+    "independent/acceptance.md",
+    "browser/en-tan-1280.png",
+    "browser/en-motion-320-2x.png",
+    "browser/zh-lens-320-2x.png",
+    "browser/zh-motion-320-2x.png",
+    "browser/zh-tan-320-2x.png",
+    "browser/zh-tan-1280.png",
+    "browser/en-lens-320-2x.png",
+    "browser/en-tan-320-2x.png",
+    "browser/en-lens-1280.png",
+    "browser/en-motion-1280.png",
+    "browser/zh-motion-1280.png",
+    "browser/zh-lens-1280.png",
+    "browser/integration-browser.json"
+  ]
+}

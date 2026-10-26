@@ -1,0 +1,15 @@
+# Round3 — rate/force chain audit and design
+
+Audit prior README/BRIEF/reviews before adding: existing evidence identifies sources, assumptions, commands and boundaries. Original BRIEF still appears to compete with current implementation (24 concepts/no animation); mark it historical, put current contracts/index first, preserve old release reports. Reuse MotionModel/MotionBridge's single phase/clock/params/storage/recovery; no third controller/model/key. Response runtime excluded.
+
+Existing derivative already teaches secants→tangents. Its English displacement/time wording should be velocity. velocity-vt correctly computes only nonnegative scenarios, but its area claims need the restriction next to the “always” statements (s2hint/c3), distinguishing signed displacement from distance. No new integrator or rewrite of those pages.
+
+P0: add projection/rates views inside the existing motion host. Two synchronized x–t/v–t plots with analytic tangents; signedv, nonnegative|v|,a and Fnet=ma=−kx. Four presets:.125 left/speeding;.875 right/slowing;.5 turning(v0,a≠0);.25 crossing(v≠0,a0 at that instant). No sign(va) rule atv0. Snap dimensionless sine/cos residuals below1e−12 consistently in model/readouts/status; do not interpret instantaneousa0 as future uniform motion. Right positive, inertial frame, fixed mass, ideal horizontal spring, no friction/drive, vertical gravity/support cancel. Derivatives define rates; Newton is an assumed physical law, not a universal proof from animation.
+
+Minimal graph addition: derivative(existing derivative#step2),net-force(OpenStax5.3),two relations through oscillation,one editorial trail. Derivative→oscillation describes rates, not a causal claim that calculus creates motion. Broaden waves label to motion/waves, keep group id. Narrowly remove root atlasdesc's hardcoded count using hash guard, preserving other work.
+
+Sources: OpenStax Vol1 §3.2 signed velocity/speed,§3.3 acceleration,§5.3 net external forces; existing derivative/velocity lesson anchors inspected. Prior exact oscillator sources remain applicable. No new numerical or hardware claim.
+
+Independent design reviewer read current records/model/legacy pages before code; verdict approved. Adopt all: shared host/state, current-vs-history docs, direct old-page caveats, two differently labeled entrances, physical-second tangents x0+vΔt andv0+aΔt, velocity axis fixed per parameter group with real labels (never per-phase scale), speed/acceleration direction cases, net-force scope and explicit URL-owned view. No a–t plot/extra secant slider/drive/friction model.
+
+State/UI: same motion-* translation scope/tokens; app owns motion↔kinematics via trail. Switching view/locale/node preserves phase/params/playback; leaving both pauses. Reset defaults/phase0/stops. Curves are analytic predictions, not measurements. Two plots share time axis and probe. Show that screen angle depends on axis scaling; read slope in physical units. Existing 48px,320/200%,keyboard/history/storage and both prior experiment suites must pass. No new persistent key or runtime library.

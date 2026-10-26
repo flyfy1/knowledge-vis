@@ -1,0 +1,17 @@
+{
+  "capture": "Transcribed from execution tool results; final automated output is separate.",
+  "attempts": [
+    {
+      "phase": "initial select-based native target test",
+      "exit": 1,
+      "message": "AssertionError [ERR_ASSERTION]: native target choice",
+      "diagnosis": "In headless Mac Chrome, native select probe Home/ArrowDown/Enter/ArrowUp/Space did not commit choice; no app interception; not a physical-Mac finding. Chosen visible native mode buttons reuse existing lesson pattern."
+    },
+    {
+      "phase": "first two-language suite",
+      "exit": 1,
+      "message": "locator.click: Timeout 30000ms exceeded; #s5q1-o0 resolved to disabled .correct button",
+      "diagnosis": "Same-document/hash fixture navigation retained the previously solved quiz. Product lock was correct. Added explicit reload before each locale fixture; product quiz was unchanged."
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "pass": true,
+  "count": 20,
+  "files": [
+    {
+      "file": "atlas/tests/signal-domain-core.cjs",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "748a78a63df0c8b67fdbf06d1ac9f5bbe6a7745c2450c13d4ea1a514aa9c6442"
+    },
+    {
+      "file": "specs/reviews/signal-domain-design-20261026.md",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "60346c5c4ac7daa1c2d92fe8125ef2b1eb83f7e31323c5ddb955f4918bcab722"
+    },
+    {
+      "file": "sampling/index.html",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "f9d7fd038f2c9981bab48d7b492c8be53dd7ccc50992a318d31a678b0e3d7d8f"
+    },
+    {
+      "file": "sampling/BRIEF.md",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "0bcddf5c9908e6cc6a436844506a90b2409434f03f2b790038ebd0e1a393d898"
+    },
+    {
+      "file": "sampling/i18n.js",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "c2b77bf3b3ad8f618f89d1438c0e6e1245986e0fd64896a8433a53e23fea674d"
+    },
+    {
+      "file": "ztransform/index.html",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "d3b5b19fda743113c0a068b2d97bbed929a7094ffd381e85b0c68a1d4c7eb774"
+    },
+    {
+      "file": "ztransform/i18n.js",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "83e8d798c16f303ee496ce12349a5058056c305b46fb92e22d0ba37bae8ea4a8"
+    },
+    {
+      "file": "freqresp/index.html",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "206a53dc6ea6acf37e91b6a9fc15db4e52b6ae9e17cf9d2f06843841f416c610"
+    },
+    {
+      "file": "freqresp/BRIEF.md",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "db9cd053732baa186d0f3e646bd8507d2e2020919cca807fc5b4037bfe3e71a8"
+    },
+    {
+      "file": "freqresp/i18n.js",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "c1c295be0218369715a313b269af5cfacc8e13c956517e5b6a733c7d4c07c805"
+    },
+    {
+      "file": "freqresp/app.js",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "6d99e0ecbd1fae383b5a9de2602b40d3e5aeeb19706aa7c356f054611610be20"
+    },
+    {
+      "file": "atlas/data.js",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "d0385c0f8e61449903f9e3ae84d6c714a52e42df9d66b743fbe507d2a3b01679"
+    },
+    {
+      "file": "freqresp/style.css",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "6da95baff068d6e6697598d22ae760ac0bc4ca9716cf3a83832394bfbf1139d2"
+    },
+    {
+      "file": "atlas/tests/signal-domain-browser.cjs",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "66d77e21d9d27c913166280403251387cba89235dce87828145d99c6da2ec95a"
+    },
+    {
+      "file": "ztransform/style.css",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "6a92e625d85450df02039228b1d7187d41e9924d428f7309337bac661b230055"
+    },
+    {
+      "file": "atlas/README.md",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "c7140a11fb5c678af0ab7d07b0ecd89bd3d9b7a1e038751cc22ef9eb10e79b3c"
+    },
+    {
+      "file": "specs/reviews/atlas-audit-verification-20261026.md",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "4f506fb1b3f96f499bd9fa030d376080bfbfebf58edf23f4d39f998326279c37"
+    },
+    {
+      "file": "specs/reviews/nightly-math-physics-20261026.md",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "32869f863d9671c273d0e47fb9df0473c61ff4548da460b3736d5814c6d1d996"
+    },
+    {
+      "file": "specs/reviews/signal-domain-verification-20261026.md",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "959d78db4697bcc866a3b674396a8d360ad3069d3490aa43d61904087c1fac51"
+    },
+    {
+      "file": "specs/reviews/math-physics-integration-verification-20261026.md",
+      "matchesReceipt": true,
+      "stageMatchesActual": true,
+      "sha256": "bdcbc4750d65d11460193864839f320e6c70b72651c7b538feee976018fd84e7"
+    }
+  ],
+  "freqrespAppUnchangedSince15": true,
+  "method": "Read-only source/receipt/staged comparison after HTML escaping and repair-key spacing; no numeric rerun/Chrome."
+}

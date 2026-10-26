@@ -199,3 +199,8 @@ input[type=range]:disabled{opacity:.4;cursor:not-allowed}
   .site-head{padding:30px 16px 16px}
   .app-cards{flex-direction:column}
 }
+
+/* Existing long headings must wrap at320px with doubled text. */
+.step h2 { overflow-wrap: anywhere; }
+
+#s3-w { min-height:48px; }

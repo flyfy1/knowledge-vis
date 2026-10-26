@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>三角函数 · 单位圆 —— 一步一交互</title>
-<link rel="stylesheet" href="style.css?v=w3a">
-<script src="i18n.js?v=w3a"></script>
+<link rel="stylesheet" href="style.css?v=tan-1">
+<script src="i18n.js?v=tan-1"></script>
 <link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
@@ -65,7 +65,7 @@
     <h2 data-i18n="s1t">cos 是站位，sin 是身高</h2>
     <p class="explain" data-i18n-html="s1e"></p>
     <div class="stage">
-      <canvas id="s1-canvas" class="dragc" height="380" tabindex="0" style="height:380px"></canvas>
+      <canvas role="img" data-i18n-aria="tangentCanvas" aria-describedby="s1-readout s1-keyboard" id="s1-canvas" class="dragc" height="380" tabindex="0" style="height:380px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn active" id="s1-unit-deg" data-i18n="s1deg">角度 °</button>
@@ -76,7 +76,7 @@
       <button class="btn" data-snap="60">60°</button>
       <button class="btn" data-snap="90">90°</button>
     </div>
-    <p class="readout" id="s1-readout"></p>
+    <p class="readout" id="s1-readout"></p><p class="hint" id="s1-keyboard" data-i18n="tangentKeyboard"></p>
     <p class="readout" id="s1-quad"></p>
     <p class="readout" id="s1-pyth"></p>
     <div class="value-card" id="s1-card">
@@ -84,6 +84,7 @@
       <p class="card-body" id="s1-card-body" data-i18n="s1exactNone">把点拖到 30°、45°、60°、90° 这些特殊角上（靠近时会被轻轻吸住），或者点上面的按钮——这里会给出不用计算器的精确值。</p>
     </div>
     <p class="hint" data-i18n-html="s1hint"></p>
+    <p><a class="fourier-link optics-link" href="../reflection-refraction/#snell-bridge" data-i18n="s1optics"></a></p>
   </div>
 </section>
 
@@ -142,11 +143,11 @@
     <h2 data-i18n="s4t">tan 是斜率，站上 x = 1 的墙</h2>
     <p class="explain" data-i18n-html="s4e"></p>
     <div class="stage">
-      <canvas id="s4-canvas" class="dragc" height="400" tabindex="0" style="height:400px"></canvas>
+      <canvas role="img" data-i18n-aria="tangentCanvas" aria-describedby="s4-readout" id="s4-canvas" class="dragc" height="400" tabindex="0" style="height:400px"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s4th">角度 θ（°）</span> <span class="val" id="s4-th-val">35.0</span></span>
-        <input type="range" id="s4-th" min="0" max="180" step="0.1" value="35">
+        <input type="range" id="s4-th" min="0" max="360" step="any" value="35">
       </label>
     </div>
     <div class="btn-row">
@@ -156,7 +157,7 @@
       <button class="btn" data-tandeg="89.9">89.9°</button>
       <button class="btn" data-tandeg="90">90°</button>
     </div>
-    <p class="readout" id="s4-readout"></p>
+    <p class="readout" id="s4-readout"></p><p class="hint" id="s4-domain"></p><p><a class="fourier-link tangent-source" href="https://openstax.org/books/algebra-and-trigonometry-2e/pages/8-2-graphs-of-the-other-trigonometric-functions" data-i18n="tangentSource"></a></p>
     <p class="hint" data-i18n-html="s4hint"></p>
   </div>
 </section>
@@ -210,7 +211,7 @@
     <h2 data-i18n="s6t">总览台：一个圆，三个投影</h2>
     <p class="explain" data-i18n-html="s6e"></p>
     <div class="stage">
-      <canvas id="s6-canvas" class="dragc" height="420" tabindex="0" style="height:420px"></canvas>
+      <canvas role="img" data-i18n-aria="tangentCanvas" aria-describedby="s6-readout" id="s6-canvas" class="dragc" height="420" tabindex="0" style="height:420px"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn" id="s6-toggle" data-i18n="s6play">▶ 转起来</button>
@@ -232,7 +233,7 @@
 
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 三角函数 · 单位圆 Trig Functions &amp; the Unit Circle —— 一步一交互系列</footer>
 
-<script src="app.js?v=w3a"></script>
+<script src="app.js?v=tan-1"></script>
 <script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

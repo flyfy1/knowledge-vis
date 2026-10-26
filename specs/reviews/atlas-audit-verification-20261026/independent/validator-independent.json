@@ -1,0 +1,82 @@
+{
+  "sha256": "485f0537c6c37f110ea6edc57068cf5fcfec09c663b045bb1b8205b6012e35c1",
+  "cases": [
+    {
+      "name": "foundation cycle allowed",
+      "pass": true,
+      "errors": [],
+      "cycles": []
+    },
+    {
+      "name": "explicit prerequisite two-node cycle rejected",
+      "pass": true,
+      "errors": [
+        "declared prerequisite cycle needs editorial review: work-energy -> integral -> work-energy"
+      ],
+      "cycles": [
+        [
+          "work-energy",
+          "integral",
+          "work-energy"
+        ]
+      ]
+    },
+    {
+      "name": "self prerequisite rejected",
+      "pass": true,
+      "errors": [
+        "declared prerequisite cycle needs editorial review: complex -> complex"
+      ],
+      "cycles": [
+        [
+          "complex",
+          "complex"
+        ]
+      ]
+    },
+    {
+      "name": "disconnected explicit cycle rejected",
+      "pass": true,
+      "errors": [
+        "declared prerequisite cycle needs editorial review: complex -> gaussian -> complex"
+      ],
+      "cycles": [
+        [
+          "complex",
+          "gaussian",
+          "complex"
+        ]
+      ]
+    },
+    {
+      "name": "ordinary cycle plus acyclic declared prerequisite allowed",
+      "pass": true,
+      "errors": [],
+      "cycles": []
+    },
+    {
+      "name": "empty help bilingual object rejected",
+      "pass": true,
+      "errors": [
+        "node work-energy help body: bilingual text missing"
+      ],
+      "cycles": []
+    },
+    {
+      "name": "empty route bilingual object rejected",
+      "pass": true,
+      "errors": [
+        "trail response background note: bilingual text missing"
+      ],
+      "cycles": []
+    },
+    {
+      "name": "nonboolean prerequisite rejected",
+      "pass": true,
+      "errors": [
+        "edge integral:work-energy: prerequisite must be explicit boolean"
+      ],
+      "cycles": []
+    }
+  ]
+}

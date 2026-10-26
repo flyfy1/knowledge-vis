@@ -1,0 +1,17 @@
+[
+  {
+    "test": "first rendered explanation en",
+    "data": {
+      "question": "General Multiplication = Moduli Multiply, Arguments Add: the Checking Bench",
+      "explanation": "This step answers: multiplying by an arbitrary complex number — what happens to modulus and to angle? First verify the two halves separately: multiplying by a positive real (preset 2 below) only scales and never turns; multiplying by a number of modulus 1 only turns and never scales. An arbitrary multiplier z₂ stacks the two. Drag z₁ (the multiplicand) and z₂ (the multiplier); the green arrow is the product z₁·z₂. The bench below checks three groups, all computed live: the modulus check, the angle check, and an algebraic route (a₁a₂ − b₁b₂, a₁b₂ + b₁a₂) — two roads, one source, cross-verified.",
+      "scope": "Conclusion: the multiplication law — moduli multiply, arguments add. Multiplying by a number scales you by its modulus and rotates you by its argument. Conditions, stated: after adding, angles must be normalised into the principal interval (340° and −20° are the same direction; this page writes −20°); if either factor is 0, the product is the origin and has no argument."
+    }
+  },
+  {
+    "test": "failure",
+    "data": {
+      "message": "The expression evaluated to a falsy value:\n\n  A(raw.product[0].includes(expected[0].toFixed(3).replace('-', '−'))||raw.product[0].includes(Math.abs(expected[0]).toFixed(3)))\n",
+      "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  A(raw.product[0].includes(expected[0].toFixed(3).replace('-', '−'))||raw.product[0].includes(Math.abs(expected[0]).toFixed(3)))\n\n    at /Users/songyy/Documents/Codex/2026-10-25/task-5/reviewer-audit/final-walk.cjs:6:632"
+    }
+  }
+]

@@ -1,0 +1,22 @@
+Step 6 · Finale
+
+Before you sample, learn to squint
+
+Anti-aliasing suppresses high frequencies before decimation. Both sides use the same source and decimator; the right side first applies a finite box convolution twice. Compare how much moiré weakens and how much detail is lost. A box filter has sidelobes and cannot guarantee zero aliasing; results depend on the pattern and stride. This image example is not an ideal brick-wall low-pass.
+
+Direct decimation
+
+Blur first, then decimate
+
+Decimation stride (take one pixel every …) 6
+Scene + fine stripes
+Vertical stripes
+
+Stride 6 px · both sides keep 74×47 samples · the right side applies a box blur (radius 3 px, two passes) before decimating
+
+Audio also needs anti-alias filtering before analog-to-digital conversion. For a 20 kHz passband and 44.1 kHz sample rate, the Nyquist frequency is 22.05 kHz, leaving a 2.05 kHz transition region for a practical filter to attenuate; it does not cut abruptly at 20 kHz. This illustrates a bandwidth budget, not the historical derivation of 44.1 kHz. Stopband attenuation, hearing limits and hardware performance need separate specifications.
+
+The sampling theorem does not really say “sample as fast as you can”. It says “decide what to give up first, then sample”: you surrender the high-frequency detail precisely so it cannot dress up as low frequency and lie to you. Two threads from this page — why spectra clone themselves, and why blur can save the day — are the home turf of the Fourier and convolution pages; feel free to go back and compare notes.
+
+← Back to Fourier: why spectra clone themselves
+On to convolution: what the blur kernel is doing →

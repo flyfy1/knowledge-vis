@@ -1,0 +1,2299 @@
+{
+  "purpose": "Cumulative affected-target ledger from this lane receipts, not git diff attribution and not every repository change. Historical receipts retain old hashes; later owners supersede them. Evidence-tree files are separately indexed by principal reports. Shared current files include other work.",
+  "sourceReceiptRoot": "receipts/",
+  "sourceReceiptFiles": [
+    "atlas-motion/apply-receipt.json",
+    "atlas-response/apply.json",
+    "atlas-rates/apply.json",
+    "atlas-travel/applied.json",
+    "atlas-travel/archive-applied.json",
+    "atlas-continuity/applied.json",
+    "atlas-continuity/archive-applied.json",
+    "atlas-foundations/applied.json",
+    "atlas-foundations/archive-applied.json",
+    "atlas-work/applied.json",
+    "atlas-work/archive-applied.json",
+    "atlas-audit/applied.json",
+    "complex-keyboard/applied.json",
+    "pinhole-bridge/applied.json",
+    "refraction-audit/applied.json",
+    "lens-audit/applied.json",
+    "tangent-audit/applied.json",
+    "integration-audit/applied.json"
+  ],
+  "files": [
+    {
+      "file": "CONCEPT-MAP.md",
+      "receipts": [
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "70e338ee3429b808b388e9debb2bb6bd8bffb0e910bda2727c51a6a607de502d"
+        },
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "a2ba65da1ff00ea28943320ec78339c9044ce72736a02978aa476b101749be68"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "a2ba65da1ff00ea28943320ec78339c9044ce72736a02978aa476b101749be68",
+      "sharedScope": "Only lane-specific registration/descriptions/map/index edits; current full file includes other campaign increments and is not solely authored by this lane.",
+      "exists": true,
+      "currentSHA256": "a2ba65da1ff00ea28943320ec78339c9044ce72736a02978aa476b101749be68",
+      "matchesLatestReceipt": true,
+      "kind": "contract/index"
+    },
+    {
+      "file": "README.md",
+      "receipts": [],
+      "sharedScope": "Only lane-specific registration/descriptions/map/index edits; current full file includes other campaign increments and is not solely authored by this lane.",
+      "exists": true,
+      "currentSHA256": "0e453101a0c812f5cc5f9d002c2aeec1c1db210b396ad1dafea26ad33e03c461",
+      "kind": "contract/index"
+    },
+    {
+      "file": "atlas/BRIEF.md",
+      "receipts": [
+        {
+          "iteration": "atlas-motion",
+          "receipt": "atlas-motion/apply-receipt.json",
+          "recordedSHA256": "1d22c4c213a991ac514a29c6f0ef875811b2e726831f670f31e7b6e7cde10775"
+        },
+        {
+          "iteration": "atlas-response",
+          "receipt": "atlas-response/apply.json",
+          "recordedSHA256": "c7fa428c43a66193c75b8ef5d4dafd679b40c19accd60c5903e11dabf0e68e4a"
+        },
+        {
+          "iteration": "atlas-rates",
+          "receipt": "atlas-rates/apply.json",
+          "recordedSHA256": "e5d5d0acd8dcd8537ce642688351b66c7785148ee7957762b632a05a807b12ef"
+        },
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/archive-applied.json",
+          "recordedSHA256": "49223c3a98514843bf6e2f5bd6c35797f16b134770a37e0311747e6c3e370195"
+        },
+        {
+          "iteration": "atlas-continuity",
+          "receipt": "atlas-continuity/archive-applied.json",
+          "recordedSHA256": "49df46b285aaeff26a3b8aa706a18365089b8a5033c0bc71ca36dd8a855c4122"
+        },
+        {
+          "iteration": "atlas-foundations",
+          "receipt": "atlas-foundations/archive-applied.json",
+          "recordedSHA256": "bcb1eb39541396162645b4282baf25cf639dcca8501048fc5191f40202481d39"
+        },
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/archive-applied.json",
+          "recordedSHA256": "442776501f601173a5d4cbc0751793c482c6310720238be9d41fb367a74707b9"
+        },
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "b537d5d3b9123beae2a1682c9333ee8d284222b8216d6cb6f5d3c3a87eed8d1f"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "b537d5d3b9123beae2a1682c9333ee8d284222b8216d6cb6f5d3c3a87eed8d1f",
+      "exists": true,
+      "currentSHA256": "b537d5d3b9123beae2a1682c9333ee8d284222b8216d6cb6f5d3c3a87eed8d1f",
+      "matchesLatestReceipt": true,
+      "kind": "contract/index"
+    },
+    {
+      "file": "atlas/README.md",
+      "receipts": [
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/archive-applied.json",
+          "recordedSHA256": "5f3a3c4cfe641d12e511bd0ca169bfbeb28c4b89849d9caf78ac48cca9b43bd2"
+        },
+        {
+          "iteration": "atlas-continuity",
+          "receipt": "atlas-continuity/archive-applied.json",
+          "recordedSHA256": "f9fc32e97def680a662a97e18bd747c1c8b96e0bb6dcc94a49ecbd6a7babc5be"
+        },
+        {
+          "iteration": "atlas-foundations",
+          "receipt": "atlas-foundations/archive-applied.json",
+          "recordedSHA256": "c51c3d4f94c7ae365f551a05cde6a5e2f87db0b4103fe0497c8ce169c3c69c85"
+        },
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/archive-applied.json",
+          "recordedSHA256": "96966e7876d97c3cb37c9ecf8f1d11e29eb3ed051583ec9daf2d00c3c3f50790"
+        },
+        {
+          "iteration": "atlas-audit",
+          "receipt": "atlas-audit/applied.json",
+          "recordedSHA256": "0670937f646adda2d1048e39b3d38ab00bef4e0e28da92529fd0353300559bab"
+        },
+        {
+          "iteration": "complex-keyboard",
+          "receipt": "complex-keyboard/applied.json",
+          "recordedSHA256": "5eb11f4f950930957bdc701fc3eaa7b406b0464128c5118d6c92953954050aec"
+        },
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "e9c932288307aa0375fc83a8bd3fc0ff0938a520e58a5b0a936287bea104b613"
+        },
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "53e398a6936a53cd5834351de19fcdf2bc312bd9a27e770567d66bb9fa6e8247"
+        },
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "a6296264f21ed7057e0a7119c158e92cf18524d924efecaf739e0922d9393413"
+        },
+        {
+          "iteration": "tangent-audit",
+          "receipt": "tangent-audit/applied.json",
+          "recordedSHA256": "13d2d80f2603a04b89f1aa1ed3443608528bf5e43350fd4a685146acbf11533b"
+        },
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "4a8f628f2a7ae8704194cf4815782392abd830e76543eda411df3f38fcd5a00d"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "4a8f628f2a7ae8704194cf4815782392abd830e76543eda411df3f38fcd5a00d",
+      "exists": true,
+      "currentSHA256": "4a8f628f2a7ae8704194cf4815782392abd830e76543eda411df3f38fcd5a00d",
+      "matchesLatestReceipt": true,
+      "kind": "contract/index"
+    },
+    {
+      "file": "atlas/app.js",
+      "receipts": [
+        {
+          "iteration": "atlas-motion",
+          "receipt": "atlas-motion/apply-receipt.json",
+          "recordedSHA256": "331f4e88f7e38e45fda5327bee129a308910aa54e5740f9df05486425fe1345c"
+        },
+        {
+          "iteration": "atlas-response",
+          "receipt": "atlas-response/apply.json",
+          "recordedSHA256": "5b5be28bbf314c0b4904ee9048bce99eedf440350ea909070011c0a0e6441a99"
+        },
+        {
+          "iteration": "atlas-rates",
+          "receipt": "atlas-rates/apply.json",
+          "recordedSHA256": "44885a84d593863fa3fabc5d38ad70847b890f4585aad4e5df5c5d511b71ac4f"
+        },
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/applied.json",
+          "recordedSHA256": "2b07f8f7535050f3d02eb2b1bf39e606e489775c0e3e600d1c74473abeeecbaa"
+        },
+        {
+          "iteration": "atlas-continuity",
+          "receipt": "atlas-continuity/applied.json",
+          "recordedSHA256": "f3cc35c2276e5e7b41a1bbc40c0cd63d8078d7492054e1a5de2718965872a7be"
+        },
+        {
+          "iteration": "atlas-foundations",
+          "receipt": "atlas-foundations/applied.json",
+          "recordedSHA256": "59447b0d6e1ed406acfed63c31d225912c53c6830d7e99891f956071db2cc45c"
+        },
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/applied.json",
+          "recordedSHA256": "83b01b4c7ce3b1d198fd396c947155d8718458abb7c5213b986fb0b5f2fb2586"
+        },
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "2a121290a26c1064b444c214236c7f3b8385a862bfa83010388baf03a73b7ef0"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "2a121290a26c1064b444c214236c7f3b8385a862bfa83010388baf03a73b7ef0",
+      "exists": true,
+      "currentSHA256": "2a121290a26c1064b444c214236c7f3b8385a862bfa83010388baf03a73b7ef0",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "atlas/data.js",
+      "receipts": [
+        {
+          "iteration": "atlas-motion",
+          "receipt": "atlas-motion/apply-receipt.json",
+          "recordedSHA256": "0816e1e40ad95f2930cfd81d519b0378284377df4c81d4ee1657281453dea700"
+        },
+        {
+          "iteration": "atlas-rates",
+          "receipt": "atlas-rates/apply.json",
+          "recordedSHA256": "92abc2b77edf8296db1a5154ab6393bce0a61d5de1ace1de73f0395a0eebc178"
+        },
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/applied.json",
+          "recordedSHA256": "ab09238b0007dfdeb5966cb13a4e032edd9e474380976622ff29a4a50519414d"
+        },
+        {
+          "iteration": "atlas-foundations",
+          "receipt": "atlas-foundations/applied.json",
+          "recordedSHA256": "523837656e22e8bdd850bb786c647f9e99405f81c0bb5a4b4aa91f677a6da0f8"
+        },
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/applied.json",
+          "recordedSHA256": "a9371e9e1dec3e7124f55a032a39ebde76fe9edac2972b0bb8749ac72a33ea30"
+        },
+        {
+          "iteration": "atlas-audit",
+          "receipt": "atlas-audit/applied.json",
+          "recordedSHA256": "6c54ec1c8a159d6b525eb905eb8941c05d974409c55ee3210a9fd00d5c3f4d3b"
+        },
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "6fab936e868adb5dc37f8af6a5afa941f8c09ada87894a6aa0a055dc15154d85"
+        },
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "33d62154835a734bbfc8612d0d73ba911afce1df6844046f289f94a225e8f9c0"
+        }
+      ],
+      "latestReceipt": "refraction-audit",
+      "latestRecordedSHA256": "33d62154835a734bbfc8612d0d73ba911afce1df6844046f289f94a225e8f9c0",
+      "exists": true,
+      "currentSHA256": "33d62154835a734bbfc8612d0d73ba911afce1df6844046f289f94a225e8f9c0",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "atlas/index.html",
+      "receipts": [
+        {
+          "iteration": "atlas-motion",
+          "receipt": "atlas-motion/apply-receipt.json",
+          "recordedSHA256": "fd5afc5bca166b7c002b8c51386ce8ee107f5b4a4a0928fedc29538e7efcf391"
+        },
+        {
+          "iteration": "atlas-response",
+          "receipt": "atlas-response/apply.json",
+          "recordedSHA256": "e729d45343d259664e700ef3162e4b8102a2d8a1bb88d9b5bc42f67ac91dd693"
+        },
+        {
+          "iteration": "atlas-rates",
+          "receipt": "atlas-rates/apply.json",
+          "recordedSHA256": "c4640a487932d8b59bdde6c5de783c0485aada2be29950b1252cce9fd91d0cc7"
+        },
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/applied.json",
+          "recordedSHA256": "3dd039fe18ac38547e12eba4cb4fd6406e24c16781fa8459dcfda2d4dba626d1"
+        },
+        {
+          "iteration": "atlas-continuity",
+          "receipt": "atlas-continuity/applied.json",
+          "recordedSHA256": "9dc82b442cee995501f218d077b27c3d5964aeb0c64a21114c9d2fe0cf353f6c"
+        },
+        {
+          "iteration": "atlas-foundations",
+          "receipt": "atlas-foundations/applied.json",
+          "recordedSHA256": "b288ef3c6633a0cd471784cd2a0193f9068453ad73d6be97f99c3af0277c0bd2"
+        },
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/applied.json",
+          "recordedSHA256": "4425ee3feb502d9af2e0a51d48db2b0ba45e90d16c04271bbcc80c9555d2a3fc"
+        },
+        {
+          "iteration": "atlas-audit",
+          "receipt": "atlas-audit/applied.json",
+          "recordedSHA256": "982efa60050784d1a919bd2fa238c902e215a06f0e20ed0bb3a45781a87dc83f"
+        },
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "81526c624431f53377087978ce85ef81c3a50df488c5c78ab93fee2a26a03b3b"
+        },
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "a022e9f4b1d0d32546bf005f2f5e5745b42c45dcf83401d015240fb9916a89aa"
+        }
+      ],
+      "latestReceipt": "refraction-audit",
+      "latestRecordedSHA256": "a022e9f4b1d0d32546bf005f2f5e5745b42c45dcf83401d015240fb9916a89aa",
+      "exists": true,
+      "currentSHA256": "a022e9f4b1d0d32546bf005f2f5e5745b42c45dcf83401d015240fb9916a89aa",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "atlas/motion-bridge.css",
+      "receipts": [
+        {
+          "iteration": "atlas-motion",
+          "receipt": "atlas-motion/apply-receipt.json",
+          "recordedSHA256": "dc5fb8509eea9eb95e59f5dba780ca06477feae7a949980804d7dbbb231eb99d"
+        },
+        {
+          "iteration": "atlas-rates",
+          "receipt": "atlas-rates/apply.json",
+          "recordedSHA256": "37099a3deae6de988feb1b653ee26c631d6a851acd2f95f963b48a4a6f037dd0"
+        },
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/applied.json",
+          "recordedSHA256": "0d6af46c1c11b4fa848076ca94f14972c561b363f0a91e59e238d49f84ff5ce9"
+        },
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/applied.json",
+          "recordedSHA256": "2f4bd5039b38c7dab22b3ec08055f6357981b05c80cb6a8379c532112fe5e252"
+        }
+      ],
+      "latestReceipt": "atlas-work",
+      "latestRecordedSHA256": "2f4bd5039b38c7dab22b3ec08055f6357981b05c80cb6a8379c532112fe5e252",
+      "exists": true,
+      "currentSHA256": "2f4bd5039b38c7dab22b3ec08055f6357981b05c80cb6a8379c532112fe5e252",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "atlas/motion-bridge.js",
+      "receipts": [
+        {
+          "iteration": "atlas-motion",
+          "receipt": "atlas-motion/apply-receipt.json",
+          "recordedSHA256": "01b11963b09164b68d9fc030a015c7ed94d7031fe9971cc12c52ce701eac9b38"
+        },
+        {
+          "iteration": "atlas-rates",
+          "receipt": "atlas-rates/apply.json",
+          "recordedSHA256": "3eb13565231b37880fd1ced5271a4dc9ea15823e75e3eb347a8398e283a74b63"
+        },
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/applied.json",
+          "recordedSHA256": "385dcb5c4a0e9d31368867ad419626d86f6cc2d426870c0b36aa58c82bf47e68"
+        },
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/applied.json",
+          "recordedSHA256": "384fc8c7edea52a36fdffa2b78a3a0104baa02dcc91289dda8385946bb254cd1"
+        }
+      ],
+      "latestReceipt": "atlas-work",
+      "latestRecordedSHA256": "384fc8c7edea52a36fdffa2b78a3a0104baa02dcc91289dda8385946bb254cd1",
+      "exists": true,
+      "currentSHA256": "384fc8c7edea52a36fdffa2b78a3a0104baa02dcc91289dda8385946bb254cd1",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "atlas/motion-model.js",
+      "receipts": [
+        {
+          "iteration": "atlas-motion",
+          "receipt": "atlas-motion/apply-receipt.json",
+          "recordedSHA256": "ccfac35f52c677405df64193cbdd6e8f378c36531605c4ef1d380cdbc490cf36"
+        },
+        {
+          "iteration": "atlas-rates",
+          "receipt": "atlas-rates/apply.json",
+          "recordedSHA256": "478c999bc2ce1d6fe391ca0bdb210739f56699133097d867a554899fe15bc700"
+        },
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/applied.json",
+          "recordedSHA256": "74ac82ba80afaba15039909a48ad5695d4dd20edd2ff69b5f4aeec32cc779eed"
+        },
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/applied.json",
+          "recordedSHA256": "66539b3b760087ad1971cd04b53a243b2f42cb6d78d2e62145de83e00fb5ffd5"
+        }
+      ],
+      "latestReceipt": "atlas-work",
+      "latestRecordedSHA256": "66539b3b760087ad1971cd04b53a243b2f42cb6d78d2e62145de83e00fb5ffd5",
+      "exists": true,
+      "currentSHA256": "66539b3b760087ad1971cd04b53a243b2f42cb6d78d2e62145de83e00fb5ffd5",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "atlas/response-bridge.css",
+      "receipts": [
+        {
+          "iteration": "atlas-response",
+          "receipt": "atlas-response/apply.json",
+          "recordedSHA256": "5a2d53fa2028f58c7631a579e49df378c048e0fda9cca3096bf0a0b3ccea65c9"
+        }
+      ],
+      "latestReceipt": "atlas-response",
+      "latestRecordedSHA256": "5a2d53fa2028f58c7631a579e49df378c048e0fda9cca3096bf0a0b3ccea65c9",
+      "exists": true,
+      "currentSHA256": "5a2d53fa2028f58c7631a579e49df378c048e0fda9cca3096bf0a0b3ccea65c9",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "atlas/response-bridge.js",
+      "receipts": [
+        {
+          "iteration": "atlas-response",
+          "receipt": "atlas-response/apply.json",
+          "recordedSHA256": "72d17ebfc2d2bbac9dbf944232ee211b9a0979b33aa5a9dd0385e2b8553cb153"
+        }
+      ],
+      "latestReceipt": "atlas-response",
+      "latestRecordedSHA256": "72d17ebfc2d2bbac9dbf944232ee211b9a0979b33aa5a9dd0385e2b8553cb153",
+      "exists": true,
+      "currentSHA256": "72d17ebfc2d2bbac9dbf944232ee211b9a0979b33aa5a9dd0385e2b8553cb153",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "atlas/response-model.js",
+      "receipts": [
+        {
+          "iteration": "atlas-response",
+          "receipt": "atlas-response/apply.json",
+          "recordedSHA256": "1d82a3efc2a9cc743b1357469017caf3150e3a0b5135e8dd1b7fca3f06d30a34"
+        }
+      ],
+      "latestReceipt": "atlas-response",
+      "latestRecordedSHA256": "1d82a3efc2a9cc743b1357469017caf3150e3a0b5135e8dd1b7fca3f06d30a34",
+      "exists": true,
+      "currentSHA256": "1d82a3efc2a9cc743b1357469017caf3150e3a0b5135e8dd1b7fca3f06d30a34",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "atlas/style.css",
+      "receipts": [
+        {
+          "iteration": "atlas-response",
+          "receipt": "atlas-response/apply.json",
+          "recordedSHA256": "773a7af15f13bb15bf0e0f250e0af04b196c3e47cb7245a5adaacdfdc2541827"
+        },
+        {
+          "iteration": "atlas-continuity",
+          "receipt": "atlas-continuity/applied.json",
+          "recordedSHA256": "281c09dcc91c0f6657c244bf087a9711269e03741f163159c063c7cf74bea16f"
+        },
+        {
+          "iteration": "atlas-foundations",
+          "receipt": "atlas-foundations/applied.json",
+          "recordedSHA256": "6fbfb42569a91ab2b0c461320cd33b4084cde8e6ce61587528ed1133c0002dbe"
+        }
+      ],
+      "latestReceipt": "atlas-foundations",
+      "latestRecordedSHA256": "6fbfb42569a91ab2b0c461320cd33b4084cde8e6ce61587528ed1133c0002dbe",
+      "exists": true,
+      "currentSHA256": "6fbfb42569a91ab2b0c461320cd33b4084cde8e6ce61587528ed1133c0002dbe",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "atlas/tests/browser.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-rates",
+          "receipt": "atlas-rates/apply.json",
+          "recordedSHA256": "b4c0f663da91af84cf4dac6117682570d0d0c2894993c3b0686af905cc8dd664"
+        },
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/applied.json",
+          "recordedSHA256": "de04b17db595ded5d6b72d4792a8e30de60be7c3c06391236a76c474a7e08fbd"
+        },
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/applied.json",
+          "recordedSHA256": "cc6719bdd49477735d756847f9156cf1ffbc1237dd6269711d855fce5da75528"
+        },
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "18b72bc55f63521a50e2f5306a120e6dc17bcb1c0ef72cc63279ec50a143ff39"
+        },
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "e8d985d71f5239faf695cc250130516ac30e68fcc9731eb7b242a6547955179b"
+        }
+      ],
+      "latestReceipt": "refraction-audit",
+      "latestRecordedSHA256": "e8d985d71f5239faf695cc250130516ac30e68fcc9731eb7b242a6547955179b",
+      "exists": true,
+      "currentSHA256": "e8d985d71f5239faf695cc250130516ac30e68fcc9731eb7b242a6547955179b",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/continuity-browser.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-continuity",
+          "receipt": "atlas-continuity/applied.json",
+          "recordedSHA256": "ba58558bba9141e7e02392622211d624688d0bc0ed632d0aee58a624607ea67b"
+        }
+      ],
+      "latestReceipt": "atlas-continuity",
+      "latestRecordedSHA256": "ba58558bba9141e7e02392622211d624688d0bc0ed632d0aee58a624607ea67b",
+      "exists": true,
+      "currentSHA256": "ba58558bba9141e7e02392622211d624688d0bc0ed632d0aee58a624607ea67b",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/course-audit-browser.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-audit",
+          "receipt": "atlas-audit/applied.json",
+          "recordedSHA256": "7373f3e601ef14e1531868cb543cd72f58f70ab7f51ed2f79a5ca26d9bc42693"
+        }
+      ],
+      "latestReceipt": "atlas-audit",
+      "latestRecordedSHA256": "7373f3e601ef14e1531868cb543cd72f58f70ab7f51ed2f79a5ca26d9bc42693",
+      "exists": true,
+      "currentSHA256": "7373f3e601ef14e1531868cb543cd72f58f70ab7f51ed2f79a5ca26d9bc42693",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/coverage.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-audit",
+          "receipt": "atlas-audit/applied.json",
+          "recordedSHA256": "1bd2639dbbbe792b517457c7bede9ca074f55741b051adfdb8df3c756cedd4d0"
+        },
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "e5be77be6fa4046d30f54b0994b26752100602c640106f436f0f5a84b899cedb"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "e5be77be6fa4046d30f54b0994b26752100602c640106f436f0f5a84b899cedb",
+      "exists": true,
+      "currentSHA256": "e5be77be6fa4046d30f54b0994b26752100602c640106f436f0f5a84b899cedb",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/data-quality-browser.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-audit",
+          "receipt": "atlas-audit/applied.json",
+          "recordedSHA256": "b86aea0a311f8dd2cbdcd1e34326c3f2d543f28c854bed30d6fc4e21080bce85"
+        }
+      ],
+      "latestReceipt": "atlas-audit",
+      "latestRecordedSHA256": "b86aea0a311f8dd2cbdcd1e34326c3f2d543f28c854bed30d6fc4e21080bce85",
+      "exists": true,
+      "currentSHA256": "b86aea0a311f8dd2cbdcd1e34326c3f2d543f28c854bed30d6fc4e21080bce85",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/data-quality-core.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-audit",
+          "receipt": "atlas-audit/applied.json",
+          "recordedSHA256": "ce992dd6e035655edff2f5d1b7b5277571902191a617aa5ae3ef5fbc45290b6c"
+        }
+      ],
+      "latestReceipt": "atlas-audit",
+      "latestRecordedSHA256": "ce992dd6e035655edff2f5d1b7b5277571902191a617aa5ae3ef5fbc45290b6c",
+      "exists": true,
+      "currentSHA256": "ce992dd6e035655edff2f5d1b7b5277571902191a617aa5ae3ef5fbc45290b6c",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/data-quality.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-audit",
+          "receipt": "atlas-audit/applied.json",
+          "recordedSHA256": "bd9429340612e70b066270cc4bd5072be156644c43c3469b3150882d9a1605a6"
+        }
+      ],
+      "latestReceipt": "atlas-audit",
+      "latestRecordedSHA256": "bd9429340612e70b066270cc4bd5072be156644c43c3469b3150882d9a1605a6",
+      "exists": true,
+      "currentSHA256": "bd9429340612e70b066270cc4bd5072be156644c43c3469b3150882d9a1605a6",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/foundations-browser.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-foundations",
+          "receipt": "atlas-foundations/applied.json",
+          "recordedSHA256": "d2867f4742c885bbb5cb9925500c45a713966b7f7599902f042daeb024d30113"
+        }
+      ],
+      "latestReceipt": "atlas-foundations",
+      "latestRecordedSHA256": "d2867f4742c885bbb5cb9925500c45a713966b7f7599902f042daeb024d30113",
+      "exists": true,
+      "currentSHA256": "d2867f4742c885bbb5cb9925500c45a713966b7f7599902f042daeb024d30113",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/foundations-core.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-foundations",
+          "receipt": "atlas-foundations/applied.json",
+          "recordedSHA256": "6011d397857aafc181f209ab79b916ab57389092d06d0bf85ff0fc4a63f737c3"
+        }
+      ],
+      "latestReceipt": "atlas-foundations",
+      "latestRecordedSHA256": "6011d397857aafc181f209ab79b916ab57389092d06d0bf85ff0fc4a63f737c3",
+      "exists": true,
+      "currentSHA256": "6011d397857aafc181f209ab79b916ab57389092d06d0bf85ff0fc4a63f737c3",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/legacy-signed-area.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/applied.json",
+          "recordedSHA256": "38f8f18fde43e0abe8938a924da9307053bf1682560abdae0dd566081fb34ccc"
+        }
+      ],
+      "latestReceipt": "atlas-travel",
+      "latestRecordedSHA256": "38f8f18fde43e0abe8938a924da9307053bf1682560abdae0dd566081fb34ccc",
+      "exists": true,
+      "currentSHA256": "38f8f18fde43e0abe8938a924da9307053bf1682560abdae0dd566081fb34ccc",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/motion-browser.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-rates",
+          "receipt": "atlas-rates/apply.json",
+          "recordedSHA256": "11a48a66913e1b89c027afde5fba95f4567da14ce183bb8d5129939e164b5d8a"
+        }
+      ],
+      "latestReceipt": "atlas-rates",
+      "latestRecordedSHA256": "11a48a66913e1b89c027afde5fba95f4567da14ce183bb8d5129939e164b5d8a",
+      "exists": true,
+      "currentSHA256": "11a48a66913e1b89c027afde5fba95f4567da14ce183bb8d5129939e164b5d8a",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/motion-core.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-motion",
+          "receipt": "atlas-motion/apply-receipt.json",
+          "recordedSHA256": "9f4bf441ef156b8f27721282f4495347dfe0b415d3348e7afc4ff0373c835742"
+        }
+      ],
+      "latestReceipt": "atlas-motion",
+      "latestRecordedSHA256": "9f4bf441ef156b8f27721282f4495347dfe0b415d3348e7afc4ff0373c835742",
+      "exists": true,
+      "currentSHA256": "9f4bf441ef156b8f27721282f4495347dfe0b415d3348e7afc4ff0373c835742",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/rates-core.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-rates",
+          "receipt": "atlas-rates/apply.json",
+          "recordedSHA256": "1708059bbe7dfaac3871b04870d7e2f2df69e04b2d3057540041a5e01dc26245"
+        }
+      ],
+      "latestReceipt": "atlas-rates",
+      "latestRecordedSHA256": "1708059bbe7dfaac3871b04870d7e2f2df69e04b2d3057540041a5e01dc26245",
+      "exists": true,
+      "currentSHA256": "1708059bbe7dfaac3871b04870d7e2f2df69e04b2d3057540041a5e01dc26245",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/response-browser.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-foundations",
+          "receipt": "atlas-foundations/applied.json",
+          "recordedSHA256": "21f4455905c4b5a7b0038c2a9d989833aeb8c1dc06bed8343ddddfa0e3c9e815"
+        }
+      ],
+      "latestReceipt": "atlas-foundations",
+      "latestRecordedSHA256": "21f4455905c4b5a7b0038c2a9d989833aeb8c1dc06bed8343ddddfa0e3c9e815",
+      "exists": true,
+      "currentSHA256": "21f4455905c4b5a7b0038c2a9d989833aeb8c1dc06bed8343ddddfa0e3c9e815",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/response-core.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-response",
+          "receipt": "atlas-response/apply.json",
+          "recordedSHA256": "be50922862ba2ec9d411af6141b458efec6e4a0aedce956427e45007f251d449"
+        }
+      ],
+      "latestReceipt": "atlas-response",
+      "latestRecordedSHA256": "be50922862ba2ec9d411af6141b458efec6e4a0aedce956427e45007f251d449",
+      "exists": true,
+      "currentSHA256": "be50922862ba2ec9d411af6141b458efec6e4a0aedce956427e45007f251d449",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/travel-browser.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/archive-applied.json",
+          "recordedSHA256": "c45c1926e3cfce5976caa5581389d525db1b982d2c285e4fb3f77ddfddd51946"
+        }
+      ],
+      "latestReceipt": "atlas-travel",
+      "latestRecordedSHA256": "c45c1926e3cfce5976caa5581389d525db1b982d2c285e4fb3f77ddfddd51946",
+      "exists": true,
+      "currentSHA256": "c45c1926e3cfce5976caa5581389d525db1b982d2c285e4fb3f77ddfddd51946",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/travel-core.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/applied.json",
+          "recordedSHA256": "12f1e0aefa129e528b8b685aa1d03348a349b0c21e922a2786ae9f5346793172"
+        }
+      ],
+      "latestReceipt": "atlas-travel",
+      "latestRecordedSHA256": "12f1e0aefa129e528b8b685aa1d03348a349b0c21e922a2786ae9f5346793172",
+      "exists": true,
+      "currentSHA256": "12f1e0aefa129e528b8b685aa1d03348a349b0c21e922a2786ae9f5346793172",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/work-browser.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/applied.json",
+          "recordedSHA256": "8d40e7db40e7b186d0cf255b9ede361d6f281a99ff1fdf11d721b770f7085da8"
+        }
+      ],
+      "latestReceipt": "atlas-work",
+      "latestRecordedSHA256": "8d40e7db40e7b186d0cf255b9ede361d6f281a99ff1fdf11d721b770f7085da8",
+      "exists": true,
+      "currentSHA256": "8d40e7db40e7b186d0cf255b9ede361d6f281a99ff1fdf11d721b770f7085da8",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "atlas/tests/work-core.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/applied.json",
+          "recordedSHA256": "1a1e4069b5234c98189b89025f9ca24393b1515d6768c678bbbfc52cb5ac57ac"
+        }
+      ],
+      "latestReceipt": "atlas-work",
+      "latestRecordedSHA256": "1a1e4069b5234c98189b89025f9ca24393b1515d6768c678bbbfc52cb5ac57ac",
+      "exists": true,
+      "currentSHA256": "1a1e4069b5234c98189b89025f9ca24393b1515d6768c678bbbfc52cb5ac57ac",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "complex-numbers/BRIEF.md",
+      "receipts": [
+        {
+          "iteration": "complex-keyboard",
+          "receipt": "complex-keyboard/applied.json",
+          "recordedSHA256": "ea19d82e4ba49fd32b9e6b8b9e24d4a0e25be493338a8b73e372a342ec25af47"
+        }
+      ],
+      "latestReceipt": "complex-keyboard",
+      "latestRecordedSHA256": "ea19d82e4ba49fd32b9e6b8b9e24d4a0e25be493338a8b73e372a342ec25af47",
+      "exists": true,
+      "currentSHA256": "ea19d82e4ba49fd32b9e6b8b9e24d4a0e25be493338a8b73e372a342ec25af47",
+      "matchesLatestReceipt": true,
+      "kind": "contract/index"
+    },
+    {
+      "file": "complex-numbers/app.js",
+      "receipts": [
+        {
+          "iteration": "complex-keyboard",
+          "receipt": "complex-keyboard/applied.json",
+          "recordedSHA256": "90bc30fc3c1e1fb1314dcab025542aa051217b5f4bfe949f9d8863c705ac633d"
+        }
+      ],
+      "latestReceipt": "complex-keyboard",
+      "latestRecordedSHA256": "90bc30fc3c1e1fb1314dcab025542aa051217b5f4bfe949f9d8863c705ac633d",
+      "exists": true,
+      "currentSHA256": "90bc30fc3c1e1fb1314dcab025542aa051217b5f4bfe949f9d8863c705ac633d",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "complex-numbers/i18n.js",
+      "receipts": [
+        {
+          "iteration": "complex-keyboard",
+          "receipt": "complex-keyboard/applied.json",
+          "recordedSHA256": "72d6becb21d850f7026799222cbb3e7d79b65212c4ee13d4b12c239c33e08f87"
+        }
+      ],
+      "latestReceipt": "complex-keyboard",
+      "latestRecordedSHA256": "72d6becb21d850f7026799222cbb3e7d79b65212c4ee13d4b12c239c33e08f87",
+      "exists": true,
+      "currentSHA256": "72d6becb21d850f7026799222cbb3e7d79b65212c4ee13d4b12c239c33e08f87",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "complex-numbers/index.html",
+      "receipts": [
+        {
+          "iteration": "complex-keyboard",
+          "receipt": "complex-keyboard/applied.json",
+          "recordedSHA256": "4043fcd1770551b08f9011a1be55ef9c42aae5c97304dca481cfc22f2eb6e968"
+        }
+      ],
+      "latestReceipt": "complex-keyboard",
+      "latestRecordedSHA256": "4043fcd1770551b08f9011a1be55ef9c42aae5c97304dca481cfc22f2eb6e968",
+      "exists": true,
+      "currentSHA256": "4043fcd1770551b08f9011a1be55ef9c42aae5c97304dca481cfc22f2eb6e968",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "complex-numbers/style.css",
+      "receipts": [
+        {
+          "iteration": "atlas-audit",
+          "receipt": "atlas-audit/applied.json",
+          "recordedSHA256": "6c757b01d148de43e3423405c24071392d497a89398015e43cbd4cc70d840eb2"
+        },
+        {
+          "iteration": "complex-keyboard",
+          "receipt": "complex-keyboard/applied.json",
+          "recordedSHA256": "a4e7cdd4eb0a44c611d7b00bf7c13394e551e744cd6c508ea12f42ba4605def3"
+        }
+      ],
+      "latestReceipt": "complex-keyboard",
+      "latestRecordedSHA256": "a4e7cdd4eb0a44c611d7b00bf7c13394e551e744cd6c508ea12f42ba4605def3",
+      "exists": true,
+      "currentSHA256": "a4e7cdd4eb0a44c611d7b00bf7c13394e551e744cd6c508ea12f42ba4605def3",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "complex-numbers/tests/keyboard-browser.cjs",
+      "receipts": [
+        {
+          "iteration": "complex-keyboard",
+          "receipt": "complex-keyboard/applied.json",
+          "recordedSHA256": "85aeb32410cc6379804ec45b3e9df1538c38b73c0ce2bcd0c113540d018f862d"
+        }
+      ],
+      "latestReceipt": "complex-keyboard",
+      "latestRecordedSHA256": "85aeb32410cc6379804ec45b3e9df1538c38b73c0ce2bcd0c113540d018f862d",
+      "exists": true,
+      "currentSHA256": "85aeb32410cc6379804ec45b3e9df1538c38b73c0ce2bcd0c113540d018f862d",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "complex-numbers/tests/keyboard-core.cjs",
+      "receipts": [
+        {
+          "iteration": "complex-keyboard",
+          "receipt": "complex-keyboard/applied.json",
+          "recordedSHA256": "312b9c9d47e5ebcdcf549373846ca961771304556606fa3947a21f92b6106590"
+        }
+      ],
+      "latestReceipt": "complex-keyboard",
+      "latestRecordedSHA256": "312b9c9d47e5ebcdcf549373846ca961771304556606fa3947a21f92b6106590",
+      "exists": true,
+      "currentSHA256": "312b9c9d47e5ebcdcf549373846ca961771304556606fa3947a21f92b6106590",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "derivative/i18n.js",
+      "receipts": [
+        {
+          "iteration": "atlas-rates",
+          "receipt": "atlas-rates/apply.json",
+          "recordedSHA256": "0187fd100e2ac58d1247a618cae8900c8995665ad24e105db1561ed77cae6b1a"
+        }
+      ],
+      "latestReceipt": "atlas-rates",
+      "latestRecordedSHA256": "0187fd100e2ac58d1247a618cae8900c8995665ad24e105db1561ed77cae6b1a",
+      "exists": true,
+      "currentSHA256": "0187fd100e2ac58d1247a618cae8900c8995665ad24e105db1561ed77cae6b1a",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "freqresp/i18n.js",
+      "receipts": [
+        {
+          "iteration": "atlas-response",
+          "receipt": "atlas-response/apply.json",
+          "recordedSHA256": "491b78cd428a76bf32f02385a0b7c028bd4bdfbfdfa20ef4e1365ee80bd5a578"
+        }
+      ],
+      "latestReceipt": "atlas-response",
+      "latestRecordedSHA256": "491b78cd428a76bf32f02385a0b7c028bd4bdfbfdfa20ef4e1365ee80bd5a578",
+      "exists": true,
+      "currentSHA256": "491b78cd428a76bf32f02385a0b7c028bd4bdfbfdfa20ef4e1365ee80bd5a578",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "frozen-bubble/BRIEF.md",
+      "receipts": [
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "a5a67b45c2718d225edeb9d59622568b4592cbb8bfdd70fd51ab10af2f331471"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "a5a67b45c2718d225edeb9d59622568b4592cbb8bfdd70fd51ab10af2f331471",
+      "exists": true,
+      "currentSHA256": "a5a67b45c2718d225edeb9d59622568b4592cbb8bfdd70fd51ab10af2f331471",
+      "matchesLatestReceipt": true,
+      "kind": "contract/index"
+    },
+    {
+      "file": "frozen-bubble/README.md",
+      "receipts": [],
+      "provenance": "initial task integrate.py copied this new frozen-bubble directory; original apply hash was not recorded",
+      "exists": true,
+      "currentSHA256": "316f1fc8b6e83faa5161e10b49369e343584352bc5a0d288f9749c3d947a2f8d",
+      "kind": "contract/index"
+    },
+    {
+      "file": "frozen-bubble/app.js",
+      "receipts": [],
+      "provenance": "initial task integrate.py copied this new frozen-bubble directory; original apply hash was not recorded",
+      "exists": true,
+      "currentSHA256": "163fe4c557e72222ac355f0fae93b4c2d2f7917e636fcec351325f15d8987d90",
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "frozen-bubble/i18n.js",
+      "receipts": [
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "107071762e8edd2e5a3fa2727220b329411f2dcec225b3e8d7d7d3deca3e3618"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "107071762e8edd2e5a3fa2727220b329411f2dcec225b3e8d7d7d3deca3e3618",
+      "exists": true,
+      "currentSHA256": "107071762e8edd2e5a3fa2727220b329411f2dcec225b3e8d7d7d3deca3e3618",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "frozen-bubble/index.html",
+      "receipts": [
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "ce16951cd378274045c50ec1500324299105c517cb5478e004a8f08bf75d01a6"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "ce16951cd378274045c50ec1500324299105c517cb5478e004a8f08bf75d01a6",
+      "exists": true,
+      "currentSHA256": "ce16951cd378274045c50ec1500324299105c517cb5478e004a8f08bf75d01a6",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "frozen-bubble/model.js",
+      "receipts": [],
+      "provenance": "initial task integrate.py copied this new frozen-bubble directory; original apply hash was not recorded",
+      "exists": true,
+      "currentSHA256": "9b746efb56cb5e52463012e33d262a4ba48c678ec7446fcfd747f69fc3df8650",
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "frozen-bubble/style.css",
+      "receipts": [],
+      "provenance": "initial task integrate.py copied this new frozen-bubble directory; original apply hash was not recorded",
+      "exists": true,
+      "currentSHA256": "1a59cee21437025aff1c69abf3403dbd93ec2283e548f427e7e1ecbfe8a1dcf5",
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "frozen-bubble/tests/browser.cjs",
+      "receipts": [],
+      "provenance": "initial task integrate.py copied this new frozen-bubble directory; original apply hash was not recorded",
+      "exists": true,
+      "currentSHA256": "459afcdff9a842b091592b3878640c67232e58b69c433c8ab94900c797cbbf99",
+      "kind": "test"
+    },
+    {
+      "file": "frozen-bubble/tests/core.cjs",
+      "receipts": [],
+      "provenance": "initial task integrate.py copied this new frozen-bubble directory; original apply hash was not recorded",
+      "exists": true,
+      "currentSHA256": "b870525441cd294f2d65bef095b46c0c0bf2b2219906e6c2a08aec43ab2ff240",
+      "kind": "test"
+    },
+    {
+      "file": "integral/i18n.js",
+      "receipts": [
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/applied.json",
+          "recordedSHA256": "5ad50c3ce2e5aee235074d151374542d5159319a169fd0a1c3296c38d3dd8b0f"
+        }
+      ],
+      "latestReceipt": "atlas-travel",
+      "latestRecordedSHA256": "5ad50c3ce2e5aee235074d151374542d5159319a169fd0a1c3296c38d3dd8b0f",
+      "exists": true,
+      "currentSHA256": "5ad50c3ce2e5aee235074d151374542d5159319a169fd0a1c3296c38d3dd8b0f",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "laplace/app.js",
+      "receipts": [
+        {
+          "iteration": "atlas-response",
+          "receipt": "atlas-response/apply.json",
+          "recordedSHA256": "7db85b77d9489ed8b263b6d497d27ad58695cb806b9757311c1791b8083bac15"
+        }
+      ],
+      "latestReceipt": "atlas-response",
+      "latestRecordedSHA256": "7db85b77d9489ed8b263b6d497d27ad58695cb806b9757311c1791b8083bac15",
+      "exists": true,
+      "currentSHA256": "7db85b77d9489ed8b263b6d497d27ad58695cb806b9757311c1791b8083bac15",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "laplace/i18n.js",
+      "receipts": [
+        {
+          "iteration": "atlas-response",
+          "receipt": "atlas-response/apply.json",
+          "recordedSHA256": "592cfa110e86db0ad297f19b4f424d6ce80302be8caa5e32d9699db8b995db89"
+        }
+      ],
+      "latestReceipt": "atlas-response",
+      "latestRecordedSHA256": "592cfa110e86db0ad297f19b4f424d6ce80302be8caa5e32d9699db8b995db89",
+      "exists": true,
+      "currentSHA256": "592cfa110e86db0ad297f19b4f424d6ce80302be8caa5e32d9699db8b995db89",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "laplace/tests/pole-boundaries.cjs",
+      "receipts": [
+        {
+          "iteration": "atlas-response",
+          "receipt": "atlas-response/apply.json",
+          "recordedSHA256": "798457661375f10f64b667fe44624a46d94028d0f32dcd998301710e540e3538"
+        }
+      ],
+      "latestReceipt": "atlas-response",
+      "latestRecordedSHA256": "798457661375f10f64b667fe44624a46d94028d0f32dcd998301710e540e3538",
+      "exists": true,
+      "currentSHA256": "798457661375f10f64b667fe44624a46d94028d0f32dcd998301710e540e3538",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "lens/BRIEF.md",
+      "receipts": [
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "402cd99f140dc64c4cf085a04ee703fdc1d257e644d7c166353bde6c59735bf6"
+        }
+      ],
+      "latestReceipt": "lens-audit",
+      "latestRecordedSHA256": "402cd99f140dc64c4cf085a04ee703fdc1d257e644d7c166353bde6c59735bf6",
+      "exists": true,
+      "currentSHA256": "402cd99f140dc64c4cf085a04ee703fdc1d257e644d7c166353bde6c59735bf6",
+      "matchesLatestReceipt": true,
+      "kind": "contract/index"
+    },
+    {
+      "file": "lens/app.js",
+      "receipts": [
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "4caee872df0e6ccf942f068f6e434900028ec118f2f6baaf70bea05cc198607c"
+        }
+      ],
+      "latestReceipt": "lens-audit",
+      "latestRecordedSHA256": "4caee872df0e6ccf942f068f6e434900028ec118f2f6baaf70bea05cc198607c",
+      "exists": true,
+      "currentSHA256": "4caee872df0e6ccf942f068f6e434900028ec118f2f6baaf70bea05cc198607c",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "lens/i18n.js",
+      "receipts": [
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "1973f6b548d15174676df73f94862e3af165bd7884b32959dd0f64cba59b6374"
+        }
+      ],
+      "latestReceipt": "lens-audit",
+      "latestRecordedSHA256": "1973f6b548d15174676df73f94862e3af165bd7884b32959dd0f64cba59b6374",
+      "exists": true,
+      "currentSHA256": "1973f6b548d15174676df73f94862e3af165bd7884b32959dd0f64cba59b6374",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "lens/index.html",
+      "receipts": [
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "f7313882a256dfd6b25a25b85861712b7340d7bc165d0e48a9bad9ad7ef4ef43"
+        }
+      ],
+      "latestReceipt": "lens-audit",
+      "latestRecordedSHA256": "f7313882a256dfd6b25a25b85861712b7340d7bc165d0e48a9bad9ad7ef4ef43",
+      "exists": true,
+      "currentSHA256": "f7313882a256dfd6b25a25b85861712b7340d7bc165d0e48a9bad9ad7ef4ef43",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "lens/style.css",
+      "receipts": [
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "9df3fae0c6210fa7aab68d2b0fec49eac329eb28d8d1622ad84a130c8e9c4f34"
+        }
+      ],
+      "latestReceipt": "lens-audit",
+      "latestRecordedSHA256": "9df3fae0c6210fa7aab68d2b0fec49eac329eb28d8d1622ad84a130c8e9c4f34",
+      "exists": true,
+      "currentSHA256": "9df3fae0c6210fa7aab68d2b0fec49eac329eb28d8d1622ad84a130c8e9c4f34",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "lens/tests/focus-browser.cjs",
+      "receipts": [
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "d807020026ffa2ff59ceb852ef16e49c2d1b56b7ee0b49752f4e0289f4f9e9ac"
+        }
+      ],
+      "latestReceipt": "lens-audit",
+      "latestRecordedSHA256": "d807020026ffa2ff59ceb852ef16e49c2d1b56b7ee0b49752f4e0289f4f9e9ac",
+      "exists": true,
+      "currentSHA256": "d807020026ffa2ff59ceb852ef16e49c2d1b56b7ee0b49752f4e0289f4f9e9ac",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "lens/tests/focus-core.cjs",
+      "receipts": [
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "6990c93a82899d7ddaf0cff06ed47f486a444dd2715bb52791720b99a5602c11"
+        }
+      ],
+      "latestReceipt": "lens-audit",
+      "latestRecordedSHA256": "6990c93a82899d7ddaf0cff06ed47f486a444dd2715bb52791720b99a5602c11",
+      "exists": true,
+      "currentSHA256": "6990c93a82899d7ddaf0cff06ed47f486a444dd2715bb52791720b99a5602c11",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "linear-functions/BRIEF.md",
+      "receipts": [
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "81616776a1aab69578c27dc9ab0bb0af585a16e27f972c2feb9ced174f4265c5"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "81616776a1aab69578c27dc9ab0bb0af585a16e27f972c2feb9ced174f4265c5",
+      "exists": true,
+      "currentSHA256": "81616776a1aab69578c27dc9ab0bb0af585a16e27f972c2feb9ced174f4265c5",
+      "matchesLatestReceipt": true,
+      "kind": "contract/index"
+    },
+    {
+      "file": "linear-functions/app.js",
+      "receipts": [
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "ead94f16753c8e4c588a0930d54df9a03ec88a912fe339682f18aedcb81452b4"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "ead94f16753c8e4c588a0930d54df9a03ec88a912fe339682f18aedcb81452b4",
+      "exists": true,
+      "currentSHA256": "ead94f16753c8e4c588a0930d54df9a03ec88a912fe339682f18aedcb81452b4",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "linear-functions/i18n.js",
+      "receipts": [
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "9a4b4ea7f6dcac63e61b0418d7f3f5e9d721f17e6c73d4c14afbcc331fdb4e60"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "9a4b4ea7f6dcac63e61b0418d7f3f5e9d721f17e6c73d4c14afbcc331fdb4e60",
+      "exists": true,
+      "currentSHA256": "9a4b4ea7f6dcac63e61b0418d7f3f5e9d721f17e6c73d4c14afbcc331fdb4e60",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "linear-functions/index.html",
+      "receipts": [
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "d83049b0fed2e86a4954daf4f91b4732805b2df30d515c9736b0b171e4019a56"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "d83049b0fed2e86a4954daf4f91b4732805b2df30d515c9736b0b171e4019a56",
+      "exists": true,
+      "currentSHA256": "d83049b0fed2e86a4954daf4f91b4732805b2df30d515c9736b0b171e4019a56",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "linear-functions/style.css",
+      "receipts": [
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "798b071f0e6fd9939de21cc8ddb94659965e54688183b7e751f4eb5191fcbd77"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "798b071f0e6fd9939de21cc8ddb94659965e54688183b7e751f4eb5191fcbd77",
+      "exists": true,
+      "currentSHA256": "798b071f0e6fd9939de21cc8ddb94659965e54688183b7e751f4eb5191fcbd77",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "pages.config.js",
+      "receipts": [
+        {
+          "iteration": "atlas-rates",
+          "receipt": "atlas-rates/apply.json",
+          "recordedSHA256": "c158b57e27d2a60d7cb2098c22a6fdd89e1a95cdbf832f4c53a8120e68a27e06"
+        },
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "6de8406c9c2eff1b055be55c07056bf65585927c188230f91202c80cfc8c698e"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "6de8406c9c2eff1b055be55c07056bf65585927c188230f91202c80cfc8c698e",
+      "sharedScope": "Only lane-specific registration/descriptions/map/index edits; current full file includes other campaign increments and is not solely authored by this lane.",
+      "exists": true,
+      "currentSHA256": "6de8406c9c2eff1b055be55c07056bf65585927c188230f91202c80cfc8c698e",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "pinhole-camera/BRIEF.md",
+      "receipts": [
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "b728fc3089a0926ea543488db6abc35d55f59e468e38975dc489ecd945880f30"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "b728fc3089a0926ea543488db6abc35d55f59e468e38975dc489ecd945880f30",
+      "exists": true,
+      "currentSHA256": "b728fc3089a0926ea543488db6abc35d55f59e468e38975dc489ecd945880f30",
+      "matchesLatestReceipt": true,
+      "kind": "contract/index"
+    },
+    {
+      "file": "pinhole-camera/app.js",
+      "receipts": [
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "810cc03a34bd951e5a1c170e5e908daa71ebf253e1be1f199138534e634dfb59"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "810cc03a34bd951e5a1c170e5e908daa71ebf253e1be1f199138534e634dfb59",
+      "exists": true,
+      "currentSHA256": "810cc03a34bd951e5a1c170e5e908daa71ebf253e1be1f199138534e634dfb59",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "pinhole-camera/i18n.js",
+      "receipts": [
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "e46fd68d3508261167b9b859ece939eb5b525616ce7c6e8df3322f66bc2d4441"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "e46fd68d3508261167b9b859ece939eb5b525616ce7c6e8df3322f66bc2d4441",
+      "exists": true,
+      "currentSHA256": "e46fd68d3508261167b9b859ece939eb5b525616ce7c6e8df3322f66bc2d4441",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "pinhole-camera/index.html",
+      "receipts": [
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "2bbe98bfca265593bf415de56fec2f6f0680b1d52bba6e340c9e7347eae89a5c"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "2bbe98bfca265593bf415de56fec2f6f0680b1d52bba6e340c9e7347eae89a5c",
+      "exists": true,
+      "currentSHA256": "2bbe98bfca265593bf415de56fec2f6f0680b1d52bba6e340c9e7347eae89a5c",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "pinhole-camera/style.css",
+      "receipts": [
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "63b84bb4423a600205bd4931e88a7ffceb1a4329859b8bf03f68393cf10c24ba"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "63b84bb4423a600205bd4931e88a7ffceb1a4329859b8bf03f68393cf10c24ba",
+      "exists": true,
+      "currentSHA256": "63b84bb4423a600205bd4931e88a7ffceb1a4329859b8bf03f68393cf10c24ba",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "pinhole-camera/tests/geometry-browser.cjs",
+      "receipts": [
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "62873a7fd869e73d24757dbfd73c99b75973fac2b0ec33a3e571ec1ce4017e0b"
+        },
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "cc5e7626a98bed3ab1dab28900183afe8e41d73d00693f67dc9c060b28569542"
+        }
+      ],
+      "latestReceipt": "refraction-audit",
+      "latestRecordedSHA256": "cc5e7626a98bed3ab1dab28900183afe8e41d73d00693f67dc9c060b28569542",
+      "exists": true,
+      "currentSHA256": "cc5e7626a98bed3ab1dab28900183afe8e41d73d00693f67dc9c060b28569542",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "pinhole-camera/tests/geometry-core.cjs",
+      "receipts": [
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "f5c29b5c9e47240dc6a1be4c05a83433ed153630a4587464ea398d0203c4cb8b"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "f5c29b5c9e47240dc6a1be4c05a83433ed153630a4587464ea398d0203c4cb8b",
+      "exists": true,
+      "currentSHA256": "f5c29b5c9e47240dc6a1be4c05a83433ed153630a4587464ea398d0203c4cb8b",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "reflection-refraction/BRIEF.md",
+      "receipts": [
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "7a4d8464f7de828d1c555bc699d0daf4cf4392533f6810e1a2f7a254f81e614e"
+        }
+      ],
+      "latestReceipt": "refraction-audit",
+      "latestRecordedSHA256": "7a4d8464f7de828d1c555bc699d0daf4cf4392533f6810e1a2f7a254f81e614e",
+      "exists": true,
+      "currentSHA256": "7a4d8464f7de828d1c555bc699d0daf4cf4392533f6810e1a2f7a254f81e614e",
+      "matchesLatestReceipt": true,
+      "kind": "contract/index"
+    },
+    {
+      "file": "reflection-refraction/app.js",
+      "receipts": [
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "ad2ab6ec02525a199ecfae2f26110a1cf353f85bfb02c3cb1ae2f918b7f094da"
+        }
+      ],
+      "latestReceipt": "refraction-audit",
+      "latestRecordedSHA256": "ad2ab6ec02525a199ecfae2f26110a1cf353f85bfb02c3cb1ae2f918b7f094da",
+      "exists": true,
+      "currentSHA256": "ad2ab6ec02525a199ecfae2f26110a1cf353f85bfb02c3cb1ae2f918b7f094da",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "reflection-refraction/i18n.js",
+      "receipts": [
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "39833eaf73713dcd791cca8349890c43d17e30731b4ab258e87dd7353d9172cb"
+        },
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "ce963ac66b755b516023586527117f80f0037c1709a03890ef9e4db95686313c"
+        }
+      ],
+      "latestReceipt": "lens-audit",
+      "latestRecordedSHA256": "ce963ac66b755b516023586527117f80f0037c1709a03890ef9e4db95686313c",
+      "exists": true,
+      "currentSHA256": "ce963ac66b755b516023586527117f80f0037c1709a03890ef9e4db95686313c",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "reflection-refraction/index.html",
+      "receipts": [
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "bd631a52ca68c78cc596c028598a6fbd49305e3f37e53aa351ba45b06f7de40e"
+        },
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "5bee87a42320dca5ae2ce8ed1ff6a0e91836113ce4b6d6ca066f16c9ea9118b9"
+        }
+      ],
+      "latestReceipt": "lens-audit",
+      "latestRecordedSHA256": "5bee87a42320dca5ae2ce8ed1ff6a0e91836113ce4b6d6ca066f16c9ea9118b9",
+      "exists": true,
+      "currentSHA256": "5bee87a42320dca5ae2ce8ed1ff6a0e91836113ce4b6d6ca066f16c9ea9118b9",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "reflection-refraction/style.css",
+      "receipts": [
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "1ce3fc91a25446e69a6fe3af424ca82aabe21aa63d895743be9eef2cee3ff8fa"
+        },
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "a59bf06e963cf1886c2d5fb8d6141ad52a10854afc8bb8e480255f6b4a81ad0f"
+        }
+      ],
+      "latestReceipt": "lens-audit",
+      "latestRecordedSHA256": "a59bf06e963cf1886c2d5fb8d6141ad52a10854afc8bb8e480255f6b4a81ad0f",
+      "exists": true,
+      "currentSHA256": "a59bf06e963cf1886c2d5fb8d6141ad52a10854afc8bb8e480255f6b4a81ad0f",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "reflection-refraction/tests/snell-browser.cjs",
+      "receipts": [
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "95491fb6bc0ce68f5ba38dfd68431009807ff5603ea49f2d75bf74306cdb250c"
+        }
+      ],
+      "latestReceipt": "refraction-audit",
+      "latestRecordedSHA256": "95491fb6bc0ce68f5ba38dfd68431009807ff5603ea49f2d75bf74306cdb250c",
+      "exists": true,
+      "currentSHA256": "95491fb6bc0ce68f5ba38dfd68431009807ff5603ea49f2d75bf74306cdb250c",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "reflection-refraction/tests/snell-core.cjs",
+      "receipts": [
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "0390f4cb16e77b025082c33adea9f40996edd19d0108f9e67e4c3d104e7f5feb"
+        }
+      ],
+      "latestReceipt": "refraction-audit",
+      "latestRecordedSHA256": "0390f4cb16e77b025082c33adea9f40996edd19d0108f9e67e4c3d104e7f5feb",
+      "exists": true,
+      "currentSHA256": "0390f4cb16e77b025082c33adea9f40996edd19d0108f9e67e4c3d104e7f5feb",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "specs/README.md",
+      "receipts": [],
+      "sharedScope": "Only lane-specific registration/descriptions/map/index edits; current full file includes other campaign increments and is not solely authored by this lane.",
+      "exists": true,
+      "currentSHA256": "2164f5c4f178fa00359579a2e0ccdb6e95d3b60b68980c7907e8c9cf25e9ff7d",
+      "kind": "contract/index"
+    },
+    {
+      "file": "specs/reviews/atlas-audit-verification-20261026.md",
+      "receipts": [
+        {
+          "iteration": "atlas-audit",
+          "receipt": "atlas-audit/applied.json",
+          "recordedSHA256": "48f783ae638e75f8808380ee26c8fabe01643b495bdd7fe477dd28328821cd83"
+        },
+        {
+          "iteration": "complex-keyboard",
+          "receipt": "complex-keyboard/applied.json",
+          "recordedSHA256": "9ed7c6cde35ed4bcf745481946ed8470f8e5edaa3699e8b12d90f029bb3c5619"
+        },
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "7cf277215da1d200648f8a38ce5e5112c16a8925f305921371443d8085a3a173"
+        },
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "2d843f6c8575faae91d67ca2027c5ab857e647198101cc58427346b82ab5fc96"
+        },
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "271bb41de3b19b4dff59fab541be649eaebb8155bd0f1cb7dbf8ec5f66a42460"
+        },
+        {
+          "iteration": "tangent-audit",
+          "receipt": "tangent-audit/applied.json",
+          "recordedSHA256": "9fa3fd6470f83649a77dea1e66811db0bfc565a16cfc332592aad0b72f433e8e"
+        },
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "f59a52cc5ddbe830565ad91abb9b0e95ada1940dcf3f2d01d9a1d575379f1ce1"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "f59a52cc5ddbe830565ad91abb9b0e95ada1940dcf3f2d01d9a1d575379f1ce1",
+      "exists": true,
+      "currentSHA256": "f59a52cc5ddbe830565ad91abb9b0e95ada1940dcf3f2d01d9a1d575379f1ce1",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-continuity-design-20261026.md",
+      "receipts": [
+        {
+          "iteration": "atlas-continuity",
+          "receipt": "atlas-continuity/archive-applied.json",
+          "recordedSHA256": "c9fd5c039efdd595759b8c9c6987dd58dbfdfcf2ee7ebdb5ddc19a84f459d363"
+        }
+      ],
+      "latestReceipt": "atlas-continuity",
+      "latestRecordedSHA256": "c9fd5c039efdd595759b8c9c6987dd58dbfdfcf2ee7ebdb5ddc19a84f459d363",
+      "exists": true,
+      "currentSHA256": "c9fd5c039efdd595759b8c9c6987dd58dbfdfcf2ee7ebdb5ddc19a84f459d363",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-continuity-verification-20261026.md",
+      "receipts": [
+        {
+          "iteration": "atlas-continuity",
+          "receipt": "atlas-continuity/archive-applied.json",
+          "recordedSHA256": "4cbdd9c4b61690300bcad116fa29a4cb32998b83e04737dfda7788a081e29e5d"
+        },
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "059c4f46fde2a88bf914c395eaf2483d12f9b96dc689c1691d5fcfed473980b0"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "059c4f46fde2a88bf914c395eaf2483d12f9b96dc689c1691d5fcfed473980b0",
+      "exists": true,
+      "currentSHA256": "059c4f46fde2a88bf914c395eaf2483d12f9b96dc689c1691d5fcfed473980b0",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-foundations-design-20261026.md",
+      "receipts": [
+        {
+          "iteration": "atlas-foundations",
+          "receipt": "atlas-foundations/archive-applied.json",
+          "recordedSHA256": "a551c22736d5d8cc3934f512358d8e6dd3b5a026210273cbb1bcd6f215a1b422"
+        }
+      ],
+      "latestReceipt": "atlas-foundations",
+      "latestRecordedSHA256": "a551c22736d5d8cc3934f512358d8e6dd3b5a026210273cbb1bcd6f215a1b422",
+      "exists": true,
+      "currentSHA256": "a551c22736d5d8cc3934f512358d8e6dd3b5a026210273cbb1bcd6f215a1b422",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-foundations-verification-20261026.md",
+      "receipts": [
+        {
+          "iteration": "atlas-foundations",
+          "receipt": "atlas-foundations/archive-applied.json",
+          "recordedSHA256": "bb49943cc941afa93aede44a6c3c57a6bb025549a3fa96644534916d151c08af"
+        },
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "21446a122ba1bad1d97dc70bb78b12fb037ea4954c83392ca69ce673f050644c"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "21446a122ba1bad1d97dc70bb78b12fb037ea4954c83392ca69ce673f050644c",
+      "exists": true,
+      "currentSHA256": "21446a122ba1bad1d97dc70bb78b12fb037ea4954c83392ca69ce673f050644c",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-motion-design-20261025.md",
+      "receipts": [
+        {
+          "iteration": "atlas-motion",
+          "receipt": "atlas-motion/apply-receipt.json",
+          "recordedSHA256": "267ce7e93b07dffadad27da5800b3bc761f0844a5029621bf2594bee4fb66756"
+        }
+      ],
+      "latestReceipt": "atlas-motion",
+      "latestRecordedSHA256": "267ce7e93b07dffadad27da5800b3bc761f0844a5029621bf2594bee4fb66756",
+      "exists": true,
+      "currentSHA256": "267ce7e93b07dffadad27da5800b3bc761f0844a5029621bf2594bee4fb66756",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-motion-verification-20261025.md",
+      "receipts": [
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "c50460dcd4400e6be79e425cca5356a941b4e771925a5ac9916ab5061cd66b7f"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "c50460dcd4400e6be79e425cca5356a941b4e771925a5ac9916ab5061cd66b7f",
+      "exists": true,
+      "currentSHA256": "c50460dcd4400e6be79e425cca5356a941b4e771925a5ac9916ab5061cd66b7f",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-rates-design-20261025.md",
+      "receipts": [
+        {
+          "iteration": "atlas-rates",
+          "receipt": "atlas-rates/apply.json",
+          "recordedSHA256": "73e1f4c4b84735e63e829839fa9f7dc0d4f64bbc1a21cf63740a5ba32912a97c"
+        }
+      ],
+      "latestReceipt": "atlas-rates",
+      "latestRecordedSHA256": "73e1f4c4b84735e63e829839fa9f7dc0d4f64bbc1a21cf63740a5ba32912a97c",
+      "exists": true,
+      "currentSHA256": "73e1f4c4b84735e63e829839fa9f7dc0d4f64bbc1a21cf63740a5ba32912a97c",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-rates-verification-20261025.md",
+      "receipts": [
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "a8d4ddff9343b60c5de8b55d0392c49a3a3f88dd6bb9fa8e2b1268b53745a07e"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "a8d4ddff9343b60c5de8b55d0392c49a3a3f88dd6bb9fa8e2b1268b53745a07e",
+      "exists": true,
+      "currentSHA256": "a8d4ddff9343b60c5de8b55d0392c49a3a3f88dd6bb9fa8e2b1268b53745a07e",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-response-design-20261025.md",
+      "receipts": [
+        {
+          "iteration": "atlas-response",
+          "receipt": "atlas-response/apply.json",
+          "recordedSHA256": "cef3dff6b669da608ab3fa06cee448a5c4c6781dca3e086739f66171fbb4668c"
+        }
+      ],
+      "latestReceipt": "atlas-response",
+      "latestRecordedSHA256": "cef3dff6b669da608ab3fa06cee448a5c4c6781dca3e086739f66171fbb4668c",
+      "exists": true,
+      "currentSHA256": "cef3dff6b669da608ab3fa06cee448a5c4c6781dca3e086739f66171fbb4668c",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-response-verification-20261025.md",
+      "receipts": [
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "1b3dbb312f7846c20df32af89d4f7720ca2f5f5544774f7fb1659798ca63ba24"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "1b3dbb312f7846c20df32af89d4f7720ca2f5f5544774f7fb1659798ca63ba24",
+      "exists": true,
+      "currentSHA256": "1b3dbb312f7846c20df32af89d4f7720ca2f5f5544774f7fb1659798ca63ba24",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-travel-design-20261025.md",
+      "receipts": [
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/archive-applied.json",
+          "recordedSHA256": "7f577b9eafaf0239d5cf334a3b2be9b63aba7ab3ed9093dcd1997e7c14c3fc30"
+        }
+      ],
+      "latestReceipt": "atlas-travel",
+      "latestRecordedSHA256": "7f577b9eafaf0239d5cf334a3b2be9b63aba7ab3ed9093dcd1997e7c14c3fc30",
+      "exists": true,
+      "currentSHA256": "7f577b9eafaf0239d5cf334a3b2be9b63aba7ab3ed9093dcd1997e7c14c3fc30",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-travel-verification-20261025.md",
+      "receipts": [
+        {
+          "iteration": "atlas-travel",
+          "receipt": "atlas-travel/archive-applied.json",
+          "recordedSHA256": "41fa3feb1f06548fb43c3e6c24c453f4a43ad59f5e308bc0029f943d0b55b9d5"
+        },
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "4faf972fce6fc7bf8810dd7adad49023702c3ae02be01f50e32bd71c91ea8eaf"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "4faf972fce6fc7bf8810dd7adad49023702c3ae02be01f50e32bd71c91ea8eaf",
+      "exists": true,
+      "currentSHA256": "4faf972fce6fc7bf8810dd7adad49023702c3ae02be01f50e32bd71c91ea8eaf",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-work-design-20261026.md",
+      "receipts": [
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/archive-applied.json",
+          "recordedSHA256": "1d99edf3696a7bd6d7bc84a9f446c225a2f36f18abd4d0e9bce225ef19f1ac6a"
+        }
+      ],
+      "latestReceipt": "atlas-work",
+      "latestRecordedSHA256": "1d99edf3696a7bd6d7bc84a9f446c225a2f36f18abd4d0e9bce225ef19f1ac6a",
+      "exists": true,
+      "currentSHA256": "1d99edf3696a7bd6d7bc84a9f446c225a2f36f18abd4d0e9bce225ef19f1ac6a",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/atlas-work-verification-20261026.md",
+      "receipts": [
+        {
+          "iteration": "atlas-work",
+          "receipt": "atlas-work/archive-applied.json",
+          "recordedSHA256": "efd8874b777ea98905344f72c9878aaaf97a35474b8d675aa4db7da196c50396"
+        }
+      ],
+      "latestReceipt": "atlas-work",
+      "latestRecordedSHA256": "efd8874b777ea98905344f72c9878aaaf97a35474b8d675aa4db7da196c50396",
+      "exists": true,
+      "currentSHA256": "efd8874b777ea98905344f72c9878aaaf97a35474b8d675aa4db7da196c50396",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/complex-keyboard-design-20261026.md",
+      "receipts": [
+        {
+          "iteration": "complex-keyboard",
+          "receipt": "complex-keyboard/applied.json",
+          "recordedSHA256": "096125274c1157955653803c821f004e722ea216951fcacabac89a2a34c0d17a"
+        }
+      ],
+      "latestReceipt": "complex-keyboard",
+      "latestRecordedSHA256": "096125274c1157955653803c821f004e722ea216951fcacabac89a2a34c0d17a",
+      "exists": true,
+      "currentSHA256": "096125274c1157955653803c821f004e722ea216951fcacabac89a2a34c0d17a",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/complex-keyboard-verification-20261026.md",
+      "receipts": [
+        {
+          "iteration": "complex-keyboard",
+          "receipt": "complex-keyboard/applied.json",
+          "recordedSHA256": "ffe774173acb8b9b11379f53f6b522ae264cebe276b22971774f520f45dd550e"
+        },
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "0ec656b9b2a1c5bf7ddc3e399055e1f49928ca446dd107f50535295c250dda93"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "0ec656b9b2a1c5bf7ddc3e399055e1f49928ca446dd107f50535295c250dda93",
+      "exists": true,
+      "currentSHA256": "0ec656b9b2a1c5bf7ddc3e399055e1f49928ca446dd107f50535295c250dda93",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/frozen-bubble-design.md",
+      "receipts": [],
+      "provenance": "Initial frozen lesson design/verification authored in this task before receipt chain; original apply hash not recorded, no fabricated historic hash",
+      "exists": true,
+      "currentSHA256": "0ddc2ea9477e3264d9e0d9e0549d601a94525773e433d52e7ab6342203e502dd",
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/frozen-bubble-verification.md",
+      "receipts": [],
+      "provenance": "Initial frozen lesson design/verification authored in this task before receipt chain; original apply hash not recorded, no fabricated historic hash",
+      "exists": true,
+      "currentSHA256": "5af44d10e287fc6e96c4bd8dd3c406bc08a88f58dd07bcb72de17d0461d631d2",
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/lens-focus-design-20261026.md",
+      "receipts": [
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "1de1bc9037e208c317a65d9f4690fb743e0490c63e05cdff33558aa870e5a5b5"
+        }
+      ],
+      "latestReceipt": "lens-audit",
+      "latestRecordedSHA256": "1de1bc9037e208c317a65d9f4690fb743e0490c63e05cdff33558aa870e5a5b5",
+      "exists": true,
+      "currentSHA256": "1de1bc9037e208c317a65d9f4690fb743e0490c63e05cdff33558aa870e5a5b5",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/lens-focus-verification-20261026.md",
+      "receipts": [
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "371e2fb9c566a3dc9e0f4dda5dc2291970ff97569da825b53cf10e996178383d"
+        },
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "957abc4851e20a479a081e87cff0503a733f34815795ea30163b53b0052c4f3e"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "957abc4851e20a479a081e87cff0503a733f34815795ea30163b53b0052c4f3e",
+      "exists": true,
+      "currentSHA256": "957abc4851e20a479a081e87cff0503a733f34815795ea30163b53b0052c4f3e",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/math-physics-integration-verification-20261026.md",
+      "receipts": [
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "2993f1116364a6a64a3ca90427b0a1a8cfb30cfc7d848cb3a171f8440a77cf2b"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "2993f1116364a6a64a3ca90427b0a1a8cfb30cfc7d848cb3a171f8440a77cf2b",
+      "exists": true,
+      "currentSHA256": "2993f1116364a6a64a3ca90427b0a1a8cfb30cfc7d848cb3a171f8440a77cf2b",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/nightly-math-physics-20261026.md",
+      "receipts": [
+        {
+          "iteration": "atlas-audit",
+          "receipt": "atlas-audit/applied.json",
+          "recordedSHA256": "19c0b4a0e29054d0a89e0c16f87a5d9f5df64b200ec504b0f5653b78187fadc9"
+        },
+        {
+          "iteration": "complex-keyboard",
+          "receipt": "complex-keyboard/applied.json",
+          "recordedSHA256": "37d66354b22aa83bcd79f016dd84d43a5e2a46546ecbafadbfb2ebe9ca2d5ddf"
+        },
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "e9488e4545ee1fb20d167023031f220a7345d5d8d39909f6767d7ec800727dda"
+        },
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "120b04392392cfb124a55b622d3bdecf006539ca9ca28868043eec9685363f6d"
+        },
+        {
+          "iteration": "lens-audit",
+          "receipt": "lens-audit/applied.json",
+          "recordedSHA256": "77e789dc9d895b67ac110a1076e12d018c27d705fd1bf93627227a3070ee0506"
+        },
+        {
+          "iteration": "tangent-audit",
+          "receipt": "tangent-audit/applied.json",
+          "recordedSHA256": "178f150ec6a964d53ea1bf074e04b78c632bfc74116712f14cef895d5f49c6ac"
+        },
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "abd73ee606aec44f187e0b70e0cd7d1f2cb4c6291abd665dd68436fb2741dc21"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "abd73ee606aec44f187e0b70e0cd7d1f2cb4c6291abd665dd68436fb2741dc21",
+      "exists": true,
+      "currentSHA256": "abd73ee606aec44f187e0b70e0cd7d1f2cb4c6291abd665dd68436fb2741dc21",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/pinhole-geometry-design-20261026.md",
+      "receipts": [
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "9cfa96b01cc95d061e8ded67768e13df46a2add0bdf50ea88a44fe7b6033aedb"
+        }
+      ],
+      "latestReceipt": "pinhole-bridge",
+      "latestRecordedSHA256": "9cfa96b01cc95d061e8ded67768e13df46a2add0bdf50ea88a44fe7b6033aedb",
+      "exists": true,
+      "currentSHA256": "9cfa96b01cc95d061e8ded67768e13df46a2add0bdf50ea88a44fe7b6033aedb",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "receipts": [
+        {
+          "iteration": "pinhole-bridge",
+          "receipt": "pinhole-bridge/applied.json",
+          "recordedSHA256": "f04ce6007905de501d9ebdfa4a11a19df1fb6792e63e1a30f21797753092e3f7"
+        },
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "16326b8ae061346e65a11662fb084f0537f65f9dbfb68c98aff18212ec01f308"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "16326b8ae061346e65a11662fb084f0537f65f9dbfb68c98aff18212ec01f308",
+      "exists": true,
+      "currentSHA256": "16326b8ae061346e65a11662fb084f0537f65f9dbfb68c98aff18212ec01f308",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/refraction-normal-design-20261026.md",
+      "receipts": [
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "3760a4e8586b0c9b5252cfccd93e0f922a1d286704d0762de60bbcae3915d8e7"
+        }
+      ],
+      "latestReceipt": "refraction-audit",
+      "latestRecordedSHA256": "3760a4e8586b0c9b5252cfccd93e0f922a1d286704d0762de60bbcae3915d8e7",
+      "exists": true,
+      "currentSHA256": "3760a4e8586b0c9b5252cfccd93e0f922a1d286704d0762de60bbcae3915d8e7",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/refraction-normal-verification-20261026.md",
+      "receipts": [
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "1ac5531e01f3788ed43ebb317a372180c2aa5586cf639b2fbccf24d1f7fe4c5b"
+        },
+        {
+          "iteration": "integration-audit",
+          "receipt": "integration-audit/applied.json",
+          "recordedSHA256": "7c47ad107aea3d994fc4e2f736b293521d5d7a1ae225ef1ce372ac6bbba6b265"
+        }
+      ],
+      "latestReceipt": "integration-audit",
+      "latestRecordedSHA256": "7c47ad107aea3d994fc4e2f736b293521d5d7a1ae225ef1ce372ac6bbba6b265",
+      "exists": true,
+      "currentSHA256": "7c47ad107aea3d994fc4e2f736b293521d5d7a1ae225ef1ce372ac6bbba6b265",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/tangent-domain-design-20261026.md",
+      "receipts": [
+        {
+          "iteration": "tangent-audit",
+          "receipt": "tangent-audit/applied.json",
+          "recordedSHA256": "b8826cabf8a428e88a814d945ceb0df7ace7dcf3eddd701470b28fdc3b648ddc"
+        }
+      ],
+      "latestReceipt": "tangent-audit",
+      "latestRecordedSHA256": "b8826cabf8a428e88a814d945ceb0df7ace7dcf3eddd701470b28fdc3b648ddc",
+      "exists": true,
+      "currentSHA256": "b8826cabf8a428e88a814d945ceb0df7ace7dcf3eddd701470b28fdc3b648ddc",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "specs/reviews/tangent-domain-verification-20261026.md",
+      "receipts": [
+        {
+          "iteration": "tangent-audit",
+          "receipt": "tangent-audit/applied.json",
+          "recordedSHA256": "9d0b5a2175a2150490021b4bd038e7cb053a9717ce68b648fdda90d135919392"
+        }
+      ],
+      "latestReceipt": "tangent-audit",
+      "latestRecordedSHA256": "9d0b5a2175a2150490021b4bd038e7cb053a9717ce68b648fdda90d135919392",
+      "exists": true,
+      "currentSHA256": "9d0b5a2175a2150490021b4bd038e7cb053a9717ce68b648fdda90d135919392",
+      "matchesLatestReceipt": true,
+      "kind": "principal-review"
+    },
+    {
+      "file": "trig/BRIEF.md",
+      "receipts": [
+        {
+          "iteration": "tangent-audit",
+          "receipt": "tangent-audit/applied.json",
+          "recordedSHA256": "1a89142433e477654346487afc0f1c13a7942dfc8b275b38c532251196b444e8"
+        }
+      ],
+      "latestReceipt": "tangent-audit",
+      "latestRecordedSHA256": "1a89142433e477654346487afc0f1c13a7942dfc8b275b38c532251196b444e8",
+      "exists": true,
+      "currentSHA256": "1a89142433e477654346487afc0f1c13a7942dfc8b275b38c532251196b444e8",
+      "matchesLatestReceipt": true,
+      "kind": "contract/index"
+    },
+    {
+      "file": "trig/app.js",
+      "receipts": [
+        {
+          "iteration": "tangent-audit",
+          "receipt": "tangent-audit/applied.json",
+          "recordedSHA256": "636609c7532a9e33d5be2ad33fbed057ca5d93e19e110074d723ec78cbcd9613"
+        }
+      ],
+      "latestReceipt": "tangent-audit",
+      "latestRecordedSHA256": "636609c7532a9e33d5be2ad33fbed057ca5d93e19e110074d723ec78cbcd9613",
+      "exists": true,
+      "currentSHA256": "636609c7532a9e33d5be2ad33fbed057ca5d93e19e110074d723ec78cbcd9613",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "trig/i18n.js",
+      "receipts": [
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "1940a81cfc1be00f271d8c8b035443e0324038b7ea83ce97ef4fce48146e3715"
+        },
+        {
+          "iteration": "tangent-audit",
+          "receipt": "tangent-audit/applied.json",
+          "recordedSHA256": "9cb61c1929056a1e7e1c4cbaaaff8c3979072cd97186fa7c2327e177fb0d871b"
+        }
+      ],
+      "latestReceipt": "tangent-audit",
+      "latestRecordedSHA256": "9cb61c1929056a1e7e1c4cbaaaff8c3979072cd97186fa7c2327e177fb0d871b",
+      "exists": true,
+      "currentSHA256": "9cb61c1929056a1e7e1c4cbaaaff8c3979072cd97186fa7c2327e177fb0d871b",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "trig/index.html",
+      "receipts": [
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "bb679425b3593d53d61d217be5e7b4a54877ad36e36545b41c93bf4f18b3a364"
+        },
+        {
+          "iteration": "tangent-audit",
+          "receipt": "tangent-audit/applied.json",
+          "recordedSHA256": "b99b4d49bbdd8622527589b2f90abee07fe3eac7964d3cec2c2c685b01ecc413"
+        }
+      ],
+      "latestReceipt": "tangent-audit",
+      "latestRecordedSHA256": "b99b4d49bbdd8622527589b2f90abee07fe3eac7964d3cec2c2c685b01ecc413",
+      "exists": true,
+      "currentSHA256": "b99b4d49bbdd8622527589b2f90abee07fe3eac7964d3cec2c2c685b01ecc413",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "trig/style.css",
+      "receipts": [
+        {
+          "iteration": "refraction-audit",
+          "receipt": "refraction-audit/applied.json",
+          "recordedSHA256": "404a1994880f3576af5a93e959614a8d4ad4633b5c6f3a38b2f6959d4514b54c"
+        },
+        {
+          "iteration": "tangent-audit",
+          "receipt": "tangent-audit/applied.json",
+          "recordedSHA256": "0580508fc91e0fe0395ca892ee70f0318b5955ab565cf80876af7c534fc60638"
+        }
+      ],
+      "latestReceipt": "tangent-audit",
+      "latestRecordedSHA256": "0580508fc91e0fe0395ca892ee70f0318b5955ab565cf80876af7c534fc60638",
+      "exists": true,
+      "currentSHA256": "0580508fc91e0fe0395ca892ee70f0318b5955ab565cf80876af7c534fc60638",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    },
+    {
+      "file": "trig/tests/tangent-browser.cjs",
+      "receipts": [
+        {
+          "iteration": "tangent-audit",
+          "receipt": "tangent-audit/applied.json",
+          "recordedSHA256": "57433ddc7b6e736fad031a16f2564455eb6295debc0f9b61e5bee58ea21bee36"
+        }
+      ],
+      "latestReceipt": "tangent-audit",
+      "latestRecordedSHA256": "57433ddc7b6e736fad031a16f2564455eb6295debc0f9b61e5bee58ea21bee36",
+      "exists": true,
+      "currentSHA256": "57433ddc7b6e736fad031a16f2564455eb6295debc0f9b61e5bee58ea21bee36",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "trig/tests/tangent-core.cjs",
+      "receipts": [
+        {
+          "iteration": "tangent-audit",
+          "receipt": "tangent-audit/applied.json",
+          "recordedSHA256": "29aee90eb6a7043940b150f46dce3ccfff3b1b96efb5630f3dd1e70fc120dfe5"
+        }
+      ],
+      "latestReceipt": "tangent-audit",
+      "latestRecordedSHA256": "29aee90eb6a7043940b150f46dce3ccfff3b1b96efb5630f3dd1e70fc120dfe5",
+      "exists": true,
+      "currentSHA256": "29aee90eb6a7043940b150f46dce3ccfff3b1b96efb5630f3dd1e70fc120dfe5",
+      "matchesLatestReceipt": true,
+      "kind": "test"
+    },
+    {
+      "file": "velocity-vt/i18n.js",
+      "receipts": [
+        {
+          "iteration": "atlas-rates",
+          "receipt": "atlas-rates/apply.json",
+          "recordedSHA256": "aa011eabf7b556ae14942c34a0b30fabf755e110a3285a435357e23dc384fe57"
+        }
+      ],
+      "latestReceipt": "atlas-rates",
+      "latestRecordedSHA256": "aa011eabf7b556ae14942c34a0b30fabf755e110a3285a435357e23dc384fe57",
+      "exists": true,
+      "currentSHA256": "aa011eabf7b556ae14942c34a0b30fabf755e110a3285a435357e23dc384fe57",
+      "matchesLatestReceipt": true,
+      "kind": "runtime/shared-registry"
+    }
+  ],
+  "latestReceiptMismatches": [],
+  "limits": [
+    "Initial frozen lesson has no original hash receipt; current existence/hash only.",
+    "Shared pages.config may legitimately differ from last lane receipt due to parallel LeetCode changes.",
+    "No claim that original atlas or other legacy lessons were entirely created by this lane."
+  ]
+}

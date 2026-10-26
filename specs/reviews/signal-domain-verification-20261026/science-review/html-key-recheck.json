@@ -1,0 +1,92 @@
+[
+  {
+    "course": "sampling",
+    "lang": "en",
+    "key": "s4e",
+    "containsBackslashQuote": false,
+    "escapedLessThan": true,
+    "rawLessThan": true,
+    "preview": "region. <a class=\"fourier-link\" href=\"../fourier/#step5\">Compare the Fourier spectrum →</a> <a class=\"fourier-link\" href=\"../ztransform/#step5\">Convert on the Z page: spacing fₛ Hz or 2π/T rad/s →</a>"
+  },
+  {
+    "course": "sampling",
+    "lang": "zh",
+    "key": "s4e",
+    "containsBackslashQuote": false,
+    "escapedLessThan": true,
+    "rawLessThan": true,
+    "preview": "0,fₛ/2] 只是正频率那一半，不能单靠峰位置还原波形。拖 fₛ 看复制峰怎样折入此区。<a class=\"fourier-link\" href=\"../fourier/#step5\">到傅里叶页比较频谱 →</a> <a class=\"fourier-link\" href=\"../ztransform/#step5\">到Z页换算：复制间距：fₛ Hz，或对应的 2π/T rad/s →</a>"
+  },
+  {
+    "course": "freqresp",
+    "lang": "en",
+    "key": "s3hint",
+    "containsBackslashQuote": false,
+    "escapedLessThan": false,
+    "rawLessThan": true,
+    "preview": " smooths but is no ideal stopband filter. <a class=\"fourier-link\" href=\"https://www.analog.com/media/en/technical-documentation/dsp-book/dsp_book_ch15.pdf\">Basis: Smith · moving-average response →</a>"
+  },
+  {
+    "course": "freqresp",
+    "lang": "zh",
+    "key": "s3hint",
+    "containsBackslashQuote": false,
+    "escapedLessThan": false,
+    "rawLessThan": true,
+    "preview": "成M=3时，预测幅值1/3并比较解析与实测。零响应不能用来测相位或延迟。旁瓣不是零：移动平均能平滑，却不是理想阻带滤波器。<a class=\"fourier-link\" href=\"https://www.analog.com/media/en/technical-documentation/dsp-book/dsp_book_ch15.pdf\">依据：Smith · 移动平均频率响应 →</a>"
+  },
+  {
+    "course": "ztransform",
+    "lang": "en",
+    "key": "s5e",
+    "containsBackslashQuote": false,
+    "escapedLessThan": true,
+    "rawLessThan": false,
+    "preview": "&lt;0, so its images lie inside the unit circle; it does not depict the whole z-plane. Turn on twins to see equal mappings for ω separated by ±2π/T. Samples alone cannot distinguish these frequencies."
+  },
+  {
+    "course": "ztransform",
+    "lang": "en",
+    "key": "s5hint",
+    "containsBackslashQuote": false,
+    "escapedLessThan": true,
+    "rawLessThan": false,
+    "preview": "gital Ω=ωT=2πf/fₛ rad/sample (mod 2π). Baseband uniqueness needs a known ideal bandlimit with |ω|&lt;π/T. This pole-mode map is not a general discretized transfer function for an entire analog system."
+  },
+  {
+    "course": "ztransform",
+    "lang": "en",
+    "key": "cvStrip",
+    "containsBackslashQuote": false,
+    "escapedLessThan": false,
+    "rawLessThan": true,
+    "preview": "principal strip −π/T<ω≤π/T"
+  },
+  {
+    "course": "ztransform",
+    "lang": "zh",
+    "key": "s5e",
+    "containsBackslashQuote": false,
+    "escapedLessThan": true,
+    "rawLessThan": false,
+    "preview": "t;0的极点 s=σ+jω，右边显示指数模态的采样映射 z=e^{sT}：|z|=e^{σT}、角度Ω=ωT。此步约定 T 以秒计，σ单位s⁻¹，ω单位rad/s；Ω是每个样本的相角增量。主条带 −π/T&lt;ω≤π/T 沿虚部ω方向宽2π/T，对应一周不重复角度；本图限定σ&lt;0，所以像在单位圆内，不代表画出了整个z平面。打开孪生点，看ω相差±2π/T时映射重合；仅靠样本不能识别这类频率。"
+  },
+  {
+    "course": "ztransform",
+    "lang": "zh",
+    "key": "s5hint",
+    "containsBackslashQuote": false,
+    "escapedLessThan": true,
+    "rawLessThan": false,
+    "preview": "单位对照：fₛ=1/T，采样页的复制间距是 fₛ Hz；换成角频率就是2π/T rad/s，不是两个不同结果。连续 f Hz 对应 ω=2πf rad/s，采样后数字 Ω=ωT=2πf/fₛ rad/样本（模2π）。已知理想带限且 |ω|&lt;π/T 时才有基带唯一性；本图的极点模态映射不是整台模拟系统的通用离散化传递函数。"
+  },
+  {
+    "course": "ztransform",
+    "lang": "zh",
+    "key": "cvStrip",
+    "containsBackslashQuote": false,
+    "escapedLessThan": false,
+    "rawLessThan": true,
+    "preview": "主条带 −π/T<ω≤π/T"
+  }
+]

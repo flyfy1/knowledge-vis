@@ -1,0 +1,32 @@
+[
+  {
+    "test": "nonzero a reload and source Back",
+    "data": {
+      "a": "0.375",
+      "b": "1.125",
+      "I": "0.5656854249492381",
+      "D": "1.034314575050762",
+      "play": "false"
+    }
+  },
+  {
+    "test": "forward b crosses a and orientation changes",
+    "data": {
+      "a": "0.1",
+      "b": "0.17731376855715844",
+      "I": "-0.14721092797107943",
+      "D": "0.14721092797107943",
+      "play": "false"
+    }
+  },
+  {
+    "test": "replay retains nonzero a",
+    "data": {
+      "a": "0.5",
+      "b": "0.06897775233602742",
+      "I": "0.7630172551441736",
+      "D": "0.7630172551441737",
+      "play": "false"
+    }
+  }
+]

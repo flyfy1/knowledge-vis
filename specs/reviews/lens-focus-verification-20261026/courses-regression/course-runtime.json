@@ -1,0 +1,4479 @@
+[
+  {
+    "slug": "frozen-bubble",
+    "category": "physics",
+    "scope": "core",
+    "path": "frozen-bubble/",
+    "title": {
+      "zh": "冰冻肥皂泡 · 水膜里的结晶",
+      "en": "Frozen Soap Bubbles · Ice in a Thin Film"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Frozen Soap Bubbles",
+      "lang": "en",
+      "controls": 11,
+      "canvasCount": 4,
+      "canvasNamed": 4,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "trails",
+          "height": 24
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [
+        {
+          "href": "https://www.nature.com/articles/s41467-019-10021-6",
+          "label": "Ahmadi et al. · How soap bubbles freeze (2019)"
+        },
+        {
+          "href": "http://xhslink.com/o/6mL9ZIDCfO5",
+          "label": "KK.Dai · “又快到玩冰冻泡泡的季节” ↗"
+        }
+      ],
+      "boundaryKeywordSnippets": [
+        "ng. Seeding is a manual intervention, not a model of natural nucleation probability. Six-direction branches illustrate anisotropy; they predict neither crystal habit, real sp",
+        "s, speeds and the front curve are prescribed qualitative illustrations, not measurements. No flow or heat-transfer equations are solved. 03 / 03 Color does not mean the ice ",
+        "ish film, ice and trails only. What can this model explain? It separates seeding, growth, latent-heat release and transport, and compares two freezing regimes. It is not prec"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "冰冻肥皂泡",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "01 Seed & grow",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "power-converters",
+    "category": "physics",
+    "scope": "core",
+    "path": "power-converters/",
+    "title": {
+      "zh": "升压与降压 · 能量去哪了？",
+      "en": "Buck & Boost · Follow the Energy"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Change the voltage. Follow the energy.",
+      "lang": "en",
+      "controls": 26,
+      "canvasCount": 0,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 24
+        },
+        {
+          "id": "",
+          "height": 24
+        },
+        {
+          "id": "",
+          "height": 24
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [
+        {
+          "href": "https://openstax.org/books/university-physics-volume-2/pages/14-2-self-inductance-and-inductors",
+          "label": "OpenStax · Self-inductance and inductors"
+        },
+        {
+          "href": "https://openstax.org/books/university-physics-volume-2/pages/8-1-capacitors-and-capacitance",
+          "label": "OpenStax · Capacitors and capacitance"
+        },
+        {
+          "href": "https://wiki.analog.com/university/courses/electronics/buck_converter_basics",
+          "label": "Analog Devices · Buck Converter Basics"
+        },
+        {
+          "href": "https://www.analog.com/en/resources/analog-dialogue/articles/applying-dc-to-dc-step-up-boost-regulators.html",
+          "label": "Analog Devices · Applying Boost Regulators"
+        },
+        {
+          "href": "https://www.ti.com/lit/an/slva477b/slva477b.pdf",
+          "label": "TI · Buck power-stage analysis (PDF)"
+        },
+        {
+          "href": "https://www.ti.com/lit/an/slva372d/slva372d.pdf",
+          "label": "TI · Boost power-stage analysis (PDF)"
+        }
+      ],
+      "boundaryKeywordSnippets": [
+        " transferred each second: power. P = V · I Ideal steady state: Pin = Pout With a fixed 12 W power budget, move the output from 6 V to 24 V and watch output current: Output",
+        "vi means the component returns energy to the ideal source. STEP 2 / 6 · Capacitor Capacitor: give voltage a memory Does capacitor voltage vanish when charge stops flowing i",
+        "vi means the component returns energy to the ideal source. STEP 3 / 6 · Switches & timing Switches choose the path; timing sets the ratio Which path does current take, and "
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "电压变了，能量去哪了？",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Voltage & power",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "atlas",
+    "category": "math",
+    "scope": "core",
+    "path": "atlas/",
+    "title": {
+      "zh": "数学与物理 · 知识地图",
+      "en": "Mathematics & Physics · Knowledge Atlas"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Mathematics & Physics",
+      "lang": "en",
+      "controls": 61,
+      "canvasCount": 11,
+      "canvasNamed": 11,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [
+        {
+          "href": "https://openstax.org/books/university-physics-volume-1/pages/3-3-average-and-instantaneous-acceleration",
+          "label": "OpenStax3.3 · acceleration as a rate ↗"
+        },
+        {
+          "href": "https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law",
+          "label": "OpenStax5.3 · net external force ↗"
+        },
+        {
+          "href": "https://openstax.org/books/calculus-volume-1/pages/5-2-the-definite-integral",
+          "label": "OpenStax Calculus5.2 · signed area & limits ↗"
+        },
+        {
+          "href": "https://openstax.org/books/university-physics-volume-1/pages/3-6-finding-velocity-and-displacement-from-acceleration",
+          "label": "OpenStax Physics3.6 · position from velocity ↗"
+        },
+        {
+          "href": "https://openstax.org/books/university-physics-volume-1/pages/7-1-work",
+          "label": "OpenStax7.1 · work integrates displacement ↗"
+        },
+        {
+          "href": "https://openstax.org/books/university-physics-volume-1/pages/8-1-potential-energy-of-a-system",
+          "label": "OpenStax8.1 · spring potential energy ↗"
+        },
+        {
+          "href": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion",
+          "label": "OpenStax §15.1 · force & period ↗"
+        },
+        {
+          "href": "https://openstax.org/books/university-physics-volume-1/pages/15-3-comparing-simple-harmonic-motion-and-circular-motion",
+          "label": "OpenStax §15.3 · circular projection ↗"
+        },
+        {
+          "href": "https://ocw.mit.edu/courses/8-03sc-physics-iii-vibrations-and-waves-fall-2016/782069da3820fc514c10c26ae0c15b01_MIT8_03SCF16_Text_Ch2.pdf",
+          "label": "MIT8.03 · original damped/driven notes ↗"
+        },
+        {
+          "href": "https://www.dspguide.com/CH31.PDF#page=3",
+          "label": "Read the external source ↗"
+        }
+      ],
+      "boundaryKeywordSnippets": [
+        "ersion In the homogeneous-medium central-ray model, object distance u and screen distance v are positive. Signed image-height difference divided by object height is−v/u: the n",
+        "nt equals its kinetic-energy change. In this ideal horizontal spring, only the spring does nonzero work, so Wspring=ΔK=−ΔU. Definite integral & signed accumulation A definite ",
+        "to the positive terminal changes voltage; an ideal capacitor holds its voltage at zero current. Switches & diodes An ideal switch opens or closes a path; a diode provides one-"
+      ],
+      "sectionIds": []
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "数学与物理",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "BUTTON",
+      "id": "",
+      "text": "Where does the angle start, and when is refraction impossible?Suggeste",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "fourier",
+    "category": "signal",
+    "scope": "core",
+    "path": "fourier/",
+    "title": {
+      "zh": "傅里叶变换 · 一步一交互",
+      "en": "The Fourier Transform · One Interaction at a Time"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "The Fourier Transform",
+      "lang": "en",
+      "controls": 30,
+      "canvasCount": 11,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        ". Number of circles N 3 Current overshoot: approx. 9.4% (of the jump height; the larger N, the closer to 8.9%) Look at the little spike at each corner of the square wave: a"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "傅里叶变换",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 The Hook",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "convolution",
+    "category": "signal",
+    "scope": "core",
+    "path": "convolution/",
+    "title": {
+      "zh": "卷积 · 一步一交互",
+      "en": "Convolution · One Interaction at a Time"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Convolution",
+      "lang": "en",
+      "controls": 54,
+      "canvasCount": 11,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "卷积",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Hook",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "mandelbrot",
+    "category": "math",
+    "scope": "core",
+    "path": "mandelbrot/",
+    "title": {
+      "zh": "Mandelbrot 分形 · 无限放大",
+      "en": "The Mandelbrot Set · Zoom Without End"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "The Mandelbrot Set",
+      "lang": "en",
+      "controls": 29,
+      "canvasCount": 10,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-reset",
+          "height": 41
+        },
+        {
+          "id": "s1-p-esc",
+          "height": 41
+        },
+        {
+          "id": "s1-p-stay",
+          "height": 41
+        },
+        {
+          "id": "s1-p-cycle",
+          "height": 41
+        },
+        {
+          "id": "s2-iter",
+          "height": 26
+        },
+        {
+          "id": "s3-mode-bw",
+          "height": 43
+        },
+        {
+          "id": "s3-mode-band",
+          "height": 43
+        },
+        {
+          "id": "s3-mode-smooth",
+          "height": 43
+        },
+        {
+          "id": "s3-pal-0",
+          "height": 41
+        },
+        {
+          "id": "s3-pal-1",
+          "height": 41
+        },
+        {
+          "id": "s3-pal-2",
+          "height": 41
+        },
+        {
+          "id": "s4-bm-0",
+          "height": 41
+        },
+        {
+          "id": "s4-bm-1",
+          "height": 41
+        },
+        {
+          "id": "s4-bm-2",
+          "height": 41
+        },
+        {
+          "id": "s4-bm-3",
+          "height": 41
+        },
+        {
+          "id": "s4-reset",
+          "height": 41
+        },
+        {
+          "id": "s5-mini",
+          "height": 41
+        },
+        {
+          "id": "s5-drill",
+          "height": 41
+        },
+        {
+          "id": "s5-home",
+          "height": 41
+        },
+        {
+          "id": "s5-overlay",
+          "height": 41
+        },
+        {
+          "id": "s6-j-0",
+          "height": 41
+        },
+        {
+          "id": "s6-j-1",
+          "height": 41
+        },
+        {
+          "id": "s6-j-2",
+          "height": 41
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "do not match exactly. The self-similarity is approximate, and that is exactly what separates a fractal from an ordinary pattern. Full set · the island is here The mini-Brot "
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "Mandelbrot 分形",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Hook",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "control",
+    "category": "signal",
+    "scope": "core",
+    "path": "control/",
+    "title": {
+      "zh": "反馈与控制 · 双轮车为什么倒不下去",
+      "en": "Feedback & Control · Why the Two-Wheeled Bot Never Falls"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Feedback & Control",
+      "lang": "en",
+      "controls": 40,
+      "canvasCount": 14,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "onstant amplitude — no growth, no decay (the model has no friction). Let go! Your turn to be the controller Now you close the loop: use the ◀ ▶ arrow keys (or hold the butto",
+        "(last 3 s) 0.0° · State Settled This page’s model has no friction, so a pure-P sway is genuinely constant-amplitude — it is not drawn wrong. On a real robot, a whisper of fri",
+        "p of 1/480 s. In engineering: predict with a model, and keep phase margin in reserve. A gritty angle reading hits D first — D watches change, and noise is nothing but fake ch"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "反馈与控制",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Hook",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "sampling",
+    "category": "signal",
+    "scope": "core",
+    "path": "sampling/",
+    "title": {
+      "zh": "采样与混叠 · 偷看得太懒，就会看错",
+      "en": "Sampling & Aliasing · Peek Too Lazily and You'll See It Wrong"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Sampling & Aliasing",
+      "lang": "en",
+      "controls": 34,
+      "canvasCount": 12,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "采样与混叠",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Hook",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "trig",
+    "category": "math",
+    "scope": "core",
+    "path": "trig/",
+    "title": {
+      "zh": "三角函数 · 单位圆",
+      "en": "Trigonometric Functions · The Unit Circle"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Trig Functions · The Unit Circle",
+      "lang": "en",
+      "controls": 32,
+      "canvasCount": 9,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "三角函数 · 单位圆",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 The wave machine",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "montecarlo",
+    "category": "probability",
+    "scope": "core",
+    "path": "montecarlo/",
+    "title": {
+      "zh": "蒙特卡洛 · 撒豆子算 π",
+      "en": "Monte Carlo · Counting π with Scattered Beans"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Monte Carlo",
+      "lang": "en",
+      "controls": 42,
+      "canvasCount": 7,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "蒙特卡洛",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Hook",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "laplace",
+    "category": "signal",
+    "scope": "core",
+    "path": "laplace/",
+    "title": {
+      "zh": "拉普拉斯与 ROC · 给频率配一个寿命",
+      "en": "Laplace Transform & ROC · Giving Frequencies a Lifespan"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Laplace & the ROC",
+      "lang": "en",
+      "controls": 24,
+      "canvasCount": 11,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "only listens to tones that ring forever — it assumes every frequency keeps singing indefinitely. Real signals decay, or blow up. Laplace asks one extra question: is this tone "
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "拉普拉斯与 ROC",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Dying waves",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "bayes",
+    "category": "probability",
+    "scope": "core",
+    "path": "bayes/",
+    "title": {
+      "zh": "贝叶斯 · 先查底子，再看证据",
+      "en": "Bayes · Check the Base Rate Before the Evidence"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Bayes",
+      "lang": "en",
+      "controls": 35,
+      "canvasCount": 7,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "ledger. ⚠ The fine print of this ledger: it assumes the pieces of evidence are conditionally independent — knowing one result does not change the error odds of the next. But "
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "贝叶斯",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 The Hook",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "clt",
+    "category": "probability",
+    "scope": "core",
+    "path": "clt/",
+    "title": {
+      "zh": "中心极限定理 · 平均值总会变成钟形",
+      "en": "Central Limit Theorem · Averages Always Turn Bell-Shaped"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Central Limit Theorem",
+      "lang": "en",
+      "controls": 48,
+      "canvasCount": 8,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        ". Every \"tends to normal\" claim on this page assumes finite variance — that sentence is part of the theorem, not a footnote. Left, watch \"slow\": a skewness-2 exponential only",
+        "l N(nμ, nσ²) for comparison. The bell is not assumed — it is what the act of adding grinds out. n = 1 n = 2 n = 3 n = 5 n = 10 n = 5: convolved sum density peak 0.599 · max "
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "中心极限定理",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Hook",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "ztransform",
+    "category": "signal",
+    "scope": "core",
+    "path": "ztransform/",
+    "title": {
+      "zh": "Z 变换 · 把 s 平面卷成单位圆",
+      "en": "The Z-Transform · Rolling the s-Plane into the Unit Circle"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Z-Transform · The Unit Circle",
+      "lang": "en",
+      "controls": 24,
+      "canvasCount": 15,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-T",
+          "height": 26
+        },
+        {
+          "id": "s0-play",
+          "height": 41
+        },
+        {
+          "id": "s0-trails",
+          "height": 17
+        },
+        {
+          "id": "s1-r",
+          "height": 26
+        },
+        {
+          "id": "s1-om",
+          "height": 26
+        },
+        {
+          "id": "s2-a",
+          "height": 26
+        },
+        {
+          "id": "s2-add1",
+          "height": 41
+        },
+        {
+          "id": "s2-add20",
+          "height": 41
+        },
+        {
+          "id": "s2-run",
+          "height": 41
+        },
+        {
+          "id": "s2-reset",
+          "height": 41
+        },
+        {
+          "id": "s3-causal",
+          "height": 43
+        },
+        {
+          "id": "s3-left",
+          "height": 43
+        },
+        {
+          "id": "s3-a",
+          "height": 26
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "s5-T",
+          "height": 26
+        },
+        {
+          "id": "s5-twin",
+          "height": 41
+        },
+        {
+          "id": "s6-r",
+          "height": 26
+        },
+        {
+          "id": "s6-play-dry",
+          "height": 41
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "Z 变换 · 单位圆",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Roll the plane",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "gradient-descent",
+    "category": "computing",
+    "scope": "adjacent",
+    "path": "gradient-descent/",
+    "title": {
+      "zh": "梯度下降 · 摸黑下山",
+      "en": "Gradient Descent · Feeling Your Way Downhill"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Gradient Descent · Downhill in the Dark",
+      "lang": "en",
+      "controls": 46,
+      "canvasCount": 10,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-eta",
+          "height": 26
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "s0-step",
+          "height": 41
+        },
+        {
+          "id": "s0-play",
+          "height": 41
+        },
+        {
+          "id": "s0-reset",
+          "height": 41
+        },
+        {
+          "id": "s1-eta",
+          "height": 26
+        },
+        {
+          "id": "s1-step",
+          "height": 41
+        },
+        {
+          "id": "s1-play",
+          "height": 41
+        },
+        {
+          "id": "s1-reset",
+          "height": 41
+        },
+        {
+          "id": "s2-kap",
+          "height": 26
+        },
+        {
+          "id": "s2-eta",
+          "height": 26
+        },
+        {
+          "id": "s2-etastar",
+          "height": 43
+        },
+        {
+          "id": "s2-step",
+          "height": 43
+        },
+        {
+          "id": "s2-play",
+          "height": 41
+        },
+        {
+          "id": "s2-runall",
+          "height": 41
+        },
+        {
+          "id": "s2-reset",
+          "height": 41
+        },
+        {
+          "id": "s3-kap",
+          "height": 26
+        },
+        {
+          "id": "s3-beta",
+          "height": 26
+        },
+        {
+          "id": "s3-step",
+          "height": 41
+        },
+        {
+          "id": "s3-play",
+          "height": 41
+        },
+        {
+          "id": "s3-runall",
+          "height": 41
+        },
+        {
+          "id": "s3-reset",
+          "height": 41
+        },
+        {
+          "id": "s4-batch",
+          "height": 26
+        },
+        {
+          "id": "s4-step",
+          "height": 41
+        },
+        {
+          "id": "s4-play",
+          "height": 41
+        },
+        {
+          "id": "s4-reset",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "s5-eta",
+          "height": 26
+        },
+        {
+          "id": "s5-noise",
+          "height": 17
+        },
+        {
+          "id": "s5-step",
+          "height": 41
+        },
+        {
+          "id": "s5-play",
+          "height": 41
+        },
+        {
+          "id": "s5-reset",
+          "height": 41
+        },
+        {
+          "id": "s6-eta",
+          "height": 26
+        },
+        {
+          "id": "s6-step1",
+          "height": 41
+        },
+        {
+          "id": "s6-step10",
+          "height": 41
+        },
+        {
+          "id": "s6-play",
+          "height": 41
+        },
+        {
+          "id": "s6-reset",
+          "height": 41
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "t Descent · Downhill in the Dark Training a model, at bottom, is walking downhill on terrain you cannot see: the slope under your feet (the gradient) is the only information ",
+        "ng every day. Step 6 · Finale Train a real model, right here The finale uses everything from the five steps before it. The dataset is two seeded blobs of points (60 in tota",
+        "wo seeded blobs of points (60 in total); the model is the simplest linear-regression classifier: a line scores each point, ŷ = w₁x + w₂y + b, fitted to the 0/1 labels, and the"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "梯度下降 · 摸黑下山",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 The Line",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "eigen",
+    "category": "math",
+    "scope": "core",
+    "path": "eigen/",
+    "title": {
+      "zh": "特征值与特征向量 · 矩阵不转的那些方向",
+      "en": "Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Eigenvalues & Eigenvectors · The Directions a Matrix Won’t Turn",
+      "lang": "en",
+      "controls": 40,
+      "canvasCount": 10,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "0⁻¹⁶: diagonalization is an identity, not an approximation. A = QΛQᵀ, columns of Q = unit eigenvectors, Λ = diag(λ₁, λ₂) λ₁ = 2.7662 λ₂ = 0.4338 v₁·v₂ = 5.55×10⁻¹⁷ (orthogon"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "特征值与特征向量 · 矩阵不转的那些方向",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Circle → Ellipse",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "entropy",
+    "category": "probability",
+    "scope": "core",
+    "path": "entropy/",
+    "title": {
+      "zh": "熵 · 惊讶的平均值",
+      "en": "Entropy · The Average of Surprise"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Entropy",
+      "lang": "en",
+      "controls": 74,
+      "canvasCount": 9,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "s0a-draw10",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "s0b-draw10",
+          "height": 41
+        },
+        {
+          "id": "s1-p",
+          "height": 26
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "s1-seed",
+          "height": 41
+        },
+        {
+          "id": "s2-w0",
+          "height": 26
+        },
+        {
+          "id": "s2-w1",
+          "height": 26
+        },
+        {
+          "id": "s2-w2",
+          "height": 26
+        },
+        {
+          "id": "s2-w3",
+          "height": 26
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "s2-sample1",
+          "height": 41
+        },
+        {
+          "id": "s2-sample20",
+          "height": 41
+        },
+        {
+          "id": "s2-seed",
+          "height": 41
+        },
+        {
+          "id": "s3-p",
+          "height": 26
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "s3-rand",
+          "height": 41
+        },
+        {
+          "id": "s3-seq",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "s4-play",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "s5-pw0",
+          "height": 26
+        },
+        {
+          "id": "s5-pw1",
+          "height": 26
+        },
+        {
+          "id": "s5-pw2",
+          "height": 26
+        },
+        {
+          "id": "s5-pw3",
+          "height": 26
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "s5-qw0",
+          "height": 26
+        },
+        {
+          "id": "s5-qw1",
+          "height": 26
+        },
+        {
+          "id": "s5-qw2",
+          "height": 26
+        },
+        {
+          "id": "s5-qw3",
+          "height": 26
+        },
+        {
+          "id": "s5-qcopy",
+          "height": 41
+        },
+        {
+          "id": "s5-swap",
+          "height": 41
+        },
+        {
+          "id": "s5-smooth",
+          "height": 17
+        },
+        {
+          "id": "s6-len",
+          "height": 26
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "d the scale yourself — then weigh passwords, models, and the universe with it. 中 EN 0 Hook 1 Pricing Surprise 2 Entropy Workshop 3 Binary Entropy & 20 Questions 4 Huffman Cod",
+        "s why I must be −log p (under a monotonicity assumption, the logarithm is the unique additive price). Flip four coins (wait for \"all heads\") New seed Log pricing: I(1/4) + I",
+        "py & KL Divergence How Expensive Is a Wrong Model? The real world emits symbols by distribution p, but your model believes the world is q. Price p's data with q's ledger and"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "熵",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Hook",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "lti",
+    "category": "signal",
+    "scope": "core",
+    "path": "lti/",
+    "title": {
+      "zh": "冲激与 LTI · 给系统一巴掌",
+      "en": "Impulse & LTI · Slap the System"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Impulse & LTI · One Slap",
+      "lang": "en",
+      "controls": 40,
+      "canvasCount": 17,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "s2-copies",
+          "height": 17
+        },
+        {
+          "id": "s4-ov-h",
+          "height": 17
+        },
+        {
+          "id": "s4-ov-s",
+          "height": 17
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "wise difference = 0.7000 An honest aside on scope: continuous time has a δ(t) too, but it is not an ordinary function — it can only be defined through limits and its sifting ",
+        "ing it as a finite narrow spike is always an approximation sketch. This page stays out of that swamp and uses only the discrete δ[n]: an ordinary sequence, 1 at n = 0 and 0 el",
+        "to one real system: a discrete spring–damper model — the difference equation below is its definition (one n is one time step): θ sets how fast it swings (stiffness), r sets ho"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "冲激与 LTI · 一巴掌",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 The Slap",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "freqresp",
+    "category": "signal",
+    "scope": "core",
+    "path": "freqresp/",
+    "title": {
+      "zh": "频率响应与滤波 · 按频率挑食的盒子",
+      "en": "Frequency Response & Filters · A Box That Eats by Frequency"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Frequency Response & Filters · The Picky Box",
+      "lang": "en",
+      "controls": 28,
+      "canvasCount": 15,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "ed off the simulated waveform with an oscilloscope mindset (the measured card: the page really integrates the circuit equation with RK4, then projects the steady-state wavefor",
+        "ehand to within a dB or two. Two such stages ideally cascaded give a −40 dB/dec ramp (step 6 uses this; “ideal” because a real passive cascade loads its predecessor — stages n",
+        "d give a −40 dB/dec ramp (step 6 uses this; “ideal” because a real passive cascade loads its predecessor — stages need a buffer between them). Step 3 · Digital Filters Movin"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "频率响应与滤波 · 挑食的盒子",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 The Picky Box",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "modulation",
+    "category": "signal",
+    "scope": "core",
+    "path": "modulation/",
+    "title": {
+      "zh": "调制与频移 · 把信号搬上高频运走",
+      "en": "Modulation · Shipping Signals on a Carrier"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Modulation & Frequency Shifting",
+      "lang": "en",
+      "controls": 20,
+      "canvasCount": 13,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-fc",
+          "height": 26
+        },
+        {
+          "id": "s1-msg-single",
+          "height": 41
+        },
+        {
+          "id": "s1-msg-dual",
+          "height": 41
+        },
+        {
+          "id": "s1-m",
+          "height": 26
+        },
+        {
+          "id": "s2-df",
+          "height": 26
+        },
+        {
+          "id": "s2-phi",
+          "height": 26
+        },
+        {
+          "id": "s3-m",
+          "height": 26
+        },
+        {
+          "id": "s3-tau",
+          "height": 26
+        },
+        {
+          "id": "s4-beta",
+          "height": 26
+        },
+        {
+          "id": "s4-seed",
+          "height": 41
+        },
+        {
+          "id": "s5-tgt-0",
+          "height": 41
+        },
+        {
+          "id": "s5-tgt-1",
+          "height": 41
+        },
+        {
+          "id": "s5-tgt-2",
+          "height": 41
+        },
+        {
+          "id": "s5-tune",
+          "height": 26
+        },
+        {
+          "id": "s5-space",
+          "height": 26
+        },
+        {
+          "id": "s6-orth",
+          "height": 41
+        },
+        {
+          "id": "s6-broken",
+          "height": 41
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "al necessity. Filter note: this page uses an ideal low-pass (FFT-domain mask, 60 Hz cutoff); Step 5’s band-pass works the same way. Step 3 · Envelope Detection The poor rece",
+        "stortion (fit SNR) >200 dB Multiply by LO + ideal low-pass (φ = 0, Δf = 0), same AM signal τ has a sweet spot in the middle: at τ = 15 ms the distortion is 18.8 dB. Push m p"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "调制与频移 · 把信号搬上高频运走",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Moving House",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "kalman",
+    "category": "signal",
+    "scope": "core",
+    "path": "kalman/",
+    "title": {
+      "zh": "卡尔曼滤波 · 在预测与测量之间称重",
+      "en": "Kalman Filter · Weighing Prediction Against Measurement"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Kalman Filter · Correcting Predictions with Measurements",
+      "lang": "en",
+      "controls": 24,
+      "canvasCount": 12,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "s1-show-raw",
+          "height": 17
+        },
+        {
+          "id": "s1-show-ma",
+          "height": 17
+        },
+        {
+          "id": "s1-show-kf",
+          "height": 17
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "an filter predicts a position using a motion model, then corrects it with a new sensor reading. The model is a simplified description of how motion works. The correction depen",
+        "n corrects it with a new sensor reading. The model is a simplified description of how motion works. The correction depends on how uncertain the prediction and the reading are.",
+        "d R = 1. Q is the variance of the change the model cannot predict; R is the measurement-error variance. Variance is standard deviation squared. These settings match the random"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "卡尔曼滤波 · 用测量修正预测",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Estimate a Position",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "fractions",
+    "category": "math",
+    "scope": "core",
+    "path": "fractions/",
+    "title": {
+      "zh": "分数 · 把整体切开来数",
+      "en": "Fractions · Cutting the Whole to Count"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Fractions · One Number, Cut to Size",
+      "lang": "en",
+      "controls": 47,
+      "canvasCount": 8,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s1-den",
+          "height": 26
+        },
+        {
+          "id": "s3-an-m",
+          "height": 33.2
+        },
+        {
+          "id": "s3-an-p",
+          "height": 33.2
+        },
+        {
+          "id": "s3-ad-m",
+          "height": 33.2
+        },
+        {
+          "id": "s3-ad-p",
+          "height": 33.2
+        },
+        {
+          "id": "s3-cn-m",
+          "height": 33.2
+        },
+        {
+          "id": "s3-cn-p",
+          "height": 33.2
+        },
+        {
+          "id": "s3-cd-m",
+          "height": 33.2
+        },
+        {
+          "id": "s3-cd-p",
+          "height": 33.2
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "分数 · 把整体切开来数",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Two Ways to Cut",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "pythagoras",
+    "category": "math",
+    "scope": "core",
+    "path": "pythagoras/",
+    "title": {
+      "zh": "勾股定理 · 一步一交互",
+      "en": "The Pythagorean Theorem · One Interaction at a Time"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "The Pythagorean Theorem",
+      "lang": "en",
+      "controls": 30,
+      "canvasCount": 7,
+      "canvasNamed": 7,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s2-a",
+          "height": 26
+        },
+        {
+          "id": "s2-b",
+          "height": 26
+        },
+        {
+          "id": "s3-unlock",
+          "height": 20
+        },
+        {
+          "id": "s3-x",
+          "height": 26
+        },
+        {
+          "id": "s3-y",
+          "height": 26
+        },
+        {
+          "id": "s5-d",
+          "height": 26
+        },
+        {
+          "id": "s5-x",
+          "height": 26
+        },
+        {
+          "id": "s5-y",
+          "height": 26
+        },
+        {
+          "id": "s6-k",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "nd measure distances. These are mathematical models, not physical measurements. 中 EN 0 Coincidence? 1 Areas 2 Proof 3 Drag 4 Classify 5 Apply 6 Finale Step 0 A 3, 4, 5 coin",
+        "; the square-root route uses a²+b². Both are model calculations, not physical measurements. Releasing the angle keeps the current shape unchanged. Then the endpoints stay fixe",
+        "√ takes the nonnegative inverse of squaring. Model 1 assumes a vertical wall and level ground: a 5 m ladder has height √(25−d²) as its foot moves distance d. Screen width, hei"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "勾股定理",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Coincidence?",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "area-model",
+    "category": "math",
+    "scope": "core",
+    "path": "area-model/",
+    "title": {
+      "zh": "乘法是面积 · 点阵铺成一块地",
+      "en": "Multiplication Is Area · Arrays Become a Tiled Floor"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Multiplication Is Area",
+      "lang": "en",
+      "controls": 22,
+      "canvasCount": 6,
+      "canvasNamed": 6,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-rows",
+          "height": 26
+        },
+        {
+          "id": "s0-cols",
+          "height": 26
+        },
+        {
+          "id": "s1-a",
+          "height": 26
+        },
+        {
+          "id": "s1-b",
+          "height": 26
+        },
+        {
+          "id": "s2-cut",
+          "height": 26
+        },
+        {
+          "id": "s3-m",
+          "height": 26
+        },
+        {
+          "id": "s3-n",
+          "height": 26
+        },
+        {
+          "id": "s4-w",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "乘法是面积",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Too Many Dots",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "perimeter-area",
+    "category": "math",
+    "scope": "core",
+    "path": "perimeter-area/",
+    "title": {
+      "zh": "周长 vs 面积 · 一根绳子两种账",
+      "en": "Perimeter vs Area · One Rope, Two Ledgers"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Perimeter vs Area · The Rope and the Tiles",
+      "lang": "en",
+      "controls": 15,
+      "canvasCount": 5,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-len",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "rea, peaking when they are equal (a square). Scope note: this page lists whole-metre rectangles as its evidence; the conclusion in fact holds for all rectangles. Step 2 · Fli"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "周长 vs 面积 · 绳子和地砖",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 One Rope",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "division-remainder",
+    "category": "math",
+    "scope": "core",
+    "path": "division-remainder/",
+    "title": {
+      "zh": "除法与余数 · 分不完的那一点",
+      "en": "Division & Remainders · What Is Left Over"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Division & Remainders · Share Fairly, Name What Is Left",
+      "lang": "en",
+      "controls": 28,
+      "canvasCount": 5,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-total",
+          "height": 26
+        },
+        {
+          "id": "s0-people",
+          "height": 26
+        },
+        {
+          "id": "s1-total",
+          "height": 26
+        },
+        {
+          "id": "s1-div",
+          "height": 26
+        },
+        {
+          "id": "s1-per",
+          "height": 26
+        },
+        {
+          "id": "s2-total",
+          "height": 26
+        },
+        {
+          "id": "s2-div",
+          "height": 26
+        },
+        {
+          "id": "s3-days",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "除法与余数 · 分公平，剩下的叫余数",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Dealing Candies",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "linear-functions",
+    "category": "math",
+    "scope": "core",
+    "path": "linear-functions/",
+    "title": {
+      "zh": "一次函数 · 斜率是陡缓，截距是起点",
+      "en": "Linear Functions · Slope Is Steepness, Intercept Is the Start"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Linear Functions · A Line and Its Equation",
+      "lang": "en",
+      "controls": 19,
+      "canvasCount": 7,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-k",
+          "height": 26
+        },
+        {
+          "id": "s1-b",
+          "height": 26
+        },
+        {
+          "id": "s3-k2",
+          "height": 26
+        },
+        {
+          "id": "s3-b2",
+          "height": 26
+        },
+        {
+          "id": "s4q2-k",
+          "height": 26
+        },
+        {
+          "id": "s4q2-b",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "一次函数 · 直线与它的方程",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 The Ramp",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "symmetry-rotation",
+    "category": "math",
+    "scope": "core",
+    "path": "symmetry-rotation/",
+    "title": {
+      "zh": "对称与旋转 · 对折与转圈",
+      "en": "Symmetry & Rotation · Folding and Turning"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Symmetry & Rotation · Flip It, Spin It",
+      "lang": "en",
+      "controls": 90,
+      "canvasCount": 12,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "",
+          "height": 40
+        },
+        {
+          "id": "s2-ang",
+          "height": 26
+        },
+        {
+          "id": "s4-q3-ang",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "mbine: you draw one small piece and a kaleidoscope grows the whole pattern. 中 EN 0 Try a Fold 1 Count the Axes 2 Give It a Spin 3 Kaleidoscope 4 Quiz · Finale Step 0 · Try a",
+        "d 1 Count the Axes 2 Give It a Spin 3 Kaleidoscope 4 Quiz · Finale Step 0 · Try a Fold Along Which Line Does It Fold Onto Itself? This step answers: what earns a line the n",
+        "more frequent coincidences. Step 3 · Kaleidoscope Draw One Small Piece — the Pattern Grows Itself This step answers: a kaleidoscope holds one tiny piece of coloured glass, "
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "对称与旋转 · 翻一翻，转一转",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Try a Fold",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "parabola",
+    "category": "math",
+    "scope": "core",
+    "path": "parabola/",
+    "title": {
+      "zh": "抛物线 · 投篮的弧线",
+      "en": "Parabolas · The Arc of a Shot"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Quadratic Functions & the Parabola · The Arc of a Shot",
+      "lang": "en",
+      "controls": 25,
+      "canvasCount": 7,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s1-a",
+          "height": 26
+        },
+        {
+          "id": "s2-h",
+          "height": 26
+        },
+        {
+          "id": "s2-k",
+          "height": 26
+        },
+        {
+          "id": "s3-h",
+          "height": 26
+        },
+        {
+          "id": "s3-k",
+          "height": 26
+        },
+        {
+          "id": "s4q2-h",
+          "height": 26
+        },
+        {
+          "id": "s4q2-k",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "二次函数与抛物线 · 投篮的弧线",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 The Shot",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "velocity-vt",
+    "category": "physics",
+    "scope": "core",
+    "path": "velocity-vt/",
+    "title": {
+      "zh": "速度与 v-t 图 · 面积就是路",
+      "en": "Speed and the v–t Graph · Area Is Distance"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Velocity & v–t Graphs · Area Is Distance",
+      "lang": "en",
+      "controls": 36,
+      "canvasCount": 8,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-probe",
+          "height": 26
+        },
+        {
+          "id": "s1-probe",
+          "height": 26
+        },
+        {
+          "id": "s3-probe",
+          "height": 26
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "s4-probe",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "es area = length × width come from? The Area Model page draws multiplication as a plot of land → visual.integ.life · Velocity & v–t Graphs —— one interaction at a time"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "速度与 v-t 图 · 面积就是路",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 The Race",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "integral",
+    "category": "math",
+    "scope": "core",
+    "path": "integral/",
+    "title": {
+      "zh": "定积分 · 把小条加回整体",
+      "en": "The Definite Integral · Adding the Strips Back Up"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "The Definite Integral",
+      "lang": "en",
+      "controls": 27,
+      "canvasCount": 6,
+      "canvasNamed": 6,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s1-n",
+          "height": 26
+        },
+        {
+          "id": "s2-n",
+          "height": 26
+        },
+        {
+          "id": "s3-x",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "pled velocity times its strip width gives an approximate contribution; the sum approaches2m. A sampled height need not equal the exact average velocity on that strip. Revisit ",
+        " → Change n and the sampling rule to compare approximations. Number of strips n (each slider notch doubles it) · n = 4 Left endpoints Midpoints Right endpoints Reset this ste"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "定积分",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 No Formula for a Curved Edge",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "reflection-refraction",
+    "category": "physics",
+    "scope": "core",
+    "path": "reflection-refraction/",
+    "title": {
+      "zh": "光的反射与折射 · 拐弯的规矩",
+      "en": "Reflection & Refraction · How Light Bends"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Reflection & Refraction",
+      "lang": "en",
+      "controls": 27,
+      "canvasCount": 5,
+      "canvasNamed": 5,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [
+        {
+          "href": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction",
+          "label": "Model source: OpenStax · refraction and Snell’s law ↗"
+        },
+        {
+          "href": "https://openstax.org/books/university-physics-volume-3/pages/1-4-total-internal-reflection",
+          "label": "Critical-angle conditions and limiting case · OpenStax ↗"
+        },
+        {
+          "href": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction",
+          "label": "Model source: OpenStax · refraction and Snell’s law ↗"
+        },
+        {
+          "href": "https://openstax.org/books/university-physics-volume-3/pages/1-4-total-internal-reflection",
+          "label": "Critical-angle conditions and limiting case · OpenStax ↗"
+        }
+      ],
+      "boundaryKeywordSnippets": [
+        "d v in the medium; it is dimensionless. This ideal model fixes air at1.00 and water at1.33, with homogeneous, non-absorbing media and no dispersion. It computes ray directions",
+        " the medium; it is dimensionless. This ideal model fixes air at1.00 and water at1.33, with homogeneous, non-absorbing media and no dispersion. It computes ray directions, not ",
+        " is no propagating refracted ray in air: the ideal interface totally reflects the light inside water. Try30°, the exact critical preset and60°; predict whether a refracted ray"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "光的反射与折射",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Mirror bounce",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "derivative",
+    "category": "math",
+    "scope": "core",
+    "path": "derivative/",
+    "title": {
+      "zh": "导数 · 把平均压成此刻",
+      "en": "The Derivative · Squeezing the Average into the Instant"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "The Derivative · Squeezing an Interval into a Point",
+      "lang": "en",
+      "controls": 40,
+      "canvasCount": 6,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-t",
+          "height": 26
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "s1-dx",
+          "height": 26
+        },
+        {
+          "id": "s2-x",
+          "height": 26
+        },
+        {
+          "id": "s2-reset",
+          "height": 41
+        },
+        {
+          "id": "s3-x",
+          "height": 26
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        },
+        {
+          "id": "",
+          "height": 43
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "fore — the secant slope with Δ = 0.001 as an approximation — and check it against the pattern value 2x. The second plot below records the derivative of every point you visit a",
+        " what is f′(1)? Remember every reading is an approximation with the tail not fully shrunk: you are choosing the number they converge to, not any single reading itself. Click ",
+        " parting notes: ① Smoothness is the standing assumption: if the curve has a sharp corner at some point (like |x| at 0), the secant slopes from the two sides cannot be forced t"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "导数 · 把「一段」压成「一点」",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Average velocity",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "lens",
+    "category": "physics",
+    "scope": "core",
+    "path": "lens/",
+    "title": {
+      "zh": "凸透镜成像 · 远近变像",
+      "en": "The Convex Lens · Near or Far, the Image Transforms"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Convex Lens Imaging · Move the Candle, Change the Image",
+      "lang": "en",
+      "controls": 30,
+      "canvasCount": 5,
+      "canvasNamed": 5,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [
+        {
+          "href": "https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses",
+          "label": "Scientific basis: OpenStax · thin lenses, signs and principal rays ↗"
+        }
+      ],
+      "boundaryKeywordSnippets": [
+        "o its focus. Conditions: this page draws the idealised case of a thin lens and rays near the axis; rays near the rim of a real lens deviate slightly (spherical aberration), wh",
+        "e an image point? In this paraxial thin-lens model, two independent principal rays suffice. Real images are intersections of outgoing rays; virtual images are intersections of",
+        "nal and thick-lens behaviour is outside this approximation. Step 2 · Moving the Candle (the core step) Drag the candle closer — the image wears five faces Question: how doe"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "凸透镜成像 · 蜡烛远近，像变样",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Parallel Light, One Point",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "interference",
+    "category": "physics",
+    "scope": "core",
+    "path": "interference/",
+    "title": {
+      "zh": "波的干涉 · 闹与静的图样",
+      "en": "Interference · A Pattern of Loud and Still"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Wave Interference",
+      "lang": "en",
+      "controls": 31,
+      "canvasCount": 8,
+      "canvasNamed": 8,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-lam",
+          "height": 26
+        },
+        {
+          "id": "s0-px",
+          "height": 26
+        },
+        {
+          "id": "s0-py",
+          "height": 26
+        },
+        {
+          "id": "s1-px",
+          "height": 26
+        },
+        {
+          "id": "s1-py",
+          "height": 26
+        },
+        {
+          "id": "s2-lam",
+          "height": 26
+        },
+        {
+          "id": "s2-px",
+          "height": 26
+        },
+        {
+          "id": "s2-py",
+          "height": 26
+        },
+        {
+          "id": "s2-env",
+          "height": 20
+        },
+        {
+          "id": "s3-px",
+          "height": 26
+        },
+        {
+          "id": "s3-py",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "波的干涉",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 One wave",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "exp-log",
+    "category": "math",
+    "scope": "core",
+    "path": "exp-log/",
+    "title": {
+      "zh": "指数与对数 · 翻倍与逆问",
+      "en": "Exponentials & Logarithms · Doubling and the Reverse Question"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Exponentials & Logarithms · Multiply Out, Ask Back",
+      "lang": "en",
+      "controls": 31,
+      "canvasCount": 4,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-t",
+          "height": 26
+        },
+        {
+          "id": "s1-a",
+          "height": 26
+        },
+        {
+          "id": "s1-x",
+          "height": 26
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        },
+        {
+          "id": "",
+          "height": 41
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "指数与对数 · 乘出来，问回去",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Doubling World",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "circle-angles",
+    "category": "math",
+    "scope": "core",
+    "path": "circle-angles/",
+    "title": {
+      "zh": "圆周角 · 为什么恰好是一半",
+      "en": "Inscribed Angles · Why Exactly Half"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "The Inscribed Angle Theorem",
+      "lang": "en",
+      "controls": 27,
+      "canvasCount": 6,
+      "canvasNamed": 6,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-pos",
+          "height": 26
+        },
+        {
+          "id": "s1-pos",
+          "height": 26
+        },
+        {
+          "id": "s1-central",
+          "height": 26
+        },
+        {
+          "id": "s2-central",
+          "height": 26
+        },
+        {
+          "id": "s3-pos",
+          "height": 26
+        },
+        {
+          "id": "s3-d",
+          "height": 26
+        },
+        {
+          "id": "s4-pos",
+          "height": 26
+        },
+        {
+          "id": "s5-pos",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "圆周角定理",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Meet the parts",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "complex-numbers",
+    "category": "math",
+    "scope": "core",
+    "path": "complex-numbers/",
+    "title": {
+      "zh": "复数 · 平面上的旋转",
+      "en": "Complex Numbers · Rotation on the Plane"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Complex Numbers · Multiplication Is Rotation Plus Scaling",
+      "lang": "en",
+      "controls": 38,
+      "canvasCount": 5,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-x",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "复数 · 乘法是旋转加伸缩",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 The Line Is Not Enough",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "standing-wave",
+    "category": "physics",
+    "scope": "core",
+    "path": "standing-wave/",
+    "title": {
+      "zh": "驻波 · 原地起伏的波",
+      "en": "Standing Waves · The Wave That Stays in Place"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Standing Waves",
+      "lang": "en",
+      "controls": 39,
+      "canvasCount": 8,
+      "canvasNamed": 8,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-lam",
+          "height": 26
+        },
+        {
+          "id": "s0-px",
+          "height": 26
+        },
+        {
+          "id": "s1-lam",
+          "height": 26
+        },
+        {
+          "id": "s1-px",
+          "height": 26
+        },
+        {
+          "id": "s1-env",
+          "height": 20
+        },
+        {
+          "id": "s2-len",
+          "height": 26
+        },
+        {
+          "id": "s2-lam",
+          "height": 26
+        },
+        {
+          "id": "s3-cmp",
+          "height": 20
+        },
+        {
+          "id": "s4-freq",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "s — this page fixes v = 3 (length units/s; a modelling choice). The n-th mode has wavelength λ_n = 2L/n and frequency f_n = v/λ_n. Names: the n = 1 mode is the fundamental, n ",
+        "sponse curve in this step is an illustrative model, not measured data: peak positions are computed from the f_n, while peak heights and widths are illustrative parameters. Dr",
+        "steady-state amplitude (<strong>illustrative model</strong>, not measured) = 1.04. Landed: the drive hits f_1, and the string is vibrating in the n = 1 mode's shape. Like pu"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "驻波",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Head-on superposition",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "negative-numbers",
+    "category": "math",
+    "scope": "core",
+    "path": "negative-numbers/",
+    "title": {
+      "zh": "负数 · 0 以下的世界",
+      "en": "Negative Numbers · The World Below Zero"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Negative Numbers · The World Below Zero",
+      "lang": "en",
+      "controls": 41,
+      "canvasCount": 7,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-ext",
+          "height": 26
+        },
+        {
+          "id": "s1-a",
+          "height": 26
+        },
+        {
+          "id": "s1-b",
+          "height": 26
+        },
+        {
+          "id": "s2-n",
+          "height": 26
+        },
+        {
+          "id": "s3-start",
+          "height": 26
+        },
+        {
+          "id": "s3-steps",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "负数 · 0 以下的世界",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Growing Left",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "pinhole-camera",
+    "category": "physics",
+    "scope": "core",
+    "path": "pinhole-camera/",
+    "title": {
+      "zh": "小孔成像 · 一个孔的相机",
+      "en": "Pinhole Camera · A Camera With One Tiny Hole"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "The Pinhole Camera",
+      "lang": "en",
+      "controls": 29,
+      "canvasCount": 4,
+      "canvasNamed": 4,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-disc",
+          "height": 26
+        },
+        {
+          "id": "s3-d",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [
+        {
+          "href": "https://openstax.org/books/elementary-algebra-2e/pages/8-7-solve-proportion-and-similar-figure-applications",
+          "label": "Similarity & proportion · textbook ↗"
+        },
+        {
+          "href": "https://openstax.org/books/college-physics-2e/pages/25-1-the-ray-aspect-of-light",
+          "label": "Ray approximation · textbook ↗"
+        },
+        {
+          "href": "https://openstax.org/books/college-physics-2e/pages/27-6-limits-of-resolution-the-rayleigh-criterion",
+          "label": "Diffraction boundary · textbook ↗"
+        }
+      ],
+      "boundaryKeywordSnippets": [
+        "coming from a single point (the point-source approximation), which is why the shadow's edge is sharp; a big source like the Sun gives shadows a graded fringe, which is beyond ",
+        " exact substitution values. Conclusion: the ideal central-ray size ratio is h/H=v/u, from proportional corresponding sides. A finite aperture spreads an object point into a s",
+        " pays with blur. In this geometrical-optics model, a smaller aperture reduces the geometric spot and admitted light; a larger aperture does the reverse. Wave diffraction at v"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "小孔成像",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Light goes straight",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "space-diagonal",
+    "category": "math",
+    "scope": "core",
+    "path": "space-diagonal/",
+    "title": {
+      "zh": "空间对角线 · 3D 里的两次勾股",
+      "en": "The Space Diagonal · Pythagoras Twice, in 3D"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "A box’s space diagonal",
+      "lang": "en",
+      "controls": 11,
+      "canvasCount": 2,
+      "canvasNamed": 2,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-stop",
+          "height": 44
+        },
+        {
+          "id": "s0-view",
+          "height": 44
+        },
+        {
+          "id": "s1-a",
+          "height": 26
+        },
+        {
+          "id": "s1-b",
+          "height": 26
+        },
+        {
+          "id": "s1-c",
+          "height": 26
+        },
+        {
+          "id": "s1-view",
+          "height": 44
+        },
+        {
+          "id": "answer2",
+          "height": 44
+        },
+        {
+          "id": "answer3",
+          "height": 44
+        },
+        {
+          "id": "answer5",
+          "height": 44
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "e · Base diagonal ━ c · Height Mathematical model, not a measurement. No coordinate axes: a and b lie on the base; c is height. Translucent shaded faces and edges show depth ",
+        "e · Base diagonal ━ c · Height Mathematical model, not a measurement. No coordinate axes: a and b lie on the base; c is height. Translucent shaded faces and edges show depth "
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "长方体的空间对角线",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Find the triangle",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "coordinate-plane",
+    "category": "math",
+    "scope": "core",
+    "path": "coordinate-plane/",
+    "title": {
+      "zh": "坐标系 · 点的地址",
+      "en": "The Coordinate Plane · Addresses for Points"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "The Coordinate Plane · An Address for Every Position",
+      "lang": "en",
+      "controls": 19,
+      "canvasCount": 8,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s1-col",
+          "height": 26
+        },
+        {
+          "id": "s1-row",
+          "height": 26
+        },
+        {
+          "id": "s3-x",
+          "height": 26
+        },
+        {
+          "id": "s3-y",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "坐标系与点的位置 · 给每个位置一个地址",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 One Number",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "particles-states",
+    "category": "chemistry",
+    "scope": "adjacent",
+    "path": "particles-states/",
+    "title": {
+      "zh": "粒子与物态 · 热闹程度即温度",
+      "en": "Particles & States · Temperature Is How Wildly They Move"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Particles & States of Matter",
+      "lang": "en",
+      "controls": 26,
+      "canvasCount": 5,
+      "canvasNamed": 5,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s1-heat",
+          "height": 26
+        },
+        {
+          "id": "s2-heat",
+          "height": 26
+        },
+        {
+          "id": "s3-heat",
+          "height": 26
+        },
+        {
+          "id": "s3-lid",
+          "height": 20
+        },
+        {
+          "id": "s4-heat",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "r the motion, the more kinetic energy — used qualitatively on this page, no formula) grows with it. The readout's temperature (indicative) is not copied from the slider: it is",
+        "e jiggling calms — reversible. The takeaway (qualitative only): the higher the temperature, the greater the particles' average kinetic energy — provided it is the same crowd a",
+        " (indicative) 7; average particle speed 6.3 (model units, computed from every particle's velocity); state: solid. The slider changes the model's thermal-agitation strength (a"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "粒子与物态",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Particles in a solid",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "lever-pulley",
+    "category": "physics",
+    "scope": "core",
+    "path": "lever-pulley/",
+    "title": {
+      "zh": "杠杆与滑轮 · 支点挪一挪，省力见分晓",
+      "en": "Levers & Pulleys · Move the Fulcrum, Feel the Trade"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Levers & Pulleys · Move the Fulcrum, Feel the Trade",
+      "lang": "en",
+      "controls": 32,
+      "canvasCount": 5,
+      "canvasNamed": 5,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-view",
+          "height": 41
+        },
+        {
+          "id": "s0-a",
+          "height": 26
+        },
+        {
+          "id": "s0-k",
+          "height": 26
+        },
+        {
+          "id": "s1-view",
+          "height": 41
+        },
+        {
+          "id": "s1-lr",
+          "height": 26
+        },
+        {
+          "id": "s2-view",
+          "height": 41
+        },
+        {
+          "id": "s3-view",
+          "height": 41
+        },
+        {
+          "id": "s3-s",
+          "height": 26
+        },
+        {
+          "id": "s4-view",
+          "height": 41
+        },
+        {
+          "id": "s4-s",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "erse of the force ratio. It is geometry, not approximation. Conditions: the ideal ledger (no friction, no bar weight). Step 3 · The Fixed Pulley: Direction Only The wheel at",
+        "geometry, not approximation. Conditions: the ideal ledger (no friction, no bar weight). Step 3 · The Fixed Pulley: Direction Only The wheel at the well mouth saves no force ",
+        "drawn in one colour and one thickness: in an ideal rope the tension is the same everywhere (no friction, no rope weight). Pull straight down Pull at an angle 3D scene · Drag"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "杠杆与滑轮 · 支点挪一挪，省力见分晓",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Seesaw · Torque",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "equations-balance",
+    "category": "math",
+    "scope": "core",
+    "path": "equations-balance/",
+    "title": {
+      "zh": "方程天平 · 两边同做一件事",
+      "en": "Equations on a Balance · Do the Same to Both Sides"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Equations on a Balance · Do the Same to Both Sides",
+      "lang": "en",
+      "controls": 42,
+      "canvasCount": 7,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 33.2
+        },
+        {
+          "id": "",
+          "height": 33.2
+        },
+        {
+          "id": "",
+          "height": 33.2
+        },
+        {
+          "id": "",
+          "height": 33.2
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "est note about this page’s setup: this is an ideal balance (no friction, a perfect needle). A real balance has a sensitivity limit — a tiny difference may not tilt it visibly.",
+        "r of this page’s limits: the balance here is ideal (no friction, a perfect needle) and every weight is a whole number of units. Equations with negative constants or fractional"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "方程天平 · 两边同做一件事",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Meet the Balance",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "day-night-rotation",
+    "category": "earth",
+    "scope": "adjacent",
+    "path": "day-night-rotation/",
+    "title": {
+      "zh": "昼夜交替 · 地球自己在转",
+      "en": "Day and Night · The Earth Itself Is Turning"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Day and Night",
+      "lang": "en",
+      "controls": 29,
+      "canvasCount": 10,
+      "canvasNamed": 10,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s0-view",
+          "height": 44
+        },
+        {
+          "id": "s1-view",
+          "height": 44
+        },
+        {
+          "id": "s2-restart",
+          "height": 44
+        },
+        {
+          "id": "s2-time",
+          "height": 26
+        },
+        {
+          "id": "s2-speed",
+          "height": 26
+        },
+        {
+          "id": "s3-vboth",
+          "height": 44
+        },
+        {
+          "id": "s3-vspace",
+          "height": 44
+        },
+        {
+          "id": "s3-vground",
+          "height": 44
+        },
+        {
+          "id": "s4-play",
+          "height": 44
+        },
+        {
+          "id": "s4-speed",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "full rotation takes 24 hours. In this page's model (the figure stands on the equator, and the axis is not tilted), he gets sunrise at 6:00 and sunset at 18:00 — 12 hours of da",
+        " root cause is always the Earth's rotation. Model honesty: where did this page simplify? ① The axis really is tilted: this page draws the axis upright, with sunlight squarel",
+        " the sunlight as parallel lines is a serious approximation, not a shortcut: the Sun is so far away that its light arrives at the Earth almost perfectly parallel. Coming next "
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "昼夜交替",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Meet the figure",
+      "outline": "3px",
+      "visible": true
+    }
+  },
+  {
+    "slug": "population-growth",
+    "category": "math",
+    "scope": "core",
+    "path": "population-growth/",
+    "title": {
+      "zh": "种群增长 · S 形曲线从哪来",
+      "en": "Population Growth · Where the S-Curve Comes From"
+    },
+    "localIndex": true,
+    "errors": [],
+    "failed": [],
+    "http": 200,
+    "observed": {
+      "h1": "Population Growth · Where the S-Curve Comes From",
+      "lang": "en",
+      "controls": 14,
+      "canvasCount": 5,
+      "canvasNamed": 0,
+      "potentialUnnamedControls": [],
+      "targetsBelow48": [
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "",
+          "height": 28.9
+        },
+        {
+          "id": "s1-r",
+          "height": 26
+        },
+        {
+          "id": "s2-r",
+          "height": 26
+        },
+        {
+          "id": "s2-k",
+          "height": 26
+        },
+        {
+          "id": "s3-n0",
+          "height": 26
+        },
+        {
+          "id": "s3-k",
+          "height": 26
+        },
+        {
+          "id": "s4-r",
+          "height": 26
+        }
+      ],
+      "overflow": false,
+      "scrollWidth": 390,
+      "duplicateIds": [],
+      "externalLinks": [],
+      "boundaryKeywordSnippets": [
+        "wall you crash into. Note this is a discrete model that jumps a whole generation at a time: if N₀ is far above K, one step brakes too hard and lands below K, then N climbs bac",
+        " 2,667, the very first step of this discrete model computes a negative population (the model breaks), so the slider is clamped to 2,500. Takeaway: below K the effective rate ",
+        "te model computes a negative population (the model breaks), so the slider is clamped to 2,500. Takeaway: below K the effective rate is positive and N climbs; above K it turns"
+      ],
+      "sectionIds": [
+        "step0",
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"
+      ]
+    },
+    "languageControl": true,
+    "zh": {
+      "lang": "zh-CN",
+      "h1": "种群增长 · S 形曲线从哪来",
+      "overflow": false
+    },
+    "firstKeyboardFocus": {
+      "tag": "A",
+      "id": "",
+      "text": "0 Doubling",
+      "outline": "3px",
+      "visible": true
+    }
+  }
+]

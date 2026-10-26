@@ -1,0 +1,136 @@
+[
+  {
+    "test": "entry and pure return en motion",
+    "data": {
+      "entry": {
+        "active": "motion-title",
+        "top": 15.703125
+      },
+      "preserved": true,
+      "returnLabel": "Return to current experiment: Circle projection →"
+    }
+  },
+  {
+    "test": "entry and pure return en kinematics",
+    "data": {
+      "entry": {
+        "active": "motion-rates-title",
+        "top": 15.703125
+      },
+      "preserved": true,
+      "returnLabel": "Return to current experiment: Slopes & net force →"
+    }
+  },
+  {
+    "test": "entry and pure return en travel",
+    "data": {
+      "entry": {
+        "active": "motion-travel-title",
+        "top": 15.703125
+      },
+      "preserved": true,
+      "returnLabel": "Return to current experiment: Signed area & travel →"
+    }
+  },
+  {
+    "test": "entry and pure return en response",
+    "data": {
+      "entry": {
+        "active": "response-title",
+        "top": 15.703125
+      },
+      "preserved": true,
+      "returnLabel": "Return to current experiment: Driven steady response →"
+    }
+  },
+  {
+    "test": "entry and pure return zh motion",
+    "data": {
+      "entry": {
+        "active": "motion-title",
+        "top": 16.34375
+      },
+      "preserved": true,
+      "returnLabel": "回到当前实验：圆周投影 →"
+    }
+  },
+  {
+    "test": "entry and pure return zh kinematics",
+    "data": {
+      "entry": {
+        "active": "motion-rates-title",
+        "top": 16.34375
+      },
+      "preserved": true,
+      "returnLabel": "回到当前实验：斜率与净力 →"
+    }
+  },
+  {
+    "test": "entry and pure return zh travel",
+    "data": {
+      "entry": {
+        "active": "motion-travel-title",
+        "top": 16.34375
+      },
+      "preserved": true,
+      "returnLabel": "回到当前实验：有符号面积与路程 →"
+    }
+  },
+  {
+    "test": "entry and pure return zh response",
+    "data": {
+      "entry": {
+        "active": "response-title",
+        "top": 16.34375
+      },
+      "preserved": true,
+      "returnLabel": "回到当前实验：受迫稳态响应 →"
+    }
+  },
+  {
+    "test": "off-route selection explained",
+    "data": "Suggested route · An editorial sequence, not a prerequisite rule.\n\nYou are viewing “Unit circle”, which is outside this route. You can also select one of this route’s concepts to inspect its explanation.\n\n1. Derivatives & instantaneous rates\n2. Harmonic motion\n3. Net force & Newton’s second law"
+  },
+  {
+    "test": "course Back returns same experiment",
+    "data": {
+      "url": "http://127.0.0.1:18775/atlas/?node=derivative&view=list&trail=kinematics",
+      "phase": "0.375",
+      "history": 5
+    }
+  },
+  {
+    "test": "return preserves ongoing playback",
+    "data": {
+      "beforePlaying": {
+        "url": "http://127.0.0.1:18775/atlas/?node=derivative&view=list&trail=kinematics",
+        "history": 5,
+        "phase": 0.43334620213748865
+      },
+      "afterPlaying": {
+        "url": "http://127.0.0.1:18775/atlas/?node=derivative&view=list&trail=kinematics",
+        "history": 5,
+        "phase": 0.44397775233602726,
+        "playing": "true"
+      }
+    }
+  },
+  {
+    "test": "320px200 long context keyboard en",
+    "data": {
+      "width": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "test": "320px200 long context keyboard zh",
+    "data": {
+      "width": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "test": "page errors",
+    "data": []
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "suite": "atlas",
+    "script": "atlas/tests/browser.cjs",
+    "exit": 0,
+    "seconds": 5.93,
+    "stdout": "{\"checks\":317,\"concepts\":34,\"relations\":43,\"locales\":[\"en\",\"zh\"],\"widths\":[320,390,768,1512],\"errors\":[],\"externalRuntimeRequests\":[],\"limits\":[\"No physical-device or screen-reader speech test\",\"No learning-effect claim\"],\"base\":\"http://127.0.0.1:18775\"}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "motion",
+    "script": "atlas/tests/motion-browser.cjs",
+    "exit": 0,
+    "seconds": 10.01,
+    "stdout": "{\n  \"checks\": [\n    \"en: existing-node entry, quarter phases/force signs, period ratios, visible amplitude, same-phase parameter comparison, pause/resume, locale/node/history/route retention, lesson Back, end/replay, 3 resets, widths320/390/768/1280\",\n    \"zh: existing-node entry, quarter phases/force signs, period ratios, visible amplitude, same-phase parameter comparison, pause/resume, locale/node/history/route retention, lesson Back, end/replay, 3 resets, widths320/390/768/1280\",\n    \"DPR1/2/3 repeat resize; reduced-motion paused; forced-colors focus; 200% text at320; denied local/session storage; keyboard seek/play\"\n  ],\n  \"errors\": [],\n  \"externalRuntimeRequests\": [],\n  \"limits\": [\n    \"No physical-phone or screen-reader speech test\",\n    \"No real-hardware or learning-gain evidence\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "rates",
+    "script": "atlas/tests/rates-browser.cjs",
+    "exit": 0,
+    "seconds": 9.43,
+    "stdout": "{\n  \"checks\": [\n    \"en: four presets+two nonpreset quadrants, signed speed/acceleration/force, fixed-phase mass comparison, stable v-axis per parameters, projection/rates single-clock play and locale continuity, graph/close/Back/source/response recovery,320/390/768/1280,3 resets, legacy rate/area caveats\",\n    \"zh: four presets+two nonpreset quadrants, signed speed/acceleration/force, fixed-phase mass comparison, stable v-axis per parameters, projection/rates single-clock play and locale continuity, graph/close/Back/source/response recovery,320/390/768/1280,3 resets, legacy rate/area caveats\",\n    \"DPR1/2/3 repeated resize; both locales320px200%; denied storage; keyboard seek/play; forced-colors focus; reduced-motion paused default\"\n  ],\n  \"errors\": [],\n  \"externalRuntimeRequests\": [],\n  \"limits\": [\n    \"No physical phone or screen-reader speech\",\n    \"Analytic model assumptions, not measured forces or learning outcomes\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "response",
+    "script": "atlas/tests/response-browser.cjs",
+    "exit": 0,
+    "seconds": 10.21,
+    "stdout": "{\n  \"checks\": [\n    \"en: contextual entry, \u03b6=.8 complex/no-peak counterexample, threshold sides/critical/overdamped, phase and poles invariance, locale/node/route/Back, old motion preservation, bandpass distinction and lesson Back,320/390/768/1280,3 resets, legacy marginal preset and double-zero fixtures\",\n    \"zh: contextual entry, \u03b6=.8 complex/no-peak counterexample, threshold sides/critical/overdamped, phase and poles invariance, locale/node/route/Back, old motion preservation, bandpass distinction and lesson Back,320/390/768/1280,3 resets, legacy marginal preset and double-zero fixtures\",\n    \"DPR1/2/3 repeat resize, reduced motion static charts, forced-colors focus,200% text at320, denied local/sessionStorage and keyboard controls\"\n  ],\n  \"errors\": [],\n  \"externalRuntimeRequests\": [],\n  \"limits\": [\n    \"No real phone or screen-reader speech\",\n    \"Analytic fixed-parameter steady model, no startup/real-hardware claim\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "travel",
+    "script": "atlas/tests/travel-browser.cjs",
+    "exit": 0,
+    "seconds": 8.72,
+    "stdout": "{\n  \"checks\": [\n    \"en: five interval identities, endpoints\u2260displacement, fixed-phase parameter scaling, single-clock three-view/language retention, b crosses a, source/Back/reload/close/response recovery,320/390/768/1280,48px,3 resets,end/replay,legacy lesson round trip\",\n    \"zh: five interval identities, endpoints\u2260displacement, fixed-phase parameter scaling, single-clock three-view/language retention, b crosses a, source/Back/reload/close/response recovery,320/390/768/1280,48px,3 resets,end/replay,legacy lesson round trip\",\n    \"both languages320px200%;DPR1/2/3 repeated resize;old session fallback;denied storage;keyboard a/b/play;forced-colors focus;reduced-motion paused\"\n  ],\n  \"errors\": [],\n  \"externalRuntimeRequests\": [],\n  \"limits\": [\n    \"No physical phone/screenreader speech/learner study\",\n    \"Exact ideal oscillator; sampled illustration only\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "suite": "home",
+    "script": "tests/leetcode-home-section.cjs",
+    "exit": 0,
+    "seconds": 18.43,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"catalog\": 120,\n  \"checks\": [\n    \"Direct category, lazy source, all links, stage hiding, unrelated URL state\",\n    \"Exact ID/NFKC, bilingual token AND, no-match, clear focus, locale and IME\",\n    \"Category/history/query/reload/lesson Back, other cards unchanged, All entry inline\",\n    \"Both locales 320/390/640/1280, equivalent layout zoom, 48px targets, forced colors/focus\",\n    \"Error/retry, query retention, delay/category/locale race, stable focus\",\n    \"Generated Codex registry: one card per ID, title/open routes, official URL, search/locale and navigation fixture\",\n    \"Bilingual empty catalog and real 15-second timeout with late response/retry\",\n    \"Malformed/duplicate/unsafe links, empty, 984 long-title fixture (126ms including navigation/filter)\",\n    \"Denied storage and file-protocol catalog fallback\"\n  ]\n}\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,77 @@
+{
+  "results": [
+    {
+      "lang": "EN",
+      "state": "M2zero",
+      "native": "3.14159265358979",
+      "text": "Step 3 · Digital Filters\n\nMoving-average zeros: executing one named frequency\n\nNow discrete time: n is an integer sample index. Here ω is digital angular frequency (rad/sample, often written Ω), not the earlier RC model’s rad/s. Given a sample rate Fₛ, ω=2πf/Fₛ; without Fₛ no physical Hz value is assigned. A moving average averages the latest M samples. At ω=2πk/M, provided k is not divisible by M, those M contributions cancel. At 0 and integer multiples of 2π, |H|=1 instead. Predict the first zero, then compare the preset and actual output samples.\n\n|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|); zeros: ω = 2πk/M, integer k not divisible by M; at ω=2πq, |H|=1.\n\nAveraging length M 2\nInput digital frequency ω (rad/sample) 3.142\nFeed the zero 2π/M\nFeed the first sidelobe peak\nFeed a passband tone, 0.20\n\nM = 2 · ω = 3.142 rad/sample · analytic |H| = 6.12e−17 · simulated steady-state amplitude = 0 · first sidelobe peak: none (at M = 2 the zero already sits at π — no sidelobe inside [0, π]) · linear-phase group delay on nonzero bands = 0.5 samples (phase/local group delay undefined at zeros)\n\nRange: 0.05 to π rad/sample. Slider arrows step 0.005; Shift+arrow steps 0.05; Home selects 0.05 and End exact π. Presets keep exact frequencies rather than rounding to displayed decimals. With M=2 the first zero isπ; then change M to 3, predict amplitude 1/3 and compare analytic and measured values. A zero output cannot measure phase or delay. Sidelobes are not zeros: a moving average smooths but is no ideal stopband filter. Basis: Smith · moving-average response →"
+    },
+    {
+      "lang": "EN",
+      "state": "M3pi",
+      "native": "3.14159265358979",
+      "text": "Step 3 · Digital Filters\n\nMoving-average zeros: executing one named frequency\n\nNow discrete time: n is an integer sample index. Here ω is digital angular frequency (rad/sample, often written Ω), not the earlier RC model’s rad/s. Given a sample rate Fₛ, ω=2πf/Fₛ; without Fₛ no physical Hz value is assigned. A moving average averages the latest M samples. At ω=2πk/M, provided k is not divisible by M, those M contributions cancel. At 0 and integer multiples of 2π, |H|=1 instead. Predict the first zero, then compare the preset and actual output samples.\n\n|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|); zeros: ω = 2πk/M, integer k not divisible by M; at ω=2πq, |H|=1.\n\nAveraging length M 3\nInput digital frequency ω (rad/sample) 3.142\nFeed the zero 2π/M\nFeed the first sidelobe peak\nFeed a passband tone, 0.20\n\nM = 3 · ω = 3.142 rad/sample · analytic |H| = 0.3333 · simulated steady-state amplitude = 0.3333 · first sidelobe peak |H| = 0.3333 (−9.5 dB) · linear-phase group delay on nonzero bands = 1.0 samples (phase/local group delay undefined at zeros)\n\nRange: 0.05 to π rad/sample. Slider arrows step 0.005; Shift+arrow steps 0.05; Home selects 0.05 and End exact π. Presets keep exact frequencies rather than rounding to displayed decimals. With M=2 the first zero isπ; then change M to 3, predict amplitude 1/3 and compare analytic and measured values. A zero output cannot measure phase or delay. Sidelobes are not zeros: a moving average smooths but is no ideal stopband filter. Basis: Smith · moving-average response →"
+    },
+    {
+      "lang": "EN",
+      "state": "M3side",
+      "native": "3.14159265358979",
+      "text": "Step 3 · Digital Filters\n\nMoving-average zeros: executing one named frequency\n\nNow discrete time: n is an integer sample index. Here ω is digital angular frequency (rad/sample, often written Ω), not the earlier RC model’s rad/s. Given a sample rate Fₛ, ω=2πf/Fₛ; without Fₛ no physical Hz value is assigned. A moving average averages the latest M samples. At ω=2πk/M, provided k is not divisible by M, those M contributions cancel. At 0 and integer multiples of 2π, |H|=1 instead. Predict the first zero, then compare the preset and actual output samples.\n\n|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|); zeros: ω = 2πk/M, integer k not divisible by M; at ω=2πq, |H|=1.\n\nAveraging length M 3\nInput digital frequency ω (rad/sample) 3.142\nFeed the zero 2π/M\nFeed the first sidelobe peak\nFeed a passband tone, 0.20\n\nM = 3 · ω = 3.142 rad/sample · analytic |H| = 0.3333 · simulated steady-state amplitude = 0.3333 · first sidelobe peak |H| = 0.3333 (−9.5 dB) · linear-phase group delay on nonzero bands = 1.0 samples (phase/local group delay undefined at zeros)\n\nRange: 0.05 to π rad/sample. Slider arrows step 0.005; Shift+arrow steps 0.05; Home selects 0.05 and End exact π. Presets keep exact frequencies rather than rounding to displayed decimals. With M=2 the first zero isπ; then change M to 3, predict amplitude 1/3 and compare analytic and measured values. A zero output cannot measure phase or delay. Sidelobes are not zeros: a moving average smooths but is no ideal stopband filter. Basis: Smith · moving-average response →"
+    },
+    {
+      "lang": "EN",
+      "state": "M8pass",
+      "native": "0.2",
+      "text": "Step 3 · Digital Filters\n\nMoving-average zeros: executing one named frequency\n\nNow discrete time: n is an integer sample index. Here ω is digital angular frequency (rad/sample, often written Ω), not the earlier RC model’s rad/s. Given a sample rate Fₛ, ω=2πf/Fₛ; without Fₛ no physical Hz value is assigned. A moving average averages the latest M samples. At ω=2πk/M, provided k is not divisible by M, those M contributions cancel. At 0 and integer multiples of 2π, |H|=1 instead. Predict the first zero, then compare the preset and actual output samples.\n\n|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|); zeros: ω = 2πk/M, integer k not divisible by M; at ω=2πq, |H|=1.\n\nAveraging length M 8\nInput digital frequency ω (rad/sample) 0.200\nFeed the zero 2π/M\nFeed the first sidelobe peak\nFeed a passband tone, 0.20\n\nM = 8 · ω = 0.200 rad/sample · analytic |H| = 0.8982 · simulated steady-state amplitude = 0.8982 · first sidelobe peak |H| = 0.2292 (−12.8 dB) · linear-phase group delay on nonzero bands = 3.5 samples (phase/local group delay undefined at zeros)\n\nRange: 0.05 to π rad/sample. Slider arrows step 0.005; Shift+arrow steps 0.05; Home selects 0.05 and End exact π. Presets keep exact frequencies rather than rounding to displayed decimals. With M=2 the first zero isπ; then change M to 3, predict amplitude 1/3 and compare analytic and measured values. A zero output cannot measure phase or delay. Sidelobes are not zeros: a moving average smooths but is no ideal stopband filter. Basis: Smith · moving-average response →"
+    },
+    {
+      "lang": "中",
+      "state": "M2zero",
+      "native": "3.14159265358979",
+      "text": "第 3 步 · 数字滤波器\n\n移动平均的零点：点名枪毙一个频率\n\n换到离散时间：n 是整数样本索引，本步 ω 是数字角频率（rad/样本，也常记作 Ω），不是前面RC模型的 rad/s。若采样率 Fₛ 已知，则 ω = 2πf/Fₛ；未给 Fₛ 就不能指定对应的 Hz。移动平均把最近 M 个样本取平均；当 ω = 2πk/M 且 k 不是 M 的整数倍时，M项正负抵消，响应为零。ω=0或2π的整数倍处则 |H|=1，不是零点。先预测，再用首零点预设和实测样本对账。\n\n|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|)；零点 ω = 2πk/M，k∈ℤ且非M的倍数；ω=2πq时 |H|=1。\n\n平均长度 M 2\n输入数字频率 ω（rad/样本） 3.142\n送零点频率 2π/M\n送第一旁瓣峰\n送通带低频 0.20\n\nM = 2 · ω = 3.142 rad/样本 · 解析 |H| = 6.12e−17 · 离散仿真实测稳态幅值 = 0 · 第一旁瓣峰：无（M = 2 时零点已在 π 处，[0, π] 内没有旁瓣） · 非零频带的线性相位群延迟 = 0.5 个样本（零点处相位/局部群延迟未定义）\n\n频率范围0.05到π rad/样本。滑杆←/→步长0.005，Shift加方向键0.05；Home到0.05，End到精确π。预设保留精确频率，不按显示小数舍入。M=2首零点在π，随后改成M=3时，预测幅值1/3并比较解析与实测。零响应不能用来测相位或延迟。旁瓣不是零：移动平均能平滑，却不是理想阻带滤波器。依据：Smith · 移动平均频率响应 →"
+    },
+    {
+      "lang": "中",
+      "state": "M3pi",
+      "native": "3.14159265358979",
+      "text": "第 3 步 · 数字滤波器\n\n移动平均的零点：点名枪毙一个频率\n\n换到离散时间：n 是整数样本索引，本步 ω 是数字角频率（rad/样本，也常记作 Ω），不是前面RC模型的 rad/s。若采样率 Fₛ 已知，则 ω = 2πf/Fₛ；未给 Fₛ 就不能指定对应的 Hz。移动平均把最近 M 个样本取平均；当 ω = 2πk/M 且 k 不是 M 的整数倍时，M项正负抵消，响应为零。ω=0或2π的整数倍处则 |H|=1，不是零点。先预测，再用首零点预设和实测样本对账。\n\n|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|)；零点 ω = 2πk/M，k∈ℤ且非M的倍数；ω=2πq时 |H|=1。\n\n平均长度 M 3\n输入数字频率 ω（rad/样本） 3.142\n送零点频率 2π/M\n送第一旁瓣峰\n送通带低频 0.20\n\nM = 3 · ω = 3.142 rad/样本 · 解析 |H| = 0.3333 · 离散仿真实测稳态幅值 = 0.3333 · 第一旁瓣峰 |H| = 0.3333（−9.5 dB） · 非零频带的线性相位群延迟 = 1.0 个样本（零点处相位/局部群延迟未定义）\n\n频率范围0.05到π rad/样本。滑杆←/→步长0.005，Shift加方向键0.05；Home到0.05，End到精确π。预设保留精确频率，不按显示小数舍入。M=2首零点在π，随后改成M=3时，预测幅值1/3并比较解析与实测。零响应不能用来测相位或延迟。旁瓣不是零：移动平均能平滑，却不是理想阻带滤波器。依据：Smith · 移动平均频率响应 →"
+    },
+    {
+      "lang": "中",
+      "state": "M3side",
+      "native": "3.14159265358979",
+      "text": "第 3 步 · 数字滤波器\n\n移动平均的零点：点名枪毙一个频率\n\n换到离散时间：n 是整数样本索引，本步 ω 是数字角频率（rad/样本，也常记作 Ω），不是前面RC模型的 rad/s。若采样率 Fₛ 已知，则 ω = 2πf/Fₛ；未给 Fₛ 就不能指定对应的 Hz。移动平均把最近 M 个样本取平均；当 ω = 2πk/M 且 k 不是 M 的整数倍时，M项正负抵消，响应为零。ω=0或2π的整数倍处则 |H|=1，不是零点。先预测，再用首零点预设和实测样本对账。\n\n|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|)；零点 ω = 2πk/M，k∈ℤ且非M的倍数；ω=2πq时 |H|=1。\n\n平均长度 M 3\n输入数字频率 ω（rad/样本） 3.142\n送零点频率 2π/M\n送第一旁瓣峰\n送通带低频 0.20\n\nM = 3 · ω = 3.142 rad/样本 · 解析 |H| = 0.3333 · 离散仿真实测稳态幅值 = 0.3333 · 第一旁瓣峰 |H| = 0.3333（−9.5 dB） · 非零频带的线性相位群延迟 = 1.0 个样本（零点处相位/局部群延迟未定义）\n\n频率范围0.05到π rad/样本。滑杆←/→步长0.005，Shift加方向键0.05；Home到0.05，End到精确π。预设保留精确频率，不按显示小数舍入。M=2首零点在π，随后改成M=3时，预测幅值1/3并比较解析与实测。零响应不能用来测相位或延迟。旁瓣不是零：移动平均能平滑，却不是理想阻带滤波器。依据：Smith · 移动平均频率响应 →"
+    },
+    {
+      "lang": "中",
+      "state": "M8pass",
+      "native": "0.2",
+      "text": "第 3 步 · 数字滤波器\n\n移动平均的零点：点名枪毙一个频率\n\n换到离散时间：n 是整数样本索引，本步 ω 是数字角频率（rad/样本，也常记作 Ω），不是前面RC模型的 rad/s。若采样率 Fₛ 已知，则 ω = 2πf/Fₛ；未给 Fₛ 就不能指定对应的 Hz。移动平均把最近 M 个样本取平均；当 ω = 2πk/M 且 k 不是 M 的整数倍时，M项正负抵消，响应为零。ω=0或2π的整数倍处则 |H|=1，不是零点。先预测，再用首零点预设和实测样本对账。\n\n|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|)；零点 ω = 2πk/M，k∈ℤ且非M的倍数；ω=2πq时 |H|=1。\n\n平均长度 M 8\n输入数字频率 ω（rad/样本） 0.200\n送零点频率 2π/M\n送第一旁瓣峰\n送通带低频 0.20\n\nM = 8 · ω = 0.200 rad/样本 · 解析 |H| = 0.8982 · 离散仿真实测稳态幅值 = 0.8982 · 第一旁瓣峰 |H| = 0.2292（−12.8 dB） · 非零频带的线性相位群延迟 = 3.5 个样本（零点处相位/局部群延迟未定义）\n\n频率范围0.05到π rad/样本。滑杆←/→步长0.005，Shift加方向键0.05；Home到0.05，End到精确π。预设保留精确频率，不按显示小数舍入。M=2首零点在π，随后改成M=3时，预测幅值1/3并比较解析与实测。零响应不能用来测相位或延迟。旁瓣不是零：移动平均能平滑，却不是理想阻带滤波器。依据：Smith · 移动平均频率响应 →"
+    },
+    {
+      "key": "ArrowLeft",
+      "before": "3.14159265358979",
+      "after": "3.13659265358979",
+      "text": "第 3 步 · 数字滤波器\n\n移动平均的零点：点名枪毙一个频率\n\n换到离散时间：n 是整数样本索引，本步 ω 是数字角频率（rad/样本，也常记作 Ω），不是前面RC模型的 rad/s。若采样率 Fₛ 已知，则 ω = 2πf/Fₛ；未给 Fₛ 就不能指定对应的 Hz。移动平均把最近 M 个样本取平均；当 ω = 2πk/M 且 k 不是 M 的整数倍时，M项正负抵消，响应为零。ω=0或2π的整数倍处则 |H|=1，不是零点。先预测，再用首零点预设和实测样本对账。\n\n|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|)；零点 ω = 2πk/M，k∈ℤ且非M的倍数；ω=2πq时 |H|=1。\n\n平均长度 M 8\n输入数字频率 ω（rad/样本） 3.137\n送零点频率 2π/M\n送第一旁瓣峰\n送通带低频 0.20\n\nM = 8 · ω = 3.137 rad/样本 · 解析 |H| = 0.0025 · 离散仿真实测稳态幅值 = 0.0025 · 第一旁瓣峰 |H| = 0.2292（−12.8 dB） · 非零频带的线性相位群延迟 = 3.5 个样本（零点处相位/局部群延迟未定义）\n\n频率范围0.05到π rad/样本。滑杆←/→步长0.005，Shift加方向键0.05；Home到0.05，End到精确π。预设保留精确频率，不按显示小数舍入。M=2首零点在π，随后改成M=3时，预测幅值1/3并比较解析与实测。零响应不能用来测相位或延迟。旁瓣不是零：移动平均能平滑，却不是理想阻带滤波器。依据：Smith · 移动平均频率响应 →"
+    },
+    {
+      "key": "Shift+ArrowLeft",
+      "before": "3.13659265358979",
+      "after": "3.08659265358979",
+      "text": "第 3 步 · 数字滤波器\n\n移动平均的零点：点名枪毙一个频率\n\n换到离散时间：n 是整数样本索引，本步 ω 是数字角频率（rad/样本，也常记作 Ω），不是前面RC模型的 rad/s。若采样率 Fₛ 已知，则 ω = 2πf/Fₛ；未给 Fₛ 就不能指定对应的 Hz。移动平均把最近 M 个样本取平均；当 ω = 2πk/M 且 k 不是 M 的整数倍时，M项正负抵消，响应为零。ω=0或2π的整数倍处则 |H|=1，不是零点。先预测，再用首零点预设和实测样本对账。\n\n|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|)；零点 ω = 2πk/M，k∈ℤ且非M的倍数；ω=2πq时 |H|=1。\n\n平均长度 M 8\n输入数字频率 ω（rad/样本） 3.087\n送零点频率 2π/M\n送第一旁瓣峰\n送通带低频 0.20\n\nM = 8 · ω = 3.087 rad/样本 · 解析 |H| = 0.0273 · 离散仿真实测稳态幅值 = 0.0273 · 第一旁瓣峰 |H| = 0.2292（−12.8 dB） · 非零频带的线性相位群延迟 = 3.5 个样本（零点处相位/局部群延迟未定义）\n\n频率范围0.05到π rad/样本。滑杆←/→步长0.005，Shift加方向键0.05；Home到0.05，End到精确π。预设保留精确频率，不按显示小数舍入。M=2首零点在π，随后改成M=3时，预测幅值1/3并比较解析与实测。零响应不能用来测相位或延迟。旁瓣不是零：移动平均能平滑，却不是理想阻带滤波器。依据：Smith · 移动平均频率响应 →"
+    },
+    {
+      "key": "Home",
+      "before": "3.08659265358979",
+      "after": "0.05",
+      "text": "第 3 步 · 数字滤波器\n\n移动平均的零点：点名枪毙一个频率\n\n换到离散时间：n 是整数样本索引，本步 ω 是数字角频率（rad/样本，也常记作 Ω），不是前面RC模型的 rad/s。若采样率 Fₛ 已知，则 ω = 2πf/Fₛ；未给 Fₛ 就不能指定对应的 Hz。移动平均把最近 M 个样本取平均；当 ω = 2πk/M 且 k 不是 M 的整数倍时，M项正负抵消，响应为零。ω=0或2π的整数倍处则 |H|=1，不是零点。先预测，再用首零点预设和实测样本对账。\n\n|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|)；零点 ω = 2πk/M，k∈ℤ且非M的倍数；ω=2πq时 |H|=1。\n\n平均长度 M 8\n输入数字频率 ω（rad/样本） 0.050\n送零点频率 2π/M\n送第一旁瓣峰\n送通带低频 0.20\n\nM = 8 · ω = 0.050 rad/样本 · 解析 |H| = 0.9935 · 离散仿真实测稳态幅值 = 0.9935 · 第一旁瓣峰 |H| = 0.2292（−12.8 dB） · 非零频带的线性相位群延迟 = 3.5 个样本（零点处相位/局部群延迟未定义）\n\n频率范围0.05到π rad/样本。滑杆←/→步长0.005，Shift加方向键0.05；Home到0.05，End到精确π。预设保留精确频率，不按显示小数舍入。M=2首零点在π，随后改成M=3时，预测幅值1/3并比较解析与实测。零响应不能用来测相位或延迟。旁瓣不是零：移动平均能平滑，却不是理想阻带滤波器。依据：Smith · 移动平均频率响应 →"
+    },
+    {
+      "key": "End",
+      "before": "0.05",
+      "after": "3.14159265358979",
+      "text": "第 3 步 · 数字滤波器\n\n移动平均的零点：点名枪毙一个频率\n\n换到离散时间：n 是整数样本索引，本步 ω 是数字角频率（rad/样本，也常记作 Ω），不是前面RC模型的 rad/s。若采样率 Fₛ 已知，则 ω = 2πf/Fₛ；未给 Fₛ 就不能指定对应的 Hz。移动平均把最近 M 个样本取平均；当 ω = 2πk/M 且 k 不是 M 的整数倍时，M项正负抵消，响应为零。ω=0或2π的整数倍处则 |H|=1，不是零点。先预测，再用首零点预设和实测样本对账。\n\n|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|)；零点 ω = 2πk/M，k∈ℤ且非M的倍数；ω=2πq时 |H|=1。\n\n平均长度 M 8\n输入数字频率 ω（rad/样本） 3.142\n送零点频率 2π/M\n送第一旁瓣峰\n送通带低频 0.20\n\nM = 8 · ω = 3.142 rad/样本 · 解析 |H| = 6.12e−17 · 离散仿真实测稳态幅值 = 0 · 第一旁瓣峰 |H| = 0.2292（−12.8 dB） · 非零频带的线性相位群延迟 = 3.5 个样本（零点处相位/局部群延迟未定义）\n\n频率范围0.05到π rad/样本。滑杆←/→步长0.005，Shift加方向键0.05；Home到0.05，End到精确π。预设保留精确频率，不按显示小数舍入。M=2首零点在π，随后改成M=3时，预测幅值1/3并比较解析与实测。零响应不能用来测相位或延迟。旁瓣不是零：移动平均能平滑，却不是理想阻带滤波器。依据：Smith · 移动平均频率响应 →"
+    }
+  ],
+  "errors": []
+}

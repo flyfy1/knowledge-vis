@@ -1,0 +1,522 @@
+{
+  "checked": 86,
+  "broken": [],
+  "checks": [
+    {
+      "document": "README.md",
+      "reference": "atlas/README.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "README.md",
+      "reference": "specs/leetcode-explainers.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "README.md",
+      "reference": "specs/leetcode-hard-traces.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "README.md",
+      "reference": "specs/reviews/leetcode-first-ten-review.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../WORKFLOW.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../UI-I18N-SPEC.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../CONCEPT-MAP.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/tangent-domain-design-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/tangent-domain-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/nightly-math-physics-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/lens-focus-design-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/lens-focus-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/refraction-normal-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/pinhole-geometry-design-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/pinhole-geometry-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/complex-keyboard-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/nightly-math-physics-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-audit-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-motion-verification-20261025.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-response-verification-20261025.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/frozen-bubble-verification.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/tangent-domain-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/lens-focus-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/refraction-normal-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/pinhole-geometry-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/complex-keyboard-design-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/complex-keyboard-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-audit-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/nightly-math-physics-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-work-design-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-work-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-foundations-design-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-foundations-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-continuity-design-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-continuity-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-travel-design-20261025.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-travel-verification-20261025.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-rates-design-20261025.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-rates-verification-20261025.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-response-design-20261025.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-response-verification-20261025.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-motion-design-20261025.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/atlas-motion-verification-20261025.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/math-physics-atlas-design-review.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "atlas/README.md",
+      "reference": "../specs/reviews/math-physics-atlas-verification.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/nightly-math-physics-20261026.md",
+      "reference": "tangent-domain-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/nightly-math-physics-20261026.md",
+      "reference": "atlas-work-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/nightly-math-physics-20261026.md",
+      "reference": "tangent-domain-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/nightly-math-physics-20261026.md",
+      "reference": "lens-focus-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/nightly-math-physics-20261026.md",
+      "reference": "pinhole-geometry-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/nightly-math-physics-20261026.md",
+      "reference": "refraction-normal-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/nightly-math-physics-20261026.md",
+      "reference": "complex-keyboard-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/nightly-math-physics-20261026.md",
+      "reference": "atlas-continuity-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/nightly-math-physics-20261026.md",
+      "reference": "frozen-bubble-verification.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/nightly-math-physics-20261026.md",
+      "reference": "tangent-domain-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/nightly-math-physics-20261026.md",
+      "reference": "../../atlas/README.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/nightly-math-physics-20261026.md",
+      "reference": "../../atlas/README.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/nightly-math-physics-20261026.md",
+      "reference": "atlas-audit-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/tangent-domain-verification-20261026.md",
+      "reference": "tangent-domain-design-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/tangent-domain-verification-20261026.md",
+      "reference": "../../atlas/README.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/tangent-domain-verification-20261026.md",
+      "reference": "nightly-math-physics-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/tangent-domain-verification-20261026.md",
+      "reference": "tangent-domain-verification-20261026/acceptance-summary.json",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/tangent-domain-verification-20261026.md",
+      "reference": "tangent-domain-verification-20261026/independent/final-acceptance.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/tangent-domain-verification-20261026.md",
+      "reference": "tangent-domain-verification-20261026/cold-ui/postfix-ui-review.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/tangent-domain-verification-20261026.md",
+      "reference": "tangent-domain-verification-20261026/serial-regressions.json",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/lens-focus-verification-20261026.md",
+      "reference": "../../atlas/README.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/lens-focus-verification-20261026.md",
+      "reference": "nightly-math-physics-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/lens-focus-verification-20261026.md",
+      "reference": "lens-focus-design-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/lens-focus-verification-20261026.md",
+      "reference": "lens-focus-verification-20261026/acceptance-summary.json",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/lens-focus-verification-20261026.md",
+      "reference": "lens-focus-verification-20261026/independent/final-acceptance.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/lens-focus-verification-20261026.md",
+      "reference": "lens-focus-verification-20261026/cold-ui/postfix-ui-review.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/lens-focus-verification-20261026.md",
+      "reference": "lens-focus-verification-20261026/serial-regressions.json",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/refraction-normal-verification-20261026.md",
+      "reference": "../../atlas/README.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/refraction-normal-verification-20261026.md",
+      "reference": "nightly-math-physics-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/refraction-normal-verification-20261026.md",
+      "reference": "refraction-normal-design-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/refraction-normal-verification-20261026.md",
+      "reference": "refraction-normal-verification-20261026/acceptance-summary.json",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/refraction-normal-verification-20261026.md",
+      "reference": "refraction-normal-verification-20261026/independent/final-acceptance.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/refraction-normal-verification-20261026.md",
+      "reference": "refraction-normal-verification-20261026/cold-ui/postfix-ui-review.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/refraction-normal-verification-20261026.md",
+      "reference": "refraction-normal-verification-20261026/serial-regressions.json",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "reference": "../../atlas/README.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "reference": "nightly-math-physics-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "reference": "atlas-audit-verification-20261026.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "reference": "pinhole-geometry-verification-20261026/acceptance-summary.json",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "reference": "pinhole-geometry-verification-20261026/independent/actual-final-review.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/pinhole-geometry-verification-20261026.md",
+      "reference": "pinhole-geometry-verification-20261026/cold-ui/postfix-ui-review.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    },
+    {
+      "document": "specs/reviews/atlas-work-verification-20261026.md",
+      "reference": "../../atlas/README.md",
+      "exists": true,
+      "scope": "Filesystem target only; anchors/content not certified."
+    }
+  ]
+}

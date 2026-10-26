@@ -8,6 +8,10 @@
    ============================================================ */
 const STR = {
   zh: {
+    geometryTitle: "下一站 · 同一斜率怎样决定小孔倒像？",
+    geometryIntro: "这张图用 y=kx+b 描述直线。先把 b 调为0，观察直线穿过原点。换到光路时，以孔心为原点，穿孔直线的截距就是0；物点和像点仍在同一条直线上。相似三角形把对应长度的比联系起来，像的倒转还要看坐标正负。",
+    geometryLink: "到小孔课比较斜率、相似比和倒像 →",
+    geometryReturn: "看完可用浏览器返回；本步斜率、截距与选中探针随本条历史记录恢复。它们是阅读情境，不是学习掌握记录。",
     docTitle: '一次函数 · 斜率是陡缓，截距是起点 —— 一步一交互',
     back: '← 知识索引',
     pageTitle: '一次函数 · 直线与它的方程',
@@ -101,6 +105,10 @@ const STR = {
     s5lkPyth: '坐标的下一站：勾股定理第 5 步把坐标用来量两点之间的距离——距离公式，其实就是勾股定理穿上坐标的衣服 →'
   },
   en: {
+    geometryTitle: "Next · how does the same slope determine a pinhole image?",
+    geometryIntro: "This plot describes a line with y=kx+b. Set b to0 and observe the line passing through the origin. In a ray diagram, place the origin at the hole: a line through it has intercept0. Object and image points remain on that same line. Similar triangles relate corresponding length ratios, while coordinate signs explain inversion.",
+    geometryLink: "Compare slope, similar ratios and inversion in the pinhole lesson →",
+    geometryReturn: "Use browser Back after inspecting it. This history entry retains this step’s slope, intercept and selected probe as reading context, not a record of learning or mastery.",
     docTitle: 'Linear Functions · Slope Is Steepness, Intercept Is the Start — One Interaction at a Time',
     back: '← Knowledge Index',
     pageTitle: 'Linear Functions · A Line and Its Equation',

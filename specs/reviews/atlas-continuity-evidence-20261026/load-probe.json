@@ -1,0 +1,1351 @@
+[
+  {
+    "i": 0,
+    "batch": 1,
+    "errors": [],
+    "failed": [],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 1.199999988079071
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 1.5
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 30953,
+        "duration": 1.800000011920929
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 2722,
+        "duration": 2.9000000059604645
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 1253,
+        "duration": 1.800000011920929
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 3.2000000178813934
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 3.2000000178813934
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 35885,
+        "duration": 2.4000000059604645
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 22016,
+        "duration": 3.4000000059604645
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": true,
+      "motion": true,
+      "response": true,
+      "detail": true
+    },
+    "pass": true
+  },
+  {
+    "i": 1,
+    "batch": 1,
+    "errors": [],
+    "failed": [],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 0.8999999761581421
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 1.2999999821186066
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 1253,
+        "duration": 1.699999988079071
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 30953,
+        "duration": 1.699999988079071
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 2722,
+        "duration": 2.5
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 35885,
+        "duration": 2.699999988079071
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 3
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 3.199999988079071
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 22016,
+        "duration": 3.5
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": true,
+      "motion": true,
+      "response": true,
+      "detail": true
+    },
+    "pass": true
+  },
+  {
+    "i": 2,
+    "batch": 1,
+    "errors": [],
+    "failed": [],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 1.199999988079071
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 1253,
+        "duration": 1.0999999940395355
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 1.2999999821186066
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 30953,
+        "duration": 1.5
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 2.5999999940395355
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 35885,
+        "duration": 2.4000000059604645
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 2722,
+        "duration": 2.7999999821186066
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 3.5
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 22016,
+        "duration": 3.5
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": true,
+      "motion": true,
+      "response": true,
+      "detail": true
+    },
+    "pass": true
+  },
+  {
+    "i": 3,
+    "batch": 1,
+    "errors": [],
+    "failed": [],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 1.199999988079071
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 1.199999988079071
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 30953,
+        "duration": 1.699999988079071
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 2722,
+        "duration": 2.300000011920929
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 35885,
+        "duration": 2.9000000059604645
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 1253,
+        "duration": 1.300000011920929
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 3.0999999940395355
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 3.5
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 22016,
+        "duration": 3.5
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": true,
+      "motion": true,
+      "response": true,
+      "detail": true
+    },
+    "pass": true
+  },
+  {
+    "i": 4,
+    "batch": 1,
+    "errors": [],
+    "failed": [],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 1.5
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 1.800000011920929
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 30953,
+        "duration": 1.7000000178813934
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 1253,
+        "duration": 0.8999999761581421
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 2722,
+        "duration": 2.699999988079071
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 2.7999999821186066
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 35885,
+        "duration": 2.899999976158142
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 3.5
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 22016,
+        "duration": 3.399999976158142
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": true,
+      "motion": true,
+      "response": true,
+      "detail": true
+    },
+    "pass": true
+  },
+  {
+    "i": 5,
+    "batch": 1,
+    "errors": [],
+    "failed": [],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 1.199999988079071
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 1.4000000059604645
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 30953,
+        "duration": 1.800000011920929
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 2722,
+        "duration": 3.300000011920929
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 1253,
+        "duration": 1.300000011920929
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 2.800000011920929
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 35885,
+        "duration": 3.100000023841858
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 3.300000011920929
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 22016,
+        "duration": 3.7000000178813934
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": true,
+      "motion": true,
+      "response": true,
+      "detail": true
+    },
+    "pass": true
+  },
+  {
+    "i": 2,
+    "batch": 6,
+    "errors": [],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:18775/atlas/style.css?v=continuity-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/response-bridge.css?v=response-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/motion-model.js?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/motion-bridge.js?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/app.js?v=continuity-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      }
+    ],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 0,
+        "duration": 1.699999988079071
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 7.0999999940395355
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 30953,
+        "duration": 6.4000000059604645
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 0,
+        "duration": 2
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 0,
+        "duration": 1.7000000178813934
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 0,
+        "duration": 2.800000011920929
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 0,
+        "duration": 3.5
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 7.4000000059604645
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 8
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": true,
+      "motion": false,
+      "response": true,
+      "detail": false
+    },
+    "pass": false
+  },
+  {
+    "i": 3,
+    "batch": 6,
+    "errors": [],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:18775/atlas/response-bridge.css?v=response-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/motion-model.js?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/motion-bridge.js?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/response-model.js?v=response-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/app.js?v=continuity-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      }
+    ],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 4.4000000059604645
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 6.300000011920929
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 30953,
+        "duration": 4.9000000059604645
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 0,
+        "duration": 1.5999999940395355
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 0,
+        "duration": 1.7999999821186066
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 0,
+        "duration": 1.7999999821186066
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 0,
+        "duration": 2.2999999821186066
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 0,
+        "duration": 2.4000000059604645
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 5.5999999940395355
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": true,
+      "motion": false,
+      "response": true,
+      "detail": false
+    },
+    "pass": false
+  },
+  {
+    "i": 1,
+    "batch": 6,
+    "errors": [
+      "TypeError: Cannot read properties of undefined (reading 'defaults')"
+    ],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:18775/atlas/response-bridge.css?v=response-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/data.js?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/motion-model.js?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/app.js?v=continuity-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      }
+    ],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 3.9000000059604645
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 4.800000011920929
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 0,
+        "duration": 2.300000011920929
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 0,
+        "duration": 1.5999999940395355
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 0,
+        "duration": 2.5
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 9
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 35885,
+        "duration": 6.199999988079071
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 0,
+        "duration": 3.699999988079071
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 7.799999982118607
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": false,
+      "motion": false,
+      "response": true,
+      "detail": false
+    },
+    "pass": false
+  },
+  {
+    "i": 0,
+    "batch": 6,
+    "errors": [
+      "TypeError: Cannot read properties of undefined (reading 'update')"
+    ],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:18775/atlas/response-bridge.js?v=response-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      }
+    ],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 2.5
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 3.5
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 30953,
+        "duration": 4.5999999940395355
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 2722,
+        "duration": 5
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 1253,
+        "duration": 4
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 0,
+        "duration": 4.4000000059604645
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 6.0999999940395355
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 35885,
+        "duration": 6.200000017881393
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 22016,
+        "duration": 7.700000017881393
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": true,
+      "motion": true,
+      "response": false,
+      "detail": true
+    },
+    "pass": false
+  },
+  {
+    "i": 4,
+    "batch": 6,
+    "errors": [],
+    "failed": [],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 5.300000011920929
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 3.0999999940395355
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 30953,
+        "duration": 7.199999988079071
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 2722,
+        "duration": 4
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 35885,
+        "duration": 7.899999976158142
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 1253,
+        "duration": 3.2999999821186066
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 5.299999982118607
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 7.9000000059604645
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 22016,
+        "duration": 7.9000000059604645
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": true,
+      "motion": true,
+      "response": true,
+      "detail": true
+    },
+    "pass": true
+  },
+  {
+    "i": 5,
+    "batch": 6,
+    "errors": [],
+    "failed": [],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 3.4000000059604645
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 3.4000000059604645
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 30953,
+        "duration": 4.5
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 2722,
+        "duration": 4.4000000059604645
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 35885,
+        "duration": 5
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 1253,
+        "duration": 3.699999988079071
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 5.199999988079071
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 5.199999988079071
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 22016,
+        "duration": 5.899999976158142
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": true,
+      "motion": true,
+      "response": true,
+      "detail": true
+    },
+    "pass": true
+  },
+  {
+    "i": 7,
+    "batch": 6,
+    "errors": [],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:18775/atlas/motion-bridge.css?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/response-bridge.css?v=response-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/data.js?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/motion-bridge.js?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/response-model.js?v=response-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/app.js?v=continuity-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      }
+    ],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 6.300000011920929
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 0,
+        "duration": 2.300000011920929
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 0,
+        "duration": 1.100000023841858
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 0,
+        "duration": 1.800000011920929
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 0,
+        "duration": 2.600000023841858
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 2722,
+        "duration": 7.200000017881393
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 0,
+        "duration": 2.5999999940395355
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 0,
+        "duration": 3.199999988079071
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 8.299999982118607
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": false,
+      "motion": false,
+      "response": true,
+      "detail": false
+    },
+    "pass": false
+  },
+  {
+    "i": 8,
+    "batch": 6,
+    "errors": [],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:18775/atlas/style.css?v=continuity-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/motion-bridge.css?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/response-bridge.css?v=response-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/data.js?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/motion-bridge.js?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/response-bridge.js?v=response-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/app.js?v=continuity-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      }
+    ],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 0,
+        "duration": 1.0999999940395355
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 0,
+        "duration": 1.2000000178813934
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 0,
+        "duration": 1.300000011920929
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 0,
+        "duration": 1.0999999940395355
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 0,
+        "duration": 2.399999976158142
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 0,
+        "duration": 3.199999988079071
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 0,
+        "duration": 3.199999988079071
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 6.899999976158142
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 2722,
+        "duration": 6.299999982118607
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": false,
+      "motion": false,
+      "response": false,
+      "detail": false
+    },
+    "pass": false
+  },
+  {
+    "i": 10,
+    "batch": 6,
+    "errors": [
+      "TypeError: Cannot read properties of undefined (reading 'groups')"
+    ],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:18775/atlas/motion-bridge.css?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/response-bridge.css?v=response-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/data.js?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/motion-model.js?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/motion-bridge.js?v=rates-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:18775/atlas/response-model.js?v=response-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      }
+    ],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 5.4000000059604645
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 0,
+        "duration": 1.2000000178813934
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 0,
+        "duration": 1.5
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 0,
+        "duration": 1.2999999821186066
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 0,
+        "duration": 1.5
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 0,
+        "duration": 1.5999999940395355
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 0,
+        "duration": 1.7999999821186066
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 5.299999982118607
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 22016,
+        "duration": 8.099999994039536
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": false,
+      "motion": false,
+      "response": true,
+      "detail": false
+    },
+    "pass": false
+  },
+  {
+    "i": 9,
+    "batch": 6,
+    "errors": [],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:18775/atlas/app.js?v=continuity-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      }
+    ],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 4.299999982118607
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 30953,
+        "duration": 5.199999988079071
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 3.5
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 1253,
+        "duration": 3.699999988079071
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 2722,
+        "duration": 6.800000011920929
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 9.099999994039536
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 35885,
+        "duration": 6.800000011920929
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 0,
+        "duration": 4.4000000059604645
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 8.900000005960464
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": true,
+      "motion": true,
+      "response": true,
+      "detail": false
+    },
+    "pass": false
+  },
+  {
+    "i": 6,
+    "batch": 6,
+    "errors": [
+      "TypeError: Cannot read properties of undefined (reading 'update')"
+    ],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:18775/atlas/response-bridge.js?v=response-1",
+        "reason": {
+          "errorText": "net::ERR_CONNECTION_RESET"
+        }
+      }
+    ],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 2.399999976158142
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 3.5
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 30953,
+        "duration": 5.799999982118607
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 1253,
+        "duration": 4.300000011920929
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 0,
+        "duration": 4.5999999940395355
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 2722,
+        "duration": 6
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 8.400000005960464
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 22016,
+        "duration": 10.300000011920929
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 35885,
+        "duration": 6.699999988079071
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": true,
+      "motion": true,
+      "response": false,
+      "detail": true
+    },
+    "pass": false
+  },
+  {
+    "i": 11,
+    "batch": 6,
+    "errors": [],
+    "failed": [],
+    "bad": [],
+    "resources": [
+      {
+        "name": "style.css?v=continuity-1",
+        "size": 9294,
+        "duration": 3.199999988079071
+      },
+      {
+        "name": "data.js?v=rates-1",
+        "size": 30953,
+        "duration": 3.4000000059604645
+      },
+      {
+        "name": "motion-bridge.css?v=rates-1",
+        "size": 4463,
+        "duration": 2.7000000178813934
+      },
+      {
+        "name": "response-bridge.css?v=response-1",
+        "size": 1253,
+        "duration": 2.4000000059604645
+      },
+      {
+        "name": "motion-model.js?v=rates-1",
+        "size": 2722,
+        "duration": 4.800000011920929
+      },
+      {
+        "name": "response-model.js?v=response-1",
+        "size": 1333,
+        "duration": 5.100000023841858
+      },
+      {
+        "name": "response-bridge.js?v=response-1",
+        "size": 13694,
+        "duration": 5.4000000059604645
+      },
+      {
+        "name": "app.js?v=continuity-1",
+        "size": 22016,
+        "duration": 5.200000017881393
+      },
+      {
+        "name": "motion-bridge.js?v=rates-1",
+        "size": 35885,
+        "duration": 4.9000000059604645
+      }
+    ],
+    "status": 200,
+    "globals": {
+      "data": true,
+      "motion": true,
+      "response": true,
+      "detail": true
+    },
+    "pass": true
+  }
+]

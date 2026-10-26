@@ -1,0 +1,505 @@
+{
+  "files": 71,
+  "allMatch": true,
+  "mismatches": [],
+  "checks": [
+    {
+      "file": "atlas/index.html",
+      "owner": "refraction-audit",
+      "recorded": "a022e9f4b1d0d32546bf005f2f5e5745b42c45dcf83401d015240fb9916a89aa",
+      "actual": "a022e9f4b1d0d32546bf005f2f5e5745b42c45dcf83401d015240fb9916a89aa",
+      "matches": true
+    },
+    {
+      "file": "atlas/app.js",
+      "owner": "pinhole-bridge",
+      "recorded": "2a121290a26c1064b444c214236c7f3b8385a862bfa83010388baf03a73b7ef0",
+      "actual": "2a121290a26c1064b444c214236c7f3b8385a862bfa83010388baf03a73b7ef0",
+      "matches": true
+    },
+    {
+      "file": "atlas/data.js",
+      "owner": "refraction-audit",
+      "recorded": "33d62154835a734bbfc8612d0d73ba911afce1df6844046f289f94a225e8f9c0",
+      "actual": "33d62154835a734bbfc8612d0d73ba911afce1df6844046f289f94a225e8f9c0",
+      "matches": true
+    },
+    {
+      "file": "atlas/motion-model.js",
+      "owner": "atlas-work",
+      "recorded": "66539b3b760087ad1971cd04b53a243b2f42cb6d78d2e62145de83e00fb5ffd5",
+      "actual": "66539b3b760087ad1971cd04b53a243b2f42cb6d78d2e62145de83e00fb5ffd5",
+      "matches": true
+    },
+    {
+      "file": "atlas/motion-bridge.js",
+      "owner": "atlas-work",
+      "recorded": "384fc8c7edea52a36fdffa2b78a3a0104baa02dcc91289dda8385946bb254cd1",
+      "actual": "384fc8c7edea52a36fdffa2b78a3a0104baa02dcc91289dda8385946bb254cd1",
+      "matches": true
+    },
+    {
+      "file": "atlas/motion-bridge.css",
+      "owner": "atlas-work",
+      "recorded": "2f4bd5039b38c7dab22b3ec08055f6357981b05c80cb6a8379c532112fe5e252",
+      "actual": "2f4bd5039b38c7dab22b3ec08055f6357981b05c80cb6a8379c532112fe5e252",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/motion-core.cjs",
+      "owner": "atlas-motion-evidence-20261025",
+      "recorded": "9f4bf441ef156b8f27721282f4495347dfe0b415d3348e7afc4ff0373c835742",
+      "actual": "9f4bf441ef156b8f27721282f4495347dfe0b415d3348e7afc4ff0373c835742",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/motion-browser.cjs",
+      "owner": "atlas-rates-evidence-20261025",
+      "recorded": "11a48a66913e1b89c027afde5fba95f4567da14ce183bb8d5129939e164b5d8a",
+      "actual": "11a48a66913e1b89c027afde5fba95f4567da14ce183bb8d5129939e164b5d8a",
+      "matches": true
+    },
+    {
+      "file": "laplace/app.js",
+      "owner": "atlas-response-evidence-20261025",
+      "recorded": "7db85b77d9489ed8b263b6d497d27ad58695cb806b9757311c1791b8083bac15",
+      "actual": "7db85b77d9489ed8b263b6d497d27ad58695cb806b9757311c1791b8083bac15",
+      "matches": true
+    },
+    {
+      "file": "laplace/i18n.js",
+      "owner": "atlas-response-evidence-20261025",
+      "recorded": "592cfa110e86db0ad297f19b4f424d6ce80302be8caa5e32d9699db8b995db89",
+      "actual": "592cfa110e86db0ad297f19b4f424d6ce80302be8caa5e32d9699db8b995db89",
+      "matches": true
+    },
+    {
+      "file": "freqresp/i18n.js",
+      "owner": "atlas-response-evidence-20261025",
+      "recorded": "491b78cd428a76bf32f02385a0b7c028bd4bdfbfdfa20ef4e1365ee80bd5a578",
+      "actual": "491b78cd428a76bf32f02385a0b7c028bd4bdfbfdfa20ef4e1365ee80bd5a578",
+      "matches": true
+    },
+    {
+      "file": "atlas/response-model.js",
+      "owner": "atlas-response-evidence-20261025",
+      "recorded": "1d82a3efc2a9cc743b1357469017caf3150e3a0b5135e8dd1b7fca3f06d30a34",
+      "actual": "1d82a3efc2a9cc743b1357469017caf3150e3a0b5135e8dd1b7fca3f06d30a34",
+      "matches": true
+    },
+    {
+      "file": "atlas/response-bridge.js",
+      "owner": "atlas-response-evidence-20261025",
+      "recorded": "72d17ebfc2d2bbac9dbf944232ee211b9a0979b33aa5a9dd0385e2b8553cb153",
+      "actual": "72d17ebfc2d2bbac9dbf944232ee211b9a0979b33aa5a9dd0385e2b8553cb153",
+      "matches": true
+    },
+    {
+      "file": "atlas/response-bridge.css",
+      "owner": "atlas-response-evidence-20261025",
+      "recorded": "5a2d53fa2028f58c7631a579e49df378c048e0fda9cca3096bf0a0b3ccea65c9",
+      "actual": "5a2d53fa2028f58c7631a579e49df378c048e0fda9cca3096bf0a0b3ccea65c9",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/response-core.cjs",
+      "owner": "atlas-response-evidence-20261025",
+      "recorded": "be50922862ba2ec9d411af6141b458efec6e4a0aedce956427e45007f251d449",
+      "actual": "be50922862ba2ec9d411af6141b458efec6e4a0aedce956427e45007f251d449",
+      "matches": true
+    },
+    {
+      "file": "laplace/tests/pole-boundaries.cjs",
+      "owner": "atlas-response-evidence-20261025",
+      "recorded": "798457661375f10f64b667fe44624a46d94028d0f32dcd998301710e540e3538",
+      "actual": "798457661375f10f64b667fe44624a46d94028d0f32dcd998301710e540e3538",
+      "matches": true
+    },
+    {
+      "file": "atlas/style.css",
+      "owner": "atlas-foundations",
+      "recorded": "6fbfb42569a91ab2b0c461320cd33b4084cde8e6ce61587528ed1133c0002dbe",
+      "actual": "6fbfb42569a91ab2b0c461320cd33b4084cde8e6ce61587528ed1133c0002dbe",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/response-browser.cjs",
+      "owner": "atlas-foundations",
+      "recorded": "21f4455905c4b5a7b0038c2a9d989833aeb8c1dc06bed8343ddddfa0e3c9e815",
+      "actual": "21f4455905c4b5a7b0038c2a9d989833aeb8c1dc06bed8343ddddfa0e3c9e815",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/browser.cjs",
+      "owner": "refraction-audit",
+      "recorded": "e8d985d71f5239faf695cc250130516ac30e68fcc9731eb7b242a6547955179b",
+      "actual": "e8d985d71f5239faf695cc250130516ac30e68fcc9731eb7b242a6547955179b",
+      "matches": true
+    },
+    {
+      "file": "derivative/i18n.js",
+      "owner": "atlas-rates-evidence-20261025",
+      "recorded": "0187fd100e2ac58d1247a618cae8900c8995665ad24e105db1561ed77cae6b1a",
+      "actual": "0187fd100e2ac58d1247a618cae8900c8995665ad24e105db1561ed77cae6b1a",
+      "matches": true
+    },
+    {
+      "file": "velocity-vt/i18n.js",
+      "owner": "atlas-rates-evidence-20261025",
+      "recorded": "aa011eabf7b556ae14942c34a0b30fabf755e110a3285a435357e23dc384fe57",
+      "actual": "aa011eabf7b556ae14942c34a0b30fabf755e110a3285a435357e23dc384fe57",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/rates-core.cjs",
+      "owner": "atlas-rates-evidence-20261025",
+      "recorded": "1708059bbe7dfaac3871b04870d7e2f2df69e04b2d3057540041a5e01dc26245",
+      "actual": "1708059bbe7dfaac3871b04870d7e2f2df69e04b2d3057540041a5e01dc26245",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/rates-browser.cjs",
+      "owner": "atlas-rates-evidence-20261025",
+      "recorded": "3b53f198b14e1921f327c8accfd2423bfed2c048ae5ef212cf6634cf9d5369cb",
+      "actual": "3b53f198b14e1921f327c8accfd2423bfed2c048ae5ef212cf6634cf9d5369cb",
+      "matches": true
+    },
+    {
+      "file": "integral/i18n.js",
+      "owner": "atlas-travel",
+      "recorded": "5ad50c3ce2e5aee235074d151374542d5159319a169fd0a1c3296c38d3dd8b0f",
+      "actual": "5ad50c3ce2e5aee235074d151374542d5159319a169fd0a1c3296c38d3dd8b0f",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/travel-core.cjs",
+      "owner": "atlas-travel",
+      "recorded": "12f1e0aefa129e528b8b685aa1d03348a349b0c21e922a2786ae9f5346793172",
+      "actual": "12f1e0aefa129e528b8b685aa1d03348a349b0c21e922a2786ae9f5346793172",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/legacy-signed-area.cjs",
+      "owner": "atlas-travel",
+      "recorded": "38f8f18fde43e0abe8938a924da9307053bf1682560abdae0dd566081fb34ccc",
+      "actual": "38f8f18fde43e0abe8938a924da9307053bf1682560abdae0dd566081fb34ccc",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/continuity-browser.cjs",
+      "owner": "atlas-continuity",
+      "recorded": "ba58558bba9141e7e02392622211d624688d0bc0ed632d0aee58a624607ea67b",
+      "actual": "ba58558bba9141e7e02392622211d624688d0bc0ed632d0aee58a624607ea67b",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/foundations-browser.cjs",
+      "owner": "atlas-foundations",
+      "recorded": "d2867f4742c885bbb5cb9925500c45a713966b7f7599902f042daeb024d30113",
+      "actual": "d2867f4742c885bbb5cb9925500c45a713966b7f7599902f042daeb024d30113",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/foundations-core.cjs",
+      "owner": "atlas-foundations",
+      "recorded": "6011d397857aafc181f209ab79b916ab57389092d06d0bf85ff0fc4a63f737c3",
+      "actual": "6011d397857aafc181f209ab79b916ab57389092d06d0bf85ff0fc4a63f737c3",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/work-core.cjs",
+      "owner": "atlas-work",
+      "recorded": "1a1e4069b5234c98189b89025f9ca24393b1515d6768c678bbbfc52cb5ac57ac",
+      "actual": "1a1e4069b5234c98189b89025f9ca24393b1515d6768c678bbbfc52cb5ac57ac",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/work-browser.cjs",
+      "owner": "atlas-work",
+      "recorded": "8d40e7db40e7b186d0cf255b9ede361d6f281a99ff1fdf11d721b770f7085da8",
+      "actual": "8d40e7db40e7b186d0cf255b9ede361d6f281a99ff1fdf11d721b770f7085da8",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/course-audit-browser.cjs",
+      "owner": "atlas-audit",
+      "recorded": "7373f3e601ef14e1531868cb543cd72f58f70ab7f51ed2f79a5ca26d9bc42693",
+      "actual": "7373f3e601ef14e1531868cb543cd72f58f70ab7f51ed2f79a5ca26d9bc42693",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/data-quality-core.cjs",
+      "owner": "atlas-audit",
+      "recorded": "ce992dd6e035655edff2f5d1b7b5277571902191a617aa5ae3ef5fbc45290b6c",
+      "actual": "ce992dd6e035655edff2f5d1b7b5277571902191a617aa5ae3ef5fbc45290b6c",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/data-quality.cjs",
+      "owner": "atlas-audit",
+      "recorded": "bd9429340612e70b066270cc4bd5072be156644c43c3469b3150882d9a1605a6",
+      "actual": "bd9429340612e70b066270cc4bd5072be156644c43c3469b3150882d9a1605a6",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/data-quality-browser.cjs",
+      "owner": "atlas-audit",
+      "recorded": "b86aea0a311f8dd2cbdcd1e34326c3f2d543f28c854bed30d6fc4e21080bce85",
+      "actual": "b86aea0a311f8dd2cbdcd1e34326c3f2d543f28c854bed30d6fc4e21080bce85",
+      "matches": true
+    },
+    {
+      "file": "atlas/tests/coverage.cjs",
+      "owner": "pinhole-bridge",
+      "recorded": "e5be77be6fa4046d30f54b0994b26752100602c640106f436f0f5a84b899cedb",
+      "actual": "e5be77be6fa4046d30f54b0994b26752100602c640106f436f0f5a84b899cedb",
+      "matches": true
+    },
+    {
+      "file": "complex-numbers/style.css",
+      "owner": "complex-keyboard",
+      "recorded": "a4e7cdd4eb0a44c611d7b00bf7c13394e551e744cd6c508ea12f42ba4605def3",
+      "actual": "a4e7cdd4eb0a44c611d7b00bf7c13394e551e744cd6c508ea12f42ba4605def3",
+      "matches": true
+    },
+    {
+      "file": "complex-numbers/index.html",
+      "owner": "complex-keyboard",
+      "recorded": "4043fcd1770551b08f9011a1be55ef9c42aae5c97304dca481cfc22f2eb6e968",
+      "actual": "4043fcd1770551b08f9011a1be55ef9c42aae5c97304dca481cfc22f2eb6e968",
+      "matches": true
+    },
+    {
+      "file": "complex-numbers/i18n.js",
+      "owner": "complex-keyboard",
+      "recorded": "72d6becb21d850f7026799222cbb3e7d79b65212c4ee13d4b12c239c33e08f87",
+      "actual": "72d6becb21d850f7026799222cbb3e7d79b65212c4ee13d4b12c239c33e08f87",
+      "matches": true
+    },
+    {
+      "file": "complex-numbers/app.js",
+      "owner": "complex-keyboard",
+      "recorded": "90bc30fc3c1e1fb1314dcab025542aa051217b5f4bfe949f9d8863c705ac633d",
+      "actual": "90bc30fc3c1e1fb1314dcab025542aa051217b5f4bfe949f9d8863c705ac633d",
+      "matches": true
+    },
+    {
+      "file": "complex-numbers/tests/keyboard-core.cjs",
+      "owner": "complex-keyboard",
+      "recorded": "312b9c9d47e5ebcdcf549373846ca961771304556606fa3947a21f92b6106590",
+      "actual": "312b9c9d47e5ebcdcf549373846ca961771304556606fa3947a21f92b6106590",
+      "matches": true
+    },
+    {
+      "file": "complex-numbers/tests/keyboard-browser.cjs",
+      "owner": "complex-keyboard",
+      "recorded": "85aeb32410cc6379804ec45b3e9df1538c38b73c0ce2bcd0c113540d018f862d",
+      "actual": "85aeb32410cc6379804ec45b3e9df1538c38b73c0ce2bcd0c113540d018f862d",
+      "matches": true
+    },
+    {
+      "file": "pages.config.js",
+      "owner": "pinhole-bridge",
+      "recorded": "6de8406c9c2eff1b055be55c07056bf65585927c188230f91202c80cfc8c698e",
+      "actual": "6de8406c9c2eff1b055be55c07056bf65585927c188230f91202c80cfc8c698e",
+      "matches": true
+    },
+    {
+      "file": "pinhole-camera/index.html",
+      "owner": "pinhole-bridge",
+      "recorded": "2bbe98bfca265593bf415de56fec2f6f0680b1d52bba6e340c9e7347eae89a5c",
+      "actual": "2bbe98bfca265593bf415de56fec2f6f0680b1d52bba6e340c9e7347eae89a5c",
+      "matches": true
+    },
+    {
+      "file": "pinhole-camera/style.css",
+      "owner": "pinhole-bridge",
+      "recorded": "63b84bb4423a600205bd4931e88a7ffceb1a4329859b8bf03f68393cf10c24ba",
+      "actual": "63b84bb4423a600205bd4931e88a7ffceb1a4329859b8bf03f68393cf10c24ba",
+      "matches": true
+    },
+    {
+      "file": "pinhole-camera/i18n.js",
+      "owner": "pinhole-bridge",
+      "recorded": "e46fd68d3508261167b9b859ece939eb5b525616ce7c6e8df3322f66bc2d4441",
+      "actual": "e46fd68d3508261167b9b859ece939eb5b525616ce7c6e8df3322f66bc2d4441",
+      "matches": true
+    },
+    {
+      "file": "pinhole-camera/app.js",
+      "owner": "pinhole-bridge",
+      "recorded": "810cc03a34bd951e5a1c170e5e908daa71ebf253e1be1f199138534e634dfb59",
+      "actual": "810cc03a34bd951e5a1c170e5e908daa71ebf253e1be1f199138534e634dfb59",
+      "matches": true
+    },
+    {
+      "file": "linear-functions/index.html",
+      "owner": "pinhole-bridge",
+      "recorded": "d83049b0fed2e86a4954daf4f91b4732805b2df30d515c9736b0b171e4019a56",
+      "actual": "d83049b0fed2e86a4954daf4f91b4732805b2df30d515c9736b0b171e4019a56",
+      "matches": true
+    },
+    {
+      "file": "linear-functions/style.css",
+      "owner": "pinhole-bridge",
+      "recorded": "798b071f0e6fd9939de21cc8ddb94659965e54688183b7e751f4eb5191fcbd77",
+      "actual": "798b071f0e6fd9939de21cc8ddb94659965e54688183b7e751f4eb5191fcbd77",
+      "matches": true
+    },
+    {
+      "file": "linear-functions/i18n.js",
+      "owner": "pinhole-bridge",
+      "recorded": "9a4b4ea7f6dcac63e61b0418d7f3f5e9d721f17e6c73d4c14afbcc331fdb4e60",
+      "actual": "9a4b4ea7f6dcac63e61b0418d7f3f5e9d721f17e6c73d4c14afbcc331fdb4e60",
+      "matches": true
+    },
+    {
+      "file": "linear-functions/app.js",
+      "owner": "pinhole-bridge",
+      "recorded": "ead94f16753c8e4c588a0930d54df9a03ec88a912fe339682f18aedcb81452b4",
+      "actual": "ead94f16753c8e4c588a0930d54df9a03ec88a912fe339682f18aedcb81452b4",
+      "matches": true
+    },
+    {
+      "file": "pinhole-camera/tests/geometry-core.cjs",
+      "owner": "pinhole-bridge",
+      "recorded": "f5c29b5c9e47240dc6a1be4c05a83433ed153630a4587464ea398d0203c4cb8b",
+      "actual": "f5c29b5c9e47240dc6a1be4c05a83433ed153630a4587464ea398d0203c4cb8b",
+      "matches": true
+    },
+    {
+      "file": "pinhole-camera/tests/geometry-browser.cjs",
+      "owner": "refraction-audit",
+      "recorded": "cc5e7626a98bed3ab1dab28900183afe8e41d73d00693f67dc9c060b28569542",
+      "actual": "cc5e7626a98bed3ab1dab28900183afe8e41d73d00693f67dc9c060b28569542",
+      "matches": true
+    },
+    {
+      "file": "trig/index.html",
+      "owner": "tangent-audit",
+      "recorded": "b99b4d49bbdd8622527589b2f90abee07fe3eac7964d3cec2c2c685b01ecc413",
+      "actual": "b99b4d49bbdd8622527589b2f90abee07fe3eac7964d3cec2c2c685b01ecc413",
+      "matches": true
+    },
+    {
+      "file": "trig/style.css",
+      "owner": "tangent-audit",
+      "recorded": "0580508fc91e0fe0395ca892ee70f0318b5955ab565cf80876af7c534fc60638",
+      "actual": "0580508fc91e0fe0395ca892ee70f0318b5955ab565cf80876af7c534fc60638",
+      "matches": true
+    },
+    {
+      "file": "trig/i18n.js",
+      "owner": "tangent-audit",
+      "recorded": "9cb61c1929056a1e7e1c4cbaaaff8c3979072cd97186fa7c2327e177fb0d871b",
+      "actual": "9cb61c1929056a1e7e1c4cbaaaff8c3979072cd97186fa7c2327e177fb0d871b",
+      "matches": true
+    },
+    {
+      "file": "reflection-refraction/index.html",
+      "owner": "lens-audit",
+      "recorded": "5bee87a42320dca5ae2ce8ed1ff6a0e91836113ce4b6d6ca066f16c9ea9118b9",
+      "actual": "5bee87a42320dca5ae2ce8ed1ff6a0e91836113ce4b6d6ca066f16c9ea9118b9",
+      "matches": true
+    },
+    {
+      "file": "reflection-refraction/style.css",
+      "owner": "lens-audit",
+      "recorded": "a59bf06e963cf1886c2d5fb8d6141ad52a10854afc8bb8e480255f6b4a81ad0f",
+      "actual": "a59bf06e963cf1886c2d5fb8d6141ad52a10854afc8bb8e480255f6b4a81ad0f",
+      "matches": true
+    },
+    {
+      "file": "reflection-refraction/i18n.js",
+      "owner": "lens-audit",
+      "recorded": "ce963ac66b755b516023586527117f80f0037c1709a03890ef9e4db95686313c",
+      "actual": "ce963ac66b755b516023586527117f80f0037c1709a03890ef9e4db95686313c",
+      "matches": true
+    },
+    {
+      "file": "reflection-refraction/app.js",
+      "owner": "refraction-audit",
+      "recorded": "ad2ab6ec02525a199ecfae2f26110a1cf353f85bfb02c3cb1ae2f918b7f094da",
+      "actual": "ad2ab6ec02525a199ecfae2f26110a1cf353f85bfb02c3cb1ae2f918b7f094da",
+      "matches": true
+    },
+    {
+      "file": "reflection-refraction/tests/snell-core.cjs",
+      "owner": "refraction-audit",
+      "recorded": "0390f4cb16e77b025082c33adea9f40996edd19d0108f9e67e4c3d104e7f5feb",
+      "actual": "0390f4cb16e77b025082c33adea9f40996edd19d0108f9e67e4c3d104e7f5feb",
+      "matches": true
+    },
+    {
+      "file": "reflection-refraction/tests/snell-browser.cjs",
+      "owner": "refraction-audit",
+      "recorded": "95491fb6bc0ce68f5ba38dfd68431009807ff5603ea49f2d75bf74306cdb250c",
+      "actual": "95491fb6bc0ce68f5ba38dfd68431009807ff5603ea49f2d75bf74306cdb250c",
+      "matches": true
+    },
+    {
+      "file": "lens/index.html",
+      "owner": "lens-audit",
+      "recorded": "f7313882a256dfd6b25a25b85861712b7340d7bc165d0e48a9bad9ad7ef4ef43",
+      "actual": "f7313882a256dfd6b25a25b85861712b7340d7bc165d0e48a9bad9ad7ef4ef43",
+      "matches": true
+    },
+    {
+      "file": "lens/style.css",
+      "owner": "lens-audit",
+      "recorded": "9df3fae0c6210fa7aab68d2b0fec49eac329eb28d8d1622ad84a130c8e9c4f34",
+      "actual": "9df3fae0c6210fa7aab68d2b0fec49eac329eb28d8d1622ad84a130c8e9c4f34",
+      "matches": true
+    },
+    {
+      "file": "lens/i18n.js",
+      "owner": "lens-audit",
+      "recorded": "1973f6b548d15174676df73f94862e3af165bd7884b32959dd0f64cba59b6374",
+      "actual": "1973f6b548d15174676df73f94862e3af165bd7884b32959dd0f64cba59b6374",
+      "matches": true
+    },
+    {
+      "file": "lens/app.js",
+      "owner": "lens-audit",
+      "recorded": "4caee872df0e6ccf942f068f6e434900028ec118f2f6baaf70bea05cc198607c",
+      "actual": "4caee872df0e6ccf942f068f6e434900028ec118f2f6baaf70bea05cc198607c",
+      "matches": true
+    },
+    {
+      "file": "lens/tests/focus-browser.cjs",
+      "owner": "lens-audit",
+      "recorded": "d807020026ffa2ff59ceb852ef16e49c2d1b56b7ee0b49752f4e0289f4f9e9ac",
+      "actual": "d807020026ffa2ff59ceb852ef16e49c2d1b56b7ee0b49752f4e0289f4f9e9ac",
+      "matches": true
+    },
+    {
+      "file": "lens/tests/focus-core.cjs",
+      "owner": "lens-audit",
+      "recorded": "6990c93a82899d7ddaf0cff06ed47f486a444dd2715bb52791720b99a5602c11",
+      "actual": "6990c93a82899d7ddaf0cff06ed47f486a444dd2715bb52791720b99a5602c11",
+      "matches": true
+    },
+    {
+      "file": "trig/app.js",
+      "owner": "tangent-audit",
+      "recorded": "636609c7532a9e33d5be2ad33fbed057ca5d93e19e110074d723ec78cbcd9613",
+      "actual": "636609c7532a9e33d5be2ad33fbed057ca5d93e19e110074d723ec78cbcd9613",
+      "matches": true
+    },
+    {
+      "file": "trig/tests/tangent-core.cjs",
+      "owner": "tangent-audit",
+      "recorded": "29aee90eb6a7043940b150f46dce3ccfff3b1b96efb5630f3dd1e70fc120dfe5",
+      "actual": "29aee90eb6a7043940b150f46dce3ccfff3b1b96efb5630f3dd1e70fc120dfe5",
+      "matches": true
+    },
+    {
+      "file": "trig/tests/tangent-browser.cjs",
+      "owner": "tangent-audit",
+      "recorded": "57433ddc7b6e736fad031a16f2564455eb6295debc0f9b61e5bee58ea21bee36",
+      "actual": "57433ddc7b6e736fad031a16f2564455eb6295debc0f9b61e5bee58ea21bee36",
+      "matches": true
+    }
+  ],
+  "limits": "Latest ownership wins; historical hashes are snapshots. Excludes shared pages.config.js because concurrent registry changes are authorized outside this lane; frozen bubble original round lacks an applied hash manifest in this chain. No LeetCode content read/changed."
+}

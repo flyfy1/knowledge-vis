@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "checks": 1457,
+  "errors": [],
+  "failed": [],
+  "optionalBrowserRequests": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "location": {
+        "url": "http://127.0.0.1:18775/favicon.ico",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "scope": [
+    "S1/S4/S6same finite/undefined values andhonestapprox/domain signs",
+    "nativeexactpole/fullcircle keyboard,unit/card/invalidsetter,actualgapdrawing",
+    "readingBack/reload/atlas/foreign/denied,longmouse/touchfinalangle,restorepaused/currentpointnottrace",
+    "two languages320/390/1280,actual2x/canvas3px/48px/forcedcolors,pointer/browsertouch"
+  ],
+  "limits": [
+    "No physicaldevice/screenreader speech/humanlearningeffect",
+    "OnlyS1/S4/S6reading restored; otherwave/audioinitialization unchanged",
+    "Extreme nearpole floatingpoint conditioning is not realarithmetic accuracy"
+  ]
+}

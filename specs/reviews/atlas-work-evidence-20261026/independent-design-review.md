@@ -1,0 +1,54 @@
+# Round7 independent work–energy design review
+
+Verdict: BUILD a bounded fourth shared MotionBridge view, REUSE the existing free oscillator, selected time bounds and starting-ideas/navigation contracts. One new combined work–energy concept is sufficient; do not create separate controllers or an energy-curriculum ontology. This is design acceptance before implementation, not runtime acceptance.
+
+Read actual atlasREADME, round5 inventory, current MotionModel.at/interval and MotionBridge state/persistence/render paths. Round5 correctly identified the gap: existing K/U values exist but there is no spatial-work representation or signed variable-force task. Circuit-storage/lever lessons answer different questions. No Chrome or model changes are needed merely to establish this design gap. All work here is read-only repo review; evidence only in reviewer-work.
+
+## Smallest learning loop
+
+Learner job: predict the sign of spring work from the force AND displacement directions, then reconcile the F–x integral with the block's kinetic-energy change and the spring's potential-energy loss. Success occasion is a concrete prediction followed by checking the same state, not answer reveal/mastery tracking.
+
+Suggested sequence (defaultm=1,k=4,A=.6):
+
+1. First quarter0→.25: x:+.6→0, spring force points left and displacement is left. Work is +.72J even though F is negative. K:0→.72J; U:.72→0J. This is the highest-value misconception check.
+2. Next quarter.25→.5: x:0→−.6, force points right while displacement is left. Work−.72J, kinetic energy returns to0, elastic energy grows to.72J.
+3. Full return0→1: net work0 but there are positive and negative exchanges, and travelled distance2.4m. One half-cycle0→.5 also has net work0 despite a nonzero displacement−1.2m; useful optional comparison to prove net work is not simply net displacement or total distance.
+
+Use three presets and one prediction/reveal; reusing a/b sliders supports arbitrary,zero,reversed intervals without more controls. Display the task before technical method notes. If examples are text-fixed, label them as defaults/hypotheticals; if values are live, derive them from currentk,A. The learner must explicitly invoke presets; entering the view/help/reveal never seeks or resets.
+
+## Visual minimum (more than decorative bars)
+
+- Primary plot: horizontal x in metres, vertical Fspring=−kx in newtons, endpoint markers x(a),x(b), and visible direction information for selected path pieces. Area dimension isN·m=J. x is measured relative to equilibrium, not elapsed distance. Time bounds a,b are labels for endpoint states; they are not spatial integration limits by themselves.
+- Do NOT copy travel coloring by whether a curve is above/below the horizontal axis. On +A→0, F<0 AND dx<0 give positive work, despite the line lying below the F=0 axis. Color/sign must encode F dx with traversal direction, plus visible +/− text or arrows; never only hue.
+- A simple single shaded region between min/maxx is insufficient for arbitrary spans: at0→.5, endpoints−A/+A give cancellation across equilibrium; at0→1 endpoints coincide, but substantial work occurred during the path. The same F–x line is retraced, so overlapping polygons cannot show multiplicity/positive-negative exchanges honestly. Use a short chronological segment contribution list (quarter-cycle partitions) beside the F–x plot or another explicit trace/retrace treatment. One compact list/summary is preferable to a second timeline or animation clock.
+- Supporting numeric/table view: endpoints K(a),K(b),U(a),U(b); signed Wspring,ΔK,−ΔU; E=K+U. Graph and numbers use the same model state. One clear interpretation sentence connects area and energy transfer; additional bars are optional and unnecessary for the minimum.
+- Fixed axis bounds based on current parameter group, with explicit ticks/units. If scale changes withk/A, disclose it; do not claim comparable screen areas prove comparable joules. Show nonzero tiny numeric quantities consistently, avoiding a positive/negative narrative beside rounded0 unless precision is clearly labelled.
+
+## Scientific must-keep conditions
+
+1. Work is a path integral of force with respect to spatial displacement: Wspring=∫path Fspring dx, and for this1D position-dependent Hookean force it equals ∫x(a)^x(b)(−kx)dx. ∫Fdt alone is impulse, not work. ∫Fvdt is an equivalent parametrization if explaining seconds, not a replacement for the requested spatial view.
+2. Wnet=ΔK applies to the chosen block under the particle/constant-mass inertial-frame model. Here only the spring supplies horizontal work; support and gravity do zero work on horizontal displacement, so Wspring=Wnet. A single force's work is not generally the net work.
+3. ElasticU=.5kx² belongs to the spring interaction, with zero chosen at equilibrium. Wspring=−ΔU. For block+ideal massless spring with fixed anchor, no friction/drive work, Kblock+Uspring is constant. The spring force is external for block-only accounting and internal transfer for block+spring accounting. Say which boundary is being used; do not label spring work as external work on the combined system.
+4. Equality chain Wspring=ΔK=−ΔU is restricted to this free horizontal oscillator. In the response model drive/damping also do work and K+U need not be conserved. The conservative ideal spring relation Wspring=−ΔU still holds for that force; it is the net-work/conservation chain that cannot be transplanted indiscriminately.
+5. Zero net work over a complete return does not mean no work on each piece, no energy exchange, no motion or zero distance. Nor does conservation mean K/U separately remain constant.
+6. a,b remain the existing selected model-time bounds (stored as cycles). Reversed limits change oriented mathematical work and endpointΔK signs; that is not backwards physical time or backwards playback. If positive/negative work totals use chronological[min,max], label them so, and state W(a,b)=sign(b−a)(Wpositive+Wnegative). Do not silently mix chronological path annotations with oriented totals. a=b gives all changes0 but K/U can be nonzero.
+7. Playback still advances b with a fixed; interval work is not accumulated energy injected by clicking Play. With b<a a shrinking selected interval can change signed work nonmonotonically. Parameter edits pause/recompute the hypothetical whole trajectory, not an actual mass/stiffness-change energy protocol. Response mode must retain its separate controller/scope.
+
+These distinctions are supported by [OpenStax7.1 Work](https://openstax.org/books/university-physics-volume-1/pages/7-1-work),[7.3 Work-energy theorem](https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem),[8.1 Potential energy of a system](https://openstax.org/books/university-physics-volume-1/pages/8-1-potential-energy-of-a-system),[8.3 Conservation of energy](https://openstax.org/books/university-physics-volume-1/pages/8-3-conservation-of-energy), opened for this audit. The first pair supports force-displacement work and net-workΔK; the latter pair supports conservative potential energy and bounded energy conservation. No new quotations or hardware claims are needed.
+
+## Minimal architecture
+
+- app remains URL/node/locale/view owner; add a work enum/trail through the established adapter. MotionBridge adds presentation of derivedwork using the same host,cycles,startCycles,m/k/A,RAF,play/reset and session key. Existing a/b controls can be moved/shared or reused without adding another bound state. Preserve all three existing views and the response view.
+- MotionModel may extend interval results or provide a pure workInterval(a,b,parameters) alongside interval. Reuse parameter/bound validation and endpoint state. Do not make the general interval travel integral silently mean work, and do not compute work from canvas area/sampling.
+- For demonstration P/N exchanges, partition chronologically at quarter-cycles (zeros of Fv): turning points and equilibrium crossings. Half-cycle partition alone suffices for distance but NOT for signed work; on0→.5 positive and negative work cancel and must remain visible as separate contributions.
+- Numerics: endpoint square subtraction can lose tiny work. Stable identity is ΔK=E sin(2π(a+b))sin(2π(b−a)),E=.5kA², with argument reduction before adding tiny delta near quarter-cycle turns. Reuse the existing interval's stable arithmetic principles rather than rawa+b integer shortcuts that already failed at adjacent floats in round4. Existing at() intentionally snaps tiny dimensionless trig values; endpoint K difference may round to0 while a stable analytic work remains tiny. Tests need scale-aware agreement and independent integration/high precision, not exact subtraction equality or tautological “ΔK=W by assignment”. Exact equal-energy symmetry cases should be handled deliberately.
+- One combined work-energy node (e.g. 功与动能变化 / Work & kinetic-energy change), with scoped spring example/definitions. One route such as [integral,work-energy,oscillation] and two sourced edges can establish the intended bridge; reuse net-force in background/related action. Alternative topology is implementer's editorial choice, not a scientific requirement. Avoid duplicating K/U as isolated graph concepts solely to reach a count.
+- Reuse the round6 stable optional help/one bounded prediction with fixedquestionId. No new profile/answer/score storage; no thirdstate store, clock, controller or generic “energy engine”. History/focus contracts and sourceBack from rounds5–6 remain acceptance requirements. A new question needs its own ID so old crossing reveal cannot be restored as a different answer.
+
+## Priorities / verification
+
+P0 for this feature: F–x direction-aware spatial work, accessible signed segment equivalents, correct boundary/identity, same state/clock, arbitrary/reverse/zero bounds, bilingual and320px/200%keyboard/focus. No new feature may ship with a scientific sign error merely because numerical totals agree.
+
+P1: one predictive task, linked primary explanation, clear current endpoint/highlight, same-state transitions to travel/rates for contrast. P2: generic dot-product2D/real springs/dissipation/drive/power or additional learning ontology; defer because they require different model/task and would break the bounded first loop.
+
+Later independent acceptance should cold-read the rendered task before relying on code; reproduce the first-quarter negative-F/negative-dx positive-work example, a full return with nonzero individual exchanges, arbitrary/reversed/zero and tiny intervals, mass/stiffness/amplitude edits, all shared-view/Back/help recovery, both-language320px/200%keyboard. Check independent ∫Fvdt and energy endpoints with numerical tolerance, retain primary sources, and distinguish local automated/UI evidence from physical devices or actual learning gains. No implementation or final scientific acceptance is claimed yet.

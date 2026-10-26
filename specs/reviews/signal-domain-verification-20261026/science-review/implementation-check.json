@@ -1,0 +1,464 @@
+{
+  "pass": true,
+  "samples": 1519,
+  "maxAnalyticError": 1.061650767297806e-15,
+  "maxFitError": 5.000038598831076e-11,
+  "maxZPeriodicError": 4.577566798522237e-16,
+  "endpointM3": {
+    "M": 3,
+    "analytic": 0.3333333333333333,
+    "measured": 0.3333333333333331,
+    "steadyLast": -0.3333333333333333,
+    "expected": 0.3333333333333333
+  },
+  "endpoints": [
+    {
+      "M": 2,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 2,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 2,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 3,
+      "analytic": 0.3333333333333333,
+      "measured": 0.3333333333333331,
+      "steadyLast": -0.3333333333333333,
+      "expected": 0.3333333333333333
+    },
+    {
+      "M": 3,
+      "analytic": 0.3333333333333333,
+      "measured": 0.3333333333333331,
+      "steadyLast": -0.3333333333333333,
+      "expected": 0.3333333333333333
+    },
+    {
+      "M": 4,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 4,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 5,
+      "analytic": 0.2,
+      "measured": 0.2000000000000006,
+      "steadyLast": -0.2,
+      "expected": 0.2
+    },
+    {
+      "M": 5,
+      "analytic": 0.2,
+      "measured": 0.2000000000000006,
+      "steadyLast": -0.2,
+      "expected": 0.2
+    },
+    {
+      "M": 6,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 6,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 7,
+      "analytic": 0.14285714285714285,
+      "measured": 0.14285714285714274,
+      "steadyLast": -0.14285714285714285,
+      "expected": 0.14285714285714285
+    },
+    {
+      "M": 7,
+      "analytic": 0.14285714285714285,
+      "measured": 0.14285714285714274,
+      "steadyLast": -0.14285714285714285,
+      "expected": 0.14285714285714285
+    },
+    {
+      "M": 8,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 8,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 9,
+      "analytic": 0.1111111111111111,
+      "measured": 0.11111111111111079,
+      "steadyLast": -0.1111111111111111,
+      "expected": 0.1111111111111111
+    },
+    {
+      "M": 9,
+      "analytic": 0.1111111111111111,
+      "measured": 0.11111111111111079,
+      "steadyLast": -0.1111111111111111,
+      "expected": 0.1111111111111111
+    },
+    {
+      "M": 10,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 10,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 11,
+      "analytic": 0.09090909090909091,
+      "measured": 0.09090909090909091,
+      "steadyLast": -0.09090909090909091,
+      "expected": 0.09090909090909091
+    },
+    {
+      "M": 11,
+      "analytic": 0.09090909090909091,
+      "measured": 0.09090909090909091,
+      "steadyLast": -0.09090909090909091,
+      "expected": 0.09090909090909091
+    },
+    {
+      "M": 12,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 12,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 13,
+      "analytic": 0.07692307692307693,
+      "measured": 0.07692307692307672,
+      "steadyLast": -0.07692307692307693,
+      "expected": 0.07692307692307693
+    },
+    {
+      "M": 13,
+      "analytic": 0.07692307692307693,
+      "measured": 0.07692307692307672,
+      "steadyLast": -0.07692307692307693,
+      "expected": 0.07692307692307693
+    },
+    {
+      "M": 14,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 14,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 15,
+      "analytic": 0.06666666666666667,
+      "measured": 0.06666666666666651,
+      "steadyLast": -0.06666666666666667,
+      "expected": 0.06666666666666667
+    },
+    {
+      "M": 15,
+      "analytic": 0.06666666666666667,
+      "measured": 0.06666666666666651,
+      "steadyLast": -0.06666666666666667,
+      "expected": 0.06666666666666667
+    },
+    {
+      "M": 16,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 16,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 17,
+      "analytic": 0.058823529411764705,
+      "measured": 0.058823529411764525,
+      "steadyLast": -0.058823529411764705,
+      "expected": 0.058823529411764705
+    },
+    {
+      "M": 17,
+      "analytic": 0.058823529411764705,
+      "measured": 0.058823529411764525,
+      "steadyLast": -0.058823529411764705,
+      "expected": 0.058823529411764705
+    },
+    {
+      "M": 18,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 18,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 19,
+      "analytic": 0.05263157894736842,
+      "measured": 0.05263157894736825,
+      "steadyLast": -0.05263157894736842,
+      "expected": 0.05263157894736842
+    },
+    {
+      "M": 19,
+      "analytic": 0.05263157894736842,
+      "measured": 0.05263157894736825,
+      "steadyLast": -0.05263157894736842,
+      "expected": 0.05263157894736842
+    },
+    {
+      "M": 20,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 20,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 21,
+      "analytic": 0.047619047619047616,
+      "measured": 0.047619047619047485,
+      "steadyLast": -0.047619047619047616,
+      "expected": 0.047619047619047616
+    },
+    {
+      "M": 21,
+      "analytic": 0.047619047619047616,
+      "measured": 0.047619047619047485,
+      "steadyLast": -0.047619047619047616,
+      "expected": 0.047619047619047616
+    },
+    {
+      "M": 22,
+      "analytic": 2.227193253573904e-16,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 22,
+      "analytic": 2.227193253573904e-16,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 23,
+      "analytic": 0.043478260869565216,
+      "measured": 0.04347826086956516,
+      "steadyLast": -0.043478260869565216,
+      "expected": 0.043478260869565216
+    },
+    {
+      "M": 23,
+      "analytic": 0.043478260869565216,
+      "measured": 0.04347826086956516,
+      "steadyLast": -0.043478260869565216,
+      "expected": 0.043478260869565216
+    },
+    {
+      "M": 24,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 24,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 25,
+      "analytic": 0.04,
+      "measured": 0.03999999999999988,
+      "steadyLast": -0.04,
+      "expected": 0.04
+    },
+    {
+      "M": 25,
+      "analytic": 0.04,
+      "measured": 0.03999999999999988,
+      "steadyLast": -0.04,
+      "expected": 0.04
+    },
+    {
+      "M": 26,
+      "analytic": 7.54104938426516e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 26,
+      "analytic": 7.54104938426516e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 27,
+      "analytic": 0.037037037037037035,
+      "measured": 0.03703703703703706,
+      "steadyLast": -0.037037037037037035,
+      "expected": 0.037037037037037035
+    },
+    {
+      "M": 27,
+      "analytic": 0.037037037037037035,
+      "measured": 0.03703703703703706,
+      "steadyLast": -0.037037037037037035,
+      "expected": 0.037037037037037035
+    },
+    {
+      "M": 28,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 28,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 29,
+      "analytic": 0.034482758620689655,
+      "measured": 0.03448275862068958,
+      "steadyLast": -0.034482758620689655,
+      "expected": 0.034482758620689655
+    },
+    {
+      "M": 29,
+      "analytic": 0.034482758620689655,
+      "measured": 0.03448275862068958,
+      "steadyLast": -0.034482758620689655,
+      "expected": 0.034482758620689655
+    },
+    {
+      "M": 30,
+      "analytic": 1.7965612925071768e-16,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 30,
+      "analytic": 1.7965612925071768e-16,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 31,
+      "analytic": 0.03225806451612903,
+      "measured": 0.03225806451612901,
+      "steadyLast": -0.03225806451612903,
+      "expected": 0.03225806451612903
+    },
+    {
+      "M": 31,
+      "analytic": 0.03225806451612903,
+      "measured": 0.03225806451612901,
+      "steadyLast": -0.03225806451612903,
+      "expected": 0.03225806451612903
+    },
+    {
+      "M": 32,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    },
+    {
+      "M": 32,
+      "analytic": 6.123233995736766e-17,
+      "measured": 0,
+      "steadyLast": 0,
+      "expected": 0
+    }
+  ],
+  "failures": [],
+  "range": "<input type=\"range\" id=\"s3-w\" min=\"0.05\" max=\"3.141592653589793\" step=\"any\" aria-describedby=\"s3-frequency-help\" value=\"0.785\">",
+  "hashes": {
+    "freqresp": "3f56aaae14b618590837ab5b461f6402343d32b1f4cc8d6a216eef16a027b739",
+    "ztransform": "890827260c28f0e1788e9bd3009a523fe066229415f3fe910c45e4ca96a67bfd"
+  },
+  "method": "Independent actual-source isolated VM against a separately summed FIR and periodic complex exponentials, plus native-control source checks. No Chrome or native range interaction."
+}

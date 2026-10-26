@@ -1,0 +1,24 @@
+{
+  "method": "Read completed parent-run JSON logs; this reviewer did not execute the cumulative suites or launch Chrome.",
+  "finalSerialSuites": 15,
+  "finalSerialFailures": 0,
+  "initialSerialSuites": 15,
+  "initialSerialFailures": 0,
+  "focusedAfterHitbox": [
+    {
+      "suite": "lens",
+      "exit": 0,
+      "checks": 167,
+      "pass": true
+    },
+    {
+      "suite": "refraction",
+      "exit": 0,
+      "checks": 148,
+      "pass": true
+    }
+  ],
+  "coreCommands": 20,
+  "coreFailures": 0,
+  "coldUIBoundary": "Earlier cold UI functionality is not relabelled as measuring the later footer hitbox; the parent focused rerun adds the bilingual target assertion."
+}

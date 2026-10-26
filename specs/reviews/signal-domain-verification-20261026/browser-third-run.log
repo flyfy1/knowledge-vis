@@ -1,0 +1,9 @@
+AssertionError [ERR_ASSERTION]: focus2x ztransform
+    at /Users/songyy/Documents/knowledge-vis/atlas/tests/signal-domain-browser.cjs:27:508 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

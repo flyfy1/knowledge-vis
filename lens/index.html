@@ -6,9 +6,9 @@
 <meta name="category" content="physics">
 <meta name="stage" content="junior">
 <title>凸透镜成像 · 蜡烛远近，像变样 —— 一步一交互</title>
-<link rel="stylesheet" href="style.css?v=l1">
+<link rel="stylesheet" href="style.css?v=focus-1">
 <script src="../pages.config.js"></script>
-<script src="i18n.js?v=l1"></script>
+<script src="i18n.js?v=focus-1"></script>
 </head>
 <body>
 
@@ -28,7 +28,7 @@
   </div>
 </header>
 
-<nav class="step-nav" id="stepNav" aria-label="步骤导航">
+<nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
   <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 平行光聚成点</a>
   <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 三条特殊光线</a>
   <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 蜡烛远近变像</a>
@@ -46,7 +46,7 @@
     <h2 data-i18n="s0t">平行光进门，被透镜收拢到一点</h2>
     <p class="explain" data-i18n-html="s0e"></p>
     <div class="stage">
-      <canvas id="s0-canvas" height="320"></canvas>
+      <canvas role="img" data-i18n-aria="canvasLabel" id="s0-canvas" height="320"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s0fLab">焦距 f（焦点到光心的距离）</span> <span class="val" id="s0-f-val">60</span></span>
@@ -66,7 +66,7 @@
     <h2 data-i18n="s1t">定位一个像点，只需要三条光线</h2>
     <p class="explain" data-i18n-html="s1e"></p>
     <div class="stage">
-      <canvas id="s1-canvas" height="360"></canvas>
+      <canvas role="img" data-i18n-aria="canvasLabel" id="s1-canvas" height="360"></canvas>
     </div>
     <div class="btn-row">
       <button class="btn big" id="s1-r1" aria-pressed="true" data-i18n="s1r1">线 1 · 平行→过焦点</button>
@@ -75,14 +75,14 @@
     </div>
     <div class="controls">
       <label><span><span data-i18n="s1uLab">物距 u（蜡烛到光心）</span> <span class="val" id="s1-u-val">120</span></span>
-        <input type="range" id="s1-u" min="28" max="215" step="1" value="120">
+        <input type="range" id="s1-u" min="28" max="215" step="any" value="120">
       </label>
       <label><span><span data-i18n="s1hLab">物高（烛焰顶端到主光轴）</span> <span class="val" id="s1-h-val">30</span></span>
-        <input type="range" id="s1-h" min="10" max="46" step="1" value="30">
+        <input type="range" id="s1-h" min="10" max="46" step="any" value="30">
       </label>
     </div>
     <p class="readout" id="s1-rule"></p>
-    <p class="readout" id="s1-readout"></p>
+    <p class="readout" id="s1-readout"></p><p class="hint" id="s1-view"></p>
     <p class="hint" data-i18n-html="s1hint"></p>
   </div>
 </section>
@@ -94,12 +94,12 @@
     <h2 data-i18n="s2t">蜡烛一路拖近，像连变五副面孔</h2>
     <p class="explain" data-i18n-html="s2e"></p>
     <div class="stage">
-      <canvas id="s2-canvas" height="360"></canvas>
+      <canvas role="img" data-i18n-aria="canvasLabel" id="s2-canvas" height="360"></canvas>
     </div>
     <p class="ray-legend"><span style="color:#6ee7ff">●</span> <span data-i18n="cBandFar">u &gt; 2f · 远物段</span>　<span style="color:#ffb454">●</span> <span data-i18n="cBandMid">f &lt; u &lt; 2f · 中段</span>　<span style="color:#7ee2a8">●</span> <span data-i18n="cBandNear">u &lt; f · 近物段</span></p>
     <div class="controls">
       <label><span><span data-i18n="s2uLab">物距 u</span> <span class="val" id="s2-u-val">180</span></span>
-        <input type="range" id="s2-u" min="25" max="200" step="1" value="180">
+        <input type="range" id="s2-u" min="25" max="200" step="any" value="180">
       </label>
     </div>
     <div class="btn-row">
@@ -109,8 +109,8 @@
       <button class="btn big" id="s2-p-f" data-i18n="s2pF">恰在 f（u = 60）</button>
       <button class="btn big" id="s2-p-near" data-i18n="s2pNear">f 以内（u = 30）</button>
     </div>
-    <p class="readout" id="s2-readout"></p>
-    <p class="hint" data-i18n-html="s2hint"></p>
+    <p class="readout" id="s2-readout"></p><p class="readout" id="s2-formula"></p><p class="hint" id="s2-view"></p>
+    <p class="hint" data-i18n-html="s2hint"></p><p class="hint" data-i18n="modelScope"></p><p><a class="fourier-link model-source" href="https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses" data-i18n="modelSource"></a></p>
   </div>
 </section>
 
@@ -125,11 +125,11 @@
       <button class="btn big" id="s3-m-virt" data-i18n="s3mVirt">情境二 · 放大镜的虚像</button>
     </div>
     <div class="stage">
-      <canvas id="s3-canvas" height="340"></canvas>
+      <canvas role="img" data-i18n-aria="canvasLabel" id="s3-canvas" height="340"></canvas>
     </div>
     <div class="controls">
       <label><span><span data-i18n="s3scrLab">光屏位置（到光心的距离）</span> <span class="val" id="s3-p-val">60</span></span>
-        <input type="range" id="s3-p" min="35" max="230" step="1" value="60">
+        <input type="range" id="s3-p" min="35" max="230" step="any" value="60">
       </label>
     </div>
     <p class="readout" id="s3-readout"></p>
@@ -144,7 +144,7 @@
     <h2 data-i18n="s4t">三道题，验一验两条分水岭</h2>
     <p class="explain" data-i18n-html="s4e"></p>
     <div class="stage">
-      <canvas id="s4-canvas" height="170"></canvas>
+      <canvas role="img" data-i18n-aria="canvasLabel" id="s4-canvas" height="170"></canvas>
     </div>
     <p class="quiz-q" data-i18n="s4q1">① 照相机的镜头是凸透镜。被拍的人离镜头很远（u > 2f），传感器上成的像是什么样？</p>
     <div class="btn-row" id="s4-q1-opts">
@@ -211,6 +211,6 @@
 
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 凸透镜成像 Convex Lens Imaging —— 一步一交互系列</footer>
 
-<script src="app.js?v=l1"></script>
+<script src="app.js?v=focus-1"></script>
 </body>
 </html>

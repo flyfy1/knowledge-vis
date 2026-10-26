@@ -1,0 +1,576 @@
+{
+  "graph": {
+    "nodes": 38,
+    "edges": 47,
+    "trails": 10
+  },
+  "primaryEntries": [
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=kinematics&node=derivative",
+      "trailExists": true,
+      "nodeExists": true,
+      "selectedInTrail": true,
+      "anchor": true
+    },
+    {
+      "url": "http://127.0.0.1:18775/trig/#step4",
+      "trailExists": true,
+      "nodeExists": true,
+      "selectedInTrail": true,
+      "anchor": true
+    },
+    {
+      "url": "http://127.0.0.1:18775/atlas/?trail=geometry&node=pinhole-ratio&view=list",
+      "trailExists": true,
+      "nodeExists": true,
+      "selectedInTrail": true,
+      "anchor": true
+    }
+  ],
+  "localSources": [
+    {
+      "kind": "node",
+      "id": "snell",
+      "source": "../reflection-refraction/#snell-bridge",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "slope",
+      "source": "../linear-functions/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "pinhole-ratio",
+      "source": "../pinhole-camera/#geometry-bridge",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "integral",
+      "source": "../integral/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "derivative",
+      "source": "../derivative/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "power",
+      "source": "../power-converters/#step0",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "node",
+      "id": "inductor",
+      "source": "../power-converters/#step1",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "node",
+      "id": "capacitor",
+      "source": "../power-converters/#step2",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "node",
+      "id": "switch-diode",
+      "source": "../power-converters/#step3",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "node",
+      "id": "pwm",
+      "source": "../power-converters/#step3",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "node",
+      "id": "buck",
+      "source": "../power-converters/#step4",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "node",
+      "id": "boost",
+      "source": "../power-converters/#step5",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "node",
+      "id": "unit-circle",
+      "source": "../trig/#step1",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "sine",
+      "source": "../trig/#step3",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "complex",
+      "source": "../complex-numbers/#step4",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "vectors",
+      "source": "../eigen/#step1",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "eigen",
+      "source": "../eigen/#step4",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "laplace",
+      "source": "../laplace/#step1",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "superposition",
+      "source": "../fourier/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "fourier",
+      "source": "../fourier/#step5",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "spectrum",
+      "source": "../fourier/#step5",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "resonance",
+      "source": "../freqresp/#step5",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "sampling",
+      "source": "../sampling/#step3",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "lti",
+      "source": "../lti/#step3",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "impulse",
+      "source": "../lti/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "convolution",
+      "source": "../convolution/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "freqresp",
+      "source": "../freqresp/#step0",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "poles",
+      "source": "../laplace/#step4",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "feedback",
+      "source": "../control/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "probability",
+      "source": "../bayes/#step0",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "bayes",
+      "source": "../bayes/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "variance",
+      "source": "../clt/#step3",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "gaussian",
+      "source": "../clt/#step3",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "montecarlo",
+      "source": "../montecarlo/#step3",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "node",
+      "id": "kalman",
+      "source": "../kalman/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "unit-circle:snell",
+      "source": "../reflection-refraction/#critical-proof",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "slope:pinhole-ratio",
+      "source": "../pinhole-camera/#geometry-bridge",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "derivative:oscillation",
+      "source": "../derivative/#step0",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "power:inductor",
+      "source": "../power-converters/#step1",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "edge",
+      "id": "power:capacitor",
+      "source": "../power-converters/#step2",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "edge",
+      "id": "inductor:capacitor",
+      "source": "../power-converters/#step2",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "edge",
+      "id": "inductor:buck",
+      "source": "../power-converters/#step4",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "edge",
+      "id": "inductor:boost",
+      "source": "../power-converters/#step5",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "edge",
+      "id": "capacitor:buck",
+      "source": "../power-converters/#step4",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "edge",
+      "id": "capacitor:boost",
+      "source": "../power-converters/#step5",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "edge",
+      "id": "switch-diode:buck",
+      "source": "../power-converters/#step4",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "edge",
+      "id": "switch-diode:boost",
+      "source": "../power-converters/#step5",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "edge",
+      "id": "pwm:buck",
+      "source": "../power-converters/#step4",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "edge",
+      "id": "pwm:boost",
+      "source": "../power-converters/#step5",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "edge",
+      "id": "boost:feedback",
+      "source": "../power-converters/#step6",
+      "exists": true,
+      "anchorPresent": false,
+      "sourceCodeGeneratedAnchor": true,
+      "anchorEvidence": "section(n) generates id step${n}; render calls sections0..6. Parent actual-anchor suite separately passed."
+    },
+    {
+      "kind": "edge",
+      "id": "unit-circle:sine",
+      "source": "../trig/#step3",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "sine:fourier",
+      "source": "../fourier/#step1",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "superposition:fourier",
+      "source": "../fourier/#step4",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "fourier:spectrum",
+      "source": "../fourier/#step5",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "fourier:convolution",
+      "source": "../convolution/#step6",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "spectrum:sampling",
+      "source": "../sampling/#step4",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "resonance:freqresp",
+      "source": "../freqresp/#step5",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "lti:impulse",
+      "source": "../lti/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "impulse:convolution",
+      "source": "../lti/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "lti:superposition",
+      "source": "../lti/#step3",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "laplace:fourier",
+      "source": "../laplace/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "laplace:poles",
+      "source": "../laplace/#step4",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "vectors:eigen",
+      "source": "../eigen/#step1",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "eigen:variance",
+      "source": "../eigen/#step5",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "probability:bayes",
+      "source": "../bayes/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "bayes:kalman",
+      "source": "../kalman/#step6",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "variance:kalman",
+      "source": "../kalman/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "kalman:feedback",
+      "source": "../kalman/#step6",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "variance:gaussian",
+      "source": "../clt/#step3",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "probability:montecarlo",
+      "source": "../montecarlo/#step3",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "variance:montecarlo",
+      "source": "../montecarlo/#step2",
+      "exists": true,
+      "anchorPresent": true
+    },
+    {
+      "kind": "edge",
+      "id": "convolution:gaussian",
+      "source": "../clt/#step5",
+      "exists": true,
+      "anchorPresent": true
+    }
+  ],
+  "badLocalSources": [],
+  "method": "Actual graph data, static source anchors and deterministic generator source for power-converters. No fresh browser or external availability test."
+}

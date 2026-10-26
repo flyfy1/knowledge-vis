@@ -1,0 +1,307 @@
+{
+  "source": "/Users/songyy/Documents/knowledge-vis/lens/app.js",
+  "near": [
+    {
+      "u": 30,
+      "actual": {
+        "type": "virtual",
+        "v": -60,
+        "m": -2,
+        "mAbs": 2,
+        "imgH": 60
+      },
+      "zone": "ltf",
+      "physicalExpected": {
+        "type": "virtual",
+        "v": -60,
+        "M": 2
+      },
+      "rayIntersection": [
+        -60,
+        60
+      ]
+    },
+    {
+      "u": 59.5,
+      "actual": {
+        "type": "inf",
+        "v": "Infinity",
+        "m": "Infinity",
+        "mAbs": "Infinity",
+        "imgH": "NaN"
+      },
+      "zone": "eqf",
+      "physicalExpected": {
+        "type": "virtual",
+        "v": -7140,
+        "M": 120
+      },
+      "rayIntersection": [
+        -7140,
+        3600
+      ]
+    },
+    {
+      "u": 59.8,
+      "actual": {
+        "type": "inf",
+        "v": "Infinity",
+        "m": "Infinity",
+        "mAbs": "Infinity",
+        "imgH": "NaN"
+      },
+      "zone": "eqf",
+      "physicalExpected": {
+        "type": "virtual",
+        "v": -17939.999999999745,
+        "M": 299.99999999999574
+      },
+      "rayIntersection": [
+        -17940,
+        9000
+      ]
+    },
+    {
+      "u": 60,
+      "actual": {
+        "type": "inf",
+        "v": "Infinity",
+        "m": "Infinity",
+        "mAbs": "Infinity",
+        "imgH": "NaN"
+      },
+      "zone": "eqf",
+      "physicalExpected": {
+        "type": "inf",
+        "v": null,
+        "M": null
+      },
+      "rayIntersection": null
+    },
+    {
+      "u": 60.2,
+      "actual": {
+        "type": "inf",
+        "v": "Infinity",
+        "m": "Infinity",
+        "mAbs": "Infinity",
+        "imgH": "NaN"
+      },
+      "zone": "eqf",
+      "physicalExpected": {
+        "type": "real",
+        "v": 18059.99999999974,
+        "M": -299.99999999999574
+      },
+      "rayIntersection": [
+        18060,
+        -9000
+      ]
+    },
+    {
+      "u": 60.5,
+      "actual": {
+        "type": "inf",
+        "v": "Infinity",
+        "m": "Infinity",
+        "mAbs": "Infinity",
+        "imgH": "NaN"
+      },
+      "zone": "eqf",
+      "physicalExpected": {
+        "type": "real",
+        "v": 7260,
+        "M": -120
+      },
+      "rayIntersection": [
+        7260,
+        -3600
+      ]
+    },
+    {
+      "u": 60.500001,
+      "actual": {
+        "type": "real",
+        "v": 7259.985600028836,
+        "m": 119.9997600004806,
+        "mAbs": 119.9997600004806,
+        "imgH": -3599.992800014418
+      },
+      "zone": "mid",
+      "physicalExpected": {
+        "type": "real",
+        "v": 7259.985600028836,
+        "M": -119.9997600004806
+      },
+      "rayIntersection": [
+        7259.985600028836,
+        -3599.992800014418
+      ]
+    },
+    {
+      "u": 90,
+      "actual": {
+        "type": "real",
+        "v": 180,
+        "m": 2,
+        "mAbs": 2,
+        "imgH": -60
+      },
+      "zone": "mid",
+      "physicalExpected": {
+        "type": "real",
+        "v": 180,
+        "M": -2
+      },
+      "rayIntersection": [
+        180,
+        -60
+      ]
+    },
+    {
+      "u": 119.6,
+      "actual": {
+        "type": "real",
+        "v": 120.4026845637584,
+        "m": 1.0067114093959733,
+        "mAbs": 1.0067114093959733,
+        "imgH": -30.2013422818792
+      },
+      "zone": "eq2f",
+      "physicalExpected": {
+        "type": "real",
+        "v": 120.4026845637584,
+        "M": -1.0067114093959733
+      },
+      "rayIntersection": [
+        120.4026845637584,
+        -30.2013422818792
+      ]
+    },
+    {
+      "u": 120,
+      "actual": {
+        "type": "real",
+        "v": 120,
+        "m": 1,
+        "mAbs": 1,
+        "imgH": -30
+      },
+      "zone": "eq2f",
+      "physicalExpected": {
+        "type": "real",
+        "v": 120,
+        "M": -1
+      },
+      "rayIntersection": [
+        120,
+        -30
+      ]
+    },
+    {
+      "u": 120.2,
+      "actual": {
+        "type": "real",
+        "v": 119.80066445182723,
+        "m": 0.9966777408637872,
+        "mAbs": 0.9966777408637872,
+        "imgH": -29.900332225913616
+      },
+      "zone": "eq2f",
+      "physicalExpected": {
+        "type": "real",
+        "v": 119.80066445182723,
+        "M": -0.9966777408637874
+      },
+      "rayIntersection": [
+        119.80066445182725,
+        -29.900332225913623
+      ]
+    },
+    {
+      "u": 120.5,
+      "actual": {
+        "type": "real",
+        "v": 119.50413223140495,
+        "m": 0.9917355371900826,
+        "mAbs": 0.9917355371900826,
+        "imgH": -29.752066115702476
+      },
+      "zone": "eq2f",
+      "physicalExpected": {
+        "type": "real",
+        "v": 119.50413223140495,
+        "M": -0.9917355371900827
+      },
+      "rayIntersection": [
+        119.50413223140497,
+        -29.752066115702483
+      ]
+    },
+    {
+      "u": 180,
+      "actual": {
+        "type": "real",
+        "v": 90,
+        "m": 0.5,
+        "mAbs": 0.5,
+        "imgH": -15
+      },
+      "zone": "gt2f",
+      "physicalExpected": {
+        "type": "real",
+        "v": 90,
+        "M": -0.5
+      },
+      "rayIntersection": [
+        90,
+        -15
+      ]
+    }
+  ],
+  "finiteCases": 6919,
+  "maxIntersectionError": 1.1368683772161603e-13,
+  "legacyM": "v/u, opposite sign to signed transverse magnification; UI uses positive mAbs and correct imgH",
+  "viewport": {
+    "viewportWidth": 320,
+    "canvasWidth": 282,
+    "canvasHeight": 360,
+    "lensX": 118,
+    "ppu": 0.6,
+    "objectAtU215": -11
+  },
+  "virtualR3": {
+    "u": 30,
+    "h": 30,
+    "lensPoint": [
+      0,
+      60
+    ],
+    "nearFocus": [
+      -60,
+      0
+    ],
+    "forwardParameterToFocus": -1
+  },
+  "screen": [
+    {
+      "p": 98,
+      "formulaImage": 100,
+      "existingExactClearBranch": true,
+      "actuallyEqual": false
+    },
+    {
+      "p": 100,
+      "formulaImage": 100,
+      "existingExactClearBranch": true,
+      "actuallyEqual": true
+    },
+    {
+      "p": 102,
+      "formulaImage": 100,
+      "existingExactClearBranch": true,
+      "actuallyEqual": false
+    }
+  ],
+  "method": "Actual original PURE isolated VM and source-derived geometry, no Chrome."
+}
