@@ -1,0 +1,471 @@
+{
+  "selectFit": [
+    {
+      "lang": "en",
+      "sel": "#preset",
+      "text": "Tiny path",
+      "width": 260,
+      "textWidth": 69.71212768554688,
+      "padding": 30,
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "en",
+      "sel": "#preset",
+      "text": "Tiny capture",
+      "width": 260,
+      "textWidth": 92.70417785644531,
+      "padding": 30,
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "en",
+      "sel": "#preset",
+      "text": "Official example 1",
+      "width": 260,
+      "textWidth": 134.11227416992188,
+      "padding": 30,
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "en",
+      "sel": "#preset",
+      "text": "Official example 2",
+      "width": 260,
+      "textWidth": 134.11227416992188,
+      "padding": 30,
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "en",
+      "sel": "#view",
+      "text": "1 Mouse to move",
+      "width": 260,
+      "textWidth": 129.32826232910156,
+      "padding": 30,
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "en",
+      "sel": "#view",
+      "text": "2 Cat to move",
+      "width": 260,
+      "textWidth": 103.42420959472656,
+      "padding": 30,
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "zh",
+      "sel": "#preset",
+      "text": "微型路径",
+      "width": 260,
+      "textWidth": 64.0001220703125,
+      "padding": 30,
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "zh",
+      "sel": "#preset",
+      "text": "微型捕获",
+      "width": 260,
+      "textWidth": 64.0001220703125,
+      "padding": 30,
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "zh",
+      "sel": "#preset",
+      "text": "官方示例 1",
+      "width": 260,
+      "textWidth": 77.31214904785156,
+      "padding": 30,
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "zh",
+      "sel": "#preset",
+      "text": "官方示例 2",
+      "width": 260,
+      "textWidth": 77.31214904785156,
+      "padding": 30,
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "zh",
+      "sel": "#view",
+      "text": "1 鼠先走",
+      "width": 260,
+      "textWidth": 61.31211853027344,
+      "padding": 30,
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    },
+    {
+      "lang": "zh",
+      "sel": "#view",
+      "text": "2 猫先走",
+      "width": 260,
+      "textWidth": 61.31211853027344,
+      "padding": 30,
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowAllowance": 24
+    }
+  ],
+  "markerStates": [
+    {
+      "lang": "en",
+      "p": 0,
+      "state": [
+        1,
+        2,
+        1
+      ],
+      "markerAndWinner": true
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "state": [
+        1,
+        2,
+        1
+      ],
+      "markerAndWinner": true
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "state": [
+        5,
+        3,
+        1
+      ],
+      "markerAndWinner": true
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "state": [
+        1,
+        2,
+        1
+      ],
+      "markerAndWinner": true
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "state": [
+        1,
+        2,
+        1
+      ],
+      "markerAndWinner": true
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "state": [
+        1,
+        2,
+        1
+      ],
+      "markerAndWinner": true
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "state": [
+        5,
+        3,
+        1
+      ],
+      "markerAndWinner": true
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "state": [
+        1,
+        2,
+        1
+      ],
+      "markerAndWinner": true
+    }
+  ],
+  "host": "linux",
+  "browser": "156.0.8078.4",
+  "presets": [
+    {
+      "lang": "en",
+      "p": 0,
+      "frames": 6,
+      "answer": 1,
+      "allCellsAllFrames": true
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "frames": 4,
+      "answer": 2,
+      "allCellsAllFrames": true
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "frames": 25,
+      "answer": 0,
+      "allCellsAllFrames": true
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "frames": 4,
+      "answer": 1,
+      "allCellsAllFrames": true
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "frames": 6,
+      "answer": 1,
+      "allCellsAllFrames": true
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "frames": 4,
+      "answer": 2,
+      "allCellsAllFrames": true
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "frames": 25,
+      "answer": 0,
+      "allCellsAllFrames": true
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "frames": 4,
+      "answer": 1,
+      "allCellsAllFrames": true
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "noPageOverflow": true,
+      "tableScrollContained": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "noPageOverflow": true,
+      "tableScrollContained": true
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "noPageOverflow": true,
+      "tableScrollContained": true
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "noPageOverflow": true,
+      "tableScrollContained": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "noPageOverflow": true,
+      "tableScrollContained": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "noPageOverflow": true,
+      "tableScrollContained": true
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "noPageOverflow": true,
+      "tableScrollContained": true
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "noPageOverflow": true,
+      "tableScrollContained": true
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "en",
+      "sentinelVerified": true,
+      "automatic": true,
+      "nativeFallback": true,
+      "shortcut": "Control+C",
+      "newlineConversion": "none observed; exact string equality"
+    },
+    {
+      "lang": "zh",
+      "sentinelVerified": true,
+      "automatic": true,
+      "nativeFallback": true,
+      "shortcut": "Control+C",
+      "newlineConversion": "none observed; exact string equality"
+    }
+  ],
+  "semanticBindings": [
+    {
+      "lang": "en",
+      "value": "0",
+      "text": "Reconsider who chooses the move. After mouse moves to 1, cat from 2 can only reach 3 or 4, not 1. Mouse then moves from 1 to 0 and wins. Mouse to 2 is an immediate capture; mouse to 4 lets cat capture from 2. One mouse-winning exit suffices, so the result is 1; the number of dangerous exits and the cycle do not change that proof."
+    },
+    {
+      "lang": "en",
+      "value": "2",
+      "text": "Reconsider who chooses the move. After mouse moves to 1, cat from 2 can only reach 3 or 4, not 1. Mouse then moves from 1 to 0 and wins. Mouse to 2 is an immediate capture; mouse to 4 lets cat capture from 2. One mouse-winning exit suffices, so the result is 1; the number of dangerous exits and the cycle do not change that proof."
+    },
+    {
+      "lang": "en",
+      "value": "1",
+      "text": "Correct. After mouse moves to 1, cat from 2 can only reach 3 or 4, not 1. Mouse then moves from 1 to 0 and wins. Mouse to 2 is an immediate capture; mouse to 4 lets cat capture from 2. One mouse-winning exit suffices, so the result is 1; the number of dangerous exits and the cycle do not change that proof."
+    },
+    {
+      "lang": "zh",
+      "value": "0",
+      "text": "再看谁有选择权。 鼠走 1 后，猫从 2 只能去 3 或 4，都不能到 1；鼠下一步从 1 到 0 获胜。鼠走 2 立即被捕，走 4 则猫能从 2 到 4 捕获。但一个鼠胜出口就足够，结果为 1；危险出口数量和环都不改变这个证明。"
+    },
+    {
+      "lang": "zh",
+      "value": "2",
+      "text": "再看谁有选择权。 鼠走 1 后，猫从 2 只能去 3 或 4，都不能到 1；鼠下一步从 1 到 0 获胜。鼠走 2 立即被捕，走 4 则猫能从 2 到 4 捕获。但一个鼠胜出口就足够，结果为 1；危险出口数量和环都不改变这个证明。"
+    },
+    {
+      "lang": "zh",
+      "value": "1",
+      "text": "正确。 鼠走 1 后，猫从 2 只能去 3 或 4，都不能到 1；鼠下一步从 1 到 0 获胜。鼠走 2 立即被捕，走 4 则猫能从 2 到 4 捕获。但一个鼠胜出口就足够，结果为 1；危险出口数量和环都不改变这个证明。"
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#prev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "td.finalized",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 11.974898815275662
+    },
+    {
+      "selector": "td small",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "a",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "links": [
+    {
+      "lang": "en",
+      "id": 847,
+      "step": 2,
+      "exists": true,
+      "label": " #847 · Why state needs extra information",
+      "destinationText": "Add memory to a node, then expand by layersWhy is the first arrival at a state enough? A state (u, mask) stores current node u and a bitmask: an integer whose binary bits record the visited set. Node v has weight 2^v, written 1 << v. Binary positions from right to left represent nodes 0, 1, 2, … .In the four-node star, 1→0→2→0 has masks 0010→0011→0111→0111. The revisit keeps the set but changes the endpoint from 2 to 0, so it is a different state. The | operator is bitwise OR: keep existing 1 bits and set the new node’s bit to 1.(u, mask, d) → (v, mask | (1 << v), d + 1), where v ∈ graph[u]; target full = (1 << n) − 1.Breadth-first search (BFS) groups states by edges traversed d: process every d-move state before any d+1-move state. Since any start is legal, initialize (u, 1<<u) for every node u at layer 0. The frontier contains the pairs first discovered in this layer. seen stores discovered pairs, rather than visited graph nodes.#773: BFS for minimum puzzle movesInvariant: each pair in layer d is first reachable in exactly d moves. Layer 0 is immediate; extending a previous-layer state along a real edge gives a legal d-move walk. Conversely, every d-move walk has a d−1-move prefix whose state is processed earlier, so a shorter arrival cannot be missed. If a pair is already queued, any suffix of a longer history can also follow the shorter history. Skip that duplicate pair. The first layer with an all-1 mask gives the shortest covering length.This is a JavaScript teaching simulation, not execution of the Python below. Presets have n≤5. Frame d shows all new pairs in layer d just after discovery, before expanding that layer; frame 0 initializes all starts. Every first-discovered pair is retained, without omissions. Python removes pairs one by one from a queue and can return during that layer; the simulation discovers the whole layer before stopping. Walks and snapshots are extra teaching storage.Choose graph (restarts this search)Example 1 · StarExample 2 · Five nodesOne nodeThree-node pathTriangleKeep the graph fixed and expand one layer. Watch the ledger grow and check a pair’s predecessor. Previous layer restores every readout. Jumping to the first covering layer retains the layer ledger. Changing graphs resets only this search.Current input graph = [[1,2,3],[0],[0],[0]]Previous layerExpand next layerReturn to layer 0First covering layerCurrent layer d=0 (frame 0/4); 4 new pairs this layer; 4 pairs discovered cumulatively. No full-coverage state discovered yet.Legend: numbers are node IDs; lines are input edges. Thick rings mean visited and a filled circle is the representative walk’s endpoint. Each state listed below has its own visited set.0123Representative walk in the graph: 0. Endpoint 0; visited {0}. First new pair in this layer; this does not imply full coverage.Cumulative discovery ledgerLayer 0: 4 new, 4 pairs cumulativeAll new pairs in this layer and their causesEndpoint u=0; mask=0001₂=1; set {0}Initial start, 0 edges.Endpoint u=1; mask=0010₂=2; set {1}Initial start, 0 edges.Endpoint u=2; mask=0100₂=4; set {2}Initial start, 0 edges.Endpoint u=3; mask=1000₂=8; set {3}Initial start, 0 edges."
+    },
+    {
+      "lang": "en",
+      "id": 329,
+      "step": 1,
+      "exists": true,
+      "label": " #329 · Derive a recurrence from dependencies",
+      "destinationText": "02Reuse the suffix. Why must we wait?Our question: must we search the routes beyond the same cell repeatedly? A direct baseline starts at every cell, tries every strictly increasing continuation, and takes the longest. The remaining route is a suffix. Different starts can reach the same cell and search its suffix again: starting at either 1 or 2 searches 3 → 4.The baseline saves no results. For N=mn, depth is at most N with at most four choices per level: a loose upper bound is O(N·4ᴺ) time and O(N) stack space. Enumerating paths does not scale to 40,000 cells.def baseline(matrix):\n    m, n = len(matrix), len(matrix[0])\n    def walk(r, c):\n        best = 1\n        for dr, dc in ((1,0), (-1,0), (0,1), (0,-1)):\n            a, b = r + dr, c + dc\n            if 0 <= a < m and 0 <= b < n and matrix[a][b] > matrix[r][c]:\n                best = max(best, 1 + walk(a, b))\n        return best\n    return max(walk(r, c) for r in range(m) for c in range(n))Let L(c) be the longest path length starting at cell c. With no larger neighbor, L(c)=1. Otherwise the first move must go to a larger neighbor v. Its best continuation has length L(v), so choose the largest of those lengths:L(c) = 1 + max L(v), over strictly larger orthogonal neighbors v. With no such v, use max=0.In the four-cell example: L(4)=1, L(3)=2, L(2)=3, L(1)=4. Values rise on every legal move, so a route cannot loop back to its original value. This is acyclic: no directed route returns to its start. We can therefore solve larger neighbors before the smaller cells that depend on them.Tempting wrong rule: always choose the neighbor with the largest value. In [[1,9,10],[2,3,4]], going from 1 to 9 → 10 gives only three cells. But 1 → 2 → 3 → 4 → 10 has five. A larger value does not imply a longer continuation. Globally sorting values also cannot connect nonadjacent cells.An invariant is a fact maintained at each round boundary: removed cells have their correct L, and each remaining cell’s out counts larger neighbors still present. Local peaks have none, so round 1 removes them with L=1. Other cells become ready only after all larger neighbors are removed. The last such neighbor is removed in round max L(v); this cell is removed one round later, exactly 1+max L(v). Induction gives the correct L for every cell, and the final round number is the global longest length."
+    },
+    {
+      "lang": "zh",
+      "id": 847,
+      "step": 2,
+      "exists": true,
+      "label": "#847 · 为什么状态要包含额外信息",
+      "destinationText": "把记忆加进节点，逐层扩展这一步要回答：为什么第一次到达一个状态就够了？状态 (u, mask) 中，u 是当前位置；mask（位掩码）用整数的二进制位记录已访问集合：节点 v 对应权重 2^v，写作 1 << v。二进制从右往左依次代表节点 0、1、2……。在四节点星形图中：1→0→2→0 对应 0010→0011→0111→0111。最后一步重访中心，集合没有变，但终点从 2 变为 0，仍是另一个状态。符号 | 是按位“或”：保留原来的 1，再把新节点对应位设为 1。(u, mask, d) → (v, mask | (1 << v), d + 1)，其中 v ∈ graph[u]；目标 full = (1 << n) − 1。广度优先搜索（BFS）按走过的边数 d 分层：先处理所有 d 步状态，再处理 d+1 步。起点任选，所以每个节点 u 都以 (u, 1<<u) 放入第 0 层。前沿就是本层首次发现的状态；seen 是已发现的状态对集合，并非已访问节点集合。#773：用 BFS 找最短拼图步数不变式：每层中的状态首次到达所需的最少步数恰为该层 d。初始层显然为 0；从上一层走一条真实边，得到一个合法的 d 步走法。反过来，任何 d 步走法都有 d−1 步前缀，其状态已在更早层处理，所以不会漏掉更短的到达。若同一状态对已经入队，较长历史的任何后缀都能接在较短历史后面，故可以跳过。第一次出现全 1 掩码的层，就是最短覆盖长度。下图是 JavaScript 教学模拟，不执行下方 Python。只展示 n≤5 的小图；第 d 帧表示第 d 层的全部新状态刚发现完毕，尚未扩展本层；第 0 帧是所有起点初始化。保留所有首次发现状态，无省略。Python 用队列逐个取出状态，可在这一层中提前返回；模拟发现完整层再停止。路径与层历史是额外教学存储，不计入提交代码的空间。选择图（更换后重置本搜索）例 1 · 星形例 2 · 五节点单节点三节点链三角形操作：保持图不变，扩展一层，看累计记录增加，并核对任意状态的来源。上一层会恢复所有读数；“到首个覆盖层”跳到结果，层记录仍保留。切图只重置此搜索。当前输入 graph = [[1,2,3],[0],[0],[0]]上一层扩展下一层回到第 0 层到首个覆盖层当前层 d=0（帧 0/4）；本层新状态 4 个；累计已发现 4 个状态对。还未发现覆盖所有节点的状态。图例：数字为节点；线为输入边；粗圆环为已访问，实心为代表走法的当前终点。下面列出的每个状态都有自己的访问集合。0123图中代表走法：0。终点 0；已访问 {0}。本层第一个新状态，不代表已覆盖全部。累计发现记录第 0 层：新增 4，累计 4 个状态对本层全部新状态与来源终点 u=0；mask=0001₂=1；集合 {0}初始起点，0 条边。终点 u=1；mask=0010₂=2；集合 {1}初始起点，0 条边。终点 u=2；mask=0100₂=4；集合 {2}初始起点，0 条边。终点 u=3；mask=1000₂=8；集合 {3}初始起点，0 条边。"
+    },
+    {
+      "lang": "zh",
+      "id": 329,
+      "step": 1,
+      "exists": true,
+      "label": "#329 · 从依赖关系推导递推",
+      "destinationText": "02保存后半段，为什么必须等？这一步要回答：同一格子后面的路，是否需要反复搜索？最直接的基线是：从每格出发，尝试所有严格递增的下一步，再取最长值。后半段叫“后缀”；从不同起点到达同一格，会反复搜索同一个后缀。例如从 1 和从 2 出发都会搜索 3 → 4。基线不保存结果。N=mn 时，递归深度最多 N，每层最多四个分支，保守上界 O(N·4ᴺ) 时间、O(N) 栈空间；并非线性算法，40,000 格不能靠枚举所有路径。def baseline(matrix):\n    m, n = len(matrix), len(matrix[0])\n    def walk(r, c):\n        best = 1\n        for dr, dc in ((1,0), (-1,0), (0,1), (0,-1)):\n            a, b = r + dr, c + dc\n            if 0 <= a < m and 0 <= b < n and matrix[a][b] > matrix[r][c]:\n                best = max(best, 1 + walk(a, b))\n        return best\n    return max(walk(r, c) for r in range(m) for c in range(n))令 L(c) 表示从格子 c 出发的最长路径格数。没有更大邻居时，L(c)=1。否则第一步必须走向某个更大邻居 v，剩余最好长度是 L(v)，所以取最大的那一个：L(c) = 1 + max L(v)；v 是上下左右中值更大的邻居。没有这样的 v 时 max=0。在四格例子中：L(4)=1，L(3)=2，L(2)=3，L(1)=4。每次沿合法方向走值都增大，不可能绕一圈回到原值。这就是无环：没有能回到起点的有向路径。因此可先算大值格子，再算依赖它的小值格子。诱人的错误：总选值最大的邻居。在 [[1,9,10],[2,3,4]] 中，从 1 贪心走 9 → 10，只得 3 格；走 1 → 2 → 3 → 4 → 10 却有 5 格。值大不代表后面的路长。全局按值排序也不能把不相邻的格子接起来。不变量是每轮边界都保持的事实：已移除格子的 L 已正确确定；未移除格子的 out 等于尚未移除的更大邻居数。局部峰值没有更大邻居，第 1 轮移除，L=1。其他格子只有等所有更大邻居移除才就绪；最后一个邻居所在轮是 max L(v)，它下一轮被移除，恰好是 1+max L(v)。归纳下去，每格只移除一次，最后轮数就是全局最长路径。"
+    }
+  ],
+  "errors": [],
+  "localRequestsOnly": true,
+  "blockedStorage": true,
+  "offlineSource": true,
+  "keyboard": {
+    "nativeActivation": true,
+    "scroll": true,
+    "focus": {
+      "width": "3px",
+      "color": "rgb(255, 180, 84)"
+    }
+  },
+  "cssBytes": 11477
+}

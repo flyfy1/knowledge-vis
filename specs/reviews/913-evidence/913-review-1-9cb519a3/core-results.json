@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "casesChecked": 831,
+  "framesChecked": 26467,
+  "edgesChecked": 1489043,
+  "localizationKeys": 87,
+  "checks": [
+    "AST duplicate-key detection and bilingual pair shape",
+    "all reachable final states vs synchronous oracle",
+    "monotone sound win labels",
+    "exact unproved counters",
+    "legal predecessors",
+    "all/some transition arithmetic",
+    "draw residual closed exits"
+  ]
+}
