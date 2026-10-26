@@ -329,6 +329,10 @@ cases with equal and reversed parameter order. The frozen
 [1125-R1 report](https://github.com/flyfy1/knowledge-vis/blob/a0fd59a2cb63c065402e9acb75569bddff23483b/specs/reviews/1125-review-1-b4279a73.md)
 records this required finding as open; this clarification does not close it or
 establish live-policy adoption.
+The subsequent [independent re-review](https://github.com/flyfy1/knowledge-vis/blob/b496426596a607483b0d3c002a2e140730116e12/specs/reviews/1125-review-2-d62c8fef.md)
+closes it for candidate `14f1dbf6c8b859e9ed92604d82b5b9fc0e47987b` after
+checking both rendered translations and the reversed-count examples. The original
+finding remains preserved; this candidate closure does not adopt live policy.
 
 For example, let n be formula length, A the number of expanded atom entries, and
 d the maximum number of enclosing parentheses, so d=0 without parentheses. An
