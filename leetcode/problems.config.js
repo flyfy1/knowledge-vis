@@ -3961,6 +3961,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
+    "id": 928,
+    "title": {
+      "zh": "尽量减少恶意软件的传播 II",
+      "en": "Minimize Malware Spread II"
+    },
+    "desc": {
+      "zh": "删除节点及其边，用健康连通组的唯一感染边界计算收益。",
+      "en": "Delete a node and its edges; count clean groups with a sole infected boundary source."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "图遍历",
+        "en": "Graph traversal"
+      },
+      {
+        "zh": "连通分量",
+        "en": "Connected components"
+      }
+    ],
+    "path": "928/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimize-malware-spread-ii/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(n) auxiliary space"
+  },
+  {
     "id": 940,
     "title": {
       "zh": "不同的子序列 II",
