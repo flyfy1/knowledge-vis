@@ -3,3 +3,6 @@
 .table-wrap:focus-visible,pre:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
 .head-top{flex-wrap:wrap}.lang-toggle{margin-left:auto}h1{overflow-wrap:anywhere}.site-head .official-link{white-space:normal}
 .dp tbody th,.dp thead th:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+/* Bound intrinsic header width so complete labels wrap beside the sticky corner. */
+.dp th{width:52px;max-width:52px;white-space:normal;overflow-wrap:anywhere}
+@media(max-width:600px){.dp th{width:48px;max-width:48px}}

@@ -1,0 +1,111 @@
+{
+  "freshCases": [
+    {
+      "a": "aa",
+      "b": "ab",
+      "prediction": 3,
+      "actual": "aab",
+      "length": 3
+    },
+    {
+      "a": "ba",
+      "b": "ab",
+      "prediction": 3,
+      "actual": "bab",
+      "length": 3
+    },
+    {
+      "a": "aaa",
+      "b": "a",
+      "prediction": 3,
+      "actual": "aaa",
+      "length": 3
+    },
+    {
+      "a": "abc",
+      "b": "def",
+      "prediction": 6,
+      "actual": "abcdef",
+      "length": 6
+    },
+    {
+      "a": "",
+      "b": "ab",
+      "prediction": 2,
+      "actual": "ab",
+      "length": 2
+    },
+    {
+      "a": "",
+      "b": "",
+      "prediction": 0,
+      "actual": "",
+      "length": 0
+    }
+  ],
+  "exhaustiveBinaryPairs": 196,
+  "maxSizeCases": [
+    {
+      "m": 1000,
+      "n": 1000,
+      "actualLength": 1000,
+      "expectedLength": 1000
+    },
+    {
+      "m": 1000,
+      "n": 1000,
+      "actualLength": 2000,
+      "expectedLength": 2000
+    }
+  ],
+  "mirrorExact": true,
+  "unchangedFromBase": {
+    "base": "093440bf6df89b6a5dbc7a958ae3aef588b9acff",
+    "files": [
+      "app.js",
+      "copy.js",
+      "core.js",
+      "python-code.js",
+      "solution.py",
+      "lesson-entry.json"
+    ]
+  },
+  "metadataPreflight": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "contrast": [
+    {
+      "foreground": "#e8edf4",
+      "background": "#1c2330",
+      "ratio": 13.4
+    },
+    {
+      "foreground": "#9aa7b8",
+      "background": "#161b22",
+      "ratio": 7.08
+    },
+    {
+      "foreground": "#9aa7b8",
+      "background": "#0d1117",
+      "ratio": 7.74
+    },
+    {
+      "foreground": "#ffb454",
+      "background": "#1c2330",
+      "ratio": 8.94
+    },
+    {
+      "foreground": "#6ee7ff",
+      "background": "#0d1117",
+      "ratio": 13.1
+    },
+    {
+      "foreground": "#c9d4e2",
+      "background": "#0a0e14",
+      "ratio": 12.89
+    }
+  ],
+  "cssBytes": 11623
+}

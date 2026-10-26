@@ -1,0 +1,136 @@
+{
+  "candidate": "c3d5761514ebedd5e50297acd937c5380ba12fe0",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/audit.cjs",
+      "bytes": 9174,
+      "sha256": "49ddf8f787fca1235f8c8124765f014b9430ee088a5b360e4af49d20d3a1d041"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/browser-audit.json",
+      "bytes": 324280,
+      "sha256": "84c520ff3245d16409c1887aedac1dece999d49351494a6565ef2b465d3a3358"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/cold-walk.md",
+      "bytes": 5784,
+      "sha256": "f339a091bfe33c1032c1985b42ce89d8224f163fb271135a9393e57da909000a"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/download.py",
+      "bytes": 1118,
+      "sha256": "14d22228824f7a8e8268b546be296e51753fc2745ad53354123a58ab5e1b9868"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/en-1440-zoom1-right.png",
+      "bytes": 103637,
+      "sha256": "b51069a7284985f3164e494ab98408c252d0b18484a143d88e192a6ccdc5c81c"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/en-1440-zoom2-right.png",
+      "bytes": 91825,
+      "sha256": "6ace0cb1721cf9132267ec94ac690cdf8a09068d4a2097e09ee53f718e96be36"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/en-320-zoom1-right.png",
+      "bytes": 51016,
+      "sha256": "dab7cc46accb4171d2dc13c085e18c8ccf47b3ec88f41582d7bc33dab7080555"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/en-320-zoom2-left.png",
+      "bytes": 29434,
+      "sha256": "7cf35184cf9556724edc367c16c758dc54b74d2b29331a5c8348df7e9b900bb4"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/en-320-zoom2-middle.png",
+      "bytes": 25925,
+      "sha256": "d51f6299ce0dba5c957e3c235542bbbd4cb6c2838c082b3210b8a0cb603f6ebf"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/en-320-zoom2-right.png",
+      "bytes": 28119,
+      "sha256": "58175b2fb2ddd94fc670478fc9046f792b327557b35bc21e99aed70ad9d537ce"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/en-390-zoom1-right.png",
+      "bytes": 44771,
+      "sha256": "a43417ce2ddce414c176aaf436659a11550ffffe3a1ae780318ee6d8aadbf08a"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/en-390-zoom2-right.png",
+      "bytes": 28040,
+      "sha256": "3994e769868b0e39ba5bc2f1975c7049076a536b5a165075572bcee5f3f2d9df"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/en-736-zoom1-right.png",
+      "bytes": 33770,
+      "sha256": "ca59402fbd02ec115b86026ca4c38a0bbad73eacbe66279b60b89a38f796969b"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/forced-colors.png",
+      "bytes": 51285,
+      "sha256": "e4f7004feb4408f743dec96c227b36ebc02472244bf5982da4b7c42058c5fecb"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/header-reachability.cjs",
+      "bytes": 2964,
+      "sha256": "2f40d5d5d3053979e8b86567a5d754634795f7403309f8a0557d1d20f7287948"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/header-reachability.json",
+      "bytes": 100771,
+      "sha256": "9a864fda4cb898dec92f5759cf47bf74dfc66c8a421b59d9cce6c6546f2c841d"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/python-audit.json",
+      "bytes": 1893,
+      "sha256": "ebfe57f8e385d4f7d0007def803c096f19bf871a0a7ddd28a520c49760174c50"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/python-audit.py",
+      "bytes": 2995,
+      "sha256": "6c4fc1d9e04d6bc4b29a3af8e67d4e23ece14c8b330e8e3c3fdd0664270c7810"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/zh-1440-zoom1-right.png",
+      "bytes": 107288,
+      "sha256": "8ad8e8bf0f3c08e996c4184df329a9a3cd178a2a08671f5e04066fab29a058a8"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/zh-1440-zoom2-right.png",
+      "bytes": 93525,
+      "sha256": "5439cf822f8649a0720c14de55c8762fe1972b983838ae7575f237963899fbcc"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/zh-320-zoom1-right.png",
+      "bytes": 57967,
+      "sha256": "b4a0993e9272547261bbc48b46aebdc7a31e8e8ff4a34c35f6f215db47103eea"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/zh-320-zoom2-right.png",
+      "bytes": 27435,
+      "sha256": "753cefcc50fe00280adbb7daea9414eae2ce522248b71ff50d5e767a383a613b"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/zh-390-zoom1-right.png",
+      "bytes": 49500,
+      "sha256": "a57d0eba40ad2c4ae6f669d3e55a36d7c9297c961110e38224a2aa1d1a10a449"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/zh-390-zoom2-right.png",
+      "bytes": 28041,
+      "sha256": "008f5bb5e9780799c117e28aaa6946feff6bc38a39cbeedc2b59ee06af40e04d"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-evidence-20261026/zh-736-zoom1-right.png",
+      "bytes": 33278,
+      "sha256": "809ca48965ec6d1dcbe0c943d7e708ecd9c8632aa738b90b8d300f2a8c3d3be2"
+    },
+    {
+      "path": "specs/reviews/1092-header-independent-review-20261026.md",
+      "bytes": 13736,
+      "sha256": "b4eed4e2188aea4e8088d466933b77ae8e34eadb88a8bdde8bd507014a50b211"
+    }
+  ]
+}

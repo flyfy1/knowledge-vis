@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "scope": "author presentation regression, not independent acceptance",
+  "host": "darwin",
+  "browser": "151.0.7922.34",
+  "textRectTolerance": 0.5,
+  "screenshots": [
+    {
+      "name": "en-320-zoom1-end-right.png",
+      "headerTop": 94.6875,
+      "navBottom": 70
+    },
+    {
+      "name": "en-320-zoom2-end-right.png",
+      "headerTop": 165.9375,
+      "navBottom": 140
+    },
+    {
+      "name": "en-1440-zoom1-end-right.png",
+      "headerTop": 95.0625,
+      "navBottom": 70
+    },
+    {
+      "name": "en-1440-zoom2-end-right.png",
+      "headerTop": 166.171875,
+      "navBottom": 140
+    },
+    {
+      "name": "zh-320-zoom1-end-right.png",
+      "headerTop": 94.890625,
+      "navBottom": 70
+    },
+    {
+      "name": "zh-320-zoom2-end-right.png",
+      "headerTop": 166.25,
+      "navBottom": 140
+    },
+    {
+      "name": "zh-1440-zoom1-end-right.png",
+      "headerTop": 95.0625,
+      "navBottom": 70
+    },
+    {
+      "name": "zh-1440-zoom2-end-right.png",
+      "headerTop": 166.171875,
+      "navBottom": 140
+    },
+    {
+      "name": "en-320-zoom2-forced-colors.png",
+      "headerTop": 165.9375,
+      "navBottom": 140
+    }
+  ],
+  "keyboard": {
+    "scrollLeft": 0.5,
+    "outline": "3px",
+    "style": "solid",
+    "focus": true
+  },
+  "errors": [],
+  "zoomMethod": "CSS zoom layout stress, not native browser zoom or physical device",
+  "headerChecks": 1296,
+  "fullRecords": "matrix.json.gz"
+}

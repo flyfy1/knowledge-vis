@@ -1,0 +1,10 @@
+{"label":"8 · empty","wrap":{"left":34,"right":286,"top":163.9375,"bottom":1011.9375,"width":252,"height":848},"corner":{"left":36,"right":207.109375,"top":165.9375,"bottom":248.9375,"width":171.109375,"height":83},"header":{"left":133.109375,"right":282.0625,"top":165.9375,"bottom":248.9375,"width":148.953125,"height":83},"text":{"left":149.109375,"right":266.0625,"top":189.9375,"bottom":222.9375,"width":116.953125,"height":33},"scrollLeft":421,"maxScroll":421,"navBottom":140,"html":"<th scope=\"col\">8 · empty</th>","visible":false}
+AssertionError [ERR_ASSERTION]: R1: complete last header text must be visible beside the sticky corner
+    at /Users/songyy/.codex/worktrees/leetcode-1092-header-fit/knowledge-vis/leetcode/1092/tests/header-fit-regression.cjs:9:287 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

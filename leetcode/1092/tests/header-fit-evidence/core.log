@@ -1,0 +1,11 @@
+{
+  cases: 129,
+  frames: 3096,
+  branches: [
+    'initial', 'different',
+    'equal',   'ready',
+    'both',    'takeA',
+    'tailB',   'takeB',
+    'tailA'
+  ]
+}

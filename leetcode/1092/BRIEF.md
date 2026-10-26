@@ -36,3 +36,28 @@ Author candidate c1, finalized 2026-10-26. Built by Codex; exact model identifie
 All three reproducible test commands in tests/README.md passed. Python: 900 exhaustive pairs plus 168 official/seeded/boundary cases; simulation: 129 cases / 3,096 frames. Real Chromium: both locales, seven presets, every event rewind/replay, three predictions, source copy/manual-copy/download parity, blocked storage, offline opening, keyboard/focus/forced colors, 16 width/zoom layouts, no runtime/asset errors. CSS total 11,403 bytes; measured minimum tested text contrast 7.07885:1. Full rendered-state evidence and limits are in tests/evidence/self-check.md.
 
 Metadata preflight from repository root: `python3 -B scripts/register_leetcode_lesson.py 1092 --validate-only` → exit 0, no stdout. No registration or shared state changes. This finalized metadata is part of the new frozen candidate and awaits independent review; no prior acceptance is changed.
+
+## Header-fit repair contract — 1092-R1
+
+Root adopted `specs/reviews/1092-header-fit-design-review-20261026.md` before this
+implementation. Reuse verdict: repair the existing suffix table's header fitting;
+no new layout, alternate visualization or data source. The reader must expose the
+complete column index/suffix and retain sticky row association at narrow zoom.
+
+P0/high-return change: constrain header width/max-width to the existing52px value
+and existing48px below600px, allow full text wrapping and automatic height. The
+same widths align headers and data columns. Header-only `white-space:normal` and
+`overflow-wrap:anywhere` preserve every character; no ellipsis, font reduction,
+fixed height, palette/padding/radius change or new breakpoint. Keep sticky row
+headers and opaque sticky corner. Existing data-cell minimums, markers, scope
+attributes, scrolling, focus and algorithm/interaction state remain unchanged.
+P1/P2: none. Defer mobile alternate tables, abbreviation, new controls and broader
+layout work because bounded wrapping satisfies this isolated required finding.
+
+Verification: actual header text-line rectangles and settled screenshot at original
+EN320/CSS2/eight-a/end/right-scroll; EN/ZH320/390/desktop at zoom1/2; each column
+identity exposable at a reachable horizontal offset, row labels retained, corner
+text complete; initial/fill/reconstruction/end, keyboard scrolling/focus and
+rewind/reset/locale state. Fixed synchronous display introduces no loading/error/
+network/reconnect state. Canonical Python, mirror, core, metadata and control code
+remain byte-identical. See HEADER-FIT-SELF-CHECK.md for red loop and hypotheses.
