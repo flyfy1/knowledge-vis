@@ -1,0 +1,797 @@
+{
+  "scope": "author self-check; independent review pending",
+  "host": "darwin",
+  "browser": "151.0.7922.34",
+  "presets": [
+    {
+      "lang": "en",
+      "p": 0,
+      "operations": 8,
+      "output": "abc",
+      "length": 3,
+      "branches": [
+        "different",
+        "equal",
+        "ready",
+        "both",
+        "takeA",
+        "tailB"
+      ],
+      "terminalText": "Reconstruction invariant: emitted 3 + minimum remaining 0 = 3 letters."
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "operations": 18,
+      "output": "cabac",
+      "length": 5,
+      "branches": [
+        "different",
+        "equal",
+        "ready",
+        "takeB",
+        "both",
+        "tailA"
+      ],
+      "terminalText": "Reconstruction invariant: emitted 5 + minimum remaining 0 = 5 letters."
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "operations": 73,
+      "output": "aaaaaaaa",
+      "length": 8,
+      "branches": [
+        "equal",
+        "ready",
+        "both"
+      ],
+      "terminalText": "Reconstruction invariant: emitted 8 + minimum remaining 0 = 8 letters."
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "operations": 14,
+      "output": "baab",
+      "length": 4,
+      "branches": [
+        "different",
+        "equal",
+        "ready",
+        "takeB",
+        "both",
+        "tailA"
+      ],
+      "terminalText": "Reconstruction invariant: emitted 4 + minimum remaining 0 = 4 letters."
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "operations": 9,
+      "output": "abcd",
+      "length": 4,
+      "branches": [
+        "different",
+        "ready",
+        "takeA",
+        "tailB"
+      ],
+      "terminalText": "Reconstruction invariant: emitted 4 + minimum remaining 0 = 4 letters."
+    },
+    {
+      "lang": "en",
+      "p": 5,
+      "operations": 3,
+      "output": "a",
+      "length": 1,
+      "branches": [
+        "equal",
+        "ready",
+        "both"
+      ],
+      "terminalText": "Reconstruction invariant: emitted 1 + minimum remaining 0 = 1 letters."
+    },
+    {
+      "lang": "en",
+      "p": 6,
+      "operations": 4,
+      "output": "ab",
+      "length": 2,
+      "branches": [
+        "different",
+        "ready",
+        "takeA",
+        "tailB"
+      ],
+      "terminalText": "Reconstruction invariant: emitted 2 + minimum remaining 0 = 2 letters."
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "operations": 8,
+      "output": "abc",
+      "length": 3,
+      "branches": [
+        "different",
+        "equal",
+        "ready",
+        "both",
+        "takeA",
+        "tailB"
+      ],
+      "terminalText": "重建不变量：已写 3 + 剩余最短 0 = 3 个字符。"
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "operations": 18,
+      "output": "cabac",
+      "length": 5,
+      "branches": [
+        "different",
+        "equal",
+        "ready",
+        "takeB",
+        "both",
+        "tailA"
+      ],
+      "terminalText": "重建不变量：已写 5 + 剩余最短 0 = 5 个字符。"
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "operations": 73,
+      "output": "aaaaaaaa",
+      "length": 8,
+      "branches": [
+        "equal",
+        "ready",
+        "both"
+      ],
+      "terminalText": "重建不变量：已写 8 + 剩余最短 0 = 8 个字符。"
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "operations": 14,
+      "output": "baab",
+      "length": 4,
+      "branches": [
+        "different",
+        "equal",
+        "ready",
+        "takeB",
+        "both",
+        "tailA"
+      ],
+      "terminalText": "重建不变量：已写 4 + 剩余最短 0 = 4 个字符。"
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "operations": 9,
+      "output": "abcd",
+      "length": 4,
+      "branches": [
+        "different",
+        "ready",
+        "takeA",
+        "tailB"
+      ],
+      "terminalText": "重建不变量：已写 4 + 剩余最短 0 = 4 个字符。"
+    },
+    {
+      "lang": "zh",
+      "p": 5,
+      "operations": 3,
+      "output": "a",
+      "length": 1,
+      "branches": [
+        "equal",
+        "ready",
+        "both"
+      ],
+      "terminalText": "重建不变量：已写 1 + 剩余最短 0 = 1 个字符。"
+    },
+    {
+      "lang": "zh",
+      "p": 6,
+      "operations": 4,
+      "output": "ab",
+      "length": 2,
+      "branches": [
+        "different",
+        "ready",
+        "takeA",
+        "tailB"
+      ],
+      "terminalText": "重建不变量：已写 2 + 剩余最短 0 = 2 个字符。"
+    }
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "p": 0,
+      "kind": "different",
+      "text": "Filled (1,1): b ≠ c. Emitting b leaves cost 1; emitting c leaves cost 1. 1 + min(1, 1) = 2."
+    },
+    {
+      "lang": "en",
+      "p": 0,
+      "kind": "equal",
+      "text": "Filled (0,0): a = a; share one letter. 1 + dp[1][1] = 1 + 2 = 3."
+    },
+    {
+      "lang": "en",
+      "p": 0,
+      "kind": "both",
+      "text": "From (0,0) emit a: equal letters, share once. Now at (1,1)."
+    },
+    {
+      "lang": "en",
+      "p": 0,
+      "kind": "takeA",
+      "text": "From (1,1) emit b: down cost ≤ right cost, take str1 (also on ties). Now at (2,1)."
+    },
+    {
+      "lang": "en",
+      "p": 0,
+      "kind": "tailB",
+      "text": "From (2,1) emit c: str1 exhausted, take next str2 letter. Now at (2,2)."
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "kind": "takeB",
+      "text": "From (0,0) emit c: right cost is smaller, take str2. Now at (0,1)."
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "kind": "tailA",
+      "text": "From (2,3) emit a: str2 exhausted, take next str1 letter. Now at (3,3)."
+    },
+    {
+      "lang": "en",
+      "opt": 0,
+      "text": "Recheck the remaining state. The answer is 4. Emit a first, leaving ba and bab. Since ba is a subsequence of bab, the minimum remaining length is 3: total 1+3=4, giving abab. A length-3 result containing both length-3 inputs would have to equal both, but aba ≠ bab. Thus it cannot be shorter. Length 5 misses some possible sharing."
+    },
+    {
+      "lang": "en",
+      "opt": 1,
+      "text": "Recheck the remaining state. The answer is 4. Emit a first, leaving ba and bab. Since ba is a subsequence of bab, the minimum remaining length is 3: total 1+3=4, giving abab. A length-3 result containing both length-3 inputs would have to equal both, but aba ≠ bab. Thus it cannot be shorter. Length 5 misses some possible sharing."
+    },
+    {
+      "lang": "en",
+      "opt": 2,
+      "text": "Correct prediction. The answer is 4. Emit a first, leaving ba and bab. Since ba is a subsequence of bab, the minimum remaining length is 3: total 1+3=4, giving abab. A length-3 result containing both length-3 inputs would have to equal both, but aba ≠ bab. Thus it cannot be shorter. Length 5 misses some possible sharing."
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "kind": "different",
+      "text": "刚填 (1,1)：b ≠ c。写 b 后剩 1，写 c 后剩 1；1 + min(1, 1) = 2。"
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "kind": "equal",
+      "text": "刚填 (0,0)：a = a，共用一个字母。1 + dp[1][1] = 1 + 2 = 3。"
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "kind": "both",
+      "text": "从 (0,0) 写出 a：两边相等，共用一次。现在位于 (1,1)。"
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "kind": "takeA",
+      "text": "从 (1,1) 写出 b：下方代价不大于右方，取 str1（平局也取它）。现在位于 (2,1)。"
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "kind": "tailB",
+      "text": "从 (2,1) 写出 c：str1 已空，取 str2 剩余字符。现在位于 (2,2)。"
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "kind": "takeB",
+      "text": "从 (0,0) 写出 c：右方代价更小，取 str2。现在位于 (0,1)。"
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "kind": "tailA",
+      "text": "从 (2,3) 写出 a：str2 已空，取 str1 剩余字符。现在位于 (3,3)。"
+    },
+    {
+      "lang": "zh",
+      "opt": 0,
+      "text": "再看剩余状态。 答案是 4。例如先写 a，剩余 ba 与 bab；ba 已是 bab 的子序列，剩余最短为 3，所以总长 1+3=4，得到 abab。长度 3 若同时容纳两个长 3 的输入，只能与两者完全相同，但 aba ≠ bab；因此不能更短。5 则没有充分共用字母。"
+    },
+    {
+      "lang": "zh",
+      "opt": 1,
+      "text": "再看剩余状态。 答案是 4。例如先写 a，剩余 ba 与 bab；ba 已是 bab 的子序列，剩余最短为 3，所以总长 1+3=4，得到 abab。长度 3 若同时容纳两个长 3 的输入，只能与两者完全相同，但 aba ≠ bab；因此不能更短。5 则没有充分共用字母。"
+    },
+    {
+      "lang": "zh",
+      "opt": 2,
+      "text": "预测正确。 答案是 4。例如先写 a，剩余 ba 与 bab；ba 已是 bab 的子序列，剩余最短为 3，所以总长 1+3=4，得到 abab。长度 3 若同时容纳两个长 3 的输入，只能与两者完全相同，但 aba ≠ bab；因此不能更短。5 则没有充分共用字母。"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 1,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 320,
+        "width": 320,
+        "tableClient": 284,
+        "tableScroll": 480,
+        "cellMin": 48,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 178,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 2,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 320,
+        "width": 320,
+        "tableClient": 124,
+        "tableScroll": 480,
+        "cellMin": 96,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 124,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 1,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 390,
+        "width": 390,
+        "tableClient": 354,
+        "tableScroll": 480,
+        "cellMin": 48,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 178,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 2,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 390,
+        "width": 390,
+        "tableClient": 159,
+        "tableScroll": 480,
+        "cellMin": 96,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 159,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 1,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 736,
+        "width": 736,
+        "tableClient": 644,
+        "tableScroll": 644,
+        "cellMin": 64.390625,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 178,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "zoom": 2,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 736,
+        "width": 736,
+        "tableClient": 276,
+        "tableScroll": 520,
+        "cellMin": 104,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 178,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 1,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 1440,
+        "width": 1440,
+        "tableClient": 908,
+        "tableScroll": 908,
+        "cellMin": 90.796875,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 178,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "zoom": 2,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 1440,
+        "width": 1440,
+        "tableClient": 628,
+        "tableScroll": 628,
+        "cellMin": 125.59375,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 178,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 1,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 320,
+        "width": 320,
+        "tableClient": 284,
+        "tableScroll": 480,
+        "cellMin": 48,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 178,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 2,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 320,
+        "width": 320,
+        "tableClient": 124,
+        "tableScroll": 480,
+        "cellMin": 96,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 124,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 1,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 390,
+        "width": 390,
+        "tableClient": 354,
+        "tableScroll": 480,
+        "cellMin": 48,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 178,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 2,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 390,
+        "width": 390,
+        "tableClient": 159,
+        "tableScroll": 480,
+        "cellMin": 96,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 159,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 1,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 736,
+        "width": 736,
+        "tableClient": 644,
+        "tableScroll": 644,
+        "cellMin": 64.390625,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 178,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "zoom": 2,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 736,
+        "width": 736,
+        "tableClient": 276,
+        "tableScroll": 520,
+        "cellMin": 104,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 178,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 1,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 1440,
+        "width": 1440,
+        "tableClient": 908,
+        "tableScroll": 908,
+        "cellMin": 90.796875,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 178,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "zoom": 2,
+      "method": "CSS zoom equivalent layout stress",
+      "geometry": {
+        "document": 1440,
+        "width": 1440,
+        "tableClient": 628,
+        "tableScroll": 628,
+        "cellMin": 125.59375,
+        "select": {
+          "label": "a×8/a×8",
+          "textWidth": 65.86724853515625,
+          "width": 178,
+          "padding": 30,
+          "arrowReserve": 20,
+          "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+        }
+      }
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "en",
+      "attempt": 0,
+      "sentinelVerified": true,
+      "manualNativeTransfer": true,
+      "shortcut": "Meta+C"
+    },
+    {
+      "lang": "en",
+      "attempt": 1,
+      "sentinelVerified": true,
+      "manualNativeTransfer": true,
+      "shortcut": "Meta+C"
+    },
+    {
+      "lang": "zh",
+      "attempt": 0,
+      "sentinelVerified": true,
+      "manualNativeTransfer": true,
+      "shortcut": "Meta+C"
+    },
+    {
+      "lang": "zh",
+      "attempt": 1,
+      "sentinelVerified": true,
+      "manualNativeTransfer": true,
+      "shortcut": "Meta+C"
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.397069143240783
+    },
+    {
+      "selector": ".dp td.current",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 8.937191437807625
+    },
+    {
+      "selector": ".dp td.unknown",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".dp th",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": ".btn:disabled",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": ".btn.primary:not(:disabled)",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".step-nav a.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "links": [
+    {
+      "href": "#step3",
+      "heading": "3 · Every cell is a promise"
+    },
+    {
+      "href": "../115/#step0",
+      "heading": "1 · Count choices of positions"
+    },
+    {
+      "href": "../44/#step2",
+      "heading": "What changes in one operation?"
+    },
+    {
+      "href": "#step3",
+      "heading": "3 · 每个格子都给出一个承诺"
+    },
+    {
+      "href": "../115/#step0",
+      "heading": "1 · 数的是位置选择"
+    },
+    {
+      "href": "../44/#step2",
+      "heading": "一次操作改变什么？"
+    }
+  ],
+  "errors": [],
+  "assets": [],
+  "external": [],
+  "calibration": {
+    "blackWhite": 21,
+    "red": 0.2126,
+    "green": 0.7152,
+    "blue": 0.0722,
+    "nearThreshold": 4.492948073111701,
+    "nearPass": false
+  },
+  "focusContrast": 9.809435643476732,
+  "passed": true,
+  "shippedCssBytes": 11623
+}
