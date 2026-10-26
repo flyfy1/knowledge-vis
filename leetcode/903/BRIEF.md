@@ -24,3 +24,31 @@ Branches × both locales: initial/middle/end/rewind; each preset; unanswered/sel
 P0/highest-return 20%: exact state definition, concrete relabeling example, contribution cells, bilingual feedback, code parity and independent oracle. P1: keyboard table scrolling and related reading. P2: none. Deferred: custom large input (would obscure complete trace), autoplay (no learning need), general renderer (one consumer), publication and independent acceptance (separate authorized runs).
 
 Related links: #115 step1 explains prefix-state counting and disjoint choices; #327 step1 explains subtracting prefix sums for intervals. Check served anchors and content in tests. Simulation retains O(n²) cells/history for tiny presets; submission only two O(n) arrays.
+
+## 2026-10-26 · 903-COPY-R1 repair candidate
+
+Status: fixed awaiting separate independent re-review. Historical acceptance is
+unchanged. This author self-check does not close the finding or authorize release.
+
+Applied the website-design skill at
+`~/Documents/agent-skills/website-design/SKILL.md`, reusing the approved design
+and token contract above. P0: preserve algorithm, interaction and source behavior.
+P1/highest-return slice: remove the bilingual workflow footer and its unused
+`foot` translation key. P2: none. Deferred: unrelated teaching changes, new
+components, publication and acceptance; they are outside this bounded request.
+No hard bug was found; the diagnosing-bugs workflow was read but a multi-hypothesis
+investigation is inapplicable to this directly bound prose deletion.
+
+Finding mapping and proof: [self-check](tests/evidence/copy-r1/SELF-CHECK.md).
+The new candidate is frozen by the exact runtime SHA-256 values in
+[manifest](tests/evidence/copy-r1/candidate-hashes.json), with exact bilingual
+[diff](tests/evidence/copy-r1/runtime.diff). All seven original runtime files
+matched historical candidate `26f8fd8ec1e79a233779b82a4c8ee3d63edaee17` before editing.
+`app.js`, `core.js`, `solution.py`, `python-code.js`, `style.css` and metadata
+remain byte-identical. Only HTML/footer binding, the unused copy entry and a
+lesson-local copy-script cache version changed in runtime files.
+
+Metadata gate: from repository root,
+`python3 -B scripts/register_leetcode_lesson.py 903 --validate-only` passed,
+exit 0, no output. Complexity already is the required single nonempty string,
+`O(n²) time; O(n) auxiliary space`; no metadata repair was needed.
