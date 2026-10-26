@@ -1,0 +1,85 @@
+{
+  "description": "Public deployed app.js replayed against delivery baseline HTML/CSS, Chrome mobile emulation, 393x851 DPR 3; initial render and 3 resize events.",
+  "sizes": [
+    {
+      "pageHeight": 5790,
+      "canvas": [
+        {
+          "id": "s0-canvas",
+          "cssHeight": 300,
+          "bufferHeight": 900
+        },
+        {
+          "id": "s2-canvas",
+          "cssHeight": 300,
+          "bufferHeight": 900
+        },
+        {
+          "id": "s3-canvas",
+          "cssHeight": 300,
+          "bufferHeight": 900
+        }
+      ]
+    },
+    {
+      "pageHeight": 7590,
+      "canvas": [
+        {
+          "id": "s0-canvas",
+          "cssHeight": 900,
+          "bufferHeight": 2700
+        },
+        {
+          "id": "s2-canvas",
+          "cssHeight": 900,
+          "bufferHeight": 2700
+        },
+        {
+          "id": "s3-canvas",
+          "cssHeight": 900,
+          "bufferHeight": 2700
+        }
+      ]
+    },
+    {
+      "pageHeight": 12990,
+      "canvas": [
+        {
+          "id": "s0-canvas",
+          "cssHeight": 2700,
+          "bufferHeight": 8100
+        },
+        {
+          "id": "s2-canvas",
+          "cssHeight": 2700,
+          "bufferHeight": 8100
+        },
+        {
+          "id": "s3-canvas",
+          "cssHeight": 2700,
+          "bufferHeight": 8100
+        }
+      ]
+    },
+    {
+      "pageHeight": 29190,
+      "canvas": [
+        {
+          "id": "s0-canvas",
+          "cssHeight": 8100,
+          "bufferHeight": 24300
+        },
+        {
+          "id": "s2-canvas",
+          "cssHeight": 8100,
+          "bufferHeight": 24300
+        },
+        {
+          "id": "s3-canvas",
+          "cssHeight": 8100,
+          "bufferHeight": 24300
+        }
+      ]
+    }
+  ]
+}
