@@ -6,6 +6,8 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Spring potential, force and phase](atlas-spring-potential.md): same-clock U–x slope, restoring-force direction and instantaneous K/U in the existing work experiment.
+
 - [Bayes evidence identity](atlas-bayes-evidence-identity.md): copied records versus new conditionally independent measurements; corrected bound claim and same-ledger comparison.
 
 - [Bayes measurement direction](atlas-bayes-measurement.md): neutral S1 reader, same-state evidence-pool normalization and definition-first graph entry.

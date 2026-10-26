@@ -1,0 +1,3 @@
+# Independent design adjudication
+
+Reviewer /root/design_review accepted BUILD/REUSE: oneU-x figure in existing work view, no duplicate experiment/model/state/clock. Root adopted all P0 constraints: instantaneous b K vs interval ΔK/work; a changes do not affect plot; negative slope J/m=N; turning and crossing distinctions; graphical coordinate not actual hill; Jscale k-only notphase/A; no artificialKgap; fixed-phase mass leaves potential plot unchanged but changes v/a/period; parameter comparisons hypothetical. Existing oscillation concept appended through extant force relation; counts unchanged. No override/deferred mandatory issue. Gate preceded brief/product edits. Scope/acceptance in linked spec.

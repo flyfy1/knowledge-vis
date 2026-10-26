@@ -267,3 +267,7 @@ Finite floating point is a model-display boundary: adjacent tiny spans pass inde
 ## Bayes S3 evidence identity — 2026-10-26
 
 [Contract](../specs/atlas-bayes-evidence-identity.md), [review/evidence](../specs/reviews/bayes-evidence-identity-20261026/README.md). Reuses S3 ledger/curve to distinguish same-record copies from new measurements; corrects the false general upper-bound claim. No graph changes. Current scoped results and publication boundaries belong to the linked record, not historical S1 evidence.
+
+## Same-phase potential/force/energy connection — 2026-10-26
+
+[Contract](../specs/atlas-spring-potential.md), [bounded verification](../specs/reviews/atlas-spring-potential-20261026/verification.md). Reuses original work view/model/clock; U–x point, negative slope/force and instantaneous energy gap share b. Adds existing oscillation concept to work trail, no graph growth. See linked evidence for publication and real-device limits.
