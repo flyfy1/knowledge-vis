@@ -2030,3 +2030,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Equal-prefix counting invariant | `leetcode/1012/#step3` | Count smaller prefixes and stop the equal path at its first repeated digit. |
 
 <!-- /leetcode-1012-campaign -->
+
+
+<!-- leetcode-1028-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| depth-marked preorder reconstruction | `leetcode/1028/#step1` | Read depth/value tokens and use the only-left-child guarantee. |
+| ancestor path stack | `leetcode/1028/#step3` | Pop closed subtrees to expose the unique parent at depth minus one. |
+
+<!-- /leetcode-1028-campaign -->

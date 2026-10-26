@@ -4481,6 +4481,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(D²) time; O(D) auxiliary space, D = decimal digit count (fixed base 10)"
   },
   {
+    "id": 1028,
+    "title": {
+      "zh": "从先序遍历还原二叉树",
+      "en": "Recover a Tree From Preorder Traversal"
+    },
+    "desc": {
+      "zh": "从短横线深度推导祖先路径，逐步还原父子关系。",
+      "en": "Derive an ancestor path from dash depths and rebuild every parent link."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二叉树",
+        "en": "Binary tree"
+      },
+      {
+        "zh": "栈",
+        "en": "Stack"
+      },
+      {
+        "zh": "先序遍历",
+        "en": "Preorder traversal"
+      }
+    ],
+    "path": "1028/",
+    "leetcodeUrl": "https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/",
+    "language": "Python",
+    "complexity": "O(L) time; O(h) auxiliary space plus O(n) returned tree, where L is traversal length and h is path height in nodes"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
