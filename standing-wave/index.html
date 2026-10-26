@@ -113,9 +113,10 @@
 </canvas>
 </div>
 <div class="stage">
-<canvas id="s1-trace" height="170" data-i18n-aria="canvasLabel" role="img">
+<canvas id="s1-trace" height="220" data-i18n-aria="phaseCanvas" role="img">
 </canvas>
 </div>
+<p class="hint" data-i18n="phaseLegend"></p>
 <div class="controls">
 <label>
 <span data-i18n="lamLab">
@@ -125,15 +126,19 @@
 <label>
 <span data-i18n="pxLab">
 </span>
-<input id="s1-px" type="range" min="-4" max="4" step="0.05" value="1">
+<input id="s1-px" type="range" min="-4" max="4" step="any" aria-describedby="s1-controls-note" value="1">
 </label>
 </div>
+<p class="hint" id="s1-controls-note" data-i18n="phaseControls"></p>
 <label class="check-label">
 <input id="s1-env" type="checkbox" checked>
 <span data-i18n="envLab">
 </span>
 </label>
 <div class="btn-row">
+<button type="button" class="btn big" id="s1-same" data-i18n="phaseSameBtn"></button>
+<button type="button" class="btn big" id="s1-opposite" data-i18n="phaseOppBtn"></button>
+<button type="button" class="btn big" id="s1-reset" data-i18n="phaseReset"></button>
 <button type="button" class="btn big" id="s1-node" data-i18n="btnNode">
 </button>
 <button type="button" class="btn big" id="s1-anti" data-i18n="btnAnti">
@@ -141,12 +146,16 @@
 <button type="button" class="btn big" id="s1-play" data-i18n="pause">
 </button>
 </div>
-<p class="readout" id="s1-readout" aria-live="polite">
+<p class="readout" id="s1-readout">
 </p>
-<p class="readout" id="s1-cls" aria-live="polite">
+<p class="readout" id="s1-cls">
 </p>
+<p class="readout phase-relation" id="s1-phase"></p>
+<p class="readout" id="s1-now"></p>
 <p class="hint" data-i18n="s1hint">
 </p>
+<p class="hint" data-i18n="phaseQuestion"></p>
+<details class="phase-source"><summary data-i18n="phaseSourceTitle"></summary><p data-i18n="phaseSource"></p><a href="https://openstax.org/books/university-physics-volume-1/pages/16-6-standing-waves-and-resonance" target="_blank" rel="noopener">OpenStax · University Physics 16.6</a></details>
 </div>
 </section>
 <section class="step" id="step2" data-step="2">

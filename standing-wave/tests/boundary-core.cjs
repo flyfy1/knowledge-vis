@@ -1,7 +1,10 @@
 'use strict';
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict'),cp=require('child_process'),{load,validate}=require('../../atlas/tests/data-quality.cjs');
 const text=fs.readFileSync('standing-wave/app.js','utf8'),old=cp.execFileSync('git',['show','59e0e7c6:standing-wave/app.js'],{encoding:'utf8'}),c={};vm.runInNewContext(text.split('/* ================= PURE-BEGIN ================= */')[1].split('/* ================= PURE-END ================= */')[0]+';this.api={modeInfo,modeN,modeQ,lamN,yInc,yRefl,yStr,ampStr,fmtBoundary};',c);const a=c.api;
-for(const name of ['yRight','yLeft','ySumRope','yAnalytic','ampRope','classifyPt','yInc','yRefl','yStr','ampStr','lamN','fN','f1','modeShape']){const one=s=>s.match(new RegExp('function '+name+'\\([^\\n]+'))[0];assert.equal(one(text),one(old),name+' preserved');}
+for(const name of ['yRight','yLeft','ySumRope','yAnalytic','yInc','yRefl','yStr','ampStr','lamN','fN','f1','modeShape']){const one=s=>s.match(new RegExp('function '+name+'\\([^\\n]+'))[0];assert.equal(one(text),one(old),name+' preserved');}
+// Only S1 amplitude/classification adapters intentionally changed; retain accepted S2 core byte-for-byte.
+const previous=cp.execFileSync('git',['show','73c0d42f:standing-wave/app.js'],{encoding:'utf8'});
+assert.equal(text.slice(text.indexOf('function modeQ'),text.indexOf('function lamN')),previous.slice(previous.indexOf('function modeQ'),previous.indexOf('function lamN')));
 // Entire illustrative-response core retained, not silently certified as a real response.
 assert.equal(text.slice(text.indexOf('const RESP_H'),text.indexOf('function fmtNum')),old.slice(old.indexOf('const RESP_H'),old.indexOf('function fmtNum')));
 const near=(x,y,t=1e-10)=>assert.ok(Math.abs(x-y)<t,`${x} != ${y}`);let maxResidual=0;

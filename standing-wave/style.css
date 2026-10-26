@@ -200,3 +200,6 @@ canvas.dragc:active{cursor:grabbing}
 .boundary-links { display:flex; flex-wrap:wrap; gap:12px; }
 .boundary-links a { color:var(--accent); display:inline-flex; align-items:center; min-height:48px; }
 @media(max-width:500px){.site-head{flex-wrap:wrap}.head-main{min-width:0;max-width:100%}}
+
+/* S1 comparison uses existing course tokens and figures. */
+#step1{overflow-wrap:anywhere}#step1 button,#step1 input{min-height:48px}#step1 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}.phase-relation{border-left:3px solid var(--accent2);padding:12px;background:var(--panel2)}.phase-source summary,.phase-source a{min-height:48px;display:flex;align-items:center}.phase-source a{color:var(--accent)}

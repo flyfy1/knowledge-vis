@@ -140,7 +140,7 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 92 | 圆周角的证明：两个等腰三角形 / Proof via two isosceles triangles | circle-angles#step2 | 连 OP 后由两组等腰三角形的底角关系推出一半；P 在优弧、劣弧、直径（直角）三种位置分别成立 |
 | 93 | 乘 i = 逆时针旋转 90° / Multiplying by i rotates 90° | complex-numbers#step3 | (a,b) 乘 i 得 (−b,a)，正是坐标逆时针转 90°；连乘四次回到原点，轨道由旋转矩阵实算 |
 | 94 | 复数乘法 = 模相乘、角相加 / Multiplication: moduli multiply, angles add | complex-numbers#step4 | 代数展开与几何旋转两条路同源实算同一个积，随机参数双路互证 |
-| 95 | 驻波的包络：波节不动、波腹 2A / The standing-wave envelope | standing-wave#step1 | 合位移由两列反向波方程实算；每点振幅被包络定死——波节任意时刻位移为 0，波腹达 2A |
+| 95 | 驻波的包络：波节不动、波腹 2A / The standing-wave envelope | standing-wave#step1 | 合位移由两列反向波方程实算；振幅 |2Acos(kx)|，同一波节区间同相、跨一节反相、跨两节又同相；零振幅波节无可比振动相位。S1 的固定 Q 与 P 共用时刻、刻度；非实测。 |
 | 96 | 两端固定弦的模式：L = nλ/2 / Modes of a fixed-fixed string | standing-wave#step2 | 理想固定端要求全周期 sin(kL)=0，即 λ_n=2L/n；近似匹配的试探形状不等于本征模式。指定恒定波速 v 后，f_n=n·v/(2L)。本步演示时钟不等于同一真实弦的扫频。 |
 | 97 | 负数是基准另一边的量 / Negatives: amounts on the other side of zero | negative-numbers#step0 | 温度与楼层都以 0 为基准：符号记方向、数值记离基准多远 |
 | 98 | 数轴上越往左越小 / Further left on the number line means smaller | negative-numbers#step1 | 比较负数靠位置：−3 在 −7 的右边，所以 −3 更大（更暖）；比较由纯函数按位置判定 |

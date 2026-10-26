@@ -1,0 +1,349 @@
+[
+  {
+    "stage": "EN same interval Space",
+    "url": "http://127.0.0.1:18945/standing-wave/#step1",
+    "text": "Step 1\n\nNodes and antinodes: each point's amplitude is locked by the envelope\n\nFirst ask how far each point can move. The largest displacement magnitude is its amplitude; their outline is the envelope. Here y(x,t)=C(x)·sin(ωt), C(x)=2A·cos(kx): amplitude is |C|, not signed C. C=0 marks a stationary node, x=(2m+1)λ/4; |C|=2A marks an antinode, x=mλ/2 (integer m). Adjacent nodes are λ/2 apart; a node and its nearest antinode are λ/4 apart. Now ask whether two points rise together. Reference Q stays at x=0. Drag P or choose a preset, then play: both traces share one clock and scale.\n\nP: orange solid trace and filled dot. Q: cyan dashed trace and open dot, fixed at x=0. Both use the same ±2A vertical axis. The last two cycles are an analytic prediction for CURRENT parameters, not measured history; edits recompute it.\n\nWavelength λ (length units)\nP's x position (arrow keys work)\n\nEdits pause and hold time; P and Q stay fixed while playing. P keyboard: arrows ±0.05, Page ±0.5, Home/End to bounds. x and λ share a length unit; A=1 is the displacement unit. T=4 s is a slow demonstration setting; changing λ is not a fixed-wave-speed frequency sweep.\n\nOverlay envelope (±2A·cos(kx))\nSame interval P=λ/8\nAcross one node P=λ/2\nReset and pause\nMove P to a node (x = λ/4)\nMove P to an antinode (x = 0)\n▶ Play\n\nP at x = 0.25 (x/λ = 0.125); amplitude |C| = 2A·|cos(kx)| = 1.41421356 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 1.41421356 A (not measured).\n\nOrdinary point: amplitude 1.41421356A, always between 0 and 2A.\n\nC(P) = 1.41421356 A > 0: in phase with Q (0); amplitudes may differ.\n\nAt the SAME time t ≈ 0 s: y(P) ≈ 0 A, y(Q) ≈ 0 A.\n\nPoints within the same interval between adjacent nodes are in phase (rise together). Crossing one node reverses C and changes phase by π (half a cycle); crossing two restores the phase. A node has zero amplitude and no comparable oscillation phase. Both displacements being zero at one instant does not prove equal phase.\n\nPredict: reset, then choose Across one node. At t=0 both P and Q are zero. Does that prove equal phase? Play: no, they then move in opposite directions. Choose Node: P never moves, so calling it in or out of phase with Q is inappropriate.\n\nSource and model limits",
+    "readouts": [
+      "P at x = 0.25 (x/λ = 0.125); amplitude |C| = 2A·|cos(kx)| = 1.41421356 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 1.41421356 A (not measured).",
+      "C(P) = 1.41421356 A > 0: in phase with Q (0); amplitudes may differ.",
+      "At the SAME time t ≈ 0 s: y(P) ≈ 0 A, y(Q) ≈ 0 A."
+    ],
+    "inputs": [
+      {
+        "value": "2",
+        "checked": false,
+        "label": [
+          "Wavelength λ (length units)"
+        ]
+      },
+      {
+        "value": "0.25",
+        "checked": false,
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "on",
+        "checked": true,
+        "label": [
+          "Overlay envelope (±2A·cos(kx))"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN across-one at t0",
+    "url": "http://127.0.0.1:18945/standing-wave/#step1",
+    "text": "Step 1\n\nNodes and antinodes: each point's amplitude is locked by the envelope\n\nFirst ask how far each point can move. The largest displacement magnitude is its amplitude; their outline is the envelope. Here y(x,t)=C(x)·sin(ωt), C(x)=2A·cos(kx): amplitude is |C|, not signed C. C=0 marks a stationary node, x=(2m+1)λ/4; |C|=2A marks an antinode, x=mλ/2 (integer m). Adjacent nodes are λ/2 apart; a node and its nearest antinode are λ/4 apart. Now ask whether two points rise together. Reference Q stays at x=0. Drag P or choose a preset, then play: both traces share one clock and scale.\n\nP: orange solid trace and filled dot. Q: cyan dashed trace and open dot, fixed at x=0. Both use the same ±2A vertical axis. The last two cycles are an analytic prediction for CURRENT parameters, not measured history; edits recompute it.\n\nWavelength λ (length units)\nP's x position (arrow keys work)\n\nEdits pause and hold time; P and Q stay fixed while playing. P keyboard: arrows ±0.05, Page ±0.5, Home/End to bounds. x and λ share a length unit; A=1 is the displacement unit. T=4 s is a slow demonstration setting; changing λ is not a fixed-wave-speed frequency sweep.\n\nOverlay envelope (±2A·cos(kx))\nSame interval P=λ/8\nAcross one node P=λ/2\nReset and pause\nMove P to a node (x = λ/4)\nMove P to an antinode (x = 0)\n▶ Play\n\nP at x = 1 (x/λ = 0.5); amplitude |C| = 2A·|cos(kx)| = 2 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 2 A (not measured).\n\nAntinode: amplitude 2A, where the vibration is largest.\n\nC(P) = −2 A < 0: opposite phase to Q (π); one rises as the other falls.\n\nAt the SAME time t ≈ 0 s: y(P) ≈ 0 A, y(Q) ≈ 0 A.\n\nPoints within the same interval between adjacent nodes are in phase (rise together). Crossing one node reverses C and changes phase by π (half a cycle); crossing two restores the phase. A node has zero amplitude and no comparable oscillation phase. Both displacements being zero at one instant does not prove equal phase.\n\nPredict: reset, then choose Across one node. At t=0 both P and Q are zero. Does that prove equal phase? Play: no, they then move in opposite directions. Choose Node: P never moves, so calling it in or out of phase with Q is inappropriate.\n\nSource and model limits",
+    "readouts": [
+      "P at x = 1 (x/λ = 0.5); amplitude |C| = 2A·|cos(kx)| = 2 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 2 A (not measured).",
+      "C(P) = −2 A < 0: opposite phase to Q (π); one rises as the other falls.",
+      "At the SAME time t ≈ 0 s: y(P) ≈ 0 A, y(Q) ≈ 0 A."
+    ],
+    "inputs": [
+      {
+        "value": "2",
+        "checked": false,
+        "label": [
+          "Wavelength λ (length units)"
+        ]
+      },
+      {
+        "value": "1",
+        "checked": false,
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "on",
+        "checked": true,
+        "label": [
+          "Overlay envelope (±2A·cos(kx))"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN across-one later paused",
+    "url": "http://127.0.0.1:18945/standing-wave/#step1",
+    "text": "Step 1\n\nNodes and antinodes: each point's amplitude is locked by the envelope\n\nFirst ask how far each point can move. The largest displacement magnitude is its amplitude; their outline is the envelope. Here y(x,t)=C(x)·sin(ωt), C(x)=2A·cos(kx): amplitude is |C|, not signed C. C=0 marks a stationary node, x=(2m+1)λ/4; |C|=2A marks an antinode, x=mλ/2 (integer m). Adjacent nodes are λ/2 apart; a node and its nearest antinode are λ/4 apart. Now ask whether two points rise together. Reference Q stays at x=0. Drag P or choose a preset, then play: both traces share one clock and scale.\n\nP: orange solid trace and filled dot. Q: cyan dashed trace and open dot, fixed at x=0. Both use the same ±2A vertical axis. The last two cycles are an analytic prediction for CURRENT parameters, not measured history; edits recompute it.\n\nWavelength λ (length units)\nP's x position (arrow keys work)\n\nEdits pause and hold time; P and Q stay fixed while playing. P keyboard: arrows ±0.05, Page ±0.5, Home/End to bounds. x and λ share a length unit; A=1 is the displacement unit. T=4 s is a slow demonstration setting; changing λ is not a fixed-wave-speed frequency sweep.\n\nOverlay envelope (±2A·cos(kx))\nSame interval P=λ/8\nAcross one node P=λ/2\nReset and pause\nMove P to a node (x = λ/4)\nMove P to an antinode (x = 0)\n▶ Play\n\nP at x = 1 (x/λ = 0.5); amplitude |C| = 2A·|cos(kx)| = 2 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 2 A (not measured).\n\nAntinode: amplitude 2A, where the vibration is largest.\n\nC(P) = −2 A < 0: opposite phase to Q (π); one rises as the other falls.\n\nAt the SAME time t ≈ 2.2999 s: y(P) ≈ 0.90770107 A, y(Q) ≈ −0.90770107 A.\n\nPoints within the same interval between adjacent nodes are in phase (rise together). Crossing one node reverses C and changes phase by π (half a cycle); crossing two restores the phase. A node has zero amplitude and no comparable oscillation phase. Both displacements being zero at one instant does not prove equal phase.\n\nPredict: reset, then choose Across one node. At t=0 both P and Q are zero. Does that prove equal phase? Play: no, they then move in opposite directions. Choose Node: P never moves, so calling it in or out of phase with Q is inappropriate.\n\nSource and model limits",
+    "readouts": [
+      "P at x = 1 (x/λ = 0.5); amplitude |C| = 2A·|cos(kx)| = 2 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 2 A (not measured).",
+      "C(P) = −2 A < 0: opposite phase to Q (π); one rises as the other falls.",
+      "At the SAME time t ≈ 2.2999 s: y(P) ≈ 0.90770107 A, y(Q) ≈ −0.90770107 A."
+    ],
+    "inputs": [
+      {
+        "value": "2",
+        "checked": false,
+        "label": [
+          "Wavelength λ (length units)"
+        ]
+      },
+      {
+        "value": "1",
+        "checked": false,
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "on",
+        "checked": true,
+        "label": [
+          "Overlay envelope (±2A·cos(kx))"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN node same paused clock",
+    "url": "http://127.0.0.1:18945/standing-wave/#step1",
+    "text": "Step 1\n\nNodes and antinodes: each point's amplitude is locked by the envelope\n\nFirst ask how far each point can move. The largest displacement magnitude is its amplitude; their outline is the envelope. Here y(x,t)=C(x)·sin(ωt), C(x)=2A·cos(kx): amplitude is |C|, not signed C. C=0 marks a stationary node, x=(2m+1)λ/4; |C|=2A marks an antinode, x=mλ/2 (integer m). Adjacent nodes are λ/2 apart; a node and its nearest antinode are λ/4 apart. Now ask whether two points rise together. Reference Q stays at x=0. Drag P or choose a preset, then play: both traces share one clock and scale.\n\nP: orange solid trace and filled dot. Q: cyan dashed trace and open dot, fixed at x=0. Both use the same ±2A vertical axis. The last two cycles are an analytic prediction for CURRENT parameters, not measured history; edits recompute it.\n\nWavelength λ (length units)\nP's x position (arrow keys work)\n\nEdits pause and hold time; P and Q stay fixed while playing. P keyboard: arrows ±0.05, Page ±0.5, Home/End to bounds. x and λ share a length unit; A=1 is the displacement unit. T=4 s is a slow demonstration setting; changing λ is not a fixed-wave-speed frequency sweep.\n\nOverlay envelope (±2A·cos(kx))\nSame interval P=λ/8\nAcross one node P=λ/2\nReset and pause\nMove P to a node (x = λ/4)\nMove P to an antinode (x = 0)\n▶ Play\n\nP at x = 0.5 (x/λ = 0.25); amplitude |C| = 2A·|cos(kx)| = 0 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 1.011e-15 A (not measured).\n\nNode: amplitude stays 0, the time trace is squeezed into a straight line — it never moves.\n\nC(P) = 0: P is a zero-amplitude node; its oscillation phase relative to Q is undefined.\n\nAt the SAME time t ≈ 2.2999 s: y(P) ≈ -2.220e-16 A, y(Q) ≈ −0.90770107 A.\n\nPoints within the same interval between adjacent nodes are in phase (rise together). Crossing one node reverses C and changes phase by π (half a cycle); crossing two restores the phase. A node has zero amplitude and no comparable oscillation phase. Both displacements being zero at one instant does not prove equal phase.\n\nPredict: reset, then choose Across one node. At t=0 both P and Q are zero. Does that prove equal phase? Play: no, they then move in opposite directions. Choose Node: P never moves, so calling it in or out of phase with Q is inappropriate.\n\nSource and model limits",
+    "readouts": [
+      "P at x = 0.5 (x/λ = 0.25); amplitude |C| = 2A·|cos(kx)| = 0 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 1.011e-15 A (not measured).",
+      "Node: amplitude stays 0, the time trace is squeezed into a straight line — it never moves.",
+      "C(P) = 0: P is a zero-amplitude node; its oscillation phase relative to Q is undefined.",
+      "At the SAME time t ≈ 2.2999 s: y(P) ≈ -2.220e-16 A, y(Q) ≈ −0.90770107 A."
+    ],
+    "inputs": [
+      {
+        "value": "2",
+        "checked": false,
+        "label": [
+          "Wavelength λ (length units)"
+        ]
+      },
+      {
+        "value": "0.5",
+        "checked": false,
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "on",
+        "checked": true,
+        "label": [
+          "Overlay envelope (±2A·cos(kx))"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN arbitrary node-plus-step",
+    "url": "http://127.0.0.1:18945/standing-wave/#step1",
+    "text": "Step 1\n\nNodes and antinodes: each point's amplitude is locked by the envelope\n\nFirst ask how far each point can move. The largest displacement magnitude is its amplitude; their outline is the envelope. Here y(x,t)=C(x)·sin(ωt), C(x)=2A·cos(kx): amplitude is |C|, not signed C. C=0 marks a stationary node, x=(2m+1)λ/4; |C|=2A marks an antinode, x=mλ/2 (integer m). Adjacent nodes are λ/2 apart; a node and its nearest antinode are λ/4 apart. Now ask whether two points rise together. Reference Q stays at x=0. Drag P or choose a preset, then play: both traces share one clock and scale.\n\nP: orange solid trace and filled dot. Q: cyan dashed trace and open dot, fixed at x=0. Both use the same ±2A vertical axis. The last two cycles are an analytic prediction for CURRENT parameters, not measured history; edits recompute it.\n\nWavelength λ (length units)\nP's x position (arrow keys work)\n\nEdits pause and hold time; P and Q stay fixed while playing. P keyboard: arrows ±0.05, Page ±0.5, Home/End to bounds. x and λ share a length unit; A=1 is the displacement unit. T=4 s is a slow demonstration setting; changing λ is not a fixed-wave-speed frequency sweep.\n\nOverlay envelope (±2A·cos(kx))\nSame interval P=λ/8\nAcross one node P=λ/2\nReset and pause\nMove P to a node (x = λ/4)\nMove P to an antinode (x = 0)\n▶ Play\n\nP at x = 0.55 (x/λ = 0.275); amplitude |C| = 2A·|cos(kx)| = 0.31286893 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 0.312868926 A (not measured).\n\nOrdinary point: amplitude 0.31286893A, always between 0 and 2A.\n\nC(P) = −0.31286893 A < 0: opposite phase to Q (π); one rises as the other falls.\n\nAt the SAME time t ≈ 2.2999 s: y(P) ≈ 0.141995731 A, y(Q) ≈ −0.90770107 A.\n\nPoints within the same interval between adjacent nodes are in phase (rise together). Crossing one node reverses C and changes phase by π (half a cycle); crossing two restores the phase. A node has zero amplitude and no comparable oscillation phase. Both displacements being zero at one instant does not prove equal phase.\n\nPredict: reset, then choose Across one node. At t=0 both P and Q are zero. Does that prove equal phase? Play: no, they then move in opposite directions. Choose Node: P never moves, so calling it in or out of phase with Q is inappropriate.\n\nSource and model limits",
+    "readouts": [
+      "P at x = 0.55 (x/λ = 0.275); amplitude |C| = 2A·|cos(kx)| = 0.31286893 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 0.312868926 A (not measured).",
+      "C(P) = −0.31286893 A < 0: opposite phase to Q (π); one rises as the other falls.",
+      "At the SAME time t ≈ 2.2999 s: y(P) ≈ 0.141995731 A, y(Q) ≈ −0.90770107 A."
+    ],
+    "inputs": [
+      {
+        "value": "2",
+        "checked": false,
+        "label": [
+          "Wavelength λ (length units)"
+        ]
+      },
+      {
+        "value": "0.55",
+        "checked": false,
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "on",
+        "checked": true,
+        "label": [
+          "Overlay envelope (±2A·cos(kx))"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN nondefault before Back",
+    "url": "http://127.0.0.1:18945/standing-wave/#step1",
+    "text": "Step 1\n\nNodes and antinodes: each point's amplitude is locked by the envelope\n\nFirst ask how far each point can move. The largest displacement magnitude is its amplitude; their outline is the envelope. Here y(x,t)=C(x)·sin(ωt), C(x)=2A·cos(kx): amplitude is |C|, not signed C. C=0 marks a stationary node, x=(2m+1)λ/4; |C|=2A marks an antinode, x=mλ/2 (integer m). Adjacent nodes are λ/2 apart; a node and its nearest antinode are λ/4 apart. Now ask whether two points rise together. Reference Q stays at x=0. Drag P or choose a preset, then play: both traces share one clock and scale.\n\nP: orange solid trace and filled dot. Q: cyan dashed trace and open dot, fixed at x=0. Both use the same ±2A vertical axis. The last two cycles are an analytic prediction for CURRENT parameters, not measured history; edits recompute it.\n\nWavelength λ (length units)\nP's x position (arrow keys work)\n\nEdits pause and hold time; P and Q stay fixed while playing. P keyboard: arrows ±0.05, Page ±0.5, Home/End to bounds. x and λ share a length unit; A=1 is the displacement unit. T=4 s is a slow demonstration setting; changing λ is not a fixed-wave-speed frequency sweep.\n\nOverlay envelope (±2A·cos(kx))\nSame interval P=λ/8\nAcross one node P=λ/2\nReset and pause\nMove P to a node (x = λ/4)\nMove P to an antinode (x = 0)\n▶ Play\n\nP at x = 0.55 (x/λ = 0.323529412); amplitude |C| = 2A·|cos(kx)| = 0.891476712 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 0.891476701 A (not measured).\n\nOrdinary point: amplitude 0.891476712A, always between 0 and 2A.\n\nC(P) = −0.891476712 A < 0: opposite phase to Q (π); one rises as the other falls.\n\nAt the SAME time t ≈ 2.2999 s: y(P) ≈ 0.404597183 A, y(Q) ≈ −0.90770107 A.\n\nPoints within the same interval between adjacent nodes are in phase (rise together). Crossing one node reverses C and changes phase by π (half a cycle); crossing two restores the phase. A node has zero amplitude and no comparable oscillation phase. Both displacements being zero at one instant does not prove equal phase.\n\nPredict: reset, then choose Across one node. At t=0 both P and Q are zero. Does that prove equal phase? Play: no, they then move in opposite directions. Choose Node: P never moves, so calling it in or out of phase with Q is inappropriate.\n\nSource and model limits",
+    "readouts": [
+      "P at x = 0.55 (x/λ = 0.323529412); amplitude |C| = 2A·|cos(kx)| = 0.891476712 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 0.891476701 A (not measured).",
+      "C(P) = −0.891476712 A < 0: opposite phase to Q (π); one rises as the other falls.",
+      "At the SAME time t ≈ 2.2999 s: y(P) ≈ 0.404597183 A, y(Q) ≈ −0.90770107 A."
+    ],
+    "inputs": [
+      {
+        "value": "1.7",
+        "checked": false,
+        "label": [
+          "Wavelength λ (length units)"
+        ]
+      },
+      {
+        "value": "0.55",
+        "checked": false,
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "on",
+        "checked": true,
+        "label": [
+          "Overlay envelope (±2A·cos(kx))"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN actual Back",
+    "url": "http://127.0.0.1:18945/standing-wave/#step1",
+    "text": "Step 1\n\nNodes and antinodes: each point's amplitude is locked by the envelope\n\nFirst ask how far each point can move. The largest displacement magnitude is its amplitude; their outline is the envelope. Here y(x,t)=C(x)·sin(ωt), C(x)=2A·cos(kx): amplitude is |C|, not signed C. C=0 marks a stationary node, x=(2m+1)λ/4; |C|=2A marks an antinode, x=mλ/2 (integer m). Adjacent nodes are λ/2 apart; a node and its nearest antinode are λ/4 apart. Now ask whether two points rise together. Reference Q stays at x=0. Drag P or choose a preset, then play: both traces share one clock and scale.\n\nP: orange solid trace and filled dot. Q: cyan dashed trace and open dot, fixed at x=0. Both use the same ±2A vertical axis. The last two cycles are an analytic prediction for CURRENT parameters, not measured history; edits recompute it.\n\nWavelength λ (length units)\nP's x position (arrow keys work)\n\nEdits pause and hold time; P and Q stay fixed while playing. P keyboard: arrows ±0.05, Page ±0.5, Home/End to bounds. x and λ share a length unit; A=1 is the displacement unit. T=4 s is a slow demonstration setting; changing λ is not a fixed-wave-speed frequency sweep.\n\nOverlay envelope (±2A·cos(kx))\nSame interval P=λ/8\nAcross one node P=λ/2\nReset and pause\nMove P to a node (x = λ/4)\nMove P to an antinode (x = 0)\n▶ Play\n\nP at x = 0.55 (x/λ = 0.323529412); amplitude |C| = 2A·|cos(kx)| = 0.891476712 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 0.891476701 A (not measured).\n\nOrdinary point: amplitude 0.891476712A, always between 0 and 2A.\n\nC(P) = −0.891476712 A < 0: opposite phase to Q (π); one rises as the other falls.\n\nAt the SAME time t ≈ 2.2999 s: y(P) ≈ 0.404597183 A, y(Q) ≈ −0.90770107 A.\n\nPoints within the same interval between adjacent nodes are in phase (rise together). Crossing one node reverses C and changes phase by π (half a cycle); crossing two restores the phase. A node has zero amplitude and no comparable oscillation phase. Both displacements being zero at one instant does not prove equal phase.\n\nPredict: reset, then choose Across one node. At t=0 both P and Q are zero. Does that prove equal phase? Play: no, they then move in opposite directions. Choose Node: P never moves, so calling it in or out of phase with Q is inappropriate.\n\nSource and model limits",
+    "readouts": [
+      "P at x = 0.55 (x/λ = 0.323529412); amplitude |C| = 2A·|cos(kx)| = 0.891476712 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 0.891476701 A (not measured).",
+      "C(P) = −0.891476712 A < 0: opposite phase to Q (π); one rises as the other falls.",
+      "At the SAME time t ≈ 2.2999 s: y(P) ≈ 0.404597183 A, y(Q) ≈ −0.90770107 A."
+    ],
+    "inputs": [
+      {
+        "value": "1.7",
+        "checked": false,
+        "label": [
+          "Wavelength λ (length units)"
+        ]
+      },
+      {
+        "value": "0.55",
+        "checked": false,
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "on",
+        "checked": true,
+        "label": [
+          "Overlay envelope (±2A·cos(kx))"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "EN explicit refresh",
+    "url": "http://127.0.0.1:18945/standing-wave/#step1",
+    "text": "Step 1\n\nNodes and antinodes: each point's amplitude is locked by the envelope\n\nFirst ask how far each point can move. The largest displacement magnitude is its amplitude; their outline is the envelope. Here y(x,t)=C(x)·sin(ωt), C(x)=2A·cos(kx): amplitude is |C|, not signed C. C=0 marks a stationary node, x=(2m+1)λ/4; |C|=2A marks an antinode, x=mλ/2 (integer m). Adjacent nodes are λ/2 apart; a node and its nearest antinode are λ/4 apart. Now ask whether two points rise together. Reference Q stays at x=0. Drag P or choose a preset, then play: both traces share one clock and scale.\n\nP: orange solid trace and filled dot. Q: cyan dashed trace and open dot, fixed at x=0. Both use the same ±2A vertical axis. The last two cycles are an analytic prediction for CURRENT parameters, not measured history; edits recompute it.\n\nWavelength λ (length units)\nP's x position (arrow keys work)\n\nEdits pause and hold time; P and Q stay fixed while playing. P keyboard: arrows ±0.05, Page ±0.5, Home/End to bounds. x and λ share a length unit; A=1 is the displacement unit. T=4 s is a slow demonstration setting; changing λ is not a fixed-wave-speed frequency sweep.\n\nOverlay envelope (±2A·cos(kx))\nSame interval P=λ/8\nAcross one node P=λ/2\nReset and pause\nMove P to a node (x = λ/4)\nMove P to an antinode (x = 0)\n▶ Play\n\nP at x = 0.55 (x/λ = 0.323529412); amplitude |C| = 2A·|cos(kx)| = 0.891476712 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 0.891476701 A (not measured).\n\nOrdinary point: amplitude 0.891476712A, always between 0 and 2A.\n\nC(P) = −0.891476712 A < 0: opposite phase to Q (π); one rises as the other falls.\n\nAt the SAME time t ≈ 2.2999 s: y(P) ≈ 0.404597183 A, y(Q) ≈ −0.90770107 A.\n\nPoints within the same interval between adjacent nodes are in phase (rise together). Crossing one node reverses C and changes phase by π (half a cycle); crossing two restores the phase. A node has zero amplitude and no comparable oscillation phase. Both displacements being zero at one instant does not prove equal phase.\n\nPredict: reset, then choose Across one node. At t=0 both P and Q are zero. Does that prove equal phase? Play: no, they then move in opposite directions. Choose Node: P never moves, so calling it in or out of phase with Q is inappropriate.\n\nSource and model limits",
+    "readouts": [
+      "P at x = 0.55 (x/λ = 0.323529412); amplitude |C| = 2A·|cos(kx)| = 0.891476712 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 0.891476701 A (not measured).",
+      "C(P) = −0.891476712 A < 0: opposite phase to Q (π); one rises as the other falls.",
+      "At the SAME time t ≈ 2.2999 s: y(P) ≈ 0.404597183 A, y(Q) ≈ −0.90770107 A."
+    ],
+    "inputs": [
+      {
+        "value": "1.7",
+        "checked": false,
+        "label": [
+          "Wavelength λ (length units)"
+        ]
+      },
+      {
+        "value": "0.55",
+        "checked": false,
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "on",
+        "checked": true,
+        "label": [
+          "Overlay envelope (±2A·cos(kx))"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "restoration text equality",
+    "BackSame": true,
+    "RefreshSame": true
+  },
+  {
+    "stage": "EN reset after restoration",
+    "url": "http://127.0.0.1:18945/standing-wave/#step1",
+    "text": "Step 1\n\nNodes and antinodes: each point's amplitude is locked by the envelope\n\nFirst ask how far each point can move. The largest displacement magnitude is its amplitude; their outline is the envelope. Here y(x,t)=C(x)·sin(ωt), C(x)=2A·cos(kx): amplitude is |C|, not signed C. C=0 marks a stationary node, x=(2m+1)λ/4; |C|=2A marks an antinode, x=mλ/2 (integer m). Adjacent nodes are λ/2 apart; a node and its nearest antinode are λ/4 apart. Now ask whether two points rise together. Reference Q stays at x=0. Drag P or choose a preset, then play: both traces share one clock and scale.\n\nP: orange solid trace and filled dot. Q: cyan dashed trace and open dot, fixed at x=0. Both use the same ±2A vertical axis. The last two cycles are an analytic prediction for CURRENT parameters, not measured history; edits recompute it.\n\nWavelength λ (length units)\nP's x position (arrow keys work)\n\nEdits pause and hold time; P and Q stay fixed while playing. P keyboard: arrows ±0.05, Page ±0.5, Home/End to bounds. x and λ share a length unit; A=1 is the displacement unit. T=4 s is a slow demonstration setting; changing λ is not a fixed-wave-speed frequency sweep.\n\nOverlay envelope (±2A·cos(kx))\nSame interval P=λ/8\nAcross one node P=λ/2\nReset and pause\nMove P to a node (x = λ/4)\nMove P to an antinode (x = 0)\n▶ Play\n\nP at x = 1 (x/λ = 0.5); amplitude |C| = 2A·|cos(kx)| = 2 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 2 A (not measured).\n\nAntinode: amplitude 2A, where the vibration is largest.\n\nC(P) = −2 A < 0: opposite phase to Q (π); one rises as the other falls.\n\nAt the SAME time t ≈ 0 s: y(P) ≈ 0 A, y(Q) ≈ 0 A.\n\nPoints within the same interval between adjacent nodes are in phase (rise together). Crossing one node reverses C and changes phase by π (half a cycle); crossing two restores the phase. A node has zero amplitude and no comparable oscillation phase. Both displacements being zero at one instant does not prove equal phase.\n\nPredict: reset, then choose Across one node. At t=0 both P and Q are zero. Does that prove equal phase? Play: no, they then move in opposite directions. Choose Node: P never moves, so calling it in or out of phase with Q is inappropriate.\n\nSource and model limits",
+    "readouts": [
+      "P at x = 1 (x/λ = 0.5); amplitude |C| = 2A·|cos(kx)| = 2 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 2 A (not measured).",
+      "C(P) = −2 A < 0: opposite phase to Q (π); one rises as the other falls.",
+      "At the SAME time t ≈ 0 s: y(P) ≈ 0 A, y(Q) ≈ 0 A."
+    ],
+    "inputs": [
+      {
+        "value": "2",
+        "checked": false,
+        "label": [
+          "Wavelength λ (length units)"
+        ]
+      },
+      {
+        "value": "1",
+        "checked": false,
+        "label": [
+          "P's x position (arrow keys work)"
+        ]
+      },
+      {
+        "value": "on",
+        "checked": true,
+        "label": [
+          "Overlay envelope (±2A·cos(kx))"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "ZH320 initial visible controls",
+    "buttons": [
+      "同段 P=λ/8",
+      "跨一节 P=λ/2",
+      "重置并暂停",
+      "把 P 放到波节（x = λ/4）",
+      "把 P 放到波腹（x = 0）",
+      "▶ 播放"
+    ],
+    "text": "第 1 步\n\n波节与波腹：每点的振幅由包络定死\n\n先看每点能振多高：最大位移的大小叫振幅，各点振幅连成的轮廓叫包络。这里 y(x,t)=C(x)·sin(ωt)，C(x)=2A·cos(kx)：振幅是 |C|，不是带符号的 C。C=0 是永远不动的波节，x=(2m+1)λ/4；|C|=2A 是波腹，x=mλ/2（m 为整数）。相邻波节间距 λ/2，波节到相邻波腹 λ/4。再问：两点是否一起升降？固定参考点 Q 在 x=0，拖动 P 或选下面预设，再播放；两条曲线共用时钟和刻度。\n\n橙色实线与实心点 P；青色虚线与空心点 Q（固定 x=0）。下图同一纵轴 ±2A，显示当前参数下最近两周期的解析预测，非实测轨迹；改参会重算。\n\n波长 λ（单位长度）\nP 的横位置 x（键盘可调）\n\n调参会暂停并保留时刻；播放时 P、Q 位置固定。P 键盘：方向键 ±0.05、Page ±0.5，Home/End 到两端。x、λ 用同一单位长度；A=1 为位移单位。T=4 s 是慢速演示设定，改 λ 不模拟固定波速下的频率变化。\n\n包络线叠印（±2A·cos(kx)）\n同段 P=λ/8\n跨一节 P=λ/2\n重置并暂停\n把 P 放到波节（x = λ/4）\n把 P 放到波腹（x = 0）\n▶ 播放\n\nP 在 x = 1（x/λ = 0.5）；振幅 |C| = 2A·|cos(kx)| = 2 A；当前参数的解析曲线采样极值 ≈ 2 A（非实测）。\n\n波腹：振幅 2A，振得最高的地方。\n\nC(P) = −2 A < 0：相对 Q 反相（π），一个上升时另一个下降。\n\n同一时刻 t ≈ 0 s：y(P) ≈ 0 A，y(Q) ≈ 0 A。\n\n同一对相邻波节之间，各点同相（一起升降）；跨一个波节，C 的符号翻转，相位相差 π（半个周期）；跨两个波节又同相。波节振幅为零，没有可比较的振动相位。不能凭某一瞬间两点都在零位移处就判定同相。\n\n试预测：先重置，再选跨一节。t=0 时 P、Q 都为零，这能证明同相吗？播放再看：不能，随后两点向相反方向运动。再选波节：P 始终不动，不应说它与 Q 同相或反相。\n\n依据与模型范围"
+  },
+  {
+    "stage": "ZH320 node highcontrast reducedmotion",
+    "text": "第 1 步\n\n波节与波腹：每点的振幅由包络定死\n\n先看每点能振多高：最大位移的大小叫振幅，各点振幅连成的轮廓叫包络。这里 y(x,t)=C(x)·sin(ωt)，C(x)=2A·cos(kx)：振幅是 |C|，不是带符号的 C。C=0 是永远不动的波节，x=(2m+1)λ/4；|C|=2A 是波腹，x=mλ/2（m 为整数）。相邻波节间距 λ/2，波节到相邻波腹 λ/4。再问：两点是否一起升降？固定参考点 Q 在 x=0，拖动 P 或选下面预设，再播放；两条曲线共用时钟和刻度。\n\n橙色实线与实心点 P；青色虚线与空心点 Q（固定 x=0）。下图同一纵轴 ±2A，显示当前参数下最近两周期的解析预测，非实测轨迹；改参会重算。\n\n波长 λ（单位长度）\nP 的横位置 x（键盘可调）\n\n调参会暂停并保留时刻；播放时 P、Q 位置固定。P 键盘：方向键 ±0.05、Page ±0.5，Home/End 到两端。x、λ 用同一单位长度；A=1 为位移单位。T=4 s 是慢速演示设定，改 λ 不模拟固定波速下的频率变化。\n\n包络线叠印（±2A·cos(kx)）\n同段 P=λ/8\n跨一节 P=λ/2\n重置并暂停\n把 P 放到波节（x = λ/4）\n把 P 放到波腹（x = 0）\n▶ 播放\n\nP 在 x = 0.5（x/λ = 0.25）；振幅 |C| = 2A·|cos(kx)| = 0 A；当前参数的解析曲线采样极值 ≈ 9.714e-16 A（非实测）。\n\n波节：振幅恒为 0，时序曲线压成一条直线——它永远不动。\n\nC(P) = 0：P 是波节，振幅零；相对 Q 的振动相位未定义。\n\n同一时刻 t ≈ 0 s：y(P) ≈ 0 A，y(Q) ≈ 0 A。\n\n同一对相邻波节之间，各点同相（一起升降）；跨一个波节，C 的符号翻转，相位相差 π（半个周期）；跨两个波节又同相。波节振幅为零，没有可比较的振动相位。不能凭某一瞬间两点都在零位移处就判定同相。\n\n试预测：先重置，再选跨一节。t=0 时 P、Q 都为零，这能证明同相吗？播放再看：不能，随后两点向相反方向运动。再选波节：P 始终不动，不应说它与 Q 同相或反相。\n\n依据与模型范围",
+    "inputs": [
+      {
+        "v": "2",
+        "labels": [
+          "波长 λ（单位长度）"
+        ]
+      },
+      {
+        "v": "0.5",
+        "labels": [
+          "P 的横位置 x（键盘可调）"
+        ]
+      },
+      {
+        "v": "on",
+        "labels": [
+          "包络线叠印（±2A·cos(kx)）"
+        ]
+      }
+    ]
+  },
+  {
+    "stage": "ZH320 single HTML2x",
+    "width": 320,
+    "text": "第 1 步\n\n波节与波腹：每点的振幅由包络定死\n\n先看每点能振多高：最大位移的大小叫振幅，各点振幅连成的轮廓叫包络。这里 y(x,t)=C(x)·sin(ωt)，C(x)=2A·cos(kx)：振幅是 |C|，不是带符号的 C。C=0 是永远不动的波节，x=(2m+1)λ/4；|C|=2A 是波腹，x=mλ/2（m 为整数）。相邻波节间距 λ/2，波节到相邻波腹 λ/4。再问：两点是否一起升降？固定参考点 Q 在 x=0，拖动 P 或选下面预设，再播放；两条曲线共用时钟和刻度。\n\n橙色实线与实心点 P；青色虚线与空心点 Q（固定 x=0）。下图同一纵轴 ±2A，显示当前参数下最近两周期的解析预测，非实测轨迹；改参会重算。\n\n波长 λ（单位长度）\nP 的横位置 x（键盘可调）\n\n调参会暂停并保留时刻；播放时 P、Q 位置固定。P 键盘：方向键 ±0.05、Page ±0.5，Home/End 到两端。x、λ 用同一单位长度；A=1 为位移单位。T=4 s 是慢速演示设定，改 λ 不模拟固定波速下的频率变化。\n\n包络线叠印（±2A·cos(kx)）\n同段 P=λ/8\n跨一节 P=λ/2\n重置并暂停\n把 P 放到波节（x = λ/4）\n把 P 放到波腹（x = 0）\n▶ 播放\n\nP 在 x = 0.5（x/λ = 0.25）；振幅 |C| = 2A·|cos(kx)| = 0 A；当前参数的解析曲线采样极值 ≈ 9.714e-16 A（非实测）。\n\n波节：振幅恒为 0，时序曲线压成一条直线——它永远不动。\n\nC(P) = 0：P 是波节，振幅零；相对 Q 的振动相位未定义。\n\n同一时刻 t ≈ 0 s：y(P) ≈ 0 A，y(Q) ≈ 0 A。\n\n同一对相邻波节之间，各点同相（一起升降）；跨一个波节，C 的符号翻转，相位相差 π（半个周期）；跨两个波节又同相。波节振幅为零，没有可比较的振动相位。不能凭某一瞬间两点都在零位移处就判定同相。\n\n试预测：先重置，再选跨一节。t=0 时 P、Q 都为零，这能证明同相吗？播放再看：不能，随后两点向相反方向运动。再选波节：P 始终不动，不应说它与 Q 同相或反相。\n\n依据与模型范围\n\n理想、线性、同频同幅的两列反向简谐波。OpenStax 16.6 给出空间因子乘时间因子的驻波解；本页采用不同的空间/时间原点，直接相加得到 2Acos(kx)sin(ωt)。相位结论由空间因子的符号推出；零振幅时任何相位都表示同一个零函数，故相位未定义。这里不是第2步的两端固定弦，也不是阻尼、传播瞬态或实测数据。\n\nOpenStax · University Physics 16.6"
+  },
+  {
+    "browser": "CLOSED"
+  }
+]

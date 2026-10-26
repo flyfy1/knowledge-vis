@@ -1,0 +1,137 @@
+{
+  "url": "http://127.0.0.1:18945/standing-wave/#step1",
+  "text": "Step 1\n\nNodes and antinodes: each point's amplitude is locked by the envelope\n\nFirst ask how far each point can move. The largest displacement magnitude is its amplitude; their outline is the envelope. Here y(x,t)=C(x)·sin(ωt), C(x)=2A·cos(kx): amplitude is |C|, not signed C. C=0 marks a stationary node, x=(2m+1)λ/4; |C|=2A marks an antinode, x=mλ/2 (integer m). Adjacent nodes are λ/2 apart; a node and its nearest antinode are λ/4 apart. Now ask whether two points rise together. Reference Q stays at x=0. Drag P or choose a preset, then play: both traces share one clock and scale.\n\nP: orange solid trace and filled dot. Q: cyan dashed trace and open dot, fixed at x=0. Both use the same ±2A vertical axis. The last two cycles are an analytic prediction for CURRENT parameters, not measured history; edits recompute it.\n\nWavelength λ (length units)\nP's x position (arrow keys work)\n\nEdits pause and hold time; P and Q stay fixed while playing. P keyboard: arrows ±0.05, Page ±0.5, Home/End to bounds. x and λ share a length unit; A=1 is the displacement unit. T=4 s is a slow demonstration setting; changing λ is not a fixed-wave-speed frequency sweep.\n\nOverlay envelope (±2A·cos(kx))\nSame interval P=λ/8\nAcross one node P=λ/2\nReset and pause\nMove P to a node (x = λ/4)\nMove P to an antinode (x = 0)\n▶ Play\n\nP at x = 1 (x/λ = 0.5); amplitude |C| = 2A·|cos(kx)| = 2 A; sampled extremum of the CURRENT-parameter analytic prediction ≈ 2 A (not measured).\n\nAntinode: amplitude 2A, where the vibration is largest.\n\nC(P) = −2 A < 0: opposite phase to Q (π); one rises as the other falls.\n\nAt the SAME time t ≈ 0 s: y(P) ≈ 0 A, y(Q) ≈ 0 A.\n\nPoints within the same interval between adjacent nodes are in phase (rise together). Crossing one node reverses C and changes phase by π (half a cycle); crossing two restores the phase. A node has zero amplitude and no comparable oscillation phase. Both displacements being zero at one instant does not prove equal phase.\n\nPredict: reset, then choose Across one node. At t=0 both P and Q are zero. Does that prove equal phase? Play: no, they then move in opposite directions. Choose Node: P never moves, so calling it in or out of phase with Q is inappropriate.\n\nSource and model limits",
+  "controls": [
+    {
+      "tag": "INPUT",
+      "text": "",
+      "value": "2",
+      "type": "range",
+      "role": null,
+      "aria": null,
+      "min": "1.2",
+      "max": "3",
+      "step": "0.1",
+      "disabled": false,
+      "href": null,
+      "labels": [
+        "Wavelength λ (length units)"
+      ]
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "value": "1",
+      "type": "range",
+      "role": null,
+      "aria": null,
+      "min": "-4",
+      "max": "4",
+      "step": "any",
+      "disabled": false,
+      "href": null,
+      "labels": [
+        "P's x position (arrow keys work)"
+      ]
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "value": "on",
+      "type": "checkbox",
+      "role": null,
+      "aria": null,
+      "min": "",
+      "max": "",
+      "step": "",
+      "disabled": false,
+      "href": null,
+      "labels": [
+        "Overlay envelope (±2A·cos(kx))"
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Same interval P=λ/8",
+      "value": "",
+      "type": "button",
+      "role": null,
+      "aria": null,
+      "disabled": false,
+      "href": null,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Across one node P=λ/2",
+      "value": "",
+      "type": "button",
+      "role": null,
+      "aria": null,
+      "disabled": false,
+      "href": null,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Reset and pause",
+      "value": "",
+      "type": "button",
+      "role": null,
+      "aria": null,
+      "disabled": false,
+      "href": null,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Move P to a node (x = λ/4)",
+      "value": "",
+      "type": "button",
+      "role": null,
+      "aria": null,
+      "disabled": false,
+      "href": null,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Move P to an antinode (x = 0)",
+      "value": "",
+      "type": "button",
+      "role": null,
+      "aria": null,
+      "disabled": false,
+      "href": null,
+      "labels": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "▶ Play",
+      "value": "",
+      "type": "button",
+      "role": null,
+      "aria": null,
+      "disabled": false,
+      "href": null,
+      "labels": []
+    },
+    {
+      "tag": "SUMMARY",
+      "text": "Source and model limits",
+      "role": null,
+      "aria": null,
+      "href": null,
+      "labels": []
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "type": "",
+      "role": null,
+      "aria": null,
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/16-6-standing-waves-and-resonance",
+      "labels": []
+    }
+  ]
+}

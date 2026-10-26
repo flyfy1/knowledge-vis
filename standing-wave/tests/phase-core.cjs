@@ -1,0 +1,9 @@
+'use strict';
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
+const text=fs.readFileSync('standing-wave/app.js','utf8'),c={};vm.runInNewContext(text.split('/* ================= PURE-BEGIN ================= */')[1].split('/* ================= PURE-END ================= */')[0]+';this.a={spatialInfo,ySumRope,yAnalytic,ampRope,classifyPt};',c);const a=c.a,near=(x,y,t=1e-11)=>assert.ok(Math.abs(x-y)<t,`${x} != ${y}`);
+let maxResidual=0;
+for(let j=12;j<=30;j++){const l=j/10;for(let i=-80;i<=80;i++){const x=i/20,q=a.spatialInfo(x,l);near(q.amplitude,Math.abs(q.coefficient));for(let k=0;k<41;k++){const t=k*.2,y=a.ySumRope(t,x,l),v=q.coefficient*Math.sin(Math.PI/2*t);maxResidual=Math.max(maxResidual,Math.abs(y-v));near(y,v);near(y,a.yAnalytic(t,x,l));}assert.equal(a.classifyPt(x,l),q.kind);}}
+for(const l of [1.2,2,2.1,3]){for(const sign of [-1,1]){assert.equal(a.spatialInfo(sign*l/8,l).phase,0);assert.equal(a.spatialInfo(sign*l/2,l).phase,Math.PI);assert.equal(a.spatialInfo(sign*l,l).phase,0);const q=a.spatialInfo(sign*l/4,l);assert.equal(q.phase,null);assert.equal(q.amplitude,0);}const q=a.spatialInfo(l/4+1e-10,l);assert.ok(q.amplitude>0);assert.equal(q.kind,'mid');assert.equal(q.phase,Math.PI);}
+near(a.ySumRope(0,1,2),0);assert.equal(a.spatialInfo(1,2).phase,Math.PI);near(a.ySumRope(1,1,2),-2);near(a.ySumRope(1,0,2),2);assert.equal(a.spatialInfo(.525,2.1).phase,null);near(2.1/8,.2625);for(const q of [[NaN,2],[0,0],[Infinity,2],[0,-1]])assert.throws(()=>a.spatialInfo(...q));
+const i18n=fs.readFileSync('standing-wave/i18n.js','utf8'),ic={};vm.runInNewContext(i18n.slice(0,i18n.indexOf('let '))+';this.d=STR;',ic);assert.deepEqual(Object.keys(ic.d.zh).sort(),Object.keys(ic.d.en).sort());
+console.log(JSON.stringify({pass:true,maxResidual,source:'original two-wave sum independent time/space oracle',nodeOffGrid:.525,graphChanged:false}));

@@ -279,3 +279,7 @@ Finite floating point is a model-display boundary: adjacent tiny spans pass inde
 ## Standing-wave boundary correction — 2026-10-26
 
 [Contract](../specs/standing-boundary.md), [verification](../specs/reviews/standing-boundary-20261026/verification.md). Repairs existing S2 strict-mode/near-trial distinction and off-grid snap synchronization without adding graph nodes/routes/models;39/51/14 unchanged. Publication and public-access evidence remain separate.
+
+## Standing-wave spatial phase — 2026-10-26
+
+[Contract](../specs/standing-phase.md), [verification](../specs/reviews/standing-phase-20261026/verification.md). Existing S1 compares fixed Q0 and P in the original figures/clock. Corrects same-interval/across-node phase and exact offgrid node selection; no graph changes. Final publication and real-device/public-access limits are separate from local acceptance.

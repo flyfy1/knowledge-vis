@@ -1,0 +1,37 @@
+{
+  "verdict": "PASS",
+  "remainingMustFix": 0,
+  "originalSumCases": 336,
+  "maxOriginalSumResidual": 1.7208456881689926e-15,
+  "protectedFunctions": [
+    "yRight",
+    "yLeft",
+    "ySumRope",
+    "yAnalytic",
+    "yInc",
+    "yRefl",
+    "yStr",
+    "ampStr",
+    "modeInfo",
+    "modeN",
+    "respAmp",
+    "respMode"
+  ],
+  "checks": [
+    "negative coordinates/cardinals/near-node signs",
+    "node phase null; one crossing pi; two crossings zero",
+    "actual unchanged original sum oracle",
+    "explicit restore rejects unknown owner fields",
+    "exact .525 and .2625 presets in owner/native mock",
+    "two-period current-time prediction",
+    "300 previews: no writes; commit saves current",
+    "S1 save preserves S2/foreign entry fields",
+    "explicit key increment; reset/paused/denied history"
+  ],
+  "sourceSHA256": "6e92bbc92e9f435b248fb22d56dfa2682766dddfe1f79d1ecbb34284d991a08e",
+  "notTested": [
+    "native browser/pixels/focus",
+    "immediate reload and Back delivery",
+    "physical devices/learning effects"
+  ]
+}
