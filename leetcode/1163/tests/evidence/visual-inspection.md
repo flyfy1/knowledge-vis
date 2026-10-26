@@ -1,0 +1,1 @@
+Screenshot `browser.png` was inspected at 390px width: headings, controls, candidate cards, history, and source section remain readable without horizontal clipping. The dark shared palette and cyan focus/active states are visible; no external assets are requested.
