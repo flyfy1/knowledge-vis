@@ -1,6 +1,6 @@
 # Signal-fingerprint route · implementation and handoff
 
-Based on main83cc8901; scoped candidate, not a production status claim. Feature:
+Implementation97c65af4a90e0dd86914f50750ec3bd44f8f40ba, based on main83cc8901; scoped candidate, not a production status claim. Feature:
 `/atlas/?trail=signal&node=lti&view=list`.38concepts remain; one representation
 edge and one route make48relations/11routes. No new lesson/model/store/clock or
 LeetCode change. The current production revision is only `/visual-release.json`.
@@ -33,7 +33,7 @@ No change to the existing course's correct reset semantics was needed.
 - `node atlas/tests/data-quality-core.cjs`; `node atlas/tests/data-quality.cjs`:
   structured malformed data, node/edge IDs, bilingual station fields, claim-edge
   endpoints and coverage; general relation cycles allowed. Local source files
-  exist. Existing data-quality browser/atlas browser checks actual anchor targets.
+  exist. The existing Atlas browser checks node/edge anchors; the new route browser follows each station’s actual anchor.
 - `ATLAS_BASE_URL=http://127.0.0.1:18923 NODE_PATH=<existing Playwright modules>
   node atlas/tests/signal-focus.cjs`: original draft focus branch→current branch
   in read-only browser interception, same page layout; before heading top−213px,
@@ -79,3 +79,8 @@ actual speaker audition or measured learning effect. First useful next slice:
 observe this bounded path with a learner/device, then use actual return-context
 friction to decide whether other ordinary routes merit station tasks. Do not
 mechanically expand every route or start another batch before parent checkpoint.
+
+Final provenance-only smoke passed after97c65af4: one accurateAtlas source header
+in EN/ZH320px, same route/node retained across locale, sharedGalaxy low-power
+list uses38realnodes/48relations and exposes the new convolution→freqresp edge.
+The21-record provenance core check passed. This does not claim production delivery.
