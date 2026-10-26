@@ -1,0 +1,42 @@
+{
+  "kind": "author self-check",
+  "at": "2026-10-26T03:23:52.018209+00:00",
+  "commands": [
+    {
+      "command": "python3 -B leetcode/927/tests/test_solution.py",
+      "exitCode": 0,
+      "stdout": "{\"kind\": \"author self-check\", \"exhaustiveArrays\": 8184, \"lengths\": \"3..12\", \"seed\": 927, \"seededArrays\": 800, \"officialAndFresh\": 4, \"maxBoundaries\": [{\"n\": 30000, \"answer\": [0, 2]}, {\"n\": 30000, \"answer\": [9999, 20000]}, {\"n\": 30000, \"answer\": [9999, 20000]}, {\"n\": 30000, \"answer\": [-1, -1]}], \"displayedBaselineCases\": 100, \"sourceParity\": true, \"copyKeys\": 93}\n",
+      "stderr": ""
+    },
+    {
+      "command": "node leetcode/927/tests/test_core.cjs",
+      "exitCode": 0,
+      "stdout": "{\n  kind: 'author self-check',\n  arrays: 8192,\n  frames: 19340,\n  branches: [\n    'count',     'starts',\n    'match',     'success',\n    'countFail', 'gapFail',\n    'mismatch',  'zero'\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "node leetcode/927/tests/browser.cjs",
+      "exitCode": 0,
+      "stdout": "{\"records\":24,\"related\":6,\"fitFailures\":[],\"errors\":[],\"network\":[]}\n",
+      "stderr": ""
+    },
+    {
+      "command": "node leetcode/927/tests/contrast.cjs",
+      "exitCode": 0,
+      "stdout": "{\n  pairs: 12,\n  minimum: 6.449407898769069,\n  focusRatio: 8.937191437807625\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "node leetcode/927/tests/layout.cjs",
+      "exitCode": 0,
+      "stdout": "layout screenshots and deep-link geometry passed\n",
+      "stderr": ""
+    },
+    {
+      "command": "python3 -B scripts/register_leetcode_lesson.py 927 --validate-only",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

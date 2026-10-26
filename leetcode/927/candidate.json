@@ -1,0 +1,42 @@
+{
+  "candidate": "927-r2",
+  "frozenAt": "2026-10-26T03:24:42.366358+00:00",
+  "authorStatus": "self-checked, ready for separate review",
+  "reviewStatus": "pending; no independent acceptance",
+  "runtimeOrMetadataChangesAfterFreeze": "require a new candidate",
+  "files": {
+    "BRIEF.md": "d5652f6499bd81794f64d6c03a29b1a3ed80b4706be68d50fb5ce00356ae2133",
+    "app.js": "0c0c8455f91dac9b47ce60034285998b52b404b2dfd3c279c4d32e3c0a3d815a",
+    "copy.js": "d7560cde59c26e18a2462b3fd2c1bf4a9ea365311e55f59eadf2e2e185c639a1",
+    "core.js": "7f173fdbf4d25bbf02154b82a93d0b7074c38bb3b889198449e988f236989359",
+    "index.html": "cffe4d89e933438e1fda3c41256f06b8b80932b2dcb98145ba9b485306f7bdbe",
+    "lesson-entry.json": "6bfac7b2e5910447a534826ef4254db72ff47a91073853c3c95eb24dd03c2b4e",
+    "provenance/official.json": "726a6e6bf60c87aabf36c191da88acc1d947b61a6417e4f407418d3acda10f07",
+    "python-code.js": "ac6f462a3fada390adee437799a9e9c3cdbb7bae0ed83b9125d80c9665f30763",
+    "solution.py": "6af5aa786182b141d8c359458bf991757fdee155fe5d546896085577a0a7a4f2",
+    "style.css": "a4b5335b8e7d3e47bdfad287e274f3e17b4ed978c929d47ebba1bb939dc3246f",
+    "tests/README.md": "8b308ff376cc356a809913b0e365c08502977010a0582a476f5dc8208506c756",
+    "tests/browser.cjs": "35406ae36165abf4b3dda846dfeeda227c916acc64a5dae4992e4f5995e781c1",
+    "tests/build_copy.py": "695c1c48cfc2576339f3386c0ad05dd05b82abcf8159fbb083e08950fca4aff5",
+    "tests/contrast.cjs": "1104da6c728879d7c48974939e3fbcc6d4dc3d21119fc9d3d74b4b661c3b44e3",
+    "tests/layout.cjs": "aada9a0accf1ae85c09b731d80ffd6fc28b982d800f06467783d919b1a57b3b1",
+    "tests/run.py": "85f26a2821752c4e0b736d9240dd5e0567b311de882ba85a7774edb0e6be5aa8",
+    "tests/test_core.cjs": "ca5f02704aad4ddff32e1c74551a71f782e3fb2f9f51c8b1e1a3e5d3eac6b39f",
+    "tests/test_solution.py": "8d9978b5e8a111c0732922eb6351bae7dbe28fae20cbdcf0bd68a0e61ae027c8"
+  },
+  "readOnlyDependencyHashes": {
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/410/index.html": "50d9b58dc253804a4c423dd9897f17d06e6e4c83306b3a8e351a3becfac4452b",
+    "leetcode/410/copy.js": "bf6ff0cb6ea5216130d4158afb3b9776137b7897b08a296c300b8eea26d1459a",
+    "WORKFLOW.md": "6a1f5a72f96d98a720be0aee0af40d75d837d281761842151e00fa7015c240a6",
+    "UI-I18N-SPEC.md": "16ca9aebcaf6cc4863428d3abbfb675599c31b37d1d717783323697884e62b81",
+    "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+    "specs/leetcode-hard-traces.md": "5cb2edb1f223cde061d67e8cfe255f220876667c1d4c091bdbac49f67c6f2c35",
+    "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+    "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+    "specs/reviews/leetcode-all-hard-design-review.md": "a1d9d6bc23d15e7369eb04252ff00d0302d5b1786641f5c7f7587ecf64d31086"
+  },
+  "evidence": "tests/evidence/commands.json",
+  "selfCheck": "tests/evidence/self-check.json"
+}

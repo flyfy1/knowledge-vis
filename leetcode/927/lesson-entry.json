@@ -1,0 +1,43 @@
+{
+  "id": 927,
+  "title": {
+    "zh": "三等分",
+    "en": "Three Equal Parts"
+  },
+  "desc": {
+    "zh": "从二进制数值出发，推导三个首位与被末尾固定的比较长度。",
+    "en": "Derive three first-one positions and the matching length forced by the final suffix."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "数组",
+      "en": "Arrays"
+    },
+    {
+      "zh": "二进制",
+      "en": "Binary representation"
+    }
+  ],
+  "path": "927/",
+  "leetcodeUrl": "https://leetcode.com/problems/three-equal-parts/",
+  "language": "Python",
+  "complexity": "O(n) time; O(1) auxiliary space",
+  "concepts": [
+    {
+      "name": "Equal binary values and legal cuts",
+      "step": 0,
+      "description": "Leading zeros preserve value; cut indices define nonempty parts."
+    },
+    {
+      "name": "Forced significant suffix",
+      "step": 2,
+      "description": "Equal one counts fix starts; the final suffix fixes length and gap requirements."
+    },
+    {
+      "name": "Aligned prefix invariant",
+      "step": 2,
+      "description": "Every checked aligned column must match across all three starts."
+    }
+  ]
+}

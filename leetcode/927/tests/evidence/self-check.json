@@ -1,0 +1,42 @@
+{
+  "candidate": "927-r2",
+  "status": "author self-checked; separate review pending",
+  "author": "Codex; exact model identifier unavailable",
+  "independentReviewer": null,
+  "independentAcceptance": false,
+  "published": false,
+  "inspectedScreenshots": [
+    "header-320-en.png",
+    "header-320-zh.png",
+    "hand-320-en.png",
+    "hand-320-zh.png",
+    "fullstage-en.png",
+    "fullstage-zh.png",
+    "trace-320-en.png",
+    "trace-320-zh.png",
+    "trace-390-en.png",
+    "trace-390-zh.png",
+    "trace-736-en.png",
+    "trace-736-zh.png",
+    "trace-1440-en.png",
+    "trace-1440-zh.png",
+    "zoom200-en.png",
+    "zoom200-zh.png",
+    "preset-320-en.png",
+    "mismatch-ledger-zh.png",
+    "source-320-en.png"
+  ],
+  "visualObservations": "Headings show #927 and localized titles; controls stack; indices wrap with own digits; checked columns retain actual bits; orange border plus localized label identifies current check; source is intentionally horizontally scrollable. Initial clipped selected label corrected. Element full-stage captures can show sticky navigation at capture top; ordinary focused preset captures confirm input label and selected text.",
+  "sourceParity": "Canonical, mirror, DOM textContent, successful clipboard, Linux native Control+C fallback per fresh sentinel, and downloaded bytes exact including final newline.",
+  "limitations": [
+    "Author self-check only, no independent score",
+    "No actual learner study or LeetCode submission",
+    "No deployment or registration",
+    "Headless Chromium, CSS 200% zoom; physical devices and native browser UI zoom unverified"
+  ],
+  "relatedDestinationObservation": {
+    "target": "../410/#step1",
+    "meaning": "Enumerates k-1 cut positions among n-1 gaps, recomputes the largest sum, then derives a greedy cap test. This supports exactly the advertised enumeration baseline.",
+    "acceptanceOrReleaseStatus": "Not inferred by this run"
+  }
+}

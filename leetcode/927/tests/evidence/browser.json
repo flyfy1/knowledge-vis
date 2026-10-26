@@ -1,0 +1,708 @@
+{
+  "kind": "author self-check",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "records": [
+    {
+      "locale": "en",
+      "preset": 0,
+      "terminal": "Check state 3/3; just completed: All L=1 columns match; return [0,3].",
+      "states": 4
+    },
+    {
+      "locale": "en",
+      "preset": 1,
+      "terminal": "Check state 1/1; just completed: ones=4 is not divisible by 3; return [−1,−1].",
+      "states": 2
+    },
+    {
+      "locale": "en",
+      "preset": 2,
+      "terminal": "Check state 3/3; just completed: All L=1 columns match; return [0,2].",
+      "states": 4
+    },
+    {
+      "locale": "en",
+      "preset": 3,
+      "terminal": "Check state 5/5; just completed: All L=3 columns match; return [2,6].",
+      "states": 6
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "terminal": "Check state 1/1; just completed: Starts (0,2,4); L=3. Need 3≤2 and 5≤4; at least one fails. Return [−1,−1].",
+      "states": 2
+    },
+    {
+      "locale": "en",
+      "preset": 5,
+      "terminal": "Check state 3/3; just completed: Compared column d=1, bits 1,0,0: different. The forced significant strings differ; return [−1,−1].",
+      "states": 4
+    },
+    {
+      "locale": "en",
+      "preset": 6,
+      "terminal": "Check state 1/1; just completed: ones=0: all three parts are zero; return [0,2].",
+      "states": 2
+    },
+    {
+      "locale": "en",
+      "preset": 7,
+      "terminal": "Check state 3/3; just completed: All L=1 columns match; return [1,4].",
+      "states": 4
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "terminal": "检查状态 3/3；当前已完成：全部 L=1 列相同；返回 [0,3]。",
+      "states": 4
+    },
+    {
+      "locale": "zh",
+      "preset": 1,
+      "terminal": "检查状态 1/1；当前已完成：ones=4 不能被 3 整除，返回 [−1,−1]。",
+      "states": 2
+    },
+    {
+      "locale": "zh",
+      "preset": 2,
+      "terminal": "检查状态 3/3；当前已完成：全部 L=1 列相同；返回 [0,2]。",
+      "states": 4
+    },
+    {
+      "locale": "zh",
+      "preset": 3,
+      "terminal": "检查状态 5/5；当前已完成：全部 L=3 列相同；返回 [2,6]。",
+      "states": 6
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "terminal": "检查状态 1/1；当前已完成：首位 (0,2,4)；L=3。要求 3≤2 且 5≤4，至少一个不成立；返回 [−1,−1]。",
+      "states": 2
+    },
+    {
+      "locale": "zh",
+      "preset": 5,
+      "terminal": "检查状态 3/3；当前已完成：比较列 d=1，三位为 1,0,0：不同。固定的有效串不相等，返回 [−1,−1]。",
+      "states": 4
+    },
+    {
+      "locale": "zh",
+      "preset": 6,
+      "terminal": "检查状态 1/1；当前已完成：ones=0，三段都为零，返回 [0,2]。",
+      "states": 2
+    },
+    {
+      "locale": "zh",
+      "preset": 7,
+      "terminal": "检查状态 3/3；当前已完成：全部 L=1 列相同；返回 [1,4]。",
+      "states": 4
+    },
+    {
+      "locale": "en",
+      "choice": "0",
+      "feedback": "That cut does not work. The starts are 1,4,7 and L=9−7=2; every significant string is 10. Thus i=1+2−1=2 and j=4+2=6. The parts 010 | 010 | 010 all equal 2. [2,5] gives 010 | 01 | 0010, worth 2,1,2; [1,5] gives 01 | 001 | 0010, worth 1,1,2. Trailing zeros must be kept."
+    },
+    {
+      "locale": "en",
+      "choice": "1",
+      "feedback": "Correct prediction. The starts are 1,4,7 and L=9−7=2; every significant string is 10. Thus i=1+2−1=2 and j=4+2=6. The parts 010 | 010 | 010 all equal 2. [2,5] gives 010 | 01 | 0010, worth 2,1,2; [1,5] gives 01 | 001 | 0010, worth 1,1,2. Trailing zeros must be kept."
+    },
+    {
+      "locale": "en",
+      "choice": "2",
+      "feedback": "That cut does not work. The starts are 1,4,7 and L=9−7=2; every significant string is 10. Thus i=1+2−1=2 and j=4+2=6. The parts 010 | 010 | 010 all equal 2. [2,5] gives 010 | 01 | 0010, worth 2,1,2; [1,5] gives 01 | 001 | 0010, worth 1,1,2. Trailing zeros must be kept."
+    },
+    {
+      "locale": "zh",
+      "choice": "0",
+      "feedback": "这个切法不成立。 首位是 1、4、7，L=9−7=2；三个有效串都是 10。于是 i=1+2−1=2，j=4+2=6，三段 010 | 010 | 010 都是 2。[2,5] 得到 010 | 01 | 0010，即 2、1、2；[1,5] 得到 01 | 001 | 0010，即 1、1、2。必须保留尾零。"
+    },
+    {
+      "locale": "zh",
+      "choice": "1",
+      "feedback": "预测正确。 首位是 1、4、7，L=9−7=2；三个有效串都是 10。于是 i=1+2−1=2，j=4+2=6，三段 010 | 010 | 010 都是 2。[2,5] 得到 010 | 01 | 0010，即 2、1、2；[1,5] 得到 01 | 001 | 0010，即 1、1、2。必须保留尾零。"
+    },
+    {
+      "locale": "zh",
+      "choice": "2",
+      "feedback": "这个切法不成立。 首位是 1、4、7，L=9−7=2；三个有效串都是 10。于是 i=1+2−1=2，j=4+2=6，三段 010 | 010 | 010 都是 2。[2,5] 得到 010 | 01 | 0010，即 2、1、2；[1,5] 得到 01 | 001 | 0010，即 1、1、2。必须保留尾零。"
+    },
+    {
+      "locale": "en",
+      "clipboard": "automatic and native fallback exact",
+      "host": "linux"
+    },
+    {
+      "locale": "zh",
+      "clipboard": "automatic and native fallback exact",
+      "host": "linux"
+    }
+  ],
+  "related": [
+    {
+      "locale": "en",
+      "label": "Revisit: why the end fixes significant length",
+      "href": "#step2",
+      "url": "http://127.0.0.1:18770/leetcode/927/#step2",
+      "excerpt": "03 · The end fixes the lengthWhy can the end determine the cuts? After leading zeros are removed, the digits from the first 1 to the end form the significant string. A nonzero binary value has a unique significant string. Equal values must therefore have identical significant str"
+    },
+    {
+      "locale": "en",
+      "label": "Test: infer cuts for a fresh input",
+      "href": "#step3",
+      "url": "http://127.0.0.1:18770/leetcode/927/#step3",
+      "excerpt": "04 · Predict before revealingWhere should we cut when both leading and trailing zeros appear? Fresh input arr=[0,1,0,0,1,0,0,1,0]. Find the three first-one positions and the length of the third significant string, then choose the returned [i,j].Predict an answer (choose before re"
+    },
+    {
+      "locale": "en",
+      "label": "410: a baseline that enumerates partitions",
+      "href": "../410/#step1",
+      "url": "http://127.0.0.1:18770/leetcode/410/#step1",
+      "excerpt": "02For a fixed cap, how few groups can we use?Our question: if every group sum must be at most B, can we use k groups? B is the cap. A direct method tries every set of k−1 cuts among the n−1 gaps and computes each partition’s largest sum. This complete enumeration is a useful smal"
+    },
+    {
+      "locale": "zh",
+      "label": "回看：末尾为何固定有效串长度",
+      "href": "#step2",
+      "url": "http://127.0.0.1:18770/leetcode/927/#step2",
+      "excerpt": "03 · 末尾固定长度这一步要回答：为什么末尾能决定切在哪里？去掉前导零后，从首个 1 到该段末尾的数字叫有效串。非零二进制数的有效串唯一，因此三个相等的值必有完全相同的有效串，也必有相同数量的 1。先数整个数组的 1，记为 ones。如果 ones=0，任意三段都是零，可返回 [0,2]。否则 ones 必须能被 3 整除；每段恰有 k=ones/3 个 1。按顺序，第 1、k+1、2k+1 个 1 就分别是三段首个 1 的下标 s1、s2、s3。对 10101，ones=3，k=1，三个首位是 s1=0、s2=2、s3=4。第三段必须一直用到数组末尾"
+    },
+    {
+      "locale": "zh",
+      "label": "检验：用新输入推断切点",
+      "href": "#step3",
+      "url": "http://127.0.0.1:18770/leetcode/927/#step3",
+      "excerpt": "04 · 先预测再揭晓这一步要回答：把前导零和尾零一起考虑时，切在哪里？新输入 arr=[0,1,0,0,1,0,0,1,0]。先自己找三个首个 1、第三段有效串的长度，再选择返回的 [i,j]。预测答案（选择后才能揭晓）[2,5] · 把 j 当作第二段末位[2,6] · 给后两段保留前导零[1,5] · 不考虑最后的零核对预测并揭晓解释"
+    },
+    {
+      "locale": "zh",
+      "label": "410：枚举切分的基线",
+      "href": "../410/#step1",
+      "url": "http://127.0.0.1:18770/leetcode/410/#step1",
+      "excerpt": "02给定一个上限，最少需要几段？这一步要回答：若每段和最多为 B，能不能只用 k 段？B 称为上限。直接方法是枚举 n−1 个间隙里所有 k−1 个切点，逐个算最大段和；下面是能用作小规模校验的完整枚举。共有 C(n−1,k−1) 种切法，C 表示选取组合数；每种切法扫描 n 个元素，时间 O(n·C(n−1,k−1))，额外空间 O(n+k)（含切片和组合迭代器）。n=1000、k=50 时切法过多。避免寻找具体最优切点，先问一个较简单的“B 是否够大”。from itertools import combinations\n\ndef baseline("
+    }
+  ],
+  "focus": {
+    "outline": "rgb(154, 167, 184)",
+    "width": "3px"
+  },
+  "selectedLabelBudgets": [
+    {
+      "width": 320,
+      "locale": "en",
+      "text": "10101 · Example 1",
+      "textWidth": 135.96829223632812,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "text": "11011 · One count",
+      "textWidth": 136.84829711914062,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "text": "11001 · Example 3",
+      "textWidth": 135.96829223632812,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "text": "100100100 · Tail",
+      "textWidth": 119.82426452636719,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "text": "1010100 · Gap",
+      "textWidth": 107.13624572753906,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "text": "110101101 · Bits",
+      "textWidth": 122.94429016113281,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "text": "000 · Zero",
+      "textWidth": 74.20816040039062,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "en",
+      "text": "010101 · Leading",
+      "textWidth": 127.60028076171875,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "text": "10101 · 示例 1",
+      "textWidth": 103.68022155761719,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "text": "11011 · 数量不符",
+      "textWidth": 122.36825561523438,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "text": "11001 · 示例 3",
+      "textWidth": 103.68022155761719,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "text": "100100100 · 尾零",
+      "textWidth": 126.97628784179688,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "text": "1010100 · 间隔",
+      "textWidth": 108.6722412109375,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "text": "110101101 · 比较",
+      "textWidth": 126.97628784179688,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "text": "000 · 全零",
+      "textWidth": 72.06414794921875,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 320,
+      "locale": "zh",
+      "text": "010101 · 前导零",
+      "textWidth": 115.52024841308594,
+      "available": 210,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "text": "10101 · Example 1",
+      "textWidth": 135.96829223632812,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "text": "11011 · One count",
+      "textWidth": 136.84829711914062,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "text": "11001 · Example 3",
+      "textWidth": 135.96829223632812,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "text": "100100100 · Tail",
+      "textWidth": 119.82426452636719,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "text": "1010100 · Gap",
+      "textWidth": 107.13624572753906,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "text": "110101101 · Bits",
+      "textWidth": 122.94429016113281,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "text": "000 · Zero",
+      "textWidth": 74.20816040039062,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "text": "010101 · Leading",
+      "textWidth": 127.60028076171875,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "text": "10101 · 示例 1",
+      "textWidth": 103.68022155761719,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "text": "11011 · 数量不符",
+      "textWidth": 122.36825561523438,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "text": "11001 · 示例 3",
+      "textWidth": 103.68022155761719,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "text": "100100100 · 尾零",
+      "textWidth": 126.97628784179688,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "text": "1010100 · 间隔",
+      "textWidth": 108.6722412109375,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "text": "110101101 · 比较",
+      "textWidth": 126.97628784179688,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "text": "000 · 全零",
+      "textWidth": 72.06414794921875,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "text": "010101 · 前导零",
+      "textWidth": 115.52024841308594,
+      "available": 280,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "text": "10101 · Example 1",
+      "textWidth": 135.96829223632812,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "text": "11011 · One count",
+      "textWidth": 136.84829711914062,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "text": "11001 · Example 3",
+      "textWidth": 135.96829223632812,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "text": "100100100 · Tail",
+      "textWidth": 119.82426452636719,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "text": "1010100 · Gap",
+      "textWidth": 107.13624572753906,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "text": "110101101 · Bits",
+      "textWidth": 122.94429016113281,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "text": "000 · Zero",
+      "textWidth": 74.20816040039062,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "en",
+      "text": "010101 · Leading",
+      "textWidth": 127.60028076171875,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "text": "10101 · 示例 1",
+      "textWidth": 103.68022155761719,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "text": "11011 · 数量不符",
+      "textWidth": 122.36825561523438,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "text": "11001 · 示例 3",
+      "textWidth": 103.68022155761719,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "text": "100100100 · 尾零",
+      "textWidth": 126.97628784179688,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "text": "1010100 · 间隔",
+      "textWidth": 108.6722412109375,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "text": "110101101 · 比较",
+      "textWidth": 126.97628784179688,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "text": "000 · 全零",
+      "textWidth": 72.06414794921875,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 736,
+      "locale": "zh",
+      "text": "010101 · 前导零",
+      "textWidth": 115.52024841308594,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "text": "10101 · Example 1",
+      "textWidth": 135.96829223632812,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "text": "11011 · One count",
+      "textWidth": 136.84829711914062,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "text": "11001 · Example 3",
+      "textWidth": 135.96829223632812,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "text": "100100100 · Tail",
+      "textWidth": 119.82426452636719,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "text": "1010100 · Gap",
+      "textWidth": 107.13624572753906,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "text": "110101101 · Bits",
+      "textWidth": 122.94429016113281,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "text": "000 · Zero",
+      "textWidth": 74.20816040039062,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "text": "010101 · Leading",
+      "textWidth": 127.60028076171875,
+      "available": 137,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "text": "10101 · 示例 1",
+      "textWidth": 103.68022155761719,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "text": "11011 · 数量不符",
+      "textWidth": 122.36825561523438,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "text": "11001 · 示例 3",
+      "textWidth": 103.68022155761719,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "text": "100100100 · 尾零",
+      "textWidth": 126.97628784179688,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "text": "1010100 · 间隔",
+      "textWidth": 108.6722412109375,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "text": "110101101 · 比较",
+      "textWidth": 126.97628784179688,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "text": "000 · 全零",
+      "textWidth": 72.06414794921875,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "text": "010101 · 前导零",
+      "textWidth": 115.52024841308594,
+      "available": 127,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+    }
+  ],
+  "consoleErrors": [],
+  "assetErrors": [],
+  "limits": "Headless Chromium; CSS zoom=2 plus narrow viewports. No physical mobile, OS browser UI zoom or novice study."
+}

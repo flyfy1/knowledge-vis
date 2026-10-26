@@ -1,0 +1,15 @@
+Author self-check, initial implementation. Not independent review.
+320px English screenshot visibly clips closed preset 100100100 label after
+“Room for trailin…”. Fix: compact equivalent labels; full mechanism remains in
+body and trace. Browser run ended on target.length>200 assertion after keyboard
+activation of related link; diagnose destination initialization timing, not an
+algorithm failure. Add waitForFunction for initialized target before reading.
+
+Harness correction follow-up: the Chinese prediction section has 171 characters,
+so the arbitrary >200 text length assertion and subsequent wait were invalid.
+Replaced with initialized heading wait and concept-specific content checks (s1,
+arr=, k−1), retaining real keyboard navigation. This is not a lesson defect.
+
+Supplemental forced-colors harness initially tested the terminal disabled End
+button after Tab skipped it. Correct setup resets the experiment first, then
+focuses Reset and tabs to enabled End; keeps the solid-outline assertion.
