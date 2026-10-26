@@ -6,6 +6,9 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Visible page edition provenance](visual-page-provenance.md): visible Codex revised-edition labels, truthful source records, parallel-version preservation, repair/spec maintenance and integration acceptance.
+
+
 - [Site UI and bilingual policy](../UI-I18N-SPEC.md): common presentation,
   language behavior, explanation clarity, and interaction requirements.
 - [LeetCode explainers](leetcode-explainers.md): teaching sequence, Python,

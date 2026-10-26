@@ -11,6 +11,10 @@
 - `fourier/` — 傅里叶变换交互讲解页（源码自 ~/workspace/fourier-lab 迁入，三轮评审档案留在 fourier-lab/rounds/）
 - `fourier-redirect.html` — 旧域名 fourier.integ.life 根路径的跳转页（已部署在 Pi 的 fourier-site 目录）
 
+## 开发版本与修复规范
+
+Codex 改进版本在页头显示“Codex 开发”，展开可见改进范围和源码修订。详见 [版本归因规范](specs/visual-page-provenance.md) 与 [来源清单](page-provenance.json)。每次修复必须同步维护对应 spec；尚未核实来源的页面不会自动贴标，未来 Claude Code 独立版本保留双方源码及路径。
+
 ## 部署
 Pi：`~/projects/visual-site/`，systemd `visual-site.service`（python http.server :18513），
 CF Tunnel ingress visual.integ.life → localhost:18513（隧道脚本 cf_tunnel_visual.py 在本目录）。
