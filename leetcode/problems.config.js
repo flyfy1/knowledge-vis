@@ -4645,6 +4645,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(mn + m + n) time; O(mn + m + n) space, including output"
   },
   {
+    "id": 1095,
+    "title": {
+      "zh": "山脉数组中查找目标值",
+      "en": "Find in Mountain Array"
+    },
+    "desc": {
+      "zh": "用坡向定位峰顶，再按相反方向二分；证明最小下标与访问预算。",
+      "en": "Locate the peak by slope, then search both ordered sides within the access budget."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      },
+      {
+        "zh": "交互式接口",
+        "en": "Interactive interface"
+      }
+    ],
+    "path": "1095/",
+    "leetcodeUrl": "https://leetcode.com/problems/find-in-mountain-array/",
+    "language": "Python",
+    "complexity": "O(log n) time and get calls; O(1) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
