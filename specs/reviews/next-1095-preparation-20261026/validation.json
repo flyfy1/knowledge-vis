@@ -1,0 +1,22 @@
+{
+  "preparedAt": "2026-10-26T14:58:18.960337+00:00",
+  "status": "dispatcher-reference-only",
+  "oracleCommand": "python3 -B check-examples.py",
+  "tinyCases": 10,
+  "smallFamilyChecks": 1634,
+  "maximumLengthSamples": 21,
+  "maximumSampledGetCalls": 51,
+  "conservativeExactExperimentGetBound": 56,
+  "accessBlockers": [],
+  "runtimeMutation": false,
+  "authorContextInjection": false,
+  "files": {
+    "1095-official-access.json": "e37192334b160fe5fd8c510d77effbc4ea42df1d3d9665b5ebebbb16c1a298f2",
+    "1095-official-response.json": "407af0e66c529feb9d0a7efacf4b78101f6c5cb513a8233acaaeaee05190df16",
+    "1095.md": "c36903fc1a2bd078eaac6e0fbf112595c12757fd992ea6ee24a679706298bb96",
+    "README.md": "9b706df33c36392c0a2ddfe02600a315c4874194a5608c8c7fff71ce52e7a236",
+    "check-examples.py": "00c0a2eb0fa25d575417973dfb78e9f5efc8e535917658cbc6681e79746a2e70",
+    "example-checks.json": "80e78d86a3e85a91cf18422f1fff7e9c1572d1735b28de8fe79d77c2545dd825",
+    "target-detail.json": "2361f6ea492e85ae71ad638340b93dbb6103b7ce4b9ccbd947d3eb4fca014eb8"
+  }
+}
