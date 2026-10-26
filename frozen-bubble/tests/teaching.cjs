@@ -12,7 +12,7 @@ const out=process.env.LESSON_SCREENSHOTS||'/tmp/frozen-learning-after';fs.mkdirS
    await p.goto(base+'/frozen-bubble/');
    for(const lang of ['zh','en']){
     await p.locator(`[data-lang=${lang}]`).click();
-    assert.match(await p.locator('.development-credit').textContent(),/Codex/);
+    assert.match(await p.locator('.page-provenance summary').innerText(),/Codex/);
     assert.equal(await p.locator('[data-i18n]').evaluateAll(es=>es.filter(e=>!e.textContent.trim()||e.textContent==='undefined').length),0);
     assert.ok(await p.locator('.research-source').evaluate(e=>Boolean(e.compareDocumentPosition(document.querySelector('.comparison'))&Node.DOCUMENT_POSITION_FOLLOWING)));
     assert.match(await p.locator('.research-source').textContent(),/Ahmadi.*How soap bubbles freeze/s);

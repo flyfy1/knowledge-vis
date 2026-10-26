@@ -6,6 +6,9 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Frozen-bubble teaching contract](../frozen-bubble/BRIEF.md#teaching-continuity-revision--2026-10-26-codex): observation-first narrative, defined terms and research context, matched diagram moments and qualitative-model boundaries.
+
+
 - [Photosynthesis mobile scrolling](../photosynthesis/SCROLL-SPEC.md): CSS/bitmap size separation, lifecycle, readable fallback, actual mobile scroll and source attribution acceptance.
 
 

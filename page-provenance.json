@@ -165,10 +165,21 @@
         "en": "High-DPR canvas sizing, mobile scrolling and script-free reading fallbacks"
       },
       "originalAuthorship": "Codex HTML/CSS, Alberto completion and historical Claude Code fixes retained; not Codex-exclusive origin"
+    },
+    "frozen-bubble": {
+      "developer": "Codex",
+      "edition": "codex-teaching-20261026",
+      "kind": "revised",
+      "sourceRevision": "e4b8772cdfeab6473d4ff56cd12849ed1ec65955",
+      "scope": {
+        "zh": "从观察到结冰机制的教学顺序、研究背景与手机对比",
+        "en": "Observation-first teaching sequence, research context and mobile comparison"
+      },
+      "originalAuthorship": "Codex implementation in1d90150c retained; this source records the teaching revision",
+      "provenanceEvidence": "specs/reviews/frozen-bubble-learning-20261026.md"
     }
   },
   "exceptions": {
-    "frozen-bubble": "Codex source known; active narrative worker handover pending",
     "power-converters": "Active visual worker handover pending; original developer not established",
     "leetcode/*": "Concurrent owner; existing -codex URL markers preserved; no page files edited",
     "*": "Unverified pages are not automatically labelled"

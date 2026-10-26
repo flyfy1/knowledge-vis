@@ -34,7 +34,7 @@ After: visible patterns on a clear bubble → distinguish liquid shell from cont
 
 Acceptance criteria for future Codex/Claude comparison:
 
-- Visible page-local Codex credit in both languages; keep the 3-section structure and existing URLs so variants remain comparable.
+- Use exactly one visible bilingual Codex revised-edition disclosure following `../specs/visual-page-provenance.md`, naming this source revision and retained original contributions. Keep the3-section structure and existing URLs so variants remain comparable.
 - No anonymous “paper conditions” claim. Before A/B, show title, authors, year, journal, DOI, recipe, temperatures, and original sections/figure references. Distinguish the selected −20°C example from the paper's broader base-temperature range.
 - Plain observations must precede technical names. Explain that freezing releases energy without implying a temperature above 0°C; define surface tension before naming Marangoni flow. Orange arrow means liquid motion, not heat flow.
 - A control has an observable outcome: seed makes a dot, playback/seek grows branches, undercooling changes branch length at a fixed time, and story moments pause both A/B at the same chosen time. Dynamic captions explain visible changes and limitations without claiming measured values.
