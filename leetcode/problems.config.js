@@ -3987,6 +3987,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) time; O(n) auxiliary space"
   },
   {
+    "id": 936,
+    "title": {
+      "zh": "戳印序列",
+      "en": "Stamping The Sequence"
+    },
+    "desc": {
+      "zh": "从覆盖字母到反向擦除，用阻塞计数构造戳印顺序。",
+      "en": "Turn overwrites into reverse erasures, then unlock windows with blocker counts."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "队列",
+        "en": "Queue"
+      }
+    ],
+    "path": "936/",
+    "leetcodeUrl": "https://leetcode.com/problems/stamping-the-sequence/",
+    "language": "Python",
+    "complexity": "O(nm) time; O(nm) auxiliary space and O(n) output, where m=len(stamp), n=len(target)"
+  },
+  {
     "id": 940,
     "title": {
       "zh": "不同的子序列 II",
