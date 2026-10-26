@@ -2060,3 +2060,14 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Two-endpoint connectivity | `leetcode/1036/#step4` | Check both endpoints or directly reach the other endpoint. |
 
 <!-- /leetcode-1036-campaign -->
+
+
+<!-- leetcode-1044-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Suffix neighbor property | `leetcode/1044/#step2` | Equal prefixes form a contiguous sorted block. |
+| Prefix doubling | `leetcode/1044/#step3` | Two width-k ranks order width-2k prefixes. |
+| Kasai LCP reuse | `leetcode/1044/#step4` | Carry a certified h−1 prefix into the next start. |
+
+<!-- /leetcode-1044-campaign -->

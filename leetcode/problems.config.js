@@ -4563,6 +4563,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n + (b+1)²) expected time; O((b+1)²) space, n = blocker entries, b = distinct blockers"
   },
   {
+    "id": 1044,
+    "title": {
+      "zh": "最长重复子串",
+      "en": "Longest Duplicate Substring"
+    },
+    "desc": {
+      "zh": "从重叠的 ana 推导后缀排序、倍增秩与公共前缀复用。",
+      "en": "From overlapping ana to suffix order, doubling ranks and reused common prefixes."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "后缀数组",
+        "en": "Suffix array"
+      },
+      {
+        "zh": "公共前缀",
+        "en": "Common prefix"
+      }
+    ],
+    "path": "1044/",
+    "leetcodeUrl": "https://leetcode.com/problems/longest-duplicate-substring/",
+    "language": "Python",
+    "complexity": "O(n log² n) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
