@@ -16,3 +16,11 @@ All emitting tests accept `EVIDENCE_DIR=/absolute/reviewer/output`, so reviewers
 Numerical oracle: graph BFS from all1 through all legal whole-array flip masks; no greedy/parity decisions. Tests original Python callable, baseline, immutability, exhaustive/seeded/max inputs. JS simulation tested separately, with explicit intermediate prefix/parity/expiry/raw values. Browser tests both languages, every preset and endpoint, full rewind/replay, hand steps, fresh prediction/change, locale preservation, keyboard and focus, actual clipboard/fallback, downloads, 320/390/736/1440 widths at100/200% CSS zoom, table keyboard scroll, forced colors/reduced motion, offline and denied storage, local assets and contrast. CSS zoom supplies layout stress, not physical-device or OS zoom evidence. Visual screenshot inspection is a separate author activity recorded in SELF-CHECK.md.
 
 These are author self-checks, not independent review, learner results, public delivery verification or LeetCode acceptance.
+
+For the 995-COPY-R1 revision, run `node leetcode/995/tests/copy_repair.cjs`.
+This focused check writes to tests/evidence/copy-r1, verifies the two exact copy
+changes against its preserved baseline, and checks proof wrapping, state retention
+and the actual #330 coverage experiment in both locales. Set PREVIEW_URL for a
+different preview; its default is http://127.0.0.1:18770/leetcode/995/.
+New revision results and their frozen identity are in that directory; historical
+candidate-1 artifacts are preserved.
