@@ -4039,6 +4039,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(26) = O(1) auxiliary space"
   },
   {
+    "id": 943,
+    "title": {
+      "zh": "最短超级串",
+      "en": "Find the Shortest Superstring"
+    },
+    "desc": {
+      "zh": "从字符重叠到子集与末尾单词，重建全局最短超级串。",
+      "en": "Turn word overlaps into subset-and-endpoint states and reconstruct a shortest superstring."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "状态压缩动态规划",
+        "en": "Bitmask dynamic programming"
+      },
+      {
+        "zh": "字符串重叠",
+        "en": "String overlap"
+      }
+    ],
+    "path": "943/",
+    "leetcodeUrl": "https://leetcode.com/problems/find-the-shortest-superstring/",
+    "language": "Python",
+    "complexity": "O(n²L² + n²2ⁿ) time; O(n2ⁿ + n² + nL) auxiliary space, where L is maximum word length"
+  },
+  {
     "id": 956,
     "title": {
       "zh": "最高的广告牌",
