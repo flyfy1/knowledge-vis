@@ -1,0 +1,121 @@
+[
+  {
+    "stage": "derivative guide",
+    "text": "建议路线 · 这是建议的探索顺序，不是必修先后关系。\n\n1. 导数与瞬时变化率\n2. 电容与电场储能\n\n本站实验任务 · 不记录掌握状态\n\n曲线的高度，等于它的变化率吗？\n\n打开导数第2步，把P点横坐标x设为−1、0、1，对比y=x²的切线与导数图。\n\n打开本站对应实验 →\n核对预测 · 该看什么，为什么\n\ny分别为1、0、1，解析斜率分别是−2、0、2；同样高度也可以一边下降、一边上升。数值差商是近似值，不冒充解析等式。\n\n下一站换成电压v对时间t的曲线，不传递x²参数。斜率单位变为V/s，理想电容电流等于电容量乘这个变化率。\n\nOpenStax9.1 · 电流是电荷变化率 ↗\n← 上一个概念\n下一个概念 →\n"
+  },
+  {
+    "stage": "capacitor guide",
+    "url": "http://127.0.0.1:18929/atlas/?lang=zh&node=capacitor&view=list&trail=charge",
+    "text": "建议路线 · 这是建议的探索顺序，不是必修先后关系。\n\n1. 导数与瞬时变化率\n2. 电容与电场储能\n\n本站实验任务 · 不记录掌握状态\n\n不再流入电荷，电压会消失吗？\n\n先重置电容，再依次按两次+20mA、一次0mA、一次−20mA。对比完整电压曲线与“最后一个区间”的横向时间、纵向Δv。\n\n打开本站对应实验 →\n核对预测 · 该看什么，为什么\n\nC=100µF、每段0.5ms：电压0→0.1→0.2→0.2→0.1V。三种电流对应段内斜率+200、0、−200V/s。零电流留下0.2V；负电流可继续使带符号电压穿过零点。\n\n由q=Cv与i=dq/dt得到i=C·dv/dt。本模型每段恒流，所以区间斜率恰等段内导数；真正跳变处不保证双侧导数。新文档重载会重置脉冲；返回地图保留站点。\n\nOpenStax8.1 · 电荷q=Cv ↗\n← 上一个概念\n下一个概念 →\n"
+  },
+  {
+    "stage": "course initial",
+    "url": "http://127.0.0.1:18929/power-converters/#step2",
+    "text": "STEP 2 / 6 · Capacitor\n\nCapacitor: give voltage a memory\n\nDoes capacitor voltage vanish when charge stops flowing in?\n\nA capacitor stores energy in an electric field. Current entering its positive terminal adds charge and raises its voltage; current leaving lowers it.\n\nC is capacitance in F (farad); 1 µF = 0.000001 F. dv/dt means voltage change per second; Δv is the voltage change over this interval. E is stored energy.\n\ni = C · dv/dt → Δv = i · Δt / C\nE = ½Cv²\n\nTry two positive pulses, a zero pulse, then a negative pulse. Does the curve instantly return to zero?\n\nC = 100 µF · Δt = 0.5 ms · One interval per click; up to 16 intervals.\n\n+20 mA pulse\n0 mA pulse\n−20 mA pulse\nReset\nVoltage\n0.00 V\nStored energy\n0.00 µJ\nThis interval ΔE\n0.00 µJ\nVoltage v (V)\n0.12\n-0.02\n0\n8000 time (µs)\n\n0/16 pulses recorded. Zero drive also records a horizontal interval.\n\nEnlarge the last interval: current is voltage slope × C\n\nNo interval yet. Apply one pulse to create two endpoints; reset voltage0V is not an observed zero slope.\n\nSign convention: current enters the terminal marked +; v and i may be negative. Zero drive holds the present value. Reverse drive decreases it and can take it through zero. Negative p = vi means the component returns energy to the ideal source.",
+    "buttons": [
+      "+20 mA pulse",
+      "0 mA pulse",
+      "−20 mA pulse",
+      "Reset"
+    ]
+  },
+  {
+    "prediction": "For equal-duration fixed-capacitance pulses: +,+ raises v twice; 0 gives slope/delta0 while preserving previous height; minus lowers v but need not make v negative. Latestdelta is the last interval change, not absolutevoltage."
+  },
+  {
+    "stage": "reset before",
+    "url": "http://127.0.0.1:18929/power-converters/#step2",
+    "text": "STEP 2 / 6 · Capacitor\n\nCapacitor: give voltage a memory\n\nDoes capacitor voltage vanish when charge stops flowing in?\n\nA capacitor stores energy in an electric field. Current entering its positive terminal adds charge and raises its voltage; current leaving lowers it.\n\nC is capacitance in F (farad); 1 µF = 0.000001 F. dv/dt means voltage change per second; Δv is the voltage change over this interval. E is stored energy.\n\ni = C · dv/dt → Δv = i · Δt / C\nE = ½Cv²\n\nTry two positive pulses, a zero pulse, then a negative pulse. Does the curve instantly return to zero?\n\nC = 100 µF · Δt = 0.5 ms · One interval per click; up to 16 intervals.\n\n+20 mA pulse\n0 mA pulse\n−20 mA pulse\nReset\nVoltage\n0.00 V\nStored energy\n0.00 µJ\nThis interval ΔE\n0.00 µJ\nVoltage v (V)\n0.12\n-0.02\n0\n8000 time (µs)\n\n0/16 pulses recorded. Zero drive also records a horizontal interval.\n\nEnlarge the last interval: current is voltage slope × C\n\nNo interval yet. Apply one pulse to create two endpoints; reset voltage0V is not an observed zero slope.\n\nSign convention: current enters the terminal marked +; v and i may be negative. Zero drive holds the present value. Reverse drive decreases it and can take it through zero. Negative p = vi means the component returns energy to the ideal source.",
+    "buttons": [
+      "+20 mA pulse",
+      "0 mA pulse",
+      "−20 mA pulse",
+      "Reset"
+    ]
+  },
+  {
+    "stage": "plus1",
+    "url": "http://127.0.0.1:18929/power-converters/#step2",
+    "text": "STEP 2 / 6 · Capacitor\n\nCapacitor: give voltage a memory\n\nDoes capacitor voltage vanish when charge stops flowing in?\n\nA capacitor stores energy in an electric field. Current entering its positive terminal adds charge and raises its voltage; current leaving lowers it.\n\nC is capacitance in F (farad); 1 µF = 0.000001 F. dv/dt means voltage change per second; Δv is the voltage change over this interval. E is stored energy.\n\ni = C · dv/dt → Δv = i · Δt / C\nE = ½Cv²\n\nTry two positive pulses, a zero pulse, then a negative pulse. Does the curve instantly return to zero?\n\nC = 100 µF · Δt = 0.5 ms · One interval per click; up to 16 intervals.\n\n+20 mA pulse\n0 mA pulse\n−20 mA pulse\nReset\nVoltage\n0.10 V\nStored energy\n0.50 µJ\nThis interval ΔE\n0.50 µJ\nVoltage v (V)\n0.12\n-0.02\n0\n8000 time (µs)\n\n1/16 pulses recorded. Zero drive also records a horizontal interval.\n\nEnlarge the last interval: current is voltage slope × C\n\nThis local plot shows Δv relative to the interval start, not absolute voltage v. Fixed horizontal axis0..0.5ms, vertical axis−0.12..+0.12V. Dashed run shows time; rise shows signed Δv.\n\nVoltage0.00to0.10V; relative change0.10V over0.5ms; interior slope200V/s, current20mA.\n\nΔv / Δt = 0.10 V / 0.0005 s = 200 V/s\ni = C · dv/dt = 100 µF × 200 V/s = 20 mA\n\nCurrent is constant within each segment, so its interval slope equals the interior derivative here. A finite secant of a general curve gives only an average rate. A true current jump need not have a two-sided derivative; voltage stays continuous. Negative current lowers signed voltage, not necessarily stored energy.\n\nPlace this rate back on the knowledge route →\n\nOpenStax8.1 · q=Cv · OpenStax9.1 · i=dq/dt\n\nSign convention: current enters the terminal marked +; v and i may be negative. Zero drive holds the present value. Reverse drive decreases it and can take it through zero. Negative p = vi means the component returns energy to the ideal source.",
+    "buttons": [
+      "+20 mA pulse",
+      "0 mA pulse",
+      "−20 mA pulse",
+      "Reset"
+    ]
+  },
+  {
+    "stage": "plus2",
+    "url": "http://127.0.0.1:18929/power-converters/#step2",
+    "text": "STEP 2 / 6 · Capacitor\n\nCapacitor: give voltage a memory\n\nDoes capacitor voltage vanish when charge stops flowing in?\n\nA capacitor stores energy in an electric field. Current entering its positive terminal adds charge and raises its voltage; current leaving lowers it.\n\nC is capacitance in F (farad); 1 µF = 0.000001 F. dv/dt means voltage change per second; Δv is the voltage change over this interval. E is stored energy.\n\ni = C · dv/dt → Δv = i · Δt / C\nE = ½Cv²\n\nTry two positive pulses, a zero pulse, then a negative pulse. Does the curve instantly return to zero?\n\nC = 100 µF · Δt = 0.5 ms · One interval per click; up to 16 intervals.\n\n+20 mA pulse\n0 mA pulse\n−20 mA pulse\nReset\nVoltage\n0.20 V\nStored energy\n2.00 µJ\nThis interval ΔE\n1.50 µJ\nVoltage v (V)\n0.22\n-0.02\n0\n8000 time (µs)\n\n2/16 pulses recorded. Zero drive also records a horizontal interval.\n\nEnlarge the last interval: current is voltage slope × C\n\nThis local plot shows Δv relative to the interval start, not absolute voltage v. Fixed horizontal axis0..0.5ms, vertical axis−0.12..+0.12V. Dashed run shows time; rise shows signed Δv.\n\nVoltage0.10to0.20V; relative change0.10V over0.5ms; interior slope200V/s, current20mA.\n\nΔv / Δt = 0.10 V / 0.0005 s = 200 V/s\ni = C · dv/dt = 100 µF × 200 V/s = 20 mA\n\nCurrent is constant within each segment, so its interval slope equals the interior derivative here. A finite secant of a general curve gives only an average rate. A true current jump need not have a two-sided derivative; voltage stays continuous. Negative current lowers signed voltage, not necessarily stored energy.\n\nPlace this rate back on the knowledge route →\n\nOpenStax8.1 · q=Cv · OpenStax9.1 · i=dq/dt\n\nSign convention: current enters the terminal marked +; v and i may be negative. Zero drive holds the present value. Reverse drive decreases it and can take it through zero. Negative p = vi means the component returns energy to the ideal source.",
+    "buttons": [
+      "+20 mA pulse",
+      "0 mA pulse",
+      "−20 mA pulse",
+      "Reset"
+    ]
+  },
+  {
+    "stage": "zero",
+    "url": "http://127.0.0.1:18929/power-converters/#step2",
+    "text": "STEP 2 / 6 · Capacitor\n\nCapacitor: give voltage a memory\n\nDoes capacitor voltage vanish when charge stops flowing in?\n\nA capacitor stores energy in an electric field. Current entering its positive terminal adds charge and raises its voltage; current leaving lowers it.\n\nC is capacitance in F (farad); 1 µF = 0.000001 F. dv/dt means voltage change per second; Δv is the voltage change over this interval. E is stored energy.\n\ni = C · dv/dt → Δv = i · Δt / C\nE = ½Cv²\n\nTry two positive pulses, a zero pulse, then a negative pulse. Does the curve instantly return to zero?\n\nC = 100 µF · Δt = 0.5 ms · One interval per click; up to 16 intervals.\n\n+20 mA pulse\n0 mA pulse\n−20 mA pulse\nReset\nVoltage\n0.20 V\nStored energy\n2.00 µJ\nThis interval ΔE\n0.00 µJ\nVoltage v (V)\n0.22\n-0.02\n0\n8000 time (µs)\n\n3/16 pulses recorded. Zero drive also records a horizontal interval.\n\nEnlarge the last interval: current is voltage slope × C\n\nThis local plot shows Δv relative to the interval start, not absolute voltage v. Fixed horizontal axis0..0.5ms, vertical axis−0.12..+0.12V. Dashed run shows time; rise shows signed Δv.\n\nVoltage0.20to0.20V; relative change0.00V over0.5ms; interior slope0V/s, current0mA.\n\nΔv / Δt = 0.00 V / 0.0005 s = 0 V/s\ni = C · dv/dt = 100 µF × 0 V/s = 0 mA\n\nCurrent is constant within each segment, so its interval slope equals the interior derivative here. A finite secant of a general curve gives only an average rate. A true current jump need not have a two-sided derivative; voltage stays continuous. Negative current lowers signed voltage, not necessarily stored energy.\n\nPlace this rate back on the knowledge route →\n\nOpenStax8.1 · q=Cv · OpenStax9.1 · i=dq/dt\n\nSign convention: current enters the terminal marked +; v and i may be negative. Zero drive holds the present value. Reverse drive decreases it and can take it through zero. Negative p = vi means the component returns energy to the ideal source.",
+    "buttons": [
+      "+20 mA pulse",
+      "0 mA pulse",
+      "−20 mA pulse",
+      "Reset"
+    ]
+  },
+  {
+    "stage": "minus",
+    "url": "http://127.0.0.1:18929/power-converters/#step2",
+    "text": "STEP 2 / 6 · Capacitor\n\nCapacitor: give voltage a memory\n\nDoes capacitor voltage vanish when charge stops flowing in?\n\nA capacitor stores energy in an electric field. Current entering its positive terminal adds charge and raises its voltage; current leaving lowers it.\n\nC is capacitance in F (farad); 1 µF = 0.000001 F. dv/dt means voltage change per second; Δv is the voltage change over this interval. E is stored energy.\n\ni = C · dv/dt → Δv = i · Δt / C\nE = ½Cv²\n\nTry two positive pulses, a zero pulse, then a negative pulse. Does the curve instantly return to zero?\n\nC = 100 µF · Δt = 0.5 ms · One interval per click; up to 16 intervals.\n\n+20 mA pulse\n0 mA pulse\n−20 mA pulse\nReset\nVoltage\n0.10 V\nStored energy\n0.50 µJ\nThis interval ΔE\n-1.50 µJ\nVoltage v (V)\n0.22\n-0.02\n0\n8000 time (µs)\n\n4/16 pulses recorded. Zero drive also records a horizontal interval.\n\nEnlarge the last interval: current is voltage slope × C\n\nThis local plot shows Δv relative to the interval start, not absolute voltage v. Fixed horizontal axis0..0.5ms, vertical axis−0.12..+0.12V. Dashed run shows time; rise shows signed Δv.\n\nVoltage0.20to0.10V; relative change-0.10V over0.5ms; interior slope-200V/s, current-20mA.\n\nΔv / Δt = -0.10 V / 0.0005 s = -200 V/s\ni = C · dv/dt = 100 µF × -200 V/s = -20 mA\n\nCurrent is constant within each segment, so its interval slope equals the interior derivative here. A finite secant of a general curve gives only an average rate. A true current jump need not have a two-sided derivative; voltage stays continuous. Negative current lowers signed voltage, not necessarily stored energy.\n\nPlace this rate back on the knowledge route →\n\nOpenStax8.1 · q=Cv · OpenStax9.1 · i=dq/dt\n\nSign convention: current enters the terminal marked +; v and i may be negative. Zero drive holds the present value. Reverse drive decreases it and can take it through zero. Negative p = vi means the component returns energy to the ideal source.",
+    "buttons": [
+      "+20 mA pulse",
+      "0 mA pulse",
+      "−20 mA pulse",
+      "Reset"
+    ]
+  },
+  {
+    "stage": "reset after",
+    "url": "http://127.0.0.1:18929/power-converters/#step2",
+    "text": "STEP 2 / 6 · Capacitor\n\nCapacitor: give voltage a memory\n\nDoes capacitor voltage vanish when charge stops flowing in?\n\nA capacitor stores energy in an electric field. Current entering its positive terminal adds charge and raises its voltage; current leaving lowers it.\n\nC is capacitance in F (farad); 1 µF = 0.000001 F. dv/dt means voltage change per second; Δv is the voltage change over this interval. E is stored energy.\n\ni = C · dv/dt → Δv = i · Δt / C\nE = ½Cv²\n\nTry two positive pulses, a zero pulse, then a negative pulse. Does the curve instantly return to zero?\n\nC = 100 µF · Δt = 0.5 ms · One interval per click; up to 16 intervals.\n\n+20 mA pulse\n0 mA pulse\n−20 mA pulse\nReset\nVoltage\n0.00 V\nStored energy\n0.00 µJ\nThis interval ΔE\n0.00 µJ\nVoltage v (V)\n0.12\n-0.02\n0\n8000 time (µs)\n\n0/16 pulses recorded. Zero drive also records a horizontal interval.\n\nEnlarge the last interval: current is voltage slope × C\n\nNo interval yet. Apply one pulse to create two endpoints; reset voltage0V is not an observed zero slope.\n\nSign convention: current enters the terminal marked +; v and i may be negative. Zero drive holds the present value. Reverse drive decreases it and can take it through zero. Negative p = vi means the component returns energy to the ideal source.",
+    "buttons": [
+      "+20 mA pulse",
+      "0 mA pulse",
+      "−20 mA pulse",
+      "Reset"
+    ]
+  },
+  {
+    "stage": "ZH initial",
+    "url": "http://127.0.0.1:18929/power-converters/#step2",
+    "text": "第 2 / 6 · 电容\n\n电容：给电压一份记忆\n\n停止流入电荷，电容电压会立刻消失吗？\n\n电容把能量存进电场。流入正极的电流增加电荷，使电压上升；流出则使电压下降。\n\nC 是电容量，单位 F（法拉）；1 µF = 0.000001 F。dv/dt 表示每秒电压变化多少，Δv 是这次电压的改变量；E 是储能。\n\ni = C · dv/dt → Δv = i · Δt / C\nE = ½Cv²\n\n先试两次正脉冲，再试零脉冲，最后试负脉冲。看曲线是否立刻回到零。\n\nC = 100 µF · Δt = 0.5 ms · 每次点击推进一次；最多 16 次。\n\n+20 mA 脉冲\n0 mA 脉冲\n−20 mA 脉冲\n重置\n电压\n0.00 V\n储能\n0.00 µJ\n本次能量变化\n0.00 µJ\n电压 v (V)\n0.12\n-0.02\n0\n8000 时间 (µs)\n\n已记录 0/16 次脉冲。零驱动也会记录一段水平线。\n\n把最后一个区间放大：电流就是电压斜率 × C\n\n尚无区间。按一次脉冲才会有两端点；重置后的0V不是已经测得的零斜率。\n\n符号约定：电流流入标为 + 的端子；v 和 i 可为负。零驱动保持当前值，反向驱动先减小它，也可以越过零。p = vi 为负时，元件把能量还给理想电源。",
+    "buttons": [
+      "+20 mA 脉冲",
+      "0 mA 脉冲",
+      "−20 mA 脉冲",
+      "重置"
+    ]
+  },
+  {
+    "stage": "ZH sequence",
+    "url": "http://127.0.0.1:18929/power-converters/#step2",
+    "text": "第 2 / 6 · 电容\n\n电容：给电压一份记忆\n\n停止流入电荷，电容电压会立刻消失吗？\n\n电容把能量存进电场。流入正极的电流增加电荷，使电压上升；流出则使电压下降。\n\nC 是电容量，单位 F（法拉）；1 µF = 0.000001 F。dv/dt 表示每秒电压变化多少，Δv 是这次电压的改变量；E 是储能。\n\ni = C · dv/dt → Δv = i · Δt / C\nE = ½Cv²\n\n先试两次正脉冲，再试零脉冲，最后试负脉冲。看曲线是否立刻回到零。\n\nC = 100 µF · Δt = 0.5 ms · 每次点击推进一次；最多 16 次。\n\n+20 mA 脉冲\n0 mA 脉冲\n−20 mA 脉冲\n重置\n电压\n0.10 V\n储能\n0.50 µJ\n本次能量变化\n-1.50 µJ\n电压 v (V)\n0.22\n-0.02\n0\n8000 时间 (µs)\n\n已记录 4/16 次脉冲。零驱动也会记录一段水平线。\n\n把最后一个区间放大：电流就是电压斜率 × C\n\n这张局部图画相对区间起点的Δv，不是绝对电压v。固定横轴0..0.5ms，纵轴−0.12..+0.12V；虚线横边表示时间，竖边表示带符号Δv。\n\n本次电压0.20到0.10V；相对起点变化-0.10V，历时0.5ms；段内斜率-200V/s，电流-20mA。\n\nΔv / Δt = -0.10 V / 0.0005 s = -200 V/s\ni = C · dv/dt = 100 µF × -200 V/s = -20 mA\n\n每段电流恒定，因此这里区间斜率恰等段内导数；一般曲线的有限割线只给平均变化率。电流真正跳变的瞬间不保证双侧导数；电压仍连续。负电流使带符号电压下降，不一定总在放能。\n\n把变化率放回知识路线 →\n\nOpenStax8.1 · q=Cv · OpenStax9.1 · i=dq/dt\n\n符号约定：电流流入标为 + 的端子；v 和 i 可为负。零驱动保持当前值，反向驱动先减小它，也可以越过零。p = vi 为负时，元件把能量还给理想电源。",
+    "buttons": [
+      "+20 mA 脉冲",
+      "0 mA 脉冲",
+      "−20 mA 脉冲",
+      "重置"
+    ]
+  },
+  {
+    "stage": "actual Back",
+    "url": "http://127.0.0.1:18929/atlas/?lang=zh&node=capacitor&view=list&trail=charge",
+    "text": "本站实验任务 · 不记录掌握状态\n\n不再流入电荷，电压会消失吗？\n\n先重置电容，再依次按两次+20mA、一次0mA、一次−20mA。对比完整电压曲线与“最后一个区间”的横向时间、纵向Δv。\n\n打开本站对应实验 →\n核对预测 · 该看什么，为什么\n← 上一个概念\n下一个概念 →\n起步提示"
+  },
+  {
+    "browser": "CLOSED"
+  }
+]

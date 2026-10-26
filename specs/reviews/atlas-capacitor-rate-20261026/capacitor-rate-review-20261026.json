@@ -1,0 +1,61 @@
+{
+  "decision": "bounded_pass",
+  "mustFix": 0,
+  "sequenceCases": 9841,
+  "rendering": [
+    {
+      "name": "initial",
+      "slope": null,
+      "pass": true
+    },
+    {
+      "name": "rise",
+      "slope": 200,
+      "pass": true
+    },
+    {
+      "name": "zero_nonzero",
+      "slope": 0,
+      "pass": true
+    },
+    {
+      "name": "fall",
+      "slope": -200,
+      "pass": true
+    },
+    {
+      "name": "cross_zero",
+      "slope": -200,
+      "pass": true
+    },
+    {
+      "name": "negative_voltage",
+      "slope": -200,
+      "pass": true
+    }
+  ],
+  "capacitorSequence": [
+    0,
+    0.1,
+    0.2,
+    0.2,
+    0.1,
+    0,
+    -0.1
+  ],
+  "counts": [
+    38,
+    49,
+    12
+  ],
+  "modelSharedPlotAndBuckBoostSuffixByteIdentical": true,
+  "noBrowser": true,
+  "method": "Independent Q/C tree recurrence and actual renderer VM; source-only lifecycle review",
+  "sha256": {
+    "power-converters/app.js": "ba306e2478f411ea6b2c9dd44821c2f3df33795feb9260ad7262c0ca3ffaa31a",
+    "power-converters/style.css": "e4e3459f24df6466d6b8eba77ddad6200c3191d927baf118cd4375a4f146ccff",
+    "power-converters/model.js": "244b4d11a4f557fd1a8e974a07db85a066c02ecdfcefbb92380f293538914dd5",
+    "atlas/data.js": "2893735e41d4b58a828ded235d160eeda433670e46f0523b8ed15a560e753392",
+    "specs/atlas-capacitor-rate.md": "e1efac4cfd1c73b1a95d1367e8cca28b4f638d7b45aa9a037aa671e08552f61a"
+  }
+}

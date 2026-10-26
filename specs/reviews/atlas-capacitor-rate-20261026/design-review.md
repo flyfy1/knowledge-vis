@@ -1,0 +1,7 @@
+# Independent design gate — capacitor rate bridge
+
+Reviewer: separate Codex agent /root/design_review, 2026-10-26. Verdict: implement; zero must-fix blockers before implementation, conditional on the following contract. Dispatcher adopts all recommendations.
+
+Latest-interval relative Δv view adds observable value beyond the existing formula and full voltage trace. Reuse the same last two capacitor endpoints; ±0.1V/0.5ms=±200V/s. The interval slope equals the within-segment derivative because this model prescribes constant current. Only actual current changes give non-differentiable corners; equal adjoining pulses need not. Relative Δv is distinct from absolute voltage; show start/endV and signed current. Initially/reset no interval exists. Zero current can hold nonzeroV; negative current decreases signedV and may crosszero, not invariably release energy. Fix ideal C with no leakage and passive sign convention. Route changes examples from x² to v(t), transfers no parameters and promises only Atlas context Back, not sequence persistence after new-document reload.
+
+P0: one real calculus→capacitor edge, two existing experiment tasks, same-state rise/run diagram. P1: focused numeric/browser/source review. P2/deferred: adjustable C/current, analog hardware, new controllers/solver/clock/storage, generalized all-route UI; no demonstrated need in this slice. Reuse existing colors/type/layout/control targets; no new CSS/theme or autonomous motion.
