@@ -3,7 +3,7 @@
 const STR = {
   zh: {
     docTitle: '光合作用 · 用光开工的糖厂 —— 一步一交互',
-    builtBy: 'Codex 开发 · 滚动与兼容性修复', fallback0: '水草在光照下进行光合作用。冒出的气体是什么？先押注，再去下一步对账。', fallback2: '光强增加，速率先升后平：CO₂ 不足时，再加光也不涨。拖动滑杆仍可查看下方计算读数。', fallback3: '光照充足时，补充 CO₂ 可提升速率；直到光照成为限制因素。拖动滑杆可查看下方计算读数。', back: '← 知识索引', category: '生物', stage: '初中',
+    fallback0: '水草在光照下进行光合作用。冒出的气体是什么？先押注，再去下一步对账。', fallback2: '光强增加，速率先升后平：CO₂ 不足时，再加光也不涨。拖动滑杆仍可查看下方计算读数。', fallback3: '光照充足时，补充 CO₂ 可提升速率；直到光照成为限制因素。拖动滑杆可查看下方计算读数。', back: '← 知识索引', category: '生物', stage: '初中',
     pageTitle: '光合作用 · 用光开工的糖厂',
     tagline: '叶子是一间用光开工的糖厂：原料是水和二氧化碳，产品是糖，放出的氧气只是「顺手排的气」。光越强、原料越足（在一定范围内），开工越快——速率全部由模型当场实算。',
     lang: '语言', navLabel: '步骤导航',
@@ -73,7 +73,7 @@ const STR = {
   },
   en: {
     docTitle: 'Photosynthesis · A Sugar Factory Run by Light — One Interaction per Step',
-    builtBy: 'Developed by Codex · scrolling and compatibility fix', fallback0: 'The plant photosynthesizes in sunlight. What gas is in the bubbles? Place a bet, then check the ledger in the next step.', fallback2: 'More light raises the rate until CO₂ limits it. The slider still updates the calculated rate below.', fallback3: 'With enough light, adding CO₂ raises the rate until light becomes limiting. The slider still updates the calculated rate below.', back: '← Knowledge Index', category: 'Biology', stage: 'Junior',
+    fallback0: 'The plant photosynthesizes in sunlight. What gas is in the bubbles? Place a bet, then check the ledger in the next step.', fallback2: 'More light raises the rate until CO₂ limits it. The slider still updates the calculated rate below.', fallback3: 'With enough light, adding CO₂ raises the rate until light becomes limiting. The slider still updates the calculated rate below.', back: '← Knowledge Index', category: 'Biology', stage: 'Junior',
     pageTitle: 'Photosynthesis · A Sugar Factory Run by Light',
     tagline: 'A leaf is a sugar factory powered by light: the raw materials are water and carbon dioxide, the product is sugar, and the oxygen released is just exhaust. Stronger light and more raw material (up to a point) mean faster work — every rate here is computed live by the model.',
     lang: 'Language', navLabel: 'Step navigation',

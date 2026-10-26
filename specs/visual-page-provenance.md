@@ -32,7 +32,7 @@ Keep current canonical routes unchanged. Before creating a Claude Code alternati
 
 Initial evidence is1d90150cf9c1db194769dff92dc4178ce7779fb0 (`Built-By: Codex`, scope in commit). Its14 non-worker revised courses are enumerated in `page-provenance.json`. Atlas's initial ed48a98d has no tool attribution, so this edition is also labelled revised.
 
-- photosynthesis: mixed initial Codex HTML/CSS, Alberto completion and subsequent Claude Code fixes are documented in `photosynthesis/build-report.md`; awaiting worker handover, no exclusive Codex-origin claim.
+- photosynthesis: integrated worker source3e1c2f43, revised-edition header and explicit mixed Codex/Alberto/Claude history. [Page spec](../photosynthesis/SCROLL-SPEC.md). The initial14-page preparation remains historical; inventory now includes this accepted handover.
 - frozen-bubble: known Codex implementation in1d90150c, but worker currently owns narrative revision; integrate its final SHA/label after handover.
 - power-converters: current worker owns visual changes; earlier origin not established here. Await its evidence and preserve inherited contributors.
 - Other Visual pages/homepage: origin not verified by this batch. Do not stamp them. Future Codex modifications must adopt the contract with their exact evidence.

@@ -6,6 +6,9 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Photosynthesis mobile scrolling](../photosynthesis/SCROLL-SPEC.md): CSS/bitmap size separation, lifecycle, readable fallback, actual mobile scroll and source attribution acceptance.
+
+
 - [Visible page edition provenance](visual-page-provenance.md): visible Codex revised-edition labels, truthful source records, parallel-version preservation, repair/spec maintenance and integration acceptance.
 
 

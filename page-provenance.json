@@ -154,10 +154,20 @@
         "en": "Discrete-sequence and continuous-signal notation boundaries"
       },
       "originalAuthorship": "not asserted; prior contributions retained"
+    },
+    "photosynthesis": {
+      "developer": "Codex",
+      "edition": "codex-scroll-20261026",
+      "kind": "revised",
+      "sourceRevision": "3e1c2f43dbc61aed7fac26f8bdea71868b0ac91c",
+      "scope": {
+        "zh": "高 DPR 画布尺寸、移动滚动与无脚本阅读兼容性",
+        "en": "High-DPR canvas sizing, mobile scrolling and script-free reading fallbacks"
+      },
+      "originalAuthorship": "Codex HTML/CSS, Alberto completion and historical Claude Code fixes retained; not Codex-exclusive origin"
     }
   },
   "exceptions": {
-    "photosynthesis": "Mixed Codex/Alberto/Claude history; worker handover pending",
     "frozen-bubble": "Codex source known; active narrative worker handover pending",
     "power-converters": "Active visual worker handover pending; original developer not established",
     "leetcode/*": "Concurrent owner; existing -codex URL markers preserved; no page files edited",
