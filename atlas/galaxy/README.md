@@ -60,3 +60,7 @@ The canonical graph now includes one derivative→capacitor application relation
 ## Integral / inductor graph increment
 
 One sourced integral→inductor application relation joins the existing inductor→Buck edge in a three-station volt-second route. Counts38/50/13. See[contract](../../specs/atlas-volt-second.md). Graph distance remains relation-hop layout, not semantic precision; no renderer/camera changes.
+
+## Monte Carlo uncertainty route
+
+Existingvariance→montecarlo relation is reused by a two-stop uncertainty route,38/50/14. No newedge/node or distancealgorithm. See[contract](../../specs/atlas-estimation-error.md).

@@ -14,7 +14,7 @@
   <div class="head-main">
     <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
     <h1 data-i18n="pageTitle">蒙特卡洛</h1>
-    <p class="tagline" data-i18n="tagline">算不出来的问题，可以撒豆子撒出来。在正方形里乱撒点，落在圆里的比例就是 π/4——于是数点就能算出 π。这一页从撒豆子算 π 开始，看清那条 1/√N 的收敛铁律，再把它用到没有公式的面积、布丰的针、和高维空间里。</p>
+    <p class="tagline" data-i18n="tagline">在正方形里均匀撒点，圆内比例的长期目标是π/4，因此数点可以估π。本页比较重复估计的波动与样本量的影响，再走向其他面积、投针与高维例子。</p>
   </div>
   <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
     <button type="button" data-lang="zh">中</button>
@@ -25,7 +25,7 @@
 <nav class="step-nav" id="stepNav" aria-label="步骤导航">
   <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 钩子</a>
   <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 比例即概率</a>
-  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 收敛铁律</a>
+  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 误差尺度</a>
   <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 无公式的面积</a>
   <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 布丰投针</a>
   <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 高维</a>
@@ -85,11 +85,11 @@
   </div>
 </section>
 
-<!-- ============ 步骤 2：收敛铁律 ============ -->
+<!-- ============ 步骤 2：重复估计与误差尺度 ============ -->
 <section class="step" id="step2" data-step="2">
   <div class="step-inner">
-    <p class="step-kicker" data-i18n="s2k">第 2 步 · 收敛铁律</p>
-    <h2 data-i18n="s2t">慢，但明码标价的慢</h2>
+    <p class="step-kicker" data-i18n="s2k">第2步 · 重复估计的波动</p>
+    <h2 data-i18n="s2t">样本四倍，每次误差都减半吗？</h2>
     <p class="explain" data-i18n-html="s2e"></p>
     <div class="stage">
       <canvas id="s2-canvas" height="380" style="height:380px"></canvas>
@@ -104,9 +104,12 @@
       <button class="btn mbtn active" data-mode="single" data-i18n="s2single">单颗种子</button>
       <button class="btn mbtn" data-mode="multi" data-i18n="s2multi">20 颗种子同跑</button>
     </div>
+    <p class="hint" data-i18n="s2legend"></p>
+    <fieldset id="s2-checkpoints"><legend data-i18n="s2checkpointLabel"></legend><div class="btn-row"><button type="button" class="btn s2-checkpoint" data-checkpoint="100" data-i18n="s2cp100"></button><button type="button" class="btn s2-checkpoint" data-checkpoint="400" data-i18n="s2cp400"></button><button type="button" class="btn s2-checkpoint" data-checkpoint="1600" data-i18n="s2cp1600"></button></div><p class="hint" data-i18n="s2prefix"></p></fieldset>
     <p class="readout" id="s2-readout"></p>
     <p class="readout" id="s2-miles"></p>
     <p class="hint" data-i18n-html="s2hint"></p>
+    <details id="s2-statistics"><summary data-i18n="s2statsTitle"></summary><p data-i18n="s2statsIntro"></p><dl><dt data-i18n="s2popLabel"></dt><dd id="s2-popvar">—</dd><dt data-i18n="s2rawLabel"></dt><dd id="s2-rawvar">—</dd><dt data-i18n="s2varLabel"></dt><dd id="s2-estvar">—</dd><dt data-i18n="s2seLabel"></dt><dd id="s2-se">—</dd></dl><p data-i18n="s2statsFormula"></p><p class="hint" data-i18n="s2statsLimits"></p><p><a href="https://openstax.org/books/introductory-statistics-2e/pages/7-1-the-central-limit-theorem-for-sample-means-averages" data-i18n="s2source"></a> · <a href="https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm" data-i18n="s2ciSource"></a></p><p><a class="fourier-link" href="../atlas/?trail=uncertainty&amp;node=montecarlo&amp;view=list"><span data-i18n="s2routeLink"></span></a></p></details>
   </div>
 </section>
 

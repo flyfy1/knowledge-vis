@@ -80,7 +80,7 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 36 | 连续后验（抛币 Beta）/ Continuous posteriors (the coin) | bayes#step4 | 每抛一次曲线收紧一点；宽度 = 还剩多少不知道 |
 | 37 | 先验洗刷 / Priors wash out | bayes#step5 | 两条先验喂同一序列，均值差 0.300 → 0.010 |
 | 38 | 大数定律：频率露出概率的脸 / Law of large numbers | montecarlo#step1 | 一颗一颗撒，频率贴概率；比例与 r 无关当场可验 |
-| 39 | 误差按 1/√N 定价 / Error shrinks as 1/√N | montecarlo#step2 | π̂ 轨迹束在 ±2σ 带内收窄，想准一位撒 100 倍 |
+| 39 | 估计的标准误差尺度 / Standard-error scale of an estimate | montecarlo#step2 | N四倍时理论SE减半；重复轨迹和单次误差仍波动，已知π参照带不是置信区间 |
 | 40 | 蒙特卡洛估面积/积分 / Monte Carlo integration | montecarlo#step3 | 没有公式？撒就完了；心形、五角星都能估 |
 | 41 | 维度诅咒 / The curse of dimensionality | montecarlo#step5 | 网格点数 10⁵ → 10¹²，撒点估值仍贴真值 |
 | 42 | 随机数从哪来 / Where random numbers come from | montecarlo#step6 | 同一种子重演 10 个点逐位一致 |

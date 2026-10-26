@@ -236,3 +236,8 @@ canvas.pix{image-rendering:pixelated}
 }
 .mile-chip b{color:var(--accent);font-weight:600}
 .coord-list{font-variant-numeric:tabular-nums;font-size:13.5px;line-height:1.9}
+
+/* Step2 uncertainty task: existing controls/model, no new animation. */
+#s2-checkpoints{border:1px solid var(--line);border-radius:12px;padding:16px;margin:16px 0}#step2 .btn,#s2-statistics summary,#s2-statistics a{min-height:48px;min-width:48px}#step2 button:focus-visible,#s2-statistics summary:focus-visible,#s2-statistics a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}#s2-statistics{margin:16px 0;padding:16px;border:1px solid var(--line);border-radius:12px}#s2-statistics summary{cursor:pointer}#s2-statistics p,#s2-statistics dl{margin:12px 0}#s2-statistics dt{color:var(--muted)}#s2-statistics dd{font-variant-numeric:tabular-nums;margin-bottom:12px}#s2-statistics a{display:inline-block}#step2 p,#s2-statistics dt{overflow-wrap:anywhere}@media(forced-colors:active){#step2 button:focus-visible,#s2-statistics summary:focus-visible,#s2-statistics a:focus-visible{outline-color:Highlight}}
+
+#s2-checkpoints .btn:not(.active){border-color:var(--muted)}
