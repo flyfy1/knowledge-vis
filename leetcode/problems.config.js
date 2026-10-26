@@ -4831,6 +4831,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
+    "id": 1172,
+    "title": {
+      "zh": "餐盘栈",
+      "en": "Dinner Plate Stacks"
+    },
+    "desc": {
+      "zh": "用最左空位最小堆和清理后的列表尾部实现餐盘栈。",
+      "en": "Use a leftmost-hole min-heap and a cleaned list tail to implement Dinner Plate Stacks."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "堆",
+        "en": "Heaps"
+      },
+      {
+        "zh": "设计",
+        "en": "Design"
+      }
+    ],
+    "path": "1172/",
+    "leetcodeUrl": "https://leetcode.com/problems/dinner-plate-stacks/",
+    "language": "Python",
+    "complexity": "Amortized O(log n) time per operation; O(n) space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
