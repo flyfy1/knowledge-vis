@@ -4537,6 +4537,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(S) build; O(min(t,L)) worst time per query; O(S+L) space"
   },
   {
+    "id": 1036,
+    "title": {
+      "zh": "逃离大迷宫",
+      "en": "Escape a Large Maze"
+    },
+    "desc": {
+      "zh": "用无障碍行列证明搜索上界，再从两端检查连通性。",
+      "en": "Prove a search budget with clear rows and columns, then test both endpoints."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "连通性",
+        "en": "Connectivity"
+      }
+    ],
+    "path": "1036/",
+    "leetcodeUrl": "https://leetcode.com/problems/escape-a-large-maze/",
+    "language": "Python",
+    "complexity": "O(n + (b+1)²) expected time; O((b+1)²) space, n = blocker entries, b = distinct blockers"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
