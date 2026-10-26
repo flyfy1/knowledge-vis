@@ -1,0 +1,29 @@
+{
+  "base": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+  "model": {
+    "checks": 3660,
+    "domainCases": 192,
+    "unchanged": true
+  },
+  "regressionNumericalAssertions": 1160,
+  "flowBoundaryCases": 240,
+  "independentNumericalKCLAssertions": 336,
+  "independentDashSamples": 7728,
+  "browserWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "languages": [
+    "en",
+    "zh"
+  ],
+  "cssZoom200": "pass",
+  "lifecycle": "pass",
+  "accessibility": "pass",
+  "pageErrors": [],
+  "independentRequiredFindingsRemaining": 0,
+  "physicalPhoneTested": false,
+  "deployed": false
+}
