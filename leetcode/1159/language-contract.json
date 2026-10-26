@@ -1,0 +1,10 @@
+{
+  "problemId": 1159,
+  "language": "MySQL",
+  "officialSource": "https://leetcode.com/problems/market-analysis-ii/",
+  "supportedLanguages": ["MySQL", "Python (Pandas)"],
+  "interface": "MySQL 8 query over Users(user_id, join_date, favorite_brand), Orders(order_id, order_date, item_id, buyer_id, seller_id), and Items(item_id, item_brand); returns seller_id and 2nd_item_fav_brand.",
+  "rationale": "The official page is a paid Database/Pandas problem. The authorized public GraphQL question response exposed mysqlSchemas and dataSchemas, while content and codeSnippets were null. MySQL is the exact native SQL interface evidenced by the mysqlSchemas field; the Pandas schema is retained as a supported conceptual interface but is not the canonical submission here.",
+  "verifiedAt": "2026-10-27T00:00:00+08:00",
+  "verificationEvidence": "provenance/official-graphql.json"
+}

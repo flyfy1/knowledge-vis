@@ -1,0 +1,16 @@
+{
+  "accessedAt": "2026-10-27T00:00:00+08:00",
+  "officialUrl": "https://leetcode.com/problems/market-analysis-ii/",
+  "pageObservation": "Normal unauthenticated page load displayed Subscribe to unlock; the statement body was unavailable.",
+  "graphqlQuery": "question(titleSlug: market-analysis-ii) { questionId title isPaidOnly content mysqlSchemas dataSchemas codeSnippets { lang langSlug code } }",
+  "observed": {
+    "questionId": "1269",
+    "title": "Market Analysis II",
+    "isPaidOnly": true,
+    "content": null,
+    "codeSnippets": null,
+    "mysqlSchemas": "Three tables: Users(user_id, join_date, favorite_brand), Orders(order_id, order_date, item_id, buyer_id, seller_id), Items(item_id, item_brand). Fixtures match the public example: users 1..4, orders 1..6, items 1..4.",
+    "dataSchemas": "Pandas DataFrames users, orders, items with the same columns and datetime64[ns] order_date/join_date."
+  },
+  "limitation": "The authorized public response does not expose the paid statement, constraints, selector UI text, or an official code snippet. No paywall bypass was attempted. A reviewer with authorized access should verify the full statement and selector before independent acceptance."
+}
