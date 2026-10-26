@@ -1,0 +1,20 @@
+{
+  "checks": 3236,
+  "nodes": 38,
+  "edges": 47,
+  "meanDistanceByHops": {
+    "1": 12.348,
+    "2": 19.931,
+    "3": 27.764,
+    "4": 34.907,
+    "5": 42.858,
+    "6": 47.157,
+    "7": 50.15,
+    "8": 51.207,
+    "9": 51.099,
+    "10": 48.1,
+    "11": 51.014,
+    "12": 58.631
+  },
+  "scope": "Finite deterministic layout, real-edge shortest paths, empty/isolated graph"
+}
