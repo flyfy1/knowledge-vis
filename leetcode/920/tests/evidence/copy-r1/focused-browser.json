@@ -1,0 +1,77 @@
+{
+  "finding": "920-COPY-R1",
+  "type": "author self-check",
+  "url": "http://127.0.0.1:18770/leetcode/920/",
+  "states": [
+    {
+      "language": "zh",
+      "geometry": {
+        "width": 320,
+        "scrollWidth": 320,
+        "bottom": 900.34375,
+        "bodyBottom": 900.34375
+      },
+      "keyboard": [
+        "copy",
+        "download",
+        "../629/#step2",
+        "../552/#step2"
+      ],
+      "screenshot": "page-end-320-zh-0.png",
+      "limitations": [
+        "sim",
+        "p4",
+        "boundaries"
+      ],
+      "trace": "dp[2][2]=2",
+      "prediction": 18
+    },
+    {
+      "language": "en",
+      "geometry": {
+        "width": 320,
+        "scrollWidth": 320,
+        "bottom": 900.34375,
+        "bodyBottom": 900.34375
+      },
+      "keyboard": [
+        "copy",
+        "download",
+        "../629/#step2",
+        "../552/#step2"
+      ],
+      "screenshot": "page-end-320-en-1.png",
+      "limitations": [
+        "sim",
+        "p4",
+        "boundaries"
+      ],
+      "trace": "dp[2][2]=2",
+      "prediction": 18
+    },
+    {
+      "language": "zh",
+      "geometry": {
+        "width": 320,
+        "scrollWidth": 320,
+        "bottom": 900.34375,
+        "bodyBottom": 900.34375
+      },
+      "keyboard": [
+        "copy",
+        "download",
+        "../629/#step2",
+        "../552/#step2"
+      ],
+      "screenshot": "page-end-320-zh-2.png",
+      "limitations": [
+        "sim",
+        "p4",
+        "boundaries"
+      ],
+      "trace": "dp[2][2]=2",
+      "prediction": 18
+    }
+  ],
+  "errors": []
+}

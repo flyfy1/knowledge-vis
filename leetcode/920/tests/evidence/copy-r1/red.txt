@@ -1,0 +1,8 @@
+AssertionError [ERR_ASSERTION]: 920-COPY-R1: remove footer and binding
+    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/920/tests/copy-r1.cjs:15:9 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: '=='
+}

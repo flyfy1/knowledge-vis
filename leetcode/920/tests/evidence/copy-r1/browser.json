@@ -1,0 +1,457 @@
+{
+  "type": "author browser self-check",
+  "url": "http://127.0.0.1:18770/leetcode/920/",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "zoom": "Native Chromium tabs.setZoom(2), window 1280x1400; CDP fromSurface capture (Playwright zoom capture was blank)",
+  "zoomMetrics": {
+    "devicePixelRatio": 2,
+    "innerWidth": 640,
+    "outerWidth": 1280,
+    "innerHeight": 656
+  },
+  "colors": {
+    "--bg": [
+      13,
+      17,
+      23
+    ],
+    "--panel": [
+      22,
+      27,
+      34
+    ],
+    "--panel2": [
+      28,
+      35,
+      48
+    ],
+    "--text": [
+      232,
+      237,
+      244
+    ],
+    "--muted": [
+      154,
+      167,
+      184
+    ],
+    "--accent": [
+      110,
+      231,
+      255
+    ],
+    "--accent2": [
+      255,
+      180,
+      84
+    ],
+    "--good": [
+      126,
+      226,
+      168
+    ]
+  },
+  "contrasts": [
+    {
+      "fg": "--text",
+      "bg": "--bg",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--text",
+      "bg": "--panel",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--text",
+      "bg": "--panel2",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--muted",
+      "bg": "--bg",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel",
+      "ratio": 7.078851579017443,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel2",
+      "ratio": 6.449407898769069,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent",
+      "bg": "--bg",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel",
+      "ratio": 11.974898815275662,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel2",
+      "ratio": 10.910104011097095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--bg",
+      "ratio": 10.731637051347173,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel",
+      "ratio": 9.809435643476732,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel2",
+      "ratio": 8.937191437807625,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--good",
+      "bg": "--bg",
+      "ratio": 12.013623247863544,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--good",
+      "bg": "--panel",
+      "ratio": 10.981256963037128,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--good",
+      "bg": "--panel2",
+      "ratio": 10.004815697188947,
+      "threshold": 4.5
+    }
+  ],
+  "focus": {
+    "focused": true,
+    "style": "solid",
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "states": [
+    {
+      "language": "en",
+      "preset": 0,
+      "result": "Final playlist count dp[3][2] = 2 (all songs covered)."
+    },
+    {
+      "language": "en",
+      "preset": 1,
+      "result": "Final playlist count dp[3][2] = 6 (all songs covered)."
+    },
+    {
+      "language": "en",
+      "preset": 2,
+      "result": "Final playlist count dp[3][3] = 6 (all songs covered)."
+    },
+    {
+      "language": "en",
+      "preset": 3,
+      "result": "Final playlist count dp[5][3] = 6 (all songs covered)."
+    },
+    {
+      "language": "en",
+      "preset": 4,
+      "result": "Final playlist count dp[4][1] = 1 (all songs covered)."
+    },
+    {
+      "language": "en",
+      "preset": 5,
+      "result": "Final playlist count dp[4][4] = 24 (all songs covered)."
+    },
+    {
+      "language": "en",
+      "state": "middle (2,2)",
+      "formula": "dp[i][j] = dp[i−1][j−1] × (n−j+1) + dp[i−1][j] × max(j−k, 0)",
+      "calculation": "Target dp[2][2]: new N = 2 from dp[1][1] × 1 choices = 2; replay R = 0 from dp[1][2] × 1 choices = 0. Total: 2 prefixes."
+    },
+    {
+      "language": "en",
+      "option": 0,
+      "feedback": "That count does not match the two extension classes. The answer is 18: new songs contribute 6×(3−3+1)=6; replays contribute 6×(3−1)=12. The count 12 omits prefixes that had used only two songs. The count 24 also allows the just-played song to repeat. Each source prefix has j−k eligible used songs, rather than n or always one."
+    },
+    {
+      "language": "en",
+      "option": 1,
+      "feedback": "That count does not match the two extension classes. The answer is 18: new songs contribute 6×(3−3+1)=6; replays contribute 6×(3−1)=12. The count 12 omits prefixes that had used only two songs. The count 24 also allows the just-played song to repeat. Each source prefix has j−k eligible used songs, rather than n or always one."
+    },
+    {
+      "language": "en",
+      "option": 2,
+      "feedback": "Correct. The answer is 18: new songs contribute 6×(3−3+1)=6; replays contribute 6×(3−1)=12. The count 12 omits prefixes that had used only two songs. The count 24 also allows the just-played song to repeat. Each source prefix has j−k eligible used songs, rather than n or always one."
+    },
+    {
+      "language": "en",
+      "clipboard": "native fallback",
+      "attempt": 0,
+      "host": "linux",
+      "sentinelVerified": true,
+      "exactSource": true
+    },
+    {
+      "language": "en",
+      "clipboard": "native fallback",
+      "attempt": 1,
+      "host": "linux",
+      "sentinelVerified": true,
+      "exactSource": true
+    },
+    {
+      "language": "zh",
+      "preset": 0,
+      "result": "最终歌单数 dp[3][2] = 2（全部歌曲均已出现）。"
+    },
+    {
+      "language": "zh",
+      "preset": 1,
+      "result": "最终歌单数 dp[3][2] = 6（全部歌曲均已出现）。"
+    },
+    {
+      "language": "zh",
+      "preset": 2,
+      "result": "最终歌单数 dp[3][3] = 6（全部歌曲均已出现）。"
+    },
+    {
+      "language": "zh",
+      "preset": 3,
+      "result": "最终歌单数 dp[5][3] = 6（全部歌曲均已出现）。"
+    },
+    {
+      "language": "zh",
+      "preset": 4,
+      "result": "最终歌单数 dp[4][1] = 1（全部歌曲均已出现）。"
+    },
+    {
+      "language": "zh",
+      "preset": 5,
+      "result": "最终歌单数 dp[4][4] = 24（全部歌曲均已出现）。"
+    },
+    {
+      "language": "zh",
+      "state": "middle (2,2)",
+      "formula": "dp[i][j] = dp[i−1][j−1] × (n−j+1) + dp[i−1][j] × max(j−k, 0)",
+      "calculation": "目标 dp[2][2]：新歌 N = dp[1][1] 的 2 × 1 个选择 = 2；重播 R = dp[1][2] 的 0 × 1 个选择 = 0。合计 2 张前缀。"
+    },
+    {
+      "language": "zh",
+      "option": 0,
+      "feedback": "这个数量不符合两类扩展的合计。 答案是 18：新歌贡献 6×(3−3+1)=6，重播贡献 6×(3−1)=12。12 漏掉了此前只用过两首的前缀；24 把刚播放的一首也当作可重播。每个前缀的可选旧歌数都是 j−k，而不是 n 或 1。"
+    },
+    {
+      "language": "zh",
+      "option": 1,
+      "feedback": "这个数量不符合两类扩展的合计。 答案是 18：新歌贡献 6×(3−3+1)=6，重播贡献 6×(3−1)=12。12 漏掉了此前只用过两首的前缀；24 把刚播放的一首也当作可重播。每个前缀的可选旧歌数都是 j−k，而不是 n 或 1。"
+    },
+    {
+      "language": "zh",
+      "option": 2,
+      "feedback": "正确。 答案是 18：新歌贡献 6×(3−3+1)=6，重播贡献 6×(3−1)=12。12 漏掉了此前只用过两首的前缀；24 把刚播放的一首也当作可重播。每个前缀的可选旧歌数都是 j−k，而不是 n 或 1。"
+    },
+    {
+      "language": "zh",
+      "clipboard": "native fallback",
+      "attempt": 0,
+      "host": "linux",
+      "sentinelVerified": true,
+      "exactSource": true
+    },
+    {
+      "language": "zh",
+      "clipboard": "native fallback",
+      "attempt": 1,
+      "host": "linux",
+      "sentinelVerified": true,
+      "exactSource": true
+    },
+    {
+      "language": "en",
+      "width": 320,
+      "optionBudget": {
+        "label": "4 songs · 4 plays · k=0",
+        "text": 162.1923370361328,
+        "width": 256,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#920 · Number of Music Playlists"
+    },
+    {
+      "language": "zh",
+      "width": 320,
+      "optionBudget": {
+        "label": "4 首 · 4 次 · k=0",
+        "text": 110.68821716308594,
+        "width": 256,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#920 · 播放列表的数量"
+    },
+    {
+      "language": "en",
+      "width": 390,
+      "optionBudget": {
+        "label": "4 songs · 4 plays · k=0",
+        "text": 162.1923370361328,
+        "width": 326,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#920 · Number of Music Playlists"
+    },
+    {
+      "language": "zh",
+      "width": 390,
+      "optionBudget": {
+        "label": "4 首 · 4 次 · k=0",
+        "text": 110.68821716308594,
+        "width": 326,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#920 · 播放列表的数量"
+    },
+    {
+      "language": "en",
+      "width": 736,
+      "optionBudget": {
+        "label": "4 songs · 4 plays · k=0",
+        "text": 162.1923370361328,
+        "width": 418,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#920 · Number of Music Playlists"
+    },
+    {
+      "language": "zh",
+      "width": 736,
+      "optionBudget": {
+        "label": "4 首 · 4 次 · k=0",
+        "text": 110.68821716308594,
+        "width": 418,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#920 · 播放列表的数量"
+    },
+    {
+      "language": "en",
+      "width": 1440,
+      "optionBudget": {
+        "label": "4 songs · 4 plays · k=0",
+        "text": 162.1923370361328,
+        "width": 418,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#920 · Number of Music Playlists"
+    },
+    {
+      "language": "zh",
+      "width": 1440,
+      "optionBudget": {
+        "label": "4 首 · 4 次 · k=0",
+        "text": 110.68821716308594,
+        "width": 418,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "heading": "#920 · 播放列表的数量"
+    },
+    {
+      "language": "zh",
+      "relatedLabel": "#629 · 用计数状态汇总排列",
+      "target": "http://127.0.0.1:18770/leetcode/629/#step2",
+      "heading": "相邻的和，共享计算",
+      "observedSection": "03相邻的和，共享计算这一步要回答：上一列已经算过的和，能否用来算下一列？这里逆序对仍指大数在前、小数在后的配对，D[i][j] 是 1…i 恰有 j 对的排列数。所有计数取模 M=1,000,000,007，即保留除以 M 的余数。prev 是已完成的 i−1 行，cur 是正在写的 i 行。列 j 对应的 window（窗口和）只包含 prev[max(0,j−i+1)…j]，也就是长度最多为 i 的连续计数。拿 i=3 的同一行：j=2 的和是 prev[0]+prev[1]+prev[2]=1+1+0=2。转到 j=3，加入 prev[3]=0；只能保留 3 项，所以移除 prev[0]=1，得到 1。若只加不减，会错算为 2。移除的是 j−i，不是 j−i+1。window ← (window + prev[j] − (prev[j−i] 若 j ≥ i，否则 0)) mod M；cur[j] ← window。不变式（每次写完一格都成立的事实）：完成列 j 后，window 等于 prev[max(0,j−i+1)…j] 之和的余数，cur[0…j] 都已正确。最初窗口为空；每次加右端、必要时删左端，恰好维持这段范围。插入的分组证明说明这个和就是 D[i][j]。一行写完后令 prev=cur，归纳即可到达 D[n][k]。必须分开两行，避免覆盖还要读取的旧计数。以下是 JavaScript 教学模拟，不是运行 Python 提交代码。它逐格保留完整表和历史；Python 只保留两行。即使目标不可达，模拟仍把零值算完，以便观察；Python 会提前返回 0。所有教学输入 n≤5、k≤6，完整展示，没有省略。先逐格填写，再选 n=3,k=3，观察最后一格减掉哪一项。保留的数字是已完成计数，“?” 是未计算而非零。切换预设只重启这个表；预测题独立保留。输入预设（切换后重启表格）n=3, k=1 → 2n=3, k=3 → 1n=4, k=5 → 3n=4, k=0 → 1n=3, k=4 → 0n=1, k=0 → 1n=5, k=6 → 20← 撤回一格填写下一格 →重置到初始行填完所有格子已填写格数（不含初始行）n=3, k=1 · 已填写 0/6 格 · 目标尚未完成初始行 i=0：空排列有 0 对，所以 D[0][0]=1，其余列为 0。尚未插入任何数。当前所用的上一行计数填写第一格后，将在这里显示上一行及使用范围。计数表：行 i 为 1…i，列 j 为逆序对个数；数字是排法数的余数窄屏可横向滚动表格；也可聚焦表格后按左右方向键。左侧行号 i 保持可见。i / j010101??2??3??",
+      "targetSourceSHA256": "ebb67b8c72b71fd902aef489b3942b2b073a51fd5f4192e65730a36ae2616c04"
+    },
+    {
+      "language": "zh",
+      "relatedLabel": "#552 · 按有限状态统计合法序列",
+      "target": "http://127.0.0.1:18770/leetcode/552/#step2",
+      "heading": "03 · 看六个计数如何累积",
+      "observedSection": "0303 · 看六个计数如何累积这一步要回答：一天之后，每组的数量从哪里来？dp[a][l] 表示已处理天数中，恰有 a 个 A、末尾恰有 l 个连续 L 的合法前缀数量。从空记录开始，只有 dp[0][0]=1。第一天 P、L、A 分别落入 (0,0)、(0,1)、(1,0)，各为 1。第 1 天到第 2 天：(0,0) 从 P、L 两组各接一个 P，得 1+1+0=2（PP、LP）；(1,0) 从 AP、PA、LA 得 3；其余四组为 1、1、1、0。总数 8。注意 LL 仍合法；是再接一个 L 才违法。从每个旧组取 c=dp[a][l]：P → nxt[a][0] += c；若 a=0，A → nxt[1][0] += c；若 l<2，L → nxt[a][l+1] += c。P 和 A 都中断末尾的 L，所以 l 归零；A 同时把缺勤数从 0 改为 1。L 不改变 a，但把 l 加一。a=1 时不能接 A；l=2 时不能接 L。只从旧 dp 读取，写入全新的 nxt，防止一天被重复延长。为什么可以相加？每条合法新记录删掉最后一个字符，都唯一回到某个合法旧前缀；末字符 P、A、L 的三种情况互不重叠，上面的条件又恰好排除第二个 A 和第三个连续 L。因此每条记录被计入一次。这就导出不变式（每个已完成日都成立的陈述）：六组恰好、不重复地覆盖当前长度的全部合法记录。初始空记录满足它，每次转移保持它，最后把六组相加就是答案。此处是 JavaScript 数学模拟，不是运行 Python 提交。只展示 n≤10 的完整日序列，数值尚未达到模数。每帧表示当天全部转移完成；保留历史表用于比较，教学快照占 O(n) 空间，Python 只保留两张六格表。操作任务：保持 n=2，点“追加一天”两次。先看 (1,0) 的三项非零来源，再看历史表的总数 1→3→8。后退再前进应恢复完全相同的六个值；改为 n=3，检查 (0,2) 无法再接 L 的边界。切换预设会从第 0 天重新开始此实验，不影响独立预测题。目标天数（更改会重启）n = 1n = 2n = 3n = 4n = 6n = 10后退一天追加一天重置到空记录完成剩余天数已完成天数已完成 0/2 天 · 当前长度合格记录：1 · 尚非目标答案六组：上一天 → 当前天a=0 个 A，末尾 l=0 个 L旧值 0 → 新值 1初始：空记录贡献 1，其余为 0。a=0 个 A，末尾 l=1 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=0 个 A，末尾 l=2 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=1 个 A，末尾 l=0 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=1 个 A，末尾 l=1 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=1 个 A，末尾 l=2 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。保留的逐日计数保留的逐日计数已完成天数(0,0)(0,1)(0,2)(1,0)(1,1)(1,2)合格记录数01000001",
+      "targetSourceSHA256": "ba452d0aabfb9b734e57899bbd6597a3bad186ed53e3fb9d7306d4b75c2c4927"
+    },
+    {
+      "language": "en",
+      "relatedLabel": " #629 · Count permutations by state",
+      "target": "http://127.0.0.1:18770/leetcode/629/#step2",
+      "heading": "Reuse neighboring sums",
+      "observedSection": "03Reuse neighboring sumsCan the sum for one column help compute the next? An inverse pair puts a larger value before a smaller one; D[i][j] counts permutations of 1…i with j such pairs. Counts are stored modulo M=1,000,000,007, as remainders after division by M. prev is the completed row for i−1; cur is the row being written for i. At column j, window is the sum of prev[max(0,j−i+1)…j], a consecutive group of at most i counts.Use the same row with i=3. At j=2 the sum is prev[0]+prev[1]+prev[2]=1+1+0=2. Moving to j=3 adds prev[3]=0. Only three terms may remain, so remove prev[0]=1 to obtain 1. Adding without removing would wrongly give 2. The leaving index is j−i, not j−i+1.window ← (window + prev[j] − (prev[j−i] if j ≥ i, else 0)) mod M; cur[j] ← window.The invariant—a fact preserved after every cell—is that window equals the sum of prev[max(0,j−i+1)…j] modulo M, and cur[0…j] is correct. Start with an empty window; adding the right endpoint and removing the expired left endpoint preserves exactly that range. The insertion partition proves this sum is D[i][j]. After finishing a row, set prev=cur; induction reaches D[n][k]. Keep the rows separate so needed old counts are not overwritten.This is a JavaScript teaching simulation, not execution of the Python submission. It retains the complete table and history; Python retains only two rows. The simulation still fills zero cells for an unreachable target so you can inspect them; Python returns 0 early. Teaching inputs are bounded by n≤5, k≤6, with no omitted cells.Fill cells one by one, then choose n=3,k=3 and inspect the term removed at the last cell. Retained numbers are completed counts; “?” means uncomputed, not zero. Changing the preset restarts only this table; the prediction exercise stays separate.Input preset (resta",
+      "targetSourceSHA256": "ebb67b8c72b71fd902aef489b3942b2b073a51fd5f4192e65730a36ae2616c04"
+    },
+    {
+      "language": "en",
+      "relatedLabel": "#552 · Count sequences with finite states",
+      "target": "http://127.0.0.1:18770/leetcode/552/#step2",
+      "heading": "03 · Watch six counts accumulate",
+      "observedSection": "0303 · Watch six counts accumulateWhere does each group’s count come from after one more day? dp[a][l] counts valid prefixes of the processed length with exactly a A and exactly l trailing L. Initially only dp[0][0]=1, for the empty record. On day one, P, L, and A enter (0,0), (0,1), and (1,0), each with count 1.From day one to day two, (0,0) receives P from the P and L groups: 1+1+0=2, representing PP and LP. Group (1,0) contains AP, PA, LA, so has count 3. The other four groups have counts 1, 1, 1, 0. The total is 8. LL remains valid; adding another L is what would break the rule.For each old group take c=dp[a][l]: P → nxt[a][0] += c; if a=0, A → nxt[1][0] += c; if l<2, L → nxt[a][l+1] += c.P and A both end the trailing L run, so l resets to zero; A also changes the absence count from 0 to 1. L leaves a unchanged and increments l. At a=1, A is forbidden; at l=2, L is forbidden. Read only the old dp and write a fresh nxt so one day cannot be extended twice.Why add these counts? Removing the final character of any valid new record identifies exactly one valid old prefix. The P, A, and L cases do not overlap, and the guards exclude exactly a second A and a third consecutive L. Thus each record is counted once. This derives the invariant—a statement true after every completed day: the six groups cover all valid records of that length exactly once. It holds for the empty record, each transition preserves it, and summing the final six groups gives the answer.This is a JavaScript mathematical simulation, not execution of the Python submission. It shows every day for n≤10; these counts are below the modulus. Each frame is after all transitions for that day. Retained teaching snapshots use O(n) space; Python retains only two six-cell arrays.Try this: keep n=2 and append a day ",
+      "targetSourceSHA256": "ba452d0aabfb9b734e57899bbd6597a3bad186ed53e3fb9d7306d4b75c2c4927"
+    },
+    {
+      "language": "zh",
+      "relatedLabel": "#629 · 用计数状态汇总排列",
+      "target": "http://127.0.0.1:18770/leetcode/629/#step2",
+      "heading": "相邻的和，共享计算",
+      "observedSection": "03相邻的和，共享计算这一步要回答：上一列已经算过的和，能否用来算下一列？这里逆序对仍指大数在前、小数在后的配对，D[i][j] 是 1…i 恰有 j 对的排列数。所有计数取模 M=1,000,000,007，即保留除以 M 的余数。prev 是已完成的 i−1 行，cur 是正在写的 i 行。列 j 对应的 window（窗口和）只包含 prev[max(0,j−i+1)…j]，也就是长度最多为 i 的连续计数。拿 i=3 的同一行：j=2 的和是 prev[0]+prev[1]+prev[2]=1+1+0=2。转到 j=3，加入 prev[3]=0；只能保留 3 项，所以移除 prev[0]=1，得到 1。若只加不减，会错算为 2。移除的是 j−i，不是 j−i+1。window ← (window + prev[j] − (prev[j−i] 若 j ≥ i，否则 0)) mod M；cur[j] ← window。不变式（每次写完一格都成立的事实）：完成列 j 后，window 等于 prev[max(0,j−i+1)…j] 之和的余数，cur[0…j] 都已正确。最初窗口为空；每次加右端、必要时删左端，恰好维持这段范围。插入的分组证明说明这个和就是 D[i][j]。一行写完后令 prev=cur，归纳即可到达 D[n][k]。必须分开两行，避免覆盖还要读取的旧计数。以下是 JavaScript 教学模拟，不是运行 Python 提交代码。它逐格保留完整表和历史；Python 只保留两行。即使目标不可达，模拟仍把零值算完，以便观察；Python 会提前返回 0。所有教学输入 n≤5、k≤6，完整展示，没有省略。先逐格填写，再选 n=3,k=3，观察最后一格减掉哪一项。保留的数字是已完成计数，“?” 是未计算而非零。切换预设只重启这个表；预测题独立保留。输入预设（切换后重启表格）n=3, k=1 → 2n=3, k=3 → 1n=4, k=5 → 3n=4, k=0 → 1n=3, k=4 → 0n=1, k=0 → 1n=5, k=6 → 20← 撤回一格填写下一格 →重置到初始行填完所有格子已填写格数（不含初始行）n=3, k=1 · 已填写 0/6 格 · 目标尚未完成初始行 i=0：空排列有 0 对，所以 D[0][0]=1，其余列为 0。尚未插入任何数。当前所用的上一行计数填写第一格后，将在这里显示上一行及使用范围。计数表：行 i 为 1…i，列 j 为逆序对个数；数字是排法数的余数窄屏可横向滚动表格；也可聚焦表格后按左右方向键。左侧行号 i 保持可见。i / j010101??2??3??",
+      "targetSourceSHA256": "ebb67b8c72b71fd902aef489b3942b2b073a51fd5f4192e65730a36ae2616c04"
+    },
+    {
+      "language": "zh",
+      "relatedLabel": "#552 · 按有限状态统计合法序列",
+      "target": "http://127.0.0.1:18770/leetcode/552/#step2",
+      "heading": "03 · 看六个计数如何累积",
+      "observedSection": "0303 · 看六个计数如何累积这一步要回答：一天之后，每组的数量从哪里来？dp[a][l] 表示已处理天数中，恰有 a 个 A、末尾恰有 l 个连续 L 的合法前缀数量。从空记录开始，只有 dp[0][0]=1。第一天 P、L、A 分别落入 (0,0)、(0,1)、(1,0)，各为 1。第 1 天到第 2 天：(0,0) 从 P、L 两组各接一个 P，得 1+1+0=2（PP、LP）；(1,0) 从 AP、PA、LA 得 3；其余四组为 1、1、1、0。总数 8。注意 LL 仍合法；是再接一个 L 才违法。从每个旧组取 c=dp[a][l]：P → nxt[a][0] += c；若 a=0，A → nxt[1][0] += c；若 l<2，L → nxt[a][l+1] += c。P 和 A 都中断末尾的 L，所以 l 归零；A 同时把缺勤数从 0 改为 1。L 不改变 a，但把 l 加一。a=1 时不能接 A；l=2 时不能接 L。只从旧 dp 读取，写入全新的 nxt，防止一天被重复延长。为什么可以相加？每条合法新记录删掉最后一个字符，都唯一回到某个合法旧前缀；末字符 P、A、L 的三种情况互不重叠，上面的条件又恰好排除第二个 A 和第三个连续 L。因此每条记录被计入一次。这就导出不变式（每个已完成日都成立的陈述）：六组恰好、不重复地覆盖当前长度的全部合法记录。初始空记录满足它，每次转移保持它，最后把六组相加就是答案。此处是 JavaScript 数学模拟，不是运行 Python 提交。只展示 n≤10 的完整日序列，数值尚未达到模数。每帧表示当天全部转移完成；保留历史表用于比较，教学快照占 O(n) 空间，Python 只保留两张六格表。操作任务：保持 n=2，点“追加一天”两次。先看 (1,0) 的三项非零来源，再看历史表的总数 1→3→8。后退再前进应恢复完全相同的六个值；改为 n=3，检查 (0,2) 无法再接 L 的边界。切换预设会从第 0 天重新开始此实验，不影响独立预测题。目标天数（更改会重启）n = 1n = 2n = 3n = 4n = 6n = 10后退一天追加一天重置到空记录完成剩余天数已完成天数已完成 0/2 天 · 当前长度合格记录：1 · 尚非目标答案六组：上一天 → 当前天a=0 个 A，末尾 l=0 个 L旧值 0 → 新值 1初始：空记录贡献 1，其余为 0。a=0 个 A，末尾 l=1 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=0 个 A，末尾 l=2 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=1 个 A，末尾 l=0 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=1 个 A，末尾 l=1 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。a=1 个 A，末尾 l=2 个 L旧值 0 → 新值 0初始：空记录贡献 1，其余为 0。保留的逐日计数保留的逐日计数已完成天数(0,0)(0,1)(0,2)(1,0)(1,1)(1,2)合格记录数01000001",
+      "targetSourceSHA256": "ba452d0aabfb9b734e57899bbd6597a3bad186ed53e3fb9d7306d4b75c2c4927"
+    }
+  ],
+  "screenshots": [
+    "trace-en-320.png",
+    "table-en-320.png",
+    "trace-zh-320.png",
+    "table-zh-320.png",
+    "trace-en-390.png",
+    "table-en-390.png",
+    "trace-zh-390.png",
+    "table-zh-390.png",
+    "trace-en-736.png",
+    "table-en-736.png",
+    "trace-zh-736.png",
+    "table-zh-736.png",
+    "trace-en-1440.png",
+    "table-en-1440.png",
+    "trace-zh-1440.png",
+    "table-zh-1440.png",
+    "zoom200-en.png",
+    "page-end-zoom200-en.png",
+    "zoom200-zh.png",
+    "page-end-zoom200-zh.png"
+  ],
+  "errors": [],
+  "localAssetsOnly": true
+}

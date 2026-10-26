@@ -107,3 +107,69 @@ These checks establish the stated computational and UI behavior only. Separate
 cold teaching review and any actual learner teach-back remain pending.
 `tests/evidence/candidate.json` freezes source/test/provenance and shared-asset
 hashes for the reviewer; it is not an acceptance record.
+
+## 2026-10-26 new candidate: 920-COPY-R1 — fixed awaiting review
+
+This appendix concerns the owner-dispatched footer repair only. Historical checks
+and acceptance remain historical; separate fresh review must close 920-COPY-R1.
+No commit, registration, deployment, service change or review-report edit occurred.
+
+Fix mapping: **920-COPY-R1** → remove `index.html` footer and unused bilingual
+`copy.js` `foot` entry; bump only the copy cache query to v2. No replacement
+status or acceptance claim. Exact diff: `tests/evidence/copy-r1/runtime.diff`.
+`before.json` and `source-check.json` bind the original snapshot and before/after
+SHA-256 values. All seven original runtime files matched the report's source
+snapshot before editing. The five protected algorithm/source/style files and
+`lesson-entry.json` retain their exact bytes. All 72 retained copy pairs equal
+the base; no duplicate keys or remaining footer consumer. Metadata complexity
+remains one nonempty string covering time and space.
+
+Commands from the repository root (browser environment supplied NODE_PATH and
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH; preview already served at port 18770):
+
+- `node leetcode/920/tests/copy-r1.cjs`: exit 1 on original footer, preserved in
+  `tests/evidence/copy-r1/red.txt`; exit 0 after repair, `green.txt`. This is a
+  red-capable browser regression, not a text-only grep.
+- `PREVIEW_ROOT=http://127.0.0.1:18770 OUTPUT_DIR="$PWD/leetcode/920/tests/evidence/copy-r1" node leetcode/920/tests/browser.cjs`:
+  exit 0, 38 state observations, 20 screenshots, no console/page/asset errors.
+  See `browser-run.txt` and `browser.json` in that directory.
+- `python3 -B scripts/register_leetcode_lesson.py 920 --validate-only`:
+  exit 0, no stdout/stderr, recorded in `preflight.txt` and `source-check.json`.
+  This was the non-mutating preflight, not registration.
+- `git diff --check -- leetcode/920`: exit 0.
+
+Focused browser evidence `focused-browser.json` records zh→en→zh at 320px after
+computing dp[2][2]=2 and revealing the separate answer 18. Table/choice/reveal
+state persists. Exact old footer strings and element are absent; rendered `sim`,
+`p4`, `boundaries` match their base translations. Tab order remains Copy → Download
+→ #629 → #552. Main/body bottoms coincide, with no orphan gap or horizontal
+page overflow. Author visually inspected `page-end-320-en-1.png`,
+`page-end-320-zh-2.png`, `page-end-zoom200-en.png` and
+`page-end-zoom200-zh.png`: costs, boundary explanations and related links remain
+readable, with ordinary final-section padding. Native Chromium tabs.setZoom(2)
+was verified at devicePixelRatio=2 and innerWidth=640 in a 1280px window.
+
+Preserved rendered-contract checks include complete bilingual recurrence operands,
+source counts/current-cell labels at dp[2][2], initial/end/rewind/replay for all
+presets, exact results, quiz reveal/change and locale persistence. There is no
+separate cumulative-work metric or optimization-candidate maximum in this lesson;
+DP counts are prefixes, row i is plays, column j is used songs. No recursive
+branch or new related link was introduced. Browser matrix covers widths 320,
+390, 736 and 1440 in both locales plus native 200% zoom.
+
+Canonical Python was executed for the three official examples and fresh
+(3,4,1)→18; interface matched the stored official Python3 snippet. Python is the
+preferred faithful interface; no language-contract.json or supportedLanguages
+override exists to omit it. Exact source/mirror pair read from registration
+policy: `solution.py` / `python-code.js` / `PYTHON_SOURCE`. Mirror decoding,
+rendered textContent, successful clipboard, downloaded bytes and offline display
+match the complete source including its final newline. Native Linux Control+C
+fallback transferred the full source twice per locale, each attempt preceded by
+a distinct sentinel write and verified readback. Existing broad numerical suites
+were not rerun for this prose deletion. `source-check.json` records the small
+Python execution, source parity and unchanged-file checks.
+
+Frozen identity: `tests/evidence/copy-r1/candidate.json` records hashes for this
+lesson candidate, including test/evidence files, with a separate aggregate runtime
+identity. This is author self-check evidence and readiness for separate re-review,
+not independent closure, public delivery, LeetCode submission or learner testing.
