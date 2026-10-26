@@ -1,12 +1,14 @@
 {
   "developer": "Codex",
-  "edition": "codex-galaxy-20261026-v1",
+  "edition": "codex-galaxy-signal-connector-20261026",
   "kind": "revised",
-  "sourceRevision": "d8b1b2d7ded7f04990e992b232372bacc9495dad",
+  "sourceRevision": "af4141a8d81f76e21c38ac9f5d9cc58e37ed9a78",
   "scope": {
-    "zh": "知识地图的三维展示、图距离布局、可访问导航与回退",
-    "en": "Atlas 3D presentation, graph-distance layout, accessible navigation and fallback"
+    "zh": "三维知识星图、信号任务入口与返回上下文",
+    "en": "3D knowledge galaxy, signal-task entry and return context"
   },
   "originalAuthorship": "existing atlas contributions retained; galaxy presentation developed with Codex",
-  "path": "atlas/galaxy.html"
+  "path": "atlas/galaxy.html",
+  "integrationRevision": "c3445f66a3e666acd557a04a7194c9568a383c35",
+  "previousSourceRevision": "d8b1b2d7ded7f04990e992b232372bacc9495dad"
 }

@@ -1,12 +1,14 @@
 {
-  "edition": "codex-galaxy-20261026-v1",
+  "edition": "codex-galaxy-signal-connector-20261026",
   "developer": "Codex",
   "model": "exact model unavailable",
-  "scope": "3D galaxy presentation, deterministic graph embedding, bilingual interaction and feature tests",
+  "scope": "Existing3D galaxy plus data-derived signal-task navigation and bounded locale/history preservation",
   "retainedContributions": "Existing atlas graph, explanations, evidence and original contributors; existing vendored Three.js and OrbitControls",
-  "baseRevision": "93346e21",
-  "sourceRevision": "d8b1b2d7ded7f04990e992b232372bacc9495dad",
-  "independentReview": "pending integration review",
-  "publication": "not deployed by this worker",
-  "sourceUrl": "https://github.com/flyfy1/knowledge-vis/commit/d8b1b2d7ded7f04990e992b232372bacc9495dad"
+  "baseRevision": "032485d36b90c0f7b56142d56fc6aa490fda9828",
+  "sourceRevision": "af4141a8d81f76e21c38ac9f5d9cc58e37ed9a78",
+  "independentReview": "Scoped design/code-state review and actual browser regression evidence in specs/reviews/galaxy-signal-connector-20261026",
+  "publication": "Consult visual-release.json; source metadata does not assert publication",
+  "sourceUrl": "https://github.com/flyfy1/knowledge-vis/commit/af4141a8d81f76e21c38ac9f5d9cc58e37ed9a78",
+  "originalSourceRevision": "d8b1b2d7ded7f04990e992b232372bacc9495dad",
+  "originalBaseRevision": "93346e21"
 }

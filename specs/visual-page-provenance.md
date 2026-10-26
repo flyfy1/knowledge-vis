@@ -51,3 +51,5 @@ Records may explicitly provide a safe repository-relative HTML `path` (Galaxy is
 LTI S2 audio adds the21st evidenced revised edition, source78c9aaab96d0cee3efde398d3d73ad804e408127. This credits the bounded audition/lifecycle revision, not original course authorship. See [LTI spec](../lti/BRIEF.md) and its independent reviews.
 
 Atlas signal-route revision refreshes the existing Atlas record to97c65af4a90e0dd86914f50750ec3bd44f8f40ba, retaining earlier atlas/3D/eigen contributions. The inventory stays21; no unrelated page is relabelled. [Route spec](atlas-signal-path.md) and its evidence identify this bounded revision.
+
+The Galaxy→signal connector refreshes Atlas and Galaxy toaf4141a8d81f76e21c38ac9f5d9cc58e37ed9a78 with matching scoped editions. Original3D and integration links are retained; inventory remains21. Feature metadata directs publication checks to visual-release.json instead of retaining a stale worker deployment assertion. See [connector spec](galaxy-signal-connector.md).

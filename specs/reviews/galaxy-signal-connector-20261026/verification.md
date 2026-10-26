@@ -59,3 +59,8 @@ No production version is inferred from a successful main push.
 Supported current-Mac usage read12:02:24UTC: weekly10080min used7%, remaining93%,
 reset2026-11-02T06:08:19Z; five-hour data unavailable. Above user's20%stopline;
 no extra credits/newaccount/newprovider/newpermissions.
+
+Feature source:af4141a8d81f76e21c38ac9f5d9cc58e37ed9a78. After refreshing
+Atlas/Galaxy edition metadata,21-record provenance core and final390 EN/ZH header/
+connector/focused-arrival/Back smoke passed. Original3D and integration source
+links are retained. Main/publication status remains a separate delivery record.
