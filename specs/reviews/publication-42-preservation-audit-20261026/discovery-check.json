@@ -1,0 +1,30 @@
+{
+  "derivedRegistryExactlyTransformsCanonical": true,
+  "registryCount": 159,
+  "derived42": {
+    "id": 42,
+    "title": {
+      "zh": "\u63a5\u96e8\u6c34",
+      "en": "Trapping Rain Water"
+    },
+    "desc": {
+      "zh": "left\u3001right \u56f4\u4f4f\u5c1a\u672a\u7ed3\u7b97\u533a\u57df\u3002left_max \u5305\u542b\u4ece\u8d77\u70b9\u5230 left \u7684\u6700\u9ad8\u5899\uff0cright_max \u5305\u542b\u4ece right \u5230\u672b\u5c3e\u7684\u6700\u9ad8\u5899\uff1b\u5148\u628a\u5f53\u524d\u4e24\u7aef\u67f1\u5b50\u7eb3\u5165\u6700\u5927\u503c\uff0c\u518d\u6bd4\u8f83\u3002",
+      "en": "left and right bound the unsettled region. left_max is the highest wall through left, and right_max the highest from right to the end. Include the current endpoint bars before comparing these maxima."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "\u53cc\u6307\u9488\u8fb9\u754c",
+        "en": "Two-pointer bounds"
+      }
+    ],
+    "path": "42-codex/",
+    "leetcodeUrl": "https://leetcode.com/problems/trapping-rain-water/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  "collectionOnlyRegistryVersionDiffers": true,
+  "collectionCacheMatchesDerivedHash": true,
+  "allDerivedDestinationsExist": true,
+  "publisherSha": "7292c88e2ae035667a1bc723b076fb3d8d3d8562dc8428f3f66f74dc60f764d8"
+}

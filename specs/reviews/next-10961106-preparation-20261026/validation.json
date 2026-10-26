@@ -1,0 +1,24 @@
+{
+  "preparedAt": "2026-10-26T14:19:00.900371+00:00",
+  "status": "dispatcher-reference-only",
+  "worktree": "/Users/songyy/.codex/worktrees/leetcode-capacity-recovery/knowledge-vis",
+  "oracleCommand": "python3 -B specs/reviews/next-10961106-preparation-20261026/check-examples.py",
+  "braceCases": 11,
+  "booleanCases": 13,
+  "smallTruthTableChecks": 30,
+  "accessBlockers": [],
+  "authorContextInjection": false,
+  "runtimeMutation": false,
+  "files": {
+    "1096-official-access.json": "e6350954203a04352127dbb728853a90ffe0d5daa046bd1162eaca7041fc7310",
+    "1096-official-response.json": "c1e3d7383b3ca06df0610dfa88168c8e3eb587fefa5744ba883c669b007bd846",
+    "1096.md": "f26cc36c5a96b3f417cfd5f50395962392933b0b4524e054a8cdd3b3548ffc2d",
+    "1106-official-access.json": "8955457b3fbf768426fd275b85367b74e0ecf46265714884115f3e48daf85f52",
+    "1106-official-response.json": "982a11dd076140046acb5682e230e7e13944ef18890f02b6b69b0ee2747f4bdc",
+    "1106.md": "672f20418b49f13b7914d9e7d8ce0725aba82402679635df57b89b569b8ab78f",
+    "README.md": "90c603161da66268808527ba960599d1ce97b236a9e14181a2e639738101949a",
+    "check-examples.py": "6df8b51b6e31fbe04aa36401edb4f45b911cf6b9106285df85ad76ead087a742",
+    "example-checks.json": "c68c5e57c49abd2c04000877a608d1cb5522a0cab40bb0feb299830bde8a6562",
+    "target-detail.json": "cea39ceb25cb98bb9a07552ef74f2af3eac4418ebd9905d19a7d1c75dc7550c5"
+  }
+}

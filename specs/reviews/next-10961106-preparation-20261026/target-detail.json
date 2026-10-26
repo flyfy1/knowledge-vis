@@ -1,0 +1,48 @@
+{
+  "observedAt": "2026-10-26T14:13:23.351654+00:00",
+  "readOnly": true,
+  "centralHead": "5cf73ee858d9a8938b55206c867233a8397d60f6",
+  "current": {
+    "problem_id": "1092",
+    "stage": "review",
+    "started_at": "2026-10-26T14:08:25.524831+00:00",
+    "run_id": "1092-review-3b54521cfb62"
+  },
+  "queueLength": 984,
+  "queueSha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+  "following1092": [
+    "1095",
+    "1096",
+    "1097",
+    "1106",
+    "1121",
+    "1125",
+    "1127"
+  ],
+  "targets": [
+    {
+      "id": "1096",
+      "queueIndex": 221,
+      "problemRecord": null,
+      "runIds": [],
+      "runDirectories": [],
+      "reservations": [],
+      "lessonExists": false,
+      "trackedLessonPaths": [],
+      "lanePaths": [],
+      "laneBranches": []
+    },
+    {
+      "id": "1106",
+      "queueIndex": 223,
+      "problemRecord": null,
+      "runIds": [],
+      "runDirectories": [],
+      "reservations": [],
+      "lessonExists": false,
+      "trackedLessonPaths": [],
+      "lanePaths": [],
+      "laneBranches": []
+    }
+  ]
+}

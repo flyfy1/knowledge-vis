@@ -1,0 +1,94 @@
+{
+  "fresh_cases": [
+    [
+      "ba",
+      "ab",
+      "bab",
+      3
+    ],
+    [
+      "aa",
+      "ba",
+      "aba",
+      3
+    ],
+    [
+      "abc",
+      "bca",
+      "abca",
+      4
+    ],
+    [
+      "a",
+      "a",
+      "a",
+      1
+    ],
+    [
+      "a",
+      "b",
+      "ab",
+      2
+    ],
+    [
+      "aaaa",
+      "aa",
+      "aaaa",
+      4
+    ],
+    [
+      "abc",
+      "def",
+      "abcdef",
+      6
+    ],
+    [
+      "",
+      "abc",
+      "abc",
+      3
+    ],
+    [
+      "abc",
+      "",
+      "abc",
+      3
+    ],
+    [
+      "",
+      "",
+      "",
+      0
+    ]
+  ],
+  "canonical_aa_ba_loop_heads": [
+    [
+      0,
+      0,
+      "",
+      3
+    ],
+    [
+      1,
+      0,
+      "a",
+      2
+    ],
+    [
+      1,
+      1,
+      "ab",
+      1
+    ],
+    [
+      2,
+      2,
+      "aba",
+      0
+    ]
+  ],
+  "reviewer_harness_correction": "Initial harness wrongly required baa specifically; both baa and actual aba are optimal. Corrected tie-rule expectation to aba, preserving minimum-length and subsequence assertions.",
+  "max_identical": 1000,
+  "max_disjoint": 2000,
+  "sha256": "14d22228824f7a8e8268b546be296e51753fc2745ad53354123a58ab5e1b9868"
+}

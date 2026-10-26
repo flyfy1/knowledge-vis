@@ -1,0 +1,784 @@
+{
+  "status": "passed",
+  "method": "Explicit valid grammar trees independently serialized to each stated original input; tiny bag/product or truth-table semantics checked against hand-written expected results. No parsing/cursor implementation is proposed or validated.",
+  "braceCases": [
+    {
+      "case": "official-1",
+      "expression": "{a,b}{c,{d,e}}",
+      "grammarTree": [
+        "concat",
+        [
+          [
+            "union",
+            [
+              "a",
+              "b"
+            ]
+          ],
+          [
+            "union",
+            [
+              "c",
+              [
+                "union",
+                [
+                  "d",
+                  "e"
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "derivationWords": [
+        "ac",
+        "ad",
+        "ae",
+        "bc",
+        "bd",
+        "be"
+      ],
+      "distinctSortedResult": [
+        "ac",
+        "ad",
+        "ae",
+        "bc",
+        "bd",
+        "be"
+      ]
+    },
+    {
+      "case": "official-2",
+      "expression": "{{a,z},a{b,c},{ab,z}}",
+      "grammarTree": [
+        "union",
+        [
+          [
+            "union",
+            [
+              "a",
+              "z"
+            ]
+          ],
+          [
+            "concat",
+            [
+              "a",
+              [
+                "union",
+                [
+                  "b",
+                  "c"
+                ]
+              ]
+            ]
+          ],
+          [
+            "union",
+            [
+              [
+                "concat",
+                [
+                  "a",
+                  "b"
+                ]
+              ],
+              "z"
+            ]
+          ]
+        ]
+      ],
+      "derivationWords": [
+        "a",
+        "z",
+        "ab",
+        "ac",
+        "ab",
+        "z"
+      ],
+      "distinctSortedResult": [
+        "a",
+        "ab",
+        "ac",
+        "z"
+      ]
+    },
+    {
+      "case": "single-letter",
+      "expression": "a",
+      "grammarTree": "a",
+      "derivationWords": [
+        "a"
+      ],
+      "distinctSortedResult": [
+        "a"
+      ]
+    },
+    {
+      "case": "adjacent-letters",
+      "expression": "ab",
+      "grammarTree": [
+        "concat",
+        [
+          "a",
+          "b"
+        ]
+      ],
+      "derivationWords": [
+        "ab"
+      ],
+      "distinctSortedResult": [
+        "ab"
+      ]
+    },
+    {
+      "case": "union-idempotence",
+      "expression": "{a,a}",
+      "grammarTree": [
+        "union",
+        [
+          "a",
+          "a"
+        ]
+      ],
+      "derivationWords": [
+        "a",
+        "a"
+      ],
+      "distinctSortedResult": [
+        "a"
+      ]
+    },
+    {
+      "case": "product-not-zip",
+      "expression": "{a,b}{c,d}",
+      "grammarTree": [
+        "concat",
+        [
+          [
+            "union",
+            [
+              "a",
+              "b"
+            ]
+          ],
+          [
+            "union",
+            [
+              "c",
+              "d"
+            ]
+          ]
+        ]
+      ],
+      "derivationWords": [
+        "ac",
+        "ad",
+        "bc",
+        "bd"
+      ],
+      "distinctSortedResult": [
+        "ac",
+        "ad",
+        "bc",
+        "bd"
+      ]
+    },
+    {
+      "case": "whole-union-alternative",
+      "expression": "{ab,c}d",
+      "grammarTree": [
+        "concat",
+        [
+          [
+            "union",
+            [
+              [
+                "concat",
+                [
+                  "a",
+                  "b"
+                ]
+              ],
+              "c"
+            ]
+          ],
+          "d"
+        ]
+      ],
+      "derivationWords": [
+        "abd",
+        "cd"
+      ],
+      "distinctSortedResult": [
+        "abd",
+        "cd"
+      ]
+    },
+    {
+      "case": "prefix-and-suffix",
+      "expression": "a{b,c}d",
+      "grammarTree": [
+        "concat",
+        [
+          "a",
+          [
+            "union",
+            [
+              "b",
+              "c"
+            ]
+          ],
+          "d"
+        ]
+      ],
+      "derivationWords": [
+        "abd",
+        "acd"
+      ],
+      "distinctSortedResult": [
+        "abd",
+        "acd"
+      ]
+    },
+    {
+      "case": "nested-union-dedup",
+      "expression": "{{a,b},{b,c}}",
+      "grammarTree": [
+        "union",
+        [
+          [
+            "union",
+            [
+              "a",
+              "b"
+            ]
+          ],
+          [
+            "union",
+            [
+              "b",
+              "c"
+            ]
+          ]
+        ]
+      ],
+      "derivationWords": [
+        "a",
+        "b",
+        "b",
+        "c"
+      ],
+      "distinctSortedResult": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "case": "distinct-derivations-same-word",
+      "expression": "{a,ab}{bc,c}",
+      "grammarTree": [
+        "concat",
+        [
+          [
+            "union",
+            [
+              "a",
+              [
+                "concat",
+                [
+                  "a",
+                  "b"
+                ]
+              ]
+            ]
+          ],
+          [
+            "union",
+            [
+              [
+                "concat",
+                [
+                  "b",
+                  "c"
+                ]
+              ],
+              "c"
+            ]
+          ]
+        ]
+      ],
+      "derivationWords": [
+        "abc",
+        "ac",
+        "abbc",
+        "abc"
+      ],
+      "distinctSortedResult": [
+        "abbc",
+        "abc",
+        "ac"
+      ]
+    },
+    {
+      "case": "lexical-not-length-order",
+      "expression": "{z,aa,a}",
+      "grammarTree": [
+        "union",
+        [
+          "z",
+          [
+            "concat",
+            [
+              "a",
+              "a"
+            ]
+          ],
+          "a"
+        ]
+      ],
+      "derivationWords": [
+        "z",
+        "aa",
+        "a"
+      ],
+      "distinctSortedResult": [
+        "a",
+        "aa",
+        "z"
+      ]
+    }
+  ],
+  "booleanCases": [
+    {
+      "case": "official-1",
+      "expression": "&(|(f))",
+      "grammarTree": [
+        "&",
+        [
+          [
+            "|",
+            [
+              "f"
+            ]
+          ]
+        ]
+      ],
+      "result": false,
+      "groupTruthWitnesses": [
+        {
+          "expression": "|(f)",
+          "operator": "|",
+          "operandValues": [
+            false
+          ],
+          "result": false
+        },
+        {
+          "expression": "&(|(f))",
+          "operator": "&",
+          "operandValues": [
+            false
+          ],
+          "result": false
+        }
+      ]
+    },
+    {
+      "case": "official-2",
+      "expression": "|(f,f,f,t)",
+      "grammarTree": [
+        "|",
+        [
+          "f",
+          "f",
+          "f",
+          "t"
+        ]
+      ],
+      "result": true,
+      "groupTruthWitnesses": [
+        {
+          "expression": "|(f,f,f,t)",
+          "operator": "|",
+          "operandValues": [
+            false,
+            false,
+            false,
+            true
+          ],
+          "result": true
+        }
+      ]
+    },
+    {
+      "case": "official-3",
+      "expression": "!(&(f,t))",
+      "grammarTree": [
+        "!",
+        [
+          [
+            "&",
+            [
+              "f",
+              "t"
+            ]
+          ]
+        ]
+      ],
+      "result": true,
+      "groupTruthWitnesses": [
+        {
+          "expression": "&(f,t)",
+          "operator": "&",
+          "operandValues": [
+            false,
+            true
+          ],
+          "result": false
+        },
+        {
+          "expression": "!(&(f,t))",
+          "operator": "!",
+          "operandValues": [
+            false
+          ],
+          "result": true
+        }
+      ]
+    },
+    {
+      "case": "true-literal",
+      "expression": "t",
+      "grammarTree": "t",
+      "result": true,
+      "groupTruthWitnesses": []
+    },
+    {
+      "case": "false-literal",
+      "expression": "f",
+      "grammarTree": "f",
+      "result": false,
+      "groupTruthWitnesses": []
+    },
+    {
+      "case": "not-false",
+      "expression": "!(f)",
+      "grammarTree": [
+        "!",
+        [
+          "f"
+        ]
+      ],
+      "result": true,
+      "groupTruthWitnesses": [
+        {
+          "expression": "!(f)",
+          "operator": "!",
+          "operandValues": [
+            false
+          ],
+          "result": true
+        }
+      ]
+    },
+    {
+      "case": "double-negation",
+      "expression": "!(!(t))",
+      "grammarTree": [
+        "!",
+        [
+          [
+            "!",
+            [
+              "t"
+            ]
+          ]
+        ]
+      ],
+      "result": true,
+      "groupTruthWitnesses": [
+        {
+          "expression": "!(t)",
+          "operator": "!",
+          "operandValues": [
+            true
+          ],
+          "result": false
+        },
+        {
+          "expression": "!(!(t))",
+          "operator": "!",
+          "operandValues": [
+            false
+          ],
+          "result": true
+        }
+      ]
+    },
+    {
+      "case": "unary-and",
+      "expression": "&(t)",
+      "grammarTree": [
+        "&",
+        [
+          "t"
+        ]
+      ],
+      "result": true,
+      "groupTruthWitnesses": [
+        {
+          "expression": "&(t)",
+          "operator": "&",
+          "operandValues": [
+            true
+          ],
+          "result": true
+        }
+      ]
+    },
+    {
+      "case": "unary-or",
+      "expression": "|(f)",
+      "grammarTree": [
+        "|",
+        [
+          "f"
+        ]
+      ],
+      "result": false,
+      "groupTruthWitnesses": [
+        {
+          "expression": "|(f)",
+          "operator": "|",
+          "operandValues": [
+            false
+          ],
+          "result": false
+        }
+      ]
+    },
+    {
+      "case": "mixed-groups",
+      "expression": "&(|(f,t),!(f))",
+      "grammarTree": [
+        "&",
+        [
+          [
+            "|",
+            [
+              "f",
+              "t"
+            ]
+          ],
+          [
+            "!",
+            [
+              "f"
+            ]
+          ]
+        ]
+      ],
+      "result": true,
+      "groupTruthWitnesses": [
+        {
+          "expression": "|(f,t)",
+          "operator": "|",
+          "operandValues": [
+            false,
+            true
+          ],
+          "result": true
+        },
+        {
+          "expression": "!(f)",
+          "operator": "!",
+          "operandValues": [
+            false
+          ],
+          "result": true
+        },
+        {
+          "expression": "&(|(f,t),!(f))",
+          "operator": "&",
+          "operandValues": [
+            true,
+            true
+          ],
+          "result": true
+        }
+      ]
+    },
+    {
+      "case": "false-and-still-has-following-outer-sibling",
+      "expression": "|(&(f,!(f)),&(t,t))",
+      "grammarTree": [
+        "|",
+        [
+          [
+            "&",
+            [
+              "f",
+              [
+                "!",
+                [
+                  "f"
+                ]
+              ]
+            ]
+          ],
+          [
+            "&",
+            [
+              "t",
+              "t"
+            ]
+          ]
+        ]
+      ],
+      "result": true,
+      "groupTruthWitnesses": [
+        {
+          "expression": "!(f)",
+          "operator": "!",
+          "operandValues": [
+            false
+          ],
+          "result": true
+        },
+        {
+          "expression": "&(f,!(f))",
+          "operator": "&",
+          "operandValues": [
+            false,
+            true
+          ],
+          "result": false
+        },
+        {
+          "expression": "&(t,t)",
+          "operator": "&",
+          "operandValues": [
+            true,
+            true
+          ],
+          "result": true
+        },
+        {
+          "expression": "|(&(f,!(f)),&(t,t))",
+          "operator": "|",
+          "operandValues": [
+            false,
+            true
+          ],
+          "result": true
+        }
+      ]
+    },
+    {
+      "case": "true-or-still-has-following-outer-sibling",
+      "expression": "&(|(t,!(t)),f)",
+      "grammarTree": [
+        "&",
+        [
+          [
+            "|",
+            [
+              "t",
+              [
+                "!",
+                [
+                  "t"
+                ]
+              ]
+            ]
+          ],
+          "f"
+        ]
+      ],
+      "result": false,
+      "groupTruthWitnesses": [
+        {
+          "expression": "!(t)",
+          "operator": "!",
+          "operandValues": [
+            true
+          ],
+          "result": false
+        },
+        {
+          "expression": "|(t,!(t))",
+          "operator": "|",
+          "operandValues": [
+            true,
+            false
+          ],
+          "result": true
+        },
+        {
+          "expression": "&(|(t,!(t)),f)",
+          "operator": "&",
+          "operandValues": [
+            true,
+            false
+          ],
+          "result": false
+        }
+      ]
+    },
+    {
+      "case": "nested-not-of-and",
+      "expression": "!(&(t,|(f,t)))",
+      "grammarTree": [
+        "!",
+        [
+          [
+            "&",
+            [
+              "t",
+              [
+                "|",
+                [
+                  "f",
+                  "t"
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "result": false,
+      "groupTruthWitnesses": [
+        {
+          "expression": "|(f,t)",
+          "operator": "|",
+          "operandValues": [
+            false,
+            true
+          ],
+          "result": true
+        },
+        {
+          "expression": "&(t,|(f,t))",
+          "operator": "&",
+          "operandValues": [
+            true,
+            true
+          ],
+          "result": true
+        },
+        {
+          "expression": "!(&(t,|(f,t)))",
+          "operator": "!",
+          "operandValues": [
+            true
+          ],
+          "result": false
+        }
+      ]
+    }
+  ],
+  "booleanTruthTableChecks": 30,
+  "largestTruthTableArity": 3
+}
