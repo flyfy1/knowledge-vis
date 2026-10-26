@@ -1,0 +1,7 @@
+Author browser self-check, 2026-10-26, initial candidate.
+Command: node leetcode/1092/tests/browser.cjs
+Failed selected-label budget at 320px, English, CSS zoom 1:
+label aaaaaaaa / aaaaaaaa; textWidth 157.8882293701172, client width 178, padding 30, arrow reserve 20.
+Required 207.888 > 178. No claim that this predicate alone proves visible clipping.
+Repair candidate: abbreviate repeated-letter preset as a×8/a×8 (full inputs remain adjacent), remove unnecessary spaces from input pair labels, expand available narrow content width with local 8px gutters. Preserve unchanged width-budget assertion and arrow reserve.
+Second run after label repair: at English 320px CSS zoom 2, document width 444 > 320. The table itself is contained (client 124, scroll 529, cell 96 physical px); select label now fits (60.512 +30+20 <124). Repair: allow header flex wrapping, heading word wrapping, and official-link wrapping. Retain overflow predicate unchanged.
