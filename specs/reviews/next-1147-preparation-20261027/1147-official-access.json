@@ -1,0 +1,46 @@
+{
+  "observedAt": "2026-10-26T16:04:31.843151+00:00",
+  "officialUrl": "https://leetcode.com/problems/longest-chunked-palindrome-decomposition/",
+  "requestMethod": "GET",
+  "requestUrl": "https://leetcode.com/graphql/?query=query+questionData%28%24titleSlug%3A+String%21%29+%7B+question%28titleSlug%3A+%24titleSlug%29+%7B+questionId+questionFrontendId+title+titleSlug+content+difficulty+isPaidOnly+exampleTestcases+sampleTestCase+metaData+codeSnippets+%7B+lang+langSlug+code+%7D+topicTags+%7B+name+slug+%7D+%7D+%7D&variables=%7B%22titleSlug%22%3A%22longest-chunked-palindrome-decomposition%22%7D&operationName=questionData",
+  "requestCount": 1,
+  "access": "ordinary public unauthenticated GraphQL; no bypass",
+  "httpStatus": 200,
+  "responseFile": "1147-official-response.json",
+  "responseSha256": "c22ad29aeb52699936b25f8329768f14de54f21308c1f95dd9e1c9bf68a0754e",
+  "responseBytes": 5258,
+  "frozenCatalogSnapshotAt": "2026-10-18T08:59:47.124517+00:00",
+  "catalogSegment": [
+    {
+      "id": 1125,
+      "slug": "smallest-sufficient-team",
+      "title": "Smallest Sufficient Team",
+      "paidOnly": false,
+      "officialUrl": "https://leetcode.com/problems/smallest-sufficient-team/",
+      "categories": [
+        "algorithms"
+      ]
+    },
+    {
+      "id": 1127,
+      "slug": "user-purchase-platform",
+      "title": "User Purchase Platform",
+      "paidOnly": true,
+      "officialUrl": "https://leetcode.com/problems/user-purchase-platform/",
+      "categories": [
+        "database",
+        "pandas"
+      ]
+    },
+    {
+      "id": 1147,
+      "slug": "longest-chunked-palindrome-decomposition",
+      "title": "Longest Chunked Palindrome Decomposition",
+      "paidOnly": false,
+      "officialUrl": "https://leetcode.com/problems/longest-chunked-palindrome-decomposition/",
+      "categories": [
+        "algorithms"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "preparedAt": "2026-10-26T16:06:48.876269+00:00",
+  "status": "dispatcher-reference-only",
+  "oracleCommand": "python3 -B check-examples.py",
+  "handCases": 12,
+  "officialWitnessChecks": 3,
+  "binaryStrings": 254,
+  "cutPartitions": 10922,
+  "accessBlockers": [],
+  "runtimeMutation": false,
+  "authorContextInjection": false,
+  "files": {
+    "1147-official-access.json": "52edb934deeec3656dc471957a4b0e8cc94ac1d72f525f55bcaa3a91fe529506",
+    "1147-official-response.json": "c22ad29aeb52699936b25f8329768f14de54f21308c1f95dd9e1c9bf68a0754e",
+    "1147.md": "c850c96fa0e20acbf6a7707fdabe406dde23cf831d77107336ec0ccfa08a171d",
+    "README.md": "3a50a23f2d88606f526d84259b9b8ffee4f9898706eceeafa3cc8c28bf2ce08b",
+    "check-examples.py": "a0fec39b7511d25597c4f92a3a6529f6731aad9bfff20ea11ff20bf1fd65c6ec",
+    "example-checks.json": "43bb10b4e7307c609eaee512d8c83833daf143c9afdf7a610956a5369bc00a10",
+    "target-detail.json": "a5bf7ebf3a3bd001e7d9933e892b706b23bb24c68adf338e3946cb0f3d0b9048"
+  }
+}

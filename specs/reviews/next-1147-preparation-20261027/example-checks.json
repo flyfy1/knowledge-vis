@@ -1,0 +1,258 @@
+{
+  "scope": "Source/semantic preparation only; not a candidate implementation or lesson acceptance.",
+  "handCases": [
+    {
+      "text": "a",
+      "handWorkedChunks": [
+        "a"
+      ],
+      "maximumChunks": 1,
+      "allOptimalPartitions": [
+        [
+          "a"
+        ]
+      ],
+      "partitionsExamined": 1
+    },
+    {
+      "text": "aa",
+      "handWorkedChunks": [
+        "a",
+        "a"
+      ],
+      "maximumChunks": 2,
+      "allOptimalPartitions": [
+        [
+          "a",
+          "a"
+        ]
+      ],
+      "partitionsExamined": 2
+    },
+    {
+      "text": "aaaa",
+      "handWorkedChunks": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "maximumChunks": 4,
+      "allOptimalPartitions": [
+        [
+          "a",
+          "a",
+          "a",
+          "a"
+        ]
+      ],
+      "partitionsExamined": 8
+    },
+    {
+      "text": "abc",
+      "handWorkedChunks": [
+        "abc"
+      ],
+      "maximumChunks": 1,
+      "allOptimalPartitions": [
+        [
+          "abc"
+        ]
+      ],
+      "partitionsExamined": 4
+    },
+    {
+      "text": "aba",
+      "handWorkedChunks": [
+        "a",
+        "b",
+        "a"
+      ],
+      "maximumChunks": 3,
+      "allOptimalPartitions": [
+        [
+          "a",
+          "b",
+          "a"
+        ]
+      ],
+      "partitionsExamined": 4
+    },
+    {
+      "text": "abba",
+      "handWorkedChunks": [
+        "a",
+        "b",
+        "b",
+        "a"
+      ],
+      "maximumChunks": 4,
+      "allOptimalPartitions": [
+        [
+          "a",
+          "b",
+          "b",
+          "a"
+        ]
+      ],
+      "partitionsExamined": 8
+    },
+    {
+      "text": "abca",
+      "handWorkedChunks": [
+        "a",
+        "bc",
+        "a"
+      ],
+      "maximumChunks": 3,
+      "allOptimalPartitions": [
+        [
+          "a",
+          "bc",
+          "a"
+        ]
+      ],
+      "partitionsExamined": 8
+    },
+    {
+      "text": "abcab",
+      "handWorkedChunks": [
+        "ab",
+        "c",
+        "ab"
+      ],
+      "maximumChunks": 3,
+      "allOptimalPartitions": [
+        [
+          "ab",
+          "c",
+          "ab"
+        ]
+      ],
+      "partitionsExamined": 16
+    },
+    {
+      "text": "abcabc",
+      "handWorkedChunks": [
+        "abc",
+        "abc"
+      ],
+      "maximumChunks": 2,
+      "allOptimalPartitions": [
+        [
+          "abc",
+          "abc"
+        ]
+      ],
+      "partitionsExamined": 32
+    },
+    {
+      "text": "abcxabc",
+      "handWorkedChunks": [
+        "abc",
+        "x",
+        "abc"
+      ],
+      "maximumChunks": 3,
+      "allOptimalPartitions": [
+        [
+          "abc",
+          "x",
+          "abc"
+        ]
+      ],
+      "partitionsExamined": 64
+    },
+    {
+      "text": "volvo",
+      "handWorkedChunks": [
+        "vo",
+        "l",
+        "vo"
+      ],
+      "maximumChunks": 3,
+      "allOptimalPartitions": [
+        [
+          "vo",
+          "l",
+          "vo"
+        ]
+      ],
+      "partitionsExamined": 16
+    },
+    {
+      "text": "merchant",
+      "handWorkedChunks": [
+        "merchant"
+      ],
+      "maximumChunks": 1,
+      "allOptimalPartitions": [
+        [
+          "merchant"
+        ]
+      ],
+      "partitionsExamined": 128
+    }
+  ],
+  "officialWitnesses": [
+    {
+      "text": "ghiabcdefhelloadamhelloabcdefghi",
+      "chunks": [
+        "ghi",
+        "abcdef",
+        "hello",
+        "adam",
+        "hello",
+        "abcdef",
+        "ghi"
+      ],
+      "officialExpectedCount": 7,
+      "independentMaximumChecked": false
+    },
+    {
+      "text": "merchant",
+      "chunks": [
+        "merchant"
+      ],
+      "officialExpectedCount": 1,
+      "independentMaximumChecked": true
+    },
+    {
+      "text": "antaprezatepzapreanta",
+      "chunks": [
+        "a",
+        "nt",
+        "a",
+        "pre",
+        "za",
+        "tep",
+        "za",
+        "pre",
+        "a",
+        "nt",
+        "a"
+      ],
+      "officialExpectedCount": 11,
+      "independentMaximumChecked": false
+    }
+  ],
+  "finiteRecurrenceEvidence": {
+    "alphabet": "ab",
+    "lengths": [
+      1,
+      7
+    ],
+    "stringsChecked": 254,
+    "partitionsExamined": 10922,
+    "allOptimalOuterChunksShortest": true
+  },
+  "longerFirstMatchCounterexample": {
+    "text": "aaaa",
+    "longerChunks": [
+      "aa",
+      "aa"
+    ],
+    "maximumChunks": 4
+  },
+  "emptyChunksRejected": true
+}
