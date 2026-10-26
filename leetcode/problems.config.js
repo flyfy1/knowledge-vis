@@ -4775,6 +4775,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) time; O(n) auxiliary space"
   },
   {
+    "id": 1157,
+    "title": {
+      "zh": "子数组中占绝大多数的元素",
+      "en": "Online Majority Element In Subarray"
+    },
+    "desc": {
+      "zh": "抵消异值筛选候选，用区间摘要与位置表精确验证。",
+      "en": "Cancel unlike pairs, combine range summaries, and verify a candidate with position lists."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "线段树",
+        "en": "Segment tree"
+      },
+      {
+        "zh": "多数投票",
+        "en": "Majority vote"
+      },
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      }
+    ],
+    "path": "1157/",
+    "leetcodeUrl": "https://leetcode.com/problems/online-majority-element-in-subarray/",
+    "language": "Python",
+    "complexity": "O(n) construction time and space; O(log n) time and O(1) extra space per query"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

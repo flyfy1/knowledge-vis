@@ -2141,3 +2141,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Chunk-count invariant | `leetcode/1147/#step3` | Fixed chunks plus the optimal unresolved middle. |
 
 <!-- /leetcode-1147-campaign -->
+
+
+<!-- leetcode-1157-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Strict-majority cancellation | `leetcode/1157/#step2` | Why deleting unlike pairs preserves a strict majority but not its count |
+| Range majority verification | `leetcode/1157/#step3` | Merge segment summaries and count occurrences using sorted position lists |
+
+<!-- /leetcode-1157-campaign -->
