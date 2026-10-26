@@ -1,0 +1,26 @@
+/* Page-local experiment. Reuse the collection palette and layout. */
+.wall-lab { scroll-margin-top: 80px; }
+.wall-lab .wall-inputs { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.wall-lab label { display: block; }
+.wall-lab input[type=range] { width: 100%; min-height: 44px; accent-color: var(--accent); }
+.wall-lab select { width: 100%; }
+.wall-lab button:disabled { opacity: 1; color: var(--muted); background: var(--panel); }
+.wall-lab .wall-chart { display: grid; gap: 4px; grid-template-columns: 24px repeat(var(--columns),minmax(0,1fr)); margin: 20px 0 10px; }
+.wall-column { min-width: 0; text-align: center; border-bottom: 3px solid transparent; }
+.wall-column.selected { border-bottom-color: var(--accent2); }
+.wall-column.boundary { outline: 1px dashed var(--accent); outline-offset: 1px; }
+.wall-column small { display: block; font-size: 12px; overflow-wrap: anywhere; }
+.wall-unit { display: block; height: 24px; margin-bottom: 3px; border: 1px solid var(--line); }
+.wall-unit.solid { background: var(--muted); }
+.wall-unit.water { background: var(--accent); border-color: var(--accent); }
+.wall-unit.level { border-top: 2px dashed var(--accent2); }
+.wall-axis .wall-unit { font-size: 12px; color: var(--muted); border: 0; text-align: right; padding-right: 4px; }
+.wall-lab .wall-state { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+.wall-stat { background: var(--panel2); padding: 10px 12px; }
+.wall-stat span { display: block; color: var(--muted); font-size: 13px; }
+.wall-stat b { font-size: 20px; overflow-wrap: anywhere; }
+.wall-code { padding: 12px; background: var(--bg); margin-top: 16px; }
+.wall-code code { display: block; padding: 6px 8px; overflow-wrap: anywhere; font-size: 13px; }
+.wall-code .active { border-left: 3px solid var(--accent2); color: var(--accent2); background: var(--panel2); }
+#wall-message { min-height: 5em; }
+@media(max-width:560px) { .wall-lab .wall-inputs { grid-template-columns: 1fr; } .wall-stat { padding: 8px; } .wall-stat b { font-size: 18px; } }
