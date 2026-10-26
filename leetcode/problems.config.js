@@ -4749,6 +4749,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(L + n m 2^m) time; O(m 2^m + m) auxiliary space, with m skills, n people, L input skill entries"
   },
   {
+    "id": 1147,
+    "title": {
+      "zh": "段式回文",
+      "en": "Longest Chunked Palindrome Decomposition"
+    },
+    "desc": {
+      "zh": "从 volvo 的手算切块推导最短相等两端的贪心证明。",
+      "en": "Derive why the shortest equal ends maximize the number of chunks."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "1147/",
+    "leetcodeUrl": "https://leetcode.com/problems/longest-chunked-palindrome-decomposition/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(n) auxiliary space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {

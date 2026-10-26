@@ -2131,3 +2131,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Coverage dominance counterexample | `leetcode/1125/#step2` | Explain why largest-skill greedy and equal-size coverage pruning fail. |
 
 <!-- /leetcode-1125-campaign -->
+
+
+<!-- leetcode-1147-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Shortest matching ends | `leetcode/1147/#step3` | Refine longer outer chunks to justify the greedy choice. |
+| Chunk-count invariant | `leetcode/1147/#step3` | Fixed chunks plus the optimal unresolved middle. |
+
+<!-- /leetcode-1147-campaign -->
