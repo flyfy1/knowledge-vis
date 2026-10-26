@@ -319,6 +319,17 @@ while input processing, output materialization, or base-level work remains large
 Use the actual displayed baseline as well as the canonical implementation; a
 correct optimized solution does not make an incorrect baseline explanation valid.
 
+Distinguish per-input relations from unequal parameter caps. In #1125, skill count
+`m <= 16` and people count `n <= 60` do not imply `m < n`: `m=6,n=3`, `m=n=3`
+and `m=16,n=1` are legal. Justify choosing coverage states using the official
+limits (at most `2^16` skill subsets versus potentially `2^60` person subsets),
+not a claim that skills are fewer for every input or that the optimized approach
+is always cheaper per instance. Check both rendered translations against legal
+cases with equal and reversed parameter order. The frozen
+[1125-R1 report](https://github.com/flyfy1/knowledge-vis/blob/a0fd59a2cb63c065402e9acb75569bddff23483b/specs/reviews/1125-review-1-b4279a73.md)
+records this required finding as open; this clarification does not close it or
+establish live-policy adoption.
+
 For example, let n be formula length, A the number of expanded atom entries, and
 d the maximum number of enclosing parentheses, so d=0 without parentheses. An
 expansion baseline still constructs and tallies A entries for `H1000`. For this
