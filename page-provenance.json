@@ -114,14 +114,16 @@
     },
     "sampling": {
       "developer": "Codex",
-      "edition": "codex-20261026",
+      "edition": "codex-sampling-pair-20261026",
       "kind": "revised",
-      "sourceRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "sourceRevision": "752217ab5f3090fb306f9c7d06de4d978896728e",
       "scope": {
-        "zh": "采样、已知频带与显示插值的区别",
-        "en": "Sampling, known bandlimits and display interpolation"
+        "zh": "第2步带符号别名与同时间样点/非样点对账；保留已有带限、插值和奈奎斯特解释",
+        "en": "Step2 signed aliases and same-time sample/nonsample comparison; existing bandlimit, interpolation and Nyquist explanations retained"
       },
-      "originalAuthorship": "not asserted; prior contributions retained"
+      "originalAuthorship": "not asserted; prior contributions retained",
+      "previousRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+      "retainedContributions": "Prior Codex1d90150 and original Muse/Alberto maintenance0cdb1700/clarity27eb5c4b retained; no original whole-course Codex authorship asserted"
     },
     "trig": {
       "developer": "Codex",
