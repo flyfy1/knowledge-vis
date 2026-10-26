@@ -2091,3 +2091,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Supersequence hand calculation | `leetcode/1092/#step1` | Share characters while preserving both input orders. |
 
 <!-- /leetcode-1092-campaign -->
+
+
+<!-- leetcode-1095-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Mountain peak search | `leetcode/1095/#step2` | Derive the peak-containing interval from adjacent values. |
+| Directional binary search | `leetcode/1095/#step3` | Search increasing then decreasing sides to return the smallest index. |
+
+<!-- /leetcode-1095-campaign -->
