@@ -128,6 +128,10 @@ No worker push/deploy. Original dirty checkout remains untouched.
 
 ## Integrated test safety
 
+Current concept-to-task navigation follows [Galaxy signal connector](galaxy-signal-connector.md).
+It adds a contextual route entry over the real graph and preserves the direct lesson
+link; it is not a new physics engine, prerequisite ranking or mastery signal.
+
 Apply the supplied integration patch deliberately in an isolated integration checkout. Browser acceptance tests must only inspect the already-integrated runtime; they must not apply/revert patches or rewrite shared atlas/index/spec files. Preserve concurrent Eigen source corrections and spec-index additions when wiring entries.
 
 Integration keyboard guard: Alt/Ctrl/Meta keyboard combinations retain browser shortcuts; only unmodified camera keys are handled. The explicitly documented Ctrl/Meta+wheel gesture remains a camera zoom action.

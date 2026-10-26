@@ -4,6 +4,8 @@ Start with [WORKFLOW](../WORKFLOW.md), [UI/bilingual policy](../UI-I18N-SPEC.md)
 
 ## Current state
 
+- **Galaxy to signal tasks:** related concept cards keep their direct lessons and offer the matching existing signal-route station, with Galaxy/Atlas locale and Back context. [Connector contract](../specs/galaxy-signal-connector.md); local candidate, publication separately coordinated.
+
 - **Current iteration (38concepts/48relations/11routes):** one signal-fingerprint route connects existing LTI, impulse, convolution and discrete frequency-response experiments with per-station tasks and a sourced representation relation. [Spec](../specs/atlas-signal-path.md). This candidate is not yet a production release; use `/visual-release.json` for actual published status.
 
 - **Historical first production release:**accepted mathematics/physics and signal resources were published to https://visual.integ.life under `visual-20261026T000401Z-c960509c493a`. [Release record](../specs/reviews/visual-release-20261026.md). That historical release excluded unfinished power work; later accepted power/galaxy/LTI releases supersede it. This bullet is not the current production version.

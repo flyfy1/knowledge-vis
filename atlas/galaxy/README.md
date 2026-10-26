@@ -44,3 +44,11 @@ WebGL, low-power, storage denial, empty and isolated graphs, and JS-disabled lin
 Screenshots must be inspected. No physical-phone/Safari/screen-reader speech or learning-gain claim.
 
 Integration note: the entry patch is applied once in the current integrated source. Do not reapply it to an already-wired index. `tests/integration.cjs` now verifies the existing entries read-only; it does not patch or restore product files. The primary implementation provenance remains d8b1b2d7 and the shared inventory records the additional integration-fix revision.
+
+## Contextual signal-route entry
+
+Related concept cards derive a matching station from the existing Atlas signal
+trail, retaining direct lessons. Read [connector contract](../../specs/galaxy-signal-connector.md)
+before changing links/locale/Back behavior. No new graph or renderer is introduced.
+The old integration.patch is historical handover material; do not reapply it over
+the integrated Atlas. Current production status comes from visual-release.json.
