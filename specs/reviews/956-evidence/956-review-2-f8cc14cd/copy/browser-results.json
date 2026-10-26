@@ -1,0 +1,121 @@
+{
+  "status": "pass",
+  "finding": "956-COPY-R1",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "observed": [
+    {
+      "lang": "zh",
+      "footer": "本地模拟，无上传、无在线提交。",
+      "progress": "已处理 2/3 根；刚处理长度 x=2，新表已完成。",
+      "compare": "差值 d=1：旧表矮高 0 → 新表最佳矮高 1。",
+      "candidates": "旧 (d=1, h=0) → 不用 → 新 h=0：被更高候选支配旧 (d=1, h=0) → 放到矮边 → 新 h=1：达到保留的最大值（并列也算）",
+      "formula": "不用：(d,h)；高边：(d+x,h)；矮边：(|d−x|, h+min(d,x))；同差取最大 h。",
+      "limitations": "本地图是逐轮算法模拟，不是执行 Python。没有省略轮次；教学保存全部快照，提交代码只保留新旧两张表。"
+    },
+    {
+      "lang": "en",
+      "footer": "Local simulation, no upload or online submission.",
+      "progress": "Processed 2/3 rods; just processed length x=2; the new map is complete.",
+      "compare": "Gap d=1: old shorter height 0 → new best shorter height 1.",
+      "candidates": "Old (d=1, h=0) → skip → new h=0: dominated by a taller candidateOld (d=1, h=0) → shorter side → new h=1: attains the retained maximum (ties included)",
+      "formula": "Skip: (d,h); taller: (d+x,h); shorter: (|d−x|, h+min(d,x)); keep the maximum h per gap.",
+      "limitations": "This local diagram simulates algorithm rounds; it does not execute Python. No rounds are omitted. The tutorial retains snapshots; the submission keeps only the old and new maps."
+    },
+    {
+      "lang": "zh",
+      "footer": "本地模拟，无上传、无在线提交。",
+      "progress": "已处理 2/3 根；刚处理长度 x=2，新表已完成。",
+      "compare": "差值 d=1：旧表矮高 0 → 新表最佳矮高 1。",
+      "candidates": "旧 (d=1, h=0) → 不用 → 新 h=0：被更高候选支配旧 (d=1, h=0) → 放到矮边 → 新 h=1：达到保留的最大值（并列也算）",
+      "formula": "不用：(d,h)；高边：(d+x,h)；矮边：(|d−x|, h+min(d,x))；同差取最大 h。",
+      "limitations": "本地图是逐轮算法模拟，不是执行 Python。没有省略轮次；教学保存全部快照，提交代码只保留新旧两张表。"
+    },
+    {
+      "lang": "zh",
+      "zoom": 1,
+      "geometry": {
+        "left": 0,
+        "right": 320,
+        "top": 813.359375,
+        "bottom": 900.109375,
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 900
+      },
+      "clipboard": {
+        "automaticExact": true,
+        "fallbackExact": true,
+        "sentinelVerified": true,
+        "host": "linux",
+        "shortcut": "Control+C"
+      },
+      "downloadExact": true
+    },
+    {
+      "lang": "zh",
+      "zoom": 2,
+      "geometry": {
+        "left": 0,
+        "right": 640,
+        "top": 726.8125,
+        "bottom": 900.3125,
+        "width": 640,
+        "scrollWidth": 640,
+        "height": 900
+      },
+      "clipboard": {
+        "automaticExact": true,
+        "fallbackExact": true,
+        "sentinelVerified": true,
+        "host": "linux",
+        "shortcut": "Control+C"
+      },
+      "downloadExact": true
+    },
+    {
+      "lang": "en",
+      "zoom": 1,
+      "geometry": {
+        "left": 0,
+        "right": 320,
+        "top": 790.25,
+        "bottom": 899.75,
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 900
+      },
+      "clipboard": {
+        "automaticExact": true,
+        "fallbackExact": true,
+        "sentinelVerified": true,
+        "host": "linux",
+        "shortcut": "Control+C"
+      },
+      "downloadExact": true
+    },
+    {
+      "lang": "en",
+      "zoom": 2,
+      "geometry": {
+        "left": 0,
+        "right": 640,
+        "top": 681,
+        "bottom": 900,
+        "width": 640,
+        "scrollWidth": 640,
+        "height": 900
+      },
+      "clipboard": {
+        "automaticExact": true,
+        "fallbackExact": true,
+        "sentinelVerified": true,
+        "host": "linux",
+        "shortcut": "Control+C"
+      },
+      "downloadExact": true
+    }
+  ],
+  "errors": [],
+  "failed": []
+}
