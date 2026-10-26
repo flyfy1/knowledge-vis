@@ -56,3 +56,8 @@ be released later; main push alone is not publication.
 
 Quota supported current-Mac API at12:25:49UTC: weekly10080min used7%, remaining93%,
 reset2026-11-02T06:08:19Z; five-hour data unavailable. Stopline≤20% not reached.
+
+Feature sourceb653f3e7d8b6c8a0fd3f368b5e820e5c41396a6b. After metadata refresh,
+21-record source provenance and one actual390touch reading→projection→Back smoke
+passed, with both Atlas/Galaxy pointing to this feature revision. No public
+verification or deployment is inferred from these local/source checks.

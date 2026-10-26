@@ -3,15 +3,15 @@
   "pages": {
     "atlas": {
       "developer": "Codex",
-      "edition": "codex-atlas-galaxy-connector-20261026",
+      "edition": "codex-atlas-relation-reading-20261026",
       "kind": "revised",
-      "sourceRevision": "af4141a8d81f76e21c38ac9f5d9cc58e37ed9a78",
+      "sourceRevision": "b653f3e7d8b6c8a0fd3f368b5e820e5c41396a6b",
       "scope": {
-        "zh": "知识地图、信号实验路线与星系衔接及语言往返",
-        "en": "Knowledge atlas, signal-task route, Galaxy connection and reading-language return"
+        "zh": "知识地图、实验路线与表示关系的初学者读法",
+        "en": "Knowledge atlas, experiment routes and beginner guidance for a representation relationship"
       },
       "originalAuthorship": "not asserted; prior contributions retained",
-      "previousSourceRevision": "97c65af4a90e0dd86914f50750ec3bd44f8f40ba"
+      "previousSourceRevision": "af4141a8d81f76e21c38ac9f5d9cc58e37ed9a78"
     },
     "complex-numbers": {
       "developer": "Codex",
@@ -203,17 +203,17 @@
     },
     "atlas/galaxy": {
       "developer": "Codex",
-      "edition": "codex-galaxy-signal-connector-20261026",
+      "edition": "codex-galaxy-relation-reading-20261026",
       "kind": "revised",
-      "sourceRevision": "af4141a8d81f76e21c38ac9f5d9cc58e37ed9a78",
+      "sourceRevision": "b653f3e7d8b6c8a0fd3f368b5e820e5c41396a6b",
       "scope": {
-        "zh": "三维知识星图、信号任务入口与返回上下文",
-        "en": "3D knowledge galaxy, signal-task entry and return context"
+        "zh": "三维知识星图、任务入口与表示关系读法",
+        "en": "3D knowledge galaxy, task entries and representation-relationship guidance"
       },
       "originalAuthorship": "existing atlas contributions retained; galaxy presentation developed with Codex",
       "path": "atlas/galaxy.html",
       "integrationRevision": "c3445f66a3e666acd557a04a7194c9568a383c35",
-      "previousSourceRevision": "d8b1b2d7ded7f04990e992b232372bacc9495dad"
+      "previousSourceRevision": "af4141a8d81f76e21c38ac9f5d9cc58e37ed9a78"
     },
     "leetcode/42": {
       "developer": "Codex",
