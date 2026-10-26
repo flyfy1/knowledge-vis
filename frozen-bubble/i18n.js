@@ -1,6 +1,5 @@
 const STR = {
   zh: {
-    credit:"Codex 开发 · 教学版本",
     colderQuestion:"如果膜更冷，枝条会怎样？",
     colderBody:"先有小冰，才比较它的生长。膜温比这份溶液的熔点低多少，叫「过冷度」。同样的示意时刻，把下面数值调大，观察枝条是否更长。",
     growthWhy:"刚才人为放入的小冰，替代了真实过程中「先出现一小块能稳定存在的冰」这一步，这叫成核。之后，周围膜里的水继续结冰，晶体长大；不同方向长得快慢不同，可以出现枝状纹路。图上的六向枝条只帮助辨认生长，不预测真实晶形。",
@@ -37,7 +36,6 @@ const STR = {
     s2title:'彩色不等于「冰本来就是彩色的」',s2body:'这一步要回答：视频里的颜色从哪里来？同一画面可能叠加多种光学效应；下面区分三种来源，不把画面颜色当作温度计。',filmTitle:'01 · 还没冻住的薄膜',filmBody:'膜的前后表面反射光相互叠加，不同波长可加强或抵消，形成薄膜干涉色。厚度与观察角度改变，颜色也会变。<a href="../interference/#step1">去干涉页看「光程差如何决定加强与抵消」→</a>',iceTitle:'02 · 已形成的冰晶',iceBody:'晶面会反射、折射和散射光；枝状结构改变进入眼睛的光路，不是每条彩纹都来自薄膜干涉。<a href="../reflection-refraction/#step2">去光学页看「光在界面如何转向」→</a>',lightTitle:'03 · 光源、背景与成像',lightBody:'夕阳、天空与背景给光提供颜色，相机曝光、白平衡及后期也会影响记录。这里不能据原理断言原视频有无调色；本页配色只是用于分辨膜、冰和轨迹。',limitsTitle:'这个模型能说明什么？',limitsBody:'它帮助区分成核、生长、释放潜热与流动携带，也对照两种环境的冻结趋势。它不是精确 CFD（流体数值计算），不预测真实膜温、晶形、冰覆盖率或结冰时间；没有模拟排液、蒸发、破裂和完整的光学过程。人形框上的水膜也能结晶，但其边界与球壳不同，本页不作定量外推。',melting:'熔点取决于配方。论文使用的甘油—水—肥皂溶液约在 −6.5°C 熔化，不是所有肥皂水都在这个温度，也不能一概套用纯水的 0°C。',sources:'依据与灵感',paperNote:"完整书目信息与实验条件已列在第 2 步图前。原论文讨论冻结和流动，本页光学部分是概念延伸，不用于判断原视频是否调色。",video:'KK.Dai ·《又快到玩冰冻泡泡的季节》↗',videoNote:'创作灵感来自原视频；没有复制视频、配乐或图像。',continue:'接着探索',linkStates:'物态变化：粒子队形怎样改变 →',linkInterference:'干涉：光程差决定加强与抵消 →',linkRefraction:'反射与折射：光在界面如何转向 →',footer:'visual.integ.life · 定性教学模型 · 本地绘制，零外部素材请求',film:"朝向你的膜面",air:"先放入一粒小冰",base:'冰底座',heat:"冻结处附近放热",cool:"较冷的上部膜",noCanvas:'无法绘图；请阅读本步正文与下方动态读数。'
   },
   en: {
-    credit:"Developed by Codex · Teaching edition",
     colderQuestion:"What if the film is colder?",
     colderBody:"Once ice exists, compare its growth. How far the film temperature lies below this solution’s melting point is called “undercooling.” At the same diagram time, increase the value below and watch the branch length.",
     growthWhy:"The seed you added stands in for the first small, stable patch of ice forming naturally: nucleation. Water nearby then freezes and the crystal grows. Different growth rates in different directions can produce branches. The six-arm drawing helps you recognize growth; it does not predict a real crystal’s shape.",
