@@ -1,0 +1,336 @@
+{
+  "kind": "author self-check only",
+  "hostPlatform": "linux",
+  "clipboard": "native shortcut; exact string readback including LF final newline; fresh sentinel per locale",
+  "checks": [
+    "rendered and embedded source exact including final newline",
+    "en all five hand rectangles and reverse endpoints",
+    "en every frame, all seven presets, rewind/replay, reset and jump endpoints",
+    "en all prediction choices; choice change clears; locale preserves selection, reveal, preset and trace",
+    "en successful copy, native manual clipboard transfer with fresh verified sentinel, exact source/download parity",
+    "zh all five hand rectangles and reverse endpoints",
+    "zh every frame, all seven presets, rewind/replay, reset and jump endpoints",
+    "zh all prediction choices; choice change clears; locale preserves selection, reveal, preset and trace",
+    "zh successful copy, native manual clipboard transfer with fresh verified sentinel, exact source/download parity",
+    "en 320px populated board geometry, control sizes, screenshot and no document overflow",
+    "en 390px populated board geometry, control sizes, screenshot and no document overflow",
+    "en 736px populated board geometry, control sizes, screenshot and no document overflow",
+    "en 1440px populated board geometry, control sizes, screenshot and no document overflow",
+    "zh 320px populated board geometry, control sizes, screenshot and no document overflow",
+    "zh 390px populated board geometry, control sizes, screenshot and no document overflow",
+    "zh 736px populated board geometry, control sizes, screenshot and no document overflow",
+    "zh 1440px populated board geometry, control sizes, screenshot and no document overflow",
+    "en 200% CSS zoom geometry and screenshot",
+    "zh 200% CSS zoom geometry and screenshot",
+    "keyboard Enter advances, Tab order, 3px visible focus, deep navigation",
+    "source remains exact offline",
+    "blocked storage falls back; locale changes preserve trace"
+  ],
+  "errors": [],
+  "network": [],
+  "contrast": [
+    {
+      "fg": "#e8edf4",
+      "bg": "#0d1117",
+      "ratio": 16.09
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#0d1117",
+      "ratio": 7.74
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#0d1117",
+      "ratio": 13.1
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#0d1117",
+      "ratio": 10.73
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#0d1117",
+      "ratio": 12.62
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#161b22",
+      "ratio": 14.7
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#161b22",
+      "ratio": 7.08
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#161b22",
+      "ratio": 11.97
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#161b22",
+      "ratio": 9.81
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#161b22",
+      "ratio": 11.53
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#1c2330",
+      "ratio": 13.4
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#1c2330",
+      "ratio": 6.45
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#1c2330",
+      "ratio": 10.91
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#1c2330",
+      "ratio": 8.94
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#1c2330",
+      "ratio": 10.51
+    },
+    {
+      "fg": "#e8edf4",
+      "bg": "#0a0e14",
+      "ratio": 16.44
+    },
+    {
+      "fg": "#9aa7b8",
+      "bg": "#0a0e14",
+      "ratio": 7.91
+    },
+    {
+      "fg": "#6ee7ff",
+      "bg": "#0a0e14",
+      "ratio": 13.39
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#0a0e14",
+      "ratio": 10.97
+    },
+    {
+      "fg": "#c9d4e2",
+      "bg": "#0a0e14",
+      "ratio": 12.89
+    },
+    {
+      "fg": "#0d1117",
+      "bg": "#6ee7ff",
+      "ratio": 13.1
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#161b22",
+      "ratio": 9.81
+    },
+    {
+      "fg": "#ffb454",
+      "bg": "#1c2330",
+      "ratio": 8.94
+    }
+  ],
+  "renderedPairs": [
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 7.08
+    },
+    {
+      "selector": ".explain",
+      "fg": "rgb(201, 212, 226)",
+      "bg": "rgb(13, 17, 23)",
+      "ratio": 12.62
+    },
+    {
+      "selector": ".btn.primary",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.1
+    },
+    {
+      "selector": "#prev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 6.45
+    },
+    {
+      "selector": ".readout",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.4
+    },
+    {
+      "selector": ".formula",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(28, 35, 48)",
+      "ratio": 13.4
+    },
+    {
+      "selector": ".step-nav a.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "ratio": 13.1
+    }
+  ],
+  "cssBytes": 12042,
+  "relatedLinks": [
+    {
+      "locale": "en",
+      "label": "#327: express range sums as prefix differences",
+      "url": "http://127.0.0.1:18770/leetcode/327/#step1",
+      "promise": "prefix differences",
+      "explanation": "02Why is a range sum a difference of two totals?Can we get a range sum without adding its elements again? Prefix P[k] is the total of the first k elements; P[0]=0 means taking none. Here j is an exclusive end. The original inclusive interval [i,j−1] sums to P[j]−P[i]: subtract the first i elements, leaving i through j−1.Keep the array fixed and select i<j. Compare the two P values with the remaining elements below. In these formulas, j is always a prefix index.Select prefix indices (i,j)i=0, j=1i=0, j=2i=0, j=3i=1, j=2i=1, j=3i=2, j=3Prefix index k and total P[k]P[0]=0P[1]=-2P[2]=3P[3]=2P[1] − P[0] = -2 − (0) = -2; original interval [0,0] = [-2]: Count.We now count prefix-index pairs with i<j and lower ≤ P[j]−P[i] ≤ upper. P[0] lets ranges starting at index 0 use the same formula. Prefix differences make one sum O(1), but enumerating all index pairs is still O(n²)."
+    },
+    {
+      "locale": "en",
+      "label": "#363: compress a matrix with a fixed row band",
+      "url": "http://127.0.0.1:18770/leetcode/363/#step1",
+      "promise": "row-band compression",
+      "explanation": "02Compress a bandWhich additions repeat if we recompute every rectangle? The baseline enumerates top, bottom, left and right boundaries, sums the enclosed cells, and keeps the largest sum ≤k.This baseline costs O(m³n³) time and O(1) auxiliary space. A 100×100 grid has 25,502,500 rectangles. A two-dimensional prefix table makes each query O(1), but still enumerates O(m²n²) rectangles.def baseline(matrix, k):\n    m, n = len(matrix), len(matrix[0])\n    best = float('-inf')\n    for top in range(m):\n        for bottom in range(top, m):\n            for left in range(n):\n                for right in range(left, n):\n                    total = sum(matrix[r][c]\n                                for r in range(top, bottom + 1)\n                                for c in range(left, right + 1))\n                    if total <= k:\n                        best = max(best, total)\n    return bestA row band fixes top and bottom boundaries. Add each column inside it: [1,0,1] and [0,−2,3] become [1,−2,4]. Rectangle columns 1…2 now sum to −2+4=2. In a fixed band, rectangles correspond exactly to contiguous intervals. Moving bottom down adds just the new row to sums.Why not shrink the left edge whenever the sum exceeds k? In [2,2,−1] with k=3, discarding the first 2 when 2+2=4 loses the full interval 2+2−1=3. With negatives, extending an interval need not increase its sum."
+    },
+    {
+      "locale": "zh",
+      "label": "#327：用前缀差表示区间和",
+      "url": "http://127.0.0.1:18770/leetcode/327/#step1",
+      "promise": "prefix differences",
+      "explanation": "02一段的和为什么是两个总数之差？这一步要回答：能不能不用重加一段元素？前缀 P[k] 是前 k 个元素的总和；P[0]=0 表示一个也没取。这里 j 是不包含的右边界，原题的闭区间 [i,j−1] 的和就是 P[j]−P[i]：减去前 i 个，剩下 i 到 j−1。保持数组不变，选择一对 i<j；比较两个 P 值与下方留下的元素。所有公式中的 j 都是前缀下标。选择前缀下标 (i,j)i=0, j=1i=0, j=2i=0, j=3i=1, j=2i=1, j=3i=2, j=3前缀下标 k 与总和 P[k]P[0]=0P[1]=-2P[2]=3P[3]=2P[1] − P[0] = -2 − (0) = -2；原区间 [0,0] = [-2]：计入。因此目标变成：数出 i<j 且 lower ≤ P[j]−P[i] ≤ upper 的前缀下标对。P[0] 让从下标 0 开始的区间也能用同一式子。前缀差只把每次求和降到 O(1)，枚举所有下标对仍是 O(n²)。"
+    },
+    {
+      "locale": "zh",
+      "label": "#363：固定行带压缩矩阵",
+      "url": "http://127.0.0.1:18770/leetcode/363/#step1",
+      "promise": "row-band compression",
+      "explanation": "02压缩行带这一步要回答：逐个矩形重新加格子，哪些计算重复了？基线枚举上下左右边界，再逐格求和，仅保留≤k 的最大值。以下基线时间 O(m³n³)，额外空间 O(1)；100×100 时仅矩形就有 25,502,500 个。二维前缀和能把每次查询变成 O(1)，但仍要枚举 O(m²n²) 个矩形。def baseline(matrix, k):\n    m, n = len(matrix), len(matrix[0])\n    best = float('-inf')\n    for top in range(m):\n        for bottom in range(top, m):\n            for left in range(n):\n                for right in range(left, n):\n                    total = sum(matrix[r][c]\n                                for r in range(top, bottom + 1)\n                                for c in range(left, right + 1))\n                    if total <= k:\n                        best = max(best, total)\n    return best固定上、下边界叫作一个行带。把带内每列相加：两行 [1,0,1] 与 [0,−2,3] 得到 [1,−2,4]。矩形列 1…2 的和变成 −2+4=2。固定行带内，每个矩形与一个连续区间一一对应。bottom 下移一行时只需把新行加进 sums；无需重算带内旧行。为什么不能超限就缩左边界？在 [2,2,−1]、k=3 中，看到 2+2=4 就丢掉第一个 2，会错过完整区间 2+2−1=3。负数使“扩展必增大”不再成立。"
+    }
+  ],
+  "observedTexts": [
+    {
+      "locale": "en",
+      "state": "formula",
+      "text": "P[c+1] − P[left] = target  ⇔  P[left] = s − target"
+    },
+    {
+      "locale": "en",
+      "preset": 0,
+      "operation": 0,
+      "event": "Initialized band [0,0]. cols includes these rows; s=0, seen={0:1}, and no column in this band has been scanned. Prior band contributions remain in the history; its dictionary was cleared.",
+      "matches": "No query yet in this new band.",
+      "progress": "Operation 0/8; current band subtotal 0; all processed columns total 0 rectangles. Some bands remain."
+    },
+    {
+      "locale": "en",
+      "preset": 0,
+      "operation": 5,
+      "event": "Processed column 1 of band [0,1]: s changed from 0 by adding 0, giving 0; queried 0−(0)=0 in the old dictionary, found 2 earlier boundaries, then inserted prefix 0.",
+      "matches": "Matching earlier left boundaries: [0,1]. They form column intervals: [0,1], [1,1].",
+      "progress": "Operation 5/8; current band subtotal 3; all processed columns total 4 rectangles. Some bands remain."
+    },
+    {
+      "locale": "en",
+      "preset": 4,
+      "operation": 1,
+      "event": "Processed column 0 of band [0,0]: s changed from 0 by adding 2, giving 2; queried 2−(0)=2 in the old dictionary, found 0 earlier boundaries, then inserted prefix 2.",
+      "matches": "No earlier boundary matches this query; no rectangle is added.",
+      "progress": "Operation 1/2; current band subtotal 0; all processed columns total 0 rectangles. Some bands remain."
+    },
+    {
+      "locale": "en",
+      "state": "prediction choice 0",
+      "text": "Revise this prediction. The final s=0; earlier prefixes at boundaries 0…3 are [0,2,0,2]. We need s−target=0, occurring at boundaries 0 and 2. Intervals [0,3] and [2,3] contribute 1 each, hence 2. Choosing 1 loses a legal left boundary; choosing 3 pairs new boundary 4 with itself and counts an empty interval. The whole-row total is 4, but this question asks only for the last column's contribution."
+    },
+    {
+      "locale": "en",
+      "state": "prediction choice 1",
+      "text": "Revise this prediction. The final s=0; earlier prefixes at boundaries 0…3 are [0,2,0,2]. We need s−target=0, occurring at boundaries 0 and 2. Intervals [0,3] and [2,3] contribute 1 each, hence 2. Choosing 1 loses a legal left boundary; choosing 3 pairs new boundary 4 with itself and counts an empty interval. The whole-row total is 4, but this question asks only for the last column's contribution."
+    },
+    {
+      "locale": "en",
+      "state": "prediction choice 2",
+      "text": "Correct prediction. The final s=0; earlier prefixes at boundaries 0…3 are [0,2,0,2]. We need s−target=0, occurring at boundaries 0 and 2. Intervals [0,3] and [2,3] contribute 1 each, hence 2. Choosing 1 loses a legal left boundary; choosing 3 pairs new boundary 4 with itself and counts an empty interval. The whole-row total is 4, but this question asks only for the last column's contribution."
+    },
+    {
+      "locale": "zh",
+      "state": "formula",
+      "text": "P[c+1] − P[left] = target  ⇔  P[left] = s − target"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "operation": 0,
+      "event": "已初始化行带 [0,0]。cols 已包含这些行；s=0，seen={0:1}，尚未扫描此行带的列。旧行带的贡献保留在历史中，旧字典已清空。",
+      "matches": "新行带尚未查询。",
+      "progress": "操作 0/8；当前行带累计 0 个；所有已处理列累计 0 个矩形。尚未完成全部行带。"
+    },
+    {
+      "locale": "zh",
+      "preset": 0,
+      "operation": 5,
+      "event": "已处理行带 [0,1] 的列 1：s 从 0 加 0 得到 0；在旧字典查询 0−(0)=0，命中 2 个旧边界，然后插入前缀 0。",
+      "matches": "匹配的旧边界 left：[0,1]。各自形成列区间：[0,1], [1,1]。",
+      "progress": "操作 5/8；当前行带累计 3 个；所有已处理列累计 4 个矩形。尚未完成全部行带。"
+    },
+    {
+      "locale": "zh",
+      "preset": 4,
+      "operation": 1,
+      "event": "已处理行带 [0,0] 的列 0：s 从 0 加 2 得到 2；在旧字典查询 2−(0)=2，命中 0 个旧边界，然后插入前缀 2。",
+      "matches": "本次没有匹配的旧边界，不新增矩形。",
+      "progress": "操作 1/2；当前行带累计 0 个；所有已处理列累计 0 个矩形。尚未完成全部行带。"
+    },
+    {
+      "locale": "zh",
+      "state": "prediction choice 0",
+      "text": "这次预测需要修正。 最后 s=0，旧前缀（边界 0…3）为 [0,2,0,2]。需要 s−target=0，它在边界 0 和 2 出现两次，所以列 [0,3] 与 [2,3] 各贡献 1，共 2 个。选 1 会丢掉一个合法左边界；选 3 会把新边界 4 和自己配对，计入空区间。整行总数为 4，但本次只问最后一列的贡献。"
+    },
+    {
+      "locale": "zh",
+      "state": "prediction choice 1",
+      "text": "这次预测需要修正。 最后 s=0，旧前缀（边界 0…3）为 [0,2,0,2]。需要 s−target=0，它在边界 0 和 2 出现两次，所以列 [0,3] 与 [2,3] 各贡献 1，共 2 个。选 1 会丢掉一个合法左边界；选 3 会把新边界 4 和自己配对，计入空区间。整行总数为 4，但本次只问最后一列的贡献。"
+    },
+    {
+      "locale": "zh",
+      "state": "prediction choice 2",
+      "text": "预测正确。 最后 s=0，旧前缀（边界 0…3）为 [0,2,0,2]。需要 s−target=0，它在边界 0 和 2 出现两次，所以列 [0,3] 与 [2,3] 各贡献 1，共 2 个。选 1 会丢掉一个合法左边界；选 3 会把新边界 4 和自己配对，计入空区间。整行总数为 4，但本次只问最后一列的贡献。"
+    }
+  ],
+  "assetRequests": [
+    "http://127.0.0.1:18770/leetcode/1074/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/1074/style.css?v=1",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/1074/copy.js?v=1",
+    "http://127.0.0.1:18770/leetcode/1074/core.js?v=1",
+    "http://127.0.0.1:18770/leetcode/1074/python-code.js?v=1",
+    "http://127.0.0.1:18770/leetcode/1074/app.js?v=1",
+    "http://127.0.0.1:18770/leetcode/327/",
+    "http://127.0.0.1:18770/leetcode/327/local.css?v=327-1",
+    "http://127.0.0.1:18770/leetcode/327/copy.js?v=327-1",
+    "http://127.0.0.1:18770/leetcode/327/core.js?v=327-1",
+    "http://127.0.0.1:18770/leetcode/327/python-code.js?v=327-1",
+    "http://127.0.0.1:18770/leetcode/327/app.js?v=327-1",
+    "http://127.0.0.1:18770/leetcode/363/",
+    "http://127.0.0.1:18770/leetcode/363/local.css?v=1",
+    "http://127.0.0.1:18770/leetcode/363/copy.js?v=1",
+    "http://127.0.0.1:18770/leetcode/363/core.js?v=1",
+    "http://127.0.0.1:18770/leetcode/363/python-code.js?v=1",
+    "http://127.0.0.1:18770/leetcode/363/app.js?v=1"
+  ],
+  "limitations": "Headless Chromium, CSS 200% zoom; no physical mobile device, actual learner, production deployment, independent review, or LeetCode submission."
+}
