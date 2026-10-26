@@ -1,0 +1,473 @@
+{
+  "kind": "author self-check",
+  "host": "linux",
+  "browser": "156.0.8078.4",
+  "presets": [
+    {
+      "lang": "en",
+      "p": 0,
+      "expected": 4,
+      "frames": 8
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "expected": 2,
+      "frames": 8
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "expected": 8,
+      "frames": 13
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "expected": 1,
+      "frames": 1
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "expected": 3,
+      "frames": 7
+    },
+    {
+      "lang": "en",
+      "p": 5,
+      "expected": 1,
+      "frames": 4
+    },
+    {
+      "lang": "en",
+      "p": 6,
+      "expected": 3,
+      "frames": 5
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "expected": 4,
+      "frames": 8
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "expected": 2,
+      "frames": 8
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "expected": 8,
+      "frames": 13
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "expected": 1,
+      "frames": 1
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "expected": 3,
+      "frames": 7
+    },
+    {
+      "lang": "zh",
+      "p": 5,
+      "expected": 1,
+      "frames": 4
+    },
+    {
+      "lang": "zh",
+      "p": 6,
+      "expected": 3,
+      "frames": 5
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "noOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "noOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "noOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "noOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "zoom": 200,
+      "noOverflow": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "zoom": 200,
+      "noOverflow": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "zoom": 200,
+      "noOverflow": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "noOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "noOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "noOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "noOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "zoom": 200,
+      "noOverflow": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "zoom": 200,
+      "noOverflow": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "zoom": 200,
+      "noOverflow": true
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "en",
+      "attempt": 0,
+      "sentinelVerified": true,
+      "automaticExact": true,
+      "nativeFallbackExact": true,
+      "shortcut": "Control+C",
+      "newlineConversion": "none observed; exact equality"
+    },
+    {
+      "lang": "en",
+      "attempt": 1,
+      "sentinelVerified": true,
+      "automaticExact": true,
+      "nativeFallbackExact": true,
+      "shortcut": "Control+C",
+      "newlineConversion": "none observed; exact equality"
+    },
+    {
+      "lang": "zh",
+      "attempt": 0,
+      "sentinelVerified": true,
+      "automaticExact": true,
+      "nativeFallbackExact": true,
+      "shortcut": "Control+C",
+      "newlineConversion": "none observed; exact equality"
+    },
+    {
+      "lang": "zh",
+      "attempt": 1,
+      "sentinelVerified": true,
+      "automaticExact": true,
+      "nativeFallbackExact": true,
+      "shortcut": "Control+C",
+      "newlineConversion": "none observed; exact equality"
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#prev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".group .values",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 10.910104011097095
+    },
+    {
+      "selector": "a",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".current",
+      "fg": "rgb(255, 180, 84)",
+      "bg": "rgb(22, 27, 34)",
+      "ratio": 9.809435643476732
+    }
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "choice": "2",
+      "text": "Recheck the paths. The answer is 3. Distinct prime factor sets are: 14 → {2,7}, 25 → {5}, 35 → {5,7}, 11 → {11}. The value 35 joins 14 through 7 and 25 through 5, giving {14,25,35}; 11 shares no prime and stays alone. Choosing 2 misses the path across different primes; choosing 4 wrongly includes 11."
+    },
+    {
+      "lang": "en",
+      "choice": "4",
+      "text": "Recheck the paths. The answer is 3. Distinct prime factor sets are: 14 → {2,7}, 25 → {5}, 35 → {5,7}, 11 → {11}. The value 35 joins 14 through 7 and 25 through 5, giving {14,25,35}; 11 shares no prime and stays alone. Choosing 2 misses the path across different primes; choosing 4 wrongly includes 11."
+    },
+    {
+      "lang": "en",
+      "choice": "3",
+      "text": "Correct. The answer is 3. Distinct prime factor sets are: 14 → {2,7}, 25 → {5}, 35 → {5,7}, 11 → {11}. The value 35 joins 14 through 7 and 25 through 5, giving {14,25,35}; 11 shares no prime and stays alone. Choosing 2 misses the path across different primes; choosing 4 wrongly includes 11."
+    },
+    {
+      "lang": "en",
+      "state": "redundant union at endpoint",
+      "readout": "Associations completed 6/6; largest group currently known: 3 input nodes. This is the final answer.",
+      "history": "→ Index 2 (value 15) contains 5: owner index 1 (value 10) is already in this group; do not count again.",
+      "invariant": "This gives an invariant, a fact preserved after each association “index i contains prime p”: all processed occurrences of each prime belong with its owner. Initially there are no associations and all nodes stand alone. The first occurrence records an owner; each later occurrence joins that owner, so the fact remains true."
+    },
+    {
+      "lang": "en",
+      "state": "clipboard fallback",
+      "text": "Automatic copy is unavailable. The full source is selected; use your system copy shortcut."
+    },
+    {
+      "lang": "zh",
+      "choice": "2",
+      "text": "再检查路径。 答案为 3。不同质因数集合为：14 → {2,7}，25 → {5}，35 → {5,7}，11 → {11}。35 通过 7 连到 14，通过 5 连到 25，得到 {14,25,35}；11 无共享质因数，独立成组。选 2 会漏掉跨质因数的路径，选 4 会多算 11。"
+    },
+    {
+      "lang": "zh",
+      "choice": "4",
+      "text": "再检查路径。 答案为 3。不同质因数集合为：14 → {2,7}，25 → {5}，35 → {5,7}，11 → {11}。35 通过 7 连到 14，通过 5 连到 25，得到 {14,25,35}；11 无共享质因数，独立成组。选 2 会漏掉跨质因数的路径，选 4 会多算 11。"
+    },
+    {
+      "lang": "zh",
+      "choice": "3",
+      "text": "正确。 答案为 3。不同质因数集合为：14 → {2,7}，25 → {5}，35 → {5,7}，11 → {11}。35 通过 7 连到 14，通过 5 连到 25，得到 {14,25,35}；11 无共享质因数，独立成组。选 2 会漏掉跨质因数的路径，选 4 会多算 11。"
+    },
+    {
+      "lang": "zh",
+      "state": "redundant union at endpoint",
+      "readout": "已完成关联 6/6；当前已知最大组：3 个输入节点。这是最终答案。",
+      "history": "→ 编号 2（值 15）含 5：代表编号 1（值 10）已在同组，不重复计数。",
+      "invariant": "由此得到不变量：每次处理一个“编号 i 含质因数 p”的关联后，已处理过的每个质因数的所有出现位置都与它的 owner 同组。开始没有关联，所有节点各自成组；第一次遇到 p 只记代表，之后每次都连向代表，因此这句话始终成立。"
+    },
+    {
+      "lang": "zh",
+      "state": "clipboard fallback",
+      "text": "自动复制不可用；已选中完整源码，请使用系统复制快捷键。"
+    }
+  ],
+  "selectFit": [
+    {
+      "lang": "en",
+      "label": "Ex 1",
+      "width": 272,
+      "textWidth": 30.67205810546875,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "Ex 2",
+      "width": 272,
+      "textWidth": 30.67205810546875,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "Ex 3",
+      "width": 272,
+      "textWidth": 30.67205810546875,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "Lone 1",
+      "width": 272,
+      "textWidth": 50.28810119628906,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "gcd=1",
+      "width": 272,
+      "textWidth": 45.66412353515625,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "Apart",
+      "width": 272,
+      "textWidth": 41.42408752441406,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "Square",
+      "width": 272,
+      "textWidth": 52.80009460449219,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "例 1",
+      "width": 272,
+      "textWidth": 29.312057495117188,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "例 2",
+      "width": 272,
+      "textWidth": 29.312057495117188,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "例 3",
+      "width": 272,
+      "textWidth": 29.312057495117188,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "单个 1",
+      "width": 272,
+      "textWidth": 45.31208801269531,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "gcd=1",
+      "width": 272,
+      "textWidth": 45.66412353515625,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "孤立",
+      "width": 272,
+      "textWidth": 32.00006103515625,
+      "padding": 30,
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "平方",
+      "width": 272,
+      "textWidth": 32.00006103515625,
+      "padding": 30,
+      "arrowReserve": 24
+    }
+  ],
+  "related": [
+    {
+      "lang": "en",
+      "id": 803,
+      "url": "http://127.0.0.1:18770/leetcode/803/#step2"
+    },
+    {
+      "lang": "en",
+      "id": 924,
+      "url": "http://127.0.0.1:18770/leetcode/924/#step2"
+    },
+    {
+      "lang": "zh",
+      "id": 803,
+      "url": "http://127.0.0.1:18770/leetcode/803/#step2"
+    },
+    {
+      "lang": "zh",
+      "id": 924,
+      "url": "http://127.0.0.1:18770/leetcode/924/#step2"
+    }
+  ],
+  "focus": {
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "errors": [],
+  "localAssetsOnly": true,
+  "blockedStorage": true,
+  "offlineSource": true,
+  "cssBytes": 11255
+}

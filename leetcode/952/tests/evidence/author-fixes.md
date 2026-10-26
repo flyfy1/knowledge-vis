@@ -1,0 +1,9 @@
+# Author checks, initial draft failures
+
+Candidate 1 browser run: `node leetcode/952/tests/browser.cjs` failed at `zoom overflow en 320` before completing Chinese paths. Measured document width 429 at 320px / CSS zoom 2. The inherited official link used `white-space:nowrap` and extended to x=429. Contained table/source scrolling was intentional and not the document overflow cause. Screenshot initial-zoom-overflow.png retains this draft failure.
+
+Candidate 2 local fix: official link wraps, header row wraps at every effective width, trace buttons can wrap long words. Shared files unchanged. Full browser suite rerun, results recorded separately. This is an author correction, not independent finding closure.
+
+Candidate 3 screenshot inspection: selected preset text at extreme 320px × 200% was too long for the closed native select. Shortened the option names while retaining their meanings in an adjacent bilingual guide and the actual input display. Added the same width-budget assertion at zoom, and keyboard scrolling of the owner table. Rewrote prediction factor-set notation as number → factor set to avoid equating a number with a set; locally explained amortized cost. No independent review or acceptance preceded these author revisions.
+
+Expanded candidate 3 zoom guard failed `zoom select label 3` at EN / 1280px / 200%: the desktop native select auto-sized to 103 CSS px, while `Lone 1` measured 50.288 + padding 30 + unchanged arrow reserve 24 = 104.288. `Square` similarly needs 106.800; ZH auto-sized to 96, while `单个 1` needs 99.312 and `gcd=1` needs 99.664. This conservative width-budget failure alone does not establish visible clipping (native arrow may consume less than the reserve). The draft screenshot c3-1280-zoom-select.png retains the rendered case. Candidate 4 adds a local minimum width min(180px,100%) for the native selector. No font reduction or assertion relaxation. Full unchanged guard and browser suite rerun against c4.
