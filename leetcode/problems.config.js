@@ -3675,6 +3675,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n + m log(n + 1)) time; O(n + m) space"
   },
   {
+    "id": 887,
+    "title": {
+      "zh": "鸡蛋掉落",
+      "en": "Super Egg Drop"
+    },
+    "desc": {
+      "zh": "从两枚鸡蛋与六层楼，推导固定次数能覆盖多少楼层。",
+      "en": "From two eggs and six floors, derive how many floors a move budget can cover."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "最坏情况分析",
+        "en": "Worst-case analysis"
+      }
+    ],
+    "path": "887/",
+    "leetcodeUrl": "https://leetcode.com/problems/super-egg-drop/",
+    "language": "Python",
+    "complexity": "O(kM) time; O(k) auxiliary space, where M is the minimum move count and M <= n"
+  },
+  {
     "id": 903,
     "title": {
       "zh": "DI 序列的有效排列",

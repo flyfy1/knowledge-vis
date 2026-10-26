@@ -1881,3 +1881,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Capped edge coverage | `leetcode/882/#step2` | Count the union of two endpoint prefixes without overlap. |
 
 <!-- /leetcode-882-campaign -->
+
+
+<!-- leetcode-887-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Move-budget coverage | `leetcode/887/#step2` | Derive the break/survive capacity invariant. |
+| Descending rolling DP | `leetcode/887/#step4` | Preserve previous-move operands in one array. |
+
+<!-- /leetcode-887-campaign -->
