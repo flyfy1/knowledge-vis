@@ -1910,3 +1910,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Frequency-level stacks | `leetcode/895/#step2` | Preserve surviving occurrence ranks in chronological order to resolve frequency and recency. |
 
 <!-- /leetcode-895-campaign -->
+
+
+<!-- leetcode-899-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Circular-order invariant | `leetcode/899/#step1` | With k=1 every reachable string is a rotation. |
+| Adjacent swaps and reachability | `leetcode/899/#step2` | Positions one and two suffice to construct any adjacent swap. |
+
+<!-- /leetcode-899-campaign -->
