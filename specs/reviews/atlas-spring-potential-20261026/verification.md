@@ -1,0 +1,9 @@
+# Current scoped verification
+
+All acceptance commands in README passed. Canonical MotionModel is byte-for-byte unchanged from b70d3231. New energy-phase sweep and independent finite difference of U(x) give maximum force-gradient residual1.61e-10N. Existing motion/work numeric regression retains quarter/energy/unit/boundary/parameter/independent-Fdx/Fvdt checks. Graph38/50/14 unchanged; each work-route hop uses an already sourced directed statement, not an invented prerequisite.
+
+Focused actual Chrome checks: reset U.72/K0/F−2.4, crossingU0/K.72/F0, nextturnU.72/K0/F+2.4. K gap is drawn at actual model coordinates; turn/cross screenshots differ. Changing a alone leaves the instantaneous canvas unchanged, while interval work changes. Fixedphase mass changes time/v/a but not potential canvas/energy; amplitude changes actual image/E. Original pause/play/locale/node/Back/reload/reset and numeric fallback retained. ENZH390/320doubledDOMtext/keyboard/48px/3pxfocus/forcedcolors/reducedmotion passed. Existing work browser regression passed serially; noerrors/externalruntime requests.
+
+Independent coldUI0mustfix, actual images inspected by root. Mathematical/source review is separate science-review.md. Same opaque Atlas token text/label contrasts≥9.8:1 on new figure; border3.47:1. No new CSScolors or ambient effects. Contrast and CSSbytes in presentation.json. Canvas labels remain fixed drawing fontsize, so DOMtext enlargement is not full canvas/OSzoom certification. No physicalphone/Safari/screenreader-speech/calibration/learner-effect or all-site acceptance claim.
+
+Only this bounded learning bridge. Prior workScope blockvsblock+spring and driven-response exclusion remain; E−U is instantaneousK at b, not selectedinterval ΔK/work, including reversed/equal a/b. Source:modelledideal analytic spring, not a real slope or measurement. Exact production/public boundary remains in delivery record; do not use originHTTP to claim publicbrowserpass.

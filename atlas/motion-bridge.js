@@ -17,6 +17,8 @@
   Object.assign(S.en,workCopy.en);Object.assign(S.zh,workCopy.zh);
   const workBoundsCopy={"en": {"workStartBound": "State endpoint a (0–2 cycles; editing pauses)", "workEndBound": "State endpoint b · shared phase (0–2 cycles; seeking pauses)", "workBounds": "Selected time endpoints: a={a} s identifies x(a); b={b} s identifies x(b). Work integrates displacement x, not these time limits."}, "zh": {"workStartBound": "状态端点 a（按0–2周期选时刻；修改暂停）", "workEndBound": "状态端点 b · 共享相位（0–2周期；拖动暂停）", "workBounds": "选取状态的时间端点：a={a} s 对应 x(a)，b={b} s 对应 x(b)。功沿位移 x 积分，不是对这两个时间积分。"}};
   Object.assign(S.en,workBoundsCopy.en);Object.assign(S.zh,workBoundsCopy.zh);
+  const potentialCopy={"en": {"potentialTitle": "At b: energy height, slope and restoring force", "potentialTask": "θ=ωt is phase in radians (one turn is 2π). Predict before seeking: at a turning point, is force zero because speed is zero? Use Reset, then “Release → equilibrium”, then “Equilibrium → turn”. Compare the moving point, kinetic-energy gap and force direction on this same graph.", "potentialAlt": "Spring potential U versus position x, with current endpoint b, horizontal total energy E, vertical kinetic gap K, local tangent and horizontal restoring-force arrow. This is a coordinate graph, not a physical hill.", "potentialCaption": "Horizontal x: fixed −1 to +1 m. Vertical energy (J): scale depends on k, not phase or A. Amber point is U at b; dashed E line is total energy; cyan vertical gap is K=E−U; green tangent has slope dU/dx. F arrow shows direction only. The block does not roll along this parabola, and screen angle is not a physical slope angle.", "potentialMeaning": "Current b only: U={u} J, K={k} J, E={e} J; x={x} m, v={v} m/s, F={f} N. These are energies at one instant, not interval work or ΔK; changing a alone does not change them.", "potentialPhase": "Shared phase at b: θ={theta}π rad; dU/dx={slope} J/m = {slope} N, so F=−dU/dx.", "potentialTurning": "Turning point: K=0 and U=E. Speed is zero for an instant, but the nonzero restoring force starts the return.", "potentialCrossing": "Equilibrium crossing: the tangent is flat and F=0, while U=0 and K=E. Speed is largest; zero force now does not mean zero speed or zero force later.", "potentialMoving": "Between turn and crossing: the gap trades K with U while E stays fixed. The force points toward x=0, opposite the local potential slope.", "potentialStationary": "Zero-amplitude limit: x,v,F,U,K,E are all zero; there is no oscillation or kinetic gap.", "potentialCompare": "At the same phase with k and A fixed, changing m leaves this potential/energy diagram unchanged, but changes velocity, acceleration and the clock. Changing A moves the visible excursion and E. Parameter edits remain paused hypothetical comparisons.", "potentialSource": "OpenStax8.4 · read energy gaps and force from U(x) ↗"}, "zh": {"potentialTitle": "此刻 b：能量高度、斜率与回复力", "potentialTask": "θ=ωt 表示以弧度计的相位（一周为 2π）。拖动前先预测：转向时速率为零，力也为零吗？依次选“全部重置”“释放 → 平衡”“平衡 → 转向”，对照同一图中的移动点、动能间隙和力方向。", "potentialAlt": "弹簧势能U与位置x图，标出当前端点b、水平总能量E、竖直动能间隙K、局部切线及水平回复力箭头。这是坐标图，不是真实山坡。", "potentialCaption": "横轴 x 固定 −1 至 +1m；纵轴能量（J）的刻度只随 k 改变，不随相位或 A 改变。橙点是 b 时刻的 U，虚线 E 为总能量，青色竖直间隙是 K=E−U，绿切线斜率为 dU/dx。F 箭头仅示方向。物块不沿抛物线爬坡，屏幕倾角也不是物理坡角。", "potentialMeaning": "仅看此刻 b：U={u} J，K={k} J，E={e} J；x={x} m，v={v} m/s，F={f} N。这些是瞬时能量，不是区间功或 ΔK；只改变 a 不会改变它们。", "potentialPhase": "共享的 b 相位：θ={theta}π rad；dU/dx={slope} J/m = {slope} N，因此 F=−dU/dx。", "potentialTurning": "转向点：K=0、U=E。速率只在这一瞬间为零，非零回复力会让物块开始返回。", "potentialCrossing": "过平衡点：切线水平、F=0，但 U=0、K=E，速率最大；此刻力为零，不等于速度为零，也不代表之后力一直为零。", "potentialMoving": "转向点与平衡点之间：K 与 U 相互转换，E 不变。力始终指向 x=0，与势能的局部斜率方向相反。", "potentialStationary": "零振幅极限：x、v、F、U、K、E 均为零，不发生振动，也没有动能间隙。", "potentialCompare": "固定 k、A 与相位时，改变 m 不改变这张势能和能量图，但会改变速度、加速度及时间快慢。改变 A 会改变可见的位移范围与 E。改参仍是暂停后的假想对照。", "potentialSource": "OpenStax8.4 · 从 U(x) 读能量间隙与力 ↗"}};
+  Object.assign(S.en,potentialCopy.en);Object.assign(S.zh,potentialCopy.zh);
   let lang='en',active=false,view='projection',ratesMode=false,travelMode=false,workMode=false,selected='',selectNode=()=>{},close=()=>{},changeView=()=>{};
   let parameters={...M.defaults},cycles=0,startCycles=0,playing=false,status='ready',raf=null,last=null;
   const storageKey='atlas-motion-state-v1';
@@ -30,7 +32,7 @@
   const t=key=>S[lang][key],text=(el,value)=>{if(el.textContent!==value)el.textContent=value;};
   const fmt=(n,d=3)=>(Math.abs(n)<.5*10**(-d)?0:n).toFixed(d);
   const css=getComputedStyle(document.documentElement),C=Object.fromEntries(['ink','muted','cyan','amber','green','border','secondary'].map(k=>[k,css.getPropertyValue('--'+k).trim()]));
-  const contexts=new Map(['circle','spring','wave','position-rate','velocity-rate','travel-plot','work-force','work-curve'].map(id=>[$(id),$(id).getContext('2d')]));
+  const contexts=new Map(['circle','spring','wave','position-rate','velocity-rate','travel-plot','work-force','work-curve','potential'].map(id=>[$(id),$(id).getContext('2d')]));
   function persist(){try{sessionStorage.setItem(storageKey,JSON.stringify({...parameters,cycles,startCycles}));}catch(_){}}
   function stop(next='paused'){playing=false;last=null;if(raf!==null)cancelAnimationFrame(raf);raf=null;status=next;persist();}
   function fit(id){const c=$(id),ctx=contexts.get(c);if(!ctx){text(c,t('noCanvas'));return null;}const b=c.getBoundingClientRect(),d=Math.min(3,devicePixelRatio||1);if(!b.width||!b.height)return null;const w=Math.round(b.width*d),h=Math.round(b.height*d);if(c.width!==w||c.height!==h){c.width=w;c.height=h;}ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,b.width,b.height);ctx.font='13px system-ui';ctx.lineWidth=1.5;return{ctx,w:b.width,h:b.height};}
@@ -86,7 +88,34 @@
     for(const[c,color]of [[startCycles,C.green],[cycles,C.amber]]){ctx.setLineDash([3,4]);line(ctx,X(c),top,X(c),bottom,color);ctx.setLineDash([]);dot(ctx,X(c),Y(M.at(c,parameters).v),color);}
     ctx.restore();label(ctx,'a',X(startCycles),26,C.green);label(ctx,'b',X(cycles),38,C.amber);
   }
+  function drawPotential(s){
+    Object.assign(host.dataset,{potential:s.potential,kinetic:s.kinetic,potentialSlope:-s.force});
+    text($('potential-values'),template('potentialMeaning',{u:s.potential,k:s.kinetic,e:s.energy,x:s.x,v:s.v,f:s.force}));
+    text($('potential-phase'),t('potentialPhase').replace('{theta}',fmt(s.theta/Math.PI)).replaceAll('{slope}',value(-s.force)));
+    text($('potential-insight'),t(parameters.amplitude===0?'potentialStationary':s.motionCase==='turning'?'potentialTurning':s.motionCase==='crossing'?'potentialCrossing':'potentialMoving'));
+    const g=fit('potential');if(!g)return;
+    const{ctx,w,h}=g,l=52,r=w-20,top=32,bottom=h-76,k=parameters.stiffness,range=.55*k;
+    const X=x=>l+(x+1)*(r-l)/2,Y=u=>bottom-u*(bottom-top)/range;
+    for(const u of [0,.25*k,.5*k]){line(ctx,l,Y(u),r,Y(u));label(ctx,fmt(u,2),l-6,Y(u)+4,C.muted,'right');}
+    for(const x of [-1,0,1])label(ctx,x===1?'+1':String(x),X(x),bottom+21);
+    label(ctx,'U, E, K (J)',l,16,C.muted,'left');label(ctx,'x (m)',r,bottom+39,C.muted,'right');
+    ctx.save();ctx.beginPath();ctx.rect(l,top,r-l,bottom-top);ctx.clip();
+    ctx.strokeStyle=C.muted;ctx.lineWidth=2;ctx.beginPath();
+    for(let i=0;i<=120;i++){const x=-1+i/60,u=.5*k*x*x;i?ctx.lineTo(X(x),Y(u)):ctx.moveTo(X(x),Y(u));}ctx.stroke();
+    ctx.setLineDash([6,5]);line(ctx,l,Y(s.energy),r,Y(s.energy),C.ink);ctx.setLineDash([]);
+    // Only the existing endpoint state drives the probe, tangent and kinetic gap.
+    const lo=Math.max(-1,s.x-.16),hi=Math.min(1,s.x+.16);
+    ctx.lineWidth=3;line(ctx,X(lo),Y(s.potential-s.force*(lo-s.x)),X(hi),Y(s.potential-s.force*(hi-s.x)),C.green);
+    if(s.kinetic>0){line(ctx,X(s.x),Y(s.potential),X(s.x),Y(s.energy),C.cyan);line(ctx,X(s.x)-5,Y(s.energy),X(s.x)+5,Y(s.energy),C.cyan);}
+    dot(ctx,X(s.x),Y(s.potential),C.amber,6);ctx.restore();
+    label(ctx,'E',r-3,Y(s.energy)-7,C.ink,'right');
+    if(s.kinetic>0)label(ctx,'K',Math.min(r-10,X(s.x)+10),(Y(s.potential)+Y(s.energy))/2,C.cyan,'left');
+    label(ctx,'U(b)',Math.min(r-30,Math.max(l+24,X(s.x))),Math.min(bottom-8,Y(s.potential)+22),C.amber);
+    const dir=Math.sign(s.force),bx=X(s.x),ay=bottom+51;
+    if(dir){const end=bx+dir*28;line(ctx,bx,ay,end,ay,C.amber);line(ctx,end,ay,end-dir*6,ay-4,C.amber);line(ctx,end,ay,end-dir*6,ay+4,C.amber);label(ctx,'F',bx,ay+18,C.amber);}else label(ctx,'F = 0',bx,ay+10,C.amber);
+  }
   function drawWork(s){
+    drawPotential(s);
     const q=M.workInterval(startCycles,cycles,parameters),lastLeg=q.legs[q.legs.length-1];
     Object.assign(host.dataset,{startCycles,workIntegral:q.work,deltaK:q.deltaK,deltaU:q.deltaU,workPositive:q.positive,workNegative:q.negative,workChronological:q.chronologicalWork,energy:s.energy,workLast:lastLeg?lastLeg.work:0});
     $('start').value=startCycles;text($('start-value'),fmt(startCycles,3));text($('bounds'),template('workBounds',{a:q.start.time,b:q.end.time}));

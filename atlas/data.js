@@ -488,7 +488,7 @@
       },
       {id:'optics',background:['unit-circle','snell'],title:b('角从哪里量，何时没有折射角？','Where does the angle start, and when is refraction impossible?'),nodes:['unit-circle','snell']},
       {id:'geometry',background:['slope','pinhole-ratio'],title:b('一条直线，怎样得到小孔倒像？','How does one straight line produce an inverted image?'),nodes:['slope','pinhole-ratio']},
-      {id:'work',background:['work-energy','net-force'],title:b('往返净功为零，途中能量去哪了？','Zero return work: where did the energy go?'),nodes:['integral','work-energy','net-force']},
+      {id:'work',background:['work-energy','net-force'],title:b('往返净功为零，途中能量去哪了？','Zero return work: where did the energy go?'),nodes:['integral','work-energy','net-force','oscillation']},
       {id:'travel',background:["integral"],title:b('回到起点，为什么还走了路？','Back at the start: where did the distance go?'),nodes:['integral','oscillation']},
       {id:'kinematics',background:["derivative", "net-force"],check:'free-crossing-v1',title:b('从斜率到净力','From slopes to net force'),nodes:['derivative','oscillation','net-force']},
       {id:'motion',background:["sine", "oscillation"],check:'free-crossing-v1',title:b('圆的投影，为什么像弹簧？','Why does a circle’s projection match a spring?'),nodes:['unit-circle','sine','oscillation']},

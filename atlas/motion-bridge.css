@@ -7,3 +7,7 @@
 .motion-travel-chart{margin-top:var(--s4)!important}.motion-travel-chart canvas{aspect-ratio:3/1}#motion-start-value{display:block;color:var(--cyan);font-variant-numeric:tabular-nums}@media(max-width:700px){.motion-travel-chart canvas{aspect-ratio:1.2/1}}
 
 #motion-interval-controls{margin:var(--s4) 0;padding:var(--s3);border:1px solid var(--border);border-radius:var(--r1)}#motion-work .formula{font-size:var(--small)}
+
+#motion-potential-panel { margin:var(--s6) 0; }
+#motion-potential { aspect-ratio:2.2/1; }
+@media(max-width:700px){#motion-potential { aspect-ratio:1.15/1; }}

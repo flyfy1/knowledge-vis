@@ -1,0 +1,17 @@
+{
+  "base": "b70d3231d7ada8f11c0424be2ca72830d71bfab3",
+  "existing": [
+    "F-x work shading",
+    "W(a→τ) curve",
+    "K/U endpoint numbers",
+    "one phase/clock/parameter owner",
+    "work-energy and oscillation already connected through net-force"
+  ],
+  "missing": [
+    "U-x curve with local slope/force and instantaneous energy gap",
+    "direct work experiment route inclusion of existing oscillation concept"
+  ],
+  "noNewGraphNodesOrEdges": true,
+  "protectedModelSHA256": "66539b3b760087ad1971cd04b53a243b2f42cb6d78d2e62145de83e00fb5ffd5",
+  "scopeDecision": "Reuse existing work view; do not duplicate work-integral lab or add another time/state model"
+}

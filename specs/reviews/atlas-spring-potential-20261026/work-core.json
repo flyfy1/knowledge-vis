@@ -1,0 +1,7 @@
+{
+  "pass": true,
+  "checks": 6174,
+  "maxFdxError": 1.2559397966072083e-15,
+  "maxPhysicalTimeQuadratureError": 3.4437430684874926e-10,
+  "method": "stable analytic work; separate sampled Fdx and Fvdt references"
+}

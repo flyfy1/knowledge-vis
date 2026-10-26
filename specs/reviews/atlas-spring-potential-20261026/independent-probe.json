@@ -1,0 +1,35 @@
+{
+  "verdict": "PASS",
+  "remainingMustFix": 0,
+  "method": "Independent actual-model arithmetic and extracted actual drawPotential VM with canvas spies; no browser or pixel claim",
+  "modelByteIdentical": true,
+  "cases": 288,
+  "maxEnergyError": 8.881784197001252e-16,
+  "maxGradientError": 6.798828167120519e-11,
+  "rendererChecks": [
+    "turn: K0 no cyan gap, force inward",
+    "crossing: U0 K=E force0",
+    "negative x inward force",
+    "zero amplitude no division or gap",
+    "a-independent current state and geometry",
+    "mass-invariant geometry at fixed phase,k,A",
+    "maximum A fits k-scaled energy domain"
+  ],
+  "graph": {
+    "nodes": 38,
+    "edges": 50,
+    "trails": 14,
+    "workNodes": [
+      "integral",
+      "work-energy",
+      "net-force",
+      "oscillation"
+    ]
+  },
+  "hashes": {
+    "atlas/motion-model.js": "66539b3b760087ad1971cd04b53a243b2f42cb6d78d2e62145de83e00fb5ffd5",
+    "atlas/motion-bridge.js": "ac3c05c9f037fb4ae45deb09712908c0ea910b1800efe444649e4388142b19d4",
+    "atlas/index.html": "25218f2de8ab5ca0225a1ffd402f665ccd7092ee2cdb65e58dca52417a67d805",
+    "atlas/data.js": "89c58cbbd90e5e136fb33487bd1de94becb0ca7c021e6d49f52e80d820f51498"
+  }
+}
