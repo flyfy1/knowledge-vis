@@ -1,0 +1,441 @@
+[
+  {
+    "stage": "LTI moving-average and shifted copies",
+    "url": "http://127.0.0.1:18923/lti/#step2",
+    "text": "Step 2 · h the Fingerprint\n\nh[n]: know it, and you know the answer to every input\n\nNow record a fingerprint. Pick a system; the first move is always the same: feed δ[n] and write the answer down as h[n]. Then feed a real signal x[n] (gray stems). By step 1, x is a sum of impulse components; if the system is linear, the answer to component k, x[k]·δ[n−k], must be x[k]·h[n−k] — that copy of h scaled by x[k]; if it is also time-invariant, every copy is shifted by k and otherwise identical. So the output is all those scaled, shifted copies of h stacked up. In the picture, each translucent mound is one copy; the orange stems are the total. Underneath is an audit: run the same input through the system’s defining equation directly, and compare the two routes point by point — the difference is reported, not asserted.\n\n3-point moving average\nExponential-decay accumulator\nDifferencer\na · the accumulator’s decay (accumulator only) 0.70\nHear what the same system changes\n\nRepeat this step’s 28-point pattern to make about 1.87 seconds of synthetic sound. Compare the input with the selected system’s output at one shared volume. This is not a field recording; nothing plays automatically.\n\n▶ Play input\n▶ Play processed\n■ Stop\nListening volume 50%\n\nNot playing. Choose a playback button.\n\n0 / 1.87 s\n\nStatic prefix: 56 samples (7 milliseconds); the horizontal axis is sample index n. Both raw mathematical signals use one fixed vertical scale, before audition fades. The progress above covers the whole 1.87-second clip, not a slow replay of these 56 points.\n\nTry this: hear the input, select the moving average, then hear the output. Are the rapid changes less prominent? Compare the differencer next. Processing can also change loudness; equal volume settings do not promise equal loudness.\n\nHow do the sounds map to the points? Limits and source\nShow every scaled, shifted copy of h\n\nSystem: 3-point moving average · audit of the two routes (28 output points): direct recursion vs stacking h, max difference = 5.55e−17 — floating-point dust; both routes compute the same thing\n\nLook at the three h shapes. The differencer has just two stems (1 and −1): its “remembers only one step” character is written right there. The accumulator’s h is a run of an: the echo of one slap never truly reaches zero, it only gets lighter — this long-tailed h returns in step 5. The moving average is three equal stems: outside the window, nothing matters; inside, everything counts the same.\n\nThe craft of “flip h, slide it, multiply and add” — convolution — has its own page on this site; this page only borrows its conclusion: the output is a weighted stacking of h. For the craft itself, go here →\n\nConvolution: the flip-slide-multiply-add craft lives on that page →",
+    "inputs": [
+      {
+        "value": "0.7",
+        "labels": [
+          "a · the accumulator’s decay (accumulator only) 0.70"
+        ],
+        "checked": false
+      },
+      {
+        "value": "50",
+        "labels": [
+          "Listening volume 50%"
+        ],
+        "checked": false
+      },
+      {
+        "value": "on",
+        "labels": [
+          "Show every scaled, shifted copy of h"
+        ],
+        "checked": true
+      }
+    ]
+  },
+  {
+    "stage": "LTI task Back",
+    "url": "http://127.0.0.1:18923/atlas/?node=impulse&view=list&trail=signal",
+    "text": "Try this station · no completion tracking\n\nWhat do three equal taps do to the input?\n\nChoose “3-point moving average”. Compare the input/output plots; optionally play input and processed sound. Inspect the shifted copies of h.\n\nOpen this experiment →\nCompare your prediction · what to look for and why\n← Previous concept\nNext concept →\nStarting ideas",
+    "inputs": [
+      {
+        "value": "0",
+        "labels": [
+          "Limit a (0–2 cycles; editing pauses)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "1",
+        "labels": [
+          "Mass m (kg)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "4",
+        "labels": [
+          "Spring stiffness k (N/m)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "0.6",
+        "labels": [
+          "Amplitude A (m)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "0",
+        "labels": [
+          "Phase progress (0–2 cycles; seeking pauses)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "0.2",
+        "labels": [
+          "Damping ratio ζ (no units)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "1",
+        "labels": [
+          "Drive ratio r=Ω/ω₀ (no units)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "",
+        "labels": [
+          "Find a concept"
+        ],
+        "checked": false
+      }
+    ]
+  },
+  {
+    "stage": "convolution default four steps",
+    "url": "http://127.0.0.1:18923/convolution/#step2",
+    "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nReduced to its bones, discrete convolution is four moves: flip the kernel, slide it into place, multiply the overlapping pairs, add them into one output number — then shift by one and repeat. Edit any number above and step through the computation one move at a time.\n\nInput sequence f\nKernel g\nStep →\n▶ Play\nReset\n\nMultiply the overlapping pairs (grey = no overlap, does not count): f[0]·g[1] , f[1]·g[0]\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+    "inputs": [
+      {
+        "value": "1",
+        "labels": [],
+        "checked": false
+      },
+      {
+        "value": "2",
+        "labels": [],
+        "checked": false
+      },
+      {
+        "value": "3",
+        "labels": [],
+        "checked": false
+      },
+      {
+        "value": "2",
+        "labels": [],
+        "checked": false
+      },
+      {
+        "value": "1",
+        "labels": [],
+        "checked": false
+      },
+      {
+        "value": "1",
+        "labels": [],
+        "checked": false
+      },
+      {
+        "value": "0",
+        "labels": [],
+        "checked": false
+      },
+      {
+        "value": "-1",
+        "labels": [],
+        "checked": false
+      }
+    ]
+  },
+  {
+    "stage": "convolution kernel g0=2 reset four steps",
+    "url": "http://127.0.0.1:18923/convolution/#step2",
+    "text": "Step 2 · Taking it apart\n\nFlip, slide, multiply, add\n\nReduced to its bones, discrete convolution is four moves: flip the kernel, slide it into place, multiply the overlapping pairs, add them into one output number — then shift by one and repeat. Edit any number above and step through the computation one move at a time.\n\nInput sequence f\nKernel g\nStep →\n▶ Play\nReset\n\nMultiply the overlapping pairs (grey = no overlap, does not count): f[0]·g[1] , f[1]·g[0]\n\n(f * g)[n] = Σk f[k] · g[n − k]\n\nIn the formula (f * g)[n] = Σk f[k] · g[n − k], the minus sign in g[n − k] is exactly where the flip comes from: with n fixed, as k grows, n−k shrinks — the kernel meets f in reverse order. The animation shows the kernel reversed relative to the input boxes for precisely this reason.",
+    "inputs": [
+      {
+        "value": "1",
+        "labels": [],
+        "checked": false
+      },
+      {
+        "value": "2",
+        "labels": [],
+        "checked": false
+      },
+      {
+        "value": "3",
+        "labels": [],
+        "checked": false
+      },
+      {
+        "value": "2",
+        "labels": [],
+        "checked": false
+      },
+      {
+        "value": "1",
+        "labels": [],
+        "checked": false
+      },
+      {
+        "value": "1",
+        "labels": [],
+        "checked": false
+      },
+      {
+        "value": "0",
+        "labels": [],
+        "checked": false
+      },
+      {
+        "value": "-1",
+        "labels": [],
+        "checked": false
+      }
+    ]
+  },
+  {
+    "stage": "convolution task Back",
+    "url": "http://127.0.0.1:18923/atlas/?node=convolution&view=list&trail=signal",
+    "text": "Try this station · no completion tracking\n\nWhich terms make one output sample?\n\nKeep default f=[1,2,3,2,1] and g=[1,0,−1]. Use Step to inspect flip, alignment, products and sum. Change one kernel value, then reset and recompute.\n\nOpen this experiment →\nCompare your prediction · what to look for and why\n← Previous concept\nNext concept →\nStarting ideas",
+    "inputs": [
+      {
+        "value": "0",
+        "labels": [
+          "Limit a (0–2 cycles; editing pauses)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "1",
+        "labels": [
+          "Mass m (kg)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "4",
+        "labels": [
+          "Spring stiffness k (N/m)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "0.6",
+        "labels": [
+          "Amplitude A (m)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "0",
+        "labels": [
+          "Phase progress (0–2 cycles; seeking pauses)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "0.2",
+        "labels": [
+          "Damping ratio ζ (no units)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "1",
+        "labels": [
+          "Drive ratio r=Ω/ω₀ (no units)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "",
+        "labels": [
+          "Find a concept"
+        ],
+        "checked": false
+      }
+    ]
+  },
+  {
+    "stage": "M3 exact-zero",
+    "url": "http://127.0.0.1:18923/freqresp/#step3",
+    "text": "Step 3 · Digital Filters\n\nMoving-average zeros: executing one named frequency\n\nNow discrete time: n is an integer sample index. Here ω is digital angular frequency (rad/sample, often written Ω), not the earlier RC model’s rad/s. Given a sample rate Fₛ, ω=2πf/Fₛ; without Fₛ no physical Hz value is assigned. A moving average averages the latest M samples. At ω=2πk/M, provided k is not divisible by M, those M contributions cancel. At 0 and integer multiples of 2π, |H|=1 instead. Predict the first zero, then compare the preset and actual output samples.\n\n|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|); zeros: ω = 2πk/M, integer k not divisible by M; at ω=2πq, |H|=1.\n\nAveraging length M 3\nInput digital frequency ω (rad/sample) 2.094\nFeed the zero 2π/M\nFeed the first sidelobe peak\nFeed a passband tone, 0.20\n\nM = 3 · ω = 2.094 rad/sample · analytic |H| = 4.71e−17 · simulated steady-state amplitude = 4.73e−17 · first sidelobe peak |H| = 0.3333 (−9.5 dB) · linear-phase group delay on nonzero bands = 1.0 samples (phase/local group delay undefined at zeros)\n\nRange: 0.05 to π rad/sample. Slider arrows step 0.005; Shift+arrow steps 0.05; Home selects 0.05 and End exact π. Presets keep exact frequencies rather than rounding to displayed decimals. With M=2 the first zero isπ; then change M to 3, predict amplitude 1/3 and compare analytic and measured values. A zero output cannot measure phase or delay. Sidelobes are not zeros: a moving average smooths but is no ideal stopband filter. Basis: Smith · moving-average response →",
+    "inputs": [
+      {
+        "value": "3",
+        "labels": [
+          "Averaging length M 3"
+        ],
+        "checked": false
+      },
+      {
+        "value": "2.0943951023932",
+        "labels": [
+          "Input digital frequency ω (rad/sample) 2.094"
+        ],
+        "checked": false
+      }
+    ]
+  },
+  {
+    "stage": "M2 unchanged-frequency",
+    "url": "http://127.0.0.1:18923/freqresp/#step3",
+    "text": "Step 3 · Digital Filters\n\nMoving-average zeros: executing one named frequency\n\nNow discrete time: n is an integer sample index. Here ω is digital angular frequency (rad/sample, often written Ω), not the earlier RC model’s rad/s. Given a sample rate Fₛ, ω=2πf/Fₛ; without Fₛ no physical Hz value is assigned. A moving average averages the latest M samples. At ω=2πk/M, provided k is not divisible by M, those M contributions cancel. At 0 and integer multiples of 2π, |H|=1 instead. Predict the first zero, then compare the preset and actual output samples.\n\n|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|); zeros: ω = 2πk/M, integer k not divisible by M; at ω=2πq, |H|=1.\n\nAveraging length M 2\nInput digital frequency ω (rad/sample) 2.094\nFeed the zero 2π/M\nFeed the first sidelobe peak\nFeed a passband tone, 0.20\n\nM = 2 · ω = 2.094 rad/sample · analytic |H| = 0.5000 · simulated steady-state amplitude = 0.5000 · first sidelobe peak: none (at M = 2 the zero already sits at π — no sidelobe inside [0, π]) · linear-phase group delay on nonzero bands = 0.5 samples (phase/local group delay undefined at zeros)\n\nRange: 0.05 to π rad/sample. Slider arrows step 0.005; Shift+arrow steps 0.05; Home selects 0.05 and End exact π. Presets keep exact frequencies rather than rounding to displayed decimals. With M=2 the first zero isπ; then change M to 3, predict amplitude 1/3 and compare analytic and measured values. A zero output cannot measure phase or delay. Sidelobes are not zeros: a moving average smooths but is no ideal stopband filter. Basis: Smith · moving-average response →",
+    "inputs": [
+      {
+        "value": "2",
+        "labels": [
+          "Averaging length M 2"
+        ],
+        "checked": false
+      },
+      {
+        "value": "2.0943951023932",
+        "labels": [
+          "Input digital frequency ω (rad/sample) 2.094"
+        ],
+        "checked": false
+      }
+    ]
+  },
+  {
+    "stage": "frequency task Back",
+    "url": "http://127.0.0.1:18923/atlas/?node=freqresp&view=list&trail=signal",
+    "text": "Try this station · no completion tracking\n\nWhy can a 3-point average cancel a sinusoid?\n\nSet average length M=3, then use the exact first-zero 2π/M preset. Predict: keep frequency unchanged and set M=2. Will cancellation remain complete? Inspect the output waveform.\n\nOpen this experiment →\nCompare your prediction · what to look for and why\n← Previous concept\nNext concept →\nStarting ideas",
+    "inputs": [
+      {
+        "value": "0",
+        "labels": [
+          "Limit a (0–2 cycles; editing pauses)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "1",
+        "labels": [
+          "Mass m (kg)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "4",
+        "labels": [
+          "Spring stiffness k (N/m)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "0.6",
+        "labels": [
+          "Amplitude A (m)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "0",
+        "labels": [
+          "Phase progress (0–2 cycles; seeking pauses)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "0.2",
+        "labels": [
+          "Damping ratio ζ (no units)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "1",
+        "labels": [
+          "Drive ratio r=Ω/ω₀ (no units)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "",
+        "labels": [
+          "Find a concept"
+        ],
+        "checked": false
+      }
+    ]
+  },
+  {
+    "stage": "Previous keyboard to convolution",
+    "url": "http://127.0.0.1:18923/atlas/?node=convolution&view=list&trail=signal",
+    "text": "Try this station · no completion tracking\n\nWhich terms make one output sample?\n\nKeep default f=[1,2,3,2,1] and g=[1,0,−1]. Use Step to inspect flip, alignment, products and sum. Change one kernel value, then reset and recompute.\n\nOpen this experiment →\nCompare your prediction · what to look for and why\n← Previous concept\nNext concept →\nStarting ideas",
+    "inputs": [
+      {
+        "value": "0",
+        "labels": [
+          "Limit a (0–2 cycles; editing pauses)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "1",
+        "labels": [
+          "Mass m (kg)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "4",
+        "labels": [
+          "Spring stiffness k (N/m)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "0.6",
+        "labels": [
+          "Amplitude A (m)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "0",
+        "labels": [
+          "Phase progress (0–2 cycles; seeking pauses)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "0.2",
+        "labels": [
+          "Damping ratio ζ (no units)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "1",
+        "labels": [
+          "Drive ratio r=Ω/ω₀ (no units)"
+        ],
+        "checked": false
+      },
+      {
+        "value": "",
+        "labels": [
+          "Find a concept"
+        ],
+        "checked": false
+      }
+    ]
+  },
+  {
+    "stage": "phone ZH summary labels",
+    "summaries": [
+      "Codex 开发 · 改进版本Developed with Codex · Revised edition",
+      "核对预测 · 该看什么，为什么",
+      "起步提示 · 按需展开",
+      "展开解释与核对方法",
+      "1 / 表示方式共振 → 表现为响应峰值 → 频率响应",
+      "2 / 表示方式卷积 → 时域卷积成为频域相乘 → 频率响应",
+      "3 / 表示方式冲激响应 → 傅里叶变换给出频率响应 → 频率响应",
+      "4 / 数学联系极点与稳定性 → 影响频率响应形状 → 频率响应"
+    ]
+  },
+  {
+    "stage": "phone ZH guide",
+    "url": "http://127.0.0.1:18923/atlas/?node=freqresp&view=list&trail=signal",
+    "text": "← 知识索引\n中\nEN\n\n知识地图 / 01\n\n数学与物理\n\n把数学、几何与运动、光、波动、电路和测量联系起来。先选一个问题，查看背后的概念，再进入关联实验或课程。\n\n38 个概念 · 48 条关系 5 个主题区域 · 人工编排并附来源\n\nCodex 开发 · 改进版本\n进入 3D 知识星图 →\n旋转星球般的概念，追踪真实联系 · Codex 开发\n✧\n从一个问题开始\n移动平均为什么能消掉一个频率？\n建议路线 · 4 个概念\n角从哪里量，何时没有折射角？\n建议路线 · 2 个概念\n一条直线，怎样得到小孔倒像？\n建议路线 · 2 个概念\n往返净功为零，途中能量去哪了？\n建议路线 · 3 个概念\n回到起点，为什么还走了路？\n建议路线 · 2 个概念\n从斜率到净力\n建议路线 · 3 个概念\n圆的投影，为什么像弹簧？\n建议路线 · 3 个概念\n电压变了，能量去哪了？\n建议路线 · 6 个概念\n从圆到波形\n建议路线 · 4 个概念\n为什么会共振？\n建议路线 · 4 个概念\n从测量到控制\n建议路线 · 4 个概念\n\n建议路线 · 这是建议的探索顺序，不是必修先后关系。\n\n1. 线性时不变系统\n2. 冲激响应\n3. 卷积\n4. 频率响应\n\n本站实验任务 · 不记录掌握状态\n\n平均3点，为什么能让一个正弦消失？\n\n将平均长度M设为3，再点“送零点频率2π/M”。先预测：保持频率不动，改M=2，还会完全抵消吗？观察下方输出波形。\n\n打开本站对应实验 →\n核对预测 · 该看什么，为什么\n\nΩ=2π/3 rad/样本时，3个相隔该相位的贡献相加为0；M=2时幅值比为1/2。零点指正弦建立后的响应，不保证启动的前两点为0，也不代表上一站多频试听全静音。不要手输四舍五入的2.094来冒充精确零点。\n\n把h的逐项乘加与H的幅相联系起来：这是同一固定LTI系统的两种表示，不是新的滤波器。\n\nMIT/Oppenheim · 讲义11，卷积性质（11-5页）↗\n← 上一个概念\n下一个概念 →\n起步提示 · 按需展开\n探索概念之间的联系\n地图\n列表\n3D 星图 ↗\n寻找一个概念\n主题区域\n全部区域\n数学基础\n运动与波动\n系统与响应\n测量与不确定性\n电路与能量\n清除筛选\n\n38 个匹配概念 · 当前：频率响应\n\nSnell关系与全反射\n两角都从界面法线量起，n=c/v为无量纲折射率。斜光从高n到低n时可能没有实折射角；临界点与严格超临界分开。\n直线斜率\n非竖直直线的斜率是两点竖直坐标差除以水平坐标差，在同一直线上不变。一般单位为Y的单位除以X的单位；几何双轴同用长度单位时无量纲。\n相似三角形与小孔倒像\n在均匀介质的孔心光线模型中，物距u与屏距v均为正，带符号像高差与物高之比为−v/u；负号表示倒像，正尺寸取其绝对值。\n功与能量变化\n质点沿实际位移所受的净功等于动能变化。本理想水平弹簧中，弹簧力是唯一做非零功的力，故 Wspring=ΔK=−ΔU。\n定积分与有符号累加\n定积分累加带符号的贡献。在正向时间区间，速度积分是位移，速率积分才是路程；位置差与位置坐标不同。\n导数与瞬时变化率\n可微函数的导数是瞬时变化率，也是切线斜率。位置对时间的导数是带方向的速度，速度对时间的导数是加速度。\n净力与牛顿第二定律\n在惯性参考系、质量恒定时，合外力等于质量乘加速度。它决定速度如何改变，而不是此刻速度有多大。\n电压、电流与功率\n电压是能量除以电荷，电流是电荷流率；功率是电压与电流的乘积。\n电感与磁场储能\n电感两端电压决定电流的变化速度；有限电压不能使电流瞬间跳变。\n电容与电场储能\n流入电容正端的电流改变电压；理想电容在零电流时保持已有电压。\n开关与二极管\n理想开关选择导通或断开，二极管提供从阳极到阴极的单向路径。\n脉宽调制 PWM\n在固定周期内改变开关导通时间。占空比是导通时间占周期的比例。\nBuck 降压电路\n电源间歇接入。连续导通 CCM 指电感电流全周期不归零，不是恒定电流。理想周期稳态、直流输入恒定时，周期平均输出电压 ⟨Vout⟩ 为 D 倍输入；瞬时值可有纹波。\nBoost 升压电路\n先给电感储能，再让电源与电感共同向输出供能。周期平均电压 ⟨Vout⟩ 的关系采用理想小纹波周期稳态近似，要求恒定直流输入、连续导通 CCM（电感电流全周期不归零）及 0<D<1；瞬时值可有纹波。\n单位圆\n半径为 1 的圆；圆上点的横、纵坐标分别定义 cos θ 和 sin θ。\n正弦与余弦\n匀速绕圆运动的坐标随时间周期变化。振幅、频率和相位分别决定大小、快慢和起点。\n复数与旋转\n把平面点写成复数后，乘以单位模复数可以表示旋转；实部和虚部给出两个坐标。\n向量与线性变换\n向量是一组有顺序的数；矩阵把输入向量变为输出向量，并保持加法和数乘。\n特征向量\n非零向量经过矩阵变换后仍在原来的直线上，只乘了一个比例 λ。\n拉普拉斯变换\n用带有增长或衰减的复指数分析信号；必须同时说明积分在哪些 s 值上收敛。\n简谐振动\n理想弹簧振子的回复力与位移成正比、方向相反。在无阻尼、无持续外力驱动时，位移随时间呈正弦变化；回复力仍然存在。\n波的叠加\n把多个信号在同一时刻的值相加，得到合成信号；物理系统是否允许这样叠加取决于其线性。\n傅里叶分析\n用不同频率的正弦或复指数分量描述信号。周期信号用级数，有限采样数据可用离散傅里叶变换。\n频谱\n按频率列出信号分量的幅度与相位。幅度图只展示其中一部分，不能单独还原一般信号。\n共振\n受周期驱动的系统，响应幅度可能在某个频率附近出现峰值；阻尼会改变峰的高度和位置。\n采样与混叠\n按固定时间间隔记录信号。理想带限信号的采样率需高于最高频率的两倍，才能避免频谱重叠。\n线性时不变系统\n线性意味着输入加权组合对应输出的同样组合；时不变意味着延迟输入只会延迟输出。\n冲激响应\n给离散系统输入一个单位脉冲后得到的输出。对初始静止的线性时不变系统，它足以确定任意输入的响应。\n卷积\n把一个序列翻转、平移，与另一个序列对应相乘后求和；每个位移产生一个输出值。\n频率响应\n对稳定 LTI 系统，频率响应描述正弦输入的稳态幅度与相位变化。连续时间（CT）用 H(iω)，ω 单位 rad/s；离散时间（DT）用 H(e^{iΩ})，Ω 单位 rad/样本。\n极点与稳定性\n极点关联响应中的指数模式。连续时间因果有理系统的传递函数极点全在左半平面时，输入输出稳定。\n反馈控制\n测量输出，与目标比较，再据此调整输入。反馈效果取决于控制器、系统、延迟及噪声。\n概率模型\n用概率描述可能结果及其不确定性；模型中的概率需要与观察证据区分。\n贝叶斯更新\n先验是观测前的概率，后验是观测后的更新。似然描述给定假设下观测如何出现；本页离散例子中是观测概率。把它与先验结合并归一化，得到依赖观测模型的后验。\n方差\n与均值的偏差平方的期望，用于描述分散程度。其单位是原变量单位的平方。\n正态分布与中心极限定理\n独立同分布、方差有限且非零时，样本均值经过适当标准化后，随样本量增加趋于标准正态分布。\n蒙特卡洛估计\n通过随机样本的平均估计期望或积分。误差大小依赖采样方式、样本量及被估计量的方差。\n卡尔曼滤波\n先用动态模型预测状态，再根据测量及其不确定性修正。协方差表示模型估计的不确定性，并不保证真实误差同样小。\n\n系统与响应\n\n频率响应\n\n对稳定 LTI 系统，频率响应描述正弦输入的稳态幅度与相位变化。连续时间（CT）用 H(iω)，ω 单位 rad/s；离散时间（DT）用 H(e^{iΩ})，Ω 单位 rad/样本。\n\nCT: H(iω); DT: H(e^{iΩ})\n\n受迫响应：对比阻尼、峰值与极点 →\n打开交互讲解 →\n\n直接进入已有知识页的相关章节。\n\n这些概念为什么相连 · 4\n1 / 表示方式\n共振 → 表现为响应峰值 → 频率响应\n\n在线性系统的频率响应幅度图上，共振表现为某段频率附近的峰；并非所有系统都有明显峰值。\n\n探索 共振 →\n查看解释依据 →\n2 / 表示方式\n卷积 → 时域卷积成为频域相乘 → 频率响应\n3 / 表示方式\n冲激响应 → 傅里叶变换给出频率响应 → 频率响应\n4 / 数学联系\n极点与稳定性 → 影响频率响应形状 → 频率响应\n\n这是一张人工编排的地图，尚未覆盖完整课程。每条关系都附有解释依据，外部阅读与站内交互讲解分别标注。\n\n浏览全部交互讲解 →",
+    "guideOpen": true,
+    "focus": true
+  },
+  {
+    "browser": "CLOSED"
+  }
+]

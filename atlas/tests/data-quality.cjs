@@ -22,6 +22,21 @@ function validate(d,{checkFiles=true}={}){
  for(const n of d.nodes||[]){if(!groups.has(n.group))fail('node '+n.id+': invalid group');bilingual(n.title,'node '+n.id+' title');bilingual(n.description,'node '+n.id+' description');if(!nonempty(n.formula)||!nonempty(n.source))fail('node '+n.id+': formula/source missing');if(n.help){bilingual(n.help.title,'node '+n.id+' help title');bilingual(n.help.body,'node '+n.id+' help body');if(!Array.isArray(n.help.sources)||!n.help.sources.length)fail('node '+n.id+': help evidence missing');else for(const s of n.help.sources){bilingual(s.label,'node '+n.id+' help source label');if(!nonempty(s.href))fail('node '+n.id+': help source missing');}}}
  for(const e of d.edges||[]){if(!nodes.has(e.from)||!nodes.has(e.to))fail('edge '+e.id+': invalid endpoint');if(!Object.hasOwn(d.types||{},e.type))fail('edge '+e.id+': invalid type');bilingual(e.label,'edge '+e.id+' label');bilingual(e.reason,'edge '+e.id+' reason');if(!nonempty(e.source))fail('edge '+e.id+': source missing');if(e.prerequisite!==undefined&&typeof e.prerequisite!=='boolean')fail('edge '+e.id+': prerequisite must be explicit boolean');}
  for(const t of d.trails||[]){bilingual(t.title,'trail '+t.id+' title');if(t.backgroundNote){bilingual(t.backgroundNote,'trail '+t.id+' background note');if(!nonempty(t.backgroundSource))fail('trail '+t.id+': background source missing');}if(!Array.isArray(t.nodes)||t.nodes.length<2){fail('trail '+t.id+': stops missing');continue;}for(const id of [...t.nodes,...(t.background||[])])if(!nodes.has(id))fail('trail '+t.id+': invalid node '+id);for(let i=1;i<t.nodes.length;i++){const a=t.nodes[i-1],b=t.nodes[i];if(!(d.edges||[]).some(e=>(e.from===a&&e.to===b)||(e.from===b&&e.to===a)))fail('trail '+t.id+': disconnected stops '+a+'/'+b);}}
+ // Optional station tasks are editorial claims over the same graph, not learner state.
+ for(const t of d.trails||[])if(t.stationTasks!==undefined){
+  if(!Array.isArray(t.stationTasks)){fail('trail '+t.id+': stationTasks must be an array');continue;}
+  if(!Array.isArray(t.nodes))continue;
+  const seen=new Set();
+  for(const task of t.stationTasks){
+   if(!task||typeof task!=='object'||Array.isArray(task)){fail('trail '+t.id+': invalid station task');continue;}
+   if(!t.nodes.includes(task.node)||seen.has(task.node))fail('trail '+t.id+': invalid/duplicate task node '+task.node);seen.add(task.node);
+   for(const field of ['question','action','observe','bridge','evidenceLabel'])bilingual(task[field],'task '+task.node+' '+field);
+   if(!nonempty(task.href)||!nonempty(task.source))fail('task '+task.node+': lesson/evidence missing');
+   const edge=d.edges.find(e=>e.id===task.evidenceEdge);
+   if(!edge||![edge.from,edge.to].includes(task.node))fail('task '+task.node+': claim relation missing or unrelated');
+  }
+  if(seen.size!==t.nodes.length)fail('trail '+t.id+': station coverage incomplete');
+ }
  // A back-edge in explicitly declared prerequisites requests human editorial review.
  // General graph cycles are deliberately not checked as errors.
  const pre=(d.edges||[]).filter(e=>e.prerequisite===true),state=new Map(),stack=[];

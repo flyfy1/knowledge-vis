@@ -1,0 +1,733 @@
+{
+  "url": "http://127.0.0.1:18923/atlas/?trail=signal&node=lti&view=list",
+  "text": "← Knowledge Index\n中\nEN\n\nKNOWLEDGE ATLAS / 01\n\nMathematics & Physics\n\nConnect mathematics and geometry with motion, light, waves, circuits and measurement. Choose a question, inspect the concepts behind it, and try the linked experiment or lesson.\n\n38 concepts · 48 connections\n5 regions · curated with sources\n\nDeveloped with Codex · Revised edition\nExplore the 3D knowledge galaxy →\nRotate the constellations. Trace real connections. · Developed with Codex\n✧\nStart with a question\nWhy can a moving average cancel one frequency?\nSuggested route · 4 concepts\nWhere does the angle start, and when is refraction impossible?\nSuggested route · 2 concepts\nHow does one straight line produce an inverted image?\nSuggested route · 2 concepts\nZero return work: where did the energy go?\nSuggested route · 3 concepts\nBack at the start: where did the distance go?\nSuggested route · 2 concepts\nFrom slopes to net force\nSuggested route · 3 concepts\nWhy does a circle’s projection match a spring?\nSuggested route · 3 concepts\nWhere does the energy go?\nSuggested route · 6 concepts\nFrom circles to waveforms\nSuggested route · 4 concepts\nWhy does resonance happen?\nSuggested route · 4 concepts\nFrom measurements to control\nSuggested route · 4 concepts\n\nSuggested route · An editorial sequence, not a prerequisite rule.\n\n1. LTI systems\n2. Impulse response\n3. Convolution\n4. Frequency response\n\nTry this station · no completion tracking\n\nWhen is one h enough?\n\nOpen the axiom bench. Compare the accumulator and squarer under superposition, then inspect the time-varying gain under a delay.\n\nOpen this experiment →\nCompare your prediction · what to look for and why\n← Previous concept\nNext concept →\nStarting ideas · expand when useful\nExplore the connections\nMap\nList\n3D Galaxy ↗\nFind a concept\nRegion\nAll regions\nMathematical tools\nMotion & waves\nSystems & response\nMeasurement & uncertainty\nCircuits & energy\nClear filters\n\n38 matching concepts · selected: LTI systems\n\nSnell relation & total internal reflection\nBoth angles start at the interface normal; n=c/v is dimensionless. Oblique rays from higher to lower index may have no real refraction angle. The critical limiting case is distinct from strictly supercritical incidence.\nStraight-line slope\nA nonvertical line’s slope is vertical-coordinate change divided by horizontal-coordinate change and stays constant along the line. Its units are Y-units per X-unit; for two geometric length axes it is dimensionless.\nSimilar triangles & pinhole inversion\nIn the homogeneous-medium central-ray model, object distance u and screen distance v are positive. Signed image-height difference divided by object height is−v/u: the negative sign marks inversion; positive size uses the absolute value.\nWork & energy changes\nNet work along a particle’s displacement equals its kinetic-energy change. In this ideal horizontal spring, only the spring does nonzero work, so Wspring=ΔK=−ΔU.\nDefinite integral & signed accumulation\nA definite integral accumulates signed contributions. Over forward time, integrating velocity gives displacement; integrating speed gives distance. Position difference is distinct from a position coordinate.\nDerivatives & instantaneous rates\nA derivative is an instantaneous rate and tangent slope. For position versus time it gives signed velocity; differentiating velocity gives acceleration.\nNet force & Newton’s second law\nIn an inertial frame with constant mass, the sum of external forces equals mass times acceleration. It determines how velocity changes, not the current velocity.\nVoltage, current & power\nVoltage is energy per charge; current is charge flow per time. Power is their product.\nInductor & magnetic energy\nVoltage across an inductor sets the rate of current change; finite voltage cannot cause an instantaneous current jump.\nCapacitor & electric energy\nCurrent into the positive terminal changes voltage; an ideal capacitor holds its voltage at zero current.\nSwitches & diodes\nAn ideal switch opens or closes a path; a diode provides one-way conduction from anode to cathode.\nPulse-width modulation\nVary switch ON time within a fixed period. Duty is the fraction of the period spent ON.\nBuck converter\nCCM means inductor current never reaches zero during a cycle, not that it stays constant. With ideal components, periodic steady state and constant DC input, cycle-average output voltage ⟨Vout⟩ is D times input; instantaneous voltage can ripple.\nBoost converter\nStore energy in an inductor, then let source and inductor feed the output. The relation for cycle-average voltage ⟨Vout⟩ uses the ideal small-ripple periodic steady-state approximation with constant DC input, CCM (inductor current never zero) and0<D<1; instantaneous voltage can ripple.\nUnit circle\nA circle of radius one: a point’s horizontal and vertical coordinates define cos θ and sin θ.\nSine & cosine\nCoordinates of uniform circular motion vary periodically. Amplitude, frequency and phase set the size, rate and starting point.\nComplex rotation\nRepresent a plane point as a complex number. Multiplication by a unit-magnitude complex number rotates it; real and imaginary parts are coordinates.\nVectors & linear maps\nA vector is an ordered collection of numbers. A matrix maps vectors while preserving addition and scalar multiplication.\nEigenvectors\nA nonzero vector that stays on its original line under a matrix transformation, scaled by a factor λ.\nLaplace transform\nAnalyze signals with growing or decaying complex exponentials. The region of s values where the integral converges is part of the description.\nHarmonic motion\nAn ideal spring has a restoring force proportional and opposite to displacement. Without damping or driving, its motion is sinusoidal.\nSuperposition\nAdd signals at the same instant to form a combined signal. Applying this to a physical system requires linear behavior.\nFourier analysis\nDescribe a signal using sinusoidal or complex-exponential components. Periodic signals use a series; finite sampled data can use a discrete Fourier transform.\nSpectrum\nDescribe a signal’s component amplitudes and phases by frequency. A magnitude plot alone cannot reconstruct a general signal.\nResonance\nA periodically driven system may respond most strongly near a particular frequency. Damping changes the peak height and location.\nSampling & aliasing\nRecord a signal at fixed intervals. For an ideally band-limited signal, a sampling rate above twice its highest frequency avoids overlapping spectral copies.\nLTI systems\nLinearity preserves weighted combinations of inputs. Time invariance means delaying an input only delays its output.\nImpulse response\nThe output produced by a discrete unit impulse. For an initially resting LTI system, it determines the response to any input.\nConvolution\nReverse and shift one sequence, multiply it against another, then sum. Each shift produces one output value.\nFrequency response\nFor a stable LTI system, frequency response describes steady-state sinusoidal amplitude and phase changes. Continuous time (CT) uses H(iω), with ω in rad/s; discrete time (DT) uses H(e^{iΩ}), with Ω in rad/sample.\nPoles & stability\nPoles describe exponential response modes. A causal continuous-time rational system is input-output stable when all transfer-function poles lie in the left half-plane.\nFeedback control\nMeasure an output, compare it with a target, and adjust the input. Results depend on the controller, system, delay and noise.\nProbability models\nUse probabilities to describe possible outcomes and uncertainty. Model probabilities are distinct from observed evidence.\nBayesian updating\nA prior is a probability before evidence; a posterior is its update afterward. Likelihood describes evidence under a hypothesis—in this lesson’s discrete examples it is an observation probability. Combine it with the prior and normalize; the result depends on the observation model.\nVariance\nThe expected squared deviation from the mean, measuring spread. Its units are the square of the variable’s units.\nNormal distributions & CLT\nFor iid samples with finite, nonzero variance, the appropriately standardized sample mean approaches a standard normal distribution as sample size grows.\nMonte Carlo estimation\nEstimate expectations or integrals using random-sample averages. Error depends on sampling, sample count and the variance of the quantity estimated.\nKalman filtering\nPredict a state with a dynamic model, then correct it using measurements and their uncertainty. Covariance describes model uncertainty, not guaranteed real-world error.\n\nSystems & response\n\nLTI systems\n\nLinearity preserves weighted combinations of inputs. Time invariance means delaying an input only delays its output.\n\nlinear + time invariant\n\nOpen interactive lesson →\n\nOpens the relevant section in an existing lesson.\n\nWhy these concepts connect · 2\n1 / Connection\nLTI systems → is characterized by its impulse response → Impulse response\n\nFor an initially resting LTI system, decompose the input into weighted shifted impulses and reconstruct the output from h.\n\nExplore Impulse response →\nRead the supporting explanation →\n2 / Connection\nLTI systems → obeys superposition → Superposition\n\nAn editorial map, not a complete curriculum. Connections are curated and linked to explanations. External readings are marked separately from interactive lessons.\n\nBrowse all interactive lessons →",
+  "controls": [
+    {
+      "tag": "A",
+      "text": "← Knowledge Index",
+      "aria": null,
+      "href": "../",
+      "expanded": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "中",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "EN",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "SUMMARY",
+      "text": "Developed with Codex · Revised edition",
+      "aria": null,
+      "href": null,
+      "expanded": null
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "aria": null,
+      "href": "https://github.com/flyfy1/knowledge-vis/commit/c3445f66a3e666acd557a04a7194c9568a383c35",
+      "expanded": null
+    },
+    {
+      "tag": "A",
+      "text": "Explore the 3D knowledge galaxy →\nRotate the constellations. Trace real connections. · Developed with Codex\n✧",
+      "aria": null,
+      "href": "galaxy.html",
+      "expanded": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Why can a moving average cancel one frequency?\nSuggested route · 4 concepts",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Where does the angle start, and when is refraction impossible?\nSuggested route · 2 concepts",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "How does one straight line produce an inverted image?\nSuggested route · 2 concepts",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Zero return work: where did the energy go?\nSuggested route · 3 concepts",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Back at the start: where did the distance go?\nSuggested route · 2 concepts",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "From slopes to net force\nSuggested route · 3 concepts",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Why does a circle’s projection match a spring?\nSuggested route · 3 concepts",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Where does the energy go?\nSuggested route · 6 concepts",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "From circles to waveforms\nSuggested route · 4 concepts",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Why does resonance happen?\nSuggested route · 4 concepts",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "From measurements to control\nSuggested route · 4 concepts",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "1. LTI systems",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "2. Impulse response",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "3. Convolution",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "4. Frequency response",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "Open this experiment →",
+      "aria": null,
+      "href": "../lti/#step3",
+      "expanded": null
+    },
+    {
+      "tag": "SUMMARY",
+      "text": "Compare your prediction · what to look for and why",
+      "aria": null,
+      "href": null,
+      "expanded": null
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "aria": null,
+      "href": "../lti/#step3",
+      "expanded": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "← Previous concept",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Next concept →",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "SUMMARY",
+      "text": "Starting ideas · expand when useful",
+      "aria": null,
+      "href": null,
+      "expanded": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "aria": null,
+      "href": "../lti/#step3",
+      "expanded": null
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "aria": null,
+      "href": "https://openstax.org/books/algebra-and-trigonometry-2e/pages/7-1-angles",
+      "expanded": null
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "aria": null,
+      "href": "https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion",
+      "expanded": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "aria": null,
+      "href": "../trig/#step3",
+      "expanded": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Map",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "List",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "3D Galaxy ↗",
+      "aria": null,
+      "href": "galaxy.html",
+      "expanded": null
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "SELECT",
+      "text": "All regions\nMathematical tools\nMotion & waves\nSystems & response\nMeasurement & uncertainty\nCircuits & energy",
+      "aria": null,
+      "href": null,
+      "value": "all",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Clear filters",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Snell relation & total internal reflection\nBoth angles start at the interface normal; n=c/v is dimensionless. Oblique rays from higher to lower index may have no real refraction angle. The critical limiting case is distinct from strictly supercritical incidence.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Straight-line slope\nA nonvertical line’s slope is vertical-coordinate change divided by horizontal-coordinate change and stays constant along the line. Its units are Y-units per X-unit; for two geometric length axes it is dimensionless.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Similar triangles & pinhole inversion\nIn the homogeneous-medium central-ray model, object distance u and screen distance v are positive. Signed image-height difference divided by object height is−v/u: the negative sign marks inversion; positive size uses the absolute value.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Work & energy changes\nNet work along a particle’s displacement equals its kinetic-energy change. In this ideal horizontal spring, only the spring does nonzero work, so Wspring=ΔK=−ΔU.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Definite integral & signed accumulation\nA definite integral accumulates signed contributions. Over forward time, integrating velocity gives displacement; integrating speed gives distance. Position difference is distinct from a position coordinate.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Derivatives & instantaneous rates\nA derivative is an instantaneous rate and tangent slope. For position versus time it gives signed velocity; differentiating velocity gives acceleration.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Net force & Newton’s second law\nIn an inertial frame with constant mass, the sum of external forces equals mass times acceleration. It determines how velocity changes, not the current velocity.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Voltage, current & power\nVoltage is energy per charge; current is charge flow per time. Power is their product.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Inductor & magnetic energy\nVoltage across an inductor sets the rate of current change; finite voltage cannot cause an instantaneous current jump.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Capacitor & electric energy\nCurrent into the positive terminal changes voltage; an ideal capacitor holds its voltage at zero current.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Switches & diodes\nAn ideal switch opens or closes a path; a diode provides one-way conduction from anode to cathode.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Pulse-width modulation\nVary switch ON time within a fixed period. Duty is the fraction of the period spent ON.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Buck converter\nCCM means inductor current never reaches zero during a cycle, not that it stays constant. With ideal components, periodic steady state and constant DC input, cycle-average output voltage ⟨Vout⟩ is D times input; instantaneous voltage can ripple.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Boost converter\nStore energy in an inductor, then let source and inductor feed the output. The relation for cycle-average voltage ⟨Vout⟩ uses the ideal small-ripple periodic steady-state approximation with constant DC input, CCM (inductor current never zero) and0<D<1; instantaneous voltage can ripple.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Unit circle\nA circle of radius one: a point’s horizontal and vertical coordinates define cos θ and sin θ.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Sine & cosine\nCoordinates of uniform circular motion vary periodically. Amplitude, frequency and phase set the size, rate and starting point.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Complex rotation\nRepresent a plane point as a complex number. Multiplication by a unit-magnitude complex number rotates it; real and imaginary parts are coordinates.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Vectors & linear maps\nA vector is an ordered collection of numbers. A matrix maps vectors while preserving addition and scalar multiplication.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Eigenvectors\nA nonzero vector that stays on its original line under a matrix transformation, scaled by a factor λ.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Laplace transform\nAnalyze signals with growing or decaying complex exponentials. The region of s values where the integral converges is part of the description.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Harmonic motion\nAn ideal spring has a restoring force proportional and opposite to displacement. Without damping or driving, its motion is sinusoidal.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Superposition\nAdd signals at the same instant to form a combined signal. Applying this to a physical system requires linear behavior.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Fourier analysis\nDescribe a signal using sinusoidal or complex-exponential components. Periodic signals use a series; finite sampled data can use a discrete Fourier transform.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Spectrum\nDescribe a signal’s component amplitudes and phases by frequency. A magnitude plot alone cannot reconstruct a general signal.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Resonance\nA periodically driven system may respond most strongly near a particular frequency. Damping changes the peak height and location.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Sampling & aliasing\nRecord a signal at fixed intervals. For an ideally band-limited signal, a sampling rate above twice its highest frequency avoids overlapping spectral copies.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "LTI systems\nLinearity preserves weighted combinations of inputs. Time invariance means delaying an input only delays its output.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Impulse response\nThe output produced by a discrete unit impulse. For an initially resting LTI system, it determines the response to any input.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Convolution\nReverse and shift one sequence, multiply it against another, then sum. Each shift produces one output value.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Frequency response\nFor a stable LTI system, frequency response describes steady-state sinusoidal amplitude and phase changes. Continuous time (CT) uses H(iω), with ω in rad/s; discrete time (DT) uses H(e^{iΩ}), with Ω in rad/sample.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Poles & stability\nPoles describe exponential response modes. A causal continuous-time rational system is input-output stable when all transfer-function poles lie in the left half-plane.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Feedback control\nMeasure an output, compare it with a target, and adjust the input. Results depend on the controller, system, delay and noise.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Probability models\nUse probabilities to describe possible outcomes and uncertainty. Model probabilities are distinct from observed evidence.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Bayesian updating\nA prior is a probability before evidence; a posterior is its update afterward. Likelihood describes evidence under a hypothesis—in this lesson’s discrete examples it is an observation probability. Combine it with the prior and normalize; the result depends on the observation model.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Variance\nThe expected squared deviation from the mean, measuring spread. Its units are the square of the variable’s units.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Normal distributions & CLT\nFor iid samples with finite, nonzero variance, the appropriately standardized sample mean approaches a standard normal distribution as sample size grows.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Monte Carlo estimation\nEstimate expectations or integrals using random-sample averages. Error depends on sampling, sample count and the variance of the quantity estimated.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Kalman filtering\nPredict a state with a dynamic model, then correct it using measurements and their uncertainty. Covariance describes model uncertainty, not guaranteed real-world error.",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "Open interactive lesson →",
+      "aria": null,
+      "href": "../lti/#step3",
+      "expanded": null
+    },
+    {
+      "tag": "SUMMARY",
+      "text": "1 / Connection\nLTI systems → is characterized by its impulse response → Impulse response",
+      "aria": null,
+      "href": null,
+      "expanded": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Explore Impulse response →",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "Read the supporting explanation →",
+      "aria": null,
+      "href": "../lti/#step2",
+      "expanded": null
+    },
+    {
+      "tag": "SUMMARY",
+      "text": "2 / Connection\nLTI systems → obeys superposition → Superposition",
+      "aria": null,
+      "href": null,
+      "expanded": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "aria": null,
+      "href": null,
+      "value": "",
+      "expanded": null,
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "aria": null,
+      "href": "../lti/#step3",
+      "expanded": null
+    },
+    {
+      "tag": "A",
+      "text": "Browse all interactive lessons →",
+      "aria": null,
+      "href": "../",
+      "expanded": null
+    }
+  ]
+}

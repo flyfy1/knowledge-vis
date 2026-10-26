@@ -6,6 +6,13 @@
 @media(forced-colors:active){button[aria-pressed=true],.node[aria-pressed=true]{outline:3px solid Highlight}.edge-path{stroke:CanvasText}.edge-number circle{fill:Canvas;stroke:CanvasText}.edge-number text{fill:CanvasText}:focus-visible{outline-color:Highlight}}
 
 .relation summary{cursor:pointer;min-height:48px;overflow-wrap:anywhere}.relation summary .relation-type{display:inline}.relation summary p{display:block}.relation[open] summary{margin-bottom:var(--s3)}.relation:last-child{padding-bottom:var(--s4)}
+.route-task{padding:var(--s4);margin-top:var(--s4);background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);min-width:0}
+.route-task>*+*{margin-top:var(--s3)}.route-task h3{line-height:1.4;overflow-wrap:anywhere}
+.route-task .task-open{display:inline-flex;align-items:center;min-height:48px;font-weight:650}
+.route-task details>p{margin:var(--s3) 0}.route-task summary{min-height:48px;cursor:pointer;color:var(--cyan);padding:var(--s3) 0;overflow-wrap:anywhere}
+.route-task-nav{display:flex;flex-wrap:wrap;gap:var(--s3)}.route-task-nav button{flex:1;min-width:120px;white-space:normal}
+.route-task button:disabled{color:var(--muted);cursor:default;opacity:1}
+#route-task-title{scroll-margin-block:var(--s3)}
 
 .relation-statement{display:block}.relation summary .relation-statement{margin-top:var(--s2)}
 /* English long words must remain readable at320px with200% text sizing. */

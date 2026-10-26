@@ -1,0 +1,38 @@
+{
+  "scope": "Own static/data/actual numerical helper probe, no Chrome or learning/hearing claim",
+  "counts": {
+    "nodes": 38,
+    "edges": 48,
+    "trails": 11
+  },
+  "numericPass": true,
+  "threeTapComplexSum": 1.5700924586837752e-16,
+  "twoTapComplexSum": 0.5000000000000001,
+  "measuredThree": 4.7350729192735456e-17,
+  "measuredTwo": 0.5000000000000001,
+  "startup": [
+    0.3333333333333333,
+    0.1666666666666667,
+    -1.1102230246251565e-16
+  ],
+  "malformed": [
+    {
+      "nodes": null,
+      "errors": [
+        "trail signal: stops missing"
+      ]
+    },
+    {
+      "nodes": {},
+      "errors": [
+        "trail signal: stops missing"
+      ]
+    },
+    {
+      "nodes": "bad",
+      "errors": [
+        "trail signal: stops missing"
+      ]
+    }
+  ]
+}

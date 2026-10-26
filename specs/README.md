@@ -6,6 +6,8 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Signal-fingerprint learning route](atlas-signal-path.md): sourced convolution/frequency relation, current-station experiment tasks, truthful cross-course examples and existing Atlas context recovery.
+
 - [LTI step2 audible comparison](../lti/BRIEF.md): same-model input/output audition, honest discrete-time mapping, fixed gain, lifecycle and accessible silent fallback.
 
 - [Atlas 3D galaxy](atlas-galaxy.md): graph-distance layout, sourced connections, camera/touch controls, accessible list and lifecycle/fallback acceptance.

@@ -1,0 +1,19 @@
+{
+  "decision": "bounded_pass",
+  "remainingMustFix": 0,
+  "method": "Independent source-first, own numerical/data probes and limited CLI; no Chrome or hearing",
+  "checks": {
+    "counts": "38/48/11",
+    "validatorStructuredErrors": true,
+    "allTaskLocalFragmentsExist": true,
+    "dataQualityCoreChecks": 28,
+    "focusFixSourceOnly": true
+  },
+  "sha256": {
+    "atlas/data.js": "be36769cb7ab56110bf802b2a4da0b0fb9614c06bdd2a7403d4b8207112fcabb",
+    "atlas/app.js": "b632ecc38e882883e10a42d0bac1d0ed0450c72f25e6a5b83663e5ee4d77a6f5",
+    "atlas/tests/data-quality.cjs": "2f96b64dbed82e389e9023c297b0b56400a8c7c0bfdfd619dfa95334c2955721",
+    "atlas/tests/data-quality-core.cjs": "8f0bd5e231b9ac2f04173b1ade484098ee3b20a0f044c491153453ca3fdcb7c2",
+    "specs/atlas-signal-path.md": "5ca5d2f0d954e1423b55f357e0b5366390f6a78304e2b0e11e2c291ad8784c6f"
+  }
+}

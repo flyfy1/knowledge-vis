@@ -1,0 +1,13 @@
+{
+  "nodes": 38,
+  "edges": 47,
+  "routes": 10,
+  "hasConvolutionFrequencyEdge": false,
+  "hasSignalRoute": false,
+  "existingSources": {
+    "lti": "../lti/#step3",
+    "impulse": "../lti/#step2",
+    "convolution": "../convolution/#step2",
+    "freqresp": "../freqresp/#step0"
+  }
+}

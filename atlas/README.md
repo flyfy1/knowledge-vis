@@ -4,7 +4,9 @@ Start with [WORKFLOW](../WORKFLOW.md), [UI/bilingual policy](../UI-I18N-SPEC.md)
 
 ## Current state
 
-- **Production release:**accepted mathematics/physics and signal resources were published to https://visual.integ.life under `visual-20261026T000401Z-c960509c493a`. [Release record](../specs/reviews/visual-release-20261026.md). Unfinished power animation work is excluded.
+- **Current iteration (38concepts/48relations/11routes):** one signal-fingerprint route connects existing LTI, impulse, convolution and discrete frequency-response experiments with per-station tasks and a sourced representation relation. [Spec](../specs/atlas-signal-path.md). This candidate is not yet a production release; use `/visual-release.json` for actual published status.
+
+- **Historical first production release:**accepted mathematics/physics and signal resources were published to https://visual.integ.life under `visual-20261026T000401Z-c960509c493a`. [Release record](../specs/reviews/visual-release-20261026.md). That historical release excluded unfinished power work; later accepted power/galaxy/LTI releases supersede it. This bullet is not the current production version.
 
 - **Signal-domain short audit:**repairs the existing reachable moving-averageπ measurement/native-control mismatch, sampling bandlimit/interpolation claims and CT/DT/Hz/rad units across the existing lessons. No graph growth or new runtime/store. [Design](../specs/reviews/signal-domain-design-20261026.md) · [verification/limits](../specs/reviews/signal-domain-verification-20261026.md).
 
@@ -22,7 +24,7 @@ Start with [WORKFLOW](../WORKFLOW.md), [UI/bilingual policy](../UI-I18N-SPEC.md)
 
 - **Round8 global audit:**45 core local catalogue entries (including this hub),3 adjacent lessons; two data repairs reuse the complex lesson and clarify free-motion restoring force. No graph expansion. New reproducible data/actual-anchor checks; selected legacy320px header repair. See [morning experience index](../specs/reviews/nightly-math-physics-20261026.md) and [coverage/verification](../specs/reviews/atlas-audit-verification-20261026.md) for the scoped results and remaining gaps.
 
-- **Locally complete and independently accepted:**38 concepts,47 sourced relations,10 editorial routes. One MotionBridge provides projection/rates/travel/work views of the same model; the existing ResponseBridge handles steady forcing. No third controller/model/clock/store was created. Latest atlas regression347 checks; motion/rates/response/travel, numerical boundary and independent implementation/science checks pass.
+- **Historical accepted milestone before this signal route:**38 concepts,47 sourced relations,10 editorial routes. One MotionBridge provides projection/rates/travel/work views of the same model; the existing ResponseBridge handles steady forcing. No third controller/model/clock/store was created. Latest atlas regression347 checks; motion/rates/response/travel, numerical boundary and independent implementation/science checks pass.
 - Round7 adds a force–displacement work/energy task on the same free-spring clock and interval, with directed Fdx and intermediate net-work exchange plots. One combined concept closes the integral/net-force connection; all prior views remain integrated. Independent scientific/teaching review and cumulative acceptance passed.
 - Round6 adds an optional starting-ideas disclosure using canonical node content, short symbol notes and a bounded free-spring prediction/reveal. Independent scientific/teaching acceptance and final cumulative checks passed with zero required findings. No new graph/model/learner profile.
 - Round5 repairs first-visit route reveal/focus, return-to-current-experiment and explanation of an intentionally retained off-route concept. No new concepts, profiles or model state; counts unchanged. Independent repair acceptance passed with zero remaining must-fix findings, including24 visible-focus keyboard paths.
