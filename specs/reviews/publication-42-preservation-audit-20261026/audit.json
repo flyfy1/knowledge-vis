@@ -1,0 +1,266 @@
+{
+  "observedAt": "2026-10-26T14:05:17.149953+00:00",
+  "head": "5cf73ee858d9a8938b55206c867233a8397d60f6",
+  "expected_head": "5cf73ee858d9a8938b55206c867233a8397d60f6",
+  "status": "failed",
+  "current": {
+    "problem_id": "1092",
+    "stage": "review",
+    "started_at": "2026-10-26T08:31:48.750200+00:00",
+    "run_id": "1092-review-7c8ae6c3edaf"
+  },
+  "dirty": [
+    "?? specs/reviews/1092-evidence/1092-review-1-326032ac/cold-complete.png",
+    "?? specs/reviews/1092-evidence/1092-review-1-326032ac/cold-initial.png",
+    "?? specs/reviews/1092-review-1-326032ac.md"
+  ],
+  "stateSha": "d18e25bf3e3ee2a8b7907ee0c62c14776daba2c9ea3f9bc4191b3265d43286be",
+  "ledgerSha": "acfe8d78b6c416364ef04aa35bc3e825f26ca2bdbddd57417b1d8f9b6b6e962e",
+  "released": 158,
+  "pending": null,
+  "lastRelease": {
+    "id": "220bec07349442618a0a828991871ed2",
+    "revision": "c852d5db62ae92a6f228914a4768f2e2b62081cb",
+    "published_at": "2026-10-26T02:16:44.266338+00:00"
+  },
+  "root": "/home/songyy/projects/visual-site",
+  "resolvedRoot": "/home/songyy/projects/visual-site",
+  "publicBase": "https://visual.integ.life",
+  "registryGuard": {
+    "actual": "a2a5c1b58560f441ccbb3ea443318c0277251e38dd159c4c72a5b4007e5304fa",
+    "ledger": "a2a5c1b58560f441ccbb3ea443318c0277251e38dd159c4c72a5b4007e5304fa"
+  },
+  "eligible": [
+    "913",
+    "920",
+    "924",
+    "927",
+    "928",
+    "936",
+    "940",
+    "943",
+    "952",
+    "956",
+    "964",
+    "995",
+    "1001",
+    "1012",
+    "1028",
+    "1032",
+    "1036",
+    "1044",
+    "1074"
+  ],
+  "planIsOnly19AndNotPublishable": true,
+  "publisherSha": "7292c88e2ae035667a1bc723b076fb3d8d3d8562dc8428f3f66f74dc60f764d8",
+  "staticSha": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e",
+  "candidate42": "62402c285c6e108a342131aad00231c3db53560a",
+  "ledgerCandidate42": "62402c285c6e108a342131aad00231c3db53560a",
+  "registry42": {
+    "campaign": {
+      "id": 42,
+      "title": {
+        "zh": "\u63a5\u96e8\u6c34",
+        "en": "Trapping Rain Water"
+      },
+      "desc": {
+        "zh": "left\u3001right \u56f4\u4f4f\u5c1a\u672a\u7ed3\u7b97\u533a\u57df\u3002left_max \u5305\u542b\u4ece\u8d77\u70b9\u5230 left \u7684\u6700\u9ad8\u5899\uff0cright_max \u5305\u542b\u4ece right \u5230\u672b\u5c3e\u7684\u6700\u9ad8\u5899\uff1b\u5148\u628a\u5f53\u524d\u4e24\u7aef\u67f1\u5b50\u7eb3\u5165\u6700\u5927\u503c\uff0c\u518d\u6bd4\u8f83\u3002",
+        "en": "left and right bound the unsettled region. left_max is the highest wall through left, and right_max the highest from right to the end. Include the current endpoint bars before comparing these maxima."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u53cc\u6307\u9488\u8fb9\u754c",
+          "en": "Two-pointer bounds"
+        }
+      ],
+      "path": "42/",
+      "leetcodeUrl": "https://leetcode.com/problems/trapping-rain-water/",
+      "language": "Python",
+      "complexity": "O(n) time; O(1) auxiliary space"
+    },
+    "production": {
+      "id": 42,
+      "title": {
+        "zh": "\u63a5\u96e8\u6c34",
+        "en": "Trapping Rain Water"
+      },
+      "desc": {
+        "zh": "left\u3001right \u56f4\u4f4f\u5c1a\u672a\u7ed3\u7b97\u533a\u57df\u3002left_max \u5305\u542b\u4ece\u8d77\u70b9\u5230 left \u7684\u6700\u9ad8\u5899\uff0cright_max \u5305\u542b\u4ece right \u5230\u672b\u5c3e\u7684\u6700\u9ad8\u5899\uff1b\u5148\u628a\u5f53\u524d\u4e24\u7aef\u67f1\u5b50\u7eb3\u5165\u6700\u5927\u503c\uff0c\u518d\u6bd4\u8f83\u3002",
+        "en": "left and right bound the unsettled region. left_max is the highest wall through left, and right_max the highest from right to the end. Include the current endpoint bars before comparing these maxima."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u53cc\u6307\u9488\u8fb9\u754c",
+          "en": "Two-pointer bounds"
+        }
+      ],
+      "path": "42/",
+      "leetcodeUrl": "https://leetcode.com/problems/trapping-rain-water/",
+      "language": "Python",
+      "complexity": "O(n) time; O(1) auxiliary space"
+    },
+    "merged": {
+      "id": 42,
+      "title": {
+        "zh": "\u63a5\u96e8\u6c34",
+        "en": "Trapping Rain Water"
+      },
+      "desc": {
+        "zh": "left\u3001right \u56f4\u4f4f\u5c1a\u672a\u7ed3\u7b97\u533a\u57df\u3002left_max \u5305\u542b\u4ece\u8d77\u70b9\u5230 left \u7684\u6700\u9ad8\u5899\uff0cright_max \u5305\u542b\u4ece right \u5230\u672b\u5c3e\u7684\u6700\u9ad8\u5899\uff1b\u5148\u628a\u5f53\u524d\u4e24\u7aef\u67f1\u5b50\u7eb3\u5165\u6700\u5927\u503c\uff0c\u518d\u6bd4\u8f83\u3002",
+        "en": "left and right bound the unsettled region. left_max is the highest wall through left, and right_max the highest from right to the end. Include the current endpoint bars before comparing these maxima."
+      },
+      "difficulty": "hard",
+      "topics": [
+        {
+          "zh": "\u53cc\u6307\u9488\u8fb9\u754c",
+          "en": "Two-pointer bounds"
+        }
+      ],
+      "path": "42/",
+      "leetcodeUrl": "https://leetcode.com/problems/trapping-rain-water/",
+      "language": "Python",
+      "complexity": "O(n) time; O(1) auxiliary space"
+    }
+  },
+  "production42": {
+    "leetcode/42/app.js": "d3a3cac1d3f3505b123470e705b59aa5da11db7530884de7f4e8fb5ca515c87d",
+    "leetcode/42/wall-lab.js": "b3c25db8a67b4063624fdef0807563c600eb248ff38ade4ca62214044521760b",
+    "leetcode/42/copy.js": "f2abcfce607340e0ea9d990e1f5cd99131c4e90eb57a8eaa9c3a1f41c9dcf9ab",
+    "leetcode/42/python-code.js": "a804a4248f276b91b39a4111cce000c0ab5320791b26c135a65390564c8f95ec",
+    "leetcode/42/wall-model.js": "c8da88da8b068a4aab98ae833a7993355efee9d46effd90775c6a2381ddade40",
+    "leetcode/42/solution.py": "445df8f0630dea83e727adc566328b482162b8f3f4c60eed02fa8358111ff7e5",
+    "leetcode/42/wall-lab.css": "59cd018f7eb4fc23332c6c4822bfe9b53d4efbe62cadfce09da5d59266aab70b",
+    "leetcode/42/index.html": "ed8412319ad49cc8a320d495d9f9718922f21ca5e88fa98f993847c269813b59",
+    "leetcode/42-codex/app.js": "d3a3cac1d3f3505b123470e705b59aa5da11db7530884de7f4e8fb5ca515c87d",
+    "leetcode/42-codex/wall-lab.js": "b3c25db8a67b4063624fdef0807563c600eb248ff38ade4ca62214044521760b",
+    "leetcode/42-codex/copy.js": "f2abcfce607340e0ea9d990e1f5cd99131c4e90eb57a8eaa9c3a1f41c9dcf9ab",
+    "leetcode/42-codex/python-code.js": "a804a4248f276b91b39a4111cce000c0ab5320791b26c135a65390564c8f95ec",
+    "leetcode/42-codex/wall-model.js": "c8da88da8b068a4aab98ae833a7993355efee9d46effd90775c6a2381ddade40",
+    "leetcode/42-codex/solution.py": "445df8f0630dea83e727adc566328b482162b8f3f4c60eed02fa8358111ff7e5",
+    "leetcode/42-codex/wall-lab.css": "59cd018f7eb4fc23332c6c4822bfe9b53d4efbe62cadfce09da5d59266aab70b",
+    "leetcode/42-codex/index.html": "2e7c66cb0f61c5192b8665cb72b983ccb1a7a3bb8132ac49b9f166892434f0c5"
+  },
+  "production42CampaignDifferences": {
+    "leetcode/42/app.js": {
+      "production": "d3a3cac1d3f3505b123470e705b59aa5da11db7530884de7f4e8fb5ca515c87d",
+      "campaign": "ff88781bdd473fb647b740dd4f450be58195b85a8ad7dba04e24779adaf7cca7"
+    },
+    "leetcode/42/wall-lab.js": {
+      "production": "b3c25db8a67b4063624fdef0807563c600eb248ff38ade4ca62214044521760b",
+      "campaign": null
+    },
+    "leetcode/42/wall-model.js": {
+      "production": "c8da88da8b068a4aab98ae833a7993355efee9d46effd90775c6a2381ddade40",
+      "campaign": null
+    },
+    "leetcode/42/wall-lab.css": {
+      "production": "59cd018f7eb4fc23332c6c4822bfe9b53d4efbe62cadfce09da5d59266aab70b",
+      "campaign": null
+    },
+    "leetcode/42-codex/app.js": {
+      "production": "d3a3cac1d3f3505b123470e705b59aa5da11db7530884de7f4e8fb5ca515c87d",
+      "campaign": "ff88781bdd473fb647b740dd4f450be58195b85a8ad7dba04e24779adaf7cca7"
+    },
+    "leetcode/42-codex/wall-lab.js": {
+      "production": "b3c25db8a67b4063624fdef0807563c600eb248ff38ade4ca62214044521760b",
+      "campaign": null
+    },
+    "leetcode/42-codex/wall-model.js": {
+      "production": "c8da88da8b068a4aab98ae833a7993355efee9d46effd90775c6a2381ddade40",
+      "campaign": null
+    },
+    "leetcode/42-codex/wall-lab.css": {
+      "production": "59cd018f7eb4fc23332c6c4822bfe9b53d4efbe62cadfce09da5d59266aab70b",
+      "campaign": null
+    },
+    "leetcode/42-codex/index.html": {
+      "production": "2e7c66cb0f61c5192b8665cb72b983ccb1a7a3bb8132ac49b9f166892434f0c5",
+      "campaign": "b23b8735477b6732966ebba7a56be1a97d2ad13e27809af7235dc8843bbf783d"
+    }
+  },
+  "selected42": false,
+  "payload42Paths": [],
+  "discovery": {
+    "index.html": {
+      "production": "ae63409a3cb8bc7e3e08306790bcb2a3ff170d0aa5646577effbb07266f94fd8",
+      "planned": null,
+      "would_replace": false,
+      "refs": [
+        "pages.config.js?v=6de8406c9c2e"
+      ]
+    },
+    "leetcode/index.html": {
+      "production": "1c789f35eb396b7c19efcebc0d2b568b4ae2d646389dbaa6186aa8929bd6f0c8",
+      "planned": "26958283d522d51ce443e5fb7f544c12e78b25c0fbb1e0ceb1c9ab8473d2afff",
+      "would_replace": true,
+      "refs": [
+        "style.css?v=lc-ids1",
+        "collection.css?v=search1",
+        "../",
+        "2916/",
+        "common.js?v=lc2916-astra2",
+        "problems.codex.config.js?v=f9cef729664b",
+        "collection.js?v=search1"
+      ]
+    },
+    "leetcode/collection.js": {
+      "production": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+      "planned": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+      "would_replace": false
+    },
+    "leetcode/collection.css": {
+      "production": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7",
+      "planned": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7",
+      "would_replace": false
+    },
+    "leetcode/problems.config.js": {
+      "production": "a2a5c1b58560f441ccbb3ea443318c0277251e38dd159c4c72a5b4007e5304fa",
+      "planned": "acbbc4f304a148cf22e051827a5acbe775c8192d1d80c0942893e7f67e434f1c",
+      "would_replace": true
+    },
+    "leetcode/problems.codex.config.js": {
+      "production": "f9cef729664bcbaa7700ed5a939ebc9941d3069e62f605b8c10f1b115798326c",
+      "planned": "27e34c3a5ad965e1806b247238e9ad0abcf09164df2d82979d8d25dd46d42a85",
+      "would_replace": true
+    },
+    "leetcode/common.js": {
+      "production": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+      "planned": null,
+      "would_replace": false
+    },
+    "leetcode/style.css": {
+      "production": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+      "planned": null,
+      "would_replace": false
+    },
+    "pages.config.js": {
+      "production": "6de8406c9c2eff1b055be55c07056bf65585927c188230f91202c80cfc8c698e",
+      "planned": null,
+      "would_replace": false
+    }
+  },
+  "shared": {
+    "leetcode/style.css": {
+      "source": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+      "production": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+      "equal": true
+    },
+    "leetcode/common.js": {
+      "source": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+      "production": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+      "equal": true
+    }
+  },
+  "dependencyErrors": [],
+  "plannedFiles": {
+    "leetcode/problems.config.js": "acbbc4f304a148cf22e051827a5acbe775c8192d1d80c0942893e7f67e434f1c",
+    "leetcode/problems.codex.config.js": "27e34c3a5ad965e1806b247238e9ad0abcf09164df2d82979d8d25dd46d42a85",
+    "leetcode/index.html": "26958283d522d51ce443e5fb7f544c12e78b25c0fbb1e0ceb1c9ab8473d2afff",
+    "leetcode/collection.js": "28c46dc1494d29783550e5a21b50a976095a10b0ea2774a53276fb6e4e584699",
+    "leetcode/collection.css": "fadd84b62bb62d2b636fbca247adcda37dfeb24c10a4cede65c605ed2090ece7"
+  },
+  "stateUnchanged": true,
+  "ledgerUnchanged": true
+}

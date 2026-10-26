@@ -1,0 +1,36 @@
+{
+  "files": {
+    "README.md": "4eb48e9f29daf794cf99a3b438578013ed50c681f56569994c384fcd1608bad4",
+    "audit-validation.json": "36781aac5f55a1765bb9d07b334dc4099515293413781b2b394e225355dbea84",
+    "capture.json": "764002a0d1e74be1e47c97d60c6e8cb31469032853b6261e31c392525c4ac15e",
+    "capture.py": "da80747a4080533456a6a8dcc691811de8cd46887c3fd37b667e1054621c3d96",
+    "capture.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dispatch.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dispatch.stdout": "9dd47e68e4d4d7500e090195fbab3373850a6dacfcb0d50117540bbf10e9440a",
+    "execution-receipt.json": "bae5a05b62f2725e4d43ad13f88e22dbb85649099ff0f0e2fa970972f825024b",
+    "failure-events.json": "e1027b3e32edfa942af8375f039c90dfd0605a7e8a7bce7533b738c3fb12841d",
+    "initial-capture-no-node.stderr": "015261bbf3c6e19ca7e97fcf3dd1f269bac798d47666d3b433e5465e44cead2c",
+    "preserved-files.json.gz": "8179002aecafea057667c50287c97bc4c6a1a4092172d98ba410c7da6b73cfbe",
+    "progress-after.json.gz": "9cc15e91c73c41b9fa51c298b83a781fe92e2c9078480125689b76cc5cb92d2d",
+    "recover.py": "523b68f157e887e68907899f4945fb9770e0cfe1441747fa0a423a4a0eb106eb",
+    "task-log.md": "df20ecf123ed74f348efdcf8c84f4f7e24b08049187b75fdad9db64cbf6c0459",
+    "verification.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "execution_report_sha256": "f19238dc35a9316444d382b98ee15455c302ba131cef11fa880fe6c545d530a0",
+  "launch_invocations": 1,
+  "receipt_status": "completed-fresh-review-running",
+  "checks": {
+    "health_loop_green": true,
+    "old_run_prefix_exact": true,
+    "all_problem_entries_exact": true,
+    "queue_exact": true,
+    "ledger_bytes_exact": true,
+    "head_saved_exact": true,
+    "fresh_review": true,
+    "fresh_session": true,
+    "turn_started": true,
+    "no_stop": true,
+    "old_run_files_exact": true,
+    "partial_archive_exact": true
+  }
+}
