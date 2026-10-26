@@ -1,0 +1,69 @@
+{
+  "candidate": "5f0fb45c7e38251720a683978bf4ace6adcea8a0",
+  "assets": [
+    {
+      "file": "leetcode/1036/index.html",
+      "sha256": "8586d4ae0619e0e9e009366ddbf6698c7eb95770e4a4ad72a87033f558f6d910",
+      "servedEqualsCheckout": true
+    },
+    {
+      "file": "leetcode/1036/style.css",
+      "sha256": "dbe1c177d43eb8f50a2d989df17354c16fe468fe76e39ca917deacb098f28891",
+      "servedEqualsCheckout": true
+    },
+    {
+      "file": "leetcode/1036/app.js",
+      "sha256": "9c35646b79fedf05fc4f715645ccb59de64269f9dd2c9f6a53631467d5a5979e",
+      "servedEqualsCheckout": true
+    },
+    {
+      "file": "leetcode/1036/copy.js",
+      "sha256": "916650ba20bb30adebb942d032b97c09eb3867beb2d4ea52706f313e76ffe5d9",
+      "servedEqualsCheckout": true
+    },
+    {
+      "file": "leetcode/1036/core.js",
+      "sha256": "912599e78941197b1f049438861dc8ad89e14d288690a3b42c29cad4c5a787a7",
+      "servedEqualsCheckout": true
+    },
+    {
+      "file": "leetcode/1036/python-code.js",
+      "sha256": "d3d8339af76739c1ae19aa832a565cdfd3ee95329a9b2d58c5c26644a74c44af",
+      "servedEqualsCheckout": true
+    },
+    {
+      "file": "leetcode/1036/solution.py",
+      "sha256": "1074eb82b67764b1a702e8eb673e2d3a89ce4f0aa78ca825cf6c1be213bac35e",
+      "servedEqualsCheckout": true
+    },
+    {
+      "file": "leetcode/style.css",
+      "sha256": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+      "servedEqualsCheckout": true
+    },
+    {
+      "file": "leetcode/common.js",
+      "sha256": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+      "servedEqualsCheckout": true
+    }
+  ],
+  "independentCanonicalCases": 106,
+  "freshPredictionsVerified": [
+    true,
+    false
+  ],
+  "inputsUnchanged": true,
+  "contrastHelperCalibration": "black/white, primary RGB luminances, #747474 black ratio 4.492948073111701 <4.5",
+  "preflight": {
+    "command": "python3 -B scripts/register_leetcode_lesson.py 1036 --validate-only",
+    "exit": 0,
+    "stdout": ""
+  },
+  "keyboardFarColumn": {
+    "width": 320,
+    "cssZoom": 2,
+    "scrollLeft": 418,
+    "clientWidth": 102,
+    "scrollWidth": 520
+  }
+}
