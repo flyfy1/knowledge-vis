@@ -6,6 +6,10 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Atlas 3D galaxy](atlas-galaxy.md): graph-distance layout, sourced connections, camera/touch controls, accessible list and lifecycle/fallback acceptance.
+- [LC42 two-wall learning contract](../leetcode/42/BRIEF.md): causal per-column water derivation, distinction from optimized trace, reset and validated Back/reload recovery.
+
+
 - [Eigen-direction teaching/interaction contract](../eigen/BRIEF.md): definition-first graph entry, same-state arrow/remainder geometry, approximation and signed eigenvalue boundaries, arbitrary direction controls and recurrence acceptance.
 
 

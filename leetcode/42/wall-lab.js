@@ -35,7 +35,19 @@ Object.assign(window.LESSON_COPY, {
 window.RainWallLab = {mount() {
   const $ = id => document.getElementById(id);
   const presets = [[3,0,2,0,4], [3,0,2,0,1], [3,3,3], [0,0,0], [4]];
-  let height = presets[0].slice(), index = 2, phase = 0;
+  let preset = 0, height = presets[0].slice(), index = 2, phase = 0;
+  const stateKey = 'visualLc42Wall';
+  function restore() {
+    try {
+      const saved = history.state?.[stateKey];
+      if (!saved || saved.version !== 1 || !Number.isInteger(saved.preset) || !presets[saved.preset] || !Array.isArray(saved.height) || saved.height.length !== presets[saved.preset].length || saved.height.some((h,i) => !Number.isInteger(h) || h < 0 || h > 6 || (i < saved.height.length - 1 && h !== presets[saved.preset][i])) || !Number.isInteger(saved.index) || saved.index < 0 || saved.index >= saved.height.length || !Number.isInteger(saved.phase) || saved.phase < 0 || saved.phase > 3) return;
+      preset = saved.preset; height = saved.height.slice(); index = saved.index; phase = saved.phase;
+    } catch (_) { /* Restricted history retains the in-memory experiment. */ }
+  }
+  function save() {
+    try { history.replaceState({...history.state, [stateKey]: {version:1, preset, height:height.slice(), index, phase}}, ''); } catch (_) {}
+  }
+  restore();
   const t = (key, values = {}) => window.LESSON_COPY[key][document.documentElement.lang.startsWith('zh') ? 0 : 1]
     .replace(/\{(\w+)\}/g, (_, name) => String(values[name]));
   function element(tag, value, cls) {
@@ -46,6 +58,9 @@ window.RainWallLab = {mount() {
   }
   function render() {
     const s = RainWallModel.inspect(height, index);
+    $('wall-preset').value = String(preset);
+    $('wall-focus').value = String(index);
+    save();
     $('wall-input').textContent = 'height = [' + height.join(', ') + ']';
     $('wall-height-value').textContent = String(height.at(-1));
     $('wall-height').value = height.at(-1);
@@ -86,7 +101,7 @@ window.RainWallLab = {mount() {
     $('wall-focus').value = index;
   }
   $('wall-preset').addEventListener('change', event => {
-    height = presets[Number(event.target.value)].slice(); index = Math.min(2, height.length - 1); phase = 0; setOptions(); render();
+    preset = Number(event.target.value); height = presets[preset].slice(); index = Math.min(2, height.length - 1); phase = 0; setOptions(); render();
   });
   $('wall-focus').addEventListener('change', event => {index = Number(event.target.value); phase = 0; render();});
   $('wall-height').addEventListener('input', event => {height[height.length - 1] = Number(event.target.value); phase = 0; render();});
@@ -94,9 +109,12 @@ window.RainWallLab = {mount() {
   $('wall-next').addEventListener('click', () => {phase = Math.min(3, phase + 1); render();});
   $('wall-reset').addEventListener('click', () => {phase = 0; render();});
   $('wall-restore').addEventListener('click', () => {
-    height = presets[0].slice(); index = 2; phase = 0; $('wall-preset').value = '0'; setOptions(); render();
+    preset = 0; height = presets[0].slice(); index = 2; phase = 0; $('wall-preset').value = '0'; setOptions(); render();
   });
   new MutationObserver(render).observe(document.documentElement, {attributes: true, attributeFilter: ['lang']});
+  const reconcile = () => { restore(); setOptions(); render(); requestAnimationFrame(render); };
+  addEventListener('pageshow', reconcile);
+  addEventListener('popstate', reconcile);
   setOptions(); render();
   window.wallSnapshot = () => ({phase, ...RainWallModel.inspect(height, index)});
 }};

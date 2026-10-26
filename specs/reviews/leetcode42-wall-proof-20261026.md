@@ -89,3 +89,7 @@ water cell, depth readout and highlighted subtraction agree and controls fit.
 Runtime file hashes and algorithm results are in `algorithm-results.json`;
 `results.json`, `route-results.json`, and `original-browser-results.json` record
 browser evidence. Independent review remains pending.
+
+## Integrated recurrence requirement
+
+A subsequent independent UI cold walk found a Back/reload model/native-control mismatch. Current-entry selected experiment state must be validated, restored and reconciled (see page BRIEF recovery contract and `tests/wall-recovery.cjs`). This supersedes the original self-check's incomplete Back coverage; it does not reopen the unchanged numerical algorithm. Final integrated recovery evidence is separate from this historical worker report.
