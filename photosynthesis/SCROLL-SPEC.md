@@ -19,7 +19,7 @@ Base app SHA-1: `fa402ee4f939e342ad2f0197bb839ab94d9fcf1b`.
 4. Animation does not rebuild bet buttons each frame or steal focus. Input controls, equation source selection, both quizzes/reset and zh/en switching stay functional.
 5. Core Chinese lesson text, equation, summary and links are authored into HTML. No JS or a failed app script still yields a readable lesson; Canvas failures show explanatory text while rate sliders and quizzes keep working. Missing IntersectionObserver only disables optional navigation highlighting/visibility observation.
 6. Refresh at a section anchor, navigation to a related lesson and Back must retain a usable page; orientation and mobile browser-height changes must not expand canvases.
-7. Visible bilingual Codex attribution is page-local and accurately limits this contribution to scrolling/compatibility. Preserve prior model/formula and historical attribution.
+7. Visible bilingual Codex attribution uses the shared [edition contract](../specs/visual-page-provenance.md) with one header disclosure, source revision3e1c2f43 and scope limited to scrolling/compatibility. Preserve and explicitly disclose prior Codex/Alberto/Claude Code contributions. Do not add a second badge. Preserve the prior model/formula.
 
 ## Verification
 
