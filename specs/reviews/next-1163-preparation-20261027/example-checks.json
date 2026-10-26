@@ -1,0 +1,385 @@
+{
+  "scope": "Source/semantic evidence only; no production suffix-selection algorithm or lesson acceptance.",
+  "handCases": [
+    {
+      "text": "abab",
+      "expected": "bab",
+      "winningStart": 1,
+      "suffixes": [
+        "abab",
+        "bab",
+        "ab",
+        "b"
+      ],
+      "substringsExamined": 10
+    },
+    {
+      "text": "leetcode",
+      "expected": "tcode",
+      "winningStart": 3,
+      "suffixes": [
+        "leetcode",
+        "eetcode",
+        "etcode",
+        "tcode",
+        "code",
+        "ode",
+        "de",
+        "e"
+      ],
+      "substringsExamined": 36
+    },
+    {
+      "text": "a",
+      "expected": "a",
+      "winningStart": 0,
+      "suffixes": [
+        "a"
+      ],
+      "substringsExamined": 1
+    },
+    {
+      "text": "aaaa",
+      "expected": "aaaa",
+      "winningStart": 0,
+      "suffixes": [
+        "aaaa",
+        "aaa",
+        "aa",
+        "a"
+      ],
+      "substringsExamined": 10
+    },
+    {
+      "text": "az",
+      "expected": "z",
+      "winningStart": 1,
+      "suffixes": [
+        "az",
+        "z"
+      ],
+      "substringsExamined": 3
+    },
+    {
+      "text": "zab",
+      "expected": "zab",
+      "winningStart": 0,
+      "suffixes": [
+        "zab",
+        "ab",
+        "b"
+      ],
+      "substringsExamined": 6
+    },
+    {
+      "text": "banana",
+      "expected": "nana",
+      "winningStart": 2,
+      "suffixes": [
+        "banana",
+        "anana",
+        "nana",
+        "ana",
+        "na",
+        "a"
+      ],
+      "substringsExamined": 21
+    },
+    {
+      "text": "ababa",
+      "expected": "baba",
+      "winningStart": 1,
+      "suffixes": [
+        "ababa",
+        "baba",
+        "aba",
+        "ba",
+        "a"
+      ],
+      "substringsExamined": 15
+    },
+    {
+      "text": "zzazzz",
+      "expected": "zzz",
+      "winningStart": 3,
+      "suffixes": [
+        "zzazzz",
+        "zazzz",
+        "azzz",
+        "zzz",
+        "zz",
+        "z"
+      ],
+      "substringsExamined": 21
+    },
+    {
+      "text": "aaaaab",
+      "expected": "b",
+      "winningStart": 5,
+      "suffixes": [
+        "aaaaab",
+        "aaaab",
+        "aaab",
+        "aab",
+        "ab",
+        "b"
+      ],
+      "substringsExamined": 21
+    },
+    {
+      "text": "ababac",
+      "expected": "c",
+      "winningStart": 5,
+      "suffixes": [
+        "ababac",
+        "babac",
+        "abac",
+        "bac",
+        "ac",
+        "c"
+      ],
+      "substringsExamined": 21
+    },
+    {
+      "text": "bba",
+      "expected": "bba",
+      "winningStart": 0,
+      "suffixes": [
+        "bba",
+        "ba",
+        "a"
+      ],
+      "substringsExamined": 6
+    }
+  ],
+  "finiteEvidence": {
+    "alphabet": "abc",
+    "lengths": [
+      1,
+      6
+    ],
+    "strings": 1092,
+    "substrings": 19956,
+    "suffixComparisons": 13941,
+    "shiftedDominanceChecks": 14724
+  },
+  "explicitComparisonTraces": [
+    {
+      "text": "aaaaab",
+      "i": 0,
+      "j": 1,
+      "equalPositions": [
+        [
+          0,
+          1,
+          "a"
+        ],
+        [
+          1,
+          2,
+          "a"
+        ],
+        [
+          2,
+          3,
+          "a"
+        ],
+        [
+          3,
+          4,
+          "a"
+        ]
+      ],
+      "equalPrefixLength": 4,
+      "mismatch": {
+        "indices": [
+          4,
+          5
+        ],
+        "characters": [
+          "a",
+          "b"
+        ]
+      },
+      "winnerStart": 1,
+      "shiftedDominanceWitnesses": [
+        {
+          "losingStart": 0,
+          "winningStart": 1,
+          "remainingEqualPrefixLength": 4,
+          "losingMismatchIndex": 4,
+          "winningMismatchIndex": 5
+        },
+        {
+          "losingStart": 1,
+          "winningStart": 2,
+          "remainingEqualPrefixLength": 3,
+          "losingMismatchIndex": 4,
+          "winningMismatchIndex": 5
+        },
+        {
+          "losingStart": 2,
+          "winningStart": 3,
+          "remainingEqualPrefixLength": 2,
+          "losingMismatchIndex": 4,
+          "winningMismatchIndex": 5
+        },
+        {
+          "losingStart": 3,
+          "winningStart": 4,
+          "remainingEqualPrefixLength": 1,
+          "losingMismatchIndex": 4,
+          "winningMismatchIndex": 5
+        },
+        {
+          "losingStart": 4,
+          "winningStart": 5,
+          "remainingEqualPrefixLength": 0,
+          "losingMismatchIndex": 4,
+          "winningMismatchIndex": 5
+        }
+      ]
+    },
+    {
+      "text": "ababac",
+      "i": 0,
+      "j": 2,
+      "equalPositions": [
+        [
+          0,
+          2,
+          "a"
+        ],
+        [
+          1,
+          3,
+          "b"
+        ],
+        [
+          2,
+          4,
+          "a"
+        ]
+      ],
+      "equalPrefixLength": 3,
+      "mismatch": {
+        "indices": [
+          3,
+          5
+        ],
+        "characters": [
+          "b",
+          "c"
+        ]
+      },
+      "winnerStart": 2,
+      "shiftedDominanceWitnesses": [
+        {
+          "losingStart": 0,
+          "winningStart": 2,
+          "remainingEqualPrefixLength": 3,
+          "losingMismatchIndex": 3,
+          "winningMismatchIndex": 5
+        },
+        {
+          "losingStart": 1,
+          "winningStart": 3,
+          "remainingEqualPrefixLength": 2,
+          "losingMismatchIndex": 3,
+          "winningMismatchIndex": 5
+        },
+        {
+          "losingStart": 2,
+          "winningStart": 4,
+          "remainingEqualPrefixLength": 1,
+          "losingMismatchIndex": 3,
+          "winningMismatchIndex": 5
+        },
+        {
+          "losingStart": 3,
+          "winningStart": 5,
+          "remainingEqualPrefixLength": 0,
+          "losingMismatchIndex": 3,
+          "winningMismatchIndex": 5
+        }
+      ]
+    },
+    {
+      "text": "zzazzz",
+      "i": 0,
+      "j": 3,
+      "equalPositions": [
+        [
+          0,
+          3,
+          "z"
+        ],
+        [
+          1,
+          4,
+          "z"
+        ]
+      ],
+      "equalPrefixLength": 2,
+      "mismatch": {
+        "indices": [
+          2,
+          5
+        ],
+        "characters": [
+          "a",
+          "z"
+        ]
+      },
+      "winnerStart": 3,
+      "shiftedDominanceWitnesses": [
+        {
+          "losingStart": 0,
+          "winningStart": 3,
+          "remainingEqualPrefixLength": 2,
+          "losingMismatchIndex": 2,
+          "winningMismatchIndex": 5
+        },
+        {
+          "losingStart": 1,
+          "winningStart": 4,
+          "remainingEqualPrefixLength": 1,
+          "losingMismatchIndex": 2,
+          "winningMismatchIndex": 5
+        },
+        {
+          "losingStart": 2,
+          "winningStart": 5,
+          "remainingEqualPrefixLength": 0,
+          "losingMismatchIndex": 2,
+          "winningMismatchIndex": 5
+        }
+      ]
+    },
+    {
+      "text": "aaaa",
+      "i": 0,
+      "j": 1,
+      "equalPositions": [
+        [
+          0,
+          1,
+          "a"
+        ],
+        [
+          1,
+          2,
+          "a"
+        ],
+        [
+          2,
+          3,
+          "a"
+        ]
+      ],
+      "equalPrefixLength": 3,
+      "reason": "later suffix is a proper prefix",
+      "winnerStart": 0
+    }
+  ]
+}

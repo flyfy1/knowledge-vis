@@ -1,0 +1,66 @@
+{
+  "observedAt": "2026-10-26T16:50:59.563350+00:00",
+  "officialUrl": "https://leetcode.com/problems/last-substring-in-lexicographical-order/",
+  "requestMethod": "GET",
+  "requestUrl": "https://leetcode.com/graphql/?query=query+questionData%28%24titleSlug%3A+String%21%29+%7B+question%28titleSlug%3A+%24titleSlug%29+%7B+questionId+questionFrontendId+title+titleSlug+content+difficulty+isPaidOnly+exampleTestcases+sampleTestCase+metaData+codeSnippets+%7B+lang+langSlug+code+%7D+topicTags+%7B+name+slug+%7D+%7D+%7D&variables=%7B%22titleSlug%22%3A%22last-substring-in-lexicographical-order%22%7D&operationName=questionData",
+  "requestCount": 1,
+  "access": "ordinary public unauthenticated GraphQL; no bypass",
+  "httpStatus": 200,
+  "responseFile": "1163-official-response.json",
+  "responseSha256": "13cfc821096ab4a80e7a9dfaa401cd9b5a81e84601f9dbe9eeeaa02777f62416",
+  "responseBytes": 4039,
+  "frozenCatalogSnapshotAt": "2026-10-18T08:59:47.124517+00:00",
+  "catalogSegment": [
+    {
+      "id": 1147,
+      "slug": "longest-chunked-palindrome-decomposition",
+      "title": "Longest Chunked Palindrome Decomposition",
+      "paidOnly": false,
+      "officialUrl": "https://leetcode.com/problems/longest-chunked-palindrome-decomposition/",
+      "categories": [
+        "algorithms"
+      ]
+    },
+    {
+      "id": 1153,
+      "slug": "string-transforms-into-another-string",
+      "title": "String Transforms Into Another String",
+      "paidOnly": true,
+      "officialUrl": "https://leetcode.com/problems/string-transforms-into-another-string/",
+      "categories": [
+        "algorithms"
+      ]
+    },
+    {
+      "id": 1157,
+      "slug": "online-majority-element-in-subarray",
+      "title": "Online Majority Element In Subarray",
+      "paidOnly": false,
+      "officialUrl": "https://leetcode.com/problems/online-majority-element-in-subarray/",
+      "categories": [
+        "algorithms"
+      ]
+    },
+    {
+      "id": 1159,
+      "slug": "market-analysis-ii",
+      "title": "Market Analysis II",
+      "paidOnly": true,
+      "officialUrl": "https://leetcode.com/problems/market-analysis-ii/",
+      "categories": [
+        "database",
+        "pandas"
+      ]
+    },
+    {
+      "id": 1163,
+      "slug": "last-substring-in-lexicographical-order",
+      "title": "Last Substring in Lexicographical Order",
+      "paidOnly": false,
+      "officialUrl": "https://leetcode.com/problems/last-substring-in-lexicographical-order/",
+      "categories": [
+        "algorithms"
+      ]
+    }
+  ]
+}

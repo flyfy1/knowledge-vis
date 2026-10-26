@@ -1,0 +1,22 @@
+{
+  "preparedAt": "2026-10-26T16:53:05.805887+00:00",
+  "status": "dispatcher-reference-only",
+  "oracleCommand": "python3 -B check-examples.py",
+  "handCases": 12,
+  "tinyStrings": 1092,
+  "substrings": 19956,
+  "suffixComparisons": 13941,
+  "shiftedDominanceChecks": 14724,
+  "accessBlockers": [],
+  "runtimeMutation": false,
+  "authorContextInjection": false,
+  "files": {
+    "1163-official-access.json": "1493bd8162c348f7749a346b5b55996ac3475b7c612600945ccf661f02c20059",
+    "1163-official-response.json": "13cfc821096ab4a80e7a9dfaa401cd9b5a81e84601f9dbe9eeeaa02777f62416",
+    "1163.md": "14a96c98848a4dd3b52a6e75bf38d4ec9a06231cf9a82c2bc69108cff9fcb2c4",
+    "README.md": "2a6519a627493971ef2edf1f9c3bc46e309ec605ccb15f42d31459c90f4a3f2e",
+    "check-examples.py": "fc268f80ee904378f589a47733ea7b5c2dcd1f896f20066d41470740c188e0e9",
+    "example-checks.json": "b7aa044cd515b8d0151e172c164848fcf9461cb51f9b8ce4c12bf9cbc2948ccd",
+    "target-detail.json": "7d271d8c99db4968a4b677a29643200d5fba72e6508eba513ba6b64c0d9af283"
+  }
+}
