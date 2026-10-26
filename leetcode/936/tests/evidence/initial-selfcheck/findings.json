@@ -1,0 +1,1 @@
+{"kind":"author self-check, not independent review","finding":"contrast.cjs control size assertion failed for handPrev: inherited .btn specificity retained 44px height","repair":"local .btn min-height 48px override; final browser and contrast suites rerun","otherInitialResults":"Full browser interactions passed; initial screenshots inspected before final freeze."}

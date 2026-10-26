@@ -1,0 +1,55 @@
+{
+  "kind": "author or reviewer execution, identity supplied separately",
+  "at": "2026-10-26T04:05:57.987445+00:00",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "leetcode/936/tests/test_solution.py"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"kind\": \"author self-check\", \"oracle\": \"independent forward reachable-state BFS\", \"exhaustiveBinaryCases\": 7340, \"seededTernaryCases\": 300, \"seededReachableCases\": 500, \"largeBoundaries\": [{\"m\": 1, \"n\": 1000, \"exists\": true, \"moves\": 1000}, {\"m\": 1, \"n\": 1000, \"exists\": false, \"moves\": 0}, {\"m\": 500, \"n\": 1000, \"exists\": true, \"moves\": 501}, {\"m\": 1000, \"n\": 1000, \"exists\": true, \"moves\": 1}, {\"m\": 1000, \"n\": 1000, \"exists\": false, \"moves\": 0}, {\"m\": 2, \"n\": 1000, \"exists\": true, \"moves\": 999}], \"officialExamples\": 2, \"freshTransfer\": 1}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "leetcode/936/tests/test_core.cjs"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  kind: 'author self-check',\n  cases: 7640,\n  frames: 23081,\n  kinds: [ 'setup', 'erase', 'success', 'stuck', 'skip' ],\n  sourceParity: true,\n  uniqueBilingualKeys: 106\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "leetcode/936/tests/browser.cjs"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"records\":36,\"layouts\":8,\"related\":6,\"errors\":[],\"assets\":[]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "leetcode/936/tests/contrast.cjs"
+      ],
+      "exitCode": 0,
+      "stdout": "{ minimumTextContrast: 7.078851579017443, cssBytes: 11712 }\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/register_leetcode_lesson.py",
+        "936",
+        "--validate-only"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,426 @@
+window.COPY = {
+  "docTitle": [
+    "936 · 戳印序列",
+    "936 · Stamping The Sequence"
+  ],
+  "title": [
+    "#936 · 戳印序列",
+    "#936 · Stamping The Sequence"
+  ],
+  "back": [
+    "← LeetCode 知识索引",
+    "← LeetCode collection"
+  ],
+  "intro": [
+    "先盖住错误字母，再倒着找最后一戳。",
+    "Overwrite a wrong letter, then work backwards from the last stamp."
+  ],
+  "official": [
+    "官方题目 ↗",
+    "Official problem ↗"
+  ],
+  "eyebrow": [
+    "LEETCODE · 困难 · PYTHON",
+    "LEETCODE · HARD · PYTHON"
+  ],
+  "language": [
+    "语言",
+    "Language"
+  ],
+  "nav": [
+    "课程步骤",
+    "Lesson steps"
+  ],
+  "n0": [
+    "0 · 覆盖",
+    "0 · Overwrite"
+  ],
+  "n1": [
+    "1 · 擦除",
+    "1 · Erase"
+  ],
+  "n2": [
+    "2 · 解锁",
+    "2 · Unlock"
+  ],
+  "n3": [
+    "3 · 预测",
+    "3 · Predict"
+  ],
+  "n4": [
+    "4 · Python",
+    "4 · Python"
+  ],
+  "h0": [
+    "一枚 ab 印章，怎样得到 aab？",
+    "How can an ab stamp make aab?"
+  ],
+  "p0": [
+    "你有印章 stamp=\"ab\"，想把三个问号变成 target=\"aab\"。窗口是印章完整覆盖的一段位置；起点从 0 计数。先在 0 盖章得到 ab?，再在 1 盖章，把中间的 b 覆盖成 a，得到 aab。所以答案可以是 [0,1]。",
+    "You have stamp=\"ab\" and want to turn three question marks into target=\"aab\". A window is the full interval covered by the stamp; starts are zero based. Stamp at 0 to get ab?, then at 1 to overwrite the middle b with a, making aab. One answer is [0,1]."
+  ],
+  "contract": [
+    "原题：1 ≤ m ≤ n ≤ 1000，m 是印章长度，n 是目标长度；输入仅含英文小写字母。每次印章不能越界，可以覆盖已有字母。返回至多 10n 个起点；无法构造则返回 []，不要求最少次数。",
+    "Contract: 1 ≤ m ≤ n ≤ 1000, where m is stamp length and n is target length; inputs contain lowercase English letters. Stamps stay inside the string and may overwrite letters. Return at most 10n starts, or [] if impossible. A minimum-length answer is not required."
+  ],
+  "observe0": [
+    "保持 ab 和 aab 不变，逐次盖章；观察位置 1 怎样先变 b 再变 a。下表保留已完成的操作。",
+    "Keep ab and aab fixed and apply each stamp. Watch position 1 change to b and then a. The ledger retains completed operations."
+  ],
+  "handPrev": [
+    "撤回一次盖章",
+    "Undo one stamp"
+  ],
+  "handNext": [
+    "盖下一戳",
+    "Apply next stamp"
+  ],
+  "handReset": [
+    "重置盖章",
+    "Reset stamping"
+  ],
+  "handProgress": [
+    "已盖 {k}/2 戳；当前 s={s}",
+    "Completed stamps: {k}/2; current s={s}"
+  ],
+  "handInitial": [
+    "初始：???",
+    "Initially: ???"
+  ],
+  "handRow": [
+    "在 {i} 盖章：{before} → {after}",
+    "Stamp at {i}: {before} → {after}"
+  ],
+  "h1": [
+    "怎样识别可以撤掉的最后一戳？",
+    "Which stamp could have been last?"
+  ],
+  "p1": [
+    "最后一戳留下的可见字母必须全与印章吻合。在 aab 中，起点 0 的 aa 对不上 ab；起点 1 的 ab 完全吻合。倒着撤掉它，用 ? 表示已擦除、没有约束的位置，得到 a??。此时起点 0 的 a? 与 ab 不冲突，也能擦掉。擦除顺序 [1,0] 反过来就是盖章顺序 [0,1]。",
+    "Every visible letter left by the last stamp must match it. In aab, aa at start 0 conflicts with ab, while ab at start 1 matches. Remove that stamp backwards: ? means erased and unconstrained, giving a??. Now a? at start 0 has no conflict with ab and can be erased too. Reverse the erasure order [1,0] to get stamping order [0,1]."
+  ],
+  "observe1": [
+    "选择同一例子的反向状态，再选窗口起点。逐格比较可见字母；? 允许任何印章字母。有效擦除还必须去掉至少一个新字母，否则会空转。",
+    "Choose a reverse state of the same example, then a window start. Compare visible letters cell by cell; ? permits any stamp letter. A useful erase must also remove at least one new letter, or it makes no progress."
+  ],
+  "labState": [
+    "反向状态",
+    "Reverse state"
+  ],
+  "labWindow": [
+    "窗口起点 i",
+    "Window start i"
+  ],
+  "s0": [
+    "aab · 尚未擦除",
+    "aab · nothing erased"
+  ],
+  "s1": [
+    "a?? · 已擦起点 1",
+    "a?? · erased start 1"
+  ],
+  "s2": [
+    "??? · 全部擦除",
+    "??? · fully erased"
+  ],
+  "position": [
+    "位置 p",
+    "Position p"
+  ],
+  "visible": [
+    "当前字母",
+    "Visible letter"
+  ],
+  "stampLetter": [
+    "印章字母",
+    "Stamp letter"
+  ],
+  "comparison": [
+    "判断",
+    "Check"
+  ],
+  "wild": [
+    "?：无约束",
+    "?: unconstrained"
+  ],
+  "match": [
+    "吻合",
+    "Match"
+  ],
+  "mismatch": [
+    "冲突",
+    "Conflict"
+  ],
+  "labResult": [
+    "窗口 {i}：冲突 {bad} 个；尚未擦除 {fresh} 个字母。{status}",
+    "Window {i}: {bad} conflicts; {fresh} unerased letters. {status}"
+  ],
+  "useful": [
+    "可以有效擦除。",
+    "Useful erase allowed."
+  ],
+  "blocked": [
+    "仍有冲突，不能擦除。",
+    "Conflict remains; cannot erase."
+  ],
+  "noop": [
+    "没有新字母，跳过。",
+    "No new letters; skip."
+  ],
+  "wrong": [
+    "诱人的错误规则：“只要有一个字母吻合就擦除。”反例 stamp=ab、target=aba：起点 0 擦成 ??a；起点 1 虽有 ?，但末尾 a 与印章 b 冲突，不能擦。忽略冲突会错误地报告成功。只找完全相等的子串也不行：a?? 已无完整 ab，却仍然可擦。",
+    "Tempting wrong rule: “erase if even one letter matches.” Counterexample stamp=ab, target=aba: erase start 0 to get ??a. Start 1 has a ?, but its final a conflicts with stamp letter b. Ignoring that conflict falsely reports success. Requiring an exact substring is also wrong: a?? contains no full ab, yet it can be erased."
+  ],
+  "baselineTitle": [
+    "基线：反复扫描每个窗口",
+    "Baseline: rescan every window"
+  ],
+  "baselineText": [
+    "基线每轮检查所有起点，每个检查比较 m 个字符。每个有进展的轮次至少擦一个字母，因此最多 n 轮，最坏 O(n²m) 时间、O(n) 辅助空间。n=1000 时这个上界可达十亿级字符检查。前向穷举也正确，但要搜索大量不同字符串；测试用它做小规模独立核对。",
+    "The baseline checks every start each round, comparing m characters per check. Every productive round erases at least one letter, so there are at most n rounds: O(n²m) time and O(n) auxiliary space. At n=1000 that bound reaches a billion character checks. Forward exhaustive search is also correct but explores many distinct strings; tests use it as an independent small-case check."
+  ],
+  "h2": [
+    "擦掉一个位置，能解锁哪些窗口？",
+    "Which windows does one erased position unlock?"
+  ],
+  "p2": [
+    "窗口 i 是起点为 i 的 m 个格子，m 为印章长度。阻塞位置：某窗口中与印章不符、而且还没擦掉的位置。todo[i] 数窗口 i 的剩余阻塞位置；waiting[p] 列出最初被位置 p 阻塞的窗口。aab 配 ab 时，窗口 0 只有位置 1 阻塞，todo=[1,0]、waiting[1]=[0]。窗口 1 先擦位置 1、2，位置 1 让 todo[0] 从 1 减到 0；窗口 0 就解锁了。无需重扫所有窗口。",
+    "Window i covers m cells from start i, where m is stamp length. A blocker is an unerased position whose original letter disagrees with the stamp in that window. todo[i] counts window i’s remaining blockers; waiting[p] lists windows originally blocked by position p. For ab and aab, only position 1 blocks window 0: todo=[1,0], waiting[1]=[0]. Window 1 erases positions 1 and 2. Position 1 reduces todo[0] from 1 to 0, unlocking window 0 without rescanning all windows."
+  ],
+  "queueText": [
+    "队列是先进先出的待处理列表；初始放入 todo=0 的窗口。每次取出一个窗口，把尚未擦除的格子标记 done，再沿 waiting 更新计数；某个计数刚变 0 就入队。计数为 0 只说明无冲突，窗口可能已全被擦过，此时跳过、不记答案。",
+    "A queue processes ready items in first-in, first-out order. Initially enqueue windows with todo=0. Pop a window, mark its new erasures in done, and update counts along waiting. Enqueue a window exactly when its count becomes 0. Zero means no conflicts, but the whole window may already be erased; then skip it without recording an answer."
+  ],
+  "invariant": [
+    "为什么能任意选择就绪窗口？不变式是每次操作后仍成立的事实：未擦字母始终等于目标字母，todo 恰好数未擦的原始冲突。擦除只删除约束，不会让别的窗口更难擦。任何尚可完成的反向过程，其下一次有效擦除必有零冲突窗口。因此队列耗尽仍留字母就无解；擦空后倒序还原，每戳在仍受约束的位置都写对字母，被忽略的位置会被后续戳覆盖。",
+    "Why may we choose any ready window? An invariant is a fact preserved after each operation: visible letters equal their target letters, and todo counts exactly the unerased original conflicts. Erasing only removes constraints, so it cannot make another window harder to erase. Any reverse process that can still finish must have a conflict-free useful next erase. Thus an empty queue with letters remaining proves impossibility. If everything is erased, replay in reverse: each stamp writes the correct constrained letters, while later stamps overwrite the positions that were ignored."
+  ],
+  "observe2": [
+    "切换预设会把本实验重置。逐次处理队首，观察下表计数与历史中的减法；上一个／重置恢复完整快照。格子上行是字母，下行是位置；? 是已擦，边框和“本次”文字只标记刚处理的窗口。",
+    "Changing a preset resets this experiment. Process queue heads and watch the counts and subtraction ledger. Back/reset restore full snapshots. Cells show letters above positions; ? means erased. A border and the “current” text identify only the window just processed."
+  ],
+  "simulation": [
+    "这是浏览器算法模拟，不执行下方 Python。只展示小型完整轨迹；保存快照所需的额外内存不属于提交代码的空间复杂度。",
+    "This browser simulation does not execute the Python below. It shows small complete traces; extra snapshot storage is separate from submission space complexity."
+  ],
+  "preset": [
+    "印章 / 目标预设",
+    "Stamp / target preset"
+  ],
+  "preset0": [
+    "ab / aab · 小例子",
+    "ab / aab · tiny case"
+  ],
+  "preset1": [
+    "abc / ababc · 官方 1",
+    "abc / ababc · official 1"
+  ],
+  "preset2": [
+    "abca / aabcaca · 官方 2",
+    "abca / aabcaca · official 2"
+  ],
+  "preset3": [
+    "ab / aba · 无解",
+    "ab / aba · impossible"
+  ],
+  "preset4": [
+    "a / aaa · 单字母",
+    "a / aaa · one letter"
+  ],
+  "preset5": [
+    "ab / ab · 等长",
+    "ab / ab · equal lengths"
+  ],
+  "preset6": [
+    "ab / abab · 重叠空操作",
+    "ab / abab · overlap and skip"
+  ],
+  "preset7": [
+    "ab / aa · 无就绪窗口",
+    "ab / aa · no ready window"
+  ],
+  "prev": [
+    "上一个快照",
+    "Previous snapshot"
+  ],
+  "next": [
+    "处理下一个事件",
+    "Process next event"
+  ],
+  "reset": [
+    "重置轨迹",
+    "Reset trace"
+  ],
+  "end": [
+    "到最终结果",
+    "Jump to result"
+  ],
+  "setup": [
+    "已建好依赖，尚未处理队列。",
+    "Dependencies built; queue not processed yet."
+  ],
+  "erase": [
+    "刚处理窗口 {i}；新擦位置 [{fresh}]。",
+    "Just processed window {i}; newly erased positions [{fresh}]."
+  ],
+  "skip": [
+    "刚处理窗口 {i}；已全擦，未记录操作。",
+    "Just processed window {i}; already erased, no move recorded."
+  ],
+  "success": [
+    "已全部擦除；有效擦除 [{answer}]，倒序答案 [{result}]。",
+    "All erased; productive erasures [{answer}], reversed answer [{result}]."
+  ],
+  "stuck": [
+    "队列已空，仍有字母；无解，返回 []。",
+    "Queue empty with letters remaining; impossible, return []."
+  ],
+  "progress": [
+    "事件 {at}/{last}；已擦 {erased}/{n} 个位置。{message}",
+    "Event {at}/{last}; erased positions {erased}/{n}. {message}"
+  ],
+  "queue": [
+    "待处理队列 [{queue}]；已记录的有效擦除 [{answer}]",
+    "Pending queue [{queue}]; recorded productive erasures [{answer}]"
+  ],
+  "current": [
+    "← 本次窗口",
+    "← current window"
+  ],
+  "currentEvent": [
+    "← 当前事件",
+    "← current event"
+  ],
+  "window": [
+    "窗口 i",
+    "Window i"
+  ],
+  "blockers": [
+    "剩余阻塞数 todo[i]",
+    "Remaining blockers todo[i]"
+  ],
+  "waiting": [
+    "最初的依赖 waiting[p]",
+    "Original dependencies waiting[p]"
+  ],
+  "update": [
+    "擦位置 {p}：todo[{w}] 从 {before} → {after}",
+    "Erase position {p}: todo[{w}] changes {before} → {after}"
+  ],
+  "none": [
+    "本事件没有阻塞计数更新。",
+    "No blocker-count updates in this event."
+  ],
+  "historyTitle": [
+    "累计事件与计数更新",
+    "Cumulative events and count updates"
+  ],
+  "forwardTitle": [
+    "用最终答案正向复盖",
+    "Replay the final answer forwards"
+  ],
+  "bound": [
+    "每次记录的擦除至少去掉一个新字母，所以答案最多 n 次，满足 10n 限制；这不是最短次数算法。",
+    "Each recorded erase removes at least one new letter, so the answer has at most n moves and satisfies the 10n limit. This does not minimize moves."
+  ],
+  "h3": [
+    "新状态里，哪一戳能带来进展？",
+    "Which stamp makes progress in a fresh state?"
+  ],
+  "quiz": [
+    "换个没演过的输入：stamp=aba，target=ababa。假设反向状态已是 ab???。? 是已擦位置。三个合法起点 0、1、2 中，哪个既无可见冲突，又至少擦掉一个新字母？先选，再揭晓。",
+    "A new input: stamp=aba, target=ababa. Suppose the reverse state is now ab???. A ? is erased. Among in-bounds starts 0, 1, and 2, which has no visible conflict and erases at least one new letter? Choose before revealing."
+  ],
+  "choose": [
+    "选择一个起点",
+    "Choose a start"
+  ],
+  "opt0": [
+    "起点 2：???",
+    "Start 2: ???"
+  ],
+  "opt1": [
+    "起点 0：ab?",
+    "Start 0: ab?"
+  ],
+  "opt2": [
+    "起点 1：b??",
+    "Start 1: b??"
+  ],
+  "reveal": [
+    "揭晓并解释",
+    "Reveal and explain"
+  ],
+  "correct": [
+    "预测正确。",
+    "Correct prediction."
+  ],
+  "incorrect": [
+    "再检查无冲突和有进展这两个条件。",
+    "Check both conditions: no conflict and some progress."
+  ],
+  "quizExplain": [
+    "起点 0 的 a、b 分别吻合 aba 的 a、b，第三格 ? 无约束，所以擦掉两个新字母。起点 1 在位置 1 的 b 对不上 a；起点 2 没有冲突却全是 ?，不带来进展。不能把 todo=0 当成一定能记一次操作。",
+    "Start 0 matches a and b to the first two letters of aba; its third cell is unconstrained. It erases two new letters. Start 1 conflicts at position 1: b versus a. Start 2 has no conflicts but only question marks, so it makes no progress. todo=0 alone does not guarantee a move worth recording."
+  ],
+  "h4": [
+    "怎样把“解锁”写成 Python？",
+    "How does unlocking become Python?"
+  ],
+  "mapping": [
+    "waiting[p] 列出被位置 p 阻塞的窗口，todo[i] 数窗口 i 还剩几个冲突。建表的双循环登记每个不等字符。done[p] 保证一个位置只擦一次，因此它的依赖也只通知一次。deque 是两端队列；append 在尾部加入，popleft 从头部取出，均为 O(1)。answer[::-1] 新建倒序列表，把撤销顺序改成盖章顺序。",
+    "waiting[p] lists windows blocked by position p; todo[i] counts remaining conflicts for window i. The setup loops register each mismatch. done[p] ensures each position is erased once, so its dependencies are notified once. deque is a double-ended queue: append adds at the tail and popleft removes the head, both O(1). answer[::-1] creates a reversed list, converting undo order into stamping order."
+  ],
+  "cost": [
+    "设 m=len(stamp)、n=len(target)。建表 O(nm)；每个窗口至多入队一次，扫描 m 格；每条不匹配依赖只更新一次。因此总时间 O(nm)，waiting 最坏 O(nm)，其余 O(n)；返回答案 O(n)。m=n 时只有一个窗口，必须完全相等；m=1 时所有目标字母必须等于印章字母。相同字母可产生重叠空操作，代码会跳过。",
+    "Let m=len(stamp), n=len(target). Setup costs O(nm). Each window enters the queue at most once and scans m cells; each mismatch dependency is updated once. Total time is O(nm), waiting uses up to O(nm) space, and the rest O(n); output uses O(n). When m=n there is one window and the strings must match exactly. When m=1 every target letter must equal the stamp letter. Repeated letters may produce overlapping no-op windows, which the code skips."
+  ],
+  "sourceTitle": [
+    "官方 Python3 提交接口与完整代码",
+    "Official Python3 submission interface and complete code"
+  ],
+  "copy": [
+    "复制 Python",
+    "Copy Python"
+  ],
+  "download": [
+    "下载 solution.py",
+    "Download solution.py"
+  ],
+  "copied": [
+    "已复制完整源文件。",
+    "Complete source copied."
+  ],
+  "manual": [
+    "自动复制不可用。完整代码已选中，请按系统复制快捷键。",
+    "Automatic copy unavailable. Full code is selected; use your system copy shortcut."
+  ],
+  "manualLabel": [
+    "手动复制完整 Python 源码",
+    "Manually copy complete Python source"
+  ],
+  "sourceAria": [
+    "完整 Python 提交代码",
+    "Complete Python submission code"
+  ],
+  "tableAria": [
+    "可横向滚动的字符比较表",
+    "Horizontally scrollable character comparison table"
+  ],
+  "relatedTitle": [
+    "继续追问",
+    "Explore the reasoning"
+  ],
+  "related1": [
+    "回看：有效擦除的条件",
+    "Revisit useful erase conditions"
+  ],
+  "related2": [
+    "回看：阻塞数与不变式",
+    "Revisit blocker counts and the invariant"
+  ],
+  "related3": [
+    "关联：#815 用队列处理新就绪状态",
+    "Related: #815 processes newly ready states with a queue"
+  ]
+};
