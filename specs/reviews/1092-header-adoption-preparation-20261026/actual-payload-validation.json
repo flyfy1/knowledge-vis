@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-10-26T14:58:32.297789+00:00",
+  "candidate": "c3d5761514ebedd5e50297acd937c5380ba12fe0",
+  "review": "5f02a2943d9b6e4194bfa23ca7f9703e03a29784",
+  "payload_paths": 94,
+  "source_review_added_paths": 28,
+  "independent_manifest_entries": 26,
+  "six_protected_unchanged": true,
+  "all_source_blob_mode_hash_guards": true,
+  "remote_evidence": "source-remote-confirmation.json actual ls-remote reused without repeat network call",
+  "pins_sha_constant": null,
+  "final_cli_refused_before_locks": true,
+  "pi_writes": false
+}

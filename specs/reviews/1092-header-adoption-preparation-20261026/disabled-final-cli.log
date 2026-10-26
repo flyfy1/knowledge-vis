@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/songyy/.codex/worktrees/leetcode-capacity-recovery/knowledge-vis/specs/reviews/1092-header-adoption-preparation-20261026/adopt.py", line 330, in <module>
+    main()
+    ~~~~^^
+  File "/Users/songyy/.codex/worktrees/leetcode-capacity-recovery/knowledge-vis/specs/reviews/1092-header-adoption-preparation-20261026/adopt.py", line 301, in main
+    require(args.dispatch == TOKEN and PINS_SHA is not None, 'Disabled pending final review and separate root authorization')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/songyy/.codex/worktrees/leetcode-capacity-recovery/knowledge-vis/specs/reviews/1092-header-adoption-preparation-20261026/adopt.py", line 33, in require
+    raise RuntimeError(message)
+RuntimeError: Disabled pending final review and separate root authorization

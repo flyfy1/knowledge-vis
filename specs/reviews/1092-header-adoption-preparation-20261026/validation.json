@@ -1,0 +1,23 @@
+{
+  "status": "final-review-bound-cli-disabled",
+  "tests_passed": 13,
+  "pins_sha_constant": null,
+  "pi_writes": false,
+  "files": {
+    "FINAL-READINESS.md": "bc752d72a73ea556a788df9a4e151c1c0136d0e37ee143f4cc956fa17841d3a9",
+    "README.md": "ab0dac5642692fcb8452005c3760dec99a423abc9798aa12814b0c60da45056a",
+    "actual-payload-validation.json": "0b1a58539030590a1e59b03e151a48805f4a86bf8e9fc407d5f74304b951cc8b",
+    "adopt.py": "28900edfc69ef9a10aa438bfa1098540298e5394186aead484c890ad70bfa9eb",
+    "candidate-manifest.json": "586d66c8d9a1f0bef4fe25faab1374d9e6b66ea98dde0c9b51b67bfa5164f5a4",
+    "capture-readonly.py": "1dcf3e27ccfcac1dabe24bf76362799cb01784e6289e362f4565b8f4de013874",
+    "disabled-final-cli.log": "21b0f720f9face29ebedafad4922c3ba3f1f5d1ffcecf96657e478405c9d2b8f",
+    "final-pins.json": "89440012068e76795ce17050844d51eaeded6451e297f8c0f12413a9f49dd162",
+    "observed-runtime.json": "60ed285633abb7c472faad30b9920fd8e2dc773a42258597c6079e581e8afe74",
+    "payload-manifest.json": "c2c35d56cf0a6286a9fe9ceb9219b41267589e57c3fd50e66adf61796214dd96",
+    "pending-pins.json": "12f18bcbb9e3722b95eaa6e9bdf7adad438dde7bddbd3b0d0f0265466057a7b0",
+    "source-remote-confirmation.json": "de1d3a44923252eb13091c2ef836b595f659ef7866789b73baa5acdad005169a",
+    "test_adopt.py": "7467fb39af24403504a4b7cc60046d8c63af9a68c93881ba030c06f8d68ca90f",
+    "tests-initial-temp-symlink.log": "ef5aed19c5c12b97e23d60ccdd081066c444ba61d13534d01b40eb6031da8fb3",
+    "tests.log": "3d1085ddf17ed2fcd7a3cb4e84de8ecabd423d062ee74a0856fc798b138f9130"
+  }
+}
