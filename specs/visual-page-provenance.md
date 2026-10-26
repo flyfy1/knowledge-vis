@@ -41,3 +41,5 @@ Initial evidence is1d90150cf9c1db194769dff92dc4178ce7779fb0 (`Built-By: Codex`, 
 Design and acceptance: [attribution review](reviews/visual-attribution-20261026/design.md), [verification](reviews/visual-attribution-20261026/verification.md).
 
 All three worker handovers are now integrated locally. Inventory17 has14 earlier Codex revisions plus the three exact worker source revisions. Initial preparation reports remain historical; final batch/release evidence is recorded separately.
+
+Eigen direction revision adds the18th evidenced edition, source5cd64dc2193d8e3b26cc433ecd4d597887f0ed13. Atlas shared header is reserved for the concurrent galaxy worker: its combined source metadata must be refreshed together after handover, before publishing either new atlas change. Do not overwrite that worker index to update it early.
