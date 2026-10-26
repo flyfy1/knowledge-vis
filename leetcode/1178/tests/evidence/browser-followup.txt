@@ -1,0 +1,3 @@
+Follow-up browser self-check for 1178 required-finding fixes
+Command: node leetcode/1178/tests/browser.cjs
+Result: PASS at 320, 390, and 1280px; Chinese and English trap/bit-transition assertions passed; no page errors.
