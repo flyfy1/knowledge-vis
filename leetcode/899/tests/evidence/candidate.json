@@ -1,0 +1,106 @@
+{
+  "candidate": "899-author-v1",
+  "frozenAt": "2026-10-26T01:20:31.472674+00:00",
+  "author": "Codex; exact model unavailable",
+  "authorStatus": "self-checked",
+  "reviewStatus": "pending independent run",
+  "independentlyAccepted": false,
+  "registered": false,
+  "deployed": false,
+  "files": {
+    "BRIEF.md": "1feb0681c2e30c2bdb959c813b88617f90ba077b73cf9ba0deb830ae1e4928ab",
+    "app.js": "0964c8a94c98486fae36494cb0808e29c64aa2d7eaa1fc1878b2971019b64a93",
+    "copy.js": "c001900ca620e3e2a1d3605b118f98b49c158b92f0b8dafda66afcb16f1e4c97",
+    "core.js": "8675568a9312d90d2fb739f87f112881712c9be5b22c9df94244555bb892c19e",
+    "index.html": "d248be24889051bc4e8914f17ed75babe3788e109c29f7ebdc1db2276af284ba",
+    "lesson-entry.json": "3167b1ed7e354734b7a359222f9ef8fe8fa4fbf1b2dc15369f02118c9a309098",
+    "provenance/official.json": "298498bd595f5a45021e5446fc53b3e8df1589600e1eba36dd02db6d8f391f61",
+    "python-code.js": "9d3ec49bdf9ab462b7d1ed0ca4ef1b5a8d7f2c6dffe6dd30b7939fb8ba9f4a05",
+    "solution.py": "7f450d6ea014e42f3a8bcde7e396d36353344a08eef3ba9bb43c1391902833f4",
+    "style.css": "3f2fc4eaaf7e6d39e0edae9210b93262f1da8664eaffdac5de31980b89581139",
+    "tests/README.md": "83844538df45b915448b67701c132123f8bd41763e887e88de61052a1822386b",
+    "tests/browser.cjs": "49f438b2530f6c17e02ee6da3dcd7e6513ff4462345b6ba4c660c86d24be3cd5",
+    "tests/check.py": "020289aade5c34ffd85947333a9b600a0319419c92b58cd3556f6931c7d9b4d8",
+    "tests/copy-check.cjs": "88201b867702bc59521d6ee6b19fb03ff6b8e8dbf2566971f7616a3da8173226",
+    "tests/evidence/SELF-CHECK.md": "28c68965f70e45a24cc2ab664c7f808a33c4fa9adcdef0b14508e1b4bff0a215",
+    "tests/evidence/asset-diagnostics.json": "43dbbbfacf72a3c3de6f09d0a9ad0747d87009017a6fbc309a44a6e0f3729eb9",
+    "tests/evidence/browser-result.json": "1452d58c78abb56b1aada8ed0e88fcadca5f62e03490788c0c5f813db31cace2",
+    "tests/evidence/controls-1440-en.png": "f18a207c5104966abe4bd5f5de7bd3edb4d8dc5b2d248e432a6f2f08e9a357f3",
+    "tests/evidence/controls-1440-zh.png": "9c5fb1a13994398cad7a6d9f5cc53e6c46fd52bfa2e28e245f3184c1781e2ef6",
+    "tests/evidence/controls-320-en.png": "315184e0df848328fd7fc97847ec5f0909233d62902d454a3a297b897418f192",
+    "tests/evidence/controls-320-zh.png": "454ebf4f00221ac91fcf9fdb4a04306bc095781c9ef795fde59d0b9800175aad",
+    "tests/evidence/controls-390-en.png": "0085b7b421f593f0cea4f807564c6e04b042d29f23457f7098c374afce030b2b",
+    "tests/evidence/controls-390-zh.png": "78b510b89bc1595f1e472df5566166e6757bc66b4f65aa88e3a922db2eb041f5",
+    "tests/evidence/controls-736-en.png": "5386d5de0da64f83cce62a6faea46d45b41732d3515105d39b79140fb97de9a3",
+    "tests/evidence/controls-736-zh.png": "8bb3a4c18efba1073c6b2155412c4117c3dfc64bd9f44dc8fde55fdadbb4d30b",
+    "tests/evidence/logic-result.json": "cfee18ec2c3aca1a756172033e9852e26d675d4991c2539ff5e01ac2513c039d",
+    "tests/evidence/preflight.json": "be1c47eb247d2ed1f399b9ec8bb41388235fe5d7723530dcc68c36ac6320ae45",
+    "tests/evidence/state-1440-en.png": "1cc347d9c7e4ac789d45aa7c036259b5d5cf0b7eb480836c24236b4356a59ab4",
+    "tests/evidence/state-1440-zh.png": "9e90361bc1be22105af98fb287a264b5c7c5d6487625f0f1dbafc3fd66d2ac8f",
+    "tests/evidence/state-320-en.png": "9596258f45b5fd120c40cd56bafacd20307ee379a562ff09a7fed1eddb63b8e9",
+    "tests/evidence/state-320-zh.png": "772f9625d8a3ea70e27d055d58596e04b2ff070f6847cf4b9ae59554cea392a1",
+    "tests/evidence/state-390-en.png": "4e670713b62c24de4d9b0ebf1a0ef0207985992483297d5e34ada0f6fc548de0",
+    "tests/evidence/state-390-zh.png": "c909fc2fd76a3fc561aaa68964b27833d1ebc7b5cecb7f2b2122099608bf82d0",
+    "tests/evidence/state-736-en.png": "21eb26a37f1b80440c41f058186691f0616650223f70b548fc80698abad9e46a",
+    "tests/evidence/state-736-zh.png": "6e72d3eda1ebcc7f61bf752baa15c44d07ce765fd879122100d50dc4c3563f19",
+    "tests/evidence/zoom-200-en.png": "65e1955c69d4d18cbf4694a6bb41d0bea3c0cc20938b4d10086489a072625c2a",
+    "tests/evidence/zoom-200-zh.png": "3624d01e8ca8414f17ef2c704a15ff12debeea8b3d907c54fc26ada13bd4fd44"
+  },
+  "sharedReadOnlyHashes": {
+    "WORKFLOW.md": "6a1f5a72f96d98a720be0aee0af40d75d837d281761842151e00fa7015c240a6",
+    "UI-I18N-SPEC.md": "16ca9aebcaf6cc4863428d3abbfb675599c31b37d1d717783323697884e62b81",
+    "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+    "specs/leetcode-hard-traces.md": "5cb2edb1f223cde061d67e8cfe255f220876667c1d4c091bdbac49f67c6f2c35",
+    "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+    "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+    "specs/reviews/leetcode-all-hard-design-review.md": "a1d9d6bc23d15e7369eb04252ff00d0302d5b1786641f5c7f7587ecf64d31086",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27",
+    "leetcode/41/index.html": "1b10a05385a4b3962c0eaaa890287216d6308ea5994e2b76054535a2b8cfc0cd",
+    "leetcode/41/copy.js": "3ee8de0a474aab78c04df47ae1b5ba5ed19cd1c8e110b9921ec9dc64f9931460",
+    "leetcode/871/index.html": "3b46e9b1fe922abaf997fdaba1815fe83b4488fa0aaf4d54447774d66e62f7b4",
+    "leetcode/871/copy.js": "497aa7fbfa696fa8044f6e5d9b120ca2d76b68108606a7d53bc33487252c3f70"
+  },
+  "previewByteParity": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "sha256": "d248be24889051bc4e8914f17ed75babe3788e109c29f7ebdc1db2276af284ba"
+    },
+    {
+      "file": "app.js",
+      "status": 200,
+      "sha256": "0964c8a94c98486fae36494cb0808e29c64aa2d7eaa1fc1878b2971019b64a93"
+    },
+    {
+      "file": "copy.js",
+      "status": 200,
+      "sha256": "c001900ca620e3e2a1d3605b118f98b49c158b92f0b8dafda66afcb16f1e4c97"
+    },
+    {
+      "file": "core.js",
+      "status": 200,
+      "sha256": "8675568a9312d90d2fb739f87f112881712c9be5b22c9df94244555bb892c19e"
+    },
+    {
+      "file": "style.css",
+      "status": 200,
+      "sha256": "3f2fc4eaaf7e6d39e0edae9210b93262f1da8664eaffdac5de31980b89581139"
+    },
+    {
+      "file": "python-code.js",
+      "status": 200,
+      "sha256": "9d3ec49bdf9ab462b7d1ed0ca4ef1b5a8d7f2c6dffe6dd30b7939fb8ba9f4a05"
+    },
+    {
+      "file": "solution.py",
+      "status": 200,
+      "sha256": "7f450d6ea014e42f3a8bcde7e396d36353344a08eef3ba9bb43c1391902833f4"
+    },
+    {
+      "file": "lesson-entry.json",
+      "status": 200,
+      "sha256": "3167b1ed7e354734b7a359222f9ef8fe8fa4fbf1b2dc15369f02118c9a309098"
+    }
+  ]
+}
