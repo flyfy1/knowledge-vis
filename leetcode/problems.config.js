@@ -3857,6 +3857,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(R^(1/4) log R) time; O(log R) auxiliary space, R = int(right)"
   },
   {
+    "id": 913,
+    "title": {
+      "zh": "猫和老鼠",
+      "en": "Cat and Mouse"
+    },
+    "desc": {
+      "zh": "从一个安全出口推导逆向胜负传播，区分尚未证明与平局。",
+      "en": "Derive backward win propagation from a safe exit, and distinguish unknown from draw."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "图上博弈",
+        "en": "Graph games"
+      },
+      {
+        "zh": "逆向推理",
+        "en": "Retrograde analysis"
+      }
+    ],
+    "path": "913/",
+    "leetcodeUrl": "https://leetcode.com/problems/cat-and-mouse/",
+    "language": "Python",
+    "complexity": "O(nE) time; O(n²) auxiliary space, E = undirected edges"
+  },
+  {
     "id": 920,
     "title": {
       "zh": "播放列表的数量",
