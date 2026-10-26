@@ -17,8 +17,8 @@
 
 ## 硬性规范（照 UI-I18N-SPEC.md 与 WORKFLOW.md）
 - 双语 #langToggle / knowledge-lang、键集占位符一致；页头/骨架/深色主题照 fractions 与 pythagoras。
-- 成像几何必须由透镜公式实算：1/v = 1/f − 1/u（带符号约定：实像 v>0 在对侧；u<f 时 v<0、虚像在同侧 |v| 处），像高由放大率 m=v/u 实算；所有读数（像距、放大率、区间判定）与画布同源于该纯函数，断言自查要跑（给 f=60：u=180→v=90、m=0.5 缩小实像；u=120→v=120、m=1；u=90→v=180、m=2；u=30→v=−60、虚像同侧 60、m=2 正立；u=60→v=∞ 特例态）。数值容差与显示口径（整数优先、否则一位小数 ≈）全页统一。
-- 三条特殊光线的像点交点须与公式像点重合（像素级自查：三线交点与 (v, −m·物高) 的偏差 ≤2px 量级，脚本断言）。
+- 成像几何必须由透镜公式实算：1/v = 1/f − 1/u（带符号约定：实像 v>0 在对侧；u<f 时 v<0、虚像在同侧 |v| 处），像高由带符号放大率 M=−v/u 实算；正尺寸倍率为|M|；所有读数（像距、放大率、区间判定）与画布同源于该纯函数，断言自查要跑（给 f=60：u=180→v=90、M=−0.5 缩小实像；u=120→v=120、M=−1；u=90→v=180、M=−2；u=30→v=−60、虚像同侧 60、M=+2 正立；u=60→v=∞ 特例态）。显示口径全页统一：两位小数内能精确表示的值原样；其余用6位有效数字并标≈，非零u−f不得显示成0。分类依未舍入值，不采用焦点/2f容差带。
+- 三条特殊光线的像点交点须与公式像点重合（像素级自查：画内、条件良好的三线交点与 (v, M·物高) 一致并核像素误差；极近焦点、巨大且画外的像属于病态交点，不要求绝对2px，而核finite/type/公式及归一化光线残差）。
 - 状态一致性：拖烛×拖屏×切换情境×答题、切语言×各步状态；虚/实像切换不得留残线；u=f 特例态进出干净。
 - 390 宽零溢出；console 零错误；拖拽控件须有滑杆等价入口。
 - 文件：lens/{index.html,app.js,i18n.js,style.css} + BRIEF.md 副本。不要动 pages.config.js 与 CONCEPT-MAP.md，不要动其他页。
@@ -26,3 +26,6 @@
 ## 交付
 - 自查：node --check、键集比对、透镜公式断言组、三线交点像素断言、无头浏览器实测（含组合路径与 390）。
 - 报告 ~/workspace/lens-lab/build-report.md。
+
+## Round12 current contract
+Independent design gate precedes this amendment; see specs/reviews/lens-focus-design-20261026.md. Strict unroundedu=f/2f; finite nearby images stay real/virtual even offscreen. imageOf retainsoldm=v/u only asdistance ratio for compatibility; signedmagnification isM=−v/u,imgH=MH. Exactfocus has no finiteimageheight/M. Invalid/nonrepresentablefiniteinputs returntypeinvalid,nullfields; noNaN label masqueradingas∞. AllS1/S2native controls acceptcontinuouspointervalues; S2keyboardarrows0.1unit,othercontinuouscontrols1unit; Home/Endnative. Displayroundedvalues do not decidebranches; u−f is shown. Thirdprincipalray unavailableatf and maybeoffviewelsewhere; omitratherthaninventit. At u<f nearF lies onbackwardextension,notpriorphysicalraypath. S3schematic sharp onlyp===v; noirradiance/PSF/eye-solverclaim. ReadinghistoryreusesknowledgeGeometryReading/lesson:lens forknobs/raytogglesonly,noquiztracking. No newgraphnode/page/controller.

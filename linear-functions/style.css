@@ -173,3 +173,12 @@ canvas.clickc{cursor:pointer}
 .btn.opt{font-variant-numeric:tabular-nums}
 .btn.opt.correct{border-color:var(--good);color:var(--good);font-weight:700}
 .btn.opt.wrong{border-color:var(--accent3);color:var(--accent3)}
+
+/* Existing-course geometry reading connection. */
+.geometry-reading{margin-top:20px;padding:16px;border:1px solid var(--muted);border-radius:12px;min-width:0}
+.geometry-reading p{margin:12px 0;overflow-wrap:anywhere}
+.geometry-link{display:inline-flex;min-height:48px;align-items:center;color:var(--accent);font-weight:600;padding:8px 0}
+.geometry-link:focus-visible,#step2 input:focus-visible,#step2 .btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+#step2 input[type=range]{min-height:48px}
+.step-inner{min-width:0;overflow-wrap:anywhere}
+@media(forced-colors:active){.geometry-link:focus-visible,#step2 :focus-visible{outline-color:Highlight}}

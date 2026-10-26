@@ -123,7 +123,7 @@ input[type=range]{
 }
 .btn:disabled{opacity:.38;cursor:default}
 .btn:disabled:hover{border-color:var(--line);color:var(--text)}
-.btn:focus-visible,input:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+.btn:focus-visible,input:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
 .btn[aria-pressed=true]{border-color:var(--accent2);color:var(--accent2)}
 .btn-row{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 14px;align-items:center}
 
@@ -177,3 +177,18 @@ canvas.dragc:focus{outline:1px solid var(--line);outline-offset:2px}
   .btn.big{padding:12px 15px}
   .stage{padding:6px}
 }
+
+/* Round11: existing tokens, native proof, visible keyboard paths. */
+.snell-bridge{border:1px solid var(--line);border-radius:12px;padding:16px;margin:16px 0;color:var(--text);font-size:1rem;overflow-wrap:anywhere}
+.snell-bridge summary{min-height:48px;cursor:pointer;font-weight:600;color:var(--accent);padding:10px 0}
+.snell-bridge p{margin:12px 0}.snell-bridge a{color:var(--accent);display:inline-block;min-height:48px;padding:10px 0}
+.btn,.lang-toggle button,.nav-step,input[type=range]{min-height:48px;min-width:48px}
+:where(a,button,input,summary):focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+@media(max-width:640px){.site-head{padding-top:78px}.site-head h1{overflow-wrap:anywhere}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+@media(forced-colors:active){.btn:focus-visible,input:focus-visible{outline:3px solid Highlight}.site-head h1{background:none;-webkit-text-fill-color:CanvasText;color:CanvasText}:where(a,button,input,summary):focus-visible{outline:3px solid Highlight}.btn:disabled{opacity:1}}
+
+.btn{overflow-wrap:anywhere}.nav-step{flex:0 0 auto}
+
+/* Round12: the new next-lesson link has a full-size keyboard/touch target. */
+.lens-next{display:inline-block;min-height:48px;padding:10px 0;overflow-wrap:anywhere}

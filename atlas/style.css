@@ -8,3 +8,10 @@
 .relation summary{cursor:pointer;min-height:48px;overflow-wrap:anywhere}.relation summary .relation-type{display:inline}.relation summary p{display:block}.relation[open] summary{margin-bottom:var(--s3)}.relation:last-child{padding-bottom:var(--s4)}
 
 .relation-statement{display:block}.relation summary .relation-statement{margin-top:var(--s2)}
+/* English long words must remain readable at320px with200% text sizing. */
+.hero h1{overflow-wrap:anywhere}
+
+/* Context is explained without inferring progress or reselecting a concept. */
+.trail-context{margin:var(--s3) 0;padding:var(--s3);border-left:3px solid var(--amber);background:var(--secondary);font-size:var(--small);overflow-wrap:anywhere}
+
+.route-foundations{margin:var(--s4) 0;padding:var(--s3);border:1px solid var(--border);border-radius:var(--r1);background:var(--secondary);overflow-wrap:anywhere}.route-foundations>summary,.route-foundations details>summary{cursor:pointer;min-height:48px;padding:var(--s2);font-weight:600}.foundations-intro{color:var(--muted);font-size:var(--small);margin:var(--s2) 0}.foundations-concept{padding:var(--s3) 0;border-top:1px solid var(--border)}.foundations-concept p,.route-foundations section>p,.route-foundations details>p{margin:var(--s2) 0;font-size:var(--small)}.foundations-concept h3{font-size:1rem}.foundations-actions{display:flex;gap:var(--s2);flex-wrap:wrap}.foundations-actions a{display:inline-flex;align-items:center;min-height:48px}.route-foundations .formula{font-size:1rem}.route-foundations details{margin-top:var(--s3)}#foundations-check-wrap{padding-top:var(--s4);border-top:1px solid var(--border)}#foundations-verify{max-width:100%;margin-top:var(--s3)}

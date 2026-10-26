@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>频率响应与滤波 · 按频率挑食的盒子</title>
-<link rel="stylesheet" href="style.css?v=w2a">
-<script src="i18n.js?v=w2a"></script>
+<link rel="stylesheet" href="style.css?v=signal-domain-20261026">
+<script src="i18n.js?v=signal-domain-20261026"></script>
 <link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
@@ -119,12 +119,12 @@
     <p class="step-kicker" data-i18n="s3k">第 3 步 · 数字滤波器</p>
     <h2 data-i18n="s3t">移动平均的零点：点名枪毙一个频率</h2>
     <p class="explain" data-i18n-html="s3e"></p>
-    <p class="formula" data-i18n="s3formula">|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|)，零点在 ω = 2πk/M</p>
+    <p class="formula" data-i18n="s3formula">|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|)；零点 k 非 M 的倍数；ω=2πq 时 |H|=1</p>
     <div class="controls">
       <label><span><span data-i18n="s3mLab">平均长度 M</span> <span class="val" id="s3-m-val">8</span></span>
         <input type="range" id="s3-m" min="2" max="32" step="1" value="8"></label>
       <label><span><span data-i18n="s3wLab">输入数字频率 ω（rad/样本）</span> <span class="val" id="s3-w-val">0.785</span></span>
-        <input type="range" id="s3-w" min="0.05" max="3.13" step="0.005" value="0.785"></label>
+        <input type="range" id="s3-w" min="0.05" max="3.141592653589793" step="any" aria-describedby="s3-frequency-help" value="0.785"></label>
     </div>
     <div class="btn-row">
       <button class="btn" id="s3-p-zero" data-i18n="s3pZero">送零点频率 2π/M</button>
@@ -134,7 +134,7 @@
     <div class="stage"><canvas id="s3-mag" height="250" style="height:250px"></canvas></div>
     <div class="stage"><canvas id="s3-tone" height="230" style="height:230px"></canvas></div>
     <p class="readout" id="s3-readout"></p>
-    <p class="hint" data-i18n-html="s3hint"></p>
+    <p class="hint" id="s3-frequency-help" data-i18n-html="s3hint"></p>
   </div>
 </section>
 
@@ -246,7 +246,7 @@
 
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 频率响应与滤波 Frequency Response &amp; Filters —— 一步一交互系列</footer>
 
-<script src="app.js?v=w2a"></script>
+<script src="app.js?v=signal-domain-20261026"></script>
 <script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

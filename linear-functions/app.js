@@ -449,6 +449,7 @@ function drawS2() {
 }
 function renderS2() {
   const k = KSET[S2.ki];
+  $('s2-k').value=S2.ki;$('s2-b').value=S2.b;
   $('s2-k-val').textContent = 'k = ' + fmtRat(k);
   $('s2-b-val').textContent = 'b = ' + fmtInt(S2.b);
   $('s2-eq').textContent = formatEquation(k, S2.b);
@@ -460,6 +461,7 @@ function renderS2() {
       arith: arithString(k, S2.sel.x, S2.b)
     }));
   } else setRO('s2-probe', t('s2probeIdle'));
+  queueLinearGeometryReading();
 }
 function s2SetSel(p) { S2.sel = p; S2.msg = null; renderS2(); }
 function s2Cycle(dir) {
@@ -659,6 +661,20 @@ function bindProbe() {
   });
 }
 
+/* Reading context for the new geometry connection, not learner progress. */
+let linearReadingTimer=null;
+function queueLinearGeometryReading(){clearTimeout(linearReadingTimer);linearReadingTimer=setTimeout(saveLinearGeometryReading,180);}
+function validLinearGeometryReading(value){
+  if(!value||typeof value!=='object'||Array.isArray(value))return false;
+  return value.version===1 && value.lesson==='linear-functions' && Number.isInteger(value.ki) && value.ki>=0 && value.ki<KSET.length && Number.isInteger(value.b) && value.b>=-4 && value.b<=4 && (value.x===null || (Number.isInteger(value.x)&&value.x>=S2XR[0]&&value.x<=S2XR[1]));
+}
+function saveLinearGeometryReading(){
+  clearTimeout(linearReadingTimer);linearReadingTimer=null;
+  try {const prior=history.state;history.replaceState({...((prior&&typeof prior==='object'&&!Array.isArray(prior))?prior:{}),knowledgeGeometryReading:{version:1,lesson:'linear-functions',ki:S2.ki,b:S2.b,x:S2.sel?S2.sel.x:null}},'');}catch(_){}
+}
+function restoreLinearGeometryReading(){
+  try {const value=history.state&&history.state.knowledgeGeometryReading;if(validLinearGeometryReading(value)){S2.ki=value.ki;S2.b=value.b;S2.sel=value.x===null?null:(s2Pts().find(p=>p.x===value.x)||null);return true;}}catch(_){}return false;
+}
 /* ---------- 初始化 ---------- */
 function renderAll() {
   renderS0();
@@ -685,6 +701,7 @@ function init() {
   /* 第 1 步 */
   $('s1-b').addEventListener('input', e => s1SetB(parseInt(e.target.value, 10)));
   /* 第 2 步 */
+  $('linear-pinhole-link').addEventListener('click',saveLinearGeometryReading);
   $('s2-k').addEventListener('input', e => {
     S2.ki = parseInt(e.target.value, 10);
     s2KeepSel();
@@ -716,8 +733,14 @@ function init() {
   $('s4q3-ma').addEventListener('click', () => { Q3.mode = 'a'; renderQ3(); });
   $('s4q3-mb').addEventListener('click', () => { Q3.mode = 'b'; renderQ3(); });
   bindProbe();
-  S2.sel = s2DefaultSel(s2Pts());
+  if(!restoreLinearGeometryReading())S2.sel = s2DefaultSel(s2Pts());
   renderAll();
+  window.addEventListener('pagehide',saveLinearGeometryReading);
+  window.addEventListener('pageshow',()=>requestAnimationFrame(()=>{
+    // Native form restoration must not leave any control disagreeing with its model.
+    $('s0-k').value=S0.ki;$('s1-b').value=S1.b;$('s3-k2').value=S3.k2;$('s3-b2').value=S3.b2;
+    $('s4q2-k').value=Q2.k;$('s4q2-b').value=Q2.b;renderS2();
+  }));
   onLangRefresh(renderAll);
   onRefit(renderAll);
 }

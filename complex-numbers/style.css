@@ -22,11 +22,11 @@ body{
 
 /* ---------- 统一页头：左回链+标题+导语，右语言切换 ---------- */
 .site-head{
-  display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+  display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:16px;
   padding:44px 20px 22px;
   max-width:920px;margin:0 auto;
 }
-.head-main{max-width:720px}
+.head-main{min-width:0;max-width:720px;overflow-wrap:anywhere}
 .backline{font-size:13.5px;margin-bottom:8px}
 .backline a{color:#7dd3fc;text-decoration:none}
 .backline a:hover{text-decoration:underline}
@@ -75,7 +75,7 @@ main{display:block}
   scroll-margin-top:76px;
 }
 .step:nth-child(even){background:#0a0e14}
-.step-inner{width:100%;max-width:920px}
+.step-inner{min-width:0;width:100%;max-width:920px;overflow-wrap:anywhere}
 .step-kicker{color:var(--accent);font-size:14px;letter-spacing:.18em;margin-bottom:6px}
 .step h2{font-size:clamp(24px,4vw,34px);margin-bottom:12px}
 .explain{color:#c9d4e2;font-size:16px;margin-bottom:18px}
@@ -170,3 +170,25 @@ canvas.dragc:active{cursor:grabbing}
 .btn.opt.correct{border-color:var(--good);color:var(--good);font-weight:700}
 .btn.opt.wrong{border-color:var(--accent3);color:var(--accent3)}
 .btn.opt:disabled{opacity:.45;cursor:default}
+
+/* Keep the keyboard preset task visible in the existing lesson. */
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media (forced-colors:active){
+  .btn:focus-visible{outline-color:Highlight}
+}
+
+/* Coordinate forms share the existing lesson state; no separate canvas UI. */
+.coordinate-editor{margin:16px 0;min-width:0}
+.coordinate-editor fieldset{min-width:0;padding:14px;border:1px solid var(--line);border-radius:12px}
+.coordinate-editor legend{color:var(--accent);padding:0 6px;font-weight:600}
+.coordinate-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:12px 0}
+.coordinate-editor label{min-width:0;display:flex;flex-direction:column;gap:6px;color:var(--text)}
+.coordinate-editor input{min-width:0;max-width:100%;width:100%;min-height:48px;padding:10px;border:1px solid var(--muted);border-radius:8px;background:var(--panel2);color:var(--text);font:inherit;font-size:16px;line-height:1.4}
+.coordinate-editor input{appearance:textfield}
+.coordinate-editor input::-webkit-inner-spin-button,.coordinate-editor input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.coordinate-editor input[aria-invalid=true]{border-color:var(--accent3)}
+.coordinate-editor input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.coordinate-status:empty{margin:0}
+.coordinate-status{margin-top:12px;color:var(--text)}
+@media(max-width:480px){.coordinate-fields{grid-template-columns:minmax(0,1fr)}}
+@media(forced-colors:active){.coordinate-editor input:focus-visible{outline-color:Highlight}}

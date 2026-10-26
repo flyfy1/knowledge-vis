@@ -1,0 +1,17 @@
+# Round2 — response-chain audit/design (2026-10-25)
+
+Audit baseline HEAD314b5e35, target SHA-256 captured. Preserve previous motion milestone and active LeetCode work; no root index/registry/concept-map edits.
+
+Selected existing checks: RC analytic vs steady integration agrees at UI low/middle/high frequencies; band-pass peak is1 at f0 for Q=.5/1/5/12 and width recovers Q. Its transfer function is correct, but final paragraph loosely equates it with pole-based resonance without distinguishing outputs. Laplace impulse formulas are correct. Independent review found a real boundary defect: simple poles−1,0 give1−exp(−t), but status always says equal-amplitude oscillation. A red-capable core test also reproduced mode=osc,pr=wd=0 being called marginal although h=t. Prioritize narrow verdict/copy fixes; preserve correct impulse formulas. This selected audit is not full-site certification.
+
+P0: repair those boundaries and verify one existing chain: complex poles do not guarantee a nonzero-frequency displacement-amplitude peak. Add a separate stable inline lab to existing response trail/four nodes; no new graph nodes/trails. P1 next: review startup-to-steady teaching with a concrete task. Deferred: transient integration/animation, arbitrary initial conditions, all physical parameters as controls, unstable/zero-damping steady-state cases, new framework.
+
+Model: fixed m=1kg,k=4N/m,ω0=2rad/s,F0=1N; b=2ζmω0. ζ=.1..1.5 and drive r=Ω/ω0=.05..3. Equation mx''+bx'+kx=F0cosΩt. x_ss=Re{X̂exp(iΩt)}, complex G=kX̂/F0=1/(1−r²+i2ζr); M=|G|, φ=argG. Only forced steady displacement after decaying transients. Static M(0)=1. Exact nonzero peak r_peak=√(1−2ζ²) onlyζ<1/√2. Calculate analytically, never infer from visible sampling. Plot startsr0, though control starts.05; near-threshold peak must not be misclassified if visually unresolved.
+
+Poles solve s²+2ζω0s+ω0²: complexζ<1, repeated realζ1, negative realζ>1. All shown cases causal/BIBO stable (positive m,k,ζ; constant numerator/no cancellation). Distinguish naturalω0, free dampedωd, displacement-peakΩ_peak and user driveΩ. ζ=.8 is the counterexample; no peak does not mean no response. No transient waveform is plotted or claimed. The physical model is ideal linear viscous damping, not hardware data or a general resonance criterion for velocity/power/other outputs.
+
+Sources: original MIT8.03SC Chapter2 and OpenStax15.5/15.6. Derivative of squared denominator D is4r(r²+2ζ²−1); exact peak formula checked independently, not copied from simplified prose equating peak withω0.
+
+Independent design reviewer: separate design_review agent, read-only current atlas/freqresp/laplace. Verdict approved before implementation. Adopt all: complex-amplitude notation; four frequency roles; exact threshold/graph-outside distinction; double pole marked2×; r edits cannot move poles; static diagrams shareζ/r; preserve source links and previous motion state. Legacy marginal status must distinguish bounded free response from BIBO and cover nonoscillating constant limits.
+
+Integration: existing response route owns open/close through atlas URL. Stable host outside rebuilt detail/trail, data-response-* translations, exact atlas tokens/48px controls; reuse motion structural CSS without refactoring. Independent per-tab storage key forζ/r, fallback if denied; navigation/locale preserves, resetζ.2/r1. No clock. Code touches only atlas, narrow freqresp/laplace science fixes, their dedicated tests/review records and existing handoff index. No deployment/push.

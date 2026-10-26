@@ -37,3 +37,7 @@ in briefs and review reports. Do not put credentials or private configuration he
 
 A specification change documents the required process; it is not itself evidence
 that existing pages have completed that process.
+
+## Mathematics and physics development
+
+- [Atlas development handoff and iteration index](../atlas/README.md): current locally verified milestone, audit findings, tests, limits and prioritized next work. Reuses existing review/evidence records; does not change LeetCode ownership or gates.

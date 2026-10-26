@@ -174,3 +174,14 @@ canvas.dragc:focus{outline:1px solid var(--line);outline-offset:2px}
 .ray-legend b{color:var(--accent);font-weight:600}
 .quiz-q{font-size:16.5px;color:#c9d4e2;margin:18px 0 8px}
 .quiz-q:first-of-type{margin-top:4px}
+
+/* Round12: reading and fractional controls retain the existing theme. */
+.head-main{min-width:0}.site-head{position:relative;padding-top:80px}.lang-toggle{position:absolute;right:16px;top:12px}
+.site-head h1,.step-inner,.btn{overflow-wrap:anywhere}.step-inner{min-width:0}
+.btn,.lang-toggle button,.nav-step,input[type=range]{min-height:48px;min-width:48px}.nav-step{flex:0 0 auto}
+:where(a,button,input):focus-visible{outline:3px solid var(--accent2);outline-offset:3px}.model-source{display:inline-block;min-height:48px;padding:10px 0}
+@media(max-width:640px){.site-head{padding-top:80px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media(forced-colors:active){.site-head h1{background:none;color:CanvasText;-webkit-text-fill-color:CanvasText}.btn:focus-visible,input:focus-visible,:where(a,button):focus-visible{outline:3px solid Highlight}.btn:disabled{opacity:1}}
+
+#s1-rule{white-space:pre-line}

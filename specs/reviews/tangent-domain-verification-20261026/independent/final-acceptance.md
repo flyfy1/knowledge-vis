@@ -1,0 +1,66 @@
+# R13 tangent: independent final source/science acceptance
+
+**Accept the final bounded source/VM implementation, including finite native commits and lost-capture closure. Remaining must-fix findings: 0.** No real repository files were edited by this reviewer. The five staged course files are byte-identical to the actual project at the reviewed snapshot (`final-source-recheck.json`).
+
+## Actual method and evidence
+
+This was **source-first review**, independent numerical/isolated-VM calculation, read-only source comparison and inspection of supplied viewport images. It was not my own Chrome walk and is not a cold/UI-first study. The separate `../cold-ui/` agent's UI-only work and the parent's browser suites must remain separately attributed.
+
+- `design-review.md` records the pre-implementation gate and original defects. `existing-model-check.json` preserves the old-source reproduction; rerunning its script against the now-fixed actual project is not expected to reproduce the old result.
+- `stage-model-final.json` evaluates the pre-callback-fix implementation (SHA recorded inside the JSON): 10 pole/boundary cases, 5,143 finite samples, four exact-grid arrival sequences, 16 off-grid edits, quadrant/display cases, actual strip-render drawing spies, language-key parity and reading-history validation/merge/denial/paused reconstruction. All pass. Maximum sampled quotient residual was 1.11e-16; this is sampled floating-point evidence, not real-number accuracy near a pole.
+- `manual-pause-first.json` preserves the final red finding: manual S6 pause cleared playback/ARIA but left the active class. `manual-pause-final.json` confirms current source clears all three consistently. These are actual function/state spies in an isolated VM, not native browser interaction.
+- `final-source-recheck.json` confirms app/index/i18n/style/BRIEF match actual files. Current app SHA-256: `636609c7532a9e33d5be2ad33fbed057ca5d93e19e110074d723ec78cbcd9613`.
+- I inspected the parent's original-size viewport images `../browser/en-320-2x-focus.png`, `../browser/zh-320-2x-focus.png` and `../browser/zh-320-2x-forced.png`. Visible approximate 89.9° and finite ≈572.957 are consistent; text wraps and focus remains visible in those supplied views. These screenshots show focus before a preset activation, so a focused 90° button beside the still-89.9° readout is not a claimed state mismatch. Screenshot inspection does not verify an interaction sequence or all off-screen text.
+- I read the parent's `../browser/result.json`: PASS, 1,447 checks, no application errors/failed requests; exact optional `/favicon.ico` 404 is separately recorded. That run predates the final active-class assertion, so I do not credit it with browser coverage of that final fix. Newer parent/cold evidence should be attributed to its actual operator and version. This was an earlier browser snapshot; the final parent-executed logs are separately reviewed in the handoff addendum below.
+
+## Scientific and implementation conclusions
+
+The common tangent helper now distinguishes a known exact pole from a nearby large finite value. Exact normalized quarter turns yield undefined/null; no cosine-proximity or value-size threshold changes the domain. Other supported finite states use the unrounded sine/cosine quotient. Finite drawing overflow is a view limit, not an infinity value. Degree/radian display uses honest approximation; exact-value cards require the actual canonical state. The three adjacent-double quadrant regressions now use the same sine/cosine signs rather than lossy degree modulo classification.
+
+Keyboard grid editing reaches exact canonical poles while arbitrary off-grid pointer states retain their offset. Full-circle S4 control no longer silently folds a 270° state into a 90° control. S6 retains its existing NaN-gap plotting engine, skips an undefined current marker, pauses manual edits and restores only the current point rather than inventing a saved trajectory. Isolated renderer spies confirm no branch bridge and no false pole marker.
+
+Validated lesson-specific reading history merges foreign fields, rejects malformed state, tolerates denied access and restores S6 paused. It stores bounded reading controls rather than answers, scores, profiles, trace history or mastery. No new graph node, route, framework or clock is justified by this repair. The new BRIEF accurately identifies itself as a bounded amendment where no prior local BRIEF existed.
+
+Closed review findings include ordinary canvas 3px focus specificity, rounded-angle honesty, adjacent-double quadrant classification and S6 manual-pause active styling. Original red evidence is retained rather than relabeled as passing.
+
+Primary mathematical basis: [OpenStax 7.4](https://openstax.org/books/algebra-and-trigonometry-2e/pages/7-4-the-other-trigonometric-functions), [8.2](https://openstax.org/books/algebra-and-trigonometry-2e/pages/8-2-graphs-of-the-other-trigonometric-functions), and [7.1](https://openstax.org/books/algebra-and-trigonometry-2e/pages/7-1-angles), checked during the design gate.
+
+## Limits and handoff
+
+No blocker remains in my assigned source/science scope. Native Back, keyboard, pointer/touch, full bilingual layout and final active-button behavior belong to the separately recorded browser operators. No physical phone, actual screen-reader speech, OS font setting or human learning-effect validation is claimed. Extreme near-pole conditioning remains a floating-point limitation, not a physical measurement. Other sine/cosine wave and audio algorithms were outside this bounded repair. Keep the three concise morning-index experiences and actual completed regression evidence in the parent's handoff, without turning test counts into learning outcomes.
+
+
+## Later callback recovery finding and narrow re-acceptance
+
+The original source/VM acceptance missed a genuine integration defect: it exercised the save/restore helpers and manual helper, but did not dispatch the actual long-drag event sequence. The separate cold UI operator found that S6 could end visibly at 90° yet reload an earlier angle. The parent's `../drag-red.json` and `../drag-green.json` retain the real-browser reproduction and fix; these were executed by the parent, not me. This was an unscheduled final callback save, not a schema, tangent-domain or floating-point defect. The earlier PASS must not be presented as proof that this callback path was already sound.
+
+I then independently read and dispatched the **actual** initS6 callbacks with fake timers in `callback-recovery-check.cjs`. After flushing an initial save, a later 80° save, and a final 90° move, each of pointerup, pointercancel and lostpointercapture now leaves a single trailing save containing the final π/2 state. Further pointermove after the end is ignored. Manual updates pause and clear active styling/ARIA; restoration remains paused and preserves foreign history fields. `callback-recovery-final.json` records all three current=saved=restored outcomes. This is a callback-level VM with DOM/drawing adapters, not native pointer capture or a real-time/browser debounce test.
+
+A second parent probe found S1 unit changes updated the model/readout but not the exported render snapshot. The actual unit button callback now calls s1Draw before readouts. The callback VM verifies clicking rad invokes redraw and synchronizes model/export to rad; source inspection confirms the actual renderer exports S1.unit. The existing DOMContentLoaded click listener continues to queue the unit reading save, and explicit navigation/pagehide saves remain unchanged.
+
+That earlier callback snapshot had app SHA `fecd39c036af1d7f39ede64445ee52dd1b03f42c5263a14d835cbf2460ee989c`; it is superseded by the final native-commit/lost-capture snapshot below. No remaining source/VM blocker is known. The cold operator's native long-drag recheck and the parent's updated full browser/cumulative results remain separately attributable; the final logs are reviewed below, without inferring their completion from this isolated VM result. No Chrome was started by me.
+
+
+## Finite native commits: follow-up review
+
+The parent implemented synchronous post-init commit listeners, leaving preview updates at 180ms. `callback-commit-final.json` independently dispatches actual initS1/initS6 callbacks and the actual global listener block, and inspects history **before flushing timers**. Pointer-end variants, recognized keyup, range change, preset/unit commit, foreign-field preservation, no quiz/playback serialization and denied history access pass. The parent real-browser rapid fixture separately records `../rapid-red.json` (visible 90°, saved/reloaded 80°) and `../rapid-green.json` (all 90°); I read the script and confirmed the post-release wait was removed. Cold UI's earlier one-second wait is settled recovery evidence only and must not be credited with immediate-commit coverage.
+
+At the intermediate native-commit snapshot, one callback gap remained (app SHA `2860b1e566d1d64d31f174835ddb1add70d3267b097c5106e7cb957304667102`): S1/S4 lostpointercapture runs the new global save, but neither section registers its local endDrag there. Their dragging flags remain true, so an ensuing unpressed pointermove changes the just-committed angle. `lost-capture-red.json` independently reproduces both actual section callbacks (0→π/2 after lost capture). The minimal fix is to register each existing endDrag for lostpointercapture before the global commit listener; S6 already does this. This is callback lifecycle completion, not a mathematical or schema defect. No Chrome was started here.
+
+
+### Final lost-capture closure
+
+The actual S1/S4 init functions now register their existing endDrag on lostpointercapture, before the global save registration. `lost-capture-green.json` replays the identical red callback sequence: after loss, dragging is false and a later hover move leaves the committed angle unchanged in both sections. `callback-commit-final.json` was rerun on this same final source and remains PASS: synchronous committed history is checked without flushing the trailing timer; foreign fields, denied access, paused restoration and no quiz/playback serialization remain correct. The original `lost-capture-red.json` is retained.
+
+`final-source-recheck.json` confirms all five course files still match actual/stage. The **final** app SHA is `636609c7532a9e33d5be2ad33fbed057ca5d93e19e110074d723ec78cbcd9613`. This closes the final assigned source/VM finding; remaining must-fix count is **0**. Parent real-browser immediate-reload and cumulative evidence stays separately attributed and is not inferred from fake-timer success. No new Chrome session or real-repository edit was performed by this reviewer.
+
+
+## Final read-only handoff and completed-log review
+
+I read, but did **not execute**, the parent's final logs. `final-handoff-recheck.json` records 16/16 final serial suite exits zero, 16/16 original serial exits zero, both targeted tangent reruns zero (1,455 and 1,457 checks), and 22/22 core command exits zero. The later reruns cover only the affected tangent repair; unrelated browser suites are not presented as rerun after each local patch. The original rapid red and final green remain separate evidence. Parent final tangent mouse/touch tests have no delay after release; cold UI's final mouse/touch paths (screenshots 27–30 and its report) deliberately waited one second, and are credited only with settled recovery. I only read that cold report here; I did not perform its interactions or inspect screenshots 27–30 during this final pure-log task.
+
+The documentation-only BRIEF change now distinguishes debounced preview from synchronous native commit, and reconstructed documents (paused/current point) from RAM/bfcache retaining its own trace. It does not add quiz/profile state. The five-file actual/stage comparison passes; runtime app SHA remains `636609c7532a9e33d5be2ad33fbed057ca5d93e19e110074d723ec78cbcd9613`, and the final BRIEF SHA is `1a89142433e477654346487afc0f1c13a7942dfc8b275b38c532251196b444e8`.
+
+The actual morning index has exactly three numbered experience paths: (1) direction/rates/travel/work, (2) finite/undefined/out-of-view tangent, (3) the three optical models. Its statements retain model conditions, no deployment/push, no real-device/screen-reader/human-learning claims and no graph expansion for counts. I checked 29 nearby Markdown/local-live targets across the index, tangent verification and BRIEF: 25 already exist with their static anchors; four evidence-directory links in the verification await the parent's announced archive copy (`acceptance-summary.json`, independent final acceptance, cold postfix report and serial logs). They are expected archive outputs, not a missing runtime or scientific fix. The parent should complete that copy and its final all-links check before delivery. All three live experience paths resolve to existing course files/anchors; no Chrome was used.
+
+Final assigned source/science/VM acceptance is **0 remaining must-fix**. The sole handoff step outside this reviewer is the already-planned evidence archive and its link existence check. Parent-executed test results above are now confirmed from logs, not left as an unreviewed/pending regression claim.

@@ -1,0 +1,17 @@
+# Round13 tangent audit
+
+Userjob: distinguish exact undefined poles,finite largevalues andviewbounds whileusing existingtrig lesson. Scope: S1/S4/S6 tan consistency and existing navigation/keyboard; no newcourse/graphnode/framework. Read website-design and project policy; independentdesign/source and fresh UI-first reviews dispatched before edits. Baselinefiles/HEAD captured; no repoAGENTS/.agents/skills.
+
+Red fixture node tangent-audit/red-tangent.cjs targetsactuals4Mode(89.9°): currently inf though tan≈572.957finite; pi/2−1e−13 also incorrectly undef duecos-window. Hypotheses afterred: (1) >50displaythreshold misused asmathematicalinfinity; remove withfinitevalue+viewclip feedback. (2) |cos|1e−12 incorrectly removes domain aroundpole; canonical representedquarterturns onlyundefined. (3) slider%180 folds fullcirclepointer/keyboardstate andnative0.1sanitization; coherent0–360presentation/explicitstep canfix withoutnewowner. (4) S6 clippedbuckets alreadygap nearpoles; verify nofalseconnections independently beforechangingplotlogic.
+
+P0: one tangentclassification/values for S1/S4/S6,exactpole vsfinite,truthfulapprox sin/cos/ratio; no-crossasymptote drawing; nativekeyboard/mouse/touch/readingreturn/refresh; EN/ZH320/2x/forcedcolors. P1: sourcedlocalnotes/prediction and concise3-pathmorninghandoff. P2:none. Deferred: otherwave/audioalgorithms,wholetrigrewrite,newgraphnodes/usertracking.
+
+First fullbrowser run passed allscopedchecks. Independentreview then caught newS6manualpause changingtext/aria butleavingactivevisualclass; unifyclass inlabels andadd renderedclass/aria assertion. This is an introduced UIstatebug,notfixture. No additionalmodelchanges.
+
+IndependentUI red: longS6drag ended90° but savedintermediate/restored84.7922°. Rootshortloop reproducedcurrentπ/2/saved0/reload0. Rankedconfirmed hypothesis: pointermove stilluseds6Apply ratherthanmanualpath,so afterinitial180mstimer elapsed no final-tail save; ordinaryshortdrag couldmaskit. Finalpointermove nowmanual(pause+queue),end/cancel/lostcapture queuecurrentstate. Same redprobe also proved legacyunitdisplay changedS1.unit without updatingTRIG.steps.s1.unit; unitclick now redraws the same state/export. Both are actualstatecontract fixes,notfixturetolerancechanges. OriginalredJSON retained; focusedgreen/reload andlongmouse/touch tofollow.
+
+Rapidcommitred established afterfirst16suitePASS: removewait afterpointerup →current90 saved80 reload80,despitepagehide. Independentdesign approved synchronoussaveonlynativecommit events whilepreviewinput/move/keydown remain180ms. Implementedpointerends/handledkeyup/change/presets-unit-chain-playcommit afteroldhandlers; no beforeunload/newstate. Finalfocusedprobe nowcoversimmediatereload forpointer/preset/key/change/unit; no waiting tohidefailure. Fulltan browserretestwillremovepost-end waits formouse/touch; other15suites unchanged.
+
+Independentcallback redfoundS1/S4lostcapture savedbutdidnotenddrag,sohovercouldstillchangeθ. AddedexistingendDraglistenerbeforeglobalcommit(likeS6). Nativeup/cancel paths/modelunchanged. Independentred/greenandfocusedbrowserloss-capture checksclose thislast inputlifecyclecase.
+
+Final16suitepass plus latesttangent1457focuspass;22corepass. Nativecommit/lostcapture actualbrowser andindependentVMgreen; coldlongdraggreenwith1swait clearlyseparate. Runtimefrozen; threepathmorningindexfilled,no count-as-learningclaim. Finalarchive/hashlinks only. No approvals/toolblockers,push/deploy/Gitmutation.

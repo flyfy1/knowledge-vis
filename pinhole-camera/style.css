@@ -177,3 +177,17 @@ canvas.dragc:focus{outline:1px solid var(--line);outline-offset:2px}
   .btn.big{padding:12px 15px}
   .stage{padding:6px}
 }
+
+/* Optional geometry connection; original canvas/state remains the experiment. */
+.geometry-bridge{margin-top:20px;padding:14px;border:1px solid var(--muted);border-radius:12px;min-width:0}
+.geometry-bridge summary{min-height:48px;display:flex;align-items:center;cursor:pointer;color:var(--accent);font-weight:600}
+.geometry-bridge summary::before{content:'▸';margin-right:10px}.geometry-bridge[open]>summary::before,.geometry-answer[open]>summary::before{content:'▾'}
+.geometry-bridge p,.geometry-bridge h3{margin:12px 0}
+.geometry-bridge p{overflow-wrap:anywhere}
+.geometry-link{display:inline-flex;min-height:48px;align-items:center;padding:8px 0;color:var(--accent);font-weight:600}
+.geometry-sources a{display:inline-flex;align-items:center;min-height:48px;color:var(--accent)}
+.geometry-bridge summary:focus-visible,.geometry-bridge a:focus-visible,.geometry-bridge button:focus-visible,#step2 .btn:focus-visible,#step2 input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+#step2 input[type=range]{min-height:48px}
+.step-inner{min-width:0;overflow-wrap:anywhere}
+@media(forced-colors:active){.geometry-bridge :focus-visible,#step2 :focus-visible{outline-color:Highlight}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.geometry-bridge .btn{transition:none}}

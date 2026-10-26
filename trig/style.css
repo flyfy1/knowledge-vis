@@ -166,3 +166,20 @@ canvas.dragc:focus{outline:1px solid var(--line);outline-offset:2px}
   .controls label{flex:1 1 100%}
   .site-head{padding:30px 16px 16px}
 }
+
+/* Round11 reciprocal math application link. */
+.optics-link{display:inline-block;min-height:48px;padding:10px 0;overflow-wrap:anywhere}
+.optics-link:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+@media(forced-colors:active){.optics-link:focus-visible{outline-color:Highlight}}
+
+/* Round13: same theme, visible native keyboard paths and bounded text. */
+.head-main{min-width:0}.site-head h1,.step-inner,.btn{overflow-wrap:anywhere}.step-inner{min-width:0}
+.btn,.lang-toggle button,.nav-step,input[type=range]{min-height:48px;min-width:48px}.nav-step{flex:0 0 auto}
+:where(a,button,input,canvas[tabindex]):focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+.tangent-source{display:inline-block;min-height:48px;padding:10px 0}
+@media(max-width:640px){.site-head{position:relative;padding-top:80px}.lang-toggle{position:absolute;right:16px;top:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media(forced-colors:active){.site-head h1{background:none;color:CanvasText;-webkit-text-fill-color:CanvasText}.btn:focus-visible,input:focus-visible,canvas[tabindex]:focus-visible,:where(a,button):focus-visible{outline:3px solid Highlight}}
+
+canvas.dragc:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+@media(forced-colors:active){canvas.dragc:focus-visible{outline:3px solid Highlight}}

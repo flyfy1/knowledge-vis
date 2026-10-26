@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>光的反射与折射</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=focus-1">
 <script src="../pages.config.js">
 </script>
-<script src="i18n.js">
+<script src="i18n.js?v=focus-1">
 </script>
 </head>
 <body>
@@ -134,6 +134,12 @@
 </p>
 <p class="hint" data-i18n="s2hint">
 </p>
+<details class="snell-bridge" id="snell-bridge"><summary data-i18n="snellTitle"></summary>
+<p data-i18n="snellIntro"></p><p data-i18n="snellExplain"></p><p class="readout" id="s2-snell"></p>
+<p data-i18n="snellAirPredict"></p><p><a href="../trig/#step1" data-i18n="snellMathLink"></a></p>
+<p><a href="#step2" data-i18n="snellReturn"></a></p>
+<p><a href="https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction" data-i18n="snellSource"></a></p>
+<p><a href="https://openstax.org/books/university-physics-volume-3/pages/1-4-total-internal-reflection" data-i18n="snellCriticalSource"></a></p></details>
 </div>
 </section>
 <section class="step" id="step3" data-step="3">
@@ -152,7 +158,7 @@
 <label>
 <span data-i18n="s3angLab">
 </span>
-<input id="s3-ang" type="range" min="0" max="80" step="0.1" value="30">
+<input id="s3-ang" type="range" min="0" max="80" step="any" value="30">
 </label>
 </div>
 <div class="btn-row">
@@ -171,6 +177,12 @@
 </p>
 <p class="hint" data-i18n="s3hint">
 </p>
+<details class="snell-bridge" id="critical-proof"><summary data-i18n="snellTitle"></summary>
+<p data-i18n="snellIntro"></p><p data-i18n="snellExplain"></p><p class="readout" id="s3-snell"></p>
+<p data-i18n="snellPredict"></p><p><a href="../trig/#step1" data-i18n="snellMathLink"></a></p>
+<p><a href="#step3" data-i18n="snellReturn"></a></p>
+<p><a href="https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction" data-i18n="snellSource"></a></p>
+<p><a href="https://openstax.org/books/university-physics-volume-3/pages/1-4-total-internal-reflection" data-i18n="snellCriticalSource"></a></p></details>
 </div>
 </section>
 <section class="step" id="step4" data-step="4">
@@ -267,6 +279,8 @@
 </p>
 </div>
 </div>
+<p><a class="fourier-link" href="../atlas/?trail=optics&amp;node=snell&amp;view=list" data-i18n="opticsAtlas"></a></p>
+<p><a class="fourier-link lens-next" href="../lens/#step2" data-i18n="nextLens"></a></p>
 <p class="readout" data-i18n="finNote">
 </p>
 </div>
@@ -275,7 +289,7 @@
 </main>
 <footer class="site-foot" data-i18n="foot">
 </footer>
-<script src="app.js">
+<script src="app.js?v=normal-1">
 </script>
 </body>
 </html>

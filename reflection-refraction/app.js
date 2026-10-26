@@ -19,18 +19,26 @@ function refractVec(dx, dy, nx, ny, n1, n2) {
   const cos1 = -(u[0] * nx + u[1] * ny);
   const eta = n1 / n2;
   const sin2sq = eta * eta * (1 - cos1 * cos1);
-  if (sin2sq > 1) return null;
-  const cos2 = Math.sqrt(1 - sin2sq);
+  if (sin2sq > 1 + 8 * Number.EPSILON * Math.max(1, sin2sq)) return null;
+  const cos2 = Math.sqrt(Math.max(0, 1 - sin2sq));
   const k = eta * cos1 - cos2;
   return vUnit(eta * u[0] + k * nx, eta * u[1] + k * ny);
 }
 // 标量斯涅尔：thetaDeg 为入射角（从法线量），返回 {tir, theta}
 function snellDeg(n1, n2, thetaDeg) {
-  const s = n1 * Math.sin(thetaDeg * RAD) / n2;
-  if (s > 1) return { tir: true, theta: null };
-  return { tir: false, theta: Math.asin(s) * DEG };
+  const invalid = {tir:false, theta:null, mode:'invalid', s:null};
+  if (![n1,n2,thetaDeg].every(Number.isFinite) || n1<=0 || n2<=0 || Math.abs(thetaDeg)>90) return invalid;
+  const mag = Math.abs(thetaDeg), s = (n1 / n2) * Math.sin(mag * RAD);
+  if (!Number.isFinite(s)) return invalid;
+  const critical = criticalDeg(n1,n2);
+  if (critical !== null && mag > critical) return {tir:true,theta:null,mode:'tir',s};
+  const mode = critical !== null && mag === critical ? 'critical' : 'refract';
+  const theta = mode === 'critical' ? 90 : Math.asin(clamp(s,0,1)) * DEG;
+  return {tir:false,theta:(thetaDeg<0?-1:1)*theta,mode,s};
 }
-function criticalDeg(nFrom, nTo) { return Math.asin(nTo / nFrom) * DEG; }
+function criticalDeg(nFrom, nTo) {
+  return Number.isFinite(nFrom)&&Number.isFinite(nTo)&&nFrom>nTo&&nTo>0 ? Math.asin(nTo/nFrom)*DEG : null;
+}
 const CRIT = criticalDeg(N_WATER, N_AIR);
 // 一位小数口径全页统一
 function fmtDeg(v) { return (Math.round(v * 10) / 10).toFixed(1) + '°'; }
@@ -99,12 +107,14 @@ function trace2(thetaDeg) {
   const th = thetaDeg * RAD;
   const S = [O2[0] + R2 * Math.sin(th), O2[1] - R2 * Math.cos(th)];
   const d = vUnit(O2[0] - S[0], O2[1] - S[1]);
-  const tv = refractVec(d[0], d[1], 0, -1, N_AIR, N_WATER);
+  const solution = snellDeg(N_AIR,N_WATER,Math.abs(thetaDeg));
+  const thetaR = solution.theta * RAD;
+  const tv = [-Math.sign(thetaDeg)*Math.sin(thetaR),Math.cos(thetaR)];
   return {
     S: S, O: O2, incDir: d, refrDir: tv,
     refrEnd: [O2[0] + 155 * tv[0], O2[1] + 155 * tv[1]],
     thetaI: segAngle(S[0] - O2[0], S[1] - O2[1], 0, -1),
-    thetaR: segAngle(tv[0], tv[1], 0, 1)
+    thetaR: solution.theta, snell: solution
   };
 }
 // ---- 第 3 步（水→空气）：界面 y=150 ----
@@ -113,29 +123,15 @@ function trace3(thetaDeg) {
   const th = thetaDeg * RAD;
   const S = [O3[0] + R3 * Math.sin(th), O3[1] + R3 * Math.cos(th)];
   const d = vUnit(O3[0] - S[0], O3[1] - S[1]);
-  const mag = Math.abs(thetaDeg);
-  let mode, tv = null, thetaR = null, refrEnd = null, reflEnd = null, rDir = null;
-  if (Math.abs(mag - CRIT) <= 1e-9) {
-    mode = 'critical';
-    thetaR = 90;
-    const side = thetaDeg < 0 ? 1 : -1;
-    refrEnd = [O3[0] + side * 175, O3[1]];
-  } else {
-    tv = refractVec(d[0], d[1], 0, 1, N_WATER, N_AIR);
-    if (tv === null) {
-      mode = 'tir';
-      rDir = reflectVec(d[0], d[1], 0, 1);
-      reflEnd = [O3[0] + 150 * rDir[0], O3[1] + 150 * rDir[1]];
-    } else {
-      mode = 'refract';
-      thetaR = segAngle(tv[0], tv[1], 0, -1);
-      refrEnd = [O3[0] + 155 * tv[0], O3[1] + 155 * tv[1]];
-    }
-  }
+  const solution = snellDeg(N_WATER,N_AIR,Math.abs(thetaDeg));
+  const mode = solution.mode, thetaR = solution.theta;
+  const tv = solution.tir ? null : [-Math.sign(thetaDeg)*Math.sin(thetaR*RAD),-Math.cos(thetaR*RAD)];
+  const refrEnd = tv ? [O3[0]+(mode==='critical'?175:155)*tv[0],O3[1]+(mode==='critical'?175:155)*tv[1]] : null;
+  const rDir = reflectVec(d[0],d[1],0,1);
   return {
-    S: S, O: O3, incDir: d, mode: mode, refrDir: tv, thetaR: thetaR,
-    refrEnd: refrEnd, reflDir: rDir, reflEnd: reflEnd,
-    thetaI: segAngle(S[0] - O3[0], S[1] - O3[1], 0, 1)
+    S, O:O3, incDir:d, mode, refrDir:tv,thetaR,refrEnd,reflDir:rDir,
+    reflEnd:[O3[0]+150*rDir[0],O3[1]+150*rDir[1]],
+    thetaI:Math.abs(thetaDeg),snell:solution
   };
 }
 // ---- 第 4 步（鱼与虚像）：界面 y=125，真鱼 F4，1 格 = 40 单位 ----
@@ -364,12 +360,14 @@ function render2() {
   const bend = tr.thetaI - tr.thetaR;
   ro('s2-ro', t('s2ro', { i: fmtDeg(tr.thetaI), r: fmtDeg(tr.thetaR), d: fmtDeg(bend) }));
   ro('s2-ro2', tr.thetaI < 0.05 ? t('s2zero') : t('s2ro2'));
+  renderSnell('s2-snell',N_AIR,N_WATER,tr);
 }
 function setTheta2(deg) {
   S.s2.theta = clamp(deg, -80, 80);
   if (deg !== 0) S.s2.side = deg < 0 ? -1 : 1;
   $('s2-ang').value = Math.abs(Math.round(S.s2.theta));
   render2();
+  queueOpticsReading();
 }
 /* ---------- 第 3 步：水→空气与全反射 ---------- */
 function render3() {
@@ -405,19 +403,20 @@ function render3() {
   dot(ctx, tr.O, '#e8edf4', 3.5);
   ctx.restore();
   $('s3-pcrit').textContent = t('s3pCrit', { crit: fmtDeg(CRIT) });
+  renderSnell('s3-snell',N_WATER,N_AIR,tr);
   const roEl = $('s3-ro');
   if (tr.mode === 'refract') {
     roEl.classList.remove('alert');
-    ro('s3-ro', t('s3roRefr', { i: fmtDeg(tr.thetaI), r: fmtDeg(tr.thetaR) }));
+    ro('s3-ro', tr.thetaI===0 ? t('s3zero') : t('s3roRefr', { i: fmtDeg(tr.thetaI), r: fmtDeg(tr.thetaR) }));
     ro('s3-ro2', t('s3ro2', { crit: fmtDeg(CRIT) }));
   } else if (tr.mode === 'critical') {
     roEl.classList.remove('alert');
     ro('s3-ro', t('s3roCrit', { i: fmtDeg(tr.thetaI), crit: fmtDeg(CRIT) }));
-    ro('s3-ro2', '');
+    ro('s3-ro2', t('s3rounding',{detail:CRIT.toFixed(8)+'°'}));
   } else {
     roEl.classList.add('alert');
     ro('s3-ro', t('s3roTIR', { i: fmtDeg(tr.thetaI), crit: fmtDeg(CRIT) }));
-    ro('s3-ro2', '');
+    ro('s3-ro2', t('s3rounding',{detail:CRIT.toFixed(8)+'°'}));
   }
 }
 function setTheta3(deg) {
@@ -425,7 +424,23 @@ function setTheta3(deg) {
   if (deg !== 0) S.s3.side = deg < 0 ? -1 : 1;
   $('s3-ang').value = Math.abs(S.s3.theta);
   render3();
+  queueOpticsReading();
 }
+function renderSnell(id,n1,n2,tr) {
+  const s=tr.snell.s;
+  const values={n1:n1.toFixed(2),n2:n2.toFixed(2),i:fmtDeg(tr.thetaI),s:s.toFixed(6),out:tr.thetaR===null?'—':fmtDeg(tr.thetaR)};
+  ro(id,t(tr.mode==='tir'?'snellNone':tr.mode==='critical'?'snellCritical':'snellValue',values));
+}
+let opticsReadingTimer=null;
+function queueOpticsReading(){clearTimeout(opticsReadingTimer);opticsReadingTimer=setTimeout(saveOpticsReading,180);}
+function validOpticsReading(v){return !!v&&typeof v==='object'&&!Array.isArray(v)&&v.version===1&&v.lesson==='reflection-refraction'&&['s2','s3'].every(k=>v[k]&&typeof v[k]==='object'&&!Array.isArray(v[k])&&Number.isFinite(v[k].theta)&&Math.abs(v[k].theta)<=80&&[-1,1].includes(v[k].side)&&(v[k].theta===0||Math.sign(v[k].theta)===v[k].side));}
+function saveOpticsReading(){
+  clearTimeout(opticsReadingTimer);opticsReadingTimer=null;
+  try{const prior=history.state;history.replaceState({...((prior&&typeof prior==='object'&&!Array.isArray(prior))?prior:{}),knowledgeGeometryReading:{version:1,lesson:'reflection-refraction',s2:{...S.s2},s3:{...S.s3}}},'');}catch(_){}
+}
+function restoreOpticsReading(){try{const v=history.state&&history.state.knowledgeGeometryReading;if(validOpticsReading(v))for(const k of ['s2','s3'])Object.assign(S[k],{theta:v[k].theta,side:v[k].side});}catch(_){}}
+function syncOpticsControls(){for(const k of ['s0','s2','s3'])$(k+'-ang').value=Math.abs(S[k].theta);$('s4-eye').value=S.s4.eyeX;}
+function revealSnell(){for(const id of ['snell-bridge','critical-proof'])if(location.hash==='#'+id)$(id).open=true;}
 /* ---------- 第 4 步：鱼、虚像与自测 ---------- */
 function drawFish(ctx, F, color, dash) {
   ctx.save();
@@ -559,6 +574,10 @@ function bind() {
     if (dy < -15) setTheta2(clamp(Math.atan2(dx, -dy) * DEG, -80, 80));
   }, { grab: (x, y) => { const s = trace2(S.s2.theta).S; return Math.hypot(x - s[0], y - s[1]) <= 42; } });
   $('s3-ang').addEventListener('input', e => setTheta3(S.s3.side * Number(e.target.value)));
+  $('s3-ang').addEventListener('keydown',e=>{
+    const direction={ArrowRight:1,ArrowUp:1,ArrowLeft:-1,ArrowDown:-1}[e.key];
+    if(direction){e.preventDefault();setTheta3(S.s3.side*clamp(Math.abs(S.s3.theta)+direction*.1,0,80));}
+  });
   $('s3-p30').onclick = () => setTheta3(S.s3.side * 30);
   $('s3-pcrit').onclick = () => setTheta3(S.s3.side * CRIT);
   $('s3-p60').onclick = () => setTheta3(S.s3.side * 60);
@@ -602,7 +621,14 @@ onLangRefresh(renderAll);
 onLangRefresh(clearAllDrags);
 window.addEventListener('blur', clearAllDrags);
 document.querySelectorAll('.nav-step').forEach(a => a.addEventListener('click', clearAllDrags));
+restoreOpticsReading();
 bind();
+syncOpticsControls();
+revealSnell();
+window.addEventListener('hashchange',revealSnell);
+window.addEventListener('pagehide',saveOpticsReading);
+window.addEventListener('pageshow',()=>requestAnimationFrame(()=>{syncOpticsControls();renderAll();}));
+document.querySelectorAll('a[href]').forEach(a=>a.addEventListener('click',()=>{if(a.getAttribute('href').startsWith('../'))saveOpticsReading();}));
 applyLang(getLang());
 // 只读检查面：供数值自查/评审复算，界面仍是唯一改状态路径。
 window.REFRACTION = {
