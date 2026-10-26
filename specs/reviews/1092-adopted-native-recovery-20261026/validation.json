@@ -1,0 +1,23 @@
+{
+  "status": "completed-fresh-native-fix-running",
+  "checks_passed": 13,
+  "launch_invocations": 1,
+  "files": {
+    "dispatch.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dispatch.stdout": "83279720d7940e804d8c649f11e9152a5c460be0237355ae8970435ff2954025",
+    "fresh-events.jsonl": "c352b5a8c6c96b419c855dfa7c3792b0f5b50e8aaf2ba2ae5407b7af500cb282",
+    "launch.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launch.stdout": "b130fa2fda23d26f6a49f8e1a52d96ce4ad69bce738ab3824ff4391271034973",
+    "progress-after.json.gz": "047d7d8c3504a8283ce1247c25dbbf9c6c5ad29db6972ccdab5b6292cf31a7af",
+    "progress-before.json.gz": "ec52e76b2323850117845c9958b8dcb37cda9a8a29e25a7fe2b53f922cd5e711",
+    "receipt.json": "c898b86b200e483189e0288e585a91efe643b06120bf0f17dd26eed0e9dfb774",
+    "releases-before.json.gz": "c55c860ee6df7b6d73603e4b748f3987e348e2152baefa922cee93879bb3f779",
+    "resume.py": "a40d407fd21313d5aebcc7e6054b37517f7515705330669a9bf3c395fef72313",
+    "verification.json": "430540d323ba599d54f70f46952157dc49bf3a6f0eb7beb9c2ab674eb299ca74",
+    "verification.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verify.py": "75abdb1a2c80b3fa7bd81b5775dd0a7ca821ba100608365ab20e8f829d1cedc6"
+  },
+  "report_sha256": "c08de5244c262fe1a993c600167e1f5cc5519a23ed86e7e4600add6bbe7c74b7",
+  "local_commit": false,
+  "push": false
+}
