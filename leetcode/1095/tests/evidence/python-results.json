@@ -1,0 +1,263 @@
+{
+  "passed": true,
+  "scope": "author self-check, not independent acceptance",
+  "cases": 42359,
+  "exhaustive": 41712,
+  "seeded": 600,
+  "maximumCases": [
+    {
+      "n": 10000,
+      "peak": 1,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 1,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 1,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 1,
+      "target": 1000000000,
+      "expected": 1
+    },
+    {
+      "n": 10000,
+      "peak": 1,
+      "target": 999999999,
+      "expected": -1
+    },
+    {
+      "n": 10000,
+      "peak": 1,
+      "target": 500,
+      "expected": 9499
+    },
+    {
+      "n": 10000,
+      "peak": 1,
+      "target": 9999,
+      "expected": -1
+    },
+    {
+      "n": 10000,
+      "peak": 2,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 2,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 2,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 2,
+      "target": 1000000000,
+      "expected": 2
+    },
+    {
+      "n": 10000,
+      "peak": 2,
+      "target": 999999999,
+      "expected": -1
+    },
+    {
+      "n": 10000,
+      "peak": 2,
+      "target": 500,
+      "expected": 9499
+    },
+    {
+      "n": 10000,
+      "peak": 2,
+      "target": 9999,
+      "expected": -1
+    },
+    {
+      "n": 10000,
+      "peak": 4999,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 4999,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 4999,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 4999,
+      "target": 1000000000,
+      "expected": 4999
+    },
+    {
+      "n": 10000,
+      "peak": 4999,
+      "target": 999999999,
+      "expected": -1
+    },
+    {
+      "n": 10000,
+      "peak": 4999,
+      "target": 500,
+      "expected": 500
+    },
+    {
+      "n": 10000,
+      "peak": 4999,
+      "target": 9999,
+      "expected": -1
+    },
+    {
+      "n": 10000,
+      "peak": 5000,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 5000,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 5000,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 5000,
+      "target": 1000000000,
+      "expected": 5000
+    },
+    {
+      "n": 10000,
+      "peak": 5000,
+      "target": 999999999,
+      "expected": -1
+    },
+    {
+      "n": 10000,
+      "peak": 5000,
+      "target": 500,
+      "expected": 500
+    },
+    {
+      "n": 10000,
+      "peak": 5000,
+      "target": 9999,
+      "expected": -1
+    },
+    {
+      "n": 10000,
+      "peak": 9997,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 9997,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 9997,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 9997,
+      "target": 1000000000,
+      "expected": 9997
+    },
+    {
+      "n": 10000,
+      "peak": 9997,
+      "target": 999999999,
+      "expected": -1
+    },
+    {
+      "n": 10000,
+      "peak": 9997,
+      "target": 500,
+      "expected": 500
+    },
+    {
+      "n": 10000,
+      "peak": 9997,
+      "target": 9999,
+      "expected": -1
+    },
+    {
+      "n": 10000,
+      "peak": 9998,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 9998,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 9998,
+      "target": 0,
+      "expected": 0
+    },
+    {
+      "n": 10000,
+      "peak": 9998,
+      "target": 1000000000,
+      "expected": 9998
+    },
+    {
+      "n": 10000,
+      "peak": 9998,
+      "target": 999999999,
+      "expected": -1
+    },
+    {
+      "n": 10000,
+      "peak": 9998,
+      "target": 500,
+      "expected": 500
+    },
+    {
+      "n": 10000,
+      "peak": 9998,
+      "target": 9999,
+      "expected": -1
+    }
+  ],
+  "maxObservedGetCalls": 53,
+  "provenBound": 56
+}

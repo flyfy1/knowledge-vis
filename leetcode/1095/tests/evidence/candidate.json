@@ -1,0 +1,52 @@
+{
+  "candidate": "1095-c1",
+  "frozenAt": "2026-10-26T15:50:13.973306+00:00",
+  "author": "Codex author session; external run id and exact model identifier unavailable",
+  "status": "self-checked; independent review pending",
+  "reviewer": null,
+  "independentAcceptance": false,
+  "published": false,
+  "baseCommit": "288b576f5ad7ea505a99247a7ab66161e57bc6c7",
+  "files": {
+    "BRIEF.md": "c4f4824ec213907a397bcf360a85e3d6fd0812652e3ff3794597afc38314aa62",
+    "app.js": "93bde2ed9dc17ece1098784188ddd20621b0ff5a9a3462a9a98969c8f623e79c",
+    "copy.js": "e3ba452ceca87909d66c223f5dd0a435ec3f82b1f241acc9e7de75ee42c16660",
+    "core.js": "6ac18601006141caf61f091252892f88a36710fd020976c346c43514db1715f6",
+    "icon.svg": "7908a7092e29609a7998c1758d2f71c093ba5681729b7031c4ae579ea5691c13",
+    "index.html": "b8af322f5f946b16a7d2e4cfc7eb6b918cab2f7dcf57e6a6b9f655f47f5c9718",
+    "lesson-entry.json": "dcc0c809d05d959b607b1236a1b4f2a386a3d6ce1acbac4f466a9a4339fd1e8b",
+    "lesson.css": "426590e7a226bf93fc79e57bb03027573f4881c19625a82ebddb93788846584c",
+    "provenance/official-graphql.json": "f8902fdd5befed2ada8aa7900598b5d223955cb79462e645546213f4e05e8087",
+    "provenance/official-verification.md": "12366b8bc14358ddca7ab26223c6f9b30856dafd7eb2df9bc002ef1e96d8f368",
+    "python-code.js": "3f1d09b1025a7542f2feb83597adf8e19eab1ae0fc4130b5f9b9ed35935ba8ff",
+    "solution.py": "8c433bb3796bb24e00264b67232646e73e8c53c4f5addd0d98ef27cf40285b2e",
+    "tests/README.md": "ba792f7cde73161b47063dc2ea95a596407bdc33614a9f76060942c941eff3d8",
+    "tests/browser.cjs": "cb7f2c0e562262f8ebf21f1e662a312800bb92db919c4830e1eea62e26ed8db3",
+    "tests/contact_sheet.py": "2e2f84dd4991549b8d047609636c092b0ba365fcf9cc936fba09227f9e650823",
+    "tests/freeze.py": "4f7706d5be4483fca5edebdc027bdcdad778ab498d395dfdc3c86849f0beb68f",
+    "tests/test_core.cjs": "e4979c8db71dfb1b9ffd49c78857daeefd6ed5692fc987c7aecc1637e5db8198",
+    "tests/test_logic.py": "020efb2179e28f753736709bcadbf3d8ddab3fddadc48e31d128c5aeaa4fad72"
+  },
+  "sharedPolicies": {
+    "WORKFLOW.md": "6a1f5a72f96d98a720be0aee0af40d75d837d281761842151e00fa7015c240a6",
+    "UI-I18N-SPEC.md": "16ca9aebcaf6cc4863428d3abbfb675599c31b37d1d717783323697884e62b81",
+    "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+    "specs/leetcode-hard-traces.md": "5cb2edb1f223cde061d67e8cfe255f220876667c1d4c091bdbac49f67c6f2c35",
+    "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+    "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+    "specs/reviews/leetcode-all-hard-design-review.md": "a1d9d6bc23d15e7369eb04252ff00d0302d5b1786641f5c7f7587ecf64d31086",
+    "leetcode/common.js": "f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b",
+    "leetcode/style.css": "6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27"
+  },
+  "designSkill": {
+    "path": "/home/songyy/Documents/agent-skills/website-design/SKILL.md",
+    "sha256": "62a4adf7806f58484201cedfa563527155c0e5a126f932141e21909d306a246b"
+  },
+  "resultHashes": {
+    "python-results.json": "7bf6433af964f0bb634b1b60f06ccdf784ccf7f772ae359aa28b315d32b7a03b",
+    "core-results.json": "b6bfa9f1913a98185cf6da86878e9bc86c4c7386d285ffe161256504f9428887",
+    "browser-results.json": "8260f7148497c45ac8966eaf415145af43238d6913eff28922df78bda097a0d5",
+    "preflight.json": "a80769966ebfef3048f4e705660bf678e1a4eebcaa0cd889017ccafe3c6f2538"
+  },
+  "candidateHash": "6443762a453154278f3c0e75797ef2b7536000102ddfa71bb567736ad7e134cf"
+}
