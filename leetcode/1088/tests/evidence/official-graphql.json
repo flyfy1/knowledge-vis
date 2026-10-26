@@ -1,0 +1,18 @@
+{
+  "verifiedAt": "2026-10-26T08:15:36.153583+00:00",
+  "officialUrl": "https://leetcode.com/problems/confusing-number-ii/",
+  "endpoint": "https://leetcode.com/graphql/",
+  "request": {
+    "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug isPaidOnly difficulty content exampleTestcases metaData codeSnippets { lang langSlug code } } }",
+    "variables": {
+      "titleSlug": "confusing-number-ii"
+    }
+  },
+  "authentication": "No credentials or cookies supplied; ordinary public request.",
+  "httpStatus": 200,
+  "responseHeaders": {
+    "Date": "Mon, 26 Oct 2026 08:15:36 GMT",
+    "Content-Type": "application/json"
+  },
+  "responseText": "{\"data\":{\"question\":{\"questionId\":\"1077\",\"questionFrontendId\":\"1088\",\"title\":\"Confusing Number II\",\"titleSlug\":\"confusing-number-ii\",\"isPaidOnly\":true,\"difficulty\":\"Hard\",\"content\":null,\"exampleTestcases\":\"20\\n100\",\"metaData\":\"{\\n  \\\"name\\\": \\\"confusingNumberII\\\",\\n  \\\"params\\\": [\\n    {\\n      \\\"name\\\": \\\"n\\\",\\n      \\\"type\\\": \\\"integer\\\"\\n    }\\n  ],\\n  \\\"return\\\": {\\n    \\\"type\\\": \\\"integer\\\"\\n  }\\n}\",\"codeSnippets\":null}}}"
+}

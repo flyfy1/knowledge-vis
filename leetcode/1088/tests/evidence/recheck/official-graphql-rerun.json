@@ -1,0 +1,14 @@
+{
+  "verifiedAt": "2026-10-26T08:17:00.357564+00:00",
+  "officialUrl": "https://leetcode.com/problems/confusing-number-ii/",
+  "endpoint": "https://leetcode.com/graphql/",
+  "request": {
+    "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug isPaidOnly difficulty content exampleTestcases metaData codeSnippets { lang langSlug code } } }",
+    "variables": {
+      "titleSlug": "confusing-number-ii"
+    }
+  },
+  "authentication": "No credentials or cookies supplied; ordinary public request.",
+  "error": "HTTP Error 403: Forbidden",
+  "contractAccessible": false
+}
