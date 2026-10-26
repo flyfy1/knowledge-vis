@@ -1971,3 +1971,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Aligned prefix invariant | `leetcode/927/#step2` | Every checked aligned column must match across all three starts. |
 
 <!-- /leetcode-927-campaign -->
+
+
+<!-- leetcode-928-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Clean components and sole-source ownership | `leetcode/928/#step2` | Exclude original sources, then credit groups with one distinct infected boundary neighbor. |
+
+<!-- /leetcode-928-campaign -->
