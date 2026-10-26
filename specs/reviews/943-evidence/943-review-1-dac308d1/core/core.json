@@ -1,0 +1,6 @@
+{
+  "kind": "author JS simulation self-check",
+  "cases": 61,
+  "frames": 807,
+  "checks": "every settled cell vs independent order oracle; candidate vs independently merged order; old/new minimum; parent identity; unchanged cells; deep snapshots; copy key uniqueness and pairs"
+}

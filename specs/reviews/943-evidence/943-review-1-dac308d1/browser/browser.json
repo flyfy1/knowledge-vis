@@ -1,0 +1,560 @@
+{
+  "type": "author browser self-check",
+  "url": "http://127.0.0.1:18770/leetcode/943/",
+  "browser": "156.0.8078.4",
+  "host": "linux",
+  "zoom": "Native Chromium tabs.setZoom(2), window 1280x1400; CDP fromSurface capture",
+  "zoomMetrics": {
+    "devicePixelRatio": 2,
+    "innerWidth": 640,
+    "outerWidth": 1280,
+    "innerHeight": 656
+  },
+  "colors": {
+    "--bg": [
+      13,
+      17,
+      23
+    ],
+    "--panel": [
+      22,
+      27,
+      34
+    ],
+    "--panel2": [
+      28,
+      35,
+      48
+    ],
+    "--text": [
+      232,
+      237,
+      244
+    ],
+    "--muted": [
+      154,
+      167,
+      184
+    ],
+    "--accent": [
+      110,
+      231,
+      255
+    ],
+    "--accent2": [
+      255,
+      180,
+      84
+    ],
+    "--good": [
+      126,
+      226,
+      168
+    ]
+  },
+  "contrasts": [
+    {
+      "fg": "--text",
+      "bg": "--bg",
+      "ratio": 16.086987125379448,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--text",
+      "bg": "--panel",
+      "ratio": 14.704584598678618,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--text",
+      "bg": "--panel2",
+      "ratio": 13.397069143240783,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--muted",
+      "bg": "--bg",
+      "ratio": 7.7443462241265095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel",
+      "ratio": 7.078851579017443,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--muted",
+      "bg": "--panel2",
+      "ratio": 6.449407898769069,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent",
+      "bg": "--bg",
+      "ratio": 13.100679028115637,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel",
+      "ratio": 11.974898815275662,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent",
+      "bg": "--panel2",
+      "ratio": 10.910104011097095,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--bg",
+      "ratio": 10.731637051347173,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel",
+      "ratio": 9.809435643476732,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--accent2",
+      "bg": "--panel2",
+      "ratio": 8.937191437807625,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--good",
+      "bg": "--bg",
+      "ratio": 12.013623247863544,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--good",
+      "bg": "--panel",
+      "ratio": 10.981256963037128,
+      "threshold": 4.5
+    },
+    {
+      "fg": "--good",
+      "bg": "--panel2",
+      "ratio": 10.004815697188947,
+      "threshold": 4.5
+    }
+  ],
+  "focus": {
+    "focused": true,
+    "width": "3px",
+    "color": "rgb(255, 180, 84)"
+  },
+  "states": [
+    {
+      "language": "en",
+      "preset": 0,
+      "frames": 13,
+      "result": "Final minimum length 4; one optimal order: 1:bc → 2:ca → 0:ab; appended pieces: \"bc\" + \"a\" + \"b\"; result: bcab. Other tied shortest strings are valid.",
+      "lastCalculation": "Current candidate: subset {0,1}, endpoint 1 → subset {0,1,2}, endpoint 2; 3 + (2 − 1) = 4. Target old value 6 → retained value 4; best predecessor 1. Settled"
+    },
+    {
+      "language": "en",
+      "preset": 1,
+      "frames": 49,
+      "result": "Final minimum length 12; one optimal order: 1:acc → 3:ccabc → 0:bcabb → 2:bbbca; appended pieces: \"acc\" + \"abc\" + \"abb\" + \"bca\"; result: accabcabbbca. Other tied shortest strings are valid.",
+      "lastCalculation": "Current candidate: subset {0,1,2}, endpoint 2 → subset {0,1,2,3}, endpoint 3; 11 + (5 − 0) = 16. Target old value 13 → retained value 13; best predecessor 1. Settled"
+    },
+    {
+      "language": "en",
+      "preset": 2,
+      "frames": 13,
+      "result": "Final minimum length 17; one optimal order: 2:leetcode → 1:loves → 0:alex; appended pieces: \"leetcode\" + \"loves\" + \"alex\"; result: leetcodelovesalex. Other tied shortest strings are valid.",
+      "lastCalculation": "Current candidate: subset {0,1}, endpoint 1 → subset {0,1,2}, endpoint 2; 9 + (8 − 0) = 17. Target old value 17 → retained value 17; best predecessor 0. Settled"
+    },
+    {
+      "language": "en",
+      "preset": 3,
+      "frames": 3,
+      "result": "Final minimum length 4; one optimal order: 1:cd → 0:ab; appended pieces: \"cd\" + \"ab\"; result: cdab. Other tied shortest strings are valid.",
+      "lastCalculation": "Current candidate: subset {0}, endpoint 0 → subset {0,1}, endpoint 1; 2 + (2 − 0) = 4. Target old value — → retained value 4; best predecessor 0. Settled"
+    },
+    {
+      "language": "en",
+      "option": 0,
+      "feedback": "Compare what the two endpoints make possible. The answer is 6. The old value 4 ending in bca adds all 3 characters of bcx (overlap 0) to reach 7. The old value 5 ending in abc adds 3 − 2 to reach 6, sharing bc. The order bca → abc → bcx gives bcabcx. The old length-5 state is useful because its endpoint saves more later. The length-5 option subtracts one character too many."
+    },
+    {
+      "language": "en",
+      "option": 1,
+      "feedback": "Compare what the two endpoints make possible. The answer is 6. The old value 4 ending in bca adds all 3 characters of bcx (overlap 0) to reach 7. The old value 5 ending in abc adds 3 − 2 to reach 6, sharing bc. The order bca → abc → bcx gives bcabcx. The old length-5 state is useful because its endpoint saves more later. The length-5 option subtracts one character too many."
+    },
+    {
+      "language": "en",
+      "option": 2,
+      "feedback": "Correct. The answer is 6. The old value 4 ending in bca adds all 3 characters of bcx (overlap 0) to reach 7. The old value 5 ending in abc adds 3 − 2 to reach 6, sharing bc. The order bca → abc → bcx gives bcabcx. The old length-5 state is useful because its endpoint saves more later. The length-5 option subtracts one character too many."
+    },
+    {
+      "language": "en",
+      "attempt": 0,
+      "clipboard": "native fallback",
+      "host": "linux",
+      "sentinelVerified": true,
+      "sourceExact": true
+    },
+    {
+      "language": "en",
+      "attempt": 1,
+      "clipboard": "native fallback",
+      "host": "linux",
+      "sentinelVerified": true,
+      "sourceExact": true
+    },
+    {
+      "language": "zh",
+      "preset": 0,
+      "frames": 13,
+      "result": "最终最短长度 4；一个最优顺序：1:bc → 2:ca → 0:ab；逐段追加：\"bc\" + \"a\" + \"b\"；结果：bcab。同长的其他答案也合法。",
+      "lastCalculation": "当前候选：子集 {0,1}、末尾 1 → 子集 {0,1,2}、末尾 2；3 + (2 − 1) = 4。目标旧值 6 → 保留值 4；最佳前驱 1。已定"
+    },
+    {
+      "language": "zh",
+      "preset": 1,
+      "frames": 49,
+      "result": "最终最短长度 12；一个最优顺序：1:acc → 3:ccabc → 0:bcabb → 2:bbbca；逐段追加：\"acc\" + \"abc\" + \"abb\" + \"bca\"；结果：accabcabbbca。同长的其他答案也合法。",
+      "lastCalculation": "当前候选：子集 {0,1,2}、末尾 2 → 子集 {0,1,2,3}、末尾 3；11 + (5 − 0) = 16。目标旧值 13 → 保留值 13；最佳前驱 1。已定"
+    },
+    {
+      "language": "zh",
+      "preset": 2,
+      "frames": 13,
+      "result": "最终最短长度 17；一个最优顺序：2:leetcode → 1:loves → 0:alex；逐段追加：\"leetcode\" + \"loves\" + \"alex\"；结果：leetcodelovesalex。同长的其他答案也合法。",
+      "lastCalculation": "当前候选：子集 {0,1}、末尾 1 → 子集 {0,1,2}、末尾 2；9 + (8 − 0) = 17。目标旧值 17 → 保留值 17；最佳前驱 0。已定"
+    },
+    {
+      "language": "zh",
+      "preset": 3,
+      "frames": 3,
+      "result": "最终最短长度 4；一个最优顺序：1:cd → 0:ab；逐段追加：\"cd\" + \"ab\"；结果：cdab。同长的其他答案也合法。",
+      "lastCalculation": "当前候选：子集 {0}、末尾 0 → 子集 {0,1}、末尾 1；2 + (2 − 0) = 4。目标旧值 — → 保留值 4；最佳前驱 0。已定"
+    },
+    {
+      "language": "zh",
+      "option": 0,
+      "feedback": "再看两个末尾的不同作用。 答案为 6。末尾 bca 的旧值 4，加上 bcx 的 3 个字符（重叠 0）得 7；末尾 abc 的旧值 5，加上 3 − 2 得 6，因为共享 bc。选择 bca → abc → bcx，得到 bcabcx。5 的旧状态并非无用：它的末尾能节省更多。长度 5 的选项多扣了一个字符。"
+    },
+    {
+      "language": "zh",
+      "option": 1,
+      "feedback": "再看两个末尾的不同作用。 答案为 6。末尾 bca 的旧值 4，加上 bcx 的 3 个字符（重叠 0）得 7；末尾 abc 的旧值 5，加上 3 − 2 得 6，因为共享 bc。选择 bca → abc → bcx，得到 bcabcx。5 的旧状态并非无用：它的末尾能节省更多。长度 5 的选项多扣了一个字符。"
+    },
+    {
+      "language": "zh",
+      "option": 2,
+      "feedback": "正确。 答案为 6。末尾 bca 的旧值 4，加上 bcx 的 3 个字符（重叠 0）得 7；末尾 abc 的旧值 5，加上 3 − 2 得 6，因为共享 bc。选择 bca → abc → bcx，得到 bcabcx。5 的旧状态并非无用：它的末尾能节省更多。长度 5 的选项多扣了一个字符。"
+    },
+    {
+      "language": "zh",
+      "attempt": 0,
+      "clipboard": "native fallback",
+      "host": "linux",
+      "sentinelVerified": true,
+      "sourceExact": true
+    },
+    {
+      "language": "zh",
+      "attempt": 1,
+      "clipboard": "native fallback",
+      "host": "linux",
+      "sentinelVerified": true,
+      "sourceExact": true
+    },
+    {
+      "language": "en",
+      "width": 320,
+      "optionBudget": {
+        "label": "Greedy trap · 4 words",
+        "text": 160.99232482910156,
+        "width": 256,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "competingCandidate": {
+        "mask": 7,
+        "j": 2,
+        "previous": 3,
+        "i": 1,
+        "old": 11,
+        "source": 8,
+        "added": 5,
+        "candidate": 13,
+        "overlap": 0,
+        "best": 11,
+        "winner": 0,
+        "complete": true
+      },
+      "renderedCalculation": "Current candidate: subset {0,1}, endpoint 1 → subset {0,1,2}, endpoint 2; 8 + (5 − 0) = 13. Target old value 11 → retained value 11; best predecessor 0. Settled"
+    },
+    {
+      "language": "zh",
+      "width": 320,
+      "optionBudget": {
+        "label": "贪心陷阱 · 4 词",
+        "text": 105.92019653320312,
+        "width": 256,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "competingCandidate": {
+        "mask": 7,
+        "j": 2,
+        "previous": 3,
+        "i": 1,
+        "old": 11,
+        "source": 8,
+        "added": 5,
+        "candidate": 13,
+        "overlap": 0,
+        "best": 11,
+        "winner": 0,
+        "complete": true
+      },
+      "renderedCalculation": "当前候选：子集 {0,1}、末尾 1 → 子集 {0,1,2}、末尾 2；8 + (5 − 0) = 13。目标旧值 11 → 保留值 11；最佳前驱 0。已定"
+    },
+    {
+      "language": "en",
+      "width": 390,
+      "optionBudget": {
+        "label": "Greedy trap · 4 words",
+        "text": 160.99232482910156,
+        "width": 326,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "competingCandidate": {
+        "mask": 7,
+        "j": 2,
+        "previous": 3,
+        "i": 1,
+        "old": 11,
+        "source": 8,
+        "added": 5,
+        "candidate": 13,
+        "overlap": 0,
+        "best": 11,
+        "winner": 0,
+        "complete": true
+      },
+      "renderedCalculation": "Current candidate: subset {0,1}, endpoint 1 → subset {0,1,2}, endpoint 2; 8 + (5 − 0) = 13. Target old value 11 → retained value 11; best predecessor 0. Settled"
+    },
+    {
+      "language": "zh",
+      "width": 390,
+      "optionBudget": {
+        "label": "贪心陷阱 · 4 词",
+        "text": 105.92019653320312,
+        "width": 326,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "competingCandidate": {
+        "mask": 7,
+        "j": 2,
+        "previous": 3,
+        "i": 1,
+        "old": 11,
+        "source": 8,
+        "added": 5,
+        "candidate": 13,
+        "overlap": 0,
+        "best": 11,
+        "winner": 0,
+        "complete": true
+      },
+      "renderedCalculation": "当前候选：子集 {0,1}、末尾 1 → 子集 {0,1,2}、末尾 2；8 + (5 − 0) = 13。目标旧值 11 → 保留值 11；最佳前驱 0。已定"
+    },
+    {
+      "language": "en",
+      "width": 736,
+      "optionBudget": {
+        "label": "Greedy trap · 4 words",
+        "text": 160.99232482910156,
+        "width": 644,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "competingCandidate": {
+        "mask": 7,
+        "j": 2,
+        "previous": 3,
+        "i": 1,
+        "old": 11,
+        "source": 8,
+        "added": 5,
+        "candidate": 13,
+        "overlap": 0,
+        "best": 11,
+        "winner": 0,
+        "complete": true
+      },
+      "renderedCalculation": "Current candidate: subset {0,1}, endpoint 1 → subset {0,1,2}, endpoint 2; 8 + (5 − 0) = 13. Target old value 11 → retained value 11; best predecessor 0. Settled"
+    },
+    {
+      "language": "zh",
+      "width": 736,
+      "optionBudget": {
+        "label": "贪心陷阱 · 4 词",
+        "text": 105.92019653320312,
+        "width": 644,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "competingCandidate": {
+        "mask": 7,
+        "j": 2,
+        "previous": 3,
+        "i": 1,
+        "old": 11,
+        "source": 8,
+        "added": 5,
+        "candidate": 13,
+        "overlap": 0,
+        "best": 11,
+        "winner": 0,
+        "complete": true
+      },
+      "renderedCalculation": "当前候选：子集 {0,1}、末尾 1 → 子集 {0,1,2}、末尾 2；8 + (5 − 0) = 13。目标旧值 11 → 保留值 11；最佳前驱 0。已定"
+    },
+    {
+      "language": "en",
+      "width": 1440,
+      "optionBudget": {
+        "label": "Greedy trap · 4 words",
+        "text": 160.99232482910156,
+        "width": 908,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "competingCandidate": {
+        "mask": 7,
+        "j": 2,
+        "previous": 3,
+        "i": 1,
+        "old": 11,
+        "source": 8,
+        "added": 5,
+        "candidate": 13,
+        "overlap": 0,
+        "best": 11,
+        "winner": 0,
+        "complete": true
+      },
+      "renderedCalculation": "Current candidate: subset {0,1}, endpoint 1 → subset {0,1,2}, endpoint 2; 8 + (5 − 0) = 13. Target old value 11 → retained value 11; best predecessor 0. Settled"
+    },
+    {
+      "language": "zh",
+      "width": 1440,
+      "optionBudget": {
+        "label": "贪心陷阱 · 4 词",
+        "text": 105.92019653320312,
+        "width": 908,
+        "padding": 30,
+        "font": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif"
+      },
+      "competingCandidate": {
+        "mask": 7,
+        "j": 2,
+        "previous": 3,
+        "i": 1,
+        "old": 11,
+        "source": 8,
+        "added": 5,
+        "candidate": 13,
+        "overlap": 0,
+        "best": 11,
+        "winner": 0,
+        "complete": true
+      },
+      "renderedCalculation": "当前候选：子集 {0,1}、末尾 1 → 子集 {0,1,2}、末尾 2；8 + (5 − 0) = 13。目标旧值 11 → 保留值 11；最佳前驱 0。已定"
+    },
+    {
+      "language": "zh",
+      "relatedLabel": "#940：按末尾字母组织计数状态",
+      "url": "http://127.0.0.1:18770/leetcode/940/#step2",
+      "destination": "03 · 新字母只替换一个末尾组添加最后一个 a 时，哪些字符串会改变？前缀指已经处理的开头部分。处理 ab 后，按最后一个字母分组：a 组 {a}，b 组 {b, ab}，总数 total = 3。给这三个串及空串都加 a，得到 {a, aa, ba, aba}，共 4 个。旧 a 组被完全包含，直接替换；b 组保持 2 个，所以总数为 3 − 1 + 4 = 6。用 c 表示当前添加的字母，ending[c] 表示旧的 c 末尾组大小，total 是全部旧组的总数。为什么新组恰好有 total + 1 个？删掉它们最后的 c，会唯一还原某个旧串或空串，所以没有内部重复。反过来，任何旧的 c 结尾串，删掉最后的 c 后都来自旧前缀；因此它一定能用新 c 再生成。别的末尾字母不可能与 c 结尾的串相等。new = total + 1; total′ = total − ending[c] + new; ending[c] = new不变量（每步完成后都成立的事实）：ending[c] 是当前前缀中以 c 结尾的不同非空串数量，total 是所有组的和。空前缀所有组为 0。上面的替换恰好得到新前缀的 c 组，其他组不变；各组按末尾字母互不相交，所以归纳到最后，total 就是所求。固定预设，按“添加下一字母”，先看新旧组，再看保留的每个前缀记录；退回并重做应得到完全相同的状态。切换预设会从空前缀重新开始；独立预测题不受影响。实验字符串（切换后重置）aba → 6abc → 7aaa → 3a → 1abab → 11abca → 14这是 JavaScript 教学模拟，不是执行 Python 提交。每帧完成一个字母；完整保留历史，无跳步。集合仅帮助看清原因，提交只保存 26 个计数；实验最多 4 个字母，不演示取模溢出。退回一个字母添加下一字母回到空前缀完成全部字母已处理 0/3 个字母；当前前缀：空前缀当前末尾分组（未出现的字母计数为 0）尚无非空串。历史：每行是处理完该前缀后的计数；◆ 为当前帧。前缀替换的字母旧组 → 新组总串数◆ 空前缀——0尚未添加字母：total = 0，全部 ending[c] = 0。当前 total 是前缀计数，尚非完整输入的答案。",
+      "targetCopySHA256": "01289f0dbf58facd3dadfb2200657ab3817fd4343b33c4790032029595242b12"
+    },
+    {
+      "language": "zh",
+      "relatedLabel": "#552：哪些历史决定下一步是否合法？",
+      "url": "http://127.0.0.1:18770/leetcode/552/#step1",
+      "destination": "0202 · 明天需要记住什么？这一步要回答：只记缺勤总数够吗？LL 与 PL 都没有 A，但 LL 后不能加 L，PL 后可以。只记 L 的总数也不对：LLP 与 LPL 都有两个 L，前者末尾没有 L，后者末尾有一个 L。决定下一步的是末尾连续 L 的个数，而非全程 L 总数。最直接的方法生成全部 3ⁿ 个长度为 n 的字符串，再逐个扫描，排除 A 过多或含 LLL 的记录。下面的独立基线返回精确数量；时间 O(n·3ⁿ)，逐个生成时额外空间 O(n)。十万天无法枚举，真正重复的是：许多前缀拥有完全相同的后续选择。前缀指已写好的前几天。from itertools import product\n\ndef brute(n):\n    return sum(s.count('A') < 2 and 'LLL' not in s\n               for chars in product('ALP', repeat=n)\n               for s in [''.join(chars)])例如 LP 与 PP 都没有 A，末尾也没有连续 L；下一天都能选 P、A、L。把所有合法前缀按 (a,l) 分组：a 是已用 A 的个数，只能为 0 或 1；l 是末尾连续 L 的个数，只能为 0、1、2。每组存数量，既不丢失后续合法性的区别，也不必保留字符串本身。共 2×3=6 组。",
+      "targetCopySHA256": "ba452d0aabfb9b734e57899bbd6597a3bad186ed53e3fb9d7306d4b75c2c4927"
+    },
+    {
+      "language": "en",
+      "relatedLabel": " #940: organize counting states by final letter",
+      "url": "http://127.0.0.1:18770/leetcode/940/#step2",
+      "destination": "03 · A new letter replaces one ending groupWhat changes when we append the final a? A prefix is the initial part already processed. After ab, group strings by their final letter: a → {a}, b → {b, ab}, total = 3. Append a to these three strings and to the empty string: {a, aa, ba, aba}, four results. They contain the entire old a group, so replace it. The b group keeps its two strings: 3 − 1 + 4 = 6.Let c be the appended letter, ending[c] the size of its old ending group, and total the sum of all old groups. Why does the new group have exactly total + 1 strings? Removing their final c uniquely recovers an old string or the empty string, so there are no duplicates within the new group. Conversely, remove the final c from any old c-ending string: its earlier part belongs to the old prefix, so the new c generates that string again. Strings ending in other letters cannot equal c-ending strings.new = total + 1; total′ = total − ending[c] + new; ending[c] = newInvariant (a fact true after every step): ending[c] counts distinct nonempty strings ending in c in the current prefix, and total is the sum of all groups. All groups start at zero for the empty prefix. The replacement constructs exactly the new c group and leaves all other groups intact. Groups have different final letters and cannot overlap. Induction gives the requested total at the end.Keep a preset fixed and use “Append next letter.” Compare the old and new group, then inspect the retained prefix ledger. Rewind and replay to recover the same state. Changing presets restarts from the empty prefix; the independent prediction stays intact.Experiment string (change restarts)aba → 6abc → 7aaa → 3a → 1abab → 11abca → 14This is a JavaScript teaching simulation, not execution of the Python submission. Each frame completes one letter; the full history is retained without skipped steps. Sets expose the reasoning; the submission stores only 26 counts. Presets have at most 4 letters and do not demonstrate modular wraparound.Undo one letterAppend next letterReset to empty prefixComplete all lettersProcessed 0/3 letters; current prefix: empty prefixCurrent groups by final letter (unseen letters count as 0)No nonempty strings yet.History: each row records counts after its prefix; ◆ marks the current frame.PrefixReplaced letterOld → new groupTotal strings◆ empty prefix——0No letter appended: total = 0, all ending[c] = 0.Current total counts this prefix; it is not yet the answer for the whole input.",
+      "targetCopySHA256": "01289f0dbf58facd3dadfb2200657ab3817fd4343b33c4790032029595242b12"
+    },
+    {
+      "language": "en",
+      "relatedLabel": "#552: which history determines the next legal step?",
+      "url": "http://127.0.0.1:18770/leetcode/552/#step1",
+      "destination": "0202 · What must tomorrow remember?Is the total number of absences enough memory? LL and PL both have no A, but only PL may take another L. Total L count also fails: LLP and LPL each contain two L, yet their final runs of L have length zero and one. The next step depends on the trailing run, not the total number of L.A direct baseline generates all 3ⁿ strings of length n and scans each to reject extra A or LLL. The independent baseline below returns an exact count; it takes O(n·3ⁿ) time and O(n) auxiliary space when strings are generated one at a time. Enumeration cannot reach 100,000 days. The repeated work is that many prefixes—the days already written—have identical future choices.from itertools import product\n\ndef brute(n):\n    return sum(s.count('A') < 2 and 'LLL' not in s\n               for chars in product('ALP', repeat=n)\n               for s in [''.join(chars)])For example, LP and PP both have no A and no trailing L. Both allow P, A, or L next. Group valid prefixes by (a,l): a is the number of A already used, either 0 or 1; l is the number of consecutive trailing L, either 0, 1, or 2. A count per group preserves every distinction that affects future legality without retaining individual strings. There are 2×3=6 groups.",
+      "targetCopySHA256": "ba452d0aabfb9b734e57899bbd6597a3bad186ed53e3fb9d7306d4b75c2c4927"
+    },
+    {
+      "language": "zh",
+      "relatedLabel": "#940：按末尾字母组织计数状态",
+      "url": "http://127.0.0.1:18770/leetcode/940/#step2",
+      "destination": "03 · 新字母只替换一个末尾组添加最后一个 a 时，哪些字符串会改变？前缀指已经处理的开头部分。处理 ab 后，按最后一个字母分组：a 组 {a}，b 组 {b, ab}，总数 total = 3。给这三个串及空串都加 a，得到 {a, aa, ba, aba}，共 4 个。旧 a 组被完全包含，直接替换；b 组保持 2 个，所以总数为 3 − 1 + 4 = 6。用 c 表示当前添加的字母，ending[c] 表示旧的 c 末尾组大小，total 是全部旧组的总数。为什么新组恰好有 total + 1 个？删掉它们最后的 c，会唯一还原某个旧串或空串，所以没有内部重复。反过来，任何旧的 c 结尾串，删掉最后的 c 后都来自旧前缀；因此它一定能用新 c 再生成。别的末尾字母不可能与 c 结尾的串相等。new = total + 1; total′ = total − ending[c] + new; ending[c] = new不变量（每步完成后都成立的事实）：ending[c] 是当前前缀中以 c 结尾的不同非空串数量，total 是所有组的和。空前缀所有组为 0。上面的替换恰好得到新前缀的 c 组，其他组不变；各组按末尾字母互不相交，所以归纳到最后，total 就是所求。固定预设，按“添加下一字母”，先看新旧组，再看保留的每个前缀记录；退回并重做应得到完全相同的状态。切换预设会从空前缀重新开始；独立预测题不受影响。实验字符串（切换后重置）aba → 6abc → 7aaa → 3a → 1abab → 11abca → 14这是 JavaScript 教学模拟，不是执行 Python 提交。每帧完成一个字母；完整保留历史，无跳步。集合仅帮助看清原因，提交只保存 26 个计数；实验最多 4 个字母，不演示取模溢出。退回一个字母添加下一字母回到空前缀完成全部字母已处理 0/3 个字母；当前前缀：空前缀当前末尾分组（未出现的字母计数为 0）尚无非空串。历史：每行是处理完该前缀后的计数；◆ 为当前帧。前缀替换的字母旧组 → 新组总串数◆ 空前缀——0尚未添加字母：total = 0，全部 ending[c] = 0。当前 total 是前缀计数，尚非完整输入的答案。",
+      "targetCopySHA256": "01289f0dbf58facd3dadfb2200657ab3817fd4343b33c4790032029595242b12"
+    },
+    {
+      "language": "zh",
+      "relatedLabel": "#552：哪些历史决定下一步是否合法？",
+      "url": "http://127.0.0.1:18770/leetcode/552/#step1",
+      "destination": "0202 · 明天需要记住什么？这一步要回答：只记缺勤总数够吗？LL 与 PL 都没有 A，但 LL 后不能加 L，PL 后可以。只记 L 的总数也不对：LLP 与 LPL 都有两个 L，前者末尾没有 L，后者末尾有一个 L。决定下一步的是末尾连续 L 的个数，而非全程 L 总数。最直接的方法生成全部 3ⁿ 个长度为 n 的字符串，再逐个扫描，排除 A 过多或含 LLL 的记录。下面的独立基线返回精确数量；时间 O(n·3ⁿ)，逐个生成时额外空间 O(n)。十万天无法枚举，真正重复的是：许多前缀拥有完全相同的后续选择。前缀指已写好的前几天。from itertools import product\n\ndef brute(n):\n    return sum(s.count('A') < 2 and 'LLL' not in s\n               for chars in product('ALP', repeat=n)\n               for s in [''.join(chars)])例如 LP 与 PP 都没有 A，末尾也没有连续 L；下一天都能选 P、A、L。把所有合法前缀按 (a,l) 分组：a 是已用 A 的个数，只能为 0 或 1；l 是末尾连续 L 的个数，只能为 0、1、2。每组存数量，既不丢失后续合法性的区别，也不必保留字符串本身。共 2×3=6 组。",
+      "targetCopySHA256": "ba452d0aabfb9b734e57899bbd6597a3bad186ed53e3fb9d7306d4b75c2c4927"
+    }
+  ],
+  "screenshots": [
+    "table-en-320.png",
+    "table-right-en-320.png",
+    "preset-en-320.png",
+    "calculation-en-320.png",
+    "table-zh-320.png",
+    "table-right-zh-320.png",
+    "preset-zh-320.png",
+    "calculation-zh-320.png",
+    "table-en-390.png",
+    "table-right-en-390.png",
+    "preset-en-390.png",
+    "calculation-en-390.png",
+    "table-zh-390.png",
+    "table-right-zh-390.png",
+    "preset-zh-390.png",
+    "calculation-zh-390.png",
+    "table-en-736.png",
+    "preset-en-736.png",
+    "calculation-en-736.png",
+    "table-zh-736.png",
+    "preset-zh-736.png",
+    "calculation-zh-736.png",
+    "table-en-1440.png",
+    "preset-en-1440.png",
+    "calculation-en-1440.png",
+    "table-zh-1440.png",
+    "preset-zh-1440.png",
+    "calculation-zh-1440.png",
+    "prediction-en-390.png",
+    "lesson-en-desktop.png",
+    "prediction-zh-390.png",
+    "lesson-zh-desktop.png",
+    "zoom200-en.png",
+    "zoom200-zh.png"
+  ],
+  "errors": [],
+  "localAssetsOnly": true
+}

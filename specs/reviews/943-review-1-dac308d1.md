@@ -1,0 +1,97 @@
+# Independent review: 943 — Find the Shortest Superstring
+
+Candidate: `5be54d3e0fff4ae723cd4ca097f05964565c8088`. Preview: http://127.0.0.1:18770/leetcode/943/. Review date: 2026-10-26. Target: basic Python, lists, loops, functions and elementary recursion. Reviewer: independent review run; exact model identifier unavailable. Frozen weights: 15/20/20/20/15/10. Python canonical interpretation applies.
+
+## Cold browser walkthrough (recorded before source audit)
+
+Only the frozen rubric was read before opening Chromium. No brief, source, tests, previous reviews or author evidence was read. Initial desktop screenshot: `943-evidence/943-review-1-dac308d1/cold-desktop.png` (captured and visually inspected).
+
+Predictions recorded before operating reveals: ab + bc should become abc, length 3, saving 1. The exercise abc,bca,bcx ending in bcx should cost 6: bca→abc→bcx yields bcabcx; abc→bca→bcx costs 7. My independently chosen fresh input is [ab,bc,cd], predicted unique shortest abcd, length 4. My independent counterexample to using the same overlap in both directions is [ab,ca]: ca→ab gives cab, length 3, while ab→ca gives abca, length 4. Both custom examples require later **code checks**, because the browser offers presets only. Invariant prediction: a cell retains the least length among orders with precisely its selected indices and endpoint; a longer prefix with the same endpoint cannot improve any extension.
+
+Step 0 question: what are substring, superstring and character saving? Action: read the introductory ab/bc hand example before reveal. Observation: consecutive-character definition, ac nonexample, and distinct/noncontained/lowercase bounds are visible before abstraction. Causal paraphrase: sharing the suffix/prefix b removes one repeated character without losing either word.
+
+Step 1 question: why not greedily take the largest overlap, and why can orders represent an optimum? Action: read the explicit four-word counterexample and baseline before interacting with DP. Observation: bbbca→bcabb saves 3 but limits total savings to 5; another order saves 6. Occurrences sorted by starting positions also have increasing endpoints because containment is excluded. Causal paraphrase: one edge consumes endpoint opportunities, whereas permutations retain every legal combination; maximum adjacent overlaps cannot lengthen the selected occurrence order. Baseline explains factorial orders and repeated future choices.
+
+Step 2 question: what history determines an extension? Action: read ab→bc→ca worked values and inspect initialized table. Observation: costs 2→3→4; dp selected-set/endpoint definition, bit indices, recurrence, singleton states, settled status, and source dependency proof appear explicitly. Causal paraphrase: the endpoint determines suffix overlap, the subset determines remaining choices, and only the shortest prefix for that pair can matter. Unselected endpoints are dots, untested valid cells dashes, and singleton lengths 2 are settled.
+
+Step 3 question: can a shorter subset prefix always be retained alone? Action: predict 6 before selecting/revealing the exercise. Observation before reveal: two endpoint-dependent prefixes cost 4 and 5 and three answer choices are visible. Causal paraphrase predicted: the length-5 prefix can append fewer characters, so subset alone loses necessary information.
+
+Step 4 question: how is the string recovered and what does executable Python store? Action: read rendered code and mapping only, without opening source files. Observation: parent recorded only on improvement, full-mask minimum endpoint, backtrack/remove/reverse, append suffixes; explicit time O(n²L²+n²2ⁿ), space O(n2ⁿ+n²+nL), mutation-free indexing and pieces. Causal paraphrase: numeric optimum cells plus retained predecessor links recover an attaining order; tutorial snapshots are separately labeled extra teaching storage. Singleton, no-overlap, cycle and excluded containment boundaries are explained.
+
+Cold operations and results: clicked hand reveal: a[b]c, 2+2−1=3, plus explicit reverse bcab length 4 and a minimum-length argument. Operated all 12 cycle comparisons individually. Tests 1–6 settled pair cells at (mask3:4,3), (mask5:3,4), (mask6:4,3). Tests 7/8 changed full-mask endpoint0 from —→6 (Testing), then 6→4 (Settled), using source mask6 endpoint2=3 and overlap1. Tests 9/10 set endpoint1 to4 then retained4 against candidate6; the source highlight moved but the retained predecessor stayed0. Tests 11/12 changed endpoint2 from —→6→4. Thus candidate highlighting is distinct from numerical retained state; one improvement and one rejection are directly visible. Final showed minimum4, order bc→ca→ab, pieces "bc"+"a"+"b", result bcab. I checked all three words occur and length4 is minimal (length3 cannot contain all three distinct length2 cycle edges in a linear string).
+
+Selected prediction6 and clicked Check: revealed Correct, both 4+3=7 and 5+(3−2)=6, result bcabcx, matching the prediction written above. Clicked Previous at final: 11/12, then Next restored final; Reset returned 0/12. Screenshot `cold-final.png` captured final/revealed states. Source audit begins only after this saved record.
+
+## Source, official contract and independent computation
+
+HEAD equals the requested candidate. `git diff --exit-code` passed; only this report and its exclusive evidence directory were untracked. No implementation, service, author evidence, shared files or tests were changed. No earlier review report for 943 existed in the repository file listing, so there are no prior required findings to close.
+
+Read the [official statement](https://leetcode.com/problems/find-the-shortest-superstring/) normally using the web tool: any shortest containing string is accepted, containment is excluded, n=1..12, word lengths=1..20, distinct lowercase words. Also independently requested public LeetCode GraphQL codeSnippets over HTTPS, without authentication or access circumvention. Python3's observed callable was `class Solution: def shortestSuperstring(self, words: list[str]) -> str`, exactly the canonical interface. LeetCode internal questionId 980 corresponds to frontend problem 943; the lesson uses the frontend number correctly. Python is faithful, so a non-Python language contract is inapplicable. Inspected lesson-local `tests/evidence/official.json` only after the cold walk; it agrees. No conceptual analogy is substituted for the solution.
+
+Read `LANGUAGE_FILES` in `scripts/register_leetcode_lesson.py`: Python maps to `solution.py`, `python-code.js`, `PYTHON_SOURCE`. Audited all three along with HTML, app, core, localization, lesson CSS and shared locale/CSS dependencies. Independently fetched preview assets and compared their bytes to the checkout: all exact. Identity hashes:
+
+| Asset | SHA-256 |
+| --- | --- |
+| index.html | d002bcc6c25d78a149d2a3bf9311e18a2f82dafeb6cb7135cfa8b76117ed3d4c |
+| app.js | fa3ad8aeef4ed964852ff26fcaf813a9bf329cba33086ed9e20703a6ccb9a8c8 |
+| core.js | 8788b9491946f95e3bcf54dc58371dbb45514768c998b6ffc26b37e056b01203 |
+| copy.js | 4a14c12c94ae1573ee8102b6f52a786671d64a4f7a0754a92f87b6d0d3c84e9b |
+| style.css | 833c413c38fc0f43dcdc71d1fc950e74e0f50ff76c58618dbbd9bcb5e420355b |
+| solution.py | 9c23962dd6451f936d33e447b88999af86a7a00364ce9ec52a4873a2eabf7dbc |
+| python-code.js | 5c2d076f106429dce7d3939cd7dd0ecbc5eee294d39023f616db2c39001adeec |
+| shared common.js | f7d1d8914d9e583d385a4051636d8042739098768461d096b0e132bbb8267c9b |
+| shared style.css | 6e369a3bb35519eaa15f25a22bf8938d94882c4fd9b860a79522544f38a23f27 |
+
+Executed the actual canonical file with `exec(compile(path.read_bytes(), str(path), 'exec'), namespace)`, then invoked `Solution().shortestSuperstring`. The predicted custom examples were **code checks, not UI experiments**: [ab,bc,cd] returned abcd length4; [ab,ca] returned cab length3. The reverse merge abca length4 independently disproves symmetric overlap. Additional independent checks: [z]→z; [a,b]→ba length2; [abc,bca,bcx]→bcabcx length6; one 20-character repeated word→itself; 12 distinct repeated-letter words of length20→length240. All returned strings contained every input word; input lists were unchanged. A separately chosen seed 94326 sampled 35 sets of 1..3 distinct length3 binary words. Enumerating candidate output strings by increasing length with `itertools.product('ab', repeat=length)` independently matched all canonical minimum lengths, without using the DP recurrence.
+
+Visible-to-Python mapping: cycle comparison8 is mask7, j0, previous6, predecessor2: `candidate = dp[6][2] + len(words[0]) - overlap[2][0] = 3+2−1=4`, improving old6 and assigning parent2. Comparison10 is mask7,j1,previous5,i2: 4+2−0=6 is rejected against4; parent0 remains. Backtracking the first minimum full-mask endpoint0 follows 0←2←1, then reverses to [1,2,0], pieces bc/a/b. Source cells use smaller masks; no uncomputed cell can supply a legal predecessor. Strict improvement consistently keeps first ties. Singleton parent−1 terminates reconstruction. Noncontainment ensures extensions can use the last word's overlap; containment and empty input are explicitly outside the contract.
+
+Cost audit: overlap checks up to L lengths with sliced prefixes/endswith costing O(L) each, across O(n²) pairs. DP allocation O(n2ⁿ); three loops O(n²2ⁿ); parent/overlap tables O(n2ⁿ+n²). Backtracking takes n steps; suffix pieces/join use O(nL) time and materialized space. Claimed total time O(n²L²+n²2ⁿ) and auxiliary space O(n2ⁿ+n²+nL) are sound for n,L≥1. The baseline's sliced comparisons cost O(nL²) per order and growing-string copying is bounded by O(n²L), with O(nL) live space. The singleton boundary does not invalidate either upper bound. Tutorial full snapshots have additional storage and are clearly excluded from submission cost.
+
+## Test audit and results
+
+Inspected tests before executing. They default to tracked author evidence; every run below explicitly redirected outputs into this run's directory. Numerical execution used `-B` to prevent bytecode files. The browser runner creates/removes its zoom extension/profile only beneath its redirected output path. Native copy uses the actual Linux Control+C shortcut, not a locale-inferred host. Tests were executed unchanged.
+
+From repository root:
+
+- `OUTPUT_DIR="$PWD/specs/reviews/943-evidence/943-review-1-dac308d1/numerical" python3 -B leetcode/943/tests/numerical.py` — exit0; 334 cases, official examples17/16, maximum no-overlap240/chain31, exact displayed baseline execution, mutation and mirror checks passed. Result: `numerical/numerical.json`.
+- `OUTPUT_DIR="$PWD/specs/reviews/943-evidence/943-review-1-dac308d1/core" node leetcode/943/tests/core.cjs` — exit0; 61 cases/807 frames. Independently merged permutation orders check every settled cell, candidate, retained minimum, parent, unchanged cells and deep snapshot isolation. Translation keys detected before object evaluation; uniqueness and two-string pair shapes passed. Result: `core/core.json`.
+- `OUTPUT_DIR="$PWD/specs/reviews/943-evidence/943-review-1-dac308d1/browser" PREVIEW_ROOT=http://127.0.0.1:18770 node leetcode/943/tests/browser.cjs` — exit0; 32 recorded states, 34 screenshots, zero console/page/HTTP errors. Result: `browser/browser.json`. Trace-vs-core assertions alone are not independent correctness evidence; cold hand calculations and separate oracles above provide that evidence.
+- `python3 -B scripts/register_leetcode_lesson.py 943 --validate-only` — exit0, no output. `lesson-entry.json` complexity is exactly one nonempty string covering time and auxiliary space. No registration was run.
+
+## Rendered semantics, access and source fidelity
+
+Applied rendered-state supplement only after saving cold observations. Independently read Chinese rendered reasoning, including occurrence-order reduction, both directions of the optimality argument, formula/base, costs, boundaries and prediction. It conveys the English reasoning faithfully. At 320px operated cycle comparison10 and a zh→en→zh roundtrip: maintained 10/12, selected answer6, revealed reasoning and hand reveal. H1/document title correctly became `#943 · 最短超级串` and `#943 · Find the Shortest Superstring`; official link remained exact. Complete formulas contained operands, indices, minimum, subtraction and singleton base in both languages. After rewind to9 then replay10, current predecessor2/candidate6 still retained predecessor0/value4. Screenshot `independent-zh-retained-320.png` records this semantic distinction.
+
+The browser runner exercised all frames for all five presets in both locales. Independently supported preset final lengths are cycle4, trap12, official1 17, no-overlap4, singleton4. Greedy locked-pair permutation check confirms13 versus unconstrained12. Initial, intermediate, final, rewind, reset and direct-final states agree; singleton immediately shows solo with next/end disabled. Progress measures candidates tested, not result length. Prediction feedback stays hidden until reveal, incorrect choices reveal the same derivation with appropriate feedback, changing choice clears the reveal, and locale switches preserve choice/result. Changing trace preset resets trace only; the exercise has its own fixed input and remains valid. No playback claim is made: controls are explicitly individual predecessor comparisons.
+
+Keyboard Enter advanced Next, Tab moved to Reset, focus outline was visible 3px amber; horizontally scrollable tables accept arrow keys. Source/target text markers coexist with Settled/Testing state labels, so color does not carry meaning alone. Readable disabled controls retain opacity1 and muted text on panel2. Forced-color focus, storage denial and offline source opening also passed.
+
+Exact parity checks use decoded offline mirror and `textContent`, never trimmed text. Both locales' displayed source, successful clipboard text, downloaded files (`browser/download-en.py`, `download-zh.py`) and full fallback textarea equal canonical source including final newline. For **each** of two fallback attempts per locale, runner wrote/read a unique non-source sentinel, forced automatic write rejection, verified full selection/focus, dispatched Linux Control+C, then read back exact source. Thus four fallback transfers cannot pass through a stale previous source clipboard value. Locale switching kept fallback status correctly translated.
+
+Browser environment: Linux, Chromium156.0.8078.4, configured executablePath and supplied NODE_PATH. Tested 320/390/736/1440 CSS widths in both locales. Native `chrome.tabs.setZoom(2)` produced outerWidth1280, innerWidth640, DPR2; inspected both zoom screenshots. No page overflow; readout text wraps, tables intentionally scroll with fixed subset headers. Font stack: PingFang SC, Microsoft YaHei, system-ui, sans-serif; no claim about exact resolved font or other operating systems. At320 the closed greedy selector used 160.99px English text /105.92px Chinese text, 30px padding and 24px arrow reserve inside256px; both screenshots show the entire count and label.
+
+Visually inspected this run's cold-desktop/cold-final; independent-zh-retained-320; browser calculation-en-320, calculation-zh-390; table-right-en-320, table-right-zh-390, table-en-390, table-en-1440; both preset-320, both prediction-390 and both zoom200 captures. A browser/table-en-390 capture initially showed partial first-word text after keyboard scrolling. Rechecked ordinary settled scrollLeft0 in a separate browser session (width328, content420), captured `settled-table-en-390.png` and `settled-table-zh-390.png` and inspected them. This is scroll-position/capture behavior, not a reproducible text collision; horizontal scrolling deliberately clips offscreen columns. Values and markers have separate lines; settled screenshots show no text intersection. Screenshot file count does not establish that all captures were manually inspected.
+
+Contrast helper was inspected and calibrated: weights .2126/.7152/.0722, black/white21, red luminance .2126, and #747474/black≈4.492948 (below4.5). Actual text roles on solid bg/panel/panel2 pass4.5 with minimum6.449407898769069 (muted on panel2). Active-control dark text on cyan and source border roles also pass their relevant thresholds. Scope is these solid roles, not an exhaustive gradient/compositing audit. Visual inspection agrees that disabled text and state annotations are readable.
+
+Related links were followed by keyboard at320 in both languages and their returned section text inspected: #940/#step2 teaches groups by final letter; #552/#step1 teaches absence/trailing-lateness history distinguishing future choices. These match the labels. Target copy hashes and observed text are retained in browser.json; this establishes local-preview continuation, not publication.
+
+## Findings and scores
+
+Required open IDs: **none**. No earlier required IDs were present to close.
+
+Advisory **943-A1** (minor, optional, open): step2/step4, both locales, desktop and narrow widths, this candidate. Reproduction: read the bit-mask definition then canonical code. Expected ease for the stated reader: a concrete binary example connecting shifts, membership and removal. Actual: bit i/set selection and `previous` removal are explained semantically, and the table maps sets to decimal masks, but the syntax of `<<`, `&` and `^` is not demonstrated numerically. This adds Python-transfer friction without obscuring the subset/endpoint mechanism. Optional next action for lesson owner: show mask7=111, remove bit0→6=110 and membership via `&`. No candidate fix or closure is claimed. This is not a missing essential algorithmic bridge.
+
+| Dimension | Weight | Score /4 | Observation and rationale |
+| --- | ---: | ---: | --- |
+| Problem/terms/hand calculation | 15 | 4 | Consecutive substring/nonexample, constraints and ties; ab/bc reveal and independent manual minimum. |
+| Derivation/saved work | 20 | 4 | Tiny overlap precedes permutations, concrete greedy failure, occurrence-order reduction and precise subset/endpoint equivalence explain avoided repetition. |
+| Maintained state/correctness | 20 | 4 | Settled invariant, attainable-bound proof, smaller-mask dependencies, bases, parent reconstruction and independent boundary/oracle checks. |
+| Interaction/visual meaning | 20 | 4 | All12 cold comparisons; old/candidate/best/winner distinction, retained tables/history, rewind/replay/reset/final and genuine endpoint-transfer exercise. |
+| Python/cost | 15 | 3 | Exact faithful executable source and transfers, fresh cases, correct costs and mutation behavior; bit syntax needs modest reader effort (943-A1). |
+| Bilingual/device | 10 | 4 | Equivalent reasoning/formula, state-preserving switches, keyboard/table access, readable narrow/zoom/disabled states and exact bilingual source transfers. |
+
+Weighted score: **96.25/100** =15+20+20+20+11.25+10. Every dimension≥3, zero required findings, required evidence complete. **Accepted for this candidate revision and reviewed local-preview scope.** This is separate from publication.
+
+Limitations: automated Chromium operation with reviewer inspection, not measured human comprehension, physical-device testing, other-OS font verification or a successful LeetCode submission. No publication, deployment or production verification was performed. No agents were spawned. All generated artifacts are restricted to this run's exclusive evidence directory; earlier evidence was preserved.
