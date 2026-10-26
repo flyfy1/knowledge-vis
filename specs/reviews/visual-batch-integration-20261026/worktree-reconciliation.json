@@ -1,0 +1,19 @@
+{
+  "base": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
+  "attributionPreparation": "bb17bc6ae5aa273bc0058f7baa8da906abd7b569",
+  "workers": {
+    "photosynthesis": {
+      "original": "3e1c2f43dbc61aed7fac26f8bdea71868b0ac91c",
+      "integrated": "4bdf291991bd57ab99189b114433e44847a10b65"
+    },
+    "frozen-bubble": {
+      "original": "e4b8772cdfeab6473d4ff56cd12849ed1ec65955",
+      "integrated": "b57cf278d6ee5e8e287b35afb4eb48e0f8ac1b46"
+    },
+    "power-converters": {
+      "original": "24a3d727246b05697d6b2cb65125cd9fc771a0a0",
+      "integrated": "06586a31015d38eed75bd29094fc79b1dd9ea35f"
+    }
+  },
+  "policy": "Equivalent cherry-picks plus explicit attribution integration; preserve all original commits/evidence. No worker deleted. Latest remote main is merged before normal push."
+}

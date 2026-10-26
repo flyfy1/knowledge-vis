@@ -28,3 +28,7 @@ Page-owned development label: Codex. Acceptance and implementation contract:
 the pulse exercises and the loss-budget model unchanged. Current dashes are directional
 illustrations, never electrons or discrete energy packets. Magnetic energy is model-derived;
 capacitor charging/discharging is signed current, not an invented voltage/ripple animation.
+
+## Integrated edition provenance
+
+Use one shared static header disclosure per `../specs/visual-page-provenance.md`, with source24a3d727246b05697d6b2cb65125cd9fc771a0a0, the flow revision scope and retained original contributors. Do not also stamp the eyebrow. The original quantitative model remains unchanged; future Claude comparison must retain independent source/routes and the same bounded model.

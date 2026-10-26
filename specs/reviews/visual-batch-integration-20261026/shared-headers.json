@@ -1,0 +1,107 @@
+{
+  "status": "pass",
+  "pages": [
+    {
+      "page": "atlas",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "complex-numbers",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "derivative",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "freqresp",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "integral",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "laplace",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "lens",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "linear-functions",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "pinhole-camera",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "reflection-refraction",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "sampling",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "trig",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "velocity-vt",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "ztransform",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "photosynthesis",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "frozen-bubble",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    },
+    {
+      "page": "power-converters",
+      "desktopAnd320BothLocales": true,
+      "visibleSourceDisclosure": true
+    }
+  ],
+  "keyboard200Percent": [
+    "atlas",
+    "trig",
+    "derivative",
+    "complex-numbers"
+  ],
+  "noJS": [
+    "atlas",
+    "trig"
+  ],
+  "state": "atlas query/Back/reload and trig input/hash/language preserved",
+  "errors": [],
+  "failed": [],
+  "limits": [
+    "Chrome emulation; physical Android and screen-reader speech not tested",
+    "All worker handovers integrated; production release pending"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "checks": [
+    "zh: seed, play/pause/resume, seek, same-time undercooling, independent clocks, trails, repeat reset, end/replay, 320/390/640/1280",
+    "en: seed, play/pause/resume, seek, same-time undercooling, independent clocks, trails, repeat reset, end/replay, 320/390/640/1280",
+    "DPR 1/2/3, repeated resize without backing-store growth",
+    "Blocked localStorage memory fallback, navigator locale, landscape layout, keyboard seed/seek",
+    "Reduced-motion initial pause, forced-color focus, seed boundary, home registration, return/Back, direct hash nav and cross-lesson deep link"
+  ],
+  "errors": [],
+  "external": [],
+  "contrast": {
+    "body": 16.440224808744848,
+    "muted": 7.38871672415651,
+    "button": 11.66378365952819,
+    "focus": 9.93243923083949
+  }
+}

@@ -6,6 +6,9 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Power-converter visual contract](../power-converters/BRIEF.md): model-driven conducting paths, signed current/energy, bounded playback and mobile/accessible verification; [current acceptance](reviews/power-converters-flow-20261026.md).
+
+
 - [Frozen-bubble teaching contract](../frozen-bubble/BRIEF.md#teaching-continuity-revision--2026-10-26-codex): observation-first narrative, defined terms and research context, matched diagram moments and qualitative-model boundaries.
 
 
@@ -50,3 +53,5 @@ that existing pages have completed that process.
 ## Mathematics and physics development
 
 - [Atlas development handoff and iteration index](../atlas/README.md): current locally verified milestone, audit findings, tests, limits and prioritized next work. Reuses existing review/evidence records; does not change LeetCode ownership or gates.
+
+- [Current Visual batch integration and worktree reconciliation](reviews/visual-batch-integration-20261026/README.md): bounded acceptance, cold reading, exact original-to-integrated SHAs and production verification contract.

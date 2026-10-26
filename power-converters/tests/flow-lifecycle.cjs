@@ -13,7 +13,7 @@ try{
  await p.reload();await p.locator('#buck-seek').fill('99');await p.locator('#buck-play').click();await p.waitForTimeout(350);assert.equal(await p.locator('#buck-seek').inputValue(),'100');assert.equal(await p.locator('#buck-play').getAttribute('aria-pressed'),'false');assert(await p.locator('#buck-next').isDisabled());
  await p.locator('#buck-play').click();await p.waitForTimeout(200);assert.ok(+(await p.locator('#buck-seek').inputValue())<5);
  await p.locator('#step0').scrollIntoViewIfNeeded();await p.waitForTimeout(150);assert.equal(await p.locator('#buck-play').getAttribute('aria-pressed'),'false');
- await p.locator('#buck-seek').fill('30');await p.locator('[data-lang=zh]').click();assert.equal(await p.locator('#buck-seek').inputValue(),'30');assert.match(await p.locator('.eyebrow').textContent(),/Codex/);
+ await p.locator('#buck-seek').fill('30');await p.locator('[data-lang=zh]').click();assert.equal(await p.locator('#buck-seek').inputValue(),'30');assert.match(await p.locator('.page-provenance summary').innerText(),/Codex/);
  await p.locator('#buck-play').click();await p.waitForTimeout(150);await p.locator('#boost-play').click();assert.equal(await p.locator('#buck-play').getAttribute('aria-pressed'),'false');assert.equal(await p.locator('#boost-play').getAttribute('aria-pressed'),'true');
  await p.locator('#boost-reset').click();await p.locator('#buck-seek').fill('30');await p.locator('#buck-seek').focus();await p.keyboard.press('ArrowRight');assert.equal(await p.locator('#buck-seek').inputValue(),'30.25');
  await p.setViewportSize({width:640,height:1000});await p.evaluate(()=>document.body.style.zoom='200%');
