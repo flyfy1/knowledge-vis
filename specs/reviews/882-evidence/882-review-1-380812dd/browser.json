@@ -1,0 +1,178 @@
+{
+  "kind": "author self-check",
+  "status": "pass",
+  "host": "linux",
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:18770/leetcode/882/",
+    "http://127.0.0.1:18770/leetcode/style.css",
+    "http://127.0.0.1:18770/leetcode/882/style.css?v=882-r1",
+    "http://127.0.0.1:18770/leetcode/common.js",
+    "http://127.0.0.1:18770/leetcode/882/copy.js?v=882-r1",
+    "http://127.0.0.1:18770/leetcode/882/core.js?v=882-r1",
+    "http://127.0.0.1:18770/leetcode/882/python-code.js?v=882-r1",
+    "http://127.0.0.1:18770/leetcode/882/app.js?v=882-r1"
+  ],
+  "semantics": [
+    {
+      "locale": "en",
+      "formula": "Contribution per edge = min(cnt, a+b); total = reachable originals + sum of edge contributions",
+      "prediction": "Correct. d=[0,1,1], so all three originals count. Both ends of the long edge have 3 moves left; min(4,3+3)=4. Total: 3+4=7. Choosing 9 counts the middle two twice; choosing 5 adds only two inserted nodes to the three originals and misses the other two."
+    },
+    {
+      "locale": "en",
+      "fallback": "Automatic copy is unavailable. The complete source is selected below; use your system copy shortcut.",
+      "manualTransfer": "exact source after fresh sentinel; Linux Control+C"
+    },
+    {
+      "locale": "zh",
+      "formula": "每条边贡献 = min(cnt, a+b)；总数 = 可达原节点数 + 各边贡献之和",
+      "prediction": "正确。 d=[0,1,1]，三个原节点都可达。长边两端各剩 3 步，min(4,3+3)=4，所以总数 3+4=7。9 重复数了中间两个节点；5 只在三个原节点上加了两个插入节点，漏掉另外两个。"
+    },
+    {
+      "locale": "zh",
+      "fallback": "自动复制不可用。下框已选中完整源码，请使用系统复制快捷键。",
+      "manualTransfer": "exact source after fresh sentinel; Linux Control+C"
+    }
+  ],
+  "screens": [
+    "en-320-trace.png",
+    "en-390-trace.png",
+    "en-736-trace.png",
+    "en-1440-trace.png",
+    "en-zoom200.png",
+    "zh-320-trace.png",
+    "zh-390-trace.png",
+    "zh-736-trace.png",
+    "zh-1440-trace.png",
+    "zh-zoom200.png"
+  ],
+  "contrast": [
+    {
+      "fg": "text",
+      "bg": "bg",
+      "ratio": 16.086987125379448
+    },
+    {
+      "fg": "text",
+      "bg": "panel",
+      "ratio": 14.704584598678618
+    },
+    {
+      "fg": "text",
+      "bg": "panel2",
+      "ratio": 13.397069143240783
+    },
+    {
+      "fg": "muted",
+      "bg": "bg",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "fg": "muted",
+      "bg": "panel",
+      "ratio": 7.078851579017443
+    },
+    {
+      "fg": "muted",
+      "bg": "panel2",
+      "ratio": 6.449407898769069
+    },
+    {
+      "fg": "accent",
+      "bg": "bg",
+      "ratio": 13.100679028115637
+    },
+    {
+      "fg": "accent",
+      "bg": "panel",
+      "ratio": 11.974898815275662
+    },
+    {
+      "fg": "accent",
+      "bg": "panel2",
+      "ratio": 10.910104011097095
+    },
+    {
+      "fg": "accent2",
+      "bg": "bg",
+      "ratio": 10.731637051347173
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel",
+      "ratio": 9.809435643476732
+    },
+    {
+      "fg": "accent2",
+      "bg": "panel2",
+      "ratio": 8.937191437807625
+    }
+  ],
+  "renderedPairs": [
+    {
+      "selector": "body",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".stage",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 14.704584598678618
+    },
+    {
+      "selector": ".explain",
+      "color": "rgb(201, 212, 226)",
+      "background": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 12.615602281385614
+    },
+    {
+      "selector": ".hint",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": ".btn.primary",
+      "color": "rgb(13, 17, 23)",
+      "background": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#prev",
+      "color": "rgb(154, 167, 184)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": "#nodes .node",
+      "color": "rgb(232, 237, 244)",
+      "background": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 13.397069143240783
+    }
+  ],
+  "cssBytes": 11243,
+  "zoom": "CSS zoom 2 at 640px viewport (320px layout width); physical devices untested",
+  "relatedLinks": "local #step2 overlap explanation and #step1 BFS baseline; ../778/#step2 inspected in both locales, explains max(cost,H[v]) bottleneck relaxation and minimum-candidate finalization (distinct from additive distance here)",
+  "source": "mirror/rendered/copy/download/manual exact equality",
+  "colors": {
+    "bg": "#0d1117",
+    "panel": "#161b22",
+    "panel2": "#1c2330",
+    "text": "#e8edf4",
+    "muted": "#9aa7b8",
+    "accent": "#6ee7ff",
+    "accent2": "#ffb454",
+    "good": "#7ee2a8",
+    "bad": "#ff7a93"
+  }
+}
