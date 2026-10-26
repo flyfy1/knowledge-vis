@@ -31,3 +31,24 @@ Frozen rubric: standard six dimensions15/20/20/20/15/10, threshold85,each≥3,no
 Implementation and author self-check complete, independent review pending. See tests/evidence/SELF-CHECK.md, numerical.json, core.json, browser.json, visual.json, official.json, preflight.json and candidate-manifest.json. Python validated against18,434 exhaustive BFS-oracle cases,1,000 seeded cases and9 official/fresh/max cases; simulation8,194 inputs/58,416 frames. Actual browser passed both locales/all8 presets,16 viewport/zoom combinations, native copy/fallback/download exact parity, keyboard, locale preservation, offline/storage-denied and measured contrast. CSS11,431bytes; min tested text contrast6.4494:1, AA passes, some exact shared muted pairs below preferred7:1. Screenshot inspection and author fixes/capture limitations are recorded in SELF-CHECK.md.
 
 From repository root, `python3 -B scripts/register_leetcode_lesson.py 995 --validate-only` passed exit0, empty stdout/stderr. Metadata complexity is one nonempty string; canonical language Python verified. All metadata and runtime files frozen together as candidate1 for separate independent review. No registration, other-lesson/shared edits, commits, deploys, service changes, credential access or agent spawning. Reviewer identity/run/report, independently accepted revision, deployed revision and actual learner evidence remain pending/unverified.
+
+## Copy revision — 995-COPY-R1, self-checked awaiting independent review
+
+Owner's current repair instruction authorizes the narrow revision described in
+`specs/reviews/995-teaching-copy-repair-request-20261026.md`. Historical review,
+acceptance, and candidate-1 records above remain historical. This revision has no
+independent acceptance yet. The original advisories retain IDs 995-A01/995-A02.
+
+P0/highest-return slice: describe #330's actual coverage experiment in link2 and
+explain order independence in everyday English in proof[1]. Only these dictionary
+entries changed; index.html changes copy.js?v=1 to v=2 for cache invalidation.
+Chinese proof, English induction and impossibility/minimality argument, canonical
+Python, mirror, numerical core, renderer, CSS and metadata remain byte-identical.
+Existing tokens/layout and all interaction ownership are reused. P1/P2: none.
+Deferred: diagrams, destination edits and shared changes, outside this correction.
+
+See tests/evidence/copy-r1/SELF-CHECK.md and candidate-manifest.json for the exact
+candidate, finding mapping, commands, results and evidence limits. Both findings
+are fixed awaiting independent review, with no author-assigned score or closure.
+The non-mutating metadata preflight passed exit 0; complexity remains the single
+string `O(n) time; O(n) auxiliary space`. No registration was run.

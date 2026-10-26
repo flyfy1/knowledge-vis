@@ -1,0 +1,20 @@
+node:assert:90
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: 995-A02 plain English opening
+    at Object.<anonymous> (/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/995/tests/copy_repair.cjs:10:8)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
+    at node:internal/main/run_main_module:28:49 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'Could another order use fewer flips? Window flips commute, and using one start twice cancels, so a minimum solution uses each start at most once. Inductively, every feasible solution must match our earlier start choices. The bit at i then uniquely decides whether start i is used. If a required window no longer fits, no solution exists. Otherwise the completed scan is all 1s, with no alternative that uses fewer starts.',
+  expected: 'Could another order use fewer flips? Changing the order of these window flips does not change the result. Using one start twice cancels, so a minimum solution uses each start at most once. Inductively, every feasible solution must match our earlier start choices. The bit at i then uniquely decides whether start i is used. If a required window no longer fits, no solution exists. Otherwise the completed scan is all 1s, with no alternative that uses fewer starts.',
+  operator: '=='
+}
+
+Node.js v20.20.2

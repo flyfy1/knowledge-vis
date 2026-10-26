@@ -29,3 +29,11 @@ At narrow widths/200%, cells wrap vertically and the ledger deliberately scrolls
 ## Freeze and next gate
 
 Runtime files, metadata, canonical source, tests and provenance are hashed in candidate-manifest.json. BRIEF records the author/review state; lesson UI contains only stable simulation and cost limitations. No earlier independent result exists for this candidate. The next action is a separate fresh-context review with the frozen six-dimension rubric, cold walkthrough before BRIEF/source, and its own oracle/browser evidence. This author run supplies no independent score or acceptance.
+
+## 995-COPY-R1 revision evidence
+
+The copy revision is self-checked, awaiting separate independent review.
+See [focused revision self-check](copy-r1/SELF-CHECK.md) and
+[revision identity](copy-r1/candidate-manifest.json). Prior review/acceptance and
+this file's original author evidence remain historical. 995-A01/995-A02 are fixed
+awaiting review; the author does not independently close or rescore them.

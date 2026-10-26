@@ -1,0 +1,294 @@
+{
+  "kind": "author focused self-check; findings fixed awaiting independent review",
+  "browser": "156.0.8078.4",
+  "platform": "linux",
+  "findings": [
+    "995-A01",
+    "995-A02"
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 288,
+      "zoom": 1,
+      "key": "proof",
+      "scroll": 288,
+      "height": 364,
+      "scrollHeight": 364,
+      "text": "Could another order use fewer flips? Changing the order of these window flips does not change the result. Using one start twice cancels, so a minimum solution uses each start at most once. Inductively, every feasible solution must match our earlier start choices. The bit at i then uniquely decides whether start i is used. If a required window no longer fits, no solution exists. Otherwise the completed scan is all 1s, with no alternative that uses fewer starts."
+    },
+    {
+      "lang": "en",
+      "width": 288,
+      "zoom": 1,
+      "key": "link2",
+      "scroll": 288,
+      "height": 56,
+      "scrollHeight": 56,
+      "text": "#330: trace how the covered range grows"
+    },
+    {
+      "lang": "en",
+      "width": 128,
+      "zoom": 2,
+      "key": "proof",
+      "scroll": 128,
+      "height": 952,
+      "scrollHeight": 952,
+      "text": "Could another order use fewer flips? Changing the order of these window flips does not change the result. Using one start twice cancels, so a minimum solution uses each start at most once. Inductively, every feasible solution must match our earlier start choices. The bit at i then uniquely decides whether start i is used. If a required window no longer fits, no solution exists. Otherwise the completed scan is all 1s, with no alternative that uses fewer starts."
+    },
+    {
+      "lang": "en",
+      "width": 128,
+      "zoom": 2,
+      "key": "link2",
+      "scroll": 128,
+      "height": 84,
+      "scrollHeight": 84,
+      "text": "#330: trace how the covered range grows"
+    },
+    {
+      "lang": "en",
+      "width": 358,
+      "zoom": 1,
+      "key": "proof",
+      "scroll": 358,
+      "height": 308,
+      "scrollHeight": 308,
+      "text": "Could another order use fewer flips? Changing the order of these window flips does not change the result. Using one start twice cancels, so a minimum solution uses each start at most once. Inductively, every feasible solution must match our earlier start choices. The bit at i then uniquely decides whether start i is used. If a required window no longer fits, no solution exists. Otherwise the completed scan is all 1s, with no alternative that uses fewer starts."
+    },
+    {
+      "lang": "en",
+      "width": 310,
+      "zoom": 1,
+      "key": "link2",
+      "scroll": 310,
+      "height": 48,
+      "scrollHeight": 48,
+      "text": "#330: trace how the covered range grows"
+    },
+    {
+      "lang": "en",
+      "width": 163,
+      "zoom": 2,
+      "key": "proof",
+      "scroll": 163,
+      "height": 700,
+      "scrollHeight": 700,
+      "text": "Could another order use fewer flips? Changing the order of these window flips does not change the result. Using one start twice cancels, so a minimum solution uses each start at most once. Inductively, every feasible solution must match our earlier start choices. The bit at i then uniquely decides whether start i is used. If a required window no longer fits, no solution exists. Otherwise the completed scan is all 1s, with no alternative that uses fewer starts."
+    },
+    {
+      "lang": "en",
+      "width": 163,
+      "zoom": 2,
+      "key": "link2",
+      "scroll": 163,
+      "height": 56,
+      "scrollHeight": 56,
+      "text": "#330: trace how the covered range grows"
+    },
+    {
+      "lang": "en",
+      "width": 952,
+      "zoom": 1,
+      "key": "proof",
+      "scroll": 952,
+      "height": 112,
+      "scrollHeight": 112,
+      "text": "Could another order use fewer flips? Changing the order of these window flips does not change the result. Using one start twice cancels, so a minimum solution uses each start at most once. Inductively, every feasible solution must match our earlier start choices. The bit at i then uniquely decides whether start i is used. If a required window no longer fits, no solution exists. Otherwise the completed scan is all 1s, with no alternative that uses fewer starts."
+    },
+    {
+      "lang": "en",
+      "width": 310,
+      "zoom": 1,
+      "key": "link2",
+      "scroll": 310,
+      "height": 48,
+      "scrollHeight": 48,
+      "text": "#330: trace how the covered range grows"
+    },
+    {
+      "lang": "en",
+      "width": 672,
+      "zoom": 2,
+      "key": "proof",
+      "scroll": 672,
+      "height": 168,
+      "scrollHeight": 168,
+      "text": "Could another order use fewer flips? Changing the order of these window flips does not change the result. Using one start twice cancels, so a minimum solution uses each start at most once. Inductively, every feasible solution must match our earlier start choices. The bit at i then uniquely decides whether start i is used. If a required window no longer fits, no solution exists. Otherwise the completed scan is all 1s, with no alternative that uses fewer starts."
+    },
+    {
+      "lang": "en",
+      "width": 310,
+      "zoom": 2,
+      "key": "link2",
+      "scroll": 310,
+      "height": 48,
+      "scrollHeight": 48,
+      "text": "#330: trace how the covered range grows"
+    },
+    {
+      "lang": "zh",
+      "width": 288,
+      "zoom": 1,
+      "key": "proof",
+      "scroll": 288,
+      "height": 252,
+      "scrollHeight": 252,
+      "text": "为什么不会错过另一种更好的顺序？窗口翻转的先后不影响结果，同一起点翻两次会抵消，所以最优解每个起点最多使用一次。从左到右归纳：所有可行解在更早起点上都必须与我们一致，而 i 处的值又唯一决定是否选 i。若必须翻却已放不下完整窗口，任何解都不可能成功；否则扫描完成后全为 1，且不存在更少的起点选择。"
+    },
+    {
+      "lang": "zh",
+      "width": 246,
+      "zoom": 1,
+      "key": "link2",
+      "scroll": 246,
+      "height": 48,
+      "scrollHeight": 48,
+      "text": "#330：逐步观察覆盖范围如何扩展"
+    },
+    {
+      "lang": "zh",
+      "width": 128,
+      "zoom": 2,
+      "key": "proof",
+      "scroll": 128,
+      "height": 532,
+      "scrollHeight": 532,
+      "text": "为什么不会错过另一种更好的顺序？窗口翻转的先后不影响结果，同一起点翻两次会抵消，所以最优解每个起点最多使用一次。从左到右归纳：所有可行解在更早起点上都必须与我们一致，而 i 处的值又唯一决定是否选 i。若必须翻却已放不下完整窗口，任何解都不可能成功；否则扫描完成后全为 1，且不存在更少的起点选择。"
+    },
+    {
+      "lang": "zh",
+      "width": 128,
+      "zoom": 2,
+      "key": "link2",
+      "scroll": 128,
+      "height": 56,
+      "scrollHeight": 56,
+      "text": "#330：逐步观察覆盖范围如何扩展"
+    },
+    {
+      "lang": "zh",
+      "width": 358,
+      "zoom": 1,
+      "key": "proof",
+      "scroll": 358,
+      "height": 196,
+      "scrollHeight": 196,
+      "text": "为什么不会错过另一种更好的顺序？窗口翻转的先后不影响结果，同一起点翻两次会抵消，所以最优解每个起点最多使用一次。从左到右归纳：所有可行解在更早起点上都必须与我们一致，而 i 处的值又唯一决定是否选 i。若必须翻却已放不下完整窗口，任何解都不可能成功；否则扫描完成后全为 1，且不存在更少的起点选择。"
+    },
+    {
+      "lang": "zh",
+      "width": 246,
+      "zoom": 1,
+      "key": "link2",
+      "scroll": 246,
+      "height": 48,
+      "scrollHeight": 48,
+      "text": "#330：逐步观察覆盖范围如何扩展"
+    },
+    {
+      "lang": "zh",
+      "width": 163,
+      "zoom": 2,
+      "key": "proof",
+      "scroll": 163,
+      "height": 420,
+      "scrollHeight": 420,
+      "text": "为什么不会错过另一种更好的顺序？窗口翻转的先后不影响结果，同一起点翻两次会抵消，所以最优解每个起点最多使用一次。从左到右归纳：所有可行解在更早起点上都必须与我们一致，而 i 处的值又唯一决定是否选 i。若必须翻却已放不下完整窗口，任何解都不可能成功；否则扫描完成后全为 1，且不存在更少的起点选择。"
+    },
+    {
+      "lang": "zh",
+      "width": 163,
+      "zoom": 2,
+      "key": "link2",
+      "scroll": 163,
+      "height": 56,
+      "scrollHeight": 56,
+      "text": "#330：逐步观察覆盖范围如何扩展"
+    },
+    {
+      "lang": "zh",
+      "width": 952,
+      "zoom": 1,
+      "key": "proof",
+      "scroll": 952,
+      "height": 84,
+      "scrollHeight": 84,
+      "text": "为什么不会错过另一种更好的顺序？窗口翻转的先后不影响结果，同一起点翻两次会抵消，所以最优解每个起点最多使用一次。从左到右归纳：所有可行解在更早起点上都必须与我们一致，而 i 处的值又唯一决定是否选 i。若必须翻却已放不下完整窗口，任何解都不可能成功；否则扫描完成后全为 1，且不存在更少的起点选择。"
+    },
+    {
+      "lang": "zh",
+      "width": 246,
+      "zoom": 1,
+      "key": "link2",
+      "scroll": 246,
+      "height": 48,
+      "scrollHeight": 48,
+      "text": "#330：逐步观察覆盖范围如何扩展"
+    },
+    {
+      "lang": "zh",
+      "width": 672,
+      "zoom": 2,
+      "key": "proof",
+      "scroll": 672,
+      "height": 112,
+      "scrollHeight": 112,
+      "text": "为什么不会错过另一种更好的顺序？窗口翻转的先后不影响结果，同一起点翻两次会抵消，所以最优解每个起点最多使用一次。从左到右归纳：所有可行解在更早起点上都必须与我们一致，而 i 处的值又唯一决定是否选 i。若必须翻却已放不下完整窗口，任何解都不可能成功；否则扫描完成后全为 1，且不存在更少的起点选择。"
+    },
+    {
+      "lang": "zh",
+      "width": 246,
+      "zoom": 2,
+      "key": "link2",
+      "scroll": 246,
+      "height": 48,
+      "scrollHeight": 48,
+      "text": "#330：逐步观察覆盖范围如何扩展"
+    }
+  ],
+  "destination": [
+    {
+      "lang": "en",
+      "url": "http://127.0.0.1:18770/leetcode/330/#step2",
+      "heading": "What changes after each consume or patch?",
+      "before": "[0, 1]",
+      "after": "[0, 3]",
+      "operation": "The next original value is greater than 2, or none remains: insert 2; miss=2+2=4, adding one patch.",
+      "ledger": "11Consume original 12022Patch 241"
+    },
+    {
+      "lang": "zh",
+      "url": "http://127.0.0.1:18770/leetcode/330/#step2",
+      "heading": "每次消费或补数后，边界如何改变？",
+      "before": "[0, 1]",
+      "after": "[0, 3]",
+      "operation": "待处理原数大于 2 或已耗尽：插入 2，miss=2+2=4，补数个数加 1。",
+      "ledger": "11消费原数 12022插入 241"
+    }
+  ],
+  "state": [
+    {
+      "lang": "en",
+      "trace": [
+        "Index 01Original 0✓ FixedIndex 11Original 1✓ FixedJust checkedIndex 21Original 0Pending",
+        "Just checked i = 1: entry parity 1, expiry toggle 0 → parity before test 1; original 1 ^ 1 = 0. Current 0 forces a flip from 1 through 2, expiring at 3. Parity after decision = 0.",
+        "Checked 2/3 positions; chosen starts: 0, 1; flips so far: 2. No final result yet.",
+        "00 → 0 → 10 ^ 0 = 0Flip; expires at 211 → 1 → 01 ^ 1 = 0Flip; expires at 3"
+      ],
+      "feedback": "Correct prediction. Answer: 3. 0110 → (start 0) 1010 → (start 1) 1100 → (start 2) 1111. At i = 2, start 0 expires first, changing parity from 0 to 1. Original 1 ^ 1 = 0 forces the third flip. None of these three starts can be omitted."
+    },
+    {
+      "lang": "zh",
+      "trace": [
+        "位置 01原值 0✓ 已定位置 11原值 1✓ 已定当前检查位置 21原值 0未处理",
+        "刚检查 i = 1：进入 parity 1，到期切换 0 → 检查前 parity 1；原值 1 ^ 1 = 0。当前 0，必须从 1 翻转至 2，在 3 到期。 决定后 parity = 0。",
+        "已检查 2/3 位；选定起点：0, 1；累计翻转 2 次。尚无最终结果。",
+        "00 → 0 → 10 ^ 0 = 0翻转；在 2 到期11 → 1 → 01 ^ 1 = 0翻转；在 3 到期"
+      ],
+      "feedback": "预测正确。 答案 3：0110 →（起点 0）1010 →（起点 1）1100 →（起点 2）1111。i = 2 时，起点 0 的窗口先到期，parity 从 0 变 1，原值 1 ^ 1 = 0，因此第三次翻转被强迫。三个起点都不能省略。"
+    }
+  ],
+  "errors": []
+}
