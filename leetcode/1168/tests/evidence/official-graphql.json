@@ -1,0 +1,48 @@
+{
+  "accessedAt": "2026-10-27T00:00:00+08:00",
+  "endpoint": "https://leetcode.com/graphql",
+  "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId title difficulty isPaidOnly content exampleTestcases codeSnippets { lang langSlug code } topicTags { name slug } } }",
+  "response": {
+    "data": {
+      "question": {
+        "questionId": "1144",
+        "title": "Optimize Water Distribution in a Village",
+        "difficulty": "Hard",
+        "isPaidOnly": true,
+        "content": null,
+        "exampleTestcases": "3\n[1,2,2]\n[[1,2,1],[2,3,1]]\n2\n[1,1]\n[[1,2,1],[1,2,2]]",
+        "codeSnippets": null,
+        "topicTags": [
+          {
+            "name": "Union-Find",
+            "slug": "union-find"
+          },
+          {
+            "name": "Graph Theory",
+            "slug": "graph"
+          },
+          {
+            "name": "Heap (Priority Queue)",
+            "slug": "heap-priority-queue"
+          },
+          {
+            "name": "Minimum Spanning Tree",
+            "slug": "minimum-spanning-tree"
+          },
+          {
+            "name": "Prim's Algorithm",
+            "slug": "prims-algorithm"
+          },
+          {
+            "name": "Kruskal's Algorithm",
+            "slug": "kruskals-algorithm"
+          },
+          {
+            "name": "Borůvka's Algorithm",
+            "slug": "boruvkas-algorithm"
+          }
+        ]
+      }
+    }
+  }
+}
