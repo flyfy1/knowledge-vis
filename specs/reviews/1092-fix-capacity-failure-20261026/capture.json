@@ -1,0 +1,207 @@
+{
+  "observed_at": "2026-10-26T14:23:48.430959+00:00",
+  "status": "failed",
+  "current": {
+    "problem_id": "1092",
+    "stage": "fix",
+    "started_at": "2026-10-26T14:18:30.050194+00:00",
+    "run_id": "1092-fix-7beee2677431"
+  },
+  "expected_head": "093440bf6df89b6a5dbc7a958ae3aef588b9acff",
+  "head": "093440bf6df89b6a5dbc7a958ae3aef588b9acff",
+  "entry": {
+    "status": "changes_required",
+    "rounds": 1,
+    "new": true,
+    "phase": "fix",
+    "reviews": [
+      {
+        "outcome": "changes_required",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          2
+        ],
+        "required_open": [
+          "1092-R1"
+        ],
+        "report_path": "specs/reviews/1092-review-1-206ef9e2.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Canonical Python passed independent cases and intermediate invariant checks.",
+          "Bilingual interactions, exact source parity, native clipboard fallback and metadata preflight passed.",
+          "Inspected screenshot and text geometry confirm column-label occlusion at 320px with 200% CSS zoom."
+        ],
+        "detail": "95/100, but acceptance fails: the sticky row header hides the English column index in \u201c8 \u00b7 empty\u201d at narrow zoom. Required finding 1092-R1 remains open.",
+        "run_id": "1092-review-3b54521cfb62",
+        "candidate": "5cf73ee858d9a8938b55206c867233a8397d60f6",
+        "candidate_sha256": "d2a8419dc82048ac0ca456898cccf5978027d9dec7d3742db8a7b09602ce9de5",
+        "weighted_score": 95.0,
+        "round": 1,
+        "commit": "093440bf6df89b6a5dbc7a958ae3aef588b9acff"
+      }
+    ],
+    "author_runs": [
+      "1092-author-a08cc2f91e85"
+    ],
+    "prior_report": "specs/reviews/1092-review-1-206ef9e2.md",
+    "candidate": "5cf73ee858d9a8938b55206c867233a8397d60f6"
+  },
+  "run": {
+    "id": "1092-fix-7beee2677431",
+    "problem_id": "1092",
+    "role": "fix",
+    "started_at": "2026-10-26T14:18:30.050194+00:00",
+    "status": "failed",
+    "candidate": "093440bf6df89b6a5dbc7a958ae3aef588b9acff",
+    "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/1092-fix-7beee2677431",
+    "session_ids": [
+      "01a17893-bf20-7673-b7a6-db106cb61936"
+    ],
+    "finished_at": "2026-10-26T14:23:09.357218+00:00",
+    "error": "Agent failed (exit 1); inspect /home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/1092-fix-7beee2677431"
+  },
+  "all_1092_runs": [
+    {
+      "id": "1092-author-a08cc2f91e85",
+      "problem_id": "1092",
+      "role": "author",
+      "started_at": "2026-10-26T08:17:22.557330+00:00",
+      "status": "completed",
+      "candidate": "f84a64df37822f5a118859357617a648698890e9",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/1092-author-a08cc2f91e85",
+      "session_ids": [
+        "01a17749-1eee-7562-bc22-240b4bf625fe"
+      ],
+      "finished_at": "2026-10-26T08:31:35.448337+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented bilingual lesson #1092 in leetcode/1092/. Official Python interface verified; oracle, invariant, browser, source-transfer, layout, and metadata checks passed. Candidate 1092-c1-0993d9a0bb76 is frozen with evidence. Author self-check complete; independent review pending."
+      }
+    },
+    {
+      "id": "1092-review-7c8ae6c3edaf",
+      "problem_id": "1092",
+      "role": "review",
+      "started_at": "2026-10-26T08:31:48.750200+00:00",
+      "status": "failed",
+      "candidate": "5cf73ee858d9a8938b55206c867233a8397d60f6",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/1092-review-7c8ae6c3edaf",
+      "session_ids": [
+        "01a17756-56f8-7b23-804b-e4f0d0c338fc"
+      ],
+      "finished_at": "2026-10-26T08:33:32.597545+00:00",
+      "error": "Agent failed (exit 1); inspect /home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/1092-review-7c8ae6c3edaf"
+    },
+    {
+      "id": "1092-review-3b54521cfb62",
+      "problem_id": "1092",
+      "role": "review",
+      "started_at": "2026-10-26T14:08:25.524831+00:00",
+      "status": "completed",
+      "candidate": "5cf73ee858d9a8938b55206c867233a8397d60f6",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/1092-review-3b54521cfb62",
+      "session_ids": [
+        "01a1788a-8463-7d70-a532-ac3b4c6cf94c"
+      ],
+      "finished_at": "2026-10-26T14:18:16.795666+00:00",
+      "result": {
+        "outcome": "changes_required",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          2
+        ],
+        "required_open": [
+          "1092-R1"
+        ],
+        "report_path": "specs/reviews/1092-review-1-206ef9e2.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Canonical Python passed independent cases and intermediate invariant checks.",
+          "Bilingual interactions, exact source parity, native clipboard fallback and metadata preflight passed.",
+          "Inspected screenshot and text geometry confirm column-label occlusion at 320px with 200% CSS zoom."
+        ],
+        "detail": "95/100, but acceptance fails: the sticky row header hides the English column index in \u201c8 \u00b7 empty\u201d at narrow zoom. Required finding 1092-R1 remains open."
+      }
+    },
+    {
+      "id": "1092-fix-7beee2677431",
+      "problem_id": "1092",
+      "role": "fix",
+      "started_at": "2026-10-26T14:18:30.050194+00:00",
+      "status": "failed",
+      "candidate": "093440bf6df89b6a5dbc7a958ae3aef588b9acff",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/1092-fix-7beee2677431",
+      "session_ids": [
+        "01a17893-bf20-7673-b7a6-db106cb61936"
+      ],
+      "finished_at": "2026-10-26T14:23:09.357218+00:00",
+      "error": "Agent failed (exit 1); inspect /home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/1092-fix-7beee2677431"
+    }
+  ],
+  "runner2448642_alive": false,
+  "native2455028_alive": false,
+  "matching_processes": [],
+  "stop_exists": false,
+  "dirty": [
+    "?? leetcode/1092/tests/evidence/r1-repair-red.log",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-padding/en-end-header.png",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-padding/en-six-header.png",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-padding/header-fit.json",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-padding/zh-end-header.png",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-padding/zh-six-header.png",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-wrap/en-end-header.png",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-wrap/en-six-header.png",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-wrap/header-fit.json",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-wrap/zh-end-header.png",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-wrap/zh-six-header.png",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-wrap56/en-end-header.png",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-wrap56/en-six-header.png",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-wrap56/header-fit.json",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-wrap56/zh-end-header.png",
+    "?? leetcode/1092/tests/evidence/r1-repair/probe-wrap56/zh-six-header.png",
+    "?? leetcode/1092/tests/evidence/r1-repair/red/en-six-header.png",
+    "?? leetcode/1092/tests/evidence/r1-repair/red/header-fit.json",
+    "?? leetcode/1092/tests/header-fit.cjs"
+  ],
+  "released_count": 158,
+  "pending": null,
+  "ledger_sha256": "acfe8d78b6c416364ef04aa35bc3e825f26ca2bdbddd57417b1d8f9b6b6e962e",
+  "progress_sha256": "de730c7e104b05b35e769ad95985a6aeac6c04a482e0073c9b42c8f8107ec069",
+  "final_json_exists": false,
+  "file_sha256": {
+    "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/1092-fix-7beee2677431/events.jsonl": "8abd6d1d9d6b9ceb04452fa393eab9d707c6c417674677b8a20caef51128a16a",
+    "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/1092-fix-7beee2677431/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/1092-fix-7beee2677431/prompt.md": "2c51a2d254f594511f730ae28c8af98153a54e6e81bdd9d0caa0aeb9c65f8a94",
+    "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/1092-fix-7beee2677431/schema.json": "2d84770a5def3fdb87c8a03dd4834dae3530a5ee311c72295b385fcccc252675",
+    "/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress.json": "de730c7e104b05b35e769ad95985a6aeac6c04a482e0073c9b42c8f8107ec069",
+    "/home/songyy/projects/leetcode-hard-campaign-state-20261018/releases.json": "acfe8d78b6c416364ef04aa35bc3e825f26ca2bdbddd57417b1d8f9b6b6e962e",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair-red.log": "937f3280329ae2b9fbddcf576f105c9f718b8f6e30e21cbf12872d329278fe5c",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-padding/en-end-header.png": "64ea533792a146cbbd635a168f966f62c74ecdc6109ab15969ca47ec673fd626",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-padding/en-six-header.png": "f22b79cb8860b147ae47a914db5dbdce01c33ae814ecdc5854ffc2f4f1de1b35",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-padding/header-fit.json": "a8b7e2cdbc9e51c65521f5d02fddc7122ad06ea25617ba4e85e95e638b0b7c94",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-padding/zh-end-header.png": "ef8593676f73d741071a4975f573bd5bef014061af6e73cbb0ad688f0153a68a",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-padding/zh-six-header.png": "eb34d4de09cd0fbdeef121b08a693a51d7b4347f2e317f147ea629d1d02c95c3",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-wrap/en-end-header.png": "04d5178c2e8243a452aa77c4dc2544669c905a2e8c7bfc56534a7ef19afcc219",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-wrap/en-six-header.png": "252e8f089b78b30427eaf8ddc25cbd00f2723e2aa8074cecc1e6b3a2d68d7b9f",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-wrap/header-fit.json": "0598e0a48bff6c764db0da11deac3ba30877ea9bad054204812da9dbcb68e4f9",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-wrap/zh-end-header.png": "6152776734ee4f6052c650b8941668bcae084afd8d929131a5a267b403242bda",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-wrap/zh-six-header.png": "c09b6e66d5be428b118eff45912b9b8f6c8f2e4f02a2382aef8ee3d5cda0fe5d",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-wrap56/en-end-header.png": "2533bb23ab1a9d880cad99a23dfa1c5c12fcb58683aaf342bf43652acdf41aee",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-wrap56/en-six-header.png": "ef925a2e64e6137d5ec01a41df5eeeb403b0c28ce02456ed3e1c62cdb8ccaed8",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-wrap56/header-fit.json": "5d228b329a9d9c8aeb7ec2e5906be2b36a8cb3ad919a7dcc2edfb88f81ea4b77",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-wrap56/zh-end-header.png": "2212e9bcafe36a444de6031c6280d82fe7de1acd295eaf246722652bc26c5b6e",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/probe-wrap56/zh-six-header.png": "5fb4d3b4716e1c195290668486dad5af347dc5b5dba74b9612a622096ccd7fbc",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/red/en-six-header.png": "5ab57f8fe7320d893009ff59b530c437bf173370352a98fb12e822df7b9b6dee",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/evidence/r1-repair/red/header-fit.json": "332b945207e15b0ba66a029044f25e4f41f5e19f8a5cbc90b90acf01096c0456",
+    "/home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/1092/tests/header-fit.cjs": "29727c104df69e1397d1ef10eebb73ab7a3f87cad9d684307adcfea96319e9ec"
+  },
+  "tracked_diff": ""
+}
