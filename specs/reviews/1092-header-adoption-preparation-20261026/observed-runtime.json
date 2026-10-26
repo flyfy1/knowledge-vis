@@ -1,0 +1,166 @@
+{
+  "observed_at": "2026-10-26T14:47:13.661699+00:00",
+  "head": "093440bf6df89b6a5dbc7a958ae3aef588b9acff",
+  "state_sha256": "de730c7e104b05b35e769ad95985a6aeac6c04a482e0073c9b42c8f8107ec069",
+  "ledger_sha256": "acfe8d78b6c416364ef04aa35bc3e825f26ca2bdbddd57417b1d8f9b6b6e962e",
+  "queue_sha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+  "queue_count": 984,
+  "policy": {
+    "scripts/leetcode_campaign.py": "a1258a0e7eba60e1d813bf0f9ede57a71f92cd504f6afb7bd0553d68d41c65ed",
+    "scripts/leetcode_publish.py": "7292c88e2ae035667a1bc723b076fb3d8d3d8562dc8428f3f66f74dc60f764d8",
+    "scripts/leetcode_static_versions.py": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e",
+    "scripts/leetcode_registry.py": "a23b9b9e4feec966969c0b4c60f16e19cc2616ea0e1b2e587d15605e739349d6",
+    "scripts/register_leetcode_lesson.py": "7ba274cd733a36528d98c85fe87b46d5535bc34898567b0c14f36fda37f81310",
+    "scripts/campaign-prompts/author.md": "5f7feaa56f9f8f1f3f434e1fe4576cc2a10da21594c9aef829cab86e69dae06b",
+    "scripts/campaign-prompts/fix.md": "176376ca977b1b8e0f4444612efdf91b8a7d49e1f1c614e8985544828bb774d4",
+    "scripts/campaign-prompts/review.md": "129537defd8df8fda1c84c3bea80b62c8c717275f558128d8b62b02319838a1b",
+    "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+    "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+    "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c"
+  },
+  "launcher_sha256": "94056740463e5f9ec4fe63d0d2c56d1ccbf1ab60556f7952580fe58512127e70",
+  "quarantine": {
+    "leetcode/1092/tests/evidence/r1-repair-red.log": "937f3280329ae2b9fbddcf576f105c9f718b8f6e30e21cbf12872d329278fe5c",
+    "leetcode/1092/tests/evidence/r1-repair/probe-padding/en-end-header.png": "64ea533792a146cbbd635a168f966f62c74ecdc6109ab15969ca47ec673fd626",
+    "leetcode/1092/tests/evidence/r1-repair/probe-padding/en-six-header.png": "f22b79cb8860b147ae47a914db5dbdce01c33ae814ecdc5854ffc2f4f1de1b35",
+    "leetcode/1092/tests/evidence/r1-repair/probe-padding/header-fit.json": "a8b7e2cdbc9e51c65521f5d02fddc7122ad06ea25617ba4e85e95e638b0b7c94",
+    "leetcode/1092/tests/evidence/r1-repair/probe-padding/zh-end-header.png": "ef8593676f73d741071a4975f573bd5bef014061af6e73cbb0ad688f0153a68a",
+    "leetcode/1092/tests/evidence/r1-repair/probe-padding/zh-six-header.png": "eb34d4de09cd0fbdeef121b08a693a51d7b4347f2e317f147ea629d1d02c95c3",
+    "leetcode/1092/tests/evidence/r1-repair/probe-wrap/en-end-header.png": "04d5178c2e8243a452aa77c4dc2544669c905a2e8c7bfc56534a7ef19afcc219",
+    "leetcode/1092/tests/evidence/r1-repair/probe-wrap/en-six-header.png": "252e8f089b78b30427eaf8ddc25cbd00f2723e2aa8074cecc1e6b3a2d68d7b9f",
+    "leetcode/1092/tests/evidence/r1-repair/probe-wrap/header-fit.json": "0598e0a48bff6c764db0da11deac3ba30877ea9bad054204812da9dbcb68e4f9",
+    "leetcode/1092/tests/evidence/r1-repair/probe-wrap/zh-end-header.png": "6152776734ee4f6052c650b8941668bcae084afd8d929131a5a267b403242bda",
+    "leetcode/1092/tests/evidence/r1-repair/probe-wrap/zh-six-header.png": "c09b6e66d5be428b118eff45912b9b8f6c8f2e4f02a2382aef8ee3d5cda0fe5d",
+    "leetcode/1092/tests/evidence/r1-repair/probe-wrap56/en-end-header.png": "2533bb23ab1a9d880cad99a23dfa1c5c12fcb58683aaf342bf43652acdf41aee",
+    "leetcode/1092/tests/evidence/r1-repair/probe-wrap56/en-six-header.png": "ef925a2e64e6137d5ec01a41df5eeeb403b0c28ce02456ed3e1c62cdb8ccaed8",
+    "leetcode/1092/tests/evidence/r1-repair/probe-wrap56/header-fit.json": "5d228b329a9d9c8aeb7ec2e5906be2b36a8cb3ad919a7dcc2edfb88f81ea4b77",
+    "leetcode/1092/tests/evidence/r1-repair/probe-wrap56/zh-end-header.png": "2212e9bcafe36a444de6031c6280d82fe7de1acd295eaf246722652bc26c5b6e",
+    "leetcode/1092/tests/evidence/r1-repair/probe-wrap56/zh-six-header.png": "5fb4d3b4716e1c195290668486dad5af347dc5b5dba74b9612a622096ccd7fbc",
+    "leetcode/1092/tests/evidence/r1-repair/red/en-six-header.png": "5ab57f8fe7320d893009ff59b530c437bf173370352a98fb12e822df7b9b6dee",
+    "leetcode/1092/tests/evidence/r1-repair/red/header-fit.json": "332b945207e15b0ba66a029044f25e4f41f5e19f8a5cbc90b90acf01096c0456",
+    "leetcode/1092/tests/header-fit.cjs": "29727c104df69e1397d1ef10eebb73ab7a3f87cad9d684307adcfea96319e9ec"
+  },
+  "run_files": {
+    "1092-author-a08cc2f91e85": {
+      "runs/1092-author-a08cc2f91e85/events.jsonl": "f72fe0e1a621219b58763553d00a578e64d343fe9be19657ffb08db615d58912",
+      "runs/1092-author-a08cc2f91e85/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "runs/1092-author-a08cc2f91e85/final.json": "bd799fe87cf5e0581f1dcc7b01bdf02c32ac9f7f9ae1a62639a0355ea254e297",
+      "runs/1092-author-a08cc2f91e85/prompt.md": "6f6dc1d8d4eeef7d9dc0e2d461fc58110b18ebaf688996ad2cfbe243b20f2b2a",
+      "runs/1092-author-a08cc2f91e85/schema.json": "2d84770a5def3fdb87c8a03dd4834dae3530a5ee311c72295b385fcccc252675"
+    },
+    "1092-review-7c8ae6c3edaf": {
+      "runs/1092-review-7c8ae6c3edaf/events.jsonl": "f5ff85fcbeb0e3b0f48fcb251957223afe60d9d8a0beac6ab51d87a604e8af69",
+      "runs/1092-review-7c8ae6c3edaf/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "runs/1092-review-7c8ae6c3edaf/prompt.md": "f9322b9a91b18157f676c93562abb8c53ead762f54cffa3bf9ce9929e74867b8",
+      "runs/1092-review-7c8ae6c3edaf/schema.json": "2099c4eec122eb46cce2ae3c7c210a409aa75c06c40911e890b098d96f30be28"
+    },
+    "1092-review-3b54521cfb62": {
+      "runs/1092-review-3b54521cfb62/events.jsonl": "7c0b4818ce3c717cf772cc5a5ee48e94467d02c6a1d2e36db90235afe5e4bc01",
+      "runs/1092-review-3b54521cfb62/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "runs/1092-review-3b54521cfb62/final.json": "fcb92ab8a04cb5a51fd525df9c811cd6ac9ff03949de3fee7e37e2e1a36b72c9",
+      "runs/1092-review-3b54521cfb62/prompt.md": "cbabf3655ca32cccf85f940a06efa5d925a491ae3727893382a3b295e6e4da4d",
+      "runs/1092-review-3b54521cfb62/schema.json": "2099c4eec122eb46cce2ae3c7c210a409aa75c06c40911e890b098d96f30be28"
+    },
+    "1092-fix-7beee2677431": {
+      "runs/1092-fix-7beee2677431/events.jsonl": "8abd6d1d9d6b9ceb04452fa393eab9d707c6c417674677b8a20caef51128a16a",
+      "runs/1092-fix-7beee2677431/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "runs/1092-fix-7beee2677431/prompt.md": "2c51a2d254f594511f730ae28c8af98153a54e6e81bdd9d0caa0aeb9c65f8a94",
+      "runs/1092-fix-7beee2677431/schema.json": "2d84770a5def3fdb87c8a03dd4834dae3530a5ee311c72295b385fcccc252675"
+    }
+  },
+  "reservations": {
+    "lane-964-reservation.json": "1391726fbffbaed6867556691ab3562eb7671d34e29ae4a25f6a686782c77e7b",
+    "lane-689-reservation.json": "957831825f83cca2a81d1495f5931a5359be35ceda528a1c87c1c95e489738a1",
+    "lane-493-reservation.json": "bd5d56429c319dd527b5ad22901a1cd3aab373c1f56bfa06343775c50db1646a",
+    "lane-675-reservation.json": "87df66947101571a188f25df599bf1238a5561d5c4867289261ead14f3834411",
+    "lane-514-reservation.json": "e7fe9cbfba39aef217a9019b7a12ca2ecfc9a47a346e3f96d9e914decc8a6172",
+    "lane-940-reservation.json": "5b76e20709a6c9eeeddaf7c42163e8cf9ef98b43b8229d274d92c3f282a7d0c0",
+    "lane-591-reservation.json": "535dfc500dccf1643e6242d21a182558d5b85d128a01a53271cd2d26a1614431",
+    "lane-996-reservation.json": "e100a0e24eaf70748f43937cfa0fb35904cf64e2cb671d5e4bc89bcc1e3c1c1d",
+    "lane-691-reservation.json": "98030c13682c693724ae81a11b79abd53f43b1515a943cbcf3098a0ce924eb5d",
+    "lane-719-reservation.json": "fc2adb66f580defa40a497604adcc5aaecff21b479448cc571c8e09e29fd56c6",
+    "lane-730-reservation.json": "20427007930c034eea0211f8b854b3a4ae6169b2b328ecda4adba73fa3f89a3c",
+    "lane-975-reservation.json": "5f1d4b55b4f872626f2ee855e61a7d1b989b1d8fb863818a18b7f213fd573dfe",
+    "lane-920-reservation.json": "014e874bb8c8233273adab34d4955eec74129d58468bf2c293e951de5c64777a",
+    "lane-903-reservation.json": "5b06657652d970bc8c8355daa26df21aa24df481506139d3b6b65d6b953aad2c",
+    "lane-732-reservation.json": "8e7e3e7a702ea3d53fc561a001c56a895a805ecd2a5f59ae077252586489f78a",
+    "lane-668-reservation.json": "efa5d6646bc5cd9401b6606cadf5327af2150690973e3b6136f9b94df081880a",
+    "lane-1000-reservation.json": "adf91b1db8eea6b7fd2537063450f1bc24325a8051ad6d2d4554de2bbfa45df7",
+    "lane-685-reservation.json": "56aed95f678dc1d8d91fe8e675b523c4f8d22c0892bc86d2fb2708739e17d751",
+    "lane-679-reservation.json": "aefea8a9b6b11aae939883a8d7368989d61c36a8c7e8f70f41b7da05cf441a56",
+    "lane-630-reservation.json": "5f858def91db8e6047aef65a989e23de92bc3fad11956d44c1041b74cd9a9e59",
+    "lane-992-reservation.json": "743847f0bae29bdb02c0457de911b86a9624d3fac06fda0e5ed3131524d7dd67",
+    "lane-956-reservation.json": "2d803b066a25cecb5e11b79795207973d5139ac4160a7b612f908f9c6ff9e2c1",
+    "lane-587-reservation.json": "f1b39130581fbf4b564480a095b02059dac564627b345e17616ea3b129807c8f",
+    "lane-726-reservation.json": "a063db9317c0b9296cf4ae00ab8a22e69fbaa5f6ab1543d8ff23d329afbbdf81",
+    "lane-715-reservation.json": "b25d3d805556cae8ec64562843965ddb47f654391d0c3115a2c6f607ef66cb3c",
+    "lane-632-reservation.json": "72ccc9eb1d331edf2bcedbf81cd594e3462118eaa657557af04c9ef687179ee3",
+    "lane-995-reservation.json": "7ccb873defeb0ac608d3553fb52d91a4d8d6327e20b7d8f2b19a77c86ed51ed2",
+    "lane-987-reservation.json": "3630636658d7a226112b861b2db4cb965dedff2572c0e66a8d08bed3697715f6",
+    "lane-805-reservation.json": "0bf09414ce4f665a4c1a86696edc8a31f5d14ffc446489bbb230a25f424c450c",
+    "lane-600-reservation.json": "dfe301eaca4783047f0f72f50686a54395b139b1c0e1b7165e32094e2fd568c1",
+    "lane-629-reservation.json": "57960b62012cf346e8bd01b0cdf56d193438c86fdc400cbec5498a494b07a580",
+    "lane-639-reservation.json": "da5c5716212986b8673f02442685fd2a3020fa1c817474507192bbf09785b2bc",
+    "lane-546-reservation.json": "8a54265d4b218e2c24b313d3bfba83b88c710a04818558539d26d55cfa22f46e",
+    "lane-972-reservation.json": "730e84123d5ba2078f1365fbedc3a93d153f4f0ba1af6474f713767acab51b13",
+    "lane-803-reservation.json": "43180abdc6b7b9536314bb24d41b327b330440b78b6ac38dacb2ab511baeb15c",
+    "lane-664-reservation.json": "6945aabd7f0ed8f16d7b51c609fda8e2915e201fe610e23fe615843dc5832f45",
+    "lane-982-reservation.json": "b7c9a16c2df5c48aded36075f9a88b9bbd6629ebcad00048d81a57b888d119e2",
+    "lane-968-reservation.json": "78f6300b81f4ed440c7c852a41c86d4f2de84bfa71b719855d3942738e93f42d",
+    "lane-517-reservation.json": "80c1825b01216de411d0e6f801608c8c5d9d4e18d954c85f17cfb7c80a3c6af1",
+    "lane-699-reservation.json": "e6c7488e18c4fbe6a3e3731b967451ce1b04717004fcab2042e9fe3b4e6c22e9",
+    "lane-980-reservation.json": "8950c15acc28f73cc68cc461235c85b251b62f1cafa3ac2c8767bb4adf71b6ba",
+    "lane-552-reservation.json": "c2358e06a98890b7dd2e0378aa9de2170c3da7d978d57c93d73b077971a27b39",
+    "lane-960-reservation.json": "177a719d6c687d7da3cadceabaeb97095136c547db8068b778d7cf16f548011e"
+  },
+  "state_1092": {
+    "status": "changes_required",
+    "rounds": 1,
+    "new": true,
+    "phase": "fix",
+    "reviews": [
+      {
+        "outcome": "changes_required",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          2
+        ],
+        "required_open": [
+          "1092-R1"
+        ],
+        "report_path": "specs/reviews/1092-review-1-206ef9e2.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Canonical Python passed independent cases and intermediate invariant checks.",
+          "Bilingual interactions, exact source parity, native clipboard fallback and metadata preflight passed.",
+          "Inspected screenshot and text geometry confirm column-label occlusion at 320px with 200% CSS zoom."
+        ],
+        "detail": "95/100, but acceptance fails: the sticky row header hides the English column index in \u201c8 \u00b7 empty\u201d at narrow zoom. Required finding 1092-R1 remains open.",
+        "run_id": "1092-review-3b54521cfb62",
+        "candidate": "5cf73ee858d9a8938b55206c867233a8397d60f6",
+        "candidate_sha256": "d2a8419dc82048ac0ca456898cccf5978027d9dec7d3742db8a7b09602ce9de5",
+        "weighted_score": 95.0,
+        "round": 1,
+        "commit": "093440bf6df89b6a5dbc7a958ae3aef588b9acff"
+      }
+    ],
+    "author_runs": [
+      "1092-author-a08cc2f91e85"
+    ],
+    "prior_report": "specs/reviews/1092-review-1-206ef9e2.md",
+    "candidate": "5cf73ee858d9a8938b55206c867233a8397d60f6"
+  },
+  "current": {
+    "problem_id": "1092",
+    "stage": "fix",
+    "started_at": "2026-10-26T14:18:30.050194+00:00",
+    "run_id": "1092-fix-7beee2677431"
+  },
+  "status": "failed",
+  "remote_head": "093440bf6df89b6a5dbc7a958ae3aef588b9acff\trefs/heads/codex/all-hard-20261018",
+  "stop_exists": false
+}

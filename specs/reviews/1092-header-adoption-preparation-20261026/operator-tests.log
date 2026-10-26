@@ -1,0 +1,24 @@
+test_changed_ledger (__main__.AdoptionTests.test_changed_ledger) ... ok
+test_changed_state (__main__.AdoptionTests.test_changed_state) ... ok
+test_checkpoint_failure_retains_commit_and_before_state (__main__.AdoptionTests.test_checkpoint_failure_retains_commit_and_before_state) ... ok
+test_commit_hook_failure_retains_partial_payload_and_original_state (__main__.AdoptionTests.test_commit_hook_failure_retains_partial_payload_and_original_state) ... ok
+test_complete_transaction_preserves_history_and_quarantine (__main__.AdoptionTests.test_complete_transaction_preserves_history_and_quarantine) ... ok
+test_copy_failure_removes_no_originals (__main__.AdoptionTests.test_copy_failure_removes_no_originals) ... ok
+test_disabled_cli_and_missing_review (__main__.AdoptionTests.test_disabled_cli_and_missing_review) ... ok
+test_extra_path_and_stop (__main__.AdoptionTests.test_extra_path_and_stop) ... ok
+test_manifest_missing_addition_and_mode (__main__.AdoptionTests.test_manifest_missing_addition_and_mode) ... ok
+test_protected_hash (__main__.AdoptionTests.test_protected_hash) ... ok
+test_review_hash (__main__.AdoptionTests.test_review_hash) ... ok
+test_untracked_hash (__main__.AdoptionTests.test_untracked_hash) ... ok
+test_wrong_head (__main__.AdoptionTests.test_wrong_head) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 5.944s
+
+OK
+INDEPENDENT actual source validation PASS: 94 paths; actual local ls-remote, no fetch/Pi operation
+Protected six: ['app.js', 'copy.js', 'core.js', 'lesson-entry.json', 'python-code.js', 'solution.py']
+EXACT proposed enabling bytes SHA256 10445c4e33fe64f479ddb3d0089c63e44043fb744a5903260bfb11db28aaeee3
+EXACT replacement PINS_SHA = None -> PINS_SHA = '89440012068e76795ce17050844d51eaeded6451e297f8c0f12413a9f49dd162'
+INDEPENDENT partial-quarantine fault PASS: 19 archived/verified, 1 removal recorded, 18 originals retained, state/ledger unchanged
+No source edits, Pi writes/fetch/state/launch/push; enabling bytes constructed in memory only.

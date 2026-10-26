@@ -1,0 +1,18 @@
+test_changed_ledger (test_adopt.AdoptionTests.test_changed_ledger) ... ok
+test_changed_state (test_adopt.AdoptionTests.test_changed_state) ... ok
+test_checkpoint_failure_retains_commit_and_before_state (test_adopt.AdoptionTests.test_checkpoint_failure_retains_commit_and_before_state) ... ok
+test_commit_hook_failure_retains_partial_payload_and_original_state (test_adopt.AdoptionTests.test_commit_hook_failure_retains_partial_payload_and_original_state) ... ok
+test_complete_transaction_preserves_history_and_quarantine (test_adopt.AdoptionTests.test_complete_transaction_preserves_history_and_quarantine) ... ok
+test_copy_failure_removes_no_originals (test_adopt.AdoptionTests.test_copy_failure_removes_no_originals) ... ok
+test_disabled_cli_and_missing_review (test_adopt.AdoptionTests.test_disabled_cli_and_missing_review) ... ok
+test_extra_path_and_stop (test_adopt.AdoptionTests.test_extra_path_and_stop) ... ok
+test_manifest_missing_addition_and_mode (test_adopt.AdoptionTests.test_manifest_missing_addition_and_mode) ... ok
+test_protected_hash (test_adopt.AdoptionTests.test_protected_hash) ... ok
+test_review_hash (test_adopt.AdoptionTests.test_review_hash) ... ok
+test_untracked_hash (test_adopt.AdoptionTests.test_untracked_hash) ... ok
+test_wrong_head (test_adopt.AdoptionTests.test_wrong_head) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 6.517s
+
+OK
