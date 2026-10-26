@@ -292,6 +292,19 @@
       },
       "retainedContributions": "Original794f6825 Muse/Alberto course, wave functions and unrelated chapters retained; no original Codex authorship asserted",
       "previousRevision": "19873a1aa6d006f6b74e94bc8ceefb27fbda5f3a"
+    },
+    "convolution": {
+      "developer": "Codex",
+      "edition": "codex-convolution-support-20261026",
+      "kind": "revised",
+      "sourceRevision": "bb728d1b651a7966acb3e1c006c4ff4525c7dab1",
+      "originalSourceRevision": "185078dd7537487de76392d5a5abafbd141209c6",
+      "retainedMaintenanceRevision": "0cdb17003e8c160e6b30ac2ca9ddcb1c7d319a4f",
+      "scope": {
+        "zh": "仅第2步输出索引、翻转平移对齐、零延拓重叠、小数精度与暂停恢复",
+        "en": "Step2 output indices, reversed/shifted alignment, zero-extended overlap, decimal fidelity and paused reading recovery"
+      },
+      "retainedContributions": "Original185078dd andmaintenance0cdb1700 Muse contributors retained; no original whole-course Codex authorship asserted"
     }
   },
   "exceptions": {
