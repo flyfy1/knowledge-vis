@@ -1,0 +1,23 @@
+Author fix self-check for candidate after 1172-R1-F1..F4 (2026-10-27). This evidence is not independent acceptance.
+
+Diagnosing-bugs feedback loop and ranked hypotheses:
+1. F1: rendered copy names a maxNonEmpty heap although solution.py uses free min-heap plus stacks tail cleanup. Prediction: after rewriting copy, both locale Step 1 text and lesson metadata name only free and list-tail cleanup.
+2. F2: Run check is a fixed success string. Prediction: clicking it must invoke oracle() and optimizedTrace(), compare return arrays, and reject source mismatch. The repaired handler also compares displayed and fetched solution.py to window.PYTHON_SOURCE.
+3. F3: clipboard rejection has no selectable full-source fallback. Prediction: forced navigator.clipboard rejection reveals a textarea containing the complete source.
+4. F4: 200% zoom overflow comes from fixed grid/card width. Prediction: minmax(0,1fr), min-width:0 cards, and bounded select remove document overflow.
+
+Commands and results:
+- node --check leetcode/1172/app.js -> passed.
+- python3 -B scripts/register_leetcode_lesson.py 1172 --validate-only -> exit 0, no output.
+- python3 leetcode/1172/tests/test_solution.py -> 30 seeded traces passed.
+- cmp solution.py provenance/official-source.py -> identical; decoded python-code.js source -> identical (1376 bytes).
+- Playwright Chromium at 390 CSS px, locale EN then zh: EN H1 '#1172 · Dinner Plate Stacks', zh H1 '#1172 · 餐盘栈'; both Run check results matched all 11 operations; document scrollWidth/clientWidth = 390/390 in both locales.
+- Same browser at 390 CSS px with body zoom 2: scrollWidth/clientWidth = 390/390.
+- Forced clipboard rejection with Object.defineProperty(navigator,'clipboard', ...): fallback was visible (hidden attribute absent), value length 1376, and localized failure instruction appeared ('复制失败。请在下方文本框中全选并复制。').
+
+Fix mapping:
+- 1172-R1-F1: copy.js Step 1/invariant/s1task, BRIEF.md learning loop and step contract, lesson-entry.json description now describe free min-heap plus list-tail cleanup; browser EN/zh text inspected above.
+- 1172-R1-F2: app.js runs oracle() and optimizedTrace(), compares arrays, checks displayed/fetched source parity, and emits a mismatch instead of a fixed pass string; both locale checks passed.
+- 1172-R1-F3: index.html adds a hidden-until-needed full-source textarea; app.js fills, focuses, and selects it on clipboard failure; forced rejection check passed.
+- 1172-R1-F4: index.html constrains select, grid tracks, cards, and fallback textarea; 200% zoom check passed at 390px.
+- Playwright Chromium regression at 320/390/1280 CSS px in both locales: hand advance remained visible, source-bound check passed, and no document overflow was observed.

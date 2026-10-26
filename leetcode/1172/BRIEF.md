@@ -8,17 +8,17 @@
 ## Learning loop / outputs
 
 1. Hand trace capacity 2 and five pushes; learner predicts before reveal.
-2. Derive two invariants: smallest non-full index and largest non-empty index.
+2. Derive two invariants: a min-heap tracks the smallest non-full index, while list-tail cleanup exposes the largest non-empty index.
 3. Counterexample to a single pointer after `popAtStack(0)` creates a hole.
 4. Reversible bilingual simulation with prediction/reveal/change.
-5. Map invariant to the exact Python submission, then run an independent oracle.
+5. Map each invariant to the exact Python submission, then run an independent scan oracle against a faithful optimized model.
 
 ## Step contract
 
 | step | known | single question | input/output | action and observation | conditions |
 |---|---|---|---|---|---|
 | 0 | stack push/pop | where do plates land? | capacity, values → stacks | advance five operations; stacks visibly change | capacity positive |
-| 1 | stack ordering | what must always be true? | candidate index sets | change operation; heaps gain/lose indices | stale heap entries are cleaned |
+| 1 | stack ordering | what must always be true? | candidate index sets | change operation; the free heap and list-tail summary change | stale free-heap entries are cleaned; empty tails are trimmed |
 | 2 | leftmost rule | why one pointer fails? | hole then push | compare wrong/new stack and correct stack 0 | `popAtStack` can create holes |
 | 3 | operation semantics | can you predict return? | fixed scenario → value | choose, reveal, change question | prediction precedes reveal |
 | 4 | invariants | how does code implement them? | official callable methods | copy/download exact source | Python is canonical submission |
@@ -32,4 +32,4 @@
 - stale entry: heap index no longer matching current stack state; step 1.
 - amortized: average cost over a sequence including cleanup; step 4.
 
-Simulation is illustrative and does not execute the displayed submission. Workflow status is kept here and in evidence, never in learner copy.
+The simulation is illustrative and the browser verification runs a faithful optimized model against an independent scan oracle; it does not execute Python in the browser. Workflow status is kept here and in evidence, never in learner copy.
