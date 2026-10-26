@@ -218,3 +218,6 @@ input[type=range]:disabled{opacity:.4;cursor:not-allowed}
 #s5a-fs-row .seq-label{margin-right:2px}
 canvas.pix{image-rendering:pixelated}
 .readout b{color:var(--accent2);font-weight:700}
+
+/* Scoped sample-pair inspection, using existing course tokens. */
+#step2{overflow-wrap:anywhere}#step2 button,#step2 input{min-height:48px}#step2 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}.pair-next,.pair-source summary,.pair-source a{display:flex;align-items:center;min-height:48px;color:var(--accent)}#s2-pair-sample,#s2-pair-between{border-left:3px solid var(--accent);padding-left:12px}

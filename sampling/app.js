@@ -16,8 +16,14 @@ function aliasSigned(f, fs) {
   return { k, g: f - k * fs };
 }
 function aliasFreq(f, fs) { return Math.abs(aliasSigned(f, fs).g); }
+// Read-only inspection adapter for the existing zero-phase unit sine model.
+function samplePair(f,fs,n){
+  if(![f,fs,n].every(Number.isFinite)||f<0||fs<=0||!Number.isInteger(n)||n<0)throw new RangeError('Invalid sampling pair');
+  const{k,g}=aliasSigned(f,fs),at=index=>{const time=index/fs,original=Math.sin(TAU*f*time),folded=Math.sin(TAU*g*time);return{time,original,folded,difference:original-folded};};
+  return{k,g,alias:Math.abs(g),spacing:1/fs,sample:at(n),between:at(n+.25)};
+}
 /* 供自测/评审在控制台对账 */
-window.SAMPLING = { aliasSigned, aliasFreq };
+window.SAMPLING = { aliasSigned, aliasFreq, samplePair, get pairState(){return{...S2};} };
 
 /* ---------- 画布适配（DPR）：沿用傅里叶页 fitCanvas 方案 ---------- */
 function fitCanvas(cv) {
@@ -183,6 +189,12 @@ function drawWaveScene(cv, o) {
     ctx.fillStyle = '#ffd166'; ctx.fill();
     ctx.lineWidth = 1.4; ctx.strokeStyle = '#0d1117'; ctx.stroke();
   }
+  if(Number.isInteger(o.probe)){
+    const pair=samplePair(o.f,o.fs,o.probe);
+    ctx.save();ctx.lineWidth=2;ctx.strokeStyle='#ffd166';ctx.beginPath();ctx.arc(X(pair.sample.time),Y(pair.sample.original),8,0,TAU);ctx.stroke();
+    const q=pair.between;ctx.setLineDash([4,4]);ctx.strokeStyle='#6ee7ff';ctx.beginPath();ctx.moveTo(X(q.time),padT);ctx.lineTo(X(q.time),padT+ph);ctx.stroke();ctx.setLineDash([]);
+    for(const[v,col]of [[q.original,'#8494ab'],[q.folded,'#ff7a93']]){const x=X(q.time),y=Y(v);ctx.beginPath();ctx.moveTo(x,y-6);ctx.lineTo(x+6,y);ctx.lineTo(x,y+6);ctx.lineTo(x-6,y);ctx.closePath();ctx.strokeStyle=col;ctx.stroke();}ctx.restore();
+  }
 }
 
 /* ---------- 轮子渲染（第 0 步与第 5 步共用） ----------
@@ -319,22 +331,32 @@ function initS1() {
 /* ============================================================
    第 2 步：假波诞生（假波与采样点严丝合缝；读数走唯一公式）
    ============================================================ */
-const S2 = { f: 9, fs: 10 };
+const S2 = { f: 9, fs: 10, n:1 };
+try{const q=history.state?.samplingPair;if(q&&[q.f,q.fs,q.n].every(Number.isFinite)&&q.f>=1&&q.f<=20&&q.fs>=2&&q.fs<=30&&Number.isInteger(q.f*2)&&Number.isInteger(q.fs*2)&&Number.isInteger(q.n)&&q.n>=0&&q.n<Math.floor(2*q.fs))Object.assign(S2,{f:q.f,fs:q.fs,n:q.n});}catch(_){}
+function saveSamplingPair(){try{const h=history.state;history.replaceState({...((h&&typeof h==='object')?h:{}),samplingPair:{f:S2.f,fs:S2.fs,n:S2.n}},'',location.href);}catch(_){}}
+function pairNumber(x){return x===0?'0':Math.abs(x)<1e-6?x.toExponential(2):Number(x.toPrecision(7)).toString().replace('-', '−');}
 function s2Draw() {
-  drawWaveScene($('s2-canvas'), { f: S2.f, fs: S2.fs, win: 2, connect: null, showAlias: true });
+  drawWaveScene($('s2-canvas'), { f: S2.f, fs: S2.fs, win: 2, connect: null, showAlias: true, probe:S2.n });
 }
 function s2Readout() {
   const { k, g } = aliasSigned(S2.f, S2.fs);
   const alias = Math.abs(g);
   let note = '';
   if (alias < 1e-12) note = t('s2noteDC');
-  else if (Math.abs(alias - S2.f) < 1e-12) note = t('s2noteSame');
+  else if (Math.abs(g - S2.f) < 1e-12) note = t('s2noteSame');
   else note = t('s2noteAlias');
   $('s2-readout').innerHTML = t('s2ro', {
-    f: fmt(S2.f, 1), fs: fmt(S2.fs, 1), k, alias: fmt(alias, 1), note
+    f: fmt(S2.f, 1), fs: fmt(S2.fs, 1), k, g:pairNumber(g), alias: fmt(alias, 1), note
   });
 }
-function s2Sync() { s2Draw(); s2Readout(); }
+function s2Sync() {
+  S2.n=Math.max(0,Math.min(Math.floor(2*S2.fs)-1,S2.n));
+  $('s2-n').max=Math.floor(2*S2.fs)-1;
+  for(const key of ['f','fs','n']){$('s2-'+key).value=S2[key];$('s2-'+key+'-val').textContent=S2[key];}
+  const q=samplePair(S2.f,S2.fs,S2.n),params={n:S2.n,dt:pairNumber(q.spacing),time:pairNumber(q.sample.time),original:pairNumber(q.sample.original),folded:pairNumber(q.sample.folded),difference:pairNumber(q.sample.difference),other:pairNumber(q.between.time),o:pairNumber(q.between.original),a:pairNumber(q.between.folded),d:pairNumber(q.between.difference)};
+  $('s2-pair-sample').textContent=t('pairSample',params);$('s2-pair-between').textContent=t('pairBetween',params);
+  s2Draw();s2Readout();
+}
 function initS2() {
   $('s2-f').addEventListener('input', e => {
     S2.f = +e.target.value; $('s2-f-val').textContent = fmt(S2.f, 1); s2Sync();
@@ -346,8 +368,12 @@ function initS2() {
     S2.f = f; S2.fs = fs;
     $('s2-f').value = f; $('s2-fs').value = fs;
     $('s2-f-val').textContent = fmt(f, 1); $('s2-fs-val').textContent = fmt(fs, 1);
-    s2Sync();
+    s2Sync();saveSamplingPair();
   };
+  $('s2-n').addEventListener('input',e=>{S2.n=Number(e.target.value);s2Sync();});
+  for(const id of ['s2-f','s2-fs','s2-n'])$(id).addEventListener('change',saveSamplingPair);
+  $('s2-reset').onclick=()=>{Object.assign(S2,{f:9,fs:10,n:1});s2Sync();saveSamplingPair();};
+  window.addEventListener('pagehide',saveSamplingPair);
   $('s2-p-slow').addEventListener('click', preset(9, 10));
   $('s2-p-dc').addEventListener('click', preset(10, 10));
   $('s2-p-fold').addEventListener('click', preset(14, 20));
